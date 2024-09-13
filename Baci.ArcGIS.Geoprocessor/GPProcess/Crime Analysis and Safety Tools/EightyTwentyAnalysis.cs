@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>80-20 Analysis</para>
-	/// <para>Conducts an 80/20 analysis of features and determines cluster locations by creating a graduated symbol layer based on the number of incidents occurring at each location. The tool calculates a cumulative percentage field to identify the locations where incidents are disproportionately occurring.</para>
+	/// <para>80-20 分析</para>
+	/// <para>用于执行要素的 80/20 分析，并根据在每个位置发生的事件数量来创建分级符号图层，从而确定聚类位置。此工具将计算一个累积的百分比字段，用于标识事件不成比例发生的位置。</para>
 	/// </summary>
 	public class EightyTwentyAnalysis : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Point Features</para>
-		/// <para>The input point features used to create clusters.</para>
+		/// <para>用于创建聚类的输入点要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output point cluster feature class.</para>
+		/// <para>输出点聚类要素类。</para>
 		/// </param>
 		public EightyTwentyAnalysis(object InFeatures, object OutFeatureClass)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 80-20 Analysis</para>
+		/// <para>Tool Display Name : 80-20 分析</para>
 		/// </summary>
-		public override string DisplayName() => "80-20 Analysis";
+		public override string DisplayName() => "80-20 分析";
 
 		/// <summary>
 		/// <para>Tool Name : EightyTwentyAnalysis</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Input Point Features</para>
-		/// <para>The input point features used to create clusters.</para>
+		/// <para>用于创建聚类的输入点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output point cluster feature class.</para>
+		/// <para>输出点聚类要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -88,8 +89,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Cluster Tolerance</para>
-		/// <para>The maximum distance (meters, feet, kilometers, or miles) separating the points at which they will be considered part of the same cluster.</para>
-		/// <para>If no cluster tolerance is specified, the tool will identify features that are geometrically identical to cluster.</para>
+		/// <para>用于分隔点的最大距离（米、英尺、千米或英里），该距离内的点将视为相同聚类的一部分。</para>
+		/// <para>如果未指定聚类容差，则该工具将标识在几何上与聚类相同的要素。</para>
 		/// <para><see cref="ClusterToleranceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -99,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Output Fields</para>
-		/// <para>The input feature fields that will be preserved. When no fields are preserved, no input feature fields will be copied to the output. This is the default behavior.</para>
+		/// <para>将保留的输入要素字段。如果不保留任何字段，则不会将任何输入要素字段复制到输出。这是默认行为。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

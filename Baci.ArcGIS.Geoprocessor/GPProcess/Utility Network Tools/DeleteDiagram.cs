@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Delete Diagram</para>
+	/// <para>Delete Diagram</para>
 	/// <para>Select and delete network diagrams from a diagram dataset</para>
 	/// </summary>
 	[Obsolete()]

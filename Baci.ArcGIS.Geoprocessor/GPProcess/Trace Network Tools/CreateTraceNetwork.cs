@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 {
 	/// <summary>
 	/// <para>Create Trace Network</para>
-	/// <para>Creates a trace network.</para>
+	/// <para>创建追踪网络</para>
+	/// <para>创建追踪网络。</para>
 	/// </summary>
 	public class CreateTraceNetwork : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// </summary>
 		/// <param name="InFeatureDataset">
 		/// <para>Input Feature Dataset</para>
-		/// <para>The feature dataset that will contain the trace network.</para>
+		/// <para>将包含追踪网络的要素数据集。</para>
 		/// </param>
 		/// <param name="InTraceNetworkName">
 		/// <para>Trace Network Name</para>
-		/// <para>The name of the trace network that will be created.</para>
+		/// <para>将创建的追踪网络的名称。</para>
 		/// </param>
 		public CreateTraceNetwork(object InFeatureDataset, object InTraceNetworkName)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Trace Network</para>
+		/// <para>Tool Display Name : 创建追踪网络</para>
 		/// </summary>
-		public override string DisplayName() => "Create Trace Network";
+		public override string DisplayName() => "创建追踪网络";
 
 		/// <summary>
 		/// <para>Tool Name : CreateTraceNetwork</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>
-		/// <para>The feature dataset that will contain the trace network.</para>
+		/// <para>将包含追踪网络的要素数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureDataset()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Trace Network Name</para>
-		/// <para>The name of the trace network that will be created.</para>
+		/// <para>将创建的追踪网络的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Input Junctions</para>
-		/// <para>The names of the point feature classes in the feature dataset to include in the trace network.</para>
+		/// <para>要素数据集中要包含在追踪网络中的点要素类的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -95,11 +96,11 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Input Edges</para>
-		/// <para>The line feature classes and associated connectivity policy to include in the trace network.</para>
-		/// <para>Class Name—The name of the line feature class in the feature dataset to include in the trace network.</para>
-		/// <para>Connectivity Policy—The associated connectivity policy of the specified feature class.</para>
-		/// <para>Simple edge—Resources will flow from one end of the edge and out the other end.</para>
-		/// <para>Complex edge—Resources will be siphoned off along the length of the edge.</para>
+		/// <para>要包含在追踪网络中的线要素类和关联的连通性策略。</para>
+		/// <para>类名称 - 要素数据集中要包含在追踪网络中的线要素类的名称。</para>
+		/// <para>连通性策略 - 指定要素类的关联连通性策略。</para>
+		/// <para>简单边 - 资源将从边的一端流入，从另一端流出。</para>
+		/// <para>复杂边 - 将沿边的长度方向抽取资源。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]

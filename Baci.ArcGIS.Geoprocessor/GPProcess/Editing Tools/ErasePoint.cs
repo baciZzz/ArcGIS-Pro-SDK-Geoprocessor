@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Erase Point</para>
-	/// <para>Deletes points from the input that are either inside or outside the Remove Features, depending on the Operation Type.</para>
+	/// <para>擦除点</para>
+	/// <para>从输入中删除移除要素之内或之外的点，具体取决于操作类型。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input point features.</para>
+		/// <para>输入点要素。</para>
 		/// </param>
 		/// <param name="RemoveFeatures">
 		/// <para>Remove Features</para>
-		/// <para>Input features inside or outside the Remove Features will be deleted, depending on the Operation Type parameter.</para>
+		/// <para>将删除移除要素之内或之外的输入要素，具体取决于操作类型参数。</para>
 		/// </param>
 		public ErasePoint(object InFeatures, object RemoveFeatures)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Erase Point</para>
+		/// <para>Tool Display Name : 擦除点</para>
 		/// </summary>
-		public override string DisplayName() => "Erase Point";
+		public override string DisplayName() => "擦除点";
 
 		/// <summary>
 		/// <para>Tool Name : ErasePoint</para>
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input point features.</para>
+		/// <para>输入点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -81,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Remove Features</para>
-		/// <para>Input features inside or outside the Remove Features will be deleted, depending on the Operation Type parameter.</para>
+		/// <para>将删除移除要素之内或之外的输入要素，具体取决于操作类型参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -91,9 +92,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Operation Type</para>
-		/// <para>Determines if points inside or outside the remove features will be deleted.</para>
-		/// <para>Inside—Input point features inside or on the boundary of the remove features will be deleted.</para>
-		/// <para>Outside—Input point features outside the remove features will be deleted.</para>
+		/// <para>确定是删除“移除要素”之内还是之外的点。</para>
+		/// <para>内部—将删除“移除要素”内部或边界上的输入点要素。</para>
+		/// <para>外部—将删除“移除要素”之外的输入点要素。</para>
 		/// <para><see cref="OperationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -125,17 +126,17 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		public enum OperationTypeEnum 
 		{
 			/// <summary>
-			/// <para>Inside—Input point features inside or on the boundary of the remove features will be deleted.</para>
+			/// <para>内部—将删除“移除要素”内部或边界上的输入点要素。</para>
 			/// </summary>
 			[GPValue("INSIDE")]
-			[Description("Inside")]
+			[Description("内部")]
 			Inside,
 
 			/// <summary>
-			/// <para>Outside—Input point features outside the remove features will be deleted.</para>
+			/// <para>外部—将删除“移除要素”之外的输入点要素。</para>
 			/// </summary>
 			[GPValue("OUTSIDE")]
-			[Description("Outside")]
+			[Description("外部")]
 			Outside,
 
 		}

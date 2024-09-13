@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>CopyMultiple</para>
+	/// <para>CopyMultiple</para>
 	/// <para>Copies multiple datasets or tables.</para>
 	/// </summary>
 	[Obsolete()]

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Remove Overlapping Centerlines</para>
+	/// <para>Remove Overlapping Centerlines</para>
 	/// <para>Removes overlapping centerline sections to ensure that there is one common centerline in cases where centerline geometry overlaps.</para>
 	/// </summary>
 	public class RemoveOverlappingCenterlines : AbstractGPProcess

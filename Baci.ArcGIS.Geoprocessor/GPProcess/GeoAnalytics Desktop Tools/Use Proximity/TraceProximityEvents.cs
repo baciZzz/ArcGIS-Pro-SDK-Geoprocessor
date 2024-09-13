@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Trace Proximity Events</para>
-	/// <para>Traces events near each other in space (location) and time. The time-enabled point data must include features that represent an instant in time.</para>
+	/// <para>追踪邻域事件</para>
+	/// <para>追踪在空间（位置）和时间上彼此邻近的事件。启用时间的点数据必须包含表示时刻的要素。</para>
 	/// </summary>
 	public class TraceProximityEvents : AbstractGPProcess
 	{
@@ -20,38 +21,38 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="InPoints">
 		/// <para>Input Points</para>
-		/// <para>The time-enabled point feature class that will be used to trace proximity events.</para>
+		/// <para>启用时间的点要素类，用于追踪邻域事件。</para>
 		/// </param>
 		/// <param name="EntityIdField">
 		/// <para>Entity ID Field</para>
-		/// <para>The field representing unique IDs for each entity.</para>
+		/// <para>表示每个实体的唯一 ID 的字段。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Proximity Events</para>
-		/// <para>The output feature class containing the trace proximity events.</para>
+		/// <para>包含追踪邻域事件的输出要素类。</para>
 		/// </param>
 		/// <param name="DistanceMethod">
 		/// <para>Distance Method</para>
-		/// <para>Specifies the distance type that will be used with the Spatial Search Distance parameter.</para>
-		/// <para>Planar—Planar distance will be used between features. This is the default.</para>
-		/// <para>Geodesic—Geodesic distance will be used between features. This line type takes into account the curvature of the spheroid and correctly deals with data near the dateline and poles.</para>
+		/// <para>指定将与空间搜索距离参数一起使用的距离类型。</para>
+		/// <para>平面—要素之间将使用平面距离。这是默认设置。</para>
+		/// <para>测地线—将在要素之间使用测地线距离。这种线类型考虑到椭球体的曲率，并可以正确处理日期变更线和两极附近的数据。</para>
 		/// <para><see cref="DistanceMethodEnum"/></para>
 		/// </param>
 		/// <param name="SpatialSearchDistance">
 		/// <para>Spatial Search Distance</para>
-		/// <para>The maximum distance between two points to be considered in proximity. Features within the spatial search distance and temporal search distance criteria are considered to be in proximity of each other.</para>
+		/// <para>两点视为邻近时相距的最大距离。满足空间搜索距离和时间搜索距离条件的要素视为彼此邻近。</para>
 		/// <para><see cref="SpatialSearchDistanceEnum"/></para>
 		/// </param>
 		/// <param name="TemporalSearchDistance">
 		/// <para>Temporal Search Distance</para>
-		/// <para>The maximum duration between two points to be considered in proximity. Features within the temporal search distance and that meet the spatial search distance criteria are considered to be in proximity of each other.</para>
+		/// <para>两点视为邻近时相距的最大持续时间。时间搜索距离内满足空间搜索距离条件的要素视为彼此邻近。</para>
 		/// <para><see cref="TemporalSearchDistanceEnum"/></para>
 		/// </param>
 		/// <param name="EntitiesOfInterestInputType">
 		/// <para>Define Entities of Interest Using</para>
-		/// <para>Specifies the entities of interest.</para>
-		/// <para>Entities of Interest IDs—Entity names and times will be used as the entities of interest. This is the default.</para>
-		/// <para>Selected features in a specified entity of interest layer—The selected feature in a specified entity of interest layer will be used as the entities of interest.</para>
+		/// <para>指定感兴趣实体。</para>
+		/// <para>感兴趣实体 ID—实体名称和时间将用作感兴趣实体。这是默认设置。</para>
+		/// <para>指定感兴趣实体图层中的选定要素—在指定感兴趣实体图层中选择的要素将用作感兴趣实体。</para>
 		/// <para><see cref="EntitiesOfInterestInputTypeEnum"/></para>
 		/// </param>
 		public TraceProximityEvents(object InPoints, object EntityIdField, object OutFeatureClass, object DistanceMethod, object SpatialSearchDistance, object TemporalSearchDistance, object EntitiesOfInterestInputType)
@@ -66,9 +67,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Trace Proximity Events</para>
+		/// <para>Tool Display Name : 追踪邻域事件</para>
 		/// </summary>
-		public override string DisplayName() => "Trace Proximity Events";
+		public override string DisplayName() => "追踪邻域事件";
 
 		/// <summary>
 		/// <para>Tool Name : TraceProximityEvents</para>
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Input Points</para>
-		/// <para>The time-enabled point feature class that will be used to trace proximity events.</para>
+		/// <para>启用时间的点要素类，用于追踪邻域事件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -113,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Entity ID Field</para>
-		/// <para>The field representing unique IDs for each entity.</para>
+		/// <para>表示每个实体的唯一 ID 的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -123,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Proximity Events</para>
-		/// <para>The output feature class containing the trace proximity events.</para>
+		/// <para>包含追踪邻域事件的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -131,9 +132,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Distance Method</para>
-		/// <para>Specifies the distance type that will be used with the Spatial Search Distance parameter.</para>
-		/// <para>Planar—Planar distance will be used between features. This is the default.</para>
-		/// <para>Geodesic—Geodesic distance will be used between features. This line type takes into account the curvature of the spheroid and correctly deals with data near the dateline and poles.</para>
+		/// <para>指定将与空间搜索距离参数一起使用的距离类型。</para>
+		/// <para>平面—要素之间将使用平面距离。这是默认设置。</para>
+		/// <para>测地线—将在要素之间使用测地线距离。这种线类型考虑到椭球体的曲率，并可以正确处理日期变更线和两极附近的数据。</para>
 		/// <para><see cref="DistanceMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -143,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Spatial Search Distance</para>
-		/// <para>The maximum distance between two points to be considered in proximity. Features within the spatial search distance and temporal search distance criteria are considered to be in proximity of each other.</para>
+		/// <para>两点视为邻近时相距的最大距离。满足空间搜索距离和时间搜索距离条件的要素视为彼此邻近。</para>
 		/// <para><see cref="SpatialSearchDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -153,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Temporal Search Distance</para>
-		/// <para>The maximum duration between two points to be considered in proximity. Features within the temporal search distance and that meet the spatial search distance criteria are considered to be in proximity of each other.</para>
+		/// <para>两点视为邻近时相距的最大持续时间。时间搜索距离内满足空间搜索距离条件的要素视为彼此邻近。</para>
 		/// <para><see cref="TemporalSearchDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -163,9 +164,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Define Entities of Interest Using</para>
-		/// <para>Specifies the entities of interest.</para>
-		/// <para>Entities of Interest IDs—Entity names and times will be used as the entities of interest. This is the default.</para>
-		/// <para>Selected features in a specified entity of interest layer—The selected feature in a specified entity of interest layer will be used as the entities of interest.</para>
+		/// <para>指定感兴趣实体。</para>
+		/// <para>感兴趣实体 ID—实体名称和时间将用作感兴趣实体。这是默认设置。</para>
+		/// <para>指定感兴趣实体图层中的选定要素—在指定感兴趣实体图层中选择的要素将用作感兴趣实体。</para>
 		/// <para><see cref="EntitiesOfInterestInputTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -175,9 +176,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Entities of Interest IDs</para>
-		/// <para>The entity names and start times for the entities of interest. This parameter is supported only when Entities of Interest IDs is specified for the Define Entities of Interest Using parameter.</para>
-		/// <para>Entity ID—A unique entity name. The names are case sensitive.</para>
-		/// <para>Starting From—An optional starting time to trace an entity of interest. If a time is not specified, January 1, 1970, will be used.</para>
+		/// <para>感兴趣实体的实体名称和开始时间。仅当为感兴趣实体定义方式参数指定感兴趣实体 ID 时，此参数才受支持。</para>
+		/// <para>实体 ID - 唯一实体名称。该名称区分大小写。</para>
+		/// <para>开始时间 - 追踪感兴趣实体的可选开始时间。如果未指定时间，则将使用 1970 年 1 月 1 日。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -186,7 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Entities of Interest Layer</para>
-		/// <para>The layer or table that contains the entities of interest. This parameter is supported only when Selected features in a specified entity of interest layer is specified for the Define Entities of Interest Using parameter.</para>
+		/// <para>包含感兴趣实体的图层或表。仅当为感兴趣实体定义方式参数指定指定感兴趣实体图层中的选定要素时，此参数才受支持。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
@@ -194,7 +195,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Tracks</para>
-		/// <para>An output layer containing the first trace event and all subsequent features for that specified entity.</para>
+		/// <para>包含该指定实体的第一个追踪事件和所有后续要素的输出图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -203,7 +204,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Maximum Trace Depth</para>
-		/// <para>The maximum degrees of separation between an entity of interest and an entity farther down the trace (downstream).</para>
+		/// <para>感兴趣实体和追踪中更远的实体（下游）之间的最大分离度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -212,7 +213,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Attribute Match Criteria</para>
-		/// <para>The fields used to constrain the proximity event.</para>
+		/// <para>用于约束邻域事件的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -238,17 +239,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum DistanceMethodEnum 
 		{
 			/// <summary>
-			/// <para>Planar—Planar distance will be used between features. This is the default.</para>
+			/// <para>平面—要素之间将使用平面距离。这是默认设置。</para>
 			/// </summary>
 			[GPValue("PLANAR")]
-			[Description("Planar")]
+			[Description("平面")]
 			Planar,
 
 			/// <summary>
-			/// <para>Geodesic—Geodesic distance will be used between features. This line type takes into account the curvature of the spheroid and correctly deals with data near the dateline and poles.</para>
+			/// <para>测地线—将在要素之间使用测地线距离。这种线类型考虑到椭球体的曲率，并可以正确处理日期变更线和两极附近的数据。</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("Geodesic")]
+			[Description("测地线")]
 			Geodesic,
 
 		}
@@ -371,17 +372,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum EntitiesOfInterestInputTypeEnum 
 		{
 			/// <summary>
-			/// <para>Entities of Interest IDs—Entity names and times will be used as the entities of interest. This is the default.</para>
+			/// <para>感兴趣实体 ID—实体名称和时间将用作感兴趣实体。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ID_START_TIME")]
-			[Description("Entities of Interest IDs")]
+			[Description("感兴趣实体 ID")]
 			Entities_of_Interest_IDs,
 
 			/// <summary>
-			/// <para>Selected features in a specified entity of interest layer—The selected feature in a specified entity of interest layer will be used as the entities of interest.</para>
+			/// <para>指定感兴趣实体图层中的选定要素—在指定感兴趣实体图层中选择的要素将用作感兴趣实体。</para>
 			/// </summary>
 			[GPValue("SELECTED_FEATURE")]
-			[Description("Selected features in a specified entity of interest layer")]
+			[Description("指定感兴趣实体图层中的选定要素")]
 			Selected_features_in_a_specified_entity_of_interest_layer,
 
 		}

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Calculate Metrics</para>
+	/// <para>Calculate Metrics</para>
 	/// <para>Populates metrics for features in a geodatabase. Metrics include length, width, area, and elevation attributes.</para>
 	/// </summary>
 	public class CalculateMetrics : AbstractGPProcess

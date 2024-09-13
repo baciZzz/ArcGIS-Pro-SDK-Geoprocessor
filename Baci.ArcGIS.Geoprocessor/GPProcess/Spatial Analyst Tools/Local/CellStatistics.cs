@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Cell Statistics</para>
-	/// <para>Calculates a per-cell statistic from multiple rasters.</para>
+	/// <para>像元统计</para>
+	/// <para>根据多个栅格计算每个像元的统计数据。</para>
 	/// </summary>
 	public class CellStatistics : AbstractGPProcess
 	{
@@ -20,14 +21,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRastersOrConstants">
 		/// <para>Input rasters or constant values</para>
-		/// <para>A list of input rasters for which a statistic will be calculated for each cell in the Analysis window.</para>
-		/// <para>A number can be used as an input; however, the cell size and extent must first be set in the environment.</para>
-		/// <para>If the Process as multiband parameter is checked, all multiband inputs must have an equal number of bands.</para>
+		/// <para>输入栅格列表，将为其中的输入栅格计算“分析”窗口中各个像元的统计数据。</para>
+		/// <para>数字可以作为输入，但是必须先在环境中设置像元大小和范围。</para>
+		/// <para>如果选中了以多波段方式处理参数，则所有多波段输入都必须具有相同数量的波段。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>For each cell, the value is determined by applying the specified statistic type to the input rasters at that location.</para>
+		/// <para>输出栅格。</para>
+		/// <para>对于各个像元，可通过将指定统计数据类型应用到该位置处的输入栅格来确定该值。</para>
 		/// </param>
 		public CellStatistics(object InRastersOrConstants, object OutRaster)
 		{
@@ -36,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Cell Statistics</para>
+		/// <para>Tool Display Name : 像元统计</para>
 		/// </summary>
-		public override string DisplayName() => "Cell Statistics";
+		public override string DisplayName() => "像元统计";
 
 		/// <summary>
 		/// <para>Tool Name : CellStatistics</para>
@@ -72,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input rasters or constant values</para>
-		/// <para>A list of input rasters for which a statistic will be calculated for each cell in the Analysis window.</para>
-		/// <para>A number can be used as an input; however, the cell size and extent must first be set in the environment.</para>
-		/// <para>If the Process as multiband parameter is checked, all multiband inputs must have an equal number of bands.</para>
+		/// <para>输入栅格列表，将为其中的输入栅格计算“分析”窗口中各个像元的统计数据。</para>
+		/// <para>数字可以作为输入，但是必须先在环境中设置像元大小和范围。</para>
+		/// <para>如果选中了以多波段方式处理参数，则所有多波段输入都必须具有相同数量的波段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -86,8 +87,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>For each cell, the value is determined by applying the specified statistic type to the input rasters at that location.</para>
+		/// <para>输出栅格。</para>
+		/// <para>对于各个像元，可通过将指定统计数据类型应用到该位置处的输入栅格来确定该值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -95,18 +96,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Overlay statistic</para>
-		/// <para>Specifies the statistic type to be calculated.</para>
-		/// <para>Mean—The mean (average) of the inputs will be calculated.</para>
-		/// <para>Majority—The majority (value that occurs most often) of the inputs will be calculated.</para>
-		/// <para>Maximum—The maximum (largest value) of the inputs will be calculated.</para>
-		/// <para>Median—The median of the inputs will be calculated.</para>
-		/// <para>Minimum—The minimum (smallest value) of the inputs will be calculated.</para>
-		/// <para>Minority—The minority (value that occurs least often) of the inputs will be calculated.</para>
-		/// <para>Range—The range (difference between largest and smallest value) of the inputs will be calculated.</para>
-		/// <para>Standard deviation—The standard deviation of the inputs will be calculated.</para>
-		/// <para>Sum—The sum (total of all values) of the inputs will be calculated.</para>
-		/// <para>Variety—The variety (number of unique values) of the inputs will be calculated.</para>
-		/// <para>The default statistic type is Mean.</para>
+		/// <para>指定要计算的统计数据类型。</para>
+		/// <para>平均值—将计算输入的平均值。</para>
+		/// <para>众数—将计算输入的众数（出现次数最多的值）。</para>
+		/// <para>最大值—将计算输入的最大值。</para>
+		/// <para>中值—将计算输入的中值。</para>
+		/// <para>最小值—将计算输入的最小值。</para>
+		/// <para>少数—将计算输入的少数（出现次数最少的值）。</para>
+		/// <para>范围—将计算输入的范围（最大值和最小值之差）。</para>
+		/// <para>标准差—将计算输入的标准偏差。</para>
+		/// <para>总和—将计算输入的总和（所有值的总和）。</para>
+		/// <para>变异度—将计算输入的变异度（唯一值的数量）。</para>
+		/// <para>默认统计类型为平均值。</para>
 		/// <para><see cref="StatisticsTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -116,9 +117,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Ignore NoData in calculations</para>
-		/// <para>Specifies whether NoData values will be ignored by the statistic calculation.</para>
-		/// <para>Checked—At the processing cell location, if any of the input rasters has NoData, that NoData value will be ignored. The statistics will be computed by only considering the cells with valid data. This is the default.</para>
-		/// <para>Unchecked—If the processing cell location for any of the input rasters is NoData, the output for that cell will be NoData.</para>
+		/// <para>指定在进行统计计算时是否将忽略 NoData 值。</para>
+		/// <para>选中 - 在处理像元位置处，如果任意输入栅格具有 NoData，将忽略该 NoData 值。 仅考虑具有有效数据的像元来计算统计数据。 这是默认设置。</para>
+		/// <para>未选中 - 如果任意输入栅格的处理像元位置为 NoData，该像元的输出将为 NoData。</para>
 		/// <para><see cref="IgnoreNodataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,9 +129,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Process as multiband</para>
-		/// <para>Specifies how the input multiband raster bands will be processed.</para>
-		/// <para>Unchecked—Each band from a multiband raster input will be processed separately as a single band raster. This is the default.</para>
-		/// <para>Checked—Each multiband raster input will be processed as a multiband raster. The operation will be performed for each band from one input using the corresponding band number from the other inputs.</para>
+		/// <para>指定如何处理输入多波段栅格波段。</para>
+		/// <para>未选中 - 来自多波段栅格输入的每个波段将被单独处理为单波段栅格。 这是默认设置。</para>
+		/// <para>选中 - 每个多波段栅格输入都将作为多波段栅格进行处理。 将使用其他输入的相应波段数对一个输入的每个波段执行操作。</para>
 		/// <para><see cref="ProcessAsMultibandEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -155,73 +156,73 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum StatisticsTypeEnum 
 		{
 			/// <summary>
-			/// <para>Mean—The mean (average) of the inputs will be calculated.</para>
+			/// <para>平均值—将计算输入的平均值。</para>
 			/// </summary>
 			[GPValue("MEAN")]
-			[Description("Mean")]
+			[Description("平均值")]
 			Mean,
 
 			/// <summary>
-			/// <para>Majority—The majority (value that occurs most often) of the inputs will be calculated.</para>
+			/// <para>众数—将计算输入的众数（出现次数最多的值）。</para>
 			/// </summary>
 			[GPValue("MAJORITY")]
-			[Description("Majority")]
+			[Description("众数")]
 			Majority,
 
 			/// <summary>
-			/// <para>Maximum—The maximum (largest value) of the inputs will be calculated.</para>
+			/// <para>最大值—将计算输入的最大值。</para>
 			/// </summary>
 			[GPValue("MAXIMUM")]
-			[Description("Maximum")]
+			[Description("最大值")]
 			Maximum,
 
 			/// <summary>
-			/// <para>Median—The median of the inputs will be calculated.</para>
+			/// <para>中值—将计算输入的中值。</para>
 			/// </summary>
 			[GPValue("MEDIAN")]
-			[Description("Median")]
+			[Description("中值")]
 			Median,
 
 			/// <summary>
-			/// <para>Minimum—The minimum (smallest value) of the inputs will be calculated.</para>
+			/// <para>最小值—将计算输入的最小值。</para>
 			/// </summary>
 			[GPValue("MINIMUM")]
-			[Description("Minimum")]
+			[Description("最小值")]
 			Minimum,
 
 			/// <summary>
-			/// <para>Minority—The minority (value that occurs least often) of the inputs will be calculated.</para>
+			/// <para>少数—将计算输入的少数（出现次数最少的值）。</para>
 			/// </summary>
 			[GPValue("MINORITY")]
-			[Description("Minority")]
+			[Description("少数")]
 			Minority,
 
 			/// <summary>
-			/// <para>Range—The range (difference between largest and smallest value) of the inputs will be calculated.</para>
+			/// <para>范围—将计算输入的范围（最大值和最小值之差）。</para>
 			/// </summary>
 			[GPValue("RANGE")]
-			[Description("Range")]
+			[Description("范围")]
 			Range,
 
 			/// <summary>
-			/// <para>Standard deviation—The standard deviation of the inputs will be calculated.</para>
+			/// <para>标准差—将计算输入的标准偏差。</para>
 			/// </summary>
 			[GPValue("STD")]
-			[Description("Standard deviation")]
+			[Description("标准差")]
 			Standard_deviation,
 
 			/// <summary>
-			/// <para>Sum—The sum (total of all values) of the inputs will be calculated.</para>
+			/// <para>总和—将计算输入的总和（所有值的总和）。</para>
 			/// </summary>
 			[GPValue("SUM")]
-			[Description("Sum")]
+			[Description("总和")]
 			Sum,
 
 			/// <summary>
-			/// <para>Variety—The variety (number of unique values) of the inputs will be calculated.</para>
+			/// <para>变异度—将计算输入的变异度（唯一值的数量）。</para>
 			/// </summary>
 			[GPValue("VARIETY")]
-			[Description("Variety")]
+			[Description("变异度")]
 			Variety,
 
 		}
@@ -232,14 +233,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum IgnoreNodataEnum 
 		{
 			/// <summary>
-			/// <para>Checked—At the processing cell location, if any of the input rasters has NoData, that NoData value will be ignored. The statistics will be computed by only considering the cells with valid data. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DATA")]
 			DATA,
 
 			/// <summary>
-			/// <para>Unchecked—If the processing cell location for any of the input rasters is NoData, the output for that cell will be NoData.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NODATA")]
@@ -253,14 +254,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ProcessAsMultibandEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Each band from a multiband raster input will be processed separately as a single band raster. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SINGLE_BAND")]
 			SINGLE_BAND,
 
 			/// <summary>
-			/// <para>Checked—Each multiband raster input will be processed as a multiband raster. The operation will be performed for each band from one input using the corresponding band number from the other inputs.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MULTI_BAND")]

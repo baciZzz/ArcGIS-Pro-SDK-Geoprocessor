@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Batch Project</para>
-	/// <para>Changes the coordinate system of a set of input feature classes or feature datasets to a common coordinate system. To change the coordinate system of a single feature class or dataset use the Project tool.</para>
+	/// <para>批量投影</para>
+	/// <para>将一组输入要素类或要素数据集的坐标系更改为通用坐标系。要更改单个要素类或数据集的坐标系，请使用投影工具。</para>
 	/// </summary>
 	public class BatchProject : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputFeatureClassOrDataset">
 		/// <para>Input Feature Class or Dataset</para>
-		/// <para>The input feature classes or feature datasets whose coordinates are to be converted.</para>
+		/// <para>要转换坐标的输入要素类或要素数据集。</para>
 		/// </param>
 		/// <param name="OutputWorkspace">
 		/// <para>Output Workspace</para>
-		/// <para>The location of each new output feature class or feature dataset.</para>
+		/// <para>每个新输出要素类或要素数据集的位置。</para>
 		/// </param>
 		public BatchProject(object InputFeatureClassOrDataset, object OutputWorkspace)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Batch Project</para>
+		/// <para>Tool Display Name : 批量投影</para>
 		/// </summary>
-		public override string DisplayName() => "Batch Project";
+		public override string DisplayName() => "批量投影";
 
 		/// <summary>
 		/// <para>Tool Name : BatchProject</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Feature Class or Dataset</para>
-		/// <para>The input feature classes or feature datasets whose coordinates are to be converted.</para>
+		/// <para>要转换坐标的输入要素类或要素数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Workspace</para>
-		/// <para>The location of each new output feature class or feature dataset.</para>
+		/// <para>每个新输出要素类或要素数据集的位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Coordinate System</para>
-		/// <para>The coordinate system to be used to project the inputs. The default value is set based on the output coordinate system environment.</para>
+		/// <para>用于对输入进行投影的坐标系。默认值将基于输出坐标系环境进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Template dataset</para>
-		/// <para>The feature class or the feature dataset used to specify the output coordinate system used for projection.</para>
+		/// <para>用于指定投影时所用输出坐标系的要素类或要素数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEGeoDatasetType()]
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Transformation</para>
-		/// <para>The name of the geographic transformation to be applied to convert data between two geographic coordinate systems (datums).</para>
+		/// <para>在两种地理坐标系（基准面）之间转换数据所应用的地理（坐标）变换的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

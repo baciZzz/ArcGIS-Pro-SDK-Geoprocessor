@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>TIN Polygon Volume</para>
+	/// <para>TIN Polygon Volume</para>
 	/// <para>Calculates the volumetric and surface area between polygons of an input feature class and a TIN surface.</para>
 	/// </summary>
 	[Obsolete()]

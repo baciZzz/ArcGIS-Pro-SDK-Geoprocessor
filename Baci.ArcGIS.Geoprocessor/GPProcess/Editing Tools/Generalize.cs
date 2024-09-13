@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Generalize</para>
-	/// <para>Simplifies the input features using a specified maximum offset tolerance. The output features will contain a subset of the original input vertices.</para>
+	/// <para>概化</para>
+	/// <para>使用指定的最大偏移容差来简化输入要素。 输出要素将包含原始输入折点的子集。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The polygon or line features to be generalized.</para>
+		/// <para>要进行概化的面或线要素。</para>
 		/// </param>
 		public Generalize(object InFeatures)
 		{
@@ -30,14 +31,14 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generalize</para>
+		/// <para>Tool Display Name : 概化</para>
 		/// </summary>
-		public override string DisplayName() => "Generalize";
+		public override string DisplayName() => "概化";
 
 		/// <summary>
-		/// <para>Tool Name : Generalize</para>
+		/// <para>Tool Name : 概化</para>
 		/// </summary>
-		public override string ToolName() => "Generalize";
+		public override string ToolName() => "概化";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.Generalize</para>
@@ -66,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The polygon or line features to be generalized.</para>
+		/// <para>要进行概化的面或线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -76,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Tolerance</para>
-		/// <para>The tolerance sets the maximum allowable offset, which will determine the degree of simplification. This value limits the distance the output geometry can differ from the input geometry. You can specify a preferred unit of measurement. The default is the feature unit.</para>
+		/// <para>此容差可设定最大允许偏移量，这会确定简化程度。 该值会限制输出几何与输入几何的容许偏移距离。 可以指定首选测量单位。 默认为要素单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]

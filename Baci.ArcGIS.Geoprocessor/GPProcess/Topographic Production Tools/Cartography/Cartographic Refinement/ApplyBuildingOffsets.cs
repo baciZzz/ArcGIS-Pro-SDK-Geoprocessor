@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Apply Building Offsets</para>
+	/// <para>Apply Building Offsets</para>
 	/// <para>Aligns, moves, and hides building or bridge marker symbols based on product specification rules defined in an .xml file.</para>
 	/// </summary>
 	public class ApplyBuildingOffsets : AbstractGPProcess

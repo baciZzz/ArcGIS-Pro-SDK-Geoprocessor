@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Eliminate Polygon</para>
+	/// <para>Eliminate Polygon</para>
 	/// <para>Eliminates a polygon by merging it with the polygon from the surrounding features that it shares the longest boundary with.</para>
 	/// </summary>
 	public class EliminatePolygon : AbstractGPProcess

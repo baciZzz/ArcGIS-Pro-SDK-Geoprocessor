@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Set Network Category</para>
-	/// <para>Assigns a network category to a feature class or table at the asset type level to be used during tracing operations.</para>
+	/// <para>设置网络类别</para>
+	/// <para>用于将网络类别分配到要在追踪操作中使用的资产类型级别要素类或表。</para>
 	/// </summary>
 	public class SetNetworkCategory : AbstractGPProcess
 	{
@@ -20,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that contains the network category.</para>
+		/// <para>包含网络类别的公共设施网络。</para>
 		/// </param>
 		/// <param name="DomainNetwork">
 		/// <para>Domain Network</para>
-		/// <para>The domain network in the utility network that contains the network category.</para>
+		/// <para>包含网络类别的公共设施网络内的域网络。</para>
 		/// </param>
 		/// <param name="Featureclass">
 		/// <para>Input Table</para>
-		/// <para>The utility network feature class or table to which the asset type belongs.</para>
+		/// <para>资产类型所属的公共设施网络要素类或表。</para>
 		/// </param>
 		/// <param name="Assetgroup">
 		/// <para>Asset Group</para>
-		/// <para>The asset group to which the asset type belongs.</para>
+		/// <para>资产类型所属的资产组。</para>
 		/// </param>
 		/// <param name="Assettype">
 		/// <para>Asset Type</para>
-		/// <para>The asset type to alter the category configuration.</para>
+		/// <para>要更改类别配置的资产类型。</para>
 		/// </param>
 		public SetNetworkCategory(object InUtilityNetwork, object DomainNetwork, object Featureclass, object Assetgroup, object Assettype)
 		{
@@ -48,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Set Network Category</para>
+		/// <para>Tool Display Name : 设置网络类别</para>
 		/// </summary>
-		public override string DisplayName() => "Set Network Category";
+		public override string DisplayName() => "设置网络类别";
 
 		/// <summary>
 		/// <para>Tool Name : SetNetworkCategory</para>
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that contains the network category.</para>
+		/// <para>包含网络类别的公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Domain Network</para>
-		/// <para>The domain network in the utility network that contains the network category.</para>
+		/// <para>包含网络类别的公共设施网络内的域网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The utility network feature class or table to which the asset type belongs.</para>
+		/// <para>资产类型所属的公共设施网络要素类或表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Asset Group</para>
-		/// <para>The asset group to which the asset type belongs.</para>
+		/// <para>资产类型所属的资产组。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Asset Type</para>
-		/// <para>The asset type to alter the category configuration.</para>
+		/// <para>要更改类别配置的资产类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -124,8 +125,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Categories</para>
-		/// <para>The categories to be assigned to the asset type. The categories that are specified for this parameter will replace the current categories that are assigned to the asset type. To unassign a network category from an asset type, do not specify a category for this parameter.</para>
-		/// <para>The Subnetwork Controller system-provided network category is only available for asset types in the device feature class and junction object table. In a domain network with a partitioned tier definition, the selected asset type must also have a directional terminal configuration assigned with a minimum of one upstream and one downstream terminal.</para>
+		/// <para>要分配到资产类型的类别。为此参数指定的类别会替换分配到资产类型的当前类别。要取消分配资产类型的网络类别，请不要为此参数指定类别。</para>
+		/// <para>子网控制器系统提供的网络类别仅适用于设备要素类和交汇点对象表中的资产类型。在具有分区层定义的域网络中，所选资产类型还必须具备分配有最少一个上游和一个下游终端的定向终端配置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

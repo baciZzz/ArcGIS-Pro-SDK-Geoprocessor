@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Mosaic To New Raster</para>
-	/// <para>Merges multiple raster datasets into a new raster dataset.</para>
+	/// <para>镶嵌至新栅格</para>
+	/// <para>将多个栅格数据集合并到一个新的栅格数据集中。</para>
 	/// </summary>
 	public class MosaicToNewRaster : AbstractGPProcess
 	{
@@ -20,34 +21,34 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputRasters">
 		/// <para>Input Rasters</para>
-		/// <para>The raster datasets that you want to merge together. The inputs must have the same number of bands and same bit depth.</para>
+		/// <para>待合并的栅格数据集。输入必须具有相同的波段数和相同的位深度。</para>
 		/// </param>
 		/// <param name="OutputLocation">
 		/// <para>Output Location</para>
-		/// <para>The folder or geodatabase to store the raster.</para>
+		/// <para>用于存储栅格的文件夹或地理数据库。</para>
 		/// </param>
 		/// <param name="RasterDatasetNameWithExtension">
 		/// <para>Raster Dataset Name with Extension</para>
-		/// <para>The name of the dataset you are creating.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
-		/// <para>.bil—Esri BIL</para>
-		/// <para>.bip—Esri BIP</para>
-		/// <para>.bmp—BMP</para>
-		/// <para>.bsq—Esri BSQ</para>
-		/// <para>.dat—ENVI DAT</para>
-		/// <para>.gif—GIF</para>
-		/// <para>.img—ERDAS IMAGINE</para>
-		/// <para>.jpg—JPEG</para>
-		/// <para>.jp2—JPEG 2000</para>
-		/// <para>.png—PNG</para>
-		/// <para>.tif—TIFF</para>
-		/// <para>No extension for Esri Grid</para>
-		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>您正在创建的数据集名称。</para>
+		/// <para>以文件格式存储栅格数据集时，需要指定文件扩展名，具体如下：</para>
+		/// <para>.bil - Esri BIL</para>
+		/// <para>.bip - Esri BIP</para>
+		/// <para>.bmp - BMP</para>
+		/// <para>.bsq - Esri BSQ</para>
+		/// <para>.dat - ENVI DAT</para>
+		/// <para>.gif - GIF</para>
+		/// <para>.img - ERDAS IMAGINE</para>
+		/// <para>.jpg - JPEG</para>
+		/// <para>.jp2 - JPEG 2000</para>
+		/// <para>.png - PNG</para>
+		/// <para>.tif - TIFF</para>
+		/// <para>Esri Grid 无扩展名</para>
+		/// <para>将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。</para>
+		/// <para>将栅格数据集存储到 JPEG 文件、JPEG 2000 文件、TIFF 文件或地理数据库时，可在地理处理环境中指定压缩类型和压缩质量。</para>
 		/// </param>
 		/// <param name="NumberOfBands">
 		/// <para>Number of Bands</para>
-		/// <para>The number of bands that the output raster will have.</para>
+		/// <para>输出栅格将具有的波段数。</para>
 		/// </param>
 		public MosaicToNewRaster(object InputRasters, object OutputLocation, object RasterDatasetNameWithExtension, object NumberOfBands)
 		{
@@ -58,9 +59,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Mosaic To New Raster</para>
+		/// <para>Tool Display Name : 镶嵌至新栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Mosaic To New Raster";
+		public override string DisplayName() => "镶嵌至新栅格";
 
 		/// <summary>
 		/// <para>Tool Name : MosaicToNewRaster</para>
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Rasters</para>
-		/// <para>The raster datasets that you want to merge together. The inputs must have the same number of bands and same bit depth.</para>
+		/// <para>待合并的栅格数据集。输入必须具有相同的波段数和相同的位深度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Location</para>
-		/// <para>The folder or geodatabase to store the raster.</para>
+		/// <para>用于存储栅格的文件夹或地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -110,22 +111,22 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Raster Dataset Name with Extension</para>
-		/// <para>The name of the dataset you are creating.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
-		/// <para>.bil—Esri BIL</para>
-		/// <para>.bip—Esri BIP</para>
-		/// <para>.bmp—BMP</para>
-		/// <para>.bsq—Esri BSQ</para>
-		/// <para>.dat—ENVI DAT</para>
-		/// <para>.gif—GIF</para>
-		/// <para>.img—ERDAS IMAGINE</para>
-		/// <para>.jpg—JPEG</para>
-		/// <para>.jp2—JPEG 2000</para>
-		/// <para>.png—PNG</para>
-		/// <para>.tif—TIFF</para>
-		/// <para>No extension for Esri Grid</para>
-		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>您正在创建的数据集名称。</para>
+		/// <para>以文件格式存储栅格数据集时，需要指定文件扩展名，具体如下：</para>
+		/// <para>.bil - Esri BIL</para>
+		/// <para>.bip - Esri BIP</para>
+		/// <para>.bmp - BMP</para>
+		/// <para>.bsq - Esri BSQ</para>
+		/// <para>.dat - ENVI DAT</para>
+		/// <para>.gif - GIF</para>
+		/// <para>.img - ERDAS IMAGINE</para>
+		/// <para>.jpg - JPEG</para>
+		/// <para>.jp2 - JPEG 2000</para>
+		/// <para>.png - PNG</para>
+		/// <para>.tif - TIFF</para>
+		/// <para>Esri Grid 无扩展名</para>
+		/// <para>将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。</para>
+		/// <para>将栅格数据集存储到 JPEG 文件、JPEG 2000 文件、TIFF 文件或地理数据库时，可在地理处理环境中指定压缩类型和压缩质量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -133,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Spatial Reference for  Raster</para>
-		/// <para>The coordinate system for the output raster dataset.</para>
+		/// <para>输出栅格数据集的坐标系。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
@@ -141,19 +142,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pixel Type</para>
-		/// <para>The bit depth, or radiometric resolution of the mosaic dataset.</para>
-		/// <para>If you do not set the pixel type, the 8-bit default will be used and your output may be incorrect.</para>
-		/// <para>1 bit—A 1-bit unsigned integer. The values can be 0 or 1.</para>
-		/// <para>2 bit—A 2-bit unsigned integer. The values supported can be from 0 to 3.</para>
-		/// <para>4 bit—A 4-bit unsigned integer. The values supported can be from 0 to 15.</para>
-		/// <para>8 bit unsigned—An unsigned 8-bit data type. The values supported can be from 0 to 255.</para>
-		/// <para>8 bit signed—A signed 8-bit data type. The values supported can be from -128 to 127.</para>
-		/// <para>16 bit unsigned—A 16-bit unsigned data type. The values can range from 0 to 65,535.</para>
-		/// <para>16 bit signed—A 16-bit signed data type. The values can range from -32,768 to 32,767.</para>
-		/// <para>32 bit unsigned—A 32-bit unsigned data type. The values can range from 0 to 4,294,967,295.</para>
-		/// <para>32 bit signed—A 32-bit signed data type. The values can range from -2,147,483,648 to 2,147,483,647.</para>
-		/// <para>32 bit float—A 32-bit data type supporting decimals.</para>
-		/// <para>64 bit—A 64-bit data type supporting decimals.</para>
+		/// <para>镶嵌数据集的位深度或辐射分辨率。</para>
+		/// <para>如果不设置像素类型，将使用默认值 8 位，而输出结果可能会不正确。</para>
+		/// <para>1 位—1 位无符号整数。 值可以为 0 或 1。</para>
+		/// <para>2 位—2 位无符号整数。 支持的值为 0 到 3。</para>
+		/// <para>4 位—4 位无符号整数。 支持的值为 0 到 15。</para>
+		/// <para>8 位无符号—8 位无符号数据类型。 支持的值为 0 到 255。</para>
+		/// <para>8 位有符号—8 位有符号数据类型。 支持的值为 -128 到 127。</para>
+		/// <para>16 位无符号—16 位无符号数据类型。 取值范围为 0 到 65,535。</para>
+		/// <para>16 位有符号—16 位有符号数据类型。 取值范围为 -32,768 到 32,767。</para>
+		/// <para>32 位无符号—32 位无符号数据类型。 取值范围为 0 到 4,294,967,295。</para>
+		/// <para>32 位有符号—32 位有符号数据类型。 取值范围为 -2,147,483,648 到 2,147,483,647。</para>
+		/// <para>32 位浮点—支持小数的 32 位数据类型。</para>
+		/// <para>64 位—支持小数的 64 位数据类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -162,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Cellsize</para>
-		/// <para>The cell size for the new raster dataset.</para>
+		/// <para>新栅格数据集的像元大小。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -170,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Number of Bands</para>
-		/// <para>The number of bands that the output raster will have.</para>
+		/// <para>输出栅格将具有的波段数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -178,15 +179,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Operator</para>
-		/// <para>The method used to mosaic overlapping areas.</para>
-		/// <para>First—The output cell value of the overlapping areas will be the value from the first raster dataset mosaicked into that location.</para>
-		/// <para>Last—The output cell value of the overlapping areas will be the value from the last raster dataset mosaicked into that location. This is the default.</para>
-		/// <para>Blend—The output cell value of the overlapping areas will be a horizontally weighted calculation of the values of the cells in the overlapping area.</para>
-		/// <para>Mean—The output cell value of the overlapping areas will be the average value of the overlapping cells.</para>
-		/// <para>Minimum—The output cell value of the overlapping areas will be the minimum value of the overlapping cells.</para>
-		/// <para>Maximum—The output cell value of the overlapping areas will be the maximum value of the overlapping cells.</para>
-		/// <para>Sum—The output cell value of the overlapping areas will be the total sum of the overlapping cells.</para>
-		/// <para>For more information about each mosaic operator, refer to the Mosaic Operator help topic.</para>
+		/// <para>用于镶嵌重叠的方法。</para>
+		/// <para>First—叠置区域的输出像元值为镶嵌到该位置的第一个栅格数据集中的值。</para>
+		/// <para>Last—叠置区域的输出像元值为镶嵌到该位置的最后一个栅格数据集中的值。这是默认设置。</para>
+		/// <para>Blend—叠置区域的输出像元值为叠置区域中各像元值的水平加权计算结果。</para>
+		/// <para>Mean—重叠区域的输出像元值为叠置像元的平均值。</para>
+		/// <para>最小值—重叠区域的输出像元值为叠置像元的最小值。</para>
+		/// <para>Maximum—重叠区域的输出像元值为叠置像元的最大值。</para>
+		/// <para>总和—重叠区域的输出像元值为叠置像元的总和。</para>
+		/// <para>有关各镶嵌运算符的详细信息，请参阅“镶嵌运算符”帮助主题。</para>
 		/// <para><see cref="MosaicMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -196,13 +197,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Colormap Mode</para>
-		/// <para>Applies when the input raster datasets have a colormap.</para>
-		/// <para>Specifies the method that will be used to choose which color map from the input rasters will be applied to the mosaic output.</para>
-		/// <para>First—The color map from the first raster dataset in the list will be applied to the output raster mosaic. This is the default.</para>
-		/// <para>Last—The color map from the last raster dataset in the list will be applied to the output raster mosaic.</para>
-		/// <para>Match—All the color maps will be considered when mosaicking. If all possible values are already used (for the bit depth), the tool will match the value with the closest available color.</para>
-		/// <para>Reject—Only the raster datasets that do not have a color map associated with them will be mosaicked.</para>
-		/// <para>For more information about each colormap mode, see the Mosaic colormap mode help topic.</para>
+		/// <para>输入栅格数据集具有色彩映射表时应用。</para>
+		/// <para>指定对输入栅格中应用于镶嵌输出的色彩映射表进行选择的方法。</para>
+		/// <para>First—列表中第一个栅格数据集中的色彩映射表将应用于输出栅格镶嵌。这是默认设置。</para>
+		/// <para>Last—列表中最后一个栅格数据集中的色彩映射表将应用于输出栅格镶嵌。</para>
+		/// <para>匹配—镶嵌时将考虑所有色彩映射表。如果已经使用了所有可能的值（对于位深度），则该工具将与具有最接近的可用色彩的值进行匹配。</para>
+		/// <para>拒绝—仅对那些不包含关联色彩映射表的栅格数据集进行镶嵌。</para>
+		/// <para>有关各色彩映射表模式的详细信息，请参阅“镶嵌色彩映射表模式”帮助主题。</para>
 		/// <para><see cref="MosaicColormapModeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -234,52 +235,52 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MosaicMethodEnum 
 		{
 			/// <summary>
-			/// <para>First—The output cell value of the overlapping areas will be the value from the first raster dataset mosaicked into that location.</para>
+			/// <para>First—叠置区域的输出像元值为镶嵌到该位置的第一个栅格数据集中的值。</para>
 			/// </summary>
 			[GPValue("FIRST")]
 			[Description("First")]
 			First,
 
 			/// <summary>
-			/// <para>Last—The output cell value of the overlapping areas will be the value from the last raster dataset mosaicked into that location. This is the default.</para>
+			/// <para>Last—叠置区域的输出像元值为镶嵌到该位置的最后一个栅格数据集中的值。这是默认设置。</para>
 			/// </summary>
 			[GPValue("LAST")]
 			[Description("Last")]
 			Last,
 
 			/// <summary>
-			/// <para>Blend—The output cell value of the overlapping areas will be a horizontally weighted calculation of the values of the cells in the overlapping area.</para>
+			/// <para>Blend—叠置区域的输出像元值为叠置区域中各像元值的水平加权计算结果。</para>
 			/// </summary>
 			[GPValue("BLEND")]
 			[Description("Blend")]
 			Blend,
 
 			/// <summary>
-			/// <para>Mean—The output cell value of the overlapping areas will be the average value of the overlapping cells.</para>
+			/// <para>Mean—重叠区域的输出像元值为叠置像元的平均值。</para>
 			/// </summary>
 			[GPValue("MEAN")]
 			[Description("Mean")]
 			Mean,
 
 			/// <summary>
-			/// <para>Minimum—The output cell value of the overlapping areas will be the minimum value of the overlapping cells.</para>
+			/// <para>最小值—重叠区域的输出像元值为叠置像元的最小值。</para>
 			/// </summary>
 			[GPValue("MINIMUM")]
-			[Description("Minimum")]
+			[Description("最小值")]
 			Minimum,
 
 			/// <summary>
-			/// <para>Maximum—The output cell value of the overlapping areas will be the maximum value of the overlapping cells.</para>
+			/// <para>Maximum—重叠区域的输出像元值为叠置像元的最大值。</para>
 			/// </summary>
 			[GPValue("MAXIMUM")]
 			[Description("Maximum")]
 			Maximum,
 
 			/// <summary>
-			/// <para>Sum—The output cell value of the overlapping areas will be the total sum of the overlapping cells.</para>
+			/// <para>总和—重叠区域的输出像元值为叠置像元的总和。</para>
 			/// </summary>
 			[GPValue("SUM")]
-			[Description("Sum")]
+			[Description("总和")]
 			Sum,
 
 		}
@@ -290,31 +291,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MosaicColormapModeEnum 
 		{
 			/// <summary>
-			/// <para>Reject—Only the raster datasets that do not have a color map associated with them will be mosaicked.</para>
+			/// <para>拒绝—仅对那些不包含关联色彩映射表的栅格数据集进行镶嵌。</para>
 			/// </summary>
 			[GPValue("REJECT")]
-			[Description("Reject")]
+			[Description("拒绝")]
 			Reject,
 
 			/// <summary>
-			/// <para>First—The color map from the first raster dataset in the list will be applied to the output raster mosaic. This is the default.</para>
+			/// <para>First—列表中第一个栅格数据集中的色彩映射表将应用于输出栅格镶嵌。这是默认设置。</para>
 			/// </summary>
 			[GPValue("FIRST")]
 			[Description("First")]
 			First,
 
 			/// <summary>
-			/// <para>Last—The color map from the last raster dataset in the list will be applied to the output raster mosaic.</para>
+			/// <para>Last—列表中最后一个栅格数据集中的色彩映射表将应用于输出栅格镶嵌。</para>
 			/// </summary>
 			[GPValue("LAST")]
 			[Description("Last")]
 			Last,
 
 			/// <summary>
-			/// <para>Match—All the color maps will be considered when mosaicking. If all possible values are already used (for the bit depth), the tool will match the value with the closest available color.</para>
+			/// <para>匹配—镶嵌时将考虑所有色彩映射表。如果已经使用了所有可能的值（对于位深度），则该工具将与具有最接近的可用色彩的值进行匹配。</para>
 			/// </summary>
 			[GPValue("MATCH")]
-			[Description("Match")]
+			[Description("匹配")]
 			Match,
 
 		}

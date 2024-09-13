@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Solve Vehicle Routing Problem</para>
-	/// <para>Creates a vehicle routing problem (VRP) network analysis layer, sets the analysis properties, and solves the analysis, which is ideal for setting up a VRP web service. A VRP analysis layer finds the best routes for a fleet of vehicles.</para>
+	/// <para>求解车辆配送问题</para>
+	/// <para>创建车辆配送问题 (VRP) 网络分析图层，设置分析属性，并求解分析，是设置 VRP Web 服务的理想手段。VRP 分析图层用于查找车队的最佳路径。</para>
 	/// </summary>
 	[Obsolete()]
 	public class SolveVehicleRoutingProblem : AbstractGPProcess
@@ -21,183 +22,183 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="Orders">
 		/// <para>Orders</para>
-		/// <para>In the case of an exchange visit, an order can have both delivery and pickup quantities.</para>
+		/// <para>在交互访问的情况下，停靠点可同时具有配送量和接收量。</para>
 		/// </param>
 		/// <param name="Depots">
 		/// <para>Depots</para>
-		/// <para>A depot is a location that a vehicle departs from at the beginning of the workday and returns to at the end of the workday. Vehicles are loaded (for deliveries) or unloaded (for pickups) at depots at the start of the route. In some cases, a depot can also act as a renewal location, whereby the vehicle can unload or reload and continue performing deliveries and pickups. A depot has open and close times, as specified by a hard time window. Vehicles can&apos;t arrive at a depot outside of this time window.</para>
-		/// <para>The depots feature set has an associated attribute table. The fields in the attribute table are listed and described below.</para>
-		/// <para>ObjectID:</para>
-		/// <para>The system-managed ID field.</para>
-		/// <para>Shape:</para>
-		/// <para>The geometry field indicating the geographic location of the network analysis object.</para>
-		/// <para>Name:</para>
-		/// <para>The name of the depot. The StartDepotName and EndDepotName fields of the routes record set reference the names you specify here. It is also referenced by the route renewals record set, when used.</para>
-		/// <para>Depot names are not case sensitive and must be nonempty and unique.</para>
-		/// <para>TimeWindowStart1:</para>
-		/// <para>The beginning time of the first time window for the network location. This field can contain a null value; a null value indicates no beginning time.</para>
-		/// <para>Time window fields can contain a time-only value or a date and time value. If a time field has a time-only value (for example, 8:00 a.m.), the date is assumed to be the date specified by the Default Date parameter of the analysis layer. Using date and time values (for example, 7/11/2010 8:00 a.m.) allows you to set time windows that span multiple days.</para>
-		/// <para>The default date is ignored when any time window field includes a date with the time. To avoid an error in this situation, format all time windows in Depots, Routes, Orders, and Breaks to also include the date with the time.</para>
-		/// <para>If you&apos;re using traffic data, the time-of-day fields for the network location always reference the same time zone as the edge on which the network location is located.</para>
-		/// <para>TimeWindowEnd1:</para>
-		/// <para>The ending time of the first time window for the network location. This field can contain a null value; a null value indicates no ending time.</para>
-		/// <para>TimeWindowStart2:</para>
-		/// <para>The beginning time of the second time window for the network location. This field can contain a null value; a null value indicates that there is no second time window.</para>
-		/// <para>If the first time window is null as specified by the TimeWindowStart1 and TimeWindowEnd1 fields, the second time window must also be null.</para>
-		/// <para>If both time windows are nonnull, they can&apos;t overlap. Also, the second time window must occur after the first.</para>
-		/// <para>TimeWindowEnd2:</para>
-		/// <para>The ending time of the second time window for the network location. This field can contain a null value.</para>
-		/// <para>When TimeWindowStart2 and TimeWindowEnd2 are both null, there is no second time window.</para>
-		/// <para>When TimeWindowStart2 is not null but TimeWindowEnd2 is null, there is a second time window that has a starting time but no ending time. This is valid.</para>
-		/// <para>CurbApproach:</para>
-		/// <para>The CurbApproach property specifies the direction a vehicle may arrive at and depart from the network location. There are four choices (their coded values are shown in parentheses):</para>
-		/// <para>Either side of vehicle (0)—The vehicle can approach and depart the network location in either direction. U-turns are allowed. You should choose this setting if your vehicle can make a U-turn at the stop or if it can pull into a driveway or parking lot and turn around.</para>
-		/// <para>Right side of vehicle (1)—When the vehicle approaches and departs the network location, the curb must be on the right side of the vehicle. A U-turn is prohibited.</para>
-		/// <para>Left side of vehicle (2)—When the vehicle approaches and departs the network location, the curb must be on the left side of the vehicle. A U-turn is prohibited.</para>
-		/// <para>No U-Turn (3)—When the vehicle approaches the network location, the curb can be on either side of the vehicle; however, the vehicle must depart without turning around.</para>
-		/// <para>Bearing:</para>
-		/// <para>The direction in which a point is moving. The units are degrees and are measured in a clockwise fashion from true north. This field is used in conjunction with the BearingTol field.</para>
-		/// <para>Bearing data is usually sent automatically from a mobile device that is equipped with a GPS receiver. Try to include bearing data if you are loading an order that is moving, such as a pedestrian or a vehicle.</para>
-		/// <para>Using this field tends to prevent adding locations to the wrong edges, which can occur when a vehicle is near an intersection or an overpass, for example. Bearing also helps Network Analyst determine which side of the street the point is on.</para>
-		/// <para>For more information, see Bearing and BearingTol.</para>
-		/// <para>BearingTol:</para>
-		/// <para>The bearing tolerance value creates a range of acceptable bearing values when locating moving points on an edge using the Bearing field. If the value from the Bearing field is within the range of acceptable values that are generated from the bearing tolerance on an edge, the point can be added as a network location there; otherwise, the closest point on the next-nearest edge is evaluated.</para>
-		/// <para>The units are in degrees, and the default value is 30. Values must be greater than zero and less than 180.</para>
-		/// <para>A value of 30 means that when Network Analyst attempts to add a network location on an edge, a range of acceptable bearing values is generated 15º to either side of the edge (left and right) and in both digitized directions of the edge.</para>
-		/// <para>For more information, see Bearing and BearingTol.</para>
-		/// <para>NavLatency:</para>
-		/// <para>This field is only used in the solve process if Bearing and BearingTol also have values; however, entering a NavLatency value is optional, even when values are present in Bearing and BearingTol. NavLatency indicates how much time is expected to elapse from the moment GPS information is sent from a moving vehicle to a server and the moment the processed route is received by the vehicle&apos;s navigation device. The time units of NavLatency are the same as the units of the cost attribute specified by the Time Attribute parameter.</para>
+		/// <para>站点是指车辆在工作时间开始时离开并在工作时间结束后返回的位置。在求解路径开始时，车辆在站点装货（对于配送）或卸货（对于接收）。在某些情况下，站点还可以作为一个货物补给或货物更新的位置，车辆可以在此处卸货或重新装货，然后继续进行配送和接收。站点具有打开时间和关闭时间，这由硬性时间窗指定。车辆不能在该时间窗以外的时刻到达站点。</para>
+		/// <para>站点要素集具有一个关联的属性表。下面列出并描述了属性表中的字段。</para>
+		/// <para>ObjectID：</para>
+		/// <para>系统管理的 ID 字段。</para>
+		/// <para>Shape：</para>
+		/// <para>指示网络分析对象地理位置的几何字段。</para>
+		/// <para>Name：</para>
+		/// <para>站点的名称。路径记录集的 StartDepotName 和 EndDepotName 字段引用了您在此处指定的名称。使用路径货物补给点记录集时，也会对其进行引用。</para>
+		/// <para>站点名称不区分大小写，但必须非空且唯一。</para>
+		/// <para>TimeWindowStart1：</para>
+		/// <para>网络位置的第一时间窗开始时间。该字段可以包含空值；空值指示没有开始时间。</para>
+		/// <para>时间窗字段可以包含只有时间的值，也可以包含同时具有日期和时间的值。如果时间字段是一个只具有时间的值（例如，8:00 a.m.），则假定日期为分析图层的默认日期参数所指定的日期。使用“日期和时间”值（例如 7/11/2010 8:00 a.m.）允许您设置持续多天的时间窗。</para>
+		/// <para>当任一时间窗字段包含当时的日期时，将忽略默认日期。为避免在此种情况下出现错误，设置站点、路径、停靠点和休息点的所有时间窗的格式以包含当时的日期。</para>
+		/// <para>如果正在使用流量数据，则网络位置的时间字段始终会引用与网络位置所在的边相同的时区。</para>
+		/// <para>TimeWindowEnd1：</para>
+		/// <para>网络位置的第一时间窗结束时间。该字段可以包含空值；空值指示没有结束时间。</para>
+		/// <para>TimeWindowStart2：</para>
+		/// <para>网络位置的第二时间窗开始时间。该字段可以包含空值；空值指示没有第二时间窗。</para>
+		/// <para>如果第一时间窗为空，正如 TimeWindowStart1 和 TimeWindowEnd1 字段所指定的那样，则第二时间窗也必须为空。</para>
+		/// <para>如果两个时间窗都为非空，则二者不可以重叠。而且，第二个时间窗必须在第一个之后出现。</para>
+		/// <para>TimeWindowEnd2：</para>
+		/// <para>网络位置的第二时间窗结束时间。该字段可以包含空值。</para>
+		/// <para>如果 TimeWindowStart2 和 TimeWindowEnd2 均为空，则不存在第二时间窗。</para>
+		/// <para>如果 TimeWindowStart2 不为空，但是 TimeWindowEnd2 为空，则存在具有开始时间但没有结束时间的第二时间窗。这种情况是有效的。</para>
+		/// <para>CurbApproach：</para>
+		/// <para>CurbApproach 属性指定了车辆到达和离开网络位置的方向。有四种选择（其编码值显示在圆括号中）：</para>
+		/// <para>车辆的任意一侧 (0) - 车辆可从两个方向中的任一方向到达和离开网络位置。允许 U 形转弯。如果车辆可在停靠点进行 U 形转弯或在驶入车道或停车场后能够调头，则应该选择该设置。</para>
+		/// <para>车辆的右侧 (1) - 当车辆到达和离开网络位置时，停靠点必须在车辆右侧。禁止 U 形转弯。</para>
+		/// <para>车辆的左侧 (2) - 当车辆到达和离开网络位置时，停靠点必须在车辆左侧。禁止 U 形转弯。</para>
+		/// <para>禁止 U 形转弯 (3) - 当车辆到达网络位置时，停靠点可在车辆的任意一侧；但是，车辆在离开时不得调头。</para>
+		/// <para>Bearing：</para>
+		/// <para>点移动的方向。单位为度，并且从正北方向开始按顺时针方式进行测量。该字段与 BearingTol 字段结合使用。</para>
+		/// <para>方位角数据通常会从配有 GPS 接收器的移动设备自动发送。如果正在加载移动的停靠点（例如行人或车辆），则尝试包括方位角数据。</para>
+		/// <para>使用该字段可以防止将位置添加到错误的边上，例如，车辆刚好在交叉路口或天桥附近时。方位角也可帮助 Network Analyst 确定点在街道的哪一边上。</para>
+		/// <para>有关详细信息，请参阅方位角和 BearingTol。</para>
+		/// <para>BearingTol：</para>
+		/// <para>使用 Bearing 字段在边上定位移动点时，方位角容差值将创建一个可接受方位角值的范围。如果 Bearing 字段中的值在可接受值范围（由边上的方位角容差生成）内，则可以将该点作为网络位置添加在此处，否则，将计算下一个最近边上的最近点。</para>
+		/// <para>单位为度，默认值为 30。值必须大于零且小于 180。</para>
+		/// <para>值为 30 表示，Network Analyst 尝试在边上添加网络位置时，在边的每一侧（左侧和右侧）的两个数字化方向上都将生成一个 15º 的可接受方位角值。</para>
+		/// <para>有关详细信息，请参阅方位角和 BearingTol。</para>
+		/// <para>NavLatency：</para>
+		/// <para>如果 Bearing 和 BearingTol 也具有值，则该字段只在求解过程中使用；但是，即使当 Bearing 和 BearingTol 字段中有值时，NavLatency 值的输入也是可选的。NavLatency 表示 GPS 信息从移动的车辆上发送到服务器以及车辆导航设备接收到处理后路径这两个时刻之间预期要经过的时间。NavLatency 的时间单位与时间属性参数指定的成本属性的单位相同。</para>
 		/// </param>
 		/// <param name="Routes">
 		/// <para>Routes</para>
-		/// <para>The routes that are available for the given vehicle routing problem. A route specifies vehicle and driver characteristics; after solving, it also represents the path between depots and orders.</para>
-		/// <para>A route can have start and end depot service times, a fixed or flexible starting time, time-based operating costs, distance-based operating costs, multiple capacities, various constraints on a driver&apos;s workday, and so on.</para>
-		/// <para>The routes record set has several attributes. The fields in the attribute table are listed and described below.</para>
-		/// <para>Name:</para>
-		/// <para>The name of the route. The name must be unique.</para>
-		/// <para>Network Analyst generates a unique name at solve time if the field value is null. Therefore, entering a value is optional in most cases. However, you must enter a name if your analysis includes breaks, route renewals, route zones, or orders that are preassigned to a route, because the route name is used as a foreign key in these cases. Note that route names are not case sensitive.</para>
-		/// <para>StartDepotName:</para>
-		/// <para>The name of the starting depot for the route. This field is a foreign key to the Name field in Depots.</para>
-		/// <para>If the StartDepotName value is null, the route will begin from the first order assigned. Omitting the start depot is useful when the vehicle&apos;s starting location is unknown or irrelevant to your problem. However, when StartDepotName is null, EndDepotName cannot also be null.</para>
-		/// <para>Virtual start depots are not allowed if orders or depots are in multiple time zones.</para>
-		/// <para>If the route is making deliveries and StartDepotName is null, it is assumed the cargo is loaded on the vehicle at a virtual depot before the route begins. For a route that has no renewal visits, its delivery orders (those with nonzero DeliveryQuantities values in the Orders class) are loaded at the start depot or virtual depot. For a route that has renewal visits, only the delivery orders before the first renewal visit are loaded at the start depot or virtual depot.</para>
-		/// <para>EndDepotName:</para>
-		/// <para>The name of the ending depot for the route. This field is a foreign key to the Name field in the Depots parameter.</para>
-		/// <para>StartDepotServiceTime:</para>
-		/// <para>The service time at the starting depot. This can be used to model the time spent for loading the vehicle. This field can contain a null value; a null value indicates zero service time.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
-		/// <para>The service times at the start and end depots are fixed values (given by the StartDepotServiceTime and EndDepotServiceTime field values) and do not take into account the actual load for a route. For example, the time taken to load a vehicle at the starting depot may depend on the size of the orders. As such, the depot service times could be given values corresponding to a full truckload or an average truckload, or you could make your own time estimate.</para>
-		/// <para>EndDepotServiceTime:</para>
-		/// <para>The service time at the ending depot. This can be used to model the time spent for unloading the vehicle. This field can contain a null value; a null value indicates zero service time.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
-		/// <para>The service times at the start and end depots are fixed values (given by the StartDepotServiceTime and EndDepotServiceTime field values) and do not take into account the actual load for a route. For example, the time taken to load a vehicle at the starting depot may depend on the size of the orders. As such, the depot service times could be given values corresponding to a full truckload or an average truckload, or you could make your own time estimate.</para>
-		/// <para>EarliestStartTime:</para>
-		/// <para>The earliest allowable starting time for the route. This is used by the solver in conjunction with the time window of the starting depot for determining feasible route start times.</para>
-		/// <para>This field can&apos;t contain null values and has a default time-only value of 8:00 a.m.; the default value is interpreted as 8:00 a.m. on the date given by the Default Date parameter (default_date in Python).</para>
-		/// <para>The default date is ignored when any time window field includes a date with the time. To avoid an error in this situation, format all time windows in Depots, Routes, Orders, and Breaks to also include the date with the time.</para>
-		/// <para>When using network datasets with traffic data across multiple time zones, the time zone for EarliestStartTime is the same as the time zone of the edge or junction on which the starting depot is located.</para>
-		/// <para>LatestStartTime:</para>
-		/// <para>The latest allowable starting time for the route. This field can&apos;t contain null values and has a default time-only value of 10:00 a.m; the default value is interpreted as 10:00 a.m. on the date given by the Default Date property of the analysis layer.</para>
-		/// <para>When using network datasets with traffic data across multiple time zones, the time zone for LatestStartTime is the same as the time zone of the edge or junction on which the starting depot is located.</para>
+		/// <para>适用于给定车辆配送问题的路径。路径指定了车辆和驾驶员的特征；求解后，路径还表示站点和停靠点之间的路径。</para>
+		/// <para>路径可以具有开始和结束站点服务时间、固定或灵活的起始时间、基于时间的运行成本、基于距离的运行成本、多个容量、对驾驶员工作时间的各种约束等等。</para>
+		/// <para>路径记录集具有多个属性。下面列出并描述了属性表中的字段。</para>
+		/// <para>Name：</para>
+		/// <para>路径的名称。名称必须唯一。</para>
+		/// <para>如果字段值为空，则 Network Analyst 会在求解时生成唯一的名称。因此，在大多数情况下，可自行选择是否输入值。但是，如果您的分析中包括向路径预分配的休息点、路径货物补给点、按区域配送或停靠点，则您必须输入名称，因为在这些情况下路径名称将用作外键。请注意，路径名称不区分大小写。</para>
+		/// <para>StartDepotName：</para>
+		/// <para>路径的起始站点名称。该字段是 Depots 中 Name 字段的外键。</para>
+		/// <para>如果 StartDepotName 值为空，则路径会将分配的第一个停靠点作为起始点。车辆的起始位置未知或者与您的问题不相关时，可以忽略起始站点。不过，如果 StartDepotName 为空，则 EndDepotName 不能也为空。</para>
+		/// <para>如果停靠点或站点跨多个时区，则不允许使用虚拟起始站点。</para>
+		/// <para>如果路径正在进行配送并且 StartDepotName 为空，则假设在路径开始前，在一个虚拟站点处进行装货。如果路径不具有货物补给点，它的配送停靠点（“停靠点”类中 DeliveryQuantities 值为非零的停靠点）会在起始站点或虚拟站点处进行装货。如果路径具有更新访问，则只有第一个更新访问之前的配送停靠点才会在起始站点或虚拟站点处进行装货。</para>
+		/// <para>EndDepotName：</para>
+		/// <para>路径的终止站点名称。该字段是站点参数中 Name 字段的外键。</para>
+		/// <para>StartDepotServiceTime：</para>
+		/// <para>在起始站点的服务时间。该字段可用于为车辆装货所用的时间建立模型。该字段可以包含空值；空值表示没有服务时间。</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
+		/// <para>起始和结束站点处的服务时间是固定值（由 StartDepotServiceTime 和 EndDepotServiceTime 字段值指定），因此不必考虑路径的实际载荷。例如，在起始站点处装载车辆所花费的时间取决于订单大小。因此，站点服务时间是与货车满载或货车平均装载对应的指定值，或者也可以设置自行估计的时间值。</para>
+		/// <para>EndDepotServiceTime：</para>
+		/// <para>在终止站点的服务时间。该字段可用于为车辆卸货所用的时间建立模型。该字段可以包含空值；空值表示没有服务时间。</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
+		/// <para>起始和结束站点处的服务时间是固定值（由 StartDepotServiceTime 和 EndDepotServiceTime 字段值指定），因此不必考虑路径的实际载荷。例如，在起始站点处装载车辆所花费的时间取决于订单大小。因此，站点服务时间是与货车满载或货车平均装载对应的指定值，或者也可以设置自行估计的时间值。</para>
+		/// <para>EarliestStartTime：</para>
+		/// <para>路径允许的最早开始时间。求解程序通过将该字段与起始站点的时间窗结合使用来确定可行的路径开始时间。</para>
+		/// <para>该字段不能包含空值，其默认值只有时间，为上午 8:00；该默认值被解释为默认日期参数（Python 中的 default_date）所指定日期的上午 8:00。</para>
+		/// <para>当任一时间窗字段包含当时的日期时，将忽略默认日期。为避免在此种情况下出现错误，设置站点、路径、停靠点和休息点的所有时间窗的格式以包含当时的日期。</para>
+		/// <para>将网络数据集与跨越多个时区的流量数据结合使用时，EarliestStartTime 的时区与起始站点所在的边或交汇点的时区相同。</para>
+		/// <para>LatestStartTime：</para>
+		/// <para>路径允许的最晚开始时间。该字段不能包含空值，其默认值只有时间，为上午 10:00；该默认值被解释为分析图层的“默认日期”属性所指定日期的上午 10:00。</para>
+		/// <para>将网络数据集与跨越多个时区的流量数据结合使用时，LatestStartTime 的时区与起始站点所在的边或交汇点的时区相同。</para>
 		/// <para>ArriveDepartDelay</para>
-		/// <para>This field stores the amount of travel time needed to accelerate the vehicle to normal travel speeds, decelerate it to a stop, and move it off and on the network (for example, in and out of parking). By including an ArriveDepartDelay value, the VRP solver is deterred from sending many routes to service physically coincident orders.</para>
-		/// <para>The cost for this property is incurred between visits to noncoincident orders, depots, and route renewals. For example, when a route starts from a depot and visits the first order, the total arrive/depart delay is added to the travel time. The same is true when traveling from the first order to the second order. If the second and third orders are coincident, the ArriveDepartDelay value is not added between them since the vehicle doesn&apos;t need to move. If the route travels to a route renewal, the value is added to the travel time again.</para>
-		/// <para>Although a vehicle needs to slow down and stop for a break and accelerate afterward, the VRP solver cannot add the ArriveDepartDelay value for breaks. This means that if a route leaves an order, stops for a break, and continues to the next order, the arrive/depart delay is added only once, not twice.</para>
-		/// <para>To illustrate, assume there are five coincident orders in a high-rise building, and they are serviced by three different routes. This means three arrive/depart delays would be incurred; that is, three drivers would need to separately find parking places and enter the same building. However, if the orders could be serviced by just one route instead, only one driver would need to park and enter the building—only one arrive/depart delay would be incurred. Since the VRP solver tries to minimize cost, it will try to limit the arrive/depart delays and thus choose the single-route option. (Note that multiple routes may need to be sent when other constraints—such as specialties, time windows, or capacities—require it.)</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
-		/// <para>Capacities:</para>
-		/// <para>The maximum capacity of the vehicle. You can specify capacity in any dimension, such as weight, volume, or quantity. You can even specify multiple dimensions, for example, weight and volume.</para>
-		/// <para>Enter capacities without indicating units. For example, assume your vehicle can carry a maximum of 40,000 pounds; you would enter 40000. You need to remember for future reference that the value is in pounds.</para>
-		/// <para>If you are tracking multiple dimensions, separate the numeric values with a space. For instance, if you are recording both weight and volume and your vehicle can carry a maximum weight of 40,000 pounds and a maximum volume of 2,000 cubic feet, Capacities should be entered as 40000 2000. Again, you need to remember the units. You also need to remember the sequence the values and their corresponding units are entered (pounds followed by cubic feet in this case).</para>
-		/// <para>Remembering the units and the unit sequence is important for a couple of reasons: one, so you can reinterpret the information later; two, so you can properly enter values for the DeliveryQuantities and PickupQuantities fields for Orders. To elaborate on the second point, note that the VRP solver simultaneously refers to Capacities, DeliveryQuantities, and PickupQuantities to make sure that a route doesn&apos;t become overloaded. Since units can&apos;t be entered in the field, Network Analyst can&apos;t make unit conversions, so you need to enter the values for the three fields using the same units and the same unit sequence to ensure that the values are correctly interpreted. If you combine units or change the sequence in any of the three fields, you will get unwanted results without receiving a warning messages. Thus, it is a good idea to set up a unit and unit-sequence standard beforehand and continually refer to it whenever entering values for these three fields.</para>
-		/// <para>An empty string or null value is equivalent to all values being zero. Capacity values can&apos;t be negative.</para>
-		/// <para>If the Capacities string has an insufficient number of values in relation to the DeliveryQuantities or PickupQuantities field for orders, the remaining values are treated as zero.</para>
-		/// <para>The VRP solver only performs a simple Boolean test to determine whether capacities are exceeded. If a route&apos;s capacity value is greater than or equal to the total quantity being carried, the VRP solver will assume the cargo fits in the vehicle. This could be incorrect, depending on the actual shape of the cargo and the vehicle. For example, the VRP solver allows you to fit a 1,000-cubic-foot sphere into a 1,000-cubic-foot truck that is 8 feet wide. In reality, however, since the sphere is 12.6 feet in diameter, it won&apos;t fit in the 8-foot-wide truck.</para>
-		/// <para>FixedCost:</para>
-		/// <para>A fixed monetary cost that is incurred only if the route is used in a solution (that is, it has orders assigned to it). This field can contain null values; a null value indicates zero fixed cost. This cost is part of the total route operating cost.</para>
-		/// <para>CostPerUnitTime:</para>
-		/// <para>The monetary cost incurred—per unit of work time—for the total route duration, including travel times as well as service times and wait times at orders, depots, and breaks. This field can&apos;t contain a null value and has a default value of 1.0.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
-		/// <para>CostPerUnitDistance:</para>
-		/// <para>The monetary cost incurred—per unit of distance traveled—for the route length (total travel distance). This field can contain null values; a null value indicates zero cost.</para>
-		/// <para>The unit for this field value is specified by the Distance Field Units parameter (distance_units for Python).</para>
-		/// <para>OvertimeStartTime:</para>
-		/// <para>The duration of regular work time before overtime computation begins. This field can contain null values; a null value indicates that overtime does not apply.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
-		/// <para>For example, if the driver is to be paid overtime when the total route duration extends beyond eight hours, OvertimeStartTime is specified as 480 (8 hours * 60 minutes/hour), given the Time Field Units parameter is set to Minutes.</para>
-		/// <para>CostPerUnitOvertime:</para>
-		/// <para>The monetary cost incurred per time unit of overtime work. This field can contain null values; a null value indicates that the CostPerUnitOvertime value is the same as the CostPerUnitTime value.</para>
-		/// <para>MaxOrderCount:</para>
-		/// <para>The maximum allowable number of orders on the route. This field can&apos;t contain null values and has a default value of 30.</para>
-		/// <para>MaxTotalTime:</para>
-		/// <para>The maximum allowable route duration. The route duration includes travel times as well as service and wait times at orders, depots, and breaks. This field can contain null values; a null value indicates that there is no constraint on the route duration.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
-		/// <para>MaxTotalTravelTime:</para>
-		/// <para>The maximum allowable travel time for the route. The travel time includes only the time spent driving on the network and does not include service or wait times.</para>
-		/// <para>This field can contain null values; a null value indicates there is no constraint on the maximum allowable travel time. This field value can&apos;t be larger than the MaxTotalTime field value.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
-		/// <para>MaxTotalDistance:</para>
-		/// <para>The maximum allowable travel distance for the route.</para>
-		/// <para>The unit for this field value is specified by the Distance Field Units parameter (distance_units for Python).</para>
-		/// <para>This field can contain null values; a null value indicates that there is no constraint on the maximum allowable travel distance.</para>
-		/// <para>SpecialtyNames:</para>
-		/// <para>A space-separated string containing the names of the specialties supported by the route. A null value indicates that the route does not support any specialties.</para>
-		/// <para>This field is a foreign key to the SpecialtyNames field in the Orders parameter.</para>
-		/// <para>To illustrate what specialties are and how they work, assume a lawn care and tree trimming company has a portion of its orders that requires a bucket truck to trim tall trees. The company would enter BucketTruck in the SpecialtyNames field for these orders to indicate their special need. SpecialtyNames would be left as null for the other orders. Similarly, the company would also enter BucketTruck in the SpecialtyNames field of routes that are driven by trucks with hydraulic booms. It would leave the field null for the other routes. At solve time, the VRP solver assigns orders without special needs to any route, but it only assigns orders that need bucket trucks to routes that have them.</para>
-		/// <para>AssignmentRule:</para>
-		/// <para>This specifies whether or not the route can be used when solving the problem. This field is constrained by a domain of values, and the possible values are the following:</para>
-		/// <para>Include—The route is included in the solve operation. This is the default value.</para>
-		/// <para>Exclude—The route is excluded from the solve operation.</para>
+		/// <para>该字段存储将车辆加速到正常行驶速度、减速到停止状态以及离开和进入网络（例如，出入停车场）所需的行驶时间。通过包含 ArriveDepartDelay 值，可防止 VRP 求解程序发送多条路径来为完全重合的停靠点提供服务。</para>
+		/// <para>该属性的成本是因为对不重合的停靠点、站点和货物补给点进行访问而产生的。例如，如果路径从站点处开始，然后访问第一个停靠点，则总的到达/离开延迟会计入行驶时间。这同样适用于从第一个停靠点行驶到第二个停靠点的情况。如果第二个停靠点与第三个停靠点重合，则不会在它们之间添加 ArriveDepartDelay 值，因为车辆并不需要移动。如果路径行驶到一个货物补给点，则该值会再次计入行驶时间。</para>
+		/// <para>尽管车辆需要减速、停下来休息，然后再加速，但 VRP 求解程序也不能将 ArriveDepartDelay 值计入休息时间。这表示如果路径离开某个停靠点、停下休息，然后继续行驶到下一个停靠点，则仅计入一次到达/离开延迟，而不是两次。</para>
+		/// <para>为了说明，假设在一幢高层建筑物中有五个重合停靠点，而且可通过三条不同的路径来为它们提供服务。这意味着将产生三个到达/离开延迟；也就是说，三名驾驶员需要分别寻找停车位并进入同一栋建筑物。不过，如果可以仅通过一条路径来为这些停靠点提供服务，则只有一名驾驶员需要寻找停车位并进入该建筑物，这样只会产生一个到达/离开延迟。由于 VRP 求解程序会尝试将成本降至最低，所以它将尝试限制到达/离开延迟，因而会选择使用单一路径。（请注意，其他约束（例如，特殊要求、时间窗或容量）可能要求发送多条路径。）</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
+		/// <para>Capacities：</para>
+		/// <para>车辆的最大容量。可以按任何度量单位（如重量、体积或数量）来指定容量。也可以指定多个度量单位，例如，重量和体积。</para>
+		/// <para>输入未指明单位的容量。例如，假定您车辆的最大载重为 40,000 磅；您可输入 40000。为了用作后续参考，您需要记住该值的单位是磅。</para>
+		/// <para>如果您正在追踪的是具有多个维度的对象，请以空格分隔各维度的值。例如，如果您要记录重量和体积，而您的车辆最大载重为 40,000 磅，最大容量为 2,000 立方英尺，则应在 Capacities 中输入 40000 2000。同样地，您需要记住单位。您还需要记住值及其对应单位的输入顺序（在本例中，前者是磅，后者是立方英尺）。</para>
+		/// <para>鉴于以下原因，记住单位和单位顺序非常重要：第一，您可以在稍后重新解释信息；第二，您可以在停靠点的 DeliveryQuantities 和 PickupQuantities 字段中输入正确的值。为了详细描述第二点，请注意 VRP 求解程序会同时引用 Capacities、DeliveryQuantities 和 PickupQuantities，以确保路径不会超载。由于字段中不能输入单位，Network Analyst 不能转换单位，因此您需要以相同的单位和单位顺序在这三个字段中输入值，以确保能正确地解释值。如果在这三个字段的任意字段中使用的单位不同或顺序发生变化，那么您将得到意外结果，但不会收到警告消息。因此，事先设置单位和单位顺序标准，并在这三个字段中输入值时始终参考此标准是一个好办法。</para>
+		/// <para>空字符串或空值相当于所有值均为零。容量值不能为负数。</para>
+		/// <para>如果 Capacities 字符串中值的个数相对于停靠点的 DeliveryQuantities 或 PickupQuantities 字段来说数量不足，则其余的值将被视为零。</para>
+		/// <para>VRP 求解程序仅执行简单的布尔测试来判定是否超出容量。如果路径的容量值大于或等于装载总量，则 VRP 求解程序将假定货物适宜用该车辆装载。这可能并不正确，但具体要取决于货物和车辆的实际形状。例如，VRP 求解程序允许将 1000 立方英尺的球形物装到容积为 1000 立方英尺、宽为 8 英尺的货车中。但实际上由于球形物的直径为 12.6 英尺，所以它无法装到 8 英尺宽的货车中。</para>
+		/// <para>FixedCost：</para>
+		/// <para>仅当解决方案中使用路径（即，路径分配有停靠点）时才产生的固定货币成本。该字段可以包含空值；空值表示没有固定成本。该成本属于路径总运行成本的一部分。</para>
+		/// <para>CostPerUnitTime：</para>
+		/// <para>路径总持续时间（包括行驶时间以及在停靠点、站点和休息点的服务时间和等待时间）中每单位工作时间产生的货币成本。该字段不能包含空值，其默认值为 1.0。</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
+		/// <para>CostPerUnitDistance：</para>
+		/// <para>路径长度（总行驶距离）中每单位行驶距离产生的货币成本。该字段可以包含空值；空值表示没有成本。</para>
+		/// <para>该字段值的单位由距离字段单位参数（Python 的 distance_units）指定。</para>
+		/// <para>OvertimeStartTime：</para>
+		/// <para>开始计算加班时间之前的规定工作时间。该字段可以包含空值；空值表示没有加班时间。</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
+		/// <para>例如，如果路径总持续时间超过八小时的时候要为驾驶员支付加班费，假定时间字段单位参数设置为分钟，则 OvertimeStartTime 将被指定为 480（8 小时 * 60 分钟/小时）。</para>
+		/// <para>CostPerUnitOvertime：</para>
+		/// <para>每单位加班工作时间产生的货币成本。该字段可以包含空值；空值表示 CostPerUnitOvertime 值与 CostPerUnitTime 值相同。</para>
+		/// <para>MaxOrderCount：</para>
+		/// <para>路径上允许的最大停靠点数。该字段不能包含空值，其默认值为 30。</para>
+		/// <para>MaxTotalTime：</para>
+		/// <para>允许的最长路径持续时间。路径持续时间包括行驶时间以及在停靠点、站点和休息点的服务和等待时间。该字段可以包含空值；空值表示对路径持续时间无限制。</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
+		/// <para>MaxTotalTravelTime：</para>
+		/// <para>路径允许的最长行驶时间。行驶时间只包括在网络上行驶时所用的时间，不包括服务或等待时间。</para>
+		/// <para>该字段可以包含空值；空值表示对允许的最长行驶时间无限制。该字段值不能大于 MaxTotalTime 字段值。</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
+		/// <para>MaxTotalDistance：</para>
+		/// <para>路径允许的最长行驶距离。</para>
+		/// <para>该字段值的单位由距离字段单位参数（Python 的 distance_units）指定。</para>
+		/// <para>该字段可以包含空值；空值表示对允许的最长行驶距离无限制。</para>
+		/// <para>SpecialtyNames：</para>
+		/// <para>一个以空格分隔的字符串，其中包含路径所支持的特殊要求的名称。空值表示路径不支持任何特殊要求。</para>
+		/// <para>该字段是停靠点参数中 SpecialtyNames 字段的外键。</para>
+		/// <para>为了说明什么是特殊要求及其工作方式，假设草坪护理及树木修剪公司都有一部分停靠点需要使用斗式铲车来修剪所有树木。公司将在 SpecialtyNames 字段中为这些停靠点输入 BucketTruck 来表示其特殊要求。对于其他停靠点，SpecialtyNames 将留为空值。同样，公司也可以在带液压吊杆的铲车路径的 SpecialtyNames 字段中输入 BucketTruck。对于其他路径该字段将留为空值。求解时，VRP 求解程序会将无任何特殊要求的停靠点分配给任意路径，而将需要斗式铲车的停靠点分配给有斗式铲车的路径。</para>
+		/// <para>AssignmentRule：</para>
+		/// <para>该字段指定解决问题时是否可以使用路径。该字段受值的属性域约束，可能的值如下：</para>
+		/// <para>Include - 路径包括在求解操作中。这是默认值。</para>
+		/// <para>Exclude - 路径被排除在求解操作之外。</para>
 		/// </param>
 		/// <param name="TimeUnits">
 		/// <para>Time Field Units</para>
-		/// <para>Specifies the time units for all time-based field values in the analysis.</para>
-		/// <para>Seconds—Seconds</para>
-		/// <para>Minutes—Minutes</para>
-		/// <para>Hours—Hours</para>
-		/// <para>Days—Days</para>
-		/// <para>Many features and records in a VRP analysis have fields for storing time values, such as ServiceTime for orders and CostPerUnitTime for routes. To minimize data entry requirements, these field values don&apos;t include units. Instead, all distance-based field values must be entered in the same units, and this parameter is used to specify the units of those values.</para>
-		/// <para>Note that output time-based fields use the same units specified by this parameter.</para>
-		/// <para>This time unit doesn&apos;t need to match the time unit of the network Time Attribute parameter (time_attribute in Python).</para>
+		/// <para>指定分析中所有基于时间的字段值的时间单位。</para>
+		/// <para>秒—秒</para>
+		/// <para>分钟—分钟</para>
+		/// <para>小时—小时</para>
+		/// <para>天—天</para>
+		/// <para>VRP 分析中的许多要素和记录都具有用于存储时间值的字段，例如用于停靠点的 ServiceTime 和用于路径的 CostPerUnitTime。为了最大程度减少数据输入的要求，这些字段值不包含单位。相反，所有基于距离的字段值都必须以相同单位输入，而此参数用于指定这些值的单位。</para>
+		/// <para>注意，基于时间的输出字段使用此参数指定的相同单位。</para>
+		/// <para>此时间单位无需与网络时间属性参数（Python 中的 time_attribute）的时间单位相匹配。</para>
 		/// <para><see cref="TimeUnitsEnum"/></para>
 		/// </param>
 		/// <param name="DistanceUnits">
 		/// <para>Distance Field Units</para>
-		/// <para>Specifies the distance units for all distance-based field values in the analysis.</para>
-		/// <para>Miles—Miles</para>
-		/// <para>Kilometers—Kilometers</para>
-		/// <para>Feet—Feet</para>
-		/// <para>Yards—Yards</para>
-		/// <para>Meters—Meters</para>
-		/// <para>Nautical Miles—Nautical miles</para>
-		/// <para>Many features and records in a VRP analysis have fields for storing distance values, such as MaxTotalDistance and CostPerUnitDistance for routes. To minimize data entry requirements, these field values don&apos;t include units. Instead, all distance-based field values must be entered in the same units, and this parameter is used to specify the units of those values.</para>
-		/// <para>Note that output distance-based fields use the same units specified by this parameter.</para>
-		/// <para>This distance unit doesn&apos;t need to match the distance unit of the network Distance Attribute (distance attribute in Python).</para>
+		/// <para>指定分析中所有基于距离的字段值的距离单位。</para>
+		/// <para>英里—英里</para>
+		/// <para>千米—千米</para>
+		/// <para>英尺—英尺</para>
+		/// <para>码—码</para>
+		/// <para>米—米</para>
+		/// <para>海里—海里</para>
+		/// <para>VRP 分析中许多要素和记录都有用于存储距离值的字段，例如路径的 MaxTotalDistance 和 CostPerUnitDistance。为了最大程度减少数据输入的要求，这些字段值不包含单位。相反，所有基于距离的字段值都必须以相同单位输入，而此参数用于指定这些值的单位。</para>
+		/// <para>注意，基于距离的输出字段使用此参数指定的相同单位。</para>
+		/// <para>此距离单位无需与网络距离属性参数（Python 中的 distance attribute）的距离单位相匹配。</para>
 		/// <para><see cref="DistanceUnitsEnum"/></para>
 		/// </param>
 		/// <param name="NetworkDataset">
 		/// <para>Network Dataset</para>
-		/// <para>The network dataset on which the vehicle routing problem analysis will be performed. The network dataset must have a time-based cost attribute, since the VRP solver minimizes time.</para>
+		/// <para>将对其执行车辆配送问题分析的网络数据集。由于 VRP 求解程序要尽量缩短配送时间，因此网络数据集必须具有基于时间的成本属性。</para>
 		/// </param>
 		/// <param name="OutputWorkspaceLocation">
 		/// <para>Output Geodatabase Workspace</para>
-		/// <para>The file geodatabase or in-memory workspace in which the output feature classes will be created. This workspace must already exist. The default output workspace is in memory.</para>
+		/// <para>将创建输出要素类的文件地理数据库或内存工作空间。此工作空间必须已经存在。默认的输出工作空间为内存。</para>
 		/// </param>
 		/// <param name="OutputUnassignedStopsName">
 		/// <para>Output Unassigned Stops Name</para>
-		/// <para>The name of the output feature class that will contain any unreachable depots or unassigned orders.</para>
+		/// <para>包含任何无法到达站点或未分配停靠点的输出要素类的名称。</para>
 		/// </param>
 		/// <param name="OutputStopsName">
 		/// <para>Output Stops Name</para>
-		/// <para>The name of the feature class that will contain the stops visited by routes. This feature class includes stops at depots, orders, and breaks.</para>
+		/// <para>包含了路径所访问的停靠点的要素类的名称。此要素类包含在站点、停靠点及休息点的停靠。</para>
 		/// </param>
 		/// <param name="OutputRoutesName">
 		/// <para>Output Routes Name</para>
-		/// <para>The name of the feature class that will contain the routes of the analysis.</para>
+		/// <para>包含了分析的路径的要素类的名称。</para>
 		/// </param>
 		/// <param name="OutputDirectionsName">
 		/// <para>Output Directions Name</para>
-		/// <para>The name of the feature class that will contain the directions for the routes.</para>
+		/// <para>包含了路径方向的要素类的名称。</para>
 		/// </param>
 		public SolveVehicleRoutingProblem(object Orders, object Depots, object Routes, object TimeUnits, object DistanceUnits, object NetworkDataset, object OutputWorkspaceLocation, object OutputUnassignedStopsName, object OutputStopsName, object OutputRoutesName, object OutputDirectionsName)
 		{
@@ -215,9 +216,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Solve Vehicle Routing Problem</para>
+		/// <para>Tool Display Name : 求解车辆配送问题</para>
 		/// </summary>
-		public override string DisplayName() => "Solve Vehicle Routing Problem";
+		public override string DisplayName() => "求解车辆配送问题";
 
 		/// <summary>
 		/// <para>Tool Name : SolveVehicleRoutingProblem</para>
@@ -251,7 +252,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Orders</para>
-		/// <para>In the case of an exchange visit, an order can have both delivery and pickup quantities.</para>
+		/// <para>在交互访问的情况下，停靠点可同时具有配送量和接收量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -259,48 +260,48 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Depots</para>
-		/// <para>A depot is a location that a vehicle departs from at the beginning of the workday and returns to at the end of the workday. Vehicles are loaded (for deliveries) or unloaded (for pickups) at depots at the start of the route. In some cases, a depot can also act as a renewal location, whereby the vehicle can unload or reload and continue performing deliveries and pickups. A depot has open and close times, as specified by a hard time window. Vehicles can&apos;t arrive at a depot outside of this time window.</para>
-		/// <para>The depots feature set has an associated attribute table. The fields in the attribute table are listed and described below.</para>
-		/// <para>ObjectID:</para>
-		/// <para>The system-managed ID field.</para>
-		/// <para>Shape:</para>
-		/// <para>The geometry field indicating the geographic location of the network analysis object.</para>
-		/// <para>Name:</para>
-		/// <para>The name of the depot. The StartDepotName and EndDepotName fields of the routes record set reference the names you specify here. It is also referenced by the route renewals record set, when used.</para>
-		/// <para>Depot names are not case sensitive and must be nonempty and unique.</para>
-		/// <para>TimeWindowStart1:</para>
-		/// <para>The beginning time of the first time window for the network location. This field can contain a null value; a null value indicates no beginning time.</para>
-		/// <para>Time window fields can contain a time-only value or a date and time value. If a time field has a time-only value (for example, 8:00 a.m.), the date is assumed to be the date specified by the Default Date parameter of the analysis layer. Using date and time values (for example, 7/11/2010 8:00 a.m.) allows you to set time windows that span multiple days.</para>
-		/// <para>The default date is ignored when any time window field includes a date with the time. To avoid an error in this situation, format all time windows in Depots, Routes, Orders, and Breaks to also include the date with the time.</para>
-		/// <para>If you&apos;re using traffic data, the time-of-day fields for the network location always reference the same time zone as the edge on which the network location is located.</para>
-		/// <para>TimeWindowEnd1:</para>
-		/// <para>The ending time of the first time window for the network location. This field can contain a null value; a null value indicates no ending time.</para>
-		/// <para>TimeWindowStart2:</para>
-		/// <para>The beginning time of the second time window for the network location. This field can contain a null value; a null value indicates that there is no second time window.</para>
-		/// <para>If the first time window is null as specified by the TimeWindowStart1 and TimeWindowEnd1 fields, the second time window must also be null.</para>
-		/// <para>If both time windows are nonnull, they can&apos;t overlap. Also, the second time window must occur after the first.</para>
-		/// <para>TimeWindowEnd2:</para>
-		/// <para>The ending time of the second time window for the network location. This field can contain a null value.</para>
-		/// <para>When TimeWindowStart2 and TimeWindowEnd2 are both null, there is no second time window.</para>
-		/// <para>When TimeWindowStart2 is not null but TimeWindowEnd2 is null, there is a second time window that has a starting time but no ending time. This is valid.</para>
-		/// <para>CurbApproach:</para>
-		/// <para>The CurbApproach property specifies the direction a vehicle may arrive at and depart from the network location. There are four choices (their coded values are shown in parentheses):</para>
-		/// <para>Either side of vehicle (0)—The vehicle can approach and depart the network location in either direction. U-turns are allowed. You should choose this setting if your vehicle can make a U-turn at the stop or if it can pull into a driveway or parking lot and turn around.</para>
-		/// <para>Right side of vehicle (1)—When the vehicle approaches and departs the network location, the curb must be on the right side of the vehicle. A U-turn is prohibited.</para>
-		/// <para>Left side of vehicle (2)—When the vehicle approaches and departs the network location, the curb must be on the left side of the vehicle. A U-turn is prohibited.</para>
-		/// <para>No U-Turn (3)—When the vehicle approaches the network location, the curb can be on either side of the vehicle; however, the vehicle must depart without turning around.</para>
-		/// <para>Bearing:</para>
-		/// <para>The direction in which a point is moving. The units are degrees and are measured in a clockwise fashion from true north. This field is used in conjunction with the BearingTol field.</para>
-		/// <para>Bearing data is usually sent automatically from a mobile device that is equipped with a GPS receiver. Try to include bearing data if you are loading an order that is moving, such as a pedestrian or a vehicle.</para>
-		/// <para>Using this field tends to prevent adding locations to the wrong edges, which can occur when a vehicle is near an intersection or an overpass, for example. Bearing also helps Network Analyst determine which side of the street the point is on.</para>
-		/// <para>For more information, see Bearing and BearingTol.</para>
-		/// <para>BearingTol:</para>
-		/// <para>The bearing tolerance value creates a range of acceptable bearing values when locating moving points on an edge using the Bearing field. If the value from the Bearing field is within the range of acceptable values that are generated from the bearing tolerance on an edge, the point can be added as a network location there; otherwise, the closest point on the next-nearest edge is evaluated.</para>
-		/// <para>The units are in degrees, and the default value is 30. Values must be greater than zero and less than 180.</para>
-		/// <para>A value of 30 means that when Network Analyst attempts to add a network location on an edge, a range of acceptable bearing values is generated 15º to either side of the edge (left and right) and in both digitized directions of the edge.</para>
-		/// <para>For more information, see Bearing and BearingTol.</para>
-		/// <para>NavLatency:</para>
-		/// <para>This field is only used in the solve process if Bearing and BearingTol also have values; however, entering a NavLatency value is optional, even when values are present in Bearing and BearingTol. NavLatency indicates how much time is expected to elapse from the moment GPS information is sent from a moving vehicle to a server and the moment the processed route is received by the vehicle&apos;s navigation device. The time units of NavLatency are the same as the units of the cost attribute specified by the Time Attribute parameter.</para>
+		/// <para>站点是指车辆在工作时间开始时离开并在工作时间结束后返回的位置。在求解路径开始时，车辆在站点装货（对于配送）或卸货（对于接收）。在某些情况下，站点还可以作为一个货物补给或货物更新的位置，车辆可以在此处卸货或重新装货，然后继续进行配送和接收。站点具有打开时间和关闭时间，这由硬性时间窗指定。车辆不能在该时间窗以外的时刻到达站点。</para>
+		/// <para>站点要素集具有一个关联的属性表。下面列出并描述了属性表中的字段。</para>
+		/// <para>ObjectID：</para>
+		/// <para>系统管理的 ID 字段。</para>
+		/// <para>Shape：</para>
+		/// <para>指示网络分析对象地理位置的几何字段。</para>
+		/// <para>Name：</para>
+		/// <para>站点的名称。路径记录集的 StartDepotName 和 EndDepotName 字段引用了您在此处指定的名称。使用路径货物补给点记录集时，也会对其进行引用。</para>
+		/// <para>站点名称不区分大小写，但必须非空且唯一。</para>
+		/// <para>TimeWindowStart1：</para>
+		/// <para>网络位置的第一时间窗开始时间。该字段可以包含空值；空值指示没有开始时间。</para>
+		/// <para>时间窗字段可以包含只有时间的值，也可以包含同时具有日期和时间的值。如果时间字段是一个只具有时间的值（例如，8:00 a.m.），则假定日期为分析图层的默认日期参数所指定的日期。使用“日期和时间”值（例如 7/11/2010 8:00 a.m.）允许您设置持续多天的时间窗。</para>
+		/// <para>当任一时间窗字段包含当时的日期时，将忽略默认日期。为避免在此种情况下出现错误，设置站点、路径、停靠点和休息点的所有时间窗的格式以包含当时的日期。</para>
+		/// <para>如果正在使用流量数据，则网络位置的时间字段始终会引用与网络位置所在的边相同的时区。</para>
+		/// <para>TimeWindowEnd1：</para>
+		/// <para>网络位置的第一时间窗结束时间。该字段可以包含空值；空值指示没有结束时间。</para>
+		/// <para>TimeWindowStart2：</para>
+		/// <para>网络位置的第二时间窗开始时间。该字段可以包含空值；空值指示没有第二时间窗。</para>
+		/// <para>如果第一时间窗为空，正如 TimeWindowStart1 和 TimeWindowEnd1 字段所指定的那样，则第二时间窗也必须为空。</para>
+		/// <para>如果两个时间窗都为非空，则二者不可以重叠。而且，第二个时间窗必须在第一个之后出现。</para>
+		/// <para>TimeWindowEnd2：</para>
+		/// <para>网络位置的第二时间窗结束时间。该字段可以包含空值。</para>
+		/// <para>如果 TimeWindowStart2 和 TimeWindowEnd2 均为空，则不存在第二时间窗。</para>
+		/// <para>如果 TimeWindowStart2 不为空，但是 TimeWindowEnd2 为空，则存在具有开始时间但没有结束时间的第二时间窗。这种情况是有效的。</para>
+		/// <para>CurbApproach：</para>
+		/// <para>CurbApproach 属性指定了车辆到达和离开网络位置的方向。有四种选择（其编码值显示在圆括号中）：</para>
+		/// <para>车辆的任意一侧 (0) - 车辆可从两个方向中的任一方向到达和离开网络位置。允许 U 形转弯。如果车辆可在停靠点进行 U 形转弯或在驶入车道或停车场后能够调头，则应该选择该设置。</para>
+		/// <para>车辆的右侧 (1) - 当车辆到达和离开网络位置时，停靠点必须在车辆右侧。禁止 U 形转弯。</para>
+		/// <para>车辆的左侧 (2) - 当车辆到达和离开网络位置时，停靠点必须在车辆左侧。禁止 U 形转弯。</para>
+		/// <para>禁止 U 形转弯 (3) - 当车辆到达网络位置时，停靠点可在车辆的任意一侧；但是，车辆在离开时不得调头。</para>
+		/// <para>Bearing：</para>
+		/// <para>点移动的方向。单位为度，并且从正北方向开始按顺时针方式进行测量。该字段与 BearingTol 字段结合使用。</para>
+		/// <para>方位角数据通常会从配有 GPS 接收器的移动设备自动发送。如果正在加载移动的停靠点（例如行人或车辆），则尝试包括方位角数据。</para>
+		/// <para>使用该字段可以防止将位置添加到错误的边上，例如，车辆刚好在交叉路口或天桥附近时。方位角也可帮助 Network Analyst 确定点在街道的哪一边上。</para>
+		/// <para>有关详细信息，请参阅方位角和 BearingTol。</para>
+		/// <para>BearingTol：</para>
+		/// <para>使用 Bearing 字段在边上定位移动点时，方位角容差值将创建一个可接受方位角值的范围。如果 Bearing 字段中的值在可接受值范围（由边上的方位角容差生成）内，则可以将该点作为网络位置添加在此处，否则，将计算下一个最近边上的最近点。</para>
+		/// <para>单位为度，默认值为 30。值必须大于零且小于 180。</para>
+		/// <para>值为 30 表示，Network Analyst 尝试在边上添加网络位置时，在边的每一侧（左侧和右侧）的两个数字化方向上都将生成一个 15º 的可接受方位角值。</para>
+		/// <para>有关详细信息，请参阅方位角和 BearingTol。</para>
+		/// <para>NavLatency：</para>
+		/// <para>如果 Bearing 和 BearingTol 也具有值，则该字段只在求解过程中使用；但是，即使当 Bearing 和 BearingTol 字段中有值时，NavLatency 值的输入也是可选的。NavLatency 表示 GPS 信息从移动的车辆上发送到服务器以及车辆导航设备接收到处理后路径这两个时刻之间预期要经过的时间。NavLatency 的时间单位与时间属性参数指定的成本属性的单位相同。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -308,84 +309,84 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Routes</para>
-		/// <para>The routes that are available for the given vehicle routing problem. A route specifies vehicle and driver characteristics; after solving, it also represents the path between depots and orders.</para>
-		/// <para>A route can have start and end depot service times, a fixed or flexible starting time, time-based operating costs, distance-based operating costs, multiple capacities, various constraints on a driver&apos;s workday, and so on.</para>
-		/// <para>The routes record set has several attributes. The fields in the attribute table are listed and described below.</para>
-		/// <para>Name:</para>
-		/// <para>The name of the route. The name must be unique.</para>
-		/// <para>Network Analyst generates a unique name at solve time if the field value is null. Therefore, entering a value is optional in most cases. However, you must enter a name if your analysis includes breaks, route renewals, route zones, or orders that are preassigned to a route, because the route name is used as a foreign key in these cases. Note that route names are not case sensitive.</para>
-		/// <para>StartDepotName:</para>
-		/// <para>The name of the starting depot for the route. This field is a foreign key to the Name field in Depots.</para>
-		/// <para>If the StartDepotName value is null, the route will begin from the first order assigned. Omitting the start depot is useful when the vehicle&apos;s starting location is unknown or irrelevant to your problem. However, when StartDepotName is null, EndDepotName cannot also be null.</para>
-		/// <para>Virtual start depots are not allowed if orders or depots are in multiple time zones.</para>
-		/// <para>If the route is making deliveries and StartDepotName is null, it is assumed the cargo is loaded on the vehicle at a virtual depot before the route begins. For a route that has no renewal visits, its delivery orders (those with nonzero DeliveryQuantities values in the Orders class) are loaded at the start depot or virtual depot. For a route that has renewal visits, only the delivery orders before the first renewal visit are loaded at the start depot or virtual depot.</para>
-		/// <para>EndDepotName:</para>
-		/// <para>The name of the ending depot for the route. This field is a foreign key to the Name field in the Depots parameter.</para>
-		/// <para>StartDepotServiceTime:</para>
-		/// <para>The service time at the starting depot. This can be used to model the time spent for loading the vehicle. This field can contain a null value; a null value indicates zero service time.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
-		/// <para>The service times at the start and end depots are fixed values (given by the StartDepotServiceTime and EndDepotServiceTime field values) and do not take into account the actual load for a route. For example, the time taken to load a vehicle at the starting depot may depend on the size of the orders. As such, the depot service times could be given values corresponding to a full truckload or an average truckload, or you could make your own time estimate.</para>
-		/// <para>EndDepotServiceTime:</para>
-		/// <para>The service time at the ending depot. This can be used to model the time spent for unloading the vehicle. This field can contain a null value; a null value indicates zero service time.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
-		/// <para>The service times at the start and end depots are fixed values (given by the StartDepotServiceTime and EndDepotServiceTime field values) and do not take into account the actual load for a route. For example, the time taken to load a vehicle at the starting depot may depend on the size of the orders. As such, the depot service times could be given values corresponding to a full truckload or an average truckload, or you could make your own time estimate.</para>
-		/// <para>EarliestStartTime:</para>
-		/// <para>The earliest allowable starting time for the route. This is used by the solver in conjunction with the time window of the starting depot for determining feasible route start times.</para>
-		/// <para>This field can&apos;t contain null values and has a default time-only value of 8:00 a.m.; the default value is interpreted as 8:00 a.m. on the date given by the Default Date parameter (default_date in Python).</para>
-		/// <para>The default date is ignored when any time window field includes a date with the time. To avoid an error in this situation, format all time windows in Depots, Routes, Orders, and Breaks to also include the date with the time.</para>
-		/// <para>When using network datasets with traffic data across multiple time zones, the time zone for EarliestStartTime is the same as the time zone of the edge or junction on which the starting depot is located.</para>
-		/// <para>LatestStartTime:</para>
-		/// <para>The latest allowable starting time for the route. This field can&apos;t contain null values and has a default time-only value of 10:00 a.m; the default value is interpreted as 10:00 a.m. on the date given by the Default Date property of the analysis layer.</para>
-		/// <para>When using network datasets with traffic data across multiple time zones, the time zone for LatestStartTime is the same as the time zone of the edge or junction on which the starting depot is located.</para>
+		/// <para>适用于给定车辆配送问题的路径。路径指定了车辆和驾驶员的特征；求解后，路径还表示站点和停靠点之间的路径。</para>
+		/// <para>路径可以具有开始和结束站点服务时间、固定或灵活的起始时间、基于时间的运行成本、基于距离的运行成本、多个容量、对驾驶员工作时间的各种约束等等。</para>
+		/// <para>路径记录集具有多个属性。下面列出并描述了属性表中的字段。</para>
+		/// <para>Name：</para>
+		/// <para>路径的名称。名称必须唯一。</para>
+		/// <para>如果字段值为空，则 Network Analyst 会在求解时生成唯一的名称。因此，在大多数情况下，可自行选择是否输入值。但是，如果您的分析中包括向路径预分配的休息点、路径货物补给点、按区域配送或停靠点，则您必须输入名称，因为在这些情况下路径名称将用作外键。请注意，路径名称不区分大小写。</para>
+		/// <para>StartDepotName：</para>
+		/// <para>路径的起始站点名称。该字段是 Depots 中 Name 字段的外键。</para>
+		/// <para>如果 StartDepotName 值为空，则路径会将分配的第一个停靠点作为起始点。车辆的起始位置未知或者与您的问题不相关时，可以忽略起始站点。不过，如果 StartDepotName 为空，则 EndDepotName 不能也为空。</para>
+		/// <para>如果停靠点或站点跨多个时区，则不允许使用虚拟起始站点。</para>
+		/// <para>如果路径正在进行配送并且 StartDepotName 为空，则假设在路径开始前，在一个虚拟站点处进行装货。如果路径不具有货物补给点，它的配送停靠点（“停靠点”类中 DeliveryQuantities 值为非零的停靠点）会在起始站点或虚拟站点处进行装货。如果路径具有更新访问，则只有第一个更新访问之前的配送停靠点才会在起始站点或虚拟站点处进行装货。</para>
+		/// <para>EndDepotName：</para>
+		/// <para>路径的终止站点名称。该字段是站点参数中 Name 字段的外键。</para>
+		/// <para>StartDepotServiceTime：</para>
+		/// <para>在起始站点的服务时间。该字段可用于为车辆装货所用的时间建立模型。该字段可以包含空值；空值表示没有服务时间。</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
+		/// <para>起始和结束站点处的服务时间是固定值（由 StartDepotServiceTime 和 EndDepotServiceTime 字段值指定），因此不必考虑路径的实际载荷。例如，在起始站点处装载车辆所花费的时间取决于订单大小。因此，站点服务时间是与货车满载或货车平均装载对应的指定值，或者也可以设置自行估计的时间值。</para>
+		/// <para>EndDepotServiceTime：</para>
+		/// <para>在终止站点的服务时间。该字段可用于为车辆卸货所用的时间建立模型。该字段可以包含空值；空值表示没有服务时间。</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
+		/// <para>起始和结束站点处的服务时间是固定值（由 StartDepotServiceTime 和 EndDepotServiceTime 字段值指定），因此不必考虑路径的实际载荷。例如，在起始站点处装载车辆所花费的时间取决于订单大小。因此，站点服务时间是与货车满载或货车平均装载对应的指定值，或者也可以设置自行估计的时间值。</para>
+		/// <para>EarliestStartTime：</para>
+		/// <para>路径允许的最早开始时间。求解程序通过将该字段与起始站点的时间窗结合使用来确定可行的路径开始时间。</para>
+		/// <para>该字段不能包含空值，其默认值只有时间，为上午 8:00；该默认值被解释为默认日期参数（Python 中的 default_date）所指定日期的上午 8:00。</para>
+		/// <para>当任一时间窗字段包含当时的日期时，将忽略默认日期。为避免在此种情况下出现错误，设置站点、路径、停靠点和休息点的所有时间窗的格式以包含当时的日期。</para>
+		/// <para>将网络数据集与跨越多个时区的流量数据结合使用时，EarliestStartTime 的时区与起始站点所在的边或交汇点的时区相同。</para>
+		/// <para>LatestStartTime：</para>
+		/// <para>路径允许的最晚开始时间。该字段不能包含空值，其默认值只有时间，为上午 10:00；该默认值被解释为分析图层的“默认日期”属性所指定日期的上午 10:00。</para>
+		/// <para>将网络数据集与跨越多个时区的流量数据结合使用时，LatestStartTime 的时区与起始站点所在的边或交汇点的时区相同。</para>
 		/// <para>ArriveDepartDelay</para>
-		/// <para>This field stores the amount of travel time needed to accelerate the vehicle to normal travel speeds, decelerate it to a stop, and move it off and on the network (for example, in and out of parking). By including an ArriveDepartDelay value, the VRP solver is deterred from sending many routes to service physically coincident orders.</para>
-		/// <para>The cost for this property is incurred between visits to noncoincident orders, depots, and route renewals. For example, when a route starts from a depot and visits the first order, the total arrive/depart delay is added to the travel time. The same is true when traveling from the first order to the second order. If the second and third orders are coincident, the ArriveDepartDelay value is not added between them since the vehicle doesn&apos;t need to move. If the route travels to a route renewal, the value is added to the travel time again.</para>
-		/// <para>Although a vehicle needs to slow down and stop for a break and accelerate afterward, the VRP solver cannot add the ArriveDepartDelay value for breaks. This means that if a route leaves an order, stops for a break, and continues to the next order, the arrive/depart delay is added only once, not twice.</para>
-		/// <para>To illustrate, assume there are five coincident orders in a high-rise building, and they are serviced by three different routes. This means three arrive/depart delays would be incurred; that is, three drivers would need to separately find parking places and enter the same building. However, if the orders could be serviced by just one route instead, only one driver would need to park and enter the building—only one arrive/depart delay would be incurred. Since the VRP solver tries to minimize cost, it will try to limit the arrive/depart delays and thus choose the single-route option. (Note that multiple routes may need to be sent when other constraints—such as specialties, time windows, or capacities—require it.)</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
-		/// <para>Capacities:</para>
-		/// <para>The maximum capacity of the vehicle. You can specify capacity in any dimension, such as weight, volume, or quantity. You can even specify multiple dimensions, for example, weight and volume.</para>
-		/// <para>Enter capacities without indicating units. For example, assume your vehicle can carry a maximum of 40,000 pounds; you would enter 40000. You need to remember for future reference that the value is in pounds.</para>
-		/// <para>If you are tracking multiple dimensions, separate the numeric values with a space. For instance, if you are recording both weight and volume and your vehicle can carry a maximum weight of 40,000 pounds and a maximum volume of 2,000 cubic feet, Capacities should be entered as 40000 2000. Again, you need to remember the units. You also need to remember the sequence the values and their corresponding units are entered (pounds followed by cubic feet in this case).</para>
-		/// <para>Remembering the units and the unit sequence is important for a couple of reasons: one, so you can reinterpret the information later; two, so you can properly enter values for the DeliveryQuantities and PickupQuantities fields for Orders. To elaborate on the second point, note that the VRP solver simultaneously refers to Capacities, DeliveryQuantities, and PickupQuantities to make sure that a route doesn&apos;t become overloaded. Since units can&apos;t be entered in the field, Network Analyst can&apos;t make unit conversions, so you need to enter the values for the three fields using the same units and the same unit sequence to ensure that the values are correctly interpreted. If you combine units or change the sequence in any of the three fields, you will get unwanted results without receiving a warning messages. Thus, it is a good idea to set up a unit and unit-sequence standard beforehand and continually refer to it whenever entering values for these three fields.</para>
-		/// <para>An empty string or null value is equivalent to all values being zero. Capacity values can&apos;t be negative.</para>
-		/// <para>If the Capacities string has an insufficient number of values in relation to the DeliveryQuantities or PickupQuantities field for orders, the remaining values are treated as zero.</para>
-		/// <para>The VRP solver only performs a simple Boolean test to determine whether capacities are exceeded. If a route&apos;s capacity value is greater than or equal to the total quantity being carried, the VRP solver will assume the cargo fits in the vehicle. This could be incorrect, depending on the actual shape of the cargo and the vehicle. For example, the VRP solver allows you to fit a 1,000-cubic-foot sphere into a 1,000-cubic-foot truck that is 8 feet wide. In reality, however, since the sphere is 12.6 feet in diameter, it won&apos;t fit in the 8-foot-wide truck.</para>
-		/// <para>FixedCost:</para>
-		/// <para>A fixed monetary cost that is incurred only if the route is used in a solution (that is, it has orders assigned to it). This field can contain null values; a null value indicates zero fixed cost. This cost is part of the total route operating cost.</para>
-		/// <para>CostPerUnitTime:</para>
-		/// <para>The monetary cost incurred—per unit of work time—for the total route duration, including travel times as well as service times and wait times at orders, depots, and breaks. This field can&apos;t contain a null value and has a default value of 1.0.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
-		/// <para>CostPerUnitDistance:</para>
-		/// <para>The monetary cost incurred—per unit of distance traveled—for the route length (total travel distance). This field can contain null values; a null value indicates zero cost.</para>
-		/// <para>The unit for this field value is specified by the Distance Field Units parameter (distance_units for Python).</para>
-		/// <para>OvertimeStartTime:</para>
-		/// <para>The duration of regular work time before overtime computation begins. This field can contain null values; a null value indicates that overtime does not apply.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
-		/// <para>For example, if the driver is to be paid overtime when the total route duration extends beyond eight hours, OvertimeStartTime is specified as 480 (8 hours * 60 minutes/hour), given the Time Field Units parameter is set to Minutes.</para>
-		/// <para>CostPerUnitOvertime:</para>
-		/// <para>The monetary cost incurred per time unit of overtime work. This field can contain null values; a null value indicates that the CostPerUnitOvertime value is the same as the CostPerUnitTime value.</para>
-		/// <para>MaxOrderCount:</para>
-		/// <para>The maximum allowable number of orders on the route. This field can&apos;t contain null values and has a default value of 30.</para>
-		/// <para>MaxTotalTime:</para>
-		/// <para>The maximum allowable route duration. The route duration includes travel times as well as service and wait times at orders, depots, and breaks. This field can contain null values; a null value indicates that there is no constraint on the route duration.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
-		/// <para>MaxTotalTravelTime:</para>
-		/// <para>The maximum allowable travel time for the route. The travel time includes only the time spent driving on the network and does not include service or wait times.</para>
-		/// <para>This field can contain null values; a null value indicates there is no constraint on the maximum allowable travel time. This field value can&apos;t be larger than the MaxTotalTime field value.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
-		/// <para>MaxTotalDistance:</para>
-		/// <para>The maximum allowable travel distance for the route.</para>
-		/// <para>The unit for this field value is specified by the Distance Field Units parameter (distance_units for Python).</para>
-		/// <para>This field can contain null values; a null value indicates that there is no constraint on the maximum allowable travel distance.</para>
-		/// <para>SpecialtyNames:</para>
-		/// <para>A space-separated string containing the names of the specialties supported by the route. A null value indicates that the route does not support any specialties.</para>
-		/// <para>This field is a foreign key to the SpecialtyNames field in the Orders parameter.</para>
-		/// <para>To illustrate what specialties are and how they work, assume a lawn care and tree trimming company has a portion of its orders that requires a bucket truck to trim tall trees. The company would enter BucketTruck in the SpecialtyNames field for these orders to indicate their special need. SpecialtyNames would be left as null for the other orders. Similarly, the company would also enter BucketTruck in the SpecialtyNames field of routes that are driven by trucks with hydraulic booms. It would leave the field null for the other routes. At solve time, the VRP solver assigns orders without special needs to any route, but it only assigns orders that need bucket trucks to routes that have them.</para>
-		/// <para>AssignmentRule:</para>
-		/// <para>This specifies whether or not the route can be used when solving the problem. This field is constrained by a domain of values, and the possible values are the following:</para>
-		/// <para>Include—The route is included in the solve operation. This is the default value.</para>
-		/// <para>Exclude—The route is excluded from the solve operation.</para>
+		/// <para>该字段存储将车辆加速到正常行驶速度、减速到停止状态以及离开和进入网络（例如，出入停车场）所需的行驶时间。通过包含 ArriveDepartDelay 值，可防止 VRP 求解程序发送多条路径来为完全重合的停靠点提供服务。</para>
+		/// <para>该属性的成本是因为对不重合的停靠点、站点和货物补给点进行访问而产生的。例如，如果路径从站点处开始，然后访问第一个停靠点，则总的到达/离开延迟会计入行驶时间。这同样适用于从第一个停靠点行驶到第二个停靠点的情况。如果第二个停靠点与第三个停靠点重合，则不会在它们之间添加 ArriveDepartDelay 值，因为车辆并不需要移动。如果路径行驶到一个货物补给点，则该值会再次计入行驶时间。</para>
+		/// <para>尽管车辆需要减速、停下来休息，然后再加速，但 VRP 求解程序也不能将 ArriveDepartDelay 值计入休息时间。这表示如果路径离开某个停靠点、停下休息，然后继续行驶到下一个停靠点，则仅计入一次到达/离开延迟，而不是两次。</para>
+		/// <para>为了说明，假设在一幢高层建筑物中有五个重合停靠点，而且可通过三条不同的路径来为它们提供服务。这意味着将产生三个到达/离开延迟；也就是说，三名驾驶员需要分别寻找停车位并进入同一栋建筑物。不过，如果可以仅通过一条路径来为这些停靠点提供服务，则只有一名驾驶员需要寻找停车位并进入该建筑物，这样只会产生一个到达/离开延迟。由于 VRP 求解程序会尝试将成本降至最低，所以它将尝试限制到达/离开延迟，因而会选择使用单一路径。（请注意，其他约束（例如，特殊要求、时间窗或容量）可能要求发送多条路径。）</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
+		/// <para>Capacities：</para>
+		/// <para>车辆的最大容量。可以按任何度量单位（如重量、体积或数量）来指定容量。也可以指定多个度量单位，例如，重量和体积。</para>
+		/// <para>输入未指明单位的容量。例如，假定您车辆的最大载重为 40,000 磅；您可输入 40000。为了用作后续参考，您需要记住该值的单位是磅。</para>
+		/// <para>如果您正在追踪的是具有多个维度的对象，请以空格分隔各维度的值。例如，如果您要记录重量和体积，而您的车辆最大载重为 40,000 磅，最大容量为 2,000 立方英尺，则应在 Capacities 中输入 40000 2000。同样地，您需要记住单位。您还需要记住值及其对应单位的输入顺序（在本例中，前者是磅，后者是立方英尺）。</para>
+		/// <para>鉴于以下原因，记住单位和单位顺序非常重要：第一，您可以在稍后重新解释信息；第二，您可以在停靠点的 DeliveryQuantities 和 PickupQuantities 字段中输入正确的值。为了详细描述第二点，请注意 VRP 求解程序会同时引用 Capacities、DeliveryQuantities 和 PickupQuantities，以确保路径不会超载。由于字段中不能输入单位，Network Analyst 不能转换单位，因此您需要以相同的单位和单位顺序在这三个字段中输入值，以确保能正确地解释值。如果在这三个字段的任意字段中使用的单位不同或顺序发生变化，那么您将得到意外结果，但不会收到警告消息。因此，事先设置单位和单位顺序标准，并在这三个字段中输入值时始终参考此标准是一个好办法。</para>
+		/// <para>空字符串或空值相当于所有值均为零。容量值不能为负数。</para>
+		/// <para>如果 Capacities 字符串中值的个数相对于停靠点的 DeliveryQuantities 或 PickupQuantities 字段来说数量不足，则其余的值将被视为零。</para>
+		/// <para>VRP 求解程序仅执行简单的布尔测试来判定是否超出容量。如果路径的容量值大于或等于装载总量，则 VRP 求解程序将假定货物适宜用该车辆装载。这可能并不正确，但具体要取决于货物和车辆的实际形状。例如，VRP 求解程序允许将 1000 立方英尺的球形物装到容积为 1000 立方英尺、宽为 8 英尺的货车中。但实际上由于球形物的直径为 12.6 英尺，所以它无法装到 8 英尺宽的货车中。</para>
+		/// <para>FixedCost：</para>
+		/// <para>仅当解决方案中使用路径（即，路径分配有停靠点）时才产生的固定货币成本。该字段可以包含空值；空值表示没有固定成本。该成本属于路径总运行成本的一部分。</para>
+		/// <para>CostPerUnitTime：</para>
+		/// <para>路径总持续时间（包括行驶时间以及在停靠点、站点和休息点的服务时间和等待时间）中每单位工作时间产生的货币成本。该字段不能包含空值，其默认值为 1.0。</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
+		/// <para>CostPerUnitDistance：</para>
+		/// <para>路径长度（总行驶距离）中每单位行驶距离产生的货币成本。该字段可以包含空值；空值表示没有成本。</para>
+		/// <para>该字段值的单位由距离字段单位参数（Python 的 distance_units）指定。</para>
+		/// <para>OvertimeStartTime：</para>
+		/// <para>开始计算加班时间之前的规定工作时间。该字段可以包含空值；空值表示没有加班时间。</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
+		/// <para>例如，如果路径总持续时间超过八小时的时候要为驾驶员支付加班费，假定时间字段单位参数设置为分钟，则 OvertimeStartTime 将被指定为 480（8 小时 * 60 分钟/小时）。</para>
+		/// <para>CostPerUnitOvertime：</para>
+		/// <para>每单位加班工作时间产生的货币成本。该字段可以包含空值；空值表示 CostPerUnitOvertime 值与 CostPerUnitTime 值相同。</para>
+		/// <para>MaxOrderCount：</para>
+		/// <para>路径上允许的最大停靠点数。该字段不能包含空值，其默认值为 30。</para>
+		/// <para>MaxTotalTime：</para>
+		/// <para>允许的最长路径持续时间。路径持续时间包括行驶时间以及在停靠点、站点和休息点的服务和等待时间。该字段可以包含空值；空值表示对路径持续时间无限制。</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
+		/// <para>MaxTotalTravelTime：</para>
+		/// <para>路径允许的最长行驶时间。行驶时间只包括在网络上行驶时所用的时间，不包括服务或等待时间。</para>
+		/// <para>该字段可以包含空值；空值表示对允许的最长行驶时间无限制。该字段值不能大于 MaxTotalTime 字段值。</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
+		/// <para>MaxTotalDistance：</para>
+		/// <para>路径允许的最长行驶距离。</para>
+		/// <para>该字段值的单位由距离字段单位参数（Python 的 distance_units）指定。</para>
+		/// <para>该字段可以包含空值；空值表示对允许的最长行驶距离无限制。</para>
+		/// <para>SpecialtyNames：</para>
+		/// <para>一个以空格分隔的字符串，其中包含路径所支持的特殊要求的名称。空值表示路径不支持任何特殊要求。</para>
+		/// <para>该字段是停靠点参数中 SpecialtyNames 字段的外键。</para>
+		/// <para>为了说明什么是特殊要求及其工作方式，假设草坪护理及树木修剪公司都有一部分停靠点需要使用斗式铲车来修剪所有树木。公司将在 SpecialtyNames 字段中为这些停靠点输入 BucketTruck 来表示其特殊要求。对于其他停靠点，SpecialtyNames 将留为空值。同样，公司也可以在带液压吊杆的铲车路径的 SpecialtyNames 字段中输入 BucketTruck。对于其他路径该字段将留为空值。求解时，VRP 求解程序会将无任何特殊要求的停靠点分配给任意路径，而将需要斗式铲车的停靠点分配给有斗式铲车的路径。</para>
+		/// <para>AssignmentRule：</para>
+		/// <para>该字段指定解决问题时是否可以使用路径。该字段受值的属性域约束，可能的值如下：</para>
+		/// <para>Include - 路径包括在求解操作中。这是默认值。</para>
+		/// <para>Exclude - 路径被排除在求解操作之外。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
@@ -393,51 +394,51 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Breaks</para>
-		/// <para>The rest periods, or breaks, for the routes in a given vehicle routing problem. A break is associated with exactly one route, and it can be taken after completing an order, while en route to an order, or prior to servicing an order. It has a start time and a duration, for which the driver may or may not be paid. There are three options for establishing when a break begins: using a time window, a maximum travel time, or a maximum work time.</para>
-		/// <para>The breaks record set has associated attributes. The fields in the attribute table are listed and described below.</para>
-		/// <para>&lt;para/&gt;ObjectID:</para>
-		/// <para>The system-managed ID field.</para>
-		/// <para>RouteName:</para>
-		/// <para>The name of the route that the break applies to. Although a break is assigned to exactly one route, many breaks can be assigned to the same route.</para>
-		/// <para>This field is a foreign key to the Name field in the Routes class and can&apos;t have a null value.</para>
-		/// <para>Precedence:</para>
-		/// <para>Precedence values sequence the breaks of a given route. Breaks with a precedence value of 1 occur before those with a value of 2, and so on.</para>
-		/// <para>All breaks must have a precedence value, regardless of whether they are time-window, maximum-travel-time, or maximum-work-time breaks.</para>
+		/// <para>给定车辆配送问题中路径的休息时段或中断。一个休息点只与一条路径相关联，而且可在以下情况下获得：完成停靠点服务后、去往停靠点的途中或在为停靠点提供服务之前。休息具有一个起始时间和持续时间，该时间段内可能会为驾驶员支付报酬，也可能不支付。休息开始时可通过三种方式来建立：使用时间窗、最长行驶时间或最长工作时间。</para>
+		/// <para>休息点记录集具有关联的属性。下面列出并描述了属性表中的字段。</para>
+		/// <para>&lt;para/&gt;ObjectID：</para>
+		/// <para>系统管理的 ID 字段。</para>
+		/// <para>RouteName：</para>
+		/// <para>休息点所应用到的路径的名称。尽管一个休息点只会被分配给一条路径，但是也可将多个休息点分配给同一路径。</para>
+		/// <para>该字段是路径类中 Name 字段的外键，并且不能具有空值。</para>
+		/// <para>Precedence：</para>
+		/// <para>Precedence 值用来指定休息点在给定路径上的顺序。precedence 值为 1 的休息点会出现在 precedence 值为 2 的休息点之前，依此类推。</para>
+		/// <para>无论休息点是时间窗休息点、最长行驶时间休息点还是最长工作时间休息点，所有休息点都必须具有 precedence 值。</para>
 		/// <para>ServiceTime</para>
-		/// <para>The duration of the break. This field can&apos;t contain null values and has a default value of 60.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
-		/// <para>TimeWindowStart:</para>
-		/// <para>The starting time of the break&apos;s time window. Half-open time windows are invalid for Breaks.</para>
-		/// <para>If this field has a value, MaxTravelTimeBetweenBreaks and MaxCumulWorkTime must be null; moreover, all other breaks in the analysis layer must have null values for MaxTravelTimeBetweenBreaks and MaxCumulWorkTime.</para>
-		/// <para>An error will occur at solve time if a route has multiple breaks with overlapping time windows.</para>
-		/// <para>The time window fields in breaks can contain a time-only value or a date and time value in a date field and cannot be integers representing milliseconds since Epoch. The time zone for time window fields is specified using the time_zone_usage_for_time_fields parameter. If a time field, such as TimeWindowStart, has a time-only value (for example, 12:00 p.m.), the date is assumed to be the date specified by the Default Date parameter (default_date in Python). Using date and time values (for example, 7/11/2012 12:00 p.m.) allows you to specify time windows that span two or more days. This is beneficial when a break should be taken sometime before and after midnight.</para>
-		/// <para>The default date is ignored when any time window field includes a date with the time. To avoid an error in this situation, format all time windows in Depots, Routes, Orders, and Breaks to also include the date with the time.</para>
-		/// <para>TimeWindowEnd:</para>
-		/// <para>The ending time of the break&apos;s time window. Half-open time windows are invalid for Breaks.</para>
-		/// <para>If this field has a value, MaxTravelTimeBetweenBreaks and MaxCumulWorkTime must be null; moreover, all other breaks in the analysis layer must have null values for MaxTravelTimeBetweenBreaks and MaxCumulWorkTime.</para>
-		/// <para>MaxViolationTime:</para>
-		/// <para>This field specifies the maximum allowable violation time for a time-window break. A time window is considered violated if the arrival time falls outside the time range.</para>
-		/// <para>A zero value indicates the time window cannot be violated; that is, the time window is hard. A nonzero value specifies the maximum amount of lateness; for example, the break can begin up to 30 minutes beyond the end of its time window, but the lateness is penalized pursuant to the Time Window Violation Importance parameter (time_window_factor in Python).</para>
-		/// <para>This property can be null; a null value with TimeWindowStart and TimeWindowEnd values indicates that there is no limit on the allowable violation time. If MaxTravelTimeBetweenBreaks or MaxCumulWorkTime has a value, MaxViolationTime must be null.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
-		/// <para>MaxTravelTimeBetweenBreaks:</para>
-		/// <para>The maximum amount of travel time that can be accumulated before the break is taken. The travel time is accumulated either from the end of the previous break or, if a break has not yet been taken, from the start of the route.</para>
-		/// <para>If this is the route&apos;s final break, MaxTravelTimeBetweenBreaks also indicates the maximum travel time that can be accumulated from the final break to the end depot.</para>
-		/// <para>This field is designed to limit how long a person can drive until a break is required. For instance, if the Time Field Units parameter (time_units in Python) of the analysis is set to Minutes, and MaxTravelTimeBetweenBreaks has a value of 120, the driver will get a break after two hours of driving. To assign a second break after two more hours of driving, the second break&apos;s MaxTravelTimeBetweenBreaks field value should be 120.</para>
-		/// <para>If this field has a value, TimeWindowStart, TimeWindowEnd, MaxViolationTime, and MaxCumulWorkTime must be null for an analysis to solve successfully.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
-		/// <para>MaxCumulWorkTime:</para>
-		/// <para>The maximum amount of work time that can be accumulated before the break is taken. Work time is always accumulated from the beginning of the route.</para>
-		/// <para>Work time is the sum of travel time and service times at orders, depots, and breaks. Note, however, that this excludes wait time, which is the time a route (or driver) spends waiting at an order or depot for a time window to begin.</para>
-		/// <para>This field is designed to limit how long a person can work until a break is required. For instance, if the Time Field Units parameter (time_units in Python) is set to Minutes, MaxCumulWorkTime has a value of 120, and ServiceTime has a value of 15, the driver will get a 15-minute break after two hours of work.</para>
-		/// <para>Continuing with the last example, assume a second break is needed after three more hours of work. To specify this break, you would enter 315 (five hours and 15 minutes) as the second break&apos;s MaxCumulWorkTime value. This number includes the MaxCumulWorkTime and ServiceTime values of the preceding break, along with the three additional hours of work time before granting the second break. To avoid taking maximum-work-time breaks prematurely, remember that they accumulate work time from the beginning of the route and that work time includes the service time at previously visited depots, orders, and breaks.</para>
-		/// <para>If this field has a value, TimeWindowStart, TimeWindowEnd, MaxViolationTime, and MaxTravelTimeBetweenBreaks must be null for an analysis to solve successfully.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
-		/// <para>IsPaid:</para>
-		/// <para>A Boolean value indicating whether the break is paid or unpaid. A True value indicates that the time spent at the break is included in the route cost computation and overtime determination. A False value indicates otherwise. The default value is True.</para>
-		/// <para>Sequence:</para>
-		/// <para>As an input field, this indicates the sequence of the break on its route. This field can contain null values. The input sequence values are positive and unique for each route (shared across renewal depot visits, orders, and breaks) but need not start from 1 or be contiguous.</para>
-		/// <para>The solver modifies the sequence field. After solving, this field contains the sequence value of the break on its route. Output sequence values for a route are shared across depot visits, orders, and breaks; start from 1 (at the starting depot); and are consecutive.</para>
+		/// <para>休息点的持续时间。该字段不能包含空值，其默认值为 60。</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
+		/// <para>TimeWindowStart：</para>
+		/// <para>休息点时间窗的开始时间。半开放时间窗对于休息点无效。</para>
+		/// <para>如果该字段中存在值，则 MaxTravelTimeBetweenBreaks 和 MaxCumulWorkTime 必须为空，而且分析图层中所有其他休息点的 MaxTravelTimeBetweenBreaks 和 MaxCumulWorkTime 必须也为空值。</para>
+		/// <para>如果路径具有时间窗相互重叠的多个休息点，就会在求解时出现错误。</para>
+		/// <para>休息点中的时间窗口字段可以在日期字段中包含仅时间值或日期和时间值，但不能是表示自新纪元以来的毫秒数的整数。时间窗口字段的时区可以使用 time_zone_usage_for_time_fields 参数进行指定。如果像 TimeWindowStart 这样的时间字段的值只有时间（例如下午 12:00），则假定日期为默认日期参数（Python 中的 default_date）指定的日期。使用“日期和时间”值（例如 7/11/2012 12:00 p.m.）可以指定时长为两天或两天以上的时间窗。这适用于应在午夜前后的某个时间休息的情况。</para>
+		/// <para>当任一时间窗字段包含当时的日期时，将忽略默认日期。为避免在此种情况下出现错误，设置站点、路径、停靠点和休息点的所有时间窗的格式以包含当时的日期。</para>
+		/// <para>TimeWindowEnd：</para>
+		/// <para>休息点时间窗的结束时间。半开放时间窗对于休息点无效。</para>
+		/// <para>如果该字段中存在值，则 MaxTravelTimeBetweenBreaks 和 MaxCumulWorkTime 必须为空，而且分析图层中所有其他休息点的 MaxTravelTimeBetweenBreaks 和 MaxCumulWorkTime 必须也为空值。</para>
+		/// <para>MaxViolationTime：</para>
+		/// <para>该字段为时间窗休息点指定允许的最长冲突时间。如果到达时间不在该时间范围内，则认为与时间窗发生冲突。</para>
+		/// <para>零值表示不能与时间窗发生冲突；即时间窗是硬性的。非零值指定最长延迟时间；例如，休息可在其时间窗结束后最多 30 分钟内开始，但会按照时间窗冲突重要性参数（Python 中的 time_window_factor）对延迟进行惩罚。</para>
+		/// <para>该属性可以为空；TimeWindowStart 和 TimeWindowEnd 为空值表示对允许的冲突时间没有限制。如果 MaxTravelTimeBetweenBreaks 或 MaxCumulWorkTime 中存在值，那么 MaxViolationTime 必须为空。</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
+		/// <para>MaxTravelTimeBetweenBreaks：</para>
+		/// <para>休息之前可累积的最长行驶时间。行驶时间从上一个休息点的结束时间开始累积，或者从路径的起始点开始累积（如果还未休息过）。</para>
+		/// <para>如果这是路径的最后一个休息点，则 MaxTravelTimeBetweenBreaks 还会指明从最后一个休息点到终止站点可累积的最长行驶时间。</para>
+		/// <para>该字段用于限制可在驾驶多长时间之后才需要休息。例如，如果分析的时间字段单位参数（Python 中的 time_units）设为分钟，而且 MaxTravelTimeBetweenBreaks 的值为 120，则司机将在驾驶两个小时之后中断驾驶以得到休息。如果要再驾驶两个小时后休息一次，则第二个休息点的 MaxTravelTimeBetweenBreaks 字段值应为 120。</para>
+		/// <para>如果该字段中存在值，那么为了能够顺利求解分析，TimeWindowStart、TimeWindowEnd、MaxViolationTime 和 MaxCumulWorkTime 必须都为空。</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
+		/// <para>MaxCumulWorkTime：</para>
+		/// <para>休息之前可累积的最长工作时间。工作时间始终从路径的起始点开始累积。</para>
+		/// <para>工作时间等于行驶时间加上在停靠点、站点和休息点的服务时间。不过请注意，该时间不包括等待时间，等待时间是指路径（或驾驶员）在停靠点或站点处等待时间窗打开所用的时间。</para>
+		/// <para>该字段用于限制可在工作多长时间之后才需要休息。例如，如果时间字段单位参数（Python 中的 time_units）设为分钟，而且 MaxCumulWorkTime 的值为 120，ServiceTime 的值为 15，则司机将在工作两个小时之后获得 15 分钟的休息时间。</para>
+		/// <para>继续以上一个示例来进行说明，假设工作了三个小时之后又需要休息。那么，要指定该休息点，需要输入 315（5 小时 15 分钟）作为第二个休息点的 MaxCumulWorkTime 值。这个数字包括前一个休息点的 MaxCumulWorkTime 值和 ServiceTime 值，以及准许进行第二次休息之前的另外三个小时工作时间。为避免过早经过最长工作时间休息点，应该记住：此类休息点是从路径的起始点开始累积工作时间，并且工作时间包括在之前访问的站点、停靠点和休息点处的服务时间。</para>
+		/// <para>如果该字段中存在值，那么为了能够顺利求解分析，TimeWindowStart、TimeWindowEnd、MaxViolationTime 和 MaxTravelTimeBetweenBreaks 必须都为空。</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
+		/// <para>IsPaid：</para>
+		/// <para>用来指示是否为休息点支付报酬的布尔值。值为 True 表示在计算路径成本和判定加班时间时将包括在休息点处所花费的时间。值为 False 表示的情况与 True 值相反。默认值为 True。</para>
+		/// <para>Sequence：</para>
+		/// <para>该输入字段用于指示休息点在其路径上的顺序。该字段可包含空值。输入 sequence 值应为正且对于各路径均唯一（在货物补给点、停靠点和休息点之间分配），但是不需要从 1 开始，也不需要连续。</para>
+		/// <para>求解程序会修改 sequence 字段。执行求解后，该字段会包含休息点在其路径上的 sequence 值。路径的输出 sequence 值在货物补给点、停靠点和休息点之间分配；从 1 开始（在起始站点处）；并且是连续的。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRecordSet()]
@@ -445,14 +446,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time Field Units</para>
-		/// <para>Specifies the time units for all time-based field values in the analysis.</para>
-		/// <para>Seconds—Seconds</para>
-		/// <para>Minutes—Minutes</para>
-		/// <para>Hours—Hours</para>
-		/// <para>Days—Days</para>
-		/// <para>Many features and records in a VRP analysis have fields for storing time values, such as ServiceTime for orders and CostPerUnitTime for routes. To minimize data entry requirements, these field values don&apos;t include units. Instead, all distance-based field values must be entered in the same units, and this parameter is used to specify the units of those values.</para>
-		/// <para>Note that output time-based fields use the same units specified by this parameter.</para>
-		/// <para>This time unit doesn&apos;t need to match the time unit of the network Time Attribute parameter (time_attribute in Python).</para>
+		/// <para>指定分析中所有基于时间的字段值的时间单位。</para>
+		/// <para>秒—秒</para>
+		/// <para>分钟—分钟</para>
+		/// <para>小时—小时</para>
+		/// <para>天—天</para>
+		/// <para>VRP 分析中的许多要素和记录都具有用于存储时间值的字段，例如用于停靠点的 ServiceTime 和用于路径的 CostPerUnitTime。为了最大程度减少数据输入的要求，这些字段值不包含单位。相反，所有基于距离的字段值都必须以相同单位输入，而此参数用于指定这些值的单位。</para>
+		/// <para>注意，基于时间的输出字段使用此参数指定的相同单位。</para>
+		/// <para>此时间单位无需与网络时间属性参数（Python 中的 time_attribute）的时间单位相匹配。</para>
 		/// <para><see cref="TimeUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -462,16 +463,16 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Distance Field Units</para>
-		/// <para>Specifies the distance units for all distance-based field values in the analysis.</para>
-		/// <para>Miles—Miles</para>
-		/// <para>Kilometers—Kilometers</para>
-		/// <para>Feet—Feet</para>
-		/// <para>Yards—Yards</para>
-		/// <para>Meters—Meters</para>
-		/// <para>Nautical Miles—Nautical miles</para>
-		/// <para>Many features and records in a VRP analysis have fields for storing distance values, such as MaxTotalDistance and CostPerUnitDistance for routes. To minimize data entry requirements, these field values don&apos;t include units. Instead, all distance-based field values must be entered in the same units, and this parameter is used to specify the units of those values.</para>
-		/// <para>Note that output distance-based fields use the same units specified by this parameter.</para>
-		/// <para>This distance unit doesn&apos;t need to match the distance unit of the network Distance Attribute (distance attribute in Python).</para>
+		/// <para>指定分析中所有基于距离的字段值的距离单位。</para>
+		/// <para>英里—英里</para>
+		/// <para>千米—千米</para>
+		/// <para>英尺—英尺</para>
+		/// <para>码—码</para>
+		/// <para>米—米</para>
+		/// <para>海里—海里</para>
+		/// <para>VRP 分析中许多要素和记录都有用于存储距离值的字段，例如路径的 MaxTotalDistance 和 CostPerUnitDistance。为了最大程度减少数据输入的要求，这些字段值不包含单位。相反，所有基于距离的字段值都必须以相同单位输入，而此参数用于指定这些值的单位。</para>
+		/// <para>注意，基于距离的输出字段使用此参数指定的相同单位。</para>
+		/// <para>此距离单位无需与网络距离属性参数（Python 中的 distance attribute）的距离单位相匹配。</para>
 		/// <para><see cref="DistanceUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -481,7 +482,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Network Dataset</para>
-		/// <para>The network dataset on which the vehicle routing problem analysis will be performed. The network dataset must have a time-based cost attribute, since the VRP solver minimizes time.</para>
+		/// <para>将对其执行车辆配送问题分析的网络数据集。由于 VRP 求解程序要尽量缩短配送时间，因此网络数据集必须具有基于时间的成本属性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPNetworkDatasetLayer()]
@@ -489,7 +490,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Geodatabase Workspace</para>
-		/// <para>The file geodatabase or in-memory workspace in which the output feature classes will be created. This workspace must already exist. The default output workspace is in memory.</para>
+		/// <para>将创建输出要素类的文件地理数据库或内存工作空间。此工作空间必须已经存在。默认的输出工作空间为内存。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -499,7 +500,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Unassigned Stops Name</para>
-		/// <para>The name of the output feature class that will contain any unreachable depots or unassigned orders.</para>
+		/// <para>包含任何无法到达站点或未分配停靠点的输出要素类的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -507,7 +508,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Stops Name</para>
-		/// <para>The name of the feature class that will contain the stops visited by routes. This feature class includes stops at depots, orders, and breaks.</para>
+		/// <para>包含了路径所访问的停靠点的要素类的名称。此要素类包含在站点、停靠点及休息点的停靠。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -515,7 +516,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Routes Name</para>
-		/// <para>The name of the feature class that will contain the routes of the analysis.</para>
+		/// <para>包含了分析的路径的要素类的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -523,7 +524,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Directions Name</para>
-		/// <para>The name of the feature class that will contain the directions for the routes.</para>
+		/// <para>包含了路径方向的要素类的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -531,7 +532,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Default Date</para>
-		/// <para>The default date for time field values that specify a time of day without including a date.</para>
+		/// <para>指定一天中的时间（不包含日期）的时间字段值的默认日期。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -540,13 +541,13 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>U-Turn Policy</para>
-		/// <para>Specifies the U-turn policy that will be used at junctions. Allowing U-turns implies that the solver can turn around at a junction and double back on the same street. Given that junctions represent street intersections and dead ends, different vehicles may be able to turn around at some junctions but not at others—it depends on whether the junction represents an intersection or a dead end. To accommodate this, the U-turn policy parameter is implicitly specified by the number of edges that connect to the junction, which is known as junction valency. The acceptable values for this parameter are listed below; each is followed by a description of its meaning in terms of junction valency.</para>
-		/// <para>Allowed—U-turns are permitted at junctions with any number of connected edges. This is the default value.</para>
-		/// <para>Not allowed—U-turns are prohibited at all junctions, regardless of junction valency. However, U-turns are still permitted at network locations even when this setting is chosen, but you can set the individual network location&apos;s CurbApproach property to prohibit U-turns there as well.</para>
-		/// <para>Allowed at dead ends only—U-turns are prohibited at all junctions, except those that have only one adjacent edge (a dead end).</para>
-		/// <para>Allowed at dead ends and intersections only—U-turns are prohibited at junctions where exactly two adjacent edges meet but are permitted at intersections (junctions with three or more adjacent edges) and dead ends (junctions with exactly one adjacent edge). Often, networks have extraneous junctions in the middle of road segments. This option prevents vehicles from making U-turns at these locations.</para>
-		/// <para>If you need a more precisely defined U-turn policy, consider adding a global turn delay evaluator to a network cost attribute or adjusting its settings if one exists, and pay particular attention to the configuration of reverse turns. You can also set the CurbApproach property of your network locations.</para>
-		/// <para>The value of this parameter is overridden when Travel Mode (travel_mode in Python) is set to any value other than custom.</para>
+		/// <para>指定将在交汇点处使用的 U 形转弯策略。允许 U 形转弯表示求解程序可以在交汇点处转向并沿同一街道往回行驶。考虑到交汇点表示街道交叉路口和死角，不同的车辆可以在某些交汇点转弯，而在其他交汇点则不行 - 这取决于交汇点是交叉路口还是死角。为适应此情况，U 形转弯策略参数由连接到交汇点的边数隐性指定，这称为交汇点价。此参数可接受的值如下所列；每个值的后面是根据交汇点价对其含义的描述。</para>
+		/// <para>允许—无论在交汇点处有几条连接的边，均允许 U 形转弯。这是默认值。</para>
+		/// <para>不允许—在所有交汇点处均禁止 U 形转弯，不管交汇点原子价如何。不过请注意，即使已选择该设置，在网络位置处仍允许 U 形转弯；但是也可以通过设置个别网络位置的 CurbApproach 属性来禁止 U 形转弯。</para>
+		/// <para>仅在末路处允许—除仅有一条相邻边的交汇点（死角）外，其他交汇点均禁止 U 形转弯。</para>
+		/// <para>仅在末路处和交点处允许—在恰好有两条相邻边相遇的交汇点处禁止 U 形转弯，但是交叉点（三条或三条以上相邻边的交汇点）和死角（仅有一条相邻边的交汇点）处允许。通常，网络在路段中间有多余的交汇点。此选项可防止车辆在这些位置出现 U 形转弯。</para>
+		/// <para>如果您需要定义更加精确的 U 形转弯策略，可以考虑在网络成本属性中添加一个通用转弯延迟赋值器，或者如果存在的话，调整其设置，并特别注意反向转弯的配置。还可以设置网络位置的 CurbApproach 属性。</para>
+		/// <para>将出行模式（Python 中的 travel_mode）设置为除自定义外的其他值时会覆盖此参数的值。</para>
 		/// <para><see cref="UturnPolicyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -557,10 +558,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time Window Violation Importance</para>
-		/// <para>Specifies the importance of honoring time windows. There are three options, which are listed and described below.</para>
-		/// <para>Low—Places more importance on minimizing drive times and less on arriving at stops on time. You may want to use this setting if you have a growing backlog of service requests. For the purpose of servicing more orders in a day and reducing the backlog, you can choose this setting even though customers may be inconvenienced with your late arrivals.</para>
-		/// <para>Medium—Balances the importance of minimizing drive times and arriving within time windows. This is the default value.</para>
-		/// <para>High—Places more importance on arriving at stops on time and less on minimizing drive times. Organizations that make time-critical deliveries or that are concerned with customer service would choose this setting.</para>
+		/// <para>指定支持时间窗的重要性。具有三个选项，请见下面的列表和描述。</para>
+		/// <para>低—提高减少驾驶时间的重要性，降低按时到达停靠点的重要性。如果积压的服务请求逐渐增多，则可以使用此设置。如果为了在当日内为更多的停靠点提供服务并减少积压的订单数，则可选择此设置，即使迟到可能会为客户带来不便。</para>
+		/// <para>中速—平衡减少驾驶时间的重要性与在时间窗内到达的重要性。这是默认值。</para>
+		/// <para>高—提高按时到达停靠点的重要性，降低减少驾驶时间的重要性。进行时间紧迫的配送或注重客户服务的组织将选择此设置。</para>
 		/// <para><see cref="TimeWindowFactorEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -571,9 +572,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Spatially Cluster Routes</para>
-		/// <para>Specifies whether to use spatial clustering.</para>
-		/// <para>Checked—The orders assigned to an individual route will be spatially clustered. Clustering orders tends to keep routes in smaller areas and reduce how often route lines intersect one another; yet, clustering can increase overall travel times. This is the default.</para>
-		/// <para>Unchecked—The solver will not prioritize spatially clustering orders and the route lines may intersect. Use this option if route zones are specified.</para>
+		/// <para>指定是否使用空间聚类。</para>
+		/// <para>选中 - 分配给各个路径的停靠点将在空间上聚类。对停靠点进行聚类往往在较小区域保持路径，并减小路径线彼此相交的频率；然而，聚类可能会增加总行程时间。这是默认设置。</para>
+		/// <para>未选中 - 求解器不会对空间聚类停靠点进行优先排序，并且路线可能会相交。如果指定了路径区，请使用此选项。</para>
 		/// <para><see cref="SpatiallyClusterRoutesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -584,18 +585,18 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Route Zones</para>
-		/// <para>Delineates work territories for given routes. A route zone is a polygon feature and is used to constrain routes to servicing only those orders that fall within or near the specified area. The following are examples of when route zones may be useful:</para>
-		/// <para>Some of your employees don&apos;t have the required permits to perform work in certain states or communities. You can create a hard route zone so they only visit orders in areas where they meet the requirements.</para>
-		/// <para>One of your vehicles breaks down frequently, so you want to minimize response time by having it only visit orders that are close to your maintenance garage. You can create a soft or hard route zone to keep the vehicle nearby.</para>
-		/// <para>The route zones feature set has an associated attribute table. The fields in the attribute table are listed and described below.</para>
-		/// <para>ObjectID:</para>
-		/// <para>The system-managed ID field.</para>
-		/// <para>Shape:</para>
-		/// <para>The geometry field indicating the geographic location of the network analysis object.</para>
-		/// <para>RouteName:</para>
-		/// <para>The name of the route to which this zone applies. A route zone can have a maximum of one associated route. This field can&apos;t contain null values, and it is a foreign key to the Name field in the Routes feature layer.</para>
-		/// <para>IsHardZone:</para>
-		/// <para>A Boolean value indicating a hard or soft route zone. A True value indicates that the route zone is hard; that is, an order that falls outside the route zone polygon can&apos;t be assigned to the route. The default value is True (1). A False value (0) indicates that such orders can still be assigned, but the cost of servicing the order is weighted by a function that is based on the Euclidean distance from the route zone. Basically, this means that as the straight-line distance from the soft zone to the order increases, the likelihood of the order being assigned to the route decreases.</para>
+		/// <para>描绘给定路径的工作区域。路径区属于面要素，用来对路径施加约束，以使路径仅为某一指定区域内或附近的停靠点提供服务。以下示例说明了路径区非常有用的情况：</para>
+		/// <para>有些员工不具备在某些州或社区执行工作所需的权限。此时，您可以创建一个硬性路径区，使他们只能访问他们满足相应要求的区域中的停靠点。</para>
+		/// <para>您其中的一辆车经常出现故障，所以您希望使其仅访问离汽车修理厂很近的停靠点，从而将响应时间缩至最短。此时，您可以创建一个软性或硬性路径区，使该车在附近行驶。</para>
+		/// <para>路径区要素集具有一个关联属性表。下面列出并描述了属性表中的字段。</para>
+		/// <para>ObjectID：</para>
+		/// <para>系统管理的 ID 字段。</para>
+		/// <para>Shape：</para>
+		/// <para>指示网络分析对象地理位置的几何字段。</para>
+		/// <para>RouteName：</para>
+		/// <para>该区域所应用到的路径的名称。按区域配送最大可覆盖一条关联路径。该字段不能包含空值，而且是“路径”要素图层中 Name 字段的外键。</para>
+		/// <para>IsHardZone：</para>
+		/// <para>用来指示按区域配送中的区域是硬性还是软性的布尔值。值为 True 表示区域是硬性的；也就是说，落在区域面以外的停靠点不能分配给该路径。默认值为 True (1)。值为 False (0) 表示这样的停靠点仍可进行分配，但是为停靠点提供服务的成本要根据一个函数进行加权得到，该函数基于与区域的欧氏距离。实际上，这意味着，随着软性区域到停靠点的直线距离的增加，停靠点被分配给路径的可能性将会降低。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -604,24 +605,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Route Renewals</para>
-		/// <para>Specifies the intermediate depots that routes can visit to reload or unload the cargo they are delivering or picking up. Specifically, a route renewal links a route to a depot. The relationship indicates that the route can renew (reload or unload while en route) at the associated depot.</para>
-		/// <para>Route renewals can be used to model scenarios in which a vehicle picks up a full load of deliveries at the starting depot, services the orders, returns to the depot to renew its load of deliveries, and continues servicing more orders. For example, in propane gas delivery, the vehicle may make several deliveries until its tank is nearly or completely depleted, visit a refueling point, and make more deliveries.</para>
-		/// <para>The following are rules and options to consider when also working with route seed points:</para>
-		/// <para>The reload/unload point, or renewal location, can be different from the start or end depot.</para>
-		/// <para>Each route can have one or many predetermined renewal locations.</para>
-		/// <para>A renewal location may be used more than once by a single route.</para>
-		/// <para>In some cases where there may be several potential renewal locations for a route, the closest available renewal location is chosen by the solver.</para>
-		/// <para>The route renewals record set has associated attributes. The fields in the attribute table are listed and described below.</para>
-		/// <para>ObjectID:</para>
-		/// <para>The system-managed ID field.</para>
-		/// <para>DepotName:</para>
-		/// <para>The name of the depot where this renewal takes place. This field can&apos;t contain a null value and is a foreign key to the Name field in the Depots feature layer.</para>
-		/// <para>RouteName:</para>
-		/// <para>The name of the route that this renewal applies to. This field can&apos;t contain a null value and is a foreign key to the Name field in the Routes feature layer.</para>
-		/// <para>ServiceTime:</para>
-		/// <para>The service time for the renewal. This field can contain a null value; a null value indicates zero service time.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units property of the analysis layer.</para>
-		/// <para>The time taken to load a vehicle at a renewal depot may depend on the size of the vehicle and how full or empty the vehicle is. However, the service time for a route renewal is a fixed value and does not take into account the actual load. As such, the renewal service time should be given a value corresponding to a full truckload, an average truckload, or another time estimate of your choice.</para>
+		/// <para>指定路径可以访问的中间站点，以重新装载或卸载正在配送或接收的货物。具体而言，货物补给点将把路径链接到站点。这一关系表明路径可在关联的站点处进行更新（在途中重新装载或卸载）。</para>
+		/// <para>货物补给可用于为以下情景建立模型：车辆在起始站点接收满载的配送量、到各停靠点提供服务、返回到该站点更新配送量，然后继续为更多停靠点提供服务。例如，在丙烷气配送中，车辆可能需要进行多次交货才能将气罐排空，而且需要访问加气点并继续进行配送。</para>
+		/// <para>以下是使用路径补给点时要考虑的几项规则和选择：</para>
+		/// <para>重新装货/卸货点（或货物补给位置）可以与起始站点或终止站点不同。</para>
+		/// <para>每条路径都可具有一个或多个预先确定的货物补给位置。</para>
+		/// <para>一条路径可能会多次使用某个货物补给位置。</para>
+		/// <para>如果路径上存在多个可能的货物补给位置，则求解程序会选择最近的可用货物补给位置。</para>
+		/// <para>货物补给点记录集具有关联属性。下面列出并描述了属性表中的字段。</para>
+		/// <para>ObjectID：</para>
+		/// <para>系统管理的 ID 字段。</para>
+		/// <para>DepotName：</para>
+		/// <para>进行该更新时所在站点的名称。该字段不能包含空值，而且是“站点”要素图层中 Name 字段的外键。</para>
+		/// <para>RouteName：</para>
+		/// <para>该更新所应用到的路径的名称。该字段不能包含空值，而且是“路径”要素图层中 Name 字段的外键。</para>
+		/// <para>ServiceTime：</para>
+		/// <para>更新的服务时间。该字段可以包含空值；空值表示没有服务时间。</para>
+		/// <para>该字段值的单位由分析图层的“时间字段单位”属性指定。</para>
+		/// <para>在补给站点处装载车辆所花费的时间可能取决于车辆大小和车辆装载量。不过，货物补给点的服务时间是固定值，并且不考虑实际载荷。因此，为更新服务时间指定的值应与货车满载量、平均装载量或所选的其他估计时间相对应。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRecordSet()]
@@ -630,21 +631,21 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Order Pairs</para>
-		/// <para>Pairs pick up and deliver orders so they are serviced by the same route.</para>
-		/// <para>Sometimes it is required that the pick up and delivery of orders be paired. For example, a courier company may need to have a route pick up a high-priority package from one order and deliver it to another without returning to a depot, or sorting station, to minimize delivery time. These related orders can be assigned to the same route with the appropriate sequence using order pairs. Moreover, restrictions on how long the package can stay in the vehicle can also be assigned; for example, the package might be a blood sample that has to be transported from the doctor&apos;s office to the lab within two hours.</para>
-		/// <para>The order pairs record set has associated attributes. The fields in the attribute table are listed and described below.</para>
-		/// <para>ObjectID:</para>
-		/// <para>The system-managed ID field.</para>
-		/// <para>FirstOrderName:</para>
-		/// <para>The name of the first order of the pair. This field is a foreign key to the Name field in the Orders feature layer.</para>
-		/// <para>SecondOrderName:</para>
-		/// <para>The name of the second order of the pair. This field is a foreign key to the Name field in the Orders feature layer.</para>
-		/// <para>The first order in the pair must be a pickup order; that is, the value for its DeliveryQuantities field is null. The second order in the pair must be a delivery order; that is, the value for its PickupQuantities field is null. The quantity that is picked up at the first order must agree with the quantity that is delivered at the second order. As a special case, both orders may have zero quantities for scenarios where capacities are not used.</para>
-		/// <para>The order quantities are not loaded or unloaded at depots.</para>
-		/// <para>MaxTransitTime:</para>
-		/// <para>The maximum transit time for the pair. The transit time is the duration from the departure time of the first order to the arrival time at the second order. This constraint limits the time-on-vehicle, or ride time, between the two orders. When a vehicle is carrying people or perishable goods, the ride time is typically shorter than that of a vehicle carrying packages or nonperishable goods. This field can contain null values; a null value indicates that there is no constraint on the ride time.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units property of the analysis layer.</para>
-		/// <para>Excess transit time (measured with respect to the direct travel time between order pairs) can be tracked and weighted by the solver. Because of this, you can direct the VRP solver to take one of three approaches: minimize the overall excess transit time, regardless of the increase in travel cost for the fleet; find a solution that balances overall violation time and travel cost; or ignore the overall excess transit time and, instead, minimize the travel cost for the fleet. By assigning an importance level for the Excess Transit Time Importance parameter (excess_transit_factor in Python), you are in effect choosing one of these three approaches. Regardless of the importance level, the solver will always return an error if the MaxTransitTime value is surpassed.</para>
+		/// <para>将接收停靠点和配送停靠点配对，使其可由同一路径提供服务。</para>
+		/// <para>有时，要求停靠点的接收和配送是成对的。例如，快递公司可能需要让路径从一个停靠点接收高优先级包裹并送往另一个停靠点，而不返回站点或分拣站，以减少送货时间。可以通过使用停靠点对，按照相应的顺序将这些相关的停靠点分配给同一路径。而且，还可以对包裹在车辆上停留的时间进行限制；例如，包裹可能是血液样本，必须在两个小时内从医生办公室运送到实验室。</para>
+		/// <para>停靠点对记录集具有关联属性。下面列出并描述了属性表中的字段。</para>
+		/// <para>ObjectID：</para>
+		/// <para>系统管理的 ID 字段。</para>
+		/// <para>FirstOrderName：</para>
+		/// <para>停靠点对中第一个停靠点的名称。该字段是“停靠点”要素图层中 Name 字段的外键。</para>
+		/// <para>SecondOrderName：</para>
+		/// <para>停靠点对中第二个停靠点的名称。该字段是“停靠点”要素图层中 Name 字段的外键。</para>
+		/// <para>停靠点对中的第一个停靠点必须为接收停靠点；也就是说，它的 DeliveryQuantities 字段值为空。停靠点对中的第二个停靠点必须为配送停靠点；也就是说，它的 PickupQuantities 字段值为空。第一个停靠点处的接收量必须与第二个停靠点处的配送量一致。有一种特殊情况是，在未使用容量时，两个停靠点的数量可能都为零。</para>
+		/// <para>停靠点数量在站点处不进行装载或卸载。</para>
+		/// <para>MaxTransitTime：</para>
+		/// <para>停靠点对的最长行驶时间。行驶时间是指离开第一个停靠点至到达第二个停靠点的持续时间。该约束限制两个停靠点之间的车上时间（或行驶时间）。车辆携带人员或易腐烂货物时，行驶时间通常比携带包裹或不易腐烂的货物的时间要短。该字段可以包含空值；空值表示对行驶时间无限制。</para>
+		/// <para>该字段值的单位由分析图层的“时间字段单位”属性指定。</para>
+		/// <para>求解程序可对额外行驶时间（相对于停靠点对之间的直线行驶时间来测量）进行追踪和加权。因此，您可指示 VRP 求解程序采用以下三种方法之一：不考虑车队行程成本的增加，将总的额外行驶时间缩至最短；找出一种可平衡总冲突时间和行程成本的解决方案；或者不考虑总的额外行驶时间，而将车队的行程成本降至最低。通过为额外行驶时间重要性参数（Python 中的 excess_transit_factor）分配重要性级别，实际上就是在这三种方法中选择一种方法。无论重要性级别如何，只要超过 MaxTransitTime 值，求解程序就会返回错误。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRecordSet()]
@@ -653,10 +654,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Excess Transit Time Importance</para>
-		/// <para>Specifies the importance of reducing excess transit time of order pairs. Excess transit time is the amount of time exceeding the time required to travel directly between the paired orders. Excess time can be caused by driver breaks or travel to intermediate orders and depots.</para>
-		/// <para>Low—Places more importance on minimizing overall solution cost and less on excess transit time. This setting is commonly used by courier services. Since couriers transport packages as opposed to people, they don&apos;t need to worry about ride time. Using this setting allows the couriers to service paired orders in the proper sequence and minimize the overall solution cost.</para>
-		/// <para>Medium—Balances the importance of reducing excess transit time and reducing the overall solution cost. This is the default value.</para>
-		/// <para>High—Places more importance on the shortest transit time between paired orders and less on the overall travel costs. It makes sense to use this setting if you are transporting people between paired orders and you want to shorten their ride time. This is characteristic of taxi services.</para>
+		/// <para>指定减少停靠点对的额外行驶时间的重要性。额外行驶时间是指超出停靠点对间直线行驶所需时间的数量。额外时间可能由司机休息或前往中间停靠点和站点造成。</para>
+		/// <para>低—提高减少总体解决方案成本的重要性，降低额外行驶时间的重要性。此设置通常应用于快递服务。由于快递运输的是包裹而不是人员，因此无需担心行驶时间。使用此设置时，快递可以按照最适合的顺序为停靠点对提供服务，并且总体解决方案成本最低。</para>
+		/// <para>中速—平衡减少额外行驶时间和降低总体解决方案成本的重要性。这是默认值。</para>
+		/// <para>高—提高最小化停靠点对之间行驶时间的重要性，降低总体行驶成本的重要性。如果您正在停靠点对间运载乘客并且想缩短他们的乘车时间，则这种情况适合使用此设置。这是出租车服务的特征。</para>
 		/// <para><see cref="ExcessTransitFactorEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -667,23 +668,23 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Point Barriers</para>
-		/// <para>Specifies point barriers, which are split into two types: restriction and added cost point barriers. They temporarily restrict traversal across or add impedance to points on the network. The point barriers are defined by a feature set, and the attribute values you specify for the point features determine whether they are restriction or added cost barriers. The fields in the attribute table are listed and described below.</para>
-		/// <para>ObjectID:</para>
-		/// <para>The system-managed ID field.</para>
-		/// <para>Shape:</para>
-		/// <para>The geometry field indicating the geographic location of the network analysis object.</para>
-		/// <para>Name:</para>
-		/// <para>The name of the barrier.</para>
-		/// <para>BarrierType:</para>
-		/// <para>Specifies whether the barrier restricts travel completely or adds cost when traveling through it. There are two options:</para>
-		/// <para>(0)—Prohibits traversing through the barrier. This is the default value.&lt;bold&gt;Restriction&lt;/bold&gt;</para>
-		/// <para>(2)—Traversing through the barrier increases the network cost by the amount specified in the Additional_Time and Additional_Distance fields.&lt;bold&gt;Added Cost&lt;/bold&gt;</para>
-		/// <para>Additional_Time:</para>
-		/// <para>If BarrierType is set to added cost, the value of the Additional_Time field indicates how much time is added to a route when the route passes through the barrier.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units property of the analysis layer.</para>
-		/// <para>Additional_Distance:</para>
-		/// <para>If BarrierType is set to added cost, the value of the Additional_Distance field indicates how much impedance is added to a route when the route passes through the barrier.</para>
-		/// <para>The unit for this field value is specified by the Distance Field Units parameter.</para>
+		/// <para>指定点障碍，并将其分为两种类型：禁止型点障碍和增加成本型点障碍。它们可以暂时限制网络上的穿越或在网络的点上增加阻抗。点障碍由要素集定义，为点要素指定的属性值决定它们是禁止型障碍还是增加成本型障碍。下面列出并描述了属性表中的字段。</para>
+		/// <para>ObjectID：</para>
+		/// <para>系统管理的 ID 字段。</para>
+		/// <para>Shape：</para>
+		/// <para>指示网络分析对象地理位置的几何字段。</para>
+		/// <para>Name：</para>
+		/// <para>障碍的名称。</para>
+		/// <para>BarrierType：</para>
+		/// <para>指定障碍的存在将完全禁止通行还是在通行时增加成本。共有两个选项：</para>
+		/// <para>(0) - 禁止穿过障碍。这是默认值。&lt;bold&gt;禁止型&lt;/bold&gt;</para>
+		/// <para>(2) - 穿过障碍会增加网络成本，具体增加值取决于在 Additional_Time 和 Additional_Distance 字段中指定的值。&lt;bold&gt;增加成本型&lt;/bold&gt;</para>
+		/// <para>Additional_Time：</para>
+		/// <para>如果 BarrierType 设置为增加成本型，则 Additional_Time 字段的值指示路径穿过障碍时增加的时间。</para>
+		/// <para>该字段值的单位由分析图层的时间字段单位属性指定。</para>
+		/// <para>Additional_Distance：</para>
+		/// <para>如果 BarrierType 设置为增加成本型，则 Additional_Distance 字段的值指示路径穿过障碍时增加的阻抗。</para>
+		/// <para>该字段值的单位由距离字段单位参数指定。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -692,13 +693,13 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Line Barriers</para>
-		/// <para>Specifies line barriers, which temporarily restrict traversal across them. The line barriers are defined by a feature set. The fields in the attribute table are listed and described below.</para>
-		/// <para>ObjectID:</para>
-		/// <para>The system-managed ID field.</para>
-		/// <para>Shape:</para>
-		/// <para>The geometry field indicating the geographic location of the network analysis object.</para>
-		/// <para>Name:</para>
-		/// <para>The name of the barrier.</para>
+		/// <para>指定线障碍，暂时限制穿越障碍。线障碍由要素集定义。下面列出并描述了属性表中的字段。</para>
+		/// <para>ObjectID：</para>
+		/// <para>系统管理的 ID 字段。</para>
+		/// <para>Shape：</para>
+		/// <para>指示网络分析对象地理位置的几何字段。</para>
+		/// <para>Name：</para>
+		/// <para>障碍的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -707,21 +708,21 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Polygon Barriers</para>
-		/// <para>Specifies polygon barriers, which are split into two types: restriction and scaled cost polygon barriers. They temporarily restrict traversal or scale impedance on the parts of the network they cover. The polygon barriers are defined by a feature set, and the attribute values you specify for the polygon features determine whether they are restriction or scaled cost barriers. The fields in the attribute table are listed and described below.</para>
-		/// <para>ObjectID:</para>
-		/// <para>The system-managed ID field.</para>
-		/// <para>Shape:</para>
-		/// <para>The geometry field indicating the geographic location of the network analysis object.</para>
-		/// <para>Name:</para>
-		/// <para>The name of the barrier.</para>
-		/// <para>BarrierType:</para>
-		/// <para>Specifies whether the barrier restricts travel completely or scales the cost of traveling through it. There are two options:</para>
-		/// <para>(0)—Prohibits traversing through any part of the barrier. This is the default value.&lt;bold&gt;Restriction&lt;/bold&gt;</para>
-		/// <para>(1)—Scales the impedance of underlying edges by multiplying them by the value of the Attr_[Impedance] property. If edges are partially covered by the barrier, the impedance is apportioned and multiplied.&lt;bold&gt;Scaled Cost&lt;/bold&gt;</para>
-		/// <para>Scaled_Time:</para>
-		/// <para>The time-based impedance values of the edges underlying the barrier are multiplied by the value set in this field. This field is only relevant when the barrier is a scaled cost barrier.</para>
-		/// <para>Scaled_Distance:</para>
-		/// <para>The distance-based impedance values of the edges underlying the barrier are multiplied by the value set in this field. This field is only relevant when the barrier is a scaled cost barrier.</para>
+		/// <para>指定面障碍，并将其分为两种类型：禁止型面障碍和调整成本型面障碍。它们会暂时限制穿越所覆盖的网络部分或调整阻抗。面障碍由要素集定义，为面要素指定的属性值决定它们是禁止型障碍还是调整成本型障碍。下面列出并描述了属性表中的字段。</para>
+		/// <para>ObjectID：</para>
+		/// <para>系统管理的 ID 字段。</para>
+		/// <para>Shape：</para>
+		/// <para>指示网络分析对象地理位置的几何字段。</para>
+		/// <para>Name：</para>
+		/// <para>障碍的名称。</para>
+		/// <para>BarrierType：</para>
+		/// <para>指定障碍的存在将完全禁止通行还是按比例增加行程成本。共有两个选项：</para>
+		/// <para>(0) - 禁止穿过障碍的任何部分。这是默认值。&lt;bold&gt;禁止型&lt;/bold&gt;</para>
+		/// <para>(1) - 将阻抗乘以 Attr_[阻抗] 属性值从而调整基础边阻抗。如果障碍部分覆盖了边，则会按比例对阻抗执行乘法运算。&lt;bold&gt;成本按比例增加型&lt;/bold&gt;</para>
+		/// <para>Scaled_Time：</para>
+		/// <para>障碍下面的边的基于时间的阻抗值乘以在此字段中设置的值。此字段仅在障碍为调整成本型障碍时有用。</para>
+		/// <para>Scaled_Distance：</para>
+		/// <para>障碍下面的边的基于距离的阻抗值乘以在此字段中设置的值。此字段仅在障碍为调整成本型障碍时有用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -730,8 +731,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time Attribute</para>
-		/// <para>The network cost attribute to use when determining the travel time of network elements.</para>
-		/// <para>The value of this parameter is overridden when Travel Mode (travel_mode in Python) is set to any value other than custom.</para>
+		/// <para>确定网络元素的行驶时间时使用的网络成本属性。</para>
+		/// <para>将出行模式（Python 中的 travel_mode）设置为除自定义外的其他值时会覆盖此参数的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -741,8 +742,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Distance Attribute</para>
-		/// <para>The network cost attribute to use when determining the distance of network elements.</para>
-		/// <para>The value of this parameter is overridden when Travel Mode (travel_mode in Python) is set to any value other than custom.</para>
+		/// <para>确定网络元素的距离时使用的网络成本属性。</para>
+		/// <para>将出行模式（Python 中的 travel_mode）设置为除自定义外的其他值时会覆盖此参数的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -752,10 +753,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Use Hierarchy in Analysis</para>
-		/// <para>Checked—The hierarchy attribute will be used for the analysis. Using a hierarchy results in the solver preferring higher-order edges to lower-order edges. Hierarchical solves are faster, and they can be used to simulate the preference of a driver who chooses to travel on freeways rather than local roads when possible—even if that means a longer trip. This option is active only if the input network dataset has a hierarchy attribute.</para>
-		/// <para>Unchecked—The hierarchy attribute will not be used for the analysis. If hierarchy is not used, the result is an exact route for the network dataset.</para>
-		/// <para>The parameter is inactive if a hierarchy attribute is not defined on the network dataset used to perform the analysis.</para>
-		/// <para>The value of this parameter is overridden when Travel Mode (travel_mode in Python) is set to any value other than custom.</para>
+		/// <para>选中 - 将使用等级属性进行分析。使用等级的结果是，求解程序更偏好高等级的边而不是低等级的边。分等级求解的速度更快，并且可用于模拟驾驶员在可能的情况下选择在高速公路而非地方道路上行驶（即使行程可能更远）的偏好。只有输入网络数据集具有等级属性时，此选项才处于活动状态。</para>
+		/// <para>未选中 - 将不会使用等级属性进行分析。如果未使用等级，则结果是网络数据集的精确路径。</para>
+		/// <para>如果未在用于执行分析的网络数据集中定义等级属性，该参数将处于非活动状态。</para>
+		/// <para>将出行模式（Python 中的 travel_mode）设置为除自定义外的其他值时会覆盖此参数的值。</para>
 		/// <para><see cref="UseHierarchyInAnalysisEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -766,8 +767,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Restrictions</para>
-		/// <para>Indicates which network restriction attributes are respected during solve time.</para>
-		/// <para>The value of this parameter is overridden when Travel Mode (travel_mode in Python) is set to any value other than custom.</para>
+		/// <para>指示求解时应遵守的网络约束条件属性。</para>
+		/// <para>将出行模式（Python 中的 travel_mode）设置为除自定义外的其他值时会覆盖此参数的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -777,17 +778,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Attribute Parameter Values</para>
-		/// <para>Specifies the parameter values for network attributes that have parameters. The record set has two columns that work together to uniquely identify parameters and another column that specifies the parameter value.</para>
-		/// <para>The value of this parameter is overridden when Travel Mode (travel_mode in Python) is set to any value other than custom.</para>
-		/// <para>The attribute parameter values record set has associated attributes. The fields in the attribute table are listed below and described.</para>
-		/// <para>ObjectID:</para>
-		/// <para>The system-managed ID field.</para>
-		/// <para>AttributeName:</para>
-		/// <para>The name of the network attribute whose attribute parameter is set by the table row.</para>
-		/// <para>ParameterName:</para>
-		/// <para>The name of the attribute parameter whose value is set by the table row. (Object type parameters cannot be updated using this tool.)</para>
-		/// <para>ParameterValue:</para>
-		/// <para>The value you want for the attribute parameter. If a value is not specified, the attribute parameter is set to null.</para>
+		/// <para>指定具有参数的网络属性的参数值。记录集具有两个共同唯一识别参数的列以及另一个指定参数值的列。</para>
+		/// <para>将出行模式（Python 中的 travel_mode）设置为除自定义外的其他值时会覆盖此参数的值。</para>
+		/// <para>属性参数值记录集具有关联属性。下面列出并说明了属性表中的所有字段。</para>
+		/// <para>ObjectID：</para>
+		/// <para>系统管理的 ID 字段。</para>
+		/// <para>AttributeName：</para>
+		/// <para>网络属性的名称，其属性参数由表行设置。</para>
+		/// <para>ParameterName：</para>
+		/// <para>属性参数的名称，其值由表行设置。（无法使用此工具更新“对象”类型参数。）</para>
+		/// <para>ParameterValue：</para>
+		/// <para>您希望的属性参数值。如果未指定值，则属性参数将被设置为空。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRecordSet()]
@@ -796,7 +797,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Maximum Snap Tolerance</para>
-		/// <para>The maximum snap tolerance is the furthest distance that Network Analyst searches when locating or relocating a point onto the network. The search looks for suitable edges or junctions and snaps the point to the nearest one. If a suitable location isn't found within the maximum snap tolerance, the object is marked as unlocated.</para>
+		/// <para>最大捕捉容差是指在网络上定位或重新定位一个点时 Network Analyst 搜索的最远距离。搜索会寻找适合的边或交汇点，并把点捕捉到最近的边或交汇点。如果在最大捕捉容差内没有找到合适的位置，对象将标记为无法定位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -805,9 +806,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Exclude Restricted Portions of the Network</para>
-		/// <para>Specifies where network locations are placed.</para>
-		/// <para>Checked—The network locations are only placed on traversable portions of the network. This prevents placing network locations on elements that you can&apos;t reach due to restrictions or barriers. Before adding your network locations using this option, make sure that you have already added all the restriction barriers to the input network analysis layer to get expected results. This option is not applicable when adding barrier objects.</para>
-		/// <para>Unchecked—The network locations are placed on all the elements of the network. The network locations that are added with this option may be unreachable during the solve process if they are placed on restricted elements.</para>
+		/// <para>指定在何处放置网络位置。</para>
+		/// <para>选中 - 网络位置仅放置在网络的可遍历部分。这样可防止将网络位置放在因限制或障碍而无法到达的元素上。使用该选项添加网络位置之前，请确保已经向输入网络分析图层添加了所有限制型障碍，以得到预期结果。添加障碍对象时，此选项不适用。</para>
+		/// <para>未选中 - 网络位置将放置在网络的所有元素上。如果通过该选项添加的网络位置被放置在受限元素上，那么在求解过程中，可能无法到达这些网络位置。</para>
 		/// <para><see cref="ExcludeRestrictedPortionsOfTheNetworkEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -818,7 +819,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Feature Locator WHERE Clause</para>
-		/// <para>An SQL expression used to select a subset of source features that limits on which network elements orders and depots can be located. For example, to ensure orders and depots are not located on limited-access highways, write an SQL expression that excludes those source features. Note that the other network analysis objects, such as barriers, ignore the feature locator WHERE clause when loading.</para>
+		/// <para>用于选择源要素子集的 SQL 表达式，该子集对可以定位停靠点和站点的网络元素设定了限制。例如，为确保停靠点和站点不定位在限制出入的公路上，编写一个排除这些源要素的 SQL 表达式。注意，加载时，其他网络分析对象（例如障碍）将忽略要素定位器 WHERE 子句。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -828,9 +829,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Populate Route Lines</para>
-		/// <para>Specifies whether lines that show the true shape of the routes will be generated.</para>
-		/// <para>Checked—The route features will have their Shape fields populated with lines.</para>
-		/// <para>Unchecked—No shape will be generated for the output routes.</para>
+		/// <para>指定是否将生成显示路径真实形状的线。</para>
+		/// <para>选中 - 路径要素将使用线填充其 Shape 字段。</para>
+		/// <para>未选中 - 将不会为输出路径生成任何形状。</para>
 		/// <para><see cref="PopulateRouteLinesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -841,9 +842,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Route Line Simplification Tolerance</para>
-		/// <para>The simplification distance of the route geometry.</para>
-		/// <para>Simplification maintains critical points on a route, such as turns at intersections, to define the essential shape of the route and removes other points. The simplification distance you specify is the maximum allowable offset that the simplified line can deviate from the original line. Simplifying a line reduces the number of vertices and tends to reduce drawing times.</para>
-		/// <para>The value of this parameter is overridden when Travel Mode (travel_mode in Python) is set to any value other than custom.</para>
+		/// <para>路径几何的简化距离。</para>
+		/// <para>简化将保留路径上定义路径基本形状所需的关键点（例如交点处的转弯）而删除其他点。指定的简化距离为简化线偏离原始线的最大允许偏移。简化线将减少折点的数量，并且往往能够减少绘制时间。</para>
+		/// <para>将出行模式（Python 中的 travel_mode）设置为除自定义外的其他值时会覆盖此参数的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -852,9 +853,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Populate Directions</para>
-		/// <para>Specifies whether driving directions will be generated.</para>
-		/// <para>Checked—Driving directions will be generated. The feature class specified in the Output Directions Name parameter is populated with turn-by-turn instructions for each route. The network dataset must support driving directions; otherwise, an error will occur when solving with directions.</para>
-		/// <para>Unchecked—Directions will not be generated.</para>
+		/// <para>指定是否将生成行驶方向。</para>
+		/// <para>选中 - 将生成行驶方向。输出方向名称参数中指定的要素类使用每条路径的转向说明填充。网络数据集必须支持行驶方向；否则，求解方向时将发生错误。</para>
+		/// <para>未选中 - 将不会生成方向。</para>
 		/// <para><see cref="PopulateDirectionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -865,8 +866,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Directions Language</para>
-		/// <para>The language in which driving directions will be generated. The languages available in the drop-down list depend on which ArcGIS language packs are installed on your computer.</para>
-		/// <para>If you are going to publish this tool as part of a service on a separate server, the ArcGIS language pack that corresponds to the language you choose must be installed on that server for the tool to function properly. Also, if a language pack isn&apos;t installed on your computer, the language won&apos;t appear in the drop-down list; however, you can type a language code instead.</para>
+		/// <para>将用于生成行驶方向的语言。下拉列表中可用的语言类别取决于您的计算机中所包含的 ArcGIS 语言包。</para>
+		/// <para>如果要将此工具作为独立服务器服务的一部分进行发布，那么必须确保与您所选语言相对应的 ArcGIS 语言包已经安装到服务器上，这样才能够保证工具正常工作。而且，如果某一语言包未被安装到您的计算机中，该语言将不会显示在下拉列表中；不过，您可以直接键入语言代码。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -876,10 +877,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Directions Style Name</para>
-		/// <para>Specifies the formatting style of directions.</para>
-		/// <para>NA Desktop—Printable turn-by-turn directions</para>
-		/// <para>NA Navigation—Turn-by-turn directions designed for an in-vehicle navigation device</para>
-		/// <para>NA Campus—Turn-by-turn walking directions designed for pedestrian routes</para>
+		/// <para>指定方向的格式样式。</para>
+		/// <para>NA 桌面—可打印转弯方向</para>
+		/// <para>NA 导航—针对车辆内导航设备设计的转弯方向</para>
+		/// <para>NA 校园—用于人行道的转弯行走方向</para>
 		/// <para><see cref="DirectionsStyleNameEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -890,11 +891,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Save Output Network Analysis Layer</para>
-		/// <para>Specifies whether the output includes a network analysis layer of the results.</para>
-		/// <para>Checked—The output will include a network analysis layer of the results.</para>
-		/// <para>Unchecked—The output will not include a network analysis layer of the results.</para>
-		/// <para>In either case, stand-alone tables and feature classes are returned. However, a server administrator may want to choose to output a network analysis layer so the setup and results of the tool can be debugged using the Network Analyst controls in the ArcGIS Desktop environment. This can make the debugging process easier.</para>
-		/// <para>In ArcGIS Desktop, the default output location for the network analysis layer is in the scratch workspace, at the same level as the scratch geodatabase; that is, it is stored as a sibling of the scratch geodatabase. The output network analysis layer is stored as an .lyr file whose name starts with _ags_gpna and is followed by an alphanumeric GUID.</para>
+		/// <para>指定输出是否包含结果的网络分析图层。</para>
+		/// <para>选中 - 输出将包含结果的网络分析图层。</para>
+		/// <para>未选中 - 输出将不包含结果的网络分析图层。</para>
+		/// <para>在任何一种情况下，将返回独立的表和要素类。不过，服务器管理员可能希望选择输出一个网络分析图层，以便使用 ArcGIS Desktop 环境中的 Network Analyst 控件调试工具的设置和结果。这会使调试过程变得更加容易。</para>
+		/// <para>在 ArcGIS Desktop 中，网络分析图层的默认输出位置位于临时工作空间，与临时地理数据库处于相同级别，也就是说，网络分析图层作为临时地理数据库的同级进行存储。输出网络分析图层存储为 .lyr 文件，其名称以 _ags_gpna 开头，后跟字母数字 GUID。</para>
 		/// <para><see cref="SaveOutputLayerEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -905,15 +906,15 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Service Capabilities</para>
-		/// <para>Specifies the maximum amount of computer processing that occurs when running this tool as a geoprocessing service. You may want to do this for one of two reasons: to avoid letting your server solve problems that require more resources or processing time than you want to allow, or to create multiple services with different VRP capabilities to support a business model. For example, if you have a tiered-service business model, you may want to provide a free VRP service that supports a maximum of five routes per solve and another service that is fee-based and supports more than five routes per solve.</para>
-		/// <para>In addition to limiting the maximum number of routes, you can limit the number of orders or point barriers that can be added to the analysis. Another way to control problem sizes is by setting a maximum number of features—usually street features—that line or polygon barriers can intersect. The last method is to force a hierarchical solve, even if the user chooses not to use a hierarchy, when orders are geographically dispersed beyond a given straight-line distance.</para>
-		/// <para>MAXIMUM POINT BARRIERS—The maximum number of point barriers allowed. An error is returned if this limit is exceeded. A null value indicates there is no limit.</para>
-		/// <para>MAXIMUM FEATURES INTERSECTING LINE BARRIERS—The maximum number of source features that can be intersected by all line barriers in the analysis. An error is returned if this limit is exceeded. A null value indicates there is no limit.</para>
-		/// <para>MAXIMUM FEATURES INTERSECTING POLYGON BARRIERS—The maximum number of source features that can be intersected by all polygon barriers in the analysis. An error is returned if this limit is exceeded. A null value indicates there is no limit.</para>
-		/// <para>MAXIMUM ORDERS—The maximum number of orders allowed in the analysis. An error is returned if this limit is exceeded. A null value indicates there is no limit.</para>
-		/// <para>MAXIMUM ROUTES—The maximum number of routes allowed in the analysis. An error is returned if this limit is exceeded. A null value indicates there is no limit.</para>
-		/// <para>FORCE HIERARCHY BEYOND DISTANCE—The maximum straight-line distance between orders before the vehicle routing problem is solved using the network&apos;s hierarchy. The units for this value are the same as those specified in the Distance Field Units parameter.If the network doesn&apos;t have a hierarchy attribute, this constraint is ignored. If Use Hierarchy in Analysis is checked, hierarchy is always used. If the Use Hierarchy in Analysis parameter is unchecked and this constraint has a null value, hierarchy is not forced.</para>
-		/// <para>MAXIMUM ORDERS PER ROUTE—The maximum number of orders that can be assigned to each route. An error is returned if this limit is exceeded. A null value indicates there is no limit.</para>
+		/// <para>指定将此工具作为地理处理服务运行时所发生的最大计算机处理量。您可能出于以下两种原因之一要执行此操作：避免让服务器求解超出所允许的资源或处理时间的问题；使用不同的 VRP 功能创建多个服务，以支持业务模型。例如，如果您具有一个分级服务业务模型，您可能想提供一个每次最多只能求解五个路径的免费 VRP 服务，以及一个每次可求解五个以上路径的收费服务。</para>
+		/// <para>除了限制路径的最大数量之外，您还可以限制向分析中添加的停靠点或点障碍的数量。控制问题大小的另一种方法是设置要素（通常为街道要素，即线或面障碍相交的要素）的最大数量。最后一种方法是停靠点的地理分布超出了给定的直线距离时，强制进行等级求解，即使用户选择不使用等级。</para>
+		/// <para>MAXIMUM POINT BARRIERS—允许的最大点障碍数。如果超出此限制，将返回错误。空值表示没有限制。</para>
+		/// <para>MAXIMUM FEATURES INTERSECTING LINE BARRIERS—分析中与所有线障碍相交的源要素的最大数。如果超出此限制，将返回错误。空值表示没有限制。</para>
+		/// <para>MAXIMUM FEATURES INTERSECTING POLYGON BARRIERS—分析中与所有面障碍相交的源要素的最大数。如果超出此限制，将返回错误。空值表示没有限制。</para>
+		/// <para>MAXIMUM ORDERS—分析中允许的最大停靠点数。如果超出此限制，将返回错误。空值表示没有限制。</para>
+		/// <para>MAXIMUM ROUTES—分析中允许的最大路径数。如果超出此限制，将返回错误。空值表示没有限制。</para>
+		/// <para>FORCE HIERARCHY BEYOND DISTANCE—使用网络等级求解车辆配送问题前，停靠点之间的最大直线距离。此值的单位与距离字段单位参数中指定的相同。如果网络没有等级属性，将忽略此约束。如果选中在分析中应用等级，将总是使用等级。如果未选中在分析中应用等级参数且此约束为空值，将不强制执行等级。</para>
+		/// <para>MAXIMUM ORDERS PER ROUTE—可分配到每条路径的最大停靠点数。如果超出此限制，将返回错误。空值表示没有限制。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -922,9 +923,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Ignore Invalid Order Locations</para>
-		/// <para>Specifies whether invalid orders will be ignored when solving the vehicle routing problem.</para>
-		/// <para>Checked—The solve operation will ignore any invalid orders and return a solution, given it didn&apos;t encounter any other errors. If you need to generate routes and deliver them to drivers immediately, you may be able to ignore invalid orders, solve, and distribute the routes to your drivers. Next, resolve any invalid orders from the last solve and include them in the VRP analysis for the next workday or work shift.</para>
-		/// <para>Unchecked—The solve operation will fail when any invalid orders are encountered. An invalid order is an order that the VRP solver can&apos;t reach. An order may be unreachable for a variety of reasons, including if it&apos;s located on a prohibited network element, it isn&apos;t located on the network at all, or it&apos;s located on a disconnected portion of the network.</para>
+		/// <para>指定在求解车辆配送问题时是否忽略无效停靠点。</para>
+		/// <para>选中 - 求解程序在没有遇到其他错误时，将忽略无效停靠点并返回解决方案。如果需要生成路径并将其立即提供给驾驶员，则可以忽略无效路径，并为驾驶员求解和分配路径。然后，解决上次求解时的无效停靠点，并将其包含在下一工作日或工作时段的 VRP 分析中。</para>
+		/// <para>未选中 - 遇到无效停靠点时，求解运算将失败。无效停靠点是指 VRP 求解程序无法到达的停靠点。停靠点不可达的原因可能有多种，其中包括：停靠点定位于禁止的网络元素、停靠点未定位于网络或停靠点定位于网络的离线部分。</para>
 		/// <para>&lt;para/&gt;</para>
 		/// <para><see cref="IgnoreInvalidOrderLocationsEnum"/></para>
 		/// </summary>
@@ -936,16 +937,16 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Travel Mode</para>
-		/// <para>Choose the mode of transportation for the analysis. Custom is always a choice. For other travel mode names to appear, they must be present in the network dataset specified in the Network Dataset parameter.</para>
-		/// <para>A travel mode is defined on a network dataset and provides override values for parameters that, together, model cars, trucks, pedestrians, or other modes of travel. By choosing a travel mode here, you don&apos;t need to provide values for the following parameters, which are overridden by values specified in the network dataset:</para>
-		/// <para>UTurn Policy</para>
-		/// <para>Time Attribute</para>
-		/// <para>Distance Attribute</para>
-		/// <para>Use Hierarchy in Analysis</para>
-		/// <para>Restrictions</para>
-		/// <para>Attribute Parameter Values</para>
-		/// <para>Route Line Simplification Tolerance</para>
-		/// <para>Custom—Define a travel mode that fits your specific needs. When Custom is chosen, the tool does not override the travel mode parameters listed above. This is the default value.</para>
+		/// <para>选择用于分析的运输模式。始终选择自定义。要显示其他出行模式名称，必须使其显示在网络数据集参数指定的网络数据集中。</para>
+		/// <para>出行模式是在网络数据集上定义的，并会提供模型车、货车、步行或其他出行模式的参数的覆盖值。在此处选择出行模式后，您便无需为以下参数提供值，这些参数值会被网络数据集中指定的值覆盖：</para>
+		/// <para>U 形转弯策略</para>
+		/// <para>时间属性</para>
+		/// <para>距离属性</para>
+		/// <para>在分析中应用等级</para>
+		/// <para>约束条件</para>
+		/// <para>属性参数值</para>
+		/// <para>路线简化容差</para>
+		/// <para>自定义—定义适合您特定需求的出行模式。选择自定义后，该工具不会覆盖以上列出的出行模式参数。这是默认值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -996,9 +997,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Ignore Network Location Fields</para>
-		/// <para>Specifies whether the network location fields (SourceID, SourceOID, PosAlong, and SideOfEdge) will be considered when locating orders, depots, or barriers on the network.</para>
-		/// <para>Checked—Network location fields will not be considered when locating the inputs on the network. Instead, the inputs will always be located by performing a spatial search.</para>
-		/// <para>Unchecked—Network location fields will be considered when locating the inputs on the network. This is the default value.</para>
+		/// <para>当在网络中定位停靠点、站点或障碍时，指定是否考虑以下网络位置字段（SourceID、SourceOID、PosAlong 和 SideOfEdge）。</para>
+		/// <para>选中 - 当在网络中定位输入时，不考虑网络位置字段。而是始终通过执行空间搜索来定位输入。</para>
+		/// <para>未选中 - 当在网络中定位输入时，将考虑网络位置字段。这是默认值。</para>
 		/// <para><see cref="IgnoreNetworkLocationFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -1009,10 +1010,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time Zone Usage for Time Fields</para>
-		/// <para>Specifies the time zone for the following input date-time fields supported by the tool: TimeWindowStart1, TimeWindowEnd1, TimeWindowStart2, TimeWindowEnd2, InboundArriveTime, and OutboundDepartTime for orders; TimeWindowStart1, TimeWindowEnd1, TimeWindowStart2, and TimeWindowEnd2 for depots; EarliestStartTime and LatestStartTime for routes; and TimeWindowStart and TimeWindowEnd for breaks.</para>
-		/// <para>Geo local— The date-time values associated with the orders or depots are in the time zone in which the orders and depots are located. For routes, the date-time values are based on the time zone in which the starting depot for the route is located. If a route does not have a starting depot, all orders and depots across all the routes must be in a single time zone. For breaks, the date-time values are based on the time zone of the routes. For example, if your depot is located in an area that follows eastern standard time and has the first time window values (specified as TimeWindowStart1 and TimeWindowEnd1) of 8 a.m. and 5 p.m., respectively, the time window values will be treated as 8 a.m. and 5 p.m. eastern standard time.</para>
-		/// <para>UTC— The date-time values associated with the orders or depots are in Coordinated Universal Time (UTC) and are not based on the time zone in which the orders or depots are located. For example, if your depot is located in an area that follows eastern standard time and has the first time window values (specified as TimeWindowStart1 and TimeWindowEnd1) of 8 a.m. and 5 p.m., respectively, the time window values will be treated as 12 p.m. and 9 p.m. eastern standard time, assuming eastern standard time is obeying daylight saving time.</para>
-		/// <para>Specifying the date-time values in UTC is useful if you do not know the time zone in which the orders or depots are located or when you have orders and depots in multiple time zones and you want all the date-time values to start simultaneously. The UTC option is applicable only when your network dataset defines a time zone attribute. Otherwise, all the date-time values are always treated as Geo local (GEO_LOCAL in Python).</para>
+		/// <para>指定工具支持的以下输入日期时间字段的时区：用于停靠点的 TimeWindowStart1、TimeWindowEnd1、TimeWindowStart2、TimeWindowEnd2、InboundArriveTime 和 OutboundDepartTime；用于站点的 TimeWindowStart1、TimeWindowEnd1、TimeWindowStart2 和 TimeWindowEnd2；用于路径的 EarliestStartTime 和 LatestStartTime；以及用于休息点的 TimeWindowStart 和 TimeWindowEnd。</para>
+		/// <para>地理定位— 与停靠点或站点相关的日期时间值位于停靠点和站点所在的时区内。对于路径，日期时间值基于路径的起始站点所在的时区。如果路径没有起始站点，则路径上的所有停靠点和站点必须位于一个时区中。对于休息点，日期时间值基于路径的时区。例如，如果站点所在的区域实行东部标准时间并且第一个时间窗值（指定为 TimeWindowStart1 和 TimeWindowEnd1）为 8 a.m. 和 5 p.m.，则在东部标准时间中时间窗值将被视为 8 a.m. 和 5 p.m.。</para>
+		/// <para>UTC— 与停靠点或站点相关的日期时间值位于协调世界时间 (UTC) 中，且不基于停靠点或站点所在的时区。例如，如果站点所在的区域实行东部标准时间并且第一个时间窗值（指定为 TimeWindowStart1 和 TimeWindowEnd1）为 8 a.m. 和 5 p.m.，则在东部标准时间（假设东部标准时间遵循夏令时）中，时间窗值将分别被视为 12 p.m. 和 9 p.m.。</para>
+		/// <para>如果不知道停靠点或站点所在的时区，或者停靠点或站点处在多个时区内并且您想要所有的日期时间值同时启动，那么在 UTC 中指定日期时间值非常有用。UTC 选项仅在您的网络数据集定义了时区属性时才可用。否则，所有的日期时间值将始终被视为地理定位（Python 中的 GEO_LOCAL）。</para>
 		/// <para><see cref="TimeZoneUsageForTimeFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -1023,10 +1024,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Overrides</para>
-		/// <para>Specifies additional settings that can influence the behavior of the solver when finding solutions for the network analysis problems.</para>
-		/// <para>The value for this parameter must be specified in JavaScript Object Notation (JSON). For example, a valid value is of the following form {&quot;overrideSetting1&quot; : &quot;value1&quot;, &quot;overrideSetting2&quot; : &quot;value2&quot;}. The override setting name is always enclosed in double quotes. The values can be a number, Boolean, or string.</para>
-		/// <para>The default value for this parameter is no value, which indicates not to override any solver settings.</para>
-		/// <para>Overrides are advanced settings that should be used only after careful analysis of the results obtained before and after applying the settings. A list of supported override settings for each solver and their acceptable values can be obtained by contacting Esri Technical Support.</para>
+		/// <para>求解网络分析问题时，指定可影响求解程序行为的其他设置。</para>
+		/// <para>必须在 JavaScript 对象表示法 (JSON) 中指定此参数的值。例如，有效值的格式如下：{&quot;overrideSetting1&quot; : &quot;value1&quot;, &quot;overrideSetting2&quot; : &quot;value2&quot;}。覆盖设置名称始终以双引号括起。该值可以是数字、布尔值或字符串。</para>
+		/// <para>此参数的默认值为无值，表示不覆盖任何求解程序设置。</para>
+		/// <para>覆盖是高级设置，应仅在谨慎分析应用设置前后得到的结果之后使用。要获得每个求解程序支持的覆盖设置及其可接受值的列表，请联系 Esri 技术支持。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -1035,10 +1036,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Save Route Data</para>
-		/// <para>Specifies whether to save a .zip file that contains a file geodatabase containing the inputs and outputs of the analysis in a format that can be used to share route layers with ArcGIS Online or ArcGIS Enterprise.</para>
-		/// <para>In ArcGIS Desktop, the default output location for this output file is in the scratch folder. You can determine the location of the scratch folder using arcpy.env.scratchFolder or checking the geoprocessing environment.</para>
-		/// <para>Checked—The tool writes out a .zip archive containing a file geodatabase workspace that contains the inputs and outputs of the analysis.</para>
-		/// <para>Unchecked—Route data is not saved. This is the default.</para>
+		/// <para>指定是否保存含有某文件地理数据库的 .zip 文件，该文件地理数据库包含相应格式的分析的输入和输出，可以使用该格式与 ArcGIS Online 或 ArcGIS Enterprise 共享路径图层。</para>
+		/// <para>在 ArcGIS Desktop 中，此输出文件的默认输出位置位于临时文件夹内。可通过使用 arcpy.env.scratchFolder 或检查地理处理环境来确定临时文件夹的位置。</para>
+		/// <para>选中 - 该工具将写出包含分析输入和输出的文件地理数据库工作空间的 .zip 存档。</para>
+		/// <para>未选中 - 不会保存路径数据。这是默认设置。</para>
 		/// <para><see cref="SaveRouteDataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -1071,31 +1072,31 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TimeUnitsEnum 
 		{
 			/// <summary>
-			/// <para>Minutes—Minutes</para>
+			/// <para>分钟—分钟</para>
 			/// </summary>
 			[GPValue("Minutes")]
-			[Description("Minutes")]
+			[Description("分钟")]
 			Minutes,
 
 			/// <summary>
-			/// <para>Seconds—Seconds</para>
+			/// <para>秒—秒</para>
 			/// </summary>
 			[GPValue("Seconds")]
-			[Description("Seconds")]
+			[Description("秒")]
 			Seconds,
 
 			/// <summary>
-			/// <para>Hours—Hours</para>
+			/// <para>小时—小时</para>
 			/// </summary>
 			[GPValue("Hours")]
-			[Description("Hours")]
+			[Description("小时")]
 			Hours,
 
 			/// <summary>
-			/// <para>Days—Days</para>
+			/// <para>天—天</para>
 			/// </summary>
 			[GPValue("Days")]
-			[Description("Days")]
+			[Description("天")]
 			Days,
 
 		}
@@ -1106,45 +1107,45 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum DistanceUnitsEnum 
 		{
 			/// <summary>
-			/// <para>Miles—Miles</para>
+			/// <para>英里—英里</para>
 			/// </summary>
 			[GPValue("Miles")]
-			[Description("Miles")]
+			[Description("英里")]
 			Miles,
 
 			/// <summary>
-			/// <para>Kilometers—Kilometers</para>
+			/// <para>千米—千米</para>
 			/// </summary>
 			[GPValue("Kilometers")]
-			[Description("Kilometers")]
+			[Description("千米")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>Feet—Feet</para>
+			/// <para>英尺—英尺</para>
 			/// </summary>
 			[GPValue("Feet")]
-			[Description("Feet")]
+			[Description("英尺")]
 			Feet,
 
 			/// <summary>
-			/// <para>Yards—Yards</para>
+			/// <para>码—码</para>
 			/// </summary>
 			[GPValue("Yards")]
-			[Description("Yards")]
+			[Description("码")]
 			Yards,
 
 			/// <summary>
-			/// <para>Meters—Meters</para>
+			/// <para>米—米</para>
 			/// </summary>
 			[GPValue("Meters")]
-			[Description("Meters")]
+			[Description("米")]
 			Meters,
 
 			/// <summary>
-			/// <para>Nautical Miles—Nautical miles</para>
+			/// <para>海里—海里</para>
 			/// </summary>
 			[GPValue("NauticalMiles")]
-			[Description("Nautical Miles")]
+			[Description("海里")]
 			Nautical_Miles,
 
 		}
@@ -1155,31 +1156,31 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum UturnPolicyEnum 
 		{
 			/// <summary>
-			/// <para>Allowed—U-turns are permitted at junctions with any number of connected edges. This is the default value.</para>
+			/// <para>允许—无论在交汇点处有几条连接的边，均允许 U 形转弯。这是默认值。</para>
 			/// </summary>
 			[GPValue("ALLOW_UTURNS")]
-			[Description("Allowed")]
+			[Description("允许")]
 			Allowed,
 
 			/// <summary>
-			/// <para>Not allowed—U-turns are prohibited at all junctions, regardless of junction valency. However, U-turns are still permitted at network locations even when this setting is chosen, but you can set the individual network location&apos;s CurbApproach property to prohibit U-turns there as well.</para>
+			/// <para>不允许—在所有交汇点处均禁止 U 形转弯，不管交汇点原子价如何。不过请注意，即使已选择该设置，在网络位置处仍允许 U 形转弯；但是也可以通过设置个别网络位置的 CurbApproach 属性来禁止 U 形转弯。</para>
 			/// </summary>
 			[GPValue("NO_UTURNS")]
-			[Description("Not allowed")]
+			[Description("不允许")]
 			Not_allowed,
 
 			/// <summary>
-			/// <para>Allowed at dead ends only—U-turns are prohibited at all junctions, except those that have only one adjacent edge (a dead end).</para>
+			/// <para>仅在末路处允许—除仅有一条相邻边的交汇点（死角）外，其他交汇点均禁止 U 形转弯。</para>
 			/// </summary>
 			[GPValue("ALLOW_DEAD_ENDS_ONLY")]
-			[Description("Allowed at dead ends only")]
+			[Description("仅在末路处允许")]
 			Allowed_at_dead_ends_only,
 
 			/// <summary>
-			/// <para>Allowed at dead ends and intersections only—U-turns are prohibited at junctions where exactly two adjacent edges meet but are permitted at intersections (junctions with three or more adjacent edges) and dead ends (junctions with exactly one adjacent edge). Often, networks have extraneous junctions in the middle of road segments. This option prevents vehicles from making U-turns at these locations.</para>
+			/// <para>仅在末路处和交点处允许—在恰好有两条相邻边相遇的交汇点处禁止 U 形转弯，但是交叉点（三条或三条以上相邻边的交汇点）和死角（仅有一条相邻边的交汇点）处允许。通常，网络在路段中间有多余的交汇点。此选项可防止车辆在这些位置出现 U 形转弯。</para>
 			/// </summary>
 			[GPValue("ALLOW_DEAD_ENDS_AND_INTERSECTIONS_ONLY")]
-			[Description("Allowed at dead ends and intersections only")]
+			[Description("仅在末路处和交点处允许")]
 			Allowed_at_dead_ends_and_intersections_only,
 
 		}
@@ -1190,24 +1191,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TimeWindowFactorEnum 
 		{
 			/// <summary>
-			/// <para>High—Places more importance on arriving at stops on time and less on minimizing drive times. Organizations that make time-critical deliveries or that are concerned with customer service would choose this setting.</para>
+			/// <para>高—提高按时到达停靠点的重要性，降低减少驾驶时间的重要性。进行时间紧迫的配送或注重客户服务的组织将选择此设置。</para>
 			/// </summary>
 			[GPValue("High")]
-			[Description("High")]
+			[Description("高")]
 			High,
 
 			/// <summary>
-			/// <para>Medium—Balances the importance of minimizing drive times and arriving within time windows. This is the default value.</para>
+			/// <para>中速—平衡减少驾驶时间的重要性与在时间窗内到达的重要性。这是默认值。</para>
 			/// </summary>
 			[GPValue("Medium")]
-			[Description("Medium")]
+			[Description("中速")]
 			Medium,
 
 			/// <summary>
-			/// <para>Low—Places more importance on minimizing drive times and less on arriving at stops on time. You may want to use this setting if you have a growing backlog of service requests. For the purpose of servicing more orders in a day and reducing the backlog, you can choose this setting even though customers may be inconvenienced with your late arrivals.</para>
+			/// <para>低—提高减少驾驶时间的重要性，降低按时到达停靠点的重要性。如果积压的服务请求逐渐增多，则可以使用此设置。如果为了在当日内为更多的停靠点提供服务并减少积压的订单数，则可选择此设置，即使迟到可能会为客户带来不便。</para>
 			/// </summary>
 			[GPValue("Low")]
-			[Description("Low")]
+			[Description("低")]
 			Low,
 
 		}
@@ -1218,14 +1219,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum SpatiallyClusterRoutesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The orders assigned to an individual route will be spatially clustered. Clustering orders tends to keep routes in smaller areas and reduce how often route lines intersect one another; yet, clustering can increase overall travel times. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLUSTER")]
 			CLUSTER,
 
 			/// <summary>
-			/// <para>Unchecked—The solver will not prioritize spatially clustering orders and the route lines may intersect. Use this option if route zones are specified.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CLUSTER")]
@@ -1239,24 +1240,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum ExcessTransitFactorEnum 
 		{
 			/// <summary>
-			/// <para>High—Places more importance on the shortest transit time between paired orders and less on the overall travel costs. It makes sense to use this setting if you are transporting people between paired orders and you want to shorten their ride time. This is characteristic of taxi services.</para>
+			/// <para>高—提高最小化停靠点对之间行驶时间的重要性，降低总体行驶成本的重要性。如果您正在停靠点对间运载乘客并且想缩短他们的乘车时间，则这种情况适合使用此设置。这是出租车服务的特征。</para>
 			/// </summary>
 			[GPValue("High")]
-			[Description("High")]
+			[Description("高")]
 			High,
 
 			/// <summary>
-			/// <para>Medium—Balances the importance of reducing excess transit time and reducing the overall solution cost. This is the default value.</para>
+			/// <para>中速—平衡减少额外行驶时间和降低总体解决方案成本的重要性。这是默认值。</para>
 			/// </summary>
 			[GPValue("Medium")]
-			[Description("Medium")]
+			[Description("中速")]
 			Medium,
 
 			/// <summary>
-			/// <para>Low—Places more importance on minimizing overall solution cost and less on excess transit time. This setting is commonly used by courier services. Since couriers transport packages as opposed to people, they don&apos;t need to worry about ride time. Using this setting allows the couriers to service paired orders in the proper sequence and minimize the overall solution cost.</para>
+			/// <para>低—提高减少总体解决方案成本的重要性，降低额外行驶时间的重要性。此设置通常应用于快递服务。由于快递运输的是包裹而不是人员，因此无需担心行驶时间。使用此设置时，快递可以按照最适合的顺序为停靠点对提供服务，并且总体解决方案成本最低。</para>
 			/// </summary>
 			[GPValue("Low")]
-			[Description("Low")]
+			[Description("低")]
 			Low,
 
 		}
@@ -1267,14 +1268,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum UseHierarchyInAnalysisEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The hierarchy attribute will be used for the analysis. Using a hierarchy results in the solver preferring higher-order edges to lower-order edges. Hierarchical solves are faster, and they can be used to simulate the preference of a driver who chooses to travel on freeways rather than local roads when possible—even if that means a longer trip. This option is active only if the input network dataset has a hierarchy attribute.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("USE_HIERARCHY")]
 			USE_HIERARCHY,
 
 			/// <summary>
-			/// <para>Unchecked—The hierarchy attribute will not be used for the analysis. If hierarchy is not used, the result is an exact route for the network dataset.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_HIERARCHY")]
@@ -1288,14 +1289,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum ExcludeRestrictedPortionsOfTheNetworkEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The network locations are only placed on traversable portions of the network. This prevents placing network locations on elements that you can&apos;t reach due to restrictions or barriers. Before adding your network locations using this option, make sure that you have already added all the restriction barriers to the input network analysis layer to get expected results. This option is not applicable when adding barrier objects.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EXCLUDE")]
 			EXCLUDE,
 
 			/// <summary>
-			/// <para>Unchecked—The network locations are placed on all the elements of the network. The network locations that are added with this option may be unreachable during the solve process if they are placed on restricted elements.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INCLUDE")]
@@ -1309,14 +1310,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum PopulateRouteLinesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The route features will have their Shape fields populated with lines.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ROUTE_LINES")]
 			ROUTE_LINES,
 
 			/// <summary>
-			/// <para>Unchecked—No shape will be generated for the output routes.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ROUTE_LINES")]
@@ -1330,14 +1331,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum PopulateDirectionsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Driving directions will be generated. The feature class specified in the Output Directions Name parameter is populated with turn-by-turn instructions for each route. The network dataset must support driving directions; otherwise, an error will occur when solving with directions.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DIRECTIONS")]
 			DIRECTIONS,
 
 			/// <summary>
-			/// <para>Unchecked—Directions will not be generated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DIRECTIONS")]
@@ -1351,24 +1352,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum DirectionsStyleNameEnum 
 		{
 			/// <summary>
-			/// <para>NA Desktop—Printable turn-by-turn directions</para>
+			/// <para>NA 桌面—可打印转弯方向</para>
 			/// </summary>
 			[GPValue("NA Desktop")]
-			[Description("NA Desktop")]
+			[Description("NA 桌面")]
 			NA_Desktop,
 
 			/// <summary>
-			/// <para>NA Navigation—Turn-by-turn directions designed for an in-vehicle navigation device</para>
+			/// <para>NA 导航—针对车辆内导航设备设计的转弯方向</para>
 			/// </summary>
 			[GPValue("NA Navigation")]
-			[Description("NA Navigation")]
+			[Description("NA 导航")]
 			NA_Navigation,
 
 			/// <summary>
-			/// <para>NA Campus—Turn-by-turn walking directions designed for pedestrian routes</para>
+			/// <para>NA 校园—用于人行道的转弯行走方向</para>
 			/// </summary>
 			[GPValue("NA Campus")]
-			[Description("NA Campus")]
+			[Description("NA 校园")]
 			NA_Campus,
 
 		}
@@ -1379,14 +1380,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum SaveOutputLayerEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output will include a network analysis layer of the results.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SAVE_OUTPUT_LAYER")]
 			SAVE_OUTPUT_LAYER,
 
 			/// <summary>
-			/// <para>Unchecked—The output will not include a network analysis layer of the results.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SAVE_OUTPUT_LAYER")]
@@ -1400,14 +1401,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum IgnoreInvalidOrderLocationsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The solve operation will ignore any invalid orders and return a solution, given it didn&apos;t encounter any other errors. If you need to generate routes and deliver them to drivers immediately, you may be able to ignore invalid orders, solve, and distribute the routes to your drivers. Next, resolve any invalid orders from the last solve and include them in the VRP analysis for the next workday or work shift.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SKIP")]
 			SKIP,
 
 			/// <summary>
-			/// <para>Unchecked—The solve operation will fail when any invalid orders are encountered. An invalid order is an order that the VRP solver can&apos;t reach. An order may be unreachable for a variety of reasons, including if it&apos;s located on a prohibited network element, it isn&apos;t located on the network at all, or it&apos;s located on a disconnected portion of the network.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("HALT")]
@@ -1421,14 +1422,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum IgnoreNetworkLocationFieldsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Network location fields will not be considered when locating the inputs on the network. Instead, the inputs will always be located by performing a spatial search.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("IGNORE")]
 			IGNORE,
 
 			/// <summary>
-			/// <para>Unchecked—Network location fields will be considered when locating the inputs on the network. This is the default value.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("HONOR")]
@@ -1442,14 +1443,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TimeZoneUsageForTimeFieldsEnum 
 		{
 			/// <summary>
-			/// <para>Geo local— The date-time values associated with the orders or depots are in the time zone in which the orders and depots are located. For routes, the date-time values are based on the time zone in which the starting depot for the route is located. If a route does not have a starting depot, all orders and depots across all the routes must be in a single time zone. For breaks, the date-time values are based on the time zone of the routes. For example, if your depot is located in an area that follows eastern standard time and has the first time window values (specified as TimeWindowStart1 and TimeWindowEnd1) of 8 a.m. and 5 p.m., respectively, the time window values will be treated as 8 a.m. and 5 p.m. eastern standard time.</para>
+			/// <para>地理定位— 与停靠点或站点相关的日期时间值位于停靠点和站点所在的时区内。对于路径，日期时间值基于路径的起始站点所在的时区。如果路径没有起始站点，则路径上的所有停靠点和站点必须位于一个时区中。对于休息点，日期时间值基于路径的时区。例如，如果站点所在的区域实行东部标准时间并且第一个时间窗值（指定为 TimeWindowStart1 和 TimeWindowEnd1）为 8 a.m. 和 5 p.m.，则在东部标准时间中时间窗值将被视为 8 a.m. 和 5 p.m.。</para>
 			/// </summary>
 			[GPValue("GEO_LOCAL")]
-			[Description("Geo local")]
+			[Description("地理定位")]
 			Geo_local,
 
 			/// <summary>
-			/// <para>UTC— The date-time values associated with the orders or depots are in Coordinated Universal Time (UTC) and are not based on the time zone in which the orders or depots are located. For example, if your depot is located in an area that follows eastern standard time and has the first time window values (specified as TimeWindowStart1 and TimeWindowEnd1) of 8 a.m. and 5 p.m., respectively, the time window values will be treated as 12 p.m. and 9 p.m. eastern standard time, assuming eastern standard time is obeying daylight saving time.</para>
+			/// <para>UTC— 与停靠点或站点相关的日期时间值位于协调世界时间 (UTC) 中，且不基于停靠点或站点所在的时区。例如，如果站点所在的区域实行东部标准时间并且第一个时间窗值（指定为 TimeWindowStart1 和 TimeWindowEnd1）为 8 a.m. 和 5 p.m.，则在东部标准时间（假设东部标准时间遵循夏令时）中，时间窗值将分别被视为 12 p.m. 和 9 p.m.。</para>
 			/// </summary>
 			[GPValue("UTC")]
 			[Description("UTC")]
@@ -1463,14 +1464,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum SaveRouteDataEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The tool writes out a .zip archive containing a file geodatabase workspace that contains the inputs and outputs of the analysis.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SAVE_ROUTE_DATA")]
 			SAVE_ROUTE_DATA,
 
 			/// <summary>
-			/// <para>Unchecked—Route data is not saved. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SAVE_ROUTE_DATA")]

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Collapse Container By Attribute Rule</para>
+	/// <para>Add Collapse Container By Attribute Rule</para>
 	/// <para>Add a collapse container by attribute rule to a diagram template</para>
 	/// </summary>
 	[Obsolete()]

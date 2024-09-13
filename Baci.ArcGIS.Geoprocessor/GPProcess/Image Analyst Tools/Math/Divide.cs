@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Divide</para>
-	/// <para>Divides the values of two rasters on a cell-by-cell basis.</para>
+	/// <para>除</para>
+	/// <para>将两个栅格的值逐个像元相除。</para>
 	/// </summary>
 	public class Divide : AbstractGPProcess
 	{
@@ -20,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant1">
 		/// <para>Input raster or constant value 1</para>
-		/// <para>The input whose values will be divided by the second input.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>该输入的值将被第二个输入的值除。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="InRasterOrConstant2">
 		/// <para>Input raster or constant value 2</para>
-		/// <para>The input whose values the first input are to be divided by.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>用该输入的值去除第一个输入的值。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the quotient of the first input raster (dividend) divided by the second input (divisor).</para>
+		/// <para>输出栅格。</para>
+		/// <para>单元值为第一个输入栅格（被除数）除以第二个输入栅格（除数）的商。</para>
 		/// </param>
 		public Divide(object InRasterOrConstant1, object InRasterOrConstant2, object OutRaster)
 		{
@@ -41,14 +42,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Divide</para>
+		/// <para>Tool Display Name : 除</para>
 		/// </summary>
-		public override string DisplayName() => "Divide";
+		public override string DisplayName() => "除";
 
 		/// <summary>
-		/// <para>Tool Name : Divide</para>
+		/// <para>Tool Name : 除</para>
 		/// </summary>
-		public override string ToolName() => "Divide";
+		public override string ToolName() => "除";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.Divide</para>
@@ -77,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 1</para>
-		/// <para>The input whose values will be divided by the second input.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>该输入的值将被第二个输入的值除。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -90,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 2</para>
-		/// <para>The input whose values the first input are to be divided by.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>用该输入的值去除第一个输入的值。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -103,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the quotient of the first input raster (dividend) divided by the second input (divisor).</para>
+		/// <para>输出栅格。</para>
+		/// <para>单元值为第一个输入栅格（被除数）除以第二个输入栅格（除数）的商。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

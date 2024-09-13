@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Field</para>
-	/// <para>Deletes one or more fields from a table, feature class, feature layer, or raster dataset.</para>
+	/// <para>删除字段</para>
+	/// <para>可从表、要素类、要素图层或栅格数据集中删除一个或多个字段。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The table containing the fields to be deleted. The existing input table will be modified.</para>
+		/// <para>包含要删除字段的表。将修改现有输入表。</para>
 		/// </param>
 		/// <param name="DropField">
 		/// <para>Drop Field</para>
-		/// <para>The fields to be dropped from the input table. Only nonrequired fields may be deleted.</para>
+		/// <para>要从输入表中删除的字段。必填字段不能删除。</para>
 		/// </param>
 		public DeleteField(object InTable, object DropField)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Delete Field</para>
+		/// <para>Tool Display Name : 删除字段</para>
 		/// </summary>
-		public override string DisplayName() => "Delete Field";
+		public override string DisplayName() => "删除字段";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteField</para>
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The table containing the fields to be deleted. The existing input table will be modified.</para>
+		/// <para>包含要删除字段的表。将修改现有输入表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Drop Field</para>
-		/// <para>The fields to be dropped from the input table. Only nonrequired fields may be deleted.</para>
+		/// <para>要从输入表中删除的字段。必填字段不能删除。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Resolve Road Conflicts</para>
-	/// <para>Resolves graphic conflicts among symbolized road features by adjusting portions of line segments.</para>
+	/// <para>解决道路冲突</para>
+	/// <para>通过调整部分线段来解决符号化的道路要素之间的图形冲突。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InLayers">
 		/// <para>Input Road Layers</para>
-		/// <para>The input feature layers containing symbolized road features that may be in conflict.</para>
+		/// <para>包含可能存在冲突的符号化道路要素的输入要素图层。</para>
 		/// </param>
 		/// <param name="HierarchyField">
 		/// <para>Hierarchy Field</para>
-		/// <para>The field that contains hierarchical ranking of feature importance in which 1 is very important and larger integers reflect decreasing importance. A value of 0 (zero) locks the feature to ensure that it is not moved. The hierarchy field must be present and named the same for all input feature classes.</para>
+		/// <para>该字段包含要素重要性的等级级别，其中 1 表示非常重要，重要性随整数值的增大而递减。 字段值为 0（零）表示将锁定要素以确保其无法移动。 对于所有输入要素类，必须存在等级字段并且指定为相同的值。</para>
 		/// </param>
 		public ResolveRoadConflicts(object InLayers, object HierarchyField)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Resolve Road Conflicts</para>
+		/// <para>Tool Display Name : 解决道路冲突</para>
 		/// </summary>
-		public override string DisplayName() => "Resolve Road Conflicts";
+		public override string DisplayName() => "解决道路冲突";
 
 		/// <summary>
 		/// <para>Tool Name : ResolveRoadConflicts</para>
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Road Layers</para>
-		/// <para>The input feature layers containing symbolized road features that may be in conflict.</para>
+		/// <para>包含可能存在冲突的符号化道路要素的输入要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -81,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Hierarchy Field</para>
-		/// <para>The field that contains hierarchical ranking of feature importance in which 1 is very important and larger integers reflect decreasing importance. A value of 0 (zero) locks the feature to ensure that it is not moved. The hierarchy field must be present and named the same for all input feature classes.</para>
+		/// <para>该字段包含要素重要性的等级级别，其中 1 表示非常重要，重要性随整数值的增大而递减。 字段值为 0（零）表示将锁定要素以确保其无法移动。 对于所有输入要素类，必须存在等级字段并且指定为相同的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Displacement Feature Class</para>
-		/// <para>The output polygon features containing the degree and direction of road displacement that will be used by the Propagate Displacement tool to preserve spatial relationships.</para>
+		/// <para>包含道路位移的程度和方向的输出面要素，传递位移工具将使用这些要素保留空间关系。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]

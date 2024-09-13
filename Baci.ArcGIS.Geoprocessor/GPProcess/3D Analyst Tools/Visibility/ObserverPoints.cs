@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Observer Points</para>
-	/// <para>Identifies which observer points are visible from each raster surface location.</para>
+	/// <para>视点分析</para>
+	/// <para>识别从各栅格表面位置进行观察时可见的观察点。</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.Analyst3DTools.Viewshed2"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.Analyst3DTools.Viewshed2))]
@@ -22,17 +23,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input surface raster.</para>
+		/// <para>输入表面栅格。</para>
 		/// </param>
 		/// <param name="InObserverPointFeatures">
 		/// <para>Input point observer features</para>
-		/// <para>The point feature class that identifies the observer locations.</para>
-		/// <para>The maximum number of points allowed is 16.</para>
+		/// <para>用于识别观察点位置的点要素类。</para>
+		/// <para>允许的最大点数为 16。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The output identifies exactly which observer points are visible from each raster surface location.</para>
+		/// <para>输出栅格。</para>
+		/// <para>输出将精确识别从各栅格表面位置进行观察时可见的观察点。</para>
 		/// </param>
 		public ObserverPoints(object InRaster, object InObserverPointFeatures, object OutRaster)
 		{
@@ -42,9 +43,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Observer Points</para>
+		/// <para>Tool Display Name : 视点分析</para>
 		/// </summary>
-		public override string DisplayName() => "Observer Points";
+		public override string DisplayName() => "视点分析";
 
 		/// <summary>
 		/// <para>Tool Name : ObserverPoints</para>
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input surface raster.</para>
+		/// <para>输入表面栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -90,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input point observer features</para>
-		/// <para>The point feature class that identifies the observer locations.</para>
-		/// <para>The maximum number of points allowed is 16.</para>
+		/// <para>用于识别观察点位置的点要素类。</para>
+		/// <para>允许的最大点数为 16。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -103,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The output identifies exactly which observer points are visible from each raster surface location.</para>
+		/// <para>输出栅格。</para>
+		/// <para>输出将精确识别从各栅格表面位置进行观察时可见的观察点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -112,10 +113,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z factor</para>
-		/// <para>The number of ground x,y units in one surface z-unit.</para>
-		/// <para>The z-factor adjusts the units of measure for the z-units when they are different from the x,y units of the input surface. The z-values of the input surface are multiplied by the z-factor when calculating the final output surface.</para>
-		/// <para>If the x,y units and z-units are in the same units of measure, the z-factor is 1. This is the default.</para>
-		/// <para>If the x,y units and z-units are in different units of measure, the z-factor must be set to the appropriate factor or the results will be incorrect. For example, if the z-units are feet and the x,y units are meters, you would use a z-factor of 0.3048 to convert the z-units from feet to meters (1 foot = 0.3048 meter).</para>
+		/// <para>一个表面 z 单位中地面 x,y 单位的数量。</para>
+		/// <para>z 单位与输入表面的 x,y 单位不同时，可使用 z 因子调整 z 单位的测量单位。 计算最终输出表面时，将用 z 因子乘以输入表面的 z 值。</para>
+		/// <para>如果 x,y 单位和 z 单位采用相同的测量单位，则 z 因子为 1。 这是默认设置。</para>
+		/// <para>如果 x,y 单位和 z 单位采用不同的测量单位，则必须将 z 因子设置为适当的因子，否则会得到错误的结果。 例如，如果 z 单位是英尺，而 x,y 单位是米，则应使用 z 因子 0.3048 将 z 单位从英尺转换为米（1 英尺 = 0.3048 米）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -124,9 +125,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Use earth curvature corrections</para>
-		/// <para>Specifies whether correction for the earth&apos;s curvature will be applied.</para>
-		/// <para>Unchecked—No curvature correction will be applied. This is the default.</para>
-		/// <para>Checked—Curvature correction will be applied.</para>
+		/// <para>指定是否将应用地球曲率校正。</para>
+		/// <para>未选中 - 不应用任何曲率校正。 这是默认设置。</para>
+		/// <para>选中 - 应用曲率校正。</para>
 		/// <para><see cref="CurvatureCorrectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,8 +137,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Refractivity coefficient</para>
-		/// <para>The coefficient of the refraction of visible light in air.</para>
-		/// <para>The default value is 0.13.</para>
+		/// <para>空气中可见光的折射系数。</para>
+		/// <para>默认值为 0.13。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -146,9 +147,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output above ground level raster</para>
-		/// <para>The output above ground level (AGL) raster.</para>
-		/// <para>The AGL result is a raster where each cell value is the minimum height that must be added to an otherwise nonvisible cell to make it visible by at least one observer.</para>
-		/// <para>Cells that were already visible will have a value of 0 in this output raster.</para>
+		/// <para>地面以上 (AGL) 输出栅格。</para>
+		/// <para>AGL 结果是一个栅格，其中每个像元值都记录了为保证像元至少对一个观察点可见而需要向该像元添加的最小高度（若不添加此高度，像元不可见）。</para>
+		/// <para>在输出栅格中已可见像元的值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -171,14 +172,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum CurvatureCorrectionEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—No curvature correction will be applied. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FLAT_EARTH")]
 			FLAT_EARTH,
 
 			/// <summary>
-			/// <para>Checked—Curvature correction will be applied.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CURVED_EARTH")]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Extract Data and Email Task</para>
-	/// <para>Extracts the data in the specified layers and area of interest to the selected format and spatial reference, zips the data, and emails it to the specified address. This tool can be used to create a Data Extraction geoprocessing service.</para>
+	/// <para>提取数据并通过电子邮件发送任务</para>
+	/// <para>将指定图层和感兴趣区域内的数据提取为选定的格式和空间参考、压缩数据并将数据以电子邮件形式发送到指定的地址。此工具可用于创建“数据提取”地理处理服务。</para>
 	/// </summary>
 	public class ExtractDataAndEmailTask : AbstractGPProcess
 	{
@@ -20,47 +21,47 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		/// <param name="LayersToClip">
 		/// <para>Layers to Clip</para>
-		/// <para>The layers to be clipped. Layers must be feature or raster layers in the map's table of contents. Layer files do not work for this parameter.</para>
+		/// <para>要裁剪的图层。图层必须为地图内容列表中的要素或栅格图层。图层文件不适用于该参数。</para>
 		/// </param>
 		/// <param name="AreaOfInterest">
 		/// <para>Area of Interest</para>
-		/// <para>One or more polygons by which the layers will be clipped.</para>
+		/// <para>裁剪图层所依据的一个或多个面。</para>
 		/// </param>
 		/// <param name="FeatureFormat">
 		/// <para>Feature Format</para>
-		/// <para>The format in which the output features will be delivered. The string provided should be formatted as follows:</para>
-		/// <para>Name or format - Short Name - extension (if any)</para>
-		/// <para>The hyphen between the components is required, as well as the spaces around the hyphen.</para>
-		/// <para>For example:</para>
-		/// <para>File Geodatabase - GDB - .gdb</para>
+		/// <para>传送输出要素时使用的格式。所提供的字符串应采用如下格式：</para>
+		/// <para>名称或格式 - 名称缩写 - 扩展名（如果存在）</para>
+		/// <para>各部分之间需要有连字符，连字符两边需要有空格。</para>
+		/// <para>例如：</para>
+		/// <para>文件地理数据库 - GDB - .gdb</para>
 		/// <para>Shapefile - SHP - .shp</para>
 		/// <para>Autodesk AutoCAD - DXF_R2007 - .dxf</para>
 		/// <para>Autodesk AutoCAD - DWG_R2007 - .dwg</para>
 		/// <para>Bentley Microstation Design (V8) - DGN_V8 - .dgn</para>
-		/// <para>Internally, this tool uses the Export to CAD tool to convert data to the .dgn, .dwg, and .dxf CAD formats. The list of short names supported includes DGN_V8, DWG_R14, DWG_R2000, DWG_R2004, DWG_R2005, DWG_R2007, DWG_R2010, DXF_R14, DXF_R2000, DXF_R2004, DXF_R2005, DXF_R2007, and DXF_R2010.</para>
+		/// <para>在内部，此工具使用要素转 CAD 工具将数据转换为 .dgn、.dwg 和 .dxf 的 CAD 格式。支持的名称缩写列表里包含 DGN_V8、DWG_R14、DWG_R2000、DWG_R2004、DWG_R2005、DWG_R2007、DWG_R2010、DXF_R14、DXF_R2000、DXF_R2004、DXF_R2005、DXF_R2007 和 DXF_R2010。</para>
 		/// <para><see cref="FeatureFormatEnum"/></para>
 		/// </param>
 		/// <param name="RasterFormat">
 		/// <para>Raster Format</para>
-		/// <para>The format in which the output raster datasets will be delivered. The string provided should be formatted as follows:</para>
-		/// <para>Name of format - Short Name - extension (if any)</para>
-		/// <para>Any of the following strings will work:</para>
+		/// <para>传送输出栅格数据集时使用的格式。所提供的字符串应采用如下格式：</para>
+		/// <para>格式名称 - 名称缩写 - 扩展名（如果有）。</para>
+		/// <para>以下任意字符串都可以使用：</para>
 		/// <para>Esri GRID - GRID</para>
-		/// <para>File Geodatabase - GDB - .gdb</para>
+		/// <para>文件地理数据库 - GDB - .gdb</para>
 		/// <para>ERDAS IMAGINE - IMG - .img</para>
-		/// <para>Tagged Image File Format - TIFF - .tif</para>
-		/// <para>Portable Network Graphics - PNG - .png</para>
-		/// <para>Graphic Interchange Format - GIF - .gif</para>
-		/// <para>Joint Photographics Experts Group - JPEG - .jpg</para>
-		/// <para>Joint Photographics Experts Group - JPEG - .jp2</para>
-		/// <para>Bitmap - BMP - .bmp</para>
-		/// <para>Some of the above raster formats have limitations and not all data can be converted to the format.</para>
+		/// <para>标记图像文件格式 - TIFF - .tif</para>
+		/// <para>可移植网络图形 - PNG - .png</para>
+		/// <para>图形交换格式 - GIF - .gif</para>
+		/// <para>联合图像专家组 - JPEG - .jpg</para>
+		/// <para>联合图像专家组 - JPEG - .jp2</para>
+		/// <para>位图 - BMP - .bmp</para>
+		/// <para>上述的某些栅格格式存在限制，所以并不是所有的数据都可以转换为此格式。</para>
 		/// <para><see cref="RasterFormatEnum"/></para>
 		/// </param>
 		/// <param name="To">
 		/// <para>To</para>
-		/// <para>The email address of the recipient.</para>
-		/// <para>This tool will be able to email to this address if and only if the SMTP server has been configured within this model.</para>
+		/// <para>收件人的电子邮件地址。</para>
+		/// <para>当且仅当此模型内已配置 SMTP 服务器时，此工具才能将电子邮件发送至该地址。</para>
 		/// </param>
 		public ExtractDataAndEmailTask(object LayersToClip, object AreaOfInterest, object FeatureFormat, object RasterFormat, object To)
 		{
@@ -72,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Extract Data and Email Task</para>
+		/// <para>Tool Display Name : 提取数据并通过电子邮件发送任务</para>
 		/// </summary>
-		public override string DisplayName() => "Extract Data and Email Task";
+		public override string DisplayName() => "提取数据并通过电子邮件发送任务";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractDataAndEmailTask</para>
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Layers to Clip</para>
-		/// <para>The layers to be clipped. Layers must be feature or raster layers in the map's table of contents. Layer files do not work for this parameter.</para>
+		/// <para>要裁剪的图层。图层必须为地图内容列表中的要素或栅格图层。图层文件不适用于该参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Area of Interest</para>
-		/// <para>One or more polygons by which the layers will be clipped.</para>
+		/// <para>裁剪图层所依据的一个或多个面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -127,16 +128,16 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Feature Format</para>
-		/// <para>The format in which the output features will be delivered. The string provided should be formatted as follows:</para>
-		/// <para>Name or format - Short Name - extension (if any)</para>
-		/// <para>The hyphen between the components is required, as well as the spaces around the hyphen.</para>
-		/// <para>For example:</para>
-		/// <para>File Geodatabase - GDB - .gdb</para>
+		/// <para>传送输出要素时使用的格式。所提供的字符串应采用如下格式：</para>
+		/// <para>名称或格式 - 名称缩写 - 扩展名（如果存在）</para>
+		/// <para>各部分之间需要有连字符，连字符两边需要有空格。</para>
+		/// <para>例如：</para>
+		/// <para>文件地理数据库 - GDB - .gdb</para>
 		/// <para>Shapefile - SHP - .shp</para>
 		/// <para>Autodesk AutoCAD - DXF_R2007 - .dxf</para>
 		/// <para>Autodesk AutoCAD - DWG_R2007 - .dwg</para>
 		/// <para>Bentley Microstation Design (V8) - DGN_V8 - .dgn</para>
-		/// <para>Internally, this tool uses the Export to CAD tool to convert data to the .dgn, .dwg, and .dxf CAD formats. The list of short names supported includes DGN_V8, DWG_R14, DWG_R2000, DWG_R2004, DWG_R2005, DWG_R2007, DWG_R2010, DXF_R14, DXF_R2000, DXF_R2004, DXF_R2005, DXF_R2007, and DXF_R2010.</para>
+		/// <para>在内部，此工具使用要素转 CAD 工具将数据转换为 .dgn、.dwg 和 .dxf 的 CAD 格式。支持的名称缩写列表里包含 DGN_V8、DWG_R14、DWG_R2000、DWG_R2004、DWG_R2005、DWG_R2007、DWG_R2010、DXF_R14、DXF_R2000、DXF_R2004、DXF_R2005、DXF_R2007 和 DXF_R2010。</para>
 		/// <para><see cref="FeatureFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -146,19 +147,19 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Raster Format</para>
-		/// <para>The format in which the output raster datasets will be delivered. The string provided should be formatted as follows:</para>
-		/// <para>Name of format - Short Name - extension (if any)</para>
-		/// <para>Any of the following strings will work:</para>
+		/// <para>传送输出栅格数据集时使用的格式。所提供的字符串应采用如下格式：</para>
+		/// <para>格式名称 - 名称缩写 - 扩展名（如果有）。</para>
+		/// <para>以下任意字符串都可以使用：</para>
 		/// <para>Esri GRID - GRID</para>
-		/// <para>File Geodatabase - GDB - .gdb</para>
+		/// <para>文件地理数据库 - GDB - .gdb</para>
 		/// <para>ERDAS IMAGINE - IMG - .img</para>
-		/// <para>Tagged Image File Format - TIFF - .tif</para>
-		/// <para>Portable Network Graphics - PNG - .png</para>
-		/// <para>Graphic Interchange Format - GIF - .gif</para>
-		/// <para>Joint Photographics Experts Group - JPEG - .jpg</para>
-		/// <para>Joint Photographics Experts Group - JPEG - .jp2</para>
-		/// <para>Bitmap - BMP - .bmp</para>
-		/// <para>Some of the above raster formats have limitations and not all data can be converted to the format.</para>
+		/// <para>标记图像文件格式 - TIFF - .tif</para>
+		/// <para>可移植网络图形 - PNG - .png</para>
+		/// <para>图形交换格式 - GIF - .gif</para>
+		/// <para>联合图像专家组 - JPEG - .jpg</para>
+		/// <para>联合图像专家组 - JPEG - .jp2</para>
+		/// <para>位图 - BMP - .bmp</para>
+		/// <para>上述的某些栅格格式存在限制，所以并不是所有的数据都可以转换为此格式。</para>
 		/// <para><see cref="RasterFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -168,8 +169,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>To</para>
-		/// <para>The email address of the recipient.</para>
-		/// <para>This tool will be able to email to this address if and only if the SMTP server has been configured within this model.</para>
+		/// <para>收件人的电子邮件地址。</para>
+		/// <para>当且仅当此模型内已配置 SMTP 服务器时，此工具才能将电子邮件发送至该地址。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -190,7 +191,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		public enum FeatureFormatEnum 
 		{
 			/// <summary>
-			/// <para>File Geodatabase - GDB - .gdb</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("File Geodatabase - GDB - .gdb")]
 			[Description("File Geodatabase - GDB - .gdb")]
@@ -218,7 +219,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 			ESRI_GRID___GRID,
 
 			/// <summary>
-			/// <para>File Geodatabase - GDB - .gdb</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("File Geodatabase - GDB - .gdb")]
 			[Description("File Geodatabase - GDB - .gdb")]
@@ -232,21 +233,21 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 			ERDAS_IMAGINE___IMG___img,
 
 			/// <summary>
-			/// <para>Tagged Image File Format - TIFF - .tif</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("Tagged Image File Format - TIFF - .tif")]
 			[Description("Tagged Image File Format - TIFF - .tif")]
 			Tagged_Image_File_Format___TIFF___tif,
 
 			/// <summary>
-			/// <para>Graphic Interchange Format - GIF - .gif</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("Graphic Interchange Format - GIF - .gif")]
 			[Description("Graphic Interchange Format - GIF - .gif")]
 			Graphic_Interchange_Format___GIF___gif,
 
 			/// <summary>
-			/// <para>Joint Photographics Experts Group - JPEG - .jpg</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("Joint Photographics Experts Group - JPEG - .jpg")]
 			[Description("Joint Photographics Experts Group - JPEG - .jpg")]
@@ -260,14 +261,14 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 			Joint_Photographics_Experts_Group___JPEG_2000___jp2,
 
 			/// <summary>
-			/// <para>Bitmap - BMP - .bmp</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("Bitmap - BMP - .bmp")]
 			[Description("Bitmap - BMP - .bmp")]
 			Bitmap___BMP___bmp,
 
 			/// <summary>
-			/// <para>Portable Network Graphics - PNG - .png</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("Portable Network Graphics - PNG - .png")]
 			[Description("Portable Network Graphics - PNG - .png")]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Validate Scene Layer</para>
-	/// <para>Evaluates a scene layer package file (*.slpk) to determine its conformity to I3S specification.</para>
+	/// <para>验证场景图层</para>
+	/// <para>评估场景图层包文件 (*.slpk)，以确定其是否符合 I3S 规范。</para>
 	/// </summary>
 	public class ValidateSceneLayerPackage : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InSlpk">
 		/// <para>Input Scene Layer</para>
-		/// <para>The scene layer package file that will be evaluated.</para>
+		/// <para>将进行评估的场景图层包文件。</para>
 		/// </param>
 		/// <param name="OutReport">
 		/// <para>Output Log File</para>
-		/// <para>The output log file that will summarize the results of the evaluation.</para>
+		/// <para>用于汇总评估结果的输出日志文件。</para>
 		/// </param>
 		public ValidateSceneLayerPackage(object InSlpk, object OutReport)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Validate Scene Layer</para>
+		/// <para>Tool Display Name : 验证场景图层</para>
 		/// </summary>
-		public override string DisplayName() => "Validate Scene Layer";
+		public override string DisplayName() => "验证场景图层";
 
 		/// <summary>
 		/// <para>Tool Name : ValidateSceneLayerPackage</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Scene Layer</para>
-		/// <para>The scene layer package file that will be evaluated.</para>
+		/// <para>将进行评估的场景图层包文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Log File</para>
-		/// <para>The output log file that will summarize the results of the evaluation.</para>
+		/// <para>用于汇总评估结果的输出日志文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

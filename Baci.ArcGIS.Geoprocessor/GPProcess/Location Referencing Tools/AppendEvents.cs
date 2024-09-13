@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Append Events</para>
+	/// <para>Append Events</para>
 	/// <para>Appends event records from a table, layer, or feature class to an existing ArcGIS Location Referencing event feature class.</para>
 	/// </summary>
 	public class AppendEvents : AbstractGPProcess

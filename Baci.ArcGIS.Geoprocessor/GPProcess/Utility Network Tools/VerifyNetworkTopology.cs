@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Verify Network Topology</para>
-	/// <para>Verifies the network topology system tables and logs inconsistencies to an output log file.</para>
+	/// <para>验证网络拓扑</para>
+	/// <para>用于验证网络拓扑系统表并将不一致情况记录到输出日志文件中。</para>
 	/// </summary>
 	public class VerifyNetworkTopology : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that will be verified for consistency.</para>
+		/// <para>将验证公共设施网络的一致性。</para>
 		/// </param>
 		public VerifyNetworkTopology(object InUtilityNetwork)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Verify Network Topology</para>
+		/// <para>Tool Display Name : 验证网络拓扑</para>
 		/// </summary>
-		public override string DisplayName() => "Verify Network Topology";
+		public override string DisplayName() => "验证网络拓扑";
 
 		/// <summary>
 		/// <para>Tool Name : VerifyNetworkTopology</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that will be verified for consistency.</para>
+		/// <para>将验证公共设施网络的一致性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Output Log File</para>
-		/// <para>The output log file containing the discovered issues.</para>
+		/// <para>包含所发现问题的输出日志文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]

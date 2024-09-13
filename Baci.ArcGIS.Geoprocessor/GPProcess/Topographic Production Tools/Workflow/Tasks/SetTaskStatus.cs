@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Set Task Status</para>
+	/// <para>Set Task Status</para>
 	/// <para>Updates the status of a task based on the state of the Workflow Manager (Classic) job created for the task.</para>
 	/// </summary>
 	public class SetTaskStatus : AbstractGPProcess

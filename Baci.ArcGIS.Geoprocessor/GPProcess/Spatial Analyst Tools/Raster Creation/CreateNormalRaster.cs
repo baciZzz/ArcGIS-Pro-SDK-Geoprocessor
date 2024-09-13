@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Create Normal Raster</para>
-	/// <para>Creates a raster of random values with a normal (Gaussian) distribution within the extent and cell size of the analysis window.</para>
+	/// <para>创建正态栅格</para>
+	/// <para>基于“分析”窗口的范围和像元大小创建具有正态（高斯）分布随机值的栅格。</para>
 	/// </summary>
 	public class CreateNormalRaster : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster of normally distributed values with a mean of 0.0 and a standard deviation of 1.0.</para>
+		/// <para>具有平均值为 0.0、标准差为 1.0 的正态分布值的输出栅格。</para>
 		/// </param>
 		public CreateNormalRaster(object OutRaster)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Normal Raster</para>
+		/// <para>Tool Display Name : 创建正态栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Create Normal Raster";
+		public override string DisplayName() => "创建正态栅格";
 
 		/// <summary>
 		/// <para>Tool Name : CreateNormalRaster</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster of normally distributed values with a mean of 0.0 and a standard deviation of 1.0.</para>
+		/// <para>具有平均值为 0.0、标准差为 1.0 的正态分布值的输出栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -72,8 +73,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>The cell size of the output raster that will be created.</para>
-		/// <para>This parameter can be defined by a numeric value or obtained from an existing raster dataset. If the cell size hasn&apos;t been explicitly specified as the parameter value, the environment cell size value will be used if specified; otherwise, additional rules will be used to calculate it from the other inputs. See the usage section for more detail.</para>
+		/// <para>将创建的输出栅格的像元大小。</para>
+		/// <para>此参数可以通过数值进行定义，也可以从现有栅格数据集获取。如果未将像元大小明确指定为参数值，则将使用环境像元大小值（如果已指定）；否则，将使用其他规则通过其他输出计算像元大小。有关详细信息，请参阅用法部分。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -85,8 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output extent</para>
-		/// <para>The extent for the output raster dataset.</para>
-		/// <para>The extent will be the value in the environment if specifically set. If not specifically set, the default is 0, 0, 250, 250.</para>
+		/// <para>输出栅格数据集的范围。</para>
+		/// <para>如果专门进行设置，则范围将为环境中的值。如果未进行专门设置，默认值将为 0、0、250、250。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]

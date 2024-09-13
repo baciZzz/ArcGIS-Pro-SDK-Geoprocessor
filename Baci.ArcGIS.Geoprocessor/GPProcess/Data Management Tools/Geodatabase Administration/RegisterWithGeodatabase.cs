@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Register with Geodatabase</para>
-	/// <para>Registers with the geodatabase the feature classes, tables, views, and raster layers that were created in the database using third-party tools or views created with the  Create Database View  tool. Once registered, information about the items—such as table and column names, spatial extent, and geometry type—is stored in the geodatabase's system tables, allowing these registered items to participate in geodatabase functionality.</para>
+	/// <para>注册到地理数据库</para>
+	/// <para>向地理数据库注册要素类、表、视图和栅格图层，而这些要素类、表、视图和栅格图层是使用第三方工具或具有创建数据库视图工具的视图在数据库中创建的。 注册之后，有关项目（例如表和列的名称、空间范围和几何类型）的信息会存储于地理数据库系统表中，从而使这些注册的项目可参与地理数据库的功能。</para>
 	/// </summary>
 	public class RegisterWithGeodatabase : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Datasets</para>
-		/// <para>The feature class, table, view, or raster created using third-party tools or SQL, or the view created using the Create Database View tool that will be registered with the geodatabase. The dataset must exist in the same database as the geodatabase.</para>
+		/// <para>使用第三方工具或 SQL 创建的要素类、表、视图或栅格，或者使用将在地理数据库中注册的创建数据库视图工具创建的视图。 数据集必须存在于与地理数据库相同的数据库中。</para>
 		/// </param>
 		public RegisterWithGeodatabase(object InDataset)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Register with Geodatabase</para>
+		/// <para>Tool Display Name : 注册到地理数据库</para>
 		/// </summary>
-		public override string DisplayName() => "Register with Geodatabase";
+		public override string DisplayName() => "注册到地理数据库";
 
 		/// <summary>
 		/// <para>Tool Name : RegisterWithGeodatabase</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Datasets</para>
-		/// <para>The feature class, table, view, or raster created using third-party tools or SQL, or the view created using the Create Database View tool that will be registered with the geodatabase. The dataset must exist in the same database as the geodatabase.</para>
+		/// <para>使用第三方工具或 SQL 创建的要素类、表、视图或栅格，或者使用将在地理数据库中注册的创建数据库视图工具创建的视图。 数据集必须存在于与地理数据库相同的数据库中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Object ID Field</para>
-		/// <para>The field that will be used as the ObjectID field. This input is required when registering a view, and you must supply an existing integer field. This parameter is optional when registering other dataset types; if you use an existing field, it must be an integer data type. If an existing field is not supplied when registering these other dataset types, an ObjectID field will be created and populated.</para>
+		/// <para>将用作 ObjectID 字段的字段。 注册视图时需要此输入，且您必须提供一个现有的整型字段。 注册其他数据集类型时该参数为可选参数；如果使用现有字段，则该参数必须为整形数据类型。 如果在注册这些数据集类型时未提供现有字段，则将创建 ObjectID 字段并进行填充。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Shape Field</para>
-		/// <para>If the input dataset contains a spatial data type column, include this field during the registration process.</para>
+		/// <para>如果输入数据集包含空间数据类型列，则在注册过程中应将该字段包括在内。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -99,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Geometry Type</para>
-		/// <para>Specifies the geometry type. If the Shape Field parameter value is present, you must specify a geometry type. Supported geometry types are point, multipoint, polygon, and polyline. If the dataset being registered contains existing features, the geometry type specified must match the entity type of these features.</para>
+		/// <para>指定几何类型。 如果存在 Shape 字段参数值，您必须指定一个几何类型。 支持的几何类型包括点、多点、面和折线。 如果正在注册的数据集包含现有要素，则指定的几何类型必须与这些要素的实体类型相匹配。</para>
 		/// <para><see cref="InGeometryTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>If the Shape Field parameter value is present and the table is empty, specify the coordinate system to be used for features. If the dataset being registered contains existing features, the coordinate system specified must match the coordinate system of the existing features.</para>
+		/// <para>如果 Shape 字段参数值存在，且表为空，则指定将要用于要素的坐标系。 如果正在注册的数据集包含现有要素，则指定的坐标系必须与现有要素的坐标系相匹配。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
@@ -117,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>If the Shape Field parameter value is present, specify the allowable coordinate range for x,y coordinates. If the dataset being registered contains existing features, the extent of the existing features will be used.</para>
+		/// <para>如果 Shape 字段参数值存在，则指定允许的 x,y 坐标的坐标范围。 如果正在注册的数据集包含现有要素，则将使用现有要素的范围。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEnvelope()]
@@ -143,28 +144,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 			/// <para></para>
 			/// </summary>
 			[GPValue("POINT")]
-			[Description("Point")]
+			[Description("点")]
 			Point,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("MULTIPOINT")]
-			[Description("Multipoint")]
+			[Description("多点")]
 			Multipoint,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("POLYGON")]
-			[Description("Polygon")]
+			[Description("面")]
 			Polygon,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("POLYLINE")]
-			[Description("Polyline")]
+			[Description("折线")]
 			Polyline,
 
 		}

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Outside Boundary</para>
+	/// <para>外部边界</para>
 	/// <para>Entities outside given boundary.</para>
 	/// </summary>
 	[Obsolete()]
@@ -32,9 +33,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Outside Boundary</para>
+		/// <para>Tool Display Name : 外部边界</para>
 		/// </summary>
-		public override string DisplayName() => "Outside Boundary";
+		public override string DisplayName() => "外部边界";
 
 		/// <summary>
 		/// <para>Tool Name : OutsideBoundary</para>

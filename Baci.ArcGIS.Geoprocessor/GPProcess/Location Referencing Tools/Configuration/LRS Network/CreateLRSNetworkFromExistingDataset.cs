@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Create LRS Network From Existing Dataset</para>
+	/// <para>Create LRS Network From Existing Dataset</para>
 	/// <para>Creates an LRS Network using an existing polyline feature class.</para>
 	/// </summary>
 	public class CreateLRSNetworkFromExistingDataset : AbstractGPProcess

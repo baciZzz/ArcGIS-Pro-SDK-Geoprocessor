@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Change Terrain Reference Scale</para>
-	/// <para>Changes the reference scale associated with a terrain pyramid level.</para>
+	/// <para>更改 Terrain 参考比例</para>
+	/// <para>更改与 terrain 金字塔等级相关联的参考比例。</para>
 	/// </summary>
 	public class ChangeTerrainReferenceScale : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTerrain">
 		/// <para>Input Terrain</para>
-		/// <para>The terrain dataset to process.</para>
+		/// <para>待处理的 terrain 数据集。</para>
 		/// </param>
 		/// <param name="OldRefscale">
 		/// <para>Old Reference Scale</para>
-		/// <para>The reference scale of an existing pyramid level.</para>
+		/// <para>现有金字塔等级的参考比例。</para>
 		/// </param>
 		/// <param name="NewRefscale">
 		/// <para>New Reference Scale</para>
-		/// <para>The new reference scale for the pyramid level.</para>
+		/// <para>金字塔等级的新参考比例。</para>
 		/// </param>
 		public ChangeTerrainReferenceScale(object InTerrain, object OldRefscale, object NewRefscale)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Change Terrain Reference Scale</para>
+		/// <para>Tool Display Name : 更改 Terrain 参考比例</para>
 		/// </summary>
-		public override string DisplayName() => "Change Terrain Reference Scale";
+		public override string DisplayName() => "更改 Terrain 参考比例";
 
 		/// <summary>
 		/// <para>Tool Name : ChangeTerrainReferenceScale</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Terrain</para>
-		/// <para>The terrain dataset to process.</para>
+		/// <para>待处理的 terrain 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTerrainLayer()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Old Reference Scale</para>
-		/// <para>The reference scale of an existing pyramid level.</para>
+		/// <para>现有金字塔等级的参考比例。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>New Reference Scale</para>
-		/// <para>The new reference scale for the pyramid level.</para>
+		/// <para>金字塔等级的新参考比例。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]

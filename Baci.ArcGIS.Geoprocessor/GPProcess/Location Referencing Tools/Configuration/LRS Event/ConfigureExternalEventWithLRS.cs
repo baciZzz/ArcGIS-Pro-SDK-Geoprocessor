@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Configure External Event With LRS</para>
+	/// <para>Configure External Event With LRS</para>
 	/// <para>Associates event data stored in an external system with an LRS.</para>
 	/// </summary>
 	public class ConfigureExternalEventWithLRS : AbstractGPProcess

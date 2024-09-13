@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Relative Mainline Layout</para>
+	/// <para>Add Relative Mainline Layout</para>
 	/// <para>Add the relative mainline layout to a diagram template</para>
 	/// </summary>
 	[Obsolete()]

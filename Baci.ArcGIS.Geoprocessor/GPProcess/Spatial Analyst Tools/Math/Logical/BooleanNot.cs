@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Boolean Not</para>
-	/// <para>Performs a Boolean Not (complement) operation on the cell values of the input raster.</para>
+	/// <para>布尔非</para>
+	/// <para>对此输入栅格的各像元值执行“布尔非”（求反）运算。</para>
 	/// </summary>
 	public class BooleanNot : AbstractGPProcess
 	{
@@ -20,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant">
 		/// <para>Input raster or constant value</para>
-		/// <para>The input to use in this Boolean operation.</para>
-		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
+		/// <para>布尔运算中要使用的输入数据。</para>
+		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The output cell values will be either 0 or 1.</para>
+		/// <para>输出栅格。</para>
+		/// <para>输出像元值为 0 或 1。</para>
 		/// </param>
 		public BooleanNot(object InRasterOrConstant, object OutRaster)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Boolean Not</para>
+		/// <para>Tool Display Name : 布尔非</para>
 		/// </summary>
-		public override string DisplayName() => "Boolean Not";
+		public override string DisplayName() => "布尔非";
 
 		/// <summary>
 		/// <para>Tool Name : BooleanNot</para>
@@ -71,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value</para>
-		/// <para>The input to use in this Boolean operation.</para>
-		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
+		/// <para>布尔运算中要使用的输入数据。</para>
+		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -84,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The output cell values will be either 0 or 1.</para>
+		/// <para>输出栅格。</para>
+		/// <para>输出像元值为 0 或 1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

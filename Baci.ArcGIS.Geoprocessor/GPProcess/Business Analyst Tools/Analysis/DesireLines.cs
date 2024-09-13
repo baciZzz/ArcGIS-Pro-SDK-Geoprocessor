@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Desire Lines</para>
+	/// <para>Generate Desire Lines</para>
 	/// <para>Generates a series of lines from each customer to an associated store location. These lines are often called spider diagrams.</para>
 	/// </summary>
 	public class DesireLines : AbstractGPProcess

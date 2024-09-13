@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Optimized Outlier Analysis</para>
-	/// <para>Given incident points or weighted features (points or polygons), creates a map of statistically significant hot spots, cold spots, and spatial outliers using the Anselin Local Moran's I statistic. It evaluates the characteristics of the input feature class to produce optimal results.</para>
+	/// <para>优化的异常值分析</para>
+	/// <para>假设存在事件点或加权要素（点或面），可以使用 Anselin Local Moran's I 统计数据创建具有统计显著性的热点、冷点和空间异常值。它通过评估输入要素类的特征来生成可优化结果。</para>
 	/// </summary>
 	public class OptimizedOutlierAnalysis : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputFeatures">
 		/// <para>Input Features</para>
-		/// <para>The point or polygon feature class for which the cluster and outlier analysis will be performed.</para>
+		/// <para>要执行聚类和异常值分析的点或面要素类。</para>
 		/// </param>
 		/// <param name="OutputFeatures">
 		/// <para>Output Features</para>
-		/// <para>The output feature class to receive the result fields.</para>
+		/// <para>用于接收结果字段的输出要素类。</para>
 		/// </param>
 		public OptimizedOutlierAnalysis(object InputFeatures, object OutputFeatures)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Optimized Outlier Analysis</para>
+		/// <para>Tool Display Name : 优化的异常值分析</para>
 		/// </summary>
-		public override string DisplayName() => "Optimized Outlier Analysis";
+		public override string DisplayName() => "优化的异常值分析";
 
 		/// <summary>
 		/// <para>Tool Name : OptimizedOutlierAnalysis</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The point or polygon feature class for which the cluster and outlier analysis will be performed.</para>
+		/// <para>要执行聚类和异常值分析的点或面要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>The output feature class to receive the result fields.</para>
+		/// <para>用于接收结果字段的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Analysis Field</para>
-		/// <para>The numeric field (number of incidents, crime rates, test scores, and so on) to be evaluated.</para>
+		/// <para>要评估的数值字段（事件数、犯罪率和测试得分等）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -98,11 +99,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Incident Data Aggregation Method</para>
-		/// <para>The aggregation method to use to create weighted features for analysis from incident point data.</para>
-		/// <para>Count incidents within fishnet grid—A fishnet polygon mesh will overlay the incident point data and the number of incidents within each polygon cell will be counted. If no bounding polygon is provided in the Bounding Polygons Defining Where Incidents Are Possible parameter, only cells with at least one incident will be used in the analysis; otherwise, all cells within the bounding polygons will be analyzed.</para>
-		/// <para>Count incidents within hexagon grid—A hexagon polygon mesh will overlay the incident point data and the number of incidents within each polygon cell will be counted. If no bounding polygon is provided in the Bounding Polygons Defining Where Incidents Are Possible parameter, only cells with at least one incident will be used in the analysis; otherwise, all cells within the bounding polygons will be analyzed.</para>
-		/// <para>Count incidents within aggregation polygons—You provide aggregation polygons to overlay the incident point data in the Polygons For Aggregating Incidents Into Counts parameter. The incidents within each polygon are counted.</para>
-		/// <para>Snap nearby incidents to create weighted points—Nearby incidents will be aggregated together to create a single weighted point. The weight for each point is the number of aggregated incidents at that location.</para>
+		/// <para>用于创建加权要素以通过事件点数据进行分析的聚合方法。</para>
+		/// <para>在渔网格网内计数事件—渔网面网格将覆盖事件点数据，并将计算每个面内的事件数。如果定义事件潜在发生位置的边界面参数中未提供任何边界面，则只分析至少含一个事件的像元；否则，将分析边界面之内的所有像元。</para>
+		/// <para>在六边形格网内计数事件—六边形面网格将覆盖事件点数据，并将计算每个面像元内的事件数。如果定义事件潜在发生位置的边界面参数中未提供任何边界面，则只分析至少含一个事件的像元；否则，将分析边界面之内的所有像元。</para>
+		/// <para>在渔网面内计数事件—提供聚合面以覆盖用于将事件聚合到计数的面参数中的事件点数据。计算每个面内的事件数。</para>
+		/// <para>捕捉附近事件以创建加权点—邻近事件将聚合在一起，从而创建单个加权点。各点的权重值是该位置的聚合事件数。</para>
 		/// <para><see cref="IncidentDataAggregationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Bounding Polygons Defining Where Incidents Are Possible</para>
-		/// <para>A polygon feature class defining where the incident Input Features could possibly occur.</para>
+		/// <para>面要素类定义可能会发生输入要素事件的区域。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -123,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Polygons For Aggregating Incidents Into Counts</para>
-		/// <para>The polygons to use to aggregate the incident Input Features in order to get an incident count for each polygon feature.</para>
+		/// <para>用于聚合输入要素事件以获得各面要素的事件计数的面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -134,10 +135,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Performance Adjustment</para>
-		/// <para>This analysis utilizes permutations to create a reference distribution. Choosing the number of permutations is a balance between precision and increased processing time. Choose your preference for speed versus precision. More robust and precise results take longer to calculate.</para>
-		/// <para>Quick (199 permutations)—With 199 permutations, the smallest possible pseudo p-value is 0.005 and all other pseudo p-values will be even multiples of this value.</para>
-		/// <para>Balanced (499 permutations)—With 499 permutations, the smallest possible pseudo p-value is 0.002 and all other pseudo p-values will be even multiples of this value.</para>
-		/// <para>Robust (999 permutations)—With 999 permutations, the smallest possible pseudo p-value is 0.001 and all other pseudo p-values will be even multiples of this value.</para>
+		/// <para>该分析利用了置换来创建参考分布。选择置换检验次数时需要兼顾精度和所需增加的处理时间。根据您的偏好选择速度或精度。结果越可靠越精确计算所花费的时间就会越长。</para>
+		/// <para>快速（置换检验次数为 199）—如果置换检验次数为 199，则可能的最小伪 p 值为 0.005，其他所有伪 p 值将是该值的数倍。</para>
+		/// <para>平衡（置换检验次数为 499）—如果置换检验次数为 499，则可能的最小伪 p 值为 0.002，其他所有伪 p 值将是该值的数倍。</para>
+		/// <para>可靠（置换检验次数为 999）—如果置换检验次数为 999，则可能的最小伪 p 值为 0.001，其他所有伪 p 值将是该值的数倍。</para>
 		/// <para><see cref="PerformanceAdjustmentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -147,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Cell Size</para>
-		/// <para>The size of the grid cells used to aggregate the Input Features. When aggregating into a hexagon grid, this distance is used as the height to construct the hexagon polygons.</para>
+		/// <para>用于聚合输入要素的格网像元的大小。当聚合到六边形网格时，该距离用作构建六边形面的高度。</para>
 		/// <para><see cref="CellSizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -158,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Distance Band</para>
-		/// <para>The spatial extent of the analysis neighborhood. This value determines which features are analyzed together in order to assess local clustering.</para>
+		/// <para>分析邻域的空间范围。该值用于确定将哪些要素一起用于分析以便访问局部聚类。</para>
 		/// <para><see cref="DistanceBandEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -184,31 +185,31 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum IncidentDataAggregationMethodEnum 
 		{
 			/// <summary>
-			/// <para>Count incidents within fishnet grid—A fishnet polygon mesh will overlay the incident point data and the number of incidents within each polygon cell will be counted. If no bounding polygon is provided in the Bounding Polygons Defining Where Incidents Are Possible parameter, only cells with at least one incident will be used in the analysis; otherwise, all cells within the bounding polygons will be analyzed.</para>
+			/// <para>在渔网格网内计数事件—渔网面网格将覆盖事件点数据，并将计算每个面内的事件数。如果定义事件潜在发生位置的边界面参数中未提供任何边界面，则只分析至少含一个事件的像元；否则，将分析边界面之内的所有像元。</para>
 			/// </summary>
 			[GPValue("COUNT_INCIDENTS_WITHIN_FISHNET_POLYGONS")]
-			[Description("Count incidents within fishnet grid")]
+			[Description("在渔网格网内计数事件")]
 			Count_incidents_within_fishnet_grid,
 
 			/// <summary>
-			/// <para>Count incidents within hexagon grid—A hexagon polygon mesh will overlay the incident point data and the number of incidents within each polygon cell will be counted. If no bounding polygon is provided in the Bounding Polygons Defining Where Incidents Are Possible parameter, only cells with at least one incident will be used in the analysis; otherwise, all cells within the bounding polygons will be analyzed.</para>
+			/// <para>在六边形格网内计数事件—六边形面网格将覆盖事件点数据，并将计算每个面像元内的事件数。如果定义事件潜在发生位置的边界面参数中未提供任何边界面，则只分析至少含一个事件的像元；否则，将分析边界面之内的所有像元。</para>
 			/// </summary>
 			[GPValue("COUNT_INCIDENTS_WITHIN_HEXAGON_POLYGONS")]
-			[Description("Count incidents within hexagon grid")]
+			[Description("在六边形格网内计数事件")]
 			Count_incidents_within_hexagon_grid,
 
 			/// <summary>
-			/// <para>Count incidents within aggregation polygons—You provide aggregation polygons to overlay the incident point data in the Polygons For Aggregating Incidents Into Counts parameter. The incidents within each polygon are counted.</para>
+			/// <para>在渔网面内计数事件—提供聚合面以覆盖用于将事件聚合到计数的面参数中的事件点数据。计算每个面内的事件数。</para>
 			/// </summary>
 			[GPValue("COUNT_INCIDENTS_WITHIN_AGGREGATION_POLYGONS")]
-			[Description("Count incidents within aggregation polygons")]
+			[Description("在渔网面内计数事件")]
 			Count_incidents_within_aggregation_polygons,
 
 			/// <summary>
-			/// <para>Snap nearby incidents to create weighted points—Nearby incidents will be aggregated together to create a single weighted point. The weight for each point is the number of aggregated incidents at that location.</para>
+			/// <para>捕捉附近事件以创建加权点—邻近事件将聚合在一起，从而创建单个加权点。各点的权重值是该位置的聚合事件数。</para>
 			/// </summary>
 			[GPValue("SNAP_NEARBY_INCIDENTS_TO_CREATE_WEIGHTED_POINTS")]
-			[Description("Snap nearby incidents to create weighted points")]
+			[Description("捕捉附近事件以创建加权点")]
 			Snap_nearby_incidents_to_create_weighted_points,
 
 		}
@@ -219,24 +220,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum PerformanceAdjustmentEnum 
 		{
 			/// <summary>
-			/// <para>Quick (199 permutations)—With 199 permutations, the smallest possible pseudo p-value is 0.005 and all other pseudo p-values will be even multiples of this value.</para>
+			/// <para>快速（置换检验次数为 199）—如果置换检验次数为 199，则可能的最小伪 p 值为 0.005，其他所有伪 p 值将是该值的数倍。</para>
 			/// </summary>
 			[GPValue("QUICK_199")]
-			[Description("Quick (199 permutations)")]
+			[Description("快速（置换检验次数为 199）")]
 			QUICK_199,
 
 			/// <summary>
-			/// <para>Balanced (499 permutations)—With 499 permutations, the smallest possible pseudo p-value is 0.002 and all other pseudo p-values will be even multiples of this value.</para>
+			/// <para>平衡（置换检验次数为 499）—如果置换检验次数为 499，则可能的最小伪 p 值为 0.002，其他所有伪 p 值将是该值的数倍。</para>
 			/// </summary>
 			[GPValue("BALANCED_499")]
-			[Description("Balanced (499 permutations)")]
+			[Description("平衡（置换检验次数为 499）")]
 			BALANCED_499,
 
 			/// <summary>
-			/// <para>Robust (999 permutations)—With 999 permutations, the smallest possible pseudo p-value is 0.001 and all other pseudo p-values will be even multiples of this value.</para>
+			/// <para>可靠（置换检验次数为 999）—如果置换检验次数为 999，则可能的最小伪 p 值为 0.001，其他所有伪 p 值将是该值的数倍。</para>
 			/// </summary>
 			[GPValue("ROBUST_999")]
-			[Description("Robust (999 permutations)")]
+			[Description("可靠（置换检验次数为 999）")]
 			ROBUST_999,
 
 		}

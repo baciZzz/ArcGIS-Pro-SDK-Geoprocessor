@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Synchronize Job Data</para>
-	/// <para>Synchronizes multiple Workflow Manager (Classic) repositories participating in a Workflow Manager (Classic) cluster. The tool performs two-way synchronization; changes from the child repositories are sent to the parent repository and changes from the parent are sent to all child repositories.</para>
+	/// <para>同步作业数据</para>
+	/// <para>同步参与 Workflow Manager (Classic) 集群的多个 Workflow Manager (Classic) 资料档案库。此工具执行双向同步；子资料档案库中的更改发送到父资料档案库中，父资料档案库中的更改发送到所有子资料档案库中。</para>
 	/// </summary>
 	public class SynchronizeJobData : AbstractGPProcess
 	{
@@ -20,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		/// <param name="InputParentRepositoryURL">
 		/// <para>Parent Repository URL</para>
-		/// <para>The URL for the parent repository will be the Workflow Manager (Classic) server URL, for example, http://localhost/arcgis/rest/services/parent/wmserver.</para>
+		/// <para>父资料档案库的 URL 将成为 Workflow Manager (Classic) 服务器 URL，例如，http://localhost/arcgis/rest/services/parent/wmserver。</para>
 		/// </param>
 		/// <param name="InputParentRepositoryName">
 		/// <para>Parent Repository Name</para>
-		/// <para>The parent repository that will distribute the Workflow Manager (Classic) jobs and configuration elements.</para>
+		/// <para>将分配 Workflow Manager (Classic) 作业和配置元素的父资料档案库。</para>
 		/// </param>
 		/// <param name="InputMultiName">
 		/// <para>Child Repository Names and URLs</para>
-		/// <para>The child repositories that will be updated with the parent repository configuration. To add a child repository, provide the repository name and click the Add button. After adding the child, enter values for Connected, URL, and Last Sync Time as follows:</para>
-		/// <para>Connected—The only accepted value is true. If any other value is provided, the child will not be synchronized.</para>
-		/// <para>URL—The URL of the child repository.</para>
-		/// <para>Last Sync Time—The date and time in the system format. For example, if your system data and time format is MM:DD:YY HH:MM:SS, the value will be 08/01/2013 11:30:45.</para>
+		/// <para>将通过父资料档案库配置进行更新的子资料档案库。要添加子资料档案库，请提供资料档案库的名称，然后单击添加按钮。添加完子资料档案库后，请按如下所示输入连接、URL 和上次同步时间的值：</para>
+		/// <para>连接 - 唯一可以接受的值是 true。如果提供任何其他值，子资料档案库将不会同步。</para>
+		/// <para>URL - 子资料档案库的 URL。</para>
+		/// <para>上次同步时间 - 采用系统格式的日期和时间。例如，如果您的系统日期和时间格式是 MM:DD:YY HH:MM:SS，该值将是 08/01/2013 11:30:45。</para>
 		/// </param>
 		public SynchronizeJobData(object InputParentRepositoryURL, object InputParentRepositoryName, object InputMultiName)
 		{
@@ -41,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Synchronize Job Data</para>
+		/// <para>Tool Display Name : 同步作业数据</para>
 		/// </summary>
-		public override string DisplayName() => "Synchronize Job Data";
+		public override string DisplayName() => "同步作业数据";
 
 		/// <summary>
 		/// <para>Tool Name : SynchronizeJobData</para>
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Parent Repository URL</para>
-		/// <para>The URL for the parent repository will be the Workflow Manager (Classic) server URL, for example, http://localhost/arcgis/rest/services/parent/wmserver.</para>
+		/// <para>父资料档案库的 URL 将成为 Workflow Manager (Classic) 服务器 URL，例如，http://localhost/arcgis/rest/services/parent/wmserver。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Parent Repository Name</para>
-		/// <para>The parent repository that will distribute the Workflow Manager (Classic) jobs and configuration elements.</para>
+		/// <para>将分配 Workflow Manager (Classic) 作业和配置元素的父资料档案库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -93,10 +94,10 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Child Repository Names and URLs</para>
-		/// <para>The child repositories that will be updated with the parent repository configuration. To add a child repository, provide the repository name and click the Add button. After adding the child, enter values for Connected, URL, and Last Sync Time as follows:</para>
-		/// <para>Connected—The only accepted value is true. If any other value is provided, the child will not be synchronized.</para>
-		/// <para>URL—The URL of the child repository.</para>
-		/// <para>Last Sync Time—The date and time in the system format. For example, if your system data and time format is MM:DD:YY HH:MM:SS, the value will be 08/01/2013 11:30:45.</para>
+		/// <para>将通过父资料档案库配置进行更新的子资料档案库。要添加子资料档案库，请提供资料档案库的名称，然后单击添加按钮。添加完子资料档案库后，请按如下所示输入连接、URL 和上次同步时间的值：</para>
+		/// <para>连接 - 唯一可以接受的值是 true。如果提供任何其他值，子资料档案库将不会同步。</para>
+		/// <para>URL - 子资料档案库的 URL。</para>
+		/// <para>上次同步时间 - 采用系统格式的日期和时间。例如，如果您的系统日期和时间格式是 MM:DD:YY HH:MM:SS，该值将是 08/01/2013 11:30:45。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]

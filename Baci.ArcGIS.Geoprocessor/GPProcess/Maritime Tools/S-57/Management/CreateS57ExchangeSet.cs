@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Create S-57 Exchange Set</para>
+	/// <para>Create S-57 Exchange Set</para>
 	/// <para>Allows a mariner to view the Electronic Navigational Chart (ENC) datasets in an Electronic Chart Display and Information System (ECDIS) for shipboard navigation.</para>
 	/// </summary>
 	public class CreateS57ExchangeSet : AbstractGPProcess

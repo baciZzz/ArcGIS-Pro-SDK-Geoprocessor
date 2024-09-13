@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Purge Temporary Diagrams</para>
+	/// <para>Purge Temporary Diagrams</para>
 	/// <para>Purge the temporary diagrams</para>
 	/// </summary>
 	[Obsolete()]

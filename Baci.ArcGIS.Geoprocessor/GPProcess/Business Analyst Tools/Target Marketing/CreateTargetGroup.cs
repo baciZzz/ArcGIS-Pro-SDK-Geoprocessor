@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Create Target Group</para>
+	/// <para>Create Target Group</para>
 	/// <para>Creates a new target group. A target group is a container for targets that you create, name, and populate with segments from a locally installed Business Analyst dataset.</para>
 	/// </summary>
 	public class CreateTargetGroup : AbstractGPProcess

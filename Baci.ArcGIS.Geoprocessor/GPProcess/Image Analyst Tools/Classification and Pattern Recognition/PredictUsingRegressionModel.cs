@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Predict Using Regression Model</para>
-	/// <para>Predicts data values using the output from the Train Random Trees Regression Model tool.</para>
+	/// <para>使用回归模型预测</para>
+	/// <para>使用训练随机树回归模型工具的输出来预测数据值。</para>
 	/// </summary>
 	public class PredictUsingRegressionModel : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRasters">
 		/// <para>Input Rasters</para>
-		/// <para>The single-band, multidimensional, or multiband raster datasets, or mosaic datasets containing explanatory variables.</para>
+		/// <para>单波段、多维或多波段栅格数据集，或包含解释变量的镶嵌数据集。</para>
 		/// </param>
 		/// <param name="InRegressionDefinition">
 		/// <para>Input Regression Definition File</para>
-		/// <para>A JSON format file that contains attribute information, statistics, or other information from the regression model. The file has an .ecd extension. The file is the output of the Train Random Trees Regression Model tool.</para>
+		/// <para>包含属性信息、统计数据和回归模型的其他信息的 JSON 格式文件。 文件的扩展名为 .ecd。 此文件为训练随机树回归模型工具的输出。</para>
 		/// </param>
 		/// <param name="OutRasterDataset">
 		/// <para>Output predicted raster</para>
-		/// <para>A raster of the predicted values.</para>
+		/// <para>预测值的栅格。</para>
 		/// </param>
 		public PredictUsingRegressionModel(object InRasters, object InRegressionDefinition, object OutRasterDataset)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Predict Using Regression Model</para>
+		/// <para>Tool Display Name : 使用回归模型预测</para>
 		/// </summary>
-		public override string DisplayName() => "Predict Using Regression Model";
+		public override string DisplayName() => "使用回归模型预测";
 
 		/// <summary>
 		/// <para>Tool Name : PredictUsingRegressionModel</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Rasters</para>
-		/// <para>The single-band, multidimensional, or multiband raster datasets, or mosaic datasets containing explanatory variables.</para>
+		/// <para>单波段、多维或多波段栅格数据集，或包含解释变量的镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Regression Definition File</para>
-		/// <para>A JSON format file that contains attribute information, statistics, or other information from the regression model. The file has an .ecd extension. The file is the output of the Train Random Trees Regression Model tool.</para>
+		/// <para>包含属性信息、统计数据和回归模型的其他信息的 JSON 格式文件。 文件的扩展名为 .ecd。 此文件为训练随机树回归模型工具的输出。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -91,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output predicted raster</para>
-		/// <para>A raster of the predicted values.</para>
+		/// <para>预测值的栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

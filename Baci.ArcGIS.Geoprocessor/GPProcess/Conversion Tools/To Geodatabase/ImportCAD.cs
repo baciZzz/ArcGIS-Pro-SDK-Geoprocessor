@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Import from CAD</para>
+	/// <para>Import from CAD</para>
 	/// <para>Imports from one or more CAD files to a staging geodatabase.</para>
 	/// </summary>
 	[Obsolete()]

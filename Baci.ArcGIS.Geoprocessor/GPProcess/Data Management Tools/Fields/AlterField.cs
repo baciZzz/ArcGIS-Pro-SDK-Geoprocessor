@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Alter Field</para>
-	/// <para>Renames fields and field aliases, or alters field properties.</para>
+	/// <para>更改字段</para>
+	/// <para>重命名字段和字段别名，或更改字段属性。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input table or feature class that contains the field to alter.</para>
+		/// <para>包含待更改字段的输入表或要素类。</para>
 		/// </param>
 		/// <param name="Field">
 		/// <para>Field Name</para>
-		/// <para>The name of the field to alter. If the field is a required field (isRequired=true), only the field alias can be altered.</para>
+		/// <para>待更改字段的名称。如果字段为必填字段 (isRequired=true)，则只有字段别名是可更改的。</para>
 		/// </param>
 		public AlterField(object InTable, object Field)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Alter Field</para>
+		/// <para>Tool Display Name : 更改字段</para>
 		/// </summary>
-		public override string DisplayName() => "Alter Field";
+		public override string DisplayName() => "更改字段";
 
 		/// <summary>
 		/// <para>Tool Name : AlterField</para>
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input table or feature class that contains the field to alter.</para>
+		/// <para>包含待更改字段的输入表或要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Name</para>
-		/// <para>The name of the field to alter. If the field is a required field (isRequired=true), only the field alias can be altered.</para>
+		/// <para>待更改字段的名称。如果字段为必填字段 (isRequired=true)，则只有字段别名是可更改的。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>New Field Name</para>
-		/// <para>The new name for the field.</para>
+		/// <para>字段的新名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -96,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>New Field Alias</para>
-		/// <para>The new field alias for the field.</para>
+		/// <para>字段的新字段别名。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -104,16 +105,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>New Field Type</para>
-		/// <para>Specifies the new field type for the field. This property is only applicable if the input table is empty (does not contain records).</para>
-		/// <para>Text—Any string of characters.</para>
-		/// <para>Float (single precision)— Fractional numbers between -3.4E38 and 1.2E38.</para>
-		/// <para>Double (double precision)— Fractional numbers between -2.2E308 and 1.8E308.</para>
-		/// <para>Short (small integer)— Whole numbers between -32,768 and 32,767.</para>
-		/// <para>Long (large integer)— Whole numbers between -2,147,483,648 and 2,147,483,647.</para>
-		/// <para>Date—Date and/or time.</para>
-		/// <para>Blob (binary data)—Long sequence of binary numbers. You need a custom loader or viewer or a third-party application to load items into a BLOB field or view the contents of a BLOB field.</para>
-		/// <para>Raster imagery—Raster images. All ArcGIS software-supported raster dataset formats can be stored, but it is highly recommended that only small images be used.</para>
-		/// <para>GUID (globally unique identifier)—Globally unique identifier.</para>
+		/// <para>指定字段的新字段类型。此属性仅在输入表为空（不包括记录）的情况下适用。</para>
+		/// <para>文本—任何字符串。</para>
+		/// <para>浮点型（单精度）— 在 -3.4E38 和 1.2E38 之间的小数。</para>
+		/// <para>双精度型（双精度）— 在 -2.2E308 和 1.8E308 之间的小数。</para>
+		/// <para>短整型（小整数）— 在 -32,768 和 32,767 之间的整数。</para>
+		/// <para>长整型（大整数）— 在 -2,147,483,648 和 2,147,483,647 之间的整数。</para>
+		/// <para>日期类型—日期和/或时间。</para>
+		/// <para>Blob（二进制数据）—长二进制数序列。您需要一个自定义的加载器、查看器或第三方应用程序将这些项加载到 BLOB 字段中或者查看 BLOB 字段的内容。</para>
+		/// <para>栅格影像—栅格影像。可以存储 ArcGIS 软件支持的所有栅格数据集格式，但强烈建议您仅使用小影像。</para>
+		/// <para>GUID（全局唯一标识符）—全局唯一标识符。</para>
 		/// <para><see cref="FieldTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -123,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>New Field Length</para>
-		/// <para>The new length of the field. This sets the maximum number of allowable characters for each record of the field. This option is only applicable to fields of type Text or Blob (binary data). If the table is empty, the field length can be either increased or decreased. If the table is not empty, the length can only be increased from the current value.</para>
+		/// <para>字段的新长度。它为字段的每条记录设置最大允许字符数。此选项仅适用于 Text 或 Blob（二进制数据）类型的字段。如果表为空，则可以增加或减少字段长度。如果表不为空，则仅可在当前值的基础上增加长度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -131,9 +132,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>New Field IsNullable</para>
-		/// <para>Specifies whether the field can contain null values. Null values are only supported for fields in a geodatabase. This option is only applicable if the table is empty (does not contain records).</para>
-		/// <para>Checked—The field will allow null values. This is the default.</para>
-		/// <para>Unchecked—The field will not allow null values.</para>
+		/// <para>指定该字段是否可包含空值。只有地理数据库中的字段支持空值。此选项仅在表为空（不包括记录）的情况下适用。</para>
+		/// <para>选中 - 字段将允许空值。这是默认设置。</para>
+		/// <para>取消选中 - 字段不允许空值。</para>
 		/// <para><see cref="FieldIsNullableEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -143,9 +144,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Clear Alias</para>
-		/// <para>Specifies whether the alias for the input field will be cleared. The field alias parameter must be empty to clear the alias of the field.</para>
-		/// <para>Checked—The field alias will be cleared (set to null). The field alias parameter must be empty.</para>
-		/// <para>Unchecked—The field alias will not be cleared. This is the default.</para>
+		/// <para>指定是否清除输入字段的别名。要清除字段别名，字段别名参数必须为空。</para>
+		/// <para>选中 - 将清除字段别名（设为空值）。字段别名参数必须为空。</para>
+		/// <para>未选中 - 不会清除字段别名。这是默认设置。</para>
 		/// <para><see cref="ClearFieldAliasEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -177,66 +178,66 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FieldTypeEnum 
 		{
 			/// <summary>
-			/// <para>Text—Any string of characters.</para>
+			/// <para>文本—任何字符串。</para>
 			/// </summary>
 			[GPValue("TEXT")]
-			[Description("Text")]
+			[Description("文本")]
 			Text,
 
 			/// <summary>
-			/// <para>Float (single precision)— Fractional numbers between -3.4E38 and 1.2E38.</para>
+			/// <para>浮点型（单精度）— 在 -3.4E38 和 1.2E38 之间的小数。</para>
 			/// </summary>
 			[GPValue("FLOAT")]
-			[Description("Float (single precision)")]
+			[Description("浮点型（单精度）")]
 			FLOAT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>双精度型（双精度）— 在 -2.2E308 和 1.8E308 之间的小数。</para>
 			/// </summary>
 			[GPValue("DOUBLE")]
-			[Description("Double  (double precision)")]
+			[Description("双精度型（双精度）")]
 			DOUBLE,
 
 			/// <summary>
-			/// <para>Short (small integer)— Whole numbers between -32,768 and 32,767.</para>
+			/// <para>短整型（小整数）— 在 -32,768 和 32,767 之间的整数。</para>
 			/// </summary>
 			[GPValue("SHORT")]
-			[Description("Short (small integer)")]
+			[Description("短整型（小整数）")]
 			SHORT,
 
 			/// <summary>
-			/// <para>Long (large integer)— Whole numbers between -2,147,483,648 and 2,147,483,647.</para>
+			/// <para>长整型（大整数）— 在 -2,147,483,648 和 2,147,483,647 之间的整数。</para>
 			/// </summary>
 			[GPValue("LONG")]
-			[Description("Long (large integer)")]
+			[Description("长整型（大整数）")]
 			LONG,
 
 			/// <summary>
-			/// <para>Date—Date and/or time.</para>
+			/// <para>日期类型—日期和/或时间。</para>
 			/// </summary>
 			[GPValue("DATE")]
-			[Description("Date")]
+			[Description("日期类型")]
 			Date,
 
 			/// <summary>
-			/// <para>Blob (binary data)—Long sequence of binary numbers. You need a custom loader or viewer or a third-party application to load items into a BLOB field or view the contents of a BLOB field.</para>
+			/// <para>Blob（二进制数据）—长二进制数序列。您需要一个自定义的加载器、查看器或第三方应用程序将这些项加载到 BLOB 字段中或者查看 BLOB 字段的内容。</para>
 			/// </summary>
 			[GPValue("BLOB")]
-			[Description("Blob (binary data)")]
+			[Description("Blob（二进制数据）")]
 			BLOB,
 
 			/// <summary>
-			/// <para>Raster imagery—Raster images. All ArcGIS software-supported raster dataset formats can be stored, but it is highly recommended that only small images be used.</para>
+			/// <para>栅格影像—栅格影像。可以存储 ArcGIS 软件支持的所有栅格数据集格式，但强烈建议您仅使用小影像。</para>
 			/// </summary>
 			[GPValue("RASTER")]
-			[Description("Raster imagery")]
+			[Description("栅格影像")]
 			Raster_imagery,
 
 			/// <summary>
-			/// <para>GUID (globally unique identifier)—Globally unique identifier.</para>
+			/// <para>GUID（全局唯一标识符）—全局唯一标识符。</para>
 			/// </summary>
 			[GPValue("GUID")]
-			[Description("GUID (globally unique identifier)")]
+			[Description("GUID（全局唯一标识符）")]
 			GUID,
 
 		}
@@ -247,14 +248,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FieldIsNullableEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The field will allow null values. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("NULLABLE")]
 			NULLABLE,
 
 			/// <summary>
-			/// <para>Unchecked—The field will not allow null values.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NON_NULLABLE")]
@@ -268,14 +269,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ClearFieldAliasEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The field alias will be cleared (set to null). The field alias parameter must be empty.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLEAR_ALIAS")]
 			CLEAR_ALIAS,
 
 			/// <summary>
-			/// <para>Unchecked—The field alias will not be cleared. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_CLEAR")]

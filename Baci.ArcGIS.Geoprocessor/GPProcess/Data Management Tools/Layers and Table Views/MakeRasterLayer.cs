@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Raster Layer</para>
-	/// <para>Creates a raster layer from an input raster dataset or layer file. The layer created by the tool is temporary and will not persist after the session ends unless the layer is saved to disk or the map document is saved.</para>
+	/// <para>创建栅格图层</para>
+	/// <para>根据输入栅格数据集或图层文件创建栅格图层。该工具创建的图层是临时图层，如果不将此图层保存到磁盘或保存地图文档，该图层在会话结束后将不会继续存在。</para>
 	/// </summary>
 	public class MakeRasterLayer : AbstractGPProcess
 	{
@@ -20,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The path and name of the input raster dataset.</para>
-		/// <para>You can use a raster layer from a GeoPackage as the input. To reference a raster within a GeoPackage, type the name of the path, followed by the name of the GeoPackage and the name of the raster. For example, c:\data\sample.gpkg\raster_tile would be your input raster, where sample.gpkg is the name of the GeoPackage and raster_tile is the raster dataset within the package.</para>
+		/// <para>输入栅格数据集的路径和名称。</para>
+		/// <para>可将 GeoPackage 中的栅格图层用作输入。要参考 GeoPackage 中的栅格，请输入路径名，后接 GeoPackage 的名称和栅格名称。例如 c:\data\sample.gpkg\raster_tile 是输入栅格，其中 sample.gpkg 是 GeoPackage 的名称，raster_tile 是包中的栅格数据集。</para>
 		/// </param>
 		/// <param name="OutRasterlayer">
 		/// <para>Output raster layer name</para>
-		/// <para>The name of the layer to create.</para>
+		/// <para>要创建的图层的名称。</para>
 		/// </param>
 		public MakeRasterLayer(object InRaster, object OutRasterlayer)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Make Raster Layer</para>
+		/// <para>Tool Display Name : 创建栅格图层</para>
 		/// </summary>
-		public override string DisplayName() => "Make Raster Layer";
+		public override string DisplayName() => "创建栅格图层";
 
 		/// <summary>
 		/// <para>Tool Name : MakeRasterLayer</para>
@@ -70,8 +71,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The path and name of the input raster dataset.</para>
-		/// <para>You can use a raster layer from a GeoPackage as the input. To reference a raster within a GeoPackage, type the name of the path, followed by the name of the GeoPackage and the name of the raster. For example, c:\data\sample.gpkg\raster_tile would be your input raster, where sample.gpkg is the name of the GeoPackage and raster_tile is the raster dataset within the package.</para>
+		/// <para>输入栅格数据集的路径和名称。</para>
+		/// <para>可将 GeoPackage 中的栅格图层用作输入。要参考 GeoPackage 中的栅格，请输入路径名，后接 GeoPackage 的名称和栅格名称。例如 c:\data\sample.gpkg\raster_tile 是输入栅格，其中 sample.gpkg 是 GeoPackage 的名称，raster_tile 是包中的栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output raster layer name</para>
-		/// <para>The name of the layer to create.</para>
+		/// <para>要创建的图层的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterLayer()]
@@ -91,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Where clause</para>
-		/// <para>Using SQL, you can define a query or use the Query Builder to build a query.</para>
+		/// <para>可以使用 SQL 定义查询，或者使用查询构建器构建查询。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -99,11 +100,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Envelope</para>
-		/// <para>The output extent can be specified by defining the four coordinates or by using the extent of an existing layer.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Current Display Extent—The extent is equal to the data frame or visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>指定输出范围的方法可以是定义四个坐标，也可以是使用现有图层的范围。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>当前显示范围 - 该范围与数据框或可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Bands</para>
-		/// <para>Choose which bands to export for the layer. If no bands are specified, all the bands will be used in the output.</para>
+		/// <para>选择要为图层输出哪些波段。 如果未指定波段，则输出中将使用所有波段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]

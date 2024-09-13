@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Referenced Mosaic Dataset</para>
-	/// <para>Creates a separate mosaic dataset from items in an existing mosaic dataset.</para>
+	/// <para>创建引用镶嵌数据集</para>
+	/// <para>根据现有镶嵌数据集中的项目创建单个镶嵌数据集。</para>
 	/// </summary>
 	public class CreateReferencedMosaicDataset : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset from which items will be selected.</para>
+		/// <para>将从中选择项目的镶嵌数据集。</para>
 		/// </param>
 		/// <param name="OutMosaicDataset">
 		/// <para>Output Mosaic Dataset</para>
-		/// <para>The referenced mosaic dataset to be created.</para>
+		/// <para>要创建的引用镶嵌数据集。</para>
 		/// </param>
 		public CreateReferencedMosaicDataset(object InDataset, object OutMosaicDataset)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Referenced Mosaic Dataset</para>
+		/// <para>Tool Display Name : 创建引用镶嵌数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Create Referenced Mosaic Dataset";
+		public override string DisplayName() => "创建引用镶嵌数据集";
 
 		/// <summary>
 		/// <para>Tool Name : CreateReferencedMosaicDataset</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset from which items will be selected.</para>
+		/// <para>将从中选择项目的镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Mosaic Dataset</para>
-		/// <para>The referenced mosaic dataset to be created.</para>
+		/// <para>要创建的引用镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEMosaicDataset()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>The projection for the output mosaic dataset.</para>
+		/// <para>输出镶嵌数据集的投影。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Number of Bands</para>
-		/// <para>The number of bands that the referenced mosaic dataset will have.</para>
+		/// <para>引用镶嵌数据集中将具有的波段数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -102,18 +103,18 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pixel Type</para>
-		/// <para>The bit depth, or radiometric resolution, of the mosaic dataset. If this is not defined, it will be taken from the first raster dataset.</para>
-		/// <para>1-bit—A 1-bit unsigned integer. The values can be 0 or 1.</para>
-		/// <para>2-bit—A 2-bit unsigned integer. The values supported can be from 0 to 3.</para>
-		/// <para>4-bit—A 4-bit unsigned integer. The values supported can be from 0 to 15.</para>
-		/// <para>8-bit unsigned—An unsigned 8-bit data type. The values supported can be from 0 to 255.</para>
-		/// <para>8-bit signed—A signed 8-bit data type. The values supported can be from -128 to 127.</para>
-		/// <para>16-bit unsigned—A 16-bit unsigned data type. The values can range from 0 to 65,535.</para>
-		/// <para>16-bit signed—A 16-bit signed data type. The values can range from -32,768 to 32,767.</para>
-		/// <para>32-bit unsigned—A 32-bit unsigned data type. The values can range from 0 to 4,294,967,295.</para>
-		/// <para>32-bit signed—A 32-bit signed data type. The values can range from -2,147,483,648 to 2,147,483,647.</para>
-		/// <para>32-bit floating point—A 32-bit data type supporting decimals.</para>
-		/// <para>64-bit—A 64-bit data type supporting decimals.</para>
+		/// <para>镶嵌数据集的位深度或辐射分辨率。如果未定义，此值将从第一个栅格数据集获取。</para>
+		/// <para>1 位—1 位无符号整数。 值可以为 0 或 1。</para>
+		/// <para>2 位—2 位无符号整数。 支持的值为 0 到 3。</para>
+		/// <para>4 位—4 位无符号整数。 支持的值为 0 到 15。</para>
+		/// <para>8 位无符号—8 位无符号数据类型。 支持的值为 0 到 255。</para>
+		/// <para>8 位有符号—8 位有符号数据类型。 支持的值为 -128 到 127。</para>
+		/// <para>16 位无符号—16 位无符号数据类型。 取值范围为 0 到 65,535。</para>
+		/// <para>16 位有符号—16 位有符号数据类型。 取值范围为 -32,768 到 32,767。</para>
+		/// <para>32 位无符号—32 位无符号数据类型。 取值范围为 0 到 4,294,967,295。</para>
+		/// <para>32 位有符号—32 位有符号数据类型。 取值范围为 -2,147,483,648 到 2,147,483,647。</para>
+		/// <para>32 位浮点型—支持小数的 32 位数据类型。</para>
+		/// <para>64 位—支持小数的 64 位数据类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -123,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>An SQL expression to select raster datasets that will be included in the output mosaic dataset.</para>
+		/// <para>SQL 表达式将选择包含在输出镶嵌数据集中的栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -132,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Extent from Dataset</para>
-		/// <para>Select raster datasets based on the extent of another image or feature class. Raster datasets that lay along the defined extent will be included in the mosaic dataset. To manually input the minimum and maximum coordinates for the extent, use the Extent parameter.</para>
+		/// <para>将根据其他图像或要素类范围选择栅格数据集。位于已定义范围边缘的栅格数据集将被包含到镶嵌数据集中。要为该范围手动输入最小坐标和最大坐标，请使用范围参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -141,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>The minimum and maximum coordinates for the extent. If a dataset is selected in Extent from Dataset, those coordinates will automatically appear here.</para>
+		/// <para>针对该范围的最小坐标和最大坐标。如果选中了由数据集确定范围中的数据集，此处将自动显示上述坐标。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEnvelope()]
@@ -150,9 +151,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Using Input Geometry for Selection</para>
-		/// <para>Limit the extent to the shape or envelope when a feature class is selected in the Extent from Dataset parameter.</para>
-		/// <para>Checked—Select based on the shape of the feature. This is the default.</para>
-		/// <para>Unchecked—Select based on the extent of the feature class.</para>
+		/// <para>选中由数据集确定范围参数中的要素类时，将范围限制为形状或包络矩形。</para>
+		/// <para>选中 - 基于要素形状进行选择。这是默认设置。</para>
+		/// <para>取消选中 - 基于要素类的范围进行选择。</para>
 		/// <para><see cref="SelectUsingFeaturesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -163,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Scale Field</para>
-		/// <para>This parameter has been deprecated and is ignored in tool execution. It remains for backward compatibility reasons.</para>
+		/// <para>此参数已弃用，将在工具执行中忽略该参数。此参数因向后兼容性原因而被保留。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -174,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Minimum Cell Size Field</para>
-		/// <para>Specify a field from the footprint attribute table that defines the minimum cell size for displaying the mosaic dataset; otherwise, only a footprint will be displayed.</para>
+		/// <para>指定覆盖区属性表中的字段，用于定义显示镶嵌数据集的最小像元大小；否则将仅显示覆盖区。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -185,7 +186,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Cell Size Field</para>
-		/// <para>Specify a field from the footprint attribute table that defines the maximum cell size for displaying the mosaic dataset; otherwise, only a footprint will be displayed.</para>
+		/// <para>指定覆盖区属性表中的字段，用于定义显示镶嵌数据集的最大像元大小；否则将仅显示覆盖区。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -196,7 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Visible Cell Size</para>
-		/// <para>Set a maximum cell size to display the mosaic instead of specifying a field. If you zoom out beyond this cell size, only the footprint will be displayed.</para>
+		/// <para>设置最大像元大小以显示镶嵌，无需指定字段。如果缩小程度超过该像元大小，则将仅显示覆盖区。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -205,10 +206,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Build Boundary</para>
-		/// <para>Rebuild the boundary. If the selection covers a smaller area than the source mosaic dataset, this is recommended.</para>
-		/// <para>This is only available if the mosaic dataset is created in a geodatabase.</para>
-		/// <para>Checked—Generate the boundary. This is the default.</para>
-		/// <para>Unchecked—Do not generate the boundary.</para>
+		/// <para>重新构建边界。如果选择覆盖的面积小于源镶嵌数据集的面积，则建议采用此方法。</para>
+		/// <para>只有在地理数据库中创建镶嵌数据集时才可用。</para>
+		/// <para>选中 - 生成边界。这是默认设置。</para>
+		/// <para>未选中 - 不生成边界。</para>
 		/// <para><see cref="BuildBoundaryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -233,14 +234,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SelectUsingFeaturesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Select based on the shape of the feature. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SELECT_USING_FEATURES")]
 			SELECT_USING_FEATURES,
 
 			/// <summary>
-			/// <para>Unchecked—Select based on the extent of the feature class.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SELECT_USING_FEATURES")]
@@ -254,14 +255,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum BuildBoundaryEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Generate the boundary. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BUILD_BOUNDARY")]
 			BUILD_BOUNDARY,
 
 			/// <summary>
-			/// <para>Unchecked—Do not generate the boundary.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_BOUNDARY")]

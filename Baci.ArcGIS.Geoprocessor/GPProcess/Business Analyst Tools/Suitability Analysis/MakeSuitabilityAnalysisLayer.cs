@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Make Suitability Analysis Layer</para>
+	/// <para>Make Suitability Analysis Layer</para>
 	/// <para>Creates a Suitability Analysis layer for a given input site's polygonal layer.</para>
 	/// </summary>
 	public class MakeSuitabilityAnalysisLayer : AbstractGPProcess

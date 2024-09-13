@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Merge</para>
-	/// <para>Combines multiple input datasets into a single, new output dataset. This tool can combine point, line, or polygon feature classes or tables.</para>
+	/// <para>合并</para>
+	/// <para>可将多个输入数据集合并为新的单个输出数据集。此工具可以合并点、线或面要素类或表。</para>
 	/// </summary>
 	[Obsolete()]
 	public class Merge : AbstractGPProcess
@@ -21,12 +22,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="Inputs">
 		/// <para>Input Datasets</para>
-		/// <para>The input datasets that will be merged into a new output dataset. Input datasets can be point, line, or polygon feature classes or tables. Input feature classes must all be of the same geometry type.</para>
-		/// <para>Tables and feature classes can be combined in a single output dataset. The output type is determined by the first input. If the first input is a feature class, the output will be a feature class; if the first input is a table, the output will be a table. If a table is merged into a feature class, the rows from the input table will have null geometry.</para>
+		/// <para>要合并为新的输出数据集的输入数据集。输入数据集可为点、线或面要素类或表。输入要素类必须全部具有相同的几何类型。</para>
+		/// <para>表和要素类可在单一输出数据集中合并。输出类型由第一个输入确定。如果第一个输入是要素类，则输出将是要素类，如果第一个输入是表，则输出将是表。如果将表合并到要素类中，则输入表中的行将具有空几何。</para>
 		/// </param>
 		/// <param name="Output">
 		/// <para>Output Dataset</para>
-		/// <para>The output dataset that will contain all combined input datasets.</para>
+		/// <para>包含所有合并后输入数据集的输出数据集。</para>
 		/// </param>
 		public Merge(object Inputs, object Output)
 		{
@@ -35,14 +36,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Merge</para>
+		/// <para>Tool Display Name : 合并</para>
 		/// </summary>
-		public override string DisplayName() => "Merge";
+		public override string DisplayName() => "合并";
 
 		/// <summary>
-		/// <para>Tool Name : Merge</para>
+		/// <para>Tool Name : 合并</para>
 		/// </summary>
-		public override string ToolName() => "Merge";
+		public override string ToolName() => "合并";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Merge</para>
@@ -71,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Datasets</para>
-		/// <para>The input datasets that will be merged into a new output dataset. Input datasets can be point, line, or polygon feature classes or tables. Input feature classes must all be of the same geometry type.</para>
-		/// <para>Tables and feature classes can be combined in a single output dataset. The output type is determined by the first input. If the first input is a feature class, the output will be a feature class; if the first input is a table, the output will be a table. If a table is merged into a feature class, the rows from the input table will have null geometry.</para>
+		/// <para>要合并为新的输出数据集的输入数据集。输入数据集可为点、线或面要素类或表。输入要素类必须全部具有相同的几何类型。</para>
+		/// <para>表和要素类可在单一输出数据集中合并。输出类型由第一个输入确定。如果第一个输入是要素类，则输出将是要素类，如果第一个输入是表，则输出将是表。如果将表合并到要素类中，则输入表中的行将具有空几何。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Dataset</para>
-		/// <para>The output dataset that will contain all combined input datasets.</para>
+		/// <para>包含所有合并后输入数据集的输出数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -88,20 +89,20 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Map</para>
-		/// <para>Controls which attribute fields will be in the output. By default, all fields from the inputs will be included.</para>
-		/// <para>Fields can be added, deleted, renamed, and reordered, and you can change their properties.</para>
-		/// <para>Merge rules allow you to specify how values from two or more input fields are merged or combined into a single output value. There are several merge rules you can use to determine how the output field will be populated with values.</para>
-		/// <para>First—Use the input fields&apos; first value.</para>
-		/// <para>Last—Use the input fields&apos; last value.</para>
-		/// <para>Join—Concatenate (join) the input field values.</para>
-		/// <para>Sum—Calculate the total of the input field values.</para>
-		/// <para>Mean—Calculate the mean (average) of the input field values.</para>
-		/// <para>Median—Calculate the median (middle) of the input field values.</para>
-		/// <para>Mode—Use the value with the highest frequency.</para>
-		/// <para>Min—Use the minimum value of all the input field values.</para>
-		/// <para>Max—Use the maximum value of all the input field values.</para>
-		/// <para>Standard deviation—Use the standard deviation classification method on all the input field values.</para>
-		/// <para>Count—Find the number of records included in the calculation.</para>
+		/// <para>控制输出中要包含的属性字段。默认情况下，将包括输入的所有字段。</para>
+		/// <para>可以添加、删除、重命名和重新排序字段，且可以更改其属性。</para>
+		/// <para>合并规则用于指定如何将两个或更多个输入字段的值合并或组合为一个输出值。有多种合并规则可用于确定如何用值填充输出字段。</para>
+		/// <para>First - 使用输入字段的第一个值。</para>
+		/// <para>Last - 使用输入字段的最后一个值。</para>
+		/// <para>Join - 串连（连接）输入字段的值。</para>
+		/// <para>Sum - 计算输入字段值的总和。</para>
+		/// <para>Mean - 计算输入字段值的平均值。</para>
+		/// <para>Median - 计算输入字段值的中值。</para>
+		/// <para>Mode - 使用具有最高频率的值。</para>
+		/// <para>Min - 使用所有输入字段值中的最小值。</para>
+		/// <para>Max - 使用所有输入字段值中的最大值。</para>
+		/// <para>Standard deviation - 对所有输入字段值使用标准差分类方法。</para>
+		/// <para>Count - 查找计算中所包含的记录数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFieldMapping()]
@@ -109,9 +110,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Add source information to output</para>
-		/// <para>Specifies whether source information will be added to the output dataset in a new text field, MERGE_SRC. The values in the MERGE_SRC field will indicate the input dataset path or layer name that is the source of each record in the output.</para>
-		/// <para>Unchecked—Source information will not be added to the output dataset in a MERGE_SRC field. This is the default.</para>
-		/// <para>Checked—Source information will be added to the output dataset in a MERGE_SRC field.</para>
+		/// <para>指定是否将源信息添加到新文本字段 MERGE_SRC 中的输出数据集中。MERGE_SRC 字段中的值用于指示作为输出中每条记录的源的输入数据集路径或图层名称。</para>
+		/// <para>未选中 - 源信息将不会添加到 MERGE_SRC 字段中的输出数据集。这是默认设置。</para>
+		/// <para>选中 - 源信息将添加到 MERGE_SRC 字段中的输出数据集。</para>
 		/// <para><see cref="AddSourceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,14 +137,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AddSourceEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Source information will be added to the output dataset in a MERGE_SRC field.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_SOURCE_INFO")]
 			ADD_SOURCE_INFO,
 
 			/// <summary>
-			/// <para>Unchecked—Source information will not be added to the output dataset in a MERGE_SRC field. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SOURCE_INFO")]

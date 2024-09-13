@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Highest Position</para>
-	/// <para>Determines on a cell-by-cell basis the position of the raster with the maximum value in a set of rasters.</para>
+	/// <para>最高位置</para>
+	/// <para>逐个像元确定一组栅格中具有最大值的栅格的位置。</para>
 	/// </summary>
 	public class HighestPosition : AbstractGPProcess
 	{
@@ -20,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRastersOrConstants">
 		/// <para>Input rasters or constant values</para>
-		/// <para>The list of input rasters for which the position of the input with the highest value will be determined.</para>
-		/// <para>A number can be used as an input; however, the cell size and extent must first be set in the environment.</para>
+		/// <para>确定具有最高值的输入栅格的位置时所用的输入栅格列表。</para>
+		/// <para>数字可以作为输入，但是必须先在环境中设置像元大小和范围。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>For each cell in the output raster, the value represents the position of the raster with the highest value.</para>
+		/// <para>输出栅格。</para>
+		/// <para>对于输出栅格中的各个像元，该值表示具有最高值的栅格的位置。</para>
 		/// </param>
 		public HighestPosition(object InRastersOrConstants, object OutRaster)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Highest Position</para>
+		/// <para>Tool Display Name : 最高位置</para>
 		/// </summary>
-		public override string DisplayName() => "Highest Position";
+		public override string DisplayName() => "最高位置";
 
 		/// <summary>
 		/// <para>Tool Name : HighestPosition</para>
@@ -71,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input rasters or constant values</para>
-		/// <para>The list of input rasters for which the position of the input with the highest value will be determined.</para>
-		/// <para>A number can be used as an input; however, the cell size and extent must first be set in the environment.</para>
+		/// <para>确定具有最高值的输入栅格的位置时所用的输入栅格列表。</para>
+		/// <para>数字可以作为输入，但是必须先在环境中设置像元大小和范围。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -84,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>For each cell in the output raster, the value represents the position of the raster with the highest value.</para>
+		/// <para>输出栅格。</para>
+		/// <para>对于输出栅格中的各个像元，该值表示具有最高值的栅格的位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

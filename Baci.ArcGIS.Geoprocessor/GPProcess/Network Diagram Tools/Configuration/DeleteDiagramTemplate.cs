@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Delete Diagram Template</para>
-	/// <para>Deletes a diagram template and all diagrams  </para>
-	/// <para>based on that template.</para>
+	/// <para>删除逻辑示意图模板</para>
+	/// <para>删除逻辑示意图模板以及基于该模板的所有逻辑示意图。</para>
 	/// </summary>
 	public class DeleteDiagramTemplate : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network related to the diagram template to delete.</para>
+		/// <para>与要删除的逻辑示意图模板相关的 公共设施网络或追踪网络。</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to delete.</para>
+		/// <para>要删除的逻辑示意图模板的名称。</para>
 		/// </param>
 		public DeleteDiagramTemplate(object InUtilityNetwork, object TemplateName)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Delete Diagram Template</para>
+		/// <para>Tool Display Name : 删除逻辑示意图模板</para>
 		/// </summary>
-		public override string DisplayName() => "Delete Diagram Template";
+		public override string DisplayName() => "删除逻辑示意图模板";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteDiagramTemplate</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network related to the diagram template to delete.</para>
+		/// <para>与要删除的逻辑示意图模板相关的 公共设施网络或追踪网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to delete.</para>
+		/// <para>要删除的逻辑示意图模板的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

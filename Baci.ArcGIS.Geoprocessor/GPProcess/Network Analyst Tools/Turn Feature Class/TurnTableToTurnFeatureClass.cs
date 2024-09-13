@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Turn Table To Turn Feature Class</para>
-	/// <para>Converts an ArcView turn table or ArcInfo Workstation coverage turn table to an ArcGIS turn feature class.</para>
+	/// <para>转弯表至转弯要素类</para>
+	/// <para>将 ArcView 转弯表或 ArcInfo Workstation coverage 转弯表转换为 ArcGIS 转弯要素类。</para>
 	/// </summary>
 	public class TurnTableToTurnFeatureClass : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InTurnTable">
 		/// <para>Input Turn Table</para>
-		/// <para>The .dbf file or INFO turn table from which the new turn feature class will be created.</para>
+		/// <para>用来创建新转弯要素类的 .dbf 文件或 INFO 转弯表。</para>
 		/// </param>
 		/// <param name="ReferenceLineFeatures">
 		/// <para>Reference Line Features</para>
-		/// <para>The line feature class to which the input turn table refers. The feature class must be a source in a network dataset.</para>
+		/// <para>输入转弯表引用的线要素类。要素类必须是网络数据集中的源。</para>
 		/// </param>
 		/// <param name="OutFeatureClassName">
 		/// <para>Output Turn Feature Class Name</para>
-		/// <para>The name of the new turn feature class to create.</para>
+		/// <para>要创建的新转弯要素类的名称。</para>
 		/// </param>
 		public TurnTableToTurnFeatureClass(object InTurnTable, object ReferenceLineFeatures, object OutFeatureClassName)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Turn Table To Turn Feature Class</para>
+		/// <para>Tool Display Name : 转弯表至转弯要素类</para>
 		/// </summary>
-		public override string DisplayName() => "Turn Table To Turn Feature Class";
+		public override string DisplayName() => "转弯表至转弯要素类";
 
 		/// <summary>
 		/// <para>Tool Name : TurnTableToTurnFeatureClass</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Turn Table</para>
-		/// <para>The .dbf file or INFO turn table from which the new turn feature class will be created.</para>
+		/// <para>用来创建新转弯要素类的 .dbf 文件或 INFO 转弯表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Reference Line Features</para>
-		/// <para>The line feature class to which the input turn table refers. The feature class must be a source in a network dataset.</para>
+		/// <para>输入转弯表引用的线要素类。要素类必须是网络数据集中的源。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Turn Feature Class Name</para>
-		/// <para>The name of the new turn feature class to create.</para>
+		/// <para>要创建的新转弯要素类的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -100,10 +101,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Reference Nodes Table</para>
-		/// <para>The nodes.dbf table in the .nws folder containing the original ArcView GIS network in which the input turn table participated.</para>
-		/// <para>This parameter is ignored if the input turn table is an INFO table.</para>
-		/// <para>If the input turn table is a .dbf table and this parameter is omitted, then U-turns and turns that traverse between edges connected to each other at both ends will not be created in the output turn feature class.</para>
-		/// <para>Errors will be reported in an error file written to the directory defined by the TEMP system variable. The full path name to the error file is reported as a warning message.</para>
+		/// <para>.nws 文件夹中包含输入转弯表所参与的原始 ArcView GIS 网络的 nodes.dbf 表。</para>
+		/// <para>如果输入转弯表为 INFO 表，则将忽略该参数。</para>
+		/// <para>如果输入转弯表为 .dbf 表，并且忽略了该参数，则不会在输出转弯要素类中创建 U 形转弯，也不会创建通过两端彼此相连的边的转弯。</para>
+		/// <para>错误将记录在被写入到 TEMP 系统变量所定义的目录的错误文件中。错误文件的完整路径名将作为警告消息显示。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEDbaseTable()]
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Maximum Edges</para>
-		/// <para>The maximum number of edges per turn in the new turn feature class. The default value is 5. The maximum value is 50.</para>
+		/// <para>新转弯要素类中每个转弯的最大边数。默认值为 5。最大值为 50。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -119,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
-		/// <para>Specifies the configuration keyword that determines the storage parameters of the output turn feature class. This parameter is used only if the output turn feature class is created in a workgroup or enterprise geodatabase.</para>
+		/// <para>指定用来确定输出转弯要素类的存储参数的配置关键字。仅当在工作组或企业级地理数据库中创建输出转弯要素类时，才会使用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -128,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Spatial Grid 1</para>
-		/// <para>This parameter has been deprecated in ArcGIS Pro. Any value you enter is ignored.</para>
+		/// <para>已在 ArcGIS Pro 中弃用此参数。将忽略您输入的任何值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -136,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Spatial Grid 2</para>
-		/// <para>This parameter has been deprecated in ArcGIS Pro. Any value you enter is ignored.</para>
+		/// <para>已在 ArcGIS Pro 中弃用此参数。将忽略您输入的任何值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -144,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Spatial Grid 3</para>
-		/// <para>This parameter has been deprecated in ArcGIS Pro. Any value you enter is ignored.</para>
+		/// <para>已在 ArcGIS Pro 中弃用此参数。将忽略您输入的任何值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

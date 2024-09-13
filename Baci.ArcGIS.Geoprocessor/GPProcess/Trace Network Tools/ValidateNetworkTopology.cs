@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 {
 	/// <summary>
 	/// <para>Validate Network Topology</para>
-	/// <para>Validates the network topology of a trace network.  Validation of  the network topology is necessary after edits have been made to network attributes or the geometry of features in the network.</para>
+	/// <para>验证网络拓扑</para>
+	/// <para>验证追踪网络的网络拓扑。在对网络属性或网络中要素的几何进行编辑之后，必须对网络拓扑进行验证。</para>
 	/// </summary>
 	public class ValidateNetworkTopology : AbstractGPProcess
 	{
@@ -20,8 +21,8 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// </summary>
 		/// <param name="InTraceNetwork">
 		/// <para>Input Trace Network</para>
-		/// <para>The trace network for which the network topology will be validated.</para>
-		/// <para>When working with an enterprise geodatabase, the input trace network must be from a trace network service.</para>
+		/// <para>将验证网络拓扑的追踪网络。</para>
+		/// <para>使用企业级地理数据库时，输入追踪网络必须来自追踪网络服务。</para>
 		/// </param>
 		public ValidateNetworkTopology(object InTraceNetwork)
 		{
@@ -29,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Validate Network Topology</para>
+		/// <para>Tool Display Name : 验证网络拓扑</para>
 		/// </summary>
-		public override string DisplayName() => "Validate Network Topology";
+		public override string DisplayName() => "验证网络拓扑";
 
 		/// <summary>
 		/// <para>Tool Name : ValidateNetworkTopology</para>
@@ -65,8 +66,8 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Input Trace Network</para>
-		/// <para>The trace network for which the network topology will be validated.</para>
-		/// <para>When working with an enterprise geodatabase, the input trace network must be from a trace network service.</para>
+		/// <para>将验证网络拓扑的追踪网络。</para>
+		/// <para>使用企业级地理数据库时，输入追踪网络必须来自追踪网络服务。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -74,13 +75,13 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>The geographical extent used to validate the network topology.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
-		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
-		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>用于验证网络拓扑的地理范围。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
+		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
+		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Color Coded Layer</para>
+	/// <para>Color Coded Layer</para>
 	/// <para>Creates a multigeography-level, scale-dependent choropleth layer from a variable describing a business, demographic, consumer, or landscape characteristic.</para>
 	/// </summary>
 	public class ColorCodedLayer : AbstractGPProcess

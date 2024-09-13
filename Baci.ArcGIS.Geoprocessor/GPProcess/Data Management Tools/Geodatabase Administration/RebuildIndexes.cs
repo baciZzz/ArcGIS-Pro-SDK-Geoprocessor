@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Rebuild Indexes</para>
-	/// <para>Rebuild existing attribute or spatial indexes in enterprise geodatabases.  Indexes  can also be rebuilt on  states and state_lineage geodatabase system tables and the delta tables of datasets that are registered to participate in traditional versioning. Out-of-date indexes can lead to poor query performance.</para>
+	/// <para>重建索引</para>
+	/// <para>在企业级地理数据库中重新构建现有属性或空间索引。还可以在注册参与传统版本化的数据集的状态表、state_lineage 地理数据库系统表以及增量表上重新构建索引。 过期的索引可能会降低查询的性能。</para>
 	/// </summary>
 	public class RebuildIndexes : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputDatabase">
 		/// <para>Input Database Connection</para>
-		/// <para>The connection (.sde file) to the database or geodatabase that contains the data for which you want to rebuild indexes.</para>
+		/// <para>到数据库或地理数据库（包含要为其重建索引的数据）的连接（.sde 文件）。</para>
 		/// </param>
 		/// <param name="IncludeSystem">
 		/// <para>Include System Tables</para>
-		/// <para>Indicates whether indexes will be rebuilt on the states and state lineages tables.</para>
-		/// <para>You must connect as the geodatabase administrator for this option to be activated.</para>
-		/// <para>This option only applies to geodatabases. If you connect to a database, this option is disabled.</para>
-		/// <para>Unchecked—Indexes will not be rebuilt on the states and state lineages table. This is the default.</para>
-		/// <para>Checked—Indexes will be rebuilt on the states and state lineages tables.</para>
+		/// <para>指示是否重新构建状态和状态谱系表的索引。</para>
+		/// <para>要激活此选项，您必须以地理数据库管理员身份进行连接。</para>
+		/// <para>此选项仅适用于地理数据库。如果连接到了数据库，将禁用此选项。</para>
+		/// <para>未选中 - 不会重新构建状态表和状态谱系表的索引。这是默认设置。</para>
+		/// <para>选中 - 将重新构建状态表和状态谱系表的索引。</para>
 		/// <para><see cref="IncludeSystemEnum"/></para>
 		/// </param>
 		public RebuildIndexes(object InputDatabase, object IncludeSystem)
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Rebuild Indexes</para>
+		/// <para>Tool Display Name : 重建索引</para>
 		/// </summary>
-		public override string DisplayName() => "Rebuild Indexes";
+		public override string DisplayName() => "重建索引";
 
 		/// <summary>
 		/// <para>Tool Name : RebuildIndexes</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
-		/// <para>The connection (.sde file) to the database or geodatabase that contains the data for which you want to rebuild indexes.</para>
+		/// <para>到数据库或地理数据库（包含要为其重建索引的数据）的连接（.sde 文件）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -84,11 +85,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Include System Tables</para>
-		/// <para>Indicates whether indexes will be rebuilt on the states and state lineages tables.</para>
-		/// <para>You must connect as the geodatabase administrator for this option to be activated.</para>
-		/// <para>This option only applies to geodatabases. If you connect to a database, this option is disabled.</para>
-		/// <para>Unchecked—Indexes will not be rebuilt on the states and state lineages table. This is the default.</para>
-		/// <para>Checked—Indexes will be rebuilt on the states and state lineages tables.</para>
+		/// <para>指示是否重新构建状态和状态谱系表的索引。</para>
+		/// <para>要激活此选项，您必须以地理数据库管理员身份进行连接。</para>
+		/// <para>此选项仅适用于地理数据库。如果连接到了数据库，将禁用此选项。</para>
+		/// <para>未选中 - 不会重新构建状态表和状态谱系表的索引。这是默认设置。</para>
+		/// <para>选中 - 将重新构建状态表和状态谱系表的索引。</para>
 		/// <para><see cref="IncludeSystemEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -98,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Datasets to Rebuild Indexes For</para>
-		/// <para>Names of the datasets that will have their indexes rebuilt. Only datasets that are owned by the connected user are displayed.</para>
+		/// <para>要重新构建索引的数据集的名称。仅显示已连接用户所有的数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -106,10 +107,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Rebuild Delta Tables Only</para>
-		/// <para>Indicates whether indexes will be rebuilt only on the delta tables of the selected datasets. This option will be unavailable if there are no datasets selected in the list of input datasets.</para>
-		/// <para>This option only applies to geodatabases. If you connect to a database, this option is disabled.</para>
-		/// <para>Checked—Indexes will only be rebuilt for the delta tables of the selected datasets. This option can be used for cases where the business tables for the selected datasets are not updated often and there are a high volume of edits in the delta tables. This is the default.</para>
-		/// <para>Unchecked—Indexes will be rebuilt on all indexes for the selected datasets. This includes spatial indexes as well as user-created attribute indexes and any geodatabase-maintained indexes for the dataset.</para>
+		/// <para>指示是否将只重新构建选定数据集的增量表的索引。如果未在输入数据集列表中选择任何数据集，则此选项将不可用。</para>
+		/// <para>此选项仅适用于地理数据库。如果连接到了数据库，将禁用此选项。</para>
+		/// <para>选中 - 将只对选定数据集的增量表重新构建索引。选定数据集的业务表不常更新且增量表中编辑量较大的情况下可使用此选项。这是默认设置。</para>
+		/// <para>未选中 - 将针对选定数据集的所有索引重新构建索引。包括空间索引以及用户创建的属性索引和数据集的所有地理数据库维护索引。</para>
 		/// <para><see cref="DeltaOnlyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -141,14 +142,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IncludeSystemEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Indexes will be rebuilt on the states and state lineages tables.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SYSTEM")]
 			SYSTEM,
 
 			/// <summary>
-			/// <para>Unchecked—Indexes will not be rebuilt on the states and state lineages table. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SYSTEM")]
@@ -162,14 +163,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DeltaOnlyEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Indexes will only be rebuilt for the delta tables of the selected datasets. This option can be used for cases where the business tables for the selected datasets are not updated often and there are a high volume of edits in the delta tables. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ONLY_DELTAS")]
 			ONLY_DELTAS,
 
 			/// <summary>
-			/// <para>Unchecked—Indexes will be rebuilt on all indexes for the selected datasets. This includes spatial indexes as well as user-created attribute indexes and any geodatabase-maintained indexes for the dataset.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ALL")]

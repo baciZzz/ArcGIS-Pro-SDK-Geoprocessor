@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Integrated Mesh Scene Layer Package</para>
-	/// <para>Creates a scene layer package from OpenSceneGraph binary (OSGB) data.</para>
+	/// <para>创建集成网格场景图层包</para>
+	/// <para>可根据 OpenSceneGraph 二进制 (OSGB) 数据创建场景图层包。</para>
 	/// </summary>
 	public class CreateIntegratedMeshSceneLayerPackage : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>The OSGB format files, or folders containing OSGB format files, that will be imported into the integrated mesh scene layer package. This parameter allows a selection of multiple OSGB format files or a selection of multiple folders containing OSGB format files.</para>
+		/// <para>OSGB 格式文件或包含 OSGB 格式文件的文件夹，将导入到集成网格场景图层包中。此参数允许选择多个 OSGB 格式文件或选择包含 OSGB 格式文件的多个文件夹。</para>
 		/// </param>
 		/// <param name="OutSlpk">
 		/// <para>Output Scene Layer Package</para>
-		/// <para>The integrated mesh scene layer package that will be created.</para>
+		/// <para>将创建的集成网格场景图层包。</para>
 		/// </param>
 		public CreateIntegratedMeshSceneLayerPackage(object InDataset, object OutSlpk)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Integrated Mesh Scene Layer Package</para>
+		/// <para>Tool Display Name : 创建集成网格场景图层包</para>
 		/// </summary>
-		public override string DisplayName() => "Create Integrated Mesh Scene Layer Package";
+		public override string DisplayName() => "创建集成网格场景图层包";
 
 		/// <summary>
 		/// <para>Tool Name : CreateIntegratedMeshSceneLayerPackage</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>The OSGB format files, or folders containing OSGB format files, that will be imported into the integrated mesh scene layer package. This parameter allows a selection of multiple OSGB format files or a selection of multiple folders containing OSGB format files.</para>
+		/// <para>OSGB 格式文件或包含 OSGB 格式文件的文件夹，将导入到集成网格场景图层包中。此参数允许选择多个 OSGB 格式文件或选择包含 OSGB 格式文件的多个文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Scene Layer Package</para>
-		/// <para>The integrated mesh scene layer package that will be created.</para>
+		/// <para>将创建的集成网格场景图层包。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Anchor Point</para>
-		/// <para>The point feature or .3mx, .xml, or .wld3 file that will be used to position the center of the OSGB model. If there are multiple points in the feature class, only the first one will be used to georeference the data.</para>
+		/// <para>将用于定位 OSGB 模型中心的点要素、.3mx、.xml 或 .wld3 文件。如果要素类中存在多个点，则将仅使用第一个点对数据进行地理配准。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -97,9 +98,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>File Suffix</para>
-		/// <para>Specifies the files that will be processed for the input dataset.</para>
-		/// <para>All supported files—All binary files, regardless of their extension, will be processed to determine if they are in the OSGB format.</para>
-		/// <para>Files with *.osgb extension—Only files with the .osgb extension will be processed.</para>
+		/// <para>指定将针对输入数据集进行处理的文件。</para>
+		/// <para>所有受支持的文件—将对所有二进制文件（不考虑其扩展名）进行处理以确定其是否为 OSGB 格式。</para>
+		/// <para>带有 * osgb 扩展名的文件—将仅处理具有 .osgb 扩展名的文件。</para>
 		/// <para><see cref="FileSuffixEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -109,10 +110,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Coordinate System</para>
-		/// <para>The coordinate system of the output scene layer package. It can be any projected or custom coordinate system. Supported geographic coordinate systems include WGS 1984 and China Geodetic Coordinate System 2000. WGS 1984 and EGM96 Geoid are the default horizontal and vertical coordinate systems, respectively. The coordinate system can be specified in any of the following ways:</para>
-		/// <para>Specify the path to a .prj file.</para>
-		/// <para>Reference a dataset with the desired coordinate system.</para>
-		/// <para>Use an arcpy.SpatialReference object.</para>
+		/// <para>输出场景图层包的坐标系。它可以是任意投影坐标系或自定义坐标系。支持的地理坐标系包括 WGS 1984 和 China Geodetic Coordinate System 2000。WGS 1984 和 EGM96 大地水准面分别是默认的水平和垂直坐标系。可通过以下任一方式指定坐标系：</para>
+		/// <para>指定 .prj 文件的路径。</para>
+		/// <para>引用具有所需坐标系的数据集。</para>
+		/// <para>使用 arcpy.SpatialReference 对象。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Texture Size</para>
-		/// <para>The maximum texture size in pixels for each scene layer node.</para>
+		/// <para>每个场景图层节点的最大纹理大小（以像素为单位）。</para>
 		/// <para><see cref="MaxTextureSizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -130,9 +131,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Texture Optimization</para>
-		/// <para>Specifies the textures that will be optimized according to the target platform where the scene layer package is used. Desktop includes Windows, Linux, and Mac platforms.</para>
-		/// <para>Desktop—Texture formats will be optimized for use in desktop and web platforms. Texture formats will be JPEG and DXT. This is the default.</para>
-		/// <para>None—Textures formats will be optimized for use in a desktop platform. The texture format will be JPEG.</para>
+		/// <para>指定根据使用场景图层包的目标平台优化的纹理。桌面平台包括 Windows、Linux 和 Mac 平台。</para>
+		/// <para>桌面—纹理格式将进行优化，可用于桌面和 web 平台。纹理格式将为 JPEG 和 DXT。这是默认设置。</para>
+		/// <para>无—纹理格式将进行优化，可用于桌面平台。纹理格式将为 JPEG。</para>
 		/// <para><see cref="TextureOptimizationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -157,17 +158,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FileSuffixEnum 
 		{
 			/// <summary>
-			/// <para>Files with *.osgb extension—Only files with the .osgb extension will be processed.</para>
+			/// <para>带有 * osgb 扩展名的文件—将仅处理具有 .osgb 扩展名的文件。</para>
 			/// </summary>
 			[GPValue("osgb")]
-			[Description("Files with *.osgb extension")]
+			[Description("带有 * osgb 扩展名的文件")]
 			osgb,
 
 			/// <summary>
-			/// <para>All supported files—All binary files, regardless of their extension, will be processed to determine if they are in the OSGB format.</para>
+			/// <para>所有受支持的文件—将对所有二进制文件（不考虑其扩展名）进行处理以确定其是否为 OSGB 格式。</para>
 			/// </summary>
 			[GPValue("*")]
-			[Description("All supported files")]
+			[Description("所有受支持的文件")]
 			All_supported_files,
 
 		}
@@ -213,17 +214,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TextureOptimizationEnum 
 		{
 			/// <summary>
-			/// <para>Desktop—Texture formats will be optimized for use in desktop and web platforms. Texture formats will be JPEG and DXT. This is the default.</para>
+			/// <para>桌面—纹理格式将进行优化，可用于桌面和 web 平台。纹理格式将为 JPEG 和 DXT。这是默认设置。</para>
 			/// </summary>
 			[GPValue("Desktop")]
-			[Description("Desktop")]
+			[Description("桌面")]
 			Desktop,
 
 			/// <summary>
-			/// <para>None—Textures formats will be optimized for use in a desktop platform. The texture format will be JPEG.</para>
+			/// <para>无—纹理格式将进行优化，可用于桌面平台。纹理格式将为 JPEG。</para>
 			/// </summary>
 			[GPValue("None")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 		}

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Tessellation</para>
-	/// <para>Generates a tessellated grid of regular polygon features to cover a given extent.  The tessellation can be of triangles, squares, diamonds, hexagons, or transverse hexagons.</para>
+	/// <para>生成细分面</para>
+	/// <para>用于生成覆盖给定范围的正多边形要素的镶嵌格网。该镶嵌可以是三角形、正方形、菱形、六边形或横向六边形。</para>
 	/// </summary>
 	public class GenerateTessellation : AbstractGPProcess
 	{
@@ -20,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The path and name of the output feature class containing the tessellated grid.</para>
+		/// <para>包含镶嵌格网的输出要素类的路径和名称。</para>
 		/// </param>
 		/// <param name="Extent">
 		/// <para>Extent</para>
-		/// <para>The extent that the tessellation will cover. This can be the currently visible area, the extent of a dataset, or manually entered values.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
-		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
-		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>细分曲面将覆盖的范围。该范围可以是当前可见区域、数据集的范围或手动输入值。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
+		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
+		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </param>
 		public GenerateTessellation(object OutputFeatureClass, object Extent)
 		{
@@ -39,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Tessellation</para>
+		/// <para>Tool Display Name : 生成细分面</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Tessellation";
+		public override string DisplayName() => "生成细分面";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateTessellation</para>
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The path and name of the output feature class containing the tessellated grid.</para>
+		/// <para>包含镶嵌格网的输出要素类的路径和名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -83,13 +84,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>The extent that the tessellation will cover. This can be the currently visible area, the extent of a dataset, or manually entered values.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
-		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
-		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>细分曲面将覆盖的范围。该范围可以是当前可见区域、数据集的范围或手动输入值。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
+		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
+		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPExtent()]
@@ -97,12 +98,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Shape Type</para>
-		/// <para>The type of shape to tessellate.</para>
-		/// <para>Hexagon—A regular six-sided polygon with equal side lengths. Each hexagon&apos;s top and bottom sides are parallel with the x-axis of the coordinate system (the top and bottom are flat).</para>
-		/// <para>Transverse hexagon—A regular six-sided polygon with equal side lengths. Each hexagon&apos;s right and left sides are parallel with the y-axis of the dataset&apos;s coordinate system (the top and bottom are pointed).</para>
-		/// <para>Square—A regular four-sided polygon with equal side lengths. Each polygon&apos;s top and bottom sides are parallel with the x-axis of the coordinate system, and the right and left sides are parallel with the y-axis of the coordinate system.</para>
-		/// <para>Diamond—A regular four-sided polygon with equal side lengths. Each polygon&apos;s sides are rotated 45 degrees away from the x- and y-axis of the coordinate system.</para>
-		/// <para>Triangle—A regular three-sided equilateral polygon.</para>
+		/// <para>细分曲面的形状类型。</para>
+		/// <para>六边形—边长相等的正六边形。每个六边形的上下两侧平行于坐标系的 x 轴（顶部和底部是平的）。</para>
+		/// <para>横向六边形—边长相等的正六边形。每个六边形的左右两侧平行于数据集坐标系的 y 轴（顶部和底部是尖的）。</para>
+		/// <para>正方形—边长相等的正四边形。每个多边形的顶端和底部平行于坐标系的 x 轴，并且左右两侧平行于坐标系的 y 轴。</para>
+		/// <para>菱形—边长相等的正四边形。每个多边形的边均围绕坐标系的 x 轴和 y 轴旋转 45 度。</para>
+		/// <para>三角形—正等边三角形。</para>
 		/// <para><see cref="ShapeTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Size</para>
-		/// <para>The area of each individual shape that comprises the tessellation.</para>
+		/// <para>构成镶嵌的每个形状的面积。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPArealUnit()]
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Spatial Reference</para>
-		/// <para>The spatial reference to which the output dataset will be projected. If a spatial reference is not provided, the output will be projected to the spatial reference of the input extent. If neither has a spatial reference, the output is projected in GCS_WGS_1984.</para>
+		/// <para>输出数据集将投影到的空间参考。如果未提供空间参考，则输出将被投影到输入范围的空间参考中。如果空间参考也不存在，则输出将被投影到 GCS_WGS_1984。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
@@ -143,38 +144,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ShapeTypeEnum 
 		{
 			/// <summary>
-			/// <para>Square—A regular four-sided polygon with equal side lengths. Each polygon&apos;s top and bottom sides are parallel with the x-axis of the coordinate system, and the right and left sides are parallel with the y-axis of the coordinate system.</para>
+			/// <para>正方形—边长相等的正四边形。每个多边形的顶端和底部平行于坐标系的 x 轴，并且左右两侧平行于坐标系的 y 轴。</para>
 			/// </summary>
 			[GPValue("SQUARE")]
-			[Description("Square")]
+			[Description("正方形")]
 			Square,
 
 			/// <summary>
-			/// <para>Triangle—A regular three-sided equilateral polygon.</para>
+			/// <para>三角形—正等边三角形。</para>
 			/// </summary>
 			[GPValue("TRIANGLE")]
-			[Description("Triangle")]
+			[Description("三角形")]
 			Triangle,
 
 			/// <summary>
-			/// <para>Hexagon—A regular six-sided polygon with equal side lengths. Each hexagon&apos;s top and bottom sides are parallel with the x-axis of the coordinate system (the top and bottom are flat).</para>
+			/// <para>六边形—边长相等的正六边形。每个六边形的上下两侧平行于坐标系的 x 轴（顶部和底部是平的）。</para>
 			/// </summary>
 			[GPValue("HEXAGON")]
-			[Description("Hexagon")]
+			[Description("六边形")]
 			Hexagon,
 
 			/// <summary>
-			/// <para>Diamond—A regular four-sided polygon with equal side lengths. Each polygon&apos;s sides are rotated 45 degrees away from the x- and y-axis of the coordinate system.</para>
+			/// <para>菱形—边长相等的正四边形。每个多边形的边均围绕坐标系的 x 轴和 y 轴旋转 45 度。</para>
 			/// </summary>
 			[GPValue("DIAMOND")]
-			[Description("Diamond")]
+			[Description("菱形")]
 			Diamond,
 
 			/// <summary>
-			/// <para>Transverse hexagon—A regular six-sided polygon with equal side lengths. Each hexagon&apos;s right and left sides are parallel with the y-axis of the dataset&apos;s coordinate system (the top and bottom are pointed).</para>
+			/// <para>横向六边形—边长相等的正六边形。每个六边形的左右两侧平行于数据集坐标系的 y 轴（顶部和底部是尖的）。</para>
 			/// </summary>
 			[GPValue("TRANSVERSE_HEXAGON")]
-			[Description("Transverse hexagon")]
+			[Description("横向六边形")]
 			Transverse_hexagon,
 
 		}

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Light Signal Clearance Surface</para>
+	/// <para>Light Signal Clearance Surface</para>
 	/// <para>Creates a Light Signal Clearance Surface (LSCS) based on the FAA Engineering Brief (EB) 95.</para>
 	/// </summary>
 	public class LightSignalClearanceSurface : AbstractGPProcess

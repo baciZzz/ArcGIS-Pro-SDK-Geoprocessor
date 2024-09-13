@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Multidimensional Info</para>
-	/// <para>Generates multidimensional metadata in the mosaic dataset, including information regarding variables and dimensions.</para>
+	/// <para>构建多维信息</para>
+	/// <para>在镶嵌数据集中生成多维元数据，其中包含有关变量和维度的信息。</para>
 	/// </summary>
 	[Obsolete()]
 	public class BuildMultidimensionalInfo : AbstractGPProcess
@@ -21,7 +22,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>The input multidimensional mosaic dataset.</para>
+		/// <para>输入多维镶嵌数据集。</para>
 		/// </param>
 		public BuildMultidimensionalInfo(object InMosaicDataset)
 		{
@@ -29,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Build Multidimensional Info</para>
+		/// <para>Tool Display Name : 构建多维信息</para>
 		/// </summary>
-		public override string DisplayName() => "Build Multidimensional Info";
+		public override string DisplayName() => "构建多维信息";
 
 		/// <summary>
 		/// <para>Tool Name : BuildMultidimensionalInfo</para>
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>The input multidimensional mosaic dataset.</para>
+		/// <para>输入多维镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMosaicLayer()]
@@ -73,8 +74,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Variable Field</para>
-		/// <para>The field in the mosaic dataset that stores the variable names and is used to populate a new field named Variable. If all rasters in the mosaic dataset represent the same variable, type the name of the variable, for example, Temperature.</para>
-		/// <para>If the Variable field does not already exist, an existing field or string value must be specified. If the Variable field exists, the tool will update the multidimensional information only.</para>
+		/// <para>镶嵌数据集中用于存储变量名称的字段，并且用于填充名为 Variable 的新字段。如果镶嵌数据集中的所有栅格都表示同一变量，请输入变量名称，例如 Temperature。</para>
+		/// <para>如果 Variable 字段尚不存在，必须指定现有字段或字符串值。如果 Variable 字段存在，该工具将仅更新多维信息。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -82,8 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Dimension Fields</para>
-		/// <para>The fields in the mosaic dataset that store the dimension information and are used to populate a new field named Dimensions.</para>
-		/// <para>If the Dimensions field already exists, the tool will update the multidimensional information only.</para>
+		/// <para>镶嵌数据集中用于存储维度信息的字段，并且用于填充名为 Dimensions 的新字段。</para>
+		/// <para>如果 Dimensions 字段已存在，该工具将仅更新多维信息。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -91,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Variable Info</para>
-		/// <para>Specify additional information about the Variable field.</para>
+		/// <para>指定有关 Variable 字段的其他信息。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]

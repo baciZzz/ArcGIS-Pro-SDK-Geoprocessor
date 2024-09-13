@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Update Measures From LRS</para>
+	/// <para>Update Measures From LRS</para>
 	/// <para>Populates or updates  the measures and route ID on Utility Network (UN) features such as pipes, devices, and junctions or on features in other non-UN or non-LRS feature classes.</para>
 	/// </summary>
 	public class UpdateMeasuresFromLRS : AbstractGPProcess

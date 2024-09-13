@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Collapse Container Rule</para>
-	/// <para>Adds a diagram rule that automatically collapses container contents during the building of diagrams based on an existing template. This rule collapses the entire contents of containers in the diagrams.</para>
+	/// <para>添加折叠容器规则</para>
+	/// <para>用于添加逻辑示意图规则，以在基于现有模板构建逻辑示意图的过程中自动折叠容器内容。该规则可以折叠逻辑示意图中容器的全部内容。</para>
 	/// </summary>
 	public class AddCollapseContainerRule : AbstractGPProcess
 	{
@@ -20,32 +21,32 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template to modify.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to modify.</para>
+		/// <para>要修改的逻辑示意图模板的名称。</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
-		/// <para>Specifies whether the rule will be active when generating and updating diagrams based on the specified template.</para>
-		/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
-		/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+		/// <para>指定在基于指定模板生成并更新逻辑示意图时，规则是否将处于激活状态。</para>
+		/// <para>选中 - 在基于输入模板生成并更新逻辑示意图的过程中，添加的规则将会变为激活状态。这是默认设置。</para>
+		/// <para>未选中 - 在基于输入模板生成或更新逻辑示意图的过程中，添加的规则将不会变为激活状态。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </param>
 		/// <param name="ContainerType">
 		/// <para>Container Type</para>
-		/// <para>Specifies the geometry type of the container source class or object table the rule will process.</para>
-		/// <para>Junctions only—The Collapse Container rule will process the junction container source classes and object tables only. Only the polygon container source classes, point container source classes, and container junction object tables will be processed.</para>
-		/// <para>Edges only—The Collapse Container rule will process the edge container source classes and object tables only. Only the linear container source classes or container edge object tables will be processed.</para>
-		/// <para>Both junctions and edges—The Collapse Container rule will process any container source classes and object tables regardless of their type. Both junction and edge types will be processed. This is the default.</para>
+		/// <para>指定规则将进行处理的容器源类或对象表的几何类型。</para>
+		/// <para>仅交汇点—折叠容器规则将仅处理交汇点容器源类和对象表。仅会处理面容器源类、点容器源类和容器交汇点对象表。</para>
+		/// <para>仅边—折叠容器规则将仅处理边容器源类和对象表。仅会处理线性容器源类或容器边对象表。</para>
+		/// <para>交汇点和边—折叠容器规则将处理任何容器源类和对象表，无论它们的类型如何。交汇点和边类型均被处理。这是默认设置。</para>
 		/// <para><see cref="ContainerTypeEnum"/></para>
 		/// </param>
 		/// <param name="InverseSourceSelection">
 		/// <para>Rule Process</para>
-		/// <para>Specifies how the rule will process the specified container source classes and object tables.</para>
-		/// <para>Exclude source classes—Containers that are based on the specified source classes and object tables will not be collapsed, while other containers will be collapsed. This is the default.</para>
-		/// <para>Include source classes—Containers that are based on the specified source classes and object tables will be collapsed.</para>
+		/// <para>指定处理指定容器源类和对象表的方式。</para>
+		/// <para>排除源类—将不会折叠所有基于指定源类和对象表的容器，但将折叠其他容器。这是默认设置。</para>
+		/// <para>包括源类—将折叠所有基于指定源类和对象表的容器。</para>
 		/// <para><see cref="InverseSourceSelectionEnum"/></para>
 		/// </param>
 		public AddCollapseContainerRule(object InUtilityNetwork, object TemplateName, object IsActive, object ContainerType, object InverseSourceSelection)
@@ -58,9 +59,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Collapse Container Rule</para>
+		/// <para>Tool Display Name : 添加折叠容器规则</para>
 		/// </summary>
-		public override string DisplayName() => "Add Collapse Container Rule";
+		public override string DisplayName() => "添加折叠容器规则";
 
 		/// <summary>
 		/// <para>Tool Name : AddCollapseContainerRule</para>
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template to modify.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to modify.</para>
+		/// <para>要修改的逻辑示意图模板的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -110,9 +111,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Active</para>
-		/// <para>Specifies whether the rule will be active when generating and updating diagrams based on the specified template.</para>
-		/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
-		/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+		/// <para>指定在基于指定模板生成并更新逻辑示意图时，规则是否将处于激活状态。</para>
+		/// <para>选中 - 在基于输入模板生成并更新逻辑示意图的过程中，添加的规则将会变为激活状态。这是默认设置。</para>
+		/// <para>未选中 - 在基于输入模板生成或更新逻辑示意图的过程中，添加的规则将不会变为激活状态。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -122,10 +123,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Container Type</para>
-		/// <para>Specifies the geometry type of the container source class or object table the rule will process.</para>
-		/// <para>Junctions only—The Collapse Container rule will process the junction container source classes and object tables only. Only the polygon container source classes, point container source classes, and container junction object tables will be processed.</para>
-		/// <para>Edges only—The Collapse Container rule will process the edge container source classes and object tables only. Only the linear container source classes or container edge object tables will be processed.</para>
-		/// <para>Both junctions and edges—The Collapse Container rule will process any container source classes and object tables regardless of their type. Both junction and edge types will be processed. This is the default.</para>
+		/// <para>指定规则将进行处理的容器源类或对象表的几何类型。</para>
+		/// <para>仅交汇点—折叠容器规则将仅处理交汇点容器源类和对象表。仅会处理面容器源类、点容器源类和容器交汇点对象表。</para>
+		/// <para>仅边—折叠容器规则将仅处理边容器源类和对象表。仅会处理线性容器源类或容器边对象表。</para>
+		/// <para>交汇点和边—折叠容器规则将处理任何容器源类和对象表，无论它们的类型如何。交汇点和边类型均被处理。这是默认设置。</para>
 		/// <para><see cref="ContainerTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -135,9 +136,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Rule Process</para>
-		/// <para>Specifies how the rule will process the specified container source classes and object tables.</para>
-		/// <para>Exclude source classes—Containers that are based on the specified source classes and object tables will not be collapsed, while other containers will be collapsed. This is the default.</para>
-		/// <para>Include source classes—Containers that are based on the specified source classes and object tables will be collapsed.</para>
+		/// <para>指定处理指定容器源类和对象表的方式。</para>
+		/// <para>排除源类—将不会折叠所有基于指定源类和对象表的容器，但将折叠其他容器。这是默认设置。</para>
+		/// <para>包括源类—将折叠所有基于指定源类和对象表的容器。</para>
 		/// <para><see cref="InverseSourceSelectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -147,9 +148,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Container Sources</para>
-		/// <para>The container source class (or classes) and object table (or tables) that will be excluded or included during the Collapse Container rule execution depending on the chosen rule process.</para>
-		/// <para>If Rule Process is Exclude source classes (inverse_source_selection = &quot;EXCLUDE_SOURCE_CLASSES&quot; in Python), the rule can be configured without specifying a particular network source class or object table, in which case it will collapse contents of any container source classes and object tables in the generated diagrams. However, if Rule Process is Include source classes (inverse_source_selection = &quot;INCLUDE_SOURCE_CLASSES&quot; in Python), the particular container source class (or classes) or object table (or tables) to be collapsed must be specified.</para>
-		/// <para>When Exclude source classes (inverse_source_selection = &quot;EXCLUDE_SOURCE_CLASSES&quot; in Python), the contents related to any container features or container objects belonging to the specified classes or object tables will not be collapsed in the generated diagrams, while contents related to container features and container objects that don&apos;t belong to those classes and object tables will be collapsed. Conversely, when Rule Process is Include Source Classes (inverse_source_selection = &quot;INCLUDE_SOURCE_CLASSES&quot; in Python), the contents related to any container features and container objects belonging to the specified source classes and object tables will be collapsed in the generated diagrams, while contents related to container features and container objects that don&apos;t belong to those source classes and object tables will not be collapsed.</para>
+		/// <para>“折叠容器”规则执行过程中，将排除或包括的容器源类和对象表，具体取决于所选规则流程。</para>
+		/// <para>如果规则过程为排除源类（Python 中的 inverse_source_selection = &quot;EXCLUDE_SOURCE_CLASSES&quot;），可以对规则进行配置，无需指定特定网络源类或对象表；在这种情况下，其将在生成的逻辑示意图中折叠任何容器源类和对象表的内容。但是，如果规则过程为包括源类（Python 中的 inverse_source_selection = &quot;INCLUDE_SOURCE_CLASSES&quot;），必须指定特定的容器源类或要折叠的对象表。</para>
+		/// <para>排除源类（Python 中的 inverse_source_selection = &quot;EXCLUDE_SOURCE_CLASSES&quot;）时，与属于指定类或对象表的任何容器要素或容器对象相关的内容将不会在生成的逻辑示意图中折叠，而与不属于那些类和对象的容器要素和容器对象相关的内容表将被折叠。相反，当规则过程为包括源类（Python 中的 inverse_source_selection = &quot;INCLUDE_SOURCE_CLASSES&quot;）时，与属于指定源类和对象表的任何容器要素或容器对象相关的内容将不会在生成的逻辑示意图中折叠，而与不属于那些源类和对象的容器要素和容器对象相关的内容表将不会被折叠。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -157,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Description</para>
-		/// <para>The description of the rule.</para>
+		/// <para>规则的描述。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -179,9 +180,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Aggregate reconnected edges</para>
-		/// <para>Specifies whether the rule will aggregate the edges that are reconnected to the collapsed container junctions.</para>
-		/// <para>Unchecked—Any edge connecting a content junction will be kept and reconnected to the collapsed container junction.</para>
-		/// <para>Checked—Any edge connecting a content junction will be replaced by a reduction edge that is reconnected to the collapsed container junction. Multiple edges between two collapsed junctions will be systematically aggregated under the same reduction edge. This is the default.</para>
+		/// <para>用于指定规则是否将聚合重新连接到已折叠容器交汇点的边。</para>
+		/// <para>未选中 - 任何连接内容交汇点的边都将被保留，并重新连接到已折叠容器交汇点。</para>
+		/// <para>选中 - 任何连接内容交汇点的边都将替换为重新连接到已折叠容器交汇点的缩减边。此外，将在相同缩减边下系统地对两个已折叠交汇点之间的多条边进行聚合。这是默认设置。</para>
 		/// <para><see cref="ReconnectedEdgesOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -197,14 +198,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsActiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACTIVE")]
 			ACTIVE,
 
 			/// <summary>
-			/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INACTIVE")]
@@ -218,24 +219,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum ContainerTypeEnum 
 		{
 			/// <summary>
-			/// <para>Junctions only—The Collapse Container rule will process the junction container source classes and object tables only. Only the polygon container source classes, point container source classes, and container junction object tables will be processed.</para>
+			/// <para>仅交汇点—折叠容器规则将仅处理交汇点容器源类和对象表。仅会处理面容器源类、点容器源类和容器交汇点对象表。</para>
 			/// </summary>
 			[GPValue("JUNCTIONS")]
-			[Description("Junctions only")]
+			[Description("仅交汇点")]
 			Junctions_only,
 
 			/// <summary>
-			/// <para>Edges only—The Collapse Container rule will process the edge container source classes and object tables only. Only the linear container source classes or container edge object tables will be processed.</para>
+			/// <para>仅边—折叠容器规则将仅处理边容器源类和对象表。仅会处理线性容器源类或容器边对象表。</para>
 			/// </summary>
 			[GPValue("EDGES")]
-			[Description("Edges only")]
+			[Description("仅边")]
 			Edges_only,
 
 			/// <summary>
-			/// <para>Both junctions and edges—The Collapse Container rule will process any container source classes and object tables regardless of their type. Both junction and edge types will be processed. This is the default.</para>
+			/// <para>交汇点和边—折叠容器规则将处理任何容器源类和对象表，无论它们的类型如何。交汇点和边类型均被处理。这是默认设置。</para>
 			/// </summary>
 			[GPValue("BOTH")]
-			[Description("Both junctions and edges")]
+			[Description("交汇点和边")]
 			Both_junctions_and_edges,
 
 		}
@@ -246,17 +247,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum InverseSourceSelectionEnum 
 		{
 			/// <summary>
-			/// <para>Exclude source classes—Containers that are based on the specified source classes and object tables will not be collapsed, while other containers will be collapsed. This is the default.</para>
+			/// <para>排除源类—将不会折叠所有基于指定源类和对象表的容器，但将折叠其他容器。这是默认设置。</para>
 			/// </summary>
 			[GPValue("EXCLUDE_SOURCE_CLASSES")]
-			[Description("Exclude source classes")]
+			[Description("排除源类")]
 			Exclude_source_classes,
 
 			/// <summary>
-			/// <para>Include source classes—Containers that are based on the specified source classes and object tables will be collapsed.</para>
+			/// <para>包括源类—将折叠所有基于指定源类和对象表的容器。</para>
 			/// </summary>
 			[GPValue("INCLUDE_SOURCE_CLASSES")]
-			[Description("Include source classes")]
+			[Description("包括源类")]
 			Include_source_classes,
 
 		}
@@ -267,14 +268,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum ReconnectedEdgesOptionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Any edge connecting a content junction will be replaced by a reduction edge that is reconnected to the collapsed container junction. Multiple edges between two collapsed junctions will be systematically aggregated under the same reduction edge. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("AGGREGATE_RECONNECTED_EDGES")]
 			AGGREGATE_RECONNECTED_EDGES,
 
 			/// <summary>
-			/// <para>Unchecked—Any edge connecting a content junction will be kept and reconnected to the collapsed container junction.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DONT_AGGREGATE_RECONNECTED_EDGES")]

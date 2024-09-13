@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Classify LAS By Height</para>
-	/// <para>Reclassifies lidar points based on their height from the ground surface.</para>
+	/// <para>按高度分类 LAS</para>
+	/// <para>基于距离地表的高度对激光雷达点进行重分类。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,18 +23,18 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset that will be processed. Only LAS points with class code values of 0 and 1 will be evaluated.</para>
+		/// <para>将要处理的 LAS 数据集。 将仅对类代码值为 0 和 1 的 LAS 点进行评估。</para>
 		/// </param>
 		/// <param name="GroundSource">
 		/// <para>Ground Source</para>
-		/// <para>Specifies the source of ground measurements that will be used to determine height above ground.</para>
-		/// <para>All Ground Points—LAS points designated with the ground classification code value of 2 and model key code value of 8 will be used.</para>
-		/// <para>Model Key Points—Only LAS points designated with the model key classification code value of 8 will be used.</para>
+		/// <para>指定将用于确定距离地面高度的地面测量的资源。</para>
+		/// <para>所有地面点—将使用通过地面分类代码值 2 和模型关键代码值 8 指定的 LAS 点。</para>
+		/// <para>模型关键点—将仅使用通过模型关键分类代码值 8 指定的 LAS 点。</para>
 		/// <para><see cref="GroundSourceEnum"/></para>
 		/// </param>
 		/// <param name="HeightClassification">
 		/// <para>Height Classification</para>
-		/// <para>The class code and maximum height from ground that will be used to reclassify LAS points. The order of the classes in the table will define the range of z-values that will be used to process the reclassification. The z-range of the first entry will span from the ground surface to the specified Height From Ground value. The z-range of subsequent entries will span from the upper limit of the preceding entry to its own Height From Ground value.</para>
+		/// <para>将用于对 LAS 点进行重分类的类代码和距离地面的最大高度。 表中各个类的顺序可定义将用于处理重分类的 z 值的范围。 第一个条目的 z 范围将从地表跨越到指定的距离地面高度值。 后续条目的 z 范围将从先前条目的上限跨越到其自身的距离地面高度值。</para>
 		/// </param>
 		public ClassifyLasByHeight(object InLasDataset, object GroundSource, object HeightClassification)
 		{
@@ -43,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Classify LAS By Height</para>
+		/// <para>Tool Display Name : 按高度分类 LAS</para>
 		/// </summary>
-		public override string DisplayName() => "Classify LAS By Height";
+		public override string DisplayName() => "按高度分类 LAS";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyLasByHeight</para>
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset that will be processed. Only LAS points with class code values of 0 and 1 will be evaluated.</para>
+		/// <para>将要处理的 LAS 数据集。 将仅对类代码值为 0 和 1 的 LAS 点进行评估。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -87,9 +88,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Ground Source</para>
-		/// <para>Specifies the source of ground measurements that will be used to determine height above ground.</para>
-		/// <para>All Ground Points—LAS points designated with the ground classification code value of 2 and model key code value of 8 will be used.</para>
-		/// <para>Model Key Points—Only LAS points designated with the model key classification code value of 8 will be used.</para>
+		/// <para>指定将用于确定距离地面高度的地面测量的资源。</para>
+		/// <para>所有地面点—将使用通过地面分类代码值 2 和模型关键代码值 8 指定的 LAS 点。</para>
+		/// <para>模型关键点—将仅使用通过模型关键分类代码值 8 指定的 LAS 点。</para>
 		/// <para><see cref="GroundSourceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -99,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Height Classification</para>
-		/// <para>The class code and maximum height from ground that will be used to reclassify LAS points. The order of the classes in the table will define the range of z-values that will be used to process the reclassification. The z-range of the first entry will span from the ground surface to the specified Height From Ground value. The z-range of subsequent entries will span from the upper limit of the preceding entry to its own Height From Ground value.</para>
+		/// <para>将用于对 LAS 点进行重分类的类代码和距离地面的最大高度。 表中各个类的顺序可定义将用于处理重分类的 z 值的范围。 第一个条目的 z 范围将从地表跨越到指定的距离地面高度值。 后续条目的 z 范围将从先前条目的上限跨越到其自身的距离地面高度值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -107,11 +108,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Noise Classification</para>
-		/// <para>Specifies whether and how points will be reclassified as noise based on their proximity from the ground. Noise artifacts in lidar data can be introduced by sensor errors and the inadvertent interception of aerial obstructions, such as birds, in the path of the lidar pulse.</para>
-		/// <para>Low and High Noise—Both low and high noise will be classified.</para>
-		/// <para>High Noise—Only points that are above the maximum height in the LAS classification table will be reclassified as high noise.</para>
-		/// <para>Low Noise—Only points below the ground surface will be reclassified as noise. This option is only available when all ground points are used to define the ground surface.</para>
-		/// <para>None—No points will be reclassified as noise.</para>
+		/// <para>根据点距离地面的临近性指定是否对点进行重分类和如何进行重分类。 激光雷达数据中的噪点伪影可由传感器错误和空中障碍物（例如，位于激光雷达脉冲路径上的鸟类）的无意拦截引入。</para>
+		/// <para>低噪音和高噪音—低噪点和高噪点都将得到分类。</para>
+		/// <para>高噪音—只有大于 LAS 分类表中最大高度的点才会被重分类为高噪点。</para>
+		/// <para>低噪音—只有低于地表的点才会被重分类为噪点。 此选项仅适用于所有地面点都用于定义地表时。</para>
+		/// <para>无—没有将被重分类为噪点的点。</para>
 		/// <para><see cref="NoiseEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -121,9 +122,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Compute statistics</para>
-		/// <para>Specifies whether statistics will be computed for the .las files referenced by the LAS dataset. Computing statistics provides a spatial index for each .las file, which improves analysis and display performance. Statistics also enhance the filtering and symbology experience by limiting the display of LAS attributes, such as classification codes and return information, to values that are present in the .las file.</para>
-		/// <para>Checked—Statistics will be computed. This is the default.</para>
-		/// <para>Unchecked—Statistics will not be computed.</para>
+		/// <para>指定是否将计算 LAS 数据集引用的 .las 文件的统计数据。 计算统计数据时会为每个 .las 文件提供一个空间索引，从而提高了分析和显示性能。 统计数据还可通过将 LAS 属性（例如分类代码和返回信息）显示限制为 .las 文件中存在的值来提升过滤和符号系统体验。</para>
+		/// <para>选中 - 将计算统计数据。 这是默认设置。</para>
+		/// <para>未选中 - 不计算统计数据。</para>
 		/// <para><see cref="ComputeStatsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -133,13 +134,13 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Processing Extent</para>
-		/// <para>The extent of the data that will be evaluated.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
-		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
-		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>待评估数据的范围。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
+		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
+		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -148,9 +149,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Process entire LAS files that intersect extent</para>
-		/// <para>Specifies how the processing extent will be applied.</para>
-		/// <para>Unchecked—Only LAS points that are within the processing extent will be evaluated. This is the default.</para>
-		/// <para>Checked—All points in the .las files that intersect the processing extent will be evaluated.</para>
+		/// <para>指定处理范围的应用方式。</para>
+		/// <para>未选中 - 将仅对处理范围内的 LAS 点进行评估。 这是默认设置。</para>
+		/// <para>选中 - 将对处理范围相交的 .las 文件中的所有点进行评估。</para>
 		/// <para><see cref="ProcessEntireFilesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -161,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Processing Boundary</para>
-		/// <para>A polygon feature that defines the region for which LAS ground points will be evaluated.</para>
+		/// <para>定义评估 LAS 地面点所在区域的面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -179,9 +180,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Update pyramid</para>
-		/// <para>Specifies whether the LAS dataset pyramid will be updated after the class codes are modified.</para>
-		/// <para>Checked—The LAS dataset pyramid will be updated. This is the default.</para>
-		/// <para>Unchecked—The LAS dataset pyramid will not be updated.</para>
+		/// <para>指定修改类代码后，LAS 数据集金字塔是否会更新。</para>
+		/// <para>选中 - LAS 数据集金字塔将更新。 这是默认设置。</para>
+		/// <para>未选中 - LAS 数据集金字塔不会更新。</para>
 		/// <para><see cref="UpdatePyramidEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -206,17 +207,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum GroundSourceEnum 
 		{
 			/// <summary>
-			/// <para>All Ground Points—LAS points designated with the ground classification code value of 2 and model key code value of 8 will be used.</para>
+			/// <para>所有地面点—将使用通过地面分类代码值 2 和模型关键代码值 8 指定的 LAS 点。</para>
 			/// </summary>
 			[GPValue("GROUND")]
-			[Description("All Ground Points")]
+			[Description("所有地面点")]
 			All_Ground_Points,
 
 			/// <summary>
-			/// <para>Model Key Points—Only LAS points designated with the model key classification code value of 8 will be used.</para>
+			/// <para>模型关键点—将仅使用通过模型关键分类代码值 8 指定的 LAS 点。</para>
 			/// </summary>
 			[GPValue("MODEL_KEY")]
-			[Description("Model Key Points")]
+			[Description("模型关键点")]
 			Model_Key_Points,
 
 		}
@@ -227,31 +228,31 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum NoiseEnum 
 		{
 			/// <summary>
-			/// <para>None—No points will be reclassified as noise.</para>
+			/// <para>无—没有将被重分类为噪点的点。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 			/// <summary>
-			/// <para>Low Noise—Only points below the ground surface will be reclassified as noise. This option is only available when all ground points are used to define the ground surface.</para>
+			/// <para>低噪音和高噪音—低噪点和高噪点都将得到分类。</para>
 			/// </summary>
 			[GPValue("LOW_NOISE")]
-			[Description("Low Noise")]
+			[Description("低噪音")]
 			Low_Noise,
 
 			/// <summary>
-			/// <para>High Noise—Only points that are above the maximum height in the LAS classification table will be reclassified as high noise.</para>
+			/// <para>高噪音—只有大于 LAS 分类表中最大高度的点才会被重分类为高噪点。</para>
 			/// </summary>
 			[GPValue("HIGH_NOISE")]
-			[Description("High Noise")]
+			[Description("高噪音")]
 			High_Noise,
 
 			/// <summary>
-			/// <para>Low and High Noise—Both low and high noise will be classified.</para>
+			/// <para>低噪音和高噪音—低噪点和高噪点都将得到分类。</para>
 			/// </summary>
 			[GPValue("ALL_NOISE")]
-			[Description("Low and High Noise")]
+			[Description("低噪音和高噪音")]
 			Low_and_High_Noise,
 
 		}
@@ -262,14 +263,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ComputeStatsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Statistics will be computed. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMPUTE_STATS")]
 			COMPUTE_STATS,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics will not be computed.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_COMPUTE_STATS")]
@@ -283,14 +284,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ProcessEntireFilesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—All points in the .las files that intersect the processing extent will be evaluated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PROCESS_ENTIRE_FILES")]
 			PROCESS_ENTIRE_FILES,
 
 			/// <summary>
-			/// <para>Unchecked—Only LAS points that are within the processing extent will be evaluated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("PROCESS_EXTENT")]
@@ -304,14 +305,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum UpdatePyramidEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The LAS dataset pyramid will be updated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_PYRAMID")]
 			UPDATE_PYRAMID,
 
 			/// <summary>
-			/// <para>Unchecked—The LAS dataset pyramid will not be updated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_UPDATE_PYRAMID")]

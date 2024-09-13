@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Dissolve Boundaries</para>
-	/// <para>Finds polygons that intersect or have the same field values and merges them to form a single polygon.</para>
+	/// <para>融合边界</para>
+	/// <para>查找相交或具有相同字段值的面，并将其合并为一个面。</para>
 	/// </summary>
 	public class DissolveBoundaries : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Features</para>
-		/// <para>The layer containing the polygon features that will be dissolved.</para>
+		/// <para>将要融合的包含面要素的图层。</para>
 		/// </param>
 		/// <param name="OutputName">
 		/// <para>Output Name</para>
-		/// <para>The name of the output feature service.</para>
+		/// <para>输出要素服务的名称。</para>
 		/// </param>
 		public DissolveBoundaries(object InputLayer, object OutputName)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Dissolve Boundaries</para>
+		/// <para>Tool Display Name : 融合边界</para>
 		/// </summary>
-		public override string DisplayName() => "Dissolve Boundaries";
+		public override string DisplayName() => "融合边界";
 
 		/// <summary>
 		/// <para>Tool Name : DissolveBoundaries</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The layer containing the polygon features that will be dissolved.</para>
+		/// <para>将要融合的包含面要素的图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output feature service.</para>
+		/// <para>输出要素服务的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -88,9 +89,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Create Multipart Features</para>
-		/// <para>Specifies whether multipart features will be created in the output feature class.</para>
-		/// <para>Checked—Multipart features will be created.</para>
-		/// <para>Unchecked—Multipart features will not be created. Individual features will be created for each part instead. This is the default.</para>
+		/// <para>指定在输出要素类中是否将创建多部分要素。</para>
+		/// <para>选中 - 将创建多部分要素。</para>
+		/// <para>未选中 - 将不会创建多部分要素。相反，系统将为各部分创建单独的要素。这是默认设置。</para>
 		/// <para><see cref="MultipartEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -100,9 +101,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Dissolve by Field Value(s)</para>
-		/// <para>Specifies whether features with the same field values will be dissolved.</para>
-		/// <para>Unchecked—Polygons that share a common border (that is, they are adjacent) or polygons that overlap will be dissolved into one polygon. This is the default.</para>
-		/// <para>Checked—Polygons that have the same field value or values will be dissolved.</para>
+		/// <para>指定是否融合具有相同字段值的要素。</para>
+		/// <para>未选中 - 共用公共边界的面（即相邻的面）或重叠的面将会被融合为一个面。这是默认设置。</para>
+		/// <para>选中 - 具有相同字段值的面将被融合。</para>
 		/// <para><see cref="DissolveFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Dissolve Field(s)</para>
-		/// <para>The field or fields that will be used to dissolve like features. Features with the same value for each field will be dissolved.</para>
+		/// <para>将用于融合类要素的一个或多个字段。各字段都具有相同值的要素将被融合。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -120,16 +121,16 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Summary Fields</para>
-		/// <para>The statistics that will be calculated on specified fields.</para>
-		/// <para>Count—The number of nonnull values. It can be used on numeric fields or strings. The count of [null, 0, 2] is 2.</para>
-		/// <para>Sum—The sum of numeric values in a field. The sum of [null, null, 3] is 3.</para>
-		/// <para>Mean—The mean of numeric values. The mean of [0, 2, null] is 1.</para>
-		/// <para>Min—The minimum value of a numeric field. The minimum of [0, 2, null] is 0.</para>
-		/// <para>Max—The maximum value of a numeric field. The maximum value of [0, 2, null] is 2.</para>
-		/// <para>Standard Deviation—The standard deviation of a numeric field. The standard deviation of [1] is null. The standard deviation of [null, 1,1,1] is null.</para>
-		/// <para>Variance—The variance of a numeric field in a track. The variance of [1] is null. The variance of [null, 1, 1, 1] is null.</para>
-		/// <para>Range—The range of a numeric field. This is calculated as the minimum value subtracted from the maximum value. The range of [0, null, 1] is 1. The range of [null, 4] is 0.</para>
-		/// <para>Any—A sample string from a field of type string.</para>
+		/// <para>将根据指定字段进行计算的统计数据。</para>
+		/// <para>计数 - 非空值的数目。可用于数值字段或字符串。[null, 0, 2] 的计数为 2。</para>
+		/// <para>总和 - 字段内数值的总和。[null, null, 3] 的总和为 3。</para>
+		/// <para>平均值 - 数值的平均值。[0, 2, null] 的平均值为 1。</para>
+		/// <para>最小值 - 数值字段的最小值。[0, 2, null] 的最小值为 0。</para>
+		/// <para>最大值 - 数值字段的最大值。[0, 2, null] 的最大值为 2。</para>
+		/// <para>标准差 - 数值字段的标准差。[1] 的标准差为 null。[null, 1,1,1] 的标准差为 null。</para>
+		/// <para>方差 - 轨迹中数值字段内数值的方差。[1] 的方差为 null。[null, 1, 1, 1] 的方差为 null。</para>
+		/// <para>范围 - 数值字段的范围。其计算方法为最大值减去最小值。[0, null, 1] 的范围为 1。[null, 4] 的范围为 0。</para>
+		/// <para>任何 - 字符串型字段中的示例字符串。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -145,9 +146,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Data Store</para>
-		/// <para>Specifies the ArcGIS Data Store where the output will be saved. The default is Spatiotemporal big data store. All results stored in a spatiotemporal big data store will be stored in WGS84. Results stored in a relational data store will maintain their coordinate system.</para>
-		/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
-		/// <para>Relational data store—Output will be stored in a relational data store.</para>
+		/// <para>指定将用于保存输出的 ArcGIS Data Store。默认设置为时空大数据存储。在时空大数据存储中存储的所有结果都将存储在 WGS84 中。在关系数据存储中存储的结果都将保持各自的坐标系。</para>
+		/// <para>时空大数据存储—输出将存储在时空大数据存储中。这是默认设置。</para>
+		/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 		/// <para><see cref="DataStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -173,14 +174,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum MultipartEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Multipart features will be created.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MULTI_PART")]
 			MULTI_PART,
 
 			/// <summary>
-			/// <para>Unchecked—Multipart features will not be created. Individual features will be created for each part instead. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SINGLE_PART")]
@@ -194,14 +195,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DissolveFieldsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Polygons that have the same field value or values will be dissolved.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DISSOLVE_FIELDS")]
 			DISSOLVE_FIELDS,
 
 			/// <summary>
-			/// <para>Unchecked—Polygons that share a common border (that is, they are adjacent) or polygons that overlap will be dissolved into one polygon. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DISSOLVE_FIELDS")]
@@ -215,17 +216,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DataStoreEnum 
 		{
 			/// <summary>
-			/// <para>Relational data store—Output will be stored in a relational data store.</para>
+			/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 			/// </summary>
 			[GPValue("RELATIONAL_DATA_STORE")]
-			[Description("Relational data store")]
+			[Description("关系数据存储")]
 			Relational_data_store,
 
 			/// <summary>
-			/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
+			/// <para>时空大数据存储—输出将存储在时空大数据存储中。这是默认设置。</para>
 			/// </summary>
 			[GPValue("SPATIOTEMPORAL_DATA_STORE")]
-			[Description("Spatiotemporal big data store")]
+			[Description("时空大数据存储")]
 			Spatiotemporal_big_data_store,
 
 		}

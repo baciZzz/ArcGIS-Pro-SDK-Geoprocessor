@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Calculate Areas</para>
+	/// <para>Calculate Areas</para>
 	/// <para></para>
 	/// </summary>
 	[Obsolete()]

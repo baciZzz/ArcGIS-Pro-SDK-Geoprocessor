@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Clear Job Replication Information</para>
-	/// <para>Deletes the  replication information on a parent repository and sends  a web service call to all the child repositories in the cluster. Consequently, the replication information is cleared from all the repositories participating in the cluster.</para>
+	/// <para>清除作业复制信息</para>
+	/// <para>删除父资料档案库中的复制信息并在群集中向所有子资料档案库发送一个 web 服务调用。因此，从参与群集的所有资料档案库中清除复制信息。</para>
 	/// </summary>
 	public class ClearJobReplicationInfo : AbstractGPProcess
 	{
@@ -20,8 +21,8 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		/// <param name="InputRepositoryURL">
 		/// <para>Repository URL</para>
-		/// <para>The URL for the Workflow Manager (Classic) Server Object as defined on the server.</para>
-		/// <para>For example, http://ServerName/arcgis/rest/services/ServerObjectName/WMServer.</para>
+		/// <para>在服务器上定义的 Workflow Manager (Classic) Server 对象的 URL。</para>
+		/// <para>例如，http://ServerName/arcgis/rest/services/ServerObjectName/WMServer。</para>
 		/// </param>
 		public ClearJobReplicationInfo(object InputRepositoryURL)
 		{
@@ -29,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Clear Job Replication Information</para>
+		/// <para>Tool Display Name : 清除作业复制信息</para>
 		/// </summary>
-		public override string DisplayName() => "Clear Job Replication Information";
+		public override string DisplayName() => "清除作业复制信息";
 
 		/// <summary>
 		/// <para>Tool Name : ClearJobReplicationInfo</para>
@@ -65,8 +66,8 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Repository URL</para>
-		/// <para>The URL for the Workflow Manager (Classic) Server Object as defined on the server.</para>
-		/// <para>For example, http://ServerName/arcgis/rest/services/ServerObjectName/WMServer.</para>
+		/// <para>在服务器上定义的 Workflow Manager (Classic) Server 对象的 URL。</para>
+		/// <para>例如，http://ServerName/arcgis/rest/services/ServerObjectName/WMServer。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Input Database Path</para>
-		/// <para>The Workflow Manager (Classic) connection file (.jtc) for the database from which to delete the replication information. If no connection file is specified, the current default Workflow Manager (Classic) database is used.</para>
+		/// <para>可自其中删除复制信息的数据库的 Workflow Manager (Classic) 连接文件 (.jtc)。如果未指定连接文件，将使用当前默认的 Workflow Manager (Classic) 数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Standard Geography Trade Areas</para>
+	/// <para>Generate Standard Geography Trade Areas</para>
 	/// <para>Creates trade areas based on predefined named statistical areas. This tool does not consume credits.</para>
 	/// </summary>
 	public class StandardGeographyTA : AbstractGPProcess

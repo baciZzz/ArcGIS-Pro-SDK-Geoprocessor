@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make XY Event Layer</para>
-	/// <para>Creates a new point feature layer based on x- and y-coordinates defined in a table. If the source table contains z-coordinates (elevation values), that field can also be specified in the creation of the event layer. The layer created by this tool is temporary.</para>
+	/// <para>创建 XY 事件图层</para>
+	/// <para>根据表中定义的 X 和 Y 坐标创建新的点要素图层。如果源表包含 Z 坐标（高程值），则可以在创建事件图层时指定该字段。由此工具创建的图层是临时图层。</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.DataManagementTools.XYTableToPoint"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.DataManagementTools.XYTableToPoint))]
@@ -22,19 +23,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="Table">
 		/// <para>XY Table</para>
-		/// <para>The table containing the x- and y-coordinates that define the locations of the point features to create.</para>
+		/// <para>定义要创建的点要素位置的表（包含 x 和 y 坐标）。</para>
 		/// </param>
 		/// <param name="InXField">
 		/// <para>X Field</para>
-		/// <para>The field in the input table that contains the x-coordinates (or longitude).</para>
+		/// <para>输入表中包含 X 坐标（或经度）的字段。</para>
 		/// </param>
 		/// <param name="InYField">
 		/// <para>Y Field</para>
-		/// <para>The field in the input table that contains the y-coordinates (or latitude).</para>
+		/// <para>输入表中包含 Y 坐标（或纬度）的字段。</para>
 		/// </param>
 		/// <param name="OutLayer">
 		/// <para>Layer Name</para>
-		/// <para>The name of the output point event layer.</para>
+		/// <para>输出点事件图层的名称。</para>
 		/// </param>
 		public MakeXYEventLayer(object Table, object InXField, object InYField, object OutLayer)
 		{
@@ -45,9 +46,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Make XY Event Layer</para>
+		/// <para>Tool Display Name : 创建 XY 事件图层</para>
 		/// </summary>
-		public override string DisplayName() => "Make XY Event Layer";
+		public override string DisplayName() => "创建 XY 事件图层";
 
 		/// <summary>
 		/// <para>Tool Name : MakeXYEventLayer</para>
@@ -81,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>XY Table</para>
-		/// <para>The table containing the x- and y-coordinates that define the locations of the point features to create.</para>
+		/// <para>定义要创建的点要素位置的表（包含 x 和 y 坐标）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>X Field</para>
-		/// <para>The field in the input table that contains the x-coordinates (or longitude).</para>
+		/// <para>输入表中包含 X 坐标（或经度）的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -98,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Y Field</para>
-		/// <para>The field in the input table that contains the y-coordinates (or latitude).</para>
+		/// <para>输入表中包含 Y 坐标（或纬度）的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -107,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Layer Name</para>
-		/// <para>The name of the output point event layer.</para>
+		/// <para>输出点事件图层的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -115,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Spatial Reference</para>
-		/// <para>The spatial reference of the coordinates specified in the X Field and Y Field parameters. This will be the output event layer's spatial reference.</para>
+		/// <para>X 字段和 Y 字段参数中指定的坐标的空间参考。这将是输出事件图层的空间参考。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
@@ -123,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Z Field</para>
-		/// <para>The field in the input table that contains the z-coordinates.</para>
+		/// <para>输入表中包含 Z 坐标的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

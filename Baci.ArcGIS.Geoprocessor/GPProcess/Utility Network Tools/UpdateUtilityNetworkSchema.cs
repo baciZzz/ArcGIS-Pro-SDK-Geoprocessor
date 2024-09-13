@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Update Utility Network Schema</para>
+	/// <para>Update Utility Network Schema</para>
 	/// <para>Updates the schema of a utility network based upon a Xml set of instructions</para>
 	/// </summary>
 	[Obsolete()]

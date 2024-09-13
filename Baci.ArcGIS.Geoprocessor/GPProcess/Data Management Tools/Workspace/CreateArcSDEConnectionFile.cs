@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create ArcSDE Connection File</para>
+	/// <para>Create ArcSDE Connection File</para>
 	/// <para>Create a connection file to an ArcSDE workspace</para>
 	/// </summary>
 	[Obsolete()]

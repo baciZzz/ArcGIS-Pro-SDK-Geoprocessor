@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Flow Accumulation</para>
-	/// <para>Creates a raster of accumulated flow into each cell.</para>
+	/// <para>流量</para>
+	/// <para>创建每个像元累积流量的栅格。</para>
 	/// </summary>
 	public class FlowAccumulation : AbstractGPProcess
 	{
@@ -20,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		/// <param name="Inputflowdirectionraster">
 		/// <para>Input Flow Direction Raster</para>
-		/// <para>The input raster that shows the direction of flow out of each cell.</para>
-		/// <para>The flow direction raster can be created using the D8, MFD, or DINF method. Use the Flow Direction Type parameter to specify the method used when the flow direction raster was created.</para>
+		/// <para>根据每个像元来显示流向的输入栅格。</para>
+		/// <para>可使用 D8、MFD 或 DINF 方法创建流向栅格。可以使用流向类型参数来指定创建流向栅格时所使用的方法。</para>
 		/// </param>
 		/// <param name="Outputname">
 		/// <para>Output Name</para>
-		/// <para>The name of the output flow accumulation raster service.</para>
-		/// <para>The default name is based on the tool name and the input layer name. If the layer name already exists, you will be prompted to provide another name.</para>
+		/// <para>输出流量栅格服务的名称。</para>
+		/// <para>默认名称基于工具名称以及输入图层名称。如果该图层名称已存在，则系统将提示您提供其他名称。</para>
 		/// </param>
 		public FlowAccumulation(object Inputflowdirectionraster, object Outputname)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Flow Accumulation</para>
+		/// <para>Tool Display Name : 流量</para>
 		/// </summary>
-		public override string DisplayName() => "Flow Accumulation";
+		public override string DisplayName() => "流量";
 
 		/// <summary>
 		/// <para>Tool Name : FlowAccumulation</para>
@@ -71,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Flow Direction Raster</para>
-		/// <para>The input raster that shows the direction of flow out of each cell.</para>
-		/// <para>The flow direction raster can be created using the D8, MFD, or DINF method. Use the Flow Direction Type parameter to specify the method used when the flow direction raster was created.</para>
+		/// <para>根据每个像元来显示流向的输入栅格。</para>
+		/// <para>可使用 D8、MFD 或 DINF 方法创建流向栅格。可以使用流向类型参数来指定创建流向栅格时所使用的方法。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -81,8 +82,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output flow accumulation raster service.</para>
-		/// <para>The default name is based on the tool name and the input layer name. If the layer name already exists, you will be prompted to provide another name.</para>
+		/// <para>输出流量栅格服务的名称。</para>
+		/// <para>默认名称基于工具名称以及输入图层名称。如果该图层名称已存在，则系统将提示您提供其他名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Weight Raster</para>
-		/// <para>An optional integer input raster for applying a weight to each cell.</para>
+		/// <para>对每一像元应用权重的可选整型输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -99,10 +100,10 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Data Type</para>
-		/// <para>The output accumulation raster can be integer, floating or double type.</para>
-		/// <para>Float—The output raster will be floating point type. This is the default.</para>
-		/// <para>Integer—The output raster will be integer type.</para>
-		/// <para>Double—The output raster will be double type.</para>
+		/// <para>输出累积栅格可以是整型、浮点型或双精度型。</para>
+		/// <para>浮点型—输出栅格将为浮点型。这是默认设置。</para>
+		/// <para>整型—输出栅格将为整型。</para>
+		/// <para>双精度型—输出栅格将为双精度型。</para>
 		/// <para><see cref="DatatypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -112,10 +113,10 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Flow Direction Type</para>
-		/// <para>Specifies the input flow direction raster type.</para>
-		/// <para>D8—The input flow direction raster is of type D8. This is the default.</para>
-		/// <para>MFD—The input flow direction raster is of type Multi Flow Direction (MFD).</para>
-		/// <para>DINF—The input flow direction raster is of type D-Infinity (DINF).</para>
+		/// <para>指定输入流向栅格类型。</para>
+		/// <para>D8—输入流向栅格为 D8 类型。这是默认设置。</para>
+		/// <para>MFD—输入流向栅格为多流向 (MFD) 类型。</para>
+		/// <para>DINF—输入流向栅格为 D-Infinity (DINF) 类型。</para>
 		/// <para><see cref="FlowdirectiontypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -147,24 +148,24 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum DatatypeEnum 
 		{
 			/// <summary>
-			/// <para>Float—The output raster will be floating point type. This is the default.</para>
+			/// <para>浮点型—输出栅格将为浮点型。这是默认设置。</para>
 			/// </summary>
 			[GPValue("FLOAT")]
-			[Description("Float")]
+			[Description("浮点型")]
 			Float,
 
 			/// <summary>
-			/// <para>Integer—The output raster will be integer type.</para>
+			/// <para>整型—输出栅格将为整型。</para>
 			/// </summary>
 			[GPValue("INTEGER")]
-			[Description("Integer")]
+			[Description("整型")]
 			Integer,
 
 			/// <summary>
-			/// <para>Double—The output raster will be double type.</para>
+			/// <para>双精度型—输出栅格将为双精度型。</para>
 			/// </summary>
 			[GPValue("DOUBLE")]
-			[Description("Double")]
+			[Description("双精度型")]
 			Double,
 
 		}
@@ -175,21 +176,21 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum FlowdirectiontypeEnum 
 		{
 			/// <summary>
-			/// <para>D8—The input flow direction raster is of type D8. This is the default.</para>
+			/// <para>D8—输入流向栅格为 D8 类型。这是默认设置。</para>
 			/// </summary>
 			[GPValue("D8")]
 			[Description("D8")]
 			D8,
 
 			/// <summary>
-			/// <para>MFD—The input flow direction raster is of type Multi Flow Direction (MFD).</para>
+			/// <para>MFD—输入流向栅格为多流向 (MFD) 类型。</para>
 			/// </summary>
 			[GPValue("MFD")]
 			[Description("MFD")]
 			MFD,
 
 			/// <summary>
-			/// <para>DINF—The input flow direction raster is of type D-Infinity (DINF).</para>
+			/// <para>DINF—输入流向栅格为 D-Infinity (DINF) 类型。</para>
 			/// </summary>
 			[GPValue("DINF")]
 			[Description("DINF")]

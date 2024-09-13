@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 {
 	/// <summary>
 	/// <para>ServerTool 7</para>
+	/// <para>ServerTool 7</para>
 	/// <para></para>
 	/// </summary>
 	public class RefreshMapAreaPackage : AbstractGPProcess

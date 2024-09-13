@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Distance From Point</para>
-	/// <para>Determine whether entities in a layer are within a certain distance of a coordinate location.</para>
+	/// <para>与点的距离</para>
+	/// <para>确定图层中的实体是否在坐标位置的一定距离范围内。</para>
 	/// </summary>
 	[Obsolete()]
 	public class DistanceFromPoint : AbstractGPProcess
@@ -24,15 +25,15 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </param>
 		/// <param name="InputCoordinateType">
 		/// <para>Coordinate Type</para>
-		/// <para>Decimal Degrees - Longitude first—Decimal Degrees - Longitude first. This is the default.</para>
-		/// <para>Decimal Degrees - Latitude first—Decimal Degrees - Latitude first</para>
-		/// <para>Degrees Minutes Seconds - Longitude first—Degrees Minutes Seconds - Longitude first</para>
-		/// <para>Degrees Minutes Seconds - Latitude first—Degrees Minutes Seconds - Latitude first</para>
-		/// <para>Degrees Decimal Minutes - Longitude first—Degrees Decimal Minutes - Longitude first</para>
-		/// <para>Degrees Decimal Minutes - Latitude first—Degrees Decimal Minutes - Latitude first</para>
-		/// <para>Military Grid Reference System—Military Grid Reference System notation</para>
-		/// <para>US National Grid—US National Grid notation</para>
-		/// <para>Universal Transverse Mercator—Universal Transverse Mercator notation</para>
+		/// <para>十进制度 - 经度优先—十进制度 - 经度优先。这是默认设置。</para>
+		/// <para>十进制度 - 纬度优先—十进制度 - 纬度优先</para>
+		/// <para>度分秒 - 经度优先—度分秒 - 经度优先</para>
+		/// <para>度分秒 - 纬度优先—度分秒 - 纬度优先</para>
+		/// <para>度十进制分 - 经度优先—度十进制分 - 经度优先</para>
+		/// <para>度十进制分 - 纬度优先—度十进制分 - 纬度优先</para>
+		/// <para>军事格网参考系—军事格网参考系记法</para>
+		/// <para>美国国家格网—美国国家格网记法</para>
+		/// <para>通用横轴墨卡托投影—通用横轴墨卡托记法</para>
 		/// <para><see cref="InputCoordinateTypeEnum"/></para>
 		/// </param>
 		/// <param name="InputCoordinateString">
@@ -50,9 +51,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Distance From Point</para>
+		/// <para>Tool Display Name : 与点的距离</para>
 		/// </summary>
-		public override string DisplayName() => "Distance From Point";
+		public override string DisplayName() => "与点的距离";
 
 		/// <summary>
 		/// <para>Tool Name : DistanceFromPoint</para>
@@ -96,15 +97,15 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Coordinate Type</para>
-		/// <para>Decimal Degrees - Longitude first—Decimal Degrees - Longitude first. This is the default.</para>
-		/// <para>Decimal Degrees - Latitude first—Decimal Degrees - Latitude first</para>
-		/// <para>Degrees Minutes Seconds - Longitude first—Degrees Minutes Seconds - Longitude first</para>
-		/// <para>Degrees Minutes Seconds - Latitude first—Degrees Minutes Seconds - Latitude first</para>
-		/// <para>Degrees Decimal Minutes - Longitude first—Degrees Decimal Minutes - Longitude first</para>
-		/// <para>Degrees Decimal Minutes - Latitude first—Degrees Decimal Minutes - Latitude first</para>
-		/// <para>Military Grid Reference System—Military Grid Reference System notation</para>
-		/// <para>US National Grid—US National Grid notation</para>
-		/// <para>Universal Transverse Mercator—Universal Transverse Mercator notation</para>
+		/// <para>十进制度 - 经度优先—十进制度 - 经度优先。这是默认设置。</para>
+		/// <para>十进制度 - 纬度优先—十进制度 - 纬度优先</para>
+		/// <para>度分秒 - 经度优先—度分秒 - 经度优先</para>
+		/// <para>度分秒 - 纬度优先—度分秒 - 纬度优先</para>
+		/// <para>度十进制分 - 经度优先—度十进制分 - 经度优先</para>
+		/// <para>度十进制分 - 纬度优先—度十进制分 - 纬度优先</para>
+		/// <para>军事格网参考系—军事格网参考系记法</para>
+		/// <para>美国国家格网—美国国家格网记法</para>
+		/// <para>通用横轴墨卡托投影—通用横轴墨卡托记法</para>
 		/// <para><see cref="InputCoordinateTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -148,66 +149,66 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		public enum InputCoordinateTypeEnum 
 		{
 			/// <summary>
-			/// <para>Decimal Degrees - Longitude first—Decimal Degrees - Longitude first. This is the default.</para>
+			/// <para>十进制度 - 经度优先—十进制度 - 经度优先。这是默认设置。</para>
 			/// </summary>
 			[GPValue("DD(long/lat)")]
-			[Description("Decimal Degrees - Longitude first")]
+			[Description("十进制度 - 经度优先")]
 			DD,
 
 			/// <summary>
-			/// <para>Decimal Degrees - Latitude first—Decimal Degrees - Latitude first</para>
+			/// <para>十进制度 - 纬度优先—十进制度 - 纬度优先</para>
 			/// </summary>
 			[GPValue("DD(lat/long)")]
-			[Description("Decimal Degrees - Latitude first")]
+			[Description("十进制度 - 纬度优先")]
 			DD1,
 
 			/// <summary>
-			/// <para>Degrees Minutes Seconds - Longitude first—Degrees Minutes Seconds - Longitude first</para>
+			/// <para>度分秒 - 经度优先—度分秒 - 经度优先</para>
 			/// </summary>
 			[GPValue("DMS(long/lat)")]
-			[Description("Degrees Minutes Seconds - Longitude first")]
+			[Description("度分秒 - 经度优先")]
 			DMS,
 
 			/// <summary>
-			/// <para>Degrees Minutes Seconds - Latitude first—Degrees Minutes Seconds - Latitude first</para>
+			/// <para>度分秒 - 纬度优先—度分秒 - 纬度优先</para>
 			/// </summary>
 			[GPValue("DMS(lat/long)")]
-			[Description("Degrees Minutes Seconds - Latitude first")]
+			[Description("度分秒 - 纬度优先")]
 			DMS1,
 
 			/// <summary>
-			/// <para>Degrees Decimal Minutes - Longitude first—Degrees Decimal Minutes - Longitude first</para>
+			/// <para>度十进制分 - 经度优先—度十进制分 - 经度优先</para>
 			/// </summary>
 			[GPValue("DDM(long/lat)")]
-			[Description("Degrees Decimal Minutes - Longitude first")]
+			[Description("度十进制分 - 经度优先")]
 			DDM,
 
 			/// <summary>
-			/// <para>Degrees Decimal Minutes - Latitude first—Degrees Decimal Minutes - Latitude first</para>
+			/// <para>度十进制分 - 纬度优先—度十进制分 - 纬度优先</para>
 			/// </summary>
 			[GPValue("DDM(lat/long)")]
-			[Description("Degrees Decimal Minutes - Latitude first")]
+			[Description("度十进制分 - 纬度优先")]
 			DDM1,
 
 			/// <summary>
-			/// <para>Military Grid Reference System—Military Grid Reference System notation</para>
+			/// <para>军事格网参考系—军事格网参考系记法</para>
 			/// </summary>
 			[GPValue("MGRS")]
-			[Description("Military Grid Reference System")]
+			[Description("军事格网参考系")]
 			Military_Grid_Reference_System,
 
 			/// <summary>
-			/// <para>US National Grid—US National Grid notation</para>
+			/// <para>美国国家格网—美国国家格网记法</para>
 			/// </summary>
 			[GPValue("USNG")]
-			[Description("US National Grid")]
+			[Description("美国国家格网")]
 			US_National_Grid,
 
 			/// <summary>
-			/// <para>Universal Transverse Mercator—Universal Transverse Mercator notation</para>
+			/// <para>通用横轴墨卡托投影—通用横轴墨卡托记法</para>
 			/// </summary>
 			[GPValue("UTM")]
-			[Description("Universal Transverse Mercator")]
+			[Description("通用横轴墨卡托投影")]
 			Universal_Transverse_Mercator,
 
 		}

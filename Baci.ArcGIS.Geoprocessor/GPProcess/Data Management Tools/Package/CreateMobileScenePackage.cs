@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Mobile Scene Package</para>
-	/// <para>Creates a mobile scene package file (.mspk) from one or more scenes for use across the ArcGIS platform.</para>
+	/// <para>创建移动场景包</para>
+	/// <para>从一个或多个场景创建移动场景包 (.mspk)，用于整个 ArcGIS 平台。</para>
 	/// </summary>
 	public class CreateMobileScenePackage : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InScene">
 		/// <para>Input Scene</para>
-		/// <para>One or more local or global scenes that will be packaged into a single .mspk file. Active scenes and .mapx files can be added as input.</para>
+		/// <para>将打包到一个 .mspk 文件中的一个或多个局部或全球场景。可以将活动场景和 .mapx 文件作为输入添加。</para>
 		/// </param>
 		/// <param name="OutputFile">
 		/// <para>Output File</para>
-		/// <para>The output mobile scene package .mspk file.</para>
+		/// <para>输出移动场景包 .mspk 文件。</para>
 		/// </param>
 		public CreateMobileScenePackage(object InScene, object OutputFile)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Mobile Scene Package</para>
+		/// <para>Tool Display Name : 创建移动场景包</para>
 		/// </summary>
-		public override string DisplayName() => "Create Mobile Scene Package";
+		public override string DisplayName() => "创建移动场景包";
 
 		/// <summary>
 		/// <para>Tool Name : CreateMobileScenePackage</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Scene</para>
-		/// <para>One or more local or global scenes that will be packaged into a single .mspk file. Active scenes and .mapx files can be added as input.</para>
+		/// <para>将打包到一个 .mspk 文件中的一个或多个局部或全球场景。可以将活动场景和 .mapx 文件作为输入添加。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>The output mobile scene package .mspk file.</para>
+		/// <para>输出移动场景包 .mspk 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Locator</para>
-		/// <para>Locators have the following restrictions:</para>
+		/// <para>定位器具有以下限制：</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -98,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Area of Interest</para>
-		/// <para>A polygon layer that defines the area of interest. Only those features that intersect the area of interest will be included in the mobile scene package.</para>
+		/// <para>定义感兴趣区域的面图层。仅与感兴趣区域相交的要素才会包括在移动场景包中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -108,13 +109,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>Specifies the extent that will be used to select or clip features.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
-		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
-		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>指定用于选择或裁剪要素的范围。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
+		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
+		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -122,10 +123,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Clip Features</para>
-		/// <para>Specifies whether the output features will be clipped to the given area of interest or extent.</para>
-		/// <para>Checked—The geometry of the features will be clipped to the given area of interest or extent.</para>
-		/// <para>Unchecked—Features in the scene will be selected and their geometry will remain unaltered. This is the default.</para>
-		/// <para>Multipatch feature layers, 3D point feature layers, LAS dataset layers, service layers, tile packages, and scene layer packages, cannot be clipped and will be completely copied to the mobile scene package.</para>
+		/// <para>指定是否将输出要素裁剪为给定的感兴趣区域或范围。</para>
+		/// <para>已选中 - 要素的几何将裁剪为给定的感兴趣区或范围。</para>
+		/// <para>未选中 - 将选中场景中的要素且其几何仍保持不变。这是默认设置。</para>
+		/// <para>多面体要素图层、3D 点要素图层、LAS 数据集图层、服务图层、切片包和场景图层包无法进行裁剪，将整个复制到移动场景包。</para>
 		/// <para><see cref="ClipFeaturesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -135,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Title</para>
-		/// <para>Adds title information to the properties of the package.</para>
+		/// <para>将标题信息添加到包的属性中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -143,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Summary</para>
-		/// <para>Adds summary information to the properties of the package.</para>
+		/// <para>将摘要信息添加到包的属性中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -151,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Description</para>
-		/// <para>Adds description information to the properties of the package.</para>
+		/// <para>将描述信息添加到包的属性中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -159,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Tags</para>
-		/// <para>Adds tag information to the properties of the package. Multiple tags can be added, separated by a comma or semicolon.</para>
+		/// <para>将标签信息添加到包的属性中。可以添加多个标签，用逗号或分号分隔。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -167,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Credits</para>
-		/// <para>Adds credit information to the properties of the package.</para>
+		/// <para>将制作者名单信息添加到包的属性中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -175,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Use Limitations</para>
-		/// <para>Adds use limitations to the properties of the package.</para>
+		/// <para>将使用限制添加到包的属性中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -183,10 +184,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Enable Anonymous Use</para>
-		/// <para>Specifies whether the mobile scenes can be used by anyone or only those with an ArcGIS account.</para>
-		/// <para>Checked—Anyone with access to the package can use the mobile scene without signing in with an Esri named user account.</para>
-		/// <para>Unchecked—Anyone with access to the package must be signed in with a named user account to use the mobile scene. This is the default.</para>
-		/// <para>This optional parameter is only available with the Publisher extension.</para>
+		/// <para>指定所有人或仅具有 ArcGIS 帐户的人员可以使用移动场景。</para>
+		/// <para>选中 - 具有包访问权限的所有人均可使用移动场景，无需使用 Esri 授权用户帐户进行登录。</para>
+		/// <para>未选中 - 具有包访问权限的所有人必须使用授权用户帐户进行登录，才能使用移动场景。这是默认设置。</para>
+		/// <para>此可选参数仅适用于 Publisher 扩展模块。</para>
 		/// <para><see cref="AnonymousUseEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -196,12 +197,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Texture Optimization</para>
-		/// <para>Specifies the texture optimization that will be used. Textures are optimized according to the target platform where the scene layer package will be used. This parameter applies to scene layer packages only.</para>
-		/// <para>Optimizations that include ETC2 may take significant time to process. For fastest results, use Desktop or None.</para>
-		/// <para>All—All texture formats including JPEG, DXT, and ETC2 for use in desktop, web, and mobile can be used.</para>
-		/// <para>Desktop—Windows-, Linux-, and Mac-supported textures including JPEG and DXT can be used in the ArcGIS Pro client on Windows and ArcGIS Runtime desktop clients on Windows, Linux, and Mac. This is the default.</para>
-		/// <para>Mobile—Android- and iOS-supported textures including JPEG and ETC2 can be used in ArcGIS Runtime mobile applications.</para>
-		/// <para>None—JPEG textures can be used in desktop and web platforms.</para>
+		/// <para>指定将要使用的纹理优化。根据使用场景图层包的目标平台对纹理进行优化。此参数仅适用于场景图层包。</para>
+		/// <para>可能需要大量时间来处理包括 ETC2 的优化。要获得最快结果，请使用桌面或无。</para>
+		/// <para>所有—用于桌面、web 和移动应用程序的所有纹理格式，包括 JPEG、DXT 和 ETC2。</para>
+		/// <para>桌面—包括 JPEG 和 DXT 在内的 Windows、Linux 和 Mac 支持的纹理适用于 Windows 上的 ArcGIS Pro 客户端以及 Windows、Linux 和 Mac 上的 ArcGIS Runtime 桌面客户端。这是默认设置。</para>
+		/// <para>移动—支持 Android 和 iOS 的纹理包括 JPEG 和 ETC2，可用于 ArcGIS Runtime 移动应用程序。</para>
+		/// <para>无—JPEG 纹理可用于桌面和 web 平台。</para>
 		/// <para><see cref="TextureOptimizationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -211,10 +212,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Enable Scene Expiration</para>
-		/// <para>Specifies whether the mobile scene package will time out.</para>
-		/// <para>Checked—Time-out is enabled on the mobile scene package.</para>
-		/// <para>Unchecked—Time-out is not enabled on the mobile scene package. This is the default.</para>
-		/// <para>This optional parameter is only available with the Publisher extension.</para>
+		/// <para>指定移动场景包是否超时。</para>
+		/// <para>选中 - 已在移动场景包上启用超时。</para>
+		/// <para>未选中 - 未在移动场景包上启用超时。这是默认设置。</para>
+		/// <para>此可选参数仅适用于 Publisher 扩展模块。</para>
 		/// <para><see cref="EnableSceneExpirationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -224,10 +225,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Scene Expiration Type</para>
-		/// <para>Specifies the type of scene access for the expired mobile scene package.</para>
-		/// <para>Allow to open—The user of the package will be warned that the scene has expired, and allowed to open the scene. This is the default.</para>
-		/// <para>Do not allow to open—The user of the package will be warned that the scene has expired and will not be allowed to open the package.</para>
-		/// <para>This optional parameter is only available with the Publisher extension.</para>
+		/// <para>指定已到期移动场景包的场景访问类型。</para>
+		/// <para>允许打开—将警告包用户此场景已到期，且允许打开场景。这是默认设置。</para>
+		/// <para>不允许打开—将警告包用户此场景已到期，且不允许打开包。</para>
+		/// <para>此可选参数仅适用于 Publisher 扩展模块。</para>
 		/// <para><see cref="SceneExpirationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -237,8 +238,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Expiration Date</para>
-		/// <para>The date the mobile scene package will expire.</para>
-		/// <para>This optional parameter is only available with the Publisher extension.</para>
+		/// <para>移动场景包的到期日期。</para>
+		/// <para>此可选参数仅适用于 Publisher 扩展模块。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -246,8 +247,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Expiration Message</para>
-		/// <para>A text message will appear when an expired scene is accessed.</para>
-		/// <para>This optional parameter is only available with the Publisher extension.</para>
+		/// <para>访问已到期场景时将显示的文本消息。</para>
+		/// <para>此可选参数仅适用于 Publisher 扩展模块。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -255,9 +256,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Keep only the rows which are related to features within the extent</para>
-		/// <para>Specifies whether the specified extent will be applied to related data sources.</para>
-		/// <para>Unchecked—Related data sources will be consolidated in their entirety. This is the default.</para>
-		/// <para>Checked—Only related data corresponding to records within the specified extent will be consolidated.</para>
+		/// <para>指定是否将指定的范围应用至相关数据源。</para>
+		/// <para>未选中 - 相关的数据源将全部合并。这是默认设置。</para>
+		/// <para>选中 - 仅合并指定范围内与记录对应的相关数据。</para>
 		/// <para><see cref="SelectRelatedRowsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -267,9 +268,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Reference Online Content</para>
-		/// <para>Specifies whether service layers will be referenced in the package.</para>
-		/// <para>Unchecked—Service layers will not be referenced in the mobile package. This is the default.</para>
-		/// <para>Checked—Service layers will be referenced in the mobile package.</para>
+		/// <para>指定是否在包中引用服务图层。</para>
+		/// <para>未选中 - 将不会在移动包中引用服务图层。这是默认设置。</para>
+		/// <para>选中 - 将在移动包中引用服务图层。</para>
 		/// <para><see cref="ReferenceOnlineContentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -285,14 +286,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ClipFeaturesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The geometry of the features will be clipped to the given area of interest or extent.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLIP")]
 			CLIP,
 
 			/// <summary>
-			/// <para>Unchecked—Features in the scene will be selected and their geometry will remain unaltered. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SELECT")]
@@ -306,14 +307,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AnonymousUseEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Anyone with access to the package can use the mobile scene without signing in with an Esri named user account.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ANONYMOUS_USE")]
 			ANONYMOUS_USE,
 
 			/// <summary>
-			/// <para>Unchecked—Anyone with access to the package must be signed in with a named user account to use the mobile scene. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("STANDARD")]
@@ -327,31 +328,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TextureOptimizationEnum 
 		{
 			/// <summary>
-			/// <para>All—All texture formats including JPEG, DXT, and ETC2 for use in desktop, web, and mobile can be used.</para>
+			/// <para>所有—用于桌面、web 和移动应用程序的所有纹理格式，包括 JPEG、DXT 和 ETC2。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All")]
+			[Description("所有")]
 			All,
 
 			/// <summary>
-			/// <para>Desktop—Windows-, Linux-, and Mac-supported textures including JPEG and DXT can be used in the ArcGIS Pro client on Windows and ArcGIS Runtime desktop clients on Windows, Linux, and Mac. This is the default.</para>
+			/// <para>桌面—包括 JPEG 和 DXT 在内的 Windows、Linux 和 Mac 支持的纹理适用于 Windows 上的 ArcGIS Pro 客户端以及 Windows、Linux 和 Mac 上的 ArcGIS Runtime 桌面客户端。这是默认设置。</para>
 			/// </summary>
 			[GPValue("DESKTOP")]
-			[Description("Desktop")]
+			[Description("桌面")]
 			Desktop,
 
 			/// <summary>
-			/// <para>Mobile—Android- and iOS-supported textures including JPEG and ETC2 can be used in ArcGIS Runtime mobile applications.</para>
+			/// <para>移动—支持 Android 和 iOS 的纹理包括 JPEG 和 ETC2，可用于 ArcGIS Runtime 移动应用程序。</para>
 			/// </summary>
 			[GPValue("MOBILE")]
-			[Description("Mobile")]
+			[Description("移动")]
 			Mobile,
 
 			/// <summary>
-			/// <para>None—JPEG textures can be used in desktop and web platforms.</para>
+			/// <para>无—JPEG 纹理可用于桌面和 web 平台。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 		}
@@ -362,14 +363,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum EnableSceneExpirationEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Time-out is enabled on the mobile scene package.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ENABLE_SCENE_EXPIRATION")]
 			ENABLE_SCENE_EXPIRATION,
 
 			/// <summary>
-			/// <para>Unchecked—Time-out is not enabled on the mobile scene package. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DISABLE_SCENE_EXPIRATION")]
@@ -383,17 +384,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SceneExpirationTypeEnum 
 		{
 			/// <summary>
-			/// <para>Allow to open—The user of the package will be warned that the scene has expired, and allowed to open the scene. This is the default.</para>
+			/// <para>允许打开—将警告包用户此场景已到期，且允许打开场景。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ALLOW_TO_OPEN")]
-			[Description("Allow to open")]
+			[Description("允许打开")]
 			Allow_to_open,
 
 			/// <summary>
-			/// <para>Do not allow to open—The user of the package will be warned that the scene has expired and will not be allowed to open the package.</para>
+			/// <para>不允许打开—将警告包用户此场景已到期，且不允许打开包。</para>
 			/// </summary>
 			[GPValue("DONOT_ALLOW_TO_OPEN")]
-			[Description("Do not allow to open")]
+			[Description("不允许打开")]
 			Do_not_allow_to_open,
 
 		}
@@ -404,14 +405,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SelectRelatedRowsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Only related data corresponding to records within the specified extent will be consolidated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("KEEP_ONLY_RELATED_ROWS")]
 			KEEP_ONLY_RELATED_ROWS,
 
 			/// <summary>
-			/// <para>Unchecked—Related data sources will be consolidated in their entirety. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_ALL_RELATED_ROWS")]
@@ -425,14 +426,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ReferenceOnlineContentEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Service layers will be referenced in the mobile package.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_SERVICE_LAYERS")]
 			INCLUDE_SERVICE_LAYERS,
 
 			/// <summary>
-			/// <para>Unchecked—Service layers will not be referenced in the mobile package. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_SERVICE_LAYERS")]

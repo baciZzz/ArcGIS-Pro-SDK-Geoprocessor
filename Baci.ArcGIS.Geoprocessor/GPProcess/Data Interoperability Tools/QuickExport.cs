@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataInteroperabilityTools
 {
 	/// <summary>
 	/// <para>Quick Export</para>
+	/// <para>Quick Export</para>
 	/// <para>Geoprocessing tool to convert one or more input feature classes or feature layers into any format supported by the ArcGIS Data Interoperability extension.</para>
 	/// </summary>
 	public class QuickExport : AbstractGPProcess

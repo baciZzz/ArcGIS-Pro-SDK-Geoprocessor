@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Moving Window Kriging</para>
-	/// <para>Recalculates the Range, Nugget, and Partial Sill semivariogram parameters based on a smaller neighborhood, moving through all location points.</para>
+	/// <para>移动窗口克里金法</para>
+	/// <para>基于较小的邻域，经过所有位置点重新计算变程、块金和偏基台半变异函数参数。</para>
 	/// </summary>
 	public class GAMovingWindowKriging : AbstractGPProcess
 	{
@@ -20,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InGaModelSource">
 		/// <para>Input geostatistical model source</para>
-		/// <para>The geostatistical model source to be analyzed.</para>
+		/// <para>要分析的地统计模型源。</para>
 		/// </param>
 		/// <param name="InDatasets">
 		/// <para>Input dataset(s)</para>
-		/// <para>The name of the input datasets and field names used in the creation of the output layer.</para>
+		/// <para>用于创建输出图层的输入数据集的名称和字段名称。</para>
 		/// </param>
 		/// <param name="InLocations">
 		/// <para>Input point observation locations</para>
-		/// <para>Point locations where predictions will be performed.</para>
+		/// <para>将执行预测的点位置。</para>
 		/// </param>
 		/// <param name="NeighborsMax">
 		/// <para>Maximum neighbors to include</para>
-		/// <para>Number of neighbors to use in the moving window.</para>
+		/// <para>要在移动窗口中使用的相邻要素的数目。</para>
 		/// </param>
 		/// <param name="OutFeatureclass">
 		/// <para>Output feature class</para>
-		/// <para>Feature class storing the results.</para>
+		/// <para>存储结果的要素类。</para>
 		/// </param>
 		public GAMovingWindowKriging(object InGaModelSource, object InDatasets, object InLocations, object NeighborsMax, object OutFeatureclass)
 		{
@@ -48,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Moving Window Kriging</para>
+		/// <para>Tool Display Name : 移动窗口克里金法</para>
 		/// </summary>
-		public override string DisplayName() => "Moving Window Kriging";
+		public override string DisplayName() => "移动窗口克里金法";
 
 		/// <summary>
 		/// <para>Tool Name : GAMovingWindowKriging</para>
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input geostatistical model source</para>
-		/// <para>The geostatistical model source to be analyzed.</para>
+		/// <para>要分析的地统计模型源。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input dataset(s)</para>
-		/// <para>The name of the input datasets and field names used in the creation of the output layer.</para>
+		/// <para>用于创建输出图层的输入数据集的名称和字段名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPGAValueTable()]
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input point observation locations</para>
-		/// <para>Point locations where predictions will be performed.</para>
+		/// <para>将执行预测的点位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Maximum neighbors to include</para>
-		/// <para>Number of neighbors to use in the moving window.</para>
+		/// <para>要在移动窗口中使用的相邻要素的数目。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output feature class</para>
-		/// <para>Feature class storing the results.</para>
+		/// <para>存储结果的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -128,9 +129,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>The cell size at which the output raster will be created.</para>
-		/// <para>This value can be explicitly set in the Environments by the Cell Size parameter.</para>
-		/// <para>If not set, it is the shorter of the width or the height of the extent of the input point features, in the input spatial reference, divided by 250.</para>
+		/// <para>要创建的输出栅格的像元大小。</para>
+		/// <para>可以通过像元大小参数在环境中明确设置该值。</para>
+		/// <para>如果未设置，则该值为输入空间参考中输入点要素范围的宽度与高度中的较小值除以 250。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -143,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output surface raster</para>
-		/// <para>The prediction values in the output feature class are interpolated onto a raster using the Local polynomial interpolation method.</para>
+		/// <para>使用局部多项式插值法将输出要素类中的预测值插到栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]

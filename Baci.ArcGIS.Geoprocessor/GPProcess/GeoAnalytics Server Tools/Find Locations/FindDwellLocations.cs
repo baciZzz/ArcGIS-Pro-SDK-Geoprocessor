@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Find Dwell Locations</para>
-	/// <para>Finds locations where moving objects have stopped, or dwelled, using given time and distance thresholds.</para>
+	/// <para>查找停留位置</para>
+	/// <para>使用给定的时间和距离阈值来查找移动对象已停止或停留的位置。</para>
 	/// </summary>
 	public class FindDwellLocations : AbstractGPProcess
 	{
@@ -20,41 +21,41 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="InputFeatures">
 		/// <para>Input Features</para>
-		/// <para>The point tracks from which to find dwells. The input must be a time-enabled layer with features that represent instants in time.</para>
+		/// <para>可从中找到停留的点轨迹。输入必须为启用时间的图层，并具有用于表示时刻的要素。</para>
 		/// </param>
 		/// <param name="OutputName">
 		/// <para>Output Dataset</para>
-		/// <para>The name of the output feature service.</para>
+		/// <para>输出要素服务的名称。</para>
 		/// </param>
 		/// <param name="TrackFields">
 		/// <para>Track Fields</para>
-		/// <para>One or more fields that will be used to identify unique tracks.</para>
+		/// <para>将用于标识唯一轨迹的一个或多个字段。</para>
 		/// </param>
 		/// <param name="DistanceMethod">
 		/// <para>Distance Method</para>
-		/// <para>Specifies how the distances between dwell features will be calculated.</para>
-		/// <para>Geodesic— If the spatial reference can be panned, tracks will cross the international date line when appropriate. If the spatial reference cannot be panned, tracks will be limited to the coordinate system extent and may not wrap.</para>
-		/// <para>Planar—Planar distances will be used.</para>
+		/// <para>指定如何计算停留要素之间的距离。</para>
+		/// <para>测地线— 如果空间参考可以平移，则轨迹将在适当的时候穿过国际日期变更线。如果空间参考不可平移，则轨迹将被限制在坐标系的范围之内且不可环绕。</para>
+		/// <para>平面—将使用平面距离。</para>
 		/// <para><see cref="DistanceMethodEnum"/></para>
 		/// </param>
 		/// <param name="DistanceTolerance">
 		/// <para>Distance Tolerance</para>
-		/// <para>The maximum distance between points to be considered a single dwell location.</para>
+		/// <para>点之间将视为一个停留位置的最大距离。</para>
 		/// <para><see cref="DistanceToleranceEnum"/></para>
 		/// </param>
 		/// <param name="TimeTolerance">
 		/// <para>Time Tolerance</para>
-		/// <para>The minimum time duration to be considered a single dwell location.</para>
-		/// <para>Both time and distance are considered when finding dwells. The Distance Tolerance parameter specifies distance.</para>
+		/// <para>将视为单个停留位置的最短持续时间。</para>
+		/// <para>在查找停留时，系统会同时考虑时间和距离。距离容差参数将指定距离。</para>
 		/// <para><see cref="TimeToleranceEnum"/></para>
 		/// </param>
 		/// <param name="OutputType">
 		/// <para>Output Type</para>
-		/// <para>Specifies how the dwell features will be output.</para>
-		/// <para>Dwell features— All of the input point features that are part of a dwell are returned.</para>
-		/// <para>Mean centers— Points representing the mean centers of each dwell group are returned. This is the default.</para>
-		/// <para>Convex hulls— Polygons representing the convex hull of each dwell group are returned.</para>
-		/// <para>All features— All of the input point features are returned.</para>
+		/// <para>用于指定将如何输出停留要素。</para>
+		/// <para>停留要素— 将返回构成停留的所有输入点要素。</para>
+		/// <para>平均中心— 将返回表示每个停留组的平均中心的点。这是默认设置。</para>
+		/// <para>凸包— 将返回表示每个停留组的凸包的面。</para>
+		/// <para>所有要素— 将返回所有输入点要素。</para>
 		/// <para><see cref="OutputTypeEnum"/></para>
 		/// </param>
 		public FindDwellLocations(object InputFeatures, object OutputName, object TrackFields, object DistanceMethod, object DistanceTolerance, object TimeTolerance, object OutputType)
@@ -69,9 +70,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Find Dwell Locations</para>
+		/// <para>Tool Display Name : 查找停留位置</para>
 		/// </summary>
-		public override string DisplayName() => "Find Dwell Locations";
+		public override string DisplayName() => "查找停留位置";
 
 		/// <summary>
 		/// <para>Tool Name : FindDwellLocations</para>
@@ -105,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The point tracks from which to find dwells. The input must be a time-enabled layer with features that represent instants in time.</para>
+		/// <para>可从中找到停留的点轨迹。输入必须为启用时间的图层，并具有用于表示时刻的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Dataset</para>
-		/// <para>The name of the output feature service.</para>
+		/// <para>输出要素服务的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -124,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Track Fields</para>
-		/// <para>One or more fields that will be used to identify unique tracks.</para>
+		/// <para>将用于标识唯一轨迹的一个或多个字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -134,9 +135,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Distance Method</para>
-		/// <para>Specifies how the distances between dwell features will be calculated.</para>
-		/// <para>Geodesic— If the spatial reference can be panned, tracks will cross the international date line when appropriate. If the spatial reference cannot be panned, tracks will be limited to the coordinate system extent and may not wrap.</para>
-		/// <para>Planar—Planar distances will be used.</para>
+		/// <para>指定如何计算停留要素之间的距离。</para>
+		/// <para>测地线— 如果空间参考可以平移，则轨迹将在适当的时候穿过国际日期变更线。如果空间参考不可平移，则轨迹将被限制在坐标系的范围之内且不可环绕。</para>
+		/// <para>平面—将使用平面距离。</para>
 		/// <para><see cref="DistanceMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -146,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Distance Tolerance</para>
-		/// <para>The maximum distance between points to be considered a single dwell location.</para>
+		/// <para>点之间将视为一个停留位置的最大距离。</para>
 		/// <para><see cref="DistanceToleranceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -156,8 +157,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Tolerance</para>
-		/// <para>The minimum time duration to be considered a single dwell location.</para>
-		/// <para>Both time and distance are considered when finding dwells. The Distance Tolerance parameter specifies distance.</para>
+		/// <para>将视为单个停留位置的最短持续时间。</para>
+		/// <para>在查找停留时，系统会同时考虑时间和距离。距离容差参数将指定距离。</para>
 		/// <para><see cref="TimeToleranceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -167,11 +168,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Type</para>
-		/// <para>Specifies how the dwell features will be output.</para>
-		/// <para>Dwell features— All of the input point features that are part of a dwell are returned.</para>
-		/// <para>Mean centers— Points representing the mean centers of each dwell group are returned. This is the default.</para>
-		/// <para>Convex hulls— Polygons representing the convex hull of each dwell group are returned.</para>
-		/// <para>All features— All of the input point features are returned.</para>
+		/// <para>用于指定将如何输出停留要素。</para>
+		/// <para>停留要素— 将返回构成停留的所有输入点要素。</para>
+		/// <para>平均中心— 将返回表示每个停留组的平均中心的点。这是默认设置。</para>
+		/// <para>凸包— 将返回表示每个停留组的凸包的面。</para>
+		/// <para>所有要素— 将返回所有输入点要素。</para>
 		/// <para><see cref="OutputTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -181,18 +182,18 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Summary Statistics</para>
-		/// <para>The statistics that will be calculated on specified fields.</para>
-		/// <para>Count—The number of nonnull values. It can be used on numeric fields or strings. The count of [null, 0, 2] is 2.</para>
-		/// <para>Sum—The sum of numeric values in a field. The sum of [null, null, 3] is 3.</para>
-		/// <para>Mean—The mean of numeric values. The mean of [0, 2, null] is 1.</para>
-		/// <para>Min—The minimum value of a numeric field. The minimum of [0, 2, null] is 0.</para>
-		/// <para>Max—The maximum value of a numeric field. The maximum value of [0, 2, null] is 2.</para>
-		/// <para>Standard Deviation—The standard deviation of a numeric field. The standard deviation of [1] is null. The standard deviation of [null, 1,1,1] is null.</para>
-		/// <para>Variance—The variance of a numeric field in a track. The variance of [1] is null. The variance of [null, 1, 1, 1] is null.</para>
-		/// <para>Range—The range of a numeric field. This is calculated as the minimum value subtracted from the maximum value. The range of [0, null, 1] is 1. The range of [null, 4] is 0.</para>
-		/// <para>Any—A sample string from a field of type string.</para>
-		/// <para>First—The first value of a specified field in a track. This option is available with ArcGIS Enterprise 10.8.1.</para>
-		/// <para>Last—The last value of a specified field in a track. This option is available with ArcGIS Enterprise 10.8.1.</para>
+		/// <para>将根据指定字段进行计算的统计数据。</para>
+		/// <para>计数 - 非空值的数目。可用于数值字段或字符串。[null, 0, 2] 的计数为 2。</para>
+		/// <para>总和 - 字段内数值的总和。[null, null, 3] 的总和为 3。</para>
+		/// <para>平均值 - 数值的平均值。[0, 2, null] 的平均值为 1。</para>
+		/// <para>最小值 - 数值字段的最小值。[0, 2, null] 的最小值为 0。</para>
+		/// <para>最大值 - 数值字段的最大值。[0, 2, null] 的最大值为 2。</para>
+		/// <para>标准差 - 数值字段的标准差。[1] 的标准差为 null。[null, 1,1,1] 的标准差为 null。</para>
+		/// <para>方差 - 轨迹中数值字段内数值的方差。[1] 的方差为 null。[null, 1, 1, 1] 的方差为 null。</para>
+		/// <para>范围 - 数值字段的范围。其计算方法为最大值减去最小值。[0, null, 1] 的范围为 1。[null, 4] 的范围为 0。</para>
+		/// <para>任何 - 字符串型字段中的示例字符串。</para>
+		/// <para>第一个 - 轨迹中指定字段的第一个值。此选项适用于 ArcGIS Enterprise 10.8.1。</para>
+		/// <para>最后一个 - 轨迹中指定字段的最后一个值。此选项适用于 ArcGIS Enterprise 10.8.1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -201,9 +202,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Data Store</para>
-		/// <para>Specifies the ArcGIS Data Store where the output will be saved. The default is Spatiotemporal big data store. All results stored in a spatiotemporal big data store will be stored in WGS84. Results stored in a relational data store will maintain their coordinate system.</para>
-		/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
-		/// <para>Relational data store—Output will be stored in a relational data store.</para>
+		/// <para>指定将用于保存输出的 ArcGIS Data Store。默认设置为时空大数据存储。在时空大数据存储中存储的所有结果都将存储在 WGS84 中。在关系数据存储中存储的结果都将保持各自的坐标系。</para>
+		/// <para>时空大数据存储—输出将存储在时空大数据存储中。这是默认设置。</para>
+		/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 		/// <para><see cref="DataStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -221,7 +222,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Boundary Split</para>
-		/// <para>A time span to split the input data into for analysis. A time boundary allows you to analyze values within a defined time span. For example, if you use a time boundary of 1 day, and set the time boundary reference to January 1, 1980, tracks will be split at the beginning of every day.</para>
+		/// <para>用于分割输入数据以进行分析的时间跨度。您可通过时间界限分析定义的时间跨度内的值。例如，如果您使用 1 天的时间界限，并将时间界限参考设置为 1980 年 1 月 1 日，则轨迹将在每天开始时被分割。</para>
 		/// <para><see cref="TimeBoundarySplitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -231,7 +232,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Boundary Reference</para>
-		/// <para>The reference time used to split the input data into for analysis. Time boundaries will be created for the entire span of the data, and the reference time does not need to occur at the start. If no reference time is specified, January 1, 1970, is used.</para>
+		/// <para>用于分割输入数据以进行分析的参考时间。将为整个数据跨度创建时间界限，且不需要在开始时产生参考时间。如果未指定参考时间，则将使用 1970 年 1 月 1 日。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -254,17 +255,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DistanceMethodEnum 
 		{
 			/// <summary>
-			/// <para>Planar—Planar distances will be used.</para>
+			/// <para>平面—将使用平面距离。</para>
 			/// </summary>
 			[GPValue("PLANAR")]
-			[Description("Planar")]
+			[Description("平面")]
 			Planar,
 
 			/// <summary>
-			/// <para>Geodesic— If the spatial reference can be panned, tracks will cross the international date line when appropriate. If the spatial reference cannot be panned, tracks will be limited to the coordinate system extent and may not wrap.</para>
+			/// <para>测地线— 如果空间参考可以平移，则轨迹将在适当的时候穿过国际日期变更线。如果空间参考不可平移，则轨迹将被限制在坐标系的范围之内且不可环绕。</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("Geodesic")]
+			[Description("测地线")]
 			Geodesic,
 
 		}
@@ -387,31 +388,31 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum OutputTypeEnum 
 		{
 			/// <summary>
-			/// <para>Mean centers— Points representing the mean centers of each dwell group are returned. This is the default.</para>
+			/// <para>平均中心— 将返回表示每个停留组的平均中心的点。这是默认设置。</para>
 			/// </summary>
 			[GPValue("DWELL_MEAN_CENTERS")]
-			[Description("Mean centers")]
+			[Description("平均中心")]
 			Mean_centers,
 
 			/// <summary>
-			/// <para>Convex hulls— Polygons representing the convex hull of each dwell group are returned.</para>
+			/// <para>凸包— 将返回表示每个停留组的凸包的面。</para>
 			/// </summary>
 			[GPValue("DWELL_CONVEX_HULLS")]
-			[Description("Convex hulls")]
+			[Description("凸包")]
 			Convex_hulls,
 
 			/// <summary>
-			/// <para>Dwell features— All of the input point features that are part of a dwell are returned.</para>
+			/// <para>停留要素— 将返回构成停留的所有输入点要素。</para>
 			/// </summary>
 			[GPValue("DWELL_FEATURES")]
-			[Description("Dwell features")]
+			[Description("停留要素")]
 			Dwell_features,
 
 			/// <summary>
-			/// <para>All features— All of the input point features are returned.</para>
+			/// <para>所有要素— 将返回所有输入点要素。</para>
 			/// </summary>
 			[GPValue("ALL_FEATURES")]
-			[Description("All features")]
+			[Description("所有要素")]
 			All_features,
 
 		}
@@ -422,17 +423,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DataStoreEnum 
 		{
 			/// <summary>
-			/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
+			/// <para>时空大数据存储—输出将存储在时空大数据存储中。这是默认设置。</para>
 			/// </summary>
 			[GPValue("SPATIOTEMPORAL_DATA_STORE")]
-			[Description("Spatiotemporal big data store")]
+			[Description("时空大数据存储")]
 			Spatiotemporal_big_data_store,
 
 			/// <summary>
-			/// <para>Relational data store—Output will be stored in a relational data store.</para>
+			/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 			/// </summary>
 			[GPValue("RELATIONAL_DATA_STORE")]
-			[Description("Relational data store")]
+			[Description("关系数据存储")]
 			Relational_data_store,
 
 		}

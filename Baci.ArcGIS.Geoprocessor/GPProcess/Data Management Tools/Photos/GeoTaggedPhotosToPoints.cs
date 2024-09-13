@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>GeoTagged Photos To Points</para>
-	/// <para>Creates points from the x-, y-, and z-coordinates stored in geotagged photos. Optionally adds photo files to features in the output feature class as geodatabase attachments.</para>
+	/// <para>地理标记照片转点</para>
+	/// <para>根据存储在地理标记照片中的 x、y 和 z 坐标创建点。或者，也可以将照片文件作为地理数据库附件添加到输出要素类的要素中。</para>
 	/// </summary>
 	public class GeoTaggedPhotosToPoints : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputFolder">
 		/// <para>Input Folder</para>
-		/// <para>The folder where photo files are located. This folder is scanned recursively for photo files; any photos in the base level of the folder, as well as in any subfolders, will be added to the output.</para>
+		/// <para>照片文件所在的文件夹。此文件夹是递归扫描照片文件得到的；基础等级文件夹以及任何子文件夹中的所有照片都将被添加到输出中。</para>
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output point feature class.</para>
+		/// <para>输出点要素类。</para>
 		/// </param>
 		public GeoTaggedPhotosToPoints(object InputFolder, object OutputFeatureClass)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : GeoTagged Photos To Points</para>
+		/// <para>Tool Display Name : 地理标记照片转点</para>
 		/// </summary>
-		public override string DisplayName() => "GeoTagged Photos To Points";
+		public override string DisplayName() => "地理标记照片转点";
 
 		/// <summary>
 		/// <para>Tool Name : GeoTaggedPhotosToPoints</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Folder</para>
-		/// <para>The folder where photo files are located. This folder is scanned recursively for photo files; any photos in the base level of the folder, as well as in any subfolders, will be added to the output.</para>
+		/// <para>照片文件所在的文件夹。此文件夹是递归扫描照片文件得到的；基础等级文件夹以及任何子文件夹中的所有照片都将被添加到输出中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output point feature class.</para>
+		/// <para>输出点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -85,8 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Invalid Photos Table</para>
-		/// <para>The optional output table that will list any photo files in the input folder with invalid Exif metadata or empty or invalid coordinates.</para>
-		/// <para>If no path is specified, this table will not be created.</para>
+		/// <para>可选的输出表，将列出输入文件夹中所有包含无效 Exif 元数据或者空或无效坐标的照片文件。</para>
+		/// <para>如果未指定路径，则不会创建此表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -94,9 +95,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Include Non-GeoTagged Photos</para>
-		/// <para>Specifies if all photo files will be included in the output feature class or only those with valid coordinates.</para>
-		/// <para>Checked—All photos will be added as records to the output feature class. If a photo file does not have coordinate information, it will be added as a feature with null geometry. This is the default.</para>
-		/// <para>Unchecked—Only photos with valid coordinate information will be included in the output feature class.</para>
+		/// <para>指定是将所有照片文件都包含在输出要素类中，还是仅包含坐标有效的照片文件。</para>
+		/// <para>选中 - 所有照片将作为记录添加到输出要素类中。如果某个照片文件不含坐标信息，则会将其作为几何为空的要素进行添加。这是默认设置。</para>
+		/// <para>未选中 - 仅具有有效坐标信息的照片将包含在输出要素类中。</para>
 		/// <para><see cref="IncludeNonGeotaggedPhotosEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -106,10 +107,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Add Photos As Attachments</para>
-		/// <para>Specifies if the input photos will be added to the output as geodatabase attachments.</para>
-		/// <para>Adding attachments requires an ArcGIS Desktop Standard or higher license, and the output feature class must be in a version 10 or higher geodatabase.</para>
-		/// <para>Checked—Photos will be added to the output features as geodatabase attachments copied internally to the geodatabase. This is the default.</para>
-		/// <para>Unchecked—Photos will not be added to the output features as geodatabase attachments.</para>
+		/// <para>指定是否将输入照片作为地理数据库附件添加到输出中。</para>
+		/// <para>添加附件时，需要 ArcGIS Desktop Standard 或更高版本的许可，并且输出要素类必须位于 10 或更高版本的地理数据库中。</para>
+		/// <para>选中 - 照片将作为内部复制到地理数据库的地理数据库附件添加到输出要素中。这是默认设置。</para>
+		/// <para>未选中 - 照片不会作为地理数据库附件添加到输出要素中。</para>
 		/// <para><see cref="AddPhotosAsAttachmentsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -134,14 +135,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IncludeNonGeotaggedPhotosEnum 
 		{
 			/// <summary>
-			/// <para>Checked—All photos will be added as records to the output feature class. If a photo file does not have coordinate information, it will be added as a feature with null geometry. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ALL_PHOTOS")]
 			ALL_PHOTOS,
 
 			/// <summary>
-			/// <para>Unchecked—Only photos with valid coordinate information will be included in the output feature class.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ONLY_GEOTAGGED")]
@@ -155,14 +156,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AddPhotosAsAttachmentsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Photos will be added to the output features as geodatabase attachments copied internally to the geodatabase. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_ATTACHMENTS")]
 			ADD_ATTACHMENTS,
 
 			/// <summary>
-			/// <para>Unchecked—Photos will not be added to the output features as geodatabase attachments.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ATTACHMENTS")]

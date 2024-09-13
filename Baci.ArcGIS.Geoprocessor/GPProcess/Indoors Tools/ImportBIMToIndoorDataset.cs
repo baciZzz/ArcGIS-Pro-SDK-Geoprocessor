@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Import BIM To Indoor Dataset</para>
-	/// <para>Imports features from a BIM file into an indoor dataset.</para>
+	/// <para>将 BIM 导入室内数据集</para>
+	/// <para>将要素从 BIM 文件导入室内数据集。</para>
 	/// </summary>
 	public class ImportBIMToIndoorDataset : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		/// <param name="InBimFloorplanLayer">
 		/// <para>Input BIM Floorplan Polygon Layer</para>
-		/// <para>The Floorplan_Polygon feature layer from the source BIM file that has been added to the current map.</para>
+		/// <para>源 BIM 文件中已添加到当前地图的 Floorplan_Polygon 要素图层。</para>
 		/// </param>
 		/// <param name="TargetIndoorDataset">
 		/// <para>Target Indoor Dataset</para>
-		/// <para>The target indoor dataset that conforms to the ArcGIS Indoors Information Model and contains Facilities, Levels, Units, and Details feature classes.</para>
+		/// <para>符合 ArcGIS Indoors 信息模型且包含“设施点”、“楼层”、“单元”和“细节”要素类的目标室内数据集。</para>
 		/// </param>
 		/// <param name="GroundFloorName">
 		/// <para>Ground Floor Name</para>
-		/// <para>The ground floor of the building. The vertical order of the levels is derived from this input. Any levels with an elevation that is less than the specified ground floor will be assigned a negative vertical order.</para>
+		/// <para>建筑物的一楼。 楼层的垂直顺序派生自此输入。 将向高程小于指定的一楼的任何楼层分配负垂直顺序。</para>
 		/// </param>
 		public ImportBIMToIndoorDataset(object InBimFloorplanLayer, object TargetIndoorDataset, object GroundFloorName)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Import BIM To Indoor Dataset</para>
+		/// <para>Tool Display Name : 将 BIM 导入室内数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Import BIM To Indoor Dataset";
+		public override string DisplayName() => "将 BIM 导入室内数据集";
 
 		/// <summary>
 		/// <para>Tool Name : ImportBIMToIndoorDataset</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input BIM Floorplan Polygon Layer</para>
-		/// <para>The Floorplan_Polygon feature layer from the source BIM file that has been added to the current map.</para>
+		/// <para>源 BIM 文件中已添加到当前地图的 Floorplan_Polygon 要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Target Indoor Dataset</para>
-		/// <para>The target indoor dataset that conforms to the ArcGIS Indoors Information Model and contains Facilities, Levels, Units, and Details feature classes.</para>
+		/// <para>符合 ArcGIS Indoors 信息模型且包含“设施点”、“楼层”、“单元”和“细节”要素类的目标室内数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureDataset()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Ground Floor Name</para>
-		/// <para>The ground floor of the building. The vertical order of the levels is derived from this input. Any levels with an elevation that is less than the specified ground floor will be assigned a negative vertical order.</para>
+		/// <para>建筑物的一楼。 楼层的垂直顺序派生自此输入。 将向高程小于指定的一楼的任何楼层分配负垂直顺序。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Building Name</para>
-		/// <para>The unique building name that will be assigned to the output Indoors features. The default value is the Bldg_Name field value from the input BIM file. If the field is null or empty, this parameter will be populated with the name of the input source file.</para>
+		/// <para>将分配给输出 Indoors 要素的唯一建筑物名称。 默认值为输入 BIM 文件中的 Bldg_Name 字段值。 如果该字段为 null 或为空，则将使用输入源文件的名称填充此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Room Category Field</para>
-		/// <para>The field from the Floorplan_Polygon feature layer that will be used to populate the USE_TYPE field for the Units feature class in the target indoor dataset. If no field is provided, the RoomName field value from the Floorplan_Polygon layer will be used.</para>
+		/// <para>Floorplan_Polygon 要素图层中的字段，将用于填充目标室内数据集中“单元”要素类的 USE_TYPE 字段。 如果未提供任何字段，则将使用 Floorplan_Polygon 图层中的 RoomName 字段值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Floors To Import</para>
-		/// <para>The floors in the input BIM file that will be imported to the target indoor dataset. If no floors are provided, all floors will be imported.</para>
+		/// <para>输入 BIM 文件中将导入目标室内数据集的楼层。 如果未提供楼层，则将导入所有楼层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -124,9 +125,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Area Unit of Measure</para>
-		/// <para>Specifies the unit of measure that will be used for the area fields in the Levels and Units feature classes.</para>
-		/// <para>Square Meters—The area unit will be square meters.</para>
-		/// <para>Square Feet—The area unit will be square feet. This is the default.</para>
+		/// <para>指定将用于楼层和单元要素类中的面积字段的测量单位。</para>
+		/// <para>平方米—面积单位将为平方米。</para>
+		/// <para>平方英尺—面积单位将为平方英尺。 这是默认设置。</para>
 		/// <para><see cref="AreaUnitOfMeasureEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -158,17 +159,17 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		public enum AreaUnitOfMeasureEnum 
 		{
 			/// <summary>
-			/// <para>Square Meters—The area unit will be square meters.</para>
+			/// <para>平方米—面积单位将为平方米。</para>
 			/// </summary>
 			[GPValue("SQUARE_METERS")]
-			[Description("Square Meters")]
+			[Description("平方米")]
 			Square_Meters,
 
 			/// <summary>
-			/// <para>Square Feet—The area unit will be square feet. This is the default.</para>
+			/// <para>平方英尺—面积单位将为平方英尺。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("SQUARE_FEET")]
-			[Description("Square Feet")]
+			[Description("平方英尺")]
 			Square_Feet,
 
 		}

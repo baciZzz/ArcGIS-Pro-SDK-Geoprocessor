@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Regularize Building Footprint</para>
-	/// <para>Normalizes the footprint of building polygons by eliminating undesirable artifacts in their  geometry.</para>
+	/// <para>规则化建筑物覆盖区</para>
+	/// <para>通过消除几何中不需要出现的伪影来对建筑物覆盖区面的形状进行规范化。</para>
 	/// </summary>
 	public class RegularizeBuildingFootprint : AbstractGPProcess
 	{
@@ -20,24 +21,24 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The polygons that represent the building footprints to be regularized.</para>
+		/// <para>表示建筑物覆盖区的待规则化面。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </param>
 		/// <param name="Method">
 		/// <para>Method</para>
-		/// <para>The regularization method to be used in processing the input features.</para>
-		/// <para>Right Angles—Constructs shapes comprised of 90° angles between adjoining edges.</para>
-		/// <para>Right Angles and Diagonals—Constructs shapes comprised of 45° and 90° angles between adjoining edges.</para>
-		/// <para>Any Angles—Constructs shapes that form any angles between adjoining edges.</para>
-		/// <para>Circle—Constructs the best fitting circle around the input features.</para>
+		/// <para>在输入要素处理过程中要使用的规则化方法。</para>
+		/// <para>直角—在相邻边之间构造由 90° 角组成的形状。</para>
+		/// <para>直角和对角—在相邻边之间构造由 45° 和 90° 角组成的形状。</para>
+		/// <para>任意角—在相邻边之间构造形成任意角的形状。</para>
+		/// <para>圆形—在输入要素周围构造最佳拟合圆。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </param>
 		/// <param name="Tolerance">
 		/// <para>Tolerance</para>
-		/// <para>The maximum distance that the regularized footprint can deviate from the boundary of its originating feature. The specified value will be based on the linear units of the input feature's coordinate system.</para>
+		/// <para>规则化覆盖区可从其原始要素的边界偏移的最大距离。指定的值将基于输入要素坐标系的线性单位。</para>
 		/// </param>
 		public RegularizeBuildingFootprint(object InFeatures, object OutFeatureClass, object Method, object Tolerance)
 		{
@@ -48,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Regularize Building Footprint</para>
+		/// <para>Tool Display Name : 规则化建筑物覆盖区</para>
 		/// </summary>
-		public override string DisplayName() => "Regularize Building Footprint";
+		public override string DisplayName() => "规则化建筑物覆盖区";
 
 		/// <summary>
 		/// <para>Tool Name : RegularizeBuildingFootprint</para>
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The polygons that represent the building footprints to be regularized.</para>
+		/// <para>表示建筑物覆盖区的待规则化面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -102,11 +103,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>The regularization method to be used in processing the input features.</para>
-		/// <para>Right Angles—Constructs shapes comprised of 90° angles between adjoining edges.</para>
-		/// <para>Right Angles and Diagonals—Constructs shapes comprised of 45° and 90° angles between adjoining edges.</para>
-		/// <para>Any Angles—Constructs shapes that form any angles between adjoining edges.</para>
-		/// <para>Circle—Constructs the best fitting circle around the input features.</para>
+		/// <para>在输入要素处理过程中要使用的规则化方法。</para>
+		/// <para>直角—在相邻边之间构造由 90° 角组成的形状。</para>
+		/// <para>直角和对角—在相邻边之间构造由 45° 和 90° 角组成的形状。</para>
+		/// <para>任意角—在相邻边之间构造形成任意角的形状。</para>
+		/// <para>圆形—在输入要素周围构造最佳拟合圆。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Tolerance</para>
-		/// <para>The maximum distance that the regularized footprint can deviate from the boundary of its originating feature. The specified value will be based on the linear units of the input feature's coordinate system.</para>
+		/// <para>规则化覆盖区可从其原始要素的边界偏移的最大距离。指定的值将基于输入要素坐标系的线性单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -125,8 +126,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Densification</para>
-		/// <para>The sampling interval that will be used to evaluate whether the regularized feature will be straight or bent. The densification must be equal to or less than the tolerance value.</para>
-		/// <para>This parameter is only used with methods that support right angle identification.</para>
+		/// <para>用于评估规则化要素为直的或弯的采样间隔。增密必须小于等于容差值。</para>
+		/// <para>此参数仅用于支持直角标识的方法。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -135,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Precision</para>
-		/// <para>The precision of the spatial grid used in the regularization process. Valid values range from 0.05 to 0.25.</para>
+		/// <para>在规则化过程中使用的空间格网精度。值的有效范围为 0.05 到 0.25。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -144,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Diagonal Penalty</para>
-		/// <para>When the Right Angles and Diagonals method is used, this value dictates the likelihood of constructing right angles or diagonal edges between two adjoining segments. When the Any Angles method is used, this value dictates the likelihood of constructing diagonal edges that do not conform to the preferred edges determined by the tool's algorithm. If the penalty value is set to 0, the preferred edges will not be used, resulting in the production of a simplified irregular polygon. Generally, the higher the value, the less likely a diagonal edge will be constructed.</para>
+		/// <para>如果使用直角和对角方法，则该值将指示在两条相邻线段之间构造直角或对角边的可能性。如果使用任意角方法，则该值将指示构造相应对角边的可能性，这些对角边不符合由工具算法确定的首选边。如果惩罚值设置为 0，则将不使用首选边，由此生成简化的不规则面。通常，该值越高，则构造对角边的可能性越小。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -153,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Minimum Radius</para>
-		/// <para>The smallest radius allowed for a regularized circle. A value of 0 implies there is no minimum size limit. This option is only available with the Circle method.</para>
+		/// <para>适用于规则化圆的最小半径。值 0 表示无最小尺寸限制。此选项仅适用于圆形方法。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -162,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Maximum Radius</para>
-		/// <para>The largest radius allowed for a regularized circular. This option is only available with the Circle method.</para>
+		/// <para>适用于规则化圆的最大半径。此选项仅适用于圆形方法。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -186,31 +187,31 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Right Angles—Constructs shapes comprised of 90° angles between adjoining edges.</para>
+			/// <para>直角—在相邻边之间构造由 90° 角组成的形状。</para>
 			/// </summary>
 			[GPValue("RIGHT_ANGLES")]
-			[Description("Right Angles")]
+			[Description("直角")]
 			Right_Angles,
 
 			/// <summary>
-			/// <para>Right Angles and Diagonals—Constructs shapes comprised of 45° and 90° angles between adjoining edges.</para>
+			/// <para>直角和对角—在相邻边之间构造由 45° 和 90° 角组成的形状。</para>
 			/// </summary>
 			[GPValue("RIGHT_ANGLES_AND_DIAGONALS")]
-			[Description("Right Angles and Diagonals")]
+			[Description("直角和对角")]
 			Right_Angles_and_Diagonals,
 
 			/// <summary>
-			/// <para>Any Angles—Constructs shapes that form any angles between adjoining edges.</para>
+			/// <para>任意角—在相邻边之间构造形成任意角的形状。</para>
 			/// </summary>
 			[GPValue("ANY_ANGLE")]
-			[Description("Any Angles")]
+			[Description("任意角")]
 			Any_Angles,
 
 			/// <summary>
-			/// <para>Circle—Constructs the best fitting circle around the input features.</para>
+			/// <para>圆形—在输入要素周围构造最佳拟合圆。</para>
 			/// </summary>
 			[GPValue("CIRCLE")]
-			[Description("Circle")]
+			[Description("圆形")]
 			Circle,
 
 		}

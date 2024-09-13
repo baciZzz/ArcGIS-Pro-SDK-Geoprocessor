@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Calculate Field</para>
-	/// <para>Creates a layer with calculated field values.</para>
+	/// <para>计算字段</para>
+	/// <para>可使用计算的字段值创建图层。</para>
 	/// </summary>
 	public class CalculateField : AbstractGPProcess
 	{
@@ -20,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>The input features that will have a field calculated.</para>
+		/// <para>将计算字段的输入要素。</para>
 		/// </param>
 		/// <param name="Output">
 		/// <para>Output Dataset</para>
-		/// <para>A new dataset with calculated fields.</para>
+		/// <para>包含已计算字段的新数据集。</para>
 		/// </param>
 		/// <param name="FieldToCalculate">
 		/// <para>Field to Calculate</para>
-		/// <para>Specifies whether values will be calculated for a newly created field or an existing field.</para>
-		/// <para>New field—Values will be calculated for a newly created field.</para>
-		/// <para>Existing field—Values will be calculated for an existing field.</para>
+		/// <para>指定是否为新创建字段或现有字段计算值。</para>
+		/// <para>新建字段—将为新创建字段计算值。</para>
+		/// <para>现有字段—将为现有字段计算值。</para>
 		/// <para><see cref="FieldToCalculateEnum"/></para>
 		/// </param>
 		/// <param name="Expression">
 		/// <para>Expression</para>
-		/// <para>Calculates values in the field. Expressions are written in Arcade and can include [+ - * / ] operators and multiple fields. Calculated values are applied in the units of the spatial reference of the input unless you are using a geographic coordinate system, in which case they will be in meters.</para>
+		/// <para>计算字段中的值。以 Arcade 格式写入表达式，其中可包括 [+ - * / ] 运算符和多个字段。将应用经计算的值，且采用输入空间参考的单位，除非您所使用的是地理坐标系，在这种情况下，单位为米。</para>
 		/// </param>
 		public CalculateField(object InputLayer, object Output, object FieldToCalculate, object Expression)
 		{
@@ -46,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Calculate Field</para>
+		/// <para>Tool Display Name : 计算字段</para>
 		/// </summary>
-		public override string DisplayName() => "Calculate Field";
+		public override string DisplayName() => "计算字段";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateField</para>
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The input features that will have a field calculated.</para>
+		/// <para>将计算字段的输入要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Dataset</para>
-		/// <para>A new dataset with calculated fields.</para>
+		/// <para>包含已计算字段的新数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -98,9 +99,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Field to Calculate</para>
-		/// <para>Specifies whether values will be calculated for a newly created field or an existing field.</para>
-		/// <para>New field—Values will be calculated for a newly created field.</para>
-		/// <para>Existing field—Values will be calculated for an existing field.</para>
+		/// <para>指定是否为新创建字段或现有字段计算值。</para>
+		/// <para>新建字段—将为新创建字段计算值。</para>
+		/// <para>现有字段—将为现有字段计算值。</para>
 		/// <para><see cref="FieldToCalculateEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -110,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>New Field Name</para>
-		/// <para>The new field that will have values calculated.</para>
+		/// <para>将计算值的新字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -118,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Existing Field</para>
-		/// <para>The existing field that will have values calculated.</para>
+		/// <para>将计算值的现有字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -128,11 +129,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Field Type</para>
-		/// <para>Specifies the field type for the calculated field.</para>
-		/// <para>String—Any string of characters</para>
-		/// <para>Integer—Whole numbers</para>
-		/// <para>Double— Fractional numbers</para>
-		/// <para>Date— Date</para>
+		/// <para>指定已计算字段的字段类型。</para>
+		/// <para>字符串—任何字符串</para>
+		/// <para>整型—整数</para>
+		/// <para>双精度型— 小数</para>
+		/// <para>日期型— 日期型</para>
 		/// <para><see cref="FieldTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -142,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>Calculates values in the field. Expressions are written in Arcade and can include [+ - * / ] operators and multiple fields. Calculated values are applied in the units of the spatial reference of the input unless you are using a geographic coordinate system, in which case they will be in meters.</para>
+		/// <para>计算字段中的值。以 Arcade 格式写入表达式，其中可包括 [+ - * / ] 运算符和多个字段。将应用经计算的值，且采用输入空间参考的单位，除非您所使用的是地理坐标系，在这种情况下，单位为米。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPCalculatorExpression()]
@@ -150,9 +151,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Track Aware</para>
-		/// <para>Specifies whether the expression will use a track-aware expression.</para>
-		/// <para>Checked—The expression will use a track-aware expression, and a track field must be specified.</para>
-		/// <para>Unchecked—The expression will not use a track-aware expression. This is the default.</para>
+		/// <para>指定表达式是否会使用追踪感知型表达式。</para>
+		/// <para>选中 - 表达式将使用追踪感知型表达式，且必须指定追踪字段。</para>
+		/// <para>未选中 - 表达式不会使用追踪感知型表达式。这是默认设置。</para>
 		/// <para><see cref="TrackAwareEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -162,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Track Fields</para>
-		/// <para>One or more fields that will be used to identify unique tracks.</para>
+		/// <para>将用于标识唯一轨迹的一个或多个字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -172,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Time Boundary Split</para>
-		/// <para>A time span to split the input data into for analysis. A time boundary allows you to analyze values within a defined time span. For example, if you use a time boundary of 1 day, and set the time boundary reference to January 1, 1980, tracks will be split at the beginning of every day.</para>
+		/// <para>用于分割输入数据以进行分析的时间跨度。您可通过时间界限分析定义的时间跨度内的值。例如，如果您使用 1 天的时间界限，并将时间界限参考设置为 1980 年 1 月 1 日，则轨迹将在每天开始时被分割。</para>
 		/// <para><see cref="TimeBoundarySplitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -182,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Time Boundary Reference</para>
-		/// <para>The reference time used to split the input data into for analysis. Time boundaries will be created for the entire span of the data, and the reference time does not need to occur at the start. If no reference time is specified, January 1, 1970, is used.</para>
+		/// <para>用于分割输入数据以进行分析的参考时间。将为整个数据跨度创建时间界限，且不需要在开始时产生参考时间。如果未指定参考时间，则将使用 1970 年 1 月 1 日。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -205,17 +206,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum FieldToCalculateEnum 
 		{
 			/// <summary>
-			/// <para>New field—Values will be calculated for a newly created field.</para>
+			/// <para>新建字段—将为新创建字段计算值。</para>
 			/// </summary>
 			[GPValue("NEW_FIELD")]
-			[Description("New field")]
+			[Description("新建字段")]
 			New_field,
 
 			/// <summary>
-			/// <para>Existing field—Values will be calculated for an existing field.</para>
+			/// <para>现有字段—将为现有字段计算值。</para>
 			/// </summary>
 			[GPValue("EXISTING_FIELD")]
-			[Description("Existing field")]
+			[Description("现有字段")]
 			Existing_field,
 
 		}
@@ -226,31 +227,31 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum FieldTypeEnum 
 		{
 			/// <summary>
-			/// <para>Date— Date</para>
+			/// <para>日期型— 日期型</para>
 			/// </summary>
 			[GPValue("DATE")]
-			[Description("Date")]
+			[Description("日期型")]
 			Date,
 
 			/// <summary>
-			/// <para>Double— Fractional numbers</para>
+			/// <para>双精度型— 小数</para>
 			/// </summary>
 			[GPValue("DOUBLE")]
-			[Description("Double")]
+			[Description("双精度型")]
 			Double,
 
 			/// <summary>
-			/// <para>Integer—Whole numbers</para>
+			/// <para>整型—整数</para>
 			/// </summary>
 			[GPValue("INTEGER")]
-			[Description("Integer")]
+			[Description("整型")]
 			Integer,
 
 			/// <summary>
-			/// <para>String—Any string of characters</para>
+			/// <para>字符串—任何字符串</para>
 			/// </summary>
 			[GPValue("STRING")]
-			[Description("String")]
+			[Description("字符串")]
 			String,
 
 		}
@@ -261,14 +262,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum TrackAwareEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The expression will use a track-aware expression, and a track field must be specified.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TRACK_AWARE")]
 			TRACK_AWARE,
 
 			/// <summary>
-			/// <para>Unchecked—The expression will not use a track-aware expression. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_TRACK_AWARE")]

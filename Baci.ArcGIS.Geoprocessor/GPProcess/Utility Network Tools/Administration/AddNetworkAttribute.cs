@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Network Attribute</para>
-	/// <para>Adds a network attribute to a utility network.</para>
+	/// <para>添加网络属性</para>
+	/// <para>用于向公共设施网络中添加网络属性。</para>
 	/// </summary>
 	public class AddNetworkAttribute : AbstractGPProcess
 	{
@@ -20,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The input utility network where the network attribute will be added.</para>
+		/// <para>将添加网络属性的输入公共设施网络。</para>
 		/// </param>
 		/// <param name="AttributeName">
 		/// <para>Attribute Name</para>
-		/// <para>The name of the network attribute to add to the utility network.</para>
+		/// <para>要添加至公共设施网络的网络属性的名称。</para>
 		/// </param>
 		/// <param name="AttributeType">
 		/// <para>Attribute Type</para>
-		/// <para>Specifies the data type of the network attribute.</para>
-		/// <para>Short (small integer)—Short integer type</para>
-		/// <para>Long (large integer)—Long integer type</para>
-		/// <para>Double (double precision)—Double precision type</para>
-		/// <para>Date—Date type</para>
+		/// <para>指定网络属性的数据类型。</para>
+		/// <para>短整型（小整数）—短整型类型</para>
+		/// <para>长整型（大整数）—长整型类型</para>
+		/// <para>双精度（双精度）—双精度类型</para>
+		/// <para>日期型—日期类型</para>
 		/// <para><see cref="AttributeTypeEnum"/></para>
 		/// </param>
 		public AddNetworkAttribute(object InUtilityNetwork, object AttributeName, object AttributeType)
@@ -43,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Network Attribute</para>
+		/// <para>Tool Display Name : 添加网络属性</para>
 		/// </summary>
-		public override string DisplayName() => "Add Network Attribute";
+		public override string DisplayName() => "添加网络属性";
 
 		/// <summary>
 		/// <para>Tool Name : AddNetworkAttribute</para>
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The input utility network where the network attribute will be added.</para>
+		/// <para>将添加网络属性的输入公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Attribute Name</para>
-		/// <para>The name of the network attribute to add to the utility network.</para>
+		/// <para>要添加至公共设施网络的网络属性的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -95,11 +96,11 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Attribute Type</para>
-		/// <para>Specifies the data type of the network attribute.</para>
-		/// <para>Short (small integer)—Short integer type</para>
-		/// <para>Long (large integer)—Long integer type</para>
-		/// <para>Double (double precision)—Double precision type</para>
-		/// <para>Date—Date type</para>
+		/// <para>指定网络属性的数据类型。</para>
+		/// <para>短整型（小整数）—短整型类型</para>
+		/// <para>长整型（大整数）—长整型类型</para>
+		/// <para>双精度（双精度）—双精度类型</para>
+		/// <para>日期型—日期类型</para>
 		/// <para><see cref="AttributeTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -109,9 +110,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>In Line</para>
-		/// <para>Specifies whether the network attribute will be persisted in line. In-line network attributes are slightly more efficient, but the number of bits for in-line attributes is limited to 28 per utility network. The most frequently used network attributes (for example, phase for electric networks, pressure for gas and water networks) should be stored in line if possible. The size of the bits is determined by the domain parameter. In-line attributes are only supported for integer network attributes.</para>
-		/// <para>Checked—The attribute will be added internally to the topology, making retrieval more efficient.</para>
-		/// <para>Unchecked—The attribute will be stored in an external table, and retrieval will require a call to the external weights table. This is the default.</para>
+		/// <para>指定是否将网络属性保留在行内。内嵌网络属性的效率略高，但是内嵌属性的位数被限制在每个公共设施网络 28 位。如果可能的话，应在行内存储最常用的网络属性（例如电力网络相位、天然气网和水网压力）。位的大小由域参数决定。内嵌属性仅支持整型网络属性。</para>
+		/// <para>选中 - 该属性将添加到拓扑内部，从而提高检索效率。</para>
+		/// <para>未选中 - 该属性将存储在外部表中，且检索需要调用外部权重表。这是默认设置。</para>
 		/// <para><see cref="IsInlineEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -121,11 +122,11 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Apportionable</para>
-		/// <para>Specifies whether the network attribute will be apportioned across multiple edges belonging to the same feature.</para>
-		/// <para>Network attributes with the apportionable property can be assigned to fields in line or junction feature classes, but only line features will have apportioned behavior.</para>
-		/// <para>For example, with the shape_length network attribute, if one line feature consists of five edge elements, and if the total length of that line feature is 100 feet, that attribute will be apportioned across all edges, with 20 feet for each. The distribution of the value depends on the percentage along each edge element with respect to the from point of the original feature.</para>
-		/// <para>Checked—The network attribute will be apportioned.</para>
-		/// <para>Unchecked—The network attribute will not be apportioned. This is the default.</para>
+		/// <para>指定是否在同一要素的多条边之间分配网络属性。</para>
+		/// <para>可以将具有可分配属性的网络属性分配给行内字段或交汇点要素类，但仅行要素具有已分配行为。</para>
+		/// <para>例如，对于 shape_length 网络属性，如果一个线要素由五个边元素组成，并且该线要素的总长度是 100 英尺，则将在所有边上分配该属性，每条边 20 英尺。值的分布取决于每个边元素方向上相对于原始要素起点的百分比。</para>
+		/// <para>已选中 - 将分配网络属性。</para>
+		/// <para>未选中 - 不会分配网络属性。这是默认设置。</para>
 		/// <para><see cref="IsApportionableEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -135,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Domain Name</para>
-		/// <para>The domain with which the network attribute is to be associated. This parameter is required when In Line is checked. This domain is used to determine how many bits to allocate for the in-line attribute and must be a coded value type. For example, the LifeCycleStatusDomain (0, Unknown | 1, In-Service | 2, Proposed | 3, Abandoned) domain has four entries, which means 2 bits are required to store the in-line attribute. The coded value domain must have sequential codes starting from 0.</para>
+		/// <para>将与网络属性相关联的域。选中内嵌时，需要使用此参数。该域必须是编码值类型，用于确定要为内嵌属性分配的位数。例如，LifeCycleStatusDomain (0, Unknown | 1, In-Service | 2, Proposed | 3, Abandoned) 域有 4 个条目，这意味着需要 2 位来存储内嵌属性。编码值域必须具有从 0 开始的相继代码。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -143,10 +144,10 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Is Overridable</para>
-		/// <para>This parameter is not used, and any entered value will be ignored in the current release. The functionality of this parameter is under development and will be applicable in a future release.</para>
-		/// <para>Specifies whether a network attribute has an external override table that the network topology will read and override (or overwrite) the current value stored in the topology. This can be used to input live data from external systems, such as present position in the case of electric or pressure value in the case of gas. An example is a SCADA system pushing the updated switching positions of Device A to the override table of the DeviceStatus network attribute, which the topology engine then uses to override its current value of device status for Device A with the override value.</para>
-		/// <para>Checked—The current value stored in the topology will be overridden.</para>
-		/// <para>Unchecked—The current value stored in the topology will not be overridden. This is the default.</para>
+		/// <para>未使用此参数，且输入的任何值均将在当前版本下被忽略。此参数的功能正在研发中，且将在未来的版本中适用。</para>
+		/// <para>指定网络属性是否具有外部覆盖表，网络拓扑读取该表，并覆盖（或覆写）在拓扑中存储的当前值。这可用来输入来自外部系统的实时数据，例如在电气情况下的当前位置或在气体情况下的压力值。以 SCADA 系统为例，该系统可将更新的设备 A 开关位置推送至 DeviceStatus 网络属性的覆盖表，拓扑引擎随后将通过该系统用覆盖值来覆盖设备 A 设备状态的当前值。</para>
+		/// <para>已选中 - 将覆盖在拓扑中存储的当前值。</para>
+		/// <para>未选中 - 不会覆盖在拓扑中存储的当前值。这是默认设置。</para>
 		/// <para><see cref="IsOverridableEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -156,9 +157,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Nullable</para>
-		/// <para>Specifies whether the network attribute will support null values.</para>
-		/// <para>Checked—The network attribute will support null values.</para>
-		/// <para>Unchecked—The network attribute will not support null values. This is the default.</para>
+		/// <para>指定网络属性是否支持空值。</para>
+		/// <para>选中 - 网络属性支持空值。</para>
+		/// <para>未选中 - 网络属性不支持空值。这是默认设置。</para>
 		/// <para><see cref="IsNullableEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -168,9 +169,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Substitution</para>
-		/// <para>Specifies whether the network attribute will be used as a substitution. Substitution network attributes allow a substituted value to be used instead of bitset network attribute values during a propagation in a trace operation.</para>
-		/// <para>Checked—The network attribute will be used as a substitution.</para>
-		/// <para>Unchecked—The network attribute will not be used as a substitution. This is the default.</para>
+		/// <para>指定是否将网络属性用作替换项。替换网络属性允许在追踪操作的传递期间使用替换值而不是 bitset 网络属性值。</para>
+		/// <para>选中 - 网络属性将用作替换项。</para>
+		/// <para>未选中 - 网络属性不会用作替换项。这是默认设置。</para>
 		/// <para><see cref="IsSubstitutionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -180,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Network Attribute to Substitute</para>
-		/// <para>The network attribute to be used for substitution. Substitutions are encoded based on the number of bits in the network attribute being propagated. The network attribute must be in-line and an integer field type less than or equal to 8 bits.</para>
+		/// <para>用于替换的网络属性。替换是基于正在传播的网络属性中的位数进行编码的。网络属性必须为内嵌，且必须为小于或等于 8 位的整型字段类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -210,31 +211,31 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum AttributeTypeEnum 
 		{
 			/// <summary>
-			/// <para>Short (small integer)—Short integer type</para>
+			/// <para>短整型（小整数）—短整型类型</para>
 			/// </summary>
 			[GPValue("SHORT")]
-			[Description("Short (small integer)")]
+			[Description("短整型（小整数）")]
 			SHORT,
 
 			/// <summary>
-			/// <para>Long (large integer)—Long integer type</para>
+			/// <para>长整型（大整数）—长整型类型</para>
 			/// </summary>
 			[GPValue("LONG")]
-			[Description("Long (large integer)")]
+			[Description("长整型（大整数）")]
 			LONG,
 
 			/// <summary>
-			/// <para>Double (double precision)—Double precision type</para>
+			/// <para>双精度（双精度）—双精度类型</para>
 			/// </summary>
 			[GPValue("DOUBLE")]
-			[Description("Double (double precision)")]
+			[Description("双精度（双精度）")]
 			DOUBLE,
 
 			/// <summary>
-			/// <para>Date—Date type</para>
+			/// <para>日期型—日期类型</para>
 			/// </summary>
 			[GPValue("DATE")]
-			[Description("Date")]
+			[Description("日期型")]
 			Date,
 
 		}
@@ -245,14 +246,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum IsInlineEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The attribute will be added internally to the topology, making retrieval more efficient.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INLINE")]
 			INLINE,
 
 			/// <summary>
-			/// <para>Unchecked—The attribute will be stored in an external table, and retrieval will require a call to the external weights table. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_INLINE")]
@@ -266,14 +267,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum IsApportionableEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The network attribute will be apportioned.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("APPORTIONABLE")]
 			APPORTIONABLE,
 
 			/// <summary>
-			/// <para>Unchecked—The network attribute will not be apportioned. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_APPORTIONABLE")]
@@ -287,14 +288,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum IsOverridableEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The current value stored in the topology will be overridden.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("OVERRIDE")]
 			OVERRIDE,
 
 			/// <summary>
-			/// <para>Unchecked—The current value stored in the topology will not be overridden. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_OVERRIDABLE")]
@@ -308,14 +309,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum IsNullableEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The network attribute will support null values.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("NULLABLE")]
 			NULLABLE,
 
 			/// <summary>
-			/// <para>Unchecked—The network attribute will not support null values. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_NULLABLE")]
@@ -329,14 +330,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum IsSubstitutionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The network attribute will be used as a substitution.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SUBSTITUTION")]
 			SUBSTITUTION,
 
 			/// <summary>
-			/// <para>Unchecked—The network attribute will not be used as a substitution. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_SUBSTITUTION")]

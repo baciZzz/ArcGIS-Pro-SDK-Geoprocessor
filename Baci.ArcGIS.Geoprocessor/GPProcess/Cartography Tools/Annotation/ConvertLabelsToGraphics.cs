@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Convert Labels To Graphics</para>
-	/// <para>Converts labels to graphics for a single layer or an entire map.</para>
+	/// <para>标注转图形</para>
+	/// <para>将单个图层或整个地图的标注转换为图形。</para>
 	/// </summary>
 	public class ConvertLabelsToGraphics : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InputMap">
 		/// <para>Input Map</para>
-		/// <para>The input map name.</para>
+		/// <para>输入地图名称。</para>
 		/// </param>
 		/// <param name="ConversionScale">
 		/// <para>Conversion Scale</para>
-		/// <para>The scale at which to convert labels. If a reference scale is set on the map, the reference scale will be used for symbol sizing and graphics layer creation, but conversion will happen at this scale.</para>
+		/// <para>转换标注时使用的比例。如果已在地图上设置参考比例，则在调整符号大小和创建图形图层时，将使用该参考比例，但是将以此比例进行转换。</para>
 		/// </param>
 		public ConvertLabelsToGraphics(object InputMap, object ConversionScale)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Convert Labels To Graphics</para>
+		/// <para>Tool Display Name : 标注转图形</para>
 		/// </summary>
-		public override string DisplayName() => "Convert Labels To Graphics";
+		public override string DisplayName() => "标注转图形";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertLabelsToGraphics</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Map</para>
-		/// <para>The input map name.</para>
+		/// <para>输入地图名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMap()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Conversion Scale</para>
-		/// <para>The scale at which to convert labels. If a reference scale is set on the map, the reference scale will be used for symbol sizing and graphics layer creation, but conversion will happen at this scale.</para>
+		/// <para>转换标注时使用的比例。如果已在地图上设置参考比例，则在调整符号大小和创建图形图层时，将使用该参考比例，但是将以此比例进行转换。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -85,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Convert</para>
-		/// <para>Specifies whether to convert graphics for all layers in the map or for a single layer.</para>
-		/// <para>All layers in map—Labels will be converted to graphics for all layers in the map. This is the default.</para>
-		/// <para>Single layer—Labels will be converted to graphics for a single layer. The layer must be specified in the Feature Layer parameter (single_layer in Python).</para>
+		/// <para>指定是为地图中的所有图层还是为单个图层转换图形。</para>
+		/// <para>地图中的所有图层—将地图中所有图层的标注转换为图形。这是默认设置。</para>
+		/// <para>单个图层—标注将转换为单个图层的图形。该图层必须在要素图层参数中指定（Python 中的 single_layer）。</para>
 		/// <para><see cref="WhichLayersEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Feature Layer</para>
-		/// <para>The layer with the labels to convert when the Convert parameter is set to Single layer. This layer must be in the map.</para>
+		/// <para>当转换参数设置为单个图层时包含要转换注记的标注。该图层必须位于地图中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -107,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Graphics Layer Suffix</para>
-		/// <para>The suffix that will be added to each new graphics layer. This suffix will be appended to the name of the source feature class for each new graphics layer.</para>
+		/// <para>为每个新图形图层添加的后缀。该后缀将追加到各新图形图层的源要素类名称之后。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -115,13 +116,13 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>Specifies the extent that contains the labels to convert to graphics.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
-		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
-		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>指定包含要转换为图形的标注的范围。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
+		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
+		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -129,9 +130,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Convert labels from all layers to a single output graphics layer</para>
-		/// <para>Specifies whether labels will be converted to individual graphics layers or to a single graphics layer.</para>
-		/// <para>Checked—Labels from all layers will be converted to a single graphics layer.</para>
-		/// <para>Unchecked—Labels will be converted to individual graphics layers that correspond to their layers. This is the default.</para>
+		/// <para>指定将标注转换为单独的图形图层还是单个图形图层。</para>
+		/// <para>选中 - 所有图层中的标注将转换为单个图形图层。</para>
+		/// <para>未选中 - 标注将转换为与其图层对应的单独图形图层。这是默认设置。</para>
 		/// <para><see cref="MultipleGraphicsLayersEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -141,9 +142,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Convert unplaced labels to graphics</para>
-		/// <para>Specifies whether graphics will be created from unplaced labels.</para>
-		/// <para>Unchecked—Graphics will only be created for features that are currently labeled. This is the default.</para>
-		/// <para>Checked—Unplaced graphics are stored in the graphics layer with their visibility is turned off.</para>
+		/// <para>指定是否将基于未放置标注创建图形。</para>
+		/// <para>未选中 - 仅为当前已标注的要素创建图形。这是默认设置。</para>
+		/// <para>选中 - 未放置的图形将在其可见性处于关闭状态的情况下存储在图形图层中。</para>
 		/// <para><see cref="GenerateUnplacedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -153,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Layer</para>
-		/// <para>The group layer that will contain the generated graphics. When working in the Catalog pane, you can use the Save To Layer File tool to write the output group layer to a layer file. When using ArcGIS Pro with a map open, the tool adds the group layer to the display if the Add output dataset to an open map option is checked in the geoprocessing options. The group layer that is created is temporary and will not persist after the session ends unless the project is saved.</para>
+		/// <para>包含所生成图形的图层组。在目录窗格中工作时，可使用保存至图层文件工具将输出图层组写入图层文件中。在打开地图的情况下使用 ArcGIS Pro 时，如果在地理处理选项中选中将输出数据集添加至打开的地图选项，则该工具可将图层组添加到显示区域。所创建的图层组是临时性的，如果不保存工程，该图层组将在会话结束后消失。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGroupLayer()]
@@ -167,17 +168,17 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum WhichLayersEnum 
 		{
 			/// <summary>
-			/// <para>All layers in map—Labels will be converted to graphics for all layers in the map. This is the default.</para>
+			/// <para>地图中的所有图层—将地图中所有图层的标注转换为图形。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ALL_LAYERS")]
-			[Description("All layers in map")]
+			[Description("地图中的所有图层")]
 			All_layers_in_map,
 
 			/// <summary>
-			/// <para>Single layer—Labels will be converted to graphics for a single layer. The layer must be specified in the Feature Layer parameter (single_layer in Python).</para>
+			/// <para>单个图层—标注将转换为单个图层的图形。该图层必须在要素图层参数中指定（Python 中的 single_layer）。</para>
 			/// </summary>
 			[GPValue("SINGLE_LAYER")]
-			[Description("Single layer")]
+			[Description("单个图层")]
 			Single_layer,
 
 		}
@@ -188,14 +189,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum MultipleGraphicsLayersEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Labels from all layers will be converted to a single graphics layer.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SINGLE_GRAPHICS_LAYER")]
 			SINGLE_GRAPHICS_LAYER,
 
 			/// <summary>
-			/// <para>Unchecked—Labels will be converted to individual graphics layers that correspond to their layers. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("GRAPHICS_LAYER_PER_FEATURE_LAYER")]
@@ -209,14 +210,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum GenerateUnplacedEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Unplaced graphics are stored in the graphics layer with their visibility is turned off.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GENERATE_UNPLACED")]
 			GENERATE_UNPLACED,
 
 			/// <summary>
-			/// <para>Unchecked—Graphics will only be created for features that are currently labeled. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ONLY_PLACED")]

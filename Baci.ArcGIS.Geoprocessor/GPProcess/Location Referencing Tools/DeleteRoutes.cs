@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Delete Routes</para>
+	/// <para>Delete Routes</para>
 	/// <para>Deletes routes and associated data elements from the LRS Network.</para>
 	/// </summary>
 	public class DeleteRoutes : AbstractGPProcess

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Shrink</para>
-	/// <para>Shrinks the selected zones by a specified number of cells by replacing them with the value of the cell that is most frequent in its neighborhood.</para>
+	/// <para>收缩</para>
+	/// <para>按指定像元数目收缩所选区域，方法是用邻域中出现最频繁的像元值替换该区域的值。</para>
 	/// </summary>
 	public class Shrink : AbstractGPProcess
 	{
@@ -20,24 +21,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster for which the identified zones are to be shrunk.</para>
-		/// <para>It must be of integer type.</para>
+		/// <para>要收缩已识别区域的输入栅格。</para>
+		/// <para>必须为整型。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output generalized raster.</para>
-		/// <para>The specified zones of the input raster will be shrunk by the specified number of cells.</para>
-		/// <para>The output is always of integer type.</para>
+		/// <para>输出概化的栅格。</para>
+		/// <para>将按指定像元数目收缩的输入栅格的指定区域。</para>
+		/// <para>输出始终为整型。</para>
 		/// </param>
 		/// <param name="NumberCells">
 		/// <para>Number of cells</para>
-		/// <para>The number of cells by which to shrink each specified zone.</para>
-		/// <para>The value must be an integer greater than 0.</para>
+		/// <para>收缩每个指定区域时所依据的像元数。</para>
+		/// <para>该值必须为大于 0 的整数。</para>
 		/// </param>
 		/// <param name="ZoneValues">
 		/// <para>Zone values</para>
-		/// <para>The list of zone values to shrink.</para>
-		/// <para>The zone values must be integers. They can be in any order.</para>
+		/// <para>要收缩的区域值列表。</para>
+		/// <para>区域值必须为整数。可以按任意顺序排列。</para>
 		/// </param>
 		public Shrink(object InRaster, object OutRaster, object NumberCells, object ZoneValues)
 		{
@@ -48,14 +49,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Shrink</para>
+		/// <para>Tool Display Name : 收缩</para>
 		/// </summary>
-		public override string DisplayName() => "Shrink";
+		public override string DisplayName() => "收缩";
 
 		/// <summary>
-		/// <para>Tool Name : Shrink</para>
+		/// <para>Tool Name : 收缩</para>
 		/// </summary>
-		public override string ToolName() => "Shrink";
+		public override string ToolName() => "收缩";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Shrink</para>
@@ -84,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster for which the identified zones are to be shrunk.</para>
-		/// <para>It must be of integer type.</para>
+		/// <para>要收缩已识别区域的输入栅格。</para>
+		/// <para>必须为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -97,9 +98,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output generalized raster.</para>
-		/// <para>The specified zones of the input raster will be shrunk by the specified number of cells.</para>
-		/// <para>The output is always of integer type.</para>
+		/// <para>输出概化的栅格。</para>
+		/// <para>将按指定像元数目收缩的输入栅格的指定区域。</para>
+		/// <para>输出始终为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -107,8 +108,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Number of cells</para>
-		/// <para>The number of cells by which to shrink each specified zone.</para>
-		/// <para>The value must be an integer greater than 0.</para>
+		/// <para>收缩每个指定区域时所依据的像元数。</para>
+		/// <para>该值必须为大于 0 的整数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -117,8 +118,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Zone values</para>
-		/// <para>The list of zone values to shrink.</para>
-		/// <para>The zone values must be integers. They can be in any order.</para>
+		/// <para>要收缩的区域值列表。</para>
+		/// <para>区域值必须为整数。可以按任意顺序排列。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -126,10 +127,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Shrink method</para>
-		/// <para>The method to use to shrink the selected zones.</para>
-		/// <para>Morphological—Uses a mathematical morphology method to shrink the zones. This is the default.</para>
-		/// <para>Distance—Uses a distance-based method to shrink the zones.</para>
-		/// <para>The Distance option supports parallelization, and can be controlled with the Parallel Processing Factor environment setting.</para>
+		/// <para>用于收缩所选区域的方法。</para>
+		/// <para>形态—使用数学形态学方法收缩区域。这是默认设置。</para>
+		/// <para>距离—使用基于距离的方法收缩区域。</para>
+		/// <para>距离选项支持并行处理，可以使用并行处理因子环境设定进行控制。</para>
 		/// <para><see cref="ShrinkMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -154,17 +155,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ShrinkMethodEnum 
 		{
 			/// <summary>
-			/// <para>Morphological—Uses a mathematical morphology method to shrink the zones. This is the default.</para>
+			/// <para>形态—使用数学形态学方法收缩区域。这是默认设置。</para>
 			/// </summary>
 			[GPValue("MORPHOLOGICAL")]
-			[Description("Morphological")]
+			[Description("形态")]
 			Morphological,
 
 			/// <summary>
-			/// <para>Distance—Uses a distance-based method to shrink the zones.</para>
+			/// <para>距离—使用基于距离的方法收缩区域。</para>
 			/// </summary>
 			[GPValue("DISTANCE")]
-			[Description("Distance")]
+			[Description("距离")]
 			Distance,
 
 		}

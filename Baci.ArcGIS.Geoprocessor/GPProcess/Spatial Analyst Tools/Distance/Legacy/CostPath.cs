@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Cost Path</para>
-	/// <para>Calculates the least-cost path from a source to a destination.</para>
+	/// <para>成本路径</para>
+	/// <para>计算从源到目标的最小成本路径。</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.SpatialAnalystTools.OptimalPathAsRaster"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.SpatialAnalystTools.OptimalPathAsRaster))]
@@ -22,23 +23,23 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InDestinationData">
 		/// <para>Input raster or feature destination data</para>
-		/// <para>A raster or feature dataset that identifies those cells from which the least-cost path is determined to the least costly source.</para>
-		/// <para>If the input is a raster, the input consists of cells that have valid values (zero is a valid value), and the remaining cells must be assigned NoData.</para>
+		/// <para>用于识别这些像元的栅格或要素数据集（将确定的最小成本路径为这些像元与成本最低的源之间的路径）。</para>
+		/// <para>如果输入是一个栅格，则输入由具有有效值（零是有效值）的像元组成，并且必须为其余的像元指定 NoData。</para>
 		/// </param>
 		/// <param name="InCostDistanceRaster">
 		/// <para>Input cost distance raster</para>
-		/// <para>The name of a cost distance raster to be used to determine the least-cost path from the destination locations to a source.</para>
-		/// <para>The cost distance raster is usually created with the Cost Distance, Cost Allocation or Cost Back Link tools. The cost distance raster stores, for each cell, the minimum accumulative cost distance over a cost surface from each cell to a set of source cells.</para>
+		/// <para>要用于确定从目标位置到源的最小成本路径的成本距离栅格的名称。</para>
+		/// <para>成本距离栅格通常通过成本距离、成本分配或成本回溯链接工具进行创建。对于每个像元，成本距离栅格存储从每个像元到一组源像元的成本面上的最小累积成本距离。</para>
 		/// </param>
 		/// <param name="InCostBacklinkRaster">
 		/// <para>Input cost backlink raster</para>
-		/// <para>The name of a cost back link raster used to determine the path to return to a source via the least-cost path.</para>
-		/// <para>For each cell in the back link raster, a value identifies the neighbor that is the next cell on the least accumulative cost path from the cell to a single source cell or set of source cells.</para>
+		/// <para>用于确定要经由最小成本路径返回到源的路径的成本回溯链接栅格名称。</para>
+		/// <para>对于成本回溯链接栅格内的每个像元，值可识别在从像元到单个源像元或一组源像元的最小累积成本路径上作为下一像元的邻近像元。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output cost path raster.</para>
-		/// <para>The output raster is of integer type.</para>
+		/// <para>输出成本路径栅格。</para>
+		/// <para>输出栅格为整型。</para>
 		/// </param>
 		public CostPath(object InDestinationData, object InCostDistanceRaster, object InCostBacklinkRaster, object OutRaster)
 		{
@@ -49,9 +50,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Cost Path</para>
+		/// <para>Tool Display Name : 成本路径</para>
 		/// </summary>
-		public override string DisplayName() => "Cost Path";
+		public override string DisplayName() => "成本路径";
 
 		/// <summary>
 		/// <para>Tool Name : CostPath</para>
@@ -85,8 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature destination data</para>
-		/// <para>A raster or feature dataset that identifies those cells from which the least-cost path is determined to the least costly source.</para>
-		/// <para>If the input is a raster, the input consists of cells that have valid values (zero is a valid value), and the remaining cells must be assigned NoData.</para>
+		/// <para>用于识别这些像元的栅格或要素数据集（将确定的最小成本路径为这些像元与成本最低的源之间的路径）。</para>
+		/// <para>如果输入是一个栅格，则输入由具有有效值（零是有效值）的像元组成，并且必须为其余的像元指定 NoData。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -98,8 +99,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input cost distance raster</para>
-		/// <para>The name of a cost distance raster to be used to determine the least-cost path from the destination locations to a source.</para>
-		/// <para>The cost distance raster is usually created with the Cost Distance, Cost Allocation or Cost Back Link tools. The cost distance raster stores, for each cell, the minimum accumulative cost distance over a cost surface from each cell to a set of source cells.</para>
+		/// <para>要用于确定从目标位置到源的最小成本路径的成本距离栅格的名称。</para>
+		/// <para>成本距离栅格通常通过成本距离、成本分配或成本回溯链接工具进行创建。对于每个像元，成本距离栅格存储从每个像元到一组源像元的成本面上的最小累积成本距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -111,8 +112,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input cost backlink raster</para>
-		/// <para>The name of a cost back link raster used to determine the path to return to a source via the least-cost path.</para>
-		/// <para>For each cell in the back link raster, a value identifies the neighbor that is the next cell on the least accumulative cost path from the cell to a single source cell or set of source cells.</para>
+		/// <para>用于确定要经由最小成本路径返回到源的路径的成本回溯链接栅格名称。</para>
+		/// <para>对于成本回溯链接栅格内的每个像元，值可识别在从像元到单个源像元或一组源像元的最小累积成本路径上作为下一像元的邻近像元。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -124,8 +125,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output cost path raster.</para>
-		/// <para>The output raster is of integer type.</para>
+		/// <para>输出成本路径栅格。</para>
+		/// <para>输出栅格为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -133,10 +134,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Path type</para>
-		/// <para>A keyword defining the manner in which the values and zones on the input destination data will be interpreted in the cost path calculations.</para>
-		/// <para>Each cell— For each cell with valid values on the input destination data, a least-cost path is determined and saved on the output raster. With this option, each cell of the input destination data is treated separately, and a least-cost path is determined for each from cell.</para>
-		/// <para>Each zone— For each zone on the input destination data, a least-cost path is determined and saved on the output raster. With this option, the least-cost path for each zone begins at the cell with the lowest cost distance weighting in the zone.</para>
-		/// <para>Best single— For all cells on the input destination data, the least-cost path is derived from the cell with the minimum of the least-cost paths to source cells.</para>
+		/// <para>用于对输入目标数据上的值和区域在成本路径计算中的解释方式进行定义的关键字。</para>
+		/// <para>每个像元— 对于输入目标数据上每一个具有有效值的像元，系统会确定最小成本路径并将该路径保存在输出栅格上。利用该选项，系统会分别处理输入目标数据中的每个像元，并确定每个“起始”像元的最小成本路径。</para>
+		/// <para>每个区域— 对于输入目标数据上的每个区域，系统会确定最小成本路径并将该路径保存在输出栅格上。利用该选项，每个区域的最小成本路径可起始于区域内成本距离权重最小的像元。</para>
+		/// <para>最佳单条— 对于输入目标数据上的所有像元，最小成本路径派生自距源像元具有最小成本路径的最小值的像元。</para>
 		/// <para><see cref="PathTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -146,8 +147,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Destination field</para>
-		/// <para>The field used to obtain values for the destination locations.</para>
-		/// <para>Input feature data must contain at least one valid field.</para>
+		/// <para>用于获得目标位置的值的字段。</para>
+		/// <para>输入要素数据必须至少包含一个有效字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -157,9 +158,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Force flow direction convention for backlink raster</para>
-		/// <para>Forces the tool to treat the input backlink raster as a flow direction raster. Flow direction rasters can have integer values that range from 0-255.</para>
-		/// <para>Unchecked—The Input cost backlink raster will be interpreted differently based on the range of values and if it is integer or float. For a value range of 0-8, the Input cost backlink raster will be treated as a backlink raster. For values 0-255 and integer, the Input cost backlink raster will be treated as a flow direction raster. For a value range of 0-360 and floating point, the Input cost backlink raster will be treated as a back direction raster.</para>
-		/// <para>Checked—The raster supplied for the Input cost backlink raster will be treated as a flow direction raster. This is necessary if the flow direction raster has a maximum value of 8 or less.</para>
+		/// <para>强制命令工具将输入回溯链接栅格视为流向栅格。流向栅格可以使用 0 和 255 之间的整数值。</para>
+		/// <para>未选中 - 输入成本回溯链接栅格会根据值的范围（以及该值是整数值还是浮点值）以不同方式解释。对于 0-8 的值范围，输入成本回溯链接栅格将被视为回溯链接栅格。对于值 0-255 和整数值，输入成本回溯链接栅格将被视为流向栅格。对于 0-360 的值范围和浮点值，输入成本回溯链接栅格将被视为反向栅格。</para>
+		/// <para>选中 - 为输入成本回溯链接栅格提供的栅格将被视为流向栅格。如果流向栅格的最大值不超过 8，则该操作是必需的。</para>
 		/// <para><see cref="ForceFlowDirectionConventionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -184,24 +185,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum PathTypeEnum 
 		{
 			/// <summary>
-			/// <para>Each cell— For each cell with valid values on the input destination data, a least-cost path is determined and saved on the output raster. With this option, each cell of the input destination data is treated separately, and a least-cost path is determined for each from cell.</para>
+			/// <para>每个像元— 对于输入目标数据上每一个具有有效值的像元，系统会确定最小成本路径并将该路径保存在输出栅格上。利用该选项，系统会分别处理输入目标数据中的每个像元，并确定每个“起始”像元的最小成本路径。</para>
 			/// </summary>
 			[GPValue("EACH_CELL")]
-			[Description("Each cell")]
+			[Description("每个像元")]
 			Each_cell,
 
 			/// <summary>
-			/// <para>Each zone— For each zone on the input destination data, a least-cost path is determined and saved on the output raster. With this option, the least-cost path for each zone begins at the cell with the lowest cost distance weighting in the zone.</para>
+			/// <para>每个区域— 对于输入目标数据上的每个区域，系统会确定最小成本路径并将该路径保存在输出栅格上。利用该选项，每个区域的最小成本路径可起始于区域内成本距离权重最小的像元。</para>
 			/// </summary>
 			[GPValue("EACH_ZONE")]
-			[Description("Each zone")]
+			[Description("每个区域")]
 			Each_zone,
 
 			/// <summary>
-			/// <para>Best single— For all cells on the input destination data, the least-cost path is derived from the cell with the minimum of the least-cost paths to source cells.</para>
+			/// <para>最佳单条— 对于输入目标数据上的所有像元，最小成本路径派生自距源像元具有最小成本路径的最小值的像元。</para>
 			/// </summary>
 			[GPValue("BEST_SINGLE")]
-			[Description("Best single")]
+			[Description("最佳单条")]
 			Best_single,
 
 		}
@@ -212,14 +213,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ForceFlowDirectionConventionEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—The Input cost backlink raster will be interpreted differently based on the range of values and if it is integer or float. For a value range of 0-8, the Input cost backlink raster will be treated as a backlink raster. For values 0-255 and integer, the Input cost backlink raster will be treated as a flow direction raster. For a value range of 0-360 and floating point, the Input cost backlink raster will be treated as a back direction raster.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INPUT_RANGE")]
 			INPUT_RANGE,
 
 			/// <summary>
-			/// <para>Checked—The raster supplied for the Input cost backlink raster will be treated as a flow direction raster. This is necessary if the flow direction raster has a maximum value of 8 or less.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FLOW_DIRECTION")]

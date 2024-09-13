@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Generate Rubbersheet Links</para>
-	/// <para>Finds where the source line features spatially match the target line features and generates lines representing links from source locations to corresponding target locations for rubbersheeting.</para>
+	/// <para>生成橡皮页变换链接</para>
+	/// <para>查找源线要素与目标线要素在空间上匹配的位置，并生成表示从源位置到相应目标位置的橡皮页变换链接的线。</para>
 	/// </summary>
 	public class GenerateRubbersheetLinks : AbstractGPProcess
 	{
@@ -20,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		/// <param name="SourceFeatures">
 		/// <para>Source Features</para>
-		/// <para>Line features as source features for generating rubbersheet links. All links start at source features.</para>
+		/// <para>作为生成橡皮页变换链接的源要素的线要素。所有链接均始于源要素。</para>
 		/// </param>
 		/// <param name="TargetFeatures">
 		/// <para>Target Features</para>
-		/// <para>Line features as target features for generating rubbersheet links. All links end at matched target features.</para>
+		/// <para>作为生成橡皮页变换链接的目标要素的线要素。所有链接均止于相匹配的目标要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>Output feature class containing lines representing regular rubbersheet links.</para>
+		/// <para>包含线的输出要素类，该线表示常规橡皮页变换链接。</para>
 		/// </param>
 		/// <param name="SearchDistance">
 		/// <para>Search Distance</para>
-		/// <para>The distance used to search for match candidates. A distance must be specified and it must be greater than zero. You can choose a preferred unit; the default is the feature unit.</para>
+		/// <para>用于搜索匹配候选项的距离。必须指定一个距离，且此距离必须大于零。可以选择首选单位；默认为要素单位。</para>
 		/// </param>
 		public GenerateRubbersheetLinks(object SourceFeatures, object TargetFeatures, object OutFeatureClass, object SearchDistance)
 		{
@@ -43,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Rubbersheet Links</para>
+		/// <para>Tool Display Name : 生成橡皮页变换链接</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Rubbersheet Links";
+		public override string DisplayName() => "生成橡皮页变换链接";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateRubbersheetLinks</para>
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Source Features</para>
-		/// <para>Line features as source features for generating rubbersheet links. All links start at source features.</para>
+		/// <para>作为生成橡皮页变换链接的源要素的线要素。所有链接均始于源要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Target Features</para>
-		/// <para>Line features as target features for generating rubbersheet links. All links end at matched target features.</para>
+		/// <para>作为生成橡皮页变换链接的目标要素的线要素。所有链接均止于相匹配的目标要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>Output feature class containing lines representing regular rubbersheet links.</para>
+		/// <para>包含线的输出要素类，该线表示常规橡皮页变换链接。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Search Distance</para>
-		/// <para>The distance used to search for match candidates. A distance must be specified and it must be greater than zero. You can choose a preferred unit; the default is the feature unit.</para>
+		/// <para>用于搜索匹配候选项的距离。必须指定一个距离，且此距离必须大于零。可以选择首选单位；默认为要素单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -117,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Match Fields</para>
-		/// <para>Lists of fields from source and target features. If specified, each pair of fields are checked for match candidates to help determine the right match.</para>
+		/// <para>来自源要素与目标要素的字段的列表。如果指定，将检查每对字段中的匹配候选项，以帮助确定正确的匹配。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -128,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Output Match Table</para>
-		/// <para>The output table containing complete feature matching information.</para>
+		/// <para>包含完整的要素匹配信息的输出表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]

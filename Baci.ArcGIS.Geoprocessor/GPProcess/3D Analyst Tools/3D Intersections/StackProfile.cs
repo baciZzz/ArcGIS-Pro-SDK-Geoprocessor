@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Stack Profile</para>
-	/// <para>Creates a table and optional graph denoting the  profile of line features over one or more multipatch, raster, TIN, or terrain surfaces.</para>
+	/// <para>重叠剖面</para>
+	/// <para>创建表格和可选图表，用于说明一个或多个多面体、栅格、TIN 或 terrain 表面上的线要素的剖面。</para>
 	/// </summary>
 	public class StackProfile : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLineFeatures">
 		/// <para>Input Line Features</para>
-		/// <para>The line features that will be profiled over the surface inputs.</para>
+		/// <para>将在表面输入上描绘剖面的线要素。</para>
 		/// </param>
 		/// <param name="ProfileTargets">
 		/// <para>Profile Targets</para>
-		/// <para>The data being profiled, which can be comprised from any combination of multipatch features, raster, and triangulated surface models.</para>
+		/// <para>剖面的数据，可由多面体要素、栅格和三角化表面模型的任意组合组成。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>The output table that will store the height interpolated for each profile target that intersects the input line.</para>
+		/// <para>将存储与输入线相交的每个剖面目标的插值高度的输出表。</para>
 		/// </param>
 		public StackProfile(object InLineFeatures, object ProfileTargets, object OutTable)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Stack Profile</para>
+		/// <para>Tool Display Name : 重叠剖面</para>
 		/// </summary>
-		public override string DisplayName() => "Stack Profile";
+		public override string DisplayName() => "重叠剖面";
 
 		/// <summary>
 		/// <para>Tool Name : StackProfile</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Line Features</para>
-		/// <para>The line features that will be profiled over the surface inputs.</para>
+		/// <para>将在表面输入上描绘剖面的线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Profile Targets</para>
-		/// <para>The data being profiled, which can be comprised from any combination of multipatch features, raster, and triangulated surface models.</para>
+		/// <para>剖面的数据，可由多面体要素、栅格和三角化表面模型的任意组合组成。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The output table that will store the height interpolated for each profile target that intersects the input line.</para>
+		/// <para>将存储与输入线相交的每个剖面目标的插值高度的输出表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Graph Name</para>
-		/// <para>The output graph is not supported in Pro.</para>
+		/// <para>Pro 中不支持输出图表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGraph()]

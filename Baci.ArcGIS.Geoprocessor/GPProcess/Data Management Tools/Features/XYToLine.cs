@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>XY To Line</para>
-	/// <para>Creates a feature class containing geodetic line features constructed based on the values in a start x-coordinate field, start y-coordinate field, end x-coordinate field, and end y-coordinate field of a table.</para>
+	/// <para>XY 转线</para>
+	/// <para>创建要素类，其中包含基于表的起点 x 坐标字段、起点 y 坐标字段、终点 x 坐标字段和终点 y 坐标字段中的值构建的大地测量线要素。</para>
 	/// </summary>
 	public class XYToLine : AbstractGPProcess
 	{
@@ -20,27 +21,27 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input table. It can be a text file, CSV file, Excel file, dBASE table, or geodatabase table.</para>
+		/// <para>输入表。可以是文本文件、CSV 文件、Excel 文件、dBASE 表或地理数据库表。</para>
 		/// </param>
 		/// <param name="OutFeatureclass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class containing densified geodetic lines.</para>
+		/// <para>包含增密测地线的输出要素类。</para>
 		/// </param>
 		/// <param name="StartxField">
 		/// <para>Start X Field</para>
-		/// <para>A numerical field in the input table containing the x-coordinates (or longitudes) of the starting points of lines to be positioned in the output coordinate system specified by the Spatial Reference parameter.</para>
+		/// <para>输入表中的数值字段，其中包含在空间参考参数所指定的输出坐标系中进行定位的线的起点 x 坐标（或经度）。</para>
 		/// </param>
 		/// <param name="StartyField">
 		/// <para>Start Y Field</para>
-		/// <para>A numerical field in the input table containing the y-coordinates (or latitudes) of the starting points of lines to be positioned in the output coordinate system specified by the Spatial Reference parameter.</para>
+		/// <para>输入表中的数值字段，其中包含在空间参考参数所指定的输出坐标系中进行定位的线的起点 y 坐标（或纬度）。</para>
 		/// </param>
 		/// <param name="EndxField">
 		/// <para>End X Field</para>
-		/// <para>A numerical field in the input table containing the x-coordinates (or longitudes) of the ending points of lines to be positioned in the output coordinate system specified by the Spatial Reference parameter.</para>
+		/// <para>输入表中的数值字段，其中包含在空间参考参数所指定的输出坐标系中进行定位的线的终点 x 坐标（或经度）。</para>
 		/// </param>
 		/// <param name="EndyField">
 		/// <para>End Y Field</para>
-		/// <para>A numerical field in the input table containing the y-coordinates (or latitudes) of the ending points of lines to be positioned in the output coordinate system specified by the Spatial Reference parameter.</para>
+		/// <para>输入表中的数值字段，其中包含在空间参考参数所指定的输出坐标系中进行定位的线的终点 y 坐标（或纬度）。</para>
 		/// </param>
 		public XYToLine(object InTable, object OutFeatureclass, object StartxField, object StartyField, object EndxField, object EndyField)
 		{
@@ -53,9 +54,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : XY To Line</para>
+		/// <para>Tool Display Name : XY 转线</para>
 		/// </summary>
-		public override string DisplayName() => "XY To Line";
+		public override string DisplayName() => "XY 转线";
 
 		/// <summary>
 		/// <para>Tool Name : XYToLine</para>
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input table. It can be a text file, CSV file, Excel file, dBASE table, or geodatabase table.</para>
+		/// <para>输入表。可以是文本文件、CSV 文件、Excel 文件、dBASE 表或地理数据库表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class containing densified geodetic lines.</para>
+		/// <para>包含增密测地线的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -105,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Start X Field</para>
-		/// <para>A numerical field in the input table containing the x-coordinates (or longitudes) of the starting points of lines to be positioned in the output coordinate system specified by the Spatial Reference parameter.</para>
+		/// <para>输入表中的数值字段，其中包含在空间参考参数所指定的输出坐标系中进行定位的线的起点 x 坐标（或经度）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -115,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Start Y Field</para>
-		/// <para>A numerical field in the input table containing the y-coordinates (or latitudes) of the starting points of lines to be positioned in the output coordinate system specified by the Spatial Reference parameter.</para>
+		/// <para>输入表中的数值字段，其中包含在空间参考参数所指定的输出坐标系中进行定位的线的起点 y 坐标（或纬度）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -125,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>End X Field</para>
-		/// <para>A numerical field in the input table containing the x-coordinates (or longitudes) of the ending points of lines to be positioned in the output coordinate system specified by the Spatial Reference parameter.</para>
+		/// <para>输入表中的数值字段，其中包含在空间参考参数所指定的输出坐标系中进行定位的线的终点 x 坐标（或经度）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -135,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>End Y Field</para>
-		/// <para>A numerical field in the input table containing the y-coordinates (or latitudes) of the ending points of lines to be positioned in the output coordinate system specified by the Spatial Reference parameter.</para>
+		/// <para>输入表中的数值字段，其中包含在空间参考参数所指定的输出坐标系中进行定位的线的终点 y 坐标（或纬度）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -145,11 +146,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Line Type</para>
-		/// <para>Specifies the type of geodetic line to construct.</para>
-		/// <para>Geodesic— A type of geodetic line that most accurately represents the shortest distance between any two points on the surface of the earth will be constructed. The mathematical definition of the geodesic line is quite lengthy and complex and is therefore omitted here. This is the default.</para>
-		/// <para>Great circle—A type of geodetic line that represents the path between any two points along the intersection of the surface of the earth and a plane that passes through the center of the earth will be constructed. Depending on the output coordinate system specified by the Spatial Reference parameter, in a spheroid-based coordinate system, the line is a great elliptic; in a sphere-based coordinate system, the line is uniquely called a great circle—a circle of the largest radius on the spherical surface.</para>
-		/// <para>Rhumb line—A type of geodetic line, also known as a loxodrome line, that represents a path between any two points on the surface of a spheroid defined by a constant azimuth from a pole will be constructed. A rhumb line is shown as a straight line in the Mercator projection.</para>
-		/// <para>Normal section—A type of geodetic line that represents a path between any two points on the surface of a spheroid defined by the intersection of the spheroid surface and a plane that passes through the two points and is normal (perpendicular) to the spheroid surface at the starting point of the two points will be constructed. Therefore, the normal section line from point A to point B is different from the one from point B to point A.</para>
+		/// <para>指定要构造的测地线类型。</para>
+		/// <para>测地线— 测地线类型，可以最准确地表示将构造的地球表面任意两点之间的最短距离。测地线的数学定义十分复杂冗长，因此此处略去该定义。这是默认设置。</para>
+		/// <para>大圆—测地线类型，可以表示将构造的地球表面与通过地心的平面的相交线上任意两点之间的路径。根据空间参考参数所指定的输出坐标系，在基于椭球体的坐标系中，该线表示大椭圆；在基于球体的坐标系中，该线表示唯一的大圆（球面上最大半径的圆）。</para>
+		/// <para>恒向线—测地线类型，又称为等角航线 (loxodrome line)，可以表示将构造的通过以极点为起点的等方位角所定义的椭球体表面上的任意两点之间的路径。等角航线在墨卡托投影中显示为直线。</para>
+		/// <para>法向截面—测地线类型，可以表示将构造的由椭球体表面与通过椭球体表面上两点并垂直于两点起点处椭球面的平面相交而定义的椭球面上任意两点之间的路径。因此，从 A 点到 B 点与从 B 点到 A 点的法向截面线不同。</para>
 		/// <para><see cref="LineTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -159,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>ID</para>
-		/// <para>A field in the input table. This field and the values are included in the output and can be used to join the output features with the records in the input table.</para>
+		/// <para>输入表中的字段。此字段和值均包含在输出中，可用于连接输出要素和输入表中的记录。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -169,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Spatial Reference</para>
-		/// <para>The spatial reference of the output feature class. The default is GCS_WGS_1984 or the input coordinate system if it is not Unknown.</para>
+		/// <para>输出要素类的空间参考。默认值为 GCS_WGS_1984 或输入坐标系（如果非“Unknown”）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
@@ -177,9 +178,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Preserve attributes</para>
-		/// <para>Specifies whether the remaining input fields will be written to the output feature class.</para>
-		/// <para>Unchecked—The remaining input fields will not be written to the output feature class. This is the default.</para>
-		/// <para>Checked—The remaining input fields will be included in the output feature class. A new field, ORIG_FID, will also be added to the output feature class to store the input feature ID values.</para>
+		/// <para>指定是否将其余输入字段写入输出要素类。</para>
+		/// <para>未选中 - 不会将其余输入字段写入输出要素类。这是默认设置。</para>
+		/// <para>选中 - 其余输入字段将包含在输出要素类中。还将向输出要素类添加新字段 ORIG_FID 以存储输入要素 ID 值。</para>
 		/// <para><see cref="AttributesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -204,31 +205,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum LineTypeEnum 
 		{
 			/// <summary>
-			/// <para>Geodesic— A type of geodetic line that most accurately represents the shortest distance between any two points on the surface of the earth will be constructed. The mathematical definition of the geodesic line is quite lengthy and complex and is therefore omitted here. This is the default.</para>
+			/// <para>测地线— 测地线类型，可以最准确地表示将构造的地球表面任意两点之间的最短距离。测地线的数学定义十分复杂冗长，因此此处略去该定义。这是默认设置。</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("Geodesic")]
+			[Description("测地线")]
 			Geodesic,
 
 			/// <summary>
-			/// <para>Great circle—A type of geodetic line that represents the path between any two points along the intersection of the surface of the earth and a plane that passes through the center of the earth will be constructed. Depending on the output coordinate system specified by the Spatial Reference parameter, in a spheroid-based coordinate system, the line is a great elliptic; in a sphere-based coordinate system, the line is uniquely called a great circle—a circle of the largest radius on the spherical surface.</para>
+			/// <para>大圆—测地线类型，可以表示将构造的地球表面与通过地心的平面的相交线上任意两点之间的路径。根据空间参考参数所指定的输出坐标系，在基于椭球体的坐标系中，该线表示大椭圆；在基于球体的坐标系中，该线表示唯一的大圆（球面上最大半径的圆）。</para>
 			/// </summary>
 			[GPValue("GREAT_CIRCLE")]
-			[Description("Great circle")]
+			[Description("大圆")]
 			Great_circle,
 
 			/// <summary>
-			/// <para>Rhumb line—A type of geodetic line, also known as a loxodrome line, that represents a path between any two points on the surface of a spheroid defined by a constant azimuth from a pole will be constructed. A rhumb line is shown as a straight line in the Mercator projection.</para>
+			/// <para>恒向线—测地线类型，又称为等角航线 (loxodrome line)，可以表示将构造的通过以极点为起点的等方位角所定义的椭球体表面上的任意两点之间的路径。等角航线在墨卡托投影中显示为直线。</para>
 			/// </summary>
 			[GPValue("RHUMB_LINE")]
-			[Description("Rhumb line")]
+			[Description("恒向线")]
 			Rhumb_line,
 
 			/// <summary>
-			/// <para>Normal section—A type of geodetic line that represents a path between any two points on the surface of a spheroid defined by the intersection of the spheroid surface and a plane that passes through the two points and is normal (perpendicular) to the spheroid surface at the starting point of the two points will be constructed. Therefore, the normal section line from point A to point B is different from the one from point B to point A.</para>
+			/// <para>法向截面—测地线类型，可以表示将构造的由椭球体表面与通过椭球体表面上两点并垂直于两点起点处椭球面的平面相交而定义的椭球面上任意两点之间的路径。因此，从 A 点到 B 点与从 B 点到 A 点的法向截面线不同。</para>
 			/// </summary>
 			[GPValue("NORMAL_SECTION")]
-			[Description("Normal section")]
+			[Description("法向截面")]
 			Normal_section,
 
 		}
@@ -239,14 +240,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AttributesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The remaining input fields will be included in the output feature class. A new field, ORIG_FID, will also be added to the output feature class to store the input feature ID values.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ATTRIBUTES")]
 			ATTRIBUTES,
 
 			/// <summary>
-			/// <para>Unchecked—The remaining input fields will not be written to the output feature class. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ATTRIBUTES")]

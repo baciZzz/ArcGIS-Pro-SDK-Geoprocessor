@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Apply Grid Layout</para>
+	/// <para>Apply Grid Layout</para>
 	/// <para>Apply the grid layout to a diagram</para>
 	/// </summary>
 	[Obsolete()]

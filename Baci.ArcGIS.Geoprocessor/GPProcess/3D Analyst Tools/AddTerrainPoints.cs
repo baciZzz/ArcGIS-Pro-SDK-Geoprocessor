@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Add Terrain Points</para>
+	/// <para>Add Terrain Points</para>
 	/// <para>Adds terrain multipoints to an embedded terrain feature class.</para>
 	/// </summary>
 	[Obsolete()]

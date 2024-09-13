@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Update Interior Orientation</para>
-	/// <para>Refines the interior orientation for each image in the mosaic dataset by constructing an affine transformation from a fiducial table.</para>
+	/// <para>更新内部方向</para>
+	/// <para>可从基准表构造仿射变换，以优化镶嵌数据集中每个图像的内部方向。</para>
 	/// </summary>
 	public class UpdateInteriorOrientation : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>The mosaic dataset that is created from scanned aerial photos using the scanned raster type or frame camera raster type.</para>
+		/// <para>使用扫描栅格类型或帧照相机栅格类型，根据扫描航空照片创建的镶嵌数据集。</para>
 		/// </param>
 		public UpdateInteriorOrientation(object InMosaicDataset)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Update Interior Orientation</para>
+		/// <para>Tool Display Name : 更新内部方向</para>
 		/// </summary>
-		public override string DisplayName() => "Update Interior Orientation";
+		public override string DisplayName() => "更新内部方向";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateInteriorOrientation</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>The mosaic dataset that is created from scanned aerial photos using the scanned raster type or frame camera raster type.</para>
+		/// <para>使用扫描栅格类型或帧照相机栅格类型，根据扫描航空照片创建的镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>A query definition string that defines a subset of rasters for computing fiducials.</para>
+		/// <para>用于定义计算基准的栅格子集的查询定义字符串。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Fiducial Table</para>
-		/// <para>The fiducial table created using the Compute Fiducials tool.</para>
+		/// <para>使用计算基准工具创建的基准表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
@@ -88,12 +89,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Film Coordinate System</para>
-		/// <para>Defines the film coordinate system of the scanned aerial photograph. It is used in computing fiducial information and affine transformation construction.</para>
-		/// <para>No change—Maintain the coordinate system of the mosaic dataset. Do not change the film coordinate system of the scanned aerial photograph. Maintain the coordinate system of the mosaic dataset.</para>
-		/// <para>X right, Y up—The origin of the scanned photo&apos;s coordinate system is the center, and positive X points right and positive Y points up.</para>
-		/// <para>X up, Y left—The origin of the scanned photo&apos;s coordinate system is the center, and positive X points up and positive Y points left.</para>
-		/// <para>X left, Y down—The origin of the scanned photo&apos;s coordinate system is the center, and positive X points left and positive Y points down.</para>
-		/// <para>X down, Y right—The origin of the scanned photo&apos;s coordinate system is the center, and positive X points down and positive Y points right.</para>
+		/// <para>用于定义扫描航空像片的胶片坐标系。可用于计算基准信息和仿射变换构造。</para>
+		/// <para>不变—请保留镶嵌数据集的坐标系。不要更改扫描航空像片的胶片坐标系。请保留镶嵌数据集的坐标系。</para>
+		/// <para>X 右，Y 上—扫描照片坐标系的原点为中心，正 X 点向右，正 Y 点向上。</para>
+		/// <para>X 上，Y 左—扫描照片坐标系的原点为中心，正 X 点向上，正 Y 点向左。</para>
+		/// <para>X 左，Y 下—扫描照片坐标系的原点为中心，正 X 点向左，正 Y 点向下。</para>
+		/// <para>X 下，Y 右—扫描照片坐标系的原点为中心，正 X 点向下，正 Y 点向右。</para>
 		/// <para><see cref="FilmCoordinateSystemEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -103,9 +104,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Update Footprints</para>
-		/// <para>Generates or updates the footprints of the digital photos in the mosaic dataset.</para>
-		/// <para>Checked—The footprints will be generated or updated.</para>
-		/// <para>Unchecked—The footprints will not be generated or updated. This is the default</para>
+		/// <para>生成或更新镶嵌数据集中数字照片的轮廓线。</para>
+		/// <para>选中 - 生成或更新轮廓线。</para>
+		/// <para>未选中 - 不生成或更新轮廓线。这是默认设置</para>
 		/// <para><see cref="UpdateFootprintsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,38 +129,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FilmCoordinateSystemEnum 
 		{
 			/// <summary>
-			/// <para>No change—Maintain the coordinate system of the mosaic dataset. Do not change the film coordinate system of the scanned aerial photograph. Maintain the coordinate system of the mosaic dataset.</para>
+			/// <para>不变—请保留镶嵌数据集的坐标系。不要更改扫描航空像片的胶片坐标系。请保留镶嵌数据集的坐标系。</para>
 			/// </summary>
 			[GPValue("NO_CHANGE")]
-			[Description("No change")]
+			[Description("不变")]
 			No_change,
 
 			/// <summary>
-			/// <para>X right, Y up—The origin of the scanned photo&apos;s coordinate system is the center, and positive X points right and positive Y points up.</para>
+			/// <para>X 右，Y 上—扫描照片坐标系的原点为中心，正 X 点向右，正 Y 点向上。</para>
 			/// </summary>
 			[GPValue("X_RIGHT_Y_UP")]
-			[Description("X right, Y up")]
+			[Description("X 右，Y 上")]
 			X_RIGHT_Y_UP,
 
 			/// <summary>
-			/// <para>X up, Y left—The origin of the scanned photo&apos;s coordinate system is the center, and positive X points up and positive Y points left.</para>
+			/// <para>X 上，Y 左—扫描照片坐标系的原点为中心，正 X 点向上，正 Y 点向左。</para>
 			/// </summary>
 			[GPValue("X_UP_Y_LEFT")]
-			[Description("X up, Y left")]
+			[Description("X 上，Y 左")]
 			X_UP_Y_LEFT,
 
 			/// <summary>
-			/// <para>X left, Y down—The origin of the scanned photo&apos;s coordinate system is the center, and positive X points left and positive Y points down.</para>
+			/// <para>X 左，Y 下—扫描照片坐标系的原点为中心，正 X 点向左，正 Y 点向下。</para>
 			/// </summary>
 			[GPValue("X_LEFT_Y_DOWN")]
-			[Description("X left, Y down")]
+			[Description("X 左，Y 下")]
 			X_LEFT_Y_DOWN,
 
 			/// <summary>
-			/// <para>X down, Y right—The origin of the scanned photo&apos;s coordinate system is the center, and positive X points down and positive Y points right.</para>
+			/// <para>X 下，Y 右—扫描照片坐标系的原点为中心，正 X 点向下，正 Y 点向右。</para>
 			/// </summary>
 			[GPValue("X_DOWN_Y_RIGHT")]
-			[Description("X down, Y right")]
+			[Description("X 下，Y 右")]
 			X_DOWN_Y_RIGHT,
 
 		}
@@ -170,14 +171,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum UpdateFootprintsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The footprints will be generated or updated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE")]
 			UPDATE,
 
 			/// <summary>
-			/// <para>Unchecked—The footprints will not be generated or updated. This is the default</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_UPDATE")]

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Export MGCP Metadata</para>
+	/// <para>Export MGCP Metadata</para>
 	/// <para>Exports Multinational Geospatial Co-production Program (MGCP) metadata datasets (Cell, Subregion, and Source feature classes) to an XML file.</para>
 	/// </summary>
 	public class ExportMetadata : AbstractGPProcess

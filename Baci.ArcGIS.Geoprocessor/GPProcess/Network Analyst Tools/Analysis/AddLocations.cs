@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Add Locations</para>
-	/// <para>Adds input features or records to a network analysis layer. The inputs are added to specific sublayers such as stops and barriers.</para>
+	/// <para>添加位置</para>
+	/// <para>将输入要素或记录添加到网络分析图层。向特定子图层（如“停靠点”图层和“障碍”图层）添加输入。</para>
 	/// </summary>
 	public class AddLocations : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InNetworkAnalysisLayer">
 		/// <para>Input Network Analysis Layer</para>
-		/// <para>The network analysis layer to which the network analysis objects will be added.</para>
+		/// <para>要添加网络分析对象的网络分析图层。</para>
 		/// </param>
 		/// <param name="SubLayer">
 		/// <para>Sub Layer</para>
-		/// <para>The name of the sublayer of the network analysis layer to which the network analysis objects will be added.</para>
+		/// <para>要添加网络分析对象的网络分析图层的子图层名称。</para>
 		/// </param>
 		/// <param name="InTable">
 		/// <para>Input Locations</para>
-		/// <para>The feature class or table containing the locations to be added to the network analysis sublayer.</para>
+		/// <para>包含要添加到网络分析子图层的位置的要素类或表。</para>
 		/// </param>
 		public AddLocations(object InNetworkAnalysisLayer, object SubLayer, object InTable)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Locations</para>
+		/// <para>Tool Display Name : 添加位置</para>
 		/// </summary>
-		public override string DisplayName() => "Add Locations";
+		public override string DisplayName() => "添加位置";
 
 		/// <summary>
 		/// <para>Tool Name : AddLocations</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>
-		/// <para>The network analysis layer to which the network analysis objects will be added.</para>
+		/// <para>要添加网络分析对象的网络分析图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPNALayer()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Sub Layer</para>
-		/// <para>The name of the sublayer of the network analysis layer to which the network analysis objects will be added.</para>
+		/// <para>要添加网络分析对象的网络分析图层的子图层名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -91,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Locations</para>
-		/// <para>The feature class or table containing the locations to be added to the network analysis sublayer.</para>
+		/// <para>包含要添加到网络分析子图层的位置的要素类或表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -99,11 +100,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Field Mappings</para>
-		/// <para>The mapping between the input fields of the network analysis sublayer to which you&apos;re adding locations and the fields in your input data or specified constants.</para>
-		/// <para>Input sublayers of network analysis layers have a set of input fields that you can modify or populate according to the needs of your analysis. When adding locations to the sublayer, you can use this parameter to map field values from your input table to these fields in the sublayer. You can also use field mappings to specify a constant default value for each property.</para>
-		/// <para>If neither the Field value nor the Default value is specified for a property, the resulting network analysis objects will have null values for that property.</para>
-		/// <para>A complete list of input fields for each sublayer for each network analysis layer type is available in the documentation for each layer. For example, examine the Route layer&apos;s Stops sublayer&apos;s input fields.</para>
-		/// <para>If the data you are loading contains network locations or location ranges based on the network dataset used for the analysis, choose the Use Network Location Fields option from the drop-down menu. Adding the network analysis objects using the network location fields is quicker than loading by geometry.</para>
+		/// <para>您要添加位置的网络分析子图层的输入字段与输入数据或指定常量中的字段之间的映射。</para>
+		/// <para>网络分析图层的输入子图层具有一组输入字段，您可以根据分析需要来修改或填充这些输入字段。将位置添加到子图层时，可以使用此参数将输入表中的字段值映射到子图层中的这些字段。您还可以使用字段映射为每个属性指定恒定默认值。</para>
+		/// <para>如果属性的字段和默认值都没有指定，则生成的网络分析对象的属性值为空。</para>
+		/// <para>每个图层的文档中提供了每种网络分析图层类型的每个子图层的输入字段的完整列表。例如，检查 Route 图层 Stops 子图层的输入字段。</para>
+		/// <para>如果正在加载的数据中含有基于用于分析的网络数据集的网络位置或位置范围，请从下拉菜单中选择使用网络位置字段选项。使用网络位置字段来添加网络分析对象比按照几何加载速度更快。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[NAClassFieldMap()]
@@ -111,10 +112,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Search Tolerance</para>
-		/// <para>The search tolerance that will be used to locate the input features on the network. Features that are outside the search tolerance are left unlocated. The parameter includes a value and units for the tolerance.</para>
-		/// <para>The default is 5000 meters.</para>
-		/// <para>The parameter is not used when adding locations to sublayers with line or polygon geometry, such as Line Barriers and Polygon Barriers.</para>
-		/// <para>This parameter is not used when the input network analysis layer&apos;s network data source is a portal service.</para>
+		/// <para>在网络上定位输入要素所使用的搜索容差。搜索容差以外的要素将保持未定位状态。该参数包括容差的值和单位。</para>
+		/// <para>默认值为 5000 米。</para>
+		/// <para>在将位置添加到具有线或面几何（如“线障碍”和“面障碍”）的子图层时，不使用该参数。</para>
+		/// <para>当输入网络分析图层的网络数据源为门户服务时，不使用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -123,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Sort Field</para>
-		/// <para>The field on which the network analysis objects are sorted as they are added to the network analysis layer. The default is the ObjectID field in the input feature class or the table.</para>
+		/// <para>当网络分析对象被添加到网络分析图层时用于排序网络分析对象的字段。默认设置为输入要素类或表中的 ObjectID 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -134,16 +135,16 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Search Criteria</para>
-		/// <para>The sources in the network dataset that will be searched when calculating network locations and the portions of geometry (also known as snap types) that will be used. For example, if the network dataset references separate feature classes representing streets and sidewalks, you can choose to locate inputs on streets but not on sidewalks.</para>
-		/// <para>The following are the available snap type choices for each network source:</para>
-		/// <para>SHAPE—The point will locate on the closest point of an element in this network source.</para>
-		/// <para>MIDDLE—The point will locate on the closest midpoint of an element in this network source.</para>
-		/// <para>END—The point will locate on the closest endpoint of an element in this network source.</para>
-		/// <para>NONE—The point will not locate on elements in this network source.</para>
-		/// <para>The MIDDLE and END options are maintained for backward compatibility. Use the SHAPE option to locate your inputs on a particular network source; otherwise, use NONE.</para>
-		/// <para>When calculating locations for line or polygon features, only the SHAPE snap type is used, even if other snap types are specified.</para>
-		/// <para>The default value is SHAPE for all network sources except override junctions created by running the Dissolve Network tool and system junctions, which have a default of NONE.</para>
-		/// <para>This parameter is not used when the network data source is a portal service.</para>
+		/// <para>计算网络位置时将搜索网络数据集中的源以及将使用几何的部分（也称为捕捉类型）。例如，如果网络数据集引用表示街道和人行道的单独要素类，则可以选择在街道上定位输入，而非人行道。</para>
+		/// <para>以下是每个网络源可用的捕捉类型选择：</para>
+		/// <para>SHAPE - 点将位于此网络源中元素的最近点处。</para>
+		/// <para>MIDDLE - 点将位于此网络源中元素的最近中点处。</para>
+		/// <para>END - 点将位于此网络源中元素的最近端点处。</para>
+		/// <para>NONE - 点将不位于此网络源的元素上。</para>
+		/// <para>针对向后兼容性，将保留 MIDDLE 和 END 选项。使用 SHAPE 选项在特定的网络源中查找输入；否则，请使用 NONE。</para>
+		/// <para>计算线或面要素的位置时，即使指定了其他捕捉类型，也将仅使用 SHAPE 捕捉类型。</para>
+		/// <para>除通过运行融合网络工具创建的覆盖交汇点和系统交汇点外（其默认值为 NONE），其他所有网络源的默认值为 SHAPE。</para>
+		/// <para>网络数据源为门户服务时此参数不可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -153,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Find Closest among All Classes</para>
-		/// <para>This parameter is only available via Python.</para>
+		/// <para>此参数仅可通过 Python 获得。</para>
 		/// <para><see cref="MatchTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -163,9 +164,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Append to Existing Locations</para>
-		/// <para>Specifies whether new network analysis objects will be appended to existing objects.</para>
-		/// <para>Checked—The new network analysis objects will be appended to the existing set of objects in the selected sublayer. This is the default.</para>
-		/// <para>Unchecked—The existing network analysis objects will be deleted and replaced with the new objects.</para>
+		/// <para>指定是否将新网络分析对象附加到现有对象。</para>
+		/// <para>选中 - 会将新的网络分析对象追加到所选子图层中的现有对象集中。这是默认设置。</para>
+		/// <para>未选中 - 将删除现有的网络分析对象并使用新的对象来代替。</para>
 		/// <para><see cref="AppendEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -175,13 +176,13 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Snap to Network</para>
-		/// <para>Specifies whether the inputs will be snapped to their calculated network locations or will be represented at their original geographic location.</para>
-		/// <para>To use curb approach in your analysis to control which side of the road a vehicle must use to approach a location, do not snap the inputs to their network locations, or use a snap offset to ensure that the point remains clearly to one side of the road.</para>
-		/// <para>The parameter is not used when adding locations to sublayers with line or polygon geometry, such as Line Barriers and Polygon Barriers.</para>
-		/// <para>This parameter is not used when the input network analysis layer&apos;s network data source is a portal service.</para>
-		/// <para>If, after adding locations, you change the network analysis layer&apos;s travel mode or add or remove barriers, the network locations of affected points are automatically recalculated at solve time to ensure that they remain valid. This automatic recalculation process will not consider any settings, such as search queries, used previously when calculating network locations. Instead, it uses only the geometry of the input feature and the network analysis layer&apos;s travel mode and barriers. To make it more likely that the same network locations will be chosen if the point&apos;s network locations are automatically recalculated, use this parameter to snap the inputs to the network locations calculated while running this tool. In this way, the desired network location will be preserved in the geometry of the input point.</para>
-		/// <para>Checked—The geometries of the network locations will be snapped to their network locations.</para>
-		/// <para>Unchecked—The geometries of the network locations will be based on the geometries of the input features. This is the default.</para>
+		/// <para>指定将输入捕捉到其计算出的网络位置，还是由其原始地理位置表示它。</para>
+		/// <para>要在分析中使用路边通道来控制车辆在靠近位置时必须使用道路的哪一侧，请勿将输入捕捉到其网络位置，或使用捕捉偏移来确保该点始终清晰地保持在道路的一侧。</para>
+		/// <para>在将位置添加到具有线或面几何（如“线障碍”和“面障碍”）的子图层时，不使用该参数。</para>
+		/// <para>当输入网络分析图层的网络数据源为门户服务时，不使用此参数。</para>
+		/// <para>如果在添加位置后更改网络分析图层的出行模式，或者添加或移除障碍，则在求解时将自动重新计算受影响点的网络位置，以确保其仍然有效。此自动重新计算过程将不考虑先前在计算网络位置时使用的任何设置，例如搜索查询。相反，它仅使用输入要素的几何以及网络分析图层的出行模式和障碍。要在自动重新计算该点的网络位置时，提升选择相同网络位置的可能性，请使用此参数将输入捕捉到运行此工具时计算出的网络位置。这样，所需的网络位置将保留在输入点的几何中。</para>
+		/// <para>选中 - 网络位置的几何将被捕捉到其网络位置。</para>
+		/// <para>未选中 - 网络位置的几何将基于输入要素的几何。这是默认设置。</para>
 		/// <para><see cref="SnapToPositionAlongNetworkEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -191,10 +192,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Snap Offset</para>
-		/// <para>When snapping a point to the network, you can apply an offset distance. An offset distance of zero means the point will be coincident with the network feature (typically a line). To offset the point from the network feature, enter an offset distance. The offset is in relation to the original point location; that is, if the original point was on the left side, its new location will be offset to the left. If it was originally on the right side, its new location will be offset to the right.</para>
-		/// <para>The default is 5 meters. However, this parameter is ignored if Snap to Network is unchecked.</para>
-		/// <para>The parameter is not used when adding locations to sublayers with line or polygon geometry, such as Line Barriers and Polygon Barriers.</para>
-		/// <para>This parameter is not used when the input network analysis layer&apos;s network data source is a portal service.</para>
+		/// <para>将点捕捉到网络时，您可以应用偏移距离。偏移距离为零表示点将与网络要素（通常是线）重合。要使点偏离网络要素，请输入偏移距离。偏移与起始点的位置有关；即，如果起始点在左侧，它的新位置就会向左偏移。如果起始点在右侧，它的新位置就会向右偏移。</para>
+		/// <para>默认值为 5 米。但是，如果未选中捕捉到网络，则会忽略此参数。</para>
+		/// <para>在将位置添加到具有线或面几何（如“线障碍”和“面障碍”）的子图层时，不使用该参数。</para>
+		/// <para>当输入网络分析图层的网络数据源为门户服务时，不使用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -202,7 +203,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Exclude Restricted Portions of the Network</para>
-		/// <para>This parameter is only available via Python.</para>
+		/// <para>此参数仅可通过 Python 获得。</para>
 		/// <para><see cref="ExcludeRestrictedElementsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -212,11 +213,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Search Query</para>
-		/// <para>Defines a query that will restrict the search to a subset of the features in a source feature class. This is useful if you don&apos;t want to locate on features that may be unsuitable for your analysis. For example, you can use the query to exclude all features with a particular road class.</para>
-		/// <para>A separate SQL expression can be specified per source feature class of the network dataset. By default, no query is used for any source.</para>
-		/// <para>This parameter is not used when the network data source is a portal service.</para>
-		/// <para>The SQL expression for a given network source is specified by selecting the source name in the Name column and using the SQL expression builder in the Query column. For more information on SQL syntax, see SQL reference for query expressions used in ArcGIS.</para>
-		/// <para>Any network source not explicitly specified in the tool dialog box will have no query applied.</para>
+		/// <para>定义将搜索限制在源要素类的要素子集内的查询。这在不想查找可能不适合分析的要素时很有用。例如，您可以使用查询来排除具有特定道路类的所有要素。</para>
+		/// <para>可以为网络数据集的每个源要素类指定一个单独的 SQL 表达式。默认情况下任何源都不使用查询。</para>
+		/// <para>网络数据源为门户服务时此参数不可用。</para>
+		/// <para>通过在名称列内选择源名称并在查询列中使用 SQL 表达式构建器来指定给定网络源的 SQL 表达式。有关 SQL 语法的详细信息，请参阅在 ArcGIS 中使用的查询表达式的 SQL 参考。</para>
+		/// <para>在工具对话框中未明确指定的任何网络源都不会应用查询。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -269,14 +270,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum AppendEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The new network analysis objects will be appended to the existing set of objects in the selected sublayer. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("APPEND")]
 			APPEND,
 
 			/// <summary>
-			/// <para>Unchecked—The existing network analysis objects will be deleted and replaced with the new objects.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CLEAR")]
@@ -290,14 +291,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum SnapToPositionAlongNetworkEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The geometries of the network locations will be snapped to their network locations.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SNAP")]
 			SNAP,
 
 			/// <summary>
-			/// <para>Unchecked—The geometries of the network locations will be based on the geometries of the input features. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SNAP")]

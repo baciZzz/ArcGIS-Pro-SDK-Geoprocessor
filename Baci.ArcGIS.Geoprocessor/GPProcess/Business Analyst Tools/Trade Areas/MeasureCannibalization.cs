@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Measure Cannibalization</para>
+	/// <para>Measure Cannibalization</para>
 	/// <para>Calculates the amount of overlap between two or more polygons. Overlap refers to the extent of the polygons beyond intersection.</para>
 	/// </summary>
 	public class MeasureCannibalization : AbstractGPProcess

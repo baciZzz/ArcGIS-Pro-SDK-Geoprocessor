@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Trim Line</para>
-	/// <para>Removes portions of a line that extend a specified distance past a line intersection (dangles). Any line that does not touch another line at both endpoints can be trimmed, but only the portion of the line that extends past the intersection by the specified distance will be removed.</para>
+	/// <para>修剪线</para>
+	/// <para>移除线上超过交点指定距离的部分（悬挂线）。 可修剪两个端点均未与其他线相接触的任何线，但只能移除超过交点指定距离的线段。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The line input features to be trimmed.</para>
+		/// <para>要修剪的线输入要素。</para>
 		/// </param>
 		public TrimLine(object InFeatures)
 		{
@@ -30,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Trim Line</para>
+		/// <para>Tool Display Name : 修剪线</para>
 		/// </summary>
-		public override string DisplayName() => "Trim Line";
+		public override string DisplayName() => "修剪线";
 
 		/// <summary>
 		/// <para>Tool Name : TrimLine</para>
@@ -66,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The line input features to be trimmed.</para>
+		/// <para>要修剪的线输入要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -76,8 +77,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Dangle Length</para>
-		/// <para>Line segments that are shorter than the specified dangle length and do not touch another line at both endpoints (dangles) will be trimmed.</para>
-		/// <para>If a dangle length is not specified, all dangling lines (line segments that do not touch another line at both endpoints), regardless of length, will be trimmed back to the point of intersection.</para>
+		/// <para>将修剪长度短于指定“悬挂长度”且两个端点均未接触到其他线的线段（悬挂线）。</para>
+		/// <para>如果未指定“悬挂长度”，则将所有悬挂线（两个端点均未接触到其他线的线段）均修剪至交点处，而不考虑悬挂线的长度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -85,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Delete Short Features</para>
-		/// <para>Specifies whether line segments which are less than the dangle length and are free-standing will be deleted.</para>
-		/// <para>Checked—Delete short free-standing features. This is the default.</para>
-		/// <para>Unchecked—Do not delete short free-standing features.</para>
+		/// <para>指定是否删除长度短于悬挂长度的独立线段。</para>
+		/// <para>选中 - 删除独立的短要素。 这是默认设置。</para>
+		/// <para>未选中 - 不删除独立的短要素。</para>
 		/// <para><see cref="DeleteShortsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -119,14 +120,14 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		public enum DeleteShortsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Delete short free-standing features. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_SHORT")]
 			DELETE_SHORT,
 
 			/// <summary>
-			/// <para>Unchecked—Do not delete short free-standing features.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_SHORT")]

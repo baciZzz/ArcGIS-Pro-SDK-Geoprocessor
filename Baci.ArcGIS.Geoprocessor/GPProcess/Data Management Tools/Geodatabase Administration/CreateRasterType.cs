@@ -12,6 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Create Raster Type</para>
 	/// <para>Create Raster Type</para>
+	/// <para>Create Raster Type</para>
 	/// </summary>
 	[Obsolete()]
 	public class CreateRasterType : AbstractGPProcess

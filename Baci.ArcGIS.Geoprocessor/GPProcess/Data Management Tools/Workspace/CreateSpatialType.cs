@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Spatial Type</para>
-	/// <para>Adds the ST_Geometry SQL type, subtypes, and functions to an Oracle or a PostgreSQL database. This allows you to use the ST_Geometry SQL type to store geometries in a database that does not contain a geodatabase. You can also use this tool to upgrade the existing ST_Geometry type, subtypes, and functions in an Oracle or a PostgreSQL database.</para>
+	/// <para>创建空间类型</para>
+	/// <para>用于向 Oracle 或 PostgreSQL 数据库添加 ST_Geometry SQL 类型、子类型和函数。这将允许您使用 ST_Geometry SQL 类型将几何存储在不包含地理数据库的数据库中。也可使用此工具更新 Oracle 或 PostgreSQL 数据库中现有的 ST_Geometry 类型、子类型与函数。</para>
 	/// </summary>
 	public class CreateSpatialType : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputDatabase">
 		/// <para>Input Database Connection</para>
-		/// <para>The input_database is the database connection file (.sde) that connects to the Oracle or PostgreSQL database. You must connect as a database administrator user; in Oracle, you must connect as the sys user.</para>
+		/// <para>input_database 是连接至 Oracle 或 PostgreSQL 数据库的数据库连接文件 (.sde)。必须以数据库管理员用户的身份进行连接；在 Oracle 中，您必须以 sys 用户的身份进行连接。</para>
 		/// </param>
 		/// <param name="SdeUserPassword">
 		/// <para>SDE User Password</para>
-		/// <para>The password for the sde database user. If the sde user does not exist in the database, it will be created and will use the password you provide. The password policy of the underlying database will be enforced. If the sde user already exists in the database or database cluster, this password must match the existing password.</para>
+		/// <para>sde 数据库用户的密码。如果数据库中不存在 sde 用户，则将创建用户并使用提供的密码。将强制实行基础数据库的密码策略。如果数据库或数据库群集中已存在 sde 用户，则此密码必须与现有密码相匹配。</para>
 		/// </param>
 		public CreateSpatialType(object InputDatabase, object SdeUserPassword)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Spatial Type</para>
+		/// <para>Tool Display Name : 创建空间类型</para>
 		/// </summary>
-		public override string DisplayName() => "Create Spatial Type";
+		public override string DisplayName() => "创建空间类型";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSpatialType</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
-		/// <para>The input_database is the database connection file (.sde) that connects to the Oracle or PostgreSQL database. You must connect as a database administrator user; in Oracle, you must connect as the sys user.</para>
+		/// <para>input_database 是连接至 Oracle 或 PostgreSQL 数据库的数据库连接文件 (.sde)。必须以数据库管理员用户的身份进行连接；在 Oracle 中，您必须以 sys 用户的身份进行连接。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>SDE User Password</para>
-		/// <para>The password for the sde database user. If the sde user does not exist in the database, it will be created and will use the password you provide. The password policy of the underlying database will be enforced. If the sde user already exists in the database or database cluster, this password must match the existing password.</para>
+		/// <para>sde 数据库用户的密码。如果数据库中不存在 sde 用户，则将创建用户并使用提供的密码。将强制实行基础数据库的密码策略。如果数据库或数据库群集中已存在 sde 用户，则此密码必须与现有密码相匹配。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPEncryptedString()]
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Tablespace Name</para>
-		/// <para>For Oracle, you can provide the name for a tablespace to be set as the default tablespace for the sde user. If the tablespace does not already exist, it will be created in the Oracle default storage location. If a tablespace with the specified name already exists, it will be set as the sde user's default.</para>
+		/// <para>对于 Oracle，可提供将设置为 sde 用户的默认表空间的表空间名称。如果表空间不存在，则将在 Oracle 默认存储位置创建表空间。如果具有指定名称的表空间已存在，则其将设置为 sde 用户的默认表空间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>ST_Geometry Shape Library Path</para>
-		/// <para>For Oracle, provide the location on the Oracle server where you placed the st_shape library.</para>
+		/// <para>对于 Oracle，提供 Oracle 服务器上用于放置 st_shape 库的位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]

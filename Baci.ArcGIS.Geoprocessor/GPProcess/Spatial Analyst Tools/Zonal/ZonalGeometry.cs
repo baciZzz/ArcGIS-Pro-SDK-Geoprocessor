@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Zonal Geometry</para>
-	/// <para>Calculates the specified geometry measure (area, perimeter, thickness, or the characteristics of ellipse) for each zone in a dataset.</para>
+	/// <para>分区几何统计</para>
+	/// <para>为数据集中的各个区域计算指定的几何测量值（面积、周长、厚度或者椭圆的特征值）。</para>
 	/// </summary>
 	public class ZonalGeometry : AbstractGPProcess
 	{
@@ -20,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InZoneData">
 		/// <para>Input raster or feature zone data</para>
-		/// <para>The dataset that defines the zones.</para>
-		/// <para>The zones can be defined by an integer raster or a feature layer.</para>
+		/// <para>定义区域的数据集。</para>
+		/// <para>可通过整型栅格或要素图层来定义区域。</para>
 		/// </param>
 		/// <param name="ZoneField">
 		/// <para>Zone field</para>
-		/// <para>The field that contains the values that define each zone.</para>
-		/// <para>It must be an integer field of the zone dataset.</para>
+		/// <para>包含定义每个区域的值的字段。</para>
+		/// <para>该字段必须是区域数据集的整型字段。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output zonal geometry raster.</para>
+		/// <para>输出分区几何栅格。</para>
 		/// </param>
 		public ZonalGeometry(object InZoneData, object ZoneField, object OutRaster)
 		{
@@ -40,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Zonal Geometry</para>
+		/// <para>Tool Display Name : 分区几何统计</para>
 		/// </summary>
-		public override string DisplayName() => "Zonal Geometry";
+		public override string DisplayName() => "分区几何统计";
 
 		/// <summary>
 		/// <para>Tool Name : ZonalGeometry</para>
@@ -76,8 +77,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature zone data</para>
-		/// <para>The dataset that defines the zones.</para>
-		/// <para>The zones can be defined by an integer raster or a feature layer.</para>
+		/// <para>定义区域的数据集。</para>
+		/// <para>可通过整型栅格或要素图层来定义区域。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -89,8 +90,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Zone field</para>
-		/// <para>The field that contains the values that define each zone.</para>
-		/// <para>It must be an integer field of the zone dataset.</para>
+		/// <para>包含定义每个区域的值的字段。</para>
+		/// <para>该字段必须是区域数据集的整型字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output zonal geometry raster.</para>
+		/// <para>输出分区几何栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -108,11 +109,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Geometry type</para>
-		/// <para>Geometry type to be calculated.</para>
-		/// <para>Area—The area for each zone.</para>
-		/// <para>Perimeter—The perimeter for each zone.</para>
-		/// <para>Thickness—The deepest (or thickest) point within the zone from its surrounding cells.</para>
-		/// <para>Centroid—Locates the centroids of each zone.</para>
+		/// <para>要计算的几何类型。</para>
+		/// <para>面积—各个区域的面积。</para>
+		/// <para>周长—各个区域的周长。</para>
+		/// <para>厚度—区域中最深（或最厚）的点距其周围像元的距离。</para>
+		/// <para>质心—定位各个区域的质心。</para>
 		/// <para><see cref="GeometryTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -122,8 +123,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>The cell size of the output raster that will be created.</para>
-		/// <para>This parameter can be defined by a numeric value or obtained from an existing raster dataset. If the cell size hasn&apos;t been explicitly specified as the parameter value, the environment cell size value will be used if specified; otherwise, additional rules will be used to calculate it from the other inputs. See the usage section for more detail.</para>
+		/// <para>将创建的输出栅格的像元大小。</para>
+		/// <para>此参数可以通过数值进行定义，也可以从现有栅格数据集获取。如果未将像元大小明确指定为参数值，则将使用环境像元大小值（如果已指定）；否则，将使用其他规则通过其他输出计算像元大小。有关详细信息，请参阅用法部分。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -150,31 +151,31 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum GeometryTypeEnum 
 		{
 			/// <summary>
-			/// <para>Area—The area for each zone.</para>
+			/// <para>面积—各个区域的面积。</para>
 			/// </summary>
 			[GPValue("AREA")]
-			[Description("Area")]
+			[Description("面积")]
 			Area,
 
 			/// <summary>
-			/// <para>Perimeter—The perimeter for each zone.</para>
+			/// <para>周长—各个区域的周长。</para>
 			/// </summary>
 			[GPValue("PERIMETER")]
-			[Description("Perimeter")]
+			[Description("周长")]
 			Perimeter,
 
 			/// <summary>
-			/// <para>Thickness—The deepest (or thickest) point within the zone from its surrounding cells.</para>
+			/// <para>厚度—区域中最深（或最厚）的点距其周围像元的距离。</para>
 			/// </summary>
 			[GPValue("THICKNESS")]
-			[Description("Thickness")]
+			[Description("厚度")]
 			Thickness,
 
 			/// <summary>
-			/// <para>Centroid—Locates the centroids of each zone.</para>
+			/// <para>质心—定位各个区域的质心。</para>
 			/// </summary>
 			[GPValue("CENTROID")]
-			[Description("Centroid")]
+			[Description("质心")]
 			Centroid,
 
 		}

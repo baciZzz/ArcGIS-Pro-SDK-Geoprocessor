@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Prepare Aviation Data</para>
+	/// <para>Prepare Aviation Data</para>
 	/// <para>Evaluates aviation data based on organizationally specific JSON scripts, returning values necessary for cartographic labeling and symbolization. Returned values are stored in a single attribute of your features.</para>
 	/// </summary>
 	public class PrepareAviationData : AbstractGPProcess

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Remove Suitability Criteria</para>
+	/// <para>Remove Suitability Criteria</para>
 	/// <para>Removes criteria from a suitability analysis layer.</para>
 	/// </summary>
 	public class RemoveSuitabilityCriteria : AbstractGPProcess

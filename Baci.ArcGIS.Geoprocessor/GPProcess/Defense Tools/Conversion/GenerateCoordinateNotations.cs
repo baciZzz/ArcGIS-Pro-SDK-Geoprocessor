@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Generate Coordinate Notations</para>
-	/// <para>Converts source coordinates in a table to multiple coordinate formats.</para>
+	/// <para>生成坐标符号</para>
+	/// <para>用于将表中的源坐标转换为多种坐标格式。</para>
 	/// </summary>
 	public class GenerateCoordinateNotations : AbstractGPProcess
 	{
@@ -20,31 +21,31 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The table containing the source coordinates.</para>
+		/// <para>包含源坐标的表。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>The output table containing the converted coordinates.</para>
+		/// <para>包含转换后的坐标的输出表。</para>
 		/// </param>
 		/// <param name="XOrLonField">
 		/// <para>X Field (longitude, UTM, MGRS, USNG, GARS, GEOREF)</para>
-		/// <para>The field in the input table containing the x or longitude coordinates.</para>
+		/// <para>输入表中包含 x 或经度坐标的字段。</para>
 		/// </param>
 		/// <param name="InCoordinateFormat">
 		/// <para>Input Coordinate Format</para>
-		/// <para>Specifies the format of the input table coordinates.</para>
-		/// <para>Decimal Degrees - One Field—Coordinates will be formatted in a decimal degrees coordinate pair stored in a single field with coordinates separated by a space, comma, or slash.</para>
-		/// <para>Decimal Degrees - Two Fields—Coordinates will be formatted in a decimal degrees coordinate pair stored in two table fields. This is the default.</para>
-		/// <para>Degrees and Decimal Minutes - One Field—Coordinates will be formatted in a degrees and decimal minutes coordinate pair stored in a single table field with coordinates separated by a space, comma, or slash.</para>
-		/// <para>Degrees and Decimal Minutes - Two Fields—Coordinates will be formatted in a degrees and decimal minutes coordinate pair stored in two table fields.</para>
-		/// <para>Degrees, Minutes, and Seconds - One Field—Coordinates will be formatted in a degrees, minutes, and seconds coordinate pair stored in a single table field with coordinates separated by a space, comma, or slash.</para>
-		/// <para>Degrees, Minutes, and Seconds - Two Fields—Coordinates will be formatted in a degrees, minutes, and seconds coordinate pair stored in two table fields.</para>
-		/// <para>Global Area Reference System—Coordinates will be formatted in Global Area Reference System.</para>
-		/// <para>World Geographic Reference System— Coordinates will be formatted in World Geographic Reference System.</para>
-		/// <para>Universal Transverse Mercator Bands—Coordinates will be formatted in Universal Transverse Mercator coordinate bands.</para>
-		/// <para>Universal Transverse Mercator Zones—Coordinates will be formatted in Universal Transverse Mercator coordinate zones.</para>
-		/// <para>United States National Grid—Coordinates will be formatted in United States National Grid.</para>
-		/// <para>Military Grid Reference System—Coordinates will be formatted in Military Grid Reference System.</para>
+		/// <para>指定输入表坐标的格式。</para>
+		/// <para>十进制度 - 一个字段—坐标将采用存储在单个字段中的十进制度坐标对格式，其中坐标以空格、逗号或斜线分隔。</para>
+		/// <para>十进制度 - 两个字段—坐标将采用存储在两个表字段中的十进制度坐标对格式。这是默认设置。</para>
+		/// <para>度和十进制分 - 一个字段—坐标将采用存储在单个表字段中的度和十进制分坐标对格式，其中坐标以空格、逗号或斜线分隔。</para>
+		/// <para>度和十进制分 - 两个字段—坐标将采用存储在两个表字段中的度和十进制分坐标对格式。</para>
+		/// <para>度分秒 - 一个字段—坐标将采用存储在单个表字段中的度、分和秒坐标对格式，其中坐标以空格、逗号或斜线分隔。</para>
+		/// <para>度分秒 - 两个字段—坐标将采用存储在两个表字段中的度、分和秒坐标对格式。</para>
+		/// <para>全球区域参考系统—坐标将采用全球区域参考系格式。</para>
+		/// <para>世界地理参考系— 坐标将采用世界地理参考系格式。</para>
+		/// <para>通用横轴墨卡托坐标带—坐标将采用通用横轴墨卡托坐标带格式。</para>
+		/// <para>通用横轴墨卡托坐标区域—坐标将采用通用横轴墨卡托坐标区域格式。</para>
+		/// <para>美国国家格网—坐标将采用美国国家网格格式。</para>
+		/// <para>军事格网参考系—坐标将采用军事格网参考系格式。</para>
 		/// </param>
 		public GenerateCoordinateNotations(object InTable, object OutTable, object XOrLonField, object InCoordinateFormat)
 		{
@@ -55,9 +56,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Coordinate Notations</para>
+		/// <para>Tool Display Name : 生成坐标符号</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Coordinate Notations";
+		public override string DisplayName() => "生成坐标符号";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateCoordinateNotations</para>
@@ -91,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The table containing the source coordinates.</para>
+		/// <para>包含源坐标的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -99,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The output table containing the converted coordinates.</para>
+		/// <para>包含转换后的坐标的输出表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -107,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>X Field (longitude, UTM, MGRS, USNG, GARS, GEOREF)</para>
-		/// <para>The field in the input table containing the x or longitude coordinates.</para>
+		/// <para>输入表中包含 x 或经度坐标的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -115,19 +116,19 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Coordinate Format</para>
-		/// <para>Specifies the format of the input table coordinates.</para>
-		/// <para>Decimal Degrees - One Field—Coordinates will be formatted in a decimal degrees coordinate pair stored in a single field with coordinates separated by a space, comma, or slash.</para>
-		/// <para>Decimal Degrees - Two Fields—Coordinates will be formatted in a decimal degrees coordinate pair stored in two table fields. This is the default.</para>
-		/// <para>Degrees and Decimal Minutes - One Field—Coordinates will be formatted in a degrees and decimal minutes coordinate pair stored in a single table field with coordinates separated by a space, comma, or slash.</para>
-		/// <para>Degrees and Decimal Minutes - Two Fields—Coordinates will be formatted in a degrees and decimal minutes coordinate pair stored in two table fields.</para>
-		/// <para>Degrees, Minutes, and Seconds - One Field—Coordinates will be formatted in a degrees, minutes, and seconds coordinate pair stored in a single table field with coordinates separated by a space, comma, or slash.</para>
-		/// <para>Degrees, Minutes, and Seconds - Two Fields—Coordinates will be formatted in a degrees, minutes, and seconds coordinate pair stored in two table fields.</para>
-		/// <para>Global Area Reference System—Coordinates will be formatted in Global Area Reference System.</para>
-		/// <para>World Geographic Reference System— Coordinates will be formatted in World Geographic Reference System.</para>
-		/// <para>Universal Transverse Mercator Bands—Coordinates will be formatted in Universal Transverse Mercator coordinate bands.</para>
-		/// <para>Universal Transverse Mercator Zones—Coordinates will be formatted in Universal Transverse Mercator coordinate zones.</para>
-		/// <para>United States National Grid—Coordinates will be formatted in United States National Grid.</para>
-		/// <para>Military Grid Reference System—Coordinates will be formatted in Military Grid Reference System.</para>
+		/// <para>指定输入表坐标的格式。</para>
+		/// <para>十进制度 - 一个字段—坐标将采用存储在单个字段中的十进制度坐标对格式，其中坐标以空格、逗号或斜线分隔。</para>
+		/// <para>十进制度 - 两个字段—坐标将采用存储在两个表字段中的十进制度坐标对格式。这是默认设置。</para>
+		/// <para>度和十进制分 - 一个字段—坐标将采用存储在单个表字段中的度和十进制分坐标对格式，其中坐标以空格、逗号或斜线分隔。</para>
+		/// <para>度和十进制分 - 两个字段—坐标将采用存储在两个表字段中的度和十进制分坐标对格式。</para>
+		/// <para>度分秒 - 一个字段—坐标将采用存储在单个表字段中的度、分和秒坐标对格式，其中坐标以空格、逗号或斜线分隔。</para>
+		/// <para>度分秒 - 两个字段—坐标将采用存储在两个表字段中的度、分和秒坐标对格式。</para>
+		/// <para>全球区域参考系统—坐标将采用全球区域参考系格式。</para>
+		/// <para>世界地理参考系— 坐标将采用世界地理参考系格式。</para>
+		/// <para>通用横轴墨卡托坐标带—坐标将采用通用横轴墨卡托坐标带格式。</para>
+		/// <para>通用横轴墨卡托坐标区域—坐标将采用通用横轴墨卡托坐标区域格式。</para>
+		/// <para>美国国家格网—坐标将采用美国国家网格格式。</para>
+		/// <para>军事格网参考系—坐标将采用军事格网参考系格式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -136,8 +137,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Y Field (latitude)</para>
-		/// <para>The field in the input table containing the y or latitude coordinates.</para>
-		/// <para>The Y Field (latitude) parameter is used when the Input Coordinate Format parameter is set to Decimal Degrees - Two Fields, Degrees and Decimal Minutes - Two Fields, or Degrees Minutes and Seconds - Two Fields.</para>
+		/// <para>输入表中包含 y 或纬度坐标的字段。</para>
+		/// <para>当输入坐标格式参数设置为十进制度 - 两个字段、度和十进制分 - 两个字段或度分秒 - 两个字段时，将使用 Y 字段（纬度）参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -145,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Coordinate System</para>
-		/// <para>The spatial reference of the coordinates in the output table. The default is GCS_WGS_1984.</para>
+		/// <para>输出表中的坐标的空间参考。 默认值为 GCS_WGS_1984。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]

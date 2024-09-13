@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Calculate Suitability Score</para>
+	/// <para>Calculate Suitability Score</para>
 	/// <para>Calculates or recalculates a suitability score.</para>
 	/// </summary>
 	public class CalculateSuitabilityScore : AbstractGPProcess

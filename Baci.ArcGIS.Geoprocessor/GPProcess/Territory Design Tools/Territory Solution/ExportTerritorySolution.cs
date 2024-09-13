@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Export Territory Solution</para>
+	/// <para>Export Territory Solution</para>
 	/// <para>Exports a territory solution to a feature class. The export includes records from all levels (hierarchy) of the solution.</para>
 	/// </summary>
 	public class ExportTerritorySolution : AbstractGPProcess

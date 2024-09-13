@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>TIN Contour</para>
+	/// <para>TIN Contour</para>
 	/// <para>Generates contours from a TIN surface.</para>
 	/// </summary>
 	[Obsolete()]

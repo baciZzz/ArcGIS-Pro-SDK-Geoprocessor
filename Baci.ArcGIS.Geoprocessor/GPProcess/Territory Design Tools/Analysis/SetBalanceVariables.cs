@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Set Balance Variables</para>
+	/// <para>Set Balance Variables</para>
 	/// <para>Configures variables to be used in the balancing process.</para>
 	/// </summary>
 	public class SetBalanceVariables : AbstractGPProcess

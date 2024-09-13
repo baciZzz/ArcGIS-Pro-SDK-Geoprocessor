@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Package Project</para>
-	/// <para>Consolidates and packages a project (.aprx file) of referenced maps and data to a  packaged project file (.ppkx).</para>
+	/// <para>打包工程</para>
+	/// <para>将引用地图和数据的工程 (.aprx 文件) 合并并打包到已打包的工程文件 (.ppkx) 中。</para>
 	/// </summary>
 	public class PackageProject : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InProject">
 		/// <para>Input Project</para>
-		/// <para>The project (.aprx file) to be packaged.</para>
+		/// <para>要打包的工程（.aprx 文件）。</para>
 		/// </param>
 		/// <param name="OutputFile">
 		/// <para>Output File</para>
-		/// <para>The output project package (.ppkx file).</para>
+		/// <para>输出工程包（.ppkx 文件）。</para>
 		/// </param>
 		public PackageProject(object InProject, object OutputFile)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Package Project</para>
+		/// <para>Tool Display Name : 打包工程</para>
 		/// </summary>
-		public override string DisplayName() => "Package Project";
+		public override string DisplayName() => "打包工程";
 
 		/// <summary>
 		/// <para>Tool Name : PackageProject</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Project</para>
-		/// <para>The project (.aprx file) to be packaged.</para>
+		/// <para>要打包的工程（.aprx 文件）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>The output project package (.ppkx file).</para>
+		/// <para>输出工程包（.ppkx 文件）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -89,9 +90,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Share outside of organization</para>
-		/// <para>Specifies whether the project will be consolidated for your internal environment or will move all data elements so it can be shared externally.Data and maps will be consolidated and packaged if the project references them from a local path, such as c:\gisdata\landrecords.gdb\, regardless of this parameter&apos;s setting.</para>
-		/// <para>Unchecked—Enterprise data sources, such as enterprise geodatabases and data from a UNC path, will not be copied to the local folder. This is the default.</para>
-		/// <para>Checked—Data formats will be copied and preserved when possible.</para>
+		/// <para>指定是针对内部环境合并工程，还是移动所有数据元素以便在外部共享工程。如果工程通过本地路径（例如 c:\gisdata\landrecords.gdb\）引用数据和地图，则将对这些数据和地图进行合并和打包（不考虑该参数设置）。</para>
+		/// <para>未选中 - 企业数据源（例如企业级地理数据库和 UNC 路径中的数据）将不会复制到本地文件夹。这是默认设置。</para>
+		/// <para>选中 - 将复制和保留数据格式（如有可能）。</para>
 		/// <para><see cref="SharingInternalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -101,9 +102,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Package as template</para>
-		/// <para>Specifies whether to create a project template or a project package. Project templates can include maps, layouts, connections to databases and servers, and so on. A project template makes it easy to standardize a series of maps for different projects and to ensure the correct layers are immediately available for everyone to use in their maps.</para>
-		/// <para>Unchecked—Creates a project package. This is the default.</para>
-		/// <para>Checked—Creates a project template.</para>
+		/// <para>指定是否创建工程模板或工程包。工程模板可以包含地图、布局、数据库和服务器的连接等。通过工程模板，您可以轻松标准化不同工程的一系列地图并可确保正确的图层可供所有人直接用于他们的地图中。</para>
+		/// <para>未选中 - 创建工程包。这是默认设置。</para>
+		/// <para>选中 - 创建工程模板。</para>
 		/// <para><see cref="PackageAsTemplateEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -113,13 +114,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>Specifies the extent that will be used to select or clip features.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
-		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
-		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>指定用于选择或裁剪要素的范围。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
+		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
+		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -127,9 +128,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Apply Extent only to enterprise geodatabase layers</para>
-		/// <para>Specifies whether the specified extent will be applied to all layers or only to enterprise geodatabase layers.</para>
-		/// <para>Unchecked—Extent will be applied to all layers. This is the default.</para>
-		/// <para>Checked—Extent will be applied to enterprise geodatabase layers only.</para>
+		/// <para>指定是将指定范围应用到所有图层，还是仅应用到企业级地理数据库图层。</para>
+		/// <para>未选中 - 范围将应用到所有图层。这是默认设置。</para>
+		/// <para>选中 - 范围仅应用到企业级地理数据库图层。</para>
 		/// <para><see cref="ApplyExtentToArcsdeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -139,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Additional Files</para>
-		/// <para>Adds additional files to a package. Additional files, such as .doc, .txt, .pdf, and so on, are used to provide more information about the contents and purpose of the package.</para>
+		/// <para>将附加文件添加到包中。诸如 .doc、.txt、.pdf 等附加文件可用于提供有关打包内容和目的的详细信息。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -147,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Summary</para>
-		/// <para>Adds summary information to the properties of the package.</para>
+		/// <para>将摘要信息添加到包的属性中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -155,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Tags</para>
-		/// <para>Adds tag information to the properties of the package. Multiple tags can be added or separated by a comma or semicolon.</para>
+		/// <para>将标签信息添加到包的属性中。可以添加多个标签，标签之间用逗号或分号进行分隔。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -163,15 +164,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Package version</para>
-		/// <para>Specifies the version of the geodatabases that will be created in the resulting package. Specifying a version allows packages to be shared with previous versions of ArcGIS and supports backward compatibility.A package saved to a previous version may lose properties available only in the newer version.</para>
-		/// <para>All versions— The package will contain geodatabases and maps compatible with all versions (ArcGIS Pro 2.1 and later).</para>
-		/// <para>Current version— The package will contain geodatabases and maps compatible with the version of the current release.</para>
-		/// <para>2.1—The package will contain geodatabases and maps compatible with version 2.1.</para>
-		/// <para>2.2— The package will contain geodatabases and maps compatible with version 2.2.</para>
-		/// <para>2.3—The package will contain geodatabases and maps compatible with version 2.3.</para>
-		/// <para>2.4—The package will contain geodatabases and maps compatible with version 2.4.</para>
-		/// <para>2.5—The package will contain geodatabases and maps compatible with version 2.5.</para>
-		/// <para>2.6—The package will contain geodatabases and maps compatible with version 2.6.</para>
+		/// <para>指定将在结果包中创建的地理数据库版本。指定版本可实现与之前版本的 ArcGIS 共享包，并可支持向后兼容。保存为之前版本的包可能会丢失仅适用于较新版本的属性。</para>
+		/// <para>所有版本— 包中将包含与所有版本（ArcGIS Pro 2.1 和更高版本）均兼容的地理数据库和地图。</para>
+		/// <para>当前版本— 包中包含与当前版本兼容的地理数据库和地图。</para>
+		/// <para>2.1—包中将包含与版本 2.1 兼容的地理数据库和地图。</para>
+		/// <para>2.2— 包中将包含与版本 2.2 兼容的地理数据库和地图。</para>
+		/// <para>2.3—包中将包含与版本 2.3 兼容的地理数据库和地图。</para>
+		/// <para>2.4—包中将包含与版本 2.4 兼容的地理数据库和地图。</para>
+		/// <para>2.5—包中将包含与版本 2.5 兼容的地理数据库和地图。</para>
+		/// <para>2.6—包中将包含与版本 2.6 兼容的地理数据库和地图。</para>
 		/// <para><see cref="VersionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -181,9 +182,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Include Toolboxes</para>
-		/// <para>Specifies whether project toolboxes, and the data referenced by the tools in the project toolboxes, will be consolidated and included in the output package. All projects require a default toolbox, and the default toolbox will be included regardless of this setting. A toolbox inside a connected folder is not considered a project toolbox and is not impacted by this setting.</para>
-		/// <para>Checked—Project toolboxes will be included in the output package. This is the default.</para>
-		/// <para>Unchecked—Project toolboxes will be excluded from the output package.</para>
+		/// <para>指定是否合并工程工具箱以及工程工具箱中的工具所引用的数据并将其包括在输出包中。所有工程都需要默认工具箱，因此无论如何设置，默认工具箱都将包括在内。连接的文件夹内的工具箱不会被视为工程工具箱，且不受此设置的影响。</para>
+		/// <para>已选中 - 工程工具箱将包括在输出包中。这是默认设置。</para>
+		/// <para>未选中 - 工程工具箱将从输出包中排除。</para>
 		/// <para><see cref="IncludeToolboxesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -193,10 +194,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Include History Items</para>
-		/// <para>Specifies whether geoprocessing history items will be consolidated and included in the output package. Included history items will consolidate the data required to re-execute said history item.</para>
-		/// <para>History items will be included—History items will be included in the output package. This is the default.</para>
-		/// <para>History items will be excluded—History items will be excluded from the output package.</para>
-		/// <para>Only valid history items will be included—Only valid history items will be included in the output package. History items are invalid if any of the original input layers or tools cannot be found.</para>
+		/// <para>指定是否合并地理处理历史项目并将其包括在输出包中。包括的历史项目将合并重新执行所述历史项目所需的数据。</para>
+		/// <para>将包括历史项目—历史项目将包括在输出包中。这是默认设置。</para>
+		/// <para>将排除历史项目—历史项目将从输出包中排除。</para>
+		/// <para>将仅包括有效的历史项目—输出包中将仅包括有效的历史项目。如果找不到任何原始输入图层或工具，则历史项目无效。</para>
 		/// <para><see cref="IncludeHistoryItemsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -206,9 +207,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Read Only Package</para>
-		/// <para>Specifies whether the project will be read only. Read only projects cannot be modified or saved.</para>
-		/// <para>Checked—Project will be read only.</para>
-		/// <para>Unchecked—Project is writable. This is the default.</para>
+		/// <para>指定工程是否为只读。无法修改或保存只读工程。</para>
+		/// <para>已选中 - 工程将为只读。</para>
+		/// <para>未选中 - 工程可写。这是默认设置。</para>
 		/// <para><see cref="ReadOnlyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -218,9 +219,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Keep only the rows which are related to features within the extent</para>
-		/// <para>Specifies whether the specified extent will be applied to related data sources.</para>
-		/// <para>Unchecked—Related data sources will be consolidated in their entirety. This is the default.</para>
-		/// <para>Checked—Only related data corresponding to records within the specified extent will be consolidated.</para>
+		/// <para>指定是否将指定的范围应用至相关数据源。</para>
+		/// <para>未选中 - 相关的数据源将全部合并。这是默认设置。</para>
+		/// <para>选中 - 仅合并指定范围内与记录对应的相关数据。</para>
 		/// <para><see cref="SelectRelatedRowsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -245,14 +246,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SharingInternalEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Data formats will be copied and preserved when possible.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EXTERNAL")]
 			EXTERNAL,
 
 			/// <summary>
-			/// <para>Unchecked—Enterprise data sources, such as enterprise geodatabases and data from a UNC path, will not be copied to the local folder. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INTERNAL")]
@@ -266,14 +267,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PackageAsTemplateEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Creates a project template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PROJECT_TEMPLATE")]
 			PROJECT_TEMPLATE,
 
 			/// <summary>
-			/// <para>Unchecked—Creates a project package. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("PROJECT_PACKAGE")]
@@ -287,14 +288,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ApplyExtentToArcsdeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Extent will be applied to enterprise geodatabase layers only.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ENTERPRISE_ONLY")]
 			ENTERPRISE_ONLY,
 
 			/// <summary>
-			/// <para>Unchecked—Extent will be applied to all layers. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ALL")]
@@ -308,56 +309,56 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum VersionEnum 
 		{
 			/// <summary>
-			/// <para>All versions— The package will contain geodatabases and maps compatible with all versions (ArcGIS Pro 2.1 and later).</para>
+			/// <para>所有版本— 包中将包含与所有版本（ArcGIS Pro 2.1 和更高版本）均兼容的地理数据库和地图。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All versions")]
+			[Description("所有版本")]
 			All_versions,
 
 			/// <summary>
-			/// <para>Current version— The package will contain geodatabases and maps compatible with the version of the current release.</para>
+			/// <para>当前版本— 包中包含与当前版本兼容的地理数据库和地图。</para>
 			/// </summary>
 			[GPValue("CURRENT")]
-			[Description("Current version")]
+			[Description("当前版本")]
 			Current_version,
 
 			/// <summary>
-			/// <para>2.1—The package will contain geodatabases and maps compatible with version 2.1.</para>
+			/// <para>2.1—包中将包含与版本 2.1 兼容的地理数据库和地图。</para>
 			/// </summary>
 			[GPValue("2.1")]
 			[Description("2.1")]
 			_21,
 
 			/// <summary>
-			/// <para>2.2— The package will contain geodatabases and maps compatible with version 2.2.</para>
+			/// <para>2.2— 包中将包含与版本 2.2 兼容的地理数据库和地图。</para>
 			/// </summary>
 			[GPValue("2.2")]
 			[Description("2.2")]
 			_22,
 
 			/// <summary>
-			/// <para>2.3—The package will contain geodatabases and maps compatible with version 2.3.</para>
+			/// <para>2.3—包中将包含与版本 2.3 兼容的地理数据库和地图。</para>
 			/// </summary>
 			[GPValue("2.3")]
 			[Description("2.3")]
 			_23,
 
 			/// <summary>
-			/// <para>2.4—The package will contain geodatabases and maps compatible with version 2.4.</para>
+			/// <para>2.4—包中将包含与版本 2.4 兼容的地理数据库和地图。</para>
 			/// </summary>
 			[GPValue("2.4")]
 			[Description("2.4")]
 			_24,
 
 			/// <summary>
-			/// <para>2.5—The package will contain geodatabases and maps compatible with version 2.5.</para>
+			/// <para>2.5—包中将包含与版本 2.5 兼容的地理数据库和地图。</para>
 			/// </summary>
 			[GPValue("2.5")]
 			[Description("2.5")]
 			_25,
 
 			/// <summary>
-			/// <para>2.6—The package will contain geodatabases and maps compatible with version 2.6.</para>
+			/// <para>2.6—包中将包含与版本 2.6 兼容的地理数据库和地图。</para>
 			/// </summary>
 			[GPValue("2.6")]
 			[Description("2.6")]
@@ -378,14 +379,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IncludeToolboxesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Project toolboxes will be included in the output package. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TOOLBOXES")]
 			TOOLBOXES,
 
 			/// <summary>
-			/// <para>Unchecked—Project toolboxes will be excluded from the output package.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_TOOLBOXES")]
@@ -399,24 +400,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IncludeHistoryItemsEnum 
 		{
 			/// <summary>
-			/// <para>History items will be included—History items will be included in the output package. This is the default.</para>
+			/// <para>将包括历史项目—历史项目将包括在输出包中。这是默认设置。</para>
 			/// </summary>
 			[GPValue("HISTORY_ITEMS")]
-			[Description("History items will be included")]
+			[Description("将包括历史项目")]
 			History_items_will_be_included,
 
 			/// <summary>
-			/// <para>History items will be excluded—History items will be excluded from the output package.</para>
+			/// <para>将排除历史项目—历史项目将从输出包中排除。</para>
 			/// </summary>
 			[GPValue("NO_HISTORY_ITEMS")]
-			[Description("History items will be excluded")]
+			[Description("将排除历史项目")]
 			History_items_will_be_excluded,
 
 			/// <summary>
-			/// <para>Only valid history items will be included—Only valid history items will be included in the output package. History items are invalid if any of the original input layers or tools cannot be found.</para>
+			/// <para>将仅包括有效的历史项目—输出包中将仅包括有效的历史项目。如果找不到任何原始输入图层或工具，则历史项目无效。</para>
 			/// </summary>
 			[GPValue("VALID_HISTORY_ITEMS_ONLY")]
-			[Description("Only valid history items will be included")]
+			[Description("将仅包括有效的历史项目")]
 			Only_valid_history_items_will_be_included,
 
 		}
@@ -427,14 +428,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ReadOnlyEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Project will be read only.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("READ_ONLY")]
 			READ_ONLY,
 
 			/// <summary>
-			/// <para>Unchecked—Project is writable. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("READ_WRITE")]
@@ -448,14 +449,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SelectRelatedRowsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Only related data corresponding to records within the specified extent will be consolidated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("KEEP_ONLY_RELATED_ROWS")]
 			KEEP_ONLY_RELATED_ROWS,
 
 			/// <summary>
-			/// <para>Unchecked—Related data sources will be consolidated in their entirety. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_ALL_RELATED_ROWS")]

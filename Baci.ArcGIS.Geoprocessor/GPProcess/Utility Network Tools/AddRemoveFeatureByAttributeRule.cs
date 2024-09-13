@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Remove Feature By Attribute Rule</para>
+	/// <para>Add Remove Feature By Attribute Rule</para>
 	/// <para>Add a remove feature by attribute rule to a diagram template</para>
 	/// </summary>
 	[Obsolete()]

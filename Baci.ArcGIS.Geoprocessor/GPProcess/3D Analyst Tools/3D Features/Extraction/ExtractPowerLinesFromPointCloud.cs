@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Extract Power Lines From Point Cloud</para>
-	/// <para>Extracts 3D line features modeling power lines </para>
-	/// <para>from classified point cloud data.</para>
+	/// <para>从点云中提取供电线路</para>
+	/// <para>从已分类点云数据中提取用于供电线路建模的 3D 线要素。</para>
 	/// </summary>
 	public class ExtractPowerLinesFromPointCloud : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InPointCloud">
 		/// <para>Input Point Cloud</para>
-		/// <para>The LAS dataset layer containing points classified as power lines.</para>
+		/// <para>包含分类为供电线路的点的 LAS 数据集图层。</para>
 		/// </param>
 		/// <param name="ClassCodes">
 		/// <para>Power Line Class Codes</para>
-		/// <para>The class code values for the points representing the power lines.</para>
+		/// <para>代表供电线路的点的类代码值。</para>
 		/// </param>
 		/// <param name="Out3DLines">
 		/// <para>Output 3D Lines</para>
-		/// <para>The 3D lines modeling the power lines.</para>
+		/// <para>用于供电线路建模的 3D 线。</para>
 		/// </param>
 		public ExtractPowerLinesFromPointCloud(object InPointCloud, object ClassCodes, object Out3DLines)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Extract Power Lines From Point Cloud</para>
+		/// <para>Tool Display Name : 从点云中提取供电线路</para>
 		/// </summary>
-		public override string DisplayName() => "Extract Power Lines From Point Cloud";
+		public override string DisplayName() => "从点云中提取供电线路";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractPowerLinesFromPointCloud</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Point Cloud</para>
-		/// <para>The LAS dataset layer containing points classified as power lines.</para>
+		/// <para>包含分类为供电线路的点的 LAS 数据集图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Power Line Class Codes</para>
-		/// <para>The class code values for the points representing the power lines.</para>
+		/// <para>代表供电线路的点的类代码值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output 3D Lines</para>
-		/// <para>The 3D lines modeling the power lines.</para>
+		/// <para>用于供电线路建模的 3D 线。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Point Tolerance</para>
-		/// <para>The distance used to establish the points that belong to a given power line. The default is 80 centimeters.</para>
+		/// <para>用于确定属于给定供电线路的点的距离。默认值为 80 厘米。</para>
 		/// <para><see cref="PointToleranceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Wire Separation Distance</para>
-		/// <para>The distance points must be to determine if they belong to different power lines. The default is 1 meter.</para>
+		/// <para>确定点是否属于不同供电线路时必须相距的距离。默认值为 1 米。</para>
 		/// <para><see cref="SeparationDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Maximum Wire Sampling Gap</para>
-		/// <para>The largest gap that can exist in a given span of a power line. The catenary curve being modeled from a set of power line points will be extended by this distance to find other points that fit the same power line. The default is 5 meters.</para>
+		/// <para>给定供电线路跨度中可以存在的最大间距。将按此距离延长基于一组供电线路点建模的悬链曲线，以查找与同一供电线路拟合的其他点。默认值为 5 米。</para>
 		/// <para><see cref="MaxSamplingGapEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Line Tolerance</para>
-		/// <para>The distance used to establish the accuracy of the output power line. A larger distance will result in the creation of less vertices per line, yielding a more coarse representation of the power line when compared with a smaller distance. The default is 1 centimeter.</para>
+		/// <para>用于确定输出供电线路精度的距离。距离越大，沿每条线创建的折点越少，生成的供电线路表示越粗糙。默认值为 1 厘米。</para>
 		/// <para><see cref="LineToleranceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -140,9 +140,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Adjust for wind distortion</para>
-		/// <para>Specifies whether wind correction will be used to improve how points fit a given power line. Wind correction will only be applied in one direction and only for power lines with spans that are longer than the distance specified in the Minimum Span for Wind Correction parameter.</para>
-		/// <para>Checked—Wind correction will be used to improve the catenary curve&apos;s fitting of points belonging to the same power line. This is the default.</para>
-		/// <para>Unchecked—Wind correction will not be used, resulting in the creation of power lines that may not fit the points captured in the point cloud survey.</para>
+		/// <para>指定是否使用风力校正来提高点与给定供电线路的拟合度。风力校正将仅在一个方向上应用，并且仅适用于跨度大于在进行风力校正的最小跨度参数中指定的距离的供电线路。</para>
+		/// <para>选中 - 将使用风力校正提高属于同一供电线路的点的悬链曲线拟合度。这是默认设置。</para>
+		/// <para>未选中 - 不会使用风力校正，从而导致创建的供电线路无法与在点云调查中捕获的点拟合。</para>
 		/// <para><see cref="WindCorrectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Minimum Span for Wind Correction</para>
-		/// <para>The shortest distance a power line span can be to apply wind correction when generating the output power line. The default is 60 meters.</para>
+		/// <para>要在生成输出供电线路时应用风力校正供电线路可以跨越的最短距离。默认值为 60 米。</para>
 		/// <para><see cref="MinWindSpanEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -164,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Maximum Deviation Angle</para>
-		/// <para>The maximum angle that the wind is expected to deviate a given power line. The default is 10°.</para>
+		/// <para>风力预期偏离给定供电线路的最大角度。默认值为 10°。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -174,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>End Point Search Radius</para>
-		/// <para>The distance used to identify a common suspension point for power line segments connected to the same distribution pole or transmission tower. The default is 10 meters.</para>
+		/// <para>用于识别连接到同一电线杆或输电塔的供电线路段的公共悬挂点的距离。默认值为 10 米。</para>
 		/// <para><see cref="EndPointSearchRadiusEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -185,7 +185,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Minimum Wire Length</para>
-		/// <para>The shortest wire length that can be used to determine the presence of a common end point. The default is 5 meters.</para>
+		/// <para>可用于确定是否存在公共端点的最短导线长度。默认值为 5 米。</para>
 		/// <para><see cref="MinLengthEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -407,14 +407,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum WindCorrectionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Wind correction will be used to improve the catenary curve&apos;s fitting of points belonging to the same power line. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("WIND")]
 			WIND,
 
 			/// <summary>
-			/// <para>Unchecked—Wind correction will not be used, resulting in the creation of power lines that may not fit the points captured in the point cloud survey.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_WIND")]

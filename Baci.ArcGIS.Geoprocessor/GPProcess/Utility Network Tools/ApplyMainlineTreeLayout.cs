@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Apply Mainline Tree Layout</para>
+	/// <para>Apply Mainline Tree Layout</para>
 	/// <para>Apply the mainline tree layout to a diagram</para>
 	/// </summary>
 	[Obsolete()]

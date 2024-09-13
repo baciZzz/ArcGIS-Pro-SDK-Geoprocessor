@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Rectangles Along Lines</para>
-	/// <para>Creates a series of rectangular polygons that follow a single linear feature or a group of linear features.</para>
+	/// <para>沿线生成矩形</para>
+	/// <para>该工具可根据单个线状要素或一组线状要素创建一系列矩形面。</para>
 	/// </summary>
 	public class GenerateRectanglesAlongLines : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Line Features</para>
-		/// <para>The input polyline features defining the path of the features.</para>
+		/// <para>定义要素路径的输入折线要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output polygon feature class.</para>
+		/// <para>输出面要素类。</para>
 		/// </param>
 		public GenerateRectanglesAlongLines(object InFeatures, object OutFeatureClass)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Rectangles Along Lines</para>
+		/// <para>Tool Display Name : 沿线生成矩形</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Rectangles Along Lines";
+		public override string DisplayName() => "沿线生成矩形";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateRectanglesAlongLines</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Line Features</para>
-		/// <para>The input polyline features defining the path of the features.</para>
+		/// <para>定义要素路径的输入折线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output polygon feature class.</para>
+		/// <para>输出面要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Length Along the Line</para>
-		/// <para>The length of the output polygon features along the input line features. The default value is determined by the spatial reference of the input line features. This value will be 1/100 of the input feature class extent along the x-axis.</para>
+		/// <para>沿输入线要素的输出面要素的长度。默认值由输入线要素的空间参考决定。该值为 x 轴方向上输入要素类范围的 1/100。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -96,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Length Perpendicular to the Line</para>
-		/// <para>The length of the output polygon features perpendicular to the input line features. The default value is determined by the spatial reference of the input line features. This value will be one-half the number used for the length along the line.</para>
+		/// <para>垂直于输入线要素的输出面要素的长度。默认值由输入线要素的空间参考决定。该值为沿线方向要素长度的一半。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -104,11 +105,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Spatial Sort Method</para>
-		/// <para>Output features are created in a sequential order and require a spatial starting point. Setting the direction type to upper right will start the output features in the upper right of each input feature.</para>
-		/// <para>Upper right—Features start in the upper right corner. This is the default.</para>
-		/// <para>Upper left—Features start in the upper left corner.</para>
-		/// <para>Lower right—Features starts in the lower right corner.</para>
-		/// <para>Lower left—Features starts in the lower left corner.</para>
+		/// <para>输出要素将按照一定的顺序创建并需要一个空间起点。将方向类型设置为右上方将启动各输入要素右上方的输出要素。</para>
+		/// <para>右上角—要素起自右上角。这是默认设置。</para>
+		/// <para>左上角—要素起自左上角。</para>
+		/// <para>右下角—要素起自右下角。</para>
+		/// <para>左下角—要素起自左下角。</para>
 		/// <para><see cref="SpatialSortMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -133,31 +134,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SpatialSortMethodEnum 
 		{
 			/// <summary>
-			/// <para>Upper left—Features start in the upper left corner.</para>
+			/// <para>左上角—要素起自左上角。</para>
 			/// </summary>
 			[GPValue("UL")]
-			[Description("Upper left")]
+			[Description("左上角")]
 			Upper_left,
 
 			/// <summary>
-			/// <para>Upper right—Features start in the upper right corner. This is the default.</para>
+			/// <para>右上角—要素起自右上角。这是默认设置。</para>
 			/// </summary>
 			[GPValue("UR")]
-			[Description("Upper right")]
+			[Description("右上角")]
 			Upper_right,
 
 			/// <summary>
-			/// <para>Lower left—Features starts in the lower left corner.</para>
+			/// <para>左下角—要素起自左下角。</para>
 			/// </summary>
 			[GPValue("LL")]
-			[Description("Lower left")]
+			[Description("左下角")]
 			Lower_left,
 
 			/// <summary>
-			/// <para>Lower right—Features starts in the lower right corner.</para>
+			/// <para>右下角—要素起自右下角。</para>
 			/// </summary>
 			[GPValue("LR")]
-			[Description("Lower right")]
+			[Description("右下角")]
 			Lower_right,
 
 		}

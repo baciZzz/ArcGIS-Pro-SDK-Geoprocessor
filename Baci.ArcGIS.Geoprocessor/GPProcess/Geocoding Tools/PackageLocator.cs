@@ -12,6 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 	/// <summary>
 	/// <para>Package Locator</para>
 	/// <para>Package Locator</para>
+	/// <para>Package Locator</para>
 	/// </summary>
 	[Obsolete()]
 	public class PackageLocator : AbstractGPProcess

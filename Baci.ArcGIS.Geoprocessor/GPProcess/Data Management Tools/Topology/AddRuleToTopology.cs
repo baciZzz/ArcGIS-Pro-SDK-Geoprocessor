@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Rule To Topology</para>
-	/// <para>Adds a new rule to a topology.</para>
+	/// <para>添加拓扑规则</para>
+	/// <para>向拓扑添加新规则。</para>
 	/// </summary>
 	public class AddRuleToTopology : AbstractGPProcess
 	{
@@ -20,46 +21,46 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTopology">
 		/// <para>Input Topology</para>
-		/// <para>The topology to which the new rule will be added.</para>
+		/// <para>要添加新规则的拓扑。</para>
 		/// </param>
 		/// <param name="RuleType">
 		/// <para>Rule Type</para>
-		/// <para>The topology rule to be added. For a complete list of the rules and what they do, see the topology rules and fixes for point, line, or polygon features.</para>
-		/// <para>Must Not Have Gaps (Area)— This rule requires that there are no voids within a single polygon or between adjacent polygons. All polygons must form a continuous surface. An error will always exist on the perimeter of the surface. You can either ignore this error or mark it as an exception. Use this rule on data that must completely cover an area. For example, soil polygons cannot include gaps or form voids-they must cover an entire area.</para>
-		/// <para>Must Not Overlap (Area)— Requires that the interior of polygons not overlap. The polygons can share edges or vertices. This rule is used when an area cannot belong to two or more polygons. It is useful for modeling administrative boundaries, such as ZIP Codes or voting districts, and mutually exclusive area classifications, such as land cover or landform type.</para>
-		/// <para>Must Be Covered By Feature Class Of (Area-Area)— Requires that a polygon in one feature class (or subtype) must share all of its area with polygons in another feature class (or subtype). An area in the first feature class that is not covered by polygons from the other feature class is an error. This rule is used when an area of one type, such as a state, should be completely covered by areas of another type, such as counties.</para>
-		/// <para>Must Cover Each Other (Area-Area)— Requires that the polygons of one feature class (or subtype) must share all of their area with the polygons of another feature class (or subtype). Polygons may share edges or vertices. Any area defined in either feature class that is not shared with the other is an error. This rule is used when two systems of classification are used for the same geographic area, and any given point defined in one system must also be defined in the other. One such case occurs with nested hierarchical datasets, such as census blocks and block groups or small watersheds and large drainage basins. The rule can also be applied to nonhierarchically related polygon feature classes, such as soil type and slope class.</para>
-		/// <para>Must Be Covered By (Area-Area)— Requires that polygons of one feature class (or subtype) must be contained within polygons of another feature class (or subtype). Polygons may share edges or vertices. Any area defined in the contained feature class must be covered by an area in the covering feature class. This rule is used when area features of a given type must be located within features of another type. This rule is useful when modeling areas that are subsets of a larger surrounding area, such as management units within forests or blocks within block groups.</para>
-		/// <para>Must Not Overlap With (Area-Area)— Requires that the interior of polygons in one feature class (or subtype) must not overlap with the interior of polygons in another feature class (or subtype). Polygons of the two feature classes can share edges or vertices or be completely disjointed. This rule is used when an area cannot belong to two separate feature classes. It is useful for combining two mutually exclusive systems of area classification, such as zoning and water body type, where areas defined within the zoning class cannot also be defined in the water body class and vice versa.</para>
-		/// <para>Must Be Covered By Boundary Of (Line-Area)— Requires that lines be covered by the boundaries of area features. This is useful for modeling lines, such as lot lines, that must coincide with the edge of polygon features, such as lots.</para>
-		/// <para>Must Be Covered By Boundary Of (Point-Area)— Requires that points fall on the boundaries of area features. This is useful when the point features help support the boundary system, such as boundary markers, which must be found on the edges of certain areas.</para>
-		/// <para>Must Be Properly Inside (Point-Area)— Requires that points fall within area features. This is useful when the point features are related to polygons, such as wells and well pads or address points and parcels.</para>
-		/// <para>Must Not Overlap (Line)— Requires that lines not overlap with lines in the same feature class (or subtype). This rule is used where line segments should not be duplicated, for example, in a stream feature class. Lines can cross or intersect but cannot share segments.</para>
-		/// <para>Must Not Intersect (Line)— Requires that line features from the same feature class (or subtype) not cross or overlap each other. Lines can share endpoints. This rule is used for contour lines that should never cross each other or in cases where the intersection of lines should only occur at endpoints, such as street segments and intersections.</para>
-		/// <para>Must Not Have Dangles (Line)— Requires that a line feature must touch lines from the same feature class (or subtype) at both endpoints. An endpoint that is not connected to another line is called a dangle. This rule is used when line features must form closed loops, such as when they are defining the boundaries of polygon features. It may also be used in cases where lines typically connect to other lines, as with streets. In this case, exceptions can be used where the rule is occasionally violated, as with cul-de-sac or dead-end street segments.</para>
-		/// <para>Must Not Have Pseudo-Nodes (Line)— Requires that a line connect to at least two other lines at each endpoint. Lines that connect to one other line (or to themselves) are said to have pseudo nodes. This rule is used where line features must form closed loops, such as when they define the boundaries of polygons or when line features logically must connect to two other line features at each end, as with segments in a stream network, with exceptions being marked for the originating ends of first-order streams.</para>
-		/// <para>Must Be Covered By Feature Class Of (Line-Line)— Requires that lines from one feature class (or subtype) must be covered by the lines in another feature class (or subtype). This is useful for modeling logically different but spatially coincident lines, such as routes and streets. A bus route feature class must not depart from the streets defined in the street feature class.</para>
-		/// <para>Must Not Overlap With (Line-Line)— Requires that a line from one feature class (or subtype) not overlap with line features in another feature class (or subtype). This rule is used when line features cannot share the same space. For example, roads must not overlap with railroads or depression subtypes of contour lines cannot overlap with other contour lines.</para>
-		/// <para>Must Be Covered By (Point-Line)— Requires that points in one feature class be covered by lines in another feature class. It does not constrain the covering portion of the line to be an endpoint. This rule is useful for points that fall along a set of lines, such as highway signs along highways.</para>
-		/// <para>Must Be Covered By Endpoint Of (Point-Line)— Requires that points in one feature class must be covered by the endpoints of lines in another feature class. This rule is similar to the line rule Endpoint Must Be Covered By except that, in cases where the rule is violated, it is the point feature that is marked as an error rather than the line. Boundary corner markers might be constrained to be covered by the endpoints of boundary lines.</para>
-		/// <para>Boundary Must Be Covered By (Area-Line)— Requires that boundaries of polygon features must be covered by lines in another feature class. This rule is used when area features need to have line features that mark the boundaries of the areas. This is usually when the areas have one set of attributes and their boundaries have other attributes. For example, parcels might be stored in the geodatabase along with their boundaries. Each parcel might be defined by one or more line features that store information about their length or the date surveyed, and every parcel should exactly match its boundaries.</para>
-		/// <para>Boundary Must Be Covered By Boundary Of (Area-Area)— Requires that boundaries of polygon features in one feature class (or subtype) be covered by boundaries of polygon features in another feature class (or subtype). This is useful when polygon features in one feature class, such as subdivisions, are composed of multiple polygons in another class, such as parcels, and the shared boundaries must be aligned.</para>
-		/// <para>Must Not Self-Overlap (Line)— Requires that line features not overlap themselves. They can cross or touch themselves but must not have coincident segments. This rule is useful for features, such as streets, where segments might touch in a loop but where the same street should not follow the same course twice.</para>
-		/// <para>Must Not Self-Intersect (Line)— Requires that line features not cross or overlap themselves. This rule is useful for lines, such as contour lines, that cannot cross themselves.</para>
-		/// <para>Must Not Intersect Or Touch Interior (Line)— Requires that a line in one feature class (or subtype) must only touch other lines of the same feature class (or subtype) at endpoints. Any line segment in which features overlap or any intersection not at an endpoint is an error. This rule is useful where lines must only be connected at endpoints, such as in the case of lot lines, which must split (only connect to the endpoints of) back lot lines and cannot overlap each other.</para>
-		/// <para>Endpoint Must Be Covered By (Line-Point)— Requires that the endpoints of line features must be covered by point features in another feature class. This is useful for modeling cases where a fitting must connect two pipes or a street intersection must be found at the junction of two streets.</para>
-		/// <para>Contains Point (Area-Point)— Requires that a polygon in one feature class contain at least one point from another feature class. Points must be within the polygon, not on the boundary. This is useful when every polygon should have at least one associated point, such as when parcels must have an address point.</para>
-		/// <para>Must Be Single Part (Line)— Requires that lines have only one part. This rule is useful where line features, such as highways, may not have multiple parts.</para>
-		/// <para>Must Coincide With (Point-Point)— Requires that points in one feature class (or subtype) be coincident with points in another feature class (or subtype). This is useful for cases where points must be covered by other points, such as transformers must coincide with power poles in electric distribution networks and observation points must coincide with stations.</para>
-		/// <para>Must Be Disjoint (Point)— Requires that points be separated spatially from other points in the same feature class (or subtype). Any points that overlap are errors. This is useful for ensuring that points are not coincident or duplicated within the same feature class, such as in layers of cities, parcel lot ID points, wells, or streetlamp poles.</para>
-		/// <para>Must Not Intersect With (Line-Line)— Requires that line features from one feature class (or subtype) not cross or overlap lines from another feature class (or subtype). Lines can share endpoints. This rule is used when there are lines from two layers that should never cross each other or in cases where the intersection of lines should only occur at endpoints, such as streets and railroads.</para>
-		/// <para>Must Not Intersect or Touch Interior With (Line-Line)— Requires that a line in one feature class (or subtype) must only touch other lines of another feature class (or subtype) at endpoints. Any line segment in which features overlap or any intersection not at an endpoint is an error. This rule is useful where lines from two layers must only be connected at endpoints.</para>
-		/// <para>Must Be Inside (Line-Area)— Requires that a line is contained within the boundary of an area feature. This is useful for cases where lines may partially or totally coincide with area boundaries but cannot extend beyond polygons, such as state highways that must be inside state borders and rivers that must be within watersheds.</para>
-		/// <para>Contains One Point (Area-Point)— Requires that each polygon contains one point feature and that each point feature falls within a single polygon. This is used when there must be a one-to-one correspondence between features of a polygon feature class and features of a point feature class, such as administrative boundaries and their capital cities. Each point must be properly inside exactly one polygon and each polygon must properly contain exactly one point. Points must be within the polygon, not on the boundary.</para>
+		/// <para>要添加的拓扑规则。有关规则及其用途的完整列表，请参阅点、线或面要素的拓扑规则和修复。</para>
+		/// <para>不能有空隙(面)— 此规则要求单一面之中或两个相邻面之间没有空白。所有面必须组成一个连续表面。表面的周长始终存在错误。您可以忽略这个错误或将其标记为异常。此规则用于必须完全覆盖某个区域的数据。例如，土壤面不能包含空隙或具有空白，这些面必须覆盖整个区域。</para>
+		/// <para>不能重叠(面)— 要求面的内部不重叠。面可以共享边或折点。当某区域不能属于两个或多个面时，使用此规则。此规则适用于行政边界（如“邮政编码”区或选举区）以及相互排斥的地域分类（如土地覆盖或地貌类型）。</para>
+		/// <para>必须被其他要素的要素类覆盖(面 - 面)— 要求一个要素类（或子类型）中的面必须向另一个要素类（或子类型）中的面共享自身所有的区域。第一个要素类中若存在未被其他要素类的面覆盖的区域则视作错误。当一种类型的区域（如一个州）应被另一种类型的区域（如所有的下辖县）完全覆盖时，使用此规则。</para>
+		/// <para>必须互相覆盖(面 - 面)— 要求一个要素类（或子类型）的面必须与另一个要素类（或子类型）的面共享双方的所有区域。面可以共享边或折点。任何一个要素类中存在未与另一个要素类共享的区域都视作错误。当两个分类系统用于相同的地理区域时使用此规则，在一个系统中定义的任意指定点也必须在另一个系统中定义。通常嵌套的等级数据集需要应用此规则，如人口普查区块和区块组或小分水岭和大的流域盆地。此规则还可应用于非等级相关的面要素类（如土壤类型和坡度分类）。</para>
+		/// <para>必须被其他要素覆盖(面 - 面)— 要求一个要素类（或子类型）的面必须包含于另一个要素类（或子类型）的面中。面可以共享边或折点。在被包含要素类中定义的所有区域必须被覆盖要素类中的区域所覆盖。当指定类型的区域要素必须位于另一类型的要素中时，使用此规则。当建模作为较大范围区域的子集区域（如森林中的管理单位或区块组中的区块）时，此规则非常有用。</para>
+		/// <para>不能与其他要素重叠(面 - 面)— 要求一个要素类（或子类型）面的内部不得与另一个要素类（或子类型）面的内部相重叠。两个要素类的面可以共享边或折点，或完全不相交。当某区域不能属于两个单独的要素类时，使用此规则。此规则适用于结合两个相互排斥的区域分类系统（如区域划分和水体类型，其中，在区域划分类中定义的区域无法在水体类中也进行定义，反之亦然）。</para>
+		/// <para>必须被其他要素的边界覆盖(线 - 面)— 要求线被面要素的边界覆盖。这适于建模必须与面要素（如地块）的边重合的线（如地块线）。</para>
+		/// <para>必须被其他要素的边界覆盖(点 - 面)— 要求点位于面要素的边界上。这在点要素帮助支持边界系统（如必须设在某些区域边界上的边界标记）时非常有用。</para>
+		/// <para>必须完全位于内部(点 - 面)— 要求点必须位于面要素内部。这在点要素与面有关时非常有用，如井和井垫或地址点和宗地。</para>
+		/// <para>不能重叠(线)— 要求线不能与同一要素类（或子类型）中的线重叠。例如，当河流要素类中线段不能重复时，使用此规则。线可以交叉或相交，但不能共享线段。</para>
+		/// <para>不能相交(线)— 要求相同要素类（或子类型）中的线要素不能彼此相交或重叠。线可以共享端点。此规则适用于绝不应彼此交叉的等值线，或只能在端点相交的线（如街段和交叉路口）。</para>
+		/// <para>不能有悬挂点(线)— 要求线要素的两个端点必须都接触到相同要素类（或子类型）中的线。未连接到另一条线的端点称为悬挂点。当线要素必须形成闭合环时（例如由这些线要素定义面要素的边界），使用此规则。它还可在线通常会连接到其他线（如街道）时使用。在这种情况下，可以偶尔违反规则使用异常，例如死胡同 (cul-de-sac) 或没有出口的街段的情况。</para>
+		/// <para>不能有伪结点(线)— 要求线在每个端点处至少连接两条其他线。连接到一条其他线（或到其自身）的线被认为是包含了伪结点。在线要素必须形成闭合环时使用此规则，例如由这些线要素定义面的边界，或逻辑上要求线要素必须在每个端点连接两条其他线要素的情况。河流网络中的线段就是如此，但需要将一级河流的源头标记为异常。</para>
+		/// <para>必须被其他要素的要素类覆盖(线 - 线)— 要求一个要素类（或子类型）中的线必须被另一个要素类（或子类型）中的线所覆盖。此选项适于建模逻辑不同但空间重合的线（如路径和街道）。公交路线要素类不能离开在街道要素类中定义的街道。</para>
+		/// <para>不能与其他要素重叠(线 - 线)— 要求一个要素类（或子类型）中的线不能与另一个要素类（或子类型）中的线要素重叠。线要素无法共享同一空间时使用此规则。例如道路不能与铁路重叠，或洼地子类型的等值线不能与其他等值线重叠。</para>
+		/// <para>必须被其他要素覆盖(点 - 线)— 要求一个要素类中的点被另一要素类中的线覆盖。它不能将线的覆盖部分约束为端点。此规则适用于沿一组线出现的点，如公路沿线的公路标志。</para>
+		/// <para>必须被其他要素的端点覆盖(点 - 线)— 要求一个要素类中的点必须被另一要素类中线的端点覆盖。除了当违反此规则时，标记为错误的是点要素而不是线之外，此规则与线规则“端点必须被其他要素覆盖”极为相似。边界拐角标记可以被约束，以使其被边界线的端点覆盖。</para>
+		/// <para>边界必须被其他要素覆盖（面 - 线）— 要求面要素的边界必须被另一要素类中的线覆盖。此规则在区域要素需要具有标记区域边界的线要素时使用。通常在区域具有一组属性且这些区域的边界具有其他属性时使用。例如，宗地可能与其边界一同存储在地理数据库中。每个宗地可能由一个或多个存储着与其长度或测量日期相关的信息的线要素定义，而且每个宗地都应与其边界完全匹配。</para>
+		/// <para>边界必须被其他要素的边界覆盖(面 - 面)— 要求一个要素类（或子类型）中的面要素的边界被另一个要素类（或子类型）中面要素的边界覆盖。当一个要素类中的面要素（如住宅小区）由另一个类（如宗地）中的多个面组成，且共享边界必须对齐时，此规则非常有用。</para>
+		/// <para>不能自重叠（线）— 要求线要素不得与自身重叠。这些线要素可以交叉或接触自身但不得有重合的线段。此规则适用于街道等线段可能接触闭合线的要素，但同一街道不应出现两次相同的路线。</para>
+		/// <para>不能自相交（线）— 要求线要素不得自交叉或与自身重叠。此规则适用于不能与自身交叉的线（如等值线）。</para>
+		/// <para>不能相交或内部接触(线)— 要求一个要素类（或子类型）中的线必须仅在端点处接触相同要素类（或子类型）的其他线。任何其中有要素重叠的线段或任何不是在端点处发生的相交都是错误。此规则适用于线只能在端点处连接的情况，例如地块线必须连接（仅连接到端点）至其他地块线，并且不能相互重叠。</para>
+		/// <para>端点必须被其他要素覆盖(线 - 点)— 要求线要素的端点必须被另一要素类中的点要素覆盖。在某些建模情况下，例如设备必须连接两条管线，或者交叉路口必须出现在两条街道的交汇处时，此工具十分有用。</para>
+		/// <para>包含点(面 - 点)— 要求一个要素类中的面至少包含另一个要素类中的一个点。点必须位于面要素中，而不是边界上。当每个面至少应包含一个关联点时（如宗地必须具有地址点），此规则非常有用。</para>
+		/// <para>必须为单一部件(线)— 要求线只有一个部分。当线要素（如高速公路）不能有多个部分时，此规则非常有用。</para>
+		/// <para>必须与其他要素重合(点 - 点)— 要求一个要素类（或子类型）中的点必须与另一个要素类（或子类型）中的点重合。此规则适用于点必须被其他点覆盖的情况，如变压器必须与配电网络中的电线杆重合，观察点必须与工作站重合。</para>
+		/// <para>必须不相交(点)— 要求点与相同要素类（或子类型）中的其他点在空间上相互分离。重叠的任何点都是错误。此规则可确保相同要素类的点不重合或不重复，如城市图层中、宗地块 ID 点、井或路灯杆。</para>
+		/// <para>不能与其他要素相交(线 - 线)— 要求一个要素类（或子类型）中的线要素不能与另一个要素类（或子类型）中的线要素相交或重叠。线可以共享端点。当两个图层中的线绝不应当交叉或只能在端点处发生相交时（如街道和铁路），使用此规则。</para>
+		/// <para>不能与其他要素相交或内部接触（线 - 线）— 要求一个要素类（或子类型）中的线必须仅在端点处接触另一要素类（或子类型）的其他线。任何其中有要素重叠的线段或任何不是在端点处发生的相交都是错误。当两个图层中的线必须仅在端点处连接时，此规则非常有用。</para>
+		/// <para>必须位于内部(线 - 面)— 要求线包含在面要素的边界内。当线可能与面边界部分重合或全部重合但不能延伸到面之外（如必须位于州边界内部的高速公路和必须位于分水岭内部的河流）时，此选项十分有用。</para>
+		/// <para>包含一个点(面 - 点)— 要求每个面包含一个点要素且每个点要素落在单独的面要素中。如果在面要素类的要素和点要素类的要素之间必须存在一对一的对应关系（如行政边界与其首都），此规则非常有用。每个点必须完全位于一个面要素内部，而每个面要素必须完全包含一个点。点必须位于面要素中，而不是边界上。</para>
 		/// </param>
 		/// <param name="InFeatureclass">
 		/// <para>Input Feature class</para>
-		/// <para>The input or origin feature class.</para>
+		/// <para>输入或源要素类。</para>
 		/// </param>
 		public AddRuleToTopology(object InTopology, object RuleType, object InFeatureclass)
 		{
@@ -69,9 +70,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Rule To Topology</para>
+		/// <para>Tool Display Name : 添加拓扑规则</para>
 		/// </summary>
-		public override string DisplayName() => "Add Rule To Topology";
+		public override string DisplayName() => "添加拓扑规则";
 
 		/// <summary>
 		/// <para>Tool Name : AddRuleToTopology</para>
@@ -105,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Topology</para>
-		/// <para>The topology to which the new rule will be added.</para>
+		/// <para>要添加新规则的拓扑。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTopologyLayer()]
@@ -113,38 +114,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Rule Type</para>
-		/// <para>The topology rule to be added. For a complete list of the rules and what they do, see the topology rules and fixes for point, line, or polygon features.</para>
-		/// <para>Must Not Have Gaps (Area)— This rule requires that there are no voids within a single polygon or between adjacent polygons. All polygons must form a continuous surface. An error will always exist on the perimeter of the surface. You can either ignore this error or mark it as an exception. Use this rule on data that must completely cover an area. For example, soil polygons cannot include gaps or form voids-they must cover an entire area.</para>
-		/// <para>Must Not Overlap (Area)— Requires that the interior of polygons not overlap. The polygons can share edges or vertices. This rule is used when an area cannot belong to two or more polygons. It is useful for modeling administrative boundaries, such as ZIP Codes or voting districts, and mutually exclusive area classifications, such as land cover or landform type.</para>
-		/// <para>Must Be Covered By Feature Class Of (Area-Area)— Requires that a polygon in one feature class (or subtype) must share all of its area with polygons in another feature class (or subtype). An area in the first feature class that is not covered by polygons from the other feature class is an error. This rule is used when an area of one type, such as a state, should be completely covered by areas of another type, such as counties.</para>
-		/// <para>Must Cover Each Other (Area-Area)— Requires that the polygons of one feature class (or subtype) must share all of their area with the polygons of another feature class (or subtype). Polygons may share edges or vertices. Any area defined in either feature class that is not shared with the other is an error. This rule is used when two systems of classification are used for the same geographic area, and any given point defined in one system must also be defined in the other. One such case occurs with nested hierarchical datasets, such as census blocks and block groups or small watersheds and large drainage basins. The rule can also be applied to nonhierarchically related polygon feature classes, such as soil type and slope class.</para>
-		/// <para>Must Be Covered By (Area-Area)— Requires that polygons of one feature class (or subtype) must be contained within polygons of another feature class (or subtype). Polygons may share edges or vertices. Any area defined in the contained feature class must be covered by an area in the covering feature class. This rule is used when area features of a given type must be located within features of another type. This rule is useful when modeling areas that are subsets of a larger surrounding area, such as management units within forests or blocks within block groups.</para>
-		/// <para>Must Not Overlap With (Area-Area)— Requires that the interior of polygons in one feature class (or subtype) must not overlap with the interior of polygons in another feature class (or subtype). Polygons of the two feature classes can share edges or vertices or be completely disjointed. This rule is used when an area cannot belong to two separate feature classes. It is useful for combining two mutually exclusive systems of area classification, such as zoning and water body type, where areas defined within the zoning class cannot also be defined in the water body class and vice versa.</para>
-		/// <para>Must Be Covered By Boundary Of (Line-Area)— Requires that lines be covered by the boundaries of area features. This is useful for modeling lines, such as lot lines, that must coincide with the edge of polygon features, such as lots.</para>
-		/// <para>Must Be Covered By Boundary Of (Point-Area)— Requires that points fall on the boundaries of area features. This is useful when the point features help support the boundary system, such as boundary markers, which must be found on the edges of certain areas.</para>
-		/// <para>Must Be Properly Inside (Point-Area)— Requires that points fall within area features. This is useful when the point features are related to polygons, such as wells and well pads or address points and parcels.</para>
-		/// <para>Must Not Overlap (Line)— Requires that lines not overlap with lines in the same feature class (or subtype). This rule is used where line segments should not be duplicated, for example, in a stream feature class. Lines can cross or intersect but cannot share segments.</para>
-		/// <para>Must Not Intersect (Line)— Requires that line features from the same feature class (or subtype) not cross or overlap each other. Lines can share endpoints. This rule is used for contour lines that should never cross each other or in cases where the intersection of lines should only occur at endpoints, such as street segments and intersections.</para>
-		/// <para>Must Not Have Dangles (Line)— Requires that a line feature must touch lines from the same feature class (or subtype) at both endpoints. An endpoint that is not connected to another line is called a dangle. This rule is used when line features must form closed loops, such as when they are defining the boundaries of polygon features. It may also be used in cases where lines typically connect to other lines, as with streets. In this case, exceptions can be used where the rule is occasionally violated, as with cul-de-sac or dead-end street segments.</para>
-		/// <para>Must Not Have Pseudo-Nodes (Line)— Requires that a line connect to at least two other lines at each endpoint. Lines that connect to one other line (or to themselves) are said to have pseudo nodes. This rule is used where line features must form closed loops, such as when they define the boundaries of polygons or when line features logically must connect to two other line features at each end, as with segments in a stream network, with exceptions being marked for the originating ends of first-order streams.</para>
-		/// <para>Must Be Covered By Feature Class Of (Line-Line)— Requires that lines from one feature class (or subtype) must be covered by the lines in another feature class (or subtype). This is useful for modeling logically different but spatially coincident lines, such as routes and streets. A bus route feature class must not depart from the streets defined in the street feature class.</para>
-		/// <para>Must Not Overlap With (Line-Line)— Requires that a line from one feature class (or subtype) not overlap with line features in another feature class (or subtype). This rule is used when line features cannot share the same space. For example, roads must not overlap with railroads or depression subtypes of contour lines cannot overlap with other contour lines.</para>
-		/// <para>Must Be Covered By (Point-Line)— Requires that points in one feature class be covered by lines in another feature class. It does not constrain the covering portion of the line to be an endpoint. This rule is useful for points that fall along a set of lines, such as highway signs along highways.</para>
-		/// <para>Must Be Covered By Endpoint Of (Point-Line)— Requires that points in one feature class must be covered by the endpoints of lines in another feature class. This rule is similar to the line rule Endpoint Must Be Covered By except that, in cases where the rule is violated, it is the point feature that is marked as an error rather than the line. Boundary corner markers might be constrained to be covered by the endpoints of boundary lines.</para>
-		/// <para>Boundary Must Be Covered By (Area-Line)— Requires that boundaries of polygon features must be covered by lines in another feature class. This rule is used when area features need to have line features that mark the boundaries of the areas. This is usually when the areas have one set of attributes and their boundaries have other attributes. For example, parcels might be stored in the geodatabase along with their boundaries. Each parcel might be defined by one or more line features that store information about their length or the date surveyed, and every parcel should exactly match its boundaries.</para>
-		/// <para>Boundary Must Be Covered By Boundary Of (Area-Area)— Requires that boundaries of polygon features in one feature class (or subtype) be covered by boundaries of polygon features in another feature class (or subtype). This is useful when polygon features in one feature class, such as subdivisions, are composed of multiple polygons in another class, such as parcels, and the shared boundaries must be aligned.</para>
-		/// <para>Must Not Self-Overlap (Line)— Requires that line features not overlap themselves. They can cross or touch themselves but must not have coincident segments. This rule is useful for features, such as streets, where segments might touch in a loop but where the same street should not follow the same course twice.</para>
-		/// <para>Must Not Self-Intersect (Line)— Requires that line features not cross or overlap themselves. This rule is useful for lines, such as contour lines, that cannot cross themselves.</para>
-		/// <para>Must Not Intersect Or Touch Interior (Line)— Requires that a line in one feature class (or subtype) must only touch other lines of the same feature class (or subtype) at endpoints. Any line segment in which features overlap or any intersection not at an endpoint is an error. This rule is useful where lines must only be connected at endpoints, such as in the case of lot lines, which must split (only connect to the endpoints of) back lot lines and cannot overlap each other.</para>
-		/// <para>Endpoint Must Be Covered By (Line-Point)— Requires that the endpoints of line features must be covered by point features in another feature class. This is useful for modeling cases where a fitting must connect two pipes or a street intersection must be found at the junction of two streets.</para>
-		/// <para>Contains Point (Area-Point)— Requires that a polygon in one feature class contain at least one point from another feature class. Points must be within the polygon, not on the boundary. This is useful when every polygon should have at least one associated point, such as when parcels must have an address point.</para>
-		/// <para>Must Be Single Part (Line)— Requires that lines have only one part. This rule is useful where line features, such as highways, may not have multiple parts.</para>
-		/// <para>Must Coincide With (Point-Point)— Requires that points in one feature class (or subtype) be coincident with points in another feature class (or subtype). This is useful for cases where points must be covered by other points, such as transformers must coincide with power poles in electric distribution networks and observation points must coincide with stations.</para>
-		/// <para>Must Be Disjoint (Point)— Requires that points be separated spatially from other points in the same feature class (or subtype). Any points that overlap are errors. This is useful for ensuring that points are not coincident or duplicated within the same feature class, such as in layers of cities, parcel lot ID points, wells, or streetlamp poles.</para>
-		/// <para>Must Not Intersect With (Line-Line)— Requires that line features from one feature class (or subtype) not cross or overlap lines from another feature class (or subtype). Lines can share endpoints. This rule is used when there are lines from two layers that should never cross each other or in cases where the intersection of lines should only occur at endpoints, such as streets and railroads.</para>
-		/// <para>Must Not Intersect or Touch Interior With (Line-Line)— Requires that a line in one feature class (or subtype) must only touch other lines of another feature class (or subtype) at endpoints. Any line segment in which features overlap or any intersection not at an endpoint is an error. This rule is useful where lines from two layers must only be connected at endpoints.</para>
-		/// <para>Must Be Inside (Line-Area)— Requires that a line is contained within the boundary of an area feature. This is useful for cases where lines may partially or totally coincide with area boundaries but cannot extend beyond polygons, such as state highways that must be inside state borders and rivers that must be within watersheds.</para>
-		/// <para>Contains One Point (Area-Point)— Requires that each polygon contains one point feature and that each point feature falls within a single polygon. This is used when there must be a one-to-one correspondence between features of a polygon feature class and features of a point feature class, such as administrative boundaries and their capital cities. Each point must be properly inside exactly one polygon and each polygon must properly contain exactly one point. Points must be within the polygon, not on the boundary.</para>
+		/// <para>要添加的拓扑规则。有关规则及其用途的完整列表，请参阅点、线或面要素的拓扑规则和修复。</para>
+		/// <para>不能有空隙(面)— 此规则要求单一面之中或两个相邻面之间没有空白。所有面必须组成一个连续表面。表面的周长始终存在错误。您可以忽略这个错误或将其标记为异常。此规则用于必须完全覆盖某个区域的数据。例如，土壤面不能包含空隙或具有空白，这些面必须覆盖整个区域。</para>
+		/// <para>不能重叠(面)— 要求面的内部不重叠。面可以共享边或折点。当某区域不能属于两个或多个面时，使用此规则。此规则适用于行政边界（如“邮政编码”区或选举区）以及相互排斥的地域分类（如土地覆盖或地貌类型）。</para>
+		/// <para>必须被其他要素的要素类覆盖(面 - 面)— 要求一个要素类（或子类型）中的面必须向另一个要素类（或子类型）中的面共享自身所有的区域。第一个要素类中若存在未被其他要素类的面覆盖的区域则视作错误。当一种类型的区域（如一个州）应被另一种类型的区域（如所有的下辖县）完全覆盖时，使用此规则。</para>
+		/// <para>必须互相覆盖(面 - 面)— 要求一个要素类（或子类型）的面必须与另一个要素类（或子类型）的面共享双方的所有区域。面可以共享边或折点。任何一个要素类中存在未与另一个要素类共享的区域都视作错误。当两个分类系统用于相同的地理区域时使用此规则，在一个系统中定义的任意指定点也必须在另一个系统中定义。通常嵌套的等级数据集需要应用此规则，如人口普查区块和区块组或小分水岭和大的流域盆地。此规则还可应用于非等级相关的面要素类（如土壤类型和坡度分类）。</para>
+		/// <para>必须被其他要素覆盖(面 - 面)— 要求一个要素类（或子类型）的面必须包含于另一个要素类（或子类型）的面中。面可以共享边或折点。在被包含要素类中定义的所有区域必须被覆盖要素类中的区域所覆盖。当指定类型的区域要素必须位于另一类型的要素中时，使用此规则。当建模作为较大范围区域的子集区域（如森林中的管理单位或区块组中的区块）时，此规则非常有用。</para>
+		/// <para>不能与其他要素重叠(面 - 面)— 要求一个要素类（或子类型）面的内部不得与另一个要素类（或子类型）面的内部相重叠。两个要素类的面可以共享边或折点，或完全不相交。当某区域不能属于两个单独的要素类时，使用此规则。此规则适用于结合两个相互排斥的区域分类系统（如区域划分和水体类型，其中，在区域划分类中定义的区域无法在水体类中也进行定义，反之亦然）。</para>
+		/// <para>必须被其他要素的边界覆盖(线 - 面)— 要求线被面要素的边界覆盖。这适于建模必须与面要素（如地块）的边重合的线（如地块线）。</para>
+		/// <para>必须被其他要素的边界覆盖(点 - 面)— 要求点位于面要素的边界上。这在点要素帮助支持边界系统（如必须设在某些区域边界上的边界标记）时非常有用。</para>
+		/// <para>必须完全位于内部(点 - 面)— 要求点必须位于面要素内部。这在点要素与面有关时非常有用，如井和井垫或地址点和宗地。</para>
+		/// <para>不能重叠(线)— 要求线不能与同一要素类（或子类型）中的线重叠。例如，当河流要素类中线段不能重复时，使用此规则。线可以交叉或相交，但不能共享线段。</para>
+		/// <para>不能相交(线)— 要求相同要素类（或子类型）中的线要素不能彼此相交或重叠。线可以共享端点。此规则适用于绝不应彼此交叉的等值线，或只能在端点相交的线（如街段和交叉路口）。</para>
+		/// <para>不能有悬挂点(线)— 要求线要素的两个端点必须都接触到相同要素类（或子类型）中的线。未连接到另一条线的端点称为悬挂点。当线要素必须形成闭合环时（例如由这些线要素定义面要素的边界），使用此规则。它还可在线通常会连接到其他线（如街道）时使用。在这种情况下，可以偶尔违反规则使用异常，例如死胡同 (cul-de-sac) 或没有出口的街段的情况。</para>
+		/// <para>不能有伪结点(线)— 要求线在每个端点处至少连接两条其他线。连接到一条其他线（或到其自身）的线被认为是包含了伪结点。在线要素必须形成闭合环时使用此规则，例如由这些线要素定义面的边界，或逻辑上要求线要素必须在每个端点连接两条其他线要素的情况。河流网络中的线段就是如此，但需要将一级河流的源头标记为异常。</para>
+		/// <para>必须被其他要素的要素类覆盖(线 - 线)— 要求一个要素类（或子类型）中的线必须被另一个要素类（或子类型）中的线所覆盖。此选项适于建模逻辑不同但空间重合的线（如路径和街道）。公交路线要素类不能离开在街道要素类中定义的街道。</para>
+		/// <para>不能与其他要素重叠(线 - 线)— 要求一个要素类（或子类型）中的线不能与另一个要素类（或子类型）中的线要素重叠。线要素无法共享同一空间时使用此规则。例如道路不能与铁路重叠，或洼地子类型的等值线不能与其他等值线重叠。</para>
+		/// <para>必须被其他要素覆盖(点 - 线)— 要求一个要素类中的点被另一要素类中的线覆盖。它不能将线的覆盖部分约束为端点。此规则适用于沿一组线出现的点，如公路沿线的公路标志。</para>
+		/// <para>必须被其他要素的端点覆盖(点 - 线)— 要求一个要素类中的点必须被另一要素类中线的端点覆盖。除了当违反此规则时，标记为错误的是点要素而不是线之外，此规则与线规则“端点必须被其他要素覆盖”极为相似。边界拐角标记可以被约束，以使其被边界线的端点覆盖。</para>
+		/// <para>边界必须被其他要素覆盖（面 - 线）— 要求面要素的边界必须被另一要素类中的线覆盖。此规则在区域要素需要具有标记区域边界的线要素时使用。通常在区域具有一组属性且这些区域的边界具有其他属性时使用。例如，宗地可能与其边界一同存储在地理数据库中。每个宗地可能由一个或多个存储着与其长度或测量日期相关的信息的线要素定义，而且每个宗地都应与其边界完全匹配。</para>
+		/// <para>边界必须被其他要素的边界覆盖(面 - 面)— 要求一个要素类（或子类型）中的面要素的边界被另一个要素类（或子类型）中面要素的边界覆盖。当一个要素类中的面要素（如住宅小区）由另一个类（如宗地）中的多个面组成，且共享边界必须对齐时，此规则非常有用。</para>
+		/// <para>不能自重叠（线）— 要求线要素不得与自身重叠。这些线要素可以交叉或接触自身但不得有重合的线段。此规则适用于街道等线段可能接触闭合线的要素，但同一街道不应出现两次相同的路线。</para>
+		/// <para>不能自相交（线）— 要求线要素不得自交叉或与自身重叠。此规则适用于不能与自身交叉的线（如等值线）。</para>
+		/// <para>不能相交或内部接触(线)— 要求一个要素类（或子类型）中的线必须仅在端点处接触相同要素类（或子类型）的其他线。任何其中有要素重叠的线段或任何不是在端点处发生的相交都是错误。此规则适用于线只能在端点处连接的情况，例如地块线必须连接（仅连接到端点）至其他地块线，并且不能相互重叠。</para>
+		/// <para>端点必须被其他要素覆盖(线 - 点)— 要求线要素的端点必须被另一要素类中的点要素覆盖。在某些建模情况下，例如设备必须连接两条管线，或者交叉路口必须出现在两条街道的交汇处时，此工具十分有用。</para>
+		/// <para>包含点(面 - 点)— 要求一个要素类中的面至少包含另一个要素类中的一个点。点必须位于面要素中，而不是边界上。当每个面至少应包含一个关联点时（如宗地必须具有地址点），此规则非常有用。</para>
+		/// <para>必须为单一部件(线)— 要求线只有一个部分。当线要素（如高速公路）不能有多个部分时，此规则非常有用。</para>
+		/// <para>必须与其他要素重合(点 - 点)— 要求一个要素类（或子类型）中的点必须与另一个要素类（或子类型）中的点重合。此规则适用于点必须被其他点覆盖的情况，如变压器必须与配电网络中的电线杆重合，观察点必须与工作站重合。</para>
+		/// <para>必须不相交(点)— 要求点与相同要素类（或子类型）中的其他点在空间上相互分离。重叠的任何点都是错误。此规则可确保相同要素类的点不重合或不重复，如城市图层中、宗地块 ID 点、井或路灯杆。</para>
+		/// <para>不能与其他要素相交(线 - 线)— 要求一个要素类（或子类型）中的线要素不能与另一个要素类（或子类型）中的线要素相交或重叠。线可以共享端点。当两个图层中的线绝不应当交叉或只能在端点处发生相交时（如街道和铁路），使用此规则。</para>
+		/// <para>不能与其他要素相交或内部接触（线 - 线）— 要求一个要素类（或子类型）中的线必须仅在端点处接触另一要素类（或子类型）的其他线。任何其中有要素重叠的线段或任何不是在端点处发生的相交都是错误。当两个图层中的线必须仅在端点处连接时，此规则非常有用。</para>
+		/// <para>必须位于内部(线 - 面)— 要求线包含在面要素的边界内。当线可能与面边界部分重合或全部重合但不能延伸到面之外（如必须位于州边界内部的高速公路和必须位于分水岭内部的河流）时，此选项十分有用。</para>
+		/// <para>包含一个点(面 - 点)— 要求每个面包含一个点要素且每个点要素落在单独的面要素中。如果在面要素类的要素和点要素类的要素之间必须存在一对一的对应关系（如行政边界与其首都），此规则非常有用。每个点必须完全位于一个面要素内部，而每个面要素必须完全包含一个点。点必须位于面要素中，而不是边界上。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -153,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Feature class</para>
-		/// <para>The input or origin feature class.</para>
+		/// <para>输入或源要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -161,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Subtype</para>
-		/// <para>The subtype for the input or origin feature class. Enter the subtype's description (not the code). If subtypes do not exist on the origin feature class, or you want the rule to be applied to all subtypes in the feature class, leave this blank.</para>
+		/// <para>输入或源要素类的子类型。输入子类型的描述（而不是代码）。如果源要素上不存在子类型，或者要将规则应用于要素类中的所有子类型，则将此留空。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -169,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Feature class</para>
-		/// <para>The destination feature class for the topology rule.</para>
+		/// <para>拓扑规则的目标要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -177,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Subtype</para>
-		/// <para>The subtype for the destination feature class. Enter the subtype's description (not the code). If subtypes do not exist on the origin feature class, or you want the rule to be applied to all subtypes in the feature class, leave this blank.</para>
+		/// <para>目标要素类的子类型。输入子类型的描述（而不是代码）。如果源要素上不存在子类型，或者要将规则应用于要素类中的所有子类型，则将此留空。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

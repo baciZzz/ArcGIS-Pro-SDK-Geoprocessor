@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Copy</para>
-	/// <para>Makes a copy of the input data.</para>
+	/// <para>复制</para>
+	/// <para>复制输入数据。</para>
 	/// </summary>
 	[Obsolete()]
 	public class Copy : AbstractGPProcess
@@ -21,11 +22,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InData">
 		/// <para>Input Data</para>
-		/// <para>The data to be copied.</para>
+		/// <para>要复制的数据。</para>
 		/// </param>
 		/// <param name="OutData">
 		/// <para>Output Data</para>
-		/// <para>The location and name of the output data.</para>
+		/// <para>输出数据的位置和名称。</para>
 		/// </param>
 		public Copy(object InData, object OutData)
 		{
@@ -34,14 +35,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Copy</para>
+		/// <para>Tool Display Name : 复制</para>
 		/// </summary>
-		public override string DisplayName() => "Copy";
+		public override string DisplayName() => "复制";
 
 		/// <summary>
-		/// <para>Tool Name : Copy</para>
+		/// <para>Tool Name : 复制</para>
 		/// </summary>
-		public override string ToolName() => "Copy";
+		public override string ToolName() => "复制";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Copy</para>
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Data</para>
-		/// <para>The data to be copied.</para>
+		/// <para>要复制的数据。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEType()]
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Data</para>
-		/// <para>The location and name of the output data.</para>
+		/// <para>输出数据的位置和名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEType()]
@@ -86,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Data type</para>
-		/// <para>The type of the data on disk to be copied. This is only necessary when the input data is in a geodatabase and naming conflicts exist, for example, if the geodatabase contains a feature dataset and a feature class with the same name. In this case, the data type is used to clarify which dataset you want to copy.</para>
+		/// <para>磁盘上要复制的数据的类型。 仅当输入数据位于地理数据库中且存在命名冲突（例如，如果地理数据库包含同名的要素数据集和要素类）时需要此项。 在这种情况下，数据类型将用于确定要复制的数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -94,12 +95,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Associated Data</para>
-		/// <para>When the input has associated data, this parameter can be used to control the associated output data&apos;s name and config keyword.</para>
-		/// <para>From Name—Data associated with the input data, which will also be copied.</para>
-		/// <para>Data Type—The type of the data on disk to be copied. The only time you need to provide a value is when a geodatabase contains a feature dataset and a feature class with the same name. In this case, you need to select the data type, FeatureDataset or FeatureClass, of the item you want to copy.</para>
-		/// <para>To Name—The name of the copied data in the Output Data.</para>
-		/// <para>Config Keyword—The geodatabase storage parameters (configuration).</para>
-		/// <para>The From Name and To Name column names will be identical if the To Name is not already used in Output Data. If a name already exists in the Output Data, a unique To Name will be created by appending an underscore plus a number, _1.</para>
+		/// <para>如果输入具有关联的数据，则此参数可用于控制关联输出数据名称和配置关键字。</para>
+		/// <para>自名称 - 将与输入数据一同复制的相关联的数据。</para>
+		/// <para>数据类型 - 磁盘上要复制的数据的类型。 只有在地理数据库中的要素数据集和要素类名称相同时，才需要提供一个值。 在这种情况下，需要为希望复制的项选择数据类型（FeatureDataset 或 FeatureClass）。</para>
+		/// <para>至名称 - 输出数据中已复制数据的名称。</para>
+		/// <para>配置关键字 - 地理数据库存储参数（配置）。</para>
+		/// <para>如果已在输出数据中使用了至名称，则自名称和至名称列名称将相同。 如果某个名称已存在于输出数据中，则将通过附加下划线加数字 (_1) 来创建唯一的至名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]

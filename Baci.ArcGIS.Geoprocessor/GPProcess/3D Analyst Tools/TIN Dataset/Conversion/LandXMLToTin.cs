@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>LandXML To TIN</para>
-	/// <para>This tool imports one or more triangulated irregular network (TIN) surfaces from a LandXML file to output Esri TINs.</para>
+	/// <para>LandXML 转 TIN</para>
+	/// <para>此工具将一个或多个不规则三角网 (TIN) 表面从 LandXML 文件导入到输出 Esri TIN。</para>
 	/// </summary>
 	public class LandXMLToTin : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLandxmlPath">
 		/// <para>Input</para>
-		/// <para>The input LandXML file.</para>
+		/// <para>输入 LandXML 文件。</para>
 		/// </param>
 		/// <param name="OutTinFolder">
 		/// <para>Output TIN Folder</para>
-		/// <para>The folder that the output TINs will be created in.</para>
+		/// <para>将要在其中创建输出 TIN 的文件夹。</para>
 		/// </param>
 		/// <param name="TinBasename">
 		/// <para>Output TIN Base Name</para>
-		/// <para>The basename of the resulting TIN. When several TINs will be exported from the LandXML file, the basename is used to define a unique name for each output TIN. If &lt;basename&gt; already exists, the tool will not write anything. If &lt;basename&gt; does not exist but &lt;basename&gt;2 exists, the tool will create &lt;basename&gt; and &lt;basename&gt;2_1, instead of &lt;basename&gt;2.</para>
+		/// <para>生成的 TIN 的 basename。要从 LandXML 文件中导出多个 TIN 时，basename 用于为各个输出 TIN 定义唯一名称。如果已存在 &lt;basename&gt;，该工具将不会写入任何内容。如果 &lt;basename&gt; 不存在，但 &lt;basename&gt;2 存在，则工具将创建 &lt;basename&gt; 和 &lt;basename&gt;2_1，而不会创建 &lt;basename&gt;2。</para>
 		/// </param>
 		public LandXMLToTin(object InLandxmlPath, object OutTinFolder, object TinBasename)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : LandXML To TIN</para>
+		/// <para>Tool Display Name : LandXML 转 TIN</para>
 		/// </summary>
-		public override string DisplayName() => "LandXML To TIN";
+		public override string DisplayName() => "LandXML 转 TIN";
 
 		/// <summary>
 		/// <para>Tool Name : LandXMLToTin</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input</para>
-		/// <para>The input LandXML file.</para>
+		/// <para>输入 LandXML 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output TIN Folder</para>
-		/// <para>The folder that the output TINs will be created in.</para>
+		/// <para>将要在其中创建输出 TIN 的文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output TIN Base Name</para>
-		/// <para>The basename of the resulting TIN. When several TINs will be exported from the LandXML file, the basename is used to define a unique name for each output TIN. If &lt;basename&gt; already exists, the tool will not write anything. If &lt;basename&gt; does not exist but &lt;basename&gt;2 exists, the tool will create &lt;basename&gt; and &lt;basename&gt;2_1, instead of &lt;basename&gt;2.</para>
+		/// <para>生成的 TIN 的 basename。要从 LandXML 文件中导出多个 TIN 时，basename 用于为各个输出 TIN 定义唯一名称。如果已存在 &lt;basename&gt;，该工具将不会写入任何内容。如果 &lt;basename&gt; 不存在，但 &lt;basename&gt;2 存在，则工具将创建 &lt;basename&gt; 和 &lt;basename&gt;2_1，而不会创建 &lt;basename&gt;2。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>TINs to Import</para>
-		/// <para>The one or more LandXML TIN surfaces that will be exported to an Esri TIN.</para>
+		/// <para>一个或多个 LandXML TIN 表面将导出至一个 Esri TIN 中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Geodatabase Configuration Keywords</para>
-	/// <para>Exports the configuration keywords, parameters, and values from the specified enterprise geodatabase to an editable file. Change parameter values or add custom configuration keywords to the file and use the Import Geodatabase Configuration Keywords tool to import the changes to the geodatabase.</para>
+	/// <para>导出地理数据库配置关键字</para>
+	/// <para>此工具可用于将指定企业级地理数据库中的配置关键字、参数和值导出为可编辑文件。更改参数值或向文件添加自定义配置关键字，然后使用导入地理数据库配置关键字工具将更改导入到地理数据库。</para>
 	/// </summary>
 	public class ExportGeodatabaseConfigurationKeywords : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputDatabase">
 		/// <para>Input Database Connection</para>
-		/// <para>The connection file for the enterprise geodatabase from which you want to export configuration keywords, parameters, and values. You must connect as the geodatabase administrator.</para>
+		/// <para>要从中导出配置关键字、参数和值的企业地理数据库的连接文件。您必须以地理数据库管理员身份进行连接。</para>
 		/// </param>
 		/// <param name="OutFile">
 		/// <para>Output File</para>
-		/// <para>The full path to and name of the ASCII text file to be created. The file will contain all the configuration keywords, parameters, and values from the enterprise geodatabase's DBTUNE (or SDE_DBTUNE) system table.</para>
+		/// <para>待创建的 ASCII 文本文件的名称和完整路径。文件将包含企业级地理数据库的 DBTUNE（或 SDE_DBTUNE）系统表中的所有配置关键字、参数和值。</para>
 		/// </param>
 		public ExportGeodatabaseConfigurationKeywords(object InputDatabase, object OutFile)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Export Geodatabase Configuration Keywords</para>
+		/// <para>Tool Display Name : 导出地理数据库配置关键字</para>
 		/// </summary>
-		public override string DisplayName() => "Export Geodatabase Configuration Keywords";
+		public override string DisplayName() => "导出地理数据库配置关键字";
 
 		/// <summary>
 		/// <para>Tool Name : ExportGeodatabaseConfigurationKeywords</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
-		/// <para>The connection file for the enterprise geodatabase from which you want to export configuration keywords, parameters, and values. You must connect as the geodatabase administrator.</para>
+		/// <para>要从中导出配置关键字、参数和值的企业地理数据库的连接文件。您必须以地理数据库管理员身份进行连接。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>The full path to and name of the ASCII text file to be created. The file will contain all the configuration keywords, parameters, and values from the enterprise geodatabase's DBTUNE (or SDE_DBTUNE) system table.</para>
+		/// <para>待创建的 ASCII 文本文件的名称和完整路径。文件将包含企业级地理数据库的 DBTUNE（或 SDE_DBTUNE）系统表中的所有配置关键字、参数和值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

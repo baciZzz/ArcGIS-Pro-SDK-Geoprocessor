@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Annotate Selected Features</para>
-	/// <para>Creates annotation for the selected features of a layer. The labeling properties defined in the annotation class properties of  the specified related annotation feature classes are used.</para>
+	/// <para>注记所选要素</para>
+	/// <para>用于为图层的所选要素创建注记。将使用在指定相关注记要素类的注记类属性中定义的标注属性。</para>
 	/// </summary>
 	public class AnnotateSelectedFeatures : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InMap">
 		/// <para>Input Map</para>
-		/// <para>The input map.</para>
+		/// <para>输入地图。</para>
 		/// </param>
 		/// <param name="InLayer">
 		/// <para>Input Features</para>
-		/// <para>The layer for which the selected features will have annotation created.</para>
+		/// <para>所选要素将为其创建注记的图层。</para>
 		/// </param>
 		/// <param name="AnnoLayers">
 		/// <para>Annotation Layers</para>
-		/// <para>The feature-linked annotation layers and the specified sublayers that will have annotation converted into them.</para>
+		/// <para>将注记转换到其中的关联要素的注记图层和指定的子图层。</para>
 		/// </param>
 		public AnnotateSelectedFeatures(object InMap, object InLayer, object AnnoLayers)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Annotate Selected Features</para>
+		/// <para>Tool Display Name : 注记所选要素</para>
 		/// </summary>
-		public override string DisplayName() => "Annotate Selected Features";
+		public override string DisplayName() => "注记所选要素";
 
 		/// <summary>
 		/// <para>Tool Name : AnnotateSelectedFeatures</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Map</para>
-		/// <para>The input map.</para>
+		/// <para>输入地图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMap()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The layer for which the selected features will have annotation created.</para>
+		/// <para>所选要素将为其创建注记的图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Annotation Layers</para>
-		/// <para>The feature-linked annotation layers and the specified sublayers that will have annotation converted into them.</para>
+		/// <para>将注记转换到其中的关联要素的注记图层和指定的子图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -101,9 +102,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Convert unplaced labels to unplaced annotation</para>
-		/// <para>Specifies whether to create unplaced annotation from unplaced labels.</para>
-		/// <para>Unchecked—Annotation will only be created for features that are currently labeled. This is the default.</para>
-		/// <para>Checked—Unplaced annotation are stored in the annotation feature class. The status field for these annotation is set to Unplaced.</para>
+		/// <para>指定否根据未放置的标注创建未放置的注记。</para>
+		/// <para>取消选中 - 仅为当前已标注的要素创建注记。这是默认设置。</para>
+		/// <para>选中 - 未放置的注记将存储到注记要素类中。这些注记的状态字段将设置为“未放置”。</para>
 		/// <para><see cref="GenerateUnplacedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -126,14 +127,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum GenerateUnplacedEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Unplaced annotation are stored in the annotation feature class. The status field for these annotation is set to Unplaced.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GENERATE_UNPLACED")]
 			GENERATE_UNPLACED,
 
 			/// <summary>
-			/// <para>Unchecked—Annotation will only be created for features that are currently labeled. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ONLY_PLACED")]

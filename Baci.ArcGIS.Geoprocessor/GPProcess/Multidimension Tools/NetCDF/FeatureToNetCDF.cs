@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Feature to NetCDF</para>
-	/// <para>Converts a point feature class to a netCDF file.</para>
+	/// <para>要素至 NetCDF</para>
+	/// <para>将点要素类转换为 NetCDF 文件。</para>
 	/// </summary>
 	public class FeatureToNetCDF : AbstractGPProcess
 	{
@@ -20,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input point feature class.</para>
+		/// <para>输入点要素类。</para>
 		/// </param>
 		/// <param name="FieldsToVariables">
 		/// <para>Fields to Variables</para>
-		/// <para>The field or fields used to create variables in the netCDF file.</para>
-		/// <para>Four special fields—Shape.X, Shape.Y, Shape.Z, and Shape.M—can be used for exporting x-coordinates or longitude, y-coordinates or latitude, Z values, and M values of input features, respectively.</para>
-		/// <para>Field—A field in the input feature attribute table.</para>
-		/// <para>Variable—The netCDF variable name</para>
-		/// <para>Units—The units of the data represented by the field</para>
+		/// <para>在 netCDF 文件中创建变量时使用的字段。</para>
+		/// <para>使用四个特殊字段（Shape.X、Shape.Y、Shape.Z 和 Shape.M）可以分别导出输入要素的 x 坐标或经度、y 坐标或纬度、Z 值和 M 值。</para>
+		/// <para>Field - 输入要素属性表中的某个字段。</para>
+		/// <para>Variable - netCDF 变量名</para>
+		/// <para>Units - 由字段表示的数据的单位</para>
 		/// </param>
 		/// <param name="OutNetcdfFile">
 		/// <para>Output netCDF File</para>
-		/// <para>The output netCDF file. The file name must have an .nc extension.</para>
+		/// <para>输出的 netCDF 文件。 文件名的扩展名必须是 .nc。</para>
 		/// </param>
 		public FeatureToNetCDF(object InFeatures, object FieldsToVariables, object OutNetcdfFile)
 		{
@@ -42,9 +43,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Feature to NetCDF</para>
+		/// <para>Tool Display Name : 要素至 NetCDF</para>
 		/// </summary>
-		public override string DisplayName() => "Feature to NetCDF";
+		public override string DisplayName() => "要素至 NetCDF";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureToNetCDF</para>
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input point feature class.</para>
+		/// <para>输入点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -89,11 +90,11 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Fields to Variables</para>
-		/// <para>The field or fields used to create variables in the netCDF file.</para>
-		/// <para>Four special fields—Shape.X, Shape.Y, Shape.Z, and Shape.M—can be used for exporting x-coordinates or longitude, y-coordinates or latitude, Z values, and M values of input features, respectively.</para>
-		/// <para>Field—A field in the input feature attribute table.</para>
-		/// <para>Variable—The netCDF variable name</para>
-		/// <para>Units—The units of the data represented by the field</para>
+		/// <para>在 netCDF 文件中创建变量时使用的字段。</para>
+		/// <para>使用四个特殊字段（Shape.X、Shape.Y、Shape.Z 和 Shape.M）可以分别导出输入要素的 x 坐标或经度、y 坐标或纬度、Z 值和 M 值。</para>
+		/// <para>Field - 输入要素属性表中的某个字段。</para>
+		/// <para>Variable - netCDF 变量名</para>
+		/// <para>Units - 由字段表示的数据的单位</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Output netCDF File</para>
-		/// <para>The output netCDF file. The file name must have an .nc extension.</para>
+		/// <para>输出的 netCDF 文件。 文件名的扩展名必须是 .nc。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -111,10 +112,10 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Fields to Dimensions</para>
-		/// <para>The field or fields used to create dimensions in the netCDF file.</para>
-		/// <para>Field—A field in the input feature attribute table.</para>
-		/// <para>Dimension—The netCDF dimension name</para>
-		/// <para>Units—The units of the data represented by the field</para>
+		/// <para>在 netCDF 文件中创建维度时使用的字段。</para>
+		/// <para>Field - 输入要素属性表中的某个字段。</para>
+		/// <para>Dimension - netCDF 维度名称</para>
+		/// <para>Units - 由字段表示的数据的单位</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]

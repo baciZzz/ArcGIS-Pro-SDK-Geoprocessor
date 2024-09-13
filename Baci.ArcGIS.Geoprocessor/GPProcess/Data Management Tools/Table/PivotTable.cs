@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Pivot Table</para>
-	/// <para>Creates a table from the input table by reducing redundancy  in records and flattening one-to-many relationships.</para>
+	/// <para>数据透视表</para>
+	/// <para>通过在“输入表”中减少记录中的冗余并简化一对多关系来创建表。</para>
 	/// </summary>
 	public class PivotTable : AbstractGPProcess
 	{
@@ -20,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The table whose records will be pivoted.</para>
+		/// <para>记录将被加入透视表的表。</para>
 		/// </param>
 		/// <param name="Fields">
 		/// <para>Input Field(s)</para>
-		/// <para>The fields that define records to be included in the output table.</para>
+		/// <para>用于定义要包含在输出表中的记录的字段。</para>
 		/// </param>
 		/// <param name="PivotField">
 		/// <para>Pivot Field</para>
-		/// <para>The field whose record values are used to generate the field names in the output table.</para>
+		/// <para>记录值用于在输出表中生成字段名称的字段。</para>
 		/// </param>
 		/// <param name="ValueField">
 		/// <para>Value Field</para>
-		/// <para>The field whose values populate the pivoted fields in the output table.</para>
+		/// <para>值用于填充输出表中的透视表字段的字段。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>The table to be created.</para>
+		/// <para>要创建的表。</para>
 		/// </param>
 		public PivotTable(object InTable, object Fields, object PivotField, object ValueField, object OutTable)
 		{
@@ -48,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Pivot Table</para>
+		/// <para>Tool Display Name : 数据透视表</para>
 		/// </summary>
-		public override string DisplayName() => "Pivot Table";
+		public override string DisplayName() => "数据透视表";
 
 		/// <summary>
 		/// <para>Tool Name : PivotTable</para>
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The table whose records will be pivoted.</para>
+		/// <para>记录将被加入透视表的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Field(s)</para>
-		/// <para>The fields that define records to be included in the output table.</para>
+		/// <para>用于定义要包含在输出表中的记录的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pivot Field</para>
-		/// <para>The field whose record values are used to generate the field names in the output table.</para>
+		/// <para>记录值用于在输出表中生成字段名称的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Value Field</para>
-		/// <para>The field whose values populate the pivoted fields in the output table.</para>
+		/// <para>值用于填充输出表中的透视表字段的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The table to be created.</para>
+		/// <para>要创建的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]

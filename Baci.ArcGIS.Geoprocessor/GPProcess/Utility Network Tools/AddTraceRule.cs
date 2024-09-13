@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Trace Rule</para>
+	/// <para>Add Trace Rule</para>
 	/// <para>Add a trace rule to a diagram template</para>
 	/// </summary>
 	[Obsolete()]

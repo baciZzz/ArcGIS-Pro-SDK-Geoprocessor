@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Load Territory Records</para>
+	/// <para>Load Territory Records</para>
 	/// <para>Adds records (features) or updates existing records for the specified level.</para>
 	/// </summary>
 	public class LoadTerritoryRecords : AbstractGPProcess

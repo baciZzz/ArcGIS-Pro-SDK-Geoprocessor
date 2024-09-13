@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Compute Change Raster</para>
-	/// <para>Calculates the absolute, relative, or categorical difference between two raster datasets.</para>
+	/// <para>计算变化栅格</para>
+	/// <para>计算两个栅格数据集之间的绝对、相对或分类差异。</para>
 	/// </summary>
 	public class ComputeChangeRaster : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="FromRaster">
 		/// <para>From Raster</para>
-		/// <para>The initial or earlier raster to be analyzed.</para>
+		/// <para>待分析的初始栅格或较早栅格。</para>
 		/// </param>
 		/// <param name="ToRaster">
 		/// <para>To Raster</para>
-		/// <para>The final or later raster to be analyzed. This is the raster that will be compared to the initial raster.</para>
+		/// <para>待分析的最终栅格或较晚栅格。将要与初始栅格进行比较的栅格。</para>
 		/// </param>
 		/// <param name="OutRasterDataset">
 		/// <para>Output Raster</para>
-		/// <para>The output change raster dataset.</para>
+		/// <para>输出更改栅格数据集。</para>
 		/// </param>
 		public ComputeChangeRaster(object FromRaster, object ToRaster, object OutRasterDataset)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Compute Change Raster</para>
+		/// <para>Tool Display Name : 计算变化栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Compute Change Raster";
+		public override string DisplayName() => "计算变化栅格";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeChangeRaster</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>From Raster</para>
-		/// <para>The initial or earlier raster to be analyzed.</para>
+		/// <para>待分析的初始栅格或较早栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>To Raster</para>
-		/// <para>The final or later raster to be analyzed. This is the raster that will be compared to the initial raster.</para>
+		/// <para>待分析的最终栅格或较晚栅格。将要与初始栅格进行比较的栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Raster</para>
-		/// <para>The output change raster dataset.</para>
+		/// <para>输出更改栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -98,10 +99,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Compute Change Method</para>
-		/// <para>Specifies the type of calculation to perform between the two rasters.</para>
-		/// <para>Difference—The mathematical difference, or subtraction, between the pixel values in the rasters will be calculated. This is the default.</para>
-		/// <para>Relative difference—The difference in pixel values, accounting for the quantities of the values being compared, will be calculated.</para>
-		/// <para>Categorical difference—The difference between two categorical or thematic rasters will be calculated in which the output contains class transitions that occurred between the two rasters.</para>
+		/// <para>指定要在两个栅格之间执行的计算类型。</para>
+		/// <para>差异—将计算栅格中像素值之间的数学差或减法。这是默认设置。</para>
+		/// <para>对差异—将在考虑比较值数量的同时，计算像素值的差异。</para>
+		/// <para>类别差异—将计算两个类别或主题栅格之间的差异，其输出包含在两个栅格之间发生的类过渡。</para>
 		/// <para><see cref="ComputeChangeMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -111,8 +112,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>From Classes</para>
-		/// <para>The list of class names from the From Raster parameter to be included in the computation. If no classes are provided, all classes will be included.</para>
-		/// <para>This parameter is active when the Compute Change Method parameter is set to Categorical difference.</para>
+		/// <para>将包括在计算中的起始栅格参数中的类名称列表。如果未提供任何类，将包括所有类。</para>
+		/// <para>当计算变化方法参数设置为类别差异时，此参数处于活动状态。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -121,8 +122,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>To Classes</para>
-		/// <para>The list of class names from the To Raster parameter to be included in the computation. If no classes are provided, all classes will be included.</para>
-		/// <para>This parameter is active when the Compute Change Method parameter is set to Categorical difference.</para>
+		/// <para>将包括在计算中的目标栅格参数中的类名称列表。如果未提供任何类，将包括所有类。</para>
+		/// <para>当计算变化方法参数设置为类别差异时，此参数处于活动状态。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -131,10 +132,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Filter Method</para>
-		/// <para>Specifies the pixels to be categorized in the output raster. This parameter is active when the Compute Change Method parameter is set to Categorical difference.</para>
-		/// <para>Changed pixels only—Only the pixels that changed categories will be categorized in the output. All pixels that did not change categories will be grouped in a class called Other.</para>
-		/// <para>Unchanged pixels only—Only the pixels that did not change categories will be categorized in the output. All pixels that changed categories will be groups in a class called Other.</para>
-		/// <para>All pixels—All pixels will be categorized in the output. This is the default.</para>
+		/// <para>指定要在输出栅格中分类的像素。当计算变化方法参数设置为类别差异时，此参数处于活动状态。</para>
+		/// <para>仅变化像素—仅类别更改的像素在输出中分类。所有类别未更改的像素被归类为名为“其他”的类中。</para>
+		/// <para>仅不变像素—仅类别未更改的像素在输出中分类。所有类别更改的像素被归类为名为“其他”的类中。</para>
+		/// <para>所有像素—所有像素将在输出中分类。这是默认设置。</para>
 		/// <para><see cref="FilterMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -144,8 +145,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Transition Class Colors</para>
-		/// <para>Specifies the color to use to symbolize the output classes. When a pixel changes from one class type to another, the output pixel color represents the initial class type, the final class type, or a blend of the two.</para>
-		/// <para>This parameter is active when the Compute Change Method parameter is set to Categorical difference.</para>
+		/// <para>指定用于符号化输出类的颜色。当像素从一种类类型更改为另一种类类型时，输出像素颜色代表初始类类型、最终类类型或两者的混合。</para>
+		/// <para>当计算变化方法参数设置为类别差异时，此参数处于活动状态。</para>
 		/// <para><see cref="DefineTransitionColorsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -170,24 +171,24 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum ComputeChangeMethodEnum 
 		{
 			/// <summary>
-			/// <para>Difference—The mathematical difference, or subtraction, between the pixel values in the rasters will be calculated. This is the default.</para>
+			/// <para>差异—将计算栅格中像素值之间的数学差或减法。这是默认设置。</para>
 			/// </summary>
 			[GPValue("DIFFERENCE")]
-			[Description("Difference")]
+			[Description("差异")]
 			Difference,
 
 			/// <summary>
-			/// <para>Relative difference—The difference in pixel values, accounting for the quantities of the values being compared, will be calculated.</para>
+			/// <para>对差异—将在考虑比较值数量的同时，计算像素值的差异。</para>
 			/// </summary>
 			[GPValue("RELATIVE_DIFFERENCE")]
-			[Description("Relative difference")]
+			[Description("对差异")]
 			Relative_difference,
 
 			/// <summary>
-			/// <para>Categorical difference—The difference between two categorical or thematic rasters will be calculated in which the output contains class transitions that occurred between the two rasters.</para>
+			/// <para>类别差异—将计算两个类别或主题栅格之间的差异，其输出包含在两个栅格之间发生的类过渡。</para>
 			/// </summary>
 			[GPValue("CATEGORICAL_DIFFERENCE")]
-			[Description("Categorical difference")]
+			[Description("类别差异")]
 			Categorical_difference,
 
 		}
@@ -198,24 +199,24 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum FilterMethodEnum 
 		{
 			/// <summary>
-			/// <para>All pixels—All pixels will be categorized in the output. This is the default.</para>
+			/// <para>所有像素—所有像素将在输出中分类。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All pixels")]
+			[Description("所有像素")]
 			All_pixels,
 
 			/// <summary>
-			/// <para>Changed pixels only—Only the pixels that changed categories will be categorized in the output. All pixels that did not change categories will be grouped in a class called Other.</para>
+			/// <para>仅变化像素—仅类别更改的像素在输出中分类。所有类别未更改的像素被归类为名为“其他”的类中。</para>
 			/// </summary>
 			[GPValue("CHANGED_PIXELS_ONLY")]
-			[Description("Changed pixels only")]
+			[Description("仅变化像素")]
 			Changed_pixels_only,
 
 			/// <summary>
-			/// <para>Unchanged pixels only—Only the pixels that did not change categories will be categorized in the output. All pixels that changed categories will be groups in a class called Other.</para>
+			/// <para>仅不变像素—仅类别未更改的像素在输出中分类。所有类别更改的像素被归类为名为“其他”的类中。</para>
 			/// </summary>
 			[GPValue("UNCHANGED_PIXELS_ONLY")]
-			[Description("Unchanged pixels only")]
+			[Description("仅不变像素")]
 			Unchanged_pixels_only,
 
 		}
@@ -229,21 +230,21 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 			/// <para></para>
 			/// </summary>
 			[GPValue("AVERAGE")]
-			[Description("Average From and To colors")]
+			[Description("起始和目标颜色平均值")]
 			Average_From_and_To_colors,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("FROM_COLOR")]
-			[Description("From color")]
+			[Description("自颜色")]
 			From_color,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("TO_COLOR")]
-			[Description("To color")]
+			[Description("至颜色")]
 			To_color,
 
 		}

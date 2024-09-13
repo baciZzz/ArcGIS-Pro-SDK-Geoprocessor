@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 {
 	/// <summary>
 	/// <para>Write To Reviewer Table</para>
-	/// <para>Writes a feature class, feature layer,  table, or table view to the Reviewer workspace.</para>
+	/// <para>写入 Reviewer 表</para>
+	/// <para>将要素类、要素图层、表或表视图写入 Reviewer 工作空间。</para>
 	/// </summary>
 	public class WriteToReviewerTable : AbstractGPProcess
 	{
@@ -20,31 +21,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// </summary>
 		/// <param name="InReviewerWorkspace">
 		/// <para>Reviewer Workspace</para>
-		/// <para>The path to the Reviewer workspace where the features or table records will be written.</para>
+		/// <para>要素或表记录将写入其中的 Reviewer 工作空间的路径。</para>
 		/// </param>
 		/// <param name="InSession">
 		/// <para>Session</para>
-		/// <para>The Reviewer session ID in which the features or table records will be written. Use the full session ID format: Session 1 : Session 1.</para>
+		/// <para>要素或表记录将写入其中的 Reviewer 会话 ID。使用完整的会话 ID 格式：会话 1：会话 1。</para>
 		/// </param>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The features or table records to write to the Reviewer workspace.</para>
+		/// <para>将写入 Reviewer 工作空间的要素或表记录。</para>
 		/// </param>
 		/// <param name="InField">
 		/// <para>ID Field</para>
-		/// <para>The field that contains identifiers for the features. The value from this field populates the ID field in the Reviewer Results pane. The field you choose must have a data type of Long.</para>
+		/// <para>包含要素标识符的字段。该字段值填充 Reviewer 结果窗格中的 ID 字段。所选择的字段的数据类型必须为 Long。</para>
 		/// </param>
 		/// <param name="InOriginTableName">
 		/// <para>Origin Table Name (Value or Field)</para>
-		/// <para>The string or field value that will be used to populate the Source field in the Reviewer Results pane for each record that is written. This is typically the name of the feature class or table.</para>
-		/// <para>String—The name of the feature layer is defined as a text string.</para>
-		/// <para>Field—The value for the feature layer name is derived from a field on the feature layer or table.</para>
+		/// <para>该字符串或字段值将用于每条写入 Reviewer 结果窗格的记录，填充其中的源字段。它通常是要素类或表的名称。</para>
+		/// <para>字符串 - 要素图层名称定义为文本字符串。</para>
+		/// <para>字段 - 要素图层名称的值由要素图层或表中的字段派生而来。</para>
 		/// </param>
 		/// <param name="InReviewStatus">
 		/// <para>Review Status</para>
-		/// <para>A status string to associate with the group of records written to the Reviewer workspace. The default value is Write GP Results to Reviewer Table.If the default value is deleted or left blank, the value Write GP Results to Reviewer Table will be used as the status string.</para>
-		/// <para>String—You can type the value in the String text box.</para>
-		/// <para>Field—You can choose the Review Status field from the feature layer.</para>
+		/// <para>与写入 Reviewer 工作空间的记录组关联的状态字符串。默认值为将 GP 结果写入 Reviewer 表。如果默认值被删除或留空，则 Write GP Results to Reviewer Table 值将被用作状态字符串。</para>
+		/// <para>字符串 - 可在字符串文本框中输入值。</para>
+		/// <para>字段 - 可在要素图层中选择 Review Status 字段。</para>
 		/// </param>
 		public WriteToReviewerTable(object InReviewerWorkspace, object InSession, object InFeatures, object InField, object InOriginTableName, object InReviewStatus)
 		{
@@ -57,9 +58,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Write To Reviewer Table</para>
+		/// <para>Tool Display Name : 写入 Reviewer 表</para>
 		/// </summary>
-		public override string DisplayName() => "Write To Reviewer Table";
+		public override string DisplayName() => "写入 Reviewer 表";
 
 		/// <summary>
 		/// <para>Tool Name : WriteToReviewerTable</para>
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>Reviewer Workspace</para>
-		/// <para>The path to the Reviewer workspace where the features or table records will be written.</para>
+		/// <para>要素或表记录将写入其中的 Reviewer 工作空间的路径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -103,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>Session</para>
-		/// <para>The Reviewer session ID in which the features or table records will be written. Use the full session ID format: Session 1 : Session 1.</para>
+		/// <para>要素或表记录将写入其中的 Reviewer 会话 ID。使用完整的会话 ID 格式：会话 1：会话 1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The features or table records to write to the Reviewer workspace.</para>
+		/// <para>将写入 Reviewer 工作空间的要素或表记录。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>ID Field</para>
-		/// <para>The field that contains identifiers for the features. The value from this field populates the ID field in the Reviewer Results pane. The field you choose must have a data type of Long.</para>
+		/// <para>包含要素标识符的字段。该字段值填充 Reviewer 结果窗格中的 ID 字段。所选择的字段的数据类型必须为 Long。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -130,9 +131,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>Origin Table Name (Value or Field)</para>
-		/// <para>The string or field value that will be used to populate the Source field in the Reviewer Results pane for each record that is written. This is typically the name of the feature class or table.</para>
-		/// <para>String—The name of the feature layer is defined as a text string.</para>
-		/// <para>Field—The value for the feature layer name is derived from a field on the feature layer or table.</para>
+		/// <para>该字符串或字段值将用于每条写入 Reviewer 结果窗格的记录，填充其中的源字段。它通常是要素类或表的名称。</para>
+		/// <para>字符串 - 要素图层名称定义为文本字符串。</para>
+		/// <para>字段 - 要素图层名称的值由要素图层或表中的字段派生而来。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -141,9 +142,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>Review Status</para>
-		/// <para>A status string to associate with the group of records written to the Reviewer workspace. The default value is Write GP Results to Reviewer Table.If the default value is deleted or left blank, the value Write GP Results to Reviewer Table will be used as the status string.</para>
-		/// <para>String—You can type the value in the String text box.</para>
-		/// <para>Field—You can choose the Review Status field from the feature layer.</para>
+		/// <para>与写入 Reviewer 工作空间的记录组关联的状态字符串。默认值为将 GP 结果写入 Reviewer 表。如果默认值被删除或留空，则 Write GP Results to Reviewer Table 值将被用作状态字符串。</para>
+		/// <para>字符串 - 可在字符串文本框中输入值。</para>
+		/// <para>字段 - 可在要素图层中选择 Review Status 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -152,9 +153,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>Subtype</para>
-		/// <para>The feature class subtype to which the features belong. This can be derived from a specified value or a field on the feature class. The value from this parameter populates the SUBTYPE field in the Reviewer Results pane.</para>
-		/// <para>String—You can type the value in the String text box.</para>
-		/// <para>Field—You can choose the Subtype value from a field on the feature layer.</para>
+		/// <para>要素所属的要素类子类型。它可由指定值或要素类的字段派生而来。该参数值填充 Reviewer 结果窗格中的 SUBTYPE 字段。</para>
+		/// <para>字符串 - 可在字符串文本框中输入值。</para>
+		/// <para>字段 - 可在要素图层的字段中选择 Subtype 值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -163,9 +164,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>Notes</para>
-		/// <para>Text that populates the Notes field in the Reviewer table. The notes are used to provide a more specific description of the feature or table record.</para>
-		/// <para>String—You can type the value in the String text box.</para>
-		/// <para>Field—You can choose the Notes value from a field on the feature layer.</para>
+		/// <para>填充 Reviewer 表中 Notes 字段的文本。注释更为详细地说明了要素或表记录。</para>
+		/// <para>字符串 - 可在字符串文本框中输入值。</para>
+		/// <para>字段 - 可在要素图层的字段中选择 Notes 值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -174,9 +175,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>Severity</para>
-		/// <para>A numeric value that represents the significance of the features or table records that have been written to the Reviewer workspace. The values range from 5 (low importance) to 1 (high priority). This value populates the Severity field in the Reviewer Results pane.</para>
-		/// <para>String—You can type the value in the String text box.</para>
-		/// <para>Field—You can choose the Severity value from a field on the feature layer.</para>
+		/// <para>该数值表示写入 Reviewer 工作空间中的要素或表记录的显著性。这些值在 5（低重要性）和 1（高优先级）之间。该值填充 Reviewer 结果窗格中的 Severity 字段。</para>
+		/// <para>字符串 - 可在字符串文本框中输入值。</para>
+		/// <para>字段 - 可在要素图层的字段中选择 Severity 值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -192,9 +193,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>Check Title</para>
-		/// <para>Text that populates the Check Title field found in the Reviewer Results pane. Check Title is used to describe the error condition detected on the feature or table record.</para>
-		/// <para>String—You can type the value in the String text box.</para>
-		/// <para>Field—You can choose the Check Title value from a field on the feature layer.</para>
+		/// <para>填充 Reviewer 结果窗格中 Check Title 字段的文本。Check Title 字段用于描述在要素或表记录中检测到的错误条件。</para>
+		/// <para>字符串 - 可在字符串文本框中输入值。</para>
+		/// <para>字段 - 可在要素图层的字段中选择 Check Title 值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]

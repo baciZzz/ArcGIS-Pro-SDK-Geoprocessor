@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Rebuild Territory Solution</para>
+	/// <para>Rebuild Territory Solution</para>
 	/// <para>Updates the territory solution to reflect changes made to the base level.</para>
 	/// </summary>
 	public class RebuildTerritorySolution : AbstractGPProcess

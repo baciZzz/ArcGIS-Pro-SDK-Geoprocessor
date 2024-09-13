@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Image Server Layer</para>
-	/// <para>Creates a temporary raster layer from an image service. The layer that is created will not persist after the session ends unless the document is saved.</para>
+	/// <para>创建影像服务器图层</para>
+	/// <para>根据影像服务创建临时栅格图层。如果不保存文档，所创建的图层将在会话结束后消失。</para>
 	/// </summary>
 	public class MakeImageServerLayer : AbstractGPProcess
 	{
@@ -20,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InImageService">
 		/// <para>Input Image Service</para>
-		/// <para>The name of the input image service or the SOAP URL that references the image service. Browse to or type the input image service. This tool can also accept a SOAP URL that references the image service.</para>
-		/// <para>An example of using the image service name called ProjectX is: C:\MyProject\ServerConnection.ags\ProjectX.ImageServer.</para>
-		/// <para>An example of a URL is http://AGSServer:8399/arcgis/services/ISName/ImageServer.</para>
+		/// <para>输入影像服务的名称或引用影像服务的 SOAP URL。浏览至某输入影像服务或键入所需的输入影像服务。此工具还支持使用引用影像服务的 SOAP URL。</para>
+		/// <para>使用名为 ProjectX 的影像服务名称的示例是：C:\MyProject\ServerConnection.ags\ProjectX.ImageServer。</para>
+		/// <para>下面是一个 URL 示例：http://AGSServer:8399/arcgis/services/ISName/ImageServer。</para>
 		/// </param>
 		/// <param name="OutImageserverLayer">
 		/// <para>Output Image Server Layer</para>
-		/// <para>The name of the output image layer.</para>
+		/// <para>输出影像图层的名称。</para>
 		/// </param>
 		public MakeImageServerLayer(object InImageService, object OutImageserverLayer)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Make Image Server Layer</para>
+		/// <para>Tool Display Name : 创建影像服务器图层</para>
 		/// </summary>
-		public override string DisplayName() => "Make Image Server Layer";
+		public override string DisplayName() => "创建影像服务器图层";
 
 		/// <summary>
 		/// <para>Tool Name : MakeImageServerLayer</para>
@@ -71,9 +72,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Image Service</para>
-		/// <para>The name of the input image service or the SOAP URL that references the image service. Browse to or type the input image service. This tool can also accept a SOAP URL that references the image service.</para>
-		/// <para>An example of using the image service name called ProjectX is: C:\MyProject\ServerConnection.ags\ProjectX.ImageServer.</para>
-		/// <para>An example of a URL is http://AGSServer:8399/arcgis/services/ISName/ImageServer.</para>
+		/// <para>输入影像服务的名称或引用影像服务的 SOAP URL。浏览至某输入影像服务或键入所需的输入影像服务。此工具还支持使用引用影像服务的 SOAP URL。</para>
+		/// <para>使用名为 ProjectX 的影像服务名称的示例是：C:\MyProject\ServerConnection.ags\ProjectX.ImageServer。</para>
+		/// <para>下面是一个 URL 示例：http://AGSServer:8399/arcgis/services/ISName/ImageServer。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -81,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Image Server Layer</para>
-		/// <para>The name of the output image layer.</para>
+		/// <para>输出影像图层的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterLayer()]
@@ -89,11 +90,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Template Extent</para>
-		/// <para>The output extent of the image layer.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Current Display Extent—The extent is equal to the data frame or visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>影像图层的输出范围。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>当前显示范围 - 该范围与数据框或可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Bands</para>
-		/// <para>Choose which bands to export for the layer. If no bands are specified, all the bands will be used in the output.</para>
+		/// <para>选择要为图层输出哪些波段。 如果未指定波段，则输出中将使用所有波段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -109,15 +110,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Method</para>
-		/// <para>The mosaic method defines how the mosaic is created from different rasters.</para>
-		/// <para>Seamline—Smooth transitions between images using seamlines.</para>
-		/// <para>Northwest—Display imagery that is closest to the northwest corner of the mosaic dataset boundary.</para>
-		/// <para>Center—Display imagery that is closest to the center of the screen.</para>
-		/// <para>Lock raster—Select specific raster datasets to display.</para>
-		/// <para>By attribute—Display and prioritize imagery based on a field in the attribute table.</para>
-		/// <para>Nadir—Display the rasters with viewing angles closest to zero.</para>
-		/// <para>Viewpoint—Display imagery that is closest to a selected viewing angle.</para>
-		/// <para>None—Order rasters based on the ObjectID in the mosaic dataset attribute table.</para>
+		/// <para>镶嵌方法定义了如何使用不同的栅格数据来创建镶嵌数据集。</para>
+		/// <para>接缝线—使用接缝线在影像间进行平滑过渡。</para>
+		/// <para>西北—显示距离镶嵌数据集边界西北角最近的影像。</para>
+		/// <para>中心—显示距离屏幕中心最近的影像。</para>
+		/// <para>锁定栅格—选择要显示的特定栅格数据集。</para>
+		/// <para>按属性—基于属性表中的字段显示影像并设置影像优先级。</para>
+		/// <para>像底点—通过最接近零视角的视角范围来显示栅格。</para>
+		/// <para>视点—显示距离所选视角最近的影像。</para>
+		/// <para>无—根据镶嵌数据集属性表中的 ObjectID 对栅格进行排序。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -127,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Order Field</para>
-		/// <para>The default field to use to order the rasters when the mosaic method is By_Attribute. The list of fields is defined as those in the service table that are of type metadata and are integer (for example, the values can represent dates or cloud cover percentage).</para>
+		/// <para>将镶嵌方法设为 By_Attribute 时用于栅格排序的默认字段。根据服务表中类型为元数据和整型的字段来定义字段列表（例如，值可以是日期或云覆盖比例）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -137,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Order Base Value</para>
-		/// <para>The images are sorted based on the difference between this input value and the attribute value in the specified field.</para>
+		/// <para>根据此输入值与指定字段中的属性值之间的差异对影像进行排序。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -146,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Lock Raster ID</para>
-		/// <para>The raster ID or raster name to which the service should be locked, such that only the specified rasters are displayed. If left blank (undefined), it will be similar to the system default. Multiple IDs can be defined as a semicolon-delimited list.</para>
+		/// <para>将服务锁定到哪个栅格 ID 或栅格名称，以便只显示指定的栅格。如果置空（未定义），将遵循系统默认设置。可使用分号分隔的列表定义多个 ID。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -155,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Cell Size</para>
-		/// <para>The cell size for the output image service layer.</para>
+		/// <para>输出影像服务图层的像元大小。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -163,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>Using SQL, you can define a query or use the Query Builder to build a query.</para>
+		/// <para>可以使用 SQL 定义查询，或者使用查询构建器构建查询。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -171,8 +172,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Processing Template</para>
-		/// <para>The raster function processing template that can be applied on the output image service layer.</para>
-		/// <para>None—No processing template.</para>
+		/// <para>可应用于输出影像服务图层的栅格函数处理模板。</para>
+		/// <para>无—无处理模板。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

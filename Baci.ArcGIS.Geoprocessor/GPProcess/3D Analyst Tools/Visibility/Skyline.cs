@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Skyline</para>
-	/// <para>Generates a line or multipatch feature class containing the results from a skyline or silhouette analysis.</para>
+	/// <para>天际线</para>
+	/// <para>生成一个包含天际线或轮廓分析结果的线要素类或多面体要素类。</para>
 	/// </summary>
 	public class Skyline : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InObserverPointFeatures">
 		/// <para>Input Observer Point Features</para>
-		/// <para>The 3D points representing observers. Each feature will have its own output.</para>
+		/// <para>表示观察点的 3D 点。每个要素都将具有自己的输出。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The 3D features that will either be lines that represent the skyline or multipatches that represent silhouettes.</para>
+		/// <para>表示天际线的线或表示轮廓的多面体的3D 要素。</para>
 		/// </param>
 		public Skyline(object InObserverPointFeatures, object OutFeatureClass)
 		{
@@ -33,14 +34,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Skyline</para>
+		/// <para>Tool Display Name : 天际线</para>
 		/// </summary>
-		public override string DisplayName() => "Skyline";
+		public override string DisplayName() => "天际线";
 
 		/// <summary>
-		/// <para>Tool Name : Skyline</para>
+		/// <para>Tool Name : 天际线</para>
 		/// </summary>
-		public override string ToolName() => "Skyline";
+		public override string ToolName() => "天际线";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Skyline</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Observer Point Features</para>
-		/// <para>The 3D points representing observers. Each feature will have its own output.</para>
+		/// <para>表示观察点的 3D 点。每个要素都将具有自己的输出。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The 3D features that will either be lines that represent the skyline or multipatches that represent silhouettes.</para>
+		/// <para>表示天际线的线或表示轮廓的多面体的3D 要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Surface</para>
-		/// <para>The topographic surface that will be used to define the horizon. If no surface is provided, then a virtual surface will be employed using the Virtual Surface Radius and Virtual Surface Elevation parameters.</para>
+		/// <para>将用于定义地平线的地形面。如果未提供表面，则会通过使用虚拟表面半径和虚拟表面高程参数采用一个虚拟表面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -95,18 +96,18 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Virtual Surface Radius</para>
-		/// <para>The radius of the virtual surface that will be used to define the horizon when a topographic surface is not provided. The default is 1,000 meters.</para>
-		/// <para>The following units are supported:</para>
-		/// <para>Unknown—Unknown</para>
-		/// <para>Inches—Inches</para>
-		/// <para>Feet—Feet</para>
-		/// <para>Yards—Yards</para>
-		/// <para>Miles—Miles</para>
-		/// <para>Millimeters—Millimeters</para>
-		/// <para>Centimeters—Centimeters</para>
-		/// <para>Decimeters—Decimeters</para>
-		/// <para>Meters—Meters</para>
-		/// <para>Kilometers—Kilometers</para>
+		/// <para>未提供地形面时，用于定义地平线的虚拟表面的半径。默认值是 1,000 米。</para>
+		/// <para>支持的单位如下：</para>
+		/// <para>未知—未知</para>
+		/// <para>英寸—英寸</para>
+		/// <para>英尺—英尺</para>
+		/// <para>码—码</para>
+		/// <para>英里—英里</para>
+		/// <para>毫米—毫米</para>
+		/// <para>厘米—厘米</para>
+		/// <para>公寸—公寸</para>
+		/// <para>米—米</para>
+		/// <para>千米—千米</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -114,18 +115,18 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Virtual Surface Elevation</para>
-		/// <para>The elevation of the virtual surface for defining the horizon in lieu of an actual surface. It is ignored if an actual surface is provided. The default is 0.</para>
-		/// <para>The following units are supported:</para>
-		/// <para>Unknown—Unknown</para>
-		/// <para>Inches—Inches</para>
-		/// <para>Feet—Feet</para>
-		/// <para>Yards—Yards</para>
-		/// <para>Miles—Miles</para>
-		/// <para>Millimeters—Millimeters</para>
-		/// <para>Centimeters—Centimeters</para>
-		/// <para>Decimeters—Decimeters</para>
-		/// <para>Meters—Meters</para>
-		/// <para>Kilometers—Kilometers</para>
+		/// <para>代替实际表面来定义地平线的虚拟表面的高程。如果提供了实际表面，则可忽略。默认值为 0。</para>
+		/// <para>支持的单位如下：</para>
+		/// <para>未知—未知</para>
+		/// <para>英寸—英寸</para>
+		/// <para>英尺—英尺</para>
+		/// <para>码—码</para>
+		/// <para>英里—英里</para>
+		/// <para>毫米—毫米</para>
+		/// <para>厘米—厘米</para>
+		/// <para>公寸—公寸</para>
+		/// <para>米—米</para>
+		/// <para>千米—千米</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -133,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The features used in determining the skyline. If no features are specified, then the skyline will consist solely of the horizon line as defined by the topographic or virtual surface.</para>
+		/// <para>用于测定天际线的要素。如果没有指定要素，则天际线将只由地平线（通过地形面或虚拟表面定义）构成。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -143,10 +144,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Feature Level of Detail</para>
-		/// <para>The level of detail at which each feature should be examined in the skyline analysis.</para>
-		/// <para>Full Detail—Every edge within the feature is considered in the skyline analysis (only edges of triangles and exterior rings are considered). This time intensive operation is the most precise, and is also the default option.</para>
-		/// <para>Convex Footprint—The skyline analysis will use the upper perimeter of the convex hull of each feature&apos;s footprint extruded to the elevation of the highest vertex within the feature.</para>
-		/// <para>Envelope— The skyline analysis will use the perimeter of the 3-dimensional feature envelope. This is the fastest technique.</para>
+		/// <para>在天际线分析中检查每个要素的细节层次。</para>
+		/// <para>详细信息—在天际线分析中考虑要素中的每条边（仅限三角形和外部环的边）。此时，消耗大量时间的操作最为精确，也是默认选项。</para>
+		/// <para>凸轮廓—天际线分析将使用每个要素轮廓线的凸包（拉伸到要素内最高折点的高程）的上部周长。</para>
+		/// <para>包络— 天际线分析将使用三维要素包络的周长。这是最快的方法。</para>
 		/// <para><see cref="FeatureLodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -156,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>From Azimuth</para>
-		/// <para>The azimuth, in degrees, from which the skyline analysis should be started. The analysis starts from the observer point and goes to the right, from the From Azimuth until the To Azimuth is reached. Must be greater than minus 360 and less than 360. The default is 0.</para>
+		/// <para>开始天际线分析的方位角，以度为单位。天际线分析以观察点为起点，并从起始方位角向右移动，直到结束方位角。方位角必须大于负 360 且小于 360。默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -166,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>To Azimuth</para>
-		/// <para>The direction, in degrees, at which the skyline analysis should be completed. The analysis starts from the observer point and goes to the right, from the From Azimuth until the To Azimuth is reached. Must be no more than 360 greater than the From Azimuth. The default is 360.</para>
+		/// <para>完成天际线分析的方位角，以度为单位。天际线分析以观察点为起点，并从起始方位角向右移动，直到结束方位角。结束方位角必须大于起始方位角，且不得超过 360。默认值为 360。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -176,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Azimuth Increment</para>
-		/// <para>The angular interval, in degrees, at which the horizon should be evaluated while conducting the skyline analysis between the From Azimuth and the To Azimuth. Must be no greater than the To Azimuth minus the From Azimuth. The default is 1.</para>
+		/// <para>在起始方位角和结束方位角之间执行天际线分析以计算地平线时的角度间隔，以度为单位。此值不得大于结束方位角与起始方位角的差值。默认值为 1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -186,18 +187,18 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Maximum Horizon Radius</para>
-		/// <para>The maximum distance for which a horizon should be sought from the observer location. A value of zero indicates that there should be no limit imposed. The default is 0.</para>
-		/// <para>The following units are supported:</para>
-		/// <para>Unknown—Unknown</para>
-		/// <para>Inches—Inches</para>
-		/// <para>Feet—Feet</para>
-		/// <para>Yards—Yards</para>
-		/// <para>Miles—Miles</para>
-		/// <para>Millimeters—Millimeters</para>
-		/// <para>Centimeters—Centimeters</para>
-		/// <para>Decimeters—Decimeters</para>
-		/// <para>Meters—Meters</para>
-		/// <para>Kilometers—Kilometers</para>
+		/// <para>从观察点位置应能搜索到地平线的最大距离。零值表明应没有施加限制。默认值为 0。</para>
+		/// <para>支持的单位如下：</para>
+		/// <para>未知—未知</para>
+		/// <para>英寸—英寸</para>
+		/// <para>英尺—英尺</para>
+		/// <para>码—码</para>
+		/// <para>英里—英里</para>
+		/// <para>毫米—毫米</para>
+		/// <para>厘米—厘米</para>
+		/// <para>公寸—公寸</para>
+		/// <para>米—米</para>
+		/// <para>千米—千米</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -206,10 +207,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Segment Skyline</para>
-		/// <para>Determines whether the resulting skyline will have one feature for each observer point, or if each observer&apos;s skyline will be segmented by the unique elements that contribute to the skyline.</para>
-		/// <para>If silhouettes are being generated, then this parameter will indicate whether divergent rays should be used; for sun shadows, this should generally be no or unchecked.</para>
-		/// <para>Unchecked—Each skyline feature will represent one observer. This is the default.</para>
-		/// <para>Checked—Each observer&apos;s skyline will be segmented by the unique elements that contribute to the skyline.</para>
+		/// <para>确定生成的天际线是为每个观察点对应一个要素，还是每个观察点的天际线将按照构成天际线的唯一元素进行分段。</para>
+		/// <para>如果正在生成轮廓，那么此参数将指示是否使用发散光线；对于太阳阴影，此参数的状态通常为禁用或未选中。</para>
+		/// <para>未选中 - 每个天际线要素将表示一个观察点。这是默认设置。</para>
+		/// <para>选中 - 每个观察点的天际线都将按照构成天际线的唯一元素进行分段。</para>
 		/// <para><see cref="SegmentSkylineEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -220,7 +221,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Scale To Percent</para>
-		/// <para>Indicates to what percent of the original vertical angle (angle above the horizon, or angle of elevation) or elevation each skyline vertex should be placed. If either 0 or 100 is entered, then no scaling will occur. The default is 100.</para>
+		/// <para>表示放置每个天际线折点应依据的原始垂直角（地平线以上的角或高程角）或高程的缩放百分比。如果输入 0 或 100，则不会进行缩放。默认值为 100。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -229,9 +230,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Scale According To</para>
-		/// <para>The values according to which the scaling should be determined.</para>
-		/// <para>Vertical Angle From Observer—Scaling is done by considering the vertical angle of each vertex relative to the observer point. This is the default.</para>
-		/// <para>Elevation—Scaling is done by considering the elevation of each vertex relative to the observer point.</para>
+		/// <para>确定缩放所依据的值。</para>
+		/// <para>基于观察点的垂直角度—通过考虑每个折点相对于观察点的垂直角确定缩放。这是默认设置。</para>
+		/// <para>高程—通过考虑每个折点相对于观察点的高度确定缩放。</para>
 		/// <para><see cref="ScaleAccordingToEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -242,9 +243,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Scale Method</para>
-		/// <para>The vertex to be used to calculate against.</para>
-		/// <para>Skyline Maximum—Vertices will be scaled relative to the vertical angle (or the elevation) of the vertex with the highest vertical angle (or elevation). This is the default.</para>
-		/// <para>Each Vertex—Vertices will be scaled relative to the original vertical angle (or elevation) of each vertex.</para>
+		/// <para>计算折点所依据的缩放方法。</para>
+		/// <para>天际线最大值—将相对于具有最高垂直角（或高程）的折点的垂直角（或高程）进行缩放。这是默认设置。</para>
+		/// <para>每个折点—将相对于每个折点的原始垂直角（或高程）进行缩放。</para>
 		/// <para><see cref="ScaleMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -255,9 +256,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Use Curvature</para>
-		/// <para>Indicates whether the earth&apos;s curvature should be taken into consideration when generating the ridgeline from a functional surface.</para>
-		/// <para>Unchecked—The earth&apos;s curvature will not be taken into consideration. This is the default.</para>
-		/// <para>Checked—The earth&apos;s curvature will be taken into consideration.</para>
+		/// <para>指示根据作用表面生成山脊线时，是否要考虑地球的曲率。</para>
+		/// <para>未选中 - 将不考虑地球的曲率。这是默认设置。</para>
+		/// <para>选中 - 将考虑地球的曲率。</para>
 		/// <para><see cref="UseCurvatureEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -268,9 +269,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Use Refraction</para>
-		/// <para>Indicates whether atmospheric refraction will be applied when generating the ridgeline from a functional surface.</para>
-		/// <para>Unchecked—Atmospheric refraction will not be taken into consideration. This is the default.</para>
-		/// <para>Checked—Atmospheric refraction will be taken into consideration.</para>
+		/// <para>指示根据作用表面生成山脊线时，是否要考虑应用大气折射。</para>
+		/// <para>未选中 - 将不考虑大气折射。这是默认设置。</para>
+		/// <para>选中 - 将考虑大气折射。</para>
 		/// <para><see cref="UseRefractionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -281,7 +282,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Refraction Factor</para>
-		/// <para>The refraction coefficient to be used if atmospheric refraction is being considered. The default is 0.13.</para>
+		/// <para>考虑大气折射时使用的折射系数。默认值为 0.13。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -290,7 +291,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
-		/// <para>The z-tolerance or window-size resolution of the terrain pyramid level that will be used by this tool. The default is 0, or full resolution.</para>
+		/// <para>此工具将使用 terrain 金字塔等级的 z 容差或窗口大小分辨率。默认值为 0（z 容差），或全分辨率（窗口大小）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -299,9 +300,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Create Silhouettes</para>
-		/// <para>Specifies whether output features will represent skylines or silhouettes.</para>
-		/// <para>Unchecked—The output will be created as polyline features that represent the skyline. This is the default.</para>
-		/// <para>Checked—The output will be created as multipatch features that represent silhouettes.</para>
+		/// <para>指定输出要素是表示天际线还是轮廓。</para>
+		/// <para>未选中 - 输出将创建为表示天际线的折线要素。这是默认设置。</para>
+		/// <para>选中 - 输出将创建为表示轮廓的多面体要素。</para>
 		/// <para><see cref="CreateSilhouettesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -327,24 +328,24 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum FeatureLodEnum 
 		{
 			/// <summary>
-			/// <para>Full Detail—Every edge within the feature is considered in the skyline analysis (only edges of triangles and exterior rings are considered). This time intensive operation is the most precise, and is also the default option.</para>
+			/// <para>详细信息—在天际线分析中考虑要素中的每条边（仅限三角形和外部环的边）。此时，消耗大量时间的操作最为精确，也是默认选项。</para>
 			/// </summary>
 			[GPValue("FULL_DETAIL")]
-			[Description("Full Detail")]
+			[Description("详细信息")]
 			Full_Detail,
 
 			/// <summary>
-			/// <para>Convex Footprint—The skyline analysis will use the upper perimeter of the convex hull of each feature&apos;s footprint extruded to the elevation of the highest vertex within the feature.</para>
+			/// <para>凸轮廓—天际线分析将使用每个要素轮廓线的凸包（拉伸到要素内最高折点的高程）的上部周长。</para>
 			/// </summary>
 			[GPValue("CONVEX_FOOTPRINT")]
-			[Description("Convex Footprint")]
+			[Description("凸轮廓")]
 			Convex_Footprint,
 
 			/// <summary>
-			/// <para>Envelope— The skyline analysis will use the perimeter of the 3-dimensional feature envelope. This is the fastest technique.</para>
+			/// <para>包络— 天际线分析将使用三维要素包络的周长。这是最快的方法。</para>
 			/// </summary>
 			[GPValue("ENVELOPE")]
-			[Description("Envelope")]
+			[Description("包络")]
 			Envelope,
 
 		}
@@ -355,14 +356,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum SegmentSkylineEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Each observer&apos;s skyline will be segmented by the unique elements that contribute to the skyline.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SEGMENT_SKYLINE")]
 			SEGMENT_SKYLINE,
 
 			/// <summary>
-			/// <para>Unchecked—Each skyline feature will represent one observer. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SEGMENT_SKYLINE")]
@@ -376,17 +377,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ScaleAccordingToEnum 
 		{
 			/// <summary>
-			/// <para>Vertical Angle From Observer—Scaling is done by considering the vertical angle of each vertex relative to the observer point. This is the default.</para>
+			/// <para>基于观察点的垂直角度—通过考虑每个折点相对于观察点的垂直角确定缩放。这是默认设置。</para>
 			/// </summary>
 			[GPValue("VERTICAL_ANGLE")]
-			[Description("Vertical Angle From Observer")]
+			[Description("基于观察点的垂直角度")]
 			Vertical_Angle_From_Observer,
 
 			/// <summary>
-			/// <para>Elevation—Scaling is done by considering the elevation of each vertex relative to the observer point.</para>
+			/// <para>高程—通过考虑每个折点相对于观察点的高度确定缩放。</para>
 			/// </summary>
 			[GPValue("ELEVATION")]
-			[Description("Elevation")]
+			[Description("高程")]
 			Elevation,
 
 		}
@@ -397,17 +398,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ScaleMethodEnum 
 		{
 			/// <summary>
-			/// <para>Skyline Maximum—Vertices will be scaled relative to the vertical angle (or the elevation) of the vertex with the highest vertical angle (or elevation). This is the default.</para>
+			/// <para>天际线最大值—将相对于具有最高垂直角（或高程）的折点的垂直角（或高程）进行缩放。这是默认设置。</para>
 			/// </summary>
 			[GPValue("SKYLINE_MAXIMUM")]
-			[Description("Skyline Maximum")]
+			[Description("天际线最大值")]
 			Skyline_Maximum,
 
 			/// <summary>
-			/// <para>Each Vertex—Vertices will be scaled relative to the original vertical angle (or elevation) of each vertex.</para>
+			/// <para>每个折点—将相对于每个折点的原始垂直角（或高程）进行缩放。</para>
 			/// </summary>
 			[GPValue("EACH_VERTEX")]
-			[Description("Each Vertex")]
+			[Description("每个折点")]
 			Each_Vertex,
 
 		}
@@ -418,14 +419,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum UseCurvatureEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The earth&apos;s curvature will be taken into consideration.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CURVATURE")]
 			CURVATURE,
 
 			/// <summary>
-			/// <para>Unchecked—The earth&apos;s curvature will not be taken into consideration. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CURVATURE")]
@@ -439,14 +440,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum UseRefractionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Atmospheric refraction will be taken into consideration.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REFRACTION")]
 			REFRACTION,
 
 			/// <summary>
-			/// <para>Unchecked—Atmospheric refraction will not be taken into consideration. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_REFRACTION")]
@@ -460,14 +461,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum CreateSilhouettesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output will be created as multipatch features that represent silhouettes.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CREATE_SILHOUETTES")]
 			CREATE_SILHOUETTES,
 
 			/// <summary>
-			/// <para>Unchecked—The output will be created as polyline features that represent the skyline. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CREATE_SILHOUETTES")]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Rule To Relationship Class</para>
-	/// <para>Adds a rule to a relationship class.</para>
+	/// <para>将规则添加到关系类</para>
+	/// <para>将规则添加到关系类。</para>
 	/// </summary>
 	public class AddRuleToRelationshipClass : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRelClass">
 		/// <para>Input Relationship Class</para>
-		/// <para>The relationship class to which a rule will be added.</para>
+		/// <para>要添加规则的关系类。</para>
 		/// </param>
 		public AddRuleToRelationshipClass(object InRelClass)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Rule To Relationship Class</para>
+		/// <para>Tool Display Name : 将规则添加到关系类</para>
 		/// </summary>
-		public override string DisplayName() => "Add Rule To Relationship Class";
+		public override string DisplayName() => "将规则添加到关系类";
 
 		/// <summary>
 		/// <para>Tool Name : AddRuleToRelationshipClass</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Relationship Class</para>
-		/// <para>The relationship class to which a rule will be added.</para>
+		/// <para>要添加规则的关系类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERelationshipClass()]
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Origin Subtype</para>
-		/// <para>Specifies the subtype of the origin class. If the origin class has subtypes, choose the subtype to which you want to associate a relationship class rule. If the origin class has no subtypes, the relationship rule will apply to all features.</para>
+		/// <para>指定源类的子类型。如果源类具有子类型，则选择要与关系规则进行关联的子类型。如果源类没有子类型，则关系规则会应用到所有要素中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Origin Minimum</para>
-		/// <para>Specifies the minimum range cardinality for the origin class if the relationship class is many-to-many.</para>
+		/// <para>如果关系类为多对多，则需指定源类的最小范围基数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Origin Maximum</para>
-		/// <para>Specifies the maximum range cardinality for the origin class if the relationship class is many-to-many or one-to-many.</para>
+		/// <para>如果关系类为多对多或一对多，则需指定源类的最大范围基数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -96,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Destination Subtype</para>
-		/// <para>Specifies the subtype of the destination class. If the destination class has subtypes, choose the subtype to which you want to associate a relationship class rule. If the destination class has no subtypes, the relationship rule will apply to all features.</para>
+		/// <para>指定目标类的子类型。如果目标类具有子类型，则选择要与关系规则进行关联的子类型。如果目标类没有子类型，则关系规则会应用到所有要素中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -104,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Destination Minimum</para>
-		/// <para>Specifies the minimum range cardinality for the destination class if the relationship class is many-to-many or one-to-many.</para>
+		/// <para>如果关系类为多对多或一对多，则需指定目标类的最小范围基数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Destination Maximum</para>
-		/// <para>Specifies the maximum range cardinality for the destination class if the relationship class is many-to-many or one-to-many.</para>
+		/// <para>如果关系类为多对多或一对多，则需指定目标类的最大范围基数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]

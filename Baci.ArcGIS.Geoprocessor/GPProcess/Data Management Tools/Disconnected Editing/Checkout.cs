@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Check Out</para>
+	/// <para>Check Out</para>
 	/// <para>Creates a check-out replica from datasets in ArcSDE.</para>
 	/// </summary>
 	[Obsolete()]

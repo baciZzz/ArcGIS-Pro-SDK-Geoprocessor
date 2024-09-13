@@ -12,6 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 	/// <summary>
 	/// <para>Execute Raster Analysis Tasks</para>
 	/// <para>Execute Raster Analysis Tasks</para>
+	/// <para>Execute Raster Analysis Tasks</para>
 	/// </summary>
 	[Obsolete()]
 	public class ExecuteRasterAnalysisTasks : AbstractGPProcess

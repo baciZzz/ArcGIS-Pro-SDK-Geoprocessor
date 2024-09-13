@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Apply Visual Specification To Map</para>
+	/// <para>Apply Visual Specification To Map</para>
 	/// <para>Applies symbols and Arcade expressions to layers in a map based on the symbols and rules defined in a visual specification database.</para>
 	/// </summary>
 	public class ApplyVisualSpecificationToMap : AbstractGPProcess

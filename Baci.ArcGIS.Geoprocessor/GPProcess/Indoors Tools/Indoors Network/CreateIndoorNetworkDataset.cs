@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Create Indoor Network Dataset</para>
-	/// <para>Creates an indoor network dataset containing the necessary feature classes to maintain indoor network data using a streamlined schema that conforms to the ArcGIS Indoors Information Model. The indoor network dataset can be used to support indoor routable networks.</para>
+	/// <para>创建 Indoor 网络数据集</para>
+	/// <para>创建包含必要的要素类的 Indoor 网络数据集，这些要素类可使用符合 ArcGIS Indoors 信息模型的简化方案维护 Indoor 网络数据。 Indoor 网络数据集可用于支持 Indoor 可路由网络。</para>
 	/// </summary>
 	public class CreateIndoorNetworkDataset : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		/// <param name="TargetGdb">
 		/// <para>Target Geodatabase</para>
-		/// <para>The target file or enterprise geodatabase that will contain the output indoor network dataset.</para>
+		/// <para>包含输出 Indoor 网络数据集的目标文件地理数据库或企业级地理数据库。</para>
 		/// </param>
 		/// <param name="IndoorNetworkDatasetName">
 		/// <para>Indoor Network Dataset Name</para>
-		/// <para>The unique name of the output indoor network dataset. This name is also used for the preliminary indoor network dataset. The default name for the indoor network dataset is IndoorNetwork. The default name for the preliminary indoor network dataset is PrelimIndoorNetwork.</para>
+		/// <para>输出 Indoor 网络数据集的唯一名称。 此名称也用于原始 Indoor 网络数据集。 Indoor 网络数据集的默认名称为 IndoorNetwork。 原始 Indoor 网络数据集的默认名称为 PrelimIndoorNetwork。</para>
 		/// </param>
 		/// <param name="SpatialReference">
 		/// <para>Coordinate System</para>
-		/// <para>The spatial reference of the output indoor network dataset.</para>
+		/// <para>输出 Indoor 网络数据集的空间参考。</para>
 		/// </param>
 		public CreateIndoorNetworkDataset(object TargetGdb, object IndoorNetworkDatasetName, object SpatialReference)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Indoor Network Dataset</para>
+		/// <para>Tool Display Name : 创建 Indoor 网络数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Create Indoor Network Dataset";
+		public override string DisplayName() => "创建 Indoor 网络数据集";
 
 		/// <summary>
 		/// <para>Tool Name : CreateIndoorNetworkDataset</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Target Geodatabase</para>
-		/// <para>The target file or enterprise geodatabase that will contain the output indoor network dataset.</para>
+		/// <para>包含输出 Indoor 网络数据集的目标文件地理数据库或企业级地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Indoor Network Dataset Name</para>
-		/// <para>The unique name of the output indoor network dataset. This name is also used for the preliminary indoor network dataset. The default name for the indoor network dataset is IndoorNetwork. The default name for the preliminary indoor network dataset is PrelimIndoorNetwork.</para>
+		/// <para>输出 Indoor 网络数据集的唯一名称。 此名称也用于原始 Indoor 网络数据集。 Indoor 网络数据集的默认名称为 IndoorNetwork。 原始 Indoor 网络数据集的默认名称为 PrelimIndoorNetwork。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>The spatial reference of the output indoor network dataset.</para>
+		/// <para>输出 Indoor 网络数据集的空间参考。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSpatialReference()]

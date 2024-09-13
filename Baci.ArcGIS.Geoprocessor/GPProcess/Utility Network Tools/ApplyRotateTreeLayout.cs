@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Apply Rotate Tree Layout</para>
+	/// <para>Apply Rotate Tree Layout</para>
 	/// <para>Apply the rotate tree layout to a diagram</para>
 	/// </summary>
 	[Obsolete()]

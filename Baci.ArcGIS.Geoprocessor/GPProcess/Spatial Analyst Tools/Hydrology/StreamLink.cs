@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Stream Link</para>
-	/// <para>Assigns unique values to sections of a raster linear network between intersections.</para>
+	/// <para>河流链</para>
+	/// <para>向各交汇点之间的栅格线状网络的各部分分配唯一值。</para>
 	/// </summary>
 	public class StreamLink : AbstractGPProcess
 	{
@@ -20,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InStreamRaster">
 		/// <para>Input stream raster</para>
-		/// <para>An input raster that represents a linear stream network.</para>
+		/// <para>表示线性河流网络的输入栅格。</para>
 		/// </param>
 		/// <param name="InFlowDirectionRaster">
 		/// <para>Input flow direction raster</para>
-		/// <para>The input raster that shows the direction of flow out of each cell.</para>
-		/// <para>The flow direction raster can be created using the Flow Direction tool, run using the default flow direction type D8.</para>
+		/// <para>根据每个像元来显示流向的输入栅格。</para>
+		/// <para>可以在流向工具中，运行使用默认流向类型 D8 创建流向栅格。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output stream link raster.</para>
-		/// <para>This output is of integer type.</para>
+		/// <para>输出河流链栅格数据。</para>
+		/// <para>输出为整型。</para>
 		/// </param>
 		public StreamLink(object InStreamRaster, object InFlowDirectionRaster, object OutRaster)
 		{
@@ -40,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Stream Link</para>
+		/// <para>Tool Display Name : 河流链</para>
 		/// </summary>
-		public override string DisplayName() => "Stream Link";
+		public override string DisplayName() => "河流链";
 
 		/// <summary>
 		/// <para>Tool Name : StreamLink</para>
@@ -76,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input stream raster</para>
-		/// <para>An input raster that represents a linear stream network.</para>
+		/// <para>表示线性河流网络的输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -88,8 +89,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input flow direction raster</para>
-		/// <para>The input raster that shows the direction of flow out of each cell.</para>
-		/// <para>The flow direction raster can be created using the Flow Direction tool, run using the default flow direction type D8.</para>
+		/// <para>根据每个像元来显示流向的输入栅格。</para>
+		/// <para>可以在流向工具中，运行使用默认流向类型 D8 创建流向栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -101,8 +102,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output stream link raster.</para>
-		/// <para>This output is of integer type.</para>
+		/// <para>输出河流链栅格数据。</para>
+		/// <para>输出为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

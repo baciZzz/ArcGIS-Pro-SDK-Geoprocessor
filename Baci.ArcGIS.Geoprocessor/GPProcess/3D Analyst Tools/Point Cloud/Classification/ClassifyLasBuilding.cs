@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Classify LAS Building</para>
-	/// <para>Classifies building rooftops and sides in LAS</para>
-	/// <para>data.</para>
+	/// <para>分类 LAS 建筑物</para>
+	/// <para>在 LAS 数据中对建筑屋顶和侧墙进行分类。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,15 +23,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset to be classified.</para>
+		/// <para>待分类的 LAS 数据集。</para>
 		/// </param>
 		/// <param name="MinHeight">
 		/// <para>Minimum Rooftop Height</para>
-		/// <para>The height from the ground that defines the lowest point from which rooftop points will be identified.</para>
+		/// <para>定义可识别的屋顶点最低点距离地面的高度。</para>
 		/// </param>
 		/// <param name="MinArea">
 		/// <para>Minimum Area</para>
-		/// <para>The smallest area of the building rooftop.</para>
+		/// <para>建筑物屋顶的最小面积。</para>
 		/// </param>
 		public ClassifyLasBuilding(object InLasDataset, object MinHeight, object MinArea)
 		{
@@ -41,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Classify LAS Building</para>
+		/// <para>Tool Display Name : 分类 LAS 建筑物</para>
 		/// </summary>
-		public override string DisplayName() => "Classify LAS Building";
+		public override string DisplayName() => "分类 LAS 建筑物";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyLasBuilding</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset to be classified.</para>
+		/// <para>待分类的 LAS 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Minimum Rooftop Height</para>
-		/// <para>The height from the ground that defines the lowest point from which rooftop points will be identified.</para>
+		/// <para>定义可识别的屋顶点最低点距离地面的高度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Minimum Area</para>
-		/// <para>The smallest area of the building rooftop.</para>
+		/// <para>建筑物屋顶的最小面积。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPArealUnit()]
@@ -101,9 +101,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Compute statistics</para>
-		/// <para>Specifies whether statistics will be computed for the .las files referenced by the LAS dataset. Computing statistics provides a spatial index for each .las file, which improves analysis and display performance. Statistics also enhance the filtering and symbology experience by limiting the display of LAS attributes, such as classification codes and return information, to values that are present in the .las file.</para>
-		/// <para>Checked—Statistics will be computed. This is the default.</para>
-		/// <para>Unchecked—Statistics will not be computed.</para>
+		/// <para>指定是否将计算 LAS 数据集引用的 .las 文件的统计数据。 计算统计数据时会为每个 .las 文件提供一个空间索引，从而提高了分析和显示性能。 统计数据还可通过将 LAS 属性（例如分类代码和返回信息）显示限制为 .las 文件中存在的值来提升过滤和符号系统体验。</para>
+		/// <para>选中 - 将计算统计数据。 这是默认设置。</para>
+		/// <para>未选中 - 不计算统计数据。</para>
 		/// <para><see cref="ComputeStatsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -113,13 +113,13 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Processing Extent</para>
-		/// <para>The extent of the data that will be evaluated.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
-		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
-		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>待评估数据的范围。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
+		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
+		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Processing Boundary</para>
-		/// <para>A polygon feature that defines the area of interest to be processed.</para>
+		/// <para>定义将进行处理的感兴趣区域的面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -139,9 +139,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Process entire LAS files that intersect extent</para>
-		/// <para>Specifies how the area of interest will be used in determining how .las files will be processed. The area of interest is defined by the Processing Extent parameter value, the Processing Boundary parameter value, or a combination of both.</para>
-		/// <para>Unchecked—Only LAS points that intersect the area of interest will be processed. This is the default.</para>
-		/// <para>Checked—If any portion of a .las file intersects the area of interest, all the points in that .las file, including those outside the area of interest, will be processed.</para>
+		/// <para>指定将如何使用感兴趣区以确定 .las 文件的处理方式。 感兴趣区由处理范围参数值和处理边界参数值定义，或由二者共同定义。</para>
+		/// <para>未选中 - 仅处理与感兴趣区相交的 LAS 点。 这是默认设置。</para>
+		/// <para>选中 - 如果 .las 文件的任何部分与感兴趣区相交，则该 .las 文件中的所有点（包括感兴趣区以外的点）都会得到处理。</para>
 		/// <para><see cref="ProcessEntireFilesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Average Point Spacing</para>
-		/// <para>The average spacing of LAS points. This parameter is no longer used.</para>
+		/// <para>LAS 点的平均间距。 该参数不再使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -167,9 +167,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Reuse existing building classified points</para>
-		/// <para>Specifies whether the existing building classified points will be reused or reevaluated.</para>
-		/// <para>Unchecked—Existing building classified points will be reevaluated to fit the criteria for plane detection, and points that do not fit the specified area and height will be assigned a value of 1. This is the default.</para>
-		/// <para>Checked—Existing building classified points will contribute to the plane detection process but will not be reclassified in the event they do not meet the criteria specified in the tool&apos;s execution. Use this option if the existing classification is necessary.</para>
+		/// <para>指定是否将重用或重新评估现有建筑物分类点。</para>
+		/// <para>未选中 - 系统将重新评估现有建筑物分类点以符合平面检测条件，且不符合指定面积和高度的点将被分配值 1。 这是默认设置。</para>
+		/// <para>选中 - 现有建筑物分类点将为平面检测过程提供支持，但如果这些分类点不符合工具执行期间指定的条件，则系统不会对其进行重分类。 如果现有分类十分必要，则请使用此选项。</para>
 		/// <para><see cref="ReuseBuildingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -179,9 +179,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Is photogrammetric data</para>
-		/// <para>Specifies whether the points in the .las file were derived using a photogrammetric technique.</para>
-		/// <para>Unchecked—The points in the .las file were obtained from a lidar survey, not from a photogrammetric technique for producing point clouds. This is the default.</para>
-		/// <para>Checked—The points in the .las file were obtained using a photogrammetric technique for producing point clouds from overlapping imagery.</para>
+		/// <para>指定是否使用摄影测量技术获取 .las 文件中的点。</para>
+		/// <para>未选中 - .las 文件中的点是通过激光雷达测量而非通过产生点云的摄影测量技术获得的。 这是默认设置。</para>
+		/// <para>选中 - .las 文件中的点是使用摄影测量技术基于重叠影像产生点云获得的。</para>
 		/// <para><see cref="PhotogrammetricDataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -191,10 +191,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Classification Method</para>
-		/// <para>Specifies the classification method that will be used.</para>
-		/// <para>Aggressive—Points that fit the planar rooftop characteristics with a relatively high tolerance for outliers will be detected. Use this method if the points are not well calibrated.</para>
-		/// <para>Standard—Points that fit the planar rooftop characteristics with a relatively moderate tolerance for irregular points will be detected. This is the default</para>
-		/// <para>Conservative—Points that fit the planar rooftop characteristics with a relatively low tolerance for irregular points will be detected. Use this method if the building points are co-planar with points from objects that are not buildings.</para>
+		/// <para>指定将使用的分类方法。</para>
+		/// <para>激进—将以异常值的相对较高容差来检测符合平面屋顶特征的点。 如果没有精确标定这些点，则使用此方法。</para>
+		/// <para>标准—将以不规则点的相对适中容差来检测符合平面屋顶特征的点。 这是默认设置</para>
+		/// <para>保守—将以不规则点的相对较低容差来检测符合平面屋顶特征的点。 如果建筑物点与非建筑物对象的点共面，请使用此方法。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -204,9 +204,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Classify points above the roof</para>
-		/// <para>Specifies whether points above the planes detected for the roof will be classified.</para>
-		/// <para>Unchecked—Points detected above the planes will not be classified. This is the default.</para>
-		/// <para>Checked—Points detected above the planes will be classified.</para>
+		/// <para>指定是否会对检测到的屋顶平面上方的点进行分类。</para>
+		/// <para>未选中 - 不会对平面上方检测到的的点进行分类。 这是默认设置。</para>
+		/// <para>选中 - 将对平面上方检测到的的点进行分类。</para>
 		/// <para><see cref="ClassifyAboveRoofEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -217,7 +217,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Maximum Height Above Roof</para>
-		/// <para>The maximum height of the points above the building rooftop that will be classified to the value designated in the Above Roof Class Code parameter.</para>
+		/// <para>将分类为某值（在屋顶上方类代码参数中指定）的建筑屋顶上方的点的最大高度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -227,7 +227,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Above Roof Class Code</para>
-		/// <para>The class code that will be assigned to points above the roof.</para>
+		/// <para>将分配给屋顶上方的点的类代码。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -238,9 +238,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Classify points below the roof</para>
-		/// <para>Specifies whether points between the roof and the ground will be classified.</para>
-		/// <para>Unchecked—Points between the roof and the ground will not be classified. This is the default.</para>
-		/// <para>Checked—Points between the roof and the ground will be classified.</para>
+		/// <para>指定是否会对屋顶和地面之间的点进行分类。</para>
+		/// <para>未选中 - 将不会对屋顶和地面之间的点进行分类。 这是默认设置。</para>
+		/// <para>选中 - 将对屋顶和地面之间的点进行分类。</para>
 		/// <para><see cref="ClassifyBelowRoofEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -251,7 +251,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Below Roof Class Code</para>
-		/// <para>The class code that will be assigned to points between the ground and the roof.</para>
+		/// <para>将分配给地面和屋顶之间的点的类代码。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -262,9 +262,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Update pyramid</para>
-		/// <para>Specifies whether the LAS dataset pyramid will be updated after the class codes are modified.</para>
-		/// <para>Checked—The LAS dataset pyramid will be updated. This is the default.</para>
-		/// <para>Unchecked—The LAS dataset pyramid will not be updated.</para>
+		/// <para>指定修改类代码后，LAS 数据集金字塔是否会更新。</para>
+		/// <para>选中 - LAS 数据集金字塔将更新。 这是默认设置。</para>
+		/// <para>未选中 - LAS 数据集金字塔不会更新。</para>
 		/// <para><see cref="UpdatePyramidEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -289,14 +289,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ComputeStatsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Statistics will be computed. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMPUTE_STATS")]
 			COMPUTE_STATS,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics will not be computed.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_COMPUTE_STATS")]
@@ -310,14 +310,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ProcessEntireFilesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—If any portion of a .las file intersects the area of interest, all the points in that .las file, including those outside the area of interest, will be processed.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PROCESS_ENTIRE_FILES")]
 			PROCESS_ENTIRE_FILES,
 
 			/// <summary>
-			/// <para>Unchecked—Only LAS points that intersect the area of interest will be processed. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("PROCESS_EXTENT")]
@@ -331,14 +331,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ReuseBuildingEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Existing building classified points will contribute to the plane detection process but will not be reclassified in the event they do not meet the criteria specified in the tool&apos;s execution. Use this option if the existing classification is necessary.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REUSE_BUILDING")]
 			REUSE_BUILDING,
 
 			/// <summary>
-			/// <para>Unchecked—Existing building classified points will be reevaluated to fit the criteria for plane detection, and points that do not fit the specified area and height will be assigned a value of 1. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("RECLASSIFY_BUILDING")]
@@ -352,14 +352,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum PhotogrammetricDataEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The points in the .las file were obtained using a photogrammetric technique for producing point clouds from overlapping imagery.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PHOTOGRAMMETRIC_DATA")]
 			PHOTOGRAMMETRIC_DATA,
 
 			/// <summary>
-			/// <para>Unchecked—The points in the .las file were obtained from a lidar survey, not from a photogrammetric technique for producing point clouds. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_PHOTOGRAMMETRIC_DATA")]
@@ -373,24 +373,24 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Standard—Points that fit the planar rooftop characteristics with a relatively moderate tolerance for irregular points will be detected. This is the default</para>
+			/// <para>标准—将以不规则点的相对适中容差来检测符合平面屋顶特征的点。 这是默认设置</para>
 			/// </summary>
 			[GPValue("STANDARD")]
-			[Description("Standard")]
+			[Description("标准")]
 			Standard,
 
 			/// <summary>
-			/// <para>Conservative—Points that fit the planar rooftop characteristics with a relatively low tolerance for irregular points will be detected. Use this method if the building points are co-planar with points from objects that are not buildings.</para>
+			/// <para>保守—将以不规则点的相对较低容差来检测符合平面屋顶特征的点。 如果建筑物点与非建筑物对象的点共面，请使用此方法。</para>
 			/// </summary>
 			[GPValue("CONSERVATIVE")]
-			[Description("Conservative")]
+			[Description("保守")]
 			Conservative,
 
 			/// <summary>
-			/// <para>Aggressive—Points that fit the planar rooftop characteristics with a relatively high tolerance for outliers will be detected. Use this method if the points are not well calibrated.</para>
+			/// <para>激进—将以异常值的相对较高容差来检测符合平面屋顶特征的点。 如果没有精确标定这些点，则使用此方法。</para>
 			/// </summary>
 			[GPValue("AGGRESSIVE")]
-			[Description("Aggressive")]
+			[Description("激进")]
 			Aggressive,
 
 		}
@@ -401,14 +401,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ClassifyAboveRoofEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Points detected above the planes will be classified.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLASSIFY_ABOVE_ROOF")]
 			CLASSIFY_ABOVE_ROOF,
 
 			/// <summary>
-			/// <para>Unchecked—Points detected above the planes will not be classified. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CLASSIFY_ABOVE_ROOF")]
@@ -422,14 +422,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ClassifyBelowRoofEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Points between the roof and the ground will be classified.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLASSIFY_BELOW_ROOF")]
 			CLASSIFY_BELOW_ROOF,
 
 			/// <summary>
-			/// <para>Unchecked—Points between the roof and the ground will not be classified. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CLASSIFY_BELOW_ROOF")]
@@ -443,14 +443,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum UpdatePyramidEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The LAS dataset pyramid will be updated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_PYRAMID")]
 			UPDATE_PYRAMID,
 
 			/// <summary>
-			/// <para>Unchecked—The LAS dataset pyramid will not be updated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_UPDATE_PYRAMID")]

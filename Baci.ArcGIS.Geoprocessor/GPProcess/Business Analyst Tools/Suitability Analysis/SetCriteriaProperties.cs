@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Set Criteria Properties</para>
+	/// <para>Set Criteria Properties</para>
 	/// <para>Define parameters for criteria.</para>
 	/// </summary>
 	public class SetCriteriaProperties : AbstractGPProcess

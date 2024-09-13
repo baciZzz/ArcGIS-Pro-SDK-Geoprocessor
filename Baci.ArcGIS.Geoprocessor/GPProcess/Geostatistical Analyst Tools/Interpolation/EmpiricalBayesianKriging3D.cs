@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Empirical Bayesian Kriging 3D</para>
-	/// <para>Empirical Bayesian kriging 3D is a geostatistical interpolation method that uses Empirical Bayesian Kriging to interpolate 3D point data. All points must have x-, y-, and z-coordinates and a measured value to be interpolated. The output is a 3D geostatistical layer that calculates and renders itself as a 2D transect at a given elevation. The elevation of the layer can be changed with the range slider, and the layer will update to show the interpolated predictions for the new elevation.</para>
+	/// <para>3D 经验贝叶斯克里金法</para>
+	/// <para>3D 经验贝叶斯克里金法是一种地统计插值方法，该方法使用经验贝叶斯克里金法来插值 3D 点数据。所有点必须具有 x 坐标、y 坐标和 z 坐标以及要插值的测量值。输出是一个 3D 地统计图层，该图层可将其自身计算并渲染为给定高程处的 2D 样带。可以使用范围滑块更改图层的高程，并且图层将进行更新以显示新高程的插值预测。</para>
 	/// </summary>
 	public class EmpiricalBayesianKriging3D : AbstractGPProcess
 	{
@@ -20,20 +21,20 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input features</para>
-		/// <para>The input point features containing the field that will be interpolated.</para>
+		/// <para>包含要内插的字段的输入点要素。</para>
 		/// </param>
 		/// <param name="ElevationField">
 		/// <para>Elevation field</para>
-		/// <para>The Input features field containing the elevation value of each input point.</para>
-		/// <para>If the elevation values are stored as geometry attributes in Shape.Z, it is recommended that you use that field. If the elevation values are stored in an attribute field, the elevation values must indicate distance from sea level. Positive values indicate distance above sea level, and negative values indicate distance below sea level.</para>
+		/// <para>包含每个输入点的高程值的输入要素字段。</para>
+		/// <para>如果高程值存储为 Shape.Z 中的几何属性，则建议您使用该字段。如果高程值存储在属性字段中，则高程值必须表示距海平面的距离。正值表示海平面以上的距离，负值表示海平面以下的距离。</para>
 		/// </param>
 		/// <param name="ValueField">
 		/// <para>Value field</para>
-		/// <para>The Input features field containing the measured values that will be interpolated.</para>
+		/// <para>包含将进行插值的测量值的输入要素字段。</para>
 		/// </param>
 		/// <param name="OutGaLayer">
 		/// <para>Output geostatistical layer</para>
-		/// <para>The output geostatistical layer that will display the interpolation result.</para>
+		/// <para>将显示插值结果的输出地统计图层。</para>
 		/// </param>
 		public EmpiricalBayesianKriging3D(object InFeatures, object ElevationField, object ValueField, object OutGaLayer)
 		{
@@ -44,9 +45,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Empirical Bayesian Kriging 3D</para>
+		/// <para>Tool Display Name : 3D 经验贝叶斯克里金法</para>
 		/// </summary>
-		public override string DisplayName() => "Empirical Bayesian Kriging 3D";
+		public override string DisplayName() => "3D 经验贝叶斯克里金法";
 
 		/// <summary>
 		/// <para>Tool Name : EmpiricalBayesianKriging3D</para>
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input features</para>
-		/// <para>The input point features containing the field that will be interpolated.</para>
+		/// <para>包含要内插的字段的输入点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -90,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Elevation field</para>
-		/// <para>The Input features field containing the elevation value of each input point.</para>
-		/// <para>If the elevation values are stored as geometry attributes in Shape.Z, it is recommended that you use that field. If the elevation values are stored in an attribute field, the elevation values must indicate distance from sea level. Positive values indicate distance above sea level, and negative values indicate distance below sea level.</para>
+		/// <para>包含每个输入点的高程值的输入要素字段。</para>
+		/// <para>如果高程值存储为 Shape.Z 中的几何属性，则建议您使用该字段。如果高程值存储在属性字段中，则高程值必须表示距海平面的距离。正值表示海平面以上的距离，负值表示海平面以下的距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Value field</para>
-		/// <para>The Input features field containing the measured values that will be interpolated.</para>
+		/// <para>包含将进行插值的测量值的输入要素字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output geostatistical layer</para>
-		/// <para>The output geostatistical layer that will display the interpolation result.</para>
+		/// <para>将显示插值结果的输出地统计图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPGALayer()]
@@ -119,18 +120,18 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Elevation field units</para>
-		/// <para>The units of the Elevation field.</para>
-		/// <para>If Shape.Z is provided as the elevation field, the units will automatically match the z-units of the vertical coordinate system.</para>
-		/// <para>Inch—Elevations are in inches.</para>
-		/// <para>Foot—Elevations are in feet.</para>
-		/// <para>Yard—Elevations are in yards.</para>
-		/// <para>US mile—Elevations are in US miles.</para>
-		/// <para>Nautical mile—Elevations are in nautical miles.</para>
-		/// <para>Millimeter—Elevations are in millimeters.</para>
-		/// <para>Centimeter—Elevations are in centimeters.</para>
-		/// <para>Decimeter—Elevations are in decimeters.</para>
-		/// <para>Meter—Elevations are in meters.</para>
-		/// <para>Kilometer—Elevations are in kilometers.</para>
+		/// <para>高程字段的单位。</para>
+		/// <para>如果提供 Shape.Z 作为高程字段，则单位将自动匹配垂直坐标系的 z 单位。</para>
+		/// <para>英寸—高程以英寸为单位。</para>
+		/// <para>英尺—高程以英尺为单位。</para>
+		/// <para>码—高程以码为单位。</para>
+		/// <para>英里（美制）—高程以英里（美制）为单位。</para>
+		/// <para>海里—高程以海里为单位。</para>
+		/// <para>毫米—高程以毫米为单位。</para>
+		/// <para>厘米—高程以厘米为单位。</para>
+		/// <para>分米—高程以分米为单位。</para>
+		/// <para>仪表—高程以米为单位。</para>
+		/// <para>千米—高程以千米为单位。</para>
 		/// <para><see cref="ElevationUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -140,9 +141,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Measurement error field</para>
-		/// <para>Specifies the measurement error for each point in the input features. For each point, the value of this field should correspond to one standard deviation of the measured value of the point. Use this field if the measurement error values are not the same at each point.</para>
-		/// <para>A common source of nonconstant measurement error is when the data is measured with different devices. One device may be more precise than another, which means that it will have a smaller measurement error. For example, a thermometer rounds to the nearest degree and another thermometer rounds to the nearest tenth of a degree. The variability of measurements is often provided by the manufacturer of the measuring device, or it may be known from empirical practice.</para>
-		/// <para>Leave this parameter empty if there are no measurement error values or the measurement error values are unknown.</para>
+		/// <para>指定输入要素中每个点的测量误差。对于每个点，此字段的值都应对应于该点测量值的标准差。如果每个点的测量误差值不同，请使用此字段。</para>
+		/// <para>产生不稳定测量误差的常见原因是测量数据时所用的设备不同。一个设备可能比另一个精确，即其测量误差更小。例如，一个温度计舍入到最接近的度，而另一个温度计舍到最接近的度的十分之一。通常，测量误差范围由测量设备的制造商会提供，或通过实践经验获得。</para>
+		/// <para>如果没有测量误差值或测量误差值未知，请将此参数留空。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -152,13 +153,13 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Semivariogram model type</para>
-		/// <para>The semivariogram model that will be used for the interpolation.</para>
-		/// <para>Power—Power semivariogram</para>
-		/// <para>Linear—Linear semivariogram</para>
-		/// <para>Thin Plate Spline—Thin plate spline semivariogram</para>
-		/// <para>Exponential—Exponential semivariogram</para>
-		/// <para>Whittle—Whittle semivariogram</para>
-		/// <para>K-Bessel—K-Bessel semivariogram</para>
+		/// <para>用于插值的半变异函数模型。</para>
+		/// <para>幂—幂半变异函数</para>
+		/// <para>线性—线性半变异函数</para>
+		/// <para>薄板样条函数—薄板样条半变异函数</para>
+		/// <para>指数—指数半变异函数</para>
+		/// <para>消减函数—消减半变异函数</para>
+		/// <para>K-Bessel—K-Bessel 半变异函数</para>
 		/// <para><see cref="SemivariogramModelTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -169,10 +170,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Transformation type</para>
-		/// <para>The type of transformation to be applied to the input features.</para>
-		/// <para>None—Do not apply any transformation. This is the default.</para>
-		/// <para>Empirical—Multiplicative Skewing transformation with Empirical base function is applied.</para>
-		/// <para>Log empirical—Multiplicative Skewing transformation with Log Empirical base function is applied. All data values must be positive. If this option is chosen, all predictions will be positive.</para>
+		/// <para>将应用于输入要素的变换类型。</para>
+		/// <para>无—不应用任何变换。这是默认设置。</para>
+		/// <para>经验法—将应用具有“经验”基本函数的“乘偏斜”变换。</para>
+		/// <para>对数经验—将应用具有“对数经验”基本函数的“乘偏斜”变换。所有数据值必须为正。如果选择此选项，则所有预测均为正。</para>
 		/// <para><see cref="TransformationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -183,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Subset size</para>
-		/// <para>The size of the subset. The input data will automatically be divided into subsets before processing. This parameter controls the number of points that will be in each subset.</para>
+		/// <para>子集的大小。在进行处理前，输入数据将自动划分为子集。此参数可以控制每个子集中的点数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -193,8 +194,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Local model area overlap factor</para>
-		/// <para>A factor representing the degree of overlap between local models (also called subsets).</para>
-		/// <para>Each input point can fall into several subsets, and the overlap factor specifies the average number of subsets into which each point will fall. A high value of the overlap factor produces a smoother output surface, but it also increases processing time. Values must be between 1 and 5. The actual overlap that will be used will usually be larger than this value, so each subset will contain the same number of points.</para>
+		/// <para>表示本地模型（也称子集）之间重叠程度的系数。</para>
+		/// <para>每个输入点均可落入多个子集中，重叠系数指定了各点将落入的子集的平均数。重叠系数值越高，则输出表面就越平滑，但处理时间也越长。值必须介于 1 和 5 之间。将使用的实际重叠通常将大于此值，因此每个子集将包含相同数量的点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -204,8 +205,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Number of simulated semivariograms</para>
-		/// <para>The number of simulated semivariograms of each local model.</para>
-		/// <para>Using more simulations will make the model calculations more stable, but the model will take longer to calculate.</para>
+		/// <para>每个本地模型模拟的半变异函数的数量。</para>
+		/// <para>使用的模拟越多，则模型计算越稳定，但模型所用的计算时间也会越长。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -215,10 +216,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Order of trend removal</para>
-		/// <para>The order of trend removal in the vertical direction.</para>
-		/// <para>For most data in three dimensions, the values of the points change faster vertically than they do horizontally. Removing trend in the vertical direction will help alleviate this and stabilize calculations.</para>
-		/// <para>None—Do not remove trend. This is the default.</para>
-		/// <para>First order—Remove first order vertical trend.</para>
+		/// <para>垂直方向上趋势移除的顺序。</para>
+		/// <para>对于大部分三维数据，点值的垂直变化快于其水平变化。移除垂直方向的趋势将有助于缓解这一情况并稳定计算。</para>
+		/// <para>无—请勿移除趋势。这是默认设置。</para>
+		/// <para>一阶—请移除一阶垂直趋势。</para>
 		/// <para><see cref="TrendRemovalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -229,8 +230,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Elevation inflation factor</para>
-		/// <para>A constant value that is multiplied by the Elevation field value prior to subsetting and model estimation. For most data in three dimensions, the values of the points change faster vertically than they do horizontally, and this factor stretches the locations of the points such that one unit of distance vertically is statistically equivalent to one unit of distance horizontally. The locations of the points will be moved back to their original locations before returning the result of the interpolation. This correction is needed to accurately estimate the semivariogram model and for the Search neighborhood to use the correct neighbors. The elevation inflation factor is unitless and will provide the same results regardless of the units of the x-, y-, or z-coordinate of the input points.</para>
-		/// <para>If no value is provided for this parameter, one will be calculated at run time using maximum likelihood estimation. The value will be printed as a geoprocessing message. The value calculated at run time will be between 1 and 1000. However, you can type values between 0.01 and 1,000,000. If the calculated value is equal to 1 or 1000, you can provide values outside that range and choose a value based on cross validation.</para>
+		/// <para>这是一个常量值，在构造子集和模型评估之前，需要将其乘以高程字段值。对于大部分三维数据，点值的垂直变化快于其水平变化，并且该因子将对点的位置进行拉伸，以使一个垂直距离单位在统计上等于一个水平距离单位。返回插值结果之前，点的位置将移回其原始位置。需要通过这种校正来准确评估半变异函数模型以及搜索邻域以使用正确的邻域。高程膨胀因子没有单位，无论输入点的 x、y 或 z 坐标单位如何，都将提供相同的结果。</para>
+		/// <para>如果没有为此参数提供值，则将使用最大似然估计在运行时计算一个值。该值将打印为地理处理消息。运行时计算的值将介于 1 至 1000 之间。但是，您可以键入 0.01 至 1,000,000 之间的值。如果计算的值等于 1 或 1000，则可以提供该范围之外的值，并根据交叉验证来选择值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -240,18 +241,18 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Search neighborhood</para>
-		/// <para>Specifies the number and orientation of the neighbors that will be used to predict values at new locations.</para>
+		/// <para>指定将用于预测新位置值的相邻要素的数量和方向。</para>
 		/// <para>Standard3D</para>
-		/// <para>Max neighbors—The maximum number of neighbors per sector that will be used to estimate the value at the unknown location.</para>
-		/// <para>Min neighbors—The minimum number of neighbors per sector that will be used to estimate the value at the unknown location.</para>
-		/// <para>Sector type—The geometry of the 3D neighborhood. Sectors are used to ensure that neighbors are used in every direction around the prediction location. All sector types are formed from the Platonic solids.</para>
-		/// <para>1 Sector (Sphere)—The closest neighbors from any direction will be used.</para>
-		/// <para>4 Sector (Tetrahedron)—Divides space into four regions, and neighbors will be used in each of the four regions.</para>
-		/// <para>6 Sector (Cube)—Divides space into six regions, and neighbors will be used in each of the six regions.</para>
-		/// <para>8 Sector (Octahedron)—Divides space into eight regions, and neighbors will be used in each of the eight regions.</para>
-		/// <para>12 Sector (Dodecahedron)—Divides space into twelve regions, and neighbors will be used in each of the twelve regions.</para>
-		/// <para>20 Sector (Icosahedron)—Divides space into twenty regions, and neighbors will be used in each of the twenty regions.</para>
-		/// <para>Radius—The length of the radius of the search neighborhood.</para>
+		/// <para>最大相邻要素数 - 将用于估计未知位置值的最大相邻要素数/扇区。</para>
+		/// <para>最小相邻要素数 - 将用于估计未知位置值的最小相邻要素数/扇区。</para>
+		/// <para>扇区类型 - 3D 邻域的几何。扇区可用于确保在预测位置周围的每个方向上使用相邻要素。所有扇区类型均由正多面体形成。</para>
+		/// <para>1 扇区（球体）- 将使用来自所有方向的最近相邻要素。</para>
+		/// <para>4 扇区（四面体）- 将空间划分为 4 个区域，并且在每个区域中都将使用相邻要素。</para>
+		/// <para>6 扇区（立方体）- 将空间划分为 6 个区域，并且在每个区域中都将使用相邻要素。</para>
+		/// <para>8 扇区（八面体）- 将空间划分为 8 个区域，并且在每个区域中都将使用相邻要素。</para>
+		/// <para>12 扇区（十二面体）- 将空间划分为 12 个区域，并且在每个区域中都将使用相邻要素。</para>
+		/// <para>20 扇区（二十面体）- 将空间划分为 20 个区域，并且在每个区域中都将使用相邻要素。</para>
+		/// <para>半径 - 搜索邻域的半径长度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGASearchNeighborhood()]
@@ -262,8 +263,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Default output elevation</para>
-		/// <para>The default elevation of the Output geostatistical layer.</para>
-		/// <para>The geostatistical layer will always draw as a horizontal surface at a given elevation, and this parameter specifies this elevation. After it&apos;s created, the elevation of the geostatistical layer can be changed using the range slider.</para>
+		/// <para>输出地统计图层的默认高程。</para>
+		/// <para>地统计图层将始终绘制为给定高程处的水平面，并且此参数将指定此高程。创建后，可以使用范围滑块来更改地统计图层的高程。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -273,11 +274,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output surface type</para>
-		/// <para>Surface type to store the interpolation results.</para>
-		/// <para>Prediction—Prediction surfaces are produced from the interpolated values.</para>
-		/// <para>Standard error of prediction— Standard Error surfaces are produced from the standard errors of the interpolated values.</para>
-		/// <para>Probability—Probability surface of values exceeding or not exceeding a certain threshold.</para>
-		/// <para>Quantile—Quantile surface predicting the specified quantile of the prediction distribution.</para>
+		/// <para>用于存储插值结果的表面类型。</para>
+		/// <para>预测—可通过内插值生成的预测表面。</para>
+		/// <para>预测的标准误差— 标准误差表面可通过内插值的标准误差生成。</para>
+		/// <para>概率—值超过或未超过某一特定阈值的概率曲面。</para>
+		/// <para>分位数—可对预测分布指定分位数进行预测的分位数表面。</para>
 		/// <para><see cref="OutputTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -288,7 +289,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Quantile value</para>
-		/// <para>The quantile value for which the output layer will be generated.</para>
+		/// <para>用于生成输出图层的分位数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -298,9 +299,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Probability threshold type</para>
-		/// <para>Specifies whether to calculate the probability of exceeding or not exceeding the specified threshold.</para>
-		/// <para>Exceed—Probability values exceed the threshold. This is the default.</para>
-		/// <para>Not exceed—Probability values will not exceed the threshold.</para>
+		/// <para>指定是否计算超过或未超过指定阈值的概率。</para>
+		/// <para>超出—概率值超过了阈值。这是默认设置。</para>
+		/// <para>未超出—概率值将不会超过阈值。</para>
 		/// <para><see cref="ThresholdTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -311,7 +312,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Probability threshold</para>
-		/// <para>The probability threshold value. If left empty, the median (50th quantile) of the input data will be used.</para>
+		/// <para>概率阈值。如果留空，将使用输入数据的中值（第 50 个分位数）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -335,73 +336,73 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum ElevationUnitsEnum 
 		{
 			/// <summary>
-			/// <para>Inch—Elevations are in inches.</para>
+			/// <para>英寸—高程以英寸为单位。</para>
 			/// </summary>
 			[GPValue("INCH")]
-			[Description("Inch")]
+			[Description("英寸")]
 			Inch,
 
 			/// <summary>
-			/// <para>Foot—Elevations are in feet.</para>
+			/// <para>英尺—高程以英尺为单位。</para>
 			/// </summary>
 			[GPValue("FOOT")]
-			[Description("Foot")]
+			[Description("英尺")]
 			Foot,
 
 			/// <summary>
-			/// <para>Yard—Elevations are in yards.</para>
+			/// <para>码—高程以码为单位。</para>
 			/// </summary>
 			[GPValue("YARD")]
-			[Description("Yard")]
+			[Description("码")]
 			Yard,
 
 			/// <summary>
-			/// <para>US mile—Elevations are in US miles.</para>
+			/// <para>英里（美制）—高程以英里（美制）为单位。</para>
 			/// </summary>
 			[GPValue("MILE_US")]
-			[Description("US mile")]
+			[Description("英里（美制）")]
 			US_mile,
 
 			/// <summary>
-			/// <para>Nautical mile—Elevations are in nautical miles.</para>
+			/// <para>海里—高程以海里为单位。</para>
 			/// </summary>
 			[GPValue("NAUTICAL_MILE")]
-			[Description("Nautical mile")]
+			[Description("海里")]
 			Nautical_mile,
 
 			/// <summary>
-			/// <para>Millimeter—Elevations are in millimeters.</para>
+			/// <para>毫米—高程以毫米为单位。</para>
 			/// </summary>
 			[GPValue("MILLIMETER")]
-			[Description("Millimeter")]
+			[Description("毫米")]
 			Millimeter,
 
 			/// <summary>
-			/// <para>Centimeter—Elevations are in centimeters.</para>
+			/// <para>厘米—高程以厘米为单位。</para>
 			/// </summary>
 			[GPValue("CENTIMETER")]
-			[Description("Centimeter")]
+			[Description("厘米")]
 			Centimeter,
 
 			/// <summary>
-			/// <para>Decimeter—Elevations are in decimeters.</para>
+			/// <para>分米—高程以分米为单位。</para>
 			/// </summary>
 			[GPValue("DECIMETER")]
-			[Description("Decimeter")]
+			[Description("分米")]
 			Decimeter,
 
 			/// <summary>
-			/// <para>Meter—Elevations are in meters.</para>
+			/// <para>仪表—高程以米为单位。</para>
 			/// </summary>
 			[GPValue("METER")]
-			[Description("Meter")]
+			[Description("仪表")]
 			Meter,
 
 			/// <summary>
-			/// <para>Kilometer—Elevations are in kilometers.</para>
+			/// <para>千米—高程以千米为单位。</para>
 			/// </summary>
 			[GPValue("KILOMETER")]
-			[Description("Kilometer")]
+			[Description("千米")]
 			Kilometer,
 
 		}
@@ -412,42 +413,42 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum SemivariogramModelTypeEnum 
 		{
 			/// <summary>
-			/// <para>Power—Power semivariogram</para>
+			/// <para>幂—幂半变异函数</para>
 			/// </summary>
 			[GPValue("POWER")]
-			[Description("Power")]
+			[Description("幂")]
 			Power,
 
 			/// <summary>
-			/// <para>Linear—Linear semivariogram</para>
+			/// <para>线性—线性半变异函数</para>
 			/// </summary>
 			[GPValue("LINEAR")]
-			[Description("Linear")]
+			[Description("线性")]
 			Linear,
 
 			/// <summary>
-			/// <para>Thin Plate Spline—Thin plate spline semivariogram</para>
+			/// <para>薄板样条函数—薄板样条半变异函数</para>
 			/// </summary>
 			[GPValue("THIN_PLATE_SPLINE")]
-			[Description("Thin Plate Spline")]
+			[Description("薄板样条函数")]
 			Thin_Plate_Spline,
 
 			/// <summary>
-			/// <para>Exponential—Exponential semivariogram</para>
+			/// <para>指数—指数半变异函数</para>
 			/// </summary>
 			[GPValue("EXPONENTIAL")]
-			[Description("Exponential")]
+			[Description("指数")]
 			Exponential,
 
 			/// <summary>
-			/// <para>Whittle—Whittle semivariogram</para>
+			/// <para>消减函数—消减半变异函数</para>
 			/// </summary>
 			[GPValue("WHITTLE")]
-			[Description("Whittle")]
+			[Description("消减函数")]
 			Whittle,
 
 			/// <summary>
-			/// <para>K-Bessel—K-Bessel semivariogram</para>
+			/// <para>K-Bessel—K-Bessel 半变异函数</para>
 			/// </summary>
 			[GPValue("K_BESSEL")]
 			[Description("K-Bessel")]
@@ -461,24 +462,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum TransformationTypeEnum 
 		{
 			/// <summary>
-			/// <para>None—Do not apply any transformation. This is the default.</para>
+			/// <para>无—不应用任何变换。这是默认设置。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 			/// <summary>
-			/// <para>Empirical—Multiplicative Skewing transformation with Empirical base function is applied.</para>
+			/// <para>经验法—将应用具有“经验”基本函数的“乘偏斜”变换。</para>
 			/// </summary>
 			[GPValue("EMPIRICAL")]
-			[Description("Empirical")]
+			[Description("经验法")]
 			Empirical,
 
 			/// <summary>
-			/// <para>Log empirical—Multiplicative Skewing transformation with Log Empirical base function is applied. All data values must be positive. If this option is chosen, all predictions will be positive.</para>
+			/// <para>对数经验—将应用具有“对数经验”基本函数的“乘偏斜”变换。所有数据值必须为正。如果选择此选项，则所有预测均为正。</para>
 			/// </summary>
 			[GPValue("LOGEMPIRICAL")]
-			[Description("Log empirical")]
+			[Description("对数经验")]
 			Log_empirical,
 
 		}
@@ -489,17 +490,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum TrendRemovalEnum 
 		{
 			/// <summary>
-			/// <para>None—Do not remove trend. This is the default.</para>
+			/// <para>无—请勿移除趋势。这是默认设置。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 			/// <summary>
-			/// <para>First order—Remove first order vertical trend.</para>
+			/// <para>一阶—请移除一阶垂直趋势。</para>
 			/// </summary>
 			[GPValue("FIRST")]
-			[Description("First order")]
+			[Description("一阶")]
 			First_order,
 
 		}
@@ -510,31 +511,31 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum OutputTypeEnum 
 		{
 			/// <summary>
-			/// <para>Prediction—Prediction surfaces are produced from the interpolated values.</para>
+			/// <para>预测—可通过内插值生成的预测表面。</para>
 			/// </summary>
 			[GPValue("PREDICTION")]
-			[Description("Prediction")]
+			[Description("预测")]
 			Prediction,
 
 			/// <summary>
-			/// <para>Standard error of prediction— Standard Error surfaces are produced from the standard errors of the interpolated values.</para>
+			/// <para>预测的标准误差— 标准误差表面可通过内插值的标准误差生成。</para>
 			/// </summary>
 			[GPValue("PREDICTION_STANDARD_ERROR")]
-			[Description("Standard error of prediction")]
+			[Description("预测的标准误差")]
 			Standard_error_of_prediction,
 
 			/// <summary>
-			/// <para>Probability—Probability surface of values exceeding or not exceeding a certain threshold.</para>
+			/// <para>概率—值超过或未超过某一特定阈值的概率曲面。</para>
 			/// </summary>
 			[GPValue("PROBABILITY")]
-			[Description("Probability")]
+			[Description("概率")]
 			Probability,
 
 			/// <summary>
-			/// <para>Quantile—Quantile surface predicting the specified quantile of the prediction distribution.</para>
+			/// <para>分位数—可对预测分布指定分位数进行预测的分位数表面。</para>
 			/// </summary>
 			[GPValue("QUANTILE")]
-			[Description("Quantile")]
+			[Description("分位数")]
 			Quantile,
 
 		}
@@ -545,17 +546,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum ThresholdTypeEnum 
 		{
 			/// <summary>
-			/// <para>Exceed—Probability values exceed the threshold. This is the default.</para>
+			/// <para>超出—概率值超过了阈值。这是默认设置。</para>
 			/// </summary>
 			[GPValue("EXCEED")]
-			[Description("Exceed")]
+			[Description("超出")]
 			Exceed,
 
 			/// <summary>
-			/// <para>Not exceed—Probability values will not exceed the threshold.</para>
+			/// <para>未超出—概率值将不会超过阈值。</para>
 			/// </summary>
 			[GPValue("NOT_EXCEED")]
-			[Description("Not exceed")]
+			[Description("未超出")]
 			Not_exceed,
 
 		}

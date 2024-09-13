@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Identify Contours</para>
+	/// <para>Identify Contours</para>
 	/// <para>Identifies types of contours and applies hypsographic codes to input features.</para>
 	/// </summary>
 	public class IdentifyContours : AbstractGPProcess

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Reclass by ASCII File</para>
-	/// <para>Reclassifies (or changes) the values of the input cells of a raster using an ASCII remap file.</para>
+	/// <para>使用 ASCII 文件重分类</para>
+	/// <para>通过使用 ASCII 重映射文件重分类（或更改）输入栅格像元的值。</para>
 	/// </summary>
 	public class ReclassByASCIIFile : AbstractGPProcess
 	{
@@ -20,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster to be reclassified.</para>
+		/// <para>要进行重分类的输入栅格。</para>
 		/// </param>
 		/// <param name="InRemapFile">
 		/// <para>Input ASCII remap file</para>
-		/// <para>ASCII remap file defining the single values or ranges to be reclassified and the values they will become.</para>
-		/// <para>Allowed extensions for the ASCII remap files are .rmp, .txt, and .asc.</para>
+		/// <para>该 ASCII 重映射文件定义要重分类的单个值或值范围以及它们将生成的值。</para>
+		/// <para>ASCII 重映射文件允许使用的扩展名有 .rmp、.txt 和 .asc。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output reclassified raster.</para>
-		/// <para>The output will always be of integer type.</para>
+		/// <para>输出重分类栅格。</para>
+		/// <para>输出将始终为整型。</para>
 		/// </param>
 		public ReclassByASCIIFile(object InRaster, object InRemapFile, object OutRaster)
 		{
@@ -40,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Reclass by ASCII File</para>
+		/// <para>Tool Display Name : 使用 ASCII 文件重分类</para>
 		/// </summary>
-		public override string DisplayName() => "Reclass by ASCII File";
+		public override string DisplayName() => "使用 ASCII 文件重分类";
 
 		/// <summary>
 		/// <para>Tool Name : ReclassByASCIIFile</para>
@@ -76,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster to be reclassified.</para>
+		/// <para>要进行重分类的输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -88,8 +89,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input ASCII remap file</para>
-		/// <para>ASCII remap file defining the single values or ranges to be reclassified and the values they will become.</para>
-		/// <para>Allowed extensions for the ASCII remap files are .rmp, .txt, and .asc.</para>
+		/// <para>该 ASCII 重映射文件定义要重分类的单个值或值范围以及它们将生成的值。</para>
+		/// <para>ASCII 重映射文件允许使用的扩展名有 .rmp、.txt 和 .asc。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -99,8 +100,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output reclassified raster.</para>
-		/// <para>The output will always be of integer type.</para>
+		/// <para>输出重分类栅格。</para>
+		/// <para>输出将始终为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -108,9 +109,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Change missing values to NoData</para>
-		/// <para>Denotes whether missing values in the reclass file retain their value or get mapped to NoData.</para>
-		/// <para>Unchecked—Signifies that if any cell location on the input raster contains a value that is not present or reclassed in the remap file, the value should remain intact and be written for that location to the output raster. This is the default.</para>
-		/// <para>Checked—Signifies that if any cell location on the input raster contains a value that is not present or reclassed in the remap file, the value will be reclassed to NoData for that location on the output raster.</para>
+		/// <para>指示重分类文件中的缺失值是保持不变还是映射为 NoData。</para>
+		/// <para>未选中 - 表明如果输入栅格的任何像元位置含有未在重映射文件中出现或重分类的值，则该值应保持不变，并且应写入输出栅格中的相应位置。这是默认设置。</para>
+		/// <para>选中 - 表明如果输入栅格的任何像元位置含有未在重映射文件中出现或重分类的值，则该值将在输出栅格中的相应位置被重分类为 NoData。</para>
 		/// <para><see cref="MissingValuesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -135,14 +136,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum MissingValuesEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Signifies that if any cell location on the input raster contains a value that is not present or reclassed in the remap file, the value should remain intact and be written for that location to the output raster. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DATA")]
 			DATA,
 
 			/// <summary>
-			/// <para>Checked—Signifies that if any cell location on the input raster contains a value that is not present or reclassed in the remap file, the value will be reclassed to NoData for that location on the output raster.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("NODATA")]

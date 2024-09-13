@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>If Data Exists</para>
-	/// <para>Evaluates if the specified data exists.</para>
+	/// <para>如果数据已存在</para>
+	/// <para>用于评估指定数据是否已存在。</para>
 	/// </summary>
 	public class DataExistsIfThenElse : AbstractGPProcess
 	{
@@ -23,9 +24,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : If Data Exists</para>
+		/// <para>Tool Display Name : 如果数据已存在</para>
 		/// </summary>
-		public override string DisplayName() => "If Data Exists";
+		public override string DisplayName() => "如果数据已存在";
 
 		/// <summary>
 		/// <para>Tool Name : DataExistsIfThenElse</para>
@@ -59,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Input Data Element</para>
-		/// <para>Input data element to be evaluated.</para>
+		/// <para>要评估的输入数据元素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPType()]
@@ -67,17 +68,17 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Data Type</para>
-		/// <para>The data type of the data element being evaluated. The only time you need to provide a value is when a geodatabase contains a feature dataset and a feature class or table with the same name. In this case, you need to select the data type (feature dataset, feature class or table) of the item you want to evaluate.</para>
-		/// <para>Any—Any Value. This is the default.</para>
-		/// <para>Feature Dataset—Feature Dataset</para>
-		/// <para>Feature Class—Feature Class</para>
-		/// <para>Table—Table</para>
-		/// <para>View—View</para>
-		/// <para>Relationship Class—Relationship Class</para>
-		/// <para>Raster Dataset—Raster Dataset</para>
-		/// <para>Mosaic Dataset—Mosaic Dataset</para>
-		/// <para>Toolbox—Toolbox</para>
-		/// <para>Topology—Topology</para>
+		/// <para>正在进行评估的数据元素的数据类型。仅当地理数据库中的要素数据集和要素类或表具有相同名称时，才需要提供一个值。在这种情况下，您需要为希望进行评估的项选择数据类型（要素数据集、要素类或表）。</para>
+		/// <para>任何—任何值。这是默认设置。</para>
+		/// <para>要素数据集—要素数据集</para>
+		/// <para>要素类—要素类</para>
+		/// <para>表—表</para>
+		/// <para>视图—视图</para>
+		/// <para>关系类—关系类</para>
+		/// <para>栅格数据集—栅格数据集</para>
+		/// <para>镶嵌数据集—镶嵌数据集</para>
+		/// <para>工具箱—工具箱</para>
+		/// <para>拓扑—拓扑</para>
 		/// <para><see cref="DataTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -107,73 +108,73 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum DataTypeEnum 
 		{
 			/// <summary>
-			/// <para>Any—Any Value. This is the default.</para>
+			/// <para>任何—任何值。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ANY")]
-			[Description("Any")]
+			[Description("任何")]
 			Any,
 
 			/// <summary>
-			/// <para>Feature Dataset—Feature Dataset</para>
+			/// <para>要素数据集—要素数据集</para>
 			/// </summary>
 			[GPValue("DEFeatureDataset")]
-			[Description("Feature Dataset")]
+			[Description("要素数据集")]
 			Feature_Dataset,
 
 			/// <summary>
-			/// <para>Feature Class—Feature Class</para>
+			/// <para>要素类—要素类</para>
 			/// </summary>
 			[GPValue("DEFeatureClass")]
-			[Description("Feature Class")]
+			[Description("要素类")]
 			Feature_Class,
 
 			/// <summary>
-			/// <para>Table—Table</para>
+			/// <para>表—表</para>
 			/// </summary>
 			[GPValue("DETable")]
-			[Description("Table")]
+			[Description("表")]
 			Table,
 
 			/// <summary>
-			/// <para>View—View</para>
+			/// <para>视图—视图</para>
 			/// </summary>
 			[GPValue("DEView")]
-			[Description("View")]
+			[Description("视图")]
 			View,
 
 			/// <summary>
-			/// <para>Relationship Class—Relationship Class</para>
+			/// <para>关系类—关系类</para>
 			/// </summary>
 			[GPValue("DERelationshipClass")]
-			[Description("Relationship Class")]
+			[Description("关系类")]
 			Relationship_Class,
 
 			/// <summary>
-			/// <para>Raster Dataset—Raster Dataset</para>
+			/// <para>栅格数据集—栅格数据集</para>
 			/// </summary>
 			[GPValue("DERasterDataset")]
-			[Description("Raster Dataset")]
+			[Description("栅格数据集")]
 			Raster_Dataset,
 
 			/// <summary>
-			/// <para>Mosaic Dataset—Mosaic Dataset</para>
+			/// <para>镶嵌数据集—镶嵌数据集</para>
 			/// </summary>
 			[GPValue("DEMosaicDataset")]
-			[Description("Mosaic Dataset")]
+			[Description("镶嵌数据集")]
 			Mosaic_Dataset,
 
 			/// <summary>
-			/// <para>Toolbox—Toolbox</para>
+			/// <para>工具箱—工具箱</para>
 			/// </summary>
 			[GPValue("DEToolbox")]
-			[Description("Toolbox")]
+			[Description("工具箱")]
 			Toolbox,
 
 			/// <summary>
-			/// <para>Topology—Topology</para>
+			/// <para>拓扑—拓扑</para>
 			/// </summary>
 			[GPValue("DETopology")]
-			[Description("Topology")]
+			[Description("拓扑")]
 			Topology,
 
 		}

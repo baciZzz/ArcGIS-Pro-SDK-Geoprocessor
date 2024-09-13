@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Simplify Polygon</para>
-	/// <para>Simplifies polygon features by removing relatively extraneous vertices while preserving essential shape.</para>
+	/// <para>简化面</para>
+	/// <para>在不改变基本几何形状的情况下，通过移除相对多余的折点来简化面要素。</para>
 	/// </summary>
 	public class SimplifyPolygon : AbstractGPProcess
 	{
@@ -20,33 +21,33 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input polygon features to be simplified.</para>
+		/// <para>要简化的输入面要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The simplified output polygon feature class. It contains all fields present in the input feature class. The output polygon feature class is topologically correct. The tool does not introduce topology errors, but topological errors in the input data are flagged in the output polygon feature class.</para>
-		/// <para>The output feature class includes two additional fields, InPoly_FID and SimPgnFlag, that contain the input feature IDs and the input topological errors or discrepancies, respectively.</para>
-		/// <para>SimPgnFlag attribute values are as follows:</para>
-		/// <para>SimPgnFlag = 0 indicates that no errors are present.</para>
-		/// <para>SimPgnFlag = 1 indicates a topological error is present.</para>
-		/// <para>SimPgnFlag = 2 indicates features that have been split by a partition and are now smaller than the minimum area after simplification. The flag may appear on only one part of the split feature. These features are all retained in the output feature class. This situation occurs only when the Cartographic Partitions environment setting is used.</para>
+		/// <para>简化后的输出面要素类。 其中包含输入要素类中的所有字段。 输出面要素类具有正确的拓扑。 该工具不会引入拓扑错误，但输入数据中的拓扑错误会在输出面要素类中标记出来。</para>
+		/// <para>输出要素类包括含有相应输入要素 ID 和输入拓扑错误或差异的两个附加字段：InPoly_FID 和 SimPgnFlag。</para>
+		/// <para>SimPgnFlag 属性值如下：</para>
+		/// <para>SimPgnFlag = 0 表示不存在错误。</para>
+		/// <para>SimPgnFlag = 1 表示存在拓扑错误。</para>
+		/// <para>SimPgnFlag = 2 表示已被分区分割的要素，该要素经过简化后现在小于最小面积。 该标记可能仅显示在分割要素的一部分上。 这些要素将全部保留在输出要素类中。 仅在使用制图分区环境设置时才会出现此情况。</para>
 		/// </param>
 		/// <param name="Algorithm">
 		/// <para>Simplification Algorithm</para>
-		/// <para>Specifies the polygon simplification algorithm.</para>
-		/// <para>Retain critical points (Douglas-Peucker)—Critical points that preserve the essential shape of a polygon outline are retained, and all other points are removed (Douglas-Peucker). This is the default.</para>
-		/// <para>Retain critical bends (Wang-Müller)—Critical bends are retained, and extraneous bends are removed from a line (Wang-Müller).</para>
-		/// <para>Retain weighted effective areas (Zhou-Jones)—Vertices that form triangles of effective area that have been weighted by triangle shape are retained (Zhou-Jones).</para>
-		/// <para>Retain effective areas (Visvalingam-Whyatt)—Vertices that form triangles of effective area are retained (Visvalingam-Whyatt).</para>
+		/// <para>指定面简化算法。</para>
+		/// <para>保留关键点（道格拉斯-普克）—保留构成面轮廓的基本形状的关键点，而移除所有其他点（道格拉斯-普克）。 这是默认设置。</para>
+		/// <para>保留关键折弯 (Wang-Müller)—保留线中的关键折弯，并移除多余折弯 (Wang-Müller)。</para>
+		/// <para>保留加权有效面积 (Zhou-Jones)—保留形成有效三角形面积的折点，这些面积已根据三角形形状进行了加权 (Zhou-Jones)。</para>
+		/// <para>保留有效面积 (Visvalingam-Whyatt)—保留形成有效三角形面积的折点 (Visvalingam-Whyatt)。</para>
 		/// <para><see cref="AlgorithmEnum"/></para>
 		/// </param>
 		/// <param name="Tolerance">
 		/// <para>Simplification Tolerance</para>
-		/// <para>The tolerance determines the degree of simplification. You can choose a preferred unit; otherwise, units of the input will be used. The MinSimpTol and MaxSimpTol fields are added to the output to store the tolerance that was used when processing occurred.</para>
-		/// <para>For the Retain critical points (Douglas-Peucker) algorithm, the tolerance is the maximum allowable perpendicular distance between each vertex and the newly created line.</para>
-		/// <para>For the Retain critical bends (Wang-Müller) algorithm, the tolerance is the diameter of a circle that approximates a significant bend.</para>
-		/// <para>For the Retain weighted effective areas (Zhou-Jones) algorithm, the square of the tolerance is the area of a significant triangle defined by three adjacent vertices. The further a triangle deviates from equilateral, the higher weight it is given, and the less likely it is to be removed.</para>
-		/// <para>For the Retain effective areas (Visvalingam-Whyatt) algorithm, the square of the tolerance is the area of a significant triangle defined by three adjacent vertices.</para>
+		/// <para>容差用于确定简化程度。 可以选择首选单位；否则，将使用输入单位。 MinSimpTol 和 MaxSimpTol 字段将被添加至输出以存储在执行处理时使用过的容差。</para>
+		/// <para>对于保留关键点（道格拉斯-普克）算法，容差表示每个折点与新创建的线之间的最大允许垂直距离。</para>
+		/// <para>对于保留关键折弯 (Wang-Müller) 算法，容差是近似于有效折弯的圆的直径。</para>
+		/// <para>对于保留加权有效面积 (Zhou-Jones) 算法，容差面积是由三个相邻折点定义的有效三角形的面积。 三角形越偏离等边三角形，则它的重量越大，被移除的可能性越小。</para>
+		/// <para>对于保留有效面积 (Visvalingam-Whyatt) 算法，容差面积是由三个相邻折点定义的有效三角形的面积。</para>
 		/// </param>
 		public SimplifyPolygon(object InFeatures, object OutFeatureClass, object Algorithm, object Tolerance)
 		{
@@ -57,9 +58,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Simplify Polygon</para>
+		/// <para>Tool Display Name : 简化面</para>
 		/// </summary>
-		public override string DisplayName() => "Simplify Polygon";
+		public override string DisplayName() => "简化面";
 
 		/// <summary>
 		/// <para>Tool Name : SimplifyPolygon</para>
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input polygon features to be simplified.</para>
+		/// <para>要简化的输入面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -104,12 +105,12 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The simplified output polygon feature class. It contains all fields present in the input feature class. The output polygon feature class is topologically correct. The tool does not introduce topology errors, but topological errors in the input data are flagged in the output polygon feature class.</para>
-		/// <para>The output feature class includes two additional fields, InPoly_FID and SimPgnFlag, that contain the input feature IDs and the input topological errors or discrepancies, respectively.</para>
-		/// <para>SimPgnFlag attribute values are as follows:</para>
-		/// <para>SimPgnFlag = 0 indicates that no errors are present.</para>
-		/// <para>SimPgnFlag = 1 indicates a topological error is present.</para>
-		/// <para>SimPgnFlag = 2 indicates features that have been split by a partition and are now smaller than the minimum area after simplification. The flag may appear on only one part of the split feature. These features are all retained in the output feature class. This situation occurs only when the Cartographic Partitions environment setting is used.</para>
+		/// <para>简化后的输出面要素类。 其中包含输入要素类中的所有字段。 输出面要素类具有正确的拓扑。 该工具不会引入拓扑错误，但输入数据中的拓扑错误会在输出面要素类中标记出来。</para>
+		/// <para>输出要素类包括含有相应输入要素 ID 和输入拓扑错误或差异的两个附加字段：InPoly_FID 和 SimPgnFlag。</para>
+		/// <para>SimPgnFlag 属性值如下：</para>
+		/// <para>SimPgnFlag = 0 表示不存在错误。</para>
+		/// <para>SimPgnFlag = 1 表示存在拓扑错误。</para>
+		/// <para>SimPgnFlag = 2 表示已被分区分割的要素，该要素经过简化后现在小于最小面积。 该标记可能仅显示在分割要素的一部分上。 这些要素将全部保留在输出要素类中。 仅在使用制图分区环境设置时才会出现此情况。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -117,11 +118,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Simplification Algorithm</para>
-		/// <para>Specifies the polygon simplification algorithm.</para>
-		/// <para>Retain critical points (Douglas-Peucker)—Critical points that preserve the essential shape of a polygon outline are retained, and all other points are removed (Douglas-Peucker). This is the default.</para>
-		/// <para>Retain critical bends (Wang-Müller)—Critical bends are retained, and extraneous bends are removed from a line (Wang-Müller).</para>
-		/// <para>Retain weighted effective areas (Zhou-Jones)—Vertices that form triangles of effective area that have been weighted by triangle shape are retained (Zhou-Jones).</para>
-		/// <para>Retain effective areas (Visvalingam-Whyatt)—Vertices that form triangles of effective area are retained (Visvalingam-Whyatt).</para>
+		/// <para>指定面简化算法。</para>
+		/// <para>保留关键点（道格拉斯-普克）—保留构成面轮廓的基本形状的关键点，而移除所有其他点（道格拉斯-普克）。 这是默认设置。</para>
+		/// <para>保留关键折弯 (Wang-Müller)—保留线中的关键折弯，并移除多余折弯 (Wang-Müller)。</para>
+		/// <para>保留加权有效面积 (Zhou-Jones)—保留形成有效三角形面积的折点，这些面积已根据三角形形状进行了加权 (Zhou-Jones)。</para>
+		/// <para>保留有效面积 (Visvalingam-Whyatt)—保留形成有效三角形面积的折点 (Visvalingam-Whyatt)。</para>
 		/// <para><see cref="AlgorithmEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -131,11 +132,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Simplification Tolerance</para>
-		/// <para>The tolerance determines the degree of simplification. You can choose a preferred unit; otherwise, units of the input will be used. The MinSimpTol and MaxSimpTol fields are added to the output to store the tolerance that was used when processing occurred.</para>
-		/// <para>For the Retain critical points (Douglas-Peucker) algorithm, the tolerance is the maximum allowable perpendicular distance between each vertex and the newly created line.</para>
-		/// <para>For the Retain critical bends (Wang-Müller) algorithm, the tolerance is the diameter of a circle that approximates a significant bend.</para>
-		/// <para>For the Retain weighted effective areas (Zhou-Jones) algorithm, the square of the tolerance is the area of a significant triangle defined by three adjacent vertices. The further a triangle deviates from equilateral, the higher weight it is given, and the less likely it is to be removed.</para>
-		/// <para>For the Retain effective areas (Visvalingam-Whyatt) algorithm, the square of the tolerance is the area of a significant triangle defined by three adjacent vertices.</para>
+		/// <para>容差用于确定简化程度。 可以选择首选单位；否则，将使用输入单位。 MinSimpTol 和 MaxSimpTol 字段将被添加至输出以存储在执行处理时使用过的容差。</para>
+		/// <para>对于保留关键点（道格拉斯-普克）算法，容差表示每个折点与新创建的线之间的最大允许垂直距离。</para>
+		/// <para>对于保留关键折弯 (Wang-Müller) 算法，容差是近似于有效折弯的圆的直径。</para>
+		/// <para>对于保留加权有效面积 (Zhou-Jones) 算法，容差面积是由三个相邻折点定义的有效三角形的面积。 三角形越偏离等边三角形，则它的重量越大，被移除的可能性越小。</para>
+		/// <para>对于保留有效面积 (Visvalingam-Whyatt) 算法，容差面积是由三个相邻折点定义的有效三角形的面积。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -143,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Minimum Area</para>
-		/// <para>The minimum area for a polygon to be retained. The default value is zero, that is, to keep all polygons. You can choose a preferred unit for the specified value; otherwise, units of the input will be used.</para>
+		/// <para>要保留的面的最小面积。 默认值为零，即保留所有面。 可以为指定的值选择首选单位；否则，将使用输入单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPArealUnit()]
@@ -151,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Handling Topological Errors</para>
-		/// <para>This is a legacy parameter that is no longer used. It was formerly used to specify how topological errors possibly introduced during processing were handled. This parameter is still included in the tool's syntax for compatibility in scripts and model but is hidden from the tool's dialog box.</para>
+		/// <para>这是一个不再使用的旧参数。 以前使用该参数来指定如何处理可能在处理过程中引入的拓扑错误。 为了脚本和模型的兼容性，工具语法中仍然包含这些参数，但现在这些参数已从工具对话框中隐藏。</para>
 		/// <para><see cref="ErrorOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -161,9 +162,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Keep collapsed points</para>
-		/// <para>Specifies whether an output point feature class will be created to store the centers of polygons that are removed because they are smaller than the Minimum area parameter value. The point output is derived; it will use the same name and location as the Output feature class parameter but with a _Pnt suffix.</para>
-		/// <para>Checked—A derived output point feature class will be created to store the centers of polygons that are removed because they are smaller than the minimum area. This is the default.</para>
-		/// <para>Unchecked—A derived output point feature class will not be created.</para>
+		/// <para>指定是否创建输出点要素类以存储被移除的面的中心，因为这些面小于最小面积参数值。 已派生点输出；将使用与输出要素类参数相同的名称和位置，但带有 _Pnt 后缀。</para>
+		/// <para>选中 - 将创建派生的输出点要素类以存储被移除的面的中心，因为这些面小于最小面积。 这是默认设置。</para>
+		/// <para>未选中 - 不创建派生的输出点要素类。</para>
 		/// <para><see cref="CollapsedPointOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -180,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Barrier Layers</para>
-		/// <para>The inputs containing features to act as barriers for simplification. Resulting simplified polygons will not touch or cross barrier features. For example, when simplifying forested areas, the resulting simplified forest polygons will not cross road features defined as barriers.</para>
+		/// <para>包含充当简化中障碍的要素的输入。 生成简化面不会接触障碍要素或与其交叉。 例如，当简化森林覆盖区域时，生成的简化森林面不会穿过被定义为障碍的道路要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -203,31 +204,31 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum AlgorithmEnum 
 		{
 			/// <summary>
-			/// <para>Retain critical points (Douglas-Peucker)—Critical points that preserve the essential shape of a polygon outline are retained, and all other points are removed (Douglas-Peucker). This is the default.</para>
+			/// <para>保留关键点（道格拉斯-普克）—保留构成面轮廓的基本形状的关键点，而移除所有其他点（道格拉斯-普克）。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("POINT_REMOVE")]
-			[Description("Retain critical points (Douglas-Peucker)")]
+			[Description("保留关键点（道格拉斯-普克）")]
 			POINT_REMOVE,
 
 			/// <summary>
-			/// <para>Retain critical bends (Wang-Müller)—Critical bends are retained, and extraneous bends are removed from a line (Wang-Müller).</para>
+			/// <para>保留关键折弯 (Wang-Müller)—保留线中的关键折弯，并移除多余折弯 (Wang-Müller)。</para>
 			/// </summary>
 			[GPValue("BEND_SIMPLIFY")]
-			[Description("Retain critical bends (Wang-Müller)")]
+			[Description("保留关键折弯 (Wang-Müller)")]
 			BEND_SIMPLIFY,
 
 			/// <summary>
-			/// <para>Retain weighted effective areas (Zhou-Jones)—Vertices that form triangles of effective area that have been weighted by triangle shape are retained (Zhou-Jones).</para>
+			/// <para>保留加权有效面积 (Zhou-Jones)—保留形成有效三角形面积的折点，这些面积已根据三角形形状进行了加权 (Zhou-Jones)。</para>
 			/// </summary>
 			[GPValue("WEIGHTED_AREA")]
-			[Description("Retain weighted effective areas (Zhou-Jones)")]
+			[Description("保留加权有效面积 (Zhou-Jones)")]
 			WEIGHTED_AREA,
 
 			/// <summary>
-			/// <para>Retain effective areas (Visvalingam-Whyatt)—Vertices that form triangles of effective area are retained (Visvalingam-Whyatt).</para>
+			/// <para>保留有效面积 (Visvalingam-Whyatt)—保留形成有效三角形面积的折点 (Visvalingam-Whyatt)。</para>
 			/// </summary>
 			[GPValue("EFFECTIVE_AREA")]
-			[Description("Retain effective areas (Visvalingam-Whyatt)")]
+			[Description("保留有效面积 (Visvalingam-Whyatt)")]
 			EFFECTIVE_AREA,
 
 		}
@@ -266,14 +267,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum CollapsedPointOptionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—A derived output point feature class will be created to store the centers of polygons that are removed because they are smaller than the minimum area. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("KEEP_COLLAPSED_POINTS")]
 			KEEP_COLLAPSED_POINTS,
 
 			/// <summary>
-			/// <para>Unchecked—A derived output point feature class will not be created.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_KEEP")]

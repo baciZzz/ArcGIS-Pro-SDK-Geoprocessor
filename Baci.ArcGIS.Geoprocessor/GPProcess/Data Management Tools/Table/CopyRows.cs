@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Copy Rows</para>
-	/// <para>Copies the rows of a table, table view, feature class, feature layer, or raster with attribute table to a new geodatabase, .csv, .txt, or .dbf table.</para>
+	/// <para>复制行</para>
+	/// <para>将表格、表视图、要素类、要素图层或带有属性表的栅格的行复制到新的地理数据库、.csv、.txt 或 .dbf 表中。</para>
 	/// </summary>
 	public class CopyRows : AbstractGPProcess
 	{
@@ -20,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRows">
 		/// <para>Input Rows</para>
-		/// <para>The input rows to be copied to a new table.</para>
+		/// <para>要复制到新表的输入行。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>The table that will be created and to which rows from the input will be copied.</para>
-		/// <para>If the output table is in a folder, include an extension such as .csv, .txt, or .dbf to make the table the specified format. If the output table is in a geodatabase, do not specify an extension.</para>
+		/// <para>将要创建以及要将输入中的行复制到的表格。</para>
+		/// <para>如果输出表位于文件夹中，则需要包含扩展名，例如 .csv、.txt 或 .dbf，以使表格具有指定格式。如果输出表位于地理数据库中，则无需指定扩展名。</para>
 		/// </param>
 		public CopyRows(object InRows, object OutTable)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Copy Rows</para>
+		/// <para>Tool Display Name : 复制行</para>
 		/// </summary>
-		public override string DisplayName() => "Copy Rows";
+		public override string DisplayName() => "复制行";
 
 		/// <summary>
 		/// <para>Tool Name : CopyRows</para>
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Rows</para>
-		/// <para>The input rows to be copied to a new table.</para>
+		/// <para>要复制到新表的输入行。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,8 +79,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The table that will be created and to which rows from the input will be copied.</para>
-		/// <para>If the output table is in a folder, include an extension such as .csv, .txt, or .dbf to make the table the specified format. If the output table is in a geodatabase, do not specify an extension.</para>
+		/// <para>将要创建以及要将输入中的行复制到的表格。</para>
+		/// <para>如果输出表位于文件夹中，则需要包含扩展名，例如 .csv、.txt 或 .dbf，以使表格具有指定格式。如果输出表位于地理数据库中，则无需指定扩展名。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
-		/// <para>Specifies the default storage parameters for an enterprise geodatabase.</para>
+		/// <para>指定企业级地理数据库的默认存储参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

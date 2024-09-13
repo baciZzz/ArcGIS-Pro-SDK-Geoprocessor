@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Geographies From Overlay</para>
+	/// <para>Generate Geographies From Overlay</para>
 	/// <para>Generates trade areas from the features of an input standard geography level that has a specified spatial relationship with the input.</para>
 	/// </summary>
 	public class GenerateGeographiesFromOverlay : AbstractGPProcess

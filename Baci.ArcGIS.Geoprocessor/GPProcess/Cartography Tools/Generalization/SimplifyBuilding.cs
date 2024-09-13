@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Simplify Building</para>
-	/// <para>Simplifies the boundary or footprint of building polygons while maintaining their essential shape and size.</para>
+	/// <para>简化建筑物</para>
+	/// <para>在保持建筑物基本形状和大小不变的前提下简化建筑物面的边界或轮廓。</para>
 	/// </summary>
 	public class SimplifyBuilding : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The building polygons to be simplified.</para>
+		/// <para>要简化的建筑物面。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class to be created.</para>
+		/// <para>要创建的输出要素类。</para>
 		/// </param>
 		/// <param name="SimplificationTolerance">
 		/// <para>Simplification Tolerance</para>
-		/// <para>The tolerance for building simplification. A tolerance must be specified, and it must be greater than zero. You can choose a preferred unit; the default is the feature unit.</para>
+		/// <para>建筑物简化的容差。 必须指定一个容差，且值必须大于零。 可以选择首选单位；默认为要素单位。</para>
 		/// </param>
 		public SimplifyBuilding(object InFeatures, object OutFeatureClass, object SimplificationTolerance)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Simplify Building</para>
+		/// <para>Tool Display Name : 简化建筑物</para>
 		/// </summary>
-		public override string DisplayName() => "Simplify Building";
+		public override string DisplayName() => "简化建筑物";
 
 		/// <summary>
 		/// <para>Tool Name : SimplifyBuilding</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The building polygons to be simplified.</para>
+		/// <para>要简化的建筑物面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class to be created.</para>
+		/// <para>要创建的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Simplification Tolerance</para>
-		/// <para>The tolerance for building simplification. A tolerance must be specified, and it must be greater than zero. You can choose a preferred unit; the default is the feature unit.</para>
+		/// <para>建筑物简化的容差。 必须指定一个容差，且值必须大于零。 可以选择首选单位；默认为要素单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Minimum Area</para>
-		/// <para>The minimum area for a simplified building to be retained in feature units. The default value is zero, that is, to keep all buildings. You can specify a preferred unit; the default is the feature unit.</para>
+		/// <para>要以要素单位保留的简化建筑物的最小面积。 默认值为零，即保留所有建筑物。 可以指定首选单位；默认为要素单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPArealUnit()]
@@ -109,9 +110,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Check for spatial conflicts</para>
-		/// <para>Specifies whether spatial conflicts—that is, overlapping or touching among buildings—will be identified. A SimBldFlag field is added to the output to store conflict flags. A value of 0 means no conflict; a value of 1 means conflict.</para>
-		/// <para>Unchecked—Spatial conflicts will not be identified; the resulting buildings may overlap. This is the default.</para>
-		/// <para>Checked—Spatial conflicts will be identified and the conflicting buildings will be flagged.</para>
+		/// <para>指定是否识别空间冲突，即建筑物之间是否重叠或接触。 将向输出添加 SimBldFlag 字段，以存储冲突标记。 值为 0 意味着无冲突；值为 1 意味着存在冲突。</para>
+		/// <para>未选中 - 不识别空间冲突；生成的建筑物可能重叠。 这是默认设置。</para>
+		/// <para>选中 - 将识别空间冲突并标记冲突建筑物。</para>
 		/// <para><see cref="ConflictOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -121,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input barrier layers</para>
-		/// <para>The input layers containing features to act as barriers for simplification. Resulting simplified buildings will not touch or cross barrier features. For example, when simplifying buildings, the resulting simplified building areas do not cross road features defined as barriers.</para>
+		/// <para>包含充当简化中障碍的要素的输入图层。 生成简化建筑物不会接触障碍要素或与其交叉。 例如，当简化建筑物时，生成的简化建筑物区域不会穿过被定义为障碍的道路要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -136,9 +137,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Keep collapsed points</para>
-		/// <para>Specifies whether an output point feature class will be created to store the centers of any buildings that are removed because they are smaller than the Minimum Area parameter value. The point output is derived, is named the same as the output feature class specified in the Output Feature Class parameter but with a _Pnt suffix, and is located in the same folder.</para>
-		/// <para>Checked—A derived output point feature class will be created to store the centers of buildings that are removed.</para>
-		/// <para>Unchecked— An output point class will not be created. This is the default.</para>
+		/// <para>指定是否创建输出点要素类，以存储因小于最小面积参数值而遭到移除的所有建筑物的中心。 点输出的派生和命名与在输出要素类参数中指定的输出要素类相同，但带有 _Pnt 后缀，并且位于同一文件夹中。</para>
+		/// <para>选中 - 将创建派生的输出点要素类，以存储已移除建筑物的中心。</para>
+		/// <para>未选中 - 不会创建输出点类。 这是默认设置。</para>
 		/// <para><see cref="CollapsedPointOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -163,14 +164,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum ConflictOptionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Spatial conflicts will be identified and the conflicting buildings will be flagged.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CHECK_CONFLICTS")]
 			CHECK_CONFLICTS,
 
 			/// <summary>
-			/// <para>Unchecked—Spatial conflicts will not be identified; the resulting buildings may overlap. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CHECK")]
@@ -184,14 +185,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum CollapsedPointOptionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—A derived output point feature class will be created to store the centers of buildings that are removed.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("KEEP_COLLAPSED_POINTS")]
 			KEEP_COLLAPSED_POINTS,
 
 			/// <summary>
-			/// <para>Unchecked— An output point class will not be created. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_KEEP")]

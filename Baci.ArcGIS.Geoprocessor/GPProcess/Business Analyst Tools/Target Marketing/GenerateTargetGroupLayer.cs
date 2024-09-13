@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Target Group Layer</para>
+	/// <para>Generate Target Group Layer</para>
 	/// <para>Generates a layer that identifies geographies that contain selected segments and categorized groups based on targets.</para>
 	/// </summary>
 	public class GenerateTargetGroupLayer : AbstractGPProcess

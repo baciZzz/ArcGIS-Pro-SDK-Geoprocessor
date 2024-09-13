@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Share Package</para>
-	/// <para>Shares a package by uploading to ArcGIS Online or ArcGIS Enterprise.</para>
+	/// <para>共享包</para>
+	/// <para>通过将包上传到 ArcGIS Online 或 ArcGIS Enterprise 对其进行共享。</para>
 	/// </summary>
 	public class SharePackage : AbstractGPProcess
 	{
@@ -20,25 +21,25 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InPackage">
 		/// <para>Input Package</para>
-		/// <para>Input layer (.lpk, .lpkx), scene layer (.slpk), map (.mpk, .mpkx), geoprocessing (.gpk, .gpkx), tile (.tpk, .tpkx), mobile map (.mmpk), vector tile (.vtpk), address locator (.gcpk), or project (.ppkx, .aptx) package file.</para>
+		/// <para>输入图层（.lpk、.lpkx）、场景图层 (.slpk)、地图（.mpk、.mpkx）、地理处理（.gpk、.gpkx）、切片（.tpk、.tpkx）、移动地图 (.mmpk)、矢量切片 (.vtpk)、地址定位器 (.gcpk) 或工程（.ppkx、.aptx）包文件。</para>
 		/// </param>
 		/// <param name="Username">
 		/// <para>Username</para>
-		/// <para>The ArcGIS Online or Portal for ArcGIS user name.</para>
-		/// <para>This parameter is not available on the tool dialog box. You must sign in to a portal from the sign in option at the upper right of the application.</para>
+		/// <para>ArcGIS Online 或 Portal for ArcGIS 用户名。</para>
+		/// <para>工具对话框中不包含此参数。您必须从应用程序右上角的登录选项登录门户。</para>
 		/// </param>
 		/// <param name="Password">
 		/// <para>Password</para>
-		/// <para>The ArcGIS Online or ArcGIS Enterprise password.</para>
-		/// <para>This parameter is not available on the tool dialog box. You must sign in to a portal from the sign in option at the upper right of the application.</para>
+		/// <para>ArcGIS Online 或 ArcGIS Enterprise 密码。</para>
+		/// <para>工具对话框中不包含此参数。您必须从应用程序右上角的登录选项登录门户。</para>
 		/// </param>
 		/// <param name="Summary">
 		/// <para>Summary</para>
-		/// <para>Summary of the package. The summary is displayed in the item information of the package on ArcGIS Online or ArcGIS Enterprise.</para>
+		/// <para>包的摘要信息。在 ArcGIS Online 或 ArcGIS Enterprise 上，摘要信息将显示在包的项目信息中。</para>
 		/// </param>
 		/// <param name="Tags">
 		/// <para>Tags</para>
-		/// <para>Tags used to describe and identify the package. Individual tags are separated using either a comma or semicolon.</para>
+		/// <para>用于描述和识别包的标记。各个标记之间以逗号或分号分隔。</para>
 		/// </param>
 		public SharePackage(object InPackage, object Username, object Password, object Summary, object Tags)
 		{
@@ -50,9 +51,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Share Package</para>
+		/// <para>Tool Display Name : 共享包</para>
 		/// </summary>
-		public override string DisplayName() => "Share Package";
+		public override string DisplayName() => "共享包";
 
 		/// <summary>
 		/// <para>Tool Name : SharePackage</para>
@@ -86,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Package</para>
-		/// <para>Input layer (.lpk, .lpkx), scene layer (.slpk), map (.mpk, .mpkx), geoprocessing (.gpk, .gpkx), tile (.tpk, .tpkx), mobile map (.mmpk), vector tile (.vtpk), address locator (.gcpk), or project (.ppkx, .aptx) package file.</para>
+		/// <para>输入图层（.lpk、.lpkx）、场景图层 (.slpk)、地图（.mpk、.mpkx）、地理处理（.gpk、.gpkx）、切片（.tpk、.tpkx）、移动地图 (.mmpk)、矢量切片 (.vtpk)、地址定位器 (.gcpk) 或工程（.ppkx、.aptx）包文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -96,8 +97,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Username</para>
-		/// <para>The ArcGIS Online or Portal for ArcGIS user name.</para>
-		/// <para>This parameter is not available on the tool dialog box. You must sign in to a portal from the sign in option at the upper right of the application.</para>
+		/// <para>ArcGIS Online 或 Portal for ArcGIS 用户名。</para>
+		/// <para>工具对话框中不包含此参数。您必须从应用程序右上角的登录选项登录门户。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -105,8 +106,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Password</para>
-		/// <para>The ArcGIS Online or ArcGIS Enterprise password.</para>
-		/// <para>This parameter is not available on the tool dialog box. You must sign in to a portal from the sign in option at the upper right of the application.</para>
+		/// <para>ArcGIS Online 或 ArcGIS Enterprise 密码。</para>
+		/// <para>工具对话框中不包含此参数。您必须从应用程序右上角的登录选项登录门户。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPEncryptedString()]
@@ -114,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Summary</para>
-		/// <para>Summary of the package. The summary is displayed in the item information of the package on ArcGIS Online or ArcGIS Enterprise.</para>
+		/// <para>包的摘要信息。在 ArcGIS Online 或 ArcGIS Enterprise 上，摘要信息将显示在包的项目信息中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -122,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Tags</para>
-		/// <para>Tags used to describe and identify the package. Individual tags are separated using either a comma or semicolon.</para>
+		/// <para>用于描述和识别包的标记。各个标记之间以逗号或分号分隔。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -130,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Credits</para>
-		/// <para>Credits for the package. This is generally the name of the organization that is given credit for authoring and providing the content for the package.</para>
+		/// <para>包的制作者。通常是创作和提供包内容的组织的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -138,9 +139,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Share with everyone</para>
-		/// <para>Specifies whether the input package will be shared and available to everybody.</para>
-		/// <para>Checked—Package will be shared with everybody.</para>
-		/// <para>Unchecked—Package will be shared with package owner and any selected group. This is the default.</para>
+		/// <para>指定是否将输入包共享并提供给所有人。</para>
+		/// <para>选中 - 将包共享给所有人。</para>
+		/// <para>未选中 - 将包共享给输入包所有者及任意所选群组。  这是默认设置。</para>
 		/// <para><see cref="PublicEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -150,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Groups</para>
-		/// <para>List of groups to share package with.</para>
+		/// <para>共享包的群组列表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -166,9 +167,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Share within organization only</para>
-		/// <para>Specifies whether the input package will be available within your organization only or shared publicly to everyone.</para>
-		/// <para>Everybody— Package will be shared with everybody. This is the default.</para>
-		/// <para>Within my organization— Package will be shared within your organization only.</para>
+		/// <para>指定输入包仅可用于组织内部还是公开共享给所有人。</para>
+		/// <para>所有人— 将包共享给所有人。这是默认设置。</para>
+		/// <para>在我的组织中— 包将仅在组织内部共享。</para>
 		/// <para><see cref="OrganizationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -178,9 +179,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Publish web layer</para>
-		/// <para>Specifies whether the package will be published as a web layer to your portal. Only tile packages, vector tile packages, and scene layer packages are supported.</para>
-		/// <para>Unchecked—The package will be uploaded without publishing. This is the default.</para>
-		/// <para>Checked—The package will be uploaded and published as a web layer with the same name.</para>
+		/// <para>指定是否将包作为 Web 图层发布到门户。仅支持切片包、矢量切片包和场景图层包。</para>
+		/// <para>未选中 - 包将被上传且不被发布。这是默认设置。</para>
+		/// <para>选中 - 包将被上传并发布为具有相同名称的 web 图层。</para>
 		/// <para><see cref="PublishWebLayerEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -204,7 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Folder</para>
-		/// <para>Specifies an existing folder or the name of a new folder on the portal for the package. If a web layer is published, it is stored in the same folder.</para>
+		/// <para>在门户上为包指定现有文件夹或新文件夹的名称。如果发布了 Web 图层，则系统会将其存储在同一文件夹中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -228,14 +229,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PublicEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Package will be shared with everybody.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EVERYBODY")]
 			EVERYBODY,
 
 			/// <summary>
-			/// <para>Unchecked—Package will be shared with package owner and any selected group. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("MYGROUPS")]
@@ -270,14 +271,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PublishWebLayerEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The package will be uploaded and published as a web layer with the same name.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TRUE")]
 			TRUE,
 
 			/// <summary>
-			/// <para>Unchecked—The package will be uploaded without publishing. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FALSE")]

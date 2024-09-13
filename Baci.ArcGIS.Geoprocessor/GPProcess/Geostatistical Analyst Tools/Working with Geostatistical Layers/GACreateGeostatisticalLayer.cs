@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Create Geostatistical Layer</para>
-	/// <para>Creates a new geostatistical layer. An  existing geostatistical layer  is required to populate the initial values for the new layer.</para>
+	/// <para>创建地统计图层</para>
+	/// <para>创建新的地统计图层。要为新图层填充初始值，需要使用现有的地统计图层。</para>
 	/// </summary>
 	public class GACreateGeostatisticalLayer : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InGaModelSource">
 		/// <para>Input geostatistical model source</para>
-		/// <para>The geostatistical model source to be analyzed.</para>
+		/// <para>要分析的地统计模型源。</para>
 		/// </param>
 		/// <param name="InDatasets">
 		/// <para>Input dataset(s)</para>
-		/// <para>The name of the input datasets and field names used in the creation of the output layer.</para>
+		/// <para>用于创建输出图层的输入数据集的名称和字段名称。</para>
 		/// </param>
 		/// <param name="OutLayer">
 		/// <para>Output geostatistical layer</para>
-		/// <para>The geostatistical layer produced by the tool.</para>
+		/// <para>由该工具生成的地统计图层。</para>
 		/// </param>
 		public GACreateGeostatisticalLayer(object InGaModelSource, object InDatasets, object OutLayer)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Geostatistical Layer</para>
+		/// <para>Tool Display Name : 创建地统计图层</para>
 		/// </summary>
-		public override string DisplayName() => "Create Geostatistical Layer";
+		public override string DisplayName() => "创建地统计图层";
 
 		/// <summary>
 		/// <para>Tool Name : GACreateGeostatisticalLayer</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input geostatistical model source</para>
-		/// <para>The geostatistical model source to be analyzed.</para>
+		/// <para>要分析的地统计模型源。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input dataset(s)</para>
-		/// <para>The name of the input datasets and field names used in the creation of the output layer.</para>
+		/// <para>用于创建输出图层的输入数据集的名称和字段名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPGAValueTable()]
@@ -91,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output geostatistical layer</para>
-		/// <para>The geostatistical layer produced by the tool.</para>
+		/// <para>由该工具生成的地统计图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPGALayer()]

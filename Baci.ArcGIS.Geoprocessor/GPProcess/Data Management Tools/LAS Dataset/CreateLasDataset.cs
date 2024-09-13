@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create LAS Dataset</para>
-	/// <para>Creates a LAS dataset referencing one or more LAS files and optional surface constraint features.</para>
+	/// <para>创建 LAS 数据集</para>
+	/// <para>创建引用一个或多个 LAS 文件和可选表面约束要素的 LAS 数据集。</para>
 	/// </summary>
 	public class CreateLasDataset : AbstractGPProcess
 	{
@@ -20,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="Input">
 		/// <para>Input Files</para>
-		/// <para>The LAS files and folders containing LAS files that will be referenced by the LAS dataset.</para>
-		/// <para>In the tool dialog box, a folder can also be specified as an input by selecting the folder in Windows Explorer and dragging it onto the parameter&apos;s input box.</para>
+		/// <para>LAS 文件和包含将被 LAS 数据集引用的 LAS 文件的文件夹。</para>
+		/// <para>在“工具”对话框中，可将文件夹指定为输入，具体方法如下：在 Windows 资源管理器中选择文件夹，然后将其拖动到参数的输入框上。</para>
 		/// </param>
 		/// <param name="OutLasDataset">
 		/// <para>Output LAS Dataset</para>
-		/// <para>The LAS dataset that will be created.</para>
+		/// <para>将创建的 LAS 数据集。</para>
 		/// </param>
 		public CreateLasDataset(object Input, object OutLasDataset)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create LAS Dataset</para>
+		/// <para>Tool Display Name : 创建 LAS 数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Create LAS Dataset";
+		public override string DisplayName() => "创建 LAS 数据集";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLasDataset</para>
@@ -70,8 +71,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Files</para>
-		/// <para>The LAS files and folders containing LAS files that will be referenced by the LAS dataset.</para>
-		/// <para>In the tool dialog box, a folder can also be specified as an input by selecting the folder in Windows Explorer and dragging it onto the parameter&apos;s input box.</para>
+		/// <para>LAS 文件和包含将被 LAS 数据集引用的 LAS 文件的文件夹。</para>
+		/// <para>在“工具”对话框中，可将文件夹指定为输入，具体方法如下：在 Windows 资源管理器中选择文件夹，然后将其拖动到参数的输入框上。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output LAS Dataset</para>
-		/// <para>The LAS dataset that will be created.</para>
+		/// <para>将创建的 LAS 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DELasDataset()]
@@ -88,9 +89,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Include subfolders</para>
-		/// <para>Specifies whether .las files residing in the subdirectories of an input folder will be referenced by the LAS dataset.</para>
-		/// <para>Unchecked—Only .las files residing in an input folder will be added to the LAS dataset. This is the default.</para>
-		/// <para>Checked—All .las files residing in the subdirectories of an input folder will be added to the LAS dataset.</para>
+		/// <para>指定 LAS 数据集是否引用位于输入文件夹子目录中的 .las 文件。</para>
+		/// <para>未选中 - 仅位于输入文件夹中的 .las 文件会添加到 LAS 数据集。 这是默认设置。</para>
+		/// <para>选中 - 位于输入文件夹子目录中的所有 .las 文件都将被添加到 LAS 数据集。</para>
 		/// <para><see cref="FolderRecursionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -100,16 +101,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Surface Constraints</para>
-		/// <para>The features that will contribute to the definition of the triangulated surface generated from the LAS dataset.</para>
-		/// <para>Input Features—The features with geometry that will be incorporated into the LAS dataset&apos;s triangulated surface.</para>
-		/// <para>Height Field—The feature&apos;s elevation source can be derived from any numeric field in the feature&apos;s attribute table or the geometry by selecting Shape.Z. If no height is necessary, specify the keyword &lt;None&gt; to create z-less features with elevation that will be interpolated from the surface.</para>
-		/// <para>Type—Defines the feature&apos;s role in the triangulated surface generated from the LAS dataset. Options with hard or soft designation refer to whether the feature edges represent distinct breaks in slope or a gradual change.</para>
-		/// <para>Surface Feature Type—The surface feature type that defines how the feature geometry will be incorporated into the triangulation for the surface. Options with hard or soft designation refer to whether the feature edges represent distinct breaks in slope or a gradual change.</para>
-		/// <para>anchorpoints—Elevation points that will not be thinned away. This option is only available for single-point feature geometry.</para>
-		/// <para>hardline or softline—Breaklines that enforce a height value.</para>
-		/// <para>hardclip or softclip—Polygon dataset that defines the boundary of the LAS dataset.</para>
-		/// <para>harderase or softerase—Polygon dataset that defines holes in the LAS dataset.</para>
-		/// <para>hardreplace or softreplace—Polygon dataset that defines areas of constant height.</para>
+		/// <para>将构成由 LAS 数据集生成的三角化网格面定义的要素。</para>
+		/// <para>输入要素 - 其几何将整合到 LAS 数据集的三角化网格面的要素。</para>
+		/// <para>高度字段 - 通过选择 Shape.Z，可以从要素属性表或几何中的任何数值字段获取要素的高程源。 如果无需高度，则指定关键字 &lt;None&gt; 来创建 z-less 要素，其高程由表面内插得到。</para>
+		/// <para>类型 - 定义由 LAS 数据集生成的三角化网格面中的要素角色。 具有硬或软标识的选项表示要素边是否表示坡度的明显中断或平缓变化。</para>
+		/// <para>表面要素类型 - 定义如何将要素几何加入到表面的三角网中的表面要素类型。 具有硬或软标识的选项表示要素边是否表示坡度的明显中断或平缓变化。</para>
+		/// <para>锚点 - 不会被细化掉的高程点。 此选项仅可用于单点要素几何。</para>
+		/// <para>硬断线或软断线 - 强制高度值的隔断线。</para>
+		/// <para>硬裁剪或软裁剪 - 定义 LAS 数据集边界的面数据集。</para>
+		/// <para>硬擦除或软擦除 - 定义 LAS 数据集中的孔的面数据集。</para>
+		/// <para>硬替换或软替换 - 定义高度恒定的区域的面数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -118,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>The spatial reference of the LAS dataset. If no spatial reference is explicitly assigned, the LAS dataset will use the coordinate system of the first input LAS file. If the input files do not contain any spatial reference information and the Input Coordinate System is not set, then the LAS dataset's coordinate system will be listed as unknown.</para>
+		/// <para>LAS 数据集的空间参考。如果没有明确指定空间参考，则 LAS 数据集将使用第一个输入 LAS 文件的坐标系。如果输入文件不包含任何空间参考信息，并且没有设置输入坐标系，则 LAS 数据集的坐标系将列为未知。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
@@ -126,9 +127,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compute Statistics</para>
-		/// <para>Specifies whether statistics for the LAS files will be computed and a spatial index generated for the LAS dataset. The presence of statistics allows the LAS dataset layer&apos;s filtering and symbology options to only show LAS attribute values that exist in the LAS files. A .lasx auxiliary file is created for each LAS file.</para>
-		/// <para>Unchecked—Statistics will not be computed. This is the default.</para>
-		/// <para>Checked—Statistics will be computed.</para>
+		/// <para>指定是否计算 LAS 文件的统计数据以及是否为 LAS 数据集生成空间索引。统计数据的存在允许 LAS 数据集图层使用过滤和符号系统选项，以便仅显示 LAS 文件中存在的 LAS 属性值。将为每个 LAS 文件创建 .lasx 辅助文件。</para>
+		/// <para>未选中 - 不计算统计数据。这是默认设置。</para>
+		/// <para>选中 - 将计算统计数据。</para>
 		/// <para><see cref="ComputeStatsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -138,9 +139,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Store Relative Paths</para>
-		/// <para>Specifies whether lidar files and surface constraint features will be referenced by the LAS dataset through relative or absolute paths. Using relative paths may be convenient for cases where the LAS dataset and its associated data will be relocated in the file system using the same relative location to one another.</para>
-		/// <para>Unchecked—Absolute paths will be used for the data referenced by the LAS dataset. This is the default.</para>
-		/// <para>Checked—Relative paths will be used for the data referenced by the LAS dataset.</para>
+		/// <para>指定 LAS 数据集是通过相对路径还是绝对路径来引用激光雷达文件和表面约束要素。在文件系统中使用同一相对路径将 LAS 数据集及其关联的数据重新定位到其他位置时，使用相对路径会比较方便。</para>
+		/// <para>未选中 - LAS 数据集引用数据时使用绝对路径。这是默认设置。</para>
+		/// <para>选中 - LAS 数据集引用数据时使用相对路径。</para>
 		/// <para><see cref="RelativePathsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -150,10 +151,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Create PRJ For LAS Files</para>
-		/// <para>Specifies whether .prj files will be created for the LAS files referenced by the LAS dataset.</para>
-		/// <para>No LAS Files—No files will have a PRJ file created. This is the default.</para>
-		/// <para>Files with Missing Spatial References—Only LAS files without a spatial reference will have a corresponding PRJ file.</para>
-		/// <para>All LAS Files—All LAS files will have a corresponding PRJ file.</para>
+		/// <para>指定是否会为 LAS 数据集引用的 LAS 文件创建 .prj 文件。</para>
+		/// <para>无 LAS 文件—任何文件都不能创建 PRJ 文件。这是默认设置。</para>
+		/// <para>缺失空间参考的文件—只有缺少空间参考的 LAS 文件才具有相应 PRJ 文件。</para>
+		/// <para>所有 LAS 文件—所有 LAS 文件均具有相应的 PRJ 文件。</para>
 		/// <para><see cref="CreateLasPrjEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -178,14 +179,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FolderRecursionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—All .las files residing in the subdirectories of an input folder will be added to the LAS dataset.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RECURSION")]
 			RECURSION,
 
 			/// <summary>
-			/// <para>Unchecked—Only .las files residing in an input folder will be added to the LAS dataset. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_RECURSION")]
@@ -199,14 +200,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ComputeStatsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Statistics will be computed.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMPUTE_STATS")]
 			COMPUTE_STATS,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics will not be computed. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_COMPUTE_STATS")]
@@ -220,14 +221,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum RelativePathsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Relative paths will be used for the data referenced by the LAS dataset.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RELATIVE_PATHS")]
 			RELATIVE_PATHS,
 
 			/// <summary>
-			/// <para>Unchecked—Absolute paths will be used for the data referenced by the LAS dataset. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ABSOLUTE_PATHS")]
@@ -241,24 +242,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CreateLasPrjEnum 
 		{
 			/// <summary>
-			/// <para>No LAS Files—No files will have a PRJ file created. This is the default.</para>
+			/// <para>无 LAS 文件—任何文件都不能创建 PRJ 文件。这是默认设置。</para>
 			/// </summary>
 			[GPValue("NO_FILES")]
-			[Description("No LAS Files")]
+			[Description("无 LAS 文件")]
 			No_LAS_Files,
 
 			/// <summary>
-			/// <para>Files with Missing Spatial References—Only LAS files without a spatial reference will have a corresponding PRJ file.</para>
+			/// <para>缺失空间参考的文件—只有缺少空间参考的 LAS 文件才具有相应 PRJ 文件。</para>
 			/// </summary>
 			[GPValue("FILES_MISSING_PROJECTION")]
-			[Description("Files with Missing Spatial References")]
+			[Description("缺失空间参考的文件")]
 			Files_with_Missing_Spatial_References,
 
 			/// <summary>
-			/// <para>All LAS Files—All LAS files will have a corresponding PRJ file.</para>
+			/// <para>所有 LAS 文件—所有 LAS 文件均具有相应的 PRJ 文件。</para>
 			/// </summary>
 			[GPValue("ALL_FILES")]
-			[Description("All LAS Files")]
+			[Description("所有 LAS 文件")]
 			All_LAS_Files,
 
 		}

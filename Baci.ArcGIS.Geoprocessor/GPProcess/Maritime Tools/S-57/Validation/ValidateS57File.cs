@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Validate S-57 File</para>
+	/// <para>Validate S-57 File</para>
 	/// <para>Validates an ENC or IENC file and generates an .S58 file as a result.</para>
 	/// </summary>
 	public class ValidateS57File : AbstractGPProcess

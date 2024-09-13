@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>GA Layer To Points</para>
-	/// <para>Exports a geostatistical layer to points. The tool can also be used to predict values at unmeasured locations or to validate predictions made at measured locations.</para>
+	/// <para>GA 图层转点</para>
+	/// <para>将地统计图层导出为点。该工具还可用于预测未测定位置上的值，或验证对测定位置的预测。</para>
 	/// </summary>
 	public class GALayerToPoints : AbstractGPProcess
 	{
@@ -20,40 +21,40 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InGeostatLayer">
 		/// <para>Input geostatistical layer</para>
-		/// <para>The geostatistical layer to be analyzed.</para>
+		/// <para>要分析的地统计图层。</para>
 		/// </param>
 		/// <param name="InLocations">
 		/// <para>Input point observation locations</para>
-		/// <para>Point locations where predictions or validations will be performed.</para>
+		/// <para>将执行预测或验证的点位置。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output statistics at point locations</para>
-		/// <para>The output feature class containing either the predictions or the predictions and the validation results.</para>
-		/// <para>The fields in this feature class can include the following fields (where applicable):</para>
-		/// <para>Source_ID (Source ID)—The object ID of the source feature in the Input point observation locations.</para>
-		/// <para>The feature or object identifier of the input dataset that was used.</para>
-		/// <para>Included (Included)—Indicates whether a prediction was calculated for this feature. The values in this field can be one of the following:</para>
-		/// <para>Yes—There are no problems making a prediction at this point.</para>
-		/// <para>Not enough neighbors—There are not enough neighbors to make a prediction.</para>
-		/// <para>Weight parameter is too small—The weight parameter is too small.</para>
-		/// <para>Overfilling—Overflow of floating-point calculations.</para>
-		/// <para>Problem with data transformation—The value to be transformed is outside of the supported range for the selected transformation (only in kriging).</para>
-		/// <para>No explanatory rasters—The value cannot be calculated because one of the explanatory variables is not defined. The point could be outside the extent of at least one explanatory variable raster, or the point could be on top of a NoData cell in at least one of the explanatory variable rasters. This only applies to EBK Regression Prediction models.</para>
-		/// <para>Predicted (Predicted)—The prediction value at this location.</para>
-		/// <para>Error (Error)—The predicted value minus the value in the validation field.</para>
-		/// <para>StdError (Standard Error)—The kriging standard error.</para>
-		/// <para>Stdd_Error (Standardized Error)—The standardized prediction errors. Ideally, the standardized prediction errors are distributed normally.</para>
-		/// <para>NormValue (Normal Value)—The normal distribution value (x-axis) that corresponds to the standardized prediction errors (y-axis) in the normal QQplot.</para>
-		/// <para>CRPS (Continuous Ranked Probability Score)—The continuous ranked probability score is a diagnostic that measures the deviation from the predictive cumulative distribution function to each observed data value. This value should be as small as possible. This diagnostic has advantages over cross-validation diagnostics because it compares the data to a full distribution rather than to single-point predictions. This field is only created for Empirical Bayesian Kriging and EBK Regression Prediction models.</para>
-		/// <para>Interval90 (Inside 90 Percent Interval)—Indicates whether or not the validation point is inside of a 90 percent confidence interval. This field is only created for Empirical Bayesian Kriging and EBK Regression Prediction models. If the model fits the data, approximately 90 percent of the features should be contained in a 90 percent confidence interval. This field can contain the following values:</para>
-		/// <para>Yes—The validation point is inside the 90 percent confidence interval.</para>
-		/// <para>No—The validation point is not inside the 90 percent confidence interval.</para>
-		/// <para>Excluded—A prediction cannot be made at this location.</para>
-		/// <para>Interval95 (Inside 95 Percent Interval)—Indicates whether or not the validation point is inside of a 95 percent confidence interval. This field is only created for Empirical Bayesian Kriging and EBK Regression Prediction models. If the model fits the data, approximately 95 percent of the features should be contained in a 95 percent confidence interval. This field can contain the following values:</para>
-		/// <para>Yes—The validation point is inside the 95 percent confidence interval.</para>
-		/// <para>No—The validation point is not inside the 95 percent confidence interval.</para>
-		/// <para>Excluded—A prediction cannot be made at this location.</para>
-		/// <para>QuanVal (Validation Quantile)—The quantile of the measured value at the feature with respect to the prediction distribution. This value can range from 0 to 1, and values close to 0 indicate that the measured value is on the far left tail of the distribution, and values close to 1 indicate that the measured value is on the right tail of the distribution. If many values are close to either extreme, this could indicate that the prediction distributions do not model the data well, and some of the interpolation parameters need to be altered. This field is only created for Empirical Bayesian Kriging and EBK Regression Prediction models.</para>
+		/// <para>包含预测值或预测值和验证结果的输出要素类。</para>
+		/// <para>此要素类中的字段可能包括以下字段（如适用）：</para>
+		/// <para>Source_ID (Source ID) - 输入观测点位置中源要素的对象 ID。</para>
+		/// <para>使用的输入数据集的要素或对象标识符。</para>
+		/// <para>Included (Included) - 表示是否为此要素计算预测值。此字段中的值可为以下一种：</para>
+		/// <para>Yes - 此时进行预测没有问题。</para>
+		/// <para>Not enough neighbors - 相邻点数不足而无法进行预测。</para>
+		/// <para>Weight parameter is too small - 权重参数太小。</para>
+		/// <para>Overfilling - 浮点计算溢出。</para>
+		/// <para>Problem with data transformation - 要变换的值超出所选变换支持的范围（仅使用克里金法）。</para>
+		/// <para>No explanatory rasters - 无法计算该值，因为有一个解释变量处于未定义状态。该点可在至少一个解释变量栅格范围之外，或该点可在至少一个解释变量栅格中的 NoData 像元的顶部。此情况仅适用于 EBK 回归预测模型。</para>
+		/// <para>Predicted (Predicted) - 在此位置的预测值。</para>
+		/// <para>Error (Error) - 预测值减去验证字段中的值。</para>
+		/// <para>StdError (标准差) - 克里金法标准误差。</para>
+		/// <para>Stdd_Error (标准差) - 标准预测误差。理想情况下，标准预测误差呈正态分布。</para>
+		/// <para>NormValue (正态值) - 对应于正态 QQ 图中标准预测误差（y 轴）的正态分布值（x 轴）。</para>
+		/// <para>CRPS (连续分级概率评分) - 这是一种诊断方法，用于测量预测的累积分布函数与每个已观测数据值之间的偏差。该值应尽可能小。该诊断方法优于交叉验证诊断方法，因为它将数据与整个分布进行比较而不是与单点预测进行比较。仅针对经验贝叶斯克里金法和 EBK 回归预测工具模型创建该字段。</para>
+		/// <para>Interval90 (90% 区间内) - 表示验证点是否位于 90% 置信区间。仅针对经验贝叶斯克里金法和 EBK 回归预测工具模型创建该字段。如果模型与数据相符，则约 90% 的要素应位于 90% 置信区间内。此字段可能具有下列值：</para>
+		/// <para>Yes - 验证点位于 90% 置信区间内。</para>
+		/// <para>No - 验证点不在 90% 置信区间内。</para>
+		/// <para>Excluded - 无法在该位置生成预测值。</para>
+		/// <para>Interval95 (95% 区间内) - 表示验证点是否位于 95% 置信区间。仅针对经验贝叶斯克里金法和 EBK 回归预测工具模型创建该字段。如果模型与数据相符，则约 95% 的要素应位于 95% 置信区间内。此字段可能具有下列值：</para>
+		/// <para>Yes - 验证点位于 95% 置信区间内。</para>
+		/// <para>No - 验证点不在 95% 置信区间内。</para>
+		/// <para>Excluded - 无法在该位置生成预测值。</para>
+		/// <para>QuanVal (验证分位数) - 针对预测值分布的要素测量值的分位数。该值的范围在 0 到 1 之间，接近 0 的值表示测量值位于分布的最左侧端，接近 1 的值表示测量值位于分布的最右侧端。如果很多值都位于两端，这表示预测值分布并未完美体现数据模型，部分插值参数需进行更改。仅针对经验贝叶斯克里金法和 EBK 回归预测工具模型创建该字段。</para>
 		/// </param>
 		public GALayerToPoints(object InGeostatLayer, object InLocations, object OutFeatureClass)
 		{
@@ -63,9 +64,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : GA Layer To Points</para>
+		/// <para>Tool Display Name : GA 图层转点</para>
 		/// </summary>
-		public override string DisplayName() => "GA Layer To Points";
+		public override string DisplayName() => "GA 图层转点";
 
 		/// <summary>
 		/// <para>Tool Name : GALayerToPoints</para>
@@ -99,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
-		/// <para>The geostatistical layer to be analyzed.</para>
+		/// <para>要分析的地统计图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPGALayer()]
@@ -107,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input point observation locations</para>
-		/// <para>Point locations where predictions or validations will be performed.</para>
+		/// <para>将执行预测或验证的点位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -117,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Field to validate on</para>
-		/// <para>If this field is left blank, predictions are made at the location points. If a field is selected, predictions are made at the location points, compared to their Z_value_field values, and a validation analysis is performed.</para>
+		/// <para>如果此字段留空，则在相应点位置上进行预测。如果选中此字段，则在点位置上进行预测，并将预测结果与点位置的 Z_value_field 值进行比较，然后执行验证分析。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -128,32 +129,32 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output statistics at point locations</para>
-		/// <para>The output feature class containing either the predictions or the predictions and the validation results.</para>
-		/// <para>The fields in this feature class can include the following fields (where applicable):</para>
-		/// <para>Source_ID (Source ID)—The object ID of the source feature in the Input point observation locations.</para>
-		/// <para>The feature or object identifier of the input dataset that was used.</para>
-		/// <para>Included (Included)—Indicates whether a prediction was calculated for this feature. The values in this field can be one of the following:</para>
-		/// <para>Yes—There are no problems making a prediction at this point.</para>
-		/// <para>Not enough neighbors—There are not enough neighbors to make a prediction.</para>
-		/// <para>Weight parameter is too small—The weight parameter is too small.</para>
-		/// <para>Overfilling—Overflow of floating-point calculations.</para>
-		/// <para>Problem with data transformation—The value to be transformed is outside of the supported range for the selected transformation (only in kriging).</para>
-		/// <para>No explanatory rasters—The value cannot be calculated because one of the explanatory variables is not defined. The point could be outside the extent of at least one explanatory variable raster, or the point could be on top of a NoData cell in at least one of the explanatory variable rasters. This only applies to EBK Regression Prediction models.</para>
-		/// <para>Predicted (Predicted)—The prediction value at this location.</para>
-		/// <para>Error (Error)—The predicted value minus the value in the validation field.</para>
-		/// <para>StdError (Standard Error)—The kriging standard error.</para>
-		/// <para>Stdd_Error (Standardized Error)—The standardized prediction errors. Ideally, the standardized prediction errors are distributed normally.</para>
-		/// <para>NormValue (Normal Value)—The normal distribution value (x-axis) that corresponds to the standardized prediction errors (y-axis) in the normal QQplot.</para>
-		/// <para>CRPS (Continuous Ranked Probability Score)—The continuous ranked probability score is a diagnostic that measures the deviation from the predictive cumulative distribution function to each observed data value. This value should be as small as possible. This diagnostic has advantages over cross-validation diagnostics because it compares the data to a full distribution rather than to single-point predictions. This field is only created for Empirical Bayesian Kriging and EBK Regression Prediction models.</para>
-		/// <para>Interval90 (Inside 90 Percent Interval)—Indicates whether or not the validation point is inside of a 90 percent confidence interval. This field is only created for Empirical Bayesian Kriging and EBK Regression Prediction models. If the model fits the data, approximately 90 percent of the features should be contained in a 90 percent confidence interval. This field can contain the following values:</para>
-		/// <para>Yes—The validation point is inside the 90 percent confidence interval.</para>
-		/// <para>No—The validation point is not inside the 90 percent confidence interval.</para>
-		/// <para>Excluded—A prediction cannot be made at this location.</para>
-		/// <para>Interval95 (Inside 95 Percent Interval)—Indicates whether or not the validation point is inside of a 95 percent confidence interval. This field is only created for Empirical Bayesian Kriging and EBK Regression Prediction models. If the model fits the data, approximately 95 percent of the features should be contained in a 95 percent confidence interval. This field can contain the following values:</para>
-		/// <para>Yes—The validation point is inside the 95 percent confidence interval.</para>
-		/// <para>No—The validation point is not inside the 95 percent confidence interval.</para>
-		/// <para>Excluded—A prediction cannot be made at this location.</para>
-		/// <para>QuanVal (Validation Quantile)—The quantile of the measured value at the feature with respect to the prediction distribution. This value can range from 0 to 1, and values close to 0 indicate that the measured value is on the far left tail of the distribution, and values close to 1 indicate that the measured value is on the right tail of the distribution. If many values are close to either extreme, this could indicate that the prediction distributions do not model the data well, and some of the interpolation parameters need to be altered. This field is only created for Empirical Bayesian Kriging and EBK Regression Prediction models.</para>
+		/// <para>包含预测值或预测值和验证结果的输出要素类。</para>
+		/// <para>此要素类中的字段可能包括以下字段（如适用）：</para>
+		/// <para>Source_ID (Source ID) - 输入观测点位置中源要素的对象 ID。</para>
+		/// <para>使用的输入数据集的要素或对象标识符。</para>
+		/// <para>Included (Included) - 表示是否为此要素计算预测值。此字段中的值可为以下一种：</para>
+		/// <para>Yes - 此时进行预测没有问题。</para>
+		/// <para>Not enough neighbors - 相邻点数不足而无法进行预测。</para>
+		/// <para>Weight parameter is too small - 权重参数太小。</para>
+		/// <para>Overfilling - 浮点计算溢出。</para>
+		/// <para>Problem with data transformation - 要变换的值超出所选变换支持的范围（仅使用克里金法）。</para>
+		/// <para>No explanatory rasters - 无法计算该值，因为有一个解释变量处于未定义状态。该点可在至少一个解释变量栅格范围之外，或该点可在至少一个解释变量栅格中的 NoData 像元的顶部。此情况仅适用于 EBK 回归预测模型。</para>
+		/// <para>Predicted (Predicted) - 在此位置的预测值。</para>
+		/// <para>Error (Error) - 预测值减去验证字段中的值。</para>
+		/// <para>StdError (标准差) - 克里金法标准误差。</para>
+		/// <para>Stdd_Error (标准差) - 标准预测误差。理想情况下，标准预测误差呈正态分布。</para>
+		/// <para>NormValue (正态值) - 对应于正态 QQ 图中标准预测误差（y 轴）的正态分布值（x 轴）。</para>
+		/// <para>CRPS (连续分级概率评分) - 这是一种诊断方法，用于测量预测的累积分布函数与每个已观测数据值之间的偏差。该值应尽可能小。该诊断方法优于交叉验证诊断方法，因为它将数据与整个分布进行比较而不是与单点预测进行比较。仅针对经验贝叶斯克里金法和 EBK 回归预测工具模型创建该字段。</para>
+		/// <para>Interval90 (90% 区间内) - 表示验证点是否位于 90% 置信区间。仅针对经验贝叶斯克里金法和 EBK 回归预测工具模型创建该字段。如果模型与数据相符，则约 90% 的要素应位于 90% 置信区间内。此字段可能具有下列值：</para>
+		/// <para>Yes - 验证点位于 90% 置信区间内。</para>
+		/// <para>No - 验证点不在 90% 置信区间内。</para>
+		/// <para>Excluded - 无法在该位置生成预测值。</para>
+		/// <para>Interval95 (95% 区间内) - 表示验证点是否位于 95% 置信区间。仅针对经验贝叶斯克里金法和 EBK 回归预测工具模型创建该字段。如果模型与数据相符，则约 95% 的要素应位于 95% 置信区间内。此字段可能具有下列值：</para>
+		/// <para>Yes - 验证点位于 95% 置信区间内。</para>
+		/// <para>No - 验证点不在 95% 置信区间内。</para>
+		/// <para>Excluded - 无法在该位置生成预测值。</para>
+		/// <para>QuanVal (验证分位数) - 针对预测值分布的要素测量值的分位数。该值的范围在 0 到 1 之间，接近 0 的值表示测量值位于分布的最左侧端，接近 1 的值表示测量值位于分布的最右侧端。如果很多值都位于两端，这表示预测值分布并未完美体现数据模型，部分插值参数需进行更改。仅针对经验贝叶斯克里金法和 EBK 回归预测工具模型创建该字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -161,9 +162,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Append all fields from input features</para>
-		/// <para>Determines whether all fields will be copied from the input features to the output feature class.</para>
-		/// <para>Checked—All fields from the input features will be copied to the output feature class. This is the default.</para>
-		/// <para>Unchecked—Only the feature ID value will be copied, and it will be named Source_ID on the output feature class.</para>
+		/// <para>确定是否所有字段都将从输入要素复制到输出要素类。</para>
+		/// <para>选中 - 输入要素的所有字段都将复制到输出要素类。这是默认设置。</para>
+		/// <para>未选中 - 仅复制要素 ID 值，并在输出要素类中将其命名为 Source_ID。</para>
 		/// <para><see cref="AppendAllFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -173,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Elevation field</para>
-		/// <para>The field containing the elevation of each input point. The parameter only applies to 3D geostatistical models. If the elevation values are stored as geometry attributes in Shape.Z, it is recommended to use that field. If the elevations are stored in an attribute field, the elevations must indicate distance from sea level. Positive values indicate distance above sea level, and negative values indicate distance below sea level.</para>
+		/// <para>包含每个输入点的高程的字段。该参数仅适用于 3D 地统计模型。 如果高程值存储为 Shape.Z 中的几何属性，则建议您使用该字段。如果高程存储在属性字段中，则高程必须表示距海平面的距离。正值表示海平面以上的距离，负值表示海平面以下的距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -183,17 +184,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Elevation field units</para>
-		/// <para>The units of the elevation field. This parameter only applies to 3D geostatistical models. If Shape.Z is provided as the elevation field, the units will automatically match the Z-units of the vertical coordinate system.</para>
-		/// <para>Inch—Elevations are in inches.</para>
-		/// <para>Foot—Elevations are in feet.</para>
-		/// <para>Yard—Elevations are in yards.</para>
-		/// <para>US mile—Elevations are in U.S. miles.</para>
-		/// <para>Nautical mile—Elevations are in nautical miles.</para>
-		/// <para>Millimeter—Elevations are in millimeters.</para>
-		/// <para>Centimeter—Elevations are in centimeters.</para>
-		/// <para>Decimeter—Elevations are in decimeters.</para>
-		/// <para>Meter—Elevations are in meters.</para>
-		/// <para>Kilometer—Elevations are in kilometers.</para>
+		/// <para>高程字段的单位。该参数仅适用于 3D 地统计模型。如果提供 Shape.Z 作为高程字段，则单位将自动匹配垂直坐标系的 Z 单位。</para>
+		/// <para>英寸—高程以英寸为单位。</para>
+		/// <para>英尺—高程以英尺为单位。</para>
+		/// <para>码—高程以码为单位。</para>
+		/// <para>英里（美制）—高程以英里（美制）为单位。</para>
+		/// <para>海里—高程以海里为单位。</para>
+		/// <para>毫米—高程以毫米为单位。</para>
+		/// <para>厘米—高程以厘米为单位。</para>
+		/// <para>分米—高程以分米为单位。</para>
+		/// <para>米—高程以米为单位。</para>
+		/// <para>千米—高程以千米为单位。</para>
 		/// <para><see cref="ElevationUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -218,14 +219,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum AppendAllFieldsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—All fields from the input features will be copied to the output feature class. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ALL")]
 			ALL,
 
 			/// <summary>
-			/// <para>Unchecked—Only the feature ID value will be copied, and it will be named Source_ID on the output feature class.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FID_ONLY")]
@@ -239,73 +240,73 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum ElevationUnitsEnum 
 		{
 			/// <summary>
-			/// <para>Inch—Elevations are in inches.</para>
+			/// <para>英寸—高程以英寸为单位。</para>
 			/// </summary>
 			[GPValue("INCH")]
-			[Description("Inch")]
+			[Description("英寸")]
 			Inch,
 
 			/// <summary>
-			/// <para>Foot—Elevations are in feet.</para>
+			/// <para>英尺—高程以英尺为单位。</para>
 			/// </summary>
 			[GPValue("FOOT")]
-			[Description("Foot")]
+			[Description("英尺")]
 			Foot,
 
 			/// <summary>
-			/// <para>Yard—Elevations are in yards.</para>
+			/// <para>码—高程以码为单位。</para>
 			/// </summary>
 			[GPValue("YARD")]
-			[Description("Yard")]
+			[Description("码")]
 			Yard,
 
 			/// <summary>
-			/// <para>US mile—Elevations are in U.S. miles.</para>
+			/// <para>英里（美制）—高程以英里（美制）为单位。</para>
 			/// </summary>
 			[GPValue("MILE_US")]
-			[Description("US mile")]
+			[Description("英里（美制）")]
 			US_mile,
 
 			/// <summary>
-			/// <para>Nautical mile—Elevations are in nautical miles.</para>
+			/// <para>海里—高程以海里为单位。</para>
 			/// </summary>
 			[GPValue("NAUTICAL_MILE")]
-			[Description("Nautical mile")]
+			[Description("海里")]
 			Nautical_mile,
 
 			/// <summary>
-			/// <para>Millimeter—Elevations are in millimeters.</para>
+			/// <para>毫米—高程以毫米为单位。</para>
 			/// </summary>
 			[GPValue("MILLIMETER")]
-			[Description("Millimeter")]
+			[Description("毫米")]
 			Millimeter,
 
 			/// <summary>
-			/// <para>Centimeter—Elevations are in centimeters.</para>
+			/// <para>厘米—高程以厘米为单位。</para>
 			/// </summary>
 			[GPValue("CENTIMETER")]
-			[Description("Centimeter")]
+			[Description("厘米")]
 			Centimeter,
 
 			/// <summary>
-			/// <para>Decimeter—Elevations are in decimeters.</para>
+			/// <para>分米—高程以分米为单位。</para>
 			/// </summary>
 			[GPValue("DECIMETER")]
-			[Description("Decimeter")]
+			[Description("分米")]
 			Decimeter,
 
 			/// <summary>
-			/// <para>Meter—Elevations are in meters.</para>
+			/// <para>米—高程以米为单位。</para>
 			/// </summary>
 			[GPValue("METER")]
-			[Description("Meter")]
+			[Description("米")]
 			Meter,
 
 			/// <summary>
-			/// <para>Kilometer—Elevations are in kilometers.</para>
+			/// <para>千米—高程以千米为单位。</para>
 			/// </summary>
 			[GPValue("KILOMETER")]
-			[Description("Kilometer")]
+			[Description("千米")]
 			Kilometer,
 
 		}

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Set Starting Point By Attribute Rule</para>
+	/// <para>Add Set Starting Point By Attribute Rule</para>
 	/// <para>Add a set starting point by attribute rule to a diagram template</para>
 	/// </summary>
 	[Obsolete()]

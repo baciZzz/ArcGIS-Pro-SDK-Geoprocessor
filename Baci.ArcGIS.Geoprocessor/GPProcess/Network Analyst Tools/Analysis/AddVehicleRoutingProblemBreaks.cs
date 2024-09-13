@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Add Vehicle Routing Problem Breaks</para>
-	/// <para>Creates breaks in a Vehicle Routing Problem (VRP) layer.</para>
+	/// <para>添加车辆配送休息点</para>
+	/// <para>在车辆配送 (VRP) 图层中创建休息点。</para>
 	/// </summary>
 	public class AddVehicleRoutingProblemBreaks : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InVrpLayer">
 		/// <para>Input Vehicle Routing Problem Layer</para>
-		/// <para>The vehicle routing problem analysis layer to which the breaks will be added.</para>
+		/// <para>将向其添加休息点的车辆配送分析图层。</para>
 		/// </param>
 		public AddVehicleRoutingProblemBreaks(object InVrpLayer)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Vehicle Routing Problem Breaks</para>
+		/// <para>Tool Display Name : 添加车辆配送休息点</para>
 		/// </summary>
-		public override string DisplayName() => "Add Vehicle Routing Problem Breaks";
+		public override string DisplayName() => "添加车辆配送休息点";
 
 		/// <summary>
 		/// <para>Tool Name : AddVehicleRoutingProblemBreaks</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Vehicle Routing Problem Layer</para>
-		/// <para>The vehicle routing problem analysis layer to which the breaks will be added.</para>
+		/// <para>将向其添加休息点的车辆配送分析图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Target Route Name</para>
-		/// <para>The route for the break parameters.  If this parameter is not specified, breaks are created for each existing route.</para>
+		/// <para>休息点参数的路径。如果未指定此参数，则会为每个现有路径创建休息点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -80,10 +81,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Break Type</para>
-		/// <para>Specifies the type of breaks for the current VRP layer. All breaks must be of the same type.</para>
-		/// <para>Time Window Break— Breaks take place during a specific time window. This is the default.</para>
-		/// <para>Maximum Travel Time Break— Breaks are taken after a certain amount of travel time. These values are given as the amount of time either until the first break or between breaks.</para>
-		/// <para>Maximum Work Time Break— Breaks are taken after a certain amount of cumulative time. These values are always an amount of elapsed time since the start of the route.</para>
+		/// <para>指定当前 VRP 图层的休息点类型。所有休息点的类型必须相同。</para>
+		/// <para>时间窗休息点— 休息将在特定时间窗内进行。这是默认设置。</para>
+		/// <para>最长行驶时间中断— 在经过一定的行驶时间后休息。这些值为到达第一个休息点之前或两个休息点之间的时间量。</para>
+		/// <para>最长工作时间中断— 累积一定时间后休息。这些值始终是自路径起点开始经历的时间。</para>
 		/// <para><see cref="BreakTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -93,13 +94,13 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Break Properties</para>
-		/// <para>Specifies a time range within which the break will begin. To set up a time window break, use two time-of-day values.</para>
-		/// <para>The options below are enabled when the Break Type parameter is set to Time Window Break.</para>
-		/// <para>Is Paid—A Boolean value indicating whether the break is paid.</para>
-		/// <para>Break Duration—The duration of the break. This field can&apos;t contain null values and has a default value of 60.</para>
-		/// <para>Time Window Start—The start time of the time window.</para>
-		/// <para>Time Window End—The end time of the time window.</para>
-		/// <para>Maximum Violation Time—The maximum allowable violation time for a time window break. A time window is considered violated if the arrival time falls outside the time range. A zero value indicates that the time window cannot be violated, that is, the time window is hard. A nonzero value indicates the maximum delay time. For example, the break can begin up to 30 minutes beyond the end of its time window but the delay is penalized pursuant to the Time Window Violation Importance setting, which rates the importance of honoring time windows without causing violations.</para>
+		/// <para>指定休息开始的时间范围。要设置时间窗休息点，请使用两个时间值。</para>
+		/// <para>当休息点类型参数设置为时间窗休息点时，启用以下选项。</para>
+		/// <para>已支付 - 用来指示是否为休息支付报酬的布尔值。</para>
+		/// <para>休息点持续时间 - 休息的持续时间。该字段不能包含空值，其默认值为 60。</para>
+		/// <para>时间窗开始 - 时间窗的开始时间。</para>
+		/// <para>时间窗结束 - 时间窗的结束时间。</para>
+		/// <para>最长冲突时间：该字段为时间窗休息点指定允许的最长冲突时间。如果到达时间不在该时间范围内，则认为与时间窗发生冲突。零值表示不能与时间窗发生冲突；即时间窗是硬性的。非零值表示最长延迟时间。例如，休息可在其时间窗结束后最多 30 分钟内开始，但会按照时间窗冲突重要性设置对延迟进行惩罚（该设置可评定遵循时间窗且不引起冲突的重要性）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -107,13 +108,13 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Break Properties</para>
-		/// <para>Specifies how long a person can drive before the break is required.</para>
-		/// <para>The properties below are enabled when the Break Type parameter is set to Maximum Travel Time Break.</para>
-		/// <para>Is Paid—A Boolean value indicating whether the break is paid.</para>
-		/// <para>Break Duration—The duration of the break. This field can&apos;t contain null values and has a default value of 60.</para>
-		/// <para>Maximum Travel Time Between Breaks—The maximum amount of travel time that can be accumulated before the break is taken. The travel time is accumulated either from the end of the previous break or, if a break has not yet been taken, from the start of the route.If this is the route&apos;s final break, The MaxTravelTimeBetweenBreaks field also indicates the maximum travel time that can be accumulated from the final break to the end depot.</para>
-		/// <para>This field limits how long a person can drive until a break is required. For example, if the Time Field Units parameter (time_units in Python) of the analysis is set to Minutes, and the MaxTravelTimeBetweenBreaks field has a value of 120, the driver will get a break after two hours of driving. To assign a second break after two additional hours of driving, the second break&apos;s MaxTravelTimeBetweenBreaks field value must be 120.</para>
-		/// <para>The unit for this field value is specified by the Time Field Units parameter (time_units in Python).</para>
+		/// <para>指定可在驾驶多长时间之后才需要休息。</para>
+		/// <para>当休息点类型参数设置为最长行驶时间中断时，启用以下属性。</para>
+		/// <para>已支付 - 用来指示是否为休息点支付报酬的布尔值。</para>
+		/// <para>休息点持续时间 - 休息点的持续时间。该字段不能包含空值，其默认值为 60。</para>
+		/// <para>最长行驶时间 - 休息之前可累积的最长行驶时间。行驶时间从上一个休息点的结束时间开始累积，或者从路径的起始点开始累积（如果还未休息过）。如果这是路径的最后一个休息点，则 MaxTravelTimeBetweenBreaks 字段还会指明从最后一个休息点到终止站点可累积的最长行驶时间。</para>
+		/// <para>该字段将限制可在驾驶多长时间之后才需要休息。例如，如果分析的时间字段单位参数（Python 中的 time_units）设为分钟，而且 MaxTravelTimeBetweenBreaks 字段的值为 120，则司机将在驾驶两个小时之后中断驾驶以得到休息。如果要再驾驶两个小时后休息一次，则第二次休息的 MaxTravelTimeBetweenBreaks 字段值必须为 120。</para>
+		/// <para>该字段值的单位由时间字段单位参数（Python 中的 time_units）指定。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -121,13 +122,13 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Break Properties</para>
-		/// <para>Specifies how long a person can work before a break is required.</para>
-		/// <para>The properties below are enabled when the Break Type parameter is set to Maximum Work Time Break.</para>
-		/// <para>Is Paid—A Boolean value indicating whether the break is paid.</para>
-		/// <para>Break Duration—The duration of the break. This field can&apos;t contain null values and has a default value of 60.</para>
-		/// <para>Maximum Cumulative Work Time—The maximum amount of work time that can be accumulated before the break is taken. Work time is always accumulated from the beginning of the route. Work time is the sum of travel time and service times at orders, depots, and breaks. However, this excludes wait time, which is the time a route (or driver) spends waiting at an order or depot for a time window to begin.The MaxCumulWorkTime field also indicates the maximum amount of work time that can be accumulated before the break is taken.</para>
-		/// <para>This field limits how long a person can work until a break is required. For example, if the Time Field Units parameter (time_units in Python) is set to Minutes, the MaxCumulWorkTime field has a value of 120, and the ServiceTime field has a value of 15, the driver will get a 15-minute break after 2 hours of work.</para>
-		/// <para>Continuing with this example, assume a second break is needed after 3 additional hours of work. To specify this break, you would enter 315 (5 hours and 15 minutes) as the second break&apos;s MaxCumulWorkTime field value. This number includes the MaxCumulWorkTime and ServiceTime field values of the preceding break, along with the 3 additional hours of work time before granting the second break. To avoid taking maximum work time breaks prematurely, remember that work time is accumulated from the beginning of the route and it includes the service time at previously visited depots, orders, and breaks.</para>
+		/// <para>指定可在工作多长时间之后才需要休息。</para>
+		/// <para>当休息点类型参数设置为最长工作时间休息点时,启用以下属性。</para>
+		/// <para>已支付 - 用来指示是否为休息点支付报酬的布尔值。</para>
+		/// <para>休息点持续时间 - 休息点的持续时间。该字段不能包含空值，其默认值为 60。</para>
+		/// <para>累积的最长工作时间 - 休息之前可累积的最长工作时间。工作时间始终从路径的起始点开始累积。工作时间等于行驶时间加上在停靠点、站点和休息点的服务时间。不过，此时间不包括等待时间，等待时间是指路径（或驾驶员）在停靠点或站点处等待时间窗打开所用的时间。MaxCumulWorkTime 字段也表示休息之前可累积的最长工作时间。</para>
+		/// <para>该字段将限制可在工作多长时间之后才需要休息。例如，如果时间字段单位参数（Python 中的 time_units）设为分钟，而且 MaxCumulWorkTime 字段的值为 120，ServiceTime 字段的值为 15，则司机将在工作 2 个小时之后获得 15 分钟的休息时间。</para>
+		/// <para>继续此示例来进行说明，假设工作了 3 个小时之后又需要休息。那么，要指定该休息点，需要输入 315（5 小时 15 分钟）作为第二个休息点的 MaxCumulWorkTime 字段值。这个数字包括前一个休息点的 MaxCumulWorkTime 值和 ServiceTime 字段值，以及准许进行第二次休息之前的另外 3 个小时工作时间。为避免过早经过最长工作时间休息点，应该记住：工作时间是从路径的起始点开始累积的，并且包括在之前访问的站点、停靠点和休息点处的服务时间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -135,9 +136,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Append To Existing Breaks</para>
-		/// <para>Specifies whether new breaks will be appended to the existing breaks attribute table.</para>
-		/// <para>Checked—New breaks will be appended to the existing set in the breaks attribute table. This is the default.</para>
-		/// <para>Unchecked—Existing breaks will be replaced with new breaks.</para>
+		/// <para>指定是否将新的休息点追加到现有的休息点属性表中。</para>
+		/// <para>选中 - 新的休息点将追加到休息点属性表的现有集合中。这是默认设置。</para>
+		/// <para>未选中 - 现有休息点将被替换为新的休息点。</para>
 		/// <para><see cref="AppendToExistingBreaksEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -160,24 +161,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum BreakTypeEnum 
 		{
 			/// <summary>
-			/// <para>Time Window Break— Breaks take place during a specific time window. This is the default.</para>
+			/// <para>时间窗休息点— 休息将在特定时间窗内进行。这是默认设置。</para>
 			/// </summary>
 			[GPValue("TIME_WINDOW_BREAK")]
-			[Description("Time Window Break")]
+			[Description("时间窗休息点")]
 			Time_Window_Break,
 
 			/// <summary>
-			/// <para>Maximum Travel Time Break— Breaks are taken after a certain amount of travel time. These values are given as the amount of time either until the first break or between breaks.</para>
+			/// <para>最长行驶时间中断— 在经过一定的行驶时间后休息。这些值为到达第一个休息点之前或两个休息点之间的时间量。</para>
 			/// </summary>
 			[GPValue("MAXIMUM_TRAVEL_TIME_BREAK")]
-			[Description("Maximum Travel Time Break")]
+			[Description("最长行驶时间中断")]
 			Maximum_Travel_Time_Break,
 
 			/// <summary>
-			/// <para>Maximum Work Time Break— Breaks are taken after a certain amount of cumulative time. These values are always an amount of elapsed time since the start of the route.</para>
+			/// <para>最长工作时间中断— 累积一定时间后休息。这些值始终是自路径起点开始经历的时间。</para>
 			/// </summary>
 			[GPValue("MAXIMUM_WORK_TIME_BREAK")]
-			[Description("Maximum Work Time Break")]
+			[Description("最长工作时间中断")]
 			Maximum_Work_Time_Break,
 
 		}
@@ -188,14 +189,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum AppendToExistingBreaksEnum 
 		{
 			/// <summary>
-			/// <para>Checked—New breaks will be appended to the existing set in the breaks attribute table. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("APPEND")]
 			APPEND,
 
 			/// <summary>
-			/// <para>Unchecked—Existing breaks will be replaced with new breaks.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CLEAR")]

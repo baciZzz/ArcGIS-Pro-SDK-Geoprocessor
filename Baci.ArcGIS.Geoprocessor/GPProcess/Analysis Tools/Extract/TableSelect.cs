@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Table Select</para>
-	/// <para>Selects table records matching a Structured Query Language (SQL) expression and writes them to an output table.</para>
+	/// <para>表筛选</para>
+	/// <para>筛选与结构化查询语言 (SQL) 表达式匹配的表记录并将其写入输出表。</para>
 	/// </summary>
 	public class TableSelect : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The table containing records matching the specified expression that will be written to the output table.</para>
+		/// <para>包含与指定表达式匹配的记录的表，匹配记录将被写入输出表。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>The output table containing records from the input table that match the specified expression.</para>
+		/// <para>该输出表包含输入表中与指定表达式相匹配的记录。</para>
 		/// </param>
 		public TableSelect(object InTable, object OutTable)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Table Select</para>
+		/// <para>Tool Display Name : 表筛选</para>
 		/// </summary>
-		public override string DisplayName() => "Table Select";
+		public override string DisplayName() => "表筛选";
 
 		/// <summary>
 		/// <para>Tool Name : TableSelect</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The table containing records matching the specified expression that will be written to the output table.</para>
+		/// <para>包含与指定表达式匹配的记录的表，匹配记录将被写入输出表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The output table containing records from the input table that match the specified expression.</para>
+		/// <para>该输出表包含输入表中与指定表达式相匹配的记录。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -85,8 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>An SQL expression used to select a subset of records.</para>
-		/// <para>An SQL expression used to select a subset of records. For more information on SQL syntax, see SQL reference for elements used in query expressions.</para>
+		/// <para>用于选择记录子集的 SQL 表达式。</para>
+		/// <para>用于选择记录子集的 SQL 表达式。有关 SQL 语法的详细信息，请参阅在查询表达式中使用的元素的 SQL 参考。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]

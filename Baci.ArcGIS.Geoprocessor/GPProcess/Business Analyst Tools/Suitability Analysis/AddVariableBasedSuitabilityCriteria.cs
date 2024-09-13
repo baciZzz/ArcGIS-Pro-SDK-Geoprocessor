@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Add Variable Based Suitability Criteria</para>
+	/// <para>Add Variable Based Suitability Criteria</para>
 	/// <para>Adds criteria based on the values calculated for the input layer using the Enrich Layer tool.</para>
 	/// </summary>
 	public class AddVariableBasedSuitabilityCriteria : AbstractGPProcess

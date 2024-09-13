@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Change Diagrams Owner</para>
+	/// <para>Change Diagrams Owner</para>
 	/// <para>Change the diagrams owner</para>
 	/// </summary>
 	[Obsolete()]

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>TIN Slope</para>
+	/// <para>TIN Slope</para>
 	/// <para>Extracts slope information from the input TIN surface into polygon features.</para>
 	/// </summary>
 	[Obsolete()]

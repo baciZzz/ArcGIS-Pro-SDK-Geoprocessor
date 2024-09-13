@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>FAA 18B</para>
+	/// <para>FAA 18B</para>
 	/// <para>Creates obstruction identification surfaces (OIS) based on the FAA Advisory Circular 150/5300-18B specification. These OIS assist in the identification of possible hazards to air navigation and critical approach/departure obstructions within the vicinity of the airport and are used to support planning and design activities. The type, function, and dimension of a surface differ by its runway classification. This tool creates surfaces such as a polygon or multipatch features</para>
 	/// </summary>
 	public class FAA18B : AbstractGPProcess

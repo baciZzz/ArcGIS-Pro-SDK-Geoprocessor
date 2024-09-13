@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Get Features By Job AOI</para>
+	/// <para>Get Features By Job AOI</para>
 	/// <para>Extracts features from a source geodatabase to a target geodatabase based on the Filter Feature Layer parameter value (or job AOI).</para>
 	/// </summary>
 	public class GetFeaturesByJobAOI : AbstractGPProcess

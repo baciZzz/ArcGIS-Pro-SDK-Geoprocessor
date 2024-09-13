@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Majority Filter</para>
-	/// <para>Replaces cells in a raster based on the majority of their contiguous neighboring cells.</para>
+	/// <para>众数滤波</para>
+	/// <para>根据相邻像元数据值的众数替换栅格中的像元。</para>
 	/// </summary>
 	public class MajorityFilter : AbstractGPProcess
 	{
@@ -20,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster to be filtered based on the majority of contiguous neighboring cells.</para>
-		/// <para>It must be of integer type.</para>
+		/// <para>要根据相邻像元数据值的众数进行过滤的输入栅格。</para>
+		/// <para>必须为整型。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output filtered raster.</para>
-		/// <para>The output is always of integer type.</para>
+		/// <para>过滤后的输出栅格。</para>
+		/// <para>输出始终为整型。</para>
 		/// </param>
 		public MajorityFilter(object InRaster, object OutRaster)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Majority Filter</para>
+		/// <para>Tool Display Name : 众数滤波</para>
 		/// </summary>
-		public override string DisplayName() => "Majority Filter";
+		public override string DisplayName() => "众数滤波";
 
 		/// <summary>
 		/// <para>Tool Name : MajorityFilter</para>
@@ -71,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster to be filtered based on the majority of contiguous neighboring cells.</para>
-		/// <para>It must be of integer type.</para>
+		/// <para>要根据相邻像元数据值的众数进行过滤的输入栅格。</para>
+		/// <para>必须为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -84,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output filtered raster.</para>
-		/// <para>The output is always of integer type.</para>
+		/// <para>过滤后的输出栅格。</para>
+		/// <para>输出始终为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -93,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Number of neighbors to use</para>
-		/// <para>Determines the number of neighboring cells to use in the kernel of the filter.</para>
-		/// <para>Four— The kernel of the filter will be the four direct (orthogonal) neighbors to the present cell. This is the default.</para>
-		/// <para>Eight— The kernel of the filter will be the eight nearest neighbors (a three-by-three window) to the present cell.</para>
+		/// <para>确定在滤波器内核中使用的相邻像元数。</para>
+		/// <para>四— 滤波器内核将是与当前像元直接相邻（正交）的四个像元。这是默认设置。</para>
+		/// <para>八— 滤波器内核将是距当前像元最近的 8 个相邻像元（3 × 3 窗口）。</para>
 		/// <para><see cref="NumberNeighborsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -105,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Replacement threshold</para>
-		/// <para>Specifies the number of contiguous (spatially connected) cells that must be of the same value before a replacement will occur.</para>
-		/// <para>Majority— A majority of cells must have the same value and be contiguous. Three out of four or five out of eight connected cells must have the same value.</para>
-		/// <para>Half— Half of the cells must have the same value and be contiguous. Two out of four or four out of eight connected cells must have the same value. This option will have a more smoothing effect than the other.</para>
+		/// <para>在进行替换之前指定必须具有相同值的相邻（空间连接）像元数。</para>
+		/// <para>众数— 多数像元必须具有相同值并且相邻。四分之三或八分之五的已连接像元必须具有相同值。</para>
+		/// <para>半数— 半数像元必须具有相同值并且相邻。四分之二或八分之四的已连接像元必须具有相同值。使用此选项可获得比其他选项更平滑的效果。</para>
 		/// <para><see cref="MajorityDefinitionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -132,17 +133,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum NumberNeighborsEnum 
 		{
 			/// <summary>
-			/// <para>Four— The kernel of the filter will be the four direct (orthogonal) neighbors to the present cell. This is the default.</para>
+			/// <para>四— 滤波器内核将是与当前像元直接相邻（正交）的四个像元。这是默认设置。</para>
 			/// </summary>
 			[GPValue("FOUR")]
-			[Description("Four")]
+			[Description("四")]
 			Four,
 
 			/// <summary>
-			/// <para>Eight— The kernel of the filter will be the eight nearest neighbors (a three-by-three window) to the present cell.</para>
+			/// <para>八— 滤波器内核将是距当前像元最近的 8 个相邻像元（3 × 3 窗口）。</para>
 			/// </summary>
 			[GPValue("EIGHT")]
-			[Description("Eight")]
+			[Description("八")]
 			Eight,
 
 		}
@@ -153,17 +154,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum MajorityDefinitionEnum 
 		{
 			/// <summary>
-			/// <para>Majority— A majority of cells must have the same value and be contiguous. Three out of four or five out of eight connected cells must have the same value.</para>
+			/// <para>众数— 多数像元必须具有相同值并且相邻。四分之三或八分之五的已连接像元必须具有相同值。</para>
 			/// </summary>
 			[GPValue("MAJORITY")]
-			[Description("Majority")]
+			[Description("众数")]
 			Majority,
 
 			/// <summary>
-			/// <para>Half— Half of the cells must have the same value and be contiguous. Two out of four or four out of eight connected cells must have the same value. This option will have a more smoothing effect than the other.</para>
+			/// <para>半数— 半数像元必须具有相同值并且相邻。四分之二或八分之四的已连接像元必须具有相同值。使用此选项可获得比其他选项更平滑的效果。</para>
 			/// </summary>
 			[GPValue("HALF")]
-			[Description("Half")]
+			[Description("半数")]
 			Half,
 
 		}

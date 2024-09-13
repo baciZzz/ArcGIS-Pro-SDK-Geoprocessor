@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Log10</para>
-	/// <para>Calculates the base 10 logarithm of cells in a raster.</para>
+	/// <para>Log10</para>
+	/// <para>计算栅格中各像元以 10 为底的对数。</para>
 	/// </summary>
 	public class Log10 : AbstractGPProcess
 	{
@@ -20,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant">
 		/// <para>Input raster or constant value</para>
-		/// <para>Input values for which to find the base 10 logarithm.</para>
-		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
+		/// <para>要查找以 10 为底的对数的输入值。</para>
+		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the base 10 logarithm of the input values.</para>
+		/// <para>输出栅格。</para>
+		/// <para>像元值是输入值以 10 为底的对数。</para>
 		/// </param>
 		public Log10(object InRasterOrConstant, object OutRaster)
 		{
@@ -71,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value</para>
-		/// <para>Input values for which to find the base 10 logarithm.</para>
-		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
+		/// <para>要查找以 10 为底的对数的输入值。</para>
+		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -84,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the base 10 logarithm of the input values.</para>
+		/// <para>输出栅格。</para>
+		/// <para>像元值是输入值以 10 为底的对数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

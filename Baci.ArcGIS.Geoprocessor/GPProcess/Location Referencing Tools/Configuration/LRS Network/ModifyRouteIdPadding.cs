@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Modify Route ID Padding</para>
+	/// <para>Modify Route ID Padding</para>
 	/// <para>Modifies the padding, null, and length properties for fields that are part of a multifield route ID.</para>
 	/// </summary>
 	public class ModifyRouteIdPadding : AbstractGPProcess

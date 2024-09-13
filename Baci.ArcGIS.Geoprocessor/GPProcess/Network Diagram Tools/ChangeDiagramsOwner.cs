@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Change Diagrams Owner</para>
-	/// <para>Changes ownership of stored network diagrams.</para>
+	/// <para>更改逻辑示意图所有者</para>
+	/// <para>更改已存储网络逻辑示意图的所有权。</para>
 	/// </summary>
 	public class ChangeDiagramsOwner : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InDiagrams">
 		/// <para>Input Network or Network Diagram Layer</para>
-		/// <para>The input network layer or network diagram layer related to the utility network or trace network of interest with the stored network diagrams whose ownership will be transferred.</para>
+		/// <para>与感兴趣 公共设施网络或追踪网络 相关、包含将转让所有权的已存储网络逻辑示意图的输入网络图层或网络逻辑示意图图层。</para>
 		/// </param>
 		/// <param name="TargetOwner">
 		/// <para>Target Owner</para>
-		/// <para>The name of the user that will become the new owner of the specified diagrams.</para>
+		/// <para>将成为指定逻辑示意图的新所有者的用户名称。</para>
 		/// </param>
 		public ChangeDiagramsOwner(object InDiagrams, object TargetOwner)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Change Diagrams Owner</para>
+		/// <para>Tool Display Name : 更改逻辑示意图所有者</para>
 		/// </summary>
-		public override string DisplayName() => "Change Diagrams Owner";
+		public override string DisplayName() => "更改逻辑示意图所有者";
 
 		/// <summary>
 		/// <para>Tool Name : ChangeDiagramsOwner</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network or Network Diagram Layer</para>
-		/// <para>The input network layer or network diagram layer related to the utility network or trace network of interest with the stored network diagrams whose ownership will be transferred.</para>
+		/// <para>与感兴趣 公共设施网络或追踪网络 相关、包含将转让所有权的已存储网络逻辑示意图的输入网络图层或网络逻辑示意图图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Target Owner</para>
-		/// <para>The name of the user that will become the new owner of the specified diagrams.</para>
+		/// <para>将成为指定逻辑示意图的新所有者的用户名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -85,8 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Source Owner</para>
-		/// <para>The name of the user whose ownership of the network diagrams will be changed.</para>
-		/// <para>This parameter is only used when there are no specified diagram names. When diagram names are specified, it will be ignored.</para>
+		/// <para>将更改网络逻辑示意图所有权的用户名称。</para>
+		/// <para>仅当未指定逻辑示意图名称时，才使用此参数。如果已指定逻辑示意图名称，将忽略此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Diagram Names</para>
-		/// <para>The names of the diagrams to be processed.</para>
+		/// <para>要处理的逻辑示意图的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

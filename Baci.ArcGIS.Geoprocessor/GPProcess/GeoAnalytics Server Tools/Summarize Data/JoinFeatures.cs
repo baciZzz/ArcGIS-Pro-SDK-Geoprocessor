@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Join Features</para>
-	/// <para>Joins attributes from one layer to another based on spatial, temporal, or attribute relationships, or a combination of those relationships.</para>
+	/// <para>连接要素</para>
+	/// <para>可根据空间、时态、属性关系或这些关系的某种组合将一个图层的属性连接到另一个图层。</para>
 	/// </summary>
 	public class JoinFeatures : AbstractGPProcess
 	{
@@ -20,21 +21,21 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="TargetLayer">
 		/// <para>Target Layer</para>
-		/// <para>Contains the target features. The attributes from the target features and the attributes from the joined features will be transferred to the output.</para>
+		/// <para>包含目标要素。目标要素的属性和已连接要素的属性将传递到输出。</para>
 		/// </param>
 		/// <param name="JoinLayer">
 		/// <para>Join Layer</para>
-		/// <para>Contains the join features. The attributes from the join features will be joined to the attributes of the target features. See the explanation of the Join Operation (join_operation in Python) parameter for details about how the aggregation of joined attributes are affected by the type of join operation.</para>
+		/// <para>包含连接要素。连接要素的属性将被连接到目标要素的属性中。有关连接操作的类型对所连接属性聚合的影响的详细信息，请参阅连接操作（Python 中的 join_operation）参数的说明。</para>
 		/// </param>
 		/// <param name="OutputName">
 		/// <para>Output Name</para>
-		/// <para>The name of the output feature service.</para>
+		/// <para>输出要素服务的名称。</para>
 		/// </param>
 		/// <param name="JoinOperation">
 		/// <para>Join Operation</para>
-		/// <para>Specifies how joins between the Target Layer values and the Join Layer values will be handled in the output if multiple join features are found that have the same spatial relationship with a single target feature.</para>
-		/// <para>Join one to one—The attributes from the multiple join features will be aggregated. For example, if a point target feature is found in two separate polygon join features, the attributes from the two polygons will be aggregated before being transferred to the output point feature class. If one polygon has an attribute value of 3 and the other has a value of 7, and the summary statistic sum is specified for that field, the aggregated value in the output feature class will be 10. This is the default, and only the count statistic is returned.</para>
-		/// <para>Join one to many—The output feature class will contain multiple copies (records) of the target feature. For example, if a single-point target feature is found in two separate polygon join features, the output feature class will contain two copies of the target feature: one record with the attributes of one polygon and another record with the attributes of the other polygon. There are no summary statistics available with this method.</para>
+		/// <para>指定当多个连接要素 与单个目标要素之间存在同一空间关系时，如何在输出中处理目标图层值和连接图层值之间的连接。</para>
+		/// <para>一对一连接—系统将聚合来自多个连接要素的属性。例如，如果在两个独立的面连接要素中找到了同一个点目标要素，将对这两个面的属性进行聚合，然后将其传递到输出点要素类。如果一个面要素的属性值为 3，另一个面要素的属性值为 7，且为该字段指定了汇总统计数据总和，则输出要素类中的聚合值将为 10。此为默认设置，且仅会返回计数统计数据。</para>
+		/// <para>一对多连接—输出要素类将包含目标要素的多个副本（记录）。例如，如果在两个独立的面连接要素中找到了同一个点目标要素，则输出要素类将包含目标要素的两个副本：分别包含两个面的属性记录。使用此方法时，没有可用的汇总统计数据。</para>
 		/// <para><see cref="JoinOperationEnum"/></para>
 		/// </param>
 		public JoinFeatures(object TargetLayer, object JoinLayer, object OutputName, object JoinOperation)
@@ -46,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Join Features</para>
+		/// <para>Tool Display Name : 连接要素</para>
 		/// </summary>
-		public override string DisplayName() => "Join Features";
+		public override string DisplayName() => "连接要素";
 
 		/// <summary>
 		/// <para>Tool Name : JoinFeatures</para>
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Target Layer</para>
-		/// <para>Contains the target features. The attributes from the target features and the attributes from the joined features will be transferred to the output.</para>
+		/// <para>包含目标要素。目标要素的属性和已连接要素的属性将传递到输出。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Join Layer</para>
-		/// <para>Contains the join features. The attributes from the join features will be joined to the attributes of the target features. See the explanation of the Join Operation (join_operation in Python) parameter for details about how the aggregation of joined attributes are affected by the type of join operation.</para>
+		/// <para>包含连接要素。连接要素的属性将被连接到目标要素的属性中。有关连接操作的类型对所连接属性聚合的影响的详细信息，请参阅连接操作（Python 中的 join_operation）参数的说明。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output feature service.</para>
+		/// <para>输出要素服务的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -110,9 +111,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Join Operation</para>
-		/// <para>Specifies how joins between the Target Layer values and the Join Layer values will be handled in the output if multiple join features are found that have the same spatial relationship with a single target feature.</para>
-		/// <para>Join one to one—The attributes from the multiple join features will be aggregated. For example, if a point target feature is found in two separate polygon join features, the attributes from the two polygons will be aggregated before being transferred to the output point feature class. If one polygon has an attribute value of 3 and the other has a value of 7, and the summary statistic sum is specified for that field, the aggregated value in the output feature class will be 10. This is the default, and only the count statistic is returned.</para>
-		/// <para>Join one to many—The output feature class will contain multiple copies (records) of the target feature. For example, if a single-point target feature is found in two separate polygon join features, the output feature class will contain two copies of the target feature: one record with the attributes of one polygon and another record with the attributes of the other polygon. There are no summary statistics available with this method.</para>
+		/// <para>指定当多个连接要素 与单个目标要素之间存在同一空间关系时，如何在输出中处理目标图层值和连接图层值之间的连接。</para>
+		/// <para>一对一连接—系统将聚合来自多个连接要素的属性。例如，如果在两个独立的面连接要素中找到了同一个点目标要素，将对这两个面的属性进行聚合，然后将其传递到输出点要素类。如果一个面要素的属性值为 3，另一个面要素的属性值为 7，且为该字段指定了汇总统计数据总和，则输出要素类中的聚合值将为 10。此为默认设置，且仅会返回计数统计数据。</para>
+		/// <para>一对多连接—输出要素类将包含目标要素的多个副本（记录）。例如，如果在两个独立的面连接要素中找到了同一个点目标要素，则输出要素类将包含目标要素的两个副本：分别包含两个面的属性记录。使用此方法时，没有可用的汇总统计数据。</para>
 		/// <para><see cref="JoinOperationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -122,16 +123,16 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Spatial Relationship</para>
-		/// <para>Specifies the criteria that will be used to spatially join features.</para>
-		/// <para>Intersects—The features in the join features will be matched if they intersect a target feature. This is the default.</para>
-		/// <para>Equals— The features in the join features will be matched if they are the same geometry as a target feature.</para>
-		/// <para>Planar Near—The features in the join features will be matched if they are within a specified distance of a target feature. The distance is measured using planar distance. Specify a distance in the Spatial Near Distance parameter.</para>
-		/// <para>Geodesic Near—The features in the join features will be matched if they are within a specified distance of a target feature. The distance is measured geodesically. Specify a distance in the Spatial Near Distance parameter. This option is available with ArcGIS Enterprise 10.7 or later.</para>
-		/// <para>Contains—The features in the join features will be matched if a target feature contains them. The target features must be polygons or polylines. The join features can only be polygons when the target features are also polygons. A polygon can contain any feature type. A polyline can contain only polylines and points. A point cannot contain any feature, not even a point. If the join feature is entirely on the boundary of the target feature (no part is properly inside or outside), the feature will not be matched.</para>
-		/// <para>Within—The features in the join features will be matched if a target feature is within them. It is the opposite of the contains relationship. For this option, the target features can only be polygons when the join features are also polygons. A point can be a join feature only if a point is also a target feature. If the entirety of the feature in the join features is on the boundary of the target feature, the feature will not be matched.</para>
-		/// <para>Touches—The features in the join features will be matched if they have a boundary that touches a target feature. When the target and join features are lines or polygons, the boundary of the join feature can only touch the boundary of the target feature, and no part of the join feature can cross the boundary of the target feature.</para>
-		/// <para>Crosses—The features in the join features will be matched if a target feature is crossed by their outline. The join and target features must be lines or polygons. If polygons are used for the join or target features, the polygon&apos;s boundary (line) will be used. Lines that cross at a point will be matched, but lines that share a line segment will not.</para>
-		/// <para>Overlaps—The features in the join features will be matched if they overlap a target feature.</para>
+		/// <para>指定将用于空间连接要素的条件。</para>
+		/// <para>相交—如果连接要素与目标要素相交，将匹配连接要素中相交的要素。这是默认设置。</para>
+		/// <para>等于— 如果连接要素与目标要素的几何类型相同，则将匹配连接要素中的要素。</para>
+		/// <para>平面邻近—如果连接要素在目标要素的指定距离之内，将匹配处于该距离内的要素。使用平面距离测量距离。在空间邻近距离参数中指定距离。</para>
+		/// <para>测地线邻近—如果连接要素在目标要素的指定距离之内，将匹配处于该距离内的要素。距离将以测地线方法进行测量。在空间邻近距离参数中指定距离。该选项适用于 ArcGIS Enterprise 10.7 或更高版本。</para>
+		/// <para>包含—如果目标要素中包含连接要素中的要素，将匹配连接要素中被包含的要素。目标要素必须是面或折线。只有当目标要素也为面时连接要素才可为面。面可以包含任何要素类型。折线只能包含折线和点。点不能包含任何要素，甚至不能包含点。如果连接要素完全位于目标要素的边界上（没有任何部件完全位于里面或外面），则不会匹配要素。</para>
+		/// <para>位于—如果目标要素位于连接要素内，将匹配连接要素中包含目标要素的要素。它与包含关系相反。对于此选项，只有当连接要素也为面时目标要素才可为面。仅当点同样为目标要素时，连接要素才能为点。如果连接要素中的全部要素均位于目标要素的边界上，则不会匹配要素。</para>
+		/// <para>接触—如果连接要素中具有边界与目标要素相接的要素，将匹配这些要素。如果目标和连接要素为线或面，则连接要素的边界只可接触目标要素的边界，且连接要素的任何部分均不可跨越目标要素的边界。</para>
+		/// <para>交叉—如果连接要素中具有轮廓与目标要素交叉的要素，则将匹配这些要素。连接要素和目标要素必须是线或面。如果将面用于连接或目标要素，则会使用面的边界（线）。将匹配在某一点交叉的线，而不是共线的线。</para>
+		/// <para>重叠—如果连接要素与目标要素重叠，将匹配连接要素中的要素。</para>
 		/// <para><see cref="SpatialRelationshipEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -141,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Spatial Near Distance</para>
-		/// <para>The distance from a target feature within which join features will be considered for the spatial join. A search radius is only valid when the Spatial Relationship parameter value is Planar Near or Geodesic Near.</para>
+		/// <para>与目标要素的距离，在此距离内将有可能使用连接要素进行空间连接。仅当空间关系参数值为平面邻近或测地线邻近时，搜索半径才有效。</para>
 		/// <para><see cref="SpatialNearDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -151,22 +152,22 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Temporal Relationship</para>
-		/// <para>Specifies the time criteria that will be used to match features.</para>
-		/// <para>Meets—When a target time interval end is equal to the join time interval start, the target time meets the join time.</para>
-		/// <para>Met by—When a target time interval start is equal to the join time interval end, the target time is met by the join time.</para>
-		/// <para>Overlaps—When a target time interval starts and ends before the start and end of the join time interval, the target time overlaps the join time.</para>
-		/// <para>Overlapped by—When a target time interval starts and ends after the start and end time of the join time interval, the target time is overlapped by the join time.</para>
-		/// <para>During—When a target time occurs between the start and end of the join time interval, the target time is during the join time.</para>
-		/// <para>Contains—When a join feature time occurs between the start and end of the target time interval, the target time contains the join time.</para>
-		/// <para>Equals—Two times are considered equal if their instants or intervals are identical.</para>
-		/// <para>Finishes—When a target time ends at the same time as a join time, and the target time started after the join time, the target time finishes the join time.</para>
-		/// <para>Finished by—When a join feature time ends at the same time as a target time, and the join time started after the target time, the target time is finished by the join time.</para>
-		/// <para>Starts—When a target time starts at the same time as the join time interval and ends before the join time interval ends, the target time starts the join time.</para>
-		/// <para>Started by—When a target interval time starts at the same time as the join time and ends after the join time, the target time is started by the join time.</para>
-		/// <para>Intersects—When any part of a target time occurs at the same time as the join time, the target time intersects the join time.</para>
-		/// <para>Near—When a target time is within a specified range of time from the join time, the target time is near the join time.</para>
-		/// <para>Near before—When a target time is before the join time but within a specified range of time from the join time, the target time is near before the join time. This option is available with ArcGIS Enterprise 10.6 or later.</para>
-		/// <para>Near after—When a target time is after the join time but within a specified range of time from the join time, the target time is near after the join time. This option is available with ArcGIS Enterprise 10.6 or later.</para>
+		/// <para>指定将用于匹配要素的时间条件。</para>
+		/// <para>汇合—当目标时间间隔终点与连接时间间隔起点一致时，目标时间与连接时间汇合。</para>
+		/// <para>被汇合—当目标时间间隔起点与连接时间间隔终点一致时，目标时间被连接时间汇合。</para>
+		/// <para>重叠—当目标时间间隔分别在连接时间间隔的起点和终点前开始和结束时，目标时间与连接时间重叠。</para>
+		/// <para>被重叠—当目标时间间隔分别在连接时间间隔的起点和终点时间后开始和结束时，目标时间被连接时间重叠。</para>
+		/// <para>期间—当目标时间发生在连接时间间隔的起点和终点之间时，目标时间处于连接时间期间。</para>
+		/// <para>包含—当连接要素时间发生在目标时间间隔的起点和终点之间时，目标时间包含连接时间。</para>
+		/// <para>等于—如果两个时间的时刻或间隔完全一致，则这两个时间被视为完全相同。</para>
+		/// <para>结束—当目标时间与连接时间在同一时间结束，且目标时间在连接时间之后开始时，目标时间在连接时间之前结束。</para>
+		/// <para>之后结束—当连接要素时间与目标时间在同一时间结束，且连接时间在目标时间之后开始时，目标时间在连接时间之后结束。</para>
+		/// <para>开始—当目标时间与连接时间间隔在同一时间开始，且目标时间在连接时间间隔结束之前结束时，目标时间在连接时间之前开始。</para>
+		/// <para>之后开始—当目标间隔时间与连接时间在同一时间开始，且目标时间在连接时间之后结束时，目标时间在连接时间之后开始。</para>
+		/// <para>相交—当目标时间的任何一部分与连接时间在同一时间发生时，目标时间与连接时间相交。</para>
+		/// <para>邻近—当目标时间在连接时间的指定时间范围内时，目标时间邻近连接时间。</para>
+		/// <para>近前—当目标时间在连接时间之前且与其间隔在指定时间范围内时，目标时间将处于连接时间的近前位置。该选项适用于 ArcGIS Enterprise 10.6 或更高版本。</para>
+		/// <para>近后—当目标时间在连接时间之后且与其间隔在指定时间范围内时，目标时间将处于连接时间的近后位置。该选项适用于 ArcGIS Enterprise 10.6 或更高版本。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -175,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Temporal Near Distance</para>
-		/// <para>The distance in time from a target feature within which join features will be considered for the spatial join. A time is only valid when the Temporal Relationship parameter value is Near, Near Before, or Near After and both features are time enabled.</para>
+		/// <para>与目标要素的时间距离，其中将考虑使用连接要素来进行空间连接。时间仅在时态关系参数值为邻近、近前或近后且两个要素均已启用时间时才有效。</para>
 		/// <para><see cref="TemporalNearDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -185,9 +186,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Attribute Relationship</para>
-		/// <para>Joins features based on values in an attribute field. Specify the attribute field from the target layer that matches an attribute field from the join layer.</para>
-		/// <para>Target Field—An attribute field from the target layer containing values to match.</para>
-		/// <para>Join Field—An attribute field from the join layer containing values to match.</para>
+		/// <para>基于属性字段内值的连接要素。指定目标图层中与连接图层中的属性字段匹配的属性字段。</para>
+		/// <para>目标字段 - 包含待匹配值的目标图层中的属性字段。</para>
+		/// <para>连接字段 - 包含待匹配值的连接图层中的属性字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -196,7 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Summary Fields</para>
-		/// <para>The statistics that will be calculated on specified fields.</para>
+		/// <para>将根据指定字段进行计算的统计数据。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -205,8 +206,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Join Condition</para>
-		/// <para>Applies a condition to specified fields. Only features with fields that meet these conditions will be joined.</para>
-		/// <para>For example, you could apply a join condition to features in which the HealthSpending attribute in the join layer is more than 20 percent of the Income attribute in the target layer. In 10.5 and 10.5.1, the join condition to use to apply this expression is join[&quot;HealthSpending&quot;] &gt; target[&quot;Income&quot;] * .2. In 10.6 and later, use an Arcade expression such as $join[&quot;HealthSpending&quot;] &gt; $target[&quot;Income&quot;] * .2.</para>
+		/// <para>将条件应用到指定字段。将仅连接带有符合这些条件的字段的要素。</para>
+		/// <para>例如，如果连接图层中的 HealthSpending 属性比目标图层中的 Income 属性大 20%，则可将连接条件应用到要素。在 10.5 和 10.5.1 版本中，用于应用此表达式的连接条件为 join[&quot;HealthSpending&quot;] &gt; target[&quot;Income&quot;] * .2。在 10.6 及更高版本中，请使用 Arcade 表达式，例如 $join[&quot;HealthSpending&quot;] &gt; $target[&quot;Income&quot;] * .2。</para>
 		/// <para>&lt;para/&gt;</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -223,9 +224,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Data Store</para>
-		/// <para>Specifies the ArcGIS Data Store where the output will be saved. The default is Spatiotemporal big data store. All results stored in a spatiotemporal big data store will be stored in WGS84. Results stored in a relational data store will maintain their coordinate system.</para>
-		/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
-		/// <para>Relational data store—Output will be stored in a relational data store.</para>
+		/// <para>指定将用于保存输出的 ArcGIS Data Store。默认设置为时空大数据存储。在时空大数据存储中存储的所有结果都将存储在 WGS84 中。在关系数据存储中存储的结果都将保持各自的坐标系。</para>
+		/// <para>时空大数据存储—输出将存储在时空大数据存储中。这是默认设置。</para>
+		/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 		/// <para><see cref="DataStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -236,9 +237,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Keep All Target Features</para>
-		/// <para>Specifies whether all target features will be maintained in the output feature class (known as a left outer join) or only those that have the specified relationships with the join features (inner join).</para>
-		/// <para>Checked—All target features will be maintained in the output (outer join).</para>
-		/// <para>Unchecked—Only those target features that have the specified relationships will be maintained in the output feature class (inner join). Any point features not within the polygon features will be excluded from the output. This is the default.</para>
+		/// <para>指定是在输出要素类中保留所有目标要素（称为左外连接），还是仅保留与连接要素具有指定关系的目标要素（内部连接）。</para>
+		/// <para>选中 - 将在输出中保留所有目标要素（外部连接）。</para>
+		/// <para>未选中 - 仅在输出要素类中保留具有指定关系的目标要素（内部连接）。将从输出中排除不在面要素内部的所有点要素。这是默认设置。</para>
 		/// <para><see cref="KeepAllTargetFeaturesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -263,17 +264,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum JoinOperationEnum 
 		{
 			/// <summary>
-			/// <para>Join one to one—The attributes from the multiple join features will be aggregated. For example, if a point target feature is found in two separate polygon join features, the attributes from the two polygons will be aggregated before being transferred to the output point feature class. If one polygon has an attribute value of 3 and the other has a value of 7, and the summary statistic sum is specified for that field, the aggregated value in the output feature class will be 10. This is the default, and only the count statistic is returned.</para>
+			/// <para>一对一连接—系统将聚合来自多个连接要素的属性。例如，如果在两个独立的面连接要素中找到了同一个点目标要素，将对这两个面的属性进行聚合，然后将其传递到输出点要素类。如果一个面要素的属性值为 3，另一个面要素的属性值为 7，且为该字段指定了汇总统计数据总和，则输出要素类中的聚合值将为 10。此为默认设置，且仅会返回计数统计数据。</para>
 			/// </summary>
 			[GPValue("JOIN_ONE_TO_ONE")]
-			[Description("Join one to one")]
+			[Description("一对一连接")]
 			Join_one_to_one,
 
 			/// <summary>
-			/// <para>Join one to many—The output feature class will contain multiple copies (records) of the target feature. For example, if a single-point target feature is found in two separate polygon join features, the output feature class will contain two copies of the target feature: one record with the attributes of one polygon and another record with the attributes of the other polygon. There are no summary statistics available with this method.</para>
+			/// <para>一对多连接—输出要素类将包含目标要素的多个副本（记录）。例如，如果在两个独立的面连接要素中找到了同一个点目标要素，则输出要素类将包含目标要素的两个副本：分别包含两个面的属性记录。使用此方法时，没有可用的汇总统计数据。</para>
 			/// </summary>
 			[GPValue("JOIN_ONE_TO_MANY")]
-			[Description("Join one to many")]
+			[Description("一对多连接")]
 			Join_one_to_many,
 
 		}
@@ -284,66 +285,66 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum SpatialRelationshipEnum 
 		{
 			/// <summary>
-			/// <para>Equals— The features in the join features will be matched if they are the same geometry as a target feature.</para>
+			/// <para>等于— 如果连接要素与目标要素的几何类型相同，则将匹配连接要素中的要素。</para>
 			/// </summary>
 			[GPValue("EQUALS")]
-			[Description("Equals")]
+			[Description("等于")]
 			Equals,
 
 			/// <summary>
-			/// <para>Intersects—The features in the join features will be matched if they intersect a target feature. This is the default.</para>
+			/// <para>相交—如果连接要素与目标要素相交，将匹配连接要素中相交的要素。这是默认设置。</para>
 			/// </summary>
 			[GPValue("INTERSECTS")]
-			[Description("Intersects")]
+			[Description("相交")]
 			Intersects,
 
 			/// <summary>
-			/// <para>Contains—The features in the join features will be matched if a target feature contains them. The target features must be polygons or polylines. The join features can only be polygons when the target features are also polygons. A polygon can contain any feature type. A polyline can contain only polylines and points. A point cannot contain any feature, not even a point. If the join feature is entirely on the boundary of the target feature (no part is properly inside or outside), the feature will not be matched.</para>
+			/// <para>包含—如果目标要素中包含连接要素中的要素，将匹配连接要素中被包含的要素。目标要素必须是面或折线。只有当目标要素也为面时连接要素才可为面。面可以包含任何要素类型。折线只能包含折线和点。点不能包含任何要素，甚至不能包含点。如果连接要素完全位于目标要素的边界上（没有任何部件完全位于里面或外面），则不会匹配要素。</para>
 			/// </summary>
 			[GPValue("CONTAINS")]
-			[Description("Contains")]
+			[Description("包含")]
 			Contains,
 
 			/// <summary>
-			/// <para>Within—The features in the join features will be matched if a target feature is within them. It is the opposite of the contains relationship. For this option, the target features can only be polygons when the join features are also polygons. A point can be a join feature only if a point is also a target feature. If the entirety of the feature in the join features is on the boundary of the target feature, the feature will not be matched.</para>
+			/// <para>位于—如果目标要素位于连接要素内，将匹配连接要素中包含目标要素的要素。它与包含关系相反。对于此选项，只有当连接要素也为面时目标要素才可为面。仅当点同样为目标要素时，连接要素才能为点。如果连接要素中的全部要素均位于目标要素的边界上，则不会匹配要素。</para>
 			/// </summary>
 			[GPValue("WITHIN")]
-			[Description("Within")]
+			[Description("位于")]
 			Within,
 
 			/// <summary>
-			/// <para>Crosses—The features in the join features will be matched if a target feature is crossed by their outline. The join and target features must be lines or polygons. If polygons are used for the join or target features, the polygon&apos;s boundary (line) will be used. Lines that cross at a point will be matched, but lines that share a line segment will not.</para>
+			/// <para>交叉—如果连接要素中具有轮廓与目标要素交叉的要素，则将匹配这些要素。连接要素和目标要素必须是线或面。如果将面用于连接或目标要素，则会使用面的边界（线）。将匹配在某一点交叉的线，而不是共线的线。</para>
 			/// </summary>
 			[GPValue("CROSSES")]
-			[Description("Crosses")]
+			[Description("交叉")]
 			Crosses,
 
 			/// <summary>
-			/// <para>Touches—The features in the join features will be matched if they have a boundary that touches a target feature. When the target and join features are lines or polygons, the boundary of the join feature can only touch the boundary of the target feature, and no part of the join feature can cross the boundary of the target feature.</para>
+			/// <para>接触—如果连接要素中具有边界与目标要素相接的要素，将匹配这些要素。如果目标和连接要素为线或面，则连接要素的边界只可接触目标要素的边界，且连接要素的任何部分均不可跨越目标要素的边界。</para>
 			/// </summary>
 			[GPValue("TOUCHES")]
-			[Description("Touches")]
+			[Description("接触")]
 			Touches,
 
 			/// <summary>
-			/// <para>Overlaps—The features in the join features will be matched if they overlap a target feature.</para>
+			/// <para>重叠—如果连接要素与目标要素重叠，将匹配连接要素中的要素。</para>
 			/// </summary>
 			[GPValue("OVERLAPS")]
-			[Description("Overlaps")]
+			[Description("重叠")]
 			Overlaps,
 
 			/// <summary>
-			/// <para>Planar Near—The features in the join features will be matched if they are within a specified distance of a target feature. The distance is measured using planar distance. Specify a distance in the Spatial Near Distance parameter.</para>
+			/// <para>平面邻近—如果连接要素在目标要素的指定距离之内，将匹配处于该距离内的要素。使用平面距离测量距离。在空间邻近距离参数中指定距离。</para>
 			/// </summary>
 			[GPValue("NEAR")]
-			[Description("Planar Near")]
+			[Description("平面邻近")]
 			Planar_Near,
 
 			/// <summary>
-			/// <para>Geodesic Near—The features in the join features will be matched if they are within a specified distance of a target feature. The distance is measured geodesically. Specify a distance in the Spatial Near Distance parameter. This option is available with ArcGIS Enterprise 10.7 or later.</para>
+			/// <para>测地线邻近—如果连接要素在目标要素的指定距离之内，将匹配处于该距离内的要素。距离将以测地线方法进行测量。在空间邻近距离参数中指定距离。该选项适用于 ArcGIS Enterprise 10.7 或更高版本。</para>
 			/// </summary>
 			[GPValue("NEAR_GEODESIC")]
-			[Description("Geodesic Near")]
+			[Description("测地线邻近")]
 			Geodesic_Near,
 
 		}
@@ -466,17 +467,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DataStoreEnum 
 		{
 			/// <summary>
-			/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
+			/// <para>时空大数据存储—输出将存储在时空大数据存储中。这是默认设置。</para>
 			/// </summary>
 			[GPValue("SPATIOTEMPORAL_DATA_STORE")]
-			[Description("Spatiotemporal big data store")]
+			[Description("时空大数据存储")]
 			Spatiotemporal_big_data_store,
 
 			/// <summary>
-			/// <para>Relational data store—Output will be stored in a relational data store.</para>
+			/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 			/// </summary>
 			[GPValue("RELATIONAL_DATA_STORE")]
-			[Description("Relational data store")]
+			[Description("关系数据存储")]
 			Relational_data_store,
 
 		}
@@ -487,14 +488,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum KeepAllTargetFeaturesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—All target features will be maintained in the output (outer join).</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("KEEP_ALL")]
 			KEEP_ALL,
 
 			/// <summary>
-			/// <para>Unchecked—Only those target features that have the specified relationships will be maintained in the output feature class (inner join). Any point features not within the polygon features will be excluded from the output. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_COMMON")]

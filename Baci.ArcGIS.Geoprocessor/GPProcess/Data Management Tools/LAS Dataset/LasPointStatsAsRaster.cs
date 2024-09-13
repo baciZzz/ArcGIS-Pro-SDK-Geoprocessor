@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>LAS Point Statistics As Raster</para>
-	/// <para>Creates a raster whose cell values reflect statistical information about measurements from LAS files referenced by a LAS dataset.</para>
+	/// <para>用作栅格的 LAS 点统计数据</para>
+	/// <para>创建栅格，栅格的像元值反映的是 LAS 数据集所引用 LAS 文件的测量值的相关统计信息。</para>
 	/// </summary>
 	public class LasPointStatsAsRaster : AbstractGPProcess
 	{
@@ -20,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset to process.</para>
+		/// <para>待处理的 LAS 数据集。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster</para>
-		/// <para>The location and name of the output raster. When storing a raster dataset in a geodatabase or in a folder such as an Esri Grid, do not add a file extension to the name of the raster dataset. A file extension can be provided to define the raster&apos;s format when storing it in a folder, such as .tif to generate a GeoTIFF or .img to generate an ERDAS IMAGINE format file.</para>
-		/// <para>If the raster is stored as a TIFF file or in a geodatabase, its raster compression type and quality can be specified using geoprocessing environment settings.</para>
+		/// <para>输出栅格的位置和名称。 将栅格数据集存储到地理数据库或文件夹（例如 Esri GRID）时，请勿向栅格数据集的名称添加文件扩展名。 在将栅格存储到文件夹中时，可提供文件扩展名以定义栅格的格式，例如 .tif（生成 GeoTIFF）或 .img（生成 ERDAS IMAGINE 格式文件）。</para>
+		/// <para>如果栅格存储为 TIFF 文件或存储在地理数据库中，可使用地理处理环境设置指定其栅格压缩类型和质量。</para>
 		/// </param>
 		public LasPointStatsAsRaster(object InLasDataset, object OutRaster)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : LAS Point Statistics As Raster</para>
+		/// <para>Tool Display Name : 用作栅格的 LAS 点统计数据</para>
 		/// </summary>
-		public override string DisplayName() => "LAS Point Statistics As Raster";
+		public override string DisplayName() => "用作栅格的 LAS 点统计数据";
 
 		/// <summary>
 		/// <para>Tool Name : LasPointStatsAsRaster</para>
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset to process.</para>
+		/// <para>待处理的 LAS 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -78,8 +79,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Raster</para>
-		/// <para>The location and name of the output raster. When storing a raster dataset in a geodatabase or in a folder such as an Esri Grid, do not add a file extension to the name of the raster dataset. A file extension can be provided to define the raster&apos;s format when storing it in a folder, such as .tif to generate a GeoTIFF or .img to generate an ERDAS IMAGINE format file.</para>
-		/// <para>If the raster is stored as a TIFF file or in a geodatabase, its raster compression type and quality can be specified using geoprocessing environment settings.</para>
+		/// <para>输出栅格的位置和名称。 将栅格数据集存储到地理数据库或文件夹（例如 Esri GRID）时，请勿向栅格数据集的名称添加文件扩展名。 在将栅格存储到文件夹中时，可提供文件扩展名以定义栅格的格式，例如 .tif（生成 GeoTIFF）或 .img（生成 ERDAS IMAGINE 格式文件）。</para>
+		/// <para>如果栅格存储为 TIFF 文件或存储在地理数据库中，可使用地理处理环境设置指定其栅格压缩类型和质量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -87,13 +88,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>The type of statistics collected about the LAS points in each cell of the output raster.</para>
-		/// <para>Pulse Count—The number of last return points.</para>
-		/// <para>Point Count—The number of points from all returns.</para>
-		/// <para>Most Frequent Last Return—The most frequent last return value.</para>
-		/// <para>Most Frequent Class Code—The most frequent class code.</para>
-		/// <para>Range of Intensity Values—The range of intensity values.</para>
-		/// <para>Range of Elevation Values—The range of elevation values.</para>
+		/// <para>对输出栅格每个像元内的 LAS 点所采集的统计数据的类型。</para>
+		/// <para>脉冲计数—最后回波点的数量。</para>
+		/// <para>点计数—所有回波中的点的数量。</para>
+		/// <para>最常见的最后回波—最常见的最后回波值。</para>
+		/// <para>最常见类代码—最常见的类代码。</para>
+		/// <para>强度值范围—强度值范围。</para>
+		/// <para>高程值范围—高程值范围。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -103,9 +104,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Sampling Type</para>
-		/// <para>Specifies the method that will be used for interpreting the Sampling Value parameter value to define the resolution of the output raster.</para>
-		/// <para>Observations—The number of cells that divide the lengthiest side of the LAS dataset extent will be used.</para>
-		/// <para>Cell Size—The cell size of the output raster will be used. This is the default.</para>
+		/// <para>指定将用于解译采样值参数值以定义输出栅格分辨率的方法。</para>
+		/// <para>观测—将使用分割 LAS 数据集范围的最长边的像元数。</para>
+		/// <para>像元大小—将使用输出栅格的像元大小。 这是默认设置。</para>
 		/// <para><see cref="SamplingTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -115,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Sampling Value</para>
-		/// <para>The value used in conjunction with the Sampling Type parameter to define the resolution of the output raster.</para>
+		/// <para>与采样类型结合使用以定义输出栅格分辨率的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -138,45 +139,45 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Pulse Count—The number of last return points.</para>
+			/// <para>脉冲计数—最后回波点的数量。</para>
 			/// </summary>
 			[GPValue("PULSE_COUNT")]
-			[Description("Pulse Count")]
+			[Description("脉冲计数")]
 			Pulse_Count,
 
 			/// <summary>
-			/// <para>Point Count—The number of points from all returns.</para>
+			/// <para>点计数—所有回波中的点的数量。</para>
 			/// </summary>
 			[GPValue("POINT_COUNT")]
-			[Description("Point Count")]
+			[Description("点计数")]
 			Point_Count,
 
 			/// <summary>
-			/// <para>Most Frequent Last Return—The most frequent last return value.</para>
+			/// <para>最常见的最后回波—最常见的最后回波值。</para>
 			/// </summary>
 			[GPValue("PREDOMINANT_LAST_RETURN")]
-			[Description("Most Frequent Last Return")]
+			[Description("最常见的最后回波")]
 			Most_Frequent_Last_Return,
 
 			/// <summary>
-			/// <para>Most Frequent Class Code—The most frequent class code.</para>
+			/// <para>最常见类代码—最常见的类代码。</para>
 			/// </summary>
 			[GPValue("PREDOMINANT_CLASS")]
-			[Description("Most Frequent Class Code")]
+			[Description("最常见类代码")]
 			Most_Frequent_Class_Code,
 
 			/// <summary>
-			/// <para>Range of Intensity Values—The range of intensity values.</para>
+			/// <para>强度值范围—强度值范围。</para>
 			/// </summary>
 			[GPValue("INTENSITY_RANGE")]
-			[Description("Range of Intensity Values")]
+			[Description("强度值范围")]
 			Range_of_Intensity_Values,
 
 			/// <summary>
-			/// <para>Range of Elevation Values—The range of elevation values.</para>
+			/// <para>高程值范围—高程值范围。</para>
 			/// </summary>
 			[GPValue("Z_RANGE")]
-			[Description("Range of Elevation Values")]
+			[Description("高程值范围")]
 			Range_of_Elevation_Values,
 
 		}
@@ -187,17 +188,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SamplingTypeEnum 
 		{
 			/// <summary>
-			/// <para>Observations—The number of cells that divide the lengthiest side of the LAS dataset extent will be used.</para>
+			/// <para>观测—将使用分割 LAS 数据集范围的最长边的像元数。</para>
 			/// </summary>
 			[GPValue("OBSERVATIONS")]
-			[Description("Observations")]
+			[Description("观测")]
 			Observations,
 
 			/// <summary>
-			/// <para>Cell Size—The cell size of the output raster will be used. This is the default.</para>
+			/// <para>像元大小—将使用输出栅格的像元大小。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("CELLSIZE")]
-			[Description("Cell Size")]
+			[Description("像元大小")]
 			Cell_Size,
 
 		}

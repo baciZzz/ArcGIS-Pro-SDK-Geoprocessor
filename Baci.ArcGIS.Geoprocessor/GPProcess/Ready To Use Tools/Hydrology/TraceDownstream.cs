@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 {
 	/// <summary>
 	/// <para>Trace Downstream</para>
-	/// <para>Determines the path water will take from a particular location to its furthest downhill path.</para>
+	/// <para>追踪下游</para>
+	/// <para>确定水从某一特定位置流入最远处下坡位置所流经的路径。</para>
 	/// </summary>
 	public class TraceDownstream : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		/// <param name="Inputpoints">
 		/// <para>Input Points</para>
-		/// <para>The point features used for calculating downstream trace.</para>
+		/// <para>用于计算下游追踪的点要素。</para>
 		/// </param>
 		public TraceDownstream(object Inputpoints)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Trace Downstream</para>
+		/// <para>Tool Display Name : 追踪下游</para>
 		/// </summary>
-		public override string DisplayName() => "Trace Downstream";
+		public override string DisplayName() => "追踪下游";
 
 		/// <summary>
 		/// <para>Tool Name : TraceDownstream</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Input Points</para>
-		/// <para>The point features used for calculating downstream trace.</para>
+		/// <para>用于计算下游追踪的点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -72,8 +73,8 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Point ID Field</para>
-		/// <para>An integer or string field used to identify the input points.</para>
-		/// <para>The default is to use the unique ID field.</para>
+		/// <para>用于标识输入点的整数或字符串字段。</para>
+		/// <para>默认使用唯一 ID 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -81,12 +82,12 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Data Source Resolution</para>
-		/// <para>Specifies the source data resolution that will be used in the analysis. The values are an approximation of the spatial resolution of the digital elevation model used to build the foundation hydrologic database. Since many elevation sources are distributed in units of arc seconds, an approximation is provided in meters for easier understanding.</para>
-		/// <para>Blank—The hydrologic source, built from a 3-arc second data source, which is approximately 90-meter resolution elevation data, will be used. This is the default.</para>
-		/// <para>Finest—The finest resolution available at each location from all possible data sources will be used.</para>
-		/// <para>10 meters—The hydrologic source, built from a 1/3 arc second data source, which is approximately 10-meter resolution elevation data, will be used.</para>
-		/// <para>30 meters—The hydrologic source, built from a 1-arc second data source, which is approximately 30-meter resolution elevation data, will be used.</para>
-		/// <para>90 meters—The hydrologic source, built from a 3-arc second data source, which is approximately 90-meter resolution elevation data, will be used.</para>
+		/// <para>指定将用于分析的源数据分辨率。 这些值是用于构建基础水文数据库的数字高程模型的空间分辨率近似值。 由于许多高程源以弧秒为单位进行分布，为了更方便理解，我们提供了以米为单位的近似值。</para>
+		/// <para>空—将使用基于 3 弧秒的数据源（分辨率大约为 90 米的高程数据）构建的水文源。 这是默认设置。</para>
+		/// <para>最精细—将使用所有可能数据源的每个位置的最佳可用分辨率。</para>
+		/// <para>10 米—将使用基于 1/3 弧秒的数据源（分辨率大约为 10 米的高程数据）构建的水文源。</para>
+		/// <para>30 米—将使用基于 1 弧秒的数据源（分辨率大约为 30 米的高程数据）构建的水文源。</para>
+		/// <para>90 米—将使用基于 3 弧秒的数据源（分辨率大约为 90 米的高程数据）构建的水文源。</para>
 		/// <para><see cref="DatasourceresolutionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -96,9 +97,9 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Generalize</para>
-		/// <para>Specifies whether the output watersheds will be smoothed into simpler shapes or conform to the cell edges of the original DEM.</para>
-		/// <para>Unchecked—The edges of the polygons will conform to the cell edges of the original DEM. This is the default.</para>
-		/// <para>Checked—The polygon boundaries will be smoothed into simpler shapes.</para>
+		/// <para>指定是将输出流域平滑处理为更简单的形状还是将其与原始 DEM 的像元边保持一致。</para>
+		/// <para>未选中 - 面的边缘将与原始 DEM 的像元边缘保持一致。 这是默认设置。</para>
+		/// <para>选中 - 面边界将被平滑处理为简单的形状。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
@@ -126,31 +127,31 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 			_,
 
 			/// <summary>
-			/// <para>Finest—The finest resolution available at each location from all possible data sources will be used.</para>
+			/// <para>最精细—将使用所有可能数据源的每个位置的最佳可用分辨率。</para>
 			/// </summary>
 			[GPValue("FINEST")]
-			[Description("Finest")]
+			[Description("最精细")]
 			Finest,
 
 			/// <summary>
-			/// <para>10 meters—The hydrologic source, built from a 1/3 arc second data source, which is approximately 10-meter resolution elevation data, will be used.</para>
+			/// <para>10 米—将使用基于 1/3 弧秒的数据源（分辨率大约为 10 米的高程数据）构建的水文源。</para>
 			/// </summary>
 			[GPValue("10m")]
-			[Description("10 meters")]
+			[Description("10 米")]
 			_10_meters,
 
 			/// <summary>
-			/// <para>30 meters—The hydrologic source, built from a 1-arc second data source, which is approximately 30-meter resolution elevation data, will be used.</para>
+			/// <para>30 米—将使用基于 1 弧秒的数据源（分辨率大约为 30 米的高程数据）构建的水文源。</para>
 			/// </summary>
 			[GPValue("30m")]
-			[Description("30 meters")]
+			[Description("30 米")]
 			_30_meters,
 
 			/// <summary>
-			/// <para>90 meters—The hydrologic source, built from a 3-arc second data source, which is approximately 90-meter resolution elevation data, will be used.</para>
+			/// <para>90 米—将使用基于 3 弧秒的数据源（分辨率大约为 90 米的高程数据）构建的水文源。</para>
 			/// </summary>
 			[GPValue("90m")]
-			[Description("90 meters")]
+			[Description("90 米")]
 			_90_meters,
 
 		}

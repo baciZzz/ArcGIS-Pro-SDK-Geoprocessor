@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Generate Airspace Lines</para>
+	/// <para>Generate Airspace Lines</para>
 	/// <para>Adds, modifies, or deletes polyline features from coincident edges of airspace polygons.</para>
 	/// </summary>
 	public class GenerateAirspaceLines : AbstractGPProcess

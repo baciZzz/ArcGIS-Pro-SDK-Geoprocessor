@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Diagram Feature Capability By Attribute Rule</para>
+	/// <para>Add Diagram Feature Capability By Attribute Rule</para>
 	/// <para>Add a diagram feature capability by attribute rule to a diagram template</para>
 	/// </summary>
 	[Obsolete()]

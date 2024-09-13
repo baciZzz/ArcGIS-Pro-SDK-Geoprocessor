@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Append Routes</para>
+	/// <para>Append Routes</para>
 	/// <para>Appends routes from an input polyline into an LRS Network.</para>
 	/// </summary>
 	public class AppendRoutes : AbstractGPProcess

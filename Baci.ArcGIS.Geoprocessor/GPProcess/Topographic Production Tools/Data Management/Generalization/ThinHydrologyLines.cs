@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Thin Hydrology Lines</para>
+	/// <para>Thin Hydrology Lines</para>
 	/// <para>Generates a simplified hydrographic line network for display at a smaller scale. The resulting hydrographic network maintains the main arteries while thinning less significant features based on hierarchy, length, and spacing between features.</para>
 	/// </summary>
 	public class ThinHydrologyLines : AbstractGPProcess

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Update Schema</para>
+	/// <para>Update Schema</para>
 	/// <para>Updates the schema of a dataset based upon a Xml set of instructions</para>
 	/// </summary>
 	[Obsolete()]

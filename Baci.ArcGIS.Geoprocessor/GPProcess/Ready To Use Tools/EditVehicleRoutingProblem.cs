@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 {
 	/// <summary>
 	/// <para>ServerTool 1</para>
+	/// <para>ServerTool 1</para>
 	/// <para></para>
 	/// </summary>
 	public class EditVehicleRoutingProblem : AbstractGPProcess

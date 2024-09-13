@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Strip Map Index Features</para>
-	/// <para>Creates a series of rectangular polygons, or index features, that follow a single linear feature or a group of linear features. These index features can be used with spatial map series to define pages in a strip map or a set of maps that follow a linear feature. The resulting index features contain attributes that can be used to rotate and orient the map on the page and determine which index features, or pages, are next to the current page (to the left and right or to the top and bottom).</para>
+	/// <para>带状地图索引要素</para>
+	/// <para>该工具可根据单个线状要素或一组线状要素创建一系列矩形面或索引要素。这些索引要素可与空间地图系列结合使用，以便根据线状要素定义一幅带状地图或一组地图中的页面。生成的索引要素中包含可在页面上旋转及定向地图的属性，还包含决定哪些索引要素或页面与当前页面相邻（左右侧或上下侧）的属性。</para>
 	/// </summary>
 	public class StripMapIndexFeatures : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Line Features</para>
-		/// <para>The input polyline features defining the path of the strip map index features.</para>
+		/// <para>定义带状地图索引要素路径的输入折线要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class of polygon index features.</para>
+		/// <para>面索引要素的输出要素类。</para>
 		/// </param>
 		public StripMapIndexFeatures(object InFeatures, object OutFeatureClass)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Strip Map Index Features</para>
+		/// <para>Tool Display Name : 带状地图索引要素</para>
 		/// </summary>
-		public override string DisplayName() => "Strip Map Index Features";
+		public override string DisplayName() => "带状地图索引要素";
 
 		/// <summary>
 		/// <para>Tool Name : StripMapIndexFeatures</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Line Features</para>
-		/// <para>The input polyline features defining the path of the strip map index features.</para>
+		/// <para>定义带状地图索引要素路径的输入折线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class of polygon index features.</para>
+		/// <para>面索引要素的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -88,9 +89,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Use Page Unit and Scale</para>
-		/// <para>Specifies whether index feature size input is in page units.</para>
-		/// <para>Checked—Index polygon height and width are calculated in page units.</para>
-		/// <para>Unchecked—Index polygon height and width are calculated in map units. This is the default.</para>
+		/// <para>指定索引要素的大小输入是否使用页面单位。</para>
+		/// <para>已选中 - 索引面的高度和宽度使用页面单位来计算。</para>
+		/// <para>未选中 - 索引面的高度和宽度使用地图单位来计算。这是默认设置。</para>
 		/// <para><see cref="UsePageUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Map Scale</para>
-		/// <para>Map scale must be specified if index feature lengths (along the line and perpendicular to the line) are to be calculated in page units. If you're using ArcGIS Pro, the default value will be the scale of the active data frame; otherwise, the default will be 1.</para>
+		/// <para>如果要以页面单位计算索引要素的长度（沿线长度和垂直于线的长度），则必须指定地图比例。如果正在使用 ArcGIS Pro，则默认值将为活动数据框的比例；否则，默认值将为 1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Length Along the Line</para>
-		/// <para>The length of the polygon index feature along the input line feature specified in either map or page units. The default value is determined by the spatial reference of the input line feature or features. This value will be 1/100 of the input feature class extent along the x axis.</para>
+		/// <para>沿以地图单位或页面单位指定的输入线要素方向的面索引要素长度。默认值由输入的一个或多个线要素的空间参考决定。该值为 x 轴方向上输入要素类长度的 1/100。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -117,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Length Perpendicular to the Line</para>
-		/// <para>The length of the polygon index feature perpendicular to the input line feature specified in either map or page units. The default value is determined by the spatial reference of the input line feature or features. This value will be one-half the number used for the length along the line.</para>
+		/// <para>垂直于以地图单位或页面单位指定的输入线要素的面索引要素长度。默认值由输入的一个或多个线要素的空间参考决定。该值为沿线方向要素长度的一半。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -125,9 +126,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Page Orientation</para>
-		/// <para>Specifies the orientation of the input line features on the layout page.</para>
-		/// <para>Vertical—The direction of the strip map series on the page is top to bottom.</para>
-		/// <para>Horizontal—The direction of the strip map series on the page is left to right. This is the default.</para>
+		/// <para>指定布局页面上输入线要素的方向。</para>
+		/// <para>竖直—页面上带状地图系列的方向为从上至下。</para>
+		/// <para>水平—页面上带状地图系列的方向为从左至右。这是默认设置。</para>
 		/// <para><see cref="PageOrientationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -137,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Percentage of Overlap</para>
-		/// <para>The approximate percentage of geographic overlap between an individual map page and its adjoining pages in the series. The default is 10.</para>
+		/// <para>系列中单个地图页面与其相邻页面之间地理叠加的近似百分比。默认值为 10。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -148,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Starting Page Number</para>
-		/// <para>The page number of the starting page. Each grid index feature is assigned a sequential page number beginning with the specified starting page number. The default is 1.</para>
+		/// <para>起始页的页码。各格网索引要素将分配到连续的页码，起始页码需要指定。默认值为 1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -158,11 +159,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Strip Map Direction</para>
-		/// <para>Specifies the initial direction of the strip maps.</para>
-		/// <para>West to East and North to South—If the line&apos;s directional trend is West to East, the starting point will be at the westernmost end of the line, or if the line&apos;s direction trend is North to South, the starting point will be at the northernmost end of the line. This is the default.</para>
-		/// <para>West to East and South to North—If the line&apos;s directional trend is West to East, the starting point will be at the westernmost end of the line, or if the line&apos;s direction trend is South to North, the starting point will be at the southernmost end of the line.</para>
-		/// <para>East to West and North to South—If the line&apos;s directional trend is East to West, the starting point will be at the easternmost end of the line, or if the line&apos;s direction trend is North to South, the starting point will be at the northernmost end of the line.</para>
-		/// <para>East to West and South to North—If the line&apos;s directional trend is East to West, the starting point will be at the easternmost end of the line, or if the line&apos;s direction trend is South to North, the starting point will be at the southernmost end of the line.</para>
+		/// <para>指定带状地图的初始方向。</para>
+		/// <para>自西向东和自北向南—如果线的方向趋势是自西向东，则起点将在线的最西端；如果线的方向趋势是自北向南，则起点将在线的最北端。这是默认设置。</para>
+		/// <para>自西向东和自南向北—如果线的方向趋势是自西向东，则起点将在线的最西端；如果线的方向趋势是自南向北，则起点将在线的最南端。</para>
+		/// <para>自东向西和自北向南—如果线的方向趋势是自东向西，则起点将在线的最东端；如果线的方向趋势是自北向南，则起点将在线的最北端。</para>
+		/// <para>自东向西和自南向北—如果线的方向趋势是自东向西，则起点将在线的最东端；如果线的方向趋势是自南向北，则起点将在线的最南端。</para>
 		/// <para><see cref="DirectionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -178,14 +179,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum UsePageUnitEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Index polygon height and width are calculated in page units.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("USEPAGEUNIT")]
 			USEPAGEUNIT,
 
 			/// <summary>
-			/// <para>Unchecked—Index polygon height and width are calculated in map units. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_USEPAGEUNIT")]
@@ -199,17 +200,17 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum PageOrientationEnum 
 		{
 			/// <summary>
-			/// <para>Horizontal—The direction of the strip map series on the page is left to right. This is the default.</para>
+			/// <para>水平—页面上带状地图系列的方向为从左至右。这是默认设置。</para>
 			/// </summary>
 			[GPValue("HORIZONTAL")]
-			[Description("Horizontal")]
+			[Description("水平")]
 			Horizontal,
 
 			/// <summary>
-			/// <para>Vertical—The direction of the strip map series on the page is top to bottom.</para>
+			/// <para>竖直—页面上带状地图系列的方向为从上至下。</para>
 			/// </summary>
 			[GPValue("VERTICAL")]
-			[Description("Vertical")]
+			[Description("竖直")]
 			Vertical,
 
 		}
@@ -220,31 +221,31 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum DirectionTypeEnum 
 		{
 			/// <summary>
-			/// <para>West to East and North to South—If the line&apos;s directional trend is West to East, the starting point will be at the westernmost end of the line, or if the line&apos;s direction trend is North to South, the starting point will be at the northernmost end of the line. This is the default.</para>
+			/// <para>自西向东和自北向南—如果线的方向趋势是自西向东，则起点将在线的最西端；如果线的方向趋势是自北向南，则起点将在线的最北端。这是默认设置。</para>
 			/// </summary>
 			[GPValue("WE_NS")]
-			[Description("West to East and North to South")]
+			[Description("自西向东和自北向南")]
 			West_to_East_and_North_to_South,
 
 			/// <summary>
-			/// <para>West to East and South to North—If the line&apos;s directional trend is West to East, the starting point will be at the westernmost end of the line, or if the line&apos;s direction trend is South to North, the starting point will be at the southernmost end of the line.</para>
+			/// <para>自西向东和自南向北—如果线的方向趋势是自西向东，则起点将在线的最西端；如果线的方向趋势是自南向北，则起点将在线的最南端。</para>
 			/// </summary>
 			[GPValue("WE_SN")]
-			[Description("West to East and South to North")]
+			[Description("自西向东和自南向北")]
 			West_to_East_and_South_to_North,
 
 			/// <summary>
-			/// <para>East to West and North to South—If the line&apos;s directional trend is East to West, the starting point will be at the easternmost end of the line, or if the line&apos;s direction trend is North to South, the starting point will be at the northernmost end of the line.</para>
+			/// <para>自东向西和自北向南—如果线的方向趋势是自东向西，则起点将在线的最东端；如果线的方向趋势是自北向南，则起点将在线的最北端。</para>
 			/// </summary>
 			[GPValue("EW_NS")]
-			[Description("East to West and North to South")]
+			[Description("自东向西和自北向南")]
 			East_to_West_and_North_to_South,
 
 			/// <summary>
-			/// <para>East to West and South to North—If the line&apos;s directional trend is East to West, the starting point will be at the easternmost end of the line, or if the line&apos;s direction trend is South to North, the starting point will be at the southernmost end of the line.</para>
+			/// <para>自东向西和自南向北—如果线的方向趋势是自东向西，则起点将在线的最东端；如果线的方向趋势是自南向北，则起点将在线的最南端。</para>
 			/// </summary>
 			[GPValue("EW_SN")]
-			[Description("East to West and South to North")]
+			[Description("自东向西和自南向北")]
 			East_to_West_and_South_to_North,
 
 		}

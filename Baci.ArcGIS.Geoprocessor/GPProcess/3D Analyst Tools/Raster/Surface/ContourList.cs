@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Contour List</para>
-	/// <para>Creates a feature class of selected contour values from a raster surface.</para>
+	/// <para>等值线列表</para>
+	/// <para>根据栅格表面创建所选等值线值的要素类。</para>
 	/// </summary>
 	public class ContourList : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input surface raster.</para>
+		/// <para>输入表面栅格。</para>
 		/// </param>
 		/// <param name="OutPolylineFeatures">
 		/// <para>Output polyline features</para>
-		/// <para>The output contour polyline features.</para>
+		/// <para>输出等值线折线要素。</para>
 		/// </param>
 		/// <param name="ContourValues">
 		/// <para>Contour values</para>
-		/// <para>List of z-values for which to create contours.</para>
+		/// <para>要创建等值线的 z 值的列表。</para>
 		/// </param>
 		public ContourList(object InRaster, object OutPolylineFeatures, object ContourValues)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Contour List</para>
+		/// <para>Tool Display Name : 等值线列表</para>
 		/// </summary>
-		public override string DisplayName() => "Contour List";
+		public override string DisplayName() => "等值线列表";
 
 		/// <summary>
 		/// <para>Tool Name : ContourList</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input surface raster.</para>
+		/// <para>输入表面栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -86,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output polyline features</para>
-		/// <para>The output contour polyline features.</para>
+		/// <para>输出等值线折线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Contour values</para>
-		/// <para>List of z-values for which to create contours.</para>
+		/// <para>要创建等值线的 z 值的列表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]

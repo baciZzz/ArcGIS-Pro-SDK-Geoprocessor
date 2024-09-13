@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Collapse Container By Attribute Rule</para>
-	/// <para>Adds a diagram rule to the rule sequence specified on a diagram template to automatically collapse all contents related to containers during diagram building. The containers with contents to be collapsed are identified using an SQL query based on their attributes.</para>
+	/// <para>添加按属性折叠容器规则</para>
+	/// <para>将逻辑示意图规则添加到示意图模板指定的规则序列中，以便在构建示意图期间自动折叠与容器相关的所有内容。可基于其属性通过 SQL 查询对含待折叠内容的容器进行识别。</para>
 	/// </summary>
 	public class AddCollapseContainerByAttributeRule : AbstractGPProcess
 	{
@@ -20,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template to modify.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to modify.</para>
+		/// <para>要修改的逻辑示意图模板的名称。</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
-		/// <para>Specifies whether the rule will be active when generating and updating diagrams based on the specified template.</para>
-		/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
-		/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+		/// <para>指定在基于指定模板生成并更新逻辑示意图时，规则是否将处于激活状态。</para>
+		/// <para>选中 - 在基于输入模板生成并更新逻辑示意图的过程中，添加的规则将会变为激活状态。这是默认设置。</para>
+		/// <para>未选中 - 在基于输入模板生成或更新逻辑示意图的过程中，添加的规则将不会变为激活状态。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </param>
 		/// <param name="ContainerSource">
 		/// <para>Container Source</para>
-		/// <para>The container source class or object table that references the containers with the contents to be collapsed during the Collapse Container rule process.</para>
+		/// <para>引用容器的容器源类或对象表，执行折叠容器规则期间要折叠该容器的内容。</para>
 		/// </param>
 		public AddCollapseContainerByAttributeRule(object InUtilityNetwork, object TemplateName, object IsActive, object ContainerSource)
 		{
@@ -46,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Collapse Container By Attribute Rule</para>
+		/// <para>Tool Display Name : 添加按属性折叠容器规则</para>
 		/// </summary>
-		public override string DisplayName() => "Add Collapse Container By Attribute Rule";
+		public override string DisplayName() => "添加按属性折叠容器规则";
 
 		/// <summary>
 		/// <para>Tool Name : AddCollapseContainerByAttributeRule</para>
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template to modify.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to modify.</para>
+		/// <para>要修改的逻辑示意图模板的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -98,9 +99,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Active</para>
-		/// <para>Specifies whether the rule will be active when generating and updating diagrams based on the specified template.</para>
-		/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
-		/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+		/// <para>指定在基于指定模板生成并更新逻辑示意图时，规则是否将处于激活状态。</para>
+		/// <para>选中 - 在基于输入模板生成并更新逻辑示意图的过程中，添加的规则将会变为激活状态。这是默认设置。</para>
+		/// <para>未选中 - 在基于输入模板生成或更新逻辑示意图的过程中，添加的规则将不会变为激活状态。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -110,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Container Source</para>
-		/// <para>The container source class or object table that references the containers with the contents to be collapsed during the Collapse Container rule process.</para>
+		/// <para>引用容器的容器源类或对象表，执行折叠容器规则期间要折叠该容器的内容。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -118,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>An SQL expression used to select the subset of containers in this source class or object table with the contents to be collapsed in the generated diagrams. For more information about SQL syntax, see SQL reference for query expressions used in ArcGIS.</para>
+		/// <para>用于选择此源类或对象表中容器子集的 SQL 表达式，将在生成的逻辑示意图中折叠其内容。有关 SQL 语法的详细信息，请参阅在 ArcGIS 中使用的查询表达式的 SQL 参考。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -126,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Description</para>
-		/// <para>The description of the rule.</para>
+		/// <para>规则的描述。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -148,9 +149,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Aggregate reconnected edges</para>
-		/// <para>Specifies whether the rule will aggregate the edges that are reconnected to the collapsed container junctions.</para>
-		/// <para>Unchecked—Any edge connecting a content junction will be kept and reconnected to the collapsed container junction.</para>
-		/// <para>Checked—Any edge connecting a content junction will be replaced by a reduction edge that is reconnected to the collapsed container junction. Multiple edges between two collapsed junctions will be systematically aggregated under the same reduction edge. This is the default.</para>
+		/// <para>用于指定规则是否将聚合重新连接到已折叠容器交汇点的边。</para>
+		/// <para>未选中 - 任何连接内容交汇点的边都将被保留，并重新连接到已折叠容器交汇点。</para>
+		/// <para>选中 - 任何连接内容交汇点的边都将替换为重新连接到已折叠容器交汇点的缩减边。此外，将在相同缩减边下系统地对两个已折叠交汇点之间的多条边进行聚合。这是默认设置。</para>
 		/// <para><see cref="ReconnectedEdgesOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -166,14 +167,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsActiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACTIVE")]
 			ACTIVE,
 
 			/// <summary>
-			/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INACTIVE")]
@@ -187,14 +188,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum ReconnectedEdgesOptionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Any edge connecting a content junction will be replaced by a reduction edge that is reconnected to the collapsed container junction. Multiple edges between two collapsed junctions will be systematically aggregated under the same reduction edge. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("AGGREGATE_RECONNECTED_EDGES")]
 			AGGREGATE_RECONNECTED_EDGES,
 
 			/// <summary>
-			/// <para>Unchecked—Any edge connecting a content junction will be kept and reconnected to the collapsed container junction.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DONT_AGGREGATE_RECONNECTED_EDGES")]

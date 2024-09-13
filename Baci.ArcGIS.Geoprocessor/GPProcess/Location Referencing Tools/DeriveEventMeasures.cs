@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Derive Event Measures</para>
+	/// <para>Derive Event Measures</para>
 	/// <para>Populates and updates the DerivedRouteID field and measure values on point and line events with those fields configured and enabled.</para>
 	/// </summary>
 	public class DeriveEventMeasures : AbstractGPProcess

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Pairwise Buffer</para>
-	/// <para>Creates buffer polygons around input features to a specified distance using a parallel processing approach.</para>
+	/// <para>成对缓冲</para>
+	/// <para>用于使用并行处理方法在输入要素周围某一指定距离内创建缓冲区多边形。</para>
 	/// </summary>
 	public class PairwiseBuffer : AbstractGPProcess
 	{
@@ -20,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input point, line, or polygon features to be buffered.</para>
+		/// <para>要进行缓冲的输入点、线或面要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class containing the output buffers.</para>
+		/// <para>包含输出缓冲区的要素类。</para>
 		/// </param>
 		/// <param name="BufferDistanceOrField">
 		/// <para>Distance [value or field]</para>
-		/// <para>The distance around the input features that will be buffered. Distances can be provided as either a value representing a linear distance or as a field from the input features that contains the distance to buffer each feature.</para>
-		/// <para>If linear units are not specified or are entered as Unknown, the linear unit of the input features&apos; spatial reference is used.</para>
+		/// <para>与要缓冲的输入要素之间的距离。该距离可以用表示线性距离的某个值来指定，也可以用输入要素中的某个字段（包含用来对每个要素进行缓冲的距离）来指定。</para>
+		/// <para>如果未指定线性单位或输入了“未知”，则将使用输入要素空间参考的线性单位。</para>
 		/// </param>
 		public PairwiseBuffer(object InFeatures, object OutFeatureClass, object BufferDistanceOrField)
 		{
@@ -39,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Pairwise Buffer</para>
+		/// <para>Tool Display Name : 成对缓冲</para>
 		/// </summary>
-		public override string DisplayName() => "Pairwise Buffer";
+		public override string DisplayName() => "成对缓冲";
 
 		/// <summary>
 		/// <para>Tool Name : PairwiseBuffer</para>
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input point, line, or polygon features to be buffered.</para>
+		/// <para>要进行缓冲的输入点、线或面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class containing the output buffers.</para>
+		/// <para>包含输出缓冲区的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -91,8 +92,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Distance [value or field]</para>
-		/// <para>The distance around the input features that will be buffered. Distances can be provided as either a value representing a linear distance or as a field from the input features that contains the distance to buffer each feature.</para>
-		/// <para>If linear units are not specified or are entered as Unknown, the linear unit of the input features&apos; spatial reference is used.</para>
+		/// <para>与要缓冲的输入要素之间的距离。该距离可以用表示线性距离的某个值来指定，也可以用输入要素中的某个字段（包含用来对每个要素进行缓冲的距离）来指定。</para>
+		/// <para>如果未指定线性单位或输入了“未知”，则将使用输入要素空间参考的线性单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -101,10 +102,10 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Dissolve Type</para>
-		/// <para>Specifies the type of dissolve operation to be performed to remove buffer overlap.</para>
-		/// <para>No Dissolve—An individual buffer for each feature will be maintained, regardless of overlap. This is the default.</para>
-		/// <para>Dissolve all output features into a single feature—All buffers will be dissolved together into a single feature, removing any overlap.</para>
-		/// <para>Dissolve features using the listed fields&apos; unique values or combination of values—Any buffers sharing attribute values in the listed fields (carried over from the input features) will be dissolved.</para>
+		/// <para>指定移除缓冲区重叠要执行的融合操作类型。</para>
+		/// <para>未融合—不考虑重叠，将保持每个要素的独立缓冲区。这是默认设置。</para>
+		/// <para>将全部输出要素融合为一个要素—将所有缓冲区融合为单个要素，从而移除所有重叠。</para>
+		/// <para>使用所列字段唯一值或值的组合来融合要素—将融合共享所列字段（传递自输入要素）属性值的所有缓冲区。</para>
 		/// <para><see cref="DissolveOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -114,8 +115,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Dissolve Field(s)</para>
-		/// <para>The list of fields from the input features on which the output buffers will be dissolved. Any buffers sharing attribute values in the listed fields (carried over from the input features) will be dissolved.</para>
-		/// <para>The Add Field button, which is only used in ModelBuilder, allows you to add expected fields to the Dissolve Field(s) list.</para>
+		/// <para>融合输出缓冲区所依据的输入要素的字段列表。将融合共享所列字段（传递自输入要素）属性值的所有缓冲区。</para>
+		/// <para>添加字段按钮（仅在 ModelBuilder 中使用）可将预期字段添加到融合字段列表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -125,9 +126,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>Specifies the method to use, planar or geodesic, to create the buffer.</para>
-		/// <para>Planar—If the input features are in a projected coordinate system, Euclidean buffers will be created. If the input features are in a geographic coordinate system and the buffer distance is in linear units (meters, feet, and so forth, as opposed to angular units such as degrees), geodesic buffers will be created. This is the default. You can use the Output Coordinate System environment setting to specify the coordinate system to use. For example, if your input features are in a projected coordinate system, you can set the environment to a geographic coordinate system to create geodesic buffers.</para>
-		/// <para>Geodesic (shape preserving)—All buffers will be created using a shape-preserving geodesic buffer method, regardless of the input coordinate system.</para>
+		/// <para>指定用于创建缓冲区的方法是平面方法还是测地线方法。</para>
+		/// <para>平面—如果输入要素位于投影坐标系中，则将创建欧氏缓冲区。如果输入要素位于地理坐标系中且缓冲距离的单位为线性单位（米、英尺等，而非诸如度之类的角度单位），则会创建测地线缓冲区。这是默认设置。您可以使用输出坐标系环境设置指定要使用的坐标系。例如，如果输入要素位于投影坐标系中，您可以将环境设置为地理坐标系，以便创建测地线缓冲区。</para>
+		/// <para>测地线（形状保持不变）—无论使用哪种输入坐标系，均使用形状不变的测地线缓冲区方法创建所有缓冲区。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -137,10 +138,10 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Maximum Offset Deviation</para>
-		/// <para>The maximum distance the resulting output buffer polygon boundary will deviate from the true buffer boundary.</para>
-		/// <para>The true buffer boundary is a curve. However, the resulting polygon boundary is a densified polyline. Using this parameter, you can control how the output polygon boundary approximates the true buffer boundary.</para>
-		/// <para>If this parameter is not set or is set to 0, the tool will identify the maximum deviation. It is recommended that you use the default value. Performance degradation (in the tool and in subsequent analyses) may result from using a maximum offset deviation that is too small.</para>
-		/// <para>See the Maximum Offset Deviation parameter information in the Densify tool documentation for details.</para>
+		/// <para>生成的输出缓冲区面边界将从实际缓冲区边界偏移的最大距离。</para>
+		/// <para>实际缓冲区边界为曲线。但是，生成面边界为增密折线。可以使用此参数来控制面边界与实际缓冲区边界的近似程度。</para>
+		/// <para>如果此参数未设置或设置为 0，则工具将确定最大偏差。建议您使用默认值。造成（工具或后续分析中）系统性能下降的原因可能为使用的最大偏移偏差过小。</para>
+		/// <para>有关详细信息，请参阅增密工具文档中的最大偏移偏差参数信息。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -163,24 +164,24 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum DissolveOptionEnum 
 		{
 			/// <summary>
-			/// <para>No Dissolve—An individual buffer for each feature will be maintained, regardless of overlap. This is the default.</para>
+			/// <para>未融合—不考虑重叠，将保持每个要素的独立缓冲区。这是默认设置。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("No Dissolve")]
+			[Description("未融合")]
 			No_Dissolve,
 
 			/// <summary>
-			/// <para>Dissolve all output features into a single feature—All buffers will be dissolved together into a single feature, removing any overlap.</para>
+			/// <para>将全部输出要素融合为一个要素—将所有缓冲区融合为单个要素，从而移除所有重叠。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("Dissolve all output features into a single feature")]
+			[Description("将全部输出要素融合为一个要素")]
 			Dissolve_all_output_features_into_a_single_feature,
 
 			/// <summary>
-			/// <para>Dissolve features using the listed fields&apos; unique values or combination of values—Any buffers sharing attribute values in the listed fields (carried over from the input features) will be dissolved.</para>
+			/// <para>使用所列字段唯一值或值的组合来融合要素—将融合共享所列字段（传递自输入要素）属性值的所有缓冲区。</para>
 			/// </summary>
 			[GPValue("LIST")]
-			[Description("Dissolve features using the listed fields' unique values or combination of values")]
+			[Description("使用所列字段唯一值或值的组合来融合要素")]
 			LIST,
 
 		}
@@ -191,17 +192,17 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Geodesic (shape preserving)—All buffers will be created using a shape-preserving geodesic buffer method, regardless of the input coordinate system.</para>
+			/// <para>测地线（形状保持不变）—无论使用哪种输入坐标系，均使用形状不变的测地线缓冲区方法创建所有缓冲区。</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("Geodesic (shape preserving)")]
+			[Description("测地线（形状保持不变）")]
 			GEODESIC,
 
 			/// <summary>
-			/// <para>Planar—If the input features are in a projected coordinate system, Euclidean buffers will be created. If the input features are in a geographic coordinate system and the buffer distance is in linear units (meters, feet, and so forth, as opposed to angular units such as degrees), geodesic buffers will be created. This is the default. You can use the Output Coordinate System environment setting to specify the coordinate system to use. For example, if your input features are in a projected coordinate system, you can set the environment to a geographic coordinate system to create geodesic buffers.</para>
+			/// <para>平面—如果输入要素位于投影坐标系中，则将创建欧氏缓冲区。如果输入要素位于地理坐标系中且缓冲距离的单位为线性单位（米、英尺等，而非诸如度之类的角度单位），则会创建测地线缓冲区。这是默认设置。您可以使用输出坐标系环境设置指定要使用的坐标系。例如，如果输入要素位于投影坐标系中，您可以将环境设置为地理坐标系，以便创建测地线缓冲区。</para>
 			/// </summary>
 			[GPValue("PLANAR")]
-			[Description("Planar")]
+			[Description("平面")]
 			Planar,
 
 		}

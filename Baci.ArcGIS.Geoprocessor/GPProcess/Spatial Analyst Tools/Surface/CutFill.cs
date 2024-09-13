@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Cut Fill</para>
-	/// <para>Calculates the volume change between two surfaces. This is typically used for cut and fill operations.</para>
+	/// <para>填挖方</para>
+	/// <para>计算两表面间体积的变化。 该工具通常用于填挖操作。</para>
 	/// </summary>
 	public class CutFill : AbstractGPProcess
 	{
@@ -20,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InBeforeSurface">
 		/// <para>Input before raster surface</para>
-		/// <para>The input representing the surface before the cut or fill operation.</para>
+		/// <para>表示填/挖操作之前的表面的输入。</para>
 		/// </param>
 		/// <param name="InAfterSurface">
 		/// <para>Input after raster surface</para>
-		/// <para>The input representing the surface after the cut or fill operation.</para>
+		/// <para>表示填/挖操作之后的表面的输入。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster defining regions of cut and of fill.</para>
-		/// <para>The values show the locations and amounts where the surface has been added to or removed from.</para>
+		/// <para>定义挖填区域的输出栅格。</para>
+		/// <para>这些值可显示添加或移除表面的位置及其数量。</para>
 		/// </param>
 		public CutFill(object InBeforeSurface, object InAfterSurface, object OutRaster)
 		{
@@ -39,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Cut Fill</para>
+		/// <para>Tool Display Name : 填挖方</para>
 		/// </summary>
-		public override string DisplayName() => "Cut Fill";
+		public override string DisplayName() => "填挖方";
 
 		/// <summary>
 		/// <para>Tool Name : CutFill</para>
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input before raster surface</para>
-		/// <para>The input representing the surface before the cut or fill operation.</para>
+		/// <para>表示填/挖操作之前的表面的输入。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input after raster surface</para>
-		/// <para>The input representing the surface after the cut or fill operation.</para>
+		/// <para>表示填/挖操作之后的表面的输入。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -99,8 +100,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster defining regions of cut and of fill.</para>
-		/// <para>The values show the locations and amounts where the surface has been added to or removed from.</para>
+		/// <para>定义挖填区域的输出栅格。</para>
+		/// <para>这些值可显示添加或移除表面的位置及其数量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -108,10 +109,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Z factor</para>
-		/// <para>The number of ground x,y units in one surface z-unit.</para>
-		/// <para>The z-factor adjusts the units of measure for the z-units when they are different from the x,y units of the input surface. The z-values of the input surface are multiplied by the z-factor when calculating the final output surface.</para>
-		/// <para>If the x,y units and z-units are in the same units of measure, the z-factor is 1. This is the default.</para>
-		/// <para>If the x,y units and z-units are in different units of measure, the z-factor must be set to the appropriate factor or the results will be incorrect. For example, if the z-units are feet and the x,y units are meters, you would use a z-factor of 0.3048 to convert the z-units from feet to meters (1 foot = 0.3048 meter).</para>
+		/// <para>一个表面 z 单位中地面 x,y 单位的数量。</para>
+		/// <para>z 单位与输入表面的 x,y 单位不同时，可使用 z 因子调整 z 单位的测量单位。 计算最终输出表面时，将用 z 因子乘以输入表面的 z 值。</para>
+		/// <para>如果 x,y 单位和 z 单位采用相同的测量单位，则 z 因子为 1。 这是默认设置。</para>
+		/// <para>如果 x,y 单位和 z 单位采用不同的测量单位，则必须将 z 因子设置为适当的因子，否则会得到错误的结果。 例如，如果 z 单位是英尺，而 x,y 单位是米，则应使用 z 因子 0.3048 将 z 单位从英尺转换为米（1 英尺 = 0.3048 米）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

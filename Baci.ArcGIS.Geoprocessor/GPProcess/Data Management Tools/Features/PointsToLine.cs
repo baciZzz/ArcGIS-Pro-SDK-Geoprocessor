@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Points To Line</para>
-	/// <para>Creates line features from points.</para>
+	/// <para>点集转线</para>
+	/// <para>基于点创建线要素。</para>
 	/// </summary>
 	public class PointsToLine : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputFeatures">
 		/// <para>Input Features</para>
-		/// <para>The point features to be converted into lines.</para>
+		/// <para>要转换为线的点要素。</para>
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The line feature class which will be created from the input points.</para>
+		/// <para>将基于输入点创建的线要素类。</para>
 		/// </param>
 		public PointsToLine(object InputFeatures, object OutputFeatureClass)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Points To Line</para>
+		/// <para>Tool Display Name : 点集转线</para>
 		/// </summary>
-		public override string DisplayName() => "Points To Line";
+		public override string DisplayName() => "点集转线";
 
 		/// <summary>
 		/// <para>Tool Name : PointsToLine</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The point features to be converted into lines.</para>
+		/// <para>要转换为线的点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The line feature class which will be created from the input points.</para>
+		/// <para>将基于输入点创建的线要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Line Field</para>
-		/// <para>Each feature in the output will be based on unique values in the Line Field.</para>
+		/// <para>输出中的各个要素都将基于“线字段”中的唯一值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -98,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Sort Field</para>
-		/// <para>By default, points used to create each output line feature will be used in the order they are found. If a different order is desired, specify a Sort Field.</para>
+		/// <para>默认情况下，用于创建各个输出线要素的点将按照它们被找到的先后顺序依次使用。如果希望按照其他顺序，请指定一个“排序字段”。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -108,9 +109,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Close Line</para>
-		/// <para>Specifies whether output line features should be closed.</para>
-		/// <para>Checked—An extra vertex will be added to ensure that every output line feature&apos;s end point will match up with its start point. Then polygons can be generated from the line feature class using the Feature To Polygon tool.</para>
-		/// <para>Unchecked—No extra vertices will be added to close an output line feature. This is the default.</para>
+		/// <para>指定输出线要素是否应该闭合。</para>
+		/// <para>选中 - 添加一个额外的折点以确保每个输出线要素的终点与起点相重合。然后便可使用要素转面工具基于线要素类生成面。</para>
+		/// <para>取消选中 - 不添加额外的折点来闭合输出线要素。这是默认设置。</para>
 		/// <para><see cref="CloseLineEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -135,14 +136,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CloseLineEnum 
 		{
 			/// <summary>
-			/// <para>Checked—An extra vertex will be added to ensure that every output line feature&apos;s end point will match up with its start point. Then polygons can be generated from the line feature class using the Feature To Polygon tool.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLOSE")]
 			CLOSE,
 
 			/// <summary>
-			/// <para>Unchecked—No extra vertices will be added to close an output line feature. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CLOSE")]

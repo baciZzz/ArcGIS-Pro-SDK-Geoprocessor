@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Set Association Role</para>
-	/// <para>Alters the association role assigned to a network feature class or table  at the asset type level.</para>
+	/// <para>设置关联角色</para>
+	/// <para>用于更改分配到网络要素类或表的资产类型级别关联角色。</para>
 	/// </summary>
 	public class SetAssociationRole : AbstractGPProcess
 	{
@@ -20,38 +21,38 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that contains the asset type with an association role to set.</para>
+		/// <para>公共设施网络，其中包含要设置关联角色的资产类型。</para>
 		/// </param>
 		/// <param name="DomainNetwork">
 		/// <para>Domain Network</para>
-		/// <para>The domain network that contains the asset type with an association role to set.</para>
+		/// <para>域网络，其中包含要设置关联角色的资产类型。</para>
 		/// </param>
 		/// <param name="Featureclass">
 		/// <para>Input Table</para>
-		/// <para>The utility network feature class or table where the association role will be set.</para>
+		/// <para>将设置关联角色的公共设施网络要素类或表。</para>
 		/// </param>
 		/// <param name="Assetgroup">
 		/// <para>Asset Group</para>
-		/// <para>The asset group that contains the asset type.</para>
+		/// <para>包含资产类型的资产组。</para>
 		/// </param>
 		/// <param name="Assettype">
 		/// <para>Asset Type</para>
-		/// <para>The asset type that the association role will be set for.</para>
+		/// <para>将为其设置关联角色的资产类型。</para>
 		/// </param>
 		/// <param name="AssociationRoleType">
 		/// <para>Role Type</para>
-		/// <para>Specifies the type of association role to assign to the asset type.</para>
-		/// <para>Container—Features or objects of this asset type can contain other features and objects as content.</para>
-		/// <para>Structure—Features or objects of this asset type can have other features and objects attached to them.</para>
-		/// <para>None—No role type will be assigned. These are features or objects that are neither a container nor a structure but do connect to other structures.</para>
+		/// <para>指定要分配到资产类型的关联角色的类型。</para>
+		/// <para>容器—该资产类型的要素或对象可以将其他要素或对象包含为内容。</para>
+		/// <para>结构—该资产类型的要素或对象可以附加其他要素或对象。</para>
+		/// <para>无—未分配角色类型。 这些要素或对象既不是容器，也不是结构，但确实与其他结构相连接。</para>
 		/// <para><see cref="AssociationRoleTypeEnum"/></para>
 		/// </param>
 		/// <param name="AssociationDeletionSemantics">
 		/// <para>Deletion Semantics</para>
-		/// <para>Specifies the deletion semantics for the features, which is how child features will be handled when the parent feature is deleted. This applies to both container and structure association roles.</para>
-		/// <para>Cascade—When the parent container or structure is deleted, all content or attachment network features will be deleted.</para>
-		/// <para>Set to none— When a container or structure is deleted, its content or attachment features and objects will not be deleted. Instead, it will be removed from the containment or structural attachment association.</para>
-		/// <para>Restricted— If content or attachment features or objects exist, an error will be returned when attempting to delete the container or structure. The content or attachment features and objects must be removed before deleting the container or structure.</para>
+		/// <para>指定要素的删除语义；即删除父要素后如何处理子要素。 这适用于容器和结构关联角色。</para>
+		/// <para>级联—删除父容器或结构时，所有内容或附件网络要素也会一并删除。</para>
+		/// <para>设为无—删除容器或结构时，不会删除其内容或附件要素和对象。 但是，会从包含或结构附件关联中将其移除。</para>
+		/// <para>受限—如果存在内容或附件要素或对象，则在尝试删除容器或结构时将返回错误。 必须移除内容或附件要素和对象后，才能删除容器或结构。</para>
 		/// <para><see cref="AssociationDeletionSemanticsEnum"/></para>
 		/// </param>
 		public SetAssociationRole(object InUtilityNetwork, object DomainNetwork, object Featureclass, object Assetgroup, object Assettype, object AssociationRoleType, object AssociationDeletionSemantics)
@@ -66,9 +67,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Set Association Role</para>
+		/// <para>Tool Display Name : 设置关联角色</para>
 		/// </summary>
-		public override string DisplayName() => "Set Association Role";
+		public override string DisplayName() => "设置关联角色";
 
 		/// <summary>
 		/// <para>Tool Name : SetAssociationRole</para>
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that contains the asset type with an association role to set.</para>
+		/// <para>公共设施网络，其中包含要设置关联角色的资产类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -110,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Domain Network</para>
-		/// <para>The domain network that contains the asset type with an association role to set.</para>
+		/// <para>域网络，其中包含要设置关联角色的资产类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -118,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The utility network feature class or table where the association role will be set.</para>
+		/// <para>将设置关联角色的公共设施网络要素类或表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -126,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Asset Group</para>
-		/// <para>The asset group that contains the asset type.</para>
+		/// <para>包含资产类型的资产组。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -134,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Asset Type</para>
-		/// <para>The asset type that the association role will be set for.</para>
+		/// <para>将为其设置关联角色的资产类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -142,10 +143,10 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Role Type</para>
-		/// <para>Specifies the type of association role to assign to the asset type.</para>
-		/// <para>Container—Features or objects of this asset type can contain other features and objects as content.</para>
-		/// <para>Structure—Features or objects of this asset type can have other features and objects attached to them.</para>
-		/// <para>None—No role type will be assigned. These are features or objects that are neither a container nor a structure but do connect to other structures.</para>
+		/// <para>指定要分配到资产类型的关联角色的类型。</para>
+		/// <para>容器—该资产类型的要素或对象可以将其他要素或对象包含为内容。</para>
+		/// <para>结构—该资产类型的要素或对象可以附加其他要素或对象。</para>
+		/// <para>无—未分配角色类型。 这些要素或对象既不是容器，也不是结构，但确实与其他结构相连接。</para>
 		/// <para><see cref="AssociationRoleTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -155,10 +156,10 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Deletion Semantics</para>
-		/// <para>Specifies the deletion semantics for the features, which is how child features will be handled when the parent feature is deleted. This applies to both container and structure association roles.</para>
-		/// <para>Cascade—When the parent container or structure is deleted, all content or attachment network features will be deleted.</para>
-		/// <para>Set to none— When a container or structure is deleted, its content or attachment features and objects will not be deleted. Instead, it will be removed from the containment or structural attachment association.</para>
-		/// <para>Restricted— If content or attachment features or objects exist, an error will be returned when attempting to delete the container or structure. The content or attachment features and objects must be removed before deleting the container or structure.</para>
+		/// <para>指定要素的删除语义；即删除父要素后如何处理子要素。 这适用于容器和结构关联角色。</para>
+		/// <para>级联—删除父容器或结构时，所有内容或附件网络要素也会一并删除。</para>
+		/// <para>设为无—删除容器或结构时，不会删除其内容或附件要素和对象。 但是，会从包含或结构附件关联中将其移除。</para>
+		/// <para>受限—如果存在内容或附件要素或对象，则在尝试删除容器或结构时将返回错误。 必须移除内容或附件要素和对象后，才能删除容器或结构。</para>
 		/// <para><see cref="AssociationDeletionSemanticsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -168,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>View Scale</para>
-		/// <para>The scale at which containment mode will be entered to edit features participating in the container. For example, setting the view scale to 5 means that when you enter containment mode of the container feature, the scale will be 1:5. Units are based on the utility network units, which are located on the Source tab of the utility network layer properties pane. This property does not apply to junction and edge objects.</para>
+		/// <para>将输入包含模式比例，以开始编辑参与容器的要素。 例如，将视图比例设置为 5 意味着当您进入容器要素的包含模式时，比例将为 1:5。 单位基于公共设施网络图层属性窗格的源选项卡上的公共设施网络单位。 此属性不适用于交汇点和边对象。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -176,9 +177,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Split Content</para>
-		/// <para>Specifies whether the associated content of a container will be split if the container feature is split. This parameter is only available if the association role is container and is only applicable for line features.</para>
-		/// <para>Checked—he container&apos;s content will be split if the container feature is split. If a parallel content line feature is found, the content is also split and each section will be contained by the closest container feature. If the content line is not parallel, the content will be contained by the container feature that is closest to it.</para>
-		/// <para>Unchecked—The container&apos;s content will not be split if the container feature is split. If a parallel content line feature is found, the content will be contained by both sections of the container feature. If the content line is not parallel, the content will be contained by the container feature that is closest to it. This is the default.</para>
+		/// <para>指定对容器要素进行分割后，是否分割容器的关联内容。 仅当关联角色为容器时，此参数才可用，并且仅适用于线要素。</para>
+		/// <para>选中 - 如果对容器要素进行分割，则分割容器的内容。 如果找到平行内容线要素，也会对内容进行分割，并且每部分将包含在最近的容器要素内。 如果内容线不平行，则内容将包含在最近的容器要素内。</para>
+		/// <para>未选中 - 如果对容器要素进行分割，不会分割容器的内容。 如果找到平行内容线要素，则内容将包含在容器要素的两个部分中。 如果内容线不平行，则内容将包含在最近的容器要素内。 这是默认设置。</para>
 		/// <para><see cref="SplitContentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -201,24 +202,24 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum AssociationRoleTypeEnum 
 		{
 			/// <summary>
-			/// <para>None—No role type will be assigned. These are features or objects that are neither a container nor a structure but do connect to other structures.</para>
+			/// <para>无—未分配角色类型。 这些要素或对象既不是容器，也不是结构，但确实与其他结构相连接。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 			/// <summary>
-			/// <para>Container—Features or objects of this asset type can contain other features and objects as content.</para>
+			/// <para>容器—该资产类型的要素或对象可以将其他要素或对象包含为内容。</para>
 			/// </summary>
 			[GPValue("CONTAINER")]
-			[Description("Container")]
+			[Description("容器")]
 			Container,
 
 			/// <summary>
-			/// <para>Structure—Features or objects of this asset type can have other features and objects attached to them.</para>
+			/// <para>结构—该资产类型的要素或对象可以附加其他要素或对象。</para>
 			/// </summary>
 			[GPValue("STRUCTURE")]
-			[Description("Structure")]
+			[Description("结构")]
 			Structure,
 
 		}
@@ -229,24 +230,24 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum AssociationDeletionSemanticsEnum 
 		{
 			/// <summary>
-			/// <para>Cascade—When the parent container or structure is deleted, all content or attachment network features will be deleted.</para>
+			/// <para>级联—删除父容器或结构时，所有内容或附件网络要素也会一并删除。</para>
 			/// </summary>
 			[GPValue("CASCADE")]
-			[Description("Cascade")]
+			[Description("级联")]
 			Cascade,
 
 			/// <summary>
-			/// <para>Set to none— When a container or structure is deleted, its content or attachment features and objects will not be deleted. Instead, it will be removed from the containment or structural attachment association.</para>
+			/// <para>设为无—删除容器或结构时，不会删除其内容或附件要素和对象。 但是，会从包含或结构附件关联中将其移除。</para>
 			/// </summary>
 			[GPValue("SET_TO_NONE")]
-			[Description("Set to none")]
+			[Description("设为无")]
 			Set_to_none,
 
 			/// <summary>
-			/// <para>Restricted— If content or attachment features or objects exist, an error will be returned when attempting to delete the container or structure. The content or attachment features and objects must be removed before deleting the container or structure.</para>
+			/// <para>受限—如果存在内容或附件要素或对象，则在尝试删除容器或结构时将返回错误。 必须移除内容或附件要素和对象后，才能删除容器或结构。</para>
 			/// </summary>
 			[GPValue("RESTRICTED")]
-			[Description("Restricted")]
+			[Description("受限")]
 			Restricted,
 
 		}
@@ -257,14 +258,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum SplitContentEnum 
 		{
 			/// <summary>
-			/// <para>Checked—he container&apos;s content will be split if the container feature is split. If a parallel content line feature is found, the content is also split and each section will be contained by the closest container feature. If the content line is not parallel, the content will be contained by the container feature that is closest to it.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SPLIT")]
 			SPLIT,
 
 			/// <summary>
-			/// <para>Unchecked—The container&apos;s content will not be split if the container feature is split. If a parallel content line feature is found, the content will be contained by both sections of the container feature. If the content line is not parallel, the content will be contained by the container feature that is closest to it. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_SPLIT")]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Set Raster Properties</para>
-	/// <para>Sets the data type, statistics, and NoData values on a raster or mosaic dataset.</para>
+	/// <para>设置栅格属性</para>
+	/// <para>在栅格或镶嵌数据集中设置数据类型、统计数据和 NoData 值。</para>
 	/// </summary>
 	public class SetRasterProperties : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The raster or mosaic dataset whose properties you want to set.</para>
+		/// <para>要设置其属性的栅格数据集或镶嵌数据集。</para>
 		/// </param>
 		public SetRasterProperties(object InRaster)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Set Raster Properties</para>
+		/// <para>Tool Display Name : 设置栅格属性</para>
 		/// </summary>
-		public override string DisplayName() => "Set Raster Properties";
+		public override string DisplayName() => "设置栅格属性";
 
 		/// <summary>
 		/// <para>Tool Name : SetRasterProperties</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The raster or mosaic dataset whose properties you want to set.</para>
+		/// <para>要设置其属性的栅格数据集或镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -72,14 +73,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Data Source Type</para>
-		/// <para>The type of imagery in the mosaic dataset.</para>
-		/// <para>Generic— The mosaic dataset does not have a specified data type.</para>
-		/// <para>Elevation— The mosaic dataset contains elevation data.</para>
-		/// <para>Thematic—Thematic data has discrete values, such as land cover.</para>
-		/// <para>Processed—The mosaic dataset has been color balanced.</para>
-		/// <para>Scientific—The data has scientific information, and will be displayed with the blue to red color ramp, by default.</para>
-		/// <para>Vector UV—The data is a two band raster that contains a U and a V component of vector field data.</para>
-		/// <para>Magnitude and Direction—The data is a two band raster that contains the magnitude and direction of vector field data.</para>
+		/// <para>镶嵌数据集中的影像类型。</para>
+		/// <para>通用— 镶嵌数据集没有指定的数据类型。</para>
+		/// <para>高程— 镶嵌数据集包含高程数据。</para>
+		/// <para>专题—专题数据具有离散值，例如土地覆被。</para>
+		/// <para>已处理—镶嵌数据集的色彩已得到平衡。</para>
+		/// <para>科学—数据具有科学信息，并且在默认情况下将通过从蓝到红的色带来显示。</para>
+		/// <para>矢量 UV—此数据是包含矢量字段数据的 U 和 V 组件的双波段栅格。</para>
+		/// <para>量级和方向—此数据是包含矢量字段数据的量级和方向的双波段栅格。</para>
 		/// <para><see cref="DataTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Statistics Per Band</para>
-		/// <para>Specify the bands and values for the minimum, maximum, mean, and standard deviation.</para>
+		/// <para>为最小值、最大值、平均值和标准差指定波段和值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Import Statistics From File</para>
-		/// <para>An .xml file that contains the statistics.</para>
+		/// <para>包含统计数据的 .xml 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -107,8 +108,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Bands for NoData Value</para>
-		/// <para>Specify the NoData value for each band. Each band can have a unique NoData value defined, or the same value can be specified for all bands.</para>
-		/// <para>Choose the band from the NoData drop-down arrow and click the Add button to add this to the table. Then enter a value or multiple values. If you choose multiple NoData values, separate each value with a space.</para>
+		/// <para>为每个波段指定 NoData 值。每个波段都可定义唯一的 NoData 值，也可为所有波段指定相同的值。</para>
+		/// <para>从 NoData 下拉箭头中选择波段，然后单击添加按钮将其添加到表中。然后输入一个或多个值。如果选择多个 NoData 值，则用空格分隔各值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Key Properties</para>
-		/// <para>The natively supported properties are as follows. Your data may have additional properties not included in this list. All properties are case insensitive.</para>
+		/// <para>本身支持的属性如下。您的数据可能具有未包含在该列表中的附加属性。所有属性均不区分大小写。</para>
 		/// <para>AcquisitionDate</para>
 		/// <para>BandName</para>
 		/// <para>BlockName</para>
@@ -158,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>SunElevation</para>
 		/// <para>ThermalConstant_K1</para>
 		/// <para>ThermalConstant_K2</para>
-		/// <para>Variable</para>
+		/// <para>变量</para>
 		/// <para>VerticalAccuracy</para>
 		/// <para>WavelengthMin</para>
 		/// <para>WavelengthMax</para>
@@ -191,52 +192,52 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DataTypeEnum 
 		{
 			/// <summary>
-			/// <para>Generic— The mosaic dataset does not have a specified data type.</para>
+			/// <para>通用— 镶嵌数据集没有指定的数据类型。</para>
 			/// </summary>
 			[GPValue("GENERIC")]
-			[Description("Generic")]
+			[Description("通用")]
 			Generic,
 
 			/// <summary>
-			/// <para>Elevation— The mosaic dataset contains elevation data.</para>
+			/// <para>高程— 镶嵌数据集包含高程数据。</para>
 			/// </summary>
 			[GPValue("ELEVATION")]
-			[Description("Elevation")]
+			[Description("高程")]
 			Elevation,
 
 			/// <summary>
-			/// <para>Thematic—Thematic data has discrete values, such as land cover.</para>
+			/// <para>专题—专题数据具有离散值，例如土地覆被。</para>
 			/// </summary>
 			[GPValue("THEMATIC")]
-			[Description("Thematic")]
+			[Description("专题")]
 			Thematic,
 
 			/// <summary>
-			/// <para>Processed—The mosaic dataset has been color balanced.</para>
+			/// <para>已处理—镶嵌数据集的色彩已得到平衡。</para>
 			/// </summary>
 			[GPValue("PROCESSED")]
-			[Description("Processed")]
+			[Description("已处理")]
 			Processed,
 
 			/// <summary>
-			/// <para>Scientific—The data has scientific information, and will be displayed with the blue to red color ramp, by default.</para>
+			/// <para>科学—数据具有科学信息，并且在默认情况下将通过从蓝到红的色带来显示。</para>
 			/// </summary>
 			[GPValue("SCIENTIFIC")]
-			[Description("Scientific")]
+			[Description("科学")]
 			Scientific,
 
 			/// <summary>
-			/// <para>Vector UV—The data is a two band raster that contains a U and a V component of vector field data.</para>
+			/// <para>矢量 UV—此数据是包含矢量字段数据的 U 和 V 组件的双波段栅格。</para>
 			/// </summary>
 			[GPValue("VECTOR_UV")]
-			[Description("Vector UV")]
+			[Description("矢量 UV")]
 			Vector_UV,
 
 			/// <summary>
-			/// <para>Magnitude and Direction—The data is a two band raster that contains the magnitude and direction of vector field data.</para>
+			/// <para>量级和方向—此数据是包含矢量字段数据的量级和方向的双波段栅格。</para>
 			/// </summary>
 			[GPValue("VECTOR_MAGDIR")]
-			[Description("Magnitude and Direction")]
+			[Description("量级和方向")]
 			Magnitude_and_Direction,
 
 		}

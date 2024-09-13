@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Analyze Tools For Pro</para>
-	/// <para>Analyzes Python scripts and custom geoprocessing tools and toolboxes for functionality that is not supported in ArcGIS Pro.</para>
+	/// <para>针对 Pro 分析工具</para>
+	/// <para>为 ArcGIS Pro 中不支持的功能分析 Python 脚本、自定义地理处理工具和工具箱。</para>
 	/// </summary>
 	public class AnalyzeToolsForPro : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="Input">
 		/// <para>Input</para>
-		/// <para>The input can be a geoprocessing toolbox or Python file.</para>
+		/// <para>输入可以是地理处理工具箱或 Python 文件。</para>
 		/// </param>
 		public AnalyzeToolsForPro(object Input)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Analyze Tools For Pro</para>
+		/// <para>Tool Display Name : 针对 Pro 分析工具</para>
 		/// </summary>
-		public override string DisplayName() => "Analyze Tools For Pro";
+		public override string DisplayName() => "针对 Pro 分析工具";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeToolsForPro</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input</para>
-		/// <para>The input can be a geoprocessing toolbox or Python file.</para>
+		/// <para>输入可以是地理处理工具箱或 Python 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>An output text file that includes all issues.</para>
+		/// <para>包含所有问题的输出文本文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]

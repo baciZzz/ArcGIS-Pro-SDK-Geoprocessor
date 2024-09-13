@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Classify Objects Using Deep Learning</para>
-	/// <para>Runs a trained deep learning model on an input raster and an optional feature class to produce a feature class or table in which each input object or feature has an assigned class or category label.</para>
+	/// <para>使用深度学习分类对象</para>
+	/// <para>用于运行输入栅格和可选要素类上的训练深度学习模型，以生成要素类或表，其中每个输入对象或要素均具有一个分配的类或类别标注。</para>
 	/// </summary>
 	public class ClassifyObjectsUsingDeepLearning : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		/// <param name="Inputraster">
 		/// <para>Input Raster</para>
-		/// <para>The input image to classify. The image can be an image service URL, a raster layer, an image service, a map server layer, or an internet tiled layer.</para>
+		/// <para>待分类的输入影像。 该影像可以是影像服务 URL、栅格图层、影像服务、地图服务器图层或 Internet 切片图层。</para>
 		/// </param>
 		/// <param name="Inputmodel">
 		/// <para>Input Model</para>
-		/// <para>The deep learning model that will be used to classify objects in the input image. The input is the URL of a deep learning package (.dlpk) item that contains the path to the deep learning binary model file, the path to the Python raster function to be used, and other parameters such as preferred tile size or padding.</para>
+		/// <para>深度学习模型用于对输入影像中的对象进行分类。 输入是深度学习包 (.dlpk) 项目的 URL，其中包含深度学习二进制模型文件的路径、待使用的 Python 栅格函数的路径以及其他参数，例如首选切片大小或填充。</para>
 		/// </param>
 		/// <param name="Outputname">
 		/// <para>Output Name</para>
-		/// <para>The name of the feature service containing the classified objects.</para>
+		/// <para>包含已分类对象的要素服务的名称。</para>
 		/// </param>
 		public ClassifyObjectsUsingDeepLearning(object Inputraster, object Inputmodel, object Outputname)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Classify Objects Using Deep Learning</para>
+		/// <para>Tool Display Name : 使用深度学习分类对象</para>
 		/// </summary>
-		public override string DisplayName() => "Classify Objects Using Deep Learning";
+		public override string DisplayName() => "使用深度学习分类对象";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyObjectsUsingDeepLearning</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The input image to classify. The image can be an image service URL, a raster layer, an image service, a map server layer, or an internet tiled layer.</para>
+		/// <para>待分类的输入影像。 该影像可以是影像服务 URL、栅格图层、影像服务、地图服务器图层或 Internet 切片图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Model</para>
-		/// <para>The deep learning model that will be used to classify objects in the input image. The input is the URL of a deep learning package (.dlpk) item that contains the path to the deep learning binary model file, the path to the Python raster function to be used, and other parameters such as preferred tile size or padding.</para>
+		/// <para>深度学习模型用于对输入影像中的对象进行分类。 输入是深度学习包 (.dlpk) 项目的 URL，其中包含深度学习二进制模型文件的路径、待使用的 Python 栅格函数的路径以及其他参数，例如首选切片大小或填充。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the feature service containing the classified objects.</para>
+		/// <para>包含已分类对象的要素服务的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -101,8 +102,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The feature service that identifies the location of each object or feature to be classified and labeled. Each row in the input feature service represents a single object or feature.</para>
-		/// <para>If no input feature service is specified, each input image will be classified as a single object. If the input image or images use a spatial reference, the output from the tool is a feature class in which the extent of each image is used as the bounding geometry for each labeled feature class. If the input image or images are not spatially referenced, the output from the tool is a table containing the image ID values and the class labels for each image.</para>
+		/// <para>用于标识要分类或要标注的每个对象或要素位置的要素服务。 输入要素服务中的每一行表示一个对象或要素。</para>
+		/// <para>如果未指定输入要素服务，则每个输入影像将被分类为单个对象。 如果一个或多个输入影像使用空间参考，则工具的输出为要素类，其中每个影像的范围将用作每个标注要素类的边界几何。 如果一个或多个输入影像没有使用空间参考，则工具的输出为包含影像 ID 值和每个影像类标注的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Model Arguments</para>
-		/// <para>The function model arguments to use for the classification. These are defined in the Python raster function class referenced by the input model. This is where you list additional deep learning parameters and arguments for experiments and refinement, such as a confidence threshold for adjusting the sensitivity. The names of the arguments are populated by the tool from the Python module on the Raster Analytics server.</para>
+		/// <para>用于分类的函数模型参数。 函数参数在输入模型引用的 Python 栅格函数类中定义。 您可以在此列出其他深度学习参数和用于试验和优化的参数，例如用于调整灵敏度的置信度阈值。 参数名称将由栅格分析服务器上的 Python 模块中的工具进行填充。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -120,8 +121,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Class Label Field</para>
-		/// <para>The name of the field that will contain the class or category label in the output feature class.</para>
-		/// <para>If a field name is not specified, a new field named ClassLabel will be generated in the output feature class.</para>
+		/// <para>包含输出要素类中类或类别标注的字段名称。</para>
+		/// <para>如果未指定字段名称，则会在输出要素类中生成一个名为 ClassLabel 的新字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -129,9 +130,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Processing Mode</para>
-		/// <para>Specifies how all raster items in a mosaic dataset or an image service will be processed. This parameter is applied when the input raster is a mosaic dataset or an image service.</para>
-		/// <para>Process as mosaicked image—All raster items in the mosaic dataset or image service will be mosaicked together and processed. This is the default.</para>
-		/// <para>Process all raster items separately—All raster items in the mosaic dataset or image service will be processed as separate images.</para>
+		/// <para>指定处理镶嵌数据集或影像服务中的所有栅格项目的方式。 当输入栅格是镶嵌数据集或影像服务时，将应用此参数。</para>
+		/// <para>以镶嵌影像方式处理—将镶嵌在一起并处理镶嵌数据集或影像服务中的所有栅格项目。 这是默认设置。</para>
+		/// <para>单独处理所有栅格项目—将作为独立影像处理镶嵌数据集或影像服务中的所有栅格项目。</para>
 		/// <para><see cref="ProcessingmodeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -163,17 +164,17 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum ProcessingmodeEnum 
 		{
 			/// <summary>
-			/// <para>Process as mosaicked image—All raster items in the mosaic dataset or image service will be mosaicked together and processed. This is the default.</para>
+			/// <para>以镶嵌影像方式处理—将镶嵌在一起并处理镶嵌数据集或影像服务中的所有栅格项目。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("PROCESS_AS_MOSAICKED_IMAGE")]
-			[Description("Process as mosaicked image")]
+			[Description("以镶嵌影像方式处理")]
 			Process_as_mosaicked_image,
 
 			/// <summary>
-			/// <para>Process all raster items separately—All raster items in the mosaic dataset or image service will be processed as separate images.</para>
+			/// <para>单独处理所有栅格项目—将作为独立影像处理镶嵌数据集或影像服务中的所有栅格项目。</para>
 			/// </summary>
 			[GPValue("PROCESS_ITEMS_SEPARATELY")]
-			[Description("Process all raster items separately")]
+			[Description("单独处理所有栅格项目")]
 			Process_all_raster_items_separately,
 
 		}

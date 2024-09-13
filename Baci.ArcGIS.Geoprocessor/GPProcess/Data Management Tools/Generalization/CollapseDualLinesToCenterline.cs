@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Collapse Dual Lines To Centerline</para>
+	/// <para>Collapse Dual Lines To Centerline</para>
 	/// <para>Determines the centerlines of features with dual lines.</para>
 	/// </summary>
 	[Obsolete()]

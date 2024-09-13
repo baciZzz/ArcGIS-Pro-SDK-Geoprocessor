@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Feature Class To Feature Class</para>
-	/// <para>Converts a feature class or feature layer to a feature class.</para>
+	/// <para>要素类至要素类</para>
+	/// <para>用于将要素类或要素图层转换为另一个要素类。</para>
 	/// </summary>
 	public class FeatureClassToFeatureClass : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The feature class or feature layer that will be converted.</para>
+		/// <para>要转换的要素类或要素图层。</para>
 		/// </param>
 		/// <param name="OutPath">
 		/// <para>Output Location</para>
-		/// <para>The location in which the output feature class will be created. This can be either a geodatabase or a folder. If the output location is a folder, the output will be a shapefile.</para>
+		/// <para>将创建输出要素类所在的位置。 该位置可以是地理数据库或文件夹。 如果输出位置为文件夹，则输出将为 shapefile。</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Output Name</para>
-		/// <para>The name of the output feature class.</para>
+		/// <para>输出要素类的名称。</para>
 		/// </param>
 		public FeatureClassToFeatureClass(object InFeatures, object OutPath, object OutName)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Feature Class To Feature Class</para>
+		/// <para>Tool Display Name : 要素类至要素类</para>
 		/// </summary>
-		public override string DisplayName() => "Feature Class To Feature Class";
+		public override string DisplayName() => "要素类至要素类";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureClassToFeatureClass</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The feature class or feature layer that will be converted.</para>
+		/// <para>要转换的要素类或要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Location</para>
-		/// <para>The location in which the output feature class will be created. This can be either a geodatabase or a folder. If the output location is a folder, the output will be a shapefile.</para>
+		/// <para>将创建输出要素类所在的位置。 该位置可以是地理数据库或文件夹。 如果输出位置为文件夹，则输出将为 shapefile。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output feature class.</para>
+		/// <para>输出要素类的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -98,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>An SQL expression used to select a subset of features.</para>
+		/// <para>用于选择要素子集的 SQL 表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -106,20 +107,20 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Field Map</para>
-		/// <para>Controls which attribute fields will be in the output. By default, all fields from the inputs will be included.</para>
-		/// <para>Fields can be added, deleted, renamed, and reordered, and you can change their properties.</para>
-		/// <para>Merge rules allow you to specify how values from two or more input fields are merged or combined into a single output value. There are several merge rules you can use to determine how the output field will be populated with values.</para>
-		/// <para>First—Use the input fields&apos; first value.</para>
-		/// <para>Last—Use the input fields&apos; last value.</para>
-		/// <para>Join—Concatenate (join) the input field values.</para>
-		/// <para>Sum—Calculate the total of the input field values.</para>
-		/// <para>Mean—Calculate the mean (average) of the input field values.</para>
-		/// <para>Median—Calculate the median (middle) of the input field values.</para>
-		/// <para>Mode—Use the value with the highest frequency.</para>
-		/// <para>Min—Use the minimum value of all the input field values.</para>
-		/// <para>Max—Use the maximum value of all the input field values.</para>
-		/// <para>Standard deviation—Use the standard deviation classification method on all the input field values.</para>
-		/// <para>Count—Find the number of records included in the calculation.</para>
+		/// <para>控制输出中要包含的属性字段。默认情况下，将包括输入的所有字段。</para>
+		/// <para>可以添加、删除、重命名和重新排序字段，且可以更改其属性。</para>
+		/// <para>合并规则用于指定如何将两个或更多个输入字段的值合并或组合为一个输出值。有多种合并规则可用于确定如何用值填充输出字段。</para>
+		/// <para>First - 使用输入字段的第一个值。</para>
+		/// <para>Last - 使用输入字段的最后一个值。</para>
+		/// <para>Join - 串连（连接）输入字段的值。</para>
+		/// <para>Sum - 计算输入字段值的总和。</para>
+		/// <para>Mean - 计算输入字段值的平均值。</para>
+		/// <para>Median - 计算输入字段值的中值。</para>
+		/// <para>Mode - 使用具有最高频率的值。</para>
+		/// <para>Min - 使用所有输入字段值中的最小值。</para>
+		/// <para>Max - 使用所有输入字段值中的最大值。</para>
+		/// <para>Standard deviation - 对所有输入字段值使用标准差分类方法。</para>
+		/// <para>Count - 查找计算中所包含的记录数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFieldMapping()]
@@ -128,8 +129,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
-		/// <para>Specifies the default storage parameters (configurations) for geodatabases in a relational database management system (RDBMS). This setting is applicable only when using enterprise geodatabase tables.</para>
-		/// <para>Configuration keywords are set by the database administrator.</para>
+		/// <para>指定关系数据库管理系统 (RDBMS) 中的地理数据库的默认存储参数（配置）。此设置仅在使用企业级地理数据库表时可用。</para>
+		/// <para>配置关键字由数据库管理员进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

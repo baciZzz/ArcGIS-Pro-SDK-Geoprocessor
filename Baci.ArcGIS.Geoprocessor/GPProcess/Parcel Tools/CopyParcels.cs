@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Copy Parcels</para>
-	/// <para>Copies parcels from an input parcel fabric to a new parcel fabric in a new feature dataset.</para>
+	/// <para>复制宗地</para>
+	/// <para>将宗地从输入宗地结构复制到新要素数据集中的新宗地结构。</para>
 	/// </summary>
 	public class CopyParcels : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFabric">
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The input parcels that will be copied to a new parcel fabric. The input parcel fabric can be from a file geodatabase, an enterprise geodatabase connection, or a feature service.</para>
+		/// <para>将被复制到新宗地结构的输入宗地。 输入宗地结构可来自文件地理数据库、企业级地理数据库连接或要素服务。</para>
 		/// </param>
 		/// <param name="TargetDatabase">
 		/// <para>Target Database</para>
-		/// <para>The geodatabase in which the new parcel fabric will be created. The geodatabase can be a file or an enterprise geodatabase.</para>
+		/// <para>将创建新宗地结构的地理数据库。 此地理数据库可以是文件或企业级地理数据库。</para>
 		/// </param>
 		public CopyParcels(object InParcelFabric, object TargetDatabase)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Copy Parcels</para>
+		/// <para>Tool Display Name : 复制宗地</para>
 		/// </summary>
-		public override string DisplayName() => "Copy Parcels";
+		public override string DisplayName() => "复制宗地";
 
 		/// <summary>
 		/// <para>Tool Name : CopyParcels</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The input parcels that will be copied to a new parcel fabric. The input parcel fabric can be from a file geodatabase, an enterprise geodatabase connection, or a feature service.</para>
+		/// <para>将被复制到新宗地结构的输入宗地。 输入宗地结构可来自文件地理数据库、企业级地理数据库连接或要素服务。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPParcelLayer()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Target Database</para>
-		/// <para>The geodatabase in which the new parcel fabric will be created. The geodatabase can be a file or an enterprise geodatabase.</para>
+		/// <para>将创建新宗地结构的地理数据库。 此地理数据库可以是文件或企业级地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Feature Dataset Name</para>
-		/// <para>The name of the feature dataset that will be created for the new parcel fabric.</para>
+		/// <para>将为新宗地结构创建的要素数据集的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Parcel Fabric Name</para>
-		/// <para>The name of the new parcel fabric.</para>
+		/// <para>新宗地结构的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Iterate Workspaces</para>
-	/// <para>Iterates over workspaces in a folder.</para>
+	/// <para>迭代工作空间</para>
+	/// <para>迭代文件夹中的工作空间。</para>
 	/// </summary>
 	public class IterateWorkspaces : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InFolder">
 		/// <para>Folder</para>
-		/// <para>The folder which stores the workspace to iterate.</para>
+		/// <para>存储要迭代的工作空间的文件夹。</para>
 		/// </param>
 		public IterateWorkspaces(object InFolder)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Iterate Workspaces</para>
+		/// <para>Tool Display Name : 迭代工作空间</para>
 		/// </summary>
-		public override string DisplayName() => "Iterate Workspaces";
+		public override string DisplayName() => "迭代工作空间";
 
 		/// <summary>
 		/// <para>Tool Name : IterateWorkspaces</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Folder</para>
-		/// <para>The folder which stores the workspace to iterate.</para>
+		/// <para>存储要迭代的工作空间的文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Wildcard</para>
-		/// <para>A combination of * and characters that help to limit the results. The asterisk is the same as saying ALL. If no wildcard is specified, all inputs will be returned. For example, it can be used to restrict Iteration over input names starting with a certain character or word (for example, A* or Ari* or Land* and so on).</para>
+		/// <para>* 与有助于限制结果的字符的组合。星号表示允许使用任意字符。如果未指定通配符，则将返回所有输入。例如，可使用通配符来限制对以某个字符或词语（例如 A*、Ari* 或 Land* 等）开头的输入名称进行迭代。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -80,11 +81,11 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Workspace Type</para>
-		/// <para>Specifies the workspace type to find.</para>
-		/// <para>File geodatabase—Only file geodatabases will be the output.</para>
-		/// <para>Folder—Only folders will be the output.</para>
-		/// <para>Enterprise geodatabase—Only enterprise geodatabases will be the output.</para>
-		/// <para>BIM—Only BIM workspaces will be the output.</para>
+		/// <para>指定要查找的工作空间类型。</para>
+		/// <para>文件地理数据库—将仅输出文件地理数据库。</para>
+		/// <para>文件夹—将仅输出文件夹。</para>
+		/// <para>企业级地理数据库—将仅输出企业级地理数据库。</para>
+		/// <para>BIM—仅输出 BIM 工作空间。</para>
 		/// <para><see cref="WorkspaceTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -94,9 +95,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Recursive</para>
-		/// <para>Specifies if subfolders in the main folder will be iterated through recursively.</para>
-		/// <para>Checked—Will iterate through all subfolders.</para>
-		/// <para>Unchecked—Will not iterate through all subfolders. This is the default.</para>
+		/// <para>指定是否以递归方式迭代主文件夹中的子文件夹。</para>
+		/// <para>选中 - 将迭代所有子文件夹。</para>
+		/// <para>未选中 - 不迭代所有子文件夹。 这是默认设置。</para>
 		/// <para><see cref="RecursiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -126,28 +127,28 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum WorkspaceTypeEnum 
 		{
 			/// <summary>
-			/// <para>File geodatabase—Only file geodatabases will be the output.</para>
+			/// <para>文件地理数据库—将仅输出文件地理数据库。</para>
 			/// </summary>
 			[GPValue("FILEGDB")]
-			[Description("File geodatabase")]
+			[Description("文件地理数据库")]
 			File_geodatabase,
 
 			/// <summary>
-			/// <para>Folder—Only folders will be the output.</para>
+			/// <para>文件夹—将仅输出文件夹。</para>
 			/// </summary>
 			[GPValue("FOLDER")]
-			[Description("Folder")]
+			[Description("文件夹")]
 			Folder,
 
 			/// <summary>
-			/// <para>Enterprise geodatabase—Only enterprise geodatabases will be the output.</para>
+			/// <para>企业级地理数据库—将仅输出企业级地理数据库。</para>
 			/// </summary>
 			[GPValue("SDE")]
-			[Description("Enterprise geodatabase")]
+			[Description("企业级地理数据库")]
 			Enterprise_geodatabase,
 
 			/// <summary>
-			/// <para>BIM—Only BIM workspaces will be the output.</para>
+			/// <para>BIM—仅输出 BIM 工作空间。</para>
 			/// </summary>
 			[GPValue("BIM")]
 			[Description("BIM")]
@@ -161,14 +162,14 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum RecursiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Will iterate through all subfolders.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RECURSIVE")]
 			RECURSIVE,
 
 			/// <summary>
-			/// <para>Unchecked—Will not iterate through all subfolders. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_RECURSIVE")]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Replicate Job Data</para>
-	/// <para>Replicates the ArcGIS Workflow Manager (Classic) configuration from a parent repository to child repositories using ArcGIS Workflow Manager (Classic) Server. Each child repository  becomes an identical copy (replica) of the parent repository.</para>
+	/// <para>复制作业数据</para>
+	/// <para>通过使用 ArcGIS Workflow Manager (Classic) Server 将 ArcGIS Workflow Manager (Classic) 配置从父资料档案库复制到子资料档案库中。每个子资料档案库均会成为父资料档案库的相同副本（复本）。</para>
 	/// </summary>
 	public class CreateJobDataReplica : AbstractGPProcess
 	{
@@ -20,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		/// <param name="InputParentRepositoryURL">
 		/// <para>Parent Repository URL</para>
-		/// <para>The URL for the parent repository as the Workflow Manager (Classic) service URL, for example, http://localhost/arcgis/rest/services/parent/wmserver.</para>
+		/// <para>作为 Workflow Manager (Classic) 服务 URL 的父资料档案库的 URL，例如，http://localhost/arcgis/rest/services/parent/wmserver。</para>
 		/// </param>
 		/// <param name="InputParentRepositoryName">
 		/// <para>Parent Repository Name</para>
-		/// <para>The name of the parent repository that will distribute the Workflow Manager (Classic) jobs and configuration elements.</para>
+		/// <para>将分配 Workflow Manager (Classic) 作业和配置元素的父资料档案库的名称。</para>
 		/// </param>
 		/// <param name="InputMultiName">
 		/// <para>Child Repository Names and URLs</para>
-		/// <para>The child repositories that will be updated with the parent repository configuration. To add a child repository, provide the repository name and click the Add button. After adding the child, provide values for Connected and URL as follows:</para>
-		/// <para>Connected—Enter true if the child is a connected replication. Enter false if the child is a disconnected replication.</para>
-		/// <para>URL—If Connected is true, provide the URL of the child repository. If Connected is false, provide a folder location to contain the configuration file exported from the parent repository.</para>
+		/// <para>将通过父资料档案库配置进行更新的子资料档案库。要添加子资料档案库，请提供资料档案库的名称，然后单击添加按钮。添加完子资料档案库后，请按如下所示提供连接和 URL 的值：</para>
+		/// <para>连接 - 如果子资料档案库是在线复制，请输入 true。如果子资料档案库是离线复制，请输入 false。</para>
+		/// <para>URL - 如果连接为 true，请提供子资料档案库的 URL。如果连接为 false，请提供包含从父资料档案库中导出的配置文件的文件夹位置。</para>
 		/// </param>
 		public CreateJobDataReplica(object InputParentRepositoryURL, object InputParentRepositoryName, object InputMultiName)
 		{
@@ -40,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Replicate Job Data</para>
+		/// <para>Tool Display Name : 复制作业数据</para>
 		/// </summary>
-		public override string DisplayName() => "Replicate Job Data";
+		public override string DisplayName() => "复制作业数据";
 
 		/// <summary>
 		/// <para>Tool Name : CreateJobDataReplica</para>
@@ -76,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Parent Repository URL</para>
-		/// <para>The URL for the parent repository as the Workflow Manager (Classic) service URL, for example, http://localhost/arcgis/rest/services/parent/wmserver.</para>
+		/// <para>作为 Workflow Manager (Classic) 服务 URL 的父资料档案库的 URL，例如，http://localhost/arcgis/rest/services/parent/wmserver。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Parent Repository Name</para>
-		/// <para>The name of the parent repository that will distribute the Workflow Manager (Classic) jobs and configuration elements.</para>
+		/// <para>将分配 Workflow Manager (Classic) 作业和配置元素的父资料档案库的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -92,9 +93,9 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Child Repository Names and URLs</para>
-		/// <para>The child repositories that will be updated with the parent repository configuration. To add a child repository, provide the repository name and click the Add button. After adding the child, provide values for Connected and URL as follows:</para>
-		/// <para>Connected—Enter true if the child is a connected replication. Enter false if the child is a disconnected replication.</para>
-		/// <para>URL—If Connected is true, provide the URL of the child repository. If Connected is false, provide a folder location to contain the configuration file exported from the parent repository.</para>
+		/// <para>将通过父资料档案库配置进行更新的子资料档案库。要添加子资料档案库，请提供资料档案库的名称，然后单击添加按钮。添加完子资料档案库后，请按如下所示提供连接和 URL 的值：</para>
+		/// <para>连接 - 如果子资料档案库是在线复制，请输入 true。如果子资料档案库是离线复制，请输入 false。</para>
+		/// <para>URL - 如果连接为 true，请提供子资料档案库的 URL。如果连接为 false，请提供包含从父资料档案库中导出的配置文件的文件夹位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]

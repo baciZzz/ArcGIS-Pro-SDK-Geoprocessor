@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Raster World File</para>
-	/// <para>Creates a world file based on the pixel size and the location of the upper left pixel.</para>
+	/// <para>导出栅格坐标文件</para>
+	/// <para>根据左上角像素的像素大小和位置创建坐标文件。</para>
 	/// </summary>
 	public class ExportRasterWorldFile : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRasterDataset">
 		/// <para>Input Raster Dataset</para>
-		/// <para>The raster dataset from which you want to create the world file.</para>
+		/// <para>用于创建坐标文件的栅格数据集。</para>
 		/// </param>
 		public ExportRasterWorldFile(object InRasterDataset)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Export Raster World File</para>
+		/// <para>Tool Display Name : 导出栅格坐标文件</para>
 		/// </summary>
-		public override string DisplayName() => "Export Raster World File";
+		public override string DisplayName() => "导出栅格坐标文件";
 
 		/// <summary>
 		/// <para>Tool Name : ExportRasterWorldFile</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster Dataset</para>
-		/// <para>The raster dataset from which you want to create the world file.</para>
+		/// <para>用于创建坐标文件的栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

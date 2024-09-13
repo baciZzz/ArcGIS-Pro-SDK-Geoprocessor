@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Add Field Based Suitability Criteria</para>
+	/// <para>Add Field Based Suitability Criteria</para>
 	/// <para>Adds criteria based on the numerical fields existing in the input layer.</para>
 	/// </summary>
 	public class AddFieldBasedSuitabilityCriteria : AbstractGPProcess

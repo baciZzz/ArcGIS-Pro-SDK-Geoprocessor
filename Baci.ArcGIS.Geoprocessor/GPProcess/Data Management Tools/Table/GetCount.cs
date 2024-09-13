@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Get Count</para>
-	/// <para>Returns the total number of rows for a table.</para>
+	/// <para>获取计数</para>
+	/// <para>返回表的总行数。</para>
 	/// </summary>
 	public class GetCount : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRows">
 		/// <para>Input Rows</para>
-		/// <para>The input table view or raster layer. If a selection is defined on the input, the count of the selected rows is returned.</para>
+		/// <para>输入表视图或栅格图层。如果对输入定义了选择内容，则只会返回所选行的计数。</para>
 		/// </param>
 		public GetCount(object InRows)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Get Count</para>
+		/// <para>Tool Display Name : 获取计数</para>
 		/// </summary>
-		public override string DisplayName() => "Get Count";
+		public override string DisplayName() => "获取计数";
 
 		/// <summary>
 		/// <para>Tool Name : GetCount</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Rows</para>
-		/// <para>The input table view or raster layer. If a selection is defined on the input, the count of the selected rows is returned.</para>
+		/// <para>输入表视图或栅格图层。如果对输入定义了选择内容，则只会返回所选行的计数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]

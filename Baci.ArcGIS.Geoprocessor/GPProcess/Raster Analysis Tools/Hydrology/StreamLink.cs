@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Stream Link</para>
-	/// <para>Assigns unique values to sections of a raster linear network between intersections.</para>
+	/// <para>河流链</para>
+	/// <para>向各交汇点之间的栅格线状网络的各部分分配唯一值。</para>
 	/// </summary>
 	public class StreamLink : AbstractGPProcess
 	{
@@ -20,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		/// <param name="Inputstreamraster">
 		/// <para>Input Stream Raster</para>
-		/// <para>An input raster that represents a linear stream network.</para>
+		/// <para>表示线性河流网络的输入栅格。</para>
 		/// </param>
 		/// <param name="Inputflowdirectionraster">
 		/// <para>Input Flow Direction Raster</para>
-		/// <para>The input raster that shows the direction of flow out of each cell.</para>
+		/// <para>根据每个像元来显示流向的输入栅格。</para>
 		/// </param>
 		/// <param name="Outputname">
 		/// <para>Output Name</para>
-		/// <para>The name of the output stream link raster service.</para>
-		/// <para>The default name is based on the tool name and the input layer name. If the layer name already exists, you will be prompted to provide another name.</para>
+		/// <para>输出河流链栅格服务的名称。</para>
+		/// <para>默认名称基于工具名称以及输入图层名称。如果该图层名称已存在，则系统将提示您提供其他名称。</para>
 		/// </param>
 		public StreamLink(object Inputstreamraster, object Inputflowdirectionraster, object Outputname)
 		{
@@ -39,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Stream Link</para>
+		/// <para>Tool Display Name : 河流链</para>
 		/// </summary>
-		public override string DisplayName() => "Stream Link";
+		public override string DisplayName() => "河流链";
 
 		/// <summary>
 		/// <para>Tool Name : StreamLink</para>
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Stream Raster</para>
-		/// <para>An input raster that represents a linear stream network.</para>
+		/// <para>表示线性河流网络的输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Flow Direction Raster</para>
-		/// <para>The input raster that shows the direction of flow out of each cell.</para>
+		/// <para>根据每个像元来显示流向的输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -93,8 +94,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output stream link raster service.</para>
-		/// <para>The default name is based on the tool name and the input layer name. If the layer name already exists, you will be prompted to provide another name.</para>
+		/// <para>输出河流链栅格服务的名称。</para>
+		/// <para>默认名称基于工具名称以及输入图层名称。如果该图层名称已存在，则系统将提示您提供其他名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

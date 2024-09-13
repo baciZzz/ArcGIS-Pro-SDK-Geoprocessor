@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Set Control Point At Intersect</para>
-	/// <para>Creates a control point at vertices that are shared by one or more line or polygon features. This tool is commonly used to synchronize boundary symbology on adjacent polygons.</para>
+	/// <para>在相交处设置控制点</para>
+	/// <para>此工具可在由一个或多个线要素或面要素共用的折点处创建控制点。 此工具通常用于同步相邻面上的边界符号系统。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InLineOrPolygonFeatures">
 		/// <para>Input Features</para>
-		/// <para>The line or polygon feature layer.</para>
+		/// <para>线或面要素图层。</para>
 		/// </param>
 		public SetControlPointAtIntersect(object InLineOrPolygonFeatures)
 		{
@@ -30,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Set Control Point At Intersect</para>
+		/// <para>Tool Display Name : 在相交处设置控制点</para>
 		/// </summary>
-		public override string DisplayName() => "Set Control Point At Intersect";
+		public override string DisplayName() => "在相交处设置控制点";
 
 		/// <summary>
 		/// <para>Tool Name : SetControlPointAtIntersect</para>
@@ -66,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The line or polygon feature layer.</para>
+		/// <para>线或面要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -76,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Secondary Features</para>
-		/// <para>The line or polygon feature layer with features coincident to the input features.</para>
+		/// <para>具有与输入要素重叠的要素的线或面要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]

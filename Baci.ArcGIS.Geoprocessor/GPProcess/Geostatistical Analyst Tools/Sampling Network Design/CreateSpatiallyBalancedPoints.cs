@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Create Spatially Balanced Points</para>
-	/// <para>Generates a set of sample points based on inclusion probabilities, resulting in a spatially balanced sample design. This tool is generally used for designing a monitoring network by suggesting locations to take samples, and a preference for particular locations can be defined using an inclusion probability raster.</para>
+	/// <para>创建空间平衡点</para>
+	/// <para>基于包含概率生成一组采样点，进而获得空间平衡的采样设计。此工具通常用于通过对采样位置提出建议来设计监控网络，以及使用包含概率栅格定义特定位置的优先级。</para>
 	/// </summary>
 	public class CreateSpatiallyBalancedPoints : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InProbabilityRaster">
 		/// <para>Input inclusion probability raster</para>
-		/// <para>This raster defines the inclusion probabilities for each location in the area of interest. The location values range from 0 (low inclusion probability) to 1 (high inclusion probability).</para>
+		/// <para>此栅格定义感兴趣区域内每个位置的包含概率。位置的值范围为 0（低包含概率）到 1（高包含概率）。</para>
 		/// </param>
 		/// <param name="NumberOutputPoints">
 		/// <para>Number of  output points</para>
-		/// <para>Specify how many sample locations to generate.</para>
+		/// <para>指定要生成的采样位置的数量。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output point feature class</para>
-		/// <para>The output feature class contains the selected sample locations and their inclusion probabilities.</para>
+		/// <para>输出要素类包含所选采样位置及其包含概率。</para>
 		/// </param>
 		public CreateSpatiallyBalancedPoints(object InProbabilityRaster, object NumberOutputPoints, object OutFeatureClass)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Spatially Balanced Points</para>
+		/// <para>Tool Display Name : 创建空间平衡点</para>
 		/// </summary>
-		public override string DisplayName() => "Create Spatially Balanced Points";
+		public override string DisplayName() => "创建空间平衡点";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSpatiallyBalancedPoints</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input inclusion probability raster</para>
-		/// <para>This raster defines the inclusion probabilities for each location in the area of interest. The location values range from 0 (low inclusion probability) to 1 (high inclusion probability).</para>
+		/// <para>此栅格定义感兴趣区域内每个位置的包含概率。位置的值范围为 0（低包含概率）到 1（高包含概率）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Number of  output points</para>
-		/// <para>Specify how many sample locations to generate.</para>
+		/// <para>指定要生成的采样位置的数量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -91,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output point feature class</para>
-		/// <para>The output feature class contains the selected sample locations and their inclusion probabilities.</para>
+		/// <para>输出要素类包含所选采样位置及其包含概率。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]

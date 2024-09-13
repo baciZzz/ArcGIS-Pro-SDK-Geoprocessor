@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Create Indoor Dataset</para>
-	/// <para>Creates an indoor dataset containing the necessary feature classes to maintain floor plan data using a streamlined schema that conforms to the ArcGIS Indoors Information Model. The indoor dataset can be used for visualizing, analyzing, and editing indoor data.</para>
+	/// <para>创建 Indoor 数据集</para>
+	/// <para>创建包含必要的要素类的 Indoor 数据集，这些要素类可使用符合 ArcGIS Indoors 信息模型的简化方案维护地面规划数据。 Indoor 数据集可用于可视化、分析和编辑 Indoor 数据。</para>
 	/// </summary>
 	public class CreateIndoorDataset : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		/// <param name="TargetGdb">
 		/// <para>Target Geodatabase</para>
-		/// <para>The target file or enterprise geodatabase that will contain the output indoor dataset.</para>
+		/// <para>包含输出 Indoor 数据集的目标文件地理数据库或企业级地理数据库。</para>
 		/// </param>
 		/// <param name="IndoorDatasetName">
 		/// <para>Indoor Dataset Name</para>
-		/// <para>The unique name of the output indoor dataset. The default is Indoor.</para>
+		/// <para>输出 Indoor 数据集的唯一名称。 默认为 Indoor。</para>
 		/// </param>
 		/// <param name="SpatialReference">
 		/// <para>Coordinate System</para>
-		/// <para>The spatial reference of the output indoor dataset.</para>
+		/// <para>输出 Indoor 数据集的空间参考。</para>
 		/// </param>
 		public CreateIndoorDataset(object TargetGdb, object IndoorDatasetName, object SpatialReference)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Indoor Dataset</para>
+		/// <para>Tool Display Name : 创建 Indoor 数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Create Indoor Dataset";
+		public override string DisplayName() => "创建 Indoor 数据集";
 
 		/// <summary>
 		/// <para>Tool Name : CreateIndoorDataset</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Target Geodatabase</para>
-		/// <para>The target file or enterprise geodatabase that will contain the output indoor dataset.</para>
+		/// <para>包含输出 Indoor 数据集的目标文件地理数据库或企业级地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Indoor Dataset Name</para>
-		/// <para>The unique name of the output indoor dataset. The default is Indoor.</para>
+		/// <para>输出 Indoor 数据集的唯一名称。 默认为 Indoor。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>The spatial reference of the output indoor dataset.</para>
+		/// <para>输出 Indoor 数据集的空间参考。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSpatialReference()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Iterate Tables</para>
-	/// <para>Iterates over tables in a workspace.</para>
+	/// <para>迭代表</para>
+	/// <para>迭代工作空间中的所有表文件。</para>
 	/// </summary>
 	public class IterateTables : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Workspace</para>
-		/// <para>Workspace containing the tables to iterate.</para>
+		/// <para>要迭代的表所在的工作空间。</para>
 		/// </param>
 		public IterateTables(object InWorkspace)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Iterate Tables</para>
+		/// <para>Tool Display Name : 迭代表</para>
 		/// </summary>
-		public override string DisplayName() => "Iterate Tables";
+		public override string DisplayName() => "迭代表";
 
 		/// <summary>
 		/// <para>Tool Name : IterateTables</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Workspace</para>
-		/// <para>Workspace containing the tables to iterate.</para>
+		/// <para>要迭代的表所在的工作空间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Wildcard</para>
-		/// <para>A combination of * and characters that help to limit the results. The asterisk is the same as saying ALL. If no wildcard is specified, all inputs will be returned. For example, it can be used to restrict Iteration over input names starting with a certain character or word (for example, A* or Ari* or Land* and so on).</para>
+		/// <para>* 与有助于限制结果的字符的组合。星号表示允许使用任意字符。如果未指定通配符，则将返回所有输入。例如，可使用通配符来限制对以某个字符或词语（例如 A*、Ari* 或 Land* 等）开头的输入名称进行迭代。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -80,9 +81,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Table Type</para>
-		/// <para>For folder workspaces (shapefiles and coverages), choose the table type.</para>
-		/// <para>dBASE (shapefiles)—dBASE table (shapefiles)</para>
-		/// <para>INFO (coverages)—INFO table (coverages)</para>
+		/// <para>对于文件夹工作空间（shapefile 和 coverage），选择表类型。</para>
+		/// <para>dBASE (shapefile)—dBASE 表 (shapefile)</para>
+		/// <para>INFO (coverage)—INFO 表 (coverage)</para>
 		/// <para><see cref="TableTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -92,9 +93,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Recursive</para>
-		/// <para>Determines if subfolders in the main folder will be iterated through recursively.</para>
-		/// <para>Checked—Will iterate through all subfolders.</para>
-		/// <para>Unchecked—Will not iterate through all subfolders.</para>
+		/// <para>确定是否递归迭代主文件夹中的子文件夹。</para>
+		/// <para>选中 - 将递归迭代所有子文件夹。</para>
+		/// <para>未选中 - 将不会递归迭代所有子文件。</para>
 		/// <para><see cref="RecursiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -124,17 +125,17 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum TableTypeEnum 
 		{
 			/// <summary>
-			/// <para>dBASE (shapefiles)—dBASE table (shapefiles)</para>
+			/// <para>dBASE (shapefile)—dBASE 表 (shapefile)</para>
 			/// </summary>
 			[GPValue("DBASE")]
-			[Description("dBASE (shapefiles)")]
+			[Description("dBASE (shapefile)")]
 			DBASE,
 
 			/// <summary>
-			/// <para>INFO (coverages)—INFO table (coverages)</para>
+			/// <para>INFO (coverage)—INFO 表 (coverage)</para>
 			/// </summary>
 			[GPValue("INFO")]
-			[Description("INFO (coverages)")]
+			[Description("INFO (coverage)")]
 			INFO,
 
 		}
@@ -145,14 +146,14 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum RecursiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Will iterate through all subfolders.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RECURSIVE")]
 			RECURSIVE,
 
 			/// <summary>
-			/// <para>Unchecked—Will not iterate through all subfolders.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_RECURSIVE")]

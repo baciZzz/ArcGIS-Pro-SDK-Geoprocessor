@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Make Masks From Rules</para>
+	/// <para>Make Masks From Rules</para>
 	/// <para>Creates polygon masks for features based on color rules.</para>
 	/// </summary>
 	public class MakeMasksFromRules : AbstractGPProcess

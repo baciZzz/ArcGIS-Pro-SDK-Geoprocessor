@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Drop Zone Suitability</para>
-	/// <para>Identifies drop zone locations suitable for parachuting equipment or personnel within a designated area of interest given slope and vegetation data.</para>
+	/// <para>降落区适宜性</para>
+	/// <para>根据给定坡度和植被数据在指定感兴趣区域中表示适宜空降设备或跳伞人员降落的降落区位置。</para>
 	/// </summary>
 	public class DropZones : AbstractGPProcess
 	{
@@ -20,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InSlopeRaster">
 		/// <para>Input Percent Slope Raster</para>
-		/// <para>The slope raster percentage used to determine the slope component of DZ suitability.</para>
+		/// <para>用于确定降落区适宜性坡度分量的斜坡栅格百分比。</para>
 		/// </param>
 		/// <param name="InVegetationFeatures">
 		/// <para>Input Combined Vegetation Features</para>
-		/// <para>The features that define the combined vegetation and land cover types. These features are used to find areas with suitable vegetation coverage for DZs.</para>
+		/// <para>定义组合植被和土地覆盖类型的要素。这些要素用于查找降落区覆盖有适宜植被的区域。</para>
 		/// </param>
 		/// <param name="ClipFeatures">
 		/// <para>Clip Features</para>
-		/// <para>The area within which to find suitable DZs.</para>
+		/// <para>在其中找到适宜降落区的区域。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class showing terrain suitability for DZs.</para>
+		/// <para>显示降落区 terrain 适宜性的输出要素类。</para>
 		/// </param>
 		public DropZones(object InSlopeRaster, object InVegetationFeatures, object ClipFeatures, object OutFeatureClass)
 		{
@@ -43,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Drop Zone Suitability</para>
+		/// <para>Tool Display Name : 降落区适宜性</para>
 		/// </summary>
-		public override string DisplayName() => "Drop Zone Suitability";
+		public override string DisplayName() => "降落区适宜性";
 
 		/// <summary>
 		/// <para>Tool Name : DropZones</para>
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Percent Slope Raster</para>
-		/// <para>The slope raster percentage used to determine the slope component of DZ suitability.</para>
+		/// <para>用于确定降落区适宜性坡度分量的斜坡栅格百分比。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterLayer()]
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Combined Vegetation Features</para>
-		/// <para>The features that define the combined vegetation and land cover types. These features are used to find areas with suitable vegetation coverage for DZs.</para>
+		/// <para>定义组合植被和土地覆盖类型的要素。这些要素用于查找降落区覆盖有适宜植被的区域。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Clip Features</para>
-		/// <para>The area within which to find suitable DZs.</para>
+		/// <para>在其中找到适宜降落区的区域。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -106,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class showing terrain suitability for DZs.</para>
+		/// <para>显示降落区 terrain 适宜性的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]

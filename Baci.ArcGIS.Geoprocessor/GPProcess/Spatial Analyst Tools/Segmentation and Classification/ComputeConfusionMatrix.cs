@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Compute Confusion Matrix</para>
-	/// <para>Computes a confusion matrix with errors of omission and commission and derives a kappa index of agreement and an overall accuracy between the classified map and the reference data.</para>
+	/// <para>计算混淆矩阵</para>
+	/// <para>使用漏分误差和错分误差计算混淆矩阵，然后派生出分类地图与参考数据之间的一致性 kappa 指数和整体精度。</para>
 	/// </summary>
 	public class ComputeConfusionMatrix : AbstractGPProcess
 	{
@@ -20,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InAccuracyAssessmentPoints">
 		/// <para>Input Accuracy Assessment Points</para>
-		/// <para>The accuracy assessment point feature class, created from the Create Accuracy Assessment Points tool, containing the CLASSIFIED and GROUND_TRUTH fields.</para>
+		/// <para>通过创建精度评估点工具创建，且其中包含 CLASSIFIED 和 GROUND_TRUTH 字段的精度评估点要素类。</para>
 		/// </param>
 		/// <param name="OutConfusionMatrix">
 		/// <para>Output Confusion Matrix</para>
-		/// <para>The output file name of the confusion matrix in table format.</para>
-		/// <para>The format of the table is determined by the output location and path. By default, the output will be a geodatabase table. If the path is not in a geodatabase, specify a .dbf extension to save it in dBASE format.</para>
+		/// <para>表格式形式的混淆矩阵输出文件名。</para>
+		/// <para>表的格式由输出位置和路径确定。默认情况下，输出为一张地理数据库表。如果该路径不在地理数据库中，请指定 .dbf 扩展名以将其保存为 dBASE 格式。</para>
 		/// </param>
 		public ComputeConfusionMatrix(object InAccuracyAssessmentPoints, object OutConfusionMatrix)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Compute Confusion Matrix</para>
+		/// <para>Tool Display Name : 计算混淆矩阵</para>
 		/// </summary>
-		public override string DisplayName() => "Compute Confusion Matrix";
+		public override string DisplayName() => "计算混淆矩阵";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeConfusionMatrix</para>
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Accuracy Assessment Points</para>
-		/// <para>The accuracy assessment point feature class, created from the Create Accuracy Assessment Points tool, containing the CLASSIFIED and GROUND_TRUTH fields.</para>
+		/// <para>通过创建精度评估点工具创建，且其中包含 CLASSIFIED 和 GROUND_TRUTH 字段的精度评估点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -78,8 +79,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output Confusion Matrix</para>
-		/// <para>The output file name of the confusion matrix in table format.</para>
-		/// <para>The format of the table is determined by the output location and path. By default, the output will be a geodatabase table. If the path is not in a geodatabase, specify a .dbf extension to save it in dBASE format.</para>
+		/// <para>表格式形式的混淆矩阵输出文件名。</para>
+		/// <para>表的格式由输出位置和路径确定。默认情况下，输出为一张地理数据库表。如果该路径不在地理数据库中，请指定 .dbf 扩展名以将其保存为 dBASE 格式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Inspect Training Samples</para>
-	/// <para>Estimates the accuracy of individual training samples. The cross validation accuracy is computed using the previously generated classification training result in an .ecd file and the training samples. Outputs include a raster dataset containing the misclassified class values and a training sample dataset with the accuracy score for each training sample.</para>
+	/// <para>检查训练样本</para>
+	/// <para>估计个人训练样本的精度。 交叉验证精度是使用 .ecd 文件中先前生成的分类训练结果及训练样本进行计算的。 输出包括以下内容：包含误分类类值的栅格数据集，包含每个训练样本精度得分的训练样本数据集。</para>
 	/// </summary>
 	public class InspectTrainingSamples : AbstractGPProcess
 	{
@@ -20,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The input raster to be classified.</para>
+		/// <para>要进行分类的输入栅格。</para>
 		/// </param>
 		/// <param name="InTrainingFeatures">
 		/// <para>Input Training Sample File</para>
-		/// <para>A training sample feature class created in the Training Samples Manager pane.</para>
+		/// <para>在训练样本管理器窗格中创建的训练样本要素类。</para>
 		/// </param>
 		/// <param name="InClassifierDefinition">
 		/// <para>Input Classifier Definition File</para>
-		/// <para>The .ecd output classifier file from any of the train classifier tools. The .ecd file is a JSON file that contains attribute information, statistics, or other information needed for the classifier.</para>
+		/// <para>任意训练分类器工具中的 .ecd 输出分类器文件。.ecd 文件是包含属性信息、统计数据或分类器所需的其他信息的 JSON 文件。</para>
 		/// </param>
 		/// <param name="OutTrainingFeatureClass">
 		/// <para>Output Training Sample Feature Class with Score</para>
-		/// <para>The output individual training samples saved as a feature class. The associated attribute table contains an addition field listing the accuracy score.</para>
+		/// <para>另存为要素类的单个输出训练样本。关联的属性表包含列出精度得分的添加字段。</para>
 		/// </param>
 		/// <param name="OutMisclassifiedRaster">
 		/// <para>Output Misclassified Raster</para>
-		/// <para>The output misclassified raster having NoData outside training samples. In training samples, correctly classified pixels are represented as NoData, and misclassified pixels are represented by their class value. The results is an index map of misclassified class values.</para>
+		/// <para>在训练样本外部具有 NoData 的输出误分类栅格。在训练样本中，正确分类的像素表示为 NoData，误分类像素由其类值表示。结果为误分类类值的索引地图。</para>
 		/// </param>
 		public InspectTrainingSamples(object InRaster, object InTrainingFeatures, object InClassifierDefinition, object OutTrainingFeatureClass, object OutMisclassifiedRaster)
 		{
@@ -48,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Inspect Training Samples</para>
+		/// <para>Tool Display Name : 检查训练样本</para>
 		/// </summary>
-		public override string DisplayName() => "Inspect Training Samples";
+		public override string DisplayName() => "检查训练样本";
 
 		/// <summary>
 		/// <para>Tool Name : InspectTrainingSamples</para>
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The input raster to be classified.</para>
+		/// <para>要进行分类的输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Training Sample File</para>
-		/// <para>A training sample feature class created in the Training Samples Manager pane.</para>
+		/// <para>在训练样本管理器窗格中创建的训练样本要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Classifier Definition File</para>
-		/// <para>The .ecd output classifier file from any of the train classifier tools. The .ecd file is a JSON file that contains attribute information, statistics, or other information needed for the classifier.</para>
+		/// <para>任意训练分类器工具中的 .ecd 输出分类器文件。.ecd 文件是包含属性信息、统计数据或分类器所需的其他信息的 JSON 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output Training Sample Feature Class with Score</para>
-		/// <para>The output individual training samples saved as a feature class. The associated attribute table contains an addition field listing the accuracy score.</para>
+		/// <para>另存为要素类的单个输出训练样本。关联的属性表包含列出精度得分的添加字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -117,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output Misclassified Raster</para>
-		/// <para>The output misclassified raster having NoData outside training samples. In training samples, correctly classified pixels are represented as NoData, and misclassified pixels are represented by their class value. The results is an index map of misclassified class values.</para>
+		/// <para>在训练样本外部具有 NoData 的输出误分类栅格。在训练样本中，正确分类的像素表示为 NoData，误分类像素由其类值表示。结果为误分类类值的索引地图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -125,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Additional Input Raster</para>
-		/// <para>Ancillary raster datasets, such as a multispectral image or a DEM, will be incorporated to generate attributes and other required information for the classifier. This raster is necessary when calculating attributes such as mean or standard deviation. This parameter is optional.</para>
+		/// <para>将对其他栅格数据集（如多光谱影像或 DEM）进行整合，从而为分类器生成属性和其他所需信息。 计算平均值或标准差等属性时需要使用此栅格。 设置此参数属于可选操作。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]

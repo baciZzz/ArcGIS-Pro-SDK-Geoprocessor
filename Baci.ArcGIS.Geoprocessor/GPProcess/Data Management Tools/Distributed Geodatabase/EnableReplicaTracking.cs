@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Enable Replica Tracking</para>
-	/// <para>Enables replica tracking on data, allowing you to work with  offline maps. Replica tracking applies to services that are configured with the sync capability with the option of creating a version for each downloaded map.</para>
+	/// <para>启用复本追踪</para>
+	/// <para>启用对数据的复本追踪，以使用离线地图。复本追踪适用于配置有同步功能以及用于为每个下载的地图创建版本的选项的服务。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>The enterprise geodatabase table, feature class, feature dataset, attributed relationship class, or many-to-many relationship class on which to enable replica tracking.</para>
+		/// <para>启用复本追踪的企业级地理数据库表、要素类、要素数据集、属性关系类或多对多关系类。</para>
 		/// </param>
 		public EnableReplicaTracking(object InDataset)
 		{
@@ -30,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Enable Replica Tracking</para>
+		/// <para>Tool Display Name : 启用复本追踪</para>
 		/// </summary>
-		public override string DisplayName() => "Enable Replica Tracking";
+		public override string DisplayName() => "启用复本追踪";
 
 		/// <summary>
 		/// <para>Tool Name : EnableReplicaTracking</para>
@@ -66,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>The enterprise geodatabase table, feature class, feature dataset, attributed relationship class, or many-to-many relationship class on which to enable replica tracking.</para>
+		/// <para>启用复本追踪的企业级地理数据库表、要素类、要素数据集、属性关系类或多对多关系类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]

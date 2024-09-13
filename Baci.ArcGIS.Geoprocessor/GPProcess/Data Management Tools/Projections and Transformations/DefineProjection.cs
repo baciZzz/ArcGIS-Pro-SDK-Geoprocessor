@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Define Projection</para>
-	/// <para>Overwrites the coordinate system information (map projection and datum) stored with a dataset. This tool is intended for datasets that have an unknown or incorrect coordinate system defined.</para>
+	/// <para>定义投影</para>
+	/// <para>覆盖与数据集一同存储的坐标系信息（地图投影和基准面）。此工具用于坐标系未知或定义错误的数据集。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset or Feature Class</para>
-		/// <para>The dataset or feature class whose projection is to be defined.</para>
+		/// <para>要定义投影的数据集或要素类。</para>
 		/// </param>
 		/// <param name="CoorSystem">
 		/// <para>Coordinate System</para>
-		/// <para>The coordinate system to be applied to the input. The default value is set based on the Output Coordinate System environment setting.</para>
+		/// <para>要应用于输入的坐标系。默认值将基于“输出坐标系”环境设置进行设定。</para>
 		/// </param>
 		public DefineProjection(object InDataset, object CoorSystem)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Define Projection</para>
+		/// <para>Tool Display Name : 定义投影</para>
 		/// </summary>
-		public override string DisplayName() => "Define Projection";
+		public override string DisplayName() => "定义投影";
 
 		/// <summary>
 		/// <para>Tool Name : DefineProjection</para>
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset or Feature Class</para>
-		/// <para>The dataset or feature class whose projection is to be defined.</para>
+		/// <para>要定义投影的数据集或要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>The coordinate system to be applied to the input. The default value is set based on the Output Coordinate System environment setting.</para>
+		/// <para>要应用于输入的坐标系。默认值将基于“输出坐标系”环境设置进行设定。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPCoordinateSystem()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 {
 	/// <summary>
 	/// <para>Transform Route Events</para>
-	/// <para>Transforms the measures of events from one route reference to another and writes them to a new event table.</para>
+	/// <para>转换路径事件</para>
+	/// <para>将事件测量值从一种路径参考转换到另一种路径参考，并将其写入新事件表。</para>
 	/// </summary>
 	public class TransformRouteEvents : AbstractGPProcess
 	{
@@ -20,51 +21,51 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Event Table</para>
-		/// <para>The input event table.</para>
+		/// <para>输入事件表。</para>
 		/// </param>
 		/// <param name="InEventProperties">
 		/// <para>Event Table Properties</para>
-		/// <para>Parameter consisting of the route location fields and the type of events in the input event table.</para>
-		/// <para>Route Identifier Field—The field containing values that indicate the route on which each event is located. This field can be numeric or character.</para>
-		/// <para>Event Type—The type of events in the input event table (POINT or LINE).</para>
-		/// <para>POINT—Point events occur at a precise location along a route. Only a from-measure field must be specified.</para>
-		/// <para>LINE—Line events define a portion of a route. Both from- and to-measure fields must be specified.</para>
-		/// <para>From-Measure Field—A field containing measure values. This field must be numeric and is required when the event type is POINT or LINE. Note when the Event Type is POINT, the label for this parameter becomes Measure Field.</para>
-		/// <para>To-Measure Field—A field containing measure values. This field must be numeric and is required when the event type is LINE.</para>
+		/// <para>输入事件表中由路径位置字段和事件类型组成的参数。</para>
+		/// <para>路径标识符字段 - 包含指明每个事件所在路径的值的字段。该字段可以是数值或字符。</para>
+		/// <para>事件类型 - 输入事件表中的事件类型（POINT 或 LINE）。</para>
+		/// <para>POINT - 点事件出现在沿路径的确切点位置处。只有“测量始于”是必须指定的字段。</para>
+		/// <para>LINE - 线事件定义路径的一部分。“测量始于”和“测量止于”都是必须指定的字段。</para>
+		/// <para>测量始于字段 - 包含测量值的字段。此字段必须是数值型字段，并且在事件类型是 POINT 或 LINE 时必填。请注意，事件类型为 POINT 时，此参数的标注变为“测量字段”。</para>
+		/// <para>测量止于字段 - 包含测量值的字段。此字段必须是数值字段，在事件类型是 LINE 时必填。</para>
 		/// </param>
 		/// <param name="InRoutes">
 		/// <para>Source Route Features</para>
-		/// <para>The input route features.</para>
+		/// <para>输入路径要素。</para>
 		/// </param>
 		/// <param name="RouteIdField">
 		/// <para>Source Route Identifier Field</para>
-		/// <para>The field containing values that uniquely identify each input route.</para>
+		/// <para>包含可唯一识别每条输入路径的值的字段。</para>
 		/// </param>
 		/// <param name="TargetRoutes">
 		/// <para>Target Route Features</para>
-		/// <para>The route features to which the input events will be transformed.</para>
+		/// <para>要将输入事件转换到的路径要素。</para>
 		/// </param>
 		/// <param name="TargetRouteIdField">
 		/// <para>Target Route Identifier Field</para>
-		/// <para>The field containing values that uniquely identify each target route.</para>
+		/// <para>包含可唯一识别每条目标路径的值的字段。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Event Table</para>
-		/// <para>The table to be created.</para>
+		/// <para>要创建的表。</para>
 		/// </param>
 		/// <param name="OutEventProperties">
 		/// <para>Output Event Table Properties</para>
-		/// <para>Parameter consisting of the route location fields and the type of events that will be written to the output event table.</para>
-		/// <para>Route Identifier Field—The field that will contain values that indicate the route on which each event is located.</para>
-		/// <para>Event Type—The type of events the output event table will contain (POINT or LINE).</para>
-		/// <para>POINT—Point events occur at a precise location along a route. Only a single measure field must be specified.</para>
-		/// <para>LINE—Line events define a portion of a route. Both from- and to-measure fields must be specified.</para>
-		/// <para>From-Measure Field—A field that will contain measure values. Required when the event type is POINT or LINE. Note when the Event Type is POINT, the label for this parameter becomes Measure Field.</para>
-		/// <para>To-Measure Field—A field that will contain measure values. Required when the event type is LINE.</para>
+		/// <para>由要写入输出事件表的路径位置字段和事件类型组成的参数。</para>
+		/// <para>路径标识符字段 - 包含指明每个事件所在路径的值的字段。</para>
+		/// <para>事件类型 - 输出事件表包含的事件类型（POINT 或 LINE）。</para>
+		/// <para>POINT - 点事件出现在沿路径的确切点位置处。只有一个测量字段是必须指定的字段。</para>
+		/// <para>LINE - 线事件定义路径的一部分。“测量始于”和“测量止于”都是必须指定的字段。</para>
+		/// <para>“测量始于”字段 - 包含测量值的字段。在事件类型是 POINT 或 LINE 时必填。请注意，事件类型为 POINT 时，此参数的标注变为“测量字段”。</para>
+		/// <para>“测量止于”字段 - 包含测量值的字段。在事件类型是 LINE 时必填。</para>
 		/// </param>
 		/// <param name="ClusterTolerance">
 		/// <para>Cluster Tolerance</para>
-		/// <para>The maximum tolerated distance between the input events and the target routes.</para>
+		/// <para>输入事件与目标路径之间的最大容许距离。</para>
 		/// </param>
 		public TransformRouteEvents(object InTable, object InEventProperties, object InRoutes, object RouteIdField, object TargetRoutes, object TargetRouteIdField, object OutTable, object OutEventProperties, object ClusterTolerance)
 		{
@@ -80,9 +81,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Transform Route Events</para>
+		/// <para>Tool Display Name : 转换路径事件</para>
 		/// </summary>
-		public override string DisplayName() => "Transform Route Events";
+		public override string DisplayName() => "转换路径事件";
 
 		/// <summary>
 		/// <para>Tool Name : TransformRouteEvents</para>
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Input Event Table</para>
-		/// <para>The input event table.</para>
+		/// <para>输入事件表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -125,13 +126,13 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Event Table Properties</para>
-		/// <para>Parameter consisting of the route location fields and the type of events in the input event table.</para>
-		/// <para>Route Identifier Field—The field containing values that indicate the route on which each event is located. This field can be numeric or character.</para>
-		/// <para>Event Type—The type of events in the input event table (POINT or LINE).</para>
-		/// <para>POINT—Point events occur at a precise location along a route. Only a from-measure field must be specified.</para>
-		/// <para>LINE—Line events define a portion of a route. Both from- and to-measure fields must be specified.</para>
-		/// <para>From-Measure Field—A field containing measure values. This field must be numeric and is required when the event type is POINT or LINE. Note when the Event Type is POINT, the label for this parameter becomes Measure Field.</para>
-		/// <para>To-Measure Field—A field containing measure values. This field must be numeric and is required when the event type is LINE.</para>
+		/// <para>输入事件表中由路径位置字段和事件类型组成的参数。</para>
+		/// <para>路径标识符字段 - 包含指明每个事件所在路径的值的字段。该字段可以是数值或字符。</para>
+		/// <para>事件类型 - 输入事件表中的事件类型（POINT 或 LINE）。</para>
+		/// <para>POINT - 点事件出现在沿路径的确切点位置处。只有“测量始于”是必须指定的字段。</para>
+		/// <para>LINE - 线事件定义路径的一部分。“测量始于”和“测量止于”都是必须指定的字段。</para>
+		/// <para>测量始于字段 - 包含测量值的字段。此字段必须是数值型字段，并且在事件类型是 POINT 或 LINE 时必填。请注意，事件类型为 POINT 时，此参数的标注变为“测量字段”。</para>
+		/// <para>测量止于字段 - 包含测量值的字段。此字段必须是数值字段，在事件类型是 LINE 时必填。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRouteMeasureEventProperties()]
@@ -139,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Source Route Features</para>
-		/// <para>The input route features.</para>
+		/// <para>输入路径要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -148,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Source Route Identifier Field</para>
-		/// <para>The field containing values that uniquely identify each input route.</para>
+		/// <para>包含可唯一识别每条输入路径的值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -157,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Target Route Features</para>
-		/// <para>The route features to which the input events will be transformed.</para>
+		/// <para>要将输入事件转换到的路径要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -166,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Target Route Identifier Field</para>
-		/// <para>The field containing values that uniquely identify each target route.</para>
+		/// <para>包含可唯一识别每条目标路径的值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -175,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Output Event Table</para>
-		/// <para>The table to be created.</para>
+		/// <para>要创建的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -183,13 +184,13 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Output Event Table Properties</para>
-		/// <para>Parameter consisting of the route location fields and the type of events that will be written to the output event table.</para>
-		/// <para>Route Identifier Field—The field that will contain values that indicate the route on which each event is located.</para>
-		/// <para>Event Type—The type of events the output event table will contain (POINT or LINE).</para>
-		/// <para>POINT—Point events occur at a precise location along a route. Only a single measure field must be specified.</para>
-		/// <para>LINE—Line events define a portion of a route. Both from- and to-measure fields must be specified.</para>
-		/// <para>From-Measure Field—A field that will contain measure values. Required when the event type is POINT or LINE. Note when the Event Type is POINT, the label for this parameter becomes Measure Field.</para>
-		/// <para>To-Measure Field—A field that will contain measure values. Required when the event type is LINE.</para>
+		/// <para>由要写入输出事件表的路径位置字段和事件类型组成的参数。</para>
+		/// <para>路径标识符字段 - 包含指明每个事件所在路径的值的字段。</para>
+		/// <para>事件类型 - 输出事件表包含的事件类型（POINT 或 LINE）。</para>
+		/// <para>POINT - 点事件出现在沿路径的确切点位置处。只有一个测量字段是必须指定的字段。</para>
+		/// <para>LINE - 线事件定义路径的一部分。“测量始于”和“测量止于”都是必须指定的字段。</para>
+		/// <para>“测量始于”字段 - 包含测量值的字段。在事件类型是 POINT 或 LINE 时必填。请注意，事件类型为 POINT 时，此参数的标注变为“测量字段”。</para>
+		/// <para>“测量止于”字段 - 包含测量值的字段。在事件类型是 LINE 时必填。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRouteMeasureEventProperties()]
@@ -197,7 +198,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Cluster Tolerance</para>
-		/// <para>The maximum tolerated distance between the input events and the target routes.</para>
+		/// <para>输入事件与目标路径之间的最大容许距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -205,9 +206,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Include all fields from input</para>
-		/// <para>Specifies whether the output event table will contain route location fields plus all the attributes from the input events.</para>
-		/// <para>Checked—The output event table will contain route location fields plus all the attributes from the input events. This is the default.</para>
-		/// <para>Unchecked—The output event table will only contain route location fields plus the ObjectID field from the input events.</para>
+		/// <para>指定输出事件表是否包含路径位置字段以及输入事件的所有属性。</para>
+		/// <para>选中 - 输出事件表包含路径位置字段和输入事件的所有属性。这是默认设置。</para>
+		/// <para>未选中 - 输出事件表只包含路径位置字段和输入事件的 ObjectID 字段。</para>
 		/// <para><see cref="InFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -232,14 +233,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum InFieldsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output event table will contain route location fields plus all the attributes from the input events. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FIELDS")]
 			FIELDS,
 
 			/// <summary>
-			/// <para>Unchecked—The output event table will only contain route location fields plus the ObjectID field from the input events.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_FIELDS")]

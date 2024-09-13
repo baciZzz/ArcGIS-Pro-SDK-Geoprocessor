@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Alter Diagram Template</para>
-	/// <para>Alters the properties of a diagram template such as its name, how it handles vertices along input network edges, whether the related diagrams can be stored or extended, the margin between containers and their contents in these diagrams, the removal of its rule and layout, and the reset of the diagram layer definition to default.</para>
+	/// <para>更改逻辑示意图模板</para>
+	/// <para>更改逻辑示意图模板的属性，例如其名称、如何处理沿输入网络边的折点、是否可存储或扩展相关逻辑示意图、这些逻辑示意图中容器及其内容之间的边距、移除其规则和布局定义，以及将示意图图层定义重置为默认设置。</para>
 	/// </summary>
 	public class AlterDiagramTemplate : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network of the diagram template to alter.</para>
+		/// <para>要更改的逻辑示意图模板的 utility network or trace network。</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to alter.</para>
+		/// <para>要更改的逻辑示意图模板的名称。</para>
 		/// </param>
 		public AlterDiagramTemplate(object InUtilityNetwork, object TemplateName)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Alter Diagram Template</para>
+		/// <para>Tool Display Name : 更改逻辑示意图模板</para>
 		/// </summary>
-		public override string DisplayName() => "Alter Diagram Template";
+		public override string DisplayName() => "更改逻辑示意图模板";
 
 		/// <summary>
 		/// <para>Tool Name : AlterDiagramTemplate</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network of the diagram template to alter.</para>
+		/// <para>要更改的逻辑示意图模板的 utility network or trace network。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to alter.</para>
+		/// <para>要更改的逻辑示意图模板的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>New Template Name</para>
-		/// <para>The new name of the template.</para>
+		/// <para>模板的新名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -93,10 +94,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Default template</para>
-		/// <para>Specifies the default status of the template.</para>
-		/// <para>Checked—The input diagram template will be the default template.</para>
-		/// <para>Unchecked—The input diagram template will not be the default template. This is the default.</para>
-		/// <para>The default template is the one used when generating a diagram if a template is not specified. It is also the template used when using New Diagram on the Data tab on the utility network or trace network tab set if another template is not specified.</para>
+		/// <para>用于指定模板的默认状态。</para>
+		/// <para>选中 - 输入逻辑示意图模板将为默认模板。</para>
+		/// <para>未选中 - 输入逻辑示意图模板将不会成为默认模板。这是默认设置。</para>
+		/// <para>如果未指定模板，则默认模板是生成逻辑示意图时使用的模板。如果未指定其他模板，则其也是使用 utility network or trace network 选项卡组的数据选项卡上的新建逻辑示意图时使用的模板。</para>
 		/// <para><see cref="IsDefaultTemplateEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -106,9 +107,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Remove the diagram template rule and layout definitions</para>
-		/// <para>Specifies whether the template rule and layout definitions will be removed.</para>
-		/// <para>Checked—The rule and layout definitions related to the input diagram template will be removed.</para>
-		/// <para>Unchecked—The rule and layout definitions related to the input diagram template will not be removed. This is the default.</para>
+		/// <para>用于指定是否将移除模板规则和布局定义。</para>
+		/// <para>选中 - 将移除与输入逻辑示意图模板相关的规则和布局定义。</para>
+		/// <para>未选中 - 将不会移除与输入逻辑示意图模板相关的规则和布局定义。这是默认设置。</para>
 		/// <para><see cref="AreRulesAndLayoutsRemovedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -118,10 +119,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Keep initial vertices on edges</para>
-		/// <para>Specifies how vertices along the GIS edges will be managed in the diagrams based on the template.</para>
-		/// <para>Checked—All vertices that display along GIS edges will be preserved on the associated edges in each network diagram based on the template.</para>
-		/// <para>Unchecked—Diagram edges will be drawn as straight lines between their connected junctions. This is the default.</para>
-		/// <para>For performance quality, check this parameter only when needed. If your template is configured to run an automatic layout at diagram generation, for example, checking this option makes sense for the Relative Mainline and Partial Overlapping Edges diagram layouts. The other diagram layouts don&apos;t use diagram edges geometry when they execute.</para>
+		/// <para>指定如何在基于模板的逻辑示意图中管理沿 GIS 边的折点。</para>
+		/// <para>选中 - 沿 GIS 边显示的所有折点将保留在每个基于模板的网络逻辑示意图中的相关边上。</para>
+		/// <para>未选中 - 逻辑示意图边将绘制为其连接交汇点之间的直线。这是默认设置。</para>
+		/// <para>为了提高性能质量，请仅在需要时选中此参数。例如，如果将模板配置为在逻辑示意图生成时运行自动布局，则选中此选项将对相对主线和部分重叠边逻辑示意图布局非常有意义。其他逻辑示意图布局在执行时不使用逻辑示意图边几何。</para>
 		/// <para><see cref="AreVerticesKeptEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -132,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Container Margin</para>
-		/// <para>The minimum distance between the center of any junctions inside the container and the container border.</para>
+		/// <para>容器和容器边界内所有交汇点的中心之间的最小距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -155,9 +156,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Enable diagram storage</para>
-		/// <para>Specifies whether the diagrams based on the template can be stored.</para>
-		/// <para>Checked—The diagrams based on the template can be stored. This is the default.</para>
-		/// <para>Unchecked—The diagrams based on the template cannot be stored.</para>
+		/// <para>指定是否能够存储基于模板的逻辑示意图。</para>
+		/// <para>选中 - 能够存储基于模板的逻辑示意图。这是默认设置。</para>
+		/// <para>未选中 - 无法存储基于模板的逻辑示意图。</para>
 		/// <para><see cref="IsDiagramStorageEnabledEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -168,9 +169,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Enable to extend diagram</para>
-		/// <para>Specifies whether the diagrams based on the template can be extended.</para>
-		/// <para>Checked—The diagrams based on the template can be extended by connectivity, traversability, containment, or attachment.</para>
-		/// <para>Unchecked—The diagrams based on the template cannot be extended. This is the default.</para>
+		/// <para>指定是否能够扩展基于模板的逻辑示意图。</para>
+		/// <para>选中 - 可以按连通性、可遍历性、包含或附件来扩展基于模板的逻辑示意图。</para>
+		/// <para>未选中 - 无法扩展基于模板的逻辑示意图。这是默认设置。</para>
 		/// <para><see cref="IsDiagramExtensionEnabledEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -181,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Description</para>
-		/// <para>The description of the template.</para>
+		/// <para>模板的描述。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -189,9 +190,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Reset the diagram template layer definition to default</para>
-		/// <para>Specifies whether the diagram template layer definition will be reset to default.</para>
-		/// <para>Checked—The diagram layer definition related to the input diagram template will be reset to default (removed).</para>
-		/// <para>Unchecked—The diagram layer definition related to the input diagram template will not be removed. This is the default.</para>
+		/// <para>指定是否将逻辑示意图模板图层定义重置为默认值。</para>
+		/// <para>选中 - 将与输入逻辑示意图模板相关的示意图图层定义重置为默认值（移除）。</para>
+		/// <para>未选中 - 将不会移除与输入逻辑示意图模板相关的逻辑示意图图层定义。这是默认设置。</para>
 		/// <para><see cref="AreLayerDefinitionsRemovedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -207,14 +208,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsDefaultTemplateEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The input diagram template will be the default template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DEFAULT_TEMPLATE")]
 			DEFAULT_TEMPLATE,
 
 			/// <summary>
-			/// <para>Unchecked—The input diagram template will not be the default template. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_DEFAULT_TEMPLATE")]
@@ -228,14 +229,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum AreRulesAndLayoutsRemovedEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The rule and layout definitions related to the input diagram template will be removed.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REMOVE_RULES_AND_LAYOUTS")]
 			REMOVE_RULES_AND_LAYOUTS,
 
 			/// <summary>
-			/// <para>Unchecked—The rule and layout definitions related to the input diagram template will not be removed. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_REMOVE_RULES_AND_LAYOUTS")]
@@ -249,14 +250,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum AreVerticesKeptEnum 
 		{
 			/// <summary>
-			/// <para>Checked—All vertices that display along GIS edges will be preserved on the associated edges in each network diagram based on the template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("KEEP_VERTICES")]
 			KEEP_VERTICES,
 
 			/// <summary>
-			/// <para>Unchecked—Diagram edges will be drawn as straight lines between their connected junctions. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_KEEP_VERTICES")]
@@ -270,14 +271,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsDiagramStorageEnabledEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The diagrams based on the template can be stored. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ENABLE_DIAGRAM_STORAGE")]
 			ENABLE_DIAGRAM_STORAGE,
 
 			/// <summary>
-			/// <para>Unchecked—The diagrams based on the template cannot be stored.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DISABLE_DIAGRAM_STORAGE")]
@@ -291,14 +292,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsDiagramExtensionEnabledEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The diagrams based on the template can be extended by connectivity, traversability, containment, or attachment.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ENABLE_DIAGRAM_EXTENSION")]
 			ENABLE_DIAGRAM_EXTENSION,
 
 			/// <summary>
-			/// <para>Unchecked—The diagrams based on the template cannot be extended. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DISABLE_DIAGRAM_EXTENSION")]
@@ -312,14 +313,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum AreLayerDefinitionsRemovedEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The diagram layer definition related to the input diagram template will be reset to default (removed).</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REMOVE_LAYER_DEFINITIONS")]
 			REMOVE_LAYER_DEFINITIONS,
 
 			/// <summary>
-			/// <para>Unchecked—The diagram layer definition related to the input diagram template will not be removed. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_REMOVE_LAYER_DEFINITIONS")]

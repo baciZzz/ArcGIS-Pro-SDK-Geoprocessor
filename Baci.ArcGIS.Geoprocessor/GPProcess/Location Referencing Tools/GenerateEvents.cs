@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Generate Events</para>
+	/// <para>Generate Events</para>
 	/// <para>Re-creates shapes for event features registered with an LRS Network.</para>
 	/// </summary>
 	public class GenerateEvents : AbstractGPProcess

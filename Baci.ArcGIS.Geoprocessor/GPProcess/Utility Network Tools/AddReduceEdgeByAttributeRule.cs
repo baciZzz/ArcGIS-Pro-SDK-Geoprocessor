@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Reduce Edge By Attribute Rule</para>
+	/// <para>Add Reduce Edge By Attribute Rule</para>
 	/// <para>Add a reduce edge by attribute rule to a diagram template</para>
 	/// </summary>
 	[Obsolete()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove 3D Formats From Multipatch</para>
-	/// <para>Removes the 3D formats  referenced by a 3D object feature layer.</para>
+	/// <para>从多面体中移除 3D 格式</para>
+	/// <para>移除 3D 对象要素图层引用的 3D 格式。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The multipatch feature class that was converted to a 3D object feature class.</para>
+		/// <para>已转换为 3D 对象要素类的多面体要素类。</para>
 		/// </param>
 		public Remove3DFormats(object InFeatures)
 		{
@@ -30,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Remove 3D Formats From Multipatch</para>
+		/// <para>Tool Display Name : 从多面体中移除 3D 格式</para>
 		/// </summary>
-		public override string DisplayName() => "Remove 3D Formats From Multipatch";
+		public override string DisplayName() => "从多面体中移除 3D 格式";
 
 		/// <summary>
 		/// <para>Tool Name : Remove3DFormats</para>
@@ -66,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The multipatch feature class that was converted to a 3D object feature class.</para>
+		/// <para>已转换为 3D 对象要素类的多面体要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -76,9 +77,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Use multipatch materials</para>
-		/// <para>Specifies whether the multipatch geometry will be visualized using material information from the associated 3D models or the texture and color information stored with the multipatch.</para>
-		/// <para>Checked—The multipatch geometry will be visualized using the textures, colors, effects, and materials associated with the 3D models. This is the default.</para>
-		/// <para>Unchecked—The multipatch geometry will be visualized using the textures and colors defined for the multipatch.</para>
+		/// <para>指定是使用关联 3D 模型中的材料信息还是随多面体一起存储的纹理和颜色信息来可视化多面体几何。</para>
+		/// <para>选中 - 将使用与 3D 模型关联的纹理、颜色、效果和材料来可视化多面体几何。这是默认设置。</para>
+		/// <para>未选中 - 将使用为多面体定义的纹理和颜色可视化多面体几何。</para>
 		/// <para><see cref="MultipatchMaterialsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -88,12 +89,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>3D Formats to Remove</para>
-		/// <para>Specifies the 3D model formats referenced by the 3D object feature layer that will be removed. Only the formats that have been linked to the input features can be specified.</para>
-		/// <para>Collada (.dae)—The COLLADA format will be removed.</para>
-		/// <para>Autodesk (.fbx)—The Autodesk FilmBox format will be removed.</para>
-		/// <para>Khronos Group glTF json (.gltf)—The JSON Graphics Library Transmission format will be removed.</para>
-		/// <para>Khronos Group glTF binary (.glb)—The binary Graphics Library Transmission format will be removed.</para>
-		/// <para>Wavefront (.obj)—The Wavefront format will be removed.</para>
+		/// <para>指定将移除的、3D 对象要素图层引用的 3D 模型格式。只能指定已链接到输入要素的格式。</para>
+		/// <para>Collada (.dae)—将移除 COLLADA 格式。</para>
+		/// <para>Autodesk (.fbx)—将移除 Autodesk FilmBox 格式。</para>
+		/// <para>Khronos Group glTF json (.gltf)—将移除 JSON 图形库传输格式。</para>
+		/// <para>Khronos Group glTF 二进制 (.glb)—将移除二进制图形库传输格式。</para>
+		/// <para>Wavefront (.obj)—将移除 Wavefront 格式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -123,14 +124,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MultipatchMaterialsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The multipatch geometry will be visualized using the textures, colors, effects, and materials associated with the 3D models. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MULTIPATCH_WITH_MATERIALS")]
 			MULTIPATCH_WITH_MATERIALS,
 
 			/// <summary>
-			/// <para>Unchecked—The multipatch geometry will be visualized using the textures and colors defined for the multipatch.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("MULTIPATCH_WITHOUT_MATERIALS")]

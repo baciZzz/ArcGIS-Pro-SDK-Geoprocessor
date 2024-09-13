@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Calculate Line Caps</para>
-	/// <para>Modifies the cap type for stroke symbol layers in the line symbols of the input layer.</para>
+	/// <para>计算线端头</para>
+	/// <para>在输入图层的线符号中修改笔划符号图层的端头类型。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input feature layer containing line symbols. Stroke symbol layers must have the Cap Type property connected to a single attribute field with no expression applied. The values in this field are updated by this tool.</para>
+		/// <para>包含线符号的输入要素图层。 笔划符号图层的端头类型属性必须连接到未应用表达式的单个特性字段。 可通过此工具更新该字段中的值。</para>
 		/// </param>
 		public CalculateLineCaps(object InFeatures)
 		{
@@ -30,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Calculate Line Caps</para>
+		/// <para>Tool Display Name : 计算线端头</para>
 		/// </summary>
-		public override string DisplayName() => "Calculate Line Caps";
+		public override string DisplayName() => "计算线端头";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateLineCaps</para>
@@ -66,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input feature layer containing line symbols. Stroke symbol layers must have the Cap Type property connected to a single attribute field with no expression applied. The values in this field are updated by this tool.</para>
+		/// <para>包含线符号的输入要素图层。 笔划符号图层的端头类型属性必须连接到未应用表达式的单个特性字段。 可通过此工具更新该字段中的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
@@ -77,9 +78,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Cap Type</para>
-		/// <para>Specifies how the ends of stroke symbol layers are drawn. The default cap type of strokes is round; the symbol is terminated with a semicircle of radius equal to stroke width centered at the line endpoint.</para>
-		/// <para>Butt cap type—The stroke symbol ends exactly where the line geometry ends. This is the default.</para>
-		/// <para>Square cap type—The stroke symbol ends with closed, square caps that extend past the endpoint of the line by half of the symbol width.</para>
+		/// <para>指定笔划符号图层末端的绘制方式。 笔划的默认端头类型是圆形，即符号末端是半径等于笔划宽度且在线端点居中的半圆。</para>
+		/// <para>平端头类型—笔划符号恰好在线几何结束位置处终止。 这是默认设置。</para>
+		/// <para>方形端头类型—用沿线端点向外延伸半个符号宽度的闭合式方形端头终止笔划符号。</para>
 		/// <para><see cref="CapTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -89,9 +90,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Dangle Option</para>
-		/// <para>Specifies how line caps are calculated for adjoining line features that share an endpoint but are drawn with different symbology.</para>
-		/// <para>Cased line dangle—The cap style is modified for dangling lines (those not connected at their endpoints to another line) and also for the lines where a cased-line symbol is joined at the endpoint of a single-stroke layer line symbol. This is the default.</para>
-		/// <para>True dangle—The cap style is modified only for endpoints that are not connected to another feature.</para>
+		/// <para>指定为共用一个端点但使用不同符号系统绘制的邻接线要素计算线端头的方式。</para>
+		/// <para>实线悬挂—修改悬挂线（端点未与其他线相连的线）的端头样式以及下述线的端头样式：实线符号与单笔划图层线符号的端点相连的线。 这是默认设置。</para>
+		/// <para>实际悬挂—仅修改未与其他要素相连的端点的端头样式。</para>
 		/// <para><see cref="DangleOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -114,17 +115,17 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum CapTypeEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>平端头类型—笔划符号恰好在线几何结束位置处终止。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("BUTT")]
-			[Description("Butt  cap type")]
+			[Description("平端头类型")]
 			Butt__cap_type,
 
 			/// <summary>
-			/// <para>Square cap type—The stroke symbol ends with closed, square caps that extend past the endpoint of the line by half of the symbol width.</para>
+			/// <para>方形端头类型—用沿线端点向外延伸半个符号宽度的闭合式方形端头终止笔划符号。</para>
 			/// </summary>
 			[GPValue("SQUARE")]
-			[Description("Square cap type")]
+			[Description("方形端头类型")]
 			Square_cap_type,
 
 		}
@@ -135,17 +136,17 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum DangleOptionEnum 
 		{
 			/// <summary>
-			/// <para>Cased line dangle—The cap style is modified for dangling lines (those not connected at their endpoints to another line) and also for the lines where a cased-line symbol is joined at the endpoint of a single-stroke layer line symbol. This is the default.</para>
+			/// <para>实线悬挂—修改悬挂线（端点未与其他线相连的线）的端头样式以及下述线的端头样式：实线符号与单笔划图层线符号的端点相连的线。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("CASED_LINE_DANGLE")]
-			[Description("Cased line dangle")]
+			[Description("实线悬挂")]
 			Cased_line_dangle,
 
 			/// <summary>
-			/// <para>True dangle—The cap style is modified only for endpoints that are not connected to another feature.</para>
+			/// <para>实际悬挂—仅修改未与其他要素相连的端点的端头样式。</para>
 			/// </summary>
 			[GPValue("TRUE_DANGLE")]
-			[Description("True dangle")]
+			[Description("实际悬挂")]
 			True_dangle,
 
 		}

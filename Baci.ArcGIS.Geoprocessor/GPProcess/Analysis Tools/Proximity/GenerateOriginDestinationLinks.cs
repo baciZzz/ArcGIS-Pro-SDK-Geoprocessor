@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Generate Origin-Destination Links</para>
-	/// <para>Generates connecting lines from origin features to destination features. This is often referred to as a spider diagram.</para>
+	/// <para>生成起点-目的地链接</para>
+	/// <para>用于从起点要素到目的地要素生成连接线。 这通常被称为蛛网图。</para>
 	/// </summary>
 	public class GenerateOriginDestinationLinks : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="OriginFeatures">
 		/// <para>Origin Features</para>
-		/// <para>The input features from which links will be generated.</para>
+		/// <para>将以其为起点生成链接的输入要素。</para>
 		/// </param>
 		/// <param name="DestinationFeatures">
 		/// <para>Destination Features</para>
-		/// <para>The destination features to which links will be generated.</para>
+		/// <para>将以其为终点生成链接的目的地要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output polyline feature class that will contain the output links.</para>
+		/// <para>将包含输出链接的输出折线要素类。</para>
 		/// </param>
 		public GenerateOriginDestinationLinks(object OriginFeatures, object DestinationFeatures, object OutFeatureClass)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Origin-Destination Links</para>
+		/// <para>Tool Display Name : 生成起点-目的地链接</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Origin-Destination Links";
+		public override string DisplayName() => "生成起点-目的地链接";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateOriginDestinationLinks</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Origin Features</para>
-		/// <para>The input features from which links will be generated.</para>
+		/// <para>将以其为起点生成链接的输入要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Destination Features</para>
-		/// <para>The destination features to which links will be generated.</para>
+		/// <para>将以其为终点生成链接的目的地要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output polyline feature class that will contain the output links.</para>
+		/// <para>将包含输出链接的输出折线要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -98,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Origin Group Field</para>
-		/// <para>The attribute field from the input origin features that will be used for grouping. Features that have the same group field value between origins and destinations will be connected with a link.</para>
+		/// <para>用于分组的输入起点要素中的属性字段。 在起点和目的地之间具有相同字段组值的要素将通过链接进行连接。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -106,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Destination Group Field</para>
-		/// <para>The attribute field from the input destination features that will be used for grouping. Features that have the same group field value between origins and destinations will be connected with a link.</para>
+		/// <para>用于分组的输入目的地要素中的属性字段。 在起点和目的地之间具有相同字段组值的要素将通过链接进行连接。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -114,10 +115,10 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Line Type</para>
-		/// <para>Specifies whether a shortest path on a spheroid (geodesic) or a Cartesian projected earth (planar) will be used when generating the output links. Geodesic lines will have a slight curve when their length exceeds approximately 50 kilometers, as the curvature of the Earth makes the shortest distance between two points appear curved when viewed on a 2D map.</para>
-		/// <para>It is recommended that you use the Geodesic line type with data stored in a coordinate system that is not appropriate for distance measurements (for example, Web Mercator and any geographic coordinate system) or any dataset that spans a large geographic area.</para>
-		/// <para>Planar—Planar distance will be used between features. This is the default.</para>
-		/// <para>Geodesic—Geodesic distances will be used between features. This line type takes into account the curvature of the spheroid and correctly deals with data near the dateline and poles.</para>
+		/// <para>指定在生成输出链接时，将使用椭球体（测地线）还是笛卡尔投影地球（平面）上的最短路径。 当测地线的长度超过约 50 千米时，测地线将略微弯曲，因为在 2D 地图上查看时，地球的曲率会使两点之间的最短距离显得弯曲。</para>
+		/// <para>建议将测地线类型用于在不适合进行距离测量的坐标系（例如 Web 墨卡托和任何地理坐标系）中存储的数据，或者任何地理区域跨度较大的数据集。</para>
+		/// <para>平面—要素之间将使用平面距离。 这是默认设置。</para>
+		/// <para>测地线—要素之间将使用测地线距离。 这种线类型考虑到椭球体的曲率，并可以正确处理日期变更线和两极附近的数据。</para>
 		/// <para><see cref="LineTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -127,8 +128,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Number of Nearest Destinations</para>
-		/// <para>The maximum number of links that will be generated per origin feature to the nearest destination features. If no number is specified, the tool will generate links between all origin and destination features.</para>
-		/// <para>For example, using a value of 1 will generate links between each origin feature and its closest destination feature.</para>
+		/// <para>针对每个起点要素到最近的目的地要素将生成的最大链接数量。 如果未指定任何数字，则该工具将在所有起点要素和目的地要素之间生成链接。</para>
+		/// <para>例如，使用值 1 将在每个起点要素及其最接近的目的地要素之间生成链接。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -136,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Search Distance</para>
-		/// <para>The maximum distance between an origin and destination feature that will produce a link feature in the output. The unit of the search distance is specified in the distance unit parameter. If no search distance is specified, the tool will generate links between all origin and destination features regardless of their distance apart.</para>
+		/// <para>将在输出中生成链接要素的起点和目的地要素之间的最大距离。 搜索距离的单位将在距离单位参数中指定。 如果未指定任何搜索距离，则该工具将在所有起点要素和目的地要素之间生成链接，而不考虑它们之间的距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -144,13 +145,13 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Distance Unit</para>
-		/// <para>Specifies the units used to measure the length of the links. Distances for each link will appear in the LINK_DIST field. If a distance unit is not specified, the distance unit of the origin features&apos; coordinate system will be used.</para>
-		/// <para>Kilometers—The distance between origin and destination will be calculated in kilometers.</para>
-		/// <para>Meters—The distance between origin and destination will be calculated in meters.</para>
-		/// <para>Miles—The distance between origin and destination will be calculated in miles.</para>
-		/// <para>Nautical miles—The distance between origin and destination will be calculated in nautical miles.</para>
-		/// <para>Yards—The distance between origin and destination will be calculated in yards.</para>
-		/// <para>Feet—The distance between origin and destination will be calculated in feet.</para>
+		/// <para>指定用于测量链接长度的单位。 每个链接的距离将显示在 LINK_DIST 字段中。 如果未指定距离单位，则将使用起点要素坐标系的距离单位。</para>
+		/// <para>千米—将以千米为单位计算起点和目的地之间的距离。</para>
+		/// <para>米—将以米为单位计算起点和目的地之间的距离。</para>
+		/// <para>英里—将以英里为单位计算起点和目的地之间的距离。</para>
+		/// <para>海里—将以海里为单位计算起点和目的地之间的距离。</para>
+		/// <para>码—将以码为单位计算起点和目的地之间的距离。</para>
+		/// <para>英尺—将以英尺为单位计算起点和目的地之间的距离。</para>
 		/// <para><see cref="DistanceUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -160,9 +161,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Aggregate Overlapping Links</para>
-		/// <para>Specifies whether overlapping links will be aggregated.</para>
-		/// <para>Checked—Overlapping links will be aggregated if the starting point coordinates are the same.</para>
-		/// <para>Unchecked—Overlapping links will not be aggregated. This is the default.</para>
+		/// <para>指定是否将对重叠链接进行聚合。</para>
+		/// <para>选中 - 如果起点坐标相同，则将对重叠链接进行聚合。</para>
+		/// <para>未选中 - 将不会以重叠链接进行聚合。 这是默认设置。</para>
 		/// <para><see cref="AggregateLinksEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -172,21 +173,21 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Summary Fields</para>
-		/// <para>Specifies the numeric field or fields containing the attribute values that will be used to calculate the specified statistic. Multiple statistic and field combinations can be specified. Null values are excluded from all statistical calculations.</para>
-		/// <para>Text attribute fields can be summarized using first and last statistics. Numeric attribute fields can be summarized using any statistic.</para>
-		/// <para>Available statistics types are as follows:</para>
-		/// <para>Sum—The values for the specified field will be added together.</para>
-		/// <para>Mean—The average for the specified field will be calculated.</para>
-		/// <para>Minimum—The smallest value for all records of the specified field will be found.</para>
-		/// <para>Maximum—The largest value for all records of the specified field will be found.</para>
-		/// <para>Range—The range of values (maximum minus minimum) for the specified field will be calculated.</para>
-		/// <para>Standard deviation—The standard deviation of values in the specified field will be calculated.</para>
-		/// <para>Count—The number of values included in the statistical calculations will be found. Each value will be counted except null values. To determine the number of null values in a field, create a count on the field in question, create a count on a different field that does not contain null values (for example, the OID if present), and subtract the two values.</para>
-		/// <para>First—The specified field value of the first record in the input will be used.</para>
-		/// <para>Last—The specified field value of the last record in the input will be used.</para>
-		/// <para>Median—The median for all records of the specified field will be calculated.</para>
-		/// <para>Variance—The variance for all records of the specified field will be calculated.</para>
-		/// <para>Unique—The number of unique values of the specified field will be counted.</para>
+		/// <para>指定包含用于计算指定统计数据的属性值的一个或多个数值字段。 可以指定多项统计和字段组合。 空值将被排除在所有统计计算之外。</para>
+		/// <para>可使用第一种和最后一种统计来对文本属性字段进行汇总。 可使用任何一种统计来对数值属性字段进行汇总。</para>
+		/// <para>可用统计类型如下：</para>
+		/// <para>总和 - 将指定字段的值相加在一起。</para>
+		/// <para>平均值 - 将计算指定字段的平均值。</para>
+		/// <para>最小值 - 将查找指定字段所有记录的最小值。</para>
+		/// <para>最大值 - 将查找指定字段所有记录的最大值。</para>
+		/// <para>范围 - 将计算指定字段的值范围（最大值 - 最小值）。</para>
+		/// <para>标准差 - 将计算指定字段中值的标准差。</para>
+		/// <para>计数 - 将查找统计计算中包括的值的数目。 计数包括除空值外的所有值。 要确定字段中的空值数，请在相应字段上创建计数，然后在另一个不包含空值的字段上创建计数（例如 OID，如果存在的话），然后将这两个值相减。</para>
+		/// <para>第一个 - 将使用输入中第一条记录的指定字段值。</para>
+		/// <para>最后一个 - 将使用输入中最后一条记录的指定字段值。</para>
+		/// <para>中值 - 将计算指定字段所有记录的中值。</para>
+		/// <para>方差 - 将计算指定字段所有记录的方差。</para>
+		/// <para>唯一值 - 将计算指定字段的唯一值数量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -210,17 +211,17 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum LineTypeEnum 
 		{
 			/// <summary>
-			/// <para>Planar—Planar distance will be used between features. This is the default.</para>
+			/// <para>平面—要素之间将使用平面距离。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("PLANAR")]
-			[Description("Planar")]
+			[Description("平面")]
 			Planar,
 
 			/// <summary>
-			/// <para>Geodesic—Geodesic distances will be used between features. This line type takes into account the curvature of the spheroid and correctly deals with data near the dateline and poles.</para>
+			/// <para>测地线—要素之间将使用测地线距离。 这种线类型考虑到椭球体的曲率，并可以正确处理日期变更线和两极附近的数据。</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("Geodesic")]
+			[Description("测地线")]
 			Geodesic,
 
 		}
@@ -231,45 +232,45 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum DistanceUnitEnum 
 		{
 			/// <summary>
-			/// <para>Kilometers—The distance between origin and destination will be calculated in kilometers.</para>
+			/// <para>千米—将以千米为单位计算起点和目的地之间的距离。</para>
 			/// </summary>
 			[GPValue("KILOMETERS")]
-			[Description("Kilometers")]
+			[Description("千米")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>Meters—The distance between origin and destination will be calculated in meters.</para>
+			/// <para>米—将以米为单位计算起点和目的地之间的距离。</para>
 			/// </summary>
 			[GPValue("METERS")]
-			[Description("Meters")]
+			[Description("米")]
 			Meters,
 
 			/// <summary>
-			/// <para>Miles—The distance between origin and destination will be calculated in miles.</para>
+			/// <para>英里—将以英里为单位计算起点和目的地之间的距离。</para>
 			/// </summary>
 			[GPValue("MILES")]
-			[Description("Miles")]
+			[Description("英里")]
 			Miles,
 
 			/// <summary>
-			/// <para>Nautical miles—The distance between origin and destination will be calculated in nautical miles.</para>
+			/// <para>海里—将以海里为单位计算起点和目的地之间的距离。</para>
 			/// </summary>
 			[GPValue("NAUTICALMILES")]
-			[Description("Nautical miles")]
+			[Description("海里")]
 			Nautical_miles,
 
 			/// <summary>
-			/// <para>Yards—The distance between origin and destination will be calculated in yards.</para>
+			/// <para>码—将以码为单位计算起点和目的地之间的距离。</para>
 			/// </summary>
 			[GPValue("YARDS")]
-			[Description("Yards")]
+			[Description("码")]
 			Yards,
 
 			/// <summary>
-			/// <para>Feet—The distance between origin and destination will be calculated in feet.</para>
+			/// <para>英尺—将以英尺为单位计算起点和目的地之间的距离。</para>
 			/// </summary>
 			[GPValue("FEET")]
-			[Description("Feet")]
+			[Description("英尺")]
 			Feet,
 
 		}
@@ -280,14 +281,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum AggregateLinksEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Overlapping links will be aggregated if the starting point coordinates are the same.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("AGGREGATE_OVERLAPPING")]
 			AGGREGATE_OVERLAPPING,
 
 			/// <summary>
-			/// <para>Unchecked—Overlapping links will not be aggregated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_AGGREGATE")]

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Add Aviation Line Bypass</para>
+	/// <para>Add Aviation Line Bypass</para>
 	/// <para>Adjusts route polyline features that overlap point features.</para>
 	/// </summary>
 	public class AddAviationLineBypass : AbstractGPProcess

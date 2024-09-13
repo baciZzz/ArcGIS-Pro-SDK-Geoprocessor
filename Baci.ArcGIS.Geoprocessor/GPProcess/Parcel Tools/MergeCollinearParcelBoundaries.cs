@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Merge Collinear Parcel Boundaries</para>
-	/// <para>Merges  connected collinear parcel lines  into a single parcel line.</para>
-	/// <para>  Shared parcel fabric points between connected collinear lines are deleted and vertices are created in their place.</para>
+	/// <para>合并共线宗地边界</para>
+	/// <para>将连接的共线宗地线合并为单个宗地线。将删除连接的共线之间的共享宗地结构点，并在这些位置创建折点。</para>
 	/// </summary>
 	public class MergeCollinearParcelBoundaries : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelBoundaries">
 		/// <para>Input Parcel Boundaries</para>
-		/// <para>The parcel lines to be merged. Lines can be parcel lines or connection lines.</para>
+		/// <para>要合并的宗地线。线可以是宗地线或连接线。</para>
 		/// </param>
 		/// <param name="OffsetTolerance">
 		/// <para>Offset Tolerance</para>
-		/// <para>The maximum distance shared parcel points can be offset from their connected lines for the lines to be considered collinear. The offset is the distance between the shared parcel points and the straight lines between the endpoints of the connected parcel lines.</para>
+		/// <para>线视为共线时共享宗地点可以与其连接的线偏移的最大距离。偏移指共享宗地点与连接的宗地线端点之间的直线之间的距离。</para>
 		/// </param>
 		public MergeCollinearParcelBoundaries(object InParcelBoundaries, object OffsetTolerance)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Merge Collinear Parcel Boundaries</para>
+		/// <para>Tool Display Name : 合并共线宗地边界</para>
 		/// </summary>
-		public override string DisplayName() => "Merge Collinear Parcel Boundaries";
+		public override string DisplayName() => "合并共线宗地边界";
 
 		/// <summary>
 		/// <para>Tool Name : MergeCollinearParcelBoundaries</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Input Parcel Boundaries</para>
-		/// <para>The parcel lines to be merged. Lines can be parcel lines or connection lines.</para>
+		/// <para>要合并的宗地线。线可以是宗地线或连接线。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Offset Tolerance</para>
-		/// <para>The maximum distance shared parcel points can be offset from their connected lines for the lines to be considered collinear. The offset is the distance between the shared parcel points and the straight lines between the endpoints of the connected parcel lines.</para>
+		/// <para>线视为共线时共享宗地点可以与其连接的线偏移的最大距离。偏移指共享宗地点与连接的宗地线端点之间的直线之间的距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]

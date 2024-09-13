@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Assign Domain To Field</para>
-	/// <para>Sets the domain for a particular field and, optionally, for a subtype. If no subtype is specified, the domain is only assigned to the specified field.</para>
+	/// <para>指定字段的属性域</para>
+	/// <para>设置特定字段的属性域，也可设置子类型的属性域。如果未指定任何子类型，则仅为特定字段指定属性域。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,15 +23,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The name of the table or feature class containing the field that will be assigned a domain.</para>
+		/// <para>包含要指定属性域的字段的表或要素类的名称。</para>
 		/// </param>
 		/// <param name="FieldName">
 		/// <para>Field Name</para>
-		/// <para>The name of the field to be assigned a domain.</para>
+		/// <para>要指定属性域的字段的名称。</para>
 		/// </param>
 		/// <param name="DomainName">
 		/// <para>Domain Name</para>
-		/// <para>The name of a geodatabase domain to assign to the field name. Available domains will automatically be loaded.</para>
+		/// <para>要指定给字段名的地理数据库属性域的名称。将自动加载可用的属性域。</para>
 		/// </param>
 		public AssignDomainToField(object InTable, object FieldName, object DomainName)
 		{
@@ -40,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Assign Domain To Field</para>
+		/// <para>Tool Display Name : 指定字段的属性域</para>
 		/// </summary>
-		public override string DisplayName() => "Assign Domain To Field";
+		public override string DisplayName() => "指定字段的属性域";
 
 		/// <summary>
 		/// <para>Tool Name : AssignDomainToField</para>
@@ -76,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The name of the table or feature class containing the field that will be assigned a domain.</para>
+		/// <para>包含要指定属性域的字段的表或要素类的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Name</para>
-		/// <para>The name of the field to be assigned a domain.</para>
+		/// <para>要指定属性域的字段的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Domain Name</para>
-		/// <para>The name of a geodatabase domain to assign to the field name. Available domains will automatically be loaded.</para>
+		/// <para>要指定给字段名的地理数据库属性域的名称。将自动加载可用的属性域。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Subtype</para>
-		/// <para>The subtype code to be assigned a domain.</para>
+		/// <para>要指定属性域的子类型编码。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

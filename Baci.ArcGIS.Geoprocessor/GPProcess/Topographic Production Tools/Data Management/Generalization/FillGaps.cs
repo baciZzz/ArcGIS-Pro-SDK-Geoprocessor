@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Fill Gaps</para>
+	/// <para>Fill Gaps</para>
 	/// <para>Fills gaps between polygon features that participate in a topology where the coincident boundaries are evident.</para>
 	/// </summary>
 	public class FillGaps : AbstractGPProcess

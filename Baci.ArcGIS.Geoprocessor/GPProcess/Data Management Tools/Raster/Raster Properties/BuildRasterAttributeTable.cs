@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Raster Attribute Table</para>
-	/// <para>Create or update a table with information about the classes in your raster datasets. This is used primarily with discrete data.</para>
+	/// <para>构建栅格属性表</para>
+	/// <para>使用有关栅格数据集中各个类的信息创建或更新表。此方法主要用于离散数据。</para>
 	/// </summary>
 	public class BuildRasterAttributeTable : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The input raster dataset to which a table will be added. This tool will not run if the pixel type is floating point or double precision.</para>
+		/// <para>将向其添加表格的输入栅格数据集。如果像素类型为浮点型或双精度，此工具则不会运行。</para>
 		/// </param>
 		public BuildRasterAttributeTable(object InRaster)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Build Raster Attribute Table</para>
+		/// <para>Tool Display Name : 构建栅格属性表</para>
 		/// </summary>
-		public override string DisplayName() => "Build Raster Attribute Table";
+		public override string DisplayName() => "构建栅格属性表";
 
 		/// <summary>
 		/// <para>Tool Name : BuildRasterAttributeTable</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The input raster dataset to which a table will be added. This tool will not run if the pixel type is floating point or double precision.</para>
+		/// <para>将向其添加表格的输入栅格数据集。如果像素类型为浮点型或双精度，此工具则不会运行。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterLayer()]
@@ -72,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Overwrite</para>
-		/// <para>Specifies whether the existing table will be overwritten.</para>
-		/// <para>Unchecked—The existing raster attribute table will not be overwritten, and any edits will be appended to the current table. This is the default.</para>
-		/// <para>Checked—The existing raster attribute table will be overwritten and a new raster attribute table will be created.</para>
+		/// <para>指定现有表是否将被覆盖。</para>
+		/// <para>未选中 - 现有的栅格属性表将不会被覆盖，所有编辑都将追加到当前表中。这是默认设置。</para>
+		/// <para>选中 - 现有的栅格属性表将被覆盖，并将创建一个新的栅格属性表。</para>
 		/// <para><see cref="OverwriteEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -97,14 +98,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum OverwriteEnum 
 		{
 			/// <summary>
-			/// <para>Overwrite</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
-			[Description("Overwrite")]
+			[Description("覆盖")]
 			Overwrite,
 
 			/// <summary>
-			/// <para>Unchecked—The existing raster attribute table will not be overwritten, and any edits will be appended to the current table. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]

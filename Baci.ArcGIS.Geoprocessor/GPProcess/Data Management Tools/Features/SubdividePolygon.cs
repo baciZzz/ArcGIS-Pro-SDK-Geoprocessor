@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Subdivide Polygon</para>
-	/// <para>Divides polygon features into a number of equal areas or parts.</para>
+	/// <para>细分面</para>
+	/// <para>用于将面要素分为若干等面积区域或部分。</para>
 	/// </summary>
 	public class SubdividePolygon : AbstractGPProcess
 	{
@@ -20,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InPolygons">
 		/// <para>Input Features</para>
-		/// <para>The polygon features to be subdivided.</para>
+		/// <para>要细分的面要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class of subdivided polygons.</para>
+		/// <para>细分面的输出要素类。</para>
 		/// </param>
 		/// <param name="Method">
 		/// <para>Subdivision Method</para>
-		/// <para>Specifies the method that will be used to divide the polygons.</para>
-		/// <para>Number of equal parts— Polygons will be divided evenly into a number of parts. This is the default.</para>
-		/// <para>Equal areas—Polygons will be divided into a specified number of parts of a certain area, and a remainder part.</para>
+		/// <para>指定用于细分面的方法。</para>
+		/// <para>等分数量— 面将被均分为若干部分。这是默认设置。</para>
+		/// <para>相等面积—将根据指定的部分数量，将面划分为具有一定面积的多个部分以及剩余部分。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </param>
 		public SubdividePolygon(object InPolygons, object OutFeatureClass, object Method)
@@ -41,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Subdivide Polygon</para>
+		/// <para>Tool Display Name : 细分面</para>
 		/// </summary>
-		public override string DisplayName() => "Subdivide Polygon";
+		public override string DisplayName() => "细分面";
 
 		/// <summary>
 		/// <para>Tool Name : SubdividePolygon</para>
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The polygon features to be subdivided.</para>
+		/// <para>要细分的面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class of subdivided polygons.</para>
+		/// <para>细分面的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -95,9 +96,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Subdivision Method</para>
-		/// <para>Specifies the method that will be used to divide the polygons.</para>
-		/// <para>Number of equal parts— Polygons will be divided evenly into a number of parts. This is the default.</para>
-		/// <para>Equal areas—Polygons will be divided into a specified number of parts of a certain area, and a remainder part.</para>
+		/// <para>指定用于细分面的方法。</para>
+		/// <para>等分数量— 面将被均分为若干部分。这是默认设置。</para>
+		/// <para>相等面积—将根据指定的部分数量，将面划分为具有一定面积的多个部分以及剩余部分。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -107,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Number of Areas</para>
-		/// <para>The number of areas into which the polygon will be divided if the Number of equal parts subdivision method is specified.</para>
+		/// <para>表示面将被划分为的区域数（如果指定了等分数量细分方法）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -118,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Area</para>
-		/// <para>The area of the equal parts if the Equal areas subdivision method is specified. If the Target Area is larger than the area of the input polygon, the polygon will not be subdivided.</para>
+		/// <para>表示等份的面积（如果已指定等面积细分方法）。如果目标面积大于输入面的面积，则不会对面进行细分。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPArealUnit()]
@@ -126,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>RESERVED</para>
-		/// <para>This parameter is not yet supported.</para>
+		/// <para>尚不支持此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -135,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Split Angle</para>
-		/// <para>The angle that will be used to draw the lines that divide the polygon. The default is 0.</para>
+		/// <para>用于绘制面的分割线的角度。默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -143,9 +144,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Subdivision Type</para>
-		/// <para>Specifies how the polygons will be divided.</para>
-		/// <para>Strips— Polygons will be divided into strips. This is the default.</para>
-		/// <para>Stacked blocks—Polygons will be divided into stacked blocks.</para>
+		/// <para>指定面的分割方式。</para>
+		/// <para>条状— 将面分割为条状。这是默认设置。</para>
+		/// <para>堆叠的块状—将面分割为堆叠的块状。</para>
 		/// <para><see cref="SubdivisionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -170,17 +171,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Number of equal parts— Polygons will be divided evenly into a number of parts. This is the default.</para>
+			/// <para>等分数量— 面将被均分为若干部分。这是默认设置。</para>
 			/// </summary>
 			[GPValue("NUMBER_OF_EQUAL_PARTS")]
-			[Description("Number of equal parts")]
+			[Description("等分数量")]
 			Number_of_equal_parts,
 
 			/// <summary>
-			/// <para>Equal areas—Polygons will be divided into a specified number of parts of a certain area, and a remainder part.</para>
+			/// <para>相等面积—将根据指定的部分数量，将面划分为具有一定面积的多个部分以及剩余部分。</para>
 			/// </summary>
 			[GPValue("EQUAL_AREAS")]
-			[Description("Equal areas")]
+			[Description("相等面积")]
 			Equal_areas,
 
 		}
@@ -191,17 +192,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SubdivisionTypeEnum 
 		{
 			/// <summary>
-			/// <para>Strips— Polygons will be divided into strips. This is the default.</para>
+			/// <para>条状— 将面分割为条状。这是默认设置。</para>
 			/// </summary>
 			[GPValue("STRIPS")]
-			[Description("Strips")]
+			[Description("条状")]
 			Strips,
 
 			/// <summary>
-			/// <para>Stacked blocks—Polygons will be divided into stacked blocks.</para>
+			/// <para>堆叠的块状—将面分割为堆叠的块状。</para>
 			/// </summary>
 			[GPValue("STACKED_BLOCKS")]
-			[Description("Stacked blocks")]
+			[Description("堆叠的块状")]
 			Stacked_blocks,
 
 		}

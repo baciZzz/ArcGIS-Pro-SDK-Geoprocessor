@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Recalculate Feature Class Extent</para>
-	/// <para>Recalculates the XY, Z, and M extent properties of a feature class based on the features in the feature class.</para>
+	/// <para>重新计算要素类范围</para>
+	/// <para>可基于要素类中的各个要素重新计算要素类的 XY、Z 和 M 范围属性。</para>
 	/// </summary>
 	public class RecalculateFeatureClassExtent : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Feature Class</para>
-		/// <para>The shapefile or geodatabase feature class that will be updated.</para>
+		/// <para>将要更新的 shapefile 或地理数据库要素类。</para>
 		/// </param>
 		public RecalculateFeatureClassExtent(object InFeatures)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Recalculate Feature Class Extent</para>
+		/// <para>Tool Display Name : 重新计算要素类范围</para>
 		/// </summary>
-		public override string DisplayName() => "Recalculate Feature Class Extent";
+		public override string DisplayName() => "重新计算要素类范围";
 
 		/// <summary>
 		/// <para>Tool Name : RecalculateFeatureClassExtent</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Feature Class</para>
-		/// <para>The shapefile or geodatabase feature class that will be updated.</para>
+		/// <para>将要更新的 shapefile 或地理数据库要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

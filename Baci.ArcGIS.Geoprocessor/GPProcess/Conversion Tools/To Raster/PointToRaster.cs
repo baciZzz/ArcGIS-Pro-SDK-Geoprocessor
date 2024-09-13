@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Point to Raster</para>
-	/// <para>Converts point features to a raster dataset.</para>
+	/// <para>点转栅格</para>
+	/// <para>将点要素转换为栅格数据集。</para>
 	/// </summary>
 	public class PointToRaster : AbstractGPProcess
 	{
@@ -20,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The point or multipoint input feature dataset to be converted to a raster.</para>
+		/// <para>要转换为栅格的点或多点输入要素数据集。</para>
 		/// </param>
 		/// <param name="ValueField">
 		/// <para>Value field</para>
-		/// <para>The field used to assign values to the output raster.</para>
-		/// <para>It can be any field of the input feature dataset&apos;s attribute table.</para>
-		/// <para>If the Shape field of a point or multipoint dataset contains z- or m-values, either of these can be used.</para>
+		/// <para>用于向输出栅格分配值的字段。</para>
+		/// <para>可以是输入要素数据集属性表中的任何字段。</para>
+		/// <para>如果点数据集或多点数据集的 Shape 字段含有 z 值或 m 值，则可以使用二者中的任意一个。</para>
 		/// </param>
 		/// <param name="OutRasterdataset">
 		/// <para>Output Raster Dataset</para>
-		/// <para>The output raster dataset to be created.</para>
-		/// <para>If the output raster will not be saved to a geodatabase, specify .tif for TIFF file format, .CRF for CRF file format, .img for ERDAS IMAGINE file format, or no extension for Esri Grid raster format.</para>
+		/// <para>要创建的输出栅格数据集。</para>
+		/// <para>如果不希望将输出栅格保存到地理数据库，请为 TIFF 文件格式指定 .tif，为 CRF 文件格式指定 .CRF，为 ERDAS IMAGINE 文件格式指定 .img，而对于 Esri Grid 栅格格式，无需指定扩展名。</para>
 		/// </param>
 		public PointToRaster(object InFeatures, object ValueField, object OutRasterdataset)
 		{
@@ -41,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Point to Raster</para>
+		/// <para>Tool Display Name : 点转栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Point to Raster";
+		public override string DisplayName() => "点转栅格";
 
 		/// <summary>
 		/// <para>Tool Name : PointToRaster</para>
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The point or multipoint input feature dataset to be converted to a raster.</para>
+		/// <para>要转换为栅格的点或多点输入要素数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -87,9 +88,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Value field</para>
-		/// <para>The field used to assign values to the output raster.</para>
-		/// <para>It can be any field of the input feature dataset&apos;s attribute table.</para>
-		/// <para>If the Shape field of a point or multipoint dataset contains z- or m-values, either of these can be used.</para>
+		/// <para>用于向输出栅格分配值的字段。</para>
+		/// <para>可以是输入要素数据集属性表中的任何字段。</para>
+		/// <para>如果点数据集或多点数据集的 Shape 字段含有 z 值或 m 值，则可以使用二者中的任意一个。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -99,8 +100,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Raster Dataset</para>
-		/// <para>The output raster dataset to be created.</para>
-		/// <para>If the output raster will not be saved to a geodatabase, specify .tif for TIFF file format, .CRF for CRF file format, .img for ERDAS IMAGINE file format, or no extension for Esri Grid raster format.</para>
+		/// <para>要创建的输出栅格数据集。</para>
+		/// <para>如果不希望将输出栅格保存到地理数据库，请为 TIFF 文件格式指定 .tif，为 CRF 文件格式指定 .CRF，为 ERDAS IMAGINE 文件格式指定 .img，而对于 Esri Grid 栅格格式，无需指定扩展名。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -108,15 +109,15 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Cell assignment type</para>
-		/// <para>The method to determine how the cell will be assigned a value when more than one feature falls within a cell.</para>
-		/// <para>Most frequent—If there is more than one feature within the cell, the one with the most common attribute, in the Value field, is assigned to the cell. If they have the same number of common attributes, the one with the lowest FID is used.</para>
-		/// <para>Sum—The sum of the attributes of all the points within the cell (not valid for string data).</para>
-		/// <para>Mean—The mean of the attributes of all the points within the cell (not valid for string data).</para>
-		/// <para>Standard deviation—The standard deviation of attributes of all the points within the cell. If there are less than two points in the cell, the cell is assigned NoData (not valid for string data).</para>
-		/// <para>Maximum—The maximum value of the attributes of the points within the cell (not valid for string data).</para>
-		/// <para>Minimum—The minimum value of the attributes of the points within the cell (not valid for string data).</para>
-		/// <para>Range—The range of the attributes of the points within the cell (not valid for string data).</para>
-		/// <para>Count—The number of points within the cell.</para>
+		/// <para>用于确定当多个要素落在一个像元中时如何为像元分配值的方法。</para>
+		/// <para>最常见—如果像元中有多个要素，则将值字段中具有最多通用属性的要素分配给像元。如果这些要素具有相同数量的通用属性，则使用具有最低 FID 的要素。</para>
+		/// <para>总和—像元中所有点的属性的和（对字符串数据无效）。</para>
+		/// <para>平均值—像元中所有点的属性的平均值（对字符串数据无效）。</para>
+		/// <para>标准差—像元中所有点的属性的标准差。如果像元中少于两点，则为像元分配 NoData（对字符串数据无效）。</para>
+		/// <para>最大值—像元中所有点的属性的最大值（对字符串数据无效）。</para>
+		/// <para>最小值—像元中所有点的属性的最小值（对字符串数据无效）。</para>
+		/// <para>范围—像元中所有点的属性的范围（对字符串数据无效）。</para>
+		/// <para>计数—像元中的点的个数。</para>
 		/// <para><see cref="CellAssignmentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -126,8 +127,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Priority field</para>
-		/// <para>This field is used when a feature should take preference over another feature with the same attribute.</para>
-		/// <para>Priority field is only used with the Most frequent cell assignment type option.</para>
+		/// <para>需要确定一个要素是否应该优先于具有相同属性的其他要素时，使用此字段。</para>
+		/// <para>优先级字段仅与最常见像元分配类型选项一起使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -138,8 +139,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Cellsize</para>
-		/// <para>The cell size of the output raster being created.</para>
-		/// <para>This parameter can be defined by a numeric value or obtained from an existing raster dataset. If the cell size hasn’t been explicitly specified as the parameter value, the environment cell size value is used, if specified; otherwise, additional rules are used to calculate it from the other inputs. See Usages for more detail.</para>
+		/// <para>正在创建的输出栅格的像元大小。</para>
+		/// <para>此参数可以通过数值进行定义，也可以从现有栅格数据集获取。如果未将像元大小明确指定为参数值，则将使用环境像元大小值（如果已指定）；否则，将使用其他规则通过其他输出计算像元大小。有关详细信息，请参阅“用法”。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -148,10 +149,10 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Build raster attribute table</para>
-		/// <para>Specifies whether the output raster will have a raster attribute table.</para>
-		/// <para>This parameter only applies to integer rasters.</para>
-		/// <para>Checked—The output raster will have a raster attribute table. This is the default.</para>
-		/// <para>Unchecked—The output raster will not have a raster attribute table.</para>
+		/// <para>指定输出栅格是否将具有栅格属性表。</para>
+		/// <para>此参数仅适用于整型栅格。</para>
+		/// <para>选中 - 输出栅格将具有栅格属性表。这是默认设置。</para>
+		/// <para>未选中 - 输出栅格将不具有栅格属性表。</para>
 		/// <para><see cref="BuildRatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -176,59 +177,59 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum CellAssignmentEnum 
 		{
 			/// <summary>
-			/// <para>Most frequent—If there is more than one feature within the cell, the one with the most common attribute, in the Value field, is assigned to the cell. If they have the same number of common attributes, the one with the lowest FID is used.</para>
+			/// <para>最常见—如果像元中有多个要素，则将值字段中具有最多通用属性的要素分配给像元。如果这些要素具有相同数量的通用属性，则使用具有最低 FID 的要素。</para>
 			/// </summary>
 			[GPValue("MOST_FREQUENT")]
-			[Description("Most frequent")]
+			[Description("最常见")]
 			Most_frequent,
 
 			/// <summary>
-			/// <para>Sum—The sum of the attributes of all the points within the cell (not valid for string data).</para>
+			/// <para>总和—像元中所有点的属性的和（对字符串数据无效）。</para>
 			/// </summary>
 			[GPValue("SUM")]
-			[Description("Sum")]
+			[Description("总和")]
 			Sum,
 
 			/// <summary>
-			/// <para>Mean—The mean of the attributes of all the points within the cell (not valid for string data).</para>
+			/// <para>平均值—像元中所有点的属性的平均值（对字符串数据无效）。</para>
 			/// </summary>
 			[GPValue("MEAN")]
-			[Description("Mean")]
+			[Description("平均值")]
 			Mean,
 
 			/// <summary>
-			/// <para>Standard deviation—The standard deviation of attributes of all the points within the cell. If there are less than two points in the cell, the cell is assigned NoData (not valid for string data).</para>
+			/// <para>标准差—像元中所有点的属性的标准差。如果像元中少于两点，则为像元分配 NoData（对字符串数据无效）。</para>
 			/// </summary>
 			[GPValue("STANDARD_DEVIATION")]
-			[Description("Standard deviation")]
+			[Description("标准差")]
 			Standard_deviation,
 
 			/// <summary>
-			/// <para>Maximum—The maximum value of the attributes of the points within the cell (not valid for string data).</para>
+			/// <para>最大值—像元中所有点的属性的最大值（对字符串数据无效）。</para>
 			/// </summary>
 			[GPValue("MAXIMUM")]
-			[Description("Maximum")]
+			[Description("最大值")]
 			Maximum,
 
 			/// <summary>
-			/// <para>Minimum—The minimum value of the attributes of the points within the cell (not valid for string data).</para>
+			/// <para>最小值—像元中所有点的属性的最小值（对字符串数据无效）。</para>
 			/// </summary>
 			[GPValue("MINIMUM")]
-			[Description("Minimum")]
+			[Description("最小值")]
 			Minimum,
 
 			/// <summary>
-			/// <para>Range—The range of the attributes of the points within the cell (not valid for string data).</para>
+			/// <para>范围—像元中所有点的属性的范围（对字符串数据无效）。</para>
 			/// </summary>
 			[GPValue("RANGE")]
-			[Description("Range")]
+			[Description("范围")]
 			Range,
 
 			/// <summary>
-			/// <para>Count—The number of points within the cell.</para>
+			/// <para>计数—像元中的点的个数。</para>
 			/// </summary>
 			[GPValue("COUNT")]
-			[Description("Count")]
+			[Description("计数")]
 			Count,
 
 		}
@@ -239,14 +240,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum BuildRatEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output raster will have a raster attribute table. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BUILD")]
 			BUILD,
 
 			/// <summary>
-			/// <para>Unchecked—The output raster will not have a raster attribute table.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_BUILD")]

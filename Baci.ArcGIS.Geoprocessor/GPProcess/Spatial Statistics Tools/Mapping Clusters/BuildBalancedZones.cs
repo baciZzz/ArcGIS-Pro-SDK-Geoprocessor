@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Build Balanced Zones</para>
-	/// <para>Creates spatially contiguous zones in your study area using a genetic growth algorithm based on criteria that you specify.</para>
+	/// <para>构建平衡区域</para>
+	/// <para>使用基于您指定标准的遗传增长算法在研究区域中创建空间连续区域。</para>
 	/// </summary>
 	public class BuildBalancedZones : AbstractGPProcess
 	{
@@ -20,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The feature class or feature layer that will be aggregated into zones.</para>
+		/// <para>要聚合为区域的要素类或要素图层。</para>
 		/// </param>
 		/// <param name="OutputFeatures">
 		/// <para>Output Features</para>
-		/// <para>The output feature class indicating which features are aggregated into each zone. The feature class will be symbolized by the ZONE_ID field and will contain fields displaying the values of each criteria that you specify.</para>
+		/// <para>输出要素类，指示将哪些要素聚合到每个区域中。要素类将由 ZONE_ID 字段表示，并包含显示您指定的每个标准的值的字段。</para>
 		/// </param>
 		/// <param name="ZoneCreationMethod">
 		/// <para>Zone Creation Method</para>
-		/// <para>Specifies the method that will be used to grow each zone. Zones grow until all specified criteria are satisfied.</para>
-		/// <para>Attribute target—Zones will be created based on target values of one or multiple variables. If this option is chosen, the desired sum of each attribute must be specified in the Zone Building Criteria With Target parameter, and each zone will grow until the sum of the attributes exceeds these values. For example, you can use this option to create zones that each have at least 100,000 residents and 20,000 family homes.</para>
-		/// <para>Number of zones and attribute target—A specified number of zones will be created while keeping the sum of an attribute approximately equal within each zone. If this option is chosen, the desired number of zones must be specified in the Target Number of Zones parameter. The attribute sum within each zone is equal to the sum of the total attribute divided by the number of zones.</para>
-		/// <para>Defined number of zones—A specified number of zones will be created that are each composed of approximately the same number of input features. If this option is chosen, the desired number of zones must be specified in the Target Number of Zones parameter.</para>
+		/// <para>指定将用于增长每个区域的方法。区域将增长，直到满足所有指定条件为止。</para>
+		/// <para>属性目标—将根据一个或多个变量的目标值创建区域。如果选择此选项，则必须在具有目标的区域构建标准参数中指定所需的每个属性的总和；同时每个区域都会增长，直到属性的总和超过这些值为止。例如，您可以使用此选项创建每个区域中至少具有 100,000 个居民和 20,000 个家庭住宅的区域。</para>
+		/// <para>区域数和属性目标—系统将创建指定数量的区域，同时使每个区域内的属性总和大致相等。如果选择此选项，则必须在目标区域数参数中指定所需的区域数。每个区域内的属性总和均等于用属性总和除以区域数得到的商。</para>
+		/// <para>所定义区域数—将创建指定数量的区域，其中每个区域都由数量大致相同的输入要素组成。如果选择此选项，则必须在目标区域数参数中指定所需的区域数。</para>
 		/// <para><see cref="ZoneCreationMethodEnum"/></para>
 		/// </param>
 		public BuildBalancedZones(object InFeatures, object OutputFeatures, object ZoneCreationMethod)
@@ -42,9 +43,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Build Balanced Zones</para>
+		/// <para>Tool Display Name : 构建平衡区域</para>
 		/// </summary>
-		public override string DisplayName() => "Build Balanced Zones";
+		public override string DisplayName() => "构建平衡区域";
 
 		/// <summary>
 		/// <para>Tool Name : BuildBalancedZones</para>
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The feature class or feature layer that will be aggregated into zones.</para>
+		/// <para>要聚合为区域的要素类或要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>The output feature class indicating which features are aggregated into each zone. The feature class will be symbolized by the ZONE_ID field and will contain fields displaying the values of each criteria that you specify.</para>
+		/// <para>输出要素类，指示将哪些要素聚合到每个区域中。要素类将由 ZONE_ID 字段表示，并包含显示您指定的每个标准的值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -97,10 +98,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Zone Creation Method</para>
-		/// <para>Specifies the method that will be used to grow each zone. Zones grow until all specified criteria are satisfied.</para>
-		/// <para>Attribute target—Zones will be created based on target values of one or multiple variables. If this option is chosen, the desired sum of each attribute must be specified in the Zone Building Criteria With Target parameter, and each zone will grow until the sum of the attributes exceeds these values. For example, you can use this option to create zones that each have at least 100,000 residents and 20,000 family homes.</para>
-		/// <para>Number of zones and attribute target—A specified number of zones will be created while keeping the sum of an attribute approximately equal within each zone. If this option is chosen, the desired number of zones must be specified in the Target Number of Zones parameter. The attribute sum within each zone is equal to the sum of the total attribute divided by the number of zones.</para>
-		/// <para>Defined number of zones—A specified number of zones will be created that are each composed of approximately the same number of input features. If this option is chosen, the desired number of zones must be specified in the Target Number of Zones parameter.</para>
+		/// <para>指定将用于增长每个区域的方法。区域将增长，直到满足所有指定条件为止。</para>
+		/// <para>属性目标—将根据一个或多个变量的目标值创建区域。如果选择此选项，则必须在具有目标的区域构建标准参数中指定所需的每个属性的总和；同时每个区域都会增长，直到属性的总和超过这些值为止。例如，您可以使用此选项创建每个区域中至少具有 100,000 个居民和 20,000 个家庭住宅的区域。</para>
+		/// <para>区域数和属性目标—系统将创建指定数量的区域，同时使每个区域内的属性总和大致相等。如果选择此选项，则必须在目标区域数参数中指定所需的区域数。每个区域内的属性总和均等于用属性总和除以区域数得到的商。</para>
+		/// <para>所定义区域数—将创建指定数量的区域，其中每个区域都由数量大致相同的输入要素组成。如果选择此选项，则必须在目标区域数参数中指定所需的区域数。</para>
 		/// <para><see cref="ZoneCreationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -110,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Target Number of Zones</para>
-		/// <para>The number of zones that will be created.</para>
+		/// <para>将创建的区域数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -118,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Zone Building Criteria With Target</para>
-		/// <para>Specifies the variables that will be considered, their target values, and optional weights. The default weights are set to 1, and each variable contributes equally unless they are changed.</para>
+		/// <para>指定要考虑的变量、其目标值以及权重（可选）。默认权重设置为 1，除非另行更改，否则每个变量的权重均相同。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -127,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Zone Building Criteria</para>
-		/// <para>Specifies the variables that will be considered and, optionally, weights. The default weights are set to 1, and each variable contributes equally unless changed.</para>
+		/// <para>指定将被考虑的变量以及权重（可选）。默认权重设置为 1，除非另行更改，否则每个变量的权重均相同。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -136,11 +137,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Spatial Constraints</para>
-		/// <para>Specifies how neighbors are defined while the zones grow. Zones can only grow into new features that are neighbors of at least one of the features already in the zone. If the input features are polygons, the default spatial constraint is Contiguity edges corners. If the input features are points, the default spatial constraint is Trimmed Delaunay triangulation.</para>
-		/// <para>Contiguity edges only—For zones containing contiguous polygon features, only polygons that share an edge will be part of the same zone.</para>
-		/// <para>Contiguity edges corners— For zones containing contiguous polygon features, only polygons that share an edge or a vertex will be part of the same zone.</para>
-		/// <para>Trimmed Delaunay triangulation— Features in the same zone will have at least one natural neighbor in common with another feature in the zone. Natural neighbor relationships are based on a trimmed Delaunay Triangulation. Conceptually, Delaunay Triangulation creates a non-overlapping mesh of triangles from feature centroids. Each feature is a triangle node, and nodes that share edges are considered neighbors. These triangles are then clipped to a convex hull to ensure that features cannot be neighbors with any features outside of the convex hull. This is the default.</para>
-		/// <para>Get spatial weights from file— Spatial, and, optionally, temporal relationships will be defined by a specified spatial weights file (.swm). Create the spatial weights matrix using the Generate Spatial Weights Matrix tool or the Generate Network Spatial Weights tool. The path to the spatial weights file is specified by the Spatial Weights Matrix File parameter.</para>
+		/// <para>指定在区域增长时如何定义相邻要素。区域只能增长为区域中已有的至少一个要素的相邻要素的新要素。如果输入要素为面，则默认空间约束为邻接边拐角。如果输入要素为点，则默认空间约束为修剪型 Delaunay 三角测量。</para>
+		/// <para>仅邻接边—对于包含连续面要素的区域，只有共享边的面才是同一区域的一部分。</para>
+		/// <para>邻接边拐角— 对于包含连续面要素的区域，只有共享边或顶点的面才是同一区域的一部分。</para>
+		/// <para>修剪型 Delaunay 三角测量— 同一个区域中的要素至少具有一个与该区域中的另一要素共用的自然邻域。自然邻域关系基于修剪型 Delaunay 三角测量。从概念上讲，Delaunay 三角测量可以根据要素质心创建不重叠的三角网。每个要素是一个三角形结点，具有公共边的结点被视为邻域。然后将这些三角形剪裁成凸包，以确保要素无法与凸包外的任何要素相邻。这是默认设置。</para>
+		/// <para>通过文件获取空间权重— 空间关系和可选的时态关系通过指定的空间权重文件 (.swm) 进行定义。使用生成空间权重矩阵或生成网络空间权重工具创建空间权重矩阵。指向空间权重文件的路径由空间权重矩阵文件参数指定。</para>
 		/// <para><see cref="SpatialConstraintsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -150,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Spatial Weight Matrix File</para>
-		/// <para>The path to a file containing spatial weights that define spatial and, optionally, temporal relationships among features.</para>
+		/// <para>包含空间权重（其定义要素间的空间关系或时态关系）的文件的路径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -160,10 +161,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Zone Characteristics</para>
-		/// <para>Specifies the desired characteristics of the zones that will be created.</para>
-		/// <para>Equal area— Zones with total area as similar as possible will be created.</para>
-		/// <para>Compactness—Zones will be created with more closely-packed (compact) features.</para>
-		/// <para>Equal number of features—Zones with an equal number of features will be created.</para>
+		/// <para>指定将创建的区域的所需的特征。</para>
+		/// <para>相等面积— 将创建总面积尽可能相似的区域。</para>
+		/// <para>紧密度—将使用更紧密（紧凑）的要素创建区域。</para>
+		/// <para>相等要素数—将创建具有相等要素数的区域。</para>
 		/// <para><see cref="ZoneCharacteristicsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -174,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Attribute to Consider</para>
-		/// <para>Specifies attributes and statistics to consider in the selection of final zones. You can choose to homogenize attributes based on their sum, average, median, or variance. For example, if you are creating zones based on home values and want to balance the average total income within each zone, the solution with the most equal average income across zones will be preferred.</para>
+		/// <para>指定在选择最终区域时要考虑的属性和统计数据。您可以选择根据属性的总和、平均值、中位数或方差对属性进行同质化。例如，如果您要基于房屋价格创建区域并希望平衡每个区域内的平均总收入，则最好使用跨区域平均收入最相等的解决方案。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -184,8 +185,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Distance to Consider</para>
-		/// <para>The feature class that will be used to homogenize the total distance per zone. The distance is calculated from each of the input features to the closest feature provided in this parameter. This distance is then used as an additional attribute constraint when selecting the final zone solution. For example, you can create police patrol districts that are each approximately the same distance from the closest police station.</para>
-		/// <para>This optional parameter is not available with a Desktop Basic or Desktop Standard license.</para>
+		/// <para>将用于同质化每个区域的总距离的要素类。距离是从该参数中每个输入要素到其最接近要素计算的。然后，在选择最终区域解决方案时，此距离将用作附加属性约束。例如，您可以创建警察巡逻区，使每个巡逻区与距离最近的警察局的距离大致相同。</para>
+		/// <para>此可选参数不适用于 Desktop Basic 或 Desktop Standard 许可。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -194,7 +195,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Categorical Variable to Maintain Proportions</para>
-		/// <para>The categorical variable to be considered for zone proportions.</para>
+		/// <para>区域比例要考虑的分类变量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -205,9 +206,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Proportion Method</para>
-		/// <para>Specifies the type of proportion that will be maintained based on the chosen categorical variable.</para>
-		/// <para>Maintain within proportion—Each zone will maintain the same proportions as the overall study area for the given categorical variable. For example, given a categorical variable that is 60% Type A and 40% Type B, this method will prefer zones that are comprised of approximately 60% Type A features and 40% Type B features.</para>
-		/// <para>Maintain overall proportion—Zones will be created so that the overall proportions of category predominance by zone matches the proportions of the given categorical variable for the entire dataset. For example, given a categorical variable that is 60% Type A and 40% Type B, this method will prefer solutions where 60% of the zones are predominantly Type A features and 40% of the zones are predominantly Type B features.</para>
+		/// <para>指定将根据所选分类变量保持的比例类型。</para>
+		/// <para>保持比例—每个区域将保持与给定分类变量的整个研究区域相同的比例。例如，给定分类变量为 60％ 类型 A 和 40％ 类型 B，此方法将更倾向于由大约 60％ 类型 A 要素和 40％ 类型 B 要素组成的区域。</para>
+		/// <para>保持整体比例—将创建区域，以便按区域的类别优势总比例与整个数据集的给定分类变量的比例相匹配。例如，给定分类变量为 60％ 类型 A 和 40％ 类型 B，此方法将更倾向于 60％ 的区域主要是类型 A 要素，40％ 的区域主要是类型 B 要素的解决方案。</para>
 		/// <para><see cref="ProportionMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -218,7 +219,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Population Size</para>
-		/// <para>The number of randomly generated initial seeds. For larger datasets, increasing this number will increase the search space and the probability of finding a better solution. The default is 100.</para>
+		/// <para>随机生成的初始种子数。对于大型数据集，增加此数字将增加搜索空间和寻找更好解决方案的可能性。默认值为 100。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -228,7 +229,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Generations</para>
-		/// <para>The number of times the zone search process is repeated. For larger datasets, increasing the number is recommended in order to find an optimal solution. The default is 50 generations.</para>
+		/// <para>区域搜索过程重复的次数。对于较大的数据集，建议增加数量以找到最佳解决方案。默认值为 50 代。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -238,7 +239,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Mutation Factor</para>
-		/// <para>The probability that an individual's seed values will be mutated to a new set of seeds. Mutation increases the search space by introducing variability of the possible solutions in every generation and allows for faster convergence to an optimal solution. The default is 0.1.</para>
+		/// <para>个体的种子值被突变为一组新种子的概率。通过在每一代中引入可能解决方案的可变性来增加搜索空间，并允许更快地收敛到最佳解决方案。默认值为 0.1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -248,7 +249,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Convergence Table</para>
-		/// <para>If specified, a table will be created containing the total fitness score for the best solution found in every generation as well as the fitness score for the individual zone constraints.</para>
+		/// <para>如果指定，将创建一个表，其中包含每一代中找到的最佳解决方案的总体适用性分数以及各个区域约束的适用性分数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -272,24 +273,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum ZoneCreationMethodEnum 
 		{
 			/// <summary>
-			/// <para>Attribute target—Zones will be created based on target values of one or multiple variables. If this option is chosen, the desired sum of each attribute must be specified in the Zone Building Criteria With Target parameter, and each zone will grow until the sum of the attributes exceeds these values. For example, you can use this option to create zones that each have at least 100,000 residents and 20,000 family homes.</para>
+			/// <para>属性目标—将根据一个或多个变量的目标值创建区域。如果选择此选项，则必须在具有目标的区域构建标准参数中指定所需的每个属性的总和；同时每个区域都会增长，直到属性的总和超过这些值为止。例如，您可以使用此选项创建每个区域中至少具有 100,000 个居民和 20,000 个家庭住宅的区域。</para>
 			/// </summary>
 			[GPValue("ATTRIBUTE_TARGET")]
-			[Description("Attribute target")]
+			[Description("属性目标")]
 			Attribute_target,
 
 			/// <summary>
-			/// <para>Number of zones and attribute target—A specified number of zones will be created while keeping the sum of an attribute approximately equal within each zone. If this option is chosen, the desired number of zones must be specified in the Target Number of Zones parameter. The attribute sum within each zone is equal to the sum of the total attribute divided by the number of zones.</para>
+			/// <para>区域数和属性目标—系统将创建指定数量的区域，同时使每个区域内的属性总和大致相等。如果选择此选项，则必须在目标区域数参数中指定所需的区域数。每个区域内的属性总和均等于用属性总和除以区域数得到的商。</para>
 			/// </summary>
 			[GPValue("NUMBER_ZONES_AND_ATTRIBUTE")]
-			[Description("Number of zones and attribute target")]
+			[Description("区域数和属性目标")]
 			Number_of_zones_and_attribute_target,
 
 			/// <summary>
-			/// <para>Defined number of zones—A specified number of zones will be created that are each composed of approximately the same number of input features. If this option is chosen, the desired number of zones must be specified in the Target Number of Zones parameter.</para>
+			/// <para>所定义区域数—将创建指定数量的区域，其中每个区域都由数量大致相同的输入要素组成。如果选择此选项，则必须在目标区域数参数中指定所需的区域数。</para>
 			/// </summary>
 			[GPValue("NUMBER_OF_ZONES")]
-			[Description("Defined number of zones")]
+			[Description("所定义区域数")]
 			Defined_number_of_zones,
 
 		}
@@ -300,31 +301,31 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum SpatialConstraintsEnum 
 		{
 			/// <summary>
-			/// <para>Contiguity edges only—For zones containing contiguous polygon features, only polygons that share an edge will be part of the same zone.</para>
+			/// <para>仅邻接边—对于包含连续面要素的区域，只有共享边的面才是同一区域的一部分。</para>
 			/// </summary>
 			[GPValue("CONTIGUITY_EDGES_ONLY")]
-			[Description("Contiguity edges only")]
+			[Description("仅邻接边")]
 			Contiguity_edges_only,
 
 			/// <summary>
-			/// <para>Contiguity edges corners— For zones containing contiguous polygon features, only polygons that share an edge or a vertex will be part of the same zone.</para>
+			/// <para>邻接边拐角— 对于包含连续面要素的区域，只有共享边或顶点的面才是同一区域的一部分。</para>
 			/// </summary>
 			[GPValue("CONTIGUITY_EDGES_CORNERS")]
-			[Description("Contiguity edges corners")]
+			[Description("邻接边拐角")]
 			Contiguity_edges_corners,
 
 			/// <summary>
-			/// <para>Trimmed Delaunay triangulation— Features in the same zone will have at least one natural neighbor in common with another feature in the zone. Natural neighbor relationships are based on a trimmed Delaunay Triangulation. Conceptually, Delaunay Triangulation creates a non-overlapping mesh of triangles from feature centroids. Each feature is a triangle node, and nodes that share edges are considered neighbors. These triangles are then clipped to a convex hull to ensure that features cannot be neighbors with any features outside of the convex hull. This is the default.</para>
+			/// <para>修剪型 Delaunay 三角测量— 同一个区域中的要素至少具有一个与该区域中的另一要素共用的自然邻域。自然邻域关系基于修剪型 Delaunay 三角测量。从概念上讲，Delaunay 三角测量可以根据要素质心创建不重叠的三角网。每个要素是一个三角形结点，具有公共边的结点被视为邻域。然后将这些三角形剪裁成凸包，以确保要素无法与凸包外的任何要素相邻。这是默认设置。</para>
 			/// </summary>
 			[GPValue("TRIMMED_DELAUNAY_TRIANGULATION")]
-			[Description("Trimmed Delaunay triangulation")]
+			[Description("修剪型 Delaunay 三角测量")]
 			Trimmed_Delaunay_triangulation,
 
 			/// <summary>
-			/// <para>Get spatial weights from file— Spatial, and, optionally, temporal relationships will be defined by a specified spatial weights file (.swm). Create the spatial weights matrix using the Generate Spatial Weights Matrix tool or the Generate Network Spatial Weights tool. The path to the spatial weights file is specified by the Spatial Weights Matrix File parameter.</para>
+			/// <para>通过文件获取空间权重— 空间关系和可选的时态关系通过指定的空间权重文件 (.swm) 进行定义。使用生成空间权重矩阵或生成网络空间权重工具创建空间权重矩阵。指向空间权重文件的路径由空间权重矩阵文件参数指定。</para>
 			/// </summary>
 			[GPValue("GET_SPATIAL_WEIGHTS_FROM_FILE")]
-			[Description("Get spatial weights from file")]
+			[Description("通过文件获取空间权重")]
 			Get_spatial_weights_from_file,
 
 		}
@@ -335,24 +336,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum ZoneCharacteristicsEnum 
 		{
 			/// <summary>
-			/// <para>Equal area— Zones with total area as similar as possible will be created.</para>
+			/// <para>相等面积— 将创建总面积尽可能相似的区域。</para>
 			/// </summary>
 			[GPValue("EQUAL_AREA")]
-			[Description("Equal area")]
+			[Description("相等面积")]
 			Equal_area,
 
 			/// <summary>
-			/// <para>Compactness—Zones will be created with more closely-packed (compact) features.</para>
+			/// <para>紧密度—将使用更紧密（紧凑）的要素创建区域。</para>
 			/// </summary>
 			[GPValue("COMPACTNESS")]
-			[Description("Compactness")]
+			[Description("紧密度")]
 			Compactness,
 
 			/// <summary>
-			/// <para>Equal number of features—Zones with an equal number of features will be created.</para>
+			/// <para>相等要素数—将创建具有相等要素数的区域。</para>
 			/// </summary>
 			[GPValue("EQUAL_NUMBER_OF_FEATURES")]
-			[Description("Equal number of features")]
+			[Description("相等要素数")]
 			Equal_number_of_features,
 
 		}
@@ -363,17 +364,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum ProportionMethodEnum 
 		{
 			/// <summary>
-			/// <para>Maintain within proportion—Each zone will maintain the same proportions as the overall study area for the given categorical variable. For example, given a categorical variable that is 60% Type A and 40% Type B, this method will prefer zones that are comprised of approximately 60% Type A features and 40% Type B features.</para>
+			/// <para>保持比例—每个区域将保持与给定分类变量的整个研究区域相同的比例。例如，给定分类变量为 60％ 类型 A 和 40％ 类型 B，此方法将更倾向于由大约 60％ 类型 A 要素和 40％ 类型 B 要素组成的区域。</para>
 			/// </summary>
 			[GPValue("MAINTAIN_WITHIN_PROPORTION")]
-			[Description("Maintain within proportion")]
+			[Description("保持比例")]
 			Maintain_within_proportion,
 
 			/// <summary>
-			/// <para>Maintain overall proportion—Zones will be created so that the overall proportions of category predominance by zone matches the proportions of the given categorical variable for the entire dataset. For example, given a categorical variable that is 60% Type A and 40% Type B, this method will prefer solutions where 60% of the zones are predominantly Type A features and 40% of the zones are predominantly Type B features.</para>
+			/// <para>保持整体比例—将创建区域，以便按区域的类别优势总比例与整个数据集的给定分类变量的比例相匹配。例如，给定分类变量为 60％ 类型 A 和 40％ 类型 B，此方法将更倾向于 60％ 的区域主要是类型 A 要素，40％ 的区域主要是类型 B 要素的解决方案。</para>
 			/// </summary>
 			[GPValue("MAINTAIN_OVERALL_PROPORTION")]
-			[Description("Maintain overall proportion")]
+			[Description("保持整体比例")]
 			Maintain_overall_proportion,
 
 		}

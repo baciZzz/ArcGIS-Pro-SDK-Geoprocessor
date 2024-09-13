@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>GA Layer To Grid</para>
-	/// <para>Exports a Geostatistical layer to a raster.</para>
+	/// <para>GA 图层转格网</para>
+	/// <para>将地统计图层导出为栅格。</para>
 	/// </summary>
 	public class GALayerToGrid : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InGeostatLayer">
 		/// <para>Input geostatistical layer</para>
-		/// <para>The geostatistical layer to be analyzed.</para>
+		/// <para>要分析的地统计图层。</para>
 		/// </param>
 		/// <param name="OutSurfaceGrid">
 		/// <para>Output surface raster</para>
-		/// <para>The raster to be created.</para>
+		/// <para>要创建的栅格。</para>
 		/// </param>
 		public GALayerToGrid(object InGeostatLayer, object OutSurfaceGrid)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : GA Layer To Grid</para>
+		/// <para>Tool Display Name : GA 图层转格网</para>
 		/// </summary>
-		public override string DisplayName() => "GA Layer To Grid";
+		public override string DisplayName() => "GA 图层转格网";
 
 		/// <summary>
 		/// <para>Tool Name : GALayerToGrid</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
-		/// <para>The geostatistical layer to be analyzed.</para>
+		/// <para>要分析的地统计图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPGALayer()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output surface raster</para>
-		/// <para>The raster to be created.</para>
+		/// <para>要创建的栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -85,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>The cell size at which the output raster will be created.</para>
-		/// <para>This value can be explicitly set in the Environments by the Cell Size parameter.</para>
-		/// <para>If not set, it is the shorter of the width or the height of the extent of the input point features, in the input spatial reference, divided by 250.</para>
+		/// <para>要创建的输出栅格的像元大小。</para>
+		/// <para>可以通过像元大小参数在环境中明确设置该值。</para>
+		/// <para>如果未设置，则该值为输入空间参考中输入点要素范围的宽度与高度中的较小值除以 250。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -99,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Number of points in the cell (horizontal)</para>
-		/// <para>The number of predictions for each cell in the horizontal direction for block interpolation.</para>
+		/// <para>针对水平方向上的各像元用于分块内插的预测数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Number of points in the cell (vertical)</para>
-		/// <para>The number of predictions for each cell in the vertical direction for block interpolation.</para>
+		/// <para>针对垂直方向上的各像元用于分块内插的预测数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]

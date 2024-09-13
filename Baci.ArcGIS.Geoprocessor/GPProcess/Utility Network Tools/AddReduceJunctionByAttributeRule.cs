@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Reduce Junction By Attribute Rule</para>
+	/// <para>Add Reduce Junction By Attribute Rule</para>
 	/// <para>Add a reduce junction by attribute rule to a diagram template</para>
 	/// </summary>
 	[Obsolete()]

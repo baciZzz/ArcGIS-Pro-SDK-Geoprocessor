@@ -12,6 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Manage Scene Cache Worker</para>
 	/// <para>Manage Scene Cache Worker</para>
+	/// <para>Manage Scene Cache Worker</para>
 	/// </summary>
 	[Obsolete()]
 	public class ManageSceneCacheWorker : AbstractGPProcess

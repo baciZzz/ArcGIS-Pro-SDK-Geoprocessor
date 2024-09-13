@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Features To GPX</para>
-	/// <para>Converts point, multipoint, or polyline features to a GPX format file (.gpx).</para>
+	/// <para>要素转 GPX</para>
+	/// <para>用于将点、多点或折线要素转换为 GPX 格式文件 (.gpx)。</para>
 	/// </summary>
 	public class FeaturesToGPX : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input point, multipoint, or line features.</para>
+		/// <para>输入点、多点或线要素。</para>
 		/// </param>
 		/// <param name="OutGpxFile">
 		/// <para>Output GPX File</para>
-		/// <para>The .gpx file that will be created with the geometry and attributes of the input features.</para>
+		/// <para>将使用输入要素的几何和属性创建的 .gpx 文件。</para>
 		/// </param>
 		public FeaturesToGPX(object InFeatures, object OutGpxFile)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Features To GPX</para>
+		/// <para>Tool Display Name : 要素转 GPX</para>
 		/// </summary>
-		public override string DisplayName() => "Features To GPX";
+		public override string DisplayName() => "要素转 GPX";
 
 		/// <summary>
 		/// <para>Tool Name : FeaturesToGPX</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input point, multipoint, or line features.</para>
+		/// <para>输入点、多点或线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output GPX File</para>
-		/// <para>The .gpx file that will be created with the geometry and attributes of the input features.</para>
+		/// <para>将使用输入要素的几何和属性创建的 .gpx 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Name Field</para>
-		/// <para>A field from the input features with values used to populate the GPX name tag.</para>
+		/// <para>输入要素中的字段，其值用于填充 GPX name 标签。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Description Field</para>
-		/// <para>A field from the input features with values used to populate the GPX desc tag.</para>
+		/// <para>输入要素中的字段，其值用于填充 GPX desc 标签。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -110,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Z Field</para>
-		/// <para>A numeric field from the input features with values used to populate the GPX elevation tag. If an elevation field is not specified, the z-values from the input features' geometries will be used to populate the GPX elevation tag.</para>
+		/// <para>输入要素中的数字字段，其值用于填充 GPX elevation 标签。如果未指定高程字段，则输入要素的几何中的 z 值将用于填充 GPX elevation 标签。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Date Field</para>
-		/// <para>A date/time field from the input features with values used to populate the GPX time tag.</para>
+		/// <para>输入要素中的日期/时间字段，其值用于填充 GPX time 标签。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

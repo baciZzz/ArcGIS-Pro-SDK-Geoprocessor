@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compute Block Adjustment</para>
-	/// <para>Computes the adjustments</para>
-	/// <para>to the mosaic dataset. This tool will create a solution  table that can be used to apply the actual adjustments.</para>
+	/// <para>计算区域网平差</para>
+	/// <para>计算对镶嵌数据集的调整。 该工具将创建一个解决方案表，可用于应用实际调整。</para>
 	/// </summary>
 	public class ComputeBlockAdjustment : AbstractGPProcess
 	{
@@ -21,25 +21,25 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>The input mosaic dataset that will be adjusted.</para>
+		/// <para>将调整的输入镶嵌数据集。</para>
 		/// </param>
 		/// <param name="InControlPoints">
 		/// <para>Input Control Points</para>
-		/// <para>The control point table that includes tie points and ground control points.</para>
-		/// <para>This is usually the output from the Compute Tie Points tool.</para>
+		/// <para>包含连接点和地面控制点的控制点表。</para>
+		/// <para>这通常是计算连接点工具的输出。</para>
 		/// </param>
 		/// <param name="TransformationType">
 		/// <para>Transformation Type</para>
-		/// <para>Specifies the type of transformation that will be used when adjusting the mosaic dataset.</para>
-		/// <para>Zero-order polynomial—A zero-order polynomial is used in the block adjustment computation. This is commonly used when your data is in flat area.</para>
-		/// <para>First-order polynomial—A first-order polynomial (affine) is used in the block adjustment computation. This is the default.</para>
-		/// <para>Rational Polynomial Coefficients—The Rational Polynomial Coefficients will be used for the transformation. This is used for satellite imagery that contains RPC information within the metadata. This option requires the ArcGIS Desktop Advanced license.</para>
-		/// <para>Frame camera model—The Frame camera model will be used for the transformation. This is used for aerial imagery that contains the frame camera information within the metadata. This option requires the ArcGIS Desktop Advanced license.</para>
+		/// <para>指定在校正镶嵌数据集时要使用的变换类型。</para>
+		/// <para>零阶多项式—区域网平差计算采用零阶多项式。 当您的数据位于平坦区域时，通常使用此方法。</para>
+		/// <para>一阶多项式—区域网平差计算采用一阶多项式（仿射）。 这是默认设置。</para>
+		/// <para>有理多项式系数—有理多项式系数将用于变换中。 用于在元数据中包含 RPC 信息的卫星影像。该选项要求要有 ArcGIS Desktop Advanced 许可。</para>
+		/// <para>帧照相机模型—帧照相机模型将用于变换中。 用于在元数据中包含帧照相机信息的航空影像。该选项要求要有 ArcGIS Desktop Advanced 许可。</para>
 		/// <para><see cref="TransformationTypeEnum"/></para>
 		/// </param>
 		/// <param name="OutSolutionTable">
 		/// <para>Output Solution Table</para>
-		/// <para>The output solution table containing the adjustments.</para>
+		/// <para>输出解决方案表包含调整。</para>
 		/// </param>
 		public ComputeBlockAdjustment(object InMosaicDataset, object InControlPoints, object TransformationType, object OutSolutionTable)
 		{
@@ -50,9 +50,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Compute Block Adjustment</para>
+		/// <para>Tool Display Name : 计算区域网平差</para>
 		/// </summary>
-		public override string DisplayName() => "Compute Block Adjustment";
+		public override string DisplayName() => "计算区域网平差";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeBlockAdjustment</para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>The input mosaic dataset that will be adjusted.</para>
+		/// <para>将调整的输入镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -94,8 +94,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Control Points</para>
-		/// <para>The control point table that includes tie points and ground control points.</para>
-		/// <para>This is usually the output from the Compute Tie Points tool.</para>
+		/// <para>包含连接点和地面控制点的控制点表。</para>
+		/// <para>这通常是计算连接点工具的输出。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -103,11 +103,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Transformation Type</para>
-		/// <para>Specifies the type of transformation that will be used when adjusting the mosaic dataset.</para>
-		/// <para>Zero-order polynomial—A zero-order polynomial is used in the block adjustment computation. This is commonly used when your data is in flat area.</para>
-		/// <para>First-order polynomial—A first-order polynomial (affine) is used in the block adjustment computation. This is the default.</para>
-		/// <para>Rational Polynomial Coefficients—The Rational Polynomial Coefficients will be used for the transformation. This is used for satellite imagery that contains RPC information within the metadata. This option requires the ArcGIS Desktop Advanced license.</para>
-		/// <para>Frame camera model—The Frame camera model will be used for the transformation. This is used for aerial imagery that contains the frame camera information within the metadata. This option requires the ArcGIS Desktop Advanced license.</para>
+		/// <para>指定在校正镶嵌数据集时要使用的变换类型。</para>
+		/// <para>零阶多项式—区域网平差计算采用零阶多项式。 当您的数据位于平坦区域时，通常使用此方法。</para>
+		/// <para>一阶多项式—区域网平差计算采用一阶多项式（仿射）。 这是默认设置。</para>
+		/// <para>有理多项式系数—有理多项式系数将用于变换中。 用于在元数据中包含 RPC 信息的卫星影像。该选项要求要有 ArcGIS Desktop Advanced 许可。</para>
+		/// <para>帧照相机模型—帧照相机模型将用于变换中。 用于在元数据中包含帧照相机信息的航空影像。该选项要求要有 ArcGIS Desktop Advanced 许可。</para>
 		/// <para><see cref="TransformationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Solution Table</para>
-		/// <para>The output solution table containing the adjustments.</para>
+		/// <para>输出解决方案表包含调整。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Solution  Points</para>
-		/// <para>The output solution points table. This will be saved as a polygon feature class. This output can be quite large.</para>
+		/// <para>输出解决方案点表。 该表将保存为面要素类。 此输出可能非常大。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -133,9 +133,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Residual</para>
-		/// <para>A threshold that is used in block adjustment computation, points with residuals exceeding the threshold will not be used. This parameter applies when the transformation type is Zero-order polynomial, First-order polynomial, or Frame camera model. If the transformation is Rational Polynomial Coefficients, the proper threshold for eliminating invalid points will be automatically determined.</para>
-		/// <para>When the transformation is Zero-order polynomial or First-order polynomial the units for this parameter will be in map units, and the default value will be 2.</para>
-		/// <para>When the transformation is Frame camera model the units for this parameter will be in pixels, and the default value will be 5.</para>
+		/// <para>在区域网平差计算中使用的阈值，残差大于阈值的点不会被使用。 当变换类型为零阶多项式、一阶多项式或帧照相机模型时，将应用此参数。 如果变换为有理多项式系数，则将自动确定消除无效点的适当阈值。</para>
+		/// <para>当变换为零阶多项式或一阶多项式时，该参数的单位将为地图单位，且默认值为 2。</para>
+		/// <para>当变换为帧照相机模型时，该参数的单位将为像素单位，且默认值为 5。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -143,9 +143,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Adjustment Options</para>
-		/// <para>Additional options that can fine-tune the adjustment computation. To set, type the keyword and the corresponding value in the list box.</para>
-		/// <para>Minimum residual value—The minimum residual value, which is the lower threshold value. When polynomial transformation is either Zero-order polynomial or First-order polynomial, the units will be in map units and the default minimum residual will be 0. The minimum residual value and the maximum residual parameter are used in detecting and removing points that generate large errors from the block adjustment computation.</para>
-		/// <para>Maximum residual factor—The maximum residual factor is a factor used to generate maximum (upper threshold) residual. If the Maximum Residual parameter is not defined, it will use the MaxResidualFactor * RMS to calculate the upper threshold value.The minimum residual value and the maximum residual parameter are used in detecting and removing points that generate large errors from block adjustment computation.</para>
+		/// <para>可用来对校正计算进行调整的附加选项。 设置时，在列表框中输入关键字和相应的值。</para>
+		/// <para>最小残差值—作为阈值下限的最小残差值。 多项式变换为零阶多项式或一阶多项式时，该单位将为地图单位，且默认最小残差为 0。最小残差值和最大残差值参数用于检测产生严重错误的点，并将这些点从局域网平差计算中移除。</para>
+		/// <para>最大残差因子—最大残差因子用于生成最大（阈值上限）残差。 如果未定义最大残差参数，将使用MaxResidualFactor * RMS来计算阈值上限。最小残差值和最大残差参数用于检测产生严重错误的点，并将这些点从局域网平差计算中移除。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -153,13 +153,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Image Location Accuracy</para>
-		/// <para>Specifies the geometric accuracy level of the images.</para>
-		/// <para>This parameter is only valid if Rational Polynomial Coefficients is specified as the Transformation Type value.</para>
-		/// <para>High accuracy—Accuracy is under 30 meters.</para>
-		/// <para>Medium accuracy—Accuracy is between 31 meters and 100 meters. This is the default.</para>
-		/// <para>Low accuracy—Accuracy is higher than 100 meters.</para>
-		/// <para>Very High accuracy—Imagery was collected with a high-accuracy, differential GPS, such as RTK or PPK. This option will keep image locations fixed during block adjustment.</para>
-		/// <para>If low accuracy is specified, the control points will first be improved by an initial triangulation; then they will be used in the block adjustment calculation. The medium and high accuracy options do not require additional estimation processing.</para>
+		/// <para>指定图像的几何精度级别。</para>
+		/// <para>仅当将有理多项式系数指定为变换类型值时，此参数才有效。</para>
+		/// <para>高精度—精度小于 30 米。</para>
+		/// <para>中等精度—精度介于 31 米到 100 米之间。 这是默认设置。</para>
+		/// <para>低精度—精度大于 100 米。</para>
+		/// <para>极高精度—影像是使用高精度的差分 GPS（例如 RTK 或 PPK）收集的。 此选项将在进行区域网平差期间保持影像位置固定。</para>
+		/// <para>如果指定低精度，则控制点首先将通过初始三角测量改善；然后它将在区域网平差计算中使用。 中等精度和高精度选项不需要任何其他估算处理。</para>
 		/// <para><see cref="LocationAccuracyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -169,8 +169,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Adjustment Quality Table</para>
-		/// <para>An output table used to store adjustment quality information.</para>
-		/// <para>This parameter is only valid if Rational Polynomial Coefficients is specified as the Transformation Type value.</para>
+		/// <para>用来存储校正质量信息的输出表格。</para>
+		/// <para>仅当将有理多项式系数指定为变换类型值时，此参数才有效。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -193,31 +193,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TransformationTypeEnum 
 		{
 			/// <summary>
-			/// <para>First-order polynomial—A first-order polynomial (affine) is used in the block adjustment computation. This is the default.</para>
+			/// <para>一阶多项式—区域网平差计算采用一阶多项式（仿射）。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("POLYORDER1")]
-			[Description("First-order polynomial")]
+			[Description("一阶多项式")]
 			POLYORDER1,
 
 			/// <summary>
-			/// <para>Zero-order polynomial—A zero-order polynomial is used in the block adjustment computation. This is commonly used when your data is in flat area.</para>
+			/// <para>零阶多项式—区域网平差计算采用零阶多项式。 当您的数据位于平坦区域时，通常使用此方法。</para>
 			/// </summary>
 			[GPValue("POLYORDER0")]
-			[Description("Zero-order polynomial")]
+			[Description("零阶多项式")]
 			POLYORDER0,
 
 			/// <summary>
-			/// <para>Rational Polynomial Coefficients—The Rational Polynomial Coefficients will be used for the transformation. This is used for satellite imagery that contains RPC information within the metadata. This option requires the ArcGIS Desktop Advanced license.</para>
+			/// <para>有理多项式系数—有理多项式系数将用于变换中。 用于在元数据中包含 RPC 信息的卫星影像。该选项要求要有 ArcGIS Desktop Advanced 许可。</para>
 			/// </summary>
 			[GPValue("RPC")]
-			[Description("Rational Polynomial Coefficients")]
+			[Description("有理多项式系数")]
 			Rational_Polynomial_Coefficients,
 
 			/// <summary>
-			/// <para>Frame camera model—The Frame camera model will be used for the transformation. This is used for aerial imagery that contains the frame camera information within the metadata. This option requires the ArcGIS Desktop Advanced license.</para>
+			/// <para>帧照相机模型—帧照相机模型将用于变换中。 用于在元数据中包含帧照相机信息的航空影像。该选项要求要有 ArcGIS Desktop Advanced 许可。</para>
 			/// </summary>
 			[GPValue("Frame")]
-			[Description("Frame camera model")]
+			[Description("帧照相机模型")]
 			Frame_camera_model,
 
 		}
@@ -228,31 +228,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum LocationAccuracyEnum 
 		{
 			/// <summary>
-			/// <para>Low accuracy—Accuracy is higher than 100 meters.</para>
+			/// <para>低精度—精度大于 100 米。</para>
 			/// </summary>
 			[GPValue("LOW")]
-			[Description("Low accuracy")]
+			[Description("低精度")]
 			Low_accuracy,
 
 			/// <summary>
-			/// <para>Medium accuracy—Accuracy is between 31 meters and 100 meters. This is the default.</para>
+			/// <para>中等精度—精度介于 31 米到 100 米之间。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("MEDIUM")]
-			[Description("Medium accuracy")]
+			[Description("中等精度")]
 			Medium_accuracy,
 
 			/// <summary>
-			/// <para>High accuracy—Accuracy is under 30 meters.</para>
+			/// <para>高精度—精度小于 30 米。</para>
 			/// </summary>
 			[GPValue("HIGH")]
-			[Description("High accuracy")]
+			[Description("高精度")]
 			High_accuracy,
 
 			/// <summary>
-			/// <para>Very High accuracy—Imagery was collected with a high-accuracy, differential GPS, such as RTK or PPK. This option will keep image locations fixed during block adjustment.</para>
+			/// <para>极高精度—影像是使用高精度的差分 GPS（例如 RTK 或 PPK）收集的。 此选项将在进行区域网平差期间保持影像位置固定。</para>
 			/// </summary>
 			[GPValue("VERY_HIGH")]
-			[Description("Very High accuracy")]
+			[Description("极高精度")]
 			Very_High_accuracy,
 
 		}

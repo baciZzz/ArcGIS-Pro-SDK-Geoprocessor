@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Calculate Field</para>
-	/// <para>Calculates the values of a field for a feature class, feature layer, or raster.</para>
+	/// <para>计算字段</para>
+	/// <para>为要素类、要素图层或栅格计算字段的值。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,16 +23,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The table containing the field that will be updated with the new calculation.</para>
+		/// <para>包含将通过新的计算进行更新的字段的表。</para>
 		/// </param>
 		/// <param name="Field">
 		/// <para>Field Name (Existing or New)</para>
-		/// <para>The field that will be updated with the new calculation.</para>
-		/// <para>If a field with the specified name does not exist in the input table, it will be added.</para>
+		/// <para>将通过新的计算进行更新的字段。</para>
+		/// <para>如果输入表中不存在具有指定名称的字段，则会添加该字段。</para>
 		/// </param>
 		/// <param name="Expression">
 		/// <para>Expression</para>
-		/// <para>The simple calculation expression used to create a value that will populate the selected rows.</para>
+		/// <para>用于创建填充所选行的值的简单计算表达式。</para>
 		/// </param>
 		public CalculateField(object InTable, object Field, object Expression)
 		{
@@ -41,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Calculate Field</para>
+		/// <para>Tool Display Name : 计算字段</para>
 		/// </summary>
-		public override string DisplayName() => "Calculate Field";
+		public override string DisplayName() => "计算字段";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateField</para>
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The table containing the field that will be updated with the new calculation.</para>
+		/// <para>包含将通过新的计算进行更新的字段的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -86,8 +87,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Name (Existing or New)</para>
-		/// <para>The field that will be updated with the new calculation.</para>
-		/// <para>If a field with the specified name does not exist in the input table, it will be added.</para>
+		/// <para>将通过新的计算进行更新的字段。</para>
+		/// <para>如果输入表中不存在具有指定名称的字段，则会添加该字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>The simple calculation expression used to create a value that will populate the selected rows.</para>
+		/// <para>用于创建填充所选行的值的简单计算表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSQLExpression()]
@@ -105,15 +106,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Expression Type</para>
-		/// <para>Specifies the type of expression that will be used.</para>
-		/// <para>Python 3—The Python expression type will be used. This is the default.</para>
-		/// <para>Arcade—The Arcade expression type will be used.</para>
-		/// <para>SQL—The SQL expression type will be used.</para>
-		/// <para>To learn more about Python expressions, see Calculate Field Python examples.</para>
-		/// <para>To learn more about Arcade expressions, see the ArcGIS Arcade guide.</para>
-		/// <para>To learn more about SQL expressions, see Calculate field values.</para>
-		/// <para>SQL expressions support faster calculations for feature services and enterprise geodatabases. Instead of performing calculations one feature or row at a time, a single request is set to the server or database, resulting in significantly faster calculations.</para>
-		/// <para>Only feature services and enterprise geodatabases support SQL expressions. For other formats, use Python or Arcade expressions.</para>
+		/// <para>指定要使用的表达式类型。</para>
+		/// <para>Python 3—将使用 Python 表达式类型。 这是默认设置。</para>
+		/// <para>Arcade—将使用 Arcade 表达式类型。</para>
+		/// <para>SQL—将使用 SQL 表达式类型。</para>
+		/// <para>要了解有关 Python 表达式的详细信息，请参阅计算 Python 字段示例。</para>
+		/// <para>要了解有关 Arcade 表达式的详细信息，请参阅 ArcGIS Arcade 指南。</para>
+		/// <para>要了解有关 SQL 表达式的详细信息，请参阅计算字段值。</para>
+		/// <para>SQL 表达式可用于加快要素服务和企业级地理数据库的计算速度。 使用该表达式可以将单次请求设置为服务器或数据库，而不必一次执行一个要素或一行的计算，从而显著提高计算速度。</para>
+		/// <para>仅要素服务和企业级地理数据库支持 SQL 表达式。 对于其他格式，请使用 Python 或 Arcade 表达式。</para>
 		/// <para><see cref="ExpressionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -123,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Code Block</para>
-		/// <para>A block of code that will be entered for complex expressions.</para>
+		/// <para>将为复杂表达式输入的代码块。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -138,17 +139,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Type</para>
-		/// <para>Specifies the field type of the new field. This parameter is only used when the field name does not exist in the input table.</para>
-		/// <para>If the field is of type text, the new field will have a length of 512. For shapefiles and dBASE files, the field will have a length of 254. The length of the new field can be adjusted using the Alter Field tool.</para>
-		/// <para>Text—Any string of characters can be used.</para>
-		/// <para>Float (single precision)— Fractional numbers between -3.4E38 and 1.2E38 can be used.</para>
-		/// <para>Double (double precision)— Fractional numbers between -2.2E308 and 1.8E308 can be used.</para>
-		/// <para>Short (small integer)— Whole numbers between -32,768 and 32,767 can be used.</para>
-		/// <para>Long (large integer)— Whole numbers between -2,147,483,648 and 2,147,483,647 can be used.</para>
-		/// <para>Date—Date and time will be used.</para>
-		/// <para>Blob (binary data)—A long sequence of binary numbers will be used.</para>
-		/// <para>Raster imagery—Raster images will be used. All ArcGIS software-supported raster dataset formats can be stored; however, it is recommended that you use only small images.</para>
-		/// <para>GUID (globally unique identifier)—A globally unique identifier will be used.</para>
+		/// <para>指定新字段的字段类型。 仅当输入表中不存在字段名称时才使用此参数。</para>
+		/// <para>如果字段类型是文本，则新字段的长度为 512。 对于 shapefile 和 dBASE 文件，该字段的长度为 254。 可以使用更改字段工具调整新字段的长度。</para>
+		/// <para>文本—可以使用任何字符串。</para>
+		/// <para>浮点型（单精度）—可以使用介于 -3.4E38 和 1.2E38 之间的小数。</para>
+		/// <para>双精度型（双精度）—可以使用介于 -2.2E308 和 1.8E308 之间的小数。</para>
+		/// <para>短整型（小整数）—可以使用介于 -32,768 和 32,767 之间的整数。</para>
+		/// <para>长整型（大整数）—可以使用介于 -2,147,483,648 和 2,147,483,647 之间的整数。</para>
+		/// <para>日期—将使用日期和时间。</para>
+		/// <para>Blob（二进制数据）—将使用长度较长的一系列二进制数。</para>
+		/// <para>栅格影像—将使用栅格影像。 可以存储 ArcGIS 软件支持的所有栅格数据集格式，但建议您仅使用小影像。</para>
+		/// <para>GUID（全局唯一标识符）—将使用全局唯一标识符。</para>
 		/// <para><see cref="FieldTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -158,9 +159,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Enforce Domains</para>
-		/// <para>Specifies whether field domain rules will be enforced.</para>
-		/// <para>Checked—Field domain rules will be enforced. If a field cannot be updated, the field value will remain unchanged, and the tool messages will include a warning message.</para>
-		/// <para>Unchecked—Field domain rules will not be enforced. This is the default</para>
+		/// <para>指定是否强制执行字段属性域规则。</para>
+		/// <para>选中 - 将强制执行字段属性域规则。 如果无法更新字段，则字段值将保持不变，并且工具消息中将包含警告消息。</para>
+		/// <para>未选中 - 不强制执行字段属性域规则。 这是默认设置</para>
 		/// <para><see cref="EnforceDomainsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -185,21 +186,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ExpressionTypeEnum 
 		{
 			/// <summary>
-			/// <para>Python 3—The Python expression type will be used. This is the default.</para>
+			/// <para>Python 3—将使用 Python 表达式类型。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("PYTHON3")]
 			[Description("Python 3")]
 			Python_3,
 
 			/// <summary>
-			/// <para>Arcade—The Arcade expression type will be used.</para>
+			/// <para>Arcade—将使用 Arcade 表达式类型。</para>
 			/// </summary>
 			[GPValue("ARCADE")]
 			[Description("Arcade")]
 			Arcade,
 
 			/// <summary>
-			/// <para>SQL—The SQL expression type will be used.</para>
+			/// <para>SQL—将使用 SQL 表达式类型。</para>
 			/// </summary>
 			[GPValue("SQL")]
 			[Description("SQL")]
@@ -213,66 +214,66 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FieldTypeEnum 
 		{
 			/// <summary>
-			/// <para>Text—Any string of characters can be used.</para>
+			/// <para>文本—可以使用任何字符串。</para>
 			/// </summary>
 			[GPValue("TEXT")]
-			[Description("Text")]
+			[Description("文本")]
 			Text,
 
 			/// <summary>
-			/// <para>Float (single precision)— Fractional numbers between -3.4E38 and 1.2E38 can be used.</para>
+			/// <para>浮点型（单精度）—可以使用介于 -3.4E38 和 1.2E38 之间的小数。</para>
 			/// </summary>
 			[GPValue("FLOAT")]
-			[Description("Float (single precision)")]
+			[Description("浮点型（单精度）")]
 			FLOAT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>双精度型（双精度）—可以使用介于 -2.2E308 和 1.8E308 之间的小数。</para>
 			/// </summary>
 			[GPValue("DOUBLE")]
-			[Description("Double  (double precision)")]
+			[Description("双精度型（双精度）")]
 			DOUBLE,
 
 			/// <summary>
-			/// <para>Short (small integer)— Whole numbers between -32,768 and 32,767 can be used.</para>
+			/// <para>短整型（小整数）—可以使用介于 -32,768 和 32,767 之间的整数。</para>
 			/// </summary>
 			[GPValue("SHORT")]
-			[Description("Short (small integer)")]
+			[Description("短整型（小整数）")]
 			SHORT,
 
 			/// <summary>
-			/// <para>Long (large integer)— Whole numbers between -2,147,483,648 and 2,147,483,647 can be used.</para>
+			/// <para>长整型（大整数）—可以使用介于 -2,147,483,648 和 2,147,483,647 之间的整数。</para>
 			/// </summary>
 			[GPValue("LONG")]
-			[Description("Long (large integer)")]
+			[Description("长整型（大整数）")]
 			LONG,
 
 			/// <summary>
-			/// <para>Date—Date and time will be used.</para>
+			/// <para>日期—将使用日期和时间。</para>
 			/// </summary>
 			[GPValue("DATE")]
-			[Description("Date")]
+			[Description("日期")]
 			Date,
 
 			/// <summary>
-			/// <para>Blob (binary data)—A long sequence of binary numbers will be used.</para>
+			/// <para>Blob（二进制数据）—将使用长度较长的一系列二进制数。</para>
 			/// </summary>
 			[GPValue("BLOB")]
-			[Description("Blob (binary data)")]
+			[Description("Blob（二进制数据）")]
 			BLOB,
 
 			/// <summary>
-			/// <para>Raster imagery—Raster images will be used. All ArcGIS software-supported raster dataset formats can be stored; however, it is recommended that you use only small images.</para>
+			/// <para>栅格影像—将使用栅格影像。 可以存储 ArcGIS 软件支持的所有栅格数据集格式，但建议您仅使用小影像。</para>
 			/// </summary>
 			[GPValue("RASTER")]
-			[Description("Raster imagery")]
+			[Description("栅格影像")]
 			Raster_imagery,
 
 			/// <summary>
-			/// <para>GUID (globally unique identifier)—A globally unique identifier will be used.</para>
+			/// <para>GUID（全局唯一标识符）—将使用全局唯一标识符。</para>
 			/// </summary>
 			[GPValue("GUID")]
-			[Description("GUID (globally unique identifier)")]
+			[Description("GUID（全局唯一标识符）")]
 			GUID,
 
 		}
@@ -283,14 +284,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum EnforceDomainsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Field domain rules will be enforced. If a field cannot be updated, the field value will remain unchanged, and the tool messages will include a warning message.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ENFORCE_DOMAINS")]
 			ENFORCE_DOMAINS,
 
 			/// <summary>
-			/// <para>Unchecked—Field domain rules will not be enforced. This is the default</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ENFORCE_DOMAINS")]

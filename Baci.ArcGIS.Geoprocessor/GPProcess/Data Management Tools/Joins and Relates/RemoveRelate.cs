@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Relate</para>
-	/// <para>Removes a relate from a feature layer or a table view.</para>
+	/// <para>移除关联</para>
+	/// <para>从要素图层或表视图中移除关联。</para>
 	/// </summary>
 	public class RemoveRelate : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLayerOrView">
 		/// <para>Layer Name or Table View</para>
-		/// <para>The layer or table view from which to remove the relate.</para>
+		/// <para>要移除关联的图层或表视图。</para>
 		/// </param>
 		public RemoveRelate(object InLayerOrView)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Remove Relate</para>
+		/// <para>Tool Display Name : 移除关联</para>
 		/// </summary>
-		public override string DisplayName() => "Remove Relate";
+		public override string DisplayName() => "移除关联";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveRelate</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Layer Name or Table View</para>
-		/// <para>The layer or table view from which to remove the relate.</para>
+		/// <para>要移除关联的图层或表视图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Relate Name</para>
-		/// <para>The name of the relate to remove.</para>
+		/// <para>要移除的关联的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

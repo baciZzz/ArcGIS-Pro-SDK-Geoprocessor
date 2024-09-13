@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Configure Lookup Table</para>
+	/// <para>Configure Lookup Table</para>
 	/// <para>Configures a lookup table for one or more fields used in a multifield route ID.</para>
 	/// </summary>
 	public class ConfigureLookupTable : AbstractGPProcess

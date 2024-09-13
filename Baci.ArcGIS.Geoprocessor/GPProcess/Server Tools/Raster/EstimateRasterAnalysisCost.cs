@@ -12,6 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 	/// <summary>
 	/// <para>Estimate Raster Analysis Cost</para>
 	/// <para>Estimate Raster Analysis Cost</para>
+	/// <para>Estimate Raster Analysis Cost</para>
 	/// </summary>
 	[Obsolete()]
 	public class EstimateRasterAnalysisCost : AbstractGPProcess

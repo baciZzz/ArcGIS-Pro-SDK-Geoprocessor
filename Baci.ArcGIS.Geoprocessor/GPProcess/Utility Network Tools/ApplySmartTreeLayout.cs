@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Apply Smart Tree Layout</para>
+	/// <para>Apply Smart Tree Layout</para>
 	/// <para>Apply the smart tree layout to a diagram</para>
 	/// </summary>
 	[Obsolete()]

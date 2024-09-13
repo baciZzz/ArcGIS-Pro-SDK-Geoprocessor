@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Multi-Distance Spatial Cluster Analysis (Ripley's K Function)</para>
-	/// <para>Determines whether features, or the values associated with features, exhibit statistically significant clustering or dispersion over a range of distances.</para>
+	/// <para>多距离空间聚类分析 (Ripley's K 函数)</para>
+	/// <para>确定要素（或与要素相关联的值）是否显示某一距离范围内统计意义显著的聚类或离散。</para>
 	/// </summary>
 	public class MultiDistanceSpatialClustering : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputFeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>The feature class upon which the analysis will be performed.</para>
+		/// <para>要对其执行分析的要素类。</para>
 		/// </param>
 		/// <param name="OutputTable">
 		/// <para>Output Table</para>
-		/// <para>The table to which the results of the analysis will be written.</para>
+		/// <para>将要写入分析结果的表。</para>
 		/// </param>
 		/// <param name="NumberOfDistanceBands">
 		/// <para>Number of Distance Bands</para>
-		/// <para>The number of times to increment the neighborhood size and analyze the dataset for clustering. The starting point and size of the increment are specified in the Beginning Distance and Distance Increment parameters, respectively.</para>
+		/// <para>针对聚类而递增邻域大小和分析数据集的次数。分别在开始距离和距离增量参数中指定的增量的起点和大小。</para>
 		/// </param>
 		public MultiDistanceSpatialClustering(object InputFeatureClass, object OutputTable, object NumberOfDistanceBands)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Multi-Distance Spatial Cluster Analysis (Ripley's K Function)</para>
+		/// <para>Tool Display Name : 多距离空间聚类分析 (Ripley's K 函数)</para>
 		/// </summary>
-		public override string DisplayName() => "Multi-Distance Spatial Cluster Analysis (Ripley's K Function)";
+		public override string DisplayName() => "多距离空间聚类分析 (Ripley's K 函数)";
 
 		/// <summary>
 		/// <para>Tool Name : MultiDistanceSpatialClustering</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>The feature class upon which the analysis will be performed.</para>
+		/// <para>要对其执行分析的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The table to which the results of the analysis will be written.</para>
+		/// <para>将要写入分析结果的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Distance Bands</para>
-		/// <para>The number of times to increment the neighborhood size and analyze the dataset for clustering. The starting point and size of the increment are specified in the Beginning Distance and Distance Increment parameters, respectively.</para>
+		/// <para>针对聚类而递增邻域大小和分析数据集的次数。分别在开始距离和距离增量参数中指定的增量的起点和大小。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -99,11 +100,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Compute Confidence Envelope</para>
-		/// <para>The confidence envelope is calculated by randomly placing feature points (or feature values) in the study area. The number of points/values randomly placed is equal to the number of points in the feature class. Each set of random placements is called a permutation and the confidence envelope is created from these permutations. This parameter allows you to select how many permutations you want to use to create the confidence envelope.</para>
-		/// <para>0 permutations - no confidence envelope—Confidence envelopes are not created.</para>
-		/// <para>9 permutations—Nine sets of points/values are randomly placed.</para>
-		/// <para>99 permutations—99 sets of points/values are randomly placed.</para>
-		/// <para>999 permutations—999 sets of points/values are randomly placed.</para>
+		/// <para>置信区间通过将要素点（或要素值）随机放在研究区域中计算。随机放置的点/值的数量与要素类中的点的数量相同。每组随机放置都称为“排列”，置信区间就通过这些排列创建。此参数用于选择要使用多少排列来创建置信区间。</para>
+		/// <para>0 排列 - 无置信区间—不创建置信区间。</para>
+		/// <para>9 排列—随机放置了 9 组点/值。</para>
+		/// <para>99 次排列—随机放置了 99 组点/值。</para>
+		/// <para>999 次排列—随机放置了 999 组点/值。</para>
 		/// <para><see cref="ComputeConfidenceEnvelopeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -113,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Display Results Graphically</para>
-		/// <para>This parameter has no effect; it remains to support backward compatibility.</para>
+		/// <para>该参数无效，但仍支持向后兼容。</para>
 		/// <para><see cref="DisplayResultsGraphicallyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -123,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Weight Field</para>
-		/// <para>A numeric field with weights representing the number of features/events at each location.</para>
+		/// <para>数字字段，包含代表每个位置的要素/事件数量的权重。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -133,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Beginning Distance</para>
-		/// <para>The distance at which to start the cluster analysis and the distance from which to increment. The value entered for this parameter should be in the units of the Output Coordinate System.</para>
+		/// <para>开始聚类分析的距离及开始增量的距离。为此参数输入的值应使用“输出坐标系”的单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -142,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Distance Increment</para>
-		/// <para>The distance to increment during each iteration. The distance used in the analysis starts at the Beginning Distance and increments by the amount specified in the Distance Increment. The value entered for this parameter should be in the units of the Output Coordinate System environment setting.</para>
+		/// <para>每次迭代过程中要递增的距离。分析中使用的距离于开始距离处开始，以距离增量中指定的数量增加。为此参数输入的值应使用“输出坐标系”环境设置的单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -151,11 +152,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Boundary Correction Method</para>
-		/// <para>Method to use to correct for underestimates in the number of neighbors for features near the edges of the study area.</para>
-		/// <para>None—No edge correction is applied. However, if the input feature class already has points that fall outside the study area boundaries, these will be used in neighborhood counts for features near boundaries.</para>
-		/// <para>Simulate outer boundary values—This method simulates points outside the study area so that the number of neighbors near edges is not underestimated. The simulated points are the &quot;mirrors&quot; of points near edges within the study area boundary.</para>
-		/// <para>Reduce analysis area—This method shrinks the study area such that some points are found outside of the study area boundary. Points found outside the study area are used to calculate neighbor counts but are not used in the cluster analysis itself.</para>
-		/// <para>Ripley&apos;s edge correction formula—For all the points (j) in the neighborhood of point i, this method checks to see if the edge of the study area is closer to i, or if j is closer to i. If j is closer, extra weight is given to the point j. This edge correction method is only appropriate for square or rectangular shaped study areas.</para>
+		/// <para>对于研究区域的边附近要素的相邻点数低估情况进行校正所采用的方法。</para>
+		/// <para>无—不应用边校正。但是，如果输入要素类已有点落在研究区域边界之外，则这些点将用于边界附近要素的邻域计数。</para>
+		/// <para>模拟外边界值—此方法模拟研究区域外的点，以便边附近的相邻点数不被低估。所模拟点是研究区域边界内边附近的点“镜像”。</para>
+		/// <para>缩小分析区域—此方法收缩研究区域，以便某些点可在研究区域边界外被发现。在研究区域外发现的点用于计算相邻点数目，但不可用于聚类分析自身。</para>
+		/// <para>Ripley 边校正公式—对于点 i 的邻域中的所有点 (j)，此方法通过检查来了解是否研究区域的边离 i 更近，或者是否 j 离 i 更近。如果 j 更近，则将额外权重提供给点 j。此边校正方法仅适用于形状为方形或矩形的研究区域。</para>
 		/// <para><see cref="BoundaryCorrectionMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -165,9 +166,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Study Area Method</para>
-		/// <para>Specifies the region to use for the study area. The K Function is sensitive to changes in study area size so careful selection of this value is important.</para>
-		/// <para>Minimum enclosing rectangle—Indicates that the smallest possible rectangle enclosing all of the points will be used.</para>
-		/// <para>User provided study area feature class—Indicates that a feature class defining the study area will be provided in the Study Area Feature Class parameter.</para>
+		/// <para>指定要用于研究区域的区域。K 函数对研究区域大小的变化很敏感，因此认真选择此值很重要。</para>
+		/// <para>最小外接矩形—指示将使用封闭所有点的最小矩形。</para>
+		/// <para>用户提供的研究区域要素类—指示定义研究区域的要素类将在“研究区域要素类”参数中提供。</para>
 		/// <para><see cref="StudyAreaMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -177,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Study Area Feature Class</para>
-		/// <para>Feature class that delineates the area over which the input feature class should be analyzed. Only to be specified if User provided study area feature class is selected for the Study Area Method parameter.</para>
+		/// <para>描绘应在其中分析输入要素类的区域的要素类。仅在研究区域方法参数选择了用户提供的研究区域要素类时需要指定。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -210,31 +211,31 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum ComputeConfidenceEnvelopeEnum 
 		{
 			/// <summary>
-			/// <para>0 permutations - no confidence envelope—Confidence envelopes are not created.</para>
+			/// <para>0 排列 - 无置信区间—不创建置信区间。</para>
 			/// </summary>
 			[GPValue("0_PERMUTATIONS_-_NO_CONFIDENCE_ENVELOPE")]
-			[Description("0 permutations - no confidence envelope")]
+			[Description("0 排列 - 无置信区间")]
 			_0_PERMUTATIONS___NO_CONFIDENCE_ENVELOPE,
 
 			/// <summary>
-			/// <para>9 permutations—Nine sets of points/values are randomly placed.</para>
+			/// <para>9 排列—随机放置了 9 组点/值。</para>
 			/// </summary>
 			[GPValue("9_PERMUTATIONS")]
-			[Description("9 permutations")]
+			[Description("9 排列")]
 			_9_permutations,
 
 			/// <summary>
-			/// <para>99 permutations—99 sets of points/values are randomly placed.</para>
+			/// <para>99 次排列—随机放置了 99 组点/值。</para>
 			/// </summary>
 			[GPValue("99_PERMUTATIONS")]
-			[Description("99 permutations")]
+			[Description("99 次排列")]
 			_99_permutations,
 
 			/// <summary>
-			/// <para>999 permutations—999 sets of points/values are randomly placed.</para>
+			/// <para>999 次排列—随机放置了 999 组点/值。</para>
 			/// </summary>
 			[GPValue("999_PERMUTATIONS")]
-			[Description("999 permutations")]
+			[Description("999 次排列")]
 			_999_permutations,
 
 		}
@@ -266,31 +267,31 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum BoundaryCorrectionMethodEnum 
 		{
 			/// <summary>
-			/// <para>None—No edge correction is applied. However, if the input feature class already has points that fall outside the study area boundaries, these will be used in neighborhood counts for features near boundaries.</para>
+			/// <para>无—不应用边校正。但是，如果输入要素类已有点落在研究区域边界之外，则这些点将用于边界附近要素的邻域计数。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 			/// <summary>
-			/// <para>Simulate outer boundary values—This method simulates points outside the study area so that the number of neighbors near edges is not underestimated. The simulated points are the &quot;mirrors&quot; of points near edges within the study area boundary.</para>
+			/// <para>模拟外边界值—此方法模拟研究区域外的点，以便边附近的相邻点数不被低估。所模拟点是研究区域边界内边附近的点“镜像”。</para>
 			/// </summary>
 			[GPValue("SIMULATE_OUTER_BOUNDARY_VALUES")]
-			[Description("Simulate outer boundary values")]
+			[Description("模拟外边界值")]
 			Simulate_outer_boundary_values,
 
 			/// <summary>
-			/// <para>Reduce analysis area—This method shrinks the study area such that some points are found outside of the study area boundary. Points found outside the study area are used to calculate neighbor counts but are not used in the cluster analysis itself.</para>
+			/// <para>缩小分析区域—此方法收缩研究区域，以便某些点可在研究区域边界外被发现。在研究区域外发现的点用于计算相邻点数目，但不可用于聚类分析自身。</para>
 			/// </summary>
 			[GPValue("REDUCE_ANALYSIS_AREA")]
-			[Description("Reduce analysis area")]
+			[Description("缩小分析区域")]
 			Reduce_analysis_area,
 
 			/// <summary>
-			/// <para>Ripley&apos;s edge correction formula—For all the points (j) in the neighborhood of point i, this method checks to see if the edge of the study area is closer to i, or if j is closer to i. If j is closer, extra weight is given to the point j. This edge correction method is only appropriate for square or rectangular shaped study areas.</para>
+			/// <para>Ripley 边校正公式—对于点 i 的邻域中的所有点 (j)，此方法通过检查来了解是否研究区域的边离 i 更近，或者是否 j 离 i 更近。如果 j 更近，则将额外权重提供给点 j。此边校正方法仅适用于形状为方形或矩形的研究区域。</para>
 			/// </summary>
 			[GPValue("RIPLEY_EDGE_CORRECTION_FORMULA")]
-			[Description("Ripley's edge correction formula")]
+			[Description("Ripley 边校正公式")]
 			RIPLEY_EDGE_CORRECTION_FORMULA,
 
 		}
@@ -301,17 +302,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum StudyAreaMethodEnum 
 		{
 			/// <summary>
-			/// <para>Minimum enclosing rectangle—Indicates that the smallest possible rectangle enclosing all of the points will be used.</para>
+			/// <para>最小外接矩形—指示将使用封闭所有点的最小矩形。</para>
 			/// </summary>
 			[GPValue("MINIMUM_ENCLOSING_RECTANGLE")]
-			[Description("Minimum enclosing rectangle")]
+			[Description("最小外接矩形")]
 			Minimum_enclosing_rectangle,
 
 			/// <summary>
-			/// <para>User provided study area feature class—Indicates that a feature class defining the study area will be provided in the Study Area Feature Class parameter.</para>
+			/// <para>用户提供的研究区域要素类—指示定义研究区域的要素类将在“研究区域要素类”参数中提供。</para>
 			/// </summary>
 			[GPValue("USER_PROVIDED_STUDY_AREA_FEATURE_CLASS")]
-			[Description("User provided study area feature class")]
+			[Description("用户提供的研究区域要素类")]
 			User_provided_study_area_feature_class,
 
 		}

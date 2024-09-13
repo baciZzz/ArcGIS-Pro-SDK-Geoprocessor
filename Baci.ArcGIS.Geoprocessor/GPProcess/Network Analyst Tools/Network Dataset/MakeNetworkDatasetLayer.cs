@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make Network Dataset Layer</para>
-	/// <para>Creates a network dataset layer from a network  dataset.</para>
+	/// <para>构建网络数据集图层</para>
+	/// <para>从网络数据集创建网络数据集图层。</para>
 	/// </summary>
 	public class MakeNetworkDatasetLayer : AbstractGPProcess
 	{
@@ -20,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InNetworkDataset">
 		/// <para>Input Network Dataset</para>
-		/// <para>The network dataset from which to make the new layer.</para>
+		/// <para>从中创建新图层的网络数据集。</para>
 		/// </param>
 		/// <param name="OutputLayer">
 		/// <para>Output Layer</para>
-		/// <para>The name of the network dataset layer to be created.</para>
-		/// <para>The layer can be used as an input to any geoprocessing tool that accepts a network dataset layer as input.</para>
-		/// <para>The output layer created is temporary and will not persist after the session ends. To save the layer to the disk, run the Save To Layer File tool.</para>
+		/// <para>要创建的网络数据集图层的名称。</para>
+		/// <para>该图层可用作任何可接受网络数据集图层作为输入的地理处理工具的输入。</para>
+		/// <para>创建的输出图层是临时图层，该图层在会话结束后将不会继续存在。要将该图层保存到磁盘，请运行保存至图层文件工具。</para>
 		/// </param>
 		public MakeNetworkDatasetLayer(object InNetworkDataset, object OutputLayer)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Make Network Dataset Layer</para>
+		/// <para>Tool Display Name : 构建网络数据集图层</para>
 		/// </summary>
-		public override string DisplayName() => "Make Network Dataset Layer";
+		public override string DisplayName() => "构建网络数据集图层";
 
 		/// <summary>
 		/// <para>Tool Name : MakeNetworkDatasetLayer</para>
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Network Dataset</para>
-		/// <para>The network dataset from which to make the new layer.</para>
+		/// <para>从中创建新图层的网络数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPNetworkDatasetLayer()]
@@ -79,9 +80,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Layer</para>
-		/// <para>The name of the network dataset layer to be created.</para>
-		/// <para>The layer can be used as an input to any geoprocessing tool that accepts a network dataset layer as input.</para>
-		/// <para>The output layer created is temporary and will not persist after the session ends. To save the layer to the disk, run the Save To Layer File tool.</para>
+		/// <para>要创建的网络数据集图层的名称。</para>
+		/// <para>该图层可用作任何可接受网络数据集图层作为输入的地理处理工具的输入。</para>
+		/// <para>创建的输出图层是临时图层，该图层在会话结束后将不会继续存在。要将该图层保存到磁盘，请运行保存至图层文件工具。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPNetworkDatasetLayer()]
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Network Elements to Draw</para>
-		/// <para>This parameter is not yet supported in ArcGIS Pro.</para>
+		/// <para>ArcGIS Pro 尚不支持此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

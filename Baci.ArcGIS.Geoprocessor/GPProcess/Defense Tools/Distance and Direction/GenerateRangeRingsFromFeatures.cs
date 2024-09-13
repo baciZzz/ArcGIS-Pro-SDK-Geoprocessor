@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Generate Range Rings From Features</para>
-	/// <para>Creates range rings with attributes derived from fields in a point feature class.</para>
+	/// <para>根据要素生成范围环</para>
+	/// <para>将使用从点要素类中的字段派生的属性来创建范围环。</para>
 	/// </summary>
 	public class GenerateRangeRingsFromFeatures : AbstractGPProcess
 	{
@@ -20,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The point feature set that identifies the center of the range ring. The input must have at least one point.</para>
+		/// <para>点要素集用于标识范围环的中心点。输入必须至少具有一个点。</para>
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Range Ring Feature Class</para>
-		/// <para>The feature class that will contain the output ring features.</para>
+		/// <para>将含有输出环要素的要素类。</para>
 		/// </param>
 		/// <param name="RangeRingsType">
 		/// <para>Range Ring Type</para>
-		/// <para>Specifies how range rings will be generated..</para>
-		/// <para>Interval—Range rings will be generated based on the number of rings and distance between rings. This the default.</para>
-		/// <para>Minimum and maximum—Range rings will be generated based on a minimum and maximum distance.</para>
+		/// <para>指定将生成范围环的方式。</para>
+		/// <para>间隔—将根据环的数量以及环之间的距离来生成范围环。这是默认设置。</para>
+		/// <para>最小值和最大值—将基于最小距离和最大距离生成范围环。</para>
 		/// <para><see cref="RangeRingsTypeEnum"/></para>
 		/// </param>
 		public GenerateRangeRingsFromFeatures(object InFeatures, object OutputFeatureClass, object RangeRingsType)
@@ -41,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Range Rings From Features</para>
+		/// <para>Tool Display Name : 根据要素生成范围环</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Range Rings From Features";
+		public override string DisplayName() => "根据要素生成范围环";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateRangeRingsFromFeatures</para>
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The point feature set that identifies the center of the range ring. The input must have at least one point.</para>
+		/// <para>点要素集用于标识范围环的中心点。输入必须至少具有一个点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Range Ring Feature Class</para>
-		/// <para>The feature class that will contain the output ring features.</para>
+		/// <para>将含有输出环要素的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -96,9 +97,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Range Ring Type</para>
-		/// <para>Specifies how range rings will be generated..</para>
-		/// <para>Interval—Range rings will be generated based on the number of rings and distance between rings. This the default.</para>
-		/// <para>Minimum and maximum—Range rings will be generated based on a minimum and maximum distance.</para>
+		/// <para>指定将生成范围环的方式。</para>
+		/// <para>间隔—将根据环的数量以及环之间的距离来生成范围环。这是默认设置。</para>
+		/// <para>最小值和最大值—将基于最小距离和最大距离生成范围环。</para>
 		/// <para><see cref="RangeRingsTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Feature Class (Radials)</para>
-		/// <para>The feature class that will contain the output radial features.</para>
+		/// <para>将包含输出径向要素的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Radial Count Field</para>
-		/// <para>The field that contains the number of radials to be created.</para>
+		/// <para>包含要创建的径向数的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -126,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Minimum Range Field</para>
-		/// <para>The field that contains the values for the distance from the origin point to the inner ring.</para>
+		/// <para>包含从原点到内部环的距离值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -136,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Maximum Range Field</para>
-		/// <para>The field that contains the values for the distance from the origin point to the outer ring.</para>
+		/// <para>包含从原点到外部环的距离值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -146,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Ring Count Field</para>
-		/// <para>The field that contains the values for the number of rings to generate.</para>
+		/// <para>包含要生成的环数的值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -156,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Ring Interval Field</para>
-		/// <para>The field that contains the values for the interval between rings.</para>
+		/// <para>包含环之间的间隔值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -166,13 +167,13 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Distance Units</para>
-		/// <para>Specifies the linear unit of measure for the value in the Ring Interval Field parameter or the values in the Minimum Range Field and Maximum Range Field parameters.</para>
-		/// <para>Meters—The unit will be meters. This is the default.</para>
-		/// <para>Kilometers—The unit will be kilometers.</para>
-		/// <para>Miles—The unit will be miles.</para>
-		/// <para>Nautical miles—The unit will be nautical miles.</para>
-		/// <para>Feet—The unit will be feet.</para>
-		/// <para>US survey feet—The unit will be U.S. survey feet.</para>
+		/// <para>针对环间隔字段参数中的值或者最小范围字段和最大范围字段参数中的值，指定线性测量单位。</para>
+		/// <para>米—单位将为米。这是默认设置。</para>
+		/// <para>千米—单位将为公里。</para>
+		/// <para>英里—单位将为英里。</para>
+		/// <para>海里—单位将为海里。</para>
+		/// <para>英尺—单位将为英尺。</para>
+		/// <para>美国测量英尺—单位将为美国测量英尺。</para>
 		/// <para><see cref="DistanceUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -197,17 +198,17 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum RangeRingsTypeEnum 
 		{
 			/// <summary>
-			/// <para>Interval—Range rings will be generated based on the number of rings and distance between rings. This the default.</para>
+			/// <para>间隔—将根据环的数量以及环之间的距离来生成范围环。这是默认设置。</para>
 			/// </summary>
 			[GPValue("INTERVAL")]
-			[Description("Interval")]
+			[Description("间隔")]
 			Interval,
 
 			/// <summary>
-			/// <para>Minimum and maximum—Range rings will be generated based on a minimum and maximum distance.</para>
+			/// <para>最小值和最大值—将基于最小距离和最大距离生成范围环。</para>
 			/// </summary>
 			[GPValue("MIN_MAX")]
-			[Description("Minimum and maximum")]
+			[Description("最小值和最大值")]
 			Minimum_and_maximum,
 
 		}
@@ -218,45 +219,45 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum DistanceUnitsEnum 
 		{
 			/// <summary>
-			/// <para>Meters—The unit will be meters. This is the default.</para>
+			/// <para>米—单位将为米。这是默认设置。</para>
 			/// </summary>
 			[GPValue("METERS")]
-			[Description("Meters")]
+			[Description("米")]
 			Meters,
 
 			/// <summary>
-			/// <para>Kilometers—The unit will be kilometers.</para>
+			/// <para>千米—单位将为公里。</para>
 			/// </summary>
 			[GPValue("KILOMETERS")]
-			[Description("Kilometers")]
+			[Description("千米")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>Miles—The unit will be miles.</para>
+			/// <para>英里—单位将为英里。</para>
 			/// </summary>
 			[GPValue("MILES")]
-			[Description("Miles")]
+			[Description("英里")]
 			Miles,
 
 			/// <summary>
-			/// <para>Nautical miles—The unit will be nautical miles.</para>
+			/// <para>海里—单位将为海里。</para>
 			/// </summary>
 			[GPValue("NAUTICAL_MILES")]
-			[Description("Nautical miles")]
+			[Description("海里")]
 			Nautical_miles,
 
 			/// <summary>
-			/// <para>Feet—The unit will be feet.</para>
+			/// <para>英尺—单位将为英尺。</para>
 			/// </summary>
 			[GPValue("FEET")]
-			[Description("Feet")]
+			[Description("英尺")]
 			Feet,
 
 			/// <summary>
-			/// <para>US survey feet—The unit will be U.S. survey feet.</para>
+			/// <para>美国测量英尺—单位将为美国测量英尺。</para>
 			/// </summary>
 			[GPValue("US_SURVEY_FEET")]
-			[Description("US survey feet")]
+			[Description("美国测量英尺")]
 			US_survey_feet,
 
 		}

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Tier Group</para>
-	/// <para>Adds a tier group to a domain network in a utility network.</para>
+	/// <para>添加层组</para>
+	/// <para>向公共设施网络内的域网络添加层组。</para>
 	/// </summary>
 	public class AddTierGroup : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that contains the domain network where the tier group will be added.</para>
+		/// <para>包含域网络的公共设施网络，将向该域网络中添加层组。</para>
 		/// </param>
 		/// <param name="DomainNetwork">
 		/// <para>Domain Network</para>
-		/// <para>The name of the domain network to which the tier group will be added. Tier groups can only be added to domain networks that have a hierarchical tier definition.</para>
+		/// <para>要添加层组的域网络名称。只能将层组添加到具有等级层定义的域网络。</para>
 		/// </param>
 		/// <param name="Name">
 		/// <para>Tier Group Name</para>
-		/// <para>A unique name for the new tier group. The name can be a maximum of 64 characters in length.</para>
+		/// <para>新层组的唯一名称。名称最长为 64 个字符。</para>
 		/// </param>
 		public AddTierGroup(object InUtilityNetwork, object DomainNetwork, object Name)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Tier Group</para>
+		/// <para>Tool Display Name : 添加层组</para>
 		/// </summary>
-		public override string DisplayName() => "Add Tier Group";
+		public override string DisplayName() => "添加层组";
 
 		/// <summary>
 		/// <para>Tool Name : AddTierGroup</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that contains the domain network where the tier group will be added.</para>
+		/// <para>包含域网络的公共设施网络，将向该域网络中添加层组。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Domain Network</para>
-		/// <para>The name of the domain network to which the tier group will be added. Tier groups can only be added to domain networks that have a hierarchical tier definition.</para>
+		/// <para>要添加层组的域网络名称。只能将层组添加到具有等级层定义的域网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Tier Group Name</para>
-		/// <para>A unique name for the new tier group. The name can be a maximum of 64 characters in length.</para>
+		/// <para>新层组的唯一名称。名称最长为 64 个字符。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

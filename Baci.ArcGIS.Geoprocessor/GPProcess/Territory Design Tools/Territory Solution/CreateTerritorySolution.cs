@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Create Territory Solution</para>
+	/// <para>Create Territory Solution</para>
 	/// <para>Creates a new territory solution with two levels and loads input features into the base level.</para>
 	/// </summary>
 	public class CreateTerritorySolution : AbstractGPProcess

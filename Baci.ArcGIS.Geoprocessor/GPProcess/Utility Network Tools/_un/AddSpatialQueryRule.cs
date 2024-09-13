@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Spatial Query Rule</para>
+	/// <para>Add Spatial Query Rule</para>
 	/// <para>Add a spatial query rule to a diagram template</para>
 	/// </summary>
 	[Obsolete()]

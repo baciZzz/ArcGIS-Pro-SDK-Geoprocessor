@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>TIN Difference</para>
+	/// <para>TIN Difference</para>
 	/// <para>Calculates the volumetric difference between two TIN datasets.</para>
 	/// </summary>
 	[Obsolete()]

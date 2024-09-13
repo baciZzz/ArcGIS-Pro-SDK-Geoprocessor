@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Kernel Density</para>
-	/// <para>Calculates a magnitude-per-unit area from point or polyline features using a kernel function to fit a smoothly tapered surface to each point or polyline. A barrier can be used to alter the influence of a feature while calculating Kernel Density.</para>
+	/// <para>核密度分析</para>
+	/// <para>使用核函数根据点或折线要素计算每单位面积的量值以将各个点或折线拟合为光滑锥状表面。在计算核密度时，可以使用障碍来改变要素的影响。</para>
 	/// </summary>
 	public class KernelDensity : AbstractGPProcess
 	{
@@ -20,25 +21,25 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input point or polyline features</para>
-		/// <para>The input features (point or line) for which to calculate the density.</para>
+		/// <para>要计算密度的输入要素（点或线）。</para>
 		/// </param>
 		/// <param name="PopulationField">
 		/// <para>Population field</para>
-		/// <para>The field denoting population values for each feature. The population field is the count or quantity to be spread across the landscape to create a continuous surface.</para>
-		/// <para>Values in the population field can be integer or floating point.</para>
-		/// <para>The options and default behaviors for the field are listed below.</para>
-		/// <para>Use None if no item or special value will be used and each feature will be counted once.</para>
-		/// <para>You can use the Shape field if input features contain Z.</para>
-		/// <para>Otherwise, the default field is POPULATION. The following conditions may also apply:</para>
-		/// <para>If there is no POPULATION field, but there is a POPULATIONxxxx field, it will be used by default. The xxxx can be any valid characters, for example, POPULATION6, POPULATION1974, and POPULATIONROADTYPE.</para>
-		/// <para>If there is no POPULATION field or POPULATIONxxxx field, but there is a POP field, it will be used by default.</para>
-		/// <para>If there is no POPULATION field, POPULATIONxxxx field, or POP field, but there is a POPxxxx field, it will be used by default.</para>
-		/// <para>If there is no POPULATION field, POPULATIONxxxx field, POP field, or POPxxxx field, NONE will be used by default.</para>
+		/// <para>表示各要素的 population 值的字段。种群字段表示遍布于用于创建连续表面的景观内的计数或数量。</para>
+		/// <para>population 字段的值可以是整型或浮点型。</para>
+		/// <para>以下列出的是该字段的选项和默认特性。</para>
+		/// <para>如果不使用任何项目或特殊值，则选择 None，这样每一要素就只计数一次。</para>
+		/// <para>如果输入要素包含 Z，则可使用 Shape 字段。</para>
+		/// <para>否则，默认字段为 POPULATION。以下条件同样适用：</para>
+		/// <para>如果没有 POPULATION 字段，但是存在 POPULATIONxxxx 字段，则默认使用此字段。xxxx 可以是任何有效字符，例如 POPULATION6、POPULATION1974 和 POPULATIONROADTYPE。</para>
+		/// <para>如果没有 POPULATION 字段或 POPULATIONxxxx 字段，但是存在 POP 字段，则默认使用该字段。</para>
+		/// <para>如果没有 POPULATION 字段、POPULATIONxxxx 字段或 POP 字段，但是存在 POPxxxx 字段，则默认使用此字段。</para>
+		/// <para>如果没有 POPULATION 字段、POPULATIONxxxx 字段、POP 字段或 POPxxxx 字段，则默认使用 NONE。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output kernel density raster.</para>
-		/// <para>It is always a floating point raster.</para>
+		/// <para>输出核密度栅格。</para>
+		/// <para>总为浮点栅格。</para>
 		/// </param>
 		public KernelDensity(object InFeatures, object PopulationField, object OutRaster)
 		{
@@ -48,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Kernel Density</para>
+		/// <para>Tool Display Name : 核密度分析</para>
 		/// </summary>
-		public override string DisplayName() => "Kernel Density";
+		public override string DisplayName() => "核密度分析";
 
 		/// <summary>
 		/// <para>Tool Name : KernelDensity</para>
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input point or polyline features</para>
-		/// <para>The input features (point or line) for which to calculate the density.</para>
+		/// <para>要计算密度的输入要素（点或线）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -96,16 +97,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Population field</para>
-		/// <para>The field denoting population values for each feature. The population field is the count or quantity to be spread across the landscape to create a continuous surface.</para>
-		/// <para>Values in the population field can be integer or floating point.</para>
-		/// <para>The options and default behaviors for the field are listed below.</para>
-		/// <para>Use None if no item or special value will be used and each feature will be counted once.</para>
-		/// <para>You can use the Shape field if input features contain Z.</para>
-		/// <para>Otherwise, the default field is POPULATION. The following conditions may also apply:</para>
-		/// <para>If there is no POPULATION field, but there is a POPULATIONxxxx field, it will be used by default. The xxxx can be any valid characters, for example, POPULATION6, POPULATION1974, and POPULATIONROADTYPE.</para>
-		/// <para>If there is no POPULATION field or POPULATIONxxxx field, but there is a POP field, it will be used by default.</para>
-		/// <para>If there is no POPULATION field, POPULATIONxxxx field, or POP field, but there is a POPxxxx field, it will be used by default.</para>
-		/// <para>If there is no POPULATION field, POPULATIONxxxx field, POP field, or POPxxxx field, NONE will be used by default.</para>
+		/// <para>表示各要素的 population 值的字段。种群字段表示遍布于用于创建连续表面的景观内的计数或数量。</para>
+		/// <para>population 字段的值可以是整型或浮点型。</para>
+		/// <para>以下列出的是该字段的选项和默认特性。</para>
+		/// <para>如果不使用任何项目或特殊值，则选择 None，这样每一要素就只计数一次。</para>
+		/// <para>如果输入要素包含 Z，则可使用 Shape 字段。</para>
+		/// <para>否则，默认字段为 POPULATION。以下条件同样适用：</para>
+		/// <para>如果没有 POPULATION 字段，但是存在 POPULATIONxxxx 字段，则默认使用此字段。xxxx 可以是任何有效字符，例如 POPULATION6、POPULATION1974 和 POPULATIONROADTYPE。</para>
+		/// <para>如果没有 POPULATION 字段或 POPULATIONxxxx 字段，但是存在 POP 字段，则默认使用该字段。</para>
+		/// <para>如果没有 POPULATION 字段、POPULATIONxxxx 字段或 POP 字段，但是存在 POPxxxx 字段，则默认使用此字段。</para>
+		/// <para>如果没有 POPULATION 字段、POPULATIONxxxx 字段、POP 字段或 POPxxxx 字段，则默认使用 NONE。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -116,8 +117,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output kernel density raster.</para>
-		/// <para>It is always a floating point raster.</para>
+		/// <para>输出核密度栅格。</para>
+		/// <para>总为浮点栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -125,8 +126,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>The cell size of the output raster that will be created.</para>
-		/// <para>This parameter can be defined by a numeric value or obtained from an existing raster dataset. If the cell size hasn&apos;t been explicitly specified as the parameter value, the environment cell size value will be used if specified; otherwise, additional rules will be used to calculate it from the other inputs. See the usage section for more detail.</para>
+		/// <para>将创建的输出栅格的像元大小。</para>
+		/// <para>此参数可以通过数值进行定义，也可以从现有栅格数据集获取。如果未将像元大小明确指定为参数值，则将使用环境像元大小值（如果已指定）；否则，将使用其他规则通过其他输出计算像元大小。有关详细信息，请参阅用法部分。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -138,9 +139,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Search radius</para>
-		/// <para>The search radius within which to calculate density. Units are based on the linear unit of the projection of the output spatial reference.</para>
-		/// <para>For example, if the units are meters—to include all features within a one-mile neighborhood—set the search radius equal to 1609.344 (1 mile = 1609.344 meters).</para>
-		/// <para>The default search radius is computed specifically for the input dataset using a spatial variant of Silverman&apos;s Rule of Thumb (Silverman, 1986) that is robust enough for spatial outliers (points that are far away from the rest of the points). See the usage tips for a description of the algorithm.</para>
+		/// <para>在其范围内计算密度的搜索半径。单位基于输出空间参考投影的线性单位。</para>
+		/// <para>例如，如果单位为米，若要包含一英里邻域内的所有要素，可将搜索半径设置为 1609.344（1 英里 = 1609.344 米）。</para>
+		/// <para>使用“Silverman 经验规则”（Silverman，1986 年版）的空间变量专为输入数据集计算默认搜索半径，该变量足够强大，可避免空间异常值（距离其余点太远的点）。有关该算法的描述，请参阅使用提示。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -149,22 +150,22 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Area units</para>
-		/// <para>The area units of the output density values.</para>
-		/// <para>A default unit is selected based on the linear unit of the output spatial reference. You can change this to the appropriate unit if you want to convert the density output. Values for line density convert the units of both length and area.</para>
-		/// <para>If no output spatial reference is specified, the output spatial reference will be the same as the input feature class. The default output density units are determined by the linear units of the output spatial reference as follows. If the output linear units are meters, the output area density units will be set to Square kilometers, outputting square kilometers for point features or kilometers per square kilometers for polyline features. If the output linear units are feet, the output area density units will be set to Square miles.</para>
-		/// <para>If the output units is anything other than feet or meters, the output area density units will be set to Square map units. That is, the output density units will be the square of the linear units of the output spatial reference. For example, if the output linear units are centimeters, the output area density units will be Square map units, which will result in square centimeters. If the output linear units are kilometers, the output area density units will be Square map units, which will result in square kilometers.</para>
-		/// <para>The available options and their corresponding output density units are the following:</para>
-		/// <para>Square map units—For the square of the linear units of the output spatial reference.</para>
-		/// <para>Square miles—For miles (U.S.).</para>
-		/// <para>Square kilometers—For kilometers.</para>
-		/// <para>Acres—For acres (U.S.).</para>
-		/// <para>Hectares—For hectares.</para>
-		/// <para>Square yards—For yards (U.S.).</para>
-		/// <para>Square feet—For feet (U.S.).</para>
-		/// <para>Square inches—For inches (U.S.).</para>
-		/// <para>Square meters—For meters.</para>
-		/// <para>Square centimeters—For centimeters.</para>
-		/// <para>Square millimeters—For millimeters.</para>
+		/// <para>输出密度值的面积单位。</para>
+		/// <para>基于输出空间参考的线性单位选择默认单位。若要转换密度输出，可将此单位更改为合适的单位。线密度值同时转换长度和面积单位。</para>
+		/// <para>未指定输出空间参考的情况下，输出空间参考与输入要素类相同。默认输出密度单位通过输出空间参考的线性单位确定，如下所示。如果输出线性单位是米，输出面积密度单位将设置为平方千米，输出平方千米（点要素）或千米每平方千米（折线要素）。如果输出线性单位是英尺，输出面积密度单位将设置为平方英里。</para>
+		/// <para>如果输出单位不是英尺和米，输出面积密度单位将设置为平方地图单位。即，输出密度单位为输出空间参考的线性单位的平方。例如，如果输出线性单位是厘米，输出面积密度单位将是平方地图单位，即平方厘米。如果输出线性单位是千米，输出面积密度单位将是平方地图单位，即平方千米。</para>
+		/// <para>可用选项及相应的输出密度单位如下：</para>
+		/// <para>平方地图单位—用于输出空间参考的线性单位的平方。</para>
+		/// <para>平方英里—英里（美国）。</para>
+		/// <para>平方千米—千米。</para>
+		/// <para>英亩—英亩（美国）。</para>
+		/// <para>公顷—公顷。</para>
+		/// <para>平方码—码（美国）。</para>
+		/// <para>平方英尺—英尺（美国）。</para>
+		/// <para>平方英寸—英寸（美国）。</para>
+		/// <para>平方米—米。</para>
+		/// <para>平方厘米—厘米。</para>
+		/// <para>平方毫米—毫米。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -173,10 +174,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output cell values</para>
-		/// <para>Specifies what the values in the output raster represent.</para>
-		/// <para>Densities—The output values represent the calculated density value per unit area for each cell. This is the default.</para>
-		/// <para>Expected counts—The output values represent the calculated density value per cell area.</para>
-		/// <para>Since the cell value is linked to the specified cell size, the resulting raster cannot be resampled to a different cell size.</para>
+		/// <para>指定输出栅格中的值的含义。</para>
+		/// <para>密度—输出值表示为每个像元计算的每单位面积的密度值。这是默认设置。</para>
+		/// <para>预期计数—输出值表示所计算的每单位面积的密度值。</para>
+		/// <para>由于像元值链接到指定像元大小，因此无法将生成的栅格重新采样为不同像元大小。</para>
 		/// <para><see cref="OutCellValuesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -186,10 +187,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>Specifies whether the flat earth (planar) or the shortest path on a spheroid (geodesic) method will be used.</para>
-		/// <para>Planar—The planar distance between features will be used. This is the default.</para>
-		/// <para>Geodesic—The geodesic distance between features will be used.</para>
-		/// <para>The geodesic method only supports points as input features.</para>
+		/// <para>指定将使用地平（平面）方法还是椭球体上的最短路径（测地线）方法。</para>
+		/// <para>平面—将使用要素之间的平面距离。这是默认设置。</para>
+		/// <para>测地线—将使用要素之间的测地线距离。</para>
+		/// <para>测地线方法仅支持作为输入要素的点。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -199,8 +200,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input barrier features</para>
-		/// <para>The dataset that defines the barriers.</para>
-		/// <para>The barriers can be a feature layer of polyline or polygon features.</para>
+		/// <para>定义障碍的数据集。</para>
+		/// <para>障碍可以是折线或面要素的要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
@@ -227,17 +228,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum OutCellValuesEnum 
 		{
 			/// <summary>
-			/// <para>Densities—The output values represent the calculated density value per unit area for each cell. This is the default.</para>
+			/// <para>密度—输出值表示为每个像元计算的每单位面积的密度值。这是默认设置。</para>
 			/// </summary>
 			[GPValue("DENSITIES")]
-			[Description("Densities")]
+			[Description("密度")]
 			Densities,
 
 			/// <summary>
-			/// <para>Expected counts—The output values represent the calculated density value per cell area.</para>
+			/// <para>预期计数—输出值表示所计算的每单位面积的密度值。</para>
 			/// </summary>
 			[GPValue("EXPECTED_COUNTS")]
-			[Description("Expected counts")]
+			[Description("预期计数")]
 			Expected_counts,
 
 		}
@@ -248,17 +249,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Planar—The planar distance between features will be used. This is the default.</para>
+			/// <para>平面—将使用要素之间的平面距离。这是默认设置。</para>
 			/// </summary>
 			[GPValue("PLANAR")]
-			[Description("Planar")]
+			[Description("平面")]
 			Planar,
 
 			/// <summary>
-			/// <para>Geodesic—The geodesic distance between features will be used.</para>
+			/// <para>测地线—将使用要素之间的测地线距离。</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("Geodesic")]
+			[Description("测地线")]
 			Geodesic,
 
 		}

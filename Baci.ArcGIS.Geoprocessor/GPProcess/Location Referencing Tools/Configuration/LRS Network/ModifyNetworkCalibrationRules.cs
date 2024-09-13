@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Modify Network Calibration Rules</para>
+	/// <para>Modify Network Calibration Rules</para>
 	/// <para>Modifies the network calibration rules for an LRS Network.</para>
 	/// </summary>
 	public class ModifyNetworkCalibrationRules : AbstractGPProcess

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Approximate Drive Times</para>
+	/// <para>Generate Approximate Drive Times</para>
 	/// <para>Creates trade areas that approximate the size, shape, and area of existing polygons using available routes from the selected distance type.</para>
 	/// </summary>
 	public class GenerateApproximateDriveTimes : AbstractGPProcess

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Generate Elevation Guide Features</para>
+	/// <para>Generate Elevation Guide Features</para>
 	/// <para>Creates data required for an elevation guide diagram </para>
 	/// <para>surround element as required by various supported map product specifications.  This tool leverages existing </para>
 	/// <para>banding </para>

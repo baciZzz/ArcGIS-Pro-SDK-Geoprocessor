@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>GPX To Features</para>
-	/// <para>Converts the point information inside a GPX file to features.</para>
+	/// <para>GPX 转要素</para>
+	/// <para>用于将 GPX 文件内的点信息转换为要素。</para>
 	/// </summary>
 	public class GPXtoFeatures : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InputGPXFile">
 		/// <para>Input GPX File</para>
-		/// <para>The GPX file to convert.</para>
+		/// <para>要转换的 GPX 文件。</para>
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature class</para>
-		/// <para>The feature class to create.</para>
+		/// <para>要创建的要素类。</para>
 		/// </param>
 		public GPXtoFeatures(object InputGPXFile, object OutputFeatureClass)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : GPX To Features</para>
+		/// <para>Tool Display Name : GPX 转要素</para>
 		/// </summary>
-		public override string DisplayName() => "GPX To Features";
+		public override string DisplayName() => "GPX 转要素";
 
 		/// <summary>
 		/// <para>Tool Name : GPXtoFeatures</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input GPX File</para>
-		/// <para>The GPX file to convert.</para>
+		/// <para>要转换的 GPX 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Feature class</para>
-		/// <para>The feature class to create.</para>
+		/// <para>要创建的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]

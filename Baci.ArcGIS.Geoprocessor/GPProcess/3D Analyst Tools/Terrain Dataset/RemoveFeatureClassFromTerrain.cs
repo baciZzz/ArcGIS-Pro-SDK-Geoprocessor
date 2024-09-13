@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Remove Feature Class From Terrain</para>
-	/// <para>Removes reference to a feature class participating in a terrain dataset.</para>
+	/// <para>从 Terrain 中移除要素类</para>
+	/// <para>移除对参与 terrain 数据集的要素类的引用。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTerrain">
 		/// <para>Input Terrain</para>
-		/// <para>The terrain dataset to process.</para>
+		/// <para>待处理的 terrain 数据集。</para>
 		/// </param>
 		/// <param name="FeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>The feature class to be removed.</para>
+		/// <para>要移除的要素类。</para>
 		/// </param>
 		public RemoveFeatureClassFromTerrain(object InTerrain, object FeatureClass)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Remove Feature Class From Terrain</para>
+		/// <para>Tool Display Name : 从 Terrain 中移除要素类</para>
 		/// </summary>
-		public override string DisplayName() => "Remove Feature Class From Terrain";
+		public override string DisplayName() => "从 Terrain 中移除要素类";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveFeatureClassFromTerrain</para>
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Terrain</para>
-		/// <para>The terrain dataset to process.</para>
+		/// <para>待处理的 terrain 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTerrainLayer()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>The feature class to be removed.</para>
+		/// <para>要移除的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Simplify 3D Line</para>
-	/// <para>Generalizes 3D line features to reduce the overall number of vertices while approximating the original shape in horizontal and vertical directions within a specified tolerance.</para>
+	/// <para>简化 3D 线</para>
+	/// <para>概化 3D 线要素，以减少总折点数，同时在指定容差范围内在水平和垂直方向上近似于原始形状。</para>
 	/// </summary>
 	public class Simplify3DLine : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Line Features</para>
-		/// <para>The line features to be simplified.</para>
+		/// <para>要进行简化的线要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Lines</para>
-		/// <para>The simplified output line features.</para>
+		/// <para>简化的输出线要素。</para>
 		/// </param>
 		/// <param name="Tolerance">
 		/// <para>Simplification Tolerance</para>
-		/// <para>The 3D distance threshold from the input lines that the simplified output must remain within.</para>
+		/// <para>距输入线的 3D 距离阈值，简化输出必须位于其中。</para>
 		/// </param>
 		public Simplify3DLine(object InFeatures, object OutFeatureClass, object Tolerance)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Simplify 3D Line</para>
+		/// <para>Tool Display Name : 简化 3D 线</para>
 		/// </summary>
-		public override string DisplayName() => "Simplify 3D Line";
+		public override string DisplayName() => "简化 3D 线";
 
 		/// <summary>
 		/// <para>Tool Name : Simplify3DLine</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Line Features</para>
-		/// <para>The line features to be simplified.</para>
+		/// <para>要进行简化的线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Lines</para>
-		/// <para>The simplified output line features.</para>
+		/// <para>简化的输出线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Simplification Tolerance</para>
-		/// <para>The 3D distance threshold from the input lines that the simplified output must remain within.</para>
+		/// <para>距输入线的 3D 距离阈值，简化输出必须位于其中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]

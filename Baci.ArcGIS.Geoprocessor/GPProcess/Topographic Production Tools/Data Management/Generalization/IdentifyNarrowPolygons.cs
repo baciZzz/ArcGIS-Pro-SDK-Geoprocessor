@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Identify Narrow Polygons</para>
+	/// <para>Identify Narrow Polygons</para>
 	/// <para>Splits a polygon based on its width and classifies each portion as narrow or wide based on its width and length.</para>
 	/// </summary>
 	public class IdentifyNarrowPolygons : AbstractGPProcess

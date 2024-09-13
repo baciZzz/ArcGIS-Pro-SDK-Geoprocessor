@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Replace Terrain Points</para>
-	/// <para>Replaces points referenced by a terrain dataset with points from a specified feature class.</para>
+	/// <para>替换 Terrain 点</para>
+	/// <para>可用来自指定要素类的点替换 terrain 数据集引用的点。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,15 +23,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTerrain">
 		/// <para>Input Terrain</para>
-		/// <para>The terrain dataset to process.</para>
+		/// <para>待处理的 terrain 数据集。</para>
 		/// </param>
 		/// <param name="TerrainFeatureClass">
 		/// <para>Input Terrain Data Source</para>
-		/// <para>The name of the terrain point feature class that will have some or all of its points replaced.</para>
+		/// <para>将替换某些点或全部点的 terrain 点要素类的名称。</para>
 		/// </param>
 		/// <param name="InPointFeatures">
 		/// <para>Input Points</para>
-		/// <para>The point or multipoint features that will replace the terrain point features.</para>
+		/// <para>用来替换 terrain 点要素的点或多点要素。</para>
 		/// </param>
 		public ReplaceTerrainPoints(object InTerrain, object TerrainFeatureClass, object InPointFeatures)
 		{
@@ -40,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Replace Terrain Points</para>
+		/// <para>Tool Display Name : 替换 Terrain 点</para>
 		/// </summary>
-		public override string DisplayName() => "Replace Terrain Points";
+		public override string DisplayName() => "替换 Terrain 点";
 
 		/// <summary>
 		/// <para>Tool Name : ReplaceTerrainPoints</para>
@@ -76,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Terrain</para>
-		/// <para>The terrain dataset to process.</para>
+		/// <para>待处理的 terrain 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTerrainLayer()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Terrain Data Source</para>
-		/// <para>The name of the terrain point feature class that will have some or all of its points replaced.</para>
+		/// <para>将替换某些点或全部点的 terrain 点要素类的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Points</para>
-		/// <para>The point or multipoint features that will replace the terrain point features.</para>
+		/// <para>用来替换 terrain 点要素的点或多点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -103,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Area of Interest</para>
-		/// <para>An optional area of interest can be used to define the extent of the area in which the terrain points would be replaced.</para>
+		/// <para>感兴趣的可选区域，可用于定义替换 terrain 点的区域的范围。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]

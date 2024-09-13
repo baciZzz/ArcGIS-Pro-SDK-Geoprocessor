@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Configure Geodatabase Log File Tables</para>
-	/// <para>Alters the type of log file tables used by an enterprise geodatabase to maintain lists of records cached by ArcGIS.</para>
+	/// <para>配置地理数据库日志文件表</para>
+	/// <para>更改企业级地理数据库使用的日志文件表类型，以便维护 ArcGIS 所缓存的记录列表。</para>
 	/// </summary>
 	public class ConfigureGeodatabaseLogFileTables : AbstractGPProcess
 	{
@@ -20,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputDatabase">
 		/// <para>Input Database Connection</para>
-		/// <para>A database connection (.sde file) to the enterprise geodatabase where the log file table configuration will be changed. The connection must be made as the geodatabase administrator.</para>
+		/// <para>与企业级地理数据库的数据库连接（.sde 文件），其中日志文件表配置将更改。 必须由地理数据库管理员建立此连接。</para>
 		/// </param>
 		/// <param name="LogFileType">
 		/// <para>Log File Type</para>
-		/// <para>Specifies the type of log file tables the geodatabase will use.</para>
-		/// <para>Session log file—Session-based log file tables for selection sets will be used. Session-based log file tables are dedicated to a single session and may contain multiple selection sets.</para>
-		/// <para>Shared log file—Shared log file tables for selection sets will be used. Shared log file tables are shared by all sessions that connect as the same user.</para>
+		/// <para>指定地理数据库将使用的日志文件表类型。</para>
+		/// <para>会话日志文件—将使用选择集的基于会话的日志文件表。 基于会话的日志文件表专用于单个会话，并可能含有多个选择集。</para>
+		/// <para>共享日志文件—将使用选择集的共享日志文件表。 共享日志文件表将由以相同用户身份连接的所有会话所共用。</para>
 		/// <para><see cref="LogFileTypeEnum"/></para>
 		/// </param>
 		public ConfigureGeodatabaseLogFileTables(object InputDatabase, object LogFileType)
@@ -36,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Configure Geodatabase Log File Tables</para>
+		/// <para>Tool Display Name : 配置地理数据库日志文件表</para>
 		/// </summary>
-		public override string DisplayName() => "Configure Geodatabase Log File Tables";
+		public override string DisplayName() => "配置地理数据库日志文件表";
 
 		/// <summary>
 		/// <para>Tool Name : ConfigureGeodatabaseLogFileTables</para>
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
-		/// <para>A database connection (.sde file) to the enterprise geodatabase where the log file table configuration will be changed. The connection must be made as the geodatabase administrator.</para>
+		/// <para>与企业级地理数据库的数据库连接（.sde 文件），其中日志文件表配置将更改。 必须由地理数据库管理员建立此连接。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -82,9 +83,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Log File Type</para>
-		/// <para>Specifies the type of log file tables the geodatabase will use.</para>
-		/// <para>Session log file—Session-based log file tables for selection sets will be used. Session-based log file tables are dedicated to a single session and may contain multiple selection sets.</para>
-		/// <para>Shared log file—Shared log file tables for selection sets will be used. Shared log file tables are shared by all sessions that connect as the same user.</para>
+		/// <para>指定地理数据库将使用的日志文件表类型。</para>
+		/// <para>会话日志文件—将使用选择集的基于会话的日志文件表。 基于会话的日志文件表专用于单个会话，并可能含有多个选择集。</para>
+		/// <para>共享日志文件—将使用选择集的共享日志文件表。 共享日志文件表将由以相同用户身份连接的所有会话所共用。</para>
 		/// <para><see cref="LogFileTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Number of pooled session-based log file tables to be owned by the administrator</para>
-		/// <para>The number of tables included in the pool that the geodatabase will use if a pool of session-based log file tables owned by the geodatabase administrator is used.</para>
+		/// <para>使用地理数据库管理员拥有的基于会话的日志文件表池时，数据库将使用的池中所含表的数量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Create session-based log file tables in the TempDB database (Microsoft SQL Server only)</para>
-		/// <para>This parameter is no longer applicable, starting with the ArcGIS 10.5 and ArcGIS Pro 1.4 releases.</para>
+		/// <para>从 ArcGIS 10.5 和 ArcGIS Pro 1.4 版本开始，此参数将不再适用。</para>
 		/// <para><see cref="UseTempdbEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -134,17 +135,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum LogFileTypeEnum 
 		{
 			/// <summary>
-			/// <para>Session log file—Session-based log file tables for selection sets will be used. Session-based log file tables are dedicated to a single session and may contain multiple selection sets.</para>
+			/// <para>会话日志文件—将使用选择集的基于会话的日志文件表。 基于会话的日志文件表专用于单个会话，并可能含有多个选择集。</para>
 			/// </summary>
 			[GPValue("SESSION_LOG_FILE")]
-			[Description("Session log file")]
+			[Description("会话日志文件")]
 			Session_log_file,
 
 			/// <summary>
-			/// <para>Shared log file—Shared log file tables for selection sets will be used. Shared log file tables are shared by all sessions that connect as the same user.</para>
+			/// <para>共享日志文件—将使用选择集的共享日志文件表。 共享日志文件表将由以相同用户身份连接的所有会话所共用。</para>
 			/// </summary>
 			[GPValue("SHARED_LOG_FILE")]
-			[Description("Shared log file")]
+			[Description("共享日志文件")]
 			Shared_log_file,
 
 		}

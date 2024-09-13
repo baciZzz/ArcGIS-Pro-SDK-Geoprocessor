@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Spatial Reference</para>
-	/// <para>Creates a spatial reference for use in ModelBuilder.</para>
+	/// <para>创建空间参考</para>
+	/// <para>创建用于 模型构建器 的空间参考。</para>
 	/// </summary>
 	public class CreateSpatialReference : AbstractGPProcess
 	{
@@ -23,9 +24,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Spatial Reference</para>
+		/// <para>Tool Display Name : 创建空间参考</para>
 		/// </summary>
-		public override string DisplayName() => "Create Spatial Reference";
+		public override string DisplayName() => "创建空间参考";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSpatialReference</para>
@@ -59,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Spatial Reference</para>
-		/// <para>The name of the spatial reference to be created.</para>
+		/// <para>要创建的空间参考的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
@@ -67,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Spatial Reference Template</para>
-		/// <para>The feature class or layer to be used as a template to set the value for the spatial reference.</para>
+		/// <para>要用作模板的要素类或图层，用于设置空间参考的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>XY Domain</para>
-		/// <para>The allowable coordinate range for x,y coordinates.</para>
+		/// <para>允许的 x,y 坐标的坐标范围。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEnvelope()]
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Z Domain (min max)</para>
-		/// <para>The allowable coordinate range for z-values.</para>
+		/// <para>允许的 z 值的坐标范围。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -91,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>M Domain (min max)</para>
-		/// <para>The allowable coordinate range for m-values.</para>
+		/// <para>允许的 m 值的坐标范围。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -99,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Template XYDomains</para>
-		/// <para>The feature classes or layers that can be used to define the XY Domain.</para>
+		/// <para>可用于定义 XY 值域的要素类或图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -107,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Grow XYDomain By Percentage</para>
-		/// <para>The percentage by which the XY Domain will be expanded.</para>
+		/// <para>展开 XY 值域时使用的百分比。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

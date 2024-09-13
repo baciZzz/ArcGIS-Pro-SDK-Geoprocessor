@@ -12,6 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 	/// <summary>
 	/// <para>Collapse Hydro Polygons</para>
 	/// <para>Collapse Hydro Polygons</para>
+	/// <para>Collapse Hydro Polygons</para>
 	/// </summary>
 	[Obsolete()]
 	public class CollapseHydroPolygons : AbstractGPProcess

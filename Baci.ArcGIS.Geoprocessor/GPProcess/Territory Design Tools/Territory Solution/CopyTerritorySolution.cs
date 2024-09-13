@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Copy Territory Solution</para>
+	/// <para>Copy Territory Solution</para>
 	/// <para>Creates a copy of a territory solution.</para>
 	/// </summary>
 	public class CopyTerritorySolution : AbstractGPProcess

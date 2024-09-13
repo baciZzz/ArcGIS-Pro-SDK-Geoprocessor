@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Calculate Market Penetration</para>
+	/// <para>Calculate Market Penetration</para>
 	/// <para>Calculates the market penetration based on the number of customers within an area compared to a demographic variable such as total population.</para>
 	/// </summary>
 	public class CalculateMarketPenetration : AbstractGPProcess

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Set Control Point By Angle</para>
-	/// <para>Places a control point at vertices along a line or polygon outline where the angle created by a change in line direction is less than or equal to a specified maximum angle.</para>
+	/// <para>按角度设置控制点</para>
+	/// <para>在沿线或面轮廓且由线的方向变化而生成的角度小于或等于指定的最大角度的顶点处放置控制点。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The feature layer containing line or polygon features.</para>
+		/// <para>包含线或面要素的要素图层。</para>
 		/// </param>
 		/// <param name="MaximumAngle">
 		/// <para>Maximum Angle (decimal degrees)</para>
-		/// <para>The angle used to determine whether a vertex along a line or polygon outline will be set as a control point. The angle value must be greater than zero and less than 180 decimal degrees.</para>
+		/// <para>此角度用于确定是否将沿线或面轮廓的顶点设置为控制点。 角度值必须大于零且小于 180 十进制度。</para>
 		/// </param>
 		public SetControlPointByAngle(object InFeatures, object MaximumAngle)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Set Control Point By Angle</para>
+		/// <para>Tool Display Name : 按角度设置控制点</para>
 		/// </summary>
-		public override string DisplayName() => "Set Control Point By Angle";
+		public override string DisplayName() => "按角度设置控制点";
 
 		/// <summary>
 		/// <para>Tool Name : SetControlPointByAngle</para>
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The feature layer containing line or polygon features.</para>
+		/// <para>包含线或面要素的要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -81,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Maximum Angle (decimal degrees)</para>
-		/// <para>The angle used to determine whether a vertex along a line or polygon outline will be set as a control point. The angle value must be greater than zero and less than 180 decimal degrees.</para>
+		/// <para>此角度用于确定是否将沿线或面轮廓的顶点设置为控制点。 角度值必须大于零且小于 180 十进制度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]

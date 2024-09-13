@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Update Extended Property</para>
+	/// <para>Update Extended Property</para>
 	/// <para>Updates an extended property in the identified properties table for the chosen job.</para>
 	/// </summary>
 	public class UpdateExtendedProperty : AbstractGPProcess

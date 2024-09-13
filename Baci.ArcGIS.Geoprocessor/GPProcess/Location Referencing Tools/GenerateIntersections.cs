@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Generate Intersections</para>
+	/// <para>Generate Intersections</para>
 	/// <para>Generates new intersections and updates existing intersections.</para>
 	/// </summary>
 	public class GenerateIntersections : AbstractGPProcess

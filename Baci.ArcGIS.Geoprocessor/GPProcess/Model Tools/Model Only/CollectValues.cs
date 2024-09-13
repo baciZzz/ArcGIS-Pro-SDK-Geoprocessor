@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Collect Values</para>
-	/// <para>Collects output values from an iterator or converts a list of values into a single input. The output of Collect Values can be used as input to the Merge, Append, Mosaic, and Cell Statistics tools.</para>
+	/// <para>收集值</para>
+	/// <para>用于从迭代器收集输出值或将一组值转换为单个输入。收集值的输出可用作合并、追加、镶嵌和像元统计工具的输入。</para>
 	/// </summary>
 	public class CollectValues : AbstractGPProcess
 	{
@@ -23,9 +24,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Collect Values</para>
+		/// <para>Tool Display Name : 收集值</para>
 		/// </summary>
-		public override string DisplayName() => "Collect Values";
+		public override string DisplayName() => "收集值";
 
 		/// <summary>
 		/// <para>Tool Name : CollectValues</para>
@@ -59,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Input Value</para>
-		/// <para>The input values to be collected.</para>
+		/// <para>要收集的输入值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

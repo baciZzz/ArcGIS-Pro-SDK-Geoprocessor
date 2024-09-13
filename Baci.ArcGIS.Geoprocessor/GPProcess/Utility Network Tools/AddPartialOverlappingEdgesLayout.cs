@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Partial Overlapping Edges Layout</para>
+	/// <para>Add Partial Overlapping Edges Layout</para>
 	/// <para>Add a partial overlapping edges layout to a diagram template</para>
 	/// </summary>
 	[Obsolete()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Add Raster to GeoPackage</para>
-	/// <para>Loads raster datasets into an OGC GeoPackage raster pyramid.</para>
+	/// <para>向 GeoPackage 添加栅格</para>
+	/// <para>将栅格数据集加载到 OGC GeoPackage 栅格金字塔中。</para>
 	/// </summary>
 	public class AddRasterToGeoPackage : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset to load into the OGC GeoPackage raster pyramid.</para>
+		/// <para>要加载到 OGC GeoPackage 栅格金字塔中的栅格数据集。</para>
 		/// </param>
 		/// <param name="TargetGeopackage">
 		/// <para>Target GeoPackage</para>
-		/// <para>The GeoPackage into which the raster dataset will be loaded.</para>
+		/// <para>要加载栅格数据集的 GeoPackage。</para>
 		/// </param>
 		/// <param name="RasterName">
 		/// <para>Raster Name</para>
-		/// <para>The name of the output GeoPackage raster pyramid.</para>
+		/// <para>输出 GeoPackage 栅格金字塔的名称。</para>
 		/// </param>
 		public AddRasterToGeoPackage(object InDataset, object TargetGeopackage, object RasterName)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Raster to GeoPackage</para>
+		/// <para>Tool Display Name : 向 GeoPackage 添加栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Add Raster to GeoPackage";
+		public override string DisplayName() => "向 GeoPackage 添加栅格";
 
 		/// <summary>
 		/// <para>Tool Name : AddRasterToGeoPackage</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset to load into the OGC GeoPackage raster pyramid.</para>
+		/// <para>要加载到 OGC GeoPackage 栅格金字塔中的栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Target GeoPackage</para>
-		/// <para>The GeoPackage into which the raster dataset will be loaded.</para>
+		/// <para>要加载栅格数据集的 GeoPackage。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Raster Name</para>
-		/// <para>The name of the output GeoPackage raster pyramid.</para>
+		/// <para>输出 GeoPackage 栅格金字塔的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -100,13 +101,13 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Tiling Scheme</para>
-		/// <para>Specifies the tiling scheme.</para>
-		/// <para>Tiled—The spatial reference of the input raster will be maintained and tiles will be generated consistent with the GeoPackage standard. This is the default.</para>
-		/// <para>ArcGIS Online— Raster tiles will be generated in a Web Mercator coordinate reference (the same scheme developed for the Army Geospatial Center).</para>
-		/// <para>NSG Profile Scaled Transverse Mercator—A scaled transverse Mercator will be used.</para>
-		/// <para>NSG Profile WGS84 Geographic—WGS84 Geographic will be used.</para>
-		/// <para>Google Earth Web Mercator—Raster tiles will be created using the parameters in the Web Mercator coordinate reference.</para>
-		/// <para>Custom tiling scheme file—A custom tiling scheme from a file with an XML schema definition created using the Generate Tile Cache Tiling Scheme tool will be used.</para>
+		/// <para>指定切片方案。</para>
+		/// <para>切片—系统将保留输入栅格的空间参考，且将按照 GeoPackage 标准生成切片。这是默认设置。</para>
+		/// <para>ArcGIS Online— 栅格切片将在 Web Mercator 坐标参考中生成（与针对 Army Geospatial Center 制定的方案相同）。</para>
+		/// <para>NSG Profile 可缩放的横轴墨卡托—将使用可缩放的横轴墨卡托。</para>
+		/// <para>NSG Profile WGS84 地理坐标系—将使用 WGS84 地理坐标系。</para>
+		/// <para>Google Earth Web Mercator—将使用Web Mercator 坐标参考中的参数来创建栅格切片。</para>
+		/// <para>自定义切片方案文件—将使用文件中的自定义切片方案（该文件使用通过 生成切片缓存切片方案工具创建的 XML 方案定义）。</para>
 		/// <para><see cref="TilingSchemeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Tiling Scheme File</para>
-		/// <para>A custom tiling scheme file that is required when Tiling Scheme is set to Custom tiling scheme file.</para>
+		/// <para>当切片方案设置为自定义切片方案文件时需要的自定义切片方案文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -133,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Area of Interest</para>
-		/// <para>An area of interest used to limit the area of the raster to be loaded, rather than the entire dataset.</para>
+		/// <para>感兴趣区域，用于限制要加载的栅格区域，而非整个数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -156,45 +157,45 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum TilingSchemeEnum 
 		{
 			/// <summary>
-			/// <para>Tiled—The spatial reference of the input raster will be maintained and tiles will be generated consistent with the GeoPackage standard. This is the default.</para>
+			/// <para>切片—系统将保留输入栅格的空间参考，且将按照 GeoPackage 标准生成切片。这是默认设置。</para>
 			/// </summary>
 			[GPValue("TILED")]
-			[Description("Tiled")]
+			[Description("切片")]
 			Tiled,
 
 			/// <summary>
-			/// <para>ArcGIS Online— Raster tiles will be generated in a Web Mercator coordinate reference (the same scheme developed for the Army Geospatial Center).</para>
+			/// <para>ArcGIS Online— 栅格切片将在 Web Mercator 坐标参考中生成（与针对 Army Geospatial Center 制定的方案相同）。</para>
 			/// </summary>
 			[GPValue("ARCGISONLINE_SCHEME")]
 			[Description("ArcGIS Online")]
 			ArcGIS_Online,
 
 			/// <summary>
-			/// <para>Google Earth Web Mercator—Raster tiles will be created using the parameters in the Web Mercator coordinate reference.</para>
+			/// <para>Google Earth Web Mercator—将使用Web Mercator 坐标参考中的参数来创建栅格切片。</para>
 			/// </summary>
 			[GPValue("GOOGLE_EARTH_WEB_MERCATOR")]
 			[Description("Google Earth Web Mercator")]
 			Google_Earth_Web_Mercator,
 
 			/// <summary>
-			/// <para>NSG Profile Scaled Transverse Mercator—A scaled transverse Mercator will be used.</para>
+			/// <para>NSG Profile 可缩放的横轴墨卡托—将使用可缩放的横轴墨卡托。</para>
 			/// </summary>
 			[GPValue("NSGPROFILE_SCALED_TRANSVERSE_MERCATOR")]
-			[Description("NSG Profile Scaled Transverse Mercator")]
+			[Description("NSG Profile 可缩放的横轴墨卡托")]
 			NSG_Profile_Scaled_Transverse_Mercator,
 
 			/// <summary>
-			/// <para>NSG Profile WGS84 Geographic—WGS84 Geographic will be used.</para>
+			/// <para>NSG Profile WGS84 地理坐标系—将使用 WGS84 地理坐标系。</para>
 			/// </summary>
 			[GPValue("NSGPROFILE_WGS84_GEOGRAPHIC")]
-			[Description("NSG Profile WGS84 Geographic")]
+			[Description("NSG Profile WGS84 地理坐标系")]
 			NSG_Profile_WGS84_Geographic,
 
 			/// <summary>
-			/// <para>Custom tiling scheme file—A custom tiling scheme from a file with an XML schema definition created using the Generate Tile Cache Tiling Scheme tool will be used.</para>
+			/// <para>自定义切片方案文件—将使用文件中的自定义切片方案（该文件使用通过 生成切片缓存切片方案工具创建的 XML 方案定义）。</para>
 			/// </summary>
 			[GPValue("FROM_FILE")]
-			[Description("Custom tiling scheme file")]
+			[Description("自定义切片方案文件")]
 			Custom_tiling_scheme_file,
 
 		}

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Encode Field</para>
-	/// <para>Converts categorical values (string, integer, or date) into multiple numerical fields, each representing a category. The encoded numerical fields can be used in most data science and statistical workflows including regression models.</para>
+	/// <para>编码字段</para>
+	/// <para>将分类值（字符串、整数或日期）转换为多个数值字段，每个字段表示一个类别。编码的数值字段可用于大多数数据科学和统计工作流，包括回归模型。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input table or feature class containing the field to be encoded. Fields will be added to the existing input table and will not create a new output table.</para>
+		/// <para>包含要编码的字段的输入表或要素类。字段将添加到现有输入表，并且不会创建新的输出表。</para>
 		/// </param>
 		/// <param name="Field">
 		/// <para>Field to Encode</para>
-		/// <para>The field containing the categorical or temporal values to be encoded.</para>
+		/// <para>包含要编码的分类值或时间值的字段。</para>
 		/// </param>
 		public EncodeField(object InTable, object Field)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Encode Field</para>
+		/// <para>Tool Display Name : 编码字段</para>
 		/// </summary>
-		public override string DisplayName() => "Encode Field";
+		public override string DisplayName() => "编码字段";
 
 		/// <summary>
 		/// <para>Tool Name : EncodeField</para>
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input table or feature class containing the field to be encoded. Fields will be added to the existing input table and will not create a new output table.</para>
+		/// <para>包含要编码的字段的输入表或要素类。字段将添加到现有输入表，并且不会创建新的输出表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field to Encode</para>
-		/// <para>The field containing the categorical or temporal values to be encoded.</para>
+		/// <para>包含要编码的分类值或时间值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -89,10 +90,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Encoding Method</para>
-		/// <para>Specifies the method to use to encode the values contained in the Field to Encode parameter.</para>
-		/// <para>One-hot—Each categorical value will be converted to a new field and the values 0 and 1 will be assigned, where 1 represents the presence of that categorical value. This is the default.</para>
-		/// <para>One-cold— Each categorical value will be converted to a new field and the values 0 and 1 will be assigned, where 0 represents the presence of that categorical value.</para>
-		/// <para>Temporal—Each temporal value in the Field to Encode parameter will be converted to an integer based on the time step interval, time step alignment, and reference time specified.</para>
+		/// <para>指定用于对要编码的字段参数中包含的值进行编码的方法。</para>
+		/// <para>一热—每个分类值都将转换为一个新字段，并且分配值 0 和 1，其中 1 表示存在该分类值。这是默认设置。</para>
+		/// <para>一冷— 每个分类值都将转换为一个新字段，并且分配值 0 和 1，其中 0 表示存在该分类值。</para>
+		/// <para>时态—要编码的字段参数中的每个时间值将根据时间步间隔、时间步对齐和指定的参考时间转换为整数。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Time Step Interval</para>
-		/// <para>The number of seconds, minutes, hours, days, weeks, or years that will represent a single time step. The temporal value will be aggregated into a certain time step it is within. If no value is provided, the default time step interval is based on two algorithms that are used to determine the optimal number and width of the time step intervals. The smaller of the two results is used as the time step interval.</para>
+		/// <para>用来表示单个时间步长的秒数、分钟数、小时数、天数、周数或年数。时间值将聚合到其所在范围内的某一时间步中。如果未提供任何值，默认时间步间隔将基于两种算法，来确定时间步间隔的最佳数量和宽度。将使用两个结果中的较小者作为时间步间隔。</para>
 		/// <para><see cref="TimeStepIntervalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -112,10 +113,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Time Step Alignment</para>
-		/// <para>Specifies how aggregation will occur based on the Time Step Interval parameter value.</para>
-		/// <para>End time— Time steps will align to the last time event and aggregate back in time. This is the default.</para>
-		/// <para>Start time— Time steps will align to the first time event and aggregate forward in time.</para>
-		/// <para>Reference time— Time steps will align to the date and time specified in the Reference Time parameter. Aggregation is performed forward and backward in time from the reference time until reaching the first and last temporal values.</para>
+		/// <para>指定如何根据时间步间隔参数值进行聚合。</para>
+		/// <para>结束时间— 时间步长将与最后一次时间事件对齐，并向后聚合时间。这是默认设置。</para>
+		/// <para>开始时间— 时间步长将与第一次时间事件对齐，并向前聚合时间。</para>
+		/// <para>参考时间— 时间步将与在参考时间参数中指定的日期和时间对齐。将从参考时间到开始向前和向后聚合时间，直到到达第一个和最后一个时间值。</para>
 		/// <para><see cref="TimeStepAlignmentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -125,8 +126,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Reference Time</para>
-		/// <para>The date and time to which the time-step intervals will align. For example, to bin your data weekly from Monday to Sunday, set a reference time of Sunday at midnight to ensure that the time steps break between Sunday and Monday at midnight.</para>
-		/// <para>The value can be a date and time or solely a date; it cannot be solely a time. The expected format is determined by the computer&apos;s regional time settings.</para>
+		/// <para>时间间隔将对齐到的日期和时间。例如，要按星期从星期一至星期天对数据进行图格组合，将星期天的午夜设置为参考时间，以确保时间步在星期天和星期一之间的午夜进行划分。</para>
+		/// <para>该值可以是日期和时间值或仅为日期值；不能仅为时间。预期格式由计算机的区域时间设置确定。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -156,24 +157,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>One-hot—Each categorical value will be converted to a new field and the values 0 and 1 will be assigned, where 1 represents the presence of that categorical value. This is the default.</para>
+			/// <para>一热—每个分类值都将转换为一个新字段，并且分配值 0 和 1，其中 1 表示存在该分类值。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ONEHOT")]
-			[Description("One-hot")]
+			[Description("一热")]
 			ONEHOT,
 
 			/// <summary>
-			/// <para>One-cold— Each categorical value will be converted to a new field and the values 0 and 1 will be assigned, where 0 represents the presence of that categorical value.</para>
+			/// <para>一冷— 每个分类值都将转换为一个新字段，并且分配值 0 和 1，其中 0 表示存在该分类值。</para>
 			/// </summary>
 			[GPValue("ONECOLD")]
-			[Description("One-cold")]
+			[Description("一冷")]
 			ONECOLD,
 
 			/// <summary>
-			/// <para>Temporal—Each temporal value in the Field to Encode parameter will be converted to an integer based on the time step interval, time step alignment, and reference time specified.</para>
+			/// <para>时态—要编码的字段参数中的每个时间值将根据时间步间隔、时间步对齐和指定的参考时间转换为整数。</para>
 			/// </summary>
 			[GPValue("TEMPORAL")]
-			[Description("Temporal")]
+			[Description("时态")]
 			Temporal,
 
 		}
@@ -240,24 +241,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TimeStepAlignmentEnum 
 		{
 			/// <summary>
-			/// <para>End time— Time steps will align to the last time event and aggregate back in time. This is the default.</para>
+			/// <para>结束时间— 时间步长将与最后一次时间事件对齐，并向后聚合时间。这是默认设置。</para>
 			/// </summary>
 			[GPValue("END_TIME")]
-			[Description("End time")]
+			[Description("结束时间")]
 			End_time,
 
 			/// <summary>
-			/// <para>Start time— Time steps will align to the first time event and aggregate forward in time.</para>
+			/// <para>开始时间— 时间步长将与第一次时间事件对齐，并向前聚合时间。</para>
 			/// </summary>
 			[GPValue("START_TIME")]
-			[Description("Start time")]
+			[Description("开始时间")]
 			Start_time,
 
 			/// <summary>
-			/// <para>Reference time— Time steps will align to the date and time specified in the Reference Time parameter. Aggregation is performed forward and backward in time from the reference time until reaching the first and last temporal values.</para>
+			/// <para>参考时间— 时间步将与在参考时间参数中指定的日期和时间对齐。将从参考时间到开始向前和向后聚合时间，直到到达第一个和最后一个时间值。</para>
 			/// </summary>
 			[GPValue("REFERENCE_TIME")]
-			[Description("Reference time")]
+			[Description("参考时间")]
 			Reference_time,
 
 		}

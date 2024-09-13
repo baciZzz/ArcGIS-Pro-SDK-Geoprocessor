@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Export Diagram Content</para>
+	/// <para>Export Diagram Content</para>
 	/// <para>Export a diagram content to a file</para>
 	/// </summary>
 	[Obsolete()]

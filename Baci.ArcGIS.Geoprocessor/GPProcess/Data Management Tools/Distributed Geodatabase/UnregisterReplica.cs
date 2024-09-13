@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Unregister Replica</para>
-	/// <para>Unregisters a replica from an enterprise geodatabase.</para>
+	/// <para>取消注册复本</para>
+	/// <para>从企业级地理数据库取消注册复本。</para>
 	/// </summary>
 	public class UnregisterReplica : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InGeodatabase">
 		/// <para>Input Geodatabase</para>
-		/// <para>The enterprise geodatabase that contains the replica to unregister.</para>
+		/// <para>包含要取消注册的复本的企业级地理数据库。</para>
 		/// </param>
 		/// <param name="InReplica">
 		/// <para>Replica ID or Name</para>
-		/// <para>The name or id of the replica that will be unregistered. If providing the replica name, it must be fully qualified, for example, myuser.myreplica.</para>
+		/// <para>将取消注册的复本的名称或 ID。如果提供复本名称，则它必须是完全限定的，例如 myuser.myreplica。</para>
 		/// </param>
 		public UnregisterReplica(object InGeodatabase, object InReplica)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Unregister Replica</para>
+		/// <para>Tool Display Name : 取消注册复本</para>
 		/// </summary>
-		public override string DisplayName() => "Unregister Replica";
+		public override string DisplayName() => "取消注册复本";
 
 		/// <summary>
 		/// <para>Tool Name : UnregisterReplica</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Geodatabase</para>
-		/// <para>The enterprise geodatabase that contains the replica to unregister.</para>
+		/// <para>包含要取消注册的复本的企业级地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Replica ID or Name</para>
-		/// <para>The name or id of the replica that will be unregistered. If providing the replica name, it must be fully qualified, for example, myuser.myreplica.</para>
+		/// <para>将取消注册的复本的名称或 ID。如果提供复本名称，则它必须是完全限定的，例如 myuser.myreplica。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

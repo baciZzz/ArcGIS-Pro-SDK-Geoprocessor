@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataInteroperabilityTools
 {
 	/// <summary>
 	/// <para>Quick Import</para>
+	/// <para>Quick Import</para>
 	/// <para>Geoprocessing tool to import data in any format supported by the ArcGIS Data Interoperability extension into feature classes.</para>
 	/// </summary>
 	public class QuickImport : AbstractGPProcess

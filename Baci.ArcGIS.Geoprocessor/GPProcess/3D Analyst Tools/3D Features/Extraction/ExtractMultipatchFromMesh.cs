@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Extract Multipatch From Mesh</para>
-	/// <para>Creates a multipatch feature from the portion of an integrated mesh that overlaps a polygon.</para>
+	/// <para>从网格中提取多面体</para>
+	/// <para>用于从与面重叠的集成网格的一部分创建多面体要素。</para>
 	/// </summary>
 	public class ExtractMultipatchFromMesh : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="SourceMesh">
 		/// <para>Source Integrated Mesh</para>
-		/// <para>The integrated mesh that will be processed.</para>
+		/// <para>将要处理的集成式网格。</para>
 		/// </param>
 		/// <param name="FootprintFeatures">
 		/// <para>Footprint Features</para>
-		/// <para>The polygon features defining the area that will be clipped.</para>
+		/// <para>此面要素用于定义将被裁剪的区域。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Multipatch Feature Class</para>
-		/// <para>The multipatch feature class that will be produced by this tool.</para>
+		/// <para>将由此工具生成的多面体要素类。</para>
 		/// </param>
 		public ExtractMultipatchFromMesh(object SourceMesh, object FootprintFeatures, object OutFeatureClass)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Extract Multipatch From Mesh</para>
+		/// <para>Tool Display Name : 从网格中提取多面体</para>
 		/// </summary>
-		public override string DisplayName() => "Extract Multipatch From Mesh";
+		public override string DisplayName() => "从网格中提取多面体";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractMultipatchFromMesh</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Source Integrated Mesh</para>
-		/// <para>The integrated mesh that will be processed.</para>
+		/// <para>将要处理的集成式网格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Footprint Features</para>
-		/// <para>The polygon features defining the area that will be clipped.</para>
+		/// <para>此面要素用于定义将被裁剪的区域。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Multipatch Feature Class</para>
-		/// <para>The multipatch feature class that will be produced by this tool.</para>
+		/// <para>将由此工具生成的多面体要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]

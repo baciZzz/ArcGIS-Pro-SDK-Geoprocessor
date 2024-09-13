@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Export Subnetwork Controllers</para>
-	/// <para>Exports subnetwork controllers from a utility network to a .csv file.</para>
+	/// <para>导出子网控制器</para>
+	/// <para>将公共设施网络中的子网控制器导出为 .csv 文件。</para>
 	/// </summary>
 	public class ExportSubnetworkControllers : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network from which subnetwork controllers will be exported.</para>
+		/// <para>将从中导出子网控制器的公共设施网络。</para>
 		/// </param>
 		/// <param name="OutCsvFile">
 		/// <para>Output File</para>
-		/// <para>The location and name of the .csv file to be generated.</para>
+		/// <para>要生成的 .csv 文件的位置和名称。</para>
 		/// </param>
 		public ExportSubnetworkControllers(object InUtilityNetwork, object OutCsvFile)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Export Subnetwork Controllers</para>
+		/// <para>Tool Display Name : 导出子网控制器</para>
 		/// </summary>
-		public override string DisplayName() => "Export Subnetwork Controllers";
+		public override string DisplayName() => "导出子网控制器";
 
 		/// <summary>
 		/// <para>Tool Name : ExportSubnetworkControllers</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network from which subnetwork controllers will be exported.</para>
+		/// <para>将从中导出子网控制器的公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>The location and name of the .csv file to be generated.</para>
+		/// <para>要生成的 .csv 文件的位置和名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

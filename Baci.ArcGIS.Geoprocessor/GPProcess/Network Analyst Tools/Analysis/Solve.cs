@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Solve</para>
-	/// <para>Solves the network analysis layer problem based on its network locations and properties.</para>
+	/// <para>求解</para>
+	/// <para>基于网络位置和属性求解网络分析图层问题。</para>
 	/// </summary>
 	[Obsolete()]
 	public class Solve : AbstractGPProcess
@@ -21,7 +22,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InNetworkAnalysisLayer">
 		/// <para>Input Network Analysis Layer</para>
-		/// <para>The network analysis layer on which the analysis will be computed.</para>
+		/// <para>要进行分析计算的网络分析图层。</para>
 		/// </param>
 		public Solve(object InNetworkAnalysisLayer)
 		{
@@ -29,14 +30,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Solve</para>
+		/// <para>Tool Display Name : 求解</para>
 		/// </summary>
-		public override string DisplayName() => "Solve";
+		public override string DisplayName() => "求解";
 
 		/// <summary>
-		/// <para>Tool Name : Solve</para>
+		/// <para>Tool Name : 求解</para>
 		/// </summary>
-		public override string ToolName() => "Solve";
+		public override string ToolName() => "求解";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.Solve</para>
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>
-		/// <para>The network analysis layer on which the analysis will be computed.</para>
+		/// <para>要进行分析计算的网络分析图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPNALayer()]
@@ -73,9 +74,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Ignore Invalid Locations</para>
-		/// <para>Specifies whether invalid input locations will be ignored.</para>
-		/// <para>Checked—The solver will skip over network locations that are unlocated and solve the analysis layer from valid network locations only. It will also continue solving if locations are on nontraversable elements or have other errors. This is useful if you know your network locations are not all correct, but you want to solve with the network locations that are valid. This is the default.</para>
-		/// <para>Unchecked—Do not solve if there are invalid locations. You can then correct these and rerun the analysis.</para>
+		/// <para>指定是否忽略无效的输入位置。</para>
+		/// <para>选中 - 求解程序将跳过未定位的网络位置而仅根据有效的网络位置来求解分析图层。如果这些位置位于不可遍历的元素上或有其他错误，求解程序仍会继续求解。如果您知道您的网络位置并不完全正确，但是想对有效的网络位置求解，此选项很有用。这是默认设置。</para>
+		/// <para>未选中 - 如果存在无效位置，则不进行求解。随后您可对这些无效位置进行调整，然后重新运行分析。</para>
 		/// <para><see cref="IgnoreInvalidsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -85,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Terminate on Solve Error</para>
-		/// <para>Specifies whether tool execution should terminate if an error is encountered during the solve.</para>
-		/// <para>Checked—The tool will fail to execute when the solver encounters an error. This is the default.</para>
-		/// <para>Unchecked—The tool will not fail and continue execution even when the solver encounters an error. All of the error messages returned by the solver will be converted to warning messages. You should use this option when background processing is enabled in your application.</para>
+		/// <para>指定在求解过程中遇到错误时是否应终止工具执行。</para>
+		/// <para>选中 - 该工具在求解程序遇到错误时将无法执行操作。这是默认设置。</para>
+		/// <para>未选中 - 即使求解程序遇到错误，该工具也不停止，而是继续执行操作。求解程序返回的所有错误消息都将转换为警告消息。如果在应用程序中启用了后台处理，则应使用该选项。</para>
 		/// <para><see cref="TerminateOnSolveErrorEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -97,9 +98,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Simplification Tolerance</para>
-		/// <para>The tolerance that determines the degree of simplification for the output geometry. If a tolerance is specified, it must be greater than zero. You can choose a preferred unit; the default unit is decimal degrees.</para>
-		/// <para>Specifying a simplification tolerance tends to reduce the time it takes to render routes or service areas. The drawback, however, is that simplifying geometry removes vertices, which may lessen the spatial accuracy of the output at larger scales.</para>
-		/// <para>Because a line with only two vertices cannot be simplified any further, this parameter has no effect on drawing times for single-segment output, such as straight-line routes, OD cost matrix lines, and location-allocation lines.</para>
+		/// <para>容差确定输出几何的简化程度。如果已指定了容差，容差必须大于零。可以选择首选单位；默认单位为十进制度。</para>
+		/// <para>指定简化容差会减少渲染路径或服务区的时间。但缺点是，简化几何移除了折点，这样会降低以更大比例输出的空间精确度。</para>
+		/// <para>由于带两个折点的线不能再简化，所以此参数对单一线段输出的绘制时间没有影响，例如直线路线、 OD 成本矩阵线和位置分配线。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -121,10 +122,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Overrides</para>
-		/// <para>Specify additional settings that can influence the behavior of the solver when finding solutions for the network analysis problems.</para>
-		/// <para>The value for this parameter needs to be specified in JavaScript Object Notation (JSON). For example, a valid value is of the following form {&quot;overrideSetting1&quot; : &quot;value1&quot;, &quot;overrideSetting2&quot; : &quot;value2&quot;}. The override setting name is always enclosed in double quotation marks. The values can be either a number, Boolean, or a string.</para>
-		/// <para>The default value for this parameter is no value, which indicates not to override any solver settings.</para>
-		/// <para>Overrides are advanced settings that should be used only after careful analysis of the results obtained before and after applying the settings. A list of supported override settings for each solver and their acceptable values can be obtained by contacting Esri Technical Support.</para>
+		/// <para>求解网络分析问题时，指定可影响求解程序行为的其他设置。</para>
+		/// <para>需要在 JavaScript 对象表示法 (JSON) 中指定此参数的值。例如，有效值的格式如下：{&quot;overrideSetting1&quot; : &quot;value1&quot;, &quot;overrideSetting2&quot; : &quot;value2&quot;}。覆盖设置名称始终以双引号括起。该值可以是数字、布尔值或字符串。</para>
+		/// <para>此参数的默认值为无值，表示不覆盖任何求解程序设置。</para>
+		/// <para>覆盖是高级设置，应仅在谨慎分析应用设置前后得到的结果之后使用。要获得每个求解程序支持的覆盖设置及其可接受值的列表，请联系 Esri 技术支持。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -147,14 +148,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum IgnoreInvalidsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The solver will skip over network locations that are unlocated and solve the analysis layer from valid network locations only. It will also continue solving if locations are on nontraversable elements or have other errors. This is useful if you know your network locations are not all correct, but you want to solve with the network locations that are valid. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SKIP")]
 			SKIP,
 
 			/// <summary>
-			/// <para>Unchecked—Do not solve if there are invalid locations. You can then correct these and rerun the analysis.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("HALT")]
@@ -168,14 +169,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TerminateOnSolveErrorEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The tool will fail to execute when the solver encounters an error. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TERMINATE")]
 			TERMINATE,
 
 			/// <summary>
-			/// <para>Unchecked—The tool will not fail and continue execution even when the solver encounters an error. All of the error messages returned by the solver will be converted to warning messages. You should use this option when background processing is enabled in your application.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CONTINUE")]

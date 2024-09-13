@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Multidimensional Transpose</para>
-	/// <para>Transposes a multidimensional raster dataset, which divides the  multidimensional data along each dimension to optimize performance when accessing pixel values across all slices.</para>
+	/// <para>构建多维转置</para>
+	/// <para>转置多维栅格数据集，以沿着每个维度对多维数据进行划分，从而优化访问所有剖切的像素值时的性能。</para>
 	/// </summary>
 	[Obsolete()]
 	public class BuildMultidimensionalTranspose : AbstractGPProcess
@@ -21,7 +22,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMultidimensionalRaster">
 		/// <para>Input Multidimensional Raster</para>
-		/// <para>The input CRF multidimensional raster dataset.</para>
+		/// <para>输入 CRF 多维栅格数据集。</para>
 		/// </param>
 		public BuildMultidimensionalTranspose(object InMultidimensionalRaster)
 		{
@@ -29,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Build Multidimensional Transpose</para>
+		/// <para>Tool Display Name : 构建多维转置</para>
 		/// </summary>
-		public override string DisplayName() => "Build Multidimensional Transpose";
+		public override string DisplayName() => "构建多维转置";
 
 		/// <summary>
 		/// <para>Tool Name : BuildMultidimensionalTranspose</para>
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>
-		/// <para>The input CRF multidimensional raster dataset.</para>
+		/// <para>输入 CRF 多维栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]

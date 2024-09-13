@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Import Floorplans To Indoors Geodatabase</para>
-	/// <para>Imports floor plans from CAD files into an indoor dataset that conforms to the ArcGIS Indoors Information Model. The output of this tool can be used to create floor-aware scenes for use in floor-aware apps, as well as to generate an indoor network for routing.</para>
+	/// <para>将楼层平面图导入 Indoors 地理数据库</para>
+	/// <para>将楼层平面图从 CAD 文件导入到符合 ArcGIS Indoors 信息模型的室内数据集中。 可使用该工具的输出创建楼层感知型场景，以用于楼层感知型应用程序，以及生成用于路由的室内网络。</para>
 	/// </summary>
 	public class ImportFloorplansToIndoorsGDB : AbstractGPProcess
 	{
@@ -20,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		/// <param name="InGeodatabase">
 		/// <para>Input Geodatabase</para>
-		/// <para>The geodatabase (file or enterprise) into which the floor plan data will be loaded.</para>
+		/// <para>将载入楼层平面图数据的地理数据库（文件或企业级）。</para>
 		/// </param>
 		/// <param name="InExcelTemplate">
 		/// <para>Input Excel Template File</para>
-		/// <para>An Excel spreadsheet (.xls or .xlsx file) that contains input and configuration parameters.</para>
+		/// <para>包含输入和配置参数的 Excel 电子表格（.xls 或 .xlsx 文件）。</para>
 		/// </param>
 		/// <param name="UniqueidDelimiter">
 		/// <para>Unique ID Delimiter</para>
-		/// <para>Specifies the delimiter that will separate key values in the Indoors model hierarchy.</para>
-		/// <para>Period—The ID will include key values separated by periods. This is default.</para>
-		/// <para>Hyphen—The ID will include key values separated by hyphens.</para>
-		/// <para>Underscore—The ID will include key values separated by underscores.</para>
+		/// <para>指定将按 Indoors 模型等级分隔键值的分隔符。</para>
+		/// <para>句点—该 ID 将包含以句点分隔的键值。 这是默认设置。</para>
+		/// <para>连字符—该 ID 将包含以连字符分隔的键值。</para>
+		/// <para>下划线—该 ID 将包含以下划线分隔的键值。</para>
 		/// <para><see cref="UniqueidDelimiterEnum"/></para>
 		/// </param>
 		public ImportFloorplansToIndoorsGDB(object InGeodatabase, object InExcelTemplate, object UniqueidDelimiter)
@@ -42,9 +43,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Import Floorplans To Indoors Geodatabase</para>
+		/// <para>Tool Display Name : 将楼层平面图导入 Indoors 地理数据库</para>
 		/// </summary>
-		public override string DisplayName() => "Import Floorplans To Indoors Geodatabase";
+		public override string DisplayName() => "将楼层平面图导入 Indoors 地理数据库";
 
 		/// <summary>
 		/// <para>Tool Name : ImportFloorplansToIndoorsGDB</para>
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Geodatabase</para>
-		/// <para>The geodatabase (file or enterprise) into which the floor plan data will be loaded.</para>
+		/// <para>将载入楼层平面图数据的地理数据库（文件或企业级）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Excel Template File</para>
-		/// <para>An Excel spreadsheet (.xls or .xlsx file) that contains input and configuration parameters.</para>
+		/// <para>包含输入和配置参数的 Excel 电子表格（.xls 或 .xlsx 文件）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -98,10 +99,10 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Unique ID Delimiter</para>
-		/// <para>Specifies the delimiter that will separate key values in the Indoors model hierarchy.</para>
-		/// <para>Period—The ID will include key values separated by periods. This is default.</para>
-		/// <para>Hyphen—The ID will include key values separated by hyphens.</para>
-		/// <para>Underscore—The ID will include key values separated by underscores.</para>
+		/// <para>指定将按 Indoors 模型等级分隔键值的分隔符。</para>
+		/// <para>句点—该 ID 将包含以句点分隔的键值。 这是默认设置。</para>
+		/// <para>连字符—该 ID 将包含以连字符分隔的键值。</para>
+		/// <para>下划线—该 ID 将包含以下划线分隔的键值。</para>
 		/// <para><see cref="UniqueidDelimiterEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Sliver Threshold</para>
-		/// <para>The ratio of perimeter to area that defines a sliver polygon. It is used when importing Unit polygons to improve the quality of the imported data. Unit polygons that are determined to be slivers are placed in a review geodatabase located in the scratch folder of the ArcGIS Pro project. The default value is 2.</para>
+		/// <para>定义狭长面的周长与面积之比。 可在导入单位面时使用，以提高导入数据的质量。 确定为狭长面的单位面将置于位于 ArcGIS Pro 工程的临时文件夹中的检查地理数据库中。 默认值为 2。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Door Close Buffer</para>
-		/// <para>The distance, in inches, the tool will search from a door to find and snap to the nearest wall. This parameter is used when the CLOSE_DOORS column is set to Y in the input Excel template file. The default value is 0.</para>
+		/// <para>该工具以门为原点搜索的距离（以英寸为单位），以查找并捕捉到最近的墙壁。 当在输入 Excel 模板文件中将 CLOSE_DOORS 列设置为 Y 时，将使用此参数。 默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -136,9 +137,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Area Unit of Measure</para>
-		/// <para>Specifies the unit of measure that will be used to calculate area for the area fields when importing floor plans.</para>
-		/// <para>Square Feet—Area will be defined in square feet. This is default.</para>
-		/// <para>Square Meters—Area will be defined in square meters.</para>
+		/// <para>在导入楼层平面图时，指定将用于计算区域字段的面积的测量单位。</para>
+		/// <para>平方英尺—将以平方英尺为单位来定义面积。 这是默认设置。</para>
+		/// <para>平方米—将以平方米为单位来定义面积。</para>
 		/// <para><see cref="AreaUnitOfMeasureEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -163,24 +164,24 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		public enum UniqueidDelimiterEnum 
 		{
 			/// <summary>
-			/// <para>Period—The ID will include key values separated by periods. This is default.</para>
+			/// <para>句点—该 ID 将包含以句点分隔的键值。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("PERIOD")]
-			[Description("Period")]
+			[Description("句点")]
 			Period,
 
 			/// <summary>
-			/// <para>Hyphen—The ID will include key values separated by hyphens.</para>
+			/// <para>连字符—该 ID 将包含以连字符分隔的键值。</para>
 			/// </summary>
 			[GPValue("HYPHEN")]
-			[Description("Hyphen")]
+			[Description("连字符")]
 			Hyphen,
 
 			/// <summary>
-			/// <para>Underscore—The ID will include key values separated by underscores.</para>
+			/// <para>下划线—该 ID 将包含以下划线分隔的键值。</para>
 			/// </summary>
 			[GPValue("UNDERSCORE")]
-			[Description("Underscore")]
+			[Description("下划线")]
 			Underscore,
 
 		}
@@ -191,17 +192,17 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		public enum AreaUnitOfMeasureEnum 
 		{
 			/// <summary>
-			/// <para>Square Feet—Area will be defined in square feet. This is default.</para>
+			/// <para>平方英尺—将以平方英尺为单位来定义面积。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("SQUARE_FEET")]
-			[Description("Square Feet")]
+			[Description("平方英尺")]
 			Square_Feet,
 
 			/// <summary>
-			/// <para>Square Meters—Area will be defined in square meters.</para>
+			/// <para>平方米—将以平方米为单位来定义面积。</para>
 			/// </summary>
 			[GPValue("SQUARE_METERS")]
-			[Description("Square Meters")]
+			[Description("平方米")]
 			Square_Meters,
 
 		}

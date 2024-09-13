@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Topo to Raster by File</para>
-	/// <para>Interpolates a hydrologically correct raster surface from point, line, and polygon data using parameters specified in a file.</para>
+	/// <para>依据文件实现地形转栅格</para>
+	/// <para>通过文件中指定的参数将点、线和面数据插值成符合真实地表的栅格表面。</para>
 	/// </summary>
 	public class TopoToRasterByFile : AbstractGPProcess
 	{
@@ -20,14 +21,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InParameterFile">
 		/// <para>Input parameter file</para>
-		/// <para>The input ASCII text file containing the inputs and parameters to use for the interpolation.</para>
-		/// <para>The file is typically created from a previous run of Topo to Raster with the optional output parameter file specified.</para>
-		/// <para>In order to test the outcome of changing the parameters, it is easier to make edits to this file and rerun the interpolation than to correctly issue the Topo to Raster tool each time.</para>
+		/// <para>包含插值中所用输入和参数的待输入 ASCII 文本文件。</para>
+		/// <para>通常，此文件在上次运行地形转栅格时创建，同时还将指定可选的输出参数文件。</para>
+		/// <para>为了测试参数更改的结果，对此文件进行编辑并重新运行插值比每次正确地启用地形转栅格工具更容易。</para>
 		/// </param>
 		/// <param name="OutSurfaceRaster">
 		/// <para>Output surface raster</para>
-		/// <para>The output interpolated surface raster.</para>
-		/// <para>It is always a floating-point raster.</para>
+		/// <para>输出插值后的表面栅格。</para>
+		/// <para>其总为浮点栅格。</para>
 		/// </param>
 		public TopoToRasterByFile(object InParameterFile, object OutSurfaceRaster)
 		{
@@ -36,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Topo to Raster by File</para>
+		/// <para>Tool Display Name : 依据文件实现地形转栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Topo to Raster by File";
+		public override string DisplayName() => "依据文件实现地形转栅格";
 
 		/// <summary>
 		/// <para>Tool Name : TopoToRasterByFile</para>
@@ -72,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input parameter file</para>
-		/// <para>The input ASCII text file containing the inputs and parameters to use for the interpolation.</para>
-		/// <para>The file is typically created from a previous run of Topo to Raster with the optional output parameter file specified.</para>
-		/// <para>In order to test the outcome of changing the parameters, it is easier to make edits to this file and rerun the interpolation than to correctly issue the Topo to Raster tool each time.</para>
+		/// <para>包含插值中所用输入和参数的待输入 ASCII 文本文件。</para>
+		/// <para>通常，此文件在上次运行地形转栅格时创建，同时还将指定可选的输出参数文件。</para>
+		/// <para>为了测试参数更改的结果，对此文件进行编辑并重新运行插值比每次正确地启用地形转栅格工具更容易。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -84,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output surface raster</para>
-		/// <para>The output interpolated surface raster.</para>
-		/// <para>It is always a floating-point raster.</para>
+		/// <para>输出插值后的表面栅格。</para>
+		/// <para>其总为浮点栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -93,17 +94,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output stream polyline features</para>
-		/// <para>Output feature class of stream polyline features.</para>
-		/// <para>The polyline features are coded as follows:</para>
-		/// <para>1. Input stream line not over cliff.</para>
-		/// <para>2. Input stream line over cliff (waterfall).</para>
-		/// <para>3. Drainage enforcement clearing a spurious sink.</para>
-		/// <para>4. Stream line determined from contour corner.</para>
-		/// <para>5. Ridge line determined from contour corner.</para>
-		/// <para>6. Code not used.</para>
-		/// <para>7. Data stream line side conditions.</para>
-		/// <para>8. Code not used.</para>
-		/// <para>9. Line indicating large elevation data clearance.</para>
+		/// <para>河流折线要素的输出要素类。</para>
+		/// <para>折线要素按如下方式编码：</para>
+		/// <para>1. 不在悬崖上的输入河流线。</para>
+		/// <para>2. 在悬崖上的输入河流线（瀑布）。</para>
+		/// <para>3. 清除伪汇的地形强化。</para>
+		/// <para>4. 从等值线拐角确定的河流线。</para>
+		/// <para>5. 从等值线拐角确定的山脊线。</para>
+		/// <para>6. 未使用代码。</para>
+		/// <para>7. 数据河流线边条件。</para>
+		/// <para>8. 未使用代码。</para>
+		/// <para>9. 表示大型高程数据间隙的线。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output remaining sink point features</para>
-		/// <para>Output feature class of remaining sink point features.</para>
+		/// <para>遗留汇点要素的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -119,8 +120,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output residual point features</para>
-		/// <para>The output point feature class of all the large elevation residuals as scaled by the local discretisation error.</para>
-		/// <para>All the scaled residuals larger than 10 should be inspected for possible errors in input elevation and stream data. Large-scaled residuals indicate conflicts between input elevation data and streamline data. These may also be associated with poor automatic drainage enforcements. These conflicts can be remedied by providing additional streamline and/or point elevation data after first checking and correcting errors in existing input data. Large unscaled residuals usually indicate input elevation errors.</para>
+		/// <para>由局部离散误差进行衡量的所有大高程残差的输出点要素类。</para>
+		/// <para>应对所有大于 10 的比例缩放残差进行检查，查看输入高程和河流数据是否存在错误。大比例缩放残差表示输入高程数据和河流线数据之间存在冲突。这可能也与不良的自动地形强化有关。这些冲突可以通过在首次检查和纠正现有输入数据中的错误后提供附加的流线和/或点高程数据来进行修复。未大比例缩放的残差通常表示存在输入高程误差。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -128,22 +129,22 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output stream and cliff error point features</para>
-		/// <para>The output point feature class of locations where possible stream and cliff errors occur.</para>
-		/// <para>The locations where the streams have closed loops, distributaries, and streams over cliffs can be identified from the point feature class. Cliffs with neighboring cells that are inconsistent with the high and low sides of the cliff are also indicated. This can be a good indicator of cliffs with incorrect direction.</para>
-		/// <para>Points are coded as follows:</para>
-		/// <para>1. True circuit in data streamline network.</para>
-		/// <para>2. Circuit in stream network as encoded on the out raster.</para>
-		/// <para>3. Circuit in stream network via connecting lakes.</para>
-		/// <para>4. Distributaries point.</para>
-		/// <para>5. Stream over a cliff (waterfall).</para>
-		/// <para>6. Points indicating multiple stream outflows from lakes.</para>
-		/// <para>7. Code not used.</para>
-		/// <para>8. Points beside cliffs with heights inconsistent with cliff direction.</para>
-		/// <para>9. Code not used.</para>
-		/// <para>10. Circular distributary removed.</para>
-		/// <para>11. Distributary with no inflowing stream.</para>
-		/// <para>12. Rasterized distributary in output cell different to where the data stream line distributary occurs.</para>
-		/// <para>13. Error processing side conditions—an indicator of very complex streamline data.</para>
+		/// <para>可能出现河流和悬崖错误的位置的输出点要素类。</para>
+		/// <para>可从点要素类来识别其河流有闭合环、支流和悬崖上河流的位置。还可识别相邻像元与悬崖高低边不一致的悬崖。这可以理想地指出方向错误的悬崖。</para>
+		/// <para>点按如下方式编码：</para>
+		/// <para>1. 数据河流线网络中的真回路。</para>
+		/// <para>2. 以外栅格编码的河流网络中的回路。</para>
+		/// <para>3. 通过连接湖泊的河流网络中的回路。</para>
+		/// <para>4. 支流点。</para>
+		/// <para>5. 悬崖上的河流（瀑布）。</para>
+		/// <para>6. 表示从湖泊流出多条河流的点。</para>
+		/// <para>7. 未使用代码。</para>
+		/// <para>8. 悬崖旁高度与悬崖方向不一致的点。</para>
+		/// <para>9. 未使用代码。</para>
+		/// <para>10. 已移除圆形支流。</para>
+		/// <para>11. 无流入河流的支流。</para>
+		/// <para>12. 不同于出现数据河流线支流位置的输出像元中的栅格化支流。</para>
+		/// <para>13. 处理边条件时出错 - 非常复杂的河流线数据的指示符。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -151,8 +152,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output contour  error point features</para>
-		/// <para>The output point feature class of possible errors pertaining to the input contour data.</para>
-		/// <para>Contours with bias in height exceeding five times the standard deviation of the contour values as represented on the output raster are reported to this feature class. Contours that join other contours with a different elevation are flagged in this feature class by the code 1; this is a sure sign of a contour label error.</para>
+		/// <para>可能发生的与输入等值线数据相关的错误的输出点要素类。</para>
+		/// <para>高度偏差达到输出栅格所示等值线值标准偏差五倍以上的等值线会报告至此要素类。与不同高程值的等值线相连接的等值线在此要素类中会使用代码 1 进行标记，这是等值线标注错误的明确标志。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]

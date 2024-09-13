@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Mosaic Dataset Paths</para>
-	/// <para>Creates a table of the file path for each item in a mosaic dataset. You can specify whether the table contains all the file paths or just the ones that are broken.</para>
+	/// <para>导出镶嵌数据集路径</para>
+	/// <para>为镶嵌数据集中的各个项创建文件路径表。可指定该表是包含所有文件路径，还是只包含损坏的路径。</para>
 	/// </summary>
 	public class ExportMosaicDatasetPaths : AbstractGPProcess
 	{
@@ -20,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset containing the file paths to export.</para>
+		/// <para>包含要导出的文件路径的镶嵌数据集。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>The table to create. The table can be a geodatabase table or a .dbf file.</para>
-		/// <para>The SourceOID field in the output table is derived from the OID of the row in the original mosaic dataset table.</para>
+		/// <para>要创建的表。表可以是地理数据库表或 .dbf 文件。</para>
+		/// <para>输出表中的 SourceOID 字段从原始镶嵌数据集表中行的 OID 中获取。</para>
 		/// </param>
 		public ExportMosaicDatasetPaths(object InMosaicDataset, object OutTable)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Export Mosaic Dataset Paths</para>
+		/// <para>Tool Display Name : 导出镶嵌数据集路径</para>
 		/// </summary>
-		public override string DisplayName() => "Export Mosaic Dataset Paths";
+		public override string DisplayName() => "导出镶嵌数据集路径";
 
 		/// <summary>
 		/// <para>Tool Name : ExportMosaicDatasetPaths</para>
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset containing the file paths to export.</para>
+		/// <para>包含要导出的文件路径的镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMosaicLayer()]
@@ -78,8 +79,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The table to create. The table can be a geodatabase table or a .dbf file.</para>
-		/// <para>The SourceOID field in the output table is derived from the OID of the row in the original mosaic dataset table.</para>
+		/// <para>要创建的表。表可以是地理数据库表或 .dbf 文件。</para>
+		/// <para>输出表中的 SourceOID 字段从原始镶嵌数据集表中行的 OID 中获取。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>An SQL expression to select specific rasters for export.</para>
+		/// <para>用于选择待导出的特定栅格的 SQL 表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -95,9 +96,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Export Mode</para>
-		/// <para>Populate the table with either all of the paths, or only the broken paths.</para>
-		/// <para>All paths—Export all paths to the table. This is the default.</para>
-		/// <para>Broken paths only—Export only broken paths to the table.</para>
+		/// <para>可以用所有路径填充表，或者仅以损坏的路径填充。</para>
+		/// <para>所有路径—将所有路径导出至表。这是默认设置。</para>
+		/// <para>仅损坏的路径—仅将损坏的路径导出至表。</para>
 		/// <para><see cref="ExportModeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -107,9 +108,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Types of paths to export</para>
-		/// <para>Choose to export file paths from only the source raster, only the cache, or both. The default is to export all path types.</para>
-		/// <para>Raster—Export file paths from rasters.</para>
-		/// <para>Item cache—Export file paths from item cache.</para>
+		/// <para>选择只从源栅格导出文件路径，只从缓存中导出，还是从二者同时导出。默认设置为导出所有路径类型。</para>
+		/// <para>栅格—从栅格中导出文件路径。</para>
+		/// <para>项目缓存—从项缓存中导出文件路径。</para>
 		/// <para><see cref="TypesOfPathsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -135,17 +136,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ExportModeEnum 
 		{
 			/// <summary>
-			/// <para>All paths—Export all paths to the table. This is the default.</para>
+			/// <para>所有路径—将所有路径导出至表。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All paths")]
+			[Description("所有路径")]
 			All_paths,
 
 			/// <summary>
-			/// <para>Broken paths only—Export only broken paths to the table.</para>
+			/// <para>仅损坏的路径—仅将损坏的路径导出至表。</para>
 			/// </summary>
 			[GPValue("BROKEN")]
-			[Description("Broken paths only")]
+			[Description("仅损坏的路径")]
 			Broken_paths_only,
 
 		}
@@ -156,17 +157,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TypesOfPathsEnum 
 		{
 			/// <summary>
-			/// <para>Raster—Export file paths from rasters.</para>
+			/// <para>栅格—从栅格中导出文件路径。</para>
 			/// </summary>
 			[GPValue("RASTER")]
-			[Description("Raster")]
+			[Description("栅格")]
 			Raster,
 
 			/// <summary>
-			/// <para>Item cache—Export file paths from item cache.</para>
+			/// <para>项目缓存—从项缓存中导出文件路径。</para>
 			/// </summary>
 			[GPValue("ITEM_CACHE")]
-			[Description("Item cache")]
+			[Description("项目缓存")]
 			Item_cache,
 
 		}

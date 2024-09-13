@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Apply Geo Positions Layout</para>
+	/// <para>Apply Geo Positions Layout</para>
 	/// <para>Apply the geo positions layout to a diagram</para>
 	/// </summary>
 	[Obsolete()]

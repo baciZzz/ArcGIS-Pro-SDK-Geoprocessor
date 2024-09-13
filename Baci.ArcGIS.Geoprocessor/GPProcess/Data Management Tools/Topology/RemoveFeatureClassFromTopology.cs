@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Feature Class From Topology</para>
-	/// <para>Removes a feature class from a topology.</para>
+	/// <para>从拓扑中移除要素类</para>
+	/// <para>从拓扑中移除要素类。</para>
 	/// </summary>
 	public class RemoveFeatureClassFromTopology : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTopology">
 		/// <para>Input Topology</para>
-		/// <para>The topology from which to remove the feature class.</para>
+		/// <para>要移除要素类的拓扑。</para>
 		/// </param>
 		/// <param name="InFeatureclass">
 		/// <para>Feature Class to Remove</para>
-		/// <para>The feature class to remove from the topology.</para>
+		/// <para>要从拓扑中移除的要素类。</para>
 		/// </param>
 		public RemoveFeatureClassFromTopology(object InTopology, object InFeatureclass)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Remove Feature Class From Topology</para>
+		/// <para>Tool Display Name : 从拓扑中移除要素类</para>
 		/// </summary>
-		public override string DisplayName() => "Remove Feature Class From Topology";
+		public override string DisplayName() => "从拓扑中移除要素类";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveFeatureClassFromTopology</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Topology</para>
-		/// <para>The topology from which to remove the feature class.</para>
+		/// <para>要移除要素类的拓扑。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTopologyLayer()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Feature Class to Remove</para>
-		/// <para>The feature class to remove from the topology.</para>
+		/// <para>要从拓扑中移除的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Delete Rule</para>
-	/// <para>Permanently deletes a rule from a utility network.</para>
+	/// <para>删除规则</para>
+	/// <para>用于从公共设施网络中永久删除规则。</para>
 	/// </summary>
 	public class DeleteRule : AbstractGPProcess
 	{
@@ -20,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network for which the rule will be removed.</para>
+		/// <para>将移除规则的公共设施网络。</para>
 		/// </param>
 		/// <param name="RuleType">
 		/// <para>Rule Type</para>
-		/// <para>The type of rule being deleted.</para>
-		/// <para>All—Delete all rules.</para>
-		/// <para>Junction-junction connectivity—Delete a junction-junction connectivity association rule.</para>
-		/// <para>Containment—Delete a containment association rule.</para>
-		/// <para>Structural attachment—Delete a structural attachment association rule.</para>
-		/// <para>Junction-edge connectivity—Delete a junction-edge connectivity rule.</para>
-		/// <para>Edge-junction-edge connectivity—Delete an edge-junction-edge connectivity rule.</para>
+		/// <para>要删除的规则类型。</para>
+		/// <para>全部—删除所有规则。</para>
+		/// <para>交汇点-交汇点连通性—删除交汇点-交汇点连通性关联规则。</para>
+		/// <para>包含—删除包含关联规则。</para>
+		/// <para>结构附件—删除结构附件关联规则。</para>
+		/// <para>交汇点-边连通性—删除交汇点-边连通性规则。</para>
+		/// <para>边-交汇点-边连通性—删除边-交汇点-边连通性规则。</para>
 		/// <para><see cref="RuleTypeEnum"/></para>
 		/// </param>
 		public DeleteRule(object InUtilityNetwork, object RuleType)
@@ -40,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Delete Rule</para>
+		/// <para>Tool Display Name : 删除规则</para>
 		/// </summary>
-		public override string DisplayName() => "Delete Rule";
+		public override string DisplayName() => "删除规则";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteRule</para>
@@ -76,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network for which the rule will be removed.</para>
+		/// <para>将移除规则的公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -84,13 +85,13 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Rule Type</para>
-		/// <para>The type of rule being deleted.</para>
-		/// <para>All—Delete all rules.</para>
-		/// <para>Junction-junction connectivity—Delete a junction-junction connectivity association rule.</para>
-		/// <para>Containment—Delete a containment association rule.</para>
-		/// <para>Structural attachment—Delete a structural attachment association rule.</para>
-		/// <para>Junction-edge connectivity—Delete a junction-edge connectivity rule.</para>
-		/// <para>Edge-junction-edge connectivity—Delete an edge-junction-edge connectivity rule.</para>
+		/// <para>要删除的规则类型。</para>
+		/// <para>全部—删除所有规则。</para>
+		/// <para>交汇点-交汇点连通性—删除交汇点-交汇点连通性关联规则。</para>
+		/// <para>包含—删除包含关联规则。</para>
+		/// <para>结构附件—删除结构附件关联规则。</para>
+		/// <para>交汇点-边连通性—删除交汇点-边连通性规则。</para>
+		/// <para>边-交汇点-边连通性—删除边-交汇点-边连通性规则。</para>
 		/// <para><see cref="RuleTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Rules</para>
-		/// <para>Specifies which rule to remove. This includes the rule ID and the description of the rule.You can find the rule ID by browsing the Rules section of the Network Properties, which is available on the Layer Properties dialog box.</para>
+		/// <para>指定要移除的规则。包括规则 ID 和规则的描述。可以通过浏览图层属性对话框中网络属性的规则部分找到规则 ID。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -121,45 +122,45 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum RuleTypeEnum 
 		{
 			/// <summary>
-			/// <para>All—Delete all rules.</para>
+			/// <para>全部—删除所有规则。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All")]
+			[Description("全部")]
 			All,
 
 			/// <summary>
-			/// <para>Junction-junction connectivity—Delete a junction-junction connectivity association rule.</para>
+			/// <para>交汇点-交汇点连通性—删除交汇点-交汇点连通性关联规则。</para>
 			/// </summary>
 			[GPValue("JUNCTION_JUNCTION_CONNECTIVITY")]
-			[Description("Junction-junction connectivity")]
+			[Description("交汇点-交汇点连通性")]
 			JUNCTION_JUNCTION_CONNECTIVITY,
 
 			/// <summary>
-			/// <para>Junction-edge connectivity—Delete a junction-edge connectivity rule.</para>
+			/// <para>交汇点-边连通性—删除交汇点-边连通性规则。</para>
 			/// </summary>
 			[GPValue("JUNCTION_EDGE_CONNECTIVITY")]
-			[Description("Junction-edge connectivity")]
+			[Description("交汇点-边连通性")]
 			JUNCTION_EDGE_CONNECTIVITY,
 
 			/// <summary>
-			/// <para>Containment—Delete a containment association rule.</para>
+			/// <para>包含—删除包含关联规则。</para>
 			/// </summary>
 			[GPValue("CONTAINMENT")]
-			[Description("Containment")]
+			[Description("包含")]
 			Containment,
 
 			/// <summary>
-			/// <para>Structural attachment—Delete a structural attachment association rule.</para>
+			/// <para>结构附件—删除结构附件关联规则。</para>
 			/// </summary>
 			[GPValue("STRUCTURAL_ATTACHMENT")]
-			[Description("Structural attachment")]
+			[Description("结构附件")]
 			Structural_attachment,
 
 			/// <summary>
-			/// <para>Edge-junction-edge connectivity—Delete an edge-junction-edge connectivity rule.</para>
+			/// <para>边-交汇点-边连通性—删除边-交汇点-边连通性规则。</para>
 			/// </summary>
 			[GPValue("EDGE_JUNCTION_EDGE_CONNECTIVITY")]
-			[Description("Edge-junction-edge connectivity")]
+			[Description("边-交汇点-边连通性")]
 			EDGE_JUNCTION_EDGE_CONNECTIVITY,
 
 		}

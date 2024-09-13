@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Table Compare</para>
-	/// <para>Compares two tables or table views and returns the comparison results.</para>
+	/// <para>表比较</para>
+	/// <para>对两个表或表视图进行比较并返回比较结果。</para>
 	/// </summary>
 	public class TableCompare : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InBaseTable">
 		/// <para>Input Base Table</para>
-		/// <para>The Input Base Table is compared with the Input Test Table. The Input Base Table refers to tabular data that you have declared valid. The base data has the correct field definitions and attribute values.</para>
+		/// <para>将输入基础表与输入测试表进行比较。输入基础表是指已被声明为有效的表格数据。该基础数据具有正确的字段定义和属性值。</para>
 		/// </param>
 		/// <param name="InTestTable">
 		/// <para>Input Test Table</para>
-		/// <para>The Input Test Table is compared against the Input Base Table. The Input Test Table refers to data that you have made changes to by editing or compiling new fields, new records, or new attribute values.</para>
+		/// <para>将输入测试表与输入基础表进行比较。输入测试表是指已通过编辑或编译新的字段、新的记录或新的属性值而进行更改的数据。</para>
 		/// </param>
 		/// <param name="SortField">
 		/// <para>Sort Field</para>
-		/// <para>The field or fields used to sort records in the Input Base Table and the Input Test Table. The records are sorted in ascending order. Sorting by a common field in both the Input Base Table and the Input Test Table ensures that you are comparing the same row from each input dataset.</para>
+		/// <para>用于在输入基础表和输入测试表中对记录进行排序的一个或多个字段。记录将以升序进行排序。在输入基础表与输入测试表中均按公用字段进行排序，可确保对每个输入数据集中相同的行进行比较。</para>
 		/// </param>
 		public TableCompare(object InBaseTable, object InTestTable, object SortField)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Table Compare</para>
+		/// <para>Tool Display Name : 表比较</para>
 		/// </summary>
-		public override string DisplayName() => "Table Compare";
+		public override string DisplayName() => "表比较";
 
 		/// <summary>
 		/// <para>Tool Name : TableCompare</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Base Table</para>
-		/// <para>The Input Base Table is compared with the Input Test Table. The Input Base Table refers to tabular data that you have declared valid. The base data has the correct field definitions and attribute values.</para>
+		/// <para>将输入基础表与输入测试表进行比较。输入基础表是指已被声明为有效的表格数据。该基础数据具有正确的字段定义和属性值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Test Table</para>
-		/// <para>The Input Test Table is compared against the Input Base Table. The Input Test Table refers to data that you have made changes to by editing or compiling new fields, new records, or new attribute values.</para>
+		/// <para>将输入测试表与输入基础表进行比较。输入测试表是指已通过编辑或编译新的字段、新的记录或新的属性值而进行更改的数据。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Sort Field</para>
-		/// <para>The field or fields used to sort records in the Input Base Table and the Input Test Table. The records are sorted in ascending order. Sorting by a common field in both the Input Base Table and the Input Test Table ensures that you are comparing the same row from each input dataset.</para>
+		/// <para>用于在输入基础表和输入测试表中对记录进行排序的一个或多个字段。记录将以升序进行排序。在输入基础表与输入测试表中均按公用字段进行排序，可确保对每个输入数据集中相同的行进行比较。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -98,10 +99,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compare Type</para>
-		/// <para>The comparison type. ALL is the default. The default will compare all properties of the tables being compared.</para>
-		/// <para>All—Compare all properties. This is the default.</para>
-		/// <para>Attributes only—Only compare the attributes and their values.</para>
-		/// <para>Schema only—Only compare the schema.</para>
+		/// <para>比较类型。默认设置为 ALL。该默认设置将对要比较的表中的所有属性进行比较。</para>
+		/// <para>所有—比较所有属性。这是默认设置。</para>
+		/// <para>仅属性—仅比较属性及其值。</para>
+		/// <para>仅方案—仅比较方案。</para>
 		/// <para><see cref="CompareTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -111,11 +112,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Ignore Options</para>
-		/// <para>These properties will not be compared.</para>
-		/// <para>Ignore extension properties—Do not compare extension properties.</para>
-		/// <para>Ignore subtypes—Do not compare subtypes.</para>
-		/// <para>Ignore relationship classes—Do not compare relationship classes.</para>
-		/// <para>Ignore field alias—Do not compare field aliases.</para>
+		/// <para>不会对这些属性进行比较。</para>
+		/// <para>忽略扩展属性—不比较扩展属性。</para>
+		/// <para>忽略子类型—不比较子类型。</para>
+		/// <para>忽略关系类—不比较关系类。</para>
+		/// <para>忽略字段别名—不比较字段别名。</para>
 		/// <para><see cref="IgnoreOptionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -125,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Attribute Tolerance</para>
-		/// <para>The numeric value that determines the range in which attribute values are considered equal. This only applies to numeric field types.</para>
+		/// <para>在该数值范围内的属性值将被视作相同。它仅适用于数值字段类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -134,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Omit Fields</para>
-		/// <para>The field or fields that will be omitted during comparison. The field definitions and the tabular values for these fields will be ignored.</para>
+		/// <para>在比较过程中将被忽略的一个或多个字段。这些字段的字段定义和表格值将被忽略。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -142,9 +143,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Continue Comparison</para>
-		/// <para>Indicates whether to compare all properties after encountering the first mismatch.</para>
-		/// <para>Unchecked—Stop after encountering the first mismatch. This is the default.</para>
-		/// <para>Checked—Compare other properties after encountering the first mismatch.</para>
+		/// <para>指示在遇到第一个不匹配项后是否继续比较所有属性。</para>
+		/// <para>未选中 - 在遇到第一个不匹配项后即停止比较。这是默认设置。</para>
+		/// <para>选中 - 在遇到第一个不匹配项后继续比较其他属性。</para>
 		/// <para><see cref="ContinueCompareEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -154,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Compare File</para>
-		/// <para>This file will contain all similarities and differences between the Input Base Table and the Input Test Table. This file is a comma-delimited text file that can be viewed and used as a table in ArcGIS.</para>
+		/// <para>该文件将包含输入基础表和输入测试表之间的所有异同点。该文件是一个以逗号分隔的文本文件，在 ArcGIS 中可以表的形式对其进行查看和使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -186,24 +187,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CompareTypeEnum 
 		{
 			/// <summary>
-			/// <para>All—Compare all properties. This is the default.</para>
+			/// <para>所有—比较所有属性。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All")]
+			[Description("所有")]
 			All,
 
 			/// <summary>
-			/// <para>Attributes only—Only compare the attributes and their values.</para>
+			/// <para>仅属性—仅比较属性及其值。</para>
 			/// </summary>
 			[GPValue("ATTRIBUTES_ONLY")]
-			[Description("Attributes only")]
+			[Description("仅属性")]
 			Attributes_only,
 
 			/// <summary>
-			/// <para>Schema only—Only compare the schema.</para>
+			/// <para>仅方案—仅比较方案。</para>
 			/// </summary>
 			[GPValue("SCHEMA_ONLY")]
-			[Description("Schema only")]
+			[Description("仅方案")]
 			Schema_only,
 
 		}
@@ -214,31 +215,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IgnoreOptionsEnum 
 		{
 			/// <summary>
-			/// <para>Ignore extension properties—Do not compare extension properties.</para>
+			/// <para>忽略扩展属性—不比较扩展属性。</para>
 			/// </summary>
 			[GPValue("IGNORE_EXTENSION_PROPERTIES")]
-			[Description("Ignore extension properties")]
+			[Description("忽略扩展属性")]
 			Ignore_extension_properties,
 
 			/// <summary>
-			/// <para>Ignore subtypes—Do not compare subtypes.</para>
+			/// <para>忽略子类型—不比较子类型。</para>
 			/// </summary>
 			[GPValue("IGNORE_SUBTYPES")]
-			[Description("Ignore subtypes")]
+			[Description("忽略子类型")]
 			Ignore_subtypes,
 
 			/// <summary>
-			/// <para>Ignore relationship classes—Do not compare relationship classes.</para>
+			/// <para>忽略关系类—不比较关系类。</para>
 			/// </summary>
 			[GPValue("IGNORE_RELATIONSHIPCLASSES")]
-			[Description("Ignore relationship classes")]
+			[Description("忽略关系类")]
 			Ignore_relationship_classes,
 
 			/// <summary>
-			/// <para>Ignore field alias—Do not compare field aliases.</para>
+			/// <para>忽略字段别名—不比较字段别名。</para>
 			/// </summary>
 			[GPValue("IGNORE_FIELDALIAS")]
-			[Description("Ignore field alias")]
+			[Description("忽略字段别名")]
 			Ignore_field_alias,
 
 		}
@@ -249,14 +250,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ContinueCompareEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Compare other properties after encountering the first mismatch.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CONTINUE_COMPARE")]
 			CONTINUE_COMPARE,
 
 			/// <summary>
-			/// <para>Unchecked—Stop after encountering the first mismatch. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CONTINUE_COMPARE")]

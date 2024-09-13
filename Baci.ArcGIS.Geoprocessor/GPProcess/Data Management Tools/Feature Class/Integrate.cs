@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Integrate</para>
-	/// <para>Analyzes the coordinate locations of feature vertices among features in one or more feature classes. Those that fall within a specified distance of one another are assumed to represent the same location and are assigned a common coordinate value (in other words, they are colocated). The tool also adds vertices where feature vertices are within the x,y tolerance of an edge and where line segments intersect.</para>
+	/// <para>整合</para>
+	/// <para>分析一个或多个要素类中要素之间的要素折点的坐标位置。彼此间距离在指定范围内的折点被认为表示同一个位置，并被指定一个共有坐标值（换句话说，将它们定位于同一点）。该工具还会在要素折点位于边的 x,y 容差范围内以及线段相交的位置处添加折点。</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.AnalysisTools.PairwiseIntegrate"/> tool provides enhanced functionality or performance</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -24,7 +25,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The feature classes to be integrated. When the distance between features is small in comparison to the tolerance, the vertices or points will be clustered (moved to be coincident). The feature class or layer with the lower rank will snap to the feature from the feature class or layer with the higher rank (with 1 being a higher rank than 2). Features in the feature class with a rank of 1 may move when a large x,y tolerance is used. For more information, see Priority ranks and geoprocessing tools.</para>
+		/// <para>要整合的要素类。如果要素间的距离小于容差，则折点或点将被聚类（移动至重合状态）。等级较低的要素类或图层将捕捉到等级较高的要素类或图层中的要素（其中 1 级高于 2 级）。如果使用的 x,y 容差较大，则等级为 1 的要素类中的要素甚至也可能发生移动。有关详细信息，请参阅优先级等级和地理处理工具。</para>
 		/// </param>
 		public Integrate(object InFeatures)
 		{
@@ -32,14 +33,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Integrate</para>
+		/// <para>Tool Display Name : 整合</para>
 		/// </summary>
-		public override string DisplayName() => "Integrate";
+		public override string DisplayName() => "整合";
 
 		/// <summary>
-		/// <para>Tool Name : Integrate</para>
+		/// <para>Tool Name : 整合</para>
 		/// </summary>
-		public override string ToolName() => "Integrate";
+		public override string ToolName() => "整合";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Integrate</para>
@@ -68,7 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The feature classes to be integrated. When the distance between features is small in comparison to the tolerance, the vertices or points will be clustered (moved to be coincident). The feature class or layer with the lower rank will snap to the feature from the feature class or layer with the higher rank (with 1 being a higher rank than 2). Features in the feature class with a rank of 1 may move when a large x,y tolerance is used. For more information, see Priority ranks and geoprocessing tools.</para>
+		/// <para>要整合的要素类。如果要素间的距离小于容差，则折点或点将被聚类（移动至重合状态）。等级较低的要素类或图层将捕捉到等级较高的要素类或图层中的要素（其中 1 级高于 2 级）。如果使用的 x,y 容差较大，则等级为 1 的要素类中的要素甚至也可能发生移动。有关详细信息，请参阅优先级等级和地理处理工具。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -77,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
-		/// <para>The distance that determines the range in which feature vertices are made coincident. To minimize undesired movement of vertices, the x,y tolerance should be fairly small. If no value is specified, the xy tolerance from the first dataset in the list of inputs will be used.</para>
-		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that this parameter not be modified. It has been removed from view in the tool dialog. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
+		/// <para>该距离可确定一个范围，要素折点将在此范围内实现重合。要最大限度的减少不必要的折点移动，x,y 容差应该非常小。如果未指定任何值，则将使用输入列表中第一个数据集的 xy 容差。</para>
+		/// <para>更改此参数的值可能会导致出现故障或意外结果。建议不要修改此参数。已将其从工具对话框的视图中移除。默认情况下，将使用输入要素类的空间参考 x,y 容差属性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]

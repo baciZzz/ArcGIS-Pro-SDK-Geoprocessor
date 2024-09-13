@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Create LRS Event From Existing Dataset</para>
+	/// <para>Create LRS Event From Existing Dataset</para>
 	/// <para>Registers an existing feature class as an LRS event.</para>
 	/// </summary>
 	public class CreateLRSEventFromExistingDataset : AbstractGPProcess

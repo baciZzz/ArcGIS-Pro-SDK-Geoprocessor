@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 {
 	/// <summary>
 	/// <para>ServerTool</para>
+	/// <para>ServerTool</para>
 	/// <para></para>
 	/// </summary>
 	public class CreateMapArea : AbstractGPProcess

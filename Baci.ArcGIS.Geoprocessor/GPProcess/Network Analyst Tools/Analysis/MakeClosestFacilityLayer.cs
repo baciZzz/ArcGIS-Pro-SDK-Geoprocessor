@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make Closest Facility Layer</para>
-	/// <para>Makes a closest facility network analysis layer and sets its analysis properties. A closest facility analysis layer is useful in determining the closest facility or facilities to an incident based on a specified network cost.</para>
+	/// <para>创建最近设施点图层</para>
+	/// <para>创建最近设施点网络分析图层并设置其分析属性。最近设施点分析图层对于根据指定的网络成本确定与事件点距离最近的设施点十分有用。</para>
 	/// </summary>
 	[Obsolete()]
 	public class MakeClosestFacilityLayer : AbstractGPProcess
@@ -21,15 +22,15 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InNetworkDataset">
 		/// <para>Input Analysis Network</para>
-		/// <para>The network dataset on which the closest facility analysis will be performed.</para>
+		/// <para>要执行最近设施点分析的网络数据集。</para>
 		/// </param>
 		/// <param name="OutNetworkAnalysisLayer">
 		/// <para>Output Layer Name</para>
-		/// <para>Name of the closest facility network analysis layer to create.</para>
+		/// <para>要创建的最近设施点网络分析图层的名称。</para>
 		/// </param>
 		/// <param name="ImpedanceAttribute">
 		/// <para>Impedance Attribute</para>
-		/// <para>The cost attribute to be used as impedance in the analysis.</para>
+		/// <para>分析过程中用作阻抗的成本属性。</para>
 		/// </param>
 		public MakeClosestFacilityLayer(object InNetworkDataset, object OutNetworkAnalysisLayer, object ImpedanceAttribute)
 		{
@@ -39,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Make Closest Facility Layer</para>
+		/// <para>Tool Display Name : 创建最近设施点图层</para>
 		/// </summary>
-		public override string DisplayName() => "Make Closest Facility Layer";
+		public override string DisplayName() => "创建最近设施点图层";
 
 		/// <summary>
 		/// <para>Tool Name : MakeClosestFacilityLayer</para>
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Analysis Network</para>
-		/// <para>The network dataset on which the closest facility analysis will be performed.</para>
+		/// <para>要执行最近设施点分析的网络数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPNetworkDatasetLayer()]
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Layer Name</para>
-		/// <para>Name of the closest facility network analysis layer to create.</para>
+		/// <para>要创建的最近设施点网络分析图层的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -91,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Impedance Attribute</para>
-		/// <para>The cost attribute to be used as impedance in the analysis.</para>
+		/// <para>分析过程中用作阻抗的成本属性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -100,10 +101,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Travel From or To Facility</para>
-		/// <para>Specifies the direction of travel between facilities and incidents.</para>
-		/// <para>Facilities to Incidents—Direction of travel is from facilities to incidents. Fire departments commonly use the this setting, since they are concerned with the time it takes to travel from the fire station (facility) to the location of the emergency (incident).</para>
-		/// <para>Incidents to Facilities—Direction of travel is from incidents to facilities. Retail stores commonly use this setting, since they are concerned with the time it takes the shoppers (incidents) to reach the store (facility).</para>
-		/// <para>Using this option can find different facilities on a network with one-way restrictions and different impedances based on direction of travel. For instance, a facility may be a 10-minute drive from the incident while traveling from the incident to the facility, but while traveling from the facility to the incident, it may be a 15-minute journey because of different travel time in that direction.</para>
+		/// <para>指定设施点与事件点之间的行驶方向。</para>
+		/// <para>设施点到事件点—行驶方向 - 从设施点到事件点。消防部门通常使用该设置，因为他们需要关注从消防站（设施点）行驶到紧急救援位置（事件点）所需的时间。</para>
+		/// <para>事件点到设施点—行驶方向 - 从事件点到设施点。零售店通常使用该设置，因为他们需要关注购物者（事件点）到达商店（设施点）所需的时间。</para>
+		/// <para>如果网络具有单向限制和因行驶方向而异的阻抗，则使用此选项可在该网络上查找到不同的设施点。例如，从事件点行驶到设施点时，可能需要 10 分钟，而从设施点行驶到事件点时，可能因该方向上的行驶时间不同而需要 15 分钟。</para>
 		/// <para><see cref="TravelFromToEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -113,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Default Cutoff</para>
-		/// <para>Default impedance value at which to stop searching for facilities for a given incident. This default can be overridden by specifying the cutoff value on incidents when the direction of travel is from incidents to facilities or by specifying the cutoff value on facilities when the direction of travel is from facilities to incidents.</para>
+		/// <para>停止为指定事件点搜索设施点时所对应的默认阻抗值。可通过以下方式覆盖该默认值：在行驶方向为从事件点到设施点时，指定事件点的中断值；或者在行驶方向为从设施点到事件点时，指定设施点的中断值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -121,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Number of Facilities to Find</para>
-		/// <para>Default number of closest facilities to find per incident. The default can be overridden by specifying a value for the TargetFacilityCount property on the incidents.</para>
+		/// <para>要按事件点查找的默认最近设施点数。可通过为事件点的 TargetFacilityCount 属性指定一个值来覆盖该默认值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -129,8 +130,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Accumulators</para>
-		/// <para>A list of cost attributes to be accumulated during analysis. These accumulation attributes are for reference only; the solver only uses the cost attribute specified by the Impedance Attribute parameter to calculate the route.</para>
-		/// <para>For each cost attribute that is accumulated, a Total_[Impedance] property is added to the routes that are output by the solver.</para>
+		/// <para>分析过程中要累积的成本属性的列表。这些累积属性仅供参考；求解程序仅使用阻抗属性参数所指定的成本属性来计算路径。</para>
+		/// <para>对于每个累积的成本属性，均会向求解程序所输出的路径中添加一个 Total_[阻抗] 属性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -140,12 +141,12 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>U-Turn Policy</para>
-		/// <para>Specifies the U-turn policy that will be used at junctions. Allowing U-turns implies that the solver can turn around at a junction and double back on the same street. Given that junctions represent street intersections and dead ends, different vehicles may be able to turn around at some junctions but not at others—it depends on whether the junction represents an intersection or a dead end. To accommodate this, the U-turn policy parameter is implicitly specified by the number of edges that connect to the junction, which is known as junction valency. The acceptable values for this parameter are listed below; each is followed by a description of its meaning in terms of junction valency.</para>
-		/// <para>Allowed—U-turns are permitted at junctions with any number of connected edges. This is the default value.</para>
-		/// <para>Not allowed—U-turns are prohibited at all junctions, regardless of junction valency. However, U-turns are still permitted at network locations even when this setting is chosen, but you can set the individual network location&apos;s CurbApproach property to prohibit U-turns there as well.</para>
-		/// <para>Allowed at dead ends only—U-turns are prohibited at all junctions, except those that have only one adjacent edge (a dead end).</para>
-		/// <para>Allowed at dead ends and intersections only—U-turns are prohibited at junctions where exactly two adjacent edges meet but are permitted at intersections (junctions with three or more adjacent edges) and dead ends (junctions with exactly one adjacent edge). Often, networks have extraneous junctions in the middle of road segments. This option prevents vehicles from making U-turns at these locations.</para>
-		/// <para>If you need a more precisely defined U-turn policy, consider adding a global turn delay evaluator to a network cost attribute or adjusting its settings if one exists, and pay particular attention to the configuration of reverse turns. You can also set the CurbApproach property of your network locations.</para>
+		/// <para>指定将在交汇点处使用的 U 形转弯策略。允许 U 形转弯表示求解程序可以在交汇点处转向并沿同一街道往回行驶。考虑到交汇点表示街道交叉路口和死角，不同的车辆可以在某些交汇点转弯，而在其他交汇点则不行 - 这取决于交汇点是交叉路口还是死角。为适应此情况，U 形转弯策略参数由连接到交汇点的边数隐性指定，这称为交汇点价。此参数可接受的值如下所列；每个值的后面是根据交汇点价对其含义的描述。</para>
+		/// <para>允许—无论在交汇点处有几条连接的边，均允许 U 形转弯。这是默认值。</para>
+		/// <para>不允许—在所有交汇点处均禁止 U 形转弯，不管交汇点原子价如何。不过请注意，即使已选择该设置，在网络位置处仍允许 U 形转弯；但是也可以通过设置个别网络位置的 CurbApproach 属性来禁止 U 形转弯。</para>
+		/// <para>仅在末路处允许—除仅有一条相邻边的交汇点（死角）外，其他交汇点均禁止 U 形转弯。</para>
+		/// <para>仅在末路处和交点处允许—在恰好有两条相邻边相遇的交汇点处禁止 U 形转弯，但是交叉点（三条或三条以上相邻边的交汇点）和死角（仅有一条相邻边的交汇点）处允许。通常，网络在路段中间有多余的交汇点。此选项可防止车辆在这些位置出现 U 形转弯。</para>
+		/// <para>如果您需要定义更加精确的 U 形转弯策略，可以考虑在网络成本属性中添加一个通用转弯延迟赋值器，或者如果存在的话，调整其设置，并特别注意反向转弯的配置。还可以设置网络位置的 CurbApproach 属性。</para>
 		/// <para><see cref="UturnPolicyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -156,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Restrictions</para>
-		/// <para>A list of restriction attributes to be applied during the analysis.</para>
+		/// <para>分析过程中要应用的限制属性的列表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -166,9 +167,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Use Hierarchy in Analysis</para>
-		/// <para>Checked—The hierarchy attribute will be used for the analysis. Using a hierarchy results in the solver preferring higher-order edges to lower-order edges. Hierarchical solves are faster, and they can be used to simulate the preference of a driver who chooses to travel on freeways rather than local roads when possible—even if that means a longer trip. This option is active only if the input network dataset has a hierarchy attribute.</para>
-		/// <para>Unchecked—The hierarchy attribute will not be used for the analysis. If hierarchy is not used, the result is an exact route for the network dataset.</para>
-		/// <para>The parameter is inactive if a hierarchy attribute is not defined on the network dataset used to perform the analysis.</para>
+		/// <para>选中 - 将使用等级属性进行分析。使用等级的结果是，求解程序更偏好高等级的边而不是低等级的边。分等级求解的速度更快，并且可用于模拟驾驶员在可能的情况下选择在高速公路而非地方道路上行驶（即使行程可能更远）的偏好。只有输入网络数据集具有等级属性时，此选项才处于活动状态。</para>
+		/// <para>未选中 - 将不会使用等级属性进行分析。如果未使用等级，则结果是网络数据集的精确路径。</para>
+		/// <para>如果未在用于执行分析的网络数据集中定义等级属性，该参数将处于非活动状态。</para>
 		/// <para><see cref="HierarchyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -179,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Hierarchy Rank Settings</para>
-		/// <para>Prior to version 10, this parameter allowed you to change the hierarchy ranges for your analysis from the default hierarchy ranges established in the network dataset. At version 10, this parameter is no longer supported. To change the hierarchy ranges for your analysis, update the default hierarchy ranges in the network dataset.</para>
+		/// <para>在版本 10 之前，可使用此参数将网络数据集中建立的默认等级范围更改为其他范围以用于分析。而版本 10 中不再支持此参数。要更改等级范围以进行分析，请更新网络数据集中的默认等级范围。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPNAHierarchySettings()]
@@ -188,12 +189,12 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Path Shape</para>
-		/// <para>Specifies the shape type for the route features that are output by the analysis.</para>
-		/// <para>True lines with measures—The output routes will have the exact shape of the underlying network sources. The output includes route measurements for linear referencing. The measurements increase from the first stop and record the cumulative impedance to reach a given position.</para>
-		/// <para>True lines without measures—The output routes will have the exact shape of the underlying network sources.</para>
-		/// <para>Straight lines—The output route shape will be a single straight line between each paired incident and facility.</para>
-		/// <para>No lines—No shape will be generated for the output routes.</para>
-		/// <para>No matter which output shape type is chosen, the best route is always determined by the network impedance, never Euclidean distance. This means that only the route shapes are different, not the underlying traversal of the network.</para>
+		/// <para>为分析所输出的路径要素指定形状类型。</para>
+		/// <para>具有测量值的实际线—输出路径将具有基础网络源的精确形状。输出包括线性参考的路径测量值。测量值从第一个停靠点增加并将记录到达指定位置的累积阻抗。</para>
+		/// <para>没有测量值的实际线—输出路径将具有基础网络源的精确形状。</para>
+		/// <para>直线—输出路径形状是一条介于各个事件点和设施点对之间的直线。</para>
+		/// <para>无线—将不会为输出路径生成任何形状。</para>
+		/// <para>无论选择何种输出形状类型，最佳路径始终由网络阻抗（而非欧氏距离）决定。这表示只是路径形状不同，而对网络进行的基础遍历则相同。</para>
 		/// <para><see cref="OutputPathShapeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -204,17 +205,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time of Day</para>
-		/// <para>Specifies the time and date at which the routes should begin or end. The interpretation of this value depends on whether Time of Day Usage is set to be the start time or the end time of the route.</para>
-		/// <para>If you have chosen a traffic-based impedance attribute, the solution will be generated given dynamic traffic conditions at the time of day specified here. A date and time can be specified as 5/14/2012 10:30 AM.</para>
-		/// <para>Instead of using a particular date, a day of the week can be specified using the following dates:</para>
-		/// <para>Today—12/30/1899</para>
-		/// <para>Sunday—12/31/1899</para>
-		/// <para>Monday—1/1/1900</para>
-		/// <para>Tuesday—1/2/1900</para>
-		/// <para>Wednesday—1/3/1900</para>
-		/// <para>Thursday—1/4/1900</para>
-		/// <para>Friday—1/5/1900</para>
-		/// <para>Saturday—1/6/1900</para>
+		/// <para>指定路径应该开始或结束的时间和日期。对该值的解释取决于是将“时间用法”设置为路径的起始时间还是终止时间。</para>
+		/// <para>如果您已经选择了基于流量的阻抗属性，将会根据特定的某天某时的动态交通状况来生成解决方案。日期和时间可被指定为 5/14/2012 10:30 AM。</para>
+		/// <para>可使用以下日期来指定一周中的每一天，而无需使用特定的日期：</para>
+		/// <para>今天 - 12/30/1899</para>
+		/// <para>星期日 - 12/31/1899</para>
+		/// <para>星期一 - 1/1/1900</para>
+		/// <para>星期二 - 1/2/1900</para>
+		/// <para>星期三 - 1/3/1900</para>
+		/// <para>星期四 - 1/4/1900</para>
+		/// <para>星期五 - 1/5/1900</para>
+		/// <para>星期六 - 1/6/1900</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -222,10 +223,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time of Day Usage</para>
-		/// <para>Indicates whether the value of the Time of Day parameter represents the arrival or departure time for the route or routes.</para>
-		/// <para>Start time—Time of Day is interpreted as the departure time from the facility or incident.When this setting is chosen, Time of Day indicates the solver should find the best route given a departure time.</para>
-		/// <para>End time—Time of Day is interpreted as the arrival time at the facility or incident. This option is useful if you want to know what time to depart from a location so that you arrive at the destination at the time specified in Time of Day.</para>
-		/// <para>Not used—When Time of Day doesn&apos;t have a value, this setting is the only choice. When Time of Day has a value, this setting isn&apos;t available.</para>
+		/// <para>指示“时间”参数值是表示路径的到达时间还是离开时间。</para>
+		/// <para>开始时间—“时间”参数可理解为从设施点或事件点出发的时间。当选择了此设置时，“时间”参数表示求解程序应该找到基于给定离开时间的最佳路径。</para>
+		/// <para>结束时间—“时间”参数可理解为到达设施点或事件点的时间。如果想知道何时从一个地点离开，从而能在“时间”参数中所指定的时间到达目的地，该选项将十分有用。</para>
+		/// <para>未使用—当“时间”参数没有值时，此设置将是唯一的选择。当“时间”参数有值时，此设置将不可用。</para>
 		/// <para><see cref="TimeOfDayUsageEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -257,17 +258,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TravelFromToEnum 
 		{
 			/// <summary>
-			/// <para>Incidents to Facilities—Direction of travel is from incidents to facilities. Retail stores commonly use this setting, since they are concerned with the time it takes the shoppers (incidents) to reach the store (facility).</para>
+			/// <para>事件点到设施点—行驶方向 - 从事件点到设施点。零售店通常使用该设置，因为他们需要关注购物者（事件点）到达商店（设施点）所需的时间。</para>
 			/// </summary>
 			[GPValue("TRAVEL_TO")]
-			[Description("Incidents to Facilities")]
+			[Description("事件点到设施点")]
 			Incidents_to_Facilities,
 
 			/// <summary>
-			/// <para>Facilities to Incidents—Direction of travel is from facilities to incidents. Fire departments commonly use the this setting, since they are concerned with the time it takes to travel from the fire station (facility) to the location of the emergency (incident).</para>
+			/// <para>设施点到事件点—行驶方向 - 从设施点到事件点。消防部门通常使用该设置，因为他们需要关注从消防站（设施点）行驶到紧急救援位置（事件点）所需的时间。</para>
 			/// </summary>
 			[GPValue("TRAVEL_FROM")]
-			[Description("Facilities to Incidents")]
+			[Description("设施点到事件点")]
 			Facilities_to_Incidents,
 
 		}
@@ -278,31 +279,31 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum UturnPolicyEnum 
 		{
 			/// <summary>
-			/// <para>Allowed—U-turns are permitted at junctions with any number of connected edges. This is the default value.</para>
+			/// <para>允许—无论在交汇点处有几条连接的边，均允许 U 形转弯。这是默认值。</para>
 			/// </summary>
 			[GPValue("ALLOW_UTURNS")]
-			[Description("Allowed")]
+			[Description("允许")]
 			Allowed,
 
 			/// <summary>
-			/// <para>Not allowed—U-turns are prohibited at all junctions, regardless of junction valency. However, U-turns are still permitted at network locations even when this setting is chosen, but you can set the individual network location&apos;s CurbApproach property to prohibit U-turns there as well.</para>
+			/// <para>不允许—在所有交汇点处均禁止 U 形转弯，不管交汇点原子价如何。不过请注意，即使已选择该设置，在网络位置处仍允许 U 形转弯；但是也可以通过设置个别网络位置的 CurbApproach 属性来禁止 U 形转弯。</para>
 			/// </summary>
 			[GPValue("NO_UTURNS")]
-			[Description("Not allowed")]
+			[Description("不允许")]
 			Not_allowed,
 
 			/// <summary>
-			/// <para>Allowed at dead ends only—U-turns are prohibited at all junctions, except those that have only one adjacent edge (a dead end).</para>
+			/// <para>仅在末路处允许—除仅有一条相邻边的交汇点（死角）外，其他交汇点均禁止 U 形转弯。</para>
 			/// </summary>
 			[GPValue("ALLOW_DEAD_ENDS_ONLY")]
-			[Description("Allowed at dead ends only")]
+			[Description("仅在末路处允许")]
 			Allowed_at_dead_ends_only,
 
 			/// <summary>
-			/// <para>Allowed at dead ends and intersections only—U-turns are prohibited at junctions where exactly two adjacent edges meet but are permitted at intersections (junctions with three or more adjacent edges) and dead ends (junctions with exactly one adjacent edge). Often, networks have extraneous junctions in the middle of road segments. This option prevents vehicles from making U-turns at these locations.</para>
+			/// <para>仅在末路处和交点处允许—在恰好有两条相邻边相遇的交汇点处禁止 U 形转弯，但是交叉点（三条或三条以上相邻边的交汇点）和死角（仅有一条相邻边的交汇点）处允许。通常，网络在路段中间有多余的交汇点。此选项可防止车辆在这些位置出现 U 形转弯。</para>
 			/// </summary>
 			[GPValue("ALLOW_DEAD_ENDS_AND_INTERSECTIONS_ONLY")]
-			[Description("Allowed at dead ends and intersections only")]
+			[Description("仅在末路处和交点处允许")]
 			Allowed_at_dead_ends_and_intersections_only,
 
 		}
@@ -313,14 +314,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum HierarchyEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The hierarchy attribute will be used for the analysis. Using a hierarchy results in the solver preferring higher-order edges to lower-order edges. Hierarchical solves are faster, and they can be used to simulate the preference of a driver who chooses to travel on freeways rather than local roads when possible—even if that means a longer trip. This option is active only if the input network dataset has a hierarchy attribute.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("USE_HIERARCHY")]
 			USE_HIERARCHY,
 
 			/// <summary>
-			/// <para>Unchecked—The hierarchy attribute will not be used for the analysis. If hierarchy is not used, the result is an exact route for the network dataset.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_HIERARCHY")]
@@ -334,31 +335,31 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum OutputPathShapeEnum 
 		{
 			/// <summary>
-			/// <para>No lines—No shape will be generated for the output routes.</para>
+			/// <para>无线—将不会为输出路径生成任何形状。</para>
 			/// </summary>
 			[GPValue("NO_LINES")]
-			[Description("No lines")]
+			[Description("无线")]
 			No_lines,
 
 			/// <summary>
-			/// <para>Straight lines—The output route shape will be a single straight line between each paired incident and facility.</para>
+			/// <para>直线—输出路径形状是一条介于各个事件点和设施点对之间的直线。</para>
 			/// </summary>
 			[GPValue("STRAIGHT_LINES")]
-			[Description("Straight lines")]
+			[Description("直线")]
 			Straight_lines,
 
 			/// <summary>
-			/// <para>True lines with measures—The output routes will have the exact shape of the underlying network sources. The output includes route measurements for linear referencing. The measurements increase from the first stop and record the cumulative impedance to reach a given position.</para>
+			/// <para>具有测量值的实际线—输出路径将具有基础网络源的精确形状。输出包括线性参考的路径测量值。测量值从第一个停靠点增加并将记录到达指定位置的累积阻抗。</para>
 			/// </summary>
 			[GPValue("TRUE_LINES_WITH_MEASURES")]
-			[Description("True lines with measures")]
+			[Description("具有测量值的实际线")]
 			True_lines_with_measures,
 
 			/// <summary>
-			/// <para>True lines without measures—The output routes will have the exact shape of the underlying network sources.</para>
+			/// <para>没有测量值的实际线—输出路径将具有基础网络源的精确形状。</para>
 			/// </summary>
 			[GPValue("TRUE_LINES_WITHOUT_MEASURES")]
-			[Description("True lines without measures")]
+			[Description("没有测量值的实际线")]
 			True_lines_without_measures,
 
 		}
@@ -369,24 +370,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TimeOfDayUsageEnum 
 		{
 			/// <summary>
-			/// <para>Start time—Time of Day is interpreted as the departure time from the facility or incident.When this setting is chosen, Time of Day indicates the solver should find the best route given a departure time.</para>
+			/// <para>开始时间—“时间”参数可理解为从设施点或事件点出发的时间。当选择了此设置时，“时间”参数表示求解程序应该找到基于给定离开时间的最佳路径。</para>
 			/// </summary>
 			[GPValue("START_TIME")]
-			[Description("Start time")]
+			[Description("开始时间")]
 			Start_time,
 
 			/// <summary>
-			/// <para>End time—Time of Day is interpreted as the arrival time at the facility or incident. This option is useful if you want to know what time to depart from a location so that you arrive at the destination at the time specified in Time of Day.</para>
+			/// <para>结束时间—“时间”参数可理解为到达设施点或事件点的时间。如果想知道何时从一个地点离开，从而能在“时间”参数中所指定的时间到达目的地，该选项将十分有用。</para>
 			/// </summary>
 			[GPValue("END_TIME")]
-			[Description("End time")]
+			[Description("结束时间")]
 			End_time,
 
 			/// <summary>
-			/// <para>Not used—When Time of Day doesn&apos;t have a value, this setting is the only choice. When Time of Day has a value, this setting isn&apos;t available.</para>
+			/// <para>未使用—当“时间”参数没有值时，此设置将是唯一的选择。当“时间”参数有值时，此设置将不可用。</para>
 			/// </summary>
 			[GPValue("NOT_USED")]
-			[Description("Not used")]
+			[Description("未使用")]
 			Not_used,
 
 		}

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Generate OIS Profile Data</para>
+	/// <para>Generate OIS Profile Data</para>
 	/// <para>Generates a JSON string that is stored in the PROFILEJSON field on the input Obstruction Identification Surface multipatch feature class that contains the data necessary to depict the terrain, runway, and OIS in the Terrain and Obstacle Profile layout element.</para>
 	/// </summary>
 	public class GenerateOISProfileData : AbstractGPProcess

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Calculate Z-value</para>
-	/// <para>Uses the interpolation model in a geostatistical layer to predict a value at a single location.</para>
+	/// <para>计算 Z 值</para>
+	/// <para>在地统计图层中使用插值模型预测单个位置的值。</para>
 	/// </summary>
 	public class GACalculateZValue : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InGeostatLayer">
 		/// <para>Input geostatistical layer</para>
-		/// <para>The geostatistical layer to be analyzed.</para>
+		/// <para>要分析的地统计图层。</para>
 		/// </param>
 		/// <param name="PointCoord">
 		/// <para>Input point</para>
-		/// <para>The x,y coordinate of the point for which the Z-value will be calculated.</para>
+		/// <para>需要计算 Z 值点的 x,y 坐标。</para>
 		/// </param>
 		public GACalculateZValue(object InGeostatLayer, object PointCoord)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Calculate Z-value</para>
+		/// <para>Tool Display Name : 计算 Z 值</para>
 		/// </summary>
-		public override string DisplayName() => "Calculate Z-value";
+		public override string DisplayName() => "计算 Z 值";
 
 		/// <summary>
 		/// <para>Tool Name : GACalculateZValue</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
-		/// <para>The geostatistical layer to be analyzed.</para>
+		/// <para>要分析的地统计图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPGALayer()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input point</para>
-		/// <para>The x,y coordinate of the point for which the Z-value will be calculated.</para>
+		/// <para>需要计算 Z 值点的 x,y 坐标。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPPoint()]

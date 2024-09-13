@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Layer To KML</para>
+	/// <para>Layer To KML</para>
 	/// <para>3D Analyst Layer to KML geoprocessing function</para>
 	/// </summary>
 	[Obsolete()]

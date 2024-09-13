@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Set Null</para>
-	/// <para>Set Null sets identified cell locations to NoData based on a specified criteria. It returns NoData if a conditional evaluation is true, and returns the value specified by another raster if it is false.</para>
+	/// <para>设为空函数</para>
+	/// <para>“设为空函数”根据指定条件将所识别的像元位置设置为 NoData。如果条件评估为真，则返回 NoData；如果条件评估为假，则返回由另一个栅格指定的值。</para>
 	/// </summary>
 	public class SetNull : AbstractGPProcess
 	{
@@ -20,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InConditionalRaster">
 		/// <para>Input conditional raster</para>
-		/// <para>Input raster representing the true or false result of the desired condition.</para>
-		/// <para>It can be of integer or floating point type.</para>
+		/// <para>表示所需条件结果为真或假的输入栅格。</para>
+		/// <para>可以是整型或浮点型。</para>
 		/// </param>
 		/// <param name="InFalseRasterOrConstant">
 		/// <para>Input false raster or constant value</para>
-		/// <para>The input whose values will be used as the output cell values if the condition is false.</para>
-		/// <para>It can be an integer or a floating point raster, or a constant value.</para>
+		/// <para>条件为假时，其值作为输出像元值的输入。</para>
+		/// <para>可为整型或浮点型栅格，或为常数值。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>If the conditional evaluation is true, NoData is returned. If false, the value of the second input raster is returned.</para>
+		/// <para>输出栅格。</para>
+		/// <para>如果条件评估为真，则返回 NoData。 如果为假，则将返回第二个输入栅格的值。</para>
 		/// </param>
 		public SetNull(object InConditionalRaster, object InFalseRasterOrConstant, object OutRaster)
 		{
@@ -41,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Set Null</para>
+		/// <para>Tool Display Name : 设为空函数</para>
 		/// </summary>
-		public override string DisplayName() => "Set Null";
+		public override string DisplayName() => "设为空函数";
 
 		/// <summary>
 		/// <para>Tool Name : SetNull</para>
@@ -77,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input conditional raster</para>
-		/// <para>Input raster representing the true or false result of the desired condition.</para>
-		/// <para>It can be of integer or floating point type.</para>
+		/// <para>表示所需条件结果为真或假的输入栅格。</para>
+		/// <para>可以是整型或浮点型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -90,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input false raster or constant value</para>
-		/// <para>The input whose values will be used as the output cell values if the condition is false.</para>
-		/// <para>It can be an integer or a floating point raster, or a constant value.</para>
+		/// <para>条件为假时，其值作为输出像元值的输入。</para>
+		/// <para>可为整型或浮点型栅格，或为常数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -103,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>If the conditional evaluation is true, NoData is returned. If false, the value of the second input raster is returned.</para>
+		/// <para>输出栅格。</para>
+		/// <para>如果条件评估为真，则返回 NoData。 如果为假，则将返回第二个输入栅格的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -112,8 +113,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>A logical expression that determines which of the input cells are to be true or false.</para>
-		/// <para>The Where clause follows the general form of an SQL expression. It can be entered directly, for example, VALUE &gt; 100, if you click the Edit SQL mode button . If in the Edit Clause Mode , you can begin constructing the expression by clicking on the Add Clause Mode button.</para>
+		/// <para>决定输入像元为真或假的逻辑表达式。</para>
+		/// <para>Where 子句遵循 SQL 表达式的一般格式。 如果您单击编辑 SQL 模式按钮 ，则可以直接输入，例如 VALUE &gt; 100。 如果处于编辑子句模式 中，则可以通过单击添加子句模式按钮来开始构建表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]

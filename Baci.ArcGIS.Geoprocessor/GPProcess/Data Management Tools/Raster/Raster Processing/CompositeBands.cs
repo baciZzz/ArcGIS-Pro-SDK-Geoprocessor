@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Composite Bands</para>
-	/// <para>Creates a single raster dataset from multiple bands.</para>
+	/// <para>波段合成</para>
+	/// <para>根据多个波段创建一个单独的栅格数据集。</para>
 	/// </summary>
 	public class CompositeBands : AbstractGPProcess
 	{
@@ -20,28 +21,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRasters">
 		/// <para>Input Rasters</para>
-		/// <para>The raster datasets that you want to use as the bands.</para>
+		/// <para>要用作波段的栅格数据集。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster</para>
-		/// <para>The name, location and format for the raster dataset you are creating. Make sure that it can support the necessary bit-depth.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
-		/// <para>.bil—Esri BIL</para>
-		/// <para>.bip—Esri BIP</para>
-		/// <para>.bmp—BMP</para>
-		/// <para>.bsq—Esri BSQ</para>
-		/// <para>.dat—ENVI DAT</para>
-		/// <para>.gif—GIF</para>
-		/// <para>.img—ERDAS IMAGINE</para>
-		/// <para>.jpg—JPEG</para>
-		/// <para>.jp2—JPEG 2000</para>
-		/// <para>.png—PNG</para>
-		/// <para>.tif—TIFF</para>
-		/// <para>.mrf—MRF</para>
-		/// <para>.crf—CRF</para>
-		/// <para>No extension for Esri Grid</para>
-		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>要创建的栅格数据集的名称、位置和格式。确保其支持必要的位深度。</para>
+		/// <para>以文件格式存储栅格数据集时，需要指定文件扩展名，具体如下：</para>
+		/// <para>.bil - Esri BIL</para>
+		/// <para>.bip - Esri BIP</para>
+		/// <para>.bmp - BMP</para>
+		/// <para>.bsq - Esri BSQ</para>
+		/// <para>.dat - ENVI DAT</para>
+		/// <para>.gif - GIF</para>
+		/// <para>.img - ERDAS IMAGINE</para>
+		/// <para>.jpg - JPEG</para>
+		/// <para>.jp2 - JPEG 2000</para>
+		/// <para>.png - PNG</para>
+		/// <para>.tif - TIFF</para>
+		/// <para>.mrf - MRF</para>
+		/// <para>.crf - CRF</para>
+		/// <para>Esri Grid 无扩展名</para>
+		/// <para>将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。</para>
+		/// <para>将栅格数据集存储到 JPEG 文件、JPEG 2000 文件、TIFF 文件或地理数据库时，可在地理处理环境中指定压缩类型和压缩质量。</para>
 		/// </param>
 		public CompositeBands(object InRasters, object OutRaster)
 		{
@@ -50,9 +51,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Composite Bands</para>
+		/// <para>Tool Display Name : 波段合成</para>
 		/// </summary>
-		public override string DisplayName() => "Composite Bands";
+		public override string DisplayName() => "波段合成";
 
 		/// <summary>
 		/// <para>Tool Name : CompositeBands</para>
@@ -86,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Rasters</para>
-		/// <para>The raster datasets that you want to use as the bands.</para>
+		/// <para>要用作波段的栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -94,24 +95,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Raster</para>
-		/// <para>The name, location and format for the raster dataset you are creating. Make sure that it can support the necessary bit-depth.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
-		/// <para>.bil—Esri BIL</para>
-		/// <para>.bip—Esri BIP</para>
-		/// <para>.bmp—BMP</para>
-		/// <para>.bsq—Esri BSQ</para>
-		/// <para>.dat—ENVI DAT</para>
-		/// <para>.gif—GIF</para>
-		/// <para>.img—ERDAS IMAGINE</para>
-		/// <para>.jpg—JPEG</para>
-		/// <para>.jp2—JPEG 2000</para>
-		/// <para>.png—PNG</para>
-		/// <para>.tif—TIFF</para>
-		/// <para>.mrf—MRF</para>
-		/// <para>.crf—CRF</para>
-		/// <para>No extension for Esri Grid</para>
-		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>要创建的栅格数据集的名称、位置和格式。确保其支持必要的位深度。</para>
+		/// <para>以文件格式存储栅格数据集时，需要指定文件扩展名，具体如下：</para>
+		/// <para>.bil - Esri BIL</para>
+		/// <para>.bip - Esri BIP</para>
+		/// <para>.bmp - BMP</para>
+		/// <para>.bsq - Esri BSQ</para>
+		/// <para>.dat - ENVI DAT</para>
+		/// <para>.gif - GIF</para>
+		/// <para>.img - ERDAS IMAGINE</para>
+		/// <para>.jpg - JPEG</para>
+		/// <para>.jp2 - JPEG 2000</para>
+		/// <para>.png - PNG</para>
+		/// <para>.tif - TIFF</para>
+		/// <para>.mrf - MRF</para>
+		/// <para>.crf - CRF</para>
+		/// <para>Esri Grid 无扩展名</para>
+		/// <para>将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。</para>
+		/// <para>将栅格数据集存储到 JPEG 文件、JPEG 2000 文件、TIFF 文件或地理数据库时，可在地理处理环境中指定压缩类型和压缩质量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

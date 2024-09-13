@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Analyze Airport Features</para>
+	/// <para>Analyze Airport Features</para>
 	/// <para>Analyzes specified point features around an airfield to find and record information such as distance from a given runway centerline or the end of the nearest runway, and the designation for that nearest runway.</para>
 	/// </summary>
 	public class AnalyzeAirportFeatures : AbstractGPProcess

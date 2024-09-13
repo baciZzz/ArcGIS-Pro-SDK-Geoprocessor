@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Domain</para>
-	/// <para>Creates an attribute domain in the specified workspace.</para>
+	/// <para>创建属性域</para>
+	/// <para>在指定工作空间中创建属性域。</para>
 	/// </summary>
 	public class CreateDomain : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Input Workspace</para>
-		/// <para>The geodatabase that will contain the new domain.</para>
+		/// <para>将包含新属性域的地理数据库。</para>
 		/// </param>
 		/// <param name="DomainName">
 		/// <para>Domain Name</para>
-		/// <para>The name of the domain that will be created.</para>
+		/// <para>要创建的属性域的名称。</para>
 		/// </param>
 		public CreateDomain(object InWorkspace, object DomainName)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Domain</para>
+		/// <para>Tool Display Name : 创建属性域</para>
 		/// </summary>
-		public override string DisplayName() => "Create Domain";
+		public override string DisplayName() => "创建属性域";
 
 		/// <summary>
 		/// <para>Tool Name : CreateDomain</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>The geodatabase that will contain the new domain.</para>
+		/// <para>将包含新属性域的地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Domain Name</para>
-		/// <para>The name of the domain that will be created.</para>
+		/// <para>要创建的属性域的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Domain Description</para>
-		/// <para>The description of the domain that will be created.</para>
+		/// <para>要创建的属性域的描述。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -95,13 +96,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Type</para>
-		/// <para>Specifies the type of attribute domain that will be created. Attribute domains are rules that describe the accepted values of a field type. Specify a field type that matches the data type of the field to which the attribute domain will be assigned.</para>
-		/// <para>Text—A text type field will be created that contains a string of characters.</para>
-		/// <para>Float (single precision)— A float type field will be created that contains fractional numbers between -3.4E38 and 1.2E38.</para>
-		/// <para>Double (double precision)— A double type field will be created that contains fractional numbers between -2.2E308 and 1.8E308.</para>
-		/// <para>Short (small integer)— A short type field will be created that contains whole numbers between -32,768 and 32,767.</para>
-		/// <para>Long (large integer)— A long type field will be created that contains whole numbers between -2,147,483,648 and 2,147,483,647.</para>
-		/// <para>Date—A date type field will be created that contains a date and/or time.</para>
+		/// <para>指定要创建的属性域的类型。 属性域属性是描述字段类型允许值的规则。 指定的字段类型应与将属性域指定到的字段的数据类型相匹配。</para>
+		/// <para>文本—将创建一个包含字符串的文本类型字段。</para>
+		/// <para>浮点型（单精度）—将创建一个包含介于 -3.4E38 和 1.2E38 之间的小数的浮点类型字段。</para>
+		/// <para>双精度型（双精度）—将创建一个包含介于 -2.2E308 和 1.8E308 之间的小数的双精度类型字段。</para>
+		/// <para>短整型（小整数）—将创建一个包含介于 -32,768 和 32,767 之间的整数的短整型类型字段。</para>
+		/// <para>长整型（大整数）—将创建一个包含介于 -2,147,483,648 和 2,147,483,647 之间的整数的长整型类型字段。</para>
+		/// <para>日期—将创建一个包含日期和/或时间的日期类型字段。</para>
 		/// <para><see cref="FieldTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -111,9 +112,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Domain Type</para>
-		/// <para>Specifies the domain type that will be created.</para>
-		/// <para>Coded value domain—A coded type domain will be created that contains a valid set of values for an attribute. This is the default. For example, a coded value domain can specify valid pipe material values such as CL—cast iron pipe, DL—ductile iron pipe, or ACP—asbestos concrete pipe.</para>
-		/// <para>Range domain—A range type domain will be created that contains a valid range of values for a numeric attribute. For example, if distribution water mains have a pressure between 50 and 75 psi, a range domain specifies these minimum and maximum values.</para>
+		/// <para>指定要创建的属性域的类型。</para>
+		/// <para>编码值属性域—将创建一个包含属性的一组有效值的编码类型属性域。 这是默认设置。 例如，可用编码值属性域指定有效的管道材料值：如 CL - 铸铁管、DL - 球墨铸铁管或 ACP - 石棉混凝土管。</para>
+		/// <para>值域范围—将创建一个包含数值属性有效值范围的范围类型属性域。 例如，如果给水干管的压力介于 50 和 75 psi 之间，则可用范围属性域指定这些最大值和最小值。</para>
 		/// <para><see cref="DomainTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -123,10 +124,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Split Policy</para>
-		/// <para>Specifies the split policy that will be used for the created domain. The behavior of an attribute&apos;s values when a feature that is split is controlled by its split policy.</para>
-		/// <para>Use the attribute&apos;s default value—The attributes of the two resulting features will use the default value of the attribute of the given feature class or subtype.</para>
-		/// <para>Duplicate attribute values—The attribute of the two resulting features will use a copy of the original object&apos;s attribute value.</para>
-		/// <para>Use geometric ratio—The attributes of resulting features will be a ratio of the original feature&apos;s value. The ratio is based on the proportion into which the original geometry is divided. If the geometry is divided equally, each new feature&apos;s attribute gets one-half the value of the original object&apos;s attribute. The geometry ratio policy only applies to range domains.</para>
+		/// <para>指定将用于所创建属性域的分割策略。 分割要素时，属性值的行为受控于它的分割策略。</para>
+		/// <para>使用属性的默认值—两个结果要素的属性将使用给定要素类或子类型的默认属性值。</para>
+		/// <para>复制属性值—两个结果要素的属性使用原始对象的属性值副本。</para>
+		/// <para>使用几何比—结果要素的属性将是原始要素值的比率。 该比率取决于原始几何的分割比例。 如果几何被分割成相等的两部分，则每个新要素的属性值将是原始对象属性值的一半。 几何比策略仅适用于范围属性域。</para>
 		/// <para><see cref="SplitPolicyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,10 +137,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Merge Policy</para>
-		/// <para>Specifies the merge policy that will be used for the created domain. When two features are merged into a single feature, merge policies control attribute values in the new feature.</para>
-		/// <para>Use the attribute&apos;s default value—The attribute of the resulting feature will use the default value of the attribute of the given feature class or subtype. This is the only merge policy that applies to nonnumeric fields and coded value domains.</para>
-		/// <para>Sum of the values—The attribute of the resulting feature will use the sum of the values from the original feature&apos;s attribute. The sum values policy only applies to range domains.</para>
-		/// <para>Area weighted average—The attribute of the resulting feature will be the weighted average of the attribute values of the original features. This average is based on the original feature&apos;s geometry. The area weighted policy only applies to range domains.</para>
+		/// <para>指定将用于所创建属性域的合并策略。 在将两个要素合并为一个要素时，合并策略控制着新要素的属性值。</para>
+		/// <para>使用属性的默认值—结果要素的属性将使用给定要素类或子类型的默认属性值。 这是唯一适用于非数字字段和编码值属性域的合并策略。</para>
+		/// <para>值的总和—结果要素的属性将使用原始要素属性值的总和。 总和值策略仅适用于范围属性域。</para>
+		/// <para>面积加权平均值—结果要素的属性将使用原始要素属性值的加权平均值。 此平均值取决于原始要素的几何。 加权面积策略仅适用于范围属性域。</para>
 		/// <para><see cref="MergePolicyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -171,45 +172,45 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FieldTypeEnum 
 		{
 			/// <summary>
-			/// <para>Short (small integer)— A short type field will be created that contains whole numbers between -32,768 and 32,767.</para>
+			/// <para>短整型（小整数）—将创建一个包含介于 -32,768 和 32,767 之间的整数的短整型类型字段。</para>
 			/// </summary>
 			[GPValue("SHORT")]
-			[Description("Short (small integer)")]
+			[Description("短整型（小整数）")]
 			SHORT,
 
 			/// <summary>
-			/// <para>Long (large integer)— A long type field will be created that contains whole numbers between -2,147,483,648 and 2,147,483,647.</para>
+			/// <para>长整型（大整数）—将创建一个包含介于 -2,147,483,648 和 2,147,483,647 之间的整数的长整型类型字段。</para>
 			/// </summary>
 			[GPValue("LONG")]
-			[Description("Long (large integer)")]
+			[Description("长整型（大整数）")]
 			LONG,
 
 			/// <summary>
-			/// <para>Float (single precision)— A float type field will be created that contains fractional numbers between -3.4E38 and 1.2E38.</para>
+			/// <para>浮点型（单精度）—将创建一个包含介于 -3.4E38 和 1.2E38 之间的小数的浮点类型字段。</para>
 			/// </summary>
 			[GPValue("FLOAT")]
-			[Description("Float (single precision)")]
+			[Description("浮点型（单精度）")]
 			FLOAT,
 
 			/// <summary>
-			/// <para>Double (double precision)— A double type field will be created that contains fractional numbers between -2.2E308 and 1.8E308.</para>
+			/// <para>双精度型（双精度）—将创建一个包含介于 -2.2E308 和 1.8E308 之间的小数的双精度类型字段。</para>
 			/// </summary>
 			[GPValue("DOUBLE")]
-			[Description("Double (double precision)")]
+			[Description("双精度型（双精度）")]
 			DOUBLE,
 
 			/// <summary>
-			/// <para>Text—A text type field will be created that contains a string of characters.</para>
+			/// <para>文本—将创建一个包含字符串的文本类型字段。</para>
 			/// </summary>
 			[GPValue("TEXT")]
-			[Description("Text")]
+			[Description("文本")]
 			Text,
 
 			/// <summary>
-			/// <para>Date—A date type field will be created that contains a date and/or time.</para>
+			/// <para>日期—将创建一个包含日期和/或时间的日期类型字段。</para>
 			/// </summary>
 			[GPValue("DATE")]
-			[Description("Date")]
+			[Description("日期")]
 			Date,
 
 		}
@@ -220,17 +221,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DomainTypeEnum 
 		{
 			/// <summary>
-			/// <para>Coded value domain—A coded type domain will be created that contains a valid set of values for an attribute. This is the default. For example, a coded value domain can specify valid pipe material values such as CL—cast iron pipe, DL—ductile iron pipe, or ACP—asbestos concrete pipe.</para>
+			/// <para>编码值属性域—将创建一个包含属性的一组有效值的编码类型属性域。 这是默认设置。 例如，可用编码值属性域指定有效的管道材料值：如 CL - 铸铁管、DL - 球墨铸铁管或 ACP - 石棉混凝土管。</para>
 			/// </summary>
 			[GPValue("CODED")]
-			[Description("Coded value domain")]
+			[Description("编码值属性域")]
 			Coded_value_domain,
 
 			/// <summary>
-			/// <para>Range domain—A range type domain will be created that contains a valid range of values for a numeric attribute. For example, if distribution water mains have a pressure between 50 and 75 psi, a range domain specifies these minimum and maximum values.</para>
+			/// <para>值域范围—将创建一个包含数值属性有效值范围的范围类型属性域。 例如，如果给水干管的压力介于 50 和 75 psi 之间，则可用范围属性域指定这些最大值和最小值。</para>
 			/// </summary>
 			[GPValue("RANGE")]
-			[Description("Range domain")]
+			[Description("值域范围")]
 			Range_domain,
 
 		}
@@ -241,24 +242,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SplitPolicyEnum 
 		{
 			/// <summary>
-			/// <para>Use the attribute&apos;s default value—The attributes of the two resulting features will use the default value of the attribute of the given feature class or subtype.</para>
+			/// <para>使用属性的默认值—两个结果要素的属性将使用给定要素类或子类型的默认属性值。</para>
 			/// </summary>
 			[GPValue("DEFAULT")]
-			[Description("Use the attribute's default value")]
+			[Description("使用属性的默认值")]
 			DEFAULT,
 
 			/// <summary>
-			/// <para>Duplicate attribute values—The attribute of the two resulting features will use a copy of the original object&apos;s attribute value.</para>
+			/// <para>复制属性值—两个结果要素的属性使用原始对象的属性值副本。</para>
 			/// </summary>
 			[GPValue("DUPLICATE")]
-			[Description("Duplicate attribute values")]
+			[Description("复制属性值")]
 			Duplicate_attribute_values,
 
 			/// <summary>
-			/// <para>Use geometric ratio—The attributes of resulting features will be a ratio of the original feature&apos;s value. The ratio is based on the proportion into which the original geometry is divided. If the geometry is divided equally, each new feature&apos;s attribute gets one-half the value of the original object&apos;s attribute. The geometry ratio policy only applies to range domains.</para>
+			/// <para>使用几何比—结果要素的属性将是原始要素值的比率。 该比率取决于原始几何的分割比例。 如果几何被分割成相等的两部分，则每个新要素的属性值将是原始对象属性值的一半。 几何比策略仅适用于范围属性域。</para>
 			/// </summary>
 			[GPValue("GEOMETRY_RATIO")]
-			[Description("Use geometric ratio")]
+			[Description("使用几何比")]
 			Use_geometric_ratio,
 
 		}
@@ -269,24 +270,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MergePolicyEnum 
 		{
 			/// <summary>
-			/// <para>Use the attribute&apos;s default value—The attribute of the resulting feature will use the default value of the attribute of the given feature class or subtype. This is the only merge policy that applies to nonnumeric fields and coded value domains.</para>
+			/// <para>使用属性的默认值—结果要素的属性将使用给定要素类或子类型的默认属性值。 这是唯一适用于非数字字段和编码值属性域的合并策略。</para>
 			/// </summary>
 			[GPValue("DEFAULT")]
-			[Description("Use the attribute's default value")]
+			[Description("使用属性的默认值")]
 			DEFAULT,
 
 			/// <summary>
-			/// <para>Sum of the values—The attribute of the resulting feature will use the sum of the values from the original feature&apos;s attribute. The sum values policy only applies to range domains.</para>
+			/// <para>值的总和—结果要素的属性将使用原始要素属性值的总和。 总和值策略仅适用于范围属性域。</para>
 			/// </summary>
 			[GPValue("SUM_VALUES")]
-			[Description("Sum of the values")]
+			[Description("值的总和")]
 			Sum_of_the_values,
 
 			/// <summary>
-			/// <para>Area weighted average—The attribute of the resulting feature will be the weighted average of the attribute values of the original features. This average is based on the original feature&apos;s geometry. The area weighted policy only applies to range domains.</para>
+			/// <para>面积加权平均值—结果要素的属性将使用原始要素属性值的加权平均值。 此平均值取决于原始要素的几何。 加权面积策略仅适用于范围属性域。</para>
 			/// </summary>
 			[GPValue("AREA_WEIGHTED")]
-			[Description("Area weighted average")]
+			[Description("面积加权平均值")]
 			Area_weighted_average,
 
 		}

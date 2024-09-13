@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Generate Territory Report</para>
+	/// <para>Generate Territory Report</para>
 	/// <para>Creates a summary report of a territory solution or a comparison report of two solutions.</para>
 	/// </summary>
 	public class GenerateTerritoryReport : AbstractGPProcess

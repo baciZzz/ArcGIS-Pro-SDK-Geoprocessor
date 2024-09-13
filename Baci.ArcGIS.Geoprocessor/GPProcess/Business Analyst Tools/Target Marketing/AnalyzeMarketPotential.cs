@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Analyze Market Potential</para>
+	/// <para>Analyze Market Potential</para>
 	/// <para>Generates a layer that displays expected customers by a selected geography level.</para>
 	/// </summary>
 	public class AnalyzeMarketPotential : AbstractGPProcess

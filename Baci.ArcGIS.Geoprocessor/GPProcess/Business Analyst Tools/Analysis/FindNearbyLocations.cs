@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Find Nearby Locations</para>
+	/// <para>Find Nearby Locations</para>
 	/// <para>Identifies locations closest to the input features based on a selected distance type. The number of points in the output is defined by limiting the count or percentage of location points to return or by limiting the distance from the input points.</para>
 	/// </summary>
 	public class FindNearbyLocations : AbstractGPProcess

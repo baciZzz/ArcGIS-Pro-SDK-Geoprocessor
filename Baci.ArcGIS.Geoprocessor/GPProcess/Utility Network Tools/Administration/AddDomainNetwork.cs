@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Domain Network</para>
-	/// <para>Adds a domain network to a utility network.</para>
+	/// <para>添加域网络</para>
+	/// <para>用于向公共设施网络添加域网络。</para>
 	/// </summary>
 	public class AddDomainNetwork : AbstractGPProcess
 	{
@@ -20,24 +21,24 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network to which the domain network will be added.</para>
+		/// <para>将添加域网络的公共设施网络。</para>
 		/// </param>
 		/// <param name="DomainNetworkName">
 		/// <para>Domain Network Name</para>
-		/// <para>The name of the new domain network. The domain network name will prefix the feature class names that are created. For example, a domain named ElectricDistribution would include a feature class named ElectricDistributionJunction.</para>
+		/// <para>新域网络的名称。域网络名称将作为创建的要素类名称的前缀。例如，名称为 ElectricDistribution 的域将包含名称为 ElectricDistributionJunction 的要素类。</para>
 		/// </param>
 		/// <param name="TierDefinition">
 		/// <para>Tier Definition</para>
-		/// <para>Specifies the tier definition for the new domain network.</para>
-		/// <para>Hierarchical—The tier will be defined as hierarchical. In hierarchical domain networks, tiers are nested within one another, so features existing in subnetworks for a lower tier naturally participate in all higher tiers. For example, in a gas network, a valve isolation zone exists in a pressure zone, which in turn exists in a system zone. A feature in the isolation zone also exists in the pressure zone and in the system zone.</para>
-		/// <para>Partitioned— The tier will be defined as partitioned. Features in partitioned domain networks only exist in one tier. The relationship between tiers is ordered and linear. Features can exist in one or multiple subnetworks in one tier.</para>
+		/// <para>指定新域网络的层定义。</para>
+		/// <para>等级—层将被定义为等级层。在等级域网络中，层之间相互嵌套，所以较低级别层的子网中存在的要素会自然参与到所有较高级别的层中。例如，在燃气网络中，阀门隔离区存在于压力区中，而压力区又存在于系统区中。隔离区中的要素同时还存在于压力区和系统区中。</para>
+		/// <para>分区— 层将被定义为分区层。分区域网络中的要素仅存在于一个层中。层之间的关系按线性排列。要素可以存在于一个层内的一个或多个子网中。</para>
 		/// <para><see cref="TierDefinitionEnum"/></para>
 		/// </param>
 		/// <param name="SubnetworkControllerType">
 		/// <para>Subnetwork Controller Type</para>
-		/// <para>Specifies the subnetwork controller type for the new domain network.</para>
-		/// <para>Subnetwork source—The subnetwork controller type is a set of sources. A source is an origin of the delivered resource. For example, in an electric system, sources of electricity are power generating stations and substations.</para>
-		/// <para>Subnetwork sink—The subnetwork controller type is a set of sinks. A sink is the destination of the gathered resource.</para>
+		/// <para>指定新域网络的子网控制器类型。</para>
+		/// <para>子网源—子网控制器类型是一组源。源是已交付资源的原点。例如，在电气系统中，电力源是指发电站和变电站。</para>
+		/// <para>子网汇—子网控制器类型是一组汇。汇是所收集的资源的目的地。</para>
 		/// <para><see cref="SubnetworkControllerTypeEnum"/></para>
 		/// </param>
 		public AddDomainNetwork(object InUtilityNetwork, object DomainNetworkName, object TierDefinition, object SubnetworkControllerType)
@@ -49,9 +50,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Domain Network</para>
+		/// <para>Tool Display Name : 添加域网络</para>
 		/// </summary>
-		public override string DisplayName() => "Add Domain Network";
+		public override string DisplayName() => "添加域网络";
 
 		/// <summary>
 		/// <para>Tool Name : AddDomainNetwork</para>
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network to which the domain network will be added.</para>
+		/// <para>将添加域网络的公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Domain Network Name</para>
-		/// <para>The name of the new domain network. The domain network name will prefix the feature class names that are created. For example, a domain named ElectricDistribution would include a feature class named ElectricDistributionJunction.</para>
+		/// <para>新域网络的名称。域网络名称将作为创建的要素类名称的前缀。例如，名称为 ElectricDistribution 的域将包含名称为 ElectricDistributionJunction 的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -101,9 +102,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Tier Definition</para>
-		/// <para>Specifies the tier definition for the new domain network.</para>
-		/// <para>Hierarchical—The tier will be defined as hierarchical. In hierarchical domain networks, tiers are nested within one another, so features existing in subnetworks for a lower tier naturally participate in all higher tiers. For example, in a gas network, a valve isolation zone exists in a pressure zone, which in turn exists in a system zone. A feature in the isolation zone also exists in the pressure zone and in the system zone.</para>
-		/// <para>Partitioned— The tier will be defined as partitioned. Features in partitioned domain networks only exist in one tier. The relationship between tiers is ordered and linear. Features can exist in one or multiple subnetworks in one tier.</para>
+		/// <para>指定新域网络的层定义。</para>
+		/// <para>等级—层将被定义为等级层。在等级域网络中，层之间相互嵌套，所以较低级别层的子网中存在的要素会自然参与到所有较高级别的层中。例如，在燃气网络中，阀门隔离区存在于压力区中，而压力区又存在于系统区中。隔离区中的要素同时还存在于压力区和系统区中。</para>
+		/// <para>分区— 层将被定义为分区层。分区域网络中的要素仅存在于一个层中。层之间的关系按线性排列。要素可以存在于一个层内的一个或多个子网中。</para>
 		/// <para><see cref="TierDefinitionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -113,9 +114,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Subnetwork Controller Type</para>
-		/// <para>Specifies the subnetwork controller type for the new domain network.</para>
-		/// <para>Subnetwork source—The subnetwork controller type is a set of sources. A source is an origin of the delivered resource. For example, in an electric system, sources of electricity are power generating stations and substations.</para>
-		/// <para>Subnetwork sink—The subnetwork controller type is a set of sinks. A sink is the destination of the gathered resource.</para>
+		/// <para>指定新域网络的子网控制器类型。</para>
+		/// <para>子网源—子网控制器类型是一组源。源是已交付资源的原点。例如，在电气系统中，电力源是指发电站和变电站。</para>
+		/// <para>子网汇—子网控制器类型是一组汇。汇是所收集的资源的目的地。</para>
 		/// <para><see cref="SubnetworkControllerTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -125,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Domain Network Alias Name</para>
-		/// <para>The alias name of the domain network. This optional parameter is used to give a more descriptive name to the domain network.</para>
+		/// <para>域网络的别名。此可选参数用于为域网络提供更具描述性的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -146,17 +147,17 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum TierDefinitionEnum 
 		{
 			/// <summary>
-			/// <para>Hierarchical—The tier will be defined as hierarchical. In hierarchical domain networks, tiers are nested within one another, so features existing in subnetworks for a lower tier naturally participate in all higher tiers. For example, in a gas network, a valve isolation zone exists in a pressure zone, which in turn exists in a system zone. A feature in the isolation zone also exists in the pressure zone and in the system zone.</para>
+			/// <para>等级—层将被定义为等级层。在等级域网络中，层之间相互嵌套，所以较低级别层的子网中存在的要素会自然参与到所有较高级别的层中。例如，在燃气网络中，阀门隔离区存在于压力区中，而压力区又存在于系统区中。隔离区中的要素同时还存在于压力区和系统区中。</para>
 			/// </summary>
 			[GPValue("HIERARCHICAL")]
-			[Description("Hierarchical")]
+			[Description("等级")]
 			Hierarchical,
 
 			/// <summary>
-			/// <para>Partitioned— The tier will be defined as partitioned. Features in partitioned domain networks only exist in one tier. The relationship between tiers is ordered and linear. Features can exist in one or multiple subnetworks in one tier.</para>
+			/// <para>分区— 层将被定义为分区层。分区域网络中的要素仅存在于一个层中。层之间的关系按线性排列。要素可以存在于一个层内的一个或多个子网中。</para>
 			/// </summary>
 			[GPValue("PARTITIONED")]
-			[Description("Partitioned")]
+			[Description("分区")]
 			Partitioned,
 
 		}
@@ -167,17 +168,17 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum SubnetworkControllerTypeEnum 
 		{
 			/// <summary>
-			/// <para>Subnetwork source—The subnetwork controller type is a set of sources. A source is an origin of the delivered resource. For example, in an electric system, sources of electricity are power generating stations and substations.</para>
+			/// <para>子网源—子网控制器类型是一组源。源是已交付资源的原点。例如，在电气系统中，电力源是指发电站和变电站。</para>
 			/// </summary>
 			[GPValue("SOURCE")]
-			[Description("Subnetwork source")]
+			[Description("子网源")]
 			Subnetwork_source,
 
 			/// <summary>
-			/// <para>Subnetwork sink—The subnetwork controller type is a set of sinks. A sink is the destination of the gathered resource.</para>
+			/// <para>子网汇—子网控制器类型是一组汇。汇是所收集的资源的目的地。</para>
 			/// </summary>
 			[GPValue("SINK")]
-			[Description("Subnetwork sink")]
+			[Description("子网汇")]
 			Subnetwork_sink,
 
 		}

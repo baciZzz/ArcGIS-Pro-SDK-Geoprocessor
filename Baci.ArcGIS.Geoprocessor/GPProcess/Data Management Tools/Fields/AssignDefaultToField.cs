@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Assign Default To Field</para>
-	/// <para>Creates a default value for a specified field.  When a new row is added to the table or feature class, the specified field will be set to this default value.</para>
+	/// <para>为字段分配默认值</para>
+	/// <para>为指定字段创建默认值。一旦向表或要素类添加一个新行，就会将指定字段设置为该默认值。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input table or feature class that will have a default value added to one of its fields.</para>
+		/// <para>要向其中一个字段添加默认值的输入表或要素类。</para>
 		/// </param>
 		/// <param name="FieldName">
 		/// <para>Field Name</para>
-		/// <para>The field to which the default value will be added each time a new row is added to the table or feature class.</para>
+		/// <para>每次向表或要素类添加新行时都会添加默认值的字段。</para>
 		/// </param>
 		public AssignDefaultToField(object InTable, object FieldName)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Assign Default To Field</para>
+		/// <para>Tool Display Name : 为字段分配默认值</para>
 		/// </summary>
-		public override string DisplayName() => "Assign Default To Field";
+		public override string DisplayName() => "为字段分配默认值";
 
 		/// <summary>
 		/// <para>Tool Name : AssignDefaultToField</para>
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input table or feature class that will have a default value added to one of its fields.</para>
+		/// <para>要向其中一个字段添加默认值的输入表或要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Name</para>
-		/// <para>The field to which the default value will be added each time a new row is added to the table or feature class.</para>
+		/// <para>每次向表或要素类添加新行时都会添加默认值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Default Value</para>
-		/// <para>The default value to be added to each new table or feature class. The value entered must match the data type of the field. If the field chosen has a coded value domain assigned to it, the values from the coded domain will be included in the parameter value list..</para>
+		/// <para>要添加到每个新表或要素类的默认值。所输入的值必须与字段的数据类型相匹配。如果已向所选字段分配了编码值属性域，则该编码属性域中的值将包含在参数值列表中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Subtype</para>
-		/// <para>The subtypes that can participate in the default value.</para>
+		/// <para>可添加到默认值的子类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -105,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Clear Value</para>
-		/// <para>Specifies whether the default value for either the field or the subtype will be cleared. The Default Value parameter must be empty to clear the default value of the field. To clear the default value for the subtype, leave the Default Value parameter empty and specify the subtype to be cleared.</para>
-		/// <para>Checked—The default value will be cleared (set to null). The default value parameter must be empty.</para>
-		/// <para>Unchecked—The default value will not be cleared. This is the default.</para>
+		/// <para>指定是清除字段的默认值还是子类型的默认值。要清除字段的默认值，默认值参数必须为空。要清除子类型的默认值，请将默认值参数留空并指定要清除默认值的子类型。</para>
+		/// <para>选中 - 将清除默认值（设为空值）。默认值参数必须为空。</para>
+		/// <para>未选中 - 不会清除默认值。这是默认设置。</para>
 		/// <para><see cref="ClearValueEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -139,14 +140,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ClearValueEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The default value will be cleared (set to null). The default value parameter must be empty.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLEAR_VALUE")]
 			CLEAR_VALUE,
 
 			/// <summary>
-			/// <para>Unchecked—The default value will not be cleared. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_CLEAR")]

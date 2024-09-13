@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Database Connection String</para>
-	/// <para>Creates a connection string that geoprocessing tools can use to connect to a database or an enterprise geodatabase.</para>
+	/// <para>创建数据库连接字符串</para>
+	/// <para>创建连接字符串，以供地理处理工具连接到数据库或企业级地理数据库。</para>
 	/// </summary>
 	public class CreateDatabaseConnectionString : AbstractGPProcess
 	{
@@ -20,20 +21,20 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="DatabasePlatform">
 		/// <para>Database Platform</para>
-		/// <para>Specifies the database platform to which the connection will be made.</para>
-		/// <para>SQL Server—Connect to Microsoft SQL Server or Microsoft Azure SQL Database.</para>
-		/// <para>Oracle—Connect to Oracle.</para>
-		/// <para>DB2—Connect to IBM DB2 for Linux, UNIX, or Windows.</para>
-		/// <para>PostgreSQL—Connect to PostgreSQL.</para>
-		/// <para>Teradata—Connect to Teradata Data Warehouse Appliance.</para>
-		/// <para>SAP HANA—Connect to SAP HANA.</para>
-		/// <para>Dameng—Connect to Dameng.</para>
+		/// <para>指定要建立连接的数据库平台。</para>
+		/// <para>SQL Server—连接至 Microsoft SQL Server 或 Microsoft Azure SQL Database。</para>
+		/// <para>Oracle—连接到 Oracle。</para>
+		/// <para>DB2—连接至 Linux、UNIX 或 Windows 上的 IBM DB2。</para>
+		/// <para>PostgreSQL—连接至 PostgreSQL。</para>
+		/// <para>Teradata—连接至 Teradata Data Warehouse Appliance。</para>
+		/// <para>SAP HANA—连接至 SAP HANA。</para>
+		/// <para>DAMENG—连接至 Dameng。</para>
 		/// <para><see cref="DatabasePlatformEnum"/></para>
 		/// </param>
 		/// <param name="Instance">
 		/// <para>Instance</para>
-		/// <para>The database server or instance to which the connection will be made.</para>
-		/// <para>This parameter value depends on the Database Platform parameter value chosen.</para>
+		/// <para>要连接的数据库服务器或实例。</para>
+		/// <para>此参数值取决于选择的数据库平台参数值。</para>
 		/// </param>
 		public CreateDatabaseConnectionString(object DatabasePlatform, object Instance)
 		{
@@ -42,9 +43,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Database Connection String</para>
+		/// <para>Tool Display Name : 创建数据库连接字符串</para>
 		/// </summary>
-		public override string DisplayName() => "Create Database Connection String";
+		public override string DisplayName() => "创建数据库连接字符串";
 
 		/// <summary>
 		/// <para>Tool Name : CreateDatabaseConnectionString</para>
@@ -78,14 +79,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Database Platform</para>
-		/// <para>Specifies the database platform to which the connection will be made.</para>
-		/// <para>SQL Server—Connect to Microsoft SQL Server or Microsoft Azure SQL Database.</para>
-		/// <para>Oracle—Connect to Oracle.</para>
-		/// <para>DB2—Connect to IBM DB2 for Linux, UNIX, or Windows.</para>
-		/// <para>PostgreSQL—Connect to PostgreSQL.</para>
-		/// <para>Teradata—Connect to Teradata Data Warehouse Appliance.</para>
-		/// <para>SAP HANA—Connect to SAP HANA.</para>
-		/// <para>Dameng—Connect to Dameng.</para>
+		/// <para>指定要建立连接的数据库平台。</para>
+		/// <para>SQL Server—连接至 Microsoft SQL Server 或 Microsoft Azure SQL Database。</para>
+		/// <para>Oracle—连接到 Oracle。</para>
+		/// <para>DB2—连接至 Linux、UNIX 或 Windows 上的 IBM DB2。</para>
+		/// <para>PostgreSQL—连接至 PostgreSQL。</para>
+		/// <para>Teradata—连接至 Teradata Data Warehouse Appliance。</para>
+		/// <para>SAP HANA—连接至 SAP HANA。</para>
+		/// <para>DAMENG—连接至 Dameng。</para>
 		/// <para><see cref="DatabasePlatformEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -95,8 +96,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Instance</para>
-		/// <para>The database server or instance to which the connection will be made.</para>
-		/// <para>This parameter value depends on the Database Platform parameter value chosen.</para>
+		/// <para>要连接的数据库服务器或实例。</para>
+		/// <para>此参数值取决于选择的数据库平台参数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -104,9 +105,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Database Authentication</para>
-		/// <para>Specifies the type of authentication that will be used.</para>
-		/// <para>Checked—Database authentication will be used. An internal database user name and password are used to connect to the database. You aren&apos;t required to type your user name and password to create a connection; however, if you don&apos;t, you will be prompted to enter them when a connection is established. This is the default</para>
-		/// <para>Unchecked—Operating system authentication will be used. You do not need to type a user name and password. The connection will be made with the user name and password that were used to log in to the operating system. If the login used for the operating system is not a valid geodatabase login, the connection will fail.</para>
+		/// <para>指定要使用的身份验证类型。</para>
+		/// <para>选中 - 将使用数据库身份验证。 使用内部数据库用户名和密码连接到数据库。 创建连接无需输入用户名和密码；但是，如果不输入用户名和密码，系统将在连接建立好之后提示您输入用户名和密码。 这是默认设置</para>
+		/// <para>未选中 - 将使用操作系统身份验证。 不必输入用户名和密码。 将用登录操作系统时所使用的用户名和密码建立连接。 如果操作系统使用的登录信息不能用作地理数据库的登录信息，连接将失败。</para>
 		/// <para><see cref="AccountAuthenticationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Username</para>
-		/// <para>The database user name that will be used when using database authentication.</para>
+		/// <para>采用数据库身份验证时将使用的数据库用户名。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -124,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Password</para>
-		/// <para>The database user password that will be used when using database authentication.</para>
+		/// <para>采用数据库身份验证时将使用的数据库用户密码。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEncryptedString()]
@@ -132,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Database</para>
-		/// <para>The name of the database to which you will connect. This parameter only applies to PostgreSQL and SQL Server platforms.</para>
+		/// <para>将连接的数据库的名称。 此参数仅适用于 PostgreSQL 和 SQL Server 平台。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -140,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Dataset Object Name</para>
-		/// <para>The name of the dataset or object in the database to which the connection string will point. This connection string can be used as a path to the specified dataset.</para>
+		/// <para>数据库中连接字符串指向的数据集或对象名称。 此连接字符串可用作指定数据集的路径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -148,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Data type</para>
-		/// <para>The type of dataset or object referred to in the dataset object name. If there are multiple objects with the same name in the database, you may need to specify the data type of the object for which you want to make a connection string.</para>
+		/// <para>数据集对象名称中引用的数据集或对象的类型。 如果数据库中存在多个同名对象，则可能需要指定要为其创建连接字符串的对象的数据类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -156,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Feature Dataset</para>
-		/// <para>The name of the feature dataset containing the dataset or object for which you want to make a connection string. If the dataset is not in a feature dataset (for example, if it's at the root of the database), do not specify a target feature dataset.</para>
+		/// <para>包含要为其创建连接字符串的数据集或对象的要素数据集名称。 如果数据集不在要素数据集中（例如，如果它位于数据库的根目录下），请不要指定目标要素数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -164,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Schema (Oracle user schema geodatabases only)</para>
-		/// <para>The user schema geodatabase to which you will connect. The tool will determine if it is connecting to an Oracle database that contains a user-schema geodatabase. If the Oracle database contains a user schema, this option is active; otherwise, it remains inactive. The default option for this parameter is to use the sde schema (master) geodatabase.</para>
+		/// <para>将连接到的用户方案地理数据库。 工具将决定是否连接到包含用户方案地理数据库的 Oracle 数据库。 如果 Oracle 数据库包含用户方案，此选项将激活；否则，将保持非活动状态。 此参数的默认选项为使用 SDE 方案（主）地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -173,12 +174,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Version Type</para>
-		/// <para>Specifies the type of version to which you will connect. This parameter only applies when connecting to a geodatabase.</para>
-		/// <para>Transactional—Connect to a transactional version. If Transactional is selected, the The following version will be used parameter will be populated with a list of transactional versions, and the Date and Time parameter will be inactive. This is the Default.</para>
-		/// <para>Historical—Connect to an historical marker. If Historical is selected, the The following version will be used parameter will be populated with a list of historical markers, and the Date and Time parameter will be inactive.</para>
-		/// <para>Point in time—Connect to a specific point in time. If Point in time is selected, the The following version will be used parameter will be inactive, and the Date and Time parameter will become active.</para>
-		/// <para>Branch—Connect to the default branch version.</para>
-		/// <para>If Historical is selected and a name is not provided, the default transactional version is used. If Point in time is selected and a date is not provided in the Date and Time parameter, the default transactional version is used.</para>
+		/// <para>指定将连接的版本类型。 此参数仅在连接到地理数据库时适用。</para>
+		/// <para>事务—连接到事务版本。 如果选择事务，则将使用事务版本列表填充将使用以下版本参数，而日期和时间参数将处于非活动状态。 这是默认设置。</para>
+		/// <para>历史—连接到历史标记。 如果选择历史，则将使用历史标记列表填充将使用以下版本参数，而日期和时间参数将处于非活动状态。</para>
+		/// <para>时间点—连接到特定时间点。 如果选择时间点，则将使用以下版本参数将禁用，而日期和时间参数将变为活动状态。</para>
+		/// <para>分支—连接到默认分支版本。</para>
+		/// <para>如果选择历史并提供了名称，将使用默认的事务版本。 如果选择时间点并且未在日期和时间参数中提供日期，将使用默认的事务版本。</para>
 		/// <para><see cref="VersionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -189,8 +190,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>The following version will be used</para>
-		/// <para>The geodatabase transactional version or historical marker to connect to. The default option uses the default transactional version.</para>
-		/// <para>If you choose a branch version type, the connection is always to the default branch version.</para>
+		/// <para>要连接到的地理数据库事务版本或历史标记。 默认选项将使用默认事务版本。</para>
+		/// <para>如果选择分支版本类型，则会始终连接到默认分支版本。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -199,15 +200,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Date and Time</para>
-		/// <para>The value representing the date and time that will be used to connect to the database. This parameter is used with archive-enabled data. Use the time picker to choose the appropriate date.</para>
-		/// <para>If manually entering a date, the following formats can be used:</para>
+		/// <para>此值表示将用于连接到数据库的日期和时间。 此选项用于启用存档的数据。 利用时间选取器选择相应的日期。</para>
+		/// <para>如果手动输入日期，可以使用以下格式：</para>
 		/// <para>6/9/2011 4:20:15 PM</para>
 		/// <para>6/9/2011 16:20:15</para>
 		/// <para>6/9/2011</para>
 		/// <para>4:20:15 PM</para>
 		/// <para>16:20:15</para>
-		/// <para>If a time is entered without a date, the default date of December 30, 1899, will be used.</para>
-		/// <para>If a date is entered without a time, the default time of 12:00:00 AM will be used.</para>
+		/// <para>如果所输入的时间无日期，则将使用默认日期 1899 年 12 月 30 日。</para>
+		/// <para>如果所输入的日期无时间，则将使用默认时间 12:00:00 AM。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -238,52 +239,52 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DatabasePlatformEnum 
 		{
 			/// <summary>
-			/// <para>SQL Server—Connect to Microsoft SQL Server or Microsoft Azure SQL Database.</para>
+			/// <para>SQL Server—连接至 Microsoft SQL Server 或 Microsoft Azure SQL Database。</para>
 			/// </summary>
 			[GPValue("SQL_SERVER")]
 			[Description("SQL Server")]
 			SQL_Server,
 
 			/// <summary>
-			/// <para>Oracle—Connect to Oracle.</para>
+			/// <para>Oracle—连接到 Oracle。</para>
 			/// </summary>
 			[GPValue("ORACLE")]
 			[Description("Oracle")]
 			Oracle,
 
 			/// <summary>
-			/// <para>DB2—Connect to IBM DB2 for Linux, UNIX, or Windows.</para>
+			/// <para>DB2—连接至 Linux、UNIX 或 Windows 上的 IBM DB2。</para>
 			/// </summary>
 			[GPValue("DB2")]
 			[Description("DB2")]
 			DB2,
 
 			/// <summary>
-			/// <para>PostgreSQL—Connect to PostgreSQL.</para>
+			/// <para>PostgreSQL—连接至 PostgreSQL。</para>
 			/// </summary>
 			[GPValue("POSTGRESQL")]
 			[Description("PostgreSQL")]
 			PostgreSQL,
 
 			/// <summary>
-			/// <para>Teradata—Connect to Teradata Data Warehouse Appliance.</para>
+			/// <para>Teradata—连接至 Teradata Data Warehouse Appliance。</para>
 			/// </summary>
 			[GPValue("TERADATA")]
 			[Description("Teradata")]
 			Teradata,
 
 			/// <summary>
-			/// <para>SAP HANA—Connect to SAP HANA.</para>
+			/// <para>SAP HANA—连接至 SAP HANA。</para>
 			/// </summary>
 			[GPValue("SAP HANA")]
 			[Description("SAP HANA")]
 			SAP_HANA,
 
 			/// <summary>
-			/// <para>Dameng—Connect to Dameng.</para>
+			/// <para>DAMENG—连接至 Dameng。</para>
 			/// </summary>
 			[GPValue("DAMENG")]
-			[Description("Dameng")]
+			[Description("DAMENG")]
 			Dameng,
 
 		}
@@ -294,14 +295,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AccountAuthenticationEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Database authentication will be used. An internal database user name and password are used to connect to the database. You aren&apos;t required to type your user name and password to create a connection; however, if you don&apos;t, you will be prompted to enter them when a connection is established. This is the default</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DATABASE_AUTH")]
 			DATABASE_AUTH,
 
 			/// <summary>
-			/// <para>Unchecked—Operating system authentication will be used. You do not need to type a user name and password. The connection will be made with the user name and password that were used to log in to the operating system. If the login used for the operating system is not a valid geodatabase login, the connection will fail.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("OPERATING_SYSTEM_AUTH")]
@@ -315,31 +316,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum VersionTypeEnum 
 		{
 			/// <summary>
-			/// <para>Transactional—Connect to a transactional version. If Transactional is selected, the The following version will be used parameter will be populated with a list of transactional versions, and the Date and Time parameter will be inactive. This is the Default.</para>
+			/// <para>事务—连接到事务版本。 如果选择事务，则将使用事务版本列表填充将使用以下版本参数，而日期和时间参数将处于非活动状态。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("TRANSACTIONAL")]
-			[Description("Transactional")]
+			[Description("事务")]
 			Transactional,
 
 			/// <summary>
-			/// <para>Historical—Connect to an historical marker. If Historical is selected, the The following version will be used parameter will be populated with a list of historical markers, and the Date and Time parameter will be inactive.</para>
+			/// <para>历史—连接到历史标记。 如果选择历史，则将使用历史标记列表填充将使用以下版本参数，而日期和时间参数将处于非活动状态。</para>
 			/// </summary>
 			[GPValue("HISTORICAL")]
-			[Description("Historical")]
+			[Description("历史")]
 			Historical,
 
 			/// <summary>
-			/// <para>Point in time—Connect to a specific point in time. If Point in time is selected, the The following version will be used parameter will be inactive, and the Date and Time parameter will become active.</para>
+			/// <para>时间点—连接到特定时间点。 如果选择时间点，则将使用以下版本参数将禁用，而日期和时间参数将变为活动状态。</para>
 			/// </summary>
 			[GPValue("POINT_IN_TIME")]
-			[Description("Point in time")]
+			[Description("时间点")]
 			Point_in_time,
 
 			/// <summary>
-			/// <para>Branch—Connect to the default branch version.</para>
+			/// <para>分支—连接到默认分支版本。</para>
 			/// </summary>
 			[GPValue("BRANCH")]
-			[Description("Branch")]
+			[Description("分支")]
 			Branch,
 
 		}

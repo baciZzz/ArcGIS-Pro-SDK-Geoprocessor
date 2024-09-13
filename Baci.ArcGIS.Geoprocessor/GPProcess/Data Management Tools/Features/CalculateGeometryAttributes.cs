@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Calculate Geometry Attributes</para>
-	/// <para>Adds information to a feature's attribute fields representing the spatial or geometric characteristics and location of each feature, such as length or area and x-, y-, z-, and m-coordinates.</para>
+	/// <para>计算几何属性</para>
+	/// <para>向要素的属性字段（表示各要素的空间或几何特性以及位置）添加信息，例如长度或面积以及 x、y、z 和 m 坐标。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,54 +23,54 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The feature layer with a field that will be updated with geometry calculations.</para>
+		/// <para>将使用几何计算进行更新的带有字段的要素图层。</para>
 		/// </param>
 		/// <param name="GeometryProperty">
 		/// <para>Geometry Attributes</para>
-		/// <para>Specifies the fields in which the selected geometry properties will be calculated.</para>
-		/// <para>You can select an existing field or provide a new field name. If a new field name is specified, the field type is determined by the type of values that are written to the field.</para>
-		/// <para>Count attributes are written to long integer fields.</para>
-		/// <para>Area, length, and x-, y-, z-, and m-coordinate attributes are written to double fields.</para>
-		/// <para>Coordinate notations such as Degrees Minutes Seconds or MGRS are written to text fields.</para>
-		/// <para>AREA—The area of each polygon feature.</para>
-		/// <para>AREA_GEODESIC—The shape-preserving geodesic area of each polygon feature.</para>
-		/// <para>CENTROID_X—The centroid x-coordinate of each feature.</para>
-		/// <para>CENTROID_Y—The centroid y-coordinate of each feature.</para>
-		/// <para>CENTROID_Z—The centroid z-coordinate of each feature.</para>
-		/// <para>CENTROID_M—The centroid m-coordinate of each feature.</para>
-		/// <para>INSIDE_X—The x-coordinate of a central point inside or on each feature. This point is the same as the centroid if the centroid is inside the feature; otherwise, it is an inner label point.</para>
-		/// <para>INSIDE_Y—The y-coordinate of a central point inside or on each feature. This point is the same as the centroid if the centroid is inside the feature; otherwise, it is an inner label point.</para>
-		/// <para>INSIDE_Z—The z-coordinate of a central point inside or on each feature. This point is the same as the centroid if the centroid is inside the feature; otherwise, it is an inner label point.</para>
-		/// <para>INSIDE_M—The m-coordinate of a central point inside or on each feature. This point is the same as the centroid if the centroid is inside the feature; otherwise, it is an inner label point.</para>
-		/// <para>CURVE_COUNT—The number of curves in each feature. Curves include elliptical arcs, circular arcs, and Bezier curves.</para>
-		/// <para>HOLE_COUNT—The number of interior holes within each polygon feature.</para>
-		/// <para>EXTENT_MIN_X—The minimum x-coordinate of each feature&apos;s extent.</para>
-		/// <para>EXTENT_MIN_Y—The minimum y-coordinate of each feature&apos;s extent.</para>
-		/// <para>EXTENT_MIN_Z—The minimum z-coordinate of each feature&apos;s extent.</para>
-		/// <para>EXTENT_MAX_X—The maximum x-coordinate of each feature&apos;s extent.</para>
-		/// <para>EXTENT_MAX_Y—The maximum y-coordinate of each feature&apos;s extent.</para>
-		/// <para>EXTENT_MAX_Z—The maximum z-coordinate of each feature&apos;s extent.</para>
-		/// <para>LENGTH—The length of each line feature.</para>
-		/// <para>LENGTH_GEODESIC—The shape-preserving geodesic length of each line feature.</para>
-		/// <para>LENGTH_3D—The 3D length of each line feature.</para>
-		/// <para>LINE_BEARING—The start-to-end bearing of each line feature. Values range from 0 to 360, with 0 meaning north, 90 east, 180 south, 270 west, and so on.</para>
-		/// <para>LINE_START_X—The x-coordinate of the start point of each line feature.</para>
-		/// <para>LINE_START_Y—The y-coordinate of the start point of each line feature.</para>
-		/// <para>LINE_START_Z—The z-coordinate of the start point of each line feature.</para>
-		/// <para>LINE_START_M—The m-coordinate of the start point of each line feature.</para>
-		/// <para>LINE_END_X—The x-coordinate of the end point of each line feature.</para>
-		/// <para>LINE_END_Y—The y-coordinate of the end point of each line feature.</para>
-		/// <para>LINE_END_Z—The z-coordinate of the end point of each line feature.</para>
-		/// <para>LINE_END_M—The m-coordinate of the end point of each line feature.</para>
-		/// <para>PART_COUNT—The number of parts composing each feature.</para>
-		/// <para>PERIMETER_LENGTH—The length of the perimeter or border of each polygon feature.</para>
-		/// <para>PERIMETER_LENGTH_GEODESIC—The shape-preserving geodesic length of the perimeter or border of each polygon feature.</para>
-		/// <para>POINT_COUNT—The number of points or vertices composing each feature.</para>
-		/// <para>POINT_X—The x-coordinate of each point feature.</para>
-		/// <para>POINT_Y—The y-coordinate of each point feature.</para>
-		/// <para>POINT_Z—The z-coordinate of each point feature.</para>
-		/// <para>POINT_M—The m-coordinate of each point feature.</para>
-		/// <para>POINT_COORD_NOTATION—The x- and y-coordinate of each point feature formatted as a specified coordinate notation.</para>
+		/// <para>指定将在其中计算所选几何属性的字段。</para>
+		/// <para>您可以选择现有字段或提供新的字段名称。 如果指定了新的字段名称，则字段类型将由写入该字段的值的类型确定。</para>
+		/// <para>计数属性将写入长整数字段。</para>
+		/// <para>面积、长度以及 x、y、z 和 m 坐标属性将写入双精度字段。</para>
+		/// <para>坐标记法（例如度分秒或 MGRS）将写入文本字段。</para>
+		/// <para>AREA—各个面要素的面积。</para>
+		/// <para>AREA_GEODESIC—各个面要素的形状不变的测地线面积。</para>
+		/// <para>CENTROID_X—各个要素的质心 x 坐标。</para>
+		/// <para>CENTROID_Y—各个要素的质心 y 坐标。</para>
+		/// <para>CENTROID_Z—各个要素的质心 z 坐标。</para>
+		/// <para>CENTROID_M—各个要素的质心 m 坐标。</para>
+		/// <para>INSIDE_X—各个要素内或各个要素上中心点的 x 坐标。 如果质心位于要素内，则此点与质心相同，否则，此点为内标记点。</para>
+		/// <para>INSIDE_Y—各个要素内或各个要素上中心点的 y 坐标。 如果质心位于要素内，则此点与质心相同，否则，此点为内标记点。</para>
+		/// <para>INSIDE_Z—各个要素内或各个要素上中心点的 z 坐标。 如果质心位于要素内，则此点与质心相同，否则，此点为内标记点。</para>
+		/// <para>INSIDE_M—各个要素内或各个要素上中心点的 m 坐标。 如果质心位于要素内，则此点与质心相同，否则，此点为内标记点。</para>
+		/// <para>CURVE_COUNT—各个要素中的曲线数量。 曲线包括椭圆弧、圆弧和贝塞尔曲线。</para>
+		/// <para>HOLE_COUNT—各个面要素内的内部孔洞数量。</para>
+		/// <para>EXTENT_MIN_X—各个要素范围的最小 x 坐标。</para>
+		/// <para>EXTENT_MIN_Y—各个要素范围的最小 y 坐标。</para>
+		/// <para>EXTENT_MIN_Z—各个要素范围的最小 z 坐标。</para>
+		/// <para>EXTENT_MAX_X—各个要素范围的最大 x 坐标。</para>
+		/// <para>EXTENT_MAX_Y—各个要素范围的最大 y 坐标。</para>
+		/// <para>EXTENT_MAX_Z—各个要素范围的最大 z 坐标。</para>
+		/// <para>LENGTH—各个线要素的长度。</para>
+		/// <para>LENGTH_GEODESIC—各个线要素的形状不变的测地线长度。</para>
+		/// <para>LENGTH_3D—各个线要素的 3D 长度。</para>
+		/// <para>LINE_BEARING—各个线要素的起始-结束方位角。 值范围介于 0 至 360 之间，其中 0 表示北，90 表示东，180 表示南，270 表示西，以此类推。</para>
+		/// <para>LINE_START_X—各个线要素起点的 x 坐标。</para>
+		/// <para>LINE_START_Y—各个线要素起点的 y 坐标。</para>
+		/// <para>LINE_START_Z—各个线要素起点的 z 坐标。</para>
+		/// <para>LINE_START_M—各个线要素起点的 m 坐标。</para>
+		/// <para>LINE_END_X—各个线要素终点的 x 坐标。</para>
+		/// <para>LINE_END_Y—各个线要素终点的 y 坐标。</para>
+		/// <para>LINE_END_Z—各个线要素终点的 z 坐标。</para>
+		/// <para>LINE_END_M—各个线要素终点的 m 坐标。</para>
+		/// <para>PART_COUNT—构成各个要素的部分数量。</para>
+		/// <para>PERIMETER_LENGTH—各个面要素周长或边界长度。</para>
+		/// <para>PERIMETER_LENGTH_GEODESIC—各个面要素周长或边界的形状不变的测地线长度。</para>
+		/// <para>POINT_COUNT—构成各个要素的点或折点数量。</para>
+		/// <para>POINT_X—各个点要素的 x 坐标。</para>
+		/// <para>POINT_Y—各个点要素的 y 坐标。</para>
+		/// <para>POINT_Z—各个点要素的 z 坐标。</para>
+		/// <para>POINT_M—各个点要素的 m 坐标。</para>
+		/// <para>POINT_COORD_NOTATION—格式化为指定坐标符号的各个点要素的 x 坐标和 y 坐标。</para>
 		/// </param>
 		public CalculateGeometryAttributes(object InFeatures, object GeometryProperty)
 		{
@@ -78,9 +79,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Calculate Geometry Attributes</para>
+		/// <para>Tool Display Name : 计算几何属性</para>
 		/// </summary>
-		public override string DisplayName() => "Calculate Geometry Attributes";
+		public override string DisplayName() => "计算几何属性";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateGeometryAttributes</para>
@@ -114,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The feature layer with a field that will be updated with geometry calculations.</para>
+		/// <para>将使用几何计算进行更新的带有字段的要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -125,50 +126,50 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Geometry Attributes</para>
-		/// <para>Specifies the fields in which the selected geometry properties will be calculated.</para>
-		/// <para>You can select an existing field or provide a new field name. If a new field name is specified, the field type is determined by the type of values that are written to the field.</para>
-		/// <para>Count attributes are written to long integer fields.</para>
-		/// <para>Area, length, and x-, y-, z-, and m-coordinate attributes are written to double fields.</para>
-		/// <para>Coordinate notations such as Degrees Minutes Seconds or MGRS are written to text fields.</para>
-		/// <para>AREA—The area of each polygon feature.</para>
-		/// <para>AREA_GEODESIC—The shape-preserving geodesic area of each polygon feature.</para>
-		/// <para>CENTROID_X—The centroid x-coordinate of each feature.</para>
-		/// <para>CENTROID_Y—The centroid y-coordinate of each feature.</para>
-		/// <para>CENTROID_Z—The centroid z-coordinate of each feature.</para>
-		/// <para>CENTROID_M—The centroid m-coordinate of each feature.</para>
-		/// <para>INSIDE_X—The x-coordinate of a central point inside or on each feature. This point is the same as the centroid if the centroid is inside the feature; otherwise, it is an inner label point.</para>
-		/// <para>INSIDE_Y—The y-coordinate of a central point inside or on each feature. This point is the same as the centroid if the centroid is inside the feature; otherwise, it is an inner label point.</para>
-		/// <para>INSIDE_Z—The z-coordinate of a central point inside or on each feature. This point is the same as the centroid if the centroid is inside the feature; otherwise, it is an inner label point.</para>
-		/// <para>INSIDE_M—The m-coordinate of a central point inside or on each feature. This point is the same as the centroid if the centroid is inside the feature; otherwise, it is an inner label point.</para>
-		/// <para>CURVE_COUNT—The number of curves in each feature. Curves include elliptical arcs, circular arcs, and Bezier curves.</para>
-		/// <para>HOLE_COUNT—The number of interior holes within each polygon feature.</para>
-		/// <para>EXTENT_MIN_X—The minimum x-coordinate of each feature&apos;s extent.</para>
-		/// <para>EXTENT_MIN_Y—The minimum y-coordinate of each feature&apos;s extent.</para>
-		/// <para>EXTENT_MIN_Z—The minimum z-coordinate of each feature&apos;s extent.</para>
-		/// <para>EXTENT_MAX_X—The maximum x-coordinate of each feature&apos;s extent.</para>
-		/// <para>EXTENT_MAX_Y—The maximum y-coordinate of each feature&apos;s extent.</para>
-		/// <para>EXTENT_MAX_Z—The maximum z-coordinate of each feature&apos;s extent.</para>
-		/// <para>LENGTH—The length of each line feature.</para>
-		/// <para>LENGTH_GEODESIC—The shape-preserving geodesic length of each line feature.</para>
-		/// <para>LENGTH_3D—The 3D length of each line feature.</para>
-		/// <para>LINE_BEARING—The start-to-end bearing of each line feature. Values range from 0 to 360, with 0 meaning north, 90 east, 180 south, 270 west, and so on.</para>
-		/// <para>LINE_START_X—The x-coordinate of the start point of each line feature.</para>
-		/// <para>LINE_START_Y—The y-coordinate of the start point of each line feature.</para>
-		/// <para>LINE_START_Z—The z-coordinate of the start point of each line feature.</para>
-		/// <para>LINE_START_M—The m-coordinate of the start point of each line feature.</para>
-		/// <para>LINE_END_X—The x-coordinate of the end point of each line feature.</para>
-		/// <para>LINE_END_Y—The y-coordinate of the end point of each line feature.</para>
-		/// <para>LINE_END_Z—The z-coordinate of the end point of each line feature.</para>
-		/// <para>LINE_END_M—The m-coordinate of the end point of each line feature.</para>
-		/// <para>PART_COUNT—The number of parts composing each feature.</para>
-		/// <para>PERIMETER_LENGTH—The length of the perimeter or border of each polygon feature.</para>
-		/// <para>PERIMETER_LENGTH_GEODESIC—The shape-preserving geodesic length of the perimeter or border of each polygon feature.</para>
-		/// <para>POINT_COUNT—The number of points or vertices composing each feature.</para>
-		/// <para>POINT_X—The x-coordinate of each point feature.</para>
-		/// <para>POINT_Y—The y-coordinate of each point feature.</para>
-		/// <para>POINT_Z—The z-coordinate of each point feature.</para>
-		/// <para>POINT_M—The m-coordinate of each point feature.</para>
-		/// <para>POINT_COORD_NOTATION—The x- and y-coordinate of each point feature formatted as a specified coordinate notation.</para>
+		/// <para>指定将在其中计算所选几何属性的字段。</para>
+		/// <para>您可以选择现有字段或提供新的字段名称。 如果指定了新的字段名称，则字段类型将由写入该字段的值的类型确定。</para>
+		/// <para>计数属性将写入长整数字段。</para>
+		/// <para>面积、长度以及 x、y、z 和 m 坐标属性将写入双精度字段。</para>
+		/// <para>坐标记法（例如度分秒或 MGRS）将写入文本字段。</para>
+		/// <para>AREA—各个面要素的面积。</para>
+		/// <para>AREA_GEODESIC—各个面要素的形状不变的测地线面积。</para>
+		/// <para>CENTROID_X—各个要素的质心 x 坐标。</para>
+		/// <para>CENTROID_Y—各个要素的质心 y 坐标。</para>
+		/// <para>CENTROID_Z—各个要素的质心 z 坐标。</para>
+		/// <para>CENTROID_M—各个要素的质心 m 坐标。</para>
+		/// <para>INSIDE_X—各个要素内或各个要素上中心点的 x 坐标。 如果质心位于要素内，则此点与质心相同，否则，此点为内标记点。</para>
+		/// <para>INSIDE_Y—各个要素内或各个要素上中心点的 y 坐标。 如果质心位于要素内，则此点与质心相同，否则，此点为内标记点。</para>
+		/// <para>INSIDE_Z—各个要素内或各个要素上中心点的 z 坐标。 如果质心位于要素内，则此点与质心相同，否则，此点为内标记点。</para>
+		/// <para>INSIDE_M—各个要素内或各个要素上中心点的 m 坐标。 如果质心位于要素内，则此点与质心相同，否则，此点为内标记点。</para>
+		/// <para>CURVE_COUNT—各个要素中的曲线数量。 曲线包括椭圆弧、圆弧和贝塞尔曲线。</para>
+		/// <para>HOLE_COUNT—各个面要素内的内部孔洞数量。</para>
+		/// <para>EXTENT_MIN_X—各个要素范围的最小 x 坐标。</para>
+		/// <para>EXTENT_MIN_Y—各个要素范围的最小 y 坐标。</para>
+		/// <para>EXTENT_MIN_Z—各个要素范围的最小 z 坐标。</para>
+		/// <para>EXTENT_MAX_X—各个要素范围的最大 x 坐标。</para>
+		/// <para>EXTENT_MAX_Y—各个要素范围的最大 y 坐标。</para>
+		/// <para>EXTENT_MAX_Z—各个要素范围的最大 z 坐标。</para>
+		/// <para>LENGTH—各个线要素的长度。</para>
+		/// <para>LENGTH_GEODESIC—各个线要素的形状不变的测地线长度。</para>
+		/// <para>LENGTH_3D—各个线要素的 3D 长度。</para>
+		/// <para>LINE_BEARING—各个线要素的起始-结束方位角。 值范围介于 0 至 360 之间，其中 0 表示北，90 表示东，180 表示南，270 表示西，以此类推。</para>
+		/// <para>LINE_START_X—各个线要素起点的 x 坐标。</para>
+		/// <para>LINE_START_Y—各个线要素起点的 y 坐标。</para>
+		/// <para>LINE_START_Z—各个线要素起点的 z 坐标。</para>
+		/// <para>LINE_START_M—各个线要素起点的 m 坐标。</para>
+		/// <para>LINE_END_X—各个线要素终点的 x 坐标。</para>
+		/// <para>LINE_END_Y—各个线要素终点的 y 坐标。</para>
+		/// <para>LINE_END_Z—各个线要素终点的 z 坐标。</para>
+		/// <para>LINE_END_M—各个线要素终点的 m 坐标。</para>
+		/// <para>PART_COUNT—构成各个要素的部分数量。</para>
+		/// <para>PERIMETER_LENGTH—各个面要素周长或边界长度。</para>
+		/// <para>PERIMETER_LENGTH_GEODESIC—各个面要素周长或边界的形状不变的测地线长度。</para>
+		/// <para>POINT_COUNT—构成各个要素的点或折点数量。</para>
+		/// <para>POINT_X—各个点要素的 x 坐标。</para>
+		/// <para>POINT_Y—各个点要素的 y 坐标。</para>
+		/// <para>POINT_Z—各个点要素的 z 坐标。</para>
+		/// <para>POINT_M—各个点要素的 m 坐标。</para>
+		/// <para>POINT_COORD_NOTATION—格式化为指定坐标符号的各个点要素的 x 坐标和 y 坐标。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -177,13 +178,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Length Unit</para>
-		/// <para>Specifies the unit that will be used to calculate length.</para>
-		/// <para>Feet (United States)—The length unit will be feet (United States).</para>
-		/// <para>Meters—The length unit will be meters.</para>
-		/// <para>Kilometers—The length unit will be kilometers.</para>
-		/// <para>Miles (United States)—The length unit will be miles (United States).</para>
-		/// <para>Nautical miles (United States)—The length unit will be nautical miles (United States).</para>
-		/// <para>Yards (United States)—The length unit will be yards (United States).</para>
+		/// <para>指定将用于计算长度的单位。</para>
+		/// <para>英尺（美国）—长度单位将为英尺（美国）。</para>
+		/// <para>米—长度单位将为米。</para>
+		/// <para>千米—长度单位将为千米。</para>
+		/// <para>英里（美国）—长度单位将为英里（美国）。</para>
+		/// <para>海里（美国）—长度单位将为海里（美国）。</para>
+		/// <para>码（美国）—长度单位将为码（美国）。</para>
 		/// <para><see cref="LengthUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -193,15 +194,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Area Unit</para>
-		/// <para>Specifies the unit that will be used to calculate area.</para>
-		/// <para>Acres—The area unit will be acres.</para>
-		/// <para>Hectares—The area unit will be hectares.</para>
-		/// <para>Square miles (United States)—The area unit will be square miles (United States).</para>
-		/// <para>Square kilometers—The area unit will be square kilometers.</para>
-		/// <para>Square meters—The area unit will be square meters.</para>
-		/// <para>Square feet (United States)—The area unit will be square feet (United States).</para>
-		/// <para>Square yards (United States)—The area unit will be square yards (United States).</para>
-		/// <para>Square nautical miles (United States)—The area unit will be square nautical miles (United States).</para>
+		/// <para>指定将用于计算面积的单位。</para>
+		/// <para>英亩—面积单位将为英亩。</para>
+		/// <para>公顷—面积单位将为公顷。</para>
+		/// <para>平方英里（美国）—面积单位将为平方英里（美国）。</para>
+		/// <para>平方千米—面积单位将为平方千米。</para>
+		/// <para>平方米—面积单位将为平方米。</para>
+		/// <para>平方英尺（美国）—面积单位将为平方英尺（美国）。</para>
+		/// <para>平方码（美国）—面积单位将为平方码（美国）。</para>
+		/// <para>平方海里（美国）—面积单位将为平方海里（美国）。</para>
 		/// <para><see cref="AreaUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -211,8 +212,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>The coordinate system in which the coordinates, length, and area will be calculated. The coordinate system of the input features is used by default.</para>
-		/// <para>For coordinate-based geometry properties, the coordinate system will only be applied when the coordinate format is the same as input; otherwise, the geographic coordinate system WGS84 will be used.</para>
+		/// <para>用于计算坐标、长度和面积的坐标系。 默认使用输入要素的坐标系。</para>
+		/// <para>对于基于坐标的几何属性，仅当坐标格式与输入相同时才应用坐标系；否则，将使用地理坐标系 WGS84。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
@@ -227,23 +228,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Coordinate Format</para>
-		/// <para>Specifies the coordinate format in which the x- and y-coordinates will be calculated. The coordinate format matching the input features&apos; spatial reference units is used by default.</para>
-		/// <para>Several coordinate formats, including Degrees Minutes Seconds, Degrees Decimal Minutes, and others, require the calculation to be performed in a text field.</para>
-		/// <para>Same as input—The input features&apos; spatial reference units will be used for coordinate formatting. This is the default.</para>
-		/// <para>Decimal Degrees—Decimal Degrees.</para>
-		/// <para>Degrees Minutes Seconds (DDD° MM&apos; SSS.ss&quot; &lt;N|S|E|W&gt;)—Degrees Minutes Seconds with cardinal direction component at the end (DDD° MM&apos; SSS.ss&quot; &lt;N|S|E|W&gt;).</para>
-		/// <para>Degrees Minutes Seconds (&lt;N|S|E|W&gt; DDD° MM&apos; SSS.ss&quot;)—Degrees Minutes Seconds with cardinal direction component at the beginning (&lt;N|S|E|W&gt; DDD° MM&apos; SSS.ss&quot;).</para>
-		/// <para>Degrees Minutes Seconds (&lt;+|-&gt; DDD° MM&apos; SSS.ss&quot;)—Degrees Minutes Seconds with positive or negative direction component at the beginning (&lt;+|-&gt; DDD° MM&apos; SSS.ss&quot;).</para>
-		/// <para>Degrees Minutes Seconds (&lt;+|-&gt; DDD.MMSSSss)—Degrees Minutes Seconds packed into a single value with positive or negative direction component at the beginning (&lt;+|-&gt; DDD.MMSSSss).</para>
-		/// <para>Degrees Decimal Minutes (DDD° MM.mmm&apos; &lt;N|S|E|W&gt;)—Degrees Decimal Minutes with cardinal direction component at the end (DDD° MM.mmm&apos; &lt;N|S|E|W&gt;).</para>
-		/// <para>Degrees Decimal Minutes (&lt;N|S|E|W&gt; DDD° MM.mmm&apos;)—Degrees Decimal Minutes with cardinal direction component at the beginning (&lt;N|S|E|W&gt; DDD° MM.mmm&apos;).</para>
-		/// <para>Degrees Decimal Minutes (&lt;+|-&gt; DDD° MM.mmm&apos;)—Degrees Decimal Minutes with positive or negative direction component at the beginning (&lt;+|-&gt; DDD° MM.mmm&apos;).</para>
-		/// <para>GARS (Global Area Reference System)—The Global Area Reference System is based on latitude and longitude, dividing and subdividing the world into cells.</para>
-		/// <para>GEOREF (World Geographic Reference System)—The World Geographic Reference System is based on the geographic system of latitude and longitude, but using a simpler and more flexible notation.</para>
-		/// <para>MGRS (Military Grid Reference System)—Military Grid Reference System.</para>
-		/// <para>USNG (United States National Grid)—United States National Grid.</para>
-		/// <para>UTM (Universal Transverse Mercator)—Universal Transverse Mercator.</para>
-		/// <para>UTM with no spaces—Universal Transverse Mercator with no spaces.</para>
+		/// <para>指定将用于计算 x 和 y 坐标的坐标格式。 默认情况下，将使用与输入要素的空间参考单位匹配的坐标格式。</para>
+		/// <para>包括“度分秒”、“十进制度分”等在内的多种坐标格式需要在文本字段中执行计算。</para>
+		/// <para>与输入相同—输入要素的空间参考单位将用于坐标格式化。 这是默认设置。</para>
+		/// <para>十进制度—十进制度。</para>
+		/// <para>度分秒 (DDD° MM&apos; SSS.ss&quot; &lt;N|S|E|W&gt;)—末尾带有主方向分量的度分秒 (DDD° MM&apos; SSS.ss&quot; &lt;N|S|E|W&gt;)。</para>
+		/// <para>度分秒 (&lt;N|S|E|W&gt; DDD° MM&apos; SSS.ss&quot;)—开头带有主方向分量的度分秒 (&lt;N|S|E|W&gt; DDD° MM&apos; SSS.ss&quot;)。</para>
+		/// <para>度分秒 (&lt;+|-&gt; DDD° MM&apos; SSS.ss&quot;)—开头带有正或负方向分量的度分秒 (&lt;+|-&gt; DDD° MM&apos; SSS.ss&quot;)。</para>
+		/// <para>度分秒 (&lt;+|-&gt; DDD.MMSSSss)—被打包成单个值的、开头带有正或负方向分量的度分秒 (&lt;+|-&gt; DDD.MMSSSss)。</para>
+		/// <para>十进制度分 (DDD° MM.mmm&apos; &lt;N|S|E|W&gt;)—末尾带有主方向分量的十进制度分 (DDD° MM.mmm&apos; &lt;N|S|E|W&gt;)。</para>
+		/// <para>十进制度分 (&lt;N|S|E|W&gt; DDD° MM.mmm&apos;)—开头带有主方向分量的十进制度分 (&lt;N|S|E|W&gt; DDD° MM.mmm&apos;)。</para>
+		/// <para>十进制度分 (&lt;+|-&gt; DDD° MM.mmm&apos;)—开头带有正或负方向分量的十进制度分 (&lt;+|-&gt; DDD° MM.mmm&apos;)。</para>
+		/// <para>GARS（全球区域参考系）—全球区域参考系基于纬度和经度，将世界划分和细分为多个像元。</para>
+		/// <para>GEOREF（世界地理参考系）—世界地理参考系基于由纬度和经度构成的地理系统，并且使用了一种更为简单、灵活的符号。</para>
+		/// <para>MGRS（军事格网参考系）—军事格网参考系。</para>
+		/// <para>USNG（美国国家格网）—美国国家格网。</para>
+		/// <para>UTM（通用横轴墨卡托）—通用横轴墨卡托投影。</para>
+		/// <para>没有空格的 UTM—没有空格的通用横轴墨卡托。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -267,45 +268,45 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum LengthUnitEnum 
 		{
 			/// <summary>
-			/// <para>Feet (United States)—The length unit will be feet (United States).</para>
+			/// <para>英尺（美国）—长度单位将为英尺（美国）。</para>
 			/// </summary>
 			[GPValue("FEET_US")]
-			[Description("Feet (United States)")]
+			[Description("英尺（美国）")]
 			FEET_US,
 
 			/// <summary>
-			/// <para>Meters—The length unit will be meters.</para>
+			/// <para>米—长度单位将为米。</para>
 			/// </summary>
 			[GPValue("METERS")]
-			[Description("Meters")]
+			[Description("米")]
 			Meters,
 
 			/// <summary>
-			/// <para>Yards (United States)—The length unit will be yards (United States).</para>
+			/// <para>码（美国）—长度单位将为码（美国）。</para>
 			/// </summary>
 			[GPValue("YARDS")]
-			[Description("Yards (United States)")]
+			[Description("码（美国）")]
 			YARDS,
 
 			/// <summary>
-			/// <para>Kilometers—The length unit will be kilometers.</para>
+			/// <para>千米—长度单位将为千米。</para>
 			/// </summary>
 			[GPValue("KILOMETERS")]
-			[Description("Kilometers")]
+			[Description("千米")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>Miles (United States)—The length unit will be miles (United States).</para>
+			/// <para>英里（美国）—长度单位将为英里（美国）。</para>
 			/// </summary>
 			[GPValue("MILES_US")]
-			[Description("Miles (United States)")]
+			[Description("英里（美国）")]
 			MILES_US,
 
 			/// <summary>
-			/// <para>Nautical miles (United States)—The length unit will be nautical miles (United States).</para>
+			/// <para>海里（美国）—长度单位将为海里（美国）。</para>
 			/// </summary>
 			[GPValue("NAUTICAL_MILES")]
-			[Description("Nautical miles (United States)")]
+			[Description("海里（美国）")]
 			NAUTICAL_MILES,
 
 		}
@@ -316,59 +317,59 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AreaUnitEnum 
 		{
 			/// <summary>
-			/// <para>Acres—The area unit will be acres.</para>
+			/// <para>英亩—面积单位将为英亩。</para>
 			/// </summary>
 			[GPValue("ACRES")]
-			[Description("Acres")]
+			[Description("英亩")]
 			Acres,
 
 			/// <summary>
-			/// <para>Hectares—The area unit will be hectares.</para>
+			/// <para>公顷—面积单位将为公顷。</para>
 			/// </summary>
 			[GPValue("HECTARES")]
-			[Description("Hectares")]
+			[Description("公顷")]
 			Hectares,
 
 			/// <summary>
-			/// <para>Square miles (United States)—The area unit will be square miles (United States).</para>
+			/// <para>平方英里（美国）—面积单位将为平方英里（美国）。</para>
 			/// </summary>
 			[GPValue("SQUARE_MILES_US")]
-			[Description("Square miles (United States)")]
+			[Description("平方英里（美国）")]
 			SQUARE_MILES_US,
 
 			/// <summary>
-			/// <para>Square kilometers—The area unit will be square kilometers.</para>
+			/// <para>平方千米—面积单位将为平方千米。</para>
 			/// </summary>
 			[GPValue("SQUARE_KILOMETERS")]
-			[Description("Square kilometers")]
+			[Description("平方千米")]
 			Square_kilometers,
 
 			/// <summary>
-			/// <para>Square meters—The area unit will be square meters.</para>
+			/// <para>平方米—面积单位将为平方米。</para>
 			/// </summary>
 			[GPValue("SQUARE_METERS")]
-			[Description("Square meters")]
+			[Description("平方米")]
 			Square_meters,
 
 			/// <summary>
-			/// <para>Square feet (United States)—The area unit will be square feet (United States).</para>
+			/// <para>平方英尺（美国）—面积单位将为平方英尺（美国）。</para>
 			/// </summary>
 			[GPValue("SQUARE_FEET_US")]
-			[Description("Square feet (United States)")]
+			[Description("平方英尺（美国）")]
 			SQUARE_FEET_US,
 
 			/// <summary>
-			/// <para>Square yards (United States)—The area unit will be square yards (United States).</para>
+			/// <para>平方码（美国）—面积单位将为平方码（美国）。</para>
 			/// </summary>
 			[GPValue("SQUARE_YARDS")]
-			[Description("Square yards (United States)")]
+			[Description("平方码（美国）")]
 			SQUARE_YARDS,
 
 			/// <summary>
-			/// <para>Square nautical miles (United States)—The area unit will be square nautical miles (United States).</para>
+			/// <para>平方海里（美国）—面积单位将为平方海里（美国）。</para>
 			/// </summary>
 			[GPValue("SQUARE_NAUTICAL_MILES")]
-			[Description("Square nautical miles (United States)")]
+			[Description("平方海里（美国）")]
 			SQUARE_NAUTICAL_MILES,
 
 		}

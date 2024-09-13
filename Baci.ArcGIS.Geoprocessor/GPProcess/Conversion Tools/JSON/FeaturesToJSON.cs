@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Features To JSON</para>
-	/// <para>Converts features to  JSON or GeoJSON format. The fields, geometry, and spatial reference of  features will be converted to their corresponding  JSON representation and written to a file with a .json or  .geojson extension.</para>
+	/// <para>要素转 JSON</para>
+	/// <para>将要素转换为 JSON 或 GeoJSON 格式。要素的字段、几何和空间参考将转换为相应的 JSON 表示，并写入到扩展名为 .json 或 .geojson 的文件中。</para>
 	/// </summary>
 	public class FeaturesToJSON : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The features to convert to JSON.</para>
+		/// <para>要转换为 JSON 的要素。</para>
 		/// </param>
 		/// <param name="OutJsonFile">
 		/// <para>Output JSON</para>
-		/// <para>The output JSON or GeoJSON file.</para>
+		/// <para>输出 JSON 或 GeoJSON 文件。</para>
 		/// </param>
 		public FeaturesToJSON(object InFeatures, object OutJsonFile)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Features To JSON</para>
+		/// <para>Tool Display Name : 要素转 JSON</para>
 		/// </summary>
-		public override string DisplayName() => "Features To JSON";
+		public override string DisplayName() => "要素转 JSON";
 
 		/// <summary>
 		/// <para>Tool Name : FeaturesToJSON</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The features to convert to JSON.</para>
+		/// <para>要转换为 JSON 的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output JSON</para>
-		/// <para>The output JSON or GeoJSON file.</para>
+		/// <para>输出 JSON 或 GeoJSON 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -89,9 +90,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Formatted JSON</para>
-		/// <para>Specifies whether the JSON will be formatted to improve readability similar to the ArcGIS REST API specification&apos;s PJSON (Pretty JSON) format.</para>
-		/// <para>Unchecked—The features will not be formatted. This is the default.</para>
-		/// <para>Checked—The features will be formatted to the PJSON specification.</para>
+		/// <para>用于指定是否设置 JSON 的格式，以提高与 ArcGIS REST API 规范的 PJSON（美观的 JSON）格式相似的可读性。</para>
+		/// <para>取消选中 - 将不会设置要素的格式。这是默认设置。</para>
+		/// <para>已选中 - 会按照 PJSON 规范设置要素的格式。</para>
 		/// <para><see cref="FormatJsonEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -101,9 +102,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Include Z Values</para>
-		/// <para>Specifies whether to include z-values of the features to the JSON.</para>
-		/// <para>Unchecked—The z-values will not be included in geometries, and the hasZ property of the JSON will not be included. This is the default.</para>
-		/// <para>Checked—The z-values will be included in geometries, and the hasZ property of the JSON will be set to true.</para>
+		/// <para>用于指定是否包括要转为 JSON 的要素的 Z 值。</para>
+		/// <para>取消选中 - Z 值不会包括在几何中，且 JSON 的 hasZ 属性也不会包括在内。这是默认设置。</para>
+		/// <para>已选中 - Z 值将包括在几何中，且 JSON 的 hasZ 属性将设置为 True。</para>
 		/// <para><see cref="IncludeZValuesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -113,9 +114,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Include M Values</para>
-		/// <para>Specifies whether to include m-values of the features to the JSON.</para>
-		/// <para>Unchecked—The m-values will not be included in geometries, and the hasM property of the JSON will not be included. This is the default.</para>
-		/// <para>Checked—The m-values will be included in geometries, and the hasM property of the JSON will be set to true.</para>
+		/// <para>用于指定是否包括要转为 JSON 的要素的 M 值。</para>
+		/// <para>取消选中 - M 值不会包括在几何中，且 JSON 的 hasM 属性也不会包括在内。这是默认设置。</para>
+		/// <para>已选中 - M 值将包括在几何中，且 JSON 的 hasM 属性将设置为 True。</para>
 		/// <para><see cref="IncludeMValuesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -125,9 +126,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output to GeoJSON</para>
-		/// <para>Specifies whether the output will be created as GeoJSON.</para>
-		/// <para>Unchecked—The output will be created as Esri JSON (.json). This is the default.</para>
-		/// <para>Checked—The output will be created in the GeoJSON format (.geojson).</para>
+		/// <para>用于指定是否将输出创建为 GeoJSON。</para>
+		/// <para>未选中 - 输出将创建为 Esri JSON (.json)。这是默认设置。</para>
+		/// <para>已选中 - 输出将创建为 GeoJSON 格式 (.geojson)。</para>
 		/// <para><see cref="GeojsonEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -137,9 +138,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Project to WGS_1984</para>
-		/// <para>Specifies whether the input features will be projected to the geographic coordinate system WGS_1984 with a default geographic transformation. This parameter only applies when the output is GeoJSON.</para>
-		/// <para>Checked—Features will be projected to WGS_1984.</para>
-		/// <para>Unchecked—Features will not be projected to WGS_1984. The GeoJSON will contain a CRS tag that defines the coordinate system. This is the default.</para>
+		/// <para>用于指定是否将输入要素投影到采用默认地理变换的地理坐标系 WGS_1984。该参数仅适用于输出为 GeoJSON 的情况。</para>
+		/// <para>选中 - 要素将投影到 WGS_1984。</para>
+		/// <para>未选中 - 要素不会投影到 WGS_1984。GeoJSON 将包含用于定义坐标系的 CRS 标签。这是默认设置。</para>
 		/// <para><see cref="Outputtowgs84Enum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -149,9 +150,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Use field aliases</para>
-		/// <para>Specifies whether the output file will use field aliases for feature attributes.</para>
-		/// <para>Unchecked—Output feature attributes will use field names. This is the default.</para>
-		/// <para>Checked—Output feature attributes will use field aliases.</para>
+		/// <para>指定输出文件是否将使用要素属性的字段别名。</para>
+		/// <para>未选中 - 输出要素属性将使用字段名称。这是默认设置。</para>
+		/// <para>选中 - 输出要素属性将使用字段别名。</para>
 		/// <para><see cref="UseFieldAliasEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -176,14 +177,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum FormatJsonEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The features will be formatted to the PJSON specification.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FORMATTED")]
 			FORMATTED,
 
 			/// <summary>
-			/// <para>Unchecked—The features will not be formatted. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_FORMATTED")]
@@ -197,14 +198,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum IncludeZValuesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The z-values will be included in geometries, and the hasZ property of the JSON will be set to true.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("Z_VALUES")]
 			Z_VALUES,
 
 			/// <summary>
-			/// <para>Unchecked—The z-values will not be included in geometries, and the hasZ property of the JSON will not be included. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_Z_VALUES")]
@@ -218,14 +219,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum IncludeMValuesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The m-values will be included in geometries, and the hasM property of the JSON will be set to true.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("M_VALUES")]
 			M_VALUES,
 
 			/// <summary>
-			/// <para>Unchecked—The m-values will not be included in geometries, and the hasM property of the JSON will not be included. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_M_VALUES")]
@@ -239,14 +240,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum GeojsonEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output will be created in the GeoJSON format (.geojson).</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GEOJSON")]
 			GEOJSON,
 
 			/// <summary>
-			/// <para>Unchecked—The output will be created as Esri JSON (.json). This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_GEOJSON")]
@@ -260,14 +261,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum Outputtowgs84Enum 
 		{
 			/// <summary>
-			/// <para>Checked—Features will be projected to WGS_1984.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("WGS84")]
 			WGS84,
 
 			/// <summary>
-			/// <para>Unchecked—Features will not be projected to WGS_1984. The GeoJSON will contain a CRS tag that defines the coordinate system. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_INPUT_SR")]
@@ -281,14 +282,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum UseFieldAliasEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Output feature attributes will use field aliases.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("USE_FIELD_ALIAS")]
 			USE_FIELD_ALIAS,
 
 			/// <summary>
-			/// <para>Unchecked—Output feature attributes will use field names. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("USE_FIELD_NAME")]

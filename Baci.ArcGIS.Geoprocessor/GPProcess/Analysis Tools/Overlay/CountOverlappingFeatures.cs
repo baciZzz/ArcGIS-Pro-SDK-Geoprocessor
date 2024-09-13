@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Count Overlapping Features</para>
-	/// <para>Generates planarized overlapping features from the input features. The count of overlapping features is written to the output features.</para>
+	/// <para>计数重叠要素</para>
+	/// <para>根据输入要素生成已打断的重叠要素。重叠要素的计数将写入输出要素。</para>
 	/// </summary>
 	public class CountOverlappingFeatures : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input feature classes or layers. The input features can be point, multipoint, line, or polygon. If multiple inputs are provided, they must all be the same geometry type.</para>
+		/// <para>输入要素类或图层。输入要素可以是点、多点、线或面。如果提供了多个输入，则这些输入必须全部为相同的几何类型。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class containing the overlap count.</para>
+		/// <para>包含重叠计数的输出要素类。</para>
 		/// </param>
 		public CountOverlappingFeatures(object InFeatures, object OutFeatureClass)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Count Overlapping Features</para>
+		/// <para>Tool Display Name : 计数重叠要素</para>
 		/// </summary>
-		public override string DisplayName() => "Count Overlapping Features";
+		public override string DisplayName() => "计数重叠要素";
 
 		/// <summary>
 		/// <para>Tool Name : CountOverlappingFeatures</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input feature classes or layers. The input features can be point, multipoint, line, or polygon. If multiple inputs are provided, they must all be the same geometry type.</para>
+		/// <para>输入要素类或图层。输入要素可以是点、多点、线或面。如果提供了多个输入，则这些输入必须全部为相同的几何类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class containing the overlap count.</para>
+		/// <para>包含重叠计数的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Minimum Overlap Count</para>
-		/// <para>Limits the output to only locations that meet or exceed the specified number of overlaps. The default value is 1.</para>
+		/// <para>将输出限制到仅达到或超过指定重叠数量的位置。默认值为 1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -96,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Overlap Table</para>
-		/// <para>The output table containing records for each individual overlapping geometry.</para>
+		/// <para>包含每个重叠几何记录的输出表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Surface Spot</para>
+	/// <para>Surface Spot</para>
 	/// <para>Calculates surface values for each point in a feature class based on an input surface.</para>
 	/// </summary>
 	[Obsolete()]

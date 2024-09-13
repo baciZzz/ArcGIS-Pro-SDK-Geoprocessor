@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Erase</para>
-	/// <para>Creates a feature class by overlaying the input features with the erase features. Only those portions of the input features falling outside the erase features  are copied to the output feature class.</para>
+	/// <para>擦除</para>
+	/// <para>通过将输入要素与擦除要素相叠加来创建要素类。只将输入要素处于擦除要素之外的部分复制到输出要素类。</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.AnalysisTools.PairwiseErase"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.AnalysisTools.PairwiseErase))]
@@ -22,15 +23,15 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input feature class or layer.</para>
+		/// <para>输入要素类或图层。</para>
 		/// </param>
 		/// <param name="EraseFeatures">
 		/// <para>Erase Features</para>
-		/// <para>The features to be used to erase coincident features in the input.</para>
+		/// <para>用于擦除重叠输入要素的要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will contain only those input features that are not coincident with the erase features.</para>
+		/// <para>该要素类只包含与擦除要素不重叠的输入要素。</para>
 		/// </param>
 		public Erase(object InFeatures, object EraseFeatures, object OutFeatureClass)
 		{
@@ -40,14 +41,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Erase</para>
+		/// <para>Tool Display Name : 擦除</para>
 		/// </summary>
-		public override string DisplayName() => "Erase";
+		public override string DisplayName() => "擦除";
 
 		/// <summary>
-		/// <para>Tool Name : Erase</para>
+		/// <para>Tool Name : 擦除</para>
 		/// </summary>
-		public override string ToolName() => "Erase";
+		public override string ToolName() => "擦除";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.Erase</para>
@@ -76,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input feature class or layer.</para>
+		/// <para>输入要素类或图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -86,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Erase Features</para>
-		/// <para>The features to be used to erase coincident features in the input.</para>
+		/// <para>用于擦除重叠输入要素的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -96,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will contain only those input features that are not coincident with the erase features.</para>
+		/// <para>该要素类只包含与擦除要素不重叠的输入要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -104,8 +105,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
-		/// <para>The minimum distance separating all feature coordinates (nodes and vertices) as well as the distance a coordinate can move in X or Y (or both).</para>
-		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that this parameter not be modified. It has been removed from view in the tool dialog. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
+		/// <para>所有要素坐标（节点和折点）之间的最小距离以及坐标可以沿 X 和/或 Y 方向移动的距离。</para>
+		/// <para>更改此参数的值可能会导致出现故障或意外结果。建议不要修改此参数。已将其从工具对话框的视图中移除。默认情况下，将使用输入要素类的空间参考 x,y 容差属性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]

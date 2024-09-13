@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Multi Output Map Algebra</para>
+	/// <para>Multi Output Map Algebra</para>
 	/// <para>Execute Grid's map algebra statements.</para>
 	/// </summary>
 	[Obsolete()]

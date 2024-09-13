@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Simplify Polygon</para>
+	/// <para>Simplify Polygon</para>
 	/// <para>Simplifies polygons by removing small fluctuations.</para>
 	/// </summary>
 	[Obsolete()]

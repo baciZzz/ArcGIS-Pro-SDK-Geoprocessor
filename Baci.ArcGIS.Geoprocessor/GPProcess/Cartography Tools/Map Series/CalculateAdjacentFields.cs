@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Calculate Adjacent Fields</para>
-	/// <para>Creates fields and calculates values for the neighboring pages (polygon) of a grid polygon feature class.</para>
+	/// <para>计算相邻字段</para>
+	/// <para>创建字段并计算格网面要素类的相邻页面（面）的值。</para>
 	/// </summary>
 	public class CalculateAdjacentFields : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The polygon grid index features that will be appended with adjacent field data.</para>
+		/// <para>要随相邻字段数据一起追加的面格网索引要素。</para>
 		/// </param>
 		/// <param name="InField">
 		/// <para>Field Name</para>
-		/// <para>The field whose values will be used to populate adjacent field data.</para>
+		/// <para>其字段值用于填充相邻字段数据。</para>
 		/// </param>
 		public CalculateAdjacentFields(object InFeatures, object InField)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Calculate Adjacent Fields</para>
+		/// <para>Tool Display Name : 计算相邻字段</para>
 		/// </summary>
-		public override string DisplayName() => "Calculate Adjacent Fields";
+		public override string DisplayName() => "计算相邻字段";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateAdjacentFields</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The polygon grid index features that will be appended with adjacent field data.</para>
+		/// <para>要随相邻字段数据一起追加的面格网索引要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Field Name</para>
-		/// <para>The field whose values will be used to populate adjacent field data.</para>
+		/// <para>其字段值用于填充相邻字段数据。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]

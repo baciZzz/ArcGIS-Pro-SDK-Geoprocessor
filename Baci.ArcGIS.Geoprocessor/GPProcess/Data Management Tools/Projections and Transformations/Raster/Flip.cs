@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Flip</para>
-	/// <para>Reorients the raster by turning it over, from top to bottom, along the horizontal axis through the center of the raster. This may be useful to correct raster datasets that are upside down.</para>
+	/// <para>翻转</para>
+	/// <para>通过沿穿过栅格中心的水平轴从上向下翻转栅格来重定向栅格。该工具在校正倒置的栅格数据集时非常有用。</para>
 	/// </summary>
 	public class Flip : AbstractGPProcess
 	{
@@ -20,28 +21,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The input raster dataset.</para>
+		/// <para>输入栅格数据集。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster Dataset</para>
-		/// <para>The output raster dataset.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
-		/// <para>.bil—Esri BIL</para>
-		/// <para>.bip—Esri BIP</para>
-		/// <para>.bmp—BMP</para>
-		/// <para>.bsq—Esri BSQ</para>
-		/// <para>.dat—ENVI DAT</para>
-		/// <para>.gif—GIF</para>
-		/// <para>.img—ERDAS IMAGINE</para>
-		/// <para>.jpg—JPEG</para>
-		/// <para>.jp2—JPEG 2000</para>
-		/// <para>.png—PNG</para>
-		/// <para>.tif—TIFF</para>
-		/// <para>.mrf—MRF</para>
-		/// <para>.crf—CRF</para>
-		/// <para>No extension for Esri Grid</para>
-		/// <para>When storing a raster dataset in a geodatabase, no file extension should be added to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>输出栅格数据集。</para>
+		/// <para>以文件格式存储栅格数据集时，需要指定文件扩展名，具体如下：</para>
+		/// <para>.bil - Esri BIL</para>
+		/// <para>.bip - Esri BIP</para>
+		/// <para>.bmp - BMP</para>
+		/// <para>.bsq - Esri BSQ</para>
+		/// <para>.dat - ENVI DAT</para>
+		/// <para>.gif - GIF</para>
+		/// <para>.img - ERDAS IMAGINE</para>
+		/// <para>.jpg - JPEG</para>
+		/// <para>.jp2 - JPEG 2000</para>
+		/// <para>.png - PNG</para>
+		/// <para>.tif - TIFF</para>
+		/// <para>.mrf - MRF</para>
+		/// <para>.crf - CRF</para>
+		/// <para>Esri Grid 无扩展名</para>
+		/// <para>以地理数据库形式存储栅格数据集时，不应向栅格数据集的名称添加文件扩展名。</para>
+		/// <para>将栅格数据集存储到 JPEG 文件、JPEG 2000 文件、TIFF 文件或地理数据库时，可在地理处理环境中指定压缩类型和压缩质量。</para>
 		/// </param>
 		public Flip(object InRaster, object OutRaster)
 		{
@@ -50,14 +51,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Flip</para>
+		/// <para>Tool Display Name : 翻转</para>
 		/// </summary>
-		public override string DisplayName() => "Flip";
+		public override string DisplayName() => "翻转";
 
 		/// <summary>
-		/// <para>Tool Name : Flip</para>
+		/// <para>Tool Name : 翻转</para>
 		/// </summary>
-		public override string ToolName() => "Flip";
+		public override string ToolName() => "翻转";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Flip</para>
@@ -86,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The input raster dataset.</para>
+		/// <para>输入栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -94,24 +95,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Raster Dataset</para>
-		/// <para>The output raster dataset.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
-		/// <para>.bil—Esri BIL</para>
-		/// <para>.bip—Esri BIP</para>
-		/// <para>.bmp—BMP</para>
-		/// <para>.bsq—Esri BSQ</para>
-		/// <para>.dat—ENVI DAT</para>
-		/// <para>.gif—GIF</para>
-		/// <para>.img—ERDAS IMAGINE</para>
-		/// <para>.jpg—JPEG</para>
-		/// <para>.jp2—JPEG 2000</para>
-		/// <para>.png—PNG</para>
-		/// <para>.tif—TIFF</para>
-		/// <para>.mrf—MRF</para>
-		/// <para>.crf—CRF</para>
-		/// <para>No extension for Esri Grid</para>
-		/// <para>When storing a raster dataset in a geodatabase, no file extension should be added to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>输出栅格数据集。</para>
+		/// <para>以文件格式存储栅格数据集时，需要指定文件扩展名，具体如下：</para>
+		/// <para>.bil - Esri BIL</para>
+		/// <para>.bip - Esri BIP</para>
+		/// <para>.bmp - BMP</para>
+		/// <para>.bsq - Esri BSQ</para>
+		/// <para>.dat - ENVI DAT</para>
+		/// <para>.gif - GIF</para>
+		/// <para>.img - ERDAS IMAGINE</para>
+		/// <para>.jpg - JPEG</para>
+		/// <para>.jp2 - JPEG 2000</para>
+		/// <para>.png - PNG</para>
+		/// <para>.tif - TIFF</para>
+		/// <para>.mrf - MRF</para>
+		/// <para>.crf - CRF</para>
+		/// <para>Esri Grid 无扩展名</para>
+		/// <para>以地理数据库形式存储栅格数据集时，不应向栅格数据集的名称添加文件扩展名。</para>
+		/// <para>将栅格数据集存储到 JPEG 文件、JPEG 2000 文件、TIFF 文件或地理数据库时，可在地理处理环境中指定压缩类型和压缩质量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

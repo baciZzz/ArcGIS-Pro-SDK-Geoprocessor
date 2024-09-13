@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Simplify Shared Edges</para>
-	/// <para>Simplifies the edges of input features while maintaining the topological relationship with edges shared with other features.</para>
+	/// <para>简化共享边</para>
+	/// <para>可简化输入要素的边，对于与其他要素共享的边，可同时保持与这些边的拓扑关系。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,24 +23,24 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The lines or polygons to be simplified.</para>
+		/// <para>要进行简化的线或面。</para>
 		/// </param>
 		/// <param name="Algorithm">
 		/// <para>Simplification Algorithm</para>
-		/// <para>Specifies the simplification algorithm.</para>
-		/// <para>Retain critical points (Douglas-Peucker)—Retains critical points that preserve the essential shape of a polygon outline and removes all other points (Douglas-Peucker). This is the default.</para>
-		/// <para>Retain critical bends (Wang-Müller)— Retains the critical bends and removes extraneous bends from a line (Wang-Müller).</para>
-		/// <para>Retain weighted effective areas (Zhou-Jones)—Retains vertices that form triangles of effective area that have been weighted by triangle shape (Zhou-Jones).</para>
-		/// <para>Retain effective areas (Visvalingam-Whyatt)— Retains vertices that form triangles of effective area (Visvalingam-Whyatt).</para>
+		/// <para>用于指定简化算法。</para>
+		/// <para>保留关键点（道格拉斯-普克）—保留构成面轮廓的基本形状的关键点，而移除所有其他点（道格拉斯-普克）。这是默认设置。</para>
+		/// <para>保留关键折弯 (Wang-Müller)— 保留线中的关键折弯，并移除多余折弯 (Wang-Müller)。</para>
+		/// <para>保留加权有效面积 (Zhou-Jones)—保留形成有效三角形面积的折点，这些面积已根据三角形形状进行了加权 (Zhou-Jones)。</para>
+		/// <para>保留有效面积 (Visvalingam-Whyatt)— 保留形成有效三角形面积的折点 (Visvalingam-Whyatt)。</para>
 		/// <para><see cref="AlgorithmEnum"/></para>
 		/// </param>
 		/// <param name="Tolerance">
 		/// <para>Simplification Tolerance</para>
-		/// <para>Determines the degree of simplification. If a unit is not specified, the units of the input will be used.</para>
-		/// <para>For the Retain critical points (Douglas-Peucker) algorithm, the tolerance is the maximum allowable perpendicular distance between each vertex and the new line created.</para>
-		/// <para>For the Retain critical bends (Wang-Müller) algorithm, the tolerance is the diameter of a circle that approximates a significant bend.</para>
-		/// <para>For the Retain weighted effective areas (Zhou-Jones) algorithm, the square of the tolerance is the area of a significant triangle defined by three adjacent vertices. The further a triangle deviates from equilateral, the higher weight it is given, and the less likely it is to be removed.</para>
-		/// <para>For the Retain effective areas (Visvalingam-Whyatt) algorithm, the square of the tolerance is the area of a significant triangle defined by three adjacent vertices.</para>
+		/// <para>用于确定简化程度。如果未指定单位，则将使用输入单位。</para>
+		/// <para>对于保留关键点（道格拉斯-普克）算法，容差表示每个折点与新创建的线之间的最大允许垂直距离。</para>
+		/// <para>对于保留关键折弯 (Wang-Müller) 算法，容差是近似于有效折弯的圆的直径。</para>
+		/// <para>对于保留加权有效面积 (Zhou-Jones) 算法，容差面积是由三个相邻折点定义的有效三角形的面积。三角形越偏离等边三角形，则它的重量越大，被移除的可能性越小。</para>
+		/// <para>对于保留有效面积 (Visvalingam-Whyatt) 算法，容差面积是由三个相邻折点定义的有效三角形的面积。</para>
 		/// </param>
 		public SimplifySharedEdges(object InFeatures, object Algorithm, object Tolerance)
 		{
@@ -49,9 +50,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Simplify Shared Edges</para>
+		/// <para>Tool Display Name : 简化共享边</para>
 		/// </summary>
-		public override string DisplayName() => "Simplify Shared Edges";
+		public override string DisplayName() => "简化共享边";
 
 		/// <summary>
 		/// <para>Tool Name : SimplifySharedEdges</para>
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The lines or polygons to be simplified.</para>
+		/// <para>要进行简化的线或面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -96,11 +97,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Simplification Algorithm</para>
-		/// <para>Specifies the simplification algorithm.</para>
-		/// <para>Retain critical points (Douglas-Peucker)—Retains critical points that preserve the essential shape of a polygon outline and removes all other points (Douglas-Peucker). This is the default.</para>
-		/// <para>Retain critical bends (Wang-Müller)— Retains the critical bends and removes extraneous bends from a line (Wang-Müller).</para>
-		/// <para>Retain weighted effective areas (Zhou-Jones)—Retains vertices that form triangles of effective area that have been weighted by triangle shape (Zhou-Jones).</para>
-		/// <para>Retain effective areas (Visvalingam-Whyatt)— Retains vertices that form triangles of effective area (Visvalingam-Whyatt).</para>
+		/// <para>用于指定简化算法。</para>
+		/// <para>保留关键点（道格拉斯-普克）—保留构成面轮廓的基本形状的关键点，而移除所有其他点（道格拉斯-普克）。这是默认设置。</para>
+		/// <para>保留关键折弯 (Wang-Müller)— 保留线中的关键折弯，并移除多余折弯 (Wang-Müller)。</para>
+		/// <para>保留加权有效面积 (Zhou-Jones)—保留形成有效三角形面积的折点，这些面积已根据三角形形状进行了加权 (Zhou-Jones)。</para>
+		/// <para>保留有效面积 (Visvalingam-Whyatt)— 保留形成有效三角形面积的折点 (Visvalingam-Whyatt)。</para>
 		/// <para><see cref="AlgorithmEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -110,11 +111,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Simplification Tolerance</para>
-		/// <para>Determines the degree of simplification. If a unit is not specified, the units of the input will be used.</para>
-		/// <para>For the Retain critical points (Douglas-Peucker) algorithm, the tolerance is the maximum allowable perpendicular distance between each vertex and the new line created.</para>
-		/// <para>For the Retain critical bends (Wang-Müller) algorithm, the tolerance is the diameter of a circle that approximates a significant bend.</para>
-		/// <para>For the Retain weighted effective areas (Zhou-Jones) algorithm, the square of the tolerance is the area of a significant triangle defined by three adjacent vertices. The further a triangle deviates from equilateral, the higher weight it is given, and the less likely it is to be removed.</para>
-		/// <para>For the Retain effective areas (Visvalingam-Whyatt) algorithm, the square of the tolerance is the area of a significant triangle defined by three adjacent vertices.</para>
+		/// <para>用于确定简化程度。如果未指定单位，则将使用输入单位。</para>
+		/// <para>对于保留关键点（道格拉斯-普克）算法，容差表示每个折点与新创建的线之间的最大允许垂直距离。</para>
+		/// <para>对于保留关键折弯 (Wang-Müller) 算法，容差是近似于有效折弯的圆的直径。</para>
+		/// <para>对于保留加权有效面积 (Zhou-Jones) 算法，容差面积是由三个相邻折点定义的有效三角形的面积。三角形越偏离等边三角形，则它的重量越大，被移除的可能性越小。</para>
+		/// <para>对于保留有效面积 (Visvalingam-Whyatt) 算法，容差面积是由三个相邻折点定义的有效三角形的面积。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -122,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Shared Edge Features</para>
-		/// <para>Line or polygon features that will be simplified along edges shared with input features. Other edges are not simplified.</para>
+		/// <para>将沿与输入要素共享的边进行简化的线要素或面要素。将不会对其他边进行简化。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -133,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Minimum Area</para>
-		/// <para>The minimum area for a polygon to be retained. The default value is zero, which will retain all polygons. A unit can be specified; if no unit is specified, the unit of the input will be used. This parameter is available only when at least one of the inputs is a polygon feature class.</para>
+		/// <para>要保留的面的最小面积。默认值为零，即保留所有面。可以指定单位，如果未指定单位，则将使用输入单位。此参数仅当至少其中一个输入为面要素类时可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPArealUnit()]
@@ -141,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Barrier Layers</para>
-		/// <para>Point, line, or polygon features that act as barriers for the simplification. The simplified features will not touch or cross barrier features.</para>
+		/// <para>作为障碍进行简化的点、线、或面要素。简化要素不会与障碍要素接触或相交。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -178,31 +179,31 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum AlgorithmEnum 
 		{
 			/// <summary>
-			/// <para>Retain critical points (Douglas-Peucker)—Retains critical points that preserve the essential shape of a polygon outline and removes all other points (Douglas-Peucker). This is the default.</para>
+			/// <para>保留关键点（道格拉斯-普克）—保留构成面轮廓的基本形状的关键点，而移除所有其他点（道格拉斯-普克）。这是默认设置。</para>
 			/// </summary>
 			[GPValue("POINT_REMOVE")]
-			[Description("Retain critical points (Douglas-Peucker)")]
+			[Description("保留关键点（道格拉斯-普克）")]
 			POINT_REMOVE,
 
 			/// <summary>
-			/// <para>Retain critical bends (Wang-Müller)— Retains the critical bends and removes extraneous bends from a line (Wang-Müller).</para>
+			/// <para>保留关键折弯 (Wang-Müller)— 保留线中的关键折弯，并移除多余折弯 (Wang-Müller)。</para>
 			/// </summary>
 			[GPValue("BEND_SIMPLIFY")]
-			[Description("Retain critical bends (Wang-Müller)")]
+			[Description("保留关键折弯 (Wang-Müller)")]
 			BEND_SIMPLIFY,
 
 			/// <summary>
-			/// <para>Retain weighted effective areas (Zhou-Jones)—Retains vertices that form triangles of effective area that have been weighted by triangle shape (Zhou-Jones).</para>
+			/// <para>保留加权有效面积 (Zhou-Jones)—保留形成有效三角形面积的折点，这些面积已根据三角形形状进行了加权 (Zhou-Jones)。</para>
 			/// </summary>
 			[GPValue("WEIGHTED_AREA")]
-			[Description("Retain weighted effective areas (Zhou-Jones)")]
+			[Description("保留加权有效面积 (Zhou-Jones)")]
 			WEIGHTED_AREA,
 
 			/// <summary>
-			/// <para>Retain effective areas (Visvalingam-Whyatt)— Retains vertices that form triangles of effective area (Visvalingam-Whyatt).</para>
+			/// <para>保留有效面积 (Visvalingam-Whyatt)— 保留形成有效三角形面积的折点 (Visvalingam-Whyatt)。</para>
 			/// </summary>
 			[GPValue("EFFECTIVE_AREA")]
-			[Description("Retain effective areas (Visvalingam-Whyatt)")]
+			[Description("保留有效面积 (Visvalingam-Whyatt)")]
 			EFFECTIVE_AREA,
 
 		}

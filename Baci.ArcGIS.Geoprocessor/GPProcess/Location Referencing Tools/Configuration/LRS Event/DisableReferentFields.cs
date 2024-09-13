@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Disable Referent Fields</para>
+	/// <para>Disable Referent Fields</para>
 	/// <para>Disables referent fields for an existing linear referencing system (LRS) event</para>
 	/// <para>feature class or feature layer. It does not delete the referent columns; it removes the referent column information from the Lrs_Metadata table.</para>
 	/// </summary>

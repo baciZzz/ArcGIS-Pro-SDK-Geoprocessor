@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 {
 	/// <summary>
 	/// <para>Convert Geometric Network To Trace Network</para>
-	/// <para>Converts a geometric network to a trace network.</para>
+	/// <para>将几何网络转换为追踪网络</para>
+	/// <para>将几何网络转换为追踪网络。</para>
 	/// </summary>
 	public class ConvertGeometricNetworkToTraceNetwork : AbstractGPProcess
 	{
@@ -20,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// </summary>
 		/// <param name="InGeometricNetwork">
 		/// <para>Input Geometric Network</para>
-		/// <para>The geometric network that will be converted to a trace network.</para>
-		/// <para>Converting a geometric network to a trace network will drop the geometric network and create a trace network in its place. This change cannot be undone. Make a backup of your data before proceeding.</para>
+		/// <para>将转换为追踪网络的几何网络。</para>
+		/// <para>将几何网络转换为追踪网络将删除几何网络并就地创建追踪网络。无法撤消此更改。请先对数据进行备份，然后再继续操作。</para>
 		/// </param>
 		/// <param name="OutTraceNetworkName">
 		/// <para>Output Trace Network Name</para>
-		/// <para>The name of the output trace network.</para>
+		/// <para>输出追踪网络的名称。</para>
 		/// </param>
 		public ConvertGeometricNetworkToTraceNetwork(object InGeometricNetwork, object OutTraceNetworkName)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Convert Geometric Network To Trace Network</para>
+		/// <para>Tool Display Name : 将几何网络转换为追踪网络</para>
 		/// </summary>
-		public override string DisplayName() => "Convert Geometric Network To Trace Network";
+		public override string DisplayName() => "将几何网络转换为追踪网络";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertGeometricNetworkToTraceNetwork</para>
@@ -70,8 +71,8 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Input Geometric Network</para>
-		/// <para>The geometric network that will be converted to a trace network.</para>
-		/// <para>Converting a geometric network to a trace network will drop the geometric network and create a trace network in its place. This change cannot be undone. Make a backup of your data before proceeding.</para>
+		/// <para>将转换为追踪网络的几何网络。</para>
+		/// <para>将几何网络转换为追踪网络将删除几何网络并就地创建追踪网络。无法撤消此更改。请先对数据进行备份，然后再继续操作。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEGeometricNetwork()]
@@ -81,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Output Trace Network Name</para>
-		/// <para>The name of the output trace network.</para>
+		/// <para>输出追踪网络的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

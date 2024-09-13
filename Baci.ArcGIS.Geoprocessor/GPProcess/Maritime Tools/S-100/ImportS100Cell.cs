@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Import S-100 Cell</para>
+	/// <para>Import S-100 Cell</para>
 	/// <para>Imports S-100 hydrographic data into a geodatabase created from a related S-100 feature catalogue.</para>
 	/// </summary>
 	public class ImportS100Cell : AbstractGPProcess

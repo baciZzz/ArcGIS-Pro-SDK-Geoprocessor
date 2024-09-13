@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Interpolate Polygon To Multipatch</para>
-	/// <para>Creates surface-conforming  multipatch features by draping polygon features over a surface.</para>
+	/// <para>面插值为多面体</para>
+	/// <para>通过在表面上叠加面要素来创建与表面一致的多面体要素。</para>
 	/// </summary>
 	public class InterpolatePolyToPatch : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InSurface">
 		/// <para>Input Surface</para>
-		/// <para>The input triangulated irregular network (TIN) or terrain dataset surface.</para>
+		/// <para>输入不规则三角网 (TIN) 或 terrain 数据集表面。</para>
 		/// </param>
 		/// <param name="InFeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>The input polygon feature.</para>
+		/// <para>输入面要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output multipatch feature class.</para>
+		/// <para>输出多面体要素类。</para>
 		/// </param>
 		public InterpolatePolyToPatch(object InSurface, object InFeatureClass, object OutFeatureClass)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Interpolate Polygon To Multipatch</para>
+		/// <para>Tool Display Name : 面插值为多面体</para>
 		/// </summary>
-		public override string DisplayName() => "Interpolate Polygon To Multipatch";
+		public override string DisplayName() => "面插值为多面体";
 
 		/// <summary>
 		/// <para>Tool Name : InterpolatePolyToPatch</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Surface</para>
-		/// <para>The input triangulated irregular network (TIN) or terrain dataset surface.</para>
+		/// <para>输入不规则三角网 (TIN) 或 terrain 数据集表面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>The input polygon feature.</para>
+		/// <para>输入面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output multipatch feature class.</para>
+		/// <para>输出多面体要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Maximum Strip Size</para>
-		/// <para>Controls the maximum number of points used to create an individual triangle strip. Note that each multipatch is usually composed of multiple strips. The default value is 1,024.</para>
+		/// <para>控制用于创建单个三角条带的最大点数。请注意，每个多面体通常由多个条带组成。默认值为 1,024。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z Factor</para>
-		/// <para>The factor by which z-values will be multiplied. This is typically used to convert z linear units to match x,y linear units. The default is 1, which leaves elevation values unchanged. This parameter is not available if the spatial reference of the input surface has a z datum with a specified linear unit.</para>
+		/// <para>Z 值将乘上的系数。 此值通常用于转换 z 线性单位来匹配 x,y 线性单位。 默认值为 1，此时高程值保持不变。 如果输入表面的空间参考具有已指定线性单位的 z 基准，则此参数不可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Area Field</para>
-		/// <para>The name of the output field containing the planimetric, or 2D, area of the resulting multipatches.</para>
+		/// <para>输出字段的名称，其中包含所得多面体的平面（或 2D）面积。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -124,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Surface Area Field</para>
-		/// <para>The name of the output field containing the 3D area of the resulting multipatches. This area takes the surface undulations into consideration and is always larger than the planimetric area unless the surface is flat, in which case, the two are equal.</para>
+		/// <para>输出字段的名称，其中包含所得多面体的 3D 面积。该面积考虑到了表面的波动。如果表面是平的，则该面积与平面面积两者相等，否则它总是大于平面面积。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -132,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
-		/// <para>The z-tolerance or window-size resolution of the terrain pyramid level that will be used. The default is 0, or full resolution.</para>
+		/// <para>将使用 terrain 金字塔等级的 z 容差或窗口大小分辨率。 默认值为 0，或全分辨率。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

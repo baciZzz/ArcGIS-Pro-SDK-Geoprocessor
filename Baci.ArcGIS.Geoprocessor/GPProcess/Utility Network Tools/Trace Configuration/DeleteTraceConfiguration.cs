@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Delete Trace Configuration</para>
-	/// <para>Deletes one or more named trace configurations  from a utility network.</para>
+	/// <para>删除追踪配置</para>
+	/// <para>用于从公共设施网络中删除一个或多个指定追踪配置。</para>
 	/// </summary>
 	public class DeleteTraceConfiguration : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network containing the named trace configuration to be deleted.</para>
+		/// <para>包含要删除的指定追踪配置的公共设施网络。</para>
 		/// </param>
 		/// <param name="TraceConfigName">
 		/// <para>Trace Configuration</para>
-		/// <para>The named trace configurations to be deleted.</para>
+		/// <para>要删除的指定追踪配置。</para>
 		/// </param>
 		public DeleteTraceConfiguration(object InUtilityNetwork, object TraceConfigName)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Delete Trace Configuration</para>
+		/// <para>Tool Display Name : 删除追踪配置</para>
 		/// </summary>
-		public override string DisplayName() => "Delete Trace Configuration";
+		public override string DisplayName() => "删除追踪配置";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteTraceConfiguration</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network containing the named trace configuration to be deleted.</para>
+		/// <para>包含要删除的指定追踪配置的公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Trace Configuration</para>
-		/// <para>The named trace configurations to be deleted.</para>
+		/// <para>要删除的指定追踪配置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]

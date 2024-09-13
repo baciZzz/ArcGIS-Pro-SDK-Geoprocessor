@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Extract by Points</para>
-	/// <para>Extracts the cells of a raster based on a set of coordinate points.</para>
+	/// <para>按点提取</para>
+	/// <para>基于一组坐标点提取栅格像元。</para>
 	/// </summary>
 	public class ExtractByPoints : AbstractGPProcess
 	{
@@ -20,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster from which cells will be extracted.</para>
+		/// <para>提取像元的输入栅格。</para>
 		/// </param>
 		/// <param name="Points">
 		/// <para>Input points</para>
-		/// <para>The points where values will be extracted from the raster.</para>
-		/// <para>The points are specified as x,y coordinate pairs in the same map units as the input raster.</para>
+		/// <para>要提取栅格值的点。</para>
+		/// <para>指定为 x,y 坐标对的点所使用的地图单位与输入栅格相同。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster containing the cell values extracted from the input raster.</para>
+		/// <para>包含从输入栅格中提取的像元值的输出栅格。</para>
 		/// </param>
 		public ExtractByPoints(object InRaster, object Points, object OutRaster)
 		{
@@ -39,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Extract by Points</para>
+		/// <para>Tool Display Name : 按点提取</para>
 		/// </summary>
-		public override string DisplayName() => "Extract by Points";
+		public override string DisplayName() => "按点提取";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractByPoints</para>
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster from which cells will be extracted.</para>
+		/// <para>提取像元的输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -87,8 +88,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input points</para>
-		/// <para>The points where values will be extracted from the raster.</para>
-		/// <para>The points are specified as x,y coordinate pairs in the same map units as the input raster.</para>
+		/// <para>要提取栅格值的点。</para>
+		/// <para>指定为 x,y 坐标对的点所使用的地图单位与输入栅格相同。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -96,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster containing the cell values extracted from the input raster.</para>
+		/// <para>包含从输入栅格中提取的像元值的输出栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -104,9 +105,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Extraction area</para>
-		/// <para>Identifies whether to extract cells based on the specified point locations (inside) or outside the point locations (outside) .</para>
-		/// <para>Inside—A keyword specifying that the cell in which the selected point falls will be written to the output raster. All cells outside the box will receive NoData on the output raster.</para>
-		/// <para>Outside—A keyword specifying that the cells outside the input points should be selected and written to the output raster.</para>
+		/// <para>标识是基于指定点位置（内部）提取像元还是基于点位置外部（外部）提取像元。</para>
+		/// <para>内部—指定将所选点落入的像元写入输出栅格的关键字。方框区域外部的所有像元都将在输出栅格中获得 NoData 值。</para>
+		/// <para>外部—指定应选择输入点外部的像元并将其写入输出栅格的关键字。</para>
 		/// <para><see cref="ExtractionAreaEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -131,17 +132,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ExtractionAreaEnum 
 		{
 			/// <summary>
-			/// <para>Inside—A keyword specifying that the cell in which the selected point falls will be written to the output raster. All cells outside the box will receive NoData on the output raster.</para>
+			/// <para>内部—指定将所选点落入的像元写入输出栅格的关键字。方框区域外部的所有像元都将在输出栅格中获得 NoData 值。</para>
 			/// </summary>
 			[GPValue("INSIDE")]
-			[Description("Inside")]
+			[Description("内部")]
 			Inside,
 
 			/// <summary>
-			/// <para>Outside—A keyword specifying that the cells outside the input points should be selected and written to the output raster.</para>
+			/// <para>外部—指定应选择输入点外部的像元并将其写入输出栅格的关键字。</para>
 			/// </summary>
 			[GPValue("OUTSIDE")]
-			[Description("Outside")]
+			[Description("外部")]
 			Outside,
 
 		}

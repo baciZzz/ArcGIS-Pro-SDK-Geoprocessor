@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Block Adjustment Report</para>
-	/// <para>Generates a  report after performing ortho mapping block adjustment to a mosaic dataset. The report is critical in evaluating the quality and accuracy of the ortho mapping products.</para>
+	/// <para>生成区域网平差报告</para>
+	/// <para>对镶嵌数据集执行正射映射区域网平差后将生成报告。该报告对于评估正射映射产品的质量和精度来说至关重要。</para>
 	/// </summary>
 	public class GenerateBlockAdjustmentReport : AbstractGPProcess
 	{
@@ -20,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputMosaicDataset">
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>The input mosaic dataset path.</para>
+		/// <para>输入镶嵌数据集路径。</para>
 		/// </param>
 		/// <param name="InputSolutionTable">
 		/// <para>Input Solution Table</para>
-		/// <para>The associated solution point table after block adjustment.</para>
+		/// <para>区域网平差后的关联解决方案点表。</para>
 		/// </param>
 		/// <param name="InputSolutionPoint">
 		/// <para>Input Solution Points</para>
-		/// <para>The solution point feature class.</para>
+		/// <para>解决方案点要素类。</para>
 		/// </param>
 		/// <param name="OutputReport">
 		/// <para>Output Report</para>
-		/// <para>The output ortho mapping report file path and name. The supported output format for a website is HTML.</para>
+		/// <para>输出正射映射报告文件路径和名称。网站支持的输出格式为 HTML。</para>
 		/// </param>
 		public GenerateBlockAdjustmentReport(object InputMosaicDataset, object InputSolutionTable, object InputSolutionPoint, object OutputReport)
 		{
@@ -43,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Block Adjustment Report</para>
+		/// <para>Tool Display Name : 生成区域网平差报告</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Block Adjustment Report";
+		public override string DisplayName() => "生成区域网平差报告";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateBlockAdjustmentReport</para>
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>The input mosaic dataset path.</para>
+		/// <para>输入镶嵌数据集路径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Solution Table</para>
-		/// <para>The associated solution point table after block adjustment.</para>
+		/// <para>区域网平差后的关联解决方案点表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Solution Points</para>
-		/// <para>The solution point feature class.</para>
+		/// <para>解决方案点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -103,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Report</para>
-		/// <para>The output ortho mapping report file path and name. The supported output format for a website is HTML.</para>
+		/// <para>输出正射映射报告文件路径和名称。网站支持的输出格式为 HTML。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Control Points For Adjustment</para>
-		/// <para>The associated control points table, which may include tie points and ground control points.</para>
+		/// <para>包含连接点和地面控制点的关联控制点表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
@@ -120,9 +121,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Report Format</para>
-		/// <para>The output format of the block adjustment report.</para>
-		/// <para>HTML—Adjustment report is created as an HTML file. This is the default.</para>
-		/// <para>PDF—Adjustment report is created as a PDF file.</para>
+		/// <para>区域网平差报告的输出格式。</para>
+		/// <para>HTML—将平差报告创建为 HTML 文件。这是默认设置。</para>
+		/// <para>PDF—将平差报告创建为 PDF 文件。</para>
 		/// <para><see cref="ReportFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -147,14 +148,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ReportFormatEnum 
 		{
 			/// <summary>
-			/// <para>HTML—Adjustment report is created as an HTML file. This is the default.</para>
+			/// <para>HTML—将平差报告创建为 HTML 文件。这是默认设置。</para>
 			/// </summary>
 			[GPValue("HTML")]
 			[Description("HTML")]
 			HTML,
 
 			/// <summary>
-			/// <para>PDF—Adjustment report is created as a PDF file.</para>
+			/// <para>PDF—将平差报告创建为 PDF 文件。</para>
 			/// </summary>
 			[GPValue("PDF")]
 			[Description("PDF")]

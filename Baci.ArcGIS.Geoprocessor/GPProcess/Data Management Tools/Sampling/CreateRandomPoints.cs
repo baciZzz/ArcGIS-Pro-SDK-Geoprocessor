@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Random Points</para>
-	/// <para>Creates a specified number of random point features. Random points can be generated in an extent window, inside polygon features, on point features, or along line features.</para>
+	/// <para>创建随机点</para>
+	/// <para>创建指定数量的随机点要素。可以在范围窗口中、面要素内、点要素上或线要素沿线生成随机点。</para>
 	/// </summary>
 	public class CreateRandomPoints : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="OutPath">
 		/// <para>Output Location</para>
-		/// <para>The location or workspace in which the random points feature class will be created. This location or workspace must already exist.</para>
+		/// <para>创建随机点要素类所要使用的位置或工作空间。此位置或工作空间必须已经存在。</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Output Point Feature Class</para>
-		/// <para>The name of the random points feature class to be created.</para>
+		/// <para>要创建的随机点要素类的名称。</para>
 		/// </param>
 		public CreateRandomPoints(object OutPath, object OutName)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Random Points</para>
+		/// <para>Tool Display Name : 创建随机点</para>
 		/// </summary>
-		public override string DisplayName() => "Create Random Points";
+		public override string DisplayName() => "创建随机点";
 
 		/// <summary>
 		/// <para>Tool Name : CreateRandomPoints</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Location</para>
-		/// <para>The location or workspace in which the random points feature class will be created. This location or workspace must already exist.</para>
+		/// <para>创建随机点要素类所要使用的位置或工作空间。此位置或工作空间必须已经存在。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Point Feature Class</para>
-		/// <para>The name of the random points feature class to be created.</para>
+		/// <para>要创建的随机点要素类的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Constraining Feature Class</para>
-		/// <para>Random points will be generated inside or along the features in this feature class. The constraining feature class can be point, multipoint, line, or polygon. Points will be randomly placed inside polygon features, along line features, or at point feature locations. Each feature in this feature class will have the specified number of points generated inside it (for example, if you specify 100 points, and the constraining feature class has 5 features, 100 random points will be generated in each feature, totaling 500 points).</para>
+		/// <para>将在此要素类中的要素的内部或沿线生成随机点。约束要素类可以是点、多点、线或面。点将被随机放置在面要素内、线要素沿线或点要素位置处。此要素类中的每个要素内部都会生成指定数量的点（例如，如果您指定 100 个点且约束要素类中包含 5 个要素，则每个要素中会生成 100 个随机点，共生成 500 个点）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -96,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Constraining Extent</para>
-		/// <para>Random points will be generated inside the extent. The constraining extent will only be used if no constraining feature class is specified.</para>
+		/// <para>将在此范围内生成随机点。仅当未指定约束要素类时，才会使用约束范围。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -104,8 +105,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Number of Points [value or field]</para>
-		/// <para>The number of points to be randomly generated.</para>
-		/// <para>The number of points can be specified as a long integer number or as a field from the constraining features containing numeric values for how many random points to place within each feature. The field option is only valid for polygon or line constraining features. If the number of points is supplied as a long integer number, each feature in the constraining feature class will have that number of random points generated inside or along it.</para>
+		/// <para>要随机生成的点的数量。</para>
+		/// <para>可将点数指定为长整型数值或指定为约束要素中的字段，其中约束要素需包含表示每个要素中要放置多少随机点的数值。此字段选项仅对面约束要素或线约束要素有效。如果点数以长整型数值的形式提供，则将在约束要素类中每个要素的内部或沿线生成该数量的随机点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -114,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Minimum Allowed Distance [value or field]</para>
-		/// <para>The shortest distance allowed between any two randomly placed points. If a value of 1 Meter is specified, all random points will be farther than 1 meter away from the closest point.</para>
+		/// <para>任意两个随机放置的点之间的最小允许距离。如果将此距离值指定为 1 米，则所有随机点距最近点的距离都将大于 1 米。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -123,9 +124,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Create Multipoint Output</para>
-		/// <para>Determines if the output feature class will be a multipart or single-part feature.</para>
-		/// <para>Unchecked—The output will be geometry type point (each point is a separate feature). This is the default.</para>
-		/// <para>Checked—The output will be geometry type multipoint (all points are a single feature).</para>
+		/// <para>确定输出要素类是多部件要素还是单部件要素。</para>
+		/// <para>未选中 - 输出的几何类型将为点（每个点均是独立要素）。这是默认设置。</para>
+		/// <para>选中 - 输出的几何类型将为多点（所有点是一个要素）。</para>
 		/// <para><see cref="CreateMultipointOutputEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -135,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Number of Points per Multipoint</para>
-		/// <para>If Create Multipoint Output is checked, specify the number of random points to be placed in each multipoint geometry.</para>
+		/// <para>如果选中创建多点输出，则需指定每个多点几何中要放置的随机点的数量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -168,14 +169,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CreateMultipointOutputEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output will be geometry type multipoint (all points are a single feature).</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MULTIPOINT")]
 			MULTIPOINT,
 
 			/// <summary>
-			/// <para>Unchecked—The output will be geometry type point (each point is a separate feature). This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("POINT")]

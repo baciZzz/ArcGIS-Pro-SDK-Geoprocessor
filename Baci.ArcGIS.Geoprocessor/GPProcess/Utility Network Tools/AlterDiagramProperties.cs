@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Alter Diagram Properties</para>
+	/// <para>Alter Diagram Properties</para>
 	/// <para>Set the name, the location and the access rights of a network diagram</para>
 	/// </summary>
 	[Obsolete()]

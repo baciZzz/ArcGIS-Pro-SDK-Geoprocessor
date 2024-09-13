@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Detect Objects Using Deep Learning</para>
-	/// <para>Runs a trained deep learning model on an input raster to produce a feature class containing the objects it identifies. The feature class can be shared as a hosted feature layer in your portal. The features can be bounding boxes or polygons around the objects found, or points at the centers of the objects.</para>
+	/// <para>使用深度学习检测对象</para>
+	/// <para>用于运行输入栅格上的训练深度学习模型，以生成包含其识别对象的要素类。此要素类可作为托管要素图层在门户中共享。这些要素可以是所找到对象周围的边界框或面，也可以是对象中心的点。</para>
 	/// </summary>
 	public class DetectObjectsUsingDeepLearning : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		/// <param name="Inputraster">
 		/// <para>Input Raster</para>
-		/// <para>The input image used to detect objects. It can be an image service URL, a raster layer, an image service, a map server layer, or an internet tiled layer.</para>
+		/// <para>用于检测对象的输入图像。 它可以是影像服务 URL、栅格图层、影像服务、地图服务器图层或 Internet 切片图层。</para>
 		/// </param>
 		/// <param name="Inputmodel">
 		/// <para>Input Model</para>
-		/// <para>The input model can be a file or a URL of a deep learning package (.dlpk) item from the portal.</para>
+		/// <para>输入模型可以是文件或者来自门户的深度学习包 (.dlpk) 项目的 URL。</para>
 		/// </param>
 		/// <param name="Outputname">
 		/// <para>Output Name</para>
-		/// <para>The name of the output feature service of detected objects.</para>
+		/// <para>检测对象的输出要素服务的名称。</para>
 		/// </param>
 		public DetectObjectsUsingDeepLearning(object Inputraster, object Inputmodel, object Outputname)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Detect Objects Using Deep Learning</para>
+		/// <para>Tool Display Name : 使用深度学习检测对象</para>
 		/// </summary>
-		public override string DisplayName() => "Detect Objects Using Deep Learning";
+		public override string DisplayName() => "使用深度学习检测对象";
 
 		/// <summary>
 		/// <para>Tool Name : DetectObjectsUsingDeepLearning</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The input image used to detect objects. It can be an image service URL, a raster layer, an image service, a map server layer, or an internet tiled layer.</para>
+		/// <para>用于检测对象的输入图像。 它可以是影像服务 URL、栅格图层、影像服务、地图服务器图层或 Internet 切片图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Model</para>
-		/// <para>The input model can be a file or a URL of a deep learning package (.dlpk) item from the portal.</para>
+		/// <para>输入模型可以是文件或者来自门户的深度学习包 (.dlpk) 项目的 URL。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output feature service of detected objects.</para>
+		/// <para>检测对象的输出要素服务的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Model Arguments</para>
-		/// <para>The function model arguments are defined in the Python raster function class referenced by the input model. This is where you list additional deep learning parameters and arguments for experiments and refinement, such as a confidence threshold for fine tuning the sensitivity. The names of the arguments are populated by the tool from reading the Python module on the RA server.</para>
+		/// <para>函数模型参数在输入模型引用的 Python 栅格函数类中定义。 您可以在此列出其他深度学习参数和用于试验和优化的参数，例如用于优化灵敏度的置信度阈值。 参数名称将由工具通过读取 RA 服务器上的 Python 模块进行填充。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -110,9 +111,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Non Maximum Suppression</para>
-		/// <para>Specifies whether non maximum suppression, where duplicate objects are identified and the duplicate feature with a lower confidence value is removed, will be performed.</para>
-		/// <para>Unchecked—All detected objects will be in the output feature class. This is the default.</para>
-		/// <para>Checked— Duplicate detected objects will be removed.</para>
+		/// <para>指定是否执行可用于标识重复对象和移除置信值较低的重复要素的非极大值抑制。</para>
+		/// <para>未选中 - 所有检测到的对象都将位于输出要素类中。 这是默认设置。</para>
+		/// <para>选中 - 将移除重复检测到的对象。</para>
 		/// <para><see cref="RunnmsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -122,8 +123,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Confidence Score Field</para>
-		/// <para>The field in the feature service that contains the confidence scores that will be used as output by the object detection method.</para>
-		/// <para>This parameter is required when the Non Maximum Suppression parameter is checked.</para>
+		/// <para>要素服务中的字段，该字段包含将由对象检测方法用作输出的置信度得分。</para>
+		/// <para>当选中了非极大值抑制参数时需要用到 该参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -131,8 +132,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Class Value Field</para>
-		/// <para>The name of the class value field in the feature service.</para>
-		/// <para>If a field name is not specified, a Classvalue or Value field will be used. If these fields do not exist, all records will be identified as belonging to one class.</para>
+		/// <para>要素服务中类值字段的名称。</para>
+		/// <para>如果未指定字段名称，则 Classvalue 或 Value 字段将被使用。 如果这些字段不存在，则会将所有记录标识为属于一个类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -140,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Max Overlap Ratio</para>
-		/// <para>The maximum overlap ratio for two overlapping features, which is defined as the ratio of intersection area over union area. The default is 0.</para>
+		/// <para>两个重叠要素的最大重叠比，其定义为交集区域与并集区域之比。 默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -155,9 +156,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Processing Mode</para>
-		/// <para>Specifies how all raster items in a mosaic dataset or an image service will be processed. This parameter is applied when the input raster is a mosaic dataset or an image service.</para>
-		/// <para>Process as mosaicked image—All raster items in the mosaic dataset or image service will be mosaicked together and processed. This is the default.</para>
-		/// <para>Process all raster items separately—All raster items in the mosaic dataset or image service will be processed as separate images.</para>
+		/// <para>指定处理镶嵌数据集或影像服务中的所有栅格项目的方式。 当输入栅格是镶嵌数据集或影像服务时，将应用此参数。</para>
+		/// <para>以镶嵌影像方式处理—将镶嵌在一起并处理镶嵌数据集或影像服务中的所有栅格项目。 这是默认设置。</para>
+		/// <para>单独处理所有栅格项目—将作为独立影像处理镶嵌数据集或影像服务中的所有栅格项目。</para>
 		/// <para><see cref="ProcessingmodeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -182,14 +183,14 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum RunnmsEnum 
 		{
 			/// <summary>
-			/// <para>Checked— Duplicate detected objects will be removed.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("NMS")]
 			NMS,
 
 			/// <summary>
-			/// <para>Unchecked—All detected objects will be in the output feature class. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_NMS")]
@@ -203,17 +204,17 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum ProcessingmodeEnum 
 		{
 			/// <summary>
-			/// <para>Process as mosaicked image—All raster items in the mosaic dataset or image service will be mosaicked together and processed. This is the default.</para>
+			/// <para>以镶嵌影像方式处理—将镶嵌在一起并处理镶嵌数据集或影像服务中的所有栅格项目。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("PROCESS_AS_MOSAICKED_IMAGE")]
-			[Description("Process as mosaicked image")]
+			[Description("以镶嵌影像方式处理")]
 			Process_as_mosaicked_image,
 
 			/// <summary>
-			/// <para>Process all raster items separately—All raster items in the mosaic dataset or image service will be processed as separate images.</para>
+			/// <para>单独处理所有栅格项目—将作为独立影像处理镶嵌数据集或影像服务中的所有栅格项目。</para>
 			/// </summary>
 			[GPValue("PROCESS_ITEMS_SEPARATELY")]
-			[Description("Process all raster items separately")]
+			[Description("单独处理所有栅格项目")]
 			Process_all_raster_items_separately,
 
 		}

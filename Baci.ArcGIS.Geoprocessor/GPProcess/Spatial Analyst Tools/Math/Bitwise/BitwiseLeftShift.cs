@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Bitwise Left Shift</para>
-	/// <para>Performs a Bitwise Left Shift operation on the binary values of two input rasters.</para>
+	/// <para>按位左移</para>
+	/// <para>对两个输入栅格的二进制值执行“按位左移”运算。</para>
 	/// </summary>
 	public class BitwiseLeftShift : AbstractGPProcess
 	{
@@ -20,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant1">
 		/// <para>Input raster or constant value 1</para>
-		/// <para>The input on which to perform the shift.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>要执行移位运算的输入。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="InRasterOrConstant2">
 		/// <para>Input raster or constant value 2</para>
-		/// <para>The input defining the number of positions to shift the bits.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>定义移动位数的输入。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the result of a Bitwise Left Shift operation on the inputs.</para>
+		/// <para>输出栅格。</para>
+		/// <para>像元值是对输入进行“按位左移”运算的结果。</para>
 		/// </param>
 		public BitwiseLeftShift(object InRasterOrConstant1, object InRasterOrConstant2, object OutRaster)
 		{
@@ -41,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Bitwise Left Shift</para>
+		/// <para>Tool Display Name : 按位左移</para>
 		/// </summary>
-		public override string DisplayName() => "Bitwise Left Shift";
+		public override string DisplayName() => "按位左移";
 
 		/// <summary>
 		/// <para>Tool Name : BitwiseLeftShift</para>
@@ -77,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 1</para>
-		/// <para>The input on which to perform the shift.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>要执行移位运算的输入。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -90,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 2</para>
-		/// <para>The input defining the number of positions to shift the bits.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>定义移动位数的输入。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -103,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the result of a Bitwise Left Shift operation on the inputs.</para>
+		/// <para>输出栅格。</para>
+		/// <para>像元值是对输入进行“按位左移”运算的结果。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Get Job AOI</para>
-	/// <para>Gets the job's location of interest (LOI)  as a feature layer. The output layer has either the polygon representing the area of interest (AOI) of the job or point representing the point of interest (POI) of the job.</para>
+	/// <para>获取作业 AOI</para>
+	/// <para>获取作业的感兴趣位置 (LOI) 作为要素图层。输出图层具有表示作业感兴趣区 (AOI) 的面或表示作业感兴趣点 (POI) 的点。</para>
 	/// </summary>
 	public class GetJobAOI : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		/// <param name="InputJobid">
 		/// <para>Input Job ID</para>
-		/// <para>The ID of the job whose AOI is to be retrieved.</para>
+		/// <para>要检索 AOI 的作业的 ID。</para>
 		/// </param>
 		/// <param name="AoiLayer">
 		/// <para>AOI Layer</para>
-		/// <para>The layer name for the location of interest retrieved. The output layer has either the polygon representing the area of interest (AOI) of the job or point representing the point of interest (POI) of the job.</para>
+		/// <para>检索到的感兴趣位置的图层名称。输出图层具有表示作业感兴趣区 (AOI) 的面或表示作业感兴趣点 (POI) 的点。</para>
 		/// </param>
 		public GetJobAOI(object InputJobid, object AoiLayer)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Get Job AOI</para>
+		/// <para>Tool Display Name : 获取作业 AOI</para>
 		/// </summary>
-		public override string DisplayName() => "Get Job AOI";
+		public override string DisplayName() => "获取作业 AOI";
 
 		/// <summary>
 		/// <para>Tool Name : GetJobAOI</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Input Job ID</para>
-		/// <para>The ID of the job whose AOI is to be retrieved.</para>
+		/// <para>要检索 AOI 的作业的 ID。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>AOI Layer</para>
-		/// <para>The layer name for the location of interest retrieved. The output layer has either the polygon representing the area of interest (AOI) of the job or point representing the point of interest (POI) of the job.</para>
+		/// <para>检索到的感兴趣位置的图层名称。输出图层具有表示作业感兴趣区 (AOI) 的面或表示作业感兴趣点 (POI) 的点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Input Database Path</para>
-		/// <para>The Workflow Manager (Classic) database connection file for the input job. If no connection file is specified, the current default Workflow Manager (Classic) database in the project is used.</para>
+		/// <para>输入作业的 Workflow Manager (Classic) 数据库连接文件。如果未指定连接文件，将使用项目中当前默认的 Workflow Manager (Classic) 数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]

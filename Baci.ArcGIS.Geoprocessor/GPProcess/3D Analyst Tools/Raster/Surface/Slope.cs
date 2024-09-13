@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Slope</para>
-	/// <para>Identifies the slope (gradient or steepness) from each cell of a raster.</para>
+	/// <para>坡度</para>
+	/// <para>识别栅格中每个像元的坡度（梯度或陡度）。</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.Analyst3DTools.SurfaceParameters"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.Analyst3DTools.SurfaceParameters))]
@@ -22,12 +23,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input surface raster.</para>
+		/// <para>输入表面栅格。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output slope raster.</para>
-		/// <para>It will be floating-point type.</para>
+		/// <para>输出坡度栅格。</para>
+		/// <para>此栅格为浮点类型。</para>
 		/// </param>
 		public Slope(object InRaster, object OutRaster)
 		{
@@ -36,14 +37,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Slope</para>
+		/// <para>Tool Display Name : 坡度</para>
 		/// </summary>
-		public override string DisplayName() => "Slope";
+		public override string DisplayName() => "坡度";
 
 		/// <summary>
-		/// <para>Tool Name : Slope</para>
+		/// <para>Tool Name : 坡度</para>
 		/// </summary>
-		public override string ToolName() => "Slope";
+		public override string ToolName() => "坡度";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Slope</para>
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input surface raster.</para>
+		/// <para>输入表面栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -84,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output slope raster.</para>
-		/// <para>It will be floating-point type.</para>
+		/// <para>输出坡度栅格。</para>
+		/// <para>此栅格为浮点类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -93,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output measurement</para>
-		/// <para>Determines the measurement units (degrees or percentages) of the output slope raster.</para>
-		/// <para>Degree—The inclination of slope will be calculated in degrees.</para>
-		/// <para>Percent rise—The inclination of slope will be calculated as percent rise, also referred to as the percent slope.</para>
+		/// <para>确定输出坡度数据的测量单位（度或百分比）。</para>
+		/// <para>度—坡度倾角将以度为单位进行计算。</para>
+		/// <para>增量百分比—坡度倾角将以增量百分比进行计算，也称为百分比坡度。</para>
 		/// <para><see cref="OutputMeasurementEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -105,10 +106,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z factor</para>
-		/// <para>The number of ground x,y units in one surface z-unit.</para>
-		/// <para>The z-factor adjusts the units of measure for the z-units when they are different from the x,y units of the input surface. The z-values of the input surface are multiplied by the z-factor when calculating the final output surface.</para>
-		/// <para>If the x,y units and z-units are in the same units of measure, the z-factor is 1. This is the default.</para>
-		/// <para>If the x,y units and z-units are in different units of measure, the z-factor must be set to the appropriate factor or the results will be incorrect. For example, if the z-units are feet and the x,y units are meters, you would use a z-factor of 0.3048 to convert the z-units from feet to meters (1 foot = 0.3048 meter).</para>
+		/// <para>一个表面 z 单位中地面 x,y 单位的数量。</para>
+		/// <para>z 单位与输入表面的 x,y 单位不同时，可使用 z 因子调整 z 单位的测量单位。 计算最终输出表面时，将用 z 因子乘以输入表面的 z 值。</para>
+		/// <para>如果 x,y 单位和 z 单位采用相同的测量单位，则 z 因子为 1。 这是默认设置。</para>
+		/// <para>如果 x,y 单位和 z 单位采用不同的测量单位，则必须将 z 因子设置为适当的因子，否则会得到错误的结果。 例如，如果 z 单位是英尺，而 x,y 单位是米，则应使用 z 因子 0.3048 将 z 单位从英尺转换为米（1 英尺 = 0.3048 米）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -117,10 +118,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>Specifies whether the calculation will be based on a planar (flat earth) or a geodesic (ellipsoid) method.</para>
-		/// <para>Planar—The calculation will be performed on a projected flat plane using a 2D Cartesian coordinate system. This is the default method.</para>
-		/// <para>Geodesic—The calculation will be performed in a 3D Cartesian coordinate system by considering the shape of the earth as an ellipsoid.</para>
-		/// <para>The planar method is appropriate to use on local areas in a projection that maintains correct distance and area. It is suitable for analyses that cover areas such cities, counties, or smaller states in area. The geodesic method produces a more accurate result, at the potential cost of an increase in processing time.</para>
+		/// <para>指定计算将基于平面（平地）还是测地线（椭球）方法。</para>
+		/// <para>平面—将使用 2D 笛卡尔坐标系对投影平面执行计算。 这是默认方法。</para>
+		/// <para>测地线—通过将地球形状视为椭球体，在 3D 笛卡尔坐标系中执行计算。</para>
+		/// <para>平面方法适用于保持正确距离和面积的投影中的局部区域。 适用于覆盖诸如城市、县或面积较小的州等区域的分析。 测地线方法可以产生更精确的结果，但会造成处理时间这一潜在成本增加。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -130,18 +131,18 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z unit</para>
-		/// <para>The linear unit of vertical z-values.</para>
-		/// <para>It is defined by a vertical coordinate system if it exists. If a vertical coordinate system does not exist, the z-unit should be defined from the unit list to ensure correct geodesic computation. The default is meter.</para>
-		/// <para>Inch—The linear unit will be inches.</para>
-		/// <para>Foot—The linear unit will be feet.</para>
-		/// <para>Yard—The linear unit will be yards.</para>
-		/// <para>Mile US—The linear unit will be miles.</para>
-		/// <para>Nautical mile—The linear unit will be nautical miles.</para>
-		/// <para>Millimeter—The linear unit will be millimeters.</para>
-		/// <para>Centimeter—The linear unit will be centimeters.</para>
-		/// <para>Meter—The linear unit will be meters.</para>
-		/// <para>Kilometer—The linear unit will be kilometers.</para>
-		/// <para>Decimeter—The linear unit will be decimeters.</para>
+		/// <para>垂直 z 值的线性单位。</para>
+		/// <para>由垂直坐标系（如果存在）定义。 如果垂直坐标系不存在，则应根据单位列表来定义 z 单位，以确保测地线计算正确。 默认单位为米。</para>
+		/// <para>英寸—线性单位将为英寸。</para>
+		/// <para>英尺—线性单位将为英尺。</para>
+		/// <para>码—线性单位将为码。</para>
+		/// <para>英里(美制)—线性单位将为英里。</para>
+		/// <para>海里—线性单位将为海里。</para>
+		/// <para>毫米—线性单位将为毫米。</para>
+		/// <para>厘米—线性单位将为厘米。</para>
+		/// <para>米—线性单位将为米。</para>
+		/// <para>千米—线性单位将为公里。</para>
+		/// <para>分米—线性单位将为分米。</para>
 		/// <para><see cref="ZUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -166,17 +167,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum OutputMeasurementEnum 
 		{
 			/// <summary>
-			/// <para>Degree—The inclination of slope will be calculated in degrees.</para>
+			/// <para>度—坡度倾角将以度为单位进行计算。</para>
 			/// </summary>
 			[GPValue("DEGREE")]
-			[Description("Degree")]
+			[Description("度")]
 			Degree,
 
 			/// <summary>
-			/// <para>Percent rise—The inclination of slope will be calculated as percent rise, also referred to as the percent slope.</para>
+			/// <para>增量百分比—坡度倾角将以增量百分比进行计算，也称为百分比坡度。</para>
 			/// </summary>
 			[GPValue("PERCENT_RISE")]
-			[Description("Percent rise")]
+			[Description("增量百分比")]
 			Percent_rise,
 
 		}
@@ -187,17 +188,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Planar—The calculation will be performed on a projected flat plane using a 2D Cartesian coordinate system. This is the default method.</para>
+			/// <para>平面—将使用 2D 笛卡尔坐标系对投影平面执行计算。 这是默认方法。</para>
 			/// </summary>
 			[GPValue("PLANAR")]
-			[Description("Planar")]
+			[Description("平面")]
 			Planar,
 
 			/// <summary>
-			/// <para>Geodesic—The calculation will be performed in a 3D Cartesian coordinate system by considering the shape of the earth as an ellipsoid.</para>
+			/// <para>测地线—通过将地球形状视为椭球体，在 3D 笛卡尔坐标系中执行计算。</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("Geodesic")]
+			[Description("测地线")]
 			Geodesic,
 
 		}
@@ -208,73 +209,73 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ZUnitEnum 
 		{
 			/// <summary>
-			/// <para>Inch—The linear unit will be inches.</para>
+			/// <para>英寸—线性单位将为英寸。</para>
 			/// </summary>
 			[GPValue("INCH")]
-			[Description("Inch")]
+			[Description("英寸")]
 			Inch,
 
 			/// <summary>
-			/// <para>Foot—The linear unit will be feet.</para>
+			/// <para>英尺—线性单位将为英尺。</para>
 			/// </summary>
 			[GPValue("FOOT")]
-			[Description("Foot")]
+			[Description("英尺")]
 			Foot,
 
 			/// <summary>
-			/// <para>Yard—The linear unit will be yards.</para>
+			/// <para>码—线性单位将为码。</para>
 			/// </summary>
 			[GPValue("YARD")]
-			[Description("Yard")]
+			[Description("码")]
 			Yard,
 
 			/// <summary>
-			/// <para>Mile US—The linear unit will be miles.</para>
+			/// <para>英里(美制)—线性单位将为英里。</para>
 			/// </summary>
 			[GPValue("MILE_US")]
-			[Description("Mile US")]
+			[Description("英里(美制)")]
 			Mile_US,
 
 			/// <summary>
-			/// <para>Nautical mile—The linear unit will be nautical miles.</para>
+			/// <para>海里—线性单位将为海里。</para>
 			/// </summary>
 			[GPValue("NAUTICAL_MILE")]
-			[Description("Nautical mile")]
+			[Description("海里")]
 			Nautical_mile,
 
 			/// <summary>
-			/// <para>Millimeter—The linear unit will be millimeters.</para>
+			/// <para>毫米—线性单位将为毫米。</para>
 			/// </summary>
 			[GPValue("MILLIMETER")]
-			[Description("Millimeter")]
+			[Description("毫米")]
 			Millimeter,
 
 			/// <summary>
-			/// <para>Centimeter—The linear unit will be centimeters.</para>
+			/// <para>厘米—线性单位将为厘米。</para>
 			/// </summary>
 			[GPValue("CENTIMETER")]
-			[Description("Centimeter")]
+			[Description("厘米")]
 			Centimeter,
 
 			/// <summary>
-			/// <para>Meter—The linear unit will be meters.</para>
+			/// <para>米—线性单位将为米。</para>
 			/// </summary>
 			[GPValue("METER")]
-			[Description("Meter")]
+			[Description("米")]
 			Meter,
 
 			/// <summary>
-			/// <para>Kilometer—The linear unit will be kilometers.</para>
+			/// <para>千米—线性单位将为公里。</para>
 			/// </summary>
 			[GPValue("KILOMETER")]
-			[Description("Kilometer")]
+			[Description("千米")]
 			Kilometer,
 
 			/// <summary>
-			/// <para>Decimeter—The linear unit will be decimeters.</para>
+			/// <para>分米—线性单位将为分米。</para>
 			/// </summary>
 			[GPValue("DECIMETER")]
-			[Description("Decimeter")]
+			[Description("分米")]
 			Decimeter,
 
 		}

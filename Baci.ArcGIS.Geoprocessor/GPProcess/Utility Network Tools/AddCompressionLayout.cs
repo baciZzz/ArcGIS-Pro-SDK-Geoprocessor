@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Compression Layout</para>
+	/// <para>Add Compression Layout</para>
 	/// <para>Add a compression layout to a diagram template</para>
 	/// </summary>
 	[Obsolete()]

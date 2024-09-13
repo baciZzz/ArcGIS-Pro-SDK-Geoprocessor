@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Upgrade ArcMap Parcel Fabric</para>
-	/// <para>Upgrades an ArcMap  parcel fabric to an ArcGIS Pro parcel fabric.</para>
+	/// <para>升级 ArcMap 宗地结构</para>
+	/// <para>将 ArcMap 宗地结构升级为 ArcGIS Pro 宗地结构。</para>
 	/// </summary>
 	public class UpgradeArcMapParcelFabric : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFabric">
 		/// <para>Input Parcel Fabric For ArcMap</para>
-		/// <para>The ArcMap parcel fabric that will be upgraded to an ArcGIS Pro parcel fabric.</para>
+		/// <para>将升级为 ArcGIS Pro 宗地结构的 ArcMap 宗地结构。</para>
 		/// </param>
 		/// <param name="TargetDataset">
 		/// <para>Target Feature Dataset</para>
-		/// <para>The feature dataset that will contain the upgraded ArcGIS Pro parcel fabric.</para>
+		/// <para>将包含已升级的 ArcGIS Pro 宗地结构的要素数据集。</para>
 		/// </param>
 		/// <param name="Name">
 		/// <para>Name</para>
-		/// <para>The name of the upgraded ArcGIS Pro parcel fabric.</para>
+		/// <para>已升级的 ArcGIS Pro 宗地结构的名称。</para>
 		/// </param>
 		public UpgradeArcMapParcelFabric(object InParcelFabric, object TargetDataset, object Name)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Upgrade ArcMap Parcel Fabric</para>
+		/// <para>Tool Display Name : 升级 ArcMap 宗地结构</para>
 		/// </summary>
-		public override string DisplayName() => "Upgrade ArcMap Parcel Fabric";
+		public override string DisplayName() => "升级 ArcMap 宗地结构";
 
 		/// <summary>
 		/// <para>Tool Name : UpgradeArcMapParcelFabric</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Input Parcel Fabric For ArcMap</para>
-		/// <para>The ArcMap parcel fabric that will be upgraded to an ArcGIS Pro parcel fabric.</para>
+		/// <para>将升级为 ArcGIS Pro 宗地结构的 ArcMap 宗地结构。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPCadastralFabricLayer()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Target Feature Dataset</para>
-		/// <para>The feature dataset that will contain the upgraded ArcGIS Pro parcel fabric.</para>
+		/// <para>将包含已升级的 ArcGIS Pro 宗地结构的要素数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureDataset()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Name</para>
-		/// <para>The name of the upgraded ArcGIS Pro parcel fabric.</para>
+		/// <para>已升级的 ArcGIS Pro 宗地结构的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

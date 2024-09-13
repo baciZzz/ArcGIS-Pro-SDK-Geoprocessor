@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Report Aviation Chart Changes</para>
+	/// <para>Report Aviation Chart Changes</para>
 	/// <para>Compares feature classes in two enterprise geodatabase versions and returns the differences in a report. You can filter the reported changes to determine which charts are affected by the differing data sources. You can set  filters based on areas of interest (AOI), definition queries, and Report Chart Changes preferences.</para>
 	/// </summary>
 	public class ReportAviationChartChanges : AbstractGPProcess

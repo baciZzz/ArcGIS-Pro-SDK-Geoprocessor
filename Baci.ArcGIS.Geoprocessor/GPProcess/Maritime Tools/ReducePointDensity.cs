@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Reduce Point Density</para>
+	/// <para>Reduce Point Density</para>
 	/// <para>Thins points from a point or multipoint feature class.</para>
 	/// </summary>
 	public class ReducePointDensity : AbstractGPProcess

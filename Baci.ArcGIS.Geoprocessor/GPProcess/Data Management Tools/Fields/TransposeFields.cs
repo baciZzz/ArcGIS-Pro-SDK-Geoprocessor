@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Transpose Fields</para>
-	/// <para>Switch  data stored in fields or columns to rows in a new table or feature class.</para>
+	/// <para>转置字段</para>
+	/// <para>在新表或要素类中，将字段或列中存储的数据转换到行中。</para>
 	/// </summary>
 	public class TransposeFields : AbstractGPProcess
 	{
@@ -20,25 +21,25 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input feature class or table containing data value fields to be transposed.</para>
+		/// <para>包含要转置的数据值字段的输入要素类或表。</para>
 		/// </param>
 		/// <param name="InField">
 		/// <para>Fields To Transpose</para>
-		/// <para>The fields or columns containing data values in the input table that need to be transposed.</para>
-		/// <para>Depending on your needs, you can select multiple fields to be transposed. The value here defines what the field name will be in the output. When not specified, the value is the same as the field name by default. However, you can also specify your own value. For example, if the field names to be transposed are Pop1991, Pop1992, and so on, by default, the values for these fields in the output will be the same (Pop1991, Pop1992, and so forth). However, you can choose to specify your own values such as 1991 and 1992.</para>
+		/// <para>输入表中包含要进行转置的数据值的字段或列。</para>
+		/// <para>根据需要，可以选择多个要进行转置的字段。此处的值用于定义输出中的字段名。如果未指定，则值与字段名默认相同。不过，也可以指定您自己的值。例如，如果要转置的字段名是 Pop1991、Pop1992 等，默认情况下，输出中这些字段的值将相同（Pop1991、Pop1992 等）。但也可选择指定您自己的值，如 1991 和 1992。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>The output feature class or table. The output will contain a transposed field, a value field, and any number of specified attribute fields that need to be inherited from the input table.</para>
-		/// <para>By default the Output Table is a table. The output will be a feature class when the Input Table is a feature class and the Shape field is selected in the Attribute Fields parameter.</para>
+		/// <para>输出要素类或表。输出将包含转置后的字段、值字段以及指定的需要从输入表继承的任意数量的属性字段。</para>
+		/// <para>默认情况下，输出表为一张表。当输入表为要素类，并且在属性字段参数中选择了 Shape 字段时，输出将为要素类。</para>
 		/// </param>
 		/// <param name="InTransposedFieldName">
 		/// <para>Transposed Field</para>
-		/// <para>The name of the field that will be created to store field names of the transposed fields. Any valid field name can be used.</para>
+		/// <para>要创建的字段的名称，该字段用于存储已转置字段的字段名。可使用任何有效的字段名。</para>
 		/// </param>
 		/// <param name="InValueFieldName">
 		/// <para>Value Field</para>
-		/// <para>The name of the field that will be created to store the corresponding values of the transposed fields. Any valid field name can be set, as long as it does not conflict with existing field names from the input table or feature class.</para>
+		/// <para>要创建的字段的名称，该字段用于存储已转置字段的相应值。可设置任何有效的字段名，只要它不与来自输入表或要素类的现有字段名冲突。</para>
 		/// </param>
 		public TransposeFields(object InTable, object InField, object OutTable, object InTransposedFieldName, object InValueFieldName)
 		{
@@ -50,9 +51,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Transpose Fields</para>
+		/// <para>Tool Display Name : 转置字段</para>
 		/// </summary>
-		public override string DisplayName() => "Transpose Fields";
+		public override string DisplayName() => "转置字段";
 
 		/// <summary>
 		/// <para>Tool Name : TransposeFields</para>
@@ -86,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input feature class or table containing data value fields to be transposed.</para>
+		/// <para>包含要转置的数据值字段的输入要素类或表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -94,8 +95,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Fields To Transpose</para>
-		/// <para>The fields or columns containing data values in the input table that need to be transposed.</para>
-		/// <para>Depending on your needs, you can select multiple fields to be transposed. The value here defines what the field name will be in the output. When not specified, the value is the same as the field name by default. However, you can also specify your own value. For example, if the field names to be transposed are Pop1991, Pop1992, and so on, by default, the values for these fields in the output will be the same (Pop1991, Pop1992, and so forth). However, you can choose to specify your own values such as 1991 and 1992.</para>
+		/// <para>输入表中包含要进行转置的数据值的字段或列。</para>
+		/// <para>根据需要，可以选择多个要进行转置的字段。此处的值用于定义输出中的字段名。如果未指定，则值与字段名默认相同。不过，也可以指定您自己的值。例如，如果要转置的字段名是 Pop1991、Pop1992 等，默认情况下，输出中这些字段的值将相同（Pop1991、Pop1992 等）。但也可选择指定您自己的值，如 1991 和 1992。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -104,8 +105,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The output feature class or table. The output will contain a transposed field, a value field, and any number of specified attribute fields that need to be inherited from the input table.</para>
-		/// <para>By default the Output Table is a table. The output will be a feature class when the Input Table is a feature class and the Shape field is selected in the Attribute Fields parameter.</para>
+		/// <para>输出要素类或表。输出将包含转置后的字段、值字段以及指定的需要从输入表继承的任意数量的属性字段。</para>
+		/// <para>默认情况下，输出表为一张表。当输入表为要素类，并且在属性字段参数中选择了 Shape 字段时，输出将为要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -113,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Transposed Field</para>
-		/// <para>The name of the field that will be created to store field names of the transposed fields. Any valid field name can be used.</para>
+		/// <para>要创建的字段的名称，该字段用于存储已转置字段的字段名。可使用任何有效的字段名。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -121,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Value Field</para>
-		/// <para>The name of the field that will be created to store the corresponding values of the transposed fields. Any valid field name can be set, as long as it does not conflict with existing field names from the input table or feature class.</para>
+		/// <para>要创建的字段的名称，该字段用于存储已转置字段的相应值。可设置任何有效的字段名，只要它不与来自输入表或要素类的现有字段名冲突。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -129,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Attribute Fields</para>
-		/// <para>Additional attribute fields from the input table to be included in the output table. If you want to output a feature class, add the Shape field.</para>
+		/// <para>来自输入表的要被包含在输出表中的附加属性字段。如果要输出要素类，请添加 Shape 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

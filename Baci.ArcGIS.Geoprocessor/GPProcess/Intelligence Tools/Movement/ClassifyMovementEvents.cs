@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Classify Movement Events</para>
-	/// <para>Identifies turn events, acceleration events, and speed from an input point track dataset.</para>
+	/// <para>分类移动事件</para>
+	/// <para>识别输入点轨迹数据集中的转弯事件、加速事件和速度。</para>
 	/// </summary>
 	public class ClassifyMovementEvents : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>A time-enabled point feature layer with a field annotating the track with which each point is associated. The geometry, object identifier, track name, and time will be transferred to the output feature class. The input must be in a projected coordinate system.</para>
+		/// <para>启用时间的点要素图层，具有用于注记与每个点关联的轨迹的字段。 几何、对象标识符、轨迹名称和时间将传递到输出要素类。 输入必须采用投影坐标系。</para>
 		/// </param>
 		/// <param name="IdField">
 		/// <para>ID Field</para>
-		/// <para>A field from the input features that will be used to obtain the unique identifiers per point track. The field will be copied to the output feature class.</para>
+		/// <para>输入要素中的字段，用于获取每个点轨迹的唯一标识符。 该字段将复制到输出要素类。</para>
 		/// </param>
 		/// <param name="OutFeatureclass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class that will contain the calculated movement events.</para>
+		/// <para>将包含计算的移动事件的输出要素类。</para>
 		/// </param>
 		public ClassifyMovementEvents(object InFeatures, object IdField, object OutFeatureclass)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Classify Movement Events</para>
+		/// <para>Tool Display Name : 分类移动事件</para>
 		/// </summary>
-		public override string DisplayName() => "Classify Movement Events";
+		public override string DisplayName() => "分类移动事件";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyMovementEvents</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>A time-enabled point feature layer with a field annotating the track with which each point is associated. The geometry, object identifier, track name, and time will be transferred to the output feature class. The input must be in a projected coordinate system.</para>
+		/// <para>启用时间的点要素图层，具有用于注记与每个点关联的轨迹的字段。 几何、对象标识符、轨迹名称和时间将传递到输出要素类。 输入必须采用投影坐标系。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>ID Field</para>
-		/// <para>A field from the input features that will be used to obtain the unique identifiers per point track. The field will be copied to the output feature class.</para>
+		/// <para>输入要素中的字段，用于获取每个点轨迹的唯一标识符。 该字段将复制到输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class that will contain the calculated movement events.</para>
+		/// <para>将包含计算的移动事件的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -103,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Curvature</para>
-		/// <para>The minimum value that is necessary for an event to be classified as a turn event. After the curvature is calculated, any calculated curvature greater than this value will cause the turn_event field to be populated with the relevant turn event, while values less than this will cause the turn_event field to be classified as Traveling.</para>
-		/// <para>Turns are calculated using the Curvature and Number Of Points parameters. Each point is evaluated based on the bearing from the previous point in the track to the current point and from the current point to the next point in the track. If the value exceeds the value specified in the Curvature parameter, it is considered a turn. Otherwise, it is considered to be traveling. For tracks representing large objects, it is recommended that you increase the Number Of Points value to account for the longer amount of time to conduct a turn.</para>
+		/// <para>将事件分类为转弯事件所需的最小值。 在计算曲率后，大于此值的任何计算曲率都会导致在 turn_event 字段中填充相关的转弯事件，而小于此值的值将导致 turn_event 字段分类为“行驶中”。</para>
+		/// <para>转弯使用曲率和点数参数进行计算。 系统将基于从轨迹中上一个点到当前点以及从当前点到轨迹中下一个点的方位角来计算每个点。 如果该值超过曲率参数中指定的值，则系统会将其视为转弯。 否则，系统会将其视为行驶中。 对于代表大型对象的轨迹，建议您增加点数值，以解决转弯执行时间较长的问题。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Number Of Points</para>
-		/// <para>The number of points that will be evaluated before and after a given point when calculating the bearing difference. When using data with a high sampling rate (subsecond), you may need to increase the Number Of Points parameter value to account for the decreased movement that is possible in that brief time period. A value of 1 is suitable for automobiles and pedestrians assuming a one-second sampling on the input data. Larger values are necessary for aircraft and ships, and a default value of 5 should be used.</para>
+		/// <para>计算方位角差值时，位于给定点之前和之后的待计算点数。 使用采样速率（亚秒）较高的数据时，可能需要增加点数参数值，以考虑在该短暂时间内可能发生的移动减少。 假设每秒对输入数据采样一次，则值 1 适用于汽车和行人。 对于航空器和船舶，必须使用较大的值，并且应使用默认值 5。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Regions Of Interest</para>
-		/// <para>The regions of interest. This input feature layer must be a polygon feature class. If a value is provided, a roi field will be added to the Output Feature Class parameter.</para>
+		/// <para>感兴趣区域。 此输入要素图层必须为面要素类。 如果提供了一个值，roi 字段将添加到输出要素类参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -131,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Regions Of Interest ID Field</para>
-		/// <para>A field from the Regions Of Interest parameter that contains the unique identifiers for each region of interest.</para>
+		/// <para>来自感兴趣区域参数的字段，包含每个感兴趣区域的唯一标识符。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

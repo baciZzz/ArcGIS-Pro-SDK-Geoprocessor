@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export To Delta</para>
+	/// <para>Export To Delta</para>
 	/// <para>Exports changes in a check-out replica geodatabase to a delta file.</para>
 	/// </summary>
 	[Obsolete()]

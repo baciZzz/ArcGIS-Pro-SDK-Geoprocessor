@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Generate Topographic Contours</para>
+	/// <para>Generate Topographic Contours</para>
 	/// <para>Creates and smooths contours from an input raster.</para>
 	/// </summary>
 	public class GenerateTopographicContours : AbstractGPProcess

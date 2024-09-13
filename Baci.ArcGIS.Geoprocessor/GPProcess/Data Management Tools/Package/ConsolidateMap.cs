@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Consolidate Map</para>
-	/// <para>Consolidates a map and all referenced data sources to a specified output folder.</para>
+	/// <para>合并地图</para>
+	/// <para>将地图和所有引用的数据源合并到一个指定的输出文件夹中。</para>
 	/// </summary>
 	public class ConsolidateMap : AbstractGPProcess
 	{
@@ -20,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMap">
 		/// <para>Input Map</para>
-		/// <para>The map (.mapx) to be consolidated. When running this tool within the ArcGIS Pro application, the input can be a map, scene, or basemap.</para>
+		/// <para>要合并的地图 (.mapx)。在 ArcGIS Pro 应用程序中运行此工具时，输入可以是地图、场景或底图。</para>
 		/// </param>
 		/// <param name="OutputFolder">
 		/// <para>Output Folder</para>
-		/// <para>The output folder that will contain the consolidated map and data.</para>
-		/// <para>If the specified folder does not exist, a new folder will be created.</para>
+		/// <para>此输出文件夹将包含合并的地图和数据。</para>
+		/// <para>如果指定的文件夹不存在，将创建一个新文件夹。</para>
 		/// </param>
 		public ConsolidateMap(object InMap, object OutputFolder)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Consolidate Map</para>
+		/// <para>Tool Display Name : 合并地图</para>
 		/// </summary>
-		public override string DisplayName() => "Consolidate Map";
+		public override string DisplayName() => "合并地图";
 
 		/// <summary>
 		/// <para>Tool Name : ConsolidateMap</para>
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Map</para>
-		/// <para>The map (.mapx) to be consolidated. When running this tool within the ArcGIS Pro application, the input can be a map, scene, or basemap.</para>
+		/// <para>要合并的地图 (.mapx)。在 ArcGIS Pro 应用程序中运行此工具时，输入可以是地图、场景或底图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -78,8 +79,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Folder</para>
-		/// <para>The output folder that will contain the consolidated map and data.</para>
-		/// <para>If the specified folder does not exist, a new folder will be created.</para>
+		/// <para>此输出文件夹将包含合并的地图和数据。</para>
+		/// <para>如果指定的文件夹不存在，将创建一个新文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -87,9 +88,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Convert data to file geodatabase</para>
-		/// <para>Specifies whether input layers will be converted to a file geodatabase or preserved in their original format.</para>
-		/// <para>Checked—All data will be converted to a file geodatabase. This option does not apply to enterprise geodatabase data sources. To include enterprise geodatabase data, check the Include Enterprise geodatabase data instead of referencing the data parameter.</para>
-		/// <para>Unchecked—Data formats will be preserved when possible. This is the default.</para>
+		/// <para>指定输入图层是转换为文件地理数据库还是保留原始格式。</para>
+		/// <para>选中 - 所有数据将转换为文件地理数据库。此选项不适用于企业级地理数据库数据源。要包括企业级地理数据库数据，请选中包括企业级地理数据库数据，而不是仅引用该数据参数。</para>
+		/// <para>未选中 - 保留数据格式（如有可能）。这是默认设置。</para>
 		/// <para><see cref="ConvertDataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -99,9 +100,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Include Enterprise Geodatabase data instead of referencing the data</para>
-		/// <para>Specifies whether input enterprise geodatabase layers will be converted to a file geodatabase or preserved in their original format.</para>
-		/// <para>Checked—All enterprise geodatabase data sources will be converted to a file geodatabase. This is the default.</para>
-		/// <para>Unchecked—All enterprise geodatabase data sources will be preserved and will be referenced in the resulting package.</para>
+		/// <para>指定是将输入企业级地理数据库图层转换为文件地理数据库，还是保留其原始格式。</para>
+		/// <para>选中 - 所有企业级地理数据库数据源都将转换为文件地理数据库。这是默认设置。</para>
+		/// <para>未选中 - 将保留所有企业级地理数据库数据源，并在生成的包中对其进行引用。</para>
 		/// <para><see cref="ConvertArcsdeDataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -111,13 +112,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>Specifies the extent that will be used to select or clip features.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
-		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
-		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>指定用于选择或裁剪要素的范围。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
+		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
+		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -125,9 +126,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Apply Extent only to enterprise geodatabase layers</para>
-		/// <para>Specifies whether the specified extent will be applied to all layers or only to enterprise geodatabase layers.</para>
-		/// <para>Unchecked—The extent will be applied to all layers. This is the default.</para>
-		/// <para>Checked—The extent will be applied to enterprise geodatabase layers only.</para>
+		/// <para>指定是将指定范围应用到所有图层，还是仅应用到企业级地理数据库图层。</para>
+		/// <para>未选中 - 范围将应用到所有图层。这是默认设置。</para>
+		/// <para>选中 - 范围将仅应用到企业级地理数据库图层。</para>
 		/// <para><see cref="ApplyExtentToArcsdeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -137,9 +138,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Preserve SQLite</para>
-		/// <para>Instead of converting to a file geodatabase format, input SQLite data can be preserved as SQLite output. This parameter overrides the Convert data to file geodatabase parameter when the input data is SQLite. If the input data is a SQLite network dataset, the output will always be SQLite.</para>
-		/// <para>Unchecked—SQLite data will be converted to file geodatabase. This is the default.</para>
-		/// <para>Checked—SQLite data will be preserved as SQLite in the consolidated folder.</para>
+		/// <para>可以将输入 SQLite 数据保留为 SQLite 输出，而无需转换为文件地理数据库格式。当输入数据为 SQLite 时，此参数将覆盖将数据转换为文件地理数据库参数。如果输入数据为 SQLite 网络数据集，则输出将始终为 SQLite。</para>
+		/// <para>未选中 - SQLite 数据将被转换为文件地理数据库。这是默认设置。</para>
+		/// <para>选中 - 在合并文件夹中，SQLite 数据将保留为 SQLite。</para>
 		/// <para><see cref="PreserveSqliteEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -149,9 +150,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Keep only the rows which are related to features within the extent</para>
-		/// <para>Specifies whether the specified extent will be applied to related data sources.</para>
-		/// <para>Unchecked—Related data sources will be consolidated in their entirety. This is the default.</para>
-		/// <para>Checked—Only related data corresponding to records within the specified extent will be consolidated.</para>
+		/// <para>指定是否将指定的范围应用至相关数据源。</para>
+		/// <para>未选中 - 相关的数据源将全部合并。这是默认设置。</para>
+		/// <para>选中 - 仅合并指定范围内与记录对应的相关数据。</para>
 		/// <para><see cref="SelectRelatedRowsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -176,14 +177,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ConvertDataEnum 
 		{
 			/// <summary>
-			/// <para>Checked—All data will be converted to a file geodatabase. This option does not apply to enterprise geodatabase data sources. To include enterprise geodatabase data, check the Include Enterprise geodatabase data instead of referencing the data parameter.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CONVERT")]
 			CONVERT,
 
 			/// <summary>
-			/// <para>Unchecked—Data formats will be preserved when possible. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("PRESERVE")]
@@ -197,14 +198,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ConvertArcsdeDataEnum 
 		{
 			/// <summary>
-			/// <para>Checked—All enterprise geodatabase data sources will be converted to a file geodatabase. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CONVERT_ARCSDE")]
 			CONVERT_ARCSDE,
 
 			/// <summary>
-			/// <para>Unchecked—All enterprise geodatabase data sources will be preserved and will be referenced in the resulting package.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("PRESERVE_ARCSDE")]
@@ -218,14 +219,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ApplyExtentToArcsdeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The extent will be applied to enterprise geodatabase layers only.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ARCSDE_ONLY")]
 			ARCSDE_ONLY,
 
 			/// <summary>
-			/// <para>Unchecked—The extent will be applied to all layers. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ALL")]
@@ -239,14 +240,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PreserveSqliteEnum 
 		{
 			/// <summary>
-			/// <para>Checked—SQLite data will be preserved as SQLite in the consolidated folder.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE_SQLITE")]
 			PRESERVE_SQLITE,
 
 			/// <summary>
-			/// <para>Unchecked—SQLite data will be converted to file geodatabase. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CONVERT_SQLITE")]
@@ -260,14 +261,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SelectRelatedRowsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Only related data corresponding to records within the specified extent will be consolidated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("KEEP_ONLY_RELATED_ROWS")]
 			KEEP_ONLY_RELATED_ROWS,
 
 			/// <summary>
-			/// <para>Unchecked—Related data sources will be consolidated in their entirety. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_ALL_RELATED_ROWS")]

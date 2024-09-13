@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>DEM to Raster</para>
-	/// <para>Converts a digital elevation model (DEM) in a United States Geological Survey (USGS) format to a raster dataset.</para>
+	/// <para>DEM 转栅格</para>
+	/// <para>将美国地质勘探局 (USGS) 的数字高程模型 (DEM) 格式（即 USGS DEM 格式）转换为栅格数据集。</para>
 	/// </summary>
 	[Obsolete()]
 	public class DEMToRaster : AbstractGPProcess
@@ -21,12 +22,12 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InDemFile">
 		/// <para>Input USGS DEM file</para>
-		/// <para>The input USGS DEM file. The DEM must be standard USGS 7.5 minute, 1 degree, or any other file in the USGS DEM format. The DEM may be in either fixed or variable record-length format.</para>
+		/// <para>输入 USGS DEM 文件。DEM 必须是标准 USGS 7.5 分、1 度文件，或 USGS DEM 格式的任何其他文件。DEM 的记录长度可以是固定的，也可以是变化的。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster dataset to be created.</para>
-		/// <para>If the output raster will not be saved to a geodatabase, specify .tif for TIFF file format, .CRF for CRF file format, .img for ERDAS IMAGINE file format, or no extension for Esri Grid raster format.</para>
+		/// <para>要创建的输出栅格数据集。</para>
+		/// <para>如果不希望将输出栅格保存到地理数据库，请为 TIFF 文件格式指定 .tif，为 CRF 文件格式指定 .CRF，为 ERDAS IMAGINE 文件格式指定 .img，而对于 Esri Grid 栅格格式，无需指定扩展名。</para>
 		/// </param>
 		public DEMToRaster(object InDemFile, object OutRaster)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : DEM to Raster</para>
+		/// <para>Tool Display Name : DEM 转栅格</para>
 		/// </summary>
-		public override string DisplayName() => "DEM to Raster";
+		public override string DisplayName() => "DEM 转栅格";
 
 		/// <summary>
 		/// <para>Tool Name : DEMToRaster</para>
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input USGS DEM file</para>
-		/// <para>The input USGS DEM file. The DEM must be standard USGS 7.5 minute, 1 degree, or any other file in the USGS DEM format. The DEM may be in either fixed or variable record-length format.</para>
+		/// <para>输入 USGS DEM 文件。DEM 必须是标准 USGS 7.5 分、1 度文件，或 USGS DEM 格式的任何其他文件。DEM 的记录长度可以是固定的，也可以是变化的。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -81,8 +82,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster dataset to be created.</para>
-		/// <para>If the output raster will not be saved to a geodatabase, specify .tif for TIFF file format, .CRF for CRF file format, .img for ERDAS IMAGINE file format, or no extension for Esri Grid raster format.</para>
+		/// <para>要创建的输出栅格数据集。</para>
+		/// <para>如果不希望将输出栅格保存到地理数据库，请为 TIFF 文件格式指定 .tif，为 CRF 文件格式指定 .CRF，为 ERDAS IMAGINE 文件格式指定 .img，而对于 Esri Grid 栅格格式，无需指定扩展名。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -90,9 +91,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output data type</para>
-		/// <para>Data type of the output raster dataset.</para>
-		/// <para>Integer—An integer raster dataset will be created.</para>
-		/// <para>Float—A floating-point raster dataset will be created. This is the default.</para>
+		/// <para>输出栅格数据集的数据类型。</para>
+		/// <para>整型—将创建整型栅格数据集。</para>
+		/// <para>浮点型—将创建浮点栅格数据集。这是默认设置。</para>
 		/// <para><see cref="DataTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -102,10 +103,10 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Z factor</para>
-		/// <para>The number of ground x,y units in one surface z unit.</para>
-		/// <para>The z-factor adjusts the units of measure for the z units when they are different from the x,y units of the input surface. The z-values of the input surface are multiplied by the z-factor when calculating the final output surface.</para>
-		/// <para>If the x,y units and z units are in the same units of measure, the z-factor is 1. This is the default.</para>
-		/// <para>If the x,y units and z units are in different units of measure, the z-factor must be set to the appropriate factor, or the results will be incorrect. For example, if your z units are feet and your x,y units are meters, you would use a z-factor of 0.3048 to convert your z units from feet to meters (1 foot = 0.3048 meter).</para>
+		/// <para>一个表面 z 单位中地面 x,y 单位的数量。</para>
+		/// <para>z 单位与输入表面的 x,y 单位不同时，可使用 z 因子调整 z 单位的测量单位。计算最终输出表面时，将用 z 因子乘以输入表面的 z 值。</para>
+		/// <para>如果 x,y 单位和 z 单位采用相同的测量单位，则 z 因子为 1。这是默认设置。</para>
+		/// <para>如果 x,y 单位和 z 单位采用不同的测量单位，则必须将 z 因子设置为适当的因子，否则会得到错误的结果。例如，如果 z 单位是英尺而 x,y 单位是米，则应使用 z 因子 0.3048 将 z 单位从英尺转换为米（1 英尺 = 0.3048 米）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -129,17 +130,17 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum DataTypeEnum 
 		{
 			/// <summary>
-			/// <para>Float—A floating-point raster dataset will be created. This is the default.</para>
+			/// <para>浮点型—将创建浮点栅格数据集。这是默认设置。</para>
 			/// </summary>
 			[GPValue("FLOAT")]
-			[Description("Float")]
+			[Description("浮点型")]
 			Float,
 
 			/// <summary>
-			/// <para>Integer—An integer raster dataset will be created.</para>
+			/// <para>整型—将创建整型栅格数据集。</para>
 			/// </summary>
 			[GPValue("INTEGER")]
-			[Description("Integer")]
+			[Description("整型")]
 			Integer,
 
 		}

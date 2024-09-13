@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Add Z Information</para>
-	/// <para>Adds information about elevation properties of features in a Z-enabled feature class.</para>
+	/// <para>添加 Z 信息</para>
+	/// <para>添加关于具有 Z 值的要素类中的要素的高程属性的信息。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,23 +23,23 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatureClass">
 		/// <para>Input Features</para>
-		/// <para>The input features to process.</para>
+		/// <para>待处理的输入要素。</para>
 		/// </param>
 		/// <param name="OutProperty">
 		/// <para>Output Property</para>
-		/// <para>The Z properties that will be added to the attribute table of the input feature class. The following options are available:</para>
-		/// <para>Spot Z—Spot elevation of single-point feature.</para>
-		/// <para>Point Count—Number of points in each multipoint feature.</para>
-		/// <para>Lowest Z—Lowest Z value found in each multipoint, polyline, polygon, or multipatch feature.</para>
-		/// <para>Highest Z—Highest Z value found in each multipoint, polyline, polygon, or multipatch feature.</para>
-		/// <para>Average Z—Average Z value found in each multipoint, polyline, polygon, or multipatch feature.</para>
-		/// <para>3-Dimensional Length—3-dimensional length of each polyline or polygon feature.</para>
-		/// <para>Surface Area—Total area of the surface of a multipatch feature.</para>
-		/// <para>Vertex Count—Total number of vertices in each polyline or polygon feature.</para>
-		/// <para>Lowest Slope—Lowest slope value calculated for each polyline, polygon, or multipatch feature.</para>
-		/// <para>Highest Slope—Highest slope value calculated for each polyline, polygon, or multipatch feature.</para>
-		/// <para>Average Slope—Average slope value calculated for each polyline, polygon, or multipatch feature.</para>
-		/// <para>Volume—Volume of space enclosed by each multipatch feature.</para>
+		/// <para>将添加到输入要素类属性表中的 Z 属性。可用选项如下：</para>
+		/// <para>Spot Z—单点要素的高程点。</para>
+		/// <para>点计数—每个多点要素中的点数。</para>
+		/// <para>最低 Z 值—每个多点、折线、面或多面体要素中找到的最低 Z 值。</para>
+		/// <para>最高 Z 值—每个多点、折线、面或多面体要素中找到的最高 Z 值。</para>
+		/// <para>Z 平均值—每个多点、折线、面或多面体要素中找到的平均 Z 值。</para>
+		/// <para>三维长度—每个折线或面要素的三维长度。</para>
+		/// <para>表面面积—多面体要素表面的总面积。</para>
+		/// <para>折点数—每个折线或面要素的折点总数。</para>
+		/// <para>最低坡度—针对每个折线、面或多面体要素计算的最低坡度值。</para>
+		/// <para>最高坡度—针对每个折线、面或多面体要素计算的最高坡度值。</para>
+		/// <para>平均坡度—针对每个折线、面或多面体要素计算的平均坡度值。</para>
+		/// <para>体积—由每个多面体要素闭合起来的空间的体积。</para>
 		/// </param>
 		public AddZInformation(object InFeatureClass, object OutProperty)
 		{
@@ -47,9 +48,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Z Information</para>
+		/// <para>Tool Display Name : 添加 Z 信息</para>
 		/// </summary>
-		public override string DisplayName() => "Add Z Information";
+		public override string DisplayName() => "添加 Z 信息";
 
 		/// <summary>
 		/// <para>Tool Name : AddZInformation</para>
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input features to process.</para>
+		/// <para>待处理的输入要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -93,19 +94,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Property</para>
-		/// <para>The Z properties that will be added to the attribute table of the input feature class. The following options are available:</para>
-		/// <para>Spot Z—Spot elevation of single-point feature.</para>
-		/// <para>Point Count—Number of points in each multipoint feature.</para>
-		/// <para>Lowest Z—Lowest Z value found in each multipoint, polyline, polygon, or multipatch feature.</para>
-		/// <para>Highest Z—Highest Z value found in each multipoint, polyline, polygon, or multipatch feature.</para>
-		/// <para>Average Z—Average Z value found in each multipoint, polyline, polygon, or multipatch feature.</para>
-		/// <para>3-Dimensional Length—3-dimensional length of each polyline or polygon feature.</para>
-		/// <para>Surface Area—Total area of the surface of a multipatch feature.</para>
-		/// <para>Vertex Count—Total number of vertices in each polyline or polygon feature.</para>
-		/// <para>Lowest Slope—Lowest slope value calculated for each polyline, polygon, or multipatch feature.</para>
-		/// <para>Highest Slope—Highest slope value calculated for each polyline, polygon, or multipatch feature.</para>
-		/// <para>Average Slope—Average slope value calculated for each polyline, polygon, or multipatch feature.</para>
-		/// <para>Volume—Volume of space enclosed by each multipatch feature.</para>
+		/// <para>将添加到输入要素类属性表中的 Z 属性。可用选项如下：</para>
+		/// <para>Spot Z—单点要素的高程点。</para>
+		/// <para>点计数—每个多点要素中的点数。</para>
+		/// <para>最低 Z 值—每个多点、折线、面或多面体要素中找到的最低 Z 值。</para>
+		/// <para>最高 Z 值—每个多点、折线、面或多面体要素中找到的最高 Z 值。</para>
+		/// <para>Z 平均值—每个多点、折线、面或多面体要素中找到的平均 Z 值。</para>
+		/// <para>三维长度—每个折线或面要素的三维长度。</para>
+		/// <para>表面面积—多面体要素表面的总面积。</para>
+		/// <para>折点数—每个折线或面要素的折点总数。</para>
+		/// <para>最低坡度—针对每个折线、面或多面体要素计算的最低坡度值。</para>
+		/// <para>最高坡度—针对每个折线、面或多面体要素计算的最高坡度值。</para>
+		/// <para>平均坡度—针对每个折线、面或多面体要素计算的平均坡度值。</para>
+		/// <para>体积—由每个多面体要素闭合起来的空间的体积。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -114,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Noise Filtering</para>
-		/// <para>An optional numeric value used to exclude portions of features from the resulting calculations. This can be useful when the 3D input contains relatively small features with extreme slopes which may bias statistical results. If the 3D input's linear units are meters, specifying a value of 0.001 will result in the exclusion of lines or polygon edges that are shorter than 0.001 meters. For multipatch features, the same value will result in the exclusion of its subparts that have an area less than 0.001 square meters. This parameter does not apply to point and multipoint features.</para>
+		/// <para>一个用于从生成的计算中排除部分要素的可选数值。当 3D 输入包含相对较小的要素（具有极端坡度值，可能会使统计结果产生偏差）时，这将十分有用。如果 3D 输入的线性单位为米时，指定值 0.001 将导致排除长度小于 0.001 米的线或面边。对于多面体要素，相同值将导致排除其面积小于 0.001 平方米的子部分。此参数不适用于点和多点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

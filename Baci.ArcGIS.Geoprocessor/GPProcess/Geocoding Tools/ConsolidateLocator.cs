@@ -12,6 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 	/// <summary>
 	/// <para>Consolidate Locator</para>
 	/// <para>Consolidate Locator</para>
+	/// <para>Consolidate Locator</para>
 	/// </summary>
 	[Obsolete()]
 	public class ConsolidateLocator : AbstractGPProcess

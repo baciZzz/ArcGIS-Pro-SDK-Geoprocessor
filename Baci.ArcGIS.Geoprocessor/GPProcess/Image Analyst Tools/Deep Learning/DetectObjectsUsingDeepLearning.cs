@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Detect Objects Using Deep Learning</para>
-	/// <para>Runs a trained deep learning model on an input raster to produce a feature class containing the objects it finds. The features can be bounding boxes or polygons around the objects found or points at the centers of the objects.</para>
+	/// <para>使用深度学习检测对象</para>
+	/// <para>用于运行输入栅格上的训练深度学习模型，以生成包含其找到对象的要素类。 这些要素可以是所找到对象周围的边界框或面，也可以是对象中心的点。</para>
 	/// </summary>
 	public class DetectObjectsUsingDeepLearning : AbstractGPProcess
 	{
@@ -20,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The input image used to detect objects. The input can be a single raster or multiple rasters in a mosaic dataset, image service, or folder of images. A feature class with image attachments is also supported.</para>
+		/// <para>用于检测对象的输入图像。 输入可以是镶嵌数据集、影像服务或影像文件夹中的单个栅格或多个栅格。 还支持具有影像附件的要素类。</para>
 		/// </param>
 		/// <param name="OutDetectedObjects">
 		/// <para>Output Detected Objects</para>
-		/// <para>The output feature class that will contain geometries circling the object or objects detected in the input image.</para>
+		/// <para>此输出要素类中包含围绕输入图像中检测到的一个或多个对象的几何。</para>
 		/// </param>
 		/// <param name="InModelDefinition">
 		/// <para>Model Definition</para>
-		/// <para>This parameter can be an Esri model definition JSON file (.emd), a JSON string, or a deep learning model package (.dlpk). A JSON string is useful when this tool is used on the server so you can paste the JSON string rather than upload the .emd file. The .dlpk file must be stored locally.</para>
-		/// <para>It contains the path to the deep learning binary model file, the path to the Python raster function to be used, and other parameters such as preferred tile size or padding.</para>
+		/// <para>此参数可以是 Esri 模型定义 JSON 文件 (.emd)、JSON 字符串或深度学习模型包 (.dlpk)。 当在服务器上使用此工具时，JSON 字符串十分有用，因为您可以直接粘贴 JSON 字符串，而无需上传 .emd 文件。 .dlpk 文件必须存储在本地。</para>
+		/// <para>其中包含深度学习二进制模型文件的路径、待使用的 Python 栅格函数的路径以及其他参数，例如首选切片大小或填充。</para>
 		/// </param>
 		public DetectObjectsUsingDeepLearning(object InRaster, object OutDetectedObjects, object InModelDefinition)
 		{
@@ -39,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Detect Objects Using Deep Learning</para>
+		/// <para>Tool Display Name : 使用深度学习检测对象</para>
 		/// </summary>
-		public override string DisplayName() => "Detect Objects Using Deep Learning";
+		public override string DisplayName() => "使用深度学习检测对象";
 
 		/// <summary>
 		/// <para>Tool Name : DetectObjectsUsingDeepLearning</para>
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The input image used to detect objects. The input can be a single raster or multiple rasters in a mosaic dataset, image service, or folder of images. A feature class with image attachments is also supported.</para>
+		/// <para>用于检测对象的输入图像。 输入可以是镶嵌数据集、影像服务或影像文件夹中的单个栅格或多个栅格。 还支持具有影像附件的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Detected Objects</para>
-		/// <para>The output feature class that will contain geometries circling the object or objects detected in the input image.</para>
+		/// <para>此输出要素类中包含围绕输入图像中检测到的一个或多个对象的几何。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -91,8 +92,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Model Definition</para>
-		/// <para>This parameter can be an Esri model definition JSON file (.emd), a JSON string, or a deep learning model package (.dlpk). A JSON string is useful when this tool is used on the server so you can paste the JSON string rather than upload the .emd file. The .dlpk file must be stored locally.</para>
-		/// <para>It contains the path to the deep learning binary model file, the path to the Python raster function to be used, and other parameters such as preferred tile size or padding.</para>
+		/// <para>此参数可以是 Esri 模型定义 JSON 文件 (.emd)、JSON 字符串或深度学习模型包 (.dlpk)。 当在服务器上使用此工具时，JSON 字符串十分有用，因为您可以直接粘贴 JSON 字符串，而无需上传 .emd 文件。 .dlpk 文件必须存储在本地。</para>
+		/// <para>其中包含深度学习二进制模型文件的路径、待使用的 Python 栅格函数的路径以及其他参数，例如首选切片大小或填充。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Arguments</para>
-		/// <para>The function arguments defined in the Python raster function class. This is where additional deep learning parameters and arguments for experiments and refinement are listed, such as a confidence threshold for adjusting the sensitivity. The names of the arguments are populated from the Python module.</para>
+		/// <para>Python 栅格函数类中定义的函数参数。 可以在此列出其他深度学习参数和用于试验和优化的参数，例如用于调整灵敏度的置信度阈值。 参数名称将通过 Python 模块进行填充。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -109,9 +110,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Non Maximum Suppression</para>
-		/// <para>Specifies whether nonmaximum suppression will be performed in which duplicate objects are identified and the duplicate features with lower confidence value are removed.</para>
-		/// <para>Unchecked—Nonmaximum suppression will not be performed. All objects that are detected will be in the output feature class. This is the default.</para>
-		/// <para>Checked—Nonmaximum suppression will be performed and duplicate objects that are detected will be removed.</para>
+		/// <para>指定是否将执行非极大值抑制，其中将标识重复的对象，并移除置信度值较低的重复要素。</para>
+		/// <para>未选中 - 不执行非极大值抑制。 所有检测到的对象都将位于输出要素类中。 这是默认设置。</para>
+		/// <para>选中 - 将执行非极大值抑制，并且将移除检测到的重复对象。</para>
 		/// <para><see cref="RunNmsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -121,8 +122,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Confidence Score Field</para>
-		/// <para>The name of the field in the feature class that will contain the confidence scores as output by the object detection method.</para>
-		/// <para>This parameter is required when the Non Maximum Suppression parameter is checked.</para>
+		/// <para>要素类中包含将由对象检测方法输出的置信度得分的字段的名称。</para>
+		/// <para>当选中了非最大抑制参数时需要用到该参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -130,8 +131,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Class Value Field</para>
-		/// <para>The name of the class value field in the input feature class.</para>
-		/// <para>If a field name is not specified, a Classvalue or Value field will be used. If these fields do not exist, all records will be identified as belonging to one class.</para>
+		/// <para>输入要素类中类值字段的名称。</para>
+		/// <para>如果未指定字段名称，则 Classvalue 或 Value 字段将被使用。 如果这些字段不存在，则会将所有记录标识为属于一个类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -139,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Max Overlap Ratio</para>
-		/// <para>The maximum overlap ratio for two overlapping features, which is defined as the ratio of intersection area over union area. The default is 0.</para>
+		/// <para>两个重叠要素的最大重叠比，其定义为交集区域与并集区域之比。 默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -147,9 +148,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Processing Mode</para>
-		/// <para>Specifies how all raster items in a mosaic dataset or an image service will be processed. This parameter is applied when the input raster is a mosaic dataset or an image service.</para>
-		/// <para>Process as mosaicked image—All raster items in the mosaic dataset or image service will be mosaicked together and processed. This is the default.</para>
-		/// <para>Process all raster items separately—All raster items in the mosaic dataset or image service will be processed as separate images.</para>
+		/// <para>指定处理镶嵌数据集或影像服务中的所有栅格项目的方式。 当输入栅格是镶嵌数据集或影像服务时，将应用此参数。</para>
+		/// <para>以镶嵌影像方式处理—将镶嵌在一起并处理镶嵌数据集或影像服务中的所有栅格项目。 这是默认设置。</para>
+		/// <para>单独处理所有栅格项目—将作为独立影像处理镶嵌数据集或影像服务中的所有栅格项目。</para>
 		/// <para><see cref="ProcessingModeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -174,14 +175,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum RunNmsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Nonmaximum suppression will be performed and duplicate objects that are detected will be removed.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("NMS")]
 			NMS,
 
 			/// <summary>
-			/// <para>Unchecked—Nonmaximum suppression will not be performed. All objects that are detected will be in the output feature class. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_NMS")]
@@ -195,17 +196,17 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum ProcessingModeEnum 
 		{
 			/// <summary>
-			/// <para>Process as mosaicked image—All raster items in the mosaic dataset or image service will be mosaicked together and processed. This is the default.</para>
+			/// <para>以镶嵌影像方式处理—将镶嵌在一起并处理镶嵌数据集或影像服务中的所有栅格项目。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("PROCESS_AS_MOSAICKED_IMAGE")]
-			[Description("Process as mosaicked image")]
+			[Description("以镶嵌影像方式处理")]
 			Process_as_mosaicked_image,
 
 			/// <summary>
-			/// <para>Process all raster items separately—All raster items in the mosaic dataset or image service will be processed as separate images.</para>
+			/// <para>单独处理所有栅格项目—将作为独立影像处理镶嵌数据集或影像服务中的所有栅格项目。</para>
 			/// </summary>
 			[GPValue("PROCESS_ITEMS_SEPARATELY")]
-			[Description("Process all raster items separately")]
+			[Description("单独处理所有栅格项目")]
 			Process_all_raster_items_separately,
 
 		}

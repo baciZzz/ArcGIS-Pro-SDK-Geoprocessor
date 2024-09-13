@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Simplify Building</para>
+	/// <para>Simplify Building</para>
 	/// <para>Simplifies boundaries or building footprints.</para>
 	/// </summary>
 	[Obsolete()]

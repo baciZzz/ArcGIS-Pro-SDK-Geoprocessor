@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Insert Task Group</para>
+	/// <para>Insert Task Group</para>
 	/// <para>Adds tasks from the chosen task group to a job when required by workflow execution.</para>
 	/// </summary>
 	public class InsertTaskGroup : AbstractGPProcess

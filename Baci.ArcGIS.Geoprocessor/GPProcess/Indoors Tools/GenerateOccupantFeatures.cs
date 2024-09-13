@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Generate Occupant Features</para>
-	/// <para>Creates or updates employee or occupant point data that conforms to the ArcGIS Indoors Information Model.</para>
+	/// <para>生成占用者要素</para>
+	/// <para>创建或更新符合 ArcGIS Indoors 信息模型的员工或占用者点数据。</para>
 	/// </summary>
 	public class GenerateOccupantFeatures : AbstractGPProcess
 	{
@@ -20,24 +21,24 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		/// <param name="InUnitFeatures">
 		/// <para>Input Unit Features</para>
-		/// <para>The input polygon features representing building spaces that may be occupied. In the ArcGIS Indoors Information Model, this is the Units layer. The centroid of each space will be used as the point location of the occupant or occupants.</para>
+		/// <para>输入面要素，表示可能被占用的建筑空间。 在 ArcGIS Indoors 信息模型中，此项将为 Units 图层。 每个空间的质心将用作一个或多个居住者的点位置。</para>
 		/// </param>
 		/// <param name="UnitIdField">
 		/// <para>Unit ID Field</para>
-		/// <para>The field in the Input Unit Features parameter values that will be used as the primary key to associate building spaces with records in the Input Occupant Table parameter value.</para>
+		/// <para>输入单元要素参数值中的字段，将用作主键以将建筑空间与输入占用者表参数值中的记录相关联。</para>
 		/// </param>
 		/// <param name="InOccupantTable">
 		/// <para>Input Occupant Table</para>
-		/// <para>The input table that contains information about building occupants.</para>
-		/// <para>The information can be stored in a geodatabase table, a sheet in an Excel workbook (.xls or .xlsx file), or a .csv file.</para>
+		/// <para>包含有关建筑居住者的信息的输入表。</para>
+		/// <para>信息可以存储在地理数据库表、Excel 工作簿中的工作表（.xls 或 .xlsx 文件）或 .csv 文件中。</para>
 		/// </param>
 		/// <param name="OccupantIdField">
 		/// <para>Occupant ID Field</para>
-		/// <para>The field in the Input Occupant Table parameter value that will be used as the primary key to associate occupants with Input Unit Features parameter values.</para>
+		/// <para>输入占用者表参数值中的字段，将用作主键以将占用者与输入单元要素参数值相关联。</para>
 		/// </param>
 		/// <param name="OutOccupantFeatureClass">
 		/// <para>Output Occupant Feature Class</para>
-		/// <para>The output feature class created from joining the Input Unit Features and Input Occupant Table parameter values.</para>
+		/// <para>通过连接输入单元要素和输入居住者表参数值创建的输出要素类。</para>
 		/// </param>
 		public GenerateOccupantFeatures(object InUnitFeatures, object UnitIdField, object InOccupantTable, object OccupantIdField, object OutOccupantFeatureClass)
 		{
@@ -49,9 +50,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Occupant Features</para>
+		/// <para>Tool Display Name : 生成占用者要素</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Occupant Features";
+		public override string DisplayName() => "生成占用者要素";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateOccupantFeatures</para>
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Unit Features</para>
-		/// <para>The input polygon features representing building spaces that may be occupied. In the ArcGIS Indoors Information Model, this is the Units layer. The centroid of each space will be used as the point location of the occupant or occupants.</para>
+		/// <para>输入面要素，表示可能被占用的建筑空间。 在 ArcGIS Indoors 信息模型中，此项将为 Units 图层。 每个空间的质心将用作一个或多个居住者的点位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -96,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Unit ID Field</para>
-		/// <para>The field in the Input Unit Features parameter values that will be used as the primary key to associate building spaces with records in the Input Occupant Table parameter value.</para>
+		/// <para>输入单元要素参数值中的字段，将用作主键以将建筑空间与输入占用者表参数值中的记录相关联。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -106,8 +107,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Occupant Table</para>
-		/// <para>The input table that contains information about building occupants.</para>
-		/// <para>The information can be stored in a geodatabase table, a sheet in an Excel workbook (.xls or .xlsx file), or a .csv file.</para>
+		/// <para>包含有关建筑居住者的信息的输入表。</para>
+		/// <para>信息可以存储在地理数据库表、Excel 工作簿中的工作表（.xls 或 .xlsx 文件）或 .csv 文件中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -115,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Occupant ID Field</para>
-		/// <para>The field in the Input Occupant Table parameter value that will be used as the primary key to associate occupants with Input Unit Features parameter values.</para>
+		/// <para>输入占用者表参数值中的字段，将用作主键以将占用者与输入单元要素参数值相关联。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -125,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Output Occupant Feature Class</para>
-		/// <para>The output feature class created from joining the Input Unit Features and Input Occupant Table parameter values.</para>
+		/// <para>通过连接输入单元要素和输入居住者表参数值创建的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]

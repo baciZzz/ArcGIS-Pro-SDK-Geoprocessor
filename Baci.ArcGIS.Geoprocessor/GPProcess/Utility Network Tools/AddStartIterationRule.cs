@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Start Iteration Rule</para>
+	/// <para>Add Start Iteration Rule</para>
 	/// <para>Add a start iteration rule to a diagram template</para>
 	/// </summary>
 	[Obsolete()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Extract Locations From Text</para>
-	/// <para>Analyzes input text or a text file and extracts locations to a point feature class</para>
+	/// <para>从文本中提取位置</para>
+	/// <para>分析输入文本或文本文件，并将位置提取到点要素类</para>
 	/// </summary>
 	public class ExtractLocationsText : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InText">
 		/// <para>Input Text or File Path</para>
-		/// <para>The text that will be scanned for locations (coordinates or custom locations), dates, and custom attributes; or text defining a file path, whose contents will be scanned for locations. For geoprocessing services, when a file path is provided, the file must be accessible from the service, as the file is not transferred to the server.</para>
+		/// <para>将扫描以查找位置（坐标或自定义位置）、日期和自定义属性文本；用于定义文件路径的文本，将对该文本内容进行扫描以查找位置。对于地理处理服务，当提供文件路径时，由于该文件未传输至服务器，因此该文件必须可通过服务进行访问。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Extract Locations From Text</para>
+		/// <para>Tool Display Name : 从文本中提取位置</para>
 		/// </summary>
-		public override string DisplayName() => "Extract Locations From Text";
+		public override string DisplayName() => "从文本中提取位置";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractLocationsText</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Text or File Path</para>
-		/// <para>The text that will be scanned for locations (coordinates or custom locations), dates, and custom attributes; or text defining a file path, whose contents will be scanned for locations. For geoprocessing services, when a file path is provided, the file must be accessible from the service, as the file is not transferred to the server.</para>
+		/// <para>将扫描以查找位置（坐标或自定义位置）、日期和自定义属性文本；用于定义文件路径的文本，将对该文本内容进行扫描以查找位置。对于地理处理服务，当提供文件路径时，由于该文件未传输至服务器，因此该文件必须可通过服务进行访问。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Create Turn Feature Class</para>
-	/// <para>Creates a new turn feature class to store turn features that model turning movements in a network dataset.</para>
+	/// <para>创建转弯要素类</para>
+	/// <para>创建新的转弯要素类，以将对转弯移动进行建模的转弯要素存储在网络数据集中。</para>
 	/// </summary>
 	public class CreateTurnFeatureClass : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="OutLocation">
 		/// <para>Output Location</para>
-		/// <para>The file, workgroup, or enterprise geodatabase, or the folder in which the output turn feature class will be created. The workspace must already exist.</para>
+		/// <para>将在其中创建输出转弯要素类的文件地理数据库、工作组级地理数据库、企业级地理数据库或文件夹。此工作空间必须已经存在。</para>
 		/// </param>
 		/// <param name="OutFeatureClassName">
 		/// <para>Output Turn Feature Class Name</para>
-		/// <para>The name of the turn feature class to be created.</para>
+		/// <para>要创建的转弯要素类的名称。</para>
 		/// </param>
 		public CreateTurnFeatureClass(object OutLocation, object OutFeatureClassName)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Turn Feature Class</para>
+		/// <para>Tool Display Name : 创建转弯要素类</para>
 		/// </summary>
-		public override string DisplayName() => "Create Turn Feature Class";
+		public override string DisplayName() => "创建转弯要素类";
 
 		/// <summary>
 		/// <para>Tool Name : CreateTurnFeatureClass</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Location</para>
-		/// <para>The file, workgroup, or enterprise geodatabase, or the folder in which the output turn feature class will be created. The workspace must already exist.</para>
+		/// <para>将在其中创建输出转弯要素类的文件地理数据库、工作组级地理数据库、企业级地理数据库或文件夹。此工作空间必须已经存在。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Turn Feature Class Name</para>
-		/// <para>The name of the turn feature class to be created.</para>
+		/// <para>要创建的转弯要素类的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Maximum Edges</para>
-		/// <para>The maximum number of edges that turns in the new turn feature class can model. The default value is 5. The maximum value is 50.</para>
+		/// <para>对新转弯要素类中的转弯进行建模的最大边数。默认值为 5。最大值为 50。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Network Dataset</para>
-		/// <para>The network dataset in which the turn feature class will participate. The resulting turn feature class will be added as a turn source to the network dataset. If no network dataset is specified, the turn feature class will be created as not participating in a network dataset.</para>
+		/// <para>转弯要素类将参与的网络数据集。所生成的转弯要素类将作为转弯源添加到网络数据集中。如果未指定任何网络数据集，将创建不参与网络数据集的转弯要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPNetworkDatasetLayer()]
@@ -101,8 +102,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Template Feature Class</para>
-		/// <para>The feature class used as a template to define the attribute schema of the new turn feature class.</para>
-		/// <para>If the template feature class has the following fields, they are not created on the output turn feature class; NODE_, NODE#, JUNCTION, F_EDGE, T_EDGE, F-EDGE, T-EDGE, ARC1_, ARC2_, ARC1#, ARC2#, ARC1-ID, ARC2-ID, AZIMUTH, ANGLE.</para>
+		/// <para>用作模板以定义新转弯要素类的属性方案的要素类。</para>
+		/// <para>如果模板要素类具有以下字段，则不会对输出转弯要素类创建这些字段：NODE_、NODE#、JUNCTION、F_EDGE、T_EDGE、F-EDGE、T-EDGE、ARC1_、ARC2_、ARC1#、ARC2#、ARC1-ID、ARC2-ID、AZIMUTH、ANGLE。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -110,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Spatial Reference</para>
-		/// <para>The spatial reference to be applied to the output turn feature class. This parameter is ignored if the output location is a geodatabase feature dataset, as the output turn feature class will inherit the spatial reference of the feature dataset.</para>
+		/// <para>要应用到输出转弯要素类的空间参考。如果输出位置为地理数据库要素数据集，此参数将被忽略，因为输出转弯要素类将继承要素数据集的空间参考。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
@@ -118,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
-		/// <para>Specifies the configuration keyword that determines the storage parameters of the new turn feature class. This parameter is used only if the output location is an workgroup or enterprise geodatabase</para>
+		/// <para>指定用于确定新转弯要素类的存储参数的配置关键字。仅当输出位置为工作组级或企业级地理数据库时，才会使用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -128,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Spatial Grid 1</para>
-		/// <para>This parameter has been deprecated in ArcGIS Pro. Any value you enter is ignored.</para>
+		/// <para>已在 ArcGIS Pro 中弃用此参数。将忽略您输入的任何值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -137,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Spatial Grid 2</para>
-		/// <para>This parameter has been deprecated in ArcGIS Pro. Any value you enter is ignored.</para>
+		/// <para>已在 ArcGIS Pro 中弃用此参数。将忽略您输入的任何值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -146,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Spatial Grid 3</para>
-		/// <para>This parameter has been deprecated in ArcGIS Pro. Any value you enter is ignored.</para>
+		/// <para>已在 ArcGIS Pro 中弃用此参数。将忽略您输入的任何值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -155,8 +156,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Has Z</para>
-		/// <para>Checked—The coordinates in the new turn feature class will have elevation (Z) values. This parameter is automatically checked and disabled if the input network dataset is specified and it supports connectivity based on z coordinate values of the network sources.</para>
-		/// <para>Unchecked—The coordinates in the new turn feature class will not have elevation (Z) values.</para>
+		/// <para>选中 - 新转弯要素类中的坐标将具有高程 (Z) 值。如果指定了输入网络数据集并且它支持基于网络源中 z 坐标值的连通性，则会自动选中和禁用此参数。</para>
+		/// <para>未选中 - 新转弯要素类中的坐标将不具有高程 (Z) 值。</para>
 		/// <para><see cref="HasZEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -188,14 +189,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum HasZEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The coordinates in the new turn feature class will have elevation (Z) values. This parameter is automatically checked and disabled if the input network dataset is specified and it supports connectivity based on z coordinate values of the network sources.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ENABLED")]
 			ENABLED,
 
 			/// <summary>
-			/// <para>Unchecked—The coordinates in the new turn feature class will not have elevation (Z) values.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DISABLED")]

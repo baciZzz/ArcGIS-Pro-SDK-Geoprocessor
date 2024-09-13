@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Add Level Variables</para>
+	/// <para>Add Level Variables</para>
 	/// <para>Adds a new field at the specified level.</para>
 	/// </summary>
 	public class AddLevelVariables : AbstractGPProcess

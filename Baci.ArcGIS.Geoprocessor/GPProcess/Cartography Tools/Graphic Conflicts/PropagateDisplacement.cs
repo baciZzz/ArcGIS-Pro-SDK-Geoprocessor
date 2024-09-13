@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Propagate Displacement</para>
-	/// <para>Propagates the displacement resulting from road adjustment in the Resolve Road Conflicts  and Merge Divided Roads tools to adjacent features to reestablish spatial relationships.</para>
+	/// <para>传递位移</para>
+	/// <para>将解决道路冲突工具和合并分开的道路工具中的道路校正所产生的位移传递到相邻要素，以重新建立空间关系。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,18 +23,18 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input feature layer containing features that may be in conflict. May be point, line, or polygon.</para>
+		/// <para>包含可能存在冲突的要素的输入要素图层。所包含的要素可以是点、线或面。</para>
 		/// </param>
 		/// <param name="DisplacementFeatures">
 		/// <para>Displacement Features</para>
-		/// <para>The displacement polygon features created by the Resolve Road Conflicts or the Merge Divided Roads tools that contain the degree and direction of road displacement that took place. These polygons dictate the amount of displacement that will be propagated to the input features.</para>
+		/// <para>由解决道路冲突工具或合并分开的道路工具创建的位移面要素，其中包含发生的道路位移的程度和方向。将通过这些面确定要传递到输入要素的位移量。</para>
 		/// </param>
 		/// <param name="AdjustmentStyle">
 		/// <para>Adjustment Style</para>
-		/// <para>Defines the type of adjustment that will be used when displacing input features.</para>
-		/// <para>Automatic—The tool will decide for each input feature whether a SOLID or an ELASTIC adjustment is most appropriate. In general, features with orthogonal shapes will have SOLID adjustment applied, while organically shaped features will have ELASTIC adjustment applied. This is the default.</para>
-		/// <para>Solid—The feature will be translated. All vertices will move the same distance and direction. Topological errors may be introduced. This option is most useful when input features have regular geometric shapes.</para>
-		/// <para>Elastic—The vertices of the feature may be moved independently to best fit the feature to the road network. The shape of the feature may be modified slightly. Topological errors are less likely to be introduced. This option only applies to line and polygon input features. This option is most useful for organically shaped input features.</para>
+		/// <para>定义移动输入要素时所要使用的校正类型。</para>
+		/// <para>自动—此工具将确定各输入要素是适合 SOLID 校正还是适合 ELASTIC 校正。通常，具有正交形状的要素将应用 SOLID 校正，而有机形状的要素将应用 ELASTIC 校正。这是默认设置。</para>
+		/// <para>实线—要素将被转换。所有折点将向同一方向移动相同的距离。可能会产生拓扑错误。当输入要素有着规则几何形状时，此选项最有用。</para>
+		/// <para>弹性—可单独移动要素的各折点以使要素最大程度地适应道路网。可能会略微修改要素的形状。不太可能产生拓扑错误。此选项仅应用于线和面输入要素。此选项对有机形状的输入要素最有用。</para>
 		/// <para><see cref="AdjustmentStyleEnum"/></para>
 		/// </param>
 		public PropagateDisplacement(object InFeatures, object DisplacementFeatures, object AdjustmentStyle)
@@ -44,9 +45,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Propagate Displacement</para>
+		/// <para>Tool Display Name : 传递位移</para>
 		/// </summary>
-		public override string DisplayName() => "Propagate Displacement";
+		public override string DisplayName() => "传递位移";
 
 		/// <summary>
 		/// <para>Tool Name : PropagateDisplacement</para>
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input feature layer containing features that may be in conflict. May be point, line, or polygon.</para>
+		/// <para>包含可能存在冲突的要素的输入要素图层。所包含的要素可以是点、线或面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Displacement Features</para>
-		/// <para>The displacement polygon features created by the Resolve Road Conflicts or the Merge Divided Roads tools that contain the degree and direction of road displacement that took place. These polygons dictate the amount of displacement that will be propagated to the input features.</para>
+		/// <para>由解决道路冲突工具或合并分开的道路工具创建的位移面要素，其中包含发生的道路位移的程度和方向。将通过这些面确定要传递到输入要素的位移量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -100,10 +101,10 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Adjustment Style</para>
-		/// <para>Defines the type of adjustment that will be used when displacing input features.</para>
-		/// <para>Automatic—The tool will decide for each input feature whether a SOLID or an ELASTIC adjustment is most appropriate. In general, features with orthogonal shapes will have SOLID adjustment applied, while organically shaped features will have ELASTIC adjustment applied. This is the default.</para>
-		/// <para>Solid—The feature will be translated. All vertices will move the same distance and direction. Topological errors may be introduced. This option is most useful when input features have regular geometric shapes.</para>
-		/// <para>Elastic—The vertices of the feature may be moved independently to best fit the feature to the road network. The shape of the feature may be modified slightly. Topological errors are less likely to be introduced. This option only applies to line and polygon input features. This option is most useful for organically shaped input features.</para>
+		/// <para>定义移动输入要素时所要使用的校正类型。</para>
+		/// <para>自动—此工具将确定各输入要素是适合 SOLID 校正还是适合 ELASTIC 校正。通常，具有正交形状的要素将应用 SOLID 校正，而有机形状的要素将应用 ELASTIC 校正。这是默认设置。</para>
+		/// <para>实线—要素将被转换。所有折点将向同一方向移动相同的距离。可能会产生拓扑错误。当输入要素有着规则几何形状时，此选项最有用。</para>
+		/// <para>弹性—可单独移动要素的各折点以使要素最大程度地适应道路网。可能会略微修改要素的形状。不太可能产生拓扑错误。此选项仅应用于线和面输入要素。此选项对有机形状的输入要素最有用。</para>
 		/// <para><see cref="AdjustmentStyleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -126,24 +127,24 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum AdjustmentStyleEnum 
 		{
 			/// <summary>
-			/// <para>Automatic—The tool will decide for each input feature whether a SOLID or an ELASTIC adjustment is most appropriate. In general, features with orthogonal shapes will have SOLID adjustment applied, while organically shaped features will have ELASTIC adjustment applied. This is the default.</para>
+			/// <para>自动—此工具将确定各输入要素是适合 SOLID 校正还是适合 ELASTIC 校正。通常，具有正交形状的要素将应用 SOLID 校正，而有机形状的要素将应用 ELASTIC 校正。这是默认设置。</para>
 			/// </summary>
 			[GPValue("AUTO")]
-			[Description("Automatic")]
+			[Description("自动")]
 			Automatic,
 
 			/// <summary>
-			/// <para>Solid—The feature will be translated. All vertices will move the same distance and direction. Topological errors may be introduced. This option is most useful when input features have regular geometric shapes.</para>
+			/// <para>实线—要素将被转换。所有折点将向同一方向移动相同的距离。可能会产生拓扑错误。当输入要素有着规则几何形状时，此选项最有用。</para>
 			/// </summary>
 			[GPValue("SOLID")]
-			[Description("Solid")]
+			[Description("实线")]
 			Solid,
 
 			/// <summary>
-			/// <para>Elastic—The vertices of the feature may be moved independently to best fit the feature to the road network. The shape of the feature may be modified slightly. Topological errors are less likely to be introduced. This option only applies to line and polygon input features. This option is most useful for organically shaped input features.</para>
+			/// <para>弹性—可单独移动要素的各折点以使要素最大程度地适应道路网。可能会略微修改要素的形状。不太可能产生拓扑错误。此选项仅应用于线和面输入要素。此选项对有机形状的输入要素最有用。</para>
 			/// </summary>
 			[GPValue("ELASTIC")]
-			[Description("Elastic")]
+			[Description("弹性")]
 			Elastic,
 
 		}

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Linear Directional Mean</para>
-	/// <para>Identifies the mean direction, length, and geographic center for a set of lines.</para>
+	/// <para>线性方向平均值</para>
+	/// <para>识别一组线的平均方向、长度和地理中心。</para>
 	/// </summary>
 	public class DirectionalMean : AbstractGPProcess
 	{
@@ -20,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputFeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>The feature class containing vectors for which the mean direction will be calculated.</para>
+		/// <para>包含将进行平均方向计算的矢量的要素类。</para>
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>A line feature class that will contain the features representing the mean directions of the input feature class.</para>
+		/// <para>将包含用于表示输入要素类的平均方向的要素的线要素类。</para>
 		/// </param>
 		/// <param name="OrientationOnly">
 		/// <para>Orientation Only</para>
-		/// <para>Specifies whether to include direction (From and To nodes) information in the analysis.</para>
-		/// <para>Checked—The From and To node information is ignored.</para>
-		/// <para>Unchecked—The From and To nodes are utilized in calculating the mean. This is the default.</para>
+		/// <para>指定是否在分析中包括方向（起始结点和终止结点）信息。</para>
+		/// <para>选中 - 将忽略起始结点和终止结点信息。</para>
+		/// <para>未选中 - 将在计算平均值时使用起始结点和终止结点。这是默认设置。</para>
 		/// <para><see cref="OrientationOnlyEnum"/></para>
 		/// </param>
 		public DirectionalMean(object InputFeatureClass, object OutputFeatureClass, object OrientationOnly)
@@ -41,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Linear Directional Mean</para>
+		/// <para>Tool Display Name : 线性方向平均值</para>
 		/// </summary>
-		public override string DisplayName() => "Linear Directional Mean";
+		public override string DisplayName() => "线性方向平均值";
 
 		/// <summary>
 		/// <para>Tool Name : DirectionalMean</para>
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>The feature class containing vectors for which the mean direction will be calculated.</para>
+		/// <para>包含将进行平均方向计算的矢量的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>A line feature class that will contain the features representing the mean directions of the input feature class.</para>
+		/// <para>将包含用于表示输入要素类的平均方向的要素的线要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -96,9 +97,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Orientation Only</para>
-		/// <para>Specifies whether to include direction (From and To nodes) information in the analysis.</para>
-		/// <para>Checked—The From and To node information is ignored.</para>
-		/// <para>Unchecked—The From and To nodes are utilized in calculating the mean. This is the default.</para>
+		/// <para>指定是否在分析中包括方向（起始结点和终止结点）信息。</para>
+		/// <para>选中 - 将忽略起始结点和终止结点信息。</para>
+		/// <para>未选中 - 将在计算平均值时使用起始结点和终止结点。这是默认设置。</para>
 		/// <para><see cref="OrientationOnlyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Case Field</para>
-		/// <para>Field used to group features for separate directional mean calculations. The case field can be of integer, date, or string type.</para>
+		/// <para>用于对要素进行分组以独立计算方向平均值的字段。案例分组字段可以为整型、日期型或字符串型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -133,14 +134,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum OrientationOnlyEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The From and To node information is ignored.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ORIENTATION_ONLY")]
 			ORIENTATION_ONLY,
 
 			/// <summary>
-			/// <para>Unchecked—The From and To nodes are utilized in calculating the mean. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DIRECTION")]

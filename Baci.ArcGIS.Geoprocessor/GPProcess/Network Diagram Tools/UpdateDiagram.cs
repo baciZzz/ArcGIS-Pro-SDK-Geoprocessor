@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Update Diagram</para>
-	/// <para>Updates one or more network diagrams that are related to a given utility network or trace network.</para>
+	/// <para>更新逻辑示意图</para>
+	/// <para>用于更新与给定 utility network or trace network 相关的一个或多个网络逻辑示意图。</para>
 	/// </summary>
 	public class UpdateDiagram : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InDiagrams">
 		/// <para>Input Network or Network Diagram Layer</para>
-		/// <para>The input network diagram layer to update or the utility network or trace network on which the set of specified input diagram names are based to update.</para>
+		/// <para>要更新的输入网络逻辑示意图图层或在更新指定输入逻辑示意图名称集时基于的公共设施网络或追踪网络。</para>
 		/// </param>
 		public UpdateDiagram(object InDiagrams)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Update Diagram</para>
+		/// <para>Tool Display Name : 更新逻辑示意图</para>
 		/// </summary>
-		public override string DisplayName() => "Update Diagram";
+		public override string DisplayName() => "更新逻辑示意图";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateDiagram</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network or Network Diagram Layer</para>
-		/// <para>The input network diagram layer to update or the utility network or trace network on which the set of specified input diagram names are based to update.</para>
+		/// <para>要更新的输入网络逻辑示意图图层或在更新指定输入逻辑示意图名称集时基于的公共设施网络或追踪网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Template Names</para>
-		/// <para>The names of the templates for which the related diagrams are to be processed.</para>
+		/// <para>要处理的相关逻辑示意图的模板的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Diagram Names</para>
-		/// <para>The names of the diagrams to be processed.</para>
+		/// <para>要处理的逻辑示意图的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -88,9 +89,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Update inconsistent diagrams only</para>
-		/// <para>Specifies whether to update only diagrams that are inconsistent (the default) or all diagrams regardless of their consistency state.</para>
-		/// <para>Checked—Only diagrams that are inconsistent will be updated. This is the default.</para>
-		/// <para>Unchecked—Both consistent and inconsistent diagrams will be updated.</para>
+		/// <para>用于指定是仅更新不一致的逻辑示意图（默认）还是更新所有逻辑示意图（无论其一致性状态如何）。</para>
+		/// <para>选中 - 将仅更新不一致的逻辑示意图。这是默认设置。</para>
+		/// <para>未选中 - 一致和不一致的逻辑示意图均将进行更新。</para>
 		/// <para><see cref="UpdateOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -101,9 +102,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Re-apply automatic layouts on the updated diagrams</para>
-		/// <para>Specifies whether automatic layouts that may be configured on the template on which the diagrams are based will be reapplied during the update process. By default, when automatic layouts are specified on a template, they are not reapplied during the update process.</para>
-		/// <para>Checked—The automatic layouts that are configured on the template will be reapplied to diagrams at the end of the update process.</para>
-		/// <para>Unchecked—None of the automatic layouts configured on the template will be reapplied to diagrams during the update process. This is the default.</para>
+		/// <para>指定在更新过程中是否将重新应用可在逻辑示意图所基于的模板上配置的自动布局。默认情况下，在模板上指定自动布局时，进行更新过程期间不会重新应用这些布局。</para>
+		/// <para>选中 - 在模板上配置的自动布局将在更新过程结束时重新应用于逻辑示意图。</para>
+		/// <para>未选中 - 在模板上配置的自动布局均不会在更新过程中重新应用于逻辑示意图。这是默认设置。</para>
 		/// <para><see cref="AutolayoutOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -127,14 +128,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum UpdateOptionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Only diagrams that are inconsistent will be updated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCONSISTENT_DIAGRAMS_ONLY")]
 			INCONSISTENT_DIAGRAMS_ONLY,
 
 			/// <summary>
-			/// <para>Unchecked—Both consistent and inconsistent diagrams will be updated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ALL_SELECTED_DIAGRAMS")]
@@ -148,14 +149,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum AutolayoutOptionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The automatic layouts that are configured on the template will be reapplied to diagrams at the end of the update process.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REAPPLY_AUTOLAYOUT")]
 			REAPPLY_AUTOLAYOUT,
 
 			/// <summary>
-			/// <para>Unchecked—None of the automatic layouts configured on the template will be reapplied to diagrams during the update process. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_REAPPLY_AUTOLAYOUT")]

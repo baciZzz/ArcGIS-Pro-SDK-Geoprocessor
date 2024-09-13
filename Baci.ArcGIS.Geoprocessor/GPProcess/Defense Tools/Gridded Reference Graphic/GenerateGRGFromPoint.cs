@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Generate Grid From Point</para>
-	/// <para>Generates a Gridded Reference Graphic (GRG) as a polygon feature class over a specified area with a custom size.</para>
+	/// <para>根据点生成格网</para>
+	/// <para>在指定区域上以自定义大小生成格网化参考图形 (GRG) 作为面要素类。</para>
 	/// </summary>
 	public class GenerateGRGFromPoint : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		/// <param name="InFeature">
 		/// <para>Input Feature</para>
-		/// <para>The center point for the GRG starting point.</para>
+		/// <para>GRG 起点的中心点。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output polygon feature class containing the GRG to be created.</para>
+		/// <para>要创建的包含 GRG 的输出面要素类。</para>
 		/// </param>
 		public GenerateGRGFromPoint(object InFeature, object OutFeatureClass)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Grid From Point</para>
+		/// <para>Tool Display Name : 根据点生成格网</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Grid From Point";
+		public override string DisplayName() => "根据点生成格网";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateGRGFromPoint</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Feature</para>
-		/// <para>The center point for the GRG starting point.</para>
+		/// <para>GRG 起点的中心点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output polygon feature class containing the GRG to be created.</para>
+		/// <para>要创建的包含 GRG 的输出面要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Number of Rows</para>
-		/// <para>The number of horizontal grid cells.</para>
+		/// <para>水平格网像元的数量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Number of Columns</para>
-		/// <para>The number of vertical grid cells.</para>
+		/// <para>垂直格网像元的数量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -106,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Cell Width</para>
-		/// <para>The width of the cells. Measurement units are specified by the Cell Units parameter.</para>
+		/// <para>像元的宽度。 测量单位由像元单位参数指定。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -115,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Cell Height</para>
-		/// <para>The height of the cells. Measurement units are specified by the Cell Units parameter.</para>
+		/// <para>像元的高度。 测量单位由像元单位参数指定。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -124,13 +125,13 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Cell Units</para>
-		/// <para>Specifies the measurement units for cell width and height.</para>
-		/// <para>Meters—The unit will be meters. This is the default.</para>
-		/// <para>Kilometers—The unit will be kilometers.</para>
-		/// <para>Miles—The unit will be miles.</para>
-		/// <para>Nautical miles—The unit will be nautical miles.</para>
-		/// <para>Feet—The unit will be feet.</para>
-		/// <para>US survey feet—The unit will be U.S. survey feet.</para>
+		/// <para>指定像元宽度和高度的测量单位。</para>
+		/// <para>米—单位将为米。这是默认设置。</para>
+		/// <para>千米—单位将为公里。</para>
+		/// <para>英里—单位将为英里。</para>
+		/// <para>海里—单位将为海里。</para>
+		/// <para>英尺—单位将为英尺。</para>
+		/// <para>美国测量英尺—单位将为美国测量英尺。</para>
 		/// <para><see cref="CellUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -141,11 +142,11 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Label Start Position</para>
-		/// <para>Specifies the grid cell where labelling will start.</para>
-		/// <para>Upper left—The label position will be the upper left. This is the default.</para>
-		/// <para>Lower left—The label position will be the lower left.</para>
-		/// <para>Upper right—The label position will be the upper right.</para>
-		/// <para>Lower right—The label position will be in the lower right.</para>
+		/// <para>指定将开始进行标记的格网像元。</para>
+		/// <para>左上角—标注位置将位于左上角。这是默认设置。</para>
+		/// <para>左下角—标注位置将位于左下角。</para>
+		/// <para>右上角—标注位置将位于右上角。</para>
+		/// <para>右下角—标注位置将位于右下角。</para>
 		/// <para><see cref="LabelStartPositionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -156,10 +157,10 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Label Format</para>
-		/// <para>Specifies the labeling type for each grid cell.</para>
-		/// <para>Alpha-numeric—The label will use an alpha character, a separator, and a number for the label. This is the default.</para>
-		/// <para>Alpha-alpha—The label will use an alpha character, a separator, and an additional alpha character for the label.</para>
-		/// <para>Numeric—The label will be numeric.</para>
+		/// <para>指定每个格网像元的标注类型。</para>
+		/// <para>字母-数字—标注将针对标注使用字母字符、分隔符和数字。这是默认设置。</para>
+		/// <para>字母-字母—标注将针对标注使用字母字符、分隔符和附加字母字符。</para>
+		/// <para>数字—标注将为数字。</para>
 		/// <para><see cref="LabelFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -170,11 +171,11 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Label Separator</para>
-		/// <para>Specifies the separator to be used between x- and y-values when the Label Format parameter is set to Alpha-alpha, for example, A-A, A-AA, AA-A.</para>
-		/// <para>Hyphen—The label separator will be a hyphen. This is the default.</para>
-		/// <para>Comma—The label separator will be a comma.</para>
-		/// <para>Period—The label separator will be a period.</para>
-		/// <para>Forward slash—The label separator will be a forward slash.</para>
+		/// <para>指定当标注格式参数设置为字母-字母（例如 A-A、A-AA、AA-A）时，将在 x 值和 y 值之间使用的分隔符。</para>
+		/// <para>连字符—标注分隔符将为连字符。这是默认设置。</para>
+		/// <para>逗号—标注分隔符将为逗号。</para>
+		/// <para>句点—标注分隔符将为句号。</para>
+		/// <para>正斜线—标注分隔符将为正斜线。</para>
 		/// <para><see cref="LabelSeparatorEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -185,7 +186,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Grid Rotation Angle</para>
-		/// <para>The angle used to rotate the grid.</para>
+		/// <para>用于旋转格网的角度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -193,11 +194,11 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Grid Rotation Angular Units</para>
-		/// <para>The angular units for grid rotation.</para>
-		/// <para>Degrees—The angle will be degrees. This is the default.</para>
-		/// <para>Mils—The angle will be mils.</para>
-		/// <para>Radians—The angle will be radians.</para>
-		/// <para>Gradians—The angle will be gradians.</para>
+		/// <para>格网旋转的角度单位。</para>
+		/// <para>度—角度将以度为单位。这是默认设置。</para>
+		/// <para>密耳—角度将以密耳为单位。</para>
+		/// <para>弧度—角度将以弧度为单位。</para>
+		/// <para>百分度—角度将以百分度为单位。</para>
 		/// <para><see cref="GridAngleUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -222,45 +223,45 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum CellUnitsEnum 
 		{
 			/// <summary>
-			/// <para>Meters—The unit will be meters. This is the default.</para>
+			/// <para>米—单位将为米。这是默认设置。</para>
 			/// </summary>
 			[GPValue("METERS")]
-			[Description("Meters")]
+			[Description("米")]
 			Meters,
 
 			/// <summary>
-			/// <para>Kilometers—The unit will be kilometers.</para>
+			/// <para>千米—单位将为公里。</para>
 			/// </summary>
 			[GPValue("KILOMETERS")]
-			[Description("Kilometers")]
+			[Description("千米")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>Miles—The unit will be miles.</para>
+			/// <para>英里—单位将为英里。</para>
 			/// </summary>
 			[GPValue("MILES")]
-			[Description("Miles")]
+			[Description("英里")]
 			Miles,
 
 			/// <summary>
-			/// <para>Nautical miles—The unit will be nautical miles.</para>
+			/// <para>海里—单位将为海里。</para>
 			/// </summary>
 			[GPValue("NAUTICAL_MILES")]
-			[Description("Nautical miles")]
+			[Description("海里")]
 			Nautical_miles,
 
 			/// <summary>
-			/// <para>Feet—The unit will be feet.</para>
+			/// <para>英尺—单位将为英尺。</para>
 			/// </summary>
 			[GPValue("FEET")]
-			[Description("Feet")]
+			[Description("英尺")]
 			Feet,
 
 			/// <summary>
-			/// <para>US survey feet—The unit will be U.S. survey feet.</para>
+			/// <para>美国测量英尺—单位将为美国测量英尺。</para>
 			/// </summary>
 			[GPValue("US_SURVEY_FEET")]
-			[Description("US survey feet")]
+			[Description("美国测量英尺")]
 			US_survey_feet,
 
 		}
@@ -271,31 +272,31 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum LabelStartPositionEnum 
 		{
 			/// <summary>
-			/// <para>Upper left—The label position will be the upper left. This is the default.</para>
+			/// <para>左上角—标注位置将位于左上角。这是默认设置。</para>
 			/// </summary>
 			[GPValue("UPPER_LEFT")]
-			[Description("Upper left")]
+			[Description("左上角")]
 			Upper_left,
 
 			/// <summary>
-			/// <para>Lower left—The label position will be the lower left.</para>
+			/// <para>左下角—标注位置将位于左下角。</para>
 			/// </summary>
 			[GPValue("LOWER_LEFT")]
-			[Description("Lower left")]
+			[Description("左下角")]
 			Lower_left,
 
 			/// <summary>
-			/// <para>Upper right—The label position will be the upper right.</para>
+			/// <para>右上角—标注位置将位于右上角。</para>
 			/// </summary>
 			[GPValue("UPPER_RIGHT")]
-			[Description("Upper right")]
+			[Description("右上角")]
 			Upper_right,
 
 			/// <summary>
-			/// <para>Lower right—The label position will be in the lower right.</para>
+			/// <para>右下角—标注位置将位于右下角。</para>
 			/// </summary>
 			[GPValue("LOWER_RIGHT")]
-			[Description("Lower right")]
+			[Description("右下角")]
 			Lower_right,
 
 		}
@@ -306,24 +307,24 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum LabelFormatEnum 
 		{
 			/// <summary>
-			/// <para>Alpha-numeric—The label will use an alpha character, a separator, and a number for the label. This is the default.</para>
+			/// <para>字母-数字—标注将针对标注使用字母字符、分隔符和数字。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ALPHA_NUMERIC")]
-			[Description("Alpha-numeric")]
+			[Description("字母-数字")]
 			ALPHA_NUMERIC,
 
 			/// <summary>
-			/// <para>Alpha-alpha—The label will use an alpha character, a separator, and an additional alpha character for the label.</para>
+			/// <para>字母-字母—标注将针对标注使用字母字符、分隔符和附加字母字符。</para>
 			/// </summary>
 			[GPValue("ALPHA_ALPHA")]
-			[Description("Alpha-alpha")]
+			[Description("字母-字母")]
 			ALPHA_ALPHA,
 
 			/// <summary>
-			/// <para>Numeric—The label will be numeric.</para>
+			/// <para>数字—标注将为数字。</para>
 			/// </summary>
 			[GPValue("NUMERIC")]
-			[Description("Numeric")]
+			[Description("数字")]
 			Numeric,
 
 		}
@@ -334,31 +335,31 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum LabelSeparatorEnum 
 		{
 			/// <summary>
-			/// <para>Hyphen—The label separator will be a hyphen. This is the default.</para>
+			/// <para>连字符—标注分隔符将为连字符。这是默认设置。</para>
 			/// </summary>
 			[GPValue("-")]
-			[Description("Hyphen")]
+			[Description("连字符")]
 			Hyphen,
 
 			/// <summary>
-			/// <para>Comma—The label separator will be a comma.</para>
+			/// <para>逗号—标注分隔符将为逗号。</para>
 			/// </summary>
 			[GPValue(",")]
-			[Description("Comma")]
+			[Description("逗号")]
 			Comma,
 
 			/// <summary>
-			/// <para>Period—The label separator will be a period.</para>
+			/// <para>句点—标注分隔符将为句号。</para>
 			/// </summary>
 			[GPValue(".")]
-			[Description("Period")]
+			[Description("句点")]
 			Period,
 
 			/// <summary>
-			/// <para>Forward slash—The label separator will be a forward slash.</para>
+			/// <para>正斜线—标注分隔符将为正斜线。</para>
 			/// </summary>
 			[GPValue("/")]
-			[Description("Forward slash")]
+			[Description("正斜线")]
 			Forward_slash,
 
 		}
@@ -369,31 +370,31 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum GridAngleUnitsEnum 
 		{
 			/// <summary>
-			/// <para>Degrees—The angle will be degrees. This is the default.</para>
+			/// <para>度—角度将以度为单位。这是默认设置。</para>
 			/// </summary>
 			[GPValue("DEGREES")]
-			[Description("Degrees")]
+			[Description("度")]
 			Degrees,
 
 			/// <summary>
-			/// <para>Mils—The angle will be mils.</para>
+			/// <para>密耳—角度将以密耳为单位。</para>
 			/// </summary>
 			[GPValue("MILS")]
-			[Description("Mils")]
+			[Description("密耳")]
 			Mils,
 
 			/// <summary>
-			/// <para>Radians—The angle will be radians.</para>
+			/// <para>弧度—角度将以弧度为单位。</para>
 			/// </summary>
 			[GPValue("RADS")]
-			[Description("Radians")]
+			[Description("弧度")]
 			Radians,
 
 			/// <summary>
-			/// <para>Gradians—The angle will be gradians.</para>
+			/// <para>百分度—角度将以百分度为单位。</para>
 			/// </summary>
 			[GPValue("GRADS")]
-			[Description("Gradians")]
+			[Description("百分度")]
 			Gradians,
 
 		}

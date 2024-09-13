@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Global Polynomial Interpolation</para>
-	/// <para>Fits a smooth surface that is defined by a mathematical function (a polynomial) to the input sample points.</para>
+	/// <para>全局多项式插值法</para>
+	/// <para>将使用数学函数（多项式）定义的平滑表面与输入采样点拟合。</para>
 	/// </summary>
 	public class GlobalPolynomialInterpolation : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input features</para>
-		/// <para>The input point features containing the z-values to be interpolated.</para>
+		/// <para>包含要插入的 z 值的输入点要素。</para>
 		/// </param>
 		/// <param name="ZField">
 		/// <para>Z value field</para>
-		/// <para>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contain z-values or m-values.</para>
+		/// <para>表示每个点的高度或量级值的字段。如果输入要素包含 z 值或 m 值，则该字段可以是数值字段或 Shape 字段。</para>
 		/// </param>
 		public GlobalPolynomialInterpolation(object InFeatures, object ZField)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Global Polynomial Interpolation</para>
+		/// <para>Tool Display Name : 全局多项式插值法</para>
 		/// </summary>
-		public override string DisplayName() => "Global Polynomial Interpolation";
+		public override string DisplayName() => "全局多项式插值法";
 
 		/// <summary>
 		/// <para>Tool Name : GlobalPolynomialInterpolation</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input features</para>
-		/// <para>The input point features containing the z-values to be interpolated.</para>
+		/// <para>包含要插入的 z 值的输入点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Z value field</para>
-		/// <para>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contain z-values or m-values.</para>
+		/// <para>表示每个点的高度或量级值的字段。如果输入要素包含 z 值或 m 值，则该字段可以是数值字段或 Shape 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output geostatistical layer</para>
-		/// <para>The geostatistical layer produced. This layer is required output only if no output raster is requested.</para>
+		/// <para>生成的地统计图层。只有未请求任何输出栅格时才需要输出该图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGALayer()]
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster. This raster is required output only if no output geostatistical layer is requested.</para>
+		/// <para>输出栅格。只有未请求任何输出地统计图层时才需要输出该栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -105,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>The cell size at which the output raster will be created.</para>
-		/// <para>This value can be explicitly set in the Environments by the Cell Size parameter.</para>
-		/// <para>If not set, it is the shorter of the width or the height of the extent of the input point features, in the input spatial reference, divided by 250.</para>
+		/// <para>要创建的输出栅格的像元大小。</para>
+		/// <para>可以通过像元大小参数在环境中明确设置该值。</para>
+		/// <para>如果未设置，则该值为输入空间参考中输入点要素范围的宽度与高度中的较小值除以 250。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -119,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Order of polynomial</para>
-		/// <para>The order of the polynomial.</para>
+		/// <para>多项式的阶。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -128,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Weight field</para>
-		/// <para>Used to emphasize an observation. The larger the weight, the more impact it has on the prediction. For coincident observations, assign the largest weight to the most reliable measurement.</para>
+		/// <para>用于强调某个观测。权重越大，对预测的影响就越大。对于重合的观测，为最可靠的测量值分配最大权重。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

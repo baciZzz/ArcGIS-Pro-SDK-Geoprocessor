@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Create LRS Event</para>
+	/// <para>Create LRS Event</para>
 	/// <para>Creates line or point events for an existing LRS Network.</para>
 	/// </summary>
 	public class CreateLRSEvent : AbstractGPProcess

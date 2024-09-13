@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Import S-57 To Geodatabase</para>
+	/// <para>Import S-57 To Geodatabase</para>
 	/// <para>Imports an S-57 file into an ArcGIS Maritime geodatabase. Sources that can be imported include Electronic Navigational Chart (ENC), Additional Military layers (AML), and Inland Electronic Navigational Chart (IENC).</para>
 	/// </summary>
 	public class ImportS57ToGeodatabase : AbstractGPProcess

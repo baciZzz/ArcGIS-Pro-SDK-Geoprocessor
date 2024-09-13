@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>FAA FAR 77</para>
+	/// <para>FAA FAR 77</para>
 	/// <para>Creates obstruction identification surfaces (OIS) based on the FAA Part 77 specification. This regulation establishes standards and notification requirements for objects affecting navigable airspace. The type, function, and dimension of a surface differ by its runway classification. This tool creates surfaces as a polygon or multipatch features.</para>
 	/// </summary>
 	public class FAAFAR77 : AbstractGPProcess

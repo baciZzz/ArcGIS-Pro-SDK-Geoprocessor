@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Database View</para>
-	/// <para>Creates a view in a database based on an SQL expression.</para>
+	/// <para>创建数据库视图</para>
+	/// <para>基于 SQL 表达式在数据库中创建视图。</para>
 	/// </summary>
 	public class CreateDatabaseView : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputDatabase">
 		/// <para>Input Workspace</para>
-		/// <para>The database that contains the tables or feature classes used to construct the view. This database is also where the view will be created.</para>
+		/// <para>包含用于构建视图的表或要素类的数据库。 此数据库也是创建视图的位置。</para>
 		/// </param>
 		/// <param name="ViewName">
 		/// <para>Output View Name</para>
-		/// <para>The name of the view that will be created in the database.</para>
+		/// <para>将要创建在数据库中的视图的名称。</para>
 		/// </param>
 		/// <param name="ViewDefinition">
 		/// <para>View Definition</para>
-		/// <para>An SQL statement used to construct the view.</para>
+		/// <para>用于构建视图的 SQL 语句。</para>
 		/// </param>
 		public CreateDatabaseView(object InputDatabase, object ViewName, object ViewDefinition)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Database View</para>
+		/// <para>Tool Display Name : 创建数据库视图</para>
 		/// </summary>
-		public override string DisplayName() => "Create Database View";
+		public override string DisplayName() => "创建数据库视图";
 
 		/// <summary>
 		/// <para>Tool Name : CreateDatabaseView</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>The database that contains the tables or feature classes used to construct the view. This database is also where the view will be created.</para>
+		/// <para>包含用于构建视图的表或要素类的数据库。 此数据库也是创建视图的位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output View Name</para>
-		/// <para>The name of the view that will be created in the database.</para>
+		/// <para>将要创建在数据库中的视图的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>View Definition</para>
-		/// <para>An SQL statement used to construct the view.</para>
+		/// <para>用于构建视图的 SQL 语句。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

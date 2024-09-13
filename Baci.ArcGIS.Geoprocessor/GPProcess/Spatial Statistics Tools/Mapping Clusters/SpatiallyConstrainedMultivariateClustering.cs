@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Spatially Constrained Multivariate Clustering</para>
-	/// <para>Finds spatially contiguous clusters of features based on a set of feature attribute values and optional cluster size limits.</para>
+	/// <para>空间约束多元聚类</para>
+	/// <para>基于一组要素属性值以及可选的聚类大小限值来查找在空间上相邻的要素聚类。</para>
 	/// </summary>
 	public class SpatiallyConstrainedMultivariateClustering : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The feature class or feature layer for which you want to create clusters.</para>
+		/// <para>要创建聚类的要素类或要素图层。</para>
 		/// </param>
 		/// <param name="OutputFeatures">
 		/// <para>Output Features</para>
-		/// <para>The new output feature class created containing all features, the analysis fields specified, and a field indicating to which cluster each feature belongs.</para>
+		/// <para>创建的新输出要素类，其中包含所有要素、指定的分析字段以及一个用于指明每个要素所属聚类的字段。</para>
 		/// </param>
 		/// <param name="AnalysisFields">
 		/// <para>Analysis Fields</para>
-		/// <para>A list of fields that will be used to distinguish one cluster from another.</para>
+		/// <para>将用于区分各个聚类的字段的列表。</para>
 		/// </param>
 		public SpatiallyConstrainedMultivariateClustering(object InFeatures, object OutputFeatures, object AnalysisFields)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Spatially Constrained Multivariate Clustering</para>
+		/// <para>Tool Display Name : 空间约束多元聚类</para>
 		/// </summary>
-		public override string DisplayName() => "Spatially Constrained Multivariate Clustering";
+		public override string DisplayName() => "空间约束多元聚类";
 
 		/// <summary>
 		/// <para>Tool Name : SpatiallyConstrainedMultivariateClustering</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The feature class or feature layer for which you want to create clusters.</para>
+		/// <para>要创建聚类的要素类或要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>The new output feature class created containing all features, the analysis fields specified, and a field indicating to which cluster each feature belongs.</para>
+		/// <para>创建的新输出要素类，其中包含所有要素、指定的分析字段以及一个用于指明每个要素所属聚类的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Analysis Fields</para>
-		/// <para>A list of fields that will be used to distinguish one cluster from another.</para>
+		/// <para>将用于区分各个聚类的字段的列表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -103,10 +104,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Cluster Size Constraints</para>
-		/// <para>Specifies cluster size based on number of features per group or a target attribute value per group.</para>
-		/// <para>None—No cluster size constraints will be used. This is the default.</para>
-		/// <para>Number of features—A minimum and maximum number of features per group will be used.</para>
-		/// <para>Attribute value—A minimum and maximum attribute value per group will be used.</para>
+		/// <para>根据每个组的要素数或每个组的目标属性值指定聚类大小。</para>
+		/// <para>无—将不使用聚类大小约束。这是默认设置。</para>
+		/// <para>要素数量—将使用每个组的最小和最大要素数。</para>
+		/// <para>属性值—将使用每个组的最小和最大属性值。</para>
 		/// <para><see cref="SizeConstraintsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Constraint Field</para>
-		/// <para>The attribute value to be summed per cluster.</para>
+		/// <para>每个聚类进行求和的属性值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -126,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Minimum per Cluster</para>
-		/// <para>The minimum number of features per cluster or the minimum attribute value per cluster. This must be a positive value.</para>
+		/// <para>每个聚类的最小要素数或每个聚类的最小属性值。该值必须为正值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -134,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Fill to Limit</para>
-		/// <para>The maximum number of features per cluster or the maximum attribute value per cluster. If a maximum constraint is set, the Number of Clusters parameter is inactive. This must be a positive value.</para>
+		/// <para>每个聚类的最大要素数或每个聚类的最大属性值。如果设置了最大约束，则聚类数参数会处于非活动状态。该值必须为正值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -142,8 +143,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Clusters</para>
-		/// <para>The number of clusters to create. If this parameter is empty, the tool will evaluate the optimal number of clusters by computing a pseudo F-statistic value for clustering solutions with 2 through 30 clusters.</para>
-		/// <para>This parameter will be disabled if a maximum number of features or maximum attribute value has been set.</para>
+		/// <para>要创建的聚类数。如果此参数为空，则该工具将计算具有 2 至 30 个聚类的聚类解决方案的伪 F 统计量值，以评估出最佳聚类数。</para>
+		/// <para>如果已设置最大要素数或最大属性值，则将禁用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -151,11 +152,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Spatial Constraints</para>
-		/// <para>Specifies how spatial relationships among features will be defined.</para>
-		/// <para>Contiguity edges only—Clusters will contain contiguous polygon features. Only polygons that share an edge can be part of the same cluster.</para>
-		/// <para>Contiguity edges corners— Clusters will contain contiguous polygon features. Only polygons that share an edge or a vertex can be part of the same cluster. This is the default for polygon features.</para>
-		/// <para>Trimmed Delaunay triangulation— Features in the same cluster will have at least one natural neighbor in common with another feature in the cluster. Natural neighbor relationships are based on a trimmed Delaunay triangulation. Conceptually, Delaunay triangulation creates a nonoverlapping mesh of triangles from feature centroids. Each feature is a triangle node, and nodes that share edges are considered neighbors. These triangles are then clipped to a convex hull to ensure that features cannot be neighbors with any features outside the convex hull. This is the default for point features.</para>
-		/// <para>Get spatial weights from file—Spatial, and optionally temporal, relationships are defined by a specified spatial weights file (.swm). Create the spatial weights matrix using the Generate Spatial Weights Matrix or Generate Network Spatial Weights tool. The path to the spatial weights file is specified by the Spatial Weights Matrix File parameter.</para>
+		/// <para>指定要素空间关系的定义方式。</para>
+		/// <para>仅邻接边—聚类中将包含相邻的面要素。只有共享一条边的面才属于同一个聚类。</para>
+		/// <para>邻接边拐角— 聚类中将包含相邻的面要素。只有共享一条边或一个折点的面才属于同一个聚类。这是面要素的默认选项。</para>
+		/// <para>修剪型 Delaunay 三角测量— 同一个聚类中的要素至少具有一个与该聚类中的另一要素共用的自然邻域。自然邻域关系基于修剪型 Delaunay 三角测量。从概念上讲，Delaunay 三角测量可以根据要素质心创建不重叠的三角网。每个要素是一个三角形结点，具有公共边的结点被视为邻域。然后将这些三角形剪裁成凸包，以确保要素无法与凸包外的任何要素相邻。这是点要素的默认选项。</para>
+		/// <para>通过文件获取空间权重—空间关系和可选的时态关系通过指定空间权重文件 (.swm) 进行定义。使用生成空间权重矩阵或生成网络空间权重工具创建空间权重矩阵。指向空间权重文件的路径由空间权重矩阵文件参数指定。</para>
 		/// <para><see cref="SpatialConstraintsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -165,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Spatial Weights Matrix File</para>
-		/// <para>The path to a file containing spatial weights that define spatial, and potentially temporal, relationships among features.</para>
+		/// <para>包含空间权重（其定义要素间的空间关系以及可能的时态关系）的文件的路径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -175,8 +176,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Permutations to Calculate Membership Probabilities</para>
-		/// <para>The number of random permutations for the calculation of membership stability scores. If 0 (zero) is chosen, probabilities will not be calculated. Calculating these probabilities uses permutations of random spanning trees and evidence accumulation.</para>
-		/// <para>This calculation can take a significant time to run for larger datasets. It is recommended that you iterate and find the optimal number of clusters for your analysis first; then calculate probabilities for your analysis in a subsequent run. Setting the Parallel Processing Factor Environment setting to 50 may improve the run time of the tool.</para>
+		/// <para>计算成员关系稳定性得分的随机置换次数。如果选择了 0（零），则不会计算概率。计算这些概率时会用到随机跨度树置换和证据累积。</para>
+		/// <para>对于较大的数据集来说，此计算可能会耗费大量的运行时间。建议您首先进行迭代并为您的分析找到最佳聚类数，然后在随后的运行中计算分析的概率。将并行处理因子环境设置设为 50 可改善该工具的运行时间。</para>
 		/// <para><see cref="NumberOfPermutationsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -186,7 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Table for Evaluating Number of Clusters</para>
-		/// <para>The table created containing the results of the F-statistic values calculated to evaluate the optimal number of clusters. The chart created from this table can be accessed in the Contents pane under the output feature layer.</para>
+		/// <para>所创建的表格，其中包含经计算用来评估最佳聚类数的 F 统计量值结果。根据该表创建的图表可以在输出要素图层下的内容窗格中进行访问。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -209,24 +210,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum SizeConstraintsEnum 
 		{
 			/// <summary>
-			/// <para>None—No cluster size constraints will be used. This is the default.</para>
+			/// <para>无—将不使用聚类大小约束。这是默认设置。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 			/// <summary>
-			/// <para>Number of features—A minimum and maximum number of features per group will be used.</para>
+			/// <para>要素数量—将使用每个组的最小和最大要素数。</para>
 			/// </summary>
 			[GPValue("NUM_FEATURES")]
-			[Description("Number of features")]
+			[Description("要素数量")]
 			Number_of_features,
 
 			/// <summary>
-			/// <para>Attribute value—A minimum and maximum attribute value per group will be used.</para>
+			/// <para>属性值—将使用每个组的最小和最大属性值。</para>
 			/// </summary>
 			[GPValue("ATTRIBUTE_VALUE")]
-			[Description("Attribute value")]
+			[Description("属性值")]
 			Attribute_value,
 
 		}
@@ -237,31 +238,31 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum SpatialConstraintsEnum 
 		{
 			/// <summary>
-			/// <para>Contiguity edges only—Clusters will contain contiguous polygon features. Only polygons that share an edge can be part of the same cluster.</para>
+			/// <para>仅邻接边—聚类中将包含相邻的面要素。只有共享一条边的面才属于同一个聚类。</para>
 			/// </summary>
 			[GPValue("CONTIGUITY_EDGES_ONLY")]
-			[Description("Contiguity edges only")]
+			[Description("仅邻接边")]
 			Contiguity_edges_only,
 
 			/// <summary>
-			/// <para>Contiguity edges corners— Clusters will contain contiguous polygon features. Only polygons that share an edge or a vertex can be part of the same cluster. This is the default for polygon features.</para>
+			/// <para>邻接边拐角— 聚类中将包含相邻的面要素。只有共享一条边或一个折点的面才属于同一个聚类。这是面要素的默认选项。</para>
 			/// </summary>
 			[GPValue("CONTIGUITY_EDGES_CORNERS")]
-			[Description("Contiguity edges corners")]
+			[Description("邻接边拐角")]
 			Contiguity_edges_corners,
 
 			/// <summary>
-			/// <para>Trimmed Delaunay triangulation— Features in the same cluster will have at least one natural neighbor in common with another feature in the cluster. Natural neighbor relationships are based on a trimmed Delaunay triangulation. Conceptually, Delaunay triangulation creates a nonoverlapping mesh of triangles from feature centroids. Each feature is a triangle node, and nodes that share edges are considered neighbors. These triangles are then clipped to a convex hull to ensure that features cannot be neighbors with any features outside the convex hull. This is the default for point features.</para>
+			/// <para>修剪型 Delaunay 三角测量— 同一个聚类中的要素至少具有一个与该聚类中的另一要素共用的自然邻域。自然邻域关系基于修剪型 Delaunay 三角测量。从概念上讲，Delaunay 三角测量可以根据要素质心创建不重叠的三角网。每个要素是一个三角形结点，具有公共边的结点被视为邻域。然后将这些三角形剪裁成凸包，以确保要素无法与凸包外的任何要素相邻。这是点要素的默认选项。</para>
 			/// </summary>
 			[GPValue("TRIMMED_DELAUNAY_TRIANGULATION")]
-			[Description("Trimmed Delaunay triangulation")]
+			[Description("修剪型 Delaunay 三角测量")]
 			Trimmed_Delaunay_triangulation,
 
 			/// <summary>
-			/// <para>Get spatial weights from file—Spatial, and optionally temporal, relationships are defined by a specified spatial weights file (.swm). Create the spatial weights matrix using the Generate Spatial Weights Matrix or Generate Network Spatial Weights tool. The path to the spatial weights file is specified by the Spatial Weights Matrix File parameter.</para>
+			/// <para>通过文件获取空间权重—空间关系和可选的时态关系通过指定空间权重文件 (.swm) 进行定义。使用生成空间权重矩阵或生成网络空间权重工具创建空间权重矩阵。指向空间权重文件的路径由空间权重矩阵文件参数指定。</para>
 			/// </summary>
 			[GPValue("GET_SPATIAL_WEIGHTS_FROM_FILE")]
-			[Description("Get spatial weights from file")]
+			[Description("通过文件获取空间权重")]
 			Get_spatial_weights_from_file,
 
 		}

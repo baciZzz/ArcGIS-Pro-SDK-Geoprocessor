@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Extract Data</para>
-	/// <para>Extracts selected  layers in the specified area of interest to a specific format and spatial reference.   The extracted data is then written to a zip file.</para>
+	/// <para>提取数据</para>
+	/// <para>将指定感兴趣区域中的所选图层提取为特定的格式和特定的空间参考。然后将提取的数据写入 zip 文件中。</para>
 	/// </summary>
 	public class ExtractData : AbstractGPProcess
 	{
@@ -20,59 +21,59 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		/// <param name="LayersToClip">
 		/// <para>Layers to Clip</para>
-		/// <para>The layers to be clipped. Layers must be feature or raster layers in the map's table of contents. Layer files do not work for this parameter.</para>
+		/// <para>要裁剪的图层。图层必须为地图内容列表中的要素或栅格图层。图层文件不适用于该参数。</para>
 		/// </param>
 		/// <param name="AreaOfInterest">
 		/// <para>Area of Interest</para>
-		/// <para>One or more polygons by which the layers will be clipped.</para>
+		/// <para>裁剪图层所依据的一个或多个面。</para>
 		/// </param>
 		/// <param name="FeatureFormat">
 		/// <para>Feature Format</para>
-		/// <para>The format in which the output features will be delivered. The string provided should be formatted as follows:</para>
-		/// <para>Name or format - Short Name - extension (if any)</para>
-		/// <para>The hyphen between the components is required, as well as the spaces around the hyphen.</para>
-		/// <para>For example:</para>
-		/// <para>File Geodatabase - GDB - .gdb</para>
+		/// <para>传送输出要素时使用的格式。所提供的字符串应采用如下格式：</para>
+		/// <para>名称或格式 - 名称缩写 - 扩展名（如果存在）</para>
+		/// <para>各部分之间需要有连字符，连字符两边需要有空格。</para>
+		/// <para>例如：</para>
+		/// <para>文件地理数据库 - GDB - .gdb</para>
 		/// <para>Shapefile - SHP - .shp</para>
 		/// <para>Autodesk AutoCAD - DXF_R2007 - .dxf</para>
 		/// <para>Autodesk AutoCAD - DWG_R2007 - .dwg</para>
 		/// <para>Bentley Microstation Design (V8) - DGN_V8 - .dgn</para>
-		/// <para>Internally, this tool uses the Export to CAD tool to convert data to the .dgn, .dwg, and .dxf CAD formats. The list of short names supported includes DGN_V8, DWG_R14, DWG_R2000, DWG_R2004, DWG_R2005, DWG_R2007, DWG_R2010, DXF_R14, DXF_R2000, DXF_R2004, DXF_R2005, DXF_R2007, and DXF_R2010.</para>
+		/// <para>在内部，此工具使用要素转 CAD 工具将数据转换为 .dgn、.dwg 和 .dxf 的 CAD 格式。支持的名称缩写列表里包含 DGN_V8、DWG_R14、DWG_R2000、DWG_R2004、DWG_R2005、DWG_R2007、DWG_R2010、DXF_R14、DXF_R2000、DXF_R2004、DXF_R2005、DXF_R2007 和 DXF_R2010。</para>
 		/// </param>
 		/// <param name="RasterFormat">
 		/// <para>Raster Format</para>
-		/// <para>The format in which the output raster datasets will be delivered. The string provided should be formatted as follows:</para>
-		/// <para>Name of format - Short Name - extension (if any)</para>
-		/// <para>Any of the following strings will work:</para>
+		/// <para>传送输出栅格数据集时使用的格式。所提供的字符串应采用如下格式：</para>
+		/// <para>格式名称 - 名称缩写 - 扩展名（如果有）。</para>
+		/// <para>以下任意字符串都可以使用：</para>
 		/// <para>Esri GRID - GRID</para>
-		/// <para>File Geodatabase - GDB - .gdb</para>
+		/// <para>文件地理数据库 - GDB - .gdb</para>
 		/// <para>ERDAS IMAGINE - IMG - .img</para>
-		/// <para>Tagged Image File Format - TIFF - .tif</para>
-		/// <para>Portable Network Graphics - PNG - .png</para>
-		/// <para>Graphic Interchange Format - GIF - .gif</para>
-		/// <para>Joint Photographics Experts Group - JPEG - .jpg</para>
-		/// <para>Joint Photographics Experts Group - JPEG - .jp2</para>
-		/// <para>Bitmap - BMP - .bmp</para>
-		/// <para>Some of the above raster formats have limitations and not all data can be converted to the format.</para>
+		/// <para>标记图像文件格式 - TIFF - .tif</para>
+		/// <para>可移植网络图形 - PNG - .png</para>
+		/// <para>图形交换格式 - GIF - .gif</para>
+		/// <para>联合图像专家组 - JPEG - .jpg</para>
+		/// <para>联合图像专家组 - JPEG - .jp2</para>
+		/// <para>位图 - BMP - .bmp</para>
+		/// <para>上述的某些栅格格式存在限制，所以并不是所有的数据都可以转换为此格式。</para>
 		/// </param>
 		/// <param name="SpatialReference">
 		/// <para>Spatial Reference</para>
-		/// <para>The spatial reference of the output data delivered by the tool.</para>
-		/// <para>For standard Esri spatial references, the name you provide here should be the name of the desired coordinate system. This name corresponds to the name of the spatial reference&apos;s projection file. Alternatively, you can use the Well Known ID (WKID) of the coordinate system.</para>
-		/// <para>For example:</para>
+		/// <para>工具传送的输出数据的空间参考。</para>
+		/// <para>对于标准 ESRI 空间参考，此处所提供的名称应为所需坐标系的名称。此名称与空间参考的投影文件名称相对应。此外，还可以使用坐标系的熟知 ID (WKID)。</para>
+		/// <para>例如：</para>
 		/// <para>Sinusoidal (world)</para>
 		/// <para>WGS 1984 World Mercator</para>
 		/// <para>NAD 1983 HARN StatePlane Oregon North FIPS 3601 (Meters)</para>
 		/// <para>WGS 1984 UTM Zone 11N</para>
 		/// <para>102003</para>
 		/// <para>54001</para>
-		/// <para>If you want the output to have the same coordinate system as the input, then use the string &quot;Same As Input&quot;.</para>
-		/// <para>For any custom projection, the name specified should be the name of the custom projection file (without extension). The location of the custom projection files should be specified in the Custom Spatial Reference Folder parameter.</para>
-		/// <para>Same As Input—Use the coordinate from input</para>
+		/// <para>如果希望输出具有与输入相同的坐标系，可使用字符串“与输入相同”。</para>
+		/// <para>对于任何自定义投影而言，指定的名称都应为自定义投影文件的名称（无扩展名）。自定义投影文件的位置应在“自定义空间参考文件夹”参数中指定。</para>
+		/// <para>与输入相同—使用输入的坐标</para>
 		/// </param>
 		/// <param name="OutputZipFile">
 		/// <para>Output Zip File</para>
-		/// <para>The zip file that will contain the extracted data.</para>
+		/// <para>包含已提取的数据的 zip 文件。</para>
 		/// </param>
 		public ExtractData(object LayersToClip, object AreaOfInterest, object FeatureFormat, object RasterFormat, object SpatialReference, object OutputZipFile)
 		{
@@ -85,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Extract Data</para>
+		/// <para>Tool Display Name : 提取数据</para>
 		/// </summary>
-		public override string DisplayName() => "Extract Data";
+		public override string DisplayName() => "提取数据";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractData</para>
@@ -121,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Layers to Clip</para>
-		/// <para>The layers to be clipped. Layers must be feature or raster layers in the map's table of contents. Layer files do not work for this parameter.</para>
+		/// <para>要裁剪的图层。图层必须为地图内容列表中的要素或栅格图层。图层文件不适用于该参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -129,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Area of Interest</para>
-		/// <para>One or more polygons by which the layers will be clipped.</para>
+		/// <para>裁剪图层所依据的一个或多个面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -140,16 +141,16 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Feature Format</para>
-		/// <para>The format in which the output features will be delivered. The string provided should be formatted as follows:</para>
-		/// <para>Name or format - Short Name - extension (if any)</para>
-		/// <para>The hyphen between the components is required, as well as the spaces around the hyphen.</para>
-		/// <para>For example:</para>
-		/// <para>File Geodatabase - GDB - .gdb</para>
+		/// <para>传送输出要素时使用的格式。所提供的字符串应采用如下格式：</para>
+		/// <para>名称或格式 - 名称缩写 - 扩展名（如果存在）</para>
+		/// <para>各部分之间需要有连字符，连字符两边需要有空格。</para>
+		/// <para>例如：</para>
+		/// <para>文件地理数据库 - GDB - .gdb</para>
 		/// <para>Shapefile - SHP - .shp</para>
 		/// <para>Autodesk AutoCAD - DXF_R2007 - .dxf</para>
 		/// <para>Autodesk AutoCAD - DWG_R2007 - .dwg</para>
 		/// <para>Bentley Microstation Design (V8) - DGN_V8 - .dgn</para>
-		/// <para>Internally, this tool uses the Export to CAD tool to convert data to the .dgn, .dwg, and .dxf CAD formats. The list of short names supported includes DGN_V8, DWG_R14, DWG_R2000, DWG_R2004, DWG_R2005, DWG_R2007, DWG_R2010, DXF_R14, DXF_R2000, DXF_R2004, DXF_R2005, DXF_R2007, and DXF_R2010.</para>
+		/// <para>在内部，此工具使用要素转 CAD 工具将数据转换为 .dgn、.dwg 和 .dxf 的 CAD 格式。支持的名称缩写列表里包含 DGN_V8、DWG_R14、DWG_R2000、DWG_R2004、DWG_R2005、DWG_R2007、DWG_R2010、DXF_R14、DXF_R2000、DXF_R2004、DXF_R2005、DXF_R2007 和 DXF_R2010。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -157,19 +158,19 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Raster Format</para>
-		/// <para>The format in which the output raster datasets will be delivered. The string provided should be formatted as follows:</para>
-		/// <para>Name of format - Short Name - extension (if any)</para>
-		/// <para>Any of the following strings will work:</para>
+		/// <para>传送输出栅格数据集时使用的格式。所提供的字符串应采用如下格式：</para>
+		/// <para>格式名称 - 名称缩写 - 扩展名（如果有）。</para>
+		/// <para>以下任意字符串都可以使用：</para>
 		/// <para>Esri GRID - GRID</para>
-		/// <para>File Geodatabase - GDB - .gdb</para>
+		/// <para>文件地理数据库 - GDB - .gdb</para>
 		/// <para>ERDAS IMAGINE - IMG - .img</para>
-		/// <para>Tagged Image File Format - TIFF - .tif</para>
-		/// <para>Portable Network Graphics - PNG - .png</para>
-		/// <para>Graphic Interchange Format - GIF - .gif</para>
-		/// <para>Joint Photographics Experts Group - JPEG - .jpg</para>
-		/// <para>Joint Photographics Experts Group - JPEG - .jp2</para>
-		/// <para>Bitmap - BMP - .bmp</para>
-		/// <para>Some of the above raster formats have limitations and not all data can be converted to the format.</para>
+		/// <para>标记图像文件格式 - TIFF - .tif</para>
+		/// <para>可移植网络图形 - PNG - .png</para>
+		/// <para>图形交换格式 - GIF - .gif</para>
+		/// <para>联合图像专家组 - JPEG - .jpg</para>
+		/// <para>联合图像专家组 - JPEG - .jp2</para>
+		/// <para>位图 - BMP - .bmp</para>
+		/// <para>上述的某些栅格格式存在限制，所以并不是所有的数据都可以转换为此格式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -177,18 +178,18 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Spatial Reference</para>
-		/// <para>The spatial reference of the output data delivered by the tool.</para>
-		/// <para>For standard Esri spatial references, the name you provide here should be the name of the desired coordinate system. This name corresponds to the name of the spatial reference&apos;s projection file. Alternatively, you can use the Well Known ID (WKID) of the coordinate system.</para>
-		/// <para>For example:</para>
+		/// <para>工具传送的输出数据的空间参考。</para>
+		/// <para>对于标准 ESRI 空间参考，此处所提供的名称应为所需坐标系的名称。此名称与空间参考的投影文件名称相对应。此外，还可以使用坐标系的熟知 ID (WKID)。</para>
+		/// <para>例如：</para>
 		/// <para>Sinusoidal (world)</para>
 		/// <para>WGS 1984 World Mercator</para>
 		/// <para>NAD 1983 HARN StatePlane Oregon North FIPS 3601 (Meters)</para>
 		/// <para>WGS 1984 UTM Zone 11N</para>
 		/// <para>102003</para>
 		/// <para>54001</para>
-		/// <para>If you want the output to have the same coordinate system as the input, then use the string &quot;Same As Input&quot;.</para>
-		/// <para>For any custom projection, the name specified should be the name of the custom projection file (without extension). The location of the custom projection files should be specified in the Custom Spatial Reference Folder parameter.</para>
-		/// <para>Same As Input—Use the coordinate from input</para>
+		/// <para>如果希望输出具有与输入相同的坐标系，可使用字符串“与输入相同”。</para>
+		/// <para>对于任何自定义投影而言，指定的名称都应为自定义投影文件的名称（无扩展名）。自定义投影文件的位置应在“自定义空间参考文件夹”参数中指定。</para>
+		/// <para>与输入相同—使用输入的坐标</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -196,7 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Custom Spatial Reference Folder</para>
-		/// <para>The location of any custom projection file or files referenced in the Spatial Reference parameter. This is only necessary if the custom projection file is not in the default installation Coordinate System folder.</para>
+		/// <para>在“空间参考”参数中，引用的任何自定义投影文件的位置。只有在自定义投影文件不在默认的安装坐标系文件夹中时，才必须使用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
@@ -204,7 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Output Zip File</para>
-		/// <para>The zip file that will contain the extracted data.</para>
+		/// <para>包含已提取的数据的 zip 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

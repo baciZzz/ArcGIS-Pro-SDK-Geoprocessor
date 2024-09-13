@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Remove Terrain Points</para>
+	/// <para>Remove Terrain Points</para>
 	/// <para>This tool removes points within an area of interest from one or more embedded feature classes.</para>
 	/// </summary>
 	[Obsolete()]

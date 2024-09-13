@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Make Diagram Layer</para>
+	/// <para>Make Diagram Layer</para>
 	/// <para>Make a diagram layer</para>
 	/// </summary>
 	[Obsolete()]

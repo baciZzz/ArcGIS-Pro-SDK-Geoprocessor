@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>GTFS To Network Dataset Transit Sources</para>
-	/// <para>Converts one or more General Transit Feed Specification (GTFS) public transit datasets to a set of feature classes and tables that can be used when creating a network dataset. The output feature classes and tables represent the transit stops, lines, and schedules in the format defined by the Network Analyst public transit data model, which can be interpreted by the Public Transit evaluator in a network dataset.</para>
+	/// <para>GTFS 转网络数据集交通源</para>
+	/// <para>用于将一个或多个通用交通数据规范 (GTFS) 公共交通数据集转换为一组要素类和表，以在创建网络数据集时使用。 输出要素类和表使用 Network Analyst 公共交通数据模型定义的格式表示交通停靠点、线和时间表，可使用网络数据集中的公共交通赋值器进行解释。</para>
 	/// </summary>
 	public class GTFSToNetworkDatasetTransitSources : AbstractGPProcess
 	{
@@ -20,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InGtfsFolders">
 		/// <para>Input GTFS Folders</para>
-		/// <para>One or more folders containing valid GTFS data. Each folder must contain the GTFS stops.txt, routes.txt, trips.txt, and stop_times.txt files and either the calendar.txt or calendar_dates.txt file, or both.</para>
+		/// <para>一个或多个包含有效 GTFS 数据的文件夹。 每个文件夹必须包含 GTFS stops.txt、routes.txt、trips.txt 和 stop_times.txt 文件，以及 calendar.txt 或 calendar_dates.txt 文件，或二者兼而有之。</para>
 		/// </param>
 		/// <param name="TargetFeatureDataset">
 		/// <para>Target Feature Dataset</para>
-		/// <para>The feature dataset where the transit-enabled network dataset will be created. The Stops and LineVariantElements feature classes created by this tool will be placed in this feature dataset, and the output tables created by this tool will be placed in this feature dataset&apos;s parent geodatabase.</para>
-		/// <para>The feature dataset can be in a file geodatabase or an enterprise geodatabase and can have any spatial reference. If the target feature dataset is in an enterprise geodatabase, it must not be versioned. Do not include the target feature dataset in a geodatabase with an existing feature dataset containing public transit data model feature classes.</para>
+		/// <para>将创建启用交通的网络数据集的要素数据集。 此工具创建的 Stops 和 LineVariantElements 要素类将放置在此要素数据集中，此工具创建的输出表将放置在此要素数据集的父地理数据库中。</para>
+		/// <para>要素数据集可以位于文件地理数据库或企业级地理数据库中，并且可以包含任何空间参考。 如果目标要素数据集位于企业级地理数据库中，则不得对其进行版本化。 具有含公共交通数据模型要素类的现有要素数据集中不应包括目标要素数据集。</para>
 		/// </param>
 		public GTFSToNetworkDatasetTransitSources(object InGtfsFolders, object TargetFeatureDataset)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : GTFS To Network Dataset Transit Sources</para>
+		/// <para>Tool Display Name : GTFS 转网络数据集交通源</para>
 		/// </summary>
-		public override string DisplayName() => "GTFS To Network Dataset Transit Sources";
+		public override string DisplayName() => "GTFS 转网络数据集交通源";
 
 		/// <summary>
 		/// <para>Tool Name : GTFSToNetworkDatasetTransitSources</para>
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input GTFS Folders</para>
-		/// <para>One or more folders containing valid GTFS data. Each folder must contain the GTFS stops.txt, routes.txt, trips.txt, and stop_times.txt files and either the calendar.txt or calendar_dates.txt file, or both.</para>
+		/// <para>一个或多个包含有效 GTFS 数据的文件夹。 每个文件夹必须包含 GTFS stops.txt、routes.txt、trips.txt 和 stop_times.txt 文件，以及 calendar.txt 或 calendar_dates.txt 文件，或二者兼而有之。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -78,8 +79,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Target Feature Dataset</para>
-		/// <para>The feature dataset where the transit-enabled network dataset will be created. The Stops and LineVariantElements feature classes created by this tool will be placed in this feature dataset, and the output tables created by this tool will be placed in this feature dataset&apos;s parent geodatabase.</para>
-		/// <para>The feature dataset can be in a file geodatabase or an enterprise geodatabase and can have any spatial reference. If the target feature dataset is in an enterprise geodatabase, it must not be versioned. Do not include the target feature dataset in a geodatabase with an existing feature dataset containing public transit data model feature classes.</para>
+		/// <para>将创建启用交通的网络数据集的要素数据集。 此工具创建的 Stops 和 LineVariantElements 要素类将放置在此要素数据集中，此工具创建的输出表将放置在此要素数据集的父地理数据库中。</para>
+		/// <para>要素数据集可以位于文件地理数据库或企业级地理数据库中，并且可以包含任何空间参考。 如果目标要素数据集位于企业级地理数据库中，则不得对其进行版本化。 具有含公共交通数据模型要素类的现有要素数据集中不应包括目标要素数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureDataset()]
@@ -157,9 +158,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Interpolate blank stop times</para>
-		/// <para>Specifies whether blank values from the arrival_time and departure_time fields in the GTFS stop_times.txt file will be interpolated when creating the public transit data model tables.</para>
-		/// <para>Checked—Blank values will be interpolated using simple linear interpolation. The original GTFS data will not be altered. If there are no blank values in the original data, no interpolation will occur.</para>
-		/// <para>Unchecked—Blank values will not be interpolated. If blank values are found in the input GTFS data, the tool will issue a warning and will not process the GTFS dataset. This is the default.</para>
+		/// <para>指定在创建公共交通数据模型表时，是否在 GTFS stop_times.txt 文件中 arrival_time 和 departure_time 字段中内插空白值。</para>
+		/// <para>选中 - 将使用简单的线性插值法内插空白值。 原始 GTFS 数据不会被更改。 如果原始数据中没有空白值，则不会进行插值。</para>
+		/// <para>未选中 - 将不会内插空白值。 如果在输入 GTFS 数据中找到空白值，则该工具将发出警告且不会处理 GTFS 数据集。 这是默认设置。</para>
 		/// <para><see cref="InterpolateEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -169,10 +170,10 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Append to existing tables</para>
-		/// <para>Specifies whether the input GTFS datasets will be appended to existing public transit data model feature classes and tables in the target feature dataset and its parent geodatabase.</para>
-		/// <para>This parameter will be hidden if the target feature dataset and its parent geodatabase do not contain existing public transit data model feature classes and tables.</para>
-		/// <para>Checked—Data will be appended to the existing feature classes and tables.</para>
-		/// <para>Unchecked—Existing feature classes and tables will be overwritten. This is the default.</para>
+		/// <para>指定是否将输入 GTFS 数据集追加到目标要素数据集及其父地理数据库中的现有公共交通数据模型要素类和表。</para>
+		/// <para>如果目标要素数据集及其父地理数据库不包含现有公共交通数据模型要素类和表，则将隐藏此参数。</para>
+		/// <para>选中 - 数据将被追加到现有要素类和表。</para>
+		/// <para>未选中 - 将覆盖现有要素类和表。 这是默认设置。</para>
 		/// <para><see cref="AppendEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -188,14 +189,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum InterpolateEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Blank values will be interpolated using simple linear interpolation. The original GTFS data will not be altered. If there are no blank values in the original data, no interpolation will occur.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INTERPOLATE")]
 			INTERPOLATE,
 
 			/// <summary>
-			/// <para>Unchecked—Blank values will not be interpolated. If blank values are found in the input GTFS data, the tool will issue a warning and will not process the GTFS dataset. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_INTERPOLATE")]
@@ -209,14 +210,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum AppendEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Data will be appended to the existing feature classes and tables.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("APPEND")]
 			APPEND,
 
 			/// <summary>
-			/// <para>Unchecked—Existing feature classes and tables will be overwritten. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_APPEND")]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Merge Multidimensional Rasters</para>
-	/// <para>Combines multiple multidimensional raster datasets spatially, or across variables and dimensions.</para>
+	/// <para>合并多维栅格</para>
+	/// <para>在空间上、跨变量或跨维度合并多个多维栅格数据集。</para>
 	/// </summary>
 	public class MergeMultidimensionalRasters : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		/// <param name="InMultidimensionalRasters">
 		/// <para>Input Multidimensional Rasters</para>
-		/// <para>The input multidimensional rasters to be combined.</para>
+		/// <para>要合并的输入多维栅格。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster</para>
-		/// <para>The merged multidimensional raster dataset in Cloud Raster Format (a .crf file).</para>
+		/// <para>采用云栅格格式（.crf 文件）的已合并多维栅格数据集。</para>
 		/// </param>
 		public MergeMultidimensionalRasters(object InMultidimensionalRasters, object OutRaster)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Merge Multidimensional Rasters</para>
+		/// <para>Tool Display Name : 合并多维栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Merge Multidimensional Rasters";
+		public override string DisplayName() => "合并多维栅格";
 
 		/// <summary>
 		/// <para>Tool Name : MergeMultidimensionalRasters</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Input Multidimensional Rasters</para>
-		/// <para>The input multidimensional rasters to be combined.</para>
+		/// <para>要合并的输入多维栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Output Raster</para>
-		/// <para>The merged multidimensional raster dataset in Cloud Raster Format (a .crf file).</para>
+		/// <para>采用云栅格格式（.crf 文件）的已合并多维栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -86,13 +87,13 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Resolve Overlap Method</para>
-		/// <para>Specifies the method to use to resolve overlapping pixels in the combined datasets.</para>
-		/// <para>First—The pixel value in the overlapping areas will be the value from the first raster in the list of input rasters. This is the default.</para>
-		/// <para>Last—The pixel value in the overlapping areas will be the value from the last raster in the list of input rasters.</para>
-		/// <para>Minimum—The pixel value in the overlapping areas will be the minimum value of the overlapping pixels.</para>
-		/// <para>Maximum—The pixel value in the overlapping areas will be the maximum value of the overlapping pixels.</para>
-		/// <para>Mean—The pixel value in the overlapping areas will be the average of the overlapping pixels.</para>
-		/// <para>Sum—The pixel value in the overlapping areas will be the total sum of the overlapping pixels.</para>
+		/// <para>指定用于处理所合并数据集中重叠像素的方法。</para>
+		/// <para>First—重叠区域内的像素值将为来自输入栅格列表中第一个栅格的值。这是默认设置。</para>
+		/// <para>Last—重叠区域内的像素值将为来自输入栅格列表中最后一个栅格的值。</para>
+		/// <para>最小值—重叠区域内的像素值将为重叠像素的最小值。</para>
+		/// <para>Maximum—重叠区域内的像素值将为重叠像素的最大值。</para>
+		/// <para>Mean—重叠区域内的像素值将为重叠像素的平均值。</para>
+		/// <para>总和—重叠区域内的像素值将为重叠像素的总和。</para>
 		/// <para><see cref="ResolveOverlapMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -117,45 +118,45 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		public enum ResolveOverlapMethodEnum 
 		{
 			/// <summary>
-			/// <para>First—The pixel value in the overlapping areas will be the value from the first raster in the list of input rasters. This is the default.</para>
+			/// <para>First—重叠区域内的像素值将为来自输入栅格列表中第一个栅格的值。这是默认设置。</para>
 			/// </summary>
 			[GPValue("FIRST")]
 			[Description("First")]
 			First,
 
 			/// <summary>
-			/// <para>Last—The pixel value in the overlapping areas will be the value from the last raster in the list of input rasters.</para>
+			/// <para>Last—重叠区域内的像素值将为来自输入栅格列表中最后一个栅格的值。</para>
 			/// </summary>
 			[GPValue("LAST")]
 			[Description("Last")]
 			Last,
 
 			/// <summary>
-			/// <para>Minimum—The pixel value in the overlapping areas will be the minimum value of the overlapping pixels.</para>
+			/// <para>最小值—重叠区域内的像素值将为重叠像素的最小值。</para>
 			/// </summary>
 			[GPValue("MIN")]
-			[Description("Minimum")]
+			[Description("最小值")]
 			Minimum,
 
 			/// <summary>
-			/// <para>Maximum—The pixel value in the overlapping areas will be the maximum value of the overlapping pixels.</para>
+			/// <para>Maximum—重叠区域内的像素值将为重叠像素的最大值。</para>
 			/// </summary>
 			[GPValue("MAX")]
 			[Description("Maximum")]
 			Maximum,
 
 			/// <summary>
-			/// <para>Mean—The pixel value in the overlapping areas will be the average of the overlapping pixels.</para>
+			/// <para>Mean—重叠区域内的像素值将为重叠像素的平均值。</para>
 			/// </summary>
 			[GPValue("MEAN")]
 			[Description("Mean")]
 			Mean,
 
 			/// <summary>
-			/// <para>Sum—The pixel value in the overlapping areas will be the total sum of the overlapping pixels.</para>
+			/// <para>总和—重叠区域内的像素值将为重叠像素的总和。</para>
 			/// </summary>
 			[GPValue("SUM")]
-			[Description("Sum")]
+			[Description("总和")]
 			Sum,
 
 		}

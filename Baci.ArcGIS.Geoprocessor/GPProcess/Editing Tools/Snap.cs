@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Snap</para>
-	/// <para>Moves points or vertices to coincide exactly with the vertices, edges, or end points of other features. Snapping rules can be specified to control whether the input vertices are snapped to the nearest vertex, edge, or endpoint within a specified distance.</para>
+	/// <para>捕捉</para>
+	/// <para>移动点或折点，使其与其他要素的折点、边或端点精确重合。 可指定捕捉规则来控制是将输入折点捕捉到指定距离范围内的最近折点、边还是端点。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,20 +23,20 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input features with the vertices that will be snapped to the vertices, edges, or end points of other features. The input features can be points, multipoints, lines, or polygons.</para>
+		/// <para>折点将被捕捉到其他要素的折点、边或端点的输入要素。 输入要素可以是点、多点、线或面。</para>
 		/// </param>
 		/// <param name="SnapEnvironment">
 		/// <para>Snap Environment</para>
-		/// <para>The feature classes or feature layers containing the features to snap to.</para>
-		/// <para>The snapping environment components are as follows:</para>
-		/// <para>Features—The features that the input features&apos; vertices will be snapped to. These features can be points, multipoints, lines, or polygons.</para>
-		/// <para>Type—The type of feature part that the input features&apos; vertices can be snapped to.</para>
-		/// <para>Distance—The distance within which the input features&apos; vertices will be snapped to the nearest end point, vertex, or edge.</para>
-		/// <para>Available snapping types are as follows:</para>
-		/// <para>End—Input feature vertices will be snapped to feature ends.</para>
-		/// <para>Vertex—Input feature vertices will be snapped to feature vertices.</para>
-		/// <para>Edge—Input feature vertices will be snapped to feature edges.</para>
-		/// <para>If a distance is used without a unit (for example, 10 instead of 10 meters), the linear or angular unit from the input feature&apos;s coordinate system will be used as the default. If the input features have a projected coordinate system, its linear unit will be used.</para>
+		/// <para>输入包含要捕捉到的要素的要素类或要素图层。</para>
+		/// <para>捕捉环境的组件如下：</para>
+		/// <para>要素 - 要作为输入要素折点捕捉目标的要素。 这些要素可以是点、多点、线或面。</para>
+		/// <para>类型 - 可作为输入要素折点捕捉目标的要素部分的类型。</para>
+		/// <para>距离 - 输入要素折点被捕捉到此距离范围内的最近端点、折点或边。</para>
+		/// <para>可用捕捉类型如下：</para>
+		/// <para>端点 - 将输入要素折点捕捉到要素末端。</para>
+		/// <para>折点 - 将输入要素折点捕捉到要素折点。</para>
+		/// <para>边 - 将输入要素折点捕捉到要素边。</para>
+		/// <para>如果所用距离未带单位（如，输入 10 而不是 10 米），则默认情况下将使用输入要素的坐标系的线性单位或角度单位。 如果输入要素使用投影坐标系，则将使用线性单位。</para>
 		/// </param>
 		public Snap(object InFeatures, object SnapEnvironment)
 		{
@@ -44,14 +45,14 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Snap</para>
+		/// <para>Tool Display Name : 捕捉</para>
 		/// </summary>
-		public override string DisplayName() => "Snap";
+		public override string DisplayName() => "捕捉";
 
 		/// <summary>
-		/// <para>Tool Name : Snap</para>
+		/// <para>Tool Name : 捕捉</para>
 		/// </summary>
-		public override string ToolName() => "Snap";
+		public override string ToolName() => "捕捉";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.Snap</para>
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input features with the vertices that will be snapped to the vertices, edges, or end points of other features. The input features can be points, multipoints, lines, or polygons.</para>
+		/// <para>折点将被捕捉到其他要素的折点、边或端点的输入要素。 输入要素可以是点、多点、线或面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -88,16 +89,16 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Snap Environment</para>
-		/// <para>The feature classes or feature layers containing the features to snap to.</para>
-		/// <para>The snapping environment components are as follows:</para>
-		/// <para>Features—The features that the input features&apos; vertices will be snapped to. These features can be points, multipoints, lines, or polygons.</para>
-		/// <para>Type—The type of feature part that the input features&apos; vertices can be snapped to.</para>
-		/// <para>Distance—The distance within which the input features&apos; vertices will be snapped to the nearest end point, vertex, or edge.</para>
-		/// <para>Available snapping types are as follows:</para>
-		/// <para>End—Input feature vertices will be snapped to feature ends.</para>
-		/// <para>Vertex—Input feature vertices will be snapped to feature vertices.</para>
-		/// <para>Edge—Input feature vertices will be snapped to feature edges.</para>
-		/// <para>If a distance is used without a unit (for example, 10 instead of 10 meters), the linear or angular unit from the input feature&apos;s coordinate system will be used as the default. If the input features have a projected coordinate system, its linear unit will be used.</para>
+		/// <para>输入包含要捕捉到的要素的要素类或要素图层。</para>
+		/// <para>捕捉环境的组件如下：</para>
+		/// <para>要素 - 要作为输入要素折点捕捉目标的要素。 这些要素可以是点、多点、线或面。</para>
+		/// <para>类型 - 可作为输入要素折点捕捉目标的要素部分的类型。</para>
+		/// <para>距离 - 输入要素折点被捕捉到此距离范围内的最近端点、折点或边。</para>
+		/// <para>可用捕捉类型如下：</para>
+		/// <para>端点 - 将输入要素折点捕捉到要素末端。</para>
+		/// <para>折点 - 将输入要素折点捕捉到要素折点。</para>
+		/// <para>边 - 将输入要素折点捕捉到要素边。</para>
+		/// <para>如果所用距离未带单位（如，输入 10 而不是 10 米），则默认情况下将使用输入要素的坐标系的线性单位或角度单位。 如果输入要素使用投影坐标系，则将使用线性单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]

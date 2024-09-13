@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Table To SAS</para>
-	/// <para>Converts a table to a SAS dataset.</para>
+	/// <para>表转 SAS</para>
+	/// <para>将表转换为 SAS 数据集。</para>
 	/// </summary>
 	public class TableToSAS : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input table.</para>
+		/// <para>输入表。</para>
 		/// </param>
 		/// <param name="OutSasDataset">
 		/// <para>Output SAS Dataset (libref.tablename)</para>
-		/// <para>The output SAS dataset. Provide the dataset in the form libref.table in which libref is the name of a SAS library and table is the name of the SAS table.</para>
+		/// <para>输出 SAS 数据集。 以表单 libref.table 形式提供数据集，其中 libref 是 SAS 库的名称，table 是 SAS 表的名称。</para>
 		/// </param>
 		public TableToSAS(object InTable, object OutSasDataset)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Table To SAS</para>
+		/// <para>Tool Display Name : 表转 SAS</para>
 		/// </summary>
-		public override string DisplayName() => "Table To SAS";
+		public override string DisplayName() => "表转 SAS";
 
 		/// <summary>
 		/// <para>Tool Name : TableToSAS</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input table.</para>
+		/// <para>输入表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output SAS Dataset (libref.tablename)</para>
-		/// <para>The output SAS dataset. Provide the dataset in the form libref.table in which libref is the name of a SAS library and table is the name of the SAS table.</para>
+		/// <para>输出 SAS 数据集。 以表单 libref.table 形式提供数据集，其中 libref 是 SAS 库的名称，table 是 SAS 表的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -85,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Replace SAS Dataset</para>
-		/// <para>Specifies whether an existing SAS dataset will be overwritten by the output.</para>
-		/// <para>Checked—The output SAS dataset will be overwritten.</para>
-		/// <para>Unchecked—The output SAS dataset will not be overwritten. This is the default.</para>
+		/// <para>指定是否在输出中覆盖现有 SAS 数据集。</para>
+		/// <para>选中 - 输出 SAS 数据集将被覆盖。</para>
+		/// <para>未选中 - 输出 SAS 数据集不会被覆盖。 这是默认设置。</para>
 		/// <para><see cref="ReplaceSasDatasetEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -97,9 +98,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Use Domain and Subtype Descriptions</para>
-		/// <para>Specifies whether domain and subtype descriptions will be included in the output SAS dataset.</para>
-		/// <para>Checked—Domain and subtype descriptions will be included in the output SAS dataset.</para>
-		/// <para>Unchecked—Domain and subtype descriptions will not be included in the output SAS dataset. This is the default.</para>
+		/// <para>指定输出 SAS 数据集中是否包含域和子类型描述。</para>
+		/// <para>选中 - 输出 SAS 数据集中将包含域和子类型描述。</para>
+		/// <para>未选中 - 输出 SAS 数据集中不会包含域和子类型描述。 这是默认设置。</para>
 		/// <para><see cref="UseDomainAndSubtypeDescriptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -109,9 +110,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Upload SAS Dataset to SAS Cloud Analytic Services (CAS)</para>
-		/// <para>Specifies whether the output SAS dataset will be uploaded to CAS or saved in a local SAS library.</para>
-		/// <para>Checked—The output SAS dataset will be uploaded to CAS.</para>
-		/// <para>Unchecked—The output SAS dataset will be saved in a local SAS library. This is the default.</para>
+		/// <para>指定将输出 SAS 数据集上传到 CAS，还是保存在本地 SAS 库中。</para>
+		/// <para>选中 - 输出 SAS 数据集将被上传到 CAS。</para>
+		/// <para>未选中 - 输出 SAS 数据集将被保存在本地 SAS 库中。 这是默认设置。</para>
 		/// <para><see cref="UseCasConnectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -121,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>CAS Hostname URL</para>
-		/// <para>The URL of the CAS host.</para>
+		/// <para>CAS 主机的 URL。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -129,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Port</para>
-		/// <para>The port of the CAS connection.</para>
+		/// <para>CAS 连接的端口。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -137,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>CAS Username</para>
-		/// <para>The user name for the CAS connection.</para>
+		/// <para>CAS 连接的用户名。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -145,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Password</para>
-		/// <para>The password for the CAS connection. This password is hidden and not accessible after running the tool.</para>
+		/// <para>CAS 连接的密码。 运行工具后，此密码被隐藏并且不可访问。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPStringHidden()]
@@ -159,14 +160,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum ReplaceSasDatasetEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output SAS dataset will be overwritten.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("OVERWRITE")]
 			OVERWRITE,
 
 			/// <summary>
-			/// <para>Unchecked—The output SAS dataset will not be overwritten. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_OVERWRITE")]
@@ -180,14 +181,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum UseDomainAndSubtypeDescriptionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Domain and subtype descriptions will be included in the output SAS dataset.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("USE_DOMAIN")]
 			USE_DOMAIN,
 
 			/// <summary>
-			/// <para>Unchecked—Domain and subtype descriptions will not be included in the output SAS dataset. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DOMAIN")]
@@ -201,14 +202,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum UseCasConnectionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output SAS dataset will be uploaded to CAS.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("USE_CAS")]
 			USE_CAS,
 
 			/// <summary>
-			/// <para>Unchecked—The output SAS dataset will be saved in a local SAS library. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("LOCAL_SAS")]

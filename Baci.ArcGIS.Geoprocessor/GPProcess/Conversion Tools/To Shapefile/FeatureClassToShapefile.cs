@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Feature Class To Shapefile</para>
-	/// <para>Copies the features from one or more feature classes or layers to a folder of shapefiles.</para>
+	/// <para>要素类转 Shapefile</para>
+	/// <para>可将一个或多个要素类/图层中的要素复制到一个 shapefile 文件夹中。</para>
 	/// </summary>
 	public class FeatureClassToShapefile : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InputFeatures">
 		/// <para>Input Features</para>
-		/// <para>The list of input feature classes or feature layers that will be converted and added to the output folder.</para>
+		/// <para>将被转换并添加到输出文件夹的输入要素类或要素图层的列表。</para>
 		/// </param>
 		/// <param name="OutputFolder">
 		/// <para>Output Folder</para>
-		/// <para>The folder where the shapefiles will be written.</para>
+		/// <para>将写入 shapefile 的文件夹。</para>
 		/// </param>
 		public FeatureClassToShapefile(object InputFeatures, object OutputFolder)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Feature Class To Shapefile</para>
+		/// <para>Tool Display Name : 要素类转 Shapefile</para>
 		/// </summary>
-		public override string DisplayName() => "Feature Class To Shapefile";
+		public override string DisplayName() => "要素类转 Shapefile";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureClassToShapefile</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The list of input feature classes or feature layers that will be converted and added to the output folder.</para>
+		/// <para>将被转换并添加到输出文件夹的输入要素类或要素图层的列表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Folder</para>
-		/// <para>The folder where the shapefiles will be written.</para>
+		/// <para>将写入 shapefile 的文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]

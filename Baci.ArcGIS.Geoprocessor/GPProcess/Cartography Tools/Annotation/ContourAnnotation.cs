@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Contour Annotation</para>
-	/// <para>Creates annotation for contour features.</para>
+	/// <para>等值线注记</para>
+	/// <para>创建等值线要素的注记。</para>
 	/// </summary>
 	public class ContourAnnotation : AbstractGPProcess
 	{
@@ -20,30 +21,30 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The contour line feature class for which the annotation will be created.</para>
+		/// <para>要创建注记的等值线要素类。</para>
 		/// </param>
 		/// <param name="OutGeodatabase">
 		/// <para>Output Geodatabase</para>
-		/// <para>The workspace where the output feature classes will be saved. The workspace can be an existing geodatabase or an existing feature dataset.</para>
+		/// <para>用来保存输出要素类的工作空间。 此工作空间可以是现有地理数据库或现有要素数据集。</para>
 		/// </param>
 		/// <param name="ContourLabelField">
 		/// <para>Contour Label Field</para>
-		/// <para>The field in the input layer attribute table on which the annotation text will be based.</para>
+		/// <para>注记文本基于的输入图层属性表中的字段。</para>
 		/// </param>
 		/// <param name="ReferenceScaleValue">
 		/// <para>Reference Scale</para>
-		/// <para>The scale that will be used as a reference for the annotation. This sets the scale on which all symbol and text sizes in the annotation will be based.</para>
+		/// <para>将用作注记参考的比例。 注记中的所有符号及文本的大小都会参照此处设置的参考比例。</para>
 		/// </param>
 		/// <param name="OutLayer">
 		/// <para>Output Layer Name</para>
-		/// <para>The group layer that will contain the contour layer, the annotation, and the mask layer. When working in the Catalog pane, you can use the Save To Layer File tool to write the output group layer to a layer file. When using ArcGIS Pro, the tool adds the group layer to the display if the Add output datasets to an open map option is checked on the Geoprocessing tab on the Options dialog box. The group layer that is created is temporary and will not persist after the session ends unless the document is saved.</para>
+		/// <para>将包含等值线图层、注记和掩膜图层的图层组。 在目录窗格中工作时，可使用保存至图层文件工具将输出图层组写入图层文件中。 使用 ArcGIS Pro 时，如果将输出数据集添加至打开的地图选项在选项对话框的地理处理选项卡中为选中状态，则该工具会将组图层添加到显示中。 所创建的图层组是临时性的，如果不保存文档，该图层组将在会话结束后消失。</para>
 		/// </param>
 		/// <param name="ContourColor">
 		/// <para>Contour and Label Color</para>
-		/// <para>Specifies the color of the output contour layer and annotation features.</para>
-		/// <para>Black—The output contour layer and annotation features will be drawn in black. This is the default.</para>
-		/// <para>Brown—The output contour layer and annotation features will be drawn in brown.</para>
-		/// <para>Blue—The output contour layer and annotation features will be drawn in blue.</para>
+		/// <para>指定输出等值线图层和注记要素的颜色。</para>
+		/// <para>黑色—输出等值线图层和注记要素将以黑色绘制。 这是默认设置。</para>
+		/// <para>褐色—输出等值线图层和注记要素将以褐色绘制。</para>
+		/// <para>蓝色—输出等值线图层和注记要素将以蓝色绘制。</para>
 		/// <para><see cref="ContourColorEnum"/></para>
 		/// </param>
 		public ContourAnnotation(object InFeatures, object OutGeodatabase, object ContourLabelField, object ReferenceScaleValue, object OutLayer, object ContourColor)
@@ -57,9 +58,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Contour Annotation</para>
+		/// <para>Tool Display Name : 等值线注记</para>
 		/// </summary>
-		public override string DisplayName() => "Contour Annotation";
+		public override string DisplayName() => "等值线注记";
 
 		/// <summary>
 		/// <para>Tool Name : ContourAnnotation</para>
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The contour line feature class for which the annotation will be created.</para>
+		/// <para>要创建注记的等值线要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -104,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Geodatabase</para>
-		/// <para>The workspace where the output feature classes will be saved. The workspace can be an existing geodatabase or an existing feature dataset.</para>
+		/// <para>用来保存输出要素类的工作空间。 此工作空间可以是现有地理数据库或现有要素数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Contour Label Field</para>
-		/// <para>The field in the input layer attribute table on which the annotation text will be based.</para>
+		/// <para>注记文本基于的输入图层属性表中的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -122,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Reference Scale</para>
-		/// <para>The scale that will be used as a reference for the annotation. This sets the scale on which all symbol and text sizes in the annotation will be based.</para>
+		/// <para>将用作注记参考的比例。 注记中的所有符号及文本的大小都会参照此处设置的参考比例。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -130,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Layer Name</para>
-		/// <para>The group layer that will contain the contour layer, the annotation, and the mask layer. When working in the Catalog pane, you can use the Save To Layer File tool to write the output group layer to a layer file. When using ArcGIS Pro, the tool adds the group layer to the display if the Add output datasets to an open map option is checked on the Geoprocessing tab on the Options dialog box. The group layer that is created is temporary and will not persist after the session ends unless the document is saved.</para>
+		/// <para>将包含等值线图层、注记和掩膜图层的图层组。 在目录窗格中工作时，可使用保存至图层文件工具将输出图层组写入图层文件中。 使用 ArcGIS Pro 时，如果将输出数据集添加至打开的地图选项在选项对话框的地理处理选项卡中为选中状态，则该工具会将组图层添加到显示中。 所创建的图层组是临时性的，如果不保存文档，该图层组将在会话结束后消失。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPGroupLayer()]
@@ -138,10 +139,10 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Contour and Label Color</para>
-		/// <para>Specifies the color of the output contour layer and annotation features.</para>
-		/// <para>Black—The output contour layer and annotation features will be drawn in black. This is the default.</para>
-		/// <para>Brown—The output contour layer and annotation features will be drawn in brown.</para>
-		/// <para>Blue—The output contour layer and annotation features will be drawn in blue.</para>
+		/// <para>指定输出等值线图层和注记要素的颜色。</para>
+		/// <para>黑色—输出等值线图层和注记要素将以黑色绘制。 这是默认设置。</para>
+		/// <para>褐色—输出等值线图层和注记要素将以褐色绘制。</para>
+		/// <para>蓝色—输出等值线图层和注记要素将以蓝色绘制。</para>
 		/// <para><see cref="ContourColorEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -151,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Contour Type Field</para>
-		/// <para>The field in the input layer attribute table containing a value for the type of contour feature. An annotation class will be created for each type value.</para>
+		/// <para>包含等值线要素类型值的输入图层属性表中的字段。 将为各类型值创建注记类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -161,10 +162,10 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Contour Alignment</para>
-		/// <para>Specifies how the annotation will be aligned to contour elevations. The annotation can be aligned to the contour elevations so that the top of the text is always placed uphill or downhill. These options allow the annotation to be placed upside down. The contour annotation can also be aligned to the page, ensuring that the text is never placed upside down.</para>
-		/// <para>Align top of text to top of page— The annotation will be aligned to the page, ensuring that the text is never placed upside down. This is the default.</para>
-		/// <para>Align top of text uphill—The annotation will be aligned to the contour elevations so that the top of the text is always placed uphill. This option allows the annotation to be placed upside down.</para>
-		/// <para>Align top of text downhill—The annotation will be aligned to the contour elevations so that the top of the text is always placed downhill. This option allows the annotation to be placed upside down.</para>
+		/// <para>指定注记将与等值线高程对齐的方法。 注记可以与等值线高程对齐，从而使文本的顶部始终朝上或朝下。 上述选项允许注记倒置。 等值线注记还可与页面对齐，从而确保文本不会倒置。</para>
+		/// <para>将文本顶部对齐到页面顶部—等值线注记将与页面对齐，从而确保文本不会倒置。 这是默认设置。</para>
+		/// <para>将文本顶部朝上对齐—等值线注记将与等值线高程对齐，从而使文本的顶部始终朝上。 该选项允许注记倒置。</para>
+		/// <para>将文本顶部朝下对齐—等值线注记将与等值线高程对齐，从而使文本的顶部始终朝下。 该选项允许注记倒置。</para>
 		/// <para><see cref="ContourAlignmentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -174,9 +175,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Enable Laddering</para>
-		/// <para>Specifies whether annotation will be placed in ladders. Placing annotation in ladders will place the text so it appears to step up and step down the contours in a straight path. These ladders will run from the top of a hill to the bottom, will not cross each other, will belong to a single slope, and will not cross any other slope.</para>
-		/// <para>Checked—Annotation will step up and down the contours in a straight path.</para>
-		/// <para>Unchecked—Annotation will not be placed up and down the contours in a straight path. This is the default.</para>
+		/// <para>指定是否以阶梯方式放置注记。 以阶梯方式放置注记将会使文本看起来像是沿着等值线的值递增或递减的方向排成一条笔直的线。 这些阶梯将按从山顶到山脚的形式排列、彼此不会交叉、同属于一个坡度且不会与任何其他坡度交叉。</para>
+		/// <para>选中 - 注记将会沿着等值线的值递增或递减的方向排成一条笔直的线。</para>
+		/// <para>未选中 - 注记将不会沿着等值线的值递增或递减的方向排成一条笔直的线。 这是默认设置。</para>
 		/// <para><see cref="EnableLadderingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -208,24 +209,24 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum ContourColorEnum 
 		{
 			/// <summary>
-			/// <para>Black—The output contour layer and annotation features will be drawn in black. This is the default.</para>
+			/// <para>黑色—输出等值线图层和注记要素将以黑色绘制。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("BLACK")]
-			[Description("Black")]
+			[Description("黑色")]
 			Black,
 
 			/// <summary>
-			/// <para>Brown—The output contour layer and annotation features will be drawn in brown.</para>
+			/// <para>褐色—输出等值线图层和注记要素将以褐色绘制。</para>
 			/// </summary>
 			[GPValue("BROWN")]
-			[Description("Brown")]
+			[Description("褐色")]
 			Brown,
 
 			/// <summary>
-			/// <para>Blue—The output contour layer and annotation features will be drawn in blue.</para>
+			/// <para>蓝色—输出等值线图层和注记要素将以蓝色绘制。</para>
 			/// </summary>
 			[GPValue("BLUE")]
-			[Description("Blue")]
+			[Description("蓝色")]
 			Blue,
 
 		}
@@ -236,24 +237,24 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum ContourAlignmentEnum 
 		{
 			/// <summary>
-			/// <para></para>
+			/// <para>将文本顶部对齐到页面顶部—等值线注记将与页面对齐，从而确保文本不会倒置。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("PAGE")]
-			[Description("Align top of text  to top of page")]
+			[Description("将文本顶部对齐到页面顶部")]
 			Align_top_of_text__to_top_of_page,
 
 			/// <summary>
-			/// <para>Align top of text uphill—The annotation will be aligned to the contour elevations so that the top of the text is always placed uphill. This option allows the annotation to be placed upside down.</para>
+			/// <para>将文本顶部朝上对齐—等值线注记将与等值线高程对齐，从而使文本的顶部始终朝上。 该选项允许注记倒置。</para>
 			/// </summary>
 			[GPValue("UPHILL")]
-			[Description("Align top of text uphill")]
+			[Description("将文本顶部朝上对齐")]
 			Align_top_of_text_uphill,
 
 			/// <summary>
-			/// <para>Align top of text downhill—The annotation will be aligned to the contour elevations so that the top of the text is always placed downhill. This option allows the annotation to be placed upside down.</para>
+			/// <para>将文本顶部朝下对齐—等值线注记将与等值线高程对齐，从而使文本的顶部始终朝下。 该选项允许注记倒置。</para>
 			/// </summary>
 			[GPValue("DOWNHILL")]
-			[Description("Align top of text downhill")]
+			[Description("将文本顶部朝下对齐")]
 			Align_top_of_text_downhill,
 
 		}
@@ -264,14 +265,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum EnableLadderingEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Annotation will step up and down the contours in a straight path.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ENABLE_LADDERING")]
 			ENABLE_LADDERING,
 
 			/// <summary>
-			/// <para>Unchecked—Annotation will not be placed up and down the contours in a straight path. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_ENABLE_LADDERING")]

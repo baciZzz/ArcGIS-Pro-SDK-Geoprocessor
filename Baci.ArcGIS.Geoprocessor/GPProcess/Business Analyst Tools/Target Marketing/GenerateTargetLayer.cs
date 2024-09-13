@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Target Layer</para>
+	/// <para>Generate Target Layer</para>
 	/// <para>Creates a layer that identifies geographies that contain selected segments and geographies that do not contain selected segments.</para>
 	/// </summary>
 	public class GenerateTargetLayer : AbstractGPProcess

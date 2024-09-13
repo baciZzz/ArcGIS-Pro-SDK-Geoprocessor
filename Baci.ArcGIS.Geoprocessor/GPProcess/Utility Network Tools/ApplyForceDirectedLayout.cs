@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Apply Force Directed Layout</para>
+	/// <para>Apply Force Directed Layout</para>
 	/// <para>Apply the force directed layout to a diagram</para>
 	/// </summary>
 	[Obsolete()]

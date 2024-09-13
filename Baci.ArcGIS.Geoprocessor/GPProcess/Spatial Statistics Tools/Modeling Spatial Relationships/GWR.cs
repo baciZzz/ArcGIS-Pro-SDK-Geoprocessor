@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Geographically Weighted Regression (GWR)</para>
-	/// <para>Performs Geographically Weighted Regression (GWR), which is a local form of linear regression that is used to model spatially varying relationships.</para>
+	/// <para>地理加权回归 (GWR)</para>
+	/// <para>执行“地理加权回归 (GWR)”，这是一种用于建模空间变化关系的线性回归的局部形式。</para>
 	/// </summary>
 	public class GWR : AbstractGPProcess
 	{
@@ -20,41 +21,41 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The feature class containing the dependent and explanatory variables.</para>
+		/// <para>包含因变量和解释变量的要素类。</para>
 		/// </param>
 		/// <param name="DependentVariable">
 		/// <para>Dependent Variable</para>
-		/// <para>The numeric field containing the observed values that will be modeled.</para>
+		/// <para>包含将进行建模的观测值的数值字段。</para>
 		/// </param>
 		/// <param name="ModelType">
 		/// <para>Model Type</para>
-		/// <para>Specifies the type of data that will be modeled.</para>
-		/// <para>Continuous (Gaussian)— The Dependent Variable value is continuous. The Gaussian model will be used, and the tool will perform ordinary least squares regression.</para>
-		/// <para>Binary (Logistic)— The Dependent Variable value represents presence or absence. This can be either conventional 1s and 0s or continuous data that has been coded based on a threshold value. The Logistic regression model will be used.</para>
-		/// <para>Count (Poisson)—The Dependent Variable value is discrete and represents events, such as crime counts, disease incidents, or traffic accidents. The Poisson regression model will be used.</para>
+		/// <para>用于指定将进行建模的数据类型。</para>
+		/// <para>连续（高斯）— 因变量值是连续的。将使用高斯模型，并且工具将执行普通最小二乘法回归。</para>
+		/// <para>二进制（逻辑）— 因变量值表示存在或不存在。这可以是常规的 1 和 0，或者是基于阈值进行编码的连续数据。将使用逻辑回归模型。</para>
+		/// <para>计数（泊松）—因变量值是离散的，并且可以表示事件，例如犯罪计数、疾病事件或交通事故。将使用泊松回归模型。</para>
 		/// <para><see cref="ModelTypeEnum"/></para>
 		/// </param>
 		/// <param name="ExplanatoryVariables">
 		/// <para>Explanatory Variable(s)</para>
-		/// <para>A list of fields representing independent explanatory variables in the regression model.</para>
+		/// <para>表示回归模型中的解释变量或自变量的字段列表。</para>
 		/// </param>
 		/// <param name="OutputFeatures">
 		/// <para>Output Features</para>
-		/// <para>The new feature class containing the dependent variable estimates and residuals.</para>
+		/// <para>包含因变量的估计数和残差的新要素类。</para>
 		/// </param>
 		/// <param name="NeighborhoodType">
 		/// <para>Neighborhood Type</para>
-		/// <para>Specifies whether the neighborhood used is constructed as a fixed distance or allowed to vary in spatial extent depending on the density of the features.</para>
-		/// <para>Number of neighbors— The neighborhood size is a function of a specified number of neighbors included in calculations for each feature. Where features are dense, the spatial extent of the neighborhood is smaller; where features are sparse, the spatial extent of the neighborhood is larger.</para>
-		/// <para>Distance band—The neighborhood size is a constant or fixed distance for each feature.</para>
+		/// <para>指定是将使用的邻域构造为固定距离，还是允许根据要素的密度在空间范围内变化。</para>
+		/// <para>相邻要素的数目— 邻域大小是每个要素的计算中包括的指定相邻要素数目的函数。在要素密集的位置，邻域的空间范围较小；在要素稀疏的位置，邻域的空间范围较大。</para>
+		/// <para>距离范围—邻域大小是每个要素的恒定或固定距离。</para>
 		/// <para><see cref="NeighborhoodTypeEnum"/></para>
 		/// </param>
 		/// <param name="NeighborhoodSelectionMethod">
 		/// <para>Neighborhood Selection Method</para>
-		/// <para>Specifies how the neighborhood size will be determined. The neighborhood selected with the Golden search and Manual intervals options is based on minimizing the AICc value.</para>
-		/// <para>Golden search—The tool will identify an optimal distance or number of neighbors based on the characteristics of the data using the golden section search method.</para>
-		/// <para>Manual intervals— The neighborhoods tested will be defined by the values specified in the Minimum Number of Neighbors and Number of Neighbors Increment parameters when Number of neighbors is chosen for the Neighborhood Type parameter, or the Minimum Search Distance and Search Distance Increment parameters when Distance band is chosen for the Neighborhood Type parameter, as well as the Number of Increments parameter.</para>
-		/// <para>User defined— The neighborhood size will be specified by either the Number of Neighbors or Distance Band parameter.</para>
+		/// <para>指定将如何确定邻域大小。使用黄金搜索和手动间隔选项选择的邻域基于最小化 AICc 值。</para>
+		/// <para>黄金搜索—工具将使用黄金分割搜索方法，基于数据的特征确定最佳距离或相邻要素数。</para>
+		/// <para>手动间隔— 测试邻域将由最小相邻要素的数目和相邻要素的数目增量参数（如果将邻域类型参数设置为相邻要素的数目）或者最小搜索距离和搜索距离增量参数（如果将邻域类型参数设置为距离范围）以及增量数参数中指定的值定义。</para>
+		/// <para>用户定义— 邻域大小将由相邻要素的数目或距离范围参数指定。</para>
 		/// <para><see cref="NeighborhoodSelectionMethodEnum"/></para>
 		/// </param>
 		public GWR(object InFeatures, object DependentVariable, object ModelType, object ExplanatoryVariables, object OutputFeatures, object NeighborhoodType, object NeighborhoodSelectionMethod)
@@ -69,9 +70,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Geographically Weighted Regression (GWR)</para>
+		/// <para>Tool Display Name : 地理加权回归 (GWR)</para>
 		/// </summary>
-		public override string DisplayName() => "Geographically Weighted Regression (GWR)";
+		public override string DisplayName() => "地理加权回归 (GWR)";
 
 		/// <summary>
 		/// <para>Tool Name : GWR</para>
@@ -105,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The feature class containing the dependent and explanatory variables.</para>
+		/// <para>包含因变量和解释变量的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Dependent Variable</para>
-		/// <para>The numeric field containing the observed values that will be modeled.</para>
+		/// <para>包含将进行建模的观测值的数值字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -126,10 +127,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Model Type</para>
-		/// <para>Specifies the type of data that will be modeled.</para>
-		/// <para>Continuous (Gaussian)— The Dependent Variable value is continuous. The Gaussian model will be used, and the tool will perform ordinary least squares regression.</para>
-		/// <para>Binary (Logistic)— The Dependent Variable value represents presence or absence. This can be either conventional 1s and 0s or continuous data that has been coded based on a threshold value. The Logistic regression model will be used.</para>
-		/// <para>Count (Poisson)—The Dependent Variable value is discrete and represents events, such as crime counts, disease incidents, or traffic accidents. The Poisson regression model will be used.</para>
+		/// <para>用于指定将进行建模的数据类型。</para>
+		/// <para>连续（高斯）— 因变量值是连续的。将使用高斯模型，并且工具将执行普通最小二乘法回归。</para>
+		/// <para>二进制（逻辑）— 因变量值表示存在或不存在。这可以是常规的 1 和 0，或者是基于阈值进行编码的连续数据。将使用逻辑回归模型。</para>
+		/// <para>计数（泊松）—因变量值是离散的，并且可以表示事件，例如犯罪计数、疾病事件或交通事故。将使用泊松回归模型。</para>
 		/// <para><see cref="ModelTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -139,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Explanatory Variable(s)</para>
-		/// <para>A list of fields representing independent explanatory variables in the regression model.</para>
+		/// <para>表示回归模型中的解释变量或自变量的字段列表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -149,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>The new feature class containing the dependent variable estimates and residuals.</para>
+		/// <para>包含因变量的估计数和残差的新要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -157,9 +158,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Neighborhood Type</para>
-		/// <para>Specifies whether the neighborhood used is constructed as a fixed distance or allowed to vary in spatial extent depending on the density of the features.</para>
-		/// <para>Number of neighbors— The neighborhood size is a function of a specified number of neighbors included in calculations for each feature. Where features are dense, the spatial extent of the neighborhood is smaller; where features are sparse, the spatial extent of the neighborhood is larger.</para>
-		/// <para>Distance band—The neighborhood size is a constant or fixed distance for each feature.</para>
+		/// <para>指定是将使用的邻域构造为固定距离，还是允许根据要素的密度在空间范围内变化。</para>
+		/// <para>相邻要素的数目— 邻域大小是每个要素的计算中包括的指定相邻要素数目的函数。在要素密集的位置，邻域的空间范围较小；在要素稀疏的位置，邻域的空间范围较大。</para>
+		/// <para>距离范围—邻域大小是每个要素的恒定或固定距离。</para>
 		/// <para><see cref="NeighborhoodTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -169,10 +170,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Neighborhood Selection Method</para>
-		/// <para>Specifies how the neighborhood size will be determined. The neighborhood selected with the Golden search and Manual intervals options is based on minimizing the AICc value.</para>
-		/// <para>Golden search—The tool will identify an optimal distance or number of neighbors based on the characteristics of the data using the golden section search method.</para>
-		/// <para>Manual intervals— The neighborhoods tested will be defined by the values specified in the Minimum Number of Neighbors and Number of Neighbors Increment parameters when Number of neighbors is chosen for the Neighborhood Type parameter, or the Minimum Search Distance and Search Distance Increment parameters when Distance band is chosen for the Neighborhood Type parameter, as well as the Number of Increments parameter.</para>
-		/// <para>User defined— The neighborhood size will be specified by either the Number of Neighbors or Distance Band parameter.</para>
+		/// <para>指定将如何确定邻域大小。使用黄金搜索和手动间隔选项选择的邻域基于最小化 AICc 值。</para>
+		/// <para>黄金搜索—工具将使用黄金分割搜索方法，基于数据的特征确定最佳距离或相邻要素数。</para>
+		/// <para>手动间隔— 测试邻域将由最小相邻要素的数目和相邻要素的数目增量参数（如果将邻域类型参数设置为相邻要素的数目）或者最小搜索距离和搜索距离增量参数（如果将邻域类型参数设置为距离范围）以及增量数参数中指定的值定义。</para>
+		/// <para>用户定义— 邻域大小将由相邻要素的数目或距离范围参数指定。</para>
 		/// <para><see cref="NeighborhoodSelectionMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -182,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Minimum Number of Neighbors</para>
-		/// <para>The minimum number of neighbors each feature will include in its calculations. It is recommended that you use at least 30 neighbors.</para>
+		/// <para>每个要素的最小相邻要素的数目将包含在其计算中。建议至少使用 30 个相邻要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -191,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Maximum Number of Neighbors</para>
-		/// <para>The maximum number of neighbors (up to 1000) each feature will include in its calculations.</para>
+		/// <para>每个要素的最大相邻要素的数目（最多 1000 个）将包含在其计算中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -200,7 +201,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Minimum Search Distance</para>
-		/// <para>The minimum neighborhood search distance. It is recommended that you use a distance at which each feature has at least 30 neighbors.</para>
+		/// <para>最小邻域搜索距离。建议使用每个要素至少有 30 个相邻要素的距离。</para>
 		/// <para><see cref="MinimumSearchDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -210,7 +211,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Maximum Search Distance</para>
-		/// <para>The maximum neighborhood search distance. If a distance results in features with more than 1000 neighbors, the tool will use the first 1000 in calculations for the target feature.</para>
+		/// <para>最大邻域搜索距离。如果距离导致要素具有超过 1000 个相邻要素，则该工具将在目标要素的计算中使用前 1000 个相邻要素。</para>
 		/// <para><see cref="MaximumSearchDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -220,7 +221,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Neighbors Increment</para>
-		/// <para>The number of neighbors by which manual intervals will increase for each neighborhood test.</para>
+		/// <para>将针对每个邻域测试增加手动间隔的相邻要素的数目。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -229,7 +230,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Search Distance Increment</para>
-		/// <para>The distance by which manual intervals will increase for each neighborhood test.</para>
+		/// <para>将针对每个邻域测试增加手动间隔的距离。</para>
 		/// <para><see cref="SearchDistanceIncrementEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -239,7 +240,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Increments</para>
-		/// <para>The number of neighborhood sizes to test starting with the Minimum Number of Neighbors or Minimum Search Distance parameter.</para>
+		/// <para>要从最小相邻要素的数目或最小搜索距离参数开始测试的邻域大小的数量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -248,7 +249,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Neighbors</para>
-		/// <para>The closest number of neighbors (up to 1000) to consider for each feature. The number must be an integer between 2 and 1000.</para>
+		/// <para>将要考虑的各要素的最近相邻要素数目（最多 1000）。数量应该为介于 2 到 1000 之间的整数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -257,7 +258,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Distance Band</para>
-		/// <para>The spatial extent of the neighborhood.</para>
+		/// <para>邻域的空间范围。</para>
 		/// <para><see cref="DistanceBandEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -267,7 +268,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Prediction Locations</para>
-		/// <para>A feature class containing features representing locations where estimates will be computed. Each feature in this dataset should contain values for all the explanatory variables specified. The dependent variable for these features will be estimated using the model calibrated for the input feature class data. To be predicted, these feature locations should be within the same study area as the Input Features or be close (within the extent plus 15 percent).</para>
+		/// <para>一种要素类，包含表示将计算评估值的位置的要素。此数据集中的每个要素都应包含指定的所有解释变量的值。将使用针对输入要素类数据进行校准的模型来评估这些要素的因变量。需要预测的是，这些要素位置应该位于与输入要素相同的研究区域内，或接近该研究区域（位于 +15% 范围内）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -279,7 +280,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Explanatory Variables to Match</para>
-		/// <para>The explanatory variables from the Prediction Locations parameter that match corresponding explanatory variables from the Input Feature Class parameter.</para>
+		/// <para>预测位置参数中与输入要素类参数中的相应解释变量匹配的解释变量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -289,7 +290,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Predicted Features</para>
-		/// <para>The output feature class that will receive dependent variable estimates for each Prediction Location.</para>
+		/// <para>将接收每个预测位置的因变量估计数的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -298,9 +299,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Robust Prediction</para>
-		/// <para>Specifies the features that will be used in prediction calculations.</para>
-		/// <para>Checked—Features with values more than three standard deviations from the mean (value outliers) and features with weights of 0 (spatial outliers) will be excluded from prediction calculations but will receive predictions in the output feature class. This is the default.</para>
-		/// <para>Unchecked—All features will be used in prediction calculations.</para>
+		/// <para>用于指定将在预测计算中使用的要素。</para>
+		/// <para>选中 - 值高于平均值（异常值）3 个标准偏差的要素以及权重为 0（空间异常值）的要素将从预测计算中排除，但将在输出要素类中接收预测。这是默认设置。</para>
+		/// <para>未选中 - 将在预测计算中使用所有要素。</para>
 		/// <para><see cref="RobustPredictionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -311,9 +312,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Local Weighting Scheme</para>
-		/// <para>Specifies the kernel type that will be used to provide the spatial weighting in the model. The kernel defines how each feature is related to other features within its neighborhood.</para>
-		/// <para>Bisquare—A weight of 0 will be assigned to any feature outside the neighborhood specified. This is the default.</para>
-		/// <para>Gaussian—All features will receive weights, but weights become exponentially smaller the farther away they are from the target feature.</para>
+		/// <para>用于指定将用于在模型中提供空间权重的核类型。核将定义每个要素与其邻域内其他要素相关的方式。</para>
+		/// <para>双平方—权重 0 将会分配给指定邻域外的任何要素。这是默认设置。</para>
+		/// <para>高斯函数—所有要素都将获得权重，但是距离目标要素越远，则权重将以指数方式变小。</para>
 		/// <para><see cref="LocalWeightingSchemeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -324,7 +325,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Coefficient Raster Workspace</para>
-		/// <para>The workspace where the coefficient rasters will be created. When this workspace is provided, rasters are created for the intercept and every explanatory variable.</para>
+		/// <para>将创建系数栅格的工作空间。如果提供了此工作空间，则会为截距及各解释变量创建栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEWorkspace()]
@@ -355,24 +356,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum ModelTypeEnum 
 		{
 			/// <summary>
-			/// <para>Continuous (Gaussian)— The Dependent Variable value is continuous. The Gaussian model will be used, and the tool will perform ordinary least squares regression.</para>
+			/// <para>连续（高斯）— 因变量值是连续的。将使用高斯模型，并且工具将执行普通最小二乘法回归。</para>
 			/// </summary>
 			[GPValue("CONTINUOUS")]
-			[Description("Continuous (Gaussian)")]
+			[Description("连续（高斯）")]
 			CONTINUOUS,
 
 			/// <summary>
-			/// <para>Binary (Logistic)— The Dependent Variable value represents presence or absence. This can be either conventional 1s and 0s or continuous data that has been coded based on a threshold value. The Logistic regression model will be used.</para>
+			/// <para>二进制（逻辑）— 因变量值表示存在或不存在。这可以是常规的 1 和 0，或者是基于阈值进行编码的连续数据。将使用逻辑回归模型。</para>
 			/// </summary>
 			[GPValue("BINARY")]
-			[Description("Binary (Logistic)")]
+			[Description("二进制（逻辑）")]
 			BINARY,
 
 			/// <summary>
-			/// <para>Count (Poisson)—The Dependent Variable value is discrete and represents events, such as crime counts, disease incidents, or traffic accidents. The Poisson regression model will be used.</para>
+			/// <para>计数（泊松）—因变量值是离散的，并且可以表示事件，例如犯罪计数、疾病事件或交通事故。将使用泊松回归模型。</para>
 			/// </summary>
 			[GPValue("COUNT")]
-			[Description("Count (Poisson)")]
+			[Description("计数（泊松）")]
 			COUNT,
 
 		}
@@ -383,17 +384,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum NeighborhoodTypeEnum 
 		{
 			/// <summary>
-			/// <para>Number of neighbors— The neighborhood size is a function of a specified number of neighbors included in calculations for each feature. Where features are dense, the spatial extent of the neighborhood is smaller; where features are sparse, the spatial extent of the neighborhood is larger.</para>
+			/// <para>相邻要素的数目— 邻域大小是每个要素的计算中包括的指定相邻要素数目的函数。在要素密集的位置，邻域的空间范围较小；在要素稀疏的位置，邻域的空间范围较大。</para>
 			/// </summary>
 			[GPValue("NUMBER_OF_NEIGHBORS")]
-			[Description("Number of neighbors")]
+			[Description("相邻要素的数目")]
 			Number_of_neighbors,
 
 			/// <summary>
-			/// <para>Distance band—The neighborhood size is a constant or fixed distance for each feature.</para>
+			/// <para>距离范围—邻域大小是每个要素的恒定或固定距离。</para>
 			/// </summary>
 			[GPValue("DISTANCE_BAND")]
-			[Description("Distance band")]
+			[Description("距离范围")]
 			Distance_band,
 
 		}
@@ -404,24 +405,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum NeighborhoodSelectionMethodEnum 
 		{
 			/// <summary>
-			/// <para>Golden search—The tool will identify an optimal distance or number of neighbors based on the characteristics of the data using the golden section search method.</para>
+			/// <para>黄金搜索—工具将使用黄金分割搜索方法，基于数据的特征确定最佳距离或相邻要素数。</para>
 			/// </summary>
 			[GPValue("GOLDEN_SEARCH")]
-			[Description("Golden search")]
+			[Description("黄金搜索")]
 			Golden_search,
 
 			/// <summary>
-			/// <para>Manual intervals— The neighborhoods tested will be defined by the values specified in the Minimum Number of Neighbors and Number of Neighbors Increment parameters when Number of neighbors is chosen for the Neighborhood Type parameter, or the Minimum Search Distance and Search Distance Increment parameters when Distance band is chosen for the Neighborhood Type parameter, as well as the Number of Increments parameter.</para>
+			/// <para>手动间隔— 测试邻域将由最小相邻要素的数目和相邻要素的数目增量参数（如果将邻域类型参数设置为相邻要素的数目）或者最小搜索距离和搜索距离增量参数（如果将邻域类型参数设置为距离范围）以及增量数参数中指定的值定义。</para>
 			/// </summary>
 			[GPValue("MANUAL_INTERVALS")]
-			[Description("Manual intervals")]
+			[Description("手动间隔")]
 			Manual_intervals,
 
 			/// <summary>
-			/// <para>User defined— The neighborhood size will be specified by either the Number of Neighbors or Distance Band parameter.</para>
+			/// <para>用户定义— 邻域大小将由相邻要素的数目或距离范围参数指定。</para>
 			/// </summary>
 			[GPValue("USER_DEFINED")]
-			[Description("User defined")]
+			[Description("用户定义")]
 			User_defined,
 
 		}
@@ -572,14 +573,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum RobustPredictionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Features with values more than three standard deviations from the mean (value outliers) and features with weights of 0 (spatial outliers) will be excluded from prediction calculations but will receive predictions in the output feature class. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ROBUST")]
 			ROBUST,
 
 			/// <summary>
-			/// <para>Unchecked—All features will be used in prediction calculations.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NON_ROBUST")]
@@ -593,17 +594,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum LocalWeightingSchemeEnum 
 		{
 			/// <summary>
-			/// <para>Gaussian—All features will receive weights, but weights become exponentially smaller the farther away they are from the target feature.</para>
+			/// <para>高斯函数—所有要素都将获得权重，但是距离目标要素越远，则权重将以指数方式变小。</para>
 			/// </summary>
 			[GPValue("GAUSSIAN")]
-			[Description("Gaussian")]
+			[Description("高斯函数")]
 			Gaussian,
 
 			/// <summary>
-			/// <para>Bisquare—A weight of 0 will be assigned to any feature outside the neighborhood specified. This is the default.</para>
+			/// <para>双平方—权重 0 将会分配给指定邻域外的任何要素。这是默认设置。</para>
 			/// </summary>
 			[GPValue("BISQUARE")]
-			[Description("Bisquare")]
+			[Description("双平方")]
 			Bisquare,
 
 		}

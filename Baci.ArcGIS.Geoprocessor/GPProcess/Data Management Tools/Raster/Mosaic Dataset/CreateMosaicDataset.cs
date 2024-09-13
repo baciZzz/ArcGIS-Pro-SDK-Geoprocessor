@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Mosaic Dataset</para>
-	/// <para>Creates  an empty mosaic dataset in a geodatabase.</para>
+	/// <para>创建镶嵌数据集</para>
+	/// <para>在地理数据库中创建一个空的镶嵌数据集。</para>
 	/// </summary>
 	public class CreateMosaicDataset : AbstractGPProcess
 	{
@@ -20,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Output Location</para>
-		/// <para>The path to the geodatabase.</para>
-		/// <para>Starting at ArcGIS Pro 1.4, mosaic datasets created in Oracle, PostgreSQL, or SQL Server geodatabases will be created with the new RASTER_STORAGE keyword called RASTERBLOB. The RASTERBLOB keyword implements an efficient transfer of the mosaic dataset catalog items to the DBMS.</para>
-		/// <para>Mosaic datasets created with RASTERBLOB cannot be opened with earlier versions of the software. If you want to create mosaic datasets that are backward compatible with earlier versions, you will need to alter the configuration keyword for RASTER_STORAGE to one of the following compatible keywords:</para>
-		/// <para>BINARY for PostgreSQL and SQL Server</para>
-		/// <para>BLOB for Oracle.</para>
+		/// <para>地理数据库的路径。</para>
+		/// <para>自 ArcGIS Pro 1.4 版本开始，在 Oracle、PostgreSQL 或 SQL Server 地理数据库中创建的镶嵌数据集都将使用名为 RASTERBLOB 的新 RASTER_STORAGE 关键字进行创建。 RASTERBLOB 关键字可以有效地将镶嵌数据集目录项转移至 DBMS。</para>
+		/// <para>软件的早期版本无法打开利用 RASTERBLOB 创建的镶嵌数据集。 如果您要创建与早期版本兼容的镶嵌数据集，您需要为 RASTER_STORAGE 更改配置关键字，使其变为以下任一兼容的关键字：</para>
+		/// <para>PostgreSQL 和 SQL Server 为 BINARY</para>
+		/// <para>Oracle 为 BLOB。</para>
 		/// </param>
 		/// <param name="InMosaicdatasetName">
 		/// <para>Mosaic Dataset Name</para>
-		/// <para>The name of the mosaic dataset you are creating.</para>
+		/// <para>您正在创建的镶嵌数据集的名称。</para>
 		/// </param>
 		/// <param name="CoordinateSystem">
 		/// <para>Coordinate System</para>
-		/// <para>The coordinate system for all of the items in the mosaic dataset.</para>
+		/// <para>用于镶嵌数据集中所有项目的坐标系。</para>
 		/// </param>
 		public CreateMosaicDataset(object InWorkspace, object InMosaicdatasetName, object CoordinateSystem)
 		{
@@ -42,9 +43,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Mosaic Dataset</para>
+		/// <para>Tool Display Name : 创建镶嵌数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Create Mosaic Dataset";
+		public override string DisplayName() => "创建镶嵌数据集";
 
 		/// <summary>
 		/// <para>Tool Name : CreateMosaicDataset</para>
@@ -78,11 +79,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Location</para>
-		/// <para>The path to the geodatabase.</para>
-		/// <para>Starting at ArcGIS Pro 1.4, mosaic datasets created in Oracle, PostgreSQL, or SQL Server geodatabases will be created with the new RASTER_STORAGE keyword called RASTERBLOB. The RASTERBLOB keyword implements an efficient transfer of the mosaic dataset catalog items to the DBMS.</para>
-		/// <para>Mosaic datasets created with RASTERBLOB cannot be opened with earlier versions of the software. If you want to create mosaic datasets that are backward compatible with earlier versions, you will need to alter the configuration keyword for RASTER_STORAGE to one of the following compatible keywords:</para>
-		/// <para>BINARY for PostgreSQL and SQL Server</para>
-		/// <para>BLOB for Oracle.</para>
+		/// <para>地理数据库的路径。</para>
+		/// <para>自 ArcGIS Pro 1.4 版本开始，在 Oracle、PostgreSQL 或 SQL Server 地理数据库中创建的镶嵌数据集都将使用名为 RASTERBLOB 的新 RASTER_STORAGE 关键字进行创建。 RASTERBLOB 关键字可以有效地将镶嵌数据集目录项转移至 DBMS。</para>
+		/// <para>软件的早期版本无法打开利用 RASTERBLOB 创建的镶嵌数据集。 如果您要创建与早期版本兼容的镶嵌数据集，您需要为 RASTER_STORAGE 更改配置关键字，使其变为以下任一兼容的关键字：</para>
+		/// <para>PostgreSQL 和 SQL Server 为 BINARY</para>
+		/// <para>Oracle 为 BLOB。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset Name</para>
-		/// <para>The name of the mosaic dataset you are creating.</para>
+		/// <para>您正在创建的镶嵌数据集的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>The coordinate system for all of the items in the mosaic dataset.</para>
+		/// <para>用于镶嵌数据集中所有项目的坐标系。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPCoordinateSystem()]
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Number of Bands</para>
-		/// <para>The number of bands the raster datasets will have in the mosaic dataset.</para>
+		/// <para>镶嵌数据集中栅格数据集的波段数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -117,18 +118,18 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pixel Type</para>
-		/// <para>Set the bit depth, or radiometric resolution, of the mosaic dataset. If not defined, it will be taken from the first raster dataset.</para>
-		/// <para>1 bit—A 1-bit unsigned integer. The values can be 0 or 1.</para>
-		/// <para>2 bit—A 2-bit unsigned integer. The values supported can be from 0 to 3.</para>
-		/// <para>4 bit—A 4-bit unsigned integer. The values supported can be from 0 to 15.</para>
-		/// <para>8-bit unsigned—An unsigned 8-bit data type. The values supported can be from 0 to 255.</para>
-		/// <para>8-bit signed—A signed 8-bit data type. The values supported can be from -128 to 127.</para>
-		/// <para>16-bit unsigned—A 16-bit unsigned data type. The values can range from 0 to 65,535.</para>
-		/// <para>16-bit signed—A 16-bit signed data type. The values can range from -32,768 to 32,767.</para>
-		/// <para>32-bit unsigned—A 32-bit unsigned data type. The values can range from 0 to 4,294,967,295.</para>
-		/// <para>32-bit signed—A 32-bit signed data type. The values can range from -2,147,483,648 to 2,147,483,647.</para>
-		/// <para>32-bit floating point—A 32-bit data type supporting decimals.</para>
-		/// <para>64 bit—A 64-bit data type supporting decimals.</para>
+		/// <para>设置镶嵌数据集的位深度或辐射分辨率。如果未定义，此值将从第一个栅格数据集获取。</para>
+		/// <para>1 位—1 位无符号整数。 值可以为 0 或 1。</para>
+		/// <para>2 位—2 位无符号整数。 支持的值为 0 到 3。</para>
+		/// <para>4 位—4 位无符号整数。 支持的值为 0 到 15。</para>
+		/// <para>8 位无符号—8 位无符号数据类型。 支持的值为 0 到 255。</para>
+		/// <para>8 位有符号—8 位有符号数据类型。 支持的值为 -128 到 127。</para>
+		/// <para>16 位无符号—16 位无符号数据类型。 取值范围为 0 到 65,535。</para>
+		/// <para>16 位有符号—16 位有符号数据类型。 取值范围为 -32,768 到 32,767。</para>
+		/// <para>32 位无符号—32 位无符号数据类型。 取值范围为 0 到 4,294,967,295。</para>
+		/// <para>32 位有符号—32 位有符号数据类型。 取值范围为 -2,147,483,648 到 2,147,483,647。</para>
+		/// <para>32 位浮点型—支持小数的 32 位数据类型。</para>
+		/// <para>64 位—支持小数的 64 位数据类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -138,47 +139,47 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Product Definition</para>
-		/// <para>Select a template that is either specific to the type of imagery you are working with or is generic. The generic options include the standard raster data types as follows:</para>
-		/// <para>None—No band ordering is specified for the mosaic dataset. This is the default.</para>
-		/// <para>Natural color—Create a 3-band mosaic dataset, with red, green, and blue wavelength ranges. This is designed for natural color imagery.</para>
-		/// <para>Natural color and infrared—Create a 4-band mosaic dataset, with red, green, blue, and near infrared wavelength ranges.</para>
-		/// <para>U and V—Create a mosaic dataset displaying two variables.</para>
-		/// <para>Magnitude and Direction—Create a mosaic dataset displaying magnitude and direction.</para>
-		/// <para>Color infrared—Create a 3-band mosaic dataset, with near infrared, red, and green wavelength ranges.</para>
-		/// <para>DMCii—Create a 3-band mosaic dataset using the DMCii wavelength ranges.</para>
-		/// <para>Deimos-2—Create a 4-band mosaic dataset using the Deimos-2 wavelength ranges.</para>
-		/// <para>DubaiSat-2—Create a 4-band mosaic dataset using the DubaiSat-2 wavelength ranges.</para>
-		/// <para>FORMOSAT-2—Create a 4-band mosaic dataset using the FORMOSAT-2 wavelength ranges.</para>
-		/// <para>GeoEye-1—Create a 4-band mosaic dataset using the GeoEye-1 wavelength ranges.</para>
-		/// <para>GF-1 Panchromatic/Multispectral (PMS)—Create a 4-band mosaic dataset using the Gaofen-1 Panchromatic Multispectral Sensor wavelength ranges.</para>
-		/// <para>GF-1 Wide Field of View (WFV)—Create a 4-band mosaic dataset using the Gaofen-1 Wide Field of View Sensor wavelength ranges.</para>
-		/// <para>GF-2 Panchromatic/Multispectral (PMS)—Create a 4-band mosaic dataset using the Gaofen-2 Panchromatic Multispectral Sensor wavelength ranges.</para>
-		/// <para>GF-4 Panchromatic/Multispectral Imagery (PMI)—Create a 4-band mosaic dataset using the Gaofen-4 panchromatic and multispectral wavelength ranges.</para>
-		/// <para>HJ 1A/1B Multispectral/Hyperspectral—Create a 4-band mosaic dataset using the Huan Jing-1 CCD Multispectral or Hyperspectral Sensor wavelength ranges.</para>
-		/// <para>IKONOS—Create a 4-band mosaic dataset using the IKONOS wavelength ranges.</para>
-		/// <para>Jilin-1—Create a 3-band mosaic dataset using the Jilin-1 wavelength ranges.</para>
-		/// <para>KOMPSAT-2—Create a 4-band mosaic dataset using the KOMPSAT-2 wavelength ranges.</para>
-		/// <para>KOMPSAT-3—Create a 4-band mosaic dataset using the KOMPSAT-3 wavelength ranges.</para>
-		/// <para>Landsat TM and ETM+—Create a 6-band mosaic dataset using the Landsat 5 and 7 wavelength ranges from the TM and ETM+ sensors.</para>
-		/// <para>Landsat OLI—Create an 8-band mosaic dataset using the LANDSAT 8 wavelength ranges.</para>
-		/// <para>Landsat MSS—Create a 4-band mosaic dataset using the Landsat wavelength ranges from the MSS sensor.</para>
-		/// <para>PlanetScope—Create a mosaic dataset using the PlanetScope wavelength ranges.</para>
-		/// <para>Pleiades 1—Create a 4-band mosaic dataset using the PLEIADES-1 wavelength ranges.</para>
-		/// <para>QuickBird—Create a 4-band mosaic dataset using the QuickBird wavelength ranges.</para>
-		/// <para>RapidEye—Create a 5-band mosaic dataset using the RapidEye wavelength ranges.</para>
-		/// <para>Sentinel 2 MSI—Create a 13-band mosaic dataset using the Sentinel 2 MSI wavelength ranges.</para>
-		/// <para>SkySat-C—Create a 4-band mosaic dataset using the SkySat-C MSI wavelength ranges.</para>
-		/// <para>Spot 5—Create a 4-band mosaic dataset using the SPOT-5 wavelength ranges.</para>
-		/// <para>Spot 6—Create a 4-band mosaic dataset using the SPOT-6 wavelength ranges.</para>
-		/// <para>Spot 7—Create a 4-band mosaic dataset using the SPOT-7 wavelength ranges.</para>
-		/// <para>TH-01—Create a 4-band mosaic dataset using the Tian Hui-1 wavelength ranges.</para>
-		/// <para>WorldView 2—Create an 8-band mosaic dataset using the WorldView-2 wavelength ranges.</para>
-		/// <para>WorldView 3—Create an 8-band mosaic dataset using the WorldView-3 wavelength ranges.</para>
-		/// <para>WorldView 4—Create a 4-band mosaic dataset using the WorldView-4 wavelength ranges.</para>
-		/// <para>ZY-1 Panchromatic/Multispectral—Create a 3-band mosaic dataset using the ZiYuan-1 panchromatic/multispectral wavelength ranges.</para>
-		/// <para>ZY-3 CRESDA—Create a 4-band mosaic dataset using the ZiYuan-3 CRESDA wavelength ranges.</para>
-		/// <para>ZY3 SASMAC—Create a 4-band mosaic dataset using the ZiYuan-3 SASMAC wavelength ranges.</para>
-		/// <para>Custom—Define the number of bands and the average wavelength for each band.</para>
+		/// <para>选择您正在使用的影像类型的特定模板，或选择通用模板。通用选项包含以下标准栅格数据类型：</para>
+		/// <para>无—不为镶嵌数据集指定波段顺序。 这是默认设置。</para>
+		/// <para>真彩色—使用红色、绿色和蓝色波长范围创建 3 波段镶嵌数据集。 该选项适用于自然色影像。</para>
+		/// <para>自然色和红外—使用红色、绿色、蓝色和近红外波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>U 和 V—创建显示两个变量的镶嵌数据集。</para>
+		/// <para>量级和方向—创建显示量级和方向的镶嵌数据集。</para>
+		/// <para>彩色红外—使用近红外、红色和绿色波长范围创建 3 波段镶嵌数据集。</para>
+		/// <para>DMCii—使用 DMCii 波长范围创建 3 波段镶嵌数据集。</para>
+		/// <para>Deimos-2—使用 Deimos-2 波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>DubaiSat-2—使用 DubaiSat-2 波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>FORMOSAT-2—使用 FORMOSAT-2 波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>GeoEye-1—使用 GeoEye-1 波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>GF-1 全色/多光谱 (PMS)—使用 Gaofen-1 全色多光谱传感器波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>GF-1 宽视域 (WFV)—使用 Gaofen-1 宽视域传感器波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>GF-2 全色/多光谱 (PMS)—使用 Gaofen-2 全色多光谱传感器波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>GF-4 全色或多光谱影像 (PMI)—使用 Gaofen-4 全色和多光谱波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>HJ 1A 或 1B 多光谱或高光谱—使用 Huan Jing-1 CCD 多光谱或高光谱传感器波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>IKONOS—使用 IKONOS 波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>Jilin-1—使用 Jilin-1 波长范围创建 3 波段镶嵌数据集。</para>
+		/// <para>KOMPSAT-2—使用 KOMPSAT-2 波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>KOMPSAT-3—使用 KOMPSAT-3 波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>Landsat TM 和 ETM+—使用 Landsat 5 和 7 的 TM 和 ETM+ 传感器的波长范围创建 6 波段镶嵌数据集。</para>
+		/// <para>Landsat OLI—使用 LANDSAT 8 波长范围创建 8 波段镶嵌数据集。</para>
+		/// <para>Landsat MSS—使用 MSS 传感器的 Landsat 波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>PlanetScope—使用 PlanetScope 波长范围创建镶嵌数据集。</para>
+		/// <para>Pleiades 1—使用 PLEIADES-1 波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>QuickBird—使用 QuickBird 波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>RapidEye—使用 RapidEye 波长范围创建 5 波段镶嵌数据集。</para>
+		/// <para>Sentinel 2 MSI—使用 Sentinel 2 MSI 波长范围创建 13 波段镶嵌数据集。</para>
+		/// <para>SkySat-C—使用 SkySat-C MSI 波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>Spot 5—使用 SPOT-5 波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>Spot 6—使用 SPOT-6 波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>Spot 7—使用 SPOT-7 波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>TH-01—使用 Tian Hui-1 波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>WorldView 2—使用 WorldView-2 波长范围创建 8 波段镶嵌数据集。</para>
+		/// <para>WorldView 3—使用 WorldView-3 波长范围创建 8 波段镶嵌数据集。</para>
+		/// <para>WorldView 4—使用 WorldView-4 波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>ZY-1 全色/多光谱—使用 ZiYuan-1 全色或多光谱波长范围创建 3 波段镶嵌数据集。</para>
+		/// <para>ZY-3 CRESDA—使用 ZiYuan-3 CRESDA 波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>ZY3 SASMAC—使用 ZiYuan-3 SASMAC 波长范围创建 4 波段镶嵌数据集。</para>
+		/// <para>自定义—定义波段数和每个波段的平均波长。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -187,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Product Band Definitions</para>
-		/// <para>Edit Product Definition by adjusting the wavelength ranges, changing the band order, and adding new bands.</para>
+		/// <para>通过调整波长范围、更改波段顺序和添加新波段来编辑产品定义。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Market Area Segmentation Profile</para>
+	/// <para>Generate Market Area Segmentation Profile</para>
 	/// <para>Creates a segmentation profile by summarizing segments from standard geography boundaries within the input area.</para>
 	/// </summary>
 	public class GenerateMarketAreaProfile : AbstractGPProcess

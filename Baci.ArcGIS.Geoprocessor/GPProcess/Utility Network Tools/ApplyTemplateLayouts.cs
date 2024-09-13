@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Apply Template Layouts</para>
+	/// <para>Apply Template Layouts</para>
 	/// <para>Apply the preconfigured template layouts</para>
 	/// </summary>
 	[Obsolete()]

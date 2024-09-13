@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Generate Map Server Cache</para>
+	/// <para>Generate Map Server Cache</para>
 	/// <para>Generates pre-rendered tile cache for the map server.</para>
 	/// </summary>
 	[Obsolete()]

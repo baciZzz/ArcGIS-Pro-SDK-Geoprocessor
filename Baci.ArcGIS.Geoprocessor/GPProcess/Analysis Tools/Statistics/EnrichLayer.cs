@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Enrich Layer</para>
+	/// <para>Enrich Layer</para>
 	/// <para>Enriches your data by adding demographic and landscape facts about the people and places that surround or are inside your data locations. The output is a duplicate of your input with new attribute fields added to the table.</para>
 	/// <para>This tool requires an ArcGIS Online organizational account and consumes credits.</para>
 	/// </summary>

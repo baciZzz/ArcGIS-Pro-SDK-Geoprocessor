@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Upgrade Scene Layer</para>
-	/// <para>Upgrades a scene layer package to the current I3S version in SLPK format or output to i3sREST format for use in ArcGIS Enterprise.</para>
+	/// <para>升级场景图层</para>
+	/// <para>用于将场景图层包升级为 SLPK 格式的当前 I3S 版本，或输出到 i3sREST 格式以用于 ArcGIS Enterprise。</para>
 	/// </summary>
 	public class UpgradeSceneLayer : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>The input scene layer package.</para>
+		/// <para>输入场景图层包。</para>
 		/// </param>
 		/// <param name="OutFolderPath">
 		/// <para>Output Folder</para>
-		/// <para>The location where the output scene layer package will be created, or the cloud connection file (.acs) to output to i3sREST.</para>
+		/// <para>将在其中创建输出场景图层包的位置，或要输出到 i3sREST 的云连接文件 (.acs)。</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Output Name</para>
-		/// <para>The name of the output scene layer.</para>
+		/// <para>输出场景图层名称。</para>
 		/// </param>
 		public UpgradeSceneLayer(object InDataset, object OutFolderPath, object OutName)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Upgrade Scene Layer</para>
+		/// <para>Tool Display Name : 升级场景图层</para>
 		/// </summary>
-		public override string DisplayName() => "Upgrade Scene Layer";
+		public override string DisplayName() => "升级场景图层";
 
 		/// <summary>
 		/// <para>Tool Name : UpgradeSceneLayer</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>The input scene layer package.</para>
+		/// <para>输入场景图层包。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Folder</para>
-		/// <para>The location where the output scene layer package will be created, or the cloud connection file (.acs) to output to i3sREST.</para>
+		/// <para>将在其中创建输出场景图层包的位置，或要输出到 i3sREST 的云连接文件 (.acs)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output scene layer.</para>
+		/// <para>输出场景图层名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Log File</para>
-		/// <para>The output log file that will summarize the results of the evaluation.</para>
+		/// <para>用于汇总评估结果的输出日志文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -110,9 +111,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Texture Optimization</para>
-		/// <para>Specifies the textures that will be optimized according to the target platform where the scene layer package is used. Desktop includes Windows, Linux, and Mac platforms.</para>
-		/// <para>Desktop—Texture formats will be optimized for use in desktop and web platforms. Texture formats will be JPEG and DXT. This is the default.</para>
-		/// <para>None—Textures formats will be optimized for use in a desktop platform. The texture format will be JPEG.</para>
+		/// <para>指定根据使用场景图层包的目标平台优化的纹理。 桌面平台包括 Windows、Linux 和 Mac 平台。</para>
+		/// <para>桌面—纹理格式将进行优化，可用于桌面和 web 平台。 纹理格式将为 JPEG 和 DXT。 这是默认设置。</para>
+		/// <para>无—纹理格式将进行优化，可用于桌面平台。 纹理格式将为 JPEG。</para>
 		/// <para><see cref="TextureOptimizationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,17 +129,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TextureOptimizationEnum 
 		{
 			/// <summary>
-			/// <para>Desktop—Texture formats will be optimized for use in desktop and web platforms. Texture formats will be JPEG and DXT. This is the default.</para>
+			/// <para>桌面—纹理格式将进行优化，可用于桌面和 web 平台。 纹理格式将为 JPEG 和 DXT。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("DESKTOP")]
-			[Description("Desktop")]
+			[Description("桌面")]
 			Desktop,
 
 			/// <summary>
-			/// <para>None—Textures formats will be optimized for use in a desktop platform. The texture format will be JPEG.</para>
+			/// <para>无—纹理格式将进行优化，可用于桌面平台。 纹理格式将为 JPEG。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 		}

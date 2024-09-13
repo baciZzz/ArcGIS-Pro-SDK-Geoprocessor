@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Remove Overlap (multiple)</para>
-	/// <para>Removes overlap between polygons contained in multiple input layers.</para>
+	/// <para>移除重叠（多个）</para>
+	/// <para>移除多个输入图层中包含的面之间的重叠。</para>
 	/// </summary>
 	public class RemoveOverlapMultiple : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input features containing the overlapping polygons.</para>
+		/// <para>包含重叠面的输入要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class containing the new polygon features.</para>
+		/// <para>包含新面要素的要素类。</para>
 		/// </param>
 		public RemoveOverlapMultiple(object InFeatures, object OutFeatureClass)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Remove Overlap (multiple)</para>
+		/// <para>Tool Display Name : 移除重叠（多个）</para>
 		/// </summary>
-		public override string DisplayName() => "Remove Overlap (multiple)";
+		public override string DisplayName() => "移除重叠（多个）";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveOverlapMultiple</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input features containing the overlapping polygons.</para>
+		/// <para>包含重叠面的输入要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class containing the new polygon features.</para>
+		/// <para>包含新面要素的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -87,10 +88,10 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>Specifies how the overlap between polygons will be removed.</para>
-		/// <para>Center Line—Overlap will be removed by creating a border that evenly distributes the area of intersection between polygons. This is the default.</para>
-		/// <para>Thiessen—Overlap will be removed using straight lines to divide the area of intersection.</para>
-		/// <para>Grid—Overlap will be removed by creating a grid of parallel lines used to define a natural division between polygons.</para>
+		/// <para>指定如何移除面之间的重叠。</para>
+		/// <para>中心线—将通过创建在面之间均匀分布相交区域的边界移除重叠。这是默认设置。</para>
+		/// <para>泰森多边形—重叠将通过使用直线划分相交区域进行移除。</para>
+		/// <para>Grid—将通过创建用于定义面之间的自然划分的平行线格网移除重叠。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -100,10 +101,10 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Attributes To Join</para>
-		/// <para>Specifies which attributes of input layers will be copied to the output.</para>
-		/// <para>All attributes—All attributes from the input features will be transferred to the output feature class. This is the default.</para>
-		/// <para>All attributes except feature IDs—All attributes from the input features, except the FID field, will be transferred to the output feature class.</para>
-		/// <para>Only feature IDs—Only the FID field from the input features will be transferred to the output feature class.</para>
+		/// <para>指定将复制到输出的输入图层的属性。</para>
+		/// <para>所有属性—输入要素的所有属性都将传递到输出要素类。这是默认设置。</para>
+		/// <para>除要素 ID 外的所有属性—输入要素的所有属性（FID 字段除外）都将传递到输出要素类。</para>
+		/// <para>仅要素 ID—仅输入要素的 FID 字段将传递到输出要素类。</para>
 		/// <para><see cref="JoinAttributesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,21 +129,21 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Center Line—Overlap will be removed by creating a border that evenly distributes the area of intersection between polygons. This is the default.</para>
+			/// <para>中心线—将通过创建在面之间均匀分布相交区域的边界移除重叠。这是默认设置。</para>
 			/// </summary>
 			[GPValue("CENTER_LINE")]
-			[Description("Center Line")]
+			[Description("中心线")]
 			Center_Line,
 
 			/// <summary>
-			/// <para>Thiessen—Overlap will be removed using straight lines to divide the area of intersection.</para>
+			/// <para>泰森多边形—重叠将通过使用直线划分相交区域进行移除。</para>
 			/// </summary>
 			[GPValue("THIESSEN")]
-			[Description("Thiessen")]
+			[Description("泰森多边形")]
 			Thiessen,
 
 			/// <summary>
-			/// <para>Grid—Overlap will be removed by creating a grid of parallel lines used to define a natural division between polygons.</para>
+			/// <para>Grid—将通过创建用于定义面之间的自然划分的平行线格网移除重叠。</para>
 			/// </summary>
 			[GPValue("GRID")]
 			[Description("Grid")]
@@ -156,24 +157,24 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum JoinAttributesEnum 
 		{
 			/// <summary>
-			/// <para>All attributes—All attributes from the input features will be transferred to the output feature class. This is the default.</para>
+			/// <para>所有属性—输入要素的所有属性都将传递到输出要素类。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All attributes")]
+			[Description("所有属性")]
 			All_attributes,
 
 			/// <summary>
-			/// <para>All attributes except feature IDs—All attributes from the input features, except the FID field, will be transferred to the output feature class.</para>
+			/// <para>除要素 ID 外的所有属性—输入要素的所有属性（FID 字段除外）都将传递到输出要素类。</para>
 			/// </summary>
 			[GPValue("NO_FID")]
-			[Description("All attributes except feature IDs")]
+			[Description("除要素 ID 外的所有属性")]
 			All_attributes_except_feature_IDs,
 
 			/// <summary>
-			/// <para>Only feature IDs—Only the FID field from the input features will be transferred to the output feature class.</para>
+			/// <para>仅要素 ID—仅输入要素的 FID 字段将传递到输出要素类。</para>
 			/// </summary>
 			[GPValue("ONLY_FID")]
-			[Description("Only feature IDs")]
+			[Description("仅要素 ID")]
 			Only_feature_IDs,
 
 		}

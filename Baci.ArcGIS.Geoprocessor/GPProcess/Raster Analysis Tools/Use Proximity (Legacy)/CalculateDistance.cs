@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Calculate Distance</para>
-	/// <para>Calculates the Euclidean distance from a single source or set of sources.</para>
+	/// <para>计算距离</para>
+	/// <para>计算距离 - 计算距离单个源或一组源的欧氏距离。</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.RasterAnalysisTools.DistanceAllocation"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.RasterAnalysisTools.DistanceAllocation))]
@@ -22,13 +23,13 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		/// <param name="Inputsourcerasterorfeatures">
 		/// <para>Input Source Raster or Features</para>
-		/// <para>The layer that defines the sources to calculate the distance to. The layer can be image service or feature service.</para>
-		/// <para>For image service, the input type can be integer or floating point.</para>
-		/// <para>For feature service, the input can be point, line or polygon.</para>
+		/// <para>此图层用于定义计算距离的源。此图层可以是影像服务或要素服务。</para>
+		/// <para>对于影像服务，输入类型可以为整型或浮点型。</para>
+		/// <para>对于要素服务，输入可以为点、线或面。</para>
 		/// </param>
 		/// <param name="Outputdistancename">
 		/// <para>Output Distance Name</para>
-		/// <para>The name of the output distance raster service.</para>
+		/// <para>输出距离栅格服务的名称。</para>
 		/// </param>
 		public CalculateDistance(object Inputsourcerasterorfeatures, object Outputdistancename)
 		{
@@ -37,9 +38,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Calculate Distance</para>
+		/// <para>Tool Display Name : 计算距离</para>
 		/// </summary>
-		public override string DisplayName() => "Calculate Distance";
+		public override string DisplayName() => "计算距离";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateDistance</para>
@@ -73,9 +74,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Source Raster or Features</para>
-		/// <para>The layer that defines the sources to calculate the distance to. The layer can be image service or feature service.</para>
-		/// <para>For image service, the input type can be integer or floating point.</para>
-		/// <para>For feature service, the input can be point, line or polygon.</para>
+		/// <para>此图层用于定义计算距离的源。此图层可以是影像服务或要素服务。</para>
+		/// <para>对于影像服务，输入类型可以为整型或浮点型。</para>
+		/// <para>对于要素服务，输入可以为点、线或面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Distance Name</para>
-		/// <para>The name of the output distance raster service.</para>
+		/// <para>输出距离栅格服务的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -92,9 +93,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Maximum Distance</para>
-		/// <para>The maximum distance to calculate out to.</para>
-		/// <para>The units can be Kilometers, Meters, Miles, Yards, or Feet.</para>
-		/// <para>The default units are Meters.</para>
+		/// <para>用于计算输出的最大距离。</para>
+		/// <para>单位可以是千米、米、英里、码或英尺。</para>
+		/// <para>默认单位是米。</para>
 		/// <para><see cref="MaximumdistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -104,9 +105,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Cell Size</para>
-		/// <para>Set the cell size and units for the output raster.</para>
-		/// <para>The units can be Kilometers, Meters, Miles, Yards, or Feet.</para>
-		/// <para>The default units are Meters.</para>
+		/// <para>设置输出栅格的像元大小和单位。</para>
+		/// <para>单位可以是千米、米、英里、码或英尺。</para>
+		/// <para>默认单位是米。</para>
 		/// <para><see cref="OutputcellsizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Direction Name</para>
-		/// <para>The name of the output direction raster service.</para>
+		/// <para>输出方向栅格服务的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -124,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Allocation Name</para>
-		/// <para>The name of the output allocation raster service.</para>
+		/// <para>输出分配栅格服务的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -132,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Allocation Field</para>
-		/// <para>A field on the source input that holds the values that define each source. It must be of type integer.</para>
+		/// <para>用于保存定义每个源的值的源输出上的字段。其类型必须为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -161,9 +162,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Distance Method</para>
-		/// <para>Specifies whether to calculate the distance using a planar (flat earth) or a geodesic (ellipsoid) method.</para>
-		/// <para>Planar—The distance calculation will be performed on a projected flat plane using a 2D Cartesian coordinate system. This is the default.</para>
-		/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Therefore, regardless of input or output projection, the results do not change.</para>
+		/// <para>指定是否使用平面（平地）或测地线（椭球）方法计算距离。</para>
+		/// <para>平面—将使用 2D 笛卡尔坐标系对投影平面执行距离计算。这是默认设置。</para>
+		/// <para>测地线—距离计算将在椭圆体上执行。因此，结果不会改变，不考虑输入或输出投影。</para>
 		/// <para><see cref="DistancemethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -173,8 +174,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Barrier Raster or Features</para>
-		/// <para>Dataset that defines the barriers.</para>
-		/// <para>The barriers can be defined by an integer or floating point raster, or a feature layer.</para>
+		/// <para>定义障碍的数据集。</para>
+		/// <para>可通过整型或浮点型栅格或者要素图层来定义障碍。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -183,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Back Direction Name</para>
-		/// <para>The name of the output back direction raster service.</para>
+		/// <para>输出反向栅格服务的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -297,17 +298,17 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum DistancemethodEnum 
 		{
 			/// <summary>
-			/// <para>Planar—The distance calculation will be performed on a projected flat plane using a 2D Cartesian coordinate system. This is the default.</para>
+			/// <para>平面—将使用 2D 笛卡尔坐标系对投影平面执行距离计算。这是默认设置。</para>
 			/// </summary>
 			[GPValue("Planar")]
-			[Description("Planar")]
+			[Description("平面")]
 			Planar,
 
 			/// <summary>
-			/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Therefore, regardless of input or output projection, the results do not change.</para>
+			/// <para>测地线—距离计算将在椭圆体上执行。因此，结果不会改变，不考虑输入或输出投影。</para>
 			/// </summary>
 			[GPValue("Geodesic")]
-			[Description("Geodesic")]
+			[Description("测地线")]
 			Geodesic,
 
 		}

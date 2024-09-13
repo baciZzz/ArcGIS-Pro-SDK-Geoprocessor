@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Prepare Point Cloud Training Data</para>
-	/// <para>Generates the data that will be used to train and validate </para>
-	/// <para>a PointCNN model for classifying a point cloud.</para>
+	/// <para>准备点云训练数据</para>
+	/// <para>用于生成相应数据，这些数据用于训练和验证 PointCNN 模型以对点云进行分类。</para>
 	/// </summary>
 	public class PreparePointCloudTrainingData : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InPointCloud">
 		/// <para>Input Point Cloud</para>
-		/// <para>The point cloud that will be used to create the training data and, potentially, the validation data if no validation point cloud is specified. In this case, both the training boundary and the validation boundary must be defined.</para>
+		/// <para>如果未指定任何验证点云，则将用于创建训练数据以及可能用于创建验证数据的点云。 在这种情况下，必须同时定义训练边界和验证边界。</para>
 		/// </param>
 		/// <param name="BlockSize">
 		/// <para>Block Size</para>
-		/// <para>The two-dimensional width and height of each HDF5 tile created from the input point cloud. As a general rule, the block size should be large enough to capture the objects of interest and their surrounding context.</para>
+		/// <para>根据输入点云创建的每个 HDF5 切片的二维宽度和高度。 通常，块大小应足够大，才能捕获感兴趣对象及其周围环境。</para>
 		/// </param>
 		/// <param name="OutTrainingData">
 		/// <para>Output Training Data</para>
-		/// <para>The location and name of the output training data (*.pctd).</para>
+		/// <para>输出训练数据 (*.pctd) 的位置和名称。</para>
 		/// </param>
 		public PreparePointCloudTrainingData(object InPointCloud, object BlockSize, object OutTrainingData)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Prepare Point Cloud Training Data</para>
+		/// <para>Tool Display Name : 准备点云训练数据</para>
 		/// </summary>
-		public override string DisplayName() => "Prepare Point Cloud Training Data";
+		public override string DisplayName() => "准备点云训练数据";
 
 		/// <summary>
 		/// <para>Tool Name : PreparePointCloudTrainingData</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Point Cloud</para>
-		/// <para>The point cloud that will be used to create the training data and, potentially, the validation data if no validation point cloud is specified. In this case, both the training boundary and the validation boundary must be defined.</para>
+		/// <para>如果未指定任何验证点云，则将用于创建训练数据以及可能用于创建验证数据的点云。 在这种情况下，必须同时定义训练边界和验证边界。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Block Size</para>
-		/// <para>The two-dimensional width and height of each HDF5 tile created from the input point cloud. As a general rule, the block size should be large enough to capture the objects of interest and their surrounding context.</para>
+		/// <para>根据输入点云创建的每个 HDF5 切片的二维宽度和高度。 通常，块大小应足够大，才能捕获感兴趣对象及其周围环境。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Training Data</para>
-		/// <para>The location and name of the output training data (*.pctd).</para>
+		/// <para>输出训练数据 (*.pctd) 的位置和名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Training Boundary Features</para>
-		/// <para>The boundary polygons that will delineate the subset of points from the input point cloud that will be used to train the deep learning model.</para>
+		/// <para>将根据用于训练深度学习模型的输入点云描绘点的子集的边界面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Validation Point Cloud</para>
-		/// <para>The source of the point cloud that will be used to validate the deep learning model. This dataset must reference a different set of points than the input point cloud in order to ensure the quality of the trained model . If the validation point cloud is not specified, both the Training Boundary Features and Validation Boundary Features parameter values must be provided.</para>
+		/// <para>将用于验证深度学习模型的点云的源。 该数据集必须引用与输入点云不同的点集，才能确保经过训练的模型的质量。 如果未指定验证点云，则必须同时提供训练边界要素和验证边界要素参数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Validation Boundary Features</para>
-		/// <para>The polygon features that will delineate the subset of points to be used for validating the trained model. If a validation point cloud is not specified, the points will be sourced from the input point cloud.</para>
+		/// <para>将描绘用于验证经过训练的模型的点子集的面要素。 如果未指定验证点云，则将从输入点云中获取这些点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Class Codes of Interest</para>
-		/// <para>The class codes that will limit the exported training data blocks to only those that contain the specified values. All points in the block will be exported for any block which contains at least one of the class codes listed in this parameter.</para>
+		/// <para>将导出的训练数据块限制为仅包含指定值的训练数据块的类代码。 对于至少包含此参数中列出的其中一个类代码的任何块，将导出该块中的所有点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Block Point Limit</para>
-		/// <para>The maximum number of points allowed in each block of the training data. When a block contains points in excess of this value, multiple blocks will be created for the same location to ensure that all of the points are used when training.</para>
+		/// <para>每个训练数据块中允许的最大点数。 如果某个块中包含的点数超过该值，则将针对同一位置创建多个块，以确保训练时使用所有这些点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]

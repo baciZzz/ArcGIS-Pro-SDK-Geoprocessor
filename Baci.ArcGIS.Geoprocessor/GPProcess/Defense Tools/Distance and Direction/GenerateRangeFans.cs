@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Generate Range Fans</para>
-	/// <para>Creates range fans originating from a starting point given a </para>
-	/// <para>horizontal start angle, horizontal end angle, minimum distance, and maximum distance.</para>
+	/// <para>生成扇形视域</para>
+	/// <para>以给定水平起始角、水平终止角、最小距离和最大距离创建从起点开始的扇形视域。</para>
 	/// </summary>
 	public class GenerateRangeFans : AbstractGPProcess
 	{
@@ -21,27 +21,27 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Points</para>
-		/// <para>The input point feature set that identifies the origin points of the range fans. The input must have at least one point.</para>
+		/// <para>输入点要素集用于标识扇形视域的原点。输入必须至少具有一个点。</para>
 		/// </param>
 		/// <param name="OutRangeFanFeatureClass">
 		/// <para>Output Range Fan Feature Class</para>
-		/// <para>The feature class that will contain the output range fan features.</para>
+		/// <para>含有输出扇形视域要素的要素类。</para>
 		/// </param>
 		/// <param name="InnerRadius">
 		/// <para>Minimum Distance</para>
-		/// <para>The distance from the origin point to the start of the range fan.</para>
+		/// <para>原点距扇形视域起点的距离</para>
 		/// </param>
 		/// <param name="OuterRadius">
 		/// <para>Maximum Distance</para>
-		/// <para>The distance from the origin point to the end of the range fan.</para>
+		/// <para>原点距扇形视域终点的距离</para>
 		/// </param>
 		/// <param name="HorizontalStartAngle">
 		/// <para>Horizontal Start Angle</para>
-		/// <para>The angle from the origin point to the start of the range fan.</para>
+		/// <para>原点与扇形视域起点的角度</para>
 		/// </param>
 		/// <param name="HorizontalEndAngle">
 		/// <para>Horizontal End Angle</para>
-		/// <para>The angle from the origin point to the end of the range fan.</para>
+		/// <para>原点与扇形视域终点的角度</para>
 		/// </param>
 		public GenerateRangeFans(object InFeatures, object OutRangeFanFeatureClass, object InnerRadius, object OuterRadius, object HorizontalStartAngle, object HorizontalEndAngle)
 		{
@@ -54,9 +54,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Range Fans</para>
+		/// <para>Tool Display Name : 生成扇形视域</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Range Fans";
+		public override string DisplayName() => "生成扇形视域";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateRangeFans</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Points</para>
-		/// <para>The input point feature set that identifies the origin points of the range fans. The input must have at least one point.</para>
+		/// <para>输入点要素集用于标识扇形视域的原点。输入必须至少具有一个点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Range Fan Feature Class</para>
-		/// <para>The feature class that will contain the output range fan features.</para>
+		/// <para>含有输出扇形视域要素的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Minimum Distance</para>
-		/// <para>The distance from the origin point to the start of the range fan.</para>
+		/// <para>原点距扇形视域起点的距离</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Maximum Distance</para>
-		/// <para>The distance from the origin point to the end of the range fan.</para>
+		/// <para>原点距扇形视域终点的距离</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Horizontal Start Angle</para>
-		/// <para>The angle from the origin point to the start of the range fan.</para>
+		/// <para>原点与扇形视域起点的角度</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Horizontal End Angle</para>
-		/// <para>The angle from the origin point to the end of the range fan.</para>
+		/// <para>原点与扇形视域终点的角度</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -141,13 +141,13 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Distance Units</para>
-		/// <para>Specifies the linear unit of measurement for minimum and maximum distance.</para>
-		/// <para>Meters—The unit will be meters. This is the default.</para>
-		/// <para>Kilometers—The unit will be kilometers.</para>
-		/// <para>Miles—The unit will be miles.</para>
-		/// <para>Nautical miles—The unit will be nautical miles.</para>
-		/// <para>Feet—The unit will be feet.</para>
-		/// <para>US survey feet—The unit will be U.S. survey feet.</para>
+		/// <para>指定最小和最大距离的线性测量单位。</para>
+		/// <para>米—单位将为米。这是默认设置。</para>
+		/// <para>千米—单位将为公里。</para>
+		/// <para>英里—单位将为英里。</para>
+		/// <para>海里—单位将为海里。</para>
+		/// <para>英尺—单位将为英尺。</para>
+		/// <para>美国测量英尺—单位将为美国测量英尺。</para>
 		/// <para><see cref="DistanceUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -158,11 +158,11 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Angular Units</para>
-		/// <para>Specifies the angular unit of measurement for start and end angles.</para>
-		/// <para>Degrees—The angle will be degrees. This is the default.</para>
-		/// <para>Mils—The angle will be mils.</para>
-		/// <para>Radians—The angle will be radians.</para>
-		/// <para>Gradians—The angle will be gradians.</para>
+		/// <para>指定起始角和终止角的角度测量单位。</para>
+		/// <para>度—角度将以度为单位。这是默认设置。</para>
+		/// <para>密耳—角度将以密耳为单位。</para>
+		/// <para>弧度—角度将以弧度为单位。</para>
+		/// <para>百分度—角度将以百分度为单位。</para>
 		/// <para><see cref="AngleUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -188,45 +188,45 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum DistanceUnitsEnum 
 		{
 			/// <summary>
-			/// <para>Meters—The unit will be meters. This is the default.</para>
+			/// <para>米—单位将为米。这是默认设置。</para>
 			/// </summary>
 			[GPValue("METERS")]
-			[Description("Meters")]
+			[Description("米")]
 			Meters,
 
 			/// <summary>
-			/// <para>Kilometers—The unit will be kilometers.</para>
+			/// <para>千米—单位将为公里。</para>
 			/// </summary>
 			[GPValue("KILOMETERS")]
-			[Description("Kilometers")]
+			[Description("千米")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>Miles—The unit will be miles.</para>
+			/// <para>英里—单位将为英里。</para>
 			/// </summary>
 			[GPValue("MILES")]
-			[Description("Miles")]
+			[Description("英里")]
 			Miles,
 
 			/// <summary>
-			/// <para>Nautical miles—The unit will be nautical miles.</para>
+			/// <para>海里—单位将为海里。</para>
 			/// </summary>
 			[GPValue("NAUTICAL_MILES")]
-			[Description("Nautical miles")]
+			[Description("海里")]
 			Nautical_miles,
 
 			/// <summary>
-			/// <para>Feet—The unit will be feet.</para>
+			/// <para>英尺—单位将为英尺。</para>
 			/// </summary>
 			[GPValue("FEET")]
-			[Description("Feet")]
+			[Description("英尺")]
 			Feet,
 
 			/// <summary>
-			/// <para>US survey feet—The unit will be U.S. survey feet.</para>
+			/// <para>美国测量英尺—单位将为美国测量英尺。</para>
 			/// </summary>
 			[GPValue("US_SURVEY_FEET")]
-			[Description("US survey feet")]
+			[Description("美国测量英尺")]
 			US_survey_feet,
 
 		}
@@ -237,31 +237,31 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum AngleUnitsEnum 
 		{
 			/// <summary>
-			/// <para>Degrees—The angle will be degrees. This is the default.</para>
+			/// <para>度—角度将以度为单位。这是默认设置。</para>
 			/// </summary>
 			[GPValue("DEGREES")]
-			[Description("Degrees")]
+			[Description("度")]
 			Degrees,
 
 			/// <summary>
-			/// <para>Mils—The angle will be mils.</para>
+			/// <para>密耳—角度将以密耳为单位。</para>
 			/// </summary>
 			[GPValue("MILS")]
-			[Description("Mils")]
+			[Description("密耳")]
 			Mils,
 
 			/// <summary>
-			/// <para>Radians—The angle will be radians.</para>
+			/// <para>弧度—角度将以弧度为单位。</para>
 			/// </summary>
 			[GPValue("RADS")]
-			[Description("Radians")]
+			[Description("弧度")]
 			Radians,
 
 			/// <summary>
-			/// <para>Gradians—The angle will be gradians.</para>
+			/// <para>百分度—角度将以百分度为单位。</para>
 			/// </summary>
 			[GPValue("GRADS")]
-			[Description("Gradians")]
+			[Description("百分度")]
 			Gradians,
 
 		}

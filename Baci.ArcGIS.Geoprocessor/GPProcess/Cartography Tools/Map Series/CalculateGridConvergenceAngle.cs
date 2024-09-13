@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Calculate Grid Convergence Angle</para>
-	/// <para>Calculates the rotation angle for true north based on the center point of each feature in a feature class and populates this value in a specified field. This field can be used in conjunction with a spatial map series to rotate each map to true north.</para>
+	/// <para>计算格网收敛角</para>
+	/// <para>根据要素类中各要素的中心点计算偏离正北方向的旋转角度并将所得值填充到指定字段中。该字段可与空间地图系列结合使用，以将每幅地图旋转为正北方向。</para>
 	/// </summary>
 	public class CalculateGridConvergenceAngle : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input feature class (points, multipoints, lines, and polygons).</para>
+		/// <para>输入要素类（点、多点、线和面）。</para>
 		/// </param>
 		/// <param name="AngleField">
 		/// <para>Angle Field</para>
-		/// <para>The existing field that will be populated with the true north calculation value in decimal degrees.</para>
+		/// <para>将用计算所得的偏离正北方向的角度（以十进制度为单位）填充现有字段。</para>
 		/// </param>
 		public CalculateGridConvergenceAngle(object InFeatures, object AngleField)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Calculate Grid Convergence Angle</para>
+		/// <para>Tool Display Name : 计算格网收敛角</para>
 		/// </summary>
-		public override string DisplayName() => "Calculate Grid Convergence Angle";
+		public override string DisplayName() => "计算格网收敛角";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateGridConvergenceAngle</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input feature class (points, multipoints, lines, and polygons).</para>
+		/// <para>输入要素类（点、多点、线和面）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Angle Field</para>
-		/// <para>The existing field that will be populated with the true north calculation value in decimal degrees.</para>
+		/// <para>将用计算所得的偏离正北方向的角度（以十进制度为单位）填充现有字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -89,10 +90,10 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Rotation Method</para>
-		/// <para>Specifies the method used to calculate the rotation value.</para>
-		/// <para>Geographic—The angle is calculated clockwise with 0 at the top. This is the default.</para>
-		/// <para>Arithmetic—The angle is calculated counterclockwise with 0 at the right.</para>
-		/// <para>Graphic—The angle is calculated counterclockwise with 0 at the top.</para>
+		/// <para>指定用于计算旋转值的方法。</para>
+		/// <para>地理—角度是以正北方向作为起点顺时针计算的。这是默认设置。</para>
+		/// <para>算术—角度是以正东方向作为起点逆时针计算的。</para>
+		/// <para>图形—角度是以正北方向作为起点逆时针计算的。</para>
 		/// <para><see cref="RotationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Coordinate System Field</para>
-		/// <para>The field containing a projection engine string for a projected coordinate system to be used for angle calculation. The angle calculation for each feature will be based on the projected coordinate system projection engine string for the specific feature. In cases of an invalid value, the tool will use the cartographic coordinate system specified in the Cartography environment settings. The default is none, or no field specified. When no field is specified, the projected coordinate system used for calculation will be taken from the Cartography environment settings.</para>
+		/// <para>该字段包含用于计算角度的投影坐标系的投影引擎字符串。各要素的角度计算均基于特定要素的投影坐标系的投影引擎字符串。在投影引擎字符串无效的情况下，该工具将使用在“制图”环境设置中指定的“制图”坐标系。默认设置为无，或不指定任何字段。如果未指定字段，将采用“制图”环境设置中指定的投影坐标系进行计算。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -135,24 +136,24 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum RotationMethodEnum 
 		{
 			/// <summary>
-			/// <para>Geographic—The angle is calculated clockwise with 0 at the top. This is the default.</para>
+			/// <para>地理—角度是以正北方向作为起点顺时针计算的。这是默认设置。</para>
 			/// </summary>
 			[GPValue("GEOGRAPHIC")]
-			[Description("Geographic")]
+			[Description("地理")]
 			Geographic,
 
 			/// <summary>
-			/// <para>Arithmetic—The angle is calculated counterclockwise with 0 at the right.</para>
+			/// <para>算术—角度是以正东方向作为起点逆时针计算的。</para>
 			/// </summary>
 			[GPValue("ARITHMETIC")]
-			[Description("Arithmetic")]
+			[Description("算术")]
 			Arithmetic,
 
 			/// <summary>
-			/// <para>Graphic—The angle is calculated counterclockwise with 0 at the top.</para>
+			/// <para>图形—角度是以正北方向作为起点逆时针计算的。</para>
 			/// </summary>
 			[GPValue("GRAPHIC")]
-			[Description("Graphic")]
+			[Description("图形")]
 			Graphic,
 
 		}

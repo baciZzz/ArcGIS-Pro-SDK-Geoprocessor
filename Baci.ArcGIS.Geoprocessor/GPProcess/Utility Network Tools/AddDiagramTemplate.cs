@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Diagram Template</para>
+	/// <para>Add Diagram Template</para>
 	/// <para>Add a diagram template</para>
 	/// </summary>
 	[Obsolete()]

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Set Root Junction By Attribute Rule</para>
+	/// <para>Add Set Root Junction By Attribute Rule</para>
 	/// <para>Add a set root junction by attribute rule to a diagram template</para>
 	/// </summary>
 	[Obsolete()]

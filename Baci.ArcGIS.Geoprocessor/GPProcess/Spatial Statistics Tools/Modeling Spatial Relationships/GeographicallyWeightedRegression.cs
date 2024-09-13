@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Geographically Weighted Regression (GWR)</para>
-	/// <para>Performs Geographically Weighted Regression (GWR), a local form of linear regression used to model spatially varying relationships.</para>
+	/// <para>地理加权回归 (GWR)</para>
+	/// <para>执行“地理加权回归 (GWR)”，这是一种用于建模空间变化关系的线性回归的局部形式。</para>
 	/// </summary>
 	[Obsolete()]
 	public class GeographicallyWeightedRegression : AbstractGPProcess
@@ -21,33 +22,33 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input features</para>
-		/// <para>The feature class containing the dependent and independent variables.</para>
+		/// <para>包含因变量和自变量的要素类。</para>
 		/// </param>
 		/// <param name="DependentField">
 		/// <para>Dependent variable</para>
-		/// <para>The numeric field containing the values that will be modeled.</para>
+		/// <para>包含将进行建模的值的数值字段。</para>
 		/// </param>
 		/// <param name="ExplanatoryField">
 		/// <para>Explanatory variable(s)</para>
-		/// <para>A list of fields representing independent explanatory variables in the regression model.</para>
+		/// <para>表示回归模型中的解释变量或自变量的字段列表。</para>
 		/// </param>
 		/// <param name="OutFeatureclass">
 		/// <para>Output feature class</para>
-		/// <para>The output feature class that will receive dependent variable estimates and residuals.</para>
+		/// <para>将接收因变量的估计数和残差的输出要素类。</para>
 		/// </param>
 		/// <param name="KernelType">
 		/// <para>Kernel type</para>
-		/// <para>Specifies whether the kernel is constructed as a fixed distance, or if it is allowed to vary in extent as a function of feature density.</para>
-		/// <para>Fixed—The spatial context (the Gaussian kernel) used to solve each local regression analysis is a fixed distance.</para>
-		/// <para>Adaptive—The spatial context (the Gaussian kernel) is a function of a specified number of neighbors. Where feature distribution is dense, the spatial context is smaller; where feature distribution is sparse, the spatial context is larger.</para>
+		/// <para>指定核是否构建为固定距离，或者指定是否允许核在作为要素密度函数的范围内进行变化。</para>
+		/// <para>固定—用来解决各局部回归分析的空间环境（“高斯”核）属于固定距离。</para>
+		/// <para>自适应—空间环境（“高斯”核）是指定相邻要素的数目的函数。要素分布越密集，空间环境越小；要素分布越稀疏，空间环境越大。</para>
 		/// <para><see cref="KernelTypeEnum"/></para>
 		/// </param>
 		/// <param name="BandwidthMethod">
 		/// <para>Bandwidth method</para>
-		/// <para>Specifies how the extent of the kernel will be determined. When Akaike Information Criterion or Cross Validation is selected, the tool will find the optimal distance or number of neighbors. Typically, you will select either Akaike Information Criterion or Cross Validation when you aren&apos;t sure what to use for the Distance or Number of neighbors parameter. Once the tool determines the optimal distance or number of neighbors, however, you&apos;ll use the As specified below option.</para>
-		/// <para>Akaike Information Criterion—The extent of the kernel is determined using the Akaike Information Criterion.</para>
-		/// <para>Cross Validation—The extent of the kernel is determined using cross validation.</para>
-		/// <para>As specified below—The extent of the kernel is determined by a fixed distance or a fixed number of neighbors. You must specify a value for either the Distance or Number of neighbors parameters.</para>
+		/// <para>指定核范围的确定方式。当选择 Akaike 信息准则或交叉验证时，此工具将查找最佳距离或相邻要素的数目。通常，如果不确定对距离或相邻要素的数目参数使用哪个选项，则选择 Akaike 信息准则或交叉验证。但是，如果工具可以确定最佳距离或者相邻要素的数目，则需要使用如下面的指定选项。</para>
+		/// <para>Akaike 信息准则—使用 Akaike 信息准则确定核的范围。</para>
+		/// <para>交叉验证—使用交叉验证确定核的范围。</para>
+		/// <para>如下面的指定—根据固定距离或固定相邻要素的数目确定核的范围。必须为距离或相邻要素的数目参数指定一个值。</para>
 		/// <para><see cref="BandwidthMethodEnum"/></para>
 		/// </param>
 		public GeographicallyWeightedRegression(object InFeatures, object DependentField, object ExplanatoryField, object OutFeatureclass, object KernelType, object BandwidthMethod)
@@ -61,9 +62,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Geographically Weighted Regression (GWR)</para>
+		/// <para>Tool Display Name : 地理加权回归 (GWR)</para>
 		/// </summary>
-		public override string DisplayName() => "Geographically Weighted Regression (GWR)";
+		public override string DisplayName() => "地理加权回归 (GWR)";
 
 		/// <summary>
 		/// <para>Tool Name : GeographicallyWeightedRegression</para>
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input features</para>
-		/// <para>The feature class containing the dependent and independent variables.</para>
+		/// <para>包含因变量和自变量的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Dependent variable</para>
-		/// <para>The numeric field containing the values that will be modeled.</para>
+		/// <para>包含将进行建模的值的数值字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -118,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Explanatory variable(s)</para>
-		/// <para>A list of fields representing independent explanatory variables in the regression model.</para>
+		/// <para>表示回归模型中的解释变量或自变量的字段列表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -128,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output feature class</para>
-		/// <para>The output feature class that will receive dependent variable estimates and residuals.</para>
+		/// <para>将接收因变量的估计数和残差的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -136,9 +137,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Kernel type</para>
-		/// <para>Specifies whether the kernel is constructed as a fixed distance, or if it is allowed to vary in extent as a function of feature density.</para>
-		/// <para>Fixed—The spatial context (the Gaussian kernel) used to solve each local regression analysis is a fixed distance.</para>
-		/// <para>Adaptive—The spatial context (the Gaussian kernel) is a function of a specified number of neighbors. Where feature distribution is dense, the spatial context is smaller; where feature distribution is sparse, the spatial context is larger.</para>
+		/// <para>指定核是否构建为固定距离，或者指定是否允许核在作为要素密度函数的范围内进行变化。</para>
+		/// <para>固定—用来解决各局部回归分析的空间环境（“高斯”核）属于固定距离。</para>
+		/// <para>自适应—空间环境（“高斯”核）是指定相邻要素的数目的函数。要素分布越密集，空间环境越小；要素分布越稀疏，空间环境越大。</para>
 		/// <para><see cref="KernelTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -148,10 +149,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Bandwidth method</para>
-		/// <para>Specifies how the extent of the kernel will be determined. When Akaike Information Criterion or Cross Validation is selected, the tool will find the optimal distance or number of neighbors. Typically, you will select either Akaike Information Criterion or Cross Validation when you aren&apos;t sure what to use for the Distance or Number of neighbors parameter. Once the tool determines the optimal distance or number of neighbors, however, you&apos;ll use the As specified below option.</para>
-		/// <para>Akaike Information Criterion—The extent of the kernel is determined using the Akaike Information Criterion.</para>
-		/// <para>Cross Validation—The extent of the kernel is determined using cross validation.</para>
-		/// <para>As specified below—The extent of the kernel is determined by a fixed distance or a fixed number of neighbors. You must specify a value for either the Distance or Number of neighbors parameters.</para>
+		/// <para>指定核范围的确定方式。当选择 Akaike 信息准则或交叉验证时，此工具将查找最佳距离或相邻要素的数目。通常，如果不确定对距离或相邻要素的数目参数使用哪个选项，则选择 Akaike 信息准则或交叉验证。但是，如果工具可以确定最佳距离或者相邻要素的数目，则需要使用如下面的指定选项。</para>
+		/// <para>Akaike 信息准则—使用 Akaike 信息准则确定核的范围。</para>
+		/// <para>交叉验证—使用交叉验证确定核的范围。</para>
+		/// <para>如下面的指定—根据固定距离或固定相邻要素的数目确定核的范围。必须为距离或相邻要素的数目参数指定一个值。</para>
 		/// <para><see cref="BandwidthMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -161,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Distance</para>
-		/// <para>The distance to use when the Kernel type parameter is set to Fixed and the Bandwidth method parameter is set to As specified below.</para>
+		/// <para>将核类型参数设置为固定，带宽方法参数设置为如下面的指定时使用的距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -170,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of neighbors</para>
-		/// <para>The exact number of neighbors to include in the local bandwidth of the Gaussian kernel when the Kernel type parameter is set to Adaptive and the Bandwidth method parameter is set to As specified below.</para>
+		/// <para>将核类型参数设置为自适应，带宽方法参数设置为如下面的指定时包括在“高斯”核的局部带宽中的精确相邻要素的数目。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -179,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Weights</para>
-		/// <para>The numeric field containing a spatial weighting for individual features. This weight field allows some features to be more important in the model calibration process than others. This is useful when the number of samples taken at different locations varies, values for the dependent and independent variables are averaged, and places with more samples are more reliable (should be weighted higher). If you have an average of 25 different samples for one location but an average of only 2 samples for another location, for example, you can use the number of samples as your weight field so that locations with more samples have a larger influence on model calibration than locations with few samples.</para>
+		/// <para>包含单个要素的空间权重的数值字段。此权重字段允许部分要素在模型校准过程中比其他要素更为重要。其用于在不同位置采集的样本数目发生变化以及对因变量和自变量中的值求平均值的情况中，并且样本越多，位置越稳定（应该进行更高的加权）。例如，如果一个位置平均具有 25 个不同的样本，但其他位置平均只具有 2 个样本，则可将样本数用作权重字段，以便在模型校准中具有更多样本的位置比具有少量样本的位置有更大的影响力。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -189,7 +190,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Coefficient raster workspace</para>
-		/// <para>The full path to the workspace where the coefficient rasters will be created. When this workspace is provided, rasters are created for the intercept and every explanatory variable.</para>
+		/// <para>将创建系数栅格的工作空间的完整路径。如果提供了此工作空间，则会为截距及各解释变量创建栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEWorkspace()]
@@ -198,8 +199,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>The cell size (a number) or reference to the cell size (a path to a raster dataset) to use when creating the coefficient rasters.</para>
-		/// <para>The default cell size is the shortest of the width or height of the extent specified in the geoprocessing environment output coordinate system, divided by 250.</para>
+		/// <para>创建系数栅格时使用的像元大小（数字）或对像元大小的引用（栅格数据集的路径）。</para>
+		/// <para>默认情况下，像元大小为在地理处理环境输出坐标系中指定的范围的最短宽度或高度除以 250。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -208,7 +209,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Prediction locations</para>
-		/// <para>A feature class containing features representing locations where estimates should be computed. Each feature in this dataset should contain values for all of the explanatory variables specified; the dependent variable for these features will be estimated using the model calibrated for the input feature class data.</para>
+		/// <para>一种要素类，包含表示应计算评估值的位置的要素。数据集中的每个要素都应包含所有指定的解释变量的值；将使用为输入要素类数据校准的模型来评估这些要素的因变量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -220,7 +221,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Prediction explanatory variable(s)</para>
-		/// <para>A list of fields representing explanatory variables in the Prediction locations feature class. These field names should be provided in the same order (a one-to-one correspondence) as those listed for the input feature class Explanatory variables parameter. If no prediction explanatory variables are given, the output prediction feature class will only contain computed coefficient values for each prediction location.</para>
+		/// <para>表示“预测位置”要素类中的解释变量的字段列表。这些字段名的供应顺序应与在输入要素类“解释”变量参数中的列出顺序相同（一对一的对应关系）。如果未指定任何预测解释变量，则输出预测要素类将仅包含各预测位置的已计算系数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -231,7 +232,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output prediction feature class</para>
-		/// <para>The output feature class to receive dependent variable estimates for each feature in the Prediction locations feature class.</para>
+		/// <para>接收“预测”位置要素类中各要素的因变量估计数的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -269,17 +270,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum KernelTypeEnum 
 		{
 			/// <summary>
-			/// <para>Fixed—The spatial context (the Gaussian kernel) used to solve each local regression analysis is a fixed distance.</para>
+			/// <para>固定—用来解决各局部回归分析的空间环境（“高斯”核）属于固定距离。</para>
 			/// </summary>
 			[GPValue("FIXED")]
-			[Description("Fixed")]
+			[Description("固定")]
 			Fixed,
 
 			/// <summary>
-			/// <para>Adaptive—The spatial context (the Gaussian kernel) is a function of a specified number of neighbors. Where feature distribution is dense, the spatial context is smaller; where feature distribution is sparse, the spatial context is larger.</para>
+			/// <para>自适应—空间环境（“高斯”核）是指定相邻要素的数目的函数。要素分布越密集，空间环境越小；要素分布越稀疏，空间环境越大。</para>
 			/// </summary>
 			[GPValue("ADAPTIVE")]
-			[Description("Adaptive")]
+			[Description("自适应")]
 			Adaptive,
 
 		}
@@ -290,24 +291,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum BandwidthMethodEnum 
 		{
 			/// <summary>
-			/// <para>Akaike Information Criterion—The extent of the kernel is determined using the Akaike Information Criterion.</para>
+			/// <para>Akaike 信息准则—使用 Akaike 信息准则确定核的范围。</para>
 			/// </summary>
 			[GPValue("AICc")]
-			[Description("Akaike Information Criterion")]
+			[Description("Akaike 信息准则")]
 			Akaike_Information_Criterion,
 
 			/// <summary>
-			/// <para>Cross Validation—The extent of the kernel is determined using cross validation.</para>
+			/// <para>交叉验证—使用交叉验证确定核的范围。</para>
 			/// </summary>
 			[GPValue("CV")]
-			[Description("Cross Validation")]
+			[Description("交叉验证")]
 			Cross_Validation,
 
 			/// <summary>
-			/// <para>As specified below—The extent of the kernel is determined by a fixed distance or a fixed number of neighbors. You must specify a value for either the Distance or Number of neighbors parameters.</para>
+			/// <para>如下面的指定—根据固定距离或固定相邻要素的数目确定核的范围。必须为距离或相邻要素的数目参数指定一个值。</para>
 			/// </summary>
 			[GPValue("BANDWIDTH_PARAMETER")]
-			[Description("As specified below")]
+			[Description("如下面的指定")]
 			As_specified_below,
 
 		}

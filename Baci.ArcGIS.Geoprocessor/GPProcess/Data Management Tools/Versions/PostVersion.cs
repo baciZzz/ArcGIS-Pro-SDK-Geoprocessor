@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Post Version</para>
+	/// <para>Post Version</para>
 	/// <para>Posting is the process of applying the current edit session to the reconciled target version during version geodatabase editing. Before a version can be posted, it must be reconciled with a target version and all conflicts must be resolved.</para>
 	/// </summary>
 	[Obsolete()]

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Overlay Events</para>
+	/// <para>Overlay Events</para>
 	/// <para>Overlays one or more linear event feature layers onto a target network </para>
 	/// <para>and outputs a feature class or table that represents the dynamic segmentation of the inputs.</para>
 	/// </summary>

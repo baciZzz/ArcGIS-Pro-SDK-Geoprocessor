@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Make OPeNDAP Raster Layer</para>
-	/// <para>Creates a raster layer from data stored on an OPeNDAP server.</para>
+	/// <para>创建 OPeNDAP 栅格图层</para>
+	/// <para>通过存储在 OPeNDAP 服务器上的数据创建栅格图层。</para>
 	/// </summary>
 	public class MakeOPeNDAPRasterLayer : AbstractGPProcess
 	{
@@ -20,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		/// <param name="InOpendapURL">
 		/// <para>Input OPeNDAP URL</para>
-		/// <para>The URL that references the remote OPeNDAP dataset. The URL should resolve to the dataset level (for example, file name), not a directory name.</para>
+		/// <para>引用远程 OPeNDAP 数据集的 URL。URL 应解析到数据集级别（例如，文件名），而非目录名称。</para>
 		/// </param>
 		/// <param name="Variable">
 		/// <para>Variable</para>
-		/// <para>The variable from the OPeNDAP dataset that will be used to create the raster layer.</para>
+		/// <para>将用于创建栅格图层的 OPeNDAP 数据集中的变量。</para>
 		/// </param>
 		/// <param name="XDimension">
 		/// <para>X Dimension</para>
-		/// <para>The dimension of the OPeNDAP dataset used to define the x, or longitude, coordinates of the output raster layer.</para>
+		/// <para>用于定义输出栅格图层 x 坐标（或经度坐标）的 OPeNDAP 数据集维度。</para>
 		/// </param>
 		/// <param name="YDimension">
 		/// <para>Y Dimension</para>
-		/// <para>The dimension of the OPeNDAP dataset used to define the y, or latitude, coordinates of the output raster layer.</para>
+		/// <para>用于定义输出栅格图层 y 坐标（或纬度坐标）的 OPeNDAP 数据集维度。</para>
 		/// </param>
 		/// <param name="OutRasterLayer">
 		/// <para>Output Raster Layer</para>
-		/// <para>The name of the output raster layer.</para>
+		/// <para>输出栅格图层的名称。</para>
 		/// </param>
 		public MakeOPeNDAPRasterLayer(object InOpendapURL, object Variable, object XDimension, object YDimension, object OutRasterLayer)
 		{
@@ -48,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Make OPeNDAP Raster Layer</para>
+		/// <para>Tool Display Name : 创建 OPeNDAP 栅格图层</para>
 		/// </summary>
-		public override string DisplayName() => "Make OPeNDAP Raster Layer";
+		public override string DisplayName() => "创建 OPeNDAP 栅格图层";
 
 		/// <summary>
 		/// <para>Tool Name : MakeOPeNDAPRasterLayer</para>
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Input OPeNDAP URL</para>
-		/// <para>The URL that references the remote OPeNDAP dataset. The URL should resolve to the dataset level (for example, file name), not a directory name.</para>
+		/// <para>引用远程 OPeNDAP 数据集的 URL。URL 应解析到数据集级别（例如，文件名），而非目录名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Variable</para>
-		/// <para>The variable from the OPeNDAP dataset that will be used to create the raster layer.</para>
+		/// <para>将用于创建栅格图层的 OPeNDAP 数据集中的变量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>X Dimension</para>
-		/// <para>The dimension of the OPeNDAP dataset used to define the x, or longitude, coordinates of the output raster layer.</para>
+		/// <para>用于定义输出栅格图层 x 坐标（或经度坐标）的 OPeNDAP 数据集维度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Y Dimension</para>
-		/// <para>The dimension of the OPeNDAP dataset used to define the y, or latitude, coordinates of the output raster layer.</para>
+		/// <para>用于定义输出栅格图层 y 坐标（或纬度坐标）的 OPeNDAP 数据集维度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Output Raster Layer</para>
-		/// <para>The name of the output raster layer.</para>
+		/// <para>输出栅格图层的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterLayer()]
@@ -124,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>The output extent of the raster layer. Specify the extent coordinates in the units of the OPeNDAP data source (these could be latitude-longitude, projected coordinates, or some arbitrary grid coordinates). The purpose of this parameter is to allow subsetting to an area of interest or to reduce the size of the data that is transferred.</para>
+		/// <para>栅格图层的输出范围。按 OPeNDAP 数据源的单位（可能为纬度-经度、投影坐标或一些任意格网坐标）指定范围坐标。此参数用于在感兴趣区域构建子集或减少所传输数据的大小。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEnvelope()]
@@ -132,10 +133,10 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Dimension Values</para>
-		/// <para>The starting and ending values of the dimensions or dimensions used to constrain which data will be extracted from the remote OPeNDAP server. By default, the minimum and maximum values of the dimension or dimensions will be used.</para>
-		/// <para>Dimension—A netCDF dimension.</para>
-		/// <para>Start Value—The start value to use for the specified dimension.</para>
-		/// <para>End Value—The end value to use.</para>
+		/// <para>一个或多个维度的开始和结束值，可用于限制从远程 OPeNDAP 服务器中提取的数据。默认情况下，将使用一个或多个维度的最小和最大值。</para>
+		/// <para>维度 - netCDF 维度。</para>
+		/// <para>起始值 - 用于所指定维度的起始值。</para>
+		/// <para>结束值 - 可用的结束值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -143,9 +144,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Value Selection Method</para>
-		/// <para>Specifies the dimension value selection method that will be used.</para>
-		/// <para>By value—The input value is matched with the actual dimension value.</para>
-		/// <para>By index—The input value is matched with the position or index of a dimension value. The index is 0 based; that is, the position starts at 0.</para>
+		/// <para>指定将使用的维度值选择方法。</para>
+		/// <para>按值—输入值与实际维度值匹配。</para>
+		/// <para>按索引—输入值与维度值的位置或索引匹配。 索引的第一个值为 0；即位置从 0 开始。</para>
 		/// <para><see cref="ValueSelectionMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -155,10 +156,10 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Cell Registration</para>
-		/// <para>Specifies how the cells will be registered with respect to the XY coordinate.</para>
-		/// <para>Center—The XY coordinate represents the center of the cell. This is the default.</para>
-		/// <para>Lower Left—The XY coordinate represents the lower left of the cell.</para>
-		/// <para>Upper Left—The XY coordinate represents the upper left of the cell.</para>
+		/// <para>指定像元相对于 XY 坐标的配准方式。</para>
+		/// <para>中心—XY 坐标表示像元中心。 这是默认设置。</para>
+		/// <para>左下角—XY 坐标表示像元左下角。</para>
+		/// <para>左上角—XY 坐标表示像元左上角。</para>
 		/// <para><see cref="CellRegistrationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -174,17 +175,17 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		public enum ValueSelectionMethodEnum 
 		{
 			/// <summary>
-			/// <para>By index—The input value is matched with the position or index of a dimension value. The index is 0 based; that is, the position starts at 0.</para>
+			/// <para>按索引—输入值与维度值的位置或索引匹配。 索引的第一个值为 0；即位置从 0 开始。</para>
 			/// </summary>
 			[GPValue("BY_INDEX")]
-			[Description("By index")]
+			[Description("按索引")]
 			By_index,
 
 			/// <summary>
-			/// <para>By value—The input value is matched with the actual dimension value.</para>
+			/// <para>按值—输入值与实际维度值匹配。</para>
 			/// </summary>
 			[GPValue("BY_VALUE")]
-			[Description("By value")]
+			[Description("按值")]
 			By_value,
 
 		}
@@ -195,24 +196,24 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		public enum CellRegistrationEnum 
 		{
 			/// <summary>
-			/// <para>Center—The XY coordinate represents the center of the cell. This is the default.</para>
+			/// <para>中心—XY 坐标表示像元中心。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("CENTER")]
-			[Description("Center")]
+			[Description("中心")]
 			Center,
 
 			/// <summary>
-			/// <para>Lower Left—The XY coordinate represents the lower left of the cell.</para>
+			/// <para>左下角—XY 坐标表示像元左下角。</para>
 			/// </summary>
 			[GPValue("LOWER_LEFT")]
-			[Description("Lower Left")]
+			[Description("左下角")]
 			Lower_Left,
 
 			/// <summary>
-			/// <para>Upper Left—The XY coordinate represents the upper left of the cell.</para>
+			/// <para>左上角—XY 坐标表示像元左上角。</para>
 			/// </summary>
 			[GPValue("UPPER_LEFT")]
-			[Description("Upper Left")]
+			[Description("左上角")]
 			Upper_Left,
 
 		}

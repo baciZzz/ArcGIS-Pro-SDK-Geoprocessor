@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>FAA 13A</para>
+	/// <para>FAA 13A</para>
 	/// <para>Creates obstruction identification surfaces (OIS) based on the FAA Advisory Circular 150/5300-13A specification. These approach and departure surfaces are designed to protect the use of the runway in both visual and instrument meteorological conditions near the airport and are used to support planning and design activities. The type, function, and dimension of a surface differ by its runway classification. This tool creates surfaces as a polygon or multipatch features.</para>
 	/// </summary>
 	public class FAA13A : AbstractGPProcess

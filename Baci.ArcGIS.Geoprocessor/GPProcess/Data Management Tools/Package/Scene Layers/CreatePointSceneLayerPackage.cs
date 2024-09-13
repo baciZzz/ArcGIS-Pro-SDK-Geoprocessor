@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Point Scene Layer Package</para>
-	/// <para>Creates a point scene layer package (.slpk file) from a point feature layer.</para>
+	/// <para>创建点场景图层包</para>
+	/// <para>从点要素图层创建点场景图层包（.slpk 文件）。</para>
 	/// </summary>
 	public class CreatePointSceneLayerPackage : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>The input point feature layer.</para>
+		/// <para>输入点要素图层。</para>
 		/// </param>
 		/// <param name="OutSlpk">
 		/// <para>Output Scene Layer Package</para>
-		/// <para>The output scene layer package (.slpk).</para>
+		/// <para>输出场景图层包 (.slpk)。</para>
 		/// </param>
 		public CreatePointSceneLayerPackage(object InDataset, object OutSlpk)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Point Scene Layer Package</para>
+		/// <para>Tool Display Name : 创建点场景图层包</para>
 		/// </summary>
-		public override string DisplayName() => "Create Point Scene Layer Package";
+		public override string DisplayName() => "创建点场景图层包";
 
 		/// <summary>
 		/// <para>Tool Name : CreatePointSceneLayerPackage</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>The input point feature layer.</para>
+		/// <para>输入点要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Scene Layer Package</para>
-		/// <para>The output scene layer package (.slpk).</para>
+		/// <para>输出场景图层包 (.slpk)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -88,10 +89,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Coordinate System</para>
-		/// <para>The coordinate system of the output scene layer package. It can be any projected or custom coordinate system. Supported geographic coordinate systems include WGS 1984 and China Geodetic Coordinate System 2000. WGS 1984 and EGM96 Geoid are the default horizontal and vertical coordinate systems, respectively. The coordinate system can be specified in any of the following ways:</para>
-		/// <para>Specify the path to a .prj file.</para>
-		/// <para>Reference a dataset with the desired coordinate system.</para>
-		/// <para>Use an arcpy.SpatialReference object.</para>
+		/// <para>输出场景图层包的坐标系。它可以是任意投影坐标系或自定义坐标系。支持的地理坐标系包括 WGS 1984 和 China Geodetic Coordinate System 2000。WGS 1984 和 EGM96 大地水准面分别是默认的水平和垂直坐标系。可通过以下任一方式指定坐标系：</para>
+		/// <para>指定 .prj 文件的路径。</para>
+		/// <para>引用具有所需坐标系的数据集。</para>
+		/// <para>使用 arcpy.SpatialReference 对象。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
@@ -99,8 +100,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Geographic Transformation</para>
-		/// <para>The datum transformation method that will be used when the input layer&apos;s coordinate system uses a datum that differs from the output coordinate system. All transformations are bidirectional, regardless of the direction implied by their names. For example, NAD_1927_to_WGS_1984_3 will work correctly even if the datum conversion is from WGS 1984 to NAD 1927.</para>
-		/// <para>The ArcGIS Coordinate System data is required for vertical datum transformations between ellipsoidal and gravity-related and two gravity-related datums.</para>
+		/// <para>此基准面变换方法适用于输入图层坐标系所使用的基准面不同于输出坐标系的情况。所有变换均为双向，而不管其名称隐含的方向如何。例如，即使基准面变换为从 WGS 1984 到 NAD 1927，NAD_1927_to_WGS_1984_3 仍可正常运行。</para>
+		/// <para>在椭圆体和重力相关的基准面以及两个与重力相关的基准面之间进行垂直基准面变换时，需要使用 ArcGIS 坐标系数据。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

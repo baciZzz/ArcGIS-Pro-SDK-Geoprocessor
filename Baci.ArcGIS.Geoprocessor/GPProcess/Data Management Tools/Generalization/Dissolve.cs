@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Dissolve</para>
-	/// <para>Aggregates features based on specified attributes.</para>
+	/// <para>融合</para>
+	/// <para>根据指定属性聚合要素。</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.AnalysisTools.PairwiseDissolve"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.AnalysisTools.PairwiseDissolve))]
@@ -22,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The features to be aggregated.</para>
+		/// <para>要聚合的要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class to be created that will contain the aggregated features.</para>
+		/// <para>要创建的将包含聚合要素的要素类。</para>
 		/// </param>
 		public Dissolve(object InFeatures, object OutFeatureClass)
 		{
@@ -35,14 +36,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Dissolve</para>
+		/// <para>Tool Display Name : 融合</para>
 		/// </summary>
-		public override string DisplayName() => "Dissolve";
+		public override string DisplayName() => "融合";
 
 		/// <summary>
-		/// <para>Tool Name : Dissolve</para>
+		/// <para>Tool Name : 融合</para>
 		/// </summary>
-		public override string ToolName() => "Dissolve";
+		public override string ToolName() => "融合";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Dissolve</para>
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The features to be aggregated.</para>
+		/// <para>要聚合的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -81,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class to be created that will contain the aggregated features.</para>
+		/// <para>要创建的将包含聚合要素的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Dissolve Field(s)</para>
-		/// <para>The field or fields on which to aggregate features.</para>
+		/// <para>要聚合要素的一个或多个字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -99,21 +100,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Statistics Field(s)</para>
-		/// <para>Specifies the numeric field or fields containing the attribute values that will be used to calculate the specified statistic. Multiple statistic and field combinations can be specified. Null values are excluded from all statistical calculations.</para>
-		/// <para>Text attribute fields can be summarized using first and last statistics. Numeric attribute fields can be summarized using any statistic.</para>
-		/// <para>Available statistics types are as follows:</para>
-		/// <para>Sum—The values for the specified field will be added together.</para>
-		/// <para>Mean—The average for the specified field will be calculated.</para>
-		/// <para>Minimum—The smallest value for all records of the specified field will be found.</para>
-		/// <para>Maximum—The largest value for all records of the specified field will be found.</para>
-		/// <para>Range—The range of values (maximum minus minimum) for the specified field will be calculated.</para>
-		/// <para>Standard deviation—The standard deviation of values in the specified field will be calculated.</para>
-		/// <para>Count—The number of values included in the statistical calculations will be found. Each value will be counted except null values. To determine the number of null values in a field, create a count on the field in question, create a count on a different field that does not contain null values (for example, the OID if present), and subtract the two values.</para>
-		/// <para>First—The specified field value of the first record in the input will be used.</para>
-		/// <para>Last—The specified field value of the last record in the input will be used.</para>
-		/// <para>Median—The median for all records of the specified field will be calculated.</para>
-		/// <para>Variance—The variance for all records of the specified field will be calculated.</para>
-		/// <para>Unique—The number of unique values of the specified field will be counted.</para>
+		/// <para>指定包含用于计算指定统计数据的属性值的一个或多个数值字段。 可以指定多项统计和字段组合。 空值将被排除在所有统计计算之外。</para>
+		/// <para>可使用第一种和最后一种统计来对文本属性字段进行汇总。 可使用任何一种统计来对数值属性字段进行汇总。</para>
+		/// <para>可用统计类型如下：</para>
+		/// <para>总和 - 将指定字段的值相加在一起。</para>
+		/// <para>平均值 - 将计算指定字段的平均值。</para>
+		/// <para>最小值 - 将查找指定字段所有记录的最小值。</para>
+		/// <para>最大值 - 将查找指定字段所有记录的最大值。</para>
+		/// <para>范围 - 将计算指定字段的值范围（最大值 - 最小值）。</para>
+		/// <para>标准差 - 将计算指定字段中值的标准差。</para>
+		/// <para>计数 - 将查找统计计算中包括的值的数目。 计数包括除空值外的所有值。 要确定字段中的空值数，请在相应字段上创建计数，然后在另一个不包含空值的字段上创建计数（例如 OID，如果存在的话），然后将这两个值相减。</para>
+		/// <para>第一个 - 将使用输入中第一条记录的指定字段值。</para>
+		/// <para>最后一个 - 将使用输入中最后一条记录的指定字段值。</para>
+		/// <para>中值 - 将计算指定字段所有记录的中值。</para>
+		/// <para>方差 - 将计算指定字段所有记录的方差。</para>
+		/// <para>唯一值 - 将计算指定字段的唯一值数量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -122,9 +123,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Create multipart features</para>
-		/// <para>Specifies whether multipart features are allowed in the output feature class.</para>
-		/// <para>Checked—Multipart features are allowed in the output feature class. This is the default.</para>
-		/// <para>Unchecked—Multipart features are not allowed in the output feature class. Instead of creating multipart features, individual features are created for each part.</para>
+		/// <para>指定在输出要素类中是否允许多部分要素。</para>
+		/// <para>选中 - 输出要素类中允许多部分要素。 这是默认设置。</para>
+		/// <para>未选中 - 输出要素类中不允许多部分要素。 将为各部分创建单独的要素，而不创建多部分要素。</para>
 		/// <para><see cref="MultiPartEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -134,9 +135,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Unsplit lines</para>
-		/// <para>Specifies how line features are dissolved.</para>
-		/// <para>Unchecked—Lines are dissolved into a single feature. This is the default.</para>
-		/// <para>Checked—Lines are only dissolved when two lines have an end vertex in common.</para>
+		/// <para>指定线要素的融合方式。</para>
+		/// <para>取消选中 - 将线融合为单个要素。 这是默认设置。</para>
+		/// <para>选中 - 只有当两条线具有一个公共结束折点时才对线进行融合。</para>
 		/// <para><see cref="UnsplitLinesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -161,14 +162,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MultiPartEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Multipart features are allowed in the output feature class. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MULTI_PART")]
 			MULTI_PART,
 
 			/// <summary>
-			/// <para>Unchecked—Multipart features are not allowed in the output feature class. Instead of creating multipart features, individual features are created for each part.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SINGLE_PART")]
@@ -182,14 +183,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum UnsplitLinesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Lines are only dissolved when two lines have an end vertex in common.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UNSPLIT_LINES")]
 			UNSPLIT_LINES,
 
 			/// <summary>
-			/// <para>Unchecked—Lines are dissolved into a single feature. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DISSOLVE_LINES")]

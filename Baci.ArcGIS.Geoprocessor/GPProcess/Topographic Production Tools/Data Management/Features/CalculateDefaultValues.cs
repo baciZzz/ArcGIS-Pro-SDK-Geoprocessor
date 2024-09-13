@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Calculate Default Values</para>
+	/// <para>Calculate Default Values</para>
 	/// <para>Replaces null values in a feature class or table with the default values from the geodatabase feature class.</para>
 	/// </summary>
 	public class CalculateDefaultValues : AbstractGPProcess

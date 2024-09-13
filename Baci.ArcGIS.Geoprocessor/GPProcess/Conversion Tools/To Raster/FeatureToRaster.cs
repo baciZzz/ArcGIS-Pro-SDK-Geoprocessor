@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Feature to Raster</para>
-	/// <para>Converts features to a raster dataset.</para>
+	/// <para>要素转栅格</para>
+	/// <para>将要素转换为栅格数据集。</para>
 	/// </summary>
 	public class FeatureToRaster : AbstractGPProcess
 	{
@@ -20,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input features</para>
-		/// <para>The input feature dataset to be converted to a raster dataset.</para>
+		/// <para>要转换为栅格数据集的输入要素数据集。</para>
 		/// </param>
 		/// <param name="Field">
 		/// <para>Field</para>
-		/// <para>The field used to assign values to the output raster.</para>
-		/// <para>It can be any field of the input feature dataset&apos;s attribute table.</para>
-		/// <para>If the Shape field of a point or multipoint dataset contains z- or m-values, either of these can be used.</para>
+		/// <para>用于向输出栅格分配值的字段。</para>
+		/// <para>可以是输入要素数据集属性表中的任何字段。</para>
+		/// <para>如果点数据集或多点数据集的 Shape 字段含有 z 值或 m 值，则可以使用二者中的任意一个。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster dataset to be created.</para>
-		/// <para>If the output raster will not be saved to a geodatabase, specify .tif for TIFF file format, .CRF for CRF file format, .img for ERDAS IMAGINE file format, or no extension for Esri Grid raster format.</para>
+		/// <para>要创建的输出栅格数据集。</para>
+		/// <para>如果不希望将输出栅格保存到地理数据库，请为 TIFF 文件格式指定 .tif，为 CRF 文件格式指定 .CRF，为 ERDAS IMAGINE 文件格式指定 .img，而对于 Esri Grid 栅格格式，无需指定扩展名。</para>
 		/// </param>
 		public FeatureToRaster(object InFeatures, object Field, object OutRaster)
 		{
@@ -41,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Feature to Raster</para>
+		/// <para>Tool Display Name : 要素转栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Feature to Raster";
+		public override string DisplayName() => "要素转栅格";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureToRaster</para>
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input features</para>
-		/// <para>The input feature dataset to be converted to a raster dataset.</para>
+		/// <para>要转换为栅格数据集的输入要素数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -89,9 +90,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Field</para>
-		/// <para>The field used to assign values to the output raster.</para>
-		/// <para>It can be any field of the input feature dataset&apos;s attribute table.</para>
-		/// <para>If the Shape field of a point or multipoint dataset contains z- or m-values, either of these can be used.</para>
+		/// <para>用于向输出栅格分配值的字段。</para>
+		/// <para>可以是输入要素数据集属性表中的任何字段。</para>
+		/// <para>如果点数据集或多点数据集的 Shape 字段含有 z 值或 m 值，则可以使用二者中的任意一个。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -101,8 +102,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster dataset to be created.</para>
-		/// <para>If the output raster will not be saved to a geodatabase, specify .tif for TIFF file format, .CRF for CRF file format, .img for ERDAS IMAGINE file format, or no extension for Esri Grid raster format.</para>
+		/// <para>要创建的输出栅格数据集。</para>
+		/// <para>如果不希望将输出栅格保存到地理数据库，请为 TIFF 文件格式指定 .tif，为 CRF 文件格式指定 .CRF，为 ERDAS IMAGINE 文件格式指定 .img，而对于 Esri Grid 栅格格式，无需指定扩展名。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -110,8 +111,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>The cell size of the output raster being created.</para>
-		/// <para>This parameter can be defined by a numeric value or obtained from an existing raster dataset. If the cell size hasn’t been explicitly specified as the parameter value, the environment cell size value is used, if specified; otherwise, additional rules are used to calculate it from the other inputs. See Usages for more detail.</para>
+		/// <para>正在创建的输出栅格的像元大小。</para>
+		/// <para>此参数可以通过数值进行定义，也可以从现有栅格数据集获取。如果未将像元大小明确指定为参数值，则将使用环境像元大小值（如果已指定）；否则，将使用其他规则通过其他输出计算像元大小。有关详细信息，请参阅“用法”。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]

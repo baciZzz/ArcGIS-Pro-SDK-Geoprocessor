@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Local Polynomial Interpolation</para>
-	/// <para>Fits the specified order (zero, first, second, third, and so on) polynomial, each within specified overlapping neighborhoods, to produce an output surface.</para>
+	/// <para>局部多项式插值法</para>
+	/// <para>拟合处于指定重叠邻域内的指定阶（零阶、一阶、二阶、三阶等）多项式以生成输出表面。</para>
 	/// </summary>
 	public class LocalPolynomialInterpolation : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input features</para>
-		/// <para>The input point features containing the z-values to be interpolated.</para>
+		/// <para>包含要插入的 z 值的输入点要素。</para>
 		/// </param>
 		/// <param name="ZField">
 		/// <para>Z value field</para>
-		/// <para>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contain z-values or m-values.</para>
+		/// <para>表示每个点的高度或量级值的字段。如果输入要素包含 z 值或 m 值，则该字段可以是数值字段或 Shape 字段。</para>
 		/// </param>
 		public LocalPolynomialInterpolation(object InFeatures, object ZField)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Local Polynomial Interpolation</para>
+		/// <para>Tool Display Name : 局部多项式插值法</para>
 		/// </summary>
-		public override string DisplayName() => "Local Polynomial Interpolation";
+		public override string DisplayName() => "局部多项式插值法";
 
 		/// <summary>
 		/// <para>Tool Name : LocalPolynomialInterpolation</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input features</para>
-		/// <para>The input point features containing the z-values to be interpolated.</para>
+		/// <para>包含要插入的 z 值的输入点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Z value field</para>
-		/// <para>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contain z-values or m-values.</para>
+		/// <para>表示每个点的高度或量级值的字段。如果输入要素包含 z 值或 m 值，则该字段可以是数值字段或 Shape 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output geostatistical layer</para>
-		/// <para>The geostatistical layer produced. This layer is required output only if no output raster is requested.</para>
+		/// <para>生成的地统计图层。只有未请求任何输出栅格时才需要输出该图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGALayer()]
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster. This raster is required output only if no output geostatistical layer is requested.</para>
+		/// <para>输出栅格。只有未请求任何输出地统计图层时才需要输出该栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -105,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>The cell size at which the output raster will be created.</para>
-		/// <para>This value can be explicitly set in the Environments by the Cell Size parameter.</para>
-		/// <para>If not set, it is the shorter of the width or the height of the extent of the input point features, in the input spatial reference, divided by 250.</para>
+		/// <para>要创建的输出栅格的像元大小。</para>
+		/// <para>可以通过像元大小参数在环境中明确设置该值。</para>
+		/// <para>如果未设置，则该值为输入空间参考中输入点要素范围的宽度与高度中的较小值除以 250。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -119,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Order of polynomial</para>
-		/// <para>The order of the polynomial.</para>
+		/// <para>多项式的阶。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -128,36 +129,36 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Search neighborhood</para>
-		/// <para>Defines which surrounding points will be used to control the output. Standard is the default.</para>
-		/// <para>Standard</para>
-		/// <para>Major semiaxis—The major semiaxis value of the searching neighborhood.</para>
-		/// <para>Minor semiaxis—The minor semiaxis value of the searching neighborhood.</para>
-		/// <para>Angle—The angle of rotation for the axis (circle) or semimajor axis (ellipse) of the moving window.</para>
-		/// <para>Max neighbors—The maximum number of neighbors that will be used to estimate the value at the unknown location.</para>
-		/// <para>Min neighbors—The minimum number of neighbors that will be used to estimate the value at the unknown location.</para>
-		/// <para>Sector Type—The geometry of the neighborhood.</para>
-		/// <para>One sector—Single ellipse.</para>
-		/// <para>Four sectors—Ellipse divided into four sectors.</para>
-		/// <para>Four sectors shifted—Ellipse divided into four sectors and shifted 45 degrees.</para>
-		/// <para>Eight sectors—Ellipse divided into eight sectors.</para>
-		/// <para>Smooth</para>
-		/// <para>Major semiaxis—The major semiaxis value of the searching neighborhood.</para>
-		/// <para>Minor semiaxis—The minor semiaxis value of the searching neighborhood.</para>
-		/// <para>Angle—The angle of rotation for the axis (circle) or semimajor axis (ellipse) of the moving window.</para>
-		/// <para>Smoothing factor—The Smooth Interpolation option creates an outer ellipse and an inner ellipse at a distance equal to the Major Semiaxis multiplied by the Smoothing factor. The points that fall outside the smallest ellipse but inside the largest ellipse are weighted using a sigmoidal function with a value between zero and one.</para>
-		/// <para>Standard Circular</para>
-		/// <para>Radius—The length of the radius of the search circle.</para>
-		/// <para>Angle—The angle of rotation for the axis (circle) or semimajor axis (ellipse) of the moving window.</para>
-		/// <para>Max neighbors—The maximum number of neighbors that will be used to estimate the value at the unknown location.</para>
-		/// <para>Min neighbors—The minimum number of neighbors that will be used to estimate the value at the unknown location.</para>
-		/// <para>Sector Type—The geometry of the neighborhood.</para>
-		/// <para>One sector—Single ellipse.</para>
-		/// <para>Four sectors—Ellipse divided into four sectors.</para>
-		/// <para>Four sectors shifted—Ellipse divided into four sectors and shifted 45 degrees.</para>
-		/// <para>Eight sectors—Ellipse divided into eight sectors.</para>
-		/// <para>Smooth Circular</para>
-		/// <para>Radius—The length of the radius of the search circle.</para>
-		/// <para>Smoothing factor—The Smooth Interpolation option creates an outer ellipse and an inner ellipse at a distance equal to the Major Semiaxis multiplied by the Smoothing factor. The points that fall outside the smallest ellipse but inside the largest ellipse are weighted using a sigmoidal function with a value between zero and one.</para>
+		/// <para>定义用于控制输出的周围点。“标准”为默认选项。</para>
+		/// <para>标准</para>
+		/// <para>长半轴 - 搜索邻域的长半轴值。</para>
+		/// <para>短半轴 - 搜索邻域的短半轴值。</para>
+		/// <para>角度 - 移动窗口的轴（圆）或长半轴（椭圆）的旋转角度。</para>
+		/// <para>最大邻点数 - 用于估计未知位置值的最大相邻数。</para>
+		/// <para>最小邻点数 - 用于估计未知位置值的最小相邻数。</para>
+		/// <para>分区类型 - 邻域的几何。</para>
+		/// <para>单扇区 - 单个椭圆。</para>
+		/// <para>四扇区 - 分为四个扇区的椭圆。</para>
+		/// <para>偏移四扇区 - 分为四个扇区且偏移 45 度的椭圆。</para>
+		/// <para>八扇区 - 分为八个扇区的椭圆。</para>
+		/// <para>平滑</para>
+		/// <para>长半轴 - 搜索邻域的长半轴值。</para>
+		/// <para>短半轴 - 搜索邻域的短半轴值。</para>
+		/// <para>角度 - 移动窗口的轴（圆）或长半轴（椭圆）的旋转角度。</para>
+		/// <para>平滑系数 -“平滑插值”选项可在“长半轴”与“平滑系数”相乘所得的距离处创建一个外椭圆和一个内椭圆。使用反曲线函数可对位于最小椭圆外、最大椭圆内的点加权，加权值介于 0 和 1 之间。</para>
+		/// <para>标准圆</para>
+		/// <para>半径 - 搜索圆的半径长度。</para>
+		/// <para>角度 - 移动窗口的轴（圆）或长半轴（椭圆）的旋转角度。</para>
+		/// <para>最大邻点数 - 用于估计未知位置值的最大相邻数。</para>
+		/// <para>最小邻点数 - 用于估计未知位置值的最小相邻数。</para>
+		/// <para>分区类型 - 邻域的几何。</para>
+		/// <para>单扇区 - 单个椭圆。</para>
+		/// <para>四扇区 - 分为四个扇区的椭圆。</para>
+		/// <para>偏移四扇区 - 分为四个扇区且偏移 45 度的椭圆。</para>
+		/// <para>八扇区 - 分为八个扇区的椭圆。</para>
+		/// <para>平滑圆形</para>
+		/// <para>半径 - 搜索圆的半径长度。</para>
+		/// <para>平滑系数 -“平滑插值”选项可在“长半轴”与“平滑系数”相乘所得的距离处创建一个外椭圆和一个内椭圆。使用反曲线函数可对位于最小椭圆外、最大椭圆内的点加权，加权值介于 0 和 1 之间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGASearchNeighborhood()]
@@ -167,13 +168,13 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Kernel function</para>
-		/// <para>The kernel function used in the simulation.</para>
-		/// <para>Exponential—The function grows or decays proportionally.</para>
-		/// <para>Gaussian—Bell-shaped function that falls off quickly toward plus or minus infinity.</para>
-		/// <para>Quartic—Fourth-order polynomial function.</para>
-		/// <para>Epanechnikov—A discontinuous parabolic function.</para>
-		/// <para>Fifth-order polynomial—Fifth-order polynomial function.</para>
-		/// <para>Constant—An indicator function.</para>
+		/// <para>模拟中所使用的核函数。</para>
+		/// <para>指数函数—函数按比例增长或衰减。</para>
+		/// <para>高斯函数—朝正或负无穷方向快速跌落的钟形函数。</para>
+		/// <para>四次式—四阶多项式函数。</para>
+		/// <para>Epanechnikov—不连续的抛物线函数。</para>
+		/// <para>五阶多项式—五阶多项式函数。</para>
+		/// <para>常量—指示函数。</para>
 		/// <para><see cref="KernelFunctionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -183,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Bandwidth</para>
-		/// <para>Used to specify the maximum distance at which data points are used for prediction. With increasing bandwidth, prediction bias increases and prediction variance decreases.</para>
+		/// <para>用于指定预测所用数据点之间的最大距离。随着带宽的增加，预测偏差将增加，而预测方差会减少。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -192,9 +193,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Use spatial condition number threshold</para>
-		/// <para>Option to control the creation of prediction and prediction standard errors where the predictions are unstable. This option is only available for polynomials of order 1, 2, and 3.</para>
-		/// <para>Unchecked—Predictions will be created everywhere, including areas where the predictions are unstable. This is the default.</para>
-		/// <para>Checked—Prediction and prediction standard errors will not be created where the predictions are unstable.</para>
+		/// <para>对预测不稳定位置的预测和预测标准误差的创建进行控制的选项。此选项只可用于 1 阶、2 阶和 3 阶多项式。</para>
+		/// <para>未选中 - 预测值将在各处创建，包括预测值不稳定的位置。这是默认设置。</para>
+		/// <para>选中 - 不会在预测不稳定位置创建预测和预测标准误差。</para>
 		/// <para><see cref="UseConditionNumberEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -204,7 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Spatial condition number threshold</para>
-		/// <para>Every invertible square matrix has a condition number that indicates how inaccurate the solution to the linear equations can be with a small change in the matrix coefficients (it can be due to imprecise data). If the condition number is large, a small change in the matrix coefficients results in a large change in the solution vector.</para>
+		/// <para>每个可逆方阵都具有一个条件数，用来表示矩阵系数发生微小变化时（可能是由非精确数据导致），线性方程组解的错误程度。如果条件数较大，则很小的矩阵系数变化便会导致解向量的较大变化。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -213,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Weight field</para>
-		/// <para>Used to emphasize an observation. The larger the weight, the more impact it has on the prediction. For coincident observations, assign the largest weight to the most reliable measurement.</para>
+		/// <para>用于强调某个观测。权重越大，对预测的影响就越大。对于重合的观测，为最可靠的测量值分配最大权重。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -223,10 +224,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output surface type</para>
-		/// <para>Surface type to store the interpolation results.</para>
-		/// <para>Prediction—Prediction surfaces are produced from the interpolated values.</para>
-		/// <para>Standard error of prediction— Standard Error surfaces are produced from the standard errors of the interpolated values.</para>
-		/// <para>Condition number—The Spatial condition number surface indicates the stability of calculations at a particular location. The larger the condition number, the more unstable the prediction, so locations with large condition numbers may be prone to artifacts and erratic predicted values.</para>
+		/// <para>用于存储插值结果的表面类型。</para>
+		/// <para>预测—可通过内插值生成的预测表面。</para>
+		/// <para>预测的标准误差— 标准误差表面可通过内插值的标准误差生成。</para>
+		/// <para>条件数—空间条件数表面表示在特定位置计算的稳定性。条件数越大，预测越不稳定，所以条件数较大的位置更容易出现伪影和不稳定的预测值。</para>
 		/// <para><see cref="OutputTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -251,45 +252,45 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum KernelFunctionEnum 
 		{
 			/// <summary>
-			/// <para>Exponential—The function grows or decays proportionally.</para>
+			/// <para>指数函数—函数按比例增长或衰减。</para>
 			/// </summary>
 			[GPValue("EXPONENTIAL")]
-			[Description("Exponential")]
+			[Description("指数函数")]
 			Exponential,
 
 			/// <summary>
-			/// <para>Gaussian—Bell-shaped function that falls off quickly toward plus or minus infinity.</para>
+			/// <para>高斯函数—朝正或负无穷方向快速跌落的钟形函数。</para>
 			/// </summary>
 			[GPValue("GAUSSIAN")]
-			[Description("Gaussian")]
+			[Description("高斯函数")]
 			Gaussian,
 
 			/// <summary>
-			/// <para>Quartic—Fourth-order polynomial function.</para>
+			/// <para>四次式—四阶多项式函数。</para>
 			/// </summary>
 			[GPValue("QUARTIC")]
-			[Description("Quartic")]
+			[Description("四次式")]
 			Quartic,
 
 			/// <summary>
-			/// <para>Epanechnikov—A discontinuous parabolic function.</para>
+			/// <para>Epanechnikov—不连续的抛物线函数。</para>
 			/// </summary>
 			[GPValue("EPANECHNIKOV")]
 			[Description("Epanechnikov")]
 			Epanechnikov,
 
 			/// <summary>
-			/// <para>Fifth-order polynomial—Fifth-order polynomial function.</para>
+			/// <para>五阶多项式—五阶多项式函数。</para>
 			/// </summary>
 			[GPValue("POLYNOMIAL5")]
-			[Description("Fifth-order polynomial")]
+			[Description("五阶多项式")]
 			POLYNOMIAL5,
 
 			/// <summary>
-			/// <para>Constant—An indicator function.</para>
+			/// <para>常量—指示函数。</para>
 			/// </summary>
 			[GPValue("CONSTANT")]
-			[Description("Constant")]
+			[Description("常量")]
 			Constant,
 
 		}
@@ -300,14 +301,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum UseConditionNumberEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Prediction and prediction standard errors will not be created where the predictions are unstable.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("USE_CONDITION_NUMBER")]
 			USE_CONDITION_NUMBER,
 
 			/// <summary>
-			/// <para>Unchecked—Predictions will be created everywhere, including areas where the predictions are unstable. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_USE_CONDITION_NUMBER")]
@@ -321,24 +322,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum OutputTypeEnum 
 		{
 			/// <summary>
-			/// <para>Prediction—Prediction surfaces are produced from the interpolated values.</para>
+			/// <para>预测—可通过内插值生成的预测表面。</para>
 			/// </summary>
 			[GPValue("PREDICTION")]
-			[Description("Prediction")]
+			[Description("预测")]
 			Prediction,
 
 			/// <summary>
-			/// <para>Standard error of prediction— Standard Error surfaces are produced from the standard errors of the interpolated values.</para>
+			/// <para>预测的标准误差— 标准误差表面可通过内插值的标准误差生成。</para>
 			/// </summary>
 			[GPValue("PREDICTION_STANDARD_ERROR")]
-			[Description("Standard error of prediction")]
+			[Description("预测的标准误差")]
 			Standard_error_of_prediction,
 
 			/// <summary>
-			/// <para>Condition number—The Spatial condition number surface indicates the stability of calculations at a particular location. The larger the condition number, the more unstable the prediction, so locations with large condition numbers may be prone to artifacts and erratic predicted values.</para>
+			/// <para>条件数—空间条件数表面表示在特定位置计算的稳定性。条件数越大，预测越不稳定，所以条件数较大的位置更容易出现伪影和不稳定的预测值。</para>
 			/// </summary>
 			[GPValue("CONDITION_NUMBER")]
-			[Description("Condition number")]
+			[Description("条件数")]
 			Condition_number,
 
 		}

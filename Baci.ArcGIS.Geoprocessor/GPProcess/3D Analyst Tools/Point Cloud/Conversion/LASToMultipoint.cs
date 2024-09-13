@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>LAS To Multipoint</para>
-	/// <para>Creates multipoint features using one or more lidar files.</para>
+	/// <para>LAS 转多点</para>
+	/// <para>使用一个或多个激光雷达文件创建多点要素。</para>
 	/// </summary>
 	public class LASToMultipoint : AbstractGPProcess
 	{
@@ -20,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="Input">
 		/// <para>Input</para>
-		/// <para>The LAS or ZLAS files that will be imported to a multipoint feature class. If a folder is specified, all the LAS files that reside therein will be imported.</para>
-		/// <para>In the tool dialog box, a folder can also be specified as an input by selecting the folder in Windows Explorer and dragging it onto the parameter&apos;s input box.</para>
+		/// <para>将要导入到多点要素类中的 LAS 或 ZLAS 文件。如果指定了文件夹，则将导入位于该文件夹中的所有 LAS 文件。</para>
+		/// <para>在“工具”对话框中，可将文件夹指定为输入，具体方法如下：在 Windows 资源管理器中选择文件夹，然后将其拖动到参数的输入框上。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </param>
 		/// <param name="AveragePointSpacing">
 		/// <para>Average Point Spacing</para>
-		/// <para>The average 2D distance between points in the input file or files. This can be an approximation. If areas have been sampled at different densities, specify the smaller spacing. The value needs to be provided in the projection units of the output coordinate system.</para>
+		/// <para>一个或多个输入文件中点之间的平均 2D 距离。此距离可以是一个近似值。如果以不同的密度对区域进行采样，应指定较小的间距。所提供的值需要使用输出坐标系的投影单位。</para>
 		/// </param>
 		public LASToMultipoint(object Input, object OutFeatureClass, object AveragePointSpacing)
 		{
@@ -39,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : LAS To Multipoint</para>
+		/// <para>Tool Display Name : LAS 转多点</para>
 		/// </summary>
-		public override string DisplayName() => "LAS To Multipoint";
+		public override string DisplayName() => "LAS 转多点";
 
 		/// <summary>
 		/// <para>Tool Name : LASToMultipoint</para>
@@ -75,8 +76,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input</para>
-		/// <para>The LAS or ZLAS files that will be imported to a multipoint feature class. If a folder is specified, all the LAS files that reside therein will be imported.</para>
-		/// <para>In the tool dialog box, a folder can also be specified as an input by selecting the folder in Windows Explorer and dragging it onto the parameter&apos;s input box.</para>
+		/// <para>将要导入到多点要素类中的 LAS 或 ZLAS 文件。如果指定了文件夹，则将导入位于该文件夹中的所有 LAS 文件。</para>
+		/// <para>在“工具”对话框中，可将文件夹指定为输入，具体方法如下：在 Windows 资源管理器中选择文件夹，然后将其拖动到参数的输入框上。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Average Point Spacing</para>
-		/// <para>The average 2D distance between points in the input file or files. This can be an approximation. If areas have been sampled at different densities, specify the smaller spacing. The value needs to be provided in the projection units of the output coordinate system.</para>
+		/// <para>一个或多个输入文件中点之间的平均 2D 距离。此距离可以是一个近似值。如果以不同的密度对区域进行采样，应指定较小的间距。所提供的值需要使用输出坐标系的投影单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Class Codes</para>
-		/// <para>The classification codes to use as a query filter for LAS data points. Valid values range from 1 to 32. No filter is applied by default.</para>
+		/// <para>用作 LAS 数据点的查询过滤器的分类代码。 值的有效范围从 1 到 32。 默认情况下，不使用过滤器。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -109,17 +110,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Return Values</para>
-		/// <para>The return values that will be used to filter the LAS points that get imported to multipoint features.</para>
-		/// <para>All Returns—Any returns</para>
-		/// <para>1st Return—1</para>
-		/// <para>2nd Return—2</para>
-		/// <para>3rd Return—3</para>
-		/// <para>4th Return—4</para>
-		/// <para>5th Return—5</para>
-		/// <para>6th Return—6</para>
-		/// <para>7th Return—7</para>
-		/// <para>8th Return—8</para>
-		/// <para>Last Return—Last returns</para>
+		/// <para>将用于过滤已导入到多点要素中的 LAS 点的回波值。</para>
+		/// <para>所有回波—任意回波</para>
+		/// <para>第 1 个回波—1</para>
+		/// <para>第 2 个回波—2</para>
+		/// <para>第 3 个回波—3</para>
+		/// <para>第 4 个回波—4</para>
+		/// <para>第 5 个回波—5</para>
+		/// <para>第 6 个回波—6</para>
+		/// <para>第 7 个回波—7</para>
+		/// <para>第 8 个回波—8</para>
+		/// <para>最后回波—最后回波</para>
 		/// <para><see cref="ReturnEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -129,20 +130,20 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Attribute Names</para>
-		/// <para>The LAS point properties whose values will be stored in binary large object (BLOB) fields in the attribute table of the output. If the resulting features will participate in a terrain dataset, the stored attributes can be used to symbolize the terrain. The Name column indicates the name of the field that will be used to store the specified attributes. The following LAS properties are supported:</para>
-		/// <para>INTENSITY—Intensity</para>
-		/// <para>RETURN_NUMBER—Return number</para>
-		/// <para>NUMBER_OF_RETURNS—Number of returns per pulse</para>
-		/// <para>SCAN_DIRECTION_FLAG —Scan direction flag</para>
-		/// <para>EDGE_OF_FLIGHTLINE—Edge of flightline</para>
-		/// <para>CLASSIFICATION—Classification</para>
-		/// <para>SCAN_ANGLE_RANK—Scan angle rank</para>
-		/// <para>FILE_MARKER—File marker</para>
-		/// <para>USER_BIT_FIELD—User data value</para>
-		/// <para>GPS_TIME—GPS time</para>
-		/// <para>COLOR_RED—Red band</para>
-		/// <para>COLOR_GREEN—Green band</para>
-		/// <para>COLOR_BLUE—Blue band</para>
+		/// <para>LAS 点属性，其值将存储在输出的属性表的二进制大对象 (BLOB) 字段中。如果所生成的要素将参与 terrain 数据集，则已存储的属性可用于对 terrain 进行符号化。名称列表示将用于存储指定属性的字段的名称。支持的 LAS 属性如下：</para>
+		/// <para>INTENSITY—强度</para>
+		/// <para>RETURN_NUMBER—回波编号</para>
+		/// <para>NUMBER_OF_RETURNS—每个脉冲的回波数</para>
+		/// <para>SCAN_DIRECTION_FLAG —扫描方向标记</para>
+		/// <para>EDGE_OF_FLIGHTLINE—摄影航线的边缘</para>
+		/// <para>CLASSIFICATION—分类</para>
+		/// <para>SCAN_ANGLE_RANK—扫描角度等级</para>
+		/// <para>FILE_MARKER—文件标记</para>
+		/// <para>USER_BIT_FIELD—用户数据值</para>
+		/// <para>GPS_TIME—GPS 时间</para>
+		/// <para>COLOR_RED—红色波段</para>
+		/// <para>COLOR_GREEN—绿色波段</para>
+		/// <para>COLOR_BLUE—蓝色波段</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -151,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>The coordinate system of the input LAS file.</para>
+		/// <para>输入 LAS 文件的坐标系。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
@@ -159,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>File Suffix</para>
-		/// <para>The suffix of the files that will be imported from an input folder. This parameter is required when a folder is specified as input.</para>
+		/// <para>将从输入文件夹导入的文件的后缀。 将文件夹指定为输入时，此参数为必填项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -167,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z Factor</para>
-		/// <para>The factor by which z-values will be multiplied. This is typically used to convert z linear units to match x,y linear units. The default is 1, which leaves elevation values unchanged. This parameter is not available if the spatial reference of the input surface has a z datum with a specified linear unit.</para>
+		/// <para>Z 值将乘上的系数。 此值通常用于转换 z 线性单位来匹配 x,y 线性单位。 默认值为 1，此时高程值保持不变。 如果输入表面的空间参考具有已指定线性单位的 z 基准，则此参数不可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -175,9 +176,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Include Subfolders</para>
-		/// <para>Scans through subfolders when an input folder is selected containing data in a subfolders directory. The output feature class will be generated with a row for each file encountered in the directory structure.</para>
-		/// <para>Unchecked—Only LAS files found in an input folder will be converted to multipoint features. This is the default.</para>
-		/// <para>Checked—All LAS files residing in the subdirectories of an input folder will be converted to multipoint features.</para>
+		/// <para>当所选输入文件夹中的子文件夹含有数据时，扫描子文件夹。为目录结构中包含的每个文件生成一行输出要素类。</para>
+		/// <para>未选中 - 只有在输入文件夹中找到的 LAS 文件将转换为多点要素。这是默认设置。</para>
+		/// <para>选中 - 位于输入文件夹子目录中的所有 LAS 文件将转换为多点要素。</para>
 		/// <para><see cref="FolderRecursionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -202,73 +203,73 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ReturnEnum 
 		{
 			/// <summary>
-			/// <para>All Returns—Any returns</para>
+			/// <para>所有回波—任意回波</para>
 			/// </summary>
 			[GPValue("ANY_RETURNS")]
-			[Description("All Returns")]
+			[Description("所有回波")]
 			All_Returns,
 
 			/// <summary>
-			/// <para>1st Return—1</para>
+			/// <para>第 1 个回波—1</para>
 			/// </summary>
 			[GPValue("1")]
-			[Description("1st Return")]
+			[Description("第 1 个回波")]
 			_1st_Return,
 
 			/// <summary>
-			/// <para>2nd Return—2</para>
+			/// <para>第 2 个回波—2</para>
 			/// </summary>
 			[GPValue("2")]
-			[Description("2nd Return")]
+			[Description("第 2 个回波")]
 			_2nd_Return,
 
 			/// <summary>
-			/// <para>3rd Return—3</para>
+			/// <para>第 3 个回波—3</para>
 			/// </summary>
 			[GPValue("3")]
-			[Description("3rd Return")]
+			[Description("第 3 个回波")]
 			_3rd_Return,
 
 			/// <summary>
-			/// <para>4th Return—4</para>
+			/// <para>第 4 个回波—4</para>
 			/// </summary>
 			[GPValue("4")]
-			[Description("4th Return")]
+			[Description("第 4 个回波")]
 			_4th_Return,
 
 			/// <summary>
-			/// <para>5th Return—5</para>
+			/// <para>第 5 个回波—5</para>
 			/// </summary>
 			[GPValue("5")]
-			[Description("5th Return")]
+			[Description("第 5 个回波")]
 			_5th_Return,
 
 			/// <summary>
-			/// <para>6th Return—6</para>
+			/// <para>第 6 个回波—6</para>
 			/// </summary>
 			[GPValue("6")]
-			[Description("6th Return")]
+			[Description("第 6 个回波")]
 			_6th_Return,
 
 			/// <summary>
-			/// <para>7th Return—7</para>
+			/// <para>第 7 个回波—7</para>
 			/// </summary>
 			[GPValue("7")]
-			[Description("7th Return")]
+			[Description("第 7 个回波")]
 			_7th_Return,
 
 			/// <summary>
-			/// <para>8th Return—8</para>
+			/// <para>第 8 个回波—8</para>
 			/// </summary>
 			[GPValue("8")]
-			[Description("8th Return")]
+			[Description("第 8 个回波")]
 			_8th_Return,
 
 			/// <summary>
-			/// <para>Last Return—Last returns</para>
+			/// <para>最后回波—最后回波</para>
 			/// </summary>
 			[GPValue("LAST_RETURNS")]
-			[Description("Last Return")]
+			[Description("最后回波")]
 			Last_Return,
 
 		}
@@ -279,14 +280,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum FolderRecursionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—All LAS files residing in the subdirectories of an input folder will be converted to multipoint features.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RECURSION")]
 			RECURSION,
 
 			/// <summary>
-			/// <para>Unchecked—Only LAS files found in an input folder will be converted to multipoint features. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_RECURSION")]

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Solve Territories</para>
+	/// <para>Solve Territories</para>
 	/// <para>Creates and balances territories on the specified territory level provided that the balancing variables are set.</para>
 	/// </summary>
 	public class SolveTerritories : AbstractGPProcess

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Geographically Weighted Regression</para>
+	/// <para>Geographically Weighted Regression</para>
 	/// <para>Calculates Geographically Weighted Regression.</para>
 	/// </summary>
 	[Obsolete()]
@@ -84,10 +85,10 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		public override object[] Parameters() => new object[] { InFeatures, DependentField, ExplanatoryField, OutFeatureclass, KernelType, BandwidthMethod, Distance, NumberOfNeighbors, WeightField, CoefficientRasterWorkspace, CellSize, InPredictionLocations, PredictionExplanatoryField, OutPredictionFeatureclass, OutTable, OutRegressionRasters };
 
-        /// <summary>
-        /// <para>Input features</para>
-        /// </summary>
-        [ParamType(ParamTypeEnum.must)]
+		/// <summary>
+		/// <para>Input features</para>
+		/// </summary>
+		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
 		[GeometryType("Point", "Polygon")]

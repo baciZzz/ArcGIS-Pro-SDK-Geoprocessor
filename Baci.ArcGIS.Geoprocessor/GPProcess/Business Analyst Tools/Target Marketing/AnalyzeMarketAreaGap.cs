@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Analyze Market Area Gap</para>
+	/// <para>Analyze Market Area Gap</para>
 	/// <para>Generates a layer that displays the gap between total customers and expected customers.</para>
 	/// </summary>
 	public class AnalyzeMarketAreaGap : AbstractGPProcess

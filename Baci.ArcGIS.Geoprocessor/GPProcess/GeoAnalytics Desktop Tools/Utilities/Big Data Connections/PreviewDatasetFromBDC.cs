@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Preview Dataset From Big Data Connection</para>
-	/// <para>Creates a preview of the first ten features in  a big data connection (BDC) dataset.</para>
+	/// <para>从大数据连接预览数据集</para>
+	/// <para>用于创建大数据连接 (BDC) 数据集中前十个要素的预览。</para>
 	/// </summary>
 	public class PreviewDatasetFromBDC : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="BdcDataset">
 		/// <para>Big Data Connection Dataset</para>
-		/// <para>The dataset to preview from the BDC file.</para>
+		/// <para>要从 BDC 文件预览的数据集。</para>
 		/// </param>
 		public PreviewDatasetFromBDC(object BdcDataset)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Preview Dataset From Big Data Connection</para>
+		/// <para>Tool Display Name : 从大数据连接预览数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Preview Dataset From Big Data Connection";
+		public override string DisplayName() => "从大数据连接预览数据集";
 
 		/// <summary>
 		/// <para>Tool Name : PreviewDatasetFromBDC</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Big Data Connection Dataset</para>
-		/// <para>The dataset to preview from the BDC file.</para>
+		/// <para>要从 BDC 文件预览的数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Preview File</para>
-		/// <para>The output .csv file that represents a preview of your BDC dataset.</para>
+		/// <para>输出代表您的 BDC 数据集预览的 .csv 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]

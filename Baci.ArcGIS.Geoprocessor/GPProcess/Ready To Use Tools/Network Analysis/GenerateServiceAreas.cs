@@ -11,12 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 {
 	/// <summary>
 	/// <para>Generate Service Areas</para>
-	/// <para>Determines network service areas around facilities. A</para>
-	/// <para>network service area is a region that encompasses all streets that</para>
-	/// <para>can be accessed within a given distance or travel time from one or</para>
-	/// <para>more facilities. For instance, the 10-minute service area for a</para>
-	/// <para>facility includes all the streets that can be reached within 10</para>
-	/// <para>minutes from that facility.</para>
+	/// <para>生成服务区</para>
+	/// <para>确定设施点周围的网络服务区。 网络服务区是指包含从一个或多个设施点的给定距离或行程时间之内可到达的所有街道的区域。 例如，某一设施点的 10 分钟服务区包含从该设施点出发 10 分钟内可以到达的所有街道。</para>
 	/// </summary>
 	public class GenerateServiceAreas : AbstractGPProcess
 	{
@@ -25,66 +21,66 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		/// <param name="Facilities">
 		/// <para>Facilities</para>
-		/// <para>The input locations around which service areas are generated.</para>
-		/// <para>You can load up to 1,000 facilities.</para>
-		/// <para>The facilities feature set has an associated attribute table. The fields in the attribute table are described below.</para>
+		/// <para>在其周围生成服务区的输入位置。</para>
+		/// <para>最多可加载 1,000 个设施点。</para>
+		/// <para>设施点要素集具有一个关联的属性表。 下面介绍了属性表中的字段。</para>
 		/// <para>ObjectID</para>
-		/// <para>The system-managed ID field.</para>
+		/// <para>系统管理的 ID 字段。</para>
 		/// <para>Name</para>
-		/// <para>The name of the facility. If the name is not specified, a name is automatically generated at solve time.</para>
-		/// <para>All fields from the input facilities are included in the output polygons when the Polygons for Multiple Facilities parameter is set to Overlapping or Not Overlapping. The ObjectID field on the input facilities is transferred to the FacilityOID field on the output polygons.</para>
+		/// <para>设施点的名称。 如果未指定名称，则求解过程中会自动生成一个名称。</para>
+		/// <para>当“多个设施点的面”参数设置为“叠置”或“不叠置”时，输入设施点的所有字段都包含在输出面中。 输入设备点的 ObjectID 字段会传递到输出面的 FacilityOID 字段中。</para>
 		/// <para>Breaks</para>
-		/// <para>Specify the extent of the service area to be calculated on a per facility basis.</para>
-		/// <para>This attribute allows you to specify a different service area break value for each facility. For example, with two facilities, you can generate 5- and 10-minute service area polygons for one facility and 6-, 9-, and 12-minute polygons for the other facility.</para>
-		/// <para>Separate multiple break values with a space, and specify the numeric values using the dot character as your decimal separator, even if the locale of your computer defines a different decimal separator. For example, the value 5.5 10 15.5 specifies three break values around a facility.</para>
+		/// <para>指定基于每个设施点计算的服务区范围。</para>
+		/// <para>此属性允许您为每个设施点指定不同服务区中断值。 例如，对于两个设施点，您可以为其中一个设施点生成 5 和 10 分钟服务区，为另一个设施点生成 6、9 和 12 分钟服务区。</para>
+		/// <para>使用空格分隔多个中断值，使用点字符作为小数分隔符指定数值，即使计算机的区域设置定义了其他小数分隔符也是如此。 例如，值 5.5 10 15.5 用于指定设施点周围的三个中断值。</para>
 		/// <para>AdditionalTime</para>
-		/// <para>The amount of time spent at the facility, which reduces the extent of the service area calculated for the given facility. The default value is 0.</para>
-		/// <para>For example, when calculating service areas that represent fire station response times, AdditionalTime can store the turnout time, which is the time it takes a crew to put on the appropriate protective equipment and exit the fire station, for each fire station. Assume Fire Station 1 has a turnout time of 1 minute and Fire Station 2 has a turnout time of 3 minutes. If a 5-minute service area is calculated for both fire stations, the actual service area for Fire Station 1 is 4 minutes (since 1 of the 5 minutes is required as turnout time). Similarly, Fire Station 2 has a service area of only 2 minutes from the fire station.</para>
+		/// <para>在设施点花费的时间量，可缩减针对给定设施点计算的服务区范围。 默认值为 0。</para>
+		/// <para>例如，在计算表示消防站响应时间的服务区时，AdditionalTime 中可以存储每个消防站的出动时间，该时间为消防员配带好适当的防护设备并离开消防站所用的时间。 假设“消防站 1”的出动时间为 1 分钟，“消防站 2”的出动时间为 3 分钟。 如果分别计算这两个消防站的 5 分钟服务区，则“消防站 1”的实际服务区相当于 4 分钟服务区的范围（因为在这 5 分钟里需要 1 分钟的出动时间）。 同样，“消防站 2”的服务区距离消防站仅为 2 分钟。</para>
 		/// <para>AdditionalDistance</para>
-		/// <para>The extra distance traveled to reach the facility before the service is calculated. This attribute reduces the extent of the service area calculated for the given facility. The default value is 0.</para>
-		/// <para>Generally, the location of a facility, such as a store location, isn&apos;t exactly on the street; it is set back somewhat from the road. This attribute value can be used to model the distance between the actual facility location and its location on the street if it is important to include that distance when calculating the service areas for the facility.</para>
+		/// <para>在计算服务之前，为到达设施点所行驶的额外距离。 此属性可缩减针对给定设施点计算的服务区的范围。 默认值为 0。</para>
+		/// <para>通常，设施点的位置（例如门店地点）并不是恰好位于街道上，而是位于道路的后方。 该属性值可用于构建实际设施点位置与其在街道上的位置之间的距离，如有必要，可在计算设施点的服务区时包括此段距离。</para>
 		/// <para>AdditionalCost</para>
-		/// <para>The extra cost spent at the facility, which reduces the extent of the service area calculated for the given facility. The default value is 0.</para>
-		/// <para>Use this attribute value when the travel mode for the analysis uses an impedance attribute that is neither time based nor distance based The units for the attribute values are interpreted to be in unknown units.</para>
+		/// <para>在设施点花费的额外成本，可缩减针对给定设施点计算的服务区范围。 默认值为 0。</para>
+		/// <para>当分析的出行模式使用不基于时间也不基于距离的阻抗属性时，使用此属性值。属性值的单位将理解为未知单位。</para>
 		/// <para>CurbApproach</para>
-		/// <para>Specifies the direction a vehicle may arrive at and depart from the facility. The field value is specified as one of the following integers (use the numeric code, not the name in parentheses):</para>
-		/// <para>0 (Either side of vehicle)—The vehicle can approach and depart the facility in either direction, so a U-turn is allowed at the facility. This setting can be chosen if it is possible and practical for a vehicle to turn around at the facility. This decision may depend on the width of the road and the amount of traffic or whether the facility has a parking lot where vehicles can enter and turn around.</para>
-		/// <para>1 (Right side of vehicle)—When the vehicle approaches and departs the facility, the curb must be on the right side of the vehicle. A U-turn is prohibited. This is typically used for vehicles such as buses that must arrive with the bus stop on the right-hand side.</para>
-		/// <para>2 (Left side of vehicle)—When the vehicle approaches and departs the facility, the curb must be on the left side of the vehicle. A U-turn is prohibited. This is typically used for vehicles such as buses that must arrive with the bus stop on the left-hand side.</para>
-		/// <para>3 (No U-Turn)—When the vehicle approaches the facility, the curb can be on either side of the vehicle, however, the vehicle must depart without turning around.</para>
-		/// <para>The CurbApproach attribute is designed to work with both types of national driving standards: right-hand traffic (United States) and left-hand traffic (United Kingdom). First, consider a facility on the left side of a vehicle. It is always on the left side regardless of whether the vehicle travels on the left or right half of the road. What may change with national driving standards is your decision to approach a facility from one of two directions; that is, so it ends up on the right or left side of the vehicle. For example, if you want to arrive at a facility and not have a lane of traffic between the vehicle and the facility, choose 1 (Right side of vehicle) in the United States and 2 (Left side of vehicle) in the United Kingdom.</para>
+		/// <para>指定车辆到达和离开设施点的方向。 该字段值可指定为以下整数之一（请使用数值代码而非括号中的名称）：</para>
+		/// <para>0（车辆的任意一侧）- 车辆可从任一方向到达和离开设施点，因此设施点处允许 U 形转弯。 如果车辆有可能要在设施点处调头，则可以选择该设置。 此决策可能取决于道路的宽度以及交通量，或者该设施点是否有停车场能让车辆驶入并调头。</para>
+		/// <para>1（车辆的右侧）- 当车辆到达和离开设施点时，路边必须在车辆右侧。 禁止 U 形转弯。 通常用于必须在右侧停靠的车辆（如公共汽车）。</para>
+		/// <para>2（车辆的左侧）- 当车辆到达和离开设施点时，路边必须在车辆左侧。 禁止 U 形转弯。 通常用于必须在左侧停靠的车辆（如公共汽车）。</para>
+		/// <para>3（禁止 U 形转弯）- 当车辆到达设施点时，路边可在车辆的任意一侧；但是，车辆在离开时不得调头。</para>
+		/// <para>CurbApproach 属性是专为使用以下两种国家驾驶标准而设计的：右侧通行（美国）和左侧通行（英国）。 首先，考虑位于车辆左侧的设施点。 不管车辆行驶在左车道还是右车道，停靠点始终位于车辆的左侧。 不同国家的驾驶标准可能会要求您从这两种方向中的其中一个接近设施点；即只能从车辆的右侧或左侧接近设施点。 例如，如果要到达一个设施点并且在车辆与设施点之间不存在其他交通车道，在美国应该选择 1（车辆的右侧），而在英国应该选择 2（车辆的左侧）。</para>
 		/// <para>Bearing</para>
-		/// <para>The direction in which a point is moving. The units are degrees and are measured clockwise from true north. This field is used in conjunction with the BearingTol field.</para>
-		/// <para>Bearing data is usually sent automatically from a mobile device equipped with a GPS receiver. Try to include bearing data if you are loading an input location that is moving, such as a pedestrian or a vehicle.</para>
-		/// <para>Using this field tends to prevent adding locations to the wrong edges, which can occur when a vehicle is near an intersection or an overpass, for example. Bearing also helps the tool determine on which side of the street the point is.</para>
+		/// <para>点移动的方向。 单位为度，从正北开始沿顺时针方向进行测量。 该字段与 BearingTol 字段结合使用。</para>
+		/// <para>方位角数据通常会从配有 GPS 接收器的移动设备自动发送。 如果正在加载移动输入位置（例如行人或车辆），请尝试包括方位角数据。</para>
+		/// <para>使用该字段可以防止将位置添加到错误的边上，例如，车辆刚好在交叉路口或天桥附近时。 方位角也可帮助工具确定点在街道的哪一边上。</para>
 		/// <para>BearingTol</para>
-		/// <para>The bearing tolerance value creates a range of acceptable bearing values when locating moving points on an edge using the Bearing field. If the Bearing field value is within the range of acceptable values that are generated from the bearing tolerance on an edge, the point can be added as a network location there; otherwise, the closest point on the next-nearest edge is evaluated.</para>
-		/// <para>The units are in degrees, and the default value is 30. Values must be greater than 0 and less than 180. A value of 30 means that when Network Analyst attempts to add a network location on an edge, a range of acceptable bearing values is generated 15 degrees to either side of the edge (left and right) and in both digitized directions of the edge.</para>
+		/// <para>使用 Bearing 字段在边上定位移动点时，方位角容差值将创建一个可接受方位角值的范围。 如果 Bearing 字段值在可接受值范围（由边上的方位角容差生成）内，则可以将该点作为网络位置添加在此处，否则，将计算下一个最近边上的最近点。</para>
+		/// <para>单位为度，默认值为 30。 值必须大于 0 且小于 180。 值为 30 表示，Network Analyst 尝试在边上添加网络位置时，在边的每一侧（左侧和右侧）的两个数字化方向上都将生成一个 15 度的可接受方位角值。</para>
 		/// <para>NavLatency</para>
-		/// <para>This field is only used in the solve process if the Bearing and BearingTol fields also have values; however, entering a NavLatency field value is optional, even when values are present in Bearing and BearingTol. NavLatency indicates how much cost is expected to elapse from the moment GPS information is sent from a moving vehicle to a server and the moment the processed route is received by the vehicle&apos;s navigation device.</para>
-		/// <para>The units of NavLatency are the same as the units of the impedance attribute.</para>
+		/// <para>如果 Bearing 和 BearingTol 也具有值，则该字段只在求解过程中使用；但是，即使当 Bearing 和 BearingTolNavLatency 字段中有值时，NavLatency 值的输入也是可选的。NavLatency 表示 GPS 信息从移动的车辆上发送到服务器以及车辆导航设备接收到处理后路径这两个时刻之间预期要花费的成本。</para>
+		/// <para>NavLatency 的单位与阻抗属性的单位相同。</para>
 		/// </param>
 		/// <param name="BreakValues">
 		/// <para>Break Values</para>
-		/// <para>Specifies the size and number of service area polygons to generate for each facility. The units are determined by the Break Units value.</para>
-		/// <para>Multiple polygon breaks can be set to create concentric service areas per facility. For instance, to find 2-, 3-, and 5-mile service areas for each facility, type 2 3 5, separating the values with a space, and set Break Units to Miles. There is no limit to the number of break values you specify.</para>
-		/// <para>The size of the maximum break value can&apos;t exceed the equivalent of 300 minutes or 300 miles (482.80 kilometers). When generating detailed polygons, the maximum service-area size is limited to 15 minutes and 15 miles (24.14 kilometers).</para>
+		/// <para>指定为每个设施点生成的服务区面的大小和数量。 单位由“中断单位”值决定。</para>
+		/// <para>可以设置多个面中断来为每个设施点创建同心服务区。 例如，要查找每个设施点的 2 英里、3 英里及 5 英里服务区，请输入 2 3 5，各个数值之间用空格进行分隔，将设置“中断单位”设置为“英里”。 所指定中断值的数量没有限制。</para>
+		/// <para>最大中断值的大小不能超过 300 分钟或 300 英里（482.80 千米）。 当生成详细面时，最大服务区大小限制为 15 分钟和 15 英里（24.14 千米）。</para>
 		/// </param>
 		/// <param name="BreakUnits">
 		/// <para>Break Units</para>
-		/// <para>Specifies the units for the Break Values parameter.</para>
-		/// <para>The units you choose for this parameter determine whether the tool will create service areas by measuring driving distance or driving time. Choose a time unit to measure driving time. To measure driving distance, choose a distance unit. Your choice also determines the units in which the tool will report total driving time or distance in the results.</para>
-		/// <para>The choices are as follows:</para>
-		/// <para>Meters—The linear unit is meters.</para>
-		/// <para>Kilometers—The linear unit is kilometers.</para>
-		/// <para>Feet—The linear unit is feet.</para>
-		/// <para>Yards—The linear unit is yards.</para>
-		/// <para>Miles—The linear unit is miles.</para>
-		/// <para>Nautical Miles—The linear unit is nautical miles.</para>
-		/// <para>Seconds—The time unit is seconds.</para>
-		/// <para>Minutes—The time unit is minutes.</para>
-		/// <para>Hours—The time unit is hours.</para>
-		/// <para>Days—The time unit is days.</para>
+		/// <para>指定中断值参数的单位。</para>
+		/// <para>此参数单位的选择决定了工具通过测量行驶距离还是行驶时间来创建服务区。 选择时间单位以测量行驶时间。 要测量行驶距离，则请选择距离单位。 选择的单位还确定工具在结果中报告总行驶时间或距离时采用的单位。</para>
+		/// <para>具体选项如下：</para>
+		/// <para>米—线性单位为米。</para>
+		/// <para>千米—线性单位为千米。</para>
+		/// <para>英尺—线性单位为英尺。</para>
+		/// <para>码—线性单位为码。</para>
+		/// <para>英里—线性单位为英里。</para>
+		/// <para>海里—线性单位为海里。</para>
+		/// <para>秒—时间单位为秒。</para>
+		/// <para>分—时间单位为分钟。</para>
+		/// <para>小时—时间单位为小时。</para>
+		/// <para>天—时间单位为天。</para>
 		/// <para><see cref="BreakUnitsEnum"/></para>
 		/// </param>
 		public GenerateServiceAreas(object Facilities, object BreakValues, object BreakUnits)
@@ -95,9 +91,9 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Service Areas</para>
+		/// <para>Tool Display Name : 生成服务区</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Service Areas";
+		public override string DisplayName() => "生成服务区";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateServiceAreas</para>
@@ -131,44 +127,44 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Facilities</para>
-		/// <para>The input locations around which service areas are generated.</para>
-		/// <para>You can load up to 1,000 facilities.</para>
-		/// <para>The facilities feature set has an associated attribute table. The fields in the attribute table are described below.</para>
+		/// <para>在其周围生成服务区的输入位置。</para>
+		/// <para>最多可加载 1,000 个设施点。</para>
+		/// <para>设施点要素集具有一个关联的属性表。 下面介绍了属性表中的字段。</para>
 		/// <para>ObjectID</para>
-		/// <para>The system-managed ID field.</para>
+		/// <para>系统管理的 ID 字段。</para>
 		/// <para>Name</para>
-		/// <para>The name of the facility. If the name is not specified, a name is automatically generated at solve time.</para>
-		/// <para>All fields from the input facilities are included in the output polygons when the Polygons for Multiple Facilities parameter is set to Overlapping or Not Overlapping. The ObjectID field on the input facilities is transferred to the FacilityOID field on the output polygons.</para>
+		/// <para>设施点的名称。 如果未指定名称，则求解过程中会自动生成一个名称。</para>
+		/// <para>当“多个设施点的面”参数设置为“叠置”或“不叠置”时，输入设施点的所有字段都包含在输出面中。 输入设备点的 ObjectID 字段会传递到输出面的 FacilityOID 字段中。</para>
 		/// <para>Breaks</para>
-		/// <para>Specify the extent of the service area to be calculated on a per facility basis.</para>
-		/// <para>This attribute allows you to specify a different service area break value for each facility. For example, with two facilities, you can generate 5- and 10-minute service area polygons for one facility and 6-, 9-, and 12-minute polygons for the other facility.</para>
-		/// <para>Separate multiple break values with a space, and specify the numeric values using the dot character as your decimal separator, even if the locale of your computer defines a different decimal separator. For example, the value 5.5 10 15.5 specifies three break values around a facility.</para>
+		/// <para>指定基于每个设施点计算的服务区范围。</para>
+		/// <para>此属性允许您为每个设施点指定不同服务区中断值。 例如，对于两个设施点，您可以为其中一个设施点生成 5 和 10 分钟服务区，为另一个设施点生成 6、9 和 12 分钟服务区。</para>
+		/// <para>使用空格分隔多个中断值，使用点字符作为小数分隔符指定数值，即使计算机的区域设置定义了其他小数分隔符也是如此。 例如，值 5.5 10 15.5 用于指定设施点周围的三个中断值。</para>
 		/// <para>AdditionalTime</para>
-		/// <para>The amount of time spent at the facility, which reduces the extent of the service area calculated for the given facility. The default value is 0.</para>
-		/// <para>For example, when calculating service areas that represent fire station response times, AdditionalTime can store the turnout time, which is the time it takes a crew to put on the appropriate protective equipment and exit the fire station, for each fire station. Assume Fire Station 1 has a turnout time of 1 minute and Fire Station 2 has a turnout time of 3 minutes. If a 5-minute service area is calculated for both fire stations, the actual service area for Fire Station 1 is 4 minutes (since 1 of the 5 minutes is required as turnout time). Similarly, Fire Station 2 has a service area of only 2 minutes from the fire station.</para>
+		/// <para>在设施点花费的时间量，可缩减针对给定设施点计算的服务区范围。 默认值为 0。</para>
+		/// <para>例如，在计算表示消防站响应时间的服务区时，AdditionalTime 中可以存储每个消防站的出动时间，该时间为消防员配带好适当的防护设备并离开消防站所用的时间。 假设“消防站 1”的出动时间为 1 分钟，“消防站 2”的出动时间为 3 分钟。 如果分别计算这两个消防站的 5 分钟服务区，则“消防站 1”的实际服务区相当于 4 分钟服务区的范围（因为在这 5 分钟里需要 1 分钟的出动时间）。 同样，“消防站 2”的服务区距离消防站仅为 2 分钟。</para>
 		/// <para>AdditionalDistance</para>
-		/// <para>The extra distance traveled to reach the facility before the service is calculated. This attribute reduces the extent of the service area calculated for the given facility. The default value is 0.</para>
-		/// <para>Generally, the location of a facility, such as a store location, isn&apos;t exactly on the street; it is set back somewhat from the road. This attribute value can be used to model the distance between the actual facility location and its location on the street if it is important to include that distance when calculating the service areas for the facility.</para>
+		/// <para>在计算服务之前，为到达设施点所行驶的额外距离。 此属性可缩减针对给定设施点计算的服务区的范围。 默认值为 0。</para>
+		/// <para>通常，设施点的位置（例如门店地点）并不是恰好位于街道上，而是位于道路的后方。 该属性值可用于构建实际设施点位置与其在街道上的位置之间的距离，如有必要，可在计算设施点的服务区时包括此段距离。</para>
 		/// <para>AdditionalCost</para>
-		/// <para>The extra cost spent at the facility, which reduces the extent of the service area calculated for the given facility. The default value is 0.</para>
-		/// <para>Use this attribute value when the travel mode for the analysis uses an impedance attribute that is neither time based nor distance based The units for the attribute values are interpreted to be in unknown units.</para>
+		/// <para>在设施点花费的额外成本，可缩减针对给定设施点计算的服务区范围。 默认值为 0。</para>
+		/// <para>当分析的出行模式使用不基于时间也不基于距离的阻抗属性时，使用此属性值。属性值的单位将理解为未知单位。</para>
 		/// <para>CurbApproach</para>
-		/// <para>Specifies the direction a vehicle may arrive at and depart from the facility. The field value is specified as one of the following integers (use the numeric code, not the name in parentheses):</para>
-		/// <para>0 (Either side of vehicle)—The vehicle can approach and depart the facility in either direction, so a U-turn is allowed at the facility. This setting can be chosen if it is possible and practical for a vehicle to turn around at the facility. This decision may depend on the width of the road and the amount of traffic or whether the facility has a parking lot where vehicles can enter and turn around.</para>
-		/// <para>1 (Right side of vehicle)—When the vehicle approaches and departs the facility, the curb must be on the right side of the vehicle. A U-turn is prohibited. This is typically used for vehicles such as buses that must arrive with the bus stop on the right-hand side.</para>
-		/// <para>2 (Left side of vehicle)—When the vehicle approaches and departs the facility, the curb must be on the left side of the vehicle. A U-turn is prohibited. This is typically used for vehicles such as buses that must arrive with the bus stop on the left-hand side.</para>
-		/// <para>3 (No U-Turn)—When the vehicle approaches the facility, the curb can be on either side of the vehicle, however, the vehicle must depart without turning around.</para>
-		/// <para>The CurbApproach attribute is designed to work with both types of national driving standards: right-hand traffic (United States) and left-hand traffic (United Kingdom). First, consider a facility on the left side of a vehicle. It is always on the left side regardless of whether the vehicle travels on the left or right half of the road. What may change with national driving standards is your decision to approach a facility from one of two directions; that is, so it ends up on the right or left side of the vehicle. For example, if you want to arrive at a facility and not have a lane of traffic between the vehicle and the facility, choose 1 (Right side of vehicle) in the United States and 2 (Left side of vehicle) in the United Kingdom.</para>
+		/// <para>指定车辆到达和离开设施点的方向。 该字段值可指定为以下整数之一（请使用数值代码而非括号中的名称）：</para>
+		/// <para>0（车辆的任意一侧）- 车辆可从任一方向到达和离开设施点，因此设施点处允许 U 形转弯。 如果车辆有可能要在设施点处调头，则可以选择该设置。 此决策可能取决于道路的宽度以及交通量，或者该设施点是否有停车场能让车辆驶入并调头。</para>
+		/// <para>1（车辆的右侧）- 当车辆到达和离开设施点时，路边必须在车辆右侧。 禁止 U 形转弯。 通常用于必须在右侧停靠的车辆（如公共汽车）。</para>
+		/// <para>2（车辆的左侧）- 当车辆到达和离开设施点时，路边必须在车辆左侧。 禁止 U 形转弯。 通常用于必须在左侧停靠的车辆（如公共汽车）。</para>
+		/// <para>3（禁止 U 形转弯）- 当车辆到达设施点时，路边可在车辆的任意一侧；但是，车辆在离开时不得调头。</para>
+		/// <para>CurbApproach 属性是专为使用以下两种国家驾驶标准而设计的：右侧通行（美国）和左侧通行（英国）。 首先，考虑位于车辆左侧的设施点。 不管车辆行驶在左车道还是右车道，停靠点始终位于车辆的左侧。 不同国家的驾驶标准可能会要求您从这两种方向中的其中一个接近设施点；即只能从车辆的右侧或左侧接近设施点。 例如，如果要到达一个设施点并且在车辆与设施点之间不存在其他交通车道，在美国应该选择 1（车辆的右侧），而在英国应该选择 2（车辆的左侧）。</para>
 		/// <para>Bearing</para>
-		/// <para>The direction in which a point is moving. The units are degrees and are measured clockwise from true north. This field is used in conjunction with the BearingTol field.</para>
-		/// <para>Bearing data is usually sent automatically from a mobile device equipped with a GPS receiver. Try to include bearing data if you are loading an input location that is moving, such as a pedestrian or a vehicle.</para>
-		/// <para>Using this field tends to prevent adding locations to the wrong edges, which can occur when a vehicle is near an intersection or an overpass, for example. Bearing also helps the tool determine on which side of the street the point is.</para>
+		/// <para>点移动的方向。 单位为度，从正北开始沿顺时针方向进行测量。 该字段与 BearingTol 字段结合使用。</para>
+		/// <para>方位角数据通常会从配有 GPS 接收器的移动设备自动发送。 如果正在加载移动输入位置（例如行人或车辆），请尝试包括方位角数据。</para>
+		/// <para>使用该字段可以防止将位置添加到错误的边上，例如，车辆刚好在交叉路口或天桥附近时。 方位角也可帮助工具确定点在街道的哪一边上。</para>
 		/// <para>BearingTol</para>
-		/// <para>The bearing tolerance value creates a range of acceptable bearing values when locating moving points on an edge using the Bearing field. If the Bearing field value is within the range of acceptable values that are generated from the bearing tolerance on an edge, the point can be added as a network location there; otherwise, the closest point on the next-nearest edge is evaluated.</para>
-		/// <para>The units are in degrees, and the default value is 30. Values must be greater than 0 and less than 180. A value of 30 means that when Network Analyst attempts to add a network location on an edge, a range of acceptable bearing values is generated 15 degrees to either side of the edge (left and right) and in both digitized directions of the edge.</para>
+		/// <para>使用 Bearing 字段在边上定位移动点时，方位角容差值将创建一个可接受方位角值的范围。 如果 Bearing 字段值在可接受值范围（由边上的方位角容差生成）内，则可以将该点作为网络位置添加在此处，否则，将计算下一个最近边上的最近点。</para>
+		/// <para>单位为度，默认值为 30。 值必须大于 0 且小于 180。 值为 30 表示，Network Analyst 尝试在边上添加网络位置时，在边的每一侧（左侧和右侧）的两个数字化方向上都将生成一个 15 度的可接受方位角值。</para>
 		/// <para>NavLatency</para>
-		/// <para>This field is only used in the solve process if the Bearing and BearingTol fields also have values; however, entering a NavLatency field value is optional, even when values are present in Bearing and BearingTol. NavLatency indicates how much cost is expected to elapse from the moment GPS information is sent from a moving vehicle to a server and the moment the processed route is received by the vehicle&apos;s navigation device.</para>
-		/// <para>The units of NavLatency are the same as the units of the impedance attribute.</para>
+		/// <para>如果 Bearing 和 BearingTol 也具有值，则该字段只在求解过程中使用；但是，即使当 Bearing 和 BearingTolNavLatency 字段中有值时，NavLatency 值的输入也是可选的。NavLatency 表示 GPS 信息从移动的车辆上发送到服务器以及车辆导航设备接收到处理后路径这两个时刻之间预期要花费的成本。</para>
+		/// <para>NavLatency 的单位与阻抗属性的单位相同。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -176,9 +172,9 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Break Values</para>
-		/// <para>Specifies the size and number of service area polygons to generate for each facility. The units are determined by the Break Units value.</para>
-		/// <para>Multiple polygon breaks can be set to create concentric service areas per facility. For instance, to find 2-, 3-, and 5-mile service areas for each facility, type 2 3 5, separating the values with a space, and set Break Units to Miles. There is no limit to the number of break values you specify.</para>
-		/// <para>The size of the maximum break value can&apos;t exceed the equivalent of 300 minutes or 300 miles (482.80 kilometers). When generating detailed polygons, the maximum service-area size is limited to 15 minutes and 15 miles (24.14 kilometers).</para>
+		/// <para>指定为每个设施点生成的服务区面的大小和数量。 单位由“中断单位”值决定。</para>
+		/// <para>可以设置多个面中断来为每个设施点创建同心服务区。 例如，要查找每个设施点的 2 英里、3 英里及 5 英里服务区，请输入 2 3 5，各个数值之间用空格进行分隔，将设置“中断单位”设置为“英里”。 所指定中断值的数量没有限制。</para>
+		/// <para>最大中断值的大小不能超过 300 分钟或 300 英里（482.80 千米）。 当生成详细面时，最大服务区大小限制为 15 分钟和 15 英里（24.14 千米）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -186,19 +182,19 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Break Units</para>
-		/// <para>Specifies the units for the Break Values parameter.</para>
-		/// <para>The units you choose for this parameter determine whether the tool will create service areas by measuring driving distance or driving time. Choose a time unit to measure driving time. To measure driving distance, choose a distance unit. Your choice also determines the units in which the tool will report total driving time or distance in the results.</para>
-		/// <para>The choices are as follows:</para>
-		/// <para>Meters—The linear unit is meters.</para>
-		/// <para>Kilometers—The linear unit is kilometers.</para>
-		/// <para>Feet—The linear unit is feet.</para>
-		/// <para>Yards—The linear unit is yards.</para>
-		/// <para>Miles—The linear unit is miles.</para>
-		/// <para>Nautical Miles—The linear unit is nautical miles.</para>
-		/// <para>Seconds—The time unit is seconds.</para>
-		/// <para>Minutes—The time unit is minutes.</para>
-		/// <para>Hours—The time unit is hours.</para>
-		/// <para>Days—The time unit is days.</para>
+		/// <para>指定中断值参数的单位。</para>
+		/// <para>此参数单位的选择决定了工具通过测量行驶距离还是行驶时间来创建服务区。 选择时间单位以测量行驶时间。 要测量行驶距离，则请选择距离单位。 选择的单位还确定工具在结果中报告总行驶时间或距离时采用的单位。</para>
+		/// <para>具体选项如下：</para>
+		/// <para>米—线性单位为米。</para>
+		/// <para>千米—线性单位为千米。</para>
+		/// <para>英尺—线性单位为英尺。</para>
+		/// <para>码—线性单位为码。</para>
+		/// <para>英里—线性单位为英里。</para>
+		/// <para>海里—线性单位为海里。</para>
+		/// <para>秒—时间单位为秒。</para>
+		/// <para>分—时间单位为分钟。</para>
+		/// <para>小时—时间单位为小时。</para>
+		/// <para>天—时间单位为天。</para>
 		/// <para><see cref="BreakUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -208,22 +204,22 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Analysis Region</para>
-		/// <para>The region in which the analysis will be performed. If a value is not specified for this parameter, the tool will automatically calculate the region name based on the location of the input points. Setting the name of the region is required only if the automatic detection of the region name is not accurate for your inputs.</para>
-		/// <para>To specify a region, use one of the following values:</para>
-		/// <para>Europe—The analysis region is Europe.</para>
-		/// <para>Japan—The analysis region is Japan.</para>
-		/// <para>Korea—The analysis region is Korea.</para>
-		/// <para>Middle East And Africa—The analysis region is Middle East and Africa.</para>
-		/// <para>North America—The analysis region is North America.</para>
-		/// <para>South America—The analysis region is South America.</para>
-		/// <para>South Asia—The analysis region is South Asia.</para>
-		/// <para>Thailand—The analysis region is Thailand.</para>
-		/// <para>The following region names are no longer supported and will be removed in future releases. If you specify one of the deprecated region names, the tool automatically assigns a supported region name for your region.</para>
-		/// <para>Greece redirects to Europe</para>
-		/// <para>India redirects to SouthAsia</para>
-		/// <para>Oceania redirects to SouthAsia</para>
-		/// <para>SouthEastAsia redirects to SouthAsia</para>
-		/// <para>Taiwan redirects to SouthAsia</para>
+		/// <para>将执行分析的区域。 如果未对此参数指定值，工具会基于输入点的位置自动计算区域名称。 仅当自动检测的区域名称输入不准确时，才需要设置区域名称。</para>
+		/// <para>要指定区域，请使用以下值之一：</para>
+		/// <para>欧洲—分析区域为欧洲。</para>
+		/// <para>日本—分析区域为日本。</para>
+		/// <para>韩国—分析区域为韩国。</para>
+		/// <para>中东和非洲—分析区域为中东和非洲。</para>
+		/// <para>北美—分析区域为北美洲。</para>
+		/// <para>南美洲—分析区域为南美。</para>
+		/// <para>南亚—分析区域为南亚。</para>
+		/// <para>泰国—分析区域为泰国。</para>
+		/// <para>不再支持以下区域名称，且将在未来版本中删除这些名称。 如果您指定了任一已弃用的区域名称，则工具会自动为您所在的区域分配支持的区域名称。</para>
+		/// <para>希腊将重定向到欧洲</para>
+		/// <para>印度将重定向到南亚</para>
+		/// <para>大洋洲将重定向到南亚</para>
+		/// <para>东南亚将重定向到南亚</para>
+		/// <para>台湾将重定向到南亚</para>
 		/// <para><see cref="AnalysisRegionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -234,10 +230,10 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Travel Direction</para>
-		/// <para>Specifies whether the direction of travel used to generate the service area polygons is toward or away from the facilities.</para>
-		/// <para>Away From Facility—The service area is generated in the direction away from the facilities.</para>
-		/// <para>Towards Facility—The service area is created in the direction toward the facilities.</para>
-		/// <para>The direction of travel may change the shape of the polygons because impedances on opposite sides of streets may differ or one-way restrictions may exist, such as one-way streets. The direction you should choose depends on the nature of your service area analysis. The service area for a pizza delivery store, for example, should be created away from the facility, whereas the service area of a hospital should be created toward the facility.</para>
+		/// <para>指定用于生成服务区面的行程方向是朝向还是远离设施点。</para>
+		/// <para>离开设施点—在远离设施点的方向上生成服务区。</para>
+		/// <para>朝向设施点—在朝向设施点的方向上创建服务区。</para>
+		/// <para>行程方向可以改变面的形状，因为街道两侧的阻抗可能不同，或者可能存在单向约束，例如单行道。 方向的选择取决于服务区分析的特性。 例如，应该在远离设施点的方向上创建比萨外卖店的服务区，而医院的服务区应该创建在朝向设施点的方向上。</para>
 		/// <para><see cref="TravelDirectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -248,11 +244,11 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Time of Day</para>
-		/// <para>The time to depart from or arrive at the facilities. The interpretation of this value depends on whether travel is toward or away from the facilities.</para>
-		/// <para>It represents the departure time if Travel Direction is set to Away from facilities.</para>
-		/// <para>It represents the arrival time if Travel Direction is set to Toward facilities.</para>
-		/// <para>You can use the Time Zone for Time of Day parameter to specify whether this time and date refers to UTC or the time zone in which the facility is located.</para>
-		/// <para>Repeatedly solving the same analysis, but using different Time of Day values, allows you to see how a facility&apos;s reach changes over time. For instance, the five-minute service area around a fire station may start out large in the early morning, diminish during the morning rush hour, grow in the late morning, and so on, throughout the day.</para>
+		/// <para>离开或到达设施点的时间。 对该值的解释取决于行驶方向是朝向设施点还是远离设施点。</para>
+		/// <para>如果将行驶方向设置为远离设施点，则此值表示离开时间。</para>
+		/// <para>如果将行驶方向设为朝向设施点，则此值表示到达时间。</para>
+		/// <para>可以使用时间的时区参数指定该时间和日期是参考 UTC 还是设施点或事件点所在时区。</para>
+		/// <para>通过重复求解同一分析，但使用不同的时间值，可查看设施点的到达时间随时间的变化。 例如，消防站周围的 5 分钟服务区在大清早时可能变得大一点，而在早高峰期消失，上午晚些时候服务区又扩大，并在一天中都保持这样。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -261,10 +257,10 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Use Hierarchy</para>
-		/// <para>Specifies whether hierarchy will be used when finding the best route between the facility and the incident.</para>
-		/// <para>Checked (True)—Hierarchy will be used for the analysis. Using a hierarchy results in the solver preferring higher-order edges to lower-order edges. Hierarchical solves are faster, and they can be used to simulate the preference of a driver who chooses to travel on freeways over local roads when possible—even if that means a longer trip.</para>
-		/// <para>Unchecked (False)—Hierarchy will not be used for the analysis. Not using a hierarchy yields an accurate service area measured along all edges of the network dataset regardless of hierarchy level.</para>
-		/// <para>Regardless of whether the Use Hierarchy parameter is checked (True), hierarchy is always used when the largest break value exceeds 240 minutes or 240 miles (386.24 kilometers).</para>
+		/// <para>指定是否将在查找设施点和事件点之间的最佳路径时使用等级。</para>
+		/// <para>选中 (True) - 将在分析中使用等级。 使用等级的结果是，求解程序更偏好高等级的边而不是低等级的边。 分等级求解的速度更快，并且可用于模拟驾驶员在可能的情况下选择在高速公路而非地方道路上行驶（即使行程可能更远）的偏好。</para>
+		/// <para>未选中 (False) - 不会在分析中使用等级。 如果不使用等级属性，则会沿网络数据集的所有边进行测量以生成准确的服务区（无论等级级别如何）。</para>
+		/// <para>无论是否选中应用等级参数 (True)，当最大中断值超过 240 分钟或 240 英里（386.24 千米）时，将始终使用等级。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
@@ -273,11 +269,11 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>UTurn at Junctions</para>
-		/// <para>Specifies whether to restrict or permit the service area to make U-turns at junctions. To understand the parameter values, consider the following terminology: a junction is a point where a street segment ends and potentially connects to one or more other segments; a pseudojunction is a point where exactly two streets connect to one another; an intersection is a point where three or more streets connect; and a dead end is where one street segment ends without connecting to another.</para>
-		/// <para>Allowed—U-turns are permitted at junctions with any number of connected edges. This is the default value.</para>
-		/// <para>Not Allowed—U-turns are prohibited at all junctions, regardless of junction valency. Note, however, that U-turns are still permitted at network locations even when this option is chosen; however, you can set the individual network locations&apos; CurbApproach attribute to prohibit U-turns there as well.</para>
-		/// <para>Allowed only at Dead Ends—U-turns are prohibited at all junctions except those that have only one adjacent edge (a dead end).</para>
-		/// <para>Allowed only at Intersections and Dead Ends—U-turns are prohibited at junctions where exactly two adjacent edges meet but are permitted at intersections (junctions with three or more adjacent edges) and dead ends (junctions with exactly one adjacent edge). Often, networks have extraneous junctions in the middle of road segments. This option prevents vehicles from making U-turns at these locations.</para>
+		/// <para>执行是限制还是允许服务区在交汇点处进行 U 形转弯。 为理解这些参数值，请考虑下列术语：交汇点是在路段的尽头且可能与其他一条或多条路段相连的点；伪交汇点是指两条街道确实在此处相连的点；交叉点是指三条或更多街道在此处相连的点；死角是指一条不与其他路段相连的路段的尽头。</para>
+		/// <para>允许—无论在交汇点处有几条连接的边，均允许 U 形转弯。 这是默认值。</para>
+		/// <para>不允许—在所有交汇点处均禁止 U 形转弯，不管交汇点原子价如何。 不过请注意，即使已选择该选项，在网络位置仍允许 U 形转弯；但是也可以通过设置个别网络位置的 CurbApproach 属性来禁止 U 形转弯。</para>
+		/// <para>仅在死角处允许—除仅有一条相邻边的交汇点（死角）外，其他交汇点均禁止 U 形转弯。</para>
+		/// <para>仅在交点和死角处允许—在恰好有两条相邻边相遇的交汇点处禁止 U 形转弯，但是交叉点（三条或三条以上相邻边的交汇点）和死角（仅有一条相邻边的交汇点）处允许。 通常，网络在路段中间有多余的交汇点。 此选项可防止车辆在这些位置掉头。</para>
 		/// <para><see cref="UturnAtJunctionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -288,11 +284,11 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Geometry at Overlaps</para>
-		/// <para>Specifies how service area polygons will be generated when multiple facilities are present in the analysis.</para>
-		/// <para>Overlapping—Individual polygons will be created for each facility. The polygons can overlap each other. This is the default.</para>
-		/// <para>Not Overlapping—Individual polygons will be created such that a polygon from one facility cannot overlap polygons from other facilities. Any portion of the network can only be covered by the service area of the nearest facility.</para>
-		/// <para>Merge by Break Value—Polygons of different facilities with the same break value will be created and joined.</para>
-		/// <para>When using Overlapping or Not Overlapping, all fields from the input facilities are included in the output polygons, with the exception that values from the input ObjectID field are transferred to the FacilityOID field of the output polygons. The FacilityOID field is null when merging by break value, and the input fields are not included in the output.</para>
+		/// <para>指定当分析中存在多个设施点时生成服务区面的方式。</para>
+		/// <para>叠置—将为每个设施点创建单独的面。 这些面可以相互叠置。 这是默认设置。</para>
+		/// <para>不叠置—将创建单独的面，使得某个设施点的面无法与其他设施点的面叠置。 网络的任何部分都只能由最近设施点的服务区覆盖。</para>
+		/// <para>按中断值合并—将创建并连接具有相同中断值的不同设施点的面。</para>
+		/// <para>在使用“叠置”或“非叠置”时，输入设施点的所有字段都包含在输出面中（输入 ObjectID 字段中的值传递到输出面的 FacilityOID 字段这种情况除外）。 按中断值合并时 FacilityOID 字段为空，输入字段不包含在输出中。</para>
 		/// <para><see cref="PolygonsForMultipleFacilitiesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -303,9 +299,9 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Geometry at Cutoffs</para>
-		/// <para>Specifies whether concentric service area polygons will be created as disks or rings. This option is applicable only when multiple break values are specified for the facilities.</para>
-		/// <para>Rings—The polygons representing larger breaks exclude the polygons of smaller breaks. This creates polygons between consecutive breaks. Use this option to find the area from one break to another. For instance, if you create 5- and 10-minute service areas, the 10-minute service area polygon will exclude the area under the 5-minute service area polygon. This is the default.</para>
-		/// <para>Disks—Polygons are created from the facility to the break. For instance, if you create 5- and 10-minute service areas, the 10-minute service area polygon will include the area under the 5-minute service area polygon.</para>
+		/// <para>指定是否将同心服务区面创建为圆盘或圆环。 仅当为设施点指定了多个中断值时，此选项才适用。</para>
+		/// <para>环—代表中断值较大的面，可排除中断值较小的面。 这将在连续的中断之间创建面。 请使用此选项查找从一个中断到另一个中断的区域。 例如，如果创建 5 分钟和 10 分钟服务区，则 10 分钟服务区面将排除 5 分钟服务区面内的区域。 这是默认设置。</para>
+		/// <para>圆盘—在设施点与休息点之间创建面。 例如，如果创建 5 分钟和 10 分钟服务区，则 10 分钟服务区面将包含 5 分钟服务区面内的区域。</para>
 		/// <para><see cref="PolygonOverlapTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -316,11 +312,11 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Detailed Polygons</para>
-		/// <para>Use of this parameter is no longer recommended. To generate detailed polygons, set the Polygon Detail parameter value to High.</para>
-		/// <para>Specifies the option to create detailed or generalized polygons.</para>
-		/// <para>Unchecked (False)—Generalized polygons are created, which are generated quickly and are fairly accurate. This is the default.</para>
-		/// <para>Checked (True)—Detailed polygons are created, which accurately model the service area lines and may contain islands of unreached areas. This option is much slower than generating generalized polygons. This option isn&apos;t supported when using hierarchy.</para>
-		/// <para>The tool supports generating detailed polygons only if the largest value specified in the Break Values parameter is less than or equal to 15 minutes or 15 miles (24.14 kilometers).</para>
+		/// <para>不推荐使用此参数。 要生成详细面，请将面细节参数值设置为高。</para>
+		/// <para>指定用于创建详细面或概化面的选项。</para>
+		/// <para>未选中 (False) - 将创建概化面，生成速度快且相当准确。 这是默认设置。</para>
+		/// <para>选中 (True) - 将创建详细面，以对服务区线进行精确建模并且可包含未到达的区域岛。 这种面比概化面的生成速度慢得多。 使用等级时，不支持此选项。</para>
+		/// <para>仅当中断值参数内指定的最大值小于或等于 15 分钟或 15 英里（24.14 千米）时，工具才会支持生成详细面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
@@ -329,8 +325,8 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Polygon Trim Distance</para>
-		/// <para>The distance within which the service area polygons will be trimmed. This is useful when finding service areas in places that have a sparse street network and you don&apos;t want the service area to cover large areas where there are no street features.</para>
-		/// <para>The default value is 100 meters. No value or a value of 0 for this parameter specifies that the service area polygons will not be trimmed. This parameter value is ignored when using hierarchy.</para>
+		/// <para>将对服务区面进行修剪的距离范围。 当您在街道网络稀疏的地点查找服务区且不需要服务区覆盖大片没有街道要素的区域时，此选项很有用。</para>
+		/// <para>默认值是 100 米。 此参数没有值或值为 0 时，会指定将不对服务区面进行修剪。 使用等级时，将忽略此参数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -339,8 +335,8 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Polygon Simplification Tolerance</para>
-		/// <para>The amount by which the polygon geometry will be simplified.</para>
-		/// <para>Simplification maintains critical vertices of a polygon to define its essential shape and removes other vertices. The simplification distance you specify is the maximum offset the simplified polygon boundaries can deviate from the original polygon boundaries. Simplifying a polygon reduces the number of vertices and tends to reduce drawing times.</para>
+		/// <para>简化面几何时依据的数量。</para>
+		/// <para>简化仍将保留面的关键折点，以定义面的基本形状和移除其他折点。 所指定的简化距离为简化面边界可偏离原始面边界的最大偏移。 对面进行简化将减少折点的数量，并且往往能够减少绘制时间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -349,44 +345,44 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Point Barriers</para>
-		/// <para>Use this parameter to specify one or more points that will act as temporary restrictions or represent additional time or distance that may be required to travel on the underlying streets. For example, a point barrier can be used to represent a fallen tree along a street or a time delay spent at a railroad crossing.</para>
-		/// <para>The tool imposes a limit of 250 points that can be added as barriers.</para>
-		/// <para>When specifying point barriers, you can set properties for each, such as its name or barrier type, using the following attributes:</para>
+		/// <para>使用此参数可指定一个或多个点，来充当临时限制或表示在基础街道上行驶可能需要的附加时间或距离。 例如，可使用点障碍显示一棵沿街倒下的树或穿过铁路道口时花费的时间延迟。</para>
+		/// <para>工具限制了可添加为障碍的点不得超过 250 个。</para>
+		/// <para>指定点障碍时，可通过使用以下特性为每个障碍点设置属性，例如其名称或障碍类型。</para>
 		/// <para>Name</para>
-		/// <para>The name of the barrier.</para>
+		/// <para>障碍名称。</para>
 		/// <para>BarrierType</para>
-		/// <para>Specifies whether the point barrier restricts travel completely or adds time or distance when it is crossed. The value for this attribute is specified as one of the following integers (use the numeric code, not the name in parentheses):</para>
-		/// <para>0 (Restriction)—Prohibits travel through the barrier. The barrier is referred to as a restriction point barrier since it acts as a restriction.</para>
-		/// <para>2 (Added Cost)—Traveling through the barrier increases the travel time or distance by the amount specified in the Additional_Time, Additional_Distance, or Additional_Cost field. This barrier type is referred to as an added cost point barrier.</para>
+		/// <para>指定点障碍是完全限制通行还是会在穿越时增加时间或距离。 此特性值可指定为以下整数之一（请使用数值代码而非括号中的名称）：</para>
+		/// <para>0（限制型）- 禁止穿过障碍。 此障碍称为限制型点障碍，因为它作为限制使用。</para>
+		/// <para>2（增加成本型）- 穿过此障碍会增加通过 Additional_Time、Additional_Distance 或 Additional_Cost 字段指定的行驶时间或行驶距离的数值。 此障碍类型称为增加成本型点障碍。</para>
 		/// <para>Additional_Time</para>
-		/// <para>The added travel time when the barrier is traversed. This field is applicable only for added-cost barriers and when the Measurement Units parameter value is time based.</para>
-		/// <para>This field value must be greater than or equal to zero, and its units must be the same as those specified in the Measurement Units parameter.</para>
+		/// <para>遍历障碍时增加的行驶时间。 此字段仅适用于增加成本型障碍，且仅在测量单位参数值基于时间时适用。</para>
+		/// <para>此字段值必须大于或等于零，并且其单位必须与在测量单位参数中指定的单位相同。</para>
 		/// <para>Additional_Distance</para>
-		/// <para>The added distance when the barrier is traversed. This field is applicable only for added-cost barriers and when the Measurement Units parameter value is distance based.</para>
-		/// <para>The field value must be greater than or equal to zero, and its units must be the same as those specified in the Measurement Units parameter.</para>
+		/// <para>遍历障碍时增加的距离。 此字段仅适用于增加成本型障碍，且仅在测量单位参数值基于距离时适用。</para>
+		/// <para>该字段值必须大于或等于零，并且其单位必须与在测量单位参数中指定的单位相同。</para>
 		/// <para>Additional_Cost</para>
-		/// <para>The added cost when the barrier is traversed. This field is applicable only for added-cost barriers when the Measurement Units parameter value is neither time based nor distance based.</para>
+		/// <para>遍历障碍时增加的成本。 当测量单位参数值不基于时间或距离时，此字段仅适用于增加成本型障碍。</para>
 		/// <para>FullEdge</para>
-		/// <para>Specifies how the restriction point barriers are applied to the edge elements during the analysis. The field value is specified as one of the following integers (use the numeric code, not the name in parentheses):</para>
-		/// <para>0 (False)—Permits travel on the edge up to the barrier but not through it. This is the default value.</para>
-		/// <para>1 (True)—Restricts travel anywhere on the associated edge.</para>
+		/// <para>指定分析期间如何将限制点障碍应用于边元素。 该字段值可指定为以下整数之一（请使用数值代码而非括号中的名称）：</para>
+		/// <para>0 (False) - 允许沿边行进到障碍，但不允许穿过障碍。 这是默认值。</para>
+		/// <para>1 (True) - 禁止沿关联边的任何位置行进。</para>
 		/// <para>CurbApproach</para>
-		/// <para>Specifies the direction of traffic that is affected by the barrier. The field value is specified as one of the following integers (use the numeric code, not the name in parentheses):</para>
-		/// <para>0 (Either side of vehicle)—The barrier affects travel over the edge in both directions.</para>
-		/// <para>1 (Right side of vehicle)—Vehicles are only affected if the barrier is on their right side during the approach. Vehicles that traverse the same edge but approach the barrier on their left side are not affected by the barrier.</para>
-		/// <para>2 (Left side of vehicle)—Vehicles are only affected if the barrier is on their left side during the approach. Vehicles that traverse the same edge but approach the barrier on their right side are not affected by the barrier.</para>
-		/// <para>Because junctions are points and don&apos;t have a side, barriers on junctions affect all vehicles regardless of the curb approach.</para>
-		/// <para>The CurbApproach attribute works with both types of national driving standards: right-hand traffic (United States) and left-hand traffic (United Kingdom). First, consider a facility on the left side of a vehicle. It is always on the left side regardless of whether the vehicle travels on the left or right half of the road. What may change with national driving standards is your decision to approach a facility from one of two directions, that is, so it ends up on the right or left side of the vehicle. For example, to arrive at a facility and not have a lane of traffic between the vehicle and the facility, choose 1 (Right side of vehicle) in the United States and 2 (Left side of vehicle) in the United Kingdom.</para>
+		/// <para>指定受障碍影响的行驶方向。 该字段值可指定为以下整数之一（请使用数值代码而非括号中的名称）：</para>
+		/// <para>0（车辆的任一侧）- 障碍将影响在边左右两个方向上行驶的车辆。</para>
+		/// <para>1（车辆右侧）- 只会影响车辆的右行方向（障碍位于车辆左侧）。 在同一条边上行驶但从左侧接近障碍的车辆不会受到障碍的影响。</para>
+		/// <para>2（车辆左侧）- 只会影响车辆的左行方向（障碍位于车辆左侧）。 在同一条边上行驶但从右侧接近障碍的车辆不会受到障碍的影响。</para>
+		/// <para>由于交汇点是点且不分左右侧，所以无论路边通道如何设置，交汇点上的障碍都会影响所有车辆。</para>
+		/// <para>CurbApproach 属性适用于以下两种国家驾驶标准：右侧通行（美国）和左侧通行（英国）。 首先，考虑位于车辆左侧的设施点。 不管车辆行驶在左车道还是右车道，停靠点始终位于车辆的左侧。 不同国家的驾驶标准可能会要求您从这两种方向中的其中一个接近设施点，也就是说，只能从车辆的右侧或左侧接近设施点。 例如，要到达一个设施点并且在车辆与设施点之间不存在其他交通车道，在美国应该选择 1（车辆的右侧），而在英国应该选择 2（车辆的左侧）。</para>
 		/// <para>Bearing</para>
-		/// <para>The direction in which a point is moving. The units are degrees and are measured clockwise from true north. This field is used in conjunction with the BearingTol field.</para>
-		/// <para>Bearing data is usually sent automatically from a mobile device equipped with a GPS receiver. Try to include bearing data if you are loading an input location that is moving, such as a pedestrian or a vehicle.</para>
-		/// <para>Using this field tends to prevent adding locations to the wrong edges, which can occur when a vehicle is near an intersection or an overpass, for example. Bearing also helps the tool determine on which side of the street the point is.</para>
+		/// <para>点移动的方向。 单位为度，从正北开始沿顺时针方向进行测量。 该字段与 BearingTol 字段结合使用。</para>
+		/// <para>方位角数据通常会从配有 GPS 接收器的移动设备自动发送。 如果正在加载移动输入位置（例如行人或车辆），请尝试包括方位角数据。</para>
+		/// <para>使用该字段可以防止将位置添加到错误的边上，例如，车辆刚好在交叉路口或天桥附近时。 方位角也可帮助工具确定点在街道的哪一边上。</para>
 		/// <para>BearingTol</para>
-		/// <para>The bearing tolerance value creates a range of acceptable bearing values when locating moving points on an edge using the Bearing field. If the Bearing field value is within the range of acceptable values that are generated from the bearing tolerance on an edge, the point can be added as a network location there; otherwise, the closest point on the next-nearest edge is evaluated.</para>
-		/// <para>The units are in degrees, and the default value is 30. Values must be greater than 0 and less than 180. A value of 30 means that when Network Analyst attempts to add a network location on an edge, a range of acceptable bearing values is generated 15 degrees to either side of the edge (left and right) and in both digitized directions of the edge.</para>
+		/// <para>使用 Bearing 字段在边上定位移动点时，方位角容差值将创建一个可接受方位角值的范围。 如果 Bearing 字段值在可接受值范围（由边上的方位角容差生成）内，则可以将该点作为网络位置添加在此处，否则，将计算下一个最近边上的最近点。</para>
+		/// <para>单位为度，默认值为 30。 值必须大于 0 且小于 180。 值为 30 表示，Network Analyst 尝试在边上添加网络位置时，在边的每一侧（左侧和右侧）的两个数字化方向上都将生成一个 15 度的可接受方位角值。</para>
 		/// <para>NavLatency</para>
-		/// <para>This field is only used in the solve process if the Bearing and BearingTol fields also have values; however, entering a NavLatency field value is optional, even when values are present in Bearing and BearingTol. NavLatency indicates how much cost is expected to elapse from the moment GPS information is sent from a moving vehicle to a server and the moment the processed route is received by the vehicle&apos;s navigation device.</para>
-		/// <para>The units of NavLatency are the same as the units of the impedance attribute.</para>
+		/// <para>如果 Bearing 和 BearingTol 也具有值，则该字段只在求解过程中使用；但是，即使当 Bearing 和 BearingTolNavLatency 字段中有值时，NavLatency 值的输入也是可选的。NavLatency 表示 GPS 信息从移动的车辆上发送到服务器以及车辆导航设备接收到处理后路径这两个时刻之间预期要花费的成本。</para>
+		/// <para>NavLatency 的单位与阻抗属性的单位相同。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -395,11 +391,11 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Line Barriers</para>
-		/// <para>Use this parameter to specify one or more lines that prohibit travel anywhere the lines intersect the streets. For example, a parade or protest that blocks traffic across several street segments can be modeled with a line barrier. A line barrier can also quickly fence off several roads from being traversed, thereby channeling possible routes away from undesirable parts of the street network.</para>
-		/// <para>The tool imposes a limit on the number of streets you can restrict using the Line Barriers parameter. While there is no limit to the number of lines you can specify as line barriers, the combined number of streets intersected by all the lines cannot exceed 500.</para>
-		/// <para>When specifying the line barriers, you can set name and barrier type properties for each using the following attributes:</para>
+		/// <para>使用此参数可指定一条或多条线，以禁止在线与街道的所有相交位置通行。 例如，线障碍可用于对阻塞若干个路段交通的游行或抗议队伍进行建模。 线障碍还可隔离多条道路以禁止进行遍历，从而在可能的路径中去除不符合要求的街道网络部分。</para>
+		/// <para>该工具限制了您可以使用线障碍参数限制的街道数量。 可指定为线障碍的线数没有限制时，所有线的相交街道的合并数不能超过 500。</para>
+		/// <para>指定线障碍时，可使用以下特性设置每个线障碍的名称和障碍类型：</para>
 		/// <para>Name</para>
-		/// <para>The name of the barrier.</para>
+		/// <para>障碍名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -408,24 +404,24 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Polygon Barriers</para>
-		/// <para>Use this parameter to specify polygons that either completely restrict travel or proportionately scale the time or distance required to travel on the streets intersected by the polygons.</para>
-		/// <para>The service imposes a limit on the number of streets you can restrict using the Polygon Barriers parameter. While there is no limit to the number of polygons you can specify as polygon barriers, the combined number of streets intersected by all the polygons cannot exceed 2,000.</para>
-		/// <para>When specifying the polygon barriers, you can set properties for each, such as its name or barrier type, using the following attributes:</para>
+		/// <para>使用此参数可指定面，以完全限制通行或按比例调整在与面相交的街道上行进所需的时间或距离。</para>
+		/// <para>该服务限制了您可以使用面障碍参数限制的街道数量。 可指定为面障碍的面数没有限制时，所有面的相交街道的合并数不能超过 2,000。</para>
+		/// <para>指定面障碍时，可通过使用以下特性为每个面障碍设置属性，例如其名称或障碍类型。</para>
 		/// <para>Name</para>
-		/// <para>The name of the barrier.</para>
+		/// <para>障碍名称。</para>
 		/// <para>BarrierType</para>
-		/// <para>Specifies whether the barrier restricts travel completely or scales the cost (such as time or distance) for traveling through it. The field value is specified as one of the following integers (use the numeric code, not the name in parentheses):</para>
-		/// <para>0 (Restriction)—Prohibits traveling through any part of the barrier. The barrier is referred to as a restriction polygon barrier since it prohibits traveling on streets intersected by the barrier. One use of this type of barrier is to model floods covering areas of the street that make traveling on those streets impossible.</para>
-		/// <para>1 (Scaled Cost)—Scales the cost (such as travel time or distance) required to travel the underlying streets by a factor specified using the ScaledTimeFactor or ScaledDistanceFactor field. If the streets are partially covered by the barrier, the travel time or distance is apportioned and then scaled. For example, a factor of 0.25 means that travel on underlying streets is expected to be four times faster than normal. A factor of 3.0 means it is expected to take three times longer than normal to travel on underlying streets. This barrier type is referred to as a scaled-cost polygon barrier. It can be used to model storms that reduce travel speeds in specific regions.</para>
+		/// <para>指定障碍是完全禁止通行还是按比例调整穿过成本（例如时间或距离）。 该字段值可指定为以下整数之一（请使用数值代码而非括号中的名称）：</para>
+		/// <para>0（限制型）- 禁止穿过障碍的任何部分。 此障碍称作限制型面障碍，因为它禁止在与障碍相交的街道上行驶。 此类障碍的一个具体应用是对覆盖街道中某些区域且导致街道无法通行的洪水进行建模。</para>
+		/// <para>1（按比例调整成本型）- 根据使用 ScaledTimeFactor 或 ScaledDistanceFactor 字段指定的系数，按比例调整在基础街道上行驶所需的成本（例如行驶时间或距离）。 如果障碍部分覆盖了街道，则会按比例调整行驶时间或行驶距离。 例如，系数 0.25 表示在基础街道上行进的速度是正常速度的四倍。 系数 3.0 表示预期在基础街道上行进相同距离所花费的时间为正常值的三倍。 此障碍类型称为按比例调整成本型面障碍。 可用于对导致特定区域的行进速度减慢的暴风雨进行建模。</para>
 		/// <para>ScaledTimeFactor</para>
-		/// <para>This is the factor by which the travel time of the streets intersected by the barrier is multiplied. The field value must be greater than zero.</para>
-		/// <para>This field is applicable only for scaled-cost barriers and when the Measurement Units parameter is time-based.</para>
+		/// <para>它是与障碍相交街道的行驶时间要乘以的因子。 该字段值必须大于零。</para>
+		/// <para>此字段仅适用于按比例调整成本型障碍且仅在测量单位参数基于时间时适用。</para>
 		/// <para>ScaledDistanceFactor</para>
-		/// <para>This is the factor by which the distance of the streets intersected by the barrier is multiplied. The field value must be greater than zero.</para>
-		/// <para>This field is applicable only for scaled-cost barriers and when the Measurement Units parameter is distance-based.</para>
+		/// <para>它是与障碍相交街道的距离要乘以的因子。 该字段值必须大于零。</para>
+		/// <para>此字段仅适用于按比例调整成本型障碍且仅在测量单位参数基于距离时适用。</para>
 		/// <para>ScaledCostFactor</para>
-		/// <para>This is the factor by which the cost of the streets intersected by the barrier is multiplied. The field value must be greater than zero.</para>
-		/// <para>This field is applicable only for scaled-cost barriers when the Measurement Units parameter is neither time-based nor distance-based.</para>
+		/// <para>这是与障碍相交的街道的成本要乘以的系数。 该字段值必须大于零。</para>
+		/// <para>此字段仅适用于按比例调整成本型障碍且仅在测量单位参数既不基于时间也不基于距离时适用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -434,48 +430,48 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Restrictions</para>
-		/// <para>The travel restrictions that will be honored by the tool when determining the service areas.</para>
-		/// <para>A restriction represents a driving preference or requirement. In most cases, restrictions cause roads to be prohibited. For instance, using the Avoid Toll Roads restriction will result in a route that will include toll roads only when it is required to travel on toll roads to visit an incident or a facility. Height Restriction makes it possible to route around any clearances that are lower than the height of your vehicle. If you are carrying corrosive materials on your vehicle, using the Any Hazmat Prohibited restriction prevents hauling the materials along roads where it is marked illegal to do so.</para>
-		/// <para>The values you provide for this parameter are ignored unless Travel Mode is set to Custom.</para>
-		/// <para>Some restrictions require an additional value to be specified for their use. This value must be associated with the restriction name and a specific parameter intended to work with the restriction. You can identify such restrictions if their names appear in the AttributeName column in the Attribute Parameter Values parameter. The ParameterValue field should be specified in the Attribute Parameter Values parameter for the restriction to be correctly used when finding traversable roads.</para>
-		/// <para>Some restrictions are supported only in certain countries; their availability is stated by region in the list below. Of the restrictions that have limited availability within a region, you can determine whether the restriction is available in a particular country by reviewing the table in the Country list section of Network analysis coverage. If a country has a value of Yes in the Logistics Attribute column, the restriction with select availability in the region is supported in that country. If you specify restriction names that are not available in the country where your incidents are located, the service ignores the invalid restrictions. The service also ignores restrictions when the Restriction Usage attribute parameter value is between 0 and 1 (see the Attribute Parameter Value parameter). It prohibits all restrictions when the Restriction Usage parameter value is greater than 0.</para>
-		/// <para>The tool supports the following restrictions:</para>
-		/// <para>Any Hazmat Prohibited—The results will not include roads where transporting any kind of hazardous material is prohibited. Availability: Select countries in North America and Europe</para>
-		/// <para>Avoid Carpool Roads—The results will avoid roads that are designated exclusively for car pool (high-occupancy) vehicles. Availability: All countries</para>
-		/// <para>Avoid Express Lanes—The results will avoid roads designated as express lanes. Availability: All countries</para>
-		/// <para>Avoid Ferries—The results will avoid ferries. Availability: All countries</para>
-		/// <para>Avoid Gates—The results will avoid roads where there are gates, such as keyed access or guard-controlled entryways.Availability: All countries</para>
-		/// <para>Avoid Limited Access Roads—The results will avoid roads that are limited-access highways.Availability: All countries</para>
-		/// <para>Avoid Private Roads—The results will avoid roads that are not publicly owned and maintained.Availability: All countries</para>
-		/// <para>Avoid Roads Unsuitable for Pedestrians—The results will avoid roads that are unsuitable for pedestrians.Availability: All countries</para>
-		/// <para>Avoid Stairways—The results will avoid all stairways on a pedestrian-suitable route.Availability: All countries</para>
-		/// <para>Avoid Toll Roads—The results will avoid all toll roads for automobiles.Availability: All countries</para>
-		/// <para>Avoid Toll Roads for Trucks—The results will avoid all toll roads for trucks.Availability: All countries</para>
-		/// <para>Avoid Truck Restricted Roads—The results will avoid roads where trucks are not allowed, except when making deliveries.Availability: All countries</para>
-		/// <para>Avoid Unpaved Roads—The results will avoid roads that are not paved (for example, dirt, gravel, and so on). Availability: All countries</para>
-		/// <para>Axle Count Restriction—The results will not include roads where trucks with the specified number of axles are prohibited. The number of axles can be specified using the Number of Axles restriction parameter.Availability: Select countries in North America and Europe</para>
-		/// <para>Driving a Bus—The results will not include roads where buses are prohibited. Using this restriction will also ensure that the results will honor one-way streets. Availability: All countries</para>
-		/// <para>Driving a Taxi—The results will not include roads where taxis are prohibited. Using this restriction will also ensure that the results will honor one-way streets. Availability: All countries</para>
-		/// <para>Driving a Truck—The results will not include roads where trucks are prohibited. Using this restriction will also ensure that the results will honor one-way streets. Availability: All countries</para>
-		/// <para>Driving an Automobile—The results will not include roads where automobiles are prohibited. Using this restriction will also ensure that the results will honor one-way streets. Availability: All countries</para>
-		/// <para>Driving an Emergency Vehicle—The results will not include roads where emergency vehicles are prohibited. Using this restriction will also ensure that the results will honor one-way streets.Availability: All countries</para>
-		/// <para>Height Restriction—The results will not include roads where the vehicle height exceeds the maximum allowed height for the road. The vehicle height can be specified using the Vehicle Height (meters) restriction parameter. Availability: Select countries in North America and Europe</para>
-		/// <para>Kingpin to Rear Axle Length Restriction—The results will not include roads where the vehicle length exceeds the maximum allowed kingpin to rear axle for all trucks on the road. The length between the vehicle kingpin and the rear axle can be specified using the Vehicle Kingpin to Rear Axle Length (meters) restriction parameter. Availability: Select countries in North America and Europe</para>
-		/// <para>Length Restriction—The results will not include roads where the vehicle length exceeds the maximum allowed length for the road. The vehicle length can be specified using the Vehicle Length (meters) restriction parameter. Availability: Select countries in North America and Europe</para>
-		/// <para>Preferred for Pedestrians—The results will use preferred routes suitable for pedestrian navigation. Availability: Select countries in North America and Europe</para>
-		/// <para>Riding a Motorcycle—The results will not include roads where motorcycles are prohibited. Using this restriction will also ensure that the results will honor one-way streets.Availability: All countries</para>
-		/// <para>Roads Under Construction Prohibited—The results will not include roads that are under construction.Availability: All countries</para>
-		/// <para>Semi or Tractor with One or More Trailers Prohibited—The results will not include roads where semis or tractors with one or more trailers are prohibited. Availability: Select countries in North America and Europe</para>
-		/// <para>Single Axle Vehicles Prohibited—The results will not include roads where vehicles with single axles are prohibited.Availability: Select countries in North America and Europe</para>
-		/// <para>Tandem Axle Vehicles Prohibited—The results will not include roads where vehicles with tandem axles are prohibited.Availability: Select countries in North America and Europe</para>
-		/// <para>Through Traffic Prohibited—The results will not include roads where through traffic (nonlocal) is prohibited.Availability: All countries</para>
-		/// <para>Truck with Trailers Restriction—The results will not include roads where trucks with the specified number of trailers on the truck are prohibited. The number of trailers on the truck can be specified using the Number of Trailers on Truck restriction parameter.Availability: Select countries in North America and Europe</para>
-		/// <para>Use Preferred Hazmat Routes—The results will prefer roads that are designated for transporting any kind of hazardous materials. Availability: Select countries in North America and Europe</para>
-		/// <para>Use Preferred Truck Routes—The results will prefer roads that are designated as truck routes, such as the roads that are part of the national network as specified by the National Surface Transportation Assistance Act in the United States, or roads that are designated as truck routes by the state or province, or roads that are preferred by truckers when driving in an area.Availability: Select countries in North America and Europe</para>
-		/// <para>Walking—The results will not include roads where pedestrians are prohibited.Availability: All countries</para>
-		/// <para>Weight Restriction—The results will not include roads where the vehicle weight exceeds the maximum allowed weight for the road. The vehicle weight can be specified using the Vehicle Weight (kilograms) restriction parameter.Availability: Select countries in North America and Europe</para>
-		/// <para>Weight per Axle Restriction—The results will not include roads where the vehicle weight per axle exceeds the maximum allowed weight per axle for the road. The vehicle weight per axle can be specified using the Vehicle Weight per Axle (kilograms) restriction parameter.Availability: Select countries in North America and Europe</para>
-		/// <para>Width Restriction—The results will not include roads where the vehicle width exceeds the maximum allowed width for the road. The vehicle width can be specified using the Vehicle Width (meters) restriction parameter.Availability: Select countries in North America and Europe</para>
+		/// <para>确定服务区时工具将遵从的行驶限制。</para>
+		/// <para>限制表示行驶偏好或要求。 大多数情况下，限制条件会导致道路禁行。 例如，使用“避开收费公路”限制将导致路径仅在需要借道收费公路才能访问某一事件点或设施点时包含收费公路。 高度限制则使您可以绕开低于车辆高度的间隙。 如果车辆上装载着腐蚀性物质，使用“禁止任何危险物品”限制将防止在标记着运输腐蚀性材料为非法行为的路上运输这些材料。</para>
+		/// <para>除非将出行模式设置为自定义，否则会忽略您为此参数提供的值。</para>
+		/// <para>某些限制需要指定一个额外值才能进行使用。 该值必须与限制名称和用于限制的特定参数相关联。 可识别名称在属性参数值参数的 AttributeName 列中显示的限制。 查找可遍历道路时，要正确使用限制，应在属性参数值参数中指定 ParameterValue 字段。</para>
+		/// <para>有些限制仅适用于某些国家/地区；下表按区域显示了这些限制的可用性。 对于在某区域内可用性有限的限制，可查看网络分析覆盖范围的“国家/地区列表”部分中的表，确定限制在特定国家/地区是否可用。 如果国家/地区的“物流属性”列的值为是，则该国家/地区支持具有区域可选性的限制。 如果您指定的限制名称在事件点所在的国家/地区不可用，该服务会忽略无效限制。 该服务还会忽略限制用法属性参数值介于 0 到 1（请参阅属性参数值参数）之间的限制。 它会禁止限制用法参数值大于 0 的所有限制。</para>
+		/// <para>该工具支持以下约束条件：</para>
+		/// <para>禁止任何危险物品—结果将不包含禁止运输任何危险类型材料的道路。可用性：在北美洲及欧洲选择国家</para>
+		/// <para>避开拼车道路—结果将避开专供拼车（高承载）车辆行使的道路。可用性：所有国家</para>
+		/// <para>避开快速车道—结果将避开指定为快速车道的道路。可用性：所有国家</para>
+		/// <para>避开轮渡—结果将避开轮渡。可用性：所有国家</para>
+		/// <para>避开关口—结果将避开存在关键通道或守卫控制入口等关口的道路。可用性：所有国家</para>
+		/// <para>避开限行道路—结果将避开限制进入高速公路的道路。可用性：所有国家</para>
+		/// <para>避开私家道路—结果将避开非公有和维护的道路。可用性：所有国家</para>
+		/// <para>避开不适合行人的道路—结果将避开不适合行人的道路。可用性：所有国家</para>
+		/// <para>避开楼梯—结果将避开行人适合路线上的所有楼梯。可用性：所有国家</para>
+		/// <para>避开收费公路—结果将避开汽车收费公路。可用性：所有国家</para>
+		/// <para>避开卡车收费公路—结果将避开卡车收费公路。可用性：所有国家</para>
+		/// <para>避开货车禁行道路—结果将避开禁止货车通行的道路，除非正在进行配送。可用性：所有国家</para>
+		/// <para>避开未铺设道路—结果将避开未铺设（例如，泥土、砾石等）的道路。可用性：所有国家</para>
+		/// <para>轴计数限制—结果将不包含具有指定轴数的卡车禁行的道路。 可使用车轴数限制参数指定车轴数。可用性：在北美洲及欧洲选择国家</para>
+		/// <para>驾驶公共汽车—结果将不包含公共汽车禁行的道路。 使用此约束条件还将确保结果支持单行道。可用性：所有国家</para>
+		/// <para>驾驶出租车—结果将不包含出租车禁行的道路。 使用此约束条件还将确保结果支持单行道。可用性：所有国家</para>
+		/// <para>驾驶货车—结果将不包含卡车禁行的道路。 使用此约束条件还将确保结果支持单行道。可用性：所有国家</para>
+		/// <para>驾驶汽车—结果将不包含汽车禁行的道路。 使用此约束条件还将确保结果支持单行道。可用性：所有国家</para>
+		/// <para>驾驶急救车辆—结果将不包含急救车辆禁行的道路。 使用此约束条件还将确保结果支持单行道。可用性：所有国家</para>
+		/// <para>高度限制—结果将不包含车辆高度超出道路所允许的最大高度的道路。 可使用“车辆高度（米）”限制参数指定车辆高度。可用性：在北美洲及欧洲选择国家</para>
+		/// <para>主销到后轴长度限制—结果将不包含车辆长度超出路上所有货车所允许的主销到后轴最大长度的道路。 可使用车辆中心立轴-后轴长度（单位为米）限制参数指定车辆中心立轴与后轴之间的长度。可用性：在北美洲及欧洲选择国家</para>
+		/// <para>长度限制—结果将不包含车辆长度超出道路所允许的最大长度的道路。 可使用“车辆长度（单位为米）”限制参数指定车辆长度。可用性：在北美洲及欧洲选择国家</para>
+		/// <para>行人首选—结果将使用适合行人导航的首选路线。可用性：在北美洲及欧洲选择国家</para>
+		/// <para>骑摩托车—结果将不包含摩托车禁行的道路。 使用此约束条件还将确保结果支持单行道。可用性：所有国家</para>
+		/// <para>禁止在建道路—结果将不包含在建道路。可用性：所有国家</para>
+		/// <para>禁止带有一个或多个拖车的半挂车或牵引车—结果将不包含带有一个或多个拖车的半挂车或牵引车禁行的道路。可用性：在北美洲及欧洲选择国家</para>
+		/// <para>禁止单轴车辆—结果将不包含单轴车辆禁行的道路。可用性：在北美洲及欧洲选择国家</para>
+		/// <para>禁止双轴车辆—结果将不包含双轴车辆禁行的道路。可用性：在北美洲及欧洲选择国家</para>
+		/// <para>禁止过境交通—结果将不包含禁止过境交通（非本地）的道路。可用性：所有国家</para>
+		/// <para>带拖车的卡车限制—结果将不包含具有指定拖车数量的货车禁行的道路。 可使用“卡车上的拖车数量”限制参数指定卡车的拖车数量。可用性：在北美洲及欧洲选择国家</para>
+		/// <para>使用首选危险物品路径—结果将优先选择专用于运输危险类型材料的道路。可用性：在北美洲及欧洲选择国家</para>
+		/// <para>使用首选卡车路径—结果将优先选择指定为卡车路径的道路，例如，由美国的《国家地面交通援助法案》指定为国家网络的一部分的道路，由州或省指定为卡车路径的道路，或在某区域内驾驶卡车的首选道路。可用性：在北美洲及欧洲选择国家</para>
+		/// <para>步行—结果将不包含行人禁行的道路。可用性：所有国家</para>
+		/// <para>重量限制—结果将不包含车辆重量超出道路所允许的最大重量的道路。 可使用“车辆重量（千克）”限制参数指定车辆重量。可用性：在北美洲及欧洲选择国家</para>
+		/// <para>轴负重限制—结果将不包含车辆轴负重超出道路所允许的最大轴负重的道路。 可使用“车辆轴负重（千克）”限制参数指定车辆轴负量。可用性：在北美洲及欧洲选择国家</para>
+		/// <para>宽度限制—结果将不包含车辆宽度超出道路所允许的最大宽度的道路。 可使用“车辆宽度（单位为米）”限制参数指定车辆宽度。可用性：在北美洲及欧洲选择国家</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -485,22 +481,22 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Attribute Parameter Values</para>
-		/// <para>Use this parameter to specify additional values required by an attribute or restriction, such as to specify whether the restriction prohibits, avoids, or prefers travel on restricted roads. If the restriction is meant to avoid or prefer roads, you can further specify the degree to which they are avoided or preferred using this parameter. For example, you can choose to never use toll roads, avoid them as much as possible, or prefer them.</para>
-		/// <para>The values you provide for this parameter are ignored unless Travel Mode is set to Custom.</para>
-		/// <para>If you specify the Attribute Parameter Values parameter from a feature class, the field names on the feature class must match the fields as follows:</para>
-		/// <para>AttributeName—The name of the restriction.</para>
-		/// <para>ParameterName—The name of the parameter associated with the restriction. A restriction can have one or more ParameterName field values based on its intended use.</para>
-		/// <para>ParameterValue—The value for ParameterName used by the tool when evaluating the restriction.</para>
-		/// <para>The Attribute Parameter Values parameter is dependent on the Restrictions parameter. The ParameterValue field is applicable only if the restriction name is specified as the value for the Restrictions parameter.</para>
-		/// <para>In Attribute Parameter Values, each restriction (listed as AttributeName) has a ParameterName field value, Restriction Usage, that specifies whether the restriction prohibits, avoids, or prefers travel on the roads associated with the restriction as well as the degree to which the roads are avoided or preferred. The Restriction Usage ParameterName can be assigned any of the following string values or their equivalent numeric values listed in the parentheses:</para>
-		/// <para>PROHIBITED (-1)—Travel on the roads using the restriction is completely prohibited.</para>
-		/// <para>AVOID_HIGH (5)—It is highly unlikely the tool will include in the route the roads that are associated with the restriction.</para>
-		/// <para>AVOID_MEDIUM (2)—It is unlikely the tool will include in the route the roads that are associated with the restriction.</para>
-		/// <para>AVOID_LOW (1.3)—It is somewhat unlikely the tool will include in the route the roads that are associated with the restriction.</para>
-		/// <para>PREFER_LOW (0.8)—It is somewhat likely the tool will include in the route the roads that are associated with the restriction.</para>
-		/// <para>PREFER_MEDIUM (0.5)—It is likely the tool will include in the route the roads that are associated with the restriction.</para>
-		/// <para>PREFER_HIGH (0.2)—It is highly likely the tool will include in the route the roads that are associated with the restriction.</para>
-		/// <para>In most cases, you can use the default value, PROHIBITED, as the Restriction Usage value if the restriction is dependent on a vehicle characteristic such as vehicle height. However, in some cases, the Restriction Usage value depends on your routing preferences. For example, the Avoid Toll Roads restriction has the default value of AVOID_MEDIUM for the Restriction Usage attribute. This means that when the restriction is used, the tool will try to route around toll roads when it can. AVOID_MEDIUM also indicates how important it is to avoid toll roads when finding the best route; it has a medium priority. Choosing AVOID_LOW puts lower importance on avoiding tolls; choosing AVOID_HIGH instead gives it a higher importance and thus makes it more acceptable for the service to generate longer routes to avoid tolls. Choosing PROHIBITED entirely disallows travel on toll roads, making it impossible for a route to travel on any portion of a toll road. Keep in mind that avoiding or prohibiting toll roads, and thus avoiding toll payments, is the objective for some. In contrast, others prefer to drive on toll roads, because avoiding traffic is more valuable to them than the money spent on tolls. In the latter case, choose PREFER_LOW, PREFER_MEDIUM, or PREFER_HIGH as the value for Restriction Usage. The higher the preference, the farther the tool will go out of its way to travel on the roads associated with the restriction.</para>
+		/// <para>使用此参数可指定属性或限制条件所需的其他值，例如，指定限制对在受限道路上行驶是禁止、避免还是首选。 如果该限制要避免或首选道路，您可以使用此参数进一步指定要避免或首选的程度。 例如，您可以选择从不使用收费公路，尽可能的避开它们，或首选它们。</para>
+		/// <para>除非将出行模式设置为自定义，否则会忽略您为此参数提供的值。</para>
+		/// <para>如果指定了要素类的属性参数值参数，则要素类上的字段名称必须与以下字段相匹配：</para>
+		/// <para>AttributeName- 限制的名称。</para>
+		/// <para>ParameterName- 与限制关联的参数名称。 限制根据其用途可具有一个或多个 ParameterName 字段值。</para>
+		/// <para>ParameterValue- 工具在评估限制时使用的 ParameterName 的值。</para>
+		/// <para>属性参数值参数取决于限制参数。 仅当限制名称指定为限制参数值时，ParameterValue 字段才适用。</para>
+		/// <para>在属性参数值中，每个限制（以 AttributeName 形式列出）具有一个 ParameterName 字段值，指定限制的行程是禁止、避免还是首选的限制用法与道路选择避免或首选的限制和程度相关联。 可为限制用法 ParameterName 分配下列字符串值，或在括号内列出等效数值：</para>
+		/// <para>PROHIBITED (-1) - 完全禁止在使用限制的道路上行驶。</para>
+		/// <para>AVOID_HIGH (5) - 工具极不可能将与限制相关的道路包括在路径中。</para>
+		/// <para>AVOID_MEDIUM (2) - 工具不可能将与限制相关的道路包括在路径中。</para>
+		/// <para>AVOID_LOW (1.3) - 工具不太可能将与限制相关的道路包括在路径中。</para>
+		/// <para>PREFER_LOW (0.8) - 工具稍微有可能将与限制相关的道路包括在路径中。</para>
+		/// <para>PREFER_MEDIUM (0.5) - 工具可能将与限制相关的道路包括在路径中。</para>
+		/// <para>PREFER_HIGH (0.2) - 工具非常有可能将与限制相关的道路包括在路径中。</para>
+		/// <para>大多数情况下，如果限制取决于车辆高度等车辆特征，则可以将“限制用法”设置为默认值 PROHIBITED。 但是在某些情况下，“限制用法”值取决于您的路径偏好。 例如，“避开收费公路”限制将“限制用法”参数设置为默认值 AVOID_MEDIUM。 这表示在使用限制时，在可能的情况下工具会试图绕开收费公路。 AVOID_MEDIUM 也表示查找最佳路径时避开收费公路的重要性，即优先级为中等。 选择 AVOID_LOW 会降低避开收费公路的重要性；而选择 AVOID_HIGH 则会增加其重要性，因此服务为避开收费公路而生成更长的路径时更容易为人所接受。 选择 PROHIBITED 则会完全不允许在收费公路上行驶，因此路径不可能经过收费公路的所有部分。 但是请注意，避开或禁止收费公路并由此避开公路通行费只是一部分人的目的。 对另外一部分人来说，因为避开拥堵的交通比交一些公路通行费更为重要，会宁愿走收费公路。 在后一种情况中，选择 PREFER_LOW、PREFER_MEDIUM 或 PREFER_HIGH 作为“限制用法”的值。 首选的等级越高，工具为了在与限制相关的道路上行驶就会绕行更远的路程。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRecordSet()]
@@ -509,10 +505,10 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Time Zone for Time of Day</para>
-		/// <para>Specifies the time zone or zones of the Time of Day parameter.</para>
-		/// <para>Geographically Local—The Time of Day parameter refers to the time zone or zones in which the facilities are located. The start or end times of the service areas are staggered by time zone. Setting Time of Day to 9:00 AM, choosing Geographically Local for Time Zone for Time of Day, and solving causes service areas to be generated for 9:00 a.m. eastern time for any facilities in the eastern time zone, 9:00 a.m. central time for facilities in the central time zone, 9:00 a.m. mountain time for facilities in the mountain time zone, and so on, for facilities in different time zones.If stores in a chain that span the U.S. open at 9:00 a.m. local time, this parameter value can be chosen to find market territories at opening time for all stores in one solve. First, the stores in the eastern time zone open and a polygon is generated, then an hour later stores open in central time, and so on. Nine o&apos;clock is always in local time but staggered in real time.</para>
-		/// <para>UTC—The Time of Day parameter refers to coordinated universal time (UTC). All facilities are reached or departed from simultaneously, regardless of the time zone each is in.Setting Time of Day to 2:00 PM, choosing UTC, and solving causes service areas to be generated for 9:00 a.m. eastern standard time for any facilities in the eastern time zone, 8:00 a.m. central standard time for facilities in the central time zone, 7:00 a.m. mountain standard time for facilities in the mountain time zone, and so on, for facilities in different time zones.The scenario above assumes standard time. During daylight saving time, the eastern, central, and mountain times will each be one hour ahead (that is, 10:00, 9:00, and 8:00 a.m., respectively).One of the cases in which the UTC option is useful is to visualize emergency response coverage for a jurisdiction that is split into two time zones. The emergency vehicles are loaded as facilities. Time of Day parameter is set to now in UTC. (You need to determine the current time and date in terms of UTC to correctly use this option.) Other properties are set and the analysis is solved. Even though a time zone boundary divides the vehicles, the results show areas that can be reached given current traffic conditions. This same process can be used for other times as well, not just for now.</para>
-		/// <para>Regardless of the Time Zone for Time of Day setting, all facilities must be in the same time zone when Time of Day has a nonnull value and Polygons for Multiple Facilities is set to create merged or nonoverlapping polygons.</para>
+		/// <para>指定时区或时间参数的时区。</para>
+		/// <para>本地地理位置—时间参数是指设施点所处的时区或区域。 服务区开始时间或结束时间的时区交错。 将时间设为 9:00 AM，为时间的时区选择“本地地理位置”，然后进行求解，将为处于东部时区的所有设施点生成东部时间 9:00 a.m. 的服务区、为处于中部时区的设施点生成中部时间 9:00 a.m. 的服务区、为处于山区时区的设施点生成山区时间 9:00 a.m. 的服务区等等。如果商店处于覆盖美国、在当地时间 9:00 a.m. 开业的商店链中，则可以在一次求解中选择此参数值来查找处于所有商店开业时间的市场地区。 首先，东部时区的商店开业并生成一个面，一小时后中部时区的商店开业，以此类推。 当地时间始终为 9 点，但却因不同时区而实时交错。</para>
+		/// <para>UTC—时间参数是指协调世界时间 (UTC)。 无论各设施点处于哪个时区都会同时到达或出发。将时间设为 2:00 PM，选择 UTC，然后进行求解，将为处于东部时区的所有设施点生成东部标准时间 9:00 a.m. 的服务区、为处于中部时区的设施点生成中部标准时间 8:00 a.m. 的服务区、为处于山地时区的设施点生成山地标准时间 7:00 a.m. 的服务区，等等。以上情况均假定为标准时间。 在夏令时期间，东部、中部、和山地时间应各提前 1 小时（即分别为 10:00 a.m.、9:00 a.m. 和 8:00 a.m.）。UTC 选项可用于为跨两个时区的管辖区显示紧急响应范围。 将急救车辆加载为设施点。 将时间参数设置为 UTC 的当前时间。 （您需要确定当前 UTC 时间和日期，以便正确使用此选项。）设置其他属性，并对分析进行求解。 尽管时区边界会分割车辆，但结果仍将显示当前交通状况下可以到达的区域。 也可对其他时间使用相同的过程，而不仅是当前时间。</para>
+		/// <para>无论时间的时区如何设置，当时间为非空值并且多个设施点的面设置为创建合并或非重叠面时，所有设施点必须处于同一时区。</para>
 		/// <para><see cref="TimeZoneForTimeOfDayEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -523,10 +519,10 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Travel Mode</para>
-		/// <para>The mode of transportation to model in the analysis. Travel modes are managed in ArcGIS Online and can be configured by the administrator of your organization to reflect your organization&apos;s workflows. You need to specify the name of a travel mode that is supported by your organization.</para>
-		/// <para>To get a list of supported travel mode names, use the same GIS server connection you used to access this tool, and run the GetTravelModes tool in the Utilities toolbox. The GetTravelModes tool adds the Supported Travel Modes table to the application. Any value in the Travel Mode Name field from the Supported Travel Modes table can be specified as input. You can also specify the value from the Travel Mode Settings field as input. This reduces the tool execution time because the tool does not have to find the settings based on the travel mode name.</para>
-		/// <para>The default value, Custom, allows you to configure your own travel mode using the custom travel mode parameters (UTurn at Junctions, Use Hierarchy, Restrictions, Attribute Parameter Values, and Impedance). The default values of the custom travel mode parameters model traveling by car. You can also choose Custom and set the custom travel mode parameters listed above to model a pedestrian with a fast walking speed or a truck with a given height, weight, and cargo of certain hazardous materials. You can try different settings to get the analysis results you want. Once you have identified the analysis settings, work with your organization&apos;s administrator and save these settings as part of a new or existing travel mode so that everyone in your organization can run the analysis with the same settings.</para>
-		/// <para>When you choose Custom, the values you set for the custom travel mode parameters are included in the analysis. Specifying another travel mode, as defined by your organization, causes any values you set for the custom travel mode parameters to be ignored; the tool overrides them with values from your specified travel mode.</para>
+		/// <para>用于在分析中建模的交通模式。 出行模式在 ArcGIS Online 中进行管理，组织管理员可通过对其进行配置，以反映组织工作流。 您需要指定组织所支持的出行模式的名称。</para>
+		/// <para>获取受支持出行模式名称的列表，请使用与访问此工具时使用的相同 GIS 服务器连接，并在实用程序工具箱中运行 GetTravelModes 工具。 GetTravelModes 会将“支持的出行模式”表添加到应用程序中。 可将“支持的出行模式”表中 Travel Mode Name 字段的任何值指定为输入。 您还可以将 Travel Mode Settings 字段中的值指定为输入。 这将缩短工具执行时间，因为工具无需根据出行模式名称查找设置。</para>
+		/// <para>默认值，自定义，可以使用自定义出行模式参数（在交汇点处 U 形转弯、应用等级、限制、属性参数值和阻抗）配置您自己的出行模式。 自定义出行模式参数的默认值对使用汽车的出行方式建模。 也可以选择自定义并设置上述自定义出行模式参数，从而以快速步行速度对行人建模，或以给定高度、重量和特定危险材料货物对卡车建模。 您可以尝试不同的设置以获取所需的分析结果。 一旦确定了分析设置，则可使用组织管理员身份并将这些设置保存为新建或现有出行模式的一部分，以便您组织中的所有人均运行相同设置的分析。</para>
+		/// <para>选择自定义后，您为自定义出行模式参数设置的值便会包含在分析中。 指定您组织定义的其他出行模式，将忽略为自定义出行模式参数设置的所有值；该工具将用您所指定的出行模式中的值将其覆盖。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -534,24 +530,24 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Impedance</para>
-		/// <para>Specifies the impedance, which is a value that represents the effort or cost of traveling along road segments or on other parts of the transportation network.</para>
-		/// <para>Travel time is an impedance: a car may take 1 minute to travel a mile along an empty road. Travel times can vary by travel mode—a pedestrian may take more than 20 minutes to walk the same mile, so it is important to choose the right impedance for the travel mode you are modeling.</para>
-		/// <para>Travel distance can also be an impedance; the length of a road in kilometers can be thought of as impedance. Travel distance in this sense is the same for all modes—a kilometer for a pedestrian is also a kilometer for a car. (What may change is the pathways on which the different modes are allowed to travel, which affects distance between points, and this is modeled by travel mode settings.)</para>
-		/// <para>The value you provide for this parameter is ignored unless Travel Mode is set to Custom, which is the default value.</para>
-		/// <para>Travel Time—Historical and live traffic data is used. This option is good for modeling the time it takes automobiles to travel along roads at a specific time of day using live traffic speed data where available. When using TravelTime, you can optionally set the TravelTime::Vehicle Maximum Speed (km/h) attribute parameter to specify the physical limitation of the speed the vehicle is capable of traveling.</para>
-		/// <para>Minutes—Live traffic data is not used, but historical average speeds for automobiles data is used.</para>
-		/// <para>Truck Travel Time—Historical and live traffic data is used, but the speed is capped at the posted truck speed limit. This is good for modeling the time it takes for the trucks to travel along roads at a specific time. When using TruckTravelTime, you can optionally set the TruckTravelTime::Vehicle Maximum Speed (km/h) attribute parameter to specify the physical limitation of the speed the truck is capable of traveling.</para>
-		/// <para>Truck Minutes—Live traffic data is not used, but the smaller of the historical average speeds for automobiles and the posted speed limits for trucks is used.</para>
-		/// <para>Walk Time—The default is a speed of 5 km/hr on all roads and paths, but this can be configured through the WalkTime::Walking Speed (km/h) attribute parameter.</para>
-		/// <para>Miles—Length measurements along roads are stored in miles and can be used for performing analysis based on shortest distance.</para>
-		/// <para>Kilometers—Length measurements along roads are stored in kilometers and can be used for performing analysis based on shortest distance.</para>
-		/// <para>Time At One Kilometer Per Hour—The default is a speed of 1 km/hr on all roads and paths. The speed cannot be changed using any attribute parameter.</para>
-		/// <para>Drive Time—Models travel times for a car. These travel times are dynamic and fluctuate according to traffic flows in areas where traffic data is available. This is the default value.</para>
-		/// <para>Truck Time—Models travel times for a truck. These travel times are static for each road and don&apos;t fluctuate with traffic.</para>
-		/// <para>Walk Time—Models travel times for a pedestrian.</para>
-		/// <para>Travel Distance—Stores length measurements along roads and paths. To model walk distance, choose this option and ensure Walking is set in the Restriction parameter. Similarly, to model drive or truck distance, choose Travel Distance here and set the appropriate restrictions so your vehicle travels only on roads where it is permitted to do so.</para>
-		/// <para>If you choose a time-based impedance, such as TravelTime, TruckTravelTime, Minutes, TruckMinutes, or WalkTime, the Break Units parameter must be set to a time-based value; if you choose a distance-based impedance such as Miles or Kilometers, Break Units must be a distance-based value.</para>
-		/// <para>Drive Time, Truck Time, Walk Time, and Travel Distance impedance values are no longer supported and will be removed in a future release. If you use one of these values, the tool uses the value of the Time Impedance parameter for time-based values and the Distance Impedance parameter for distance-based values.</para>
+		/// <para>指定阻抗，该值表示沿交通网络的路段或其他部分行进所需的精力或成本。</para>
+		/// <para>行程时间是一种阻抗，比如，汽车花费 1 分钟沿空无一人的道路行驶一公里。 行程时间会随出行模式的不同而不同（行人可能需要 20 多分钟才能走完一公里），所以在建模时为出行模式选择正确的阻抗非常重要。</para>
+		/// <para>行程距离也是一种阻抗，可将以千米表示的道路长度作为阻抗。 从这个意义上，行程距离对所有模式均相同，即对行人而言 1 千米的距离对汽车而言也是 1 千米。 （但不同模式所允许行进的线路可能会有变化，而这会影响两点间的距离，可通过出行模式设置对此进行建模。）</para>
+		/// <para>除非将出行模式设置为自定义（这是默认值），否则会忽略您为此参数提供的值。</para>
+		/// <para>行驶时间—使用历史和实时流量数据。 此选项适用于在每天的特定时间使用实时流量速度数据（如果适用）对汽车沿道路行驶的时间进行建模。 如果使用 TravelTime，则可以选择设置 TravelTime::车辆最大速度 (km/h) 属性参数来指定车辆能够行驶的速度的物理限制。</para>
+		/// <para>分—不使用实时流量数据，而是使用汽车的历史平均速度。</para>
+		/// <para>卡车行驶时间—使用历史和实时流量数据，但将速度限制为发布的卡车限速要求。 这有助于模拟卡车在特定时间沿着道路行驶所需的时间。 如果使用 TruckTravelTime，则可以选择设置 TruckTravelTime::车辆最大速度 (km/h) 属性参数来指定卡车能够行驶的速度的物理限制。</para>
+		/// <para>卡车分钟—不使用实时流量数据，而是使用汽车历史平均速度的较小值以及发布的卡车限速要求。</para>
+		/// <para>步行时间—在所有道路和路径上的默认速度为 5 千米/小时，但可以通过 WalkTime::步行速度 (km/h) 属性参数进行配置。</para>
+		/// <para>英里—以英里为单位存储沿道路的长度测量值，可用于基于最短距离执行分析。</para>
+		/// <para>千米—以公里为单位存储沿道路的长度测量值，可用于基于最短距离进行分析。</para>
+		/// <para>每小时一公里的时间—默认将所有道路和路径上的速度都设为 1 千米/小时。 使用任何属性参数都无法更改速度。</para>
+		/// <para>行驶时间—对汽车的行驶时间进行建模。 这些行驶时间是动态的，会随交通数据可用区域的交通流量而波动。 这是默认值。</para>
+		/// <para>卡车时间—对卡车的行驶时间进行建模。 这些行驶时间对于每条道路都是静态的，不会随交通流量而波动。</para>
+		/// <para>步行时间—对行人的步行时间进行建模。</para>
+		/// <para>行驶距离—存储沿道路和路径测得的距离长度。 要对步行距离建模，请选择此选项并确保在限制参数中设置了步行。 同样，若对行驶距离或货运距离建模，则在此处选择行程距离并设置相应限制，以使车辆仅在允许的道路上行进。</para>
+		/// <para>如果选择基于时间的阻抗（例如 TravelTime、TruckTravelTime、Minutes、TruckMinutes 或 WalkTime），则必须将中断单位参数设置为基于时间的值；如果您选择基于距离的阻抗（例如 Miles 或 Kilometers），则中断单位必须为基于距离的值。</para>
+		/// <para>不再支持行驶时间、卡车时间、步行时间和行驶距离阻抗值，且将在未来版本中删除。 如果您使用上述任一值，则工具将为基于时间的值使用时间阻抗参数，为基于距离的值使用距离阻抗参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -561,9 +557,9 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Save Output Network Analysis Layer</para>
-		/// <para>Specifies whether the analysis settings will be saved as a network analysis layer file. You cannot directly work with this file even when you open the file in an ArcGIS Desktop application such as ArcMap. It is meant to be sent to Esri Technical Support to diagnose the quality of results returned from the tool.</para>
-		/// <para>Checked (True in Python)—The output will be saved as a network analysis layer file. The file will be downloaded to a temporary directory on your machine. In ArcGIS Pro, the location of the downloaded file can be determined by viewing the value for the Output Network Analysis Layer parameter in the entry corresponding to the tool execution in the geoprocessing history of your project. In ArcMap, the location of the file can be determined by accessing the Copy Location option in the shortcut menu on the Output Network Analysis Layer parameter in the entry corresponding to the tool execution in the Geoprocessing Results window.</para>
-		/// <para>Unchecked (False in Python)—The output will not be saved as a network analysis layer file. This is the default.</para>
+		/// <para>指定是否将分析设置另存为网络分析图层文件。 即使在 ArcGIS Desktop 应用程序（例如 ArcMap）中打开文件，仍然无法直接使用此文件。 需要将其发送至 Esri 技术支持以诊断工具所返回结果的质量。</para>
+		/// <para>选中（在 Python 中为 True）- 输出将另存为网络分析图层文件。 文件将下载到计算机上的临时目录中。 在 ArcGIS Pro 中，可以通过查看输出网络分析图层参数的值来确定已下载文件的位置，该参数位于与工程地理处理历史中的工具执行相对应的条目中。 在 ArcMap 中，可以通过访问输出网络分析图层参数上的快捷菜单中的复制位置选项来确定文件的位置，该参数位于与地理处理结果窗口中的工具执行对应的条目中。</para>
+		/// <para>未选中（在 Python 中为 False）- 输出不会另存为网络分析图层文件。 这是默认设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
@@ -572,10 +568,10 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Overrides</para>
-		/// <para>Additional settings that can influence the behavior of the solver when finding solutions for the network analysis problems.</para>
-		/// <para>The value for this parameter must be specified in JavaScript Object Notation (JSON). For example, a valid value is of the following form: {&quot;overrideSetting1&quot; : &quot;value1&quot;, &quot;overrideSetting2&quot; : &quot;value2&quot;}. The override setting name is always enclosed in double quotation marks. The values can be a number, Boolean, or string.</para>
-		/// <para>The default value for this parameter is no value, which indicates not to override any solver settings.</para>
-		/// <para>Overrides are advanced settings that should be used only after careful analysis of the results obtained before and after applying the settings. For a list of supported override settings for each solver and their acceptable values, contact Esri Technical Support.</para>
+		/// <para>求解网络分析问题时，可影响求解程序行为的其他设置。</para>
+		/// <para>必须在 JavaScript 对象表示法 (JSON) 中指定此参数的值。 例如，有效值的格式如下：{&quot;overrideSetting1&quot; : &quot;value1&quot;, &quot;overrideSetting2&quot; : &quot;value2&quot;}。 覆盖设置名称始终以双引号括起。 该值可以是数字、布尔值或字符串。</para>
+		/// <para>此参数的默认值为无值，表示不覆盖任何求解程序设置。</para>
+		/// <para>覆盖是高级设置，应仅在谨慎分析应用设置前后得到的结果之后使用。 要获取每个求解器支持的覆盖设置及其可接受值的列表，请联系 Esri 技术支持。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -584,7 +580,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Time Impedance</para>
-		/// <para>If the impedance for the travel mode, as specified using the Impedance parameter, is time based, the values for the Time Impedance and Impedance parameters must be identical. Otherwise, the service will return an error.</para>
+		/// <para>如果使用阻抗参数指定的出行模式阻抗是基于时间的，则时间阻抗和阻抗参数的值必须相同。 否则，服务将返回错误。</para>
 		/// <para><see cref="TimeImpedanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -595,7 +591,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Distance Impedance</para>
-		/// <para>If the impedance for the travel mode, as specified using the Impedance parameter, is distance based, the values for the Distance Impedance and Impedance parameters must be identical. Otherwise, the service will return an error.</para>
+		/// <para>如果使用阻抗参数指定的出行模式阻抗是基于距离的，则距离阻抗和阻抗参数的值必须相同。 否则，服务将返回错误。</para>
 		/// <para><see cref="DistanceImpedanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -606,12 +602,12 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Polygon Detail</para>
-		/// <para>Specifies the level of detail for the output polygons.</para>
-		/// <para>Standard—Polygons will be created with a standard level of detail. Standard polygons are generated quickly and are fairly accurate, but quality deteriorates somewhat as you move toward the borders of the service area polygons. This is the default.</para>
-		/// <para>Generalized—Generalized polygons will be created using the hierarchy present in the network data source to produce results quickly. Generalized polygons are inferior in quality compared to standard or high-precision polygons.</para>
-		/// <para>High—Polygons will be created with the highest level of detail. Holes in the polygon may exist; they represent islands of network elements, such as streets, that couldn&apos;t be reached without exceeding the cutoff impedance or due to travel restrictions This option should be used for applications in which precise results are important.</para>
-		/// <para>If your analysis covers an urban area with a grid-like street network, the difference between generalized and standard polygons will be minimal. However, for mountain and rural roads, the standard and detailed polygons may present significantly more accurate results than generalized polygons.</para>
-		/// <para>The tool supports generating high-precision polygons only if the largest value specified in the Break Values parameter is less than or equal to 15 minutes or 15 miles (24.14 kilometers).</para>
+		/// <para>指定输出面的细节层次。</para>
+		/// <para>标准—面将以标准细节层次进行创建。 标准面的生成速度很快，且准确性相对较高，但向服务区面的边界处移动时，质量会在一定程度上降低。 这是默认设置。</para>
+		/// <para>概化—将使用网络数据源中的等级创建概化面，以便快速生成结果。 与标准或高精度面相比，概化面的质量较差。</para>
+		/// <para>高等—将创建具有最高细节层次的面。 面中可能出现洞；它们表示不超出中断阻抗的情况下或由于行驶限制而无法到达的孤立网络元素（例如，街道）。该选项应该用于需要结果精确的应用。</para>
+		/// <para>如果分析涉及的市区具有类似格网的街道网络，那么概化面和标准面之间的差异十分细微。 但是，如果涉及山区和农村道路，那么标准面表示的结果可能要比概化面更加详细。</para>
+		/// <para>仅当中断值参数内指定的最大值小于或等于 15 分钟或 15 英里（24.14 千米）时，工具支持生成高精度面。</para>
 		/// <para><see cref="PolygonDetailEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -622,10 +618,10 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Output Type</para>
-		/// <para>Specifies the type of output to be generated. Service area output can be line features representing the roads reachable before the cutoffs are exceeded or the polygon features encompassing these lines (representing the reachable area).</para>
-		/// <para>Polygons—The service area output will contain polygons only. This is the default.</para>
-		/// <para>Lines—The service area output will contain lines only.</para>
-		/// <para>Polygons and lines—The service area output will contain both polygons and lines.</para>
+		/// <para>指定要生成的输出类型。 服务区输出可以是超过中断值前表示可到达道路的线要素，也可以是包括这些线的面要素（表示可达到的区域）。</para>
+		/// <para>面—服务区输出将仅包含面。 这是默认设置。</para>
+		/// <para>线—服务区输出将仅包含线。</para>
+		/// <para>面和线—服务区输出将既包含面又包含线。</para>
 		/// <para><see cref="OutputTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -636,11 +632,11 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Output Format</para>
-		/// <para>Specifies the format in which the output features will be created.</para>
-		/// <para>Feature Set—The output features will be returned as feature classes and tables. This is the default.</para>
-		/// <para>JSON File—The output features will be returned as a compressed file containing the JSON representation of the outputs. When this option is specified, the output is a single file (with a .zip extension) that contains one or more JSON files (with a .json extension) for each of the outputs created by the service.</para>
-		/// <para>GeoJSON File—The output features will be returned as a compressed file containing the GeoJSON representation of the outputs. When this option is specified, the output is a single file (with a .zip extension) that contains one or more GeoJSON files (with a .geojson extension) for each of the outputs created by the service.</para>
-		/// <para>When a file-based output format, such as JSON File or GeoJSON File, is specified, no outputs will be added to the display because the application, such as ArcMap or ArcGIS Pro, cannot draw the contents of the result file. Instead, the result file is downloaded to a temporary directory on your machine. In ArcGIS Pro, the location of the downloaded file can be determined by viewing the value for the Output Result File parameter in the entry corresponding to the tool execution in the geoprocessing history of your project. In ArcMap, the location of the file can be determined by accessing the Copy Location option in the shortcut menu on the Output Result File parameter in the entry corresponding to the tool execution in the Geoprocessing Results window.</para>
+		/// <para>指定创建输出要素时使用的格式。</para>
+		/// <para>要素集—输出要素将作为要素类和表返回。 这是默认设置。</para>
+		/// <para>JSON 文件—输出要素将作为包含输出的 JSON 表示的压缩文件返回。 指定此选项时，输出将是包含由服务针对每个输出创建的一个或多个 JSON 文件（扩展名为 .zip）的单个文件（扩展名为 .json）。</para>
+		/// <para>GeoJSON 文件—输出要素将作为包含输出的 GeoJSON 表示的压缩文件返回。 指定此选项时，输出将是包含由服务针对每个输出创建的一个或多个 GeoJSON 文件（扩展名为 .zip）的单个文件（扩展名为 .geojson）。</para>
+		/// <para>如果指定基于文件的输出格式（如 JSON 文件或 GeoJSON 文件），则不会向显示添加输出，因为应用程序（例如 ArcMap 或 ArcGIS Pro）无法绘制结果文件的内容。 相反，结果文件将下载到计算机上的临时目录中。 在 ArcGIS Pro 中，可以通过查看输出结果文件参数的值来确定已下载文件的位置，该参数位于与工程地理处理历史中的工具执行相对应的条目中。 在 ArcMap 中，可以通过访问输出结果文件参数上的快捷菜单中的复制位置选项来确定文件的位置，该参数位于与地理处理结果窗口中的工具执行对应的条目中。</para>
 		/// <para><see cref="OutputFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -651,9 +647,9 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Ignore Invalid Locations</para>
-		/// <para>Specifies whether invalid input locations will be ignored.</para>
-		/// <para>Checked—Network locations that are unlocated will be ignored and the analysis will run using valid network locations only. The analysis will also continue if locations are on nontraversable elements or have other errors. This is useful if you know your network locations are not all correct, but you want to run the analysis with the network locations that are valid. This is the default.</para>
-		/// <para>Unchecked—Invalid locations will not be ignored. Do not run the analysis if there are invalid locations. Correct the invalid locations and rerun the analysis.</para>
+		/// <para>指定是否忽略无效的输入位置。</para>
+		/// <para>选中 - 将忽略未定位的网络位置，并且将仅使用有效网络位置运行分析。 如果这些位置位于不可遍历的元素上或有其他错误，则分析仍会继续进行。 如果您知道您的网络位置并不完全正确，但是想对有效的网络位置运行分析，此选项很有用。 这是默认设置。</para>
+		/// <para>未选中 - 不会忽略无效位置。 如果存在无效位置，请勿运行分析。 更正无效位置，然后重新运行分析。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
@@ -717,73 +713,73 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		public enum BreakUnitsEnum 
 		{
 			/// <summary>
-			/// <para>Meters—The linear unit is meters.</para>
+			/// <para>米—线性单位为米。</para>
 			/// </summary>
 			[GPValue("Meters")]
-			[Description("Meters")]
+			[Description("米")]
 			Meters,
 
 			/// <summary>
-			/// <para>Kilometers—The linear unit is kilometers.</para>
+			/// <para>千米—线性单位为千米。</para>
 			/// </summary>
 			[GPValue("Kilometers")]
-			[Description("Kilometers")]
+			[Description("千米")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>Feet—The linear unit is feet.</para>
+			/// <para>英尺—线性单位为英尺。</para>
 			/// </summary>
 			[GPValue("Feet")]
-			[Description("Feet")]
+			[Description("英尺")]
 			Feet,
 
 			/// <summary>
-			/// <para>Yards—The linear unit is yards.</para>
+			/// <para>码—线性单位为码。</para>
 			/// </summary>
 			[GPValue("Yards")]
-			[Description("Yards")]
+			[Description("码")]
 			Yards,
 
 			/// <summary>
-			/// <para>Miles—The linear unit is miles.</para>
+			/// <para>英里—线性单位为英里。</para>
 			/// </summary>
 			[GPValue("Miles")]
-			[Description("Miles")]
+			[Description("英里")]
 			Miles,
 
 			/// <summary>
-			/// <para>Nautical Miles—The linear unit is nautical miles.</para>
+			/// <para>海里—线性单位为海里。</para>
 			/// </summary>
 			[GPValue("NauticalMiles")]
-			[Description("Nautical Miles")]
+			[Description("海里")]
 			Nautical_Miles,
 
 			/// <summary>
-			/// <para>Seconds—The time unit is seconds.</para>
+			/// <para>秒—时间单位为秒。</para>
 			/// </summary>
 			[GPValue("Seconds")]
-			[Description("Seconds")]
+			[Description("秒")]
 			Seconds,
 
 			/// <summary>
-			/// <para>Minutes—The time unit is minutes.</para>
+			/// <para>分—时间单位为分钟。</para>
 			/// </summary>
 			[GPValue("Minutes")]
-			[Description("Minutes")]
+			[Description("分")]
 			Minutes,
 
 			/// <summary>
-			/// <para>Hours—The time unit is hours.</para>
+			/// <para>小时—时间单位为小时。</para>
 			/// </summary>
 			[GPValue("Hours")]
-			[Description("Hours")]
+			[Description("小时")]
 			Hours,
 
 			/// <summary>
-			/// <para>Days—The time unit is days.</para>
+			/// <para>天—时间单位为天。</para>
 			/// </summary>
 			[GPValue("Days")]
-			[Description("Days")]
+			[Description("天")]
 			Days,
 
 		}
@@ -794,59 +790,59 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		public enum AnalysisRegionEnum 
 		{
 			/// <summary>
-			/// <para>Europe—The analysis region is Europe.</para>
+			/// <para>欧洲—分析区域为欧洲。</para>
 			/// </summary>
 			[GPValue("Europe")]
-			[Description("Europe")]
+			[Description("欧洲")]
 			Europe,
 
 			/// <summary>
-			/// <para>Japan—The analysis region is Japan.</para>
+			/// <para>日本—分析区域为日本。</para>
 			/// </summary>
 			[GPValue("Japan")]
-			[Description("Japan")]
+			[Description("日本")]
 			Japan,
 
 			/// <summary>
-			/// <para>Korea—The analysis region is Korea.</para>
+			/// <para>韩国—分析区域为韩国。</para>
 			/// </summary>
 			[GPValue("Korea")]
-			[Description("Korea")]
+			[Description("韩国")]
 			Korea,
 
 			/// <summary>
-			/// <para>Middle East And Africa—The analysis region is Middle East and Africa.</para>
+			/// <para>中东和非洲—分析区域为中东和非洲。</para>
 			/// </summary>
 			[GPValue("MiddleEastAndAfrica")]
-			[Description("Middle East And Africa")]
+			[Description("中东和非洲")]
 			Middle_East_And_Africa,
 
 			/// <summary>
-			/// <para>North America—The analysis region is North America.</para>
+			/// <para>北美—分析区域为北美洲。</para>
 			/// </summary>
 			[GPValue("NorthAmerica")]
-			[Description("North America")]
+			[Description("北美")]
 			North_America,
 
 			/// <summary>
-			/// <para>South America—The analysis region is South America.</para>
+			/// <para>南美洲—分析区域为南美。</para>
 			/// </summary>
 			[GPValue("SouthAmerica")]
-			[Description("South America")]
+			[Description("南美洲")]
 			South_America,
 
 			/// <summary>
-			/// <para>South Asia—The analysis region is South Asia.</para>
+			/// <para>南亚—分析区域为南亚。</para>
 			/// </summary>
 			[GPValue("SouthAsia")]
-			[Description("South Asia")]
+			[Description("南亚")]
 			South_Asia,
 
 			/// <summary>
-			/// <para>Thailand—The analysis region is Thailand.</para>
+			/// <para>泰国—分析区域为泰国。</para>
 			/// </summary>
 			[GPValue("Thailand")]
-			[Description("Thailand")]
+			[Description("泰国")]
 			Thailand,
 
 		}
@@ -857,17 +853,17 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		public enum TravelDirectionEnum 
 		{
 			/// <summary>
-			/// <para>Away From Facility—The service area is generated in the direction away from the facilities.</para>
+			/// <para>离开设施点—在远离设施点的方向上生成服务区。</para>
 			/// </summary>
 			[GPValue("Away From Facility")]
-			[Description("Away From Facility")]
+			[Description("离开设施点")]
 			Away_From_Facility,
 
 			/// <summary>
-			/// <para>Towards Facility—The service area is created in the direction toward the facilities.</para>
+			/// <para>朝向设施点—在朝向设施点的方向上创建服务区。</para>
 			/// </summary>
 			[GPValue("Towards Facility")]
-			[Description("Towards Facility")]
+			[Description("朝向设施点")]
 			Towards_Facility,
 
 		}
@@ -878,31 +874,31 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		public enum UturnAtJunctionsEnum 
 		{
 			/// <summary>
-			/// <para>Allowed—U-turns are permitted at junctions with any number of connected edges. This is the default value.</para>
+			/// <para>允许—无论在交汇点处有几条连接的边，均允许 U 形转弯。 这是默认值。</para>
 			/// </summary>
 			[GPValue("Allowed")]
-			[Description("Allowed")]
+			[Description("允许")]
 			Allowed,
 
 			/// <summary>
-			/// <para>Not Allowed—U-turns are prohibited at all junctions, regardless of junction valency. Note, however, that U-turns are still permitted at network locations even when this option is chosen; however, you can set the individual network locations&apos; CurbApproach attribute to prohibit U-turns there as well.</para>
+			/// <para>不允许—在所有交汇点处均禁止 U 形转弯，不管交汇点原子价如何。 不过请注意，即使已选择该选项，在网络位置仍允许 U 形转弯；但是也可以通过设置个别网络位置的 CurbApproach 属性来禁止 U 形转弯。</para>
 			/// </summary>
 			[GPValue("Not Allowed")]
-			[Description("Not Allowed")]
+			[Description("不允许")]
 			Not_Allowed,
 
 			/// <summary>
-			/// <para>Allowed only at Dead Ends—U-turns are prohibited at all junctions except those that have only one adjacent edge (a dead end).</para>
+			/// <para>仅在死角处允许—除仅有一条相邻边的交汇点（死角）外，其他交汇点均禁止 U 形转弯。</para>
 			/// </summary>
 			[GPValue("Allowed Only at Dead Ends")]
-			[Description("Allowed only at Dead Ends")]
+			[Description("仅在死角处允许")]
 			Allowed_only_at_Dead_Ends,
 
 			/// <summary>
-			/// <para>Allowed only at Intersections and Dead Ends—U-turns are prohibited at junctions where exactly two adjacent edges meet but are permitted at intersections (junctions with three or more adjacent edges) and dead ends (junctions with exactly one adjacent edge). Often, networks have extraneous junctions in the middle of road segments. This option prevents vehicles from making U-turns at these locations.</para>
+			/// <para>仅在交点和死角处允许—在恰好有两条相邻边相遇的交汇点处禁止 U 形转弯，但是交叉点（三条或三条以上相邻边的交汇点）和死角（仅有一条相邻边的交汇点）处允许。 通常，网络在路段中间有多余的交汇点。 此选项可防止车辆在这些位置掉头。</para>
 			/// </summary>
 			[GPValue("Allowed Only at Intersections and Dead Ends")]
-			[Description("Allowed only at Intersections and Dead Ends")]
+			[Description("仅在交点和死角处允许")]
 			Allowed_only_at_Intersections_and_Dead_Ends,
 
 		}
@@ -913,24 +909,24 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		public enum PolygonsForMultipleFacilitiesEnum 
 		{
 			/// <summary>
-			/// <para>Overlapping—Individual polygons will be created for each facility. The polygons can overlap each other. This is the default.</para>
+			/// <para>叠置—将为每个设施点创建单独的面。 这些面可以相互叠置。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("Overlapping")]
-			[Description("Overlapping")]
+			[Description("叠置")]
 			Overlapping,
 
 			/// <summary>
-			/// <para>Not Overlapping—Individual polygons will be created such that a polygon from one facility cannot overlap polygons from other facilities. Any portion of the network can only be covered by the service area of the nearest facility.</para>
+			/// <para>不叠置—将创建单独的面，使得某个设施点的面无法与其他设施点的面叠置。 网络的任何部分都只能由最近设施点的服务区覆盖。</para>
 			/// </summary>
 			[GPValue("Not Overlapping")]
-			[Description("Not Overlapping")]
+			[Description("不叠置")]
 			Not_Overlapping,
 
 			/// <summary>
-			/// <para>Merge by Break Value—Polygons of different facilities with the same break value will be created and joined.</para>
+			/// <para>按中断值合并—将创建并连接具有相同中断值的不同设施点的面。</para>
 			/// </summary>
 			[GPValue("Merge by Break Value")]
-			[Description("Merge by Break Value")]
+			[Description("按中断值合并")]
 			Merge_by_Break_Value,
 
 		}
@@ -941,17 +937,17 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		public enum PolygonOverlapTypeEnum 
 		{
 			/// <summary>
-			/// <para>Rings—The polygons representing larger breaks exclude the polygons of smaller breaks. This creates polygons between consecutive breaks. Use this option to find the area from one break to another. For instance, if you create 5- and 10-minute service areas, the 10-minute service area polygon will exclude the area under the 5-minute service area polygon. This is the default.</para>
+			/// <para>环—代表中断值较大的面，可排除中断值较小的面。 这将在连续的中断之间创建面。 请使用此选项查找从一个中断到另一个中断的区域。 例如，如果创建 5 分钟和 10 分钟服务区，则 10 分钟服务区面将排除 5 分钟服务区面内的区域。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("Rings")]
-			[Description("Rings")]
+			[Description("环")]
 			Rings,
 
 			/// <summary>
-			/// <para>Disks—Polygons are created from the facility to the break. For instance, if you create 5- and 10-minute service areas, the 10-minute service area polygon will include the area under the 5-minute service area polygon.</para>
+			/// <para>圆盘—在设施点与休息点之间创建面。 例如，如果创建 5 分钟和 10 分钟服务区，则 10 分钟服务区面将包含 5 分钟服务区面内的区域。</para>
 			/// </summary>
 			[GPValue("Disks")]
-			[Description("Disks")]
+			[Description("圆盘")]
 			Disks,
 
 		}
@@ -962,14 +958,14 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		public enum TimeZoneForTimeOfDayEnum 
 		{
 			/// <summary>
-			/// <para>Geographically Local—The Time of Day parameter refers to the time zone or zones in which the facilities are located. The start or end times of the service areas are staggered by time zone. Setting Time of Day to 9:00 AM, choosing Geographically Local for Time Zone for Time of Day, and solving causes service areas to be generated for 9:00 a.m. eastern time for any facilities in the eastern time zone, 9:00 a.m. central time for facilities in the central time zone, 9:00 a.m. mountain time for facilities in the mountain time zone, and so on, for facilities in different time zones.If stores in a chain that span the U.S. open at 9:00 a.m. local time, this parameter value can be chosen to find market territories at opening time for all stores in one solve. First, the stores in the eastern time zone open and a polygon is generated, then an hour later stores open in central time, and so on. Nine o&apos;clock is always in local time but staggered in real time.</para>
+			/// <para>本地地理位置—时间参数是指设施点所处的时区或区域。 服务区开始时间或结束时间的时区交错。 将时间设为 9:00 AM，为时间的时区选择“本地地理位置”，然后进行求解，将为处于东部时区的所有设施点生成东部时间 9:00 a.m. 的服务区、为处于中部时区的设施点生成中部时间 9:00 a.m. 的服务区、为处于山区时区的设施点生成山区时间 9:00 a.m. 的服务区等等。如果商店处于覆盖美国、在当地时间 9:00 a.m. 开业的商店链中，则可以在一次求解中选择此参数值来查找处于所有商店开业时间的市场地区。 首先，东部时区的商店开业并生成一个面，一小时后中部时区的商店开业，以此类推。 当地时间始终为 9 点，但却因不同时区而实时交错。</para>
 			/// </summary>
 			[GPValue("Geographically Local")]
-			[Description("Geographically Local")]
+			[Description("本地地理位置")]
 			Geographically_Local,
 
 			/// <summary>
-			/// <para>UTC—The Time of Day parameter refers to coordinated universal time (UTC). All facilities are reached or departed from simultaneously, regardless of the time zone each is in.Setting Time of Day to 2:00 PM, choosing UTC, and solving causes service areas to be generated for 9:00 a.m. eastern standard time for any facilities in the eastern time zone, 8:00 a.m. central standard time for facilities in the central time zone, 7:00 a.m. mountain standard time for facilities in the mountain time zone, and so on, for facilities in different time zones.The scenario above assumes standard time. During daylight saving time, the eastern, central, and mountain times will each be one hour ahead (that is, 10:00, 9:00, and 8:00 a.m., respectively).One of the cases in which the UTC option is useful is to visualize emergency response coverage for a jurisdiction that is split into two time zones. The emergency vehicles are loaded as facilities. Time of Day parameter is set to now in UTC. (You need to determine the current time and date in terms of UTC to correctly use this option.) Other properties are set and the analysis is solved. Even though a time zone boundary divides the vehicles, the results show areas that can be reached given current traffic conditions. This same process can be used for other times as well, not just for now.</para>
+			/// <para>UTC—时间参数是指协调世界时间 (UTC)。 无论各设施点处于哪个时区都会同时到达或出发。将时间设为 2:00 PM，选择 UTC，然后进行求解，将为处于东部时区的所有设施点生成东部标准时间 9:00 a.m. 的服务区、为处于中部时区的设施点生成中部标准时间 8:00 a.m. 的服务区、为处于山地时区的设施点生成山地标准时间 7:00 a.m. 的服务区，等等。以上情况均假定为标准时间。 在夏令时期间，东部、中部、和山地时间应各提前 1 小时（即分别为 10:00 a.m.、9:00 a.m. 和 8:00 a.m.）。UTC 选项可用于为跨两个时区的管辖区显示紧急响应范围。 将急救车辆加载为设施点。 将时间参数设置为 UTC 的当前时间。 （您需要确定当前 UTC 时间和日期，以便正确使用此选项。）设置其他属性，并对分析进行求解。 尽管时区边界会分割车辆，但结果仍将显示当前交通状况下可以到达的区域。 也可对其他时间使用相同的过程，而不仅是当前时间。</para>
 			/// </summary>
 			[GPValue("UTC")]
 			[Description("UTC")]
@@ -986,42 +982,42 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 			/// <para></para>
 			/// </summary>
 			[GPValue("Minutes")]
-			[Description("Minutes")]
+			[Description("分")]
 			Minutes,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("TravelTime")]
-			[Description("Travel Time")]
+			[Description("行驶时间")]
 			Travel_Time,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("TimeAt1KPH")]
-			[Description("Time At One Kilometer Per Hour")]
+			[Description("每小时一公里的时间")]
 			Time_At_One_Kilometer_Per_Hour,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("WalkTime")]
-			[Description("Walk Time")]
+			[Description("步行时间")]
 			Walk_Time,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("TruckMinutes")]
-			[Description("Truck Minutes")]
+			[Description("卡车分钟")]
 			Truck_Minutes,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("TruckTravelTime")]
-			[Description("Truck Travel Time")]
+			[Description("卡车行驶时间")]
 			Truck_Travel_Time,
 
 		}
@@ -1035,14 +1031,14 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 			/// <para></para>
 			/// </summary>
 			[GPValue("Miles")]
-			[Description("Miles")]
+			[Description("英里")]
 			Miles,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("Kilometers")]
-			[Description("Kilometers")]
+			[Description("千米")]
 			Kilometers,
 
 		}
@@ -1053,24 +1049,24 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		public enum PolygonDetailEnum 
 		{
 			/// <summary>
-			/// <para>Generalized—Generalized polygons will be created using the hierarchy present in the network data source to produce results quickly. Generalized polygons are inferior in quality compared to standard or high-precision polygons.</para>
+			/// <para>概化—将使用网络数据源中的等级创建概化面，以便快速生成结果。 与标准或高精度面相比，概化面的质量较差。</para>
 			/// </summary>
 			[GPValue("Generalized")]
-			[Description("Generalized")]
+			[Description("概化")]
 			Generalized,
 
 			/// <summary>
-			/// <para>Standard—Polygons will be created with a standard level of detail. Standard polygons are generated quickly and are fairly accurate, but quality deteriorates somewhat as you move toward the borders of the service area polygons. This is the default.</para>
+			/// <para>标准—面将以标准细节层次进行创建。 标准面的生成速度很快，且准确性相对较高，但向服务区面的边界处移动时，质量会在一定程度上降低。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("Standard")]
-			[Description("Standard")]
+			[Description("标准")]
 			Standard,
 
 			/// <summary>
-			/// <para>High—Polygons will be created with the highest level of detail. Holes in the polygon may exist; they represent islands of network elements, such as streets, that couldn&apos;t be reached without exceeding the cutoff impedance or due to travel restrictions This option should be used for applications in which precise results are important.</para>
+			/// <para>高等—将创建具有最高细节层次的面。 面中可能出现洞；它们表示不超出中断阻抗的情况下或由于行驶限制而无法到达的孤立网络元素（例如，街道）。该选项应该用于需要结果精确的应用。</para>
 			/// </summary>
 			[GPValue("High")]
-			[Description("High")]
+			[Description("高等")]
 			High,
 
 		}
@@ -1081,24 +1077,24 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		public enum OutputTypeEnum 
 		{
 			/// <summary>
-			/// <para>Polygons—The service area output will contain polygons only. This is the default.</para>
+			/// <para>面—服务区输出将仅包含面。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("Polygons")]
-			[Description("Polygons")]
+			[Description("面")]
 			Polygons,
 
 			/// <summary>
-			/// <para>Lines—The service area output will contain lines only.</para>
+			/// <para>线—服务区输出将仅包含线。</para>
 			/// </summary>
 			[GPValue("Lines")]
-			[Description("Lines")]
+			[Description("线")]
 			Lines,
 
 			/// <summary>
-			/// <para>Polygons and lines—The service area output will contain both polygons and lines.</para>
+			/// <para>面和线—服务区输出将既包含面又包含线。</para>
 			/// </summary>
 			[GPValue("Polygons and lines")]
-			[Description("Polygons and lines")]
+			[Description("面和线")]
 			Polygons_and_lines,
 
 		}
@@ -1109,24 +1105,24 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		public enum OutputFormatEnum 
 		{
 			/// <summary>
-			/// <para>Feature Set—The output features will be returned as feature classes and tables. This is the default.</para>
+			/// <para>要素集—输出要素将作为要素类和表返回。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("Feature Set")]
-			[Description("Feature Set")]
+			[Description("要素集")]
 			Feature_Set,
 
 			/// <summary>
-			/// <para>JSON File—The output features will be returned as a compressed file containing the JSON representation of the outputs. When this option is specified, the output is a single file (with a .zip extension) that contains one or more JSON files (with a .json extension) for each of the outputs created by the service.</para>
+			/// <para>JSON 文件—输出要素将作为包含输出的 JSON 表示的压缩文件返回。 指定此选项时，输出将是包含由服务针对每个输出创建的一个或多个 JSON 文件（扩展名为 .zip）的单个文件（扩展名为 .json）。</para>
 			/// </summary>
 			[GPValue("JSON File")]
-			[Description("JSON File")]
+			[Description("JSON 文件")]
 			JSON_File,
 
 			/// <summary>
-			/// <para>GeoJSON File—The output features will be returned as a compressed file containing the GeoJSON representation of the outputs. When this option is specified, the output is a single file (with a .zip extension) that contains one or more GeoJSON files (with a .geojson extension) for each of the outputs created by the service.</para>
+			/// <para>GeoJSON 文件—输出要素将作为包含输出的 GeoJSON 表示的压缩文件返回。 指定此选项时，输出将是包含由服务针对每个输出创建的一个或多个 GeoJSON 文件（扩展名为 .zip）的单个文件（扩展名为 .geojson）。</para>
 			/// </summary>
 			[GPValue("GeoJSON File")]
-			[Description("GeoJSON File")]
+			[Description("GeoJSON 文件")]
 			GeoJSON_File,
 
 		}

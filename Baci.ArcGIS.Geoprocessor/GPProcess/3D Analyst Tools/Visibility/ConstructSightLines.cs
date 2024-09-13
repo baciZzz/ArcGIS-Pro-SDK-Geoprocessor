@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Construct Sight Lines</para>
-	/// <para>Creates line features that represent sight lines from one or more observer points to features in a  target feature class.</para>
+	/// <para>构造视线</para>
+	/// <para>创建表示视线（从一个或多个视点到目标要素类的要素）的线要素。</para>
 	/// </summary>
 	public class ConstructSightLines : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InObserverPoints">
 		/// <para>Observer Points</para>
-		/// <para>The single-point features that represent observer points. Multipoint features are not supported.</para>
+		/// <para>表示观察点的单点要素。不支持多点要素。</para>
 		/// </param>
 		/// <param name="InTargetFeatures">
 		/// <para>Target Features</para>
-		/// <para>The target features (points, multipoints, lines, and polygons).</para>
+		/// <para>目标要素（点、多点、线和面）。</para>
 		/// </param>
 		/// <param name="OutLineFeatureClass">
 		/// <para>Output</para>
-		/// <para>The output feature class containing the sight lines.</para>
+		/// <para>包含视线的输出要素类。</para>
 		/// </param>
 		public ConstructSightLines(object InObserverPoints, object InTargetFeatures, object OutLineFeatureClass)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Construct Sight Lines</para>
+		/// <para>Tool Display Name : 构造视线</para>
 		/// </summary>
-		public override string DisplayName() => "Construct Sight Lines";
+		public override string DisplayName() => "构造视线";
 
 		/// <summary>
 		/// <para>Tool Name : ConstructSightLines</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Observer Points</para>
-		/// <para>The single-point features that represent observer points. Multipoint features are not supported.</para>
+		/// <para>表示观察点的单点要素。不支持多点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Target Features</para>
-		/// <para>The target features (points, multipoints, lines, and polygons).</para>
+		/// <para>目标要素（点、多点、线和面）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output</para>
-		/// <para>The output feature class containing the sight lines.</para>
+		/// <para>包含视线的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -102,9 +103,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Observer Height Field</para>
-		/// <para>The source of the height values for the observer points obtained from its attribute table.</para>
-		/// <para>A default Observer Height Field field is selected from among the options listed below by order of priority. If multiple fields exist, and the desired field does not have a higher priority in the default field selection, the desired field will need to be specified.</para>
-		/// <para>No Height Source—No Z values will be assigned to the resulting sight line features.</para>
+		/// <para>从观察点属性表获得的观察点高度值的源。</para>
+		/// <para>从按优先级顺序列出的以下选项中选择默认的观察者高度字段字段。如果存在多个字段并且所需字段在默认字段选择上没有更高优先级，将需要指定所需字段。</para>
+		/// <para>无高度源—不会将 Z 值分配至生成的视线要素。</para>
 		/// <para>Shape.Z</para>
 		/// <para>Spot</para>
 		/// <para>Z</para>
@@ -122,9 +123,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Target Height Field</para>
-		/// <para>The height field for the target.</para>
-		/// <para>A default Target Height Field field is selected from among the options listed below by order of priority. If multiple fields exist, and the desired field does not have a higher priority in the default field selection, the desired field will need to be specified.</para>
-		/// <para>No Height Source—No Z values will be assigned to the resulting sight line features.</para>
+		/// <para>目标的高度字段。</para>
+		/// <para>从按优先级顺序列出的以下选项中选择默认的目标高度字段字段。如果存在多个字段并且所需字段在默认字段选择上没有更高优先级，将需要指定所需字段。</para>
+		/// <para>无高度源—不会将 Z 值分配至生成的视线要素。</para>
 		/// <para>Shape.Z</para>
 		/// <para>Spot</para>
 		/// <para>Z</para>
@@ -142,8 +143,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Join Field</para>
-		/// <para>The join field is used to match observers to specific targets.</para>
-		/// <para>No Join Field—No Z values will be assigned to the resulting sight line features.</para>
+		/// <para>使用连接字段将观察者与特定目标相匹配。</para>
+		/// <para>无连接字段—不会将 Z 值分配至生成的视线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -151,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Sampling Distance</para>
-		/// <para>The distance between samples when the target is either a line or polygon feature class. The Sampling Distance units are interpreted in the XY units of the output feature class.</para>
+		/// <para>目标为线或面要素类时采样之间的距离。按输出要素类的 XY 单位解释采样距离单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -161,9 +162,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output The Direction</para>
-		/// <para>Adds direction attributes to the output sight lines. Two additional fields will be added and populated to indicate direction: AZIMUTH and VERT_ANGLE (vertical angle).</para>
-		/// <para>Unchecked—No direction attributes will be added to the output sight lines. This is the default.</para>
-		/// <para>Checked—Two additional fields will be added and populated to indicate direction: azimuth and vertical angle.</para>
+		/// <para>向输出视线添加方向属性。将添加并填充两个附加字段以指示方向：AZIMUTH 和 VERT_ANGLE（垂直角）。</para>
+		/// <para>未选中 - 不会向输出视线添加方向属性。这是默认设置。</para>
+		/// <para>选中 - 将添加并填充两个附加字段以指示方向：方位角和垂直角。</para>
 		/// <para><see cref="OutputTheDirectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -173,9 +174,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Sampling Method</para>
-		/// <para>Specifies how the sampling distance will be used to establish sight lines along the target feature.</para>
-		/// <para>2D distance—The distance will be evaluated in two-dimensional Cartesian space. This is the default.</para>
-		/// <para>3D distance—The distance will be evaluated in three-dimensional length.</para>
+		/// <para>指定将如何使用采样距离沿目标要素创建视线。</para>
+		/// <para>2D 距离—将在二维笛卡尔空间中评估距离。这是默认设置。</para>
+		/// <para>3D 距离—将以三维长度评估距离。</para>
 		/// <para><see cref="SamplingMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -200,10 +201,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ObserverHeightFieldEnum 
 		{
 			/// <summary>
-			/// <para>No Height Source—No Z values will be assigned to the resulting sight line features.</para>
+			/// <para>无高度源—不会将 Z 值分配至生成的视线要素。</para>
 			/// </summary>
 			[GPValue("<None>")]
-			[Description("No Height Source")]
+			[Description("无高度源")]
 			No_Height_Source,
 
 		}
@@ -214,10 +215,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum TargetHeightFieldEnum 
 		{
 			/// <summary>
-			/// <para>No Height Source—No Z values will be assigned to the resulting sight line features.</para>
+			/// <para>无高度源—不会将 Z 值分配至生成的视线要素。</para>
 			/// </summary>
 			[GPValue("<None>")]
-			[Description("No Height Source")]
+			[Description("无高度源")]
 			No_Height_Source,
 
 		}
@@ -228,14 +229,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum OutputTheDirectionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Two additional fields will be added and populated to indicate direction: azimuth and vertical angle.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("OUTPUT_THE_DIRECTION")]
 			OUTPUT_THE_DIRECTION,
 
 			/// <summary>
-			/// <para>Unchecked—No direction attributes will be added to the output sight lines. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_OUTPUT_THE_DIRECTION")]
@@ -249,17 +250,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum SamplingMethodEnum 
 		{
 			/// <summary>
-			/// <para>2D distance—The distance will be evaluated in two-dimensional Cartesian space. This is the default.</para>
+			/// <para>2D 距离—将在二维笛卡尔空间中评估距离。这是默认设置。</para>
 			/// </summary>
 			[GPValue("2D_DISTANCE")]
-			[Description("2D distance")]
+			[Description("2D 距离")]
 			_2D_distance,
 
 			/// <summary>
-			/// <para>3D distance—The distance will be evaluated in three-dimensional length.</para>
+			/// <para>3D 距离—将以三维长度评估距离。</para>
 			/// </summary>
 			[GPValue("3D_DISTANCE")]
-			[Description("3D distance")]
+			[Description("3D 距离")]
 			_3D_distance,
 
 		}

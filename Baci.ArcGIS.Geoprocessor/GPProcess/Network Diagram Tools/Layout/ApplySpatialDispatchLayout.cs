@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Apply Spatial Dispatch Layout</para>
-	/// <para>Separates diagram junctions that are visibly close to overlapping.</para>
+	/// <para>应用空间分派布局</para>
+	/// <para>分离明显接近重叠状态的逻辑示意图交汇点。</para>
 	/// </summary>
 	public class ApplySpatialDispatchLayout : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InNetworkDiagramLayer">
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>The network diagram to which the layout will be applied.</para>
+		/// <para>将应用布局的网络逻辑示意图。</para>
 		/// </param>
 		public ApplySpatialDispatchLayout(object InNetworkDiagramLayer)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Apply Spatial Dispatch Layout</para>
+		/// <para>Tool Display Name : 应用空间分派布局</para>
 		/// </summary>
-		public override string DisplayName() => "Apply Spatial Dispatch Layout";
+		public override string DisplayName() => "应用空间分派布局";
 
 		/// <summary>
 		/// <para>Tool Name : ApplySpatialDispatchLayout</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>The network diagram to which the layout will be applied.</para>
+		/// <para>将应用布局的网络逻辑示意图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDiagramLayer()]
@@ -72,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Preserve container layout</para>
-		/// <para>Specifies how the algorithm will process containers.</para>
-		/// <para>Checked—The layout algorithm will execute on the top graph of the diagram so containers are preserved.</para>
-		/// <para>Unchecked—The layout algorithm will execute on both content and noncontent features in the diagram. This is the default.</para>
+		/// <para>指定算法将如何处理容器。</para>
+		/// <para>选中 - 将对逻辑示意图的上方图执行布局算法，以保留容器。</para>
+		/// <para>未选中 - 将对逻辑示意图中的内容要素和非内容要素执行布局算法。这是默认设置。</para>
 		/// <para><see cref="AreContainersPreservedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Number of Iterations</para>
-		/// <para>The number of iterations to process. The default is 5.</para>
+		/// <para>要处理的迭代次数。默认值为 5。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Maximum Shift Factor</para>
-		/// <para>The maximum value used to increase the diagram junctions' displacement for junctions that are very close together. The greater the shift factor, the larger the separation between the diagram junctions that almost overlap. The default is 2.</para>
+		/// <para>最大值，用于增大十分接近的交汇点的逻辑示意图交汇点位移。平移系数越大，几乎叠置的逻辑示意图交汇点之间的间隔越大。默认值为 2。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -107,9 +108,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Run in asynchronous mode on the server</para>
-		/// <para>Specifies whether the layout algorithm will run asynchronously or synchronously on the server.</para>
-		/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out—for example, Partial Overlapping Edges—and applying to large diagrams—more than 25,000 features.</para>
-		/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service time-out: 600 seconds by default. This is the default.</para>
+		/// <para>指定布局算法在服务器上将异步运行还是同步运行。</para>
+		/// <para>选中 - 布局算法将在服务器上异步运行。服务器资源可通过该选项来运行超时较长的布局算法。当执行耗时且可能导致服务器超时的布局（例如，部分重叠边）并应用于大型逻辑示意图（超过 25,000 个要素）时，建议进行异步运行。</para>
+		/// <para>未选中 - 布局算法将在服务器上同步运行。如果执行时超过服务超时值（默认为 600 秒），则布局算法可能失败，无法完成。这是默认设置。</para>
 		/// <para><see cref="RunAsyncEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -126,14 +127,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum AreContainersPreservedEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The layout algorithm will execute on the top graph of the diagram so containers are preserved.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE_CONTAINERS")]
 			PRESERVE_CONTAINERS,
 
 			/// <summary>
-			/// <para>Unchecked—The layout algorithm will execute on both content and noncontent features in the diagram. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("IGNORE_CONTAINERS")]
@@ -147,14 +148,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum RunAsyncEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out—for example, Partial Overlapping Edges—and applying to large diagrams—more than 25,000 features.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RUN_ASYNCHRONOUSLY")]
 			RUN_ASYNCHRONOUSLY,
 
 			/// <summary>
-			/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service time-out: 600 seconds by default. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("RUN_SYNCHRONOUSLY")]

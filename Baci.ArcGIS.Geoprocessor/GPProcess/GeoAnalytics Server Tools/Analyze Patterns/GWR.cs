@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Geographically Weighted Regression (GWR)</para>
-	/// <para>Performs Geographically Weighted Regression (GWR), which is a local form of linear regression that is used to model spatially varying relationships.</para>
+	/// <para>地理加权回归 (GWR)</para>
+	/// <para>执行“地理加权回归 (GWR)”，这是一种用于建模空间变化关系的线性回归的局部形式。</para>
 	/// </summary>
 	public class GWR : AbstractGPProcess
 	{
@@ -20,37 +21,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The point feature class containing the dependent and explanatory variables.</para>
+		/// <para>包含因变量和解释变量的点要素类。</para>
 		/// </param>
 		/// <param name="DependentVariable">
 		/// <para>Dependent Variable</para>
-		/// <para>The numeric field containing the observed values that will be modeled.</para>
+		/// <para>包含将进行建模的观测值的数值字段。</para>
 		/// </param>
 		/// <param name="ModelType">
 		/// <para>Model Type</para>
-		/// <para>Specifies the type of data that will be modeled.</para>
-		/// <para>Continuous (Gaussian)— The Dependent Variable value is continuous. The Gaussian model will be used, and the tool performs ordinary least squares regression.</para>
+		/// <para>用于指定将进行建模的数据类型。</para>
+		/// <para>连续（高斯）— 因变量值是连续的。将使用高斯模型，并且工具将执行普通最小二乘法回归。</para>
 		/// <para><see cref="ModelTypeEnum"/></para>
 		/// </param>
 		/// <param name="ExplanatoryVariables">
 		/// <para>Explanatory Variable(s)</para>
-		/// <para>A list of fields representing independent explanatory variables in the regression model.</para>
+		/// <para>表示回归模型中的解释变量或自变量的字段列表。</para>
 		/// </param>
 		/// <param name="OutputFeatures">
 		/// <para>Output Features</para>
-		/// <para>The name of the output feature service.</para>
+		/// <para>输出要素服务的名称。</para>
 		/// </param>
 		/// <param name="NeighborhoodType">
 		/// <para>Neighborhood Type</para>
-		/// <para>Specifies whether the neighborhood used is constructed as a fixed distance or allowed to vary in spatial extent depending on the density of the features.</para>
-		/// <para>Number of neighbors— The neighborhood size is a function of a specified number of neighbors included in calculations for each feature. Where features are dense, the spatial extent of the neighborhood is smaller; where features are sparse, the spatial extent of the neighborhood is larger.</para>
-		/// <para>Distance band—The neighborhood size is a constant or fixed distance for each feature.</para>
+		/// <para>指定是将使用的邻域构造为固定距离，还是允许根据要素的密度在空间范围内变化。</para>
+		/// <para>相邻要素的数目— 邻域大小是每个要素的计算中包括的指定相邻要素数目的函数。在要素密集的位置，邻域的空间范围较小；在要素稀疏的位置，邻域的空间范围较大。</para>
+		/// <para>距离范围—邻域大小是每个要素的恒定或固定距离。</para>
 		/// <para><see cref="NeighborhoodTypeEnum"/></para>
 		/// </param>
 		/// <param name="NeighborhoodSelectionMethod">
 		/// <para>Neighborhood Selection Method</para>
-		/// <para>Specifies how the neighborhood size will be determined.</para>
-		/// <para>User defined— The neighborhood size will be determined by either the Number of Neighbors or Distance Band parameter.</para>
+		/// <para>指定将如何确定邻域大小。</para>
+		/// <para>用户定义— 邻域大小将由相邻要素的数目或距离范围参数确定。</para>
 		/// <para><see cref="NeighborhoodSelectionMethodEnum"/></para>
 		/// </param>
 		public GWR(object InFeatures, object DependentVariable, object ModelType, object ExplanatoryVariables, object OutputFeatures, object NeighborhoodType, object NeighborhoodSelectionMethod)
@@ -65,9 +66,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Geographically Weighted Regression (GWR)</para>
+		/// <para>Tool Display Name : 地理加权回归 (GWR)</para>
 		/// </summary>
-		public override string DisplayName() => "Geographically Weighted Regression (GWR)";
+		public override string DisplayName() => "地理加权回归 (GWR)";
 
 		/// <summary>
 		/// <para>Tool Name : GWR</para>
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The point feature class containing the dependent and explanatory variables.</para>
+		/// <para>包含因变量和解释变量的点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Dependent Variable</para>
-		/// <para>The numeric field containing the observed values that will be modeled.</para>
+		/// <para>包含将进行建模的观测值的数值字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -122,8 +123,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Model Type</para>
-		/// <para>Specifies the type of data that will be modeled.</para>
-		/// <para>Continuous (Gaussian)— The Dependent Variable value is continuous. The Gaussian model will be used, and the tool performs ordinary least squares regression.</para>
+		/// <para>用于指定将进行建模的数据类型。</para>
+		/// <para>连续（高斯）— 因变量值是连续的。将使用高斯模型，并且工具将执行普通最小二乘法回归。</para>
 		/// <para><see cref="ModelTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -133,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Explanatory Variable(s)</para>
-		/// <para>A list of fields representing independent explanatory variables in the regression model.</para>
+		/// <para>表示回归模型中的解释变量或自变量的字段列表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -143,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>The name of the output feature service.</para>
+		/// <para>输出要素服务的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -151,9 +152,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Neighborhood Type</para>
-		/// <para>Specifies whether the neighborhood used is constructed as a fixed distance or allowed to vary in spatial extent depending on the density of the features.</para>
-		/// <para>Number of neighbors— The neighborhood size is a function of a specified number of neighbors included in calculations for each feature. Where features are dense, the spatial extent of the neighborhood is smaller; where features are sparse, the spatial extent of the neighborhood is larger.</para>
-		/// <para>Distance band—The neighborhood size is a constant or fixed distance for each feature.</para>
+		/// <para>指定是将使用的邻域构造为固定距离，还是允许根据要素的密度在空间范围内变化。</para>
+		/// <para>相邻要素的数目— 邻域大小是每个要素的计算中包括的指定相邻要素数目的函数。在要素密集的位置，邻域的空间范围较小；在要素稀疏的位置，邻域的空间范围较大。</para>
+		/// <para>距离范围—邻域大小是每个要素的恒定或固定距离。</para>
 		/// <para><see cref="NeighborhoodTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -163,8 +164,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Neighborhood Selection Method</para>
-		/// <para>Specifies how the neighborhood size will be determined.</para>
-		/// <para>User defined— The neighborhood size will be determined by either the Number of Neighbors or Distance Band parameter.</para>
+		/// <para>指定将如何确定邻域大小。</para>
+		/// <para>用户定义— 邻域大小将由相邻要素的数目或距离范围参数确定。</para>
 		/// <para><see cref="NeighborhoodSelectionMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -174,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Number of Neighbors</para>
-		/// <para>The closest number of neighbors (up to 1000) to consider for each feature. The number must be an integer between 2 and 1000.</para>
+		/// <para>将要考虑的各要素的最近相邻要素数目（最多 1000）。该数值必须是介于 2 到 1000 之间的整数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -183,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Distance Band</para>
-		/// <para>The spatial extent of the neighborhood.</para>
+		/// <para>邻域的空间范围。</para>
 		/// <para><see cref="DistanceBandEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -193,9 +194,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Local Weighting Scheme</para>
-		/// <para>Specifies the kernel type that will be used to provide the spatial weighting in the model. The kernel defines how each feature is related to other features within its neighborhood.</para>
-		/// <para>Bisquare—A weight of 0 will be assigned to any feature outside the neighborhood specified. This is the default.</para>
-		/// <para>Gaussian—All features will receive weights, but weights become exponentially smaller the farther away they are from the target feature.</para>
+		/// <para>用于指定将用于在模型中提供空间权重的核类型。核将定义每个要素与其邻域内其他要素相关的方式。</para>
+		/// <para>双平方—权重 0 将会分配给指定邻域外的任何要素。这是默认设置。</para>
+		/// <para>高斯函数—所有要素都将获得权重，但是距离目标要素越远，则权重将以指数方式变小。</para>
 		/// <para><see cref="LocalWeightingSchemeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -206,9 +207,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Data Store</para>
-		/// <para>Specifies the ArcGIS Data Store where the output will be saved. The default is Spatiotemporal big data store. All results stored in a spatiotemporal big data store will be stored in WGS84. Results stored in a relational data store will maintain their coordinate system.</para>
-		/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
-		/// <para>Relational data store—Output will be stored in a relational data store.</para>
+		/// <para>指定将用于保存输出的 ArcGIS Data Store。默认设置为时空大数据存储。在时空大数据存储中存储的所有结果都将存储在 WGS84 中。在关系数据存储中存储的结果都将保持各自的坐标系。</para>
+		/// <para>时空大数据存储—输出将存储在时空大数据存储中。这是默认设置。</para>
+		/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 		/// <para><see cref="DataStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -241,10 +242,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum ModelTypeEnum 
 		{
 			/// <summary>
-			/// <para>Continuous (Gaussian)— The Dependent Variable value is continuous. The Gaussian model will be used, and the tool performs ordinary least squares regression.</para>
+			/// <para>连续（高斯）— 因变量值是连续的。将使用高斯模型，并且工具将执行普通最小二乘法回归。</para>
 			/// </summary>
 			[GPValue("CONTINUOUS")]
-			[Description("Continuous (Gaussian)")]
+			[Description("连续（高斯）")]
 			CONTINUOUS,
 
 		}
@@ -255,17 +256,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum NeighborhoodTypeEnum 
 		{
 			/// <summary>
-			/// <para>Number of neighbors— The neighborhood size is a function of a specified number of neighbors included in calculations for each feature. Where features are dense, the spatial extent of the neighborhood is smaller; where features are sparse, the spatial extent of the neighborhood is larger.</para>
+			/// <para>相邻要素的数目— 邻域大小是每个要素的计算中包括的指定相邻要素数目的函数。在要素密集的位置，邻域的空间范围较小；在要素稀疏的位置，邻域的空间范围较大。</para>
 			/// </summary>
 			[GPValue("NUMBER_OF_NEIGHBORS")]
-			[Description("Number of neighbors")]
+			[Description("相邻要素的数目")]
 			Number_of_neighbors,
 
 			/// <summary>
-			/// <para>Distance band—The neighborhood size is a constant or fixed distance for each feature.</para>
+			/// <para>距离范围—邻域大小是每个要素的恒定或固定距离。</para>
 			/// </summary>
 			[GPValue("DISTANCE_BAND")]
-			[Description("Distance band")]
+			[Description("距离范围")]
 			Distance_band,
 
 		}
@@ -276,10 +277,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum NeighborhoodSelectionMethodEnum 
 		{
 			/// <summary>
-			/// <para>User defined— The neighborhood size will be determined by either the Number of Neighbors or Distance Band parameter.</para>
+			/// <para>用户定义— 邻域大小将由相邻要素的数目或距离范围参数确定。</para>
 			/// </summary>
 			[GPValue("USER_DEFINED")]
-			[Description("User defined")]
+			[Description("用户定义")]
 			User_defined,
 
 		}
@@ -339,17 +340,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum LocalWeightingSchemeEnum 
 		{
 			/// <summary>
-			/// <para>Bisquare—A weight of 0 will be assigned to any feature outside the neighborhood specified. This is the default.</para>
+			/// <para>双平方—权重 0 将会分配给指定邻域外的任何要素。这是默认设置。</para>
 			/// </summary>
 			[GPValue("BISQUARE")]
-			[Description("Bisquare")]
+			[Description("双平方")]
 			Bisquare,
 
 			/// <summary>
-			/// <para>Gaussian—All features will receive weights, but weights become exponentially smaller the farther away they are from the target feature.</para>
+			/// <para>高斯函数—所有要素都将获得权重，但是距离目标要素越远，则权重将以指数方式变小。</para>
 			/// </summary>
 			[GPValue("GAUSSIAN")]
-			[Description("Gaussian")]
+			[Description("高斯函数")]
 			Gaussian,
 
 		}
@@ -360,17 +361,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DataStoreEnum 
 		{
 			/// <summary>
-			/// <para>Relational data store—Output will be stored in a relational data store.</para>
+			/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 			/// </summary>
 			[GPValue("RELATIONAL_DATA_STORE")]
-			[Description("Relational data store")]
+			[Description("关系数据存储")]
 			Relational_data_store,
 
 			/// <summary>
-			/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
+			/// <para>时空大数据存储—输出将存储在时空大数据存储中。这是默认设置。</para>
 			/// </summary>
 			[GPValue("SPATIOTEMPORAL_DATA_STORE")]
-			[Description("Spatiotemporal big data store")]
+			[Description("时空大数据存储")]
 			Spatiotemporal_big_data_store,
 
 		}

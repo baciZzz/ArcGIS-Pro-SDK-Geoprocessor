@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Clip Layer</para>
-	/// <para>Extracts input features from within specified polygons.</para>
+	/// <para>裁剪图层</para>
+	/// <para>从指定的多边形中提取输入要素。</para>
 	/// </summary>
 	public class ClipLayer : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>The dataset containing the point, line, or polygon features to be clipped.</para>
+		/// <para>包含要进行缓冲的点、线或面要素的数据集。</para>
 		/// </param>
 		/// <param name="Clip_Layer">
 		/// <para>Clip  Layer</para>
-		/// <para>The dataset containing the polygon features used to clip the input features.</para>
+		/// <para>包含用于剪切输入要素的面要素的数据集。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class with clipped features.</para>
+		/// <para>具有已裁剪要素的输出要素类。</para>
 		/// </param>
 		public ClipLayer(object InputLayer, object Clip_Layer, object OutFeatureClass)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Clip Layer</para>
+		/// <para>Tool Display Name : 裁剪图层</para>
 		/// </summary>
-		public override string DisplayName() => "Clip Layer";
+		public override string DisplayName() => "裁剪图层";
 
 		/// <summary>
 		/// <para>Tool Name : ClipLayer</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The dataset containing the point, line, or polygon features to be clipped.</para>
+		/// <para>包含要进行缓冲的点、线或面要素的数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Clip  Layer</para>
-		/// <para>The dataset containing the polygon features used to clip the input features.</para>
+		/// <para>包含用于剪切输入要素的面要素的数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -96,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class with clipped features.</para>
+		/// <para>具有已裁剪要素的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Snap Pour Point</para>
-	/// <para>Snaps pour points to the cell of highest flow accumulation within a specified distance.</para>
+	/// <para>捕捉倾泻点</para>
+	/// <para>将倾泻点捕捉到指定距离内累积流量最大的像元。</para>
 	/// </summary>
 	public class SnapPourPoint : AbstractGPProcess
 	{
@@ -20,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InPourPointData">
 		/// <para>Input raster or feature pour point data</para>
-		/// <para>The input pour point locations that are to be snapped.</para>
-		/// <para>For a raster input, all cells that are not NoData (that is, have a value) will be considered pour points and will be snapped.</para>
-		/// <para>For a point feature input, this specifies the locations of cells that will be snapped.</para>
+		/// <para>将要捕捉的输入倾泻点位置。</para>
+		/// <para>对于栅格数据输入，所有不是 NoData（即，具有值）的像元都将被视为倾泻点，并会被捕捉。</para>
+		/// <para>对于点要素输入，这指定了将被捕捉的像元的位置。</para>
 		/// </param>
 		/// <param name="InAccumulationRaster">
 		/// <para>Input accumulation raster</para>
-		/// <para>The input flow accumulation raster.</para>
-		/// <para>This can be created with the Flow Accumulation tool.</para>
+		/// <para>输入流量累积栅格。</para>
+		/// <para>这可使用流量工具进行创建。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output pour point raster where the original pour point locations have been snapped to locations of higher accumulated flow.</para>
-		/// <para>This output is of integer type.</para>
+		/// <para>在将原始倾泻点位置捕捉到累积流量更大的位置后产生的输出倾泻点栅格。</para>
+		/// <para>输出为整型。</para>
 		/// </param>
 		/// <param name="SnapDistance">
 		/// <para>Snap distance</para>
-		/// <para>Maximum distance, in map units, to search for a cell of higher accumulated flow.</para>
+		/// <para>搜索累积流量更大的像元时所使用的最大距离范围（以地图单位表示）。</para>
 		/// </param>
 		public SnapPourPoint(object InPourPointData, object InAccumulationRaster, object OutRaster, object SnapDistance)
 		{
@@ -47,9 +48,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Snap Pour Point</para>
+		/// <para>Tool Display Name : 捕捉倾泻点</para>
 		/// </summary>
-		public override string DisplayName() => "Snap Pour Point";
+		public override string DisplayName() => "捕捉倾泻点";
 
 		/// <summary>
 		/// <para>Tool Name : SnapPourPoint</para>
@@ -83,9 +84,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature pour point data</para>
-		/// <para>The input pour point locations that are to be snapped.</para>
-		/// <para>For a raster input, all cells that are not NoData (that is, have a value) will be considered pour points and will be snapped.</para>
-		/// <para>For a point feature input, this specifies the locations of cells that will be snapped.</para>
+		/// <para>将要捕捉的输入倾泻点位置。</para>
+		/// <para>对于栅格数据输入，所有不是 NoData（即，具有值）的像元都将被视为倾泻点，并会被捕捉。</para>
+		/// <para>对于点要素输入，这指定了将被捕捉的像元的位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -97,8 +98,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input accumulation raster</para>
-		/// <para>The input flow accumulation raster.</para>
-		/// <para>This can be created with the Flow Accumulation tool.</para>
+		/// <para>输入流量累积栅格。</para>
+		/// <para>这可使用流量工具进行创建。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -110,8 +111,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output pour point raster where the original pour point locations have been snapped to locations of higher accumulated flow.</para>
-		/// <para>This output is of integer type.</para>
+		/// <para>在将原始倾泻点位置捕捉到累积流量更大的位置后产生的输出倾泻点栅格。</para>
+		/// <para>输出为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -119,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Snap distance</para>
-		/// <para>Maximum distance, in map units, to search for a cell of higher accumulated flow.</para>
+		/// <para>搜索累积流量更大的像元时所使用的最大距离范围（以地图单位表示）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -129,9 +130,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Pour point field</para>
-		/// <para>The field used to assign values to the pour point locations.</para>
-		/// <para>If the pour point dataset is a raster, use Value.</para>
-		/// <para>If the pour point dataset is a feature, use a numeric field. If the field contains floating-point values, they will be truncated into integers.</para>
+		/// <para>用于为倾泻点位置赋值的字段。</para>
+		/// <para>如果倾泻点数据集为栅格，则使用 Value。</para>
+		/// <para>如果倾泻点数据集为要素，则使用数值字段。如果该字段包含浮点型值，它们将被截断为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

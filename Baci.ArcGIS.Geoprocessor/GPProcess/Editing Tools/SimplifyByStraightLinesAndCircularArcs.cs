@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Simplify By Straight Lines And Circular Arcs</para>
-	/// <para>Simplifies polygon and line features by replacing consecutive line segments  or edges with  fewer line segments or edges. Lines segments and polygon edges are simplified based on a specified maximum allowable offset.  Additionally, circular arcs can be created from consecutive  line segments or polygon edges.</para>
+	/// <para>通过直线和圆弧进行简化</para>
+	/// <para>通过使用较少线段或边替换连续线段或边的方式来简化面和线要素。线段和面的边将根据指定的最大允许偏移量进行简化。此外，可以从连续线段或面的边创建圆弧。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The features to be simplified. Features can be lines or polygons. If using multiple inputs, the features must have the same spatial reference.</para>
+		/// <para>要进行简化的要素。要素可以是线或面。如果使用多个输入，则要素必须具有相同的空间参考。</para>
 		/// </param>
 		/// <param name="MaxOffset">
 		/// <para>Maximum Allowable Offset</para>
-		/// <para>The maximum distance the output feature edges can deviate from the input feature shapes. When the Fit to vertices option is chosen for the Fitting Type parameter, the distance is measured between the input vertices and the output feature edges. When the Fit to segments option is chosen, the distance is measured between the input feature edges and the output feature edges.</para>
+		/// <para>输出要素边从输入要素形状偏移的最大距离。针对拟合类型参数选择了拟合折点选项时，会测量输入折点与输出要素边之间的距离。选中拟合线段选项时，会测量输入要素边和输出要素边之间的距离。</para>
 		/// </param>
 		public SimplifyByStraightLinesAndCircularArcs(object InFeatures, object MaxOffset)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Simplify By Straight Lines And Circular Arcs</para>
+		/// <para>Tool Display Name : 通过直线和圆弧进行简化</para>
 		/// </summary>
-		public override string DisplayName() => "Simplify By Straight Lines And Circular Arcs";
+		public override string DisplayName() => "通过直线和圆弧进行简化";
 
 		/// <summary>
 		/// <para>Tool Name : SimplifyByStraightLinesAndCircularArcs</para>
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The features to be simplified. Features can be lines or polygons. If using multiple inputs, the features must have the same spatial reference.</para>
+		/// <para>要进行简化的要素。要素可以是线或面。如果使用多个输入，则要素必须具有相同的空间参考。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Maximum Allowable Offset</para>
-		/// <para>The maximum distance the output feature edges can deviate from the input feature shapes. When the Fit to vertices option is chosen for the Fitting Type parameter, the distance is measured between the input vertices and the output feature edges. When the Fit to segments option is chosen, the distance is measured between the input feature edges and the output feature edges.</para>
+		/// <para>输出要素边从输入要素形状偏移的最大距离。针对拟合类型参数选择了拟合折点选项时，会测量输入折点与输出要素边之间的距离。选中拟合线段选项时，会测量输入要素边和输出要素边之间的距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -90,10 +91,10 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Fitting Type</para>
-		/// <para>Specifies how the output feature edges and circular arcs will be fitted to the input feature shapes.</para>
-		/// <para>If Fit to segments is chosen, the Maximum Arc Angle Step and Minimum Number Of Vertices parameters are not available.</para>
-		/// <para>Fit to vertices—The offset gap between the output feature edges and the input feature vertices will be minimized. Output feature edges and curves will be fitted approximately to the input feature vertex positions. This is the default.</para>
-		/// <para>Fit to segments—The offset gap between the output feature edges and input feature edges will be minimized. Output edges and curves will be fitted approximately to the positions of the input feature shapes.</para>
+		/// <para>指定输出要素边和圆弧如何拟合输入要素形状。</para>
+		/// <para>如果选中拟合线段，则最大弧度步长和最小折点数参数不可用。</para>
+		/// <para>拟合折点—输出要素边与输入要素折点之间的偏移间隙将被最小化。输出要素边与曲线将近似拟合到输入要素折点位置。这是默认设置。</para>
+		/// <para>拟合线段—输出要素边与输入要素边之间的偏移间隙将被最小化。输出边和曲线将近似拟合到输入要素形状的位置。</para>
 		/// <para><see cref="FittingTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -103,9 +104,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Create circular arcs</para>
-		/// <para>Specifies whether circular arcs will be created.</para>
-		/// <para>Checked—Circular arcs will be created. This is the default.</para>
-		/// <para>Unchecked—Circular arcs will not be created.</para>
+		/// <para>指定是否会创建圆弧。</para>
+		/// <para>选中 - 将创建圆弧。这是默认设置。</para>
+		/// <para>不选中 - 不会创建圆弧。</para>
 		/// <para><see cref="CircularArcsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -115,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Maximum Arc Angle Step (decimal degrees)</para>
-		/// <para>The maximum arc angle step (decimal degrees) that will be used to construct circular arcs. The arc angle defines how wide the visual field can be, for each step, when locating vertices to construct circular curves. The arc angle is the central angle of the candidate curve (the curve that is being constructed). If vertices are found within each maximum arc angle step, a circular arc is constructed. For example, if vertices and edges are sparse, use a large arc angle step. The valid value range is from 2 through 95 decimal degrees. The default is 20 decimal degrees. This parameter is not available if the Fit to segments option is chosen for the Fitting Type parameter.</para>
+		/// <para>用于构造圆弧的最大弧度步长（十进制度）。弧度定义了在定位折点来构建圆曲线时，每个步长的视野宽度。弧度是候选曲线（正在构建的曲线）的圆心角。如果在每个最大弧度步长中都存在折点，则会构建一个圆弧。例如，如果折点和边很稀疏，则应使用较大的弧度步长。有效值范围是从 2 到 95（十进制度）。默认值为 20（十进制度）。如果针对拟合类型参数选择了拟合线段选项，则该参数不可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -126,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Minimum Number Of Vertices</para>
-		/// <para>The minimum number of vertices required for a circular arc to be created. The value must be greater than 3. The default is 4. This parameter is not available if the Fit to segments option is chosen for the Fitting Type parameter.</para>
+		/// <para>创建圆弧所需的最小折点数。该值必须大于 3。默认值为 4。如果针对拟合类型参数选择了拟合线段选项，则该参数不可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -136,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Minimum Radius</para>
-		/// <para>The smallest allowable radius for output circular arcs. The value must be greater than 0 and smaller than the value specified for Maximum Radius. If no value is specified, the radius of the output circular arcs will not be checked (default).</para>
+		/// <para>输出圆弧的最小允许半径。该值必须大于 0 且小于指定的最大半径值。如果未指定值，则不会选中输出圆弧的半径（默认）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -144,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Maximum Radius</para>
-		/// <para>The largest allowable radius for output circular arcs. The value must be greater than the value specified for Minimum Radius. If no value is specified, the radius of the output circular arcs will not checked (default).</para>
+		/// <para>输出圆弧的最大允许半径。该值必须大于指定的最小半径值。如果未指定值，则不会选中输出圆弧的半径（默认）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -152,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Minimum Arc Angle (decimal degrees)</para>
-		/// <para>The minimum arc angle (decimal degrees) that will be used to construct circular arcs. The minimum arc angle is the smallest allowable central angle in the output circular arcs. If the central angle of any output circular arc is less than this value, it will not be created. The valid value range is from 2 through 360 decimal degrees. The default is 2 decimal degrees.</para>
+		/// <para>用于构造圆弧的最小弧度（十进制度）。最小弧度是输出圆弧允许的最小圆心角。如果输出圆弧的圆心角小于此值，则不会创建圆弧。有效值范围是从 2 到 360（十进制度）。默认值为 2（十进制度）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -163,9 +164,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Preserve endpoints for closed line</para>
-		/// <para>Specifies whether the endpoints of a closed line will be preserved. A closed line is a line that has coincident end points (loop).</para>
-		/// <para>Checked—The endpoints of closed lines will be preserved. This is the default.</para>
-		/// <para>Unchecked—The endpoints of closed lines will not be preserved; they can be moved or deleted.</para>
+		/// <para>指定是否保留闭合线的端点。闭合线是具有重合端点（循环）的线。</para>
+		/// <para>已选中 - 将保留闭合线的端点。这是默认设置。</para>
+		/// <para>未选中 - 不保留闭合线的端点，端点可能会被移动或删除。</para>
 		/// <para><see cref="ClosedEndsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -182,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Anchor Points</para>
-		/// <para>The path and name of the feature class that contains anchor points. Anchor points overlay vertices on the input features and indicate that they should not be moved or deleted in the simplify process.</para>
+		/// <para>包含锚点的要素类的路径和名称。锚点将叠加输入要素上的折点，并指示在简化过程中不应对其进行移动或删除。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -215,17 +216,17 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		public enum FittingTypeEnum 
 		{
 			/// <summary>
-			/// <para>Fit to vertices—The offset gap between the output feature edges and the input feature vertices will be minimized. Output feature edges and curves will be fitted approximately to the input feature vertex positions. This is the default.</para>
+			/// <para>拟合折点—输出要素边与输入要素折点之间的偏移间隙将被最小化。输出要素边与曲线将近似拟合到输入要素折点位置。这是默认设置。</para>
 			/// </summary>
 			[GPValue("FIT_TO_VERTICES")]
-			[Description("Fit to vertices")]
+			[Description("拟合折点")]
 			Fit_to_vertices,
 
 			/// <summary>
-			/// <para>Fit to segments—The offset gap between the output feature edges and input feature edges will be minimized. Output edges and curves will be fitted approximately to the positions of the input feature shapes.</para>
+			/// <para>拟合线段—输出要素边与输入要素边之间的偏移间隙将被最小化。输出边和曲线将近似拟合到输入要素形状的位置。</para>
 			/// </summary>
 			[GPValue("FIT_TO_SEGMENTS")]
-			[Description("Fit to segments")]
+			[Description("拟合线段")]
 			Fit_to_segments,
 
 		}
@@ -236,14 +237,14 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		public enum CircularArcsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Circular arcs will be created. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CREATE")]
 			CREATE,
 
 			/// <summary>
-			/// <para>Unchecked—Circular arcs will not be created.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_CREATE")]
@@ -257,14 +258,14 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		public enum ClosedEndsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The endpoints of closed lines will be preserved. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE")]
 			PRESERVE,
 
 			/// <summary>
-			/// <para>Unchecked—The endpoints of closed lines will not be preserved; they can be moved or deleted.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_PRESERVE")]

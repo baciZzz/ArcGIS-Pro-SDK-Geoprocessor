@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Remove Parcel Type</para>
-	/// <para>Removes  a parcel type from a parcel fabric.</para>
+	/// <para>移除宗地类型</para>
+	/// <para>将宗地类型从宗地结构中移除。</para>
 	/// </summary>
 	public class RemoveParcelType : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFabric">
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric from which the parcel type will be removed. The parcel fabric can be from a file geodatabase or an enterprise geodatabase.</para>
+		/// <para>将从中移除宗地类型的宗地结构。宗地结构可来自文件地理数据库或企业级地理数据库。</para>
 		/// </param>
 		/// <param name="Name">
 		/// <para>Name</para>
-		/// <para>The name of the parcel type.</para>
+		/// <para>宗地类型的名称。</para>
 		/// </param>
 		public RemoveParcelType(object InParcelFabric, object Name)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Remove Parcel Type</para>
+		/// <para>Tool Display Name : 移除宗地类型</para>
 		/// </summary>
-		public override string DisplayName() => "Remove Parcel Type";
+		public override string DisplayName() => "移除宗地类型";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveParcelType</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric from which the parcel type will be removed. The parcel fabric can be from a file geodatabase or an enterprise geodatabase.</para>
+		/// <para>将从中移除宗地类型的宗地结构。宗地结构可来自文件地理数据库或企业级地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPParcelLayer()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Name</para>
-		/// <para>The name of the parcel type.</para>
+		/// <para>宗地类型的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Slice</para>
-	/// <para>Slices or reclassifies the range of values of the input cells into zones of equal interval or equal area, or by natural breaks.</para>
+	/// <para>分割</para>
+	/// <para>按照相等间隔区域，或者相等面积或自然间断点分级法分割或重分类输入像元值的范围。</para>
 	/// </summary>
 	public class Slice : AbstractGPProcess
 	{
@@ -20,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster to be reclassified.</para>
+		/// <para>要进行重分类的输入栅格。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output reclassified raster.</para>
-		/// <para>The output will always be of integer type.</para>
+		/// <para>输出重分类栅格。</para>
+		/// <para>输出将始终为整型。</para>
 		/// </param>
 		/// <param name="NumberZones">
 		/// <para>Number of output zones</para>
-		/// <para>The number of zones to reclassify the input raster into.</para>
-		/// <para>When the slice method is Equal area, the output raster will have the defined number of zones, with a similar number of cells in each.</para>
-		/// <para>When Equal interval is used, the output raster will have the defined number of zones, each containing equal value ranges on the output raster.</para>
-		/// <para>When Natural breaks is used, the output raster will have the defined number of zones, with the number of cells in each determined by the class breaks.</para>
+		/// <para>将输入栅格重分类的区域数量。</para>
+		/// <para>分割方法为等积时，输出栅格需要定义区域数量，并且每个区域中的像元数应相同。</para>
+		/// <para>使用相等间隔时，输出栅格需要定义区域数量，每个区域在输出栅格中生成的值范围应相同。</para>
+		/// <para>使用自然间断点时，输出栅格需要定义区域数量，每个区域中的像元数将由分类间隔决定。</para>
 		/// </param>
 		public Slice(object InRaster, object OutRaster, object NumberZones)
 		{
@@ -42,14 +43,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Slice</para>
+		/// <para>Tool Display Name : 分割</para>
 		/// </summary>
-		public override string DisplayName() => "Slice";
+		public override string DisplayName() => "分割";
 
 		/// <summary>
-		/// <para>Tool Name : Slice</para>
+		/// <para>Tool Name : 分割</para>
 		/// </summary>
-		public override string ToolName() => "Slice";
+		public override string ToolName() => "分割";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Slice</para>
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster to be reclassified.</para>
+		/// <para>要进行重分类的输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -90,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output reclassified raster.</para>
-		/// <para>The output will always be of integer type.</para>
+		/// <para>输出重分类栅格。</para>
+		/// <para>输出将始终为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -99,10 +100,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Number of output zones</para>
-		/// <para>The number of zones to reclassify the input raster into.</para>
-		/// <para>When the slice method is Equal area, the output raster will have the defined number of zones, with a similar number of cells in each.</para>
-		/// <para>When Equal interval is used, the output raster will have the defined number of zones, each containing equal value ranges on the output raster.</para>
-		/// <para>When Natural breaks is used, the output raster will have the defined number of zones, with the number of cells in each determined by the class breaks.</para>
+		/// <para>将输入栅格重分类的区域数量。</para>
+		/// <para>分割方法为等积时，输出栅格需要定义区域数量，并且每个区域中的像元数应相同。</para>
+		/// <para>使用相等间隔时，输出栅格需要定义区域数量，每个区域在输出栅格中生成的值范围应相同。</para>
+		/// <para>使用自然间断点时，输出栅格需要定义区域数量，每个区域中的像元数将由分类间隔决定。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -111,10 +112,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Slice method</para>
-		/// <para>The manner in which to slice the values in the input raster.</para>
-		/// <para>Equal interval—Determines the range of the input values and divides the range into the specified number of output zones. Each zone on the sliced output raster has the potential of having input cell values that have the same range from the extremes. This is the default.</para>
-		/// <para>Equal area—Specifies that the input values will be divided into the specified number of output zones, with each zone having a similar number of cells. Each zone will represent a similar amount of area.</para>
-		/// <para>Natural breaks—Specifies that the classes will be based on natural groupings inherent in the data. Break points are identified by choosing the class breaks that best group similar values and that maximize the differences between classes. The cell values are divided into classes whose boundaries are set when there are relatively big jumps in the data values.</para>
+		/// <para>输入栅格中值的分割方式。</para>
+		/// <para>相等间隔—确定输入值的范围然后将该范围分割为指定数量的输出区域。分割后输出栅格中每个区域的输入像元值都可能与极值范围相同。这是默认设置。</para>
+		/// <para>相等面积—指定输入值将被划分为指定数量的输出区域，且每个区域的像元数相同。每个区域所代表的面积大小相等。</para>
+		/// <para>自然间断点—指定各类将基于数据中固有的自然分组。中断点将通过选择分类间隔识别，这些分类间隔可对相似值进行最恰当地分组并使各类之间的差异最大化。像元值将被划分到各个类，如果数据值中出现相对较大的跳跃性，可为这些类设置界限。</para>
 		/// <para><see cref="SliceTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -124,8 +125,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Base zone for output</para>
-		/// <para>Defines the lowest zone value on the output raster dataset.</para>
-		/// <para>The default value is 1.</para>
+		/// <para>定义输出栅格数据集中最低区域的值。</para>
+		/// <para>默认值为 1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -148,24 +149,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum SliceTypeEnum 
 		{
 			/// <summary>
-			/// <para>Equal interval—Determines the range of the input values and divides the range into the specified number of output zones. Each zone on the sliced output raster has the potential of having input cell values that have the same range from the extremes. This is the default.</para>
+			/// <para>相等间隔—确定输入值的范围然后将该范围分割为指定数量的输出区域。分割后输出栅格中每个区域的输入像元值都可能与极值范围相同。这是默认设置。</para>
 			/// </summary>
 			[GPValue("EQUAL_INTERVAL")]
-			[Description("Equal interval")]
+			[Description("相等间隔")]
 			Equal_interval,
 
 			/// <summary>
-			/// <para>Equal area—Specifies that the input values will be divided into the specified number of output zones, with each zone having a similar number of cells. Each zone will represent a similar amount of area.</para>
+			/// <para>相等面积—指定输入值将被划分为指定数量的输出区域，且每个区域的像元数相同。每个区域所代表的面积大小相等。</para>
 			/// </summary>
 			[GPValue("EQUAL_AREA")]
-			[Description("Equal area")]
+			[Description("相等面积")]
 			Equal_area,
 
 			/// <summary>
-			/// <para>Natural breaks—Specifies that the classes will be based on natural groupings inherent in the data. Break points are identified by choosing the class breaks that best group similar values and that maximize the differences between classes. The cell values are divided into classes whose boundaries are set when there are relatively big jumps in the data values.</para>
+			/// <para>自然间断点—指定各类将基于数据中固有的自然分组。中断点将通过选择分类间隔识别，这些分类间隔可对相似值进行最恰当地分组并使各类之间的差异最大化。像元值将被划分到各个类，如果数据值中出现相对较大的跳跃性，可为这些类设置界限。</para>
 			/// </summary>
 			[GPValue("NATURAL_BREAKS")]
-			[Description("Natural breaks")]
+			[Description("自然间断点")]
 			Natural_breaks,
 
 		}

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Summarize Within</para>
-	/// <para>Finds the point, line, or polygon features (or portions of these features) that are within the boundaries of polygons in another layer.</para>
+	/// <para>范围内汇总</para>
+	/// <para>用于查找位于另一个图层面边界范围内的点、线或面要素（或前述部分要素）。</para>
 	/// </summary>
 	public class SummarizeWithin : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// </summary>
 		/// <param name="Sumwithinlayer">
 		/// <para>Input Polygons</para>
-		/// <para>Features, or portions of features, in the input summary features that fall within the boundaries of these polygons will be summarized.</para>
+		/// <para>将汇总落入这些面边界范围内的输入汇总要素中的要素或要素部分。</para>
 		/// </param>
 		/// <param name="Summarylayer">
 		/// <para>Input Summary Features</para>
-		/// <para>The point, line, or polygon features that will be summarized for each input polygon.</para>
+		/// <para>将为各输入面汇总的点、线或面要素。</para>
 		/// </param>
 		/// <param name="Outputname">
 		/// <para>Output Name</para>
-		/// <para>The name of the output layer to create on your portal.</para>
+		/// <para>要在门户中创建的输出图层的名称。</para>
 		/// </param>
 		public SummarizeWithin(object Sumwithinlayer, object Summarylayer, object Outputname)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Summarize Within</para>
+		/// <para>Tool Display Name : 范围内汇总</para>
 		/// </summary>
-		public override string DisplayName() => "Summarize Within";
+		public override string DisplayName() => "范围内汇总";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeWithin</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Input Polygons</para>
-		/// <para>Features, or portions of features, in the input summary features that fall within the boundaries of these polygons will be summarized.</para>
+		/// <para>将汇总落入这些面边界范围内的输入汇总要素中的要素或要素部分。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Input Summary Features</para>
-		/// <para>The point, line, or polygon features that will be summarized for each input polygon.</para>
+		/// <para>将为各输入面汇总的点、线或面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -96,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output layer to create on your portal.</para>
+		/// <para>要在门户中创建的输出图层的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -104,9 +105,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Add shape summary attributes</para>
-		/// <para>Calculate statistics based on the shape of the input summary features, such as the length of lines or areas of polygons of the input summary features within each input polygon.</para>
-		/// <para>Checked—Calculate the shape summary attributes. This is the default.</para>
-		/// <para>Unchecked—Do not calculate the shape summary attributes.</para>
+		/// <para>根据输入汇总要素的形状计算统计数据，例如各输入面中输入汇总要素线的长度或面的面积。</para>
+		/// <para>选中 - 计算形状汇总属性。这是默认设置。</para>
+		/// <para>未选中 - 不计算形状汇总属性。</para>
 		/// <para><see cref="SumshapeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -116,21 +117,21 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Shape Unit</para>
-		/// <para>If summarizing the shape of the input summary features, specify the units of the shape summary.</para>
-		/// <para>When the input summary features are polygons, the valid options are acres, hectares, square meters, square kilometers, square feet, square yards, and square miles.</para>
-		/// <para>When the input summary features are lines, the valid options are meters, kilometers, feet, yards, and miles.</para>
-		/// <para>Miles—Miles</para>
-		/// <para>Feet—Feet</para>
-		/// <para>Kilometers—Kilometers</para>
-		/// <para>Meters—Meters</para>
-		/// <para>Yards—Yards</para>
-		/// <para>Acres—Acres</para>
-		/// <para>Hectares—Hectares</para>
-		/// <para>Square meters—Square meters</para>
-		/// <para>Square kilometers—Square kilometers</para>
-		/// <para>Square feet—Square feet</para>
-		/// <para>Square yards—Square yards</para>
-		/// <para>Square miles—Square miles</para>
+		/// <para>如果要汇总输入汇总要素的形状，请指定形状汇总的单位。</para>
+		/// <para>如果输入汇总要素为面，则有效选项为英亩、公顷、平方米、平方千米、平方英尺、平方码和平方英里。</para>
+		/// <para>如果输入汇总要素为线，则有效选项为米、千米、英尺、码和英里。</para>
+		/// <para>英里—英里</para>
+		/// <para>英尺—英尺</para>
+		/// <para>千米—千米</para>
+		/// <para>米—米</para>
+		/// <para>码—码</para>
+		/// <para>英亩—英亩</para>
+		/// <para>公顷—公顷</para>
+		/// <para>平方米—平方米</para>
+		/// <para>平方千米—平方千米</para>
+		/// <para>平方英尺—平方英尺</para>
+		/// <para>平方码—平方码</para>
+		/// <para>平方英里—平方英里</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -139,12 +140,12 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Summary Fields</para>
-		/// <para>A list of field names and statistical summary type that you wish to calculate for all points within each polygon. The count of points within each polygon is always returned. The following statistic types are supported:</para>
-		/// <para>Sum—The total value.</para>
-		/// <para>Minimum—The smallest value.</para>
-		/// <para>Max—The largest value.</para>
-		/// <para>Mean—The average or mean value.</para>
-		/// <para>Standard deviation—The standard deviation.</para>
+		/// <para>字段名称及您想要为各面内全部点计算的统计汇总类型的列表。始终返回每个面内的点计数。支持的统计数据类型如下：</para>
+		/// <para>Sum - 总值。</para>
+		/// <para>Minimum - 最小值。</para>
+		/// <para>Max - 最大值。</para>
+		/// <para>Mean - 平均值。</para>
+		/// <para>Standard deviation - 标准差。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -153,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Group By Field</para>
-		/// <para>This is a field from the input summary features that you can use to calculate statistics separately for each unique attribute value. For example, suppose the input summary features contain point locations of businesses that store hazardous materials, and one of the fields is HazardClass containing codes that describe the type of hazardous material stored. To calculate summaries by each unique value of HazardClass, use it as the group by field.</para>
+		/// <para>这是输入汇总要素的一个字段，可用于分别计算每个唯一属性值的统计数据。例如，假设输入汇总要素包含存储危险材料的企业的点位置，且其中一个字段为 HazardClass，字段中含有用于描述所存储危险材料类型的代码。要根据每个 HazardClass 唯一值计算汇总，请将其用作分组条件字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -163,9 +164,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Add minority and majority attributes</para>
-		/// <para>This only applies when using a group by field. If checked, the minority (least dominant) or the majority (most dominant) attribute values for each group field within each boundary are calculated. Two new fields are added to the output layer prefixed with Majority_ and Minority_.</para>
-		/// <para>Unchecked—Do not add minority and majority fields. This is the default.</para>
-		/// <para>Checked—Add minority and majority fields.</para>
+		/// <para>仅当使用分组条件字段时适用。如果选中，将对各个边界内每个组字段的少数（所占比例最小）或众数（所占比例最大）属性值进行计算。前缀为众数_和少数_的两个新字段将添加至输出图层。</para>
+		/// <para>未选中 - 不添加少数和众数字段。这是默认设置。</para>
+		/// <para>选中 - 添加少数和众数字段。</para>
 		/// <para><see cref="MinoritymajorityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -175,9 +176,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Add group percentages</para>
-		/// <para>This only applies when using a group by field. If checked, the percentage of each unique group value is calculated for each input polygon.</para>
-		/// <para>Unchecked—Do not add percentage fields. This is the default.</para>
-		/// <para>Checked—Add percentage fields.</para>
+		/// <para>仅当使用分组条件字段时适用。如果选中，则系统将针对每个输入面计算各唯一组值的百分比。</para>
+		/// <para>未选中 - 不添加百分比字段。这是默认设置。</para>
+		/// <para>选中 - 添加百分比字段。</para>
 		/// <para><see cref="PercentshapeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -216,14 +217,14 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum SumshapeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Calculate the shape summary attributes. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_SHAPE_SUM")]
 			ADD_SHAPE_SUM,
 
 			/// <summary>
-			/// <para>Unchecked—Do not calculate the shape summary attributes.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SHAPE_SUM")]
@@ -237,14 +238,14 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum MinoritymajorityEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Add minority and majority fields.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_MIN_MAJ")]
 			ADD_MIN_MAJ,
 
 			/// <summary>
-			/// <para>Unchecked—Do not add minority and majority fields. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_MIN_MAJ")]
@@ -258,14 +259,14 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum PercentshapeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Add percentage fields.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_PERCENT")]
 			ADD_PERCENT,
 
 			/// <summary>
-			/// <para>Unchecked—Do not add percentage fields. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_PERCENT")]

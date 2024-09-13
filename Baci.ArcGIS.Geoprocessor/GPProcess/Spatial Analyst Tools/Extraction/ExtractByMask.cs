@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Extract by Mask</para>
-	/// <para>Extracts the cells of a raster that correspond to the areas defined by a mask.</para>
+	/// <para>按掩膜提取</para>
+	/// <para>提取掩膜所定义区域内的相应栅格像元。</para>
 	/// </summary>
 	public class ExtractByMask : AbstractGPProcess
 	{
@@ -20,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster from which cells will be extracted.</para>
+		/// <para>提取像元的输入栅格。</para>
 		/// </param>
 		/// <param name="InMaskData">
 		/// <para>Input raster or feature mask data</para>
-		/// <para>Input mask data defining areas to extract.</para>
-		/// <para>It can be a raster or feature dataset.</para>
-		/// <para>When the input mask data is a raster, NoData cells on the mask will be assigned NoData values on the output raster.</para>
-		/// <para>When the input mask is feature data, cells in the input raster whose center falls within the perimeter of the feature will be included in the output, while cells whose center falls outside it will receive NoData.</para>
+		/// <para>用于定义提取区域的输入掩膜数据。</para>
+		/// <para>它可以是栅格，也可以是要素数据集。</para>
+		/// <para>当输入掩膜数据为栅格时，将在输出栅格中为掩膜数据中的 NoData 像元指定 NoData 值。</para>
+		/// <para>当输入掩膜是要素数据时，如果输入栅格中像元的中心位于要素周长范围内，则会在输出中包含这些像元，而其中心落在要素周长之外的像元将会收到 NoData。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster containing the cell values extracted from the input raster.</para>
+		/// <para>包含从输入栅格中提取的像元值的输出栅格。</para>
 		/// </param>
 		public ExtractByMask(object InRaster, object InMaskData, object OutRaster)
 		{
@@ -41,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Extract by Mask</para>
+		/// <para>Tool Display Name : 按掩膜提取</para>
 		/// </summary>
-		public override string DisplayName() => "Extract by Mask";
+		public override string DisplayName() => "按掩膜提取";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractByMask</para>
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster from which cells will be extracted.</para>
+		/// <para>提取像元的输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -89,10 +90,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature mask data</para>
-		/// <para>Input mask data defining areas to extract.</para>
-		/// <para>It can be a raster or feature dataset.</para>
-		/// <para>When the input mask data is a raster, NoData cells on the mask will be assigned NoData values on the output raster.</para>
-		/// <para>When the input mask is feature data, cells in the input raster whose center falls within the perimeter of the feature will be included in the output, while cells whose center falls outside it will receive NoData.</para>
+		/// <para>用于定义提取区域的输入掩膜数据。</para>
+		/// <para>它可以是栅格，也可以是要素数据集。</para>
+		/// <para>当输入掩膜数据为栅格时，将在输出栅格中为掩膜数据中的 NoData 像元指定 NoData 值。</para>
+		/// <para>当输入掩膜是要素数据时，如果输入栅格中像元的中心位于要素周长范围内，则会在输出中包含这些像元，而其中心落在要素周长之外的像元将会收到 NoData。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -104,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster containing the cell values extracted from the input raster.</para>
+		/// <para>包含从输入栅格中提取的像元值的输出栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

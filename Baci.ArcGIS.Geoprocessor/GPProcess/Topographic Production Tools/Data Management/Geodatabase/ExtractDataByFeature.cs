@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Extract Data By Feature</para>
+	/// <para>Extract Data By Feature</para>
 	/// <para>Extracts features from multiple</para>
 	/// <para>input feature classes into a target database.</para>
 	/// </summary>

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Duplicate Dataset From Big Data Connection</para>
-	/// <para>Creates a duplicate of a big data connection (BDC) dataset.</para>
+	/// <para>从大数据连接复制数据集</para>
+	/// <para>用于创建大数据连接 (BDC) 数据集的副本。</para>
 	/// </summary>
 	public class DuplicateDatasetFromBDC : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="BdcDataset">
 		/// <para>Big Data Connection Dataset</para>
-		/// <para>The BDC dataset to be duplicated.</para>
+		/// <para>要复制的 BDC 数据集。</para>
 		/// </param>
 		public DuplicateDatasetFromBDC(object BdcDataset)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Duplicate Dataset From Big Data Connection</para>
+		/// <para>Tool Display Name : 从大数据连接复制数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Duplicate Dataset From Big Data Connection";
+		public override string DisplayName() => "从大数据连接复制数据集";
 
 		/// <summary>
 		/// <para>Tool Name : DuplicateDatasetFromBDC</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Big Data Connection Dataset</para>
-		/// <para>The BDC dataset to be duplicated.</para>
+		/// <para>要复制的 BDC 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Duplicate Name</para>
-		/// <para>The name of the output BDC dataset.</para>
+		/// <para>输出 BDC 数据集的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Times</para>
-	/// <para>Multiplies the values of two rasters on a cell-by-cell basis.</para>
+	/// <para>乘</para>
+	/// <para>将两个栅格的值逐个像元地相乘。</para>
 	/// </summary>
 	public class Times : AbstractGPProcess
 	{
@@ -20,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant1">
 		/// <para>Input raster or constant value 1</para>
-		/// <para>The input containing the values to be multiplied.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>该输入包含要执行乘法操作的值。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="InRasterOrConstant2">
 		/// <para>Input raster or constant value 2</para>
-		/// <para>The input containing the values by which the first input will be multiplied.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>该输入包含的值用于与第一个输入进行相乘。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the product of the first input multiplied by the second.</para>
+		/// <para>输出栅格。</para>
+		/// <para>像元值是第一个输入与第二个输入的乘积。</para>
 		/// </param>
 		public Times(object InRasterOrConstant1, object InRasterOrConstant2, object OutRaster)
 		{
@@ -41,14 +42,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Times</para>
+		/// <para>Tool Display Name : 乘</para>
 		/// </summary>
-		public override string DisplayName() => "Times";
+		public override string DisplayName() => "乘";
 
 		/// <summary>
-		/// <para>Tool Name : Times</para>
+		/// <para>Tool Name : 乘</para>
 		/// </summary>
-		public override string ToolName() => "Times";
+		public override string ToolName() => "乘";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.Times</para>
@@ -77,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 1</para>
-		/// <para>The input containing the values to be multiplied.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>该输入包含要执行乘法操作的值。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -90,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 2</para>
-		/// <para>The input containing the values by which the first input will be multiplied.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>该输入包含的值用于与第一个输入进行相乘。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -103,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the product of the first input multiplied by the second.</para>
+		/// <para>输出栅格。</para>
+		/// <para>像元值是第一个输入与第二个输入的乘积。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

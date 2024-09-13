@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Get Job Data Workspace</para>
-	/// <para>Gets the job data workspace as an enterprise geodatabase connection file. This tool is typically used in ModelBuilder to retrieve the connection file for use as an input to other tools such as Reconcile Versions in the model.</para>
+	/// <para>获取作业数据的工作空间</para>
+	/// <para>获取作业数据工作空间作为企业级地理数据库连接文件。该工具通常在 ModelBuilder 中用于检索连接文件，以便用作模型中其他工具（例如协调版本）的输入。</para>
 	/// </summary>
 	public class GetJobDataWorkspace : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		/// <param name="InputJobid">
 		/// <para>Input Job ID</para>
-		/// <para>The ID for the job whose data workspace connection is to be retrieved.</para>
+		/// <para>要检索数据工作空间连接的作业的 ID。</para>
 		/// </param>
 		public GetJobDataWorkspace(object InputJobid)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Get Job Data Workspace</para>
+		/// <para>Tool Display Name : 获取作业数据的工作空间</para>
 		/// </summary>
-		public override string DisplayName() => "Get Job Data Workspace";
+		public override string DisplayName() => "获取作业数据的工作空间";
 
 		/// <summary>
 		/// <para>Tool Name : GetJobDataWorkspace</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Input Job ID</para>
-		/// <para>The ID for the job whose data workspace connection is to be retrieved.</para>
+		/// <para>要检索数据工作空间连接的作业的 ID。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Input Database Path</para>
-		/// <para>The Workflow Manager (Classic) database connection file that contains the job information. If no connection file is specified, the current default Workflow Manager (Classic) database in the project is used.</para>
+		/// <para>包含作业信息的 Workflow Manager (Classic) 数据库连接文件。如果未指定连接文件，将使用项目中当前默认的 Workflow Manager (Classic) 数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Save a copy of the Job Data Workspace in</para>
-		/// <para>The job's data workspace connection file will be written to the specified folder.</para>
+		/// <para>作业的数据工作空间连接文件将写入到指定文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]

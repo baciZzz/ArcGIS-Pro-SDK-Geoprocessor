@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Aggregate Points</para>
-	/// <para>Uses a layer of point features and a layer of polygon features to determine which points fall within each polygon's area. After determining this point-in-polygon spatial relationship, statistics about all points in the polygon are calculated and assigned to the area.</para>
+	/// <para>聚合点</para>
+	/// <para>使用点要素图层和面要素图层确定各面区域内的点。确定点与面的空间关系后，会计算出面内所有点的统计数据并将统计数据指定给该区域。</para>
 	/// </summary>
 	public class AggregatePoints : AbstractGPProcess
 	{
@@ -20,21 +21,21 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// </summary>
 		/// <param name="Pointlayer">
 		/// <para>Input Points</para>
-		/// <para>The point features that will be aggregated into the polygons in the polygon layer.</para>
+		/// <para>将聚合到面图层中面的点要素。</para>
 		/// </param>
 		/// <param name="Polygonlayer">
 		/// <para>Aggregating Polygons</para>
-		/// <para>The polygon features (areas) into which the input points will be aggregated.</para>
+		/// <para>输入点将聚合到的面要素（区域）。</para>
 		/// </param>
 		/// <param name="Outputname">
 		/// <para>Output Name</para>
-		/// <para>The name of the output layer to create on your portal.</para>
+		/// <para>要在门户中创建的输出图层的名称。</para>
 		/// </param>
 		/// <param name="Keepboundarieswithnopoints">
 		/// <para>Keep boundaries with no points</para>
-		/// <para>Specifies whether the polygons that have no points within them should be returned in the output.</para>
-		/// <para>Checked—Keep polygons that have no points. This is the default.</para>
-		/// <para>Unchecked—Do not return polygons with no points in the output.</para>
+		/// <para>指定输出中是否返回不含点要素的面。</para>
+		/// <para>选中 - 保留不含点要素的面。这是默认设置。</para>
+		/// <para>未选中 - 输出中不返回不含点要素的面。</para>
 		/// <para><see cref="KeepboundarieswithnopointsEnum"/></para>
 		/// </param>
 		public AggregatePoints(object Pointlayer, object Polygonlayer, object Outputname, object Keepboundarieswithnopoints)
@@ -46,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Aggregate Points</para>
+		/// <para>Tool Display Name : 聚合点</para>
 		/// </summary>
-		public override string DisplayName() => "Aggregate Points";
+		public override string DisplayName() => "聚合点";
 
 		/// <summary>
 		/// <para>Tool Name : AggregatePoints</para>
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Input Points</para>
-		/// <para>The point features that will be aggregated into the polygons in the polygon layer.</para>
+		/// <para>将聚合到面图层中面的点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Aggregating Polygons</para>
-		/// <para>The polygon features (areas) into which the input points will be aggregated.</para>
+		/// <para>输入点将聚合到的面要素（区域）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -104,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output layer to create on your portal.</para>
+		/// <para>要在门户中创建的输出图层的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -112,9 +113,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Keep boundaries with no points</para>
-		/// <para>Specifies whether the polygons that have no points within them should be returned in the output.</para>
-		/// <para>Checked—Keep polygons that have no points. This is the default.</para>
-		/// <para>Unchecked—Do not return polygons with no points in the output.</para>
+		/// <para>指定输出中是否返回不含点要素的面。</para>
+		/// <para>选中 - 保留不含点要素的面。这是默认设置。</para>
+		/// <para>未选中 - 输出中不返回不含点要素的面。</para>
 		/// <para><see cref="KeepboundarieswithnopointsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -124,12 +125,12 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Summary Fields</para>
-		/// <para>A list of field names and statistical summary type that you wish to calculate for all points within each polygon. The count of points within each polygon is always returned. The following statistic types are supported:</para>
-		/// <para>Sum—The total value.</para>
-		/// <para>Minimum—The smallest value.</para>
-		/// <para>Max—The largest value.</para>
-		/// <para>Mean—The average or mean value.</para>
-		/// <para>Standard deviation—The standard deviation.</para>
+		/// <para>字段名称及您想要为各面内全部点计算的统计汇总类型的列表。始终返回每个面内的点计数。支持的统计数据类型如下：</para>
+		/// <para>总和 - 总值。</para>
+		/// <para>最小值 - 最小值。</para>
+		/// <para>最大值 - 最大值。</para>
+		/// <para>平均值 - 平均值。</para>
+		/// <para>标准差 - 标准差。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -138,8 +139,8 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Group By Field</para>
-		/// <para>A field name in the pointLayer. Points that have the same value for the group by field will have their own counts and summary field statistics.</para>
-		/// <para>You can create statistical groups using an attribute in the analysis layer. For example, if you are aggregating crimes to neighborhood boundaries, you may have a Crime_type attribute with five different crime types. Each unique crime type forms a group, and the statistics you choose will be calculated for each unique value of Crime_type. When you choose a grouping attribute, two results are created: the result layer and a related table containing the statistics.</para>
+		/// <para>pointLayer 中的字段名称。分组条件字段具有相同值的点有属于其自身的计数和汇总字段统计数据。</para>
+		/// <para>可以使用分析图层中的属性来创建统计组。例如，如果要将犯罪事件聚合至邻近地区边界，可能会有一个含有五种不同犯罪类型的 Crime_type 属性。各种唯一的犯罪类型构成一组，并将针对 Crime_type 的每个唯一值计算您选择的统计数据。选择分组属性后，将创建两个分析结果：结果图层，以及包含统计数据的相关表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -149,9 +150,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Add minority and majority attributes</para>
-		/// <para>This Boolean parameter is applicable only when a Group By Field is specified. If checked, the minority (least dominant) or the majority (most dominant) attribute values for each group field within each boundary are calculated. Two new fields are added to the output layer prefixed with Majority_ and Minority_.</para>
-		/// <para>Unchecked—Do not add minority and majority fields. This is the default.</para>
-		/// <para>Checked—Add minority and majority fields.</para>
+		/// <para>只有在指定分组条件字段后此布尔型参数才适用。如果选中，将对各个边界内每个组字段的少数（所占比例最小）或众数（所占比例最大）属性值进行计算。前缀为 Majority_ 和 Minority_ 的两个新字段将添加至输出图层。</para>
+		/// <para>未选中 - 不添加少数和众数字段。这是默认设置。</para>
+		/// <para>选中 - 添加少数和众数字段。</para>
 		/// <para><see cref="MinoritymajorityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -161,9 +162,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Add percentage</para>
-		/// <para>This Boolean parameter is applicable only when a Group By Field is specified. If checked, the percentage count of points for each unique Group By Field value is calculated. A new field is added to the output group summary table containing the percentages of each attribute value within each group. If Add minority and majority attributes is true, two additional fields are added to the output containing the percentages of the minority and majority attribute values within each group.</para>
-		/// <para>Unchecked—Do not add percentage fields. This is the default.</para>
-		/// <para>Checked—Add percentage fields.</para>
+		/// <para>只有在指定分组条件字段后此布尔型参数才适用。如果选中，会针对每个唯一的分组条件字段值对计算点的百分比计数。向输出组汇总表添加一个新字段，其中包含各组内每个属性值的百分比。如果添加少数和众数属性为真，则会有两个额外字段添加至输出，其中包含各组内少数属性值和多数属性值的百分比。</para>
+		/// <para>未选中 - 不添加百分比字段。这是默认设置。</para>
+		/// <para>选中 - 添加百分比字段。</para>
 		/// <para><see cref="PercentpointsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -202,14 +203,14 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum KeepboundarieswithnopointsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Keep polygons that have no points. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("KEEP_EMPTY")]
 			KEEP_EMPTY,
 
 			/// <summary>
-			/// <para>Unchecked—Do not return polygons with no points in the output.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("REMOVE_EMPTY")]
@@ -223,14 +224,14 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum MinoritymajorityEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Add minority and majority fields.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_MIN_MAJ")]
 			ADD_MIN_MAJ,
 
 			/// <summary>
-			/// <para>Unchecked—Do not add minority and majority fields. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_MIN_MAJ")]
@@ -244,14 +245,14 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum PercentpointsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Add percentage fields.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_PERCENT")]
 			ADD_PERCENT,
 
 			/// <summary>
-			/// <para>Unchecked—Do not add percentage fields. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_PERCENT")]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Fields (multiple)</para>
-	/// <para>Adds new fields to a table, feature class, or raster.</para>
+	/// <para>添加字段(多个)</para>
+	/// <para>将新字段添加到表格、要素类或栅格。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,28 +23,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input table where the fields will be added. The fields will be added to the existing input table and will not create a new output table.</para>
-		/// <para>Fields can be added to feature classes in geodatabases, shapefiles, coverages, stand-alone tables, raster catalogs, rasters with attribute tables, and layers.</para>
+		/// <para>将添加字段的输入表。字段将被添加到现有输入表，并且不会创建新的输出表。</para>
+		/// <para>可将字段添加到地理数据库中的要素类、shapefile、coverage、独立表、栅格目录、带属性表的栅格和图层。</para>
 		/// </param>
 		/// <param name="FieldDescription">
 		/// <para>Field Properties</para>
-		/// <para>The fields and their properties that will be added to the input table.</para>
-		/// <para>Field Name—The name of the field that will be added to the input table.</para>
-		/// <para>Field Type—The type of the new field.</para>
-		/// <para>Field Alias—The alternate name given to the field name. This is used to give more descriptive names to cryptic field names. The Field Alias parameter only applies to geodatabases.</para>
-		/// <para>Field Length—The length of the field being added. This sets the maximum number of allowable characters for each record of the field. This option is only applicable to fields of type text; the default length is 255.</para>
-		/// <para>Default Value—The default value of the field.</para>
-		/// <para>Field Domain—The geodatabase domain that will be assigned to the field.</para>
-		/// <para>Available field types are as follows:</para>
-		/// <para>TEXT—Any string of characters.</para>
-		/// <para>FLOAT—Fractional numbers between -3.4E38 and 1.2E38.</para>
-		/// <para>DOUBLE—Fractional numbers between -2.2E308 and 1.8E308.</para>
-		/// <para>SHORT—Whole numbers between -32,768 and 32,767.</para>
-		/// <para>LONG—Whole numbers between -2,147,483,648 and 2,147,483,647.</para>
-		/// <para>DATE—Date and/or time.</para>
-		/// <para>BLOB—Long sequence of binary numbers. You need a custom loader or viewer or a third-party application to load items into a BLOB field or view the contents of a BLOB field.</para>
-		/// <para>RASTER—Raster images. All ArcGIS software-supported raster dataset formats can be stored, but it is recommended that you use small images only.</para>
-		/// <para>GUID—Globally unique identifier.</para>
+		/// <para>将添加到输入表的字段及其属性。</para>
+		/// <para>字段名称 - 将添加到输入表的字段的名称。</para>
+		/// <para>字段类型 - 新字段的类型。</para>
+		/// <para>字段别名 - 指定给字段名称的备用名称。此名称用于为含义隐晦的字段名称指定更具描述性的名称。字段别名参数仅适用于地理数据库。</para>
+		/// <para>字段长度 - 要添加的字段的长度。它为字段的每条记录设置最大允许字符数。此选项仅适用于文本类型的字段；默认长度为 255。</para>
+		/// <para>默认值 - 字段的默认值。</para>
+		/// <para>字段域 - 将分配到字段的地理数据库域。</para>
+		/// <para>可用字段类型如下：</para>
+		/// <para>TEXT - 任何字符串。</para>
+		/// <para>FLOAT - 介于 -3.4E38 和 1.2E38 之间的小数。</para>
+		/// <para>DOUBLE - 介于 -2.2E308 和 1.8E308 之间的小数。</para>
+		/// <para>SHORT - 介于 -32,768 和 32,767 之间的整数。</para>
+		/// <para>LONG - 介于 -2,147,483,648 和 2,147,483,647 之间的整数。</para>
+		/// <para>DATE - 日期和/或时间。</para>
+		/// <para>BLOB - 长二进制数序列。您需要一个自定义的加载器、查看器或第三方应用程序将这些项加载到 BLOB 字段中或者查看 BLOB 字段的内容。</para>
+		/// <para>RASTER - 栅格影像。可以存储 ArcGIS 软件支持的所有栅格数据集格式，但建议您仅使用小影像。</para>
+		/// <para>GUID - 全局唯一标识符。</para>
 		/// </param>
 		public AddFields(object InTable, object FieldDescription)
 		{
@@ -52,9 +53,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Fields (multiple)</para>
+		/// <para>Tool Display Name : 添加字段(多个)</para>
 		/// </summary>
-		public override string DisplayName() => "Add Fields (multiple)";
+		public override string DisplayName() => "添加字段(多个)";
 
 		/// <summary>
 		/// <para>Tool Name : AddFields</para>
@@ -88,8 +89,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input table where the fields will be added. The fields will be added to the existing input table and will not create a new output table.</para>
-		/// <para>Fields can be added to feature classes in geodatabases, shapefiles, coverages, stand-alone tables, raster catalogs, rasters with attribute tables, and layers.</para>
+		/// <para>将添加字段的输入表。字段将被添加到现有输入表，并且不会创建新的输出表。</para>
+		/// <para>可将字段添加到地理数据库中的要素类、shapefile、coverage、独立表、栅格目录、带属性表的栅格和图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -98,23 +99,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Properties</para>
-		/// <para>The fields and their properties that will be added to the input table.</para>
-		/// <para>Field Name—The name of the field that will be added to the input table.</para>
-		/// <para>Field Type—The type of the new field.</para>
-		/// <para>Field Alias—The alternate name given to the field name. This is used to give more descriptive names to cryptic field names. The Field Alias parameter only applies to geodatabases.</para>
-		/// <para>Field Length—The length of the field being added. This sets the maximum number of allowable characters for each record of the field. This option is only applicable to fields of type text; the default length is 255.</para>
-		/// <para>Default Value—The default value of the field.</para>
-		/// <para>Field Domain—The geodatabase domain that will be assigned to the field.</para>
-		/// <para>Available field types are as follows:</para>
-		/// <para>TEXT—Any string of characters.</para>
-		/// <para>FLOAT—Fractional numbers between -3.4E38 and 1.2E38.</para>
-		/// <para>DOUBLE—Fractional numbers between -2.2E308 and 1.8E308.</para>
-		/// <para>SHORT—Whole numbers between -32,768 and 32,767.</para>
-		/// <para>LONG—Whole numbers between -2,147,483,648 and 2,147,483,647.</para>
-		/// <para>DATE—Date and/or time.</para>
-		/// <para>BLOB—Long sequence of binary numbers. You need a custom loader or viewer or a third-party application to load items into a BLOB field or view the contents of a BLOB field.</para>
-		/// <para>RASTER—Raster images. All ArcGIS software-supported raster dataset formats can be stored, but it is recommended that you use small images only.</para>
-		/// <para>GUID—Globally unique identifier.</para>
+		/// <para>将添加到输入表的字段及其属性。</para>
+		/// <para>字段名称 - 将添加到输入表的字段的名称。</para>
+		/// <para>字段类型 - 新字段的类型。</para>
+		/// <para>字段别名 - 指定给字段名称的备用名称。此名称用于为含义隐晦的字段名称指定更具描述性的名称。字段别名参数仅适用于地理数据库。</para>
+		/// <para>字段长度 - 要添加的字段的长度。它为字段的每条记录设置最大允许字符数。此选项仅适用于文本类型的字段；默认长度为 255。</para>
+		/// <para>默认值 - 字段的默认值。</para>
+		/// <para>字段域 - 将分配到字段的地理数据库域。</para>
+		/// <para>可用字段类型如下：</para>
+		/// <para>TEXT - 任何字符串。</para>
+		/// <para>FLOAT - 介于 -3.4E38 和 1.2E38 之间的小数。</para>
+		/// <para>DOUBLE - 介于 -2.2E308 和 1.8E308 之间的小数。</para>
+		/// <para>SHORT - 介于 -32,768 和 32,767 之间的整数。</para>
+		/// <para>LONG - 介于 -2,147,483,648 和 2,147,483,647 之间的整数。</para>
+		/// <para>DATE - 日期和/或时间。</para>
+		/// <para>BLOB - 长二进制数序列。您需要一个自定义的加载器、查看器或第三方应用程序将这些项加载到 BLOB 字段中或者查看 BLOB 字段的内容。</para>
+		/// <para>RASTER - 栅格影像。可以存储 ArcGIS 软件支持的所有栅格数据集格式，但建议您仅使用小影像。</para>
+		/// <para>GUID - 全局唯一标识符。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]

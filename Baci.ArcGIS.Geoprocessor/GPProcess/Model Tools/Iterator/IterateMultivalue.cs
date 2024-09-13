@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Iterate Multivalue</para>
-	/// <para>Iterates over a list of values.</para>
+	/// <para>迭代多值</para>
+	/// <para>迭代值列表。</para>
 	/// </summary>
 	public class IterateMultivalue : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InValues">
 		/// <para>Input Values</para>
-		/// <para>Input values to iterate through.</para>
+		/// <para>要迭代的输入值。</para>
 		/// </param>
 		public IterateMultivalue(object InValues)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Iterate Multivalue</para>
+		/// <para>Tool Display Name : 迭代多值</para>
 		/// </summary>
-		public override string DisplayName() => "Iterate Multivalue";
+		public override string DisplayName() => "迭代多值";
 
 		/// <summary>
 		/// <para>Tool Name : IterateMultivalue</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Input Values</para>
-		/// <para>Input values to iterate through.</para>
+		/// <para>要迭代的输入值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]

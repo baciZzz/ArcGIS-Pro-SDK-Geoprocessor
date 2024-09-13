@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Populate Map Sheet Info</para>
+	/// <para>Populate Map Sheet Info</para>
 	/// <para>Populates text in graphic elements on a map layout.</para>
 	/// </summary>
 	public class PopulateMapSheetInfo : AbstractGPProcess

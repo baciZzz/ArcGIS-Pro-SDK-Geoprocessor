@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Apply Spatial Dispatch Layout</para>
+	/// <para>Apply Spatial Dispatch Layout</para>
 	/// <para>Apply the spatial dispatch layout to a diagram</para>
 	/// </summary>
 	[Obsolete()]

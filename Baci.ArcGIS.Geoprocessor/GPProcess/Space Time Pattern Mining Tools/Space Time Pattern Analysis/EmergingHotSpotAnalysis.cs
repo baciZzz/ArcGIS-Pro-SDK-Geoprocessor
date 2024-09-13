@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Emerging Hot Spot Analysis</para>
-	/// <para>Identifies trends in the clustering of point densities (counts) or values in a space-time cube created using either the Create Space Time Cube By Aggregating Points, Create Space Time Cube From Defined Locations or Create Space Time Cube from Multidimensional Raster Layer  tool. Categories include new, consecutive, intensifying, persistent, diminishing, sporadic, oscillating, and historical hot and cold spots.</para>
+	/// <para>新兴时空热点分析</para>
+	/// <para>识别使用通过聚合点创建时空立方体、通过已定义位置创建时空立方体或通过多维栅格图层创建时空立方体工具创建的时空立方体中点密度（计数）或值聚类中的趋势。 类别包含新增的、连续的、加强的、持续的、逐渐减少的、分散的、振荡的以及历史的热点和冷点。</para>
 	/// </summary>
 	public class EmergingHotSpotAnalysis : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		/// <param name="InCube">
 		/// <para>Input Space Time Cube</para>
-		/// <para>The netCDF cube to be analyzed. This file must have an (.nc) extension and must have been created using the Create Space Time Cube By Aggregating Points tool or the Create Space Time Cube From Defined Locations tool.</para>
+		/// <para>要分析的 netCDF 立方体。 此文件必须具有 (.nc) 扩展名，并且必须使用通过聚合点创建时空立方体 工具或通过已定义位置创建时空立方体工具进行创建。</para>
 		/// </param>
 		/// <param name="AnalysisVariable">
 		/// <para>Analysis Variable</para>
-		/// <para>The numeric variable in the netCDF file you want to analyze.</para>
+		/// <para>要分析的 netCDF 文件中的数值变量。</para>
 		/// </param>
 		/// <param name="OutputFeatures">
 		/// <para>Output Features</para>
-		/// <para>The output feature class results. This feature class will be a two-dimensional map representation of the hot and cold spot trends in your data. It will show, for example, any new or intensifying hot spots.</para>
+		/// <para>输出要素类结果。 此要素类为数据中热点和冷点趋势的二维地图表达。 例如，将显示任何新热点或加强的热点。</para>
 		/// </param>
 		public EmergingHotSpotAnalysis(object InCube, object AnalysisVariable, object OutputFeatures)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Emerging Hot Spot Analysis</para>
+		/// <para>Tool Display Name : 新兴时空热点分析</para>
 		/// </summary>
-		public override string DisplayName() => "Emerging Hot Spot Analysis";
+		public override string DisplayName() => "新兴时空热点分析";
 
 		/// <summary>
 		/// <para>Tool Name : EmergingHotSpotAnalysis</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>
-		/// <para>The netCDF cube to be analyzed. This file must have an (.nc) extension and must have been created using the Create Space Time Cube By Aggregating Points tool or the Create Space Time Cube From Defined Locations tool.</para>
+		/// <para>要分析的 netCDF 立方体。 此文件必须具有 (.nc) 扩展名，并且必须使用通过聚合点创建时空立方体 工具或通过已定义位置创建时空立方体工具进行创建。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Analysis Variable</para>
-		/// <para>The numeric variable in the netCDF file you want to analyze.</para>
+		/// <para>要分析的 netCDF 文件中的数值变量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>The output feature class results. This feature class will be a two-dimensional map representation of the hot and cold spot trends in your data. It will show, for example, any new or intensifying hot spots.</para>
+		/// <para>输出要素类结果。 此要素类为数据中热点和冷点趋势的二维地图表达。 例如，将显示任何新热点或加强的热点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Neighborhood Distance</para>
-		/// <para>The spatial extent of the analysis neighborhood. This value determines which features are analyzed together in order to assess local space-time clustering.</para>
+		/// <para>分析邻域的空间范围。 该值用于确定应将哪些要素一起分析以便访问本地时空聚类。</para>
 		/// <para><see cref="NeighborhoodDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -110,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Neighborhood Time Step</para>
-		/// <para>The number of time-step intervals to include in the analysis neighborhood. This value determines which features are analyzed together in order to assess local space-time clustering.</para>
+		/// <para>包含在分析邻域中的时间步长间隔数。 该值用于确定应将哪些要素一起分析以便访问本地时空聚类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -119,8 +120,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Polygon Analysis Mask</para>
-		/// <para>A polygon feature layer with one or more polygons defining the analysis study area. You would use a polygon analysis mask to exclude a large lake from the analysis, for example. Bins defined in the Input Space Time Cube that fall outside of the mask will not be included in the analysis.</para>
-		/// <para>This parameter is only available for grid cubes.</para>
+		/// <para>具有用于定义分析研究区域的一个或多个面的面要素图层。 例如，可使用面分析掩膜将大湖从分析中排除。 在输入时空立方体中定义并落在掩膜外的立方图格将不包括在分析中。</para>
+		/// <para>此参数仅适用于格网立方体。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -131,11 +132,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Conceptualization of Spatial Relationships</para>
-		/// <para>Specifies how spatial relationships among features are defined.</para>
-		/// <para>Fixed distance—Each bin is analyzed within the context of neighboring bins. Neighboring bins inside the specified critical distance (Neighborhood Distance) receive a weight of one and exert influence on computations for the target bin. Neighboring bins outside the critical distance receive a weight of zero and have no influence on a target bin&apos;s computations.</para>
-		/// <para>K nearest neighbors—The closest k bins are included in the analysis for the target bin; k is a specified numeric parameter.</para>
-		/// <para>Contiguity edges only—Only neighboring bins that share an edge will influence computations for the target polygon bin.</para>
-		/// <para>Contiguity edges corners—Bins that share an edge or share a node will influence computations for the target polygon bin.</para>
+		/// <para>指定要素空间关系的定义方式。</para>
+		/// <para>固定距离—对邻近条柱环境内的每个条柱进行分析。 在指定临界距离（邻域距离）内的邻近条柱将分配值为 1 的权重，并对目标条柱的计算产生影响。 在指定临界距离外的邻近条柱将分配值为零的权重，并且不会对目标条柱的计算产生任何影响。</para>
+		/// <para>K - 最近邻—将最近的 k 条柱包含在目标条柱的分析中；k 是指定的数字参数。</para>
+		/// <para>仅邻接边—只有共用边的邻近条柱会影响目标面条柱的计算。</para>
+		/// <para>邻接边拐角—共用边或节点的条柱会影响目标面条柱的计算。</para>
 		/// <para><see cref="ConceptualizationOfSpatialRelationshipsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -145,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Number of Spatial Neighbors</para>
-		/// <para>An integer specifying either the minimum or the exact number of neighbors to include in calculations for the target bin. For K nearest neighbors, each bin will have exactly this specified number of neighbors. For Fixed distance, each bin will have at least this many neighbors (the threshold distance will be temporarily extended to ensure this many neighbors if necessary). When one of the contiguity conceptualizations are selected, each bin will be assigned this minimum number of neighbors. For bins with fewer than this number of contiguous neighbors, additional neighbors will be based on feature centroid proximity.</para>
+		/// <para>用于指定邻域的最小数目或精确数目以包括在目标条柱的计算中的整数。 对于 K 最近邻，每个条柱的相邻要素数正好等于这个指定数目。 对于固定距离，每个条柱将至少具有这么多的相邻要素（如有必要，阈值距离将临时增大以确保达到这么多的相邻要素）。 选中一个邻接概念化后，将向每个条柱分配至少该最小数目的相邻要素。 对于具有少于此相邻要素数目的条柱，将根据要素质心邻近性获得附加相邻要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -154,10 +155,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Define Global Window</para>
-		/// <para>The statistic works by comparing a local statistic calculated from the neighbors for each bin to a global value. This parameter can be used to control which bins are used to calculate the global value.</para>
-		/// <para>Entire cube—Each neighborhood is analyzed in comparison to the entire cube. This is the default.</para>
-		/// <para>Neighborhood Time Step—Each neighborhood is analyzed in comparison to the bins contained within the Neighborhood Time Step specified.</para>
-		/// <para>Individual time step—Each neighborhood is analyzed in comparison to the bins in the same time step.</para>
+		/// <para>统计数据工作原理为对根据每个条柱的邻域计算的局部统计数据与全局值进行比较。 可以使用此参数来控制用于计算全局值的条柱。</para>
+		/// <para>整个立方体—将对每个邻域进行分析，与整个立方体进行比较。 这是默认设置。</para>
+		/// <para>邻域时间步长—将对每个邻域进行分析，与指定邻域时间步长内包含的条柱进行比较。</para>
+		/// <para>单一时间步长—将每个邻域进行分析，与相同时间步长内的条柱进行比较。</para>
 		/// <para><see cref="DefineGlobalWindowEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -217,31 +218,31 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		public enum ConceptualizationOfSpatialRelationshipsEnum 
 		{
 			/// <summary>
-			/// <para>Fixed distance—Each bin is analyzed within the context of neighboring bins. Neighboring bins inside the specified critical distance (Neighborhood Distance) receive a weight of one and exert influence on computations for the target bin. Neighboring bins outside the critical distance receive a weight of zero and have no influence on a target bin&apos;s computations.</para>
+			/// <para>固定距离—对邻近条柱环境内的每个条柱进行分析。 在指定临界距离（邻域距离）内的邻近条柱将分配值为 1 的权重，并对目标条柱的计算产生影响。 在指定临界距离外的邻近条柱将分配值为零的权重，并且不会对目标条柱的计算产生任何影响。</para>
 			/// </summary>
 			[GPValue("FIXED_DISTANCE")]
-			[Description("Fixed distance")]
+			[Description("固定距离")]
 			Fixed_distance,
 
 			/// <summary>
-			/// <para>K nearest neighbors—The closest k bins are included in the analysis for the target bin; k is a specified numeric parameter.</para>
+			/// <para>K - 最近邻—将最近的 k 条柱包含在目标条柱的分析中；k 是指定的数字参数。</para>
 			/// </summary>
 			[GPValue("K_NEAREST_NEIGHBORS")]
-			[Description("K nearest neighbors")]
+			[Description("K - 最近邻")]
 			K_nearest_neighbors,
 
 			/// <summary>
-			/// <para>Contiguity edges only—Only neighboring bins that share an edge will influence computations for the target polygon bin.</para>
+			/// <para>仅邻接边—只有共用边的邻近条柱会影响目标面条柱的计算。</para>
 			/// </summary>
 			[GPValue("CONTIGUITY_EDGES_ONLY")]
-			[Description("Contiguity edges only")]
+			[Description("仅邻接边")]
 			Contiguity_edges_only,
 
 			/// <summary>
-			/// <para>Contiguity edges corners—Bins that share an edge or share a node will influence computations for the target polygon bin.</para>
+			/// <para>邻接边拐角—共用边或节点的条柱会影响目标面条柱的计算。</para>
 			/// </summary>
 			[GPValue("CONTIGUITY_EDGES_CORNERS")]
-			[Description("Contiguity edges corners")]
+			[Description("邻接边拐角")]
 			Contiguity_edges_corners,
 
 		}
@@ -252,24 +253,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		public enum DefineGlobalWindowEnum 
 		{
 			/// <summary>
-			/// <para>Entire cube—Each neighborhood is analyzed in comparison to the entire cube. This is the default.</para>
+			/// <para>整个立方体—将对每个邻域进行分析，与整个立方体进行比较。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("ENTIRE_CUBE")]
-			[Description("Entire cube")]
+			[Description("整个立方体")]
 			Entire_cube,
 
 			/// <summary>
-			/// <para>Neighborhood Time Step—Each neighborhood is analyzed in comparison to the bins contained within the Neighborhood Time Step specified.</para>
+			/// <para>邻域时间步长—将对每个邻域进行分析，与指定邻域时间步长内包含的条柱进行比较。</para>
 			/// </summary>
 			[GPValue("NEIGHBORHOOD_TIME_STEP")]
-			[Description("Neighborhood Time Step")]
+			[Description("邻域时间步长")]
 			Neighborhood_Time_Step,
 
 			/// <summary>
-			/// <para>Individual time step—Each neighborhood is analyzed in comparison to the bins in the same time step.</para>
+			/// <para>单一时间步长—将每个邻域进行分析，与相同时间步长内的条柱进行比较。</para>
 			/// </summary>
 			[GPValue("INDIVIDUAL_TIME_STEP")]
-			[Description("Individual time step")]
+			[Description("单一时间步长")]
 			Individual_time_step,
 
 		}

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Warp From File</para>
-	/// <para>Transforms a raster dataset using an existing text file containing source and target control points.</para>
+	/// <para>基于文件扭曲</para>
+	/// <para>使用包含源控制点和目标控制点的现有文本文件转换栅格数据集。</para>
 	/// </summary>
 	public class WarpFromFile : AbstractGPProcess
 	{
@@ -20,29 +21,29 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The raster to be transformed.</para>
+		/// <para>要转换的栅格。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster Dataset</para>
-		/// <para>The name, location, and format for the dataset you are creating. When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset. When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a compression type and compression quality using environment settings.</para>
-		/// <para>.bil—Esri BIL</para>
-		/// <para>.bip—Esri BIP</para>
-		/// <para>.bmp—BMP</para>
-		/// <para>.bsq—Esri BSQ</para>
-		/// <para>.dat—ENVI DAT</para>
-		/// <para>.gif—GIF</para>
-		/// <para>.img—ERDAS IMAGINE</para>
-		/// <para>.jpg—JPEG</para>
-		/// <para>.jp2—JPEG 2000</para>
-		/// <para>.png—PNG</para>
-		/// <para>.tif—TIFF</para>
-		/// <para>.mrf—MRF</para>
-		/// <para>.crf—CRF</para>
-		/// <para>No extension for Esri Grid</para>
+		/// <para>要创建的数据集的名称、位置和格式。将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。将栅格数据集存储到 JPEG 文件、JPEG 2000 文件、TIFF 文件或地理数据库时，可以使用环境设置指定压缩类型和压缩质量。</para>
+		/// <para>.bil - Esri BIL</para>
+		/// <para>.bip - Esri BIP</para>
+		/// <para>.bmp - BMP</para>
+		/// <para>.bsq - Esri BSQ</para>
+		/// <para>.dat - ENVI DAT</para>
+		/// <para>.gif - GIF</para>
+		/// <para>.img - ERDAS IMAGINE</para>
+		/// <para>.jpg - JPEG</para>
+		/// <para>.jp2 - JPEG 2000</para>
+		/// <para>.png - PNG</para>
+		/// <para>.tif - TIFF</para>
+		/// <para>.mrf - MRF</para>
+		/// <para>.crf - CRF</para>
+		/// <para>Esri Grid 无扩展名</para>
 		/// </param>
 		/// <param name="LinkFile">
 		/// <para>Link File</para>
-		/// <para>The text, CSV file, or TAB file containing the coordinates to warp the input raster. This can be generated from the Register Raster tool or from the Georeferencing tab.</para>
+		/// <para>包含要扭曲输入栅格的坐标的文本、CSV 文件或 TAB 文件。该文件可以通过注册栅格工具或地理配准选项卡进行生成。</para>
 		/// </param>
 		public WarpFromFile(object InRaster, object OutRaster, object LinkFile)
 		{
@@ -52,9 +53,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Warp From File</para>
+		/// <para>Tool Display Name : 基于文件扭曲</para>
 		/// </summary>
-		public override string DisplayName() => "Warp From File";
+		public override string DisplayName() => "基于文件扭曲";
 
 		/// <summary>
 		/// <para>Tool Name : WarpFromFile</para>
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The raster to be transformed.</para>
+		/// <para>要转换的栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -96,21 +97,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Raster Dataset</para>
-		/// <para>The name, location, and format for the dataset you are creating. When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset. When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a compression type and compression quality using environment settings.</para>
-		/// <para>.bil—Esri BIL</para>
-		/// <para>.bip—Esri BIP</para>
-		/// <para>.bmp—BMP</para>
-		/// <para>.bsq—Esri BSQ</para>
-		/// <para>.dat—ENVI DAT</para>
-		/// <para>.gif—GIF</para>
-		/// <para>.img—ERDAS IMAGINE</para>
-		/// <para>.jpg—JPEG</para>
-		/// <para>.jp2—JPEG 2000</para>
-		/// <para>.png—PNG</para>
-		/// <para>.tif—TIFF</para>
-		/// <para>.mrf—MRF</para>
-		/// <para>.crf—CRF</para>
-		/// <para>No extension for Esri Grid</para>
+		/// <para>要创建的数据集的名称、位置和格式。将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。将栅格数据集存储到 JPEG 文件、JPEG 2000 文件、TIFF 文件或地理数据库时，可以使用环境设置指定压缩类型和压缩质量。</para>
+		/// <para>.bil - Esri BIL</para>
+		/// <para>.bip - Esri BIP</para>
+		/// <para>.bmp - BMP</para>
+		/// <para>.bsq - Esri BSQ</para>
+		/// <para>.dat - ENVI DAT</para>
+		/// <para>.gif - GIF</para>
+		/// <para>.img - ERDAS IMAGINE</para>
+		/// <para>.jpg - JPEG</para>
+		/// <para>.jp2 - JPEG 2000</para>
+		/// <para>.png - PNG</para>
+		/// <para>.tif - TIFF</para>
+		/// <para>.mrf - MRF</para>
+		/// <para>.crf - CRF</para>
+		/// <para>Esri Grid 无扩展名</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -118,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Link File</para>
-		/// <para>The text, CSV file, or TAB file containing the coordinates to warp the input raster. This can be generated from the Register Raster tool or from the Georeferencing tab.</para>
+		/// <para>包含要扭曲输入栅格的坐标的文本、CSV 文件或 TAB 文件。该文件可以通过注册栅格工具或地理配准选项卡进行生成。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETextFile()]
@@ -126,15 +127,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Transformation Type</para>
-		/// <para>Specifies the transformation method for shifting the raster dataset.</para>
-		/// <para>Shift only— This method uses a zero-order polynomial to shift your data. This is commonly used when your data is already georeferenced, but a small shift will better line up your data. Only one link is required to perform a zero-order polynomial shift.</para>
-		/// <para>Similarity transformation— This is a first order transformation that attempts to preserve the shape of the original raster. The RMS error tends to be higher than other polynomial transformations because the preservation of shape is more important than the best fit.</para>
-		/// <para>Affine transformation—A first-order polynomial (affine) fits a flat plane to the input points.</para>
-		/// <para>Second-order polynomial transformation—A second-order polynomial fits a somewhat more complicated surface to the input points.</para>
-		/// <para>Third-order polynomial transformation—A third-order polynomial fits a more complicated surface to the input points.</para>
-		/// <para>Optimize for global and local accuracy— This method combines a polynomial transformation and uses a triangulated irregular network (TIN) interpolation technique to optimize for both global and local accuracy.</para>
-		/// <para>Spline transformation— This method transforms the source control points precisely to the target control points. In the output, the control points will be accurate, but the raster pixels between the control points are not.</para>
-		/// <para>Projective transformation— This method warps lines so they remain straight. In doing so, lines that were once parallel may no longer remain parallel. The projective transformation is especially useful for oblique imagery, scanned maps, and for some imagery products.</para>
+		/// <para>指定用于平移栅格数据集的变换方法。</para>
+		/// <para>仅平移—此方法使用零阶多项式平移数据。 当数据已进行地理配准但通过微小的平移可以更好的排列数据时，通常使用该多项式。 执行零阶多项式平移只需要一个连接线。</para>
+		/// <para>相似变换—此变换为尝试保存原始栅格形状的一阶变换。 RMS 错误会高于其他多项式变换，因为保存形状比最佳大小更重要。</para>
+		/// <para>仿射变换—一阶多项式（仿射）将输入点拟合为平面。</para>
+		/// <para>二阶多项式变换—二阶多项式将输入点拟合为稍微复杂一些的曲面。</para>
+		/// <para>三阶多项式变换—三阶多项式将输入点拟合为更为复杂的曲面。</para>
+		/// <para>优化全局精度和局部精度—此方法结合多项式变换并使用不规则三角网 (TIN) 插值法对全局和局部精度进行优化。</para>
+		/// <para>样条函数变换—此方法将源控制点准确地变换为目标控制点。 在输出中，控制点是准确的，只是控制点之间的栅格像素则不准确。</para>
+		/// <para>射影变换—此方法将扭曲线以使其保持平直。 进行变换时，之前平行的线可能不再保持平行。 投影变换尤其适用于倾斜的影像、扫描的地图和一些影像产品。</para>
 		/// <para><see cref="TransformationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -144,13 +145,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Resampling Technique</para>
-		/// <para>The resampling algorithm to be used.</para>
-		/// <para>Nearest neighbor— Nearest neighbor is the fastest resampling method; it minimizes changes to pixel values since no new values are created. It is suitable for discrete data, such as land cover.</para>
-		/// <para>Bilinear interpolation— Bilinear interpolation calculates the value of each pixel by averaging (weighted for distance) the values of the surrounding four pixels. It is suitable for continuous data.</para>
-		/// <para>Cubic convolution— Cubic convolution calculates the value of each pixel by fitting a smooth curve based on the surrounding 16 pixels. This produces the smoothest image but can create values outside of the range found in the source data. It is suitable for continuous data.</para>
-		/// <para>Majority resampling—Majority resampling determines the value of each pixel based on the most popular value in a 3 by 3 window. Suitable for discrete data.</para>
-		/// <para>The Nearest and Majority options are used for categorical data, such as a land-use classification. The Nearest option is the default since it is the quickest and also because it will not change the cell values. Do not use either of these for continuous data, such as elevation surfaces.</para>
-		/// <para>The Bilinear option and the Cubic option are most appropriate for continuous data. It is recommended that neither of these be used with categorical data because the cell values may be altered.</para>
+		/// <para>要使用的重采样算法。</para>
+		/// <para>最邻近—最邻近法是最快的重采样方法；因为没有新值创建，此方法可将像素值的更改内容最小化。 适用于离散数据，例如土地覆被。</para>
+		/// <para>双线性插值法—双线性插值可通过计算（距离权重）周围 4 像素的平均值来计算每个像素的值。 适用于连续数据。</para>
+		/// <para>三次卷积插值法—三次卷积插值法通过根据周围的 16 像素拟合平滑曲线来计算每个像素的值。 此操作将生成平滑影像，但可创建位于源数据中超出范围外的值。 适用于连续数据。</para>
+		/// <para>众数重采样法—众数重采样法基于 3 x 3 窗口中出现频率最高的值来确定每个像素的值。 适用于离散数据。</para>
+		/// <para>最邻近和众数选项用于分类数据，如土地利用分类。 最邻近选项是默认设置，因为它是最快的插值法，同时也因为它不会更改像元值。 请勿对连续数据（如高程表面）使用其中任何一个选项。</para>
+		/// <para>双线性选项和三次选项最适用于连续数据。 不建议对分类数据使用其中任何一个选项，因为像元值可能被更改。</para>
 		/// <para><see cref="ResamplingTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -175,59 +176,59 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TransformationTypeEnum 
 		{
 			/// <summary>
-			/// <para>Shift only— This method uses a zero-order polynomial to shift your data. This is commonly used when your data is already georeferenced, but a small shift will better line up your data. Only one link is required to perform a zero-order polynomial shift.</para>
+			/// <para>仅平移—此方法使用零阶多项式平移数据。 当数据已进行地理配准但通过微小的平移可以更好的排列数据时，通常使用该多项式。 执行零阶多项式平移只需要一个连接线。</para>
 			/// </summary>
 			[GPValue("POLYORDER0")]
-			[Description("Shift only")]
+			[Description("仅平移")]
 			Shift_only,
 
 			/// <summary>
-			/// <para>Similarity transformation— This is a first order transformation that attempts to preserve the shape of the original raster. The RMS error tends to be higher than other polynomial transformations because the preservation of shape is more important than the best fit.</para>
+			/// <para>相似变换—此变换为尝试保存原始栅格形状的一阶变换。 RMS 错误会高于其他多项式变换，因为保存形状比最佳大小更重要。</para>
 			/// </summary>
 			[GPValue("POLYSIMILARITY")]
-			[Description("Similarity transformation")]
+			[Description("相似变换")]
 			Similarity_transformation,
 
 			/// <summary>
-			/// <para>Affine transformation—A first-order polynomial (affine) fits a flat plane to the input points.</para>
+			/// <para>仿射变换—一阶多项式（仿射）将输入点拟合为平面。</para>
 			/// </summary>
 			[GPValue("POLYORDER1")]
-			[Description("Affine transformation")]
+			[Description("仿射变换")]
 			Affine_transformation,
 
 			/// <summary>
-			/// <para>Second-order polynomial transformation—A second-order polynomial fits a somewhat more complicated surface to the input points.</para>
+			/// <para>二阶多项式变换—二阶多项式将输入点拟合为稍微复杂一些的曲面。</para>
 			/// </summary>
 			[GPValue("POLYORDER2")]
-			[Description("Second-order polynomial transformation")]
+			[Description("二阶多项式变换")]
 			POLYORDER2,
 
 			/// <summary>
-			/// <para>Third-order polynomial transformation—A third-order polynomial fits a more complicated surface to the input points.</para>
+			/// <para>三阶多项式变换—三阶多项式将输入点拟合为更为复杂的曲面。</para>
 			/// </summary>
 			[GPValue("POLYORDER3")]
-			[Description("Third-order polynomial transformation")]
+			[Description("三阶多项式变换")]
 			POLYORDER3,
 
 			/// <summary>
-			/// <para>Optimize for global and local accuracy— This method combines a polynomial transformation and uses a triangulated irregular network (TIN) interpolation technique to optimize for both global and local accuracy.</para>
+			/// <para>优化全局精度和局部精度—此方法结合多项式变换并使用不规则三角网 (TIN) 插值法对全局和局部精度进行优化。</para>
 			/// </summary>
 			[GPValue("ADJUST")]
-			[Description("Optimize for global and local accuracy")]
+			[Description("优化全局精度和局部精度")]
 			Optimize_for_global_and_local_accuracy,
 
 			/// <summary>
-			/// <para>Spline transformation— This method transforms the source control points precisely to the target control points. In the output, the control points will be accurate, but the raster pixels between the control points are not.</para>
+			/// <para>样条函数变换—此方法将源控制点准确地变换为目标控制点。 在输出中，控制点是准确的，只是控制点之间的栅格像素则不准确。</para>
 			/// </summary>
 			[GPValue("SPLINE")]
-			[Description("Spline transformation")]
+			[Description("样条函数变换")]
 			Spline_transformation,
 
 			/// <summary>
-			/// <para>Projective transformation— This method warps lines so they remain straight. In doing so, lines that were once parallel may no longer remain parallel. The projective transformation is especially useful for oblique imagery, scanned maps, and for some imagery products.</para>
+			/// <para>射影变换—此方法将扭曲线以使其保持平直。 进行变换时，之前平行的线可能不再保持平行。 投影变换尤其适用于倾斜的影像、扫描的地图和一些影像产品。</para>
 			/// </summary>
 			[GPValue("PROJECTIVE")]
-			[Description("Projective transformation")]
+			[Description("射影变换")]
 			Projective_transformation,
 
 		}
@@ -238,31 +239,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ResamplingTypeEnum 
 		{
 			/// <summary>
-			/// <para>Nearest neighbor— Nearest neighbor is the fastest resampling method; it minimizes changes to pixel values since no new values are created. It is suitable for discrete data, such as land cover.</para>
+			/// <para>最邻近—最邻近法是最快的重采样方法；因为没有新值创建，此方法可将像素值的更改内容最小化。 适用于离散数据，例如土地覆被。</para>
 			/// </summary>
 			[GPValue("NEAREST")]
-			[Description("Nearest neighbor")]
+			[Description("最邻近")]
 			Nearest_neighbor,
 
 			/// <summary>
-			/// <para>Bilinear interpolation— Bilinear interpolation calculates the value of each pixel by averaging (weighted for distance) the values of the surrounding four pixels. It is suitable for continuous data.</para>
+			/// <para>双线性插值法—双线性插值可通过计算（距离权重）周围 4 像素的平均值来计算每个像素的值。 适用于连续数据。</para>
 			/// </summary>
 			[GPValue("BILINEAR")]
-			[Description("Bilinear interpolation")]
+			[Description("双线性插值法")]
 			Bilinear_interpolation,
 
 			/// <summary>
-			/// <para>Cubic convolution— Cubic convolution calculates the value of each pixel by fitting a smooth curve based on the surrounding 16 pixels. This produces the smoothest image but can create values outside of the range found in the source data. It is suitable for continuous data.</para>
+			/// <para>三次卷积插值法—三次卷积插值法通过根据周围的 16 像素拟合平滑曲线来计算每个像素的值。 此操作将生成平滑影像，但可创建位于源数据中超出范围外的值。 适用于连续数据。</para>
 			/// </summary>
 			[GPValue("CUBIC")]
-			[Description("Cubic convolution")]
+			[Description("三次卷积插值法")]
 			Cubic_convolution,
 
 			/// <summary>
-			/// <para>Majority resampling—Majority resampling determines the value of each pixel based on the most popular value in a 3 by 3 window. Suitable for discrete data.</para>
+			/// <para>众数重采样法—众数重采样法基于 3 x 3 窗口中出现频率最高的值来确定每个像素的值。 适用于离散数据。</para>
 			/// </summary>
 			[GPValue("MAJORITY")]
-			[Description("Majority resampling")]
+			[Description("众数重采样法")]
 			Majority_resampling,
 
 		}

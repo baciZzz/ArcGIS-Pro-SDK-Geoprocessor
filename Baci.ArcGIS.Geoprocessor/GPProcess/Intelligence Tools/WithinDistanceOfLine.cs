@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Distance From Line</para>
+	/// <para>与线的距离</para>
 	/// <para>Entities near or along linear features</para>
 	/// </summary>
 	[Obsolete()]
@@ -36,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Distance From Line</para>
+		/// <para>Tool Display Name : 与线的距离</para>
 		/// </summary>
-		public override string DisplayName() => "Distance From Line";
+		public override string DisplayName() => "与线的距离";
 
 		/// <summary>
 		/// <para>Tool Name : WithinDistanceOfLine</para>

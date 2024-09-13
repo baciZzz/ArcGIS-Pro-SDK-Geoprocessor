@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Check In From Delta</para>
+	/// <para>Check In From Delta</para>
 	/// <para>Imports Changes from a delta file into the parent replica.</para>
 	/// </summary>
 	[Obsolete()]

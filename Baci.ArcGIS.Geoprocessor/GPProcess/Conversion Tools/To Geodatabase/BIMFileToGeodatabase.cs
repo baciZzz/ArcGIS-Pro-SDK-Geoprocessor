@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>BIM File To Geodatabase</para>
-	/// <para>Imports the contents of one or more BIM file workspaces into a single geodatabase feature dataset.</para>
+	/// <para>BIM 文件至地理数据库</para>
+	/// <para>将一个或多个 BIM 文件工作空间的内容导入单个地理数据库要素数据集。</para>
 	/// </summary>
 	public class BIMFileToGeodatabase : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InBimFileWorkspace">
 		/// <para>Input BIM File Workspace</para>
-		/// <para>The BIM file or files that will be converted to geodatabase feature classes.</para>
+		/// <para>将转换为地理数据库要素类的一个或多个 BIM 文件。</para>
 		/// </param>
 		/// <param name="OutGdbPath">
 		/// <para>Output Geodatabase</para>
-		/// <para>The geodatabase where the output feature dataset will be created. This must be an existing geodatabase.</para>
+		/// <para>将创建输出要素数据集的地理数据库。 该地理数据库必须是现有的地理数据库。</para>
 		/// </param>
 		/// <param name="OutDatasetName">
 		/// <para>Dataset</para>
-		/// <para>The building dataset name.</para>
+		/// <para>建筑数据集名称。</para>
 		/// </param>
 		public BIMFileToGeodatabase(object InBimFileWorkspace, object OutGdbPath, object OutDatasetName)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : BIM File To Geodatabase</para>
+		/// <para>Tool Display Name : BIM 文件至地理数据库</para>
 		/// </summary>
-		public override string DisplayName() => "BIM File To Geodatabase";
+		public override string DisplayName() => "BIM 文件至地理数据库";
 
 		/// <summary>
 		/// <para>Tool Name : BIMFileToGeodatabase</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input BIM File Workspace</para>
-		/// <para>The BIM file or files that will be converted to geodatabase feature classes.</para>
+		/// <para>将转换为地理数据库要素类的一个或多个 BIM 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Geodatabase</para>
-		/// <para>The geodatabase where the output feature dataset will be created. This must be an existing geodatabase.</para>
+		/// <para>将创建输出要素数据集的地理数据库。 该地理数据库必须是现有的地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Dataset</para>
-		/// <para>The building dataset name.</para>
+		/// <para>建筑数据集名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -100,8 +101,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Spatial Reference</para>
-		/// <para>The spatial reference of the output feature dataset.</para>
-		/// <para>To control other aspects of the spatial reference, such as the x,y-, z-, and m- domains, resolutions, and tolerances, set the appropriate geoprocessing environments.</para>
+		/// <para>输出要素数据集的空间参考。</para>
+		/// <para>要控制空间参考的其他方面（例如，xy 值域、z 值域、m 值域、分辨率和容差），设置相应的地理处理环境。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Identifier</para>
-		/// <para>A unique building identifier that will be added to all output feature classes. The identifier allows you to add unique names to each building to be used at a later time.</para>
+		/// <para>将添加到所有输出要素类中的唯一建筑物标识符。 您可利用标识符为每个稍后要使用的建筑物添加唯一的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>If Value Is</para>
-	/// <para>Evaluates an input value compared to a single value, a list of values, or a range of values using a defined comparison operator.</para>
+	/// <para>如果值为</para>
+	/// <para>可使用定义的比较运算符对输入值与单一值、值列表或值范围进行估算。</para>
 	/// </summary>
 	public class ValueIsIfThenElse : AbstractGPProcess
 	{
@@ -23,9 +24,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : If Value Is</para>
+		/// <para>Tool Display Name : 如果值为</para>
 		/// </summary>
-		public override string DisplayName() => "If Value Is";
+		public override string DisplayName() => "如果值为";
 
 		/// <summary>
 		/// <para>Tool Name : ValueIsIfThenElse</para>
@@ -59,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Input Value</para>
-		/// <para>The input value to evaluate.</para>
+		/// <para>要评估的输入值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPType()]
@@ -67,17 +68,17 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Value Test</para>
-		/// <para>Specifies the type of comparison operator to use.</para>
-		/// <para>Is equal to at least one value—Determine whether the input value is equal to any one of the comparison values. This is the default.</para>
-		/// <para>Does not match at least one value—Determine whether the input value is not equal to any one of the comparison values.</para>
-		/// <para>Does not match every value—Determine whether the input value is not equal to every comparison value.</para>
-		/// <para>Is between any one range of values—Determine whether the input value is between any one range of comparison values.</para>
-		/// <para>Is not between any range of values— Determine whether the input value is not between any range of comparison values.</para>
-		/// <para>Is less than—Determine whether the input value is less than the comparison value.</para>
-		/// <para>Is greater than—Determine whether the input value is greater than the comparison value.</para>
-		/// <para>Is less than or equal to—Determine whether the input value is less than or equal to the comparison value.</para>
-		/// <para>Is greater than or equal to—Determine whether the input value is greater than or equal to the comparison value.</para>
-		/// <para>Is empty—Determine whether the input value is empty.</para>
+		/// <para>指定要使用的比较运算符的类型。</para>
+		/// <para>至少等于一个值—确定输入值是否等于任何一个比较值。这是默认设置。</para>
+		/// <para>至少不匹配一个值—确定输入值是否不等于任何一个比较值。</para>
+		/// <para>不匹配每个值—确定输入值是否不等于每个比较值。</para>
+		/// <para>在任何一个值范围之内—确定输入值是否位于比较值的任何一个范围之内。</para>
+		/// <para>不在任何值范围之內— 确定输入值是否不在比较值的任何范围之内。</para>
+		/// <para>小于—确定输入值是否小于比较值。</para>
+		/// <para>大于—确定输入值是否大于比较值。</para>
+		/// <para>小于或等于—确定输入值是否小于或等于比较值。</para>
+		/// <para>大于或等于—确定输入值是否大于或等于比较值。</para>
+		/// <para>为空—确定输入值是否为空。</para>
 		/// <para><see cref="ValueTestEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -87,12 +88,12 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Comparison Type</para>
-		/// <para>Specifies the type of data comparison to use.</para>
-		/// <para>Case insensitive string—The input value is compared to the comparison values as a case insensitive string. This is the default.</para>
-		/// <para>Case sensitive string—The input value is compared to the comparison values as a case sensitive string.</para>
-		/// <para>Long—The input numeric value is compared to the comparison values as a Long type.</para>
-		/// <para>Double— The input numeric value is compared to the comparison values as a Double type.</para>
-		/// <para>Automatic data type detection—The input data type is checked and an equivalent data type comparison is performed. For example, compare the input and comparison values using string comparison for string type, long for long, and double for double. All other input data types use the default string comparison method.</para>
+		/// <para>指定要使用的数据比较类型。</para>
+		/// <para>不区分大小写的字符串—作为不区分大小写的字符串，将输入值与比较值进行比较。这是默认设置。</para>
+		/// <para>区分大小写的字符串—作为区分大小写的字符串，将输入值与比较值进行比较。</para>
+		/// <para>Long—作为长整型，将输入数值与比较值进行比较。</para>
+		/// <para>双精度— 作为双精度型，将输入数值与比较值进行比较。</para>
+		/// <para>自动数据类型检测—检查输入数据类型，并执行等效数据类型比较。例如，输入值与比较值之间的比较使用字符串型的字符串比较、长整型的长整型比较，以及双精度型的双精度型比较。所有其他输入数据类型将使用默认字符串比较方法。</para>
 		/// <para><see cref="ComparisonTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Values</para>
-		/// <para>The list of values to compare to the input value.</para>
+		/// <para>要与输入值进行比较的值列表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -110,9 +111,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Range Values</para>
-		/// <para>Specifies the range values to compare to the input value.</para>
-		/// <para>Minimum—The input value is compared to the minimum value in the range.</para>
-		/// <para>Maximum—The input value is compared to the maximum value in the range.</para>
+		/// <para>指定要与输入值进行比较的范围值。</para>
+		/// <para>最小值 - 将输入值与范围内的最小值进行比较。</para>
+		/// <para>最大值 - 将输入值与范围内的最大值进行比较。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Comparison Value</para>
-		/// <para>The single value to compare to the input value.</para>
+		/// <para>要与输入值进行比较的单个值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPType()]
@@ -148,73 +149,73 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum ValueTestEnum 
 		{
 			/// <summary>
-			/// <para>Is equal to at least one value—Determine whether the input value is equal to any one of the comparison values. This is the default.</para>
+			/// <para>至少等于一个值—确定输入值是否等于任何一个比较值。这是默认设置。</para>
 			/// </summary>
 			[GPValue("IS_EQUAL_TO_ANY")]
-			[Description("Is equal to at least one value")]
+			[Description("至少等于一个值")]
 			Is_equal_to_at_least_one_value,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>至少不匹配一个值—确定输入值是否不等于任何一个比较值。</para>
 			/// </summary>
 			[GPValue("IS_NOT_EQUAL_TO_ANY")]
-			[Description("Does  not match at least one value")]
+			[Description("至少不匹配一个值")]
 			Does__not_match_at_least_one_value,
 
 			/// <summary>
-			/// <para>Does not match every value—Determine whether the input value is not equal to every comparison value.</para>
+			/// <para>不匹配每个值—确定输入值是否不等于每个比较值。</para>
 			/// </summary>
 			[GPValue("IS_NOT_EQUAL_TO_ALL")]
-			[Description("Does not match every value")]
+			[Description("不匹配每个值")]
 			Does_not_match_every_value,
 
 			/// <summary>
-			/// <para>Is between any one range of values—Determine whether the input value is between any one range of comparison values.</para>
+			/// <para>在任何一个值范围之内—确定输入值是否位于比较值的任何一个范围之内。</para>
 			/// </summary>
 			[GPValue("IS_BETWEEN_ANY")]
-			[Description("Is between any one range of values")]
+			[Description("在任何一个值范围之内")]
 			Is_between_any_one_range_of_values,
 
 			/// <summary>
-			/// <para>Is not between any range of values— Determine whether the input value is not between any range of comparison values.</para>
+			/// <para>不在任何值范围之內— 确定输入值是否不在比较值的任何范围之内。</para>
 			/// </summary>
 			[GPValue("IS_NOT_BETWEEN_ANY")]
-			[Description("Is not between any range of values")]
+			[Description("不在任何值范围之內")]
 			Is_not_between_any_range_of_values,
 
 			/// <summary>
-			/// <para>Is less than—Determine whether the input value is less than the comparison value.</para>
+			/// <para>小于—确定输入值是否小于比较值。</para>
 			/// </summary>
 			[GPValue("IS_LESS_THAN")]
-			[Description("Is less than")]
+			[Description("小于")]
 			Is_less_than,
 
 			/// <summary>
-			/// <para>Is greater than—Determine whether the input value is greater than the comparison value.</para>
+			/// <para>大于—确定输入值是否大于比较值。</para>
 			/// </summary>
 			[GPValue("IS_GREATER_THAN")]
-			[Description("Is greater than")]
+			[Description("大于")]
 			Is_greater_than,
 
 			/// <summary>
-			/// <para>Is less than or equal to—Determine whether the input value is less than or equal to the comparison value.</para>
+			/// <para>小于或等于—确定输入值是否小于或等于比较值。</para>
 			/// </summary>
 			[GPValue("IS_LESS_THAN_OR_EQUAL")]
-			[Description("Is less than or equal to")]
+			[Description("小于或等于")]
 			Is_less_than_or_equal_to,
 
 			/// <summary>
-			/// <para>Is greater than or equal to—Determine whether the input value is greater than or equal to the comparison value.</para>
+			/// <para>大于或等于—确定输入值是否大于或等于比较值。</para>
 			/// </summary>
 			[GPValue("IS_GREATER_THAN_OR_EQUAL")]
-			[Description("Is greater than or equal to")]
+			[Description("大于或等于")]
 			Is_greater_than_or_equal_to,
 
 			/// <summary>
-			/// <para>Is empty—Determine whether the input value is empty.</para>
+			/// <para>为空—确定输入值是否为空。</para>
 			/// </summary>
 			[GPValue("IS_EMPTY")]
-			[Description("Is empty")]
+			[Description("为空")]
 			Is_empty,
 
 		}
@@ -225,38 +226,38 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum ComparisonTypeEnum 
 		{
 			/// <summary>
-			/// <para>Case insensitive string—The input value is compared to the comparison values as a case insensitive string. This is the default.</para>
+			/// <para>不区分大小写的字符串—作为不区分大小写的字符串，将输入值与比较值进行比较。这是默认设置。</para>
 			/// </summary>
 			[GPValue("STRING_CASE_INSENSITIVE")]
-			[Description("Case insensitive string")]
+			[Description("不区分大小写的字符串")]
 			Case_insensitive_string,
 
 			/// <summary>
-			/// <para>Case sensitive string—The input value is compared to the comparison values as a case sensitive string.</para>
+			/// <para>区分大小写的字符串—作为区分大小写的字符串，将输入值与比较值进行比较。</para>
 			/// </summary>
 			[GPValue("STRING_CASE_SENSITIVE")]
-			[Description("Case sensitive string")]
+			[Description("区分大小写的字符串")]
 			Case_sensitive_string,
 
 			/// <summary>
-			/// <para>Long—The input numeric value is compared to the comparison values as a Long type.</para>
+			/// <para>Long—作为长整型，将输入数值与比较值进行比较。</para>
 			/// </summary>
 			[GPValue("LONG")]
 			[Description("Long")]
 			Long,
 
 			/// <summary>
-			/// <para>Double— The input numeric value is compared to the comparison values as a Double type.</para>
+			/// <para>双精度— 作为双精度型，将输入数值与比较值进行比较。</para>
 			/// </summary>
 			[GPValue("DOUBLE")]
-			[Description("Double")]
+			[Description("双精度")]
 			Double,
 
 			/// <summary>
-			/// <para>Automatic data type detection—The input data type is checked and an equivalent data type comparison is performed. For example, compare the input and comparison values using string comparison for string type, long for long, and double for double. All other input data types use the default string comparison method.</para>
+			/// <para>自动数据类型检测—检查输入数据类型，并执行等效数据类型比较。例如，输入值与比较值之间的比较使用字符串型的字符串比较、长整型的长整型比较，以及双精度型的双精度型比较。所有其他输入数据类型将使用默认字符串比较方法。</para>
 			/// </summary>
 			[GPValue("AUTO")]
-			[Description("Automatic data type detection")]
+			[Description("自动数据类型检测")]
 			Automatic_data_type_detection,
 
 		}

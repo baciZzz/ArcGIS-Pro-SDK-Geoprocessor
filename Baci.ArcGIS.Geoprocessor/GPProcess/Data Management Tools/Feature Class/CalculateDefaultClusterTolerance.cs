@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Calculate Default XY Tolerance</para>
+	/// <para>Calculate Default XY Tolerance</para>
 	/// <para>Calculates the default xy tolerance.</para>
 	/// </summary>
 	[Obsolete()]

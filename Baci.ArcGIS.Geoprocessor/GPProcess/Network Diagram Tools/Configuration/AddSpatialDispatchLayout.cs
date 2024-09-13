@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Spatial Dispatch Layout</para>
-	/// <para>Adds the Spatial Dispatch Layout algorithm to the list of layouts to be automatically chained at the end of the building of diagrams based on a given template. This tool also presets the Spatial Dispatch Layout algorithm parameters for any diagram based on that template.</para>
+	/// <para>添加空间分派布局</para>
+	/// <para>用于将“空间分派布局”算法添加到基于给定模板构建逻辑示意图结束时自动进行链接的布局列表。此工具还会针对基于该模板的任意逻辑示意图预设“空间分派布局”算法参数。</para>
 	/// </summary>
 	public class AddSpatialDispatchLayout : AbstractGPProcess
 	{
@@ -20,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template to modify.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to modify.</para>
+		/// <para>要修改的逻辑示意图模板的名称。</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
-		/// <para>Specifies whether the layout algorithm will automatically execute when generating diagrams based on the specified template.</para>
-		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
-		/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+		/// <para>指定是否将在基于指定模板生成逻辑示意图时自动执行布局算法。</para>
+		/// <para>选中 - 添加的布局算法会在基于输入逻辑示意图模板参数生成任何逻辑示意图的过程中自动运行。这是默认设置。为布局算法指定的参数值是在生成逻辑示意图的过程中用于运行布局的参数值。如果要对基于输入模板的任何逻辑示意图运行此算法，则还会默认加载这些参数值。</para>
+		/// <para>未选中 - 如果要对基于输入模板的任何逻辑示意图运行此算法，则还将默认加载当前为添加的布局逻辑示意图指定的所有参数值。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </param>
 		public AddSpatialDispatchLayout(object InUtilityNetwork, object TemplateName, object IsActive)
@@ -41,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Spatial Dispatch Layout</para>
+		/// <para>Tool Display Name : 添加空间分派布局</para>
 		/// </summary>
-		public override string DisplayName() => "Add Spatial Dispatch Layout";
+		public override string DisplayName() => "添加空间分派布局";
 
 		/// <summary>
 		/// <para>Tool Name : AddSpatialDispatchLayout</para>
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template to modify.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to modify.</para>
+		/// <para>要修改的逻辑示意图模板的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -93,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Active</para>
-		/// <para>Specifies whether the layout algorithm will automatically execute when generating diagrams based on the specified template.</para>
-		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
-		/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+		/// <para>指定是否将在基于指定模板生成逻辑示意图时自动执行布局算法。</para>
+		/// <para>选中 - 添加的布局算法会在基于输入逻辑示意图模板参数生成任何逻辑示意图的过程中自动运行。这是默认设置。为布局算法指定的参数值是在生成逻辑示意图的过程中用于运行布局的参数值。如果要对基于输入模板的任何逻辑示意图运行此算法，则还会默认加载这些参数值。</para>
+		/// <para>未选中 - 如果要对基于输入模板的任何逻辑示意图运行此算法，则还将默认加载当前为添加的布局逻辑示意图指定的所有参数值。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -105,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Preserve container layout</para>
-		/// <para>Specifies how the algorithm will process containers.</para>
-		/// <para>Checked—The layout algorithm will execute on the top graph of the diagram so containers are preserved.</para>
-		/// <para>Unchecked—The layout algorithm will execute on both content and noncontent features in the diagram. This is the default.</para>
+		/// <para>指定算法将如何处理容器。</para>
+		/// <para>选中 - 将对逻辑示意图的上方图执行布局算法，以保留容器。</para>
+		/// <para>未选中 - 将对逻辑示意图中的内容要素和非内容要素执行布局算法。这是默认设置。</para>
 		/// <para><see cref="AreContainersPreservedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -117,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Number of Iterations</para>
-		/// <para>The number of iterations to process. The default is 5.</para>
+		/// <para>要处理的迭代次数。默认值为 5。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -125,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Maximum Shift Factor</para>
-		/// <para>The maximum value used to increase the diagram junctions' displacement for junctions that are very close together. The greater the shift factor, the larger the separation between the diagram junctions that almost overlap. The default is 2.</para>
+		/// <para>最大值，用于增大十分接近的交汇点的逻辑示意图交汇点位移。平移系数越大，几乎叠置的逻辑示意图交汇点之间的间隔越大。默认值为 2。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -153,14 +154,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsActiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACTIVE")]
 			ACTIVE,
 
 			/// <summary>
-			/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INACTIVE")]
@@ -174,14 +175,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum AreContainersPreservedEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The layout algorithm will execute on the top graph of the diagram so containers are preserved.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE_CONTAINERS")]
 			PRESERVE_CONTAINERS,
 
 			/// <summary>
-			/// <para>Unchecked—The layout algorithm will execute on both content and noncontent features in the diagram. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("IGNORE_CONTAINERS")]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Generate Floor Transitions</para>
-	/// <para>Creates or updates transition line features that connect floors vertically.</para>
+	/// <para>生成楼层过渡</para>
+	/// <para>用于创建或更新垂直连接楼层的过渡线要素。</para>
 	/// </summary>
 	public class GenerateFloorTransitions : AbstractGPProcess
 	{
@@ -20,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		/// <param name="FacilityFeatures">
 		/// <para>Input Facility Features</para>
-		/// <para>The input polygon features representing a facility or facilities. In the Indoors model, this is the Facilities layer. The tool processes only the facilities represented by these features.</para>
+		/// <para>表示一个或多个设施点的输入面要素。 在 Indoors 模型中，此项将为 Facilities 图层。 该工具将仅处理这些要素表示的设施点。</para>
 		/// </param>
 		/// <param name="TransitionUnitFeatures">
 		/// <para>Transition Unit Features</para>
-		/// <para>The input polygon features representing the transition spaces in a facility. In the Indoors model, this is the Units layer.</para>
+		/// <para>表示设施点中的过渡空间的输入面要素。 在 Indoors 模型中，此项将为 Units 图层。</para>
 		/// </param>
 		/// <param name="PathwayFeatures">
 		/// <para>Pathway Features</para>
-		/// <para>The input polyline features representing preliminary pathways. The new transition features will snap to these polyline features. In the Indoors model, this will be the PrelimPathways layer.</para>
+		/// <para>表示初步路径的输入折线要素。 新的过渡要素将捕捉到这些折线要素。 在 Indoors 模型中，此项将为 PrelimPathways 图层。</para>
 		/// </param>
 		/// <param name="TargetTransitions">
 		/// <para>Target Transitions</para>
-		/// <para>An existing feature class or layer that will be updated with the new transitions. In the Indoors model, this is the PrelimTransitions layer.</para>
+		/// <para>将使用新过渡更新的现有要素类或图层。 在 Indoors 模型中，此项将为 PrelimTransitions 图层。</para>
 		/// </param>
 		public GenerateFloorTransitions(object FacilityFeatures, object TransitionUnitFeatures, object PathwayFeatures, object TargetTransitions)
 		{
@@ -43,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Floor Transitions</para>
+		/// <para>Tool Display Name : 生成楼层过渡</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Floor Transitions";
+		public override string DisplayName() => "生成楼层过渡";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateFloorTransitions</para>
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Facility Features</para>
-		/// <para>The input polygon features representing a facility or facilities. In the Indoors model, this is the Facilities layer. The tool processes only the facilities represented by these features.</para>
+		/// <para>表示一个或多个设施点的输入面要素。 在 Indoors 模型中，此项将为 Facilities 图层。 该工具将仅处理这些要素表示的设施点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Transition Unit Features</para>
-		/// <para>The input polygon features representing the transition spaces in a facility. In the Indoors model, this is the Units layer.</para>
+		/// <para>表示设施点中的过渡空间的输入面要素。 在 Indoors 模型中，此项将为 Units 图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Pathway Features</para>
-		/// <para>The input polyline features representing preliminary pathways. The new transition features will snap to these polyline features. In the Indoors model, this will be the PrelimPathways layer.</para>
+		/// <para>表示初步路径的输入折线要素。 新的过渡要素将捕捉到这些折线要素。 在 Indoors 模型中，此项将为 PrelimPathways 图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Target Transitions</para>
-		/// <para>An existing feature class or layer that will be updated with the new transitions. In the Indoors model, this is the PrelimTransitions layer.</para>
+		/// <para>将使用新过渡更新的现有要素类或图层。 在 Indoors 模型中，此项将为 PrelimTransitions 图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -123,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Elevator Delay</para>
-		/// <para>The average elevator transit time. It is one-half the time in seconds that an elevator passenger can expect to spend waiting to enter and exit the elevator. Using this parameter can improve routing and transit time calculations. The value must be equal to or greater than zero.</para>
+		/// <para>平均电梯过渡时间。 电梯乘客预期等待进入和离开电梯所花费时间的一半，以秒为单位。 使用此参数可以改善路径选择和过渡时间计算。 该值必须等于或大于零。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -132,9 +133,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Delete Existing Transitions</para>
-		/// <para>Specifies whether existing transition features in selected transition spaces will be deleted before creating new transition features. If this parameter is not used, Updated Transitions will include both existing and newly created transition features.</para>
-		/// <para>Checked—Existing transition features will be deleted. This is the default.</para>
-		/// <para>Unchecked—Existing transition features will not be deleted.</para>
+		/// <para>指定在创建新的过渡要素之前，是否将删除所选过渡空间中的现有过渡要素。 如果不使用此参数，则已更新的过渡将包含现有过渡要素和新创建的过渡要素。</para>
+		/// <para>选中 - 将删除现有过渡要素。 这是默认设置。</para>
+		/// <para>未选中 - 将不删除现有过渡要素。</para>
 		/// <para><see cref="DeleteExistingTransitionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -144,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Stairway Unit Expression</para>
-		/// <para>An SQL expression used to define which Transition Unit Features values represent step-based transitions, such as stairs and escalators.</para>
+		/// <para>一个 SQL 表达式，用于定义表示基于台阶的过渡的过渡单元要素值，例如楼梯和自动扶梯。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -152,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Elevator Unit Expression</para>
-		/// <para>An SQL expression used to define which Transition Unit Features values represent lift-based transitions, such as elevators.</para>
+		/// <para>一个 SQL 表达式，用于定义表示基于提升的过渡的过渡单元要素值，例如电梯。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -173,14 +174,14 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		public enum DeleteExistingTransitionsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Existing transition features will be deleted. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_FEATURES")]
 			DELETE_FEATURES,
 
 			/// <summary>
-			/// <para>Unchecked—Existing transition features will not be deleted.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DELETE_FEATURES")]

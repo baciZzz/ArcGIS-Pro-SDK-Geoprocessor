@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Clip Raster</para>
-	/// <para>Cuts out a portion of a raster dataset, mosaic dataset, or image service layer.</para>
+	/// <para>切片栅格</para>
+	/// <para>裁剪掉栅格数据集、镶嵌数据集或图像服务图层的一部分。</para>
 	/// </summary>
 	public class Clip : AbstractGPProcess
 	{
@@ -20,34 +21,34 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset, mosaic dataset, or image service to be clipped.</para>
+		/// <para>要裁剪的栅格数据集、镶嵌数据集或影像服务。</para>
 		/// </param>
 		/// <param name="Rectangle">
 		/// <para>Rectangle</para>
-		/// <para>The four coordinates that define the extent of the bounding box used to clip the raster.</para>
-		/// <para>If the clip extent specified is not aligned with the input raster dataset, the clip tool verifies that the proper alignment is used. This may cause the output to have a slightly different extent than specified in the tool.</para>
-		/// <para>Use the Clear button to reset the rectangle extent to the extent of the input raster dataset.</para>
+		/// <para>用于定义裁剪栅格时所使用的边界框范围的四个坐标。</para>
+		/// <para>如果指定的裁剪范围未与输入栅格数据集对齐，则裁剪工具可验证是否已使用适当的对齐方式。这可能使输出的实际范围与此工具中指定的范围略有不同。</para>
+		/// <para>可以使用清除按钮将矩形范围重置为输入栅格数据集的范围。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster Dataset</para>
-		/// <para>The name, location, and format of the dataset being created. Make sure that it can support the necessary bit depth.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
-		/// <para>.bil—Esri BIL</para>
-		/// <para>.bip—Esri BIP</para>
-		/// <para>.bmp—BMP</para>
-		/// <para>.bsq—Esri BSQ</para>
-		/// <para>.dat—ENVI DAT</para>
-		/// <para>.gif—GIF</para>
-		/// <para>.img—ERDAS IMAGINE</para>
-		/// <para>.jpg—JPEG</para>
-		/// <para>.jp2—JPEG 2000</para>
-		/// <para>.png—PNG</para>
-		/// <para>.tif—TIFF</para>
-		/// <para>.mrf—MRF</para>
-		/// <para>.crf—CRF</para>
-		/// <para>No extension for Esri Grid</para>
-		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>正在创建的数据集的名称、位置和格式。确保其支持必要的位深度。</para>
+		/// <para>以文件格式存储栅格数据集时，需要指定文件扩展名，具体如下：</para>
+		/// <para>.bil - Esri BIL</para>
+		/// <para>.bip - Esri BIP</para>
+		/// <para>.bmp - BMP</para>
+		/// <para>.bsq - Esri BSQ</para>
+		/// <para>.dat - ENVI DAT</para>
+		/// <para>.gif - GIF</para>
+		/// <para>.img - ERDAS IMAGINE</para>
+		/// <para>.jpg - JPEG</para>
+		/// <para>.jp2 - JPEG 2000</para>
+		/// <para>.png - PNG</para>
+		/// <para>.tif - TIFF</para>
+		/// <para>.mrf - MRF</para>
+		/// <para>.crf - CRF</para>
+		/// <para>Esri Grid 无扩展名</para>
+		/// <para>将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。</para>
+		/// <para>将栅格数据集存储到 JPEG 文件、JPEG 2000 文件、TIFF 文件或地理数据库时，可在地理处理环境中指定压缩类型和压缩质量。</para>
 		/// </param>
 		public Clip(object InRaster, object Rectangle, object OutRaster)
 		{
@@ -57,9 +58,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Clip Raster</para>
+		/// <para>Tool Display Name : 切片栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Clip Raster";
+		public override string DisplayName() => "切片栅格";
 
 		/// <summary>
 		/// <para>Tool Name : Clip</para>
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset, mosaic dataset, or image service to be clipped.</para>
+		/// <para>要裁剪的栅格数据集、镶嵌数据集或影像服务。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -101,9 +102,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Rectangle</para>
-		/// <para>The four coordinates that define the extent of the bounding box used to clip the raster.</para>
-		/// <para>If the clip extent specified is not aligned with the input raster dataset, the clip tool verifies that the proper alignment is used. This may cause the output to have a slightly different extent than specified in the tool.</para>
-		/// <para>Use the Clear button to reset the rectangle extent to the extent of the input raster dataset.</para>
+		/// <para>用于定义裁剪栅格时所使用的边界框范围的四个坐标。</para>
+		/// <para>如果指定的裁剪范围未与输入栅格数据集对齐，则裁剪工具可验证是否已使用适当的对齐方式。这可能使输出的实际范围与此工具中指定的范围略有不同。</para>
+		/// <para>可以使用清除按钮将矩形范围重置为输入栅格数据集的范围。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -111,24 +112,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Raster Dataset</para>
-		/// <para>The name, location, and format of the dataset being created. Make sure that it can support the necessary bit depth.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
-		/// <para>.bil—Esri BIL</para>
-		/// <para>.bip—Esri BIP</para>
-		/// <para>.bmp—BMP</para>
-		/// <para>.bsq—Esri BSQ</para>
-		/// <para>.dat—ENVI DAT</para>
-		/// <para>.gif—GIF</para>
-		/// <para>.img—ERDAS IMAGINE</para>
-		/// <para>.jpg—JPEG</para>
-		/// <para>.jp2—JPEG 2000</para>
-		/// <para>.png—PNG</para>
-		/// <para>.tif—TIFF</para>
-		/// <para>.mrf—MRF</para>
-		/// <para>.crf—CRF</para>
-		/// <para>No extension for Esri Grid</para>
-		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>正在创建的数据集的名称、位置和格式。确保其支持必要的位深度。</para>
+		/// <para>以文件格式存储栅格数据集时，需要指定文件扩展名，具体如下：</para>
+		/// <para>.bil - Esri BIL</para>
+		/// <para>.bip - Esri BIP</para>
+		/// <para>.bmp - BMP</para>
+		/// <para>.bsq - Esri BSQ</para>
+		/// <para>.dat - ENVI DAT</para>
+		/// <para>.gif - GIF</para>
+		/// <para>.img - ERDAS IMAGINE</para>
+		/// <para>.jpg - JPEG</para>
+		/// <para>.jp2 - JPEG 2000</para>
+		/// <para>.png - PNG</para>
+		/// <para>.tif - TIFF</para>
+		/// <para>.mrf - MRF</para>
+		/// <para>.crf - CRF</para>
+		/// <para>Esri Grid 无扩展名</para>
+		/// <para>将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。</para>
+		/// <para>将栅格数据集存储到 JPEG 文件、JPEG 2000 文件、TIFF 文件或地理数据库时，可在地理处理环境中指定压缩类型和压缩质量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -136,8 +137,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Extent</para>
-		/// <para>A raster dataset or feature class to use as the extent. The clip output includes any pixels that intersect the minimum bounding rectangle.</para>
-		/// <para>If a feature class is used as the output extent and you want to clip the raster based on the polygon features, check the Use Input Features for Clipping Geometry parameter. When this parameter is checked, the pixel depth of the output may be promoted. Therefore, make sure that the output format can support the proper pixel depth.</para>
+		/// <para>用作范围的栅格数据集或要素类。该裁剪输出包括了与最小外接矩形相交的所有像素。</para>
+		/// <para>将某要素类用作输出范围并且要基于面要素进行栅格裁剪时，请选中使用输入要素裁剪几何参数。选中此参数可能提高输出的像素深度。因此，请确保输出格式可以支持适当的像素深度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -145,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>NoData Value</para>
-		/// <para>The value for pixels to be considered as NoData.</para>
+		/// <para>充当 NoData 的像素值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -153,9 +154,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Use Input Features for Clipping Geometry</para>
-		/// <para>Specifies whether the data will be clipped to the minimum bounding rectangle or to the geometry of the feature class.</para>
-		/// <para>Unchecked—The minimum bounding rectangle is used to clip the data.</para>
-		/// <para>Checked—The geometry of the selected feature class is used to clip the data. The pixel depth of the output may be increased; therefore, make sure that the output format can support the proper pixel depth.</para>
+		/// <para>指定是否将数据裁剪为最小外接矩形或要素类的几何。</para>
+		/// <para>未选中 - 使用最小外接矩形来裁剪数据。</para>
+		/// <para>选中 - 使用选定要素类的几何来裁剪数据。可以增加输出的像素深度，因此需要确保输出格式可以支持适当的像素深度。</para>
 		/// <para><see cref="ClippingGeometryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -165,9 +166,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maintain Clipping Extent</para>
-		/// <para>Specifies the extent to use in the clipping output.</para>
-		/// <para>Checked—The number of columns and rows will be adjusted and the pixels will be resampled to exactly match the clipping extent specified.</para>
-		/// <para>Unchecked—The cell alignment of the input raster will be maintained and the output extent will be adjusted accordingly.</para>
+		/// <para>指定裁剪输出中使用的范围。</para>
+		/// <para>选中 - 将调整列数和行数并将对像素进行重采样，以便完全匹配指定的裁剪范围。</para>
+		/// <para>未选中 - 将保留输入栅格的像元对齐，并相应地调整输出范围。</para>
 		/// <para><see cref="MaintainClippingExtentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -192,14 +193,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ClippingGeometryEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The geometry of the selected feature class is used to clip the data. The pixel depth of the output may be increased; therefore, make sure that the output format can support the proper pixel depth.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ClippingGeometry")]
 			ClippingGeometry,
 
 			/// <summary>
-			/// <para>Unchecked—The minimum bounding rectangle is used to clip the data.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]
@@ -213,14 +214,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MaintainClippingExtentEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The number of columns and rows will be adjusted and the pixels will be resampled to exactly match the clipping extent specified.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MAINTAIN_EXTENT")]
 			MAINTAIN_EXTENT,
 
 			/// <summary>
-			/// <para>Unchecked—The cell alignment of the input raster will be maintained and the output extent will be adjusted accordingly.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_MAINTAIN_EXTENT")]

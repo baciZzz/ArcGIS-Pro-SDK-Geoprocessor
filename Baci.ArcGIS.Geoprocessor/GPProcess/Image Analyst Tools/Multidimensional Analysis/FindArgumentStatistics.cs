@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Find Argument Statistics</para>
-	/// <para>Extracts the dimension value  or band index at which a given statistic is attained for each pixel in a multidimensional or multiband raster.</para>
+	/// <para>查找参数统计信息</para>
+	/// <para>用于为多维或多波段栅格中的每个像素提取达到给定统计量的维度值或波段指数。</para>
 	/// </summary>
 	public class FindArgumentStatistics : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Multidimensional or Multiband Raster</para>
-		/// <para>The input multidimensional or multiband raster to be analyzed.</para>
+		/// <para>要分析的输入多维或多波段栅格。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster</para>
-		/// <para>The output raster dataset.</para>
+		/// <para>输出栅格数据集。</para>
 		/// </param>
 		public FindArgumentStatistics(object InRaster, object OutRaster)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Find Argument Statistics</para>
+		/// <para>Tool Display Name : 查找参数统计信息</para>
 		/// </summary>
-		public override string DisplayName() => "Find Argument Statistics";
+		public override string DisplayName() => "查找参数统计信息";
 
 		/// <summary>
 		/// <para>Tool Name : FindArgumentStatistics</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Multidimensional or Multiband Raster</para>
-		/// <para>The input multidimensional or multiband raster to be analyzed.</para>
+		/// <para>要分析的输入多维或多波段栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Raster</para>
-		/// <para>The output raster dataset.</para>
+		/// <para>输出栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -86,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Dimension</para>
-		/// <para>The dimension from which the statistic will be extracted. If the input raster is not a multidimensional raster, this parameter is not required.</para>
+		/// <para>将从中提取统计数据的维度。如果输入栅格不是多维栅格，则不需要此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -95,9 +96,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Dimension Definition</para>
-		/// <para>Specifies how the statistic will be extracted from the dimension.</para>
-		/// <para>All—The statistic will be extracted across all dimensions. This is the default.</para>
-		/// <para>Interval Keyword—The statistic will be extracted from the time dimension according to the interval keyword.</para>
+		/// <para>指定如何从维度中提取统计数据。</para>
+		/// <para>所有—将跨所有维度提取统计数据。这是默认设置。</para>
+		/// <para>间隔关键字—系统将根据间隔关键字从时间维度中提取统计数据。</para>
 		/// <para><see cref="DimensionDefEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -107,10 +108,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Keyword Interval</para>
-		/// <para>The unit of time for which the statistic will be extracted.</para>
-		/// <para>For example, you have five years of daily sea surface temperature data and you want to know the year in which the maximum temperature was observed. Set Statisitcs Type to Argument of the maximum, set Dimension Definition to Interval Keyword, and set Keyword Interval to Yearly.</para>
-		/// <para>Alternatively, if you want to know the month in which the maximum temperature was consistently observed, set Statistics Type to Argument of the maximum, setDimension Definition to Interval Keyword, and set Keyword Interval to Recurring Monthly. This will generate a raster in which each pixel contains the month in which the statistic was reached across the five-year record (08/18/2018, 08/25/2016, 08/07/2013, for example).</para>
-		/// <para>This parameter is required when the Dimension parameter is set to StdTime and the Dimension Definition parameter is set to Interval Keyword.</para>
+		/// <para>将用于提取统计数据的时间单位。</para>
+		/// <para>例如，您拥有五年的每日海面温度数据，且您希望知道观测到最高温度的年份。将统计类型设置为参数最大值，将维度定义设置为间隔关键字，并将关键字间隔设置为每年。</para>
+		/// <para>或者，如果您想知道在哪个月份可以一直观测到最高温度，请将统计类型设置为参数最大值，将维度定义设置为间隔关键字，并将关键字间隔设置为每月循环。该操作将生成一个栅格，其中每个像素都包含五年记录中达到统计数据的月份（例如 08/18/2018、08/25/2016、08/07/2013）。</para>
+		/// <para>当维度参数设置为 StdTime 且维度定义参数设置为间隔关键字时，此参数为必需项。</para>
 		/// <para><see cref="IntervalKeywordEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -120,8 +121,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Variables [Dimension Info] (Description)</para>
-		/// <para>The variable or variables to be analyzed. If the input raster is not multidimensional, the pixel values of the multiband raster are considered the variable. If the input raster is multidimensional and no variable is specified, all variables with the selected dimension will be analyzed.</para>
-		/// <para>For example, to find the years in which temperature values were highest, specify temperature as the variable to be analyzed. If you do not specify any variables and you have both temperature and precipitation variables, both variables will be analyzed, and the output multidimensional raster will include both variables.</para>
+		/// <para>要分析的一个或多个变量。如果输入栅格不是多维栅格，则系统会将多波段栅格的像素值视为变量。如果输入栅格是多维栅格，且未指定任何变量，则系统将分析具有所选维度的全部变量。</para>
+		/// <para>例如，要查找温度值最高的年份，请将温度指定为要分析的变量。如果您没有指定任何变量，并且您同时拥有温度和降水量变量，则将分析这两个变量，并且输出多维栅格将包含两个变量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -129,11 +130,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Statistics Type</para>
-		/// <para>Specifies the statistic to extract from the variable or variables along the given dimension.</para>
-		/// <para>Argument of the minimum—The dimension value at which the minimum variable value is reached will be extracted. This is the default.</para>
-		/// <para>Argument of the maximum—The dimension value at which the maximum variable value is reached will be extracted.</para>
-		/// <para>Argument of the median—The dimension value at which the median variable value is reached will be extracted.</para>
-		/// <para>Duration—The longest dimension duration value between the minimum and maximum variable values will be extracted.</para>
+		/// <para>指定要沿给定维度从一个或多个变量中提取的统计数据。</para>
+		/// <para>参数最小值—将提取达到最小变量值时的维度值。这是默认设置。</para>
+		/// <para>参数最大值—将提取达到最大变量值时的维度值。</para>
+		/// <para>参数中值—将提取达到变量中值时的维度值。</para>
+		/// <para>持续时间—将提取最小变量值和最大变量值之间的最长维度持续时间值。</para>
 		/// <para><see cref="StatisticsTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -143,8 +144,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Minimum Value</para>
-		/// <para>The minimum variable value to be used to extract the duration.</para>
-		/// <para>This parameter is required when the Statistics Type parameter is set to Duration.</para>
+		/// <para>用于提取持续时间的最小变量值。</para>
+		/// <para>当统计类型参数设置为持续时间时，此参数为必需项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -152,8 +153,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Maximum Value</para>
-		/// <para>The maximum variable value to be used to extract the duration.</para>
-		/// <para>This parameter is required when the Statistics Type parameter is set to Duration.</para>
+		/// <para>用于提取持续时间的最大变量值。</para>
+		/// <para>当统计类型参数设置为持续时间时，此参数为必需项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -161,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Multiple Occurrence Value</para>
-		/// <para>The pixel value to use to indicate that a given argument statistic was reached more than once in the input raster dataset. If not specified, the pixel value will be the value of the dimension the first time the argument statistic is reached.</para>
+		/// <para>用于表示输入栅格数据集中多次达到给定参数统计数据的像素值。如果未指定，则该像素值将是首次达到参数统计数据时的维度值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -169,9 +170,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Ignore NoData</para>
-		/// <para>Specifies whether NoData values are ignored in the analysis.</para>
-		/// <para>Checked—The analysis will include all valid pixels along a given dimension and ignore any NoData pixels. This is the default.</para>
-		/// <para>Unchecked—The analysis will result in NoData if there are any NoData values for the pixels along the given dimension.</para>
+		/// <para>指定分析中是否忽略 NoData 值。</para>
+		/// <para>已选中 - 分析将包括沿给定维度的所有有效像素，并忽略所有 NoData 像素。 这是默认设置。</para>
+		/// <para>未选中 - 如果沿给定维度的像素包含任意 NoData 值，则分析结果将变为 NoData。</para>
 		/// <para><see cref="IgnoreNodataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -196,17 +197,17 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum DimensionDefEnum 
 		{
 			/// <summary>
-			/// <para>All—The statistic will be extracted across all dimensions. This is the default.</para>
+			/// <para>所有—将跨所有维度提取统计数据。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All")]
+			[Description("所有")]
 			All,
 
 			/// <summary>
-			/// <para>Interval Keyword—The statistic will be extracted from the time dimension according to the interval keyword.</para>
+			/// <para>间隔关键字—系统将根据间隔关键字从时间维度中提取统计数据。</para>
 			/// </summary>
 			[GPValue("INTERVAL_KEYWORD")]
-			[Description("Interval Keyword")]
+			[Description("间隔关键字")]
 			Interval_Keyword,
 
 		}
@@ -220,70 +221,70 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 			/// <para></para>
 			/// </summary>
 			[GPValue("HOURLY")]
-			[Description("Hourly")]
+			[Description("每小时")]
 			Hourly,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("DAILY")]
-			[Description("Daily")]
+			[Description("每天")]
 			Daily,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("WEEKLY")]
-			[Description("Weekly")]
+			[Description("每周")]
 			Weekly,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("MONTHLY")]
-			[Description("Monthly")]
+			[Description("每月")]
 			Monthly,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("QUARTERLY")]
-			[Description("Quarterly")]
+			[Description("每季度")]
 			Quarterly,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("YEARLY")]
-			[Description("Yearly")]
+			[Description("每年")]
 			Yearly,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("RECURRING_DAILY")]
-			[Description("Recurring Daily")]
+			[Description("每天循环")]
 			Recurring_Daily,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("RECURRING_WEEKLY")]
-			[Description("Recurring Weekly")]
+			[Description("每周循环")]
 			Recurring_Weekly,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("RECURRING_MONTHLY")]
-			[Description("Recurring Monthly")]
+			[Description("每月循环")]
 			Recurring_Monthly,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("RECURRING_QUARTERLY")]
-			[Description("Recurring Quarterly")]
+			[Description("每季度循环")]
 			Recurring_Quarterly,
 
 		}
@@ -294,31 +295,31 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum StatisticsTypeEnum 
 		{
 			/// <summary>
-			/// <para>Argument of the minimum—The dimension value at which the minimum variable value is reached will be extracted. This is the default.</para>
+			/// <para>参数最小值—将提取达到最小变量值时的维度值。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ARGUMENT_MIN")]
-			[Description("Argument of the minimum")]
+			[Description("参数最小值")]
 			Argument_of_the_minimum,
 
 			/// <summary>
-			/// <para>Argument of the maximum—The dimension value at which the maximum variable value is reached will be extracted.</para>
+			/// <para>参数最大值—将提取达到最大变量值时的维度值。</para>
 			/// </summary>
 			[GPValue("ARGUMENT_MAX")]
-			[Description("Argument of the maximum")]
+			[Description("参数最大值")]
 			Argument_of_the_maximum,
 
 			/// <summary>
-			/// <para>Argument of the median—The dimension value at which the median variable value is reached will be extracted.</para>
+			/// <para>参数中值—将提取达到变量中值时的维度值。</para>
 			/// </summary>
 			[GPValue("ARGUMENT_MEDIAN")]
-			[Description("Argument of the median")]
+			[Description("参数中值")]
 			Argument_of_the_median,
 
 			/// <summary>
-			/// <para>Duration—The longest dimension duration value between the minimum and maximum variable values will be extracted.</para>
+			/// <para>持续时间—将提取最小变量值和最大变量值之间的最长维度持续时间值。</para>
 			/// </summary>
 			[GPValue("DURATION")]
-			[Description("Duration")]
+			[Description("持续时间")]
 			Duration,
 
 		}
@@ -329,14 +330,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum IgnoreNodataEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The analysis will include all valid pixels along a given dimension and ignore any NoData pixels. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DATA")]
 			DATA,
 
 			/// <summary>
-			/// <para>Unchecked—The analysis will result in NoData if there are any NoData values for the pixels along the given dimension.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NODATA")]

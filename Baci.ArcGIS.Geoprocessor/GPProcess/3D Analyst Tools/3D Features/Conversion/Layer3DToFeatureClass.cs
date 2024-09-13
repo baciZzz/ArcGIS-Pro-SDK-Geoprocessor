@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Layer 3D To Feature Class</para>
-	/// <para>Exports feature layers with 3D display properties to 3D lines or multipatch features.</para>
+	/// <para>3D 图层转要素类</para>
+	/// <para>将具有 3D 显示属性的要素图层导出为 3D 线或多面体要素。</para>
 	/// </summary>
 	public class Layer3DToFeatureClass : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatureLayer">
 		/// <para>Input Feature Layer</para>
-		/// <para>The input feature layer with 3D display properties defined.</para>
+		/// <para>定义了 3D 显示属性的输入要素图层。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class with 3D features. Extruded points will be exported as 3D lines. Points with 3D symbols, extruded lines, and polygons will be exported as multipatch features.</para>
+		/// <para>具有 3D 要素的输出要素类。拉伸点将导出为 3D 线。具有 3D 符号的点、拉伸线和面将导出为多面体要素。</para>
 		/// </param>
 		public Layer3DToFeatureClass(object InFeatureLayer, object OutFeatureClass)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Layer 3D To Feature Class</para>
+		/// <para>Tool Display Name : 3D 图层转要素类</para>
 		/// </summary>
-		public override string DisplayName() => "Layer 3D To Feature Class";
+		public override string DisplayName() => "3D 图层转要素类";
 
 		/// <summary>
 		/// <para>Tool Name : Layer3DToFeatureClass</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Feature Layer</para>
-		/// <para>The input feature layer with 3D display properties defined.</para>
+		/// <para>定义了 3D 显示属性的输入要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class with 3D features. Extruded points will be exported as 3D lines. Points with 3D symbols, extruded lines, and polygons will be exported as multipatch features.</para>
+		/// <para>具有 3D 要素的输出要素类。拉伸点将导出为 3D 线。具有 3D 符号的点、拉伸线和面将导出为多面体要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Grouping Field</para>
-		/// <para>The input feature's text field that will be used to merge multiple input features into the same output feature. The resulting output's remaining attributes will be inherited from one of the input records.</para>
+		/// <para>用于将多个输入要素合并为同一输出要素的输入要素文本字段。所生成输出的其余属性将从其中一个输入记录继承。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -97,9 +98,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Disable Color and Texture</para>
-		/// <para>Specifies whether color and texture properties will be maintained when exporting a 3D layer to a multipatch feature class.</para>
-		/// <para>Checked—Colors and textures will not be stored as part of the multipatch definition. This is the default.</para>
-		/// <para>Unchecked—Colors and textures will be preserved with the multipatch.</para>
+		/// <para>指定将 3D 图层导出为多面体要素类时，是否要保留颜色和纹理属性。</para>
+		/// <para>选中 - 不会将颜色和纹理保存为多面体定义的一部分。这是默认设置。</para>
+		/// <para>未选中 - 将颜色与纹理保存在多面体中。</para>
 		/// <para><see cref="DisableMaterialsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -124,14 +125,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum DisableMaterialsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Colors and textures will not be stored as part of the multipatch definition. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DISABLE_COLORS_AND_TEXTURES")]
 			DISABLE_COLORS_AND_TEXTURES,
 
 			/// <summary>
-			/// <para>Unchecked—Colors and textures will be preserved with the multipatch.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ENABLE_COLORS_AND_TEXTURES")]

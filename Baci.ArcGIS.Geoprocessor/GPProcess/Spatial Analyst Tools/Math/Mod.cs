@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Mod</para>
-	/// <para>Finds the remainder (modulo) of the first raster when divided by the second raster on a cell-by-cell basis.</para>
+	/// <para>求模</para>
+	/// <para>逐个像元地求出第一个栅格数据除以第二个栅格数据的余数（模）。</para>
 	/// </summary>
 	public class Mod : AbstractGPProcess
 	{
@@ -20,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant1">
 		/// <para>Input raster or constant value 1</para>
-		/// <para>The numerator input.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>分子输入。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="InRasterOrConstant2">
 		/// <para>Input raster or constant value 2</para>
-		/// <para>The denominator input.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>分母输入。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the remainder of the division of the values in the first input by the second input.</para>
+		/// <para>输出栅格。</para>
+		/// <para>像元值为第一个输入的值除以第二个输入的值的余数。</para>
 		/// </param>
 		public Mod(object InRasterOrConstant1, object InRasterOrConstant2, object OutRaster)
 		{
@@ -41,14 +42,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Mod</para>
+		/// <para>Tool Display Name : 求模</para>
 		/// </summary>
-		public override string DisplayName() => "Mod";
+		public override string DisplayName() => "求模";
 
 		/// <summary>
-		/// <para>Tool Name : Mod</para>
+		/// <para>Tool Name : 求模</para>
 		/// </summary>
-		public override string ToolName() => "Mod";
+		public override string ToolName() => "求模";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Mod</para>
@@ -77,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 1</para>
-		/// <para>The numerator input.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>分子输入。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -90,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 2</para>
-		/// <para>The denominator input.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>分母输入。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -103,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the remainder of the division of the values in the first input by the second input.</para>
+		/// <para>输出栅格。</para>
+		/// <para>像元值为第一个输入的值除以第二个输入的值的余数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

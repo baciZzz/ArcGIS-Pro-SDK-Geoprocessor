@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Apply Radial Tree Layout</para>
+	/// <para>Apply Radial Tree Layout</para>
 	/// <para>Apply the radial tree layout to a diagram</para>
 	/// </summary>
 	[Obsolete()]

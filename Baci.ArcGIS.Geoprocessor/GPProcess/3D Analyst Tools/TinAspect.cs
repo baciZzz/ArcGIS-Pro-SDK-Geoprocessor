@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>TIN Aspect</para>
+	/// <para>TIN Aspect</para>
 	/// <para>Extracts the directional orientation  of input TIN to an output polygon feature class.</para>
 	/// </summary>
 	[Obsolete()]

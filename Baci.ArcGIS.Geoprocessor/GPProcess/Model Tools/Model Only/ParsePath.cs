@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Parse Path</para>
+	/// <para>Parse Path</para>
 	/// <para>The Parse Path tool parses the input into its file, path, name, or extension. The output can be used as inline variable in the output name of other tools.</para>
 	/// </summary>
 	public class ParsePath : AbstractGPProcess

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Table To Geodatabase</para>
-	/// <para>Converts one or more tables to geodatabase tables in an output geodatabase. The inputs can be dBASE, INFO, VPF, OLE DB tables, geodatabase tables, or table views.</para>
+	/// <para>表转地理数据库</para>
+	/// <para>将一个或多个表转换为输出地理数据库中的地理数据库表。可以将 dBASE 表、INFO 表、VPF 表、OLE DB 表、地理数据库表或表视图用作输入表。</para>
 	/// </summary>
 	public class TableToGeodatabase : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InputTable">
 		/// <para>Input Table</para>
-		/// <para>The list of tables to be converted to geodatabase tables. Input tables can be INFO, dBASE, OLE DB, geodatabase tables, or table views.</para>
+		/// <para>要转换为地理数据库表的一组表。可以将 INFO 表、dBASE 表、OLE DB 表、地理数据库表或表视图用作输入。</para>
 		/// </param>
 		/// <param name="OutputGeodatabase">
 		/// <para>Output Geodatabase</para>
-		/// <para>The destination geodatabase where the tables will be placed.</para>
+		/// <para>用于保存表的目标地理数据库。</para>
 		/// </param>
 		public TableToGeodatabase(object InputTable, object OutputGeodatabase)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Table To Geodatabase</para>
+		/// <para>Tool Display Name : 表转地理数据库</para>
 		/// </summary>
-		public override string DisplayName() => "Table To Geodatabase";
+		public override string DisplayName() => "表转地理数据库";
 
 		/// <summary>
 		/// <para>Tool Name : TableToGeodatabase</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The list of tables to be converted to geodatabase tables. Input tables can be INFO, dBASE, OLE DB, geodatabase tables, or table views.</para>
+		/// <para>要转换为地理数据库表的一组表。可以将 INFO 表、dBASE 表、OLE DB 表、地理数据库表或表视图用作输入。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Geodatabase</para>
-		/// <para>The destination geodatabase where the tables will be placed.</para>
+		/// <para>用于保存表的目标地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]

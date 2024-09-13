@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Structural Attachments Rule</para>
+	/// <para>Add Structural Attachments Rule</para>
 	/// <para>Add a structural attachments rule to a diagram template</para>
 	/// </summary>
 	[Obsolete()]

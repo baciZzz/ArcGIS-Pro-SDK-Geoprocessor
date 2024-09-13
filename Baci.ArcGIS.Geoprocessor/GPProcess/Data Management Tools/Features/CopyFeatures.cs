@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Copy Features</para>
-	/// <para>Copies features from the input feature class or layer to a new feature class.</para>
+	/// <para>复制要素</para>
+	/// <para>将输入要素类或图层中的要素复制到新要素类。</para>
 	/// </summary>
 	public class CopyFeatures : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The features to be copied.</para>
+		/// <para>要复制的要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class which will be created and to which the features will be copied.</para>
+		/// <para>该要素类将被创建，并且将在其中粘贴所复制的要素。</para>
 		/// </param>
 		public CopyFeatures(object InFeatures, object OutFeatureClass)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Copy Features</para>
+		/// <para>Tool Display Name : 复制要素</para>
 		/// </summary>
-		public override string DisplayName() => "Copy Features";
+		public override string DisplayName() => "复制要素";
 
 		/// <summary>
 		/// <para>Tool Name : CopyFeatures</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The features to be copied.</para>
+		/// <para>要复制的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class which will be created and to which the features will be copied.</para>
+		/// <para>该要素类将被创建，并且将在其中粘贴所复制的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
-		/// <para>Geodatabase configuration keyword to be applied if the output is a geodatabase.</para>
+		/// <para>如果输出为地理数据库，则将应用地理数据库配置关键字。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Spatial Grid 1</para>
-		/// <para>This parameter has been deprecated in ArcGIS Pro. Any value you enter is ignored.</para>
+		/// <para>已在 ArcGIS Pro 中弃用此参数。将忽略您输入的任何值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Spatial Grid 2</para>
-		/// <para>This parameter has been deprecated in ArcGIS Pro. Any value you enter is ignored.</para>
+		/// <para>已在 ArcGIS Pro 中弃用此参数。将忽略您输入的任何值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -110,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Spatial Grid 3</para>
-		/// <para>This parameter has been deprecated in ArcGIS Pro. Any value you enter is ignored.</para>
+		/// <para>已在 ArcGIS Pro 中弃用此参数。将忽略您输入的任何值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

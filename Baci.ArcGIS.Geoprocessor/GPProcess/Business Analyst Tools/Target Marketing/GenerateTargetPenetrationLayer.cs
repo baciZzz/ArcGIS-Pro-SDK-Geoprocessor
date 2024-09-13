@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Target Penetration Layer</para>
+	/// <para>Generate Target Penetration Layer</para>
 	/// <para>Generates a layer based on the percent of penetration of selected segments, providing a detailed view of the concentrations of your target segments.</para>
 	/// </summary>
 	public class GenerateTargetPenetrationLayer : AbstractGPProcess

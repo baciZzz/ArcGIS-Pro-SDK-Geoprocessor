@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Point To Point</para>
+	/// <para>点对点</para>
 	/// <para>Find like entities within a distance of each other.</para>
 	/// </summary>
 	[Obsolete()]
@@ -32,9 +33,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Point To Point</para>
+		/// <para>Tool Display Name : 点对点</para>
 		/// </summary>
-		public override string DisplayName() => "Point To Point";
+		public override string DisplayName() => "点对点";
 
 		/// <summary>
 		/// <para>Tool Name : PointToPoint</para>

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Linear Dispatch Layout</para>
-	/// <para>Adds the Linear Dispatch Layout algorithm to the list of layouts to be automatically chained at the end of the building of diagrams based on a given template. This tool also presets the Linear Dispatch Layout algorithm parameters for any diagram based on that template.</para>
+	/// <para>添加线性分派布局</para>
+	/// <para>用于将线性分派布局算法添加到基于给定模板构建逻辑示意图结束时自动进行链接的布局列表。此工具还会针对基于该模板的任意逻辑示意图预设线性分派布局算法参数。</para>
 	/// </summary>
 	public class AddLinearDispatchLayout : AbstractGPProcess
 	{
@@ -20,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template to modify.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to modify.</para>
+		/// <para>要修改的逻辑示意图模板的名称。</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
-		/// <para>Specifies whether the layout algorithm will automatically execute when generating diagrams based on the specified template.</para>
-		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
-		/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+		/// <para>指定是否将在基于指定模板生成逻辑示意图时自动执行布局算法。</para>
+		/// <para>选中 - 添加的布局算法会在基于输入逻辑示意图模板参数生成任何逻辑示意图的过程中自动运行。这是默认设置。为布局算法指定的参数值是在生成逻辑示意图的过程中用于运行布局的参数值。如果要对基于输入模板的任何逻辑示意图运行此算法，则还会默认加载这些参数值。</para>
+		/// <para>未选中 - 如果要对基于输入模板的任何逻辑示意图运行此算法，则还将默认加载当前为添加的布局逻辑示意图指定的所有参数值。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </param>
 		public AddLinearDispatchLayout(object InUtilityNetwork, object TemplateName, object IsActive)
@@ -41,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Linear Dispatch Layout</para>
+		/// <para>Tool Display Name : 添加线性分派布局</para>
 		/// </summary>
-		public override string DisplayName() => "Add Linear Dispatch Layout";
+		public override string DisplayName() => "添加线性分派布局";
 
 		/// <summary>
 		/// <para>Tool Name : AddLinearDispatchLayout</para>
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template to modify.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to modify.</para>
+		/// <para>要修改的逻辑示意图模板的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -93,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Active</para>
-		/// <para>Specifies whether the layout algorithm will automatically execute when generating diagrams based on the specified template.</para>
-		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
-		/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+		/// <para>指定是否将在基于指定模板生成逻辑示意图时自动执行布局算法。</para>
+		/// <para>选中 - 添加的布局算法会在基于输入逻辑示意图模板参数生成任何逻辑示意图的过程中自动运行。这是默认设置。为布局算法指定的参数值是在生成逻辑示意图的过程中用于运行布局的参数值。如果要对基于输入模板的任何逻辑示意图运行此算法，则还会默认加载这些参数值。</para>
+		/// <para>未选中 - 如果要对基于输入模板的任何逻辑示意图运行此算法，则还将默认加载当前为添加的布局逻辑示意图指定的所有参数值。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -105,10 +106,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Junctions Placement</para>
-		/// <para>Specifies how the junctions will be moved.</para>
-		/// <para>Equal distance—All junctions with two connected edges will be moved so the distances between them and their two connected junctions are equal. This is the default.</para>
-		/// <para>User define distance—All junctions with two connected edges will be moved so there is a minimum distance (Minimum Shift parameter value) between them and the other end of the edges to which they connect. This occurs at the end of the layout execution.</para>
-		/// <para>Iterative distance—All junctions with two connected edges will be moved slightly according to the Number of Iterations and Maximum Shift parameter values.</para>
+		/// <para>指定交汇点的移动方式。</para>
+		/// <para>等距—所有具有两条连接边的交汇点将移动，以使其之间的距离以及其两个连接交汇点相同。这是默认设置。</para>
+		/// <para>用户定义距离—所有具有两条连接边的交汇点将移动，以使其与其连接的边的另一端之间为最小距离（最小平移参数值）。这发生在布局执行结束时。</para>
+		/// <para>迭代距离—所有具有两个连接边的交汇点将根据迭代次数和最大平移参数值稍稍移动。</para>
 		/// <para><see cref="JunctionPlacementTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -118,9 +119,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Spacing values interpreted as absolute units in the diagram coordinate system</para>
-		/// <para>Specifies how parameters representing distances will be interpreted.</para>
-		/// <para>Checked—The layout algorithm will interpret any distance values as linear units.</para>
-		/// <para>Unchecked—The layout algorithm will interpret any distance values as relative units to an estimation of the average of the junction sizes in the current diagram extent. This is the default.</para>
+		/// <para>指定将如何解释表示距离的参数。</para>
+		/// <para>选中 - 布局算法会按线性单位来解释任意距离值。</para>
+		/// <para>未选中 - 布局算法会将所有距离值解释为当前逻辑示意图范围内交汇点大小的估算平均值的相对单位。这是默认设置。</para>
 		/// <para><see cref="IsUnitAbsoluteEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -130,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Maximum Shift</para>
-		/// <para>The maximum distance the junctions with two connections will be spaced from the junctions to which they connect. The default is 2 in the units of the diagram's coordinate system. At the time this distance is reached, junctions will not be moved during following iterations. This parameter can only be used with the Iterative distance junction placement type and absolute units.</para>
+		/// <para>具有两个连接的交汇点与其连接的交汇点间隔的最大距离。默认值为 2（采用逻辑示意图坐标系的单位）。达到此距离后，后续迭代过程中将不再移动交汇点。此参数只能与迭代距离交汇点放置类型和绝对单位一起使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -138,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Maximum Shift</para>
-		/// <para>The maximum distance the junctions with two connections will be spaced from the junctions to which they connect. The default is 2. At the time this distance is reached, junctions will not be moved during following iterations. This parameter can only be used with the Iterative distance junction placement type and proportional units.</para>
+		/// <para>具有两个连接的交汇点与其连接的交汇点间隔的最大距离。默认值为 2。达到此距离后，后续迭代过程中将不再移动交汇点。此参数只能与迭代距离交汇点放置类型和比例单位一起使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -146,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Minimum Shift</para>
-		/// <para>The minimum distance that will separate each junction with two connected edges from its two edge extremities after the layout execution. The default is 2 in the units of the diagram's coordinate system. When this parameter value is too large, the junctions with two connections are moved so the distances between each moved junction and its edge extremities are equal along the path defined by its two connected edges. This parameter can only be used with the User define distance junction placement type and absolute units.</para>
+		/// <para>布局执行后，对于每个具有两个连接边的交汇点，从其两个边端点对其进行分隔的最小距离。默认值为 2（采用逻辑示意图坐标系的单位）。如果此参数值过大，则将移动具有两个连接的交汇点，以使每个移动后的交汇点在沿其两个连接边所定义的路径上与其边端点之间的距离相等。此参数只能与用户定义距离交汇点放置类型和绝对单位一起使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -154,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Minimum Shift</para>
-		/// <para>The minimum distance that will separate each junction with two connected edges from its two edge extremities after the layout execution. The default is 2. When this parameter value is too large, the junctions with two connections are moved so the distances between each moved junction and its edge extremities are equal along the path defined by its two connected edges. This parameter is used with the User define distance junction placement type and proportional units.</para>
+		/// <para>布局执行后，对于每个具有两个连接边的交汇点，确定从其两个边端点对其进行分隔的最小距离。默认值为 2。如果此参数值过大，则将移动具有两个连接的交汇点，以使每个移动后的交汇点在沿其两个连接边所定义的路径上与其边端点之间的距离相等。此参数将与用户定义距离交汇点放置类型和比例单位一起使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -162,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Number of Iterations</para>
-		/// <para>The number of iterations to process. The default is 5. This parameter can only be used with the Iterative distance junction placement type.</para>
+		/// <para>要处理的迭代次数。默认值为 5。此参数只能与迭代距离交汇点放置类型一起使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -170,9 +171,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Preserve path</para>
-		/// <para>Specifies how vertices along edges will be processed.</para>
-		/// <para>Checked—All vertices along the connected edges will be preserved, and new vertices will be added at the moved junctions&apos; original locations. This is the default.</para>
-		/// <para>Unchecked—Vertices along edges will not be preserved.</para>
+		/// <para>指定如何对沿边的折点进行处理。</para>
+		/// <para>选中 - 将保留所有沿已连接边的折点，并将在已移动交汇点的原始位置处添加新折点。这是默认设置。</para>
+		/// <para>未选中 - 将不保留沿边的折点。</para>
 		/// <para><see cref="IsPathPreservedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -182,9 +183,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Move leaves</para>
-		/// <para>Specifies whether leaf junctions—junctions with one connection—will be moved during the algorithm execution.</para>
-		/// <para>Checked—Leaf junctions will be moved.</para>
-		/// <para>Unchecked—Leaf junctions will not be moved. This is the default unless the specified input network diagram is based on a template for which the Linear Dispatch Layout algorithm has been configured with another parameter value.</para>
+		/// <para>指定在算法执行过程中是否移动叶交汇点（包含一个连接的交汇点）。</para>
+		/// <para>选中 - 将移动叶交汇点。</para>
+		/// <para>未选中 - 将不移动叶交汇点。这是默认设置，除非指定的输入网络逻辑示意图基于相应模板，通过另一参数值对该模板的线性分派布局算法进行了配置。</para>
 		/// <para><see cref="AreLeavesMovedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -194,9 +195,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Expand leaves</para>
-		/// <para>Specifies whether leaf junctions will be expanded.</para>
-		/// <para>Checked—Leaf junctions will be expanded. The Maximum Expand Shift parameter value specifies the maximum distance the leaf junctions can be expanded from the junctions to which they connect.</para>
-		/// <para>Unchecked—Leaf junctions will not be expanded. This is the default unless the specified input network diagram is based on a template for which the Linear Dispatch Layout algorithm has been configured with another parameter value.</para>
+		/// <para>指定是否展开叶交汇点。</para>
+		/// <para>选中 - 将展开叶交汇点。最大展开平移参数值指定可以在叶交汇点与其连接的交汇点之间展开的最大距离。</para>
+		/// <para>未选中 - 不会展开叶交汇点。这是默认设置，除非指定的输入网络逻辑示意图基于相应模板，通过另一参数值对该模板的线性分派布局算法进行了配置。</para>
 		/// <para><see cref="AreLeavesExpandedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -206,7 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Maximum Expand Shift</para>
-		/// <para>The maximum distance leaf junctions will be expanded from the junctions to which they connect. The default is 2 in the units of the diagram's coordinate system unless the specified input network diagram is based on a template for which the Linear Dispatch Layout algorithm has been configured with another parameter value. At the time this distance is reached, leaf junctions will not be moved during following iterations. This parameter can only be used with the Expand leaves parameter and absolute units.</para>
+		/// <para>必须在叶交汇点与其连接的交汇点之间展开的最大距离。默认值为 2（采用逻辑示意图坐标系的单位），除非指定的输入网络逻辑示意图基于相应模板，通过另一参数值对该模板的线性分派布局算法进行了配置。达到此距离后，后续迭代过程中将不再移动叶交汇点。此参数只能与展开叶参数和绝对单位一起使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -214,7 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Maximum Expand Shift</para>
-		/// <para>The maximum distance the leaf junctions will be expanded from the junctions to which they connect. The default is 2 unless the specified input network diagram is based on a template for which the Linear Dispatch Layout algorithm has been configured with another parameter value. At the time this distance is reached, leaf junctions will not be moved during following iterations. This parameter can only be used with the Expand leaves parameter and proportional units.</para>
+		/// <para>必须在叶交汇点与其连接的交汇点之间展开的最大距离。默认值为 2，除非指定的输入网络逻辑示意图基于相应模板，通过另一参数值对该模板的线性分派布局算法进行了配置。达到此距离后，后续迭代过程中将不再移动叶交汇点。此参数只能与展开叶参数和比例单位一起使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -242,14 +243,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsActiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACTIVE")]
 			ACTIVE,
 
 			/// <summary>
-			/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INACTIVE")]
@@ -263,24 +264,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum JunctionPlacementTypeEnum 
 		{
 			/// <summary>
-			/// <para>Equal distance—All junctions with two connected edges will be moved so the distances between them and their two connected junctions are equal. This is the default.</para>
+			/// <para>等距—所有具有两条连接边的交汇点将移动，以使其之间的距离以及其两个连接交汇点相同。这是默认设置。</para>
 			/// </summary>
 			[GPValue("EQUAL_DISTANCE")]
-			[Description("Equal distance")]
+			[Description("等距")]
 			Equal_distance,
 
 			/// <summary>
-			/// <para>User define distance—All junctions with two connected edges will be moved so there is a minimum distance (Minimum Shift parameter value) between them and the other end of the edges to which they connect. This occurs at the end of the layout execution.</para>
+			/// <para>用户定义距离—所有具有两条连接边的交汇点将移动，以使其与其连接的边的另一端之间为最小距离（最小平移参数值）。这发生在布局执行结束时。</para>
 			/// </summary>
 			[GPValue("USER_DEFINE_DISTANCE")]
-			[Description("User define distance")]
+			[Description("用户定义距离")]
 			User_define_distance,
 
 			/// <summary>
-			/// <para>Iterative distance—All junctions with two connected edges will be moved slightly according to the Number of Iterations and Maximum Shift parameter values.</para>
+			/// <para>迭代距离—所有具有两个连接边的交汇点将根据迭代次数和最大平移参数值稍稍移动。</para>
 			/// </summary>
 			[GPValue("ITERATIVE_DISTANCE")]
-			[Description("Iterative distance")]
+			[Description("迭代距离")]
 			Iterative_distance,
 
 		}
@@ -291,14 +292,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsUnitAbsoluteEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The layout algorithm will interpret any distance values as linear units.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ABSOLUTE_UNIT")]
 			ABSOLUTE_UNIT,
 
 			/// <summary>
-			/// <para>Unchecked—The layout algorithm will interpret any distance values as relative units to an estimation of the average of the junction sizes in the current diagram extent. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("PROPORTIONAL_UNIT")]
@@ -312,14 +313,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsPathPreservedEnum 
 		{
 			/// <summary>
-			/// <para>Checked—All vertices along the connected edges will be preserved, and new vertices will be added at the moved junctions&apos; original locations. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE_PATH")]
 			PRESERVE_PATH,
 
 			/// <summary>
-			/// <para>Unchecked—Vertices along edges will not be preserved.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("IGNORE_PATH")]
@@ -333,14 +334,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum AreLeavesMovedEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Leaf junctions will be moved.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MOVE_LEAVES")]
 			MOVE_LEAVES,
 
 			/// <summary>
-			/// <para>Unchecked—Leaf junctions will not be moved. This is the default unless the specified input network diagram is based on a template for which the Linear Dispatch Layout algorithm has been configured with another parameter value.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_MOVE_LEAVES")]
@@ -354,14 +355,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum AreLeavesExpandedEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Leaf junctions will be expanded. The Maximum Expand Shift parameter value specifies the maximum distance the leaf junctions can be expanded from the junctions to which they connect.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EXPAND_LEAVES")]
 			EXPAND_LEAVES,
 
 			/// <summary>
-			/// <para>Unchecked—Leaf junctions will not be expanded. This is the default unless the specified input network diagram is based on a template for which the Linear Dispatch Layout algorithm has been configured with another parameter value.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_EXPAND_LEAVES")]

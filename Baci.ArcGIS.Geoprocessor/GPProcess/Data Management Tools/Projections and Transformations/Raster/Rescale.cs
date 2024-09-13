@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Rescale</para>
-	/// <para>Resizes a raster by the specified x and y scale factors.</para>
+	/// <para>重设比例</para>
+	/// <para>通过指定的 x 和 y 比例因子来调整栅格的大小。</para>
 	/// </summary>
 	public class Rescale : AbstractGPProcess
 	{
@@ -20,38 +21,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The input raster.</para>
+		/// <para>输入栅格。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster Dataset</para>
-		/// <para>The output raster dataset.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
-		/// <para>.bil—Esri BIL</para>
-		/// <para>.bip—Esri BIP</para>
-		/// <para>.bmp—BMP</para>
-		/// <para>.bsq—Esri BSQ</para>
-		/// <para>.dat—ENVI DAT</para>
-		/// <para>.gif—GIF</para>
-		/// <para>.img—ERDAS IMAGINE</para>
-		/// <para>.jpg—JPEG</para>
-		/// <para>.jp2—JPEG 2000</para>
-		/// <para>.png—PNG</para>
-		/// <para>.tif—TIFF</para>
-		/// <para>.mrf—MRF</para>
-		/// <para>.crf—CRF</para>
-		/// <para>No extension for Esri Grid</para>
-		/// <para>When storing a raster dataset in a geodatabase, no file extension should be added to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>输出栅格数据集。</para>
+		/// <para>以文件格式存储栅格数据集时，需要指定文件扩展名，具体如下：</para>
+		/// <para>.bil - Esri BIL</para>
+		/// <para>.bip - Esri BIP</para>
+		/// <para>.bmp - BMP</para>
+		/// <para>.bsq - Esri BSQ</para>
+		/// <para>.dat - ENVI DAT</para>
+		/// <para>.gif - GIF</para>
+		/// <para>.img - ERDAS IMAGINE</para>
+		/// <para>.jpg - JPEG</para>
+		/// <para>.jp2 - JPEG 2000</para>
+		/// <para>.png - PNG</para>
+		/// <para>.tif - TIFF</para>
+		/// <para>.mrf - MRF</para>
+		/// <para>.crf - CRF</para>
+		/// <para>Esri Grid 无扩展名</para>
+		/// <para>以地理数据库形式存储栅格数据集时，不应向栅格数据集的名称添加文件扩展名。</para>
+		/// <para>将栅格数据集存储到 JPEG 文件、JPEG 2000 文件、TIFF 文件或地理数据库时，可在地理处理环境中指定压缩类型和压缩质量。</para>
 		/// </param>
 		/// <param name="XScale">
 		/// <para>X Scale Factor</para>
-		/// <para>The factor by which to scale the cell size in the x direction.</para>
-		/// <para>The factor must be greater than zero.</para>
+		/// <para>用于 x 方向上缩放像元大小的因子。</para>
+		/// <para>此因子必须大于零。</para>
 		/// </param>
 		/// <param name="YScale">
 		/// <para>Y Scale Factor</para>
-		/// <para>The factor by which to scale the cell size in the y direction.</para>
-		/// <para>The factor must be greater than zero.</para>
+		/// <para>用于 y 方向上缩放像元大小的因子。</para>
+		/// <para>此因子必须大于零。</para>
 		/// </param>
 		public Rescale(object InRaster, object OutRaster, object XScale, object YScale)
 		{
@@ -62,14 +63,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Rescale</para>
+		/// <para>Tool Display Name : 重设比例</para>
 		/// </summary>
-		public override string DisplayName() => "Rescale";
+		public override string DisplayName() => "重设比例";
 
 		/// <summary>
-		/// <para>Tool Name : Rescale</para>
+		/// <para>Tool Name : 重设比例</para>
 		/// </summary>
-		public override string ToolName() => "Rescale";
+		public override string ToolName() => "重设比例";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Rescale</para>
@@ -98,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The input raster.</para>
+		/// <para>输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -106,24 +107,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Raster Dataset</para>
-		/// <para>The output raster dataset.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
-		/// <para>.bil—Esri BIL</para>
-		/// <para>.bip—Esri BIP</para>
-		/// <para>.bmp—BMP</para>
-		/// <para>.bsq—Esri BSQ</para>
-		/// <para>.dat—ENVI DAT</para>
-		/// <para>.gif—GIF</para>
-		/// <para>.img—ERDAS IMAGINE</para>
-		/// <para>.jpg—JPEG</para>
-		/// <para>.jp2—JPEG 2000</para>
-		/// <para>.png—PNG</para>
-		/// <para>.tif—TIFF</para>
-		/// <para>.mrf—MRF</para>
-		/// <para>.crf—CRF</para>
-		/// <para>No extension for Esri Grid</para>
-		/// <para>When storing a raster dataset in a geodatabase, no file extension should be added to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>输出栅格数据集。</para>
+		/// <para>以文件格式存储栅格数据集时，需要指定文件扩展名，具体如下：</para>
+		/// <para>.bil - Esri BIL</para>
+		/// <para>.bip - Esri BIP</para>
+		/// <para>.bmp - BMP</para>
+		/// <para>.bsq - Esri BSQ</para>
+		/// <para>.dat - ENVI DAT</para>
+		/// <para>.gif - GIF</para>
+		/// <para>.img - ERDAS IMAGINE</para>
+		/// <para>.jpg - JPEG</para>
+		/// <para>.jp2 - JPEG 2000</para>
+		/// <para>.png - PNG</para>
+		/// <para>.tif - TIFF</para>
+		/// <para>.mrf - MRF</para>
+		/// <para>.crf - CRF</para>
+		/// <para>Esri Grid 无扩展名</para>
+		/// <para>以地理数据库形式存储栅格数据集时，不应向栅格数据集的名称添加文件扩展名。</para>
+		/// <para>将栅格数据集存储到 JPEG 文件、JPEG 2000 文件、TIFF 文件或地理数据库时，可在地理处理环境中指定压缩类型和压缩质量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -131,8 +132,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>X Scale Factor</para>
-		/// <para>The factor by which to scale the cell size in the x direction.</para>
-		/// <para>The factor must be greater than zero.</para>
+		/// <para>用于 x 方向上缩放像元大小的因子。</para>
+		/// <para>此因子必须大于零。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -140,8 +141,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Y Scale Factor</para>
-		/// <para>The factor by which to scale the cell size in the y direction.</para>
-		/// <para>The factor must be greater than zero.</para>
+		/// <para>用于 y 方向上缩放像元大小的因子。</para>
+		/// <para>此因子必须大于零。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]

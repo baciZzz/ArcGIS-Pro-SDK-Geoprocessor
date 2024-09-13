@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Import Survey Profiles</para>
+	/// <para>Import Survey Profiles</para>
 	/// <para>Imports segmentation profiles consisting of survey variable data.</para>
 	/// </summary>
 	public class ImportSurveyProfiles : AbstractGPProcess

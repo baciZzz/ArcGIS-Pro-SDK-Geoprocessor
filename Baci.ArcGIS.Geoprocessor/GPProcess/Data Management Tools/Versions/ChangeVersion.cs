@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Change Version</para>
-	/// <para>Modifies the workspace of a  layer or table view to connect to the specified version.</para>
+	/// <para>切换版本</para>
+	/// <para>用于修改图层或表视图的工作空间以连接到指定版本。</para>
 	/// </summary>
 	public class ChangeVersion : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Layer</para>
-		/// <para>The layer or table view that will connect to the specified version.</para>
-		/// <para>The sublayers of a topology layer, parcel layer, utility network layer, or trace network layer are not valid inputs.</para>
+		/// <para>将连接到指定版本的图层或表视图。</para>
+		/// <para>拓扑图层、宗地图层、公共设施网络图层或追踪网络图层的子图层不是有效输入。</para>
 		/// </param>
 		/// <param name="VersionType">
 		/// <para>Version Type</para>
-		/// <para>Specifies the type of version to which the input feature layer will connect.</para>
-		/// <para>Traditional version—Connect to a defined state of the database (traditional version).</para>
-		/// <para>Historical version—Connect to a version representing a defined moment in time, often specified by a time or historical marker.</para>
-		/// <para>Branch version—Connect to a branch version.</para>
+		/// <para>指定输入要素图层将连接到的版本类型。</para>
+		/// <para>传统版本—连接到数据库的一种已定义状态（传统版本）。</para>
+		/// <para>历史版本—连接到表示过去某一特定时刻的版本，通常通过时间标记或历史标记指定。</para>
+		/// <para>分支版本—连接到分支版本。</para>
 		/// <para><see cref="VersionTypeEnum"/></para>
 		/// </param>
 		public ChangeVersion(object InFeatures, object VersionType)
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Change Version</para>
+		/// <para>Tool Display Name : 切换版本</para>
 		/// </summary>
-		public override string DisplayName() => "Change Version";
+		public override string DisplayName() => "切换版本";
 
 		/// <summary>
 		/// <para>Tool Name : ChangeVersion</para>
@@ -74,8 +75,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The layer or table view that will connect to the specified version.</para>
-		/// <para>The sublayers of a topology layer, parcel layer, utility network layer, or trace network layer are not valid inputs.</para>
+		/// <para>将连接到指定版本的图层或表视图。</para>
+		/// <para>拓扑图层、宗地图层、公共设施网络图层或追踪网络图层的子图层不是有效输入。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,10 +84,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Version Type</para>
-		/// <para>Specifies the type of version to which the input feature layer will connect.</para>
-		/// <para>Traditional version—Connect to a defined state of the database (traditional version).</para>
-		/// <para>Historical version—Connect to a version representing a defined moment in time, often specified by a time or historical marker.</para>
-		/// <para>Branch version—Connect to a branch version.</para>
+		/// <para>指定输入要素图层将连接到的版本类型。</para>
+		/// <para>传统版本—连接到数据库的一种已定义状态（传统版本）。</para>
+		/// <para>历史版本—连接到表示过去某一特定时刻的版本，通常通过时间标记或历史标记指定。</para>
+		/// <para>分支版本—连接到分支版本。</para>
 		/// <para><see cref="VersionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -96,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Version Name</para>
-		/// <para>The name of the version to which the input feature layer will connect. This parameter is optional if you're using a historical version.</para>
+		/// <para>输入要素图层将连接到的版本的名称。 如果使用历史版本，则此参数为可选参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -104,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Date and Time</para>
-		/// <para>The date of the historical version to which the input feature layer will connect.</para>
+		/// <para>输入要素图层将连接到的历史版本的日期。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -119,10 +120,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Include participating classes of controller dataset</para>
-		/// <para>Specifies whether the workspace of participating classes will also change.</para>
-		/// <para>The parameter is only applicable when the input layer is a topology layer, parcel layer, utility network layer, or trace network layer.</para>
-		/// <para>Checked—The version of the participating classes of the controller dataset will change if they are from the same workspace as the controller dataset. This is the default.</para>
-		/// <para>Unchecked—Only the version of the controller dataset will change.</para>
+		/// <para>指定参与类的工作空间是否也会更改。</para>
+		/// <para>仅当输入图层是拓扑图层、宗地图层、公共设施网络图层或追踪网络图层时，此参数才适用。</para>
+		/// <para>选中 - 如果控制器数据集的参与类来自与控制器数据集相同的工作空间，则其版本将更改。 这是默认设置。</para>
+		/// <para>未选中 - 仅控制器数据集的版本将更改。</para>
 		/// <para><see cref="IncludeParticipatingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -138,24 +139,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum VersionTypeEnum 
 		{
 			/// <summary>
-			/// <para>Traditional version—Connect to a defined state of the database (traditional version).</para>
+			/// <para>传统版本—连接到数据库的一种已定义状态（传统版本）。</para>
 			/// </summary>
 			[GPValue("TRANSACTIONAL")]
-			[Description("Traditional version")]
+			[Description("传统版本")]
 			Traditional_version,
 
 			/// <summary>
-			/// <para>Branch version—Connect to a branch version.</para>
+			/// <para>分支版本—连接到分支版本。</para>
 			/// </summary>
 			[GPValue("BRANCH")]
-			[Description("Branch version")]
+			[Description("分支版本")]
 			Branch_version,
 
 			/// <summary>
-			/// <para>Historical version—Connect to a version representing a defined moment in time, often specified by a time or historical marker.</para>
+			/// <para>历史版本—连接到表示过去某一特定时刻的版本，通常通过时间标记或历史标记指定。</para>
 			/// </summary>
 			[GPValue("HISTORICAL")]
-			[Description("Historical version")]
+			[Description("历史版本")]
 			Historical_version,
 
 		}
@@ -166,14 +167,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IncludeParticipatingEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The version of the participating classes of the controller dataset will change if they are from the same workspace as the controller dataset. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE")]
 			INCLUDE,
 
 			/// <summary>
-			/// <para>Unchecked—Only the version of the controller dataset will change.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE")]

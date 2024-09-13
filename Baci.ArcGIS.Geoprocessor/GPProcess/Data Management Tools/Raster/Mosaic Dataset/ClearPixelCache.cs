@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Clear Pixel Cache</para>
-	/// <para>Clears the pixel cache associated with a mosaic dataset.</para>
+	/// <para>清除像素缓存</para>
+	/// <para>清除与镶嵌数据集相关的像素缓存。</para>
 	/// </summary>
 	public class ClearPixelCache : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>The input mosaic dataset with the pixel cache to be deleted.</para>
+		/// <para>具有要删除的像素缓存的输入镶嵌数据集。</para>
 		/// </param>
 		public ClearPixelCache(object InMosaicDataset)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Clear Pixel Cache</para>
+		/// <para>Tool Display Name : 清除像素缓存</para>
 		/// </summary>
-		public override string DisplayName() => "Clear Pixel Cache";
+		public override string DisplayName() => "清除像素缓存";
 
 		/// <summary>
 		/// <para>Tool Name : ClearPixelCache</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>The input mosaic dataset with the pixel cache to be deleted.</para>
+		/// <para>具有要删除的像素缓存的输入镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEMosaicDataset()]
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Generated Before</para>
-		/// <para>All cache generated before this date will be deleted.</para>
+		/// <para>在此日期之前生成的所有缓存都将被删除。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]

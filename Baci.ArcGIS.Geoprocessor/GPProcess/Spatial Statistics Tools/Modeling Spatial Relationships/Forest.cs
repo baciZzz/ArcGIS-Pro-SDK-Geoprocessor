@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Forest-based Classification and Regression</para>
-	/// <para>Creates models and generates predictions using an adaptation of Leo Breiman's random forest algorithm, which is a supervised machine learning method. Predictions can be performed for both categorical variables (classification) and continuous variables (regression). Explanatory variables can take the form of fields in the attribute table of the training features, raster datasets, and distance features used to calculate proximity values for use as additional variables. In addition to validation of model performance based on the training data, predictions can be made to either features or a prediction raster.</para>
+	/// <para>基于森林的分类与回归</para>
+	/// <para>使用 Leo Breiman 随机森林算法（一种监督式机器学习方法）的改编版本创建模型并生成预测。可以针对分类变量（分类）和连续变量（回归）执行预测。解释变量可以采取用于计算邻域分析值的训练要素、栅格数据集和距离要素的属性表中字段的形式，以用作附加变量。除了基于训练数据对模型性能进行验证之外，还可以对要素或预测栅格进行预测。</para>
 	/// </summary>
 	public class Forest : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="PredictionType">
 		/// <para>Prediction Type</para>
-		/// <para>Specifies the operation mode of the tool. The tool can be run to train a model to only assess performance, predict features, or create a prediction surface.</para>
-		/// <para>Train only—A model will be trained, but no predictions will be generated. Use this option to assess the accuracy of your model before generating predictions. This option will output model diagnostics in the messages window and a chart of variable importance. This is the default</para>
-		/// <para>Predict to features—Predictions or classifications will be generated for features. Explanatory variables must be provided for both the training features and the features to be predicted. The output of this option will be a feature class, model diagnostics in the messages window, and an optional table and chart of variable importance.</para>
-		/// <para>Predict to raster—A prediction raster will be generated for the area where the explanatory rasters intersect. Explanatory rasters must be provided for both the training area and the area to be predicted. The output of this option will be a prediction surface, model diagnostics in the messages window, and an optional table and chart of variable importance.</para>
+		/// <para>指定工具的操作模式。可以运行此工具来训练模型，以仅评估性能、预测要素或创建预测表面。</para>
+		/// <para>仅训练—将训练模型，但不会生成预测。生成预测之前，可以使用此选项评估模型的精度。此选项将在消息窗口和变量重要性图表中输出模型诊断。这是默认设置</para>
+		/// <para>预测至要素—将针对要素生成预测或分类。必须为训练要素和要预测的要素提供解释变量。该选项的输出将为要素类、消息窗口中的模型诊断以及变量重要性的可选表格和图表。</para>
+		/// <para>预测至栅格—对于解释栅格相交的区域，将生成预测栅格。必须为训练区域和要预测的区域提供解释栅格。该选项的输出将为预测表面、消息窗口中的模型诊断以及变量重要性的可选表格和图表。</para>
 		/// <para><see cref="PredictionTypeEnum"/></para>
 		/// </param>
 		/// <param name="InFeatures">
 		/// <para>Input Training Features</para>
-		/// <para>The feature class containing the Variable to Predict parameter and, optionally, the explanatory training variables from fields.</para>
+		/// <para>要素类，包含要预测的变量参数以及字段中的解释训练变量（可选）。</para>
 		/// </param>
 		public Forest(object PredictionType, object InFeatures)
 		{
@@ -37,9 +38,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Forest-based Classification and Regression</para>
+		/// <para>Tool Display Name : 基于森林的分类与回归</para>
 		/// </summary>
-		public override string DisplayName() => "Forest-based Classification and Regression";
+		public override string DisplayName() => "基于森林的分类与回归";
 
 		/// <summary>
 		/// <para>Tool Name : Forest</para>
@@ -73,10 +74,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Prediction Type</para>
-		/// <para>Specifies the operation mode of the tool. The tool can be run to train a model to only assess performance, predict features, or create a prediction surface.</para>
-		/// <para>Train only—A model will be trained, but no predictions will be generated. Use this option to assess the accuracy of your model before generating predictions. This option will output model diagnostics in the messages window and a chart of variable importance. This is the default</para>
-		/// <para>Predict to features—Predictions or classifications will be generated for features. Explanatory variables must be provided for both the training features and the features to be predicted. The output of this option will be a feature class, model diagnostics in the messages window, and an optional table and chart of variable importance.</para>
-		/// <para>Predict to raster—A prediction raster will be generated for the area where the explanatory rasters intersect. Explanatory rasters must be provided for both the training area and the area to be predicted. The output of this option will be a prediction surface, model diagnostics in the messages window, and an optional table and chart of variable importance.</para>
+		/// <para>指定工具的操作模式。可以运行此工具来训练模型，以仅评估性能、预测要素或创建预测表面。</para>
+		/// <para>仅训练—将训练模型，但不会生成预测。生成预测之前，可以使用此选项评估模型的精度。此选项将在消息窗口和变量重要性图表中输出模型诊断。这是默认设置</para>
+		/// <para>预测至要素—将针对要素生成预测或分类。必须为训练要素和要预测的要素提供解释变量。该选项的输出将为要素类、消息窗口中的模型诊断以及变量重要性的可选表格和图表。</para>
+		/// <para>预测至栅格—对于解释栅格相交的区域，将生成预测栅格。必须为训练区域和要预测的区域提供解释栅格。该选项的输出将为预测表面、消息窗口中的模型诊断以及变量重要性的可选表格和图表。</para>
 		/// <para><see cref="PredictionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -86,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Training Features</para>
-		/// <para>The feature class containing the Variable to Predict parameter and, optionally, the explanatory training variables from fields.</para>
+		/// <para>要素类，包含要预测的变量参数以及字段中的解释训练变量（可选）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Variable to Predict</para>
-		/// <para>The variable from the Input Training Features parameter containing the values to be used to train the model. This field contains known (training) values of the variable that will be used to predict at unknown locations.</para>
+		/// <para>输入训练要素参数中的变量，其中包含要用于训练模型的值。该字段包含将用于在未知位置进行预测的变量的已知（训练）值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -107,9 +108,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Treat Variable as Categorical</para>
-		/// <para>Specifies whether the Variable to Predict is a categorical variable.</para>
-		/// <para>Checked—The Variable to Predict is a categorical variable and the tool will perform classification.</para>
-		/// <para>Unchecked—The Variable to Predict is continuous and the tool will perform regression. This is the default.</para>
+		/// <para>指定要预测的变量是否为分类变量。</para>
+		/// <para>选中 - 要预测的变量为分类变量，并且此工具将执行分类。</para>
+		/// <para>未选中 - 要预测的变量为连续变量，并且此工具将执行回归。这是默认设置。</para>
 		/// <para><see cref="TreatVariableAsCategoricalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -119,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Explanatory Training Variables</para>
-		/// <para>A list of fields representing the explanatory variables that help predict the value or category of the Variable to Predict. Check the Categorical check box for any variables that represent classes or categories (such as land cover or presence or absence).</para>
+		/// <para>表示解释变量的字段列表，可帮助预测要预测的变量的值或类别。对于任何表示类或类别（例如土地覆被或存在/不存在）的变量，请选中分类复选框。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -128,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Explanatory Training Distance Features</para>
-		/// <para>Automatically creates explanatory variables by calculating a distance from the provided features to the Input Training Features. Distances will be calculated from each of the input Explanatory Training Distance Features to the nearest Input Training Features. If the input Explanatory Training Distance Features are polygons or lines, the distance attributes are calculated as the distance between the closest segments of the pair of features.</para>
+		/// <para>通过计算给定要素与输入训练要素的距离可自动创建解释变量。将计算每个输入解释训练距离要素与最近的输入训练要素的距离。如果输入解释训练距离要素为面要素或线要素，则距离属性将计算为要素对的最近线段之间的距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -139,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Explanatory Training Rasters</para>
-		/// <para>Automatically creates explanatory training variables in your model whose values are extracted from rasters. For each feature in the Input Training Features, the value of the raster cell is extracted at that exact location. Bilinear raster resampling is used when extracting the raster value for continuous rasters. Nearest neighbor assignment is used when extracting a raster value from categorical rasters. Check the Categorical check box for any rasters that represent classes or categories such as land cover or presence or absence.</para>
+		/// <para>将在模型（其值从栅格中提取）中自动创建解释训练变量。对于输入训练要素中的每个要素，将在此确切位置处提取栅格像元的值。提取连续栅格的栅格值时，将使用双线性栅格重采样。从分类栅格中提取栅格值时，将使用最邻近分配法。对于任何表示类或类别（例如土地覆被或存在/不存在）的栅格，请选中分类复选框。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -148,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Prediction Features</para>
-		/// <para>A feature class representing locations where predictions will be made. This feature class must also contain any explanatory variables provided as fields that correspond to those used from the training data if any.</para>
+		/// <para>表示将进行预测的位置的要素类。此要素类还必须包含作为字段提供的任何解释变量，这些字段对应于训练数据（如果存在）中使用的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -156,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Predicted Features</para>
-		/// <para>The output feature class to receive the results of the prediction results.</para>
+		/// <para>用于接收预测结果的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -164,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Prediction Surface</para>
-		/// <para>The output raster containing the prediction results. The default cell size will be the maximum cell size of the raster inputs. To set a different cell size, use the cell size environment setting.</para>
+		/// <para>包含预测结果的输出栅格。默认像元大小将为栅格输入的最大像元大小。要设置其他像元大小，请使用像元大小环境设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -172,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Match Explanatory Variables</para>
-		/// <para>A list of the Explanatory Variables specified from the Input Training Features on the right and their corresponding fields from the Input Prediction Features on the left.</para>
+		/// <para>根据右侧输入训练要素以及左侧输入预测要素中其对应字段指定的解释变量列表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -181,8 +182,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Match Distance Features</para>
-		/// <para>A list of the Explanatory Distance Features specified for the Input Training Features on the right. Corresponding feature sets should be specified for the Input Prediction Features on the left.</para>
-		/// <para>Explanatory Distance Features that are more appropriate for the Input Prediction Features can be provided if those used for training are in a different study area or time period.</para>
+		/// <para>针对右侧输入训练要素指定的解释距离要素的列表。应该针对左侧输入预测要素指定对应的要素集。</para>
+		/// <para>如果用于训练的要素位于不同的研究区域或时间段，则可以提供更适用于输入预测要素的解释距离要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -191,8 +192,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Match Explanatory Rasters</para>
-		/// <para>A list of the Explanatory Rasters specified for the Input Training Features on the right. Corresponding rasters should be specified for the Input Prediction Features or the Prediction Surface to be created on the left.</para>
-		/// <para>Explanatory Rasters that are more appropriate for the Input Prediction Features can be provided if those used for training are in a different study area or time period.</para>
+		/// <para>针对右侧输入训练要素指定的解释栅格的列表。应该针对左侧要创建的输入预测要素或预测表面指定对应的栅格。</para>
+		/// <para>如果用于训练的要素位于不同的研究区域或时间段，则可以提供更适用于输入预测要素的解释栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -201,7 +202,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Trained Features</para>
-		/// <para>Output Trained Features will contain all explanatory variables used for training (including sampled raster values and distance calculations), as well as the observed Variable to Predict field and accompanying predictions that can be used to further assess performance of the trained model.</para>
+		/// <para>输出训练要素将包含所有用于训练（包括采样栅格值和距离计算）的解释变量、观察的要预测的变量字段，以及可用于进一步评估训练模型性能的相应预测。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -210,7 +211,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Variable Importance Table</para>
-		/// <para>If specified, the table will contain information describing the importance of each explanatory variable (fields, distance features, and rasters) used in the model created. The chart created from this table can be accessed in the Contents pane.</para>
+		/// <para>如果指定，则表格将包含描述在所创建的模型中使用的每个解释变量（字段、距离要素和栅格）的重要性的信息。基于该表创建的图表可通过内容窗格进行访问。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -219,9 +220,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Convert Polygons to Raster Resolution for Training</para>
-		/// <para>Specifies how polygons are treated when training the model if the Input Training Features are polygons with a categorical Variable to Predict and only Explanatory Training Rasters have been specified.</para>
-		/// <para>Checked—The polygon is divided into all of the raster cells with centroids falling within the polygon. The raster values at each centroid are then extracted and used to train the model. The model is no longer trained on the polygon itself, but rather the model is trained on the raster values extracted for each cell centroid. This is the default.</para>
-		/// <para>Unchecked—Each polygon is assigned the average value of the underlying continuous rasters and the majority for underlying categorical rasters.</para>
+		/// <para>如果输入训练要素为面要素（要预测的变量为分类变量），并且仅指定了解释训练栅格，则训练模型时需要指定面的处理方式。</para>
+		/// <para>选中 - 将面划分为所有栅格像元，其中质心落在面范围内。然后，提取每个质心处的栅格值并将其用于训练模型。不再针对面本身对模型进行训练，而是针对为每个像元质心提取的栅格值对模型进行训练。这是默认设置。</para>
+		/// <para>未选中 - 为每个面指定基础连续栅格的平均值和基础分类栅格的众数。</para>
 		/// <para><see cref="UseRasterValuesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -232,7 +233,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Trees</para>
-		/// <para>The number of trees to create in the forest model. More trees will generally result in more accurate model prediction, but the model will take longer to calculate. The default number of trees is 100.</para>
+		/// <para>要在森林模型中创建的树的数量。增大树数通常将产生更加精确的模型预测，但是将增加模型计算的时间。默认树数为 100。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -242,7 +243,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Minimum Leaf Size</para>
-		/// <para>The minimum number of observations required to keep a leaf (that is the terminal node on a tree without further splits). The default minimum for regression is 5 and the default for classification is 1. For very large data, increasing these numbers will decrease the run time of the tool.</para>
+		/// <para>保留叶子（即未进一步进行分割的树上的终端节点）所需的最小观测值数。回归的默认最小值为 5，分类的默认值为 1。对于非常大的数据，增大这些数值将减小工具的运行时间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -252,7 +253,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Maximum Tree Depth</para>
-		/// <para>The maximum number of splits that will be made down a tree. Using a large maximum depth, more splits will be created, which may increase the chances of overfitting the model. The default is data driven and depends on the number of trees created and the number of variables included.</para>
+		/// <para>对树进行的最大分割数。如果使用较大的最大深度，则将创建更多分割，这可能会增大过度拟合模型的可能性。默认值由数据驱动，并且取决于所创建的树数以及所包含的变量数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -262,8 +263,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Data Available per Tree (%)</para>
-		/// <para>Specifies the percentage of the Input Training Features used for each decision tree. The default is 100 percent of the data. Samples for each tree are taken randomly from two-thirds of the data specified.</para>
-		/// <para>Each decision tree in the forest is created using a random sample or subset (approximately two-thirds) of the training data available. Using a lower percentage of the input data for each decision tree increases the speed of the tool for very large datasets.</para>
+		/// <para>指定用于每棵决策树的输入训练要素的百分比。默认值为 100% 的数据。将根据指定数据的三分之二随机获取每棵树的样本。</para>
+		/// <para>可以使用可用训练数据的随机样本或子集（大约三分之二）来创建森林中的每棵决策树。针对每棵决策树使用较低百分比的输入数据可以提高适用于大型数据集的工具的速度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -273,8 +274,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Randomly Sampled Variables</para>
-		/// <para>Specifies the number of explanatory variables used to create each decision tree.</para>
-		/// <para>Each of the decision trees in the forest is created using a random subset of the explanatory variables specified. Increasing the number of variables used in each decision tree will increase the chances of overfitting your model particularly if there is one or more dominant variables. A common practice is to use the square root of the total number of explanatory variables (fields, distances, and rasters combined) if your Variable to Predict is numeric or divide the total number of explanatory variables (fields, distances, and rasters combined) by 3 if Variable to Predict is categorical.</para>
+		/// <para>指定用于创建每棵决策树的解释变量数。</para>
+		/// <para>可以使用指定解释变量的随机子集创建森林中的每棵决策树。增大每棵决策树中使用的变量数将增大过度拟合模型的可能性，尤其是存在一个或多个主导变量时更是如此。常用方法是：如果要预测的变量为数值，则使用解释变量（组合字段、距离和栅格）总数的平方根；如果要预测的变量为分类变量，则将解释变量（组合字段、距离和栅格）的总数除以 3。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -284,7 +285,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Training Data Excluded for Validation (%)</para>
-		/// <para>Specifies the percentage (between 10 percent and 50 percent) of Input Training Features to reserve as the test dataset for validation. The model will be trained without this random subset of data, and the observed values for those features will be compared to the predicted values. The default is 10 percent.</para>
+		/// <para>指定要保留为验证测试数据集的输入训练要素的百分比（介于 10% 和 50% 之间）。将在没有此随机数据子集的情况下对模型进行训练，并将这些要素的观测值与预测值进行比较。默认值为 10%。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -294,7 +295,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Classification Performance Table (Confusion Matrix)</para>
-		/// <para>If specified, creates a confusion matrix for classification summarizing the performance of the model created. This table can be used to calculate other diagnostics beyond the accuracy and sensitivity measures the tool calculates in the output messages.</para>
+		/// <para>如果指定，则将创建一个混淆矩阵，用于分类汇总所创建模型的性能。除了工具在输出消息中计算的精度和灵敏度测量值之外，此表格还可以用于计算其他诊断。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -303,7 +304,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output  Validation Table</para>
-		/// <para>If the Number of Runs for Validation specified is greater than 2, this table creates a chart of the distribution of R2 for each model. This distribution can be used to assess the stability of your model.</para>
+		/// <para>如果指定验证的运行次数大于 2，则此表将为每个模型创建 R2 分布图表。此分布可用于评估模型的稳定性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -312,9 +313,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Compensate for Sparse Categories</para>
-		/// <para>If there are categories in your dataset that don&apos;t occur as often as others, checking this parameter will ensure that each category is represented in each tree.</para>
-		/// <para>Checked—Each tree will include every category that is represented in the training dataset.</para>
-		/// <para>Unchecked—Each tree will be created based on a random sample of the categories in the training dataset. This is the default.</para>
+		/// <para>如果数据集中存在出现频繁低于其他类别的类别，则选中此参数将确保每棵树中存在各个类别。</para>
+		/// <para>选中 - 每棵树将包括训练数据集中存在的各个类别。</para>
+		/// <para>未选中 - 将基于训练数据集中类别的随机样本来创建每棵树。这是默认设置。</para>
 		/// <para><see cref="CompensateSparseCategoriesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -325,7 +326,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Runs for Validation</para>
-		/// <para>The tool will run for the number of iterations specified. The distribution of the R2 for each run can be displayed using the Output Validation Table parameter. When this is set and predictions are being generated, only the model that produced the highest R2 value will be used for predictions.</para>
+		/// <para>工具将运行指定迭代次数。可以使用输出验证表参数来显示每次运行的 R2 分布。设置此选项并生成预测后，仅生成了最高 R2 值的模型将用于预测。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -335,9 +336,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Calculate Uncertainty</para>
-		/// <para>Specifies whether prediction uncertainty will be calculated when training, predicting to features, or predicting to raster.</para>
-		/// <para>Checked—A prediction uncertainty interval will be calculated.</para>
-		/// <para>Unchecked—Uncertainty will not be calculated. This is the default.</para>
+		/// <para>指定在训练、预测要素或预测栅格时是否计算预测不确定性。</para>
+		/// <para>选中 - 将被计算预测不确定性区间。</para>
+		/// <para>未选中 - 不计算不确定性。这是默认设置。</para>
 		/// <para><see cref="CalculateUncertaintyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -370,24 +371,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum PredictionTypeEnum 
 		{
 			/// <summary>
-			/// <para>Train only—A model will be trained, but no predictions will be generated. Use this option to assess the accuracy of your model before generating predictions. This option will output model diagnostics in the messages window and a chart of variable importance. This is the default</para>
+			/// <para>仅训练—将训练模型，但不会生成预测。生成预测之前，可以使用此选项评估模型的精度。此选项将在消息窗口和变量重要性图表中输出模型诊断。这是默认设置</para>
 			/// </summary>
 			[GPValue("TRAIN")]
-			[Description("Train only")]
+			[Description("仅训练")]
 			Train_only,
 
 			/// <summary>
-			/// <para>Predict to features—Predictions or classifications will be generated for features. Explanatory variables must be provided for both the training features and the features to be predicted. The output of this option will be a feature class, model diagnostics in the messages window, and an optional table and chart of variable importance.</para>
+			/// <para>预测至要素—将针对要素生成预测或分类。必须为训练要素和要预测的要素提供解释变量。该选项的输出将为要素类、消息窗口中的模型诊断以及变量重要性的可选表格和图表。</para>
 			/// </summary>
 			[GPValue("PREDICT_FEATURES")]
-			[Description("Predict to features")]
+			[Description("预测至要素")]
 			Predict_to_features,
 
 			/// <summary>
-			/// <para>Predict to raster—A prediction raster will be generated for the area where the explanatory rasters intersect. Explanatory rasters must be provided for both the training area and the area to be predicted. The output of this option will be a prediction surface, model diagnostics in the messages window, and an optional table and chart of variable importance.</para>
+			/// <para>预测至栅格—对于解释栅格相交的区域，将生成预测栅格。必须为训练区域和要预测的区域提供解释栅格。该选项的输出将为预测表面、消息窗口中的模型诊断以及变量重要性的可选表格和图表。</para>
 			/// </summary>
 			[GPValue("PREDICT_RASTER")]
-			[Description("Predict to raster")]
+			[Description("预测至栅格")]
 			Predict_to_raster,
 
 		}
@@ -398,14 +399,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum TreatVariableAsCategoricalEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The Variable to Predict is a categorical variable and the tool will perform classification.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CATEGORICAL")]
 			CATEGORICAL,
 
 			/// <summary>
-			/// <para>Unchecked—The Variable to Predict is continuous and the tool will perform regression. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NUMERIC")]
@@ -419,14 +420,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum UseRasterValuesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The polygon is divided into all of the raster cells with centroids falling within the polygon. The raster values at each centroid are then extracted and used to train the model. The model is no longer trained on the polygon itself, but rather the model is trained on the raster values extracted for each cell centroid. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TRUE")]
 			TRUE,
 
 			/// <summary>
-			/// <para>Unchecked—Each polygon is assigned the average value of the underlying continuous rasters and the majority for underlying categorical rasters.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FALSE")]
@@ -440,14 +441,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum CompensateSparseCategoriesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Each tree will include every category that is represented in the training dataset.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TRUE")]
 			TRUE,
 
 			/// <summary>
-			/// <para>Unchecked—Each tree will be created based on a random sample of the categories in the training dataset. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FALSE")]
@@ -461,14 +462,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum CalculateUncertaintyEnum 
 		{
 			/// <summary>
-			/// <para>Checked—A prediction uncertainty interval will be calculated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TRUE")]
 			TRUE,
 
 			/// <summary>
-			/// <para>Unchecked—Uncertainty will not be calculated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FALSE")]

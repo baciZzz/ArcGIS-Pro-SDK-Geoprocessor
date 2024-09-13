@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Surface Length</para>
+	/// <para>Surface Length</para>
 	/// <para>Determines surface length for each line in a feature class based on an input surface.</para>
 	/// </summary>
 	[Obsolete()]

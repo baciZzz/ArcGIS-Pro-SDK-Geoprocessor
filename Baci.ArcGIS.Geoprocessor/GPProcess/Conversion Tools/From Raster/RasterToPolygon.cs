@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Raster to Polygon</para>
-	/// <para>Converts a raster dataset to polygon features.</para>
+	/// <para>栅格转面</para>
+	/// <para>将栅格数据集转换为面要素。</para>
 	/// </summary>
 	public class RasterToPolygon : AbstractGPProcess
 	{
@@ -20,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster dataset.</para>
-		/// <para>The raster must be integer type.</para>
+		/// <para>输入栅格数据集。</para>
+		/// <para>栅格数据必须是整型。</para>
 		/// </param>
 		/// <param name="OutPolygonFeatures">
 		/// <para>Output polygon features</para>
-		/// <para>The output feature class that will contain the converted polygons.</para>
+		/// <para>包含已转换面的输出要素类。</para>
 		/// </param>
 		public RasterToPolygon(object InRaster, object OutPolygonFeatures)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Raster to Polygon</para>
+		/// <para>Tool Display Name : 栅格转面</para>
 		/// </summary>
-		public override string DisplayName() => "Raster to Polygon";
+		public override string DisplayName() => "栅格转面";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToPolygon</para>
@@ -70,8 +71,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster dataset.</para>
-		/// <para>The raster must be integer type.</para>
+		/// <para>输入栅格数据集。</para>
+		/// <para>栅格数据必须是整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output polygon features</para>
-		/// <para>The output feature class that will contain the converted polygons.</para>
+		/// <para>包含已转换面的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -91,9 +92,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Simplify polygons</para>
-		/// <para>Determines if the output polygons will be smoothed into simpler shapes or conform to the input raster&apos;s cell edges.</para>
-		/// <para>Checked—The polygons will be smoothed into simpler shapes. The smoothing is done in such a way that the polygons contain a minimum number of segments while remaining as close as possible to the original raster cell edges. This is the default.</para>
-		/// <para>Unchecked—The edge of the polygons will conform exactly to the input raster&apos;s cell edges. With this option, converting the resulting polygon feature class back to a raster would produce a raster the same as the original.</para>
+		/// <para>用于确定输出的面将平滑为简单的形状还是与输入栅格的像元边缘保持一致。</para>
+		/// <para>选中 - 面将平滑处理为简单的形状。面拥有最少线段数，同时尽可能接近原始栅格像元边缘，这就是平滑的实现方式。这是默认设置。</para>
+		/// <para>未选中 - 面的边将与输入栅格的像元边缘完全保持一致。使用此选项将面要素类转换回栅格，将产生与原始栅格相同的栅格。</para>
 		/// <para><see cref="SimplifyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -103,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Field</para>
-		/// <para>The field used to assign values from the cells in the input raster to the polygons in the output dataset.</para>
-		/// <para>It can be an integer or a string field.</para>
+		/// <para>此字段用于将输入栅格中像元值指定给输出数据集中的面。</para>
+		/// <para>栅格字段可为整型或字符串型字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -114,9 +115,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Create multipart features</para>
-		/// <para>Specifies whether the output polygons will consist of single-part or multipart features.</para>
-		/// <para>Checked—Specifies that multipart features will be created based on polygons that have the same value.</para>
-		/// <para>Unchecked—Specifies that individual features will be created for each polygon. This is the default.</para>
+		/// <para>指定输出面是由单部分要素还是多部分要素组成。</para>
+		/// <para>选中 - 指定将根据具有相同值的面创建多部分要素。</para>
+		/// <para>未选中 - 指定将为每个面创建单个要素。这是默认设置。</para>
 		/// <para><see cref="CreateMultipartFeaturesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -126,8 +127,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Maximum vertices per polygon feature</para>
-		/// <para>The vertex limit used to subdivide a polygon into smaller polygons. This parameter produces similar output as created by the Dice tool.</para>
-		/// <para>If left empty, the output polygons will not be split. The default is empty.</para>
+		/// <para>用于将面细分为更小的面的折点限制。此参数产生的输出与切分工具创建的输出类似。</para>
+		/// <para>如果留空，则输出面不会被分割。默认值为空。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -153,14 +154,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum SimplifyEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The polygons will be smoothed into simpler shapes. The smoothing is done in such a way that the polygons contain a minimum number of segments while remaining as close as possible to the original raster cell edges. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SIMPLIFY")]
 			SIMPLIFY,
 
 			/// <summary>
-			/// <para>Unchecked—The edge of the polygons will conform exactly to the input raster&apos;s cell edges. With this option, converting the resulting polygon feature class back to a raster would produce a raster the same as the original.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SIMPLIFY")]
@@ -174,14 +175,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum CreateMultipartFeaturesEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Specifies that individual features will be created for each polygon. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SINGLE_OUTER_PART")]
 			SINGLE_OUTER_PART,
 
 			/// <summary>
-			/// <para>Checked—Specifies that multipart features will be created based on polygons that have the same value.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MULTIPLE_OUTER_PART")]

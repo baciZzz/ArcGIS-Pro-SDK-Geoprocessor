@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Multipatch To Collada</para>
-	/// <para>Converts one or more multipatch features into a collection of COLLADA (.dae) files and referenced texture image files in an output folder. The inputs can be a layer or a feature class.</para>
+	/// <para>多面体转 Collada</para>
+	/// <para>将一个或多个多面体要素转换为 COLLADA (.dae) 文件及其引用的纹理图像文件的集合并将此集合存储在输出文件夹中。输入可以是图层或要素类。</para>
 	/// </summary>
 	public class MultipatchToCollada : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Multipatch Features</para>
-		/// <para>The multipatch features to be exported.</para>
+		/// <para>要导出的多面体要素。</para>
 		/// </param>
 		/// <param name="OutputFolder">
 		/// <para>Output Collada Folder</para>
-		/// <para>The destination folder where the output COLLADA files and texture image files will be placed.</para>
+		/// <para>放置输出 COLLADA 文件和纹理图像文件的目标文件夹。</para>
 		/// </param>
 		public MultipatchToCollada(object InFeatures, object OutputFolder)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Multipatch To Collada</para>
+		/// <para>Tool Display Name : 多面体转 Collada</para>
 		/// </summary>
-		public override string DisplayName() => "Multipatch To Collada";
+		public override string DisplayName() => "多面体转 Collada";
 
 		/// <summary>
 		/// <para>Tool Name : MultipatchToCollada</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Multipatch Features</para>
-		/// <para>The multipatch features to be exported.</para>
+		/// <para>要导出的多面体要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Collada Folder</para>
-		/// <para>The destination folder where the output COLLADA files and texture image files will be placed.</para>
+		/// <para>放置输出 COLLADA 文件和纹理图像文件的目标文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -87,9 +88,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Prepend Source Name</para>
-		/// <para>Prepend the file names of the output COLLADA files with the name of the source feature layer.</para>
-		/// <para>Checked—Prepend the file names.</para>
-		/// <para>Unchecked—Do not prepend the file names. This is the default.</para>
+		/// <para>将源要素图层的名称添加为输出 COLLADA 文件的文件名的前缀。</para>
+		/// <para>选中 - 添加文件名前缀。</para>
+		/// <para>不选中 - 不添加文件名前缀。这是默认设置。</para>
 		/// <para><see cref="PrependSourceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -99,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Use Field Name</para>
-		/// <para>The feature attribute to use as the output COLLADA file name for each exported feature. If no field is specified, the feature's Object ID is used.</para>
+		/// <para>用作每个导出的要素的输出 COLLADA 文件名的要素属性。如果未指定字段，则使用要素的“对象 ID”。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -115,14 +116,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum PrependSourceEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Prepend the file names.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PREPEND_SOURCE_NAME")]
 			PREPEND_SOURCE_NAME,
 
 			/// <summary>
-			/// <para>Unchecked—Do not prepend the file names. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("PREPEND_NONE")]

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Import Generalization Data</para>
+	/// <para>Import Generalization Data</para>
 	/// <para>Imports data from a production schema to a themed generalization database using generalization rules defined in a Microsoft Excel spreadsheet.</para>
 	/// </summary>
 	public class ImportGeneralizationData : AbstractGPProcess

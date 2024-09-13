@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Coordinate Table To 2-Point Line</para>
-	/// <para>Creates 2-point line features from coordinates stored in a table.</para>
+	/// <para>坐标表转 2 点线</para>
+	/// <para>可根据表中存储的坐标创建 2 点线要素。</para>
 	/// </summary>
 	public class CoordinateTableTo2PointLine : AbstractGPProcess
 	{
@@ -20,35 +21,35 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The table containing the source coordinates.</para>
+		/// <para>包含源坐标的表。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Line Feature Class</para>
-		/// <para>The feature class containing the output line features.</para>
+		/// <para>包含输出线要素的要素类。</para>
 		/// </param>
 		/// <param name="StartXOrLonField">
 		/// <para>Start X Field (longitude, UTM, MGRS, USNG, GARS, GEOREF)</para>
-		/// <para>The field in the input table containing the starting x or longitude coordinates.</para>
+		/// <para>输入表中包含起点 x 或经度坐标的字段。</para>
 		/// </param>
 		/// <param name="EndXOrLonField">
 		/// <para>End X Field (longitude, UTM, MGRS, USNG, GARS, GEOREF)</para>
-		/// <para>The field in the input table containing the ending x or longitude coordinates.</para>
+		/// <para>输入表中包含终点 x 或经度坐标的字段。</para>
 		/// </param>
 		/// <param name="InCoordinateFormat">
 		/// <para>Input Coordinate Format</para>
-		/// <para>Specifies the format of the point coordinates.</para>
-		/// <para>Decimal Degrees - One Field—Coordinates will be formatted in a decimal degrees coordinate pair stored in a single field with coordinates separated by a space, comma, or slash.</para>
-		/// <para>Decimal Degrees - Two Fields—Coordinates will be formatted in a decimal degrees coordinate pair stored in two table fields. This is the default.</para>
-		/// <para>Degrees and Decimal Minutes - One Field—Coordinates will be formatted in a degrees and decimal minutes coordinate pair stored in a single table field with coordinates separated by a space, comma, or slash.</para>
-		/// <para>Degrees and Decimal Minutes - Two Fields—Coordinates will be formatted in a degrees and decimal minutes coordinate pair stored in two table fields.</para>
-		/// <para>Degrees, Minutes, and Seconds - One Field—Coordinates will be formatted in a degrees, minutes, and seconds coordinate pair stored in a single table field with coordinates separated by a space, comma, or slash.</para>
-		/// <para>Degrees, Minutes, and Seconds - Two Fields—Coordinates will be formatted in a degrees, minutes, and seconds coordinate pair stored in two table fields.</para>
-		/// <para>Global Area Reference System—Coordinates will be formatted in Global Area Reference System.</para>
-		/// <para>World Geographic Reference System— Coordinates will be formatted in World Geographic Reference System.</para>
-		/// <para>Universal Transverse Mercator Bands—Coordinates will be formatted in Universal Transverse Mercator coordinate bands.</para>
-		/// <para>Universal Transverse Mercator Zones—Coordinates will be formatted in Universal Transverse Mercator coordinate zones.</para>
-		/// <para>United States National Grid—Coordinates will be formatted in United States National Grid.</para>
-		/// <para>Military Grid Reference System—Coordinates will be formatted in Military Grid Reference System.</para>
+		/// <para>指定点坐标的格式。</para>
+		/// <para>十进制度 - 一个字段—坐标将采用存储在单个字段中的十进制度坐标对格式，其中坐标以空格、逗号或斜线分隔。</para>
+		/// <para>十进制度 - 两个字段—坐标将采用存储在两个表字段中的十进制度坐标对格式。这是默认设置。</para>
+		/// <para>度和十进制分 - 一个字段—坐标将采用存储在单个表字段中的度和十进制分坐标对格式，其中坐标以空格、逗号或斜线分隔。</para>
+		/// <para>度和十进制分 - 两个字段—坐标将采用存储在两个表字段中的度和十进制分坐标对格式。</para>
+		/// <para>度分秒 - 一个字段—坐标将采用存储在单个表字段中的度、分和秒坐标对格式，其中坐标以空格、逗号或斜线分隔。</para>
+		/// <para>度分秒 - 两个字段—坐标将采用存储在两个表字段中的度、分和秒坐标对格式。</para>
+		/// <para>全球区域参考系统—坐标将采用全球区域参考系格式。</para>
+		/// <para>世界地理参考系— 坐标将采用世界地理参考系格式。</para>
+		/// <para>通用横轴墨卡托坐标带—坐标将采用通用横轴墨卡托坐标带格式。</para>
+		/// <para>通用横轴墨卡托坐标区域—坐标将采用通用横轴墨卡托坐标区域格式。</para>
+		/// <para>美国国家格网—坐标将采用美国国家网格格式。</para>
+		/// <para>军事格网参考系—坐标将采用军事格网参考系格式。</para>
 		/// </param>
 		public CoordinateTableTo2PointLine(object InTable, object OutFeatureClass, object StartXOrLonField, object EndXOrLonField, object InCoordinateFormat)
 		{
@@ -60,9 +61,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Coordinate Table To 2-Point Line</para>
+		/// <para>Tool Display Name : 坐标表转 2 点线</para>
 		/// </summary>
-		public override string DisplayName() => "Coordinate Table To 2-Point Line";
+		public override string DisplayName() => "坐标表转 2 点线";
 
 		/// <summary>
 		/// <para>Tool Name : CoordinateTableTo2PointLine</para>
@@ -96,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The table containing the source coordinates.</para>
+		/// <para>包含源坐标的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -104,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Line Feature Class</para>
-		/// <para>The feature class containing the output line features.</para>
+		/// <para>包含输出线要素的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Start X Field (longitude, UTM, MGRS, USNG, GARS, GEOREF)</para>
-		/// <para>The field in the input table containing the starting x or longitude coordinates.</para>
+		/// <para>输入表中包含起点 x 或经度坐标的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>End X Field (longitude, UTM, MGRS, USNG, GARS, GEOREF)</para>
-		/// <para>The field in the input table containing the ending x or longitude coordinates.</para>
+		/// <para>输入表中包含终点 x 或经度坐标的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -128,19 +129,19 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Coordinate Format</para>
-		/// <para>Specifies the format of the point coordinates.</para>
-		/// <para>Decimal Degrees - One Field—Coordinates will be formatted in a decimal degrees coordinate pair stored in a single field with coordinates separated by a space, comma, or slash.</para>
-		/// <para>Decimal Degrees - Two Fields—Coordinates will be formatted in a decimal degrees coordinate pair stored in two table fields. This is the default.</para>
-		/// <para>Degrees and Decimal Minutes - One Field—Coordinates will be formatted in a degrees and decimal minutes coordinate pair stored in a single table field with coordinates separated by a space, comma, or slash.</para>
-		/// <para>Degrees and Decimal Minutes - Two Fields—Coordinates will be formatted in a degrees and decimal minutes coordinate pair stored in two table fields.</para>
-		/// <para>Degrees, Minutes, and Seconds - One Field—Coordinates will be formatted in a degrees, minutes, and seconds coordinate pair stored in a single table field with coordinates separated by a space, comma, or slash.</para>
-		/// <para>Degrees, Minutes, and Seconds - Two Fields—Coordinates will be formatted in a degrees, minutes, and seconds coordinate pair stored in two table fields.</para>
-		/// <para>Global Area Reference System—Coordinates will be formatted in Global Area Reference System.</para>
-		/// <para>World Geographic Reference System— Coordinates will be formatted in World Geographic Reference System.</para>
-		/// <para>Universal Transverse Mercator Bands—Coordinates will be formatted in Universal Transverse Mercator coordinate bands.</para>
-		/// <para>Universal Transverse Mercator Zones—Coordinates will be formatted in Universal Transverse Mercator coordinate zones.</para>
-		/// <para>United States National Grid—Coordinates will be formatted in United States National Grid.</para>
-		/// <para>Military Grid Reference System—Coordinates will be formatted in Military Grid Reference System.</para>
+		/// <para>指定点坐标的格式。</para>
+		/// <para>十进制度 - 一个字段—坐标将采用存储在单个字段中的十进制度坐标对格式，其中坐标以空格、逗号或斜线分隔。</para>
+		/// <para>十进制度 - 两个字段—坐标将采用存储在两个表字段中的十进制度坐标对格式。这是默认设置。</para>
+		/// <para>度和十进制分 - 一个字段—坐标将采用存储在单个表字段中的度和十进制分坐标对格式，其中坐标以空格、逗号或斜线分隔。</para>
+		/// <para>度和十进制分 - 两个字段—坐标将采用存储在两个表字段中的度和十进制分坐标对格式。</para>
+		/// <para>度分秒 - 一个字段—坐标将采用存储在单个表字段中的度、分和秒坐标对格式，其中坐标以空格、逗号或斜线分隔。</para>
+		/// <para>度分秒 - 两个字段—坐标将采用存储在两个表字段中的度、分和秒坐标对格式。</para>
+		/// <para>全球区域参考系统—坐标将采用全球区域参考系格式。</para>
+		/// <para>世界地理参考系— 坐标将采用世界地理参考系格式。</para>
+		/// <para>通用横轴墨卡托坐标带—坐标将采用通用横轴墨卡托坐标带格式。</para>
+		/// <para>通用横轴墨卡托坐标区域—坐标将采用通用横轴墨卡托坐标区域格式。</para>
+		/// <para>美国国家格网—坐标将采用美国国家网格格式。</para>
+		/// <para>军事格网参考系—坐标将采用军事格网参考系格式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -149,8 +150,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Start Y Field (latitude)</para>
-		/// <para>The field in the input table containing the starting y or latitude coordinates.</para>
-		/// <para>The Start Y Field (latitude) parameter is used when the Input Coordinate Format parameter is set to Decimal Degrees - Two Fields, Degrees and Decimal Minutes - Two Fields, or Degrees Minutes and Seconds - Two Fields.</para>
+		/// <para>输入表中包含起点 y 或纬度坐标的字段。</para>
+		/// <para>当输入坐标格式参数设置为十进制度 - 两个字段、度和十进制分 - 两个字段或度分秒 - 两个字段时，将使用起点 Y 字段（纬度）参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -158,8 +159,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>End Y Field (latitude)</para>
-		/// <para>The field in the input table containing the ending y or latitude coordinates.</para>
-		/// <para>The End Y Field (latitude) parameter is used when the Input Coordinate Format parameter is set to Decimal Degrees - Two Fields, Degrees and Decimal Minutes - Two Fields, or Degrees Minutes and Seconds - Two Fields.</para>
+		/// <para>输入表中包含终点 y 或纬度坐标的字段。</para>
+		/// <para>当输入坐标格式参数设置为十进制度 - 两个字段、度和十进制分 - 两个字段或度分秒 - 两个字段时，将使用终点 Y 字段（纬度）参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -167,11 +168,11 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Line Type</para>
-		/// <para>Specifies the output line type.</para>
-		/// <para>Geodesic line—The shortest distance between any two points on the earth&apos;s spheroidal surface (ellipsoid) will be used. This is the default.</para>
-		/// <para>Great circle line—The line on a spheroid (ellipsoid) defined by the intersection of a plane passing through the center of the spheroid will be used.</para>
-		/// <para>Rhumb line—A line of constant bearing or azimuth will be used.</para>
-		/// <para>Normal section—A normal plane to the earth&apos;s ellipsoidal surface containing the start and end points will be used.</para>
+		/// <para>指定输出线类型。</para>
+		/// <para>测地线—将使用地球椭球体（椭圆体）表面上任何两点之间的最短距离。这是默认设置。</para>
+		/// <para>大圆线—将使用由通过椭球体中心的平面的交点定义的椭球体（椭圆体）上的线。</para>
+		/// <para>恒向线—将使用恒定方位角的线。</para>
+		/// <para>法向截面—将使用包含起点和终点的地球椭球体表面的法线平面。</para>
 		/// <para><see cref="LineTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -181,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Coordinate System</para>
-		/// <para>The spatial reference of the output feature class. The default is GCS_WGS_1984.</para>
+		/// <para>输出要素类的空间参考。 默认值为 GCS_WGS_1984。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
@@ -204,31 +205,31 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum LineTypeEnum 
 		{
 			/// <summary>
-			/// <para>Geodesic line—The shortest distance between any two points on the earth&apos;s spheroidal surface (ellipsoid) will be used. This is the default.</para>
+			/// <para>测地线—将使用地球椭球体（椭圆体）表面上任何两点之间的最短距离。这是默认设置。</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("Geodesic line")]
+			[Description("测地线")]
 			Geodesic_line,
 
 			/// <summary>
-			/// <para>Great circle line—The line on a spheroid (ellipsoid) defined by the intersection of a plane passing through the center of the spheroid will be used.</para>
+			/// <para>大圆线—将使用由通过椭球体中心的平面的交点定义的椭球体（椭圆体）上的线。</para>
 			/// </summary>
 			[GPValue("GREAT_CIRCLE")]
-			[Description("Great circle line")]
+			[Description("大圆线")]
 			Great_circle_line,
 
 			/// <summary>
-			/// <para>Rhumb line—A line of constant bearing or azimuth will be used.</para>
+			/// <para>恒向线—将使用恒定方位角的线。</para>
 			/// </summary>
 			[GPValue("RHUMB_LINE")]
-			[Description("Rhumb line")]
+			[Description("恒向线")]
 			Rhumb_line,
 
 			/// <summary>
-			/// <para>Normal section—A normal plane to the earth&apos;s ellipsoidal surface containing the start and end points will be used.</para>
+			/// <para>法向截面—将使用包含起点和终点的地球椭球体表面的法线平面。</para>
 			/// </summary>
 			[GPValue("NORMAL_SECTION")]
-			[Description("Normal section")]
+			[Description("法向截面")]
 			Normal_section,
 
 		}

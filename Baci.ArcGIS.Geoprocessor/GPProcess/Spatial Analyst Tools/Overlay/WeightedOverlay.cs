@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Weighted Overlay</para>
-	/// <para>Overlays several rasters using a common measurement scale and weights each according to its importance.</para>
+	/// <para>加权叠加</para>
+	/// <para>使用常用测量比例叠加多个栅格数据，并根据各栅格数据的重要性分配权重。</para>
 	/// </summary>
 	public class WeightedOverlay : AbstractGPProcess
 	{
@@ -20,21 +21,21 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InWeightedOverlayTable">
 		/// <para>Weighted overlay table</para>
-		/// <para>The weighted overlay table allows the calculation of a multiple-criteria analysis between several rasters.</para>
-		/// <para>Input Rasters:</para>
-		/// <para>Rasters—List of input criteria rasters being weighted. Use the options to browse for raster datasets or add map layers to the list of inputs.</para>
-		/// <para>%—The percent influence of the input raster compared to the other criteria rasters as a percentage of 100. Influences are specified by integer values only. Decimal values are rounded down to the nearest integer. The sum of influences must equal 100.Use the set equal influences option (the = sign button) to balance the percent influence of all rasters equally and sum them to 100.</para>
-		/// <para>Remap Table:</para>
-		/// <para>Field—The field of the input criteria to be weighted.</para>
-		/// <para>Value—The input field value.</para>
-		/// <para>Scale—The output scale value for the criterion, as specified by the Scale setting. Changing these values will alter the value in the input raster. You can enter a value directly or select from the drop-down list. In addition to numerical values, the following options are available:</para>
-		/// <para>Restricted—Assigns the restricted value (the minimum value of the evaluation scale set, minus one) to cells in the output, regardless of whether other input rasters have a different scale value set for that cell.</para>
-		/// <para>NoData—Assigns NoData to cells in the output, regardless of whether other input rasters have a different scale value set for that cell.</para>
-		/// <para>Scale—Evaluation scale for defining the remap values. Select from a list of predefined evaluation scales. You can also define your own evaluation scale controls by typing in the parameter sign hyphens or spaces to separate values. A negative value must be preceded by a space.</para>
+		/// <para>使用加权叠加表可执行多个栅格数据之间的多条件分析计算。</para>
+		/// <para>输入栅格：</para>
+		/// <para>栅格 - 进行加权的输入条件栅格列表。使用此选项浏览栅格数据集或将地图图层添加到输入列表。</para>
+		/// <para>% - 以百分比形式表示输入栅格相对于其他条件栅格的影响力百分比。影响力仅通过整数值进行指定。十进制值将向下舍入为最近的整数。影响力总和必须等于 100。使用设置等效影响选项（等号按钮）对所有栅格的影响力百分比进行平衡设置并且要保证总和为 100。</para>
+		/// <para>重映射表：</para>
+		/// <para>字段 - 要进行加权处理的输入条件字段。</para>
+		/// <para>值 - 输入字段值。</para>
+		/// <para>级别 - 根据级别设置指定的内容，为条件设定的输出级别值。更改这些值将更改输入栅格中的值。您可以直接输入值或者从下拉列表中选择一个值。除了数值以外，还可以使用以下选项：</para>
+		/// <para>Restricted - 无论其他输入栅格是否具有为该像元设置的其他等级值，都将受限制的值（设置的评估等级最小值为负 1）分配至输出像元中。</para>
+		/// <para>NoData - 无论其他输入栅格是否为该像元设置了其他等级值，都将 NoData 分配至输出中的像元。</para>
+		/// <para>等级 - 用于定义重映射值的评估等级。从预定义的评估等级列表中进行选择。您还可通过将参数连字符或空格输入到分隔值来定义您自己的评估等级控件。负值前面必须使用空格。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output weighted raster.</para>
+		/// <para>输出加权栅格。</para>
 		/// </param>
 		public WeightedOverlay(object InWeightedOverlayTable, object OutRaster)
 		{
@@ -43,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Weighted Overlay</para>
+		/// <para>Tool Display Name : 加权叠加</para>
 		/// </summary>
-		public override string DisplayName() => "Weighted Overlay";
+		public override string DisplayName() => "加权叠加";
 
 		/// <summary>
 		/// <para>Tool Name : WeightedOverlay</para>
@@ -79,17 +80,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Weighted overlay table</para>
-		/// <para>The weighted overlay table allows the calculation of a multiple-criteria analysis between several rasters.</para>
-		/// <para>Input Rasters:</para>
-		/// <para>Rasters—List of input criteria rasters being weighted. Use the options to browse for raster datasets or add map layers to the list of inputs.</para>
-		/// <para>%—The percent influence of the input raster compared to the other criteria rasters as a percentage of 100. Influences are specified by integer values only. Decimal values are rounded down to the nearest integer. The sum of influences must equal 100.Use the set equal influences option (the = sign button) to balance the percent influence of all rasters equally and sum them to 100.</para>
-		/// <para>Remap Table:</para>
-		/// <para>Field—The field of the input criteria to be weighted.</para>
-		/// <para>Value—The input field value.</para>
-		/// <para>Scale—The output scale value for the criterion, as specified by the Scale setting. Changing these values will alter the value in the input raster. You can enter a value directly or select from the drop-down list. In addition to numerical values, the following options are available:</para>
-		/// <para>Restricted—Assigns the restricted value (the minimum value of the evaluation scale set, minus one) to cells in the output, regardless of whether other input rasters have a different scale value set for that cell.</para>
-		/// <para>NoData—Assigns NoData to cells in the output, regardless of whether other input rasters have a different scale value set for that cell.</para>
-		/// <para>Scale—Evaluation scale for defining the remap values. Select from a list of predefined evaluation scales. You can also define your own evaluation scale controls by typing in the parameter sign hyphens or spaces to separate values. A negative value must be preceded by a space.</para>
+		/// <para>使用加权叠加表可执行多个栅格数据之间的多条件分析计算。</para>
+		/// <para>输入栅格：</para>
+		/// <para>栅格 - 进行加权的输入条件栅格列表。使用此选项浏览栅格数据集或将地图图层添加到输入列表。</para>
+		/// <para>% - 以百分比形式表示输入栅格相对于其他条件栅格的影响力百分比。影响力仅通过整数值进行指定。十进制值将向下舍入为最近的整数。影响力总和必须等于 100。使用设置等效影响选项（等号按钮）对所有栅格的影响力百分比进行平衡设置并且要保证总和为 100。</para>
+		/// <para>重映射表：</para>
+		/// <para>字段 - 要进行加权处理的输入条件字段。</para>
+		/// <para>值 - 输入字段值。</para>
+		/// <para>级别 - 根据级别设置指定的内容，为条件设定的输出级别值。更改这些值将更改输入栅格中的值。您可以直接输入值或者从下拉列表中选择一个值。除了数值以外，还可以使用以下选项：</para>
+		/// <para>Restricted - 无论其他输入栅格是否具有为该像元设置的其他等级值，都将受限制的值（设置的评估等级最小值为负 1）分配至输出像元中。</para>
+		/// <para>NoData - 无论其他输入栅格是否为该像元设置了其他等级值，都将 NoData 分配至输出中的像元。</para>
+		/// <para>等级 - 用于定义重映射值的评估等级。从预定义的评估等级列表中进行选择。您还可通过将参数连字符或空格输入到分隔值来定义您自己的评估等级控件。负值前面必须使用空格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAWeightedOverlayTable()]
@@ -98,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output weighted raster.</para>
+		/// <para>输出加权栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

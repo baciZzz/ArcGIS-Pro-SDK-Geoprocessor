@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Extend Diagram</para>
+	/// <para>Extend Diagram</para>
 	/// <para>Extend a Network Diagram</para>
 	/// </summary>
 	[Obsolete()]

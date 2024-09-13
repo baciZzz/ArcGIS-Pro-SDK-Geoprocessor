@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Add Terrain Pyramid Level</para>
-	/// <para>Adds one or more pyramid levels to an existing terrain dataset.</para>
+	/// <para>添加 Terrain 金字塔等级</para>
+	/// <para>向现有 terrain 数据集添加一个或多个金字塔等级。</para>
 	/// </summary>
 	public class AddTerrainPyramidLevel : AbstractGPProcess
 	{
@@ -20,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTerrain">
 		/// <para>Input Terrain</para>
-		/// <para>The terrain dataset to process.</para>
+		/// <para>待处理的 terrain 数据集。</para>
 		/// </param>
 		/// <param name="PyramidLevelDefinition">
 		/// <para>Pyramid Levels Definition</para>
-		/// <para>The z-tolerance or window size and its associated reference scale for each pyramid level being added to the terrain. Each pyramid level is entered as a space-delimited pair of the pyramid level resolution and reference scale (for example, &quot;20 24000&quot; for a window size of 20 and reference scale of 1:24000, or &quot;1.5 10000&quot; for a z-tolerance of 1.5 and reference scale of 1:10000). The pyramid level resolution can be provided as a floating-point value, while the reference scale must be entered as a whole number.</para>
-		/// <para>The z-tolerance value represents the maximum deviation that can occur from the elevation of the terrain at full resolution, whereas the window size value defines the area of the terrain tile used in thinning elevation points by selecting one or two points from the area based on the window size method defined during the creation of the terrain. The reference scale represents the largest map scale at which the pyramid level is enforced. When the terrain is displayed at a scale larger than this value, the next highest pyramid level is displayed.</para>
+		/// <para>将要添加到 terrain 中的各个金字塔等级的 z 容差或窗口大小以及关联的参考比例。输入的每个金字塔等级包括一对金字塔等级分辨率和参考比例，并以空格分隔（例如，“20 24000”表示窗口大小为 20，参考比例为 1:24000，或者“1.5 10000”表示 z 容差为 1.5，参考比例为 1:10000）。金字塔等级分辨率可以浮点值形式提供，而参考比例必须以整数形式输入。</para>
+		/// <para>z 容差值表示处于全分辨率下时可能出现的距 terrain 高程的最大偏差；而窗口大小值定义稀疏化高程点所用的 terrain 分块区域，稀疏化高程点即基于创建 terrain 过程中定义的窗口大小方法从分块区域选择一个或两个点。参考比例表示强制显示金字塔等级所使用的最大地图比例。以大于此值的比例显示 terrain 时，将显示下一个最高的金字塔等级。</para>
 		/// </param>
 		public AddTerrainPyramidLevel(object InTerrain, object PyramidLevelDefinition)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Terrain Pyramid Level</para>
+		/// <para>Tool Display Name : 添加 Terrain 金字塔等级</para>
 		/// </summary>
-		public override string DisplayName() => "Add Terrain Pyramid Level";
+		public override string DisplayName() => "添加 Terrain 金字塔等级";
 
 		/// <summary>
 		/// <para>Tool Name : AddTerrainPyramidLevel</para>
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Terrain</para>
-		/// <para>The terrain dataset to process.</para>
+		/// <para>待处理的 terrain 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTerrainLayer()]
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Pyramid Type</para>
-		/// <para>The pyramid type used by the terrain dataset. This parameter is not used in ArcGIS 9.3 and beyond, as its purpose is to ensure backward-compatibility with scripts and models written using ArcGIS 9.2.</para>
+		/// <para>terrain 数据集使用的金字塔类型。ArcGIS 9.3 及更高版本中不使用此参数，因为此参数的用途是确保向后兼容使用 ArcGIS 9.2 编写的脚本和模型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -86,8 +87,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Pyramid Levels Definition</para>
-		/// <para>The z-tolerance or window size and its associated reference scale for each pyramid level being added to the terrain. Each pyramid level is entered as a space-delimited pair of the pyramid level resolution and reference scale (for example, &quot;20 24000&quot; for a window size of 20 and reference scale of 1:24000, or &quot;1.5 10000&quot; for a z-tolerance of 1.5 and reference scale of 1:10000). The pyramid level resolution can be provided as a floating-point value, while the reference scale must be entered as a whole number.</para>
-		/// <para>The z-tolerance value represents the maximum deviation that can occur from the elevation of the terrain at full resolution, whereas the window size value defines the area of the terrain tile used in thinning elevation points by selecting one or two points from the area based on the window size method defined during the creation of the terrain. The reference scale represents the largest map scale at which the pyramid level is enforced. When the terrain is displayed at a scale larger than this value, the next highest pyramid level is displayed.</para>
+		/// <para>将要添加到 terrain 中的各个金字塔等级的 z 容差或窗口大小以及关联的参考比例。输入的每个金字塔等级包括一对金字塔等级分辨率和参考比例，并以空格分隔（例如，“20 24000”表示窗口大小为 20，参考比例为 1:24000，或者“1.5 10000”表示 z 容差为 1.5，参考比例为 1:10000）。金字塔等级分辨率可以浮点值形式提供，而参考比例必须以整数形式输入。</para>
+		/// <para>z 容差值表示处于全分辨率下时可能出现的距 terrain 高程的最大偏差；而窗口大小值定义稀疏化高程点所用的 terrain 分块区域，稀疏化高程点即基于创建 terrain 过程中定义的窗口大小方法从分块区域选择一个或两个点。参考比例表示强制显示金字塔等级所使用的最大地图比例。以大于此值的比例显示 terrain 时，将显示下一个最高的金字塔等级。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]

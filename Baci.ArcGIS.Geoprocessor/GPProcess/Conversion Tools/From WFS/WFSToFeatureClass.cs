@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>WFS To Feature Class</para>
-	/// <para>Imports a feature type from a web feature service (WFS) to a feature class in a geodatabase.</para>
+	/// <para>WFS 转要素类</para>
+	/// <para>将要素类型从网络要素服务 (WFS) 导入至地理数据库中的要素类。</para>
 	/// </summary>
 	public class WFSToFeatureClass : AbstractGPProcess
 	{
@@ -20,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InputWFSServer">
 		/// <para>WFS Server</para>
-		/// <para>The URL of the source WFS service (for example, http://sampleserver6.arcgisonline.com/arcgis/services/SampleWorldCities/MapServer/WFSServer?). If the input is a complex WFS service (Complex WFS service is checked), this can also be the path to the XML file.</para>
+		/// <para>源 WFS 服务的 URL（例如 http://sampleserver6.arcgisonline.com/arcgis/services/SampleWorldCities/MapServer/WFSServer?）。如果输入为复杂的 WFS 服务（已选中复杂的 WFS 服务），那么这也可以是 XML 文件的路径。</para>
 		/// </param>
 		/// <param name="WFSFeatureType">
 		/// <para>Select Feature Type to Extract</para>
-		/// <para>The name of the WFS layer to extract from the input WFS service.</para>
+		/// <para>从输入 WFS 服务中提取的 WFS 图层的名称。</para>
 		/// </param>
 		/// <param name="OutPath">
 		/// <para>Output Location</para>
-		/// <para>The location of the output feature class or geodatabase.</para>
-		/// <para>If the input is a simple WFS service, the output location can be a geodatabase or a feature dataset in a geodatabase. If the output location is a feature dataset, the coordinates are converted from the source coordinate system to the coordinate system of the feature dataset.</para>
-		/// <para>If the input is a complex WFS service, the output location must be a folder.</para>
+		/// <para>输出要素类或地理数据库的位置。</para>
+		/// <para>如果输入是简单的 WFS 服务，则输出位置可以是地理数据库或地理数据库内的要素数据集。若输出位置为要素数据集，则坐标系将从源坐标系转换为要素数据集坐标系。</para>
+		/// <para>如果输入是复杂的 WFS 服务，则输出位置必须是文件夹。</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Name</para>
-		/// <para>The name of the output feature class or geodatabase.</para>
-		/// <para>If the input is a simple WFS service, the name is used to create a feature class in the output location. If the feature class name already exists in the geodatabase, the name will be automatically incremented. By default, the feature type name is used.</para>
-		/// <para>If the input is a complex WFS service, the name is used to create a geodatabase in the output location.</para>
+		/// <para>输出要素类或地理数据库的名称。</para>
+		/// <para>如果输入是简单的 WFS 服务，则该名称将用于在输出位置内创建要素类。如果该地理数据库中已存在该要素类名称，则将自动递增该命名值。默认情况下，将使用要素类型名称。</para>
+		/// <para>如果输入是复杂的 WFS 服务，则该名称将用于在输出位置内创建地理数据库。</para>
 		/// </param>
 		public WFSToFeatureClass(object InputWFSServer, object WFSFeatureType, object OutPath, object OutName)
 		{
@@ -47,9 +48,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : WFS To Feature Class</para>
+		/// <para>Tool Display Name : WFS 转要素类</para>
 		/// </summary>
-		public override string DisplayName() => "WFS To Feature Class";
+		public override string DisplayName() => "WFS 转要素类";
 
 		/// <summary>
 		/// <para>Tool Name : WFSToFeatureClass</para>
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>WFS Server</para>
-		/// <para>The URL of the source WFS service (for example, http://sampleserver6.arcgisonline.com/arcgis/services/SampleWorldCities/MapServer/WFSServer?). If the input is a complex WFS service (Complex WFS service is checked), this can also be the path to the XML file.</para>
+		/// <para>源 WFS 服务的 URL（例如 http://sampleserver6.arcgisonline.com/arcgis/services/SampleWorldCities/MapServer/WFSServer?）。如果输入为复杂的 WFS 服务（已选中复杂的 WFS 服务），那么这也可以是 XML 文件的路径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -91,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Select Feature Type to Extract</para>
-		/// <para>The name of the WFS layer to extract from the input WFS service.</para>
+		/// <para>从输入 WFS 服务中提取的 WFS 图层的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -99,9 +100,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Location</para>
-		/// <para>The location of the output feature class or geodatabase.</para>
-		/// <para>If the input is a simple WFS service, the output location can be a geodatabase or a feature dataset in a geodatabase. If the output location is a feature dataset, the coordinates are converted from the source coordinate system to the coordinate system of the feature dataset.</para>
-		/// <para>If the input is a complex WFS service, the output location must be a folder.</para>
+		/// <para>输出要素类或地理数据库的位置。</para>
+		/// <para>如果输入是简单的 WFS 服务，则输出位置可以是地理数据库或地理数据库内的要素数据集。若输出位置为要素数据集，则坐标系将从源坐标系转换为要素数据集坐标系。</para>
+		/// <para>如果输入是复杂的 WFS 服务，则输出位置必须是文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -109,9 +110,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Name</para>
-		/// <para>The name of the output feature class or geodatabase.</para>
-		/// <para>If the input is a simple WFS service, the name is used to create a feature class in the output location. If the feature class name already exists in the geodatabase, the name will be automatically incremented. By default, the feature type name is used.</para>
-		/// <para>If the input is a complex WFS service, the name is used to create a geodatabase in the output location.</para>
+		/// <para>输出要素类或地理数据库的名称。</para>
+		/// <para>如果输入是简单的 WFS 服务，则该名称将用于在输出位置内创建要素类。如果该地理数据库中已存在该要素类名称，则将自动递增该命名值。默认情况下，将使用要素类型名称。</para>
+		/// <para>如果输入是复杂的 WFS 服务，则该名称将用于在输出位置内创建地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -126,9 +127,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Complex WFS service</para>
-		/// <para>Specifies whether the input WFS service is a complex WFS service.</para>
-		/// <para>Checked—The WFS service is a complex WFS service.</para>
-		/// <para>Not checked—The WFS service is not a complex service. This is the default.</para>
+		/// <para>指定输入 WFS 服务是否为复杂的 WFS 服务。</para>
+		/// <para>选中 - WFS 服务为复杂的 WFS 服务。</para>
+		/// <para>未选中 - WFS 服务不是复杂的服务。这是默认设置。</para>
 		/// <para><see cref="IsComplexEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -145,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Max Features</para>
-		/// <para>The maximum number of features that can be returned. The default is 1000.</para>
+		/// <para>可返回的最大要素数量。默认值为 1000。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -153,9 +154,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Expose Metadata</para>
-		/// <para>Specifies whether tables with metadata will be created from the service. This is only applicable for complex WFS services.</para>
-		/// <para>Checked—Metadata tables will be created in the output geodatabase.</para>
-		/// <para>Not checked—Metadata tables will not be created in the output geodatabase. This is the default.</para>
+		/// <para>指定是否将根据服务创建带有元数据的表。这仅适用于复杂的 WFS 服务。</para>
+		/// <para>选中 - 将在输出地理数据库中创建元数据表。</para>
+		/// <para>未选中 - 将不在输出地理数据库中创建元数据表。这是默认设置。</para>
 		/// <para><see cref="ExposeMetadataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -165,9 +166,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Swap XY Axis Order</para>
-		/// <para>Specifies whether the x,y axis order of the output feature class will be swapped. Some WFS services may have the order of the x,y coordinates swapped on the server side, causing the feature class to display incorrectly.</para>
-		/// <para>Checked—The x,y axis order will be swapped.</para>
-		/// <para>Not checked—The x,y axis order will not be swapped. This is the default.</para>
+		/// <para>指定是否将交换输出要素类的 x,y 轴顺序。某些 WFS 服务可能在服务器端交换了 x,y 坐标的顺序，从而导致要素类显示不正确。</para>
+		/// <para>选中 - 将交换 x,y 轴顺序。</para>
+		/// <para>未选中 - 将不会交换 x,y 轴顺序。这是默认设置。</para>
 		/// <para><see cref="SwapXyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -192,7 +193,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum IsComplexEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The WFS service is a complex WFS service.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMPLEX")]
@@ -213,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum ExposeMetadataEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Metadata tables will be created in the output geodatabase.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EXPOSE_METADATA")]
@@ -234,7 +235,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum SwapXyEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The x,y axis order will be swapped.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SWAP_XY")]

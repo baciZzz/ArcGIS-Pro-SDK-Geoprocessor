@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Surface Contour</para>
-	/// <para>Creates contour lines derived from a terrain, TIN, or LAS dataset surface.</para>
+	/// <para>表面等值线</para>
+	/// <para>创建派生自 terrain、TIN 或 LAS 数据集表面的等值线。</para>
 	/// </summary>
 	public class SurfaceContour : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InSurface">
 		/// <para>Input Surface</para>
-		/// <para>The TIN, terrain, or LAS dataset surface to process.</para>
+		/// <para>待处理的 TIN、terrain 或 LAS 数据集表面。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </param>
 		/// <param name="Interval">
 		/// <para>Contour Interval</para>
-		/// <para>The interval between the contours.</para>
+		/// <para>等值线间的间距。</para>
 		/// </param>
 		public SurfaceContour(object InSurface, object OutFeatureClass, object Interval)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Surface Contour</para>
+		/// <para>Tool Display Name : 表面等值线</para>
 		/// </summary>
-		public override string DisplayName() => "Surface Contour";
+		public override string DisplayName() => "表面等值线";
 
 		/// <summary>
 		/// <para>Tool Name : SurfaceContour</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Surface</para>
-		/// <para>The TIN, terrain, or LAS dataset surface to process.</para>
+		/// <para>待处理的 TIN、terrain 或 LAS 数据集表面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Contour Interval</para>
-		/// <para>The interval between the contours.</para>
+		/// <para>等值线间的间距。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -98,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Base Contour</para>
-		/// <para>Defines the starting Z value from which the contour interval is either added or subtracted to delineate contours. The default value is 0.0.</para>
+		/// <para>定义要加上或减去等值线间距以描绘等值线的起始 z 值。默认值为 0.0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -106,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Contour Field</para>
-		/// <para>The field that stores the contour value associated with each line in the output feature class.</para>
+		/// <para>将与每条线均关联的等值线值存储在输出要素类中的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -114,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Contour Field Precision</para>
-		/// <para>The precision of the contour field. Zero specifies an integer, and the numbers 1–9 indicate how many decimal places the field will contain. By default, the field will be an integer (0).</para>
+		/// <para>等值线字段的精度。零将指定一个整数，数字 1-9 则指示字段将包含的小数位数。默认情况下，字段将为整数 (0)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -122,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Index Interval</para>
-		/// <para>Index contours are commonly used as a cartographic aid for assisting in the visualization of contour lines. The index interval is typically five times larger than the contour interval. Use of this parameter adds an integer field defined by the Index Interval Field to the attribute table of the output feature class, where a value of 1 denotes the index contours.</para>
+		/// <para>计曲线通常用于制图帮助以协助实现等值线可视化。计曲线间距的值通常比等值线间距的值大五倍。使用该参数会将计曲线间距字段定义的整型字段添加到输出要素类的属性表中，其中值 1 指示计曲线。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -130,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Index Interval Field</para>
-		/// <para>The name of the field used to identify index contours. This will only be used if the Index Interval is defined. By default, the field name is Index.</para>
+		/// <para>字段名称用于标识计曲线。该参数仅能在定义了计曲线间距后使用。默认情况下，字段名称是 Index。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -138,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z Factor</para>
-		/// <para>The factor by which z-values will be multiplied. This is typically used to convert z linear units to match x,y linear units. The default is 1, which leaves elevation values unchanged. This parameter is not available if the spatial reference of the input surface has a z datum with a specified linear unit.</para>
+		/// <para>Z 值将乘上的系数。 此值通常用于转换 z 线性单位来匹配 x,y 线性单位。 默认值为 1，此时高程值保持不变。 如果输入表面的空间参考具有已指定线性单位的 z 基准，则此参数不可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -146,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
-		/// <para>The z-tolerance or window-size resolution of the terrain pyramid level that will be used. The default is 0, or full resolution.</para>
+		/// <para>将使用 terrain 金字塔等级的 z 容差或窗口大小分辨率。 默认值为 0，或全分辨率。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

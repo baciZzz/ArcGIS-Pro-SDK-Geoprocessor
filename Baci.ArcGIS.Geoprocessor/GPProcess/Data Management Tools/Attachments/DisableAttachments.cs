@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Disable Attachments</para>
-	/// <para>Disables attachments on a geodatabase feature class or table. The tool deletes the attachment relationship class and attachment table.</para>
+	/// <para>禁用附件</para>
+	/// <para>禁用地理数据库要素类或表的附件。此工具用于删除附件关系类和附件表。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>The geodatabase table or feature class for which attachments will be disabled. The input must be in a version 10 or later geodatabase.</para>
+		/// <para>将禁用附件的地理数据库表或要素类。输入的表或要素类必须处于 10 或更高版本的地理数据库中。</para>
 		/// </param>
 		public DisableAttachments(object InDataset)
 		{
@@ -30,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Disable Attachments</para>
+		/// <para>Tool Display Name : 禁用附件</para>
 		/// </summary>
-		public override string DisplayName() => "Disable Attachments";
+		public override string DisplayName() => "禁用附件";
 
 		/// <summary>
 		/// <para>Tool Name : DisableAttachments</para>
@@ -66,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>The geodatabase table or feature class for which attachments will be disabled. The input must be in a version 10 or later geodatabase.</para>
+		/// <para>将禁用附件的地理数据库表或要素类。输入的表或要素类必须处于 10 或更高版本的地理数据库中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]

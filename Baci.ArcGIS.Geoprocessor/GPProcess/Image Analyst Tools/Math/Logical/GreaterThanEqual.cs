@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Greater Than Equal</para>
-	/// <para>Performs a Relational greater-than-or-equal-to operation on two inputs on a cell-by-cell basis.</para>
+	/// <para>大于等于</para>
+	/// <para>以逐个像元比较的方式对两个输入执行关系大于或等于运算。</para>
 	/// </summary>
 	public class GreaterThanEqual : AbstractGPProcess
 	{
@@ -20,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant1">
 		/// <para>Input raster or constant value 1</para>
-		/// <para>The input being tested to determine if it is greater than or equal to the second input.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>将被测试以确定其是否大于或等于第二个输入的输入。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="InRasterOrConstant2">
 		/// <para>Input raster or constant value 2</para>
-		/// <para>The input against which the first input is tested to be greater than or equal to.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>用以测试第一个输入是否大于或等于此输入的输入。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The output cell values will be either integer 0 or 1, or NoData if any input cell value is NoData.</para>
+		/// <para>输出栅格。</para>
+		/// <para>输出像元值为整数 0 或 1，在任意输入像元值都为 NoData 时，输出像元值将为 NoData。</para>
 		/// </param>
 		public GreaterThanEqual(object InRasterOrConstant1, object InRasterOrConstant2, object OutRaster)
 		{
@@ -41,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Greater Than Equal</para>
+		/// <para>Tool Display Name : 大于等于</para>
 		/// </summary>
-		public override string DisplayName() => "Greater Than Equal";
+		public override string DisplayName() => "大于等于";
 
 		/// <summary>
 		/// <para>Tool Name : GreaterThanEqual</para>
@@ -77,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 1</para>
-		/// <para>The input being tested to determine if it is greater than or equal to the second input.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>将被测试以确定其是否大于或等于第二个输入的输入。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -90,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 2</para>
-		/// <para>The input against which the first input is tested to be greater than or equal to.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>用以测试第一个输入是否大于或等于此输入的输入。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -103,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The output cell values will be either integer 0 or 1, or NoData if any input cell value is NoData.</para>
+		/// <para>输出栅格。</para>
+		/// <para>输出像元值为整数 0 或 1，在任意输入像元值都为 NoData 时，输出像元值将为 NoData。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

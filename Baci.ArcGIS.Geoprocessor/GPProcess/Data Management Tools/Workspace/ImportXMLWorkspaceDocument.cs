@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Import XML Workspace Document</para>
-	/// <para>Imports the contents of an XML workspace document into an existing geodatabase.</para>
+	/// <para>导入 XML 工作空间文档</para>
+	/// <para>将 XML 工作空间文档的内容导入现有地理数据库。</para>
 	/// </summary>
 	public class ImportXMLWorkspaceDocument : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="TargetGeodatabase">
 		/// <para>Target Geodatabase</para>
-		/// <para>The existing geodatabase where the contents of the XML workspace document will be imported.</para>
+		/// <para>XML 工作空间文档的内容将被导入的现有地理数据库。</para>
 		/// </param>
 		/// <param name="InFile">
 		/// <para>Import File</para>
-		/// <para>The input XML workspace document file containing geodatabase contents to be imported. This can be an XML file (.xml) or a compressed ZIP file (.zip or .z) containing the XML file.</para>
+		/// <para>包含要导入的地理数据库内容的输入 XML 工作空间文档文件。它可以是 XML 文件 (.xml) 或包含 XML 文件的 ZIP 压缩文件（.zip 或 .z）。</para>
 		/// </param>
 		public ImportXMLWorkspaceDocument(object TargetGeodatabase, object InFile)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Import XML Workspace Document</para>
+		/// <para>Tool Display Name : 导入 XML 工作空间文档</para>
 		/// </summary>
-		public override string DisplayName() => "Import XML Workspace Document";
+		public override string DisplayName() => "导入 XML 工作空间文档";
 
 		/// <summary>
 		/// <para>Tool Name : ImportXMLWorkspaceDocument</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Geodatabase</para>
-		/// <para>The existing geodatabase where the contents of the XML workspace document will be imported.</para>
+		/// <para>XML 工作空间文档的内容将被导入的现有地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Import File</para>
-		/// <para>The input XML workspace document file containing geodatabase contents to be imported. This can be an XML file (.xml) or a compressed ZIP file (.zip or .z) containing the XML file.</para>
+		/// <para>包含要导入的地理数据库内容的输入 XML 工作空间文档文件。它可以是 XML 文件 (.xml) 或包含 XML 文件的 ZIP 压缩文件（.zip 或 .z）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -89,9 +90,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Import Options</para>
-		/// <para>Determines if both data (feature class and table records, including geometry) and schema are imported, or only schema is imported.</para>
-		/// <para>Import data and schema—Import the data and schema. This is the default.</para>
-		/// <para>Import schema only—Import the schema only.</para>
+		/// <para>确定是将数据（要素类和表记录，包括几何）和方案都导入，还是仅导入方案。</para>
+		/// <para>导入数据和方案—导入数据和方案。这是默认设置。</para>
+		/// <para>仅导入方案—仅导入方案。</para>
 		/// <para><see cref="ImportTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
-		/// <para>Geodatabase configuration keyword to be applied if the Target Geodatabase is an enterprise or file geodatabase.</para>
+		/// <para>要在目标地理数据库为企业级地理数据库或文件地理数据库时应用的地理数据库配置关键字。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -132,17 +133,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ImportTypeEnum 
 		{
 			/// <summary>
-			/// <para>Import data and schema—Import the data and schema. This is the default.</para>
+			/// <para>导入数据和方案—导入数据和方案。这是默认设置。</para>
 			/// </summary>
 			[GPValue("DATA")]
-			[Description("Import data and schema")]
+			[Description("导入数据和方案")]
 			Import_data_and_schema,
 
 			/// <summary>
-			/// <para>Import schema only—Import the schema only.</para>
+			/// <para>仅导入方案—仅导入方案。</para>
 			/// </summary>
 			[GPValue("SCHEMA_ONLY")]
-			[Description("Import schema only")]
+			[Description("仅导入方案")]
 			Import_schema_only,
 
 		}

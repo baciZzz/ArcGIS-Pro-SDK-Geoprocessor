@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Create Curved Approach</para>
+	/// <para>Create Curved Approach</para>
 	/// <para>Creates curved approach obstacle identification surfaces (OIS) based on the supported specifications in ArcGIS Aviation. These curved approach surfaces are based on an input flight path and the information in the selected specification, for example, ICAO Annex 15, FAA 18B and classification. This tool creates surfaces in existing polygon or multipatch features.</para>
 	/// </summary>
 	public class CreateCurvedApproach : AbstractGPProcess

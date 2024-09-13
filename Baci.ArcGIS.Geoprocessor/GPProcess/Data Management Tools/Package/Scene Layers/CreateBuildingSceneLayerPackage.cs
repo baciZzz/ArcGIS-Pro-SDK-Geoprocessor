@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Building Scene Layer Package</para>
-	/// <para>Creates a scene layer package (.slpk file) from a building layer input.</para>
+	/// <para>创建建筑物场景图层包</para>
+	/// <para>用于从建筑物图层输入创建场景图层包（.slpk 文件）。</para>
 	/// </summary>
 	public class CreateBuildingSceneLayerPackage : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>The input building layer or layer file (.lyrx).</para>
+		/// <para>输入建筑物图层或图层文件 (.lyrx)。</para>
 		/// </param>
 		/// <param name="OutSlpk">
 		/// <para>Output Scene Layer Package</para>
-		/// <para>The output scene layer package (.slpk).</para>
+		/// <para>输出场景图层包 (.slpk)。</para>
 		/// </param>
 		public CreateBuildingSceneLayerPackage(object InDataset, object OutSlpk)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Building Scene Layer Package</para>
+		/// <para>Tool Display Name : 创建建筑物场景图层包</para>
 		/// </summary>
-		public override string DisplayName() => "Create Building Scene Layer Package";
+		public override string DisplayName() => "创建建筑物场景图层包";
 
 		/// <summary>
 		/// <para>Tool Name : CreateBuildingSceneLayerPackage</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>The input building layer or layer file (.lyrx).</para>
+		/// <para>输入建筑物图层或图层文件 (.lyrx)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Scene Layer Package</para>
-		/// <para>The output scene layer package (.slpk).</para>
+		/// <para>输出场景图层包 (.slpk)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -88,10 +89,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Coordinate System</para>
-		/// <para>The coordinate system of the output scene layer package. It can be any projected or custom coordinate system. Supported geographic coordinate systems include WGS 1984 and China Geodetic Coordinate System 2000. WGS 1984 and EGM96 Geoid are the default horizontal and vertical coordinate systems, respectively. The coordinate system can be specified in any of the following ways:</para>
-		/// <para>Specify the path to a .prj file.</para>
-		/// <para>Reference a dataset with the desired coordinate system.</para>
-		/// <para>Use an arcpy.SpatialReference object.</para>
+		/// <para>输出场景图层包的坐标系。它可以是任意投影坐标系或自定义坐标系。支持的地理坐标系包括 WGS 1984 和 China Geodetic Coordinate System 2000。WGS 1984 和 EGM96 大地水准面分别是默认的水平和垂直坐标系。可通过以下任一方式指定坐标系：</para>
+		/// <para>指定 .prj 文件的路径。</para>
+		/// <para>引用具有所需坐标系的数据集。</para>
+		/// <para>使用 arcpy.SpatialReference 对象。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
@@ -99,8 +100,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Geographic Transformation</para>
-		/// <para>The datum transformation method that will be used when the input layer&apos;s coordinate system uses a datum that differs from the output coordinate system. All transformations are bidirectional, regardless of the direction implied by their names. For example, NAD_1927_to_WGS_1984_3 will work correctly even if the datum conversion is from WGS84 to NAD 1927.</para>
-		/// <para>The ArcGIS Coordinate System data is required for vertical datum transformations between ellipsoidal and gravity-related and two gravity-related datums.</para>
+		/// <para>此基准面变换方法适用于输入图层坐标系所使用的基准面不同于输出坐标系的情况。 所有变换均为双向，而不管其名称隐含的方向如何。 例如，即使基准变换为从 WGS84 到 NAD 1927，NAD_1927_to_WGS_1984_3 仍可正常运行。</para>
+		/// <para>在椭圆体和重力相关的基准面以及两个与重力相关的基准面之间进行垂直基准面变换时，需要使用 ArcGIS 坐标系数据。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -108,11 +109,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Texture Optimization</para>
-		/// <para>Specifies the textures that will be optimized according to the target platform where the scene layer package is used. Desktop includes Windows, Linux, and Mac platforms. Mobile include iOS and Android.Optimizations that include ETC2 may take significant time to process. For fastest results, use the Desktop or None option.</para>
-		/// <para>All—Texture formats will be optimized for use on desktop, web, and mobile platforms. Texture formats will be JPEG, DXT, and ETC2.</para>
-		/// <para>Desktop—Texture formats will be optimized for use on desktop and web platforms. Texture formats will be JPEG and DXT.</para>
-		/// <para>Mobile—Texture formats will be optimized for use on desktop and mobile platforms. Texture formats will be JPEG and ETC2.</para>
-		/// <para>None—Textures formats will be optimized for use on a desktop platform. The texture format will be JPEG.</para>
+		/// <para>指定根据使用场景图层包的目标平台优化的纹理。 桌面平台包括 Windows、Linux 和 Mac 平台。 移动平台包括 iOS 和 Android。可能需要大量时间来处理包括 ETC2 的优化。 要获得最快结果，请使用桌面或无选项。</para>
+		/// <para>全部—纹理格式将进行优化，可用于桌面、web 和移动平台。 纹理格式将为 JPEG、DXT 和 ETC2。</para>
+		/// <para>桌面—纹理格式将进行优化，可用于桌面和 web 平台。 纹理格式将为 JPEG 和 DXT。</para>
+		/// <para>移动—纹理格式将进行优化，可用于桌面和移动平台。 纹理格式将为 JPEG 和 ETC2。</para>
+		/// <para>无—纹理格式将进行优化，可用于桌面平台。 纹理格式将为 JPEG。</para>
 		/// <para><see cref="TextureOptimizationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,31 +129,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TextureOptimizationEnum 
 		{
 			/// <summary>
-			/// <para>All—Texture formats will be optimized for use on desktop, web, and mobile platforms. Texture formats will be JPEG, DXT, and ETC2.</para>
+			/// <para>全部—纹理格式将进行优化，可用于桌面、web 和移动平台。 纹理格式将为 JPEG、DXT 和 ETC2。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All")]
+			[Description("全部")]
 			All,
 
 			/// <summary>
-			/// <para>Desktop—Texture formats will be optimized for use on desktop and web platforms. Texture formats will be JPEG and DXT.</para>
+			/// <para>桌面—纹理格式将进行优化，可用于桌面和 web 平台。 纹理格式将为 JPEG 和 DXT。</para>
 			/// </summary>
 			[GPValue("DESKTOP")]
-			[Description("Desktop")]
+			[Description("桌面")]
 			Desktop,
 
 			/// <summary>
-			/// <para>Mobile—Texture formats will be optimized for use on desktop and mobile platforms. Texture formats will be JPEG and ETC2.</para>
+			/// <para>移动—纹理格式将进行优化，可用于桌面和移动平台。 纹理格式将为 JPEG 和 ETC2。</para>
 			/// </summary>
 			[GPValue("MOBILE")]
-			[Description("Mobile")]
+			[Description("移动")]
 			Mobile,
 
 			/// <summary>
-			/// <para>None—Textures formats will be optimized for use on a desktop platform. The texture format will be JPEG.</para>
+			/// <para>无—纹理格式将进行优化，可用于桌面平台。 纹理格式将为 JPEG。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 		}

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Transfer Files</para>
-	/// <para>Transfers files between a file system and a cloud storage workspace.</para>
+	/// <para>传输文件</para>
+	/// <para>用于在文件系统和云存储工作空间之间传输文件。</para>
 	/// </summary>
 	public class TransferFiles : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputPaths">
 		/// <para>Input Paths</para>
-		/// <para>The list of input files or folders that will be copied to the output folder. The path can be a file system path or cloud storage path where the .acs file can be used.</para>
+		/// <para>将复制到输出文件夹的输入文件或文件夹的列表。该路径可以是文件系统路径或云存储路径，其中可以使用 .acs 文件。</para>
 		/// </param>
 		/// <param name="OutputFolder">
 		/// <para>Output Folder</para>
-		/// <para>The output folder path where the files will be copied.</para>
+		/// <para>将复制文件的输出文件夹路径。</para>
 		/// </param>
 		public TransferFiles(object InputPaths, object OutputFolder)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Transfer Files</para>
+		/// <para>Tool Display Name : 传输文件</para>
 		/// </summary>
-		public override string DisplayName() => "Transfer Files";
+		public override string DisplayName() => "传输文件";
 
 		/// <summary>
 		/// <para>Tool Name : TransferFiles</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Paths</para>
-		/// <para>The list of input files or folders that will be copied to the output folder. The path can be a file system path or cloud storage path where the .acs file can be used.</para>
+		/// <para>将复制到输出文件夹的输入文件或文件夹的列表。该路径可以是文件系统路径或云存储路径，其中可以使用 .acs 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Folder</para>
-		/// <para>The output folder path where the files will be copied.</para>
+		/// <para>将复制文件的输出文件夹路径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Filters</para>
-		/// <para>A file pattern filter that will limit the number of files that need to be copied, such as .tif, .crf, and similar image file types.</para>
+		/// <para>此文件模式过滤器用于限制需要复制的文件（例如 .tif、.crf 和类似的影像文件类型）数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

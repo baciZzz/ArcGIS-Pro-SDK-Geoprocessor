@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compute Fiducials</para>
-	/// <para>Computes the fiducial coordinates in image and film space for each image in a mosaic dataset.</para>
+	/// <para>计算基准</para>
+	/// <para>计算镶嵌数据集中每个图像的图像空间和胶片空间中的基准坐标。</para>
 	/// </summary>
 	public class ComputeFiducials : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset created from scanned aerial photos using scanned raster type or frame camera raster type.</para>
+		/// <para>使用扫描栅格类型或帧照相机栅格类型，根据扫描航空照片创建的镶嵌数据集。</para>
 		/// </param>
 		/// <param name="OutFiducialTable">
 		/// <para>Output Fiducial Table</para>
-		/// <para>The output table that stores all the fiducial coordinate information in image and film space.</para>
+		/// <para>用于存储图像空间和胶片空间中所有基准坐标信息的输出表格。</para>
 		/// </param>
 		public ComputeFiducials(object InMosaicDataset, object OutFiducialTable)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Compute Fiducials</para>
+		/// <para>Tool Display Name : 计算基准</para>
 		/// </summary>
-		public override string DisplayName() => "Compute Fiducials";
+		public override string DisplayName() => "计算基准";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeFiducials</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset created from scanned aerial photos using scanned raster type or frame camera raster type.</para>
+		/// <para>使用扫描栅格类型或帧照相机栅格类型，根据扫描航空照片创建的镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Fiducial Table</para>
-		/// <para>The output table that stores all the fiducial coordinate information in image and film space.</para>
+		/// <para>用于存储图像空间和胶片空间中所有基准坐标信息的输出表格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>A query definition string that defines a subset of rasters for computing fiducials.</para>
+		/// <para>用于定义计算基准的栅格子集的查询定义字符串。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Fiducial Templates</para>
-		/// <para>The fiducial template table that contains required fields for storing fiducial pictures and other properties.</para>
+		/// <para>包含用于存储基准图片和其他属性的必填字段的基准模板表格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -101,12 +102,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Film Coordinate System</para>
-		/// <para>A keyword that defines the film coordinate system of the scanned aerial photograph. It is used in computing fiducial information and affine transformation construction.</para>
-		/// <para>No change—Maintain the coordinate system of the mosaic dataset. Do not change the film coordinate system of the scanned aerial photograph. Maintain the coordinate system of the mosaic dataset.</para>
-		/// <para>X right, Y up—The origin of the scanned photo&apos;s coordinate system is the center, and positive X points right and positive Y points up.</para>
-		/// <para>X up, Y left—The origin of the scanned photo&apos;s coordinate system is the center, and positive X points up and positive Y points left.</para>
-		/// <para>X left, Y down—The origin of the scanned photo&apos;s coordinate system is the center, and positive X points left and positive Y points down.</para>
-		/// <para>X down, Y right—The origin of the scanned photo&apos;s coordinate system is the center, and positive X points down and positive Y points right.</para>
+		/// <para>用于定义扫描航空像片的胶片坐标系的关键字。可用于计算基准信息和仿射变换构造。</para>
+		/// <para>不变—请保留镶嵌数据集的坐标系。不要更改扫描航空像片的胶片坐标系。请保留镶嵌数据集的坐标系。</para>
+		/// <para>X 右，Y 上—扫描照片坐标系的原点为中心，正 X 点向右，正 Y 点向上。</para>
+		/// <para>X 上，Y 左—扫描照片坐标系的原点为中心，正 X 点向上，正 Y 点向左。</para>
+		/// <para>X 左，Y 下—扫描照片坐标系的原点为中心，正 X 点向左，正 Y 点向下。</para>
+		/// <para>X 下，Y 右—扫描照片坐标系的原点为中心，正 X 点向下，正 Y 点向右。</para>
 		/// <para><see cref="FilmCoordinateSystemEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -131,38 +132,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FilmCoordinateSystemEnum 
 		{
 			/// <summary>
-			/// <para>No change—Maintain the coordinate system of the mosaic dataset. Do not change the film coordinate system of the scanned aerial photograph. Maintain the coordinate system of the mosaic dataset.</para>
+			/// <para>不变—请保留镶嵌数据集的坐标系。不要更改扫描航空像片的胶片坐标系。请保留镶嵌数据集的坐标系。</para>
 			/// </summary>
 			[GPValue("NO_CHANGE")]
-			[Description("No change")]
+			[Description("不变")]
 			No_change,
 
 			/// <summary>
-			/// <para>X right, Y up—The origin of the scanned photo&apos;s coordinate system is the center, and positive X points right and positive Y points up.</para>
+			/// <para>X 右，Y 上—扫描照片坐标系的原点为中心，正 X 点向右，正 Y 点向上。</para>
 			/// </summary>
 			[GPValue("X_RIGHT_Y_UP")]
-			[Description("X right, Y up")]
+			[Description("X 右，Y 上")]
 			X_RIGHT_Y_UP,
 
 			/// <summary>
-			/// <para>X up, Y left—The origin of the scanned photo&apos;s coordinate system is the center, and positive X points up and positive Y points left.</para>
+			/// <para>X 上，Y 左—扫描照片坐标系的原点为中心，正 X 点向上，正 Y 点向左。</para>
 			/// </summary>
 			[GPValue("X_UP_Y_LEFT")]
-			[Description("X up, Y left")]
+			[Description("X 上，Y 左")]
 			X_UP_Y_LEFT,
 
 			/// <summary>
-			/// <para>X left, Y down—The origin of the scanned photo&apos;s coordinate system is the center, and positive X points left and positive Y points down.</para>
+			/// <para>X 左，Y 下—扫描照片坐标系的原点为中心，正 X 点向左，正 Y 点向下。</para>
 			/// </summary>
 			[GPValue("X_LEFT_Y_DOWN")]
-			[Description("X left, Y down")]
+			[Description("X 左，Y 下")]
 			X_LEFT_Y_DOWN,
 
 			/// <summary>
-			/// <para>X down, Y right—The origin of the scanned photo&apos;s coordinate system is the center, and positive X points down and positive Y points right.</para>
+			/// <para>X 下，Y 右—扫描照片坐标系的原点为中心，正 X 点向下，正 Y 点向右。</para>
 			/// </summary>
 			[GPValue("X_DOWN_Y_RIGHT")]
-			[Description("X down, Y right")]
+			[Description("X 下，Y 右")]
 			X_DOWN_Y_RIGHT,
 
 		}

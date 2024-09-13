@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Contingent Values</para>
-	/// <para>Exports field groups and contingent values to a .csv file.</para>
+	/// <para>导出条件值</para>
+	/// <para>将字段组和条件值导出为 .csv 文件。</para>
 	/// </summary>
 	public class ExportContingentValues : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="TargetTable">
 		/// <para>Target Table</para>
-		/// <para>The input geodatabase table or feature class from which the field groups and contingent values will be exported.</para>
+		/// <para>将从其中导出字段组和条件值的输入地理数据库表或要素类。</para>
 		/// </param>
 		/// <param name="FieldGroupsFile">
 		/// <para>Field Groups Output File (.csv)</para>
-		/// <para>The location and name of the output .csv file that will be created with specific column names containing information about the field groups of the target table.</para>
+		/// <para>将使用包含目标表的字段组相关信息的指定列名称 创建的输出 .csv 文件的位置和名称。</para>
 		/// </param>
 		/// <param name="ContingentValuesFile">
 		/// <para>Contingent Values Output File (.csv)</para>
-		/// <para>The location and name of the output .csv file that will be created with specific column names containing information about the contingent values of the target table.</para>
+		/// <para>将使用包含目标表的条件值相关信息的指定列名称创建的输出 .csv 文件的位置和名称。</para>
 		/// </param>
 		public ExportContingentValues(object TargetTable, object FieldGroupsFile, object ContingentValuesFile)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Export Contingent Values</para>
+		/// <para>Tool Display Name : 导出条件值</para>
 		/// </summary>
-		public override string DisplayName() => "Export Contingent Values";
+		public override string DisplayName() => "导出条件值";
 
 		/// <summary>
 		/// <para>Tool Name : ExportContingentValues</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Table</para>
-		/// <para>The input geodatabase table or feature class from which the field groups and contingent values will be exported.</para>
+		/// <para>将从其中导出字段组和条件值的输入地理数据库表或要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Groups Output File (.csv)</para>
-		/// <para>The location and name of the output .csv file that will be created with specific column names containing information about the field groups of the target table.</para>
+		/// <para>将使用包含目标表的字段组相关信息的指定列名称 创建的输出 .csv 文件的位置和名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Contingent Values Output File (.csv)</para>
-		/// <para>The location and name of the output .csv file that will be created with specific column names containing information about the contingent values of the target table.</para>
+		/// <para>将使用包含目标表的条件值相关信息的指定列名称创建的输出 .csv 文件的位置和名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

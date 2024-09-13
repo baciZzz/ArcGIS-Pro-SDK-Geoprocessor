@@ -11,10 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Transform Field</para>
-	/// <para>Transforms continuous values in one or more fields by applying mathematical functions to each value and</para>
-	/// <para>changing the shape of the distribution. The transformation methods</para>
-	/// <para>in the tool include log, square root, Box-Cox, multiplicative</para>
-	/// <para>inverse, square, exponential, and inverse Box-Cox.</para>
+	/// <para>转换字段</para>
+	/// <para>通过对每个值应用数学函数并更改分布的形状来变换一个或多个字段中的连续值。该工具中的变换方法包括对数、平方根、Box-Cox 变换、倒数、平方、指数和逆 Box-Cox 变换。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -25,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input table or feature class containing the fields to be transformed. The newly transformed fields are added to the input table.</para>
+		/// <para>包含待变换字段的输入表或要素类。新变换的字段将添加到输入表中。</para>
 		/// </param>
 		/// <param name="Fields">
 		/// <para>Field to Transform</para>
-		/// <para>The fields containing the values to be transformed. For each field, an output field name can be specified. If an output field name is not provided, the tool creates an output field name using the field name and transformation method.</para>
+		/// <para>包含要变换的值的字段。对于每个字段，可以指定输出字段名称。如果未提供输出字段名称，则该工具将使用字段名称和变换方法来创建输出字段名称。</para>
 		/// </param>
 		public TransformField(object InTable, object Fields)
 		{
@@ -38,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Transform Field</para>
+		/// <para>Tool Display Name : 转换字段</para>
 		/// </summary>
-		public override string DisplayName() => "Transform Field";
+		public override string DisplayName() => "转换字段";
 
 		/// <summary>
 		/// <para>Tool Name : TransformField</para>
@@ -74,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input table or feature class containing the fields to be transformed. The newly transformed fields are added to the input table.</para>
+		/// <para>包含待变换字段的输入表或要素类。新变换的字段将添加到输入表中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -82,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field to Transform</para>
-		/// <para>The fields containing the values to be transformed. For each field, an output field name can be specified. If an output field name is not provided, the tool creates an output field name using the field name and transformation method.</para>
+		/// <para>包含要变换的值的字段。对于每个字段，可以指定输出字段名称。如果未提供输出字段名称，则该工具将使用字段名称和变换方法来创建输出字段名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -91,14 +89,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Transformation Method</para>
-		/// <para>Specifies the method that is used to transform the values contained in the specified fields.</para>
-		/// <para>Multiplicative Inverse—The multiplicative inverse (1/x) method is applied to the original value (x) in the selected fields.</para>
-		/// <para>Square root—The square root method is applied to the original value in the selected fields.</para>
-		/// <para>Log—The natural logarithmic function, log(x), is applied to the original value (x) in the selected fields.</para>
-		/// <para>Box-Cox—The Box-Cox power function is applied to normally distribute the original values in the selected fields. This is the default.</para>
-		/// <para>Inverse Box-Cox—The inverse of the Box-Cox transformation is applied to the original values in the selected fields.</para>
-		/// <para>Square (inverse square root)—The square method is applied to the original values in the selected fields. This transformation is the inverse of square root.</para>
-		/// <para>Exponential (inverse log)—The exponential function, exp(x), is applied to the original value (x) in the selected fields. This transformation is the inverse of log.</para>
+		/// <para>指定用于变换指定字段中包含的值的方法。</para>
+		/// <para>倒数—将倒数 (1/x) 方法应用于所选字段中的原始值 (x)。</para>
+		/// <para>平方根—将平方根方法应用于所选字段中的原始值。</para>
+		/// <para>日志—将自然对数函数 log(x) 应用于所选字段中的原始值 (x)。</para>
+		/// <para>Box-Cox—将应用 Box-Cox 幂函数以使所选字段中的原始值正态分布。这是默认设置。</para>
+		/// <para>逆 Box-Cox—将 Box-Cox 变换的逆变换应用于所选字段中的原始值。</para>
+		/// <para>平方（平方根的逆变换）—将平方方法应用于所选字段中的原始值。此变换是平方根的逆变换。</para>
+		/// <para>指数（对数的逆变换）—将指数函数 exp(x) 应用于所选字段中的原始值 (x)。此变换是对数变换的逆变换。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -108,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Power</para>
-		/// <para>The power parameter ( λ1) of the Box-Cox transformation. If no value is provided, an optimal value is determined using maximum likelihood estimation (MLE).</para>
+		/// <para>Box-Cox 变换的幂参数 (λ1)。如果未提供任何值，则将使用最大似然估计 (MLE) 来确定最佳值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -117,9 +115,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Shift</para>
-		/// <para>The value by which all the data is shifted (adding a constant value). No shift is applied if 0 is specified.</para>
-		/// <para>For log, Box-Cox and square root transformations, a default shift value is added prior to the transformation if there are negative or zero values.</para>
-		/// <para>For exponential (inverse log), inverse Box-Cox, and square (inverse square root) transformations, no shift is applied by default. If a shift value is provided, the value is subtracted after the transformation is applied. This allows you to use the same shift value for transformations and their associated inverses.</para>
+		/// <para>对所有数据进行偏移（添加一个常数值）的值。如果指定 0，则不会应用任何偏移。</para>
+		/// <para>对于对数、Box-Cox 和平方根变换，如果存在负值或零值，则将在变换之前添加默认偏移值。</para>
+		/// <para>对于指数（逆对数）、逆 Box-Cox 和平方（逆平方根）变换，则默认不会应用任何偏移。如果提供了偏移值，则将在应用变换后减去该值。由此可以针对变换及其相关的逆变换使用相同的偏移值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -149,52 +147,52 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Multiplicative Inverse—The multiplicative inverse (1/x) method is applied to the original value (x) in the selected fields.</para>
+			/// <para>倒数—将倒数 (1/x) 方法应用于所选字段中的原始值 (x)。</para>
 			/// </summary>
 			[GPValue("INVX")]
-			[Description("Multiplicative Inverse")]
+			[Description("倒数")]
 			Multiplicative_Inverse,
 
 			/// <summary>
-			/// <para>Square root—The square root method is applied to the original value in the selected fields.</para>
+			/// <para>平方根—将平方根方法应用于所选字段中的原始值。</para>
 			/// </summary>
 			[GPValue("SQRT")]
-			[Description("Square root")]
+			[Description("平方根")]
 			Square_root,
 
 			/// <summary>
-			/// <para>Log—The natural logarithmic function, log(x), is applied to the original value (x) in the selected fields.</para>
+			/// <para>日志—将自然对数函数 log(x) 应用于所选字段中的原始值 (x)。</para>
 			/// </summary>
 			[GPValue("LOG")]
-			[Description("Log")]
+			[Description("日志")]
 			Log,
 
 			/// <summary>
-			/// <para>Box-Cox—The Box-Cox power function is applied to normally distribute the original values in the selected fields. This is the default.</para>
+			/// <para>Box-Cox—将应用 Box-Cox 幂函数以使所选字段中的原始值正态分布。这是默认设置。</para>
 			/// </summary>
 			[GPValue("BOX-COX")]
 			[Description("Box-Cox")]
 			BOX_COX,
 
 			/// <summary>
-			/// <para>Square (inverse square root)—The square method is applied to the original values in the selected fields. This transformation is the inverse of square root.</para>
+			/// <para>平方（平方根的逆变换）—将平方方法应用于所选字段中的原始值。此变换是平方根的逆变换。</para>
 			/// </summary>
 			[GPValue("INV_SQRT")]
-			[Description("Square (inverse square root)")]
+			[Description("平方（平方根的逆变换）")]
 			INV_SQRT,
 
 			/// <summary>
-			/// <para>Exponential (inverse log)—The exponential function, exp(x), is applied to the original value (x) in the selected fields. This transformation is the inverse of log.</para>
+			/// <para>指数（对数的逆变换）—将指数函数 exp(x) 应用于所选字段中的原始值 (x)。此变换是对数变换的逆变换。</para>
 			/// </summary>
 			[GPValue("INV_LOG")]
-			[Description("Exponential (inverse log)")]
+			[Description("指数（对数的逆变换）")]
 			INV_LOG,
 
 			/// <summary>
-			/// <para>Inverse Box-Cox—The inverse of the Box-Cox transformation is applied to the original values in the selected fields.</para>
+			/// <para>逆 Box-Cox—将 Box-Cox 变换的逆变换应用于所选字段中的原始值。</para>
 			/// </summary>
 			[GPValue("INV_BOX-COX")]
-			[Description("Inverse Box-Cox")]
+			[Description("逆 Box-Cox")]
 			INV_BOX_COX,
 
 		}

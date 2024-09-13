@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Delineate Built-Up Areas</para>
-	/// <para>Creates polygons to represent built-up areas by delineating densely clustered arrangements of buildings on small-scale maps.</para>
+	/// <para>描绘构建区</para>
+	/// <para>通过在小比例地图上描绘紧密排列的建筑物来创建面表示构建区。</para>
 	/// </summary>
 	public class DelineateBuiltUpAreas : AbstractGPProcess
 	{
@@ -20,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InBuildings">
 		/// <para>Input Building Layers</para>
-		/// <para>The layers containing buildings with density and arrangement that are used to define appropriate output built-up polygons. Multiple building layers can be assessed simultaneously. Building features can be points or polygons.</para>
+		/// <para>包含其密度和排列用于定义合适的输出构建面的建筑物的图层。 可同时评估多个建筑物图层。 建筑物要素可以是点或面。</para>
 		/// </param>
 		/// <param name="GroupingDistance">
 		/// <para>Grouping Distance</para>
-		/// <para>Buildings closer together than the grouping distance are considered collectively as candidates for representation by an output built-up area polygon. This distance is measured from the edges of polygon buildings and the centers of point buildings.</para>
+		/// <para>小于分组距离的建筑物将全部被视为可使用输出构建区面表示的候选项。 该距离从面建筑物的边和点建筑物的中心开始测量。</para>
 		/// </param>
 		/// <param name="MinimumDetailSize">
 		/// <para>Minimum Detail Size</para>
-		/// <para>The relative degree of detail in the output built-up area polygons. This is approximately to the minimum allowable diameter of a hole or cavity in the built-up area polygon. The actual size and shape of holes and cavities within the polygon is determined also by the arrangement of the input buildings, the grouping distance, and the presence of edge features if they are used.</para>
+		/// <para>输出构建区面的相对细节层次。 这与构建区面中的孔或洞允许的最小直径相近。 面中孔和洞的实际大小和形状还由输入建筑物的排列、分组距离和边要素的存在来确定（如果使用它们）。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class containing built-up area polygons representing clustered arrangements of input buildings.</para>
+		/// <para>包含表示紧密排列的输入建筑物的构建区面的输出要素类。</para>
 		/// </param>
 		public DelineateBuiltUpAreas(object InBuildings, object GroupingDistance, object MinimumDetailSize, object OutFeatureClass)
 		{
@@ -43,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Delineate Built-Up Areas</para>
+		/// <para>Tool Display Name : 描绘构建区</para>
 		/// </summary>
-		public override string DisplayName() => "Delineate Built-Up Areas";
+		public override string DisplayName() => "描绘构建区";
 
 		/// <summary>
 		/// <para>Tool Name : DelineateBuiltUpAreas</para>
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Building Layers</para>
-		/// <para>The layers containing buildings with density and arrangement that are used to define appropriate output built-up polygons. Multiple building layers can be assessed simultaneously. Building features can be points or polygons.</para>
+		/// <para>包含其密度和排列用于定义合适的输出构建面的建筑物的图层。 可同时评估多个建筑物图层。 建筑物要素可以是点或面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -89,10 +90,10 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Identifier Field</para>
-		/// <para>A field in the input feature classes that will hold a status code indicating whether the input feature is part of the resulting built-up area . This field must be either short or long integer type and common to all input layers if multiple input layers are used.</para>
-		/// <para>0—The building is not represented by an output built-up area polygon.</para>
-		/// <para>1—The building is represented by an output built-up area polygon and is within the resulting polygon.</para>
-		/// <para>2—The building is represented by an output built-up area polygon and is outside the resulting polygon.</para>
+		/// <para>输入要素类中的字段，保存指示输入要素是否为生成的构建区的一部分的状态码。 该字段必须是短整型或长整型，并且在所有输入图层中通用（如果使用多个输入图层）。</para>
+		/// <para>0 - 建筑物不使用输出构建区面表示。</para>
+		/// <para>1 - 建筑物使用输出构建区面表示且位于生成的面要素之内。</para>
+		/// <para>2 - 建筑物使用输出构建区面表示且位于生成的面要素之外。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Edge Features</para>
-		/// <para>The layers that will be used to define the edges of the built-up area polygons. Typically, these are roads, but other common examples are rivers, coastlines, and administrative areas. Built-up area polygons snap to an edge feature if one is generally aligned with the trend of the polygon edge and within the grouping distance away. Edge features can be lines or polygons.</para>
+		/// <para>将用来定义构建区面的边的图层。 通常为道路，其他一些常见示例有：河流、海岸线和行政区。 如果构建区面与面的边的趋势大致对齐且在分组距离之内，则构建区面会捕捉到边要素。 边要素可以是线或面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Grouping Distance</para>
-		/// <para>Buildings closer together than the grouping distance are considered collectively as candidates for representation by an output built-up area polygon. This distance is measured from the edges of polygon buildings and the centers of point buildings.</para>
+		/// <para>小于分组距离的建筑物将全部被视为可使用输出构建区面表示的候选项。 该距离从面建筑物的边和点建筑物的中心开始测量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -119,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Minimum Detail Size</para>
-		/// <para>The relative degree of detail in the output built-up area polygons. This is approximately to the minimum allowable diameter of a hole or cavity in the built-up area polygon. The actual size and shape of holes and cavities within the polygon is determined also by the arrangement of the input buildings, the grouping distance, and the presence of edge features if they are used.</para>
+		/// <para>输出构建区面的相对细节层次。 这与构建区面中的孔或洞允许的最小直径相近。 面中孔和洞的实际大小和形状还由输入建筑物的排列、分组距离和边要素的存在来确定（如果使用它们）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -127,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class containing built-up area polygons representing clustered arrangements of input buildings.</para>
+		/// <para>包含表示紧密排列的输入建筑物的构建区面的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -137,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Minimum Building Count</para>
-		/// <para>The minimum number of buildings that must be collectively considered for representation by an output built-up area polygon. The default value is 4. The minimum building count must be greater than or equal to 0.</para>
+		/// <para>必须共同代表输出构建区面的建筑物的最小数量。 默认值为 4。 最小建筑物计数必须大于或等于 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]

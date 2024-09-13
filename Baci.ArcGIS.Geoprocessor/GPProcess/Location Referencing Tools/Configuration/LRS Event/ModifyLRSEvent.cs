@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Modify LRS Event</para>
+	/// <para>Modify LRS Event</para>
 	/// <para>Modifies properties of a linear referencing system (LRS) event.</para>
 	/// </summary>
 	public class ModifyLRSEvent : AbstractGPProcess

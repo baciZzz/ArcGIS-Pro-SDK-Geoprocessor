@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Repair Network Topology</para>
-	/// <para>Verifies and repairs inconsistencies identified in the network topology system tables.</para>
+	/// <para>修复网络拓扑</para>
+	/// <para>用于验证和修复在网络拓扑系统表中识别的不一致。</para>
 	/// </summary>
 	public class RepairNetworkTopology : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that will be repaired.</para>
+		/// <para>将要修复的公共设施网络。</para>
 		/// </param>
 		public RepairNetworkTopology(object InUtilityNetwork)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Repair Network Topology</para>
+		/// <para>Tool Display Name : 修复网络拓扑</para>
 		/// </summary>
-		public override string DisplayName() => "Repair Network Topology";
+		public override string DisplayName() => "修复网络拓扑";
 
 		/// <summary>
 		/// <para>Tool Name : RepairNetworkTopology</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that will be repaired.</para>
+		/// <para>将要修复的公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Output Log File</para>
-		/// <para>The folder location and name of the file containing the discovered issues.</para>
+		/// <para>包含所发现问题的文件的文件夹位置和名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]

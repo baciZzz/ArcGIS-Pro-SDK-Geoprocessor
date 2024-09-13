@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Simplify Line</para>
+	/// <para>Simplify Line</para>
 	/// <para>Simplifies a line by removing small fluctuations.</para>
 	/// </summary>
 	[Obsolete()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Interpolate Points</para>
-	/// <para>Predicts values at new locations based on measurements from a collection of points. The tool uses point data with values at each point as input and makes areas classified by predicted values.</para>
+	/// <para>点插值</para>
+	/// <para>根据一组点的测量结果来预测新位置上的值。该工具将各点处具有数值的点数据用作输入，并根据预测值对区域进行分类。</para>
 	/// </summary>
 	public class InterpolatePoints : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// </summary>
 		/// <param name="Inputlayer">
 		/// <para>Input Features</para>
-		/// <para>The point features that will be interpolated to a continuous surface layer.</para>
+		/// <para>要被插值到连续表面图层上的点要素。</para>
 		/// </param>
 		/// <param name="Outputname">
 		/// <para>Output Name</para>
-		/// <para>The name of the output layer to create on your portal.</para>
+		/// <para>要在门户中创建的输出图层的名称。</para>
 		/// </param>
 		public InterpolatePoints(object Inputlayer, object Outputname)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Interpolate Points</para>
+		/// <para>Tool Display Name : 点插值</para>
 		/// </summary>
-		public override string DisplayName() => "Interpolate Points";
+		public override string DisplayName() => "点插值";
 
 		/// <summary>
 		/// <para>Tool Name : InterpolatePoints</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The point features that will be interpolated to a continuous surface layer.</para>
+		/// <para>要被插值到连续表面图层上的点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output layer to create on your portal.</para>
+		/// <para>要在门户中创建的输出图层的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Interpolation Field</para>
-		/// <para>The numeric field containing the values you want to interpolate.</para>
+		/// <para>包含要用于插值的值的数值字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -98,10 +99,10 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Interpolate Option</para>
-		/// <para>Controls your preference for speed versus accuracy, from fastest to most accurate. More accurate predictions take longer to calculate.</para>
-		/// <para>Speed—Speed.</para>
-		/// <para>Balanced—Balanced. This is the default.</para>
-		/// <para>Accuracy—Accuracy.</para>
+		/// <para>根据您的偏好控制“快速”或“精确”，可从“最快”调至“最精确”。预测结果越精确，所花费的计算时间就越长。</para>
+		/// <para>速度—速度。</para>
+		/// <para>平衡—平衡。这是默认设置。</para>
+		/// <para>精度—精度。</para>
 		/// <para><see cref="InterpolateoptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -111,10 +112,10 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Output prediction error</para>
-		/// <para>If checked, a polygon layer of standard errors for the interpolation predictions will be output.</para>
-		/// <para>Standard errors are useful because they provide information about the reliability of the predicted values. A simple rule of thumb is that the true value will fall within two standard errors of the predicted value 95 percent of the time. For example, suppose a new location gets a predicted value of 50 with a standard error of 5. This means that this task&apos;s best guess is that the true value at that location is 50, but it reasonably could be as low as 40 or as high as 60. To calculate this range of reasonable values, multiply the standard error by 2, add this value to the predicted value to get the upper end of the range, and subtract it from the predicted value to get the lower end of the range.</para>
-		/// <para>Unchecked—Do not create a prediction error output layer. This is the default.</para>
-		/// <para>Checked—Create a prediction error output layer.</para>
+		/// <para>选中后，将为插值预测输出一个包含标准误差的面图层。</para>
+		/// <para>标准误差可提供有关预测值的可信度的信息，因此非常有用。一般来说，有 95% 的真值会落在两个预测值标准误差之间。例如，假设一个新地区的预测值是 50，标准误差是 5。这意味着通过此任务预测出此地区的真值是 50，但不排除真值低至 40 或高至 60 的可能。为计算合理值的范围，可先用标准误差乘以 2，然后将得出的值加上预测值来获得范围上限，再用预测值减去乘以 2 后得出的值来获得范围下限。</para>
+		/// <para>未选中 - 不创建预测误差输出图层。这是默认设置。</para>
+		/// <para>选中 - 创建预测误差输出图层。</para>
 		/// <para><see cref="OutputpredictionerrorEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -124,11 +125,11 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Classification Type</para>
-		/// <para>Determines how predicted values will be classified into polygons.</para>
-		/// <para>Equal interval— Polygons are created such that the range of density values is equal for each area.</para>
-		/// <para>Geometric interval— Polygons are based on class intervals that have a geometric series. This method ensures that each class range has approximately the same number of values within each class and that the change between intervals is consistent. This is the default.</para>
-		/// <para>Equal area— Polygons are created such that the size of each area is equal. For example, if the result has more high-density values than low-density values, more polygons will be created for high densities.</para>
-		/// <para>Enter class breaks manually—You define your own range of values for areas. These values will be entered as class breaks.</para>
+		/// <para>确定将预测值划分到面的方法。</para>
+		/// <para>相等间隔— 将以每个区域的密度值范围相等的方式创建面。</para>
+		/// <para>几何间隔— 面基于具有几何系列的分类间隔。此方法可确保每个类范围与每个类中所拥有的值的数量大致相同，且间隔之间的变化一致。这是默认设置。</para>
+		/// <para>相等面积— 将以各个区域大小相等的方式创建面。例如，如果结果的高密度值多于低密度值，则会为高密度创建更多面。</para>
+		/// <para>手动输入分类间隔—自定义区域值的范围。将按照分类间隔输入这些值。</para>
 		/// <para><see cref="ClassificationtypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -139,8 +140,8 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Number of Classes</para>
-		/// <para>This value is used to divide the range of predicted values into distinct classes. The range of values in each class is determined by the classification type. Each class defines the boundaries of the result polygons.</para>
-		/// <para>The default is 10 and the maximum is 32.</para>
+		/// <para>该值用于将预测值范围划分为不同的类。每个类中值的范围由分类类型决定。每个类定义结果面的边界。</para>
+		/// <para>默认值为 10，最大值为 32。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -150,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Class Breaks</para>
-		/// <para>To do a manual classification, supply the desired class break values. These values define the upper limit of each class, so the number of classes will equal the number of entered values. Areas will not be created for any locations with predicted values above the largest entered break value. You must enter at least 2 values and no more than 32.</para>
+		/// <para>要进行手动分类，请提供所需的分类间隔值。这些值用于定义每个分类的上限，所以分类数量等于所输入值的数量。如果某位置的预测值大于所输入的最大间隔值，则不会为该位置创建区域。必须输入至少两个不大于 32 的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -159,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Bounding Polygons</para>
-		/// <para>A layer specifying the polygons where you want values to be interpolated. For example, if you are interpolating densities of fish within a lake, you can use the boundary of the lake in this parameter and the output will only contain polygons within the boundary of the lake.</para>
+		/// <para>用于指定要对值执行插值操作的面的图层。例如，如果您要对湖中鱼的密度进行插值，则可以使用此参数中湖的边界，使输出结果仅包含湖边界内的面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -168,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Predict At Point Layer</para>
-		/// <para>An optional layer specifying point locations to calculate prediction values. This allows you to make predictions at specific locations of interest. For example, if the input layer represents measurements of pollution levels, you can use this parameter to predict the pollution levels of locations with large at-risk populations, such as schools or hospitals. You can then use this information to give recommendations to health officials in those locations.</para>
+		/// <para>用于指定计算预测值点位置的可选图层。这样可以对感兴趣的特定位置进行预测。例如，如果输入图层表示污染级别的测量结果，则可以使用此参数来预测学校或医院等高危人群聚集区域的污染级别。然后便可以利用此信息来向这些地区的卫生部门提出建议。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -213,24 +214,24 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum InterpolateoptionEnum 
 		{
 			/// <summary>
-			/// <para>Speed—Speed.</para>
+			/// <para>速度—速度。</para>
 			/// </summary>
 			[GPValue("1")]
-			[Description("Speed")]
+			[Description("速度")]
 			Speed,
 
 			/// <summary>
-			/// <para>Balanced—Balanced. This is the default.</para>
+			/// <para>平衡—平衡。这是默认设置。</para>
 			/// </summary>
 			[GPValue("5")]
-			[Description("Balanced")]
+			[Description("平衡")]
 			Balanced,
 
 			/// <summary>
-			/// <para>Accuracy—Accuracy.</para>
+			/// <para>精度—精度。</para>
 			/// </summary>
 			[GPValue("9")]
-			[Description("Accuracy")]
+			[Description("精度")]
 			Accuracy,
 
 		}
@@ -241,14 +242,14 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum OutputpredictionerrorEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Create a prediction error output layer.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("OUTPUT_ERROR")]
 			OUTPUT_ERROR,
 
 			/// <summary>
-			/// <para>Unchecked—Do not create a prediction error output layer. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ERROR")]
@@ -262,31 +263,31 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum ClassificationtypeEnum 
 		{
 			/// <summary>
-			/// <para>Equal area— Polygons are created such that the size of each area is equal. For example, if the result has more high-density values than low-density values, more polygons will be created for high densities.</para>
+			/// <para>相等面积— 将以各个区域大小相等的方式创建面。例如，如果结果的高密度值多于低密度值，则会为高密度创建更多面。</para>
 			/// </summary>
 			[GPValue("EQUALAREA")]
-			[Description("Equal area")]
+			[Description("相等面积")]
 			Equal_area,
 
 			/// <summary>
-			/// <para>Equal interval— Polygons are created such that the range of density values is equal for each area.</para>
+			/// <para>相等间隔— 将以每个区域的密度值范围相等的方式创建面。</para>
 			/// </summary>
 			[GPValue("EQUALINTERVAL")]
-			[Description("Equal interval")]
+			[Description("相等间隔")]
 			Equal_interval,
 
 			/// <summary>
-			/// <para>Geometric interval— Polygons are based on class intervals that have a geometric series. This method ensures that each class range has approximately the same number of values within each class and that the change between intervals is consistent. This is the default.</para>
+			/// <para>几何间隔— 面基于具有几何系列的分类间隔。此方法可确保每个类范围与每个类中所拥有的值的数量大致相同，且间隔之间的变化一致。这是默认设置。</para>
 			/// </summary>
 			[GPValue("GEOMETRICINTERVAL")]
-			[Description("Geometric interval")]
+			[Description("几何间隔")]
 			Geometric_interval,
 
 			/// <summary>
-			/// <para>Enter class breaks manually—You define your own range of values for areas. These values will be entered as class breaks.</para>
+			/// <para>手动输入分类间隔—自定义区域值的范围。将按照分类间隔输入这些值。</para>
 			/// </summary>
 			[GPValue("MANUAL")]
-			[Description("Enter class breaks manually")]
+			[Description("手动输入分类间隔")]
 			Enter_class_breaks_manually,
 
 		}

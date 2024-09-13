@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Calculate Density</para>
-	/// <para>Calculates a magnitude-per-unit area from point features that fall within a neighborhood around each cell.</para>
+	/// <para>计算密度</para>
+	/// <para>根据落入每个单元周围邻域内的点要素计算每单位面积的量级。</para>
 	/// </summary>
 	public class CalculateDensity : AbstractGPProcess
 	{
@@ -20,34 +21,34 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input layer</para>
-		/// <para>The points that will be used to calculate the density.</para>
+		/// <para>用于计算密度的点。</para>
 		/// </param>
 		/// <param name="OutputName">
 		/// <para>Output Name</para>
-		/// <para>The name of the output feature service.</para>
+		/// <para>输出要素服务的名称。</para>
 		/// </param>
 		/// <param name="BinType">
 		/// <para>Bin Type</para>
-		/// <para>Specifies the bin shape that will be used in the analysis.</para>
-		/// <para>Square—The bin shape will be square. This is the default.</para>
-		/// <para>Hexagon—The bin shape will be hexagonal.</para>
+		/// <para>指定分析中将使用的图格形状。</para>
+		/// <para>正方形—图格形状将为方形。这是默认设置。</para>
+		/// <para>六边形—图格形状将为六边形。</para>
 		/// <para><see cref="BinTypeEnum"/></para>
 		/// </param>
 		/// <param name="BinSize">
 		/// <para>Bin Size</para>
-		/// <para>The size of the bins used to aggregate input features. When generating bins for squares, the number and units specified determine the height and length of the square. For hexagons, the number and units specified determine the distance between parallel sides.</para>
+		/// <para>用于聚合输入要素的图格大小。生成方形图格时，由指定的数字和单位决定正方形的高度和长度。生成六边形图格时，由指定的数字和单位决定平行边之间的距离。</para>
 		/// <para><see cref="BinSizeEnum"/></para>
 		/// </param>
 		/// <param name="Weight">
 		/// <para>Weight</para>
-		/// <para>Specifies the weighting to be applied to the density function.</para>
-		/// <para>Uniform—A magnitude-per-area calculation in which each bin is equally weighted. This is the default.</para>
-		/// <para>Kernel—A magnitude-per-area calculation with a smoothing algorithm applied (kernel) that weights bins closer to the points more heavily.</para>
+		/// <para>指定要应用于密度函数的权重。</para>
+		/// <para>均匀—单位面积的量级计算（所有立方图格的权重均相等）。这是默认设置。</para>
+		/// <para>核—应用了平滑算法（核）的单位面积的量级计算，权重立方图格离点越近，权重越大。</para>
 		/// <para><see cref="WeightEnum"/></para>
 		/// </param>
 		/// <param name="NeighborhoodSize">
 		/// <para>Neighborhood Size</para>
-		/// <para>The search radius to be applied to density calculations.</para>
+		/// <para>要应用于密度计算的搜索半径。</para>
 		/// <para><see cref="NeighborhoodSizeEnum"/></para>
 		/// </param>
 		public CalculateDensity(object InputLayer, object OutputName, object BinType, object BinSize, object Weight, object NeighborhoodSize)
@@ -61,9 +62,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Calculate Density</para>
+		/// <para>Tool Display Name : 计算密度</para>
 		/// </summary>
-		public override string DisplayName() => "Calculate Density";
+		public override string DisplayName() => "计算密度";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateDensity</para>
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Input layer</para>
-		/// <para>The points that will be used to calculate the density.</para>
+		/// <para>用于计算密度的点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output feature service.</para>
+		/// <para>输出要素服务的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -116,9 +117,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Bin Type</para>
-		/// <para>Specifies the bin shape that will be used in the analysis.</para>
-		/// <para>Square—The bin shape will be square. This is the default.</para>
-		/// <para>Hexagon—The bin shape will be hexagonal.</para>
+		/// <para>指定分析中将使用的图格形状。</para>
+		/// <para>正方形—图格形状将为方形。这是默认设置。</para>
+		/// <para>六边形—图格形状将为六边形。</para>
 		/// <para><see cref="BinTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -128,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Bin Size</para>
-		/// <para>The size of the bins used to aggregate input features. When generating bins for squares, the number and units specified determine the height and length of the square. For hexagons, the number and units specified determine the distance between parallel sides.</para>
+		/// <para>用于聚合输入要素的图格大小。生成方形图格时，由指定的数字和单位决定正方形的高度和长度。生成六边形图格时，由指定的数字和单位决定平行边之间的距离。</para>
 		/// <para><see cref="BinSizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -138,9 +139,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Weight</para>
-		/// <para>Specifies the weighting to be applied to the density function.</para>
-		/// <para>Uniform—A magnitude-per-area calculation in which each bin is equally weighted. This is the default.</para>
-		/// <para>Kernel—A magnitude-per-area calculation with a smoothing algorithm applied (kernel) that weights bins closer to the points more heavily.</para>
+		/// <para>指定要应用于密度函数的权重。</para>
+		/// <para>均匀—单位面积的量级计算（所有立方图格的权重均相等）。这是默认设置。</para>
+		/// <para>核—应用了平滑算法（核）的单位面积的量级计算，权重立方图格离点越近，权重越大。</para>
 		/// <para><see cref="WeightEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -150,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Neighborhood Size</para>
-		/// <para>The search radius to be applied to density calculations.</para>
+		/// <para>要应用于密度计算的搜索半径。</para>
 		/// <para><see cref="NeighborhoodSizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -160,8 +161,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Fields</para>
-		/// <para>One or more fields denoting population values for each feature. The population field is the count or quantity to be spread across the landscape to create a continuous surface.</para>
-		/// <para>Values in the population field must be numeric. By default, the density of the count of input points will always be calculated.</para>
+		/// <para>表示各要素的总体值的一个或多个字段。总体字段表示遍布于用来创建连续表面的景观内的计数或数量。</para>
+		/// <para>总体字段中的值必须为数字。默认情况下，将始终计算输入点计数的密度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -171,14 +172,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Area Unit Scale Factor</para>
-		/// <para>Specifies the area units of the output density values. The default unit is based on the units of the output spatial reference.</para>
-		/// <para>Acres—Area in acres</para>
-		/// <para>Hectares—Area in hectares</para>
-		/// <para>Square miles—Area in square miles</para>
-		/// <para>Square kilometers—Area in square kilometers</para>
-		/// <para>Square meters—Area in square meters</para>
-		/// <para>Square feet—Area in square feet</para>
-		/// <para>Square yards—Area in square yards</para>
+		/// <para>指定输出密度值的面积单位。默认单位基于输出空间参考的单位。</para>
+		/// <para>英亩—面积单位为英亩</para>
+		/// <para>公顷—面积单位为公顷</para>
+		/// <para>平方英里—面积单位为平方英里</para>
+		/// <para>平方千米—面积单位为平方千米</para>
+		/// <para>平方米—面积单位为平方米</para>
+		/// <para>平方英尺—面积单位为平方英尺</para>
+		/// <para>平方码—面积单位为平方码</para>
 		/// <para><see cref="AreaUnitScaleFactorEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -188,8 +189,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Step Interval</para>
-		/// <para>A value that specifies the duration of the time step. This parameter is only available if the input points are time enabled and represent an instant in time.</para>
-		/// <para>Time stepping can only be applied if time is enabled on the input.</para>
+		/// <para>用来指定时间步长持续时间的值。只有在输入点启用了时间且表示时刻时，此参数才可用。</para>
+		/// <para>只有对输入启用了时间的情况下，才可应用时间步长。</para>
 		/// <para><see cref="TimeStepIntervalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -199,7 +200,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Step Repeat</para>
-		/// <para>A value that specifies how often the time-step interval occurs. This parameter is only available if the input points are time enabled and represent an instant in time.</para>
+		/// <para>用来指定时间步长间隔发生频率的值。只有在输入点启用了时间且表示时刻时，此参数才可用。</para>
 		/// <para><see cref="TimeStepRepeatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -209,7 +210,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Step Reference</para>
-		/// <para>A date that specifies the reference time with which to align the time steps. The default is January 1, 1970, at 12:00 a.m. This parameter is only available if the input points are time enabled and represent an instant in time.</para>
+		/// <para>用来指定时间步长所要对齐的参考时间的日期。默认情况下为 1970 年 1 月 1 日 12:00 a.m. 只有在输入点启用了时间且表示时刻时，此参数才可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -224,9 +225,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Data Store</para>
-		/// <para>Specifies the ArcGIS Data Store where the output will be saved. The default is Spatiotemporal big data store. All results stored in a spatiotemporal big data store will be stored in WGS84. Results stored in a relational data store will maintain their coordinate system.</para>
-		/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
-		/// <para>Relational data store—Output will be stored in a relational data store.</para>
+		/// <para>指定将用于保存输出的 ArcGIS Data Store。默认设置为时空大数据存储。在时空大数据存储中存储的所有结果都将存储在 WGS84 中。在关系数据存储中存储的结果都将保持各自的坐标系。</para>
+		/// <para>时空大数据存储—输出将存储在时空大数据存储中。这是默认设置。</para>
+		/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 		/// <para><see cref="DataStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -252,17 +253,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum BinTypeEnum 
 		{
 			/// <summary>
-			/// <para>Square—The bin shape will be square. This is the default.</para>
+			/// <para>正方形—图格形状将为方形。这是默认设置。</para>
 			/// </summary>
 			[GPValue("SQUARE")]
-			[Description("Square")]
+			[Description("正方形")]
 			Square,
 
 			/// <summary>
-			/// <para>Hexagon—The bin shape will be hexagonal.</para>
+			/// <para>六边形—图格形状将为六边形。</para>
 			/// </summary>
 			[GPValue("HEXAGON")]
-			[Description("Hexagon")]
+			[Description("六边形")]
 			Hexagon,
 
 		}
@@ -322,17 +323,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum WeightEnum 
 		{
 			/// <summary>
-			/// <para>Kernel—A magnitude-per-area calculation with a smoothing algorithm applied (kernel) that weights bins closer to the points more heavily.</para>
+			/// <para>核—应用了平滑算法（核）的单位面积的量级计算，权重立方图格离点越近，权重越大。</para>
 			/// </summary>
 			[GPValue("KERNEL")]
-			[Description("Kernel")]
+			[Description("核")]
 			Kernel,
 
 			/// <summary>
-			/// <para>Uniform—A magnitude-per-area calculation in which each bin is equally weighted. This is the default.</para>
+			/// <para>均匀—单位面积的量级计算（所有立方图格的权重均相等）。这是默认设置。</para>
 			/// </summary>
 			[GPValue("UNIFORM")]
-			[Description("Uniform")]
+			[Description("均匀")]
 			Uniform,
 
 		}
@@ -392,52 +393,52 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum AreaUnitScaleFactorEnum 
 		{
 			/// <summary>
-			/// <para>Square miles—Area in square miles</para>
+			/// <para>平方英里—面积单位为平方英里</para>
 			/// </summary>
 			[GPValue("SQUARE_MILES")]
-			[Description("Square miles")]
+			[Description("平方英里")]
 			Square_miles,
 
 			/// <summary>
-			/// <para>Square kilometers—Area in square kilometers</para>
+			/// <para>平方千米—面积单位为平方千米</para>
 			/// </summary>
 			[GPValue("SQUARE_KILOMETERS")]
-			[Description("Square kilometers")]
+			[Description("平方千米")]
 			Square_kilometers,
 
 			/// <summary>
-			/// <para>Acres—Area in acres</para>
+			/// <para>英亩—面积单位为英亩</para>
 			/// </summary>
 			[GPValue("ACRES")]
-			[Description("Acres")]
+			[Description("英亩")]
 			Acres,
 
 			/// <summary>
-			/// <para>Hectares—Area in hectares</para>
+			/// <para>公顷—面积单位为公顷</para>
 			/// </summary>
 			[GPValue("HECTARES")]
-			[Description("Hectares")]
+			[Description("公顷")]
 			Hectares,
 
 			/// <summary>
-			/// <para>Square yards—Area in square yards</para>
+			/// <para>平方码—面积单位为平方码</para>
 			/// </summary>
 			[GPValue("SQUARE_YARDS")]
-			[Description("Square yards")]
+			[Description("平方码")]
 			Square_yards,
 
 			/// <summary>
-			/// <para>Square feet—Area in square feet</para>
+			/// <para>平方英尺—面积单位为平方英尺</para>
 			/// </summary>
 			[GPValue("SQUARE_FEET")]
-			[Description("Square feet")]
+			[Description("平方英尺")]
 			Square_feet,
 
 			/// <summary>
-			/// <para>Square meters—Area in square meters</para>
+			/// <para>平方米—面积单位为平方米</para>
 			/// </summary>
 			[GPValue("SQUARE_METERS")]
-			[Description("Square meters")]
+			[Description("平方米")]
 			Square_meters,
 
 		}
@@ -574,17 +575,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DataStoreEnum 
 		{
 			/// <summary>
-			/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
+			/// <para>时空大数据存储—输出将存储在时空大数据存储中。这是默认设置。</para>
 			/// </summary>
 			[GPValue("SPATIOTEMPORAL_DATA_STORE")]
-			[Description("Spatiotemporal big data store")]
+			[Description("时空大数据存储")]
 			Spatiotemporal_big_data_store,
 
 			/// <summary>
-			/// <para>Relational data store—Output will be stored in a relational data store.</para>
+			/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 			/// </summary>
 			[GPValue("RELATIONAL_DATA_STORE")]
-			[Description("Relational data store")]
+			[Description("关系数据存储")]
 			Relational_data_store,
 
 		}

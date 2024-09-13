@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Import Diagram Template Definitions</para>
+	/// <para>Import Diagram Template Definitions</para>
 	/// <para>Import diagram template definitions from file(s)</para>
 	/// </summary>
 	[Obsolete()]

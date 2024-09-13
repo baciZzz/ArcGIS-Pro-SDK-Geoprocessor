@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Set Data Workspace</para>
+	/// <para>Set Data Workspace</para>
 	/// <para>Sets the data workspace for the chosen job to the appropriate database based on the production type of the job.</para>
 	/// </summary>
 	public class SetDataWorkspace : AbstractGPProcess

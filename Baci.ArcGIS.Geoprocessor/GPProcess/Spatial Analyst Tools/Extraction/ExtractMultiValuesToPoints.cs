@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Extract Multi Values to Points</para>
-	/// <para>Extracts cell values at locations specified in a point feature class from one or more rasters and records the values to the attribute table of the point feature class.</para>
+	/// <para>多值提取至点</para>
+	/// <para>在点要素类的指定位置提取一个或多个栅格像元值，并将这些值记录到点要素类的属性表中。</para>
 	/// </summary>
 	public class ExtractMultiValuesToPoints : AbstractGPProcess
 	{
@@ -20,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InPointFeatures">
 		/// <para>Input point features</para>
-		/// <para>The input point features to which you want to add raster values.</para>
+		/// <para>要添加栅格值的输入点要素。</para>
 		/// </param>
 		/// <param name="InRasters">
 		/// <para>Input rasters</para>
-		/// <para>The input raster (or rasters) values you want to extract based on the input point feature location.</para>
-		/// <para>Optionally, you can supply the name for the field to store the raster value. By default, a unique field name will be created based on the input raster dataset name.</para>
+		/// <para>要基于输入点要素的位置提取的输入栅格值。</para>
+		/// <para>您还可以为存储栅格值的字段指定名称。默认情况下，将根据输入栅格数据集的名称创建唯一的字段名称。</para>
 		/// </param>
 		public ExtractMultiValuesToPoints(object InPointFeatures, object InRasters)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Extract Multi Values to Points</para>
+		/// <para>Tool Display Name : 多值提取至点</para>
 		/// </summary>
-		public override string DisplayName() => "Extract Multi Values to Points";
+		public override string DisplayName() => "多值提取至点";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractMultiValuesToPoints</para>
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input point features</para>
-		/// <para>The input point features to which you want to add raster values.</para>
+		/// <para>要添加栅格值的输入点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -82,8 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input rasters</para>
-		/// <para>The input raster (or rasters) values you want to extract based on the input point feature location.</para>
-		/// <para>Optionally, you can supply the name for the field to store the raster value. By default, a unique field name will be created based on the input raster dataset name.</para>
+		/// <para>要基于输入点要素的位置提取的输入栅格值。</para>
+		/// <para>您还可以为存储栅格值的字段指定名称。默认情况下，将根据输入栅格数据集的名称创建唯一的字段名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAExtractValues()]
@@ -92,9 +93,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Bilinear interpolation of values at point locations</para>
-		/// <para>Specifies whether interpolation will be used.</para>
-		/// <para>Unchecked—No interpolation will be applied; the value of the cell center will be used. This is the default.</para>
-		/// <para>Checked—The value of the cell will be calculated from the adjacent cells with valid values using bilinear interpolation. NoData values will be ignored in the interpolation unless all adjacent cells are NoData.</para>
+		/// <para>指定是否使用插值。</para>
+		/// <para>未选中 - 不应用任何插值法；将使用像元中心值。这是默认设置。</para>
+		/// <para>选中 - 将使用双线性插值法根据相邻像元的有效值计算像元值。除非所有相邻像元都为 NoData，否则会在插值时忽略 NoData 值。</para>
 		/// <para><see cref="BilinearInterpolateValuesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -126,14 +127,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum BilinearInterpolateValuesEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—No interpolation will be applied; the value of the cell center will be used. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]
 			NONE,
 
 			/// <summary>
-			/// <para>Checked—The value of the cell will be calculated from the adjacent cells with valid values using bilinear interpolation. NoData values will be ignored in the interpolation unless all adjacent cells are NoData.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BILINEAR")]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Generate Call Links</para>
-	/// <para>Creates line features that represent the call links between phones, using cell site points or cell site antenna sectors, based on the start date and time of the call.</para>
+	/// <para>生成呼叫链接</para>
+	/// <para>根据呼叫的开始日期和时间，使用蜂窝站点点或蜂窝站点天线扇区创建表示电话之间的呼叫链接的线要素。</para>
 	/// </summary>
 	public class GenerateCallLinks : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		/// <param name="InPrimaryFeatures">
 		/// <para>Input Primary Phone Record Site Points or Sectors</para>
-		/// <para>The point feature class for the primary phone or sector derived from the Cell Phone Records To Feature Class tool.</para>
+		/// <para>从手机记录转要素类工具获得的主要电话或扇区的点要素类。</para>
 		/// </param>
 		/// <param name="InSecondaryFeatures">
 		/// <para>Input Secondary Phone Record Site Points or Sectors</para>
-		/// <para>The point feature class for the secondary phone or sector derived from the Cell Phone Records To Feature Class tool.</para>
+		/// <para>从手机记录转要素类工具获得的次要电话或扇区的点要素类。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Call Link Lines</para>
-		/// <para>The output line features representing the call links between two phones at various locations.</para>
+		/// <para>表示不同位置的两个电话之间的呼叫链接的输出线要素。</para>
 		/// </param>
 		public GenerateCallLinks(object InPrimaryFeatures, object InSecondaryFeatures, object OutFeatureClass)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Call Links</para>
+		/// <para>Tool Display Name : 生成呼叫链接</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Call Links";
+		public override string DisplayName() => "生成呼叫链接";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateCallLinks</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Input Primary Phone Record Site Points or Sectors</para>
-		/// <para>The point feature class for the primary phone or sector derived from the Cell Phone Records To Feature Class tool.</para>
+		/// <para>从手机记录转要素类工具获得的主要电话或扇区的点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Input Secondary Phone Record Site Points or Sectors</para>
-		/// <para>The point feature class for the secondary phone or sector derived from the Cell Phone Records To Feature Class tool.</para>
+		/// <para>从手机记录转要素类工具获得的次要电话或扇区的点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -96,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Output Call Link Lines</para>
-		/// <para>The output line features representing the call links between two phones at various locations.</para>
+		/// <para>表示不同位置的两个电话之间的呼叫链接的输出线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -104,9 +105,9 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Output Type</para>
-		/// <para>Specifies how the relationship of calls between two phones will be analyzed and symbolized.</para>
-		/// <para>Summary—A summary record of the total number of calls between two phones at various locations will be created. This is the default.</para>
-		/// <para>Detail—An individual record of each call between two phones at various locations will be created.</para>
+		/// <para>指定如何分析和符号化两个电话之间的呼叫关系。</para>
+		/// <para>汇总—将创建不同位置的两个电话之间总呼叫数的汇总记录。这是默认设置。</para>
+		/// <para>详细信息—将创建不同位置的两个电话之间每次呼叫的单独记录。</para>
 		/// <para><see cref="OutputTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Primary Phone Subscriber ID Field</para>
-		/// <para>The unique ID field for the primary phone subscriber, usually a phone number.</para>
+		/// <para>主要电话订阅者的唯一 ID 字段，通常是电话号码。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -126,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Primary Phone Call Destination Field</para>
-		/// <para>The field containing the phone number of the secondary phone.</para>
+		/// <para>包含次要电话的电话号码的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -136,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Primary Phone Call Start Date and Time Field</para>
-		/// <para>The start date and time field of the primary phone records.</para>
+		/// <para>主要电话记录的开始日期和时间字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -146,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Secondary Phone Subscriber ID Field</para>
-		/// <para>The unique ID field for the secondary phone subscriber, usually a phone number.</para>
+		/// <para>次要电话订阅者的唯一 ID 字段，通常是电话号码。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -156,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Secondary Phone Destination Field</para>
-		/// <para>The field containing the phone number of the primary phone.</para>
+		/// <para>包含主要电话的电话号码的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -166,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Secondary Phone Call Start Date and Time Field</para>
-		/// <para>The start date and time field of the secondary phone records.</para>
+		/// <para>次要电话记录的开始日期和时间字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -191,17 +192,17 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		public enum OutputTypeEnum 
 		{
 			/// <summary>
-			/// <para>Summary—A summary record of the total number of calls between two phones at various locations will be created. This is the default.</para>
+			/// <para>汇总—将创建不同位置的两个电话之间总呼叫数的汇总记录。这是默认设置。</para>
 			/// </summary>
 			[GPValue("SUMMARY")]
-			[Description("Summary")]
+			[Description("汇总")]
 			Summary,
 
 			/// <summary>
-			/// <para>Detail—An individual record of each call between two phones at various locations will be created.</para>
+			/// <para>详细信息—将创建不同位置的两个电话之间每次呼叫的单独记录。</para>
 			/// </summary>
 			[GPValue("DETAIL")]
-			[Description("Detail")]
+			[Description("详细信息")]
 			Detail,
 
 		}

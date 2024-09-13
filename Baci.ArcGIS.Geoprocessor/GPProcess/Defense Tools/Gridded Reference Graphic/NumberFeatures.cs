@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Number Features</para>
-	/// <para>Adds a sequential number to a new or existing field of a set of input features.</para>
+	/// <para>对要素进行编号</para>
+	/// <para>将序号添加到输入要素集的新字段或现有字段中。</para>
 	/// </summary>
 	public class NumberFeatures : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input features to number.</para>
+		/// <para>要编号的输入要素。</para>
 		/// </param>
 		/// <param name="FieldToNumber">
 		/// <para>Field to Number (Existing or New)</para>
-		/// <para>The input field to number. The field can be an existing short, long, or text field, or a new field.</para>
+		/// <para>要编号的输入字段。 该字段可以是现有的短型、长型或文本字段，也可以是新字段。</para>
 		/// </param>
 		public NumberFeatures(object InFeatures, object FieldToNumber)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Number Features</para>
+		/// <para>Tool Display Name : 对要素进行编号</para>
 		/// </summary>
-		public override string DisplayName() => "Number Features";
+		public override string DisplayName() => "对要素进行编号";
 
 		/// <summary>
 		/// <para>Tool Name : NumberFeatures</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input features to number.</para>
+		/// <para>要编号的输入要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Field to Number (Existing or New)</para>
-		/// <para>The input field to number. The field can be an existing short, long, or text field, or a new field.</para>
+		/// <para>要编号的输入字段。 该字段可以是现有的短型、长型或文本字段，也可以是新字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Area to Number</para>
-		/// <para>The area that will limit the features to number; only features within this area will be numbered.</para>
+		/// <para>限制要编号的要素的面；将仅对此面内的要素进行编号。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -101,13 +102,13 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Spatial Sort Method</para>
-		/// <para>Specifies how features will be spatially sorted for the purpose of numbering. Features are not reordered in the table.</para>
-		/// <para>Upper right—Sorting starts at the upper right corner. This is the default.</para>
-		/// <para>Upper left—Sorting starts at the upper left corner.</para>
-		/// <para>Lower right—Sorting starts at the lower right corner.</para>
-		/// <para>Lower left—Sorting starts at the lower left corner.</para>
-		/// <para>Peano curve—Sorting uses a space filling curve algorithm, also known as a Peano curve.</para>
-		/// <para>None—A spatial sort will not be used. The same order as the feature class will be used.</para>
+		/// <para>指定如何对要素进行空间排序以进行编号。 不会对表中的要素重新排序。</para>
+		/// <para>右上角—从右上角开始排序。这是默认设置。</para>
+		/// <para>左上角—从左上角开始排序。</para>
+		/// <para>右下角—从右下角开始排序。</para>
+		/// <para>左下角—从左下角开始排序。</para>
+		/// <para>皮亚诺曲线—使用空间填充曲线算法（也称为皮亚诺曲线）排序。</para>
+		/// <para>无—不会使用空间排序。将使用与要素类相同的顺序。</para>
 		/// <para><see cref="SpatialSortMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -117,10 +118,10 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Field Type For New Field</para>
-		/// <para>Specifies the field type of the new field. This parameter is only used when the field name does not exist in the input table.</para>
-		/// <para>Short—The field will be of short type. This is the default.</para>
-		/// <para>Long—The field will be of long type.</para>
-		/// <para>Text—The field will be of text type.</para>
+		/// <para>指定新字段的字段类型。 仅当输入表中不存在字段名称时才使用此参数。</para>
+		/// <para>Short—该字段的类型将为短型。这是默认设置。</para>
+		/// <para>Long—该字段的类型将为长型。</para>
+		/// <para>文本型—该字段的类型将为文本。</para>
 		/// <para><see cref="NewFieldTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -152,45 +153,45 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum SpatialSortMethodEnum 
 		{
 			/// <summary>
-			/// <para>Upper right—Sorting starts at the upper right corner. This is the default.</para>
+			/// <para>右上角—从右上角开始排序。这是默认设置。</para>
 			/// </summary>
 			[GPValue("UR")]
-			[Description("Upper right")]
+			[Description("右上角")]
 			Upper_right,
 
 			/// <summary>
-			/// <para>Upper left—Sorting starts at the upper left corner.</para>
+			/// <para>左上角—从左上角开始排序。</para>
 			/// </summary>
 			[GPValue("UL")]
-			[Description("Upper left")]
+			[Description("左上角")]
 			Upper_left,
 
 			/// <summary>
-			/// <para>Lower right—Sorting starts at the lower right corner.</para>
+			/// <para>右下角—从右下角开始排序。</para>
 			/// </summary>
 			[GPValue("LR")]
-			[Description("Lower right")]
+			[Description("右下角")]
 			Lower_right,
 
 			/// <summary>
-			/// <para>Lower left—Sorting starts at the lower left corner.</para>
+			/// <para>左下角—从左下角开始排序。</para>
 			/// </summary>
 			[GPValue("LL")]
-			[Description("Lower left")]
+			[Description("左下角")]
 			Lower_left,
 
 			/// <summary>
-			/// <para>Peano curve—Sorting uses a space filling curve algorithm, also known as a Peano curve.</para>
+			/// <para>皮亚诺曲线—使用空间填充曲线算法（也称为皮亚诺曲线）排序。</para>
 			/// </summary>
 			[GPValue("PEANO")]
-			[Description("Peano curve")]
+			[Description("皮亚诺曲线")]
 			Peano_curve,
 
 			/// <summary>
-			/// <para>None—A spatial sort will not be used. The same order as the feature class will be used.</para>
+			/// <para>无—不会使用空间排序。将使用与要素类相同的顺序。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 		}
@@ -201,24 +202,24 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum NewFieldTypeEnum 
 		{
 			/// <summary>
-			/// <para>Short—The field will be of short type. This is the default.</para>
+			/// <para>Short—该字段的类型将为短型。这是默认设置。</para>
 			/// </summary>
 			[GPValue("SHORT")]
 			[Description("Short")]
 			Short,
 
 			/// <summary>
-			/// <para>Long—The field will be of long type.</para>
+			/// <para>Long—该字段的类型将为长型。</para>
 			/// </summary>
 			[GPValue("LONG")]
 			[Description("Long")]
 			Long,
 
 			/// <summary>
-			/// <para>Text—The field will be of text type.</para>
+			/// <para>文本型—该字段的类型将为文本。</para>
 			/// </summary>
 			[GPValue("TEXT")]
-			[Description("Text")]
+			[Description("文本型")]
 			Text,
 
 		}

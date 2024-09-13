@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Describe Dataset</para>
-	/// <para>Summarizes features into calculated field statistics,  sample features, and extent boundaries.</para>
+	/// <para>描述数据集</para>
+	/// <para>将要素汇总到所计算的字段统计信息、样本要素和范围边界中。</para>
 	/// </summary>
 	public class DescribeDataset : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>The point, line, polygon, or tabular features to be described.</para>
+		/// <para>要描述的点、线、面或表格要素。</para>
 		/// </param>
 		/// <param name="OutputName">
 		/// <para>Output Name</para>
-		/// <para>The name of the output feature service.</para>
+		/// <para>输出要素服务的名称。</para>
 		/// </param>
 		public DescribeDataset(object InputLayer, object OutputName)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Describe Dataset</para>
+		/// <para>Tool Display Name : 描述数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Describe Dataset";
+		public override string DisplayName() => "描述数据集";
 
 		/// <summary>
 		/// <para>Tool Name : DescribeDataset</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The point, line, polygon, or tabular features to be described.</para>
+		/// <para>要描述的点、线、面或表格要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output feature service.</para>
+		/// <para>输出要素服务的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Number of Sample Features</para>
-		/// <para>The number of features that will be included in the output sample layer. No sample is returned if you select 0 features or don't provide a number. By default, no sample layer is returned.</para>
+		/// <para>将包含在输出样本图层中的要素数量。如果选择 0 个要素或不提供数量，则不会返回任何样本。默认情况下，不返回任何样本图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -95,9 +96,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Create Extent Layer</para>
-		/// <para>Specifies whether an output extent layer will be created. The extent is a polygon that represents the spatial and temporal extent of the input features.</para>
-		/// <para>Checked—An extent layer will be created.</para>
-		/// <para>Unchecked—An extent layer will not be created.</para>
+		/// <para>指定是否将创建输出范围图层。范围是一个可表示输入要素的空间和时态范围的面。</para>
+		/// <para>选中 - 将创建范围图层。</para>
+		/// <para>未选中 - 将不会创建范围图层。</para>
 		/// <para><see cref="CreateExtentLayerEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -107,9 +108,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Data Store</para>
-		/// <para>Specifies the ArcGIS Data Store where the output will be saved. The default is Spatiotemporal big data store. All results stored in a spatiotemporal big data store will be stored in WGS84. Results stored in a relational data store will maintain their coordinate system.</para>
-		/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
-		/// <para>Relational data store—Output will be stored in a relational data store.</para>
+		/// <para>指定将用于保存输出的 ArcGIS Data Store。默认设置为时空大数据存储。在时空大数据存储中存储的所有结果都将存储在 WGS84 中。在关系数据存储中存储的结果都将保持各自的坐标系。</para>
+		/// <para>时空大数据存储—输出将存储在时空大数据存储中。这是默认设置。</para>
+		/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 		/// <para><see cref="DataStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -163,14 +164,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum CreateExtentLayerEnum 
 		{
 			/// <summary>
-			/// <para>Checked—An extent layer will be created.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CREATE_EXTENT")]
 			CREATE_EXTENT,
 
 			/// <summary>
-			/// <para>Unchecked—An extent layer will not be created.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_EXTENT")]
@@ -184,17 +185,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DataStoreEnum 
 		{
 			/// <summary>
-			/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
+			/// <para>时空大数据存储—输出将存储在时空大数据存储中。这是默认设置。</para>
 			/// </summary>
 			[GPValue("SPATIOTEMPORAL_DATA_STORE")]
-			[Description("Spatiotemporal big data store")]
+			[Description("时空大数据存储")]
 			Spatiotemporal_big_data_store,
 
 			/// <summary>
-			/// <para>Relational data store—Output will be stored in a relational data store.</para>
+			/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 			/// </summary>
 			[GPValue("RELATIONAL_DATA_STORE")]
-			[Description("Relational data store")]
+			[Description("关系数据存储")]
 			Relational_data_store,
 
 		}

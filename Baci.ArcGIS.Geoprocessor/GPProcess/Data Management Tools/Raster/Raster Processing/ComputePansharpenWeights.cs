@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compute Pansharpen Weights</para>
-	/// <para>Calculates an optimal set of pan sharpened weights for new or custom sensor data.</para>
+	/// <para>计算全色锐化权重</para>
+	/// <para>为新的或自定义的传感器数据计算一组最佳的全色锐化权重。</para>
 	/// </summary>
 	public class ComputePansharpenWeights : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>A multispectral raster that has a panchromatic band.</para>
+		/// <para>具有全色波段的多光谱栅格。</para>
 		/// </param>
 		/// <param name="InPanchromaticImage">
 		/// <para>Panchromatic Image</para>
-		/// <para>The panchromatic band associated with the multispectral raster.</para>
+		/// <para>与多光谱栅格相关联的全色波段。</para>
 		/// </param>
 		public ComputePansharpenWeights(object InRaster, object InPanchromaticImage)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Compute Pansharpen Weights</para>
+		/// <para>Tool Display Name : 计算全色锐化权重</para>
 		/// </summary>
-		public override string DisplayName() => "Compute Pansharpen Weights";
+		public override string DisplayName() => "计算全色锐化权重";
 
 		/// <summary>
 		/// <para>Tool Name : ComputePansharpenWeights</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>A multispectral raster that has a panchromatic band.</para>
+		/// <para>具有全色波段的多光谱栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Panchromatic Image</para>
-		/// <para>The panchromatic band associated with the multispectral raster.</para>
+		/// <para>与多光谱栅格相关联的全色波段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterLayer()]
@@ -85,8 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Band Indexes</para>
-		/// <para>The band order for the pan sharpened weights.</para>
-		/// <para>If a raster product is used as the Input Raster, the band order within the raster product template will be used.</para>
+		/// <para>全色锐化权重的波段顺序。</para>
+		/// <para>如果将栅格产品用作输入栅格，则应用栅格产品模板中的波段顺序。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

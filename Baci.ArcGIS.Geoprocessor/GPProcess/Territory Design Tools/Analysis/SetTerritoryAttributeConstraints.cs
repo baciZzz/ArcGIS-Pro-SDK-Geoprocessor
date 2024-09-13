@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Set Territory Attribute Constraints</para>
+	/// <para>Set Territory Attribute Constraints</para>
 	/// <para>Sets variables for adding constraints when solving the territory solution.</para>
 	/// </summary>
 	public class SetTerritoryAttributeConstraints : AbstractGPProcess

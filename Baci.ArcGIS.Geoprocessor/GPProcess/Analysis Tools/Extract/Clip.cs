@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Clip</para>
-	/// <para>Extracts input features that overlay the clip features.</para>
+	/// <para>裁剪</para>
+	/// <para>提取与裁剪要素相重叠的输入要素。</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.AnalysisTools.PairwiseClip"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.AnalysisTools.PairwiseClip))]
@@ -22,15 +23,15 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features or Dataset</para>
-		/// <para>The features to be clipped.</para>
+		/// <para>要裁剪的要素。</para>
 		/// </param>
 		/// <param name="ClipFeatures">
 		/// <para>Clip Features</para>
-		/// <para>The features to use to clip the input features.</para>
+		/// <para>用于裁剪输入要素的要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Features or Dataset</para>
-		/// <para>The dataset to be created.</para>
+		/// <para>要创建的数据集。</para>
 		/// </param>
 		public Clip(object InFeatures, object ClipFeatures, object OutFeatureClass)
 		{
@@ -40,14 +41,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Clip</para>
+		/// <para>Tool Display Name : 裁剪</para>
 		/// </summary>
-		public override string DisplayName() => "Clip";
+		public override string DisplayName() => "裁剪";
 
 		/// <summary>
-		/// <para>Tool Name : Clip</para>
+		/// <para>Tool Name : 裁剪</para>
 		/// </summary>
-		public override string ToolName() => "Clip";
+		public override string ToolName() => "裁剪";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.Clip</para>
@@ -76,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Features or Dataset</para>
-		/// <para>The features to be clipped.</para>
+		/// <para>要裁剪的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Clip Features</para>
-		/// <para>The features to use to clip the input features.</para>
+		/// <para>用于裁剪输入要素的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Features or Dataset</para>
-		/// <para>The dataset to be created.</para>
+		/// <para>要创建的数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -104,8 +105,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
-		/// <para>The minimum distance separating all feature coordinates as well as the distance a coordinate can move in x or y (or both). Set the value higher for data with less coordinate accuracy and lower for data with extremely high accuracy.</para>
-		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that this parameter not be modified. It has been removed from view in the tool dialog. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
+		/// <para>所有要素坐标之间的最小距离以及坐标可以沿 x 或 y 方向移动的距离。 如果数据的坐标精度较低，则设置较高的值；如果数据的坐标精度较高，则设置较低的值。</para>
+		/// <para>更改此参数的值可能会导致出现故障或意外结果。建议不要修改此参数。已将其从工具对话框的视图中移除。默认情况下，将使用输入要素类的空间参考 x,y 容差属性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]

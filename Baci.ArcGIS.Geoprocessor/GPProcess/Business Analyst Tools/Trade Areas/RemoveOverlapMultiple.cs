@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Remove Overlap (multiple)</para>
+	/// <para>Remove Overlap (multiple)</para>
 	/// <para>Removes overlap between polygons contained in multiple input layers.</para>
 	/// </summary>
 	public class RemoveOverlapMultiple : AbstractGPProcess

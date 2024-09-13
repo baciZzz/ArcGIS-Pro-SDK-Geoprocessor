@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Points From Business Listings</para>
+	/// <para>Generate Points From Business Listings</para>
 	/// <para>Generates a point feature layer from a business point location search.</para>
 	/// </summary>
 	public class GeneratePointsFromBusinessListings : AbstractGPProcess

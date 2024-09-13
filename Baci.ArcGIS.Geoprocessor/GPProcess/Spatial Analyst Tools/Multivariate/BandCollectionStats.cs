@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Band Collection Statistics</para>
-	/// <para>Calculates the statistics for a set of raster bands.</para>
+	/// <para>波段集统计</para>
+	/// <para>计算一组栅格波段的统计信息。</para>
 	/// </summary>
 	public class BandCollectionStats : AbstractGPProcess
 	{
@@ -20,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterBands">
 		/// <para>Input raster bands</para>
-		/// <para>The input raster bands.</para>
-		/// <para>They can be integer or floating point type.</para>
+		/// <para>输入栅格波段。</para>
+		/// <para>可为整型或浮点型。</para>
 		/// </param>
 		/// <param name="OutStatFile">
 		/// <para>Output statistics file</para>
-		/// <para>The output ASCII file containing the statistics.</para>
-		/// <para>A .txt extension is required.</para>
+		/// <para>包含统计数据的输出 ASCII 文件。</para>
+		/// <para>需要使用 .txt 扩展名。</para>
 		/// </param>
 		public BandCollectionStats(object InRasterBands, object OutStatFile)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Band Collection Statistics</para>
+		/// <para>Tool Display Name : 波段集统计</para>
 		/// </summary>
-		public override string DisplayName() => "Band Collection Statistics";
+		public override string DisplayName() => "波段集统计";
 
 		/// <summary>
 		/// <para>Tool Name : BandCollectionStats</para>
@@ -71,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster bands</para>
-		/// <para>The input raster bands.</para>
-		/// <para>They can be integer or floating point type.</para>
+		/// <para>输入栅格波段。</para>
+		/// <para>可为整型或浮点型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -84,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output statistics file</para>
-		/// <para>The output ASCII file containing the statistics.</para>
-		/// <para>A .txt extension is required.</para>
+		/// <para>包含统计数据的输出 ASCII 文件。</para>
+		/// <para>需要使用 .txt 扩展名。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -95,9 +96,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Compute covariance and correlation matrices</para>
-		/// <para>Specifies whether covariance and correlation matrices are calculated.</para>
-		/// <para>Unchecked—Only the basic statistical measures (minimum, maximum, mean, and standard deviation) will be calculated for every layer. This is the default.</para>
-		/// <para>Checked—In addition to the standard statistics calculated, the covariance and correlation matrices will also be determined.</para>
+		/// <para>指定是否计算协方差和相关矩阵。</para>
+		/// <para>未选中 - 仅计算每个图层的基本统计测量值（最小值、最大值、平均值和标准差）。这是默认设置。</para>
+		/// <para>选中 - 除了计算标准的统计数据外，还要确定协方差和相关矩阵。</para>
 		/// <para><see cref="ComputeMatricesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -122,14 +123,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ComputeMatricesEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Only the basic statistical measures (minimum, maximum, mean, and standard deviation) will be calculated for every layer. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("BRIEF")]
 			BRIEF,
 
 			/// <summary>
-			/// <para>Checked—In addition to the standard statistics calculated, the covariance and correlation matrices will also be determined.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DETAILED")]

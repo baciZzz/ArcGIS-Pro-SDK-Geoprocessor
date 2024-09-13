@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Particle Track</para>
-	/// <para>Calculates the path of a particle through a velocity field, returning an ASCII file of particle tracking data and, optionally, a feature class of track information.</para>
+	/// <para>粒子追踪</para>
+	/// <para>通过速度场计算粒子的路径，以返回粒子追踪数据的 ASCII 文件和追踪信息的要素类（可选）。</para>
 	/// </summary>
 	public class ParticleTrack : AbstractGPProcess
 	{
@@ -20,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InDirectionRaster">
 		/// <para>Input direction raster</para>
-		/// <para>An input raster where each cell value represents the direction of the seepage velocity vector (average linear velocity) at the center of the cell.</para>
-		/// <para>Directions are expressed in compass coordinates, in degrees clockwise from north. This can be created by the Darcy Flow tool.</para>
-		/// <para>Direction values must be floating point.</para>
+		/// <para>每个像元值都表示渗流速度矢量（平均线速度）在像元中心的方向的输入栅格。</para>
+		/// <para>方向以罗盘坐标（以北为基准方向按顺时针进行测量的度数）表示。这可通过达西流工具创建。</para>
+		/// <para>方向值必须为浮点型。</para>
 		/// </param>
 		/// <param name="InMagnitudeRaster">
 		/// <para>Input magnitude raster</para>
-		/// <para>An input raster where each cell value represents the magnitude of the seepage velocity vector (average linear velocity) at the center of the cell.</para>
-		/// <para>Units are length/time. This can be created by the Darcy Flow tool.</para>
+		/// <para>每个像元值都表示渗流速度矢量（平均线速度）在像元中心的模的输入栅格。</para>
+		/// <para>单位为长度/时间。这可通过达西流工具创建。</para>
 		/// </param>
 		/// <param name="SourcePoint">
 		/// <para>Source point</para>
-		/// <para>The location of the source point from which to begin the particle tracking.</para>
-		/// <para>This is entered as numbers identifying the x,y coordinates of the position in map units.</para>
+		/// <para>开始粒子追踪的源点的位置。</para>
+		/// <para>它被输入为标识该位置的 x,y 坐标的数字（地图单位）。</para>
 		/// </param>
 		/// <param name="OutTrackFile">
 		/// <para>Output particle track file</para>
-		/// <para>The output ASCII text file that contains the particle tracking data.</para>
+		/// <para>包含粒子追踪数据的输出 ASCII 文本文件。</para>
 		/// </param>
 		public ParticleTrack(object InDirectionRaster, object InMagnitudeRaster, object SourcePoint, object OutTrackFile)
 		{
@@ -47,9 +48,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Particle Track</para>
+		/// <para>Tool Display Name : 粒子追踪</para>
 		/// </summary>
-		public override string DisplayName() => "Particle Track";
+		public override string DisplayName() => "粒子追踪";
 
 		/// <summary>
 		/// <para>Tool Name : ParticleTrack</para>
@@ -83,9 +84,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input direction raster</para>
-		/// <para>An input raster where each cell value represents the direction of the seepage velocity vector (average linear velocity) at the center of the cell.</para>
-		/// <para>Directions are expressed in compass coordinates, in degrees clockwise from north. This can be created by the Darcy Flow tool.</para>
-		/// <para>Direction values must be floating point.</para>
+		/// <para>每个像元值都表示渗流速度矢量（平均线速度）在像元中心的方向的输入栅格。</para>
+		/// <para>方向以罗盘坐标（以北为基准方向按顺时针进行测量的度数）表示。这可通过达西流工具创建。</para>
+		/// <para>方向值必须为浮点型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -97,8 +98,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input magnitude raster</para>
-		/// <para>An input raster where each cell value represents the magnitude of the seepage velocity vector (average linear velocity) at the center of the cell.</para>
-		/// <para>Units are length/time. This can be created by the Darcy Flow tool.</para>
+		/// <para>每个像元值都表示渗流速度矢量（平均线速度）在像元中心的模的输入栅格。</para>
+		/// <para>单位为长度/时间。这可通过达西流工具创建。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -110,8 +111,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Source point</para>
-		/// <para>The location of the source point from which to begin the particle tracking.</para>
-		/// <para>This is entered as numbers identifying the x,y coordinates of the position in map units.</para>
+		/// <para>开始粒子追踪的源点的位置。</para>
+		/// <para>它被输入为标识该位置的 x,y 坐标的数字（地图单位）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPPoint()]
@@ -119,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output particle track file</para>
-		/// <para>The output ASCII text file that contains the particle tracking data.</para>
+		/// <para>包含粒子追踪数据的输出 ASCII 文本文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -129,8 +130,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Step length</para>
-		/// <para>The step length to be used for calculating the particle track.</para>
-		/// <para>The default is one-half the cell size. Units are length.</para>
+		/// <para>用于计算粒子追踪的步长。</para>
+		/// <para>默认值为像元大小的一半。单位是长度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -139,9 +140,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Tracking time</para>
-		/// <para>Maximum elapsed time for particle tracking.</para>
-		/// <para>The algorithm will follow the track until either this time is met or the particle migrates off the raster or into a depression.</para>
-		/// <para>The default value is infinity. Units are time.</para>
+		/// <para>进行粒子追踪所经历的最大时间。</para>
+		/// <para>算法将沿着追踪轨迹执行，直到达到此时间或者粒子迁移出栅格或陷入洼地。</para>
+		/// <para>默认值为无穷大。单位是时间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -150,8 +151,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output track polyline features</para>
-		/// <para>The optional output line feature class containing the particle track.</para>
-		/// <para>This feature class contains a series of arcs with attributes for position, local velocity direction and magnitude, and cumulative length and time of travel along the path.</para>
+		/// <para>包含粒子追踪的可选输出线要素类。</para>
+		/// <para>此要素类包含一系列弧，其属性表示沿路径移动的位置、局部速度方向和模以及累积长度和时间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]

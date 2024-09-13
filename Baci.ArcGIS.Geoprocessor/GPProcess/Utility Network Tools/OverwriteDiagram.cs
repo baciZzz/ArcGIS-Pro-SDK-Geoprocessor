@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Overwrite Diagram</para>
+	/// <para>Overwrite Diagram</para>
 	/// <para>Overwrite a Network Diagram</para>
 	/// </summary>
 	[Obsolete()]

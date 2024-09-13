@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create SQLite Database</para>
-	/// <para>Creates a GeoPackage or an SQLite database that contains the ST_Geometry or SpatiaLite spatial type.</para>
+	/// <para>创建 SQLite 数据库</para>
+	/// <para>用于创建一个包含 ST_Geometry 或 SpatiaLite 空间类型的 GeoPackage 或 SQLite 数据库。</para>
 	/// </summary>
 	public class CreateSQLiteDatabase : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="OutDatabaseName">
 		/// <para>Output Database Name</para>
-		/// <para>The location of the SQLite database or GeoPackage to be created and the name of the file. The .sqlite extension will be automatically assigned if the Spatial Type parameter value is ST_Geometry or SpatiaLite. If the Spatial Type parameter value is GeoPackage or any of the GeoPackage versions, the .gpkg extension will be automatically assigned.</para>
+		/// <para>要创建的 SQLite 数据库或 GeoPackage 的位置以及文件名称。 如果空间类型参数值为 ST_Geometry 或 SpatiaLite，则将自动分配扩展名 .sqlite。 如果空间类型参数值为 GeoPackage 或任意 GeoPackage 版本，则将自动分配扩展名 .gpkg。</para>
 		/// </param>
 		public CreateSQLiteDatabase(object OutDatabaseName)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create SQLite Database</para>
+		/// <para>Tool Display Name : 创建 SQLite 数据库</para>
 		/// </summary>
-		public override string DisplayName() => "Create SQLite Database";
+		public override string DisplayName() => "创建 SQLite 数据库";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSQLiteDatabase</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Database Name</para>
-		/// <para>The location of the SQLite database or GeoPackage to be created and the name of the file. The .sqlite extension will be automatically assigned if the Spatial Type parameter value is ST_Geometry or SpatiaLite. If the Spatial Type parameter value is GeoPackage or any of the GeoPackage versions, the .gpkg extension will be automatically assigned.</para>
+		/// <para>要创建的 SQLite 数据库或 GeoPackage 的位置以及文件名称。 如果空间类型参数值为 ST_Geometry 或 SpatiaLite，则将自动分配扩展名 .sqlite。 如果空间类型参数值为 GeoPackage 或任意 GeoPackage 版本，则将自动分配扩展名 .gpkg。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -72,14 +73,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Spatial Type</para>
-		/// <para>Specifies the spatial type that will be installed with the new SQLite database or the GeoPackage version that will be created.</para>
-		/// <para>ST_Geometry—The Esri spatial storage type will be installed. This is the default.</para>
-		/// <para>SpatiaLite—SpatiaLite spatial storage type will be installed.</para>
-		/// <para>GeoPackage (equivalent to GeoPackage 1.3)—An OGC GeoPackage 1.3 dataset is created.</para>
-		/// <para>GeoPackage 1.0—An OGC GeoPackage 1.0 dataset will be created.</para>
-		/// <para>GeoPackage 1.1—An OGC GeoPackage 1.1 dataset will be created.</para>
-		/// <para>GeoPackage 1.2.1—An OGC GeoPackage 1.2.1 dataset will be created.</para>
-		/// <para>GeoPackage 1.3—An OGC GeoPackage 1.3 dataset will be created.</para>
+		/// <para>指定要随新 SQLite 数据库安装的空间类型或要创建的 GeoPackage 版本。</para>
+		/// <para>ST_Geometry—将安装 Esri 空间存储类型。 这是默认设置。</para>
+		/// <para>SpatiaLite—将安装 SpatiaLite 空间存储类型。</para>
+		/// <para>GeoPackage（相当于 GeoPackage 1.3）—已创建 OGC GeoPackage 1.3 数据集。</para>
+		/// <para>GeoPackage 1.0—将创建 OGC GeoPackage 1.0 数据集。</para>
+		/// <para>GeoPackage 1.1—将创建 OGC GeoPackage 1.1 数据集。</para>
+		/// <para>GeoPackage 1.2.1—将创建 OGC GeoPackage 1.2.1 数据集。</para>
+		/// <para>GeoPackage 1.3—将创建 OGC GeoPackage 1.3 数据集。</para>
 		/// <para><see cref="SpatialTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -104,49 +105,49 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SpatialTypeEnum 
 		{
 			/// <summary>
-			/// <para>ST_Geometry—The Esri spatial storage type will be installed. This is the default.</para>
+			/// <para>ST_Geometry—将安装 Esri 空间存储类型。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("ST_GEOMETRY")]
 			[Description("ST_Geometry")]
 			ST_Geometry,
 
 			/// <summary>
-			/// <para>SpatiaLite—SpatiaLite spatial storage type will be installed.</para>
+			/// <para>SpatiaLite—将安装 SpatiaLite 空间存储类型。</para>
 			/// </summary>
 			[GPValue("SPATIALITE")]
 			[Description("SpatiaLite")]
 			SpatiaLite,
 
 			/// <summary>
-			/// <para>GeoPackage (equivalent to GeoPackage 1.3)—An OGC GeoPackage 1.3 dataset is created.</para>
+			/// <para>GeoPackage（相当于 GeoPackage 1.3）—已创建 OGC GeoPackage 1.3 数据集。</para>
 			/// </summary>
 			[GPValue("GEOPACKAGE")]
-			[Description("GeoPackage (equivalent to GeoPackage 1.3)")]
+			[Description("GeoPackage（相当于 GeoPackage 1.3）")]
 			GEOPACKAGE,
 
 			/// <summary>
-			/// <para>GeoPackage 1.0—An OGC GeoPackage 1.0 dataset will be created.</para>
+			/// <para>GeoPackage 1.0—将创建 OGC GeoPackage 1.0 数据集。</para>
 			/// </summary>
 			[GPValue("GEOPACKAGE_1.0")]
 			[Description("GeoPackage 1.0")]
 			GeoPackage_10,
 
 			/// <summary>
-			/// <para>GeoPackage 1.1—An OGC GeoPackage 1.1 dataset will be created.</para>
+			/// <para>GeoPackage 1.1—将创建 OGC GeoPackage 1.1 数据集。</para>
 			/// </summary>
 			[GPValue("GEOPACKAGE_1.1")]
 			[Description("GeoPackage 1.1")]
 			GeoPackage_11,
 
 			/// <summary>
-			/// <para>GeoPackage 1.2.1—An OGC GeoPackage 1.2.1 dataset will be created.</para>
+			/// <para>GeoPackage 1.2.1—将创建 OGC GeoPackage 1.2.1 数据集。</para>
 			/// </summary>
 			[GPValue("GEOPACKAGE_1.2")]
 			[Description("GeoPackage 1.2.1")]
 			GeoPackage_121,
 
 			/// <summary>
-			/// <para>GeoPackage 1.3—An OGC GeoPackage 1.3 dataset will be created.</para>
+			/// <para>GeoPackage 1.3—将创建 OGC GeoPackage 1.3 数据集。</para>
 			/// </summary>
 			[GPValue("GEOPACKAGE_1.3")]
 			[Description("GeoPackage 1.3")]

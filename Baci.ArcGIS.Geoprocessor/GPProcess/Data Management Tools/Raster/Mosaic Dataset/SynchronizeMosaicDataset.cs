@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Synchronize Mosaic Dataset</para>
-	/// <para>Keeps your mosaic dataset up to date. In addition to syncing data, you can update overviews if the underlying imagery has been changed, generate new overviews and cache, and restore the original configuration of mosaic dataset items. You can also remove paths to source data with this tool. To repair paths, you need to use the Repair Mosaic Dataset Paths  tool.</para>
+	/// <para>同步镶嵌数据集</para>
+	/// <para>使镶嵌数据集保持最新状态。除同步数据外，还可更新概视图（如果基础影像发生更改）、生成新的概视图和缓存以及恢复镶嵌数据集项目的原始配置。您也可使用此工具移除源数据的路径。要修复路径，需使用修复镶嵌数据集路径工具。</para>
 	/// </summary>
 	public class SynchronizeMosaicDataset : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset you want to synchronize.</para>
+		/// <para>想要同步的镶嵌数据集。</para>
 		/// </param>
 		public SynchronizeMosaicDataset(object InMosaicDataset)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Synchronize Mosaic Dataset</para>
+		/// <para>Tool Display Name : 同步镶嵌数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Synchronize Mosaic Dataset";
+		public override string DisplayName() => "同步镶嵌数据集";
 
 		/// <summary>
 		/// <para>Tool Name : SynchronizeMosaicDataset</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset you want to synchronize.</para>
+		/// <para>想要同步的镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>An SQL expression to select which mosaic dataset items will be synchronized. If an expression is not provided, all dataset items will be updated.</para>
+		/// <para>用于选择要同步的镶嵌数据集项目的 SQL 表达式。如果不提供表达式，将更新所有数据集项目。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -80,9 +81,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Update With New Items</para>
-		/// <para>Choose whether to include new items when synchronizing and specify which options to use under the Update With New Items Options submenu. If you choose to use this option, the item&apos;s workspace will be searched for new data. When data is added to the mosaic dataset, it will use the same raster type as the other items in the same workspace.</para>
-		/// <para>Unchecked—New items will not be added when synchronizing. This is the default.</para>
-		/// <para>Checked—Update the mosaic dataset with new items in the workspaces. Optionally, you can modify the existing items by not choosing the Skip Existing Items parameter.</para>
+		/// <para>选择同步时是否包含新项目，然后在使用新项目进行更新选项子菜单下指定要使用的选项。如果选择使用此选项，则将为新数据搜索项目的工作空间。当数据添加到镶嵌数据集后，其使用的栅格类型将与同一工作空间内的其他项目相同。</para>
+		/// <para>取消选中 - 同步时不会添加新项目。这是默认设置。</para>
+		/// <para>选中 - 更新工作空间中包含新项目的镶嵌数据集。或者，可通过不选择跳过现有项目参数来更改现有项目。</para>
 		/// <para><see cref="NewItemsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -92,9 +93,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Synchronize Stale Items Only</para>
-		/// <para>Choose whether to update mosaic dataset items where the underlying raster datasets have been modified due to synchronizing. For example, building pyramids or updating the georeferencing of rasters will affect how the overviews are rendered.</para>
-		/// <para>Checked—Only update the items where the underlying raster datasets have been modified. This is the default.</para>
-		/// <para>Unchecked—Update all of the items in the mosaic dataset.</para>
+		/// <para>选择是否更新基础栅格数据集已因同步发生更改的镶嵌数据集项目。例如，构建金字塔或更新栅格的地理配准将影响概视图的渲染方式。</para>
+		/// <para>选中 - 仅更新基础栅格数据集已被修改的项目。这是默认设置。</para>
+		/// <para>未选中 - 更新镶嵌数据集中的所有项目。</para>
 		/// <para><see cref="SyncOnlyStaleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -105,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Update Cell Size Ranges</para>
-		/// <para>Update cell size ranges for the mosaic dataset.</para>
-		/// <para>Checked—Recalculate the cell size ranges for the entire mosaic dataset but only for items that have an invalid visibility. This is the default.</para>
-		/// <para>Unchecked—Do not recalculate the cell size ranges.</para>
+		/// <para>更新镶嵌数据集的像元大小范围。</para>
+		/// <para>选中 - 重新计算整个镶嵌数据集的像元大小范围，但仅限可见性无效的项目。这是默认设置。</para>
+		/// <para>未选中 - 不重新计算像元大小范围。</para>
 		/// <para><see cref="UpdateCellsizeRangesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -118,9 +119,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Update Boundary</para>
-		/// <para>Update the polygon that shows the full extent of the mosaic dataset. Choose this option if syncing will change the extent of the mosaic dataset.</para>
-		/// <para>Checked—The boundary will be rebuilt after the mosaic dataset is synchronized. This is the default.</para>
-		/// <para>Unchecked—The boundary will not be rebuilt.</para>
+		/// <para>更新显示镶嵌数据集全图范围的面。如果同步将更改镶嵌数据集的范围，则选择此选项。</para>
+		/// <para>选中 - 同步镶嵌数据集后重新构建边界。这是默认设置。</para>
+		/// <para>未选中 - 不重新构建边界。</para>
 		/// <para><see cref="UpdateBoundaryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -131,9 +132,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Update Overviews</para>
-		/// <para>Choose whether to update any obsolete overviews. The overview becomes obsolete if any underlying rasters have been modified due to synchronizing.</para>
-		/// <para>Unchecked—The overviews will not be rebuilt. This is the default.</para>
-		/// <para>Checked—The affected overviews will be rebuilt after the mosaic dataset is synchronized.</para>
+		/// <para>选择是否更新所有废弃的概视图。如果有任何基础栅格因同步而发生更改，概视图则会被废弃。</para>
+		/// <para>未选中 - 不重新构建概视图。这是默认设置。</para>
+		/// <para>选中 - 同步镶嵌数据集后重新构建受影响的概视图。</para>
 		/// <para><see cref="UpdateOverviewsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -144,10 +145,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Build Raster Pyramids</para>
-		/// <para>Choose whether to build pyramids for the specified mosaic dataset items. Pyramids can be built for each raster item in the mosaic dataset. Pyramids can improve the speed at which each raster is displayed.</para>
-		/// <para>Unchecked—Pyramids will not be generated. This is the default.</para>
-		/// <para>Checked—Pyramids will be generated for all the mosaic raster items that were updated due to synchronization.</para>
-		/// <para>Pyramids will not be built for items that were added due to synchronization.</para>
+		/// <para>选择是否为指定的镶嵌数据集项构建金字塔。可以为镶嵌数据集中的每个栅格项目构建金字塔。金字塔可以提高每个栅格的显示速度。</para>
+		/// <para>未选中 - 不生成金字塔。这是默认设置。</para>
+		/// <para>选中 - 将为因同步而更新的所有镶嵌栅格项目生成金字塔。</para>
+		/// <para>不会为因同步而添加的项目构建金字塔。</para>
 		/// <para><see cref="BuildPyramidsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -158,10 +159,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Calculate Statistics</para>
-		/// <para>Choose whether to calculate statistics for the specified mosaic dataset items. Statistics are required for your mosaic dataset when performing certain tasks, such as applying a contrast stretch.</para>
-		/// <para>Unchecked—Statistics will not be calculated. This is the default.</para>
-		/// <para>Checked—Statistics will be calculated for the mosaic dataset items that were updated due to synchronization.</para>
-		/// <para>Statistics will not be calculated for items that were added due to synchronization.</para>
+		/// <para>选择是否为指定的镶嵌数据集项计算统计数据。在执行某些任务时（如应用对比度拉伸），需要对镶嵌数据集进行统计。</para>
+		/// <para>未选中 - 不计算统计数据。这是默认设置。</para>
+		/// <para>选中 - 为因同步而更新的镶嵌数据集项目计算统计数据。</para>
+		/// <para>不会为因同步而添加的项目计算统计数据。</para>
 		/// <para><see cref="CalculateStatisticsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -172,10 +173,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Build Thumbnails</para>
-		/// <para>Choose whether to build thumbnails for the specified mosaic dataset items. Thumbnails are small, highly resampled images that can be created for each raster item in the mosaic definition. Thumbnails can be accessed when the mosaic dataset is accessed as an image service and will display as part of the item description.</para>
-		/// <para>Unchecked—No thumbnails will be created or updated. This is the default.</para>
-		/// <para>Checked—Thumbnails will be generated or updated for all the raster items that were updated due to synchronization.</para>
-		/// <para>Thumbnails will not be built for items that were added due to synchronization.</para>
+		/// <para>选择是否为指定的镶嵌数据集项构建缩略图。缩略图是可为镶嵌定义中的每个栅格项目创建的较小的高度重采样图像。可在以影像服务形式访问镶嵌数据集时访问缩略图，缩略图将显示为项目描述的一部分。</para>
+		/// <para>未选中 - 不创建或更新任何缩略图。这是默认设置。</para>
+		/// <para>选中 - 为因同步而更新的所有栅格项目生成或更新缩略图。</para>
+		/// <para>不会为因同步而添加的项目构建缩略图。</para>
 		/// <para><see cref="BuildThumbnailsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -186,11 +187,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Build Item Cache</para>
-		/// <para>Choose whether to build a cache for the specified mosaic dataset items. A cache can be created when you&apos;ve added data using the LAS, Terrain, or LAS dataset raster types.</para>
-		/// <para>For more information about building cache for LAS, Terrain, or LAS Datasets, see Adding lidar data to a mosaic dataset.</para>
-		/// <para>Unchecked—No cache will be created or updated. This is the default.</para>
-		/// <para>Checked—The cache will be generated or updated for all the raster items specified by this tool.</para>
-		/// <para>The cache will not be built for items that were added due to synchronization.</para>
+		/// <para>选择是否为指定的镶嵌数据集项构建缓存。在使用 LAS、Terrain 或 LAS 数据集栅格类型添加数据时，可以创建缓存。</para>
+		/// <para>有关为 LAS、Terrain 或 LAS 数据集构建缓存的详细信息，请参阅将激光雷达数据添加到镶嵌数据集。</para>
+		/// <para>未选中 - 不创建或更新任何缓存。这是默认设置。</para>
+		/// <para>选中 - 为此工具指定的所有栅格项目生成或更新缓存。</para>
+		/// <para>不会为因同步而添加的项目构建缓存。</para>
 		/// <para><see cref="BuildItemCacheEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -201,10 +202,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Rebuild Raster From Data Source</para>
-		/// <para>Choose whether to rebuild the raster items from the data source using the original raster type.</para>
-		/// <para>Checked—Rebuild the rasters from the source data. You will lose any changes that you have performed on the mosaic dataset. This is the default.</para>
-		/// <para>Unchecked—Do not rebuild the rasters. Other primary fields are reset if Update Fields is checked.</para>
-		/// <para>This will only affect items that will be synchronized. This parameter is not applicable if Update With New Items has been checked on.</para>
+		/// <para>选择是否使用原始栅格类型从数据源重新构建栅格项目。</para>
+		/// <para>选中 - 从源数据重新构建栅格。您将失去对镶嵌数据集执行的所有更改。这是默认设置。</para>
+		/// <para>未选中 - 不重新构建栅格。如果选中更新字段，则会重置其他主字段。</para>
+		/// <para>此操作仅影响要同步的项目。如果选中使用新项目进行更新，则此参数不适用。</para>
 		/// <para><see cref="RebuildRasterEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -215,10 +216,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Update Fields</para>
-		/// <para>Choose whether to update the fields in the table. This will only affect items that will be synchronized.</para>
-		/// <para>Checked—Update the fields from the source files. This is the default.</para>
-		/// <para>Unchecked—Do not reset the fields in the table from the source.</para>
-		/// <para>If you choose to update the fields, you can control which fields are updated by selecting them in the Fields To Update parameter. If you made edits to some of the fields, you may want to unselect them in the Fields To Update parameter.</para>
+		/// <para>选择是否更新表中的字段。此操作仅影响要同步的项目。</para>
+		/// <para>选中 - 更新源文件中的字段。这是默认设置。</para>
+		/// <para>未选中 - 不重置源文件中表内的字段。</para>
+		/// <para>如果选择更新字段，则可通过在待更新字段参数中选择要更新的字段来控制它们。如果已编辑某些字段，则可能需要在待更新字段参数中对其取消选择。</para>
 		/// <para><see cref="UpdateFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -229,10 +230,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Fields To Update</para>
-		/// <para>Choose which fields should be updated.</para>
-		/// <para>This parameter is only valid if Update Fields is checked.</para>
-		/// <para>If you made edits to some of the fields, you may want to unselect them.</para>
-		/// <para>The RASTER field can be refreshed, even if the Rebuild Raster From Data Source check box is unchecked. However, if Rebuild Raster From Data Source is checked, the RASTER field is rebuilt, even if this option is unchecked here.</para>
+		/// <para>选择应更新的字段。</para>
+		/// <para>此参数仅在选中更新字段时才有效。</para>
+		/// <para>如果已编辑某些字段，则可能需要对其取消选择。</para>
+		/// <para>即使取消选中基于数据源重新构建栅格复选框，也可刷新 RASTER 字段。但是，如果已选中基于数据源重新构建栅格，那么即使此处取消选中此选项，也会重新构建 RASTER 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -241,9 +242,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Update Existing Items</para>
-		/// <para>Choose whether to update existing items in your mosaic dataset. If you choose this option, you need to specify which options to update in Update Existing Items Options.</para>
-		/// <para>Checked—Existing items will be updated with the parameters you chose to update. This is the default.</para>
-		/// <para>Unchecked—Existing items will not be updated.</para>
+		/// <para>选择是否要在镶嵌数据集内更新现有项目。如果选择此选项，则需要指定要在更新现有项目选项内更新的选项。</para>
+		/// <para>选中 - 使用选择更新的参数更新现有项目。这是默认设置。</para>
+		/// <para>未选中 - 不更新现有项目。</para>
 		/// <para><see cref="ExistingItemsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -253,10 +254,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Remove Items With Broken Data Source</para>
-		/// <para>Choose whether to remove any broken links.</para>
-		/// <para>Make sure that all your network connections are working properly—this tool will remove any items that cannot be accessed.</para>
-		/// <para>Unchecked—Items that have broken links will not be removed from the mosaic dataset. This is the default.</para>
-		/// <para>Checked—Items that have broken links will be removed from the mosaic dataset.</para>
+		/// <para>选择是否要移除所有损坏的链接。</para>
+		/// <para>请确保所有网络连接正常工作，因为此工具会移除无法访问的所有项目。</para>
+		/// <para>未选中 - 不会从镶嵌数据集移除链接已损坏的项目。这是默认设置。</para>
+		/// <para>选中 - 将从镶嵌数据集移除链接已损坏的项目。</para>
 		/// <para><see cref="BrokenItemsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -266,9 +267,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Skip Existing Items</para>
-		/// <para>If the Update With New Items option is checked on, you can also choose whether to skip or update existing mosaic dataset items with the modified files from disk.</para>
-		/// <para>Checked—While adding new mosaic dataset items, the tool will not update existing mosaic dataset items. This is the default.</para>
-		/// <para>Unchecked—While adding new mosaic dataset items, the tool will update mosaic dataset items that correspond to modified files on disk.</para>
+		/// <para>如果选中了使用新项目进行更新选项，则还可选择是跳过现有镶嵌数据集项目，还是使用磁盘上的已修改文件对这些现有项目进行更新。</para>
+		/// <para>选中 - 添加新镶嵌数据集项目时，此工具将不更新现有镶嵌数据集项目。这是默认设置。</para>
+		/// <para>未选中 - 添加新镶嵌数据集项目时，此工具将更新与磁盘上的已修改文件相对应的镶嵌数据集项目。</para>
 		/// <para><see cref="SkipExistingItemsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -279,9 +280,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Refresh Aggregate Information</para>
-		/// <para>Choose whether to include data that may have been removed from the mosaic dataset.</para>
-		/// <para>Unchecked—When synchronizing, do not include any rasters that may have been removed from the mosaic dataset. This is the default.</para>
-		/// <para>Checked—When synchronizing, include rasters that may have been removed from the mosaic dataset. To use the Refresh Aggregate Information parameter, theUpdate Existing Items must be unchecked.</para>
+		/// <para>选择是否包含已从镶嵌数据集中移除的数据。</para>
+		/// <para>未选中 - 同步时，不包含任何已从镶嵌数据集中移除的栅格。这是默认设置。</para>
+		/// <para>选中 - 同步时，包含已从镶嵌数据集中移除的栅格。要使用刷新聚合信息参数，必须取消选中更新现有项目。</para>
 		/// <para><see cref="RefreshAggregateInfoEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -291,9 +292,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Estimate Mosaic Dataset Statistics</para>
-		/// <para>Choose whether to estimate statistics on the mosaic dataset.</para>
-		/// <para>Unchecked—When synchronizing, do not estimate statistics on the mosaic dataset. This is the default.</para>
-		/// <para>Checked—When synchronizing, estimate statistics on the mosaic dataset.</para>
+		/// <para>选择是否估算镶嵌数据集的统计数据。</para>
+		/// <para>未选中 - 同步时不估算镶嵌数据集的统计数据。这是默认设置。</para>
+		/// <para>选中 - 同步时估算镶嵌数据集的统计数据。</para>
 		/// <para><see cref="EstimateStatisticsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -326,14 +327,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum NewItemsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Update the mosaic dataset with new items in the workspaces. Optionally, you can modify the existing items by not choosing the Skip Existing Items parameter.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_WITH_NEW_ITEMS")]
 			UPDATE_WITH_NEW_ITEMS,
 
 			/// <summary>
-			/// <para>Unchecked—New items will not be added when synchronizing. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_NEW_ITEMS")]
@@ -347,14 +348,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SyncOnlyStaleEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Only update the items where the underlying raster datasets have been modified. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SYNC_STALE")]
 			SYNC_STALE,
 
 			/// <summary>
-			/// <para>Unchecked—Update all of the items in the mosaic dataset.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SYNC_ALL")]
@@ -368,14 +369,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum UpdateCellsizeRangesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Recalculate the cell size ranges for the entire mosaic dataset but only for items that have an invalid visibility. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_CELL_SIZES")]
 			UPDATE_CELL_SIZES,
 
 			/// <summary>
-			/// <para>Unchecked—Do not recalculate the cell size ranges.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CELL_SIZES")]
@@ -389,14 +390,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum UpdateBoundaryEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The boundary will be rebuilt after the mosaic dataset is synchronized. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_BOUNDARY")]
 			UPDATE_BOUNDARY,
 
 			/// <summary>
-			/// <para>Unchecked—The boundary will not be rebuilt.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_BOUNDARY")]
@@ -410,14 +411,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum UpdateOverviewsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The affected overviews will be rebuilt after the mosaic dataset is synchronized.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_OVERVIEWS")]
 			UPDATE_OVERVIEWS,
 
 			/// <summary>
-			/// <para>Unchecked—The overviews will not be rebuilt. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_OVERVIEWS")]
@@ -431,14 +432,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum BuildPyramidsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Pyramids will be generated for all the mosaic raster items that were updated due to synchronization.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BUILD_PYRAMIDS")]
 			BUILD_PYRAMIDS,
 
 			/// <summary>
-			/// <para>Unchecked—Pyramids will not be generated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_PYRAMIDS")]
@@ -452,14 +453,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CalculateStatisticsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Statistics will be calculated for the mosaic dataset items that were updated due to synchronization.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CALCULATE_STATISTICS")]
 			CALCULATE_STATISTICS,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics will not be calculated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_STATISTICS")]
@@ -473,14 +474,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum BuildThumbnailsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Thumbnails will be generated or updated for all the raster items that were updated due to synchronization.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BUILD_THUMBNAILS")]
 			BUILD_THUMBNAILS,
 
 			/// <summary>
-			/// <para>Unchecked—No thumbnails will be created or updated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_THUMBNAILS")]
@@ -494,14 +495,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum BuildItemCacheEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The cache will be generated or updated for all the raster items specified by this tool.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BUILD_ITEM_CACHE")]
 			BUILD_ITEM_CACHE,
 
 			/// <summary>
-			/// <para>Unchecked—No cache will be created or updated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ITEM_CACHE")]
@@ -515,14 +516,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum RebuildRasterEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Rebuild the rasters from the source data. You will lose any changes that you have performed on the mosaic dataset. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REBUILD_RASTER")]
 			REBUILD_RASTER,
 
 			/// <summary>
-			/// <para>Unchecked—Do not rebuild the rasters. Other primary fields are reset if Update Fields is checked.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_RASTER")]
@@ -536,14 +537,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum UpdateFieldsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Update the fields from the source files. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_FIELDS")]
 			UPDATE_FIELDS,
 
 			/// <summary>
-			/// <para>Unchecked—Do not reset the fields in the table from the source.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_FIELDS")]
@@ -557,14 +558,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ExistingItemsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Existing items will be updated with the parameters you chose to update. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_EXISTING_ITEMS")]
 			UPDATE_EXISTING_ITEMS,
 
 			/// <summary>
-			/// <para>Unchecked—Existing items will not be updated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("IGNORE_EXISTING_ITEMS")]
@@ -578,14 +579,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum BrokenItemsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Items that have broken links will be removed from the mosaic dataset.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REMOVE_BROKEN_ITEMS")]
 			REMOVE_BROKEN_ITEMS,
 
 			/// <summary>
-			/// <para>Unchecked—Items that have broken links will not be removed from the mosaic dataset. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("IGNORE_BROKEN_ITEMS")]
@@ -599,14 +600,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SkipExistingItemsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—While adding new mosaic dataset items, the tool will not update existing mosaic dataset items. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SKIP_EXISTING_ITEMS")]
 			SKIP_EXISTING_ITEMS,
 
 			/// <summary>
-			/// <para>Unchecked—While adding new mosaic dataset items, the tool will update mosaic dataset items that correspond to modified files on disk.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("OVERWRITE_EXISTING_ITEMS")]
@@ -620,14 +621,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum RefreshAggregateInfoEnum 
 		{
 			/// <summary>
-			/// <para>Checked—When synchronizing, include rasters that may have been removed from the mosaic dataset. To use the Refresh Aggregate Information parameter, theUpdate Existing Items must be unchecked.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REFRESH_INFO")]
 			REFRESH_INFO,
 
 			/// <summary>
-			/// <para>Unchecked—When synchronizing, do not include any rasters that may have been removed from the mosaic dataset. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_REFRESH_INFO")]
@@ -641,14 +642,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum EstimateStatisticsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—When synchronizing, estimate statistics on the mosaic dataset.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ESTIMATE_STATISTICS")]
 			ESTIMATE_STATISTICS,
 
 			/// <summary>
-			/// <para>Unchecked—When synchronizing, do not estimate statistics on the mosaic dataset. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_STATISTICS")]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Raster Compare</para>
-	/// <para>Compares the properties of two raster or mosaic datasets.</para>
+	/// <para>栅格比较</para>
+	/// <para>比较两个栅格或镶嵌数据集的属性。</para>
 	/// </summary>
 	public class RasterCompare : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InBaseRaster">
 		/// <para>Input Base Raster</para>
-		/// <para>The first raster or mosaic dataset to compare.</para>
+		/// <para>要比较的第一个栅格或镶嵌数据集。</para>
 		/// </param>
 		/// <param name="InTestRaster">
 		/// <para>Input Test Raster</para>
-		/// <para>The second raster or mosaic dataset to compare with the first.</para>
+		/// <para>要与第一个栅格或镶嵌数据集进行比较的第二个栅格或镶嵌数据集。</para>
 		/// </param>
 		public RasterCompare(object InBaseRaster, object InTestRaster)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Raster Compare</para>
+		/// <para>Tool Display Name : 栅格比较</para>
 		/// </summary>
-		public override string DisplayName() => "Raster Compare";
+		public override string DisplayName() => "栅格比较";
 
 		/// <summary>
 		/// <para>Tool Name : RasterCompare</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Base Raster</para>
-		/// <para>The first raster or mosaic dataset to compare.</para>
+		/// <para>要比较的第一个栅格或镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Test Raster</para>
-		/// <para>The second raster or mosaic dataset to compare with the first.</para>
+		/// <para>要与第一个栅格或镶嵌数据集进行比较的第二个栅格或镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -85,10 +86,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compare Type</para>
-		/// <para>Specifies the type of rasters that will be compared.</para>
-		/// <para>Raster dataset—Two raster datasets will be compared.</para>
-		/// <para>Geodatabase raster dataset—Two raster datasets in a geodatabase will be compared.</para>
-		/// <para>Mosaic dataset—Two mosaic datasets will be compared.</para>
+		/// <para>指定将比较的栅格类型。</para>
+		/// <para>栅格数据集—将比较两个栅格数据集。</para>
+		/// <para>地理数据库栅格数据集—将比较地理数据库中的两个栅格数据集。</para>
+		/// <para>镶嵌数据集—将比较两个镶嵌数据集。</para>
 		/// <para><see cref="CompareTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -98,20 +99,20 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Ignore Options</para>
-		/// <para>Specifies the properties that will be ignored in the comparison.</para>
-		/// <para>Band count—The number of bands will be ignored.</para>
-		/// <para>Extent—The extent will be ignored.</para>
-		/// <para>Columns and rows—The number of columns and rows will be ignored.</para>
-		/// <para>Pixel type—The pixel type will be ignored.</para>
-		/// <para>NoData—The NoData value will be ignored.</para>
-		/// <para>Spatial reference—The spatial reference system will be ignored.</para>
-		/// <para>Pixel value—The pixel values will be ignored.</para>
-		/// <para>Colormap—Existing color maps will be ignored.</para>
-		/// <para>Raster attribute table—Existing attribute tables will be ignored.</para>
-		/// <para>Statistics—Statistics will be ignored.</para>
-		/// <para>Metadata—Metadata will be ignored.</para>
-		/// <para>Pyramids exist—Existing pyramids will be ignored.</para>
-		/// <para>Compression type—The compression type will be ignored.</para>
+		/// <para>指定将在比较中被忽略的属性。</para>
+		/// <para>波段计数—将忽略波段数。</para>
+		/// <para>范围—将忽略范围。</para>
+		/// <para>列和行—将忽略列和行数。</para>
+		/// <para>像素类型—将忽略像素类型。</para>
+		/// <para>NoData—将忽略 NoData 值。</para>
+		/// <para>空间参考—将忽略空间参考系统。</para>
+		/// <para>像素值—将忽略像素值。</para>
+		/// <para>色彩映射表—将忽略色彩映射表。</para>
+		/// <para>栅格属性表—将忽略属性表。</para>
+		/// <para>统计数据—将忽略统计数据。</para>
+		/// <para>元数据—将忽略元数据。</para>
+		/// <para>存在金字塔—将忽略已有的金字塔。</para>
+		/// <para>压缩类型—将忽略压缩类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -120,9 +121,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Continue Comparison</para>
-		/// <para>Specifies whether the comparison will stop if a mismatch is encountered.</para>
-		/// <para>Unchecked—The comparison will stop if a mismatch is encountered. This is the default.</para>
-		/// <para>Checked—The comparison will continue if a mismatch is encountered.</para>
+		/// <para>指定发现不匹配时是否停止比较。</para>
+		/// <para>未选中 - 发现不匹配时，将停止比较。 这是默认设置。</para>
+		/// <para>选中 - 发现不匹配时，停止比较。</para>
 		/// <para><see cref="ContinueCompareEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -132,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Compare File</para>
-		/// <para>A text file containing the comparison results.</para>
+		/// <para>包含比较结果的文本文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -140,8 +141,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Parameter Tolerance</para>
-		/// <para>The tolerances that determine the range in which values are considered equal. The same tolerance can be applied to all parameters, or different tolerances can be applied to individual parameters.</para>
-		/// <para>The tolerance type can be set as either a value or a fraction. For example, if the base value is 100 and a fraction tolerance is set to 0.00001, the compare tolerance will be within 100 * 0.001 (100 * 0.00001).</para>
+		/// <para>落在此公差范围内的要值视作相同。 可以对所有参数使用相同的容差，也可以向各个参数应用不同的容差。</para>
+		/// <para>容差类型可以为值，也可以为小数部分。 例如，若基础值为 100，小数部分容差为 0.00001，则比较容差在 100 * 0.001 (100 * 0.00001) 范围内。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -150,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Attribute Tolerance</para>
-		/// <para>The fields that will be compared to determine if they are within a tolerance. The tolerance value is a value in the units of the attribute.</para>
+		/// <para>将比较这些字段以确定它们是否在公差范围内。 容差值的单位为属性的单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -159,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Omit Fields</para>
-		/// <para>The field or fields that will be omitted during comparison.</para>
+		/// <para>在比较过程中将被忽略的一个或多个字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -191,24 +192,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CompareTypeEnum 
 		{
 			/// <summary>
-			/// <para>Raster dataset—Two raster datasets will be compared.</para>
+			/// <para>栅格数据集—将比较两个栅格数据集。</para>
 			/// </summary>
 			[GPValue("RASTER_DATASET")]
-			[Description("Raster dataset")]
+			[Description("栅格数据集")]
 			Raster_dataset,
 
 			/// <summary>
-			/// <para>Geodatabase raster dataset—Two raster datasets in a geodatabase will be compared.</para>
+			/// <para>地理数据库栅格数据集—将比较地理数据库中的两个栅格数据集。</para>
 			/// </summary>
 			[GPValue("GDB_RASTER_DATASET")]
-			[Description("Geodatabase raster dataset")]
+			[Description("地理数据库栅格数据集")]
 			Geodatabase_raster_dataset,
 
 			/// <summary>
-			/// <para>Mosaic dataset—Two mosaic datasets will be compared.</para>
+			/// <para>镶嵌数据集—将比较两个镶嵌数据集。</para>
 			/// </summary>
 			[GPValue("MOSAIC_DATASET")]
-			[Description("Mosaic dataset")]
+			[Description("镶嵌数据集")]
 			Mosaic_dataset,
 
 		}
@@ -219,14 +220,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ContinueCompareEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The comparison will continue if a mismatch is encountered.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CONTINUE_COMPARE")]
 			CONTINUE_COMPARE,
 
 			/// <summary>
-			/// <para>Unchecked—The comparison will stop if a mismatch is encountered. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CONTINUE_COMPARE")]

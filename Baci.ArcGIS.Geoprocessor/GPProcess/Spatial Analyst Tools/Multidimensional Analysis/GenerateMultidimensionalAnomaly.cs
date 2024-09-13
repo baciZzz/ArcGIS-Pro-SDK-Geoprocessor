@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Multidimensional Anomaly</para>
-	/// <para>Computes the anomaly for each slice in an existing multidimensional raster to generate a new multidimensional raster.</para>
+	/// <para>生成多维异常</para>
+	/// <para>用于计算现有多维栅格中每个剖切的异常，以生成新的多维栅格。</para>
 	/// </summary>
 	public class GenerateMultidimensionalAnomaly : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InMultidimensionalRaster">
 		/// <para>Input Multidimensional Raster</para>
-		/// <para>The input multidimensional raster dataset.</para>
+		/// <para>输入多维栅格数据集。</para>
 		/// </param>
 		/// <param name="OutMultidimensionalRaster">
 		/// <para>Output Multidimensional Raster</para>
-		/// <para>The output Cloud Raster Format (CRF) multidimensional raster dataset.</para>
+		/// <para>输出云栅格格式 (CRF) 多维栅格数据集。</para>
 		/// </param>
 		public GenerateMultidimensionalAnomaly(object InMultidimensionalRaster, object OutMultidimensionalRaster)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Multidimensional Anomaly</para>
+		/// <para>Tool Display Name : 生成多维异常</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Multidimensional Anomaly";
+		public override string DisplayName() => "生成多维异常";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateMultidimensionalAnomaly</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>
-		/// <para>The input multidimensional raster dataset.</para>
+		/// <para>输入多维栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output Multidimensional Raster</para>
-		/// <para>The output Cloud Raster Format (CRF) multidimensional raster dataset.</para>
+		/// <para>输出云栅格格式 (CRF) 多维栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -86,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Variables [Dimension Info] (Description)</para>
-		/// <para>The variable or variables for which anomalies will be calculated. If no variable is specified, all variables with a time dimension will be analyzed.</para>
+		/// <para>将计算异常的一个或多个变量。如果未指定变量，则将分析具有时间维度的所有变量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -94,14 +95,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Anomaly Calculation Method</para>
-		/// <para>Specifies the method that will be used to calculate the anomaly.</para>
-		/// <para>Difference From Mean—The difference between a pixel&apos;s value and the mean of that pixel&apos;s values across slices defined by the interval will be calculated. This is the default.</para>
-		/// <para>Percent Difference From Mean—The percent difference between a pixel&apos;s value and the mean of that pixel&apos;s values across slices defined by the interval will be calculated.</para>
-		/// <para>Percent Of Mean—The percent of the mean will be calculated.</para>
-		/// <para>Z-score—The z-score for each pixel will be calculated. A z-score of 0 indicates the pixel&apos;s value is identical to the mean. A z-score of 1 indicates the pixel&apos;s value is 1 standard deviation from the mean. If a z-score is 2, the pixel&apos;s value is 2 standard deviations from the mean, and so on.</para>
-		/// <para>Difference From Median—The difference between a pixel&apos;s value and the mathematical median of that pixel&apos;s values across slices defined by the interval will be calculated.</para>
-		/// <para>Percent Difference From Median—The percent difference between a pixel&apos;s value and the mathematical median of that pixel&apos;s values across slices defined by the interval will be calculated.</para>
-		/// <para>Percent Of Median—The percent of the mathematical median will be calculated.</para>
+		/// <para>指定将用于计算异常的方法。</para>
+		/// <para>与平均值的差值—将计算像素值与该像素值跨由间隔定义的剖切片的平均值之差。这是默认设置。</para>
+		/// <para>与平均值的百分比差值—将计算像素值与该像素值跨剖切片（由间隔定义）的平均值的百分比差值。</para>
+		/// <para>平均值百分比—将计算平均值的百分比。</para>
+		/// <para>z 得分—将计算每个像素的 z 得分。z 得分为 0 表示像素值等于平均值。z 得分为 1 表示像素值与平均值相差 1 个标准差。如果 z 得分是 2，则像素值与平均值相差 2 个标准差，依此类推。</para>
+		/// <para>与中值的差值—将计算像素值与该像素值跨由间隔定义的剖切片的数学中值之差。</para>
+		/// <para>与中值的百分比差值—将计算像素值与该像素值跨由间隔定义的剖切片的数学中值的百分比差值。</para>
+		/// <para>中值的百分比—将计算数学中值的百分比。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -111,14 +112,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Mean Calculation Interval</para>
-		/// <para>Specifies the temporal interval that will be used to calculate the mean.</para>
-		/// <para>All—The mean is calculated across all slices for each pixel.</para>
-		/// <para>Yearly—The yearly mean is calculated for each pixel.</para>
-		/// <para>Recurring monthly—The monthly mean is calculated for each pixel.</para>
-		/// <para>Recurring weekly—The weekly mean is calculated for each pixel.</para>
-		/// <para>Recurring daily—The daily mean is calculated for each pixel.</para>
-		/// <para>Hourly—The hourly mean is calculated for each pixel.</para>
-		/// <para>External raster—An existing raster dataset that contains the mean or median value for each pixel is referenced.</para>
+		/// <para>指定将用于计算平均值的时间间隔。</para>
+		/// <para>所有—针对每个像素在所有剖切片上计算平均值。</para>
+		/// <para>每年—针对每个像素计算每年平均值。</para>
+		/// <para>每月循环—针对每个像素计算每月平均值。</para>
+		/// <para>每周循环—针对每个像素计算每周平均值。</para>
+		/// <para>每天循环—针对每个像素计算每日平均值。</para>
+		/// <para>每小时—针对每个像素计算每小时平均值。</para>
+		/// <para>外部栅格—将引用包含每个像素的平均值或中间值的现有栅格数据集。</para>
 		/// <para><see cref="CalculationIntervalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,9 +129,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Ignore NoData</para>
-		/// <para>Specifies whether NoData values are ignored in the analysis.</para>
-		/// <para>Checked—The analysis will include all valid pixels along a given dimension and ignore any NoData pixels. This is the default.</para>
-		/// <para>Unchecked—The analysis will result in NoData if there are any NoData values for the pixels along the given dimension.</para>
+		/// <para>指定分析中是否忽略 NoData 值。</para>
+		/// <para>已选中 - 分析将包括沿给定维度的所有有效像素，并忽略所有 NoData 像素。 这是默认设置。</para>
+		/// <para>未选中 - 如果沿给定维度的像素包含任意 NoData 值，则分析结果将变为 NoData。</para>
 		/// <para><see cref="IgnoreNodataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -140,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input External Raster</para>
-		/// <para>The reference raster dataset that contains a previously calculated mean for each pixel. The anomalies will be calculated in comparison to this mean.</para>
+		/// <para>参考栅格数据集，其中包含之前针对每个像素计算的平均值。将以与该平均值进行比较的方式来计算异常。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -163,52 +164,52 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Difference From Mean—The difference between a pixel&apos;s value and the mean of that pixel&apos;s values across slices defined by the interval will be calculated. This is the default.</para>
+			/// <para>与平均值的差值—将计算像素值与该像素值跨由间隔定义的剖切片的平均值之差。这是默认设置。</para>
 			/// </summary>
 			[GPValue("DIFFERENCE_FROM_MEAN")]
-			[Description("Difference From Mean")]
+			[Description("与平均值的差值")]
 			Difference_From_Mean,
 
 			/// <summary>
-			/// <para>Percent Difference From Mean—The percent difference between a pixel&apos;s value and the mean of that pixel&apos;s values across slices defined by the interval will be calculated.</para>
+			/// <para>与平均值的百分比差值—将计算像素值与该像素值跨剖切片（由间隔定义）的平均值的百分比差值。</para>
 			/// </summary>
 			[GPValue("PERCENT_DIFFERENCE_FROM_MEAN")]
-			[Description("Percent Difference From Mean")]
+			[Description("与平均值的百分比差值")]
 			Percent_Difference_From_Mean,
 
 			/// <summary>
-			/// <para>Percent Of Mean—The percent of the mean will be calculated.</para>
+			/// <para>平均值百分比—将计算平均值的百分比。</para>
 			/// </summary>
 			[GPValue("PERCENT_OF_MEAN")]
-			[Description("Percent Of Mean")]
+			[Description("平均值百分比")]
 			Percent_Of_Mean,
 
 			/// <summary>
-			/// <para>Z-score—The z-score for each pixel will be calculated. A z-score of 0 indicates the pixel&apos;s value is identical to the mean. A z-score of 1 indicates the pixel&apos;s value is 1 standard deviation from the mean. If a z-score is 2, the pixel&apos;s value is 2 standard deviations from the mean, and so on.</para>
+			/// <para>z 得分—将计算每个像素的 z 得分。z 得分为 0 表示像素值等于平均值。z 得分为 1 表示像素值与平均值相差 1 个标准差。如果 z 得分是 2，则像素值与平均值相差 2 个标准差，依此类推。</para>
 			/// </summary>
 			[GPValue("Z_SCORE")]
-			[Description("Z-score")]
+			[Description("z 得分")]
 			Z_SCORE,
 
 			/// <summary>
-			/// <para>Difference From Median—The difference between a pixel&apos;s value and the mathematical median of that pixel&apos;s values across slices defined by the interval will be calculated.</para>
+			/// <para>与中值的差值—将计算像素值与该像素值跨由间隔定义的剖切片的数学中值之差。</para>
 			/// </summary>
 			[GPValue("DIFFERENCE_FROM_MEDIAN")]
-			[Description("Difference From Median")]
+			[Description("与中值的差值")]
 			Difference_From_Median,
 
 			/// <summary>
-			/// <para>Percent Difference From Median—The percent difference between a pixel&apos;s value and the mathematical median of that pixel&apos;s values across slices defined by the interval will be calculated.</para>
+			/// <para>与中值的百分比差值—将计算像素值与该像素值跨由间隔定义的剖切片的数学中值的百分比差值。</para>
 			/// </summary>
 			[GPValue("PERCENT_DIFFERENCE_FROM_MEDIAN")]
-			[Description("Percent Difference From Median")]
+			[Description("与中值的百分比差值")]
 			Percent_Difference_From_Median,
 
 			/// <summary>
-			/// <para>Percent Of Median—The percent of the mathematical median will be calculated.</para>
+			/// <para>中值的百分比—将计算数学中值的百分比。</para>
 			/// </summary>
 			[GPValue("PERCENT_OF_MEDIAN")]
-			[Description("Percent Of Median")]
+			[Description("中值的百分比")]
 			Percent_Of_Median,
 
 		}
@@ -219,52 +220,52 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum CalculationIntervalEnum 
 		{
 			/// <summary>
-			/// <para>All—The mean is calculated across all slices for each pixel.</para>
+			/// <para>所有—针对每个像素在所有剖切片上计算平均值。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All")]
+			[Description("所有")]
 			All,
 
 			/// <summary>
-			/// <para>Yearly—The yearly mean is calculated for each pixel.</para>
+			/// <para>每年—针对每个像素计算每年平均值。</para>
 			/// </summary>
 			[GPValue("YEARLY")]
-			[Description("Yearly")]
+			[Description("每年")]
 			Yearly,
 
 			/// <summary>
-			/// <para>Recurring monthly—The monthly mean is calculated for each pixel.</para>
+			/// <para>每月循环—针对每个像素计算每月平均值。</para>
 			/// </summary>
 			[GPValue("RECURRING_MONTHLY")]
-			[Description("Recurring monthly")]
+			[Description("每月循环")]
 			Recurring_monthly,
 
 			/// <summary>
-			/// <para>Recurring weekly—The weekly mean is calculated for each pixel.</para>
+			/// <para>每周循环—针对每个像素计算每周平均值。</para>
 			/// </summary>
 			[GPValue("RECURRING_WEEKLY")]
-			[Description("Recurring weekly")]
+			[Description("每周循环")]
 			Recurring_weekly,
 
 			/// <summary>
-			/// <para>Recurring daily—The daily mean is calculated for each pixel.</para>
+			/// <para>每天循环—针对每个像素计算每日平均值。</para>
 			/// </summary>
 			[GPValue("RECURRING_DAILY")]
-			[Description("Recurring daily")]
+			[Description("每天循环")]
 			Recurring_daily,
 
 			/// <summary>
-			/// <para>Hourly—The hourly mean is calculated for each pixel.</para>
+			/// <para>每小时—针对每个像素计算每小时平均值。</para>
 			/// </summary>
 			[GPValue("HOURLY")]
-			[Description("Hourly")]
+			[Description("每小时")]
 			Hourly,
 
 			/// <summary>
-			/// <para>External raster—An existing raster dataset that contains the mean or median value for each pixel is referenced.</para>
+			/// <para>外部栅格—将引用包含每个像素的平均值或中间值的现有栅格数据集。</para>
 			/// </summary>
 			[GPValue("EXTERNAL_RASTER")]
-			[Description("External raster")]
+			[Description("外部栅格")]
 			External_raster,
 
 		}
@@ -275,14 +276,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum IgnoreNodataEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The analysis will include all valid pixels along a given dimension and ignore any NoData pixels. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DATA")]
 			DATA,
 
 			/// <summary>
-			/// <para>Unchecked—The analysis will result in NoData if there are any NoData values for the pixels along the given dimension.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NODATA")]

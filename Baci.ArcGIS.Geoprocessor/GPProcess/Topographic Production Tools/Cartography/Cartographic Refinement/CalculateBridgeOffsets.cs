@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Calculate Bridge Offsets</para>
+	/// <para>Calculate Bridge Offsets</para>
 	/// <para>Calculates the offsets necessary to properly display bridges at a given location.</para>
 	/// </summary>
 	public class CalculateBridgeOffsets : AbstractGPProcess

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Generate Product Layout</para>
+	/// <para>Generate Product Layout</para>
 	/// <para>Automates the process of producing a layout or map based on a standard specification.</para>
 	/// </summary>
 	public class GenerateProductLayout : AbstractGPProcess

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 {
 	/// <summary>
 	/// <para>Set Network Attribute</para>
-	/// <para>Assigns a network attribute to a feature class to be used during trace operations.</para>
+	/// <para>设置网络属性</para>
+	/// <para>将网络属性分配到要在追踪操作期间使用的要素类。</para>
 	/// </summary>
 	public class SetNetworkAttribute : AbstractGPProcess
 	{
@@ -20,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// </summary>
 		/// <param name="InTraceNetwork">
 		/// <para>Input Trace Network</para>
-		/// <para>The trace network that contains the network attribute to set.</para>
+		/// <para>包含要设置的网络属性的追踪网络。</para>
 		/// </param>
 		/// <param name="NetworkAttribute">
 		/// <para>Network Attribute</para>
-		/// <para>The network attribute to be assigned to the feature class field.</para>
+		/// <para>要分配到要素类字段的网络属性。</para>
 		/// </param>
 		/// <param name="Featureclass">
 		/// <para>Feature Class</para>
-		/// <para>The input feature class that contains the field that will be used to set the network attribute.</para>
+		/// <para>包括将用于设置网络属性的字段的输入要素类。</para>
 		/// </param>
 		/// <param name="Field">
 		/// <para>Field</para>
-		/// <para>An existing field that will be assigned the network attribute. The field data type must match the data type of the network attribute. For example, if the network attribute is a short integer type, the field must also be a short integer type. Network attributes that do not support null values can only be assigned to fields that do not allow null values.</para>
+		/// <para>将分配网络属性的现有字段。字段数据类型必须与网络属性的数据类型相匹配。例如，如果网络属性是短整型，则字段必须也是短整型。只能将不支持空值的网络属性分配给不允许空值的字段。</para>
 		/// </param>
 		public SetNetworkAttribute(object InTraceNetwork, object NetworkAttribute, object Featureclass, object Field)
 		{
@@ -43,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Set Network Attribute</para>
+		/// <para>Tool Display Name : 设置网络属性</para>
 		/// </summary>
-		public override string DisplayName() => "Set Network Attribute";
+		public override string DisplayName() => "设置网络属性";
 
 		/// <summary>
 		/// <para>Tool Name : SetNetworkAttribute</para>
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Input Trace Network</para>
-		/// <para>The trace network that contains the network attribute to set.</para>
+		/// <para>包含要设置的网络属性的追踪网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Network Attribute</para>
-		/// <para>The network attribute to be assigned to the feature class field.</para>
+		/// <para>要分配到要素类字段的网络属性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Feature Class</para>
-		/// <para>The input feature class that contains the field that will be used to set the network attribute.</para>
+		/// <para>包括将用于设置网络属性的字段的输入要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -103,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Field</para>
-		/// <para>An existing field that will be assigned the network attribute. The field data type must match the data type of the network attribute. For example, if the network attribute is a short integer type, the field must also be a short integer type. Network attributes that do not support null values can only be assigned to fields that do not allow null values.</para>
+		/// <para>将分配网络属性的现有字段。字段数据类型必须与网络属性的数据类型相匹配。例如，如果网络属性是短整型，则字段必须也是短整型。只能将不支持空值的网络属性分配给不允许空值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

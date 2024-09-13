@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Import Trace Configurations</para>
-	/// <para>Imports named trace configurations from JSON format (.json file) to a utility network.</para>
+	/// <para>导入追踪配置</para>
+	/// <para>将 JSON 格式文件（.json 文件）中的指定追踪配置导入公共设施网络。</para>
 	/// </summary>
 	public class ImportTraceConfigurations : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network to which the named trace configurations will be imported.</para>
+		/// <para>将导入指定追踪配置的公共设施网络。</para>
 		/// </param>
 		/// <param name="InJsonFile">
 		/// <para>Input  File (.json)</para>
-		/// <para>The .json file containing the named trace configurations to import.</para>
+		/// <para>包含要导入的指定追踪配置的 .json 文件。</para>
 		/// </param>
 		public ImportTraceConfigurations(object InUtilityNetwork, object InJsonFile)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Import Trace Configurations</para>
+		/// <para>Tool Display Name : 导入追踪配置</para>
 		/// </summary>
-		public override string DisplayName() => "Import Trace Configurations";
+		public override string DisplayName() => "导入追踪配置";
 
 		/// <summary>
 		/// <para>Tool Name : ImportTraceConfigurations</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network to which the named trace configurations will be imported.</para>
+		/// <para>将导入指定追踪配置的公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input  File (.json)</para>
-		/// <para>The .json file containing the named trace configurations to import.</para>
+		/// <para>包含要导入的指定追踪配置的 .json 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Zonal Statistics as Table</para>
-	/// <para>Summarizes the values of a raster within the zones of another dataset and reports the results as a table.</para>
+	/// <para>以表格显示分区统计</para>
+	/// <para>汇总另一个数据集区域内的栅格数据值并以表的形式显示结果。</para>
 	/// </summary>
 	public class ZonalStatisticsAsTable : AbstractGPProcess
 	{
@@ -20,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InZoneData">
 		/// <para>Input raster or feature zone data</para>
-		/// <para>The dataset that defines the zones.</para>
-		/// <para>The zones can be defined by an integer raster or a feature layer.</para>
+		/// <para>定义区域的数据集。</para>
+		/// <para>可通过整型栅格或要素图层来定义区域。</para>
 		/// </param>
 		/// <param name="ZoneField">
 		/// <para>Zone field</para>
-		/// <para>The field that contains the values that define each zone.</para>
-		/// <para>It can be an integer or a string field of the zone dataset.</para>
+		/// <para>包含定义每个区域的值的字段。</para>
+		/// <para>该字段可以是区域数据集的整型字段或字符串型字段。</para>
 		/// </param>
 		/// <param name="InValueRaster">
 		/// <para>Input value raster</para>
-		/// <para>The raster that contains the values on which to calculate a statistic.</para>
+		/// <para>含有要计算统计数据的值的栅格。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output table</para>
-		/// <para>The output table that will contain the summary of the values in each zone.</para>
-		/// <para>The format of the table is determined by the output location and path. By default, the output will be a geodatabase table if in a geodatabase workspace, and a dBASE table if in a file workspace.</para>
+		/// <para>将包含每个区域中值的汇总的输出表。</para>
+		/// <para>表的格式由输出位置和路径确定。默认情况下，如果在地理数据库工作空间中，则输出将是一个地理数据库表；如果在文件工作空间中，则输出将为 dBASE 表。</para>
 		/// </param>
 		public ZonalStatisticsAsTable(object InZoneData, object ZoneField, object InValueRaster, object OutTable)
 		{
@@ -46,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Zonal Statistics as Table</para>
+		/// <para>Tool Display Name : 以表格显示分区统计</para>
 		/// </summary>
-		public override string DisplayName() => "Zonal Statistics as Table";
+		public override string DisplayName() => "以表格显示分区统计";
 
 		/// <summary>
 		/// <para>Tool Name : ZonalStatisticsAsTable</para>
@@ -82,8 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature zone data</para>
-		/// <para>The dataset that defines the zones.</para>
-		/// <para>The zones can be defined by an integer raster or a feature layer.</para>
+		/// <para>定义区域的数据集。</para>
+		/// <para>可通过整型栅格或要素图层来定义区域。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -95,8 +96,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Zone field</para>
-		/// <para>The field that contains the values that define each zone.</para>
-		/// <para>It can be an integer or a string field of the zone dataset.</para>
+		/// <para>包含定义每个区域的值的字段。</para>
+		/// <para>该字段可以是区域数据集的整型字段或字符串型字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -106,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input value raster</para>
-		/// <para>The raster that contains the values on which to calculate a statistic.</para>
+		/// <para>含有要计算统计数据的值的栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -118,8 +119,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output table</para>
-		/// <para>The output table that will contain the summary of the values in each zone.</para>
-		/// <para>The format of the table is determined by the output location and path. By default, the output will be a geodatabase table if in a geodatabase workspace, and a dBASE table if in a file workspace.</para>
+		/// <para>将包含每个区域中值的汇总的输出表。</para>
+		/// <para>表的格式由输出位置和路径确定。默认情况下，如果在地理数据库工作空间中，则输出将是一个地理数据库表；如果在文件工作空间中，则输出将为 dBASE 表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -127,9 +128,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Ignore NoData in calculations</para>
-		/// <para>Specifies whether NoData values in the value input will be ignored in the results of the zone that they fall within.</para>
-		/// <para>Checked—Within any particular zone, only cells that have a value in the input value raster will be used in determining the output value for that zone. NoData cells in the value raster will be ignored in the statistic calculation. This is the default.</para>
-		/// <para>Unchecked—Within any particular zone, if NoData cells exist in the value raster, they will not be ignored and their existence indicates that there is insufficient information to perform statistical calculations for all the cells in that zone. Consequently, the entire zone will receive the NoData value on the output raster.</para>
+		/// <para>指定值输入中的 NoData 值是否会在其所落入区域的结果中被忽略。</para>
+		/// <para>选中 - 在任意特定区域内，仅使用在输入值栅格中拥有值的像元来确定该区域的输出值。在统计计算过程中，值栅格内的 NoData 像元将被忽略。这是默认设置。</para>
+		/// <para>未选中 - 在任何特定区域中，如果 NoData 像元存在于值栅格中，则它们不会被忽略，并且 NoData 像元的存在表明没有足够的信息来对该区域中的所有像元执行统计计算。因此，整个区域将在输出栅格上接收 NoData 值。</para>
 		/// <para><see cref="IgnoreNodataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -139,22 +140,22 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Statistics type</para>
-		/// <para>Specifies the statistic type to be calculated.</para>
-		/// <para>All—All of the statistics will be calculated. This is the default.</para>
-		/// <para>Mean—The average of all cells in the value raster that belong to the same zone as the output cell will be calculated.</para>
-		/// <para>Majority—The value that occurs most often of all cells in the value raster that belong to the same zone as the output cell will be calculated.</para>
-		/// <para>Maximum—The largest value of all cells in the value raster that belong to the same zone as the output cell will be calculated.</para>
-		/// <para>Median—The median value of all cells in the value raster that belong to the same zone as the output cell will be calculated.</para>
-		/// <para>Minimum—The smallest value of all cells in the value raster that belong to the same zone as the output cell will be calculated.</para>
-		/// <para>Minority—The value that occurs least often of all cells in the value raster that belong to the same zone as the output cell will be calculated.</para>
-		/// <para>Percentile—The percentile of all cells in the value raster that belong to the same zone as the output cell will be calculated. The 90th percentile is calculated by default. You can specify other values (from 0 to 100) using the Percentile values parameter.</para>
-		/// <para>Range—The difference between the largest and smallest value of all cells in the value raster that belong to the same zone as the output cell will be calculated.</para>
-		/// <para>Standard deviation—The standard deviation of all cells in the value raster that belong to the same zone as the output cell will be calculated.</para>
-		/// <para>Sum—The total value of all cells in the value raster that belong to the same zone as the output cell will be calculated.</para>
-		/// <para>Variety—The number of unique values for all cells in the value raster that belong to the same zone as the output cell will be calculated.</para>
-		/// <para>Minimum and Maximum—Both the minimum and maximum statistics will be calculated.</para>
-		/// <para>Mean and Standard deviation—Both the mean and standard deviation statistics will be calculated.</para>
-		/// <para>Minimum, Maximum and Mean—The minimum, maximum, and mean statistics will be calculated.</para>
+		/// <para>指定要计算的统计数据类型。</para>
+		/// <para>全部—将计算所有的统计数据。 这是默认设置。</para>
+		/// <para>平均值—将计算值栅格中与输出像元同属一个区域的所有像元的平均值。</para>
+		/// <para>众数—将计算值栅格中与输出像元同属一个区域的所有像元中最常出现的值。</para>
+		/// <para>最大值—将计算值栅格中与输出像元同属一个区域的所有像元的最大值。</para>
+		/// <para>中值—将计算值栅格中与输出像元同属一个区域的所有像元的中值。</para>
+		/// <para>最小值—将计算值栅格中与输出像元同属一个区域的所有像元的最小值。</para>
+		/// <para>少数—将计算值栅格中与输出像元同属一个区域的所有像元中出现次数最少的值。</para>
+		/// <para>百分比数—将计算值栅格中与输出像元同属一个区域的所有像元的百分比值。 默认情况下将计算 90% 百分比数。 您可以使用百分数值参数来指定其他值（从 0 到 100）。</para>
+		/// <para>范围—将计算值栅格中与输出像元同属一个区域的所有像元的最大值与最小值之差。</para>
+		/// <para>标准差—将计算值栅格中与输出像元同属一个区域的所有像元的标准偏差。</para>
+		/// <para>总和—将计算值栅格中与输出像元同属一个区域的所有像元的合计值。</para>
+		/// <para>变异度—将计算值栅格中与输出像元同属一个区域的所有像元中唯一值的数目。</para>
+		/// <para>最小值和最大值—将计算最小值统计数据和最大值统计数据。</para>
+		/// <para>平均值和标准差—将计算平均值统计数据和标准差统计数据。</para>
+		/// <para>最小值、最大值和平均值—将计算最小值、最大值和平均值统计数据。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -163,9 +164,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Process as multidimensional</para>
-		/// <para>Specifies how the input rasters will be processed if they are multidimensional.</para>
-		/// <para>Unchecked—Statistics will be calculated from the current slice of the input multidimensional dataset. This is the default.</para>
-		/// <para>Checked—Statistics will be calculated for all dimensions of the input multidimensional dataset.</para>
+		/// <para>用于指定多维输入栅格的处理方式。</para>
+		/// <para>未选中 - 将计算输入多维数据集的当前剖切片中的统计数据。这是默认设置。</para>
+		/// <para>已选中 - 将计算输入多维数据集的所有维度的统计数据。</para>
 		/// <para><see cref="ProcessAsMultidimensionalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -175,9 +176,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Percentile values</para>
-		/// <para>The percentile to calculate. The default is 90, indicating the 90th percentile.</para>
-		/// <para>The values can range from 0 to 100. The 0th percentile is essentially equivalent to the minimum statistic, and the 100th percentile is equivalent to maximum. A value of 50 will produce essentially the same result as the median statistic.</para>
-		/// <para>This option is only available if the Statistics type parameter is set to Percentile or All.</para>
+		/// <para>要计算的百分比数。默认值为 90，指示 90%。</para>
+		/// <para>取值范围为 0 到 100。0% 基本上等同于“最小值”统计数据，而 100% 则等同于“最大值”。值 50 所生成的结果基本等同于“中值”统计数据的结果。</para>
+		/// <para>此选项仅在将统计类型参数设置为百分比数或全部后可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -188,10 +189,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Percentile interpolation type</para>
-		/// <para>Specifies the method of percentile interpolation to be used when the number of values from the input raster to be calculated are even.</para>
-		/// <para>Auto-detect—If the input value raster is of integer pixel type, the Nearest method is used. If the input value raster is of floating point pixel type, the Linear method is used. This is the default.</para>
-		/// <para>Nearest—The nearest available value to the desired percentile is used.</para>
-		/// <para>Linear—The weighted average of the two surrounding values from the desired percentile is used.</para>
+		/// <para>指定输入栅格中要计算的值数为偶数时使用的百分位数插值方法。</para>
+		/// <para>自动检测—如果输入值栅格的像素类型为整型，则将使用最近方法。如果输入值栅格的像素类型为浮点型，则将使用线性方法。这是默认设置。</para>
+		/// <para>最邻近—将使用最接近所需的百分位数的可用值。</para>
+		/// <para>线性—将使用接近所需百分位数的两个值的加权平均值。</para>
 		/// <para><see cref="PercentileInterpolationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -216,14 +217,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum IgnoreNodataEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Within any particular zone, only cells that have a value in the input value raster will be used in determining the output value for that zone. NoData cells in the value raster will be ignored in the statistic calculation. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DATA")]
 			DATA,
 
 			/// <summary>
-			/// <para>Unchecked—Within any particular zone, if NoData cells exist in the value raster, they will not be ignored and their existence indicates that there is insufficient information to perform statistical calculations for all the cells in that zone. Consequently, the entire zone will receive the NoData value on the output raster.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NODATA")]
@@ -237,14 +238,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ProcessAsMultidimensionalEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Statistics will be calculated from the current slice of the input multidimensional dataset. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CURRENT_SLICE")]
 			CURRENT_SLICE,
 
 			/// <summary>
-			/// <para>Checked—Statistics will be calculated for all dimensions of the input multidimensional dataset.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ALL_SLICES")]
@@ -258,24 +259,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum PercentileInterpolationTypeEnum 
 		{
 			/// <summary>
-			/// <para>Auto-detect—If the input value raster is of integer pixel type, the Nearest method is used. If the input value raster is of floating point pixel type, the Linear method is used. This is the default.</para>
+			/// <para>自动检测—如果输入值栅格的像素类型为整型，则将使用最近方法。如果输入值栅格的像素类型为浮点型，则将使用线性方法。这是默认设置。</para>
 			/// </summary>
 			[GPValue("AUTO_DETECT")]
-			[Description("Auto-detect")]
+			[Description("自动检测")]
 			AUTO_DETECT,
 
 			/// <summary>
-			/// <para>Nearest—The nearest available value to the desired percentile is used.</para>
+			/// <para>最邻近—将使用最接近所需的百分位数的可用值。</para>
 			/// </summary>
 			[GPValue("NEAREST")]
-			[Description("Nearest")]
+			[Description("最邻近")]
 			Nearest,
 
 			/// <summary>
-			/// <para>Linear—The weighted average of the two surrounding values from the desired percentile is used.</para>
+			/// <para>线性—将使用接近所需百分位数的两个值的加权平均值。</para>
 			/// </summary>
 			[GPValue("LINEAR")]
-			[Description("Linear")]
+			[Description("线性")]
 			Linear,
 
 		}

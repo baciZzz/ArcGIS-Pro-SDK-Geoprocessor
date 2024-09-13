@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Apply Angle Directed Layout</para>
+	/// <para>Apply Angle Directed Layout</para>
 	/// <para>Apply the angle directed layout to a diagram</para>
 	/// </summary>
 	[Obsolete()]

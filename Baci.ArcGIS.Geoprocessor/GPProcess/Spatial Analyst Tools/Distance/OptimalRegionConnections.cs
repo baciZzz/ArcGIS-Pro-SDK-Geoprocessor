@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Optimal Region Connections</para>
-	/// <para>Calculates the optimal connectivity network between two or more input regions.</para>
+	/// <para>最佳区域连接</para>
+	/// <para>在两个或多个输入区域之间计算最佳连通性网络。</para>
 	/// </summary>
 	public class OptimalRegionConnections : AbstractGPProcess
 	{
@@ -20,21 +21,21 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRegions">
 		/// <para>Input raster or feature region data</para>
-		/// <para>The input regions to be connected by the optimal network.</para>
-		/// <para>Regions can be defined by either a raster or a feature dataset.</para>
-		/// <para>If the region input is a raster, the regions are defined by groups of contiguous (adjacent) cells of the same value. Each region must be uniquely numbered. The cells that are not part of any region must be NoData. The raster type must be integer, and the values can be either positive or negative.</para>
-		/// <para>If the region input is a feature dataset, it can be polygons, polylines, or points. Polygon feature regions cannot be composed of multipart polygons.</para>
+		/// <para>要通过最佳网络连接的输入区域。</para>
+		/// <para>区域可以通过栅格或要素数据集来定义。</para>
+		/// <para>如果区域输入为栅格，则区域将通过值相同的连续（邻近）像元组进行定义。 每个区域必须具有唯一的编号。 不属于任何区域的像元一定是 NoData。 栅格类型必须为整型，值可正可负。</para>
+		/// <para>如果区域输入为要素数据集，则其可以是面、折线或点。 面要素区域不能包含多部分面。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output optimal connectivity lines</para>
-		/// <para>The output polyline feature class of the optimal network of paths that connect each of the input regions.</para>
-		/// <para>Each path (or line) is uniquely numbered and additional fields in the attribute table store specific information about the path. Those additional fields are the following:</para>
-		/// <para>PATHID—The unique identifier for the path</para>
-		/// <para>PATHCOST—The total accumulative distance or cost for the path</para>
-		/// <para>REGION1—The first region the path connects</para>
-		/// <para>REGION2—The other region the path connects</para>
-		/// <para>This information provides insight into the paths within the network.</para>
-		/// <para>Since each path is represented by a unique line, there will be multiple lines in locations where paths travel the same route.</para>
+		/// <para>连接每个输入区域所需的最佳路径网络的输出折线要素类。</para>
+		/// <para>每条路径（或线）都是唯一标识的，同时属性表中的其他字段用于存储有关路径的特定信息。 这些其他字段包括：</para>
+		/// <para>PATHID- 路径的唯一标识符</para>
+		/// <para>PATHCOST- 路径的总累积距离或成本</para>
+		/// <para>REGION1- 该路径连接的第一个区域</para>
+		/// <para>REGION2- 该路径连接的另一个区域</para>
+		/// <para>该信息有助于深入分析网络内的路径。</para>
+		/// <para>由于每条路径都是由唯一的线所表示，因此多条路径经过同一路线的位置会存在多条线。</para>
 		/// </param>
 		public OptimalRegionConnections(object InRegions, object OutFeatureClass)
 		{
@@ -43,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Optimal Region Connections</para>
+		/// <para>Tool Display Name : 最佳区域连接</para>
 		/// </summary>
-		public override string DisplayName() => "Optimal Region Connections";
+		public override string DisplayName() => "最佳区域连接";
 
 		/// <summary>
 		/// <para>Tool Name : OptimalRegionConnections</para>
@@ -79,10 +80,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature region data</para>
-		/// <para>The input regions to be connected by the optimal network.</para>
-		/// <para>Regions can be defined by either a raster or a feature dataset.</para>
-		/// <para>If the region input is a raster, the regions are defined by groups of contiguous (adjacent) cells of the same value. Each region must be uniquely numbered. The cells that are not part of any region must be NoData. The raster type must be integer, and the values can be either positive or negative.</para>
-		/// <para>If the region input is a feature dataset, it can be polygons, polylines, or points. Polygon feature regions cannot be composed of multipart polygons.</para>
+		/// <para>要通过最佳网络连接的输入区域。</para>
+		/// <para>区域可以通过栅格或要素数据集来定义。</para>
+		/// <para>如果区域输入为栅格，则区域将通过值相同的连续（邻近）像元组进行定义。 每个区域必须具有唯一的编号。 不属于任何区域的像元一定是 NoData。 栅格类型必须为整型，值可正可负。</para>
+		/// <para>如果区域输入为要素数据集，则其可以是面、折线或点。 面要素区域不能包含多部分面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -94,14 +95,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output optimal connectivity lines</para>
-		/// <para>The output polyline feature class of the optimal network of paths that connect each of the input regions.</para>
-		/// <para>Each path (or line) is uniquely numbered and additional fields in the attribute table store specific information about the path. Those additional fields are the following:</para>
-		/// <para>PATHID—The unique identifier for the path</para>
-		/// <para>PATHCOST—The total accumulative distance or cost for the path</para>
-		/// <para>REGION1—The first region the path connects</para>
-		/// <para>REGION2—The other region the path connects</para>
-		/// <para>This information provides insight into the paths within the network.</para>
-		/// <para>Since each path is represented by a unique line, there will be multiple lines in locations where paths travel the same route.</para>
+		/// <para>连接每个输入区域所需的最佳路径网络的输出折线要素类。</para>
+		/// <para>每条路径（或线）都是唯一标识的，同时属性表中的其他字段用于存储有关路径的特定信息。 这些其他字段包括：</para>
+		/// <para>PATHID- 路径的唯一标识符</para>
+		/// <para>PATHCOST- 路径的总累积距离或成本</para>
+		/// <para>REGION1- 该路径连接的第一个区域</para>
+		/// <para>REGION2- 该路径连接的另一个区域</para>
+		/// <para>该信息有助于深入分析网络内的路径。</para>
+		/// <para>由于每条路径都是由唯一的线所表示，因此多条路径经过同一路线的位置会存在多条线。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -109,8 +110,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input barrier raster or feature data</para>
-		/// <para>The dataset that defines the barriers.</para>
-		/// <para>The barriers can be defined by an integer or a floating-point raster, or by a feature layer.</para>
+		/// <para>定义障碍的数据集。</para>
+		/// <para>可通过整型栅格、浮点型栅格或要素图层来定义障碍。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
@@ -122,9 +123,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input cost raster</para>
-		/// <para>A raster defining the impedance or cost to move planimetrically through each cell.</para>
-		/// <para>The value at each cell location represents the cost-per-unit distance for moving through the cell. Each cell location value is multiplied by the cell resolution while also compensating for diagonal movement to obtain the total cost of passing through the cell.</para>
-		/// <para>The values of the cost raster can be integer or floating point, but they cannot be negative or zero (you cannot have a negative or zero cost).</para>
+		/// <para>定义以平面测量的经过每个像元所需的阻抗或成本。</para>
+		/// <para>每个像元位置上的值表示经过像元时移动每单位距离所需的成本。每个像元位置值乘以像元分辨率，同时也会补偿对角线移动来获取经过像元的总成本。</para>
+		/// <para>成本栅格的值可以是整型或浮点型，但不可以为负值或零（不存在负成本或零成本）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
@@ -136,14 +137,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output feature class of neighboring connections</para>
-		/// <para>The output polyline feature class identifying all paths from each region to each of its closest or cost neighbors.</para>
-		/// <para>Each path (or line) is uniquely numbered and additional fields in the attribute table store specific information about the path. Those additional fields are the following:</para>
-		/// <para>PATHID—The unique identifier for the path</para>
-		/// <para>PATHCOST—The total accumulative distance or cost for the path</para>
-		/// <para>REGION1—The first region the path connects</para>
-		/// <para>REGION2—The other region the path connects</para>
-		/// <para>This information provides insight into the paths within the network and is useful when deciding which paths should be removed if necessary.</para>
-		/// <para>Since each path is represented by a unique line, there will be multiple lines in locations where paths travel the same route.</para>
+		/// <para>该输出折线要素类用于标识从每个区域到其每个最近或成本邻域的所有路径。</para>
+		/// <para>每条路径（或线）都是唯一标识的，同时属性表中的其他字段用于存储有关路径的特定信息。 这些其他字段包括：</para>
+		/// <para>PATHID- 路径的唯一标识符</para>
+		/// <para>PATHCOST- 路径的总累积距离或成本</para>
+		/// <para>REGION1- 该路径连接的第一个区域</para>
+		/// <para>REGION2- 该路径连接的另一个区域</para>
+		/// <para>该信息有助于深入分析网络内的路径，而且对于决定应该移除哪条路径非常有用（如有必要）。</para>
+		/// <para>由于每条路径都是由唯一的线所表示，因此多条路径经过同一路线的位置会存在多条线。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -151,9 +152,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Distance Method</para>
-		/// <para>Specifies whether to calculate the distance using a planar (flat earth) or a geodesic (ellipsoid) method.</para>
-		/// <para>Planar—The distance calculation will be performed on a projected flat plane using a 2D Cartesian coordinate system. This is the default.</para>
-		/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Therefore, regardless of input or output projection, the results do not change.</para>
+		/// <para>指定是否使用平面（平地）或测地线（椭球）方法计算距离。</para>
+		/// <para>平面—将使用 2D 笛卡尔坐标系对投影平面执行距离计算。这是默认设置。</para>
+		/// <para>测地线—距离计算将在椭圆体上执行。因此，结果不会改变，不考虑输入或输出投影。</para>
 		/// <para><see cref="DistanceMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -163,9 +164,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Connections within regions</para>
-		/// <para>Specifies whether the paths will continue and connect within the input regions.</para>
-		/// <para>Generate connections—Paths will continue within the input regions to connect all paths that enter a region.</para>
-		/// <para>No connections—Paths will stop at the edges of the input regions and will not continue or connect within them.</para>
+		/// <para>指定路径是否将在输入区域内继续并连接。</para>
+		/// <para>生成连接—路径将在输入区域内继续以连接进入区域的所有路径。</para>
+		/// <para>无连接—路径将在输入区域的边缘停止，并且不会在输入区域内继续或连接。</para>
 		/// <para><see cref="ConnectionsWithinRegionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -190,17 +191,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum DistanceMethodEnum 
 		{
 			/// <summary>
-			/// <para>Planar—The distance calculation will be performed on a projected flat plane using a 2D Cartesian coordinate system. This is the default.</para>
+			/// <para>平面—将使用 2D 笛卡尔坐标系对投影平面执行距离计算。这是默认设置。</para>
 			/// </summary>
 			[GPValue("PLANAR")]
-			[Description("Planar")]
+			[Description("平面")]
 			Planar,
 
 			/// <summary>
-			/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Therefore, regardless of input or output projection, the results do not change.</para>
+			/// <para>测地线—距离计算将在椭圆体上执行。因此，结果不会改变，不考虑输入或输出投影。</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("Geodesic")]
+			[Description("测地线")]
 			Geodesic,
 
 		}
@@ -211,17 +212,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ConnectionsWithinRegionsEnum 
 		{
 			/// <summary>
-			/// <para>Generate connections—Paths will continue within the input regions to connect all paths that enter a region.</para>
+			/// <para>生成连接—路径将在输入区域内继续以连接进入区域的所有路径。</para>
 			/// </summary>
 			[GPValue("GENERATE_CONNECTIONS")]
-			[Description("Generate connections")]
+			[Description("生成连接")]
 			Generate_connections,
 
 			/// <summary>
-			/// <para>No connections—Paths will stop at the edges of the input regions and will not continue or connect within them.</para>
+			/// <para>无连接—路径将在输入区域的边缘停止，并且不会在输入区域内继续或连接。</para>
 			/// </summary>
 			[GPValue("NO_CONNECTIONS")]
-			[Description("No connections")]
+			[Description("无连接")]
 			No_connections,
 
 		}

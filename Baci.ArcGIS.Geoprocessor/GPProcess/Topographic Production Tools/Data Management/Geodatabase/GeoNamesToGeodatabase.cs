@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>GeoNames To Geodatabase</para>
+	/// <para>GeoNames To Geodatabase</para>
 	/// <para>Loads GeoNames data into a feature class and table. The feature class is composed of point features, and the table contains fields with information concerning the naming conventions used for the features. The feature class contains the Unique Feature Identifier (UFI) and Unique Name Identifier (UNI), which match the same fields in the GeoNames table.</para>
 	/// </summary>
 	public class GeoNamesToGeodatabase : AbstractGPProcess

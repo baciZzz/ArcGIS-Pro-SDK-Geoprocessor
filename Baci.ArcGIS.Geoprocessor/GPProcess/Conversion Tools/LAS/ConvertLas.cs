@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Convert LAS</para>
-	/// <para>Converts LAS format files between different compression methods, file versions,  and  point record formats.</para>
+	/// <para>转换 LAS</para>
+	/// <para>在不同的压缩方法、文件版本和点记录格式间转换 LAS 格式文件。</para>
 	/// </summary>
 	public class ConvertLas : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InLas">
 		/// <para>Input LAS</para>
-		/// <para>The LAS data that will be converted. A folder can be specified to process all of the .las files contained therein.</para>
+		/// <para>将要转换的 LAS 数据。 可指定某一文件夹以处理其中所包含的全部 .las 文件。</para>
 		/// </param>
 		/// <param name="TargetFolder">
 		/// <para>Target Folder</para>
-		/// <para>The existing folder to which the output .las files will be written.</para>
+		/// <para>输出 .las 文件将要写入的现有文件夹。</para>
 		/// </param>
 		public ConvertLas(object InLas, object TargetFolder)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Convert LAS</para>
+		/// <para>Tool Display Name : 转换 LAS</para>
 		/// </summary>
-		public override string DisplayName() => "Convert LAS";
+		public override string DisplayName() => "转换 LAS";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertLas</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input LAS</para>
-		/// <para>The LAS data that will be converted. A folder can be specified to process all of the .las files contained therein.</para>
+		/// <para>将要转换的 LAS 数据。 可指定某一文件夹以处理其中所包含的全部 .las 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Target Folder</para>
-		/// <para>The existing folder to which the output .las files will be written.</para>
+		/// <para>输出 .las 文件将要写入的现有文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -86,13 +87,13 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>File Version</para>
-		/// <para>The LAS format file version of the output files.</para>
-		/// <para>Same As Input—The output file version will be the same as the input. This is the default.</para>
-		/// <para>1.0—The base version for the LAS format that supported 256 class codes.</para>
-		/// <para>1.1—The output file version will be 1.1. Class codes were reduced to 32, but support for classification flags was added.</para>
-		/// <para>1.2—The output file version will be 1.2. Support for red-green-blue (RGB) color channels and GPS time was added.</para>
-		/// <para>1.3—The output file version will be 1.3. Storage of lidar waveform data for point record formats that are not supported in the ArcGIS platform was added.</para>
-		/// <para>1.4— The output file version will be 1.4. Support for coordinate system definition using Well Known Text (WKT) convention, 256 class codes, up to 15 discrete returns per pulse, higher precision scan angle, and overlap classification flag was added.</para>
+		/// <para>输出文件的 LAS 格式文件版本。</para>
+		/// <para>与输入相同—输出文件与输入文件具有相同的版本。 这是默认设置。</para>
+		/// <para>1.0—支持 256 种类代码的 LAS 格式的基础版本。</para>
+		/// <para>1.1—输出文件的版本为 1.1。 类代码减少到 32 种，但是增加了对分类标记的支持。</para>
+		/// <para>1.2—输出文件的版本为 1.2。 增加了对红绿蓝 (RGB) 彩色通道和 GPS 时间的支持。</para>
+		/// <para>1.3—输出文件的版本为 1.3。 增加了不受 ArcGIS 平台支持的点记录格式激光雷达波形数据的存储。</para>
+		/// <para>1.4—输出文件的版本为 1.4。 增加了对使用可识别文本 (WKT) 约定定义坐标系、256 种类代码、每个脉冲多达 15 个离散回波、更高精度的扫描角度和重叠分类标记的支持。</para>
 		/// <para><see cref="FileVersionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -102,14 +103,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Point Format</para>
-		/// <para>Specifies the point record format of the output .las files. The available options will vary based on the output LAS format file version.</para>
-		/// <para>0—The base type for storing discrete LAS points that supports attributes such as lidar intensity, return values, scan angle, scan direction, and edge of flight line.</para>
-		/// <para>1—GPS time is added to the attributes supported in point format 0.</para>
-		/// <para>2—RGB values are added to the attributes supported in point format 0.</para>
-		/// <para>3—RGB values and GPS time are added to the attributes supported in point format 0.</para>
-		/// <para>6—The preferred base type for storing discrete LAS points in LAS file version 1.4.</para>
-		/// <para>7—RGB values are added to the attributes supported in point format 6.</para>
-		/// <para>8—RGB and near-infrared values are added to the attributes supported in point format 6.</para>
+		/// <para>指定输出 .las 文件的点记录格式。 可用选项因输出 LAS 格式文件的版本而异。</para>
+		/// <para>0—用于存储离散 LAS 点的基本类型，该类型支持诸如激光雷达强度、返回值、扫描角度、扫描方向和飞行航线的边缘等属性。</para>
+		/// <para>1—将 GPS 时间添加至点格式 0 所支持的属性。</para>
+		/// <para>2—将 RGB 值添加至点格式 0 所支持的属性。</para>
+		/// <para>3—将 RGB 值和 GPS 时间添加至点格式 0 所支持的属性。</para>
+		/// <para>性质—在 LAS 文件版本 1.4 中存储离散 LAS 点的首选基本类型。</para>
+		/// <para>7—将 RGB 值添加至点格式 6 所支持的属性。</para>
+		/// <para>8—将 RGB 和近红外值添加至点格式 6 所支持的属性。</para>
 		/// <para><see cref="PointFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -119,10 +120,10 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Compression</para>
-		/// <para>Specifies whether the output .las file will be in a compressed format or the standard LAS format.</para>
-		/// <para>No Compression—The output will be in the standard LAS format (*.las). This is the default.</para>
-		/// <para>zLAS Compression—Output .las files will be compressed in the zLAS format (*.zlas).</para>
-		/// <para>LAZ Compression—Output .las files will be compressed in the LAZ format (*.laz).</para>
+		/// <para>指定输出 .las 文件为压缩格式还是标准 LAS 格式。</para>
+		/// <para>不压缩—输出将为标准 LAS 格式 (*.las)。 这是默认设置。</para>
+		/// <para>zLAS 压缩—输出 .las 文件将以 zLAS 格式 (*.zlas) 压缩。</para>
+		/// <para>LAZ 压缩—输出 .las 文件将以 LAZ 格式 (*.laz) 压缩。</para>
 		/// <para><see cref="CompressionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -132,10 +133,10 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>LAS Options</para>
-		/// <para>Specifies modifications that will be made to reduce the size of the output .las files and improve their usability and performance in display and analysis operations.</para>
-		/// <para>Rearrange Points—Points will be rearranged to improve display and analysis performance. Statistics will be automatically computed during this process. This is the default.</para>
-		/// <para>Remove Variable Length Records—Variable-length records that are added after the header as well as the points records of each file will be removed.</para>
-		/// <para>Remove Extra Bytes—Extra bytes that may be present with each point from the input file will be removed.</para>
+		/// <para>指定将进行的修改以减小输出 .las 文件的大小，并改进其在显示和分析操作中的可用性及性能。</para>
+		/// <para>重新排列点—将重新排列点，以提高显示和分析性能。 将在此过程中自动计算统计数据。 这是默认设置。</para>
+		/// <para>删除变量长度记录—添加在标题后的可变长度记录以及每个文件的点记录将被移除。</para>
+		/// <para>移除多余字节—输入文件中每个点可能出现的额外字节将被删除。</para>
 		/// <para><see cref="LasOptionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -145,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output LAS Dataset</para>
-		/// <para>The output LAS dataset referencing the newly created .las files.</para>
+		/// <para>参考新创建的 .las 文件的输出 LAS 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DELasDataset()]
@@ -153,10 +154,10 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Define Input Coordinate System</para>
-		/// <para>Specifies whether the spatial reference of input .las files will be defined by the Define Input Coordinate System parameter.</para>
-		/// <para>No LAS Files—The spatial reference of input .las files will not be defined as an input argument. This is the default.</para>
-		/// <para>All LAS Files—The spatial reference of input .las files will be defined as an input argument.</para>
-		/// <para>LAS Files with No Spatial Reference—The spatial reference of input .las files that have no projection information in the header will be defined.</para>
+		/// <para>指定是否将通过定义输入坐标系参数来定义输入 .las 文件的空间参考。</para>
+		/// <para>无 LAS 文件—输入 .las 文件的空间参考不会被定义为输入参数。 这是默认设置。</para>
+		/// <para>所有 LAS 文件—输入 .las 文件的空间参考将被定义为输入参数。</para>
+		/// <para>无空间参考的 LAS 文件—系统将定义标题中没有投影信息的输入 .las 文件的空间参考。</para>
 		/// <para><see cref="DefineCoordinateSystemEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -166,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Coordinate System</para>
-		/// <para>The coordinate system that will be used to define the spatial reference of the input .las files. This parameter is only active if the Define Input Coordinate System parameter is set to All LAS Files or LAS Files with No Spatial Reference.</para>
+		/// <para>将用于定义输入 .las 文件的空间参考的坐标系。 仅当定义输入坐标系参数设置为所有 LAS 文件或无空间参考的 LAS 文件时，系统才启用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
@@ -189,42 +190,42 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum FileVersionEnum 
 		{
 			/// <summary>
-			/// <para>Same As Input—The output file version will be the same as the input. This is the default.</para>
+			/// <para>与输入相同—输出文件与输入文件具有相同的版本。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("SAME_AS_INPUT")]
-			[Description("Same As Input")]
+			[Description("与输入相同")]
 			Same_As_Input,
 
 			/// <summary>
-			/// <para>1.0—The base version for the LAS format that supported 256 class codes.</para>
+			/// <para>1.0—支持 256 种类代码的 LAS 格式的基础版本。</para>
 			/// </summary>
 			[GPValue("1.0")]
 			[Description("1.0")]
 			_10,
 
 			/// <summary>
-			/// <para>1.1—The output file version will be 1.1. Class codes were reduced to 32, but support for classification flags was added.</para>
+			/// <para>1.1—输出文件的版本为 1.1。 类代码减少到 32 种，但是增加了对分类标记的支持。</para>
 			/// </summary>
 			[GPValue("1.1")]
 			[Description("1.1")]
 			_11,
 
 			/// <summary>
-			/// <para>1.2—The output file version will be 1.2. Support for red-green-blue (RGB) color channels and GPS time was added.</para>
+			/// <para>1.2—输出文件的版本为 1.2。 增加了对红绿蓝 (RGB) 彩色通道和 GPS 时间的支持。</para>
 			/// </summary>
 			[GPValue("1.2")]
 			[Description("1.2")]
 			_12,
 
 			/// <summary>
-			/// <para>1.3—The output file version will be 1.3. Storage of lidar waveform data for point record formats that are not supported in the ArcGIS platform was added.</para>
+			/// <para>1.3—输出文件的版本为 1.3。 增加了不受 ArcGIS 平台支持的点记录格式激光雷达波形数据的存储。</para>
 			/// </summary>
 			[GPValue("1.3")]
 			[Description("1.3")]
 			_13,
 
 			/// <summary>
-			/// <para>1.4— The output file version will be 1.4. Support for coordinate system definition using Well Known Text (WKT) convention, 256 class codes, up to 15 discrete returns per pulse, higher precision scan angle, and overlap classification flag was added.</para>
+			/// <para>1.4—输出文件的版本为 1.4。 增加了对使用可识别文本 (WKT) 约定定义坐标系、256 种类代码、每个脉冲多达 15 个离散回波、更高精度的扫描角度和重叠分类标记的支持。</para>
 			/// </summary>
 			[GPValue("1.4")]
 			[Description("1.4")]
@@ -238,49 +239,49 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum PointFormatEnum 
 		{
 			/// <summary>
-			/// <para>0—The base type for storing discrete LAS points that supports attributes such as lidar intensity, return values, scan angle, scan direction, and edge of flight line.</para>
+			/// <para>0—用于存储离散 LAS 点的基本类型，该类型支持诸如激光雷达强度、返回值、扫描角度、扫描方向和飞行航线的边缘等属性。</para>
 			/// </summary>
 			[GPValue("0")]
 			[Description("0")]
 			_0,
 
 			/// <summary>
-			/// <para>1—GPS time is added to the attributes supported in point format 0.</para>
+			/// <para>1—将 GPS 时间添加至点格式 0 所支持的属性。</para>
 			/// </summary>
 			[GPValue("1")]
 			[Description("1")]
 			_1,
 
 			/// <summary>
-			/// <para>2—RGB values are added to the attributes supported in point format 0.</para>
+			/// <para>2—将 RGB 值添加至点格式 0 所支持的属性。</para>
 			/// </summary>
 			[GPValue("2")]
 			[Description("2")]
 			_2,
 
 			/// <summary>
-			/// <para>3—RGB values and GPS time are added to the attributes supported in point format 0.</para>
+			/// <para>3—将 RGB 值和 GPS 时间添加至点格式 0 所支持的属性。</para>
 			/// </summary>
 			[GPValue("3")]
 			[Description("3")]
 			_3,
 
 			/// <summary>
-			/// <para>6—The preferred base type for storing discrete LAS points in LAS file version 1.4.</para>
+			/// <para>性质—在 LAS 文件版本 1.4 中存储离散 LAS 点的首选基本类型。</para>
 			/// </summary>
 			[GPValue("6")]
-			[Description("6")]
+			[Description("性质")]
 			_6,
 
 			/// <summary>
-			/// <para>7—RGB values are added to the attributes supported in point format 6.</para>
+			/// <para>7—将 RGB 值添加至点格式 6 所支持的属性。</para>
 			/// </summary>
 			[GPValue("7")]
 			[Description("7")]
 			_7,
 
 			/// <summary>
-			/// <para>8—RGB and near-infrared values are added to the attributes supported in point format 6.</para>
+			/// <para>8—将 RGB 和近红外值添加至点格式 6 所支持的属性。</para>
 			/// </summary>
 			[GPValue("8")]
 			[Description("8")]
@@ -294,24 +295,24 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum CompressionEnum 
 		{
 			/// <summary>
-			/// <para>No Compression—The output will be in the standard LAS format (*.las). This is the default.</para>
+			/// <para>不压缩—输出将为标准 LAS 格式 (*.las)。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("NO_COMPRESSION")]
-			[Description("No Compression")]
+			[Description("不压缩")]
 			No_Compression,
 
 			/// <summary>
-			/// <para>zLAS Compression—Output .las files will be compressed in the zLAS format (*.zlas).</para>
+			/// <para>zLAS 压缩—输出 .las 文件将以 zLAS 格式 (*.zlas) 压缩。</para>
 			/// </summary>
 			[GPValue("ZLAS")]
-			[Description("zLAS Compression")]
+			[Description("zLAS 压缩")]
 			zLAS_Compression,
 
 			/// <summary>
-			/// <para>LAZ Compression—Output .las files will be compressed in the LAZ format (*.laz).</para>
+			/// <para>LAZ 压缩—输出 .las 文件将以 LAZ 格式 (*.laz) 压缩。</para>
 			/// </summary>
 			[GPValue("LAZ")]
-			[Description("LAZ Compression")]
+			[Description("LAZ 压缩")]
 			LAZ_Compression,
 
 		}
@@ -322,24 +323,24 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum LasOptionsEnum 
 		{
 			/// <summary>
-			/// <para>Rearrange Points—Points will be rearranged to improve display and analysis performance. Statistics will be automatically computed during this process. This is the default.</para>
+			/// <para>重新排列点—将重新排列点，以提高显示和分析性能。 将在此过程中自动计算统计数据。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("REARRANGE_POINTS")]
-			[Description("Rearrange Points")]
+			[Description("重新排列点")]
 			Rearrange_Points,
 
 			/// <summary>
-			/// <para>Remove Variable Length Records—Variable-length records that are added after the header as well as the points records of each file will be removed.</para>
+			/// <para>删除变量长度记录—添加在标题后的可变长度记录以及每个文件的点记录将被移除。</para>
 			/// </summary>
 			[GPValue("REMOVE_VLR")]
-			[Description("Remove Variable Length Records")]
+			[Description("删除变量长度记录")]
 			Remove_Variable_Length_Records,
 
 			/// <summary>
-			/// <para>Remove Extra Bytes—Extra bytes that may be present with each point from the input file will be removed.</para>
+			/// <para>移除多余字节—输入文件中每个点可能出现的额外字节将被删除。</para>
 			/// </summary>
 			[GPValue("REMOVE_EXTRA_BYTES")]
-			[Description("Remove Extra Bytes")]
+			[Description("移除多余字节")]
 			Remove_Extra_Bytes,
 
 		}
@@ -350,24 +351,24 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum DefineCoordinateSystemEnum 
 		{
 			/// <summary>
-			/// <para>No LAS Files—The spatial reference of input .las files will not be defined as an input argument. This is the default.</para>
+			/// <para>无 LAS 文件—输入 .las 文件的空间参考不会被定义为输入参数。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("NO_FILES")]
-			[Description("No LAS Files")]
+			[Description("无 LAS 文件")]
 			No_LAS_Files,
 
 			/// <summary>
-			/// <para>All LAS Files—The spatial reference of input .las files will be defined as an input argument.</para>
+			/// <para>所有 LAS 文件—输入 .las 文件的空间参考将被定义为输入参数。</para>
 			/// </summary>
 			[GPValue("ALL_FILES")]
-			[Description("All LAS Files")]
+			[Description("所有 LAS 文件")]
 			All_LAS_Files,
 
 			/// <summary>
-			/// <para>LAS Files with No Spatial Reference—The spatial reference of input .las files that have no projection information in the header will be defined.</para>
+			/// <para>无空间参考的 LAS 文件—系统将定义标题中没有投影信息的输入 .las 文件的空间参考。</para>
 			/// </summary>
 			[GPValue("FILES_MISSING_PROJECTION")]
-			[Description("LAS Files with No Spatial Reference")]
+			[Description("无空间参考的 LAS 文件")]
 			LAS_Files_with_No_Spatial_Reference,
 
 		}

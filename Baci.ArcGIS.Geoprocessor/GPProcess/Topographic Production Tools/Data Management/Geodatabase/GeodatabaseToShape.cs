@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Geodatabase To Shape</para>
+	/// <para>Geodatabase To Shape</para>
 	/// <para>Exports one or more feature classes in a geodatabase to shapefiles using one of three modes: defense, generic, and Multinational Geospatial Co-Production Program</para>
 	/// <para>(MGCP).</para>
 	/// </summary>

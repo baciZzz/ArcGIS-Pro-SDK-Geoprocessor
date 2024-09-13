@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>If Row Count Is</para>
-	/// <para>Evaluates the row count of the input data and checks whether it matches a specified value.</para>
+	/// <para>如果行计数为</para>
+	/// <para>评估输入数据的行计数并检查其是否与指定的值匹配。</para>
 	/// </summary>
 	public class RowCountIfThenElse : AbstractGPProcess
 	{
@@ -20,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InLayerOrView">
 		/// <para>Layer Name or Table View</para>
-		/// <para>The input layer or table view to evaluate.</para>
+		/// <para>评估输入图层或表视图。</para>
 		/// </param>
 		/// <param name="CountCondition">
 		/// <para>Count Condition</para>
-		/// <para>Specifies the condition to be used to test the field values of the records matching the SQL expression.</para>
-		/// <para>Is Equal to—Checks if the row count is equal to the Count value.</para>
-		/// <para>Is Between—Checks if the row count is between the Minimum Count value and Maximum Count value.</para>
-		/// <para>Is Less Than—Checks if the row count is less than the Count value.</para>
-		/// <para>Is Greater Than—Checks if the row count is greater than the Count value.</para>
-		/// <para>Is Not Equal to—Checks if the row count is not equal to the Count value.</para>
+		/// <para>指定用于测试记录中的字段值与 SQL 表达式匹配的条件。</para>
+		/// <para>等于—检查行计数是否等于计数值。</para>
+		/// <para>介于—检查行计数是否介于最小计数值与最大计数值之间。</para>
+		/// <para>小于—检查行计数是否小于计数值。</para>
+		/// <para>大于—检查行计数是否大于计数值。</para>
+		/// <para>不等于—检查行计数是否不等于计数值。</para>
 		/// <para><see cref="CountConditionEnum"/></para>
 		/// </param>
 		public RowCountIfThenElse(object InLayerOrView, object CountCondition)
@@ -39,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : If Row Count Is</para>
+		/// <para>Tool Display Name : 如果行计数为</para>
 		/// </summary>
-		public override string DisplayName() => "If Row Count Is";
+		public override string DisplayName() => "如果行计数为";
 
 		/// <summary>
 		/// <para>Tool Name : RowCountIfThenElse</para>
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Layer Name or Table View</para>
-		/// <para>The input layer or table view to evaluate.</para>
+		/// <para>评估输入图层或表视图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,12 +84,12 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Count Condition</para>
-		/// <para>Specifies the condition to be used to test the field values of the records matching the SQL expression.</para>
-		/// <para>Is Equal to—Checks if the row count is equal to the Count value.</para>
-		/// <para>Is Between—Checks if the row count is between the Minimum Count value and Maximum Count value.</para>
-		/// <para>Is Less Than—Checks if the row count is less than the Count value.</para>
-		/// <para>Is Greater Than—Checks if the row count is greater than the Count value.</para>
-		/// <para>Is Not Equal to—Checks if the row count is not equal to the Count value.</para>
+		/// <para>指定用于测试记录中的字段值与 SQL 表达式匹配的条件。</para>
+		/// <para>等于—检查行计数是否等于计数值。</para>
+		/// <para>介于—检查行计数是否介于最小计数值与最大计数值之间。</para>
+		/// <para>小于—检查行计数是否小于计数值。</para>
+		/// <para>大于—检查行计数是否大于计数值。</para>
+		/// <para>不等于—检查行计数是否不等于计数值。</para>
 		/// <para><see cref="CountConditionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -98,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Count</para>
-		/// <para>The integer count value.</para>
+		/// <para>整型计数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -106,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Minimum Count</para>
-		/// <para>The minimum integer count value.</para>
+		/// <para>最小整型计数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -114,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Maximum Count</para>
-		/// <para>The maximum integer count value.</para>
+		/// <para>最大整型计数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -142,38 +143,38 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum CountConditionEnum 
 		{
 			/// <summary>
-			/// <para>Is Equal to—Checks if the row count is equal to the Count value.</para>
+			/// <para>等于—检查行计数是否等于计数值。</para>
 			/// </summary>
 			[GPValue("IS_EQUAL_TO")]
-			[Description("Is Equal to")]
+			[Description("等于")]
 			Is_Equal_to,
 
 			/// <summary>
-			/// <para>Is Between—Checks if the row count is between the Minimum Count value and Maximum Count value.</para>
+			/// <para>介于—检查行计数是否介于最小计数值与最大计数值之间。</para>
 			/// </summary>
 			[GPValue("IS_BETWEEN")]
-			[Description("Is Between")]
+			[Description("介于")]
 			Is_Between,
 
 			/// <summary>
-			/// <para>Is Less Than—Checks if the row count is less than the Count value.</para>
+			/// <para>小于—检查行计数是否小于计数值。</para>
 			/// </summary>
 			[GPValue("IS_LESS_THAN")]
-			[Description("Is Less Than")]
+			[Description("小于")]
 			Is_Less_Than,
 
 			/// <summary>
-			/// <para>Is Greater Than—Checks if the row count is greater than the Count value.</para>
+			/// <para>大于—检查行计数是否大于计数值。</para>
 			/// </summary>
 			[GPValue("IS_GREATER_THAN")]
-			[Description("Is Greater Than")]
+			[Description("大于")]
 			Is_Greater_Than,
 
 			/// <summary>
-			/// <para>Is Not Equal to—Checks if the row count is not equal to the Count value.</para>
+			/// <para>不等于—检查行计数是否不等于计数值。</para>
 			/// </summary>
 			[GPValue("IS_NOT_EQUAL_TO")]
-			[Description("Is Not Equal to")]
+			[Description("不等于")]
 			Is_Not_Equal_to,
 
 		}

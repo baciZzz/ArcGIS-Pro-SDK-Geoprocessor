@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Import MGCP Metadata</para>
+	/// <para>Import MGCP Metadata</para>
 	/// <para>Imports Multinational Geospatial Co-production Program (MGCP) metadata into an MGCP database to perform maintenance on cells and subregions.</para>
 	/// </summary>
 	public class ImportMetadata : AbstractGPProcess

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Add Territory Level</para>
+	/// <para>Add Territory Level</para>
 	/// <para>Creates a new empty feature class to represent a level.</para>
 	/// </summary>
 	public class AddTerritoryLevel : AbstractGPProcess

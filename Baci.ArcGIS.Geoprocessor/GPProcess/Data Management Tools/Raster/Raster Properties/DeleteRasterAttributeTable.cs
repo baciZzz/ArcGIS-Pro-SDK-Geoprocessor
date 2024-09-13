@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Raster Attribute Table</para>
-	/// <para>Removes the raster attribute table associated with a raster dataset.</para>
+	/// <para>删除栅格属性表</para>
+	/// <para>移除与栅格数据集关联的栅格属性表。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset containing the attribute table you want to remove.</para>
+		/// <para>包含要移除的属性表的栅格数据集。</para>
 		/// </param>
 		public DeleteRasterAttributeTable(object InRaster)
 		{
@@ -30,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Delete Raster Attribute Table</para>
+		/// <para>Tool Display Name : 删除栅格属性表</para>
 		/// </summary>
-		public override string DisplayName() => "Delete Raster Attribute Table";
+		public override string DisplayName() => "删除栅格属性表";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteRasterAttributeTable</para>
@@ -66,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset containing the attribute table you want to remove.</para>
+		/// <para>包含要移除的属性表的栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterLayer()]

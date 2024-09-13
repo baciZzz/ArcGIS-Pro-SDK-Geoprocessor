@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Convert Coordinate Notation</para>
-	/// <para>Converts coordinate notations contained in one or two fields from one notation format to another.</para>
+	/// <para>转换坐标记法</para>
+	/// <para>将一个或两个字段包含的坐标记法从一种注记格式转换为另一种注记格式。</para>
 	/// </summary>
 	public class ConvertCoordinateNotation : AbstractGPProcess
 	{
@@ -20,66 +21,66 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input table or text file. Point features are also valid.</para>
+		/// <para>输入表或文本文件。 点要素同样有效。</para>
 		/// </param>
 		/// <param name="OutFeatureclass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output point feature class. The attribute table will contain all fields of the input table along with the fields containing converted values in the output format.</para>
+		/// <para>输出点要素类。 属性表将包括输入表的所有字段以及以输出格式表示转换值的字段。</para>
 		/// </param>
 		/// <param name="XField">
 		/// <para>X Field (Longitude)</para>
-		/// <para>A field from the input table containing the longitude value.</para>
-		/// <para>For the Input Coordinate Format parameter&apos;s DD 2, DD numeric, DDM 2, and DMS 2 options, this is the longitude field.</para>
-		/// <para>For the DD 1, DDM 1, and DMS 1 options, this field contains both latitude and longitude values in a single string.</para>
-		/// <para>For the Gars, Georef, Georef 16, UTM zones, UTM bands, USNG, USNG 16, MGRS, and MGRS 16 options, this field contains an alphanumeric notation in a single text field.</para>
+		/// <para>输入表中包含经度值的字段。</para>
+		/// <para>对于输入坐标格式参数的 DD 2、DD 数字、DDM 2 和 DMS 2 选项，该字段为经度字段。</para>
+		/// <para>对于 DD 1、DDM 1 和 DMS 1 选项，此字段包含单个字符串中的纬度值和经度值。</para>
+		/// <para>对于 Gars、Georef、Georef 16、UTM 带、UTM 波段、USNG、USNG 16、MGRS 和 MGRS 16 选项，此字段在单个文本字段中包含一个字母数字记法。</para>
 		/// </param>
 		/// <param name="YField">
 		/// <para>Y Field (Latitude)</para>
-		/// <para>A field from the input table containing the latitude value.</para>
-		/// <para>For the Input Coordinate Format parameter&apos;s DD 2, DD numeric, DDM 2, and DMS 2 options, this is the latitude field.</para>
-		/// <para>This parameter is inactive when one of the single-string formats is chosen.</para>
+		/// <para>输入表中包含纬度值的字段。</para>
+		/// <para>对于输入坐标格式参数的 DD 2、DD 数字、DDM 2 和 DMS 2 选项，该字段为纬度字段。</para>
+		/// <para>选择其中一种单字符串格式时，此参数将处于非活动状态。</para>
 		/// </param>
 		/// <param name="InputCoordinateFormat">
 		/// <para>Input Coordinate Format</para>
-		/// <para>Specifies the coordinate format of the input fields.</para>
-		/// <para>DD 1—Both longitude and latitude values are in a single field. Two values are separated by a space, a comma, or a slash.</para>
-		/// <para>DD 2—Longitude and latitude values are in two separate fields.This is the default.</para>
-		/// <para>DDM 1—Both longitude and latitude values are in a single field. Two values are separated by a space, a comma, or a slash.</para>
-		/// <para>DDM 2— Longitude and latitude values are in two separate fields.</para>
-		/// <para>DMS 1—Both longitude and latitude values are in a single field. Two values are separated by a space, a comma, or a slash.</para>
-		/// <para>DMS 2—Longitude and latitude values are in two separate fields.</para>
-		/// <para>Gars—Global Area Reference System. Based on latitude and longitude, it divides and subdivides the world into cells.</para>
-		/// <para>Georef—World Geographic Reference System. A grid-based system that divides the world into 15-degree quadrangles and then subdivides into smaller quadrangles.</para>
-		/// <para>Georef 16—World Geographic Reference System in 16-digit precision.</para>
-		/// <para>UTM zones—The letter N or S after the UTM zone number designates only North or South hemisphere.</para>
-		/// <para>UTM bands—The letter after the UTM zone number designates one of the 20 latitude bands. N or S does not designate a hemisphere.</para>
-		/// <para>USNG—United States National Grid. Almost exactly the same as MGRS but uses North American Datum 1983 (NAD83) as its datum.</para>
-		/// <para>USNG 16—United States National Grid in 16-digit higher precision.</para>
-		/// <para>MGRS—Military Grid Reference System. Follows the UTM coordinates and divides the world into 6-degree longitude and 20 latitude bands, but MGRS then further subdivides the grid zones into smaller 100,000-meter grids. These 100,000-meter grids are then divided into 10,000-meter, 1,000-meter, 100-meter, 10-meter, and 1-meter grids.</para>
-		/// <para>MGRS 16—Military Grid Reference System in 16-digit precision.</para>
-		/// <para>Shape—Only available when a point feature layer is selected as input. The coordinates of each point are used to define the output format.</para>
-		/// <para>DD, DDM, DMS, and UTM are also valid keywords; they can be used just by typing in (on dialog) or passing the value in scripting. However, keywords with underscore and a qualifier tell more about the field values.</para>
+		/// <para>指定输入字段的坐标格式。</para>
+		/// <para>DD 1—经度值和纬度值位于同一个字段。两个值之间用空格、逗号或斜线进行分隔。</para>
+		/// <para>DD 2—经度值和纬度值位于两个不同的字段中。这是默认设置。</para>
+		/// <para>DDM 1—经度值和纬度值位于同一个字段。两个值之间用空格、逗号或斜线进行分隔。</para>
+		/// <para>DDM 2— 经度值和纬度值位于两个不同的字段中。</para>
+		/// <para>DMS 1—经度值和纬度值位于同一个字段。两个值之间用空格、逗号或斜线进行分隔。</para>
+		/// <para>DMS 2—经度值和纬度值位于两个不同的字段中。</para>
+		/// <para>Gars—全球区域参考系。根据纬度和经度，该参考系将世界划分成大量的格网单元。</para>
+		/// <para>Georef—世界地理参考系。一个基于格网的参考系统，将世界划分成 15 度的地图方格，然后再细分成更小的地图方格。</para>
+		/// <para>Georef 16—世界地理参考系，精度为 16 位。</para>
+		/// <para>UTM 带—UTM 带编号后的字母 N 或 S 仅用于指定北半球或南半球。</para>
+		/// <para>UTM 波段—UTM 带编号后的字母用于指定 20 个纬度带之一。N 或 S 不用于指定半球。</para>
+		/// <para>USNG—美国国家格网。与 MGRS 几乎完全相同，但其基准面采用的是北美洲基准面 1983 (NAD83)。</para>
+		/// <para>USNG 16—美国国家格网，精度高于 16 位。</para>
+		/// <para>MGRS—军事格网参考系。按照 UTM 坐标，将世界划分成 6 度的经度带和 20 个纬度带，但 MGRS 将这些格网区域进一步划分成更小的 100,000 米格网。这些 100,000 米的格网再被细分成 10,000 米、1,000 米、100 米、10 米 和 1 米格网。</para>
+		/// <para>MGRS 16—军事格网参考系，精度为 16 位。</para>
+		/// <para>Shape—仅在选择点要素图层作为输入时可用。每个点的坐标都用于定义输出格式。</para>
+		/// <para>DD、DDM、DMS 和 UTM 也是有效关键字；可通过（在对话框中）直接输入或在脚本中传递值的方式来使用这些关键字。但是，带下划线和限定符的关键字包含更多有关字段值的信息。</para>
 		/// </param>
 		/// <param name="OutputCoordinateFormat">
 		/// <para>Output Coordinate Format</para>
-		/// <para>Specifies the coordinate format to which the input notations will be converted.</para>
-		/// <para>DD 1—Both longitude and latitude values are in a single field. Two values are separated by a space, a comma, or a slash.</para>
-		/// <para>DD 2—Longitude and latitude values are in two separate fields.</para>
-		/// <para>DD numeric—Longitude and latitude values are in two separate fields of type Double. Values in the West and South are denoted by a minus sign.</para>
-		/// <para>DDM 1—Both longitude and latitude values are in a single field. Two values are separated by a space, a comma, or a slash.</para>
-		/// <para>DDM 2— Longitude and latitude values are in two separate fields.</para>
-		/// <para>DMS 1—Both longitude and latitude values are in a single field. Two values are separated by a space, a comma, or a slash.</para>
-		/// <para>DMS 2—Longitude and latitude values are in two separate fields.</para>
-		/// <para>Gars—Global Area Reference System. Based on latitude and longitude, it divides and subdivides the world into cells.</para>
-		/// <para>Georef—World Geographic Reference System. A grid-based system that divides the world into 15-degree quadrangles and then subdivides into smaller quadrangles.</para>
-		/// <para>Georef 16—World Geographic Reference System in 16-digit precision.</para>
-		/// <para>UTM zones—The letter N or S after the UTM zone number designates only North or South hemisphere.</para>
-		/// <para>UTM bands—The letter after the UTM zone number designates one of the 20 latitude bands. N or S does not designate a hemisphere.</para>
-		/// <para>USNG—United States National Grid. Almost exactly the same as MGRS but uses North American Datum 1983 (NAD83) as its datum.</para>
-		/// <para>USNG 16—United States National Grid in 16-digit higher precision.</para>
-		/// <para>MGRS—Military Grid Reference System. Follows the UTM coordinates and divides the world into 6-degree longitude and 20 latitude bands, but MGRS then further subdivides the grid zones into smaller 100,000-meter grids. These 100,000-meter grids are then divided into 10,000-meter, 1,000-meter, 100-meter, 10-meter, and 1-meter grids.</para>
-		/// <para>MGRS 16—Military Grid Reference System in 16-digit precision.</para>
-		/// <para>DD, DDM, DMS, and UTM are also valid keywords; they can be used just by typing in (on dialog) or passing the value in scripting. However, keywords with underscore and a qualifier tell more about the field values.</para>
+		/// <para>指定输入记法转换后的坐标格式。</para>
+		/// <para>DD 1—经度值和纬度值位于同一个字段。两个值之间用空格、逗号或斜线进行分隔。</para>
+		/// <para>DD 2—经度值和纬度值位于两个不同的字段中。</para>
+		/// <para>DD 数字—经度值和纬度值位于两个不同的“双精度”类型字段中。 “西”部和“南”部的值以减号表示。</para>
+		/// <para>DDM 1—经度值和纬度值位于同一个字段。两个值之间用空格、逗号或斜线进行分隔。</para>
+		/// <para>DDM 2— 经度值和纬度值位于两个不同的字段中。</para>
+		/// <para>DMS 1—经度值和纬度值位于同一个字段。两个值之间用空格、逗号或斜线进行分隔。</para>
+		/// <para>DMS 2—经度值和纬度值位于两个不同的字段中。</para>
+		/// <para>Gars—全球区域参考系。根据纬度和经度，该参考系将世界划分成大量的格网单元。</para>
+		/// <para>Georef—世界地理参考系。一个基于格网的参考系统，将世界划分成 15 度的地图方格，然后再细分成更小的地图方格。</para>
+		/// <para>Georef 16—世界地理参考系，精度为 16 位。</para>
+		/// <para>UTM 带—UTM 带编号后的字母 N 或 S 仅用于指定北半球或南半球。</para>
+		/// <para>UTM 波段—UTM 带编号后的字母用于指定 20 个纬度带之一。N 或 S 不用于指定半球。</para>
+		/// <para>USNG—美国国家格网。与 MGRS 几乎完全相同，但其基准面采用的是北美洲基准面 1983 (NAD83)。</para>
+		/// <para>USNG 16—美国国家格网，精度高于 16 位。</para>
+		/// <para>MGRS—军事格网参考系。按照 UTM 坐标，将世界划分成 6 度的经度带和 20 个纬度带，但 MGRS 将这些格网区域进一步划分成更小的 100,000 米格网。这些 100,000 米的格网再被细分成 10,000 米、1,000 米、100 米、10 米 和 1 米格网。</para>
+		/// <para>MGRS 16—军事格网参考系，精度为 16 位。</para>
+		/// <para>DD、DDM、DMS 和 UTM 也是有效关键字；可通过（在对话框中）直接输入或在脚本中传递值的方式来使用这些关键字。但是，带下划线和限定符的关键字包含更多有关字段值的信息。</para>
 		/// </param>
 		public ConvertCoordinateNotation(object InTable, object OutFeatureclass, object XField, object YField, object InputCoordinateFormat, object OutputCoordinateFormat)
 		{
@@ -92,9 +93,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Convert Coordinate Notation</para>
+		/// <para>Tool Display Name : 转换坐标记法</para>
 		/// </summary>
-		public override string DisplayName() => "Convert Coordinate Notation";
+		public override string DisplayName() => "转换坐标记法";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertCoordinateNotation</para>
@@ -128,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input table or text file. Point features are also valid.</para>
+		/// <para>输入表或文本文件。 点要素同样有效。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -136,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output point feature class. The attribute table will contain all fields of the input table along with the fields containing converted values in the output format.</para>
+		/// <para>输出点要素类。 属性表将包括输入表的所有字段以及以输出格式表示转换值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -144,10 +145,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>X Field (Longitude)</para>
-		/// <para>A field from the input table containing the longitude value.</para>
-		/// <para>For the Input Coordinate Format parameter&apos;s DD 2, DD numeric, DDM 2, and DMS 2 options, this is the longitude field.</para>
-		/// <para>For the DD 1, DDM 1, and DMS 1 options, this field contains both latitude and longitude values in a single string.</para>
-		/// <para>For the Gars, Georef, Georef 16, UTM zones, UTM bands, USNG, USNG 16, MGRS, and MGRS 16 options, this field contains an alphanumeric notation in a single text field.</para>
+		/// <para>输入表中包含经度值的字段。</para>
+		/// <para>对于输入坐标格式参数的 DD 2、DD 数字、DDM 2 和 DMS 2 选项，该字段为经度字段。</para>
+		/// <para>对于 DD 1、DDM 1 和 DMS 1 选项，此字段包含单个字符串中的纬度值和经度值。</para>
+		/// <para>对于 Gars、Georef、Georef 16、UTM 带、UTM 波段、USNG、USNG 16、MGRS 和 MGRS 16 选项，此字段在单个文本字段中包含一个字母数字记法。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -157,9 +158,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Y Field (Latitude)</para>
-		/// <para>A field from the input table containing the latitude value.</para>
-		/// <para>For the Input Coordinate Format parameter&apos;s DD 2, DD numeric, DDM 2, and DMS 2 options, this is the latitude field.</para>
-		/// <para>This parameter is inactive when one of the single-string formats is chosen.</para>
+		/// <para>输入表中包含纬度值的字段。</para>
+		/// <para>对于输入坐标格式参数的 DD 2、DD 数字、DDM 2 和 DMS 2 选项，该字段为纬度字段。</para>
+		/// <para>选择其中一种单字符串格式时，此参数将处于非活动状态。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -169,24 +170,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Coordinate Format</para>
-		/// <para>Specifies the coordinate format of the input fields.</para>
-		/// <para>DD 1—Both longitude and latitude values are in a single field. Two values are separated by a space, a comma, or a slash.</para>
-		/// <para>DD 2—Longitude and latitude values are in two separate fields.This is the default.</para>
-		/// <para>DDM 1—Both longitude and latitude values are in a single field. Two values are separated by a space, a comma, or a slash.</para>
-		/// <para>DDM 2— Longitude and latitude values are in two separate fields.</para>
-		/// <para>DMS 1—Both longitude and latitude values are in a single field. Two values are separated by a space, a comma, or a slash.</para>
-		/// <para>DMS 2—Longitude and latitude values are in two separate fields.</para>
-		/// <para>Gars—Global Area Reference System. Based on latitude and longitude, it divides and subdivides the world into cells.</para>
-		/// <para>Georef—World Geographic Reference System. A grid-based system that divides the world into 15-degree quadrangles and then subdivides into smaller quadrangles.</para>
-		/// <para>Georef 16—World Geographic Reference System in 16-digit precision.</para>
-		/// <para>UTM zones—The letter N or S after the UTM zone number designates only North or South hemisphere.</para>
-		/// <para>UTM bands—The letter after the UTM zone number designates one of the 20 latitude bands. N or S does not designate a hemisphere.</para>
-		/// <para>USNG—United States National Grid. Almost exactly the same as MGRS but uses North American Datum 1983 (NAD83) as its datum.</para>
-		/// <para>USNG 16—United States National Grid in 16-digit higher precision.</para>
-		/// <para>MGRS—Military Grid Reference System. Follows the UTM coordinates and divides the world into 6-degree longitude and 20 latitude bands, but MGRS then further subdivides the grid zones into smaller 100,000-meter grids. These 100,000-meter grids are then divided into 10,000-meter, 1,000-meter, 100-meter, 10-meter, and 1-meter grids.</para>
-		/// <para>MGRS 16—Military Grid Reference System in 16-digit precision.</para>
-		/// <para>Shape—Only available when a point feature layer is selected as input. The coordinates of each point are used to define the output format.</para>
-		/// <para>DD, DDM, DMS, and UTM are also valid keywords; they can be used just by typing in (on dialog) or passing the value in scripting. However, keywords with underscore and a qualifier tell more about the field values.</para>
+		/// <para>指定输入字段的坐标格式。</para>
+		/// <para>DD 1—经度值和纬度值位于同一个字段。两个值之间用空格、逗号或斜线进行分隔。</para>
+		/// <para>DD 2—经度值和纬度值位于两个不同的字段中。这是默认设置。</para>
+		/// <para>DDM 1—经度值和纬度值位于同一个字段。两个值之间用空格、逗号或斜线进行分隔。</para>
+		/// <para>DDM 2— 经度值和纬度值位于两个不同的字段中。</para>
+		/// <para>DMS 1—经度值和纬度值位于同一个字段。两个值之间用空格、逗号或斜线进行分隔。</para>
+		/// <para>DMS 2—经度值和纬度值位于两个不同的字段中。</para>
+		/// <para>Gars—全球区域参考系。根据纬度和经度，该参考系将世界划分成大量的格网单元。</para>
+		/// <para>Georef—世界地理参考系。一个基于格网的参考系统，将世界划分成 15 度的地图方格，然后再细分成更小的地图方格。</para>
+		/// <para>Georef 16—世界地理参考系，精度为 16 位。</para>
+		/// <para>UTM 带—UTM 带编号后的字母 N 或 S 仅用于指定北半球或南半球。</para>
+		/// <para>UTM 波段—UTM 带编号后的字母用于指定 20 个纬度带之一。N 或 S 不用于指定半球。</para>
+		/// <para>USNG—美国国家格网。与 MGRS 几乎完全相同，但其基准面采用的是北美洲基准面 1983 (NAD83)。</para>
+		/// <para>USNG 16—美国国家格网，精度高于 16 位。</para>
+		/// <para>MGRS—军事格网参考系。按照 UTM 坐标，将世界划分成 6 度的经度带和 20 个纬度带，但 MGRS 将这些格网区域进一步划分成更小的 100,000 米格网。这些 100,000 米的格网再被细分成 10,000 米、1,000 米、100 米、10 米 和 1 米格网。</para>
+		/// <para>MGRS 16—军事格网参考系，精度为 16 位。</para>
+		/// <para>Shape—仅在选择点要素图层作为输入时可用。每个点的坐标都用于定义输出格式。</para>
+		/// <para>DD、DDM、DMS 和 UTM 也是有效关键字；可通过（在对话框中）直接输入或在脚本中传递值的方式来使用这些关键字。但是，带下划线和限定符的关键字包含更多有关字段值的信息。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -195,24 +196,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Coordinate Format</para>
-		/// <para>Specifies the coordinate format to which the input notations will be converted.</para>
-		/// <para>DD 1—Both longitude and latitude values are in a single field. Two values are separated by a space, a comma, or a slash.</para>
-		/// <para>DD 2—Longitude and latitude values are in two separate fields.</para>
-		/// <para>DD numeric—Longitude and latitude values are in two separate fields of type Double. Values in the West and South are denoted by a minus sign.</para>
-		/// <para>DDM 1—Both longitude and latitude values are in a single field. Two values are separated by a space, a comma, or a slash.</para>
-		/// <para>DDM 2— Longitude and latitude values are in two separate fields.</para>
-		/// <para>DMS 1—Both longitude and latitude values are in a single field. Two values are separated by a space, a comma, or a slash.</para>
-		/// <para>DMS 2—Longitude and latitude values are in two separate fields.</para>
-		/// <para>Gars—Global Area Reference System. Based on latitude and longitude, it divides and subdivides the world into cells.</para>
-		/// <para>Georef—World Geographic Reference System. A grid-based system that divides the world into 15-degree quadrangles and then subdivides into smaller quadrangles.</para>
-		/// <para>Georef 16—World Geographic Reference System in 16-digit precision.</para>
-		/// <para>UTM zones—The letter N or S after the UTM zone number designates only North or South hemisphere.</para>
-		/// <para>UTM bands—The letter after the UTM zone number designates one of the 20 latitude bands. N or S does not designate a hemisphere.</para>
-		/// <para>USNG—United States National Grid. Almost exactly the same as MGRS but uses North American Datum 1983 (NAD83) as its datum.</para>
-		/// <para>USNG 16—United States National Grid in 16-digit higher precision.</para>
-		/// <para>MGRS—Military Grid Reference System. Follows the UTM coordinates and divides the world into 6-degree longitude and 20 latitude bands, but MGRS then further subdivides the grid zones into smaller 100,000-meter grids. These 100,000-meter grids are then divided into 10,000-meter, 1,000-meter, 100-meter, 10-meter, and 1-meter grids.</para>
-		/// <para>MGRS 16—Military Grid Reference System in 16-digit precision.</para>
-		/// <para>DD, DDM, DMS, and UTM are also valid keywords; they can be used just by typing in (on dialog) or passing the value in scripting. However, keywords with underscore and a qualifier tell more about the field values.</para>
+		/// <para>指定输入记法转换后的坐标格式。</para>
+		/// <para>DD 1—经度值和纬度值位于同一个字段。两个值之间用空格、逗号或斜线进行分隔。</para>
+		/// <para>DD 2—经度值和纬度值位于两个不同的字段中。</para>
+		/// <para>DD 数字—经度值和纬度值位于两个不同的“双精度”类型字段中。 “西”部和“南”部的值以减号表示。</para>
+		/// <para>DDM 1—经度值和纬度值位于同一个字段。两个值之间用空格、逗号或斜线进行分隔。</para>
+		/// <para>DDM 2— 经度值和纬度值位于两个不同的字段中。</para>
+		/// <para>DMS 1—经度值和纬度值位于同一个字段。两个值之间用空格、逗号或斜线进行分隔。</para>
+		/// <para>DMS 2—经度值和纬度值位于两个不同的字段中。</para>
+		/// <para>Gars—全球区域参考系。根据纬度和经度，该参考系将世界划分成大量的格网单元。</para>
+		/// <para>Georef—世界地理参考系。一个基于格网的参考系统，将世界划分成 15 度的地图方格，然后再细分成更小的地图方格。</para>
+		/// <para>Georef 16—世界地理参考系，精度为 16 位。</para>
+		/// <para>UTM 带—UTM 带编号后的字母 N 或 S 仅用于指定北半球或南半球。</para>
+		/// <para>UTM 波段—UTM 带编号后的字母用于指定 20 个纬度带之一。N 或 S 不用于指定半球。</para>
+		/// <para>USNG—美国国家格网。与 MGRS 几乎完全相同，但其基准面采用的是北美洲基准面 1983 (NAD83)。</para>
+		/// <para>USNG 16—美国国家格网，精度高于 16 位。</para>
+		/// <para>MGRS—军事格网参考系。按照 UTM 坐标，将世界划分成 6 度的经度带和 20 个纬度带，但 MGRS 将这些格网区域进一步划分成更小的 100,000 米格网。这些 100,000 米的格网再被细分成 10,000 米、1,000 米、100 米、10 米 和 1 米格网。</para>
+		/// <para>MGRS 16—军事格网参考系，精度为 16 位。</para>
+		/// <para>DD、DDM、DMS 和 UTM 也是有效关键字；可通过（在对话框中）直接输入或在脚本中传递值的方式来使用这些关键字。但是，带下划线和限定符的关键字包含更多有关字段值的信息。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -221,7 +222,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>ID</para>
-		/// <para>This parameter is no longer used as all fields are transferred to output table.</para>
+		/// <para>由于所有字段都被传输到输出表，因此不再使用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -231,8 +232,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Coordinate System</para>
-		/// <para>The spatial reference of the output feature class. The default is GCS_WGS_1984.</para>
-		/// <para>The tool projects the output to the spatial reference specified. If the input and output coordinate systems are in a different datum, a default transformation will be used based on the coordinate systems of the input and the output and the extent of the data.</para>
+		/// <para>输出要素类的空间参考。 默认值为 GCS_WGS_1984。</para>
+		/// <para>此工具将输出投影到指定的空间参考中。 如果输入坐标系和输出坐标系具有不同的基准面，则将根据输入坐标系和输出坐标系以及数据范围使用默认转换。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
@@ -240,7 +241,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Coordinate System</para>
-		/// <para>The spatial reference of the input data. If the input spatial reference cannot be obtained from the input table, a default of GCS_WGS_1984 will be used.</para>
+		/// <para>输入数据的空间参考。 如果无法从输入表中获取输入空间参考，则将使用默认值 GCS_WGS_1984。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
@@ -248,9 +249,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Exclude records with invalid notation</para>
-		/// <para>Specifies whether records with invalid notation will be excluded.</para>
-		/// <para>Unchecked—Invalid records will be excluded, and only valid records will be converted to points in the output. This is the default.</para>
-		/// <para>Checked—Valid records will be converted to points in the output and invalid records will be included as null geometry.</para>
+		/// <para>指定是否排除具有无效注记的记录。</para>
+		/// <para>未选中 - 系统将排除无效记录，且仅会将有效记录转换为输出中的点。 这是默认设置。</para>
+		/// <para>选中 - 有效记录将被转换为输出中的点，无效记录将作为空几何包括在内。</para>
 		/// <para><see cref="ExcludeInvalidRecordsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -275,14 +276,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ExcludeInvalidRecordsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Valid records will be converted to points in the output and invalid records will be included as null geometry.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EXCLUDE_INVALID")]
 			EXCLUDE_INVALID,
 
 			/// <summary>
-			/// <para>Unchecked—Invalid records will be excluded, and only valid records will be converted to points in the output. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INCLUDE_INVALID")]

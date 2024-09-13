@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Set Subtype Field</para>
-	/// <para>Defines the field in the input table or feature class that stores the subtype codes.</para>
+	/// <para>设置子类型字段</para>
+	/// <para>为存储子类型编码的输入表或要素类定义字段。</para>
 	/// </summary>
 	public class SetSubtypeField : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input table or feature class that contains the field to set as a subtype field.</para>
+		/// <para>包含要设置为子类型字段的字段的输入表或要素类。</para>
 		/// </param>
 		public SetSubtypeField(object InTable)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Set Subtype Field</para>
+		/// <para>Tool Display Name : 设置子类型字段</para>
 		/// </summary>
-		public override string DisplayName() => "Set Subtype Field";
+		public override string DisplayName() => "设置子类型字段";
 
 		/// <summary>
 		/// <para>Tool Name : SetSubtypeField</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input table or feature class that contains the field to set as a subtype field.</para>
+		/// <para>包含要设置为子类型字段的字段的输入表或要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Name</para>
-		/// <para>The integer field that will store the subtype codes.</para>
+		/// <para>将存储子类型编码的整型字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -82,9 +83,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Clear Value</para>
-		/// <para>Specifies whether to clear the subtype field.</para>
-		/// <para>Checked—The subtype field will be cleared (set to null).</para>
-		/// <para>Unchecked—The subtype field will not be cleared. This is the default.</para>
+		/// <para>指定是否清除子类型字段。</para>
+		/// <para>选中 - 将清除子类型字段（设为空值）。</para>
+		/// <para>未选中 - 不会清除子类型字段。这是默认设置。</para>
 		/// <para><see cref="ClearValueEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -116,14 +117,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ClearValueEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The subtype field will be cleared (set to null).</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLEAR_SUBTYPE_FIELD")]
 			CLEAR_SUBTYPE_FIELD,
 
 			/// <summary>
-			/// <para>Unchecked—The subtype field will not be cleared. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_CLEAR")]

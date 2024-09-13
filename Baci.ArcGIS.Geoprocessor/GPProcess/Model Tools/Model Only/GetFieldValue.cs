@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Get Field Value</para>
-	/// <para>Returns the value of the first row of a table for the specified field.</para>
+	/// <para>获取字段值</para>
+	/// <para>为指定字段返回表中首行的值。</para>
 	/// </summary>
 	public class GetFieldValue : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>Input table to get the value from.</para>
+		/// <para>从中获取值的输入表。</para>
 		/// </param>
 		/// <param name="Field">
 		/// <para>Field</para>
-		/// <para>Input field to get the value from. The value of the first record will be output.</para>
+		/// <para>从中获取值的输入字段。将输出第一条记录的值。</para>
 		/// </param>
 		public GetFieldValue(object InTable, object Field)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Get Field Value</para>
+		/// <para>Tool Display Name : 获取字段值</para>
 		/// </summary>
-		public override string DisplayName() => "Get Field Value";
+		public override string DisplayName() => "获取字段值";
 
 		/// <summary>
 		/// <para>Tool Name : GetFieldValue</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>Input table to get the value from.</para>
+		/// <para>从中获取值的输入表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Field</para>
-		/// <para>Input field to get the value from. The value of the first record will be output.</para>
+		/// <para>从中获取值的输入字段。将输出第一条记录的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Data type</para>
-		/// <para>The data type of the output.</para>
+		/// <para>输出的数据类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Null Value</para>
-		/// <para>The value to use for null values. The default is 0 for numbers and blank ("") for strings.</para>
+		/// <para>用于空值的输出。对于数字，默认值为 0；对于字符串，默认值为空 ("")。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Convert Spatial Weights Matrix to Table</para>
-	/// <para>Converts a binary spatial weights matrix file (.swm) to a table.</para>
+	/// <para>将空间权重矩阵转换为表</para>
+	/// <para>用于将二进制空间权重矩阵文件 (.swm) 转换为表。</para>
 	/// </summary>
 	public class ConvertSpatialWeightsMatrixtoTable : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputSpatialWeightsMatrixFile">
 		/// <para>Input Spatial Weights Matrix File</para>
-		/// <para>The full pathname for the spatial weights matrix file (.swm) you want to convert.</para>
+		/// <para>要转换的空间权重矩阵文件 (.swm) 的完整路径名。</para>
 		/// </param>
 		/// <param name="OutputTable">
 		/// <para>Output Table</para>
-		/// <para>A full pathname to the table you want to create.</para>
+		/// <para>要创建的表的完整路径名。</para>
 		/// </param>
 		public ConvertSpatialWeightsMatrixtoTable(object InputSpatialWeightsMatrixFile, object OutputTable)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Convert Spatial Weights Matrix to Table</para>
+		/// <para>Tool Display Name : 将空间权重矩阵转换为表</para>
 		/// </summary>
-		public override string DisplayName() => "Convert Spatial Weights Matrix to Table";
+		public override string DisplayName() => "将空间权重矩阵转换为表";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertSpatialWeightsMatrixtoTable</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Spatial Weights Matrix File</para>
-		/// <para>The full pathname for the spatial weights matrix file (.swm) you want to convert.</para>
+		/// <para>要转换的空间权重矩阵文件 (.swm) 的完整路径名。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>A full pathname to the table you want to create.</para>
+		/// <para>要创建的表的完整路径名。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]

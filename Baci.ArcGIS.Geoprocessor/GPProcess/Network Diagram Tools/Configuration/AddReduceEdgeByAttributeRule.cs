@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Reduce Edge By Attribute Rule</para>
-	/// <para>Adds a diagram rule to automatically reduce diagram edges during diagram building  based on an existing template.</para>
-	/// <para>This rule can be set up to reduce diagram edges by attributes.</para>
+	/// <para>添加按属性减少边规则</para>
+	/// <para>用于添加逻辑示意图规则，以在基于现有模板构建逻辑示意图的过程中自动减少逻辑示意图的边。可将此规则设置为按属性减少逻辑示意图边。</para>
 	/// </summary>
 	public class AddReduceEdgeByAttributeRule : AbstractGPProcess
 	{
@@ -21,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template to modify.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to modify.</para>
+		/// <para>要修改的逻辑示意图模板的名称。</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
-		/// <para>Specifies whether the rule will be active when generating and updating diagrams based on the specified template.</para>
-		/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
-		/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+		/// <para>指定在基于指定模板生成并更新逻辑示意图时，规则是否将处于激活状态。</para>
+		/// <para>选中 - 在基于输入模板生成并更新逻辑示意图的过程中，添加的规则将会变为激活状态。这是默认设置。</para>
+		/// <para>未选中 - 在基于输入模板生成或更新逻辑示意图的过程中，添加的规则将不会变为激活状态。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </param>
 		/// <param name="NetworkSource">
 		/// <para>Edge Source to Reduce</para>
-		/// <para>The network edge source class or object table to reduce. All diagram edges related to network lines or edge objects that belong to this source class or object table are candidates for the reduction.</para>
+		/// <para>要减少的网络边源类或对象表。与属于此源类或对象表的网络线或边对象相关的所有逻辑示意图边均为减少的候选项。</para>
 		/// </param>
 		public AddReduceEdgeByAttributeRule(object InUtilityNetwork, object TemplateName, object IsActive, object NetworkSource)
 		{
@@ -47,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Reduce Edge By Attribute Rule</para>
+		/// <para>Tool Display Name : 添加按属性减少边规则</para>
 		/// </summary>
-		public override string DisplayName() => "Add Reduce Edge By Attribute Rule";
+		public override string DisplayName() => "添加按属性减少边规则";
 
 		/// <summary>
 		/// <para>Tool Name : AddReduceEdgeByAttributeRule</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template to modify.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template to modify.</para>
+		/// <para>要修改的逻辑示意图模板的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -99,9 +99,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Active</para>
-		/// <para>Specifies whether the rule will be active when generating and updating diagrams based on the specified template.</para>
-		/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
-		/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+		/// <para>指定在基于指定模板生成并更新逻辑示意图时，规则是否将处于激活状态。</para>
+		/// <para>选中 - 在基于输入模板生成并更新逻辑示意图的过程中，添加的规则将会变为激活状态。这是默认设置。</para>
+		/// <para>未选中 - 在基于输入模板生成或更新逻辑示意图的过程中，添加的规则将不会变为激活状态。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Edge Source to Reduce</para>
-		/// <para>The network edge source class or object table to reduce. All diagram edges related to network lines or edge objects that belong to this source class or object table are candidates for the reduction.</para>
+		/// <para>要减少的网络边源类或对象表。与属于此源类或对象表的网络线或边对象相关的所有逻辑示意图边均为减少的候选项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>An SQL expression used to select the subset of network edges among the edges that are candidates for the reduction based on the input template. For more information on SQL syntax, see the SQL reference for query expressions used in ArcGIS help topic.</para>
+		/// <para>SQL 表达式，用于在候选减少边中选择网络边的子集，这些边均为基于输入模板的减少的候选项。有关 SQL 语法的详细信息，请参阅帮助主题在 ArcGIS 中使用的查询表达式的 SQL 参考。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Description</para>
-		/// <para>The description of the rule.</para>
+		/// <para>规则的描述。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -149,9 +149,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Aggregate reconnected edges</para>
-		/// <para>Specifies whether the rule will aggregate the edges that are reconnected to the reduction junctions.</para>
-		/// <para>Unchecked—Any edge connecting a point along the edge that is reduced is reconnected to the reduction junction.</para>
-		/// <para>Checked—Any edge connecting a point along the edge that is reduced is replaced by a reduction edge. This reduction edge is reconnected to the reduction junction. This is the default.</para>
+		/// <para>用于指定规则是否将聚合重新连接到减少交汇点的边。</para>
+		/// <para>未选中 - 任何连接沿缩减边的点的边都将被重新连接到缩减交汇点。</para>
+		/// <para>选中 - 任何连接沿缩减边的点的边都将替换为缩减边。该缩减边将重新连接到缩减交汇点。这是默认设置。</para>
 		/// <para><see cref="ReconnectedEdgesOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -167,14 +167,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsActiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACTIVE")]
 			ACTIVE,
 
 			/// <summary>
-			/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INACTIVE")]
@@ -188,14 +188,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum ReconnectedEdgesOptionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Any edge connecting a point along the edge that is reduced is replaced by a reduction edge. This reduction edge is reconnected to the reduction junction. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("AGGREGATE_RECONNECTED_EDGES")]
 			AGGREGATE_RECONNECTED_EDGES,
 
 			/// <summary>
-			/// <para>Unchecked—Any edge connecting a point along the edge that is reduced is reconnected to the reduction junction.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DONT_AGGREGATE_RECONNECTED_EDGES")]

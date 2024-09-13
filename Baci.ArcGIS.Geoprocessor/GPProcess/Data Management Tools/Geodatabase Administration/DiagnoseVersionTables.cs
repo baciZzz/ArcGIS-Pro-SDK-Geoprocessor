@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Diagnose Version Tables</para>
-	/// <para>Identifies inconsistencies in the delta (A and D) tables of datasets that are registered for traditional versioning.</para>
+	/// <para>诊断版本表</para>
+	/// <para>用于识别注册传统版本化的数据集增量（A 和 D）表中的不一致。</para>
 	/// </summary>
 	public class DiagnoseVersionTables : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputDatabase">
 		/// <para>Input Database Connection</para>
-		/// <para>The database connection (.sde file) to the enterprise geodatabase in which delta table inconsistencies may exist. The connection must be made as the geodatabase administrator.</para>
+		/// <para>与企业级地理数据库的数据库连接（.sde 文件），其中可能存在增量表不一致。 必须由地理数据库管理员建立此连接。</para>
 		/// </param>
 		/// <param name="OutLog">
 		/// <para>Diagnose Version Tables Log</para>
-		/// <para>The path and name of the output log file. The log file is an ASCII file containing a list of the tables in the specified version that contain inconsistent records, as well as information about the connection file, geodatabase version, and tables for which the tool was run.</para>
+		/// <para>输出日志文件的路径和名称。 日志文件是 ASCII 文件，其中包含指定版本的增量表列表，增量表中包含不一致的 记录，以及关于连接文件、数据库版本和运行工具的表的信息。</para>
 		/// </param>
 		public DiagnoseVersionTables(object InputDatabase, object OutLog)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Diagnose Version Tables</para>
+		/// <para>Tool Display Name : 诊断版本表</para>
 		/// </summary>
-		public override string DisplayName() => "Diagnose Version Tables";
+		public override string DisplayName() => "诊断版本表";
 
 		/// <summary>
 		/// <para>Tool Name : DiagnoseVersionTables</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
-		/// <para>The database connection (.sde file) to the enterprise geodatabase in which delta table inconsistencies may exist. The connection must be made as the geodatabase administrator.</para>
+		/// <para>与企业级地理数据库的数据库连接（.sde 文件），其中可能存在增量表不一致。 必须由地理数据库管理员建立此连接。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Diagnose Version Tables Log</para>
-		/// <para>The path and name of the output log file. The log file is an ASCII file containing a list of the tables in the specified version that contain inconsistent records, as well as information about the connection file, geodatabase version, and tables for which the tool was run.</para>
+		/// <para>输出日志文件的路径和名称。 日志文件是 ASCII 文件，其中包含指定版本的增量表列表，增量表中包含不一致的 记录，以及关于连接文件、数据库版本和运行工具的表的信息。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Version</para>
-		/// <para>The geodatabase version with the delta tables that will be checked for inconsistencies. The drop-down list is populated with the existing versions in the geodatabase specified for the Input Database Connection parameter. If no version is selected, all versions will be processed.</para>
+		/// <para>包含要检查不一致的增量表的地理数据库版本。 使用为输入数据集连接参数指定的地理数据库中的现有版本填充下拉列表。 如果未选定版本，则将处理所有版本。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Tables</para>
-		/// <para>A single table or a text file containing a list of versioned tables with the associated delta tables to be checked for inconsistencies. Use fully-qualified table names in the text file, and place one table name per line. If no file is specified, all tables in the geodatabase are processed.</para>
+		/// <para>单个表或文本文件，其中包含要为其相关增量表检查不一致的版本化表列表。 在文本文件中使用完全限定的表名，每个表名占据一行。 如果未指定文件，则将处理地理数据库中的所有表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

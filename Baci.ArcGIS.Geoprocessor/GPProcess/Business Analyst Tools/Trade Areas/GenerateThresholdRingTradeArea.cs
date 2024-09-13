@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Threshold Rings</para>
+	/// <para>Generate Threshold Rings</para>
 	/// <para>Creates a feature class of ring trade areas that expand around point features until the threshold value is reached.</para>
 	/// </summary>
 	public class GenerateThresholdRingTradeArea : AbstractGPProcess

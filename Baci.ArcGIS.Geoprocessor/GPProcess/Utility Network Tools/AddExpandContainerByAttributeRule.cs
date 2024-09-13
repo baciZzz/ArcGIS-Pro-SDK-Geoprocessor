@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Expand Container By Attribute Rule</para>
+	/// <para>Add Expand Container By Attribute Rule</para>
 	/// <para>Add an expand container by attribute rule to a diagram template</para>
 	/// </summary>
 	[Obsolete()]

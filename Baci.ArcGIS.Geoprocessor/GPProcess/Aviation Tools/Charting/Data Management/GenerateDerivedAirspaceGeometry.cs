@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Generate Derived Airspace Geometry</para>
+	/// <para>Generate Derived Airspace Geometry</para>
 	/// <para>Generates airspace  geometry for associated airspace features from an imported AIXM 5.1 message.</para>
 	/// </summary>
 	public class GenerateDerivedAirspaceGeometry : AbstractGPProcess

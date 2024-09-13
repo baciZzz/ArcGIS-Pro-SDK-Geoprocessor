@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Apply Masks From Rules</para>
+	/// <para>Apply Masks From Rules</para>
 	/// <para>Applies symbol layer masking to feature layers in a map based on an XML rule file and mask features created by the Make Mask From Rules tool.</para>
 	/// </summary>
 	public class ApplyMasksFromRules : AbstractGPProcess

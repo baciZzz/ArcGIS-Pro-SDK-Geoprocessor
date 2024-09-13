@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Remove Dataset From Big Data Connection</para>
-	/// <para>Removes one or more datasets from an existing big data connection (BDC). This tool only removes the dataset from the BDC file, the source data is not modified.</para>
+	/// <para>从大数据连接移除数据集</para>
+	/// <para>用于从现有大数据连接 (BDC) 移除一个或多个数据集。此工具仅从 BDC 文件中移除数据集，而不会修改源数据。</para>
 	/// </summary>
 	public class RemoveDatasetFromBDC : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="BdcDatasets">
 		/// <para>Big Data Connection Datasets</para>
-		/// <para>The datasets to remove from the .bdc file.</para>
+		/// <para>要从 .bdc 文件移除的数据集。</para>
 		/// </param>
 		public RemoveDatasetFromBDC(object BdcDatasets)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Remove Dataset From Big Data Connection</para>
+		/// <para>Tool Display Name : 从大数据连接移除数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Remove Dataset From Big Data Connection";
+		public override string DisplayName() => "从大数据连接移除数据集";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveDatasetFromBDC</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Big Data Connection Datasets</para>
-		/// <para>The datasets to remove from the .bdc file.</para>
+		/// <para>要从 .bdc 文件移除的数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]

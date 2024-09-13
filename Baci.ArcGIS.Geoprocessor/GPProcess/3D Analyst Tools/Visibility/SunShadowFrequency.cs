@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Sun Shadow Frequency</para>
-	/// <para>Calculates the number of times a fixed position on a surface has its direct sight line to the sun obstructed by multipatch features.</para>
+	/// <para>太阳阴影频率</para>
+	/// <para>用于计算从某表面上固定位置到太阳的直接视线被多面体要素遮挡的次数。</para>
 	/// </summary>
 	public class SunShadowFrequency : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The multipatch features that will constitute the source of obstruction for sunlight.</para>
+		/// <para>将构成阳光遮挡来源的多面体要素。</para>
 		/// </param>
 		/// <param name="Ground">
 		/// <para>Ground Surface</para>
-		/// <para>The ground surface that will define the positions where sunlight obstruction will be evaluated.</para>
+		/// <para>用于确定阳光遮挡评估位置的地表。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Shadow Raster</para>
-		/// <para>The output raster whose cell values reflect the number of times the corresponding ground height position was obstructed by the input features.</para>
+		/// <para>其像元值可反映相应地面高度位置被输入要素遮挡的次数的输出栅格。</para>
 		/// </param>
 		public SunShadowFrequency(object InFeatures, object Ground, object OutRaster)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Sun Shadow Frequency</para>
+		/// <para>Tool Display Name : 太阳阴影频率</para>
 		/// </summary>
-		public override string DisplayName() => "Sun Shadow Frequency";
+		public override string DisplayName() => "太阳阴影频率";
 
 		/// <summary>
 		/// <para>Tool Name : SunShadowFrequency</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The multipatch features that will constitute the source of obstruction for sunlight.</para>
+		/// <para>将构成阳光遮挡来源的多面体要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Ground Surface</para>
-		/// <para>The ground surface that will define the positions where sunlight obstruction will be evaluated.</para>
+		/// <para>用于确定阳光遮挡评估位置的地表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterLayer()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Shadow Raster</para>
-		/// <para>The output raster whose cell values reflect the number of times the corresponding ground height position was obstructed by the input features.</para>
+		/// <para>其像元值可反映相应地面高度位置被输入要素遮挡的次数的输出栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Cell Size</para>
-		/// <para>The cell size of the output raster.</para>
+		/// <para>输出栅格的像元大小。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Start Time</para>
-		/// <para>The date and time sun position calculations will begin. The default value is the date and time the tool is initialized.</para>
+		/// <para>将开始计算太阳位置的日期和时间。默认值为初始化工具的日期和时间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>End Time</para>
-		/// <para>The date and time sun position calculations will end.</para>
+		/// <para>将结束计算太阳位置的日期和时间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -124,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Time Interval</para>
-		/// <para>The interval that will be used to calculate sun positions from the start date and time to the end date and time.</para>
+		/// <para>用于计算从开始日期和时间到结束日期和时间的太阳位置的时间间隔。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -132,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Time Zone</para>
-		/// <para>The time zone that corresponds with the specified input times used to determine the relative position of the sun. The list of available values is defined by the operating system but will default to the time zone of the current time on the computer.</para>
+		/// <para>与用于确定太阳相对位置的指定输入时间相对应的时区。可用值的列表由操作系统定义，但其默认设置为计算机上当前时间的时区。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -141,9 +142,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Adjusted for Daylight Saving Time</para>
-		/// <para>Specifies whether the specified times will be adjusted for daylight saving time.</para>
-		/// <para>Checked—The input times will be adjusted for daylight saving time.</para>
-		/// <para>Unchecked—The input times will not be adjusted for daylight saving time. This is the default.</para>
+		/// <para>用于指定是否按夏令时调整指定时间。</para>
+		/// <para>选中 - 按夏令时调整输入时间。</para>
+		/// <para>未选中 - 不按夏令时调整输入时间。这是默认设置。</para>
 		/// <para><see cref="DstEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -153,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Maximum Shadow Length</para>
-		/// <para>The maximum distance that a shadow will be cast from an input feature during calculation. Consider defining this value when processing times where the sun position has a low altitude angle, as the resulting shadows will be long and potentially add unnecessary processing time.</para>
+		/// <para>计算过程中从输入要素投射阴影的最大距离。在处理太阳位置高度角较低的时间时，请考虑定义该值，如果不定义，则生成的阴影会比较长，可能会增加不必要的处理时间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -178,14 +179,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum DstEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The input times will be adjusted for daylight saving time.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DST")]
 			DST,
 
 			/// <summary>
-			/// <para>Unchecked—The input times will not be adjusted for daylight saving time. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DST")]

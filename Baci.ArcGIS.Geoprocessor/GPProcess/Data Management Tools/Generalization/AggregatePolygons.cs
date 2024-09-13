@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Aggregate Polygons</para>
+	/// <para>Aggregate Polygons</para>
 	/// <para>Combines polygons within a specified distance to each other.</para>
 	/// </summary>
 	[Obsolete()]

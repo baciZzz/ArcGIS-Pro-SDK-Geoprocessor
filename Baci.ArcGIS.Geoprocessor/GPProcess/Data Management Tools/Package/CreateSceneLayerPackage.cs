@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Scene Layer Package</para>
+	/// <para>Create Scene Layer Package</para>
 	/// <para>Creates a scene layer package (.slpk file) from 3D points, multipatch features, or LAS  data.</para>
 	/// </summary>
 	[Obsolete()]

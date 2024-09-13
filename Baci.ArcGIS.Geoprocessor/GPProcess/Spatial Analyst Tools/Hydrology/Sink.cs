@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Sink</para>
-	/// <para>Creates a raster identifying all sinks or areas of internal drainage.</para>
+	/// <para>汇</para>
+	/// <para>创建识别所有汇或内流水系区域的栅格。</para>
 	/// </summary>
 	public class Sink : AbstractGPProcess
 	{
@@ -20,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InFlowDirectionRaster">
 		/// <para>Input D8 flow direction raster</para>
-		/// <para>The input raster that shows the direction of flow out of each cell.</para>
-		/// <para>The flow direction raster can be created using the Flow Direction tool, run using the default flow direction type D8.</para>
+		/// <para>根据每个像元来显示流向的输入栅格。</para>
+		/// <para>可以在流向工具中，运行使用默认流向类型 D8 创建流向栅格。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster that shows all the sinks (areas of internal drainage) on the input surface.</para>
-		/// <para>This output is of integer type.</para>
+		/// <para>显示输入表面上的所有汇（内流水系区域）的输出栅格。</para>
+		/// <para>输出为整型。</para>
 		/// </param>
 		public Sink(object InFlowDirectionRaster, object OutRaster)
 		{
@@ -35,14 +36,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Sink</para>
+		/// <para>Tool Display Name : 汇</para>
 		/// </summary>
-		public override string DisplayName() => "Sink";
+		public override string DisplayName() => "汇";
 
 		/// <summary>
-		/// <para>Tool Name : Sink</para>
+		/// <para>Tool Name : 汇</para>
 		/// </summary>
-		public override string ToolName() => "Sink";
+		public override string ToolName() => "汇";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Sink</para>
@@ -71,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input D8 flow direction raster</para>
-		/// <para>The input raster that shows the direction of flow out of each cell.</para>
-		/// <para>The flow direction raster can be created using the Flow Direction tool, run using the default flow direction type D8.</para>
+		/// <para>根据每个像元来显示流向的输入栅格。</para>
+		/// <para>可以在流向工具中，运行使用默认流向类型 D8 创建流向栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -84,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster that shows all the sinks (areas of internal drainage) on the input surface.</para>
-		/// <para>This output is of integer type.</para>
+		/// <para>显示输入表面上的所有汇（内流水系区域）的输出栅格。</para>
+		/// <para>输出为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

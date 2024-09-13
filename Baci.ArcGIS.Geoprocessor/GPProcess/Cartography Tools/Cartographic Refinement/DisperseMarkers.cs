@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Disperse Markers</para>
-	/// <para>Finds point symbols that overlap or are too close to one another based on symbology at reference scale, and spreads them apart based on a minimum spacing and dispersal pattern.</para>
+	/// <para>分散标记</para>
+	/// <para>查找基于参考比例符号系统的叠置或距离太近的点符号，并根据最小间距和分散模式将其分散。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InPointFeatures">
 		/// <para>Input Point Features</para>
-		/// <para>The input point feature layer to be dispersed.</para>
+		/// <para>要分散的输入点要素图层。</para>
 		/// </param>
 		/// <param name="MinimumSpacing">
 		/// <para>Minimum Spacing</para>
-		/// <para>The minimum separation distance between individual point symbols in page units. A distance must be specified and must be greater than or equal to zero. When a positive value is specified, markers will be separated by that value; when a value of zero is specified, point symbols will touch. The default page unit is Points.</para>
+		/// <para>各点符号间的最小间距（页面单位）。 必须指定大于或等于零的搜索距离。 指定正值时，将按该值分离标记；指定零值时，点符号将互相接触。 默认页面单位是“磅”。</para>
 		/// </param>
 		public DisperseMarkers(object InPointFeatures, object MinimumSpacing)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Disperse Markers</para>
+		/// <para>Tool Display Name : 分散标记</para>
 		/// </summary>
-		public override string DisplayName() => "Disperse Markers";
+		public override string DisplayName() => "分散标记";
 
 		/// <summary>
 		/// <para>Tool Name : DisperseMarkers</para>
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Point Features</para>
-		/// <para>The input point feature layer to be dispersed.</para>
+		/// <para>要分散的输入点要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
@@ -81,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Minimum Spacing</para>
-		/// <para>The minimum separation distance between individual point symbols in page units. A distance must be specified and must be greater than or equal to zero. When a positive value is specified, markers will be separated by that value; when a value of zero is specified, point symbols will touch. The default page unit is Points.</para>
+		/// <para>各点符号间的最小间距（页面单位）。 必须指定大于或等于零的搜索距离。 指定正值时，将按该值分离标记；指定零值时，点符号将互相接触。 默认页面单位是“磅”。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -91,15 +92,15 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Dispersal Pattern</para>
-		/// <para>Specifies the pattern in which the dispersed point symbols are placed. A group of point symbols will have a center of mass derived from the locations of all points in the group. The center of mass is used as the anchor point around which the dispersal pattern operates.</para>
-		/// <para>Expanded—The general pattern of the point symbols will be maintained as they are spread apart. Points that were exactly coincident are dispersed to a circle around their center of mass. This is the default.</para>
-		/// <para>Random—Point symbols are placed around the center of mass in a random dispersal that respects the minimum spacing.</para>
-		/// <para>Squares—Point symbols are placed in multiple square rings around the center of mass, ensuring that all points are placed as closely together as allowable by the minimum spacing parameter.</para>
-		/// <para>Rings—Point symbols are placed in multiple circular rings around the center of mass, ensuring that all points are placed as closely together as allowable by the minimum spacing parameter.</para>
-		/// <para>Square—Point symbols are placed evenly around the center of mass in a single square pattern.</para>
-		/// <para>Ring—Point symbols are placed evenly around the center of mass in a single circular pattern.</para>
-		/// <para>Cross—Point symbols are spaced evenly on horizontal and vertical axes originating from the center of mass.</para>
-		/// <para>X-cross—Point symbols are spaced evenly on 45° axes originating from the center of mass.</para>
+		/// <para>指定点符号的分散模式。 一组点符号将会有一个根据该组中所有点位置派生出来的质心。 将质心用作分散模式围绕其运行的锚点。</para>
+		/// <para>已展开—点符号分散开时，会保留其常规模式。 恰巧重合的点将分散到质心周围的圆上。 这是默认设置。</para>
+		/// <para>随机—点符号以随机分散的模式分布在质心的周围，但是要考虑最小间距。</para>
+		/// <para>方形—点符号分布在质心周围的多个方形环中，并使所有点按最小间距参数的容许值尽量紧密分布在一起。</para>
+		/// <para>环—点符号分布在质心周围的多个圆形环中，并使所有点按最小间距参数的容许值尽量紧密分布在一起。</para>
+		/// <para>方形—点符号以单一方形模式均匀分布在质心周围。</para>
+		/// <para>环—点符号以单一圆形模式均匀分布在质心周围。</para>
+		/// <para>十字形—点符号均匀分布在质心为原点的水平和垂直轴上。</para>
+		/// <para>X 型交叉—点符号均匀分布在质心为原点的成 45° 的两个轴上。</para>
 		/// <para><see cref="DispersalPatternEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -131,59 +132,59 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum DispersalPatternEnum 
 		{
 			/// <summary>
-			/// <para>Expanded—The general pattern of the point symbols will be maintained as they are spread apart. Points that were exactly coincident are dispersed to a circle around their center of mass. This is the default.</para>
+			/// <para>已展开—点符号分散开时，会保留其常规模式。 恰巧重合的点将分散到质心周围的圆上。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("EXPANDED")]
-			[Description("Expanded")]
+			[Description("已展开")]
 			Expanded,
 
 			/// <summary>
-			/// <para>Random—Point symbols are placed around the center of mass in a random dispersal that respects the minimum spacing.</para>
+			/// <para>随机—点符号以随机分散的模式分布在质心的周围，但是要考虑最小间距。</para>
 			/// </summary>
 			[GPValue("RANDOM")]
-			[Description("Random")]
+			[Description("随机")]
 			Random,
 
 			/// <summary>
-			/// <para>Squares—Point symbols are placed in multiple square rings around the center of mass, ensuring that all points are placed as closely together as allowable by the minimum spacing parameter.</para>
+			/// <para>方形—点符号分布在质心周围的多个方形环中，并使所有点按最小间距参数的容许值尽量紧密分布在一起。</para>
 			/// </summary>
 			[GPValue("SQUARES")]
-			[Description("Squares")]
+			[Description("方形")]
 			Squares,
 
 			/// <summary>
-			/// <para>Rings—Point symbols are placed in multiple circular rings around the center of mass, ensuring that all points are placed as closely together as allowable by the minimum spacing parameter.</para>
+			/// <para>环—点符号分布在质心周围的多个圆形环中，并使所有点按最小间距参数的容许值尽量紧密分布在一起。</para>
 			/// </summary>
 			[GPValue("RINGS")]
-			[Description("Rings")]
+			[Description("环")]
 			Rings,
 
 			/// <summary>
-			/// <para>Squares—Point symbols are placed in multiple square rings around the center of mass, ensuring that all points are placed as closely together as allowable by the minimum spacing parameter.</para>
+			/// <para>方形—点符号分布在质心周围的多个方形环中，并使所有点按最小间距参数的容许值尽量紧密分布在一起。</para>
 			/// </summary>
 			[GPValue("SQUARE")]
-			[Description("Square")]
+			[Description("方形")]
 			Square,
 
 			/// <summary>
-			/// <para>Rings—Point symbols are placed in multiple circular rings around the center of mass, ensuring that all points are placed as closely together as allowable by the minimum spacing parameter.</para>
+			/// <para>环—点符号分布在质心周围的多个圆形环中，并使所有点按最小间距参数的容许值尽量紧密分布在一起。</para>
 			/// </summary>
 			[GPValue("RING")]
-			[Description("Ring")]
+			[Description("环")]
 			Ring,
 
 			/// <summary>
-			/// <para>Cross—Point symbols are spaced evenly on horizontal and vertical axes originating from the center of mass.</para>
+			/// <para>十字形—点符号均匀分布在质心为原点的水平和垂直轴上。</para>
 			/// </summary>
 			[GPValue("CROSS")]
-			[Description("Cross")]
+			[Description("十字形")]
 			Cross,
 
 			/// <summary>
-			/// <para>X-cross—Point symbols are spaced evenly on 45° axes originating from the center of mass.</para>
+			/// <para>X 型交叉—点符号均匀分布在质心为原点的成 45° 的两个轴上。</para>
 			/// </summary>
 			[GPValue("X_CROSS")]
-			[Description("X-cross")]
+			[Description("X 型交叉")]
 			X_CROSS,
 
 		}

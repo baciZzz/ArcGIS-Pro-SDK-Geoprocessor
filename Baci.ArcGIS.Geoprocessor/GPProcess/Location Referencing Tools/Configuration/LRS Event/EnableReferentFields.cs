@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Enable Referent Fields</para>
+	/// <para>Enable Referent Fields</para>
 	/// <para>Enables or modifies the referent fields so that you can  manage referent information for the registered LRS event.</para>
 	/// </summary>
 	public class EnableReferentFields : AbstractGPProcess

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Repair Geometry</para>
-	/// <para>Inspects each  feature in a feature class for problems with its geometry.  Upon discovery of a problem, a fix will be applied, and a one-line description will identify the feature, as well as the geometry problem that was fixed.</para>
+	/// <para>修复几何</para>
+	/// <para>检查要素类中每个要素的几何问题。发现问题后，将应用修复，并将通过一行描述识别要素及修复的几何问题。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The feature class or layer to be processed.</para>
+		/// <para>将处理的要素类或图层。</para>
 		/// </param>
 		public RepairGeometry(object InFeatures)
 		{
@@ -30,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Repair Geometry</para>
+		/// <para>Tool Display Name : 修复几何</para>
 		/// </summary>
-		public override string DisplayName() => "Repair Geometry";
+		public override string DisplayName() => "修复几何";
 
 		/// <summary>
 		/// <para>Tool Name : RepairGeometry</para>
@@ -66,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The feature class or layer to be processed.</para>
+		/// <para>将处理的要素类或图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -74,9 +75,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Delete Features with Null Geometry</para>
-		/// <para>Specifies whether features with null geometries will be deleted.</para>
-		/// <para>Checked—Features with null geometry will be deleted from the input. This is the default.</para>
-		/// <para>Unchecked—Features with null geometry will not be deleted from the input.</para>
+		/// <para>指定是否删除几何为空的要素。</para>
+		/// <para>选中 - 将从输入中删除几何为空的要素。这是默认设置。</para>
+		/// <para>未选中 - 不从输入中删除几何为空的要素。</para>
 		/// <para><see cref="DeleteNullEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -93,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Validation Method</para>
-		/// <para>Specifies which geometry validation method will be used to identify geometry problems.</para>
-		/// <para>Esri—The Esri geometry validation method will be used. This is the default.</para>
-		/// <para>OGC—The OGC geometry validation method will be used.</para>
+		/// <para>指定用于识别几何问题的几何验证方法。</para>
+		/// <para>Esri—将使用 Esri 几何验证方法。这是默认设置。</para>
+		/// <para>OGC—将使用 OGC 几何验证方法。</para>
 		/// <para><see cref="ValidationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -120,14 +121,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DeleteNullEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Features with null geometry will be deleted from the input. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_NULL")]
 			DELETE_NULL,
 
 			/// <summary>
-			/// <para>Unchecked—Features with null geometry will not be deleted from the input.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_NULL")]
@@ -141,14 +142,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ValidationMethodEnum 
 		{
 			/// <summary>
-			/// <para>Esri—The Esri geometry validation method will be used. This is the default.</para>
+			/// <para>Esri—将使用 Esri 几何验证方法。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ESRI")]
 			[Description("Esri")]
 			Esri,
 
 			/// <summary>
-			/// <para>OGC—The OGC geometry validation method will be used.</para>
+			/// <para>OGC—将使用 OGC 几何验证方法。</para>
 			/// </summary>
 			[GPValue("OGC")]
 			[Description("OGC")]

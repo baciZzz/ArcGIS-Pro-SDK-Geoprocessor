@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Create Map Server Cache</para>
-	/// <para>Creates the tiling scheme and preparatory folders for a map or image service cache. After running this tool, use the Manage Map Server Cache Tiles tool to add tiles to the cache.</para>
+	/// <para>创建地图服务器缓存</para>
+	/// <para>为地图或影像服务缓存创建切片方案和备用文件夹。 运行此工具后，使用管理地图服务器缓存切片工具以将切片添加到缓存。</para>
 	/// </summary>
 	public class CreateMapServerCache : AbstractGPProcess
 	{
@@ -20,41 +21,41 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		/// <param name="InputService">
 		/// <para>Input Service</para>
-		/// <para>The map or image layer to be cached. You can drag a map or image layer from the Catalog window to supply this parameter.</para>
+		/// <para>要进行缓存的地图或影像图层。 您可以通过拖动目录窗口中的地图或影像图层来提供此参数。</para>
 		/// </param>
 		/// <param name="ServiceCacheDirectory">
 		/// <para>Service Cache Directory</para>
-		/// <para>The parent directory for the cache. This must be a registered ArcGIS Server cache directory.</para>
+		/// <para>用于缓存的父目录。 此目录必须是已注册的 ArcGIS Server 缓存目录。</para>
 		/// </param>
 		/// <param name="TilingSchemeType">
 		/// <para>Tiling Scheme</para>
-		/// <para>Specifies how the tiling scheme will be defined. You can define a new tiling scheme with this tool or browse to a predefined tiling scheme file (.xml). A predefined scheme can be created by running the Generate Map Server Cache Tiling Scheme tool.</para>
-		/// <para>New—The tiling scheme will be defined using other parameters in this tool to define scale levels, image format, storage format, and so on. This is the default.</para>
-		/// <para>Predefined—The tiling scheme will be defined using an .xml file. You can create a tiling scheme file using the Generate Map Server Cache Tiling Scheme tool.</para>
+		/// <para>指定切片方案的定义方式。 使用此工具可以定义一个新的切片方案，也可以浏览到一个预定义的切片方案文件 (.xml)。 可以通过运行生成地图服务器缓存切片方案工具来创建预定义方案。</para>
+		/// <para>新建—将使用此工具中的其他参数来定义切片方案，从而对比例级别、图像格式和存储格式等设置加以定义。 这是默认设置。</para>
+		/// <para>预定义—切片方案将使用 .xml 文件进行定义。 也可使用生成地图服务器缓存切片方案工具创建一个切片方案文件。</para>
 		/// <para><see cref="TilingSchemeTypeEnum"/></para>
 		/// </param>
 		/// <param name="ScalesType">
 		/// <para>Scales Type</para>
-		/// <para>Specifies how the tiles will be scaled.</para>
-		/// <para>Standard—The scales will be automatically generated based on the number specified in the Number of Scales (num_of_scales in Python) parameter. It will use levels that increase or decrease by half from 1:1,000,000 and will start with a level closest to the extent of the source map document. For example, if the source map document has an extent of 1:121,000,000 and three scale levels are defined, the map service will create a cache with scale levels at 1:128,000,000; 1:64,000,000; and 1:32,000,000. This is the default.</para>
-		/// <para>Custom—The cache designer will determine the scales.</para>
+		/// <para>指定切片的比例调整方式。</para>
+		/// <para>标准—系统将根据比例级数（Python 中的 num_of_scales）参数中指定的数字自动生成比例。 该比例将采用从 1:1,000,000 递增或递减一半的级别，并将最接近于源地图文档范围的级别作为起始比例。 例如，如果源地图文档的范围是 1:121,000,000 并且定义了 3 个比例级别，则该地图服务将创建一个缓存，其比例级别可以是 1:128,000,000、1:64,000,000 和 1:32,000,000。 这是默认设置。</para>
+		/// <para>自定义—缓存设计器将用于确定比例。</para>
 		/// <para><see cref="ScalesTypeEnum"/></para>
 		/// </param>
 		/// <param name="NumOfScales">
 		/// <para>Number of Scales</para>
-		/// <para>The number of scale levels to create in the cache. This option is disabled if you create a custom list of scales.</para>
+		/// <para>要在缓存中创建的比例级数。 如果要创建一个自定义的比例列表，则此选项不可用。</para>
 		/// </param>
 		/// <param name="DotsPerInch">
 		/// <para>Dots(Pixels) Per Inch</para>
-		/// <para>The dots per inch (DPI) of the intended output device. If a DPI is chosen that does not match the resolution of the output device, the scale of the map tile will appear incorrect. The default value is 96.</para>
+		/// <para>专用输出设备的每英寸点数 (DPI)。 如果所选择的 DPI 与输出设备的分辨率不匹配，则地图切片将显示错误比例。 默认值为 96。</para>
 		/// </param>
 		/// <param name="TileSize">
 		/// <para>Tile Size (in pixels)</para>
-		/// <para>Specifies the width and height of the cache tiles in pixels. For the best balance between performance and manageability, avoid deviating from standard widths of 256 by 256 or 512 by 512.</para>
-		/// <para>128 by 128—128 by 128 pixels.</para>
-		/// <para>256 by 256—256 by 256 pixels. This is the default.</para>
-		/// <para>512 by 512—512 by 512 pixels.</para>
-		/// <para>1024 by 1024—1024 by 1024 pixels.</para>
+		/// <para>指定缓存切片的宽度和高度（以像素为单位）。 为在性能和可管理性之间寻求最佳平衡，应避免偏离标准宽度 256 x 256 或 512 x 512。</para>
+		/// <para>128 x 128—128 x 128 像素。</para>
+		/// <para>256 x 256—256 x 256 像素。 这是默认设置。</para>
+		/// <para>512 x 512—512 x 512 像素。</para>
+		/// <para>1024 x 1024—1024 x 1024 像素。</para>
 		/// <para><see cref="TileSizeEnum"/></para>
 		/// </param>
 		public CreateMapServerCache(object InputService, object ServiceCacheDirectory, object TilingSchemeType, object ScalesType, object NumOfScales, object DotsPerInch, object TileSize)
@@ -69,9 +70,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Map Server Cache</para>
+		/// <para>Tool Display Name : 创建地图服务器缓存</para>
 		/// </summary>
-		public override string DisplayName() => "Create Map Server Cache";
+		public override string DisplayName() => "创建地图服务器缓存";
 
 		/// <summary>
 		/// <para>Tool Name : CreateMapServerCache</para>
@@ -105,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Input Service</para>
-		/// <para>The map or image layer to be cached. You can drag a map or image layer from the Catalog window to supply this parameter.</para>
+		/// <para>要进行缓存的地图或影像图层。 您可以通过拖动目录窗口中的地图或影像图层来提供此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -113,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Service Cache Directory</para>
-		/// <para>The parent directory for the cache. This must be a registered ArcGIS Server cache directory.</para>
+		/// <para>用于缓存的父目录。 此目录必须是已注册的 ArcGIS Server 缓存目录。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -122,9 +123,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Tiling Scheme</para>
-		/// <para>Specifies how the tiling scheme will be defined. You can define a new tiling scheme with this tool or browse to a predefined tiling scheme file (.xml). A predefined scheme can be created by running the Generate Map Server Cache Tiling Scheme tool.</para>
-		/// <para>New—The tiling scheme will be defined using other parameters in this tool to define scale levels, image format, storage format, and so on. This is the default.</para>
-		/// <para>Predefined—The tiling scheme will be defined using an .xml file. You can create a tiling scheme file using the Generate Map Server Cache Tiling Scheme tool.</para>
+		/// <para>指定切片方案的定义方式。 使用此工具可以定义一个新的切片方案，也可以浏览到一个预定义的切片方案文件 (.xml)。 可以通过运行生成地图服务器缓存切片方案工具来创建预定义方案。</para>
+		/// <para>新建—将使用此工具中的其他参数来定义切片方案，从而对比例级别、图像格式和存储格式等设置加以定义。 这是默认设置。</para>
+		/// <para>预定义—切片方案将使用 .xml 文件进行定义。 也可使用生成地图服务器缓存切片方案工具创建一个切片方案文件。</para>
 		/// <para><see cref="TilingSchemeTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -134,9 +135,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Scales Type</para>
-		/// <para>Specifies how the tiles will be scaled.</para>
-		/// <para>Standard—The scales will be automatically generated based on the number specified in the Number of Scales (num_of_scales in Python) parameter. It will use levels that increase or decrease by half from 1:1,000,000 and will start with a level closest to the extent of the source map document. For example, if the source map document has an extent of 1:121,000,000 and three scale levels are defined, the map service will create a cache with scale levels at 1:128,000,000; 1:64,000,000; and 1:32,000,000. This is the default.</para>
-		/// <para>Custom—The cache designer will determine the scales.</para>
+		/// <para>指定切片的比例调整方式。</para>
+		/// <para>标准—系统将根据比例级数（Python 中的 num_of_scales）参数中指定的数字自动生成比例。 该比例将采用从 1:1,000,000 递增或递减一半的级别，并将最接近于源地图文档范围的级别作为起始比例。 例如，如果源地图文档的范围是 1:121,000,000 并且定义了 3 个比例级别，则该地图服务将创建一个缓存，其比例级别可以是 1:128,000,000、1:64,000,000 和 1:32,000,000。 这是默认设置。</para>
+		/// <para>自定义—缓存设计器将用于确定比例。</para>
 		/// <para><see cref="ScalesTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -146,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Number of Scales</para>
-		/// <para>The number of scale levels to create in the cache. This option is disabled if you create a custom list of scales.</para>
+		/// <para>要在缓存中创建的比例级数。 如果要创建一个自定义的比例列表，则此选项不可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -154,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Dots(Pixels) Per Inch</para>
-		/// <para>The dots per inch (DPI) of the intended output device. If a DPI is chosen that does not match the resolution of the output device, the scale of the map tile will appear incorrect. The default value is 96.</para>
+		/// <para>专用输出设备的每英寸点数 (DPI)。 如果所选择的 DPI 与输出设备的分辨率不匹配，则地图切片将显示错误比例。 默认值为 96。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -162,11 +163,11 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Tile Size (in pixels)</para>
-		/// <para>Specifies the width and height of the cache tiles in pixels. For the best balance between performance and manageability, avoid deviating from standard widths of 256 by 256 or 512 by 512.</para>
-		/// <para>128 by 128—128 by 128 pixels.</para>
-		/// <para>256 by 256—256 by 256 pixels. This is the default.</para>
-		/// <para>512 by 512—512 by 512 pixels.</para>
-		/// <para>1024 by 1024—1024 by 1024 pixels.</para>
+		/// <para>指定缓存切片的宽度和高度（以像素为单位）。 为在性能和可管理性之间寻求最佳平衡，应避免偏离标准宽度 256 x 256 或 512 x 512。</para>
+		/// <para>128 x 128—128 x 128 像素。</para>
+		/// <para>256 x 256—256 x 256 像素。 这是默认设置。</para>
+		/// <para>512 x 512—512 x 512 像素。</para>
+		/// <para>1024 x 1024—1024 x 1024 像素。</para>
 		/// <para><see cref="TileSizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -176,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Predefined Tiling Scheme</para>
-		/// <para>The path to a predefined tiling scheme file (usually named conf.xml).</para>
+		/// <para>预定义切片方案文件（通常名为 conf.xml）的路径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -184,7 +185,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Tiling origin in map units</para>
-		/// <para>The origin (upper left corner) of the tiling scheme in the coordinates of the spatial reference of the source map document. The extent of the source map document must be within (but does not need to coincide with) this region.</para>
+		/// <para>切片方案原点（左上角），采用源地图文档空间参考的坐标值。 源地图文档的范围必须在此区域内（但不必与该区域重合）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
@@ -192,7 +193,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Scales</para>
-		/// <para>The scale levels available for the cache. These are not represented as fractions. Instead, use 500 to represent a scale of 1:500, for example.</para>
+		/// <para>用于缓存的比例级别。 不使用分数表示比例级别， 而是使用 500 表示比例 1:500，依此类推。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -200,13 +201,13 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Cache Tile Format</para>
-		/// <para>Specifies the cache tile format.</para>
-		/// <para>PNG—A PNG format with varying bit depths. The bit depths are optimized according to the color variation and transparency values in a tile. This is the default.</para>
-		/// <para>PNG8—A lossless, 8-bit color, image format that uses an indexed color palette and an alpha table. Each pixel stores a value (0–255) that is used to look up the color in the color palette and the transparency in the alpha table. 8-bit PNG images are similar to GIF images, and most web browsers support transparent backgrounds in PNG images.</para>
-		/// <para>PNG24—A lossless, three-channel image format that supports large color variations (16 million colors) and has limited support for transparency. Each pixel contains three 8-bit color channels, and the file header contains the single color that represents the transparent background. Versions of Internet Explorer earlier than version 7 do not support this type of transparency. Caches using PNG24 are significantly larger than those using PNG8 or JPEG and will use more disk space and require greater bandwidth to serve clients.</para>
-		/// <para>PNG32—A lossless, four-channel image format that supports large color variations (16 million colors) and transparency. Each pixel contains three 8-bit color channels and one 8-bit alpha channel that represents the level of transparency for each pixel. While the PNG32 format allows for partially transparent pixels in the range from 0 to 255, the ArcGIS Server cache generation tool only writes fully transparent (0) or fully opaque (255) values in the transparency channel. Caches using PNG32 are significantly larger than the other supported formats and will use more disk space and require greater bandwidth to serve clients.</para>
-		/// <para>JPEG—A lossy, three-channel image format that supports large color variations (16 million colors) but does not support transparency. Each pixel contains three 8-bit color channels. Caches using JPEG provide control over output quality and size.</para>
-		/// <para>Mixed—The PNG32 format will be created anywhere that transparency is detected (that is, anywhere that the data frame background is visible). The JPEG format will be created for the remaining tiles. This keeps the average file size down while providing a clean overlay on top of other caches.</para>
+		/// <para>指定缓存切片格式。</para>
+		/// <para>PNG—使用不同位深度的 PNG 格式。 并且已根据切片中的颜色变化和透明度值对位深度进行了优化。 这是默认设置。</para>
+		/// <para>PNG8—一种无损 8 位彩色图像格式，使用索引调色板和 alpha 表。 每个像素都存储一个值（0 到 255），用于查看调色板中的颜色和 alpha 表中的透明度。 8 位 PNG 图像类似于 GIF 图像，且大多数 Web 浏览器支持在 PNG 图像中使用透明背景。</para>
+		/// <para>PNG24—一种无损三通道图像格式，支持大量的颜色变化（1600 万个颜色），并对透明度提供有限的支持。 每个像素包含三条 8 位颜色通道，并且文件头中包含用于表示透明背景的单一颜色。 早于版本 7 的 Internet Explorer 版本不支持此透明类型。 采用 PNG24 的缓存比采用 PNG8 或 JPEG 的缓存大得多，并且需要使用更多磁盘空间和更大带宽才能为客户端提供服务。</para>
+		/// <para>PNG32—一种无损四通道图像格式，支持大量的颜色变化（1600 万个颜色），并支持透明度。 每个像素包含三条 8 位颜色通道和一条表示每个像素的透明度级别的 8 位 alpha 通道。 虽然 PNG32 格式允许部分透明像素位于范围 0 到 255 之间，但是 ArcGIS Server 缓存生成工具仅将完全透明值 (0) 或完全不透明值 (255) 写入透明度通道。 采用 PNG32 的缓存比采用其他受支持的格式的缓存大得多，并且需要使用更多磁盘空间和更大带宽才能为客户端提供服务。</para>
+		/// <para>JPEG—一种有损三通道图像格式，支持大量的颜色变化（1600 万个颜色），但不支持透明度。 每个像素包含三条 8 位颜色通道。 采用 JPEG 的缓存可控制输出质量和大小。</para>
+		/// <para>混合—PNG32 格式将在检测到透明度的所有位置（也就是数据框背景可见的所有位置）进行创建。 系统将为其余的切片创建 JPEG 格式。 这可降低平均文件大小，同时可在其他缓存上进行完全叠加。</para>
 		/// <para><see cref="CacheTileFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -216,8 +217,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Tile Compression Quality</para>
-		/// <para>The JPEG compression quality (1–100). The default value is 75 for the JPEG tile format and 0 for other formats.</para>
-		/// <para>Compression is supported only for the JPEG format. Choosing a higher value will result in a larger file size with a higher-quality image. Choosing a lower value will result in a smaller file size with a lower-quality image.</para>
+		/// <para>JPEG 压缩质量 (1-100)。 对于 JPEG 切片格式，默认值为 75；对于其他切片格式，默认值为 0。</para>
+		/// <para>仅 JPEG 格式支持压缩。 如果选择较高的值，则生成的文件较大，但图像质量较好。 如果选择较低的值，则生成的文件较小，但图像质量较差。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -225,9 +226,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Storage Format</para>
-		/// <para>Specifies the storage format of tiles.</para>
-		/// <para>Compact—Tiles will be grouped into large files called bundles. This storage format is efficient in terms of storage and mobility. This is the default.</para>
-		/// <para>Exploded—Each tile will be stored as a separate file.</para>
+		/// <para>指定切片的存储格式。</para>
+		/// <para>紧凑型—切片将分组到较大的包文件中。 此存储格式在存储和移动性方面比较高效。 这是默认设置。</para>
+		/// <para>松散型—每个切片都将存储为单独的文件。</para>
 		/// <para><see cref="StorageFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -250,17 +251,17 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		public enum TilingSchemeTypeEnum 
 		{
 			/// <summary>
-			/// <para>New—The tiling scheme will be defined using other parameters in this tool to define scale levels, image format, storage format, and so on. This is the default.</para>
+			/// <para>新建—将使用此工具中的其他参数来定义切片方案，从而对比例级别、图像格式和存储格式等设置加以定义。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("NEW")]
-			[Description("New")]
+			[Description("新建")]
 			New,
 
 			/// <summary>
-			/// <para>Predefined—The tiling scheme will be defined using an .xml file. You can create a tiling scheme file using the Generate Map Server Cache Tiling Scheme tool.</para>
+			/// <para>预定义—切片方案将使用 .xml 文件进行定义。 也可使用生成地图服务器缓存切片方案工具创建一个切片方案文件。</para>
 			/// </summary>
 			[GPValue("PREDEFINED")]
-			[Description("Predefined")]
+			[Description("预定义")]
 			Predefined,
 
 		}
@@ -271,17 +272,17 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		public enum ScalesTypeEnum 
 		{
 			/// <summary>
-			/// <para>Standard—The scales will be automatically generated based on the number specified in the Number of Scales (num_of_scales in Python) parameter. It will use levels that increase or decrease by half from 1:1,000,000 and will start with a level closest to the extent of the source map document. For example, if the source map document has an extent of 1:121,000,000 and three scale levels are defined, the map service will create a cache with scale levels at 1:128,000,000; 1:64,000,000; and 1:32,000,000. This is the default.</para>
+			/// <para>标准—系统将根据比例级数（Python 中的 num_of_scales）参数中指定的数字自动生成比例。 该比例将采用从 1:1,000,000 递增或递减一半的级别，并将最接近于源地图文档范围的级别作为起始比例。 例如，如果源地图文档的范围是 1:121,000,000 并且定义了 3 个比例级别，则该地图服务将创建一个缓存，其比例级别可以是 1:128,000,000、1:64,000,000 和 1:32,000,000。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("STANDARD")]
-			[Description("Standard")]
+			[Description("标准")]
 			Standard,
 
 			/// <summary>
-			/// <para>Custom—The cache designer will determine the scales.</para>
+			/// <para>自定义—缓存设计器将用于确定比例。</para>
 			/// </summary>
 			[GPValue("CUSTOM")]
-			[Description("Custom")]
+			[Description("自定义")]
 			Custom,
 
 		}
@@ -292,31 +293,31 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		public enum TileSizeEnum 
 		{
 			/// <summary>
-			/// <para>128 by 128—128 by 128 pixels.</para>
+			/// <para>128 x 128—128 x 128 像素。</para>
 			/// </summary>
 			[GPValue("128 x 128")]
-			[Description("128 by 128")]
+			[Description("128 x 128")]
 			_128_by_128,
 
 			/// <summary>
-			/// <para>256 by 256—256 by 256 pixels. This is the default.</para>
+			/// <para>256 x 256—256 x 256 像素。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("256 x 256")]
-			[Description("256 by 256")]
+			[Description("256 x 256")]
 			_256_by_256,
 
 			/// <summary>
-			/// <para>512 by 512—512 by 512 pixels.</para>
+			/// <para>512 x 512—512 x 512 像素。</para>
 			/// </summary>
 			[GPValue("512 x 512")]
-			[Description("512 by 512")]
+			[Description("512 x 512")]
 			_512_by_512,
 
 			/// <summary>
-			/// <para>1024 by 1024—1024 by 1024 pixels.</para>
+			/// <para>1024 x 1024—1024 x 1024 像素。</para>
 			/// </summary>
 			[GPValue("1024 x 1024")]
-			[Description("1024 by 1024")]
+			[Description("1024 x 1024")]
 			_1024_by_1024,
 
 		}
@@ -327,45 +328,45 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		public enum CacheTileFormatEnum 
 		{
 			/// <summary>
-			/// <para>PNG—A PNG format with varying bit depths. The bit depths are optimized according to the color variation and transparency values in a tile. This is the default.</para>
+			/// <para>PNG—使用不同位深度的 PNG 格式。 并且已根据切片中的颜色变化和透明度值对位深度进行了优化。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("PNG")]
 			[Description("PNG")]
 			PNG,
 
 			/// <summary>
-			/// <para>PNG8—A lossless, 8-bit color, image format that uses an indexed color palette and an alpha table. Each pixel stores a value (0–255) that is used to look up the color in the color palette and the transparency in the alpha table. 8-bit PNG images are similar to GIF images, and most web browsers support transparent backgrounds in PNG images.</para>
+			/// <para>PNG8—一种无损 8 位彩色图像格式，使用索引调色板和 alpha 表。 每个像素都存储一个值（0 到 255），用于查看调色板中的颜色和 alpha 表中的透明度。 8 位 PNG 图像类似于 GIF 图像，且大多数 Web 浏览器支持在 PNG 图像中使用透明背景。</para>
 			/// </summary>
 			[GPValue("PNG8")]
 			[Description("PNG8")]
 			PNG8,
 
 			/// <summary>
-			/// <para>PNG24—A lossless, three-channel image format that supports large color variations (16 million colors) and has limited support for transparency. Each pixel contains three 8-bit color channels, and the file header contains the single color that represents the transparent background. Versions of Internet Explorer earlier than version 7 do not support this type of transparency. Caches using PNG24 are significantly larger than those using PNG8 or JPEG and will use more disk space and require greater bandwidth to serve clients.</para>
+			/// <para>PNG24—一种无损三通道图像格式，支持大量的颜色变化（1600 万个颜色），并对透明度提供有限的支持。 每个像素包含三条 8 位颜色通道，并且文件头中包含用于表示透明背景的单一颜色。 早于版本 7 的 Internet Explorer 版本不支持此透明类型。 采用 PNG24 的缓存比采用 PNG8 或 JPEG 的缓存大得多，并且需要使用更多磁盘空间和更大带宽才能为客户端提供服务。</para>
 			/// </summary>
 			[GPValue("PNG24")]
 			[Description("PNG24")]
 			PNG24,
 
 			/// <summary>
-			/// <para>PNG32—A lossless, four-channel image format that supports large color variations (16 million colors) and transparency. Each pixel contains three 8-bit color channels and one 8-bit alpha channel that represents the level of transparency for each pixel. While the PNG32 format allows for partially transparent pixels in the range from 0 to 255, the ArcGIS Server cache generation tool only writes fully transparent (0) or fully opaque (255) values in the transparency channel. Caches using PNG32 are significantly larger than the other supported formats and will use more disk space and require greater bandwidth to serve clients.</para>
+			/// <para>PNG32—一种无损四通道图像格式，支持大量的颜色变化（1600 万个颜色），并支持透明度。 每个像素包含三条 8 位颜色通道和一条表示每个像素的透明度级别的 8 位 alpha 通道。 虽然 PNG32 格式允许部分透明像素位于范围 0 到 255 之间，但是 ArcGIS Server 缓存生成工具仅将完全透明值 (0) 或完全不透明值 (255) 写入透明度通道。 采用 PNG32 的缓存比采用其他受支持的格式的缓存大得多，并且需要使用更多磁盘空间和更大带宽才能为客户端提供服务。</para>
 			/// </summary>
 			[GPValue("PNG32")]
 			[Description("PNG32")]
 			PNG32,
 
 			/// <summary>
-			/// <para>JPEG—A lossy, three-channel image format that supports large color variations (16 million colors) but does not support transparency. Each pixel contains three 8-bit color channels. Caches using JPEG provide control over output quality and size.</para>
+			/// <para>JPEG—一种有损三通道图像格式，支持大量的颜色变化（1600 万个颜色），但不支持透明度。 每个像素包含三条 8 位颜色通道。 采用 JPEG 的缓存可控制输出质量和大小。</para>
 			/// </summary>
 			[GPValue("JPEG")]
 			[Description("JPEG")]
 			JPEG,
 
 			/// <summary>
-			/// <para>Mixed—The PNG32 format will be created anywhere that transparency is detected (that is, anywhere that the data frame background is visible). The JPEG format will be created for the remaining tiles. This keeps the average file size down while providing a clean overlay on top of other caches.</para>
+			/// <para>混合—PNG32 格式将在检测到透明度的所有位置（也就是数据框背景可见的所有位置）进行创建。 系统将为其余的切片创建 JPEG 格式。 这可降低平均文件大小，同时可在其他缓存上进行完全叠加。</para>
 			/// </summary>
 			[GPValue("MIXED")]
-			[Description("Mixed")]
+			[Description("混合")]
 			Mixed,
 
 		}
@@ -376,10 +377,10 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		public enum StorageFormatEnum 
 		{
 			/// <summary>
-			/// <para>Compact—Tiles will be grouped into large files called bundles. This storage format is efficient in terms of storage and mobility. This is the default.</para>
+			/// <para>紧凑型—切片将分组到较大的包文件中。 此存储格式在存储和移动性方面比较高效。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("COMPACT")]
-			[Description("Compact")]
+			[Description("紧凑型")]
 			Compact,
 
 		}

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Point File Information</para>
-	/// <para>Generates statistical information about one or more point files in a polygon or multipatch output.</para>
+	/// <para>点文件信息</para>
+	/// <para>在面或多面体输出中生成有关一个或多个点文件的统计信息。</para>
 	/// </summary>
 	public class PointFileInformation : AbstractGPProcess
 	{
@@ -20,20 +21,20 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="Input">
 		/// <para>Point Data</para>
-		/// <para>Any combination of folders and files storing point records that will be analyzed.</para>
-		/// <para>In the tool dialog box, a folder can also be specified as an input by selecting the folder in Windows Explorer and dragging it onto the parameter&apos;s input box.</para>
+		/// <para>存储将要分析的点记录的文件夹和文件的任意组合。</para>
+		/// <para>在“工具”对话框中，可将文件夹指定为输入，具体方法如下：在 Windows 资源管理器中选择文件夹，然后将其拖动到参数的输入框上。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </param>
 		/// <param name="InFileType">
 		/// <para>File Format</para>
-		/// <para>Specifies the format of the input files.</para>
-		/// <para>LAS format lidar—Lidar data storage format defined by the American Society of Photogrammetry and Remote Sensing (ASPRS).</para>
-		/// <para>ASCII file with XYZ—XYZ file.</para>
-		/// <para>ASCII file with XYZI—XYZI file.</para>
-		/// <para>ASCII file in Generate format—GENERATE file.</para>
+		/// <para>指定输入文件的格式。</para>
+		/// <para>LAS 格式的激光雷达数据—美国摄影测量及遥感协会 (ASPRS) 定义的激光雷达数据存储格式。</para>
+		/// <para>含 XYZ 的 ASCII 文件—XYZ 文件。</para>
+		/// <para>含 XYZI 的 ASCII 文件—XYZI 文件。</para>
+		/// <para>Generate 格式的 ASCII 文件—GENERATE 文件。</para>
 		/// <para><see cref="InFileTypeEnum"/></para>
 		/// </param>
 		public PointFileInformation(object Input, object OutFeatureClass, object InFileType)
@@ -44,9 +45,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Point File Information</para>
+		/// <para>Tool Display Name : 点文件信息</para>
 		/// </summary>
-		public override string DisplayName() => "Point File Information";
+		public override string DisplayName() => "点文件信息";
 
 		/// <summary>
 		/// <para>Tool Name : PointFileInformation</para>
@@ -80,8 +81,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Point Data</para>
-		/// <para>Any combination of folders and files storing point records that will be analyzed.</para>
-		/// <para>In the tool dialog box, a folder can also be specified as an input by selecting the folder in Windows Explorer and dragging it onto the parameter&apos;s input box.</para>
+		/// <para>存储将要分析的点记录的文件夹和文件的任意组合。</para>
+		/// <para>在“工具”对话框中，可将文件夹指定为输入，具体方法如下：在 Windows 资源管理器中选择文件夹，然后将其拖动到参数的输入框上。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -97,11 +98,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>File Format</para>
-		/// <para>Specifies the format of the input files.</para>
-		/// <para>LAS format lidar—Lidar data storage format defined by the American Society of Photogrammetry and Remote Sensing (ASPRS).</para>
-		/// <para>ASCII file with XYZ—XYZ file.</para>
-		/// <para>ASCII file with XYZI—XYZI file.</para>
-		/// <para>ASCII file in Generate format—GENERATE file.</para>
+		/// <para>指定输入文件的格式。</para>
+		/// <para>LAS 格式的激光雷达数据—美国摄影测量及遥感协会 (ASPRS) 定义的激光雷达数据存储格式。</para>
+		/// <para>含 XYZ 的 ASCII 文件—XYZ 文件。</para>
+		/// <para>含 XYZI 的 ASCII 文件—XYZI 文件。</para>
+		/// <para>Generate 格式的 ASCII 文件—GENERATE 文件。</para>
 		/// <para><see cref="InFileTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>File Suffix</para>
-		/// <para>The suffix of the files to be imported when a folder is specified in the input. This parameter is required if an input folder is provided.</para>
+		/// <para>在输入中指定文件夹时导入的文件的后缀。如果提供输入文件夹，则此参数为必填项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -119,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>The coordinate system of the input data.</para>
+		/// <para>输入数据的坐标系。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
@@ -127,9 +128,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Include Subfolders</para>
-		/// <para>Specifies whether data in subfolders will be used to generate results. The tool scans subfolders when an input folder is selected containing data in a subfolders directory. The output feature class will be generated with a row for each file encountered in the directory structure.</para>
-		/// <para>Unchecked—Only the data found in the input folder will be used to generate the results. This is the default.</para>
-		/// <para>Checked—Any data found in the input folder and its subdirectories will be used to generate results.</para>
+		/// <para>指定是否子文件夹中的数据将用于生成结果。当所选输入文件夹中的子文件夹目录含有数据时，工具将扫描子文件夹。为目录结构中包含的每个文件生成一行输出要素类。</para>
+		/// <para>未选中 - 只有在输入文件夹中找到的数据才用于生成结果。这是默认设置。</para>
+		/// <para>选中 - 在输入文件夹及其子目录中找到的任何数据均将用于生成结果。</para>
 		/// <para><see cref="FolderRecursionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -139,9 +140,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Extrude Geometry Shapes</para>
-		/// <para>Specifies whether the output will be created as a 2D polygon or multipatch feature class with extruded features that reflect the elevation range found in each file.</para>
-		/// <para>Unchecked—The output will be created as a 2D polygon feature class. This is the default.</para>
-		/// <para>Checked—The output will be created as a multipatch feature class.</para>
+		/// <para>指定是将输出创建为 2D 面要素类还是具有拉伸要素（可反映出每个文件中找到的高程范围）的多面体要素类。</para>
+		/// <para>未选中 - 输出将创建为 2D 面要素类。这是默认设置。</para>
+		/// <para>选中 - 输出将创建为多面体要素类。</para>
 		/// <para><see cref="ExtrudeGeometryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -151,9 +152,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Decimal Separator</para>
-		/// <para>The decimal character that will be used in the text file to differentiate the integer of a number from its fractional part.</para>
-		/// <para>Point—A point will be used as the decimal character. This is the default.</para>
-		/// <para>Comma—A comma will be used as the decimal character.</para>
+		/// <para>文本文件中将用于区分数字的整数部分与其小数部分的小数分隔符。</para>
+		/// <para>点—将使用点作为小数字符。 这是默认设置。</para>
+		/// <para>逗号—将使用逗号作为小数字符。</para>
 		/// <para><see cref="DecimalSeparatorEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -163,9 +164,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Summarize by class code</para>
-		/// <para>Specifies whether the results will summarize LAS files per class code or per LAS file. This option will require an intensive scan of the LAS file.</para>
-		/// <para>Unchecked—Each output feature will represent all the data found in a lidar file. This is the default.</para>
-		/// <para>Checked—Each output feature will represent a single class code found in a lidar file.</para>
+		/// <para>指定结果将按类代码还是 LAS 文件汇总 LAS 文件。该选项要求对 LAS 文件进行密集扫描。</para>
+		/// <para>未选中 - 每个输出要素都将表示在激光雷达文件中找到的所有数据。这是默认设置。</para>
+		/// <para>选中 - 每个输出要素将表示在激光雷达文件中找到的单个类代码。</para>
 		/// <para><see cref="SummarizeByClassCodeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -175,9 +176,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Improve LAS files point spacing estimate</para>
-		/// <para>Specifies whether enhanced assessment of the point spacing in LAS files, which can reduce over-estimation caused by irregular data distribution, will be used.</para>
-		/// <para>Unchecked—Regular point spacing estimate is used for LAS files, where the extent is equally divided by the number of points. This is the default.</para>
-		/// <para>Checked—Binning will be used to obtain a more precise point spacing estimate for LAS files. This may increase the tool&apos;s execution time.</para>
+		/// <para>指定是否将使用 LAS 文件中的点间距的加强版评估，从而减少由不规则数据分布导致的过高评估。</para>
+		/// <para>未选中 - 对 LAS 文件使用规则点间距估计值，其中范围由点数均分。这是默认设置。</para>
+		/// <para>选中 - 将分块计算以获取 LAS 文件的更精确的点间距估计值。这可能增加工具的执行时间。</para>
 		/// <para><see cref="ImproveLasPointSpacingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -209,31 +210,31 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum InFileTypeEnum 
 		{
 			/// <summary>
-			/// <para>LAS format lidar—Lidar data storage format defined by the American Society of Photogrammetry and Remote Sensing (ASPRS).</para>
+			/// <para>LAS 格式的激光雷达数据—美国摄影测量及遥感协会 (ASPRS) 定义的激光雷达数据存储格式。</para>
 			/// </summary>
 			[GPValue("LAS")]
-			[Description("LAS format lidar")]
+			[Description("LAS 格式的激光雷达数据")]
 			LAS_format_lidar,
 
 			/// <summary>
-			/// <para>ASCII file with XYZ—XYZ file.</para>
+			/// <para>含 XYZ 的 ASCII 文件—XYZ 文件。</para>
 			/// </summary>
 			[GPValue("XYZ")]
-			[Description("ASCII file with XYZ")]
+			[Description("含 XYZ 的 ASCII 文件")]
 			ASCII_file_with_XYZ,
 
 			/// <summary>
-			/// <para>ASCII file with XYZI—XYZI file.</para>
+			/// <para>含 XYZI 的 ASCII 文件—XYZI 文件。</para>
 			/// </summary>
 			[GPValue("XYZI")]
-			[Description("ASCII file with XYZI")]
+			[Description("含 XYZI 的 ASCII 文件")]
 			ASCII_file_with_XYZI,
 
 			/// <summary>
-			/// <para>ASCII file in Generate format—GENERATE file.</para>
+			/// <para>Generate 格式的 ASCII 文件—GENERATE 文件。</para>
 			/// </summary>
 			[GPValue("GENERATE")]
-			[Description("ASCII file in Generate format")]
+			[Description("Generate 格式的 ASCII 文件")]
 			ASCII_file_in_Generate_format,
 
 		}
@@ -244,14 +245,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum FolderRecursionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Any data found in the input folder and its subdirectories will be used to generate results.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RECURSION")]
 			RECURSION,
 
 			/// <summary>
-			/// <para>Unchecked—Only the data found in the input folder will be used to generate the results. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_RECURSION")]
@@ -265,14 +266,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ExtrudeGeometryEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output will be created as a multipatch feature class.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EXTRUSION")]
 			EXTRUSION,
 
 			/// <summary>
-			/// <para>Unchecked—The output will be created as a 2D polygon feature class. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_EXTRUSION")]
@@ -286,17 +287,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum DecimalSeparatorEnum 
 		{
 			/// <summary>
-			/// <para>Point—A point will be used as the decimal character. This is the default.</para>
+			/// <para>点—将使用点作为小数字符。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("DECIMAL_POINT")]
-			[Description("Point")]
+			[Description("点")]
 			Point,
 
 			/// <summary>
-			/// <para>Comma—A comma will be used as the decimal character.</para>
+			/// <para>逗号—将使用逗号作为小数字符。</para>
 			/// </summary>
 			[GPValue("DECIMAL_COMMA")]
-			[Description("Comma")]
+			[Description("逗号")]
 			Comma,
 
 		}
@@ -307,14 +308,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum SummarizeByClassCodeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Each output feature will represent a single class code found in a lidar file.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SUMMARIZE")]
 			SUMMARIZE,
 
 			/// <summary>
-			/// <para>Unchecked—Each output feature will represent all the data found in a lidar file. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SUMMARIZE")]
@@ -328,14 +329,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ImproveLasPointSpacingEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Binning will be used to obtain a more precise point spacing estimate for LAS files. This may increase the tool&apos;s execution time.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("LAS_SPACING")]
 			LAS_SPACING,
 
 			/// <summary>
-			/// <para>Unchecked—Regular point spacing estimate is used for LAS files, where the extent is equally divided by the number of points. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_LAS_SPACING")]

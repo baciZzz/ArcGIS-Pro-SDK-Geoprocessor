@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Combinatorial XOr</para>
-	/// <para>Performs a Combinatorial eXclusive Or operation on the cell values of two input rasters.</para>
+	/// <para>组合异或</para>
+	/// <para>对两个输入栅格的像元值执行“组合异或”运算。</para>
 	/// </summary>
 	public class CombinatorialXOr : AbstractGPProcess
 	{
@@ -20,20 +21,20 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant1">
 		/// <para>Input raster or constant value 1</para>
-		/// <para>The first input to use in this combinatorial operation.</para>
-		/// <para>It must be of integer type.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>此组合运算中所使用的第一个输入。</para>
+		/// <para>必须为整型。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="InRasterOrConstant2">
 		/// <para>Input raster or constant value 2</para>
-		/// <para>The second input to use in this combinatorial operation.</para>
-		/// <para>It must be of integer type.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>此组合运算中所使用的第二个输入。</para>
+		/// <para>必须为整型。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The output is always of integer type.</para>
+		/// <para>输出栅格。</para>
+		/// <para>输出始终为整型。</para>
 		/// </param>
 		public CombinatorialXOr(object InRasterOrConstant1, object InRasterOrConstant2, object OutRaster)
 		{
@@ -43,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Combinatorial XOr</para>
+		/// <para>Tool Display Name : 组合异或</para>
 		/// </summary>
-		public override string DisplayName() => "Combinatorial XOr";
+		public override string DisplayName() => "组合异或";
 
 		/// <summary>
 		/// <para>Tool Name : CombinatorialXOr</para>
@@ -79,9 +80,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 1</para>
-		/// <para>The first input to use in this combinatorial operation.</para>
-		/// <para>It must be of integer type.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>此组合运算中所使用的第一个输入。</para>
+		/// <para>必须为整型。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -93,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 2</para>
-		/// <para>The second input to use in this combinatorial operation.</para>
-		/// <para>It must be of integer type.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>此组合运算中所使用的第二个输入。</para>
+		/// <para>必须为整型。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -107,8 +108,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The output is always of integer type.</para>
+		/// <para>输出栅格。</para>
+		/// <para>输出始终为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

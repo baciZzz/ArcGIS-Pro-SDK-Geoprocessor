@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Drive Time Trade Areas</para>
+	/// <para>Generate Drive Time Trade Areas</para>
 	/// <para>Creates a feature class of trade areas around point features based on travel time and distance.</para>
 	/// </summary>
 	public class GenerateDriveTimeTradeArea : AbstractGPProcess

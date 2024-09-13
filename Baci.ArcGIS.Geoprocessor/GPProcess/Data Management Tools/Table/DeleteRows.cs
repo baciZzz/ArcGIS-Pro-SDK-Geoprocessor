@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Rows</para>
-	/// <para>Deletes all or the selected subset of rows from the input.</para>
+	/// <para>删除行</para>
+	/// <para>从输入中删除所有行或所选行子集。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRows">
 		/// <para>Input Rows</para>
-		/// <para>The feature class, layer, table, or table view whose rows will be deleted.</para>
+		/// <para>各行将被删除的要素类、图层、表或表视图。</para>
 		/// </param>
 		public DeleteRows(object InRows)
 		{
@@ -30,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Delete Rows</para>
+		/// <para>Tool Display Name : 删除行</para>
 		/// </summary>
-		public override string DisplayName() => "Delete Rows";
+		public override string DisplayName() => "删除行";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteRows</para>
@@ -66,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Rows</para>
-		/// <para>The feature class, layer, table, or table view whose rows will be deleted.</para>
+		/// <para>各行将被删除的要素类、图层、表或表视图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]

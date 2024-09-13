@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Assign Customers By Distance</para>
+	/// <para>Assign Customers By Distance</para>
 	/// <para>Assigns customers to the closest store based on a selected distance type.</para>
 	/// </summary>
 	public class AssignCustomersByDistance : AbstractGPProcess

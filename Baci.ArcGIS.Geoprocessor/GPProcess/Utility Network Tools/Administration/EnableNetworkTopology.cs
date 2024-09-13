@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Enable Network Topology</para>
-	/// <para>Enables a network topology for a utility network.</para>
+	/// <para>启用网络拓扑</para>
+	/// <para>启用公共设施网络的网络拓扑。</para>
 	/// </summary>
 	public class EnableNetworkTopology : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network for which the network topology will be enabled.</para>
+		/// <para>将启用网络拓扑的公共设施网络。</para>
 		/// </param>
 		public EnableNetworkTopology(object InUtilityNetwork)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Enable Network Topology</para>
+		/// <para>Tool Display Name : 启用网络拓扑</para>
 		/// </summary>
-		public override string DisplayName() => "Enable Network Topology";
+		public override string DisplayName() => "启用网络拓扑";
 
 		/// <summary>
 		/// <para>Tool Name : EnableNetworkTopology</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network for which the network topology will be enabled.</para>
+		/// <para>将启用网络拓扑的公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -72,8 +73,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Maximum number of errors</para>
-		/// <para>The maximum number of errors before the process of enabling the network topology will stop, and errors will be recorded in the errors table. The default value is 10000.</para>
-		/// <para>Increasing the maximum number of errors value will increase the length of time to enable the topology. Setting a value higher than the default value of 10000 is not recommended.</para>
+		/// <para>在启用网络拓扑过程停止且错误被记录在错误表中之前显示的最大错误数。默认值为 10000。</para>
+		/// <para>提高最大错误数值的同时将增加启用拓扑所需的时间长度。我们不建议您设置高于默认值 10000 的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -82,9 +83,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Only generate errors</para>
-		/// <para>Specifies whether the topology will be enabled or only network errors will be generated.</para>
-		/// <para>Checked—The utility network will only be evaluated for network errors. The topology will not be enabled. If you are working with an enterprise geodatabase, the data cannot be registered as versioned. This allows you to inspect and fix errors in the network until you are ready to enable the topology.</para>
-		/// <para>Unchecked—The topology will be enabled and any errors that exist will generate dirty areas with errors. This is the default.</para>
+		/// <para>指定启用拓扑还是仅生成网络错误。</para>
+		/// <para>选中 - 将针对网络错误评估公共设施网络。将不会启用拓扑。如果要使用企业级地理数据库，则无法将数据注册为版本。可在您准备启用拓扑前，用于检查并修复网络中的错误。</para>
+		/// <para>未选中 - 将启用拓扑，且存在的任何错误都将生成包含错误的脏区。这是默认设置。</para>
 		/// <para><see cref="OnlyGenerateErrorsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -108,14 +109,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum OnlyGenerateErrorsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The utility network will only be evaluated for network errors. The topology will not be enabled. If you are working with an enterprise geodatabase, the data cannot be registered as versioned. This allows you to inspect and fix errors in the network until you are ready to enable the topology.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ONLY_ERRORS")]
 			ONLY_ERRORS,
 
 			/// <summary>
-			/// <para>Unchecked—The topology will be enabled and any errors that exist will generate dirty areas with errors. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ENABLE_TOPO")]

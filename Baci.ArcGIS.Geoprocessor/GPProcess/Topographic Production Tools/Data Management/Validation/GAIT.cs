@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>GAIT</para>
+	/// <para>GAIT</para>
 	/// <para>Validates data using the Geospatial Analysis Integrity Tool (GAIT), checking geometry, feature codes, attribute values and domains, and metadata.</para>
 	/// </summary>
 	public class GAIT : AbstractGPProcess

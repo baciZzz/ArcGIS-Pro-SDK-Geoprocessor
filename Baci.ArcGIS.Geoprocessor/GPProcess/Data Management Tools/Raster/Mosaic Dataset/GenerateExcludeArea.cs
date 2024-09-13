@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Exclude Area</para>
-	/// <para>Masks pixels based on their color or by clipping a range of values. The output of this tool is used as an input to the Color Balance Mosaic Dataset tool to eliminate areas such as clouds and water that can skew the statistics used to color balance multiple images.</para>
+	/// <para>生成排除区域</para>
+	/// <para>根据像素颜色或通过裁剪值范围进行掩膜。此工具的输出被用作平衡镶嵌数据集色彩工具的输入，用于消除云和水体等能够影响所用统计信息的区域，以便对多个影像进行色彩平衡处理。</para>
 	/// </summary>
 	public class GenerateExcludeArea : AbstractGPProcess
 	{
@@ -20,26 +21,26 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The raster or mosaic dataset layer that you want to mask.</para>
+		/// <para>想要进行掩膜处理的栅格或镶嵌数据集图层。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster Dataset</para>
-		/// <para>The name, location and format for the dataset you are creating. When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset. When storing your raster dataset to a JPEG file, a JPEG 2000 file, or a geodatabase, you can specify a Compression type and Compression Quality within the Environment Settings.</para>
+		/// <para>要创建的数据集的名称、位置和格式。将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。将栅格数据集存储到 JPEG 文件、JPEG 2000 文件或地理数据库时，可在“环境设置”中指定压缩类型和压缩质量。</para>
 		/// </param>
 		/// <param name="PixelType">
 		/// <para>Pixel Type</para>
-		/// <para>Choose the pixel depth of your input raster dataset. 8-bit is the default value; however, raster datasets with a greater bit-depth will need to have the color mask and histogram values scaled accordingly.</para>
-		/// <para>8 bit—The input raster dataset has values from 0 to 255. This is the default.</para>
-		/// <para>11 bit—The input raster dataset has values from 0 to 2047.</para>
-		/// <para>12 bit—The input raster dataset has values from 0 to 4095.</para>
-		/// <para>16 bit—The input raster dataset has values from 0 to 65535.</para>
+		/// <para>选择输入栅格数据集的像素深度。默认设置为 8 位；但较大位深度的栅格数据集需要相应大小的色彩掩膜和直方图值。</para>
+		/// <para>8 位—输入栅格数据集的值介于 0 到 255 之间。这是默认设置。</para>
+		/// <para>11 位—输入栅格数据集的值介于 0 到 2047 之间。</para>
+		/// <para>12 位—输入栅格数据集的值介于 0 到 4095 之间。</para>
+		/// <para>16 位—输入栅格数据集的值介于 0 到 65535 之间。</para>
 		/// <para><see cref="PixelTypeEnum"/></para>
 		/// </param>
 		/// <param name="GenerateMethod">
 		/// <para>Generate Method</para>
-		/// <para>Create your mask based on the color of the pixels or by clipping high and low values.</para>
-		/// <para>Color mask—Set the maximum color values to include in the output. This is the default.</para>
-		/// <para>Histogram percentage—Remove a percentage of high and low pixel values.</para>
+		/// <para>根据像素颜色或通过裁剪高低值创建掩膜。</para>
+		/// <para>色彩掩膜—设置要在输出中包含的最大颜色值。这是默认设置。</para>
+		/// <para>直方图百分比—移除高低像素值的百分比。</para>
 		/// <para><see cref="GenerateMethodEnum"/></para>
 		/// </param>
 		public GenerateExcludeArea(object InRaster, object OutRaster, object PixelType, object GenerateMethod)
@@ -51,9 +52,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Exclude Area</para>
+		/// <para>Tool Display Name : 生成排除区域</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Exclude Area";
+		public override string DisplayName() => "生成排除区域";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateExcludeArea</para>
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The raster or mosaic dataset layer that you want to mask.</para>
+		/// <para>想要进行掩膜处理的栅格或镶嵌数据集图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Raster Dataset</para>
-		/// <para>The name, location and format for the dataset you are creating. When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset. When storing your raster dataset to a JPEG file, a JPEG 2000 file, or a geodatabase, you can specify a Compression type and Compression Quality within the Environment Settings.</para>
+		/// <para>要创建的数据集的名称、位置和格式。将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。将栅格数据集存储到 JPEG 文件、JPEG 2000 文件或地理数据库时，可在“环境设置”中指定压缩类型和压缩质量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -103,11 +104,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pixel Type</para>
-		/// <para>Choose the pixel depth of your input raster dataset. 8-bit is the default value; however, raster datasets with a greater bit-depth will need to have the color mask and histogram values scaled accordingly.</para>
-		/// <para>8 bit—The input raster dataset has values from 0 to 255. This is the default.</para>
-		/// <para>11 bit—The input raster dataset has values from 0 to 2047.</para>
-		/// <para>12 bit—The input raster dataset has values from 0 to 4095.</para>
-		/// <para>16 bit—The input raster dataset has values from 0 to 65535.</para>
+		/// <para>选择输入栅格数据集的像素深度。默认设置为 8 位；但较大位深度的栅格数据集需要相应大小的色彩掩膜和直方图值。</para>
+		/// <para>8 位—输入栅格数据集的值介于 0 到 255 之间。这是默认设置。</para>
+		/// <para>11 位—输入栅格数据集的值介于 0 到 2047 之间。</para>
+		/// <para>12 位—输入栅格数据集的值介于 0 到 4095 之间。</para>
+		/// <para>16 位—输入栅格数据集的值介于 0 到 65535 之间。</para>
 		/// <para><see cref="PixelTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -117,9 +118,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Generate Method</para>
-		/// <para>Create your mask based on the color of the pixels or by clipping high and low values.</para>
-		/// <para>Color mask—Set the maximum color values to include in the output. This is the default.</para>
-		/// <para>Histogram percentage—Remove a percentage of high and low pixel values.</para>
+		/// <para>根据像素颜色或通过裁剪高低值创建掩膜。</para>
+		/// <para>色彩掩膜—设置要在输出中包含的最大颜色值。这是默认设置。</para>
+		/// <para>直方图百分比—移除高低像素值的百分比。</para>
 		/// <para><see cref="GenerateMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -129,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Red</para>
-		/// <para>The maximum red value to exclude. The default is 255.</para>
+		/// <para>要排除的最大红色值。默认值为 255。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -138,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Green</para>
-		/// <para>The maximum green value to exclude. The default is 255.</para>
+		/// <para>要排除的最大绿色值。默认值为 255。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -147,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Blue</para>
-		/// <para>The maximum blue value to exclude. The default is 255.</para>
+		/// <para>要排除的最大蓝色值。默认值为 255。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -156,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum White</para>
-		/// <para>The maximum white value to exclude. The default is 255.</para>
+		/// <para>要排除的最大白色值。默认值为 255。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -165,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Black</para>
-		/// <para>The maximum black value to exclude. The default is 0.</para>
+		/// <para>要排除的最大黑色值。默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -174,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Magenta</para>
-		/// <para>The maximum magenta value to exclude. The default is 255.</para>
+		/// <para>要排除的最大洋红色值。默认值为 255。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -183,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Cyan</para>
-		/// <para>The maximum cyan value to exclude. The default is 255.</para>
+		/// <para>要排除的最大青色值。默认值为 255。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -192,7 +193,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Yellow</para>
-		/// <para>The maximum yellow value to exclude. The default is 255.</para>
+		/// <para>要排除的最大黄色值。默认值为 255。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -201,7 +202,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Low Percentage</para>
-		/// <para>Exclude this percentage of the lowest pixel values. The default is 0.</para>
+		/// <para>排除该最低像素值的百分比。默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -210,7 +211,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>High Percentage</para>
-		/// <para>Exclude this percentage of the highest pixel values. The default is 100.</para>
+		/// <para>排除该最高像素值的百分比。默认值为 100。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -234,31 +235,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PixelTypeEnum 
 		{
 			/// <summary>
-			/// <para>8 bit—The input raster dataset has values from 0 to 255. This is the default.</para>
+			/// <para>8 位—输入栅格数据集的值介于 0 到 255 之间。这是默认设置。</para>
 			/// </summary>
 			[GPValue("8_BIT")]
-			[Description("8 bit")]
+			[Description("8 位")]
 			_8_bit,
 
 			/// <summary>
-			/// <para>11 bit—The input raster dataset has values from 0 to 2047.</para>
+			/// <para>11 位—输入栅格数据集的值介于 0 到 2047 之间。</para>
 			/// </summary>
 			[GPValue("11_BIT")]
-			[Description("11 bit")]
+			[Description("11 位")]
 			_11_bit,
 
 			/// <summary>
-			/// <para>12 bit—The input raster dataset has values from 0 to 4095.</para>
+			/// <para>12 位—输入栅格数据集的值介于 0 到 4095 之间。</para>
 			/// </summary>
 			[GPValue("12_BIT")]
-			[Description("12 bit")]
+			[Description("12 位")]
 			_12_bit,
 
 			/// <summary>
-			/// <para>16 bit—The input raster dataset has values from 0 to 65535.</para>
+			/// <para>16 位—输入栅格数据集的值介于 0 到 65535 之间。</para>
 			/// </summary>
 			[GPValue("16_BIT")]
-			[Description("16 bit")]
+			[Description("16 位")]
 			_16_bit,
 
 		}
@@ -269,17 +270,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum GenerateMethodEnum 
 		{
 			/// <summary>
-			/// <para>Color mask—Set the maximum color values to include in the output. This is the default.</para>
+			/// <para>色彩掩膜—设置要在输出中包含的最大颜色值。这是默认设置。</para>
 			/// </summary>
 			[GPValue("COLOR_MASK")]
-			[Description("Color mask")]
+			[Description("色彩掩膜")]
 			Color_mask,
 
 			/// <summary>
-			/// <para>Histogram percentage—Remove a percentage of high and low pixel values.</para>
+			/// <para>直方图百分比—移除高低像素值的百分比。</para>
 			/// </summary>
 			[GPValue("HISTOGRAM_PERCENTAGE")]
-			[Description("Histogram percentage")]
+			[Description("直方图百分比")]
 			Histogram_percentage,
 
 		}

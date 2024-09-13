@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Smooth Polygon</para>
+	/// <para>Smooth Polygon</para>
 	/// <para>Smoothes a polygon to improve visual quality.</para>
 	/// </summary>
 	[Obsolete()]

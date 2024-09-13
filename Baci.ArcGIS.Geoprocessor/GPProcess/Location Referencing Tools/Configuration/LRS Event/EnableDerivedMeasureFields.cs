@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Enable Derived Measure Fields</para>
+	/// <para>Enable Derived Measure Fields</para>
 	/// <para>Enables fields to store the derived route ID, derived route name, and derived measure fields for the specified LRS event feature class.</para>
 	/// </summary>
 	public class EnableDerivedMeasureFields : AbstractGPProcess

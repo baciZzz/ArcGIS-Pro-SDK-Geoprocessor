@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Sort Coded Value Domain</para>
-	/// <para>Sorts the code or description of a coded value domain in either ascending or descending order.</para>
+	/// <para>排序编码值属性域</para>
+	/// <para>以升序或降序方式排列编码值属性域的编码或描述。</para>
 	/// </summary>
 	public class SortCodedValueDomain : AbstractGPProcess
 	{
@@ -20,24 +21,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Input Workspace</para>
-		/// <para>The geodatabase containing the domain to be sorted.</para>
+		/// <para>包含要排序的属性域的地理数据库。</para>
 		/// </param>
 		/// <param name="DomainName">
 		/// <para>Domain Name</para>
-		/// <para>The name of the coded value domain to be sorted.</para>
+		/// <para>要排序的编码值属性域的名称。</para>
 		/// </param>
 		/// <param name="SortBy">
 		/// <para>Sort By</para>
-		/// <para>Specifies whether the code or description will be used to sort the domain.</para>
-		/// <para>Code—Records are sorted based on the code value for the domain.</para>
-		/// <para>Description—Records are sorted based on the description value for the domain.</para>
+		/// <para>指定是使用编码还是描述排序属性域。</para>
+		/// <para>代码—根据属性域的编码值对记录进行排序。</para>
+		/// <para>描述—根据属性域的描述值对记录进行排序。</para>
 		/// <para><see cref="SortByEnum"/></para>
 		/// </param>
 		/// <param name="SortOrder">
 		/// <para>Sort Order</para>
-		/// <para>Specifies the direction the records will be sorted.</para>
-		/// <para>Ascending—Records are sorted from low value to high value.</para>
-		/// <para>Descending—Records are sorted from high value to low value.</para>
+		/// <para>指定记录排序方向。</para>
+		/// <para>升序—按照值从低到高的顺序对记录进行排序。</para>
+		/// <para>降序—按照值从高到低的顺序对记录进行排序。</para>
 		/// <para><see cref="SortOrderEnum"/></para>
 		/// </param>
 		public SortCodedValueDomain(object InWorkspace, object DomainName, object SortBy, object SortOrder)
@@ -49,9 +50,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Sort Coded Value Domain</para>
+		/// <para>Tool Display Name : 排序编码值属性域</para>
 		/// </summary>
-		public override string DisplayName() => "Sort Coded Value Domain";
+		public override string DisplayName() => "排序编码值属性域";
 
 		/// <summary>
 		/// <para>Tool Name : SortCodedValueDomain</para>
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>The geodatabase containing the domain to be sorted.</para>
+		/// <para>包含要排序的属性域的地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Domain Name</para>
-		/// <para>The name of the coded value domain to be sorted.</para>
+		/// <para>要排序的编码值属性域的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -103,9 +104,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Sort By</para>
-		/// <para>Specifies whether the code or description will be used to sort the domain.</para>
-		/// <para>Code—Records are sorted based on the code value for the domain.</para>
-		/// <para>Description—Records are sorted based on the description value for the domain.</para>
+		/// <para>指定是使用编码还是描述排序属性域。</para>
+		/// <para>代码—根据属性域的编码值对记录进行排序。</para>
+		/// <para>描述—根据属性域的描述值对记录进行排序。</para>
 		/// <para><see cref="SortByEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -115,9 +116,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Sort Order</para>
-		/// <para>Specifies the direction the records will be sorted.</para>
-		/// <para>Ascending—Records are sorted from low value to high value.</para>
-		/// <para>Descending—Records are sorted from high value to low value.</para>
+		/// <para>指定记录排序方向。</para>
+		/// <para>升序—按照值从低到高的顺序对记录进行排序。</para>
+		/// <para>降序—按照值从高到低的顺序对记录进行排序。</para>
 		/// <para><see cref="SortOrderEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -149,17 +150,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SortByEnum 
 		{
 			/// <summary>
-			/// <para>Code—Records are sorted based on the code value for the domain.</para>
+			/// <para>代码—根据属性域的编码值对记录进行排序。</para>
 			/// </summary>
 			[GPValue("CODE")]
-			[Description("Code")]
+			[Description("代码")]
 			Code,
 
 			/// <summary>
-			/// <para>Description—Records are sorted based on the description value for the domain.</para>
+			/// <para>描述—根据属性域的描述值对记录进行排序。</para>
 			/// </summary>
 			[GPValue("DESCRIPTION")]
-			[Description("Description")]
+			[Description("描述")]
 			Description,
 
 		}
@@ -170,17 +171,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SortOrderEnum 
 		{
 			/// <summary>
-			/// <para>Ascending—Records are sorted from low value to high value.</para>
+			/// <para>升序—按照值从低到高的顺序对记录进行排序。</para>
 			/// </summary>
 			[GPValue("ASCENDING")]
-			[Description("Ascending")]
+			[Description("升序")]
 			Ascending,
 
 			/// <summary>
-			/// <para>Descending—Records are sorted from high value to low value.</para>
+			/// <para>降序—按照值从高到低的顺序对记录进行排序。</para>
 			/// </summary>
 			[GPValue("DESCENDING")]
-			[Description("Descending")]
+			[Description("降序")]
 			Descending,
 
 		}

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Generate Calibration Points</para>
+	/// <para>Generate Calibration Points</para>
 	/// <para>Generates calibration points for any route shape provided, including  complex shapes such as self-closing, self-intersecting, and branched routes.</para>
 	/// </summary>
 	public class GenerateCalibrationPoints : AbstractGPProcess

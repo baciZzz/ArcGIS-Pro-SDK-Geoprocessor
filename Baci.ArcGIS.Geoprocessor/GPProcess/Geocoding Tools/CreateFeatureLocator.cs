@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Create Feature Locator</para>
-	/// <para>Creates a locator using reference data that contains a unique name or value for every feature stored in a single field. A locator created with this tool has broad applications. It can be used to search for names or unique attributes of your features, such as water meters, short place names, cell towers, or alphanumeric strings used to identify locations (for example, N1N115).</para>
+	/// <para>创建要素定位器</para>
+	/// <para>使用参考数据创建定位器，该参考数据包含在单个字段中存储的每个要素的唯一名称或值。 使用此工具创建的定位器具有广泛的应用。 可使用该定位器搜索要素的名称或唯一属性，例如水表、地名简称、手机信号塔或用于标识位置的字母数字字符串（例如，N1N115）。</para>
 	/// </summary>
 	public class CreateFeatureLocator : AbstractGPProcess
 	{
@@ -20,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The reference data feature class or feature layer that will be used to create the locator.</para>
-		/// <para>Feature classes represented as services are supported data types for use as reference data.</para>
-		/// <para>When a definition query is defined for the reference data or there are selected features, only the queried and selected features are included when the locator is created.</para>
-		/// <para>When creating a locator with reference data that contains millions of features, you must have at least three to four times the size of the data in free disk space on the drive containing your temp directory, as files used to build the locator are written to this location before the locator is copied to the output location. If you do not have enough disk space, the tool will fail when it runs out of space. Also, when creating large locators, your machine must have enough RAM to handle large memory-intensive processes.</para>
+		/// <para>将用于创建定位器的参考数据要素类或要素图层。</para>
+		/// <para>支持将表示为服务的要素类数据类型用作参考数据。</para>
+		/// <para>如果为参考数据定义了定义查询或存在选定要素，则在创建定位器时，仅包含查询要素和所选要素。</para>
+		/// <para>如果使用包含数百万个要素的参考数据创建地址定位器，则包含临时目录的驱动上的可用磁盘空间必须至少为数据大小的 3 到 4 倍，原因是在将定位器复制到输出位置之前，需将用于构建定位器的文件写入此位置。 如果没有足够的磁盘空间，则一旦空间不足，工具将失败。 此外，在创建大型定位器时，计算机必须具备足够的 RAM，才能处理占用较大内存的进程。</para>
 		/// </param>
 		/// <param name="SearchFields">
 		/// <para>Search Fields</para>
-		/// <para>Maps the reference data field to the field used for search in the Input Features parameter. Fields with an asterisk (*) next to their names are required. The selected field will be indexed and used for search.</para>
+		/// <para>将参考数据字段映射到用于搜索输入要素参数的字段。 名称旁带有星号 (*) 的字段为必填字段。 所选字段将编入索引并用于搜索。</para>
 		/// </param>
 		/// <param name="OutputLocator">
 		/// <para>Output Locator</para>
-		/// <para>The output locator file to be created in a file folder. Once the locator is created, additional properties and options can be modified in the locator's settings.</para>
+		/// <para>要在文件夹中创建的输出定位器文件。 创建定位器后，可以在定位器设置中修改其他属性和选项。</para>
 		/// </param>
 		public CreateFeatureLocator(object InFeatures, object SearchFields, object OutputLocator)
 		{
@@ -41,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Feature Locator</para>
+		/// <para>Tool Display Name : 创建要素定位器</para>
 		/// </summary>
-		public override string DisplayName() => "Create Feature Locator";
+		public override string DisplayName() => "创建要素定位器";
 
 		/// <summary>
 		/// <para>Tool Name : CreateFeatureLocator</para>
@@ -77,10 +78,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The reference data feature class or feature layer that will be used to create the locator.</para>
-		/// <para>Feature classes represented as services are supported data types for use as reference data.</para>
-		/// <para>When a definition query is defined for the reference data or there are selected features, only the queried and selected features are included when the locator is created.</para>
-		/// <para>When creating a locator with reference data that contains millions of features, you must have at least three to four times the size of the data in free disk space on the drive containing your temp directory, as files used to build the locator are written to this location before the locator is copied to the output location. If you do not have enough disk space, the tool will fail when it runs out of space. Also, when creating large locators, your machine must have enough RAM to handle large memory-intensive processes.</para>
+		/// <para>将用于创建定位器的参考数据要素类或要素图层。</para>
+		/// <para>支持将表示为服务的要素类数据类型用作参考数据。</para>
+		/// <para>如果为参考数据定义了定义查询或存在选定要素，则在创建定位器时，仅包含查询要素和所选要素。</para>
+		/// <para>如果使用包含数百万个要素的参考数据创建地址定位器，则包含临时目录的驱动上的可用磁盘空间必须至少为数据大小的 3 到 4 倍，原因是在将定位器复制到输出位置之前，需将用于构建定位器的文件写入此位置。 如果没有足够的磁盘空间，则一旦空间不足，工具将失败。 此外，在创建大型定位器时，计算机必须具备足够的 RAM，才能处理占用较大内存的进程。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Search Fields</para>
-		/// <para>Maps the reference data field to the field used for search in the Input Features parameter. Fields with an asterisk (*) next to their names are required. The selected field will be indexed and used for search.</para>
+		/// <para>将参考数据字段映射到用于搜索输入要素参数的字段。 名称旁带有星号 (*) 的字段为必填字段。 所选字段将编入索引并用于搜索。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFieldInfo()]
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Output Locator</para>
-		/// <para>The output locator file to be created in a file folder. Once the locator is created, additional properties and options can be modified in the locator's settings.</para>
+		/// <para>要在文件夹中创建的输出定位器文件。 创建定位器后，可以在定位器设置中修改其他属性和选项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEAddressLocator()]
@@ -105,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Additional Locator Fields</para>
-		/// <para>Maps additional fields for extent and rank if they exist in the data. The Rank field is used to sort results for ambiguous queries or candidates with the same name and score. The extent fields help set the map extent for displaying geocoded results.</para>
+		/// <para>映射范围和等级的附加字段（如果数据中存在）。 Rank 字段用于对模糊不清的查询的结果或具有相同名称和分数的候选项进行排序。 范围字段有助于设置地图范围以显示经过地理编码的结果。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFieldInfo()]

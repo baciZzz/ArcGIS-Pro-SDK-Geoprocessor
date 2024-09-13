@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Rescale by Function</para>
-	/// <para>Rescales the input raster values by applying a selected transformation function and transforming the resulting values onto a specified continuous evaluation scale.</para>
+	/// <para>按函数重设等级</para>
+	/// <para>重设输入栅格值的等级，方法为应用所选变换函数，然后将结果值变换为指定的连续评估等级。</para>
 	/// </summary>
 	public class RescaleByFunction : AbstractGPProcess
 	{
@@ -20,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster to rescale.</para>
+		/// <para>要重设等级的输入栅格。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output rescaled raster.</para>
-		/// <para>The output will be a floating-point raster with values ranging from (or within) the From scale and the To scale evaluation values.</para>
+		/// <para>输出的已重设等级的栅格。</para>
+		/// <para>将输出浮点型栅格，其值的范围为自等级评估值到至等级评估值（或在两者之内）。</para>
 		/// </param>
 		public RescaleByFunction(object InRaster, object OutRaster)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Rescale by Function</para>
+		/// <para>Tool Display Name : 按函数重设等级</para>
 		/// </summary>
-		public override string DisplayName() => "Rescale by Function";
+		public override string DisplayName() => "按函数重设等级";
 
 		/// <summary>
 		/// <para>Tool Name : RescaleByFunction</para>
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster to rescale.</para>
+		/// <para>要重设等级的输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -82,8 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output rescaled raster.</para>
-		/// <para>The output will be a floating-point raster with values ranging from (or within) the From scale and the To scale evaluation values.</para>
+		/// <para>输出的已重设等级的栅格。</para>
+		/// <para>将输出浮点型栅格，其值的范围为自等级评估值到至等级评估值（或在两者之内）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -91,102 +92,102 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Transformation function</para>
-		/// <para>Specifies the continuous function to transform the values from the input raster.</para>
-		/// <para>The transformation functions are used to specify the function to rescale the input data. A general description of each function and the default values for the functions are detailed in the table below.</para>
-		/// <para>Exponential—Rescale input values using an exponential function.Use when the preference increases with an increase in the input values and the preference increases more rapidly as the input values become larger.</para>
-		/// <para>Input shift—The default is derived from the input raster.</para>
-		/// <para>Base factor—The default is derived from the input raster.</para>
-		/// <para>Lower threshold—The default is the minimum of the input raster.</para>
-		/// <para>Value below threshold—The default is the From scale value.</para>
-		/// <para>Upper threshold—The default is the maximum of the input raster.</para>
-		/// <para>Value above threshold—The default is the To scale value.</para>
-		/// <para>Gaussian—Rescale input values using a Gaussian function.The midpoint of the normal distribution defines the most preferred value and is generally assigned to the To scale. Preference values decrease as the values move from the midpoint until eventually reaching the least preference with the lowest and highest input values generally being assigned to the From scale.</para>
-		/// <para>Midpoint—The default is derived from the input raster.</para>
-		/// <para>Spread—The default is derived from the input raster.</para>
-		/// <para>Lower threshold—The default is the minimum of the input raster.</para>
-		/// <para>Value below threshold—The default is the From scale value.</para>
-		/// <para>Upper threshold—The default is the maximum of the input raster.</para>
-		/// <para>Value above threshold—The default is the To scale value.</para>
-		/// <para>Large—Used to indicate that the larger values from the input raster have higher preference.The midpoint identifies the crossover point with input values greater than the midpoint having increasing preference and values below having decreasing preference.</para>
-		/// <para>Midpoint—The default is derived from the input raster.</para>
-		/// <para>Spread—The default is 5.</para>
-		/// <para>Lower threshold—The default is the minimum of the input raster.</para>
-		/// <para>Value below threshold—The default is the From scale value.</para>
-		/// <para>Upper threshold—The default is the maximum of the input raster.</para>
-		/// <para>Value above threshold—The default is the To scale value.</para>
-		/// <para>Linear—Rescale the input values using a linear function.When the minimum is less than the maximum the larger values are more preferred.</para>
-		/// <para>Minimum—The default is the minimum of the input raster.</para>
-		/// <para>Maximum—The default is the maximum of the input raster.</para>
-		/// <para>Lower threshold—The default is the minimum of the input raster.</para>
-		/// <para>Value below threshold—The default is the From scale value.</para>
-		/// <para>Upper threshold—The default is the maximum of the input raster.</para>
-		/// <para>Value above threshold—The default is the To scale value.</para>
-		/// <para>Logarithm—Rescale input data using a logarithm function.Used when the preference for the lower input values increases rapidly. As the input values increase, the preference tapers off, with a further increase in the input values.</para>
-		/// <para>Input shift—The default is derived from the input raster.</para>
-		/// <para>Factor—The default is derived from the input raster.</para>
-		/// <para>Lower threshold—The default is the minimum of the input raster.</para>
-		/// <para>Value below threshold—The default is the From scale value.</para>
-		/// <para>Upper threshold—The default is the maximum of the input raster.</para>
-		/// <para>Value above threshold—The default is the To scale value.</para>
-		/// <para>LogisticDecay—Rescale input data using a logistic decay function.Used when small input values are most preferred. As the values increase, the preferences rapidly decrease, until the preferences taper off at the larger input values.</para>
-		/// <para>Minimum—The default is the minimum of the input raster.</para>
-		/// <para>Maximum—The default is the maximum of the input raster.</para>
-		/// <para>Y intercept percent—The default is 99.0.</para>
-		/// <para>Lower threshold—The default is the minimum of the input raster.</para>
-		/// <para>Value below threshold—The default is the From scale value.</para>
-		/// <para>Upper threshold—The default is the maximum of the input raster.</para>
-		/// <para>Value above threshold—The default is the To scale value.</para>
-		/// <para>LogisticGrowth—Rescale input data using a logistic growth function.Used when small input values are least preferred. As the values increase, the preferences rapidly increase, until the preferences taper off at the larger input values.</para>
-		/// <para>Minimum—The default is the minimum of the input raster.</para>
-		/// <para>Maximum—The default is the maximum of the input raster.</para>
-		/// <para>Y intercept percent—The default is 1.0.</para>
-		/// <para>Lower threshold—The default is the minimum of the input raster.</para>
-		/// <para>Value below threshold—The default is the From scale value.</para>
-		/// <para>Upper threshold—The default is the maximum of the input raster.</para>
-		/// <para>Value above threshold—The default is the To scale value.</para>
-		/// <para>MSLarge—Rescale input data based on the mean and standard deviation, where larger values in the input raster have higher preference.The result can be similar to the Large function, depending on how the multipliers of the mean and standard deviation are defined.</para>
-		/// <para>Mean multiplier—The default is 1.</para>
-		/// <para>Standard deviation multiplier—The default is 1.</para>
-		/// <para>Lower threshold—The default is the minimum of the input raster.</para>
-		/// <para>Value below threshold—The default is the From scale value.</para>
-		/// <para>Upper threshold—The default is the maximum of the input raster.</para>
-		/// <para>Value above threshold—The default is the To scale value.</para>
-		/// <para>MSSmall—Rescale input data based on the mean and standard deviation, where smaller values in the input raster have higher preference.The result can be similar to the Small function, depending on how the multipliers of the mean and standard deviation are defined.</para>
-		/// <para>Mean multiplier—The default is 1.</para>
-		/// <para>Standard deviation multiplier—The default is 1.</para>
-		/// <para>Lower threshold—The default is the minimum of the input raster.</para>
-		/// <para>Value below threshold—The default is the From scale value.</para>
-		/// <para>Upper threshold—The default is the maximum of the input raster.</para>
-		/// <para>Value above threshold—The default is the To scale value.</para>
-		/// <para>Near—Use when the input values very close to the midpoint are preferred.Near is similar to the Gaussian function but decreases at a faster rate.</para>
-		/// <para>Midpoint—The default is derived from the input raster.</para>
-		/// <para>Spread—The default is derived from the input raster.</para>
-		/// <para>Lower threshold—The default is the minimum of the input raster.</para>
-		/// <para>Value below threshold—The default is the From scale value.</para>
-		/// <para>Upper threshold—The default is the maximum of the input raster.</para>
-		/// <para>Value above threshold—The default is the To scale value.</para>
-		/// <para>Power—Rescale the input data, applying a power function using a specified exponent.Use when the preference for the input values increases rapidly, with an increase in the input values.</para>
-		/// <para>Input shift—The default is derived from the input raster.</para>
-		/// <para>Exponent—The default is derived from the input raster.</para>
-		/// <para>Lower threshold—The default is the minimum of the input raster.</para>
-		/// <para>Value below threshold—The default is the From scale value.</para>
-		/// <para>Upper threshold—The default is the maximum of the input raster.</para>
-		/// <para>Value above threshold—The default is the To scale value.</para>
-		/// <para>Small—Use to indicate that the smaller values from the input raster have higher preference.The midpoint identifies the crossover point, with input values below the midpoint having increasing preference, and values that are greater having decreasing preference.</para>
-		/// <para>Midpoint—The default is derived from the input raster.</para>
-		/// <para>Spread—The default is 5.</para>
-		/// <para>Lower threshold—The default is the minimum of the input raster.</para>
-		/// <para>Value below threshold—The default is the From scale value.</para>
-		/// <para>Upper threshold—The default is the maximum of the input raster.</para>
-		/// <para>Value above threshold—The default is the To scale value.</para>
-		/// <para>SymmetricLinear—Rescale input data by mirroring a linear function around the midpoint of the minimum and maximum.Use when a particular input value is the most preferred, with the preferences decreasing linearly as the input values move from the mirrored point.</para>
-		/// <para>Minimum—The default is the minimum of the input raster.</para>
-		/// <para>Maximum—The default is the maximum of the input raster.</para>
-		/// <para>Lower threshold—The default is the minimum of the input raster.</para>
-		/// <para>Value below threshold—The default is the From scale value.</para>
-		/// <para>Upper threshold—The default is the maximum of the input raster.</para>
-		/// <para>Value above threshold—The default is the To scale value.</para>
-		/// <para>The default transformation is MS Small.</para>
+		/// <para>指定连续函数以变换输入栅格中的值。</para>
+		/// <para>变换函数用于指定重设输入数据等级的函数。下表中详细列出了各个函数的常规描述和默认值。</para>
+		/// <para>Exponential—使用指数函数重设输入值的等级。适用情况：优先级随输入值的增加而增加，并且优先级的增加速度因输入值增大而加快。</para>
+		/// <para>输入平移 - 默认值从输入栅格中获取。</para>
+		/// <para>基础系数 - 默认值从输入栅格中获取。</para>
+		/// <para>阈值下限 - 默认值为输入栅格的最小值。</para>
+		/// <para>小于阈值的值 - 默认值为自比例值。</para>
+		/// <para>阈值上限 - 默认值为输入栅格的最大值。</para>
+		/// <para>大于阈值的值 - 默认值为至比例值。</para>
+		/// <para>Gaussian—使用高斯函数重设输入值的等级。正态分布的中点将定义优先级最高的值，该中点通常指定为至等级。由于最低和最高输入值通常会指定为自等级，因此优先级的值将随着输入值逐渐远离中点而降低，最终达到最低优先级。</para>
+		/// <para>中点 - 默认值从输入栅格中获取。</para>
+		/// <para>散度 - 默认值从输入栅格中获取。</para>
+		/// <para>阈值下限 - 默认值为输入栅格的最小值。</para>
+		/// <para>小于阈值的值 - 默认值为自比例值。</para>
+		/// <para>阈值上限 - 默认值为输入栅格的最大值。</para>
+		/// <para>大于阈值的值 - 默认值为至比例值。</para>
+		/// <para>Large—用于指示输入栅格值越大优先级越高。中点确定交叉点，大于中点的输入值的优先级将逐渐增高，而小于中点的输入值的优先级将逐渐降低。</para>
+		/// <para>中点 - 默认值从输入栅格中获取。</para>
+		/// <para>散度 - 默认值是 5。</para>
+		/// <para>阈值下限 - 默认值为输入栅格的最小值。</para>
+		/// <para>小于阈值的值 - 默认值为自比例值。</para>
+		/// <para>阈值上限 - 默认值为输入栅格的最大值。</para>
+		/// <para>大于阈值的值 - 默认值为至比例值。</para>
+		/// <para>Linear—使用线性函数重设输入值的等级。如果最小值小于最大值，则值越大优先级越高。</para>
+		/// <para>最小值 - 默认值为输入栅格的最小值。</para>
+		/// <para>最大值 - 默认值为输入栅格的最大值。</para>
+		/// <para>阈值下限 - 默认值为输入栅格的最小值。</para>
+		/// <para>小于阈值的值 - 默认值为自比例值。</para>
+		/// <para>阈值上限 - 默认值为输入栅格的最大值。</para>
+		/// <para>大于阈值的值 - 默认值为至比例值。</para>
+		/// <para>Logarithm—使用对数函数重设输入数据的等级。适用于较低输入值的优先级快速增高的情况。随着输入值的增加，其优先级会提高，而提高速度将随着输入值的进一步增加而放缓。</para>
+		/// <para>输入平移 - 默认值从输入栅格中获取。</para>
+		/// <para>系数 - 默认值从输入栅格中获取。</para>
+		/// <para>阈值下限 - 默认值为输入栅格的最小值。</para>
+		/// <para>小于阈值的值 - 默认值为自比例值。</para>
+		/// <para>阈值上限 - 默认值为输入栅格的最大值。</para>
+		/// <para>大于阈值的值 - 默认值为至比例值。</para>
+		/// <para>LogisticDecay—使用逻辑衰减函数重设输入数据的等级。适用情况：小输入值的优先级最高，并且 随着输入值的增加，其优先级将快速降低，降低速度会在达到较大输入值时放缓。</para>
+		/// <para>最小值 - 默认值为输入栅格的最小值。</para>
+		/// <para>最大值 - 默认值为输入栅格的最大值。</para>
+		/// <para>Y 截距百分比 - 默认值为 99.0。</para>
+		/// <para>阈值下限 - 默认值为输入栅格的最小值。</para>
+		/// <para>小于阈值的值 - 默认值为自比例值。</para>
+		/// <para>阈值上限 - 默认值为输入栅格的最大值。</para>
+		/// <para>大于阈值的值 - 默认值为至比例值。</para>
+		/// <para>LogisticGrowth—使用逻辑增长函数重设输入数据的等级。适用于小输入值具有最低优先级的情况。随着输入值的增加，其优先级将快速提高，提高速度在达到较大输入值时放缓。</para>
+		/// <para>最小值 - 默认值为输入栅格的最小值。</para>
+		/// <para>最大值 - 默认值为输入栅格的最大值。</para>
+		/// <para>Y 截距百分比 - 默认值为 1.0。</para>
+		/// <para>阈值下限 - 默认值为输入栅格的最小值。</para>
+		/// <para>小于阈值的值 - 默认值为自比例值。</para>
+		/// <para>阈值上限 - 默认值为输入栅格的最大值。</para>
+		/// <para>大于阈值的值 - 默认值为至比例值。</para>
+		/// <para>MSLarge—在输入栅格值越大优先级越高的情况下，基于平均值和标准差重设输入数据的等级。计算结果可能与“大值”函数类似，具体取决于如何定义平均值和标准差的乘数。</para>
+		/// <para>平均值乘数 - 默认值是 1。</para>
+		/// <para>标准差乘数 - 默认值是 1。</para>
+		/// <para>阈值下限 - 默认值为输入栅格的最小值。</para>
+		/// <para>小于阈值的值 - 默认值为自比例值。</para>
+		/// <para>阈值上限 - 默认值为输入栅格的最大值。</para>
+		/// <para>大于阈值的值 - 默认值为至比例值。</para>
+		/// <para>MSSmall—在输入栅格值越小优先级越高的情况下，基于平均值和标准差重设输入数据的等级。计算结果可能与“小值”函数类似，具体取决于如何定义平均值和标准差的乘数。</para>
+		/// <para>平均值乘数 - 默认值是 1。</para>
+		/// <para>标准差乘数 - 默认值是 1。</para>
+		/// <para>阈值下限 - 默认值为输入栅格的最小值。</para>
+		/// <para>小于阈值的值 - 默认值为自比例值。</para>
+		/// <para>阈值上限 - 默认值为输入栅格的最大值。</para>
+		/// <para>大于阈值的值 - 默认值为至比例值。</para>
+		/// <para>Near—适用情况：输入值非常接近中点时优先级较高。邻近函数与高斯函数类似，但是降低速度更快。</para>
+		/// <para>中点 - 默认值从输入栅格中获取。</para>
+		/// <para>散度 - 默认值从输入栅格中获取。</para>
+		/// <para>阈值下限 - 默认值为输入栅格的最小值。</para>
+		/// <para>小于阈值的值 - 默认值为自比例值。</para>
+		/// <para>阈值上限 - 默认值为输入栅格的最大值。</para>
+		/// <para>大于阈值的值 - 默认值为至比例值。</para>
+		/// <para>Power—通过使用指定指数的幂函数重设输入数据的等级。适用情况：输入值的优先级随输入值的增加而快速增加。</para>
+		/// <para>输入平移 - 默认值从输入栅格中获取。</para>
+		/// <para>指数 - 默认值从输入栅格中获取。</para>
+		/// <para>阈值下限 - 默认值为输入栅格的最小值。</para>
+		/// <para>小于阈值的值 - 默认值为自比例值。</para>
+		/// <para>阈值上限 - 默认值为输入栅格的最大值。</para>
+		/// <para>大于阈值的值 - 默认值为至比例值。</para>
+		/// <para>Small—用于指示较小的输入栅格值具有较高优先级。中点确定交叉点，小于中点的输入值的优先级将逐渐增高，而大于中点的输入值的优先级将逐渐降低。</para>
+		/// <para>中点 - 默认值从输入栅格中获取。</para>
+		/// <para>散度 - 默认值是 5。</para>
+		/// <para>阈值下限 - 默认值为输入栅格的最小值。</para>
+		/// <para>小于阈值的值 - 默认值为自比例值。</para>
+		/// <para>阈值上限 - 默认值为输入栅格的最大值。</para>
+		/// <para>大于阈值的值 - 默认值为至比例值。</para>
+		/// <para>SymmetricLinear—通过在最小值和最大值的中点周围对线性函数进行镜像处理来重设输入数据的等级。适用情况：某个特定输入值的优先级最高，且优先级随着输入值远离该点而以线性方式降低。</para>
+		/// <para>最小值 - 默认值为输入栅格的最小值。</para>
+		/// <para>最大值 - 默认值为输入栅格的最大值。</para>
+		/// <para>阈值下限 - 默认值为输入栅格的最小值。</para>
+		/// <para>小于阈值的值 - 默认值为自比例值。</para>
+		/// <para>阈值上限 - 默认值为输入栅格的最大值。</para>
+		/// <para>大于阈值的值 - 默认值为至比例值。</para>
+		/// <para>默认变换为 MS 小值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSATransformationFunction()]
@@ -194,10 +195,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>From scale</para>
-		/// <para>The starting value of the output evaluation scale.</para>
-		/// <para>The From scale value cannot be equal to the To scale value. The From scale can be lower or higher than the To scale (for example, from 1 to 10, or from 10 to 1).</para>
-		/// <para>The value must be positive and it can be either an integer or double.</para>
-		/// <para>The default is 1.</para>
+		/// <para>输出评估等级的起始值。</para>
+		/// <para>自等级的值不能等于至等级的值。自等级的值可以低于或高于至等级的值（例如，等级范围可以从 1 至 10 或从 10 至 1）。</para>
+		/// <para>该值必须为正，且可以是整型值或双精度值。</para>
+		/// <para>默认值为 1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -207,10 +208,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>To scale</para>
-		/// <para>The ending value of the output evaluation scale.</para>
-		/// <para>The To scale value cannot be equal to the From scale value. The To scale can be lower or higher than the From scale (for example, from 1 to 10, or from 10 to 1).</para>
-		/// <para>The value must be positive and it can be either an integer or double.</para>
-		/// <para>The default is 10.</para>
+		/// <para>输出评估等级的结束值。</para>
+		/// <para>至等级的值不能等于自等级的值。至等级的值可以低于或高于自等级的值（例如，等级范围可以从 1 至 10 或从 10 至 1）。</para>
+		/// <para>该值必须为正，且可以是整型值或双精度值。</para>
+		/// <para>默认值为 10。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

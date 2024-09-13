@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Modify LRS Network</para>
+	/// <para>Modify LRS Network</para>
 	/// <para>Modifies an LRS Network in a Location Referencing linear referencing system (LRS).</para>
 	/// </summary>
 	public class ModifyLRSNetwork : AbstractGPProcess

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Adjust 3D Z</para>
-	/// <para>Modifies z-values of 3D features.</para>
+	/// <para>调整 3D Z 值</para>
+	/// <para>修改 3D 要素的 z 值。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The 3D features with the z-values that will be modified.</para>
+		/// <para>z 值将被修改的 3D 要素。</para>
 		/// </param>
 		public Adjust3DZ(object InFeatures)
 		{
@@ -30,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Adjust 3D Z</para>
+		/// <para>Tool Display Name : 调整 3D Z 值</para>
 		/// </summary>
-		public override string DisplayName() => "Adjust 3D Z";
+		public override string DisplayName() => "调整 3D Z 值";
 
 		/// <summary>
 		/// <para>Tool Name : Adjust3DZ</para>
@@ -66,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The 3D features with the z-values that will be modified.</para>
+		/// <para>z 值将被修改的 3D 要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -74,9 +75,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Reverse Sign of Z Values</para>
-		/// <para>Specifies whether features will be inverted along the z-axis.</para>
-		/// <para>Reverse Z Orientation—The sign of z-values will be inverted causing the feature to flip upside down.</para>
-		/// <para>Maintain Z Orientation—The sign of z-values will not be inverted; it will be maintained. This is the default.</para>
+		/// <para>指定要素是否沿 z 轴反转。</para>
+		/// <para>反转 Z 方向—反转 z 值符号将导致要素上下翻转。</para>
+		/// <para>保持 Z 方向—z 值符号不会被翻转，其将保持不变。 这是默认设置。</para>
 		/// <para><see cref="ReverseSignEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -86,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Adjust Z Value</para>
-		/// <para>A numeric value or field from the input features that will be used to adjust the z of each vertex in the input features. A positive value will shift the feature higher, while a negative number will shift it lower along the z-axis.</para>
+		/// <para>可用输入要素中的数值或字段来调整输入要素中每个折点的 z 值。 正值可使要素沿 z 轴向较高的位置移动，而负数将使要素沿 z 轴向较低的位置移动。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -95,14 +96,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Convert From Units</para>
-		/// <para>Specifies the existing units of the z-values. This parameter is used in conjunction with the Convert To Units parameter.</para>
-		/// <para>Millimeters—The units will be millimeters.</para>
-		/// <para>Centimeters—The units will be centimeters.</para>
-		/// <para>Meters—The units will be meters.</para>
-		/// <para>Inches—The units will be inches.</para>
-		/// <para>Feet—The units will be feet.</para>
-		/// <para>Yards—The units will be yards.</para>
-		/// <para>Fathoms—The units will be fathoms.</para>
+		/// <para>指定现有的 z 值单位。 此参数与转换至单位参数结合使用。</para>
+		/// <para>毫米—将以毫米为单位。</para>
+		/// <para>厘米—将以厘米为单位。</para>
+		/// <para>米—单位将为米。</para>
+		/// <para>英寸—将以英寸为单位。</para>
+		/// <para>英尺—单位将为英尺。</para>
+		/// <para>码—将以码为单位。</para>
+		/// <para>英寻—将以英寻为单位。</para>
 		/// <para><see cref="FromUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -112,14 +113,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Convert To Units</para>
-		/// <para>Specifies the units that existing z-values will be converted to.</para>
-		/// <para>Millimeters—The units will be millimeters.</para>
-		/// <para>Centimeters—The units will be centimeters.</para>
-		/// <para>Meters—The units will be meters.</para>
-		/// <para>Inches—The units will be inches.</para>
-		/// <para>Feet—The units will be feet.</para>
-		/// <para>Yards—The units will be yards.</para>
-		/// <para>Fathoms—The units will be fathoms.</para>
+		/// <para>指定现有 z 值将转换成的单位。</para>
+		/// <para>毫米—将以毫米为单位。</para>
+		/// <para>厘米—将以厘米为单位。</para>
+		/// <para>米—单位将为米。</para>
+		/// <para>英寸—将以英寸为单位。</para>
+		/// <para>英尺—单位将为英尺。</para>
+		/// <para>码—将以码为单位。</para>
+		/// <para>英寻—将以英寻为单位。</para>
 		/// <para><see cref="ToUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -151,17 +152,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ReverseSignEnum 
 		{
 			/// <summary>
-			/// <para>Maintain Z Orientation—The sign of z-values will not be inverted; it will be maintained. This is the default.</para>
+			/// <para>保持 Z 方向—z 值符号不会被翻转，其将保持不变。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("NO_REVERSE")]
-			[Description("Maintain Z Orientation")]
+			[Description("保持 Z 方向")]
 			Maintain_Z_Orientation,
 
 			/// <summary>
-			/// <para>Reverse Z Orientation—The sign of z-values will be inverted causing the feature to flip upside down.</para>
+			/// <para>反转 Z 方向—反转 z 值符号将导致要素上下翻转。</para>
 			/// </summary>
 			[GPValue("REVERSE")]
-			[Description("Reverse Z Orientation")]
+			[Description("反转 Z 方向")]
 			Reverse_Z_Orientation,
 
 		}
@@ -172,52 +173,52 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FromUnitsEnum 
 		{
 			/// <summary>
-			/// <para>Millimeters—The units will be millimeters.</para>
+			/// <para>毫米—将以毫米为单位。</para>
 			/// </summary>
 			[GPValue("MILLIMETERS")]
-			[Description("Millimeters")]
+			[Description("毫米")]
 			Millimeters,
 
 			/// <summary>
-			/// <para>Centimeters—The units will be centimeters.</para>
+			/// <para>厘米—将以厘米为单位。</para>
 			/// </summary>
 			[GPValue("CENTIMETERS")]
-			[Description("Centimeters")]
+			[Description("厘米")]
 			Centimeters,
 
 			/// <summary>
-			/// <para>Meters—The units will be meters.</para>
+			/// <para>米—单位将为米。</para>
 			/// </summary>
 			[GPValue("METERS")]
-			[Description("Meters")]
+			[Description("米")]
 			Meters,
 
 			/// <summary>
-			/// <para>Inches—The units will be inches.</para>
+			/// <para>英寸—将以英寸为单位。</para>
 			/// </summary>
 			[GPValue("INCHES")]
-			[Description("Inches")]
+			[Description("英寸")]
 			Inches,
 
 			/// <summary>
-			/// <para>Feet—The units will be feet.</para>
+			/// <para>英尺—单位将为英尺。</para>
 			/// </summary>
 			[GPValue("FEET")]
-			[Description("Feet")]
+			[Description("英尺")]
 			Feet,
 
 			/// <summary>
-			/// <para>Yards—The units will be yards.</para>
+			/// <para>码—将以码为单位。</para>
 			/// </summary>
 			[GPValue("YARDS")]
-			[Description("Yards")]
+			[Description("码")]
 			Yards,
 
 			/// <summary>
-			/// <para>Fathoms—The units will be fathoms.</para>
+			/// <para>英寻—将以英寻为单位。</para>
 			/// </summary>
 			[GPValue("FATHOMS")]
-			[Description("Fathoms")]
+			[Description("英寻")]
 			Fathoms,
 
 		}
@@ -228,52 +229,52 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ToUnitsEnum 
 		{
 			/// <summary>
-			/// <para>Millimeters—The units will be millimeters.</para>
+			/// <para>毫米—将以毫米为单位。</para>
 			/// </summary>
 			[GPValue("MILLIMETERS")]
-			[Description("Millimeters")]
+			[Description("毫米")]
 			Millimeters,
 
 			/// <summary>
-			/// <para>Centimeters—The units will be centimeters.</para>
+			/// <para>厘米—将以厘米为单位。</para>
 			/// </summary>
 			[GPValue("CENTIMETERS")]
-			[Description("Centimeters")]
+			[Description("厘米")]
 			Centimeters,
 
 			/// <summary>
-			/// <para>Meters—The units will be meters.</para>
+			/// <para>米—单位将为米。</para>
 			/// </summary>
 			[GPValue("METERS")]
-			[Description("Meters")]
+			[Description("米")]
 			Meters,
 
 			/// <summary>
-			/// <para>Inches—The units will be inches.</para>
+			/// <para>英寸—将以英寸为单位。</para>
 			/// </summary>
 			[GPValue("INCHES")]
-			[Description("Inches")]
+			[Description("英寸")]
 			Inches,
 
 			/// <summary>
-			/// <para>Feet—The units will be feet.</para>
+			/// <para>英尺—单位将为英尺。</para>
 			/// </summary>
 			[GPValue("FEET")]
-			[Description("Feet")]
+			[Description("英尺")]
 			Feet,
 
 			/// <summary>
-			/// <para>Yards—The units will be yards.</para>
+			/// <para>码—将以码为单位。</para>
 			/// </summary>
 			[GPValue("YARDS")]
-			[Description("Yards")]
+			[Description("码")]
 			Yards,
 
 			/// <summary>
-			/// <para>Fathoms—The units will be fathoms.</para>
+			/// <para>英寻—将以英寻为单位。</para>
 			/// </summary>
 			[GPValue("FATHOMS")]
-			[Description("Fathoms")]
+			[Description("英寻")]
 			Fathoms,
 
 		}

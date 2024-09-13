@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Skyline Graph</para>
-	/// <para>Calculates sky visibility and generates an optional table and polar graph.</para>
+	/// <para>天际线图</para>
+	/// <para>计算天空的可见性，并选择性地生成表和极线图。</para>
 	/// </summary>
 	public class SkylineGraph : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InObserverPointFeatures">
 		/// <para>Input Observer Point Features</para>
-		/// <para>The input features containing one or more observer points.</para>
+		/// <para>包含一个或多个观察点的输入要素。</para>
 		/// </param>
 		/// <param name="InLineFeatures">
 		/// <para>Input Line Features</para>
-		/// <para>The line features that represent the skyline.</para>
+		/// <para>表示天际线的线要素。</para>
 		/// </param>
 		public SkylineGraph(object InObserverPointFeatures, object InLineFeatures)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Skyline Graph</para>
+		/// <para>Tool Display Name : 天际线图</para>
 		/// </summary>
-		public override string DisplayName() => "Skyline Graph";
+		public override string DisplayName() => "天际线图";
 
 		/// <summary>
 		/// <para>Tool Name : SkylineGraph</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Observer Point Features</para>
-		/// <para>The input features containing one or more observer points.</para>
+		/// <para>包含一个或多个观察点的输入要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Line Features</para>
-		/// <para>The line features that represent the skyline.</para>
+		/// <para>表示天际线的线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Base  Visibility Angle</para>
-		/// <para>The baseline vertical angle that is used for calculating the percentage of visible sky. 0 is the horizon, 90 is straight up; -90 is straight down. The default is 0.</para>
+		/// <para>用作计算可见天空百分比的基线的垂直角。0 表示水平，90 表示竖直向上；-90 表示竖直向下。默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -97,9 +98,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Additional Fields</para>
-		/// <para>Indicates whether additional fields will be added to the angles table.</para>
-		/// <para>Unchecked—Additional fields will not be added. This is the default.</para>
-		/// <para>Checked—Additional fields will be added.</para>
+		/// <para>指定是否有附加字段添加到角度表中。</para>
+		/// <para>未选中 - 不添加附加字段。这是默认设置。</para>
+		/// <para>已选中 - 将添加附加字段。</para>
 		/// <para><see cref="AdditionalFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Angles Table</para>
-		/// <para>The table to be created for outputting the angles.</para>
+		/// <para>创建用于输出角度的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -117,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Graph Name</para>
-		/// <para>This parameter is not supported.</para>
+		/// <para>不支持此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGraph()]
@@ -147,14 +148,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum AdditionalFieldsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Additional fields will be added.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADDITIONAL_FIELDS")]
 			ADDITIONAL_FIELDS,
 
 			/// <summary>
-			/// <para>Unchecked—Additional fields will not be added. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ADDITIONAL_FIELDS")]

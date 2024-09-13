@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Create Utility Network</para>
-	/// <para>Creates a utility network in an enterprise or file  geodatabase feature dataset.</para>
+	/// <para>创建公共设施网络</para>
+	/// <para>在企业级或文件地理数据库要素数据集中创建公共设施网络。</para>
 	/// </summary>
 	public class CreateUtilityNetwork : AbstractGPProcess
 	{
@@ -20,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InFeatureDataset">
 		/// <para>Input Feature Dataset</para>
-		/// <para>The geodatabase feature dataset in which the utility network and schema will be created.</para>
+		/// <para>将创建公共设施网络和方案的地理数据库要素数据集。</para>
 		/// </param>
 		/// <param name="InUtilityNetworkName">
 		/// <para>Utility Network Name</para>
-		/// <para>The name of the utility network that will be created.</para>
+		/// <para>将创建的公共设施网络名称。</para>
 		/// </param>
 		/// <param name="ServiceTerritoryFeatureClass">
 		/// <para>Service Territory Feature Class</para>
-		/// <para>The existing polygon feature class that will be used to create the utility network&apos;s geographical extent. Utility network features cannot be created outside of this extent.</para>
-		/// <para>The feature class must be z- and m-enabled.</para>
+		/// <para>将用于创建公共设施网络地理范围的现有面要素类。 无法在此范围外创建公共设施网络要素。</para>
+		/// <para>要素类必须启用 z 和 m。</para>
 		/// </param>
 		public CreateUtilityNetwork(object InFeatureDataset, object InUtilityNetworkName, object ServiceTerritoryFeatureClass)
 		{
@@ -39,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Utility Network</para>
+		/// <para>Tool Display Name : 创建公共设施网络</para>
 		/// </summary>
-		public override string DisplayName() => "Create Utility Network";
+		public override string DisplayName() => "创建公共设施网络";
 
 		/// <summary>
 		/// <para>Tool Name : CreateUtilityNetwork</para>
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>
-		/// <para>The geodatabase feature dataset in which the utility network and schema will be created.</para>
+		/// <para>将创建公共设施网络和方案的地理数据库要素数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureDataset()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Utility Network Name</para>
-		/// <para>The name of the utility network that will be created.</para>
+		/// <para>将创建的公共设施网络名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -93,8 +94,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Service Territory Feature Class</para>
-		/// <para>The existing polygon feature class that will be used to create the utility network&apos;s geographical extent. Utility network features cannot be created outside of this extent.</para>
-		/// <para>The feature class must be z- and m-enabled.</para>
+		/// <para>将用于创建公共设施网络地理范围的现有面要素类。 无法在此范围外创建公共设施网络要素。</para>
+		/// <para>要素类必须启用 z 和 m。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]

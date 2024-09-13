@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Compare Areas</para>
-	/// <para>Compares movement point tracks across multiple known areas of interest.</para>
+	/// <para>比较区域</para>
+	/// <para>用于比较多个已知感兴趣区域中的运动点轨迹。</para>
 	/// </summary>
 	public class CompareAreas : AbstractGPProcess
 	{
@@ -20,30 +21,30 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InPointFeatures">
 		/// <para>Input Point Features</para>
-		/// <para>The point features representing the movement track points. The layer can be time enabled.</para>
+		/// <para>表示运动轨迹点的点要素。 可以启用图层的时间。</para>
 		/// </param>
 		/// <param name="InAreaFeatures">
 		/// <para>Input Area Features</para>
-		/// <para>The area features representing the areas of interest that will be used to identify unique movement track point identifiers. The layer can be time enabled.</para>
+		/// <para>表示感兴趣区域的面要素，用于标识唯一运动轨迹点标识符。 可以启用图层的时间。</para>
 		/// </param>
 		/// <param name="OutFeatureclass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output area feature class. The output will contain a copy of the Input Area Features geometry and the unique identifiers from the Area Features Name Field and Point Features Name Field parameters.</para>
-		/// <para>If both the Input Point Features and Input Area Features parameter values are time enabled and Relationship is set to Location and Time, only the features matching the geometry and the time span will be returned.</para>
+		/// <para>输出面要素类。 输出将包含输入面要素几何以及来自面要素名称字段和点要素名称字段参数的唯一标识符。</para>
+		/// <para>如果输入点要素和输入面要素参数值均已启用时间，并且关系设置为位置和时间，则将仅返回与几何和时间跨度匹配的要素。</para>
 		/// </param>
 		/// <param name="PointIdField">
 		/// <para>Point Features Name Field</para>
-		/// <para>The field containing the unique identifiers for the movement track points. The field can be either a number or a string.</para>
+		/// <para>此字段包含运动轨迹点的唯一标识符。 该字段可以是数值型或字符串型字段。</para>
 		/// </param>
 		/// <param name="AreaIdField">
 		/// <para>Area Features Name Field</para>
-		/// <para>The field containing the unique identifiers for the areas of interest. The field can be either a number or a string.</para>
+		/// <para>此字段包含感兴趣区域的唯一标识符。 该字段可以是数值型或字符串型字段。</para>
 		/// </param>
 		/// <param name="Relationship">
 		/// <para>Relationship</para>
-		/// <para>Specifies the relationship between the inputs.</para>
-		/// <para>Location Only— Points and area features will be evaluated based on spatial co-occurrence.</para>
-		/// <para>Location and Time— Points and area features will be evaluated based on spatial and temporal co-occurrence.</para>
+		/// <para>指定输入之间的关系。</para>
+		/// <para>仅位置—点和面要素将基于空间共现进行评估。</para>
+		/// <para>位置和时间—点和面要素将基于时空共现进行评估。</para>
 		/// <para><see cref="RelationshipEnum"/></para>
 		/// </param>
 		public CompareAreas(object InPointFeatures, object InAreaFeatures, object OutFeatureclass, object PointIdField, object AreaIdField, object Relationship)
@@ -57,9 +58,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Compare Areas</para>
+		/// <para>Tool Display Name : 比较区域</para>
 		/// </summary>
-		public override string DisplayName() => "Compare Areas";
+		public override string DisplayName() => "比较区域";
 
 		/// <summary>
 		/// <para>Tool Name : CompareAreas</para>
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Point Features</para>
-		/// <para>The point features representing the movement track points. The layer can be time enabled.</para>
+		/// <para>表示运动轨迹点的点要素。 可以启用图层的时间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -104,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Area Features</para>
-		/// <para>The area features representing the areas of interest that will be used to identify unique movement track point identifiers. The layer can be time enabled.</para>
+		/// <para>表示感兴趣区域的面要素，用于标识唯一运动轨迹点标识符。 可以启用图层的时间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -115,8 +116,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output area feature class. The output will contain a copy of the Input Area Features geometry and the unique identifiers from the Area Features Name Field and Point Features Name Field parameters.</para>
-		/// <para>If both the Input Point Features and Input Area Features parameter values are time enabled and Relationship is set to Location and Time, only the features matching the geometry and the time span will be returned.</para>
+		/// <para>输出面要素类。 输出将包含输入面要素几何以及来自面要素名称字段和点要素名称字段参数的唯一标识符。</para>
+		/// <para>如果输入点要素和输入面要素参数值均已启用时间，并且关系设置为位置和时间，则将仅返回与几何和时间跨度匹配的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -124,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Point Features Name Field</para>
-		/// <para>The field containing the unique identifiers for the movement track points. The field can be either a number or a string.</para>
+		/// <para>此字段包含运动轨迹点的唯一标识符。 该字段可以是数值型或字符串型字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -134,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Area Features Name Field</para>
-		/// <para>The field containing the unique identifiers for the areas of interest. The field can be either a number or a string.</para>
+		/// <para>此字段包含感兴趣区域的唯一标识符。 该字段可以是数值型或字符串型字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -144,9 +145,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Relationship</para>
-		/// <para>Specifies the relationship between the inputs.</para>
-		/// <para>Location Only— Points and area features will be evaluated based on spatial co-occurrence.</para>
-		/// <para>Location and Time— Points and area features will be evaluated based on spatial and temporal co-occurrence.</para>
+		/// <para>指定输入之间的关系。</para>
+		/// <para>仅位置—点和面要素将基于空间共现进行评估。</para>
+		/// <para>位置和时间—点和面要素将基于时空共现进行评估。</para>
 		/// <para><see cref="RelationshipEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -156,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Time Difference</para>
-		/// <para>The time allowed between the Input Point Features and Input Area Features parameter values before a spatial relationship is considered invalid. This parameter is active when the Relationship parameter is set to Location and Time and both inputs are time enabled.</para>
+		/// <para>如果输入点要素和输入面要素参数值之间允许的时间在空间关系之前，则该时间视为无效。 当关系参数设置为位置和时间并且两个输入均已启用时间时，此参数处于活动状态。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -179,17 +180,17 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		public enum RelationshipEnum 
 		{
 			/// <summary>
-			/// <para>Location Only— Points and area features will be evaluated based on spatial co-occurrence.</para>
+			/// <para>仅位置—点和面要素将基于空间共现进行评估。</para>
 			/// </summary>
 			[GPValue("LOCATION_ONLY")]
-			[Description("Location Only")]
+			[Description("仅位置")]
 			Location_Only,
 
 			/// <summary>
-			/// <para>Location and Time— Points and area features will be evaluated based on spatial and temporal co-occurrence.</para>
+			/// <para>位置和时间—点和面要素将基于时空共现进行评估。</para>
 			/// </summary>
 			[GPValue("LOCATION_TIME")]
-			[Description("Location and Time")]
+			[Description("位置和时间")]
 			Location_and_Time,
 
 		}

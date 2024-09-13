@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Calculate Default Spatial Grid Index</para>
+	/// <para>Calculate Default Spatial Grid Index</para>
 	/// <para>Calculate the default spatial grid index.</para>
 	/// </summary>
 	[Obsolete()]

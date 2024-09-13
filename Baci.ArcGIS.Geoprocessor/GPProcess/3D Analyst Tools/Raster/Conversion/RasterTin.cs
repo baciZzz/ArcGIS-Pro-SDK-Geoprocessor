@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Raster To TIN</para>
-	/// <para>Converts a raster to a triangulated  irregular network (TIN) dataset.</para>
+	/// <para>栅格转 TIN</para>
+	/// <para>将栅格转换为不规则三角网 (TIN) 数据集。</para>
 	/// </summary>
 	public class RasterTin : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The raster to process.</para>
+		/// <para>待处理的栅格。</para>
 		/// </param>
 		/// <param name="OutTin">
 		/// <para>Output TIN</para>
-		/// <para>The TIN dataset that will be generated.</para>
+		/// <para>将要生成的 TIN 数据集。</para>
 		/// </param>
 		public RasterTin(object InRaster, object OutTin)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Raster To TIN</para>
+		/// <para>Tool Display Name : 栅格转 TIN</para>
 		/// </summary>
-		public override string DisplayName() => "Raster To TIN";
+		public override string DisplayName() => "栅格转 TIN";
 
 		/// <summary>
 		/// <para>Tool Name : RasterTin</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The raster to process.</para>
+		/// <para>待处理的栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output TIN</para>
-		/// <para>The TIN dataset that will be generated.</para>
+		/// <para>将要生成的 TIN 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETin()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z Tolerance</para>
-		/// <para>The maximum allowable difference in (z units) between the height of the input raster and the height of the output TIN. By default, the z tolerance is 1/10 of the z range of the input raster.</para>
+		/// <para>输入栅格与输出 TIN 之间所允许的最大高度差（z 单位）。默认情况下，z 容差是输入栅格 z 范围的 1/10。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Maximum Number of Points</para>
-		/// <para>The maximum number of points that will be added to the TIN before the process is terminated. By default, the process will continue until all the points are added.</para>
+		/// <para>将在处理过程终止前添加到 TIN 的最大点数。默认情况下，该过程将一直持续到所有点被添加完。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z Factor</para>
-		/// <para>The factor that the height values of the raster will be multiplied by in the resulting TIN dataset. This is typically used to convert Z units to match XY units.</para>
+		/// <para>在生成的 TIN 数据集中与栅格的高度值相乘的因子。此值通常用于转换 Z 单位来匹配 XY 单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Calculate Magnetic Components</para>
+	/// <para>Calculate Magnetic Components</para>
 	/// <para>Computes the magnetic field at point locations for given date and altitude.</para>
 	/// </summary>
 	public class CalculateMagneticComponents : AbstractGPProcess

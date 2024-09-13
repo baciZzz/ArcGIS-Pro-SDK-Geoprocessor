@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Add Field To Analysis Layer</para>
-	/// <para>Adds a field to a sublayer of a network analysis layer.</para>
+	/// <para>向分析图层添加字段</para>
+	/// <para>用于向网络分析图层的子图层添加字段。</para>
 	/// </summary>
 	public class AddFieldToAnalysisLayer : AbstractGPProcess
 	{
@@ -20,26 +21,26 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InNetworkAnalysisLayer">
 		/// <para>Input Network Analysis Layer</para>
-		/// <para>The network analysis layer to which the new field will be added.</para>
+		/// <para>要添加新字段的网络分析图层。</para>
 		/// </param>
 		/// <param name="SubLayer">
 		/// <para>Sub Layer</para>
-		/// <para>The sublayer of the network analysis layer to which the new field will be added.</para>
+		/// <para>要添加新字段的网络分析图层的子图层。</para>
 		/// </param>
 		/// <param name="FieldName">
 		/// <para>Field Name</para>
-		/// <para>The name of the field that will be added to the specified sublayer of the network analysis layer.</para>
+		/// <para>要添加到网络分析图层的指定子图层中的字段名称。</para>
 		/// </param>
 		/// <param name="FieldType">
 		/// <para>Field Type</para>
-		/// <para>Specifies the field type that will be used in the creation of the new field.</para>
-		/// <para>Long (large integer)— Whole numbers between -2,147,483,648 and 2,147,483,647.</para>
-		/// <para>Text—Any string of characters.</para>
-		/// <para>Float (single precision)— Fractional numbers between -3.4E38 and 1.2E38.</para>
-		/// <para>Double (double precision)— Fractional numbers between -2.2E308 and 1.8E308.</para>
-		/// <para>Short (small integer)— Whole numbers between -32,768 and 32,767.</para>
-		/// <para>Date—Date and/or time.</para>
-		/// <para>Blob (binary data)—Long sequence of binary numbers. You need a custom loader or viewer or a third-party application to load items into a BLOB field or view the contents of a BLOB field.</para>
+		/// <para>指定在创建新字段时所使用的字段类型。</para>
+		/// <para>长整型（大整数）— 在 -2,147,483,648 和 2,147,483,647 之间的整数。</para>
+		/// <para>文本—任何字符串。</para>
+		/// <para>浮点型（单精度）— 在 -3.4E38 和 1.2E38 之间的小数。</para>
+		/// <para>双精度型（双精度）— 在 -2.2E308 和 1.8E308 之间的小数。</para>
+		/// <para>短整型（小整数）— 在 -32,768 和 32,767 之间的整数。</para>
+		/// <para>日期—日期和/或时间。</para>
+		/// <para>Blob（二进制数据）—长二进制数序列。您需要一个自定义的加载器、查看器或第三方应用程序将这些项加载到 BLOB 字段中或者查看 BLOB 字段的内容。</para>
 		/// <para><see cref="FieldTypeEnum"/></para>
 		/// </param>
 		public AddFieldToAnalysisLayer(object InNetworkAnalysisLayer, object SubLayer, object FieldName, object FieldType)
@@ -51,9 +52,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Field To Analysis Layer</para>
+		/// <para>Tool Display Name : 向分析图层添加字段</para>
 		/// </summary>
-		public override string DisplayName() => "Add Field To Analysis Layer";
+		public override string DisplayName() => "向分析图层添加字段";
 
 		/// <summary>
 		/// <para>Tool Name : AddFieldToAnalysisLayer</para>
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>
-		/// <para>The network analysis layer to which the new field will be added.</para>
+		/// <para>要添加新字段的网络分析图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPNALayer()]
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Sub Layer</para>
-		/// <para>The sublayer of the network analysis layer to which the new field will be added.</para>
+		/// <para>要添加新字段的网络分析图层的子图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -104,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Field Name</para>
-		/// <para>The name of the field that will be added to the specified sublayer of the network analysis layer.</para>
+		/// <para>要添加到网络分析图层的指定子图层中的字段名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -112,14 +113,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Field Type</para>
-		/// <para>Specifies the field type that will be used in the creation of the new field.</para>
-		/// <para>Long (large integer)— Whole numbers between -2,147,483,648 and 2,147,483,647.</para>
-		/// <para>Text—Any string of characters.</para>
-		/// <para>Float (single precision)— Fractional numbers between -3.4E38 and 1.2E38.</para>
-		/// <para>Double (double precision)— Fractional numbers between -2.2E308 and 1.8E308.</para>
-		/// <para>Short (small integer)— Whole numbers between -32,768 and 32,767.</para>
-		/// <para>Date—Date and/or time.</para>
-		/// <para>Blob (binary data)—Long sequence of binary numbers. You need a custom loader or viewer or a third-party application to load items into a BLOB field or view the contents of a BLOB field.</para>
+		/// <para>指定在创建新字段时所使用的字段类型。</para>
+		/// <para>长整型（大整数）— 在 -2,147,483,648 和 2,147,483,647 之间的整数。</para>
+		/// <para>文本—任何字符串。</para>
+		/// <para>浮点型（单精度）— 在 -3.4E38 和 1.2E38 之间的小数。</para>
+		/// <para>双精度型（双精度）— 在 -2.2E308 和 1.8E308 之间的小数。</para>
+		/// <para>短整型（小整数）— 在 -32,768 和 32,767 之间的整数。</para>
+		/// <para>日期—日期和/或时间。</para>
+		/// <para>Blob（二进制数据）—长二进制数序列。您需要一个自定义的加载器、查看器或第三方应用程序将这些项加载到 BLOB 字段中或者查看 BLOB 字段的内容。</para>
 		/// <para><see cref="FieldTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -129,8 +130,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Field Precision</para>
-		/// <para>The number of digits that can be stored in the field. All digits are counted regardless of which side of the decimal they are on.</para>
-		/// <para>The parameter value is only valid for numeric field types.</para>
+		/// <para>可存储在字段中的位数。 所有位都将被计算在内，而无论其处于小数点的哪一侧。</para>
+		/// <para>参数值仅对数值字段类型有效。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -138,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Field Scale</para>
-		/// <para>The number of decimal places stored in a field. This parameter is only used in float and double data field types.</para>
+		/// <para>可存储在字段中的小数位数。 此参数仅在浮点型和双精度型数据字段类型中使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -146,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Field Length</para>
-		/// <para>The length of the field being added. This sets the maximum number of allowable characters for each record of the field. This parameter is only applicable to fields of type text.</para>
+		/// <para>要添加的字段的长度。 它为字段的每条记录设置最大允许字符数。 此参数仅适用于文本类型的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -154,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Field Alias</para>
-		/// <para>The alternate name given to the field name. This name is used to describe cryptic field names. This parameter only applies to geodatabases.</para>
+		/// <para>指定给字段名称的备用名称。 此名称用于描述含义隐晦的字段名称。 此参数仅适用于地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -162,9 +163,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Field IsNullable</para>
-		/// <para>Specifies whether the field can contain null values. Null values are different from zero or empty fields and are only supported for fields in a geodatabase.</para>
-		/// <para>Checked—The field will allow null values. This is the default.</para>
-		/// <para>Unchecked—The field will not allow null values.</para>
+		/// <para>指定该字段是否可包含空值。 空值不同于零或空字段，并且仅地理数据库中的字段支持空值。</para>
+		/// <para>选中 - 字段将允许空值。 这是默认设置。</para>
+		/// <para>未选中 - 字段不允许空值。</para>
 		/// <para><see cref="FieldIsNullableEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -196,52 +197,52 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum FieldTypeEnum 
 		{
 			/// <summary>
-			/// <para>Text—Any string of characters.</para>
+			/// <para>文本—任何字符串。</para>
 			/// </summary>
 			[GPValue("TEXT")]
-			[Description("Text")]
+			[Description("文本")]
 			Text,
 
 			/// <summary>
-			/// <para>Float (single precision)— Fractional numbers between -3.4E38 and 1.2E38.</para>
+			/// <para>浮点型（单精度）— 在 -3.4E38 和 1.2E38 之间的小数。</para>
 			/// </summary>
 			[GPValue("FLOAT")]
-			[Description("Float (single precision)")]
+			[Description("浮点型（单精度）")]
 			FLOAT,
 
 			/// <summary>
-			/// <para></para>
+			/// <para>双精度型（双精度）— 在 -2.2E308 和 1.8E308 之间的小数。</para>
 			/// </summary>
 			[GPValue("DOUBLE")]
-			[Description("Double  (double precision)")]
+			[Description("双精度型（双精度）")]
 			DOUBLE,
 
 			/// <summary>
-			/// <para>Short (small integer)— Whole numbers between -32,768 and 32,767.</para>
+			/// <para>短整型（小整数）— 在 -32,768 和 32,767 之间的整数。</para>
 			/// </summary>
 			[GPValue("SHORT")]
-			[Description("Short (small integer)")]
+			[Description("短整型（小整数）")]
 			SHORT,
 
 			/// <summary>
-			/// <para>Long (large integer)— Whole numbers between -2,147,483,648 and 2,147,483,647.</para>
+			/// <para>长整型（大整数）— 在 -2,147,483,648 和 2,147,483,647 之间的整数。</para>
 			/// </summary>
 			[GPValue("LONG")]
-			[Description("Long (large integer)")]
+			[Description("长整型（大整数）")]
 			LONG,
 
 			/// <summary>
-			/// <para>Date—Date and/or time.</para>
+			/// <para>日期—日期和/或时间。</para>
 			/// </summary>
 			[GPValue("DATE")]
-			[Description("Date")]
+			[Description("日期")]
 			Date,
 
 			/// <summary>
-			/// <para>Blob (binary data)—Long sequence of binary numbers. You need a custom loader or viewer or a third-party application to load items into a BLOB field or view the contents of a BLOB field.</para>
+			/// <para>Blob（二进制数据）—长二进制数序列。您需要一个自定义的加载器、查看器或第三方应用程序将这些项加载到 BLOB 字段中或者查看 BLOB 字段的内容。</para>
 			/// </summary>
 			[GPValue("BLOB")]
-			[Description("Blob (binary data)")]
+			[Description("Blob（二进制数据）")]
 			BLOB,
 
 		}
@@ -252,14 +253,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum FieldIsNullableEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The field will allow null values. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("NULLABLE")]
 			NULLABLE,
 
 			/// <summary>
-			/// <para>Unchecked—The field will not allow null values.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NON_NULLABLE")]

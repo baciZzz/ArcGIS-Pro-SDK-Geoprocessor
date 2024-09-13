@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Reconcile Version</para>
+	/// <para>Reconcile Version</para>
 	/// <para>Reconciles a version against another version in its lineage.</para>
 	/// </summary>
 	[Obsolete()]

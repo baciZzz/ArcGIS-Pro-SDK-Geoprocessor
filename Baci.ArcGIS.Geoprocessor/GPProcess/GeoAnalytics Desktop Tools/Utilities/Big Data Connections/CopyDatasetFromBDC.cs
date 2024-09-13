@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Copy Dataset From Big Data Connection</para>
-	/// <para>Copies a dataset from a big data connection (BDC) to a feature class.</para>
+	/// <para>从大数据连接复制数据集</para>
+	/// <para>将数据集从大数据连接 (BDC) 复制到要素类。</para>
 	/// </summary>
 	public class CopyDatasetFromBDC : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Dataset</para>
-		/// <para>The point, line, polygon, or table dataset to be copied.</para>
+		/// <para>要复制的点、线、面或表数据集。</para>
 		/// </param>
 		/// <param name="Output">
 		/// <para>Output Dataset</para>
-		/// <para>The output dataset to be copied from a big data connection.</para>
+		/// <para>要从大数据连接复制的输出数据集。</para>
 		/// </param>
 		public CopyDatasetFromBDC(object InputLayer, object Output)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Copy Dataset From Big Data Connection</para>
+		/// <para>Tool Display Name : 从大数据连接复制数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Copy Dataset From Big Data Connection";
+		public override string DisplayName() => "从大数据连接复制数据集";
 
 		/// <summary>
 		/// <para>Tool Name : CopyDatasetFromBDC</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>The point, line, polygon, or table dataset to be copied.</para>
+		/// <para>要复制的点、线、面或表数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Dataset</para>
-		/// <para>The output dataset to be copied from a big data connection.</para>
+		/// <para>要从大数据连接复制的输出数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]

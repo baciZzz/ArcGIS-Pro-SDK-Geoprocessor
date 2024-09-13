@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Set Next Task</para>
+	/// <para>Set Next Task</para>
 	/// <para>Sets the next task in a workflow from the task list.</para>
 	/// </summary>
 	public class SetNextTask : AbstractGPProcess

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add GPS Metadata Fields</para>
-	/// <para>Adds GNSS fields to a feature class in a geodatabase.</para>
+	/// <para>添加 GPS 元数据字段</para>
+	/// <para>用于将 GNSS 字段添加到地理数据库中的要素类。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InPointFeatures">
 		/// <para>Input Point Features</para>
-		/// <para>The input point feature class to be updated.</para>
+		/// <para>要更新的输入点要素类。</para>
 		/// </param>
 		public AddGPSMetadataFields(object InPointFeatures)
 		{
@@ -30,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add GPS Metadata Fields</para>
+		/// <para>Tool Display Name : 添加 GPS 元数据字段</para>
 		/// </summary>
-		public override string DisplayName() => "Add GPS Metadata Fields";
+		public override string DisplayName() => "添加 GPS 元数据字段";
 
 		/// <summary>
 		/// <para>Tool Name : AddGPSMetadataFields</para>
@@ -66,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Point Features</para>
-		/// <para>The input point feature class to be updated.</para>
+		/// <para>要更新的输入点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

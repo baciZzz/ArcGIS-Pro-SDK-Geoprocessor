@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Table To Domain</para>
-	/// <para>Creates or updates a coded value domain with values from a table.</para>
+	/// <para>表转属性域</para>
+	/// <para>通过表中的值创建或更新编码值属性域。</para>
 	/// </summary>
 	public class TableToDomain : AbstractGPProcess
 	{
@@ -20,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The database table from which to derive domain values.</para>
+		/// <para>用于从中派生属性域值的数据库表。</para>
 		/// </param>
 		/// <param name="CodeField">
 		/// <para>Code Field</para>
-		/// <para>The field in the database table from which to derive domain code values.</para>
+		/// <para>用于从中派生域编码值的数据库表中的字段。</para>
 		/// </param>
 		/// <param name="DescriptionField">
 		/// <para>Description Field</para>
-		/// <para>The field in the database table from which to derive domain description values.</para>
+		/// <para>用于从中派生属性域描述值的数据库表中的字段。</para>
 		/// </param>
 		/// <param name="InWorkspace">
 		/// <para>Input Workspace</para>
-		/// <para>The workspace that contains the domain to be created or updated.</para>
+		/// <para>要创建或要更新的属性域所在的工作空间。</para>
 		/// </param>
 		/// <param name="DomainName">
 		/// <para>Domain Name</para>
-		/// <para>The name of the domain to be created or updated.</para>
+		/// <para>要创建或要更新的属性域的名称。</para>
 		/// </param>
 		public TableToDomain(object InTable, object CodeField, object DescriptionField, object InWorkspace, object DomainName)
 		{
@@ -48,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Table To Domain</para>
+		/// <para>Tool Display Name : 表转属性域</para>
 		/// </summary>
-		public override string DisplayName() => "Table To Domain";
+		public override string DisplayName() => "表转属性域";
 
 		/// <summary>
 		/// <para>Tool Name : TableToDomain</para>
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The database table from which to derive domain values.</para>
+		/// <para>用于从中派生属性域值的数据库表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Code Field</para>
-		/// <para>The field in the database table from which to derive domain code values.</para>
+		/// <para>用于从中派生域编码值的数据库表中的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Description Field</para>
-		/// <para>The field in the database table from which to derive domain description values.</para>
+		/// <para>用于从中派生属性域描述值的数据库表中的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>The workspace that contains the domain to be created or updated.</para>
+		/// <para>要创建或要更新的属性域所在的工作空间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -122,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Domain Name</para>
-		/// <para>The name of the domain to be created or updated.</para>
+		/// <para>要创建或要更新的属性域的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -130,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Domain Description</para>
-		/// <para>The description of the domain to be created or updated. Domain descriptions of existing domains are not updated.</para>
+		/// <para>要创建或要更新的属性域的描述。不会更新现有属性域的属性域描述。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -138,9 +139,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Update Option</para>
-		/// <para>If the domain already exists, specifies how the domain will be updated.</para>
-		/// <para>Append the values—Appends to the domain values from the database table.</para>
-		/// <para>Replace the values—Replaces the values in the domain with values from the database table.</para>
+		/// <para>如果属性域已经存在，请指定如何更新属性域。</para>
+		/// <para>追加这些值—从数据库表追加到属性域值。</para>
+		/// <para>替换这些值—用数据库表中的值替换属性域中的值。</para>
 		/// <para><see cref="UpdateOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -172,17 +173,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum UpdateOptionEnum 
 		{
 			/// <summary>
-			/// <para>Append the values—Appends to the domain values from the database table.</para>
+			/// <para>追加这些值—从数据库表追加到属性域值。</para>
 			/// </summary>
 			[GPValue("APPEND")]
-			[Description("Append the values")]
+			[Description("追加这些值")]
 			Append_the_values,
 
 			/// <summary>
-			/// <para>Replace the values—Replaces the values in the domain with values from the database table.</para>
+			/// <para>替换这些值—用数据库表中的值替换属性域中的值。</para>
 			/// </summary>
 			[GPValue("REPLACE")]
-			[Description("Replace the values")]
+			[Description("替换这些值")]
 			Replace_the_values,
 
 		}

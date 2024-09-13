@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Create Job For Task</para>
+	/// <para>Create Job For Task</para>
 	/// <para>Automatically creates a Workflow Manager (Classic) job for a task.</para>
 	/// </summary>
 	public class CreateJobForTask : AbstractGPProcess

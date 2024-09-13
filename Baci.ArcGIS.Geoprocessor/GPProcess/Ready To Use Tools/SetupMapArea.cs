@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 {
 	/// <summary>
 	/// <para>ServerTool 8</para>
+	/// <para>ServerTool 8</para>
 	/// <para></para>
 	/// </summary>
 	public class SetupMapArea : AbstractGPProcess

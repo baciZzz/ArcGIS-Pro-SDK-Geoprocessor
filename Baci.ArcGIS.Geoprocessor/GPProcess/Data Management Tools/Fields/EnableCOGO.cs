@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Enable COGO</para>
-	/// <para>Enables COGO on a line feature class and adds COGO fields and COGO-enabled labeling to a line feature class. COGO fields store  dimensions  that are used to create line features in relation to each other.</para>
+	/// <para>启用 COGO</para>
+	/// <para>可启用线要素类上的 COGO 并将 COGO 字段和启用了 COGO 的标注添加到线要素类。 COGO 字段存储用于相对彼此创建线要素的尺寸。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLineFeatures">
 		/// <para>Input Line Features</para>
-		/// <para>The line feature class that will be COGO enabled.</para>
+		/// <para>将启用 COGO 的线要素类。</para>
 		/// </param>
 		public EnableCOGO(object InLineFeatures)
 		{
@@ -30,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Enable COGO</para>
+		/// <para>Tool Display Name : 启用 COGO</para>
 		/// </summary>
-		public override string DisplayName() => "Enable COGO";
+		public override string DisplayName() => "启用 COGO";
 
 		/// <summary>
 		/// <para>Tool Name : EnableCOGO</para>
@@ -66,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Line Features</para>
-		/// <para>The line feature class that will be COGO enabled.</para>
+		/// <para>将启用 COGO 的线要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

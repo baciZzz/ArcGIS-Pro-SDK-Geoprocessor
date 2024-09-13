@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Make Grids And Graticules Layer</para>
+	/// <para>Make Grids And Graticules Layer</para>
 	/// <para>Creates a grouped layer of feature classes depicting grid, graticule, and border features using predefined cartographic specifications. Grid layers are ideal for advanced grid definitions that are scale and extent specific.</para>
 	/// </summary>
 	public class MakeGridsAndGraticulesLayer : AbstractGPProcess

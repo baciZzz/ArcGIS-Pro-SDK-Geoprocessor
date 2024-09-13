@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Analyze Runway Obstacles</para>
+	/// <para>Analyze Runway Obstacles</para>
 	/// <para>Analyzes obstacle data and obstruction identification surfaces (OIS) to determine if obstacles are penetrating.</para>
 	/// </summary>
 	public class AnalyzeRunwayObstacles : AbstractGPProcess

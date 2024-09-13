@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Update Feature Z</para>
-	/// <para>Updates the z-coordinates of 3D feature vertices using a surface.</para>
+	/// <para>更新要素 Z 值</para>
+	/// <para>使用表面来更新 3D 要素折点的 z 坐标。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The 3D features whose vertex z-values will be modified.</para>
+		/// <para>折点 z 值将被修改的 3D 要素。</para>
 		/// </param>
 		/// <param name="InSurface">
 		/// <para>Input Surface</para>
-		/// <para>The surface that will be used to determine the new z-value for the 3D feature vertices.</para>
+		/// <para>将用于确定 3D 要素折点新 z 值的表面。</para>
 		/// </param>
 		public UpdateFeatureZ(object InFeatures, object InSurface)
 		{
@@ -35,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Update Feature Z</para>
+		/// <para>Tool Display Name : 更新要素 Z 值</para>
 		/// </summary>
-		public override string DisplayName() => "Update Feature Z";
+		public override string DisplayName() => "更新要素 Z 值";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateFeatureZ</para>
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The 3D features whose vertex z-values will be modified.</para>
+		/// <para>折点 z 值将被修改的 3D 要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -81,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Surface</para>
-		/// <para>The surface that will be used to determine the new z-value for the 3D feature vertices.</para>
+		/// <para>将用于确定 3D 要素折点新 z 值的表面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -89,14 +90,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Interpolation Method</para>
-		/// <para>Interpolation method used in determining information about the surface. The available options depend on the data type of the input surface:</para>
-		/// <para>Bilinear—An interpolation method exclusive to the raster surface, which determines cell values from the four nearest cells. This is the only option available for a raster surface.</para>
-		/// <para>Linear— Default interpolation method for a TIN, terrain, and LAS dataset. Obtains elevation from the plane defined by the triangle that contains the XY location of a query point.</para>
-		/// <para>Natural Neighbors— Obtains elevation by applying area-based weights to the natural neighbors of a query point.</para>
-		/// <para>Conflate Minimum Z— Obtains elevation from the smallest z-value found among the natural neighbors of a query point.</para>
-		/// <para>Conflate Maximum Z— Obtains elevation from the largest z-value found among the natural neighbors of a query point.</para>
-		/// <para>Conflate Nearest Z— Obtains elevation from the nearest value among the natural neighbors of a query point.</para>
-		/// <para>Conflate Z Closest To Mean— Obtains elevation from the z-value that is closest to the average of all the natural neighbors of a query point.</para>
+		/// <para>用于确定表面相关信息的插值方法。可用选项取决于输入表面的数据类型：</para>
+		/// <para>双线性—可从四个最邻近的像元中确定像元值的栅格表面的专用插值方法。这是适用于栅格表面的唯一选项。</para>
+		/// <para>线性— TIN、terrain 和 LAS 数据集的默认插值方法。根据由包含查询点 XY 位置的三角形定义的平面获取高程。</para>
+		/// <para>自然邻域法— 通过将基于区域的权重应用于查询点的自然邻域获取高程。</para>
+		/// <para>合并最小 Z 值— 根据在查询点自然邻域中找到的最小 z 值获取高程。</para>
+		/// <para>合并最大 Z 值— 根据在查询点自然邻域中找到的最大 z 值获取高程。</para>
+		/// <para>合并最近的 Z 值— 根据查询点自然邻域中的最近值获取高程。</para>
+		/// <para>合并最接近平均值的 z 值— 根据距查询点所有自然邻域的平均值最近的 z 值获取高程。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -106,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Status Field</para>
-		/// <para>An existing numeric field that will be populated with values to reflect whether the feature's vertices were successfully updated. A value of 1 would be specified for updated features and 0 for features that were not updated. Features that partially overlap the surface will not be updated.</para>
+		/// <para>将使用值进行填充的现有数值字段，可反映要素的折点是否已成功更新。已更新要素的值会被指定为 1，而未更新要素的值会被指定为 0。不会更新与表面部分重叠的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -138,52 +139,52 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Linear— Default interpolation method for a TIN, terrain, and LAS dataset. Obtains elevation from the plane defined by the triangle that contains the XY location of a query point.</para>
+			/// <para>线性— TIN、terrain 和 LAS 数据集的默认插值方法。根据由包含查询点 XY 位置的三角形定义的平面获取高程。</para>
 			/// </summary>
 			[GPValue("LINEAR")]
-			[Description("Linear")]
+			[Description("线性")]
 			Linear,
 
 			/// <summary>
-			/// <para>Natural Neighbors— Obtains elevation by applying area-based weights to the natural neighbors of a query point.</para>
+			/// <para>自然邻域法— 通过将基于区域的权重应用于查询点的自然邻域获取高程。</para>
 			/// </summary>
 			[GPValue("NATURAL_NEIGHBORS")]
-			[Description("Natural Neighbors")]
+			[Description("自然邻域法")]
 			Natural_Neighbors,
 
 			/// <summary>
-			/// <para>Conflate Minimum Z— Obtains elevation from the smallest z-value found among the natural neighbors of a query point.</para>
+			/// <para>合并最小 Z 值— 根据在查询点自然邻域中找到的最小 z 值获取高程。</para>
 			/// </summary>
 			[GPValue("CONFLATE_ZMIN")]
-			[Description("Conflate Minimum Z")]
+			[Description("合并最小 Z 值")]
 			Conflate_Minimum_Z,
 
 			/// <summary>
-			/// <para>Conflate Maximum Z— Obtains elevation from the largest z-value found among the natural neighbors of a query point.</para>
+			/// <para>合并最大 Z 值— 根据在查询点自然邻域中找到的最大 z 值获取高程。</para>
 			/// </summary>
 			[GPValue("CONFLATE_ZMAX")]
-			[Description("Conflate Maximum Z")]
+			[Description("合并最大 Z 值")]
 			Conflate_Maximum_Z,
 
 			/// <summary>
-			/// <para>Conflate Nearest Z— Obtains elevation from the nearest value among the natural neighbors of a query point.</para>
+			/// <para>合并最近的 Z 值— 根据查询点自然邻域中的最近值获取高程。</para>
 			/// </summary>
 			[GPValue("CONFLATE_NEAREST")]
-			[Description("Conflate Nearest Z")]
+			[Description("合并最近的 Z 值")]
 			Conflate_Nearest_Z,
 
 			/// <summary>
-			/// <para>Conflate Z Closest To Mean— Obtains elevation from the z-value that is closest to the average of all the natural neighbors of a query point.</para>
+			/// <para>合并最接近平均值的 z 值— 根据距查询点所有自然邻域的平均值最近的 z 值获取高程。</para>
 			/// </summary>
 			[GPValue("CONFLATE_CLOSEST_TO_MEAN")]
-			[Description("Conflate Z Closest To Mean")]
+			[Description("合并最接近平均值的 z 值")]
 			Conflate_Z_Closest_To_Mean,
 
 			/// <summary>
-			/// <para>Bilinear—An interpolation method exclusive to the raster surface, which determines cell values from the four nearest cells. This is the only option available for a raster surface.</para>
+			/// <para>双线性—可从四个最邻近的像元中确定像元值的栅格表面的专用插值方法。这是适用于栅格表面的唯一选项。</para>
 			/// </summary>
 			[GPValue("BILINEAR")]
-			[Description("Bilinear")]
+			[Description("双线性")]
 			Bilinear,
 
 		}

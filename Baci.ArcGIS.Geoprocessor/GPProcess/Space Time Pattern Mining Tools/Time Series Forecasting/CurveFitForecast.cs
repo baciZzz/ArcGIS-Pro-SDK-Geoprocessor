@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Curve Fit Forecast</para>
-	/// <para>Forecasts the values of each location of a space-time cube using curve fitting.</para>
+	/// <para>曲线拟合预测</para>
+	/// <para>用于通过曲线拟合来预测时空立方体每个位置的值。</para>
 	/// </summary>
 	public class CurveFitForecast : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		/// <param name="InCube">
 		/// <para>Input Space Time Cube</para>
-		/// <para>The netCDF cube containing the variable to forecast to future time steps. This file must have an .nc file extension and must have been created using the Create Space Time Cube By Aggregating Points, Create Space Time Cube From Defined Locations, or Create Space Time Cube From Multidimensional Raster Layer tool.</para>
+		/// <para>netCDF 立方体包含用于预测未来时间步的变量。此文件必须具有 .nc 文件扩展名，并且必须使用通过聚合点创建时空立方体、通过已定义位置创建时空立方体或通过多维栅格图层创建时空立方体工具进行创建。</para>
 		/// </param>
 		/// <param name="AnalysisVariable">
 		/// <para>Analysis Variable</para>
-		/// <para>The numeric variable in the netCDF file that will be forecasted to future time steps.</para>
+		/// <para>netCDF 文件中的数值变量，用于预测未来时间步长。</para>
 		/// </param>
 		/// <param name="OutputFeatures">
 		/// <para>Output Features</para>
-		/// <para>The output feature class of all locations in the space-time cube with forecasted values stored as fields. The layer displays the forecast for the final time step and contains pop-ups charts showing the time series and forecasts for each location.</para>
+		/// <para>时空立方体中所有位置的输出要素类，其中的预测值将存储为字段。该图层显示对最后的时间步长的预测，并包含弹出图表，其中显示每个位置的时间序列和预测。</para>
 		/// </param>
 		public CurveFitForecast(object InCube, object AnalysisVariable, object OutputFeatures)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Curve Fit Forecast</para>
+		/// <para>Tool Display Name : 曲线拟合预测</para>
 		/// </summary>
-		public override string DisplayName() => "Curve Fit Forecast";
+		public override string DisplayName() => "曲线拟合预测";
 
 		/// <summary>
 		/// <para>Tool Name : CurveFitForecast</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>
-		/// <para>The netCDF cube containing the variable to forecast to future time steps. This file must have an .nc file extension and must have been created using the Create Space Time Cube By Aggregating Points, Create Space Time Cube From Defined Locations, or Create Space Time Cube From Multidimensional Raster Layer tool.</para>
+		/// <para>netCDF 立方体包含用于预测未来时间步的变量。此文件必须具有 .nc 文件扩展名，并且必须使用通过聚合点创建时空立方体、通过已定义位置创建时空立方体或通过多维栅格图层创建时空立方体工具进行创建。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Analysis Variable</para>
-		/// <para>The numeric variable in the netCDF file that will be forecasted to future time steps.</para>
+		/// <para>netCDF 文件中的数值变量，用于预测未来时间步长。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>The output feature class of all locations in the space-time cube with forecasted values stored as fields. The layer displays the forecast for the final time step and contains pop-ups charts showing the time series and forecasts for each location.</para>
+		/// <para>时空立方体中所有位置的输出要素类，其中的预测值将存储为字段。该图层显示对最后的时间步长的预测，并包含弹出图表，其中显示每个位置的时间序列和预测。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Output Space Time Cube</para>
-		/// <para>A new space-time cube (.nc file) containing the values of the input space-time cube with the forecasted time steps appended. The Visualize Space Time Cube in 3D tool can be used to see all of the observed and forecasted values simultaneously.</para>
+		/// <para>新的时空立方体（.nc 文件），其中包含输入时空立方体的值，并追加了预测时间步长。可视化 3D 时空立方体工具可用于同时查看所有观测值和预测值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Number of Time Steps to Forecast</para>
-		/// <para>A positive integer specifying the number of time steps to forecast. This value cannot be larger than 50 percent of the total time steps in the input space-time cube. The default value is one time step.</para>
+		/// <para>正整数，用于指定预测时间步长数。此值不能大于输入时空立方体中的时间步长数的百分之五十。默认值为一个时间步长。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -119,12 +120,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Curve Type</para>
-		/// <para>Specifies the curve type that will be used to forecast the values of the input space-time cube.</para>
-		/// <para>Linear—The time series increases or decreases linearly over time.</para>
-		/// <para>Parabolic—The time series follows a parabola or quadratic curve over time.</para>
-		/// <para>Exponential—The time series increases or decreases exponentially over time.</para>
-		/// <para>S-shaped (Gompertz)—The time series increases or decreases following the shape of an S over time.</para>
-		/// <para>Auto-detect—All four curve types are run for each location and the model is provided the smallest Validation RMSE. If no time slices are excluded for validation, the model with the smallest Forecast RMSE is used. This is the default.</para>
+		/// <para>指定曲线类型以用于预测输入时空立方体的值。</para>
+		/// <para>线性—时间序列随时间呈线性增加或减少。</para>
+		/// <para>抛物线—时间序列随时间呈抛物线或二次曲线变化。</para>
+		/// <para>指数—时间序列随时间呈指数性增加或减少。</para>
+		/// <para>S 型 (Gompertz)—时间序列随时间呈 S 型增加或减少。</para>
+		/// <para>自动检测—在各个位置运行所有四种曲线类型，随后模型将提供最小“验证 RMSE”值。如果未为进行验证排除任何时间片，则使用“预测 RMSE”值最小的模型。这是默认设置。</para>
 		/// <para><see cref="CurveTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -134,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Number of Time Steps to Exclude for Validation</para>
-		/// <para>The number of time steps at the end of each time series to exclude for validation. The default value is 10 percent (rounded down) of the number of input time steps, and this value cannot be larger than 25 percent of the number of time steps. Provide the value 0 to not exclude any time steps.</para>
+		/// <para>为进行验证，在每个时间序列末尾排除的时间步长数。默认值为输入时间步长的 10％（向下舍入），且该值不能大于时间步长的 25％。要不排除任何时间步长，请提供值 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -142,9 +143,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Outlier Option</para>
-		/// <para>Specifies whether statistically significant time series outliers will be identified.</para>
-		/// <para>None—Outliers will not be identified. This is the default.</para>
-		/// <para>Identify outliers—Outliers will be identified using the Generalized ESD test.</para>
+		/// <para>指定是否将识别具有统计意义的时间序列异常值。</para>
+		/// <para>无—不会识别异常值。这是默认设置。</para>
+		/// <para>识别异常值—将使用广义 ESD 测试来识别异常值。</para>
 		/// <para><see cref="OutlierOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -154,10 +155,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Level of Confidence</para>
-		/// <para>Specifies the confidence level for the test for time series outliers.</para>
-		/// <para>90%—The confidence level for the test is 90 percent. This is the default.</para>
-		/// <para>95%—The confidence level for the test is 95 percent.</para>
-		/// <para>99%—The confidence level for the test is 99 percent.</para>
+		/// <para>指定时间序列异常值测试的置信度。</para>
+		/// <para>90%—测试置信度为 90％。这是默认设置。</para>
+		/// <para>95%—测试置信度为 95％。</para>
+		/// <para>99%—测试置信度为 99％。</para>
 		/// <para><see cref="LevelOfConfidenceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -167,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Maximum Number of Outliers</para>
-		/// <para>The maximum number of time steps that can be declared outliers for each location. The default value corresponds to 5 percent (rounded down) of the number of time steps of the input space-time cube (a value of at least 1 will always be used). This value cannot exceed 20 percent of the number of time steps.</para>
+		/// <para>每个位置可以声明为异常值的最大时间步数。默认值对应于输入时空立方体的时间步数的 5％（向下舍入）（将始终使用至少为 1 的值）。该值不能超过时间步数的 20％。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -190,38 +191,38 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		public enum CurveTypeEnum 
 		{
 			/// <summary>
-			/// <para>Linear—The time series increases or decreases linearly over time.</para>
+			/// <para>线性—时间序列随时间呈线性增加或减少。</para>
 			/// </summary>
 			[GPValue("LINEAR")]
-			[Description("Linear")]
+			[Description("线性")]
 			Linear,
 
 			/// <summary>
-			/// <para>Parabolic—The time series follows a parabola or quadratic curve over time.</para>
+			/// <para>抛物线—时间序列随时间呈抛物线或二次曲线变化。</para>
 			/// </summary>
 			[GPValue("PARABOLIC")]
-			[Description("Parabolic")]
+			[Description("抛物线")]
 			Parabolic,
 
 			/// <summary>
-			/// <para>Exponential—The time series increases or decreases exponentially over time.</para>
+			/// <para>指数—时间序列随时间呈指数性增加或减少。</para>
 			/// </summary>
 			[GPValue("EXPONENTIAL")]
-			[Description("Exponential")]
+			[Description("指数")]
 			Exponential,
 
 			/// <summary>
-			/// <para>S-shaped (Gompertz)—The time series increases or decreases following the shape of an S over time.</para>
+			/// <para>S 型 (Gompertz)—时间序列随时间呈 S 型增加或减少。</para>
 			/// </summary>
 			[GPValue("GOMPERTZ")]
-			[Description("S-shaped (Gompertz)")]
+			[Description("S 型 (Gompertz)")]
 			GOMPERTZ,
 
 			/// <summary>
-			/// <para>Auto-detect—All four curve types are run for each location and the model is provided the smallest Validation RMSE. If no time slices are excluded for validation, the model with the smallest Forecast RMSE is used. This is the default.</para>
+			/// <para>自动检测—在各个位置运行所有四种曲线类型，随后模型将提供最小“验证 RMSE”值。如果未为进行验证排除任何时间片，则使用“预测 RMSE”值最小的模型。这是默认设置。</para>
 			/// </summary>
 			[GPValue("AUTO_DETECT")]
-			[Description("Auto-detect")]
+			[Description("自动检测")]
 			AUTO_DETECT,
 
 		}
@@ -232,17 +233,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		public enum OutlierOptionEnum 
 		{
 			/// <summary>
-			/// <para>None—Outliers will not be identified. This is the default.</para>
+			/// <para>无—不会识别异常值。这是默认设置。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 			/// <summary>
-			/// <para>Identify outliers—Outliers will be identified using the Generalized ESD test.</para>
+			/// <para>识别异常值—将使用广义 ESD 测试来识别异常值。</para>
 			/// </summary>
 			[GPValue("IDENTIFY")]
-			[Description("Identify outliers")]
+			[Description("识别异常值")]
 			Identify_outliers,
 
 		}
@@ -253,21 +254,21 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		public enum LevelOfConfidenceEnum 
 		{
 			/// <summary>
-			/// <para>90%—The confidence level for the test is 90 percent. This is the default.</para>
+			/// <para>90%—测试置信度为 90％。这是默认设置。</para>
 			/// </summary>
 			[GPValue("90%")]
 			[Description("90%")]
 			_90percent,
 
 			/// <summary>
-			/// <para>95%—The confidence level for the test is 95 percent.</para>
+			/// <para>95%—测试置信度为 95％。</para>
 			/// </summary>
 			[GPValue("95%")]
 			[Description("95%")]
 			_95percent,
 
 			/// <summary>
-			/// <para>99%—The confidence level for the test is 99 percent.</para>
+			/// <para>99%—测试置信度为 99％。</para>
 			/// </summary>
 			[GPValue("99%")]
 			[Description("99%")]

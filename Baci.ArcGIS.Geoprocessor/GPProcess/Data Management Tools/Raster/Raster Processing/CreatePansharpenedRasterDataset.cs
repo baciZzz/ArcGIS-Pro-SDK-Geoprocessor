@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Pansharpened Raster Dataset</para>
-	/// <para>Combines a high-resolution panchromatic raster dataset with a lower-resolution multiband raster dataset to create a high-resolution multiband  raster dataset for visual analysis.</para>
+	/// <para>创建全色锐化栅格数据集</para>
+	/// <para>可将高分辨率全色栅格数据集与低分辨率多波段栅格数据集进行合并，以创建用于可视分析的高分辨率多波段栅格数据集。</para>
 	/// </summary>
 	public class CreatePansharpenedRasterDataset : AbstractGPProcess
 	{
@@ -20,54 +21,54 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset that you want to pan sharpen.</para>
+		/// <para>要进行全色锐化的栅格数据集。</para>
 		/// </param>
 		/// <param name="RedChannel">
 		/// <para>Red Channel</para>
-		/// <para>The input raster band that you want to display with the red color channel.</para>
+		/// <para>要用红色通道显示的输入栅格波段。</para>
 		/// </param>
 		/// <param name="GreenChannel">
 		/// <para>Green Channel</para>
-		/// <para>The input raster band that you want to display with the green color channel.</para>
+		/// <para>要用绿色通道显示的输入栅格波段。</para>
 		/// </param>
 		/// <param name="BlueChannel">
 		/// <para>Blue Channel</para>
-		/// <para>The input raster band that you want to display with the blue color channel.</para>
+		/// <para>要用蓝色通道显示的输入栅格波段。</para>
 		/// </param>
 		/// <param name="OutRasterDataset">
 		/// <para>Output Raster Dataset</para>
-		/// <para>The name, location, and format for the dataset you are creating.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
-		/// <para>When storing a raster dataset in a geodatabase, no file extension should be added to the name of the raster dataset. When storing the raster dataset in a file format, you need to specify the file extension:</para>
-		/// <para>.bil for Esri BIL</para>
-		/// <para>.bip for Esri BIP</para>
-		/// <para>.bmp for BMP</para>
-		/// <para>.bsq for Esri BSQ</para>
-		/// <para>.dat for ENVI DAT</para>
-		/// <para>.gif for GIF</para>
-		/// <para>.img for ERDAS IMAGINE</para>
-		/// <para>.jpg for JPEG</para>
-		/// <para>.jp2 for JPEG 2000</para>
-		/// <para>.png for PNG</para>
-		/// <para>.tif for TIFF</para>
-		/// <para>.mrf for MRF</para>
-		/// <para>.crf for CRF</para>
-		/// <para>No extension for Esri Grid</para>
-		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>要创建的数据集的名称、位置和格式。</para>
+		/// <para>以文件格式存储栅格数据集时，需要指定文件扩展名，具体如下：</para>
+		/// <para>以地理数据库形式存储栅格数据集时，不应向栅格数据集的名称添加文件扩展名。 以文件格式存储栅格数据集时，需要指定文件扩展名，具体如下：</para>
+		/// <para>Esri BIL 为 .bil</para>
+		/// <para>Esri BIP 为 .bip</para>
+		/// <para>BMP 的 .bmp</para>
+		/// <para>Esri BSQ 为 .bsq</para>
+		/// <para>ENVI DAT 为 .dat</para>
+		/// <para>GIF 为 .gif</para>
+		/// <para>ERDAS IMAGINE 为 .img</para>
+		/// <para>JPEG 为 .jpg</para>
+		/// <para>JPEG 2000 为 .jp2</para>
+		/// <para>PNG 为 .png</para>
+		/// <para>TIFF 为 .tif</para>
+		/// <para>MRF 为 .mrf</para>
+		/// <para>CRF 为 .crf</para>
+		/// <para>Esri Grid 无扩展名</para>
+		/// <para>将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。</para>
+		/// <para>将栅格数据集存储到 JPEG 文件、JPEG 2000 文件、TIFF 文件或地理数据库时，可在地理处理环境中指定压缩类型和压缩质量。</para>
 		/// </param>
 		/// <param name="InPanchromaticImage">
 		/// <para>Panchromatic Image</para>
-		/// <para>The higher-resolution panchromatic image.</para>
+		/// <para>较高分辨率的全色影像。</para>
 		/// </param>
 		/// <param name="PansharpeningType">
 		/// <para>Pan-sharpening Type</para>
-		/// <para>The algorithm to fuse the panchromatic and multispectral bands together.</para>
-		/// <para>IHS—Uses Intensity, Hue, and Saturation color space for data fusion.</para>
-		/// <para>Brovey—Uses the Brovey algorithm based on spectral modeling for data fusion.</para>
-		/// <para>Esri—Uses the Esri algorithm based on spectral modeling for data fusion.</para>
-		/// <para>Simple mean—Uses the averaged value between the red, green, and blue values and the panchromatic pixel value.</para>
-		/// <para>Gram-Schmidt—Uses the Gram-Schmidt spectral-sharpening algorithm to sharpen multispectral data.</para>
+		/// <para>将全色波段和多光谱波段融合在一起的算法。</para>
+		/// <para>IHS—使用亮度、色调和饱和度颜色空间进行数据融合。</para>
+		/// <para>Brovey—使用基于光谱建模的 Brovey 算法进行数据融合。</para>
+		/// <para>Esri—使用基于光谱建模的 Esri 算法进行数据融合。</para>
+		/// <para>简单均值—使用红色、绿色、蓝色值与全色像素值之间的平均值。</para>
+		/// <para>Gram-Schmidt—使用 Gram-Schmidt 光谱锐化算法来锐化多光谱数据。</para>
 		/// <para><see cref="PansharpeningTypeEnum"/></para>
 		/// </param>
 		public CreatePansharpenedRasterDataset(object InRaster, object RedChannel, object GreenChannel, object BlueChannel, object OutRasterDataset, object InPanchromaticImage, object PansharpeningType)
@@ -82,9 +83,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Pansharpened Raster Dataset</para>
+		/// <para>Tool Display Name : 创建全色锐化栅格数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Create Pansharpened Raster Dataset";
+		public override string DisplayName() => "创建全色锐化栅格数据集";
 
 		/// <summary>
 		/// <para>Tool Name : CreatePansharpenedRasterDataset</para>
@@ -118,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset that you want to pan sharpen.</para>
+		/// <para>要进行全色锐化的栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -126,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Red Channel</para>
-		/// <para>The input raster band that you want to display with the red color channel.</para>
+		/// <para>要用红色通道显示的输入栅格波段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -135,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Green Channel</para>
-		/// <para>The input raster band that you want to display with the green color channel.</para>
+		/// <para>要用绿色通道显示的输入栅格波段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -144,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Blue Channel</para>
-		/// <para>The input raster band that you want to display with the blue color channel.</para>
+		/// <para>要用蓝色通道显示的输入栅格波段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -153,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Infrared Channel</para>
-		/// <para>The input raster band that you want to display with the infrared color channel.</para>
+		/// <para>要用彩色红外通道显示的输入栅格波段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -162,25 +163,25 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Raster Dataset</para>
-		/// <para>The name, location, and format for the dataset you are creating.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
-		/// <para>When storing a raster dataset in a geodatabase, no file extension should be added to the name of the raster dataset. When storing the raster dataset in a file format, you need to specify the file extension:</para>
-		/// <para>.bil for Esri BIL</para>
-		/// <para>.bip for Esri BIP</para>
-		/// <para>.bmp for BMP</para>
-		/// <para>.bsq for Esri BSQ</para>
-		/// <para>.dat for ENVI DAT</para>
-		/// <para>.gif for GIF</para>
-		/// <para>.img for ERDAS IMAGINE</para>
-		/// <para>.jpg for JPEG</para>
-		/// <para>.jp2 for JPEG 2000</para>
-		/// <para>.png for PNG</para>
-		/// <para>.tif for TIFF</para>
-		/// <para>.mrf for MRF</para>
-		/// <para>.crf for CRF</para>
-		/// <para>No extension for Esri Grid</para>
-		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>要创建的数据集的名称、位置和格式。</para>
+		/// <para>以文件格式存储栅格数据集时，需要指定文件扩展名，具体如下：</para>
+		/// <para>以地理数据库形式存储栅格数据集时，不应向栅格数据集的名称添加文件扩展名。 以文件格式存储栅格数据集时，需要指定文件扩展名，具体如下：</para>
+		/// <para>Esri BIL 为 .bil</para>
+		/// <para>Esri BIP 为 .bip</para>
+		/// <para>BMP 的 .bmp</para>
+		/// <para>Esri BSQ 为 .bsq</para>
+		/// <para>ENVI DAT 为 .dat</para>
+		/// <para>GIF 为 .gif</para>
+		/// <para>ERDAS IMAGINE 为 .img</para>
+		/// <para>JPEG 为 .jpg</para>
+		/// <para>JPEG 2000 为 .jp2</para>
+		/// <para>PNG 为 .png</para>
+		/// <para>TIFF 为 .tif</para>
+		/// <para>MRF 为 .mrf</para>
+		/// <para>CRF 为 .crf</para>
+		/// <para>Esri Grid 无扩展名</para>
+		/// <para>将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。</para>
+		/// <para>将栅格数据集存储到 JPEG 文件、JPEG 2000 文件、TIFF 文件或地理数据库时，可在地理处理环境中指定压缩类型和压缩质量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -188,7 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Panchromatic Image</para>
-		/// <para>The higher-resolution panchromatic image.</para>
+		/// <para>较高分辨率的全色影像。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterLayer()]
@@ -196,12 +197,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pan-sharpening Type</para>
-		/// <para>The algorithm to fuse the panchromatic and multispectral bands together.</para>
-		/// <para>IHS—Uses Intensity, Hue, and Saturation color space for data fusion.</para>
-		/// <para>Brovey—Uses the Brovey algorithm based on spectral modeling for data fusion.</para>
-		/// <para>Esri—Uses the Esri algorithm based on spectral modeling for data fusion.</para>
-		/// <para>Simple mean—Uses the averaged value between the red, green, and blue values and the panchromatic pixel value.</para>
-		/// <para>Gram-Schmidt—Uses the Gram-Schmidt spectral-sharpening algorithm to sharpen multispectral data.</para>
+		/// <para>将全色波段和多光谱波段融合在一起的算法。</para>
+		/// <para>IHS—使用亮度、色调和饱和度颜色空间进行数据融合。</para>
+		/// <para>Brovey—使用基于光谱建模的 Brovey 算法进行数据融合。</para>
+		/// <para>Esri—使用基于光谱建模的 Esri 算法进行数据融合。</para>
+		/// <para>简单均值—使用红色、绿色、蓝色值与全色像素值之间的平均值。</para>
+		/// <para>Gram-Schmidt—使用 Gram-Schmidt 光谱锐化算法来锐化多光谱数据。</para>
 		/// <para><see cref="PansharpeningTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -211,7 +212,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Red Weight</para>
-		/// <para>A value from 0 to 1 to weight the red band.</para>
+		/// <para>使用从 0 到 1 的值对红色波段进行加权。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -219,7 +220,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Green Weight</para>
-		/// <para>A value from 0 to 1 to weight the green band.</para>
+		/// <para>使用从 0 到 1 的值对绿色波段进行加权。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -227,7 +228,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Blue Weight</para>
-		/// <para>A value from 0 to 1 to weight the blue band.</para>
+		/// <para>使用从 0 到 1 的值对蓝色波段进行加权。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -235,7 +236,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Infrared Weight</para>
-		/// <para>A value from 0 to 1 to weight the infrared band.</para>
+		/// <para>使用从 0 到 1 的值对红外波段进行加权。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -243,33 +244,33 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Sensor</para>
-		/// <para>When the Gram-Schmidt pan-sharpening method is chosen, you can also specify the sensor of the multiband raster input. Choosing the sensor type will set appropriate band weights.</para>
-		/// <para>Unknown—An unknown or unlisted sensor</para>
-		/// <para>DubaiSat-2—The DubaiSat-2 satellite sensor</para>
-		/// <para>GeoEye-1—The GeoEye-1 and OrbView-3 satellite sensors</para>
-		/// <para>GF-1 PMS—The Gao Fen satellite 1, Panchromatic and Multispectral CCD Camera</para>
-		/// <para>GF-2 PMS—The Gao Fen 2 satellite, Panchromatic and Multispectral CCD Camera</para>
-		/// <para>IKONOS—The IKONOS satellite sensor</para>
-		/// <para>Jilin-1—The Jilin-1 satellite sensor</para>
-		/// <para>KOMPSAT-2—The KOMPSAT-2 satellite sensor</para>
-		/// <para>KOMPSAT-3—The KOMPSAT-3 satellite sensor</para>
-		/// <para>Landsat 1-5 MSS—The Landsat MSS satellite sensors</para>
-		/// <para>Landsat 7 ETM+—The Landsat 7 satellite sensor</para>
-		/// <para>Landsat 8—The Landsat 8 satellite sensor</para>
-		/// <para>Pleiades-1—The Pleiades-1 satellite sensor</para>
-		/// <para>Quickbird—The QuickBird satellite sensor</para>
-		/// <para>SkySat-C—The SkySat-C satellite sensor</para>
-		/// <para>SPOT 5—The SPOT 5 satellite sensor</para>
-		/// <para>SPOT 6—The SPOT 6 satellite sensor</para>
-		/// <para>SPOT 7—The SPOT 7 satellite sensor</para>
-		/// <para>Tian Hui 1—The Tian Hui 1 satellite sensor</para>
-		/// <para>Ultracam—The UltraCam aerial sensor</para>
-		/// <para>WorldView-2—The WorldView-2 satellite sensor</para>
-		/// <para>WorldView-3—The WorldView-3 satellite sensor</para>
-		/// <para>WorldView-4—The WorldView-4 satellite sensor</para>
-		/// <para>ZY-1 PMS—The Ziyuan High Panchromatic Multispectral Sensor</para>
-		/// <para>ZY-3 CRESDA—The Ziyuan CRESDA satellite sensor</para>
-		/// <para>ZY-3 SASMAC—The Ziyuan SASMAC satellite sensor</para>
+		/// <para>选择 Gram-Schmidt 全色锐化方法时，您还可指定多波段栅格输入的传感器。选择传感器类型将设置相应的波段权重。</para>
+		/// <para>未知—未知或未列出的传感器</para>
+		/// <para>DubaiSat-2—DubaiSat-2 卫星传感器</para>
+		/// <para>GeoEye-1—GeoEye-1 和 OrbView-3 卫星传感器</para>
+		/// <para>GF-1 PMS—Gao Fen 卫星 1，全色和多光谱 CCD 照相机</para>
+		/// <para>GF-2 PMS—Gao Fen 2 卫星，全色和多光谱 CCD 照相机</para>
+		/// <para>IKONOS—IKONOS 卫星传感器</para>
+		/// <para>Jilin-1—Jilin-1 卫星传感器</para>
+		/// <para>KOMPSAT-2—KOMPSAT-2 卫星传感器</para>
+		/// <para>KOMPSAT-3—KOMPSAT-3 卫星传感器</para>
+		/// <para>Landsat 1-5 MSS—Landsat MSS 卫星传感器</para>
+		/// <para>Landsat 7 ETM+—Landsat 7 卫星传感器</para>
+		/// <para>Landsat 8—Landsat 8 卫星传感器</para>
+		/// <para>Pleiades-1—Pleiades-1 卫星传感器</para>
+		/// <para>Quickbird—QuickBird 卫星传感器</para>
+		/// <para>SkySat-C—SkySat-C 卫星传感器</para>
+		/// <para>SPOT 5—SPOT 5 卫星传感器</para>
+		/// <para>SPOT 6—SPOT 6 卫星传感器</para>
+		/// <para>SPOT 7—SPOT 7 卫星传感器</para>
+		/// <para>Tian Hui 1—Tian Hui 1 卫星传感器</para>
+		/// <para>Ultracam—UltraCam 航空传感器</para>
+		/// <para>WorldView-2—WorldView-2 卫星传感器</para>
+		/// <para>WorldView-3—WorldView-3 卫星传感器</para>
+		/// <para>WorldView-4—WorldView-4 卫星传感器</para>
+		/// <para>ZY-1 PMS—Ziyuan 高分辨率全色多光谱传感器</para>
+		/// <para>ZY-3 CRESDA—Ziyuan CRESDA 卫星传感器</para>
+		/// <para>ZY-3 SASMAC—Ziyuan SASMAC 卫星传感器</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -293,35 +294,35 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PansharpeningTypeEnum 
 		{
 			/// <summary>
-			/// <para>IHS—Uses Intensity, Hue, and Saturation color space for data fusion.</para>
+			/// <para>IHS—使用亮度、色调和饱和度颜色空间进行数据融合。</para>
 			/// </summary>
 			[GPValue("IHS")]
 			[Description("IHS")]
 			IHS,
 
 			/// <summary>
-			/// <para>Brovey—Uses the Brovey algorithm based on spectral modeling for data fusion.</para>
+			/// <para>Brovey—使用基于光谱建模的 Brovey 算法进行数据融合。</para>
 			/// </summary>
 			[GPValue("BROVEY")]
 			[Description("Brovey")]
 			Brovey,
 
 			/// <summary>
-			/// <para>Esri—Uses the Esri algorithm based on spectral modeling for data fusion.</para>
+			/// <para>Esri—使用基于光谱建模的 Esri 算法进行数据融合。</para>
 			/// </summary>
 			[GPValue("Esri")]
 			[Description("Esri")]
 			Esri,
 
 			/// <summary>
-			/// <para>Simple mean—Uses the averaged value between the red, green, and blue values and the panchromatic pixel value.</para>
+			/// <para>简单均值—使用红色、绿色、蓝色值与全色像素值之间的平均值。</para>
 			/// </summary>
 			[GPValue("SIMPLE_MEAN")]
-			[Description("Simple mean")]
+			[Description("简单均值")]
 			Simple_mean,
 
 			/// <summary>
-			/// <para>Gram-Schmidt—Uses the Gram-Schmidt spectral-sharpening algorithm to sharpen multispectral data.</para>
+			/// <para>Gram-Schmidt—使用 Gram-Schmidt 光谱锐化算法来锐化多光谱数据。</para>
 			/// </summary>
 			[GPValue("Gram-Schmidt")]
 			[Description("Gram-Schmidt")]

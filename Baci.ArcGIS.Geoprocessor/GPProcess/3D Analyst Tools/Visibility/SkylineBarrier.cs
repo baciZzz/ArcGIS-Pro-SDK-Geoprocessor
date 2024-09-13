@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Skyline Barrier</para>
-	/// <para>Generates a multipatch feature class representing a skyline barrier or shadow volume.</para>
+	/// <para>天际线障碍物</para>
+	/// <para>生成一个表示天际线障碍物或阴影体的多面体要素类。</para>
 	/// </summary>
 	public class SkylineBarrier : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InObserverPointFeatures">
 		/// <para>Input Observer Point Features</para>
-		/// <para>The point feature class containing the observer points.</para>
+		/// <para>包含观察点的点要素类。</para>
 		/// </param>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input line feature class which represents the skylines, or the input multipatch feature class which represents the silhouettes.</para>
+		/// <para>表示天际线的输入线要素类或表示轮廓的输入多面体要素类。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output  Feature Class</para>
-		/// <para>The output feature class into which the skyline barrier or shadow volume is placed.</para>
+		/// <para>放置天际线障碍物或阴影体的输出要素类。</para>
 		/// </param>
 		public SkylineBarrier(object InObserverPointFeatures, object InFeatures, object OutFeatureClass)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Skyline Barrier</para>
+		/// <para>Tool Display Name : 天际线障碍物</para>
 		/// </summary>
-		public override string DisplayName() => "Skyline Barrier";
+		public override string DisplayName() => "天际线障碍物";
 
 		/// <summary>
 		/// <para>Tool Name : SkylineBarrier</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Observer Point Features</para>
-		/// <para>The point feature class containing the observer points.</para>
+		/// <para>包含观察点的点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input line feature class which represents the skylines, or the input multipatch feature class which represents the silhouettes.</para>
+		/// <para>表示天际线的输入线要素类或表示轮廓的输入多面体要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output  Feature Class</para>
-		/// <para>The output feature class into which the skyline barrier or shadow volume is placed.</para>
+		/// <para>放置天际线障碍物或阴影体的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Minimum Radius</para>
-		/// <para>The minimum radius to which triangle edges should be extended from the observer point. The default is 0, meaning no minimum.</para>
+		/// <para>从观察点扩展到三角形边的最小半径。默认值是 0 表示没有最小值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Maximum Radius</para>
-		/// <para>The maximum radius to which triangle edges should be extended from the observer point. The default is 0, meaning no maximum.</para>
+		/// <para>从观察点扩展到三角形边的最大半径。默认值是 0 表示没有最大值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -120,9 +121,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Closed</para>
-		/// <para>Whether to close the skyline barrier with a skirt and a base so that the resulting multipatch will appear to be a solid.</para>
-		/// <para>Unchecked—No skirt or base is added to the multipatch; just the multipatch representing the surface going from the observer to the skyline is represented. This is the default.</para>
-		/// <para>Checked— A skirt and a base are added to the multipatch so as to form what appears to be a closed solid.</para>
+		/// <para>可以根据生成的多面体是否呈现为实体，选择是否通过裙面和底面闭合天际线障碍物。</para>
+		/// <para>未选中 - 多面体未添加裙面和底面，只有表示从观察点到天际线的表面的多面体。这是默认设置。</para>
+		/// <para>选中 - 多面体添加有裙面和底面，从而形成一个封闭的实体。</para>
 		/// <para><see cref="ClosedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -132,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Base Elevation</para>
-		/// <para>The elevation of the base of the closed multipatch; it is ignored if the barrier is not to be closed. The default is 0.</para>
+		/// <para>闭合多面体的底面高程；如果障碍物不闭合则忽略。默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -141,9 +142,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Project to Plane</para>
-		/// <para>Whether the front (nearer to the observer) and back (farther from the observer) ends of the barrier should each be projected onto a vertical plane. This is typically checked (turned on) in order to create a shadow volume.</para>
-		/// <para>Unchecked—The barrier will extend from the observer point to the skyline (or nearer or farther if nonzero values are provided for minimum and maximum radius). This is the default.</para>
-		/// <para>Checked—The barrier will extend from a vertical plane to a vertical plane.</para>
+		/// <para>障碍物的前端（距离观察点较近）和后端（距离观察点较远）是否应该分别投影到垂直平面。通常选中（开启）该选项来创建阴影体。</para>
+		/// <para>未选中 - 障碍物将从观察点扩展到天际线（或当最小和最大半径为非零值时为较近或较远）。这是默认设置。</para>
+		/// <para>选中 - 障碍物将从垂直平面扩展到垂直平面。</para>
 		/// <para><see cref="ProjectToPlaneEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -168,14 +169,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ClosedEnum 
 		{
 			/// <summary>
-			/// <para>Checked— A skirt and a base are added to the multipatch so as to form what appears to be a closed solid.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLOSED")]
 			CLOSED,
 
 			/// <summary>
-			/// <para>Unchecked—No skirt or base is added to the multipatch; just the multipatch representing the surface going from the observer to the skyline is represented. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CLOSED")]
@@ -189,14 +190,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ProjectToPlaneEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The barrier will extend from a vertical plane to a vertical plane.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PROJECT_TO_PLANE")]
 			PROJECT_TO_PLANE,
 
 			/// <summary>
-			/// <para>Unchecked—The barrier will extend from the observer point to the skyline (or nearer or farther if nonzero values are provided for minimum and maximum radius). This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_PROJECT_TO_PLANE")]

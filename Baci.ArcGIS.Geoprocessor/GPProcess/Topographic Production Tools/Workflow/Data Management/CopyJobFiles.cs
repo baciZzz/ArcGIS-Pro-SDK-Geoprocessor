@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Copy Job Files</para>
+	/// <para>Copy Job Files</para>
 	/// <para>Copies Workflow Manager (Classic) job files to and from a local machine and a shared directory for processing.</para>
 	/// </summary>
 	public class CopyJobFiles : AbstractGPProcess

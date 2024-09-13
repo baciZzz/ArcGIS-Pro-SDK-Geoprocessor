@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Copy To Data Store</para>
-	/// <para>Copies features from the input to a new feature service in your portal.</para>
+	/// <para>复制到数据存储</para>
+	/// <para>将要素从输入复制到门户中的新要素服务。</para>
 	/// </summary>
 	public class CopyToDataStore : AbstractGPProcess
 	{
@@ -20,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>The feature to be copied.</para>
-		/// <para>When running GeoAnalytics Server tools, the analysis is completed on the GeoAnalytics Server. For optimal performance, make data available to the GeoAnalytics Server through feature layers hosted on your ArcGIS Enterprise portal or through big data file shares. Data that is not local to your GeoAnalytics Server will be moved to your GeoAnalytics Server before analysis begins. This means that it will take longer to run a tool, and in some cases, moving the data from ArcGIS Pro to your GeoAnalytics Server may fail. The threshold for failure depends on your network speeds, as well as the size and complexity of the data. Therefore, it is recommended that you always share your data or create a big data file share.</para>
+		/// <para>要复制的要素。</para>
+		/// <para>当 GeoAnalytics Server 工具运行时，GeoAnalytics Server 上的分析已完成。要获得最佳性能，通过 ArcGIS Enterprise 门户上托管的要素图层或通过大数据文件共享，可以将数据用于 GeoAnalytics Server。在分析开始之前，非 GeoAnalytics Server 本地数据将被转移到您的 GeoAnalytics Server。这意味着运行工具需要更长时间，并且在某些情况下，从 ArcGIS Pro 到 GeoAnalytics Server 移动数据可能会失败。失败的阈值取决于网络速度，以及数据的大小和复杂性。因此，建议您始终共享数据或创建大数据文件共享。</para>
 		/// </param>
 		/// <param name="OutputName">
 		/// <para>Output Name</para>
-		/// <para>Name of output feature service.</para>
+		/// <para>输出要素服务的名称。</para>
 		/// </param>
 		public CopyToDataStore(object InputLayer, object OutputName)
 		{
@@ -34,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Copy To Data Store</para>
+		/// <para>Tool Display Name : 复制到数据存储</para>
 		/// </summary>
-		public override string DisplayName() => "Copy To Data Store";
+		public override string DisplayName() => "复制到数据存储";
 
 		/// <summary>
 		/// <para>Tool Name : CopyToDataStore</para>
@@ -70,8 +71,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The feature to be copied.</para>
-		/// <para>When running GeoAnalytics Server tools, the analysis is completed on the GeoAnalytics Server. For optimal performance, make data available to the GeoAnalytics Server through feature layers hosted on your ArcGIS Enterprise portal or through big data file shares. Data that is not local to your GeoAnalytics Server will be moved to your GeoAnalytics Server before analysis begins. This means that it will take longer to run a tool, and in some cases, moving the data from ArcGIS Pro to your GeoAnalytics Server may fail. The threshold for failure depends on your network speeds, as well as the size and complexity of the data. Therefore, it is recommended that you always share your data or create a big data file share.</para>
+		/// <para>要复制的要素。</para>
+		/// <para>当 GeoAnalytics Server 工具运行时，GeoAnalytics Server 上的分析已完成。要获得最佳性能，通过 ArcGIS Enterprise 门户上托管的要素图层或通过大数据文件共享，可以将数据用于 GeoAnalytics Server。在分析开始之前，非 GeoAnalytics Server 本地数据将被转移到您的 GeoAnalytics Server。这意味着运行工具需要更长时间，并且在某些情况下，从 ArcGIS Pro 到 GeoAnalytics Server 移动数据可能会失败。失败的阈值取决于网络速度，以及数据的大小和复杂性。因此，建议您始终共享数据或创建大数据文件共享。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
@@ -81,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>Name of output feature service.</para>
+		/// <para>输出要素服务的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -89,9 +90,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Data Store</para>
-		/// <para>The ArcGIS Data Store to which the output will be saved. The default is Spatiotemporal big data store. All results stored to the Spatiotemporal big data store will be stored in WGS84. Results stored in a Relational data store will maintain their coordinate system.</para>
-		/// <para>Spatiotemporal big data store—Output will be stored in your spatiotemporal big data store. This is the default.</para>
-		/// <para>Relational data store—Output will be stored in your relational data store.</para>
+		/// <para>用于保存输出的 ArcGIS Data Store。默认设置为时空大数据存储。存储到时空大数据存储中的所有结果都将存储于 WGS84 中。存储在关系数据存储中的结果都将保持各自的坐标系。</para>
+		/// <para>时空大数据存储—输出将存储在时空大数据存储中。这是默认设置。</para>
+		/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 		/// <para><see cref="DataStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -123,17 +124,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DataStoreEnum 
 		{
 			/// <summary>
-			/// <para>Relational data store—Output will be stored in your relational data store.</para>
+			/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 			/// </summary>
 			[GPValue("RELATIONAL_DATA_STORE")]
-			[Description("Relational data store")]
+			[Description("关系数据存储")]
 			Relational_data_store,
 
 			/// <summary>
-			/// <para>Spatiotemporal big data store—Output will be stored in your spatiotemporal big data store. This is the default.</para>
+			/// <para>时空大数据存储—输出将存储在时空大数据存储中。这是默认设置。</para>
 			/// </summary>
 			[GPValue("SPATIOTEMPORAL_DATA_STORE")]
-			[Description("Spatiotemporal big data store")]
+			[Description("时空大数据存储")]
 			Spatiotemporal_big_data_store,
 
 		}

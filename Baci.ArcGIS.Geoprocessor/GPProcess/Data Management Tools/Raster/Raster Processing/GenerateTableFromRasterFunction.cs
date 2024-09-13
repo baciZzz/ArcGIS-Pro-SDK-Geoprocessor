@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Table From Raster Function</para>
-	/// <para>Converts a raster function dataset to a table or feature class.  The input raster function should be a raster function designed to output a table or feature class.</para>
+	/// <para>从栅格函数生成表</para>
+	/// <para>用于将栅格函数数据集转换为表或要素类。输入栅格函数应该为用于输出表或要素类的栅格函数。</para>
 	/// </summary>
 	public class GenerateTableFromRasterFunction : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="RasterFunction">
 		/// <para>Input Raster Function</para>
-		/// <para>The function template or function JSON object that outputs a table or feature class.</para>
+		/// <para>输出表或要素类的函数模板或函数 JSON 对象。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>The path, file name, and type (extension) of the output table or feature class.</para>
+		/// <para>输出表或要素类的路径、文件名和类型（扩展名）。</para>
 		/// </param>
 		public GenerateTableFromRasterFunction(object RasterFunction, object OutTable)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Table From Raster Function</para>
+		/// <para>Tool Display Name : 从栅格函数生成表</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Table From Raster Function";
+		public override string DisplayName() => "从栅格函数生成表";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateTableFromRasterFunction</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster Function</para>
-		/// <para>The function template or function JSON object that outputs a table or feature class.</para>
+		/// <para>输出表或要素类的函数模板或函数 JSON 对象。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The path, file name, and type (extension) of the output table or feature class.</para>
+		/// <para>输出表或要素类的路径、文件名和类型（扩展名）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -86,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Raster Function Arguments</para>
-		/// <para>The function arguments and their values to be set. Each raster function has its own arguments and values, which are listed in the dialog of the tool.</para>
+		/// <para>函数参数及其要进行设置的值。每个栅格函数都有自己的参数和值，这些参数和值将在工具的对话框中列出。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make OD Cost Matrix Analysis Layer</para>
-	/// <para>Makes an origin–destination (OD) cost matrix network analysis layer and sets its analysis properties. An OD cost matrix analysis layer is useful for representing a matrix of costs going from a set of origin locations to a set of destination locations. The layer can be created using a local network dataset or a service hosted online or in a portal.</para>
+	/// <para>创建 OD 成本矩阵分析图层</para>
+	/// <para>创建起始-目的地 (OD) 成本矩阵网络分析图层并设置其分析属性。OD 成本矩阵分析图层对于描述从一组起始位置到一组目的地位置的成本矩阵十分有用。该图层可通过本地网络数据集进行创建，也可通过在线托管服务或门户托管服务进行创建。</para>
 	/// </summary>
 	public class MakeODCostMatrixAnalysisLayer : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="NetworkDataSource">
 		/// <para>Network Data Source</para>
-		/// <para>The network dataset or service on which the network analysis will be performed. Use the portal URL for a service.</para>
+		/// <para>将对其执行网络分析的网络数据集或服务。将门户 URL 用于服务。</para>
 		/// </param>
 		public MakeODCostMatrixAnalysisLayer(object NetworkDataSource)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Make OD Cost Matrix Analysis Layer</para>
+		/// <para>Tool Display Name : 创建 OD 成本矩阵分析图层</para>
 		/// </summary>
-		public override string DisplayName() => "Make OD Cost Matrix Analysis Layer";
+		public override string DisplayName() => "创建 OD 成本矩阵分析图层";
 
 		/// <summary>
 		/// <para>Tool Name : MakeODCostMatrixAnalysisLayer</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Network Data Source</para>
-		/// <para>The network dataset or service on which the network analysis will be performed. Use the portal URL for a service.</para>
+		/// <para>将对其执行网络分析的网络数据集或服务。将门户 URL 用于服务。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Layer Name</para>
-		/// <para>The name of the network analysis layer to create.</para>
+		/// <para>要创建的网络分析图层的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -80,8 +81,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Travel Mode</para>
-		/// <para>The name of the travel mode to use in the analysis. The travel mode represents a collection of network settings, such as travel restrictions and U-turn policies, that determine how a pedestrian, car, truck, or other medium of transportation moves through the network. Travel modes are defined on your network data source.</para>
-		/// <para>An arcpy.na.TravelMode object and a string containing the valid JSON representation of a travel mode can also be used as input to the parameter.</para>
+		/// <para>分析中使用的出行模式名称。出行模式为一组网络设置（例如行驶限制和 U 形转弯），用于确定行人、车辆、卡车或其他交通媒介在网络中的移动方式。出行模式在网络数据源中进行定义。</para>
+		/// <para>arcpy.na.TravelMode 对象和包含出行模式有效 JSON 表示的字符串也可用作参数的输入。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Cutoff</para>
-		/// <para>The impedance value at which to stop searching for destinations for a given origin. This value will be in the units of the impedance attribute used by your chosen travel mode. No destinations beyond this limit will be found. This cutoff value can be overridden on a per-origin basis by specifying individual cutoff values in the origins sublayer. By default, no cutoff is used for the analysis.</para>
+		/// <para>停止为指定起始点搜索目的地时所对应的阻抗值。该值将以所选出行模式使用的阻抗属性为单位。无法找到超过此限制的目的地。可通过在起始点子图层中指定单个中断值来逐个起始点覆盖中断值。默认情况下分析不使用中断。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -98,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Number of Destinations to Find</para>
-		/// <para>The number of destinations to find per origin. This default can be overridden by specifying an individual value for the TargetDestinationCount property in the origins sublayer. By default, no limit is used, and all destinations are found.</para>
+		/// <para>要为每个起始点查找的目的地数。可通过为起始点子图层的 TargetDestinationCount 属性指定一个值来覆盖此默认值。默认情况下无任何限制，可找到所有目的地。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -106,17 +107,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time of Day</para>
-		/// <para>Indicates the departure time from origins.</para>
-		/// <para>If you have chosen a traffic-based impedance attribute, the solution will be generated given dynamic traffic conditions at the time of day specified here. A date and time can be specified as 5/14/2012 10:30 AM.</para>
-		/// <para>Instead of using a particular date, a day of the week can be specified using the following dates:</para>
-		/// <para>Today—12/30/1899</para>
-		/// <para>Sunday—12/31/1899</para>
-		/// <para>Monday—1/1/1900</para>
-		/// <para>Tuesday—1/2/1900</para>
-		/// <para>Wednesday—1/3/1900</para>
-		/// <para>Thursday—1/4/1900</para>
-		/// <para>Friday—1/5/1900</para>
-		/// <para>Saturday—1/6/1900</para>
+		/// <para>指示从起始点出发的时间。</para>
+		/// <para>如果您已经选择了基于流量的阻抗属性，将会根据特定的某天某时的动态交通状况来生成解决方案。日期和时间可被指定为 5/14/2012 10:30 AM。</para>
+		/// <para>可使用以下日期来指定一周中的每一天，而无需使用特定的日期：</para>
+		/// <para>今天 - 12/30/1899</para>
+		/// <para>星期日 - 12/31/1899</para>
+		/// <para>星期一 - 1/1/1900</para>
+		/// <para>星期二 - 1/2/1900</para>
+		/// <para>星期三 - 1/3/1900</para>
+		/// <para>星期四 - 1/4/1900</para>
+		/// <para>星期五 - 1/5/1900</para>
+		/// <para>星期六 - 1/6/1900</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -125,9 +126,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time Zone</para>
-		/// <para>The time zone of the Time of Day parameter.</para>
-		/// <para>Local time at locations—The Time of Day parameter refers to the time zone in which the origins are located. This is the default.</para>
-		/// <para>UTC—The Time of Day parameter refers to Coordinated Universal Time (UTC). Choose this option if you want to calculate your OD cost matrix for a specific time, such as now, but aren&apos;t certain in which time zone the origins will be located.</para>
+		/// <para>时间参数的时区。</para>
+		/// <para>各位置的本地时间—时间参数是指起始点所处的时区。这是默认设置。</para>
+		/// <para>UTC—时间参数是指协调世界时间 (UTC)。如果您想要在指定时间内（如现在）计算 OD 成本矩阵，但不确定起始点所在的时区，请选择此选项。</para>
 		/// <para><see cref="TimeZoneEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -138,9 +139,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Line Shape</para>
-		/// <para>No lines—No shape will be generated for the output origin-destination route pair. This is useful when you have a large number of origins and destinations and are interested only in the impedance costs in the OD cost matrix table, not in visualizing your OD cost matrix in a map.</para>
-		/// <para>Straight lines—The output route shape will be a single straight line between each of the origin-destination pairs. This is the default.</para>
-		/// <para>No matter which output shape type is chosen, the best route is always determined by the network impedance, never Euclidean distance. This means that only the route shapes are different, not the underlying traversal of the network.</para>
+		/// <para>无线—将不会为输出起始点-目的地路径对生成任何形状。适用于存在大量起始点和目的地，但仅对 OD 成本矩阵表中的阻抗成本（而不是查看地图中的 OD 成本矩阵）感兴趣的情况。</para>
+		/// <para>直线—输出路径形状是介于各个起始点-目的地对之间的直线（单线）。这是默认设置。</para>
+		/// <para>无论选择何种输出形状类型，最佳路径始终由网络阻抗（而非欧氏距离）决定。这表示只是路径形状不同，而对网络进行的基础遍历则相同。</para>
 		/// <para><see cref="LineShapeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -151,9 +152,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Accumulate Attributes</para>
-		/// <para>A list of cost attributes to be accumulated during analysis. These accumulated attributes are for reference only; the solver only uses the cost attribute used by your designated travel mode when solving the analysis.</para>
-		/// <para>For each cost attribute that is accumulated, a Total_[Impedance] property is populated in the network analysis output features.</para>
-		/// <para>This parameter is not available if the network data source is an ArcGIS Online service or the network data source is a service on a version of Portal for ArcGIS that does not support accumulation.</para>
+		/// <para>分析过程中要累积的成本属性的列表。这些累积属性仅供参考；求解程序仅使用求解分析时指定的出行模式所使用的成本属性。</para>
+		/// <para>对于每个累积的成本属性，会在网络分析输出要素中填充 Total_[Impedance] 属性。</para>
+		/// <para>如果网络数据源为 ArcGIS Online 服务，或如果网络数据源是不支持累积的 Portal for ArcGIS 版本上的服务，则此参数不可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -185,17 +186,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TimeZoneEnum 
 		{
 			/// <summary>
-			/// <para>UTC—The Time of Day parameter refers to Coordinated Universal Time (UTC). Choose this option if you want to calculate your OD cost matrix for a specific time, such as now, but aren&apos;t certain in which time zone the origins will be located.</para>
+			/// <para>UTC—时间参数是指协调世界时间 (UTC)。如果您想要在指定时间内（如现在）计算 OD 成本矩阵，但不确定起始点所在的时区，请选择此选项。</para>
 			/// </summary>
 			[GPValue("UTC")]
 			[Description("UTC")]
 			UTC,
 
 			/// <summary>
-			/// <para>Local time at locations—The Time of Day parameter refers to the time zone in which the origins are located. This is the default.</para>
+			/// <para>各位置的本地时间—时间参数是指起始点所处的时区。这是默认设置。</para>
 			/// </summary>
 			[GPValue("LOCAL_TIME_AT_LOCATIONS")]
-			[Description("Local time at locations")]
+			[Description("各位置的本地时间")]
 			Local_time_at_locations,
 
 		}
@@ -206,17 +207,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum LineShapeEnum 
 		{
 			/// <summary>
-			/// <para>No lines—No shape will be generated for the output origin-destination route pair. This is useful when you have a large number of origins and destinations and are interested only in the impedance costs in the OD cost matrix table, not in visualizing your OD cost matrix in a map.</para>
+			/// <para>无线—将不会为输出起始点-目的地路径对生成任何形状。适用于存在大量起始点和目的地，但仅对 OD 成本矩阵表中的阻抗成本（而不是查看地图中的 OD 成本矩阵）感兴趣的情况。</para>
 			/// </summary>
 			[GPValue("NO_LINES")]
-			[Description("No lines")]
+			[Description("无线")]
 			No_lines,
 
 			/// <summary>
-			/// <para>Straight lines—The output route shape will be a single straight line between each of the origin-destination pairs. This is the default.</para>
+			/// <para>直线—输出路径形状是介于各个起始点-目的地对之间的直线（单线）。这是默认设置。</para>
 			/// </summary>
 			[GPValue("STRAIGHT_LINES")]
-			[Description("Straight lines")]
+			[Description("直线")]
 			Straight_lines,
 
 		}

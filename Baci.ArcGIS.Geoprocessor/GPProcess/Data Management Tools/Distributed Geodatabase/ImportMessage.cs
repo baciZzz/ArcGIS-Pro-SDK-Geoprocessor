@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Import Message</para>
+	/// <para>Import Message</para>
 	/// <para>Imports changes from a delta file into a replica geodatabase.</para>
 	/// </summary>
 	[Obsolete()]

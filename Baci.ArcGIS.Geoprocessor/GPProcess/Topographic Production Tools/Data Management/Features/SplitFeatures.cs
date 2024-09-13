@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Split Features</para>
+	/// <para>Split Features</para>
 	/// <para>Splits features on input feature classes for any number of polyline or polygon target feature classes using the cutting features and inserts points on the cutting feature.</para>
 	/// </summary>
 	public class SplitFeatures : AbstractGPProcess

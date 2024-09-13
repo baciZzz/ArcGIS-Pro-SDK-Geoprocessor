@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Feature Class To Geodatabase</para>
-	/// <para>Converts one or more feature classes or feature layers to geodatabase feature classes.</para>
+	/// <para>要素类至地理数据库</para>
+	/// <para>将一个或多个要素类/要素图层转换为地理数据库要素类。</para>
 	/// </summary>
 	public class FeatureClassToGeodatabase : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InputFeatures">
 		/// <para>Input Features</para>
-		/// <para>One or more feature classes or feature layers to be imported into a geodatabase.</para>
+		/// <para>要导入到地理数据库的一个或多个要素类或要素图层。</para>
 		/// </param>
 		/// <param name="OutputGeodatabase">
 		/// <para>Output Geodatabase</para>
-		/// <para>The output or destination geodatabase.</para>
+		/// <para>输出或目标地理数据库。</para>
 		/// </param>
 		public FeatureClassToGeodatabase(object InputFeatures, object OutputGeodatabase)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Feature Class To Geodatabase</para>
+		/// <para>Tool Display Name : 要素类至地理数据库</para>
 		/// </summary>
-		public override string DisplayName() => "Feature Class To Geodatabase";
+		public override string DisplayName() => "要素类至地理数据库";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureClassToGeodatabase</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>One or more feature classes or feature layers to be imported into a geodatabase.</para>
+		/// <para>要导入到地理数据库的一个或多个要素类或要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Geodatabase</para>
-		/// <para>The output or destination geodatabase.</para>
+		/// <para>输出或目标地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]

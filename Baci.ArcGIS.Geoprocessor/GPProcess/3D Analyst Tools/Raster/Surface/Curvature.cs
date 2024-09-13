@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Curvature</para>
-	/// <para>Calculates the curvature of a raster surface, optionally including profile and plan curvature.</para>
+	/// <para>曲率</para>
+	/// <para>计算栅格表面的曲率，包括剖面曲率和平面曲率。</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.Analyst3DTools.SurfaceParameters"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.Analyst3DTools.SurfaceParameters))]
@@ -22,12 +23,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input surface raster.</para>
+		/// <para>输入表面栅格。</para>
 		/// </param>
 		/// <param name="OutCurvatureRaster">
 		/// <para>Output curvature raster</para>
-		/// <para>The output curvature raster.</para>
-		/// <para>It will be floating-point type.</para>
+		/// <para>输出曲率栅格。</para>
+		/// <para>此栅格为浮点类型。</para>
 		/// </param>
 		public Curvature(object InRaster, object OutCurvatureRaster)
 		{
@@ -36,14 +37,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Curvature</para>
+		/// <para>Tool Display Name : 曲率</para>
 		/// </summary>
-		public override string DisplayName() => "Curvature";
+		public override string DisplayName() => "曲率";
 
 		/// <summary>
-		/// <para>Tool Name : Curvature</para>
+		/// <para>Tool Name : 曲率</para>
 		/// </summary>
-		public override string ToolName() => "Curvature";
+		public override string ToolName() => "曲率";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Curvature</para>
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input surface raster.</para>
+		/// <para>输入表面栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -84,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output curvature raster</para>
-		/// <para>The output curvature raster.</para>
-		/// <para>It will be floating-point type.</para>
+		/// <para>输出曲率栅格。</para>
+		/// <para>此栅格为浮点类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -93,10 +94,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z factor</para>
-		/// <para>The number of ground x,y units in one surface z-unit.</para>
-		/// <para>The z-factor adjusts the units of measure for the z-units when they are different from the x,y units of the input surface. The z-values of the input surface are multiplied by the z-factor when calculating the final output surface.</para>
-		/// <para>If the x,y units and z-units are in the same units of measure, the z-factor is 1. This is the default.</para>
-		/// <para>If the x,y units and z-units are in different units of measure, the z-factor must be set to the appropriate factor or the results will be incorrect. For example, if the z-units are feet and the x,y units are meters, you would use a z-factor of 0.3048 to convert the z-units from feet to meters (1 foot = 0.3048 meter).</para>
+		/// <para>一个表面 z 单位中地面 x,y 单位的数量。</para>
+		/// <para>z 单位与输入表面的 x,y 单位不同时，可使用 z 因子调整 z 单位的测量单位。 计算最终输出表面时，将用 z 因子乘以输入表面的 z 值。</para>
+		/// <para>如果 x,y 单位和 z 单位采用相同的测量单位，则 z 因子为 1。 这是默认设置。</para>
+		/// <para>如果 x,y 单位和 z 单位采用不同的测量单位，则必须将 z 因子设置为适当的因子，否则会得到错误的结果。 例如，如果 z 单位是英尺，而 x,y 单位是米，则应使用 z 因子 0.3048 将 z 单位从英尺转换为米（1 英尺 = 0.3048 米）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -105,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output profile curve raster</para>
-		/// <para>Output profile curve raster dataset.</para>
-		/// <para>This is the curvature of the surface in the direction of slope.</para>
-		/// <para>It will be floating-point type.</para>
+		/// <para>输出剖面曲线栅格数据集。</para>
+		/// <para>这是表面沿坡度方向的曲率。</para>
+		/// <para>此栅格为浮点类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -115,9 +116,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output plan curve raster</para>
-		/// <para>Output plan curve raster dataset.</para>
-		/// <para>This is the curvature of the surface perpendicular to the slope direction.</para>
-		/// <para>It will be floating-point type.</para>
+		/// <para>输出平面曲线栅格数据集。</para>
+		/// <para>这是表面垂直于坡度方向的曲率。</para>
+		/// <para>此栅格为浮点类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]

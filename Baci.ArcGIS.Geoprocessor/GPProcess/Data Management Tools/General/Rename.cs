@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Rename</para>
-	/// <para>Changes the name of a dataset.  This includes a wide variety of data types, among them feature dataset, raster, table, and shapefile.</para>
+	/// <para>重命名</para>
+	/// <para>更改数据集的名称。这包括各种数据类型，其中包括要素数据集、栅格、表 和 shapefile。</para>
 	/// </summary>
 	public class Rename : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InData">
 		/// <para>Input Data Element</para>
-		/// <para>The input data to be renamed.</para>
+		/// <para>要重命名的输入数据。</para>
 		/// </param>
 		/// <param name="OutData">
 		/// <para>Output data element</para>
-		/// <para>The name for the output data.</para>
+		/// <para>输出数据的名称。</para>
 		/// </param>
 		public Rename(object InData, object OutData)
 		{
@@ -33,14 +34,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Rename</para>
+		/// <para>Tool Display Name : 重命名</para>
 		/// </summary>
-		public override string DisplayName() => "Rename";
+		public override string DisplayName() => "重命名";
 
 		/// <summary>
-		/// <para>Tool Name : Rename</para>
+		/// <para>Tool Name : 重命名</para>
 		/// </summary>
-		public override string ToolName() => "Rename";
+		public override string ToolName() => "重命名";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Rename</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Data Element</para>
-		/// <para>The input data to be renamed.</para>
+		/// <para>要重命名的输入数据。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEType()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output data element</para>
-		/// <para>The name for the output data.</para>
+		/// <para>输出数据的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEType()]
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Data type</para>
-		/// <para>The type of data to be renamed. The only time you need to provide a value is when a geodatabase contains a feature dataset and a feature class with the same name. In this case, you need to select the data type (feature dataset or feature class) of the item you want to rename.</para>
+		/// <para>要重命名的数据的类型。只有在地理数据库中的要素数据集和要素类名称相同时，才需要提供一个值。在这种情况下，需要为希望重命名的项选择数据类型（要素数据集或要素类）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

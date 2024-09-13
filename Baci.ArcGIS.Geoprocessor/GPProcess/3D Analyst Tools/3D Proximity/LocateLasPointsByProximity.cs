@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Locate LAS Points By Proximity</para>
-	/// <para>Identifies LAS points within the three-dimensional proximity of z-enabled features along with the option to reclassify those points.</para>
+	/// <para>按邻域查找 LAS 点</para>
+	/// <para>用于标识已启用 z 值要素的三维邻域内的 LAS 点，并提供重新分类这些点的选项。</para>
 	/// </summary>
 	public class LocateLasPointsByProximity : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset to process.</para>
+		/// <para>待处理的 LAS 数据集。</para>
 		/// </param>
 		/// <param name="InFeatures">
 		/// <para>Input 3D Features</para>
-		/// <para>The 3D point, line, polygon, or multipatch features whose proximity will be used for identifying LAS points.</para>
+		/// <para>将使用其邻域识别 LAS 点的 3D 点、线、面或多面体要素。</para>
 		/// </param>
 		public LocateLasPointsByProximity(object InLasDataset, object InFeatures)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Locate LAS Points By Proximity</para>
+		/// <para>Tool Display Name : 按邻域查找 LAS 点</para>
 		/// </summary>
-		public override string DisplayName() => "Locate LAS Points By Proximity";
+		public override string DisplayName() => "按邻域查找 LAS 点";
 
 		/// <summary>
 		/// <para>Tool Name : LocateLasPointsByProximity</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset to process.</para>
+		/// <para>待处理的 LAS 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input 3D Features</para>
-		/// <para>The 3D point, line, polygon, or multipatch features whose proximity will be used for identifying LAS points.</para>
+		/// <para>将使用其邻域识别 LAS 点的 3D 点、线、面或多面体要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Search Radius</para>
-		/// <para>The distance around the input features that will be evaluated for the presence of LAS points, which can be provided as either a linear distance or a numeric field in the input feature's attribute table. If the search radius is derived from a field or a linear distance whose units are specified as Unknown, the linear unit of the input features' XY spatial reference is used.</para>
+		/// <para>用于评估输入要素周围是否存在 LAS 点的距离，可使用线性距离或输入要素属性表中的数值字段提供。 如果搜索半径从单位为未知的字段或线性距离中获得，则将使用输入要素 XY 空间参考的线性单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Count Field</para>
-		/// <para>The name of the field that will be added to the input feature's attribute table and populated with the number of LAS points in each feature's proximity. The default field name is COUNT.</para>
+		/// <para>该字段名称将添加到输入要素的属性表中，并将使用每个要素邻域中的 LAS 点数进行填充。 默认字段名称为 COUNT。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -105,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The point features that represent the LAS points detected within the specified proximity of the input features.</para>
+		/// <para>表示输入要素指定邻域中检测到的 LAS 点的点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -113,9 +114,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Geometry Type</para>
-		/// <para>Specifies the geometry of the output point features that represent the LAS points found within the specified proximity of the input features.</para>
-		/// <para>Multipoint—Multipoint features that will have multiple points in each row.</para>
-		/// <para>Point—Single-point features that will have a unique row for each identified LAS point.</para>
+		/// <para>指定输出点要素的几何，这些点要素表示输入要素指定邻域中找到的 LAS 点。</para>
+		/// <para>多点—每一行中都将具有多个点的多点要素。</para>
+		/// <para>点—每个识别的 LAS 点都具有唯一行的单点要素。</para>
 		/// <para><see cref="GeometryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -125,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>New Class Code</para>
-		/// <para>The class code value that will be used to reclassify the points found within the search radius of the input features.</para>
+		/// <para>用于对在输入要素搜索半径内发现的点进行重分类的类代码值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -133,9 +134,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Compute statistics</para>
-		/// <para>Specifies whether statistics will be computed for the .las files referenced by the LAS dataset. Computing statistics provides a spatial index for each .las file, which improves analysis and display performance. Statistics also enhance the filtering and symbology experience by limiting the display of LAS attributes, such as classification codes and return information, to values that are present in the .las file.</para>
-		/// <para>Checked—Statistics will be computed. This is the default.</para>
-		/// <para>Unchecked—Statistics will not be computed.</para>
+		/// <para>指定是否将计算 LAS 数据集引用的 .las 文件的统计数据。 计算统计数据时会为每个 .las 文件提供一个空间索引，从而提高了分析和显示性能。 统计数据还可通过将 LAS 属性（例如分类代码和返回信息）显示限制为 .las 文件中存在的值来提升过滤和符号系统体验。</para>
+		/// <para>选中 - 将计算统计数据。 这是默认设置。</para>
+		/// <para>未选中 - 不计算统计数据。</para>
 		/// <para><see cref="ComputeStatsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -159,9 +160,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Update pyramid</para>
-		/// <para>Specifies whether the LAS dataset pyramid will be updated after the class codes are modified.</para>
-		/// <para>Checked—The LAS dataset pyramid will be updated. This is the default.</para>
-		/// <para>Unchecked—The LAS dataset pyramid will not be updated.</para>
+		/// <para>指定修改类代码后，LAS 数据集金字塔是否会更新。</para>
+		/// <para>选中 - LAS 数据集金字塔将更新。 这是默认设置。</para>
+		/// <para>未选中 - LAS 数据集金字塔不会更新。</para>
 		/// <para><see cref="UpdatePyramidEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -186,17 +187,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum GeometryEnum 
 		{
 			/// <summary>
-			/// <para>Multipoint—Multipoint features that will have multiple points in each row.</para>
+			/// <para>多点—每一行中都将具有多个点的多点要素。</para>
 			/// </summary>
 			[GPValue("MULTIPOINT")]
-			[Description("Multipoint")]
+			[Description("多点")]
 			Multipoint,
 
 			/// <summary>
-			/// <para>Point—Single-point features that will have a unique row for each identified LAS point.</para>
+			/// <para>点—每个识别的 LAS 点都具有唯一行的单点要素。</para>
 			/// </summary>
 			[GPValue("POINT")]
-			[Description("Point")]
+			[Description("点")]
 			Point,
 
 		}
@@ -207,14 +208,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ComputeStatsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Statistics will be computed. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMPUTE_STATS")]
 			COMPUTE_STATS,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics will not be computed.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_COMPUTE_STATS")]
@@ -228,14 +229,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum UpdatePyramidEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The LAS dataset pyramid will be updated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_PYRAMID")]
 			UPDATE_PYRAMID,
 
 			/// <summary>
-			/// <para>Unchecked—The LAS dataset pyramid will not be updated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_UPDATE_PYRAMID")]

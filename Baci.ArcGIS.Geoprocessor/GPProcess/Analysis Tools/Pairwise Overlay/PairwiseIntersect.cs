@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Pairwise Intersect</para>
-	/// <para>Computes a pairwise intersection of the input features. Features or portions of features that overlap between the input feature layers or feature classes are written to the output feature class. Pairwise intersection refers to selecting one feature from the first input and intersecting it with the features in the second input that it overlaps.</para>
+	/// <para>成对相交</para>
+	/// <para>计算输入要素的成对交集。输入要素图层或要素类中相叠置的要素或要素的各部分将被写入到输出要素类。成对交集是指从第一个输入中选择一个要素，然后将其与所重叠的第二个输入中的要素相交。</para>
 	/// </summary>
 	public class PairwiseIntersect : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input feature classes or layers to intersect. Only two inputs are allowed.</para>
+		/// <para>要相交的输入要素类或图层。仅允许两个输入。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class.</para>
+		/// <para>输出要素类。</para>
 		/// </param>
 		public PairwiseIntersect(object InFeatures, object OutFeatureClass)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Pairwise Intersect</para>
+		/// <para>Tool Display Name : 成对相交</para>
 		/// </summary>
-		public override string DisplayName() => "Pairwise Intersect";
+		public override string DisplayName() => "成对相交";
 
 		/// <summary>
 		/// <para>Tool Name : PairwiseIntersect</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input feature classes or layers to intersect. Only two inputs are allowed.</para>
+		/// <para>要相交的输入要素类或图层。仅允许两个输入。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class.</para>
+		/// <para>输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -86,10 +87,10 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Join Attributes</para>
-		/// <para>Specifies which attributes from the input features will be transferred to the output feature class.</para>
-		/// <para>All attributes—All the attributes from the input features will be transferred to the output feature class. This is the default.</para>
-		/// <para>All attributes except feature IDs—All the attributes except the FID from the input features will be transferred to the output feature class.</para>
-		/// <para>Only feature IDs—Only the FID field from the input features will be transferred to the output feature class.</para>
+		/// <para>指定将输入要素的哪些属性传递到输出要素类。</para>
+		/// <para>所有属性—输入要素的所有属性都将传递到输出要素类。 这是默认设置。</para>
+		/// <para>除要素 ID 外的所有属性—除 FID 外，将输入要素的其余所有属性都传递到输出要素类。</para>
+		/// <para>仅要素 ID—仅输入要素的 FID 字段将传递到输出要素类。</para>
 		/// <para><see cref="JoinAttributesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -99,8 +100,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
-		/// <para>The minimum distance separating all feature coordinates (nodes and vertices) as well as the distance a coordinate can move in x or y (or both).</para>
-		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that this parameter not be modified. It has been removed from view in the tool dialog. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
+		/// <para>所有要素坐标（节点和折点）之间的最小距离以及坐标可以沿 x 和/或 y 方向移动的距离。</para>
+		/// <para>更改此参数的值可能会导致出现故障或意外结果。建议不要修改此参数。已将其从工具对话框的视图中移除。默认情况下，将使用输入要素类的空间参考 x,y 容差属性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -108,10 +109,10 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Type</para>
-		/// <para>Specifies the type of intersections to be returned.</para>
-		/// <para>Same as input—The intersections returned will be the same geometry type as the input features with the lowest dimension geometry. If all inputs are polygons, the output feature class will contain polygons. If one or more of the inputs are lines and none of the inputs are points, the output will be lines. If one or more of the inputs are points, the output feature class will contain points. This is the default.</para>
-		/// <para>Line—The intersections returned will be line. This is only valid if none of the inputs are points.</para>
-		/// <para>Point—The intersections returned will be point. If the inputs are line or polygon, the output will be a multipoint feature class.</para>
+		/// <para>指定要返回的相交类型。</para>
+		/// <para>与输入相同—所返回的相交要素的几何类型与具有最低维度几何的输入要素的几何类型相同。如果所有输入都是面，则输出要素类将包含面。如果一个或多个输入是线但不包含点，则输出是线。如果一个或多个输入是点，则输出要素类将包含点。这是默认设置。</para>
+		/// <para>线—返回的交集为线。仅当输入中不包含点时，此选项才有效。</para>
+		/// <para>点—返回的交集为点。如果输入是线或面，则输出将是多点要素类。</para>
 		/// <para><see cref="OutputTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,24 +137,24 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum JoinAttributesEnum 
 		{
 			/// <summary>
-			/// <para>All attributes except feature IDs—All the attributes except the FID from the input features will be transferred to the output feature class.</para>
+			/// <para>除要素 ID 外的所有属性—除 FID 外，将输入要素的其余所有属性都传递到输出要素类。</para>
 			/// </summary>
 			[GPValue("NO_FID")]
-			[Description("All attributes except feature IDs")]
+			[Description("除要素 ID 外的所有属性")]
 			All_attributes_except_feature_IDs,
 
 			/// <summary>
-			/// <para>Only feature IDs—Only the FID field from the input features will be transferred to the output feature class.</para>
+			/// <para>仅要素 ID—仅输入要素的 FID 字段将传递到输出要素类。</para>
 			/// </summary>
 			[GPValue("ONLY_FID")]
-			[Description("Only feature IDs")]
+			[Description("仅要素 ID")]
 			Only_feature_IDs,
 
 			/// <summary>
-			/// <para>All attributes—All the attributes from the input features will be transferred to the output feature class. This is the default.</para>
+			/// <para>所有属性—输入要素的所有属性都将传递到输出要素类。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All attributes")]
+			[Description("所有属性")]
 			All_attributes,
 
 		}
@@ -164,24 +165,24 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum OutputTypeEnum 
 		{
 			/// <summary>
-			/// <para>Same as input—The intersections returned will be the same geometry type as the input features with the lowest dimension geometry. If all inputs are polygons, the output feature class will contain polygons. If one or more of the inputs are lines and none of the inputs are points, the output will be lines. If one or more of the inputs are points, the output feature class will contain points. This is the default.</para>
+			/// <para>与输入相同—所返回的相交要素的几何类型与具有最低维度几何的输入要素的几何类型相同。如果所有输入都是面，则输出要素类将包含面。如果一个或多个输入是线但不包含点，则输出是线。如果一个或多个输入是点，则输出要素类将包含点。这是默认设置。</para>
 			/// </summary>
 			[GPValue("INPUT")]
-			[Description("Same as input")]
+			[Description("与输入相同")]
 			Same_as_input,
 
 			/// <summary>
-			/// <para>Line—The intersections returned will be line. This is only valid if none of the inputs are points.</para>
+			/// <para>线—返回的交集为线。仅当输入中不包含点时，此选项才有效。</para>
 			/// </summary>
 			[GPValue("LINE")]
-			[Description("Line")]
+			[Description("线")]
 			Line,
 
 			/// <summary>
-			/// <para>Point—The intersections returned will be point. If the inputs are line or polygon, the output will be a multipoint feature class.</para>
+			/// <para>点—返回的交集为点。如果输入是线或面，则输出将是多点要素类。</para>
 			/// </summary>
 			[GPValue("POINT")]
-			[Description("Point")]
+			[Description("点")]
 			Point,
 
 		}

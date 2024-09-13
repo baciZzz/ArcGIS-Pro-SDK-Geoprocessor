@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Raster Dataset</para>
-	/// <para>Creates an empty raster dataset.</para>
+	/// <para>创建栅格数据集</para>
+	/// <para>创建空的栅格数据集。</para>
 	/// </summary>
 	public class CreateRasterDataset : AbstractGPProcess
 	{
@@ -20,46 +21,46 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="OutPath">
 		/// <para>Output Location</para>
-		/// <para>The folder or geodatabase to store the raster dataset.</para>
+		/// <para>用于存储栅格数据集的文件夹或地理数据库。</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Raster Dataset Name with Extension</para>
-		/// <para>The name, location and format for the dataset you are creating.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
-		/// <para>.bil for Esri BIL</para>
-		/// <para>.bip for Esri BIP</para>
-		/// <para>.bmp for BMP</para>
-		/// <para>.bsq for Esri BSQ</para>
-		/// <para>.dat for ENVI DAT</para>
-		/// <para>.gif for GIF</para>
-		/// <para>.img for ERDAS IMAGINE</para>
-		/// <para>.jpg for JPEG</para>
-		/// <para>.jp2 for JPEG 2000</para>
-		/// <para>.png for PNG</para>
-		/// <para>.tif for TIFF</para>
-		/// <para>No extension for Esri Grid</para>
-		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>要创建的数据集的名称、位置和格式。</para>
+		/// <para>以文件格式存储栅格数据集时，需要指定文件扩展名，具体如下：</para>
+		/// <para>Esri BIL 为 .bil</para>
+		/// <para>Esri BIP 为 .bip</para>
+		/// <para>BMP 的 .bmp</para>
+		/// <para>Esri BSQ 为 .bsq</para>
+		/// <para>ENVI DAT 为 .dat</para>
+		/// <para>GIF 为 .gif</para>
+		/// <para>ERDAS IMAGINE 为 .img</para>
+		/// <para>JPEG 为 .jpg</para>
+		/// <para>JPEG 2000 为 .jp2</para>
+		/// <para>PNG 为 .png</para>
+		/// <para>TIFF 为 .tif</para>
+		/// <para>Esri Grid 无扩展名</para>
+		/// <para>将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。</para>
+		/// <para>将栅格数据集存储到 JPEG 文件、JPEG 2000 文件、TIFF 文件或地理数据库时，可在地理处理环境中指定压缩类型和压缩质量。</para>
 		/// </param>
 		/// <param name="PixelType">
 		/// <para>Pixel Type</para>
-		/// <para>The bit-depth (radiometric resolution) of the output raster dataset. If this is not specified, your raster dataset will be created with a default pixel type of 8-bit unsigned integer.</para>
-		/// <para>Not all data types are supported by all raster formats. Check the List of supported sensors help topic to be sure the format you are using will support the data type you need.</para>
-		/// <para>1 bit—A 1-bit unsigned integer. The values can be 0 or 1.</para>
-		/// <para>2 bit—A 2-bit unsigned integer. The values supported can be from 0 to 3.</para>
-		/// <para>4 bit—A 4-bit unsigned integer. The values supported can be from 0 to 15.</para>
-		/// <para>8 bit unsigned—An unsigned 8-bit data type. The values supported can be from 0 to 255.</para>
-		/// <para>8 bit signed—A signed 8-bit data type. The values supported can be from -128 to 127.</para>
-		/// <para>16 bit unsigned—A 16-bit unsigned data type. The values can range from 0 to 65,535.</para>
-		/// <para>16 bit signed—A 16-bit signed data type. The values can range from -32,768 to 32,767.</para>
-		/// <para>32 bit unsigned—A 32-bit unsigned data type. The values can range from 0 to 4,294,967,295.</para>
-		/// <para>32 bit signed—A 32-bit signed data type. The values can range from -2,147,483,648 to 2,147,483,647.</para>
-		/// <para>32 bit float—A 32-bit data type supporting decimals.</para>
-		/// <para>64 bit—A 64-bit data type supporting decimals.</para>
+		/// <para>输出栅格数据集的位深度（辐射分辨率）。 如果未指定，则将使用 8 位无符号整数的默认像素类型创建栅格数据集。</para>
+		/// <para>并非所有栅格格式都支持全部数据类型。 请参阅受支持的传感器列表帮助主题确定所用格式是否支持所需数据类型。</para>
+		/// <para>1 位—1 位无符号整数。 值可以为 0 或 1。</para>
+		/// <para>2 位—2 位无符号整数。 支持的值为 0 到 3。</para>
+		/// <para>4 位—4 位无符号整数。 支持的值为 0 到 15。</para>
+		/// <para>8 位无符号—8 位无符号数据类型。 支持的值为 0 到 255。</para>
+		/// <para>8 位带符号—8 位有符号数据类型。 支持的值为 -128 到 127。</para>
+		/// <para>16 位无符号—16 位无符号数据类型。 取值范围为 0 到 65,535。</para>
+		/// <para>16 位带符号—16 位有符号数据类型。 取值范围为 -32,768 到 32,767。</para>
+		/// <para>32 位无符号—32 位无符号数据类型。 取值范围为 0 到 4,294,967,295。</para>
+		/// <para>32 位带符号—32 位有符号数据类型。 取值范围为 -2,147,483,648 到 2,147,483,647。</para>
+		/// <para>32 位浮点—支持小数的 32 位数据类型。</para>
+		/// <para>64 位—支持小数的 64 位数据类型。</para>
 		/// </param>
 		/// <param name="NumberOfBands">
 		/// <para>Number of Bands</para>
-		/// <para>The number of bands that the output raster dataset will have.</para>
+		/// <para>输出栅格数据集的波段数。</para>
 		/// </param>
 		public CreateRasterDataset(object OutPath, object OutName, object PixelType, object NumberOfBands)
 		{
@@ -70,9 +71,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Raster Dataset</para>
+		/// <para>Tool Display Name : 创建栅格数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Create Raster Dataset";
+		public override string DisplayName() => "创建栅格数据集";
 
 		/// <summary>
 		/// <para>Tool Name : CreateRasterDataset</para>
@@ -106,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Location</para>
-		/// <para>The folder or geodatabase to store the raster dataset.</para>
+		/// <para>用于存储栅格数据集的文件夹或地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -116,22 +117,22 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Raster Dataset Name with Extension</para>
-		/// <para>The name, location and format for the dataset you are creating.</para>
-		/// <para>When storing the raster dataset in a file format, you need to specify the file extension:</para>
-		/// <para>.bil for Esri BIL</para>
-		/// <para>.bip for Esri BIP</para>
-		/// <para>.bmp for BMP</para>
-		/// <para>.bsq for Esri BSQ</para>
-		/// <para>.dat for ENVI DAT</para>
-		/// <para>.gif for GIF</para>
-		/// <para>.img for ERDAS IMAGINE</para>
-		/// <para>.jpg for JPEG</para>
-		/// <para>.jp2 for JPEG 2000</para>
-		/// <para>.png for PNG</para>
-		/// <para>.tif for TIFF</para>
-		/// <para>No extension for Esri Grid</para>
-		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
-		/// <para>When storing your raster dataset to a JPEG file, a JPEG 2000 file, a TIFF file, or a geodatabase, you can specify a Compression Type and Compression Quality in the geoprocessing Environments.</para>
+		/// <para>要创建的数据集的名称、位置和格式。</para>
+		/// <para>以文件格式存储栅格数据集时，需要指定文件扩展名，具体如下：</para>
+		/// <para>Esri BIL 为 .bil</para>
+		/// <para>Esri BIP 为 .bip</para>
+		/// <para>BMP 的 .bmp</para>
+		/// <para>Esri BSQ 为 .bsq</para>
+		/// <para>ENVI DAT 为 .dat</para>
+		/// <para>GIF 为 .gif</para>
+		/// <para>ERDAS IMAGINE 为 .img</para>
+		/// <para>JPEG 为 .jpg</para>
+		/// <para>JPEG 2000 为 .jp2</para>
+		/// <para>PNG 为 .png</para>
+		/// <para>TIFF 为 .tif</para>
+		/// <para>Esri Grid 无扩展名</para>
+		/// <para>将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。</para>
+		/// <para>将栅格数据集存储到 JPEG 文件、JPEG 2000 文件、TIFF 文件或地理数据库时，可在地理处理环境中指定压缩类型和压缩质量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -139,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Cellsize</para>
-		/// <para>The cell size for the new raster dataset.</para>
+		/// <para>新栅格数据集的像元大小。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -147,19 +148,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pixel Type</para>
-		/// <para>The bit-depth (radiometric resolution) of the output raster dataset. If this is not specified, your raster dataset will be created with a default pixel type of 8-bit unsigned integer.</para>
-		/// <para>Not all data types are supported by all raster formats. Check the List of supported sensors help topic to be sure the format you are using will support the data type you need.</para>
-		/// <para>1 bit—A 1-bit unsigned integer. The values can be 0 or 1.</para>
-		/// <para>2 bit—A 2-bit unsigned integer. The values supported can be from 0 to 3.</para>
-		/// <para>4 bit—A 4-bit unsigned integer. The values supported can be from 0 to 15.</para>
-		/// <para>8 bit unsigned—An unsigned 8-bit data type. The values supported can be from 0 to 255.</para>
-		/// <para>8 bit signed—A signed 8-bit data type. The values supported can be from -128 to 127.</para>
-		/// <para>16 bit unsigned—A 16-bit unsigned data type. The values can range from 0 to 65,535.</para>
-		/// <para>16 bit signed—A 16-bit signed data type. The values can range from -32,768 to 32,767.</para>
-		/// <para>32 bit unsigned—A 32-bit unsigned data type. The values can range from 0 to 4,294,967,295.</para>
-		/// <para>32 bit signed—A 32-bit signed data type. The values can range from -2,147,483,648 to 2,147,483,647.</para>
-		/// <para>32 bit float—A 32-bit data type supporting decimals.</para>
-		/// <para>64 bit—A 64-bit data type supporting decimals.</para>
+		/// <para>输出栅格数据集的位深度（辐射分辨率）。 如果未指定，则将使用 8 位无符号整数的默认像素类型创建栅格数据集。</para>
+		/// <para>并非所有栅格格式都支持全部数据类型。 请参阅受支持的传感器列表帮助主题确定所用格式是否支持所需数据类型。</para>
+		/// <para>1 位—1 位无符号整数。 值可以为 0 或 1。</para>
+		/// <para>2 位—2 位无符号整数。 支持的值为 0 到 3。</para>
+		/// <para>4 位—4 位无符号整数。 支持的值为 0 到 15。</para>
+		/// <para>8 位无符号—8 位无符号数据类型。 支持的值为 0 到 255。</para>
+		/// <para>8 位带符号—8 位有符号数据类型。 支持的值为 -128 到 127。</para>
+		/// <para>16 位无符号—16 位无符号数据类型。 取值范围为 0 到 65,535。</para>
+		/// <para>16 位带符号—16 位有符号数据类型。 取值范围为 -32,768 到 32,767。</para>
+		/// <para>32 位无符号—32 位无符号数据类型。 取值范围为 0 到 4,294,967,295。</para>
+		/// <para>32 位带符号—32 位有符号数据类型。 取值范围为 -2,147,483,648 到 2,147,483,647。</para>
+		/// <para>32 位浮点—支持小数的 32 位数据类型。</para>
+		/// <para>64 位—支持小数的 64 位数据类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -168,8 +169,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Spatial Reference for Raster</para>
-		/// <para>The coordinate system for the output raster dataset.</para>
-		/// <para>If this is not specified, the coordinate system set in the environment settings will be used.</para>
+		/// <para>输出栅格数据集的坐标系。</para>
+		/// <para>若未指定坐标系，则将使用环境设置中设置的坐标系。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
@@ -177,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Number of Bands</para>
-		/// <para>The number of bands that the output raster dataset will have.</para>
+		/// <para>输出栅格数据集的波段数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -185,7 +186,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
-		/// <para>Specifies the storage parameters (configuration) for a file or enterprise geodatabase. Configuration keywords are set up by your database administrator.</para>
+		/// <para>指定文件地理数据库或企业级地理数据库的存储参数（配置）。 配置关键字由数据库管理员进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -195,17 +196,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Create pyramids</para>
-		/// <para>Creates pyramids.</para>
-		/// <para>For Pyramid Levels, specify a number of -1 or higher. A value of 0 will not build any pyramids, and a value of -1 will automatically determine the correct number of pyramid layers to create.</para>
-		/// <para>The Pyramid Resampling Technique defines how the data will be resampled when building the pyramids.</para>
-		/// <para>NEAREST—Nearest neighbor should be used for nominal data or raster datasets with color maps, such as land-use or pseudo color images.</para>
-		/// <para>BILINEAR—Bilinear interpolation is best used with continuous data, such as satellite imagery or aerial photography.</para>
-		/// <para>CUBIC—Cubic convolution is best used with continuous data, such as satellite imagery or aerial photography. It is similar to bilinear interpolation; however, it resamples the data using a larger matrix.</para>
-		/// <para>The Pyramid Compression Type defines the method used when compressing the pyramids.</para>
-		/// <para>DEFAULT—This uses the compression that is normally used by the raster dataset format.</para>
-		/// <para>LZ77—A lossless compression. The values of the cells in the raster will not be changed.</para>
-		/// <para>JPEG—A lossy compression.</para>
-		/// <para>NONE—No data compression.</para>
+		/// <para>创建金字塔。</para>
+		/// <para>对于金字塔等级，可指定 -1 或更高等级的数字。 值为 0 时将不构建任何金字塔，值为 -1 时将自动确定要创建的金字塔图层的正确数量。</para>
+		/// <para>“金字塔重采样技术”用于定义在构建金字塔时如何对数据进行重采样。</para>
+		/// <para>NEAREST - 对于具有色彩映射表（如土地利用或伪彩色图像）的标称数据或栅格数据集，应使用最邻近法。</para>
+		/// <para>BILINEAR - 双线性插值法最适用于诸如卫星影像或航空摄影这样的连续数据。</para>
+		/// <para>CUBIC - 三次卷积插值法最适用于处理卫星影像或航空摄影等诸如此类的连续数据。 它与双线性插值法类似；不过，它会使用更大的矩阵对数据进行重采样。</para>
+		/// <para>“金字塔压缩类型”用于定义压缩金字塔时使用的方法。</para>
+		/// <para>DEFAULT - 将使用通常由栅格数据集格式使用的压缩类型。</para>
+		/// <para>LZ77 - 无损压缩。 将不会更改栅格中的单元值。</para>
+		/// <para>JPEG - 有损压缩。</para>
+		/// <para>NONE - 无数据压缩。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGDBEnvPyramid()]
@@ -214,10 +215,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Tile size</para>
-		/// <para>Specifies the size of the tiles.</para>
-		/// <para>The tile width controls the number of pixels you can store in each tile. This is specified as a number of pixels in x. The default tile width is 128.</para>
-		/// <para>The tile height controls the number of pixels you can store in each tile. This is specified as a number of pixels in y. The default tile height is 128.</para>
-		/// <para>Only geodatabases and enterprise geodatabases use tile size.</para>
+		/// <para>指定分块的大小。</para>
+		/// <para>切片宽度决定了您可以在各切片中存储的像素数目。 切片宽度以 x 像素数指定。 默认切片宽度为 128。</para>
+		/// <para>切片高度决定了您可以在各切片中存储的像素数目。 切片高度以 y 像素数指定。 默认切片高度为 128。</para>
+		/// <para>只有地理数据库和企业级地理数据库使用切片大小。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGDBEnvTileSize()]
@@ -226,17 +227,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compression</para>
-		/// <para>Specifies the type of compression to store the raster dataset.</para>
-		/// <para>LZ77—Lossless compression that preserves all raster cell values.</para>
-		/// <para>Jpeg—Lossy compression that uses the public JPEG compression algorithm. If you choose JPEG, you can also specify the compression quality. The valid compression quality value ranges are from 0 to 100. This compression can be used for JPEG files and TIFF files.</para>
-		/// <para>Jpeg 2000—Lossy compression.</para>
-		/// <para>Packbits—PackBits compression for TIFF files.</para>
-		/// <para>Lzw—Lossless compression that preserves all raster cell values.</para>
-		/// <para>Rle—Run-length encoding for IMG files.</para>
-		/// <para>Ccitt Group 3—Lossless compression for 1-bit data.</para>
-		/// <para>Ccitt Group 4—Lossless compression for 1-bit data.</para>
-		/// <para>Ccitt 1D—Lossless compression for 1-bit data.</para>
-		/// <para>None—No compression will occur. This is the default.</para>
+		/// <para>指定用于存储栅格数据集的压缩类型。</para>
+		/// <para>LZ77—保留所有栅格像元值的无损压缩。</para>
+		/// <para>Jpeg—使用公共 JPEG 压缩算法的有损压缩。 如果选择 JPEG，还可以指定压缩质量。 压缩质量的有效值范围是 0 到 100。 这种压缩方式可用于 JPEG 文件和 TIFF 文件。</para>
+		/// <para>Jpeg 2000—有损压缩。</para>
+		/// <para>Packbits—用于 TIFF 文件的 PackBits 压缩。</para>
+		/// <para>Lzw—保留所有栅格像元值的无损压缩。</para>
+		/// <para>Rle—用于 IMG 文件的游程编码。</para>
+		/// <para>Ccitt Group 3—用于 1 位数据的无损压缩。</para>
+		/// <para>Ccitt Group 4—用于 1 位数据的无损压缩。</para>
+		/// <para>Ccitt 1D—用于 1 位数据的无损压缩。</para>
+		/// <para>无—不会发生任何压缩。 这是默认设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGDBEnvCompression()]
@@ -245,9 +246,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pyramid Reference Point</para>
-		/// <para>The origination location of the raster pyramid. It is recommended that you specify this point if you plan on building large mosaics in a file geodatabase or enterprise geodatabase, especially if you plan on mosaicking to them over time (for example, for updating).</para>
-		/// <para>The pyramid reference point should be set to the upper left corner of your raster dataset.</para>
-		/// <para>In setting this point for a file geodatabase or enterprise geodatabase, partial pyramiding will be used when updating with a new mosaicked raster dataset. Partial pyramiding updated the parts of the pyramid that do not exist due to the new mosaicked datasets. Therefore, it is good practice to set your pyramid reference point so that your entire raster mosaic will be below and to the right of this point. However, a pyramid reference point should not be set too large either.</para>
+		/// <para>栅格金字塔的初始位置。 如果计划在文件地理数据库或企业级地理数据库中构建大的镶嵌数据集，尤其要计划随着时间的推移对这些镶嵌数据进行镶嵌处理时（例如，更新），建议您指定此项。</para>
+		/// <para>金字塔参考点应设置在栅格数据集的左上角。</para>
+		/// <para>为文件地理数据库或企业级地理数据库设置此点时，如果使用新的镶嵌栅格数据集进行更新，将使用部分构建金字塔。 部分构建金字塔更新了由于新的镶嵌数据集导致的金字塔的不存在部分。 因此，最好设置金字塔参考点，以便整个栅格镶嵌都位于此点的右下方。 不过，金字塔参考点不应设置得过大。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]

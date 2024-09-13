@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Identity</para>
-	/// <para>Computes a geometric intersection of the input features and identity features. The input features or portions thereof that overlap identity features will get the attributes of those identity features.</para>
+	/// <para>标识</para>
+	/// <para>计算输入要素和标识要素的几何交集。与标识要素重叠的输入要素或输入要素的一部分将获得这些标识要素的属性。</para>
 	/// </summary>
 	public class Identity : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input feature class or layer.</para>
+		/// <para>输入要素类或图层。</para>
 		/// </param>
 		/// <param name="IdentityFeatures">
 		/// <para>Identity Features</para>
-		/// <para>The identity feature class or layer. Must be polygons or the same geometry type as the input features.</para>
+		/// <para>标识要素类或图层。必须是面或与输入要素具有相同的几何类型。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be created and to which the results will be written.</para>
+		/// <para>所创建的要素类，并且结果将写入其中。</para>
 		/// </param>
 		public Identity(object InFeatures, object IdentityFeatures, object OutFeatureClass)
 		{
@@ -38,14 +39,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Identity</para>
+		/// <para>Tool Display Name : 标识</para>
 		/// </summary>
-		public override string DisplayName() => "Identity";
+		public override string DisplayName() => "标识";
 
 		/// <summary>
-		/// <para>Tool Name : Identity</para>
+		/// <para>Tool Name : 标识</para>
 		/// </summary>
-		public override string ToolName() => "Identity";
+		public override string ToolName() => "标识";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.Identity</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input feature class or layer.</para>
+		/// <para>输入要素类或图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Identity Features</para>
-		/// <para>The identity feature class or layer. Must be polygons or the same geometry type as the input features.</para>
+		/// <para>标识要素类或图层。必须是面或与输入要素具有相同的几何类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be created and to which the results will be written.</para>
+		/// <para>所创建的要素类，并且结果将写入其中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -100,10 +101,10 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Attributes To Join</para>
-		/// <para>Determines what attributes will be transferred to the output feature class.</para>
-		/// <para>All attributes—All the attributes (including FIDs) from the input features, as well as the identity features, will be transferred to the output features. If no intersection is found the identity feature values will not be transferred to the output (their values will be set to empty strings or 0) and the identity feature FID will be -1. This is the default.</para>
-		/// <para>All attributes except feature IDs—All the attributes except the FID from the input features and identity features will be transferred to the output features. If no intersection is found the identity feature values will not be transferred to the output (their values will be set to empty strings or 0).</para>
-		/// <para>Only feature IDs—All the attributes from the input features but only the FID from the identity features will be transferred to the output features. The identity features FID attribute value in the output will be -1 if no intersection is found.</para>
+		/// <para>确定哪些属性将传递到输出要素类中。</para>
+		/// <para>所有属性—输入要素与标识要素的所有属性（包括 FID）都将传递到输出要素。如果未找到任何交集，则标识要素值不会传递到输出（其值将设置为空字符串或 0）并且标识要素 FID 将为 -1。这是默认设置。</para>
+		/// <para>除要素 ID 外的所有属性—输入要素和标识要素中，除 FID 以外的所有属性都将传递到输出要素。如果未找到任何交集，则标识要素值不会传递到输出（其值将设置为空字符串或 0）。</para>
+		/// <para>仅要素 ID—输入要素的所有属性以及标识要素的 FID 属性将传递到输出要素。如果未找到任何交集，则输出中的标识要素 FID 属性值将为 -1。</para>
 		/// <para><see cref="JoinAttributesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -113,8 +114,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
-		/// <para>The minimum distance separating all feature coordinates (nodes and vertices) as well as the distance a coordinate can move in X or Y (or both).</para>
-		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that this parameter not be modified. It has been removed from view in the tool dialog. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
+		/// <para>所有要素坐标（节点和折点）之间的最小距离以及坐标可以沿 X 和/或 Y 方向移动的距离。</para>
+		/// <para>更改此参数的值可能会导致出现故障或意外结果。建议不要修改此参数。已将其从工具对话框的视图中移除。默认情况下，将使用输入要素类的空间参考 x,y 容差属性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -122,9 +123,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Keep relationships</para>
-		/// <para>Choose if you want additional spatial relationships between the Input Features and Identity Features to be written to the output. This only applies when the Input Features are lines and the Identity Features are polygons.</para>
-		/// <para>Unchecked—No additional spatial relationship will be determined.</para>
-		/// <para>Checked—The output line features will contain two additional fields, LEFT_poly and RIGHT_poly. These fields contain the feature ID of the Identity Features on the left and right side of the line feature.</para>
+		/// <para>选择是否要将输入要素和标识要素之间的附加空间关系写入到输出。仅当输入要素为线而标识要素为面时，此选项才适用。</para>
+		/// <para>未选中 - 不确定任何附加空间关系。</para>
+		/// <para>选中 - 输出线要素会包含两个附加字段 LEFT_poly 和 RIGHT_poly。这些字段用于记录线要素左侧和右侧的标识要素的要素 ID。</para>
 		/// <para><see cref="RelationshipEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -149,24 +150,24 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum JoinAttributesEnum 
 		{
 			/// <summary>
-			/// <para>All attributes except feature IDs—All the attributes except the FID from the input features and identity features will be transferred to the output features. If no intersection is found the identity feature values will not be transferred to the output (their values will be set to empty strings or 0).</para>
+			/// <para>除要素 ID 外的所有属性—输入要素和标识要素中，除 FID 以外的所有属性都将传递到输出要素。如果未找到任何交集，则标识要素值不会传递到输出（其值将设置为空字符串或 0）。</para>
 			/// </summary>
 			[GPValue("NO_FID")]
-			[Description("All attributes except feature IDs")]
+			[Description("除要素 ID 外的所有属性")]
 			All_attributes_except_feature_IDs,
 
 			/// <summary>
-			/// <para>Only feature IDs—All the attributes from the input features but only the FID from the identity features will be transferred to the output features. The identity features FID attribute value in the output will be -1 if no intersection is found.</para>
+			/// <para>仅要素 ID—输入要素的所有属性以及标识要素的 FID 属性将传递到输出要素。如果未找到任何交集，则输出中的标识要素 FID 属性值将为 -1。</para>
 			/// </summary>
 			[GPValue("ONLY_FID")]
-			[Description("Only feature IDs")]
+			[Description("仅要素 ID")]
 			Only_feature_IDs,
 
 			/// <summary>
-			/// <para>All attributes—All the attributes (including FIDs) from the input features, as well as the identity features, will be transferred to the output features. If no intersection is found the identity feature values will not be transferred to the output (their values will be set to empty strings or 0) and the identity feature FID will be -1. This is the default.</para>
+			/// <para>所有属性—输入要素与标识要素的所有属性（包括 FID）都将传递到输出要素。如果未找到任何交集，则标识要素值不会传递到输出（其值将设置为空字符串或 0）并且标识要素 FID 将为 -1。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All attributes")]
+			[Description("所有属性")]
 			All_attributes,
 
 		}
@@ -177,14 +178,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum RelationshipEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output line features will contain two additional fields, LEFT_poly and RIGHT_poly. These fields contain the feature ID of the Identity Features on the left and right side of the line feature.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("KEEP_RELATIONSHIPS")]
 			KEEP_RELATIONSHIPS,
 
 			/// <summary>
-			/// <para>Unchecked—No additional spatial relationship will be determined.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_RELATIONSHIPS")]

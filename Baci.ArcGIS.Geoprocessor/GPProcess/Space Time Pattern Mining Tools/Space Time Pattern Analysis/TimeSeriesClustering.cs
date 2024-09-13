@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Time Series Clustering</para>
-	/// <para>Partitions a collection of time series, stored in a space-time cube, based on the similarity of time series characteristics. Time series can be clustered based on three criteria: having similar values across time, tending to increase and decrease at the same time, and having similar repeating patterns. The output of this tool is a 2D map displaying each location in the cube symbolized by cluster membership and messages. The output also includes charts containing information about the representative time series signature for each cluster.</para>
+	/// <para>时间序列聚类</para>
+	/// <para>基于时间序列特征的相似性，对存储在时空立方体中的时间序列集合进行划分。可以基于三个条件聚集时间序列：具有相似的时间值，趋于同时增加和减少以及具有相似的重复模式。此工具的输出为一个 2D 地图，该地图可显示按聚类成员资格和消息进行符号化的立方体中的每个位置。输出还包括相应图表，其中包含有关每个聚类的代表性时间序列签名的信息。</para>
 	/// </summary>
 	public class TimeSeriesClustering : AbstractGPProcess
 	{
@@ -20,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		/// <param name="InCube">
 		/// <para>Input Space Time Cube</para>
-		/// <para>The netCDF cube to be analyzed. This file must have an .nc extension and must have been created using the Create Space Time Cube By Aggregating Points, Create Space Time Cube From Defined Features, or Create Space Time Cube From Multidimensional Raster Layer tool.</para>
+		/// <para>要分析的 netCDF 立方体。此文件必须具有 .nc 扩展名，并且必须使用通过聚合点创建时空立方体、通过已定义要素创建时空立方体或通过多维栅格图层创建时空立方体工具进行创建。</para>
 		/// </param>
 		/// <param name="AnalysisVariable">
 		/// <para>Analysis Variable</para>
-		/// <para>The numeric variable in the netCDF file, changing over time, that will be used to distinguish one cluster from another.</para>
+		/// <para>netCDF 文件中的数值变量会随时间改变，将用于区分各个聚类。</para>
 		/// </param>
 		/// <param name="OutputFeatures">
 		/// <para>Output Features</para>
-		/// <para>The new output feature class containing all locations in the space-time cube and a field indicating cluster membership. This feature class will be a two-dimensional representation of the clusters in your data.</para>
+		/// <para>新的输出要素类，包含时空立方体中的所有位置以及一个表示聚类成员资格的字段。此要素类将为数据中聚类的二维表示。</para>
 		/// </param>
 		/// <param name="CharacteristicOfInterest">
 		/// <para>Characteristic of Interest</para>
-		/// <para>Specifies the characteristic of the time series that will be used to determine which locations should be clustered together.</para>
-		/// <para>Value— Locations with similar values across time will be clustered together.</para>
-		/// <para>Profile (Correlation)—Locations with values that tend to increase and decrease proportionally at the same times will be clustered together.</para>
-		/// <para>Profile (Fourier)—Locations with values that have similar smooth, periodic patterns will be clustered together.</para>
+		/// <para>指定时间序列的特征，用于确定应聚集在一起的位置。</para>
+		/// <para>值— 时间值相似的位置将聚集在一起。</para>
+		/// <para>轮廓（相关性）—值趋于同时按比例增加和减少的位置将聚集在一起。</para>
+		/// <para>轮廓（傅里叶）—值具有相似的平滑周期性模式的位置将聚集在一起。</para>
 		/// <para><see cref="CharacteristicOfInterestEnum"/></para>
 		/// </param>
 		public TimeSeriesClustering(object InCube, object AnalysisVariable, object OutputFeatures, object CharacteristicOfInterest)
@@ -47,9 +48,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Time Series Clustering</para>
+		/// <para>Tool Display Name : 时间序列聚类</para>
 		/// </summary>
-		public override string DisplayName() => "Time Series Clustering";
+		public override string DisplayName() => "时间序列聚类";
 
 		/// <summary>
 		/// <para>Tool Name : TimeSeriesClustering</para>
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>
-		/// <para>The netCDF cube to be analyzed. This file must have an .nc extension and must have been created using the Create Space Time Cube By Aggregating Points, Create Space Time Cube From Defined Features, or Create Space Time Cube From Multidimensional Raster Layer tool.</para>
+		/// <para>要分析的 netCDF 立方体。此文件必须具有 .nc 扩展名，并且必须使用通过聚合点创建时空立方体、通过已定义要素创建时空立方体或通过多维栅格图层创建时空立方体工具进行创建。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Analysis Variable</para>
-		/// <para>The numeric variable in the netCDF file, changing over time, that will be used to distinguish one cluster from another.</para>
+		/// <para>netCDF 文件中的数值变量会随时间改变，将用于区分各个聚类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>The new output feature class containing all locations in the space-time cube and a field indicating cluster membership. This feature class will be a two-dimensional representation of the clusters in your data.</para>
+		/// <para>新的输出要素类，包含时空立方体中的所有位置以及一个表示聚类成员资格的字段。此要素类将为数据中聚类的二维表示。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -109,10 +110,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Characteristic of Interest</para>
-		/// <para>Specifies the characteristic of the time series that will be used to determine which locations should be clustered together.</para>
-		/// <para>Value— Locations with similar values across time will be clustered together.</para>
-		/// <para>Profile (Correlation)—Locations with values that tend to increase and decrease proportionally at the same times will be clustered together.</para>
-		/// <para>Profile (Fourier)—Locations with values that have similar smooth, periodic patterns will be clustered together.</para>
+		/// <para>指定时间序列的特征，用于确定应聚集在一起的位置。</para>
+		/// <para>值— 时间值相似的位置将聚集在一起。</para>
+		/// <para>轮廓（相关性）—值趋于同时按比例增加和减少的位置将聚集在一起。</para>
+		/// <para>轮廓（傅里叶）—值具有相似的平滑周期性模式的位置将聚集在一起。</para>
 		/// <para><see cref="CharacteristicOfInterestEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -122,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Number of Clusters</para>
-		/// <para>The number of clusters to create. When left empty, the tool will evaluate the optimal number of clusters using a pseudo-F statistic. The optimal number of clusters will be reported in the messages window.</para>
+		/// <para>要创建的聚类数。如果留空，该工具将使用伪 F 统计量评估最佳聚类数。将在消息窗口中报告最佳聚类数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -130,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Output Table for Charts</para>
-		/// <para>If specified, this table contains the representative time series for each cluster based on both the average for each time series cluster and the medoid time series. Charts created from this table can be accessed in the Standalone Tables section.</para>
+		/// <para>如果指定，则此图表将包含每个聚类的代表性时间序列，其中每个聚类基于每个时间序列聚类和中心点时间序列的平均值。基于该表创建的图表可通过独立表部分进行访问。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -138,10 +139,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Time Series Characteristics to Ignore</para>
-		/// <para>Specifies characteristics that will be ignored when determining the similarity between two time series.</para>
-		/// <para>Time lag— The starting time of each period, including time lags, will be ignored. For example, if two time series have similar periodic patterns, but the values of one are three days behind the other, the time series will be considered similar.</para>
-		/// <para>Range—The magnitude of the values in each period will be ignored. For example, if two time series begin and end their periods at the same times, they will be considered similar, even if the actual values are very different.</para>
-		/// <para>If both characteristics are ignored, two time series will be considered similar if the durations of the periods are similar, even if they start at different times and have different values within the periods.</para>
+		/// <para>指定确定两个时间序列之间的相似性时将忽略的特征。</para>
+		/// <para>时差— 将忽略每个周期的开始时间（包括时差）。例如，如果两个时间序列的周期性模式相似，但是一个时间序列的值比另一个时间序列的值晚三天，则这两个时间序列视为相似。</para>
+		/// <para>范围—将忽略每个周期中的值量级。例如，如果两个时间序列的周期同时开始和结束，则二者视为相似，即使实际值相差很大。</para>
+		/// <para>如果忽略了这两个特征，则当周期的持续时间相似时，这两个时间序列将视为相似，即使二者开始时间不同且在周期内具有不同的值。</para>
 		/// <para><see cref="ShapeCharacteristicToIgnoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -151,9 +152,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Enable Time Series Pop-ups</para>
-		/// <para>Specifies whether time series charts will be created in the pop-ups of each output feature showing the time series of the feature and the average time series of all features in the same cluster as the feature.</para>
-		/// <para>Checked—Time series charts will be created for the output features.</para>
-		/// <para>Unchecked—Time series charts will not be created. This is the default.</para>
+		/// <para>指定是否将在每个输出要素的弹出窗口中创建时间序列图表，以显示要素的时间序列以及该要素所在聚类中所有要素的平均时间序列。</para>
+		/// <para>选中 - 将为输出要素创建时间序列图表。</para>
+		/// <para>未选中 - 不会创建时间序列图表。这是默认设置。</para>
 		/// <para><see cref="EnableTimeSeriesPopupsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -178,24 +179,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		public enum CharacteristicOfInterestEnum 
 		{
 			/// <summary>
-			/// <para>Value— Locations with similar values across time will be clustered together.</para>
+			/// <para>值— 时间值相似的位置将聚集在一起。</para>
 			/// </summary>
 			[GPValue("VALUE")]
-			[Description("Value")]
+			[Description("值")]
 			Value,
 
 			/// <summary>
-			/// <para>Profile (Correlation)—Locations with values that tend to increase and decrease proportionally at the same times will be clustered together.</para>
+			/// <para>轮廓（相关性）—值趋于同时按比例增加和减少的位置将聚集在一起。</para>
 			/// </summary>
 			[GPValue("PROFILE")]
-			[Description("Profile (Correlation)")]
+			[Description("轮廓（相关性）")]
 			PROFILE,
 
 			/// <summary>
-			/// <para>Profile (Fourier)—Locations with values that have similar smooth, periodic patterns will be clustered together.</para>
+			/// <para>轮廓（傅里叶）—值具有相似的平滑周期性模式的位置将聚集在一起。</para>
 			/// </summary>
 			[GPValue("PROFILE_FOURIER")]
-			[Description("Profile (Fourier)")]
+			[Description("轮廓（傅里叶）")]
 			PROFILE_FOURIER,
 
 		}
@@ -206,17 +207,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		public enum ShapeCharacteristicToIgnoreEnum 
 		{
 			/// <summary>
-			/// <para>Time lag— The starting time of each period, including time lags, will be ignored. For example, if two time series have similar periodic patterns, but the values of one are three days behind the other, the time series will be considered similar.</para>
+			/// <para>时差— 将忽略每个周期的开始时间（包括时差）。例如，如果两个时间序列的周期性模式相似，但是一个时间序列的值比另一个时间序列的值晚三天，则这两个时间序列视为相似。</para>
 			/// </summary>
 			[GPValue("TIME_LAG")]
-			[Description("Time lag")]
+			[Description("时差")]
 			Time_lag,
 
 			/// <summary>
-			/// <para>Range—The magnitude of the values in each period will be ignored. For example, if two time series begin and end their periods at the same times, they will be considered similar, even if the actual values are very different.</para>
+			/// <para>范围—将忽略每个周期中的值量级。例如，如果两个时间序列的周期同时开始和结束，则二者视为相似，即使实际值相差很大。</para>
 			/// </summary>
 			[GPValue("RANGE")]
-			[Description("Range")]
+			[Description("范围")]
 			Range,
 
 		}
@@ -227,14 +228,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		public enum EnableTimeSeriesPopupsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Time series charts will be created for the output features.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CREATE_POPUP")]
 			CREATE_POPUP,
 
 			/// <summary>
-			/// <para>Unchecked—Time series charts will not be created. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_POPUP")]

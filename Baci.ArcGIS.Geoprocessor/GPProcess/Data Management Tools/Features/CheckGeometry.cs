@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Check Geometry</para>
-	/// <para>Generates a report of the geometry problems in a feature class.</para>
+	/// <para>检查几何</para>
+	/// <para>生成要素类中几何问题的报告。</para>
 	/// </summary>
 	public class CheckGeometry : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>One or more feature classes or feature layers to check for geometry problems.</para>
+		/// <para>要检查是否存在几何问题的一个或多个要素类或要素图层。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>The report (as a table) of the problems discovered.</para>
+		/// <para>所发现问题的报告（作为表的形式）。</para>
 		/// </param>
 		public CheckGeometry(object InFeatures, object OutTable)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Check Geometry</para>
+		/// <para>Tool Display Name : 检查几何</para>
 		/// </summary>
-		public override string DisplayName() => "Check Geometry";
+		public override string DisplayName() => "检查几何";
 
 		/// <summary>
 		/// <para>Tool Name : CheckGeometry</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>One or more feature classes or feature layers to check for geometry problems.</para>
+		/// <para>要检查是否存在几何问题的一个或多个要素类或要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The report (as a table) of the problems discovered.</para>
+		/// <para>所发现问题的报告（作为表的形式）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -85,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Validation Method</para>
-		/// <para>Specifies the geometry validation method that will be used to identify geometry problems.</para>
-		/// <para>Esri—Esri geometry validation method will be used. This is the default.</para>
-		/// <para>OGC— Open Geospatial Consortium (OGC) geometry validation method will be used.</para>
+		/// <para>指定用于识别几何问题的几何验证方法。</para>
+		/// <para>Esri—将使用 Esri 几何验证方法。这是默认设置。</para>
+		/// <para>OGC— 将使用开放地理空间联盟 (OGC) 几何验证方法。</para>
 		/// <para><see cref="ValidationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -112,14 +113,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ValidationMethodEnum 
 		{
 			/// <summary>
-			/// <para>Esri—Esri geometry validation method will be used. This is the default.</para>
+			/// <para>Esri—将使用 Esri 几何验证方法。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ESRI")]
 			[Description("Esri")]
 			Esri,
 
 			/// <summary>
-			/// <para>OGC— Open Geospatial Consortium (OGC) geometry validation method will be used.</para>
+			/// <para>OGC— 将使用开放地理空间联盟 (OGC) 几何验证方法。</para>
 			/// </summary>
 			[GPValue("OGC")]
 			[Description("OGC")]

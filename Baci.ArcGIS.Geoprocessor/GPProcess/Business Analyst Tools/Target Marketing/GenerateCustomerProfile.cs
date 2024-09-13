@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Customer Segmentation Profile</para>
+	/// <para>Generate Customer Segmentation Profile</para>
 	/// <para>Creates a segmentation profile with an existing customer layer.</para>
 	/// </summary>
 	public class GenerateCustomerProfile : AbstractGPProcess

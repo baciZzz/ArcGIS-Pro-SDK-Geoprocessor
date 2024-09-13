@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Delete Terminal Configuration</para>
-	/// <para>Deletes a terminal configuration from a utility network.</para>
+	/// <para>删除终端配置</para>
+	/// <para>用于删除公共设施网络中的终端配置。</para>
 	/// </summary>
 	public class DeleteTerminalConfiguration : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that contains the terminal configuration to be deleted.</para>
+		/// <para>包含要删除的终端配置的公共设施网络。</para>
 		/// </param>
 		/// <param name="TerminalConfigurationName">
 		/// <para>Name</para>
-		/// <para>The name of the terminal configuration to delete.</para>
+		/// <para>要删除的终端配置的名称。</para>
 		/// </param>
 		public DeleteTerminalConfiguration(object InUtilityNetwork, object TerminalConfigurationName)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Delete Terminal Configuration</para>
+		/// <para>Tool Display Name : 删除终端配置</para>
 		/// </summary>
-		public override string DisplayName() => "Delete Terminal Configuration";
+		public override string DisplayName() => "删除终端配置";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteTerminalConfiguration</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that contains the terminal configuration to be deleted.</para>
+		/// <para>包含要删除的终端配置的公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Name</para>
-		/// <para>The name of the terminal configuration to delete.</para>
+		/// <para>要删除的终端配置的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

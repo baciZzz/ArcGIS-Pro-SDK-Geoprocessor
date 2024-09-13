@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Generate Airspace Areas</para>
+	/// <para>Generate Airspace Areas</para>
 	/// <para>Generates AirspaceArea features from Airspace features.</para>
 	/// </summary>
 	public class GenerateAirspaceAreas : AbstractGPProcess

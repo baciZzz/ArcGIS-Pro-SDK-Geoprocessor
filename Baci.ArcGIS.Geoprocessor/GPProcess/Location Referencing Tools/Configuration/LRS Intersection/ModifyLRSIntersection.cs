@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Modify LRS Intersection</para>
+	/// <para>Modify LRS Intersection</para>
 	/// <para>Modifies the properties of an intersection feature class, such as fields and intersecting layers, that compose the intersection feature class and can be added or removed.</para>
 	/// </summary>
 	public class ModifyLRSIntersection : AbstractGPProcess

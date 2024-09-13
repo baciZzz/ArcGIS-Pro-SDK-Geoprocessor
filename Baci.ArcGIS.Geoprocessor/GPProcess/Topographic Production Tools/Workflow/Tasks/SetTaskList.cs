@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Set Task List</para>
+	/// <para>Set Task List</para>
 	/// <para>Populates the list of expected tasks for a job based on the selected task group.</para>
 	/// </summary>
 	public class SetTaskList : AbstractGPProcess

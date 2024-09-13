@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Network Category</para>
-	/// <para>Adds a network category to an existing utility network.</para>
+	/// <para>添加网络类别</para>
+	/// <para>用于向现有公共设施网络添加网络类别。</para>
 	/// </summary>
 	public class AddNetworkCategory : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The input utility network where the network category will be added.</para>
+		/// <para>将添加网络类别的输入公共设施网络。</para>
 		/// </param>
 		/// <param name="CategoryName">
 		/// <para>Category Name</para>
-		/// <para>The name of the category to be created.</para>
+		/// <para>要创建的类别的名称。</para>
 		/// </param>
 		public AddNetworkCategory(object InUtilityNetwork, object CategoryName)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Network Category</para>
+		/// <para>Tool Display Name : 添加网络类别</para>
 		/// </summary>
-		public override string DisplayName() => "Add Network Category";
+		public override string DisplayName() => "添加网络类别";
 
 		/// <summary>
 		/// <para>Tool Name : AddNetworkCategory</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The input utility network where the network category will be added.</para>
+		/// <para>将添加网络类别的输入公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Category Name</para>
-		/// <para>The name of the category to be created.</para>
+		/// <para>要创建的类别的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

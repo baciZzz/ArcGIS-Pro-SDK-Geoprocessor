@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 {
 	/// <summary>
 	/// <para>Create Reviewer Session</para>
-	/// <para>Creates a new Reviewer session in the specified workspace.</para>
+	/// <para>创建 Reviewer 会话</para>
+	/// <para>在指定的工作空间中创建新 Reviewer 会话。</para>
 	/// </summary>
 	public class CreateReviewerSession : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// </summary>
 		/// <param name="ReviewerWorkspace">
 		/// <para>Reviewer Workspace</para>
-		/// <para>The workspace in which a new Reviewer session will be created.</para>
+		/// <para>将创建新 Reviewer 会话的工作空间。</para>
 		/// </param>
 		/// <param name="SessionName">
 		/// <para>Session Name</para>
-		/// <para>The name of the session that will be created in the Reviewer workspace.</para>
+		/// <para>将在 Reviewer 工作空间中创建的会话名称。</para>
 		/// </param>
 		public CreateReviewerSession(object ReviewerWorkspace, object SessionName)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Reviewer Session</para>
+		/// <para>Tool Display Name : 创建 Reviewer 会话</para>
 		/// </summary>
-		public override string DisplayName() => "Create Reviewer Session";
+		public override string DisplayName() => "创建 Reviewer 会话";
 
 		/// <summary>
 		/// <para>Tool Name : CreateReviewerSession</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>Reviewer Workspace</para>
-		/// <para>The workspace in which a new Reviewer session will be created.</para>
+		/// <para>将创建新 Reviewer 会话的工作空间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>Session Name</para>
-		/// <para>The name of the session that will be created in the Reviewer workspace.</para>
+		/// <para>将在 Reviewer 工作空间中创建的会话名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>Session Template</para>
-		/// <para>An existing Reviewer session whose properties will be copied to the new session.</para>
+		/// <para>属性将复制到新会话中的现有 Reviewer 会话。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -103,10 +104,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>Check For Duplicates</para>
-		/// <para>Specifies how duplicate validation results are handled in the session.</para>
-		/// <para>None—Does not search for duplicate validation results. This will improve performance when writing validation results to the database. This is the default.</para>
-		/// <para>Session—Searches within the session for duplicate validation results.</para>
-		/// <para>Database—Searches the entire database for duplicate validation results.</para>
+		/// <para>指定在会话中对重复验证结果的处理方法。</para>
+		/// <para>无—不搜索重复验证结果。这将改善将验证结果写入数据库时的性能。这是默认设置。</para>
+		/// <para>会话—在会话内搜索重复验证结果。</para>
+		/// <para>数据库—在整个数据库内搜索重复验证结果。</para>
 		/// <para><see cref="DuplicateCheckingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -116,9 +117,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>Do Not Store Geometry</para>
-		/// <para>Specifies whether results will include an associated geometry.</para>
-		/// <para>Checked—Results will include only attribute information. This can improve performance when writing validation results to the geodatabase.</para>
-		/// <para>Unchecked—Results will include both geometry and attribute information. This is the default.</para>
+		/// <para>指定结果是否包含关联几何。</para>
+		/// <para>已选中 - 结果将仅会包括属性信息。这将改善将验证结果写入地理数据库时的性能。</para>
+		/// <para>未选中 - 结果将同时包括几何与属性信息。这是默认设置。</para>
 		/// <para><see cref="StoreGeometryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>Session User Name</para>
-		/// <para>The user name of the person creating the Reviewer session. The default is the Windows user who is currently logged in.</para>
+		/// <para>创建 Reviewer 会话的人员的用户名。默认为当前登录的 Windows 用户。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -136,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 
 		/// <summary>
 		/// <para>Session Version</para>
-		/// <para>The enterprise geodatabase version with which the session will be associated. This parameter is only enabled when you choose a Reviewer workspace stored in an enterprise geodatabase.</para>
+		/// <para>将要与会话相关联的企业级地理数据库版本。只有在选择的 Reviewer 工作空间存储于企业级地理数据库时，才会启用该参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -159,24 +160,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		public enum DuplicateCheckingEnum 
 		{
 			/// <summary>
-			/// <para>Database—Searches the entire database for duplicate validation results.</para>
+			/// <para>数据库—在整个数据库内搜索重复验证结果。</para>
 			/// </summary>
 			[GPValue("DATABASE")]
-			[Description("Database")]
+			[Description("数据库")]
 			Database,
 
 			/// <summary>
-			/// <para>Session—Searches within the session for duplicate validation results.</para>
+			/// <para>会话—在会话内搜索重复验证结果。</para>
 			/// </summary>
 			[GPValue("SESSION")]
-			[Description("Session")]
+			[Description("会话")]
 			Session,
 
 			/// <summary>
-			/// <para>None—Does not search for duplicate validation results. This will improve performance when writing validation results to the database. This is the default.</para>
+			/// <para>无—不搜索重复验证结果。这将改善将验证结果写入数据库时的性能。这是默认设置。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 		}
@@ -187,14 +188,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		public enum StoreGeometryEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Results will include both geometry and attribute information. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("STORE_GEOMETRY")]
 			STORE_GEOMETRY,
 
 			/// <summary>
-			/// <para>Checked—Results will include only attribute information. This can improve performance when writing validation results to the geodatabase.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DO_NOT_STORE_GEOMETRY")]

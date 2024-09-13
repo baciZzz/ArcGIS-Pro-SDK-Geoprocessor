@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Connectivity Associations Rule</para>
+	/// <para>Add Connectivity Associations Rule</para>
 	/// <para>Add a connectivity associations rule to a diagram template</para>
 	/// </summary>
 	[Obsolete()]

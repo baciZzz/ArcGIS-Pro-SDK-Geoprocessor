@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 {
 	/// <summary>
 	/// <para>Calibrate Routes</para>
-	/// <para>Recalculates route measures using points.</para>
+	/// <para>校准路径</para>
+	/// <para>使用点重新计算路径测量值。</para>
 	/// </summary>
 	public class CalibrateRoutes : AbstractGPProcess
 	{
@@ -20,27 +21,27 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		/// <param name="InRouteFeatures">
 		/// <para>Input Route Features</para>
-		/// <para>The route features to be calibrated.</para>
+		/// <para>要校准的路径要素。</para>
 		/// </param>
 		/// <param name="RouteIdField">
 		/// <para>Route Identifier Field</para>
-		/// <para>The field containing values that uniquely identify each route. This field can be numeric or character.</para>
+		/// <para>包含可唯一识别每条路径的值的字段。该字段可以是数值或字符。</para>
 		/// </param>
 		/// <param name="InPointFeatures">
 		/// <para>Input Point Features</para>
-		/// <para>The point features used to calibrate the routes.</para>
+		/// <para>用于校准路径的点要素。</para>
 		/// </param>
 		/// <param name="PointIdField">
 		/// <para>Point Identifier Field</para>
-		/// <para>The field that identifies the route on which each calibration point is located. The values in this field match those in the route identifier field. This field can be numeric or character.</para>
+		/// <para>标识包含每个校准点所在的路径的字段。该字段中的值与路径标识符字段中的值相匹配。该字段可以是数值或字符。</para>
 		/// </param>
 		/// <param name="MeasureField">
 		/// <para>Measure Field</para>
-		/// <para>The field containing the measure value for each calibration point. This field must be numeric.</para>
+		/// <para>包含每个校准点的测量值的字段。该字段必须为数值型。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Route Feature Class</para>
-		/// <para>The feature class to be created. It can be a shapefile or a geodatabase feature class.</para>
+		/// <para>待创建的要素类。它可以是 shapefile，也可以是地理数据库要素类。</para>
 		/// </param>
 		public CalibrateRoutes(object InRouteFeatures, object RouteIdField, object InPointFeatures, object PointIdField, object MeasureField, object OutFeatureClass)
 		{
@@ -53,9 +54,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Calibrate Routes</para>
+		/// <para>Tool Display Name : 校准路径</para>
 		/// </summary>
-		public override string DisplayName() => "Calibrate Routes";
+		public override string DisplayName() => "校准路径";
 
 		/// <summary>
 		/// <para>Tool Name : CalibrateRoutes</para>
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Input Route Features</para>
-		/// <para>The route features to be calibrated.</para>
+		/// <para>要校准的路径要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Route Identifier Field</para>
-		/// <para>The field containing values that uniquely identify each route. This field can be numeric or character.</para>
+		/// <para>包含可唯一识别每条路径的值的字段。该字段可以是数值或字符。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Input Point Features</para>
-		/// <para>The point features used to calibrate the routes.</para>
+		/// <para>用于校准路径的点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Point Identifier Field</para>
-		/// <para>The field that identifies the route on which each calibration point is located. The values in this field match those in the route identifier field. This field can be numeric or character.</para>
+		/// <para>标识包含每个校准点所在的路径的字段。该字段中的值与路径标识符字段中的值相匹配。该字段可以是数值或字符。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -129,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Measure Field</para>
-		/// <para>The field containing the measure value for each calibration point. This field must be numeric.</para>
+		/// <para>包含每个校准点的测量值的字段。该字段必须为数值型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -138,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Output Route Feature Class</para>
-		/// <para>The feature class to be created. It can be a shapefile or a geodatabase feature class.</para>
+		/// <para>待创建的要素类。它可以是 shapefile，也可以是地理数据库要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -146,9 +147,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Measure Calculation Method</para>
-		/// <para>Specifies how route measures will be recalculated.</para>
-		/// <para>Distance—Measures will be recalculated using the shortest path distance between the calibration points. This is the default.</para>
-		/// <para>Measures—Measures will be recalculated using the pre-existing measure distance between the calibration points.</para>
+		/// <para>指定如何重新计算路径测量值。</para>
+		/// <para>距离—使用校准点之间的最短路径距离重新计算测量值。这是默认设置。</para>
+		/// <para>测量值—使用校准点之间预先存在的测量距离重新计算测量值。</para>
 		/// <para><see cref="CalibrateMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -158,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Search Radius</para>
-		/// <para>Limits how far a calibration point can be from a route by specifying the distance and its unit of measure. If the unit of measure is unknown, the units of the coordinate system of the route feature class will be used.</para>
+		/// <para>通过指定距离及其测量单位来限制校准点与路径的最大距离。如果测量单位是“未知”，则使用路径要素类的坐标系单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -166,9 +167,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Interpolate between calibration points</para>
-		/// <para>Specifies whether measure values will be interpolated between the calibration points.</para>
-		/// <para>Checked—Interpolate between the calibration points. This is the default.</para>
-		/// <para>Unchecked—Do not interpolate between the calibration points.</para>
+		/// <para>指定是否在校准点之间内插测量值。</para>
+		/// <para>选中 - 在校准点之间执行内插。这是默认设置。</para>
+		/// <para>未选中 - 不在校准点之间执行内插。</para>
 		/// <para><see cref="InterpolateBetweenEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -178,9 +179,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Extrapolate before calibration points</para>
-		/// <para>Specifies whether measure values will be extrapolated before the calibration points.</para>
-		/// <para>Checked—Extrapolate before the calibration points. This is the default.</para>
-		/// <para>Unchecked—Do not extrapolate before the calibration points.</para>
+		/// <para>指定是否在校准点之前外推测量值。</para>
+		/// <para>选中 - 在校准点之前执行外推。这是默认设置。</para>
+		/// <para>未选中 - 不在校准点之前执行外推。</para>
 		/// <para><see cref="ExtrapolateBeforeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -190,9 +191,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Extrapolate after calibration points</para>
-		/// <para>Specifies whether measure values will be extrapolated after the calibration points.</para>
-		/// <para>Checked—Extrapolate after the calibration points. This is the default.</para>
-		/// <para>Unchecked—Do not extrapolate after the calibration points.</para>
+		/// <para>指定是否在校准点之后外推测量值。</para>
+		/// <para>选中 - 在校准点之后执行外推。这是默认设置。</para>
+		/// <para>未选中 - 不在校准点之后执行外推。</para>
 		/// <para><see cref="ExtrapolateAfterEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -202,9 +203,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Ignore spatial gaps</para>
-		/// <para>Specifies whether spatial gaps will be ignored when recalculating the measures on disjointed routes.</para>
-		/// <para>Checked—Spatial gaps will be ignored. Measure values will be continuous for disjointed routes. This is the default.</para>
-		/// <para>Unchecked—Do not ignore spatial gaps. The measure values on disjointed routes will have gaps. The gap distance is calculated using the straight-line distance between the endpoints of the disjointed parts.</para>
+		/// <para>指定在重新计算不相交路径上的测量值时是否忽略空间间距。</para>
+		/// <para>选中 - 忽略空间间距。不相交路径的测量值将是连续的。这是默认设置。</para>
+		/// <para>未选中 - 不忽略空间间距。不相交路径的测量值将有间距。将使用不相交部分的端点间的直线距离来计算间距。</para>
 		/// <para><see cref="IgnoreGapsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -214,9 +215,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Include all features in the output feature class</para>
-		/// <para>Specifies whether route features that do not have any calibration points will be excluded from the output feature class.</para>
-		/// <para>Checked—Keep all route features in the output feature class. This is the default.</para>
-		/// <para>Unchecked—Do not keep all route features in the output feature class. Features that have no calibration points will be excluded.</para>
+		/// <para>指定是否在输出要素类中排除不含校准点的路径要素。</para>
+		/// <para>选中 - 在输出要素类中保留所有路径要素。这是默认设置。</para>
+		/// <para>未选中 - 在输出要素类中不保留所有路径要素。不含校准点的要素将被排除。</para>
 		/// <para><see cref="KeepAllRoutesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -226,9 +227,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Build index</para>
-		/// <para>Specifies whether an attribute index will be created for the route identifier field that is written to the Output Route Feature Class.</para>
-		/// <para>Checked—Create an attribute index. This is the default.</para>
-		/// <para>Unchecked—Do not create an attribute index.</para>
+		/// <para>指定是否为写入输出路径要素类的路径标识符字段创建属性索引。</para>
+		/// <para>选中 - 创建属性索引。这是默认设置。</para>
+		/// <para>未选中 - 不创建属性索引。</para>
 		/// <para><see cref="BuildIndexEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -253,17 +254,17 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum CalibrateMethodEnum 
 		{
 			/// <summary>
-			/// <para>Distance—Measures will be recalculated using the shortest path distance between the calibration points. This is the default.</para>
+			/// <para>距离—使用校准点之间的最短路径距离重新计算测量值。这是默认设置。</para>
 			/// </summary>
 			[GPValue("DISTANCE")]
-			[Description("Distance")]
+			[Description("距离")]
 			Distance,
 
 			/// <summary>
-			/// <para>Measures—Measures will be recalculated using the pre-existing measure distance between the calibration points.</para>
+			/// <para>测量值—使用校准点之间预先存在的测量距离重新计算测量值。</para>
 			/// </summary>
 			[GPValue("MEASURES")]
-			[Description("Measures")]
+			[Description("测量值")]
 			Measures,
 
 		}
@@ -274,14 +275,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum InterpolateBetweenEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Interpolate between the calibration points. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BETWEEN")]
 			BETWEEN,
 
 			/// <summary>
-			/// <para>Unchecked—Do not interpolate between the calibration points.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_BETWEEN")]
@@ -295,14 +296,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum ExtrapolateBeforeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Extrapolate before the calibration points. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BEFORE")]
 			BEFORE,
 
 			/// <summary>
-			/// <para>Unchecked—Do not extrapolate before the calibration points.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_BEFORE")]
@@ -316,14 +317,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum ExtrapolateAfterEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Extrapolate after the calibration points. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("AFTER")]
 			AFTER,
 
 			/// <summary>
-			/// <para>Unchecked—Do not extrapolate after the calibration points.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_AFTER")]
@@ -337,14 +338,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum IgnoreGapsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Spatial gaps will be ignored. Measure values will be continuous for disjointed routes. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("IGNORE")]
 			IGNORE,
 
 			/// <summary>
-			/// <para>Unchecked—Do not ignore spatial gaps. The measure values on disjointed routes will have gaps. The gap distance is calculated using the straight-line distance between the endpoints of the disjointed parts.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_IGNORE")]
@@ -358,14 +359,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum KeepAllRoutesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Keep all route features in the output feature class. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("KEEP")]
 			KEEP,
 
 			/// <summary>
-			/// <para>Unchecked—Do not keep all route features in the output feature class. Features that have no calibration points will be excluded.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_KEEP")]
@@ -379,14 +380,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum BuildIndexEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Create an attribute index. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INDEX")]
 			INDEX,
 
 			/// <summary>
-			/// <para>Unchecked—Do not create an attribute index.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_INDEX")]

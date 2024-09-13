@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Set Territory Level Options</para>
+	/// <para>Set Territory Level Options</para>
 	/// <para>Sets options for how territory levels are created.</para>
 	/// </summary>
 	public class SetTerritoryLevelOptions : AbstractGPProcess

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Match Photos To Rows By Time</para>
-	/// <para>Matches photo files to table or feature class rows according to the photo and row time stamps. The row with the time stamp closest to the capture time of a photo will be matched to that photo. Creates a new table containing the ObjectIDs from the input rows and their matching photo paths. Optionally adds matching photo files to the rows of the input table as geodatabase attachments.</para>
+	/// <para>按时间将照片与行匹配</para>
+	/// <para>根据照片与行时间戳将照片文件匹配至表或要素类的行。具有时间戳最接近于照片捕捉时间的行将与此照片相匹配。接下来将根据输入的行以及所匹配的照片的路径创建一个包含 ObjectIDs 的新表。也可以将匹配的照片文件作为地理数据库附件添加到输入表的行记录中。</para>
 	/// </summary>
 	public class MatchPhotosToRowsByTime : AbstractGPProcess
 	{
@@ -20,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputFolder">
 		/// <para>Input Folder</para>
-		/// <para>The folder where photo files are located. This folder is scanned recursively for photo files; any photos in the base level of the folder, as well as in any subfolders, will be added to the output.</para>
+		/// <para>照片文件所在的文件夹。此文件夹是递归扫描照片文件得到的；基础等级文件夹以及任何子文件夹中的所有照片都将被添加到输出中。</para>
 		/// </param>
 		/// <param name="InputTable">
 		/// <para>Input Table</para>
-		/// <para>The table or feature class whose rows will be matched with photo files. The input table will typically be a point feature class representing GPS recordings.</para>
+		/// <para>表或要素类，其行将与照片文件相匹配。输入表通常是一个表示 GPS 记录的点要素类。</para>
 		/// </param>
 		/// <param name="TimeField">
 		/// <para>Time Field</para>
-		/// <para>The date/time field from the input table that indicates when each row was captured or created. Must be a date field; cannot be a string or numeric field.</para>
+		/// <para>输入表中的日期/时间字段，用于指示各行的捕获或创建时间。必须是日期字段；不能是字符串或数值型字段。</para>
 		/// </param>
 		/// <param name="OutputTable">
 		/// <para>Output Table</para>
-		/// <para>The output table containing the OBJECTIDs from the input table that match a photo, and the matching photo path. Only OBJECTIDs from the input table that are found to match a photo are included in the output table.</para>
+		/// <para>输出表，其中包含与照片相匹配的输入表的 OBJECTID 以及相匹配的照片路径。输出表中仅包含与照片匹配的输入表的 OBJECTID。</para>
 		/// </param>
 		public MatchPhotosToRowsByTime(object InputFolder, object InputTable, object TimeField, object OutputTable)
 		{
@@ -43,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Match Photos To Rows By Time</para>
+		/// <para>Tool Display Name : 按时间将照片与行匹配</para>
 		/// </summary>
-		public override string DisplayName() => "Match Photos To Rows By Time";
+		public override string DisplayName() => "按时间将照片与行匹配";
 
 		/// <summary>
 		/// <para>Tool Name : MatchPhotosToRowsByTime</para>
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Folder</para>
-		/// <para>The folder where photo files are located. This folder is scanned recursively for photo files; any photos in the base level of the folder, as well as in any subfolders, will be added to the output.</para>
+		/// <para>照片文件所在的文件夹。此文件夹是递归扫描照片文件得到的；基础等级文件夹以及任何子文件夹中的所有照片都将被添加到输出中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The table or feature class whose rows will be matched with photo files. The input table will typically be a point feature class representing GPS recordings.</para>
+		/// <para>表或要素类，其行将与照片文件相匹配。输入表通常是一个表示 GPS 记录的点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Time Field</para>
-		/// <para>The date/time field from the input table that indicates when each row was captured or created. Must be a date field; cannot be a string or numeric field.</para>
+		/// <para>输入表中的日期/时间字段，用于指示各行的捕获或创建时间。必须是日期字段；不能是字符串或数值型字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -105,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The output table containing the OBJECTIDs from the input table that match a photo, and the matching photo path. Only OBJECTIDs from the input table that are found to match a photo are included in the output table.</para>
+		/// <para>输出表，其中包含与照片相匹配的输入表的 OBJECTID 以及相匹配的照片路径。输出表中仅包含与照片匹配的输入表的 OBJECTID。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -113,8 +114,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Unmatched Photos Table</para>
-		/// <para>The optional output table that will list any photo files in the input folder with an invalid time stamp or any photos that cannot be matched because there is no input row within the time tolerance.</para>
-		/// <para>If no path is specified, this table will not be created.</para>
+		/// <para>可选输出表，其中将列出具有无效时间戳的输入文件夹中的任何照片文件，或因没有在时间容差范围内的输入行而无法匹配的任何照片。</para>
+		/// <para>如果未指定路径，则不会创建此表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -122,9 +123,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Add Photos As Attachments</para>
-		/// <para>Specifies if photo files will be added to the rows of the input table as geodatabase attachments. The input table must be stored in a version 10 or later geodatabase for photo files to be added as attachments.</para>
-		/// <para>Checked—Photo files will be added to the rows of the input table as geodatabase attachments. Geodatabase attachments are copied internally to the geodatabase. This is the default.</para>
-		/// <para>Unchecked—Photo files will not be added to the rows of the input table as geodatabase attachments.</para>
+		/// <para>指定照片文件是否将作为地理数据库附件添加到输入表的行中。要将照片文件作为附件进行添加，输入表必须存储在 10 或更高版本的地理数据库中。</para>
+		/// <para>选中 - 照片文件将作为地理数据库附件添加到输入表的行中。地理数据库附件被内部复制到地理数据库中。这是默认设置。</para>
+		/// <para>未选中 - 照片文件将不作为地理数据库附件添加到输入表的行中。</para>
 		/// <para><see cref="AddPhotosAsAttachmentsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -134,8 +135,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Time Tolerance</para>
-		/// <para>The maximum difference (in seconds) between the date/time of an input row and a photo file that will be matched. If an input row and a photo file have time stamps that are different by more than this tolerance, no match will occur. To match a photo file to a row with the closest time stamp, regardless of how large the date/time difference might be, set the tolerance to 0. The sign of this value (- or +) is irrelevant; the absolute value of the number specified will be used.</para>
-		/// <para>Do not use this parameter to adjust for consistent shifts or offsets between the times recorded by the GPS and the digital camera. Use the Clock Offset parameter, or the Convert Time Zone tool to shift the time stamps of the input rows to match those of the photos.</para>
+		/// <para>匹配的输入行和照片文件的日期/时间之间的最大差异（以秒为单位）。如果输入行和照片文件的时间戳差异超出该容差值，则不会发生匹配。要将照片文件与具有最接近时间戳的行匹配，无论日期/时间差异有多大，请将容差设置为 0。此值的符号（- 或 +）无关紧要；将使用指定数值的绝对值。</para>
+		/// <para>不要使用此参数进行调整以实现 GPS 和数码相机记录的时间之间一致的转换或偏移。请使用时钟偏移参数或转换时区工具转换输入行的时间戳，来匹配照片的时间戳。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -143,8 +144,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Clock Offset</para>
-		/// <para>The difference (in seconds) between the internal clock of the digital camera used to capture the photos and the GPS unit. If the clock of the digital camera is behind the clock of the GPS unit, use a positive value; if the clock of the digital camera is ahead of the clock of the GPS unit, use a negative value.</para>
-		/// <para>For example, if a photo with a time stamp of 11:35:17 should match a row with a time stamp of 11:35:32, use a Clock Offset of 15.</para>
+		/// <para>用来捕获照片的数码相机和 GPS 装置的内部时钟之间的差异（以秒为单位）。如果数码相机的时钟在 GPS 装置的时钟之后，请使用正值；如果数码相机的时钟在 GPS 装置的时钟之前，请使用负值。</para>
+		/// <para>例如，如果具有时间戳 11:35:17 的照片应匹配至具有时间戳 11:35:32 的行，请使用时钟偏移 15。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -167,14 +168,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AddPhotosAsAttachmentsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Photo files will be added to the rows of the input table as geodatabase attachments. Geodatabase attachments are copied internally to the geodatabase. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_ATTACHMENTS")]
 			ADD_ATTACHMENTS,
 
 			/// <summary>
-			/// <para>Unchecked—Photo files will not be added to the rows of the input table as geodatabase attachments.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ATTACHMENTS")]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Convert Raster Function Template</para>
-	/// <para>Converts a raster function template between formats (rft.xml, json, and binary).</para>
+	/// <para>转换栅格函数模板</para>
+	/// <para>将栅格函数模板在格式（rft.xml、json 和二进制）间进行转换。</para>
 	/// </summary>
 	public class ConvertRasterFunctionTemplate : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRasterFunctionTemplate">
 		/// <para>Input Raster Function Template</para>
-		/// <para>The input raster function template file. The input template file can be XML, JSON, or binary format.</para>
+		/// <para>输入栅格函数模板文件。输入模板文件可以为 XML、JSON 或二进制格式。</para>
 		/// </param>
 		/// <param name="OutRasterFunctionTemplateFile">
 		/// <para>Output Raster Function Template File</para>
-		/// <para>The output raster function template file path and file name.</para>
+		/// <para>输出栅格函数模板文件路径和文件名。</para>
 		/// </param>
 		public ConvertRasterFunctionTemplate(object InRasterFunctionTemplate, object OutRasterFunctionTemplateFile)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Convert Raster Function Template</para>
+		/// <para>Tool Display Name : 转换栅格函数模板</para>
 		/// </summary>
-		public override string DisplayName() => "Convert Raster Function Template";
+		public override string DisplayName() => "转换栅格函数模板";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertRasterFunctionTemplate</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster Function Template</para>
-		/// <para>The input raster function template file. The input template file can be XML, JSON, or binary format.</para>
+		/// <para>输入栅格函数模板文件。输入模板文件可以为 XML、JSON 或二进制格式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Raster Function Template File</para>
-		/// <para>The output raster function template file path and file name.</para>
+		/// <para>输出栅格函数模板文件路径和文件名。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -88,10 +89,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Format</para>
-		/// <para>The output function template file format.</para>
-		/// <para>XML—XML output format.</para>
-		/// <para>JSON—JSON output format. This is the default.</para>
-		/// <para>Binary—Binary output format.</para>
+		/// <para>输出函数模板文件格式。</para>
+		/// <para>XML—XML 输出格式。</para>
+		/// <para>JSON—JSON 输出格式。这是默认设置。</para>
+		/// <para>二进制—二进制输出格式。</para>
 		/// <para><see cref="FormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -116,24 +117,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FormatEnum 
 		{
 			/// <summary>
-			/// <para>XML—XML output format.</para>
+			/// <para>XML—XML 输出格式。</para>
 			/// </summary>
 			[GPValue("XML")]
 			[Description("XML")]
 			XML,
 
 			/// <summary>
-			/// <para>JSON—JSON output format. This is the default.</para>
+			/// <para>JSON—JSON 输出格式。这是默认设置。</para>
 			/// </summary>
 			[GPValue("JSON")]
 			[Description("JSON")]
 			JSON,
 
 			/// <summary>
-			/// <para>Binary—Binary output format.</para>
+			/// <para>二进制—二进制输出格式。</para>
 			/// </summary>
 			[GPValue("BINARY")]
-			[Description("Binary")]
+			[Description("二进制")]
 			Binary,
 
 		}

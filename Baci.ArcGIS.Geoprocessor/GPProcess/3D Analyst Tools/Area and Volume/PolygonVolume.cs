@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Polygon Volume</para>
-	/// <para>Calculates the volume and surface area between a polygon of a constant height and a surface.</para>
+	/// <para>面体积</para>
+	/// <para>计算高度恒定的面和表面之间的体积和表面面积。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -22,15 +23,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InSurface">
 		/// <para>Input Surface</para>
-		/// <para>The TIN, terrain, or LAS dataset surface to process.</para>
+		/// <para>待处理的 TIN、terrain 或 LAS 数据集表面。</para>
 		/// </param>
 		/// <param name="InFeatureClass">
 		/// <para>Input Features</para>
-		/// <para>The polygon features that define the region being processed.</para>
+		/// <para>定义正在处理的区域的面要素。</para>
 		/// </param>
 		/// <param name="InHeightField">
 		/// <para>Height Field</para>
-		/// <para>The field in the polygon's attribute table that defines the height of the reference plane used in determining volumetric calculations.</para>
+		/// <para>面属性表中的字段，用于定义确定体积计算中使用的参考平面高度。</para>
 		/// </param>
 		public PolygonVolume(object InSurface, object InFeatureClass, object InHeightField)
 		{
@@ -40,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Polygon Volume</para>
+		/// <para>Tool Display Name : 面体积</para>
 		/// </summary>
-		public override string DisplayName() => "Polygon Volume";
+		public override string DisplayName() => "面体积";
 
 		/// <summary>
 		/// <para>Tool Name : PolygonVolume</para>
@@ -76,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Surface</para>
-		/// <para>The TIN, terrain, or LAS dataset surface to process.</para>
+		/// <para>待处理的 TIN、terrain 或 LAS 数据集表面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The polygon features that define the region being processed.</para>
+		/// <para>定义正在处理的区域的面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Height Field</para>
-		/// <para>The field in the polygon's attribute table that defines the height of the reference plane used in determining volumetric calculations.</para>
+		/// <para>面属性表中的字段，用于定义确定体积计算中使用的参考平面高度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -102,9 +103,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Reference Plane</para>
-		/// <para>The direction from the reference plane that volume and surface area will be calculated.</para>
-		/// <para>Calculate above the plane—Volume and surface area are calculated above the reference plane height of the polygons.</para>
-		/// <para>Calculate below the plane—Volume and surface area are calculated below the reference plane height of the polygons. This is the default.</para>
+		/// <para>要计算体积和表面积的参考平面的方向。</para>
+		/// <para>在平面上方计算—计算面的参考平面高度以上的体积和表面积。</para>
+		/// <para>在平面下方计算—计算面的参考平面高度以下的体积和表面积。这是默认设置。</para>
 		/// <para><see cref="ReferencePlaneEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -114,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Volume Field</para>
-		/// <para>Specifies the name of the field that will contain volumetric calculations. The default is Volume.</para>
+		/// <para>指定体积计算所属字段的名称。默认设置为 Volume。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -122,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Surface Area Field</para>
-		/// <para>Specifies the name of the field that will contain the surface area calculations. The default is SArea.</para>
+		/// <para>指定表面积计算所属字段的名称。默认设置为 SArea。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -130,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
-		/// <para>The z-tolerance or window-size resolution of the terrain pyramid level that will be used. The default is 0, or full resolution.</para>
+		/// <para>将使用 terrain 金字塔等级的 z 容差或窗口大小分辨率。 默认值为 0，或全分辨率。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -160,17 +161,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ReferencePlaneEnum 
 		{
 			/// <summary>
-			/// <para>Calculate above the plane—Volume and surface area are calculated above the reference plane height of the polygons.</para>
+			/// <para>在平面上方计算—计算面的参考平面高度以上的体积和表面积。</para>
 			/// </summary>
 			[GPValue("ABOVE")]
-			[Description("Calculate above the plane")]
+			[Description("在平面上方计算")]
 			Calculate_above_the_plane,
 
 			/// <summary>
-			/// <para>Calculate below the plane—Volume and surface area are calculated below the reference plane height of the polygons. This is the default.</para>
+			/// <para>在平面下方计算—计算面的参考平面高度以下的体积和表面积。这是默认设置。</para>
 			/// </summary>
 			[GPValue("BELOW")]
-			[Description("Calculate below the plane")]
+			[Description("在平面下方计算")]
 			Calculate_below_the_plane,
 
 		}

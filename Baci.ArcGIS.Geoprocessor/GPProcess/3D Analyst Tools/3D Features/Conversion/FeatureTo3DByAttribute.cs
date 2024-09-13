@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Feature To 3D By Attribute</para>
-	/// <para>Creates 3D features using height values derived from the attribute of the input features.</para>
+	/// <para>依据属性实现要素转 3D</para>
+	/// <para>使用从输入要素属性获得的高度值创建 3D 要素。</para>
 	/// </summary>
 	public class FeatureTo3DByAttribute : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input  Features</para>
-		/// <para>The features that will be used to create 3D features.</para>
+		/// <para>用于创建 3D 要素的要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </param>
 		/// <param name="HeightField">
 		/// <para>Height Field</para>
-		/// <para>The field whose values will define the height of the resulting 3D features.</para>
+		/// <para>其值被用于定义所生成的 3D 要素的高度的字段。</para>
 		/// </param>
 		public FeatureTo3DByAttribute(object InFeatures, object OutFeatureClass, object HeightField)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Feature To 3D By Attribute</para>
+		/// <para>Tool Display Name : 依据属性实现要素转 3D</para>
 		/// </summary>
-		public override string DisplayName() => "Feature To 3D By Attribute";
+		public override string DisplayName() => "依据属性实现要素转 3D";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureTo3DByAttribute</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input  Features</para>
-		/// <para>The features that will be used to create 3D features.</para>
+		/// <para>用于创建 3D 要素的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Height Field</para>
-		/// <para>The field whose values will define the height of the resulting 3D features.</para>
+		/// <para>其值被用于定义所生成的 3D 要素的高度的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>To Height Field</para>
-		/// <para>An optional second height field used for lines. When using two height fields, each line will start at the first height and end at the second (sloped).</para>
+		/// <para>用于线的第二个可选高度字段。如果使用两个高度字段，则每条线的起点使用第一个高度，终点使用第二个高度（成坡状）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make Service Area Analysis Layer</para>
-	/// <para>Makes a service area network analysis layer and sets its analysis properties. A service area analysis layer is useful in determining the area of accessibility within a given cutoff cost from a facility location. The layer can be created using a local network dataset or using a routing service hosted online or in a portal.</para>
+	/// <para>创建服务区分析图层</para>
+	/// <para>创建服务区网络分析图层并设置其分析属性。服务区分析图层主要用于确定在指定中断成本范围内能从设施点位置访问的区域。该图层可通过本地网络数据集或在线托管或门户托管路径服务创建。</para>
 	/// </summary>
 	public class MakeServiceAreaAnalysisLayer : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="NetworkDataSource">
 		/// <para>Network Data Source</para>
-		/// <para>The network dataset or service on which the network analysis will be performed. Use the portal URL for a service.</para>
+		/// <para>将对其执行网络分析的网络数据集或服务。将门户 URL 用于服务。</para>
 		/// </param>
 		public MakeServiceAreaAnalysisLayer(object NetworkDataSource)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Make Service Area Analysis Layer</para>
+		/// <para>Tool Display Name : 创建服务区分析图层</para>
 		/// </summary>
-		public override string DisplayName() => "Make Service Area Analysis Layer";
+		public override string DisplayName() => "创建服务区分析图层";
 
 		/// <summary>
 		/// <para>Tool Name : MakeServiceAreaAnalysisLayer</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Network Data Source</para>
-		/// <para>The network dataset or service on which the network analysis will be performed. Use the portal URL for a service.</para>
+		/// <para>将对其执行网络分析的网络数据集或服务。将门户 URL 用于服务。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Layer Name</para>
-		/// <para>The name of the network analysis layer to create.</para>
+		/// <para>要创建的网络分析图层的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -80,8 +81,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Travel Mode</para>
-		/// <para>The name of the travel mode to use in the analysis. The travel mode represents a collection of network settings, such as travel restrictions and U-turn policies, that determine how a pedestrian, car, truck, or other medium of transportation moves through the network. Travel modes are defined on your network data source.</para>
-		/// <para>An arcpy.na.TravelMode object and a string containing the valid JSON representation of a travel mode can also be used as input to the parameter.</para>
+		/// <para>分析中使用的出行模式名称。出行模式为一组网络设置（例如行驶限制和 U 形转弯），用于确定行人、车辆、卡车或其他交通媒介在网络中的移动方式。出行模式在网络数据源中进行定义。</para>
+		/// <para>arcpy.na.TravelMode 对象和包含出行模式有效 JSON 表示的字符串也可用作参数的输入。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -90,10 +91,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Travel Direction</para>
-		/// <para>Specifies the direction of travel to or from the facilities.</para>
-		/// <para>Away from facilities—The service area represents traveling away from the facilities. This is the default.</para>
-		/// <para>Toward facilities—The service area represents traveling toward the facilities.</para>
-		/// <para>Using this parameter can result in different service areas on a network with one-way restrictions and different impedances based on direction of travel. The service area for a pizza delivery store, for example, should be created away from the facility, whereas the service area of a hospital should be created toward the facility.</para>
+		/// <para>指定行至或离开设施点的方向。</para>
+		/// <para>远离设施点—服务区表示远离设施点。这是默认设置。</para>
+		/// <para>朝向设施点—服务区表示朝向设施点。</para>
+		/// <para>使用此参数的结果是，在基于行驶方向的网络中，单向限制及不同行驶方向的阻抗差异会产生不同的服务区。例如，应该在远离设施点的方向上创建比萨外卖店的服务区，而医院的服务区应该创建在朝向设施点的方向上。</para>
 		/// <para><see cref="TravelDirectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -103,9 +104,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Cutoffs</para>
-		/// <para>The extent of the service area to be calculated in the units of the impedance attribute used by your selected travel mode. For example, when analyzing driving time, a cutoff value of 10 means that the resulting service area will represent the area reachable within a 10-minute drive time.</para>
-		/// <para>Multiple cutoffs can be set to create concentric service areas. For example, to find 2-, 3-, and 5-minute service areas for the same facility, specify 2, 3, and 5 as the values for this parameter.</para>
-		/// <para>This default cutoff value can be overridden on a per-facility basis by specifying individual break values in the facilities sublayer.</para>
+		/// <para>将使用您所选择出行模式使用的抗阻属性单位计算服务区范围。例如，分析行驶时间时，中断值 10 表示生成的服务区将代表 10 分钟行驶区域内可送达的区域。</para>
+		/// <para>可设置多个中断值以便创建同心服务区。例如，要针对同一设施点查找 2 分钟、3 分钟和 5 分钟内的服务区，可将该参数值指定为 2、3 和 5。</para>
+		/// <para>在设施点子图层中指定单独的中断值可按设施点覆盖默认中断值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -114,20 +115,20 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time of Day</para>
-		/// <para>The time to depart from or arrive at the facilities of the service area layer. The interpretation of this value as a departure or arrival time depends on whether travel is away from or toward the facilities.</para>
-		/// <para>It represents the departure time if Travel Direction is set to Away from facilities.</para>
-		/// <para>It represents the arrival time if Travel Direction is set to Toward facilities.</para>
-		/// <para>The Time of Day parameter is most useful for finding the roads that can be reached based on a travel mode that uses an impedance attribute that varies with the time of the day, such as one based on dynamic traffic conditions. Solving the same analysis using different Time of Day values allows you to see how a facility&apos;s reach changes over time. For example, the five-minute service area around a fire station may start out large in the early morning, diminish during the morning rush hour, grow in the late morning, and so on, throughout the day.</para>
-		/// <para>A date and time can be specified as 10/21/2015 10:30 AM.</para>
-		/// <para>Instead of using a particular date, a day of the week can be specified using the following dates:</para>
-		/// <para>Today—12/30/1899</para>
-		/// <para>Sunday—12/31/1899</para>
-		/// <para>Monday—1/1/1900</para>
-		/// <para>Tuesday—1/2/1900</para>
-		/// <para>Wednesday—1/3/1900</para>
-		/// <para>Thursday—1/4/1900</para>
-		/// <para>Friday—1/5/1900</para>
-		/// <para>Saturday—1/6/1900</para>
+		/// <para>离开或到达服务区图层的设施点的时间。此值可理解为离开时间或到达时间，具体取决于行驶方向是远离还是朝向设施点。</para>
+		/// <para>如果将行驶方向设置为远离设施点，则此值表示离开时间。</para>
+		/// <para>如果将行驶方向设置为朝向设施点，则此值表示到达时间。</para>
+		/// <para>根据使用抗阻值的出行模式查找可到达的道路，而抗阻值根据时间的不同而不同（例如取决于动态交通状况）时，时间参数最为有用。使用不同的时间值求解同一分析可查看设施点可到达的道路如何随时间的变化而变化。例如，消防站周围的 5 分钟服务区在大清早时可能变得大一点，而在早高峰期消失，上午晚些时候服务区又扩大，并在一天中都保持这样。</para>
+		/// <para>可将时间和日期指定为 10/21/2015 10:30 AM。</para>
+		/// <para>可使用以下日期来指定一周中的每一天，而无需使用特定的日期：</para>
+		/// <para>今天 - 12/30/1899</para>
+		/// <para>星期日 - 12/31/1899</para>
+		/// <para>星期一 - 1/1/1900</para>
+		/// <para>星期二 - 1/2/1900</para>
+		/// <para>星期三 - 1/3/1900</para>
+		/// <para>星期四 - 1/4/1900</para>
+		/// <para>星期五 - 1/5/1900</para>
+		/// <para>星期六 - 1/6/1900</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -136,9 +137,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time Zone</para>
-		/// <para>Specifies the time zone for the time of day parameter.</para>
-		/// <para>Local time at locations—The time of day parameter will use the time zone or zones in which the facilities are located. The start or end times of the service areas are staggered by time zone. This is the default.For example, setting time of day to 9:00 a.m. causes service areas to be generated for 9:00 a.m. eastern time for any facilities in the eastern time zone, 9:00 a.m. central time for facilities in the central time zone, 9:00 a.m. mountain time for facilities in the mountain time zone, and so on. If stores in a chain that span the U.S. open at 9:00 a.m. local time, choose this parameter value to find market territories at opening time for all stores in one solve. First, the stores in the eastern time zone open and a polygon is generated. An hour later, stores open in the central time zone, and so on. Nine o&apos;clock is always in local time but staggered in real time.</para>
-		/// <para>UTC—The time of day parameter will use coordinated universal time (UTC). All facilities are reached or departed from simultaneously, regardless of the time zone or zones in which they are located.Setting time of day to 2:00 p.m. causes service areas to be generated for 9:00 a.m. eastern standard time for any facilities in the eastern time zone, 8:00 a.m. central standard time for facilities in the central time zone, 7:00 a.m. mountain standard time for facilities in the mountain time zone, and so on.One of the cases in which the UTC option is useful is to visualize emergency response coverage for a jurisdiction that is split into two time zones. The emergency vehicles are loaded as facilities. Time of day is set to now in UTC. (You need to determine what the current time and date are in terms of UTC to correctly use this option.) Other properties are set and the analysis is solved. Even though a time-zone boundary divides the vehicles, the results show areas that can be reached given current traffic conditions. This same process can be used for other times as well, not just for now.The scenario above assumes standard time. During daylight saving time, the eastern, central, and mountain times will each be one hour ahead (that is, 10:00, 9:00, and 8:00 a.m., respectively).</para>
+		/// <para>指定时间参数的时区。</para>
+		/// <para>各位置的本地时间—时间参数将使用设施点所处的一个或多个时区。服务区开始时间或结束时间的时区交错。这是默认设置。例如，如果将时间设为 9:00 a.m.，则会为处于东部时区的所有设施点生成东部时间 9:00 a.m. 的服务区、为处于中部时区的设施点生成中部时间 9:00 a.m. 的服务区、为处于山区时区的设施点生成山区时间 9:00 a.m. 的服务区等等。如果商店处于覆盖美国、在当地时间 9:00 a.m. 开业的商店链中，请在一次求解中选择此参数值来查找处于所有商店开业时间的市场地区。首先，东部时区的商店将开业，并生成面。一个小时后，商店将在中部时区开业，依此类推。当地时间始终为 9 点，但却因不同时区而实时交错。</para>
+		/// <para>UTC—时间参数将使用协调世界时间 (UTC)。无论各设施点处于哪些时区或区域都会同时到达或出发。如果将时间设为 2:00 p.m.，则会为处于东部时区的所有设施点生成东部标准时间 9:00 a.m. 的服务区、为处于中部时区的设施点生成中部标准时间 8:00 a.m. 的服务区、为处于山区时区的设施点生成山区标准时间 7:00 a.m. 的服务区等等。UTC 选项可用于为跨两个时区的管辖区显示紧急响应范围。将急救车辆加载为设施点。将时间设置为 UTC 的当前时间。（您需要确定准确的当前时间和日期，以便 UTC 正确使用此选项。） 设置其他属性，并对分析进行求解。尽管时区边界会分割车辆，但结果仍将显示当前交通状况下可以到达的区域。也可对其他时间使用相同的过程，而不仅是当前时间。以上情况均假定为标准时间。在夏令时期间，东部、中部、和山地时间应各提前 1 小时（即分别为 10:00 a.m.、9:00 a.m. 和 8:00 a.m.）。</para>
 		/// <para>&lt;bold/&gt;</para>
 		/// <para><see cref="TimeZoneEnum"/></para>
 		/// </summary>
@@ -150,11 +151,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Type</para>
-		/// <para>Specifies the type of output to be generated. Service area output can be line features representing the roads reachable before the cutoffs are exceeded or the polygon features encompassing these lines (representing the reachable area).</para>
-		/// <para>Polygons—The service area output will contain polygons only. This is the default.</para>
-		/// <para>Lines—The service area output will contain lines only.</para>
-		/// <para>Polygons and lines—The service area output will contain both polygons and lines.</para>
-		/// <para>The Lines and Polygons and lines output types are not available if the network data source is a service on a version of Portal for ArcGIS that does not support line generation.</para>
+		/// <para>指定要生成的输出类型。服务区输出可以是超过中断值前表示可到达道路的线要素，也可以是包括这些线的面要素（表示可达到的区域）。</para>
+		/// <para>面—服务区输出将仅包含面。这是默认设置。</para>
+		/// <para>线—服务区输出将仅包含线。</para>
+		/// <para>面和线—服务区输出将既包含面又包含线。</para>
+		/// <para>如果网络数据源是不支持线生成的 Portal for ArcGIS 版本上的服务，则线以及面和线输出类型将不可用。</para>
 		/// <para><see cref="OutputTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -165,11 +166,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Polygon Detail</para>
-		/// <para>Specifies the level of detail of the output polygons.</para>
-		/// <para>Standard—Polygons with a standard level of detail will be created. This is the default.</para>
-		/// <para>Generalized—Generalized polygons will be created using the network&apos;s hierarchy attribute to produce results quickly. This option is not available if the network does not have a hierarchy attribute.</para>
-		/// <para>High—Polygons with a higher level of detail will be creates for applications in which precise results are important.</para>
-		/// <para>If your analysis includes an urban area with a grid-like street network, the difference between generalized and standard polygons will be minimal. However, for mountain and rural roads, the standard and detailed polygons may present significantly more accurate results than generalized polygons.</para>
+		/// <para>指定输出面的细节层次。</para>
+		/// <para>标准—将以标准细节层次创建面。这是默认设置。</para>
+		/// <para>概化—将使用网络的等级属性创建概化面，以快速生成结果。如果网络没有等级属性，则此选项不可用。</para>
+		/// <para>高—将创建细节层次较高的面，以便用于需要精细结果的情况。</para>
+		/// <para>如果分析包括的市区具有类似格网的街道网络，则概化面和标准面之间的差异十分细微。但是，如果涉及山区和农村道路，那么标准面表示的结果可能要比概化面更加详细。</para>
 		/// <para><see cref="PolygonDetailEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -180,10 +181,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Geometry at Overlaps</para>
-		/// <para>Specifies the behavior of service-area output from multiple facilities in relation to one another.</para>
-		/// <para>Overlap—Individual polygons or sets of lines for each facility will be created. The polygons or lines can overlap each other. This is the default.</para>
-		/// <para>Dissolve—The polygons of multiple facilities that have the same cutoff value will be joined into a single polygon. This option does not apply to line output.</para>
-		/// <para>Split—An area will be assigned to the closest facility so polygons or lines do not overlap each other.</para>
+		/// <para>指定多个设施点中服务区输出间的相互行为。</para>
+		/// <para>重叠—将为各个设施点创建单独的面或线集。这些面或线可以相互叠置。这是默认设置。</para>
+		/// <para>融合—将中断值相同的多个设施点面合并为一个单独的面。该选项不适用于线输出。</para>
+		/// <para>分割—区域将分配至最近设施点，因此面或线不会相互重叠。</para>
 		/// <para><see cref="GeometryAtOverlapsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -194,9 +195,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Geometry at Cutoffs</para>
-		/// <para>Specifies the behavior of service area output for a single facility when multiple cutoff values are specified. This parameter does not apply to line output.</para>
-		/// <para>Rings—Each polygon will include only the area between consecutive cutoff values. It will not include the area between the facility and any smaller cutoffs. For example, if you create 5- and 10-minute service areas, the 5-minute service area polygon will include the area reachable in 0 to 5 minutes, and the 10-minute service area polygon will include the area reachable in 5 to 10 minutes. This is the default.</para>
-		/// <para>Disks—Each polygon will include the area reachable from the facility up to the cutoff value, including the area reachable within smaller cutoff values. For example, if you create 5- and 10-minute service areas, the 10-minute service area polygon will include the area under the 5-minute service area polygon.</para>
+		/// <para>指定在指定了多个中断值的情况下单个设施点服务区输出的行为。该参数不适用于线输出。</para>
+		/// <para>环—各个面将仅包括连续中断值之间的区域。其将不会包括设施点和任何较小中断值之间的区域。例如，如果创建 5 分钟和 10 分钟服务区，5 分钟服务区面将包含 0 到 5 分钟内可到达的区域，而 10 分钟服务区面则包括 5 到 10 分钟内可到达的区域。这是默认设置。</para>
+		/// <para>磁盘—各个面将包含从设施点到中断值内可到达的区域，其中包括较小中断值内可到达的区域。例如，如果创建 5 分钟和 10 分钟服务区，则 10 分钟服务区面将包含 5 分钟服务区面内的区域。</para>
 		/// <para><see cref="GeometryAtCutoffsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -207,8 +208,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Polygon Trim Distance</para>
-		/// <para>The service area polygon trim distance. The polygon trim distance is the distance the service area polygon will extend from the road when no other reachable roads are nearby, similar to a line buffer size. This is useful when the network is sparse and you don&apos;t want the service area to cover large areas where there are no features.</para>
-		/// <para>This parameter includes a value and units for the distance. The default value is 100 meters.</para>
+		/// <para>服务区面修剪距离。面修剪距离是附近没有其他可到达道路时，服务区面将从道路延伸的距离，类似于线缓冲大小。这在网络稀疏且不需要服务区覆盖大片不含要素的区域时十分有用。</para>
+		/// <para>该参数包括距离的值和单位。默认值是 100 米。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -217,10 +218,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Exclude Sources From Polygon Generation</para>
-		/// <para>The network dataset edge sources that will be excluded when generating service area polygons. Polygons will not be generated around the excluded sources, even though they are traversed in the analysis.</para>
-		/// <para>Excluding a network source from service area polygons does not prevent those sources from being traversed. Excluding sources from service area polygons only influences the polygon shape of the service areas. To prevent traversal of a given network source, you must create an appropriate restriction when defining your network dataset.</para>
-		/// <para>This is useful if you have some network sources that you don&apos;t want to be included in the polygon generation because they create less accurate polygons or are inconsequential for the service area analysis. For example, while creating a walk-time service area in a multimodal network that includes streets and metro lines, you should choose to exclude the metro lines from polygon generation. Although the traveler can use the metro lines, they cannot stop partway along a metro line and enter a nearby building. Instead, they must travel the full length of the metro line, exit the metro system at a station, then use the streets to walk to the building. It would be inaccurate to generate a polygon feature around a metro line.</para>
-		/// <para>This parameter is not available when the output geometry types do not include polygons, there are less than two edge sources in the network, the network data source is an ArcGIS Online service, or the network data source is a service on a version of Portal for ArcGIS which does not support excluding sources.</para>
+		/// <para>生成服务区面时将要排除的网络数据集边源。不会在已排除源周围生成面，即使它们在分析中遍历。</para>
+		/// <para>从服务区多边形中排除网络源并不会阻止这些源受遍历。只会影响该服务区的多边形形状。要阻止遍历给定网络源，必须在定义网络数据集时创建适当的限制。</para>
+		/// <para>在生成面的过程中，如果需要排除某些会创建低精度的面或者对服务区分析无关紧要的网络源时，此选项十分有用。例如，在包含街道和地铁线路的多模式网络中创建步行时间服务区时，应选择在面生成过程中排除地铁线路。尽管旅客可以乘坐地铁线路，但是他们却无法在地铁线路中途下车或进入到附近建筑。相反，他们必须全程乘坐地铁线路，在地铁站离开地铁系统，然后通过街道步行至建筑物内。沿地铁线路生成的面要素不会十分准确。</para>
+		/// <para>此参数在以下情况中不可用：输出几何类型不包括面，网络中的边源少于两个，网络数据源是 ArcGIS Online 服务，或者网络数据源服务所在 Portal for ArcGIS 版本不支持排除源功能。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -230,9 +231,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Accumulate Attributes</para>
-		/// <para>A list of cost attributes to be accumulated during analysis. These accumulated attributes are for reference only; the solver only uses the cost attribute used by your designated travel mode when solving the analysis.</para>
-		/// <para>For each cost attribute that is accumulated, a Total_[Impedance] property is populated in the network analysis output features.</para>
-		/// <para>This parameter is not available if the analysis layer is not configured to output lines, the network data source is an ArcGIS Online service, or the network data source is a service on a version of Portal for ArcGIS that does not support accumulation.</para>
+		/// <para>分析过程中要累积的成本属性的列表。这些累积属性仅供参考；求解程序仅使用求解分析时指定的出行模式所使用的成本属性。</para>
+		/// <para>对于每个累积的成本属性，会在网络分析输出要素中填充 Total_[Impedance] 属性。</para>
+		/// <para>如果分析图层未配置为输出线、网络数据源为 ArcGIS Online 服务，或如果网络数据源是不支持累积的 Portal for ArcGIS 版本上的服务，则此参数不可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -264,17 +265,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TravelDirectionEnum 
 		{
 			/// <summary>
-			/// <para>Toward facilities—The service area represents traveling toward the facilities.</para>
+			/// <para>朝向设施点—服务区表示朝向设施点。</para>
 			/// </summary>
 			[GPValue("TO_FACILITIES")]
-			[Description("Toward facilities")]
+			[Description("朝向设施点")]
 			Toward_facilities,
 
 			/// <summary>
-			/// <para>Away from facilities—The service area represents traveling away from the facilities. This is the default.</para>
+			/// <para>远离设施点—服务区表示远离设施点。这是默认设置。</para>
 			/// </summary>
 			[GPValue("FROM_FACILITIES")]
-			[Description("Away from facilities")]
+			[Description("远离设施点")]
 			Away_from_facilities,
 
 		}
@@ -285,17 +286,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TimeZoneEnum 
 		{
 			/// <summary>
-			/// <para>UTC—The time of day parameter will use coordinated universal time (UTC). All facilities are reached or departed from simultaneously, regardless of the time zone or zones in which they are located.Setting time of day to 2:00 p.m. causes service areas to be generated for 9:00 a.m. eastern standard time for any facilities in the eastern time zone, 8:00 a.m. central standard time for facilities in the central time zone, 7:00 a.m. mountain standard time for facilities in the mountain time zone, and so on.One of the cases in which the UTC option is useful is to visualize emergency response coverage for a jurisdiction that is split into two time zones. The emergency vehicles are loaded as facilities. Time of day is set to now in UTC. (You need to determine what the current time and date are in terms of UTC to correctly use this option.) Other properties are set and the analysis is solved. Even though a time-zone boundary divides the vehicles, the results show areas that can be reached given current traffic conditions. This same process can be used for other times as well, not just for now.The scenario above assumes standard time. During daylight saving time, the eastern, central, and mountain times will each be one hour ahead (that is, 10:00, 9:00, and 8:00 a.m., respectively).</para>
+			/// <para>UTC—时间参数将使用协调世界时间 (UTC)。无论各设施点处于哪些时区或区域都会同时到达或出发。如果将时间设为 2:00 p.m.，则会为处于东部时区的所有设施点生成东部标准时间 9:00 a.m. 的服务区、为处于中部时区的设施点生成中部标准时间 8:00 a.m. 的服务区、为处于山区时区的设施点生成山区标准时间 7:00 a.m. 的服务区等等。UTC 选项可用于为跨两个时区的管辖区显示紧急响应范围。将急救车辆加载为设施点。将时间设置为 UTC 的当前时间。（您需要确定准确的当前时间和日期，以便 UTC 正确使用此选项。） 设置其他属性，并对分析进行求解。尽管时区边界会分割车辆，但结果仍将显示当前交通状况下可以到达的区域。也可对其他时间使用相同的过程，而不仅是当前时间。以上情况均假定为标准时间。在夏令时期间，东部、中部、和山地时间应各提前 1 小时（即分别为 10:00 a.m.、9:00 a.m. 和 8:00 a.m.）。</para>
 			/// </summary>
 			[GPValue("UTC")]
 			[Description("UTC")]
 			UTC,
 
 			/// <summary>
-			/// <para>Local time at locations—The time of day parameter will use the time zone or zones in which the facilities are located. The start or end times of the service areas are staggered by time zone. This is the default.For example, setting time of day to 9:00 a.m. causes service areas to be generated for 9:00 a.m. eastern time for any facilities in the eastern time zone, 9:00 a.m. central time for facilities in the central time zone, 9:00 a.m. mountain time for facilities in the mountain time zone, and so on. If stores in a chain that span the U.S. open at 9:00 a.m. local time, choose this parameter value to find market territories at opening time for all stores in one solve. First, the stores in the eastern time zone open and a polygon is generated. An hour later, stores open in the central time zone, and so on. Nine o&apos;clock is always in local time but staggered in real time.</para>
+			/// <para>各位置的本地时间—时间参数将使用设施点所处的一个或多个时区。服务区开始时间或结束时间的时区交错。这是默认设置。例如，如果将时间设为 9:00 a.m.，则会为处于东部时区的所有设施点生成东部时间 9:00 a.m. 的服务区、为处于中部时区的设施点生成中部时间 9:00 a.m. 的服务区、为处于山区时区的设施点生成山区时间 9:00 a.m. 的服务区等等。如果商店处于覆盖美国、在当地时间 9:00 a.m. 开业的商店链中，请在一次求解中选择此参数值来查找处于所有商店开业时间的市场地区。首先，东部时区的商店将开业，并生成面。一个小时后，商店将在中部时区开业，依此类推。当地时间始终为 9 点，但却因不同时区而实时交错。</para>
 			/// </summary>
 			[GPValue("LOCAL_TIME_AT_LOCATIONS")]
-			[Description("Local time at locations")]
+			[Description("各位置的本地时间")]
 			Local_time_at_locations,
 
 		}
@@ -306,24 +307,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum OutputTypeEnum 
 		{
 			/// <summary>
-			/// <para>Polygons—The service area output will contain polygons only. This is the default.</para>
+			/// <para>面—服务区输出将仅包含面。这是默认设置。</para>
 			/// </summary>
 			[GPValue("POLYGONS")]
-			[Description("Polygons")]
+			[Description("面")]
 			Polygons,
 
 			/// <summary>
-			/// <para>Lines—The service area output will contain lines only.</para>
+			/// <para>线—服务区输出将仅包含线。</para>
 			/// </summary>
 			[GPValue("LINES")]
-			[Description("Lines")]
+			[Description("线")]
 			Lines,
 
 			/// <summary>
-			/// <para>Polygons and lines—The service area output will contain both polygons and lines.</para>
+			/// <para>面和线—服务区输出将既包含面又包含线。</para>
 			/// </summary>
 			[GPValue("POLYGONS_AND_LINES")]
-			[Description("Polygons and lines")]
+			[Description("面和线")]
 			Polygons_and_lines,
 
 		}
@@ -334,24 +335,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum PolygonDetailEnum 
 		{
 			/// <summary>
-			/// <para>Generalized—Generalized polygons will be created using the network&apos;s hierarchy attribute to produce results quickly. This option is not available if the network does not have a hierarchy attribute.</para>
+			/// <para>概化—将使用网络的等级属性创建概化面，以快速生成结果。如果网络没有等级属性，则此选项不可用。</para>
 			/// </summary>
 			[GPValue("GENERALIZED")]
-			[Description("Generalized")]
+			[Description("概化")]
 			Generalized,
 
 			/// <summary>
-			/// <para>Standard—Polygons with a standard level of detail will be created. This is the default.</para>
+			/// <para>标准—将以标准细节层次创建面。这是默认设置。</para>
 			/// </summary>
 			[GPValue("STANDARD")]
-			[Description("Standard")]
+			[Description("标准")]
 			Standard,
 
 			/// <summary>
-			/// <para>High—Polygons with a higher level of detail will be creates for applications in which precise results are important.</para>
+			/// <para>高—将创建细节层次较高的面，以便用于需要精细结果的情况。</para>
 			/// </summary>
 			[GPValue("HIGH")]
-			[Description("High")]
+			[Description("高")]
 			High,
 
 		}
@@ -362,24 +363,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum GeometryAtOverlapsEnum 
 		{
 			/// <summary>
-			/// <para>Overlap—Individual polygons or sets of lines for each facility will be created. The polygons or lines can overlap each other. This is the default.</para>
+			/// <para>重叠—将为各个设施点创建单独的面或线集。这些面或线可以相互叠置。这是默认设置。</para>
 			/// </summary>
 			[GPValue("OVERLAP")]
-			[Description("Overlap")]
+			[Description("重叠")]
 			Overlap,
 
 			/// <summary>
-			/// <para>Dissolve—The polygons of multiple facilities that have the same cutoff value will be joined into a single polygon. This option does not apply to line output.</para>
+			/// <para>融合—将中断值相同的多个设施点面合并为一个单独的面。该选项不适用于线输出。</para>
 			/// </summary>
 			[GPValue("DISSOLVE")]
-			[Description("Dissolve")]
+			[Description("融合")]
 			Dissolve,
 
 			/// <summary>
-			/// <para>Split—An area will be assigned to the closest facility so polygons or lines do not overlap each other.</para>
+			/// <para>分割—区域将分配至最近设施点，因此面或线不会相互重叠。</para>
 			/// </summary>
 			[GPValue("SPLIT")]
-			[Description("Split")]
+			[Description("分割")]
 			Split,
 
 		}
@@ -390,17 +391,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum GeometryAtCutoffsEnum 
 		{
 			/// <summary>
-			/// <para>Rings—Each polygon will include only the area between consecutive cutoff values. It will not include the area between the facility and any smaller cutoffs. For example, if you create 5- and 10-minute service areas, the 5-minute service area polygon will include the area reachable in 0 to 5 minutes, and the 10-minute service area polygon will include the area reachable in 5 to 10 minutes. This is the default.</para>
+			/// <para>环—各个面将仅包括连续中断值之间的区域。其将不会包括设施点和任何较小中断值之间的区域。例如，如果创建 5 分钟和 10 分钟服务区，5 分钟服务区面将包含 0 到 5 分钟内可到达的区域，而 10 分钟服务区面则包括 5 到 10 分钟内可到达的区域。这是默认设置。</para>
 			/// </summary>
 			[GPValue("RINGS")]
-			[Description("Rings")]
+			[Description("环")]
 			Rings,
 
 			/// <summary>
-			/// <para>Disks—Each polygon will include the area reachable from the facility up to the cutoff value, including the area reachable within smaller cutoff values. For example, if you create 5- and 10-minute service areas, the 10-minute service area polygon will include the area under the 5-minute service area polygon.</para>
+			/// <para>磁盘—各个面将包含从设施点到中断值内可到达的区域，其中包括较小中断值内可到达的区域。例如，如果创建 5 分钟和 10 分钟服务区，则 10 分钟服务区面将包含 5 分钟服务区面内的区域。</para>
 			/// </summary>
 			[GPValue("DISKS")]
-			[Description("Disks")]
+			[Description("磁盘")]
 			Disks,
 
 		}

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Cost Allocation</para>
-	/// <para>Calculates, for each cell, its least-cost source based on the least accumulative cost over a cost surface.</para>
+	/// <para>成本分配</para>
+	/// <para>根据成本面上的最小累积成本计算每个像元的最小成本源。</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.SpatialAnalystTools.DistanceAllocation"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.SpatialAnalystTools.DistanceAllocation))]
@@ -22,22 +23,22 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InSourceData">
 		/// <para>Input raster or feature source data</para>
-		/// <para>The input source locations.</para>
-		/// <para>This is a raster or feature dataset that identifies the cells or locations from or to which the least accumulated cost distance for every output cell location is calculated.</para>
-		/// <para>For rasters, the input type can be integer or floating point.</para>
-		/// <para>If the input source raster is floating point, the Input value raster parameter must be set, and it must be integer. The value raster will take precedence over the Source field parameter setting.</para>
+		/// <para>输入源位置。</para>
+		/// <para>此为栅格或要素数据集，用于标识计算每个输出像元位置的最小积累成本距离所依据的像元或位置。</para>
+		/// <para>对于栅格，输入类型可以为整型或浮点型。</para>
+		/// <para>如果输入源栅格是浮点型，则必须将输入赋值栅格参数设置为整型。此类赋值栅格将优先于源字段参数设置。</para>
 		/// </param>
 		/// <param name="InCostRaster">
 		/// <para>Input cost raster</para>
-		/// <para>A raster defining the impedance or cost to move planimetrically through each cell.</para>
-		/// <para>The value at each cell location represents the cost-per-unit distance for moving through the cell. Each cell location value is multiplied by the cell resolution while also compensating for diagonal movement to obtain the total cost of passing through the cell.</para>
-		/// <para>The values of the cost raster can be integer or floating point, but they cannot be negative or zero (you cannot have a negative or zero cost).</para>
+		/// <para>定义以平面测量的经过每个像元所需的阻抗或成本。</para>
+		/// <para>每个像元位置上的值表示经过像元时移动每单位距离所需的成本。每个像元位置值乘以像元分辨率，同时也会补偿对角线移动来获取经过像元的总成本。</para>
+		/// <para>成本栅格的值可以是整型或浮点型，但不可以为负值或零（不存在负成本或零成本）。</para>
 		/// </param>
 		/// <param name="OutAllocationRaster">
 		/// <para>Output allocation raster</para>
-		/// <para>The output cost allocation raster.</para>
-		/// <para>This raster identifies the zone of each source location (cell or feature) that could be reached with the least accumulative cost.</para>
-		/// <para>The output raster is of integer type.</para>
+		/// <para>输出成本分配栅格。</para>
+		/// <para>该栅格可识别花费最小累积成本便可到达的每个源位置（像元或要素）的区域。</para>
+		/// <para>输出栅格为整型。</para>
 		/// </param>
 		public CostAllocation(object InSourceData, object InCostRaster, object OutAllocationRaster)
 		{
@@ -47,9 +48,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Cost Allocation</para>
+		/// <para>Tool Display Name : 成本分配</para>
 		/// </summary>
-		public override string DisplayName() => "Cost Allocation";
+		public override string DisplayName() => "成本分配";
 
 		/// <summary>
 		/// <para>Tool Name : CostAllocation</para>
@@ -83,10 +84,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature source data</para>
-		/// <para>The input source locations.</para>
-		/// <para>This is a raster or feature dataset that identifies the cells or locations from or to which the least accumulated cost distance for every output cell location is calculated.</para>
-		/// <para>For rasters, the input type can be integer or floating point.</para>
-		/// <para>If the input source raster is floating point, the Input value raster parameter must be set, and it must be integer. The value raster will take precedence over the Source field parameter setting.</para>
+		/// <para>输入源位置。</para>
+		/// <para>此为栅格或要素数据集，用于标识计算每个输出像元位置的最小积累成本距离所依据的像元或位置。</para>
+		/// <para>对于栅格，输入类型可以为整型或浮点型。</para>
+		/// <para>如果输入源栅格是浮点型，则必须将输入赋值栅格参数设置为整型。此类赋值栅格将优先于源字段参数设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -98,9 +99,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input cost raster</para>
-		/// <para>A raster defining the impedance or cost to move planimetrically through each cell.</para>
-		/// <para>The value at each cell location represents the cost-per-unit distance for moving through the cell. Each cell location value is multiplied by the cell resolution while also compensating for diagonal movement to obtain the total cost of passing through the cell.</para>
-		/// <para>The values of the cost raster can be integer or floating point, but they cannot be negative or zero (you cannot have a negative or zero cost).</para>
+		/// <para>定义以平面测量的经过每个像元所需的阻抗或成本。</para>
+		/// <para>每个像元位置上的值表示经过像元时移动每单位距离所需的成本。每个像元位置值乘以像元分辨率，同时也会补偿对角线移动来获取经过像元的总成本。</para>
+		/// <para>成本栅格的值可以是整型或浮点型，但不可以为负值或零（不存在负成本或零成本）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -112,9 +113,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output allocation raster</para>
-		/// <para>The output cost allocation raster.</para>
-		/// <para>This raster identifies the zone of each source location (cell or feature) that could be reached with the least accumulative cost.</para>
-		/// <para>The output raster is of integer type.</para>
+		/// <para>输出成本分配栅格。</para>
+		/// <para>该栅格可识别花费最小累积成本便可到达的每个源位置（像元或要素）的区域。</para>
+		/// <para>输出栅格为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -122,9 +123,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Maximum distance</para>
-		/// <para>The threshold that the accumulative cost values cannot exceed.</para>
-		/// <para>If an accumulative cost distance value exceeds this value, the output value for the cell location will be NoData. The maximum distance is the extent for which the accumulative cost distances are calculated.</para>
-		/// <para>The default distance is to the edge of the output raster.</para>
+		/// <para>累积成本值不能超过的阈值。</para>
+		/// <para>如果累积的成本距离值超过该值，则像元位置的输出值为 NoData。最大距离为计算累积成本距离适用的范围。</para>
+		/// <para>默认距离是到输出栅格边的距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -133,8 +134,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input value raster</para>
-		/// <para>The input integer raster that identifies the zone values that will be used for each input source location.</para>
-		/// <para>For each source location (cell or feature), the Input value raster value will be assigned to all cells allocated to the source location for the computation. The value raster will take precedence over the Source field parameter setting.</para>
+		/// <para>标识将用于每个输入源位置的区域值的输入整型栅格。</para>
+		/// <para>对于每个源位置（像元或要素），输入赋值栅格值将被分配给所有分配到源位置供计算使用的像元。此类赋值栅格将优先于源字段参数设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
@@ -146,8 +147,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Source field</para>
-		/// <para>The field used to assign values to the source locations. It must be of integer type.</para>
-		/// <para>If the Input value raster parameter has been set, the values in that input will have precedence over the Source field parameter setting.</para>
+		/// <para>用于向源位置分配值的字段。必须为整型。</para>
+		/// <para>如果已设置输入赋值栅格参数，则该输入中的值将优先于源字段参数设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -157,10 +158,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output distance raster</para>
-		/// <para>The output cost distance raster.</para>
-		/// <para>The cost distance raster identifies, for each cell, the least accumulative cost distance over a cost surface to the identified source locations.</para>
-		/// <para>A source can be a cell, a set of cells, or one or more feature locations.</para>
-		/// <para>The output raster is of floating-point type.</para>
+		/// <para>输出成本距离栅格。</para>
+		/// <para>此成本距离栅格用于标识每个像元到标识的源位置在成本表面上的最小累积成本距离。</para>
+		/// <para>源可以是一个像元、一组像元或者一个或多个要素位置。</para>
+		/// <para>输出栅格为浮点型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -168,9 +169,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output backlink raster</para>
-		/// <para>The output cost backlink raster.</para>
-		/// <para>The backlink raster contains values 0 through 8, which define the direction or identify the next neighboring cell (the succeeding cell) along the least accumulative cost path from a cell to reach its least-cost source.</para>
-		/// <para>If the path is to pass into the right neighbor, the cell will be assigned the value 1, 2 for the lower right diagonal cell, and continue clockwise. The value 0 is reserved for source cells.</para>
+		/// <para>输出成本回溯链接栅格。</para>
+		/// <para>回溯链接栅格包含从 0 到 8 的值，这些值用于定义方向或从某像元开始沿最小累积成本路径标识下一个邻近像元（接续像元），以达到最小成本源。</para>
+		/// <para>如果该路径穿过右侧的相邻像元，则为像元分配值 1、2 来与右下角像元相对应，并按顺时针方向依此类推。值 0 留供源像元使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -178,9 +179,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Multiplier to apply to costs</para>
-		/// <para>The multiplier to apply to the cost values.</para>
-		/// <para>This allows for control of the mode of travel or the magnitude at a source. The greater the multiplier, the greater the cost to move through each cell.</para>
-		/// <para>The values must be greater than zero. The default is 1.</para>
+		/// <para>要应用于成本值的乘数。</para>
+		/// <para>可将其用于控制源的出行或放大模式。乘数越大，在每个像元间移动的成本将越大。</para>
+		/// <para>值必须大于零。默认值为 1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -190,9 +191,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Start cost</para>
-		/// <para>The starting cost from which to begin the cost calculations.</para>
-		/// <para>Allows for the specification of the fixed cost associated with a source. Instead of starting at a cost of zero, the cost algorithm will begin with the value set by Start cost.</para>
-		/// <para>The values must be zero or greater. The default is 0.</para>
+		/// <para>开始计算成本时的起始成本。</para>
+		/// <para>适用于与源相关的固定成本规范。成本算法将从通过开始成本设置的值开始，而非从零成本开始。</para>
+		/// <para>值必须大于等于零。默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -202,9 +203,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Accumulative cost resistance rate</para>
-		/// <para>This parameter simulates the increase in the effort to overcome costs as the accumulative cost increases. It is used to model fatigue of the traveler. The growing accumulative cost to reach a cell is multiplied by the resistance rate and added to the cost to move into the subsequent cell.</para>
-		/// <para>It is a modified version of a compound interest rate formula that is used to calculate the apparent cost of moving through a cell. As the value of the resistance rate increases, it increases the cost of the cells that are visited later. The greater the resistance rate, the more additional cost is added to reach the next cell, which is compounded for each subsequent movement. Since the resistance rate is similar to a compound rate and generally the accumulative cost values are very large, small resistance rates are suggested, such as 0.02, 0.005, or even smaller, depending on the accumulative cost values.</para>
-		/// <para>The values must be zero or greater. The default is 0.</para>
+		/// <para>此参数将模拟累积成本增加时所耗费成本的增加情况。用于为行驶者的疲劳程度建模。利用到达某个像元的累积成本的增长量乘以阻力比率，再加上移动至下一个像元的成本。</para>
+		/// <para>这是修改后版本的用于计算移动经过像元的显性成本混合利率公式。随着阻力比率的值增加，之后访问的像元成本也随之增加。阻力比率越大，到达下一个像元需要加的附加成本也越多，将针对每个后续移动进行复合。由于阻力比率与复利率相似且累积成本值通常会很大，因此建议采用较小的阻力比率，如 0.02、0.005 或更小，具体取决于累积成本值。</para>
+		/// <para>值必须大于等于零。默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -214,9 +215,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Capacity</para>
-		/// <para>The cost capacity for the traveler for a source.</para>
-		/// <para>The cost calculations continue for each source until the specified capacity is reached.</para>
-		/// <para>The values must be greater than zero. The default capacity is to the edge of the output raster.</para>
+		/// <para>源的行驶者的成本容量。</para>
+		/// <para>每个源的成本计算将在达到指定容量后停止。</para>
+		/// <para>值必须大于零。默认容量是到输出栅格边的容量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -226,11 +227,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Travel direction</para>
-		/// <para>Specifies the direction of the traveler when applying the source resistance rate and the source starting cost.</para>
-		/// <para>Travel from source—The source resistance rate and source starting cost will be applied beginning at the input source, and travel out to the non-source cells. This is the default.</para>
-		/// <para>Travel to source—The source resistance rate and source starting cost will be applied beginning at each non-source cell, and travel back to the input source.</para>
-		/// <para>If you select the String option, you can choose between from and to options, which will be applied to all sources.</para>
-		/// <para>If you select the Field option, you can select the field from the source data that determines the direction to use for each source. The field must contain the text string FROM_SOURCE or TO_SOURCE.</para>
+		/// <para>应用源阻力比率和源开始成本时指定行驶者的方向。</para>
+		/// <para>行驶来自源—源阻力比率和源开始成本将应用于开始于输入源并行驶至非源像元的情况。这是默认设置。</para>
+		/// <para>行驶到源—源阻力比率和源开始成本将应用于开始于每个非源像元并行驶回输入源的情况。</para>
+		/// <para>如果选择字符串选项，您可以选择将应用于所有源的“自”和“至”选项。</para>
+		/// <para>如果您选择字段选项，您可以选择可确定各个源使用方向的来自源数据的字段。字段必须包含文本字符串 FROM_SOURCE 或 TO_SOURCE。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]

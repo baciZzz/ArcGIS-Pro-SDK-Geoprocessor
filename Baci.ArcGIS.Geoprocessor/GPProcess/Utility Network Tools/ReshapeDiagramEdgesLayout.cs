@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Reshape Diagram Edges Layout</para>
+	/// <para>Reshape Diagram Edges Layout</para>
 	/// <para>Apply the reshape diagram edges layout to a diagram</para>
 	/// </summary>
 	[Obsolete()]

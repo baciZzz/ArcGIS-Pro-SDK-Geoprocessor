@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Non Maximum Suppression</para>
-	/// <para>Identifies duplicate features from the output of the Detect Objects Using Deep Learning tool as a postprocessing step and creates a new output with no duplicate features. The Detect Objects Using Deep Learning tool can return more than one bounding box or polygon for the same object, especially as a tiling side effect. If two features overlap more than a given maximum ratio, the feature with the lower confidence value will be removed.</para>
+	/// <para>非极大值抑制</para>
+	/// <para>可将使用深度学习检测对象工具的输出中的重复要素识别为后处理步骤，并创建没有重复要素的新输出。使用深度学习检测对象工具可针对同一对象（尤其是作为切片的边际效应）返回多个边界框或面。如果两个要素的重叠超过给定的最大比率，则将移除置信值较低的要素。</para>
 	/// </summary>
 	public class NonMaximumSuppression : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InFeatureclass">
 		/// <para>Input Feature Class</para>
-		/// <para>The input feature class or feature layer containing overlapping or duplicate features.</para>
+		/// <para>包含重叠要素或重复要素的输入要素类或要素图层。</para>
 		/// </param>
 		/// <param name="ConfidenceScoreField">
 		/// <para>Confidence Score Field</para>
-		/// <para>The field in the feature class that contains the confidence scores as output by the object detection method.</para>
+		/// <para>要素类中的字段，该字段包含将由对象检测方法输出的置信度得分。</para>
 		/// </param>
 		/// <param name="OutFeatureclass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class with the duplicate features removed.</para>
+		/// <para>移除了重复要素的输出要素类。</para>
 		/// </param>
 		public NonMaximumSuppression(object InFeatureclass, object ConfidenceScoreField, object OutFeatureclass)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Non Maximum Suppression</para>
+		/// <para>Tool Display Name : 非极大值抑制</para>
 		/// </summary>
-		public override string DisplayName() => "Non Maximum Suppression";
+		public override string DisplayName() => "非极大值抑制";
 
 		/// <summary>
 		/// <para>Tool Name : NonMaximumSuppression</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>The input feature class or feature layer containing overlapping or duplicate features.</para>
+		/// <para>包含重叠要素或重复要素的输入要素类或要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Confidence Score Field</para>
-		/// <para>The field in the feature class that contains the confidence scores as output by the object detection method.</para>
+		/// <para>要素类中的字段，该字段包含将由对象检测方法输出的置信度得分。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class with the duplicate features removed.</para>
+		/// <para>移除了重复要素的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Class Value Field</para>
-		/// <para>The class value field in the input feature class. If not specified, the tool will use the standard class value fields Classvalue and Value. If these fields do not exist, all features will be treated as the same object class.</para>
+		/// <para>输入要素类中的类值字段。若未指定，则工具将使用标准类值字段 Classvalue 和 Value。若这些字段不存在，则所有要素将被视为相同的对象类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -110,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Max Overlap Ratio</para>
-		/// <para>The maximum overlap ratio for two overlapping features. This is defined as the ratio of intersection area over union area. The default is 0.</para>
+		/// <para>两个重叠要素的最大重叠比。其定义为交集区域与并集区域之比。默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

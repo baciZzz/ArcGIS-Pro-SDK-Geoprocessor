@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Create Territory Level Feature Classes</para>
+	/// <para>Create Territory Level Feature Classes</para>
 	/// <para>Creates feature classes for a specified level.</para>
 	/// </summary>
 	public class CreateTerritoryLevelFeatureClasses : AbstractGPProcess

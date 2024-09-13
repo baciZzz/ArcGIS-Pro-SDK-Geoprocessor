@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Smooth Bathymetric TIN</para>
+	/// <para>Smooth Bathymetric TIN</para>
 	/// <para>Smooths a triangulated irregular network (TIN) dataset in a manner that strictly preserves a shallow bias.</para>
 	/// </summary>
 	public class SmoothBathymetricTIN : AbstractGPProcess

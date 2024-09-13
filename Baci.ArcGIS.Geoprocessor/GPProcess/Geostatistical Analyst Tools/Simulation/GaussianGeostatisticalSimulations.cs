@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Gaussian Geostatistical Simulations</para>
-	/// <para>Performs a conditional or unconditional geostatistical simulation based on a Simple Kriging model. The simulated rasters can be considered equally probable realizations of the kriging model.</para>
+	/// <para>高斯地统计模拟</para>
+	/// <para>基于简单克里金模型执行条件或非条件地统计模拟。可将模拟栅格视为与克里金模型具有同等可能性的实现。</para>
 	/// </summary>
 	public class GaussianGeostatisticalSimulations : AbstractGPProcess
 	{
@@ -20,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InGeostatLayer">
 		/// <para>Input geostatistical layer</para>
-		/// <para>Input a geostatistical layer resulting from a Simple Kriging model.</para>
+		/// <para>输入由简单克里金模型生成的地统计图层。</para>
 		/// </param>
 		/// <param name="NumberOfRealizations">
 		/// <para>Number of realizations</para>
-		/// <para>The number of simulations to perform.</para>
+		/// <para>要执行的模拟数量。</para>
 		/// </param>
 		/// <param name="OutputWorkspace">
 		/// <para>Output workspace</para>
-		/// <para>Stores all the simulation results. The workspace can be either a folder or a geodatabase.</para>
+		/// <para>存储所有模拟结果。该工作空间可以是文件夹或地理数据库。</para>
 		/// </param>
 		/// <param name="OutputSimulationPrefix">
 		/// <para>Output simulation prefix</para>
-		/// <para>A one- to three-character alphanumeric prefix that is automatically added to the output dataset names.</para>
+		/// <para>自动添加到输出数据集名称中的字母数字前缀（包含 1 至 3 个字符）。</para>
 		/// </param>
 		public GaussianGeostatisticalSimulations(object InGeostatLayer, object NumberOfRealizations, object OutputWorkspace, object OutputSimulationPrefix)
 		{
@@ -43,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Gaussian Geostatistical Simulations</para>
+		/// <para>Tool Display Name : 高斯地统计模拟</para>
 		/// </summary>
-		public override string DisplayName() => "Gaussian Geostatistical Simulations";
+		public override string DisplayName() => "高斯地统计模拟";
 
 		/// <summary>
 		/// <para>Tool Name : GaussianGeostatisticalSimulations</para>
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
-		/// <para>Input a geostatistical layer resulting from a Simple Kriging model.</para>
+		/// <para>输入由简单克里金模型生成的地统计图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPGALayer()]
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Number of realizations</para>
-		/// <para>The number of simulations to perform.</para>
+		/// <para>要执行的模拟数量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -96,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output workspace</para>
-		/// <para>Stores all the simulation results. The workspace can be either a folder or a geodatabase.</para>
+		/// <para>存储所有模拟结果。该工作空间可以是文件夹或地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -104,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output simulation prefix</para>
-		/// <para>A one- to three-character alphanumeric prefix that is automatically added to the output dataset names.</para>
+		/// <para>自动添加到输出数据集名称中的字母数字前缀（包含 1 至 3 个字符）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input conditioning features</para>
-		/// <para>The features used to condition the realizations. If left blank, unconditional realizations are produced.</para>
+		/// <para>用作实现条件的要素。如果留空，将生成无条件实现。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -122,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Conditioning field</para>
-		/// <para>The field used to condition the realizations. If left blank, unconditional realizations are produced.</para>
+		/// <para>用作实现条件的字段。如果留空，将生成无条件实现。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -132,9 +133,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>The cell size at which the output raster will be created.</para>
-		/// <para>This value can be explicitly set in the Environments by the Cell Size parameter.</para>
-		/// <para>If not set, it is the shorter of the width or the height of the extent of the input point features, in the input spatial reference, divided by 250.</para>
+		/// <para>要创建的输出栅格的像元大小。</para>
+		/// <para>可以通过像元大小参数在环境中明确设置该值。</para>
+		/// <para>如果未设置，则该值为输入空间参考中输入点要素范围的宽度与高度中的较小值除以 250。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -146,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input bounding features</para>
-		/// <para>Limits the analysis to these features' bounding polygon. If point features are entered, then a convex hull polygon is automatically created. Realizations are then performed within that polygon. If bounding features are supplied, any features or rasters supplied in the Mask environment will be ignored.</para>
+		/// <para>将分析限制在这些要素的边界面的范围之内。如果输入为点要素，则会自动创建凸包面。然后将在该面内执行实现。如果提供边界要素，那么将忽略“掩膜”环境中提供的任何要素或栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -156,9 +157,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Save simulated rasters</para>
-		/// <para>Specifies whether or not the simulated rasters are saved to disk.</para>
-		/// <para>Checked—Indicates that the simulated rasters will be saved to disk.</para>
-		/// <para>Unchecked—Indicates that the simulated rasters will not be saved to disk.</para>
+		/// <para>指定是否将模拟栅格保存到磁盘中。</para>
+		/// <para>选中 - 表示会将模拟栅格保存到磁盘中。</para>
+		/// <para>未选中 - 表示不会将模拟栅格保存到磁盘中。</para>
 		/// <para><see cref="SaveSimulatedRastersEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -168,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Quantile</para>
-		/// <para>The quantile value for which the output raster will be generated.</para>
+		/// <para>用于生成输出栅格的分位数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -177,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Threshold</para>
-		/// <para>The threshold value for which the output raster will be generated, as the percentage of the number of times the set threshold was exceeded, on a cell-by-cell basis.</para>
+		/// <para>用于生成输出栅格的阈值，输出栅格为基于每个像元超出所设阈值次数的百分比。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -185,8 +186,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input statistical polygons</para>
-		/// <para>These polygons represent areas of interest for which summary statistics are calculated.</para>
-		/// <para>If statistical polygons are provided, the output polygon feature class will be saved in the Output workspace, and it will have the same name as the input polygons, preceded by the Output simulation prefix. For example, if the input statistical polygons were named myPolys and you entered aaa as the output prefix, then the output polygons will be named aaamyPolys, and will be saved in the specified output workspace.</para>
+		/// <para>这些面表示要计算汇总统计数据的感兴趣区域。</para>
+		/// <para>如果提供了统计面，则输出面要素类会保存在输出工作空间中，并且与输入面具有相同的名称，但其名称前会加上输出模拟前缀。例如，如果输入统计面的名称为 myPolys，并且您输入了 aaa 作为输出前缀，则输出面将被命名为 aaamyPolys，同时保存在指定的输出工作空间中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -196,16 +197,16 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Raster statistics type</para>
-		/// <para>The simulated rasters are postprocessed on a cell-by-cell basis, and each selected statistics type is calculated and reported in an output raster.</para>
-		/// <para>Minimum—Calculates the minimum (smallest value).</para>
-		/// <para>Maximum—Calculates the maximum (largest value).</para>
-		/// <para>Mean—Calculates the mean (average).</para>
-		/// <para>Standard deviation—Calculates the standard deviation.</para>
-		/// <para>First quartile—Calculates the 25th quantile.</para>
-		/// <para>Median—Calculates the median.</para>
-		/// <para>Third quartile—Calculates the 75th quantile.</para>
-		/// <para>Quantile—Calculates a user-specified quantile (0 &lt; Q &lt; 1).</para>
-		/// <para>Probability threshold—Calculates the percentage of the simulations where the cell value exceeds a user-specified threshold value.</para>
+		/// <para>基于每个像元对模拟栅格进行后处理，计算每个所选统计类型并在输出栅格中报告结果。</para>
+		/// <para>最小值—计算最小值。</para>
+		/// <para>最大值—计算最大值。</para>
+		/// <para>平均值—计算平均值。</para>
+		/// <para>标准差—计算标准差。</para>
+		/// <para>第一四分位数—计算 25 分位数。</para>
+		/// <para>中值—计算中值。</para>
+		/// <para>第三四分位数—计算 75 分位数。</para>
+		/// <para>分位数—计算用户指定的分位数 (0 &lt; Q &lt; 1)。</para>
+		/// <para>概率阈值—计算模拟结果像元值超出用户指定阈值的百分比。</para>
 		/// <para><see cref="RasterStatTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -215,9 +216,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Conditioning measurement error field</para>
-		/// <para>A field that specifies the measurement error for each input point in the conditioning features. For each conditioning feature, the value of this field should correspond to one standard deviation of the measured value of the feature. Use this field if the measurement error values are not the same at each sampling location.</para>
-		/// <para>A common source of nonconstant measurement error is when the data is measured with different devices. One device might be more precise than another, which means that it will have a smaller measurement error. For example, one thermometer rounds to the nearest degree and another thermometer rounds to the nearest tenth of a degree. The variability of measurements is often provided by the manufacturer of the measuring device, or it may be known from empirical practice.</para>
-		/// <para>Leave this parameter blank if there are no measurement error values or the measurement error values are unknown.</para>
+		/// <para>指定条件要素中每个输入点测量误差的字段。对于每个条件要素，此字段的值都应对应一个要素测量值的标准差。如果每个采样位置的测量误差值不同，请使用此字段。</para>
+		/// <para>产生不稳定测量误差的常见原因是测量数据时所用的设备不同。一个设备可能比另一个精确，即其测量误差更小。例如，一个温度计舍入到最接近的度，而另一个温度计舍到最接近的度的十分之一。通常，测量误差范围由测量设备的制造商会提供，或通过实践经验获得。</para>
+		/// <para>如果没有测量误差值或测量误差值未知，请将此参数留空。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -277,14 +278,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum SaveSimulatedRastersEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Indicates that the simulated rasters will be saved to disk.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SAVE_SIMULATIONS")]
 			SAVE_SIMULATIONS,
 
 			/// <summary>
-			/// <para>Unchecked—Indicates that the simulated rasters will not be saved to disk.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_SAVE_SIMULATIONS")]
@@ -298,66 +299,66 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum RasterStatTypeEnum 
 		{
 			/// <summary>
-			/// <para>Minimum—Calculates the minimum (smallest value).</para>
+			/// <para>最小值—计算最小值。</para>
 			/// </summary>
 			[GPValue("MIN")]
-			[Description("Minimum")]
+			[Description("最小值")]
 			Minimum,
 
 			/// <summary>
-			/// <para>Maximum—Calculates the maximum (largest value).</para>
+			/// <para>最大值—计算最大值。</para>
 			/// </summary>
 			[GPValue("MAX")]
-			[Description("Maximum")]
+			[Description("最大值")]
 			Maximum,
 
 			/// <summary>
-			/// <para>Mean—Calculates the mean (average).</para>
+			/// <para>平均值—计算平均值。</para>
 			/// </summary>
 			[GPValue("MEAN")]
-			[Description("Mean")]
+			[Description("平均值")]
 			Mean,
 
 			/// <summary>
-			/// <para>Standard deviation—Calculates the standard deviation.</para>
+			/// <para>标准差—计算标准差。</para>
 			/// </summary>
 			[GPValue("STDDEV")]
-			[Description("Standard deviation")]
+			[Description("标准差")]
 			Standard_deviation,
 
 			/// <summary>
-			/// <para>First quartile—Calculates the 25th quantile.</para>
+			/// <para>第一四分位数—计算 25 分位数。</para>
 			/// </summary>
 			[GPValue("QUARTILE1")]
-			[Description("First quartile")]
+			[Description("第一四分位数")]
 			First_quartile,
 
 			/// <summary>
-			/// <para>Median—Calculates the median.</para>
+			/// <para>中值—计算中值。</para>
 			/// </summary>
 			[GPValue("MEDIAN")]
-			[Description("Median")]
+			[Description("中值")]
 			Median,
 
 			/// <summary>
-			/// <para>Third quartile—Calculates the 75th quantile.</para>
+			/// <para>第三四分位数—计算 75 分位数。</para>
 			/// </summary>
 			[GPValue("QUARTILE3")]
-			[Description("Third quartile")]
+			[Description("第三四分位数")]
 			Third_quartile,
 
 			/// <summary>
-			/// <para>Quantile—Calculates a user-specified quantile (0 &lt; Q &lt; 1).</para>
+			/// <para>分位数—计算用户指定的分位数 (0 &lt; Q &lt; 1)。</para>
 			/// </summary>
 			[GPValue("QUANTILE")]
-			[Description("Quantile")]
+			[Description("分位数")]
 			Quantile,
 
 			/// <summary>
-			/// <para>Probability threshold—Calculates the percentage of the simulations where the cell value exceeds a user-specified threshold value.</para>
+			/// <para>概率阈值—计算模拟结果像元值超出用户指定阈值的百分比。</para>
 			/// </summary>
 			[GPValue("P_THRSHLD")]
-			[Description("Probability threshold")]
+			[Description("概率阈值")]
 			Probability_threshold,
 
 		}

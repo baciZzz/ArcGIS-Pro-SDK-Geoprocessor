@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Create Big Data Connection</para>
-	/// <para>Creates a big data connection file (.bdc) and item. Datasets registered in a big data connection (BDC) can be used as input to GeoAnalytics Desktop tools and other geoprocessing tools.</para>
+	/// <para>创建大数据连接</para>
+	/// <para>创建大数据连接文件 (.bdc) 和项目。 在大数据连接 (BDC) 中注册的数据集可用作 GeoAnalytics Desktop 工具和其他地理处理工具的输入。</para>
 	/// </summary>
 	public class CreateBDC : AbstractGPProcess
 	{
@@ -20,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="BdcLocation">
 		/// <para>Big Data Connection Output Location</para>
-		/// <para>The folder where the .bdc file will be created.</para>
+		/// <para>将在其中创建 .bdc 文件的文件夹。</para>
 		/// </param>
 		/// <param name="BdcName">
 		/// <para>Output Big Data Connection Name</para>
-		/// <para>The name of the .bdc file to be created.</para>
+		/// <para>要创建的 .bdc 文件的名称。</para>
 		/// </param>
 		/// <param name="ConnectionType">
 		/// <para>Connection Type</para>
-		/// <para>Specifies the type of connection to be created.</para>
-		/// <para>Folder—Connect to a file system location. This is the default.</para>
+		/// <para>指定要创建的连接类型。</para>
+		/// <para>文件夹—连接到文件系统位置。 这是默认设置。</para>
 		/// <para><see cref="ConnectionTypeEnum"/></para>
 		/// </param>
 		public CreateBDC(object BdcLocation, object BdcName, object ConnectionType)
@@ -40,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Big Data Connection</para>
+		/// <para>Tool Display Name : 创建大数据连接</para>
 		/// </summary>
-		public override string DisplayName() => "Create Big Data Connection";
+		public override string DisplayName() => "创建大数据连接";
 
 		/// <summary>
 		/// <para>Tool Name : CreateBDC</para>
@@ -76,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Big Data Connection Output Location</para>
-		/// <para>The folder where the .bdc file will be created.</para>
+		/// <para>将在其中创建 .bdc 文件的文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Big Data Connection Name</para>
-		/// <para>The name of the .bdc file to be created.</para>
+		/// <para>要创建的 .bdc 文件的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -92,8 +93,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Connection Type</para>
-		/// <para>Specifies the type of connection to be created.</para>
-		/// <para>Folder—Connect to a file system location. This is the default.</para>
+		/// <para>指定要创建的连接类型。</para>
+		/// <para>文件夹—连接到文件系统位置。 这是默认设置。</para>
 		/// <para><see cref="ConnectionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -103,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Data Source Folder</para>
-		/// <para>The folder containing the datasets to be registered with the BDC.</para>
+		/// <para>包含要在 BDC 中注册的数据集的文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
@@ -111,9 +112,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Visible Geometry Fields</para>
-		/// <para>Specifies whether the fields used to specify the geometry will be visible as fields when the BDC file is used as input to other geoprocessing tools. When the geometry fields are not visible, geometry is still applied to the dataset. The geometry visibility setting can be modified in the BDC.</para>
-		/// <para>Checked—Geometry fields will be included as fields for analysis. This is the default.</para>
-		/// <para>Unchecked—Geometry fields will not be included as fields for analysis.</para>
+		/// <para>指定当将 BDC 文件用作其他地理处理工具的输入时，用于指定几何的字段是否将作为字段可见。当几何字段不可见时，几何仍应用于数据集。可以在 BDC 中修改几何可见性设置。</para>
+		/// <para>选中 - 几何字段将作为分析字段包括在内。这是默认设置。</para>
+		/// <para>未选中 - 几何字段不会作为分析字段包括在内。</para>
 		/// <para><see cref="VisibleGeometryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -123,9 +124,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Visible Time Fields</para>
-		/// <para>Specifies whether the fields used to specify the time will be visible as fields when the BDC file is used as input to other geoprocessing tools. When the time fields are not visible, time is still applied to the dataset. The time visibility setting can be modified in the BDC.</para>
-		/// <para>Checked—Time fields will be included as fields for analysis. This is the default.</para>
-		/// <para>Unchecked—Time fields will not be included as fields for analysis.</para>
+		/// <para>指定当将 BDC 文件用作其他地理处理工具的输入时，用于指定时间的字段是否将作为字段可见。当时间字段不可见时，时间仍应用于数据集。可以在 BDC 中修改时间可见性设置。</para>
+		/// <para>选中 - 时间字段将作为分析字段包括在内。这是默认设置。</para>
+		/// <para>未选中 - 时间字段不会作为分析字段包括在内。</para>
 		/// <para><see cref="VisibleTimeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -150,10 +151,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum ConnectionTypeEnum 
 		{
 			/// <summary>
-			/// <para>Folder—Connect to a file system location. This is the default.</para>
+			/// <para>文件夹—连接到文件系统位置。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("FOLDER")]
-			[Description("Folder")]
+			[Description("文件夹")]
 			Folder,
 
 		}
@@ -164,14 +165,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum VisibleGeometryEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Geometry fields will be included as fields for analysis. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GEOMETRY_VISIBLE")]
 			GEOMETRY_VISIBLE,
 
 			/// <summary>
-			/// <para>Unchecked—Geometry fields will not be included as fields for analysis.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("GEOMETRY_NOT_VISIBLE")]
@@ -185,14 +186,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum VisibleTimeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Time fields will be included as fields for analysis. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TIME_VISIBLE")]
 			TIME_VISIBLE,
 
 			/// <summary>
-			/// <para>Unchecked—Time fields will not be included as fields for analysis.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("TIME_NOT_VISIBLE")]

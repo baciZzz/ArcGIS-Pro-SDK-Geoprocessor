@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Delete Map Server Cache</para>
-	/// <para>Deletes an existing map image layer cache, including all associated files on disk.</para>
+	/// <para>删除地图服务器缓存</para>
+	/// <para>删除现有地图影像图层缓存（包括磁盘上的所有关联文件）。</para>
 	/// </summary>
 	public class DeleteMapServerCache : AbstractGPProcess
 	{
@@ -20,8 +21,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		/// <param name="InputService">
 		/// <para>Input Service</para>
-		/// <para>The map image layer whose cache tiles you want to delete. You can choose it by browsing to the desired service in Portal or you can drag and drop a web tile layer from the Project pane Portal tab to supply this parameter.</para>
-		/// <para>The map image layer whose cache tiles you want to delete.</para>
+		/// <para>待删除缓存切片所属的地图影像图层。 可以通过在门户中浏览至所需的服务来对其进行选择，也可以从工程窗格的门户选项卡拖放一个 web 切片图层来提供此参数。</para>
+		/// <para>待删除缓存切片所属的地图影像图层。</para>
 		/// </param>
 		public DeleteMapServerCache(object InputService)
 		{
@@ -29,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Delete Map Server Cache</para>
+		/// <para>Tool Display Name : 删除地图服务器缓存</para>
 		/// </summary>
-		public override string DisplayName() => "Delete Map Server Cache";
+		public override string DisplayName() => "删除地图服务器缓存";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteMapServerCache</para>
@@ -65,8 +66,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Input Service</para>
-		/// <para>The map image layer whose cache tiles you want to delete. You can choose it by browsing to the desired service in Portal or you can drag and drop a web tile layer from the Project pane Portal tab to supply this parameter.</para>
-		/// <para>The map image layer whose cache tiles you want to delete.</para>
+		/// <para>待删除缓存切片所属的地图影像图层。 可以通过在门户中浏览至所需的服务来对其进行选择，也可以从工程窗格的门户选项卡拖放一个 web 切片图层来提供此参数。</para>
+		/// <para>待删除缓存切片所属的地图影像图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Number of caching service instances</para>
-		/// <para>Defines the number of instances that will be used to update/generate the tiles. The value for this parameter is set to unlimited (-1) and cannot be modified.</para>
+		/// <para>定义用于更新/生成切片的实例数。 该参数的值将设置为无限 (-1)，且无法进行修改。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]

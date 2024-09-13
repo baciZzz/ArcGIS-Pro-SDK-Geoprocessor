@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Apply Partial Overlapping Edges Layout</para>
-	/// <para>Spaces out collinear edges or collinear portions of edges (edge segments) inside a given buffer zone.</para>
+	/// <para>应用部分重叠边布局</para>
+	/// <para>用于分隔给定缓冲区内的共线边或边的共线部分（边段）。</para>
 	/// </summary>
 	public class ApplyPartialOverlappingEdgesLayout : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InNetworkDiagramLayer">
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>The network diagram to which the layout will be applied.</para>
+		/// <para>将应用布局的网络逻辑示意图。</para>
 		/// </param>
 		/// <param name="BufferWidthAbsolute">
 		/// <para>Buffer Width</para>
-		/// <para>The width of the buffer zone in which to search for collinear edge segments.</para>
+		/// <para>在其中搜索共线边段的缓冲区的宽度。</para>
 		/// </param>
 		/// <param name="OffsetAbsolute">
 		/// <para>Offset</para>
-		/// <para>The distance that will separate the detected edge segments.</para>
+		/// <para>将分隔检测到的边段的距离。</para>
 		/// </param>
 		public ApplyPartialOverlappingEdgesLayout(object InNetworkDiagramLayer, object BufferWidthAbsolute, object OffsetAbsolute)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Apply Partial Overlapping Edges Layout</para>
+		/// <para>Tool Display Name : 应用部分重叠边布局</para>
 		/// </summary>
-		public override string DisplayName() => "Apply Partial Overlapping Edges Layout";
+		public override string DisplayName() => "应用部分重叠边布局";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyPartialOverlappingEdgesLayout</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>The network diagram to which the layout will be applied.</para>
+		/// <para>将应用布局的网络逻辑示意图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDiagramLayer()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Buffer Width</para>
-		/// <para>The width of the buffer zone in which to search for collinear edge segments.</para>
+		/// <para>在其中搜索共线边段的缓冲区的宽度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Offset</para>
-		/// <para>The distance that will separate the detected edge segments.</para>
+		/// <para>将分隔检测到的边段的距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -98,9 +99,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Optimize edges</para>
-		/// <para>Specifies how segments will be placed along edges:</para>
-		/// <para>Checked—The placement of segments will be optimized in each set of collinear segments. This is done by focusing on their connections instead of their positions. Segments that cross each other can be repositioned so they do not cross.</para>
-		/// <para>Unchecked—The initial position of each segment will be maintained in the collinear segment set and crossings will be preserved. This is the default.</para>
+		/// <para>指定将如何沿边放置线段：</para>
+		/// <para>选中 - 将在每组共线段中优化线段的放置。可通过重点关注其连接而非其位置来实现上述操作。可以重新放置彼此交叉的线段，以使其处于不交叉的状态。</para>
+		/// <para>未选中 - 每个线段的初始位置将保留在共线段集中，并且将保留交叉。这是默认设置。</para>
 		/// <para><see cref="OptimizeEdgesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -117,9 +118,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Run in asynchronous mode on the server</para>
-		/// <para>Specifies whether the layout algorithm will run asynchronously or synchronously on the server.</para>
-		/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out—for example, Partial Overlapping Edges—and applying to large diagrams—more than 25,000 features.</para>
-		/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service time-out: 600 seconds by default. This is the default.</para>
+		/// <para>指定布局算法在服务器上将异步运行还是同步运行。</para>
+		/// <para>选中 - 布局算法将在服务器上异步运行。服务器资源可通过该选项来运行超时较长的布局算法。当执行耗时且可能导致服务器超时的布局（例如，部分重叠边）并应用于大型逻辑示意图（超过 25,000 个要素）时，建议进行异步运行。</para>
+		/// <para>未选中 - 布局算法将在服务器上同步运行。如果执行时超过服务超时值（默认为 600 秒），则布局算法可能失败，无法完成。这是默认设置。</para>
 		/// <para><see cref="RunAsyncEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,14 +137,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum OptimizeEdgesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The placement of segments will be optimized in each set of collinear segments. This is done by focusing on their connections instead of their positions. Segments that cross each other can be repositioned so they do not cross.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("OPTIMIZE_EDGES")]
 			OPTIMIZE_EDGES,
 
 			/// <summary>
-			/// <para>Unchecked—The initial position of each segment will be maintained in the collinear segment set and crossings will be preserved. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_OPTIMIZE_EDGES")]
@@ -157,14 +158,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum RunAsyncEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out—for example, Partial Overlapping Edges—and applying to large diagrams—more than 25,000 features.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RUN_ASYNCHRONOUSLY")]
 			RUN_ASYNCHRONOUSLY,
 
 			/// <summary>
-			/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service time-out: 600 seconds by default. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("RUN_SYNCHRONOUSLY")]

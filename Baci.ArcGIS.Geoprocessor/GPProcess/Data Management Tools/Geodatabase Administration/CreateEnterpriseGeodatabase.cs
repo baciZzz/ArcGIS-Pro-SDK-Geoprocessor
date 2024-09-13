@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Enterprise Geodatabase</para>
-	/// <para>Creates a database, storage locations, and a database user to act as the geodatabase administrator and owner of the geodatabase. Functionality varies depending on the database management system used. The tool grants the geodatabase administrator the privileges required to create a geodatabase; it then creates a geodatabase in the database.</para>
+	/// <para>创建企业级地理数据库</para>
+	/// <para>可创建数据库、存储位置，以及作为地理数据库管理员和地理数据库所有者的数据库用户。 其功能会根据具体使用的数据库管理系统而有所不同。 此工具授予地理数据库管理员创建地理数据库所需的权限，并可以在数据库中创建地理数据库。</para>
 	/// </summary>
 	public class CreateEnterpriseGeodatabase : AbstractGPProcess
 	{
@@ -20,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="DatabasePlatform">
 		/// <para>Database Platform</para>
-		/// <para>Specifies the type of database management system to which a connection will be made to create a geodatabase.</para>
-		/// <para>Oracle—Connect to an Oracle instance.</para>
-		/// <para>PostgreSQL—Connect to a PostgreSQL database cluster.</para>
-		/// <para>SQL Server— Connect to a Microsoft SQL Server instance.</para>
+		/// <para>指定要建立连接以创建地理数据库的数据库管理系统类型。</para>
+		/// <para>Oracle—连接到 Oracle 实例。</para>
+		/// <para>PostgreSQL—连接到 PostgreSQL 数据库集群。</para>
+		/// <para>SQL Server—连接到 Microsoft SQL Server 实例。</para>
 		/// <para><see cref="DatabasePlatformEnum"/></para>
 		/// </param>
 		/// <param name="InstanceName">
 		/// <para>Instance</para>
-		/// <para>The name of the instance.</para>
-		/// <para>For SQL Server, provide the SQL Server instance name. Case-sensitive or binary collation SQL Server instances are not supported.</para>
-		/// <para>For Oracle, provide either the TNS name or the Oracle Easy Connection string.</para>
-		/// <para>For PostgreSQL, provide the name of the server where PostgreSQL is installed.</para>
+		/// <para>实例名称。</para>
+		/// <para>对于 SQL Server，请提供 SQL Server 实例名称。 不支持区分大小写或二进制排序规则 SQL Server 实例。</para>
+		/// <para>对于 Oracle，请提供 TNS 名称或 Oracle Easy Connection 字符串。</para>
+		/// <para>对于 PostgreSQL，请提供安装 PostgreSQL 的服务器的名称。</para>
 		/// </param>
 		/// <param name="AuthorizationFile">
 		/// <para>Authorization File</para>
-		/// <para>The path and file name of the keycodes file that was created when ArcGIS Server was authorized. This file is in the \\Program Files\ESRI\License&lt;release#&gt;\sysgen folder on Windows or the /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen directory on Linux. If you have not already done so, authorize ArcGIS Server to create this file.</para>
-		/// <para>You will likely need to copy the keycodes file from the ArcGIS Server machine to a location accessible to the tool.</para>
+		/// <para>授权 ArcGIS Server 时创建的密钥代码文件的路径和文件名。 此文件位于 Linux 的 \\Program Files\ESRI\License&lt;release#&gt;\sysgen 文件夹或 Windows 的 /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen 目录中。 如果尚未执行此操作，则请授权 ArcGIS Server 来创建此文件。</para>
+		/// <para>您可能需要从 ArcGIS Server 计算机将密钥代码文件拷贝到工具可以访问的位置。</para>
 		/// </param>
 		public CreateEnterpriseGeodatabase(object DatabasePlatform, object InstanceName, object AuthorizationFile)
 		{
@@ -46,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Enterprise Geodatabase</para>
+		/// <para>Tool Display Name : 创建企业级地理数据库</para>
 		/// </summary>
-		public override string DisplayName() => "Create Enterprise Geodatabase";
+		public override string DisplayName() => "创建企业级地理数据库";
 
 		/// <summary>
 		/// <para>Tool Name : CreateEnterpriseGeodatabase</para>
@@ -82,10 +83,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Database Platform</para>
-		/// <para>Specifies the type of database management system to which a connection will be made to create a geodatabase.</para>
-		/// <para>Oracle—Connect to an Oracle instance.</para>
-		/// <para>PostgreSQL—Connect to a PostgreSQL database cluster.</para>
-		/// <para>SQL Server— Connect to a Microsoft SQL Server instance.</para>
+		/// <para>指定要建立连接以创建地理数据库的数据库管理系统类型。</para>
+		/// <para>Oracle—连接到 Oracle 实例。</para>
+		/// <para>PostgreSQL—连接到 PostgreSQL 数据库集群。</para>
+		/// <para>SQL Server—连接到 Microsoft SQL Server 实例。</para>
 		/// <para><see cref="DatabasePlatformEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -95,10 +96,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Instance</para>
-		/// <para>The name of the instance.</para>
-		/// <para>For SQL Server, provide the SQL Server instance name. Case-sensitive or binary collation SQL Server instances are not supported.</para>
-		/// <para>For Oracle, provide either the TNS name or the Oracle Easy Connection string.</para>
-		/// <para>For PostgreSQL, provide the name of the server where PostgreSQL is installed.</para>
+		/// <para>实例名称。</para>
+		/// <para>对于 SQL Server，请提供 SQL Server 实例名称。 不支持区分大小写或二进制排序规则 SQL Server 实例。</para>
+		/// <para>对于 Oracle，请提供 TNS 名称或 Oracle Easy Connection 字符串。</para>
+		/// <para>对于 PostgreSQL，请提供安装 PostgreSQL 的服务器的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -106,10 +107,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Database</para>
-		/// <para>The name of the database.</para>
-		/// <para>This parameter is valid for PostgreSQL and SQL Server. You can provide either the name of an existing, preconfigured database or a name for a database that the tool will create.</para>
-		/// <para>If the tool creates the database in SQL Server, the file sizes will either be the same as defined for the SQL Server model database or 500 MB for the MDF file and 125 MB for the LDF file, whichever is greater. Both the MDF and LDF files are created in the default SQL Server location on the database server. Do not name the database sde.</para>
-		/// <para>If the tool creates the database in PostgreSQL, it uses the template1 database as the template for your database. If you need a different template—for example, you require a template that is enabled for a PostGIS—you must create the database before running this tool and provide the name of the existing database. Always use lowercase characters for the database name. If you use uppercase letters, the tool will convert them to lowercase.</para>
+		/// <para>数据库名称。</para>
+		/// <para>此参数对 PostgreSQL 和 SQL Server 有效。 您可以提供现有的、预先配置的数据库名称，也可以输入此工具要创建的数据库名称。</para>
+		/// <para>如果该工具在 SQL Server 中创建数据库，文件大小可与为 SQL Server 模型数据库定义的大小相同，或者对于 MDF 文件为 500 MB，对于 LDF 文件为 125 MB，取较大值。 MDF 文件和 LDF 文件均可在数据库服务器上的默认 SQL Server 位置上创建。 请勿命名数据库 sde。</para>
+		/// <para>如果该工具在 PostgreSQL 中创建数据库，则其会使用 template1 数据库作为您数据库的模板。 如果您需要其他模板（例如，您需要对 PostGIS 可用的模板），您必须在运行此工具之前创建数据库或提供现有数据库的名称。 数据库名称请始终使用小写字符。 如果您使用了大写字母，则工具会将其转换为小写形式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -117,9 +118,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Operating System Authentication</para>
-		/// <para>Specifies the type of authentication that will be used for the database connection.</para>
-		/// <para>Checked—Operating system authentication will be used. The login information that you provide for the computer where you run the tool is the login that will be used to authenticate the database connection. If your database management system is not configured to allow operating system authentication, authentication will fail.</para>
-		/// <para>Unchecked—Database authentication will be used. You must provide a valid database user name and password for authentication in the database. This is the default. If your database management system is not configured to allow database authentication, authentication will fail.</para>
+		/// <para>指定数据库连接将使用的身份验证类型。</para>
+		/// <para>选中 - 将使用操作系统身份验证。 您向运行此工具的计算机提供的登录信息将用于验证数据库连接。 如果数据库管理系统没有配置为允许操作系统身份验证，则身份验证将失败。</para>
+		/// <para>未选中 - 将使用数据库身份验证。 在数据库中验证身份时必须提供有效的数据库用户名和密码。 这是默认设置。 如果数据库管理系统没有配置为允许数据库身份验证，则身份验证将失败。</para>
 		/// <para><see cref="AccountAuthenticationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -129,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Database Administrator</para>
-		/// <para>If you use database authentication, specify a database administrator user. For Oracle, use the sys user. For PostgreSQL, specify a user with superuser status. For SQL Server, specify any member of the sysadmin fixed server role.</para>
+		/// <para>如果使用数据库身份验证，请指定数据库管理员用户。 对于 Oracle，请使用 sys 用户。 对于 PostgreSQL，请指定具有超级用户身份的用户。 对于 SQL Server，请指定具有 sysadmin 固定服务器角色的任何成员。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -137,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Database Administrator Password</para>
-		/// <para>If you use database authentication, provide the password for the database administrator.</para>
+		/// <para>如果使用数据库身份验证，请提供数据库管理员密码。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEncryptedString()]
@@ -145,9 +146,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Sde Owned Schema</para>
-		/// <para>This parameter is only active for SQL Server and specifies whether the geodatabase will be created in the schema of the sde user or in the dbo schema in the database. .</para>
-		/// <para>Checked—The geodatabase will be created in the schema of the sde user.</para>
-		/// <para>Unchecked—You must be logged in to the SQL Server instance as a user who is dbo in the instance, and the geodatabase will be created in the dbo schema in the database.</para>
+		/// <para>该参数仅对 SQL Server 有效，并指定将在数据库的 sde 用户方案中还是在 dbo 方案中创建地理数据库。 。</para>
+		/// <para>选中 - 地理数据库将在 sde 用户的方案中创建。</para>
+		/// <para>未选中 - 您必须以实例中 dbo 用户的身份登录到 SQL Server 实例，之后系统会在数据库的 dbo 方案中创建地理数据库。</para>
 		/// <para><see cref="SdeSchemaEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -157,11 +158,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Geodatabase Administrator</para>
-		/// <para>The name of the geodatabase administrator user.</para>
-		/// <para>If you are using PostgreSQL, this value must be sde. If the sde login role does not exist, this tool will create it and grant it superuser status in the database cluster. If the sde login role exists, this tool will grant it superuser status if it does not already have it. The tool also creates an sde schema in the database and grants usage on the schema to public.</para>
-		/// <para>If you are using Oracle, the value is sde. If the sde user does not exist in the Oracle database, the tool will create it and grant it the privileges required to create and upgrade a geodatabase and disconnect users from the database. If you run this tool in an Oracle 12c or later release database, the tool also grants privileges to allow data imports using Oracle Data Pump. If the sde user exists, the tool will grant these same privileges to the existing user.</para>
-		/// <para>Beginning with ArcGIS 10.7 and ArcGIS Pro 2.3, you cannot create user-schema geodatabases in Oracle.</para>
-		/// <para>If you are using SQL Server and specified an sde-schema geodatabase, this value must be sde. The tool will create an sde login, database user, and schema and grant it privileges to create a geodatabase and remove connections from the SQL Server instance. If you specified a dbo schema, do not provide a value for this parameter.</para>
+		/// <para>地理数据库管理员用户名称。</para>
+		/// <para>如果使用的是 PostgreSQL，该值必须为 sde。 如果 sde 登录角色不存在，此工具将在数据库集群中创建该登录角色并授予其超级用户状态。 如果 sde 登录角色已存在，当其没有超级用户状态时，此工具将对其授予这一状态。 此工具还会在数据库中创建 sde 方案并向公共角色授予对该方案的使用权限。</para>
+		/// <para>如果使用的是 Oracle，则值为 sde。 如果 Oracle 数据库中不存在 sde 用户，则此工具将创建用户并授予其创建和升级地理数据库以及断开用户与数据库之间连接所需的权限。 如果在 Oracle 12c 或更高版本的数据库中运行此工具，则此工具还将授予使用 Oracle Data Pump 导入数据所需的权限。 如果 sde 用户已存在，则该工具将向现有用户授予同样的权限。</para>
+		/// <para>从 ArcGIS 10.7 和 ArcGIS Pro 2.3 开始，您无法在 Oracle 中创建用户方案地理数据库。</para>
+		/// <para>如果使用的是 SQL Server 并指定了一个 sde 方案地理数据库，则该值必须为 sde。 此工具将创建 sde 登录、数据库用户和方案，并授予其创建地理数据库以及从 SQL Server 实例移除连接所需的权限。 如果指定了 dbo 方案，则不要为该参数提供值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -169,8 +170,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Geodatabase Administrator Password</para>
-		/// <para>The password for the geodatabase administrator user. If the geodatabase administrator user exists in the database management system, the password you provide must match the existing password. If the geodatabase administrator user does not exist, provide a valid database password for the new user. The password must meet the password policy enforced by your database.</para>
-		/// <para>The password is an encrypted string.</para>
+		/// <para>地理数据库管理员用户的密码。 如果地理数据库管理员用户已存在于数据库管理系统中，则提供的密码必须与现有密码相匹配。 如果地理数据库管理员用户尚未存在，则为新用户提供一个有效的数据库密码。 该密码必须符合数据库强制的密码策略。</para>
+		/// <para>密码是一个加密字符串。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEncryptedString()]
@@ -178,12 +179,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Tablespace Name</para>
-		/// <para>The name of the tablespace.</para>
-		/// <para>This parameter is only valid for Oracle and PostgreSQL DBMS types. For Oracle, do one of the following:</para>
-		/// <para>Provide the name of an existing tablespace. This tablespace will be used as the default tablespace for the geodatabase administrator user.</para>
-		/// <para>Provide a valid name for a new tablespace. The tool will create a 400 MB tablespace in the Oracle default storage location and set it as the geodatabase administrator&apos;s default tablespace.</para>
-		/// <para>Leave the tablespace blank. The tool will create a 400 MB tablespace named SDE_TBS in the Oracle default storage location. The SDE_TBS tablespace will be set as the geodatabase administrator&apos;s default tablespace.</para>
-		/// <para>This tool does not create a tablespace in PostgreSQL. You must either provide the name of an existing tablespace to be used as the database&apos;s default tablespace or leave this parameter blank. If you leave the parameter blank, the tool will create a database in the pg_default tablespace.</para>
+		/// <para>表空间名称。</para>
+		/// <para>该参数只对 Oracle 和 PostgreSQL DBMS 类型有效。 对于 Oracle，请执行以下某项操作：</para>
+		/// <para>提供一个现有表空间的名称。 对于地理数据库管理员用户，此表空间将用作默认的表空间。</para>
+		/// <para>为新表空间提供一个有效名称。 此工具将在 Oracle 的默认存储位置上创建一个 400 MB 的表空间，并将其设置为地理数据库管理员的默认表空间。</para>
+		/// <para>将表空间留空。 此工具将在 Oracle 的默认存储位置上创建一个名为 SDE_TBS 的 400 MB 表空间。 SDE_TBS 表空间将被设置为地理数据库管理员的默认表空间。</para>
+		/// <para>此工具不会在 PostgreSQL 中创建表空间。 必须为用作数据库默认表空间的现有表空间提供名称，或者将此参数留空。 如果将此参数留空，则工具将在 pg_default 表空间中创建一个数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -191,8 +192,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Authorization File</para>
-		/// <para>The path and file name of the keycodes file that was created when ArcGIS Server was authorized. This file is in the \\Program Files\ESRI\License&lt;release#&gt;\sysgen folder on Windows or the /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen directory on Linux. If you have not already done so, authorize ArcGIS Server to create this file.</para>
-		/// <para>You will likely need to copy the keycodes file from the ArcGIS Server machine to a location accessible to the tool.</para>
+		/// <para>授权 ArcGIS Server 时创建的密钥代码文件的路径和文件名。 此文件位于 Linux 的 \\Program Files\ESRI\License&lt;release#&gt;\sysgen 文件夹或 Windows 的 /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen 目录中。 如果尚未执行此操作，则请授权 ArcGIS Server 来创建此文件。</para>
+		/// <para>您可能需要从 ArcGIS Server 计算机将密钥代码文件拷贝到工具可以访问的位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -213,21 +214,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DatabasePlatformEnum 
 		{
 			/// <summary>
-			/// <para>SQL Server— Connect to a Microsoft SQL Server instance.</para>
+			/// <para>SQL Server—连接到 Microsoft SQL Server 实例。</para>
 			/// </summary>
 			[GPValue("SQL_Server")]
 			[Description("SQL Server")]
 			SQL_Server,
 
 			/// <summary>
-			/// <para>PostgreSQL—Connect to a PostgreSQL database cluster.</para>
+			/// <para>PostgreSQL—连接到 PostgreSQL 数据库集群。</para>
 			/// </summary>
 			[GPValue("PostgreSQL")]
 			[Description("PostgreSQL")]
 			PostgreSQL,
 
 			/// <summary>
-			/// <para>Oracle—Connect to an Oracle instance.</para>
+			/// <para>Oracle—连接到 Oracle 实例。</para>
 			/// </summary>
 			[GPValue("Oracle")]
 			[Description("Oracle")]
@@ -241,14 +242,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AccountAuthenticationEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Operating system authentication will be used. The login information that you provide for the computer where you run the tool is the login that will be used to authenticate the database connection. If your database management system is not configured to allow operating system authentication, authentication will fail.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("OPERATING_SYSTEM_AUTH")]
 			OPERATING_SYSTEM_AUTH,
 
 			/// <summary>
-			/// <para>Unchecked—Database authentication will be used. You must provide a valid database user name and password for authentication in the database. This is the default. If your database management system is not configured to allow database authentication, authentication will fail.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DATABASE_AUTH")]
@@ -262,14 +263,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SdeSchemaEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The geodatabase will be created in the schema of the sde user.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SDE_SCHEMA")]
 			SDE_SCHEMA,
 
 			/// <summary>
-			/// <para>Unchecked—You must be logged in to the SQL Server instance as a user who is dbo in the instance, and the geodatabase will be created in the dbo schema in the database.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DBO_SCHEMA")]

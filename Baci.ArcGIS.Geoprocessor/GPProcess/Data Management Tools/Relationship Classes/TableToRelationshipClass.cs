@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Table To Relationship Class</para>
-	/// <para>Creates an attributed relationship class from the origin, destination, and relationship tables.</para>
+	/// <para>表转关系类</para>
+	/// <para>从源表、目标表和关系表创建属性关系类。</para>
 	/// </summary>
 	public class TableToRelationshipClass : AbstractGPProcess
 	{
@@ -20,72 +21,72 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="OriginTable">
 		/// <para>Origin Table</para>
-		/// <para>The table or feature class that will be associated to the destination table.</para>
+		/// <para>要与目标表相关联的表或要素类。</para>
 		/// </param>
 		/// <param name="DestinationTable">
 		/// <para>Destination Table</para>
-		/// <para>The table or feature class that will be associated to the origin table.</para>
+		/// <para>要与源表相关联的表或要素类。</para>
 		/// </param>
 		/// <param name="OutRelationshipClass">
 		/// <para>Output Relationship Class</para>
-		/// <para>The relationship class that will be created.</para>
+		/// <para>要创建的关系类。</para>
 		/// </param>
 		/// <param name="RelationshipType">
 		/// <para>Relationship Type</para>
-		/// <para>The type of association to create between the origin and destination tables.</para>
-		/// <para>Simple—An association where each object is independent of each other (a parent-to-parent relationship). This is the default.</para>
-		/// <para>Composite—An association where the lifetime of one object controls the lifetime of its related object (a parent-child relationship).</para>
+		/// <para>要在源表和目标表之间创建的关联类型。</para>
+		/// <para>简单—在这种关联类型中，每个对象都彼此独立（父-父关系）。这是默认设置。</para>
+		/// <para>复合—在这种关联类型中，一个对象的生存时间控制着与其相关的对象的生存时间（父-子关系）。</para>
 		/// <para><see cref="RelationshipTypeEnum"/></para>
 		/// </param>
 		/// <param name="ForwardLabel">
 		/// <para>Forward Path Label</para>
-		/// <para>A label describing the relationship as it is traversed from the origin table/feature class to the destination table/feature class.</para>
+		/// <para>从源表/要素类遍历到目标表/要素类时描述该关系的标注。</para>
 		/// </param>
 		/// <param name="BackwardLabel">
 		/// <para>Backward Path Label</para>
-		/// <para>A label describing the relationship as it is traversed from the destination table/feature class to the origin table/feature class.</para>
+		/// <para>从目标表/要素类遍历到源表/要素类时描述该关系的标注。</para>
 		/// </param>
 		/// <param name="MessageDirection">
 		/// <para>Message Direction</para>
-		/// <para>The direction messages will be propagated between the objects in the relationship. For example, in a relationship between poles and transformers, when the pole is deleted, it sends a message to its related transformer objects informing them it was deleted.</para>
-		/// <para>None (no messages propagated)—No messages propagated. This is the default.</para>
-		/// <para>Forward (origin to destination)—Messages propagated from the origin to the destination.</para>
-		/// <para>Backward (destination to origin)—Messages propagated from the destination to the origin.</para>
-		/// <para>Both directions—Messages propagated from the origin to the destination and from the destination to the origin.</para>
+		/// <para>消息在此关系所关联的对象之间进行传递时的方向。例如，在电线杆与变压器的关系中，当电线杆被删除时，会向与之相关的变压器对象发送一条消息，以告知它们该电线杆已被删除。</para>
+		/// <para>无(不传递任何消息)—不传递任何消息。这是默认设置。</para>
+		/// <para>向前(源至目标)—将消息从源表传递到目标表。</para>
+		/// <para>向后(目标至源)—将消息从目标表传递到源表。</para>
+		/// <para>两个方向—将消息从源表传递到目标表，然后再从目标表传递到源表。</para>
 		/// <para><see cref="MessageDirectionEnum"/></para>
 		/// </param>
 		/// <param name="Cardinality">
 		/// <para>Cardinality</para>
-		/// <para>The cardinality of the relationship between the origin and destination.</para>
-		/// <para>One to one (1:1)—Each object of the origin table/feature class can be related to zero or one object of the destination table/feature class. This is the default.</para>
-		/// <para>One to many (1:M)—Each object of the origin table/feature class can be related to multiple objects in the destination table/feature class.</para>
-		/// <para>Many to many (M:N)—Multiple objects of the origin table/feature class can be related to multiple objects in the destination table/feature class.</para>
+		/// <para>源表和目标表之间的关系基数。</para>
+		/// <para>一对一 (1:1)—源表/要素类中的每个对象都可与目标表/要素类中的零个或一个对象相关联。这是默认设置。</para>
+		/// <para>一对多 (1:M)—源表/要素类中的每个对象都可与目标表/要素类中的多个对象相关联。</para>
+		/// <para>多对多 (M:N)—源表/要素类中的多个对象都可与目标表/要素类中的多个对象相关联。</para>
 		/// <para><see cref="CardinalityEnum"/></para>
 		/// </param>
 		/// <param name="RelationshipTable">
 		/// <para>Relationship Table</para>
-		/// <para>The table containing attributes that will be added to the relationship class.</para>
+		/// <para>包含将被添加到关系类的属性的表。</para>
 		/// </param>
 		/// <param name="AttributeFields">
 		/// <para>Attribute Fields</para>
-		/// <para>The fields containing attribute values that will be added to the relationship class.</para>
-		/// <para>The Add Field button, which is used only in ModelBuilder, allows you to add expected field(s) so you can complete the dialog and continue to build your model.</para>
+		/// <para>包含将被添加到关系类的属性值的字段。</para>
+		/// <para>“添加字段”按钮（只能在模型构建器中使用）可用于添加所需字段，以便您可以完成对话框并继续构建模型。</para>
 		/// </param>
 		/// <param name="OriginPrimaryKey">
 		/// <para>Origin Primary Key</para>
-		/// <para>The field in the origin table that will be used to create the relationship. Generally, this is the object identifier field.</para>
+		/// <para>将用于创建关系的源表中的字段。通常，该字段是对象标识符字段。</para>
 		/// </param>
 		/// <param name="OriginForeignKey">
 		/// <para>Origin Foreign Key</para>
-		/// <para>The name of the Foreign Key field in the relationship table that refers to the Primary Key field in the origin table/feature class.</para>
+		/// <para>关系表中引用源表/要素类中的主键字段的外键字段的名称。</para>
 		/// </param>
 		/// <param name="DestinationPrimaryKey">
 		/// <para>Destination Primary Key</para>
-		/// <para>The field in the destination table that will be used to create the relationship. Generally, this is the object identifier field.</para>
+		/// <para>将用于创建关系的目标表中的字段。通常，该字段是对象标识符字段。</para>
 		/// </param>
 		/// <param name="DestinationForeignKey">
 		/// <para>Destination Foreign Key</para>
-		/// <para>The field in the relationship table that refers to the Primary Key field in the destination table.</para>
+		/// <para>关系表中引用目标表中的主键字段的字段。</para>
 		/// </param>
 		public TableToRelationshipClass(object OriginTable, object DestinationTable, object OutRelationshipClass, object RelationshipType, object ForwardLabel, object BackwardLabel, object MessageDirection, object Cardinality, object RelationshipTable, object AttributeFields, object OriginPrimaryKey, object OriginForeignKey, object DestinationPrimaryKey, object DestinationForeignKey)
 		{
@@ -106,9 +107,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Table To Relationship Class</para>
+		/// <para>Tool Display Name : 表转关系类</para>
 		/// </summary>
-		public override string DisplayName() => "Table To Relationship Class";
+		public override string DisplayName() => "表转关系类";
 
 		/// <summary>
 		/// <para>Tool Name : TableToRelationshipClass</para>
@@ -142,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Origin Table</para>
-		/// <para>The table or feature class that will be associated to the destination table.</para>
+		/// <para>要与目标表相关联的表或要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -150,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Destination Table</para>
-		/// <para>The table or feature class that will be associated to the origin table.</para>
+		/// <para>要与源表相关联的表或要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -158,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Relationship Class</para>
-		/// <para>The relationship class that will be created.</para>
+		/// <para>要创建的关系类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERelationshipClass()]
@@ -166,9 +167,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Relationship Type</para>
-		/// <para>The type of association to create between the origin and destination tables.</para>
-		/// <para>Simple—An association where each object is independent of each other (a parent-to-parent relationship). This is the default.</para>
-		/// <para>Composite—An association where the lifetime of one object controls the lifetime of its related object (a parent-child relationship).</para>
+		/// <para>要在源表和目标表之间创建的关联类型。</para>
+		/// <para>简单—在这种关联类型中，每个对象都彼此独立（父-父关系）。这是默认设置。</para>
+		/// <para>复合—在这种关联类型中，一个对象的生存时间控制着与其相关的对象的生存时间（父-子关系）。</para>
 		/// <para><see cref="RelationshipTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -178,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Forward Path Label</para>
-		/// <para>A label describing the relationship as it is traversed from the origin table/feature class to the destination table/feature class.</para>
+		/// <para>从源表/要素类遍历到目标表/要素类时描述该关系的标注。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -186,7 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Backward Path Label</para>
-		/// <para>A label describing the relationship as it is traversed from the destination table/feature class to the origin table/feature class.</para>
+		/// <para>从目标表/要素类遍历到源表/要素类时描述该关系的标注。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -194,11 +195,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Message Direction</para>
-		/// <para>The direction messages will be propagated between the objects in the relationship. For example, in a relationship between poles and transformers, when the pole is deleted, it sends a message to its related transformer objects informing them it was deleted.</para>
-		/// <para>None (no messages propagated)—No messages propagated. This is the default.</para>
-		/// <para>Forward (origin to destination)—Messages propagated from the origin to the destination.</para>
-		/// <para>Backward (destination to origin)—Messages propagated from the destination to the origin.</para>
-		/// <para>Both directions—Messages propagated from the origin to the destination and from the destination to the origin.</para>
+		/// <para>消息在此关系所关联的对象之间进行传递时的方向。例如，在电线杆与变压器的关系中，当电线杆被删除时，会向与之相关的变压器对象发送一条消息，以告知它们该电线杆已被删除。</para>
+		/// <para>无(不传递任何消息)—不传递任何消息。这是默认设置。</para>
+		/// <para>向前(源至目标)—将消息从源表传递到目标表。</para>
+		/// <para>向后(目标至源)—将消息从目标表传递到源表。</para>
+		/// <para>两个方向—将消息从源表传递到目标表，然后再从目标表传递到源表。</para>
 		/// <para><see cref="MessageDirectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -208,10 +209,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Cardinality</para>
-		/// <para>The cardinality of the relationship between the origin and destination.</para>
-		/// <para>One to one (1:1)—Each object of the origin table/feature class can be related to zero or one object of the destination table/feature class. This is the default.</para>
-		/// <para>One to many (1:M)—Each object of the origin table/feature class can be related to multiple objects in the destination table/feature class.</para>
-		/// <para>Many to many (M:N)—Multiple objects of the origin table/feature class can be related to multiple objects in the destination table/feature class.</para>
+		/// <para>源表和目标表之间的关系基数。</para>
+		/// <para>一对一 (1:1)—源表/要素类中的每个对象都可与目标表/要素类中的零个或一个对象相关联。这是默认设置。</para>
+		/// <para>一对多 (1:M)—源表/要素类中的每个对象都可与目标表/要素类中的多个对象相关联。</para>
+		/// <para>多对多 (M:N)—源表/要素类中的多个对象都可与目标表/要素类中的多个对象相关联。</para>
 		/// <para><see cref="CardinalityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -221,7 +222,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Relationship Table</para>
-		/// <para>The table containing attributes that will be added to the relationship class.</para>
+		/// <para>包含将被添加到关系类的属性的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -229,8 +230,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Attribute Fields</para>
-		/// <para>The fields containing attribute values that will be added to the relationship class.</para>
-		/// <para>The Add Field button, which is used only in ModelBuilder, allows you to add expected field(s) so you can complete the dialog and continue to build your model.</para>
+		/// <para>包含将被添加到关系类的属性值的字段。</para>
+		/// <para>“添加字段”按钮（只能在模型构建器中使用）可用于添加所需字段，以便您可以完成对话框并继续构建模型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -240,7 +241,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Origin Primary Key</para>
-		/// <para>The field in the origin table that will be used to create the relationship. Generally, this is the object identifier field.</para>
+		/// <para>将用于创建关系的源表中的字段。通常，该字段是对象标识符字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -248,7 +249,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Origin Foreign Key</para>
-		/// <para>The name of the Foreign Key field in the relationship table that refers to the Primary Key field in the origin table/feature class.</para>
+		/// <para>关系表中引用源表/要素类中的主键字段的外键字段的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -256,7 +257,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Destination Primary Key</para>
-		/// <para>The field in the destination table that will be used to create the relationship. Generally, this is the object identifier field.</para>
+		/// <para>将用于创建关系的目标表中的字段。通常，该字段是对象标识符字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -264,7 +265,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Destination Foreign Key</para>
-		/// <para>The field in the relationship table that refers to the Primary Key field in the destination table.</para>
+		/// <para>关系表中引用目标表中的主键字段的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -287,17 +288,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum RelationshipTypeEnum 
 		{
 			/// <summary>
-			/// <para>Simple—An association where each object is independent of each other (a parent-to-parent relationship). This is the default.</para>
+			/// <para>简单—在这种关联类型中，每个对象都彼此独立（父-父关系）。这是默认设置。</para>
 			/// </summary>
 			[GPValue("SIMPLE")]
-			[Description("Simple")]
+			[Description("简单")]
 			Simple,
 
 			/// <summary>
-			/// <para>Composite—An association where the lifetime of one object controls the lifetime of its related object (a parent-child relationship).</para>
+			/// <para>复合—在这种关联类型中，一个对象的生存时间控制着与其相关的对象的生存时间（父-子关系）。</para>
 			/// </summary>
 			[GPValue("COMPOSITE")]
-			[Description("Composite")]
+			[Description("复合")]
 			Composite,
 
 		}
@@ -308,31 +309,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MessageDirectionEnum 
 		{
 			/// <summary>
-			/// <para>Forward (origin to destination)—Messages propagated from the origin to the destination.</para>
+			/// <para>向前(源至目标)—将消息从源表传递到目标表。</para>
 			/// </summary>
 			[GPValue("FORWARD")]
-			[Description("Forward (origin to destination)")]
+			[Description("向前(源至目标)")]
 			FORWARD,
 
 			/// <summary>
-			/// <para>Backward (destination to origin)—Messages propagated from the destination to the origin.</para>
+			/// <para>向后(目标至源)—将消息从目标表传递到源表。</para>
 			/// </summary>
 			[GPValue("BACKWARD")]
-			[Description("Backward (destination to origin)")]
+			[Description("向后(目标至源)")]
 			BACKWARD,
 
 			/// <summary>
-			/// <para>Both directions—Messages propagated from the origin to the destination and from the destination to the origin.</para>
+			/// <para>两个方向—将消息从源表传递到目标表，然后再从目标表传递到源表。</para>
 			/// </summary>
 			[GPValue("BOTH")]
-			[Description("Both directions")]
+			[Description("两个方向")]
 			Both_directions,
 
 			/// <summary>
-			/// <para>None (no messages propagated)—No messages propagated. This is the default.</para>
+			/// <para>无(不传递任何消息)—不传递任何消息。这是默认设置。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None (no messages propagated)")]
+			[Description("无(不传递任何消息)")]
 			NONE,
 
 		}
@@ -343,24 +344,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CardinalityEnum 
 		{
 			/// <summary>
-			/// <para>One to one (1:1)—Each object of the origin table/feature class can be related to zero or one object of the destination table/feature class. This is the default.</para>
+			/// <para>一对一 (1:1)—源表/要素类中的每个对象都可与目标表/要素类中的零个或一个对象相关联。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ONE_TO_ONE")]
-			[Description("One to one (1:1)")]
+			[Description("一对一 (1:1)")]
 			ONE_TO_ONE,
 
 			/// <summary>
-			/// <para>One to many (1:M)—Each object of the origin table/feature class can be related to multiple objects in the destination table/feature class.</para>
+			/// <para>一对多 (1:M)—源表/要素类中的每个对象都可与目标表/要素类中的多个对象相关联。</para>
 			/// </summary>
 			[GPValue("ONE_TO_MANY")]
-			[Description("One to many (1:M)")]
+			[Description("一对多 (1:M)")]
 			ONE_TO_MANY,
 
 			/// <summary>
-			/// <para>Many to many (M:N)—Multiple objects of the origin table/feature class can be related to multiple objects in the destination table/feature class.</para>
+			/// <para>多对多 (M:N)—源表/要素类中的多个对象都可与目标表/要素类中的多个对象相关联。</para>
 			/// </summary>
 			[GPValue("MANY_TO_MANY")]
-			[Description("Many to many (M:N)")]
+			[Description("多对多 (M:N)")]
 			MANY_TO_MANY,
 
 		}

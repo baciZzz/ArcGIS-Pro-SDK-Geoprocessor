@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Calculate End Date</para>
+	/// <para>Calculate End Date</para>
 	/// <para>Populates the values for a specified end date field with values calculated using the start date field specified. This tool is useful when the intervals between start date field values are not regular and you want to animate the feature class or table through time or some other value using the Animation toolbar.</para>
 	/// </summary>
 	[Obsolete()]

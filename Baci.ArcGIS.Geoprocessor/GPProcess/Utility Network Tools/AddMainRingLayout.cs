@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Main Ring Layout</para>
+	/// <para>Add Main Ring Layout</para>
 	/// <para>Add a main ring layout to a diagram template</para>
 	/// </summary>
 	[Obsolete()]

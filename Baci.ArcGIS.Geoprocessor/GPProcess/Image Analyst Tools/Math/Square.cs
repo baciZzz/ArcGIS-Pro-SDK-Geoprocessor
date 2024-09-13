@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Square</para>
-	/// <para>Calculates the square of the cell values in a raster.</para>
+	/// <para>正方形</para>
+	/// <para>计算栅格中像元值的平方值。</para>
 	/// </summary>
 	public class Square : AbstractGPProcess
 	{
@@ -20,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant">
 		/// <para>Input raster or constant value</para>
-		/// <para>The input values to find the square of.</para>
-		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
+		/// <para>要计算平方值的输入值。</para>
+		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the square of the input cell values.</para>
+		/// <para>输出栅格。</para>
+		/// <para>这些像元值是输入值的平方值。</para>
 		/// </param>
 		public Square(object InRasterOrConstant, object OutRaster)
 		{
@@ -35,14 +36,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Square</para>
+		/// <para>Tool Display Name : 正方形</para>
 		/// </summary>
-		public override string DisplayName() => "Square";
+		public override string DisplayName() => "正方形";
 
 		/// <summary>
-		/// <para>Tool Name : Square</para>
+		/// <para>Tool Name : 正方形</para>
 		/// </summary>
-		public override string ToolName() => "Square";
+		public override string ToolName() => "正方形";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.Square</para>
@@ -71,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value</para>
-		/// <para>The input values to find the square of.</para>
-		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
+		/// <para>要计算平方值的输入值。</para>
+		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -84,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the square of the input cell values.</para>
+		/// <para>输出栅格。</para>
+		/// <para>这些像元值是输入值的平方值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Update Globe Server Cache</para>
+	/// <para>Update Globe Server Cache</para>
 	/// <para>Updates a pre-rendered tiled cache for Globe Server.</para>
 	/// </summary>
 	[Obsolete()]

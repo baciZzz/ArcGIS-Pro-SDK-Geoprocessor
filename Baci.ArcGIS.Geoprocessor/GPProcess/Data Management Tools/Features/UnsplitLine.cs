@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Unsplit Line</para>
-	/// <para>Merges lines that have coincident endpoints and, optionally, common attribute values.</para>
+	/// <para>取消线分割</para>
+	/// <para>合并具有重合端点及公共属性值（可选）的线。</para>
 	/// </summary>
 	public class UnsplitLine : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The line features to be aggregated.</para>
+		/// <para>要聚合的线要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class to be created that will contain the aggregated features.</para>
+		/// <para>要创建的将包含聚合要素的要素类。</para>
 		/// </param>
 		public UnsplitLine(object InFeatures, object OutFeatureClass)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Unsplit Line</para>
+		/// <para>Tool Display Name : 取消线分割</para>
 		/// </summary>
-		public override string DisplayName() => "Unsplit Line";
+		public override string DisplayName() => "取消线分割";
 
 		/// <summary>
 		/// <para>Tool Name : UnsplitLine</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The line features to be aggregated.</para>
+		/// <para>要聚合的线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class to be created that will contain the aggregated features.</para>
+		/// <para>要创建的将包含聚合要素的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Dissolve Field(s)</para>
-		/// <para>The field or fields on which to aggregate features.</para>
+		/// <para>要聚合要素的一个或多个字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -97,21 +98,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Statistics Field(s)</para>
-		/// <para>Specifies the numeric field or fields containing the attribute values that will be used to calculate the specified statistic. Multiple statistic and field combinations can be specified. Null values are excluded from all statistical calculations.</para>
-		/// <para>Text attribute fields can be summarized using first and last statistics. Numeric attribute fields can be summarized using any statistic.</para>
-		/// <para>Available statistics types are as follows:</para>
-		/// <para>Sum—The values for the specified field will be added together.</para>
-		/// <para>Mean—The average for the specified field will be calculated.</para>
-		/// <para>Minimum—The smallest value for all records of the specified field will be found.</para>
-		/// <para>Maximum—The largest value for all records of the specified field will be found.</para>
-		/// <para>Range—The range of values (maximum minus minimum) for the specified field will be calculated.</para>
-		/// <para>Standard deviation—The standard deviation of values in the specified field will be calculated.</para>
-		/// <para>Count—The number of values included in the statistical calculations will be found. Each value will be counted except null values. To determine the number of null values in a field, create a count on the field in question, create a count on a different field that does not contain null values (for example, the OID if present), and subtract the two values.</para>
-		/// <para>First—The specified field value of the first record in the input will be used.</para>
-		/// <para>Last—The specified field value of the last record in the input will be used.</para>
-		/// <para>Median—The median for all records of the specified field will be calculated.</para>
-		/// <para>Variance—The variance for all records of the specified field will be calculated.</para>
-		/// <para>Unique—The number of unique values of the specified field will be counted.</para>
+		/// <para>指定包含用于计算指定统计数据的属性值的一个或多个数值字段。 可以指定多项统计和字段组合。 空值将被排除在所有统计计算之外。</para>
+		/// <para>可使用第一种和最后一种统计来对文本属性字段进行汇总。 可使用任何一种统计来对数值属性字段进行汇总。</para>
+		/// <para>可用统计类型如下：</para>
+		/// <para>总和 - 将指定字段的值相加在一起。</para>
+		/// <para>平均值 - 将计算指定字段的平均值。</para>
+		/// <para>最小值 - 将查找指定字段所有记录的最小值。</para>
+		/// <para>最大值 - 将查找指定字段所有记录的最大值。</para>
+		/// <para>范围 - 将计算指定字段的值范围（最大值 - 最小值）。</para>
+		/// <para>标准差 - 将计算指定字段中值的标准差。</para>
+		/// <para>计数 - 将查找统计计算中包括的值的数目。 计数包括除空值外的所有值。 要确定字段中的空值数，请在相应字段上创建计数，然后在另一个不包含空值的字段上创建计数（例如 OID，如果存在的话），然后将这两个值相减。</para>
+		/// <para>第一个 - 将使用输入中第一条记录的指定字段值。</para>
+		/// <para>最后一个 - 将使用输入中最后一条记录的指定字段值。</para>
+		/// <para>中值 - 将计算指定字段所有记录的中值。</para>
+		/// <para>方差 - 将计算指定字段所有记录的方差。</para>
+		/// <para>唯一值 - 将计算指定字段的唯一值数量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]

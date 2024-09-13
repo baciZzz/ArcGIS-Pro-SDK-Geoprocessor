@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Extend Diagram</para>
-	/// <para>Extends a network diagram one network element level based on network connectivity or traversability or on containment or structural attachment associations.</para>
+	/// <para>扩展逻辑示意图</para>
+	/// <para>基于网络连通性、可遍历性、包含或结构附件关联将网络逻辑示意图扩展一个网络元素级别。</para>
 	/// </summary>
 	public class ExtendDiagram : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InNetworkDiagramLayer">
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>The network diagram to extend.</para>
+		/// <para>要扩展的网络逻辑示意图。</para>
 		/// </param>
 		public ExtendDiagram(object InNetworkDiagramLayer)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Extend Diagram</para>
+		/// <para>Tool Display Name : 扩展逻辑示意图</para>
 		/// </summary>
-		public override string DisplayName() => "Extend Diagram";
+		public override string DisplayName() => "扩展逻辑示意图";
 
 		/// <summary>
 		/// <para>Tool Name : ExtendDiagram</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>The network diagram to extend.</para>
+		/// <para>要扩展的网络逻辑示意图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDiagramLayer()]
@@ -72,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Ignore traversability</para>
-		/// <para>Specifies whether traversability or connectivity is used to extend the diagram.This parameter was deprecated at ArcGIS Pro 2.2. It is systematically ignored regardless of its value when the extension_type parameter is specified. To maintain compatibility with models and Python scripts written at ArcGIS Pro 2.1, it remains enabled when the extension_type parameter is not specified.</para>
-		/// <para>IGNORE_TRAVERSABILITY—The traversability of the network is ignored. This is the default.</para>
-		/// <para>HONOR_TRAVERSABILITY —The traversability of the network is honored.</para>
+		/// <para>指定是否使用可遍历性或连通性来扩展逻辑示意。此参数已在 ArcGIS Pro 2.2 中弃用。如果指定了 extension_type 参数，则无论其值是多少，都会被系统忽略。未指定 extension_type 参数时，如果要保持与模型以及在 ArcGIS Pro 2.1 中编写的 Python 脚本的兼容性，则其将保持启用。</para>
+		/// <para>IGNORE_TRAVERSABILITY—将忽略网络的可遍历性。这是默认设置。</para>
+		/// <para>HONOR_TRAVERSABILITY —支持网络的可遍历性。</para>
 		/// <para><see cref="IgnoreTraversabilityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -91,11 +92,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Extension Type</para>
-		/// <para>Specifies how the diagram will be extended.</para>
-		/// <para>By connectivity—Extends the network diagram one network element level based on network connectivity. This is the default.</para>
-		/// <para>By traversability—Extends the network diagram one network element level based on network traversability.</para>
-		/// <para>By attachment—Extends the network diagram one network element level based on structural attachment associations.</para>
-		/// <para>By containment—Extends the network diagram one network element level based on containment associations.</para>
+		/// <para>指定扩展逻辑示意图的方法。</para>
+		/// <para>按连通性—基于网络连通性将网络逻辑示意图扩展一个网络元素级别。这是默认设置。</para>
+		/// <para>按可遍历性—基于网络可遍历性将网络逻辑示意图扩展一个网络元素级别。</para>
+		/// <para>按附件—基于结构附件关联将网络逻辑示意图扩展一个网络元素级别。</para>
+		/// <para>按包含—基于包含关联将网络逻辑示意图扩展一个网络元素级别。</para>
 		/// <para><see cref="ExtensionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -111,14 +112,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IgnoreTraversabilityEnum 
 		{
 			/// <summary>
-			/// <para>IGNORE_TRAVERSABILITY—The traversability of the network is ignored. This is the default.</para>
+			/// <para>IGNORE_TRAVERSABILITY—将忽略网络的可遍历性。这是默认设置。</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("IGNORE_TRAVERSABILITY")]
 			IGNORE_TRAVERSABILITY,
 
 			/// <summary>
-			/// <para>HONOR_TRAVERSABILITY —The traversability of the network is honored.</para>
+			/// <para>HONOR_TRAVERSABILITY —支持网络的可遍历性。</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("HONOR_TRAVERSABILITY")]
@@ -132,31 +133,31 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum ExtensionTypeEnum 
 		{
 			/// <summary>
-			/// <para>By connectivity—Extends the network diagram one network element level based on network connectivity. This is the default.</para>
+			/// <para>按连通性—基于网络连通性将网络逻辑示意图扩展一个网络元素级别。这是默认设置。</para>
 			/// </summary>
 			[GPValue("BY_CONNECTIVITY")]
-			[Description("By connectivity")]
+			[Description("按连通性")]
 			By_connectivity,
 
 			/// <summary>
-			/// <para>By traversability—Extends the network diagram one network element level based on network traversability.</para>
+			/// <para>按可遍历性—基于网络可遍历性将网络逻辑示意图扩展一个网络元素级别。</para>
 			/// </summary>
 			[GPValue("BY_TRAVERSABILITY")]
-			[Description("By traversability")]
+			[Description("按可遍历性")]
 			By_traversability,
 
 			/// <summary>
-			/// <para>By attachment—Extends the network diagram one network element level based on structural attachment associations.</para>
+			/// <para>按附件—基于结构附件关联将网络逻辑示意图扩展一个网络元素级别。</para>
 			/// </summary>
 			[GPValue("BY_ATTACHMENT")]
-			[Description("By attachment")]
+			[Description("按附件")]
 			By_attachment,
 
 			/// <summary>
-			/// <para>By containment—Extends the network diagram one network element level based on containment associations.</para>
+			/// <para>按包含—基于包含关联将网络逻辑示意图扩展一个网络元素级别。</para>
 			/// </summary>
 			[GPValue("BY_CONTAINMENT")]
-			[Description("By containment")]
+			[Description("按包含")]
 			By_containment,
 
 		}

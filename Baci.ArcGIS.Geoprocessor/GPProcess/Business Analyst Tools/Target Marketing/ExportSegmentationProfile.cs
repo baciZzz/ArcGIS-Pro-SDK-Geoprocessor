@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Export Segmentation Profile</para>
+	/// <para>Export Segmentation Profile</para>
 	/// <para>Exports a segmentation profile to a table.</para>
 	/// </summary>
 	public class ExportSegmentationProfile : AbstractGPProcess

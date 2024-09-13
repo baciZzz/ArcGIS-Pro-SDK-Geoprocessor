@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Field Conflict Filter</para>
-	/// <para>Adds a field conflict filter for a given field in a geodatabase table or feature class.</para>
+	/// <para>添加字段冲突过滤器</para>
+	/// <para>为地理数据库表或要素类中的给定字段添加字段冲突过滤器。</para>
 	/// </summary>
 	public class AddFieldConflictFilter : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="Table">
 		/// <para>Input Table</para>
-		/// <para>Table or feature class containing the field or fields to which conflict filters will be applied.</para>
+		/// <para>表或要素类，其中包含将应用冲突过滤器的字段。</para>
 		/// </param>
 		/// <param name="Fields">
 		/// <para>Field Name</para>
-		/// <para>Field or list of fields that will have conflict filters applied.</para>
+		/// <para>应用冲突过滤器的字段或字段列表。</para>
 		/// </param>
 		public AddFieldConflictFilter(object Table, object Fields)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Field Conflict Filter</para>
+		/// <para>Tool Display Name : 添加字段冲突过滤器</para>
 		/// </summary>
-		public override string DisplayName() => "Add Field Conflict Filter";
+		public override string DisplayName() => "添加字段冲突过滤器";
 
 		/// <summary>
 		/// <para>Tool Name : AddFieldConflictFilter</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>Table or feature class containing the field or fields to which conflict filters will be applied.</para>
+		/// <para>表或要素类，其中包含将应用冲突过滤器的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Name</para>
-		/// <para>Field or list of fields that will have conflict filters applied.</para>
+		/// <para>应用冲突过滤器的字段或字段列表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]

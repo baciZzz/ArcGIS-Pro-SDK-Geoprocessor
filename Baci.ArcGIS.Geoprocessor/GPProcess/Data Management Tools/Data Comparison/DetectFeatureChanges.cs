@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Detect Feature Changes</para>
-	/// <para>Finds where the update line features spatially match the base line features and detects spatial changes, attribute changes, or both, as well as no change. It then creates an output feature class containing matched update features with information about their changes, unmatched update features, and unmatched base features.</para>
+	/// <para>检测要素更改</para>
+	/// <para>可以查找更新线要素在空间上与基线要素匹配的位置，检测空间更改、属性更改或同时检测这两种更改以及无更改的情况。 然后，它将创建一个输出要素类，其中包含匹配的更新要素以及有关其更改、不匹配的更新要素和不匹配的基本要素的信息。</para>
 	/// </summary>
 	public class DetectFeatureChanges : AbstractGPProcess
 	{
@@ -20,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="UpdateFeatures">
 		/// <para>Update Features</para>
-		/// <para>The line features that will be compared to the base features.</para>
+		/// <para>将线要素与基础要素进行比较。</para>
 		/// </param>
 		/// <param name="BaseFeatures">
 		/// <para>Base Features</para>
-		/// <para>The line features that will be compared to the update features for change detection.</para>
+		/// <para>将线要素与更新要素进行比较以检测更改。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output line feature class containing the change information. The output contains all participating update features (matched and unmatched) and any unmatched base features.</para>
+		/// <para>包含更改信息的输出线要素类。 输出包含所有参与的更新要素（匹配的和不匹配的）以及任何不匹配的基础要素。</para>
 		/// </param>
 		/// <param name="SearchDistance">
 		/// <para>Search Distance</para>
-		/// <para>The distance used to search for match candidates. A distance must be specified and it must be greater than zero. You can choose a preferred unit; the default is the feature unit.</para>
+		/// <para>用于搜索匹配候选项的距离。必须指定一个距离，且此距离必须大于零。可以选择首选单位；默认为要素单位。</para>
 		/// </param>
 		public DetectFeatureChanges(object UpdateFeatures, object BaseFeatures, object OutFeatureClass, object SearchDistance)
 		{
@@ -43,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Detect Feature Changes</para>
+		/// <para>Tool Display Name : 检测要素更改</para>
 		/// </summary>
-		public override string DisplayName() => "Detect Feature Changes";
+		public override string DisplayName() => "检测要素更改";
 
 		/// <summary>
 		/// <para>Tool Name : DetectFeatureChanges</para>
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Update Features</para>
-		/// <para>The line features that will be compared to the base features.</para>
+		/// <para>将线要素与基础要素进行比较。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Base Features</para>
-		/// <para>The line features that will be compared to the update features for change detection.</para>
+		/// <para>将线要素与更新要素进行比较以检测更改。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output line feature class containing the change information. The output contains all participating update features (matched and unmatched) and any unmatched base features.</para>
+		/// <para>包含更改信息的输出线要素类。 输出包含所有参与的更新要素（匹配的和不匹配的）以及任何不匹配的基础要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Search Distance</para>
-		/// <para>The distance used to search for match candidates. A distance must be specified and it must be greater than zero. You can choose a preferred unit; the default is the feature unit.</para>
+		/// <para>用于搜索匹配候选项的距离。必须指定一个距离，且此距离必须大于零。可以选择首选单位；默认为要素单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -117,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Match Fields</para>
-		/// <para>The match fields from the update and base features. If specified, each pair of fields are compared for match candidates to help determine the right match.</para>
+		/// <para>来自更新要素和基础要素的匹配字段。 如果指定，将比较匹配候选项的每对字段，以帮助确定正确的匹配。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -128,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Match Table</para>
-		/// <para>The output table containing complete feature matching information.</para>
+		/// <para>包含完整的要素匹配信息的输出表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -136,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Change Tolerance</para>
-		/// <para>The distance used to determine if there is a spatial change. All matched update features and base features are compared to this tolerance. If any portions of the update or the base features fall outside the zone around the matched feature, it is considered a spatial change. The value must be greater than the XY Tolerance of the input data so this process can be performed and the output will include the LEN_PCT and LEN_ABS fields. The default is 0, meaning this process is not performed. Any value between 0 and the data's XY Tolerance (inclusively) will make the process irrelevant and will be replaced by 0. You can choose a unit; the default is the feature unit.</para>
+		/// <para>用于确定是否存在空间更改的距离。 将所有匹配的更新要素和基础要素与此容差进行比较。 如果更新要素或基础要素有任意部分落在匹配的要素区域之外，则将其视为空间更改。 要执行此过程，该值必须大于输入数据的 XY 容差，并且输出将包含 LEN_PCT 和 LEN_ABS 字段。 默认值为 0，表示不执行此过程。 0 到数据 XY 容差（包括 XY 容差）之间的任何值都将使过程无关紧要，并将被替换为 0。 可以选择单位；默认为要素单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -144,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compare Fields</para>
-		/// <para>The fields that will determine if there is an attribute change between the matched update and base features.</para>
+		/// <para>将用于确定匹配更新要素与基础要素之间是否存在属性更改的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -155,9 +156,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compare line direction</para>
-		/// <para>Specifies whether line directions will be compared for matched features.</para>
-		/// <para>Unchecked—Line directions will not be compared for matched features. This is the default.</para>
-		/// <para>Checked—Line directions will be compared for matched features.</para>
+		/// <para>指定是否比较匹配要素的线方向。</para>
+		/// <para>未选中 - 不比较匹配要素的线方向。 这是默认设置。</para>
+		/// <para>选中 - 比较匹配要素的线方向。</para>
 		/// <para><see cref="CompareLineDirectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -182,14 +183,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CompareLineDirectionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Line directions will be compared for matched features.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMPARE_DIRECTION")]
 			COMPARE_DIRECTION,
 
 			/// <summary>
-			/// <para>Unchecked—Line directions will not be compared for matched features. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_COMPARE_DIRECTION")]

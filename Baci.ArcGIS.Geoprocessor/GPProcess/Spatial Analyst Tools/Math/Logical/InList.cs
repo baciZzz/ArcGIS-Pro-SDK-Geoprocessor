@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>InList</para>
-	/// <para>Determines which values from the first input are contained in a set of other inputs, on a cell-by-cell basis.</para>
+	/// <para>InList</para>
+	/// <para>逐个像元来确定第一个输入栅格中的哪些值同样包含在该组的其他输入栅格中。</para>
 	/// </summary>
 	public class InList : AbstractGPProcess
 	{
@@ -20,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant">
 		/// <para>Input raster or constant value</para>
-		/// <para>The input that defines the value that will be looked for in a list of rasters on a cell-by-cell basis.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>定义将在栅格列表中逐个像元地查找的值的输入。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="InRasterOrConstants">
 		/// <para>Input raster or constant values</para>
-		/// <para>A list of input rasters that the first input will be evaluated against. For each location, if the cell value from the first input exists in any of the other rasters, that value will be assigned to the output raster. If the value does not exist in any of the other rasters, the output value at that location will be NoData.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>将对第一个输入进行评估的输入栅格的列表。对于每个位置，只要来自第一个输入的像元值存在于任何其他栅格中，则将该值分配给输出栅格。如果该值在任何其他栅格中都不存在，则该位置的输出值将为 NoData。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
+		/// <para>输出栅格。</para>
 		/// </param>
 		public InList(object InRasterOrConstant, object InRasterOrConstants, object OutRaster)
 		{
@@ -76,8 +77,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value</para>
-		/// <para>The input that defines the value that will be looked for in a list of rasters on a cell-by-cell basis.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>定义将在栅格列表中逐个像元地查找的值的输入。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -89,8 +90,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant values</para>
-		/// <para>A list of input rasters that the first input will be evaluated against. For each location, if the cell value from the first input exists in any of the other rasters, that value will be assigned to the output raster. If the value does not exist in any of the other rasters, the output value at that location will be NoData.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>将对第一个输入进行评估的输入栅格的列表。对于每个位置，只要来自第一个输入的像元值存在于任何其他栅格中，则将该值分配给输出栅格。如果该值在任何其他栅格中都不存在，则该位置的输出值将为 NoData。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
+		/// <para>输出栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -110,9 +111,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Process as multiband</para>
-		/// <para>Specifies how the input multiband raster bands will be processed.</para>
-		/// <para>Unchecked—Each band from a multiband raster input will be processed separately as a single band raster. This is the default.</para>
-		/// <para>Checked—Each multiband raster input will be processed as a multiband raster. The operation will be performed for each band from one input using the corresponding band number from the other inputs.</para>
+		/// <para>指定如何处理输入多波段栅格波段。</para>
+		/// <para>未选中 - 来自多波段栅格输入的每个波段将被单独处理为单波段栅格。 这是默认设置。</para>
+		/// <para>选中 - 每个多波段栅格输入都将作为多波段栅格进行处理。 将使用其他输入的相应波段数对一个输入的每个波段执行操作。</para>
 		/// <para><see cref="ProcessAsMultibandEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -137,14 +138,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ProcessAsMultibandEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Each band from a multiband raster input will be processed separately as a single band raster. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SINGLE_BAND")]
 			SINGLE_BAND,
 
 			/// <summary>
-			/// <para>Checked—Each multiband raster input will be processed as a multiband raster. The operation will be performed for each band from one input using the corresponding band number from the other inputs.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MULTI_BAND")]

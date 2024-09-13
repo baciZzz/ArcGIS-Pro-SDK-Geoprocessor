@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Find Meeting Locations</para>
-	/// <para>Identifies  locations where multiple unique movement tracks have dwelled for a defined time period.</para>
+	/// <para>查找汇合位置</para>
+	/// <para>用于标识多个唯一运动轨迹在定义时间内停留的位置。</para>
 	/// </summary>
 	public class FindMeetingLocations : AbstractGPProcess
 	{
@@ -20,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input movement track points that will be analyzed for possible meeting locations. This layer must be time enabled.</para>
+		/// <para>输入运动轨迹点，用于分析是否为可能的汇合地点。 该图层必须已启用时间。</para>
 		/// </param>
 		/// <param name="OutAreaFeatures">
 		/// <para>Output Area Features</para>
-		/// <para>The output area features that represent the extent of the identified meeting location.</para>
+		/// <para>输出面要素，用于表示标识的汇合地点范围。</para>
 		/// </param>
 		/// <param name="OutPointFeatures">
 		/// <para>Output Point Features</para>
-		/// <para>The output point features that represent the centroid of the area of the individual meeting. Multiple meetings can occur at a given meeting location. This feature class contains all of the details regarding the individual meetings including participants, duration, and start and end times.</para>
+		/// <para>表示各个汇合面的质心的输出点要素。 在给定汇合位置可以发生多次汇合。 要素类包含有关各个汇合的所有详细信息，包括参与者、持续时间以及开始和结束时间。</para>
 		/// </param>
 		/// <param name="UniqueNameField">
 		/// <para>In Features Name Field</para>
-		/// <para>The field containing the unique identifiers for movement track points.</para>
+		/// <para>此字段包含运动轨迹点的唯一标识符。</para>
 		/// </param>
 		public FindMeetingLocations(object InFeatures, object OutAreaFeatures, object OutPointFeatures, object UniqueNameField)
 		{
@@ -43,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Find Meeting Locations</para>
+		/// <para>Tool Display Name : 查找汇合位置</para>
 		/// </summary>
-		public override string DisplayName() => "Find Meeting Locations";
+		public override string DisplayName() => "查找汇合位置";
 
 		/// <summary>
 		/// <para>Tool Name : FindMeetingLocations</para>
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input movement track points that will be analyzed for possible meeting locations. This layer must be time enabled.</para>
+		/// <para>输入运动轨迹点，用于分析是否为可能的汇合地点。 该图层必须已启用时间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Area Features</para>
-		/// <para>The output area features that represent the extent of the identified meeting location.</para>
+		/// <para>输出面要素，用于表示标识的汇合地点范围。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -98,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Point Features</para>
-		/// <para>The output point features that represent the centroid of the area of the individual meeting. Multiple meetings can occur at a given meeting location. This feature class contains all of the details regarding the individual meetings including participants, duration, and start and end times.</para>
+		/// <para>表示各个汇合面的质心的输出点要素。 在给定汇合位置可以发生多次汇合。 要素类包含有关各个汇合的所有详细信息，包括参与者、持续时间以及开始和结束时间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -106,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>In Features Name Field</para>
-		/// <para>The field containing the unique identifiers for movement track points.</para>
+		/// <para>此字段包含运动轨迹点的唯一标识符。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Search Distance</para>
-		/// <para>The maximum distance a movement track can loiter before it is no longer considered part of a meeting. The default is 100 meters.</para>
+		/// <para>运动轨迹在不再被视为汇合的一部分之前可以游走的最大距离。 默认值是 100 米。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -124,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Minimum Loiter Time</para>
-		/// <para>The minimum amount of time a movement track point can loiter in an area before it is considered to be dwelling. This helps identify possible meeting locations where multiple unique movement tracks are dwelling in the same time and space. The default is 10 minutes.</para>
+		/// <para>运动轨迹点在被视为停留之前可以在区域中游走的最短时间。 这有助于确定多个唯一运动轨迹在同一时间和空间内停留的可能汇合地点。 默认值为 10 分钟。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]

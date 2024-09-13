@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Optimal Path As Line</para>
-	/// <para>Calculates the optimal path from a source to a destination as a line.</para>
+	/// <para>最佳路径为线</para>
+	/// <para>将从源到目的地的最佳路径计算为线。</para>
 	/// </summary>
 	public class OptimalPathAsLine : AbstractGPProcess
 	{
@@ -20,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InDestinationData">
 		/// <para>Input raster or feature destination data</para>
-		/// <para>An integer raster or feature dataset that identifies locations from which the optimal path is determined to the least costly source.</para>
-		/// <para>If the input is a raster, it must consist of cells that have valid values for the destinations, and the remaining cells must be assigned NoData. Zero is a valid value.</para>
+		/// <para>用于标识确定通向最小成本源的最佳路径时基于的位置的整型栅格或要素数据集。</para>
+		/// <para>如果输入是栅格，则它必须由具有有效目标值的像元组成，并且必须为其余的像元指定 NoData。零是有效值。</para>
 		/// </param>
 		/// <param name="InDistanceAccumulationRaster">
 		/// <para>Input distance accumulation raster</para>
-		/// <para>The distance accumulation raster is used to determine the optimal path from the sources to the destinations.</para>
-		/// <para>The distance accumulation raster is usually created with the Distance Accumulation or Distance Allocation tools. Each cell in the distance accumulation raster represents the minimum accumulative cost distance over a surface from each cell to a set of source cells.</para>
+		/// <para>距离累积栅格用于确定从源到目的地的最佳路径。</para>
+		/// <para>距离累积栅格通常使用距离累积或距离分配工具进行创建。距离累积栅格中的每个像元表示表面上从每个像元到源像元集的最小累积成本距离。</para>
 		/// </param>
 		/// <param name="InBackDirectionRaster">
 		/// <para>Input back direction or flow direction raster</para>
-		/// <para>The back direction raster contains calculated directions in degrees. The direction identifies the next cell along the optimal path back to the least accumulative cost source while avoiding barriers.</para>
-		/// <para>The range of values is from 0 degrees to 360 degrees, with 0 reserved for the source cells. Due east (right) is 90, and the values increase clockwise (180 is south, 270 is west, and 360 is north).</para>
+		/// <para>反向栅格包含以度为单位的计算方向。该方向用于标识沿最佳路径返回最小累积成本源同时避开障碍的下一个像元。</para>
+		/// <para>值的范围是 0 度到 360 度，并为源像元保留 0 度。正东（右侧）是 90 度，且值以顺时针方向增加（180 是南方、270 是西方、360 是北方）。</para>
 		/// </param>
 		/// <param name="OutPolylineFeatures">
 		/// <para>Output optimal path as feature</para>
-		/// <para>The output feature class that is the optimal path or paths.</para>
+		/// <para>作为最佳路径的输出要素类。</para>
 		/// </param>
 		public OptimalPathAsLine(object InDestinationData, object InDistanceAccumulationRaster, object InBackDirectionRaster, object OutPolylineFeatures)
 		{
@@ -46,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Optimal Path As Line</para>
+		/// <para>Tool Display Name : 最佳路径为线</para>
 		/// </summary>
-		public override string DisplayName() => "Optimal Path As Line";
+		public override string DisplayName() => "最佳路径为线";
 
 		/// <summary>
 		/// <para>Tool Name : OptimalPathAsLine</para>
@@ -82,8 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature destination data</para>
-		/// <para>An integer raster or feature dataset that identifies locations from which the optimal path is determined to the least costly source.</para>
-		/// <para>If the input is a raster, it must consist of cells that have valid values for the destinations, and the remaining cells must be assigned NoData. Zero is a valid value.</para>
+		/// <para>用于标识确定通向最小成本源的最佳路径时基于的位置的整型栅格或要素数据集。</para>
+		/// <para>如果输入是栅格，则它必须由具有有效目标值的像元组成，并且必须为其余的像元指定 NoData。零是有效值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -95,8 +96,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input distance accumulation raster</para>
-		/// <para>The distance accumulation raster is used to determine the optimal path from the sources to the destinations.</para>
-		/// <para>The distance accumulation raster is usually created with the Distance Accumulation or Distance Allocation tools. Each cell in the distance accumulation raster represents the minimum accumulative cost distance over a surface from each cell to a set of source cells.</para>
+		/// <para>距离累积栅格用于确定从源到目的地的最佳路径。</para>
+		/// <para>距离累积栅格通常使用距离累积或距离分配工具进行创建。距离累积栅格中的每个像元表示表面上从每个像元到源像元集的最小累积成本距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -108,8 +109,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input back direction or flow direction raster</para>
-		/// <para>The back direction raster contains calculated directions in degrees. The direction identifies the next cell along the optimal path back to the least accumulative cost source while avoiding barriers.</para>
-		/// <para>The range of values is from 0 degrees to 360 degrees, with 0 reserved for the source cells. Due east (right) is 90, and the values increase clockwise (180 is south, 270 is west, and 360 is north).</para>
+		/// <para>反向栅格包含以度为单位的计算方向。该方向用于标识沿最佳路径返回最小累积成本源同时避开障碍的下一个像元。</para>
+		/// <para>值的范围是 0 度到 360 度，并为源像元保留 0 度。正东（右侧）是 90 度，且值以顺时针方向增加（180 是南方、270 是西方、360 是北方）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -121,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output optimal path as feature</para>
-		/// <para>The output feature class that is the optimal path or paths.</para>
+		/// <para>作为最佳路径的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -129,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Destination field</para>
-		/// <para>An integer field to be used to obtain values for the destination locations.</para>
+		/// <para>要用于获得目标位置的值的整型字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -139,10 +140,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Path type</para>
-		/// <para>Specifies a keyword defining the manner in which the values and zones on the input destination data will be interpreted in the cost path calculations.</para>
-		/// <para>Each zone—For each zone on the input destination data, a least-cost path is determined and saved on the output raster. With this option, the least-cost path for each zone begins at the cell with the lowest cost distance weighting in the zone.</para>
-		/// <para>Best single—For all cells on the input destination data, the least-cost path is derived from the cell with the minimum of the least-cost paths to source cells.</para>
-		/// <para>Each cell—For each cell with valid values on the input destination data, a least-cost path is determined and saved on the output raster. With this option, each cell of the input destination data is treated separately, and a least-cost path is determined for each cell.</para>
+		/// <para>用于指定对输入目标数据上的值和区域在成本路径计算中的解释方式进行定义的关键字。</para>
+		/// <para>每个区域—对于输入目标数据上的每个区域，系统会确定最小成本路径并将该路径保存在输出栅格上。利用该选项，每个区域的最小成本路径可起始于区域内成本距离权重最小的像元。</para>
+		/// <para>最佳单一—对于输入目标数据上的所有像元，最小成本路径派生自距源像元具有最小成本路径的最小值的像元。</para>
+		/// <para>每个像元—对于输入目标数据上每一个具有有效值的像元，系统会确定最小成本路径并将该路径保存在输出栅格上。利用该选项，系统会分别处理输入目标数据中的每个像元，并确定每个像元的最小成本路径。</para>
 		/// <para><see cref="PathTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -152,9 +153,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Create network paths</para>
-		/// <para>Specifies whether complete, and possibly overlapping, paths from the destinations to the sources are calculated or if nonoverlapping network paths are created.</para>
-		/// <para>Unchecked—Complete paths from the destinations to the sources are calculated, which can be overlapping. This is the default.</para>
-		/// <para>Checked—Nonoverlapping network paths are calculated.</para>
+		/// <para>指定是计算从目的地到源的完整路径（可能重叠），还是创建不重叠的网络路径。</para>
+		/// <para>未选中 - 计算从目的地到源的完整路径，这些路径可以重叠。 这是默认设置。</para>
+		/// <para>选中 - 计算不重叠的网络路径。</para>
 		/// <para><see cref="CreateNetworkPathsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -179,24 +180,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum PathTypeEnum 
 		{
 			/// <summary>
-			/// <para>Best single—For all cells on the input destination data, the least-cost path is derived from the cell with the minimum of the least-cost paths to source cells.</para>
+			/// <para>最佳单一—对于输入目标数据上的所有像元，最小成本路径派生自距源像元具有最小成本路径的最小值的像元。</para>
 			/// </summary>
 			[GPValue("BEST_SINGLE")]
-			[Description("Best single")]
+			[Description("最佳单一")]
 			Best_single,
 
 			/// <summary>
-			/// <para>Each cell—For each cell with valid values on the input destination data, a least-cost path is determined and saved on the output raster. With this option, each cell of the input destination data is treated separately, and a least-cost path is determined for each cell.</para>
+			/// <para>每个像元—对于输入目标数据上每一个具有有效值的像元，系统会确定最小成本路径并将该路径保存在输出栅格上。利用该选项，系统会分别处理输入目标数据中的每个像元，并确定每个像元的最小成本路径。</para>
 			/// </summary>
 			[GPValue("EACH_CELL")]
-			[Description("Each cell")]
+			[Description("每个像元")]
 			Each_cell,
 
 			/// <summary>
-			/// <para>Each zone—For each zone on the input destination data, a least-cost path is determined and saved on the output raster. With this option, the least-cost path for each zone begins at the cell with the lowest cost distance weighting in the zone.</para>
+			/// <para>每个区域—对于输入目标数据上的每个区域，系统会确定最小成本路径并将该路径保存在输出栅格上。利用该选项，每个区域的最小成本路径可起始于区域内成本距离权重最小的像元。</para>
 			/// </summary>
 			[GPValue("EACH_ZONE")]
-			[Description("Each zone")]
+			[Description("每个区域")]
 			Each_zone,
 
 		}
@@ -207,14 +208,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum CreateNetworkPathsEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Complete paths from the destinations to the sources are calculated, which can be overlapping. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DESTINATIONS_TO_SOURCES")]
 			DESTINATIONS_TO_SOURCES,
 
 			/// <summary>
-			/// <para>Checked—Nonoverlapping network paths are calculated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("NETWORK_PATHS")]

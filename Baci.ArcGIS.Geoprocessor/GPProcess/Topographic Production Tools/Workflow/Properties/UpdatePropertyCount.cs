@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Update Property Count</para>
+	/// <para>Update Property Count</para>
 	/// <para>Increases the value in an extended property by the update value each time the tool is executed so that metrics are recorded.</para>
 	/// </summary>
 	public class UpdatePropertyCount : AbstractGPProcess

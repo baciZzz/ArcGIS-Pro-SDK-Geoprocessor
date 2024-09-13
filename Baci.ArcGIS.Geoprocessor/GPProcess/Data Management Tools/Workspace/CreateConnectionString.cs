@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Connection String</para>
+	/// <para>Create Connection String</para>
 	/// <para>Create a connection string</para>
 	/// </summary>
 	[Obsolete()]

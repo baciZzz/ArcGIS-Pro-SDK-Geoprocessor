@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Colormap</para>
-	/// <para>Adds a new color map or replaces an existing color map on a raster dataset.</para>
+	/// <para>添加色彩映射表</para>
+	/// <para>在栅格数据集上添加新色彩映射表或替换现有色彩映射表。</para>
 	/// </summary>
 	public class AddColormap : AbstractGPProcess
 	{
@@ -20,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset to add or replace a color map.</para>
+		/// <para>要添加或替换色彩映射表的栅格数据集。</para>
 		/// </param>
 		public AddColormap(object InRaster)
 		{
@@ -28,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Colormap</para>
+		/// <para>Tool Display Name : 添加色彩映射表</para>
 		/// </summary>
-		public override string DisplayName() => "Add Colormap";
+		public override string DisplayName() => "添加色彩映射表";
 
 		/// <summary>
 		/// <para>Tool Name : AddColormap</para>
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset to add or replace a color map.</para>
+		/// <para>要添加或替换色彩映射表的栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterLayer()]
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Template Raster</para>
-		/// <para>A raster dataset that has a color map that you want to apply to the input raster dataset.</para>
+		/// <para>有色彩映射表且想要应用于输入栅格数据集的栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRasterLayer()]
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input .clr or .act File</para>
-		/// <para>Specify a .clr or .act file to use as the color map.</para>
+		/// <para>指定 .clr 或 .act 文件用作色彩映射表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]

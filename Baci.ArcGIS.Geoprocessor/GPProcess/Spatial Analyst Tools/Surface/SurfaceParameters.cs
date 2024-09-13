@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Surface Parameters</para>
-	/// <para>Determines parameters of a raster surface such as aspect, slope and curvatures.</para>
+	/// <para>表面参数</para>
+	/// <para>确定栅格表面的参数，例如坡向、坡度和曲率。</para>
 	/// </summary>
 	public class SurfaceParameters : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input surface raster</para>
-		/// <para>The input surface raster.</para>
+		/// <para>输入表面栅格。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
+		/// <para>输出栅格。</para>
 		/// </param>
 		public SurfaceParameters(object InRaster, object OutRaster)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Surface Parameters</para>
+		/// <para>Tool Display Name : 表面参数</para>
 		/// </summary>
-		public override string DisplayName() => "Surface Parameters";
+		public override string DisplayName() => "表面参数";
 
 		/// <summary>
 		/// <para>Tool Name : SurfaceParameters</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input surface raster</para>
-		/// <para>The input surface raster.</para>
+		/// <para>输入表面栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -81,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
+		/// <para>输出栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -89,12 +90,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Parameter type</para>
-		/// <para>Determines the output surface parameter type to compute.</para>
-		/// <para>Slope—The rate of change in elevation. This is the default.</para>
-		/// <para>Aspect—The downslope direction of the maximum rate of change for each cell.</para>
-		/// <para>Mean curvature—Measures the overall curvature of the surface. It is computed as the average of the minimum and maximum curvature. This curvature describes the intrinsic convexity or concavity of the surface, independent of direction or gravity influence.</para>
-		/// <para>Tangential (normal contour) curvature—Measures the geometric normal curvature perpendicular to the slope line, tangent to the contour line. This curvature is typically applied to characterize the convergence or divergence of flow across the surface.</para>
-		/// <para>Profile (normal slope line) curvature—Measures the geometric normal curvature along the slope line. This curvature is typically applied to characterize the acceleration and deceleration of flow down the surface.</para>
+		/// <para>确定要计算的输出表面参数类型。</para>
+		/// <para>坡度—高程变化率。 这是默认设置。</para>
+		/// <para>坡向—每个像元的最大变化率的下坡方向。</para>
+		/// <para>平均曲率—测量表面的总曲率。 计算最小曲率和最大曲率的平均值即可获得平均曲率。 此曲率可描述表面的固有凸度或凹度，与方向或重力影响无关。</para>
+		/// <para>切向（标准等高线）曲率—在垂直于坡度线且与等值线相切的位置处测量几何法曲率。 通常应用此曲率来表征流经某表面的流的汇聚和分散。</para>
+		/// <para>剖面（法向坡度线）曲率—沿坡度线测量几何法曲率。 通常应用此曲率来表征流经某表面的流的加速和减速。</para>
 		/// <para><see cref="ParameterTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -104,9 +105,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Local surface type</para>
-		/// <para>Determines the type of surface function fitted around the target cell.</para>
-		/// <para>Quadratic—Fits a quadratic surface function to the neighborhood cells. This is the default.</para>
-		/// <para>Biquadratic—Fits a biquadratic surface function to the neighborhood cells.</para>
+		/// <para>确定在目标像元周围拟合的表面函数的类型。</para>
+		/// <para>二次—将二次表面函数拟合到邻域像元。 这是默认设置。</para>
+		/// <para>双二次—将双二次表面函数拟合到邻域单元。</para>
 		/// <para><see cref="LocalSurfaceTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -116,8 +117,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Neighborhood distance</para>
-		/// <para>The output is calculated over this distance from the target cell center. It determines the neighborhood size.</para>
-		/// <para>The default value is the input raster cell size, resulting in a 3 x 3 neighborhood.</para>
+		/// <para>根据与目标像元中心之间的这一距离计算输出。 邻域距离可确定邻域大小。</para>
+		/// <para>默认值为输入栅格像元大小，可生成 3 x 3 邻域。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -125,9 +126,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Use adaptive neighborhood</para>
-		/// <para>Allow neighborhood distance to vary with landscape changes. The maximum distance is determined by the neighborhood distance. The minimum distance is the input raster cell size.</para>
-		/// <para>Unchecked—Use a single (fixed) neighborhood distance at all locations. This is the default.</para>
-		/// <para>Checked—Use an adaptive neighborhood distance at all locations.</para>
+		/// <para>允许邻域距离随地表变化而变化。 最大距离由邻域距离确定。 最小距离为输入栅格像元大小。</para>
+		/// <para>未选中 - 在所有位置使用单一（固定）邻域距离。 这是默认设置。</para>
+		/// <para>选中 - 在所有位置使用自适应邻域距离。</para>
 		/// <para><see cref="UseAdaptiveNeighborhoodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -137,18 +138,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Z unit</para>
-		/// <para>The linear unit of vertical z-values.</para>
-		/// <para>It is defined by a vertical coordinate system if it exists. If a vertical coordinate system does not exist, the z-unit should be defined from the unit list to ensure correct geodesic computation. The default is meter.</para>
-		/// <para>Inch—The linear unit will be inches.</para>
-		/// <para>Foot—The linear unit will be feet.</para>
-		/// <para>Yard—The linear unit will be yards.</para>
-		/// <para>Mile US—The linear unit will be miles.</para>
-		/// <para>Nautical mile—The linear unit will be nautical miles.</para>
-		/// <para>Millimeter—The linear unit will be millimeters.</para>
-		/// <para>Centimeter—The linear unit will be centimeters.</para>
-		/// <para>Meter—The linear unit will be meters.</para>
-		/// <para>Kilometer—The linear unit will be kilometers.</para>
-		/// <para>Decimeter—The linear unit will be decimeters.</para>
+		/// <para>垂直 z 值的线性单位。</para>
+		/// <para>由垂直坐标系（如果存在）定义。 如果垂直坐标系不存在，则应根据单位列表来定义 z 单位，以确保测地线计算正确。 默认单位为米。</para>
+		/// <para>英寸—线性单位将为英寸。</para>
+		/// <para>英尺—线性单位将为英尺。</para>
+		/// <para>码—线性单位将为码。</para>
+		/// <para>英里(美制)—线性单位将为英里。</para>
+		/// <para>海里—线性单位将为海里。</para>
+		/// <para>毫米—线性单位将为毫米。</para>
+		/// <para>厘米—线性单位将为厘米。</para>
+		/// <para>米—线性单位将为米。</para>
+		/// <para>千米—线性单位将为公里。</para>
+		/// <para>分米—线性单位将为分米。</para>
 		/// <para><see cref="ZUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -158,9 +159,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output slope measurement</para>
-		/// <para>When Parameter type is Slope, determines the measurement units (degrees or percentages) of the output slope raster.</para>
-		/// <para>Degree—The inclination of slope will be calculated in degrees.</para>
-		/// <para>Percent rise—The inclination of slope will be calculated as percent rise, also referred to as the percent slope.</para>
+		/// <para>当参数类型为坡度时，确定输出坡度栅格的测量单位（度或百分比）。</para>
+		/// <para>度—坡度倾角将以度为单位进行计算。</para>
+		/// <para>增量百分比—坡度倾角将以增量百分比进行计算，也称为百分比坡度。</para>
 		/// <para><see cref="OutputSlopeMeasurementEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -170,9 +171,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Project geodesic azimuths</para>
-		/// <para>Specifies whether geodesic azimuths will be projected to correct the angle distortion caused by the output spatial reference.</para>
-		/// <para>Unchecked—Geodesic azimuths will not be projected. This is the default.</para>
-		/// <para>Checked—Geodesic azimuths will be projected.</para>
+		/// <para>指定是否将投影测地线方位角以校正由输出空间参考引起的角度失真。</para>
+		/// <para>未选中 - 将不会投影测地线方位角。 这是默认设置。</para>
+		/// <para>选中 - 将投影测地线方位角。</para>
 		/// <para><see cref="ProjectGeodesicAzimuthsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -182,9 +183,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Use equatorial aspect</para>
-		/// <para>Measure aspect from a point on the equator.</para>
-		/// <para>Unchecked—Measure aspect from the North Pole. This is the default.</para>
-		/// <para>Checked—Measure aspect from a point on the equator.</para>
+		/// <para>从赤道上的一点测量坡向。</para>
+		/// <para>未选中 - 从北极测量坡向。 这是默认设置。</para>
+		/// <para>选中 - 从赤道上的一点测量坡向。</para>
 		/// <para><see cref="UseEquatorialAspectEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -209,38 +210,38 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ParameterTypeEnum 
 		{
 			/// <summary>
-			/// <para>Slope—The rate of change in elevation. This is the default.</para>
+			/// <para>坡度—高程变化率。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("SLOPE")]
-			[Description("Slope")]
+			[Description("坡度")]
 			Slope,
 
 			/// <summary>
-			/// <para>Aspect—The downslope direction of the maximum rate of change for each cell.</para>
+			/// <para>坡向—每个像元的最大变化率的下坡方向。</para>
 			/// </summary>
 			[GPValue("ASPECT")]
-			[Description("Aspect")]
+			[Description("坡向")]
 			Aspect,
 
 			/// <summary>
-			/// <para>Mean curvature—Measures the overall curvature of the surface. It is computed as the average of the minimum and maximum curvature. This curvature describes the intrinsic convexity or concavity of the surface, independent of direction or gravity influence.</para>
+			/// <para>平均曲率—测量表面的总曲率。 计算最小曲率和最大曲率的平均值即可获得平均曲率。 此曲率可描述表面的固有凸度或凹度，与方向或重力影响无关。</para>
 			/// </summary>
 			[GPValue("MEAN_CURVATURE")]
-			[Description("Mean curvature")]
+			[Description("平均曲率")]
 			Mean_curvature,
 
 			/// <summary>
-			/// <para>Profile (normal slope line) curvature—Measures the geometric normal curvature along the slope line. This curvature is typically applied to characterize the acceleration and deceleration of flow down the surface.</para>
+			/// <para>剖面（法向坡度线）曲率—沿坡度线测量几何法曲率。 通常应用此曲率来表征流经某表面的流的加速和减速。</para>
 			/// </summary>
 			[GPValue("PROFILE_CURVATURE")]
-			[Description("Profile (normal slope line) curvature")]
+			[Description("剖面（法向坡度线）曲率")]
 			PROFILE_CURVATURE,
 
 			/// <summary>
-			/// <para>Tangential (normal contour) curvature—Measures the geometric normal curvature perpendicular to the slope line, tangent to the contour line. This curvature is typically applied to characterize the convergence or divergence of flow across the surface.</para>
+			/// <para>切向（标准等高线）曲率—在垂直于坡度线且与等值线相切的位置处测量几何法曲率。 通常应用此曲率来表征流经某表面的流的汇聚和分散。</para>
 			/// </summary>
 			[GPValue("TANGENTIAL_CURVATURE")]
-			[Description("Tangential (normal contour) curvature")]
+			[Description("切向（标准等高线）曲率")]
 			TANGENTIAL_CURVATURE,
 
 		}
@@ -251,17 +252,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum LocalSurfaceTypeEnum 
 		{
 			/// <summary>
-			/// <para>Quadratic—Fits a quadratic surface function to the neighborhood cells. This is the default.</para>
+			/// <para>二次—将二次表面函数拟合到邻域像元。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("QUADRATIC")]
-			[Description("Quadratic")]
+			[Description("二次")]
 			Quadratic,
 
 			/// <summary>
-			/// <para>Biquadratic—Fits a biquadratic surface function to the neighborhood cells.</para>
+			/// <para>双二次—将双二次表面函数拟合到邻域单元。</para>
 			/// </summary>
 			[GPValue("BIQUADRATIC")]
-			[Description("Biquadratic")]
+			[Description("双二次")]
 			Biquadratic,
 
 		}
@@ -272,14 +273,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum UseAdaptiveNeighborhoodEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Use a single (fixed) neighborhood distance at all locations. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FIXED_NEIGHBORHOOD")]
 			FIXED_NEIGHBORHOOD,
 
 			/// <summary>
-			/// <para>Checked—Use an adaptive neighborhood distance at all locations.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADAPTIVE_NEIGHBORHOOD")]
@@ -293,73 +294,73 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ZUnitEnum 
 		{
 			/// <summary>
-			/// <para>Inch—The linear unit will be inches.</para>
+			/// <para>英寸—线性单位将为英寸。</para>
 			/// </summary>
 			[GPValue("INCH")]
-			[Description("Inch")]
+			[Description("英寸")]
 			Inch,
 
 			/// <summary>
-			/// <para>Foot—The linear unit will be feet.</para>
+			/// <para>英尺—线性单位将为英尺。</para>
 			/// </summary>
 			[GPValue("FOOT")]
-			[Description("Foot")]
+			[Description("英尺")]
 			Foot,
 
 			/// <summary>
-			/// <para>Yard—The linear unit will be yards.</para>
+			/// <para>码—线性单位将为码。</para>
 			/// </summary>
 			[GPValue("YARD")]
-			[Description("Yard")]
+			[Description("码")]
 			Yard,
 
 			/// <summary>
-			/// <para>Mile US—The linear unit will be miles.</para>
+			/// <para>英里(美制)—线性单位将为英里。</para>
 			/// </summary>
 			[GPValue("MILE_US")]
-			[Description("Mile US")]
+			[Description("英里(美制)")]
 			Mile_US,
 
 			/// <summary>
-			/// <para>Nautical mile—The linear unit will be nautical miles.</para>
+			/// <para>海里—线性单位将为海里。</para>
 			/// </summary>
 			[GPValue("NAUTICAL_MILE")]
-			[Description("Nautical mile")]
+			[Description("海里")]
 			Nautical_mile,
 
 			/// <summary>
-			/// <para>Millimeter—The linear unit will be millimeters.</para>
+			/// <para>毫米—线性单位将为毫米。</para>
 			/// </summary>
 			[GPValue("MILLIMETER")]
-			[Description("Millimeter")]
+			[Description("毫米")]
 			Millimeter,
 
 			/// <summary>
-			/// <para>Centimeter—The linear unit will be centimeters.</para>
+			/// <para>厘米—线性单位将为厘米。</para>
 			/// </summary>
 			[GPValue("CENTIMETER")]
-			[Description("Centimeter")]
+			[Description("厘米")]
 			Centimeter,
 
 			/// <summary>
-			/// <para>Meter—The linear unit will be meters.</para>
+			/// <para>米—线性单位将为米。</para>
 			/// </summary>
 			[GPValue("METER")]
-			[Description("Meter")]
+			[Description("米")]
 			Meter,
 
 			/// <summary>
-			/// <para>Kilometer—The linear unit will be kilometers.</para>
+			/// <para>千米—线性单位将为公里。</para>
 			/// </summary>
 			[GPValue("KILOMETER")]
-			[Description("Kilometer")]
+			[Description("千米")]
 			Kilometer,
 
 			/// <summary>
-			/// <para>Decimeter—The linear unit will be decimeters.</para>
+			/// <para>分米—线性单位将为分米。</para>
 			/// </summary>
 			[GPValue("DECIMETER")]
-			[Description("Decimeter")]
+			[Description("分米")]
 			Decimeter,
 
 		}
@@ -370,17 +371,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum OutputSlopeMeasurementEnum 
 		{
 			/// <summary>
-			/// <para>Degree—The inclination of slope will be calculated in degrees.</para>
+			/// <para>度—坡度倾角将以度为单位进行计算。</para>
 			/// </summary>
 			[GPValue("DEGREE")]
-			[Description("Degree")]
+			[Description("度")]
 			Degree,
 
 			/// <summary>
-			/// <para>Percent rise—The inclination of slope will be calculated as percent rise, also referred to as the percent slope.</para>
+			/// <para>增量百分比—坡度倾角将以增量百分比进行计算，也称为百分比坡度。</para>
 			/// </summary>
 			[GPValue("PERCENT_RISE")]
-			[Description("Percent rise")]
+			[Description("增量百分比")]
 			Percent_rise,
 
 		}
@@ -391,14 +392,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ProjectGeodesicAzimuthsEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Geodesic azimuths will not be projected. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("GEODESIC_AZIMUTHS")]
 			GEODESIC_AZIMUTHS,
 
 			/// <summary>
-			/// <para>Checked—Geodesic azimuths will be projected.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PROJECT_GEODESIC_AZIMUTHS")]
@@ -412,14 +413,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum UseEquatorialAspectEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Measure aspect from the North Pole. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NORTH_POLE_ASPECT")]
 			NORTH_POLE_ASPECT,
 
 			/// <summary>
-			/// <para>Checked—Measure aspect from a point on the equator.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EQUATORIAL_ASPECT")]

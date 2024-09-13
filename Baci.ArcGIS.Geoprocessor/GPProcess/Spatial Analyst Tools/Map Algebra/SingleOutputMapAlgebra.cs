@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Single Output Map Algebra</para>
+	/// <para>Single Output Map Algebra</para>
 	/// <para>Execute a Grid's map algebra statement to produce a raster.</para>
 	/// </summary>
 	[Obsolete()]

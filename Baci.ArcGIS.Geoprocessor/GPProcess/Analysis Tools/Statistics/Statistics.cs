@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Summary Statistics</para>
-	/// <para>Calculates summary statistics for fields in a table.</para>
+	/// <para>汇总统计数据</para>
+	/// <para>为表中字段计算汇总统计数据。</para>
 	/// </summary>
 	public class Statistics : AbstractGPProcess
 	{
@@ -20,29 +21,29 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input table containing the fields that will be used to calculate statistics.</para>
+		/// <para>包含用于计算统计数据的字段的输入表。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>The output table that will store the calculated statistics.</para>
+		/// <para>输出表用于存储计算的统计数据。</para>
 		/// </param>
 		/// <param name="StatisticsFields">
 		/// <para>Statistics Field(s)</para>
-		/// <para>Specifies the numeric field or fields containing the attribute values that will be used to calculate the specified statistic. Multiple statistic and field combinations can be specified. Null values are excluded from all statistical calculations.</para>
-		/// <para>Text attribute fields can be summarized using first and last statistics. Numeric attribute fields can be summarized using any statistic.</para>
-		/// <para>Available statistics types are as follows:</para>
-		/// <para>Sum—The values for the specified field will be added together.</para>
-		/// <para>Mean—The average for the specified field will be calculated.</para>
-		/// <para>Minimum—The smallest value for all records of the specified field will be found.</para>
-		/// <para>Maximum—The largest value for all records of the specified field will be found.</para>
-		/// <para>Range—The range of values (maximum minus minimum) for the specified field will be calculated.</para>
-		/// <para>Standard deviation—The standard deviation of values in the specified field will be calculated.</para>
-		/// <para>Count—The number of values included in the statistical calculations will be found. Each value will be counted except null values. To determine the number of null values in a field, create a count on the field in question, create a count on a different field that does not contain null values (for example, the OID if present), and subtract the two values.</para>
-		/// <para>First—The specified field value of the first record in the input will be used.</para>
-		/// <para>Last—The specified field value of the last record in the input will be used.</para>
-		/// <para>Median—The median for all records of the specified field will be calculated.</para>
-		/// <para>Variance—The variance for all records of the specified field will be calculated.</para>
-		/// <para>Unique—The number of unique values of the specified field will be counted.</para>
+		/// <para>指定包含用于计算指定统计数据的属性值的一个或多个数值字段。 可以指定多项统计和字段组合。 空值将被排除在所有统计计算之外。</para>
+		/// <para>可使用第一种和最后一种统计来对文本属性字段进行汇总。 可使用任何一种统计来对数值属性字段进行汇总。</para>
+		/// <para>可用统计类型如下：</para>
+		/// <para>总和 - 将指定字段的值相加在一起。</para>
+		/// <para>平均值 - 将计算指定字段的平均值。</para>
+		/// <para>最小值 - 将查找指定字段所有记录的最小值。</para>
+		/// <para>最大值 - 将查找指定字段所有记录的最大值。</para>
+		/// <para>范围 - 将计算指定字段的值范围（最大值 - 最小值）。</para>
+		/// <para>标准差 - 将计算指定字段中值的标准差。</para>
+		/// <para>计数 - 将查找统计计算中包括的值的数目。 计数包括除空值外的所有值。 要确定字段中的空值数，请在相应字段上创建计数，然后在另一个不包含空值的字段上创建计数（例如 OID，如果存在的话），然后将这两个值相减。</para>
+		/// <para>第一个 - 将使用输入中第一条记录的指定字段值。</para>
+		/// <para>最后一个 - 将使用输入中最后一条记录的指定字段值。</para>
+		/// <para>中值 - 将计算指定字段所有记录的中值。</para>
+		/// <para>方差 - 将计算指定字段所有记录的方差。</para>
+		/// <para>唯一值 - 将计算指定字段的唯一值数量。</para>
 		/// </param>
 		public Statistics(object InTable, object OutTable, object StatisticsFields)
 		{
@@ -52,9 +53,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Summary Statistics</para>
+		/// <para>Tool Display Name : 汇总统计数据</para>
 		/// </summary>
-		public override string DisplayName() => "Summary Statistics";
+		public override string DisplayName() => "汇总统计数据";
 
 		/// <summary>
 		/// <para>Tool Name : Statistics</para>
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input table containing the fields that will be used to calculate statistics.</para>
+		/// <para>包含用于计算统计数据的字段的输入表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -96,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The output table that will store the calculated statistics.</para>
+		/// <para>输出表用于存储计算的统计数据。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -104,21 +105,21 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Statistics Field(s)</para>
-		/// <para>Specifies the numeric field or fields containing the attribute values that will be used to calculate the specified statistic. Multiple statistic and field combinations can be specified. Null values are excluded from all statistical calculations.</para>
-		/// <para>Text attribute fields can be summarized using first and last statistics. Numeric attribute fields can be summarized using any statistic.</para>
-		/// <para>Available statistics types are as follows:</para>
-		/// <para>Sum—The values for the specified field will be added together.</para>
-		/// <para>Mean—The average for the specified field will be calculated.</para>
-		/// <para>Minimum—The smallest value for all records of the specified field will be found.</para>
-		/// <para>Maximum—The largest value for all records of the specified field will be found.</para>
-		/// <para>Range—The range of values (maximum minus minimum) for the specified field will be calculated.</para>
-		/// <para>Standard deviation—The standard deviation of values in the specified field will be calculated.</para>
-		/// <para>Count—The number of values included in the statistical calculations will be found. Each value will be counted except null values. To determine the number of null values in a field, create a count on the field in question, create a count on a different field that does not contain null values (for example, the OID if present), and subtract the two values.</para>
-		/// <para>First—The specified field value of the first record in the input will be used.</para>
-		/// <para>Last—The specified field value of the last record in the input will be used.</para>
-		/// <para>Median—The median for all records of the specified field will be calculated.</para>
-		/// <para>Variance—The variance for all records of the specified field will be calculated.</para>
-		/// <para>Unique—The number of unique values of the specified field will be counted.</para>
+		/// <para>指定包含用于计算指定统计数据的属性值的一个或多个数值字段。 可以指定多项统计和字段组合。 空值将被排除在所有统计计算之外。</para>
+		/// <para>可使用第一种和最后一种统计来对文本属性字段进行汇总。 可使用任何一种统计来对数值属性字段进行汇总。</para>
+		/// <para>可用统计类型如下：</para>
+		/// <para>总和 - 将指定字段的值相加在一起。</para>
+		/// <para>平均值 - 将计算指定字段的平均值。</para>
+		/// <para>最小值 - 将查找指定字段所有记录的最小值。</para>
+		/// <para>最大值 - 将查找指定字段所有记录的最大值。</para>
+		/// <para>范围 - 将计算指定字段的值范围（最大值 - 最小值）。</para>
+		/// <para>标准差 - 将计算指定字段中值的标准差。</para>
+		/// <para>计数 - 将查找统计计算中包括的值的数目。 计数包括除空值外的所有值。 要确定字段中的空值数，请在相应字段上创建计数，然后在另一个不包含空值的字段上创建计数（例如 OID，如果存在的话），然后将这两个值相减。</para>
+		/// <para>第一个 - 将使用输入中第一条记录的指定字段值。</para>
+		/// <para>最后一个 - 将使用输入中最后一条记录的指定字段值。</para>
+		/// <para>中值 - 将计算指定字段所有记录的中值。</para>
+		/// <para>方差 - 将计算指定字段所有记录的方差。</para>
+		/// <para>唯一值 - 将计算指定字段的唯一值数量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -127,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Case field</para>
-		/// <para>The field or fields in the input used to calculate statistics separately for each unique attribute value (or combination of attribute values when multiple fields are specified).</para>
+		/// <para>“输入”中用于为每个唯一属性值（如果指定多个字段，则为属性值组合）单独计算统计数据的一个或多个字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

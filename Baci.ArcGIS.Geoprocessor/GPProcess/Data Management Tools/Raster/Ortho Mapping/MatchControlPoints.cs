@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Match Control Points</para>
-	/// <para>Creates matching tie points for a given ground control point and initial tie point in one of the overlapping images.</para>
+	/// <para>匹配控制点</para>
+	/// <para>针对其中一个重叠影像中的给定地面控制点和初始连接点创建匹配的连接点。</para>
 	/// </summary>
 	public class MatchControlPoints : AbstractGPProcess
 	{
@@ -20,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>The mosaic dataset that contains the source imagery from which the tie points will be created.</para>
+		/// <para>镶嵌数据集，其中包含将从中创建连接点的源影像。</para>
 		/// </param>
 		/// <param name="InControlPoints">
 		/// <para>Input Control Points</para>
-		/// <para>The input control point set that contains a list of ground control point features and at least one initial tie point for each ground control point.</para>
+		/// <para>输入控制点集，其中包含地面控制点要素列表，且每个地面控制点至少对应一个初始连接点。</para>
 		/// </param>
 		/// <param name="OutControlPoints">
 		/// <para>Output Control Point Table</para>
-		/// <para>The output control point features that contain ground control points.</para>
+		/// <para>包含地面控制点的输出控制点要素。</para>
 		/// </param>
 		public MatchControlPoints(object InMosaicDataset, object InControlPoints, object OutControlPoints)
 		{
@@ -38,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Match Control Points</para>
+		/// <para>Tool Display Name : 匹配控制点</para>
 		/// </summary>
-		public override string DisplayName() => "Match Control Points";
+		public override string DisplayName() => "匹配控制点";
 
 		/// <summary>
 		/// <para>Tool Name : MatchControlPoints</para>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>The mosaic dataset that contains the source imagery from which the tie points will be created.</para>
+		/// <para>镶嵌数据集，其中包含将从中创建连接点的源影像。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Control Points</para>
-		/// <para>The input control point set that contains a list of ground control point features and at least one initial tie point for each ground control point.</para>
+		/// <para>输入控制点集，其中包含地面控制点要素列表，且每个地面控制点至少对应一个初始连接点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Control Point Table</para>
-		/// <para>The output control point features that contain ground control points.</para>
+		/// <para>包含地面控制点的输出控制点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -98,10 +99,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Similarity</para>
-		/// <para>Specifies the similarity level that will be used for matching tie points.</para>
-		/// <para>Low similarity—The similarity criteria for the two matching points will be low. This option will produce the most matching points, but some of the matches may have a higher level of error.</para>
-		/// <para>Medium similarity—The similarity criteria for the matching points will be medium.</para>
-		/// <para>High similarity—The similarity criteria for the matching points will be high. This option will produce the fewest matching points, but each match will have a lower level of error.</para>
+		/// <para>指定将用于匹配连接点的相似性级别。</para>
+		/// <para>低级相似性—两个匹配点的相似性条件为低级。 此选项将生成最匹配的连接点对，但是某些匹配连接点对的错误误差等级可能比较高。</para>
+		/// <para>中级相似性—此匹配点对的相似性等级为中级。</para>
+		/// <para>高级相似性—此匹配点对的相似性等级为高级。 此选项将生成数目最少的匹配连接点对，但是每个匹配连接点对的误差等级可能比较低。</para>
 		/// <para><see cref="SimilarityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -126,24 +127,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SimilarityEnum 
 		{
 			/// <summary>
-			/// <para>Low similarity—The similarity criteria for the two matching points will be low. This option will produce the most matching points, but some of the matches may have a higher level of error.</para>
+			/// <para>低级相似性—两个匹配点的相似性条件为低级。 此选项将生成最匹配的连接点对，但是某些匹配连接点对的错误误差等级可能比较高。</para>
 			/// </summary>
 			[GPValue("LOW")]
-			[Description("Low similarity")]
+			[Description("低级相似性")]
 			Low_similarity,
 
 			/// <summary>
-			/// <para>Medium similarity—The similarity criteria for the matching points will be medium.</para>
+			/// <para>中级相似性—此匹配点对的相似性等级为中级。</para>
 			/// </summary>
 			[GPValue("MEDIUM")]
-			[Description("Medium similarity")]
+			[Description("中级相似性")]
 			Medium_similarity,
 
 			/// <summary>
-			/// <para>High similarity—The similarity criteria for the matching points will be high. This option will produce the fewest matching points, but each match will have a lower level of error.</para>
+			/// <para>高级相似性—此匹配点对的相似性等级为高级。 此选项将生成数目最少的匹配连接点对，但是每个匹配连接点对的误差等级可能比较低。</para>
 			/// </summary>
 			[GPValue("HIGH")]
-			[Description("High similarity")]
+			[Description("高级相似性")]
 			High_similarity,
 
 		}

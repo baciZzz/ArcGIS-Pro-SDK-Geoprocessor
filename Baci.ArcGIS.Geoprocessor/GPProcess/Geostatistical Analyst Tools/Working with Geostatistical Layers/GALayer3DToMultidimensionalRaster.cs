@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>GA Layer 3D To Multidimensional Raster</para>
-	/// <para>Exports a 3D geostatistical layer created using the Empirical Bayesian Kriging 3D tool to a multidimensional Cloud Raster Format (*.crf file) </para>
-	/// <para>raster dataset. Tools in the Multidimensional Analysis toolset of the Image Analyst toolbox are designed to work directly on multidimensional rasters and can identify the 3D nature of the data.</para>
+	/// <para>3D GA 图层转多维栅格</para>
+	/// <para>将使用 3D 经验贝叶斯克里金工具创建的 3D 地统计图层导出为多维云栅格格式（*.crf 文件）栅格数据集。Image Analyst 工具箱“多维分析”工具集中的工具旨在直接使用多维栅格，并且可以识别数据的 3D 特性。</para>
 	/// </summary>
 	public class GALayer3DToMultidimensionalRaster : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="In3DGeostatLayer">
 		/// <para>Input 3D geostatistical layer</para>
-		/// <para>The 3D geostatistical layer representing the model to be exported to a multivariate raster dataset.</para>
+		/// <para>该 3D 地统计图层用于表示要导出到多元栅格数据集的模型。</para>
 		/// </param>
 		/// <param name="OutMultidimensionalRaster">
 		/// <para>Output multidimensional raster dataset</para>
-		/// <para>The output raster dataset containing the results of exporting the geostatistical model. The output must be saved as a Cloud Raster Format file (*.crf).</para>
+		/// <para>该输出栅格数据集中包含导出地统计模型的结果。必须将该输出另存为云栅格格式文件 (*.crf)。</para>
 		/// </param>
 		public GALayer3DToMultidimensionalRaster(object In3DGeostatLayer, object OutMultidimensionalRaster)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : GA Layer 3D To Multidimensional Raster</para>
+		/// <para>Tool Display Name : 3D GA 图层转多维栅格</para>
 		/// </summary>
-		public override string DisplayName() => "GA Layer 3D To Multidimensional Raster";
+		public override string DisplayName() => "3D GA 图层转多维栅格";
 
 		/// <summary>
 		/// <para>Tool Name : GALayer3DToMultidimensionalRaster</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input 3D geostatistical layer</para>
-		/// <para>The 3D geostatistical layer representing the model to be exported to a multivariate raster dataset.</para>
+		/// <para>该 3D 地统计图层用于表示要导出到多元栅格数据集的模型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPGALayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output multidimensional raster dataset</para>
-		/// <para>The output raster dataset containing the results of exporting the geostatistical model. The output must be saved as a Cloud Raster Format file (*.crf).</para>
+		/// <para>该输出栅格数据集中包含导出地统计模型的结果。必须将该输出另存为云栅格格式文件 (*.crf)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Cell size</para>
-		/// <para>The cell size of the output multidimensional raster.</para>
+		/// <para>输出多维栅格的像元大小。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -98,9 +98,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Enter explicit elevation values</para>
-		/// <para>Specifies whether elevations will be provided as an explicit list or an iterator will be used. Each elevation will be represented by a dimension in the output multidimensional raster.</para>
-		/// <para>Checked—Elevation values will be provided as a list.</para>
-		/// <para>Unchecked—Elevation values will be provided using an iterator. This is the default.</para>
+		/// <para>用于指定是将高程作为显式列表提供还是使用迭代器进行提供。每个高程都将由输出多维栅格中的一个维度表示。</para>
+		/// <para>选中 - 高程值将作为列表提供。</para>
+		/// <para>未选中 - 将使用迭代器提供高程值。这是默认设置。</para>
 		/// <para><see cref="ExplicitOnlyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Minimum elevation</para>
-		/// <para>The minimum elevation that will be used to start the iteration.</para>
+		/// <para>将用于开始迭代的最小高程。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Maximum elevation</para>
-		/// <para>The maximum elevation that will be used to stop the iteration.</para>
+		/// <para>将用于停止迭代的最大高程。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Elevation interval</para>
-		/// <para>The increment that the elevation will increase with each iteration.</para>
+		/// <para>高程将随着每次迭代而增加的增量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Elevation values</para>
-		/// <para>The elevation values to export.</para>
+		/// <para>要导出的高程值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -145,17 +145,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Elevation units</para>
-		/// <para>Specifies the measurement unit of the elevation values.</para>
-		/// <para>Inch—Elevation values are in inches.</para>
-		/// <para>Foot—Elevation values are in feet.</para>
-		/// <para>Yard—Elevation values are in yards.</para>
-		/// <para>US mile—Elevation values are in U.S. miles.</para>
-		/// <para>Nautical mile—Elevation values are in nautical miles.</para>
-		/// <para>Millimeter—Elevation values are in millimeters.</para>
-		/// <para>Centimeter—Elevation values are in centimeters.</para>
-		/// <para>Decimeter—Elevation values are in decimeters.</para>
-		/// <para>Meter—Elevation values are in meters.</para>
-		/// <para>Kilometer—Elevation values are in kilometers.</para>
+		/// <para>指定高程值的测量单位。</para>
+		/// <para>英寸—高程值以英寸为单位。</para>
+		/// <para>英尺—高程值以英尺为单位。</para>
+		/// <para>码—高程值以码为单位。</para>
+		/// <para>英里（美制）—高程值以英里（美制）为单位。</para>
+		/// <para>海里—高程值以海里为单位。</para>
+		/// <para>毫米—高程值以毫米为单位。</para>
+		/// <para>厘米—高程值以厘米为单位。</para>
+		/// <para>分米—高程值以分米为单位。</para>
+		/// <para>米—高程值以米为单位。</para>
+		/// <para>千米—高程值以公里为单位。</para>
 		/// <para><see cref="ElevUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -165,12 +165,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output type</para>
-		/// <para>Specifies the primary output type of the output multidimensional raster. The Additional output types parameter can be used to specify additional variables in the output multidimensional raster.</para>
-		/// <para>For more information, see What output surface types can the interpolation models generate?</para>
-		/// <para>Prediction—A multidimensional raster of predicted values. This is the default.</para>
-		/// <para>Prediction standard error—A multidimensional raster of standard errors of prediction.</para>
-		/// <para>Probability—A multidimensional raster predicting the probability that a threshold is exceeded.</para>
-		/// <para>Quantile—A multidimensional raster predicting the quantile of the predicted value.</para>
+		/// <para>用于指定输出多维栅格的主要输出类型。附加输出类型参数可用于指定输出多维栅格中的其他变量。</para>
+		/// <para>有关详细信息，请参阅插值模型可以生成何种类型的输出表面？</para>
+		/// <para>预测—预测值的多维栅格。这是默认设置。</para>
+		/// <para>预测标准误差—预测标准误差的多维栅格。</para>
+		/// <para>概率—用于预测超出阈值的概率的多维栅格。</para>
+		/// <para>分位数—用于预测预测值分位数的多维栅格。</para>
 		/// <para><see cref="OutputTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -181,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Quantile or probability threshold value</para>
-		/// <para>If Output type is set to Quantile, use this parameter to enter the requested quantile. If Output type is set to Probability, use this parameter to enter the requested threshold value, and the probability that the threshold is exceeded will be calculated. Subtract this value from one to get the probability that the threshold is not exceeded.</para>
+		/// <para>如果输出类型设置为分位数，则使用此参数输入请求的分位数。如果输出类型设置为概率，则使用此参数输入请求的阈值，然后即可计算超出此阈值的概率。从一个值中减去该值即可得出未超出阈值的概率。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -191,8 +191,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Additional output types</para>
-		/// <para>Specifies the output type and quantile or probability value for each additional output type. If multiple output types are provided, the output raster will be a multivariate raster dataset with a different variable for each output type.</para>
-		/// <para>For more information, see What output surface types can the interpolation models generate?</para>
+		/// <para>指定每个附加输出类型的输出类型及分位数或概率值。如果提供了多个输出类型，则输出栅格将是一个每种输出类型的变量都不同的多元栅格数据集。</para>
+		/// <para>有关详细信息，请参阅插值模型可以生成何种类型的输出表面？</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -202,9 +202,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Build multidimensional transpose</para>
-		/// <para>Specifies whether multidimensional transposes will be built on the output multidimensional raster.</para>
-		/// <para>Checked—Multidimensional transposes will be built on the output multidimensional raster.</para>
-		/// <para>Unchecked—Multidimensional transposes will not be built on the output multidimensional raster. This is the default.</para>
+		/// <para>指定是否将在输出多维栅格上构建多维转置。</para>
+		/// <para>选中 - 将在输出多维栅格上构建多维转置。</para>
+		/// <para>未选中 - 将不会在输出多维栅格上构建多维转置。这是默认设置。</para>
 		/// <para><see cref="BuildTransposeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -230,14 +230,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum ExplicitOnlyEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Elevation values will be provided as a list.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EXPLICIT_VALUES")]
 			EXPLICIT_VALUES,
 
 			/// <summary>
-			/// <para>Unchecked—Elevation values will be provided using an iterator. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_EXPLICIT_VALUES")]
@@ -251,73 +251,73 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum ElevUnitsEnum 
 		{
 			/// <summary>
-			/// <para>Inch—Elevation values are in inches.</para>
+			/// <para>英寸—高程值以英寸为单位。</para>
 			/// </summary>
 			[GPValue("INCH")]
-			[Description("Inch")]
+			[Description("英寸")]
 			Inch,
 
 			/// <summary>
-			/// <para>Foot—Elevation values are in feet.</para>
+			/// <para>英尺—高程值以英尺为单位。</para>
 			/// </summary>
 			[GPValue("FOOT")]
-			[Description("Foot")]
+			[Description("英尺")]
 			Foot,
 
 			/// <summary>
-			/// <para>Yard—Elevation values are in yards.</para>
+			/// <para>码—高程值以码为单位。</para>
 			/// </summary>
 			[GPValue("YARD")]
-			[Description("Yard")]
+			[Description("码")]
 			Yard,
 
 			/// <summary>
-			/// <para>US mile—Elevation values are in U.S. miles.</para>
+			/// <para>英里（美制）—高程值以英里（美制）为单位。</para>
 			/// </summary>
 			[GPValue("MILE_US")]
-			[Description("US mile")]
+			[Description("英里（美制）")]
 			US_mile,
 
 			/// <summary>
-			/// <para>Nautical mile—Elevation values are in nautical miles.</para>
+			/// <para>海里—高程值以海里为单位。</para>
 			/// </summary>
 			[GPValue("NAUTICAL_MILE")]
-			[Description("Nautical mile")]
+			[Description("海里")]
 			Nautical_mile,
 
 			/// <summary>
-			/// <para>Millimeter—Elevation values are in millimeters.</para>
+			/// <para>毫米—高程值以毫米为单位。</para>
 			/// </summary>
 			[GPValue("MILLIMETER")]
-			[Description("Millimeter")]
+			[Description("毫米")]
 			Millimeter,
 
 			/// <summary>
-			/// <para>Centimeter—Elevation values are in centimeters.</para>
+			/// <para>厘米—高程值以厘米为单位。</para>
 			/// </summary>
 			[GPValue("CENTIMETER")]
-			[Description("Centimeter")]
+			[Description("厘米")]
 			Centimeter,
 
 			/// <summary>
-			/// <para>Decimeter—Elevation values are in decimeters.</para>
+			/// <para>分米—高程值以分米为单位。</para>
 			/// </summary>
 			[GPValue("DECIMETER")]
-			[Description("Decimeter")]
+			[Description("分米")]
 			Decimeter,
 
 			/// <summary>
-			/// <para>Meter—Elevation values are in meters.</para>
+			/// <para>米—高程值以米为单位。</para>
 			/// </summary>
 			[GPValue("METER")]
-			[Description("Meter")]
+			[Description("米")]
 			Meter,
 
 			/// <summary>
-			/// <para>Kilometer—Elevation values are in kilometers.</para>
+			/// <para>千米—高程值以公里为单位。</para>
 			/// </summary>
 			[GPValue("KILOMETER")]
-			[Description("Kilometer")]
+			[Description("千米")]
 			Kilometer,
 
 		}
@@ -328,31 +328,31 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum OutputTypeEnum 
 		{
 			/// <summary>
-			/// <para>Prediction—A multidimensional raster of predicted values. This is the default.</para>
+			/// <para>预测—预测值的多维栅格。这是默认设置。</para>
 			/// </summary>
 			[GPValue("PREDICTION")]
-			[Description("Prediction")]
+			[Description("预测")]
 			Prediction,
 
 			/// <summary>
-			/// <para>Prediction standard error—A multidimensional raster of standard errors of prediction.</para>
+			/// <para>预测标准误差—预测标准误差的多维栅格。</para>
 			/// </summary>
 			[GPValue("PREDICTION_STANDARD_ERROR")]
-			[Description("Prediction standard error")]
+			[Description("预测标准误差")]
 			Prediction_standard_error,
 
 			/// <summary>
-			/// <para>Probability—A multidimensional raster predicting the probability that a threshold is exceeded.</para>
+			/// <para>概率—用于预测超出阈值的概率的多维栅格。</para>
 			/// </summary>
 			[GPValue("PROBABILITY")]
-			[Description("Probability")]
+			[Description("概率")]
 			Probability,
 
 			/// <summary>
-			/// <para>Quantile—A multidimensional raster predicting the quantile of the predicted value.</para>
+			/// <para>分位数—用于预测预测值分位数的多维栅格。</para>
 			/// </summary>
 			[GPValue("QUANTILE")]
-			[Description("Quantile")]
+			[Description("分位数")]
 			Quantile,
 
 			/// <summary>
@@ -377,14 +377,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum BuildTransposeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Multidimensional transposes will be built on the output multidimensional raster.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BUILD_TRANSPOSE")]
 			BUILD_TRANSPOSE,
 
 			/// <summary>
-			/// <para>Unchecked—Multidimensional transposes will not be built on the output multidimensional raster. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_BUILD_TRANSPOSE")]

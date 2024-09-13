@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Mobile Geodatabase To File Geodatabase</para>
-	/// <para>Copies the contents of a mobile geodatabase to a new file geodatabase.</para>
+	/// <para>移动地理数据库到文件地理数据库</para>
+	/// <para>将移动地理数据库的内容复制到新的文件地理数据库中。</para>
 	/// </summary>
 	public class MobileGdbToFileGdb : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InMobileGdb">
 		/// <para>Input Mobile Geodatabase</para>
-		/// <para>The mobile geodatabase that will have its contents copied to a new file geodatabase.</para>
+		/// <para>此移动地理数据库会将其内容复制到新的文件地理数据库。</para>
 		/// </param>
 		/// <param name="OutFileGdb">
 		/// <para>Output File Geodatabase</para>
-		/// <para>The name and location of the output file geodatabase, for example, c:\temp\outputGeodatabases\copiedFGDB.gdb.</para>
+		/// <para>输出文件地理数据库的名称和位置，例如，c:\temp\outputGeodatabases\copiedFGDB.gdb。</para>
 		/// </param>
 		public MobileGdbToFileGdb(object InMobileGdb, object OutFileGdb)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Mobile Geodatabase To File Geodatabase</para>
+		/// <para>Tool Display Name : 移动地理数据库到文件地理数据库</para>
 		/// </summary>
-		public override string DisplayName() => "Mobile Geodatabase To File Geodatabase";
+		public override string DisplayName() => "移动地理数据库到文件地理数据库";
 
 		/// <summary>
 		/// <para>Tool Name : MobileGdbToFileGdb</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Mobile Geodatabase</para>
-		/// <para>The mobile geodatabase that will have its contents copied to a new file geodatabase.</para>
+		/// <para>此移动地理数据库会将其内容复制到新的文件地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -79,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output File Geodatabase</para>
-		/// <para>The name and location of the output file geodatabase, for example, c:\temp\outputGeodatabases\copiedFGDB.gdb.</para>
+		/// <para>输出文件地理数据库的名称和位置，例如，c:\temp\outputGeodatabases\copiedFGDB.gdb。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Create Diagram</para>
-	/// <para>Creates a temporary network diagram from network elements currently selected in the active map or from layers created from a Python script.</para>
+	/// <para>创建逻辑示意图</para>
+	/// <para>用于根据当前在活动地图中选择的网络元素或根据通过 Python 脚本创建的图层来创建临时网络逻辑示意图。</para>
 	/// </summary>
 	public class CreateDiagram : AbstractGPProcess
 	{
@@ -20,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network from which the diagram will be created.</para>
+		/// <para>将从中创建逻辑示意图的 utility network or trace network。</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Template Name</para>
-		/// <para>The name of the template that will be used to create the diagram.</para>
+		/// <para>将用于创建逻辑示意图的模板名称。</para>
 		/// </param>
 		public CreateDiagram(object InUtilityNetwork, object TemplateName)
 		{
@@ -33,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Diagram</para>
+		/// <para>Tool Display Name : 创建逻辑示意图</para>
 		/// </summary>
-		public override string DisplayName() => "Create Diagram";
+		public override string DisplayName() => "创建逻辑示意图";
 
 		/// <summary>
 		/// <para>Tool Name : CreateDiagram</para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network from which the diagram will be created.</para>
+		/// <para>将从中创建逻辑示意图的 utility network or trace network。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Template Name</para>
-		/// <para>The name of the template that will be used to create the diagram.</para>
+		/// <para>将用于创建逻辑示意图的模板名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -85,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Features</para>
-		/// <para>One or more feature layers to be used as input for diagram generation.</para>
-		/// <para>When feature layers are specified and there are network elements selected in the active map, the selected elements set is ignored and all the features in the specified layers are used as input for diagram creation.</para>
-		/// <para>When no feature layers are specified, the process searches for the network elements selected in the active map and creates the diagram from those elements.</para>
+		/// <para>要用作生成逻辑示意图时的输入的一个或多个要素图层。</para>
+		/// <para>如果指定了要素图层并且在活动地图中选择了网络元素，则将忽略所选元素集，并且指定图层中的所有要素将用作创建逻辑示意图时的输入。</para>
+		/// <para>如果未指定任何要素图层，则该过程将搜索在活动地图中选择的网络元素，然后根据这些元素创建逻辑示意图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

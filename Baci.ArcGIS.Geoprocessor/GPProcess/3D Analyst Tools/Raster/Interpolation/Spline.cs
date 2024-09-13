@@ -11,7 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Spline</para>
-	/// <para>Interpolates a raster surface from points using a two-dimensional minimum curvature spline technique.</para>
+	/// <para>样条</para>
+	/// <para>使用二维最小曲率样条法将点插值成栅格表面。</para>
 	/// </summary>
 	public class Spline : AbstractGPProcess
 	{
@@ -20,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InPointFeatures">
 		/// <para>Input point features</para>
-		/// <para>The input point features containing the z-values to be interpolated into a surface raster.</para>
+		/// <para>包含要插值到表面栅格中的 z 值的输入点要素。</para>
 		/// </param>
 		/// <param name="ZField">
 		/// <para>Z value field</para>
-		/// <para>The field that holds a height or magnitude value for each point.</para>
-		/// <para>This can be a numeric field or the Shape field if the input point features contain z-values.</para>
+		/// <para>存放每个点的高度值或量级值的字段。</para>
+		/// <para>如果输入点要素包含 z 值，则该字段可以是数值型字段或者 Shape 字段。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output interpolated surface raster.</para>
-		/// <para>It is always a floating-point raster.</para>
+		/// <para>输出插值后的表面栅格。</para>
+		/// <para>其总为浮点栅格。</para>
 		/// </param>
 		public Spline(object InPointFeatures, object ZField, object OutRaster)
 		{
@@ -40,14 +41,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Spline</para>
+		/// <para>Tool Display Name : 样条</para>
 		/// </summary>
-		public override string DisplayName() => "Spline";
+		public override string DisplayName() => "样条";
 
 		/// <summary>
-		/// <para>Tool Name : Spline</para>
+		/// <para>Tool Name : 样条</para>
 		/// </summary>
-		public override string ToolName() => "Spline";
+		public override string ToolName() => "样条";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Spline</para>
@@ -76,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input point features</para>
-		/// <para>The input point features containing the z-values to be interpolated into a surface raster.</para>
+		/// <para>包含要插值到表面栅格中的 z 值的输入点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -88,8 +89,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z value field</para>
-		/// <para>The field that holds a height or magnitude value for each point.</para>
-		/// <para>This can be a numeric field or the Shape field if the input point features contain z-values.</para>
+		/// <para>存放每个点的高度值或量级值的字段。</para>
+		/// <para>如果输入点要素包含 z 值，则该字段可以是数值型字段或者 Shape 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -99,8 +100,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output interpolated surface raster.</para>
-		/// <para>It is always a floating-point raster.</para>
+		/// <para>输出插值后的表面栅格。</para>
+		/// <para>其总为浮点栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -108,8 +109,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>The cell size of the output raster that will be created.</para>
-		/// <para>This parameter can be defined by a numeric value or obtained from an existing raster dataset. If the cell size hasn&apos;t been explicitly specified as the parameter value, the environment cell size value will be used if specified; otherwise, additional rules will be used to calculate it from the other inputs. See the usage section for more detail.</para>
+		/// <para>将创建的输出栅格的像元大小。</para>
+		/// <para>此参数可以通过数值进行定义，也可以从现有栅格数据集获取。如果未将像元大小明确指定为参数值，则将使用环境像元大小值（如果已指定）；否则，将使用其他规则通过其他输出计算像元大小。有关详细信息，请参阅用法部分。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -121,9 +122,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Spline type</para>
-		/// <para>The type of spline to be used.</para>
-		/// <para>Regularized—Yields a smooth surface and smooth first derivatives.</para>
-		/// <para>Tension—Tunes the stiffness of the interpolant according to the character of the modeled phenomenon.</para>
+		/// <para>要使用的样条函数法类型。</para>
+		/// <para>正则化—产生平滑的表面和平滑的一阶导数。</para>
+		/// <para>张力—根据建模现象的特征调整插值的硬度。</para>
 		/// <para><see cref="SplineTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -133,9 +134,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Weight</para>
-		/// <para>Parameter influencing the character of the surface interpolation.</para>
-		/// <para>When the Regularized option is used, it defines the weight of the third derivatives of the surface in the curvature minimization expression. If the Tension option is used, it defines the weight of tension.</para>
-		/// <para>The default weight is 0.1.</para>
+		/// <para>影响表面插值特征的参数。</para>
+		/// <para>使用规则样条函数选项时，它定义曲率最小化表达式中表面的三阶导数的权重。如果使用张力样条函数选项，它将定义张力的权重。</para>
+		/// <para>默认权重为 0.1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -145,8 +146,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Number of points</para>
-		/// <para>The number of points per region used for local approximation.</para>
-		/// <para>The default is 12.</para>
+		/// <para>用于局部近似的每个区域的点数。</para>
+		/// <para>默认值为 12。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -170,17 +171,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum SplineTypeEnum 
 		{
 			/// <summary>
-			/// <para>Regularized—Yields a smooth surface and smooth first derivatives.</para>
+			/// <para>正则化—产生平滑的表面和平滑的一阶导数。</para>
 			/// </summary>
 			[GPValue("REGULARIZED")]
-			[Description("Regularized")]
+			[Description("正则化")]
 			Regularized,
 
 			/// <summary>
-			/// <para>Tension—Tunes the stiffness of the interpolant according to the character of the modeled phenomenon.</para>
+			/// <para>张力—根据建模现象的特征调整插值的硬度。</para>
 			/// </summary>
 			[GPValue("TENSION")]
-			[Description("Tension")]
+			[Description("张力")]
 			Tension,
 
 		}
