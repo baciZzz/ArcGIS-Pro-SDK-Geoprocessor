@@ -133,7 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Baci.ArcGIS.Geoprocessor\Baci.ArcGIS.Geoprocessor.csproj">
-      <Project>{129ec87a-90e1-4578-92ac-d7770f32c122}</Project>
+      <Project>{0EA083D4-7785-4F25-AFAF-FDE191C2108B}</Project>
       <Name>Baci.ArcGIS.Geoprocessor</Name>
     </ProjectReference>
   </ItemGroup>

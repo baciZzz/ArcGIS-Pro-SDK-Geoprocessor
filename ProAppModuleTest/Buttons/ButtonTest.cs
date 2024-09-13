@@ -12,7 +12,6 @@ using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Layouts;
 using ArcGIS.Desktop.Mapping;
-using Baci.ArcGIS.Geoprocessor.AnalysisTools;
 using Baci.ArcGIS.Geoprocessor.ConversionTools;
 using Baci.ArcGIS.Geoprocessor.DataManagementTools;
 using System;
