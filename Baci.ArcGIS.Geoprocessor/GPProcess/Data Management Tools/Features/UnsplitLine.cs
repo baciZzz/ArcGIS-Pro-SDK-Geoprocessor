@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Unsplit Line</para>
+	/// <para>Unsplit Line</para>
 	/// <para>Aggregates line features that have coincident endpoints and, optionally, common attribute values.</para>
 	/// </summary>
 	public class UnsplitLine : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Unsplit Line</para>
 		/// </summary>
-		public override string DisplayName => "Unsplit Line";
+		public override string DisplayName() => "Unsplit Line";
 
 		/// <summary>
 		/// <para>Tool Name : UnsplitLine</para>
 		/// </summary>
-		public override string ToolName => "UnsplitLine";
+		public override string ToolName() => "UnsplitLine";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.UnsplitLine</para>
 		/// </summary>
-		public override string ExcuteName => "management.UnsplitLine";
+		public override string ExcuteName() => "management.UnsplitLine";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, DissolveField!, StatisticsFields!, ConcatenationSeparator! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, DissolveField!, StatisticsFields!, ConcatenationSeparator! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -91,6 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "OID")]
 		public object? DissolveField { get; set; }
 
 		/// <summary>

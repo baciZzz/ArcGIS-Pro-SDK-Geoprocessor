@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Exploratory Interpolation</para>
+	/// <para>Exploratory Interpolation</para>
 	/// <para>Generates various interpolation results from input point features and a field. The interpolation results are then compared and ranked using customizable criteria based on cross validation statistics.</para>
 	/// </summary>
 	public class ExploratoryInterpolation : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Exploratory Interpolation</para>
 		/// </summary>
-		public override string DisplayName => "Exploratory Interpolation";
+		public override string DisplayName() => "Exploratory Interpolation";
 
 		/// <summary>
 		/// <para>Tool Name : ExploratoryInterpolation</para>
 		/// </summary>
-		public override string ToolName => "ExploratoryInterpolation";
+		public override string ToolName() => "ExploratoryInterpolation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.ExploratoryInterpolation</para>
 		/// </summary>
-		public override string ExcuteName => "ga.ExploratoryInterpolation";
+		public override string ExcuteName() => "ga.ExploratoryInterpolation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "coincidentPoints", "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "coincidentPoints", "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ValueField, OutCvTable, OutGeostatLayer!, InterpMethods!, ComparisonMethod!, Criterion!, CriteriaHierarchy!, WeightedCriteria!, ExclusionCriteria! };
+		public override object[] Parameters() => new object[] { InFeatures, ValueField, OutCvTable, OutGeostatLayer!, InterpMethods!, ComparisonMethod!, Criterion!, CriteriaHierarchy!, WeightedCriteria!, ExclusionCriteria! };
 
 		/// <summary>
 		/// <para>Input features</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -88,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object ValueField { get; set; }
 
 		/// <summary>

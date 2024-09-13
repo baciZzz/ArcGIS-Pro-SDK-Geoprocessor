@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Export Training Data For Deep Learning</para>
+	/// <para>Export Training Data For Deep Learning</para>
 	/// <para>Converts labeled vector or raster data into deep learning training datasets using a remote sensing image. The output will be a folder of image chips and a folder of metadata files in the specified format.</para>
 	/// </summary>
 	public class ExportTrainingDataForDeepLearning : AbstractGPProcess
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Training Data For Deep Learning</para>
 		/// </summary>
-		public override string DisplayName => "Export Training Data For Deep Learning";
+		public override string DisplayName() => "Export Training Data For Deep Learning";
 
 		/// <summary>
 		/// <para>Tool Name : ExportTrainingDataForDeepLearning</para>
 		/// </summary>
-		public override string ToolName => "ExportTrainingDataForDeepLearning";
+		public override string ToolName() => "ExportTrainingDataForDeepLearning";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.ExportTrainingDataForDeepLearning</para>
 		/// </summary>
-		public override string ExcuteName => "sa.ExportTrainingDataForDeepLearning";
+		public override string ExcuteName() => "sa.ExportTrainingDataForDeepLearning";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutFolder, InClassData!, ImageChipFormat!, TileSizeX!, TileSizeY!, StrideX!, StrideY!, OutputNofeatureTiles!, MetadataFormat!, StartIndex!, ClassValueField!, BufferRadius!, InMaskPolygons!, RotationAngle!, ReferenceSystem!, ProcessingMode!, BlackenAroundFeature!, CropMode!, InRaster2!, InInstanceData!, InstanceClassValueField!, MinPolygonOverlapRatio! };
+		public override object[] Parameters() => new object[] { InRaster, OutFolder, InClassData!, ImageChipFormat!, TileSizeX!, TileSizeY!, StrideX!, StrideY!, OutputNofeatureTiles!, MetadataFormat!, StartIndex!, ClassValueField!, BufferRadius!, InMaskPolygons!, RotationAngle!, ReferenceSystem!, ProcessingMode!, BlackenAroundFeature!, CropMode!, InRaster2!, InInstanceData!, InstanceClassValueField!, MinPolygonOverlapRatio! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -195,6 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		public object? ClassValueField { get; set; }
 
 		/// <summary>
@@ -302,6 +304,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		public object? InstanceClassValueField { get; set; }
 
 		/// <summary>

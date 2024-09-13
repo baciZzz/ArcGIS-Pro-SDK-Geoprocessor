@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 {
 	/// <summary>
 	/// <para>Import Trace Configurations</para>
+	/// <para>Import Trace Configurations</para>
 	/// <para>Imports named trace configurations from JSON format (.json file) to a trace network.</para>
 	/// </summary>
 	public class ImportTraceConfigurations : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Import Trace Configurations</para>
 		/// </summary>
-		public override string DisplayName => "Import Trace Configurations";
+		public override string DisplayName() => "Import Trace Configurations";
 
 		/// <summary>
 		/// <para>Tool Name : ImportTraceConfigurations</para>
 		/// </summary>
-		public override string ToolName => "ImportTraceConfigurations";
+		public override string ToolName() => "ImportTraceConfigurations";
 
 		/// <summary>
 		/// <para>Tool Excute Name : tn.ImportTraceConfigurations</para>
 		/// </summary>
-		public override string ExcuteName => "tn.ImportTraceConfigurations";
+		public override string ExcuteName() => "tn.ImportTraceConfigurations";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Trace Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Trace Network Tools";
+		public override string ToolboxDisplayName() => "Trace Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : tn</para>
 		/// </summary>
-		public override string ToolboxAlise => "tn";
+		public override string ToolboxAlise() => "tn";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTraceNetwork, InJsonFile, OutTraceNetwork! };
+		public override object[] Parameters() => new object[] { InTraceNetwork, InJsonFile, OutTraceNetwork! };
 
 		/// <summary>
 		/// <para>Input Trace Network</para>
@@ -82,6 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("JSON")]
 		public object InJsonFile { get; set; }
 
 		/// <summary>

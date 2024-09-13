@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate File Geodatabase License</para>
+	/// <para>Generate File Geodatabase License</para>
 	/// <para>Generates a license file (.sdlic) for displaying the contents in a licensed file geodatabase created by the Generate Licensed File Geodatabase tool.</para>
 	/// </summary>
 	public class GenerateFgdbLicense : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate File Geodatabase License</para>
 		/// </summary>
-		public override string DisplayName => "Generate File Geodatabase License";
+		public override string DisplayName() => "Generate File Geodatabase License";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateFgdbLicense</para>
 		/// </summary>
-		public override string ToolName => "GenerateFgdbLicense";
+		public override string ToolName() => "GenerateFgdbLicense";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.GenerateFgdbLicense</para>
 		/// </summary>
-		public override string ExcuteName => "management.GenerateFgdbLicense";
+		public override string ExcuteName() => "management.GenerateFgdbLicense";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLicDefFile, OutLicFile, AllowExport!, ExpDate! };
+		public override object[] Parameters() => new object[] { InLicDefFile, OutLicFile, AllowExport!, ExpDate! };
 
 		/// <summary>
 		/// <para>Input License Definition File</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("licdef")]
 		public object InLicDefFile { get; set; }
 
 		/// <summary>
@@ -83,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("sdlic")]
 		public object OutLicFile { get; set; }
 
 		/// <summary>

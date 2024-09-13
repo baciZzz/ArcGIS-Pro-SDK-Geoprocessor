@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Iso Cluster</para>
+	/// <para>Iso Cluster</para>
 	/// <para>Uses an isodata clustering algorithm to determine the characteristics of the natural groupings of cells in multidimensional attribute space and stores the results in an output ASCII signature file.</para>
 	/// </summary>
 	public class IsoCluster : AbstractGPProcess
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Iso Cluster</para>
 		/// </summary>
-		public override string DisplayName => "Iso Cluster";
+		public override string DisplayName() => "Iso Cluster";
 
 		/// <summary>
 		/// <para>Tool Name : IsoCluster</para>
 		/// </summary>
-		public override string ToolName => "IsoCluster";
+		public override string ToolName() => "IsoCluster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.IsoCluster</para>
 		/// </summary>
-		public override string ExcuteName => "sa.IsoCluster";
+		public override string ExcuteName() => "sa.IsoCluster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "cellSizeProjectionMethod", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "cellSizeProjectionMethod", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterBands, OutSignatureFile, NumberClasses, NumberIterations!, MinClassSize!, SampleInterval! };
+		public override object[] Parameters() => new object[] { InRasterBands, OutSignatureFile, NumberClasses, NumberIterations!, MinClassSize!, SampleInterval! };
 
 		/// <summary>
 		/// <para>Input raster bands</para>
@@ -81,7 +82,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRasterBands { get; set; }
 
 		/// <summary>
@@ -92,6 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("GSG")]
 		public object OutSignatureFile { get; set; }
 
 		/// <summary>
@@ -101,6 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[High(Allow = true, Value = 32767)]
 		public object NumberClasses { get; set; }
 
 		/// <summary>

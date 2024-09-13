@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Classify Point Cloud Using Trained Model</para>
+	/// <para>Classify Point Cloud Using Trained Model</para>
 	/// <para>Classifies a point cloud using a PointCNN classification model.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Classify Point Cloud Using Trained Model</para>
 		/// </summary>
-		public override string DisplayName => "Classify Point Cloud Using Trained Model";
+		public override string DisplayName() => "Classify Point Cloud Using Trained Model";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyPointCloudUsingTrainedModel</para>
 		/// </summary>
-		public override string ToolName => "ClassifyPointCloudUsingTrainedModel";
+		public override string ToolName() => "ClassifyPointCloudUsingTrainedModel";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.ClassifyPointCloudUsingTrainedModel</para>
 		/// </summary>
-		public override string ExcuteName => "3d.ClassifyPointCloudUsingTrainedModel";
+		public override string ExcuteName() => "3d.ClassifyPointCloudUsingTrainedModel";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "gpuID", "outputCoordinateSystem", "processorType" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "gpuID", "outputCoordinateSystem", "processorType" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointCloud, InTrainedModel, OutputClasses, InClassMode!, TargetClasses!, ComputeStats!, Boundary!, UpdatePyramid!, OutPointCloud!, ReferenceHeight!, ExcludedClassCodes!, BatchSize! };
+		public override object[] Parameters() => new object[] { InPointCloud, InTrainedModel, OutputClasses, InClassMode!, TargetClasses!, ComputeStats!, Boundary!, UpdatePyramid!, OutPointCloud!, ReferenceHeight!, ExcludedClassCodes!, BatchSize! };
 
 		/// <summary>
 		/// <para>Target Point Cloud</para>
@@ -140,6 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object? Boundary { get; set; }
 
 		/// <summary>
@@ -176,6 +178,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
+		[High(Allow = true, Value = 255)]
 		public object? ExcludedClassCodes { get; set; }
 
 		/// <summary>
@@ -185,6 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 1)]
 		public object? BatchSize { get; set; }
 
 		/// <summary>

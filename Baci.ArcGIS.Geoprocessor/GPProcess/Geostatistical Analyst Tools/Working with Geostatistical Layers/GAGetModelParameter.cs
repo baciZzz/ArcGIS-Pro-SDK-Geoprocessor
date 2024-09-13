@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Get Model Parameter</para>
+	/// <para>Get Model Parameter</para>
 	/// <para>Gets model parameter value from an existing geostatistical model source.</para>
 	/// </summary>
 	public class GAGetModelParameter : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Get Model Parameter</para>
 		/// </summary>
-		public override string DisplayName => "Get Model Parameter";
+		public override string DisplayName() => "Get Model Parameter";
 
 		/// <summary>
 		/// <para>Tool Name : GAGetModelParameter</para>
 		/// </summary>
-		public override string ToolName => "GAGetModelParameter";
+		public override string ToolName() => "GAGetModelParameter";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GAGetModelParameter</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GAGetModelParameter";
+		public override string ExcuteName() => "ga.GAGetModelParameter";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGaModelSource, ModelParamXpath, OutParamValue! };
+		public override object[] Parameters() => new object[] { InGaModelSource, ModelParamXpath, OutParamValue! };
 
 		/// <summary>
 		/// <para>Input geostatistical model source</para>

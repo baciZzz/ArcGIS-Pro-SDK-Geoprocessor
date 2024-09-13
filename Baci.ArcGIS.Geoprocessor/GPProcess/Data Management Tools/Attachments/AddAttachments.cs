@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Attachments</para>
+	/// <para>Add Attachments</para>
 	/// <para>Adds file attachments to the records of a geodatabase feature class or table. The attachments are stored internally in the geodatabase in a separate attachment table that maintains linkage to the target dataset. Attachments are added to the target dataset using a match table that dictates for each input record (or an attribute group of records) the path to a file to add as an attachment to that record.</para>
 	/// </summary>
 	public class AddAttachments : AbstractGPProcess
@@ -51,37 +52,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Attachments</para>
 		/// </summary>
-		public override string DisplayName => "Add Attachments";
+		public override string DisplayName() => "Add Attachments";
 
 		/// <summary>
 		/// <para>Tool Name : AddAttachments</para>
 		/// </summary>
-		public override string ToolName => "AddAttachments";
+		public override string ToolName() => "AddAttachments";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddAttachments</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddAttachments";
+		public override string ExcuteName() => "management.AddAttachments";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, InJoinField, InMatchTable, InMatchJoinField, InMatchPathField, InWorkingFolder!, OutDataset! };
+		public override object[] Parameters() => new object[] { InDataset, InJoinField, InMatchTable, InMatchJoinField, InMatchPathField, InWorkingFolder!, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -99,6 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "OID", "GUID", "GlobalID")]
 		public object InJoinField { get; set; }
 
 		/// <summary>
@@ -116,6 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "OID", "GUID", "GlobalID")]
 		public object InMatchJoinField { get; set; }
 
 		/// <summary>
@@ -125,6 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "OID", "GUID", "GlobalID")]
 		public object InMatchPathField { get; set; }
 
 		/// <summary>

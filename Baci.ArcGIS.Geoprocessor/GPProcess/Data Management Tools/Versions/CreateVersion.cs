@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Version</para>
+	/// <para>Create Version</para>
 	/// <para>Creates a new version in the specified geodatabase.</para>
 	/// </summary>
 	[Obsolete()]
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Version</para>
 		/// </summary>
-		public override string DisplayName => "Create Version";
+		public override string DisplayName() => "Create Version";
 
 		/// <summary>
 		/// <para>Tool Name : CreateVersion</para>
 		/// </summary>
-		public override string ToolName => "CreateVersion";
+		public override string ToolName() => "CreateVersion";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateVersion</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateVersion";
+		public override string ExcuteName() => "management.CreateVersion";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, ParentVersion, VersionName, AccessPermission!, OutWorkspace! };
+		public override object[] Parameters() => new object[] { InWorkspace, ParentVersion, VersionName, AccessPermission!, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -82,6 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Remote Database", "Feature Service")]
 		public object InWorkspace { get; set; }
 
 		/// <summary>

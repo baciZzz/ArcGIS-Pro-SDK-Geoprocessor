@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Mosaic To New Raster</para>
+	/// <para>Mosaic To New Raster</para>
 	/// <para>Merges multiple raster datasets into a new raster dataset.</para>
 	/// </summary>
 	public class MosaicToNewRaster : AbstractGPProcess
@@ -60,37 +61,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Mosaic To New Raster</para>
 		/// </summary>
-		public override string DisplayName => "Mosaic To New Raster";
+		public override string DisplayName() => "Mosaic To New Raster";
 
 		/// <summary>
 		/// <para>Tool Name : MosaicToNewRaster</para>
 		/// </summary>
-		public override string ToolName => "MosaicToNewRaster";
+		public override string ToolName() => "MosaicToNewRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MosaicToNewRaster</para>
 		/// </summary>
-		public override string ExcuteName => "management.MosaicToNewRaster";
+		public override string ExcuteName() => "management.MosaicToNewRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "nodata", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "tileSize" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "nodata", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "tileSize" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputRasters, OutputLocation, RasterDatasetNameWithExtension, CoordinateSystemForTheRaster!, PixelType!, Cellsize!, NumberOfBands, MosaicMethod!, MosaicColormapMode!, OutputRasterDataset! };
+		public override object[] Parameters() => new object[] { InputRasters, OutputLocation, RasterDatasetNameWithExtension, CoordinateSystemForTheRaster!, PixelType!, Cellsize!, NumberOfBands, MosaicMethod!, MosaicColormapMode!, OutputRasterDataset! };
 
 		/// <summary>
 		/// <para>Input Rasters</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>GA Layer 3D To Multidimensional Raster</para>
+	/// <para>GA Layer 3D To Multidimensional Raster</para>
 	/// <para>Exports a 3D geostatistical layer created using the Empirical Bayesian Kriging 3D tool to a multidimensional Cloud Raster Format (*.crf file) </para>
 	/// <para>raster dataset. Tools in the Multidimensional Analysis toolset of the Image Analyst toolbox are designed to work directly on multidimensional rasters and can identify the 3D nature of the data.</para>
 	/// </summary>
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : GA Layer 3D To Multidimensional Raster</para>
 		/// </summary>
-		public override string DisplayName => "GA Layer 3D To Multidimensional Raster";
+		public override string DisplayName() => "GA Layer 3D To Multidimensional Raster";
 
 		/// <summary>
 		/// <para>Tool Name : GALayer3DToMultidimensionalRaster</para>
 		/// </summary>
-		public override string ToolName => "GALayer3DToMultidimensionalRaster";
+		public override string ToolName() => "GALayer3DToMultidimensionalRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GALayer3DToMultidimensionalRaster</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GALayer3DToMultidimensionalRaster";
+		public override string ExcuteName() => "ga.GALayer3DToMultidimensionalRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { In3DGeostatLayer, OutMultidimensionalRaster, CellSize!, ExplicitOnly!, MinElev!, MaxElev!, ElevInterval!, ElevValues!, ElevUnits!, OutputType!, QuantileProbabilityValue!, AdditionalOutputs!, BuildTranspose! };
+		public override object[] Parameters() => new object[] { In3DGeostatLayer, OutMultidimensionalRaster, CellSize!, ExplicitOnly!, MinElev!, MaxElev!, ElevInterval!, ElevValues!, ElevUnits!, OutputType!, QuantileProbabilityValue!, AdditionalOutputs!, BuildTranspose! };
 
 		/// <summary>
 		/// <para>Input 3D geostatistical layer</para>
@@ -90,7 +91,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? CellSize { get; set; }
 
 		/// <summary>
@@ -111,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = -1.7976931348623157e+308, Max = 1.7976931348623157e+308)]
 		public object? MinElev { get; set; }
 
 		/// <summary>
@@ -120,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = -1.7976931348623157e+308, Max = 1.7976931348623157e+308)]
 		public object? MaxElev { get; set; }
 
 		/// <summary>
@@ -186,7 +190,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = -1.7976931348623157e+308, Max = 1.7976931348623157e+308)]
 		[Category("Output Parameters")]
 		public object? QuantileProbabilityValue { get; set; }
 

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Float</para>
+	/// <para>Float</para>
 	/// <para>Converts each cell value of a raster into a floating-point representation.</para>
 	/// </summary>
 	public class Float : AbstractGPProcess
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Float</para>
 		/// </summary>
-		public override string DisplayName => "Float";
+		public override string DisplayName() => "Float";
 
 		/// <summary>
 		/// <para>Tool Name : Float</para>
 		/// </summary>
-		public override string ToolName => "Float";
+		public override string ToolName() => "Float";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Float</para>
 		/// </summary>
-		public override string ExcuteName => "3d.Float";
+		public override string ExcuteName() => "3d.Float";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterOrConstant, OutRaster };
+		public override object[] Parameters() => new object[] { InRasterOrConstant, OutRaster };
 
 		/// <summary>
 		/// <para>Input raster or constant value</para>
@@ -76,7 +77,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "GPRasterFormulated", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile", "GPDouble", "GPLong")]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRasterOrConstant { get; set; }
 
 		/// <summary>

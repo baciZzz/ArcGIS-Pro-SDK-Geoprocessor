@@ -12,6 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 	/// <summary>
 	/// <para>Package Locator</para>
 	/// <para>Package Locator</para>
+	/// <para>Package Locator</para>
 	/// </summary>
 	[Obsolete()]
 	public class PackageLocator : AbstractGPProcess
@@ -34,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Display Name : Package Locator</para>
 		/// </summary>
-		public override string DisplayName => "Package Locator";
+		public override string DisplayName() => "Package Locator";
 
 		/// <summary>
 		/// <para>Tool Name : PackageLocator</para>
 		/// </summary>
-		public override string ToolName => "PackageLocator";
+		public override string ToolName() => "PackageLocator";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geocoding.PackageLocator</para>
 		/// </summary>
-		public override string ExcuteName => "geocoding.PackageLocator";
+		public override string ExcuteName() => "geocoding.PackageLocator";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geocoding Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geocoding Tools";
+		public override string ToolboxDisplayName() => "Geocoding Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geocoding</para>
 		/// </summary>
-		public override string ToolboxAlise => "geocoding";
+		public override string ToolboxAlise() => "geocoding";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLocator, OutputFile, CopyArcsdeLocator!, AdditionalFiles!, Summary!, Tags! };
+		public override object[] Parameters() => new object[] { InLocator, OutputFile, CopyArcsdeLocator!, AdditionalFiles!, Summary!, Tags! };
 
 		/// <summary>
 		/// <para>Input Locator</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("gcpk")]
 		public object OutputFile { get; set; }
 
 		/// <summary>

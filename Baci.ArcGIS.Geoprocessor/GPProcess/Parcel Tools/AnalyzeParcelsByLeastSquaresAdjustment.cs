@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Analyze Parcels By Least Squares Adjustment</para>
+	/// <para>Analyze Parcels By Least Squares Adjustment</para>
 	/// <para>Analyzes the parcel fabric measurement network by running a least-squares adjustment on the input parcels. A least-squares adjustment is a mathematical procedure that uses statistical analysis to estimate  the most likely coordinates for connected points in a measurement network. A least-squares adjustment can be run on the parcel fabric to evaluate and improve spatial accuracy of parcel corner point locations.</para>
 	/// </summary>
 	public class AnalyzeParcelsByLeastSquaresAdjustment : AbstractGPProcess
@@ -38,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Display Name : Analyze Parcels By Least Squares Adjustment</para>
 		/// </summary>
-		public override string DisplayName => "Analyze Parcels By Least Squares Adjustment";
+		public override string DisplayName() => "Analyze Parcels By Least Squares Adjustment";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeParcelsByLeastSquaresAdjustment</para>
 		/// </summary>
-		public override string ToolName => "AnalyzeParcelsByLeastSquaresAdjustment";
+		public override string ToolName() => "AnalyzeParcelsByLeastSquaresAdjustment";
 
 		/// <summary>
 		/// <para>Tool Excute Name : parcel.AnalyzeParcelsByLeastSquaresAdjustment</para>
 		/// </summary>
-		public override string ExcuteName => "parcel.AnalyzeParcelsByLeastSquaresAdjustment";
+		public override string ExcuteName() => "parcel.AnalyzeParcelsByLeastSquaresAdjustment";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Parcel Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Parcel Tools";
+		public override string ToolboxDisplayName() => "Parcel Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : parcel</para>
 		/// </summary>
-		public override string ToolboxAlise => "parcel";
+		public override string ToolboxAlise() => "parcel";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFabric, AnalysisType, ConvergenceTolerance!, UpdatedParcelFabric!, UpdatedAdjustmentPoints!, UpdatedAdjustmentLines!, UpdatedAdjustmentVectors! };
+		public override object[] Parameters() => new object[] { InParcelFabric, AnalysisType, ConvergenceTolerance!, UpdatedParcelFabric!, UpdatedAdjustmentPoints!, UpdatedAdjustmentLines!, UpdatedAdjustmentVectors! };
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>

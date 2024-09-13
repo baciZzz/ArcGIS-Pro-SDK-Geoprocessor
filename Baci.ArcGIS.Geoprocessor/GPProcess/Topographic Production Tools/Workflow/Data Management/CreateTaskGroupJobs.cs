@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Create Task Group Jobs</para>
+	/// <para>Create Task Group Jobs</para>
 	/// <para>Creates new Task Group jobs based on the properties of an existing job.</para>
 	/// </summary>
 	public class CreateTaskGroupJobs : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Task Group Jobs</para>
 		/// </summary>
-		public override string DisplayName => "Create Task Group Jobs";
+		public override string DisplayName() => "Create Task Group Jobs";
 
 		/// <summary>
 		/// <para>Tool Name : CreateTaskGroupJobs</para>
 		/// </summary>
-		public override string ToolName => "CreateTaskGroupJobs";
+		public override string ToolName() => "CreateTaskGroupJobs";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.CreateTaskGroupJobs</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.CreateTaskGroupJobs";
+		public override string ExcuteName() => "topographic.CreateTaskGroupJobs";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { JobId, DatabasePath!, OutJobIds! };
+		public override object[] Parameters() => new object[] { JobId, DatabasePath!, OutJobIds! };
 
 		/// <summary>
 		/// <para>Job ID</para>
@@ -77,6 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("jtc")]
 		public object? DatabasePath { get; set; }
 
 		/// <summary>

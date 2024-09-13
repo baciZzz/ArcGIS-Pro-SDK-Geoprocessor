@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Generate Events</para>
+	/// <para>Generate Events</para>
 	/// <para>Regenerates shapes for event features registered with an LRS Network.</para>
 	/// </summary>
 	public class GenerateEvents : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Events</para>
 		/// </summary>
-		public override string DisplayName => "Generate Events";
+		public override string DisplayName() => "Generate Events";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateEvents</para>
 		/// </summary>
-		public override string ToolName => "GenerateEvents";
+		public override string ToolName() => "GenerateEvents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.GenerateEvents</para>
 		/// </summary>
-		public override string ExcuteName => "locref.GenerateEvents";
+		public override string ExcuteName() => "locref.GenerateEvents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InEventLayer, OutEventLayers!, OutDetailsFile! };
+		public override object[] Parameters() => new object[] { InEventLayer, OutEventLayers!, OutDetailsFile! };
 
 		/// <summary>
 		/// <para>Event Layer</para>
@@ -69,6 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polyline")]
 		public object InEventLayer { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Reclass by Table</para>
+	/// <para>Reclass by Table</para>
 	/// <para>Reclassifies (or changes) the values of the input cells of a raster using a remap table.</para>
 	/// </summary>
 	public class ReclassByTable : AbstractGPProcess
@@ -59,37 +60,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Reclass by Table</para>
 		/// </summary>
-		public override string DisplayName => "Reclass by Table";
+		public override string DisplayName() => "Reclass by Table";
 
 		/// <summary>
 		/// <para>Tool Name : ReclassByTable</para>
 		/// </summary>
-		public override string ToolName => "ReclassByTable";
+		public override string ToolName() => "ReclassByTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.ReclassByTable</para>
 		/// </summary>
-		public override string ExcuteName => "3d.ReclassByTable";
+		public override string ExcuteName() => "3d.ReclassByTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InRemapTable, FromValueField, ToValueField, OutputValueField, OutRaster, MissingValues! };
+		public override object[] Parameters() => new object[] { InRaster, InRemapTable, FromValueField, ToValueField, OutputValueField, OutRaster, MissingValues! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -97,7 +98,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRaster { get; set; }
 
 		/// <summary>
@@ -116,6 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object FromValueField { get; set; }
 
 		/// <summary>
@@ -126,6 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object ToValueField { get; set; }
 
 		/// <summary>
@@ -136,6 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		public object OutputValueField { get; set; }
 
 		/// <summary>

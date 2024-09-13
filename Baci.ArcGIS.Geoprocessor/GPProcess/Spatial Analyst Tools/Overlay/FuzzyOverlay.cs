@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Fuzzy Overlay</para>
+	/// <para>Fuzzy Overlay</para>
 	/// <para>Combine fuzzy membership rasters data together, based on selected overlay type.</para>
 	/// </summary>
 	public class FuzzyOverlay : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Fuzzy Overlay</para>
 		/// </summary>
-		public override string DisplayName => "Fuzzy Overlay";
+		public override string DisplayName() => "Fuzzy Overlay";
 
 		/// <summary>
 		/// <para>Tool Name : FuzzyOverlay</para>
 		/// </summary>
-		public override string ToolName => "FuzzyOverlay";
+		public override string ToolName() => "FuzzyOverlay";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.FuzzyOverlay</para>
 		/// </summary>
-		public override string ExcuteName => "sa.FuzzyOverlay";
+		public override string ExcuteName() => "sa.FuzzyOverlay";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasters, OutRaster, OverlayType!, Gamma! };
+		public override object[] Parameters() => new object[] { InRasters, OutRaster, OverlayType!, Gamma! };
 
 		/// <summary>
 		/// <para>Input rasters</para>
@@ -74,7 +75,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRasters { get; set; }
 
 		/// <summary>
@@ -109,6 +113,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
+		[High(Allow = true, Value = 1)]
 		public object? Gamma { get; set; } = "0.9";
 
 		/// <summary>

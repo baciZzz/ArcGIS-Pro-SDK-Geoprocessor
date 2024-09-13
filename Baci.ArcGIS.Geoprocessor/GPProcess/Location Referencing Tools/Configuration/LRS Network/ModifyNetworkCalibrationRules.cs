@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Modify Network Calibration Rules</para>
+	/// <para>Modify Network Calibration Rules</para>
 	/// <para>Modifies the network calibration rules for an LRS Network.</para>
 	/// </summary>
 	public class ModifyNetworkCalibrationRules : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Modify Network Calibration Rules</para>
 		/// </summary>
-		public override string DisplayName => "Modify Network Calibration Rules";
+		public override string DisplayName() => "Modify Network Calibration Rules";
 
 		/// <summary>
 		/// <para>Tool Name : ModifyNetworkCalibrationRules</para>
 		/// </summary>
-		public override string ToolName => "ModifyNetworkCalibrationRules";
+		public override string ToolName() => "ModifyNetworkCalibrationRules";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.ModifyNetworkCalibrationRules</para>
 		/// </summary>
-		public override string ExcuteName => "locref.ModifyNetworkCalibrationRules";
+		public override string ExcuteName() => "locref.ModifyNetworkCalibrationRules";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, CalibrationRule!, CalibrationOffset!, OutFeatureClass!, UpdateMeasureCartorealign! };
+		public override object[] Parameters() => new object[] { InFeatureClass, CalibrationRule!, CalibrationOffset!, OutFeatureClass!, UpdateMeasureCartorealign! };
 
 		/// <summary>
 		/// <para>LRS Network Feature Class</para>
@@ -69,6 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InFeatureClass { get; set; }
 
 		/// <summary>

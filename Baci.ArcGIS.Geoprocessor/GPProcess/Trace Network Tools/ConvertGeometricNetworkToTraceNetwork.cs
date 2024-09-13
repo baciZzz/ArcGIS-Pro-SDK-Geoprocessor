@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 {
 	/// <summary>
 	/// <para>Convert Geometric Network To Trace Network</para>
+	/// <para>Convert Geometric Network To Trace Network</para>
 	/// <para>Converts a geometric network to a trace network.</para>
 	/// </summary>
 	public class ConvertGeometricNetworkToTraceNetwork : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Convert Geometric Network To Trace Network</para>
 		/// </summary>
-		public override string DisplayName => "Convert Geometric Network To Trace Network";
+		public override string DisplayName() => "Convert Geometric Network To Trace Network";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertGeometricNetworkToTraceNetwork</para>
 		/// </summary>
-		public override string ToolName => "ConvertGeometricNetworkToTraceNetwork";
+		public override string ToolName() => "ConvertGeometricNetworkToTraceNetwork";
 
 		/// <summary>
 		/// <para>Tool Excute Name : tn.ConvertGeometricNetworkToTraceNetwork</para>
 		/// </summary>
-		public override string ExcuteName => "tn.ConvertGeometricNetworkToTraceNetwork";
+		public override string ExcuteName() => "tn.ConvertGeometricNetworkToTraceNetwork";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Trace Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Trace Network Tools";
+		public override string ToolboxDisplayName() => "Trace Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : tn</para>
 		/// </summary>
-		public override string ToolboxAlise => "tn";
+		public override string ToolboxAlise() => "tn";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeometricNetwork, OutTraceNetworkName, OutTraceNetwork! };
+		public override object[] Parameters() => new object[] { InGeometricNetwork, OutTraceNetworkName, OutTraceNetwork! };
 
 		/// <summary>
 		/// <para>Input Geometric Network</para>
@@ -76,6 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEGeometricNetwork()]
 		[GPDatasetDomain()]
+		[DataSetType("GeometricNetwork")]
 		public object InGeometricNetwork { get; set; }
 
 		/// <summary>

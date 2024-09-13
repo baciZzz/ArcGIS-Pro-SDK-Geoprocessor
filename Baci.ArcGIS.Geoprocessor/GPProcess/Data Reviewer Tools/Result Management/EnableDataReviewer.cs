@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 {
 	/// <summary>
 	/// <para>Enable Data Reviewer</para>
+	/// <para>Enable Data Reviewer</para>
 	/// <para>Adds a feature dataset and tables necessary for an existing geodatabase to be considered a Reviewer workspace and store Data Reviewer results. The Reviewer workspace tables are required by ArcGIS Data Reviewer to manage Reviewer sessions.</para>
 	/// </summary>
 	public class EnableDataReviewer : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// <summary>
 		/// <para>Tool Display Name : Enable Data Reviewer</para>
 		/// </summary>
-		public override string DisplayName => "Enable Data Reviewer";
+		public override string DisplayName() => "Enable Data Reviewer";
 
 		/// <summary>
 		/// <para>Tool Name : EnableDataReviewer</para>
 		/// </summary>
-		public override string ToolName => "EnableDataReviewer";
+		public override string ToolName() => "EnableDataReviewer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : Reviewer.EnableDataReviewer</para>
 		/// </summary>
-		public override string ExcuteName => "Reviewer.EnableDataReviewer";
+		public override string ExcuteName() => "Reviewer.EnableDataReviewer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Reviewer Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Reviewer Tools";
+		public override string ToolboxDisplayName() => "Data Reviewer Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : Reviewer</para>
 		/// </summary>
-		public override string ToolboxAlise => "Reviewer";
+		public override string ToolboxAlise() => "Reviewer";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Workspace, SpatialReference!, RegisterAsVersioned!, ConfigKeyword!, OutReviewerWorkspace! };
+		public override object[] Parameters() => new object[] { Workspace, SpatialReference!, RegisterAsVersioned!, ConfigKeyword!, OutReviewerWorkspace! };
 
 		/// <summary>
 		/// <para>Workspace</para>
@@ -69,6 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object Workspace { get; set; }
 
 		/// <summary>

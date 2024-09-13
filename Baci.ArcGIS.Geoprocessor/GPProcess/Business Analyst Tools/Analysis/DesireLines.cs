@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Desire Lines</para>
+	/// <para>Generate Desire Lines</para>
 	/// <para>Generates a series of lines from each customer to an associated store location. These lines are often called spider diagrams. The tool can also generate an optional Wind Rose report from the output.</para>
 	/// </summary>
 	public class DesireLines : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Desire Lines</para>
 		/// </summary>
-		public override string DisplayName => "Generate Desire Lines";
+		public override string DisplayName() => "Generate Desire Lines";
 
 		/// <summary>
 		/// <para>Tool Name : DesireLines</para>
 		/// </summary>
-		public override string ToolName => "DesireLines";
+		public override string ToolName() => "DesireLines";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.DesireLines</para>
 		/// </summary>
-		public override string ExcuteName => "ba.DesireLines";
+		public override string ExcuteName() => "ba.DesireLines";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baNetworkSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InStoresLayer, InCustomersLayer, OutFeatureClass, StoreIdField, LinkField, DistanceType!, Units!, Cutoff!, TravelDirection!, TimeOfDay!, TimeZone!, CreateReport!, ReportTitle!, ReportFolder!, ReportFormat!, OutputReport! };
+		public override object[] Parameters() => new object[] { InStoresLayer, InCustomersLayer, OutFeatureClass, StoreIdField, LinkField, DistanceType!, Units!, Cutoff!, TravelDirection!, TimeOfDay!, TimeZone!, CreateReport!, ReportTitle!, ReportFolder!, ReportFormat!, OutputReport! };
 
 		/// <summary>
 		/// <para>Store Layer</para>
@@ -89,6 +90,8 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InStoresLayer { get; set; }
 
 		/// <summary>
@@ -98,6 +101,8 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InCustomersLayer { get; set; }
 
 		/// <summary>
@@ -115,6 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "Float", "Double", "GUID", "GlobalID")]
 		public object StoreIdField { get; set; }
 
 		/// <summary>
@@ -124,6 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "Float", "Double", "GUID", "GlobalID")]
 		public object LinkField { get; set; }
 
 		/// <summary>
@@ -152,6 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? Cutoff { get; set; }
 
 		/// <summary>

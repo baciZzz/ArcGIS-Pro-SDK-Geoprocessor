@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make TIN Layer</para>
+	/// <para>Make TIN Layer</para>
 	/// <para>Creates a triangulated irregular network (TIN) layer</para>
 	/// <para>from an input TIN dataset or layer file. The layer that is created by the tool is temporary and will not persist after the session ends unless the layer is saved to disk or the map document is saved.</para>
 	/// </summary>
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Make TIN Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make TIN Layer";
+		public override string DisplayName() => "Make TIN Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeTinLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeTinLayer";
+		public override string ToolName() => "MakeTinLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MakeTinLayer</para>
 		/// </summary>
-		public override string ExcuteName => "management.MakeTinLayer";
+		public override string ExcuteName() => "management.MakeTinLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTin, OutLayer };
+		public override object[] Parameters() => new object[] { InTin, OutLayer };
 
 		/// <summary>
 		/// <para>Input TIN</para>

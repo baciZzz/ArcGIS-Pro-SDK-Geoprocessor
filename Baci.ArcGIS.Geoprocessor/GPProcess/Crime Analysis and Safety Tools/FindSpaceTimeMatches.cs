@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Find Space Time Matches</para>
+	/// <para>Find Space Time Matches</para>
 	/// <para>Identifies matches between two feature classes based on proximity, time extent, or both.</para>
 	/// </summary>
 	public class FindSpaceTimeMatches : AbstractGPProcess
@@ -54,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Display Name : Find Space Time Matches</para>
 		/// </summary>
-		public override string DisplayName => "Find Space Time Matches";
+		public override string DisplayName() => "Find Space Time Matches";
 
 		/// <summary>
 		/// <para>Tool Name : FindSpaceTimeMatches</para>
 		/// </summary>
-		public override string ToolName => "FindSpaceTimeMatches";
+		public override string ToolName() => "FindSpaceTimeMatches";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ca.FindSpaceTimeMatches</para>
 		/// </summary>
-		public override string ExcuteName => "ca.FindSpaceTimeMatches";
+		public override string ExcuteName() => "ca.FindSpaceTimeMatches";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Crime Analysis and Safety Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Crime Analysis and Safety Tools";
+		public override string ToolboxDisplayName() => "Crime Analysis and Safety Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ca</para>
 		/// </summary>
-		public override string ToolboxAlise => "ca";
+		public override string ToolboxAlise() => "ca";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPrimaryFeatures, InComparisonFeatures, OutPrimaryFeatureClass, OutComparisonFeatureClass, MatchTypes, SearchRadius!, TemporalSearchRadius!, PrimaryStartDateField!, ComparisonStartDateField!, PrimaryEndDateField!, ComparisonEndDateField! };
+		public override object[] Parameters() => new object[] { InPrimaryFeatures, InComparisonFeatures, OutPrimaryFeatureClass, OutComparisonFeatureClass, MatchTypes, SearchRadius!, TemporalSearchRadius!, PrimaryStartDateField!, ComparisonStartDateField!, PrimaryEndDateField!, ComparisonEndDateField! };
 
 		/// <summary>
 		/// <para>Input Primary Features</para>
@@ -156,6 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object? PrimaryStartDateField { get; set; }
 
 		/// <summary>
@@ -165,6 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object? ComparisonStartDateField { get; set; }
 
 		/// <summary>
@@ -174,6 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object? PrimaryEndDateField { get; set; }
 
 		/// <summary>
@@ -183,6 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object? ComparisonEndDateField { get; set; }
 
 		/// <summary>

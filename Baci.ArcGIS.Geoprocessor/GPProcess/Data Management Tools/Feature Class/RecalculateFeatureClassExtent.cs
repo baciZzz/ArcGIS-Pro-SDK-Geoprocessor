@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Recalculate Feature Class Extent</para>
+	/// <para>Recalculate Feature Class Extent</para>
 	/// <para>Recalculates the xy, z, and m extent properties of a feature class based on the features in the feature class.</para>
 	/// </summary>
 	public class RecalculateFeatureClassExtent : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Recalculate Feature Class Extent</para>
 		/// </summary>
-		public override string DisplayName => "Recalculate Feature Class Extent";
+		public override string DisplayName() => "Recalculate Feature Class Extent";
 
 		/// <summary>
 		/// <para>Tool Name : RecalculateFeatureClassExtent</para>
 		/// </summary>
-		public override string ToolName => "RecalculateFeatureClassExtent";
+		public override string ToolName() => "RecalculateFeatureClassExtent";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RecalculateFeatureClassExtent</para>
 		/// </summary>
-		public override string ExcuteName => "management.RecalculateFeatureClassExtent";
+		public override string ExcuteName() => "management.RecalculateFeatureClassExtent";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatures!, StoreExtent! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatures!, StoreExtent! };
 
 		/// <summary>
 		/// <para>Feature Class</para>

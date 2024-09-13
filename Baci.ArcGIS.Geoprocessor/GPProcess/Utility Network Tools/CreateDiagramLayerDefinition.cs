@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Create Diagram Layer Definition</para>
+	/// <para>Create Diagram Layer Definition</para>
 	/// <para>Create or overwwrite a diagram template layer definitions</para>
 	/// </summary>
 	[Obsolete()]
@@ -34,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Diagram Layer Definition</para>
 		/// </summary>
-		public override string DisplayName => "Create Diagram Layer Definition";
+		public override string DisplayName() => "Create Diagram Layer Definition";
 
 		/// <summary>
 		/// <para>Tool Name : CreateDiagramLayerDefinition</para>
 		/// </summary>
-		public override string ToolName => "CreateDiagramLayerDefinition";
+		public override string ToolName() => "CreateDiagramLayerDefinition";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.CreateDiagramLayerDefinition</para>
 		/// </summary>
-		public override string ExcuteName => "un.CreateDiagramLayerDefinition";
+		public override string ExcuteName() => "un.CreateDiagramLayerDefinition";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, SystemJunctions!, ConnectivityAssociations!, StructuralAttachments!, ReductionEdges!, PointSublayers!, PolygonSublayers!, OutUtilityNetwork!, OutTemplateName!, JunctionObjectPointSublayers!, EdgeObjectPolylineSublayers!, OverwriteAllLayers! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, SystemJunctions!, ConnectivityAssociations!, StructuralAttachments!, ReductionEdges!, PointSublayers!, PolygonSublayers!, OutUtilityNetwork!, OutTemplateName!, JunctionObjectPointSublayers!, EdgeObjectPolylineSublayers!, OverwriteAllLayers! };
 
 		/// <summary>
 		/// <para>Input Network</para>

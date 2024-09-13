@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Pairwise Clip</para>
+	/// <para>Pairwise Clip</para>
 	/// <para>Extracts input features that overlay the clip features.</para>
 	/// </summary>
 	public class PairwiseClip : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Pairwise Clip</para>
 		/// </summary>
-		public override string DisplayName => "Pairwise Clip";
+		public override string DisplayName() => "Pairwise Clip";
 
 		/// <summary>
 		/// <para>Tool Name : PairwiseClip</para>
 		/// </summary>
-		public override string ToolName => "PairwiseClip";
+		public override string ToolName() => "PairwiseClip";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.PairwiseClip</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.PairwiseClip";
+		public override string ExcuteName() => "analysis.PairwiseClip";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "configKeyword", "extent", "maintainCurveSegments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "transferGDBAttributeProperties" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "configKeyword", "extent", "maintainCurveSegments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "transferGDBAttributeProperties" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ClipFeatures, OutFeatureClass, ClusterTolerance! };
+		public override object[] Parameters() => new object[] { InFeatures, ClipFeatures, OutFeatureClass, ClusterTolerance! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -88,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object ClipFeatures { get; set; }
 
 		/// <summary>

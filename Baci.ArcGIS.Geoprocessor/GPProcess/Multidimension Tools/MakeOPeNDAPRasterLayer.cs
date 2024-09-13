@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Make OPeNDAP Raster Layer</para>
+	/// <para>Make OPeNDAP Raster Layer</para>
 	/// <para>Creates a raster layer from data stored on an OPeNDAP server.</para>
 	/// </summary>
 	public class MakeOPeNDAPRasterLayer : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Display Name : Make OPeNDAP Raster Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make OPeNDAP Raster Layer";
+		public override string DisplayName() => "Make OPeNDAP Raster Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeOPeNDAPRasterLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeOPeNDAPRasterLayer";
+		public override string ToolName() => "MakeOPeNDAPRasterLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : md.MakeOPeNDAPRasterLayer</para>
 		/// </summary>
-		public override string ExcuteName => "md.MakeOPeNDAPRasterLayer";
+		public override string ExcuteName() => "md.MakeOPeNDAPRasterLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Multidimension Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Multidimension Tools";
+		public override string ToolboxDisplayName() => "Multidimension Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : md</para>
 		/// </summary>
-		public override string ToolboxAlise => "md";
+		public override string ToolboxAlise() => "md";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InOpendapURL, Variable, XDimension, YDimension, OutRasterLayer, Extent!, DimensionValues!, ValueSelectionMethod!, CellRegistration! };
+		public override object[] Parameters() => new object[] { InOpendapURL, Variable, XDimension, YDimension, OutRasterLayer, Extent!, DimensionValues!, ValueSelectionMethod!, CellRegistration! };
 
 		/// <summary>
 		/// <para>Input OPeNDAP URL</para>

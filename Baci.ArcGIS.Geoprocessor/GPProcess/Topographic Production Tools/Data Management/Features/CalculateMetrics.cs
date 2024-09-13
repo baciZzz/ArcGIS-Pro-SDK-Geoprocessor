@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Calculate Metrics</para>
+	/// <para>Calculate Metrics</para>
 	/// <para>Populates metrics for features in a geodatabase. Metrics include length, width, area, and elevation attributes.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -44,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Metrics</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Metrics";
+		public override string DisplayName() => "Calculate Metrics";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateMetrics</para>
 		/// </summary>
-		public override string ToolName => "CalculateMetrics";
+		public override string ToolName() => "CalculateMetrics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.CalculateMetrics</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.CalculateMetrics";
+		public override string ExcuteName() => "topographic.CalculateMetrics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InMetricTypes, InLengthAttributes!, InWidthAttributes!, InAreaAttributes!, InAngleAttributes!, InElevationAttributes!, InPrecision!, OutFeatures!, MgrsAttributes!, MgrsPrecision! };
+		public override object[] Parameters() => new object[] { InFeatures, InMetricTypes, InLengthAttributes!, InWidthAttributes!, InAreaAttributes!, InAngleAttributes!, InElevationAttributes!, InPrecision!, OutFeatures!, MgrsAttributes!, MgrsPrecision! };
 
 		/// <summary>
 		/// <para>Input Features</para>

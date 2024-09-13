@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Clear Job Replication Information</para>
+	/// <para>Clear Job Replication Information</para>
 	/// <para>Deletes the  replication information on a parent repository and sends  a web service call to all the child repositories in the cluster. Consequently, the replication information is cleared from all the repositories participating in the cluster.</para>
 	/// </summary>
 	public class ClearJobReplicationInfo : AbstractGPProcess
@@ -31,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Display Name : Clear Job Replication Information</para>
 		/// </summary>
-		public override string DisplayName => "Clear Job Replication Information";
+		public override string DisplayName() => "Clear Job Replication Information";
 
 		/// <summary>
 		/// <para>Tool Name : ClearJobReplicationInfo</para>
 		/// </summary>
-		public override string ToolName => "ClearJobReplicationInfo";
+		public override string ToolName() => "ClearJobReplicationInfo";
 
 		/// <summary>
 		/// <para>Tool Excute Name : wmx.ClearJobReplicationInfo</para>
 		/// </summary>
-		public override string ExcuteName => "wmx.ClearJobReplicationInfo";
+		public override string ExcuteName() => "wmx.ClearJobReplicationInfo";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Workflow Manager Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Workflow Manager Tools";
+		public override string ToolboxDisplayName() => "Workflow Manager Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : wmx</para>
 		/// </summary>
-		public override string ToolboxAlise => "wmx";
+		public override string ToolboxAlise() => "wmx";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputRepositoryURL, InputDatabasepath!, OutputStatus! };
+		public override object[] Parameters() => new object[] { InputRepositoryURL, InputDatabasepath!, OutputStatus! };
 
 		/// <summary>
 		/// <para>Repository URL</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("jtc")]
 		public object? InputDatabasepath { get; set; }
 
 		/// <summary>

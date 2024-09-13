@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Create Jobs</para>
+	/// <para>Create Jobs</para>
 	/// <para>Creates one or more jobs of the selected job type and assigns the jobs to a user.  The created jobs can be prioritized and have an area of interest (AOI) defined from a feature layer or feature class.</para>
 	/// </summary>
 	[Obsolete()]
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Jobs</para>
 		/// </summary>
-		public override string DisplayName => "Create Jobs";
+		public override string DisplayName() => "Create Jobs";
 
 		/// <summary>
 		/// <para>Tool Name : CreateJobs</para>
 		/// </summary>
-		public override string ToolName => "CreateJobs";
+		public override string ToolName() => "CreateJobs";
 
 		/// <summary>
 		/// <para>Tool Excute Name : wmx.CreateJobs</para>
 		/// </summary>
-		public override string ExcuteName => "wmx.CreateJobs";
+		public override string ExcuteName() => "wmx.CreateJobs";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Workflow Manager Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Workflow Manager Tools";
+		public override string ToolboxDisplayName() => "Workflow Manager Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : wmx</para>
 		/// </summary>
-		public override string ToolboxAlise => "wmx";
+		public override string ToolboxAlise() => "wmx";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabasepath, JobTypes, NumberOfJobs, Users!, PriorityOfJobs!, FeatureLayerAOI!, UnionOption!, JobID! };
+		public override object[] Parameters() => new object[] { InputDatabasepath, JobTypes, NumberOfJobs, Users!, PriorityOfJobs!, FeatureLayerAOI!, UnionOption!, JobID! };
 
 		/// <summary>
 		/// <para>Input Database Path (.jtc)</para>
@@ -80,6 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("jtc")]
 		public object InputDatabasepath { get; set; }
 
 		/// <summary>
@@ -122,6 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object? FeatureLayerAOI { get; set; }
 
 		/// <summary>

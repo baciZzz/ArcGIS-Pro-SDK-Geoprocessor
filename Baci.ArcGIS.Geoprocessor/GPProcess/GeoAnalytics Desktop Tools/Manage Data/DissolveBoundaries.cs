@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Dissolve Boundaries</para>
+	/// <para>Dissolve Boundaries</para>
 	/// <para>Finds polygons that intersect or have the same field values and merges them to form a single polygon.</para>
 	/// </summary>
 	public class DissolveBoundaries : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Dissolve Boundaries</para>
 		/// </summary>
-		public override string DisplayName => "Dissolve Boundaries";
+		public override string DisplayName() => "Dissolve Boundaries";
 
 		/// <summary>
 		/// <para>Tool Name : DissolveBoundaries</para>
 		/// </summary>
-		public override string ToolName => "DissolveBoundaries";
+		public override string ToolName() => "DissolveBoundaries";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.DissolveBoundaries</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.DissolveBoundaries";
+		public override string ExcuteName() => "gapro.DissolveBoundaries";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutFeatureClass, Multipart!, DissolveFields!, Fields!, SummaryFields! };
+		public override object[] Parameters() => new object[] { InputLayer, OutFeatureClass, Multipart!, DissolveFields!, Fields!, SummaryFields! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,6 +75,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object InputLayer { get; set; }
 
 		/// <summary>
@@ -115,6 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date")]
 		public object? Fields { get; set; }
 
 		/// <summary>

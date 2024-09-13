@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Spatial Reference</para>
+	/// <para>Create Spatial Reference</para>
 	/// <para>Creates a spatial reference for use in ModelBuilder.</para>
 	/// </summary>
 	public class CreateSpatialReference : AbstractGPProcess
@@ -25,37 +26,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Spatial Reference</para>
 		/// </summary>
-		public override string DisplayName => "Create Spatial Reference";
+		public override string DisplayName() => "Create Spatial Reference";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSpatialReference</para>
 		/// </summary>
-		public override string ToolName => "CreateSpatialReference";
+		public override string ToolName() => "CreateSpatialReference";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateSpatialReference</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateSpatialReference";
+		public override string ExcuteName() => "management.CreateSpatialReference";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SpatialReference!, SpatialReferenceTemplate!, XyDomain!, ZDomain!, MDomain!, Template!, ExpandRatio!, OutSpatialReference! };
+		public override object[] Parameters() => new object[] { SpatialReference!, SpatialReferenceTemplate!, XyDomain!, ZDomain!, MDomain!, Template!, ExpandRatio!, OutSpatialReference! };
 
 		/// <summary>
 		/// <para>Spatial Reference</para>

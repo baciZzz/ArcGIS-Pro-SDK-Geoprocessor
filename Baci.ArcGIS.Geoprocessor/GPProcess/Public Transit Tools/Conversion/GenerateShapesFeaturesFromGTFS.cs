@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 {
 	/// <summary>
 	/// <para>Generate Shapes Features From GTFS</para>
+	/// <para>Generate Shapes Features From GTFS</para>
 	/// <para>Generates an estimate of the paths traveled by the vehicles in a public transit system. The output from this tool can be used to generate a new shapes.txt file for a GTFS public transit dataset.</para>
 	/// </summary>
 	public class GenerateShapesFeaturesFromGTFS : AbstractGPProcess
@@ -46,37 +47,37 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Shapes Features From GTFS</para>
 		/// </summary>
-		public override string DisplayName => "Generate Shapes Features From GTFS";
+		public override string DisplayName() => "Generate Shapes Features From GTFS";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateShapesFeaturesFromGTFS</para>
 		/// </summary>
-		public override string ToolName => "GenerateShapesFeaturesFromGTFS";
+		public override string ToolName() => "GenerateShapesFeaturesFromGTFS";
 
 		/// <summary>
 		/// <para>Tool Excute Name : transit.GenerateShapesFeaturesFromGTFS</para>
 		/// </summary>
-		public override string ExcuteName => "transit.GenerateShapesFeaturesFromGTFS";
+		public override string ExcuteName() => "transit.GenerateShapesFeaturesFromGTFS";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Public Transit Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Public Transit Tools";
+		public override string ToolboxDisplayName() => "Public Transit Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : transit</para>
 		/// </summary>
-		public override string ToolboxAlise => "transit";
+		public override string ToolboxAlise() => "transit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGtfsFolder, OutShapeLines, OutShapeStops, OutGtfsTrips, NetworkModes!, NetworkDataSource!, TravelMode!, DriveSide!, BearingTolerance!, MaxBearingAngle! };
+		public override object[] Parameters() => new object[] { InGtfsFolder, OutShapeLines, OutShapeStops, OutGtfsTrips, NetworkModes!, NetworkDataSource!, TravelMode!, DriveSide!, BearingTolerance!, MaxBearingAngle! };
 
 		/// <summary>
 		/// <para>Input GTFS Folder</para>
@@ -110,6 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("txt")]
 		public object OutGtfsTrips { get; set; }
 
 		/// <summary>
@@ -181,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 180)]
 		[Category("Network options")]
 		public object? BearingTolerance { get; set; } = "30";
 
@@ -194,7 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 180)]
 		[Category("Network options")]
 		public object? MaxBearingAngle { get; set; } = "65";
 

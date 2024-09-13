@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Spatial Autocorrelation (Global Moran's I)</para>
+	/// <para>Spatial Autocorrelation (Global Moran's I)</para>
 	/// <para>Measures spatial autocorrelation based on feature locations and attribute values using the Global Moran's I statistic.</para>
 	/// </summary>
 	public class SpatialAutocorrelation : AbstractGPProcess
@@ -65,37 +66,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Spatial Autocorrelation (Global Moran's I)</para>
 		/// </summary>
-		public override string DisplayName => "Spatial Autocorrelation (Global Moran's I)";
+		public override string DisplayName() => "Spatial Autocorrelation (Global Moran's I)";
 
 		/// <summary>
 		/// <para>Tool Name : SpatialAutocorrelation</para>
 		/// </summary>
-		public override string ToolName => "SpatialAutocorrelation";
+		public override string ToolName() => "SpatialAutocorrelation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.SpatialAutocorrelation</para>
 		/// </summary>
-		public override string ExcuteName => "stats.SpatialAutocorrelation";
+		public override string ExcuteName() => "stats.SpatialAutocorrelation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, InputField, GenerateReport!, ConceptualizationOfSpatialRelationships, DistanceMethod, Standardization, DistanceBandOrThresholdDistance!, WeightsMatrixFile!, Index!, Zscore!, Pvalue!, ReportFile!, NumberOfNeighbors! };
+		public override object[] Parameters() => new object[] { InputFeatureClass, InputField, GenerateReport!, ConceptualizationOfSpatialRelationships, DistanceMethod, Standardization, DistanceBandOrThresholdDistance!, WeightsMatrixFile!, Index!, Zscore!, Pvalue!, ReportFile!, NumberOfNeighbors! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -112,6 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object InputField { get; set; }
 
 		/// <summary>
@@ -176,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 999999999999999)]
 		public object? DistanceBandOrThresholdDistance { get; set; }
 
 		/// <summary>
@@ -186,6 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("swm", "gwt", "txt")]
 		public object? WeightsMatrixFile { get; set; }
 
 		/// <summary>
@@ -222,7 +225,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 2, Max = 1000)]
 		public object? NumberOfNeighbors { get; set; }
 
 		/// <summary>

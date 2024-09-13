@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Build Network</para>
+	/// <para>Build Network</para>
 	/// <para>Reconstructs the network connectivity and attribute information of a network dataset. The network dataset must be rebuilt after edits are made to the attributes or the features of a participating source feature class. After the source features are edited, the tool establishes the network connectivity only in the areas that have been edited to speed up the build process; however, when the network attributes are edited, the entire extent of the network dataset is rebuilt. This may be a slow operation on a large network dataset.</para>
 	/// </summary>
 	public class BuildNetwork : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Build Network</para>
 		/// </summary>
-		public override string DisplayName => "Build Network";
+		public override string DisplayName() => "Build Network";
 
 		/// <summary>
 		/// <para>Tool Name : BuildNetwork</para>
 		/// </summary>
-		public override string ToolName => "BuildNetwork";
+		public override string ToolName() => "BuildNetwork";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.BuildNetwork</para>
 		/// </summary>
-		public override string ExcuteName => "na.BuildNetwork";
+		public override string ExcuteName() => "na.BuildNetwork";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, OutNetworkDataset! };
+		public override object[] Parameters() => new object[] { InNetworkDataset, OutNetworkDataset! };
 
 		/// <summary>
 		/// <para>Input Network Dataset</para>

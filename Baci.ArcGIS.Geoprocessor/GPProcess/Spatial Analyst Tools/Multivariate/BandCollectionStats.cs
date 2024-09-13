@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Band Collection Statistics</para>
+	/// <para>Band Collection Statistics</para>
 	/// <para>Calculates the statistics for a set of raster bands.</para>
 	/// </summary>
 	public class BandCollectionStats : AbstractGPProcess
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Band Collection Statistics</para>
 		/// </summary>
-		public override string DisplayName => "Band Collection Statistics";
+		public override string DisplayName() => "Band Collection Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : BandCollectionStats</para>
 		/// </summary>
-		public override string ToolName => "BandCollectionStats";
+		public override string ToolName() => "BandCollectionStats";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.BandCollectionStats</para>
 		/// </summary>
-		public override string ExcuteName => "sa.BandCollectionStats";
+		public override string ExcuteName() => "sa.BandCollectionStats";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterBands, OutStatFile, ComputeMatrices! };
+		public override object[] Parameters() => new object[] { InRasterBands, OutStatFile, ComputeMatrices! };
 
 		/// <summary>
 		/// <para>Input raster bands</para>
@@ -76,7 +77,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRasterBands { get; set; }
 
 		/// <summary>
@@ -87,6 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("TXT", "ASC")]
 		public object OutStatFile { get; set; }
 
 		/// <summary>

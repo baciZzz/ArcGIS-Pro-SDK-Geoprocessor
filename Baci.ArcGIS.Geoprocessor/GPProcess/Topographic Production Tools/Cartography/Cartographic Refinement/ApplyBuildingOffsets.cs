@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Apply Building Offsets</para>
+	/// <para>Apply Building Offsets</para>
 	/// <para>Aligns, moves, and hides building or bridge marker symbols based on product specification rules defined in an .xml file.</para>
 	/// </summary>
 	public class ApplyBuildingOffsets : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Building Offsets</para>
 		/// </summary>
-		public override string DisplayName => "Apply Building Offsets";
+		public override string DisplayName() => "Apply Building Offsets";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyBuildingOffsets</para>
 		/// </summary>
-		public override string ToolName => "ApplyBuildingOffsets";
+		public override string ToolName() => "ApplyBuildingOffsets";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.ApplyBuildingOffsets</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.ApplyBuildingOffsets";
+		public override string ExcuteName() => "topographic.ApplyBuildingOffsets";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, RuleFile, UpdatedMap! };
+		public override object[] Parameters() => new object[] { InMap, RuleFile, UpdatedMap! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -82,6 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object RuleFile { get; set; }
 
 		/// <summary>

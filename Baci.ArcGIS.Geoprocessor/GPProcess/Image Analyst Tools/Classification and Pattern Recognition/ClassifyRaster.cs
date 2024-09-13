@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Classify Raster</para>
+	/// <para>Classify Raster</para>
 	/// <para>Classifies a raster dataset based on an Esri classifier definition file (.ecd) and raster dataset inputs.</para>
 	/// </summary>
 	public class ClassifyRaster : AbstractGPProcess
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Classify Raster</para>
 		/// </summary>
-		public override string DisplayName => "Classify Raster";
+		public override string DisplayName() => "Classify Raster";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyRaster</para>
 		/// </summary>
-		public override string ToolName => "ClassifyRaster";
+		public override string ToolName() => "ClassifyRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.ClassifyRaster</para>
 		/// </summary>
-		public override string ExcuteName => "ia.ClassifyRaster";
+		public override string ExcuteName() => "ia.ClassifyRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InClassifierDefinition, OutRasterDataset, InAdditionalRaster! };
+		public override object[] Parameters() => new object[] { InRaster, InClassifierDefinition, OutRasterDataset, InAdditionalRaster! };
 
 		/// <summary>
 		/// <para>Input Raster</para>

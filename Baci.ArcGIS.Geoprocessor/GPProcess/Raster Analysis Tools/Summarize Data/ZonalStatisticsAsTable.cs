@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Zonal Statistics As Table</para>
+	/// <para>Zonal Statistics As Table</para>
 	/// <para>Calculates the values of a raster within the zones of another dataset and reports the results to a table.</para>
 	/// </summary>
 	public class ZonalStatisticsAsTable : AbstractGPProcess
@@ -48,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Zonal Statistics As Table</para>
 		/// </summary>
-		public override string DisplayName => "Zonal Statistics As Table";
+		public override string DisplayName() => "Zonal Statistics As Table";
 
 		/// <summary>
 		/// <para>Tool Name : ZonalStatisticsAsTable</para>
 		/// </summary>
-		public override string ToolName => "ZonalStatisticsAsTable";
+		public override string ToolName() => "ZonalStatisticsAsTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.ZonalStatisticsAsTable</para>
 		/// </summary>
-		public override string ExcuteName => "ra.ZonalStatisticsAsTable";
+		public override string ExcuteName() => "ra.ZonalStatisticsAsTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputzonerasterorfeatures, Inputvalueraster, Outputtablename, Zonefield, Ignorenodata!, Statistictype!, Percentilevalues!, Processasmultidimensional!, Outputtable!, Percentileinterpolationtype!, Circularcalculation!, Circularwrapvalue! };
+		public override object[] Parameters() => new object[] { Inputzonerasterorfeatures, Inputvalueraster, Outputtablename, Zonefield, Ignorenodata!, Statistictype!, Percentilevalues!, Processasmultidimensional!, Outputtable!, Percentileinterpolationtype!, Circularcalculation!, Circularwrapvalue! };
 
 		/// <summary>
 		/// <para>Input Zone Raster or Features</para>

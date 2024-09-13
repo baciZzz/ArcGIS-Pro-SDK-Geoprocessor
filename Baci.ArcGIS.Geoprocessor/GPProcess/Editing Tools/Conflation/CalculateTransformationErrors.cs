@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Calculate Transformation Errors</para>
+	/// <para>Calculate Transformation Errors</para>
 	/// <para>Calculates residue errors and root mean square error (RMSE) based on the coordinates of the input links between known control points to be used for spatial data transformation.</para>
 	/// </summary>
 	public class CalculateTransformationErrors : AbstractGPProcess
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Transformation Errors</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Transformation Errors";
+		public override string DisplayName() => "Calculate Transformation Errors";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateTransformationErrors</para>
 		/// </summary>
-		public override string ToolName => "CalculateTransformationErrors";
+		public override string ToolName() => "CalculateTransformationErrors";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.CalculateTransformationErrors</para>
 		/// </summary>
-		public override string ExcuteName => "edit.CalculateTransformationErrors";
+		public override string ExcuteName() => "edit.CalculateTransformationErrors";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLinkFeatures, OutLinkTable, Method!, OutRmse! };
+		public override object[] Parameters() => new object[] { InLinkFeatures, OutLinkTable, Method!, OutRmse! };
 
 		/// <summary>
 		/// <para>Input Link Features</para>
@@ -80,6 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InLinkFeatures { get; set; }
 
 		/// <summary>

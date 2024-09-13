@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Modify LRS Network</para>
+	/// <para>Modify LRS Network</para>
 	/// <para>Modifies an LRS Network in a Location Referencing linear referencing system (LRS).</para>
 	/// </summary>
 	public class ModifyLRSNetwork : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Modify LRS Network</para>
 		/// </summary>
-		public override string DisplayName => "Modify LRS Network";
+		public override string DisplayName() => "Modify LRS Network";
 
 		/// <summary>
 		/// <para>Tool Name : ModifyLRSNetwork</para>
 		/// </summary>
-		public override string ToolName => "ModifyLRSNetwork";
+		public override string ToolName() => "ModifyLRSNetwork";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.ModifyLRSNetwork</para>
 		/// </summary>
-		public override string ExcuteName => "locref.ModifyLRSNetwork";
+		public override string ExcuteName() => "locref.ModifyLRSNetwork";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, RouteIdField!, RouteNameField!, FromDateField!, ToDateField!, DeriveFromLineNetwork!, LineNetworkName!, IncludeFieldsToSupportLines!, LineIdField!, LineNameField!, LineOrderField!, OutFeatureClass!, RouteIdConfiguration!, IndividualRouteIdFields! };
+		public override object[] Parameters() => new object[] { InFeatureClass, RouteIdField!, RouteNameField!, FromDateField!, ToDateField!, DeriveFromLineNetwork!, LineNetworkName!, IncludeFieldsToSupportLines!, LineIdField!, LineNameField!, LineOrderField!, OutFeatureClass!, RouteIdConfiguration!, IndividualRouteIdFields! };
 
 		/// <summary>
 		/// <para>LRS Network Feature Class</para>
@@ -69,6 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InFeatureClass { get; set; }
 
 		/// <summary>
@@ -87,6 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object? RouteNameField { get; set; }
 
 		/// <summary>
@@ -96,6 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object? FromDateField { get; set; }
 
 		/// <summary>
@@ -105,6 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object? ToDateField { get; set; }
 
 		/// <summary>
@@ -158,6 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object? LineNameField { get; set; }
 
 		/// <summary>
@@ -167,6 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long")]
 		public object? LineOrderField { get; set; }
 
 		/// <summary>
@@ -197,6 +204,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		public object? IndividualRouteIdFields { get; set; }
 
 		/// <summary>

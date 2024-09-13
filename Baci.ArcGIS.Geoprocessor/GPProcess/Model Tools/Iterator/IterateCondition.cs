@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>While</para>
+	/// <para>While</para>
 	/// <para>Iterates until a condition becomes true or until a condition comes false.</para>
 	/// </summary>
 	public class IterateCondition : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : While</para>
 		/// </summary>
-		public override string DisplayName => "While";
+		public override string DisplayName() => "While";
 
 		/// <summary>
 		/// <para>Tool Name : IterateCondition</para>
 		/// </summary>
-		public override string ToolName => "IterateCondition";
+		public override string ToolName() => "IterateCondition";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.IterateCondition</para>
 		/// </summary>
-		public override string ExcuteName => "mb.IterateCondition";
+		public override string ExcuteName() => "mb.IterateCondition";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InValues, Condition!, Continue! };
+		public override object[] Parameters() => new object[] { InValues, Condition!, Continue! };
 
 		/// <summary>
 		/// <para>Input Values</para>

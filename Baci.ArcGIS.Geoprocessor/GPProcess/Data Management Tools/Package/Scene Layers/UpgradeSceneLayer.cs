@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Upgrade Scene Layer</para>
+	/// <para>Upgrade Scene Layer</para>
 	/// <para>Upgrades a scene layer package to the current I3S version in SLPK format or output to i3sREST  for use in ArcGIS Enterprise.</para>
 	/// </summary>
 	public class UpgradeSceneLayer : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Upgrade Scene Layer</para>
 		/// </summary>
-		public override string DisplayName => "Upgrade Scene Layer";
+		public override string DisplayName() => "Upgrade Scene Layer";
 
 		/// <summary>
 		/// <para>Tool Name : UpgradeSceneLayer</para>
 		/// </summary>
-		public override string ToolName => "UpgradeSceneLayer";
+		public override string ToolName() => "UpgradeSceneLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.UpgradeSceneLayer</para>
 		/// </summary>
-		public override string ExcuteName => "management.UpgradeSceneLayer";
+		public override string ExcuteName() => "management.UpgradeSceneLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutFolderPath, OutName, OutLog!, TextureOptimization! };
+		public override object[] Parameters() => new object[] { InDataset, OutFolderPath, OutName, OutLog!, TextureOptimization! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("SLPK", "SPK")]
 		public object InDataset { get; set; }
 
 		/// <summary>
@@ -104,6 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("json")]
 		public object? OutLog { get; set; }
 
 		/// <summary>

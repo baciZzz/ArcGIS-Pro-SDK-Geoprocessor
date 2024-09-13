@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Generate Sector Lines</para>
+	/// <para>Generate Sector Lines</para>
 	/// <para>Creates line features that represent the extent of cell site antenna sectors.</para>
 	/// </summary>
 	public class GenerateSectorLines : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Sector Lines</para>
 		/// </summary>
-		public override string DisplayName => "Generate Sector Lines";
+		public override string DisplayName() => "Generate Sector Lines";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateSectorLines</para>
 		/// </summary>
-		public override string ToolName => "GenerateSectorLines";
+		public override string ToolName() => "GenerateSectorLines";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ca.GenerateSectorLines</para>
 		/// </summary>
-		public override string ExcuteName => "ca.GenerateSectorLines";
+		public override string ExcuteName() => "ca.GenerateSectorLines";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Crime Analysis and Safety Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Crime Analysis and Safety Tools";
+		public override string ToolboxDisplayName() => "Crime Analysis and Safety Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ca</para>
 		/// </summary>
-		public override string ToolboxAlise => "ca";
+		public override string ToolboxAlise() => "ca";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSiteFeatures, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InSiteFeatures, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Input Cell Site Points</para>
@@ -74,6 +75,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InSiteFeatures { get; set; }
 
 		/// <summary>

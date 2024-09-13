@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 {
 	/// <summary>
 	/// <para>Add Trace Configuration</para>
+	/// <para>Add Trace Configuration</para>
 	/// <para>Creates a named trace configuration in the trace network.</para>
 	/// </summary>
 	public class AddTraceConfiguration : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Trace Configuration</para>
 		/// </summary>
-		public override string DisplayName => "Add Trace Configuration";
+		public override string DisplayName() => "Add Trace Configuration";
 
 		/// <summary>
 		/// <para>Tool Name : AddTraceConfiguration</para>
 		/// </summary>
-		public override string ToolName => "AddTraceConfiguration";
+		public override string ToolName() => "AddTraceConfiguration";
 
 		/// <summary>
 		/// <para>Tool Excute Name : tn.AddTraceConfiguration</para>
 		/// </summary>
-		public override string ExcuteName => "tn.AddTraceConfiguration";
+		public override string ExcuteName() => "tn.AddTraceConfiguration";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Trace Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Trace Network Tools";
+		public override string ToolboxDisplayName() => "Trace Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : tn</para>
 		/// </summary>
-		public override string ToolboxAlise => "tn";
+		public override string ToolboxAlise() => "tn";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTraceNetwork, TraceConfigName, TraceType, Description!, Tags!, PathDirection!, ShortestPathNetworkAttributeName!, IncludeBarriers!, ValidateConsistency!, IgnoreBarriersAtStartingPoints!, AllowIndeterminateFlow!, ConditionBarriers!, FunctionBarriers!, TraversabilityScope!, Functions!, OutputConditions!, ResultTypes!, UpdatedTraceNetwork! };
+		public override object[] Parameters() => new object[] { InTraceNetwork, TraceConfigName, TraceType, Description!, Tags!, PathDirection!, ShortestPathNetworkAttributeName!, IncludeBarriers!, ValidateConsistency!, IgnoreBarriersAtStartingPoints!, AllowIndeterminateFlow!, ConditionBarriers!, FunctionBarriers!, TraversabilityScope!, Functions!, OutputConditions!, ResultTypes!, UpdatedTraceNetwork! };
 
 		/// <summary>
 		/// <para>Input Trace Network</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Geographically Weighted Regression (GWR)</para>
+	/// <para>Geographically Weighted Regression (GWR)</para>
 	/// <para>Performs Geographically Weighted Regression (GWR), which is a local form of linear regression that is used to model spatially varying relationships.</para>
 	/// </summary>
 	public class GWR : AbstractGPProcess
@@ -67,37 +68,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Geographically Weighted Regression (GWR)</para>
 		/// </summary>
-		public override string DisplayName => "Geographically Weighted Regression (GWR)";
+		public override string DisplayName() => "Geographically Weighted Regression (GWR)";
 
 		/// <summary>
 		/// <para>Tool Name : GWR</para>
 		/// </summary>
-		public override string ToolName => "GWR";
+		public override string ToolName() => "GWR";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.GWR</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.GWR";
+		public override string ExcuteName() => "geoanalytics.GWR";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeatures, NeighborhoodType, NeighborhoodSelectionMethod, NumberOfNeighbors!, DistanceBand!, LocalWeightingScheme!, DataStore!, Output! };
+		public override object[] Parameters() => new object[] { InFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeatures, NeighborhoodType, NeighborhoodSelectionMethod, NumberOfNeighbors!, DistanceBand!, LocalWeightingScheme!, DataStore!, Output! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -106,6 +107,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple")]
+		[PortalType("DataStoreCatalogLayer")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -115,6 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object DependentVariable { get; set; }
 
 		/// <summary>
@@ -135,6 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object ExplanatoryVariables { get; set; }
 
 		/// <summary>
@@ -174,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 5000)]
 		public object? NumberOfNeighbors { get; set; }
 
 		/// <summary>

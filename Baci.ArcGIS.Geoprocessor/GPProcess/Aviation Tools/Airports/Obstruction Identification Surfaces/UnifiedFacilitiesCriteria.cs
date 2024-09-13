@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Unified Facilities Criteria</para>
+	/// <para>Unified Facilities Criteria</para>
 	/// <para>Creates obstruction identification surfaces based on the Unified Facilities Criteria (UFC) 3-260-01 that is prescribed by MIL-STD 3007. These surfaces provide planning, design, construction, sustainment, restoration, and modernization criteria for the United States Department of Defense. Surfaces are created as polygon or multipatch features.</para>
 	/// </summary>
 	public class UnifiedFacilitiesCriteria : AbstractGPProcess
@@ -70,37 +71,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Unified Facilities Criteria</para>
 		/// </summary>
-		public override string DisplayName => "Unified Facilities Criteria";
+		public override string DisplayName() => "Unified Facilities Criteria";
 
 		/// <summary>
 		/// <para>Tool Name : UnifiedFacilitiesCriteria</para>
 		/// </summary>
-		public override string ToolName => "UnifiedFacilitiesCriteria";
+		public override string ToolName() => "UnifiedFacilitiesCriteria";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.UnifiedFacilitiesCriteria</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.UnifiedFacilitiesCriteria";
+		public override string ExcuteName() => "aviation.UnifiedFacilitiesCriteria";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRunwayFeatures, TargetOisFeatures, InWingType, InServiceType, InRunwayClass, InFlightRule, HighendClearWayLength!, LowendClearWayLength!, AirportElevation!, OutOisFeatures!, CustomJsonFile!, AirportControlPointFeatureClass! };
+		public override object[] Parameters() => new object[] { InRunwayFeatures, TargetOisFeatures, InWingType, InServiceType, InRunwayClass, InFlightRule, HighendClearWayLength!, LowendClearWayLength!, AirportElevation!, OutOisFeatures!, CustomJsonFile!, AirportControlPointFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>
@@ -109,6 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InRunwayFeatures { get; set; }
 
 		/// <summary>
@@ -210,6 +212,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("json")]
 		public object? CustomJsonFile { get; set; }
 
 		/// <summary>
@@ -219,6 +222,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object? AirportControlPointFeatureClass { get; set; }
 
 		/// <summary>

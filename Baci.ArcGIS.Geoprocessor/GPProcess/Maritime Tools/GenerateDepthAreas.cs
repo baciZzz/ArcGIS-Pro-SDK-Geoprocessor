@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Generate Depth Areas</para>
+	/// <para>Generate Depth Areas</para>
 	/// <para>Creates depth area polygon features using a TIN to query depth information to find whether a closed contour is trending deeper or shallower.</para>
 	/// </summary>
 	public class GenerateDepthAreas : AbstractGPProcess
@@ -63,37 +64,37 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Depth Areas</para>
 		/// </summary>
-		public override string DisplayName => "Generate Depth Areas";
+		public override string DisplayName() => "Generate Depth Areas";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateDepthAreas</para>
 		/// </summary>
-		public override string ToolName => "GenerateDepthAreas";
+		public override string ToolName() => "GenerateDepthAreas";
 
 		/// <summary>
 		/// <para>Tool Excute Name : maritime.GenerateDepthAreas</para>
 		/// </summary>
-		public override string ExcuteName => "maritime.GenerateDepthAreas";
+		public override string ExcuteName() => "maritime.GenerateDepthAreas";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Maritime Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Maritime Tools";
+		public override string ToolboxDisplayName() => "Maritime Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : maritime</para>
 		/// </summary>
-		public override string ToolboxAlise => "maritime";
+		public override string ToolboxAlise() => "maritime";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTin, InContours, ContourDepthField, DepthDirection, TargetWorkspace, MinDepth, MaxDepth, InExtentPolygon!, UpdatedDepthAreas! };
+		public override object[] Parameters() => new object[] { InTin, InContours, ContourDepthField, DepthDirection, TargetWorkspace, MinDepth, MaxDepth, InExtentPolygon!, UpdatedDepthAreas! };
 
 		/// <summary>
 		/// <para>Input TIN</para>
@@ -110,6 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InContours { get; set; }
 
 		/// <summary>
@@ -119,6 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double", "Float", "Long")]
 		public object ContourDepthField { get; set; }
 
 		/// <summary>
@@ -140,6 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object TargetWorkspace { get; set; }
 
 		/// <summary>
@@ -165,6 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object? InExtentPolygon { get; set; }
 
 		/// <summary>

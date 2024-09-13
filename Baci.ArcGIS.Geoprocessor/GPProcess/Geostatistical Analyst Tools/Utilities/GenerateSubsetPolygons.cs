@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Subset Polygons</para>
+	/// <para>Generate Subset Polygons</para>
 	/// <para>Generates nonoverlapping subset polygon features from a set of input points. The goal is to divide the points into compact, nonoverlapping subsets, and create polygon regions around each subset of points. The minimum and maximum number of points in each subset can be controlled.</para>
 	/// </summary>
 	public class GenerateSubsetPolygons : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Subset Polygons</para>
 		/// </summary>
-		public override string DisplayName => "Generate Subset Polygons";
+		public override string DisplayName() => "Generate Subset Polygons";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateSubsetPolygons</para>
 		/// </summary>
-		public override string ToolName => "GenerateSubsetPolygons";
+		public override string ToolName() => "GenerateSubsetPolygons";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GenerateSubsetPolygons</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GenerateSubsetPolygons";
+		public override string ExcuteName() => "ga.GenerateSubsetPolygons";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, OutFeatureClass, MinPointsPerSubset!, MaxPointsPerSubset!, CoincidentPoints! };
+		public override object[] Parameters() => new object[] { InPointFeatures, OutFeatureClass, MinPointsPerSubset!, MaxPointsPerSubset!, CoincidentPoints! };
 
 		/// <summary>
 		/// <para>Input point features</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint")]
 		public object InPointFeatures { get; set; }
 
 		/// <summary>
@@ -90,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 2, Max = 2147483647)]
 		public object? MinPointsPerSubset { get; set; } = "20";
 
 		/// <summary>
@@ -100,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 2, Max = 2147483647)]
 		public object? MaxPointsPerSubset { get; set; }
 
 		/// <summary>

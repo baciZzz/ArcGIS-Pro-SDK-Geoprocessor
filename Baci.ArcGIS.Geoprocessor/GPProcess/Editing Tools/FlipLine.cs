@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Flip Line</para>
+	/// <para>Flip Line</para>
 	/// <para>Reverses the from-to direction of line features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Flip Line</para>
 		/// </summary>
-		public override string DisplayName => "Flip Line";
+		public override string DisplayName() => "Flip Line";
 
 		/// <summary>
 		/// <para>Tool Name : FlipLine</para>
 		/// </summary>
-		public override string ToolName => "FlipLine";
+		public override string ToolName() => "FlipLine";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.FlipLine</para>
 		/// </summary>
-		public override string ExcuteName => "edit.FlipLine";
+		public override string ExcuteName() => "edit.FlipLine";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -71,6 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>NetCDF Time Series To Feature Class (Discrete Sampling Geometry)</para>
+	/// <para>NetCDF Time Series To Feature Class (Discrete Sampling Geometry)</para>
 	/// <para>Creates a feature class from timeseries in netCDF files. In the Climate and Forecast (CF) metadata convention, a timeseries is a type of discrete sampling geometry (DSG).</para>
 	/// </summary>
 	public class NetCDFTimeSeriesToFeatureClass : AbstractGPProcess
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Display Name : NetCDF Time Series To Feature Class (Discrete Sampling Geometry)</para>
 		/// </summary>
-		public override string DisplayName => "NetCDF Time Series To Feature Class (Discrete Sampling Geometry)";
+		public override string DisplayName() => "NetCDF Time Series To Feature Class (Discrete Sampling Geometry)";
 
 		/// <summary>
 		/// <para>Tool Name : NetCDFTimeSeriesToFeatureClass</para>
 		/// </summary>
-		public override string ToolName => "NetCDFTimeSeriesToFeatureClass";
+		public override string ToolName() => "NetCDFTimeSeriesToFeatureClass";
 
 		/// <summary>
 		/// <para>Tool Excute Name : md.NetCDFTimeSeriesToFeatureClass</para>
 		/// </summary>
-		public override string ExcuteName => "md.NetCDFTimeSeriesToFeatureClass";
+		public override string ExcuteName() => "md.NetCDFTimeSeriesToFeatureClass";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Multidimension Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Multidimension Tools";
+		public override string ToolboxDisplayName() => "Multidimension Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : md</para>
 		/// </summary>
-		public override string ToolboxAlise => "md";
+		public override string ToolboxAlise() => "md";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFilesOrFolders, TargetWorkspace, OutPointName, ObservationVariables!, OutTableName!, InstanceVariables!, IncludeSubdirectories!, InCfMetadata!, AnalysisExtent!, OutJoinLayer!, OutPoint!, OutTable! };
+		public override object[] Parameters() => new object[] { InFilesOrFolders, TargetWorkspace, OutPointName, ObservationVariables!, OutTableName!, InstanceVariables!, IncludeSubdirectories!, InCfMetadata!, AnalysisExtent!, OutJoinLayer!, OutPoint!, OutTable! };
 
 		/// <summary>
 		/// <para>Input NetCDF Files or Folders</para>
@@ -143,6 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("ncml", "xml")]
 		public object? InCfMetadata { get; set; }
 
 		/// <summary>
@@ -167,6 +169,8 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polyline")]
+		[FeatureType("Simple")]
 		public object? OutPoint { get; set; }
 
 		/// <summary>

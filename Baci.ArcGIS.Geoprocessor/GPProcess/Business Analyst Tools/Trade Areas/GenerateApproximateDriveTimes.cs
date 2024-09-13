@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Approximate Drive Times</para>
+	/// <para>Generate Approximate Drive Times</para>
 	/// <para>Creates trade areas that approximate the size, shape, and area of existing polygons using available routes from the selected distance type.</para>
 	/// </summary>
 	public class GenerateApproximateDriveTimes : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Approximate Drive Times</para>
 		/// </summary>
-		public override string DisplayName => "Generate Approximate Drive Times";
+		public override string DisplayName() => "Generate Approximate Drive Times";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateApproximateDriveTimes</para>
 		/// </summary>
-		public override string ToolName => "GenerateApproximateDriveTimes";
+		public override string ToolName() => "GenerateApproximateDriveTimes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GenerateApproximateDriveTimes</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GenerateApproximateDriveTimes";
+		public override string ExcuteName() => "ba.GenerateApproximateDriveTimes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baNetworkSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, DistanceType, Units!, InStoresLayer!, StoreIdField!, LinkField!, IterationsLimit!, MinimumStep!, TargetPercentDiff!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance!, PolygonDetail! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, DistanceType, Units!, InStoresLayer!, StoreIdField!, LinkField!, IterationsLimit!, MinimumStep!, TargetPercentDiff!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance!, PolygonDetail! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -113,6 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object? InStoresLayer { get; set; }
 
 		/// <summary>
@@ -122,6 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "GUID", "GlobalID")]
 		public object? StoreIdField { get; set; }
 
 		/// <summary>
@@ -131,6 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "GUID", "GlobalID")]
 		public object? LinkField { get; set; }
 
 		/// <summary>
@@ -140,6 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 1)]
 		public object? IterationsLimit { get; set; }
 
 		/// <summary>
@@ -159,6 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[High(Allow = false, Value = 100)]
 		[Category("Advanced Parameters")]
 		public object? TargetPercentDiff { get; set; } = "5";
 

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Find Cotravelers</para>
+	/// <para>Find Cotravelers</para>
 	/// <para>Extracts unique identifiers that are moving through space and time at specified intervals in a point track dataset.</para>
 	/// </summary>
 	public class FindCotravelers : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Find Cotravelers</para>
 		/// </summary>
-		public override string DisplayName => "Find Cotravelers";
+		public override string DisplayName() => "Find Cotravelers";
 
 		/// <summary>
 		/// <para>Tool Name : FindCotravelers</para>
 		/// </summary>
-		public override string ToolName => "FindCotravelers";
+		public override string ToolName() => "FindCotravelers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.FindCotravelers</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.FindCotravelers";
+		public override string ExcuteName() => "intelligence.FindCotravelers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, OutFeatureclass, IdField, SearchDistance!, TimeDifference!, InputType!, SecondaryFeatures!, SecondaryIdField!, CreateSummaryTable!, OutSummaryTable!, IncludeMinCotravelingDuration!, MinCotravelingDuration! };
+		public override object[] Parameters() => new object[] { InputFeatures, OutFeatureclass, IdField, SearchDistance!, TimeDifference!, InputType!, SecondaryFeatures!, SecondaryIdField!, CreateSummaryTable!, OutSummaryTable!, IncludeMinCotravelingDuration!, MinCotravelingDuration! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InputFeatures { get; set; }
 
 		/// <summary>
@@ -96,6 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		public object IdField { get; set; }
 
 		/// <summary>
@@ -137,6 +141,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object? SecondaryFeatures { get; set; }
 
 		/// <summary>
@@ -146,6 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		public object? SecondaryIdField { get; set; }
 
 		/// <summary>

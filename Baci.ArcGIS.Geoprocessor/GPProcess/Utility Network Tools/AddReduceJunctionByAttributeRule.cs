@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Reduce Junction By Attribute Rule</para>
+	/// <para>Add Reduce Junction By Attribute Rule</para>
 	/// <para>Add a reduce junction by attribute rule to a diagram template</para>
 	/// </summary>
 	[Obsolete()]
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Reduce Junction By Attribute Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Reduce Junction By Attribute Rule";
+		public override string DisplayName() => "Add Reduce Junction By Attribute Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddReduceJunctionByAttributeRule</para>
 		/// </summary>
-		public override string ToolName => "AddReduceJunctionByAttributeRule";
+		public override string ToolName() => "AddReduceJunctionByAttributeRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddReduceJunctionByAttributeRule</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddReduceJunctionByAttributeRule";
+		public override string ExcuteName() => "un.AddReduceJunctionByAttributeRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, JunctionSource, WhereClause!, ConnectivityOptions!, UnconnectedJunctions!, OneConnectedJunction!, TwoConnectedJunctions!, EdgesAttributes!, Description!, OutUtilityNetwork!, OutTemplateName! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, JunctionSource, WhereClause!, ConnectivityOptions!, UnconnectedJunctions!, OneConnectedJunction!, TwoConnectedJunctions!, EdgesAttributes!, Description!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>

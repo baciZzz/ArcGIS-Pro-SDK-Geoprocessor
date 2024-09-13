@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Calculate Travel Cost</para>
+	/// <para>Calculate Travel Cost</para>
 	/// <para>Calculates the least accumulative cost distance from or to the least-cost source, while accounting for surface distance along with horizontal and vertical cost factors.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.RasterAnalysisTools.DistanceAllocation"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
@@ -38,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Travel Cost</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Travel Cost";
+		public override string DisplayName() => "Calculate Travel Cost";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateTravelCost</para>
 		/// </summary>
-		public override string ToolName => "CalculateTravelCost";
+		public override string ToolName() => "CalculateTravelCost";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.CalculateTravelCost</para>
 		/// </summary>
-		public override string ExcuteName => "ra.CalculateTravelCost";
+		public override string ExcuteName() => "ra.CalculateTravelCost";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputsourcerasterorfeatures, Outputdistancename, Inputcostraster!, Inputsurfaceraster!, Maximumdistance!, Inputhorizontalraster!, Horizontalfactor!, Inputverticalraster!, Verticalfactor!, Sourcecostmultiplier!, Sourcestartcost!, Sourceresistancerate!, Sourcecapacity!, Sourcetraveldirection!, Outputbacklinkname!, Outputallocationname!, Allocationfield!, Outputdistanceraster!, Outputbacklinkraster!, Outputallocationraster! };
+		public override object[] Parameters() => new object[] { Inputsourcerasterorfeatures, Outputdistancename, Inputcostraster!, Inputsurfaceraster!, Maximumdistance!, Inputhorizontalraster!, Horizontalfactor!, Inputverticalraster!, Verticalfactor!, Sourcecostmultiplier!, Sourcestartcost!, Sourceresistancerate!, Sourcecapacity!, Sourcetraveldirection!, Outputbacklinkname!, Outputallocationname!, Allocationfield!, Outputdistanceraster!, Outputbacklinkraster!, Outputallocationraster! };
 
 		/// <summary>
 		/// <para>Input Source Raster or Features</para>

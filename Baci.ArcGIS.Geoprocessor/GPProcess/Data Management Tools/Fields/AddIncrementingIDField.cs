@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Incrementing ID Field</para>
+	/// <para>Add Incrementing ID Field</para>
 	/// <para>Adds a database-maintained ID field to an existing table or feature class in a Dameng, IBM Db2, Microsoft Azure SQL Database, Microsoft SQL Server, Oracle, or PostgreSQL database. A database-maintained ID field is required for all feature classes or tables you plan to edit through a feature service.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Incrementing ID Field</para>
 		/// </summary>
-		public override string DisplayName => "Add Incrementing ID Field";
+		public override string DisplayName() => "Add Incrementing ID Field";
 
 		/// <summary>
 		/// <para>Tool Name : AddIncrementingIDField</para>
 		/// </summary>
-		public override string ToolName => "AddIncrementingIDField";
+		public override string ToolName() => "AddIncrementingIDField";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddIncrementingIDField</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddIncrementingIDField";
+		public override string ExcuteName() => "management.AddIncrementingIDField";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, FieldName!, OutTable! };
+		public override object[] Parameters() => new object[] { InTable, FieldName!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
-		[GPTablesDomain()]
+		[GPTablesDomain(HideJoinedLayers = true, ShowOnlyStandaloneTables = false)]
 		public object InTable { get; set; }
 
 		/// <summary>

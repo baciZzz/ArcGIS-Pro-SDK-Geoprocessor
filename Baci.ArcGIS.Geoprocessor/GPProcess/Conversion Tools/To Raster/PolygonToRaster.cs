@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Polygon to Raster</para>
+	/// <para>Polygon to Raster</para>
 	/// <para>Converts polygon features to a raster dataset.</para>
 	/// </summary>
 	public class PolygonToRaster : AbstractGPProcess
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Polygon to Raster</para>
 		/// </summary>
-		public override string DisplayName => "Polygon to Raster";
+		public override string DisplayName() => "Polygon to Raster";
 
 		/// <summary>
 		/// <para>Tool Name : PolygonToRaster</para>
 		/// </summary>
-		public override string ToolName => "PolygonToRaster";
+		public override string ToolName() => "PolygonToRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.PolygonToRaster</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.PolygonToRaster";
+		public override string ExcuteName() => "conversion.PolygonToRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "pyramid", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "pyramid", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ValueField, OutRasterdataset, CellAssignment!, PriorityField!, Cellsize!, BuildRat! };
+		public override object[] Parameters() => new object[] { InFeatures, ValueField, OutRasterdataset, CellAssignment!, PriorityField!, Cellsize!, BuildRat! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -81,6 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -91,6 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "OID")]
 		public object ValueField { get; set; }
 
 		/// <summary>
@@ -122,6 +125,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[KeyField("NONE")]
 		public object? PriorityField { get; set; } = "NONE";
 
 		/// <summary>
@@ -131,7 +136,10 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = true)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? Cellsize { get; set; }
 
 		/// <summary>

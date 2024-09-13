@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Disable Parcel Topology</para>
+	/// <para>Disable Parcel Topology</para>
 	/// <para>Disables geodatabase topology on a parcel fabric.  System-defined  topology rules and parcel fabric feature classes will be removed from the topology.</para>
 	/// </summary>
 	public class DisableParcelTopology : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Display Name : Disable Parcel Topology</para>
 		/// </summary>
-		public override string DisplayName => "Disable Parcel Topology";
+		public override string DisplayName() => "Disable Parcel Topology";
 
 		/// <summary>
 		/// <para>Tool Name : DisableParcelTopology</para>
 		/// </summary>
-		public override string ToolName => "DisableParcelTopology";
+		public override string ToolName() => "DisableParcelTopology";
 
 		/// <summary>
 		/// <para>Tool Excute Name : parcel.DisableParcelTopology</para>
 		/// </summary>
-		public override string ExcuteName => "parcel.DisableParcelTopology";
+		public override string ExcuteName() => "parcel.DisableParcelTopology";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Parcel Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Parcel Tools";
+		public override string ToolboxDisplayName() => "Parcel Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : parcel</para>
 		/// </summary>
-		public override string ToolboxAlise => "parcel";
+		public override string ToolboxAlise() => "parcel";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFabric, UpdatedParcelFabric! };
+		public override object[] Parameters() => new object[] { InParcelFabric, UpdatedParcelFabric! };
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>

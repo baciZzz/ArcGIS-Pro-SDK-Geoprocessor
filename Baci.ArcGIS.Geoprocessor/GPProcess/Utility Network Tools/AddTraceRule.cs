@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Trace Rule</para>
+	/// <para>Add Trace Rule</para>
 	/// <para>Add a trace rule to a diagram template</para>
 	/// </summary>
 	[Obsolete()]
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Trace Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Trace Rule";
+		public override string DisplayName() => "Add Trace Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddTraceRule</para>
 		/// </summary>
-		public override string ToolName => "AddTraceRule";
+		public override string ToolName() => "AddTraceRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddTraceRule</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddTraceRule";
+		public override string ExcuteName() => "un.AddTraceRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, TraceType, DomainNetwork!, Tier!, TargetTier!, IncludeStructures!, IncludeBarriers!, ConditionBarriers!, FunctionBarriers!, TraversabilityScope!, FilterBarriers!, FilterFunctionBarriers!, FilterScope!, FilterBitsetNetworkAttributeName!, FilterNearest!, NearestCount!, NearestCostNetworkAttribute!, NearestCategories!, NearestAssets!, Propagators!, Description!, OutUtilityNetwork!, OutTemplateName!, AllowIndeterminateFlow!, PathDirection!, PathNetworkWeightName! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, TraceType, DomainNetwork!, Tier!, TargetTier!, IncludeStructures!, IncludeBarriers!, ConditionBarriers!, FunctionBarriers!, TraversabilityScope!, FilterBarriers!, FilterFunctionBarriers!, FilterScope!, FilterBitsetNetworkAttributeName!, FilterNearest!, NearestCount!, NearestCostNetworkAttribute!, NearestCategories!, NearestAssets!, Propagators!, Description!, OutUtilityNetwork!, OutTemplateName!, AllowIndeterminateFlow!, PathDirection!, PathNetworkWeightName! };
 
 		/// <summary>
 		/// <para>Input Network</para>

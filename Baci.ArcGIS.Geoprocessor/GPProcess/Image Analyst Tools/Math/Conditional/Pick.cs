@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Pick</para>
+	/// <para>Pick</para>
 	/// <para>The value from a position raster is used to determine from which raster in a list of input rasters the output cell value will be obtained.</para>
 	/// </summary>
 	public class Pick : AbstractGPProcess
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Pick</para>
 		/// </summary>
-		public override string DisplayName => "Pick";
+		public override string DisplayName() => "Pick";
 
 		/// <summary>
 		/// <para>Tool Name : Pick</para>
 		/// </summary>
-		public override string ToolName => "Pick";
+		public override string ToolName() => "Pick";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.Pick</para>
 		/// </summary>
-		public override string ExcuteName => "ia.Pick";
+		public override string ExcuteName() => "ia.Pick";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPositionRaster, InRastersOrConstants, OutRaster, ProcessAsMultiband! };
+		public override object[] Parameters() => new object[] { InPositionRaster, InRastersOrConstants, OutRaster, ProcessAsMultiband! };
 
 		/// <summary>
 		/// <para>Input position raster</para>
@@ -81,7 +82,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InPositionRaster { get; set; }
 
 		/// <summary>
@@ -91,7 +95,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "GPRasterFormulated", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile", "GPDouble", "GPLong")]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRastersOrConstants { get; set; }
 
 		/// <summary>

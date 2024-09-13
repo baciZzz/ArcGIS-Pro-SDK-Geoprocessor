@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Enrich</para>
+	/// <para>Enrich</para>
 	/// <para>Enriches data by adding demographic and landscape facts about the people and places that surround or are inside data locations.  The output is a duplicate of your input with additional attribute fields.  This tool requires an ArcGIS Online organizational account or a locally installed Business Analyst dataset.</para>
 	/// </summary>
 	[Obsolete()]
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Enrich</para>
 		/// </summary>
-		public override string DisplayName => "Enrich";
+		public override string DisplayName() => "Enrich";
 
 		/// <summary>
 		/// <para>Tool Name : Enrich</para>
 		/// </summary>
-		public override string ToolName => "Enrich";
+		public override string ToolName() => "Enrich";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.Enrich</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.Enrich";
+		public override string ExcuteName() => "analysis.Enrich";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Variables!, BufferType!, Distance!, Unit! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, Variables!, BufferType!, Distance!, Unit! };
 
 		/// <summary>
 		/// <para>Input Features</para>

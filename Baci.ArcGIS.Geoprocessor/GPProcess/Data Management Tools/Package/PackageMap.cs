@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Package Map</para>
+	/// <para>Package Map</para>
 	/// <para>Packages a map and all referenced data sources to create a single compressed .mpkx file.</para>
 	/// </summary>
 	public class PackageMap : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Package Map</para>
 		/// </summary>
-		public override string DisplayName => "Package Map";
+		public override string DisplayName() => "Package Map";
 
 		/// <summary>
 		/// <para>Tool Name : PackageMap</para>
 		/// </summary>
-		public override string ToolName => "PackageMap";
+		public override string ToolName() => "PackageMap";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.PackageMap</para>
 		/// </summary>
-		public override string ExcuteName => "management.PackageMap";
+		public override string ExcuteName() => "management.PackageMap";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, OutputFile, ConvertData!, ConvertArcsdeData!, Extent!, ApplyExtentToArcsde!, Arcgisruntime!, ReferenceAllData!, Version!, AdditionalFiles!, Summary!, Tags!, SelectRelatedRows!, PreserveSqlite! };
+		public override object[] Parameters() => new object[] { InMap, OutputFile, ConvertData!, ConvertArcsdeData!, Extent!, ApplyExtentToArcsde!, Arcgisruntime!, ReferenceAllData!, Version!, AdditionalFiles!, Summary!, Tags!, SelectRelatedRows!, PreserveSqlite! };
 
 		/// <summary>
 		/// <para>Input  Map</para>
@@ -82,6 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("mpkx")]
 		public object OutputFile { get; set; }
 
 		/// <summary>

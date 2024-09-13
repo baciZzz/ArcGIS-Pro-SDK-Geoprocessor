@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Summarize Nearby</para>
+	/// <para>Summarize Nearby</para>
 	/// <para>Finds features that are within a specified distance of features in the input layer and calculates statistics for the nearby features. Distance can be measured as a straight-line distance, a drive-time distance (for example, within 10 minutes), or a drive distance (within 5 kilometers). Drive-time and drive distance measurements require that you are logged in to an  ArcGIS Online organizational account with Network Analysis privileges, and they consume credits.</para>
 	/// </summary>
 	public class SummarizeNearby : AbstractGPProcess
@@ -75,37 +76,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Summarize Nearby</para>
 		/// </summary>
-		public override string DisplayName => "Summarize Nearby";
+		public override string DisplayName() => "Summarize Nearby";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeNearby</para>
 		/// </summary>
-		public override string ToolName => "SummarizeNearby";
+		public override string ToolName() => "SummarizeNearby";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.SummarizeNearby</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.SummarizeNearby";
+		public override string ExcuteName() => "analysis.SummarizeNearby";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InSumFeatures, OutFeatureClass, DistanceType, Distances, DistanceUnits, TimeOfDay!, TimeZone!, KeepAllPolygons!, SumFields!, SumShape!, ShapeUnit!, GroupField!, AddMinMaj!, AddGroupPercent!, OutputGroupedTable! };
+		public override object[] Parameters() => new object[] { InFeatures, InSumFeatures, OutFeatureClass, DistanceType, Distances, DistanceUnits, TimeOfDay!, TimeZone!, KeepAllPolygons!, SumFields!, SumShape!, ShapeUnit!, GroupField!, AddMinMaj!, AddGroupPercent!, OutputGroupedTable! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -114,6 +115,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polygon", "Polyline")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -123,6 +126,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polygon", "Polyline")]
+		[FeatureType("Simple")]
 		public object InSumFeatures { get; set; }
 
 		/// <summary>
@@ -270,6 +275,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
 		public object? GroupField { get; set; }
 
 		/// <summary>

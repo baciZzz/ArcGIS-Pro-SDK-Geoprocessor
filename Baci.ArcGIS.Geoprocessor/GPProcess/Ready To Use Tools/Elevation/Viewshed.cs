@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 {
 	/// <summary>
 	/// <para>Viewshed</para>
+	/// <para>Viewshed</para>
 	/// <para>Returns polygons of visible areas for a given set of input observation points.</para>
 	/// </summary>
 	public class Viewshed : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Display Name : Viewshed</para>
 		/// </summary>
-		public override string DisplayName => "Viewshed";
+		public override string DisplayName() => "Viewshed";
 
 		/// <summary>
 		/// <para>Tool Name : Viewshed</para>
 		/// </summary>
-		public override string ToolName => "Viewshed";
+		public override string ToolName() => "Viewshed";
 
 		/// <summary>
 		/// <para>Tool Excute Name : agolservices.Viewshed</para>
 		/// </summary>
-		public override string ExcuteName => "agolservices.Viewshed";
+		public override string ExcuteName() => "agolservices.Viewshed";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Ready To Use Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Ready To Use Tools";
+		public override string ToolboxDisplayName() => "Ready To Use Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : agolservices</para>
 		/// </summary>
-		public override string ToolboxAlise => "agolservices";
+		public override string ToolboxAlise() => "agolservices";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputpoints, Maximumdistance!, Maximumdistanceunits!, Demresolution!, Observerheight!, Observerheightunits!, Surfaceoffset!, Surfaceoffsetunits!, Generalizeviewshedpolygons!, Outputviewshed! };
+		public override object[] Parameters() => new object[] { Inputpoints, Maximumdistance!, Maximumdistanceunits!, Demresolution!, Observerheight!, Observerheightunits!, Surfaceoffset!, Surfaceoffsetunits!, Generalizeviewshedpolygons!, Outputviewshed! };
 
 		/// <summary>
 		/// <para>Input Point Features</para>

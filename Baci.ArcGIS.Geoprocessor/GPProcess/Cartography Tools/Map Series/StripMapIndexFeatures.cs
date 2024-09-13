@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Strip Map Index Features</para>
+	/// <para>Strip Map Index Features</para>
 	/// <para>Creates a series of rectangular polygons, or index features, that follow a single linear feature or a group of linear features. These index features can be used with spatial map series to define pages in a strip map or a set of maps that follow a linear feature. The resulting index features contain attributes that can be used to rotate and orient the map on the page and determine which index features, or pages, are next to the current page (to the left and right or to the top and bottom).</para>
 	/// </summary>
 	public class StripMapIndexFeatures : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Strip Map Index Features</para>
 		/// </summary>
-		public override string DisplayName => "Strip Map Index Features";
+		public override string DisplayName() => "Strip Map Index Features";
 
 		/// <summary>
 		/// <para>Tool Name : StripMapIndexFeatures</para>
 		/// </summary>
-		public override string ToolName => "StripMapIndexFeatures";
+		public override string ToolName() => "StripMapIndexFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.StripMapIndexFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.StripMapIndexFeatures";
+		public override string ExcuteName() => "cartography.StripMapIndexFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, UsePageUnit!, Scale!, LengthAlongLine!, LengthPerpendicularToLine!, PageOrientation!, OverlapPercentage!, StartingPageNumber!, DirectionType! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, UsePageUnit!, Scale!, LengthAlongLine!, LengthPerpendicularToLine!, PageOrientation!, OverlapPercentage!, StartingPageNumber!, DirectionType! };
 
 		/// <summary>
 		/// <para>Input Line Features</para>
@@ -74,6 +75,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -140,6 +143,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
+		[High(Allow = true, Value = 20)]
 		public object? OverlapPercentage { get; set; } = "10";
 
 		/// <summary>
@@ -149,6 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 1)]
 		public object? StartingPageNumber { get; set; } = "1";
 
 		/// <summary>

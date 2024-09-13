@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Create Signatures</para>
+	/// <para>Create Signatures</para>
 	/// <para>Creates an ASCII signature file of classes defined by input sample data and a set of raster bands.</para>
 	/// </summary>
 	public class CreateSignatures : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Signatures</para>
 		/// </summary>
-		public override string DisplayName => "Create Signatures";
+		public override string DisplayName() => "Create Signatures";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSignatures</para>
 		/// </summary>
-		public override string ToolName => "CreateSignatures";
+		public override string ToolName() => "CreateSignatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.CreateSignatures</para>
 		/// </summary>
-		public override string ExcuteName => "sa.CreateSignatures";
+		public override string ExcuteName() => "sa.CreateSignatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "cellSizeProjectionMethod", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "cellSizeProjectionMethod", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterBands, InSampleData, OutSignatureFile, ComputeCovariance!, SampleField! };
+		public override object[] Parameters() => new object[] { InRasterBands, InSampleData, OutSignatureFile, ComputeCovariance!, SampleField! };
 
 		/// <summary>
 		/// <para>Input raster bands</para>
@@ -82,7 +83,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRasterBands { get; set; }
 
 		/// <summary>
@@ -92,7 +96,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEFeatureClass", "GPFeatureLayer", "DETin", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("OID", "Short", "Long", "Float", "Double", "Text", "Geometry")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InSampleData { get; set; }
 
 		/// <summary>
@@ -103,6 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("GSG")]
 		public object OutSignatureFile { get; set; }
 
 		/// <summary>
@@ -124,7 +132,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(UseRasterFields = true)]
+		[FieldType("Short", "Long", "OID", "Text")]
 		public object? SampleField { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Identity</para>
+	/// <para>Identity</para>
 	/// <para>Computes a geometric intersection of the input features and identity features. The input features or portions thereof that overlap identity features will get the attributes of those identity features.</para>
 	/// </summary>
 	public class Identity : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Identity</para>
 		/// </summary>
-		public override string DisplayName => "Identity";
+		public override string DisplayName() => "Identity";
 
 		/// <summary>
 		/// <para>Tool Name : Identity</para>
 		/// </summary>
-		public override string ToolName => "Identity";
+		public override string ToolName() => "Identity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.Identity</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.Identity";
+		public override string ExcuteName() => "analysis.Identity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "qualifiedFieldNames", "transferGDBAttributeProperties" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "qualifiedFieldNames", "transferGDBAttributeProperties" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, IdentityFeatures, OutFeatureClass, JoinAttributes!, ClusterTolerance!, Relationship! };
+		public override object[] Parameters() => new object[] { InFeatures, IdentityFeatures, OutFeatureClass, JoinAttributes!, ClusterTolerance!, Relationship! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -87,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object IdentityFeatures { get; set; }
 
 		/// <summary>

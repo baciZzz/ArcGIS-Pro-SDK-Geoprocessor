@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Iso Cluster Unsupervised Classification</para>
+	/// <para>Iso Cluster Unsupervised Classification</para>
 	/// <para>Performs unsupervised classification on a series of input raster bands using the Iso Cluster and Maximum Likelihood Classification tools.</para>
 	/// </summary>
 	public class IsoClusterUnsupervisedClassification : AbstractGPProcess
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Iso Cluster Unsupervised Classification</para>
 		/// </summary>
-		public override string DisplayName => "Iso Cluster Unsupervised Classification";
+		public override string DisplayName() => "Iso Cluster Unsupervised Classification";
 
 		/// <summary>
 		/// <para>Tool Name : IsoClusterUnsupervisedClassification</para>
 		/// </summary>
-		public override string ToolName => "IsoClusterUnsupervisedClassification";
+		public override string ToolName() => "IsoClusterUnsupervisedClassification";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.IsoClusterUnsupervisedClassification</para>
 		/// </summary>
-		public override string ExcuteName => "sa.IsoClusterUnsupervisedClassification";
+		public override string ExcuteName() => "sa.IsoClusterUnsupervisedClassification";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputRasterBands, NumberOfClasses, OutputClassifiedRaster, MinimumClassSize!, SampleInterval!, OutputSignatureFile! };
+		public override object[] Parameters() => new object[] { InputRasterBands, NumberOfClasses, OutputClassifiedRaster, MinimumClassSize!, SampleInterval!, OutputSignatureFile! };
 
 		/// <summary>
 		/// <para>Input raster bands</para>
@@ -124,6 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("gsg")]
 		public object? OutputSignatureFile { get; set; }
 
 		/// <summary>

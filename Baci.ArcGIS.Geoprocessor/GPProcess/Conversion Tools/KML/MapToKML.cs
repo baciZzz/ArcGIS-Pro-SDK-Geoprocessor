@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Map To KML</para>
+	/// <para>Map To KML</para>
 	/// <para>Converts a map to a KML file containing geometries and symbology. The output file is compressed using ZIP compression, has a .kmz extension, and can be read by any KML client including ArcGIS Earth and Google Earth.</para>
 	/// </summary>
 	public class MapToKML : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Map To KML</para>
 		/// </summary>
-		public override string DisplayName => "Map To KML";
+		public override string DisplayName() => "Map To KML";
 
 		/// <summary>
 		/// <para>Tool Name : MapToKML</para>
 		/// </summary>
-		public override string ToolName => "MapToKML";
+		public override string ToolName() => "MapToKML";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.MapToKML</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.MapToKML";
+		public override string ExcuteName() => "conversion.MapToKML";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, OutKmzFile, MapOutputScale!, IsComposite!, IsVectorToRaster!, ExtentToExport!, ImageSize!, DpiOfClient!, IgnoreZvalue!, Layout! };
+		public override object[] Parameters() => new object[] { InMap, OutKmzFile, MapOutputScale!, IsComposite!, IsVectorToRaster!, ExtentToExport!, ImageSize!, DpiOfClient!, IgnoreZvalue!, Layout! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -82,6 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("kmz")]
 		public object OutKmzFile { get; set; }
 
 		/// <summary>

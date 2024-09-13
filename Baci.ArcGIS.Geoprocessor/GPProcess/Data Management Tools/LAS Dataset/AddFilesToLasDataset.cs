@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Files To LAS Dataset</para>
+	/// <para>Add Files To LAS Dataset</para>
 	/// <para>Adds references for one or more LAS files and  surface constraint features to a LAS dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Files To LAS Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Add Files To LAS Dataset";
+		public override string DisplayName() => "Add Files To LAS Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : AddFilesToLasDataset</para>
 		/// </summary>
-		public override string ToolName => "AddFilesToLasDataset";
+		public override string ToolName() => "AddFilesToLasDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddFilesToLasDataset</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddFilesToLasDataset";
+		public override string ExcuteName() => "management.AddFilesToLasDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, InFiles!, FolderRecursion!, InSurfaceConstraints!, DerivedLasDataset! };
+		public override object[] Parameters() => new object[] { InLasDataset, InFiles!, FolderRecursion!, InSurfaceConstraints!, DerivedLasDataset! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>

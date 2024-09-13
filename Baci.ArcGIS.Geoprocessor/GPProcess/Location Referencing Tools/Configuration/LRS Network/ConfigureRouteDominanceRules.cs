@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Configure Route Dominance Rules</para>
+	/// <para>Configure Route Dominance Rules</para>
 	/// <para>Configures a set of rules to determine the dominant route in a</para>
 	/// <para>network where there are concurrent routes.</para>
 	/// </summary>
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Configure Route Dominance Rules</para>
 		/// </summary>
-		public override string DisplayName => "Configure Route Dominance Rules";
+		public override string DisplayName() => "Configure Route Dominance Rules";
 
 		/// <summary>
 		/// <para>Tool Name : ConfigureRouteDominanceRules</para>
 		/// </summary>
-		public override string ToolName => "ConfigureRouteDominanceRules";
+		public override string ToolName() => "ConfigureRouteDominanceRules";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.ConfigureRouteDominanceRules</para>
 		/// </summary>
-		public override string ExcuteName => "locref.ConfigureRouteDominanceRules";
+		public override string ExcuteName() => "locref.ConfigureRouteDominanceRules";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, ConfigureType, RuleName, UpdatedRuleName!, SourceTableName!, Fields!, OrderMethod!, OrderType!, PrioritizedExceptions!, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatureClass, ConfigureType, RuleName, UpdatedRuleName!, SourceTableName!, Fields!, OrderMethod!, OrderType!, PrioritizedExceptions!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>LRS Network Feature Class</para>
@@ -84,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InFeatureClass { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Table To Ellipse</para>
+	/// <para>Table To Ellipse</para>
 	/// <para>Creates a feature class containing geodetic or planar ellipses from the values in an x-coordinate field, y-coordinate field, major axis and minor axis fields, and azimuth field of a table.</para>
 	/// </summary>
 	public class TableToEllipse : AbstractGPProcess
@@ -67,37 +68,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Table To Ellipse</para>
 		/// </summary>
-		public override string DisplayName => "Table To Ellipse";
+		public override string DisplayName() => "Table To Ellipse";
 
 		/// <summary>
 		/// <para>Tool Name : TableToEllipse</para>
 		/// </summary>
-		public override string ToolName => "TableToEllipse";
+		public override string ToolName() => "TableToEllipse";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.TableToEllipse</para>
 		/// </summary>
-		public override string ExcuteName => "management.TableToEllipse";
+		public override string ExcuteName() => "management.TableToEllipse";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutFeatureclass, XField, YField, MajorField, MinorField, DistanceUnits, AzimuthField!, AzimuthUnits!, IdField!, SpatialReference!, Attributes!, GeometryType!, Method! };
+		public override object[] Parameters() => new object[] { InTable, OutFeatureclass, XField, YField, MajorField, MinorField, DistanceUnits, AzimuthField!, AzimuthUnits!, IdField!, SpatialReference!, Attributes!, GeometryType!, Method! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -122,6 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double", "Short", "Long")]
 		public object XField { get; set; }
 
 		/// <summary>
@@ -131,6 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double", "Short", "Long")]
 		public object YField { get; set; }
 
 		/// <summary>
@@ -140,6 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double", "Short", "Long")]
 		public object MajorField { get; set; }
 
 		/// <summary>
@@ -149,6 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double", "Short", "Long")]
 		public object MinorField { get; set; }
 
 		/// <summary>
@@ -174,6 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double", "Short", "Long")]
 		public object? AzimuthField { get; set; }
 
 		/// <summary>
@@ -193,6 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double", "Short", "Long", "Text")]
 		public object? IdField { get; set; }
 
 		/// <summary>

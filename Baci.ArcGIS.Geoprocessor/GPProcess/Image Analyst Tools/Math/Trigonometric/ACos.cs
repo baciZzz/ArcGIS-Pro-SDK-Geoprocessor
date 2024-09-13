@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>ACos</para>
+	/// <para>ACos</para>
 	/// <para>Calculates the inverse cosine of cells in a raster.</para>
 	/// </summary>
 	public class ACos : AbstractGPProcess
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : ACos</para>
 		/// </summary>
-		public override string DisplayName => "ACos";
+		public override string DisplayName() => "ACos";
 
 		/// <summary>
 		/// <para>Tool Name : ACos</para>
 		/// </summary>
-		public override string ToolName => "ACos";
+		public override string ToolName() => "ACos";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.ACos</para>
 		/// </summary>
-		public override string ExcuteName => "ia.ACos";
+		public override string ExcuteName() => "ia.ACos";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterOrConstant, OutRaster };
+		public override object[] Parameters() => new object[] { InRasterOrConstant, OutRaster };
 
 		/// <summary>
 		/// <para>Input raster or constant value</para>
@@ -76,7 +77,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "GPRasterFormulated", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile", "GPDouble", "GPLong")]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRasterOrConstant { get; set; }
 
 		/// <summary>

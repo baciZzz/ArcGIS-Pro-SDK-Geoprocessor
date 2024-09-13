@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Import AIXM 5.1 Message</para>
+	/// <para>Import AIXM 5.1 Message</para>
 	/// <para>Imports Aeronautical Information Exchange Model (AIXM) version 5.1 data into an aviation geodatabase.</para>
 	/// </summary>
 	public class ImportAIXM51Message : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Import AIXM 5.1 Message</para>
 		/// </summary>
-		public override string DisplayName => "Import AIXM 5.1 Message";
+		public override string DisplayName() => "Import AIXM 5.1 Message";
 
 		/// <summary>
 		/// <para>Tool Name : ImportAIXM51Message</para>
 		/// </summary>
-		public override string ToolName => "ImportAIXM51Message";
+		public override string ToolName() => "ImportAIXM51Message";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.ImportAIXM51Message</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.ImportAIXM51Message";
+		public override string ExcuteName() => "aviation.ImportAIXM51Message";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMessageFile, TargetGdb, InTables!, UpdateExistingFeatures!, UpdatedGdb! };
+		public override object[] Parameters() => new object[] { InMessageFile, TargetGdb, InTables!, UpdateExistingFeatures!, UpdatedGdb! };
 
 		/// <summary>
 		/// <para>Input AIXM 5.1 Message File</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object InMessageFile { get; set; }
 
 		/// <summary>

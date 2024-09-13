@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Spatial Query Rule</para>
+	/// <para>Add Spatial Query Rule</para>
 	/// <para>Adds a diagram rule that automatically appends new network features to the diagrams based on their location relative to the network features currently represented in the diagram.</para>
 	/// </summary>
 	public class AddSpatialQueryRule : AbstractGPProcess
@@ -66,37 +67,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Spatial Query Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Spatial Query Rule";
+		public override string DisplayName() => "Add Spatial Query Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddSpatialQueryRule</para>
 		/// </summary>
-		public override string ToolName => "AddSpatialQueryRule";
+		public override string ToolName() => "AddSpatialQueryRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddSpatialQueryRule</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddSpatialQueryRule";
+		public override string ExcuteName() => "nd.AddSpatialQueryRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AddedFeatures, OverlapType, ExistingFeatures, SearchDistance!, AddedWhereClause!, ExistingWhereClause!, Description!, OutUtilityNetwork!, OutTemplateName! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, AddedFeatures, OverlapType, ExistingFeatures, SearchDistance!, AddedWhereClause!, ExistingWhereClause!, Description!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>

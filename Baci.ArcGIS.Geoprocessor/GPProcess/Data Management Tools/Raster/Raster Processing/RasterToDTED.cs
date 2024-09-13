@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Raster To DTED</para>
+	/// <para>Raster To DTED</para>
 	/// <para>Splits a raster dataset into separate files based on the DTED tiling structure.</para>
 	/// </summary>
 	public class RasterToDTED : AbstractGPProcess
@@ -44,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Raster To DTED</para>
 		/// </summary>
-		public override string DisplayName => "Raster To DTED";
+		public override string DisplayName() => "Raster To DTED";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToDTED</para>
 		/// </summary>
-		public override string ToolName => "RasterToDTED";
+		public override string ToolName() => "RasterToDTED";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RasterToDTED</para>
 		/// </summary>
-		public override string ExcuteName => "management.RasterToDTED";
+		public override string ExcuteName() => "management.RasterToDTED";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "resamplingMethod" };
+		public override string[] ValidEnvironments() => new string[] { "resamplingMethod" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutFolder, DtedLevel, ResamplingType!, DerivedFolder! };
+		public override object[] Parameters() => new object[] { InRaster, OutFolder, DtedLevel, ResamplingType!, DerivedFolder! };
 
 		/// <summary>
 		/// <para>Input Raster</para>

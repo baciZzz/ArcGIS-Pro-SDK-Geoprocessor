@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Presence-only Prediction (MaxEnt)</para>
+	/// <para>Presence-only Prediction (MaxEnt)</para>
 	/// <para>Models the presence of a phenomenon given known presence locations and explanatory variables using a maximum entropy approach (MaxEnt). The tool provides output features and rasters that include the probability of presence and can be applied to problems in which only presence is known and absence is not known.</para>
 	/// </summary>
 	public class PresenceOnlyPrediction : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Presence-only Prediction (MaxEnt)</para>
 		/// </summary>
-		public override string DisplayName => "Presence-only Prediction (MaxEnt)";
+		public override string DisplayName() => "Presence-only Prediction (MaxEnt)";
 
 		/// <summary>
 		/// <para>Tool Name : PresenceOnlyPrediction</para>
 		/// </summary>
-		public override string ToolName => "PresenceOnlyPrediction";
+		public override string ToolName() => "PresenceOnlyPrediction";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.PresenceOnlyPrediction</para>
 		/// </summary>
-		public override string ExcuteName => "stats.PresenceOnlyPrediction";
+		public override string ExcuteName() => "stats.PresenceOnlyPrediction";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "cellSizeProjectionMethod", "extent", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "cellSizeProjectionMethod", "extent", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputPointFeatures, ContainsBackground!, PresenceIndicatorField!, ExplanatoryVariables!, DistanceFeatures!, ExplanatoryRasters!, BasisExpansionFunctions!, NumberKnots!, StudyAreaType!, StudyAreaPolygon!, SpatialThinning!, ThinningDistanceBand!, NumberOfIterations!, RelativeWeight!, LinkFunction!, PresenceProbabilityCutoff!, OutputTrainedFeatures!, OutputTrainedRaster!, OutputResponseCurveTable!, OutputSensitivityTable!, FeaturesToPredict!, OutputPredFeatures!, OutputPredRaster!, ExplanatoryVariableMatching!, ExplanatoryDistanceMatching!, ExplanatoryRastersMatching!, AllowPredictionsOutsideOfDataRanges!, ResamplingScheme!, NumberOfGroups! };
+		public override object[] Parameters() => new object[] { InputPointFeatures, ContainsBackground!, PresenceIndicatorField!, ExplanatoryVariables!, DistanceFeatures!, ExplanatoryRasters!, BasisExpansionFunctions!, NumberKnots!, StudyAreaType!, StudyAreaPolygon!, SpatialThinning!, ThinningDistanceBand!, NumberOfIterations!, RelativeWeight!, LinkFunction!, PresenceProbabilityCutoff!, OutputTrainedFeatures!, OutputTrainedRaster!, OutputResponseCurveTable!, OutputSensitivityTable!, FeaturesToPredict!, OutputPredFeatures!, OutputPredRaster!, ExplanatoryVariableMatching!, ExplanatoryDistanceMatching!, ExplanatoryRastersMatching!, AllowPredictionsOutsideOfDataRanges!, ResamplingScheme!, NumberOfGroups! };
 
 		/// <summary>
 		/// <para>Input Point Features</para>
@@ -69,6 +70,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InputPointFeatures { get; set; }
 
 		/// <summary>
@@ -91,6 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? PresenceIndicatorField { get; set; }
 
 		/// <summary>
@@ -109,6 +113,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Point", "Polyline")]
+		[FeatureType("Simple")]
 		public object? DistanceFeatures { get; set; }
 
 		/// <summary>
@@ -143,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 2, Max = 50)]
 		public object? NumberKnots { get; set; } = "10";
 
 		/// <summary>
@@ -166,6 +172,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? StudyAreaPolygon { get; set; }
 
 		/// <summary>
@@ -197,7 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 50)]
 		public object? NumberOfIterations { get; set; } = "10";
 
 		/// <summary>
@@ -207,7 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 100)]
 		[Category("Advanced Model Options")]
 		public object? RelativeWeight { get; set; } = "100";
 
@@ -230,7 +238,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0.01, Max = 0.98999999999999999)]
 		[Category("Advanced Model Options")]
 		public object? PresenceProbabilityCutoff { get; set; } = "0.5";
 
@@ -361,7 +369,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 2, Max = 10)]
 		[Category("Validation Options")]
 		public object? NumberOfGroups { get; set; } = "3";
 

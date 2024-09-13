@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Align Marker To Stroke Or Fill</para>
+	/// <para>Align Marker To Stroke Or Fill</para>
 	/// <para>Aligns the marker symbol layers of a point feature class to the nearest stroke or fill symbol layers in a line or polygon feature class within a specified search distance.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Align Marker To Stroke Or Fill</para>
 		/// </summary>
-		public override string DisplayName => "Align Marker To Stroke Or Fill";
+		public override string DisplayName() => "Align Marker To Stroke Or Fill";
 
 		/// <summary>
 		/// <para>Tool Name : AlignMarkerToStrokeOrFill</para>
 		/// </summary>
-		public override string ToolName => "AlignMarkerToStrokeOrFill";
+		public override string ToolName() => "AlignMarkerToStrokeOrFill";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.AlignMarkerToStrokeOrFill</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.AlignMarkerToStrokeOrFill";
+		public override string ExcuteName() => "cartography.AlignMarkerToStrokeOrFill";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicCoordinateSystem", "cartographicPartitions", "referenceScale" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicCoordinateSystem", "cartographicPartitions", "referenceScale" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, InLineOrPolygonFeatures, SearchDistance, MarkerOrientation!, OutRepresentations! };
+		public override object[] Parameters() => new object[] { InPointFeatures, InLineOrPolygonFeatures, SearchDistance, MarkerOrientation!, OutRepresentations! };
 
 		/// <summary>
 		/// <para>Input Point Features</para>
@@ -81,6 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InPointFeatures { get; set; }
 
 		/// <summary>
@@ -90,6 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon")]
 		public object InLineOrPolygonFeatures { get; set; }
 
 		/// <summary>

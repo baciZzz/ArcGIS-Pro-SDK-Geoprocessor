@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Calculate Density</para>
+	/// <para>Calculate Density</para>
 	/// <para>Creates a density map from point or line features by spreading known quantities of some phenomenon (represented as attributes of the points or lines) across the map. The result is a layer of areas classified from least dense to most dense.</para>
 	/// </summary>
 	public class CalculateDensity : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Density</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Density";
+		public override string DisplayName() => "Calculate Density";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateDensity</para>
 		/// </summary>
-		public override string ToolName => "CalculateDensity";
+		public override string ToolName() => "CalculateDensity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.CalculateDensity</para>
 		/// </summary>
-		public override string ExcuteName => "ra.CalculateDensity";
+		public override string ExcuteName() => "ra.CalculateDensity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputpointorlinefeatures, Outputname, Countfield!, Searchdistance!, Outputareaunits!, Outputcellsize!, Outputraster!, Inbarriers! };
+		public override object[] Parameters() => new object[] { Inputpointorlinefeatures, Outputname, Countfield!, Searchdistance!, Outputareaunits!, Outputcellsize!, Outputraster!, Inbarriers! };
 
 		/// <summary>
 		/// <para>Input Point or Line Features</para>
@@ -75,6 +76,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polyline")]
+		[FeatureType("Simple")]
 		public object Inputpointorlinefeatures { get; set; }
 
 		/// <summary>
@@ -93,6 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? Countfield { get; set; }
 
 		/// <summary>
@@ -146,6 +150,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon")]
+		[FeatureType("Simple")]
 		public object? Inbarriers { get; set; }
 
 		/// <summary>

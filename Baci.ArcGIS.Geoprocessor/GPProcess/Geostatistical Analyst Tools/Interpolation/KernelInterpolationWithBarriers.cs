@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Kernel Interpolation With Barriers</para>
+	/// <para>Kernel Interpolation With Barriers</para>
 	/// <para>A moving window predictor that uses the shortest distance between points so that points on either side of the line barriers are connected.</para>
 	/// </summary>
 	public class KernelInterpolationWithBarriers : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Kernel Interpolation With Barriers</para>
 		/// </summary>
-		public override string DisplayName => "Kernel Interpolation With Barriers";
+		public override string DisplayName() => "Kernel Interpolation With Barriers";
 
 		/// <summary>
 		/// <para>Tool Name : KernelInterpolationWithBarriers</para>
 		/// </summary>
-		public override string ToolName => "KernelInterpolationWithBarriers";
+		public override string ToolName() => "KernelInterpolationWithBarriers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.KernelInterpolationWithBarriers</para>
 		/// </summary>
-		public override string ExcuteName => "ga.KernelInterpolationWithBarriers";
+		public override string ExcuteName() => "ga.KernelInterpolationWithBarriers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ZField, OutGaLayer!, OutRaster!, CellSize!, InBarrierFeatures!, KernelFunction!, Bandwidth!, Power!, Ridge!, OutputType! };
+		public override object[] Parameters() => new object[] { InFeatures, ZField, OutGaLayer!, OutRaster!, CellSize!, InBarrierFeatures!, KernelFunction!, Bandwidth!, Power!, Ridge!, OutputType! };
 
 		/// <summary>
 		/// <para>Input features</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -83,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object ZField { get; set; }
 
 		/// <summary>
@@ -109,7 +112,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? CellSize { get; set; }
 
 		/// <summary>
@@ -119,6 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Polyline")]
 		public object? InBarrierFeatures { get; set; }
 
 		/// <summary>
@@ -143,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 1.7976931348623157e+308)]
 		public object? Bandwidth { get; set; }
 
 		/// <summary>
@@ -152,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 1)]
 		public object? Power { get; set; } = "1";
 
 		/// <summary>
@@ -161,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 100)]
 		public object? Ridge { get; set; } = "50";
 
 		/// <summary>

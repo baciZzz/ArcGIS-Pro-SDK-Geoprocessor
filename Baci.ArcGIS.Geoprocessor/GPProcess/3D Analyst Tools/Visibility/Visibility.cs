@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Visibility</para>
+	/// <para>Visibility</para>
 	/// <para>Determines the raster surface locations visible to a set of observer features, or identifies which observer points are visible from each raster surface location.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.Analyst3DTools.Viewshed2"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
@@ -44,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Visibility</para>
 		/// </summary>
-		public override string DisplayName => "Visibility";
+		public override string DisplayName() => "Visibility";
 
 		/// <summary>
 		/// <para>Tool Name : Visibility</para>
 		/// </summary>
-		public override string ToolName => "Visibility";
+		public override string ToolName() => "Visibility";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Visibility</para>
 		/// </summary>
-		public override string ExcuteName => "3d.Visibility";
+		public override string ExcuteName() => "3d.Visibility";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InObserverFeatures, OutRaster, OutAglRaster!, AnalysisType!, NonvisibleCellValue!, ZFactor!, CurvatureCorrection!, RefractivityCoefficient!, SurfaceOffset!, ObserverElevation!, ObserverOffset!, InnerRadius!, OuterRadius!, HorizontalStartAngle!, HorizontalEndAngle!, VerticalUpperAngle!, VerticalLowerAngle! };
+		public override object[] Parameters() => new object[] { InRaster, InObserverFeatures, OutRaster, OutAglRaster!, AnalysisType!, NonvisibleCellValue!, ZFactor!, CurvatureCorrection!, RefractivityCoefficient!, SurfaceOffset!, ObserverElevation!, ObserverOffset!, InnerRadius!, OuterRadius!, HorizontalStartAngle!, HorizontalEndAngle!, VerticalUpperAngle!, VerticalLowerAngle! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -82,7 +83,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = true)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRaster { get; set; }
 
 		/// <summary>
@@ -92,7 +96,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DEFeatureClass", "GPFeatureLayer", "GPTableView", "DETextFile")]
+		[FieldType("OID", "Short", "Long", "Float", "Double", "Text", "Geometry")]
+		[GeometryType("Point", "Multipoint", "Polyline")]
 		public object InObserverFeatures { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Mosaic Layer</para>
+	/// <para>Make Mosaic Layer</para>
 	/// <para>Creates a  mosaic layer from a mosaic dataset or layer file. The layer that is created by the tool is temporary and will not persist after the session ends unless the layer is saved as a layer file or the map  is saved.</para>
 	/// </summary>
 	public class MakeMosaicLayer : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Mosaic Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Mosaic Layer";
+		public override string DisplayName() => "Make Mosaic Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeMosaicLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeMosaicLayer";
+		public override string ToolName() => "MakeMosaicLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MakeMosaicLayer</para>
 		/// </summary>
-		public override string ExcuteName => "management.MakeMosaicLayer";
+		public override string ExcuteName() => "management.MakeMosaicLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, OutMosaicLayer, WhereClause!, Template!, BandIndex!, MosaicMethod!, OrderField!, OrderBaseValue!, LockRasterid!, SortOrder!, MosaicOperator!, CellSize!, ProcessingTemplate! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, OutMosaicLayer, WhereClause!, Template!, BandIndex!, MosaicMethod!, OrderField!, OrderBaseValue!, LockRasterid!, SortOrder!, MosaicOperator!, CellSize!, ProcessingTemplate! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Collect Events</para>
+	/// <para>Collect Events</para>
 	/// <para>Converts event data, such as crime or disease incidents, to weighted point data.</para>
 	/// </summary>
 	public class CollectEvents : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Collect Events</para>
 		/// </summary>
-		public override string DisplayName => "Collect Events";
+		public override string DisplayName() => "Collect Events";
 
 		/// <summary>
 		/// <para>Tool Name : CollectEvents</para>
 		/// </summary>
-		public override string ToolName => "CollectEvents";
+		public override string ToolName() => "CollectEvents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.CollectEvents</para>
 		/// </summary>
-		public override string ExcuteName => "stats.CollectEvents";
+		public override string ExcuteName() => "stats.CollectEvents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputIncidentFeatures, OutputWeightedPointFeatureClass, ResultsField!, ZMaxValue! };
+		public override object[] Parameters() => new object[] { InputIncidentFeatures, OutputWeightedPointFeatureClass, ResultsField!, ZMaxValue! };
 
 		/// <summary>
 		/// <para>Input Incident Features</para>

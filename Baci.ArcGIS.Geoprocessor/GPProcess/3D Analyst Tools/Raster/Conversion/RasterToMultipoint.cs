@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Raster To Multipoint</para>
+	/// <para>Raster To Multipoint</para>
 	/// <para>Converts raster cell centers to 3D multipoint features with z-values that reflect the raster cell value.</para>
 	/// </summary>
 	public class RasterToMultipoint : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Raster To Multipoint</para>
 		/// </summary>
-		public override string DisplayName => "Raster To Multipoint";
+		public override string DisplayName() => "Raster To Multipoint";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToMultipoint</para>
 		/// </summary>
-		public override string ToolName => "RasterToMultipoint";
+		public override string ToolName() => "RasterToMultipoint";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.RasterToMultipoint</para>
 		/// </summary>
-		public override string ExcuteName => "3d.RasterToMultipoint";
+		public override string ExcuteName() => "3d.RasterToMultipoint";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutFeatureClass, OutVipTable!, Method!, KernelMethod!, ZFactor!, ThinningValue! };
+		public override object[] Parameters() => new object[] { InRaster, OutFeatureClass, OutVipTable!, Method!, KernelMethod!, ZFactor!, ThinningValue! };
 
 		/// <summary>
 		/// <para>Input Raster</para>

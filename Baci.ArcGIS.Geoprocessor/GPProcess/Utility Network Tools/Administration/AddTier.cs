@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Tier</para>
+	/// <para>Add Tier</para>
 	/// <para>Creates a new tier for a domain network in a utility network.</para>
 	/// </summary>
 	public class AddTier : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Tier</para>
 		/// </summary>
-		public override string DisplayName => "Add Tier";
+		public override string DisplayName() => "Add Tier";
 
 		/// <summary>
 		/// <para>Tool Name : AddTier</para>
 		/// </summary>
-		public override string ToolName => "AddTier";
+		public override string ToolName() => "AddTier";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddTier</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddTier";
+		public override string ExcuteName() => "un.AddTier";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetwork, Name, Rank, TopologyType!, TierGroupName!, SubnetworkFieldName!, OutUtilityNetwork! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, DomainNetwork, Name, Rank, TopologyType!, TierGroupName!, SubnetworkFieldName!, OutUtilityNetwork! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

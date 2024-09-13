@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Radial Tree Layout</para>
+	/// <para>Add Radial Tree Layout</para>
 	/// <para>Adds the Radial Tree Layout algorithm to the list of layouts to be automatically chained at the end of the building of diagrams based on a given template. This tool also presets the Radial Tree Layout algorithm parameters for any diagram based on that template.</para>
 	/// </summary>
 	public class AddRadialTreeLayout : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Radial Tree Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Radial Tree Layout";
+		public override string DisplayName() => "Add Radial Tree Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddRadialTreeLayout</para>
 		/// </summary>
-		public override string ToolName => "AddRadialTreeLayout";
+		public override string ToolName() => "AddRadialTreeLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddRadialTreeLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddRadialTreeLayout";
+		public override string ExcuteName() => "nd.AddRadialTreeLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, IsUnitAbsolute!, InitialRadiusAbsolute!, InitialRadiusProportional!, DisjoinedGraphAbsolute!, DisjoinedGraphProportional!, RadiusFactor!, OutUtilityNetwork!, OutTemplateName! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, IsUnitAbsolute!, InitialRadiusAbsolute!, InitialRadiusProportional!, DisjoinedGraphAbsolute!, DisjoinedGraphProportional!, RadiusFactor!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>

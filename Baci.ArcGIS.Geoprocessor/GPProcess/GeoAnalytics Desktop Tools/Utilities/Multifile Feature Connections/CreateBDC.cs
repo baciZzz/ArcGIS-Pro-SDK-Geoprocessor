@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Create Multifile Feature Connection</para>
+	/// <para>Create Multifile Feature Connection</para>
 	/// <para>Creates a multifile feature connection file (.mfc) and item. Datasets registered in a multifile feature connection (MFC) can be used as input to GeoAnalytics Desktop tools and other geoprocessing tools.</para>
 	/// </summary>
 	public class CreateBDC : AbstractGPProcess
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Multifile Feature Connection</para>
 		/// </summary>
-		public override string DisplayName => "Create Multifile Feature Connection";
+		public override string DisplayName() => "Create Multifile Feature Connection";
 
 		/// <summary>
 		/// <para>Tool Name : CreateBDC</para>
 		/// </summary>
-		public override string ToolName => "CreateBDC";
+		public override string ToolName() => "CreateBDC";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.CreateBDC</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.CreateBDC";
+		public override string ExcuteName() => "gapro.CreateBDC";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { BdcLocation, BdcName, ConnectionType, DataSourceFolder!, VisibleGeometry!, VisibleTime!, OutputBdc! };
+		public override object[] Parameters() => new object[] { BdcLocation, BdcName, ConnectionType, DataSourceFolder!, VisibleGeometry!, VisibleTime!, OutputBdc! };
 
 		/// <summary>
 		/// <para>Multifile Feature Connection Output Location</para>
@@ -139,6 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("bdc", "mfc")]
 		public object? OutputBdc { get; set; }
 
 		#region InnerClass

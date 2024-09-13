@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Subset Multidimensional Raster</para>
+	/// <para>Subset Multidimensional Raster</para>
 	/// <para>Creates a subset of a multidimensional raster by slicing data along defined variables and dimensions.</para>
 	/// </summary>
 	public class SubsetMultidimensionalRaster : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Display Name : Subset Multidimensional Raster</para>
 		/// </summary>
-		public override string DisplayName => "Subset Multidimensional Raster";
+		public override string DisplayName() => "Subset Multidimensional Raster";
 
 		/// <summary>
 		/// <para>Tool Name : SubsetMultidimensionalRaster</para>
 		/// </summary>
-		public override string ToolName => "SubsetMultidimensionalRaster";
+		public override string ToolName() => "SubsetMultidimensionalRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : md.SubsetMultidimensionalRaster</para>
 		/// </summary>
-		public override string ExcuteName => "md.SubsetMultidimensionalRaster";
+		public override string ExcuteName() => "md.SubsetMultidimensionalRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Multidimension Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Multidimension Tools";
+		public override string ToolboxDisplayName() => "Multidimension Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : md</para>
 		/// </summary>
-		public override string ToolboxAlise => "md";
+		public override string ToolboxAlise() => "md";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultidimensionalRaster, OutMultidimensionalRaster, Variables!, DimensionDef!, DimensionRanges!, DimensionValues!, Dimension!, StartOfFirstIteration!, EndOfFirstIteration!, IterationStep!, IterationUnit! };
+		public override object[] Parameters() => new object[] { InMultidimensionalRaster, OutMultidimensionalRaster, Variables!, DimensionDef!, DimensionRanges!, DimensionValues!, Dimension!, StartOfFirstIteration!, EndOfFirstIteration!, IterationStep!, IterationUnit! };
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>

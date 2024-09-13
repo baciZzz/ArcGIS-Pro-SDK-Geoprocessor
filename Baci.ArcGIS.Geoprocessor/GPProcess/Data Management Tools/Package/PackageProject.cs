@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Package Project</para>
+	/// <para>Package Project</para>
 	/// <para>Consolidates and packages a project file (.aprx) of referenced maps and data to a  packaged project file (.ppkx).</para>
 	/// </summary>
 	public class PackageProject : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Package Project</para>
 		/// </summary>
-		public override string DisplayName => "Package Project";
+		public override string DisplayName() => "Package Project";
 
 		/// <summary>
 		/// <para>Tool Name : PackageProject</para>
 		/// </summary>
-		public override string ToolName => "PackageProject";
+		public override string ToolName() => "PackageProject";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.PackageProject</para>
 		/// </summary>
-		public override string ExcuteName => "management.PackageProject";
+		public override string ExcuteName() => "management.PackageProject";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InProject, OutputFile, SharingInternal!, PackageAsTemplate!, Extent!, ApplyExtentToArcsde!, AdditionalFiles!, Summary!, Tags!, Version!, IncludeToolboxes!, IncludeHistoryItems!, ReadOnly!, SelectRelatedRows!, PreserveSqlite! };
+		public override object[] Parameters() => new object[] { InProject, OutputFile, SharingInternal!, PackageAsTemplate!, Extent!, ApplyExtentToArcsde!, AdditionalFiles!, Summary!, Tags!, Version!, IncludeToolboxes!, IncludeHistoryItems!, ReadOnly!, SelectRelatedRows!, PreserveSqlite! };
 
 		/// <summary>
 		/// <para>Input Project</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("aprx")]
 		public object InProject { get; set; }
 
 		/// <summary>
@@ -83,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("ppkx", "aptx")]
 		public object OutputFile { get; set; }
 
 		/// <summary>

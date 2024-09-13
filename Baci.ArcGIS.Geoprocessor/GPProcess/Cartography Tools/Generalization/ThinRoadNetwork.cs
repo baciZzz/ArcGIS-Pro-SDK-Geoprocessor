@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Thin Road Network</para>
+	/// <para>Thin Road Network</para>
 	/// <para>Generates a simplified road network that retains connectivity and general character for display at a smaller scale.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -47,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Thin Road Network</para>
 		/// </summary>
-		public override string DisplayName => "Thin Road Network";
+		public override string DisplayName() => "Thin Road Network";
 
 		/// <summary>
 		/// <para>Tool Name : ThinRoadNetwork</para>
 		/// </summary>
-		public override string ToolName => "ThinRoadNetwork";
+		public override string ToolName() => "ThinRoadNetwork";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.ThinRoadNetwork</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.ThinRoadNetwork";
+		public override string ExcuteName() => "cartography.ThinRoadNetwork";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicCoordinateSystem", "cartographicPartitions", "referenceScale" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicCoordinateSystem", "cartographicPartitions", "referenceScale" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, MinimumLength, InvisibilityField, HierarchyField, OutFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, MinimumLength, InvisibilityField, HierarchyField, OutFeatures! };
 
 		/// <summary>
 		/// <para>Input Road Features</para>
@@ -86,6 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

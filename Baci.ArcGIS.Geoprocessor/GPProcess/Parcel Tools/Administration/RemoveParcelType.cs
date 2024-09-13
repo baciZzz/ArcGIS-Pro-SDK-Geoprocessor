@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Remove Parcel Type</para>
+	/// <para>Remove Parcel Type</para>
 	/// <para>Removes  a parcel type from a parcel fabric.</para>
 	/// </summary>
 	public class RemoveParcelType : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Parcel Type</para>
 		/// </summary>
-		public override string DisplayName => "Remove Parcel Type";
+		public override string DisplayName() => "Remove Parcel Type";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveParcelType</para>
 		/// </summary>
-		public override string ToolName => "RemoveParcelType";
+		public override string ToolName() => "RemoveParcelType";
 
 		/// <summary>
 		/// <para>Tool Excute Name : parcel.RemoveParcelType</para>
 		/// </summary>
-		public override string ExcuteName => "parcel.RemoveParcelType";
+		public override string ExcuteName() => "parcel.RemoveParcelType";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Parcel Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Parcel Tools";
+		public override string ToolboxDisplayName() => "Parcel Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : parcel</para>
 		/// </summary>
-		public override string ToolboxAlise => "parcel";
+		public override string ToolboxAlise() => "parcel";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFabric, Name, UpdatedParcelFabric!, OutPolygonFc!, OutLineFc! };
+		public override object[] Parameters() => new object[] { InParcelFabric, Name, UpdatedParcelFabric!, OutPolygonFc!, OutLineFc! };
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Table</para>
+	/// <para>Create Table</para>
 	/// <para>Creates a geodatabase table or a dBASE table.</para>
 	/// </summary>
 	public class CreateTable : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Table</para>
 		/// </summary>
-		public override string DisplayName => "Create Table";
+		public override string DisplayName() => "Create Table";
 
 		/// <summary>
 		/// <para>Tool Name : CreateTable</para>
 		/// </summary>
-		public override string ToolName => "CreateTable";
+		public override string ToolName() => "CreateTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateTable</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateTable";
+		public override string ExcuteName() => "management.CreateTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutPath, OutName, Template!, ConfigKeyword!, OutTable!, OutAlias! };
+		public override object[] Parameters() => new object[] { OutPath, OutName, Template!, ConfigKeyword!, OutTable!, OutAlias! };
 
 		/// <summary>
 		/// <para>Table Location</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("File System", "Local Database", "Remote Database")]
 		public object OutPath { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make OD Cost Matrix Analysis Layer</para>
+	/// <para>Make OD Cost Matrix Analysis Layer</para>
 	/// <para>Makes an origin destination (OD) cost matrix network analysis layer and sets its analysis properties. An OD cost matrix analysis layer is useful for representing a matrix of costs going from a set of origin locations to a set of destination locations. The layer can be created using a local network dataset or a service hosted online or in a portal.</para>
 	/// </summary>
 	public class MakeODCostMatrixAnalysisLayer : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Make OD Cost Matrix Analysis Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make OD Cost Matrix Analysis Layer";
+		public override string DisplayName() => "Make OD Cost Matrix Analysis Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeODCostMatrixAnalysisLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeODCostMatrixAnalysisLayer";
+		public override string ToolName() => "MakeODCostMatrixAnalysisLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.MakeODCostMatrixAnalysisLayer</para>
 		/// </summary>
-		public override string ExcuteName => "na.MakeODCostMatrixAnalysisLayer";
+		public override string ExcuteName() => "na.MakeODCostMatrixAnalysisLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { NetworkDataSource, LayerName!, TravelMode!, Cutoff!, NumberOfDestinationsToFind!, TimeOfDay!, TimeZone!, LineShape!, AccumulateAttributes!, OutNetworkAnalysisLayer!, IgnoreInvalidLocations! };
+		public override object[] Parameters() => new object[] { NetworkDataSource, LayerName!, TravelMode!, Cutoff!, NumberOfDestinationsToFind!, TimeOfDay!, TimeZone!, LineShape!, AccumulateAttributes!, OutNetworkAnalysisLayer!, IgnoreInvalidLocations! };
 
 		/// <summary>
 		/// <para>Network Data Source</para>

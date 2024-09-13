@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Manage Feature Bin Cache</para>
+	/// <para>Manage Feature Bin Cache</para>
 	/// <para>Manages the feature binning cache for data with feature binning enabled.</para>
 	/// </summary>
 	public class ManageFeatureBinCache : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Manage Feature Bin Cache</para>
 		/// </summary>
-		public override string DisplayName => "Manage Feature Bin Cache";
+		public override string DisplayName() => "Manage Feature Bin Cache";
 
 		/// <summary>
 		/// <para>Tool Name : ManageFeatureBinCache</para>
 		/// </summary>
-		public override string ToolName => "ManageFeatureBinCache";
+		public override string ToolName() => "ManageFeatureBinCache";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ManageFeatureBinCache</para>
 		/// </summary>
-		public override string ExcuteName => "management.ManageFeatureBinCache";
+		public override string ExcuteName() => "management.ManageFeatureBinCache";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, BinType!, MaxLod!, AddCacheStatistics!, DeleteCacheStatistics!, OutFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, BinType!, MaxLod!, AddCacheStatistics!, DeleteCacheStatistics!, OutFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -69,6 +70,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Multipoint", "Point")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

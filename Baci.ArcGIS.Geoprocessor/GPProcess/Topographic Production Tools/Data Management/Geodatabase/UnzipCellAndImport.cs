@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Unzip MGCP Cell And Import</para>
+	/// <para>Unzip MGCP Cell And Import</para>
 	/// <para>Unzips and imports compressed Multinational Geospatial Co-production Program (MGCP) 1-degree-by-1-degree cell packages (*.zip) into a target geodatabase.</para>
 	/// </summary>
 	public class UnzipCellAndImport : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Unzip MGCP Cell And Import</para>
 		/// </summary>
-		public override string DisplayName => "Unzip MGCP Cell And Import";
+		public override string DisplayName() => "Unzip MGCP Cell And Import";
 
 		/// <summary>
 		/// <para>Tool Name : UnzipCellAndImport</para>
 		/// </summary>
-		public override string ToolName => "UnzipCellAndImport";
+		public override string ToolName() => "UnzipCellAndImport";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.UnzipCellAndImport</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.UnzipCellAndImport";
+		public override string ExcuteName() => "topographic.UnzipCellAndImport";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { RootFolder, TargetGeodatabase, OutputGeodatabase! };
+		public override object[] Parameters() => new object[] { RootFolder, TargetGeodatabase, OutputGeodatabase! };
 
 		/// <summary>
 		/// <para>Root Folder</para>

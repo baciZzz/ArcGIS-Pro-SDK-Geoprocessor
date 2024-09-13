@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Optimal Path As Line</para>
+	/// <para>Optimal Path As Line</para>
 	/// <para>Calculates the optimal path from a source to a destination as a line.</para>
 	/// </summary>
 	public class OptimalPathAsLine : AbstractGPProcess
@@ -48,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Optimal Path As Line</para>
 		/// </summary>
-		public override string DisplayName => "Optimal Path As Line";
+		public override string DisplayName() => "Optimal Path As Line";
 
 		/// <summary>
 		/// <para>Tool Name : OptimalPathAsLine</para>
 		/// </summary>
-		public override string ToolName => "OptimalPathAsLine";
+		public override string ToolName() => "OptimalPathAsLine";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.OptimalPathAsLine</para>
 		/// </summary>
-		public override string ExcuteName => "ra.OptimalPathAsLine";
+		public override string ExcuteName() => "ra.OptimalPathAsLine";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputdestinationrasterorfeatures, Inputdistanceaccumulationraster, Inputbackdirectionraster, Outputpolylinename, Destinationfield!, Pathtype!, Outputpolylinefeatures!, Createnetworkpaths! };
+		public override object[] Parameters() => new object[] { Inputdestinationrasterorfeatures, Inputdistanceaccumulationraster, Inputbackdirectionraster, Outputpolylinename, Destinationfield!, Pathtype!, Outputpolylinefeatures!, Createnetworkpaths! };
 
 		/// <summary>
 		/// <para>Input Raster or Feature Destination Data</para>

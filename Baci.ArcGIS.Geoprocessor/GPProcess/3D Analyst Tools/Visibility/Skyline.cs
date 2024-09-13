@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Skyline</para>
+	/// <para>Skyline</para>
 	/// <para>Generates a line or multipatch feature class containing the results from a skyline or silhouette analysis.</para>
 	/// </summary>
 	public class Skyline : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Skyline</para>
 		/// </summary>
-		public override string DisplayName => "Skyline";
+		public override string DisplayName() => "Skyline";
 
 		/// <summary>
 		/// <para>Tool Name : Skyline</para>
 		/// </summary>
-		public override string ToolName => "Skyline";
+		public override string ToolName() => "Skyline";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Skyline</para>
 		/// </summary>
-		public override string ExcuteName => "3d.Skyline";
+		public override string ExcuteName() => "3d.Skyline";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "geographicTransformations", "outputCoordinateSystem", "terrainMemoryUsage", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "geographicTransformations", "outputCoordinateSystem", "terrainMemoryUsage", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InObserverPointFeatures, OutFeatureClass, InSurface!, VirtualSurfaceRadius!, VirtualSurfaceElevation!, InFeatures!, FeatureLod!, FromAzimuthValueOrField!, ToAzimuthValueOrField!, AzimuthIncrementValueOrField!, MaxHorizonRadius!, SegmentSkyline!, ScaleToPercent!, ScaleAccordingTo!, ScaleMethod!, UseCurvature!, UseRefraction!, RefractionFactor!, PyramidLevelResolution!, CreateSilhouettes! };
+		public override object[] Parameters() => new object[] { InObserverPointFeatures, OutFeatureClass, InSurface!, VirtualSurfaceRadius!, VirtualSurfaceElevation!, InFeatures!, FeatureLod!, FromAzimuthValueOrField!, ToAzimuthValueOrField!, AzimuthIncrementValueOrField!, MaxHorizonRadius!, SegmentSkyline!, ScaleToPercent!, ScaleAccordingTo!, ScaleMethod!, UseCurvature!, UseRefraction!, RefractionFactor!, PyramidLevelResolution!, CreateSilhouettes! };
 
 		/// <summary>
 		/// <para>Input Observer Point Features</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InObserverPointFeatures { get; set; }
 
 		/// <summary>
@@ -115,6 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("MultiPatch")]
 		public object? InFeatures { get; set; }
 
 		/// <summary>

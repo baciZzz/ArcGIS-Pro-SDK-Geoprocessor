@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Interpolate Polygon To Multipatch</para>
+	/// <para>Interpolate Polygon To Multipatch</para>
 	/// <para>Creates surface-conforming  multipatch features by draping polygon features over a surface.</para>
 	/// </summary>
 	public class InterpolatePolyToPatch : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Interpolate Polygon To Multipatch</para>
 		/// </summary>
-		public override string DisplayName => "Interpolate Polygon To Multipatch";
+		public override string DisplayName() => "Interpolate Polygon To Multipatch";
 
 		/// <summary>
 		/// <para>Tool Name : InterpolatePolyToPatch</para>
 		/// </summary>
-		public override string ToolName => "InterpolatePolyToPatch";
+		public override string ToolName() => "InterpolatePolyToPatch";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.InterpolatePolyToPatch</para>
 		/// </summary>
-		public override string ExcuteName => "3d.InterpolatePolyToPatch";
+		public override string ExcuteName() => "3d.InterpolatePolyToPatch";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "ZDomain", "ZResolution", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "ZDomain", "ZResolution", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, InFeatureClass, OutFeatureClass, MaxStripSize!, ZFactor!, AreaField!, SurfaceAreaField!, PyramidLevelResolution! };
+		public override object[] Parameters() => new object[] { InSurface, InFeatureClass, OutFeatureClass, MaxStripSize!, ZFactor!, AreaField!, SurfaceAreaField!, PyramidLevelResolution! };
 
 		/// <summary>
 		/// <para>Input Surface</para>
@@ -87,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InFeatureClass { get; set; }
 
 		/// <summary>

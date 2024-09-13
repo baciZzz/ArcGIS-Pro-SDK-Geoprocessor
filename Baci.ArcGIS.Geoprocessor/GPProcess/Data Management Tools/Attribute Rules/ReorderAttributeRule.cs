@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Reorder Attribute Rule</para>
+	/// <para>Reorder Attribute Rule</para>
 	/// <para>Reorders the evaluation order of an attribute rule.</para>
 	/// </summary>
 	public class ReorderAttributeRule : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Reorder Attribute Rule</para>
 		/// </summary>
-		public override string DisplayName => "Reorder Attribute Rule";
+		public override string DisplayName() => "Reorder Attribute Rule";
 
 		/// <summary>
 		/// <para>Tool Name : ReorderAttributeRule</para>
 		/// </summary>
-		public override string ToolName => "ReorderAttributeRule";
+		public override string ToolName() => "ReorderAttributeRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ReorderAttributeRule</para>
 		/// </summary>
-		public override string ExcuteName => "management.ReorderAttributeRule";
+		public override string ExcuteName() => "management.ReorderAttributeRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Name, EvaluationOrder, UpdatedTable! };
+		public override object[] Parameters() => new object[] { InTable, Name, EvaluationOrder, UpdatedTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>

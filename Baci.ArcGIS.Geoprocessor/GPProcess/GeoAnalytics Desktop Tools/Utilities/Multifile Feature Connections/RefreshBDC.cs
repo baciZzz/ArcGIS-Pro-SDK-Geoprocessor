@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Refresh Multifile Feature Connection</para>
+	/// <para>Refresh Multifile Feature Connection</para>
 	/// <para>Refreshes an existing multifile feature connection (MFC) and registers any new datasets that have been added to the source location.</para>
 	/// </summary>
 	public class RefreshBDC : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Refresh Multifile Feature Connection</para>
 		/// </summary>
-		public override string DisplayName => "Refresh Multifile Feature Connection";
+		public override string DisplayName() => "Refresh Multifile Feature Connection";
 
 		/// <summary>
 		/// <para>Tool Name : RefreshBDC</para>
 		/// </summary>
-		public override string ToolName => "RefreshBDC";
+		public override string ToolName() => "RefreshBDC";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.RefreshBDC</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.RefreshBDC";
+		public override string ExcuteName() => "gapro.RefreshBDC";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { BdcFile, VisibleGeometry!, VisibleTime!, UpdatedBdc! };
+		public override object[] Parameters() => new object[] { BdcFile, VisibleGeometry!, VisibleTime!, UpdatedBdc! };
 
 		/// <summary>
 		/// <para>Multifile Feature Connection File</para>
@@ -69,6 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("bdc", "mfc")]
 		public object BdcFile { get; set; }
 
 		/// <summary>
@@ -101,6 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("bdc", "mfc")]
 		public object? UpdatedBdc { get; set; }
 
 		#region InnerClass

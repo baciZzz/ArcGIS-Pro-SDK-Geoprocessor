@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>High/Low Clustering (Getis-Ord General G)</para>
+	/// <para>High/Low Clustering (Getis-Ord General G)</para>
 	/// <para>Measures the degree of clustering for either high or low values using the Getis-Ord General G statistic.</para>
 	/// </summary>
 	public class HighLowClustering : AbstractGPProcess
@@ -65,37 +66,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : High/Low Clustering (Getis-Ord General G)</para>
 		/// </summary>
-		public override string DisplayName => "High/Low Clustering (Getis-Ord General G)";
+		public override string DisplayName() => "High/Low Clustering (Getis-Ord General G)";
 
 		/// <summary>
 		/// <para>Tool Name : HighLowClustering</para>
 		/// </summary>
-		public override string ToolName => "HighLowClustering";
+		public override string ToolName() => "HighLowClustering";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.HighLowClustering</para>
 		/// </summary>
-		public override string ExcuteName => "stats.HighLowClustering";
+		public override string ExcuteName() => "stats.HighLowClustering";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, InputField, GenerateReport!, ConceptualizationOfSpatialRelationships, DistanceMethod, Standardization, DistanceBandOrThresholdDistance!, WeightsMatrixFile!, ObservedGeneralG!, Zscore!, Pvalue!, ReportFile!, NumberOfNeighbors! };
+		public override object[] Parameters() => new object[] { InputFeatureClass, InputField, GenerateReport!, ConceptualizationOfSpatialRelationships, DistanceMethod, Standardization, DistanceBandOrThresholdDistance!, WeightsMatrixFile!, ObservedGeneralG!, Zscore!, Pvalue!, ReportFile!, NumberOfNeighbors! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -112,6 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object InputField { get; set; }
 
 		/// <summary>
@@ -176,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 999999999999999)]
 		public object? DistanceBandOrThresholdDistance { get; set; }
 
 		/// <summary>
@@ -186,6 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("swm", "gwt", "txt")]
 		public object? WeightsMatrixFile { get; set; }
 
 		/// <summary>
@@ -222,7 +225,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 2, Max = 1000)]
 		public object? NumberOfNeighbors { get; set; }
 
 		/// <summary>

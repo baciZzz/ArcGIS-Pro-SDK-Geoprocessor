@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Generalized Linear Regression</para>
+	/// <para>Generalized Linear Regression</para>
 	/// <para>Performs generalized linear regression </para>
 	/// <para>(GLR) to generate predictions or to model a dependent variable in terms of its relationship to a set of explanatory variables. This tool can be used to fit continuous (OLS), binary (logistic), and count (Poisson) models.</para>
 	/// </summary>
@@ -55,37 +56,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Generalized Linear Regression</para>
 		/// </summary>
-		public override string DisplayName => "Generalized Linear Regression";
+		public override string DisplayName() => "Generalized Linear Regression";
 
 		/// <summary>
 		/// <para>Tool Name : GeneralizedLinearRegression</para>
 		/// </summary>
-		public override string ToolName => "GeneralizedLinearRegression";
+		public override string ToolName() => "GeneralizedLinearRegression";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.GeneralizedLinearRegression</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.GeneralizedLinearRegression";
+		public override string ExcuteName() => "geoanalytics.GeneralizedLinearRegression";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeaturesName, GenerateCoefficientTable!, InputFeaturesToPredict!, ExplanatoryVariablesToMatch!, DependentVariableMapping!, DataStore!, Output!, OutputPredictedFeatures!, CoefficientTable! };
+		public override object[] Parameters() => new object[] { InputFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeaturesName, GenerateCoefficientTable!, InputFeaturesToPredict!, ExplanatoryVariablesToMatch!, DependentVariableMapping!, DataStore!, Output!, OutputPredictedFeatures!, CoefficientTable! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -94,6 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
 		[GPTablesDomain()]
+		[PortalType("DataStoreCatalogLayer")]
 		public object InputFeatures { get; set; }
 
 		/// <summary>
@@ -103,6 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
 		public object DependentVariable { get; set; }
 
 		/// <summary>
@@ -125,6 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object ExplanatoryVariables { get; set; }
 
 		/// <summary>
@@ -154,6 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRecordSet()]
 		[GPTablesDomain()]
+		[PortalType("DataStoreCatalogLayer")]
 		[Category("Prediction Options")]
 		public object? InputFeaturesToPredict { get; set; }
 

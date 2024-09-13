@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Customer Derived Trade Areas</para>
+	/// <para>Generate Customer Derived Trade Areas</para>
 	/// <para>Creates trade areas around stores based on the number of customers or volume attribute of each customer.</para>
 	/// </summary>
 	public class CustomerDerivedTA : AbstractGPProcess
@@ -75,37 +76,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Customer Derived Trade Areas</para>
 		/// </summary>
-		public override string DisplayName => "Generate Customer Derived Trade Areas";
+		public override string DisplayName() => "Generate Customer Derived Trade Areas";
 
 		/// <summary>
 		/// <para>Tool Name : CustomerDerivedTA</para>
 		/// </summary>
-		public override string ToolName => "CustomerDerivedTA";
+		public override string ToolName() => "CustomerDerivedTA";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.CustomerDerivedTA</para>
 		/// </summary>
-		public override string ExcuteName => "ba.CustomerDerivedTA";
+		public override string ExcuteName() => "ba.CustomerDerivedTA";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baNetworkSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InStoresLayer, StoreIdField, InCustomersLayer, LinkField, OutFeatureClass, Method, Rings, CustomerAggregationType, CustomerWeightField!, ExcludeOutlyingCustomers!, CutoffDistance!, DissolveOption!, UseCustomerCentroids!, DistanceType!, Units!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance!, PolygonDetail!, IterationsLimit!, MinimumStep!, TargetPercentDiff! };
+		public override object[] Parameters() => new object[] { InStoresLayer, StoreIdField, InCustomersLayer, LinkField, OutFeatureClass, Method, Rings, CustomerAggregationType, CustomerWeightField!, ExcludeOutlyingCustomers!, CutoffDistance!, DissolveOption!, UseCustomerCentroids!, DistanceType!, Units!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance!, PolygonDetail!, IterationsLimit!, MinimumStep!, TargetPercentDiff! };
 
 		/// <summary>
 		/// <para>Stores</para>
@@ -114,6 +115,8 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InStoresLayer { get; set; }
 
 		/// <summary>
@@ -123,6 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "Float", "Double", "GUID", "GlobalID")]
 		public object StoreIdField { get; set; }
 
 		/// <summary>
@@ -132,6 +136,8 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InCustomersLayer { get; set; }
 
 		/// <summary>
@@ -141,6 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "Float", "Double", "GUID", "GlobalID")]
 		public object LinkField { get; set; }
 
 		/// <summary>
@@ -174,6 +181,8 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
+		[High(Allow = true, Value = 100)]
 		public object Rings { get; set; }
 
 		/// <summary>
@@ -195,6 +204,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? CustomerWeightField { get; set; }
 
 		/// <summary>
@@ -324,6 +334,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 1)]
 		public object? IterationsLimit { get; set; }
 
 		/// <summary>
@@ -343,6 +354,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[High(Allow = false, Value = 100)]
 		[Category("Advanced Parameters")]
 		public object? TargetPercentDiff { get; set; } = "5";
 

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Create Cross-Reference Geodatabase</para>
+	/// <para>Create Cross-Reference Geodatabase</para>
 	/// <para>Creates a cross-reference geodatabase that the Load Data tool uses to map source data to target data when loading batch data.</para>
 	/// </summary>
 	public class CreateCrossReferenceGeodatabase : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Cross-Reference Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "Create Cross-Reference Geodatabase";
+		public override string DisplayName() => "Create Cross-Reference Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : CreateCrossReferenceGeodatabase</para>
 		/// </summary>
-		public override string ToolName => "CreateCrossReferenceGeodatabase";
+		public override string ToolName() => "CreateCrossReferenceGeodatabase";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.CreateCrossReferenceGeodatabase</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.CreateCrossReferenceGeodatabase";
+		public override string ExcuteName() => "topographic.CreateCrossReferenceGeodatabase";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SourceWorkspace, TargetDatabase, OutDatabase, MappingFile! };
+		public override object[] Parameters() => new object[] { SourceWorkspace, TargetDatabase, OutDatabase, MappingFile! };
 
 		/// <summary>
 		/// <para>Source Workspace</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database", "File System")]
 		public object SourceWorkspace { get; set; }
 
 		/// <summary>
@@ -88,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object TargetDatabase { get; set; }
 
 		/// <summary>
@@ -97,6 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database")]
 		public object OutDatabase { get; set; }
 
 		/// <summary>
@@ -106,6 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xls", "xlsx")]
 		public object? MappingFile { get; set; }
 
 	}

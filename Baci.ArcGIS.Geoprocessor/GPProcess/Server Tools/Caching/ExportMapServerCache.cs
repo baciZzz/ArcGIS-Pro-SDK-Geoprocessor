@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Export Map Server Cache</para>
+	/// <para>Export Map Server Cache</para>
 	/// <para>Exports tiles from a map image layer cache as a cache dataset or tile package to a folder on disk. The tiles can be imported into other caches, or they can be accessed from ArcGIS Desktop or mobile devices as a raster dataset, independent from their parent service.</para>
 	/// </summary>
 	public class ExportMapServerCache : AbstractGPProcess
@@ -65,37 +66,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Map Server Cache</para>
 		/// </summary>
-		public override string DisplayName => "Export Map Server Cache";
+		public override string DisplayName() => "Export Map Server Cache";
 
 		/// <summary>
 		/// <para>Tool Name : ExportMapServerCache</para>
 		/// </summary>
-		public override string ToolName => "ExportMapServerCache";
+		public override string ToolName() => "ExportMapServerCache";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.ExportMapServerCache</para>
 		/// </summary>
-		public override string ExcuteName => "server.ExportMapServerCache";
+		public override string ExcuteName() => "server.ExportMapServerCache";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputService, TargetCachePath, ExportCacheType, CopyDataFromServer, StorageFormatType, Scales, NumOfCachingServiceInstances!, AreaOfInterest!, ExportExtent!, Overwrite!, OutputCachePath! };
+		public override object[] Parameters() => new object[] { InputService, TargetCachePath, ExportCacheType, CopyDataFromServer, StorageFormatType, Scales, NumOfCachingServiceInstances!, AreaOfInterest!, ExportExtent!, Overwrite!, OutputCachePath! };
 
 		/// <summary>
 		/// <para>Input Service</para>

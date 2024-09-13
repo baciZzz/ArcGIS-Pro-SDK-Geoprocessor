@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Build Balanced Zones</para>
+	/// <para>Build Balanced Zones</para>
 	/// <para>Creates spatially contiguous zones in a study area using a genetic growth algorithm based on specified criteria.</para>
 	/// </summary>
 	public class BuildBalancedZones : AbstractGPProcess
@@ -44,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Build Balanced Zones</para>
 		/// </summary>
-		public override string DisplayName => "Build Balanced Zones";
+		public override string DisplayName() => "Build Balanced Zones";
 
 		/// <summary>
 		/// <para>Tool Name : BuildBalancedZones</para>
 		/// </summary>
-		public override string ToolName => "BuildBalancedZones";
+		public override string ToolName() => "BuildBalancedZones";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.BuildBalancedZones</para>
 		/// </summary>
-		public override string ExcuteName => "stats.BuildBalancedZones";
+		public override string ExcuteName() => "stats.BuildBalancedZones";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFeatures, ZoneCreationMethod, NumberOfZones!, ZoneBuildingCriteriaTarget!, ZoneBuildingCriteria!, SpatialConstraints!, WeightsMatrixFile!, ZoneCharacteristics!, AttributeToConsider!, DistanceToConsider!, CategorialVariable!, ProportionMethod!, PopulationSize!, NumberGenerations!, MutationFactor!, OutputConvergenceTable! };
+		public override object[] Parameters() => new object[] { InFeatures, OutputFeatures, ZoneCreationMethod, NumberOfZones!, ZoneBuildingCriteriaTarget!, ZoneBuildingCriteria!, SpatialConstraints!, WeightsMatrixFile!, ZoneCharacteristics!, AttributeToConsider!, DistanceToConsider!, CategorialVariable!, ProportionMethod!, PopulationSize!, NumberGenerations!, MutationFactor!, OutputConvergenceTable! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -83,6 +84,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -153,6 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("swm", "gwt")]
 		public object? WeightsMatrixFile { get; set; }
 
 		/// <summary>
@@ -195,6 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short", "Text", "Double", "Float")]
 		[Category("Additional Zone Selection Criteria")]
 		public object? CategorialVariable { get; set; }
 
@@ -217,7 +222,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 3, Max = 10000000)]
 		[Category("Advanced Parameters")]
 		public object? PopulationSize { get; set; } = "100";
 
@@ -227,7 +232,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 10000000)]
 		[Category("Advanced Parameters")]
 		public object? NumberGenerations { get; set; } = "50";
 
@@ -237,7 +242,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 1)]
 		[Category("Advanced Parameters")]
 		public object? MutationFactor { get; set; } = "0.1";
 

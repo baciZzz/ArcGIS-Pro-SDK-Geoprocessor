@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Update Utility Network Schema</para>
+	/// <para>Update Utility Network Schema</para>
 	/// <para>Updates the schema of a utility network based upon a Xml set of instructions</para>
 	/// </summary>
 	[Obsolete()]
@@ -34,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Update Utility Network Schema</para>
 		/// </summary>
-		public override string DisplayName => "Update Utility Network Schema";
+		public override string DisplayName() => "Update Utility Network Schema";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateUtilityNetworkSchema</para>
 		/// </summary>
-		public override string ToolName => "UpdateUtilityNetworkSchema";
+		public override string ToolName() => "UpdateUtilityNetworkSchema";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.UpdateUtilityNetworkSchema</para>
 		/// </summary>
-		public override string ExcuteName => "un.UpdateUtilityNetworkSchema";
+		public override string ExcuteName() => "un.UpdateUtilityNetworkSchema";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, Operations, OutMessages!, OutUtilityNetwork! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, Operations, OutMessages!, OutUtilityNetwork! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

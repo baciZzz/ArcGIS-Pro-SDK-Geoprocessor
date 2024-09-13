@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Minimum Bounding Geometry</para>
+	/// <para>Minimum Bounding Geometry</para>
 	/// <para>Creates a feature class containing polygons which represent a specified minimum bounding geometry enclosing each input feature or each group of input features.</para>
 	/// </summary>
 	public class MinimumBoundingGeometry : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Minimum Bounding Geometry</para>
 		/// </summary>
-		public override string DisplayName => "Minimum Bounding Geometry";
+		public override string DisplayName() => "Minimum Bounding Geometry";
 
 		/// <summary>
 		/// <para>Tool Name : MinimumBoundingGeometry</para>
 		/// </summary>
-		public override string ToolName => "MinimumBoundingGeometry";
+		public override string ToolName() => "MinimumBoundingGeometry";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MinimumBoundingGeometry</para>
 		/// </summary>
-		public override string ExcuteName => "management.MinimumBoundingGeometry";
+		public override string ExcuteName() => "management.MinimumBoundingGeometry";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, GeometryType!, GroupOption!, GroupField!, MbgFieldsOption! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, GeometryType!, GroupOption!, GroupField!, MbgFieldsOption! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polyline", "Polygon", "MultiPatch")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -119,6 +121,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date")]
+		[ExcludeField("SHAPE_Length", "SHAPE_Area")]
 		public object? GroupField { get; set; }
 
 		/// <summary>

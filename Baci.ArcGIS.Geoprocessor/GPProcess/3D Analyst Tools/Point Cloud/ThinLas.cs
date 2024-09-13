@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Thin LAS</para>
+	/// <para>Thin LAS</para>
 	/// <para>Creates new LAS files that contain a subset of LAS points from the input LAS dataset.</para>
 	/// </summary>
 	public class ThinLas : AbstractGPProcess
@@ -48,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Thin LAS</para>
 		/// </summary>
-		public override string DisplayName => "Thin LAS";
+		public override string DisplayName() => "Thin LAS";
 
 		/// <summary>
 		/// <para>Tool Name : ThinLas</para>
 		/// </summary>
-		public override string ToolName => "ThinLas";
+		public override string ToolName() => "ThinLas";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.ThinLas</para>
 		/// </summary>
-		public override string ExcuteName => "3d.ThinLas";
+		public override string ExcuteName() => "3d.ThinLas";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, TargetFolder, ThinningDimension, XyResolution, ZResolution!, PointSelectionMethod!, ClassCodesWeights!, NameSuffix!, OutLasDataset!, PreservedClassCodes!, PreservedFlags!, PreservedReturns!, ExcludedClassCodes!, ExcludedFlags!, ExcludedReturns!, Compression!, RemoveVlr!, RearrangePoints!, ComputeStats!, OutputFolder! };
+		public override object[] Parameters() => new object[] { InLasDataset, TargetFolder, ThinningDimension, XyResolution, ZResolution!, PointSelectionMethod!, ClassCodesWeights!, NameSuffix!, OutLasDataset!, PreservedClassCodes!, PreservedFlags!, PreservedReturns!, ExcludedClassCodes!, ExcludedFlags!, ExcludedReturns!, Compression!, RemoveVlr!, RearrangePoints!, ComputeStats!, OutputFolder! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -176,6 +177,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
+		[High(Allow = true, Value = 255)]
 		[Category("Points To Preserve")]
 		public object? PreservedClassCodes { get; set; }
 
@@ -216,6 +219,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
+		[High(Allow = true, Value = 255)]
 		[Category("Points To Exclude")]
 		public object? ExcludedClassCodes { get; set; }
 

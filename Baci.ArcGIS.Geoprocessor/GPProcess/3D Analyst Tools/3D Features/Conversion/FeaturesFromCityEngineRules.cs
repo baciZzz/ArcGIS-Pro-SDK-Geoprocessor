@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Features From CityEngine Rules</para>
+	/// <para>Features From CityEngine Rules</para>
 	/// <para>Generates 3D geometries  from existing 2D and 3D input features using rules authored in ArcGIS CityEngine.</para>
 	/// </summary>
 	public class FeaturesFromCityEngineRules : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Features From CityEngine Rules</para>
 		/// </summary>
-		public override string DisplayName => "Features From CityEngine Rules";
+		public override string DisplayName() => "Features From CityEngine Rules";
 
 		/// <summary>
 		/// <para>Tool Name : FeaturesFromCityEngineRules</para>
 		/// </summary>
-		public override string ToolName => "FeaturesFromCityEngineRules";
+		public override string ToolName() => "FeaturesFromCityEngineRules";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.FeaturesFromCityEngineRules</para>
 		/// </summary>
-		public override string ExcuteName => "3d.FeaturesFromCityEngineRules";
+		public override string ExcuteName() => "3d.FeaturesFromCityEngineRules";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InRulePackage, OutFeatureClass, InExistingFields!, InIncludeReports!, InLeafShapes!, OutPoints!, OutLines!, OutMultipoints! };
+		public override object[] Parameters() => new object[] { InFeatures, InRulePackage, OutFeatureClass, InExistingFields!, InIncludeReports!, InLeafShapes!, OutPoints!, OutLines!, OutMultipoints! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "MultiPatch", "Point")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -88,6 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("rpk")]
 		public object InRulePackage { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Add CAD Fields</para>
+	/// <para>Add CAD Fields</para>
 	/// <para>Adds several reserved CAD fields in one step. Fields created by this tool are used by the Export To CAD tool to generate CAD entities with specific properties.   After executing this tool, you must calculate or type the appropriate field values.</para>
 	/// </summary>
 	public class AddCADFields : AbstractGPProcess
@@ -38,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Add CAD Fields</para>
 		/// </summary>
-		public override string DisplayName => "Add CAD Fields";
+		public override string DisplayName() => "Add CAD Fields";
 
 		/// <summary>
 		/// <para>Tool Name : AddCADFields</para>
 		/// </summary>
-		public override string ToolName => "AddCADFields";
+		public override string ToolName() => "AddCADFields";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.AddCADFields</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.AddCADFields";
+		public override string ExcuteName() => "conversion.AddCADFields";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputTable, Entities, Layerprops!, Textprops!, Docprops!, Xdataprops!, OutTable! };
+		public override object[] Parameters() => new object[] { InputTable, Entities, Layerprops!, Textprops!, Docprops!, Xdataprops!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>

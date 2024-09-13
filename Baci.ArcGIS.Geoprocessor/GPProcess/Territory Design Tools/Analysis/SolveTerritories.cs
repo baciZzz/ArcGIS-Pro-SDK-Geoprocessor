@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Solve Territories</para>
+	/// <para>Solve Territories</para>
 	/// <para>Solves the territory solution based on specified criteria such as attribute constraints or distance constraints.</para>
 	/// </summary>
 	public class SolveTerritories : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Display Name : Solve Territories</para>
 		/// </summary>
-		public override string DisplayName => "Solve Territories";
+		public override string DisplayName() => "Solve Territories";
 
 		/// <summary>
 		/// <para>Tool Name : SolveTerritories</para>
 		/// </summary>
-		public override string ToolName => "SolveTerritories";
+		public override string ToolName() => "SolveTerritories";
 
 		/// <summary>
 		/// <para>Tool Excute Name : td.SolveTerritories</para>
 		/// </summary>
-		public override string ExcuteName => "td.SolveTerritories";
+		public override string ExcuteName() => "td.SolveTerritories";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Territory Design Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Territory Design Tools";
+		public override string ToolboxDisplayName() => "Territory Design Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : td</para>
 		/// </summary>
-		public override string ToolboxAlise => "td";
+		public override string ToolboxAlise() => "td";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, Method, NumberTerritories!, OutTerritorySolution!, Quality!, IterationsLimit!, Algorithm!, CandidateSolutions! };
+		public override object[] Parameters() => new object[] { InTerritorySolution, Level, Method, NumberTerritories!, OutTerritorySolution!, Quality!, IterationsLimit!, Algorithm!, CandidateSolutions! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>
@@ -111,6 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? NumberTerritories { get; set; }
 
 		/// <summary>
@@ -127,6 +129,8 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 1)]
+		[High(Allow = true, Value = 200)]
 		[Category("Advanced Options")]
 		public object? Quality { get; set; }
 
@@ -137,6 +141,8 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 1)]
+		[High(Allow = true, Value = 2147483647)]
 		[Category("Advanced Options")]
 		public object? IterationsLimit { get; set; }
 
@@ -160,6 +166,8 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = false, Value = 1)]
+		[High(Allow = true, Value = 2147483647)]
 		[Category("Advanced Options")]
 		public object? CandidateSolutions { get; set; }
 

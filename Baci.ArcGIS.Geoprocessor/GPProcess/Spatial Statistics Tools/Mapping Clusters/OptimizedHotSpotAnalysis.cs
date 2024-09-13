@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Optimized Hot Spot Analysis</para>
+	/// <para>Optimized Hot Spot Analysis</para>
 	/// <para>Given incident points or weighted features (points or polygons), creates a map of statistically significant hot and cold spots using the Getis-Ord Gi* statistic. It evaluates the characteristics of the input feature class to produce optimal results.</para>
 	/// </summary>
 	public class OptimizedHotSpotAnalysis : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Optimized Hot Spot Analysis</para>
 		/// </summary>
-		public override string DisplayName => "Optimized Hot Spot Analysis";
+		public override string DisplayName() => "Optimized Hot Spot Analysis";
 
 		/// <summary>
 		/// <para>Tool Name : OptimizedHotSpotAnalysis</para>
 		/// </summary>
-		public override string ToolName => "OptimizedHotSpotAnalysis";
+		public override string ToolName() => "OptimizedHotSpotAnalysis";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.OptimizedHotSpotAnalysis</para>
 		/// </summary>
-		public override string ExcuteName => "stats.OptimizedHotSpotAnalysis";
+		public override string ExcuteName() => "stats.OptimizedHotSpotAnalysis";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, OutputFeatures, AnalysisField!, IncidentDataAggregationMethod!, BoundingPolygonsDefiningWhereIncidentsArePossible!, PolygonsForAggregatingIncidentsIntoCounts!, DensitySurface!, CellSize!, DistanceBand! };
+		public override object[] Parameters() => new object[] { InputFeatures, OutputFeatures, AnalysisField!, IncidentDataAggregationMethod!, BoundingPolygonsDefiningWhereIncidentsArePossible!, PolygonsForAggregatingIncidentsIntoCounts!, DensitySurface!, CellSize!, DistanceBand! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,6 +75,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polygon")]
+		[FeatureType("Simple")]
 		public object InputFeatures { get; set; }
 
 		/// <summary>
@@ -91,6 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? AnalysisField { get; set; }
 
 		/// <summary>
@@ -114,6 +118,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? BoundingPolygonsDefiningWhereIncidentsArePossible { get; set; }
 
 		/// <summary>
@@ -123,6 +129,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? PolygonsForAggregatingIncidentsIntoCounts { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Calculate End Date</para>
+	/// <para>Calculate End Date</para>
 	/// <para>Populates the values for a specified end date field with values calculated using the start date field specified. This tool is useful when the intervals between start date field values are not regular and you want to animate the feature class or table through time or some other value using the Animation toolbar.</para>
 	/// </summary>
 	[Obsolete()]
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate End Date</para>
 		/// </summary>
-		public override string DisplayName => "Calculate End Date";
+		public override string DisplayName() => "Calculate End Date";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateEndDate</para>
 		/// </summary>
-		public override string ToolName => "CalculateEndDate";
+		public override string ToolName() => "CalculateEndDate";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CalculateEndDate</para>
 		/// </summary>
-		public override string ExcuteName => "management.CalculateEndDate";
+		public override string ExcuteName() => "management.CalculateEndDate";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputTable, UniqueIDFields!, StartDateField, EndDateField, OutputTable! };
+		public override object[] Parameters() => new object[] { InputTable, UniqueIDFields!, StartDateField, EndDateField, OutputTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Change Privileges</para>
+	/// <para>Change Privileges</para>
 	/// <para>Establishes or changes user access privileges to the input enterprise database datasets, stand-alone feature classes, or tables.</para>
 	/// </summary>
 	public class ChangePrivileges : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Change Privileges</para>
 		/// </summary>
-		public override string DisplayName => "Change Privileges";
+		public override string DisplayName() => "Change Privileges";
 
 		/// <summary>
 		/// <para>Tool Name : ChangePrivileges</para>
 		/// </summary>
-		public override string ToolName => "ChangePrivileges";
+		public override string ToolName() => "ChangePrivileges";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ChangePrivileges</para>
 		/// </summary>
-		public override string ExcuteName => "management.ChangePrivileges";
+		public override string ExcuteName() => "management.ChangePrivileges";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, User, View!, Edit!, OutDataset! };
+		public override object[] Parameters() => new object[] { InDataset, User, View!, Edit!, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Pyramids</para>
+	/// <para>Build Pyramids</para>
 	/// <para>Builds raster pyramids for your raster dataset.</para>
 	/// </summary>
 	public class BuildPyramids : AbstractGPProcess
@@ -31,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Build Pyramids</para>
 		/// </summary>
-		public override string DisplayName => "Build Pyramids";
+		public override string DisplayName() => "Build Pyramids";
 
 		/// <summary>
 		/// <para>Tool Name : BuildPyramids</para>
 		/// </summary>
-		public override string ToolName => "BuildPyramids";
+		public override string ToolName() => "BuildPyramids";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.BuildPyramids</para>
 		/// </summary>
-		public override string ExcuteName => "management.BuildPyramids";
+		public override string ExcuteName() => "management.BuildPyramids";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "pyramid", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor", "pyramid", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterDataset, PyramidLevel!, SKIPFIRST!, ResampleTechnique!, CompressionType!, CompressionQuality!, SkipExisting!, OutRaster! };
+		public override object[] Parameters() => new object[] { InRasterDataset, PyramidLevel!, SKIPFIRST!, ResampleTechnique!, CompressionType!, CompressionQuality!, SkipExisting!, OutRaster! };
 
 		/// <summary>
 		/// <para>Input Raster Dataset</para>

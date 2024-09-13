@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Filter</para>
+	/// <para>Filter</para>
 	/// <para>Performs either a smoothing (Low pass) or edge-enhancing (High pass) filter on a raster.</para>
 	/// </summary>
 	public class Filter : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Filter</para>
 		/// </summary>
-		public override string DisplayName => "Filter";
+		public override string DisplayName() => "Filter";
 
 		/// <summary>
 		/// <para>Tool Name : Filter</para>
 		/// </summary>
-		public override string ToolName => "Filter";
+		public override string ToolName() => "Filter";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Filter</para>
 		/// </summary>
-		public override string ExcuteName => "sa.Filter";
+		public override string ExcuteName() => "sa.Filter";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, FilterType!, IgnoreNodata! };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, FilterType!, IgnoreNodata! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -74,7 +75,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRaster { get; set; }
 
 		/// <summary>

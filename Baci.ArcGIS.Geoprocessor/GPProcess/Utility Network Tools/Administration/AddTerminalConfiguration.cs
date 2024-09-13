@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Terminal Configuration</para>
+	/// <para>Add Terminal Configuration</para>
 	/// <para>Adds a terminal configuration to an existing utility network.</para>
 	/// </summary>
 	public class AddTerminalConfiguration : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Terminal Configuration</para>
 		/// </summary>
-		public override string DisplayName => "Add Terminal Configuration";
+		public override string DisplayName() => "Add Terminal Configuration";
 
 		/// <summary>
 		/// <para>Tool Name : AddTerminalConfiguration</para>
 		/// </summary>
-		public override string ToolName => "AddTerminalConfiguration";
+		public override string ToolName() => "AddTerminalConfiguration";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddTerminalConfiguration</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddTerminalConfiguration";
+		public override string ExcuteName() => "un.AddTerminalConfiguration";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TerminalConfigurationName, TraversabilityModel, TerminalsDirectional!, TerminalsBidirectional!, ValidPaths!, DefaultPath!, OutUtilityNetwork! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TerminalConfigurationName, TraversabilityModel, TerminalsDirectional!, TerminalsBidirectional!, ValidPaths!, DefaultPath!, OutUtilityNetwork! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

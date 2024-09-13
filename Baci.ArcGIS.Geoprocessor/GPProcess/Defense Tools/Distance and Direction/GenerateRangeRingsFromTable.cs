@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Generate Range Rings From Lookup Table</para>
+	/// <para>Generate Range Rings From Lookup Table</para>
 	/// <para>Creates a set of concentric circles from a center based on values stored in a lookup table.</para>
 	/// </summary>
 	[Obsolete()]
@@ -54,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Range Rings From Lookup Table</para>
 		/// </summary>
-		public override string DisplayName => "Generate Range Rings From Lookup Table";
+		public override string DisplayName() => "Generate Range Rings From Lookup Table";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateRangeRingsFromTable</para>
 		/// </summary>
-		public override string ToolName => "GenerateRangeRingsFromTable";
+		public override string ToolName() => "GenerateRangeRingsFromTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.GenerateRangeRingsFromTable</para>
 		/// </summary>
-		public override string ExcuteName => "defense.GenerateRangeRingsFromTable";
+		public override string ExcuteName() => "defense.GenerateRangeRingsFromTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InTable, OutFeatureClassRings, LookupName, RangeRingsType, OutFeatureClassRadials!, NumberOfRadials!, DistanceUnits!, LookupNameField!, MinRangeField!, MaxRangeField!, NumberOfRingsField!, RingIntervalField! };
+		public override object[] Parameters() => new object[] { InFeatures, InTable, OutFeatureClassRings, LookupName, RangeRingsType, OutFeatureClassRadials!, NumberOfRadials!, DistanceUnits!, LookupNameField!, MinRangeField!, MaxRangeField!, NumberOfRingsField!, RingIntervalField! };
 
 		/// <summary>
 		/// <para>Input Features (Center Points)</para>
@@ -93,6 +94,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -170,6 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		[Category("Input Table Options")]
 		public object? LookupNameField { get; set; } = "Name";
 
@@ -180,6 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short", "Double", "Float")]
 		[Category("Input Table Options")]
 		public object? MinRangeField { get; set; } = "Min";
 
@@ -190,6 +195,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short", "Double", "Float")]
 		[Category("Input Table Options")]
 		public object? MaxRangeField { get; set; } = "Max";
 
@@ -200,6 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short")]
 		[Category("Input Table Options")]
 		public object? NumberOfRingsField { get; set; } = "Rings";
 
@@ -210,6 +217,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short", "Double", "Float")]
 		[Category("Input Table Options")]
 		public object? RingIntervalField { get; set; } = "Intervals";
 

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Feature To 3D By Attribute</para>
+	/// <para>Feature To 3D By Attribute</para>
 	/// <para>Creates 3D features using height values derived from the attribute of the input features.</para>
 	/// </summary>
 	public class FeatureTo3DByAttribute : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Feature To 3D By Attribute</para>
 		/// </summary>
-		public override string DisplayName => "Feature To 3D By Attribute";
+		public override string DisplayName() => "Feature To 3D By Attribute";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureTo3DByAttribute</para>
 		/// </summary>
-		public override string ToolName => "FeatureTo3DByAttribute";
+		public override string ToolName() => "FeatureTo3DByAttribute";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.FeatureTo3DByAttribute</para>
 		/// </summary>
-		public override string ExcuteName => "3d.FeatureTo3DByAttribute";
+		public override string ExcuteName() => "3d.FeatureTo3DByAttribute";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "outputZValue", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "outputZValue", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, HeightField, ToHeightField! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, HeightField, ToHeightField! };
 
 		/// <summary>
 		/// <para>Input  Features</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polyline", "Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -96,6 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object HeightField { get; set; }
 
 		/// <summary>
@@ -105,6 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? ToHeightField { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Classify Movement Events</para>
+	/// <para>Classify Movement Events</para>
 	/// <para>Identifies turn events, acceleration events, and speed from an input point track dataset.</para>
 	/// </summary>
 	public class ClassifyMovementEvents : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Classify Movement Events</para>
 		/// </summary>
-		public override string DisplayName => "Classify Movement Events";
+		public override string DisplayName() => "Classify Movement Events";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyMovementEvents</para>
 		/// </summary>
-		public override string ToolName => "ClassifyMovementEvents";
+		public override string ToolName() => "ClassifyMovementEvents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.ClassifyMovementEvents</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.ClassifyMovementEvents";
+		public override string ExcuteName() => "intelligence.ClassifyMovementEvents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, IdField, OutFeatureclass, Curvature!, NumberOfPoints!, RegionsOfInterest!, RoiIdField!, IncludeTurnIds!, ExcludeNonTurnEvents!, TurnEventsRepresentation! };
+		public override object[] Parameters() => new object[] { InFeatures, IdField, OutFeatureclass, Curvature!, NumberOfPoints!, RegionsOfInterest!, RoiIdField!, IncludeTurnIds!, ExcludeNonTurnEvents!, TurnEventsRepresentation! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -88,6 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		public object IdField { get; set; }
 
 		/// <summary>
@@ -122,6 +126,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? RegionsOfInterest { get; set; }
 
 		/// <summary>
@@ -131,6 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		public object? RoiIdField { get; set; }
 
 		/// <summary>

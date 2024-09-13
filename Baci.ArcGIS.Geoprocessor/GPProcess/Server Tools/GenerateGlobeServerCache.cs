@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Generate Globe Server Cache</para>
+	/// <para>Generate Globe Server Cache</para>
 	/// <para>Generates a pre-rendered tiled cache for Globe Server.</para>
 	/// </summary>
 	[Obsolete()]
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Globe Server Cache</para>
 		/// </summary>
-		public override string DisplayName => "Generate Globe Server Cache";
+		public override string DisplayName() => "Generate Globe Server Cache";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateGlobeServerCache</para>
 		/// </summary>
-		public override string ToolName => "GenerateGlobeServerCache";
+		public override string ToolName() => "GenerateGlobeServerCache";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.GenerateGlobeServerCache</para>
 		/// </summary>
-		public override string ExcuteName => "server.GenerateGlobeServerCache";
+		public override string ExcuteName() => "server.GenerateGlobeServerCache";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ServerName, ObjectName, OutFolder, LodFrom, LodTo, ThreadCount!, Layer };
+		public override object[] Parameters() => new object[] { ServerName, ObjectName, OutFolder, LodFrom, LodTo, ThreadCount!, Layer };
 
 		/// <summary>
 		/// <para>Host</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Color Coded Layer</para>
+	/// <para>Color Coded Layer</para>
 	/// <para>Creates a multigeography-level, scale-dependent choropleth layer from a variable describing a business, demographic, consumer, or landscape characteristic.</para>
 	/// </summary>
 	public class ColorCodedLayer : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Color Coded Layer</para>
 		/// </summary>
-		public override string DisplayName => "Color Coded Layer";
+		public override string DisplayName() => "Color Coded Layer";
 
 		/// <summary>
 		/// <para>Tool Name : ColorCodedLayer</para>
 		/// </summary>
-		public override string ToolName => "ColorCodedLayer";
+		public override string ToolName() => "ColorCodedLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.ColorCodedLayer</para>
 		/// </summary>
-		public override string ExcuteName => "ba.ColorCodedLayer";
+		public override string ExcuteName() => "ba.ColorCodedLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ClassificationVariable, OutLayerName, ClassificationMethod, NumberOfClasses, OutLayer! };
+		public override object[] Parameters() => new object[] { ClassificationVariable, OutLayerName, ClassificationMethod, NumberOfClasses, OutLayer! };
 
 		/// <summary>
 		/// <para>Classification Variable</para>

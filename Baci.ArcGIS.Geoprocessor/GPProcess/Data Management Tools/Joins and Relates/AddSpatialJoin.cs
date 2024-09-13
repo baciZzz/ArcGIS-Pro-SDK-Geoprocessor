@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Spatial Join</para>
+	/// <para>Add Spatial Join</para>
 	/// <para>Joins attributes from one feature to another based on the spatial relationship. The target features and the joined attributes from the join features will be joined.  The join is temporary.</para>
 	/// </summary>
 	public class AddSpatialJoin : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Spatial Join</para>
 		/// </summary>
-		public override string DisplayName => "Add Spatial Join";
+		public override string DisplayName() => "Add Spatial Join";
 
 		/// <summary>
 		/// <para>Tool Name : AddSpatialJoin</para>
 		/// </summary>
-		public override string ToolName => "AddSpatialJoin";
+		public override string ToolName() => "AddSpatialJoin";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddSpatialJoin</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddSpatialJoin";
+		public override string ExcuteName() => "management.AddSpatialJoin";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetFeatures, JoinFeatures, OutFeatureClass!, JoinOperation!, JoinType!, FieldMapping!, MatchOption!, SearchRadius!, DistanceFieldName! };
+		public override object[] Parameters() => new object[] { TargetFeatures, JoinFeatures, OutFeatureClass!, JoinOperation!, JoinType!, FieldMapping!, MatchOption!, SearchRadius!, DistanceFieldName! };
 
 		/// <summary>
 		/// <para>Target Features</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Polyline", "Point", "Multipoint")]
 		public object TargetFeatures { get; set; }
 
 		/// <summary>
@@ -83,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Polyline", "Point", "Multipoint")]
 		public object JoinFeatures { get; set; }
 
 		/// <summary>

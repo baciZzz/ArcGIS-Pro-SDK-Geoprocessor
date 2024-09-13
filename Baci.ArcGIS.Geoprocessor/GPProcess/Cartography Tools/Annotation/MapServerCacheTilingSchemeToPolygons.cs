@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Map Server Cache Tiling Scheme To Polygons</para>
+	/// <para>Map Server Cache Tiling Scheme To Polygons</para>
 	/// <para>Creates a new polygon feature class from an existing tiling scheme.</para>
 	/// </summary>
 	public class MapServerCacheTilingSchemeToPolygons : AbstractGPProcess
@@ -56,37 +57,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Map Server Cache Tiling Scheme To Polygons</para>
 		/// </summary>
-		public override string DisplayName => "Map Server Cache Tiling Scheme To Polygons";
+		public override string DisplayName() => "Map Server Cache Tiling Scheme To Polygons";
 
 		/// <summary>
 		/// <para>Tool Name : MapServerCacheTilingSchemeToPolygons</para>
 		/// </summary>
-		public override string ToolName => "MapServerCacheTilingSchemeToPolygons";
+		public override string ToolName() => "MapServerCacheTilingSchemeToPolygons";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.MapServerCacheTilingSchemeToPolygons</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.MapServerCacheTilingSchemeToPolygons";
+		public override string ExcuteName() => "cartography.MapServerCacheTilingSchemeToPolygons";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputMap, TilingScheme, OutputFeatureClass, UseMapExtent, ClipToHorizon, Antialiasing!, Levels! };
+		public override object[] Parameters() => new object[] { InputMap, TilingScheme, OutputFeatureClass, UseMapExtent, ClipToHorizon, Antialiasing!, Levels! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -111,6 +112,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object OutputFeatureClass { get; set; }
 
 		/// <summary>

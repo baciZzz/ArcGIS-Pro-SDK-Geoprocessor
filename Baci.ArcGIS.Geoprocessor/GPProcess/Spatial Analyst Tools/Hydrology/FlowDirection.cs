@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Flow Direction</para>
+	/// <para>Flow Direction</para>
 	/// <para>Creates a raster of flow direction from each cell to its downslope neighbor, or neighbors, using the D8, Multiple Flow Direction (MFD), or D-Infinity (DINF) method.</para>
 	/// </summary>
 	public class FlowDirection : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Flow Direction</para>
 		/// </summary>
-		public override string DisplayName => "Flow Direction";
+		public override string DisplayName() => "Flow Direction";
 
 		/// <summary>
 		/// <para>Tool Name : FlowDirection</para>
 		/// </summary>
-		public override string ToolName => "FlowDirection";
+		public override string ToolName() => "FlowDirection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.FlowDirection</para>
 		/// </summary>
-		public override string ExcuteName => "sa.FlowDirection";
+		public override string ExcuteName() => "sa.FlowDirection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurfaceRaster, OutFlowDirectionRaster, ForceFlow!, OutDropRaster!, FlowDirectionType! };
+		public override object[] Parameters() => new object[] { InSurfaceRaster, OutFlowDirectionRaster, ForceFlow!, OutDropRaster!, FlowDirectionType! };
 
 		/// <summary>
 		/// <para>Input surface raster</para>
@@ -74,7 +75,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InSurfaceRaster { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Export Table</para>
+	/// <para>Export Table</para>
 	/// <para>Exports the rows of a table or table view to a table.</para>
 	/// </summary>
 	public class ExportTable : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Table</para>
 		/// </summary>
-		public override string DisplayName => "Export Table";
+		public override string DisplayName() => "Export Table";
 
 		/// <summary>
 		/// <para>Tool Name : ExportTable</para>
 		/// </summary>
-		public override string ToolName => "ExportTable";
+		public override string ToolName() => "ExportTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.ExportTable</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.ExportTable";
+		public override string ExcuteName() => "conversion.ExportTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "extent", "maintainAttachments", "preserveGlobalIds", "qualifiedFieldNames", "scratchWorkspace", "transferDomains", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "extent", "maintainAttachments", "preserveGlobalIds", "qualifiedFieldNames", "scratchWorkspace", "transferDomains", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutTable, WhereClause!, UseFieldAliasAsName!, FieldMapping!, SortField! };
+		public override object[] Parameters() => new object[] { InTable, OutTable, WhereClause!, UseFieldAliasAsName!, FieldMapping!, SortField! };
 
 		/// <summary>
 		/// <para>Input Table</para>

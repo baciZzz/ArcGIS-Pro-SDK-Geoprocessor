@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Summarize Nearby</para>
+	/// <para>Summarize Nearby</para>
 	/// <para>Finds features that are within a specified distance of features in the input layer.</para>
 	/// </summary>
 	public class SummarizeNearby : AbstractGPProcess
@@ -73,37 +74,37 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Summarize Nearby</para>
 		/// </summary>
-		public override string DisplayName => "Summarize Nearby";
+		public override string DisplayName() => "Summarize Nearby";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeNearby</para>
 		/// </summary>
-		public override string ToolName => "SummarizeNearby";
+		public override string ToolName() => "SummarizeNearby";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sfa.SummarizeNearby</para>
 		/// </summary>
-		public override string ExcuteName => "sfa.SummarizeNearby";
+		public override string ExcuteName() => "sfa.SummarizeNearby";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Standard Feature Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Standard Feature Analysis Tools";
+		public override string ToolboxDisplayName() => "Standard Feature Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sfa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sfa";
+		public override string ToolboxAlise() => "sfa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Sumnearbylayer, Summarylayer, Outputname, Neartype, Distances, Units, Timeofday!, Timezonefortimeofday!, Returnboundaries!, Sumshape!, Shapeunits!, Summaryfields!, Groupbyfield!, Minoritymajority!, Percentshape!, Resultlayer!, Groupbysummary! };
+		public override object[] Parameters() => new object[] { Sumnearbylayer, Summarylayer, Outputname, Neartype, Distances, Units, Timeofday!, Timezonefortimeofday!, Returnboundaries!, Sumshape!, Shapeunits!, Summaryfields!, Groupbyfield!, Minoritymajority!, Percentshape!, Resultlayer!, Groupbysummary! };
 
 		/// <summary>
 		/// <para>Input Nearby Layer</para>
@@ -112,6 +113,8 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polyline", "Polygon")]
+		[FeatureType("Simple")]
 		public object Sumnearbylayer { get; set; }
 
 		/// <summary>
@@ -121,6 +124,8 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polyline", "Polygon")]
+		[FeatureType("Simple")]
 		public object Summarylayer { get; set; }
 
 		/// <summary>
@@ -273,6 +278,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
 		public object? Groupbyfield { get; set; }
 
 		/// <summary>

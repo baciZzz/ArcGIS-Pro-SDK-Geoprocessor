@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Create LRS Intersection From Existing Dataset</para>
+	/// <para>Create LRS Intersection From Existing Dataset</para>
 	/// <para>Registers an existing intersection feature class as an intersection.</para>
 	/// </summary>
 	public class CreateLRSIntersectionFromExistingDataset : AbstractGPProcess
@@ -84,37 +85,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Create LRS Intersection From Existing Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Create LRS Intersection From Existing Dataset";
+		public override string DisplayName() => "Create LRS Intersection From Existing Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLRSIntersectionFromExistingDataset</para>
 		/// </summary>
-		public override string ToolName => "CreateLRSIntersectionFromExistingDataset";
+		public override string ToolName() => "CreateLRSIntersectionFromExistingDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.CreateLRSIntersectionFromExistingDataset</para>
 		/// </summary>
-		public override string ExcuteName => "locref.CreateLRSIntersectionFromExistingDataset";
+		public override string ExcuteName() => "locref.CreateLRSIntersectionFromExistingDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ParentNetwork, NetworkDescriptionField, InFeatureClass, IntersectionIdField, IntersectionNameField, RouteIdField, FeatureIdField, FeatureClassNameField, FromDateField, ToDateField, IntersectingLayers, ConsiderZ!, ZTolerance!, MeasureField!, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { ParentNetwork, NetworkDescriptionField, InFeatureClass, IntersectionIdField, IntersectionNameField, RouteIdField, FeatureIdField, FeatureClassNameField, FromDateField, ToDateField, IntersectingLayers, ConsiderZ!, ZTolerance!, MeasureField!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Parent LRS Network</para>
@@ -123,6 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object ParentNetwork { get; set; }
 
 		/// <summary>
@@ -132,6 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object NetworkDescriptionField { get; set; }
 
 		/// <summary>
@@ -141,6 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InFeatureClass { get; set; }
 
 		/// <summary>
@@ -150,6 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("GUID")]
 		public object IntersectionIdField { get; set; }
 
 		/// <summary>
@@ -159,6 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object IntersectionNameField { get; set; }
 
 		/// <summary>
@@ -168,6 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "GUID")]
 		public object RouteIdField { get; set; }
 
 		/// <summary>
@@ -177,6 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object FeatureIdField { get; set; }
 
 		/// <summary>
@@ -186,6 +194,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object FeatureClassNameField { get; set; }
 
 		/// <summary>
@@ -195,6 +204,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object FromDateField { get; set; }
 
 		/// <summary>
@@ -204,6 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object ToDateField { get; set; }
 
 		/// <summary>
@@ -246,6 +257,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double")]
 		public object? MeasureField { get; set; }
 
 		/// <summary>

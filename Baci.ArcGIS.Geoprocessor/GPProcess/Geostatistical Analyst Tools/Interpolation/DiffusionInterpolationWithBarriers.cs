@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Diffusion Interpolation With Barriers</para>
+	/// <para>Diffusion Interpolation With Barriers</para>
 	/// <para>Interpolates a surface using a kernel that is based upon the heat equation and allows one to use raster and feature  barriers to redefine distances between input points.</para>
 	/// </summary>
 	public class DiffusionInterpolationWithBarriers : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Diffusion Interpolation With Barriers</para>
 		/// </summary>
-		public override string DisplayName => "Diffusion Interpolation With Barriers";
+		public override string DisplayName() => "Diffusion Interpolation With Barriers";
 
 		/// <summary>
 		/// <para>Tool Name : DiffusionInterpolationWithBarriers</para>
 		/// </summary>
-		public override string ToolName => "DiffusionInterpolationWithBarriers";
+		public override string ToolName() => "DiffusionInterpolationWithBarriers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.DiffusionInterpolationWithBarriers</para>
 		/// </summary>
-		public override string ExcuteName => "ga.DiffusionInterpolationWithBarriers";
+		public override string ExcuteName() => "ga.DiffusionInterpolationWithBarriers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ZField, OutGaLayer!, OutRaster!, CellSize!, InBarrierFeatures!, Bandwidth!, NumberIterations!, WeightField!, InAdditiveBarrierRaster!, InCumulativeBarrierRaster!, InFlowBarrierRaster! };
+		public override object[] Parameters() => new object[] { InFeatures, ZField, OutGaLayer!, OutRaster!, CellSize!, InBarrierFeatures!, Bandwidth!, NumberIterations!, WeightField!, InAdditiveBarrierRaster!, InCumulativeBarrierRaster!, InFlowBarrierRaster! };
 
 		/// <summary>
 		/// <para>Input features</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -83,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object ZField { get; set; }
 
 		/// <summary>
@@ -109,7 +112,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? CellSize { get; set; }
 
 		/// <summary>
@@ -119,6 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Polyline")]
 		public object? InBarrierFeatures { get; set; }
 
 		/// <summary>
@@ -127,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 1.7976931348623157e+308)]
 		public object? Bandwidth { get; set; }
 
 		/// <summary>
@@ -136,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 10, Max = 10000)]
 		public object? NumberIterations { get; set; } = "100";
 
 		/// <summary>
@@ -146,6 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? WeightField { get; set; }
 
 		/// <summary>
@@ -171,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Input flow barrier raster</para>
 		/// <para>A flow barrier is used when interpolating data with preferential direction of data variation, based on this formula:</para>
-		/// <para>Indicator (cost values in theneighboring cell &gt; cost values in theneighboring cell) * (cost values in theneighboring cell - cost values in theneighboring cell) + (distance between cell centers),<italics>to</italics><italics>from</italics><italics>to</italics><italics>from</italics></para>
+		/// <para>Indicator (cost values in theneighboring cell &gt; cost values in theneighboring cell) * (cost values in theneighboring cell - cost values in theneighboring cell) + (distance between cell centers),&lt;italics&gt;to&lt;/italics&gt;&lt;italics&gt;from&lt;/italics&gt;&lt;italics&gt;to&lt;/italics&gt;&lt;italics&gt;from&lt;/italics&gt;</para>
 		/// <para>where indicator(true) = 1 and indicator(false) = 0.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]

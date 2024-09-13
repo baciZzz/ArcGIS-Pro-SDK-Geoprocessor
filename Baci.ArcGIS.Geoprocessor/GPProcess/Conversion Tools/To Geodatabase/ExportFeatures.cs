@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Export Features</para>
+	/// <para>Export Features</para>
 	/// <para>Exports the rows of a feature class or feature layer to a feature class.</para>
 	/// </summary>
 	public class ExportFeatures : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Features</para>
 		/// </summary>
-		public override string DisplayName => "Export Features";
+		public override string DisplayName() => "Export Features";
 
 		/// <summary>
 		/// <para>Tool Name : ExportFeatures</para>
 		/// </summary>
-		public override string ToolName => "ExportFeatures";
+		public override string ToolName() => "ExportFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.ExportFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.ExportFeatures";
+		public override string ExcuteName() => "conversion.ExportFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "preserveGlobalIds", "qualifiedFieldNames", "transferDomains", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "preserveGlobalIds", "qualifiedFieldNames", "transferDomains", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatures, WhereClause!, UseFieldAliasAsName!, FieldMapping!, SortField! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatures, WhereClause!, UseFieldAliasAsName!, FieldMapping!, SortField! };
 
 		/// <summary>
 		/// <para>Input Features</para>

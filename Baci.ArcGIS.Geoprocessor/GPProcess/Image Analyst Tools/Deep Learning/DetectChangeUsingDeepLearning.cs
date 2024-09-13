@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Detect Change Using Deep Learning</para>
+	/// <para>Detect Change Using Deep Learning</para>
 	/// <para>Runs a trained deep learning model to detect change between two rasters.</para>
 	/// </summary>
 	public class DetectChangeUsingDeepLearning : AbstractGPProcess
@@ -46,37 +47,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Detect Change Using Deep Learning</para>
 		/// </summary>
-		public override string DisplayName => "Detect Change Using Deep Learning";
+		public override string DisplayName() => "Detect Change Using Deep Learning";
 
 		/// <summary>
 		/// <para>Tool Name : DetectChangeUsingDeepLearning</para>
 		/// </summary>
-		public override string ToolName => "DetectChangeUsingDeepLearning";
+		public override string ToolName() => "DetectChangeUsingDeepLearning";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.DetectChangeUsingDeepLearning</para>
 		/// </summary>
-		public override string ExcuteName => "ia.DetectChangeUsingDeepLearning";
+		public override string ExcuteName() => "ia.DetectChangeUsingDeepLearning";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "geographicTransformations", "gpuID", "outputCoordinateSystem", "parallelProcessingFactor", "processorType", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "geographicTransformations", "gpuID", "outputCoordinateSystem", "parallelProcessingFactor", "processorType", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { FromRaster, ToRaster, OutClassifiedRaster, InModelDefinition, Arguments! };
+		public override object[] Parameters() => new object[] { FromRaster, ToRaster, OutClassifiedRaster, InModelDefinition, Arguments! };
 
 		/// <summary>
 		/// <para>From Raster</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Enable Referent Fields</para>
+	/// <para>Enable Referent Fields</para>
 	/// <para>Enables or modifies the referent fields so that you can  manage referent information for the registered LRS event.</para>
 	/// </summary>
 	public class EnableReferentFields : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Enable Referent Fields</para>
 		/// </summary>
-		public override string DisplayName => "Enable Referent Fields";
+		public override string DisplayName() => "Enable Referent Fields";
 
 		/// <summary>
 		/// <para>Tool Name : EnableReferentFields</para>
 		/// </summary>
-		public override string ToolName => "EnableReferentFields";
+		public override string ToolName() => "EnableReferentFields";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.EnableReferentFields</para>
 		/// </summary>
-		public override string ExcuteName => "locref.EnableReferentFields";
+		public override string ExcuteName() => "locref.EnableReferentFields";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, FromReferentMethodField!, FromReferentLocationField!, FromReferentOffsetField!, ToReferentMethodField!, ToReferentLocationField!, ToReferentOffsetField!, OffsetUnits!, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatureClass, FromReferentMethodField!, FromReferentLocationField!, FromReferentOffsetField!, ToReferentMethodField!, ToReferentLocationField!, ToReferentOffsetField!, OffsetUnits!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Event Feature Class</para>
@@ -69,6 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polyline")]
 		public object InFeatureClass { get; set; }
 
 		/// <summary>
@@ -78,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short")]
 		public object? FromReferentMethodField { get; set; }
 
 		/// <summary>
@@ -87,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object? FromReferentLocationField { get; set; }
 
 		/// <summary>
@@ -96,6 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object? FromReferentOffsetField { get; set; }
 
 		/// <summary>
@@ -105,6 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short")]
 		public object? ToReferentMethodField { get; set; }
 
 		/// <summary>
@@ -114,6 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object? ToReferentLocationField { get; set; }
 
 		/// <summary>
@@ -123,6 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object? ToReferentOffsetField { get; set; }
 
 		/// <summary>

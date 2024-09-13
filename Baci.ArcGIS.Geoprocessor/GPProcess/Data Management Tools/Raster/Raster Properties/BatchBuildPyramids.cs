@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Batch Build Pyramids</para>
+	/// <para>Batch Build Pyramids</para>
 	/// <para>Builds pyramids for multiple raster datasets.</para>
 	/// </summary>
 	public class BatchBuildPyramids : AbstractGPProcess
@@ -31,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Batch Build Pyramids</para>
 		/// </summary>
-		public override string DisplayName => "Batch Build Pyramids";
+		public override string DisplayName() => "Batch Build Pyramids";
 
 		/// <summary>
 		/// <para>Tool Name : BatchBuildPyramids</para>
 		/// </summary>
-		public override string ToolName => "BatchBuildPyramids";
+		public override string ToolName() => "BatchBuildPyramids";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.BatchBuildPyramids</para>
 		/// </summary>
-		public override string ExcuteName => "management.BatchBuildPyramids";
+		public override string ExcuteName() => "management.BatchBuildPyramids";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "pyramid", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "pyramid", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputRasterDatasets, PyramidLevels!, SkipFirstLevel!, PyramidResamplingTechnique!, PyramidCompressionType!, CompressionQuality!, SkipExisting!, BatchBuildPyramidsSucceeded! };
+		public override object[] Parameters() => new object[] { InputRasterDatasets, PyramidLevels!, SkipFirstLevel!, PyramidResamplingTechnique!, PyramidCompressionType!, CompressionQuality!, SkipExisting!, BatchBuildPyramidsSucceeded! };
 
 		/// <summary>
 		/// <para>Input Raster Datasets</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Despeckle</para>
+	/// <para>Despeckle</para>
 	/// <para>Corrects the input synthetic aperture radar (SAR) data for speckle, which is high-frequency noise that resembles a salt and pepper effect.</para>
 	/// </summary>
 	public class Despeckle : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Despeckle</para>
 		/// </summary>
-		public override string DisplayName => "Despeckle";
+		public override string DisplayName() => "Despeckle";
 
 		/// <summary>
 		/// <para>Tool Name : Despeckle</para>
 		/// </summary>
-		public override string ToolName => "Despeckle";
+		public override string ToolName() => "Despeckle";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.Despeckle</para>
 		/// </summary>
-		public override string ExcuteName => "ia.Despeckle";
+		public override string ExcuteName() => "ia.Despeckle";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellAlignment", "cellSize", "compression", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellAlignment", "cellSize", "compression", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRadarData, OutRadarData, PolarizationBands!, FilterType!, FilterSize!, NoiseModel!, NoiseVariance!, AddNoiseMean!, MultNoiseMean!, NumberOfLooks!, DampFactor! };
+		public override object[] Parameters() => new object[] { InRadarData, OutRadarData, PolarizationBands!, FilterType!, FilterSize!, NoiseModel!, NoiseVariance!, AddNoiseMean!, MultNoiseMean!, NumberOfLooks!, DampFactor! };
 
 		/// <summary>
 		/// <para>Input Radar Data</para>

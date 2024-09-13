@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Export Geodatabase To VPF</para>
+	/// <para>Export Geodatabase To VPF</para>
 	/// <para>Exports hydrographic data from maritime geodatabases to Vector Product Format (VPF).</para>
 	/// </summary>
 	public class ExportGeodatabaseToVPF : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Geodatabase To VPF</para>
 		/// </summary>
-		public override string DisplayName => "Export Geodatabase To VPF";
+		public override string DisplayName() => "Export Geodatabase To VPF";
 
 		/// <summary>
 		/// <para>Tool Name : ExportGeodatabaseToVPF</para>
 		/// </summary>
-		public override string ToolName => "ExportGeodatabaseToVPF";
+		public override string ToolName() => "ExportGeodatabaseToVPF";
 
 		/// <summary>
 		/// <para>Tool Excute Name : maritime.ExportGeodatabaseToVPF</para>
 		/// </summary>
-		public override string ExcuteName => "maritime.ExportGeodatabaseToVPF";
+		public override string ExcuteName() => "maritime.ExportGeodatabaseToVPF";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Maritime Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Maritime Tools";
+		public override string ToolboxDisplayName() => "Maritime Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : maritime</para>
 		/// </summary>
-		public override string ToolboxAlise => "maritime";
+		public override string ToolboxAlise() => "maritime";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSourceGdb, NtmDate, OutLocation, OutVpfFolder! };
+		public override object[] Parameters() => new object[] { InSourceGdb, NtmDate, OutLocation, OutVpfFolder! };
 
 		/// <summary>
 		/// <para>Source Geodatabase(s)</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object InSourceGdb { get; set; }
 
 		/// <summary>

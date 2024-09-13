@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Simplify Line</para>
+	/// <para>Simplify Line</para>
 	/// <para>Simplifies lines by removing relatively extraneous vertices while preserving essential shape.</para>
 	/// </summary>
 	[Obsolete()]
@@ -55,37 +56,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Simplify Line</para>
 		/// </summary>
-		public override string DisplayName => "Simplify Line";
+		public override string DisplayName() => "Simplify Line";
 
 		/// <summary>
 		/// <para>Tool Name : SimplifyLine</para>
 		/// </summary>
-		public override string ToolName => "SimplifyLine";
+		public override string ToolName() => "SimplifyLine";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SimplifyLine</para>
 		/// </summary>
-		public override string ExcuteName => "management.SimplifyLine";
+		public override string ExcuteName() => "management.SimplifyLine";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "XYDomain", "XYTolerance", "cartographicPartitions", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "XYDomain", "XYTolerance", "cartographicPartitions", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Algorithm, Tolerance, ErrorResolvingOption!, CollapsedPointOption!, ErrorCheckingOption!, OutPointFeatureClass!, InBarriers! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, Algorithm, Tolerance, ErrorResolvingOption!, CollapsedPointOption!, ErrorCheckingOption!, OutPointFeatureClass!, InBarriers! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -94,6 +95,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

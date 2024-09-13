@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Get Raster Properties</para>
+	/// <para>Get Raster Properties</para>
 	/// <para>Retrieves  information from the metadata and descriptive statistics about a raster dataset.</para>
 	/// </summary>
 	public class GetRasterProperties : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Get Raster Properties</para>
 		/// </summary>
-		public override string DisplayName => "Get Raster Properties";
+		public override string DisplayName() => "Get Raster Properties";
 
 		/// <summary>
 		/// <para>Tool Name : GetRasterProperties</para>
 		/// </summary>
-		public override string ToolName => "GetRasterProperties";
+		public override string ToolName() => "GetRasterProperties";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.GetRasterProperties</para>
 		/// </summary>
-		public override string ExcuteName => "management.GetRasterProperties";
+		public override string ExcuteName() => "management.GetRasterProperties";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, PropertyType!, BandIndex!, Property! };
+		public override object[] Parameters() => new object[] { InRaster, PropertyType!, BandIndex!, Property! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -68,7 +69,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRaster { get; set; }
 
 		/// <summary>

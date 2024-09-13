@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Spatial Index</para>
+	/// <para>Add Spatial Index</para>
 	/// <para>Adds a spatial index to a shapefile, file geodatabase, mobile geodatabase, or enterprise geodatabase feature class.   Use this tool to either add a spatial index to a shapefile or feature class that does not already have one or to re-create an existing spatial index.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Spatial Index</para>
 		/// </summary>
-		public override string DisplayName => "Add Spatial Index";
+		public override string DisplayName() => "Add Spatial Index";
 
 		/// <summary>
 		/// <para>Tool Name : AddSpatialIndex</para>
 		/// </summary>
-		public override string ToolName => "AddSpatialIndex";
+		public override string ToolName() => "AddSpatialIndex";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddSpatialIndex</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddSpatialIndex";
+		public override string ExcuteName() => "management.AddSpatialIndex";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, SpatialGrid1!, SpatialGrid2!, SpatialGrid3!, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatures, SpatialGrid1!, SpatialGrid2!, SpatialGrid3!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>

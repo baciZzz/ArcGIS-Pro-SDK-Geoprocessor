@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Path Distance Allocation</para>
+	/// <para>Path Distance Allocation</para>
 	/// <para>Calculates the least-cost source for each cell based on the least accumulative cost over a cost surface, while accounting for surface distance along with horizontal and vertical cost factors.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.SpatialAnalystTools.DistanceAllocation"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Path Distance Allocation</para>
 		/// </summary>
-		public override string DisplayName => "Path Distance Allocation";
+		public override string DisplayName() => "Path Distance Allocation";
 
 		/// <summary>
 		/// <para>Tool Name : PathAllocation</para>
 		/// </summary>
-		public override string ToolName => "PathAllocation";
+		public override string ToolName() => "PathAllocation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.PathAllocation</para>
 		/// </summary>
-		public override string ExcuteName => "sa.PathAllocation";
+		public override string ExcuteName() => "sa.PathAllocation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSourceData, OutAllocationRaster, InCostRaster!, InSurfaceRaster!, InHorizontalRaster!, HorizontalFactor!, InVerticalRaster!, VerticalFactor!, MaximumDistance!, InValueRaster!, SourceField!, OutDistanceRaster!, OutBacklinkRaster!, SourceCostMultiplier!, SourceStartCost!, SourceResistanceRate!, SourceCapacity!, SourceDirection! };
+		public override object[] Parameters() => new object[] { InSourceData, OutAllocationRaster, InCostRaster!, InSurfaceRaster!, InHorizontalRaster!, HorizontalFactor!, InVerticalRaster!, VerticalFactor!, MaximumDistance!, InValueRaster!, SourceField!, OutDistanceRaster!, OutBacklinkRaster!, SourceCostMultiplier!, SourceStartCost!, SourceResistanceRate!, SourceCapacity!, SourceDirection! };
 
 		/// <summary>
 		/// <para>Input raster or feature source data</para>
@@ -83,7 +84,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEFeatureClass", "GPFeatureLayer", "DETin", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("OID", "Short", "Long", "Float", "Double", "Text", "Geometry")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InSourceData { get; set; }
 
 		/// <summary>
@@ -104,7 +108,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? InCostRaster { get; set; }
 
 		/// <summary>
@@ -114,7 +121,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? InSurfaceRaster { get; set; }
 
 		/// <summary>
@@ -124,7 +134,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		[Category("Horizontal factor parameters (optional)")]
 		public object? InHorizontalRaster { get; set; }
 
@@ -158,7 +171,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		[Category("Vertical factor parameters (optional)")]
 		public object? InVerticalRaster { get; set; }
 
@@ -208,7 +224,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? InValueRaster { get; set; }
 
 		/// <summary>
@@ -218,7 +237,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{4B6CA858-5716-4AC3-A2EE-70EE2D29C1BD}", UseRasterFields = true)]
+		[FieldType("Short", "Long", "Float", "Double", "OID")]
 		public object? SourceField { get; set; }
 
 		/// <summary>

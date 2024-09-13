@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Calculate Default Values</para>
+	/// <para>Calculate Default Values</para>
 	/// <para>Replaces null values in a feature class or table with the default values from the geodatabase feature class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Default Values</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Default Values";
+		public override string DisplayName() => "Calculate Default Values";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateDefaultValues</para>
 		/// </summary>
-		public override string ToolName => "CalculateDefaultValues";
+		public override string ToolName() => "CalculateDefaultValues";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.CalculateDefaultValues</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.CalculateDefaultValues";
+		public override string ExcuteName() => "topographic.CalculateDefaultValues";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDatasets, OutDataset! };
+		public override object[] Parameters() => new object[] { InDatasets, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

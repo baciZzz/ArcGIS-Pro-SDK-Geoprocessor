@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>GTFS To Network Dataset Transit Sources</para>
+	/// <para>GTFS To Network Dataset Transit Sources</para>
 	/// <para>Converts one or more General Transit Feed Specification (GTFS) public transit datasets to a set of feature classes and tables that can be used when creating a network dataset. The output feature classes and tables represent the transit stops, lines, and schedules in the format defined by the Network Analyst public transit data model, which can be interpreted by the Public Transit evaluator in a network dataset.</para>
 	/// </summary>
 	[Obsolete()]
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : GTFS To Network Dataset Transit Sources</para>
 		/// </summary>
-		public override string DisplayName => "GTFS To Network Dataset Transit Sources";
+		public override string DisplayName() => "GTFS To Network Dataset Transit Sources";
 
 		/// <summary>
 		/// <para>Tool Name : GTFSToNetworkDatasetTransitSources</para>
 		/// </summary>
-		public override string ToolName => "GTFSToNetworkDatasetTransitSources";
+		public override string ToolName() => "GTFSToNetworkDatasetTransitSources";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.GTFSToNetworkDatasetTransitSources</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.GTFSToNetworkDatasetTransitSources";
+		public override string ExcuteName() => "conversion.GTFSToNetworkDatasetTransitSources";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGtfsFolders, TargetFeatureDataset, UpdatedTargetFeatureDataset!, OutputStops!, OutputLineVariantElements!, OutputCalendars!, OutputCalendarExceptions!, OutputLines!, OutputLineVariants!, OutputRuns!, OutputScheduleElements!, OutputSchedules!, Interpolate!, Append! };
+		public override object[] Parameters() => new object[] { InGtfsFolders, TargetFeatureDataset, UpdatedTargetFeatureDataset!, OutputStops!, OutputLineVariantElements!, OutputCalendars!, OutputCalendarExceptions!, OutputLines!, OutputLineVariants!, OutputRuns!, OutputScheduleElements!, OutputSchedules!, Interpolate!, Append! };
 
 		/// <summary>
 		/// <para>Input GTFS Folders</para>

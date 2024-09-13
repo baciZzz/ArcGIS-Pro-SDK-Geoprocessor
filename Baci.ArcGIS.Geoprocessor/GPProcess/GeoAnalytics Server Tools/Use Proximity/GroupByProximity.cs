@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Group By Proximity</para>
+	/// <para>Group By Proximity</para>
 	/// <para>Groups features that are within spatial or spatiotemporal proximity to each other.</para>
 	/// </summary>
 	public class GroupByProximity : AbstractGPProcess
@@ -46,37 +47,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Group By Proximity</para>
 		/// </summary>
-		public override string DisplayName => "Group By Proximity";
+		public override string DisplayName() => "Group By Proximity";
 
 		/// <summary>
 		/// <para>Tool Name : GroupByProximity</para>
 		/// </summary>
-		public override string ToolName => "GroupByProximity";
+		public override string ToolName() => "GroupByProximity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.GroupByProximity</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.GroupByProximity";
+		public override string ExcuteName() => "geoanalytics.GroupByProximity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputName, SpatialRelationship, SpatialNearDistance!, TemporalRelationship!, TemporalNearDistance!, DataStore!, Output!, AttributeRelationship! };
+		public override object[] Parameters() => new object[] { InputLayer, OutputName, SpatialRelationship, SpatialNearDistance!, TemporalRelationship!, TemporalNearDistance!, DataStore!, Output!, AttributeRelationship! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -85,6 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple")]
+		[PortalType("DataStoreCatalogLayer")]
 		public object InputLayer { get; set; }
 
 		/// <summary>

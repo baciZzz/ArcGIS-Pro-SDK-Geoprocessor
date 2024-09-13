@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Multivariate Clustering</para>
+	/// <para>Multivariate Clustering</para>
 	/// <para>Finds natural clusters of features based solely on feature attribute values.</para>
 	/// </summary>
 	public class MultivariateClustering : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Multivariate Clustering</para>
 		/// </summary>
-		public override string DisplayName => "Multivariate Clustering";
+		public override string DisplayName() => "Multivariate Clustering";
 
 		/// <summary>
 		/// <para>Tool Name : MultivariateClustering</para>
 		/// </summary>
-		public override string ToolName => "MultivariateClustering";
+		public override string ToolName() => "MultivariateClustering";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.MultivariateClustering</para>
 		/// </summary>
-		public override string ExcuteName => "stats.MultivariateClustering";
+		public override string ExcuteName() => "stats.MultivariateClustering";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "randomGenerator", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "randomGenerator", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFeatures, AnalysisFields, ClusteringMethod!, InitializationMethod!, InitializationField!, NumberOfClusters!, OutputTable! };
+		public override object[] Parameters() => new object[] { InFeatures, OutputFeatures, AnalysisFields, ClusteringMethod!, InitializationMethod!, InitializationField!, NumberOfClusters!, OutputTable! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -95,6 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object AnalysisFields { get; set; }
 
 		/// <summary>
@@ -130,6 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		public object? InitializationField { get; set; }
 
 		/// <summary>

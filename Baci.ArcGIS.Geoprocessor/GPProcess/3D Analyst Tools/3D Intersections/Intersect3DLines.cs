@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Intersect 3D Lines</para>
+	/// <para>Intersect 3D Lines</para>
 	/// <para>Computes the intersecting and overlapping segments of lines in 3D space.</para>
 	/// </summary>
 	public class Intersect3DLines : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Intersect 3D Lines</para>
 		/// </summary>
-		public override string DisplayName => "Intersect 3D Lines";
+		public override string DisplayName() => "Intersect 3D Lines";
 
 		/// <summary>
 		/// <para>Tool Name : Intersect3DLines</para>
 		/// </summary>
-		public override string ToolName => "Intersect3DLines";
+		public override string ToolName() => "Intersect3DLines";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Intersect3DLines</para>
 		/// </summary>
-		public override string ExcuteName => "3d.Intersect3DLines";
+		public override string ExcuteName() => "3d.Intersect3DLines";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLines, MaxZDiff!, JoinAttributes!, OutPointFc!, OutLineFc!, OutIntersectionCount! };
+		public override object[] Parameters() => new object[] { InLines, MaxZDiff!, JoinAttributes!, OutPointFc!, OutLineFc!, OutIntersectionCount! };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Smooth Shared Edges</para>
+	/// <para>Smooth Shared Edges</para>
 	/// <para>Smooths the edges of the input features while maintaining the topological relationship with edges shared with other features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Smooth Shared Edges</para>
 		/// </summary>
-		public override string DisplayName => "Smooth Shared Edges";
+		public override string DisplayName() => "Smooth Shared Edges";
 
 		/// <summary>
 		/// <para>Tool Name : SmoothSharedEdges</para>
 		/// </summary>
-		public override string ToolName => "SmoothSharedEdges";
+		public override string ToolName() => "SmoothSharedEdges";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.SmoothSharedEdges</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.SmoothSharedEdges";
+		public override string ExcuteName() => "cartography.SmoothSharedEdges";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicPartitions" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicPartitions" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Algorithm, Tolerance, SharedEdgeFeatures!, InBarriers!, OutFeatureClass!, OutSharedEdgeFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatures, Algorithm, Tolerance, SharedEdgeFeatures!, InBarriers!, OutFeatureClass!, OutSharedEdgeFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -84,6 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Polyline")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -113,6 +116,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Polyline")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object? SharedEdgeFeatures { get; set; }
 
 		/// <summary>

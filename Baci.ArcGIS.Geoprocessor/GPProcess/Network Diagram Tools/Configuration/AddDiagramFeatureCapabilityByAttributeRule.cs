@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Diagram Feature Capability By Attribute Rule</para>
+	/// <para>Add Diagram Feature Capability By Attribute Rule</para>
 	/// <para>Adds a diagram rule to a diagram template to assign a particular capability on diagram features currently represented in the diagram. This capability is used by other rules executed later in the rule sequence. The diagram features that will be processed are queried from a network source class or object table by attributes.</para>
 	/// </summary>
 	public class AddDiagramFeatureCapabilityByAttributeRule : AbstractGPProcess
@@ -63,37 +64,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Diagram Feature Capability By Attribute Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Diagram Feature Capability By Attribute Rule";
+		public override string DisplayName() => "Add Diagram Feature Capability By Attribute Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddDiagramFeatureCapabilityByAttributeRule</para>
 		/// </summary>
-		public override string ToolName => "AddDiagramFeatureCapabilityByAttributeRule";
+		public override string ToolName() => "AddDiagramFeatureCapabilityByAttributeRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddDiagramFeatureCapabilityByAttributeRule</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddDiagramFeatureCapabilityByAttributeRule";
+		public override string ExcuteName() => "nd.AddDiagramFeatureCapabilityByAttributeRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, NetworkSource, WhereClause, Capability, Description!, OutUtilityNetwork!, OutTemplateName! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, NetworkSource, WhereClause, Capability, Description!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>

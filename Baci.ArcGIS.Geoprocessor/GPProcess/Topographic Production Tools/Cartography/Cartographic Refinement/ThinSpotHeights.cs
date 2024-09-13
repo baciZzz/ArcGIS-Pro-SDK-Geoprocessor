@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Thin Spot Heights</para>
+	/// <para>Thin Spot Heights</para>
 	/// <para>Generalizes spot heights for a given area of interest in accordance with product specifications.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -47,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Thin Spot Heights</para>
 		/// </summary>
-		public override string DisplayName => "Thin Spot Heights";
+		public override string DisplayName() => "Thin Spot Heights";
 
 		/// <summary>
 		/// <para>Tool Name : ThinSpotHeights</para>
 		/// </summary>
-		public override string ToolName => "ThinSpotHeights";
+		public override string ToolName() => "ThinSpotHeights";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.ThinSpotHeights</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.ThinSpotHeights";
+		public override string ExcuteName() => "topographic.ThinSpotHeights";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, AreaOfInterest, ElevationField, InvisibilityField, HighLowSpots!, SearchDistance!, MaxSpots!, InputContours!, ContourCodeField!, DepressionCodeValue!, UpdatedFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, AreaOfInterest, ElevationField, InvisibilityField, HighLowSpots!, SearchDistance!, MaxSpots!, InputContours!, ContourCodeField!, DepressionCodeValue!, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -86,6 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPLayerDomain()]
+		[GeometryType("Point")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -95,6 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object AreaOfInterest { get; set; }
 
 		/// <summary>
@@ -104,6 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double", "Long", "Float", "Short")]
 		public object ElevationField { get; set; }
 
 		/// <summary>
@@ -113,6 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double", "Long", "Float", "Short")]
 		public object InvisibilityField { get; set; }
 
 		/// <summary>
@@ -122,6 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object? HighLowSpots { get; set; }
 
 		/// <summary>
@@ -147,6 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPLayerDomain()]
+		[GeometryType("Polyline")]
 		public object? InputContours { get; set; }
 
 		/// <summary>
@@ -156,6 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Float", "Short")]
 		public object? ContourCodeField { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Remove Feature Rule</para>
+	/// <para>Add Remove Feature Rule</para>
 	/// <para>Adds a diagram rule to automatically remove diagram features during diagram building based on an existing template. This rule removes diagram features based on different network source classes and object tables.</para>
 	/// <para></para>
 	/// <para></para>
@@ -71,37 +72,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Remove Feature Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Remove Feature Rule";
+		public override string DisplayName() => "Add Remove Feature Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddRemoveFeatureRule</para>
 		/// </summary>
-		public override string ToolName => "AddRemoveFeatureRule";
+		public override string ToolName() => "AddRemoveFeatureRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddRemoveFeatureRule</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddRemoveFeatureRule";
+		public override string ExcuteName() => "nd.AddRemoveFeatureRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, SourceType, InverseSourceSelection, NetworkSource, Description!, OutUtilityNetwork!, OutTemplateName!, UnconnectedJunctions!, OneConnectedJunction! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, SourceType, InverseSourceSelection, NetworkSource, Description!, OutUtilityNetwork!, OutTemplateName!, UnconnectedJunctions!, OneConnectedJunction! };
 
 		/// <summary>
 		/// <para>Input Network</para>

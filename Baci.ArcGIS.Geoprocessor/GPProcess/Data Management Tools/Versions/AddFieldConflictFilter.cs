@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Field Conflict Filter</para>
+	/// <para>Add Field Conflict Filter</para>
 	/// <para>Adds a field conflict filter for a given field in a geodatabase table or feature class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Field Conflict Filter</para>
 		/// </summary>
-		public override string DisplayName => "Add Field Conflict Filter";
+		public override string DisplayName() => "Add Field Conflict Filter";
 
 		/// <summary>
 		/// <para>Tool Name : AddFieldConflictFilter</para>
 		/// </summary>
-		public override string ToolName => "AddFieldConflictFilter";
+		public override string ToolName() => "AddFieldConflictFilter";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddFieldConflictFilter</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddFieldConflictFilter";
+		public override string ExcuteName() => "management.AddFieldConflictFilter";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Table, Fields, OutTable! };
+		public override object[] Parameters() => new object[] { Table, Fields, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>

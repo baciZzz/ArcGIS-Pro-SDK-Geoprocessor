@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Split Line By Match</para>
+	/// <para>Split Line By Match</para>
 	/// <para>Splits input features based on matching relationships to obtain better corresponding line segmentation.</para>
 	/// </summary>
 	public class SplitLineByMatch : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Split Line By Match</para>
 		/// </summary>
-		public override string DisplayName => "Split Line By Match";
+		public override string DisplayName() => "Split Line By Match";
 
 		/// <summary>
 		/// <para>Tool Name : SplitLineByMatch</para>
 		/// </summary>
-		public override string ToolName => "SplitLineByMatch";
+		public override string ToolName() => "SplitLineByMatch";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.SplitLineByMatch</para>
 		/// </summary>
-		public override string ExcuteName => "edit.SplitLineByMatch";
+		public override string ExcuteName() => "edit.SplitLineByMatch";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, MatchedFeatures, InMatchTable, OutFeatureClass, SearchDistance, InFeaturesAs!, OutPointFeatureClass!, SplitDangle!, MinMatchGroupLength!, MinSplitLength!, SplitFields! };
+		public override object[] Parameters() => new object[] { InFeatures, MatchedFeatures, InMatchTable, OutFeatureClass, SearchDistance, InFeaturesAs!, OutPointFeatureClass!, SplitDangle!, MinMatchGroupLength!, MinSplitLength!, SplitFields! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -89,6 +90,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -98,6 +101,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object MatchedFeatures { get; set; }
 
 		/// <summary>
@@ -144,6 +149,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object? OutPointFeatureClass { get; set; }
 
 		/// <summary>
@@ -181,6 +188,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[ExcludeField("SHAPE_Length", "SHAPE_Area")]
 		public object? SplitFields { get; set; }
 
 		/// <summary>

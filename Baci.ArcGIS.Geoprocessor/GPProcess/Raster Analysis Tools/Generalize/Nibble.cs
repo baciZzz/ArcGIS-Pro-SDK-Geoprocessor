@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Nibble</para>
+	/// <para>Nibble</para>
 	/// <para>Replaces cells of a raster corresponding to a mask with the values of the nearest neighbors.</para>
 	/// </summary>
 	public class Nibble : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Nibble</para>
 		/// </summary>
-		public override string DisplayName => "Nibble";
+		public override string DisplayName() => "Nibble";
 
 		/// <summary>
 		/// <para>Tool Name : Nibble</para>
 		/// </summary>
-		public override string ToolName => "Nibble";
+		public override string ToolName() => "Nibble";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.Nibble</para>
 		/// </summary>
-		public override string ExcuteName => "ra.Nibble";
+		public override string ExcuteName() => "ra.Nibble";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputraster, Inputmaskraster, Outputname, Nibblevalues!, Nibblenodata!, Inputzoneraster!, Outputraster! };
+		public override object[] Parameters() => new object[] { Inputraster, Inputmaskraster, Outputname, Nibblevalues!, Nibblenodata!, Inputzoneraster!, Outputraster! };
 
 		/// <summary>
 		/// <para>Input Raster</para>

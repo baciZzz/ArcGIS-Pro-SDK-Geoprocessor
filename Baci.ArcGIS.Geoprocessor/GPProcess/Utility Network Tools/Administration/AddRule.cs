@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Rule</para>
+	/// <para>Add Rule</para>
 	/// <para>Adds a rule to a utility network.</para>
 	/// </summary>
 	public class AddRule : AbstractGPProcess
@@ -75,37 +76,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Rule";
+		public override string DisplayName() => "Add Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddRule</para>
 		/// </summary>
-		public override string ToolName => "AddRule";
+		public override string ToolName() => "AddRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddRule</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddRule";
+		public override string ExcuteName() => "un.AddRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, RuleType, FromClass, FromAssetgroup, FromAssettype, ToClass, ToAssetgroup, ToAssettype, FromTerminal!, ToTerminal!, ViaClass!, ViaAssetgroup!, ViaAssettype!, ViaTerminal!, OutUtilityNetwork! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, RuleType, FromClass, FromAssetgroup, FromAssettype, ToClass, ToAssetgroup, ToAssettype, FromTerminal!, ToTerminal!, ViaClass!, ViaAssetgroup!, ViaAssettype!, ViaTerminal!, OutUtilityNetwork! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

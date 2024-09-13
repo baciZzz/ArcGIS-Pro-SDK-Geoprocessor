@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Set Parcel Line Label Position</para>
+	/// <para>Set Parcel Line Label Position</para>
 	/// <para>Sets the   label position of the line's COGO dimension to the left of the parcel  line, to the right of the parcel  line, or centered over the parcel line.</para>
 	/// </summary>
 	public class SetParcelLineLabelPosition : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Parcel Line Label Position</para>
 		/// </summary>
-		public override string DisplayName => "Set Parcel Line Label Position";
+		public override string DisplayName() => "Set Parcel Line Label Position";
 
 		/// <summary>
 		/// <para>Tool Name : SetParcelLineLabelPosition</para>
 		/// </summary>
-		public override string ToolName => "SetParcelLineLabelPosition";
+		public override string ToolName() => "SetParcelLineLabelPosition";
 
 		/// <summary>
 		/// <para>Tool Excute Name : parcel.SetParcelLineLabelPosition</para>
 		/// </summary>
-		public override string ExcuteName => "parcel.SetParcelLineLabelPosition";
+		public override string ExcuteName() => "parcel.SetParcelLineLabelPosition";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Parcel Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Parcel Tools";
+		public override string ToolboxDisplayName() => "Parcel Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : parcel</para>
 		/// </summary>
-		public override string ToolboxAlise => "parcel";
+		public override string ToolboxAlise() => "parcel";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFeatures, UpdatedParcelFeatures! };
+		public override object[] Parameters() => new object[] { InParcelFeatures, UpdatedParcelFeatures! };
 
 		/// <summary>
 		/// <para>Input Parcel Features</para>
@@ -69,6 +70,8 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object InParcelFeatures { get; set; }
 
 		/// <summary>

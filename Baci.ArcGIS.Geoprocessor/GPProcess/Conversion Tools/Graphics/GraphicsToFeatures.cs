@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Graphics To Features</para>
+	/// <para>Graphics To Features</para>
 	/// <para>Converts a graphics layer into a feature layer with geometries based on the input graphics layer's elements.</para>
 	/// </summary>
 	public class GraphicsToFeatures : AbstractGPProcess
@@ -46,37 +47,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Graphics To Features</para>
 		/// </summary>
-		public override string DisplayName => "Graphics To Features";
+		public override string DisplayName() => "Graphics To Features";
 
 		/// <summary>
 		/// <para>Tool Name : GraphicsToFeatures</para>
 		/// </summary>
-		public override string ToolName => "GraphicsToFeatures";
+		public override string ToolName() => "GraphicsToFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.GraphicsToFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.GraphicsToFeatures";
+		public override string ExcuteName() => "conversion.GraphicsToFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayer, GraphicsType, OutFeatureClass, DeleteGraphics!, ReferenceScale!, UpdatedLayer! };
+		public override object[] Parameters() => new object[] { InLayer, GraphicsType, OutFeatureClass, DeleteGraphics!, ReferenceScale!, UpdatedLayer! };
 
 		/// <summary>
 		/// <para>Input Graphics</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Apportion Polygon</para>
+	/// <para>Apportion Polygon</para>
 	/// <para>Summarizes the attributes of an input polygon layer based on the</para>
 	/// <para>spatial overlay of a target polygon layer and assigns the summarized attributes to the target polygons. The target polygons have summed numeric attributes derived from the input polygons that each target overlaps. This process is</para>
 	/// <para>typically known as apportioning or apportionment.</para>
@@ -56,37 +57,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Apportion Polygon</para>
 		/// </summary>
-		public override string DisplayName => "Apportion Polygon";
+		public override string DisplayName() => "Apportion Polygon";
 
 		/// <summary>
 		/// <para>Tool Name : ApportionPolygon</para>
 		/// </summary>
-		public override string ToolName => "ApportionPolygon";
+		public override string ToolName() => "ApportionPolygon";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.ApportionPolygon</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.ApportionPolygon";
+		public override string ExcuteName() => "analysis.ApportionPolygon";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ApportionFields, TargetFeatures, OutFeatures, Method, EstimationFeatures!, WeightField!, MaintainGeometries! };
+		public override object[] Parameters() => new object[] { InFeatures, ApportionFields, TargetFeatures, OutFeatures, Method, EstimationFeatures!, WeightField!, MaintainGeometries! };
 
 		/// <summary>
 		/// <para>Input Polygons</para>
@@ -95,6 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -104,6 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object ApportionFields { get; set; }
 
 		/// <summary>
@@ -113,6 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object TargetFeatures { get; set; }
 
 		/// <summary>
@@ -143,6 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polyline", "Multipoint")]
 		public object? EstimationFeatures { get; set; }
 
 		/// <summary>
@@ -153,6 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? WeightField { get; set; }
 
 		/// <summary>

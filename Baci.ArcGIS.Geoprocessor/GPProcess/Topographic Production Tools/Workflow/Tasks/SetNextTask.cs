@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Set Next Task</para>
+	/// <para>Set Next Task</para>
 	/// <para>Sets the next task in a workflow from the task list.</para>
 	/// </summary>
 	public class SetNextTask : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Next Task</para>
 		/// </summary>
-		public override string DisplayName => "Set Next Task";
+		public override string DisplayName() => "Set Next Task";
 
 		/// <summary>
 		/// <para>Tool Name : SetNextTask</para>
 		/// </summary>
-		public override string ToolName => "SetNextTask";
+		public override string ToolName() => "SetNextTask";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.SetNextTask</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.SetNextTask";
+		public override string ExcuteName() => "topographic.SetNextTask";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { JobId, DatabasePath!, UpdatedJobId! };
+		public override object[] Parameters() => new object[] { JobId, DatabasePath!, UpdatedJobId! };
 
 		/// <summary>
 		/// <para>Job ID</para>
@@ -77,6 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("jtc")]
 		public object? DatabasePath { get; set; }
 
 		/// <summary>

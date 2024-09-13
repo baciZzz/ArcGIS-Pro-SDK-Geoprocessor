@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Empirical Bayesian Kriging</para>
+	/// <para>Empirical Bayesian Kriging</para>
 	/// <para>Empirical Bayesian kriging is an interpolation method that accounts for the error in estimating the underlying semivariogram through repeated simulations.</para>
 	/// </summary>
 	public class EmpiricalBayesianKriging : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Empirical Bayesian Kriging</para>
 		/// </summary>
-		public override string DisplayName => "Empirical Bayesian Kriging";
+		public override string DisplayName() => "Empirical Bayesian Kriging";
 
 		/// <summary>
 		/// <para>Tool Name : EmpiricalBayesianKriging</para>
 		/// </summary>
-		public override string ToolName => "EmpiricalBayesianKriging";
+		public override string ToolName() => "EmpiricalBayesianKriging";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.EmpiricalBayesianKriging</para>
 		/// </summary>
-		public override string ExcuteName => "ga.EmpiricalBayesianKriging";
+		public override string ExcuteName() => "ga.EmpiricalBayesianKriging";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ZField, OutGaLayer!, OutRaster!, CellSize!, TransformationType!, MaxLocalPoints!, OverlapFactor!, NumberSemivariograms!, SearchNeighborhood!, OutputType!, QuantileValue!, ThresholdType!, ProbabilityThreshold!, SemivariogramModelType! };
+		public override object[] Parameters() => new object[] { InFeatures, ZField, OutGaLayer!, OutRaster!, CellSize!, TransformationType!, MaxLocalPoints!, OverlapFactor!, NumberSemivariograms!, SearchNeighborhood!, OutputType!, QuantileValue!, ThresholdType!, ProbabilityThreshold!, SemivariogramModelType! };
 
 		/// <summary>
 		/// <para>Input features</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -83,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object ZField { get; set; }
 
 		/// <summary>
@@ -109,7 +112,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? CellSize { get; set; }
 
 		/// <summary>
@@ -131,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 20, Max = 1000)]
 		[Category("Additional Model Parameters")]
 		public object? MaxLocalPoints { get; set; } = "100";
 
@@ -141,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0.01, Max = 5)]
 		[Category("Additional Model Parameters")]
 		public object? OverlapFactor { get; set; } = "1";
 
@@ -151,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 30, Max = 10000)]
 		[Category("Additional Model Parameters")]
 		public object? NumberSemivariograms { get; set; } = "100";
 
@@ -174,7 +180,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGASearchNeighborhood()]
-		[GPGASearchNeighborhoodDomain()]
+		[GPGASearchNeighborhoodDomain(ChordalDistance = true)]
+		[NeighbourType("StandardCircular", "SmoothCircular")]
 		[Category("Search Neighborhood Parameters")]
 		public object? SearchNeighborhood { get; set; } = "NBRTYPE=StandardCircular RADIUS=nan ANGLE=0 NBR_MAX=15 NBR_MIN=10 SECTOR_TYPE=ONE_SECTOR";
 
@@ -199,7 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1e-10, Max = 0.99999999989999999)]
 		[Category("Output Parameters")]
 		public object? QuantileValue { get; set; } = "0.5";
 

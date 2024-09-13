@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Attachments</para>
+	/// <para>Remove Attachments</para>
 	/// <para>Removes attachments from geodatabase feature class or table records.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -47,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Attachments</para>
 		/// </summary>
-		public override string DisplayName => "Remove Attachments";
+		public override string DisplayName() => "Remove Attachments";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveAttachments</para>
 		/// </summary>
-		public override string ToolName => "RemoveAttachments";
+		public override string ToolName() => "RemoveAttachments";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RemoveAttachments</para>
 		/// </summary>
-		public override string ExcuteName => "management.RemoveAttachments";
+		public override string ExcuteName() => "management.RemoveAttachments";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, InJoinField, InMatchTable, InMatchJoinField, InMatchNameField!, OutDataset! };
+		public override object[] Parameters() => new object[] { InDataset, InJoinField, InMatchTable, InMatchJoinField, InMatchNameField!, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -94,6 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "OID", "GUID", "GlobalID")]
 		public object InJoinField { get; set; }
 
 		/// <summary>
@@ -111,6 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "OID", "GUID", "GlobalID")]
 		public object InMatchJoinField { get; set; }
 
 		/// <summary>
@@ -120,6 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "OID", "GUID", "GlobalID")]
 		public object? InMatchNameField { get; set; }
 
 		/// <summary>

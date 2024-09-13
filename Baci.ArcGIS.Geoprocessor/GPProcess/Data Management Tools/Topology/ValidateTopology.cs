@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Validate Topology</para>
+	/// <para>Validate Topology</para>
 	/// <para>Validates a geodatabase topology.</para>
 	/// </summary>
 	public class ValidateTopology : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Validate Topology</para>
 		/// </summary>
-		public override string DisplayName => "Validate Topology";
+		public override string DisplayName() => "Validate Topology";
 
 		/// <summary>
 		/// <para>Tool Name : ValidateTopology</para>
 		/// </summary>
-		public override string ToolName => "ValidateTopology";
+		public override string ToolName() => "ValidateTopology";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ValidateTopology</para>
 		/// </summary>
-		public override string ExcuteName => "management.ValidateTopology";
+		public override string ExcuteName() => "management.ValidateTopology";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTopology, VisibleExtent!, OutTopology! };
+		public override object[] Parameters() => new object[] { InTopology, VisibleExtent!, OutTopology! };
 
 		/// <summary>
 		/// <para>Input Topology</para>

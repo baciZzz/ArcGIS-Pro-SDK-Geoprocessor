@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Append Terrain Points</para>
+	/// <para>Append Terrain Points</para>
 	/// <para>Appends points to a point  feature referenced by a terrain dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Append Terrain Points</para>
 		/// </summary>
-		public override string DisplayName => "Append Terrain Points";
+		public override string DisplayName() => "Append Terrain Points";
 
 		/// <summary>
 		/// <para>Tool Name : AppendTerrainPoints</para>
 		/// </summary>
-		public override string ToolName => "AppendTerrainPoints";
+		public override string ToolName() => "AppendTerrainPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.AppendTerrainPoints</para>
 		/// </summary>
-		public override string ExcuteName => "3d.AppendTerrainPoints";
+		public override string ExcuteName() => "3d.AppendTerrainPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerrain, TerrainFeatureClass, InPointFeatures, PolygonFeaturesOrExtent!, DerivedOutTerrain! };
+		public override object[] Parameters() => new object[] { InTerrain, TerrainFeatureClass, InPointFeatures, PolygonFeaturesOrExtent!, DerivedOutTerrain! };
 
 		/// <summary>
 		/// <para>Input Terrain</para>
@@ -98,6 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint")]
 		public object InPointFeatures { get; set; }
 
 		/// <summary>

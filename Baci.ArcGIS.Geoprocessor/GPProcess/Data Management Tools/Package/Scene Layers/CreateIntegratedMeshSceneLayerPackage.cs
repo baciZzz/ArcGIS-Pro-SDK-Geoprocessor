@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Integrated Mesh Scene Layer Content</para>
+	/// <para>Create Integrated Mesh Scene Layer Content</para>
 	/// <para>Creates  scene layer content (.slpk or .i3sREST) from OpenSceneGraph binary (OSGB) data.</para>
 	/// </summary>
 	public class CreateIntegratedMeshSceneLayerPackage : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Integrated Mesh Scene Layer Content</para>
 		/// </summary>
-		public override string DisplayName => "Create Integrated Mesh Scene Layer Content";
+		public override string DisplayName() => "Create Integrated Mesh Scene Layer Content";
 
 		/// <summary>
 		/// <para>Tool Name : CreateIntegratedMeshSceneLayerPackage</para>
 		/// </summary>
-		public override string ToolName => "CreateIntegratedMeshSceneLayerPackage";
+		public override string ToolName() => "CreateIntegratedMeshSceneLayerPackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateIntegratedMeshSceneLayerPackage</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateIntegratedMeshSceneLayerPackage";
+		public override string ExcuteName() => "management.CreateIntegratedMeshSceneLayerPackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutSlpk!, AnchorPoint!, FileSuffix!, OutCoorSystem!, MaxTextureSize!, TextureOptimization!, TargetCloudConnection!, OutName! };
+		public override object[] Parameters() => new object[] { InDataset, OutSlpk!, AnchorPoint!, FileSuffix!, OutCoorSystem!, MaxTextureSize!, TextureOptimization!, TargetCloudConnection!, OutName! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -78,6 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("slpk")]
 		public object? OutSlpk { get; set; }
 
 		/// <summary>

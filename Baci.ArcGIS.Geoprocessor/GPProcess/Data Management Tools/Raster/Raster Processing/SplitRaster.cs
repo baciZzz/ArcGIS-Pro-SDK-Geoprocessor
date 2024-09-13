@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Split Raster</para>
+	/// <para>Split Raster</para>
 	/// <para>Divides a raster dataset  into smaller pieces, by tiles or features from a polygon.</para>
 	/// </summary>
 	public class SplitRaster : AbstractGPProcess
@@ -66,37 +67,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Split Raster</para>
 		/// </summary>
-		public override string DisplayName => "Split Raster";
+		public override string DisplayName() => "Split Raster";
 
 		/// <summary>
 		/// <para>Tool Name : SplitRaster</para>
 		/// </summary>
-		public override string ToolName => "SplitRaster";
+		public override string ToolName() => "SplitRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SplitRaster</para>
 		/// </summary>
-		public override string ExcuteName => "management.SplitRaster";
+		public override string ExcuteName() => "management.SplitRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "snapRaster", "tileSize" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "snapRaster", "tileSize" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutFolder, OutBaseName, SplitMethod, Format, ResamplingType!, NumRasters!, TileSize!, Overlap!, Units!, CellSize!, Origin!, SplitPolygonFeatureClass!, ClipType!, TemplateExtent!, NodataValue!, DerivedOutFolder! };
+		public override object[] Parameters() => new object[] { InRaster, OutFolder, OutBaseName, SplitMethod, Format, ResamplingType!, NumRasters!, TileSize!, Overlap!, Units!, CellSize!, Origin!, SplitPolygonFeatureClass!, ClipType!, TemplateExtent!, NodataValue!, DerivedOutFolder! };
 
 		/// <summary>
 		/// <para>Input Raster</para>

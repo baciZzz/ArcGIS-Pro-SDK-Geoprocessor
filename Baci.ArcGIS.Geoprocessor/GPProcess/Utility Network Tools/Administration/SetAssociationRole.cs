@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Set Association Role</para>
+	/// <para>Set Association Role</para>
 	/// <para>Alters the association role assigned to a network feature class or table  at the asset type level.</para>
 	/// </summary>
 	public class SetAssociationRole : AbstractGPProcess
@@ -68,37 +69,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Association Role</para>
 		/// </summary>
-		public override string DisplayName => "Set Association Role";
+		public override string DisplayName() => "Set Association Role";
 
 		/// <summary>
 		/// <para>Tool Name : SetAssociationRole</para>
 		/// </summary>
-		public override string ToolName => "SetAssociationRole";
+		public override string ToolName() => "SetAssociationRole";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.SetAssociationRole</para>
 		/// </summary>
-		public override string ExcuteName => "un.SetAssociationRole";
+		public override string ExcuteName() => "un.SetAssociationRole";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetwork, Featureclass, Assetgroup, Assettype, AssociationRoleType, AssociationDeletionSemantics, ViewScale!, SplitContent!, OutUtilityNetwork! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, DomainNetwork, Featureclass, Assetgroup, Assettype, AssociationRoleType, AssociationDeletionSemantics, ViewScale!, SplitContent!, OutUtilityNetwork! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

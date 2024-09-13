@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Define Overviews</para>
+	/// <para>Define Overviews</para>
 	/// <para>Lets you set how mosaic dataset overviews are generated. The settings made with this tool are used by the Build Overviews tool.</para>
 	/// </summary>
 	public class DefineOverviews : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Define Overviews</para>
 		/// </summary>
-		public override string DisplayName => "Define Overviews";
+		public override string DisplayName() => "Define Overviews";
 
 		/// <summary>
 		/// <para>Tool Name : DefineOverviews</para>
 		/// </summary>
-		public override string ToolName => "DefineOverviews";
+		public override string ToolName() => "DefineOverviews";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DefineOverviews</para>
 		/// </summary>
-		public override string ExcuteName => "management.DefineOverviews";
+		public override string ExcuteName() => "management.DefineOverviews";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "parallelProcessingFactor", "tileSize" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "parallelProcessingFactor", "tileSize" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, OverviewImageFolder!, InTemplateDataset!, Extent!, PixelSize!, NumberOfLevels!, TileRows!, TileCols!, OverviewFactor!, ForceOverviewTiles!, ResamplingMethod!, CompressionMethod!, CompressionQuality!, OutMosaicDataset! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, OverviewImageFolder!, InTemplateDataset!, Extent!, PixelSize!, NumberOfLevels!, TileRows!, TileCols!, OverviewFactor!, ForceOverviewTiles!, ResamplingMethod!, CompressionMethod!, CompressionQuality!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -77,6 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("File System", "Local Database", "Remote Database")]
 		public object? OverviewImageFolder { get; set; }
 
 		/// <summary>
@@ -141,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 2, Max = 10)]
 		[Category("Overview Tile Parameters")]
 		public object? OverviewFactor { get; set; } = "3";
 

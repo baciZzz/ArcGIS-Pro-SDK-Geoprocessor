@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Convert Spatial Weights Matrix to Table</para>
+	/// <para>Convert Spatial Weights Matrix to Table</para>
 	/// <para>Converts a binary spatial weights matrix file (.swm) to a table.</para>
 	/// </summary>
 	public class ConvertSpatialWeightsMatrixtoTable : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Convert Spatial Weights Matrix to Table</para>
 		/// </summary>
-		public override string DisplayName => "Convert Spatial Weights Matrix to Table";
+		public override string DisplayName() => "Convert Spatial Weights Matrix to Table";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertSpatialWeightsMatrixtoTable</para>
 		/// </summary>
-		public override string ToolName => "ConvertSpatialWeightsMatrixtoTable";
+		public override string ToolName() => "ConvertSpatialWeightsMatrixtoTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.ConvertSpatialWeightsMatrixtoTable</para>
 		/// </summary>
-		public override string ExcuteName => "stats.ConvertSpatialWeightsMatrixtoTable";
+		public override string ExcuteName() => "stats.ConvertSpatialWeightsMatrixtoTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputSpatialWeightsMatrixFile, OutputTable };
+		public override object[] Parameters() => new object[] { InputSpatialWeightsMatrixFile, OutputTable };
 
 		/// <summary>
 		/// <para>Input Spatial Weights Matrix File</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("swm", "gwt")]
 		public object InputSpatialWeightsMatrixFile { get; set; }
 
 		/// <summary>

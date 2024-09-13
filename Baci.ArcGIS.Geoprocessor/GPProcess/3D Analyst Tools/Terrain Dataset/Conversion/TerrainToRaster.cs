@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Terrain To Raster</para>
+	/// <para>Terrain To Raster</para>
 	/// <para>Interpolates a raster using z-values from  a terrain dataset.</para>
 	/// </summary>
 	public class TerrainToRaster : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Terrain To Raster</para>
 		/// </summary>
-		public override string DisplayName => "Terrain To Raster";
+		public override string DisplayName() => "Terrain To Raster";
 
 		/// <summary>
 		/// <para>Tool Name : TerrainToRaster</para>
 		/// </summary>
-		public override string ToolName => "TerrainToRaster";
+		public override string ToolName() => "TerrainToRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.TerrainToRaster</para>
 		/// </summary>
-		public override string ExcuteName => "3d.TerrainToRaster";
+		public override string ExcuteName() => "3d.TerrainToRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "compression", "configKeyword", "extent", "outputCoordinateSystem", "pyramid", "rasterStatistics", "snapRaster", "terrainMemoryUsage", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "compression", "configKeyword", "extent", "outputCoordinateSystem", "pyramid", "rasterStatistics", "snapRaster", "terrainMemoryUsage", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerrain, OutRaster, DataType!, Method!, SampleDistance!, PyramidLevelResolution!, SampleValue! };
+		public override object[] Parameters() => new object[] { InTerrain, OutRaster, DataType!, Method!, SampleDistance!, PyramidLevelResolution!, SampleValue! };
 
 		/// <summary>
 		/// <para>Input Terrain</para>

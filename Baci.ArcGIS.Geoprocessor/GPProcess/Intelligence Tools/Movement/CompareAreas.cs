@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Compare Areas</para>
+	/// <para>Compare Areas</para>
 	/// <para>Compares movement point tracks across multiple known areas of interest.</para>
 	/// </summary>
 	public class CompareAreas : AbstractGPProcess
@@ -59,37 +60,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Compare Areas</para>
 		/// </summary>
-		public override string DisplayName => "Compare Areas";
+		public override string DisplayName() => "Compare Areas";
 
 		/// <summary>
 		/// <para>Tool Name : CompareAreas</para>
 		/// </summary>
-		public override string ToolName => "CompareAreas";
+		public override string ToolName() => "CompareAreas";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.CompareAreas</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.CompareAreas";
+		public override string ExcuteName() => "intelligence.CompareAreas";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, InAreaFeatures, OutFeatureclass, PointIdField, AreaIdField, Relationship, TimeDifference!, TimeRelationship!, IncludeTimeStatistics! };
+		public override object[] Parameters() => new object[] { InPointFeatures, InAreaFeatures, OutFeatureclass, PointIdField, AreaIdField, Relationship, TimeDifference!, TimeRelationship!, IncludeTimeStatistics! };
 
 		/// <summary>
 		/// <para>Input Point Features</para>
@@ -98,6 +99,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InPointFeatures { get; set; }
 
 		/// <summary>
@@ -107,6 +110,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object InAreaFeatures { get; set; }
 
 		/// <summary>
@@ -125,6 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		public object PointIdField { get; set; }
 
 		/// <summary>
@@ -134,6 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		public object AreaIdField { get; set; }
 
 		/// <summary>

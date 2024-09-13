@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Point Cloud</para>
+	/// <para>Generate Point Cloud</para>
 	/// <para>Computes 3D points from stereo pairs and outputs a point cloud as a set of LAS files.</para>
 	/// </summary>
 	public class GeneratePointCloud : AbstractGPProcess
@@ -54,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Point Cloud</para>
 		/// </summary>
-		public override string DisplayName => "Generate Point Cloud";
+		public override string DisplayName() => "Generate Point Cloud";
 
 		/// <summary>
 		/// <para>Tool Name : GeneratePointCloud</para>
 		/// </summary>
-		public override string ToolName => "GeneratePointCloud";
+		public override string ToolName() => "GeneratePointCloud";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.GeneratePointCloud</para>
 		/// </summary>
-		public override string ExcuteName => "management.GeneratePointCloud";
+		public override string ExcuteName() => "management.GeneratePointCloud";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, MatchingMethod, OutFolder, OutBaseName, ObjectSize!, GroundSpacing!, MinimumPairs!, MinimumArea!, MinimumAdjustmentQuality!, MaximumDiffGsd!, MaximumDiffOP! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, MatchingMethod, OutFolder, OutBaseName, ObjectSize!, GroundSpacing!, MinimumPairs!, MinimumArea!, MinimumAdjustmentQuality!, MaximumDiffGsd!, MaximumDiffOP! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>

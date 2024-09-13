@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Calculate Adjacent Fields</para>
+	/// <para>Calculate Adjacent Fields</para>
 	/// <para>Creates fields and calculates values for the neighboring pages (polygon) of a grid polygon feature class.</para>
 	/// </summary>
 	public class CalculateAdjacentFields : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Adjacent Fields</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Adjacent Fields";
+		public override string DisplayName() => "Calculate Adjacent Fields";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateAdjacentFields</para>
 		/// </summary>
-		public override string ToolName => "CalculateAdjacentFields";
+		public override string ToolName() => "CalculateAdjacentFields";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.CalculateAdjacentFields</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.CalculateAdjacentFields";
+		public override string ExcuteName() => "cartography.CalculateAdjacentFields";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InField, OutFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, InField, OutFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,6 +75,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -83,6 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Float", "Double", "Short", "Long")]
 		public object InField { get; set; }
 
 		/// <summary>

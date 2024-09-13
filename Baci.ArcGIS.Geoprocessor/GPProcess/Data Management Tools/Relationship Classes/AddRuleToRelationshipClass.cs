@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Rule To Relationship Class</para>
+	/// <para>Add Rule To Relationship Class</para>
 	/// <para>Adds a rule to a relationship class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Rule To Relationship Class</para>
 		/// </summary>
-		public override string DisplayName => "Add Rule To Relationship Class";
+		public override string DisplayName() => "Add Rule To Relationship Class";
 
 		/// <summary>
 		/// <para>Tool Name : AddRuleToRelationshipClass</para>
 		/// </summary>
-		public override string ToolName => "AddRuleToRelationshipClass";
+		public override string ToolName() => "AddRuleToRelationshipClass";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddRuleToRelationshipClass</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddRuleToRelationshipClass";
+		public override string ExcuteName() => "management.AddRuleToRelationshipClass";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRelClass, OriginSubtype!, OriginMinimum!, OriginMaximum!, DestinationSubtype!, DestinationMinimum!, DestinationMaximum!, OutRelClass! };
+		public override object[] Parameters() => new object[] { InRelClass, OriginSubtype!, OriginMinimum!, OriginMaximum!, DestinationSubtype!, DestinationMinimum!, DestinationMaximum!, OutRelClass! };
 
 		/// <summary>
 		/// <para>Input Relationship Class</para>

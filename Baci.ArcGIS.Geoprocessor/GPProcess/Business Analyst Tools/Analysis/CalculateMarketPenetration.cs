@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Calculate Market Penetration</para>
+	/// <para>Calculate Market Penetration</para>
 	/// <para>Calculates the market penetration based on the number of customers within an area compared to a demographic variable such as total population.</para>
 	/// </summary>
 	public class CalculateMarketPenetration : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Market Penetration</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Market Penetration";
+		public override string DisplayName() => "Calculate Market Penetration";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateMarketPenetration</para>
 		/// </summary>
-		public override string ToolName => "CalculateMarketPenetration";
+		public override string ToolName() => "CalculateMarketPenetration";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.CalculateMarketPenetration</para>
 		/// </summary>
-		public override string ExcuteName => "ba.CalculateMarketPenetration";
+		public override string ExcuteName() => "ba.CalculateMarketPenetration";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, IdField, MarketPenetrationBaseField, InCustomerFeatures, AreaDescriptionField!, WeightField!, CreateReport!, StoreId!, LinkField!, ReportTitle!, ReportFolder!, ReportFormat!, OutputReport! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, IdField, MarketPenetrationBaseField, InCustomerFeatures, AreaDescriptionField!, WeightField!, CreateReport!, StoreId!, LinkField!, ReportTitle!, ReportFolder!, ReportFormat!, OutputReport! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -89,6 +90,8 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -106,6 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "GUID", "GlobalID")]
 		public object IdField { get; set; }
 
 		/// <summary>
@@ -115,6 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object MarketPenetrationBaseField { get; set; }
 
 		/// <summary>
@@ -124,6 +129,8 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InCustomerFeatures { get; set; }
 
 		/// <summary>
@@ -133,6 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object? AreaDescriptionField { get; set; }
 
 		/// <summary>
@@ -142,6 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? WeightField { get; set; }
 
 		/// <summary>
@@ -163,6 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "GUID", "GlobalID")]
 		[Category("Trade Area Penetration")]
 		public object? StoreId { get; set; }
 
@@ -173,6 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "GUID", "GlobalID")]
 		[Category("Trade Area Penetration")]
 		public object? LinkField { get; set; }
 

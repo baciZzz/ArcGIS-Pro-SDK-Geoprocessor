@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Repair Geometry</para>
+	/// <para>Repair Geometry</para>
 	/// <para>Inspects features for geometry problems and repairs them.  If a problem is found, a repair will be performed, and a one-line description will identify the feature, as well as the geometry problem that was repaired.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -33,37 +34,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Repair Geometry</para>
 		/// </summary>
-		public override string DisplayName => "Repair Geometry";
+		public override string DisplayName() => "Repair Geometry";
 
 		/// <summary>
 		/// <para>Tool Name : RepairGeometry</para>
 		/// </summary>
-		public override string ToolName => "RepairGeometry";
+		public override string ToolName() => "RepairGeometry";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RepairGeometry</para>
 		/// </summary>
-		public override string ExcuteName => "management.RepairGeometry";
+		public override string ExcuteName() => "management.RepairGeometry";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DeleteNull!, OutFeatureClass!, ValidationMethod! };
+		public override object[] Parameters() => new object[] { InFeatures, DeleteNull!, OutFeatureClass!, ValidationMethod! };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>PDF To TIFF</para>
+	/// <para>PDF To TIFF</para>
 	/// <para>Exports a .pdf file to Tagged Image File Format (TIFF).</para>
 	/// </summary>
 	public class PDFToTIFF : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : PDF To TIFF</para>
 		/// </summary>
-		public override string DisplayName => "PDF To TIFF";
+		public override string DisplayName() => "PDF To TIFF";
 
 		/// <summary>
 		/// <para>Tool Name : PDFToTIFF</para>
 		/// </summary>
-		public override string ToolName => "PDFToTIFF";
+		public override string ToolName() => "PDFToTIFF";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.PDFToTIFF</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.PDFToTIFF";
+		public override string ExcuteName() => "conversion.PDFToTIFF";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPdfFile, OutTiffFile, PdfPassword!, PdfPageNumber!, PdfMap!, ClipOption!, Resolution!, ColorMode!, TiffCompression!, GeotiffTags! };
+		public override object[] Parameters() => new object[] { InPdfFile, OutTiffFile, PdfPassword!, PdfPageNumber!, PdfMap!, ClipOption!, Resolution!, ColorMode!, TiffCompression!, GeotiffTags! };
 
 		/// <summary>
 		/// <para>Input PDF File</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("pdf")]
 		public object InPdfFile { get; set; }
 
 		/// <summary>
@@ -134,6 +136,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = false, Value = 95)]
+		[High(Allow = true, Value = 3000)]
 		public object? Resolution { get; set; } = "250";
 
 		/// <summary>

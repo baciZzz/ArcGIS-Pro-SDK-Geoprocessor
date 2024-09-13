@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Topo to Raster by File</para>
+	/// <para>Topo to Raster by File</para>
 	/// <para>Interpolates a hydrologically correct raster surface from point, line, and polygon data using parameters specified in a file.</para>
 	/// </summary>
 	public class TopoToRasterByFile : AbstractGPProcess
@@ -38,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Topo to Raster by File</para>
 		/// </summary>
-		public override string DisplayName => "Topo to Raster by File";
+		public override string DisplayName() => "Topo to Raster by File";
 
 		/// <summary>
 		/// <para>Tool Name : TopoToRasterByFile</para>
 		/// </summary>
-		public override string ToolName => "TopoToRasterByFile";
+		public override string ToolName() => "TopoToRasterByFile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.TopoToRasterByFile</para>
 		/// </summary>
-		public override string ExcuteName => "sa.TopoToRasterByFile";
+		public override string ExcuteName() => "sa.TopoToRasterByFile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "mask", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "tileSize", "transferDomains", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "mask", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "tileSize", "transferDomains", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParameterFile, OutSurfaceRaster, OutStreamFeatures!, OutSinkFeatures!, OutResidualFeature!, OutStreamCliffErrorFeature!, OutContourErrorFeature! };
+		public override object[] Parameters() => new object[] { InParameterFile, OutSurfaceRaster, OutStreamFeatures!, OutSinkFeatures!, OutResidualFeature!, OutStreamCliffErrorFeature!, OutContourErrorFeature! };
 
 		/// <summary>
 		/// <para>Input parameter file</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("TXT", "ASC")]
 		public object InParameterFile { get; set; }
 
 		/// <summary>

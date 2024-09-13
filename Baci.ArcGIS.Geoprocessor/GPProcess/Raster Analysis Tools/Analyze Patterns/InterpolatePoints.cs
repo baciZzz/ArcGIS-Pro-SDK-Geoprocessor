@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Interpolate Points</para>
+	/// <para>Interpolate Points</para>
 	/// <para>Predicts values at new locations based on measurements from a collection of points. The tool takes point data with values at each point and returns a raster of predicted values.</para>
 	/// </summary>
 	public class InterpolatePoints : AbstractGPProcess
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Interpolate Points</para>
 		/// </summary>
-		public override string DisplayName => "Interpolate Points";
+		public override string DisplayName() => "Interpolate Points";
 
 		/// <summary>
 		/// <para>Tool Name : InterpolatePoints</para>
 		/// </summary>
-		public override string ToolName => "InterpolatePoints";
+		public override string ToolName() => "InterpolatePoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.InterpolatePoints</para>
 		/// </summary>
-		public override string ExcuteName => "ra.InterpolatePoints";
+		public override string ExcuteName() => "ra.InterpolatePoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputpointfeatures, Interpolatefield, Outputname, Optimizefor!, Transformdata!, Sizeoflocalmodels!, Numberofneighbors!, Outputcellsize!, Outputpredictionerror!, Outputraster!, Outputerrorraster! };
+		public override object[] Parameters() => new object[] { Inputpointfeatures, Interpolatefield, Outputname, Optimizefor!, Transformdata!, Sizeoflocalmodels!, Numberofneighbors!, Outputcellsize!, Outputpredictionerror!, Outputraster!, Outputerrorraster! };
 
 		/// <summary>
 		/// <para>Input Point Features</para>
@@ -80,6 +81,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint")]
+		[FeatureType("Simple")]
 		public object Inputpointfeatures { get; set; }
 
 		/// <summary>
@@ -89,6 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object Interpolatefield { get; set; }
 
 		/// <summary>
@@ -132,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 30, Max = 500)]
 		[Category("Additional Options")]
 		public object? Sizeoflocalmodels { get; set; }
 
@@ -142,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 64)]
 		[Category("Additional Options")]
 		public object? Numberofneighbors { get; set; }
 

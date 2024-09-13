@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Bitwise Not</para>
+	/// <para>Bitwise Not</para>
 	/// <para>Performs a Bitwise Not (complement) operation on the binary value of an input raster.</para>
 	/// </summary>
 	public class BitwiseNot : AbstractGPProcess
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Bitwise Not</para>
 		/// </summary>
-		public override string DisplayName => "Bitwise Not";
+		public override string DisplayName() => "Bitwise Not";
 
 		/// <summary>
 		/// <para>Tool Name : BitwiseNot</para>
 		/// </summary>
-		public override string ToolName => "BitwiseNot";
+		public override string ToolName() => "BitwiseNot";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.BitwiseNot</para>
 		/// </summary>
-		public override string ExcuteName => "ia.BitwiseNot";
+		public override string ExcuteName() => "ia.BitwiseNot";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterOrConstant, OutRaster };
+		public override object[] Parameters() => new object[] { InRasterOrConstant, OutRaster };
 
 		/// <summary>
 		/// <para>Input raster or constant value</para>
@@ -76,7 +77,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "GPRasterFormulated", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile", "GPDouble", "GPLong")]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRasterOrConstant { get; set; }
 
 		/// <summary>

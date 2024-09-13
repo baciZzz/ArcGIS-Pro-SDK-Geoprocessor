@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Import Tile Cache</para>
+	/// <para>Import Tile Cache</para>
 	/// <para>Imports tiles from an existing tile cache or a tile package. The target cache must have the same tiling scheme, spatial reference, and  storage format as the source tile cache.</para>
 	/// </summary>
 	public class ImportTileCache : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Import Tile Cache</para>
 		/// </summary>
-		public override string DisplayName => "Import Tile Cache";
+		public override string DisplayName() => "Import Tile Cache";
 
 		/// <summary>
 		/// <para>Tool Name : ImportTileCache</para>
 		/// </summary>
-		public override string ToolName => "ImportTileCache";
+		public override string ToolName() => "ImportTileCache";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ImportTileCache</para>
 		/// </summary>
-		public override string ExcuteName => "management.ImportTileCache";
+		public override string ExcuteName() => "management.ImportTileCache";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCacheTarget, InCacheSource, Scales!, AreaOfInterest!, Overwrite!, OutTileCache! };
+		public override object[] Parameters() => new object[] { InCacheTarget, InCacheSource, Scales!, AreaOfInterest!, Overwrite!, OutTileCache! };
 
 		/// <summary>
 		/// <para>Target Tile Cache</para>

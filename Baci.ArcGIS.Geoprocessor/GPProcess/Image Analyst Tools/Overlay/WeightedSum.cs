@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Weighted Sum</para>
+	/// <para>Weighted Sum</para>
 	/// <para>Overlays several rasters, multiplying each by their given weight and summing them together.</para>
 	/// </summary>
 	public class WeightedSum : AbstractGPProcess
@@ -39,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Weighted Sum</para>
 		/// </summary>
-		public override string DisplayName => "Weighted Sum";
+		public override string DisplayName() => "Weighted Sum";
 
 		/// <summary>
 		/// <para>Tool Name : WeightedSum</para>
 		/// </summary>
-		public override string ToolName => "WeightedSum";
+		public override string ToolName() => "WeightedSum";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.WeightedSum</para>
 		/// </summary>
-		public override string ExcuteName => "ia.WeightedSum";
+		public override string ExcuteName() => "ia.WeightedSum";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasters, OutRaster };
+		public override object[] Parameters() => new object[] { InRasters, OutRaster };
 
 		/// <summary>
 		/// <para>Input rasters</para>

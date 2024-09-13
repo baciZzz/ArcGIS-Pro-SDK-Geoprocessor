@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Thin Hydrology Lines</para>
+	/// <para>Thin Hydrology Lines</para>
 	/// <para>Generates a simplified hydrographic line network for display at a smaller scale. The resulting hydrographic network maintains the main arteries while thinning less significant features based on hierarchy, length, and spacing between features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Thin Hydrology Lines</para>
 		/// </summary>
-		public override string DisplayName => "Thin Hydrology Lines";
+		public override string DisplayName() => "Thin Hydrology Lines";
 
 		/// <summary>
 		/// <para>Tool Name : ThinHydrologyLines</para>
 		/// </summary>
-		public override string ToolName => "ThinHydrologyLines";
+		public override string ToolName() => "ThinHydrologyLines";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.ThinHydrologyLines</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.ThinHydrologyLines";
+		public override string ExcuteName() => "topographic.ThinHydrologyLines";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InvisibilityField, MinLength, MinSpacing!, HierarchyField!, IntersectingFeatures!, UnsplitLines!, UseAngles!, UpdatedFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, InvisibilityField, MinLength, MinSpacing!, HierarchyField!, IntersectingFeatures!, UnsplitLines!, UseAngles!, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -81,6 +82,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -90,6 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		public object InvisibilityField { get; set; }
 
 		/// <summary>
@@ -115,6 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		public object? HierarchyField { get; set; }
 
 		/// <summary>
@@ -124,6 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple")]
 		public object? IntersectingFeatures { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Subtype</para>
+	/// <para>Remove Subtype</para>
 	/// <para>Removes a subtype from the input table using its code.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Subtype</para>
 		/// </summary>
-		public override string DisplayName => "Remove Subtype";
+		public override string DisplayName() => "Remove Subtype";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveSubtype</para>
 		/// </summary>
-		public override string ToolName => "RemoveSubtype";
+		public override string ToolName() => "RemoveSubtype";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RemoveSubtype</para>
 		/// </summary>
-		public override string ExcuteName => "management.RemoveSubtype";
+		public override string ExcuteName() => "management.RemoveSubtype";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, SubtypeCode, OutTable! };
+		public override object[] Parameters() => new object[] { InTable, SubtypeCode, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Generate OIS Profile Data</para>
+	/// <para>Generate OIS Profile Data</para>
 	/// <para>Generates a JSON string that is stored in the PROFILEJSON field on the input Obstruction Identification Surface multipatch feature class that contains the data necessary to depict the terrain, runway, and OIS in the Terrain and Obstacle Profile layout element.</para>
 	/// </summary>
 	public class GenerateOISProfileData : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate OIS Profile Data</para>
 		/// </summary>
-		public override string DisplayName => "Generate OIS Profile Data";
+		public override string DisplayName() => "Generate OIS Profile Data";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateOISProfileData</para>
 		/// </summary>
-		public override string ToolName => "GenerateOISProfileData";
+		public override string ToolName() => "GenerateOISProfileData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.GenerateOISProfileData</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.GenerateOISProfileData";
+		public override string ExcuteName() => "aviation.GenerateOISProfileData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRunwayFeatures, InDems, TargetOisFeatures, InFlightpathFeatures!, SamplingDistance!, SampleProfileOis!, SampleProfileRunways!, OutOisFeatures! };
+		public override object[] Parameters() => new object[] { InRunwayFeatures, InDems, TargetOisFeatures, InFlightpathFeatures!, SamplingDistance!, SampleProfileOis!, SampleProfileRunways!, OutOisFeatures! };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InRunwayFeatures { get; set; }
 
 		/// <summary>
@@ -96,6 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("MultiPatch")]
 		public object TargetOisFeatures { get; set; }
 
 		/// <summary>
@@ -105,6 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object? InFlightpathFeatures { get; set; }
 
 		/// <summary>

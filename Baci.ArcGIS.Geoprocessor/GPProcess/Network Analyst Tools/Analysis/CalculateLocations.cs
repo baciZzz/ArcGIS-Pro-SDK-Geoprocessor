@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Calculate Locations</para>
+	/// <para>Calculate Locations</para>
 	/// <para>Locates input features on a network and adds fields  to the input features that describe the network locations. The tool is used to precalculate the network locations of inputs that will be used in a Network Analyst workflow, improving performance of the analysis at solve time.  The tool stores the calculated network locations of the inputs in fields in the input data.</para>
 	/// </summary>
 	public class CalculateLocations : AbstractGPProcess
@@ -31,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Locations</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Locations";
+		public override string DisplayName() => "Calculate Locations";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateLocations</para>
 		/// </summary>
-		public override string ToolName => "CalculateLocations";
+		public override string ToolName() => "CalculateLocations";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.CalculateLocations</para>
 		/// </summary>
-		public override string ExcuteName => "na.CalculateLocations";
+		public override string ExcuteName() => "na.CalculateLocations";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, InNetworkDataset!, SearchTolerance!, SearchCriteria!, MatchType!, SourceIDField!, SourceOIDField!, PositionField!, SideField!, SnapXField!, SnapYField!, DistanceField!, SnapZField!, LocationField!, ExcludeRestrictedElements!, SearchQuery!, OutPointFeatureClass!, TravelMode!, OutputLayer! };
+		public override object[] Parameters() => new object[] { InPointFeatures, InNetworkDataset!, SearchTolerance!, SearchCriteria!, MatchType!, SourceIDField!, SourceOIDField!, PositionField!, SideField!, SnapXField!, SnapYField!, DistanceField!, SnapZField!, LocationField!, ExcludeRestrictedElements!, SearchQuery!, OutPointFeatureClass!, TravelMode!, OutputLayer! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -71,6 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polyline", "Polygon")]
 		public object InPointFeatures { get; set; }
 
 		/// <summary>
@@ -130,6 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		[Category("Network Location Fields")]
 		public object? SourceIDField { get; set; }
 
@@ -142,6 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		[Category("Network Location Fields")]
 		public object? SourceOIDField { get; set; }
 
@@ -154,6 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double")]
 		[Category("Network Location Fields")]
 		public object? PositionField { get; set; }
 
@@ -166,6 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		[Category("Network Location Fields")]
 		public object? SideField { get; set; }
 
@@ -178,6 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double")]
 		[Category("Network Location Fields")]
 		public object? SnapXField { get; set; }
 
@@ -190,6 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double")]
 		[Category("Network Location Fields")]
 		public object? SnapYField { get; set; }
 
@@ -202,6 +210,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double")]
 		[Category("Network Location Fields")]
 		public object? DistanceField { get; set; }
 
@@ -215,6 +224,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double")]
 		[Category("Network Location Fields")]
 		public object? SnapZField { get; set; }
 
@@ -227,6 +237,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Blob")]
 		[Category("Network Location Fields")]
 		public object? LocationField { get; set; }
 
@@ -259,6 +270,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPTableView()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polyline", "Polygon")]
 		public object? OutPointFeatureClass { get; set; }
 
 		/// <summary>

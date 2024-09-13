@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Mosaic Dataset</para>
+	/// <para>Delete Mosaic Dataset</para>
 	/// <para>Deletes a mosaic dataset, its overviews, and its item cache from disk.</para>
 	/// </summary>
 	public class DeleteMosaicDataset : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete Mosaic Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Delete Mosaic Dataset";
+		public override string DisplayName() => "Delete Mosaic Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteMosaicDataset</para>
 		/// </summary>
-		public override string ToolName => "DeleteMosaicDataset";
+		public override string ToolName() => "DeleteMosaicDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DeleteMosaicDataset</para>
 		/// </summary>
-		public override string ExcuteName => "management.DeleteMosaicDataset";
+		public override string ExcuteName() => "management.DeleteMosaicDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, DeleteOverviewImages!, DeleteItemCache!, OutResults! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, DeleteOverviewImages!, DeleteItemCache!, OutResults! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

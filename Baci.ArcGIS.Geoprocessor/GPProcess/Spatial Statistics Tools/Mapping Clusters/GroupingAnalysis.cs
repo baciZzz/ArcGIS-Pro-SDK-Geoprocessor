@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Grouping Analysis</para>
+	/// <para>Grouping Analysis</para>
 	/// <para>Groups features based on feature attributes and optional spatial or temporal constraints.</para>
 	/// </summary>
 	[Obsolete()]
@@ -63,37 +64,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Grouping Analysis</para>
 		/// </summary>
-		public override string DisplayName => "Grouping Analysis";
+		public override string DisplayName() => "Grouping Analysis";
 
 		/// <summary>
 		/// <para>Tool Name : GroupingAnalysis</para>
 		/// </summary>
-		public override string ToolName => "GroupingAnalysis";
+		public override string ToolName() => "GroupingAnalysis";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.GroupingAnalysis</para>
 		/// </summary>
-		public override string ExcuteName => "stats.GroupingAnalysis";
+		public override string ExcuteName() => "stats.GroupingAnalysis";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "randomGenerator", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "randomGenerator", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, UniqueIDField, OutputFeatureClass, NumberOfGroups, AnalysisFields, SpatialConstraints, DistanceMethod!, NumberOfNeighbors!, WeightsMatrixFile!, InitializationMethod!, InitializationField!, OutputReportFile!, EvaluateOptimalNumberOfGroups!, OutputFstat!, MaxFstatGroup!, MaxFstat! };
+		public override object[] Parameters() => new object[] { InputFeatures, UniqueIDField, OutputFeatureClass, NumberOfGroups, AnalysisFields, SpatialConstraints, DistanceMethod!, NumberOfNeighbors!, WeightsMatrixFile!, InitializationMethod!, InitializationField!, OutputReportFile!, EvaluateOptimalNumberOfGroups!, OutputFstat!, MaxFstatGroup!, MaxFstat! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -110,6 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		public object UniqueIDField { get; set; }
 
 		/// <summary>
@@ -135,6 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Date")]
 		public object AnalysisFields { get; set; }
 
 		/// <summary>
@@ -180,6 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("swm", "gwt")]
 		public object? WeightsMatrixFile { get; set; }
 
 		/// <summary>
@@ -202,6 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		public object? InitializationField { get; set; }
 
 		/// <summary>
@@ -211,6 +216,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("pdf")]
 		public object? OutputReportFile { get; set; }
 
 		/// <summary>

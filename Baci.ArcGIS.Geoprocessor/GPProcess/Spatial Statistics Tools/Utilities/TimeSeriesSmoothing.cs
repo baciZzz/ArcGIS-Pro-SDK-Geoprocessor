@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Time Series Smoothing</para>
+	/// <para>Time Series Smoothing</para>
 	/// <para>Smooths a numeric variable of one or more time series using centered, forward, and backward moving averages, as well as an adaptive method based on local linear regression. After smoothing short-term fluctuations, longer-term trends or cycles often become apparent.</para>
 	/// </summary>
 	public class TimeSeriesSmoothing : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Time Series Smoothing</para>
 		/// </summary>
-		public override string DisplayName => "Time Series Smoothing";
+		public override string DisplayName() => "Time Series Smoothing";
 
 		/// <summary>
 		/// <para>Tool Name : TimeSeriesSmoothing</para>
 		/// </summary>
-		public override string ToolName => "TimeSeriesSmoothing";
+		public override string ToolName() => "TimeSeriesSmoothing";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.TimeSeriesSmoothing</para>
 		/// </summary>
-		public override string ExcuteName => "stats.TimeSeriesSmoothing";
+		public override string ExcuteName() => "stats.TimeSeriesSmoothing";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, TimeField, AnalysisField, GroupMethod!, Method!, TimeWindow!, AppendToInput!, OutputFeatures!, IdField!, ApplyShorterWindow!, EnableTimeSeriesPopups!, UpdatedFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, TimeField, AnalysisField, GroupMethod!, Method!, TimeWindow!, AppendToInput!, OutputFeatures!, IdField!, ApplyShorterWindow!, EnableTimeSeriesPopups!, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features or Table</para>
@@ -88,6 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object TimeField { get; set; }
 
 		/// <summary>
@@ -97,6 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object AnalysisField { get; set; }
 
 		/// <summary>
@@ -163,6 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		public object? IdField { get; set; }
 
 		/// <summary>

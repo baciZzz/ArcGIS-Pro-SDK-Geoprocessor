@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Convert Raster To Feature</para>
+	/// <para>Convert Raster To Feature</para>
 	/// <para>Converts a raster to a feature dataset as points, lines, or polygons.</para>
 	/// </summary>
 	public class ConvertRasterToFeature : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Convert Raster To Feature</para>
 		/// </summary>
-		public override string DisplayName => "Convert Raster To Feature";
+		public override string DisplayName() => "Convert Raster To Feature";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertRasterToFeature</para>
 		/// </summary>
-		public override string ToolName => "ConvertRasterToFeature";
+		public override string ToolName() => "ConvertRasterToFeature";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.ConvertRasterToFeature</para>
 		/// </summary>
-		public override string ExcuteName => "ra.ConvertRasterToFeature";
+		public override string ExcuteName() => "ra.ConvertRasterToFeature";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputraster, Field!, Outputtype!, Simplifylinesorpolygons!, Outputname, Outputfeatures!, Createmultipartfeatures!, Maxverticesperfeature! };
+		public override object[] Parameters() => new object[] { Inputraster, Field!, Outputtype!, Simplifylinesorpolygons!, Outputname, Outputfeatures!, Createmultipartfeatures!, Maxverticesperfeature! };
 
 		/// <summary>
 		/// <para>Input Raster Layer</para>

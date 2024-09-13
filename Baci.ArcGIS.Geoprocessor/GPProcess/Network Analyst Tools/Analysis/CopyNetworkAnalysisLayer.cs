@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Copy Network Analysis Layer</para>
+	/// <para>Copy Network Analysis Layer</para>
 	/// <para>Copies a network analysis layer </para>
 	/// <para>to a duplicate layer. The new layer will have the same analysis settings and network data source as the original layer and a copy of the original layer's analysis data.</para>
 	/// </summary>
@@ -31,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Copy Network Analysis Layer</para>
 		/// </summary>
-		public override string DisplayName => "Copy Network Analysis Layer";
+		public override string DisplayName() => "Copy Network Analysis Layer";
 
 		/// <summary>
 		/// <para>Tool Name : CopyNetworkAnalysisLayer</para>
 		/// </summary>
-		public override string ToolName => "CopyNetworkAnalysisLayer";
+		public override string ToolName() => "CopyNetworkAnalysisLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.CopyNetworkAnalysisLayer</para>
 		/// </summary>
-		public override string ExcuteName => "na.CopyNetworkAnalysisLayer";
+		public override string ExcuteName() => "na.CopyNetworkAnalysisLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, OutLayerName!, OutNetworkAnalysisLayer! };
+		public override object[] Parameters() => new object[] { InNetworkAnalysisLayer, OutLayerName!, OutNetworkAnalysisLayer! };
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 {
 	/// <summary>
 	/// <para>Delete Reviewer Session</para>
+	/// <para>Delete Reviewer Session</para>
 	/// <para>Permanently deletes one or more sessions and all related records from a Reviewer workspace.</para>
 	/// </summary>
 	public class DeleteReviewerSession : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete Reviewer Session</para>
 		/// </summary>
-		public override string DisplayName => "Delete Reviewer Session";
+		public override string DisplayName() => "Delete Reviewer Session";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteReviewerSession</para>
 		/// </summary>
-		public override string ToolName => "DeleteReviewerSession";
+		public override string ToolName() => "DeleteReviewerSession";
 
 		/// <summary>
 		/// <para>Tool Excute Name : Reviewer.DeleteReviewerSession</para>
 		/// </summary>
-		public override string ExcuteName => "Reviewer.DeleteReviewerSession";
+		public override string ExcuteName() => "Reviewer.DeleteReviewerSession";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Reviewer Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Reviewer Tools";
+		public override string ToolboxDisplayName() => "Data Reviewer Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : Reviewer</para>
 		/// </summary>
-		public override string ToolboxAlise => "Reviewer";
+		public override string ToolboxAlise() => "Reviewer";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ReviewerWorkspace, Session, Result! };
+		public override object[] Parameters() => new object[] { ReviewerWorkspace, Session, Result! };
 
 		/// <summary>
 		/// <para>Reviewer Workspace</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object ReviewerWorkspace { get; set; }
 
 		/// <summary>

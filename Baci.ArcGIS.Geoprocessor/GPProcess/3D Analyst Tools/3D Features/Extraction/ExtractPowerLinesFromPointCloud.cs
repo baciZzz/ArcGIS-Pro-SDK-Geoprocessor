@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Extract Power Lines From Point Cloud</para>
+	/// <para>Extract Power Lines From Point Cloud</para>
 	/// <para>Extracts 3D line features modeling power lines </para>
 	/// <para>from classified point cloud data.</para>
 	/// </summary>
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Extract Power Lines From Point Cloud</para>
 		/// </summary>
-		public override string DisplayName => "Extract Power Lines From Point Cloud";
+		public override string DisplayName() => "Extract Power Lines From Point Cloud";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractPowerLinesFromPointCloud</para>
 		/// </summary>
-		public override string ToolName => "ExtractPowerLinesFromPointCloud";
+		public override string ToolName() => "ExtractPowerLinesFromPointCloud";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.ExtractPowerLinesFromPointCloud</para>
 		/// </summary>
-		public override string ExcuteName => "3d.ExtractPowerLinesFromPointCloud";
+		public override string ExcuteName() => "3d.ExtractPowerLinesFromPointCloud";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointCloud, ClassCodes, Out3DLines, PointTolerance!, SeparationDistance!, MaxSamplingGap!, LineTolerance!, WindCorrection!, MinWindSpan!, MaxWindDeviation!, EndPointSearchRadius!, MinLength!, EliminateWind! };
+		public override object[] Parameters() => new object[] { InPointCloud, ClassCodes, Out3DLines, PointTolerance!, SeparationDistance!, MaxSamplingGap!, LineTolerance!, WindCorrection!, MinWindSpan!, MaxWindDeviation!, EndPointSearchRadius!, MinLength!, EliminateWind! };
 
 		/// <summary>
 		/// <para>Input Point Cloud</para>
@@ -87,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 255)]
 		public object ClassCodes { get; set; }
 
 		/// <summary>
@@ -168,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0.10000000000000001, Max = 89.999999000000003)]
 		[Category("Wind Correction")]
 		public object? MaxWindDeviation { get; set; } = "10";
 

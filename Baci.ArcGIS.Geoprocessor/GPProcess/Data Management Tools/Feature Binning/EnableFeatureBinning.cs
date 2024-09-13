@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Enable Feature Binning</para>
+	/// <para>Enable Feature Binning</para>
 	/// <para>Enables feature binning on a feature class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Enable Feature Binning</para>
 		/// </summary>
-		public override string DisplayName => "Enable Feature Binning";
+		public override string DisplayName() => "Enable Feature Binning";
 
 		/// <summary>
 		/// <para>Tool Name : EnableFeatureBinning</para>
 		/// </summary>
-		public override string ToolName => "EnableFeatureBinning";
+		public override string ToolName() => "EnableFeatureBinning";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.EnableFeatureBinning</para>
 		/// </summary>
-		public override string ExcuteName => "management.EnableFeatureBinning";
+		public override string ExcuteName() => "management.EnableFeatureBinning";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, BinType!, BinCoordSys!, SummaryStats!, GenerateStaticCache!, OutFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, BinType!, BinCoordSys!, SummaryStats!, GenerateStaticCache!, OutFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -71,6 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Multipoint", "Point")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

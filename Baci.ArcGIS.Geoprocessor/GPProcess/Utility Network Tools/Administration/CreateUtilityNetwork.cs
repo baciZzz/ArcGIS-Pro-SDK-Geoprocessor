@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Create Utility Network</para>
+	/// <para>Create Utility Network</para>
 	/// <para>Creates a utility network in an enterprise, file, or mobile  geodatabase feature dataset.</para>
 	/// </summary>
 	public class CreateUtilityNetwork : AbstractGPProcess
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Utility Network</para>
 		/// </summary>
-		public override string DisplayName => "Create Utility Network";
+		public override string DisplayName() => "Create Utility Network";
 
 		/// <summary>
 		/// <para>Tool Name : CreateUtilityNetwork</para>
 		/// </summary>
-		public override string ToolName => "CreateUtilityNetwork";
+		public override string ToolName() => "CreateUtilityNetwork";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.CreateUtilityNetwork</para>
 		/// </summary>
-		public override string ExcuteName => "un.CreateUtilityNetwork";
+		public override string ExcuteName() => "un.CreateUtilityNetwork";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureDataset, InUtilityNetworkName, ServiceTerritoryFeatureClass, OutUtilityNetwork! };
+		public override object[] Parameters() => new object[] { InFeatureDataset, InUtilityNetworkName, ServiceTerritoryFeatureClass, OutUtilityNetwork! };
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>
@@ -80,6 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureDataset()]
 		[GPDatasetDomain()]
+		[DataSetType("FeatureDataset")]
 		public object InFeatureDataset { get; set; }
 
 		/// <summary>
@@ -98,6 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object ServiceTerritoryFeatureClass { get; set; }
 
 		/// <summary>

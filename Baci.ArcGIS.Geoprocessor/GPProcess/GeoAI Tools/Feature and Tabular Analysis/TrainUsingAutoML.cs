@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 {
 	/// <summary>
 	/// <para>Train Using AutoML</para>
+	/// <para>Train Using AutoML</para>
 	/// <para>Automates the process and trains a machine learning model to produce a deep learning package (.dlpk file). This includes exploratory data analysis, feature selection, feature engineering, model selection, hyperparameter tuning, and model training. Its outputs include performance metrics of the best model on the training data, as well as the trained  .dlpk model that can be used to predict on a compatible new dataset using the Predict Using AutoML tool.</para>
 	/// </summary>
 	public class TrainUsingAutoML : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// <summary>
 		/// <para>Tool Display Name : Train Using AutoML</para>
 		/// </summary>
-		public override string DisplayName => "Train Using AutoML";
+		public override string DisplayName() => "Train Using AutoML";
 
 		/// <summary>
 		/// <para>Tool Name : TrainUsingAutoML</para>
 		/// </summary>
-		public override string ToolName => "TrainUsingAutoML";
+		public override string ToolName() => "TrainUsingAutoML";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoai.TrainUsingAutoML</para>
 		/// </summary>
-		public override string ExcuteName => "geoai.TrainUsingAutoML";
+		public override string ExcuteName() => "geoai.TrainUsingAutoML";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAI Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAI Tools";
+		public override string ToolboxDisplayName() => "GeoAI Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoai</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoai";
+		public override string ToolboxAlise() => "geoai";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutModel, VariablePredict, TreatVariableAsCategorical!, ExplanatoryVariables!, DistanceFeatures!, ExplanatoryRasters!, TotalTimeLimit!, AutomlMode!, Algorithms!, ValidationPercent!, OutReport!, OutImportance!, OutFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, OutModel, VariablePredict, TreatVariableAsCategorical!, ExplanatoryVariables!, DistanceFeatures!, ExplanatoryRasters!, TotalTimeLimit!, AutomlMode!, Algorithms!, ValidationPercent!, OutReport!, OutImportance!, OutFeatures! };
 
 		/// <summary>
 		/// <para>Input Training Features</para>
@@ -87,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("dlpk", "emd")]
 		public object OutModel { get; set; }
 
 		/// <summary>
@@ -96,6 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
 		public object VariablePredict { get; set; }
 
 		/// <summary>
@@ -126,6 +129,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon")]
+		[FeatureType("Simple")]
 		public object? DistanceFeatures { get; set; }
 
 		/// <summary>
@@ -191,6 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("html")]
 		[Category("Additional Outputs")]
 		public object? OutReport { get; set; }
 

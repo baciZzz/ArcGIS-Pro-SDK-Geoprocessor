@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Export to CAD</para>
+	/// <para>Export to CAD</para>
 	/// <para>Exports features to  new or existing CAD files based on one or more input feature layers or feature classes.</para>
 	/// </summary>
 	public class ExportCAD : AbstractGPProcess
@@ -57,37 +58,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Export to CAD</para>
 		/// </summary>
-		public override string DisplayName => "Export to CAD";
+		public override string DisplayName() => "Export to CAD";
 
 		/// <summary>
 		/// <para>Tool Name : ExportCAD</para>
 		/// </summary>
-		public override string ToolName => "ExportCAD";
+		public override string ToolName() => "ExportCAD";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.ExportCAD</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.ExportCAD";
+		public override string ExcuteName() => "conversion.ExportCAD";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputType, OutputFile, IgnoreFilenames!, AppendToExisting!, SeedFile! };
+		public override object[] Parameters() => new object[] { InFeatures, OutputType, OutputFile, IgnoreFilenames!, AppendToExisting!, SeedFile! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -96,6 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon", "Point", "MultiPatch")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

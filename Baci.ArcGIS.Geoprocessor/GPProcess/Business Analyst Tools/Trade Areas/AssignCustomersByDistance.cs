@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Assign Customers By Distance</para>
+	/// <para>Assign Customers By Distance</para>
 	/// <para>Assigns customers to the closest store based on a selected distance type.</para>
 	/// </summary>
 	public class AssignCustomersByDistance : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Assign Customers By Distance</para>
 		/// </summary>
-		public override string DisplayName => "Assign Customers By Distance";
+		public override string DisplayName() => "Assign Customers By Distance";
 
 		/// <summary>
 		/// <para>Tool Name : AssignCustomersByDistance</para>
 		/// </summary>
-		public override string ToolName => "AssignCustomersByDistance";
+		public override string ToolName() => "AssignCustomersByDistance";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.AssignCustomersByDistance</para>
 		/// </summary>
-		public override string ExcuteName => "ba.AssignCustomersByDistance";
+		public override string ExcuteName() => "ba.AssignCustomersByDistance";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baNetworkSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InStoreFeatures, StoreIdField, OutFeatureClass, LinkField!, DistanceType!, DistanceUnits!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance! };
+		public override object[] Parameters() => new object[] { InFeatures, InStoreFeatures, StoreIdField, OutFeatureClass, LinkField!, DistanceType!, DistanceUnits!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance! };
 
 		/// <summary>
 		/// <para>Input Customer Features</para>
@@ -84,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -93,6 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InStoreFeatures { get; set; }
 
 		/// <summary>
@@ -102,6 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "GUID", "GlobalID")]
 		public object StoreIdField { get; set; }
 
 		/// <summary>

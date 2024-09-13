@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Generate Intersections</para>
+	/// <para>Generate Intersections</para>
 	/// <para>Generates new intersections and updates existing intersections.</para>
 	/// </summary>
 	public class GenerateIntersections : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Intersections</para>
 		/// </summary>
-		public override string DisplayName => "Generate Intersections";
+		public override string DisplayName() => "Generate Intersections";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateIntersections</para>
 		/// </summary>
-		public override string ToolName => "GenerateIntersections";
+		public override string ToolName() => "GenerateIntersections";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.GenerateIntersections</para>
 		/// </summary>
-		public override string ExcuteName => "locref.GenerateIntersections";
+		public override string ExcuteName() => "locref.GenerateIntersections";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InIntersectionFeatureClass, InNetworkLayer!, StartDate!, EditedByCurrentUser!, OutIntersectionFeatureClass!, OutDetailsFile! };
+		public override object[] Parameters() => new object[] { InIntersectionFeatureClass, InNetworkLayer!, StartDate!, EditedByCurrentUser!, OutIntersectionFeatureClass!, OutDetailsFile! };
 
 		/// <summary>
 		/// <para>Intersection Feature Class</para>
@@ -69,6 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InIntersectionFeatureClass { get; set; }
 
 		/// <summary>
@@ -78,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object? InNetworkLayer { get; set; }
 
 		/// <summary>

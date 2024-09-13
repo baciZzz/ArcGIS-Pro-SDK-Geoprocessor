@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Analyze</para>
+	/// <para>Analyze</para>
 	/// <para>Updates database statistics of business tables, feature tables, and delta tables, along with the statistics of those tables' indexes.</para>
 	/// </summary>
 	public class Analyze : AbstractGPProcess
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Analyze</para>
 		/// </summary>
-		public override string DisplayName => "Analyze";
+		public override string DisplayName() => "Analyze";
 
 		/// <summary>
 		/// <para>Tool Name : Analyze</para>
 		/// </summary>
-		public override string ToolName => "Analyze";
+		public override string ToolName() => "Analyze";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Analyze</para>
 		/// </summary>
-		public override string ExcuteName => "management.Analyze";
+		public override string ExcuteName() => "management.Analyze";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, Components, OutDataset! };
+		public override object[] Parameters() => new object[] { InDataset, Components, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

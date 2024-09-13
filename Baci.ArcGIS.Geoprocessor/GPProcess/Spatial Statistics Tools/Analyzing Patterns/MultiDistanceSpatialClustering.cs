@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Multi-Distance Spatial Cluster Analysis (Ripley's K Function)</para>
+	/// <para>Multi-Distance Spatial Cluster Analysis (Ripley's K Function)</para>
 	/// <para>Determines whether features, or the values associated with features, exhibit statistically significant clustering or dispersion over a range of distances.</para>
 	/// </summary>
 	public class MultiDistanceSpatialClustering : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Multi-Distance Spatial Cluster Analysis (Ripley's K Function)</para>
 		/// </summary>
-		public override string DisplayName => "Multi-Distance Spatial Cluster Analysis (Ripley's K Function)";
+		public override string DisplayName() => "Multi-Distance Spatial Cluster Analysis (Ripley's K Function)";
 
 		/// <summary>
 		/// <para>Tool Name : MultiDistanceSpatialClustering</para>
 		/// </summary>
-		public override string ToolName => "MultiDistanceSpatialClustering";
+		public override string ToolName() => "MultiDistanceSpatialClustering";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.MultiDistanceSpatialClustering</para>
 		/// </summary>
-		public override string ExcuteName => "stats.MultiDistanceSpatialClustering";
+		public override string ExcuteName() => "stats.MultiDistanceSpatialClustering";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "randomGenerator", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "randomGenerator", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, OutputTable, NumberOfDistanceBands, ComputeConfidenceEnvelope!, DisplayResultsGraphically!, WeightField!, BeginningDistance!, DistanceIncrement!, BoundaryCorrectionMethod!, StudyAreaMethod!, StudyAreaFeatureClass!, ResultImage! };
+		public override object[] Parameters() => new object[] { InputFeatureClass, OutputTable, NumberOfDistanceBands, ComputeConfidenceEnvelope!, DisplayResultsGraphically!, WeightField!, BeginningDistance!, DistanceIncrement!, BoundaryCorrectionMethod!, StudyAreaMethod!, StudyAreaFeatureClass!, ResultImage! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 100)]
 		public object NumberOfDistanceBands { get; set; } = "10";
 
 		/// <summary>
@@ -128,6 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? WeightField { get; set; }
 
 		/// <summary>
@@ -136,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 9999999)]
 		public object? BeginningDistance { get; set; }
 
 		/// <summary>
@@ -145,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 9999999)]
 		public object? DistanceIncrement { get; set; }
 
 		/// <summary>
@@ -181,6 +183,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? StudyAreaFeatureClass { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Raster World File</para>
+	/// <para>Export Raster World File</para>
 	/// <para>Creates a world file based on the pixel size and the location of the upper left pixel.</para>
 	/// </summary>
 	public class ExportRasterWorldFile : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Raster World File</para>
 		/// </summary>
-		public override string DisplayName => "Export Raster World File";
+		public override string DisplayName() => "Export Raster World File";
 
 		/// <summary>
 		/// <para>Tool Name : ExportRasterWorldFile</para>
 		/// </summary>
-		public override string ToolName => "ExportRasterWorldFile";
+		public override string ToolName() => "ExportRasterWorldFile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ExportRasterWorldFile</para>
 		/// </summary>
-		public override string ExcuteName => "management.ExportRasterWorldFile";
+		public override string ExcuteName() => "management.ExportRasterWorldFile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterDataset, OutRasterDataset! };
+		public override object[] Parameters() => new object[] { InRasterDataset, OutRasterDataset! };
 
 		/// <summary>
 		/// <para>Input Raster Dataset</para>

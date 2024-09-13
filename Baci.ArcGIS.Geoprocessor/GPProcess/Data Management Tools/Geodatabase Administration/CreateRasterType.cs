@@ -12,6 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Create Raster Type</para>
 	/// <para>Create Raster Type</para>
+	/// <para>Create Raster Type</para>
 	/// </summary>
 	[Obsolete()]
 	public class CreateRasterType : AbstractGPProcess
@@ -31,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Raster Type</para>
 		/// </summary>
-		public override string DisplayName => "Create Raster Type";
+		public override string DisplayName() => "Create Raster Type";
 
 		/// <summary>
 		/// <para>Tool Name : CreateRasterType</para>
 		/// </summary>
-		public override string ToolName => "CreateRasterType";
+		public override string ToolName() => "CreateRasterType";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateRasterType</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateRasterType";
+		public override string ExcuteName() => "management.CreateRasterType";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, OutWorkspace! };
+		public override object[] Parameters() => new object[] { InputDatabase, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
@@ -70,6 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Remote Database")]
 		public object InputDatabase { get; set; }
 
 		/// <summary>

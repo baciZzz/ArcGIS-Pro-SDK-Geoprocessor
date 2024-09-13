@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Import MGCP Metadata</para>
+	/// <para>Import MGCP Metadata</para>
 	/// <para>Imports Multinational Geospatial Co-production Program (MGCP) metadata into an MGCP database to perform maintenance on cells and subregions.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Import MGCP Metadata</para>
 		/// </summary>
-		public override string DisplayName => "Import MGCP Metadata";
+		public override string DisplayName() => "Import MGCP Metadata";
 
 		/// <summary>
 		/// <para>Tool Name : ImportMetadata</para>
 		/// </summary>
-		public override string ToolName => "ImportMetadata";
+		public override string ToolName() => "ImportMetadata";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.ImportMetadata</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.ImportMetadata";
+		public override string ExcuteName() => "topographic.ImportMetadata";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Files, InCellFeatures, OutCells! };
+		public override object[] Parameters() => new object[] { Files, InCellFeatures, OutCells! };
 
 		/// <summary>
 		/// <para>Metadata Files</para>
@@ -76,6 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object Files { get; set; }
 
 		/// <summary>
@@ -85,6 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InCellFeatures { get; set; }
 
 		/// <summary>

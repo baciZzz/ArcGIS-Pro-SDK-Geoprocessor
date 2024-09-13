@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export XML Workspace Document</para>
+	/// <para>Export XML Workspace Document</para>
 	/// <para>Creates a readable XML document of the geodatabase contents.</para>
 	/// </summary>
 	public class ExportXMLWorkspaceDocument : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Export XML Workspace Document</para>
 		/// </summary>
-		public override string DisplayName => "Export XML Workspace Document";
+		public override string DisplayName() => "Export XML Workspace Document";
 
 		/// <summary>
 		/// <para>Tool Name : ExportXMLWorkspaceDocument</para>
 		/// </summary>
-		public override string ToolName => "ExportXMLWorkspaceDocument";
+		public override string ToolName() => "ExportXMLWorkspaceDocument";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ExportXMLWorkspaceDocument</para>
 		/// </summary>
-		public override string ExcuteName => "management.ExportXMLWorkspaceDocument";
+		public override string ExcuteName() => "management.ExportXMLWorkspaceDocument";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, OutFile, ExportType!, StorageType!, ExportMetadata! };
+		public override object[] Parameters() => new object[] { InData, OutFile, ExportType!, StorageType!, ExportMetadata! };
 
 		/// <summary>
 		/// <para>Input Data</para>
@@ -82,6 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml", "zip", "z")]
 		public object OutFile { get; set; }
 
 		/// <summary>

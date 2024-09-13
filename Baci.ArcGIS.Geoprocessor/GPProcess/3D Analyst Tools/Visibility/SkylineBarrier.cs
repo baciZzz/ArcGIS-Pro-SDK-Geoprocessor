@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Skyline Barrier</para>
+	/// <para>Skyline Barrier</para>
 	/// <para>Generates a multipatch feature class representing a skyline barrier or shadow volume.</para>
 	/// </summary>
 	public class SkylineBarrier : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Skyline Barrier</para>
 		/// </summary>
-		public override string DisplayName => "Skyline Barrier";
+		public override string DisplayName() => "Skyline Barrier";
 
 		/// <summary>
 		/// <para>Tool Name : SkylineBarrier</para>
 		/// </summary>
-		public override string ToolName => "SkylineBarrier";
+		public override string ToolName() => "SkylineBarrier";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.SkylineBarrier</para>
 		/// </summary>
-		public override string ExcuteName => "3d.SkylineBarrier";
+		public override string ExcuteName() => "3d.SkylineBarrier";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "ZDomain", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "ZDomain", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InObserverPointFeatures, InFeatures, OutFeatureClass, MinRadiusValueOrField!, MaxRadiusValueOrField!, Closed!, BaseElevation!, ProjectToPlane! };
+		public override object[] Parameters() => new object[] { InObserverPointFeatures, InFeatures, OutFeatureClass, MinRadiusValueOrField!, MaxRadiusValueOrField!, Closed!, BaseElevation!, ProjectToPlane! };
 
 		/// <summary>
 		/// <para>Input Observer Point Features</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InObserverPointFeatures { get; set; }
 
 		/// <summary>
@@ -88,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "MultiPatch")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

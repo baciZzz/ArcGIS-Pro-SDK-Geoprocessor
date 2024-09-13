@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Copy Dataset From Multifile Feature Connection</para>
+	/// <para>Copy Dataset From Multifile Feature Connection</para>
 	/// <para>Copies a dataset from a multifile feature connection (MFC) to a feature class.</para>
 	/// </summary>
 	public class CopyDatasetFromBDC : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Copy Dataset From Multifile Feature Connection</para>
 		/// </summary>
-		public override string DisplayName => "Copy Dataset From Multifile Feature Connection";
+		public override string DisplayName() => "Copy Dataset From Multifile Feature Connection";
 
 		/// <summary>
 		/// <para>Tool Name : CopyDatasetFromBDC</para>
 		/// </summary>
-		public override string ToolName => "CopyDatasetFromBDC";
+		public override string ToolName() => "CopyDatasetFromBDC";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.CopyDatasetFromBDC</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.CopyDatasetFromBDC";
+		public override string ExcuteName() => "gapro.CopyDatasetFromBDC";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, Output };
+		public override object[] Parameters() => new object[] { InputLayer, Output };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

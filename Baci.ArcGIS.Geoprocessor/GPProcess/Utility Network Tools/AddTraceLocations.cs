@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Trace Locations</para>
+	/// <para>Add Trace Locations</para>
 	/// <para>Creates a feature class to be used as the starting points and barriers input for the Trace tool.</para>
 	/// </summary>
 	public class AddTraceLocations : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Trace Locations</para>
 		/// </summary>
-		public override string DisplayName => "Add Trace Locations";
+		public override string DisplayName() => "Add Trace Locations";
 
 		/// <summary>
 		/// <para>Tool Name : AddTraceLocations</para>
 		/// </summary>
-		public override string ToolName => "AddTraceLocations";
+		public override string ToolName() => "AddTraceLocations";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddTraceLocations</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddTraceLocations";
+		public override string ExcuteName() => "un.AddTraceLocations";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputZFlag", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputZFlag", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, OutFeatureClass, LoadSelectedFeatures!, ClearTraceLocations!, TraceLocations!, FilterBarrier! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, OutFeatureClass, LoadSelectedFeatures!, ClearTraceLocations!, TraceLocations!, FilterBarrier! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compress</para>
+	/// <para>Compress</para>
 	/// <para>Compresses an enterprise geodatabase by removing states not referenced by a version and redundant rows.</para>
 	/// </summary>
 	public class Compress : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Compress</para>
 		/// </summary>
-		public override string DisplayName => "Compress";
+		public override string DisplayName() => "Compress";
 
 		/// <summary>
 		/// <para>Tool Name : Compress</para>
 		/// </summary>
-		public override string ToolName => "Compress";
+		public override string ToolName() => "Compress";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Compress</para>
 		/// </summary>
-		public override string ExcuteName => "management.Compress";
+		public override string ExcuteName() => "management.Compress";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, OutWorkspace! };
+		public override object[] Parameters() => new object[] { InWorkspace, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
@@ -69,6 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Remote Database")]
 		public object InWorkspace { get; set; }
 
 		/// <summary>

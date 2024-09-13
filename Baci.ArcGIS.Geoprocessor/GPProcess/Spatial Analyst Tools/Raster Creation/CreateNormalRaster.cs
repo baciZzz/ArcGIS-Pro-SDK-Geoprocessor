@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Create Normal Raster</para>
+	/// <para>Create Normal Raster</para>
 	/// <para>Creates a raster of random values with a normal (Gaussian) distribution within the extent and cell size of the analysis window.</para>
 	/// </summary>
 	public class CreateNormalRaster : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Normal Raster</para>
 		/// </summary>
-		public override string DisplayName => "Create Normal Raster";
+		public override string DisplayName() => "Create Normal Raster";
 
 		/// <summary>
 		/// <para>Tool Name : CreateNormalRaster</para>
 		/// </summary>
-		public override string ToolName => "CreateNormalRaster";
+		public override string ToolName() => "CreateNormalRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.CreateNormalRaster</para>
 		/// </summary>
-		public override string ExcuteName => "sa.CreateNormalRaster";
+		public override string ExcuteName() => "sa.CreateNormalRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutRaster, CellSize!, Extent! };
+		public override object[] Parameters() => new object[] { OutRaster, CellSize!, Extent! };
 
 		/// <summary>
 		/// <para>Output raster</para>
@@ -77,7 +78,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? CellSize { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Remove Small Lines</para>
+	/// <para>Remove Small Lines</para>
 	/// <para>Removes lines that are shorter than a specified minimum length and do not connect to other features on one end.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Small Lines</para>
 		/// </summary>
-		public override string DisplayName => "Remove Small Lines";
+		public override string DisplayName() => "Remove Small Lines";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveSmallLines</para>
 		/// </summary>
-		public override string ToolName => "RemoveSmallLines";
+		public override string ToolName() => "RemoveSmallLines";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.RemoveSmallLines</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.RemoveSmallLines";
+		public override string ExcuteName() => "topographic.RemoveSmallLines";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, MinimumLength, MaximumAngle!, InIntersectingFeatures!, Recursive!, OutputFeatures!, SplitInputLines! };
+		public override object[] Parameters() => new object[] { InFeatures, MinimumLength, MaximumAngle!, InIntersectingFeatures!, Recursive!, OutputFeatures!, SplitInputLines! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -76,6 +77,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -101,6 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polyline", "Polygon")]
+		[FeatureType("Simple", "ComplexEdge")]
 		public object? InIntersectingFeatures { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>BIM File To Geodatabase</para>
+	/// <para>BIM File To Geodatabase</para>
 	/// <para>Imports the contents of one or more BIM file workspaces into a single geodatabase feature dataset.</para>
 	/// </summary>
 	public class BIMFileToGeodatabase : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : BIM File To Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "BIM File To Geodatabase";
+		public override string DisplayName() => "BIM File To Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : BIMFileToGeodatabase</para>
 		/// </summary>
-		public override string ToolName => "BIMFileToGeodatabase";
+		public override string ToolName() => "BIMFileToGeodatabase";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.BIMFileToGeodatabase</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.BIMFileToGeodatabase";
+		public override string ExcuteName() => "conversion.BIMFileToGeodatabase";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBimFileWorkspace, OutGdbPath, OutDatasetName, SpatialReference!, Identifier!, OutFeatureDataset!, OutFeatureclassDataset! };
+		public override object[] Parameters() => new object[] { InBimFileWorkspace, OutGdbPath, OutDatasetName, SpatialReference!, Identifier!, OutFeatureDataset!, OutFeatureclassDataset! };
 
 		/// <summary>
 		/// <para>Input BIM File Workspace</para>
@@ -87,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object OutGdbPath { get; set; }
 
 		/// <summary>

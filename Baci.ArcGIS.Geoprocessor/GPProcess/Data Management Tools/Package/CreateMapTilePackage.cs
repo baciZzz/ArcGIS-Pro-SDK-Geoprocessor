@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Map Tile Package</para>
+	/// <para>Create Map Tile Package</para>
 	/// <para>Generates tiles from a map and packages the tiles to create a single compressed tile package (.tpkx file).</para>
 	/// </summary>
 	public class CreateMapTilePackage : AbstractGPProcess
@@ -63,37 +64,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Map Tile Package</para>
 		/// </summary>
-		public override string DisplayName => "Create Map Tile Package";
+		public override string DisplayName() => "Create Map Tile Package";
 
 		/// <summary>
 		/// <para>Tool Name : CreateMapTilePackage</para>
 		/// </summary>
-		public override string ToolName => "CreateMapTilePackage";
+		public override string ToolName() => "CreateMapTilePackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateMapTilePackage</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateMapTilePackage";
+		public override string ExcuteName() => "management.CreateMapTilePackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, ServiceType, OutputFile, FormatType, LevelOfDetail, ServiceFile!, Summary!, Tags!, Extent!, CompressionQuality!, PackageType!, MinLevelOfDetail!, AreaOfInterest! };
+		public override object[] Parameters() => new object[] { InMap, ServiceType, OutputFile, FormatType, LevelOfDetail, ServiceFile!, Summary!, Tags!, Extent!, CompressionQuality!, PackageType!, MinLevelOfDetail!, AreaOfInterest! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -125,6 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("tpk", "tpkx")]
 		public object OutputFile { get; set; }
 
 		/// <summary>
@@ -198,7 +200,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 100)]
 		public object? CompressionQuality { get; set; } = "75";
 
 		/// <summary>

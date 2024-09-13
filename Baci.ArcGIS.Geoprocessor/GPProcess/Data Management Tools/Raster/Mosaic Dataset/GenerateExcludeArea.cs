@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Exclude Area</para>
+	/// <para>Generate Exclude Area</para>
 	/// <para>Masks pixels based on their color or by clipping a range of values. The output of this tool is used as an input to the Color Balance Mosaic Dataset tool to eliminate areas such as clouds and water that can skew the statistics used to color balance multiple images.</para>
 	/// </summary>
 	public class GenerateExcludeArea : AbstractGPProcess
@@ -53,37 +54,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Exclude Area</para>
 		/// </summary>
-		public override string DisplayName => "Generate Exclude Area";
+		public override string DisplayName() => "Generate Exclude Area";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateExcludeArea</para>
 		/// </summary>
-		public override string ToolName => "GenerateExcludeArea";
+		public override string ToolName() => "GenerateExcludeArea";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.GenerateExcludeArea</para>
 		/// </summary>
-		public override string ExcuteName => "management.GenerateExcludeArea";
+		public override string ExcuteName() => "management.GenerateExcludeArea";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, PixelType, GenerateMethod, MaxRed!, MaxGreen!, MaxBlue!, MaxWhite!, MaxBlack!, MaxMagenta!, MaxCyan!, MaxYellow!, PercentageLow!, PercentageHigh! };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, PixelType, GenerateMethod, MaxRed!, MaxGreen!, MaxBlue!, MaxWhite!, MaxBlack!, MaxMagenta!, MaxCyan!, MaxYellow!, PercentageLow!, PercentageHigh! };
 
 		/// <summary>
 		/// <para>Input Raster</para>

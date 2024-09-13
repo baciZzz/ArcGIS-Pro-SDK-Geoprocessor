@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Generate Elevation Bands</para>
+	/// <para>Generate Elevation Bands</para>
 	/// <para>Creates an elevation bands feature class from a Digital Elevation Model (DEM).</para>
 	/// </summary>
 	public class GenerateElevationBands : AbstractGPProcess
@@ -60,37 +61,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Elevation Bands</para>
 		/// </summary>
-		public override string DisplayName => "Generate Elevation Bands";
+		public override string DisplayName() => "Generate Elevation Bands";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateElevationBands</para>
 		/// </summary>
-		public override string ToolName => "GenerateElevationBands";
+		public override string ToolName() => "GenerateElevationBands";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.GenerateElevationBands</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.GenerateElevationBands";
+		public override string ExcuteName() => "topographic.GenerateElevationBands";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InAoi, OutFeatureClass, ContourInterval, MinArea, SmoothTolerance, InHydroFeatures!, NumberOfBands! };
+		public override object[] Parameters() => new object[] { InRaster, InAoi, OutFeatureClass, ContourInterval, MinArea, SmoothTolerance, InHydroFeatures!, NumberOfBands! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -107,6 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InAoi { get; set; }
 
 		/// <summary>
@@ -116,6 +118,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object OutFeatureClass { get; set; }
 
 		/// <summary>
@@ -155,6 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object? InHydroFeatures { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate SDCX Index</para>
+	/// <para>Generate SDCX Index</para>
 	/// <para>Creates an index for a Statistical Data Collection (SDCX). The index will improve performance when using the custom data in analysis tools such as Enrich Layer.</para>
 	/// </summary>
 	public class GenerateSDCXIndex : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate SDCX Index</para>
 		/// </summary>
-		public override string DisplayName => "Generate SDCX Index";
+		public override string DisplayName() => "Generate SDCX Index";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateSDCXIndex</para>
 		/// </summary>
-		public override string ToolName => "GenerateSDCXIndex";
+		public override string ToolName() => "GenerateSDCXIndex";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GenerateSDCXIndex</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GenerateSDCXIndex";
+		public override string ExcuteName() => "ba.GenerateSDCXIndex";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SdcxFile, UpdatedSdcxFile! };
+		public override object[] Parameters() => new object[] { SdcxFile, UpdatedSdcxFile! };
 
 		/// <summary>
 		/// <para>Input SDCX File</para>
@@ -69,6 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("sdcx")]
 		public object SdcxFile { get; set; }
 
 		/// <summary>
@@ -77,6 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("sdcx")]
 		public object? UpdatedSdcxFile { get; set; }
 
 		/// <summary>

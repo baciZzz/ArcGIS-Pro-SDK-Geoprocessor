@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 {
 	/// <summary>
 	/// <para>Train Entity Recognition Model</para>
+	/// <para>Train Entity Recognition Model</para>
 	/// <para>Trains a named entity recognition model to extract a predefined set of entities from raw text.</para>
 	/// </summary>
 	public class TrainEntityRecognitionModel : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// <summary>
 		/// <para>Tool Display Name : Train Entity Recognition Model</para>
 		/// </summary>
-		public override string DisplayName => "Train Entity Recognition Model";
+		public override string DisplayName() => "Train Entity Recognition Model";
 
 		/// <summary>
 		/// <para>Tool Name : TrainEntityRecognitionModel</para>
 		/// </summary>
-		public override string ToolName => "TrainEntityRecognitionModel";
+		public override string ToolName() => "TrainEntityRecognitionModel";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoai.TrainEntityRecognitionModel</para>
 		/// </summary>
-		public override string ExcuteName => "geoai.TrainEntityRecognitionModel";
+		public override string ExcuteName() => "geoai.TrainEntityRecognitionModel";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAI Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAI Tools";
+		public override string ToolboxDisplayName() => "GeoAI Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoai</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoai";
+		public override string ToolboxAlise() => "geoai";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "gpuID", "processorType" };
+		public override string[] ValidEnvironments() => new string[] { "gpuID", "processorType" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFolder, OutModel, PretrainedModelFile!, AddressEntity!, MaxEpochs!, ModelBackbone!, BatchSize!, ModelArguments!, LearningRate!, ValidationPercentage!, StopTraining!, MakeTrainable! };
+		public override object[] Parameters() => new object[] { InFolder, OutModel, PretrainedModelFile!, AddressEntity!, MaxEpochs!, ModelBackbone!, BatchSize!, ModelArguments!, LearningRate!, ValidationPercentage!, StopTraining!, MakeTrainable! };
 
 		/// <summary>
 		/// <para>Input Folder</para>
@@ -107,6 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("emd", "dlpk")]
 		public object? PretrainedModelFile { get; set; }
 
 		/// <summary>

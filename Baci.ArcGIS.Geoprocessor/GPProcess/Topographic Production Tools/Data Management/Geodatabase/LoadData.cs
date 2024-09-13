@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Load Data</para>
+	/// <para>Load Data</para>
 	/// <para>Moves features from one schema to another by loading data from a source to a target workspace.   Data mapping rules described in a cross-reference database are applied during loading.</para>
 	/// </summary>
 	public class LoadData : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Load Data</para>
 		/// </summary>
-		public override string DisplayName => "Load Data";
+		public override string DisplayName() => "Load Data";
 
 		/// <summary>
 		/// <para>Tool Name : LoadData</para>
 		/// </summary>
-		public override string ToolName => "LoadData";
+		public override string ToolName() => "LoadData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.LoadData</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.LoadData";
+		public override string ExcuteName() => "topographic.LoadData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCrossReference, InSources, InTarget, InDatasetMapDefs!, RowLevelErrors!, OutTarget! };
+		public override object[] Parameters() => new object[] { InCrossReference, InSources, InTarget, InDatasetMapDefs!, RowLevelErrors!, OutTarget! };
 
 		/// <summary>
 		/// <para>Input Cross-reference Database</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database")]
 		public object InCrossReference { get; set; }
 
 		/// <summary>
@@ -96,6 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object InTarget { get; set; }
 
 		/// <summary>
@@ -125,6 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object? OutTarget { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Convert Map Server Cache Storage Format</para>
+	/// <para>Convert Map Server Cache Storage Format</para>
 	/// <para>Converts the storage of a web map image layer or of a  map or image service cache between the exploded format and the compactV2  format.</para>
 	/// </summary>
 	public class ConvertMapServerCacheStorageFormat : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Convert Map Server Cache Storage Format</para>
 		/// </summary>
-		public override string DisplayName => "Convert Map Server Cache Storage Format";
+		public override string DisplayName() => "Convert Map Server Cache Storage Format";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertMapServerCacheStorageFormat</para>
 		/// </summary>
-		public override string ToolName => "ConvertMapServerCacheStorageFormat";
+		public override string ToolName() => "ConvertMapServerCacheStorageFormat";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.ConvertMapServerCacheStorageFormat</para>
 		/// </summary>
-		public override string ExcuteName => "server.ConvertMapServerCacheStorageFormat";
+		public override string ExcuteName() => "server.ConvertMapServerCacheStorageFormat";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputService, NumOfCachingServiceInstances!, OutJobUrl! };
+		public override object[] Parameters() => new object[] { InputService, NumOfCachingServiceInstances!, OutJobUrl! };
 
 		/// <summary>
 		/// <para>Input Service</para>

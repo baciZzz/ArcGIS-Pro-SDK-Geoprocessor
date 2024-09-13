@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Apply Angle Directed Layout</para>
+	/// <para>Apply Angle Directed Layout</para>
 	/// <para>Moves a diagram's edges in specified alignment directions.</para>
 	/// </summary>
 	public class ApplyAngleDirectedLayout : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Angle Directed Layout</para>
 		/// </summary>
-		public override string DisplayName => "Apply Angle Directed Layout";
+		public override string DisplayName() => "Apply Angle Directed Layout";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyAngleDirectedLayout</para>
 		/// </summary>
-		public override string ToolName => "ApplyAngleDirectedLayout";
+		public override string ToolName() => "ApplyAngleDirectedLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.ApplyAngleDirectedLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.ApplyAngleDirectedLayout";
+		public override string ExcuteName() => "nd.ApplyAngleDirectedLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved!, IterationsNumber!, NumberOfDirections!, OutNetworkDiagramLayer!, RunAsync! };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, AreContainersPreserved!, IterationsNumber!, NumberOfDirections!, OutNetworkDiagramLayer!, RunAsync! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>

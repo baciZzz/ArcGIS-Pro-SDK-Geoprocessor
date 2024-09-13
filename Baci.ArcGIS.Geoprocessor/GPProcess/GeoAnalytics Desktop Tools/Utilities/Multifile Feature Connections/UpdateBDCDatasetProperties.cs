@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Update Multifile Feature Connection Dataset Properties</para>
+	/// <para>Update Multifile Feature Connection Dataset Properties</para>
 	/// <para>Updates the properties of a multifile feature connection (MFC) dataset. This tool modifies field, geometry, time, and file settings for a specified MFC dataset.</para>
 	/// </summary>
 	public class UpdateBDCDatasetProperties : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Update Multifile Feature Connection Dataset Properties</para>
 		/// </summary>
-		public override string DisplayName => "Update Multifile Feature Connection Dataset Properties";
+		public override string DisplayName() => "Update Multifile Feature Connection Dataset Properties";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateBDCDatasetProperties</para>
 		/// </summary>
-		public override string ToolName => "UpdateBDCDatasetProperties";
+		public override string ToolName() => "UpdateBDCDatasetProperties";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.UpdateBDCDatasetProperties</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.UpdateBDCDatasetProperties";
+		public override string ExcuteName() => "gapro.UpdateBDCDatasetProperties";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { BdcDataset, Expression!, FieldProperties!, GeometryType!, SpatialReference!, GeometryFormatType!, GeometryField!, XField!, YField!, ZField!, TimeType!, TimeZone!, StartTimeFormat!, EndTimeFormat!, FileExtension!, FieldDelimiter!, RecordTerminator!, QuoteCharacter!, HasHeaderRow!, Encoding!, UpdatedBdc! };
+		public override object[] Parameters() => new object[] { BdcDataset, Expression!, FieldProperties!, GeometryType!, SpatialReference!, GeometryFormatType!, GeometryField!, XField!, YField!, ZField!, TimeType!, TimeZone!, StartTimeFormat!, EndTimeFormat!, FileExtension!, FieldDelimiter!, RecordTerminator!, QuoteCharacter!, HasHeaderRow!, Encoding!, UpdatedBdc! };
 
 		/// <summary>
 		/// <para>Multifile Feature Connection Dataset</para>

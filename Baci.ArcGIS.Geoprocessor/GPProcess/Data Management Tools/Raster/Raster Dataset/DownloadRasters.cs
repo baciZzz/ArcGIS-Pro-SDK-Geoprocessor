@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Download Rasters</para>
+	/// <para>Download Rasters</para>
 	/// <para>Downloads the source  files from an image service or mosaic dataset.</para>
 	/// </summary>
 	public class DownloadRasters : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Download Rasters</para>
 		/// </summary>
-		public override string DisplayName => "Download Rasters";
+		public override string DisplayName() => "Download Rasters";
 
 		/// <summary>
 		/// <para>Tool Name : DownloadRasters</para>
 		/// </summary>
-		public override string ToolName => "DownloadRasters";
+		public override string ToolName() => "DownloadRasters";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DownloadRasters</para>
 		/// </summary>
-		public override string ExcuteName => "management.DownloadRasters";
+		public override string ExcuteName() => "management.DownloadRasters";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InImageService, OutFolder, WhereClause!, SelectionFeature!, Clipping!, ConvertRasters!, Format!, CompressionMethod!, CompressionQuality!, MAINTAINFOLDER!, DerivedOutFolder! };
+		public override object[] Parameters() => new object[] { InImageService, OutFolder, WhereClause!, SelectionFeature!, Clipping!, ConvertRasters!, Format!, CompressionMethod!, CompressionQuality!, MAINTAINFOLDER!, DerivedOutFolder! };
 
 		/// <summary>
 		/// <para>Input</para>

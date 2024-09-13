@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Remove Dataset From Multifile Feature Connection</para>
+	/// <para>Remove Dataset From Multifile Feature Connection</para>
 	/// <para>Removes one or more datasets from an existing multifile feature connection (MFC). This tool only removes the dataset from the MFC file, the source data is not modified.</para>
 	/// </summary>
 	public class RemoveDatasetFromBDC : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Dataset From Multifile Feature Connection</para>
 		/// </summary>
-		public override string DisplayName => "Remove Dataset From Multifile Feature Connection";
+		public override string DisplayName() => "Remove Dataset From Multifile Feature Connection";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveDatasetFromBDC</para>
 		/// </summary>
-		public override string ToolName => "RemoveDatasetFromBDC";
+		public override string ToolName() => "RemoveDatasetFromBDC";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.RemoveDatasetFromBDC</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.RemoveDatasetFromBDC";
+		public override string ExcuteName() => "gapro.RemoveDatasetFromBDC";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { BdcDatasets, UpdatedBdc! };
+		public override object[] Parameters() => new object[] { BdcDatasets, UpdatedBdc! };
 
 		/// <summary>
 		/// <para>Multifile Feature Connection Datasets</para>
@@ -76,6 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
 		[GPFileDomain()]
+		[FileTypes("bdc", "mfc")]
 		public object? UpdatedBdc { get; set; }
 
 	}

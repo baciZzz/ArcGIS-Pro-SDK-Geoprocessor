@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compress File Geodatabase Data</para>
+	/// <para>Compress File Geodatabase Data</para>
 	/// <para>Compresses all the contents in a geodatabase, all the contents in a feature</para>
 	/// <para>dataset, or an individual stand-alone feature class or table.</para>
 	/// </summary>
@@ -39,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Compress File Geodatabase Data</para>
 		/// </summary>
-		public override string DisplayName => "Compress File Geodatabase Data";
+		public override string DisplayName() => "Compress File Geodatabase Data";
 
 		/// <summary>
 		/// <para>Tool Name : CompressFileGeodatabaseData</para>
 		/// </summary>
-		public override string ToolName => "CompressFileGeodatabaseData";
+		public override string ToolName() => "CompressFileGeodatabaseData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CompressFileGeodatabaseData</para>
 		/// </summary>
-		public override string ExcuteName => "management.CompressFileGeodatabaseData";
+		public override string ExcuteName() => "management.CompressFileGeodatabaseData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, Lossless, OutData! };
+		public override object[] Parameters() => new object[] { InData, Lossless, OutData! };
 
 		/// <summary>
 		/// <para>Input file geodatabase data</para>

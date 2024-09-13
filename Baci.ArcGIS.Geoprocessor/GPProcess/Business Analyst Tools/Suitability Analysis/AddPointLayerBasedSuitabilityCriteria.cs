@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Add Point Layer Based Suitability Criteria</para>
+	/// <para>Add Point Layer Based Suitability Criteria</para>
 	/// <para>Adds criteria based on spatial relationships between the input layer and a given point layer.</para>
 	/// </summary>
 	public class AddPointLayerBasedSuitabilityCriteria : AbstractGPProcess
@@ -54,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Point Layer Based Suitability Criteria</para>
 		/// </summary>
-		public override string DisplayName => "Add Point Layer Based Suitability Criteria";
+		public override string DisplayName() => "Add Point Layer Based Suitability Criteria";
 
 		/// <summary>
 		/// <para>Tool Name : AddPointLayerBasedSuitabilityCriteria</para>
 		/// </summary>
-		public override string ToolName => "AddPointLayerBasedSuitabilityCriteria";
+		public override string ToolName() => "AddPointLayerBasedSuitabilityCriteria";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.AddPointLayerBasedSuitabilityCriteria</para>
 		/// </summary>
-		public override string ExcuteName => "ba.AddPointLayerBasedSuitabilityCriteria";
+		public override string ExcuteName() => "ba.AddPointLayerBasedSuitabilityCriteria";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baNetworkSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAnalysisLayer, SiteLayerIdField, InPointFeatures, CriteriaType, DistanceType!, Units!, InSiteCentersFeatures!, SiteCentersIdField!, WeightField, StatisticsType!, OutAnalysisLayer!, OutCriteriaName!, CutoffDistance! };
+		public override object[] Parameters() => new object[] { InAnalysisLayer, SiteLayerIdField, InPointFeatures, CriteriaType, DistanceType!, Units!, InSiteCentersFeatures!, SiteCentersIdField!, WeightField, StatisticsType!, OutAnalysisLayer!, OutCriteriaName!, CutoffDistance! };
 
 		/// <summary>
 		/// <para>Input Suitability Analysis Layer</para>
@@ -93,6 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InAnalysisLayer { get; set; }
 
 		/// <summary>
@@ -110,6 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InPointFeatures { get; set; }
 
 		/// <summary>
@@ -150,6 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object? InSiteCentersFeatures { get; set; }
 
 		/// <summary>
@@ -167,6 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double", "Float", "Long", "Short")]
 		public object WeightField { get; set; }
 
 		/// <summary>
@@ -205,6 +210,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? CutoffDistance { get; set; }
 
 		/// <summary>

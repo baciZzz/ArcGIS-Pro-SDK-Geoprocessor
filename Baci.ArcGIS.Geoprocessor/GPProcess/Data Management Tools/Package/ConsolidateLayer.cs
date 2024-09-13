@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Consolidate Layer</para>
+	/// <para>Consolidate Layer</para>
 	/// <para>Consolidates one or more layers by copying all referenced data sources  into a single folder.</para>
 	/// </summary>
 	public class ConsolidateLayer : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Consolidate Layer</para>
 		/// </summary>
-		public override string DisplayName => "Consolidate Layer";
+		public override string DisplayName() => "Consolidate Layer";
 
 		/// <summary>
 		/// <para>Tool Name : ConsolidateLayer</para>
 		/// </summary>
-		public override string ToolName => "ConsolidateLayer";
+		public override string ToolName() => "ConsolidateLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ConsolidateLayer</para>
 		/// </summary>
-		public override string ExcuteName => "management.ConsolidateLayer";
+		public override string ExcuteName() => "management.ConsolidateLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayer, OutputFolder, ConvertData!, ConvertArcsdeData!, Extent!, ApplyExtentToArcsde!, SchemaOnly!, SelectRelatedRows! };
+		public override object[] Parameters() => new object[] { InLayer, OutputFolder, ConvertData!, ConvertArcsdeData!, Extent!, ApplyExtentToArcsde!, SchemaOnly!, SelectRelatedRows! };
 
 		/// <summary>
 		/// <para>Input Layer</para>

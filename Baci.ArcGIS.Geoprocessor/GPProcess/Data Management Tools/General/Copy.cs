@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Copy</para>
+	/// <para>Copy</para>
 	/// <para>Makes a copy of the input data.</para>
 	/// </summary>
 	[Obsolete()]
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Copy</para>
 		/// </summary>
-		public override string DisplayName => "Copy";
+		public override string DisplayName() => "Copy";
 
 		/// <summary>
 		/// <para>Tool Name : Copy</para>
 		/// </summary>
-		public override string ToolName => "Copy";
+		public override string ToolName() => "Copy";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Copy</para>
 		/// </summary>
-		public override string ExcuteName => "management.Copy";
+		public override string ExcuteName() => "management.Copy";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "maintainAttachments", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "maintainAttachments", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, OutData, DataType!, AssociatedData! };
+		public override object[] Parameters() => new object[] { InData, OutData, DataType!, AssociatedData! };
 
 		/// <summary>
 		/// <para>Input Data</para>

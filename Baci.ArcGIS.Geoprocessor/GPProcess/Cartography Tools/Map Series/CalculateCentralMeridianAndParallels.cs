@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Calculate Central Meridian And Parallels</para>
+	/// <para>Calculate Central Meridian And Parallels</para>
 	/// <para>Calculates the central meridian and optional standard parallels based on the center point of a feature's extent; stores this coordinate system as a spatial reference string in a specified text field; and repeats this for a set, or subset, of features. This field can be used with a spatial map series  to update the data frame coordinate system for each page.</para>
 	/// </summary>
 	public class CalculateCentralMeridianAndParallels : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Central Meridian And Parallels</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Central Meridian And Parallels";
+		public override string DisplayName() => "Calculate Central Meridian And Parallels";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateCentralMeridianAndParallels</para>
 		/// </summary>
-		public override string ToolName => "CalculateCentralMeridianAndParallels";
+		public override string ToolName() => "CalculateCentralMeridianAndParallels";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.CalculateCentralMeridianAndParallels</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.CalculateCentralMeridianAndParallels";
+		public override string ExcuteName() => "cartography.CalculateCentralMeridianAndParallels";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InField, StandardOffset!, OutFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, InField, StandardOffset!, OutFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -83,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object InField { get; set; }
 
 		/// <summary>

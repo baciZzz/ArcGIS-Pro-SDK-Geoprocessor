@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Resolve Road Conflicts</para>
+	/// <para>Resolve Road Conflicts</para>
 	/// <para>Resolves graphic conflicts among symbolized road features by adjusting portions of line segments.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Resolve Road Conflicts</para>
 		/// </summary>
-		public override string DisplayName => "Resolve Road Conflicts";
+		public override string DisplayName() => "Resolve Road Conflicts";
 
 		/// <summary>
 		/// <para>Tool Name : ResolveRoadConflicts</para>
 		/// </summary>
-		public override string ToolName => "ResolveRoadConflicts";
+		public override string ToolName() => "ResolveRoadConflicts";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.ResolveRoadConflicts</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.ResolveRoadConflicts";
+		public override string ExcuteName() => "cartography.ResolveRoadConflicts";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicCoordinateSystem", "cartographicPartitions", "referenceScale" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicCoordinateSystem", "cartographicPartitions", "referenceScale" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayers, HierarchyField, OutDisplacementFeatures!, OutLayers! };
+		public override object[] Parameters() => new object[] { InLayers, HierarchyField, OutDisplacementFeatures!, OutLayers! };
 
 		/// <summary>
 		/// <para>Input Road Layers</para>
@@ -76,6 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPLayerDomain()]
+		[GeometryType("Polyline")]
 		public object InLayers { get; set; }
 
 		/// <summary>
@@ -93,6 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object? OutDisplacementFeatures { get; set; }
 
 		/// <summary>

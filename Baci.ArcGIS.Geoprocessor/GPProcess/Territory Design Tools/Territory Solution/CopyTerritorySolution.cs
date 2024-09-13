@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Copy Territory Solution</para>
+	/// <para>Copy Territory Solution</para>
 	/// <para>Creates a copy of a territory solution.</para>
 	/// </summary>
 	public class CopyTerritorySolution : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Display Name : Copy Territory Solution</para>
 		/// </summary>
-		public override string DisplayName => "Copy Territory Solution";
+		public override string DisplayName() => "Copy Territory Solution";
 
 		/// <summary>
 		/// <para>Tool Name : CopyTerritorySolution</para>
 		/// </summary>
-		public override string ToolName => "CopyTerritorySolution";
+		public override string ToolName() => "CopyTerritorySolution";
 
 		/// <summary>
 		/// <para>Tool Excute Name : td.CopyTerritorySolution</para>
 		/// </summary>
-		public override string ExcuteName => "td.CopyTerritorySolution";
+		public override string ExcuteName() => "td.CopyTerritorySolution";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Territory Design Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Territory Design Tools";
+		public override string ToolboxDisplayName() => "Territory Design Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : td</para>
 		/// </summary>
-		public override string ToolboxAlise => "td";
+		public override string ToolboxAlise() => "td";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, TargetGdb, TerritorySolutionName, OutTerritorySolution! };
+		public override object[] Parameters() => new object[] { InTerritorySolution, TargetGdb, TerritorySolutionName, OutTerritorySolution! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>
@@ -87,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database")]
 		public object TargetGdb { get; set; }
 
 		/// <summary>

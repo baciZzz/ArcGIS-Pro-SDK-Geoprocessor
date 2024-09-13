@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Disable Editor Tracking</para>
+	/// <para>Disable Editor Tracking</para>
 	/// <para>Disables editor tracking on a feature class, table, feature dataset, or mosaic dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Disable Editor Tracking</para>
 		/// </summary>
-		public override string DisplayName => "Disable Editor Tracking";
+		public override string DisplayName() => "Disable Editor Tracking";
 
 		/// <summary>
 		/// <para>Tool Name : DisableEditorTracking</para>
 		/// </summary>
-		public override string ToolName => "DisableEditorTracking";
+		public override string ToolName() => "DisableEditorTracking";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DisableEditorTracking</para>
 		/// </summary>
-		public override string ExcuteName => "management.DisableEditorTracking";
+		public override string ExcuteName() => "management.DisableEditorTracking";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, Creator!, CreationDate!, LastEditor!, LastEditDate!, OutDataset! };
+		public override object[] Parameters() => new object[] { InDataset, Creator!, CreationDate!, LastEditor!, LastEditDate!, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

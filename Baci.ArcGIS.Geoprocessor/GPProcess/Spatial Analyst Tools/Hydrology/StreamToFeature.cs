@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Stream to Feature</para>
+	/// <para>Stream to Feature</para>
 	/// <para>Converts a raster representing a linear network to features representing the linear network.</para>
 	/// </summary>
 	public class StreamToFeature : AbstractGPProcess
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Stream to Feature</para>
 		/// </summary>
-		public override string DisplayName => "Stream to Feature";
+		public override string DisplayName() => "Stream to Feature";
 
 		/// <summary>
 		/// <para>Tool Name : StreamToFeature</para>
 		/// </summary>
-		public override string ToolName => "StreamToFeature";
+		public override string ToolName() => "StreamToFeature";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.StreamToFeature</para>
 		/// </summary>
-		public override string ExcuteName => "sa.StreamToFeature";
+		public override string ExcuteName() => "sa.StreamToFeature";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "mask", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "mask", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InStreamRaster, InFlowDirectionRaster, OutPolylineFeatures, Simplify! };
+		public override object[] Parameters() => new object[] { InStreamRaster, InFlowDirectionRaster, OutPolylineFeatures, Simplify! };
 
 		/// <summary>
 		/// <para>Input stream raster</para>
@@ -79,7 +80,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InStreamRaster { get; set; }
 
 		/// <summary>
@@ -89,7 +93,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InFlowDirectionRaster { get; set; }
 
 		/// <summary>

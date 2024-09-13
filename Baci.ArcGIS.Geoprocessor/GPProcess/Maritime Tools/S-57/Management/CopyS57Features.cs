@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Copy S-57 Features</para>
+	/// <para>Copy S-57 Features</para>
 	/// <para>Copies features from a layer or multiple</para>
 	/// <para>layers to a target geodatabase.</para>
 	/// </summary>
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Display Name : Copy S-57 Features</para>
 		/// </summary>
-		public override string DisplayName => "Copy S-57 Features";
+		public override string DisplayName() => "Copy S-57 Features";
 
 		/// <summary>
 		/// <para>Tool Name : CopyS57Features</para>
 		/// </summary>
-		public override string ToolName => "CopyS57Features";
+		public override string ToolName() => "CopyS57Features";
 
 		/// <summary>
 		/// <para>Tool Excute Name : maritime.CopyS57Features</para>
 		/// </summary>
-		public override string ExcuteName => "maritime.CopyS57Features";
+		public override string ExcuteName() => "maritime.CopyS57Features";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Maritime Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Maritime Tools";
+		public override string ToolboxDisplayName() => "Maritime Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : maritime</para>
 		/// </summary>
-		public override string ToolboxAlise => "maritime";
+		public override string ToolboxAlise() => "maritime";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, TargetWorkspace, CompilationScale!, UpdatedWorkspace! };
+		public override object[] Parameters() => new object[] { InFeatures, TargetWorkspace, CompilationScale!, UpdatedWorkspace! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -83,6 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object TargetWorkspace { get; set; }
 
 		/// <summary>

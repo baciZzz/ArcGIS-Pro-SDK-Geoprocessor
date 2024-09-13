@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Match Photos To Rows By Time</para>
+	/// <para>Match Photos To Rows By Time</para>
 	/// <para>Matches photo files to table or feature class rows according to the photo and row time stamps. The row with the time stamp closest to the capture time of a photo will be matched to that photo. Creates a new table containing the ObjectIDs from the input rows and their matching photo paths. Optionally adds matching photo files to the rows of the input table as geodatabase attachments.</para>
 	/// </summary>
 	public class MatchPhotosToRowsByTime : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Match Photos To Rows By Time</para>
 		/// </summary>
-		public override string DisplayName => "Match Photos To Rows By Time";
+		public override string DisplayName() => "Match Photos To Rows By Time";
 
 		/// <summary>
 		/// <para>Tool Name : MatchPhotosToRowsByTime</para>
 		/// </summary>
-		public override string ToolName => "MatchPhotosToRowsByTime";
+		public override string ToolName() => "MatchPhotosToRowsByTime";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MatchPhotosToRowsByTime</para>
 		/// </summary>
-		public override string ExcuteName => "management.MatchPhotosToRowsByTime";
+		public override string ExcuteName() => "management.MatchPhotosToRowsByTime";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFolder, InputTable, TimeField, OutputTable, UnmatchedPhotosTable!, AddPhotosAsAttachments!, TimeTolerance!, ClockOffset! };
+		public override object[] Parameters() => new object[] { InputFolder, InputTable, TimeField, OutputTable, UnmatchedPhotosTable!, AddPhotosAsAttachments!, TimeTolerance!, ClockOffset! };
 
 		/// <summary>
 		/// <para>Input Folder</para>
@@ -100,6 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object TimeField { get; set; }
 
 		/// <summary>

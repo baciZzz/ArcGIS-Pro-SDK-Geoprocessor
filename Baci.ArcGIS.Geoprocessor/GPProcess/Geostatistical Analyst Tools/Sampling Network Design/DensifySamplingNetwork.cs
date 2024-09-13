@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Densify Sampling Network</para>
+	/// <para>Densify Sampling Network</para>
 	/// <para>Uses a predefined geostatistical kriging layer to determine where new monitoring stations should be built.  It can also be used to determine which monitoring stations should be removed from an existing network.</para>
 	/// </summary>
 	public class DensifySamplingNetwork : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Densify Sampling Network</para>
 		/// </summary>
-		public override string DisplayName => "Densify Sampling Network";
+		public override string DisplayName() => "Densify Sampling Network";
 
 		/// <summary>
 		/// <para>Tool Name : DensifySamplingNetwork</para>
 		/// </summary>
-		public override string ToolName => "DensifySamplingNetwork";
+		public override string ToolName() => "DensifySamplingNetwork";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.DensifySamplingNetwork</para>
 		/// </summary>
-		public override string ExcuteName => "ga.DensifySamplingNetwork";
+		public override string ExcuteName() => "ga.DensifySamplingNetwork";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayer, NumberOutputPoints, OutFeatureClass, SelectionCriteria!, Threshold!, InWeightRaster!, InCandidatePointFeatures!, InhibitionDistance! };
+		public override object[] Parameters() => new object[] { InGeostatLayer, NumberOutputPoints, OutFeatureClass, SelectionCriteria!, Threshold!, InWeightRaster!, InCandidatePointFeatures!, InhibitionDistance! };
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
@@ -86,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 2147483647)]
 		public object NumberOutputPoints { get; set; }
 
 		/// <summary>
@@ -106,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <para>Upper quartile threshold— Upper quartile threshold criteria</para>
 		/// <para>The Standard error of prediction option will give extra weight to locations where the standard error of prediction is large. The Standard error threshold, Lower quartile threshold, and Upper quartile threshold options are useful when there is a critical threshold value for the variable under study (such as the highest admissible ozone level). The Standard error threshold option will give extra weight to locations whose values are close to the threshold. The Lower quartile threshold option will give extra weight to locations that are least likely to exceed the critical threshold. The Upper quartile threshold option will give extra weight to locations that are most likely to exceed the critical threshold.</para>
 		/// <para>When the Selection criteria is set to Standard error threshold, Lower quartile threshold, or Upper quartile threshold, the Threshold value parameter will become available, allowing you specify your threshold of interest.</para>
-		/// <para>The equations for each option are:<code>Standard error of prediction = stderr Standard error threshold = stderr(s)(1 - 2 · abs(prob[Z(s) &gt; threshold] - 0.5)) Lower quartile threshold = (Z0.75(s) - Z0.25(s)) · (prob[Z(s) &lt; threshold]) Upper quartile threshold = (Z0.75(s) - Z0.25(s)) · (prob[Z(s) &gt; threshold])</code></para>
+		/// <para>The equations for each option are:&lt;code&gt;Standard error of prediction = stderr Standard error threshold = stderr(s)(1 - 2 · abs(prob[Z(s) &gt; threshold] - 0.5)) Lower quartile threshold = (Z0.75(s) - Z0.25(s)) · (prob[Z(s) &lt; threshold]) Upper quartile threshold = (Z0.75(s) - Z0.25(s)) · (prob[Z(s) &gt; threshold])&lt;/code&gt;</para>
 		/// <para><see cref="SelectionCriteriaEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -121,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 2.2250738585072014e-308, Max = 1.7976931348623157e+308)]
 		public object? Threshold { get; set; }
 
 		/// <summary>
@@ -139,6 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object? InCandidatePointFeatures { get; set; }
 
 		/// <summary>
@@ -148,6 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? InhibitionDistance { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Iterate Rasters</para>
+	/// <para>Iterate Rasters</para>
 	/// <para>Iterates over rasters in a workspace.</para>
 	/// </summary>
 	public class IterateRasters : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : Iterate Rasters</para>
 		/// </summary>
-		public override string DisplayName => "Iterate Rasters";
+		public override string DisplayName() => "Iterate Rasters";
 
 		/// <summary>
 		/// <para>Tool Name : IterateRasters</para>
 		/// </summary>
-		public override string ToolName => "IterateRasters";
+		public override string ToolName() => "IterateRasters";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.IterateRasters</para>
 		/// </summary>
-		public override string ExcuteName => "mb.IterateRasters";
+		public override string ExcuteName() => "mb.IterateRasters";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, Wildcard!, RasterFormat!, Recursive!, Raster!, Name! };
+		public override object[] Parameters() => new object[] { InWorkspace, Wildcard!, RasterFormat!, Recursive!, Raster!, Name! };
 
 		/// <summary>
 		/// <para>Workspace</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Set Default Subtype</para>
+	/// <para>Set Default Subtype</para>
 	/// <para>Sets the default value or code for the input table's subtype.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Default Subtype</para>
 		/// </summary>
-		public override string DisplayName => "Set Default Subtype";
+		public override string DisplayName() => "Set Default Subtype";
 
 		/// <summary>
 		/// <para>Tool Name : SetDefaultSubtype</para>
 		/// </summary>
-		public override string ToolName => "SetDefaultSubtype";
+		public override string ToolName() => "SetDefaultSubtype";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SetDefaultSubtype</para>
 		/// </summary>
-		public override string ExcuteName => "management.SetDefaultSubtype";
+		public override string ExcuteName() => "management.SetDefaultSubtype";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, SubtypeCode, OutTable! };
+		public override object[] Parameters() => new object[] { InTable, SubtypeCode, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>

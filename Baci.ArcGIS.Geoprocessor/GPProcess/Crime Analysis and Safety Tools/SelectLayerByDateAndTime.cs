@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Select Layer By Date And Time</para>
+	/// <para>Select Layer By Date And Time</para>
 	/// <para>Selects records based on date and time ranges or date properties, for example, single date, time range, time period, days of the week, month, or year.</para>
 	/// </summary>
 	public class SelectLayerByDateAndTime : AbstractGPProcess
@@ -48,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Display Name : Select Layer By Date And Time</para>
 		/// </summary>
-		public override string DisplayName => "Select Layer By Date And Time";
+		public override string DisplayName() => "Select Layer By Date And Time";
 
 		/// <summary>
 		/// <para>Tool Name : SelectLayerByDateAndTime</para>
 		/// </summary>
-		public override string ToolName => "SelectLayerByDateAndTime";
+		public override string ToolName() => "SelectLayerByDateAndTime";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ca.SelectLayerByDateAndTime</para>
 		/// </summary>
-		public override string ExcuteName => "ca.SelectLayerByDateAndTime";
+		public override string ExcuteName() => "ca.SelectLayerByDateAndTime";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Crime Analysis and Safety Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Crime Analysis and Safety Tools";
+		public override string ToolboxDisplayName() => "Crime Analysis and Safety Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ca</para>
 		/// </summary>
-		public override string ToolboxAlise => "ca";
+		public override string ToolboxAlise() => "ca";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayerOrView, SelectionType, TimeType, DateField!, StartDateField!, EndDateField!, SelectionOptions!, DateSelectionType!, SingleDate!, StartDate!, EndDate!, UseSystemTime!, TimeSlice!, StartTime!, EndTime!, DaysOfWeek!, Months!, Years!, OutLayerOrView!, Count! };
+		public override object[] Parameters() => new object[] { InLayerOrView, SelectionType, TimeType, DateField!, StartDateField!, EndDateField!, SelectionOptions!, DateSelectionType!, SingleDate!, StartDate!, EndDate!, UseSystemTime!, TimeSlice!, StartTime!, EndTime!, DaysOfWeek!, Months!, Years!, OutLayerOrView!, Count! };
 
 		/// <summary>
 		/// <para>Input Rows</para>
@@ -122,6 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object? DateField { get; set; }
 
 		/// <summary>
@@ -131,6 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object? StartDateField { get; set; }
 
 		/// <summary>
@@ -140,6 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object? EndDateField { get; set; }
 
 		/// <summary>
@@ -298,7 +302,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 9999)]
 		[Category("Select by Year")]
 		public object? Years { get; set; }
 

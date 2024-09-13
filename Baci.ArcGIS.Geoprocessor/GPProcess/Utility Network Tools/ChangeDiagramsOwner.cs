@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Change Diagrams Owner</para>
+	/// <para>Change Diagrams Owner</para>
 	/// <para>Change the diagrams owner</para>
 	/// </summary>
 	[Obsolete()]
@@ -34,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Change Diagrams Owner</para>
 		/// </summary>
-		public override string DisplayName => "Change Diagrams Owner";
+		public override string DisplayName() => "Change Diagrams Owner";
 
 		/// <summary>
 		/// <para>Tool Name : ChangeDiagramsOwner</para>
 		/// </summary>
-		public override string ToolName => "ChangeDiagramsOwner";
+		public override string ToolName() => "ChangeDiagramsOwner";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.ChangeDiagramsOwner</para>
 		/// </summary>
-		public override string ExcuteName => "un.ChangeDiagramsOwner";
+		public override string ExcuteName() => "un.ChangeDiagramsOwner";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDiagrams, TargetOwner, SourceOwner!, DiagramNames!, OutDiagrams! };
+		public override object[] Parameters() => new object[] { InDiagrams, TargetOwner, SourceOwner!, DiagramNames!, OutDiagrams! };
 
 		/// <summary>
 		/// <para>Input Network or Network Diagram Layer</para>

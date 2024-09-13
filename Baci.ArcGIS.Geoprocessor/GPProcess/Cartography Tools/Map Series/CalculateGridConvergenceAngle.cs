@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Calculate Grid Convergence Angle</para>
+	/// <para>Calculate Grid Convergence Angle</para>
 	/// <para>Calculates the rotation angle for true north based on the center point of each feature in a feature class and populates this value in a specified field. This field can be used in conjunction with a spatial map series to rotate each map to true north.</para>
 	/// </summary>
 	public class CalculateGridConvergenceAngle : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Grid Convergence Angle</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Grid Convergence Angle";
+		public override string DisplayName() => "Calculate Grid Convergence Angle";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateGridConvergenceAngle</para>
 		/// </summary>
-		public override string ToolName => "CalculateGridConvergenceAngle";
+		public override string ToolName() => "CalculateGridConvergenceAngle";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.CalculateGridConvergenceAngle</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.CalculateGridConvergenceAngle";
+		public override string ExcuteName() => "cartography.CalculateGridConvergenceAngle";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, AngleField, RotationMethod!, CoordinateSysField!, OutFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, AngleField, RotationMethod!, CoordinateSysField!, OutFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -83,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double", "Short", "Long")]
 		public object AngleField { get; set; }
 
 		/// <summary>
@@ -105,6 +108,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
+		[KeyField("NONE")]
 		public object? CoordinateSysField { get; set; } = "NONE";
 
 		/// <summary>

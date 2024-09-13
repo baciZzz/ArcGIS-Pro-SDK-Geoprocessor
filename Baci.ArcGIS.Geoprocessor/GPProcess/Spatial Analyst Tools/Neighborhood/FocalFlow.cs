@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Focal Flow</para>
+	/// <para>Focal Flow</para>
 	/// <para>Determines the flow of the values in the input raster within each cell's immediate neighborhood.</para>
 	/// </summary>
 	public class FocalFlow : AbstractGPProcess
@@ -38,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Focal Flow</para>
 		/// </summary>
-		public override string DisplayName => "Focal Flow";
+		public override string DisplayName() => "Focal Flow";
 
 		/// <summary>
 		/// <para>Tool Name : FocalFlow</para>
 		/// </summary>
-		public override string ToolName => "FocalFlow";
+		public override string ToolName() => "FocalFlow";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.FocalFlow</para>
 		/// </summary>
-		public override string ExcuteName => "sa.FocalFlow";
+		public override string ExcuteName() => "sa.FocalFlow";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurfaceRaster, OutRaster, ThresholdValue! };
+		public override object[] Parameters() => new object[] { InSurfaceRaster, OutRaster, ThresholdValue! };
 
 		/// <summary>
 		/// <para>Input surface raster</para>
@@ -78,7 +79,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InSurfaceRaster { get; set; }
 
 		/// <summary>
@@ -99,6 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? ThresholdValue { get; set; } = "0";
 
 		/// <summary>

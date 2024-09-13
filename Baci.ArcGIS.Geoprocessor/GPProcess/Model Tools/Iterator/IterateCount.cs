@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>For</para>
+	/// <para>For</para>
 	/// <para>Iterates over a starting and ending value by a given value.</para>
 	/// </summary>
 	public class IterateCount : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : For</para>
 		/// </summary>
-		public override string DisplayName => "For";
+		public override string DisplayName() => "For";
 
 		/// <summary>
 		/// <para>Tool Name : IterateCount</para>
 		/// </summary>
-		public override string ToolName => "IterateCount";
+		public override string ToolName() => "IterateCount";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.IterateCount</para>
 		/// </summary>
-		public override string ExcuteName => "mb.IterateCount";
+		public override string ExcuteName() => "mb.IterateCount";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { From, To, Increment, Value! };
+		public override object[] Parameters() => new object[] { From, To, Increment, Value! };
 
 		/// <summary>
 		/// <para>From Value</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Relative Mainline Layout</para>
+	/// <para>Add Relative Mainline Layout</para>
 	/// <para>Adds the Relative Mainline Layout algorithm to the list of layouts to be automatically chained at the end of the building of diagrams based on a given template. This tool also presets the Relative Mainline Layout algorithm parameters for any diagram based on that template.</para>
 	/// </summary>
 	public class AddRelativeMainlineLayout : AbstractGPProcess
@@ -48,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Relative Mainline Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Relative Mainline Layout";
+		public override string DisplayName() => "Add Relative Mainline Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddRelativeMainlineLayout</para>
 		/// </summary>
-		public override string ToolName => "AddRelativeMainlineLayout";
+		public override string ToolName() => "AddRelativeMainlineLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddRelativeMainlineLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddRelativeMainlineLayout";
+		public override string ExcuteName() => "nd.AddRelativeMainlineLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, LineAttribute, MainlineDirection!, OffsetBetweenBranches!, BreakpointAngle!, TypeAttribute!, MainlineValues!, BranchValues!, ExcludedValues!, IsCompressing!, CompressionRatio!, MinimalDistance!, AlignmentAttribute!, InitialDistances!, LengthAttribute!, OutUtilityNetwork!, OutTemplateName! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, LineAttribute, MainlineDirection!, OffsetBetweenBranches!, BreakpointAngle!, TypeAttribute!, MainlineValues!, BranchValues!, ExcludedValues!, IsCompressing!, CompressionRatio!, MinimalDistance!, AlignmentAttribute!, InitialDistances!, LengthAttribute!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>

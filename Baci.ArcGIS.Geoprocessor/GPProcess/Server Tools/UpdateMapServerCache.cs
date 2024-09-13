@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Update Map Server Cache</para>
+	/// <para>Update Map Server Cache</para>
 	/// <para>Updates a pre-rendered tiled cache for Map Server.</para>
 	/// </summary>
 	[Obsolete()]
@@ -51,37 +52,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Update Map Server Cache</para>
 		/// </summary>
-		public override string DisplayName => "Update Map Server Cache";
+		public override string DisplayName() => "Update Map Server Cache";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateMapServerCache</para>
 		/// </summary>
-		public override string ToolName => "UpdateMapServerCache";
+		public override string ToolName() => "UpdateMapServerCache";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.UpdateMapServerCache</para>
 		/// </summary>
-		public override string ExcuteName => "server.UpdateMapServerCache";
+		public override string ExcuteName() => "server.UpdateMapServerCache";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ServerName, ObjectName, DataFrame, Layer, ConstrainingExtent!, Levels, UpdateMode, ThreadCount!, Antialiasing!, OutServerName!, OutObjectName! };
+		public override object[] Parameters() => new object[] { ServerName, ObjectName, DataFrame, Layer, ConstrainingExtent!, Levels, UpdateMode, ThreadCount!, Antialiasing!, OutServerName!, OutObjectName! };
 
 		/// <summary>
 		/// <para>Host</para>

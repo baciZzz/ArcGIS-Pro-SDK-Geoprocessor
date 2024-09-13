@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Subdivide Polygon</para>
+	/// <para>Subdivide Polygon</para>
 	/// <para>Divides polygon features into a number of equal areas or parts.</para>
 	/// </summary>
 	public class SubdividePolygon : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Subdivide Polygon</para>
 		/// </summary>
-		public override string DisplayName => "Subdivide Polygon";
+		public override string DisplayName() => "Subdivide Polygon";
 
 		/// <summary>
 		/// <para>Tool Name : SubdividePolygon</para>
 		/// </summary>
-		public override string ToolName => "SubdividePolygon";
+		public override string ToolName() => "SubdividePolygon";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SubdividePolygon</para>
 		/// </summary>
-		public override string ExcuteName => "management.SubdividePolygon";
+		public override string ExcuteName() => "management.SubdividePolygon";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPolygons, OutFeatureClass, Method, NumAreas!, TargetArea!, TargetWidth!, SplitAngle!, SubdivisionType! };
+		public override object[] Parameters() => new object[] { InPolygons, OutFeatureClass, Method, NumAreas!, TargetArea!, TargetWidth!, SplitAngle!, SubdivisionType! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -82,6 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InPolygons { get; set; }
 
 		/// <summary>
@@ -111,6 +113,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 2)]
+		[High(Allow = false, Value = 2147483647)]
 		public object? NumAreas { get; set; }
 
 		/// <summary>

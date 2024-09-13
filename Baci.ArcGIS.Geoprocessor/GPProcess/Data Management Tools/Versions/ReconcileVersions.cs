@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Reconcile Versions</para>
+	/// <para>Reconcile Versions</para>
 	/// <para>Reconciles a version or multiple versions with a target version.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Reconcile Versions</para>
 		/// </summary>
-		public override string DisplayName => "Reconcile Versions";
+		public override string DisplayName() => "Reconcile Versions";
 
 		/// <summary>
 		/// <para>Tool Name : ReconcileVersions</para>
 		/// </summary>
-		public override string ToolName => "ReconcileVersions";
+		public override string ToolName() => "ReconcileVersions";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ReconcileVersions</para>
 		/// </summary>
-		public override string ExcuteName => "management.ReconcileVersions";
+		public override string ExcuteName() => "management.ReconcileVersions";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, ReconcileMode, TargetVersion!, EditVersions!, AcquireLocks!, AbortIfConflicts!, ConflictDefinition!, ConflictResolution!, WithPost!, WithDelete!, OutLog!, OutWorkspace!, ProceedIfConflictsNotReviewed!, ReconcileCheckoutVersions! };
+		public override object[] Parameters() => new object[] { InputDatabase, ReconcileMode, TargetVersion!, EditVersions!, AcquireLocks!, AbortIfConflicts!, ConflictDefinition!, ConflictResolution!, WithPost!, WithDelete!, OutLog!, OutWorkspace!, ProceedIfConflictsNotReviewed!, ReconcileCheckoutVersions! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -82,6 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Remote Database", "Feature Service")]
 		public object InputDatabase { get; set; }
 
 		/// <summary>

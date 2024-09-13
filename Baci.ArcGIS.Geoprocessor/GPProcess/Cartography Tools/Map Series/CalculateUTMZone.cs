@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Calculate UTM Zone</para>
+	/// <para>Calculate UTM Zone</para>
 	/// <para>Calculates the UTM zone of each feature based on the center point and stores this spatial reference string in a specified field. This field can be used with a spatial map series  to update the spatial reference to the correct UTM zone for each map.</para>
 	/// </summary>
 	public class CalculateUTMZone : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate UTM Zone</para>
 		/// </summary>
-		public override string DisplayName => "Calculate UTM Zone";
+		public override string DisplayName() => "Calculate UTM Zone";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateUTMZone</para>
 		/// </summary>
-		public override string ToolName => "CalculateUTMZone";
+		public override string ToolName() => "CalculateUTMZone";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.CalculateUTMZone</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.CalculateUTMZone";
+		public override string ExcuteName() => "cartography.CalculateUTMZone";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InField, OutFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, InField, OutFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -83,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object InField { get; set; }
 
 		/// <summary>

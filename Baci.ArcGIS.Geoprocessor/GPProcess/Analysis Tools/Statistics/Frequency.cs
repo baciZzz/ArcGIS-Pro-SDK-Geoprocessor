@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Frequency</para>
+	/// <para>Frequency</para>
 	/// <para>Reads a table and a set of fields and creates a new table containing unique field values and the number of occurrences of each unique field value.</para>
 	/// </summary>
 	public class Frequency : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Frequency</para>
 		/// </summary>
-		public override string DisplayName => "Frequency";
+		public override string DisplayName() => "Frequency";
 
 		/// <summary>
 		/// <para>Tool Name : Frequency</para>
 		/// </summary>
-		public override string ToolName => "Frequency";
+		public override string ToolName() => "Frequency";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.Frequency</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.Frequency";
+		public override string ExcuteName() => "analysis.Frequency";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutTable, FrequencyFields, SummaryFields! };
+		public override object[] Parameters() => new object[] { InTable, OutTable, FrequencyFields, SummaryFields! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -103,6 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? SummaryFields { get; set; }
 
 		/// <summary>

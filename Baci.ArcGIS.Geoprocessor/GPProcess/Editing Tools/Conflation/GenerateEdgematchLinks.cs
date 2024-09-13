@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Generate Edgematch Links</para>
+	/// <para>Generate Edgematch Links</para>
 	/// <para>Finds matching but disconnected line features along the edges of the source data's area and its adjacent data's area, and generates edgematch links from the source lines to the matched adjacent lines.</para>
 	/// </summary>
 	public class GenerateEdgematchLinks : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Edgematch Links</para>
 		/// </summary>
-		public override string DisplayName => "Generate Edgematch Links";
+		public override string DisplayName() => "Generate Edgematch Links";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateEdgematchLinks</para>
 		/// </summary>
-		public override string ToolName => "GenerateEdgematchLinks";
+		public override string ToolName() => "GenerateEdgematchLinks";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.GenerateEdgematchLinks</para>
 		/// </summary>
-		public override string ExcuteName => "edit.GenerateEdgematchLinks";
+		public override string ExcuteName() => "edit.GenerateEdgematchLinks";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SourceFeatures, AdjacentFeatures, OutFeatureClass, SearchDistance, MatchFields! };
+		public override object[] Parameters() => new object[] { SourceFeatures, AdjacentFeatures, OutFeatureClass, SearchDistance, MatchFields! };
 
 		/// <summary>
 		/// <para>Source Features</para>
@@ -84,6 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object SourceFeatures { get; set; }
 
 		/// <summary>
@@ -93,6 +96,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object AdjacentFeatures { get; set; }
 
 		/// <summary>
@@ -118,6 +123,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "Blob", "Raster", "XML")]
+		[ExcludeField("SHAPE_Length", "SHAPE_Area")]
 		public object? MatchFields { get; set; }
 
 		/// <summary>

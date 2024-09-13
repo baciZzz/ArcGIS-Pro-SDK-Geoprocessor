@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Compute Confusion Matrix</para>
+	/// <para>Compute Confusion Matrix</para>
 	/// <para>Computes a confusion matrix with errors of omission and commission and derives a kappa index of agreement, Intersection over Union (IoU),  and an overall accuracy between the classified map and the reference data.</para>
 	/// </summary>
 	public class ComputeConfusionMatrix : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Compute Confusion Matrix</para>
 		/// </summary>
-		public override string DisplayName => "Compute Confusion Matrix";
+		public override string DisplayName() => "Compute Confusion Matrix";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeConfusionMatrix</para>
 		/// </summary>
-		public override string ToolName => "ComputeConfusionMatrix";
+		public override string ToolName() => "ComputeConfusionMatrix";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.ComputeConfusionMatrix</para>
 		/// </summary>
-		public override string ExcuteName => "sa.ComputeConfusionMatrix";
+		public override string ExcuteName() => "sa.ComputeConfusionMatrix";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAccuracyAssessmentPoints, OutConfusionMatrix };
+		public override object[] Parameters() => new object[] { InAccuracyAssessmentPoints, OutConfusionMatrix };
 
 		/// <summary>
 		/// <para>Input Accuracy Assessment Points</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Interpolate Shape</para>
+	/// <para>Interpolate Shape</para>
 	/// <para>Creates 3D features by interpolating z-values from a surface.</para>
 	/// </summary>
 	public class InterpolateShape : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Interpolate Shape</para>
 		/// </summary>
-		public override string DisplayName => "Interpolate Shape";
+		public override string DisplayName() => "Interpolate Shape";
 
 		/// <summary>
 		/// <para>Tool Name : InterpolateShape</para>
 		/// </summary>
-		public override string ToolName => "InterpolateShape";
+		public override string ToolName() => "InterpolateShape";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.InterpolateShape</para>
 		/// </summary>
-		public override string ExcuteName => "sa.InterpolateShape";
+		public override string ExcuteName() => "sa.InterpolateShape";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, InFeatureClass, OutFeatureClass, SampleDistance!, ZFactor!, Method!, VerticesOnly!, PyramidLevelResolution!, PreserveFeatures! };
+		public override object[] Parameters() => new object[] { InSurface, InFeatureClass, OutFeatureClass, SampleDistance!, ZFactor!, Method!, VerticesOnly!, PyramidLevelResolution!, PreserveFeatures! };
 
 		/// <summary>
 		/// <para>Input Surface</para>
@@ -87,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon", "Point", "Multipoint")]
 		public object InFeatureClass { get; set; }
 
 		/// <summary>

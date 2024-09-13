@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Density-based Clustering</para>
+	/// <para>Density-based Clustering</para>
 	/// <para>Finds clusters of point features within surrounding noise based on their spatial distribution. Time can also be incorporated to find space-time clusters.</para>
 	/// </summary>
 	public class DensityBasedClustering : AbstractGPProcess
@@ -49,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Density-based Clustering</para>
 		/// </summary>
-		public override string DisplayName => "Density-based Clustering";
+		public override string DisplayName() => "Density-based Clustering";
 
 		/// <summary>
 		/// <para>Tool Name : DensityBasedClustering</para>
 		/// </summary>
-		public override string ToolName => "DensityBasedClustering";
+		public override string ToolName() => "DensityBasedClustering";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.DensityBasedClustering</para>
 		/// </summary>
-		public override string ExcuteName => "stats.DensityBasedClustering";
+		public override string ExcuteName() => "stats.DensityBasedClustering";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "outputZFlag", "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "outputZFlag", "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFeatures, ClusterMethod, MinFeaturesCluster, SearchDistance!, ClusterSensitivity!, TimeField!, SearchTimeInterval! };
+		public override object[] Parameters() => new object[] { InFeatures, OutputFeatures, ClusterMethod, MinFeaturesCluster, SearchDistance!, ClusterSensitivity!, TimeField!, SearchTimeInterval! };
 
 		/// <summary>
 		/// <para>Input Point Features</para>
@@ -88,6 +89,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -117,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 2, Max = 100000000)]
 		public object MinFeaturesCluster { get; set; }
 
 		/// <summary>
@@ -138,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 100)]
 		public object? ClusterSensitivity { get; set; }
 
 		/// <summary>
@@ -148,6 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object? TimeField { get; set; }
 
 		/// <summary>

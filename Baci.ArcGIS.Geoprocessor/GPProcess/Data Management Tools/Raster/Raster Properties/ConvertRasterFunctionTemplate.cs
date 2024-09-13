@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Convert Raster Function Template</para>
+	/// <para>Convert Raster Function Template</para>
 	/// <para>Converts a raster function template between formats (rft.xml, json, and binary).</para>
 	/// </summary>
 	public class ConvertRasterFunctionTemplate : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Convert Raster Function Template</para>
 		/// </summary>
-		public override string DisplayName => "Convert Raster Function Template";
+		public override string DisplayName() => "Convert Raster Function Template";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertRasterFunctionTemplate</para>
 		/// </summary>
-		public override string ToolName => "ConvertRasterFunctionTemplate";
+		public override string ToolName() => "ConvertRasterFunctionTemplate";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ConvertRasterFunctionTemplate</para>
 		/// </summary>
-		public override string ExcuteName => "management.ConvertRasterFunctionTemplate";
+		public override string ExcuteName() => "management.ConvertRasterFunctionTemplate";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterFunctionTemplate, OutRasterFunctionTemplateFile, Format! };
+		public override object[] Parameters() => new object[] { InRasterFunctionTemplate, OutRasterFunctionTemplateFile, Format! };
 
 		/// <summary>
 		/// <para>Input Raster Function Template</para>
@@ -83,6 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("rft.xml", "rft.json", "rft", "xml", "json")]
 		public object OutRasterFunctionTemplateFile { get; set; }
 
 		/// <summary>

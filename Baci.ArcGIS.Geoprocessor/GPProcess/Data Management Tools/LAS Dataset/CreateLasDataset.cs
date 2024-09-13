@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create LAS Dataset</para>
+	/// <para>Create LAS Dataset</para>
 	/// <para>Creates a LAS dataset referencing one or more .las files and optional surface constraint features.</para>
 	/// </summary>
 	public class CreateLasDataset : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create LAS Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Create LAS Dataset";
+		public override string DisplayName() => "Create LAS Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLasDataset</para>
 		/// </summary>
-		public override string ToolName => "CreateLasDataset";
+		public override string ToolName() => "CreateLasDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateLasDataset</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateLasDataset";
+		public override string ExcuteName() => "management.CreateLasDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Input, OutLasDataset, FolderRecursion!, InSurfaceConstraints!, SpatialReference!, ComputeStats!, RelativePaths!, CreateLasPrj!, Extent!, Boundary!, AddOnlyContainedFiles! };
+		public override object[] Parameters() => new object[] { Input, OutLasDataset, FolderRecursion!, InSurfaceConstraints!, SpatialReference!, ComputeStats!, RelativePaths!, CreateLasPrj!, Extent!, Boundary!, AddOnlyContainedFiles! };
 
 		/// <summary>
 		/// <para>Input Files</para>
@@ -177,6 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		[Category("Processing Extent")]
 		public object? Boundary { get; set; }
 

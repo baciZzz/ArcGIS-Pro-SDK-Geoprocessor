@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Summarize Center And Dispersion</para>
+	/// <para>Summarize Center And Dispersion</para>
 	/// <para>Finds central features and directional distributions and calculates mean and median locations from the input.</para>
 	/// </summary>
 	public class SummarizeCenterAndDispersion : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Summarize Center And Dispersion</para>
 		/// </summary>
-		public override string DisplayName => "Summarize Center And Dispersion";
+		public override string DisplayName() => "Summarize Center And Dispersion";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeCenterAndDispersion</para>
 		/// </summary>
-		public override string ToolName => "SummarizeCenterAndDispersion";
+		public override string ToolName() => "SummarizeCenterAndDispersion";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.SummarizeCenterAndDispersion</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.SummarizeCenterAndDispersion";
+		public override string ExcuteName() => "geoanalytics.SummarizeCenterAndDispersion";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputName, GenerateTypes, EllipseSize!, WeightField!, GroupByField!, OutCentralFeatureLayer!, OutMeanCenterLayer!, OutMedianCenterLayer!, OutEllipseLayer!, DataStore! };
+		public override object[] Parameters() => new object[] { InputLayer, OutputName, GenerateTypes, EllipseSize!, WeightField!, GroupByField!, OutCentralFeatureLayer!, OutMeanCenterLayer!, OutMedianCenterLayer!, OutEllipseLayer!, DataStore! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -84,6 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple")]
+		[PortalType("DataStoreCatalogLayer")]
 		public object InputLayer { get; set; }
 
 		/// <summary>
@@ -128,6 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Double")]
 		public object? WeightField { get; set; }
 
 		/// <summary>
@@ -137,6 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text", "Date", "Double")]
 		public object? GroupByField { get; set; }
 
 		/// <summary>

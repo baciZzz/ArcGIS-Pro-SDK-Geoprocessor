@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Collapse Container Rule</para>
+	/// <para>Add Collapse Container Rule</para>
 	/// <para>Adds a diagram rule that automatically collapses container contents during the building of diagrams based on an existing template. This rule collapses the entire contents of containers in the diagrams.</para>
 	/// </summary>
 	public class AddCollapseContainerRule : AbstractGPProcess
@@ -60,37 +61,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Collapse Container Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Collapse Container Rule";
+		public override string DisplayName() => "Add Collapse Container Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddCollapseContainerRule</para>
 		/// </summary>
-		public override string ToolName => "AddCollapseContainerRule";
+		public override string ToolName() => "AddCollapseContainerRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddCollapseContainerRule</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddCollapseContainerRule";
+		public override string ExcuteName() => "nd.AddCollapseContainerRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, ContainerType, InverseSourceSelection, ContainerSources!, Description!, OutUtilityNetwork!, OutTemplateName!, ReconnectedEdgesOption! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, ContainerType, InverseSourceSelection, ContainerSources!, Description!, OutUtilityNetwork!, OutTemplateName!, ReconnectedEdgesOption! };
 
 		/// <summary>
 		/// <para>Input Network</para>

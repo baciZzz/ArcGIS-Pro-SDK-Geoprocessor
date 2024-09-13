@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Tile Cache Tiling Scheme</para>
+	/// <para>Generate Tile Cache Tiling Scheme</para>
 	/// <para>Creates a tiling scheme file based on the information from the source dataset. The tiling scheme file will then be used in the Manage Tile Cache tool when creating cache tiles.</para>
 	/// </summary>
 	public class GenerateTileCacheTilingScheme : AbstractGPProcess
@@ -48,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Tile Cache Tiling Scheme</para>
 		/// </summary>
-		public override string DisplayName => "Generate Tile Cache Tiling Scheme";
+		public override string DisplayName() => "Generate Tile Cache Tiling Scheme";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateTileCacheTilingScheme</para>
 		/// </summary>
-		public override string ToolName => "GenerateTileCacheTilingScheme";
+		public override string ToolName() => "GenerateTileCacheTilingScheme";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.GenerateTileCacheTilingScheme</para>
 		/// </summary>
-		public override string ExcuteName => "management.GenerateTileCacheTilingScheme";
+		public override string ExcuteName() => "management.GenerateTileCacheTilingScheme";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutTilingScheme, TilingSchemeGenerationMethod, NumberOfScales!, PredefinedTilingScheme!, Scales!, ScalesType!, TileOrigin!, Dpi!, TileSize!, TileFormat!, TileCompressionQuality!, StorageFormat!, LercError! };
+		public override object[] Parameters() => new object[] { InDataset, OutTilingScheme, TilingSchemeGenerationMethod, NumberOfScales!, PredefinedTilingScheme!, Scales!, ScalesType!, TileOrigin!, Dpi!, TileSize!, TileFormat!, TileCompressionQuality!, StorageFormat!, LercError! };
 
 		/// <summary>
 		/// <para>Input Data Source</para>
@@ -95,6 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object OutTilingScheme { get; set; }
 
 		/// <summary>
@@ -124,6 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object? PredefinedTilingScheme { get; set; }
 
 		/// <summary>

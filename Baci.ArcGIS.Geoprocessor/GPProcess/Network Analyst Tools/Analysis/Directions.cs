@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Directions</para>
+	/// <para>Directions</para>
 	/// <para>Generates turn-by-turn directions from a network analysis layer with routes. The directions can be written to a file in text, XML, or HTML format. If you provide an appropriate stylesheet, the directions can be written to any other file format.</para>
 	/// </summary>
 	public class Directions : AbstractGPProcess
@@ -51,37 +52,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Directions</para>
 		/// </summary>
-		public override string DisplayName => "Directions";
+		public override string DisplayName() => "Directions";
 
 		/// <summary>
 		/// <para>Tool Name : Directions</para>
 		/// </summary>
-		public override string ToolName => "Directions";
+		public override string ToolName() => "Directions";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.Directions</para>
 		/// </summary>
-		public override string ExcuteName => "na.Directions";
+		public override string ExcuteName() => "na.Directions";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, FileType, OutDirectionsFile, ReportUnits, ReportTime!, TimeAttribute!, Language!, StyleName!, Stylesheet!, OutputLayer! };
+		public override object[] Parameters() => new object[] { InNetworkAnalysisLayer, FileType, OutDirectionsFile, ReportUnits, ReportTime!, TimeAttribute!, Language!, StyleName!, Stylesheet!, OutputLayer! };
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>
@@ -175,6 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xsl")]
 		public object? Stylesheet { get; set; }
 
 		/// <summary>

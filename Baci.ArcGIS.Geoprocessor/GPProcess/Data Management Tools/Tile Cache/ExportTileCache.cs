@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Tile Cache</para>
+	/// <para>Export Tile Cache</para>
 	/// <para>Exports tiles from an existing tile cache to a new tile cache or a tile package. The tiles can be either independently imported into other caches or accessed from ArcGIS Pro or mobile devices.</para>
 	/// </summary>
 	public class ExportTileCache : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Tile Cache</para>
 		/// </summary>
-		public override string DisplayName => "Export Tile Cache";
+		public override string DisplayName() => "Export Tile Cache";
 
 		/// <summary>
 		/// <para>Tool Name : ExportTileCache</para>
 		/// </summary>
-		public override string ToolName => "ExportTileCache";
+		public override string ToolName() => "ExportTileCache";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ExportTileCache</para>
 		/// </summary>
-		public override string ExcuteName => "management.ExportTileCache";
+		public override string ExcuteName() => "management.ExportTileCache";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCacheSource, InTargetCacheFolder, InTargetCacheName, ExportCacheType!, StorageFormatType!, Scales!, AreaOfInterest!, OutCache! };
+		public override object[] Parameters() => new object[] { InCacheSource, InTargetCacheFolder, InTargetCacheName, ExportCacheType!, StorageFormatType!, Scales!, AreaOfInterest!, OutCache! };
 
 		/// <summary>
 		/// <para>Input Tile Cache</para>

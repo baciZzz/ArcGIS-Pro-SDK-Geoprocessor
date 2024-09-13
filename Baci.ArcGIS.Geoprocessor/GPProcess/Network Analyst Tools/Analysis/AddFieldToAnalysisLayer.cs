@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Add Field To Analysis Layer</para>
+	/// <para>Add Field To Analysis Layer</para>
 	/// <para>Adds a field to a sublayer of a network analysis layer.</para>
 	/// </summary>
 	public class AddFieldToAnalysisLayer : AbstractGPProcess
@@ -53,37 +54,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Field To Analysis Layer</para>
 		/// </summary>
-		public override string DisplayName => "Add Field To Analysis Layer";
+		public override string DisplayName() => "Add Field To Analysis Layer";
 
 		/// <summary>
 		/// <para>Tool Name : AddFieldToAnalysisLayer</para>
 		/// </summary>
-		public override string ToolName => "AddFieldToAnalysisLayer";
+		public override string ToolName() => "AddFieldToAnalysisLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.AddFieldToAnalysisLayer</para>
 		/// </summary>
-		public override string ExcuteName => "na.AddFieldToAnalysisLayer";
+		public override string ExcuteName() => "na.AddFieldToAnalysisLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, SubLayer, FieldName, FieldType, FieldPrecision!, FieldScale!, FieldLength!, FieldAlias!, FieldIsNullable!, OutputLayer! };
+		public override object[] Parameters() => new object[] { InNetworkAnalysisLayer, SubLayer, FieldName, FieldType, FieldPrecision!, FieldScale!, FieldLength!, FieldAlias!, FieldIsNullable!, OutputLayer! };
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>

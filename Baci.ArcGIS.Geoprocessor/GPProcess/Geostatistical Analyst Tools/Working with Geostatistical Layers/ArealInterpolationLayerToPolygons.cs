@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Areal Interpolation Layer To Polygons</para>
+	/// <para>Areal Interpolation Layer To Polygons</para>
 	/// <para>Reaggregates the predictions of an Areal Interpolation layer to a new set of polygons.</para>
 	/// </summary>
 	public class ArealInterpolationLayerToPolygons : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Areal Interpolation Layer To Polygons</para>
 		/// </summary>
-		public override string DisplayName => "Areal Interpolation Layer To Polygons";
+		public override string DisplayName() => "Areal Interpolation Layer To Polygons";
 
 		/// <summary>
 		/// <para>Tool Name : ArealInterpolationLayerToPolygons</para>
 		/// </summary>
-		public override string ToolName => "ArealInterpolationLayerToPolygons";
+		public override string ToolName() => "ArealInterpolationLayerToPolygons";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.ArealInterpolationLayerToPolygons</para>
 		/// </summary>
-		public override string ExcuteName => "ga.ArealInterpolationLayerToPolygons";
+		public override string ExcuteName() => "ga.ArealInterpolationLayerToPolygons";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InArealInterpolationLayer, InPolygonFeatures, OutFeatureClass, AppendAllFields! };
+		public override object[] Parameters() => new object[] { InArealInterpolationLayer, InPolygonFeatures, OutFeatureClass, AppendAllFields! };
 
 		/// <summary>
 		/// <para>Input areal interpolation geostatistical layer</para>
@@ -87,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InPolygonFeatures { get; set; }
 
 		/// <summary>

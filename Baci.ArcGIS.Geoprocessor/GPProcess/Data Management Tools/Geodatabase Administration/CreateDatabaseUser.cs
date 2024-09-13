@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Database User</para>
+	/// <para>Create Database User</para>
 	/// <para>Creates a database user with privileges sufficient to create data in the database.</para>
 	/// </summary>
 	public class CreateDatabaseUser : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Database User</para>
 		/// </summary>
-		public override string DisplayName => "Create Database User";
+		public override string DisplayName() => "Create Database User";
 
 		/// <summary>
 		/// <para>Tool Name : CreateDatabaseUser</para>
 		/// </summary>
-		public override string ToolName => "CreateDatabaseUser";
+		public override string ToolName() => "CreateDatabaseUser";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateDatabaseUser</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateDatabaseUser";
+		public override string ExcuteName() => "management.CreateDatabaseUser";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, UserAuthenticationType!, UserName, UserPassword!, Role!, TablespaceName!, OutResult! };
+		public override object[] Parameters() => new object[] { InputDatabase, UserAuthenticationType!, UserName, UserPassword!, Role!, TablespaceName!, OutResult! };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
@@ -75,6 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Remote Database")]
 		public object InputDatabase { get; set; }
 
 		/// <summary>

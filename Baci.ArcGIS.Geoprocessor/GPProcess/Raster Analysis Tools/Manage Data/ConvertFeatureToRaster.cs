@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Convert Feature To Raster</para>
+	/// <para>Convert Feature To Raster</para>
 	/// <para>Converts features to a raster dataset.</para>
 	/// </summary>
 	public class ConvertFeatureToRaster : AbstractGPProcess
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Convert Feature To Raster</para>
 		/// </summary>
-		public override string DisplayName => "Convert Feature To Raster";
+		public override string DisplayName() => "Convert Feature To Raster";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertFeatureToRaster</para>
 		/// </summary>
-		public override string ToolName => "ConvertFeatureToRaster";
+		public override string ToolName() => "ConvertFeatureToRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.ConvertFeatureToRaster</para>
 		/// </summary>
-		public override string ExcuteName => "ra.ConvertFeatureToRaster";
+		public override string ExcuteName() => "ra.ConvertFeatureToRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "outputCoordinateSystem", "pyramid", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputfeatures, Valuefield, Outputname, Outputcellsize!, Outputraster! };
+		public override object[] Parameters() => new object[] { Inputfeatures, Valuefield, Outputname, Outputcellsize!, Outputraster! };
 
 		/// <summary>
 		/// <para>Input Features</para>

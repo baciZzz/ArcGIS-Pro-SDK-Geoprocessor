@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Encode Field</para>
+	/// <para>Encode Field</para>
 	/// <para>Converts categorical values (string, integer, or date) into multiple numerical fields, each representing a category. The encoded numerical fields can be used in most data science and statistical workflows including regression models.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Encode Field</para>
 		/// </summary>
-		public override string DisplayName => "Encode Field";
+		public override string DisplayName() => "Encode Field";
 
 		/// <summary>
 		/// <para>Tool Name : EncodeField</para>
 		/// </summary>
-		public override string ToolName => "EncodeField";
+		public override string ToolName() => "EncodeField";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.EncodeField</para>
 		/// </summary>
-		public override string ExcuteName => "management.EncodeField";
+		public override string ExcuteName() => "management.EncodeField";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Field, Method!, TimeStepInterval!, TimeStepAlignment!, ReferenceTime!, UpdatedTable! };
+		public override object[] Parameters() => new object[] { InTable, Field, Method!, TimeStepInterval!, TimeStepAlignment!, ReferenceTime!, UpdatedTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -84,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Text", "Long", "Date")]
 		public object Field { get; set; }
 
 		/// <summary>

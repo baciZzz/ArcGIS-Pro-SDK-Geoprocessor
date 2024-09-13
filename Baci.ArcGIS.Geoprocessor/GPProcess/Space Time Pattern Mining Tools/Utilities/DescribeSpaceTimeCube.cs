@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Describe Space Time Cube</para>
+	/// <para>Describe Space Time Cube</para>
 	/// <para>Summarizes the contents and characteristics of a space-time cube. The tool describes the temporal and spatial extent of the space-time cube, the variables in the space-time cube, the analyses performed on each variable, and the 2D and 3D display themes available for each variable.</para>
 	/// </summary>
 	public class DescribeSpaceTimeCube : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Display Name : Describe Space Time Cube</para>
 		/// </summary>
-		public override string DisplayName => "Describe Space Time Cube";
+		public override string DisplayName() => "Describe Space Time Cube";
 
 		/// <summary>
 		/// <para>Tool Name : DescribeSpaceTimeCube</para>
 		/// </summary>
-		public override string ToolName => "DescribeSpaceTimeCube";
+		public override string ToolName() => "DescribeSpaceTimeCube";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stpm.DescribeSpaceTimeCube</para>
 		/// </summary>
-		public override string ExcuteName => "stpm.DescribeSpaceTimeCube";
+		public override string ExcuteName() => "stpm.DescribeSpaceTimeCube";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Space Time Pattern Mining Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Space Time Pattern Mining Tools";
+		public override string ToolboxDisplayName() => "Space Time Pattern Mining Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stpm</para>
 		/// </summary>
-		public override string ToolboxAlise => "stpm";
+		public override string ToolboxAlise() => "stpm";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCube, OutCharacteristicsTable!, OutSpatialExtent! };
+		public override object[] Parameters() => new object[] { InCube, OutCharacteristicsTable!, OutSpatialExtent! };
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>
@@ -69,6 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("nc")]
 		public object InCube { get; set; }
 
 		/// <summary>

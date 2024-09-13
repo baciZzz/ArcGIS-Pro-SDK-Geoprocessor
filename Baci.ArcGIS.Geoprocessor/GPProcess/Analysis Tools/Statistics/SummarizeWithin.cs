@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Summarize Within</para>
+	/// <para>Summarize Within</para>
 	/// <para>Overlays a polygon layer with another layer to summarize the number of points, length of the lines, or area of the polygons within each polygon, and calculate attribute field statistics about the features within the polygons.</para>
 	/// </summary>
 	public class SummarizeWithin : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Summarize Within</para>
 		/// </summary>
-		public override string DisplayName => "Summarize Within";
+		public override string DisplayName() => "Summarize Within";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeWithin</para>
 		/// </summary>
-		public override string ToolName => "SummarizeWithin";
+		public override string ToolName() => "SummarizeWithin";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.SummarizeWithin</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.SummarizeWithin";
+		public override string ExcuteName() => "analysis.SummarizeWithin";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPolygons, InSumFeatures, OutFeatureClass, KeepAllPolygons!, SumFields!, SumShape!, ShapeUnit!, GroupField!, AddMinMaj!, AddGroupPercent!, OutGroupTable! };
+		public override object[] Parameters() => new object[] { InPolygons, InSumFeatures, OutFeatureClass, KeepAllPolygons!, SumFields!, SumShape!, ShapeUnit!, GroupField!, AddMinMaj!, AddGroupPercent!, OutGroupTable! };
 
 		/// <summary>
 		/// <para>Input Polygons</para>
@@ -79,6 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object InPolygons { get; set; }
 
 		/// <summary>
@@ -88,6 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polygon", "Polyline")]
+		[FeatureType("Simple")]
 		public object InSumFeatures { get; set; }
 
 		/// <summary>
@@ -141,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Shape Unit</para>
 		/// <para>The unit that will be used when calculating shape summary attributes. If the input summary features are points, no shape unit is necessary, since only the count of points in each input polygon is added.</para>
-		/// <para><para/>If the input summary features are lines, specify a linear unit. If the input summary features are polygons, specify an areal unit.</para>
+		/// <para>&lt;para/&gt;If the input summary features are lines, specify a linear unit. If the input summary features are polygons, specify an areal unit.</para>
 		/// <para>Meters—The unit will be meters.</para>
 		/// <para>Kilometers—The unit will be kilometers.</para>
 		/// <para>Feet—The unit will be feet.</para>
@@ -168,6 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
 		public object? GroupField { get; set; }
 
 		/// <summary>

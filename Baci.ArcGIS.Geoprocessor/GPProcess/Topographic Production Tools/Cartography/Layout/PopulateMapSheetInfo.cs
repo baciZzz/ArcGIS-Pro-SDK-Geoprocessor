@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Populate Map Sheet Info</para>
+	/// <para>Populate Map Sheet Info</para>
 	/// <para>Populates text in graphic elements on a map layout.</para>
 	/// </summary>
 	public class PopulateMapSheetInfo : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Populate Map Sheet Info</para>
 		/// </summary>
-		public override string DisplayName => "Populate Map Sheet Info";
+		public override string DisplayName() => "Populate Map Sheet Info";
 
 		/// <summary>
 		/// <para>Tool Name : PopulateMapSheetInfo</para>
 		/// </summary>
-		public override string ToolName => "PopulateMapSheetInfo";
+		public override string ToolName() => "PopulateMapSheetInfo";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.PopulateMapSheetInfo</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.PopulateMapSheetInfo";
+		public override string ExcuteName() => "topographic.PopulateMapSheetInfo";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayout, AreaOfInterest, LookupTable, UpdatedLayout! };
+		public override object[] Parameters() => new object[] { InLayout, AreaOfInterest, LookupTable, UpdatedLayout! };
 
 		/// <summary>
 		/// <para>Input Layout</para>
@@ -87,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object AreaOfInterest { get; set; }
 
 		/// <summary>

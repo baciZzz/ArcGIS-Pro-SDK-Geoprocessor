@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Create Network Dataset From Template</para>
+	/// <para>Create Network Dataset From Template</para>
 	/// <para>Creates a new network dataset with the schema contained in the input template file (.xml). All the feature classes and input tables required for creating the network dataset must already exist before this tool is executed.</para>
 	/// </summary>
 	public class CreateNetworkDatasetFromTemplate : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Network Dataset From Template</para>
 		/// </summary>
-		public override string DisplayName => "Create Network Dataset From Template";
+		public override string DisplayName() => "Create Network Dataset From Template";
 
 		/// <summary>
 		/// <para>Tool Name : CreateNetworkDatasetFromTemplate</para>
 		/// </summary>
-		public override string ToolName => "CreateNetworkDatasetFromTemplate";
+		public override string ToolName() => "CreateNetworkDatasetFromTemplate";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.CreateNetworkDatasetFromTemplate</para>
 		/// </summary>
-		public override string ExcuteName => "na.CreateNetworkDatasetFromTemplate";
+		public override string ExcuteName() => "na.CreateNetworkDatasetFromTemplate";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { NetworkDatasetTemplate, OutputFeatureDataset, OutputNetwork! };
+		public override object[] Parameters() => new object[] { NetworkDatasetTemplate, OutputFeatureDataset, OutputNetwork! };
 
 		/// <summary>
 		/// <para>Network Dataset Template</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object NetworkDatasetTemplate { get; set; }
 
 		/// <summary>

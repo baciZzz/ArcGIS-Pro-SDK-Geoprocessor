@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Customer Segmentation Profile</para>
+	/// <para>Generate Customer Segmentation Profile</para>
 	/// <para>Creates a segmentation profile with an existing customer layer.</para>
 	/// </summary>
 	public class GenerateCustomerProfile : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Customer Segmentation Profile</para>
 		/// </summary>
-		public override string DisplayName => "Generate Customer Segmentation Profile";
+		public override string DisplayName() => "Generate Customer Segmentation Profile";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateCustomerProfile</para>
 		/// </summary>
-		public override string ToolName => "GenerateCustomerProfile";
+		public override string ToolName() => "GenerateCustomerProfile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GenerateCustomerProfile</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GenerateCustomerProfile";
+		public override string ExcuteName() => "ba.GenerateCustomerProfile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCustomersLayer, InSegmentationBase, OutProfile, InVolumeField! };
+		public override object[] Parameters() => new object[] { InCustomersLayer, InSegmentationBase, OutProfile, InVolumeField! };
 
 		/// <summary>
 		/// <para>Customer Layer</para>
@@ -79,6 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InCustomersLayer { get; set; }
 
 		/// <summary>
@@ -96,6 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("sgprofile")]
 		public object OutProfile { get; set; }
 
 		/// <summary>
@@ -105,6 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double", "Float", "Long", "Short")]
 		public object? InVolumeField { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Determine Optimum Travel Cost Network</para>
+	/// <para>Determine Optimum Travel Cost Network</para>
 	/// <para>Calculates the optimum cost network from a set of input regions.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.RasterAnalysisTools.OptimalRegionConnections"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
@@ -55,37 +56,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Determine Optimum Travel Cost Network</para>
 		/// </summary>
-		public override string DisplayName => "Determine Optimum Travel Cost Network";
+		public override string DisplayName() => "Determine Optimum Travel Cost Network";
 
 		/// <summary>
 		/// <para>Tool Name : DetermineOptimumTravelCostNetwork</para>
 		/// </summary>
-		public override string ToolName => "DetermineOptimumTravelCostNetwork";
+		public override string ToolName() => "DetermineOptimumTravelCostNetwork";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.DetermineOptimumTravelCostNetwork</para>
 		/// </summary>
-		public override string ExcuteName => "ra.DetermineOptimumTravelCostNetwork";
+		public override string ExcuteName() => "ra.DetermineOptimumTravelCostNetwork";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputregionsrasterorfeatures, Inputcostraster, Outputoptimumnetworkname, Outputneighbornetworkname!, Outputoptimumnetworkfeatures!, Outputneighbornetworkfeatures! };
+		public override object[] Parameters() => new object[] { Inputregionsrasterorfeatures, Inputcostraster, Outputoptimumnetworkname, Outputneighbornetworkname!, Outputoptimumnetworkfeatures!, Outputneighbornetworkfeatures! };
 
 		/// <summary>
 		/// <para>Input Regions Raster or Features</para>

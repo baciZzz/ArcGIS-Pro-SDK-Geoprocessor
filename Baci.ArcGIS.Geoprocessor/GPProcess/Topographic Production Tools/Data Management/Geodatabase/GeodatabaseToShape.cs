@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Geodatabase To Shape</para>
+	/// <para>Geodatabase To Shape</para>
 	/// <para>Exports one or more feature classes in a geodatabase to shapefiles using one of three modes: defense, generic, and Multinational Geospatial Co-Production Program</para>
 	/// <para>(MGCP).</para>
 	/// </summary>
@@ -65,37 +66,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Geodatabase To Shape</para>
 		/// </summary>
-		public override string DisplayName => "Geodatabase To Shape";
+		public override string DisplayName() => "Geodatabase To Shape";
 
 		/// <summary>
 		/// <para>Tool Name : GeodatabaseToShape</para>
 		/// </summary>
-		public override string ToolName => "GeodatabaseToShape";
+		public override string ToolName() => "GeodatabaseToShape";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.GeodatabaseToShape</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.GeodatabaseToShape";
+		public override string ExcuteName() => "topographic.GeodatabaseToShape";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFolder, CodedValueDomainExportMode, ConversionMethod, CreateEmpties, DerivedFolder! };
+		public override object[] Parameters() => new object[] { InFeatures, OutputFolder, CodedValueDomainExportMode, ConversionMethod, CreateEmpties, DerivedFolder! };
 
 		/// <summary>
 		/// <para>Input Features</para>

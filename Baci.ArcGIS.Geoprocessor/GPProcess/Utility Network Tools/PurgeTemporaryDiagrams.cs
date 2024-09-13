@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Purge Temporary Diagrams</para>
+	/// <para>Purge Temporary Diagrams</para>
 	/// <para>Purge the temporary diagrams</para>
 	/// </summary>
 	[Obsolete()]
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Purge Temporary Diagrams</para>
 		/// </summary>
-		public override string DisplayName => "Purge Temporary Diagrams";
+		public override string DisplayName() => "Purge Temporary Diagrams";
 
 		/// <summary>
 		/// <para>Tool Name : PurgeTemporaryDiagrams</para>
 		/// </summary>
-		public override string ToolName => "PurgeTemporaryDiagrams";
+		public override string ToolName() => "PurgeTemporaryDiagrams";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.PurgeTemporaryDiagrams</para>
 		/// </summary>
-		public override string ExcuteName => "un.PurgeTemporaryDiagrams";
+		public override string ExcuteName() => "un.PurgeTemporaryDiagrams";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, CreatedBefore!, OutUtilityNetwork! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, CreatedBefore!, OutUtilityNetwork! };
 
 		/// <summary>
 		/// <para>Input Network</para>

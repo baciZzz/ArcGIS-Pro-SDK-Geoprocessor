@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Feature To Polygon</para>
+	/// <para>Feature To Polygon</para>
 	/// <para>Creates a feature class containing polygons generated from areas enclosed by input line or polygon features.</para>
 	/// </summary>
 	public class FeatureToPolygon : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Feature To Polygon</para>
 		/// </summary>
-		public override string DisplayName => "Feature To Polygon";
+		public override string DisplayName() => "Feature To Polygon";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureToPolygon</para>
 		/// </summary>
-		public override string ToolName => "FeatureToPolygon";
+		public override string ToolName() => "FeatureToPolygon";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.FeatureToPolygon</para>
 		/// </summary>
-		public override string ExcuteName => "management.FeatureToPolygon";
+		public override string ExcuteName() => "management.FeatureToPolygon";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, ClusterTolerance!, Attributes!, LabelFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, ClusterTolerance!, Attributes!, LabelFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -110,6 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Multipoint", "Point")]
 		public object? LabelFeatures { get; set; }
 
 		/// <summary>

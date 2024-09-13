@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Reclassify</para>
+	/// <para>Reclassify</para>
 	/// <para>Reclassifies (or changes) the values in a raster.</para>
 	/// </summary>
 	public class Reclassify : AbstractGPProcess
@@ -52,37 +53,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Reclassify</para>
 		/// </summary>
-		public override string DisplayName => "Reclassify";
+		public override string DisplayName() => "Reclassify";
 
 		/// <summary>
 		/// <para>Tool Name : Reclassify</para>
 		/// </summary>
-		public override string ToolName => "Reclassify";
+		public override string ToolName() => "Reclassify";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Reclassify</para>
 		/// </summary>
-		public override string ExcuteName => "sa.Reclassify";
+		public override string ExcuteName() => "sa.Reclassify";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, ReclassField, Remap, OutRaster, MissingValues! };
+		public override object[] Parameters() => new object[] { InRaster, ReclassField, Remap, OutRaster, MissingValues! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -90,7 +91,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRaster { get; set; }
 
 		/// <summary>
@@ -99,7 +103,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{4B6CA858-5716-4AC3-A2EE-70EE2D29C1BD}", UseRasterFields = true)]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
 		public object ReclassField { get; set; }
 
 		/// <summary>
@@ -115,6 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPSARemap()]
 		[GPSARemapDomain()]
+		[RemapType("Number", "String", "None")]
 		public object Remap { get; set; }
 
 		/// <summary>

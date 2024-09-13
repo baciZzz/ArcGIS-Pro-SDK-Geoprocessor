@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Prepare Point Cloud Training Data</para>
+	/// <para>Prepare Point Cloud Training Data</para>
 	/// <para>Generates the data that will be used to train and validate a PointCNN model for point cloud classification.</para>
 	/// </summary>
 	public class PreparePointCloudTrainingData : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Prepare Point Cloud Training Data</para>
 		/// </summary>
-		public override string DisplayName => "Prepare Point Cloud Training Data";
+		public override string DisplayName() => "Prepare Point Cloud Training Data";
 
 		/// <summary>
 		/// <para>Tool Name : PreparePointCloudTrainingData</para>
 		/// </summary>
-		public override string ToolName => "PreparePointCloudTrainingData";
+		public override string ToolName() => "PreparePointCloudTrainingData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.PreparePointCloudTrainingData</para>
 		/// </summary>
-		public override string ExcuteName => "3d.PreparePointCloudTrainingData";
+		public override string ExcuteName() => "3d.PreparePointCloudTrainingData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointCloud, BlockSize, OutTrainingData, TrainingBoundary!, ValidationPointCloud!, ValidationBoundary!, ClassCodesOfInterest!, BlockPointLimit!, ReferenceHeight!, ExcludedClassCodes! };
+		public override object[] Parameters() => new object[] { InPointCloud, BlockSize, OutTrainingData, TrainingBoundary!, ValidationPointCloud!, ValidationBoundary!, ClassCodesOfInterest!, BlockPointLimit!, ReferenceHeight!, ExcludedClassCodes! };
 
 		/// <summary>
 		/// <para>Input Point Cloud</para>
@@ -96,6 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("pctd")]
 		public object OutTrainingData { get; set; }
 
 		/// <summary>
@@ -105,6 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object? TrainingBoundary { get; set; }
 
 		/// <summary>
@@ -123,6 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object? ValidationBoundary { get; set; }
 
 		/// <summary>
@@ -156,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 255)]
 		public object? ExcludedClassCodes { get; set; }
 
 		/// <summary>

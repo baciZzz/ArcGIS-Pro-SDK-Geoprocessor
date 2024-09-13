@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Multipatch to Raster</para>
+	/// <para>Multipatch to Raster</para>
 	/// <para>Converts multipatch features to a raster dataset.</para>
 	/// </summary>
 	public class MultipatchToRaster : AbstractGPProcess
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Multipatch to Raster</para>
 		/// </summary>
-		public override string DisplayName => "Multipatch to Raster";
+		public override string DisplayName() => "Multipatch to Raster";
 
 		/// <summary>
 		/// <para>Tool Name : MultipatchToRaster</para>
 		/// </summary>
-		public override string ToolName => "MultipatchToRaster";
+		public override string ToolName() => "MultipatchToRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.MultipatchToRaster</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.MultipatchToRaster";
+		public override string ExcuteName() => "conversion.MultipatchToRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultipatchFeatures, OutRaster, CellSize!, CellAssignmentMethod! };
+		public override object[] Parameters() => new object[] { InMultipatchFeatures, OutRaster, CellSize!, CellAssignmentMethod! };
 
 		/// <summary>
 		/// <para>Input multipatch features</para>
@@ -75,7 +76,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DEFeatureClass", "GPFeatureLayer", "GPTableView", "DETextFile")]
+		[GeometryType("MultiPatch")]
 		public object InMultipatchFeatures { get; set; }
 
 		/// <summary>
@@ -95,7 +98,10 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? CellSize { get; set; }
 
 		/// <summary>

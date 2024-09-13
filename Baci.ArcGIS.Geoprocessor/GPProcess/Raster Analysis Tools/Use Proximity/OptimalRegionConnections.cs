@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Optimal Region Connections</para>
+	/// <para>Optimal Region Connections</para>
 	/// <para>Calculates the optimal connection of paths between two or more input regions.</para>
 	/// </summary>
 	public class OptimalRegionConnections : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Optimal Region Connections</para>
 		/// </summary>
-		public override string DisplayName => "Optimal Region Connections";
+		public override string DisplayName() => "Optimal Region Connections";
 
 		/// <summary>
 		/// <para>Tool Name : OptimalRegionConnections</para>
 		/// </summary>
-		public override string ToolName => "OptimalRegionConnections";
+		public override string ToolName() => "OptimalRegionConnections";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.OptimalRegionConnections</para>
 		/// </summary>
-		public override string ExcuteName => "ra.OptimalRegionConnections";
+		public override string ExcuteName() => "ra.OptimalRegionConnections";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputregionrasterorfeatures, Outputoptimallinesname, Inputbarrierrasterorfeatures!, Inputcostraster!, Outputneighborconnectionsname!, Distancemethod!, Connectionswithinregions!, Outputoptimallinesfeatures!, Outputneighborconnectionfeatures! };
+		public override object[] Parameters() => new object[] { Inputregionrasterorfeatures, Outputoptimallinesname, Inputbarrierrasterorfeatures!, Inputcostraster!, Outputneighborconnectionsname!, Distancemethod!, Connectionswithinregions!, Outputoptimallinesfeatures!, Outputneighborconnectionfeatures! };
 
 		/// <summary>
 		/// <para>Input Region Raster or Features</para>

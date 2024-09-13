@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 {
 	/// <summary>
 	/// <para>Generate Indoor Positioning File</para>
+	/// <para>Generate Indoor Positioning File</para>
 	/// <para>Generates a positioning file from ArcGIS IPS Setup survey recordings.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Indoor Positioning File</para>
 		/// </summary>
-		public override string DisplayName => "Generate Indoor Positioning File";
+		public override string DisplayName() => "Generate Indoor Positioning File";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateIndoorPositioningFile</para>
 		/// </summary>
-		public override string ToolName => "GenerateIndoorPositioningFile";
+		public override string ToolName() => "GenerateIndoorPositioningFile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : indoorpositioning.GenerateIndoorPositioningFile</para>
 		/// </summary>
-		public override string ExcuteName => "indoorpositioning.GenerateIndoorPositioningFile";
+		public override string ExcuteName() => "indoorpositioning.GenerateIndoorPositioningFile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Indoor Positioning Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Indoor Positioning Tools";
+		public override string ToolboxDisplayName() => "Indoor Positioning Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : indoorpositioning</para>
 		/// </summary>
-		public override string ToolboxAlise => "indoorpositioning";
+		public override string ToolboxAlise() => "indoorpositioning";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InIpsRecordings, TargetIpsPositioning, InIpsTransitions!, InIpsComment!, OutIpsPositioning! };
+		public override object[] Parameters() => new object[] { InIpsRecordings, TargetIpsPositioning, InIpsTransitions!, InIpsComment!, OutIpsPositioning! };
 
 		/// <summary>
 		/// <para>IPS Recordings Features</para>
@@ -76,6 +77,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object InIpsRecordings { get; set; }
 
 		/// <summary>
@@ -93,6 +96,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object? InIpsTransitions { get; set; }
 
 		/// <summary>

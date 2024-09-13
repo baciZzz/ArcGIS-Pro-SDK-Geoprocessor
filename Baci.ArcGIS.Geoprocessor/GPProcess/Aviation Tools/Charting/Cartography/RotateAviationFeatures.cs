@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Rotate Aviation Features</para>
+	/// <para>Rotate Aviation Features</para>
 	/// <para>Aligns features to a grid or to the page.</para>
 	/// </summary>
 	public class RotateAviationFeatures : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Rotate Aviation Features</para>
 		/// </summary>
-		public override string DisplayName => "Rotate Aviation Features";
+		public override string DisplayName() => "Rotate Aviation Features";
 
 		/// <summary>
 		/// <para>Tool Name : RotateAviationFeatures</para>
 		/// </summary>
-		public override string ToolName => "RotateAviationFeatures";
+		public override string ToolName() => "RotateAviationFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.RotateAviationFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.RotateAviationFeatures";
+		public override string ExcuteName() => "aviation.RotateAviationFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, TargetLayers, RotateOption!, UpdatedLayers! };
+		public override object[] Parameters() => new object[] { InMap, TargetLayers, RotateOption!, UpdatedLayers! };
 
 		/// <summary>
 		/// <para>Input Map</para>

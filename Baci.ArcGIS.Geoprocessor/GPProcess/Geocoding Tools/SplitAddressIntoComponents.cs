@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Split Address Into Components</para>
+	/// <para>Split Address Into Components</para>
 	/// <para>Splits street address information into address components and creates a table or feature class with the additional components added as unique fields.</para>
 	/// </summary>
 	public class SplitAddressIntoComponents : AbstractGPProcess
@@ -54,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Display Name : Split Address Into Components</para>
 		/// </summary>
-		public override string DisplayName => "Split Address Into Components";
+		public override string DisplayName() => "Split Address Into Components";
 
 		/// <summary>
 		/// <para>Tool Name : SplitAddressIntoComponents</para>
 		/// </summary>
-		public override string ToolName => "SplitAddressIntoComponents";
+		public override string ToolName() => "SplitAddressIntoComponents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geocoding.SplitAddressIntoComponents</para>
 		/// </summary>
-		public override string ExcuteName => "geocoding.SplitAddressIntoComponents";
+		public override string ExcuteName() => "geocoding.SplitAddressIntoComponents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geocoding Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geocoding Tools";
+		public override string ToolboxDisplayName() => "Geocoding Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geocoding</para>
 		/// </summary>
-		public override string ToolboxAlise => "geocoding";
+		public override string ToolboxAlise() => "geocoding";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { CountryCode, InAddressData, InAddressFields, OutAddressData, InExceptions! };
+		public override object[] Parameters() => new object[] { CountryCode, InAddressData, InAddressFields, OutAddressData, InExceptions! };
 
 		/// <summary>
 		/// <para>Country or Region</para>

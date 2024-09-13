@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Generalize</para>
+	/// <para>Generalize</para>
 	/// <para>Simplifies the input features using a specified maximum offset tolerance. The output features will contain a subset of the original input vertices.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Generalize</para>
 		/// </summary>
-		public override string DisplayName => "Generalize";
+		public override string DisplayName() => "Generalize";
 
 		/// <summary>
 		/// <para>Tool Name : Generalize</para>
 		/// </summary>
-		public override string ToolName => "Generalize";
+		public override string ToolName() => "Generalize";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.Generalize</para>
 		/// </summary>
-		public override string ExcuteName => "edit.Generalize";
+		public override string ExcuteName() => "edit.Generalize";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Tolerance!, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatures, Tolerance!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -71,6 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

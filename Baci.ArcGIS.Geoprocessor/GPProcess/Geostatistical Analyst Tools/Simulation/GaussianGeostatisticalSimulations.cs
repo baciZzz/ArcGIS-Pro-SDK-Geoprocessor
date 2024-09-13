@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Gaussian Geostatistical Simulations</para>
+	/// <para>Gaussian Geostatistical Simulations</para>
 	/// <para>Performs a conditional or unconditional geostatistical simulation based on a Simple Kriging model. The simulated rasters can be considered equally probable realizations of the kriging model.</para>
 	/// </summary>
 	public class GaussianGeostatisticalSimulations : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Gaussian Geostatistical Simulations</para>
 		/// </summary>
-		public override string DisplayName => "Gaussian Geostatistical Simulations";
+		public override string DisplayName() => "Gaussian Geostatistical Simulations";
 
 		/// <summary>
 		/// <para>Tool Name : GaussianGeostatisticalSimulations</para>
 		/// </summary>
-		public override string ToolName => "GaussianGeostatisticalSimulations";
+		public override string ToolName() => "GaussianGeostatisticalSimulations";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GaussianGeostatisticalSimulations</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GaussianGeostatisticalSimulations";
+		public override string ExcuteName() => "ga.GaussianGeostatisticalSimulations";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayer, NumberOfRealizations, OutputWorkspace, OutputSimulationPrefix, InConditioningFeatures!, ConditioningField!, CellSize!, InBoundingDataset!, SaveSimulatedRasters!, Quantile!, Threshold!, InStatsPolygons!, RasterStatType!, ConditioningMeasurementErrorField!, OutWorkspace!, OutPolygonStat!, OutRasterSimulation!, OutRasterStat!, OutConvergenceValue! };
+		public override object[] Parameters() => new object[] { InGeostatLayer, NumberOfRealizations, OutputWorkspace, OutputSimulationPrefix, InConditioningFeatures!, ConditioningField!, CellSize!, InBoundingDataset!, SaveSimulatedRasters!, Quantile!, Threshold!, InStatsPolygons!, RasterStatType!, ConditioningMeasurementErrorField!, OutWorkspace!, OutPolygonStat!, OutRasterSimulation!, OutRasterStat!, OutConvergenceValue! };
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
@@ -91,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 4500)]
 		public object NumberOfRealizations { get; set; } = "10";
 
 		/// <summary>
@@ -117,6 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon")]
 		public object? InConditioningFeatures { get; set; }
 
 		/// <summary>
@@ -126,6 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? ConditioningField { get; set; }
 
 		/// <summary>
@@ -136,7 +139,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? CellSize { get; set; }
 
 		/// <summary>
@@ -146,6 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Point")]
 		public object? InBoundingDataset { get; set; }
 
 		/// <summary>
@@ -166,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 2.2204460492503131e-16, Max = 0.99999999999999978)]
 		public object? Quantile { get; set; }
 
 		/// <summary>
@@ -185,6 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object? InStatsPolygons { get; set; }
 
 		/// <summary>
@@ -215,6 +223,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? ConditioningMeasurementErrorField { get; set; }
 
 		/// <summary>

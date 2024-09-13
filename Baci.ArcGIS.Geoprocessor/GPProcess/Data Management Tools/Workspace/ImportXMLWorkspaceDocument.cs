@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Import XML Workspace Document</para>
+	/// <para>Import XML Workspace Document</para>
 	/// <para>Imports the contents of an XML workspace document into an existing geodatabase.</para>
 	/// </summary>
 	public class ImportXMLWorkspaceDocument : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Import XML Workspace Document</para>
 		/// </summary>
-		public override string DisplayName => "Import XML Workspace Document";
+		public override string DisplayName() => "Import XML Workspace Document";
 
 		/// <summary>
 		/// <para>Tool Name : ImportXMLWorkspaceDocument</para>
 		/// </summary>
-		public override string ToolName => "ImportXMLWorkspaceDocument";
+		public override string ToolName() => "ImportXMLWorkspaceDocument";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ImportXMLWorkspaceDocument</para>
 		/// </summary>
-		public override string ExcuteName => "management.ImportXMLWorkspaceDocument";
+		public override string ExcuteName() => "management.ImportXMLWorkspaceDocument";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetGeodatabase, InFile, ImportType!, ConfigKeyword!, OutGeodatabase! };
+		public override object[] Parameters() => new object[] { TargetGeodatabase, InFile, ImportType!, ConfigKeyword!, OutGeodatabase! };
 
 		/// <summary>
 		/// <para>Target Geodatabase</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object TargetGeodatabase { get; set; }
 
 		/// <summary>
@@ -83,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml", "zip", "z")]
 		public object InFile { get; set; }
 
 		/// <summary>

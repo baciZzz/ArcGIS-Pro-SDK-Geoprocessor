@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Merge Lines By Pseudo Node</para>
+	/// <para>Merge Lines By Pseudo Node</para>
 	/// <para>Dissolves features where pseudo nodes occur.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Merge Lines By Pseudo Node</para>
 		/// </summary>
-		public override string DisplayName => "Merge Lines By Pseudo Node";
+		public override string DisplayName() => "Merge Lines By Pseudo Node";
 
 		/// <summary>
 		/// <para>Tool Name : MergeLinesByPseudoNode</para>
 		/// </summary>
-		public override string ToolName => "MergeLinesByPseudoNode";
+		public override string ToolName() => "MergeLinesByPseudoNode";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.MergeLinesByPseudoNode</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.MergeLinesByPseudoNode";
+		public override string ExcuteName() => "topographic.MergeLinesByPseudoNode";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, MergeFields!, AggregateOperations!, MergeFeatureRule!, UpdatedFeatures! };
+		public override object[] Parameters() => new object[] { InputFeatures, MergeFields!, AggregateOperations!, MergeFeatureRule!, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -71,6 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object InputFeatures { get; set; }
 
 		/// <summary>
@@ -80,6 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date")]
 		public object? MergeFields { get; set; }
 
 		/// <summary>

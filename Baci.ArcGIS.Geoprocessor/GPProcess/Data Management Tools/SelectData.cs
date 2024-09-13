@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Select Data</para>
+	/// <para>Select Data</para>
 	/// <para>The Select Data tool selects data in a parent data element such as a folder, geodatabase, feature dataset, or coverage.</para>
 	/// </summary>
 	[Obsolete()]
@@ -31,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Select Data</para>
 		/// </summary>
-		public override string DisplayName => "Select Data";
+		public override string DisplayName() => "Select Data";
 
 		/// <summary>
 		/// <para>Tool Name : SelectData</para>
 		/// </summary>
-		public override string ToolName => "SelectData";
+		public override string ToolName() => "SelectData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SelectData</para>
 		/// </summary>
-		public override string ExcuteName => "management.SelectData";
+		public override string ExcuteName() => "management.SelectData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataelement, OutDataelement!, OutDataelementDerived! };
+		public override object[] Parameters() => new object[] { InDataelement, OutDataelement!, OutDataelementDerived! };
 
 		/// <summary>
 		/// <para>Input Data Element</para>

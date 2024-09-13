@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Feature Compare</para>
+	/// <para>Feature Compare</para>
 	/// <para>Compares two feature classes or layers and returns the comparison results.</para>
 	/// </summary>
 	public class FeatureCompare : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Feature Compare</para>
 		/// </summary>
-		public override string DisplayName => "Feature Compare";
+		public override string DisplayName() => "Feature Compare";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureCompare</para>
 		/// </summary>
-		public override string ToolName => "FeatureCompare";
+		public override string ToolName() => "FeatureCompare";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.FeatureCompare</para>
 		/// </summary>
-		public override string ExcuteName => "management.FeatureCompare";
+		public override string ExcuteName() => "management.FeatureCompare";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBaseFeatures, InTestFeatures, SortField, CompareType!, IgnoreOptions!, XyTolerance!, MTolerance!, ZTolerance!, AttributeTolerances!, OmitField!, ContinueCompare!, OutCompareFile!, CompareStatus! };
+		public override object[] Parameters() => new object[] { InBaseFeatures, InTestFeatures, SortField, CompareType!, IgnoreOptions!, XyTolerance!, MTolerance!, ZTolerance!, AttributeTolerances!, OmitField!, ContinueCompare!, OutCompareFile!, CompareStatus! };
 
 		/// <summary>
 		/// <para>Input Base Features</para>

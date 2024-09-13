@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Calculate Geometry Attributes</para>
+	/// <para>Calculate Geometry Attributes</para>
 	/// <para>Adds information to a feature's attribute fields representing the spatial or geometric characteristics and location of each feature, such as length or area and x-, y-, z-, and m-coordinates.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -77,37 +78,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Geometry Attributes</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Geometry Attributes";
+		public override string DisplayName() => "Calculate Geometry Attributes";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateGeometryAttributes</para>
 		/// </summary>
-		public override string ToolName => "CalculateGeometryAttributes";
+		public override string ToolName() => "CalculateGeometryAttributes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CalculateGeometryAttributes</para>
 		/// </summary>
-		public override string ExcuteName => "management.CalculateGeometryAttributes";
+		public override string ExcuteName() => "management.CalculateGeometryAttributes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, GeometryProperty, LengthUnit!, AreaUnit!, CoordinateSystem!, UpdatedFeatures!, CoordinateFormat! };
+		public override object[] Parameters() => new object[] { InFeatures, GeometryProperty, LengthUnit!, AreaUnit!, CoordinateSystem!, UpdatedFeatures!, CoordinateFormat! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -116,6 +117,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Multipoint", "Point", "Polyline", "MultiPatch")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

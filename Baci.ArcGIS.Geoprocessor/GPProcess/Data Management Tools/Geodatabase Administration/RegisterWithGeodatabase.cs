@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Register with Geodatabase</para>
+	/// <para>Register with Geodatabase</para>
 	/// <para>Registers with the geodatabase the feature classes, tables, views, and raster layers that were created in the database using third-party tools or views created with the  Create Database View  tool. Once registered, information about the items—such as table and column names, spatial extent, and geometry type—is stored in the geodatabase's system tables, allowing these registered items to participate in geodatabase functionality.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Register with Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "Register with Geodatabase";
+		public override string DisplayName() => "Register with Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : RegisterWithGeodatabase</para>
 		/// </summary>
-		public override string ToolName => "RegisterWithGeodatabase";
+		public override string ToolName() => "RegisterWithGeodatabase";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RegisterWithGeodatabase</para>
 		/// </summary>
-		public override string ExcuteName => "management.RegisterWithGeodatabase";
+		public override string ExcuteName() => "management.RegisterWithGeodatabase";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, RegDataset!, InObjectIdField!, InShapeField!, InGeometryType!, InSpatialReference!, InExtent! };
+		public override object[] Parameters() => new object[] { InDataset, RegDataset!, InObjectIdField!, InShapeField!, InGeometryType!, InSpatialReference!, InExtent! };
 
 		/// <summary>
 		/// <para>Input Datasets</para>
@@ -86,6 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("OID", "Short", "Long")]
 		public object? InObjectIdField { get; set; }
 
 		/// <summary>
@@ -95,6 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Geometry")]
 		public object? InShapeField { get; set; }
 
 		/// <summary>

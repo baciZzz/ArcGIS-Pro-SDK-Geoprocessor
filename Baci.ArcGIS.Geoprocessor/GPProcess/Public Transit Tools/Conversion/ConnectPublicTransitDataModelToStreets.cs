@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 {
 	/// <summary>
 	/// <para>Connect Public Transit Data Model To Streets</para>
+	/// <para>Connect Public Transit Data Model To Streets</para>
 	/// <para>Connects transit stops to street features for use in a transit-enabled network dataset. This tool creates the StopsOnStreets and StopConnectors feature classes defined by the Network Analyst public transit data model and is intended to be run as part of a larger workflow for creating a transit-network dataset described in Create and use a network dataset with public transit data.</para>
 	/// </summary>
 	public class ConnectPublicTransitDataModelToStreets : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		/// <summary>
 		/// <para>Tool Display Name : Connect Public Transit Data Model To Streets</para>
 		/// </summary>
-		public override string DisplayName => "Connect Public Transit Data Model To Streets";
+		public override string DisplayName() => "Connect Public Transit Data Model To Streets";
 
 		/// <summary>
 		/// <para>Tool Name : ConnectPublicTransitDataModelToStreets</para>
 		/// </summary>
-		public override string ToolName => "ConnectPublicTransitDataModelToStreets";
+		public override string ToolName() => "ConnectPublicTransitDataModelToStreets";
 
 		/// <summary>
 		/// <para>Tool Excute Name : transit.ConnectPublicTransitDataModelToStreets</para>
 		/// </summary>
-		public override string ExcuteName => "transit.ConnectPublicTransitDataModelToStreets";
+		public override string ExcuteName() => "transit.ConnectPublicTransitDataModelToStreets";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Public Transit Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Public Transit Tools";
+		public override string ToolboxDisplayName() => "Public Transit Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : transit</para>
 		/// </summary>
-		public override string ToolboxAlise => "transit";
+		public override string ToolboxAlise() => "transit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetFeatureDataset, InStreetsFeatures, SearchDistance, Expression!, UpdatedTargetFeatureDataset!, UpdatedInStreetsFeatures!, UpdatedInStops!, OutputStopsOnStreets!, OutputStopConnectors! };
+		public override object[] Parameters() => new object[] { TargetFeatureDataset, InStreetsFeatures, SearchDistance, Expression!, UpdatedTargetFeatureDataset!, UpdatedInStreetsFeatures!, UpdatedInStops!, OutputStopsOnStreets!, OutputStopConnectors! };
 
 		/// <summary>
 		/// <para>Target Feature Dataset</para>
@@ -92,6 +93,8 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object InStreetsFeatures { get; set; }
 
 		/// <summary>

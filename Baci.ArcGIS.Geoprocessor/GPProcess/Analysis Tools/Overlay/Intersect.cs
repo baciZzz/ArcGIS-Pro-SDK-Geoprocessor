@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Intersect</para>
+	/// <para>Intersect</para>
 	/// <para>Computes a geometric intersection of the input features. Features or portions of features that overlap in all layers or feature classes will be written to the output feature class.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.AnalysisTools.PairwiseIntersect"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Intersect</para>
 		/// </summary>
-		public override string DisplayName => "Intersect";
+		public override string DisplayName() => "Intersect";
 
 		/// <summary>
 		/// <para>Tool Name : Intersect</para>
 		/// </summary>
-		public override string ToolName => "Intersect";
+		public override string ToolName() => "Intersect";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.Intersect</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.Intersect";
+		public override string ExcuteName() => "analysis.Intersect";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "qualifiedFieldNames" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "qualifiedFieldNames" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, JoinAttributes!, ClusterTolerance!, OutputType! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, JoinAttributes!, ClusterTolerance!, OutputType! };
 
 		/// <summary>
 		/// <para>Input Features</para>

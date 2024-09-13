@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build LAS Dataset Pyramid</para>
+	/// <para>Build LAS Dataset Pyramid</para>
 	/// <para>Constructs or updates a LAS dataset display cache, which optimizes its rendering performance.</para>
 	/// </summary>
 	public class BuildLasDatasetPyramid : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Build LAS Dataset Pyramid</para>
 		/// </summary>
-		public override string DisplayName => "Build LAS Dataset Pyramid";
+		public override string DisplayName() => "Build LAS Dataset Pyramid";
 
 		/// <summary>
 		/// <para>Tool Name : BuildLasDatasetPyramid</para>
 		/// </summary>
-		public override string ToolName => "BuildLasDatasetPyramid";
+		public override string ToolName() => "BuildLasDatasetPyramid";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.BuildLasDatasetPyramid</para>
 		/// </summary>
-		public override string ExcuteName => "management.BuildLasDatasetPyramid";
+		public override string ExcuteName() => "management.BuildLasDatasetPyramid";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, PointSelectionMethod!, ClassCodesWeights!, DerivedLasDataset! };
+		public override object[] Parameters() => new object[] { InLasDataset, PointSelectionMethod!, ClassCodesWeights!, DerivedLasDataset! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>

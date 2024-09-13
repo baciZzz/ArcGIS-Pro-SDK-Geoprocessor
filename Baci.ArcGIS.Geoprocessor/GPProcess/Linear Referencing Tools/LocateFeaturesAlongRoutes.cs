@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 {
 	/// <summary>
 	/// <para>Locate Features Along Routes</para>
+	/// <para>Locate Features Along Routes</para>
 	/// <para>Computes the intersection of input features (point, line, or polygon) and route features and writes the route and measure information to a new event table.</para>
 	/// </summary>
 	public class LocateFeaturesAlongRoutes : AbstractGPProcess
@@ -63,37 +64,37 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Locate Features Along Routes</para>
 		/// </summary>
-		public override string DisplayName => "Locate Features Along Routes";
+		public override string DisplayName() => "Locate Features Along Routes";
 
 		/// <summary>
 		/// <para>Tool Name : LocateFeaturesAlongRoutes</para>
 		/// </summary>
-		public override string ToolName => "LocateFeaturesAlongRoutes";
+		public override string ToolName() => "LocateFeaturesAlongRoutes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : lr.LocateFeaturesAlongRoutes</para>
 		/// </summary>
-		public override string ExcuteName => "lr.LocateFeaturesAlongRoutes";
+		public override string ExcuteName() => "lr.LocateFeaturesAlongRoutes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Linear Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Linear Referencing Tools";
+		public override string ToolboxDisplayName() => "Linear Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : lr</para>
 		/// </summary>
-		public override string ToolboxAlise => "lr";
+		public override string ToolboxAlise() => "lr";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InRoutes, RouteIdField, RadiusOrTolerance, OutTable, OutEventProperties, RouteLocations!, DistanceField!, ZeroLengthEvents!, InFields!, MDirectionOffsetting! };
+		public override object[] Parameters() => new object[] { InFeatures, InRoutes, RouteIdField, RadiusOrTolerance, OutTable, OutEventProperties, RouteLocations!, DistanceField!, ZeroLengthEvents!, InFields!, MDirectionOffsetting! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
-		[xmlserialize()]
+		[xmlserialize(Xml = "<GPRouteDomain xsi:type='typens:GPRouteDomain' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.0.0'></GPRouteDomain>")]
 		public object InRoutes { get; set; }
 
 		/// <summary>
@@ -118,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{4A4F70B0-913C-4A82-A33F-E190FFA409EA}")]
 		public object RouteIdField { get; set; }
 
 		/// <summary>

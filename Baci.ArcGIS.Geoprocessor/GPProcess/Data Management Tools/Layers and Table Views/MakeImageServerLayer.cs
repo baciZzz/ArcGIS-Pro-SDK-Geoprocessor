@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Image Server Layer</para>
+	/// <para>Make Image Server Layer</para>
 	/// <para>Creates a temporary raster layer from an image service. The layer that is created will not persist after the session ends unless the document is saved.</para>
 	/// </summary>
 	public class MakeImageServerLayer : AbstractGPProcess
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Image Server Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Image Server Layer";
+		public override string DisplayName() => "Make Image Server Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeImageServerLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeImageServerLayer";
+		public override string ToolName() => "MakeImageServerLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MakeImageServerLayer</para>
 		/// </summary>
-		public override string ExcuteName => "management.MakeImageServerLayer";
+		public override string ExcuteName() => "management.MakeImageServerLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InImageService, OutImageserverLayer, Template!, BandIndex!, MosaicMethod!, OrderField!, OrderBaseValue!, LockRasterid!, CellSize!, WhereClause!, ProcessingTemplate! };
+		public override object[] Parameters() => new object[] { InImageService, OutImageserverLayer, Template!, BandIndex!, MosaicMethod!, OrderField!, OrderBaseValue!, LockRasterid!, CellSize!, WhereClause!, ProcessingTemplate! };
 
 		/// <summary>
 		/// <para>Input Image Service</para>

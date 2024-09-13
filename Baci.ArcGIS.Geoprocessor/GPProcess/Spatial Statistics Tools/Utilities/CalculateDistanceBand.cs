@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Calculate Distance Band from Neighbor Count</para>
+	/// <para>Calculate Distance Band from Neighbor Count</para>
 	/// <para>Returns the minimum, the maximum, and the average distance to the specified Nth nearest neighbor (N is an input parameter) for a set of features.  Results are written as tool execution messages.</para>
 	/// </summary>
 	public class CalculateDistanceBand : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Distance Band from Neighbor Count</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Distance Band from Neighbor Count";
+		public override string DisplayName() => "Calculate Distance Band from Neighbor Count";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateDistanceBand</para>
 		/// </summary>
-		public override string ToolName => "CalculateDistanceBand";
+		public override string ToolName() => "CalculateDistanceBand";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.CalculateDistanceBand</para>
 		/// </summary>
-		public override string ExcuteName => "stats.CalculateDistanceBand";
+		public override string ExcuteName() => "stats.CalculateDistanceBand";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, Neighbors, DistanceMethod, MinimumDistance!, AverageDistance!, MaximumDistance! };
+		public override object[] Parameters() => new object[] { InputFeatures, Neighbors, DistanceMethod, MinimumDistance!, AverageDistance!, MaximumDistance! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 9999)]
 		public object Neighbors { get; set; } = "1";
 
 		/// <summary>

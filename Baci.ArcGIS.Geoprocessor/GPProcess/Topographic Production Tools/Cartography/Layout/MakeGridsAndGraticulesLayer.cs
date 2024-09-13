@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Make Grids And Graticules Layer</para>
+	/// <para>Make Grids And Graticules Layer</para>
 	/// <para>Creates a grouped layer of feature classes depicting grid, graticule, and border features using predefined cartographic specifications. Grid layers are ideal for advanced grid definitions that are scale and extent specific.</para>
 	/// </summary>
 	public class MakeGridsAndGraticulesLayer : AbstractGPProcess
@@ -54,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Grids And Graticules Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Grids And Graticules Layer";
+		public override string DisplayName() => "Make Grids And Graticules Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeGridsAndGraticulesLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeGridsAndGraticulesLayer";
+		public override string ToolName() => "MakeGridsAndGraticulesLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.MakeGridsAndGraticulesLayer</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.MakeGridsAndGraticulesLayer";
+		public override string ExcuteName() => "topographic.MakeGridsAndGraticulesLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicCoordinateSystem", "configKeyword", "outputMFlag", "outputZFlag", "referenceScale" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicCoordinateSystem", "configKeyword", "outputMFlag", "outputZFlag", "referenceScale" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGridXml, AreaOfInterest, TargetFeatureDataset, OutLayerName, GridName!, ConfigureLayout!, Layout!, MapFrame!, ReferenceScale!, Rotation!, MaskSize!, XyTolerance!, PrimaryCoordinateSystem!, AncillaryCoordinateSystem1!, AncillaryCoordinateSystem2!, AncillaryCoordinateSystem3!, AncillaryCoordinateSystem4! };
+		public override object[] Parameters() => new object[] { InGridXml, AreaOfInterest, TargetFeatureDataset, OutLayerName, GridName!, ConfigureLayout!, Layout!, MapFrame!, ReferenceScale!, Rotation!, MaskSize!, XyTolerance!, PrimaryCoordinateSystem!, AncillaryCoordinateSystem1!, AncillaryCoordinateSystem2!, AncillaryCoordinateSystem3!, AncillaryCoordinateSystem4! };
 
 		/// <summary>
 		/// <para>Grid Template (XML file)</para>
@@ -93,6 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object InGridXml { get; set; }
 
 		/// <summary>
@@ -178,6 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = false, Value = 1)]
 		[Category("Advanced Settings (optional)")]
 		public object? ReferenceScale { get; set; }
 

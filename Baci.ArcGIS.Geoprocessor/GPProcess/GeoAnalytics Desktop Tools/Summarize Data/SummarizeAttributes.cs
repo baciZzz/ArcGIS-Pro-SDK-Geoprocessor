@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Summarize Attributes</para>
+	/// <para>Summarize Attributes</para>
 	/// <para>Calculates summary statistics for fields in a feature class.</para>
 	/// </summary>
 	public class SummarizeAttributes : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Summarize Attributes</para>
 		/// </summary>
-		public override string DisplayName => "Summarize Attributes";
+		public override string DisplayName() => "Summarize Attributes";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeAttributes</para>
 		/// </summary>
-		public override string ToolName => "SummarizeAttributes";
+		public override string ToolName() => "SummarizeAttributes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.SummarizeAttributes</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.SummarizeAttributes";
+		public override string ExcuteName() => "gapro.SummarizeAttributes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutTable, Fields!, SummaryFields!, TimeStepInterval!, TimeStepRepeat!, TimeStepReference! };
+		public override object[] Parameters() => new object[] { InputLayer, OutTable, Fields!, SummaryFields!, TimeStepInterval!, TimeStepRepeat!, TimeStepReference! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -91,6 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date")]
 		public object? Fields { get; set; }
 
 		/// <summary>

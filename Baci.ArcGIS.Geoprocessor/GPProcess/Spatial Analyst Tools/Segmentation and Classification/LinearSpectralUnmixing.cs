@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Linear Spectral Unmixing</para>
+	/// <para>Linear Spectral Unmixing</para>
 	/// <para>Performs subpixel classification and calculates the fractional abundance of different land cover types for individual pixels.</para>
 	/// </summary>
 	public class LinearSpectralUnmixing : AbstractGPProcess
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Linear Spectral Unmixing</para>
 		/// </summary>
-		public override string DisplayName => "Linear Spectral Unmixing";
+		public override string DisplayName() => "Linear Spectral Unmixing";
 
 		/// <summary>
 		/// <para>Tool Name : LinearSpectralUnmixing</para>
 		/// </summary>
-		public override string ToolName => "LinearSpectralUnmixing";
+		public override string ToolName() => "LinearSpectralUnmixing";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.LinearSpectralUnmixing</para>
 		/// </summary>
-		public override string ExcuteName => "sa.LinearSpectralUnmixing";
+		public override string ExcuteName() => "sa.LinearSpectralUnmixing";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, InSpectralProfileFile, ValueOption! };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, InSpectralProfileFile, ValueOption! };
 
 		/// <summary>
 		/// <para>Input Raster</para>

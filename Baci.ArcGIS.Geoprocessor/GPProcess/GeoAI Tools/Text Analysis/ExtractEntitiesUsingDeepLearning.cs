@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 {
 	/// <summary>
 	/// <para>Extract Entities Using Deep Learning</para>
+	/// <para>Extract Entities Using Deep Learning</para>
 	/// <para>Runs a trained named entity recognizer model on text files in a folder to extract entities and locations (such as addresses, place or person names, dates, and monetary values) in a table. If the extracted entities contain an address, the tool geocodes the addresses using the specified locator and produces a feature class as an output.</para>
 	/// </summary>
 	public class ExtractEntitiesUsingDeepLearning : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// <summary>
 		/// <para>Tool Display Name : Extract Entities Using Deep Learning</para>
 		/// </summary>
-		public override string DisplayName => "Extract Entities Using Deep Learning";
+		public override string DisplayName() => "Extract Entities Using Deep Learning";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractEntitiesUsingDeepLearning</para>
 		/// </summary>
-		public override string ToolName => "ExtractEntitiesUsingDeepLearning";
+		public override string ToolName() => "ExtractEntitiesUsingDeepLearning";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoai.ExtractEntitiesUsingDeepLearning</para>
 		/// </summary>
-		public override string ExcuteName => "geoai.ExtractEntitiesUsingDeepLearning";
+		public override string ExcuteName() => "geoai.ExtractEntitiesUsingDeepLearning";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAI Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAI Tools";
+		public override string ToolboxDisplayName() => "GeoAI Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoai</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoai";
+		public override string ToolboxAlise() => "geoai";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "gpuID", "processorType" };
+		public override string[] ValidEnvironments() => new string[] { "gpuID", "processorType" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFolder, OutTable, InModelDefinitionFile, ModelArguments!, BatchSize!, LocationZone!, InLocator! };
+		public override object[] Parameters() => new object[] { InFolder, OutTable, InModelDefinitionFile, ModelArguments!, BatchSize!, LocationZone!, InLocator! };
 
 		/// <summary>
 		/// <para>Input Folder</para>
@@ -95,6 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("emd", "dlpk")]
 		public object InModelDefinitionFile { get; set; }
 
 		/// <summary>

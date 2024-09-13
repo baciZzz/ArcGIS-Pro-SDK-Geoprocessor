@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Import Digital Obstacle File</para>
+	/// <para>Import Digital Obstacle File</para>
 	/// <para>Adds, deletes, and updates the obstacle point features in an input obstacle feature class using an input digital obstacle file (DOF).</para>
 	/// </summary>
 	public class ImportDOF : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Import Digital Obstacle File</para>
 		/// </summary>
-		public override string DisplayName => "Import Digital Obstacle File";
+		public override string DisplayName() => "Import Digital Obstacle File";
 
 		/// <summary>
 		/// <para>Tool Name : ImportDOF</para>
 		/// </summary>
-		public override string ToolName => "ImportDOF";
+		public override string ToolName() => "ImportDOF";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.ImportDOF</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.ImportDOF";
+		public override string ExcuteName() => "aviation.ImportDOF";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InObstacleFile, ObstacleFeatures, UpdatedObstacleFeatures! };
+		public override object[] Parameters() => new object[] { InObstacleFile, ObstacleFeatures, UpdatedObstacleFeatures! };
 
 		/// <summary>
 		/// <para>Input Digital Obstacle File</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("DAT")]
 		public object InObstacleFile { get; set; }
 
 		/// <summary>
@@ -83,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object ObstacleFeatures { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Delete Diagram</para>
+	/// <para>Delete Diagram</para>
 	/// <para>Select and delete network diagrams from a diagram dataset</para>
 	/// </summary>
 	[Obsolete()]
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete Diagram</para>
 		/// </summary>
-		public override string DisplayName => "Delete Diagram";
+		public override string DisplayName() => "Delete Diagram";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteDiagram</para>
 		/// </summary>
-		public override string ToolName => "DeleteDiagram";
+		public override string ToolName() => "DeleteDiagram";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.DeleteDiagram</para>
 		/// </summary>
-		public override string ExcuteName => "un.DeleteDiagram";
+		public override string ExcuteName() => "un.DeleteDiagram";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDiagrams, TemplateNames!, DiagramNames!, OutDiagrams! };
+		public override object[] Parameters() => new object[] { InDiagrams, TemplateNames!, DiagramNames!, OutDiagrams! };
 
 		/// <summary>
 		/// <para>Input Network or Network Diagram Layer</para>

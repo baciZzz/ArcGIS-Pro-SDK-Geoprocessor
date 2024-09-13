@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Curve Fit Forecast</para>
+	/// <para>Curve Fit Forecast</para>
 	/// <para>Forecasts the values of each location of a space-time cube using curve fitting.</para>
 	/// </summary>
 	public class CurveFitForecast : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Display Name : Curve Fit Forecast</para>
 		/// </summary>
-		public override string DisplayName => "Curve Fit Forecast";
+		public override string DisplayName() => "Curve Fit Forecast";
 
 		/// <summary>
 		/// <para>Tool Name : CurveFitForecast</para>
 		/// </summary>
-		public override string ToolName => "CurveFitForecast";
+		public override string ToolName() => "CurveFitForecast";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stpm.CurveFitForecast</para>
 		/// </summary>
-		public override string ExcuteName => "stpm.CurveFitForecast";
+		public override string ExcuteName() => "stpm.CurveFitForecast";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Space Time Pattern Mining Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Space Time Pattern Mining Tools";
+		public override string ToolboxDisplayName() => "Space Time Pattern Mining Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stpm</para>
 		/// </summary>
-		public override string ToolboxAlise => "stpm";
+		public override string ToolboxAlise() => "stpm";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCube, AnalysisVariable, OutputFeatures, OutputCube!, NumberOfTimeStepsToForecast!, CurveType!, NumberForValidation!, OutlierOption!, LevelOfConfidence!, MaximumNumberOfOutliers! };
+		public override object[] Parameters() => new object[] { InCube, AnalysisVariable, OutputFeatures, OutputCube!, NumberOfTimeStepsToForecast!, CurveType!, NumberForValidation!, OutlierOption!, LevelOfConfidence!, MaximumNumberOfOutliers! };
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("nc")]
 		public object InCube { get; set; }
 
 		/// <summary>
@@ -105,6 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("nc")]
 		public object? OutputCube { get; set; }
 
 		/// <summary>

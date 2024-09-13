@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Cost Path As Polyline</para>
+	/// <para>Cost Path As Polyline</para>
 	/// <para>Calculates the least-cost path from a source to a destination as a line feature.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.RasterAnalysisTools.OptimalPathAsLine"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
@@ -49,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Cost Path As Polyline</para>
 		/// </summary>
-		public override string DisplayName => "Cost Path As Polyline";
+		public override string DisplayName() => "Cost Path As Polyline";
 
 		/// <summary>
 		/// <para>Tool Name : CostPathAsPolyline</para>
 		/// </summary>
-		public override string ToolName => "CostPathAsPolyline";
+		public override string ToolName() => "CostPathAsPolyline";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.CostPathAsPolyline</para>
 		/// </summary>
-		public override string ExcuteName => "ra.CostPathAsPolyline";
+		public override string ExcuteName() => "ra.CostPathAsPolyline";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputdestinationrasterorfeatures, Inputcostdistanceraster, Inputcostbacklinkraster, Outputpolylinename, Pathtype!, Destinationfield!, Outputpolylinefeatures! };
+		public override object[] Parameters() => new object[] { Inputdestinationrasterorfeatures, Inputcostdistanceraster, Inputcostbacklinkraster, Outputpolylinename, Pathtype!, Destinationfield!, Outputpolylinefeatures! };
 
 		/// <summary>
 		/// <para>Input Destination Raster or Features</para>

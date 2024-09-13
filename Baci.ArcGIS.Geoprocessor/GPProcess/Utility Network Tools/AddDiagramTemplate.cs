@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Diagram Template</para>
+	/// <para>Add Diagram Template</para>
 	/// <para>Add a diagram template</para>
 	/// </summary>
 	[Obsolete()]
@@ -34,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Diagram Template</para>
 		/// </summary>
-		public override string DisplayName => "Add Diagram Template";
+		public override string DisplayName() => "Add Diagram Template";
 
 		/// <summary>
 		/// <para>Tool Name : AddDiagramTemplate</para>
 		/// </summary>
-		public override string ToolName => "AddDiagramTemplate";
+		public override string ToolName() => "AddDiagramTemplate";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddDiagramTemplate</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddDiagramTemplate";
+		public override string ExcuteName() => "un.AddDiagramTemplate";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, NdbdFile!, NdldFile!, OutUtilityNetwork!, OutTemplateName! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, NdbdFile!, NdldFile!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>
@@ -86,6 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("ndbd")]
 		public object? NdbdFile { get; set; }
 
 		/// <summary>
@@ -94,6 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("ndld")]
 		public object? NdldFile { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Interpolate Points</para>
+	/// <para>Interpolate Points</para>
 	/// <para>Predicts values at new locations based on measurements from a collection of points. The tool uses point data with values at each point as input and makes areas classified by predicted values.</para>
 	/// </summary>
 	public class InterpolatePoints : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Interpolate Points</para>
 		/// </summary>
-		public override string DisplayName => "Interpolate Points";
+		public override string DisplayName() => "Interpolate Points";
 
 		/// <summary>
 		/// <para>Tool Name : InterpolatePoints</para>
 		/// </summary>
-		public override string ToolName => "InterpolatePoints";
+		public override string ToolName() => "InterpolatePoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sfa.InterpolatePoints</para>
 		/// </summary>
-		public override string ExcuteName => "sfa.InterpolatePoints";
+		public override string ExcuteName() => "sfa.InterpolatePoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Standard Feature Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Standard Feature Analysis Tools";
+		public override string ToolboxDisplayName() => "Standard Feature Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sfa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sfa";
+		public override string ToolboxAlise() => "sfa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputlayer, Outputname, Field!, Interpolateoption!, Outputpredictionerror!, Classificationtype!, Numclasses!, Classbreaks!, Boundingpolygonlayer!, Predictatpointlayer!, Outputlayer!, Outputpredictionerrorlayer!, Outputpredictedpointslayer! };
+		public override object[] Parameters() => new object[] { Inputlayer, Outputname, Field!, Interpolateoption!, Outputpredictionerror!, Classificationtype!, Numclasses!, Classbreaks!, Boundingpolygonlayer!, Predictatpointlayer!, Outputlayer!, Outputpredictionerrorlayer!, Outputpredictedpointslayer! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,6 +75,8 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint")]
+		[FeatureType("Simple")]
 		public object Inputlayer { get; set; }
 
 		/// <summary>
@@ -91,6 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? Field { get; set; }
 
 		/// <summary>
@@ -141,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 32)]
 		[Category("Additional Options")]
 		public object? Numclasses { get; set; } = "10";
 

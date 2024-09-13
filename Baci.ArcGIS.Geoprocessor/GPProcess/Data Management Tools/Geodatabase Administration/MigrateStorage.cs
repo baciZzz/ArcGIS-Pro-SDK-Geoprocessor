@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Migrate Storage</para>
+	/// <para>Migrate Storage</para>
 	/// <para>Moves the data from a binary, spatial, or spatial attribute column of one data type to a new column of a different data type in geodatabases in Oracle and SQL Server. The configuration keyword you specify when migrating determines the data type used for the new column.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Migrate Storage</para>
 		/// </summary>
-		public override string DisplayName => "Migrate Storage";
+		public override string DisplayName() => "Migrate Storage";
 
 		/// <summary>
 		/// <para>Tool Name : MigrateStorage</para>
 		/// </summary>
-		public override string ToolName => "MigrateStorage";
+		public override string ToolName() => "MigrateStorage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MigrateStorage</para>
 		/// </summary>
-		public override string ExcuteName => "management.MigrateStorage";
+		public override string ExcuteName() => "management.MigrateStorage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDatasets, ConfigKeyword, OutDatasetss! };
+		public override object[] Parameters() => new object[] { InDatasets, ConfigKeyword, OutDatasetss! };
 
 		/// <summary>
 		/// <para>Input Datasets</para>

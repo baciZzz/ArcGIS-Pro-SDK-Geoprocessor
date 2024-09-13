@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Connect Network Dataset Transit Sources To Streets</para>
+	/// <para>Connect Network Dataset Transit Sources To Streets</para>
 	/// <para>Connects transit stops to street features for use in a transit-enabled network dataset. This tool creates the StopsOnStreets and StopConnectors feature classes defined by the Network Analyst public transit data model and is intended to be run as part of a larger workflow for creating a transit-network dataset described in Create and use a network dataset with public transit data.</para>
 	/// </summary>
 	[Obsolete()]
@@ -44,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Connect Network Dataset Transit Sources To Streets</para>
 		/// </summary>
-		public override string DisplayName => "Connect Network Dataset Transit Sources To Streets";
+		public override string DisplayName() => "Connect Network Dataset Transit Sources To Streets";
 
 		/// <summary>
 		/// <para>Tool Name : ConnectNetworkDatasetTransitSourcesToStreets</para>
 		/// </summary>
-		public override string ToolName => "ConnectNetworkDatasetTransitSourcesToStreets";
+		public override string ToolName() => "ConnectNetworkDatasetTransitSourcesToStreets";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.ConnectNetworkDatasetTransitSourcesToStreets</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.ConnectNetworkDatasetTransitSourcesToStreets";
+		public override string ExcuteName() => "conversion.ConnectNetworkDatasetTransitSourcesToStreets";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetFeatureDataset, InStreetsFeatures, SearchDistance, Expression!, UpdatedTargetFeatureDataset!, UpdatedInStreetsFeatures!, UpdatedInStops!, OutputStopsOnStreets!, OutputStopConnectors! };
+		public override object[] Parameters() => new object[] { TargetFeatureDataset, InStreetsFeatures, SearchDistance, Expression!, UpdatedTargetFeatureDataset!, UpdatedInStreetsFeatures!, UpdatedInStops!, OutputStopsOnStreets!, OutputStopConnectors! };
 
 		/// <summary>
 		/// <para>Target Feature Dataset</para>
@@ -93,6 +94,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object InStreetsFeatures { get; set; }
 
 		/// <summary>

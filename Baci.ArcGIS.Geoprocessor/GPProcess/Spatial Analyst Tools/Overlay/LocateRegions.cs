@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Locate Regions</para>
+	/// <para>Locate Regions</para>
 	/// <para>Identifies the best regions, or groups of contiguous cells, from an input utility (suitability) raster that satisfy a specified evaluation criterion and that meet identified shape, size, number, and interregion distance constraints.</para>
 	/// </summary>
 	public class LocateRegions : AbstractGPProcess
@@ -47,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Locate Regions</para>
 		/// </summary>
-		public override string DisplayName => "Locate Regions";
+		public override string DisplayName() => "Locate Regions";
 
 		/// <summary>
 		/// <para>Tool Name : LocateRegions</para>
 		/// </summary>
-		public override string ToolName => "LocateRegions";
+		public override string ToolName() => "LocateRegions";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.LocateRegions</para>
 		/// </summary>
-		public override string ExcuteName => "sa.LocateRegions";
+		public override string ExcuteName() => "sa.LocateRegions";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "rasterStatistics", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "rasterStatistics", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, TotalArea!, AreaUnits!, NumberOfRegions!, RegionShape!, RegionOrientation!, ShapeTradeoff!, EvaluationMethod!, MinimumArea!, MaximumArea!, MinimumDistance!, MaximumDistance!, DistanceUnits!, InExistingRegions!, NumberOfNeighbors!, NoIslands!, RegionSeeds!, RegionResolution!, SelectionMethod! };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, TotalArea!, AreaUnits!, NumberOfRegions!, RegionShape!, RegionOrientation!, ShapeTradeoff!, EvaluationMethod!, MinimumArea!, MaximumArea!, MinimumDistance!, MaximumDistance!, DistanceUnits!, InExistingRegions!, NumberOfNeighbors!, NoIslands!, RegionSeeds!, RegionResolution!, SelectionMethod! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -87,7 +88,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRaster { get; set; }
 
 		/// <summary>
@@ -177,6 +181,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
+		[High(Allow = true, Value = 360)]
 		public object? RegionOrientation { get; set; } = "0";
 
 		/// <summary>
@@ -188,6 +194,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? ShapeTradeoff { get; set; } = "50";
 
 		/// <summary>
@@ -238,6 +245,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? MinimumDistance { get; set; }
 
 		/// <summary>
@@ -250,6 +258,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? MaximumDistance { get; set; }
 
 		/// <summary>
@@ -278,7 +287,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEFeatureClass", "GPFeatureLayer", "DETin", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("OID", "Short", "Long", "Float", "Double", "Text", "Geometry")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? InExistingRegions { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>FAA 2C</para>
+	/// <para>FAA 2C</para>
 	/// <para>Generates an Obstruction Identification Surface (OIS) for helipads based on specifications from FAA Advisory Circular 150/5390-2C.</para>
 	/// </summary>
 	public class FAA2C : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : FAA 2C</para>
 		/// </summary>
-		public override string DisplayName => "FAA 2C";
+		public override string DisplayName() => "FAA 2C";
 
 		/// <summary>
 		/// <para>Tool Name : FAA2C</para>
 		/// </summary>
-		public override string ToolName => "FAA2C";
+		public override string ToolName() => "FAA2C";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.FAA2C</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.FAA2C";
+		public override string ExcuteName() => "aviation.FAA2C";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFatoFeatures, TargetOisFeatures, SurfaceClassification, SurfaceShape!, ApproachBearing!, InFlightpathFeatures!, HelipadElevation!, CustomJsonFile!, DerivedOutfeatureclass! };
+		public override object[] Parameters() => new object[] { InputFatoFeatures, TargetOisFeatures, SurfaceClassification, SurfaceShape!, ApproachBearing!, InFlightpathFeatures!, HelipadElevation!, CustomJsonFile!, DerivedOutfeatureclass! };
 
 		/// <summary>
 		/// <para>Input FATO Features</para>
@@ -82,6 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InputFatoFeatures { get; set; }
 
 		/// <summary>
@@ -132,6 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object? InFlightpathFeatures { get; set; }
 
 		/// <summary>
@@ -149,6 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("json")]
 		public object? CustomJsonFile { get; set; }
 
 		/// <summary>

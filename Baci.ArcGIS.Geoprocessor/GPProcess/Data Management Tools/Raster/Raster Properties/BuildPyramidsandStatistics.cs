@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Pyramids And Statistics</para>
+	/// <para>Build Pyramids And Statistics</para>
 	/// <para>Traverses a folder structure, building pyramids and calculating statistics for all the raster datasets it contains. It can also build pyramids and calculate statistics for all the items in a mosaic dataset.</para>
 	/// </summary>
 	public class BuildPyramidsandStatistics : AbstractGPProcess
@@ -31,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Build Pyramids And Statistics</para>
 		/// </summary>
-		public override string DisplayName => "Build Pyramids And Statistics";
+		public override string DisplayName() => "Build Pyramids And Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : BuildPyramidsandStatistics</para>
 		/// </summary>
-		public override string ToolName => "BuildPyramidsandStatistics";
+		public override string ToolName() => "BuildPyramidsandStatistics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.BuildPyramidsandStatistics</para>
 		/// </summary>
-		public override string ExcuteName => "management.BuildPyramidsandStatistics";
+		public override string ExcuteName() => "management.BuildPyramidsandStatistics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "pyramid", "rasterStatistics" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor", "pyramid", "rasterStatistics" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, IncludeSubdirectories!, BuildPyramids!, CalculateStatistics!, BUILDONSOURCE!, BlockField!, EstimateStatistics!, XSkipFactor!, YSkipFactor!, IgnoreValues!, PyramidLevel!, SKIPFIRST!, ResampleTechnique!, CompressionType!, CompressionQuality!, SkipExisting!, OutWorkspace!, WhereClause!, SipsMode! };
+		public override object[] Parameters() => new object[] { InWorkspace, IncludeSubdirectories!, BuildPyramids!, CalculateStatistics!, BUILDONSOURCE!, BlockField!, EstimateStatistics!, XSkipFactor!, YSkipFactor!, IgnoreValues!, PyramidLevel!, SKIPFIRST!, ResampleTechnique!, CompressionType!, CompressionQuality!, SkipExisting!, OutWorkspace!, WhereClause!, SipsMode! };
 
 		/// <summary>
 		/// <para>Input Data or Workspace</para>

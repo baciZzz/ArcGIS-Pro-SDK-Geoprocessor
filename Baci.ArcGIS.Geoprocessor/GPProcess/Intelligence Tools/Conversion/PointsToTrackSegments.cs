@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Points To Track Segments</para>
+	/// <para>Points To Track Segments</para>
 	/// <para>Converts time-enabled sequences of input point data, such as GPS points, to a series of output paths.</para>
 	/// </summary>
 	public class PointsToTrackSegments : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Points To Track Segments</para>
 		/// </summary>
-		public override string DisplayName => "Points To Track Segments";
+		public override string DisplayName() => "Points To Track Segments";
 
 		/// <summary>
 		/// <para>Tool Name : PointsToTrackSegments</para>
 		/// </summary>
-		public override string ToolName => "PointsToTrackSegments";
+		public override string ToolName() => "PointsToTrackSegments";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.PointsToTrackSegments</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.PointsToTrackSegments";
+		public override string ExcuteName() => "intelligence.PointsToTrackSegments";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DateField, OutFeatureClass, GroupField!, IncludeVelocity!, OutPointFeatureClass!, ErrorOnDuplicateTimestamps!, KeepInputFields! };
+		public override object[] Parameters() => new object[] { InFeatures, DateField, OutFeatureClass, GroupField!, IncludeVelocity!, OutPointFeatureClass!, ErrorOnDuplicateTimestamps!, KeepInputFields! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -88,6 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object DateField { get; set; }
 
 		/// <summary>
@@ -105,6 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Long", "Short")]
 		public object? GroupField { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Remove Cutback Vertices</para>
+	/// <para>Remove Cutback Vertices</para>
 	/// <para>Removes unwanted cutbacks from polyline and polygon features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Cutback Vertices</para>
 		/// </summary>
-		public override string DisplayName => "Remove Cutback Vertices";
+		public override string DisplayName() => "Remove Cutback Vertices";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveCutbackVertices</para>
 		/// </summary>
-		public override string ToolName => "RemoveCutbackVertices";
+		public override string ToolName() => "RemoveCutbackVertices";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.RemoveCutbackVertices</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.RemoveCutbackVertices";
+		public override string ExcuteName() => "topographic.RemoveCutbackVertices";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, MinimumAngle, RemovalMethod!, SkipCoincidentVertices!, UpdatedFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, MinimumAngle, RemovalMethod!, SkipCoincidentVertices!, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -76,6 +77,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Multipatch To COLLADA</para>
+	/// <para>Multipatch To COLLADA</para>
 	/// <para>Converts one or more multipatch features into a collection of COLLADA files (.dae) and referenced texture image files in an output folder.</para>
 	/// </summary>
 	public class MultipatchToCollada : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Multipatch To COLLADA</para>
 		/// </summary>
-		public override string DisplayName => "Multipatch To COLLADA";
+		public override string DisplayName() => "Multipatch To COLLADA";
 
 		/// <summary>
 		/// <para>Tool Name : MultipatchToCollada</para>
 		/// </summary>
-		public override string ToolName => "MultipatchToCollada";
+		public override string ToolName() => "MultipatchToCollada";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.MultipatchToCollada</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.MultipatchToCollada";
+		public override string ExcuteName() => "conversion.MultipatchToCollada";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputFolder, PrependSource!, FieldName!, ColladaVersion! };
+		public override object[] Parameters() => new object[] { InFeatures, OutputFolder, PrependSource!, FieldName!, ColladaVersion! };
 
 		/// <summary>
 		/// <para>Input Multipatch Features</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("MultiPatch")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -103,6 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("OID", "Text", "Short", "Long")]
 		public object? FieldName { get; set; }
 
 		/// <summary>

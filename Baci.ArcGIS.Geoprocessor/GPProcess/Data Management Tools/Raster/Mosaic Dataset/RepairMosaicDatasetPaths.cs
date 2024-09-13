@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Repair Mosaic Dataset Paths</para>
+	/// <para>Repair Mosaic Dataset Paths</para>
 	/// <para>Resets paths to source imagery if you have moved or copied a mosaic dataset.</para>
 	/// </summary>
 	public class RepairMosaicDatasetPaths : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Repair Mosaic Dataset Paths</para>
 		/// </summary>
-		public override string DisplayName => "Repair Mosaic Dataset Paths";
+		public override string DisplayName() => "Repair Mosaic Dataset Paths";
 
 		/// <summary>
 		/// <para>Tool Name : RepairMosaicDatasetPaths</para>
 		/// </summary>
-		public override string ToolName => "RepairMosaicDatasetPaths";
+		public override string ToolName() => "RepairMosaicDatasetPaths";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RepairMosaicDatasetPaths</para>
 		/// </summary>
-		public override string ExcuteName => "management.RepairMosaicDatasetPaths";
+		public override string ExcuteName() => "management.RepairMosaicDatasetPaths";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, PathsList, WhereClause!, OutMosaicDataset! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, PathsList, WhereClause!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

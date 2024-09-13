@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 {
 	/// <summary>
 	/// <para>Overlay Route Events</para>
+	/// <para>Overlay Route Events</para>
 	/// <para>Overlays two event tables to create an output event table that represents the union or intersection of the input.</para>
 	/// </summary>
 	public class OverlayRouteEvents : AbstractGPProcess
@@ -81,37 +82,37 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Overlay Route Events</para>
 		/// </summary>
-		public override string DisplayName => "Overlay Route Events";
+		public override string DisplayName() => "Overlay Route Events";
 
 		/// <summary>
 		/// <para>Tool Name : OverlayRouteEvents</para>
 		/// </summary>
-		public override string ToolName => "OverlayRouteEvents";
+		public override string ToolName() => "OverlayRouteEvents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : lr.OverlayRouteEvents</para>
 		/// </summary>
-		public override string ExcuteName => "lr.OverlayRouteEvents";
+		public override string ExcuteName() => "lr.OverlayRouteEvents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Linear Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Linear Referencing Tools";
+		public override string ToolboxDisplayName() => "Linear Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : lr</para>
 		/// </summary>
-		public override string ToolboxAlise => "lr";
+		public override string ToolboxAlise() => "lr";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, InEventProperties, OverlayTable, OverlayEventProperties, OverlayType, OutTable, OutEventProperties, ZeroLengthEvents!, InFields!, BuildIndex! };
+		public override object[] Parameters() => new object[] { InTable, InEventProperties, OverlayTable, OverlayEventProperties, OverlayType, OutTable, OutEventProperties, ZeroLengthEvents!, InFields!, BuildIndex! };
 
 		/// <summary>
 		/// <para>Input Event Table</para>
@@ -119,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
-		[xmlserialize()]
+		[xmlserialize(Xml = "<GPRouteMeasureEventDomain xsi:type='typens:GPRouteMeasureEventDomain' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.0.0'></GPRouteMeasureEventDomain>")]
 		public object InTable { get; set; }
 
 		/// <summary>
@@ -142,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
-		[xmlserialize()]
+		[xmlserialize(Xml = "<GPRouteMeasureEventDomain xsi:type='typens:GPRouteMeasureEventDomain' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.0.0'></GPRouteMeasureEventDomain>")]
 		public object OverlayTable { get; set; }
 
 		/// <summary>

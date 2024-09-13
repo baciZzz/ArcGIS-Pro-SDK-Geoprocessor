@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Feature To Point</para>
+	/// <para>Feature To Point</para>
 	/// <para>Creates a feature class containing points generated from the representative locations of input features.</para>
 	/// </summary>
 	public class FeatureToPoint : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Feature To Point</para>
 		/// </summary>
-		public override string DisplayName => "Feature To Point";
+		public override string DisplayName() => "Feature To Point";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureToPoint</para>
 		/// </summary>
-		public override string ToolName => "FeatureToPoint";
+		public override string ToolName() => "FeatureToPoint";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.FeatureToPoint</para>
 		/// </summary>
-		public override string ExcuteName => "management.FeatureToPoint";
+		public override string ExcuteName() => "management.FeatureToPoint";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, PointLocation! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, PointLocation! };
 
 		/// <summary>
 		/// <para>Input Features</para>

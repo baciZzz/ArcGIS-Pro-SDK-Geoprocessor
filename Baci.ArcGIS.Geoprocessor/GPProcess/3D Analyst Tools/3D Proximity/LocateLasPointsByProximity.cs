@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Locate LAS Points By Proximity</para>
+	/// <para>Locate LAS Points By Proximity</para>
 	/// <para>Identifies LAS points within the three-dimensional proximity of z-enabled features along with the option to reclassify those points.</para>
 	/// </summary>
 	public class LocateLasPointsByProximity : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Locate LAS Points By Proximity</para>
 		/// </summary>
-		public override string DisplayName => "Locate LAS Points By Proximity";
+		public override string DisplayName() => "Locate LAS Points By Proximity";
 
 		/// <summary>
 		/// <para>Tool Name : LocateLasPointsByProximity</para>
 		/// </summary>
-		public override string ToolName => "LocateLasPointsByProximity";
+		public override string ToolName() => "LocateLasPointsByProximity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.LocateLasPointsByProximity</para>
 		/// </summary>
-		public override string ExcuteName => "3d.LocateLasPointsByProximity";
+		public override string ExcuteName() => "3d.LocateLasPointsByProximity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, InFeatures, SearchRadius!, CountField!, OutFeatures!, Geometry!, ClassCode!, ComputeStats!, OutLasDataset!, DerivedFeatures!, UpdatePyramid! };
+		public override object[] Parameters() => new object[] { InLasDataset, InFeatures, SearchRadius!, CountField!, OutFeatures!, Geometry!, ClassCode!, ComputeStats!, OutLasDataset!, DerivedFeatures!, UpdatePyramid! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -81,7 +82,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
-		[GPFeatureClassDomain()]
+		[GPFeatureClassDomain(Has_Z = true, Include_Z = true)]
+		[GeometryType("Point", "Polyline", "Polygon", "MultiPatch")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

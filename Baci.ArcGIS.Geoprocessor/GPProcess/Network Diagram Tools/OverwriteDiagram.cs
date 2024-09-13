@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Overwrite Diagram</para>
+	/// <para>Overwrite Diagram</para>
 	/// <para>Overwrites the contents of a network diagram with the network elements currently selected in the specified map. These network elements become the new initial content of the diagram.</para>
 	/// </summary>
 	public class OverwriteDiagram : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Overwrite Diagram</para>
 		/// </summary>
-		public override string DisplayName => "Overwrite Diagram";
+		public override string DisplayName() => "Overwrite Diagram";
 
 		/// <summary>
 		/// <para>Tool Name : OverwriteDiagram</para>
 		/// </summary>
-		public override string ToolName => "OverwriteDiagram";
+		public override string ToolName() => "OverwriteDiagram";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.OverwriteDiagram</para>
 		/// </summary>
-		public override string ExcuteName => "nd.OverwriteDiagram";
+		public override string ExcuteName() => "nd.OverwriteDiagram";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, Map, OutNetworkDiagramLayer! };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, Map, OutNetworkDiagramLayer! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
@@ -82,6 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMap()]
 		[GPMapDomain()]
+		[MapType("0", "4")]
 		public object Map { get; set; }
 
 		/// <summary>

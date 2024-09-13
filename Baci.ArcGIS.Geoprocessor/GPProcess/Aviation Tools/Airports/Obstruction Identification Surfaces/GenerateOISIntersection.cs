@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Generate OIS Intersection</para>
+	/// <para>Generate OIS Intersection</para>
 	/// <para>Creates the most restrictive (lowest) surfaces within the extent of all collective surfaces. Obstruction identification surfaces (OIS) determine  objects that are vertical obstructions. An object is considered a vertical obstruction if it penetrates the OIS surface. Surfaces are used to support planning and design activities.</para>
 	/// </summary>
 	public class GenerateOISIntersection : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate OIS Intersection</para>
 		/// </summary>
-		public override string DisplayName => "Generate OIS Intersection";
+		public override string DisplayName() => "Generate OIS Intersection";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateOISIntersection</para>
 		/// </summary>
-		public override string ToolName => "GenerateOISIntersection";
+		public override string ToolName() => "GenerateOISIntersection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.GenerateOISIntersection</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.GenerateOISIntersection";
+		public override string ExcuteName() => "aviation.GenerateOISIntersection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InOisFeatures, OutOisFeatures, MultipartFeature! };
+		public override object[] Parameters() => new object[] { InOisFeatures, OutOisFeatures, MultipartFeature! };
 
 		/// <summary>
 		/// <para>Input OIS Features</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("MultiPatch")]
 		public object InOisFeatures { get; set; }
 
 		/// <summary>
@@ -83,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("MultiPatch")]
 		public object OutOisFeatures { get; set; }
 
 		/// <summary>

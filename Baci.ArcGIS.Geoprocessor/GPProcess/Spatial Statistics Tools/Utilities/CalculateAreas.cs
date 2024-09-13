@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Calculate Areas</para>
+	/// <para>Calculate Areas</para>
 	/// <para></para>
 	/// </summary>
 	[Obsolete()]
@@ -34,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Areas</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Areas";
+		public override string DisplayName() => "Calculate Areas";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateAreas</para>
 		/// </summary>
-		public override string ToolName => "CalculateAreas";
+		public override string ToolName() => "CalculateAreas";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.CalculateAreas</para>
 		/// </summary>
-		public override string ExcuteName => "stats.CalculateAreas";
+		public override string ExcuteName() => "stats.CalculateAreas";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, OutputFeatureClass };
+		public override object[] Parameters() => new object[] { InputFeatureClass, OutputFeatureClass };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -72,6 +73,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object InputFeatureClass { get; set; }
 
 		/// <summary>

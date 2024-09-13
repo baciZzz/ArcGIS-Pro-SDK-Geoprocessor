@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 {
 	/// <summary>
 	/// <para>Enable Indoor Positioning</para>
+	/// <para>Enable Indoor Positioning</para>
 	/// <para>Creates the feature classes and table necessary for storing ArcGIS IPS data in an existing geodatabase.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 		/// <summary>
 		/// <para>Tool Display Name : Enable Indoor Positioning</para>
 		/// </summary>
-		public override string DisplayName => "Enable Indoor Positioning";
+		public override string DisplayName() => "Enable Indoor Positioning";
 
 		/// <summary>
 		/// <para>Tool Name : EnableIndoorPositioning</para>
 		/// </summary>
-		public override string ToolName => "EnableIndoorPositioning";
+		public override string ToolName() => "EnableIndoorPositioning";
 
 		/// <summary>
 		/// <para>Tool Excute Name : indoorpositioning.EnableIndoorPositioning</para>
 		/// </summary>
-		public override string ExcuteName => "indoorpositioning.EnableIndoorPositioning";
+		public override string ExcuteName() => "indoorpositioning.EnableIndoorPositioning";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Indoor Positioning Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Indoor Positioning Tools";
+		public override string ToolboxDisplayName() => "Indoor Positioning Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : indoorpositioning</para>
 		/// </summary>
-		public override string ToolboxAlise => "indoorpositioning";
+		public override string ToolboxAlise() => "indoorpositioning";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, OutIpsRecordings!, OutIpsPositioning!, OutWorkspace!, OutBeaconFeatures! };
+		public override object[] Parameters() => new object[] { InWorkspace, OutIpsRecordings!, OutIpsPositioning!, OutWorkspace!, OutBeaconFeatures! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -71,6 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object InWorkspace { get; set; }
 
 		/// <summary>

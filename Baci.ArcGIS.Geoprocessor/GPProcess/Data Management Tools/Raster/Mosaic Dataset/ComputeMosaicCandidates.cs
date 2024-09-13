@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compute Mosaic Candidates</para>
+	/// <para>Compute Mosaic Candidates</para>
 	/// <para>Finds the image candidates within in the mosaic dataset that best represents the mosaic area.</para>
 	/// </summary>
 	public class ComputeMosaicCandidates : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Compute Mosaic Candidates</para>
 		/// </summary>
-		public override string DisplayName => "Compute Mosaic Candidates";
+		public override string DisplayName() => "Compute Mosaic Candidates";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeMosaicCandidates</para>
 		/// </summary>
-		public override string ToolName => "ComputeMosaicCandidates";
+		public override string ToolName() => "ComputeMosaicCandidates";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ComputeMosaicCandidates</para>
 		/// </summary>
-		public override string ExcuteName => "management.ComputeMosaicCandidates";
+		public override string ExcuteName() => "management.ComputeMosaicCandidates";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, MaximumOverlap!, MaximumAreaLoss!, OutMosaicDataset! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, MaximumOverlap!, MaximumAreaLoss!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Input mosaic dataset</para>

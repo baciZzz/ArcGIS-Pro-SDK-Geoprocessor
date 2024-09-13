@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Multidimensional Anomaly</para>
+	/// <para>Generate Multidimensional Anomaly</para>
 	/// <para>Computes the anomaly for each slice in an existing multidimensional raster to generate a new multidimensional raster.</para>
 	/// </summary>
 	public class GenerateMultidimensionalAnomaly : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Multidimensional Anomaly</para>
 		/// </summary>
-		public override string DisplayName => "Generate Multidimensional Anomaly";
+		public override string DisplayName() => "Generate Multidimensional Anomaly";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateMultidimensionalAnomaly</para>
 		/// </summary>
-		public override string ToolName => "GenerateMultidimensionalAnomaly";
+		public override string ToolName() => "GenerateMultidimensionalAnomaly";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.GenerateMultidimensionalAnomaly</para>
 		/// </summary>
-		public override string ExcuteName => "sa.GenerateMultidimensionalAnomaly";
+		public override string ExcuteName() => "sa.GenerateMultidimensionalAnomaly";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultidimensionalRaster, OutMultidimensionalRaster, Variables!, Method!, CalculationInterval!, IgnoreNodata!, ReferenceMeanRaster! };
+		public override object[] Parameters() => new object[] { InMultidimensionalRaster, OutMultidimensionalRaster, Variables!, Method!, CalculationInterval!, IgnoreNodata!, ReferenceMeanRaster! };
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>

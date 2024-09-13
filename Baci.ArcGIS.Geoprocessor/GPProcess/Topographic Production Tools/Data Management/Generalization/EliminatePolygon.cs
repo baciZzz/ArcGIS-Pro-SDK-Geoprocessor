@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Eliminate Polygon</para>
+	/// <para>Eliminate Polygon</para>
 	/// <para>Eliminates a polygon by merging it with the polygon from the surrounding features that it shares the longest boundary with.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Eliminate Polygon</para>
 		/// </summary>
-		public override string DisplayName => "Eliminate Polygon";
+		public override string DisplayName() => "Eliminate Polygon";
 
 		/// <summary>
 		/// <para>Tool Name : EliminatePolygon</para>
 		/// </summary>
-		public override string ToolName => "EliminatePolygon";
+		public override string ToolName() => "EliminatePolygon";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.EliminatePolygon</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.EliminatePolygon";
+		public override string ExcuteName() => "topographic.EliminatePolygon";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, SurroundingFeatures, MinArea!, UpdatedFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, SurroundingFeatures, MinArea!, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -76,6 +77,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -85,6 +88,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object SurroundingFeatures { get; set; }
 
 		/// <summary>

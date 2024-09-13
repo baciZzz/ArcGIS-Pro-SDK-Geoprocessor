@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Calculate Line Caps</para>
+	/// <para>Calculate Line Caps</para>
 	/// <para>Modifies the cap type for stroke symbol layers in the line symbols of the input layer.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Line Caps</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Line Caps";
+		public override string DisplayName() => "Calculate Line Caps";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateLineCaps</para>
 		/// </summary>
-		public override string ToolName => "CalculateLineCaps";
+		public override string ToolName() => "CalculateLineCaps";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.CalculateLineCaps</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.CalculateLineCaps";
+		public override string ExcuteName() => "cartography.CalculateLineCaps";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, CapType!, DangleOption!, OutRepresentations! };
+		public override object[] Parameters() => new object[] { InFeatures, CapType!, DangleOption!, OutRepresentations! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -71,6 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

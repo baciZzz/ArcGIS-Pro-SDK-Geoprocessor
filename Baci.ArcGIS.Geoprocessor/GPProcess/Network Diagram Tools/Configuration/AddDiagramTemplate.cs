@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Diagram Template</para>
+	/// <para>Add Diagram Template</para>
 	/// <para>Adds a new diagram template to a network. Both a network diagram rule and layout definitions file (.ndbd) and a network diagram layer definition file (.ndld) can be imported.</para>
 	/// </summary>
 	public class AddDiagramTemplate : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Diagram Template</para>
 		/// </summary>
-		public override string DisplayName => "Add Diagram Template";
+		public override string DisplayName() => "Add Diagram Template";
 
 		/// <summary>
 		/// <para>Tool Name : AddDiagramTemplate</para>
 		/// </summary>
-		public override string ToolName => "AddDiagramTemplate";
+		public override string ToolName() => "AddDiagramTemplate";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddDiagramTemplate</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddDiagramTemplate";
+		public override string ExcuteName() => "nd.AddDiagramTemplate";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, NdbdFile!, NdldFile!, OutUtilityNetwork!, OutTemplateName! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, NdbdFile!, NdldFile!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>
@@ -90,6 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("ndbd")]
 		public object? NdbdFile { get; set; }
 
 		/// <summary>
@@ -100,6 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("ndld")]
 		public object? NdldFile { get; set; }
 
 		/// <summary>

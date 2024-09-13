@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Add Date Attributes</para>
+	/// <para>Add Date Attributes</para>
 	/// <para>Adds fields containing date or time properties from an input date field, for example, day full name, day of the month, month, and year.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Date Attributes</para>
 		/// </summary>
-		public override string DisplayName => "Add Date Attributes";
+		public override string DisplayName() => "Add Date Attributes";
 
 		/// <summary>
 		/// <para>Tool Name : AddDateAttributes</para>
 		/// </summary>
-		public override string ToolName => "AddDateAttributes";
+		public override string ToolName() => "AddDateAttributes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ca.AddDateAttributes</para>
 		/// </summary>
-		public override string ExcuteName => "ca.AddDateAttributes";
+		public override string ExcuteName() => "ca.AddDateAttributes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Crime Analysis and Safety Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Crime Analysis and Safety Tools";
+		public override string ToolboxDisplayName() => "Crime Analysis and Safety Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ca</para>
 		/// </summary>
-		public override string ToolboxAlise => "ca";
+		public override string ToolboxAlise() => "ca";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, DateField, DateAttributes!, OutTable! };
+		public override object[] Parameters() => new object[] { InTable, DateField, DateAttributes!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -84,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object DateField { get; set; }
 
 		/// <summary>

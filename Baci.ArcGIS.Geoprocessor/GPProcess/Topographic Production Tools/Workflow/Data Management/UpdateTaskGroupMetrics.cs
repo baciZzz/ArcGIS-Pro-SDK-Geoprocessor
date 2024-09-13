@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Update Task Group Metrics</para>
+	/// <para>Update Task Group Metrics</para>
 	/// <para>Updates and summarizes task group metrics that are part of the standard Topographic Workflow deployment of Workflow Manager (Classic).</para>
 	/// </summary>
 	public class UpdateTaskGroupMetrics : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Update Task Group Metrics</para>
 		/// </summary>
-		public override string DisplayName => "Update Task Group Metrics";
+		public override string DisplayName() => "Update Task Group Metrics";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateTaskGroupMetrics</para>
 		/// </summary>
-		public override string ToolName => "UpdateTaskGroupMetrics";
+		public override string ToolName() => "UpdateTaskGroupMetrics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.UpdateTaskGroupMetrics</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.UpdateTaskGroupMetrics";
+		public override string ExcuteName() => "topographic.UpdateTaskGroupMetrics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { JobId, StatusLayer!, StatusField!, DatabasePath!, UpdatedJobId!, UpdatedStatusLayer! };
+		public override object[] Parameters() => new object[] { JobId, StatusLayer!, StatusField!, DatabasePath!, UpdatedJobId!, UpdatedStatusLayer! };
 
 		/// <summary>
 		/// <para>Job ID</para>
@@ -77,6 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? StatusLayer { get; set; }
 
 		/// <summary>
@@ -86,6 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date", "Text")]
 		public object? StatusField { get; set; }
 
 		/// <summary>
@@ -95,6 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("jtc")]
 		public object? DatabasePath { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Calculate Route Concurrencies</para>
+	/// <para>Calculate Route Concurrencies</para>
 	/// <para>Calculates and reports concurrent route sections in an LRS Network.</para>
 	/// </summary>
 	public class CalculateRouteConcurrencies : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Route Concurrencies</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Route Concurrencies";
+		public override string DisplayName() => "Calculate Route Concurrencies";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateRouteConcurrencies</para>
 		/// </summary>
-		public override string ToolName => "CalculateRouteConcurrencies";
+		public override string ToolName() => "CalculateRouteConcurrencies";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.CalculateRouteConcurrencies</para>
 		/// </summary>
-		public override string ExcuteName => "locref.CalculateRouteConcurrencies";
+		public override string ExcuteName() => "locref.CalculateRouteConcurrencies";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRouteFeatures, OutDataset, Tvd!, FindDominance!, IncludeGeometry! };
+		public override object[] Parameters() => new object[] { InRouteFeatures, OutDataset, Tvd!, FindDominance!, IncludeGeometry! };
 
 		/// <summary>
 		/// <para>Input Route Features</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InRouteFeatures { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Identical</para>
+	/// <para>Delete Identical</para>
 	/// <para>Deletes records in a feature class or table which have identical values in a list of fields. If the geometry field is selected, feature geometries are compared.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete Identical</para>
 		/// </summary>
-		public override string DisplayName => "Delete Identical";
+		public override string DisplayName() => "Delete Identical";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteIdentical</para>
 		/// </summary>
-		public override string ToolName => "DeleteIdentical";
+		public override string ToolName() => "DeleteIdentical";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DeleteIdentical</para>
 		/// </summary>
-		public override string ExcuteName => "management.DeleteIdentical";
+		public override string ExcuteName() => "management.DeleteIdentical";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYTolerance", "ZTolerance", "extent", "maintainSpatialIndex", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYTolerance", "ZTolerance", "extent", "maintainSpatialIndex", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, Fields, XyTolerance!, ZTolerance!, OutDataset! };
+		public override object[] Parameters() => new object[] { InDataset, Fields, XyTolerance!, ZTolerance!, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -84,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "Geometry", "GUID")]
 		public object Fields { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Network Category</para>
+	/// <para>Add Network Category</para>
 	/// <para>Adds a network category to an existing utility network.</para>
 	/// </summary>
 	public class AddNetworkCategory : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Network Category</para>
 		/// </summary>
-		public override string DisplayName => "Add Network Category";
+		public override string DisplayName() => "Add Network Category";
 
 		/// <summary>
 		/// <para>Tool Name : AddNetworkCategory</para>
 		/// </summary>
-		public override string ToolName => "AddNetworkCategory";
+		public override string ToolName() => "AddNetworkCategory";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddNetworkCategory</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddNetworkCategory";
+		public override string ExcuteName() => "un.AddNetworkCategory";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, CategoryName, OutUtilityNetwork! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, CategoryName, OutUtilityNetwork! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

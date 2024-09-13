@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Check Out</para>
+	/// <para>Check Out</para>
 	/// <para>Creates a check-out replica from datasets in ArcSDE.</para>
 	/// </summary>
 	[Obsolete()]
@@ -38,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Check Out</para>
 		/// </summary>
-		public override string DisplayName => "Check Out";
+		public override string DisplayName() => "Check Out";
 
 		/// <summary>
 		/// <para>Tool Name : Checkout</para>
 		/// </summary>
-		public override string ToolName => "Checkout";
+		public override string ToolName() => "Checkout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Checkout</para>
 		/// </summary>
-		public override string ExcuteName => "management.Checkout";
+		public override string ExcuteName() => "management.Checkout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, OutWorkspace, OutName, InType!, ReuseSchema!, GetRelatedData! };
+		public override object[] Parameters() => new object[] { InData, OutWorkspace, OutName, InType!, ReuseSchema!, GetRelatedData! };
 
 		/// <summary>
 		/// <para>Check-out Data</para>
@@ -83,6 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database")]
 		public object OutWorkspace { get; set; }
 
 		/// <summary>

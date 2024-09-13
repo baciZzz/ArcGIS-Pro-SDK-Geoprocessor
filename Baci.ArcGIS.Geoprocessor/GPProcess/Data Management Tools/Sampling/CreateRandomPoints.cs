@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Random Points</para>
+	/// <para>Create Random Points</para>
 	/// <para>Creates a specified number of random point features. Random points can be generated in an extent window, inside polygon features, on point features, or along line features.</para>
 	/// </summary>
 	public class CreateRandomPoints : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Random Points</para>
 		/// </summary>
-		public override string DisplayName => "Create Random Points";
+		public override string DisplayName() => "Create Random Points";
 
 		/// <summary>
 		/// <para>Tool Name : CreateRandomPoints</para>
 		/// </summary>
-		public override string ToolName => "CreateRandomPoints";
+		public override string ToolName() => "CreateRandomPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateRandomPoints</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateRandomPoints";
+		public override string ExcuteName() => "management.CreateRandomPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "randomGenerator", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "randomGenerator", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutPath, OutName, ConstrainingFeatureClass!, ConstrainingExtent!, NumberOfPointsOrField!, MinimumAllowedDistance!, CreateMultipointOutput!, MultipointSize!, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { OutPath, OutName, ConstrainingFeatureClass!, ConstrainingExtent!, NumberOfPointsOrField!, MinimumAllowedDistance!, CreateMultipointOutput!, MultipointSize!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Output Location</para>
@@ -90,6 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Polyline", "Point", "Multipoint")]
+		[FeatureType("Simple")]
 		public object? ConstrainingFeatureClass { get; set; }
 
 		/// <summary>
@@ -138,6 +141,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
+		[High(Allow = true, Value = 100000)]
 		public object? MultipointSize { get; set; } = "10";
 
 		/// <summary>

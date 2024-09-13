@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Create Feature Locator</para>
+	/// <para>Create Feature Locator</para>
 	/// <para>Creates a locator using reference data that contains a unique name or value for every feature stored in a single field. A locator created with this tool has broad applications. It can be used to search for names or unique attributes of your features, such as water meters, short place names, cell towers, or alphanumeric strings used to identify locations (for example, N1N115).</para>
 	/// </summary>
 	public class CreateFeatureLocator : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Feature Locator</para>
 		/// </summary>
-		public override string DisplayName => "Create Feature Locator";
+		public override string DisplayName() => "Create Feature Locator";
 
 		/// <summary>
 		/// <para>Tool Name : CreateFeatureLocator</para>
 		/// </summary>
-		public override string ToolName => "CreateFeatureLocator";
+		public override string ToolName() => "CreateFeatureLocator";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geocoding.CreateFeatureLocator</para>
 		/// </summary>
-		public override string ExcuteName => "geocoding.CreateFeatureLocator";
+		public override string ExcuteName() => "geocoding.CreateFeatureLocator";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geocoding Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geocoding Tools";
+		public override string ToolboxDisplayName() => "Geocoding Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geocoding</para>
 		/// </summary>
-		public override string ToolboxAlise => "geocoding";
+		public override string ToolboxAlise() => "geocoding";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, SearchFields, OutputLocator, LocatorFields! };
+		public override object[] Parameters() => new object[] { InFeatures, SearchFields, OutputLocator, LocatorFields! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFieldInfo()]
-		[xmlserialize()]
+		[xmlserialize(Xml = "<GPFieldInfoDomain xsi:type='typens:GPFieldInfoDomain' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.0.0'><GPCodedValueDomain xsi:type='typens:GPCodedValueDomain'><GPDomainPropertiesArray xsi:type='typens:ArrayOfGPCodedValueDomainProperty'><GPCodedValueDomainProperty xsi:type='typens:GPCodedValueDomainProperty'><Name>&lt;None&gt;</Name><Value xsi:type='typens:Field'><Name>&lt;None&gt;</Name><Type>esriFieldTypeInteger</Type><IsNullable>true</IsNullable><Length>0</Length><Precision>0</Precision><Scale>0</Scale></Value></GPCodedValueDomainProperty></GPDomainPropertiesArray></GPCodedValueDomain></GPFieldInfoDomain>")]
 		public object SearchFields { get; set; } = "*Name <None> VISIBLE NONE";
 
 		/// <summary>
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFieldInfo()]
-		[xmlserialize()]
+		[xmlserialize(Xml = "<GPFieldInfoDomain xsi:type='typens:GPFieldInfoDomain' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.0.0'><GPCodedValueDomain xsi:type='typens:GPCodedValueDomain'><GPDomainPropertiesArray xsi:type='typens:ArrayOfGPCodedValueDomainProperty'><GPCodedValueDomainProperty xsi:type='typens:GPCodedValueDomainProperty'><Name>&lt;None&gt;</Name><Value xsi:type='typens:Field'><Name>&lt;None&gt;</Name><Type>esriFieldTypeInteger</Type><IsNullable>true</IsNullable><Length>0</Length><Precision>0</Precision><Scale>0</Scale></Value></GPCodedValueDomainProperty></GPDomainPropertiesArray></GPCodedValueDomain></GPFieldInfoDomain>")]
 		[Category("Optional parameters")]
 		public object? LocatorFields { get; set; } = "Rank <None> VISIBLE NONE;'Min X' <None> VISIBLE NONE;'Max X' <None> VISIBLE NONE;'Min Y' <None> VISIBLE NONE;'Max Y' <None> VISIBLE NONE";
 

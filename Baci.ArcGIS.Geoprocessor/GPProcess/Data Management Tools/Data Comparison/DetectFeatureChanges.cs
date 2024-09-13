@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Detect Feature Changes</para>
+	/// <para>Detect Feature Changes</para>
 	/// <para>Finds where the update line features spatially match the base line features and detects spatial changes, attribute changes, or both, as well as no change. It then creates an output feature class containing matched update features with information about their changes, unmatched update features, and unmatched base features.</para>
 	/// </summary>
 	public class DetectFeatureChanges : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Detect Feature Changes</para>
 		/// </summary>
-		public override string DisplayName => "Detect Feature Changes";
+		public override string DisplayName() => "Detect Feature Changes";
 
 		/// <summary>
 		/// <para>Tool Name : DetectFeatureChanges</para>
 		/// </summary>
-		public override string ToolName => "DetectFeatureChanges";
+		public override string ToolName() => "DetectFeatureChanges";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DetectFeatureChanges</para>
 		/// </summary>
-		public override string ExcuteName => "management.DetectFeatureChanges";
+		public override string ExcuteName() => "management.DetectFeatureChanges";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { UpdateFeatures, BaseFeatures, OutFeatureClass, SearchDistance, MatchFields!, OutMatchTable!, ChangeTolerance!, CompareFields!, CompareLineDirection! };
+		public override object[] Parameters() => new object[] { UpdateFeatures, BaseFeatures, OutFeatureClass, SearchDistance, MatchFields!, OutMatchTable!, ChangeTolerance!, CompareFields!, CompareLineDirection! };
 
 		/// <summary>
 		/// <para>Update Features</para>
@@ -84,6 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object UpdateFeatures { get; set; }
 
 		/// <summary>
@@ -93,6 +96,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object BaseFeatures { get; set; }
 
 		/// <summary>
@@ -118,6 +123,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "Blob", "Raster", "XML", "GUID", "OID")]
+		[ExcludeField("SHAPE_Length", "SHAPE_Area")]
 		public object? MatchFields { get; set; }
 
 		/// <summary>
@@ -143,6 +150,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "Blob", "Raster", "XML", "GUID", "OID")]
+		[ExcludeField("SHAPE_Length", "SHAPE_Area")]
 		public object? CompareFields { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Convert SAR Units</para>
+	/// <para>Convert SAR Units</para>
 	/// <para>Converts the scaling of the input synthetic aperture radar (SAR) data between amplitude and power and between  linear and decibels (dB).</para>
 	/// </summary>
 	public class ConvertSARUnits : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Convert SAR Units</para>
 		/// </summary>
-		public override string DisplayName => "Convert SAR Units";
+		public override string DisplayName() => "Convert SAR Units";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertSARUnits</para>
 		/// </summary>
-		public override string ToolName => "ConvertSARUnits";
+		public override string ToolName() => "ConvertSARUnits";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.ConvertSARUnits</para>
 		/// </summary>
-		public override string ExcuteName => "ia.ConvertSARUnits";
+		public override string ExcuteName() => "ia.ConvertSARUnits";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellAlignment", "cellSize", "compression", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellAlignment", "cellSize", "compression", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRadarData, OutRadarData, ConversionType! };
+		public override object[] Parameters() => new object[] { InRadarData, OutRadarData, ConversionType! };
 
 		/// <summary>
 		/// <para>Input Radar Data</para>

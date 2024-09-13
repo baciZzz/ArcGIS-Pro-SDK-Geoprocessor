@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Project</para>
+	/// <para>Project</para>
 	/// <para>Projects spatial data from one coordinate system to another.</para>
 	/// </summary>
 	public class Project : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Project</para>
 		/// </summary>
-		public override string DisplayName => "Project";
+		public override string DisplayName() => "Project";
 
 		/// <summary>
 		/// <para>Tool Name : Project</para>
 		/// </summary>
-		public override string ToolName => "Project";
+		public override string ToolName() => "Project";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Project</para>
 		/// </summary>
-		public override string ExcuteName => "management.Project";
+		public override string ExcuteName() => "management.Project";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYResolution", "XYTolerance", "maintainAttachments", "scratchWorkspace", "transferGDBAttributeProperties", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYResolution", "XYTolerance", "maintainAttachments", "scratchWorkspace", "transferGDBAttributeProperties", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutDataset, OutCoorSystem, TransformMethod!, InCoorSystem!, PreserveShape!, MaxDeviation!, Vertical! };
+		public override object[] Parameters() => new object[] { InDataset, OutDataset, OutCoorSystem, TransformMethod!, InCoorSystem!, PreserveShape!, MaxDeviation!, Vertical! };
 
 		/// <summary>
 		/// <para>Input Dataset or Feature Class</para>

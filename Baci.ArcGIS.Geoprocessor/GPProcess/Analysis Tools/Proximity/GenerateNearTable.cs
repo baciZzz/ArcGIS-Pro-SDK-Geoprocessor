@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Generate Near Table</para>
+	/// <para>Generate Near Table</para>
 	/// <para>Calculates distances and other proximity information between features in one or more feature classes or layers. Unlike the Near tool, which modifies the input, Generate Near Table writes results to a new stand-alone table and supports finding more than one near feature.</para>
 	/// </summary>
 	public class GenerateNearTable : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Near Table</para>
 		/// </summary>
-		public override string DisplayName => "Generate Near Table";
+		public override string DisplayName() => "Generate Near Table";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateNearTable</para>
 		/// </summary>
-		public override string ToolName => "GenerateNearTable";
+		public override string ToolName() => "GenerateNearTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.GenerateNearTable</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.GenerateNearTable";
+		public override string ExcuteName() => "analysis.GenerateNearTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, NearFeatures, OutTable, SearchRadius!, Location!, Angle!, Closest!, ClosestCount!, Method! };
+		public override object[] Parameters() => new object[] { InFeatures, NearFeatures, OutTable, SearchRadius!, Location!, Angle!, Closest!, ClosestCount!, Method! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -88,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object NearFeatures { get; set; }
 
 		/// <summary>

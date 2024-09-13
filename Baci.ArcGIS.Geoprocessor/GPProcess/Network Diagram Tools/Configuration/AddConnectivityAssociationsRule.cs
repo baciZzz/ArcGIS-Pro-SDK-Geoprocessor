@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Connectivity Associations Rule</para>
+	/// <para>Add Connectivity Associations Rule</para>
 	/// <para>Adds a diagram rule to automatically represent connectivity associations during the building of diagrams based on an existing template. This rule processes connectivity associations in which both the from and to junctions are currently represented in the diagrams.</para>
 	/// </summary>
 	public class AddConnectivityAssociationsRule : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Connectivity Associations Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Connectivity Associations Rule";
+		public override string DisplayName() => "Add Connectivity Associations Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddConnectivityAssociationsRule</para>
 		/// </summary>
-		public override string ToolName => "AddConnectivityAssociationsRule";
+		public override string ToolName() => "AddConnectivityAssociationsRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddConnectivityAssociationsRule</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddConnectivityAssociationsRule";
+		public override string ExcuteName() => "nd.AddConnectivityAssociationsRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, Description!, OutUtilityNetwork!, OutTemplateName! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, Description!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>

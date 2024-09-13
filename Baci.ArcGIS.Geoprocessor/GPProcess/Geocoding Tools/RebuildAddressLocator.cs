@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Rebuild Address Locator</para>
+	/// <para>Rebuild Address Locator</para>
 	/// <para>Rebuilds an address locator to update the locator with the current reference data. Because a locator contains a snapshot of the reference data when it was created, it will not geocode addresses with the updated data  when the geometry and attributes of the reference data are changed.  To geocode addresses with the current version of the reference data, the  locator must be rebuilt if you want to update the changes in the locator.</para>
 	/// </summary>
 	public class RebuildAddressLocator : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Display Name : Rebuild Address Locator</para>
 		/// </summary>
-		public override string DisplayName => "Rebuild Address Locator";
+		public override string DisplayName() => "Rebuild Address Locator";
 
 		/// <summary>
 		/// <para>Tool Name : RebuildAddressLocator</para>
 		/// </summary>
-		public override string ToolName => "RebuildAddressLocator";
+		public override string ToolName() => "RebuildAddressLocator";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geocoding.RebuildAddressLocator</para>
 		/// </summary>
-		public override string ExcuteName => "geocoding.RebuildAddressLocator";
+		public override string ExcuteName() => "geocoding.RebuildAddressLocator";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geocoding Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geocoding Tools";
+		public override string ToolboxDisplayName() => "Geocoding Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geocoding</para>
 		/// </summary>
-		public override string ToolboxAlise => "geocoding";
+		public override string ToolboxAlise() => "geocoding";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAddressLocator, OutAddressLocator! };
+		public override object[] Parameters() => new object[] { InAddressLocator, OutAddressLocator! };
 
 		/// <summary>
 		/// <para>Input Address Locator</para>

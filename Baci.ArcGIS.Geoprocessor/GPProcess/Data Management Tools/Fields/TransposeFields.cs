@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Transpose Fields</para>
+	/// <para>Transpose Fields</para>
 	/// <para>Switch  data stored in fields or columns to rows in a new table or feature class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -54,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Transpose Fields</para>
 		/// </summary>
-		public override string DisplayName => "Transpose Fields";
+		public override string DisplayName() => "Transpose Fields";
 
 		/// <summary>
 		/// <para>Tool Name : TransposeFields</para>
 		/// </summary>
-		public override string ToolName => "TransposeFields";
+		public override string ToolName() => "TransposeFields";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.TransposeFields</para>
 		/// </summary>
-		public override string ExcuteName => "management.TransposeFields";
+		public override string ExcuteName() => "management.TransposeFields";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, InField, OutTable, InTransposedFieldName, InValueFieldName, AttributeFields! };
+		public override object[] Parameters() => new object[] { InTable, InField, OutTable, InTransposedFieldName, InValueFieldName, AttributeFields! };
 
 		/// <summary>
 		/// <para>Input Table</para>

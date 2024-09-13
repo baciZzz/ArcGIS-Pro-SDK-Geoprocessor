@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Manage Tile Cache</para>
+	/// <para>Manage Tile Cache</para>
 	/// <para>Creates a tile cache or updates tiles in an existing tile cache. You can use this tool to create tiles, replace missing tiles, overwrite outdated tiles, and delete tiles.</para>
 	/// </summary>
 	public class ManageTileCache : AbstractGPProcess
@@ -39,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Manage Tile Cache</para>
 		/// </summary>
-		public override string DisplayName => "Manage Tile Cache";
+		public override string DisplayName() => "Manage Tile Cache";
 
 		/// <summary>
 		/// <para>Tool Name : ManageTileCache</para>
 		/// </summary>
-		public override string ToolName => "ManageTileCache";
+		public override string ToolName() => "ManageTileCache";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ManageTileCache</para>
 		/// </summary>
-		public override string ExcuteName => "management.ManageTileCache";
+		public override string ExcuteName() => "management.ManageTileCache";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCacheLocation, ManageMode, InCacheName!, InDatasource!, TilingScheme!, ImportTilingScheme!, Scales!, AreaOfInterest!, MaxCellSize!, MinCachedScale!, MaxCachedScale!, OutCacheLocation! };
+		public override object[] Parameters() => new object[] { InCacheLocation, ManageMode, InCacheName!, InDatasource!, TilingScheme!, ImportTilingScheme!, Scales!, AreaOfInterest!, MaxCellSize!, MinCachedScale!, MaxCachedScale!, OutCacheLocation! };
 
 		/// <summary>
 		/// <para>Cache Location</para>

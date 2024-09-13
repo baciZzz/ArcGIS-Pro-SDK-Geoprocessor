@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Slice</para>
+	/// <para>Slice</para>
 	/// <para>Slices or reclassifies the range of values of the input cells into zones (classes). The available data classification methods are equal interval, equal area (quantile), natural breaks, standard deviation (mean-centered), standard deviation (mean as a break), defined interval, and geometric interval.</para>
 	/// </summary>
 	public class Slice : AbstractGPProcess
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Slice</para>
 		/// </summary>
-		public override string DisplayName => "Slice";
+		public override string DisplayName() => "Slice";
 
 		/// <summary>
 		/// <para>Tool Name : Slice</para>
 		/// </summary>
-		public override string ToolName => "Slice";
+		public override string ToolName() => "Slice";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Slice</para>
 		/// </summary>
-		public override string ExcuteName => "3d.Slice";
+		public override string ExcuteName() => "3d.Slice";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, NumberZones!, SliceType!, BaseOutputZone!, NodataToValue!, ClassIntervalSize! };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, NumberZones!, SliceType!, BaseOutputZone!, NodataToValue!, ClassIntervalSize! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -75,7 +76,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRaster { get; set; }
 
 		/// <summary>
@@ -125,6 +129,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = false, Value = -2147483647)]
+		[High(Allow = true, Value = 2147483647)]
 		public object? BaseOutputZone { get; set; } = "1";
 
 		/// <summary>
@@ -135,6 +141,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = false, Value = -2147483647)]
+		[High(Allow = true, Value = 2147483647)]
 		public object? NodataToValue { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Send Email With Zip File Attachment</para>
+	/// <para>Send Email With Zip File Attachment</para>
 	/// <para>Emails a file to an email address using an SMTP email server.</para>
 	/// </summary>
 	public class SendEmailWithZipFileAttachment : AbstractGPProcess
@@ -61,37 +62,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Send Email With Zip File Attachment</para>
 		/// </summary>
-		public override string DisplayName => "Send Email With Zip File Attachment";
+		public override string DisplayName() => "Send Email With Zip File Attachment";
 
 		/// <summary>
 		/// <para>Tool Name : SendEmailWithZipFileAttachment</para>
 		/// </summary>
-		public override string ToolName => "SendEmailWithZipFileAttachment";
+		public override string ToolName() => "SendEmailWithZipFileAttachment";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.SendEmailWithZipFileAttachment</para>
 		/// </summary>
-		public override string ExcuteName => "server.SendEmailWithZipFileAttachment";
+		public override string ExcuteName() => "server.SendEmailWithZipFileAttachment";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { To, From, Subject, Text, ZipFile, MaxFileSizeMB, SMTPEmailServer, User!, Password!, Sent! };
+		public override object[] Parameters() => new object[] { To, From, Subject, Text, ZipFile, MaxFileSizeMB, SMTPEmailServer, User!, Password!, Sent! };
 
 		/// <summary>
 		/// <para>To</para>

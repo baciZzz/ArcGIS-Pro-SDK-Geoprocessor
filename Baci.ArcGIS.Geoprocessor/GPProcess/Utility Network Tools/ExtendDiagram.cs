@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Extend Diagram</para>
+	/// <para>Extend Diagram</para>
 	/// <para>Extend a Network Diagram</para>
 	/// </summary>
 	[Obsolete()]
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Extend Diagram</para>
 		/// </summary>
-		public override string DisplayName => "Extend Diagram";
+		public override string DisplayName() => "Extend Diagram";
 
 		/// <summary>
 		/// <para>Tool Name : ExtendDiagram</para>
 		/// </summary>
-		public override string ToolName => "ExtendDiagram";
+		public override string ToolName() => "ExtendDiagram";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.ExtendDiagram</para>
 		/// </summary>
-		public override string ExcuteName => "un.ExtendDiagram";
+		public override string ExcuteName() => "un.ExtendDiagram";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, IgnoreTraversability!, OutNetworkDiagramLayer!, ExtensionType! };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, IgnoreTraversability!, OutNetworkDiagramLayer!, ExtensionType! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Colocation Analysis</para>
+	/// <para>Colocation Analysis</para>
 	/// <para>Measures local patterns of spatial association, or colocation, between two categories of point features using the colocation quotient statistic.</para>
 	/// </summary>
 	public class ColocationAnalysis : AbstractGPProcess
@@ -44,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Colocation Analysis</para>
 		/// </summary>
-		public override string DisplayName => "Colocation Analysis";
+		public override string DisplayName() => "Colocation Analysis";
 
 		/// <summary>
 		/// <para>Tool Name : ColocationAnalysis</para>
 		/// </summary>
-		public override string ToolName => "ColocationAnalysis";
+		public override string ToolName() => "ColocationAnalysis";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.ColocationAnalysis</para>
 		/// </summary>
-		public override string ExcuteName => "stats.ColocationAnalysis";
+		public override string ExcuteName() => "stats.ColocationAnalysis";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputType, InFeaturesOfInterest, OutputFeatures, FieldOfInterest!, TimeFieldOfInterest!, CategoryOfInterest!, InputFeatureForComparison!, FieldForComparison!, TimeFieldForComparison!, CategoryForComparison!, NeighborhoodType!, NumberOfNeighbors!, DistanceBand!, WeightsMatrixFile!, TemporalRelationshipType!, TimeStepInterval!, NumberOfPermutations!, LocalWeightingScheme!, OutputTable! };
+		public override object[] Parameters() => new object[] { InputType, InFeaturesOfInterest, OutputFeatures, FieldOfInterest!, TimeFieldOfInterest!, CategoryOfInterest!, InputFeatureForComparison!, FieldForComparison!, TimeFieldForComparison!, CategoryForComparison!, NeighborhoodType!, NumberOfNeighbors!, DistanceBand!, WeightsMatrixFile!, TemporalRelationshipType!, TimeStepInterval!, NumberOfPermutations!, LocalWeightingScheme!, OutputTable! };
 
 		/// <summary>
 		/// <para>Input Type</para>
@@ -96,6 +97,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InFeaturesOfInterest { get; set; }
 
 		/// <summary>
@@ -113,6 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		public object? FieldOfInterest { get; set; }
 
 		/// <summary>
@@ -122,6 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object? TimeFieldOfInterest { get; set; }
 
 		/// <summary>
@@ -139,6 +144,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object? InputFeatureForComparison { get; set; }
 
 		/// <summary>
@@ -148,6 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		public object? FieldForComparison { get; set; }
 
 		/// <summary>
@@ -157,6 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object? TimeFieldForComparison { get; set; }
 
 		/// <summary>
@@ -186,7 +195,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 1000)]
 		public object? NumberOfNeighbors { get; set; } = "8";
 
 		/// <summary>
@@ -205,6 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("swm", "gwt")]
 		public object? WeightsMatrixFile { get; set; }
 
 		/// <summary>

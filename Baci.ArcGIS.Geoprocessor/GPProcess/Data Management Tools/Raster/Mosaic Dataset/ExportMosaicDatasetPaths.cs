@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Mosaic Dataset Paths</para>
+	/// <para>Export Mosaic Dataset Paths</para>
 	/// <para>Creates a table of the file path for each item in a mosaic dataset. You can specify whether the table contains all the file paths or just the ones that are broken.</para>
 	/// </summary>
 	public class ExportMosaicDatasetPaths : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Mosaic Dataset Paths</para>
 		/// </summary>
-		public override string DisplayName => "Export Mosaic Dataset Paths";
+		public override string DisplayName() => "Export Mosaic Dataset Paths";
 
 		/// <summary>
 		/// <para>Tool Name : ExportMosaicDatasetPaths</para>
 		/// </summary>
-		public override string ToolName => "ExportMosaicDatasetPaths";
+		public override string ToolName() => "ExportMosaicDatasetPaths";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ExportMosaicDatasetPaths</para>
 		/// </summary>
-		public override string ExcuteName => "management.ExportMosaicDatasetPaths";
+		public override string ExcuteName() => "management.ExportMosaicDatasetPaths";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, OutTable, WhereClause!, ExportMode!, TypesOfPaths! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, OutTable, WhereClause!, ExportMode!, TypesOfPaths! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

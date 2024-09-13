@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Update Features With Incident Records</para>
+	/// <para>Update Features With Incident Records</para>
 	/// <para>Updates an existing table or converts a nonspatial table to point features based on x,y-coordinates or  street addresses, and updates an existing dataset with the new or updated record information from the table.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Display Name : Update Features With Incident Records</para>
 		/// </summary>
-		public override string DisplayName => "Update Features With Incident Records";
+		public override string DisplayName() => "Update Features With Incident Records";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateFeaturesWithIncidentRecords</para>
 		/// </summary>
-		public override string ToolName => "UpdateFeaturesWithIncidentRecords";
+		public override string ToolName() => "UpdateFeaturesWithIncidentRecords";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ca.UpdateFeaturesWithIncidentRecords</para>
 		/// </summary>
-		public override string ExcuteName => "ca.UpdateFeaturesWithIncidentRecords";
+		public override string ExcuteName() => "ca.UpdateFeaturesWithIncidentRecords";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Crime Analysis and Safety Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Crime Analysis and Safety Tools";
+		public override string ToolboxDisplayName() => "Crime Analysis and Safety Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ca</para>
 		/// </summary>
-		public override string ToolboxAlise => "ca";
+		public override string ToolboxAlise() => "ca";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, TargetFeatures, LocationType!, XField!, YField!, CoordinateSystem!, AddressLocator!, AddressType!, AddressFields!, InvalidRecordsTable!, WhereClause!, UpdateTarget!, MatchFields!, InDateField!, TargetDateField!, UpdateMatching!, UpdateGeometry!, FieldMatchingType!, FieldMapping!, TimeFormat!, UpdatedTargetFeatures! };
+		public override object[] Parameters() => new object[] { InTable, TargetFeatures, LocationType!, XField!, YField!, CoordinateSystem!, AddressLocator!, AddressType!, AddressFields!, InvalidRecordsTable!, WhereClause!, UpdateTarget!, MatchFields!, InDateField!, TargetDateField!, UpdateMatching!, UpdateGeometry!, FieldMatchingType!, FieldMapping!, TimeFormat!, UpdatedTargetFeatures! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -107,6 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? XField { get; set; }
 
 		/// <summary>
@@ -117,6 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? YField { get; set; }
 
 		/// <summary>
@@ -214,6 +217,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date", "Text", "Short", "Long", "Float", "Double")]
 		[Category("Define Record Update Matching")]
 		public object? InDateField { get; set; }
 
@@ -226,6 +230,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		[Category("Define Record Update Matching")]
 		public object? TargetDateField { get; set; }
 

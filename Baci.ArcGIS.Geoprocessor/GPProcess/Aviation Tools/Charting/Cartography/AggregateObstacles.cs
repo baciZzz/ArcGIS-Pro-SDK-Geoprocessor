@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Aggregate Obstacles</para>
+	/// <para>Aggregate Obstacles</para>
 	/// <para>Aggregates obstacle features within a given radius </para>
 	/// <para>so that the highest obstacle in the group represents the entire group.</para>
 	/// </summary>
@@ -90,37 +91,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Aggregate Obstacles</para>
 		/// </summary>
-		public override string DisplayName => "Aggregate Obstacles";
+		public override string DisplayName() => "Aggregate Obstacles";
 
 		/// <summary>
 		/// <para>Tool Name : AggregateObstacles</para>
 		/// </summary>
-		public override string ToolName => "AggregateObstacles";
+		public override string ToolName() => "AggregateObstacles";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.AggregateObstacles</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.AggregateObstacles";
+		public override string ExcuteName() => "aviation.AggregateObstacles";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InObstacleFeatures, HeightField, HeightFieldUnits, ElevationField, ElevationFieldUnits, ElevationInterpretation, TargetObstacleGroupFeatures, TargetObstacleGroupLabel, InObstacleAssocationTable, SearchRadius!, HeightThreshold!, BuiltupAreasFeatures!, BuiltupAreasHeightThreshold!, UpdatedObstacleGroupFeatures! };
+		public override object[] Parameters() => new object[] { InObstacleFeatures, HeightField, HeightFieldUnits, ElevationField, ElevationFieldUnits, ElevationInterpretation, TargetObstacleGroupFeatures, TargetObstacleGroupLabel, InObstacleAssocationTable, SearchRadius!, HeightThreshold!, BuiltupAreasFeatures!, BuiltupAreasHeightThreshold!, UpdatedObstacleGroupFeatures! };
 
 		/// <summary>
 		/// <para>Obstacle Features</para>

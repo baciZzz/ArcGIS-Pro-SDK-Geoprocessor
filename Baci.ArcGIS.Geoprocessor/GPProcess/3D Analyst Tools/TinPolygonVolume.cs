@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>TIN Polygon Volume</para>
+	/// <para>TIN Polygon Volume</para>
 	/// <para>Calculates the volumetric and surface area between polygons of an input feature class and a TIN surface.</para>
 	/// </summary>
 	[Obsolete()]
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : TIN Polygon Volume</para>
 		/// </summary>
-		public override string DisplayName => "TIN Polygon Volume";
+		public override string DisplayName() => "TIN Polygon Volume";
 
 		/// <summary>
 		/// <para>Tool Name : TinPolygonVolume</para>
 		/// </summary>
-		public override string ToolName => "TinPolygonVolume";
+		public override string ToolName() => "TinPolygonVolume";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.TinPolygonVolume</para>
 		/// </summary>
-		public override string ExcuteName => "3d.TinPolygonVolume";
+		public override string ExcuteName() => "3d.TinPolygonVolume";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTin, InFeatureClass, InHeightField, ReferencePlane!, OutVolumeField!, SurfaceAreaField!, OutputFeatureClass! };
+		public override object[] Parameters() => new object[] { InTin, InFeatureClass, InHeightField, ReferencePlane!, OutVolumeField!, SurfaceAreaField!, OutputFeatureClass! };
 
 		/// <summary>
 		/// <para>Input TIN</para>
@@ -88,6 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InFeatureClass { get; set; }
 
 		/// <summary>

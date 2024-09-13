@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Generate Facility Entryways</para>
+	/// <para>Generate Facility Entryways</para>
 	/// <para>Creates or updates points representing a building's entry or exit locations.</para>
 	/// </summary>
 	public class GenerateFacilityEntryways : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Facility Entryways</para>
 		/// </summary>
-		public override string DisplayName => "Generate Facility Entryways";
+		public override string DisplayName() => "Generate Facility Entryways";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateFacilityEntryways</para>
 		/// </summary>
-		public override string ToolName => "GenerateFacilityEntryways";
+		public override string ToolName() => "GenerateFacilityEntryways";
 
 		/// <summary>
 		/// <para>Tool Excute Name : indoors.GenerateFacilityEntryways</para>
 		/// </summary>
-		public override string ExcuteName => "indoors.GenerateFacilityEntryways";
+		public override string ExcuteName() => "indoors.GenerateFacilityEntryways";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Indoors Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Indoors Tools";
+		public override string ToolboxDisplayName() => "Indoors Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : indoors</para>
 		/// </summary>
-		public override string ToolboxAlise => "indoors";
+		public override string ToolboxAlise() => "indoors";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLevelFeatures, InUnitFeatures, InDoorFeatures, TargetEntryways, BufferSize!, EntrywayUseType!, ExteriorUnitExp!, DeleteExistingEntryways!, UpdatedEntryways!, LevelIdField!, UseTypeField! };
+		public override object[] Parameters() => new object[] { InLevelFeatures, InUnitFeatures, InDoorFeatures, TargetEntryways, BufferSize!, EntrywayUseType!, ExteriorUnitExp!, DeleteExistingEntryways!, UpdatedEntryways!, LevelIdField!, UseTypeField! };
 
 		/// <summary>
 		/// <para>Input Level Features</para>
@@ -84,6 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object InLevelFeatures { get; set; }
 
 		/// <summary>
@@ -93,6 +96,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object InUnitFeatures { get; set; }
 
 		/// <summary>
@@ -102,6 +107,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object InDoorFeatures { get; set; }
 
 		/// <summary>
@@ -111,6 +118,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object TargetEntryways { get; set; }
 
 		/// <summary>
@@ -119,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 10)]
 		public object? BufferSize { get; set; } = "0.5";
 
 		/// <summary>

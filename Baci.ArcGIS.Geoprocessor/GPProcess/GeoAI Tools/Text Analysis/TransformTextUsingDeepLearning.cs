@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 {
 	/// <summary>
 	/// <para>Transform Text Using Deep Learning</para>
+	/// <para>Transform Text Using Deep Learning</para>
 	/// <para>Runs a trained sequence-to-sequence model on a text field in a feature class or table and updates it with a new field containing the converted, transformed, or translated text.</para>
 	/// </summary>
 	public class TransformTextUsingDeepLearning : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// <summary>
 		/// <para>Tool Display Name : Transform Text Using Deep Learning</para>
 		/// </summary>
-		public override string DisplayName => "Transform Text Using Deep Learning";
+		public override string DisplayName() => "Transform Text Using Deep Learning";
 
 		/// <summary>
 		/// <para>Tool Name : TransformTextUsingDeepLearning</para>
 		/// </summary>
-		public override string ToolName => "TransformTextUsingDeepLearning";
+		public override string ToolName() => "TransformTextUsingDeepLearning";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoai.TransformTextUsingDeepLearning</para>
 		/// </summary>
-		public override string ExcuteName => "geoai.TransformTextUsingDeepLearning";
+		public override string ExcuteName() => "geoai.TransformTextUsingDeepLearning";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAI Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAI Tools";
+		public override string ToolboxDisplayName() => "GeoAI Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoai</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoai";
+		public override string ToolboxAlise() => "geoai";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "gpuID", "processorType" };
+		public override string[] ValidEnvironments() => new string[] { "gpuID", "processorType" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, TextField, InModelDefinitionFile, ResultField!, ModelArguments!, BatchSize!, MinimumSequenceLength!, MaximumSequenceLength!, UpdatedTable! };
+		public override object[] Parameters() => new object[] { InTable, TextField, InModelDefinitionFile, ResultField!, ModelArguments!, BatchSize!, MinimumSequenceLength!, MaximumSequenceLength!, UpdatedTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -87,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object TextField { get; set; }
 
 		/// <summary>
@@ -96,6 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("emd", "dlpk")]
 		public object InModelDefinitionFile { get; set; }
 
 		/// <summary>

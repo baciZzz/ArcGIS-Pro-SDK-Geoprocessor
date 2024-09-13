@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Modify Route ID Padding</para>
+	/// <para>Modify Route ID Padding</para>
 	/// <para>Modifies the padding, null, and length properties for fields that are part of a multifield route ID.</para>
 	/// </summary>
 	public class ModifyRouteIdPadding : AbstractGPProcess
@@ -46,37 +47,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Modify Route ID Padding</para>
 		/// </summary>
-		public override string DisplayName => "Modify Route ID Padding";
+		public override string DisplayName() => "Modify Route ID Padding";
 
 		/// <summary>
 		/// <para>Tool Name : ModifyRouteIdPadding</para>
 		/// </summary>
-		public override string ToolName => "ModifyRouteIdPadding";
+		public override string ToolName() => "ModifyRouteIdPadding";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.ModifyRouteIdPadding</para>
 		/// </summary>
-		public override string ExcuteName => "locref.ModifyRouteIdPadding";
+		public override string ExcuteName() => "locref.ModifyRouteIdPadding";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, RouteIdPadding, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatureClass, RouteIdPadding, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>LRS Network Feature Class</para>
@@ -85,6 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InFeatureClass { get; set; }
 
 		/// <summary>

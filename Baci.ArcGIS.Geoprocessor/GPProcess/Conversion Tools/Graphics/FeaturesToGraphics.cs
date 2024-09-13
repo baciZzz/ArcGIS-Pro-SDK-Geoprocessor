@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Features To Graphics</para>
+	/// <para>Features To Graphics</para>
 	/// <para>Converts a feature layer's symbolized features into graphic elements in a graphics layer.</para>
 	/// </summary>
 	public class FeaturesToGraphics : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Features To Graphics</para>
 		/// </summary>
-		public override string DisplayName => "Features To Graphics";
+		public override string DisplayName() => "Features To Graphics";
 
 		/// <summary>
 		/// <para>Tool Name : FeaturesToGraphics</para>
 		/// </summary>
-		public override string ToolName => "FeaturesToGraphics";
+		public override string ToolName() => "FeaturesToGraphics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.FeaturesToGraphics</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.FeaturesToGraphics";
+		public override string ExcuteName() => "conversion.FeaturesToGraphics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayer, OutLayer, ExcludeFeatures!, UpdatedLayer! };
+		public override object[] Parameters() => new object[] { InLayer, OutLayer, ExcludeFeatures!, UpdatedLayer! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "CoverageAnnotation", "ComplexJunction")]
 		public object InLayer { get; set; }
 
 		/// <summary>

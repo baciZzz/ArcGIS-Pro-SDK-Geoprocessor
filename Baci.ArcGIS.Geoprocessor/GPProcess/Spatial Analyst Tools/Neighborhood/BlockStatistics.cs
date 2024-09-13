@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Block Statistics</para>
+	/// <para>Block Statistics</para>
 	/// <para>Partitions the input into non-overlapping blocks and calculates the statistic of the values within each block. The value is assigned to all of the cells in each block in the output.</para>
 	/// </summary>
 	public class BlockStatistics : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Block Statistics</para>
 		/// </summary>
-		public override string DisplayName => "Block Statistics";
+		public override string DisplayName() => "Block Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : BlockStatistics</para>
 		/// </summary>
-		public override string ToolName => "BlockStatistics";
+		public override string ToolName() => "BlockStatistics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.BlockStatistics</para>
 		/// </summary>
-		public override string ExcuteName => "sa.BlockStatistics";
+		public override string ExcuteName() => "sa.BlockStatistics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, Neighborhood!, StatisticsType!, IgnoreNodata! };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, Neighborhood!, StatisticsType!, IgnoreNodata! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -73,7 +74,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRaster { get; set; }
 
 		/// <summary>
@@ -101,6 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSANeighborhood()]
 		[GPSANeighborhoodDomain()]
+		[NeighbourType("Rectangle", "Circle", "Annulus", "Wedge", "Irregular", "Weight")]
 		public object? Neighborhood { get; set; } = "Rectangle 3 3 CELL";
 
 		/// <summary>

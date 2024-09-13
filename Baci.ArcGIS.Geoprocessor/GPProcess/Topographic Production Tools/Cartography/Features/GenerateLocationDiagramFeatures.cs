@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Generate Location Diagram Features</para>
+	/// <para>Generate Location Diagram Features</para>
 	/// <para>Generates location diagram features for a Joint Operations Graphic (JOG) map sheet. The location diagram must include JOG_Index features, WAC_Index features, ONC_Index features, or LandPoly features for the area surrounding the processed sheet.</para>
 	/// </summary>
 	public class GenerateLocationDiagramFeatures : AbstractGPProcess
@@ -55,37 +56,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Location Diagram Features</para>
 		/// </summary>
-		public override string DisplayName => "Generate Location Diagram Features";
+		public override string DisplayName() => "Generate Location Diagram Features";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateLocationDiagramFeatures</para>
 		/// </summary>
-		public override string ToolName => "GenerateLocationDiagramFeatures";
+		public override string ToolName() => "GenerateLocationDiagramFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.GenerateLocationDiagramFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.GenerateLocationDiagramFeatures";
+		public override string ExcuteName() => "topographic.GenerateLocationDiagramFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureDataset, AreaOfInterest, SheetIdField, WacFeatures, OncFeatures, LandFeatures, ModifiedFeatureDataset! };
+		public override object[] Parameters() => new object[] { InFeatureDataset, AreaOfInterest, SheetIdField, WacFeatures, OncFeatures, LandFeatures, ModifiedFeatureDataset! };
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>
@@ -110,6 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object SheetIdField { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Train K-Nearest Neighbor Classifier</para>
+	/// <para>Train K-Nearest Neighbor Classifier</para>
 	/// <para>Generates an Esri classifier definition file (.ecd) using the K-Nearest Neighbor classification method.</para>
 	/// </summary>
 	public class TrainKNearestNeighborClassifier : AbstractGPProcess
@@ -44,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Train K-Nearest Neighbor Classifier</para>
 		/// </summary>
-		public override string DisplayName => "Train K-Nearest Neighbor Classifier";
+		public override string DisplayName() => "Train K-Nearest Neighbor Classifier";
 
 		/// <summary>
 		/// <para>Tool Name : TrainKNearestNeighborClassifier</para>
 		/// </summary>
-		public override string ToolName => "TrainKNearestNeighborClassifier";
+		public override string ToolName() => "TrainKNearestNeighborClassifier";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.TrainKNearestNeighborClassifier</para>
 		/// </summary>
-		public override string ExcuteName => "ia.TrainKNearestNeighborClassifier";
+		public override string ExcuteName() => "ia.TrainKNearestNeighborClassifier";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InTrainingFeatures, OutClassifierDefinition, InAdditionalRaster!, Knn!, MaxSamplesPerClass!, UsedAttributes!, DimensionValueField! };
+		public override object[] Parameters() => new object[] { InRaster, InTrainingFeatures, OutClassifierDefinition, InAdditionalRaster!, Knn!, MaxSamplesPerClass!, UsedAttributes!, DimensionValueField! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -155,6 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Double", "Date")]
 		public object? DimensionValueField { get; set; }
 
 		/// <summary>

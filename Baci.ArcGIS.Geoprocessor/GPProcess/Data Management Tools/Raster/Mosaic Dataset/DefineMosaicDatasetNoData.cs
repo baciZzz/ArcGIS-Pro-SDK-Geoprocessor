@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Define Mosaic Dataset NoData</para>
+	/// <para>Define Mosaic Dataset NoData</para>
 	/// <para>Specifies one or more values to be represented as NoData.</para>
 	/// </summary>
 	public class DefineMosaicDatasetNoData : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Define Mosaic Dataset NoData</para>
 		/// </summary>
-		public override string DisplayName => "Define Mosaic Dataset NoData";
+		public override string DisplayName() => "Define Mosaic Dataset NoData";
 
 		/// <summary>
 		/// <para>Tool Name : DefineMosaicDatasetNoData</para>
 		/// </summary>
-		public override string ToolName => "DefineMosaicDatasetNoData";
+		public override string ToolName() => "DefineMosaicDatasetNoData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DefineMosaicDatasetNoData</para>
 		/// </summary>
-		public override string ExcuteName => "management.DefineMosaicDatasetNoData";
+		public override string ExcuteName() => "management.DefineMosaicDatasetNoData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, NumBands, BandsForNodataValue!, BandsForValidDataRange!, WhereClause!, CompositeNodataValue!, OutMosaicDataset! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, NumBands, BandsForNodataValue!, BandsForValidDataRange!, WhereClause!, CompositeNodataValue!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

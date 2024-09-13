@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Features To GPX</para>
+	/// <para>Features To GPX</para>
 	/// <para>Converts point, multipoint, or polyline features to a GPX format file (.gpx).</para>
 	/// </summary>
 	public class FeaturesToGPX : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Features To GPX</para>
 		/// </summary>
-		public override string DisplayName => "Features To GPX";
+		public override string DisplayName() => "Features To GPX";
 
 		/// <summary>
 		/// <para>Tool Name : FeaturesToGPX</para>
 		/// </summary>
-		public override string ToolName => "FeaturesToGPX";
+		public override string ToolName() => "FeaturesToGPX";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.FeaturesToGPX</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.FeaturesToGPX";
+		public override string ExcuteName() => "conversion.FeaturesToGPX";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutGpxFile, NameField!, DescriptionField!, ZField!, DateField! };
+		public override object[] Parameters() => new object[] { InFeatures, OutGpxFile, NameField!, DescriptionField!, ZField!, DateField! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,6 +75,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polyline")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -83,6 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("gpx")]
 		public object OutGpxFile { get; set; }
 
 		/// <summary>
@@ -92,6 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double", "GlobalID", "GUID", "Long", "OID", "Float", "Short", "Text")]
 		public object? NameField { get; set; }
 
 		/// <summary>
@@ -101,6 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double", "GlobalID", "GUID", "Long", "OID", "Float", "Short", "Text")]
 		public object? DescriptionField { get; set; }
 
 		/// <summary>
@@ -110,6 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double")]
 		public object? ZField { get; set; }
 
 		/// <summary>
@@ -119,6 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object? DateField { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Analyze Toolbox For Version</para>
+	/// <para>Analyze Toolbox For Version</para>
 	/// <para>Analyzes the contents of a toolbox and identifies compatibility issues with previous versions of ArcGIS software.</para>
 	/// </summary>
 	public class AnalyzeToolboxForVersion : AbstractGPProcess
@@ -48,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Analyze Toolbox For Version</para>
 		/// </summary>
-		public override string DisplayName => "Analyze Toolbox For Version";
+		public override string DisplayName() => "Analyze Toolbox For Version";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeToolboxForVersion</para>
 		/// </summary>
-		public override string ToolName => "AnalyzeToolboxForVersion";
+		public override string ToolName() => "AnalyzeToolboxForVersion";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AnalyzeToolboxForVersion</para>
 		/// </summary>
-		public override string ExcuteName => "management.AnalyzeToolboxForVersion";
+		public override string ExcuteName() => "management.AnalyzeToolboxForVersion";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InToolbox, Version, Report! };
+		public override object[] Parameters() => new object[] { InToolbox, Version, Report! };
 
 		/// <summary>
 		/// <para>Input</para>

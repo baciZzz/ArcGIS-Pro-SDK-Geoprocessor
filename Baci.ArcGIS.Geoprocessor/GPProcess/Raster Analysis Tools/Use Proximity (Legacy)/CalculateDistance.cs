@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Calculate Distance</para>
+	/// <para>Calculate Distance</para>
 	/// <para>Calculates the Euclidean distance from a single source or set of sources.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.RasterAnalysisTools.DistanceAllocation"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
@@ -39,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Distance</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Distance";
+		public override string DisplayName() => "Calculate Distance";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateDistance</para>
 		/// </summary>
-		public override string ToolName => "CalculateDistance";
+		public override string ToolName() => "CalculateDistance";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.CalculateDistance</para>
 		/// </summary>
-		public override string ExcuteName => "ra.CalculateDistance";
+		public override string ExcuteName() => "ra.CalculateDistance";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputsourcerasterorfeatures, Outputdistancename, Maximumdistance!, Outputcellsize!, Outputdirectionname!, Outputallocationname!, Allocationfield!, Outputdistanceraster!, Outputdirectionraster!, Outputallocationraster!, Distancemethod!, Inputbarrierrasterorfeatures!, Outputbackdirectionname!, Outputbackdirectionraster! };
+		public override object[] Parameters() => new object[] { Inputsourcerasterorfeatures, Outputdistancename, Maximumdistance!, Outputcellsize!, Outputdirectionname!, Outputallocationname!, Allocationfield!, Outputdistanceraster!, Outputdirectionraster!, Outputallocationraster!, Distancemethod!, Inputbarrierrasterorfeatures!, Outputbackdirectionname!, Outputbackdirectionraster! };
 
 		/// <summary>
 		/// <para>Input Source Raster or Features</para>

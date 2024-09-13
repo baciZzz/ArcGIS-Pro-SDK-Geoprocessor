@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Huff Model Calibration</para>
+	/// <para>Huff Model Calibration</para>
 	/// <para>Calculates exponent values for use in the Huff Model tool.</para>
 	/// </summary>
 	public class HuffModelCalibration : AbstractGPProcess
@@ -65,37 +66,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Huff Model Calibration</para>
 		/// </summary>
-		public override string DisplayName => "Huff Model Calibration";
+		public override string DisplayName() => "Huff Model Calibration";
 
 		/// <summary>
 		/// <para>Tool Name : HuffModelCalibration</para>
 		/// </summary>
-		public override string ToolName => "HuffModelCalibration";
+		public override string ToolName() => "HuffModelCalibration";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.HuffModelCalibration</para>
 		/// </summary>
-		public override string ExcuteName => "ba.HuffModelCalibration";
+		public override string ExcuteName() => "ba.HuffModelCalibration";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baNetworkSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFacilityFeatures, FacilityIdField, InCustomerFeatures, LinkField, InSalesPotentialFeatures, SalesPotentialIdField, OutCalibration, AttractivenessVariables, CustomerWeightField!, DistanceType!, DistanceUnits!, TravelDirection!, TimeOfDay!, TimeZone! };
+		public override object[] Parameters() => new object[] { InFacilityFeatures, FacilityIdField, InCustomerFeatures, LinkField, InSalesPotentialFeatures, SalesPotentialIdField, OutCalibration, AttractivenessVariables, CustomerWeightField!, DistanceType!, DistanceUnits!, TravelDirection!, TimeOfDay!, TimeZone! };
 
 		/// <summary>
 		/// <para>Input Facility Features</para>
@@ -104,6 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InFacilityFeatures { get; set; }
 
 		/// <summary>
@@ -113,6 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text", "OID")]
 		public object FacilityIdField { get; set; }
 
 		/// <summary>
@@ -122,6 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InCustomerFeatures { get; set; }
 
 		/// <summary>
@@ -131,6 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text", "OID")]
 		public object LinkField { get; set; }
 
 		/// <summary>
@@ -140,6 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InSalesPotentialFeatures { get; set; }
 
 		/// <summary>
@@ -149,6 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text", "OID")]
 		public object SalesPotentialIdField { get; set; }
 
 		/// <summary>
@@ -158,6 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("huffmodel")]
 		public object OutCalibration { get; set; }
 
 		/// <summary>
@@ -176,6 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? CustomerWeightField { get; set; }
 
 		/// <summary>

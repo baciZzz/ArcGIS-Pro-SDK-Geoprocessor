@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Diagnose Version Metadata</para>
+	/// <para>Diagnose Version Metadata</para>
 	/// <para>Identifies inconsistencies in the system tables used to manage traditional versions and states in a geodatabase.</para>
 	/// </summary>
 	public class DiagnoseVersionMetadata : AbstractGPProcess
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Diagnose Version Metadata</para>
 		/// </summary>
-		public override string DisplayName => "Diagnose Version Metadata";
+		public override string DisplayName() => "Diagnose Version Metadata";
 
 		/// <summary>
 		/// <para>Tool Name : DiagnoseVersionMetadata</para>
 		/// </summary>
-		public override string ToolName => "DiagnoseVersionMetadata";
+		public override string ToolName() => "DiagnoseVersionMetadata";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DiagnoseVersionMetadata</para>
 		/// </summary>
-		public override string ExcuteName => "management.DiagnoseVersionMetadata";
+		public override string ExcuteName() => "management.DiagnoseVersionMetadata";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, OutLog, OutWorkspace! };
+		public override object[] Parameters() => new object[] { InputDatabase, OutLog, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
@@ -77,6 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Remote Database")]
 		public object InputDatabase { get; set; }
 
 		/// <summary>

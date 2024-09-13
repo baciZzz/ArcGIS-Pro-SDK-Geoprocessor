@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Geodesic Viewshed</para>
+	/// <para>Geodesic Viewshed</para>
 	/// <para>Determines the raster surface locations visible to a set of observer features using geodesic methods.</para>
 	/// </summary>
 	public class Viewshed2 : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Geodesic Viewshed</para>
 		/// </summary>
-		public override string DisplayName => "Geodesic Viewshed";
+		public override string DisplayName() => "Geodesic Viewshed";
 
 		/// <summary>
 		/// <para>Tool Name : Viewshed2</para>
 		/// </summary>
-		public override string ToolName => "Viewshed2";
+		public override string ToolName() => "Viewshed2";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Viewshed2</para>
 		/// </summary>
-		public override string ExcuteName => "sa.Viewshed2";
+		public override string ExcuteName() => "sa.Viewshed2";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InObserverFeatures, OutRaster, OutAglRaster!, AnalysisType!, VerticalError!, OutObserverRegionRelationshipTable!, RefractivityCoefficient!, SurfaceOffset!, ObserverElevation!, ObserverOffset!, InnerRadius!, InnerRadiusIs3D!, OuterRadius!, OuterRadiusIs3D!, HorizontalStartAngle!, HorizontalEndAngle!, VerticalUpperAngle!, VerticalLowerAngle!, AnalysisMethod! };
+		public override object[] Parameters() => new object[] { InRaster, InObserverFeatures, OutRaster, OutAglRaster!, AnalysisType!, VerticalError!, OutObserverRegionRelationshipTable!, RefractivityCoefficient!, SurfaceOffset!, ObserverElevation!, ObserverOffset!, InnerRadius!, InnerRadiusIs3D!, OuterRadius!, OuterRadiusIs3D!, HorizontalStartAngle!, HorizontalEndAngle!, VerticalUpperAngle!, VerticalLowerAngle!, AnalysisMethod! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -82,7 +83,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = true)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRaster { get; set; }
 
 		/// <summary>
@@ -92,7 +96,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DEFeatureClass", "GPFeatureLayer", "GPTableView", "DETextFile")]
+		[FieldType("OID", "Short", "Long", "Float", "Double", "Text", "Geometry")]
+		[GeometryType("Point", "Multipoint", "Polyline")]
 		public object InObserverFeatures { get; set; }
 
 		/// <summary>
@@ -156,6 +163,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
+		[High(Allow = true, Value = 1)]
 		[Category("Viewshed parameters")]
 		public object? RefractivityCoefficient { get; set; } = "0.13";
 

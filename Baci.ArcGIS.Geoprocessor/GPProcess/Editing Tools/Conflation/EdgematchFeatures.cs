@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Edgematch Features</para>
+	/// <para>Edgematch Features</para>
 	/// <para>Modifies input line features by spatially adjusting their shapes, guided by the specified edgematch links, so they become connected with the lines in the adjacent dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Edgematch Features</para>
 		/// </summary>
-		public override string DisplayName => "Edgematch Features";
+		public override string DisplayName() => "Edgematch Features";
 
 		/// <summary>
 		/// <para>Tool Name : EdgematchFeatures</para>
 		/// </summary>
-		public override string ToolName => "EdgematchFeatures";
+		public override string ToolName() => "EdgematchFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.EdgematchFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "edit.EdgematchFeatures";
+		public override string ExcuteName() => "edit.EdgematchFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InLinkFeatures, Method!, AdjacentFeatures!, BorderFeatures!, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatures, InLinkFeatures, Method!, AdjacentFeatures!, BorderFeatures!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -76,6 +77,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -85,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InLinkFeatures { get; set; }
 
 		/// <summary>
@@ -107,6 +111,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge")]
 		public object? AdjacentFeatures { get; set; }
 
 		/// <summary>
@@ -116,6 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon")]
 		public object? BorderFeatures { get; set; }
 
 		/// <summary>

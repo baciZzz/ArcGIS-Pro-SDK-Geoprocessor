@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Dimensional Moving Statistics</para>
+	/// <para>Dimensional Moving Statistics</para>
 	/// <para>Calculates statistics over a moving window on multidimensional data along a specified dimension.</para>
 	/// </summary>
 	public class DimensionalMovingStatistics : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Dimensional Moving Statistics</para>
 		/// </summary>
-		public override string DisplayName => "Dimensional Moving Statistics";
+		public override string DisplayName() => "Dimensional Moving Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : DimensionalMovingStatistics</para>
 		/// </summary>
-		public override string ToolName => "DimensionalMovingStatistics";
+		public override string ToolName() => "DimensionalMovingStatistics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.DimensionalMovingStatistics</para>
 		/// </summary>
-		public override string ExcuteName => "ia.DimensionalMovingStatistics";
+		public override string ExcuteName() => "ia.DimensionalMovingStatistics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, Dimension!, BackwardWindow!, ForwardWindow!, NodataHandling!, StatisticsType!, PercentileValue!, PercentileInterpolationType!, CircularWrapValue!, RasterFunctionArgumentsJson! };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, Dimension!, BackwardWindow!, ForwardWindow!, NodataHandling!, StatisticsType!, PercentileValue!, PercentileInterpolationType!, CircularWrapValue!, RasterFunctionArgumentsJson! };
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>
@@ -99,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 10000)]
 		public object? BackwardWindow { get; set; } = "1";
 
 		/// <summary>
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 10000)]
 		public object? ForwardWindow { get; set; } = "1";
 
 		/// <summary>
@@ -150,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 100)]
 		public object? PercentileValue { get; set; } = "90";
 
 		/// <summary>
@@ -174,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1e-10, Max = 10000000000)]
 		public object? CircularWrapValue { get; set; } = "360";
 
 		/// <summary>

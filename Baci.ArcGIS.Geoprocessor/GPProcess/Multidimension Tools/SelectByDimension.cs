@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Select by Dimension</para>
+	/// <para>Select by Dimension</para>
 	/// <para>Updates the netCDF layer display or netCDF table view based on the dimension value.</para>
 	/// </summary>
 	public class SelectByDimension : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Display Name : Select by Dimension</para>
 		/// </summary>
-		public override string DisplayName => "Select by Dimension";
+		public override string DisplayName() => "Select by Dimension";
 
 		/// <summary>
 		/// <para>Tool Name : SelectByDimension</para>
 		/// </summary>
-		public override string ToolName => "SelectByDimension";
+		public override string ToolName() => "SelectByDimension";
 
 		/// <summary>
 		/// <para>Tool Excute Name : md.SelectByDimension</para>
 		/// </summary>
-		public override string ExcuteName => "md.SelectByDimension";
+		public override string ExcuteName() => "md.SelectByDimension";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Multidimension Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Multidimension Tools";
+		public override string ToolboxDisplayName() => "Multidimension Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : md</para>
 		/// </summary>
-		public override string ToolboxAlise => "md";
+		public override string ToolboxAlise() => "md";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayerOrTable, DimensionValues!, ValueSelectionMethod!, OutputLayerOrTable! };
+		public override object[] Parameters() => new object[] { InLayerOrTable, DimensionValues!, ValueSelectionMethod!, OutputLayerOrTable! };
 
 		/// <summary>
 		/// <para>Input Layer or Table</para>

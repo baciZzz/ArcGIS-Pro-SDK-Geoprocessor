@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Apply Feature Level Metadata</para>
+	/// <para>Apply Feature Level Metadata</para>
 	/// <para>Applies values from a metadata record in the FeatureLevelMetadata table to selected features that have matching attribute fields.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Feature Level Metadata</para>
 		/// </summary>
-		public override string DisplayName => "Apply Feature Level Metadata";
+		public override string DisplayName() => "Apply Feature Level Metadata";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyFeatureLevelMetadata</para>
 		/// </summary>
-		public override string ToolName => "ApplyFeatureLevelMetadata";
+		public override string ToolName() => "ApplyFeatureLevelMetadata";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.ApplyFeatureLevelMetadata</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.ApplyFeatureLevelMetadata";
+		public override string ExcuteName() => "topographic.ApplyFeatureLevelMetadata";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InMetadataTable, MetadataFavorite, UpdatedFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, InMetadataTable, MetadataFavorite, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -81,6 +82,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Polyline", "Point")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -89,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
-		[GPTablesDomain()]
+		[GPTablesDomain(HideJoinedLayers = true, ShowOnlyStandaloneTables = true)]
 		public object InMetadataTable { get; set; }
 
 		/// <summary>
@@ -107,6 +110,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Polyline", "Point")]
+		[FeatureType("Simple")]
 		public object? UpdatedFeatures { get; set; }
 
 	}

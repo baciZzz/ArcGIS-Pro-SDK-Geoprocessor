@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Share Package</para>
+	/// <para>Share Package</para>
 	/// <para>Shares a package by uploading it to ArcGIS Online or ArcGIS Enterprise.</para>
 	/// </summary>
 	public class SharePackage : AbstractGPProcess
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Share Package</para>
 		/// </summary>
-		public override string DisplayName => "Share Package";
+		public override string DisplayName() => "Share Package";
 
 		/// <summary>
 		/// <para>Tool Name : SharePackage</para>
 		/// </summary>
-		public override string ToolName => "SharePackage";
+		public override string ToolName() => "SharePackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SharePackage</para>
 		/// </summary>
-		public override string ExcuteName => "management.SharePackage";
+		public override string ExcuteName() => "management.SharePackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPackage, Username, Password, Summary!, Tags!, Credits!, Public!, Groups!, OutResults!, Organization!, PublishWebLayer!, PublishResults!, PackageItemId!, PortalFolder! };
+		public override object[] Parameters() => new object[] { InPackage, Username, Password, Summary!, Tags!, Credits!, Public!, Groups!, OutResults!, Organization!, PublishWebLayer!, PublishResults!, PackageItemId!, PortalFolder! };
 
 		/// <summary>
 		/// <para>Input Package</para>
@@ -81,6 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("lpkx", "mpkx", "gpkx", "mmpk", "mspk", "ppkx", "aptx", "lpk", "mpk", "gpk", "gcpk", "tpk", "tpkx", "spk", "slpk", "vtpk")]
 		public object InPackage { get; set; }
 
 		/// <summary>

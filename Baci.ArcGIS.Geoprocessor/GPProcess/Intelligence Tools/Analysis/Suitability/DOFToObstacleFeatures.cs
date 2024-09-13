@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>DOF To Obstacle Features</para>
+	/// <para>DOF To Obstacle Features</para>
 	/// <para>Converts the U.S. Federal Aviation Administration (FAA) Digital Obstacle File (DOF) to obstruction points and obstruction buffer features.</para>
 	/// </summary>
 	public class DOFToObstacleFeatures : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : DOF To Obstacle Features</para>
 		/// </summary>
-		public override string DisplayName => "DOF To Obstacle Features";
+		public override string DisplayName() => "DOF To Obstacle Features";
 
 		/// <summary>
 		/// <para>Tool Name : DOFToObstacleFeatures</para>
 		/// </summary>
-		public override string ToolName => "DOFToObstacleFeatures";
+		public override string ToolName() => "DOFToObstacleFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.DOFToObstacleFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.DOFToObstacleFeatures";
+		public override string ExcuteName() => "intelligence.DOFToObstacleFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutObstacleFeatures, OutObstacleBuffers, ClipFeatures! };
+		public override object[] Parameters() => new object[] { InTable, OutObstacleFeatures, OutObstacleBuffers, ClipFeatures! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -103,6 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? ClipFeatures { get; set; }
 
 	}

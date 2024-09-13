@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Find Nearby Locations</para>
+	/// <para>Find Nearby Locations</para>
 	/// <para>Identifies locations closest to the input features based on a selected distance type. The number of points in the output is defined by limiting the count or percentage of location points to return or by limiting the distance from the input points.</para>
 	/// </summary>
 	public class FindNearbyLocations : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Find Nearby Locations</para>
 		/// </summary>
-		public override string DisplayName => "Find Nearby Locations";
+		public override string DisplayName() => "Find Nearby Locations";
 
 		/// <summary>
 		/// <para>Tool Name : FindNearbyLocations</para>
 		/// </summary>
-		public override string ToolName => "FindNearbyLocations";
+		public override string ToolName() => "FindNearbyLocations";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.FindNearbyLocations</para>
 		/// </summary>
-		public override string ExcuteName => "ba.FindNearbyLocations";
+		public override string ExcuteName() => "ba.FindNearbyLocations";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baNetworkSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, IdField, InLocationPoints, OutFeatureClass, DistanceType!, Units!, DistanceLimit!, NumberLimit!, PercentLimit!, CreateReport!, ReportTitle!, ReportFolder!, ReportFormat!, ReportFields!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance!, OutputReport!, LocationName! };
+		public override object[] Parameters() => new object[] { InFeatures, IdField, InLocationPoints, OutFeatureClass, DistanceType!, Units!, DistanceLimit!, NumberLimit!, PercentLimit!, CreateReport!, ReportTitle!, ReportFolder!, ReportFormat!, ReportFields!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance!, OutputReport!, LocationName! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -84,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -93,6 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "GUID", "GlobalID")]
 		public object IdField { get; set; }
 
 		/// <summary>
@@ -102,6 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InLocationPoints { get; set; }
 
 		/// <summary>
@@ -145,6 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 1)]
 		public object? NumberLimit { get; set; }
 
 		/// <summary>
@@ -202,6 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Double", "Long", "Float", "Short", "Text")]
 		[Category("Report Options")]
 		public object? ReportFields { get; set; }
 
@@ -263,6 +269,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "GUID", "GlobalID")]
 		public object? LocationName { get; set; }
 
 		/// <summary>

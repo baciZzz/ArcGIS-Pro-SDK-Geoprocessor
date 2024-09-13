@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 {
 	/// <summary>
 	/// <para>Generate Origin Destination Cost Matrix</para>
+	/// <para>Generate Origin Destination Cost Matrix</para>
 	/// <para>Creates an origin-destination (OD) cost matrix from multiple origins to multiple destinations. An OD cost matrix is a table that contains the travel time and travel distance from each origin to each destination. Additionally, it ranks the destinations that each origin connects to in ascending order based on the minimum time or distance required to travel from that origin to each destination. The best path on the street network is discovered for each origin-destination pair, and the travel times and travel distances are stored as attributes of the output lines. Even though the lines are straight for performance reasons, they always store the travel time and travel distance along the street network, not straight-line distance.</para>
 	/// </summary>
 	public class GenerateOriginDestinationCostMatrix : AbstractGPProcess
@@ -86,37 +87,37 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Origin Destination Cost Matrix</para>
 		/// </summary>
-		public override string DisplayName => "Generate Origin Destination Cost Matrix";
+		public override string DisplayName() => "Generate Origin Destination Cost Matrix";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateOriginDestinationCostMatrix</para>
 		/// </summary>
-		public override string ToolName => "GenerateOriginDestinationCostMatrix";
+		public override string ToolName() => "GenerateOriginDestinationCostMatrix";
 
 		/// <summary>
 		/// <para>Tool Excute Name : agolservices.GenerateOriginDestinationCostMatrix</para>
 		/// </summary>
-		public override string ExcuteName => "agolservices.GenerateOriginDestinationCostMatrix";
+		public override string ExcuteName() => "agolservices.GenerateOriginDestinationCostMatrix";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Ready To Use Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Ready To Use Tools";
+		public override string ToolboxDisplayName() => "Ready To Use Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : agolservices</para>
 		/// </summary>
-		public override string ToolboxAlise => "agolservices";
+		public override string ToolboxAlise() => "agolservices";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Origins, Destinations, TravelMode!, TimeUnits!, DistanceUnits!, AnalysisRegion!, NumberOfDestinationsToFind!, Cutoff!, TimeOfDay!, TimeZoneForTimeOfDay!, PointBarriers!, LineBarriers!, PolygonBarriers!, UturnAtJunctions!, UseHierarchy!, Restrictions!, AttributeParameterValues!, Impedance!, OriginDestinationLineShape!, SaveOutputNetworkAnalysisLayer!, Overrides!, TimeImpedance!, DistanceImpedance!, OutputFormat!, IgnoreInvalidLocations!, SolveSucceeded!, OutputOriginDestinationLines!, OutputOrigins!, OutputDestinations!, OutputNetworkAnalysisLayer!, OutputResultFile!, OutputNetworkAnalysisLayerPackage! };
+		public override object[] Parameters() => new object[] { Origins, Destinations, TravelMode!, TimeUnits!, DistanceUnits!, AnalysisRegion!, NumberOfDestinationsToFind!, Cutoff!, TimeOfDay!, TimeZoneForTimeOfDay!, PointBarriers!, LineBarriers!, PolygonBarriers!, UturnAtJunctions!, UseHierarchy!, Restrictions!, AttributeParameterValues!, Impedance!, OriginDestinationLineShape!, SaveOutputNetworkAnalysisLayer!, Overrides!, TimeImpedance!, DistanceImpedance!, OutputFormat!, IgnoreInvalidLocations!, SolveSucceeded!, OutputOriginDestinationLines!, OutputOrigins!, OutputDestinations!, OutputNetworkAnalysisLayer!, OutputResultFile!, OutputNetworkAnalysisLayerPackage! };
 
 		/// <summary>
 		/// <para>Origins</para>
@@ -384,7 +385,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>UTurn at Junctions</para>
-		/// <para><para/>Specifies the U-turn policy at junctions. Allowing U-turns implies the solver can turn around at a junction and double back on the same street. Given that junctions represent street intersections and dead ends, different vehicles may be able to turn around at some junctions but not at others—it depends on whether the junction represents an intersection or dead end. To accommodate this, the U-turn policy parameter is implicitly specified by the number of edges that connect to the junction, which is known as junction valency. The acceptable values for this parameter are listed below; each is followed by a description of its meaning in terms of junction valency.</para>
+		/// <para>&lt;para/&gt;Specifies the U-turn policy at junctions. Allowing U-turns implies the solver can turn around at a junction and double back on the same street. Given that junctions represent street intersections and dead ends, different vehicles may be able to turn around at some junctions but not at others—it depends on whether the junction represents an intersection or dead end. To accommodate this, the U-turn policy parameter is implicitly specified by the number of edges that connect to the junction, which is known as junction valency. The acceptable values for this parameter are listed below; each is followed by a description of its meaning in terms of junction valency.</para>
 		/// <para>Allowed—U-turns are permitted at junctions with any number of connected edges. This is the default value.</para>
 		/// <para>Not Allowed—U-turns are prohibited at all junctions, regardless of junction valency. Note, however, that U-turns are still permitted at network locations even when this option is chosen; however, you can set the individual network locations&apos; CurbApproach attribute to prohibit U-turns there as well.</para>
 		/// <para>Allowed only at Dead Ends—U-turns are prohibited at all junctions except those that have only one adjacent edge (a dead end).</para>

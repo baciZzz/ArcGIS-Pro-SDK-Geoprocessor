@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 {
 	/// <summary>
 	/// <para>ServerTool 8</para>
+	/// <para>ServerTool 8</para>
 	/// <para></para>
 	/// </summary>
 	public class SetupMapArea : AbstractGPProcess
@@ -29,37 +30,37 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Display Name : ServerTool 8</para>
 		/// </summary>
-		public override string DisplayName => "ServerTool 8";
+		public override string DisplayName() => "ServerTool 8";
 
 		/// <summary>
 		/// <para>Tool Name : SetupMapArea</para>
 		/// </summary>
-		public override string ToolName => "SetupMapArea";
+		public override string ToolName() => "SetupMapArea";
 
 		/// <summary>
 		/// <para>Tool Excute Name : agolservices.SetupMapArea</para>
 		/// </summary>
-		public override string ExcuteName => "agolservices.SetupMapArea";
+		public override string ExcuteName() => "agolservices.SetupMapArea";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Ready To Use Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Ready To Use Tools";
+		public override string ToolboxDisplayName() => "Ready To Use Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : agolservices</para>
 		/// </summary>
-		public override string ToolboxAlise => "agolservices";
+		public override string ToolboxAlise() => "agolservices";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Mapareaitemid, Maplayerstoignore!, Tileservices!, Featureservices!, Packages! };
+		public override object[] Parameters() => new object[] { Mapareaitemid, Maplayerstoignore!, Tileservices!, Featureservices!, Packages! };
 
 		/// <summary>
 		/// <para>Map Area Item ID</para>

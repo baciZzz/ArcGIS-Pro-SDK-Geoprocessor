@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Flow Accumulation</para>
+	/// <para>Flow Accumulation</para>
 	/// <para>Creates a raster of accumulated flow into each cell.</para>
 	/// </summary>
 	public class FlowAccumulation : AbstractGPProcess
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Flow Accumulation</para>
 		/// </summary>
-		public override string DisplayName => "Flow Accumulation";
+		public override string DisplayName() => "Flow Accumulation";
 
 		/// <summary>
 		/// <para>Tool Name : FlowAccumulation</para>
 		/// </summary>
-		public override string ToolName => "FlowAccumulation";
+		public override string ToolName() => "FlowAccumulation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.FlowAccumulation</para>
 		/// </summary>
-		public override string ExcuteName => "ra.FlowAccumulation";
+		public override string ExcuteName() => "ra.FlowAccumulation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputflowdirectionraster, Outputname, Inputweightraster!, Datatype!, Flowdirectiontype!, Outputraster! };
+		public override object[] Parameters() => new object[] { Inputflowdirectionraster, Outputname, Inputweightraster!, Datatype!, Flowdirectiontype!, Outputraster! };
 
 		/// <summary>
 		/// <para>Input Flow Direction Raster</para>

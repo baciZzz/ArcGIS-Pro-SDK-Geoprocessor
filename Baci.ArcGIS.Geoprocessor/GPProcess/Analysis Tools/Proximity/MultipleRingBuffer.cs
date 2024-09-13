@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Multiple Ring Buffer</para>
+	/// <para>Multiple Ring Buffer</para>
 	/// <para>Creates multiple buffers at specified distances around the input features. These buffers can be merged and dissolved using the buffer distance values to create nonoverlapping buffers.</para>
 	/// </summary>
 	public class MultipleRingBuffer : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Multiple Ring Buffer</para>
 		/// </summary>
-		public override string DisplayName => "Multiple Ring Buffer";
+		public override string DisplayName() => "Multiple Ring Buffer";
 
 		/// <summary>
 		/// <para>Tool Name : MultipleRingBuffer</para>
 		/// </summary>
-		public override string ToolName => "MultipleRingBuffer";
+		public override string ToolName() => "MultipleRingBuffer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.MultipleRingBuffer</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.MultipleRingBuffer";
+		public override string ExcuteName() => "analysis.MultipleRingBuffer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, OutputFeatureClass, Distances, BufferUnit!, FieldName!, DissolveOption!, OutsidePolygonsOnly!, Method! };
+		public override object[] Parameters() => new object[] { InputFeatures, OutputFeatureClass, Distances, BufferUnit!, FieldName!, DissolveOption!, OutsidePolygonsOnly!, Method! };
 
 		/// <summary>
 		/// <para>Input Features</para>

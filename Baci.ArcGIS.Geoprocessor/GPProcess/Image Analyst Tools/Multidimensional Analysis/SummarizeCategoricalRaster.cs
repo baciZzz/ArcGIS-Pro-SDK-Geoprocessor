@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Summarize Categorical Raster</para>
+	/// <para>Summarize Categorical Raster</para>
 	/// <para>Generates a table containing the pixel count for each class, in each slice of an input categorical raster.</para>
 	/// </summary>
 	public class SummarizeCategoricalRaster : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Summarize Categorical Raster</para>
 		/// </summary>
-		public override string DisplayName => "Summarize Categorical Raster";
+		public override string DisplayName() => "Summarize Categorical Raster";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeCategoricalRaster</para>
 		/// </summary>
-		public override string ToolName => "SummarizeCategoricalRaster";
+		public override string ToolName() => "SummarizeCategoricalRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.SummarizeCategoricalRaster</para>
 		/// </summary>
-		public override string ExcuteName => "ia.SummarizeCategoricalRaster";
+		public override string ExcuteName() => "ia.SummarizeCategoricalRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutTable, Dimension!, Aoi!, AoiIdField! };
+		public override object[] Parameters() => new object[] { InRaster, OutTable, Dimension!, Aoi!, AoiIdField! };
 
 		/// <summary>
 		/// <para>Input Categorical Raster</para>
@@ -106,6 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		public object? AoiIdField { get; set; }
 
 		/// <summary>

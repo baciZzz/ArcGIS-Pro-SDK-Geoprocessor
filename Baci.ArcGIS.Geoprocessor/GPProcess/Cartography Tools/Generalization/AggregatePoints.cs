@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Aggregate Points</para>
+	/// <para>Aggregate Points</para>
 	/// <para>Creates polygon features around clusters of proximate point features.</para>
 	/// </summary>
 	public class AggregatePoints : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Aggregate Points</para>
 		/// </summary>
-		public override string DisplayName => "Aggregate Points";
+		public override string DisplayName() => "Aggregate Points";
 
 		/// <summary>
 		/// <para>Tool Name : AggregatePoints</para>
 		/// </summary>
-		public override string ToolName => "AggregatePoints";
+		public override string ToolName() => "AggregatePoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.AggregatePoints</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.AggregatePoints";
+		public override string ExcuteName() => "cartography.AggregatePoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYResolution", "extent", "outputZFlag", "outputZValue" };
+		public override string[] ValidEnvironments() => new string[] { "XYResolution", "extent", "outputZFlag", "outputZValue" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, AggregationDistance, OutTable! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, AggregationDistance, OutTable! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

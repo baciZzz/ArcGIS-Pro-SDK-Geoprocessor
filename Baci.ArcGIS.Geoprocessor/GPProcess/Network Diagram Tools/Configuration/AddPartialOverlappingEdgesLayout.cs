@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Partial Overlapping Edges Layout</para>
+	/// <para>Add Partial Overlapping Edges Layout</para>
 	/// <para>Adds the Partial Overlapping Edges Layout algorithm to the list of layouts to be automatically chained at the end of the building of diagrams based on a given template. This tool also presets the Partial Overlapping Edges Layout algorithm parameters for any diagram based on that template.</para>
 	/// </summary>
 	public class AddPartialOverlappingEdgesLayout : AbstractGPProcess
@@ -53,37 +54,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Partial Overlapping Edges Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Partial Overlapping Edges Layout";
+		public override string DisplayName() => "Add Partial Overlapping Edges Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddPartialOverlappingEdgesLayout</para>
 		/// </summary>
-		public override string ToolName => "AddPartialOverlappingEdgesLayout";
+		public override string ToolName() => "AddPartialOverlappingEdgesLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddPartialOverlappingEdgesLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddPartialOverlappingEdgesLayout";
+		public override string ExcuteName() => "nd.AddPartialOverlappingEdgesLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, BufferWidthAbsolute, OffsetAbsolute, OptimizeEdges!, OutUtilityNetwork!, OutTemplateName! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, BufferWidthAbsolute, OffsetAbsolute, OptimizeEdges!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>

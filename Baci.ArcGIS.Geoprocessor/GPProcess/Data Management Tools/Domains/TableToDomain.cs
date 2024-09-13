@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Table To Domain</para>
+	/// <para>Table To Domain</para>
 	/// <para>Creates or updates a coded value domain with values from a table.</para>
 	/// </summary>
 	public class TableToDomain : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Table To Domain</para>
 		/// </summary>
-		public override string DisplayName => "Table To Domain";
+		public override string DisplayName() => "Table To Domain";
 
 		/// <summary>
 		/// <para>Tool Name : TableToDomain</para>
 		/// </summary>
-		public override string ToolName => "TableToDomain";
+		public override string ToolName() => "TableToDomain";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.TableToDomain</para>
 		/// </summary>
-		public override string ExcuteName => "management.TableToDomain";
+		public override string ExcuteName() => "management.TableToDomain";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, CodeField, DescriptionField, InWorkspace, DomainName, DomainDescription!, UpdateOption!, OutWorkspace! };
+		public override object[] Parameters() => new object[] { InTable, CodeField, DescriptionField, InWorkspace, DomainName, DomainDescription!, UpdateOption!, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -97,6 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date")]
 		public object CodeField { get; set; }
 
 		/// <summary>
@@ -106,6 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date")]
 		public object DescriptionField { get; set; }
 
 		/// <summary>
@@ -115,6 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object InWorkspace { get; set; }
 
 		/// <summary>

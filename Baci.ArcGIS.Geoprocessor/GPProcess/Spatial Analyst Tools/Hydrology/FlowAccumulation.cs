@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Flow Accumulation</para>
+	/// <para>Flow Accumulation</para>
 	/// <para>Creates a raster of accumulated flow into each cell. A weight factor can optionally be applied.</para>
 	/// </summary>
 	public class FlowAccumulation : AbstractGPProcess
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Flow Accumulation</para>
 		/// </summary>
-		public override string DisplayName => "Flow Accumulation";
+		public override string DisplayName() => "Flow Accumulation";
 
 		/// <summary>
 		/// <para>Tool Name : FlowAccumulation</para>
 		/// </summary>
-		public override string ToolName => "FlowAccumulation";
+		public override string ToolName() => "FlowAccumulation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.FlowAccumulation</para>
 		/// </summary>
-		public override string ExcuteName => "sa.FlowAccumulation";
+		public override string ExcuteName() => "sa.FlowAccumulation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFlowDirectionRaster, OutAccumulationRaster, InWeightRaster!, DataType!, FlowDirectionType! };
+		public override object[] Parameters() => new object[] { InFlowDirectionRaster, OutAccumulationRaster, InWeightRaster!, DataType!, FlowDirectionType! };
 
 		/// <summary>
 		/// <para>Input flow direction raster</para>
@@ -77,7 +78,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InFlowDirectionRaster { get; set; }
 
 		/// <summary>
@@ -95,7 +99,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? InWeightRaster { get; set; }
 
 		/// <summary>

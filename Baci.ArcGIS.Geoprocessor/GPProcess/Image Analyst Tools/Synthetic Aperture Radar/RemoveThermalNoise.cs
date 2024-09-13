@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Remove Thermal Noise</para>
+	/// <para>Remove Thermal Noise</para>
 	/// <para>Corrects backscatter disturbances caused by thermal noise in the input synthetic aperture radar (SAR) data, resulting in a more seamless image.</para>
 	/// </summary>
 	public class RemoveThermalNoise : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Thermal Noise</para>
 		/// </summary>
-		public override string DisplayName => "Remove Thermal Noise";
+		public override string DisplayName() => "Remove Thermal Noise";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveThermalNoise</para>
 		/// </summary>
-		public override string ToolName => "RemoveThermalNoise";
+		public override string ToolName() => "RemoveThermalNoise";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.RemoveThermalNoise</para>
 		/// </summary>
-		public override string ExcuteName => "ia.RemoveThermalNoise";
+		public override string ExcuteName() => "ia.RemoveThermalNoise";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellAlignment", "cellSize", "compression", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellAlignment", "cellSize", "compression", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRadarData, OutRadarData, PolarizationBands! };
+		public override object[] Parameters() => new object[] { InRadarData, OutRadarData, PolarizationBands! };
 
 		/// <summary>
 		/// <para>Input Radar Data</para>

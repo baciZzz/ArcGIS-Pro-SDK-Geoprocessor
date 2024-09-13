@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Apply Smart Tree Layout</para>
+	/// <para>Apply Smart Tree Layout</para>
 	/// <para>Apply the smart tree layout to a diagram</para>
 	/// </summary>
 	[Obsolete()]
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Smart Tree Layout</para>
 		/// </summary>
-		public override string DisplayName => "Apply Smart Tree Layout";
+		public override string DisplayName() => "Apply Smart Tree Layout";
 
 		/// <summary>
 		/// <para>Tool Name : ApplySmartTreeLayout</para>
 		/// </summary>
-		public override string ToolName => "ApplySmartTreeLayout";
+		public override string ToolName() => "ApplySmartTreeLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.ApplySmartTreeLayout</para>
 		/// </summary>
-		public override string ExcuteName => "un.ApplySmartTreeLayout";
+		public override string ExcuteName() => "un.ApplySmartTreeLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved!, TreeDirection!, IsUnitAbsolute!, SubtreeAbsolute!, SubtreeProportional!, PerpendicularAbsolute!, PerpendicularProportional!, AlongAbsolute!, AlongProportional!, DisjoinedGraphAbsolute!, DisjoinedGraphProportional!, AreEdgesOrthogonal!, BreakpointPosition!, OutNetworkDiagramLayer!, EdgeDisplayType!, RunAsync!, OffsetAbsolute!, OffsetProportional! };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, AreContainersPreserved!, TreeDirection!, IsUnitAbsolute!, SubtreeAbsolute!, SubtreeProportional!, PerpendicularAbsolute!, PerpendicularProportional!, AlongAbsolute!, AlongProportional!, DisjoinedGraphAbsolute!, DisjoinedGraphProportional!, AreEdgesOrthogonal!, BreakpointPosition!, OutNetworkDiagramLayer!, EdgeDisplayType!, RunAsync!, OffsetAbsolute!, OffsetProportional! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Forest-based Classification and Regression</para>
+	/// <para>Forest-based Classification and Regression</para>
 	/// <para>Creates models and generates predictions using an adaptation of the random forest algorithm, which is a supervised machine learning method developed by Leo Breiman and Adele Cutler. Predictions can be performed for both categorical variables (classification) and continuous variables (regression). Explanatory variables can take the form of fields in the attribute table of the training features, raster datasets, and distance features used to calculate proximity values for use as additional variables. In addition to validation of model performance based on the training data, predictions can be made to either features or a prediction raster.</para>
 	/// </summary>
 	public class Forest : AbstractGPProcess
@@ -39,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Forest-based Classification and Regression</para>
 		/// </summary>
-		public override string DisplayName => "Forest-based Classification and Regression";
+		public override string DisplayName() => "Forest-based Classification and Regression";
 
 		/// <summary>
 		/// <para>Tool Name : Forest</para>
 		/// </summary>
-		public override string ToolName => "Forest";
+		public override string ToolName() => "Forest";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.Forest</para>
 		/// </summary>
-		public override string ExcuteName => "stats.Forest";
+		public override string ExcuteName() => "stats.Forest";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { PredictionType, InFeatures, VariablePredict!, TreatVariableAsCategorical!, ExplanatoryVariables!, DistanceFeatures!, ExplanatoryRasters!, FeaturesToPredict!, OutputFeatures!, OutputRaster!, ExplanatoryVariableMatching!, ExplanatoryDistanceMatching!, ExplanatoryRastersMatching!, OutputTrainedFeatures!, OutputImportanceTable!, UseRasterValues!, NumberOfTrees!, MinimumLeafSize!, MaximumDepth!, SampleSize!, RandomVariables!, PercentageForTraining!, OutputClassificationTable!, OutputValidationTable!, CompensateSparseCategories!, NumberValidationRuns!, CalculateUncertainty!, OutputUncertaintyRasterLayers! };
+		public override object[] Parameters() => new object[] { PredictionType, InFeatures, VariablePredict!, TreatVariableAsCategorical!, ExplanatoryVariables!, DistanceFeatures!, ExplanatoryRasters!, FeaturesToPredict!, OutputFeatures!, OutputRaster!, ExplanatoryVariableMatching!, ExplanatoryDistanceMatching!, ExplanatoryRastersMatching!, OutputTrainedFeatures!, OutputImportanceTable!, UseRasterValues!, NumberOfTrees!, MinimumLeafSize!, MaximumDepth!, SampleSize!, RandomVariables!, PercentageForTraining!, OutputClassificationTable!, OutputValidationTable!, CompensateSparseCategories!, NumberValidationRuns!, CalculateUncertainty!, OutputUncertaintyRasterLayers! };
 
 		/// <summary>
 		/// <para>Prediction Type</para>
@@ -91,6 +92,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Point")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -100,6 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double", "Float", "Short", "Long", "Text")]
 		public object? VariablePredict { get; set; }
 
 		/// <summary>
@@ -130,6 +134,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Point", "Polyline")]
+		[FeatureType("Simple")]
 		public object? DistanceFeatures { get; set; }
 
 		/// <summary>
@@ -231,7 +237,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 10000000)]
 		[Category("Advanced Forest Options")]
 		public object? NumberOfTrees { get; set; } = "100";
 
@@ -241,7 +247,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 10000000)]
 		[Category("Advanced Forest Options")]
 		public object? MinimumLeafSize { get; set; }
 
@@ -251,7 +257,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 100000000)]
 		[Category("Advanced Forest Options")]
 		public object? MaximumDepth { get; set; }
 
@@ -262,7 +268,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 100)]
 		[Category("Advanced Forest Options")]
 		public object? SampleSize { get; set; } = "100";
 
@@ -273,7 +279,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 10000000)]
 		[Category("Advanced Forest Options")]
 		public object? RandomVariables { get; set; }
 
@@ -283,7 +289,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 50)]
 		[Category("Validation Options")]
 		public object? PercentageForTraining { get; set; } = "10";
 
@@ -324,7 +330,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 10000000)]
 		[Category("Validation Options")]
 		public object? NumberValidationRuns { get; set; } = "1";
 

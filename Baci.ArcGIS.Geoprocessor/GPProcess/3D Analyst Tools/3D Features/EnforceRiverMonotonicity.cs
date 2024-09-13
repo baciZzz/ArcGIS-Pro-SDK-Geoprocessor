@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Enforce River Monotonicity</para>
+	/// <para>Enforce River Monotonicity</para>
 	/// <para>Creates height adjusted breaklines from 3D polygons representing river banks.</para>
 	/// </summary>
 	public class EnforceRiverMonotonicity : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Enforce River Monotonicity</para>
 		/// </summary>
-		public override string DisplayName => "Enforce River Monotonicity";
+		public override string DisplayName() => "Enforce River Monotonicity";
 
 		/// <summary>
 		/// <para>Tool Name : EnforceRiverMonotonicity</para>
 		/// </summary>
-		public override string ToolName => "EnforceRiverMonotonicity";
+		public override string ToolName() => "EnforceRiverMonotonicity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.EnforceRiverMonotonicity</para>
 		/// </summary>
-		public override string ExcuteName => "3d.EnforceRiverMonotonicity";
+		public override string ExcuteName() => "3d.EnforceRiverMonotonicity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRivers, InFlowDirection, OutFeatureClass, MaxSampleDistance!, SimplificationTolerance! };
+		public override object[] Parameters() => new object[] { InRivers, InFlowDirection, OutFeatureClass, MaxSampleDistance!, SimplificationTolerance! };
 
 		/// <summary>
 		/// <para>Input River Polygons</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InRivers { get; set; }
 
 		/// <summary>
@@ -88,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InFlowDirection { get; set; }
 
 		/// <summary>

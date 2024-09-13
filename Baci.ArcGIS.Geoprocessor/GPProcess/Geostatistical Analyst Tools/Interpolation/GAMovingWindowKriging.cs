@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Moving Window Kriging</para>
+	/// <para>Moving Window Kriging</para>
 	/// <para>Recalculates the Range, Nugget, and Partial Sill semivariogram parameters based on a smaller neighborhood, moving through all location points.</para>
 	/// </summary>
 	public class GAMovingWindowKriging : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Moving Window Kriging</para>
 		/// </summary>
-		public override string DisplayName => "Moving Window Kriging";
+		public override string DisplayName() => "Moving Window Kriging";
 
 		/// <summary>
 		/// <para>Tool Name : GAMovingWindowKriging</para>
 		/// </summary>
-		public override string ToolName => "GAMovingWindowKriging";
+		public override string ToolName() => "GAMovingWindowKriging";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GAMovingWindowKriging</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GAMovingWindowKriging";
+		public override string ExcuteName() => "ga.GAMovingWindowKriging";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGaModelSource, InDatasets, InLocations, NeighborsMax, OutFeatureclass, CellSize!, OutSurfaceGrid! };
+		public override object[] Parameters() => new object[] { InGaModelSource, InDatasets, InLocations, NeighborsMax, OutFeatureclass, CellSize!, OutSurfaceGrid! };
 
 		/// <summary>
 		/// <para>Input geostatistical model source</para>
@@ -106,6 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InLocations { get; set; }
 
 		/// <summary>
@@ -114,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 10, Max = 2147483647)]
 		public object NeighborsMax { get; set; }
 
 		/// <summary>
@@ -133,7 +135,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		[Category("Output raster (optional)")]
 		public object? CellSize { get; set; }
 

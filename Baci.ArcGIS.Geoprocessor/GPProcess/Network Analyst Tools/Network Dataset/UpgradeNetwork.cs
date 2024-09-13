@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Upgrade Network</para>
+	/// <para>Upgrade Network</para>
 	/// <para>Upgrades the schema of the network dataset. Upgrading the network dataset allows the network dataset to make use of the new functionality available in the current software release. </para>
 	/// <para>This is a deprecated tool. To learn more about how this tool works, view the  archived documentation. This functionality has been replaced by the Upgrade Dataset tool in the Geodatabase Administration toolset. Upgrade Dataset has the ability to upgrade network datasets as well as other types of datasets, such as parcel fabrics, to the current ArcGIS release.</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Upgrade Network</para>
 		/// </summary>
-		public override string DisplayName => "Upgrade Network";
+		public override string DisplayName() => "Upgrade Network";
 
 		/// <summary>
 		/// <para>Tool Name : UpgradeNetwork</para>
 		/// </summary>
-		public override string ToolName => "UpgradeNetwork";
+		public override string ToolName() => "UpgradeNetwork";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.UpgradeNetwork</para>
 		/// </summary>
-		public override string ExcuteName => "na.UpgradeNetwork";
+		public override string ExcuteName() => "na.UpgradeNetwork";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, OutNetworkDataset! };
+		public override object[] Parameters() => new object[] { InNetworkDataset, OutNetworkDataset! };
 
 		/// <summary>
 		/// <para>Input Network Dataset</para>

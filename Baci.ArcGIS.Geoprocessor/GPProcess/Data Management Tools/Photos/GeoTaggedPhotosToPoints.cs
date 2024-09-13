@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>GeoTagged Photos To Points</para>
+	/// <para>GeoTagged Photos To Points</para>
 	/// <para>Creates points from the x-, y-, and z-coordinates stored in geotagged photos. Optionally adds photo files to features in the output feature class as geodatabase attachments.</para>
 	/// </summary>
 	public class GeoTaggedPhotosToPoints : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : GeoTagged Photos To Points</para>
 		/// </summary>
-		public override string DisplayName => "GeoTagged Photos To Points";
+		public override string DisplayName() => "GeoTagged Photos To Points";
 
 		/// <summary>
 		/// <para>Tool Name : GeoTaggedPhotosToPoints</para>
 		/// </summary>
-		public override string ToolName => "GeoTaggedPhotosToPoints";
+		public override string ToolName() => "GeoTaggedPhotosToPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.GeoTaggedPhotosToPoints</para>
 		/// </summary>
-		public override string ExcuteName => "management.GeoTaggedPhotosToPoints";
+		public override string ExcuteName() => "management.GeoTaggedPhotosToPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputZFlag", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputZFlag", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFolder, OutputFeatureClass, InvalidPhotosTable!, IncludeNonGeotaggedPhotos!, AddPhotosAsAttachments! };
+		public override object[] Parameters() => new object[] { InputFolder, OutputFeatureClass, InvalidPhotosTable!, IncludeNonGeotaggedPhotos!, AddPhotosAsAttachments! };
 
 		/// <summary>
 		/// <para>Input Folder</para>

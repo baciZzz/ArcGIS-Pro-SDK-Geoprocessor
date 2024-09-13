@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Update Schema</para>
+	/// <para>Update Schema</para>
 	/// <para>Updates the schema of a dataset based upon a Xml set of instructions</para>
 	/// </summary>
 	[Obsolete()]
@@ -34,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Update Schema</para>
 		/// </summary>
-		public override string DisplayName => "Update Schema";
+		public override string DisplayName() => "Update Schema";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateSchema</para>
 		/// </summary>
-		public override string ToolName => "UpdateSchema";
+		public override string ToolName() => "UpdateSchema";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.UpdateSchema</para>
 		/// </summary>
-		public override string ExcuteName => "management.UpdateSchema";
+		public override string ExcuteName() => "management.UpdateSchema";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Operations, OutMessages!, OutTable! };
+		public override object[] Parameters() => new object[] { InTable, Operations, OutMessages!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>

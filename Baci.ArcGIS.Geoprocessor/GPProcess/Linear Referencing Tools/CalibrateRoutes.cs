@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 {
 	/// <summary>
 	/// <para>Calibrate Routes</para>
+	/// <para>Calibrate Routes</para>
 	/// <para>Recalculates route measures using points.</para>
 	/// </summary>
 	public class CalibrateRoutes : AbstractGPProcess
@@ -55,37 +56,37 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Calibrate Routes</para>
 		/// </summary>
-		public override string DisplayName => "Calibrate Routes";
+		public override string DisplayName() => "Calibrate Routes";
 
 		/// <summary>
 		/// <para>Tool Name : CalibrateRoutes</para>
 		/// </summary>
-		public override string ToolName => "CalibrateRoutes";
+		public override string ToolName() => "CalibrateRoutes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : lr.CalibrateRoutes</para>
 		/// </summary>
-		public override string ExcuteName => "lr.CalibrateRoutes";
+		public override string ExcuteName() => "lr.CalibrateRoutes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Linear Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Linear Referencing Tools";
+		public override string ToolboxDisplayName() => "Linear Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : lr</para>
 		/// </summary>
-		public override string ToolboxAlise => "lr";
+		public override string ToolboxAlise() => "lr";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "ZDomain", "configKeyword", "extent", "outputCoordinateSystem", "outputZFlag", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "ZDomain", "configKeyword", "extent", "outputCoordinateSystem", "outputZFlag", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRouteFeatures, RouteIdField, InPointFeatures, PointIdField, MeasureField, OutFeatureClass, CalibrateMethod!, SearchRadius!, InterpolateBetween!, ExtrapolateBefore!, ExtrapolateAfter!, IgnoreGaps!, KeepAllRoutes!, BuildIndex! };
+		public override object[] Parameters() => new object[] { InRouteFeatures, RouteIdField, InPointFeatures, PointIdField, MeasureField, OutFeatureClass, CalibrateMethod!, SearchRadius!, InterpolateBetween!, ExtrapolateBefore!, ExtrapolateAfter!, IgnoreGaps!, KeepAllRoutes!, BuildIndex! };
 
 		/// <summary>
 		/// <para>Input Route Features</para>
@@ -94,6 +95,8 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object InRouteFeatures { get; set; }
 
 		/// <summary>
@@ -102,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{4A4F70B0-913C-4A82-A33F-E190FFA409EA}")]
 		public object RouteIdField { get; set; }
 
 		/// <summary>
@@ -112,6 +115,8 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object InPointFeatures { get; set; }
 
 		/// <summary>
@@ -120,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{4A4F70B0-913C-4A82-A33F-E190FFA409EA}")]
 		public object PointIdField { get; set; }
 
 		/// <summary>
@@ -129,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{C06E2425-30D9-4C9D-8CD3-7FE243B3AFCB}")]
 		public object MeasureField { get; set; }
 
 		/// <summary>

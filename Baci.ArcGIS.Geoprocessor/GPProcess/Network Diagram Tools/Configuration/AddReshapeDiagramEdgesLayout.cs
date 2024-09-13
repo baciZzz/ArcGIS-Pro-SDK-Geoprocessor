@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Reshape Diagram Edges Layout</para>
+	/// <para>Add Reshape Diagram Edges Layout</para>
 	/// <para>Adds the Reshape Diagram Edges Layout algorithm to the list of layouts to be automatically chained at the end of the building of diagrams based on a given template. This tool also presets the Reshape Diagram Edges Layout algorithm parameters for any diagram based on that template.</para>
 	/// </summary>
 	public class AddReshapeDiagramEdgesLayout : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Reshape Diagram Edges Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Reshape Diagram Edges Layout";
+		public override string DisplayName() => "Add Reshape Diagram Edges Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddReshapeDiagramEdgesLayout</para>
 		/// </summary>
-		public override string ToolName => "AddReshapeDiagramEdgesLayout";
+		public override string ToolName() => "AddReshapeDiagramEdgesLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddReshapeDiagramEdgesLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddReshapeDiagramEdgesLayout";
+		public override string ExcuteName() => "nd.AddReshapeDiagramEdgesLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, ReshapeType!, IsPathPreserved!, OffsetBetweenSegmentAbsolute!, BreakpointAbsolute!, ShiftBetweenEdgeAbsolute!, AngleThreshold!, OutUtilityNetwork!, OutTemplateName!, CircularArcRadius!, CircularArcPosition! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, ReshapeType!, IsPathPreserved!, OffsetBetweenSegmentAbsolute!, BreakpointAbsolute!, ShiftBetweenEdgeAbsolute!, AngleThreshold!, OutUtilityNetwork!, OutTemplateName!, CircularArcRadius!, CircularArcPosition! };
 
 		/// <summary>
 		/// <para>Input Network</para>

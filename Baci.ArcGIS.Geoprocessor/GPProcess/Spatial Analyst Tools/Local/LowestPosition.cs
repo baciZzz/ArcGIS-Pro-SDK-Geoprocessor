@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Lowest Position</para>
+	/// <para>Lowest Position</para>
 	/// <para>Determines on a cell-by-cell basis the position of the raster with the minimum value in a set of rasters.</para>
 	/// </summary>
 	public class LowestPosition : AbstractGPProcess
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Lowest Position</para>
 		/// </summary>
-		public override string DisplayName => "Lowest Position";
+		public override string DisplayName() => "Lowest Position";
 
 		/// <summary>
 		/// <para>Tool Name : LowestPosition</para>
 		/// </summary>
-		public override string ToolName => "LowestPosition";
+		public override string ToolName() => "LowestPosition";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.LowestPosition</para>
 		/// </summary>
-		public override string ExcuteName => "sa.LowestPosition";
+		public override string ExcuteName() => "sa.LowestPosition";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRastersOrConstants, OutRaster };
+		public override object[] Parameters() => new object[] { InRastersOrConstants, OutRaster };
 
 		/// <summary>
 		/// <para>Input rasters or constant values</para>
@@ -76,7 +77,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "GPRasterFormulated", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile", "GPDouble", "GPLong")]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRastersOrConstants { get; set; }
 
 		/// <summary>

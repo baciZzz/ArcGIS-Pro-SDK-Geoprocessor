@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compute Fiducials</para>
+	/// <para>Compute Fiducials</para>
 	/// <para>Computes the fiducial coordinates in image and film space for each image in a mosaic dataset.</para>
 	/// </summary>
 	public class ComputeFiducials : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Compute Fiducials</para>
 		/// </summary>
-		public override string DisplayName => "Compute Fiducials";
+		public override string DisplayName() => "Compute Fiducials";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeFiducials</para>
 		/// </summary>
-		public override string ToolName => "ComputeFiducials";
+		public override string ToolName() => "ComputeFiducials";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ComputeFiducials</para>
 		/// </summary>
-		public override string ExcuteName => "management.ComputeFiducials";
+		public override string ExcuteName() => "management.ComputeFiducials";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, OutFiducialTable, WhereClause!, FiducialTemplates!, FilmCoordinateSystem! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, OutFiducialTable, WhereClause!, FiducialTemplates!, FilmCoordinateSystem! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

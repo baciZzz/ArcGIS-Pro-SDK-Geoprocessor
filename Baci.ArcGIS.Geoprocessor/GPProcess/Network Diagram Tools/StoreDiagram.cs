@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Store Diagram</para>
+	/// <para>Store Diagram</para>
 	/// <para>Stores a temporary network diagram in the database. Access rights and tags can be assigned to control security and searchability of the diagram.</para>
 	/// </summary>
 	public class StoreDiagram : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Store Diagram</para>
 		/// </summary>
-		public override string DisplayName => "Store Diagram";
+		public override string DisplayName() => "Store Diagram";
 
 		/// <summary>
 		/// <para>Tool Name : StoreDiagram</para>
 		/// </summary>
-		public override string ToolName => "StoreDiagram";
+		public override string ToolName() => "StoreDiagram";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.StoreDiagram</para>
 		/// </summary>
-		public override string ExcuteName => "nd.StoreDiagram";
+		public override string ExcuteName() => "nd.StoreDiagram";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, OutName, AccessRightType!, Tags! };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, OutName, AccessRightType!, Tags! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>

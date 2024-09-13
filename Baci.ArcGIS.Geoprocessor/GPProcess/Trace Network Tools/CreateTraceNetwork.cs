@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 {
 	/// <summary>
 	/// <para>Create Trace Network</para>
+	/// <para>Create Trace Network</para>
 	/// <para>Creates a trace network.</para>
 	/// </summary>
 	public class CreateTraceNetwork : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Trace Network</para>
 		/// </summary>
-		public override string DisplayName => "Create Trace Network";
+		public override string DisplayName() => "Create Trace Network";
 
 		/// <summary>
 		/// <para>Tool Name : CreateTraceNetwork</para>
 		/// </summary>
-		public override string ToolName => "CreateTraceNetwork";
+		public override string ToolName() => "CreateTraceNetwork";
 
 		/// <summary>
 		/// <para>Tool Excute Name : tn.CreateTraceNetwork</para>
 		/// </summary>
-		public override string ExcuteName => "tn.CreateTraceNetwork";
+		public override string ExcuteName() => "tn.CreateTraceNetwork";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Trace Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Trace Network Tools";
+		public override string ToolboxDisplayName() => "Trace Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : tn</para>
 		/// </summary>
-		public override string ToolboxAlise => "tn";
+		public override string ToolboxAlise() => "tn";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureDataset, InTraceNetworkName, InputJunctions!, InputEdges!, OutTraceNetwork! };
+		public override object[] Parameters() => new object[] { InFeatureDataset, InTraceNetworkName, InputJunctions!, InputEdges!, OutTraceNetwork! };
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureDataset()]
 		[GPDatasetDomain()]
+		[DataSetType("FeatureDataset")]
 		public object InFeatureDataset { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Raster to Polyline</para>
+	/// <para>Raster to Polyline</para>
 	/// <para>Converts a raster dataset to polyline features.</para>
 	/// </summary>
 	public class RasterToPolyline : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Raster to Polyline</para>
 		/// </summary>
-		public override string DisplayName => "Raster to Polyline";
+		public override string DisplayName() => "Raster to Polyline";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToPolyline</para>
 		/// </summary>
-		public override string ToolName => "RasterToPolyline";
+		public override string ToolName() => "RasterToPolyline";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.RasterToPolyline</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.RasterToPolyline";
+		public override string ExcuteName() => "conversion.RasterToPolyline";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutPolylineFeatures, BackgroundValue!, MinimumDangleLength!, Simplify!, RasterField! };
+		public override object[] Parameters() => new object[] { InRaster, OutPolylineFeatures, BackgroundValue!, MinimumDangleLength!, Simplify!, RasterField! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -75,7 +76,10 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRaster { get; set; }
 
 		/// <summary>
@@ -105,6 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? MinimumDangleLength { get; set; } = "0";
 
 		/// <summary>
@@ -126,7 +131,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{4B6CA858-5716-4AC3-A2EE-70EE2D29C1BD}", UseRasterFields = true)]
+		[FieldType("Short", "Long", "OID", "Text")]
 		public object? RasterField { get; set; }
 
 		/// <summary>

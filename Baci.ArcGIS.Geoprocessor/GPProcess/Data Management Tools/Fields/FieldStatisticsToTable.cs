@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Field Statistics To Table</para>
+	/// <para>Field Statistics To Table</para>
 	/// <para>Creates a table of descriptive statistics for one or more input fields in a table or feature class.</para>
 	/// </summary>
 	public class FieldStatisticsToTable : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Field Statistics To Table</para>
 		/// </summary>
-		public override string DisplayName => "Field Statistics To Table";
+		public override string DisplayName() => "Field Statistics To Table";
 
 		/// <summary>
 		/// <para>Tool Name : FieldStatisticsToTable</para>
 		/// </summary>
-		public override string ToolName => "FieldStatisticsToTable";
+		public override string ToolName() => "FieldStatisticsToTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.FieldStatisticsToTable</para>
 		/// </summary>
-		public override string ExcuteName => "management.FieldStatisticsToTable";
+		public override string ExcuteName() => "management.FieldStatisticsToTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, InFields, OutLocation, OutTables, GroupByField!, OutStatistics!, OutNumeric!, OutText!, OutDate!, OutAll! };
+		public override object[] Parameters() => new object[] { InTable, InFields, OutLocation, OutTables, GroupByField!, OutStatistics!, OutNumeric!, OutText!, OutDate!, OutAll! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -97,6 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Float", "Double", "Text", "Long", "Date")]
 		public object InFields { get; set; }
 
 		/// <summary>
@@ -128,6 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Text", "Long", "Date")]
 		public object? GroupByField { get; set; }
 
 		/// <summary>

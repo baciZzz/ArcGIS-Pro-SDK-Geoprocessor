@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Set Mosaic Dataset Properties</para>
+	/// <para>Set Mosaic Dataset Properties</para>
 	/// <para>Defines the defaults for displaying a mosaic dataset and serving it as an image service.</para>
 	/// </summary>
 	public class SetMosaicDatasetProperties : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Mosaic Dataset Properties</para>
 		/// </summary>
-		public override string DisplayName => "Set Mosaic Dataset Properties";
+		public override string DisplayName() => "Set Mosaic Dataset Properties";
 
 		/// <summary>
 		/// <para>Tool Name : SetMosaicDatasetProperties</para>
 		/// </summary>
-		public override string ToolName => "SetMosaicDatasetProperties";
+		public override string ToolName() => "SetMosaicDatasetProperties";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SetMosaicDatasetProperties</para>
 		/// </summary>
-		public override string ExcuteName => "management.SetMosaicDatasetProperties";
+		public override string ExcuteName() => "management.SetMosaicDatasetProperties";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, RowsMaximumImagesize!, ColumnsMaximumImagesize!, AllowedCompressions!, DefaultCompressionType!, JPEGQuality!, LERCTolerance!, ResamplingType!, ClipToFootprints!, FootprintsMayContainNodata!, ClipToBoundary!, ColorCorrection!, AllowedMensurationCapabilities!, DefaultMensurationCapabilities!, AllowedMosaicMethods!, DefaultMosaicMethod!, OrderField!, OrderBase!, SortingOrder!, MosaicOperator!, BlendWidth!, ViewPointX!, ViewPointY!, MaxNumPerMosaic!, CellSizeTolerance!, CellSize!, MetadataLevel!, TransmissionFields!, UseTime!, StartTimeField!, EndTimeField!, TimeFormat!, GeographicTransform!, MaxNumOfDownloadItems!, MaxNumOfRecordsReturned!, DataSourceType!, MinimumPixelContribution!, ProcessingTemplates!, DefaultProcessingTemplate!, OutMosaicDataset!, TimeInterval!, TimeIntervalUnits!, ProductDefinition!, ProductBandDefinitions! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, RowsMaximumImagesize!, ColumnsMaximumImagesize!, AllowedCompressions!, DefaultCompressionType!, JPEGQuality!, LERCTolerance!, ResamplingType!, ClipToFootprints!, FootprintsMayContainNodata!, ClipToBoundary!, ColorCorrection!, AllowedMensurationCapabilities!, DefaultMensurationCapabilities!, AllowedMosaicMethods!, DefaultMosaicMethod!, OrderField!, OrderBase!, SortingOrder!, MosaicOperator!, BlendWidth!, ViewPointX!, ViewPointY!, MaxNumPerMosaic!, CellSizeTolerance!, CellSize!, MetadataLevel!, TransmissionFields!, UseTime!, StartTimeField!, EndTimeField!, TimeFormat!, GeographicTransform!, MaxNumOfDownloadItems!, MaxNumOfRecordsReturned!, DataSourceType!, MinimumPixelContribution!, ProcessingTemplates!, DefaultProcessingTemplate!, OutMosaicDataset!, TimeInterval!, TimeIntervalUnits!, ProductDefinition!, ProductBandDefinitions! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -555,6 +556,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFileDomain()]
+		[FileTypes("rft.xml", "rft.json", "rft", "xml", "json")]
 		[Category("Image Properties")]
 		public object? ProcessingTemplates { get; set; }
 

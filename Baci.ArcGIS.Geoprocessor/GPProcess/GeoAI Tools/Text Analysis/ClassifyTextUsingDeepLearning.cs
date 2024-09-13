@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 {
 	/// <summary>
 	/// <para>Classify Text Using Deep Learning</para>
+	/// <para>Classify Text Using Deep Learning</para>
 	/// <para>Runs a trained text classification model on a text field in a feature class or table and updates each record with an assigned class or category label.</para>
 	/// </summary>
 	public class ClassifyTextUsingDeepLearning : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// <summary>
 		/// <para>Tool Display Name : Classify Text Using Deep Learning</para>
 		/// </summary>
-		public override string DisplayName => "Classify Text Using Deep Learning";
+		public override string DisplayName() => "Classify Text Using Deep Learning";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyTextUsingDeepLearning</para>
 		/// </summary>
-		public override string ToolName => "ClassifyTextUsingDeepLearning";
+		public override string ToolName() => "ClassifyTextUsingDeepLearning";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoai.ClassifyTextUsingDeepLearning</para>
 		/// </summary>
-		public override string ExcuteName => "geoai.ClassifyTextUsingDeepLearning";
+		public override string ExcuteName() => "geoai.ClassifyTextUsingDeepLearning";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAI Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAI Tools";
+		public override string ToolboxDisplayName() => "GeoAI Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoai</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoai";
+		public override string ToolboxAlise() => "geoai";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "gpuID", "processorType" };
+		public override string[] ValidEnvironments() => new string[] { "gpuID", "processorType" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, TextField, InModelDefinitionFile, ClassLabelField!, ModelArguments!, UpdatedTable! };
+		public override object[] Parameters() => new object[] { InTable, TextField, InModelDefinitionFile, ClassLabelField!, ModelArguments!, UpdatedTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -87,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object TextField { get; set; }
 
 		/// <summary>
@@ -96,6 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("emd", "dlpk")]
 		public object InModelDefinitionFile { get; set; }
 
 		/// <summary>

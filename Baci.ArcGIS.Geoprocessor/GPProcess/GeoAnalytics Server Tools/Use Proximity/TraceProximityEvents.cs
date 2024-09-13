@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Trace Proximity Events</para>
+	/// <para>Trace Proximity Events</para>
 	/// <para>Traces events near each other in space (location) and time. The time-enabled point data must include features that represent an instant in time.</para>
 	/// </summary>
 	public class TraceProximityEvents : AbstractGPProcess
@@ -66,37 +67,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Trace Proximity Events</para>
 		/// </summary>
-		public override string DisplayName => "Trace Proximity Events";
+		public override string DisplayName() => "Trace Proximity Events";
 
 		/// <summary>
 		/// <para>Tool Name : TraceProximityEvents</para>
 		/// </summary>
-		public override string ToolName => "TraceProximityEvents";
+		public override string ToolName() => "TraceProximityEvents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.TraceProximityEvents</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.TraceProximityEvents";
+		public override string ExcuteName() => "geoanalytics.TraceProximityEvents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPoints, EntityIdField, OutputName, DistanceMethod, SpatialSearchDistance, TemporalSearchDistance, EntitiesOfInterestInputType, EntitiesInterestIds!, EntitiesInterestLayer!, IncludeTracksLayer!, MaxTraceDepth!, AttributeMatchCriteria!, DataStore!, Output!, TracksLayer! };
+		public override object[] Parameters() => new object[] { InPoints, EntityIdField, OutputName, DistanceMethod, SpatialSearchDistance, TemporalSearchDistance, EntitiesOfInterestInputType, EntitiesInterestIds!, EntitiesInterestLayer!, IncludeTracksLayer!, MaxTraceDepth!, AttributeMatchCriteria!, DataStore!, Output!, TracksLayer! };
 
 		/// <summary>
 		/// <para>Input Points</para>
@@ -105,6 +106,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple")]
+		[PortalType("DataStoreCatalogLayer")]
 		public object InPoints { get; set; }
 
 		/// <summary>
@@ -114,6 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
 		public object EntityIdField { get; set; }
 
 		/// <summary>
@@ -184,6 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRecordSet()]
 		[GPTablesDomain()]
+		[PortalType("DataStoreCatalogLayer")]
 		public object? EntitiesInterestLayer { get; set; }
 
 		/// <summary>
@@ -215,6 +220,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
 		[Category("Advanced Options")]
 		public object? AttributeMatchCriteria { get; set; }
 

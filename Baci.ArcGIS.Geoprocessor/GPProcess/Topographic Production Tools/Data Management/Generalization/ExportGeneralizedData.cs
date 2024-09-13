@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Export Generalized Data</para>
+	/// <para>Export Generalized Data</para>
 	/// <para>Exports data generalized by the ArcGIS Production Mapping theme-based generalization models into a production schema using generalization rules defined in a Microsoft Excel spreadsheet.</para>
 	/// </summary>
 	public class ExportGeneralizedData : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Generalized Data</para>
 		/// </summary>
-		public override string DisplayName => "Export Generalized Data";
+		public override string DisplayName() => "Export Generalized Data";
 
 		/// <summary>
 		/// <para>Tool Name : ExportGeneralizedData</para>
 		/// </summary>
-		public override string ToolName => "ExportGeneralizedData";
+		public override string ToolName() => "ExportGeneralizedData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.ExportGeneralizedData</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.ExportGeneralizedData";
+		public override string ExcuteName() => "topographic.ExportGeneralizedData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputGeodatabase, TargetGeodatabase, RuleFile, DataTheme, ExportVisibleFeatures!, UpdatedGeodatabase! };
+		public override object[] Parameters() => new object[] { InputGeodatabase, TargetGeodatabase, RuleFile, DataTheme, ExportVisibleFeatures!, UpdatedGeodatabase! };
 
 		/// <summary>
 		/// <para>Input Geodatabase</para>
@@ -105,6 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xlsx", "xlsm")]
 		public object RuleFile { get; set; }
 
 		/// <summary>

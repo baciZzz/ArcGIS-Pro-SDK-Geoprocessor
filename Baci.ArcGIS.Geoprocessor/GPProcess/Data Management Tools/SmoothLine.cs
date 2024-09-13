@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Smooth Line</para>
+	/// <para>Smooth Line</para>
 	/// <para>Smooths sharp angles in lines to improve aesthetic or cartographic quality.</para>
 	/// </summary>
 	[Obsolete()]
@@ -49,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Smooth Line</para>
 		/// </summary>
-		public override string DisplayName => "Smooth Line";
+		public override string DisplayName() => "Smooth Line";
 
 		/// <summary>
 		/// <para>Tool Name : SmoothLine</para>
 		/// </summary>
-		public override string ToolName => "SmoothLine";
+		public override string ToolName() => "SmoothLine";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SmoothLine</para>
 		/// </summary>
-		public override string ExcuteName => "management.SmoothLine";
+		public override string ExcuteName() => "management.SmoothLine";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "XYDomain", "XYTolerance", "cartographicPartitions", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "XYDomain", "XYTolerance", "cartographicPartitions", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Algorithm, Tolerance, EndpointOption!, ErrorOption!, InBarriers! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, Algorithm, Tolerance, EndpointOption!, ErrorOption!, InBarriers! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -88,6 +89,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

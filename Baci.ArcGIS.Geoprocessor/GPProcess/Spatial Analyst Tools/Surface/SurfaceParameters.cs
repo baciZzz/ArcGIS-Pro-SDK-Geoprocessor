@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Surface Parameters</para>
+	/// <para>Surface Parameters</para>
 	/// <para>Determines parameters of a raster surface such as aspect, slope and curvatures.</para>
 	/// </summary>
 	public class SurfaceParameters : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Surface Parameters</para>
 		/// </summary>
-		public override string DisplayName => "Surface Parameters";
+		public override string DisplayName() => "Surface Parameters";
 
 		/// <summary>
 		/// <para>Tool Name : SurfaceParameters</para>
 		/// </summary>
-		public override string ToolName => "SurfaceParameters";
+		public override string ToolName() => "SurfaceParameters";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.SurfaceParameters</para>
 		/// </summary>
-		public override string ExcuteName => "sa.SurfaceParameters";
+		public override string ExcuteName() => "sa.SurfaceParameters";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, ParameterType!, LocalSurfaceType!, NeighborhoodDistance!, UseAdaptiveNeighborhood!, ZUnit!, OutputSlopeMeasurement!, ProjectGeodesicAzimuths!, UseEquatorialAspect! };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, ParameterType!, LocalSurfaceType!, NeighborhoodDistance!, UseAdaptiveNeighborhood!, ZUnit!, OutputSlopeMeasurement!, ProjectGeodesicAzimuths!, UseEquatorialAspect! };
 
 		/// <summary>
 		/// <para>Input surface raster</para>
@@ -73,7 +74,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = true)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRaster { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>TIN Triangle</para>
+	/// <para>TIN Triangle</para>
 	/// <para>Exports triangle faces from a TIN dataset to polygon features  and provides slope, aspect, and optional attributes of hillshade and tag values for each triangle.</para>
 	/// </summary>
 	public class TinTriangle : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : TIN Triangle</para>
 		/// </summary>
-		public override string DisplayName => "TIN Triangle";
+		public override string DisplayName() => "TIN Triangle";
 
 		/// <summary>
 		/// <para>Tool Name : TinTriangle</para>
 		/// </summary>
-		public override string ToolName => "TinTriangle";
+		public override string ToolName() => "TinTriangle";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.TinTriangle</para>
 		/// </summary>
-		public override string ExcuteName => "3d.TinTriangle";
+		public override string ExcuteName() => "3d.TinTriangle";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTin, OutFeatureClass, Units!, ZFactor!, Hillshade!, TagField! };
+		public override object[] Parameters() => new object[] { InTin, OutFeatureClass, Units!, ZFactor!, Hillshade!, TagField! };
 
 		/// <summary>
 		/// <para>Input TIN</para>

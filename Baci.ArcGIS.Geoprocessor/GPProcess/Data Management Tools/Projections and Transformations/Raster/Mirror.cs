@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Mirror</para>
+	/// <para>Mirror</para>
 	/// <para>Reorients the raster by turning it over, from left to right, along the vertical axis through the center of the raster.</para>
 	/// </summary>
 	public class Mirror : AbstractGPProcess
@@ -52,37 +53,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Mirror</para>
 		/// </summary>
-		public override string DisplayName => "Mirror";
+		public override string DisplayName() => "Mirror";
 
 		/// <summary>
 		/// <para>Tool Name : Mirror</para>
 		/// </summary>
-		public override string ToolName => "Mirror";
+		public override string ToolName() => "Mirror";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Mirror</para>
 		/// </summary>
-		public override string ExcuteName => "management.Mirror";
+		public override string ExcuteName() => "management.Mirror";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster };
 
 		/// <summary>
 		/// <para>Input Raster</para>

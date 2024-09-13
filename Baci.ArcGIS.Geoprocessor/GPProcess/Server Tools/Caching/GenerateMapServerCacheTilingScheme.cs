@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Generate Map Server Cache Tiling Scheme</para>
+	/// <para>Generate Map Server Cache Tiling Scheme</para>
 	/// <para>Generates a custom tiling scheme file that defines the scale levels, tile dimensions, and other properties for a web tile layer.</para>
 	/// </summary>
 	public class GenerateMapServerCacheTilingScheme : AbstractGPProcess
@@ -65,37 +66,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Map Server Cache Tiling Scheme</para>
 		/// </summary>
-		public override string DisplayName => "Generate Map Server Cache Tiling Scheme";
+		public override string DisplayName() => "Generate Map Server Cache Tiling Scheme";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateMapServerCacheTilingScheme</para>
 		/// </summary>
-		public override string ToolName => "GenerateMapServerCacheTilingScheme";
+		public override string ToolName() => "GenerateMapServerCacheTilingScheme";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.GenerateMapServerCacheTilingScheme</para>
 		/// </summary>
-		public override string ExcuteName => "server.GenerateMapServerCacheTilingScheme";
+		public override string ExcuteName() => "server.GenerateMapServerCacheTilingScheme";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, TileOrigin, OutputTilingScheme, NumOfScales, Scales, DotsPerInch, TileSize };
+		public override object[] Parameters() => new object[] { InMap, TileOrigin, OutputTilingScheme, NumOfScales, Scales, DotsPerInch, TileSize };
 
 		/// <summary>
 		/// <para>Map Document</para>
@@ -120,6 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object OutputTilingScheme { get; set; }
 
 		/// <summary>

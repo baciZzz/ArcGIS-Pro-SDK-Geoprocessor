@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make Service Area Layer</para>
+	/// <para>Make Service Area Layer</para>
 	/// <para>Makes a service area network analysis layer and sets its analysis properties. A service area analysis layer is useful in determining the area of accessibility within a given cutoff cost from a facility location.</para>
 	/// </summary>
 	[Obsolete()]
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Service Area Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Service Area Layer";
+		public override string DisplayName() => "Make Service Area Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeServiceAreaLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeServiceAreaLayer";
+		public override string ToolName() => "MakeServiceAreaLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.MakeServiceAreaLayer</para>
 		/// </summary>
-		public override string ExcuteName => "na.MakeServiceAreaLayer";
+		public override string ExcuteName() => "na.MakeServiceAreaLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, OutNetworkAnalysisLayer, ImpedanceAttribute, TravelFromTo!, DefaultBreakValues!, PolygonType!, Merge!, NestingType!, LineType!, Overlap!, Split!, ExcludedSourceName!, AccumulateAttributeName!, UturnPolicy!, RestrictionAttributeName!, PolygonTrim!, PolyTrimValue!, LinesSourceFields!, Hierarchy!, TimeOfDay!, OutputLayer! };
+		public override object[] Parameters() => new object[] { InNetworkDataset, OutNetworkAnalysisLayer, ImpedanceAttribute, TravelFromTo!, DefaultBreakValues!, PolygonType!, Merge!, NestingType!, LineType!, Overlap!, Split!, ExcludedSourceName!, AccumulateAttributeName!, UturnPolicy!, RestrictionAttributeName!, PolygonTrim!, PolyTrimValue!, LinesSourceFields!, Hierarchy!, TimeOfDay!, OutputLayer! };
 
 		/// <summary>
 		/// <para>Input Analysis Network</para>

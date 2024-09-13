@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Number Features</para>
+	/// <para>Number Features</para>
 	/// <para>Adds a sequential number to a new or existing field of a set of input features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Number Features</para>
 		/// </summary>
-		public override string DisplayName => "Number Features";
+		public override string DisplayName() => "Number Features";
 
 		/// <summary>
 		/// <para>Tool Name : NumberFeatures</para>
 		/// </summary>
-		public override string ToolName => "NumberFeatures";
+		public override string ToolName() => "NumberFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.NumberFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "defense.NumberFeatures";
+		public override string ExcuteName() => "defense.NumberFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, FieldToNumber, InArea!, SpatialSortMethod!, NewFieldType!, OutFeatureClass!, StartingNumber!, IncrementBy!, CenterPoint!, AddDistanceAndBearing! };
+		public override object[] Parameters() => new object[] { InFeatures, FieldToNumber, InArea!, SpatialSortMethod!, NewFieldType!, OutFeatureClass!, StartingNumber!, IncrementBy!, CenterPoint!, AddDistanceAndBearing! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -76,6 +77,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polyline", "Multipoint", "Polygon")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -85,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		public object FieldToNumber { get; set; }
 
 		/// <summary>
@@ -94,6 +98,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? InArea { get; set; }
 
 		/// <summary>
@@ -158,6 +164,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object? CenterPoint { get; set; }
 
 		/// <summary>

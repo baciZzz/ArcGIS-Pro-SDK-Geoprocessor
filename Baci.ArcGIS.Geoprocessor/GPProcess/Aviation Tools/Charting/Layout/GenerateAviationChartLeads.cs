@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Generate Aviation Chart Leads</para>
+	/// <para>Generate Aviation Chart Leads</para>
 	/// <para>Creates text graphics at intersection points between a map frame boundary and line features.</para>
 	/// </summary>
 	public class GenerateAviationChartLeads : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Aviation Chart Leads</para>
 		/// </summary>
-		public override string DisplayName => "Generate Aviation Chart Leads";
+		public override string DisplayName() => "Generate Aviation Chart Leads";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateAviationChartLeads</para>
 		/// </summary>
-		public override string ToolName => "GenerateAviationChartLeads";
+		public override string ToolName() => "GenerateAviationChartLeads";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.GenerateAviationChartLeads</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.GenerateAviationChartLeads";
+		public override string ExcuteName() => "aviation.GenerateAviationChartLeads";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayout, InMapframe, InPreferencesTable, Preference, UpdatedLayout! };
+		public override object[] Parameters() => new object[] { InLayout, InMapframe, InPreferencesTable, Preference, UpdatedLayout! };
 
 		/// <summary>
 		/// <para>Layout</para>

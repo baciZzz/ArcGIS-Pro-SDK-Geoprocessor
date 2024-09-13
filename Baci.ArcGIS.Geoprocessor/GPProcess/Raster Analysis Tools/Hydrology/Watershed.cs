@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Watershed</para>
+	/// <para>Watershed</para>
 	/// <para>Determines the contributing area above a set of cells in a raster.</para>
 	/// </summary>
 	public class Watershed : AbstractGPProcess
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Watershed</para>
 		/// </summary>
-		public override string DisplayName => "Watershed";
+		public override string DisplayName() => "Watershed";
 
 		/// <summary>
 		/// <para>Tool Name : Watershed</para>
 		/// </summary>
-		public override string ToolName => "Watershed";
+		public override string ToolName() => "Watershed";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.Watershed</para>
 		/// </summary>
-		public override string ExcuteName => "ra.Watershed";
+		public override string ExcuteName() => "ra.Watershed";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputflowdirectionraster, Inpourpointrasterorfeatures, Outputname, Pourpointfield!, Outputraster! };
+		public override object[] Parameters() => new object[] { Inputflowdirectionraster, Inpourpointrasterorfeatures, Outputname, Pourpointfield!, Outputraster! };
 
 		/// <summary>
 		/// <para>Input Flow Direction Raster</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Enable Replica Tracking</para>
+	/// <para>Enable Replica Tracking</para>
 	/// <para>Enables replica tracking on data, allowing you to work with  offline maps. Replica tracking applies to services that are configured with the sync capability with the option of creating a version for each downloaded map.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Enable Replica Tracking</para>
 		/// </summary>
-		public override string DisplayName => "Enable Replica Tracking";
+		public override string DisplayName() => "Enable Replica Tracking";
 
 		/// <summary>
 		/// <para>Tool Name : EnableReplicaTracking</para>
 		/// </summary>
-		public override string ToolName => "EnableReplicaTracking";
+		public override string ToolName() => "EnableReplicaTracking";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.EnableReplicaTracking</para>
 		/// </summary>
-		public override string ExcuteName => "management.EnableReplicaTracking";
+		public override string ExcuteName() => "management.EnableReplicaTracking";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, UpdatedDataset! };
+		public override object[] Parameters() => new object[] { InDataset, UpdatedDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

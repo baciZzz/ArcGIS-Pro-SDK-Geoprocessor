@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Polygon Neighbors</para>
+	/// <para>Polygon Neighbors</para>
 	/// <para>Creates a table with statistics based on polygon contiguity (overlaps, coincident edges, or nodes).</para>
 	/// </summary>
 	public class PolygonNeighbors : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Polygon Neighbors</para>
 		/// </summary>
-		public override string DisplayName => "Polygon Neighbors";
+		public override string DisplayName() => "Polygon Neighbors";
 
 		/// <summary>
 		/// <para>Tool Name : PolygonNeighbors</para>
 		/// </summary>
-		public override string ToolName => "PolygonNeighbors";
+		public override string ToolName() => "PolygonNeighbors";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.PolygonNeighbors</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.PolygonNeighbors";
+		public override string ExcuteName() => "analysis.PolygonNeighbors";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "extent", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "extent", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutTable, InFields!, AreaOverlap!, BothSides!, ClusterTolerance!, OutLinearUnits!, OutAreaUnits! };
+		public override object[] Parameters() => new object[] { InFeatures, OutTable, InFields!, AreaOverlap!, BothSides!, ClusterTolerance!, OutLinearUnits!, OutAreaUnits! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,6 +75,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -91,6 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("OID", "Short", "Long", "Float", "Double", "Text", "Date")]
 		public object? InFields { get; set; }
 
 		/// <summary>

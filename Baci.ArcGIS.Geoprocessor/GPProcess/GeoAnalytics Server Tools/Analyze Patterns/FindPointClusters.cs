@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Find Point Clusters</para>
+	/// <para>Find Point Clusters</para>
 	/// <para>Finds clusters of point features in surrounding noise based on their spatial or spatiotemporal distribution.</para>
 	/// </summary>
 	public class FindPointClusters : AbstractGPProcess
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Find Point Clusters</para>
 		/// </summary>
-		public override string DisplayName => "Find Point Clusters";
+		public override string DisplayName() => "Find Point Clusters";
 
 		/// <summary>
 		/// <para>Tool Name : FindPointClusters</para>
 		/// </summary>
-		public override string ToolName => "FindPointClusters";
+		public override string ToolName() => "FindPointClusters";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.FindPointClusters</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.FindPointClusters";
+		public override string ExcuteName() => "geoanalytics.FindPointClusters";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputPoints, OutputName, MinimumPoints, SearchDistance!, DataStore!, Output!, ClusteringMethod!, UseTime!, SearchDuration! };
+		public override object[] Parameters() => new object[] { InputPoints, OutputName, MinimumPoints, SearchDistance!, DataStore!, Output!, ClusteringMethod!, UseTime!, SearchDuration! };
 
 		/// <summary>
 		/// <para>Input Point Layer</para>
@@ -81,6 +82,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple")]
+		[PortalType("DataStoreCatalogLayer")]
 		public object InputPoints { get; set; }
 
 		/// <summary>

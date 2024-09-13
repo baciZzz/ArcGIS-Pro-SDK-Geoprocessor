@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Intersect 3D</para>
+	/// <para>Intersect 3D</para>
 	/// <para>Computes the intersection of multipatch features to produce closed multipatches  encompassing the overlapping volumes, open multipatch features from the common surface areas, or lines from the intersecting edges.</para>
 	/// </summary>
 	public class Intersect3D : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Intersect 3D</para>
 		/// </summary>
-		public override string DisplayName => "Intersect 3D";
+		public override string DisplayName() => "Intersect 3D";
 
 		/// <summary>
 		/// <para>Tool Name : Intersect3D</para>
 		/// </summary>
-		public override string ToolName => "Intersect3D";
+		public override string ToolName() => "Intersect3D";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Intersect3D</para>
 		/// </summary>
-		public override string ExcuteName => "3d.Intersect3D";
+		public override string ExcuteName() => "3d.Intersect3D";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "ZDomain", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "ZDomain", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass1, OutFeatureClass, InFeatureClass2!, OutputGeometryType! };
+		public override object[] Parameters() => new object[] { InFeatureClass1, OutFeatureClass, InFeatureClass2!, OutputGeometryType! };
 
 		/// <summary>
 		/// <para>Input Multipatch Features</para>

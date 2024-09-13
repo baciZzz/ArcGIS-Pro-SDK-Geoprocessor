@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Replica From Server</para>
+	/// <para>Create Replica From Server</para>
 	/// <para>Creates a replica using a specified list of feature classes, layers, feature datasets, and tables from a remote geodatabase using a geodata service published on ArcGIS Server.</para>
 	/// </summary>
 	public class CreateReplicaFromServer : AbstractGPProcess
@@ -63,37 +64,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Replica From Server</para>
 		/// </summary>
-		public override string DisplayName => "Create Replica From Server";
+		public override string DisplayName() => "Create Replica From Server";
 
 		/// <summary>
 		/// <para>Tool Name : CreateReplicaFromServer</para>
 		/// </summary>
-		public override string ToolName => "CreateReplicaFromServer";
+		public override string ToolName() => "CreateReplicaFromServer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateReplicaFromServer</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateReplicaFromServer";
+		public override string ExcuteName() => "management.CreateReplicaFromServer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeodataservice, Datasets, InType, OutGeodatabase, OutName, AccessType!, InitialDataSender!, ExpandFeatureClassesAndTables!, ReuseSchema!, GetRelatedData!, GeometryFeatures!, Archiving, OutGeodata!, OutputName! };
+		public override object[] Parameters() => new object[] { InGeodataservice, Datasets, InType, OutGeodatabase, OutName, AccessType!, InitialDataSender!, ExpandFeatureClassesAndTables!, ReuseSchema!, GetRelatedData!, GeometryFeatures!, Archiving, OutGeodata!, OutputName! };
 
 		/// <summary>
 		/// <para>Geodata Service</para>
@@ -216,6 +217,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Polyline", "Point", "Multipoint")]
 		[Category("Advanced Setting")]
 		public object? GeometryFeatures { get; set; }
 

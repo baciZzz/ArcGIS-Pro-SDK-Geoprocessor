@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Batch Project</para>
+	/// <para>Batch Project</para>
 	/// <para>Changes the coordinate system of a set of input feature classes or feature datasets to a common coordinate system. To change the coordinate system of a single feature class or dataset use the Project tool.</para>
 	/// </summary>
 	public class BatchProject : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Batch Project</para>
 		/// </summary>
-		public override string DisplayName => "Batch Project";
+		public override string DisplayName() => "Batch Project";
 
 		/// <summary>
 		/// <para>Tool Name : BatchProject</para>
 		/// </summary>
-		public override string ToolName => "BatchProject";
+		public override string ToolName() => "BatchProject";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.BatchProject</para>
 		/// </summary>
-		public override string ExcuteName => "management.BatchProject";
+		public override string ExcuteName() => "management.BatchProject";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYResolution", "XYTolerance", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYResolution", "XYTolerance", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClassOrDataset, OutputWorkspace, OutputCoordinateSystem!, TemplateDataset!, Transformation!, DerivedOutput! };
+		public override object[] Parameters() => new object[] { InputFeatureClassOrDataset, OutputWorkspace, OutputCoordinateSystem!, TemplateDataset!, Transformation!, DerivedOutput! };
 
 		/// <summary>
 		/// <para>Input Feature Class or Dataset</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compute Dirty Area</para>
+	/// <para>Compute Dirty Area</para>
 	/// <para>Identifies areas within a mosaic dataset that have changed since a specified point in time. This is used commonly when a mosaic dataset is updated or synchronized, or when  derived products, such as cache, need to be updated. This tool will enable you to limit such processes to only the areas that have changed.</para>
 	/// </summary>
 	public class ComputeDirtyArea : AbstractGPProcess
@@ -47,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Compute Dirty Area</para>
 		/// </summary>
-		public override string DisplayName => "Compute Dirty Area";
+		public override string DisplayName() => "Compute Dirty Area";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeDirtyArea</para>
 		/// </summary>
-		public override string ToolName => "ComputeDirtyArea";
+		public override string ToolName() => "ComputeDirtyArea";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ComputeDirtyArea</para>
 		/// </summary>
-		public override string ExcuteName => "management.ComputeDirtyArea";
+		public override string ExcuteName() => "management.ComputeDirtyArea";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause!, Timestamp, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InMosaicDataset, WhereClause!, Timestamp, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

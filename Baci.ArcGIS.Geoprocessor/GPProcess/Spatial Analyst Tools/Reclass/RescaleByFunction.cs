@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Rescale by Function</para>
+	/// <para>Rescale by Function</para>
 	/// <para>Rescales the input raster values by applying a selected transformation function and transforming the resulting values onto a specified continuous evaluation scale.</para>
 	/// </summary>
 	public class RescaleByFunction : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Rescale by Function</para>
 		/// </summary>
-		public override string DisplayName => "Rescale by Function";
+		public override string DisplayName() => "Rescale by Function";
 
 		/// <summary>
 		/// <para>Tool Name : RescaleByFunction</para>
 		/// </summary>
-		public override string ToolName => "RescaleByFunction";
+		public override string ToolName() => "RescaleByFunction";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.RescaleByFunction</para>
 		/// </summary>
-		public override string ExcuteName => "sa.RescaleByFunction";
+		public override string ExcuteName() => "sa.RescaleByFunction";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, TransformationFunction!, FromScale!, ToScale! };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, TransformationFunction!, FromScale!, ToScale! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -74,7 +75,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRaster { get; set; }
 
 		/// <summary>
@@ -199,6 +203,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? FromScale { get; set; } = "1";
 
 		/// <summary>
@@ -211,6 +216,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? ToScale { get; set; } = "10";
 
 		/// <summary>

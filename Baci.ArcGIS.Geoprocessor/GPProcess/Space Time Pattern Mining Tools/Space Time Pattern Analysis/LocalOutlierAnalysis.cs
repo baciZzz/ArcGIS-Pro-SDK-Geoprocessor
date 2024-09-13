@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Local Outlier Analysis</para>
+	/// <para>Local Outlier Analysis</para>
 	/// <para>Identifies statistically significant clusters and outliers in the context of both space and time.  This tool is a space-time implementation of the Anselin Local Moran's I statistic.</para>
 	/// </summary>
 	public class LocalOutlierAnalysis : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Display Name : Local Outlier Analysis</para>
 		/// </summary>
-		public override string DisplayName => "Local Outlier Analysis";
+		public override string DisplayName() => "Local Outlier Analysis";
 
 		/// <summary>
 		/// <para>Tool Name : LocalOutlierAnalysis</para>
 		/// </summary>
-		public override string ToolName => "LocalOutlierAnalysis";
+		public override string ToolName() => "LocalOutlierAnalysis";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stpm.LocalOutlierAnalysis</para>
 		/// </summary>
-		public override string ExcuteName => "stpm.LocalOutlierAnalysis";
+		public override string ExcuteName() => "stpm.LocalOutlierAnalysis";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Space Time Pattern Mining Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Space Time Pattern Mining Tools";
+		public override string ToolboxDisplayName() => "Space Time Pattern Mining Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stpm</para>
 		/// </summary>
-		public override string ToolboxAlise => "stpm";
+		public override string ToolboxAlise() => "stpm";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCube, AnalysisVariable, OutputFeatures, NeighborhoodDistance!, NeighborhoodTimeStep!, NumberOfPermutations!, PolygonMask!, ConceptualizationOfSpatialRelationships!, NumberOfNeighbors!, DefineGlobalWindow! };
+		public override object[] Parameters() => new object[] { InCube, AnalysisVariable, OutputFeatures, NeighborhoodDistance!, NeighborhoodTimeStep!, NumberOfPermutations!, PolygonMask!, ConceptualizationOfSpatialRelationships!, NumberOfNeighbors!, DefineGlobalWindow! };
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("nc")]
 		public object InCube { get; set; }
 
 		/// <summary>
@@ -112,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 10)]
 		public object? NeighborhoodTimeStep { get; set; } = "1";
 
 		/// <summary>
@@ -139,6 +141,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? PolygonMask { get; set; }
 
 		/// <summary>
@@ -161,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 1000)]
 		public object? NumberOfNeighbors { get; set; }
 
 		/// <summary>

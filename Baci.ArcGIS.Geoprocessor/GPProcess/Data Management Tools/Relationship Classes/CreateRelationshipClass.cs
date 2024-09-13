@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Relationship Class</para>
+	/// <para>Create Relationship Class</para>
 	/// <para>This tool creates a relationship class to store an association between fields or features in the origin table and the destination table.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -97,37 +98,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Relationship Class</para>
 		/// </summary>
-		public override string DisplayName => "Create Relationship Class";
+		public override string DisplayName() => "Create Relationship Class";
 
 		/// <summary>
 		/// <para>Tool Name : CreateRelationshipClass</para>
 		/// </summary>
-		public override string ToolName => "CreateRelationshipClass";
+		public override string ToolName() => "CreateRelationshipClass";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateRelationshipClass</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateRelationshipClass";
+		public override string ExcuteName() => "management.CreateRelationshipClass";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OriginTable, DestinationTable, OutRelationshipClass, RelationshipType, ForwardLabel, BackwardLabel, MessageDirection, Cardinality, Attributed, OriginPrimaryKey, OriginForeignKey, DestinationPrimaryKey!, DestinationForeignKey! };
+		public override object[] Parameters() => new object[] { OriginTable, DestinationTable, OutRelationshipClass, RelationshipType, ForwardLabel, BackwardLabel, MessageDirection, Cardinality, Attributed, OriginPrimaryKey, OriginForeignKey, DestinationPrimaryKey!, DestinationForeignKey! };
 
 		/// <summary>
 		/// <para>Origin Table</para>

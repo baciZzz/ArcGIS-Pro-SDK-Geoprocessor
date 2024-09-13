@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Import Floorplans To Indoors Geodatabase</para>
+	/// <para>Import Floorplans To Indoors Geodatabase</para>
 	/// <para>Imports floor plans from CAD files into an Indoors workspace that conforms to the ArcGIS Indoors Information Model. The output of this tool can be used to create floor-aware maps and scenes for use in floor-aware apps, as well as to generate an indoor network for routing.</para>
 	/// </summary>
 	public class ImportFloorplansToIndoorsGDB : AbstractGPProcess
@@ -59,37 +60,37 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Display Name : Import Floorplans To Indoors Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "Import Floorplans To Indoors Geodatabase";
+		public override string DisplayName() => "Import Floorplans To Indoors Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : ImportFloorplansToIndoorsGDB</para>
 		/// </summary>
-		public override string ToolName => "ImportFloorplansToIndoorsGDB";
+		public override string ToolName() => "ImportFloorplansToIndoorsGDB";
 
 		/// <summary>
 		/// <para>Tool Excute Name : indoors.ImportFloorplansToIndoorsGDB</para>
 		/// </summary>
-		public override string ExcuteName => "indoors.ImportFloorplansToIndoorsGDB";
+		public override string ExcuteName() => "indoors.ImportFloorplansToIndoorsGDB";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Indoors Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Indoors Tools";
+		public override string ToolboxDisplayName() => "Indoors Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : indoors</para>
 		/// </summary>
-		public override string ToolboxAlise => "indoors";
+		public override string ToolboxAlise() => "indoors";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetUnitFeatures, TargetDetailFeatures, TargetLevelFeatures, TargetFacilityFeatures, InExcelTemplate, UniqueidDelimiter, SliverThreshold!, DoorCloseBuffer!, AreaUnitOfMeasure!, MeasurementMode!, TargetSectionFeatures!, TargetZoneFeatures!, UpdatedUnits! };
+		public override object[] Parameters() => new object[] { TargetUnitFeatures, TargetDetailFeatures, TargetLevelFeatures, TargetFacilityFeatures, InExcelTemplate, UniqueidDelimiter, SliverThreshold!, DoorCloseBuffer!, AreaUnitOfMeasure!, MeasurementMode!, TargetSectionFeatures!, TargetZoneFeatures!, UpdatedUnits! };
 
 		/// <summary>
 		/// <para>Target Unit Features</para>
@@ -98,6 +99,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object TargetUnitFeatures { get; set; }
 
 		/// <summary>
@@ -107,6 +110,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object TargetDetailFeatures { get; set; }
 
 		/// <summary>
@@ -116,6 +121,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object TargetLevelFeatures { get; set; }
 
 		/// <summary>
@@ -125,6 +132,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object TargetFacilityFeatures { get; set; }
 
 		/// <summary>
@@ -134,6 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xls", "xlsx")]
 		public object InExcelTemplate { get; set; }
 
 		/// <summary>
@@ -198,6 +208,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? TargetSectionFeatures { get; set; }
 
 		/// <summary>
@@ -207,6 +219,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? TargetZoneFeatures { get; set; }
 
 		/// <summary>

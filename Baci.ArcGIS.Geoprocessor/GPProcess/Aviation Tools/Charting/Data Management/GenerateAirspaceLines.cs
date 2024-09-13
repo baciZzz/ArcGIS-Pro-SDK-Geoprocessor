@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Generate Airspace Lines</para>
+	/// <para>Generate Airspace Lines</para>
 	/// <para>Adds, modifies, or deletes polyline features from coincident edges of airspace polygons.</para>
 	/// </summary>
 	public class GenerateAirspaceLines : AbstractGPProcess
@@ -52,37 +53,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Airspace Lines</para>
 		/// </summary>
-		public override string DisplayName => "Generate Airspace Lines";
+		public override string DisplayName() => "Generate Airspace Lines";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateAirspaceLines</para>
 		/// </summary>
-		public override string ToolName => "GenerateAirspaceLines";
+		public override string ToolName() => "GenerateAirspaceLines";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.GenerateAirspaceLines</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.GenerateAirspaceLines";
+		public override string ExcuteName() => "aviation.GenerateAirspaceLines";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAirspaceFeatures, TargetAirspaceLineFeatures, AoiFeatures, PreferenceTable, Preference, UpdatedAirspaceLineFeatures! };
+		public override object[] Parameters() => new object[] { InAirspaceFeatures, TargetAirspaceLineFeatures, AoiFeatures, PreferenceTable, Preference, UpdatedAirspaceLineFeatures! };
 
 		/// <summary>
 		/// <para>Input Airspace Features</para>
@@ -91,6 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InAirspaceFeatures { get; set; }
 
 		/// <summary>
@@ -100,6 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object TargetAirspaceLineFeatures { get; set; }
 
 		/// <summary>
@@ -110,6 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object AoiFeatures { get; set; }
 
 		/// <summary>

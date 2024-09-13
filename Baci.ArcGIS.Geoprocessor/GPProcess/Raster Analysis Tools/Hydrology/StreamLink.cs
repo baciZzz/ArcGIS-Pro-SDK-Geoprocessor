@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Stream Link</para>
+	/// <para>Stream Link</para>
 	/// <para>Assigns unique values to sections of a raster linear network between intersections.</para>
 	/// </summary>
 	public class StreamLink : AbstractGPProcess
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Stream Link</para>
 		/// </summary>
-		public override string DisplayName => "Stream Link";
+		public override string DisplayName() => "Stream Link";
 
 		/// <summary>
 		/// <para>Tool Name : StreamLink</para>
 		/// </summary>
-		public override string ToolName => "StreamLink";
+		public override string ToolName() => "StreamLink";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.StreamLink</para>
 		/// </summary>
-		public override string ExcuteName => "ra.StreamLink";
+		public override string ExcuteName() => "ra.StreamLink";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputstreamraster, Inputflowdirectionraster, Outputname, Outputraster! };
+		public override object[] Parameters() => new object[] { Inputstreamraster, Inputflowdirectionraster, Outputname, Outputraster! };
 
 		/// <summary>
 		/// <para>Input Stream Raster</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Enable Stationing Fields</para>
+	/// <para>Enable Stationing Fields</para>
 	/// <para>Enables or modifies stationing fields so that you can manage</para>
 	/// <para>referent information for the registered LRS event.</para>
 	/// </summary>
@@ -31,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Enable Stationing Fields</para>
 		/// </summary>
-		public override string DisplayName => "Enable Stationing Fields";
+		public override string DisplayName() => "Enable Stationing Fields";
 
 		/// <summary>
 		/// <para>Tool Name : EnableStationingFields</para>
 		/// </summary>
-		public override string ToolName => "EnableStationingFields";
+		public override string ToolName() => "EnableStationingFields";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.EnableStationingFields</para>
 		/// </summary>
-		public override string ExcuteName => "locref.EnableStationingFields";
+		public override string ExcuteName() => "locref.EnableStationingFields";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, StationField!, BackStationField!, StationDirectionField!, StationMeasureUnits!, DecreasingStationValues!, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatureClass, StationField!, BackStationField!, StationDirectionField!, StationMeasureUnits!, DecreasingStationValues!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Event Feature Class</para>
@@ -70,6 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InFeatureClass { get; set; }
 
 		/// <summary>
@@ -79,6 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object? StationField { get; set; }
 
 		/// <summary>
@@ -88,6 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object? BackStationField { get; set; }
 
 		/// <summary>
@@ -97,6 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object? StationDirectionField { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Attribute Rule</para>
+	/// <para>Add Attribute Rule</para>
 	/// <para>Adds an attribute rule to a dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -51,37 +52,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Attribute Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Attribute Rule";
+		public override string DisplayName() => "Add Attribute Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddAttributeRule</para>
 		/// </summary>
-		public override string ToolName => "AddAttributeRule";
+		public override string ToolName() => "AddAttributeRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddAttributeRule</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddAttributeRule";
+		public override string ExcuteName() => "management.AddAttributeRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Name, Type, ScriptExpression, IsEditable!, TriggeringEvents!, ErrorNumber!, ErrorMessage!, Description!, Subtype!, Field!, ExcludeFromClientEvaluation!, OutTable!, Batch!, Severity!, Tags! };
+		public override object[] Parameters() => new object[] { InTable, Name, Type, ScriptExpression, IsEditable!, TriggeringEvents!, ErrorNumber!, ErrorMessage!, Description!, Subtype!, Field!, ExcludeFromClientEvaluation!, OutTable!, Batch!, Severity!, Tags! };
 
 		/// <summary>
 		/// <para>Input Table</para>

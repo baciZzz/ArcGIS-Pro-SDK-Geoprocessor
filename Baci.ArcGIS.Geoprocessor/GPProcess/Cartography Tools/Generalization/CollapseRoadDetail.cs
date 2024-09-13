@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Collapse Road Detail</para>
+	/// <para>Collapse Road Detail</para>
 	/// <para>Collapses small, open  configurations of road segments that interrupt the general trend of a road network, such as traffic circles, and replaces them with a simplified depiction.</para>
 	/// </summary>
 	public class CollapseRoadDetail : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Collapse Road Detail</para>
 		/// </summary>
-		public override string DisplayName => "Collapse Road Detail";
+		public override string DisplayName() => "Collapse Road Detail";
 
 		/// <summary>
 		/// <para>Tool Name : CollapseRoadDetail</para>
 		/// </summary>
-		public override string ToolName => "CollapseRoadDetail";
+		public override string ToolName() => "CollapseRoadDetail";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.CollapseRoadDetail</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.CollapseRoadDetail";
+		public override string ExcuteName() => "cartography.CollapseRoadDetail";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicPartitions", "referenceScale" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicPartitions", "referenceScale" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, CollapseDistance, OutputFeatureClass, LockingField! };
+		public override object[] Parameters() => new object[] { InFeatures, CollapseDistance, OutputFeatureClass, LockingField! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -96,6 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object OutputFeatureClass { get; set; }
 
 		/// <summary>
@@ -105,6 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		public object? LockingField { get; set; }
 
 		/// <summary>

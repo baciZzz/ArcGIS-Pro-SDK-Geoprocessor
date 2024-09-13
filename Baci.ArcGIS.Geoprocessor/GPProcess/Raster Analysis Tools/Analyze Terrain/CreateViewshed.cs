@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Create Viewshed</para>
+	/// <para>Create Viewshed</para>
 	/// <para>Creates areas where an observer can see objects on the ground. The input observer points can represent either observers (such as people on the ground or lookouts in a fire tower) or observed objects (such as wind turbines, water towers, vehicles, or other people).</para>
 	/// </summary>
 	public class CreateViewshed : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Viewshed</para>
 		/// </summary>
-		public override string DisplayName => "Create Viewshed";
+		public override string DisplayName() => "Create Viewshed";
 
 		/// <summary>
 		/// <para>Tool Name : CreateViewshed</para>
 		/// </summary>
-		public override string ToolName => "CreateViewshed";
+		public override string ToolName() => "CreateViewshed";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.CreateViewshed</para>
 		/// </summary>
-		public override string ExcuteName => "ra.CreateViewshed";
+		public override string ExcuteName() => "ra.CreateViewshed";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputelevationsurface, Inputobserverfeatures, Outputname, Optimizefor!, Maximumviewingdistancetype!, Maximumviewingdistance!, Maximumviewingdistancefield!, Minimumviewingdistancetype!, Minimumviewingdistance!, Minimumviewingdistancefield!, Viewingdistanceis3d!, Observerselevationtype!, Observerselevation!, Observerselevationfield!, Observersheighttype!, Observersheight!, Observersheightfield!, Targetheighttype!, Targetheight!, Targetheightfield!, Abovegroundleveloutputname!, Outputraster!, Outputabovegroundlevelraster! };
+		public override object[] Parameters() => new object[] { Inputelevationsurface, Inputobserverfeatures, Outputname, Optimizefor!, Maximumviewingdistancetype!, Maximumviewingdistance!, Maximumviewingdistancefield!, Minimumviewingdistancetype!, Minimumviewingdistance!, Minimumviewingdistancefield!, Viewingdistanceis3d!, Observerselevationtype!, Observerselevation!, Observerselevationfield!, Observersheighttype!, Observersheight!, Observersheightfield!, Targetheighttype!, Targetheight!, Targetheightfield!, Abovegroundleveloutputname!, Outputraster!, Outputabovegroundlevelraster! };
 
 		/// <summary>
 		/// <para>Input Elevation Surface</para>
@@ -93,6 +94,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polyline")]
+		[FeatureType("Simple")]
 		public object Inputobserverfeatures { get; set; }
 
 		/// <summary>
@@ -148,6 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "OID")]
 		public object? Maximumviewingdistancefield { get; set; }
 
 		/// <summary>
@@ -182,6 +186,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "OID")]
 		public object? Minimumviewingdistancefield { get; set; }
 
 		/// <summary>
@@ -229,6 +234,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "OID")]
 		public object? Observerselevationfield { get; set; }
 
 		/// <summary>
@@ -262,6 +268,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "OID")]
 		public object? Observersheightfield { get; set; }
 
 		/// <summary>
@@ -295,6 +302,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "OID")]
 		public object? Targetheightfield { get; set; }
 
 		/// <summary>

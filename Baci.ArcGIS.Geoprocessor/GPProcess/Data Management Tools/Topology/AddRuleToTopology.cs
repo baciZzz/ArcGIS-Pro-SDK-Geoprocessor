@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Rule To Topology</para>
+	/// <para>Add Rule To Topology</para>
 	/// <para>Adds a new rule to a topology.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -73,37 +74,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Rule To Topology</para>
 		/// </summary>
-		public override string DisplayName => "Add Rule To Topology";
+		public override string DisplayName() => "Add Rule To Topology";
 
 		/// <summary>
 		/// <para>Tool Name : AddRuleToTopology</para>
 		/// </summary>
-		public override string ToolName => "AddRuleToTopology";
+		public override string ToolName() => "AddRuleToTopology";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddRuleToTopology</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddRuleToTopology";
+		public override string ExcuteName() => "management.AddRuleToTopology";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTopology, RuleType, InFeatureclass, Subtype!, InFeatureclass2!, Subtype2!, OutTopology! };
+		public override object[] Parameters() => new object[] { InTopology, RuleType, InFeatureclass, Subtype!, InFeatureclass2!, Subtype2!, OutTopology! };
 
 		/// <summary>
 		/// <para>Input Topology</para>

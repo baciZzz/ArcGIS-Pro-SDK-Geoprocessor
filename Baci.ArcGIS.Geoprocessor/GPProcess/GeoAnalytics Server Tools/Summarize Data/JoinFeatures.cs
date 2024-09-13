@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Join Features</para>
+	/// <para>Join Features</para>
 	/// <para>Joins attributes from one layer to another based on spatial, temporal, or attribute relationships, or a combination of those relationships.</para>
 	/// </summary>
 	public class JoinFeatures : AbstractGPProcess
@@ -48,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Join Features</para>
 		/// </summary>
-		public override string DisplayName => "Join Features";
+		public override string DisplayName() => "Join Features";
 
 		/// <summary>
 		/// <para>Tool Name : JoinFeatures</para>
 		/// </summary>
-		public override string ToolName => "JoinFeatures";
+		public override string ToolName() => "JoinFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.JoinFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.JoinFeatures";
+		public override string ExcuteName() => "geoanalytics.JoinFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetLayer, JoinLayer, OutputName, JoinOperation, SpatialRelationship!, SpatialNearDistance!, TemporalRelationship!, TemporalNearDistance!, AttributeRelationship!, SummaryFields!, JoinCondition!, Output!, DataStore!, KeepAllTargetFeatures! };
+		public override object[] Parameters() => new object[] { TargetLayer, JoinLayer, OutputName, JoinOperation, SpatialRelationship!, SpatialNearDistance!, TemporalRelationship!, TemporalNearDistance!, AttributeRelationship!, SummaryFields!, JoinCondition!, Output!, DataStore!, KeepAllTargetFeatures! };
 
 		/// <summary>
 		/// <para>Target Layer</para>
@@ -87,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
 		[GPTablesDomain()]
+		[PortalType("DataStoreCatalogLayer")]
 		public object TargetLayer { get; set; }
 
 		/// <summary>
@@ -96,6 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
 		[GPTablesDomain()]
+		[PortalType("DataStoreCatalogLayer")]
 		public object JoinLayer { get; set; }
 
 		/// <summary>

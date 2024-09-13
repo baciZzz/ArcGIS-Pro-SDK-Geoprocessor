@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Apply Main Ring Layout</para>
+	/// <para>Apply Main Ring Layout</para>
 	/// <para>Apply the main ring layout to a diagram</para>
 	/// </summary>
 	[Obsolete()]
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Main Ring Layout</para>
 		/// </summary>
-		public override string DisplayName => "Apply Main Ring Layout";
+		public override string DisplayName() => "Apply Main Ring Layout";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyMainRingLayout</para>
 		/// </summary>
-		public override string ToolName => "ApplyMainRingLayout";
+		public override string ToolName() => "ApplyMainRingLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.ApplyMainRingLayout</para>
 		/// </summary>
-		public override string ExcuteName => "un.ApplyMainRingLayout";
+		public override string ExcuteName() => "un.ApplyMainRingLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved!, RingType!, IsUnitAbsolute!, RingWidthAbsolute!, RingWidthProportional!, RingHeightAbsolute!, RingHeightProportional!, TreeType!, PerpendicularAbsolute!, PerpendicularProportional!, AlongAbsolute!, AlongProportional!, BreakpointPosition!, EdgeDisplayType!, OutNetworkDiagramLayer!, RunAsync!, OffsetAbsolute!, OffsetProportional! };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, AreContainersPreserved!, RingType!, IsUnitAbsolute!, RingWidthAbsolute!, RingWidthProportional!, RingHeightAbsolute!, RingHeightProportional!, TreeType!, PerpendicularAbsolute!, PerpendicularProportional!, AlongAbsolute!, AlongProportional!, BreakpointPosition!, EdgeDisplayType!, OutNetworkDiagramLayer!, RunAsync!, OffsetAbsolute!, OffsetProportional! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>

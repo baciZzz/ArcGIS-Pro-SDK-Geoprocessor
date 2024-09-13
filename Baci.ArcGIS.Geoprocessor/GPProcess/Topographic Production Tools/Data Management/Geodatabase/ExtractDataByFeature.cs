@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Extract Data By Feature</para>
+	/// <para>Extract Data By Feature</para>
 	/// <para>Extracts features from multiple</para>
 	/// <para>input feature classes into a target database.</para>
 	/// </summary>
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Extract Data By Feature</para>
 		/// </summary>
-		public override string DisplayName => "Extract Data By Feature";
+		public override string DisplayName() => "Extract Data By Feature";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractDataByFeature</para>
 		/// </summary>
-		public override string ToolName => "ExtractDataByFeature";
+		public override string ToolName() => "ExtractDataByFeature";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.ExtractDataByFeature</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.ExtractDataByFeature";
+		public override string ExcuteName() => "topographic.ExtractDataByFeature";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDatasets, TargetGdb, ReuseSchema!, FilterFeature!, FilterType!, CheckoutReplica!, ReplicaName!, UpdatedTargetGdb!, ExpandFeatureClassesAndTables!, GetRelatedData!, ExcludedRelClasses!, WhereClause! };
+		public override object[] Parameters() => new object[] { InDatasets, TargetGdb, ReuseSchema!, FilterFeature!, FilterType!, CheckoutReplica!, ReplicaName!, UpdatedTargetGdb!, ExpandFeatureClassesAndTables!, GetRelatedData!, ExcludedRelClasses!, WhereClause! };
 
 		/// <summary>
 		/// <para>Input Datasets</para>
@@ -114,6 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLayer()]
 		[GPLayerDomain()]
+		[GeometryType("Polygon")]
 		public object? FilterFeature { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Iterate Fields</para>
+	/// <para>Iterate Fields</para>
 	/// <para>Iterates fields in a table.</para>
 	/// </summary>
 	public class IterateFields : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : Iterate Fields</para>
 		/// </summary>
-		public override string DisplayName => "Iterate Fields";
+		public override string DisplayName() => "Iterate Fields";
 
 		/// <summary>
 		/// <para>Tool Name : IterateFields</para>
 		/// </summary>
-		public override string ToolName => "IterateFields";
+		public override string ToolName() => "IterateFields";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.IterateFields</para>
 		/// </summary>
-		public override string ExcuteName => "mb.IterateFields";
+		public override string ExcuteName() => "mb.IterateFields";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, FieldType!, Wildcard!, InputFields!, OutputField!, OutputCount! };
+		public override object[] Parameters() => new object[] { InTable, FieldType!, Wildcard!, InputFields!, OutputField!, OutputCount! };
 
 		/// <summary>
 		/// <para>Input Table</para>

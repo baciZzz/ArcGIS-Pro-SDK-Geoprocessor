@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Set Criteria Properties</para>
+	/// <para>Set Criteria Properties</para>
 	/// <para>Define parameters for criteria.</para>
 	/// </summary>
 	public class SetCriteriaProperties : AbstractGPProcess
@@ -46,37 +47,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Criteria Properties</para>
 		/// </summary>
-		public override string DisplayName => "Set Criteria Properties";
+		public override string DisplayName() => "Set Criteria Properties";
 
 		/// <summary>
 		/// <para>Tool Name : SetCriteriaProperties</para>
 		/// </summary>
-		public override string ToolName => "SetCriteriaProperties";
+		public override string ToolName() => "SetCriteriaProperties";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.SetCriteriaProperties</para>
 		/// </summary>
-		public override string ExcuteName => "ba.SetCriteriaProperties";
+		public override string ExcuteName() => "ba.SetCriteriaProperties";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAnalysisLayer, CriteriaProperties, OutAnalysisLayer! };
+		public override object[] Parameters() => new object[] { InAnalysisLayer, CriteriaProperties, OutAnalysisLayer! };
 
 		/// <summary>
 		/// <para>Input Suitability Analysis Layer</para>
@@ -85,6 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InAnalysisLayer { get; set; }
 
 		/// <summary>

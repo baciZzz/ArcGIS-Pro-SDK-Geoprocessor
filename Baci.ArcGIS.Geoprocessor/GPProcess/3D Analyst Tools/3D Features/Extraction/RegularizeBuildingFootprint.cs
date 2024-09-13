@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Regularize Building Footprint</para>
+	/// <para>Regularize Building Footprint</para>
 	/// <para>Normalizes the footprint of building polygons by eliminating undesirable artifacts in their geometry.</para>
 	/// </summary>
 	public class RegularizeBuildingFootprint : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Regularize Building Footprint</para>
 		/// </summary>
-		public override string DisplayName => "Regularize Building Footprint";
+		public override string DisplayName() => "Regularize Building Footprint";
 
 		/// <summary>
 		/// <para>Tool Name : RegularizeBuildingFootprint</para>
 		/// </summary>
-		public override string ToolName => "RegularizeBuildingFootprint";
+		public override string ToolName() => "RegularizeBuildingFootprint";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.RegularizeBuildingFootprint</para>
 		/// </summary>
-		public override string ExcuteName => "3d.RegularizeBuildingFootprint";
+		public override string ExcuteName() => "3d.RegularizeBuildingFootprint";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "gpuID", "outputCoordinateSystem", "parallelProcessingFactor", "processorType", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "gpuID", "outputCoordinateSystem", "parallelProcessingFactor", "processorType", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Method, Tolerance, Densification!, Precision!, DiagonalPenalty!, MinRadius!, MaxRadius!, AlignmentFeature!, AlignmentTolerance!, ToleranceType! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, Method, Tolerance, Densification!, Precision!, DiagonalPenalty!, MinRadius!, MaxRadius!, AlignmentFeature!, AlignmentTolerance!, ToleranceType! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -89,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -138,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0.050000000000000003, Max = 0.25)]
 		public object? Precision { get; set; } = "0.25";
 
 		/// <summary>
@@ -147,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 10)]
 		public object? DiagonalPenalty { get; set; } = "1.5";
 
 		/// <summary>
@@ -175,6 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon")]
 		public object? AlignmentFeature { get; set; }
 
 		/// <summary>

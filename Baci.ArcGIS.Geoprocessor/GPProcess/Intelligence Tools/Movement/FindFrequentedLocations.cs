@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Find Frequented Locations</para>
+	/// <para>Find Frequented Locations</para>
 	/// <para>Identifies areas where a movement track has dwelled for multiple time periods and aggregates those locations based on a track identifier.</para>
 	/// </summary>
 	public class FindFrequentedLocations : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Find Frequented Locations</para>
 		/// </summary>
-		public override string DisplayName => "Find Frequented Locations";
+		public override string DisplayName() => "Find Frequented Locations";
 
 		/// <summary>
 		/// <para>Tool Name : FindFrequentedLocations</para>
 		/// </summary>
-		public override string ToolName => "FindFrequentedLocations";
+		public override string ToolName() => "FindFrequentedLocations";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.FindFrequentedLocations</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.FindFrequentedLocations";
+		public override string ExcuteName() => "intelligence.FindFrequentedLocations";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, TrackIdField, OutFeatureclass, Expression!, SearchDistance!, MinimumLoiterTime!, TimeBoundary!, MinimumDwells!, NormalizeDailyDistribution!, SummaryFields! };
+		public override object[] Parameters() => new object[] { InFeatures, TrackIdField, OutFeatureclass, Expression!, SearchDistance!, MinimumLoiterTime!, TimeBoundary!, MinimumDwells!, NormalizeDailyDistribution!, SummaryFields! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -88,6 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		public object TrackIdField { get; set; }
 
 		/// <summary>

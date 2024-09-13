@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Flip</para>
+	/// <para>Flip</para>
 	/// <para>Reorients the raster by turning it over, from top to bottom, along the horizontal axis through the center of the raster. This may be useful to correct raster datasets that are upside down.</para>
 	/// </summary>
 	public class Flip : AbstractGPProcess
@@ -52,37 +53,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Flip</para>
 		/// </summary>
-		public override string DisplayName => "Flip";
+		public override string DisplayName() => "Flip";
 
 		/// <summary>
 		/// <para>Tool Name : Flip</para>
 		/// </summary>
-		public override string ToolName => "Flip";
+		public override string ToolName() => "Flip";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Flip</para>
 		/// </summary>
-		public override string ExcuteName => "management.Flip";
+		public override string ExcuteName() => "management.Flip";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster };
 
 		/// <summary>
 		/// <para>Input Raster</para>

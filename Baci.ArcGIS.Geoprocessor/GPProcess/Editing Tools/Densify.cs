@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Densify</para>
+	/// <para>Densify</para>
 	/// <para>Adds vertices along line or polygon features and replaces curve segments (Bezier, circular arcs, and elliptical arcs) with line segments.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Densify</para>
 		/// </summary>
-		public override string DisplayName => "Densify";
+		public override string DisplayName() => "Densify";
 
 		/// <summary>
 		/// <para>Tool Name : Densify</para>
 		/// </summary>
-		public override string ToolName => "Densify";
+		public override string ToolName() => "Densify";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.Densify</para>
 		/// </summary>
-		public override string ExcuteName => "edit.Densify";
+		public override string ExcuteName() => "edit.Densify";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DensificationMethod!, Distance!, MaxDeviation!, MaxAngle!, OutFeatureClass!, MaxVertexPerSegment! };
+		public override object[] Parameters() => new object[] { InFeatures, DensificationMethod!, Distance!, MaxDeviation!, MaxAngle!, OutFeatureClass!, MaxVertexPerSegment! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -71,6 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -110,6 +112,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
+		[High(Allow = false, Value = 90)]
 		public object? MaxAngle { get; set; } = "10";
 
 		/// <summary>

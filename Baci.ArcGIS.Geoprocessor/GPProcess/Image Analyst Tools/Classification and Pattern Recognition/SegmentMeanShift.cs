@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Segment Mean Shift</para>
+	/// <para>Segment Mean Shift</para>
 	/// <para>Groups into segments adjacent pixels that have similar spectral characteristics.</para>
 	/// </summary>
 	public class SegmentMeanShift : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Segment Mean Shift</para>
 		/// </summary>
-		public override string DisplayName => "Segment Mean Shift";
+		public override string DisplayName() => "Segment Mean Shift";
 
 		/// <summary>
 		/// <para>Tool Name : SegmentMeanShift</para>
 		/// </summary>
-		public override string ToolName => "SegmentMeanShift";
+		public override string ToolName() => "SegmentMeanShift";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.SegmentMeanShift</para>
 		/// </summary>
-		public override string ExcuteName => "ia.SegmentMeanShift";
+		public override string ExcuteName() => "ia.SegmentMeanShift";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRasterDataset, SpectralDetail!, SpatialDetail!, MinSegmentSize!, BandIndexes!, MaxSegmentSize! };
+		public override object[] Parameters() => new object[] { InRaster, OutRasterDataset, SpectralDetail!, SpatialDetail!, MinSegmentSize!, BandIndexes!, MaxSegmentSize! };
 
 		/// <summary>
 		/// <para>Input Raster</para>

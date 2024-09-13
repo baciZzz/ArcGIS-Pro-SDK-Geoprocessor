@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Analyze Tools For Pro</para>
+	/// <para>Analyze Tools For Pro</para>
 	/// <para>Analyzes Python scripts and custom geoprocessing tools and toolboxes for functionality that is not supported in ArcGIS Pro.</para>
 	/// </summary>
 	public class AnalyzeToolsForPro : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Analyze Tools For Pro</para>
 		/// </summary>
-		public override string DisplayName => "Analyze Tools For Pro";
+		public override string DisplayName() => "Analyze Tools For Pro";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeToolsForPro</para>
 		/// </summary>
-		public override string ToolName => "AnalyzeToolsForPro";
+		public override string ToolName() => "AnalyzeToolsForPro";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AnalyzeToolsForPro</para>
 		/// </summary>
-		public override string ExcuteName => "management.AnalyzeToolsForPro";
+		public override string ExcuteName() => "management.AnalyzeToolsForPro";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Input, Report! };
+		public override object[] Parameters() => new object[] { Input, Report! };
 
 		/// <summary>
 		/// <para>Input</para>

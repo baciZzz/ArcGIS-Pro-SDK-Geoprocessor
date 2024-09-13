@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Empirical Bayesian Kriging 3D</para>
+	/// <para>Empirical Bayesian Kriging 3D</para>
 	/// <para>Empirical Bayesian kriging 3D is a geostatistical interpolation method that uses Empirical Bayesian Kriging to interpolate 3D point data. All points must have x-, y-, and z-coordinates and a measured value to be interpolated. The output is a 3D geostatistical layer that calculates and renders itself as a 2D transect at a given elevation. The elevation of the layer can be changed with the range slider, and the layer will update to show the interpolated predictions for the new elevation.</para>
 	/// </summary>
 	public class EmpiricalBayesianKriging3D : AbstractGPProcess
@@ -46,37 +47,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Empirical Bayesian Kriging 3D</para>
 		/// </summary>
-		public override string DisplayName => "Empirical Bayesian Kriging 3D";
+		public override string DisplayName() => "Empirical Bayesian Kriging 3D";
 
 		/// <summary>
 		/// <para>Tool Name : EmpiricalBayesianKriging3D</para>
 		/// </summary>
-		public override string ToolName => "EmpiricalBayesianKriging3D";
+		public override string ToolName() => "EmpiricalBayesianKriging3D";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.EmpiricalBayesianKriging3D</para>
 		/// </summary>
-		public override string ExcuteName => "ga.EmpiricalBayesianKriging3D";
+		public override string ExcuteName() => "ga.EmpiricalBayesianKriging3D";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "coincidentPoints", "extent", "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "coincidentPoints", "extent", "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ElevationField, ValueField, OutGaLayer, ElevationUnits!, MeasurementErrorField!, SemivariogramModelType!, TransformationType!, SubsetSize!, OverlapFactor!, NumberSimulations!, TrendRemoval!, ElevInflationFactor!, SearchNeighborhood!, OutputElevation!, OutputType!, QuantileValue!, ThresholdType!, ProbabilityThreshold! };
+		public override object[] Parameters() => new object[] { InFeatures, ElevationField, ValueField, OutGaLayer, ElevationUnits!, MeasurementErrorField!, SemivariogramModelType!, TransformationType!, SubsetSize!, OverlapFactor!, NumberSimulations!, TrendRemoval!, ElevInflationFactor!, SearchNeighborhood!, OutputElevation!, OutputType!, QuantileValue!, ThresholdType!, ProbabilityThreshold! };
 
 		/// <summary>
 		/// <para>Input features</para>
@@ -85,6 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -95,6 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object ElevationField { get; set; }
 
 		/// <summary>
@@ -104,6 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object ValueField { get; set; }
 
 		/// <summary>
@@ -148,6 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? MeasurementErrorField { get; set; }
 
 		/// <summary>
@@ -187,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 20, Max = 1000)]
 		[Category("Advanced Model Parameters")]
 		public object? SubsetSize { get; set; } = "100";
 
@@ -198,7 +203,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 5)]
 		[Category("Advanced Model Parameters")]
 		public object? OverlapFactor { get; set; } = "1";
 
@@ -209,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 30, Max = 10000)]
 		[Category("Advanced Model Parameters")]
 		public object? NumberSimulations { get; set; } = "100";
 
@@ -234,7 +239,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0.01, Max = 1000000)]
 		[Category("Advanced Model Parameters")]
 		public object? ElevInflationFactor { get; set; }
 
@@ -256,6 +261,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGASearchNeighborhood()]
 		[GPGASearchNeighborhoodDomain()]
+		[NeighbourType("NeighbourTypeStandard3D")]
 		[Category("Search Neighborhood Parameters")]
 		public object? SearchNeighborhood { get; set; } = "NBRTYPE=Standard3D RADIUS=nan NBR_MAX=2 NBR_MIN=1 SECTOR_TYPE=TWELVE_SECTORS";
 
@@ -266,7 +272,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = -1.7976931348623157e+308, Max = 1.7976931348623157e+308)]
 		[Category("Output Parameters")]
 		public object? OutputElevation { get; set; }
 
@@ -291,7 +297,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1e-10, Max = 0.99999999989999999)]
 		[Category("Output Parameters")]
 		public object? QuantileValue { get; set; } = "0.5";
 

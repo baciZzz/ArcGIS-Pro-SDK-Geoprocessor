@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Intervisibility</para>
+	/// <para>Intervisibility</para>
 	/// <para>Determines the visibility of sight lines using  potential obstructions defined by any combination of  3D features and surfaces.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Intervisibility</para>
 		/// </summary>
-		public override string DisplayName => "Intervisibility";
+		public override string DisplayName() => "Intervisibility";
 
 		/// <summary>
 		/// <para>Tool Name : Intervisibility</para>
 		/// </summary>
-		public override string ToolName => "Intervisibility";
+		public override string ToolName() => "Intervisibility";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Intervisibility</para>
 		/// </summary>
-		public override string ExcuteName => "3d.Intervisibility";
+		public override string ExcuteName() => "3d.Intervisibility";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SightLines, Obstructions, VisibleField!, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { SightLines, Obstructions, VisibleField!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Sight Lines</para>
@@ -76,6 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object SightLines { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Topo to Raster</para>
+	/// <para>Topo to Raster</para>
 	/// <para>Interpolates a hydrologically correct raster surface from point, line, and polygon data.</para>
 	/// </summary>
 	public class TopoToRaster : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Topo to Raster</para>
 		/// </summary>
-		public override string DisplayName => "Topo to Raster";
+		public override string DisplayName() => "Topo to Raster";
 
 		/// <summary>
 		/// <para>Tool Name : TopoToRaster</para>
 		/// </summary>
-		public override string ToolName => "TopoToRaster";
+		public override string ToolName() => "TopoToRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.TopoToRaster</para>
 		/// </summary>
-		public override string ExcuteName => "3d.TopoToRaster";
+		public override string ExcuteName() => "3d.TopoToRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "mask", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "tileSize", "transferDomains", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "mask", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "snapRaster", "tileSize", "transferDomains", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTopoFeatures, OutSurfaceRaster, CellSize!, Extent!, Margin!, MinimumZValue!, MaximumZValue!, Enforce!, DataType!, MaximumIterations!, RoughnessPenalty!, DiscreteErrorFactor!, VerticalStandardError!, Tolerance1!, Tolerance2!, OutStreamFeatures!, OutSinkFeatures!, OutDiagnosticFile!, OutParameterFile!, ProfilePenalty!, OutResidualFeature!, OutStreamCliffErrorFeature!, OutContourErrorFeature! };
+		public override object[] Parameters() => new object[] { InTopoFeatures, OutSurfaceRaster, CellSize!, Extent!, Margin!, MinimumZValue!, MaximumZValue!, Enforce!, DataType!, MaximumIterations!, RoughnessPenalty!, DiscreteErrorFactor!, VerticalStandardError!, Tolerance1!, Tolerance2!, OutStreamFeatures!, OutSinkFeatures!, OutDiagnosticFile!, OutParameterFile!, ProfilePenalty!, OutResidualFeature!, OutStreamCliffErrorFeature!, OutContourErrorFeature! };
 
 		/// <summary>
 		/// <para>Input feature data</para>
@@ -121,7 +122,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? CellSize { get; set; }
 
 		/// <summary>
@@ -147,6 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? Margin { get; set; } = "20";
 
 		/// <summary>
@@ -213,6 +218,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
+		[High(Allow = true, Value = 1)]
 		public object? RoughnessPenalty { get; set; }
 
 		/// <summary>
@@ -223,6 +230,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? DiscreteErrorFactor { get; set; } = "1";
 
 		/// <summary>
@@ -234,6 +242,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? VerticalStandardError { get; set; } = "0";
 
 		/// <summary>
@@ -245,6 +254,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? Tolerance1 { get; set; }
 
 		/// <summary>
@@ -255,6 +265,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? Tolerance2 { get; set; }
 
 		/// <summary>
@@ -294,6 +305,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("TXT", "ASC")]
 		[Category("Optional outputs")]
 		public object? OutDiagnosticFile { get; set; }
 
@@ -304,6 +316,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("TXT", "ASC")]
 		[Category("Optional outputs")]
 		public object? OutParameterFile { get; set; }
 
@@ -315,6 +328,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[High(Allow = true, Value = 0.90000000000000002)]
 		public object? ProfilePenalty { get; set; }
 
 		/// <summary>

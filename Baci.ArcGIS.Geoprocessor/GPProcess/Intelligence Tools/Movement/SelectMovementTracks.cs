@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Select Movement Tracks</para>
+	/// <para>Select Movement Tracks</para>
 	/// <para>Selects movement tracks based on an  area of interest.</para>
 	/// </summary>
 	public class SelectMovementTracks : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Select Movement Tracks</para>
 		/// </summary>
-		public override string DisplayName => "Select Movement Tracks";
+		public override string DisplayName() => "Select Movement Tracks";
 
 		/// <summary>
 		/// <para>Tool Name : SelectMovementTracks</para>
 		/// </summary>
-		public override string ToolName => "SelectMovementTracks";
+		public override string ToolName() => "SelectMovementTracks";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.SelectMovementTracks</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.SelectMovementTracks";
+		public override string ExcuteName() => "intelligence.SelectMovementTracks";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, TrackIdField, AreaOfInterest, TimeRelationship!, SelectionTime!, UpdatedFeatureclass! };
+		public override object[] Parameters() => new object[] { InFeatures, TrackIdField, AreaOfInterest, TimeRelationship!, SelectionTime!, UpdatedFeatureclass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -96,6 +99,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object AreaOfInterest { get; set; }
 
 		/// <summary>

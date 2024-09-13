@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Export AIXM 5.1 Message</para>
+	/// <para>Export AIXM 5.1 Message</para>
 	/// <para>Exports aeronautical data to an AIXM 5.1 message.</para>
 	/// </summary>
 	public class ExportAIXM51Message : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Export AIXM 5.1 Message</para>
 		/// </summary>
-		public override string DisplayName => "Export AIXM 5.1 Message";
+		public override string DisplayName() => "Export AIXM 5.1 Message";
 
 		/// <summary>
 		/// <para>Tool Name : ExportAIXM51Message</para>
 		/// </summary>
-		public override string ToolName => "ExportAIXM51Message";
+		public override string ToolName() => "ExportAIXM51Message";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.ExportAIXM51Message</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.ExportAIXM51Message";
+		public override string ExcuteName() => "aviation.ExportAIXM51Message";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAviationWorkspace, OutMessageFile, ExportType, LastModifiedTime!, InFilterLayers!, FromTime!, ToTime!, ValidateOutput!, OutValidationLog! };
+		public override object[] Parameters() => new object[] { InAviationWorkspace, OutMessageFile, ExportType, LastModifiedTime!, InFilterLayers!, FromTime!, ToTime!, ValidateOutput!, OutValidationLog! };
 
 		/// <summary>
 		/// <para>Input Aviation Workspace</para>
@@ -92,6 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object OutMessageFile { get; set; }
 
 		/// <summary>
@@ -165,6 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("txt")]
 		public object? OutValidationLog { get; set; }
 
 		#region InnerClass

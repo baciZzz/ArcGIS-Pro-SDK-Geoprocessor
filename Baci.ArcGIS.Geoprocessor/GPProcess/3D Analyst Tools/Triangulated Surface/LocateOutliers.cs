@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Locate Outliers</para>
+	/// <para>Locate Outliers</para>
 	/// <para>Identifies anomalous elevation measurements from terrain, TIN, or LAS datasets that exceed a defined range of elevation values or have slope characteristics that are inconsistent with the surrounding surface.</para>
 	/// </summary>
 	public class LocateOutliers : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Locate Outliers</para>
 		/// </summary>
-		public override string DisplayName => "Locate Outliers";
+		public override string DisplayName() => "Locate Outliers";
 
 		/// <summary>
 		/// <para>Tool Name : LocateOutliers</para>
 		/// </summary>
-		public override string ToolName => "LocateOutliers";
+		public override string ToolName() => "LocateOutliers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.LocateOutliers</para>
 		/// </summary>
-		public override string ExcuteName => "3d.LocateOutliers";
+		public override string ExcuteName() => "3d.LocateOutliers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, OutFeatureClass, ApplyHardLimit!, AbsoluteZMin!, AbsoluteZMax!, ApplyComparisonFilter!, ZTolerance!, SlopeTolerance!, ExceedToleranceRatio!, OutlierCap! };
+		public override object[] Parameters() => new object[] { InSurface, OutFeatureClass, ApplyHardLimit!, AbsoluteZMin!, AbsoluteZMax!, ApplyComparisonFilter!, ZTolerance!, SlopeTolerance!, ExceedToleranceRatio!, OutlierCap! };
 
 		/// <summary>
 		/// <para>Input  Surface</para>

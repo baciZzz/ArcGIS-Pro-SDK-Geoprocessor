@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Copy TIN</para>
+	/// <para>Copy TIN</para>
 	/// <para>Creates a copy of a triangulated irregular network (TIN) dataset.</para>
 	/// </summary>
 	public class CopyTin : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Copy TIN</para>
 		/// </summary>
-		public override string DisplayName => "Copy TIN";
+		public override string DisplayName() => "Copy TIN";
 
 		/// <summary>
 		/// <para>Tool Name : CopyTin</para>
 		/// </summary>
-		public override string ToolName => "CopyTin";
+		public override string ToolName() => "CopyTin";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.CopyTin</para>
 		/// </summary>
-		public override string ExcuteName => "3d.CopyTin";
+		public override string ExcuteName() => "3d.CopyTin";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "tinSaveVersion", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "tinSaveVersion", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTin, OutTin, Version! };
+		public override object[] Parameters() => new object[] { InTin, OutTin, Version! };
 
 		/// <summary>
 		/// <para>Input TIN</para>

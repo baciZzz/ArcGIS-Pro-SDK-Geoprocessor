@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Apply Orbit Correction</para>
+	/// <para>Apply Orbit Correction</para>
 	/// <para>Updates the orbital information in the synthetic aperture radar (SAR) dataset using a more accurate orbit state vector file.</para>
 	/// </summary>
 	public class ApplyOrbitCorrection : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Orbit Correction</para>
 		/// </summary>
-		public override string DisplayName => "Apply Orbit Correction";
+		public override string DisplayName() => "Apply Orbit Correction";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyOrbitCorrection</para>
 		/// </summary>
-		public override string ToolName => "ApplyOrbitCorrection";
+		public override string ToolName() => "ApplyOrbitCorrection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.ApplyOrbitCorrection</para>
 		/// </summary>
-		public override string ExcuteName => "ia.ApplyOrbitCorrection";
+		public override string ExcuteName() => "ia.ApplyOrbitCorrection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRadarData, InOrbitFile!, OutRadarData! };
+		public override object[] Parameters() => new object[] { InRadarData, InOrbitFile!, OutRadarData! };
 
 		/// <summary>
 		/// <para>Input Radar Data</para>
@@ -77,6 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("eof")]
 		public object? InOrbitFile { get; set; }
 
 		/// <summary>

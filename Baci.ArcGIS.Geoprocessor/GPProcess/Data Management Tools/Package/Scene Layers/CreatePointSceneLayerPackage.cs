@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Point Scene Layer Content</para>
+	/// <para>Create Point Scene Layer Content</para>
 	/// <para>Creates a point scene layer package (.slpk) or scene layer content (.i3sREST) from a point feature layer.</para>
 	/// </summary>
 	public class CreatePointSceneLayerPackage : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Point Scene Layer Content</para>
 		/// </summary>
-		public override string DisplayName => "Create Point Scene Layer Content";
+		public override string DisplayName() => "Create Point Scene Layer Content";
 
 		/// <summary>
 		/// <para>Tool Name : CreatePointSceneLayerPackage</para>
 		/// </summary>
-		public override string ToolName => "CreatePointSceneLayerPackage";
+		public override string ToolName() => "CreatePointSceneLayerPackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreatePointSceneLayerPackage</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreatePointSceneLayerPackage";
+		public override string ExcuteName() => "management.CreatePointSceneLayerPackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutSlpk!, OutCoorSystem!, TransformMethod!, TargetCloudConnection! };
+		public override object[] Parameters() => new object[] { InDataset, OutSlpk!, OutCoorSystem!, TransformMethod!, TargetCloudConnection! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -78,6 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("slpk")]
 		public object? OutSlpk { get; set; }
 
 		/// <summary>

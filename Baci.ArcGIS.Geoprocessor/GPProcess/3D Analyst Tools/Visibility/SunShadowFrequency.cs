@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Sun Shadow Frequency</para>
+	/// <para>Sun Shadow Frequency</para>
 	/// <para>Calculates the number of times a fixed position on a surface has its direct sight line to the sun obstructed by multipatch features.</para>
 	/// </summary>
 	public class SunShadowFrequency : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Sun Shadow Frequency</para>
 		/// </summary>
-		public override string DisplayName => "Sun Shadow Frequency";
+		public override string DisplayName() => "Sun Shadow Frequency";
 
 		/// <summary>
 		/// <para>Tool Name : SunShadowFrequency</para>
 		/// </summary>
-		public override string ToolName => "SunShadowFrequency";
+		public override string ToolName() => "SunShadowFrequency";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.SunShadowFrequency</para>
 		/// </summary>
-		public override string ExcuteName => "3d.SunShadowFrequency";
+		public override string ExcuteName() => "3d.SunShadowFrequency";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Ground, OutRaster, CellSize!, StartTime!, EndTime!, TimeInterval!, TimeZone!, Dst!, MaxShadowLength! };
+		public override object[] Parameters() => new object[] { InFeatures, Ground, OutRaster, CellSize!, StartTime!, EndTime!, TimeInterval!, TimeZone!, Dst!, MaxShadowLength! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("MultiPatch")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -157,6 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? MaxShadowLength { get; set; }
 
 		/// <summary>

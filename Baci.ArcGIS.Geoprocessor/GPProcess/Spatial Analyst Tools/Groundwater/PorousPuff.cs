@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Porous Puff</para>
+	/// <para>Porous Puff</para>
 	/// <para>Calculates the time-dependent, two-dimensional concentration distribution in mass per volume of a solute introduced instantaneously and at a discrete point into a vertically mixed aquifer.</para>
 	/// </summary>
 	public class PorousPuff : AbstractGPProcess
@@ -54,37 +55,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Porous Puff</para>
 		/// </summary>
-		public override string DisplayName => "Porous Puff";
+		public override string DisplayName() => "Porous Puff";
 
 		/// <summary>
 		/// <para>Tool Name : PorousPuff</para>
 		/// </summary>
-		public override string ToolName => "PorousPuff";
+		public override string ToolName() => "PorousPuff";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.PorousPuff</para>
 		/// </summary>
-		public override string ExcuteName => "sa.PorousPuff";
+		public override string ExcuteName() => "sa.PorousPuff";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTrackFile, InPorosityRaster, InThicknessRaster, OutRaster, Mass, DispersionTime!, LongitudinalDispersivity!, DispersivityRatio!, RetardationFactor!, DecayCoefficient! };
+		public override object[] Parameters() => new object[] { InTrackFile, InPorosityRaster, InThicknessRaster, OutRaster, Mass, DispersionTime!, LongitudinalDispersivity!, DispersivityRatio!, RetardationFactor!, DecayCoefficient! };
 
 		/// <summary>
 		/// <para>Input particle track file</para>
@@ -95,6 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("TXT", "ASC")]
 		public object InTrackFile { get; set; }
 
 		/// <summary>
@@ -103,7 +105,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InPorosityRaster { get; set; }
 
 		/// <summary>
@@ -113,7 +118,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InThicknessRaster { get; set; }
 
 		/// <summary>
@@ -182,6 +190,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? DecayCoefficient { get; set; } = "0";
 
 		/// <summary>

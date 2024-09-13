@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Create Buffers</para>
+	/// <para>Create Buffers</para>
 	/// <para>Creates buffers around input features to a specified distance.</para>
 	/// </summary>
 	public class CreateBuffers : AbstractGPProcess
@@ -52,37 +53,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Buffers</para>
 		/// </summary>
-		public override string DisplayName => "Create Buffers";
+		public override string DisplayName() => "Create Buffers";
 
 		/// <summary>
 		/// <para>Tool Name : CreateBuffers</para>
 		/// </summary>
-		public override string ToolName => "CreateBuffers";
+		public override string ToolName() => "CreateBuffers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.CreateBuffers</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.CreateBuffers";
+		public override string ExcuteName() => "geoanalytics.CreateBuffers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputName, Method, BufferType, BufferField!, BufferDistance!, BufferExpression!, DissolveOption!, DissolveFields!, SummaryFields!, Multipart!, Output!, DataStore! };
+		public override object[] Parameters() => new object[] { InputLayer, OutputName, Method, BufferType, BufferField!, BufferDistance!, BufferExpression!, DissolveOption!, DissolveFields!, SummaryFields!, Multipart!, Output!, DataStore! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -91,6 +92,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple")]
+		[PortalType("DataStoreCatalogLayer")]
 		public object InputLayer { get; set; }
 
 		/// <summary>
@@ -133,6 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
 		public object? BufferField { get; set; }
 
 		/// <summary>
@@ -174,6 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date")]
 		public object? DissolveFields { get; set; }
 
 		/// <summary>

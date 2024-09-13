@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Update Interior Orientation</para>
+	/// <para>Update Interior Orientation</para>
 	/// <para>Refines the interior orientation for each image in the mosaic dataset by constructing an affine transformation from a fiducial table.</para>
 	/// </summary>
 	public class UpdateInteriorOrientation : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Update Interior Orientation</para>
 		/// </summary>
-		public override string DisplayName => "Update Interior Orientation";
+		public override string DisplayName() => "Update Interior Orientation";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateInteriorOrientation</para>
 		/// </summary>
-		public override string ToolName => "UpdateInteriorOrientation";
+		public override string ToolName() => "UpdateInteriorOrientation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.UpdateInteriorOrientation</para>
 		/// </summary>
-		public override string ExcuteName => "management.UpdateInteriorOrientation";
+		public override string ExcuteName() => "management.UpdateInteriorOrientation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause!, FiducialTable!, FilmCoordinateSystem!, UpdateFootprints!, OutMosaicDataset! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, WhereClause!, FiducialTable!, FilmCoordinateSystem!, UpdateFootprints!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>

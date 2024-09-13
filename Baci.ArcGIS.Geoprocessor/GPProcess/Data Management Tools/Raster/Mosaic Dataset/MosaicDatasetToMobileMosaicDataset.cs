@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Mosaic Dataset To Mobile Mosaic Dataset</para>
+	/// <para>Mosaic Dataset To Mobile Mosaic Dataset</para>
 	/// <para>Converts a mosaic dataset into a mobile mosaic dataset compatible with ArcGIS Runtime SDK. A mobile mosaic dataset resides in a mobile geodatabase.</para>
 	/// </summary>
 	public class MosaicDatasetToMobileMosaicDataset : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Mosaic Dataset To Mobile Mosaic Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Mosaic Dataset To Mobile Mosaic Dataset";
+		public override string DisplayName() => "Mosaic Dataset To Mobile Mosaic Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : MosaicDatasetToMobileMosaicDataset</para>
 		/// </summary>
-		public override string ToolName => "MosaicDatasetToMobileMosaicDataset";
+		public override string ToolName() => "MosaicDatasetToMobileMosaicDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MosaicDatasetToMobileMosaicDataset</para>
 		/// </summary>
-		public override string ExcuteName => "management.MosaicDatasetToMobileMosaicDataset";
+		public override string ExcuteName() => "management.MosaicDatasetToMobileMosaicDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, OutMobileGdb, MosaicDatasetName, WhereClause!, SelectionFeature!, OutDataFolder!, ConvertRasters!, OutNamePrefix!, Format!, CompressionMethod!, CompressionQuality!, OutMosaicDataset! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, OutMobileGdb, MosaicDatasetName, WhereClause!, SelectionFeature!, OutDataFolder!, ConvertRasters!, OutNamePrefix!, Format!, CompressionMethod!, CompressionQuality!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

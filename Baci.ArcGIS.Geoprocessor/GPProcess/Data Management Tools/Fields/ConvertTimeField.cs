@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Convert Time Field</para>
+	/// <para>Convert Time Field</para>
 	/// <para>Transfers date and time values stored in a field to another field.  The tool can be used to convert between different field types (text, numeric, or date fields) or to convert the values to a different format such as dd/MM/yy HH:mm:ss to yyyy-MM-dd.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Convert Time Field</para>
 		/// </summary>
-		public override string DisplayName => "Convert Time Field";
+		public override string DisplayName() => "Convert Time Field";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertTimeField</para>
 		/// </summary>
-		public override string ToolName => "ConvertTimeField";
+		public override string ToolName() => "ConvertTimeField";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ConvertTimeField</para>
 		/// </summary>
-		public override string ExcuteName => "management.ConvertTimeField";
+		public override string ExcuteName() => "management.ConvertTimeField";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, InputTimeField, InputTimeFormat!, OutputTimeField, OutputTimeType!, OutputTimeFormat!, OutTable! };
+		public override object[] Parameters() => new object[] { InTable, InputTimeField, InputTimeFormat!, OutputTimeField, OutputTimeType!, OutputTimeFormat!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -89,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date")]
 		public object InputTimeField { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>TIN Domain</para>
+	/// <para>TIN Domain</para>
 	/// <para>Creates a line or polygon feature class representing the interpolation zone of a triangulated irregular network (TIN) dataset.</para>
 	/// </summary>
 	public class TinDomain : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : TIN Domain</para>
 		/// </summary>
-		public override string DisplayName => "TIN Domain";
+		public override string DisplayName() => "TIN Domain";
 
 		/// <summary>
 		/// <para>Tool Name : TinDomain</para>
 		/// </summary>
-		public override string ToolName => "TinDomain";
+		public override string ToolName() => "TinDomain";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.TinDomain</para>
 		/// </summary>
-		public override string ExcuteName => "3d.TinDomain";
+		public override string ExcuteName() => "3d.TinDomain";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTin, OutFeatureClass, OutGeometryType };
+		public override object[] Parameters() => new object[] { InTin, OutFeatureClass, OutGeometryType };
 
 		/// <summary>
 		/// <para>Input TIN</para>

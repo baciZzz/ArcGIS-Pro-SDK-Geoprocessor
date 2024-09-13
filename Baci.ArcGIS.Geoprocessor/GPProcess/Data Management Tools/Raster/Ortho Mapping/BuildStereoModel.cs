@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Stereo Model</para>
+	/// <para>Build Stereo Model</para>
 	/// <para>Builds a stereo model of a mosaic dataset based on a user-provided stereo pair.</para>
 	/// </summary>
 	public class BuildStereoModel : AbstractGPProcess
@@ -31,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Build Stereo Model</para>
 		/// </summary>
-		public override string DisplayName => "Build Stereo Model";
+		public override string DisplayName() => "Build Stereo Model";
 
 		/// <summary>
 		/// <para>Tool Name : BuildStereoModel</para>
 		/// </summary>
-		public override string ToolName => "BuildStereoModel";
+		public override string ToolName() => "BuildStereoModel";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.BuildStereoModel</para>
 		/// </summary>
-		public override string ExcuteName => "management.BuildStereoModel";
+		public override string ExcuteName() => "management.BuildStereoModel";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, MinimumAngle!, MaximumAngle!, MinimumOverlap!, MaximumDiffOP!, MaximumDiffGSD!, GroupBy!, OutMosaicDataset!, SameFlight! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, MinimumAngle!, MaximumAngle!, MinimumOverlap!, MaximumDiffOP!, MaximumDiffGSD!, GroupBy!, OutMosaicDataset!, SameFlight! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
@@ -119,6 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Date", "OID", "Text")]
 		public object? GroupBy { get; set; }
 
 		/// <summary>

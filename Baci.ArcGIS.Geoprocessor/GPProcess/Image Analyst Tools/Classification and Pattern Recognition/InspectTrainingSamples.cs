@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Inspect Training Samples</para>
+	/// <para>Inspect Training Samples</para>
 	/// <para>Estimates the accuracy of individual training samples. The cross validation accuracy is computed using the previously generated classification training result in an .ecd file and the training samples. Outputs include a raster dataset containing the misclassified class values and a training sample dataset with the accuracy score for each training sample.</para>
 	/// </summary>
 	public class InspectTrainingSamples : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Inspect Training Samples</para>
 		/// </summary>
-		public override string DisplayName => "Inspect Training Samples";
+		public override string DisplayName() => "Inspect Training Samples";
 
 		/// <summary>
 		/// <para>Tool Name : InspectTrainingSamples</para>
 		/// </summary>
-		public override string ToolName => "InspectTrainingSamples";
+		public override string ToolName() => "InspectTrainingSamples";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.InspectTrainingSamples</para>
 		/// </summary>
-		public override string ExcuteName => "ia.InspectTrainingSamples";
+		public override string ExcuteName() => "ia.InspectTrainingSamples";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InTrainingFeatures, InClassifierDefinition, OutTrainingFeatureClass, OutMisclassifiedRaster, InAdditionalRaster! };
+		public override object[] Parameters() => new object[] { InRaster, InTrainingFeatures, InClassifierDefinition, OutTrainingFeatureClass, OutMisclassifiedRaster, InAdditionalRaster! };
 
 		/// <summary>
 		/// <para>Input Raster</para>

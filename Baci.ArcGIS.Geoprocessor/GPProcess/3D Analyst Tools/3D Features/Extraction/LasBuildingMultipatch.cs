@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>LAS Building Multipatch</para>
+	/// <para>LAS Building Multipatch</para>
 	/// <para>Creates building models derived from rooftop points captured in lidar data.</para>
 	/// </summary>
 	public class LasBuildingMultipatch : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : LAS Building Multipatch</para>
 		/// </summary>
-		public override string DisplayName => "LAS Building Multipatch";
+		public override string DisplayName() => "LAS Building Multipatch";
 
 		/// <summary>
 		/// <para>Tool Name : LasBuildingMultipatch</para>
 		/// </summary>
-		public override string ToolName => "LasBuildingMultipatch";
+		public override string ToolName() => "LasBuildingMultipatch";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.LasBuildingMultipatch</para>
 		/// </summary>
-		public override string ExcuteName => "3d.LasBuildingMultipatch";
+		public override string ExcuteName() => "3d.LasBuildingMultipatch";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, InFeatures, Ground, OutFeatureClass, PointSelection!, Simplification!, SamplingResolution! };
+		public override object[] Parameters() => new object[] { InLasDataset, InFeatures, Ground, OutFeatureClass, PointSelection!, Simplification!, SamplingResolution! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -92,6 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

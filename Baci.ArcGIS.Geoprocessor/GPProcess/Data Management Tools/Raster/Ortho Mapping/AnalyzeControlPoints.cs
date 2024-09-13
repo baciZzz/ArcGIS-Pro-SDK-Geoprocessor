@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Analyze Control Points</para>
+	/// <para>Analyze Control Points</para>
 	/// <para>Analyzes the control point</para>
 	/// <para>coverage and identifies the areas that need</para>
 	/// <para>additional control points to improve the block adjust result.</para>
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Analyze Control Points</para>
 		/// </summary>
-		public override string DisplayName => "Analyze Control Points";
+		public override string DisplayName() => "Analyze Control Points";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeControlPoints</para>
 		/// </summary>
-		public override string ToolName => "AnalyzeControlPoints";
+		public override string ToolName() => "AnalyzeControlPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AnalyzeControlPoints</para>
 		/// </summary>
-		public override string ExcuteName => "management.AnalyzeControlPoints";
+		public override string ExcuteName() => "management.AnalyzeControlPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, InControlPoints, OutCoverageTable, OutOverlapTable!, InMaskDataset!, MinimumArea!, MaximumLevel! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, InControlPoints, OutCoverageTable, OutOverlapTable!, InMaskDataset!, MinimumArea!, MaximumLevel! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>

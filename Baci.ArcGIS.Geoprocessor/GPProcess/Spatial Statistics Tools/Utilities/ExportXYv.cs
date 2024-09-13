@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Export Feature Attribute To ASCII</para>
+	/// <para>Export Feature Attribute To ASCII</para>
 	/// <para>Exports feature class coordinates and attribute values to a space-, comma-, tab-, or semicolon-delimited ASCII text file.</para>
 	/// </summary>
 	public class ExportXYv : AbstractGPProcess
@@ -58,37 +59,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Feature Attribute To ASCII</para>
 		/// </summary>
-		public override string DisplayName => "Export Feature Attribute To ASCII";
+		public override string DisplayName() => "Export Feature Attribute To ASCII";
 
 		/// <summary>
 		/// <para>Tool Name : ExportXYv</para>
 		/// </summary>
-		public override string ToolName => "ExportXYv";
+		public override string ToolName() => "ExportXYv";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.ExportXYv</para>
 		/// </summary>
-		public override string ExcuteName => "stats.ExportXYv";
+		public override string ExcuteName() => "stats.ExportXYv";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, ValueField, Delimiter, OutputASCIIFile, AddFieldNamesToOutput };
+		public override object[] Parameters() => new object[] { InputFeatureClass, ValueField, Delimiter, OutputASCIIFile, AddFieldNamesToOutput };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -105,6 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "OID", "GlobalID")]
 		public object ValueField { get; set; }
 
 		/// <summary>
@@ -128,6 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("txt", "tab", "tsv", "csv")]
 		public object OutputASCIIFile { get; set; }
 
 		/// <summary>

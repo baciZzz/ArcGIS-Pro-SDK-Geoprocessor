@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Inside Boundary</para>
+	/// <para>Inside Boundary</para>
 	/// <para>Find like entities within specified boundary feature. </para>
 	/// </summary>
 	[Obsolete()]
@@ -34,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Inside Boundary</para>
 		/// </summary>
-		public override string DisplayName => "Inside Boundary";
+		public override string DisplayName() => "Inside Boundary";
 
 		/// <summary>
 		/// <para>Tool Name : InsideBoundary</para>
 		/// </summary>
-		public override string ToolName => "InsideBoundary";
+		public override string ToolName() => "InsideBoundary";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.InsideBoundary</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.InsideBoundary";
+		public override string ExcuteName() => "intelligence.InsideBoundary";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputPointFeatures, InputAreaFeatures, InputSearchExpression!, InputAreaExpression!, OutputIdList! };
+		public override object[] Parameters() => new object[] { InputPointFeatures, InputAreaFeatures, InputSearchExpression!, InputAreaExpression!, OutputIdList! };
 
 		/// <summary>
 		/// <para>Input Points</para>
@@ -72,6 +73,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InputPointFeatures { get; set; }
 
 		/// <summary>
@@ -80,6 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object InputAreaFeatures { get; set; }
 
 		/// <summary>

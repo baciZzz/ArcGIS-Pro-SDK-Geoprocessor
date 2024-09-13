@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Single Output Map Algebra</para>
+	/// <para>Single Output Map Algebra</para>
 	/// <para>Execute a Grid's map algebra statement to produce a raster.</para>
 	/// </summary>
 	[Obsolete()]
@@ -34,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Single Output Map Algebra</para>
 		/// </summary>
-		public override string DisplayName => "Single Output Map Algebra";
+		public override string DisplayName() => "Single Output Map Algebra";
 
 		/// <summary>
 		/// <para>Tool Name : SingleOutputMapAlgebra</para>
 		/// </summary>
-		public override string ToolName => "SingleOutputMapAlgebra";
+		public override string ToolName() => "SingleOutputMapAlgebra";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.SingleOutputMapAlgebra</para>
 		/// </summary>
-		public override string ExcuteName => "sa.SingleOutputMapAlgebra";
+		public override string ExcuteName() => "sa.SingleOutputMapAlgebra";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ExpressionString, OutRaster, InData! };
+		public override object[] Parameters() => new object[] { ExpressionString, OutRaster, InData! };
 
 		/// <summary>
 		/// <para>expression_string</para>
@@ -85,7 +86,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "GPRasterFormulated", "DEFeatureClass", "GPFeatureLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? InData { get; set; }
 
 	}

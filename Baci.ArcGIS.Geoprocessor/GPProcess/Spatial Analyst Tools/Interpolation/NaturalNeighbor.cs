@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Natural Neighbor</para>
+	/// <para>Natural Neighbor</para>
 	/// <para>Interpolates a raster surface from points using a natural neighbor technique.</para>
 	/// </summary>
 	public class NaturalNeighbor : AbstractGPProcess
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Natural Neighbor</para>
 		/// </summary>
-		public override string DisplayName => "Natural Neighbor";
+		public override string DisplayName() => "Natural Neighbor";
 
 		/// <summary>
 		/// <para>Tool Name : NaturalNeighbor</para>
 		/// </summary>
-		public override string ToolName => "NaturalNeighbor";
+		public override string ToolName() => "NaturalNeighbor";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.NaturalNeighbor</para>
 		/// </summary>
-		public override string ExcuteName => "sa.NaturalNeighbor";
+		public override string ExcuteName() => "sa.NaturalNeighbor";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, ZField, OutRaster, CellSize! };
+		public override object[] Parameters() => new object[] { InPointFeatures, ZField, OutRaster, CellSize! };
 
 		/// <summary>
 		/// <para>Input point features</para>
@@ -80,7 +81,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DEFeatureClass", "GPFeatureLayer", "GPTableView", "DETextFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Geometry")]
+		[GeometryType("Point", "Multipoint")]
 		public object InPointFeatures { get; set; }
 
 		/// <summary>
@@ -91,6 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Geometry")]
 		public object ZField { get; set; }
 
 		/// <summary>
@@ -109,7 +114,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? CellSize { get; set; }
 
 		/// <summary>

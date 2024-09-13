@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Enable Derived Measure Fields</para>
+	/// <para>Enable Derived Measure Fields</para>
 	/// <para>Enables fields to store the derived route ID, derived route name, and derived measure fields for the specified LRS event feature class.</para>
 	/// </summary>
 	public class EnableDerivedMeasureFields : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Enable Derived Measure Fields</para>
 		/// </summary>
-		public override string DisplayName => "Enable Derived Measure Fields";
+		public override string DisplayName() => "Enable Derived Measure Fields";
 
 		/// <summary>
 		/// <para>Tool Name : EnableDerivedMeasureFields</para>
 		/// </summary>
-		public override string ToolName => "EnableDerivedMeasureFields";
+		public override string ToolName() => "EnableDerivedMeasureFields";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.EnableDerivedMeasureFields</para>
 		/// </summary>
-		public override string ExcuteName => "locref.EnableDerivedMeasureFields";
+		public override string ExcuteName() => "locref.EnableDerivedMeasureFields";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, DerivedRouteIdField!, DerivedRouteNameField!, DerivedFromMeasureField!, DerivedToMeasureField!, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatureClass, DerivedRouteIdField!, DerivedRouteNameField!, DerivedFromMeasureField!, DerivedToMeasureField!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>LRS Event Feature Class</para>
@@ -69,6 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polyline")]
 		public object InFeatureClass { get; set; }
 
 		/// <summary>
@@ -78,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "GUID")]
 		public object? DerivedRouteIdField { get; set; }
 
 		/// <summary>
@@ -87,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object? DerivedRouteNameField { get; set; }
 
 		/// <summary>
@@ -96,6 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double")]
 		public object? DerivedFromMeasureField { get; set; }
 
 		/// <summary>
@@ -105,6 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double")]
 		public object? DerivedToMeasureField { get; set; }
 
 		/// <summary>

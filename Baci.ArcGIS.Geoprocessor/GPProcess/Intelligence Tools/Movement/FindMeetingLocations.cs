@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Find Meeting Locations</para>
+	/// <para>Find Meeting Locations</para>
 	/// <para>Identifies  locations where multiple unique movement tracks have dwelled for a defined time period.</para>
 	/// </summary>
 	public class FindMeetingLocations : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Find Meeting Locations</para>
 		/// </summary>
-		public override string DisplayName => "Find Meeting Locations";
+		public override string DisplayName() => "Find Meeting Locations";
 
 		/// <summary>
 		/// <para>Tool Name : FindMeetingLocations</para>
 		/// </summary>
-		public override string ToolName => "FindMeetingLocations";
+		public override string ToolName() => "FindMeetingLocations";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.FindMeetingLocations</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.FindMeetingLocations";
+		public override string ExcuteName() => "intelligence.FindMeetingLocations";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutAreaFeatures, OutPointFeatures, UniqueNameField, SearchDistance!, MinimumLoiterTime!, TemporalRelationship!, MinMeetingDuration!, MaxMeetingDuration! };
+		public override object[] Parameters() => new object[] { InFeatures, OutAreaFeatures, OutPointFeatures, UniqueNameField, SearchDistance!, MinimumLoiterTime!, TemporalRelationship!, MinMeetingDuration!, MaxMeetingDuration! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -84,6 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -109,6 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		public object UniqueNameField { get; set; }
 
 		/// <summary>

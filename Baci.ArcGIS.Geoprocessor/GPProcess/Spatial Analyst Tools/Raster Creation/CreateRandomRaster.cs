@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Create Random Raster</para>
+	/// <para>Create Random Raster</para>
 	/// <para>Creates a raster of random floating-point values between 0.0 and 1.0 within the extent and cell size of the analysis window.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.DataManagementTools.CreateRandomRaster"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Random Raster</para>
 		/// </summary>
-		public override string DisplayName => "Create Random Raster";
+		public override string DisplayName() => "Create Random Raster";
 
 		/// <summary>
 		/// <para>Tool Name : CreateRandomRaster</para>
 		/// </summary>
-		public override string ToolName => "CreateRandomRaster";
+		public override string ToolName() => "CreateRandomRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.CreateRandomRaster</para>
 		/// </summary>
-		public override string ExcuteName => "sa.CreateRandomRaster";
+		public override string ExcuteName() => "sa.CreateRandomRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutRaster, SeedValue!, CellSize!, Extent! };
+		public override object[] Parameters() => new object[] { OutRaster, SeedValue!, CellSize!, Extent! };
 
 		/// <summary>
 		/// <para>Output raster</para>
@@ -81,6 +82,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = -2147483647)]
+		[High(Allow = true, Value = 2147483648)]
 		public object? SeedValue { get; set; }
 
 		/// <summary>
@@ -90,7 +93,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? CellSize { get; set; }
 
 		/// <summary>

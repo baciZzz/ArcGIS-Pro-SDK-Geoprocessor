@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Smooth Bathymetric TIN</para>
+	/// <para>Smooth Bathymetric TIN</para>
 	/// <para>Smooths a triangulated irregular network (TIN) dataset in a manner that strictly preserves a shallow bias.</para>
 	/// </summary>
 	public class SmoothBathymetricTIN : AbstractGPProcess
@@ -48,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Display Name : Smooth Bathymetric TIN</para>
 		/// </summary>
-		public override string DisplayName => "Smooth Bathymetric TIN";
+		public override string DisplayName() => "Smooth Bathymetric TIN";
 
 		/// <summary>
 		/// <para>Tool Name : SmoothBathymetricTIN</para>
 		/// </summary>
-		public override string ToolName => "SmoothBathymetricTIN";
+		public override string ToolName() => "SmoothBathymetricTIN";
 
 		/// <summary>
 		/// <para>Tool Excute Name : maritime.SmoothBathymetricTIN</para>
 		/// </summary>
-		public override string ExcuteName => "maritime.SmoothBathymetricTIN";
+		public override string ExcuteName() => "maritime.SmoothBathymetricTIN";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Maritime Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Maritime Tools";
+		public override string ToolboxDisplayName() => "Maritime Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : maritime</para>
 		/// </summary>
-		public override string ToolboxAlise => "maritime";
+		public override string ToolboxAlise() => "maritime";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTin, OutTin, DepthDirection, SmoothingIterations };
+		public override object[] Parameters() => new object[] { InTin, OutTin, DepthDirection, SmoothingIterations };
 
 		/// <summary>
 		/// <para>Input TIN</para>

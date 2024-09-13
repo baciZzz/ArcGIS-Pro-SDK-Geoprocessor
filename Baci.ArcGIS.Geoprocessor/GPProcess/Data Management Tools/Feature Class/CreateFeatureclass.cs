@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Feature Class</para>
+	/// <para>Create Feature Class</para>
 	/// <para>Creates an empty feature class in a geodatabase or a shapefile in a folder.</para>
 	/// </summary>
 	public class CreateFeatureclass : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Feature Class</para>
 		/// </summary>
-		public override string DisplayName => "Create Feature Class";
+		public override string DisplayName() => "Create Feature Class";
 
 		/// <summary>
 		/// <para>Tool Name : CreateFeatureclass</para>
 		/// </summary>
-		public override string ToolName => "CreateFeatureclass";
+		public override string ToolName() => "CreateFeatureclass";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateFeatureclass</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateFeatureclass";
+		public override string ExcuteName() => "management.CreateFeatureclass";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "configKeyword", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "configKeyword", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutPath, OutName, GeometryType!, Template!, HasM!, HasZ!, SpatialReference!, ConfigKeyword!, SpatialGrid1!, SpatialGrid2!, SpatialGrid3!, OutFeatureClass!, OutAlias! };
+		public override object[] Parameters() => new object[] { OutPath, OutName, GeometryType!, Template!, HasM!, HasZ!, SpatialReference!, ConfigKeyword!, SpatialGrid1!, SpatialGrid2!, SpatialGrid3!, OutFeatureClass!, OutAlias! };
 
 		/// <summary>
 		/// <para>Feature Class Location</para>

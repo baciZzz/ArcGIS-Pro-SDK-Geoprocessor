@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Contour with Barriers</para>
+	/// <para>Contour with Barriers</para>
 	/// <para>Creates contours from a raster surface. The inclusion of barrier features allows you to independently generate contours on either side of a barrier.</para>
 	/// </summary>
 	public class ContourWithBarriers : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Contour with Barriers</para>
 		/// </summary>
-		public override string DisplayName => "Contour with Barriers";
+		public override string DisplayName() => "Contour with Barriers";
 
 		/// <summary>
 		/// <para>Tool Name : ContourWithBarriers</para>
 		/// </summary>
-		public override string ToolName => "ContourWithBarriers";
+		public override string ToolName() => "ContourWithBarriers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.ContourWithBarriers</para>
 		/// </summary>
-		public override string ExcuteName => "3d.ContourWithBarriers";
+		public override string ExcuteName() => "3d.ContourWithBarriers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainSpatialIndex", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutContourFeatureClass, InBarrierFeatures!, InContourType!, InContourValuesFile!, ExplicitOnly!, InBaseContour!, InContourInterval!, InIndexedContourInterval!, InContourList!, InZFactor! };
+		public override object[] Parameters() => new object[] { InRaster, OutContourFeatureClass, InBarrierFeatures!, InContourType!, InContourValuesFile!, ExplicitOnly!, InBaseContour!, InContourInterval!, InIndexedContourInterval!, InContourList!, InZFactor! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -82,6 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon")]
 		public object OutContourFeatureClass { get; set; }
 
 		/// <summary>
@@ -92,6 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon")]
 		public object? InBarrierFeatures { get; set; }
 
 		/// <summary>
@@ -153,6 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? InIndexedContourInterval { get; set; } = "0";
 
 		/// <summary>

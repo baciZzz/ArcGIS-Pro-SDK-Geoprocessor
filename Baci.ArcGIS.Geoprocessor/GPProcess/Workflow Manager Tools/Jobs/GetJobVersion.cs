@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Get Job Version</para>
+	/// <para>Get Job Version</para>
 	/// <para>Gets the job version as an enterprise geodatabase connection file to process data in a version.</para>
 	/// </summary>
 	public class GetJobVersion : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Display Name : Get Job Version</para>
 		/// </summary>
-		public override string DisplayName => "Get Job Version";
+		public override string DisplayName() => "Get Job Version";
 
 		/// <summary>
 		/// <para>Tool Name : GetJobVersion</para>
 		/// </summary>
-		public override string ToolName => "GetJobVersion";
+		public override string ToolName() => "GetJobVersion";
 
 		/// <summary>
 		/// <para>Tool Excute Name : wmx.GetJobVersion</para>
 		/// </summary>
-		public override string ExcuteName => "wmx.GetJobVersion";
+		public override string ExcuteName() => "wmx.GetJobVersion";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Workflow Manager Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Workflow Manager Tools";
+		public override string ToolboxDisplayName() => "Workflow Manager Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : wmx</para>
 		/// </summary>
-		public override string ToolboxAlise => "wmx";
+		public override string ToolboxAlise() => "wmx";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputJobid, InputDatabasepath!, OutputJobversion!, OutputJobversionexists! };
+		public override object[] Parameters() => new object[] { InputJobid, InputDatabasepath!, OutputJobversion!, OutputJobversionexists! };
 
 		/// <summary>
 		/// <para>Input Job ID</para>
@@ -77,6 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("jtc")]
 		public object? InputDatabasepath { get; set; }
 
 		/// <summary>

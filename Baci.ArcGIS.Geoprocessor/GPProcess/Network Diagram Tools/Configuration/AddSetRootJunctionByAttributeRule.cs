@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Set Root Junction By Attribute Rule</para>
+	/// <para>Add Set Root Junction By Attribute Rule</para>
 	/// <para>Adds a diagram rule to automatically flag diagram junctions as root junctions during diagram building based on an existing template. This rule specifies root junctions based on a particular junction source class or object table and filters using their attributes.</para>
 	/// </summary>
 	public class AddSetRootJunctionByAttributeRule : AbstractGPProcess
@@ -48,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Set Root Junction By Attribute Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Set Root Junction By Attribute Rule";
+		public override string DisplayName() => "Add Set Root Junction By Attribute Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddSetRootJunctionByAttributeRule</para>
 		/// </summary>
-		public override string ToolName => "AddSetRootJunctionByAttributeRule";
+		public override string ToolName() => "AddSetRootJunctionByAttributeRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddSetRootJunctionByAttributeRule</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddSetRootJunctionByAttributeRule";
+		public override string ExcuteName() => "nd.AddSetRootJunctionByAttributeRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, JunctionSource, WhereClause!, Description!, OutUtilityNetwork!, OutTemplateName! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, JunctionSource, WhereClause!, Description!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>

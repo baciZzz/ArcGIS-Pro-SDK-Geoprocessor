@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>FAA 13A Surfaces</para>
+	/// <para>FAA 13A Surfaces</para>
 	/// <para>Creates obstruction identification surfaces (OIS) based on the FAA Advisory Circular 150/5300-13A specification. These primary and approach surfaces are designed to determine which objects are vertical obstructions and are used to support planning and design activities. The type, function, and dimension of a surface differ by its runway classification. This tool creates surfaces as a polygon or multipatch features.</para>
 	/// </summary>
 	public class FAA13ASurfaces : AbstractGPProcess
@@ -47,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : FAA 13A Surfaces</para>
 		/// </summary>
-		public override string DisplayName => "FAA 13A Surfaces";
+		public override string DisplayName() => "FAA 13A Surfaces";
 
 		/// <summary>
 		/// <para>Tool Name : FAA13ASurfaces</para>
 		/// </summary>
-		public override string ToolName => "FAA13ASurfaces";
+		public override string ToolName() => "FAA13ASurfaces";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.FAA13ASurfaces</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.FAA13ASurfaces";
+		public override string ExcuteName() => "aviation.FAA13ASurfaces";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, TargetOisFeatures, HighRunwayEndType, LowRunwayEndType!, GenerateDepartureSurfaces!, GenerateClearwaySurfaces!, ThresholdPointFeatureClass!, CustomJsonFile!, DerivedOutfeatureclass! };
+		public override object[] Parameters() => new object[] { InFeatures, TargetOisFeatures, HighRunwayEndType, LowRunwayEndType!, GenerateDepartureSurfaces!, GenerateClearwaySurfaces!, ThresholdPointFeatureClass!, CustomJsonFile!, DerivedOutfeatureclass! };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>
@@ -86,6 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -163,6 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object? ThresholdPointFeatureClass { get; set; }
 
 		/// <summary>
@@ -172,6 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("json")]
 		public object? CustomJsonFile { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Upgrade Attachments</para>
+	/// <para>Upgrade Attachments</para>
 	/// <para>Upgrades the attachments functionality on the data.</para>
 	/// </summary>
 	public class UpgradeAttachments : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Upgrade Attachments</para>
 		/// </summary>
-		public override string DisplayName => "Upgrade Attachments";
+		public override string DisplayName() => "Upgrade Attachments";
 
 		/// <summary>
 		/// <para>Tool Name : UpgradeAttachments</para>
 		/// </summary>
-		public override string ToolName => "UpgradeAttachments";
+		public override string ToolName() => "UpgradeAttachments";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.UpgradeAttachments</para>
 		/// </summary>
-		public override string ExcuteName => "management.UpgradeAttachments";
+		public override string ExcuteName() => "management.UpgradeAttachments";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutDataset! };
+		public override object[] Parameters() => new object[] { InDataset, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

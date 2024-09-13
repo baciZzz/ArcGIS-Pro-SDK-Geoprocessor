@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Export Rules</para>
+	/// <para>Export Rules</para>
 	/// <para>Exports connectivity, structural attachment, and containment rules from a utility network into a comma-separated values file.</para>
 	/// </summary>
 	public class ExportRules : AbstractGPProcess
@@ -47,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Rules</para>
 		/// </summary>
-		public override string DisplayName => "Export Rules";
+		public override string DisplayName() => "Export Rules";
 
 		/// <summary>
 		/// <para>Tool Name : ExportRules</para>
 		/// </summary>
-		public override string ToolName => "ExportRules";
+		public override string ToolName() => "ExportRules";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.ExportRules</para>
 		/// </summary>
-		public override string ExcuteName => "un.ExportRules";
+		public override string ExcuteName() => "un.ExportRules";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, RuleType, OutCsvFile };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, RuleType, OutCsvFile };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
@@ -110,6 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("CSV")]
 		public object OutCsvFile { get; set; }
 
 		#region InnerClass

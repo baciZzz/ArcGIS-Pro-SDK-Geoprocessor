@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Manage Multidimensional Raster</para>
+	/// <para>Manage Multidimensional Raster</para>
 	/// <para>Edits a multidimensional raster by adding or deleting variables or dimensions.</para>
 	/// </summary>
 	public class ManageMultidimensionalRaster : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Display Name : Manage Multidimensional Raster</para>
 		/// </summary>
-		public override string DisplayName => "Manage Multidimensional Raster";
+		public override string DisplayName() => "Manage Multidimensional Raster";
 
 		/// <summary>
 		/// <para>Tool Name : ManageMultidimensionalRaster</para>
 		/// </summary>
-		public override string ToolName => "ManageMultidimensionalRaster";
+		public override string ToolName() => "ManageMultidimensionalRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : md.ManageMultidimensionalRaster</para>
 		/// </summary>
-		public override string ExcuteName => "md.ManageMultidimensionalRaster";
+		public override string ExcuteName() => "md.ManageMultidimensionalRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Multidimension Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Multidimension Tools";
+		public override string ToolboxDisplayName() => "Multidimension Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : md</para>
 		/// </summary>
-		public override string ToolboxAlise => "md";
+		public override string ToolboxAlise() => "md";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetMultidimensionalRaster, ManageMode!, Variables!, InMultidimensionalRasters!, DimensionName!, DimensionValue!, DimensionDescription!, DimensionUnit!, UpdateStatistics!, UpdateTranspose!, UpdatedTargetMultidimensionalRaster! };
+		public override object[] Parameters() => new object[] { TargetMultidimensionalRaster, ManageMode!, Variables!, InMultidimensionalRasters!, DimensionName!, DimensionValue!, DimensionDescription!, DimensionUnit!, UpdateStatistics!, UpdateTranspose!, UpdatedTargetMultidimensionalRaster! };
 
 		/// <summary>
 		/// <para>Target Multidimensional Raster</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>GA Layer 3D To NetCDF</para>
+	/// <para>GA Layer 3D To NetCDF</para>
 	/// <para>Exports one or more 3D geostatistical layers created using the Empirical Bayesian Kriging 3D tool to netCDF format (*.nc file). The primary purpose of this tool is to prepare the 3D geostatistical layers for visualization as a voxel layer in a local scene.</para>
 	/// </summary>
 	public class GALayer3DToNetCDF : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : GA Layer 3D To NetCDF</para>
 		/// </summary>
-		public override string DisplayName => "GA Layer 3D To NetCDF";
+		public override string DisplayName() => "GA Layer 3D To NetCDF";
 
 		/// <summary>
 		/// <para>Tool Name : GALayer3DToNetCDF</para>
 		/// </summary>
-		public override string ToolName => "GALayer3DToNetCDF";
+		public override string ToolName() => "GALayer3DToNetCDF";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GALayer3DToNetCDF</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GALayer3DToNetCDF";
+		public override string ExcuteName() => "ga.GALayer3DToNetCDF";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { In3DGeostatLayers, OutNetcdfFile, ExportLocations!, XSpacing!, YSpacing!, ElevationSpacing!, InPoints3D!, OutputVariables!, InStudyArea! };
+		public override object[] Parameters() => new object[] { In3DGeostatLayers, OutNetcdfFile, ExportLocations!, XSpacing!, YSpacing!, ElevationSpacing!, InPoints3D!, OutputVariables!, InStudyArea! };
 
 		/// <summary>
 		/// <para>Input 3D geostatistical layers</para>
@@ -82,6 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("nc")]
 		public object OutNetcdfFile { get; set; }
 
 		/// <summary>
@@ -130,6 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object? InPoints3D { get; set; }
 
 		/// <summary>
@@ -149,6 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object? InStudyArea { get; set; }
 
 		/// <summary>

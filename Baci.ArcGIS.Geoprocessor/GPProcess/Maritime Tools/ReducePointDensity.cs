@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Reduce Point Density</para>
+	/// <para>Reduce Point Density</para>
 	/// <para>Thins points from a point or multipoint feature class.</para>
 	/// </summary>
 	public class ReducePointDensity : AbstractGPProcess
@@ -78,37 +79,37 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Display Name : Reduce Point Density</para>
 		/// </summary>
-		public override string DisplayName => "Reduce Point Density";
+		public override string DisplayName() => "Reduce Point Density";
 
 		/// <summary>
 		/// <para>Tool Name : ReducePointDensity</para>
 		/// </summary>
-		public override string ToolName => "ReducePointDensity";
+		public override string ToolName() => "ReducePointDensity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : maritime.ReducePointDensity</para>
 		/// </summary>
-		public override string ExcuteName => "maritime.ReducePointDensity";
+		public override string ExcuteName() => "maritime.ReducePointDensity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Maritime Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Maritime Tools";
+		public override string ToolboxDisplayName() => "Maritime Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : maritime</para>
 		/// </summary>
-		public override string ToolboxAlise => "maritime";
+		public override string ToolboxAlise() => "maritime";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, DepthField, DepthDirection, DepthBias, RadiusUnit, StartThinningRadius, EndThinningRadius!, StartDepth!, EndDepth! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, DepthField, DepthDirection, DepthBias, RadiusUnit, StartThinningRadius, EndThinningRadius!, StartDepth!, EndDepth! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -117,6 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -126,6 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint")]
 		public object OutFeatureClass { get; set; }
 
 		/// <summary>
@@ -135,6 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Geometry")]
 		public object DepthField { get; set; }
 
 		/// <summary>

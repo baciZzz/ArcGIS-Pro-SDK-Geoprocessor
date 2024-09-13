@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Set Network Category</para>
+	/// <para>Set Network Category</para>
 	/// <para>Assigns a network category to a feature class or table at the asset type level to be used during tracing operations.</para>
 	/// </summary>
 	public class SetNetworkCategory : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Network Category</para>
 		/// </summary>
-		public override string DisplayName => "Set Network Category";
+		public override string DisplayName() => "Set Network Category";
 
 		/// <summary>
 		/// <para>Tool Name : SetNetworkCategory</para>
 		/// </summary>
-		public override string ToolName => "SetNetworkCategory";
+		public override string ToolName() => "SetNetworkCategory";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.SetNetworkCategory</para>
 		/// </summary>
-		public override string ExcuteName => "un.SetNetworkCategory";
+		public override string ExcuteName() => "un.SetNetworkCategory";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetwork, Featureclass, Assetgroup, Assettype, Category!, OutUtilityNetwork! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, DomainNetwork, Featureclass, Assetgroup, Assettype, Category!, OutUtilityNetwork! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

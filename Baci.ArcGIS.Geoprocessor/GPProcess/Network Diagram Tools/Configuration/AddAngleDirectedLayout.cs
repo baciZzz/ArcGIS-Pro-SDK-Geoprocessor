@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Angle Directed Layout</para>
+	/// <para>Add Angle Directed Layout</para>
 	/// <para>Adds the Angle Directed Layout algorithm to the list of layouts to be automatically chained at the end of the generation of diagrams based on a given template. This tool also presets the Angle Directed Layout algorithm parameters for any diagram based on that template.</para>
 	/// </summary>
 	public class AddAngleDirectedLayout : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Angle Directed Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Angle Directed Layout";
+		public override string DisplayName() => "Add Angle Directed Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddAngleDirectedLayout</para>
 		/// </summary>
-		public override string ToolName => "AddAngleDirectedLayout";
+		public override string ToolName() => "AddAngleDirectedLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddAngleDirectedLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddAngleDirectedLayout";
+		public override string ExcuteName() => "nd.AddAngleDirectedLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, IterationsNumber!, NumberOfDirections!, OutUtilityNetwork!, OutTemplateName! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, IterationsNumber!, NumberOfDirections!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>

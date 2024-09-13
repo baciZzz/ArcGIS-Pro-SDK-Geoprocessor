@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Versioned View</para>
+	/// <para>Create Versioned View</para>
 	/// <para>Creates a versioned view on a table or feature class.</para>
 	/// </summary>
 	[Obsolete()]
@@ -31,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Versioned View</para>
 		/// </summary>
-		public override string DisplayName => "Create Versioned View";
+		public override string DisplayName() => "Create Versioned View";
 
 		/// <summary>
 		/// <para>Tool Name : CreateVersionedView</para>
 		/// </summary>
-		public override string ToolName => "CreateVersionedView";
+		public override string ToolName() => "CreateVersionedView";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateVersionedView</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateVersionedView";
+		public override string ExcuteName() => "management.CreateVersionedView";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, InName!, OutDataset! };
+		public override object[] Parameters() => new object[] { InDataset, InName!, OutDataset! };
 
 		/// <summary>
 		/// <para>Input Table or Feature Class</para>

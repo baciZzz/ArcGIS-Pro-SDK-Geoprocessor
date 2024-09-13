@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Mosaic</para>
+	/// <para>Mosaic</para>
 	/// <para>Merges multiple existing raster datasets or mosaic datasets into an existing raster dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Mosaic</para>
 		/// </summary>
-		public override string DisplayName => "Mosaic";
+		public override string DisplayName() => "Mosaic";
 
 		/// <summary>
 		/// <para>Tool Name : Mosaic</para>
 		/// </summary>
-		public override string ToolName => "Mosaic";
+		public override string ToolName() => "Mosaic";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Mosaic</para>
 		/// </summary>
-		public override string ExcuteName => "management.Mosaic";
+		public override string ExcuteName() => "management.Mosaic";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "resamplingMethod" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor", "resamplingMethod" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputs, Target, MosaicType!, Colormap!, BackgroundValue!, NodataValue!, OnebitToEightbit!, MosaickingTolerance!, Output!, Matchingmethod! };
+		public override object[] Parameters() => new object[] { Inputs, Target, MosaicType!, Colormap!, BackgroundValue!, NodataValue!, OnebitToEightbit!, MosaickingTolerance!, Output!, Matchingmethod! };
 
 		/// <summary>
 		/// <para>Input Rasters</para>

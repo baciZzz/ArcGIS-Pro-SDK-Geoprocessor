@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Workspace To Raster Dataset</para>
+	/// <para>Workspace To Raster Dataset</para>
 	/// <para>Merges all of the raster datasets in a folder into one raster dataset.</para>
 	/// </summary>
 	public class WorkspaceToRasterDataset : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Workspace To Raster Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Workspace To Raster Dataset";
+		public override string DisplayName() => "Workspace To Raster Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : WorkspaceToRasterDataset</para>
 		/// </summary>
-		public override string ToolName => "WorkspaceToRasterDataset";
+		public override string ToolName() => "WorkspaceToRasterDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.WorkspaceToRasterDataset</para>
 		/// </summary>
-		public override string ExcuteName => "management.WorkspaceToRasterDataset";
+		public override string ExcuteName() => "management.WorkspaceToRasterDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, InRasterDataset, IncludeSubdirectories!, MosaicType!, Colormap!, BackgroundValue!, NodataValue!, OnebitToEightbit!, MosaickingTolerance!, Matchingmethod!, ColormapToRGB!, OutRasterDataset! };
+		public override object[] Parameters() => new object[] { InWorkspace, InRasterDataset, IncludeSubdirectories!, MosaicType!, Colormap!, BackgroundValue!, NodataValue!, OnebitToEightbit!, MosaickingTolerance!, Matchingmethod!, ColormapToRGB!, OutRasterDataset! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Relate</para>
+	/// <para>Add Relate</para>
 	/// <para>Relates a layer to another layer or table based on a field value. Feature layers, table views, and raster layers with a raster attribute table are supported.</para>
 	/// </summary>
 	public class AddRelate : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Relate</para>
 		/// </summary>
-		public override string DisplayName => "Add Relate";
+		public override string DisplayName() => "Add Relate";
 
 		/// <summary>
 		/// <para>Tool Name : AddRelate</para>
 		/// </summary>
-		public override string ToolName => "AddRelate";
+		public override string ToolName() => "AddRelate";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddRelate</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddRelate";
+		public override string ExcuteName() => "management.AddRelate";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayerOrView, InField, RelateTable, RelateField, RelateName, Cardinality!, OutLayerOrView! };
+		public override object[] Parameters() => new object[] { InLayerOrView, InField, RelateTable, RelateField, RelateName, Cardinality!, OutLayerOrView! };
 
 		/// <summary>
 		/// <para>Layer Name or Table View</para>
@@ -97,6 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "OID", "GUID", "GlobalID")]
 		public object InField { get; set; }
 
 		/// <summary>
@@ -114,6 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "OID", "GUID", "GlobalID")]
 		public object RelateField { get; set; }
 
 		/// <summary>

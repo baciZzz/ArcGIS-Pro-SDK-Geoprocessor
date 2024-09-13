@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Extract Package</para>
+	/// <para>Extract Package</para>
 	/// <para>Extracts the contents of a package to a specified folder. The output folder will be  updated with the extracted contents of the input package.</para>
 	/// </summary>
 	public class ExtractPackage : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Extract Package</para>
 		/// </summary>
-		public override string DisplayName => "Extract Package";
+		public override string DisplayName() => "Extract Package";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractPackage</para>
 		/// </summary>
-		public override string ToolName => "ExtractPackage";
+		public override string ToolName() => "ExtractPackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ExtractPackage</para>
 		/// </summary>
-		public override string ExcuteName => "management.ExtractPackage";
+		public override string ExcuteName() => "management.ExtractPackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPackage, OutputFolder!, CachePackage!, StorageFormatType!, CreateReadyToServeFormat!, TargetCloudConnection! };
+		public override object[] Parameters() => new object[] { InPackage, OutputFolder!, CachePackage!, StorageFormatType!, CreateReadyToServeFormat!, TargetCloudConnection! };
 
 		/// <summary>
 		/// <para>Input Package</para>
@@ -69,6 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("lpk", "mpk", "gpk", "lpkx", "mpkx", "mmpk", "mspk", "gpkx", "gcpk", "ppkx", "aptx", "tpk", "tpkx", "vtpk", "slpk", "addDoBrowseIntoTypeID:cloudStorageConnection_acs")]
 		public object InPackage { get; set; }
 
 		/// <summary>

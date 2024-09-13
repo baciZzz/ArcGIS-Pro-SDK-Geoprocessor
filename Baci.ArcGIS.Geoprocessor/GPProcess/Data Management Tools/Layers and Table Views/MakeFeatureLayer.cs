@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Feature Layer</para>
+	/// <para>Make Feature Layer</para>
 	/// <para>Creates a feature layer from an input feature class or layer file. The layer that is created is temporary and will not persist after the session ends unless the layer is saved to disk or the map document is saved.</para>
 	/// </summary>
 	public class MakeFeatureLayer : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Feature Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Feature Layer";
+		public override string DisplayName() => "Make Feature Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeFeatureLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeFeatureLayer";
+		public override string ToolName() => "MakeFeatureLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MakeFeatureLayer</para>
 		/// </summary>
-		public override string ExcuteName => "management.MakeFeatureLayer";
+		public override string ExcuteName() => "management.MakeFeatureLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutLayer, WhereClause!, Workspace!, FieldInfo! };
+		public override object[] Parameters() => new object[] { InFeatures, OutLayer, WhereClause!, Workspace!, FieldInfo! };
 
 		/// <summary>
 		/// <para>Input Features</para>

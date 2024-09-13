@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Union</para>
+	/// <para>Union</para>
 	/// <para>Computes a geometric union of the input features. All features and their attributes will be written to the output feature class.</para>
 	/// </summary>
 	public class Union : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Union</para>
 		/// </summary>
-		public override string DisplayName => "Union";
+		public override string DisplayName() => "Union";
 
 		/// <summary>
 		/// <para>Tool Name : Union</para>
 		/// </summary>
-		public override string ToolName => "Union";
+		public override string ToolName() => "Union";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.Union</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.Union";
+		public override string ExcuteName() => "analysis.Union";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "qualifiedFieldNames", "transferGDBAttributeProperties" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "qualifiedFieldNames", "transferGDBAttributeProperties" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, JoinAttributes!, ClusterTolerance!, Gaps! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, JoinAttributes!, ClusterTolerance!, Gaps! };
 
 		/// <summary>
 		/// <para>Input Features</para>

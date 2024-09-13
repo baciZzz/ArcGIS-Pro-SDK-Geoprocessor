@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Semivariogram Sensitivity</para>
+	/// <para>Semivariogram Sensitivity</para>
 	/// <para>This tool performs a sensitivity analysis on the predicted values and associated standard errors by changing the model's semivariogram parameters (the nugget, partial sill, and major/minor ranges) within a percentage of the original values.</para>
 	/// </summary>
 	public class GASemivariogramSensitivity : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Semivariogram Sensitivity</para>
 		/// </summary>
-		public override string DisplayName => "Semivariogram Sensitivity";
+		public override string DisplayName() => "Semivariogram Sensitivity";
 
 		/// <summary>
 		/// <para>Tool Name : GASemivariogramSensitivity</para>
 		/// </summary>
-		public override string ToolName => "GASemivariogramSensitivity";
+		public override string ToolName() => "GASemivariogramSensitivity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GASemivariogramSensitivity</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GASemivariogramSensitivity";
+		public override string ExcuteName() => "ga.GASemivariogramSensitivity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "coincidentPoints", "randomGenerator", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "coincidentPoints", "randomGenerator", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGaModelSource, InDatasets, InLocations, NuggetSpanPercents!, NuggetCalcTimes!, PartialsillSpanPercents!, PartialsillCalcTimes!, RangeSpanPercents!, RangeCalcTimes!, MinrangeSpanPercents!, MinrangeCalcTimes!, OutTable };
+		public override object[] Parameters() => new object[] { InGaModelSource, InDatasets, InLocations, NuggetSpanPercents!, NuggetCalcTimes!, PartialsillSpanPercents!, PartialsillCalcTimes!, RangeSpanPercents!, RangeCalcTimes!, MinrangeSpanPercents!, MinrangeCalcTimes!, OutTable };
 
 		/// <summary>
 		/// <para>Input geostatistical model source</para>
@@ -101,6 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InLocations { get; set; }
 
 		/// <summary>
@@ -109,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 100)]
 		public object? NuggetSpanPercents { get; set; } = "10";
 
 		/// <summary>
@@ -118,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 2147483647)]
 		public object? NuggetCalcTimes { get; set; } = "3";
 
 		/// <summary>
@@ -127,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 100)]
 		public object? PartialsillSpanPercents { get; set; } = "0";
 
 		/// <summary>
@@ -136,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 2147483647)]
 		public object? PartialsillCalcTimes { get; set; } = "0";
 
 		/// <summary>
@@ -145,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 100)]
 		public object? RangeSpanPercents { get; set; } = "0";
 
 		/// <summary>
@@ -154,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 2147483647)]
 		public object? RangeCalcTimes { get; set; } = "0";
 
 		/// <summary>
@@ -163,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 100)]
 		public object? MinrangeSpanPercents { get; set; } = "0";
 
 		/// <summary>
@@ -173,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 2147483647)]
 		public object? MinrangeCalcTimes { get; set; } = "0";
 
 		/// <summary>

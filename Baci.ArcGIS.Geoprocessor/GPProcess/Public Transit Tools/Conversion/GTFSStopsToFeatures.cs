@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 {
 	/// <summary>
 	/// <para>GTFS Stops To Features</para>
+	/// <para>GTFS Stops To Features</para>
 	/// <para>Converts a GTFS stops.txt file from a GTFS public transit dataset  to a feature class of public transit stops.</para>
 	/// </summary>
 	public class GTFSStopsToFeatures : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		/// <summary>
 		/// <para>Tool Display Name : GTFS Stops To Features</para>
 		/// </summary>
-		public override string DisplayName => "GTFS Stops To Features";
+		public override string DisplayName() => "GTFS Stops To Features";
 
 		/// <summary>
 		/// <para>Tool Name : GTFSStopsToFeatures</para>
 		/// </summary>
-		public override string ToolName => "GTFSStopsToFeatures";
+		public override string ToolName() => "GTFSStopsToFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : transit.GTFSStopsToFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "transit.GTFSStopsToFeatures";
+		public override string ExcuteName() => "transit.GTFSStopsToFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Public Transit Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Public Transit Tools";
+		public override string ToolboxDisplayName() => "Public Transit Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : transit</para>
 		/// </summary>
-		public override string ToolboxAlise => "transit";
+		public override string ToolboxAlise() => "transit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGtfsStopsFile, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InGtfsStopsFile, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Input GTFS Stops File</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("txt")]
 		public object InGtfsStopsFile { get; set; }
 
 		/// <summary>

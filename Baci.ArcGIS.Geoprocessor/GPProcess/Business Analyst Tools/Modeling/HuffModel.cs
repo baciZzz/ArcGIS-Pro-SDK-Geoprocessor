@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Huff Model</para>
+	/// <para>Huff Model</para>
 	/// <para>Creates a probability surface to predict the sales potential of an area based on distance and an attractiveness factor.</para>
 	/// </summary>
 	public class HuffModel : AbstractGPProcess
@@ -79,37 +80,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Huff Model</para>
 		/// </summary>
-		public override string DisplayName => "Huff Model";
+		public override string DisplayName() => "Huff Model";
 
 		/// <summary>
 		/// <para>Tool Name : HuffModel</para>
 		/// </summary>
-		public override string ToolName => "HuffModel";
+		public override string ToolName() => "HuffModel";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.HuffModel</para>
 		/// </summary>
-		public override string ExcuteName => "ba.HuffModel";
+		public override string ExcuteName() => "ba.HuffModel";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baNetworkSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFacilityFeatures, FacilityIdField, InCandidateFeatures, CandidateIdField, InSalesPotentialFeatures, SalesPotentialIdField, SalesPotentialField, OutFeatureClass, AttractivenessVariables, DistanceExponent, OutPredictedSales!, DistanceType!, DistanceUnits!, OutDistanceMatrix!, TravelDirection!, TimeOfDay!, TimeZone! };
+		public override object[] Parameters() => new object[] { InFacilityFeatures, FacilityIdField, InCandidateFeatures, CandidateIdField, InSalesPotentialFeatures, SalesPotentialIdField, SalesPotentialField, OutFeatureClass, AttractivenessVariables, DistanceExponent, OutPredictedSales!, DistanceType!, DistanceUnits!, OutDistanceMatrix!, TravelDirection!, TimeOfDay!, TimeZone! };
 
 		/// <summary>
 		/// <para>Input Facility Features</para>
@@ -118,6 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InFacilityFeatures { get; set; }
 
 		/// <summary>
@@ -127,6 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text", "OID")]
 		public object FacilityIdField { get; set; }
 
 		/// <summary>
@@ -136,6 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InCandidateFeatures { get; set; }
 
 		/// <summary>
@@ -145,6 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text", "OID")]
 		public object CandidateIdField { get; set; }
 
 		/// <summary>
@@ -154,6 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon")]
 		public object InSalesPotentialFeatures { get; set; }
 
 		/// <summary>
@@ -163,6 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text", "OID")]
 		public object SalesPotentialIdField { get; set; }
 
 		/// <summary>
@@ -172,6 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object SalesPotentialField { get; set; }
 
 		/// <summary>

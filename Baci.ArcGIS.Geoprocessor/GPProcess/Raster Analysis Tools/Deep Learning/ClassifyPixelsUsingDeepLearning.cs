@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Classify Pixels Using Deep Learning</para>
+	/// <para>Classify Pixels Using Deep Learning</para>
 	/// <para>Runs a trained deep learning model on an input image to produce a classified raster published as a hosted imagery layer in your portal.</para>
 	/// </summary>
 	public class ClassifyPixelsUsingDeepLearning : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Classify Pixels Using Deep Learning</para>
 		/// </summary>
-		public override string DisplayName => "Classify Pixels Using Deep Learning";
+		public override string DisplayName() => "Classify Pixels Using Deep Learning";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyPixelsUsingDeepLearning</para>
 		/// </summary>
-		public override string ToolName => "ClassifyPixelsUsingDeepLearning";
+		public override string ToolName() => "ClassifyPixelsUsingDeepLearning";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.ClassifyPixelsUsingDeepLearning</para>
 		/// </summary>
-		public override string ExcuteName => "ra.ClassifyPixelsUsingDeepLearning";
+		public override string ExcuteName() => "ra.ClassifyPixelsUsingDeepLearning";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "outputCoordinateSystem", "parallelProcessingFactor", "processorType", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "outputCoordinateSystem", "parallelProcessingFactor", "processorType", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputraster, Inputmodel, Outputname, Modelarguments!, Outraster!, Processingmode! };
+		public override object[] Parameters() => new object[] { Inputraster, Inputmodel, Outputname, Modelarguments!, Outraster!, Processingmode! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -88,6 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("", "dlpk_remote")]
 		public object Inputmodel { get; set; }
 
 		/// <summary>

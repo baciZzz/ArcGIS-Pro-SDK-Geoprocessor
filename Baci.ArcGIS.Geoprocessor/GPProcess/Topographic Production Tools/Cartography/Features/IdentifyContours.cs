@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Identify Contours</para>
+	/// <para>Identify Contours</para>
 	/// <para>Identifies types of contours and applies hypsographic codes to input features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -47,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Identify Contours</para>
 		/// </summary>
-		public override string DisplayName => "Identify Contours";
+		public override string DisplayName() => "Identify Contours";
 
 		/// <summary>
 		/// <para>Tool Name : IdentifyContours</para>
 		/// </summary>
-		public override string ToolName => "IdentifyContours";
+		public override string ToolName() => "IdentifyContours";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.IdentifyContours</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.IdentifyContours";
+		public override string ExcuteName() => "topographic.IdentifyContours";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InContourFeatures, InRasters, ContourHeightField, ContourCodeField, ContourIndexInterval!, IndexCode!, IntermediateCode!, DepressionCode!, DepressionIntermediateCode!, UpdatedContourFeatures!, DepressionContoursCount! };
+		public override object[] Parameters() => new object[] { InContourFeatures, InRasters, ContourHeightField, ContourCodeField, ContourIndexInterval!, IndexCode!, IntermediateCode!, DepressionCode!, DepressionIntermediateCode!, UpdatedContourFeatures!, DepressionContoursCount! };
 
 		/// <summary>
 		/// <para>Input Contours</para>
@@ -86,6 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InContourFeatures { get; set; }
 
 		/// <summary>
@@ -103,6 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double", "Long", "Short")]
 		public object ContourHeightField { get; set; }
 
 		/// <summary>
@@ -112,6 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short", "Text")]
 		public object ContourCodeField { get; set; }
 
 		/// <summary>

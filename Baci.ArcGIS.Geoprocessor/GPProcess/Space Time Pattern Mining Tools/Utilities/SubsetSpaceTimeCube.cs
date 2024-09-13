@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Subset Space Time Cube</para>
+	/// <para>Subset Space Time Cube</para>
 	/// <para>Subsets a space-time cube by space or time.</para>
 	/// </summary>
 	public class SubsetSpaceTimeCube : AbstractGPProcess
@@ -55,37 +56,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Display Name : Subset Space Time Cube</para>
 		/// </summary>
-		public override string DisplayName => "Subset Space Time Cube";
+		public override string DisplayName() => "Subset Space Time Cube";
 
 		/// <summary>
 		/// <para>Tool Name : SubsetSpaceTimeCube</para>
 		/// </summary>
-		public override string ToolName => "SubsetSpaceTimeCube";
+		public override string ToolName() => "SubsetSpaceTimeCube";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stpm.SubsetSpaceTimeCube</para>
 		/// </summary>
-		public override string ExcuteName => "stpm.SubsetSpaceTimeCube";
+		public override string ExcuteName() => "stpm.SubsetSpaceTimeCube";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Space Time Pattern Mining Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Space Time Pattern Mining Tools";
+		public override string ToolboxDisplayName() => "Space Time Pattern Mining Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stpm</para>
 		/// </summary>
-		public override string ToolboxAlise => "stpm";
+		public override string ToolboxAlise() => "stpm";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCube, OutCube, SpatialSubsetMethod, TemporalSubsetMethod, InSubsetFeatures!, SpatialRelationship!, SpatialExtent!, InSpatialCube!, TimeSpanSubset!, RemoveTimeSteps!, InTemporalCube! };
+		public override object[] Parameters() => new object[] { InCube, OutCube, SpatialSubsetMethod, TemporalSubsetMethod, InSubsetFeatures!, SpatialRelationship!, SpatialExtent!, InSpatialCube!, TimeSpanSubset!, RemoveTimeSteps!, InTemporalCube! };
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>
@@ -94,6 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("nc")]
 		public object InCube { get; set; }
 
 		/// <summary>
@@ -103,6 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("nc")]
 		public object OutCube { get; set; }
 
 		/// <summary>
@@ -170,6 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("nc")]
 		public object? InSpatialCube { get; set; }
 
 		/// <summary>
@@ -197,6 +201,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("nc")]
 		public object? InTemporalCube { get; set; }
 
 		/// <summary>

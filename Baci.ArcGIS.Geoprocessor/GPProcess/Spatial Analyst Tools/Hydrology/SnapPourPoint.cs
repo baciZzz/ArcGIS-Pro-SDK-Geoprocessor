@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Snap Pour Point</para>
+	/// <para>Snap Pour Point</para>
 	/// <para>Snaps pour points to the cell of highest flow accumulation within a specified distance.</para>
 	/// </summary>
 	public class SnapPourPoint : AbstractGPProcess
@@ -49,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Snap Pour Point</para>
 		/// </summary>
-		public override string DisplayName => "Snap Pour Point";
+		public override string DisplayName() => "Snap Pour Point";
 
 		/// <summary>
 		/// <para>Tool Name : SnapPourPoint</para>
 		/// </summary>
-		public override string ToolName => "SnapPourPoint";
+		public override string ToolName() => "SnapPourPoint";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.SnapPourPoint</para>
 		/// </summary>
-		public override string ExcuteName => "sa.SnapPourPoint";
+		public override string ExcuteName() => "sa.SnapPourPoint";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPourPointData, InAccumulationRaster, OutRaster, SnapDistance, PourPointField! };
+		public override object[] Parameters() => new object[] { InPourPointData, InAccumulationRaster, OutRaster, SnapDistance, PourPointField! };
 
 		/// <summary>
 		/// <para>Input raster or feature pour point data</para>
@@ -89,7 +90,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEFeatureClass", "GPFeatureLayer", "DETin", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("OID", "Short", "Long", "Float", "Double", "Text", "Geometry")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InPourPointData { get; set; }
 
 		/// <summary>
@@ -99,7 +103,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InAccumulationRaster { get; set; }
 
 		/// <summary>
@@ -118,6 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object SnapDistance { get; set; } = "0";
 
 		/// <summary>
@@ -128,7 +136,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(UseRasterFields = true)]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? PourPointField { get; set; }
 
 		/// <summary>

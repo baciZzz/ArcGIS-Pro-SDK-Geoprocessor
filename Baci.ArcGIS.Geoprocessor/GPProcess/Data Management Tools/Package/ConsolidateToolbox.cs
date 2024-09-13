@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Consolidate Toolbox</para>
+	/// <para>Consolidate Toolbox</para>
 	/// <para>Consolidates one or more toolboxes into a specified output folder.</para>
 	/// </summary>
 	public class ConsolidateToolbox : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Consolidate Toolbox</para>
 		/// </summary>
-		public override string DisplayName => "Consolidate Toolbox";
+		public override string DisplayName() => "Consolidate Toolbox";
 
 		/// <summary>
 		/// <para>Tool Name : ConsolidateToolbox</para>
 		/// </summary>
-		public override string ToolName => "ConsolidateToolbox";
+		public override string ToolName() => "ConsolidateToolbox";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ConsolidateToolbox</para>
 		/// </summary>
-		public override string ExcuteName => "management.ConsolidateToolbox";
+		public override string ExcuteName() => "management.ConsolidateToolbox";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InToolbox, OutputFolder, Version! };
+		public override object[] Parameters() => new object[] { InToolbox, OutputFolder, Version! };
 
 		/// <summary>
 		/// <para>Toolbox</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Points Along Lines</para>
+	/// <para>Generate Points Along Lines</para>
 	/// <para>Creates point features along lines or polygons at fixed intervals or by percentage of a feature's length.</para>
 	/// </summary>
 	public class GeneratePointsAlongLines : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Points Along Lines</para>
 		/// </summary>
-		public override string DisplayName => "Generate Points Along Lines";
+		public override string DisplayName() => "Generate Points Along Lines";
 
 		/// <summary>
 		/// <para>Tool Name : GeneratePointsAlongLines</para>
 		/// </summary>
-		public override string ToolName => "GeneratePointsAlongLines";
+		public override string ToolName() => "GeneratePointsAlongLines";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.GeneratePointsAlongLines</para>
 		/// </summary>
-		public override string ExcuteName => "management.GeneratePointsAlongLines";
+		public override string ExcuteName() => "management.GeneratePointsAlongLines";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "outputMFlag", "outputZFlag", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "outputMFlag", "outputZFlag", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, OutputFeatureClass, PointPlacement, Distance!, Percentage!, IncludeEndPoints! };
+		public override object[] Parameters() => new object[] { InputFeatures, OutputFeatureClass, PointPlacement, Distance!, Percentage!, IncludeEndPoints! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -82,6 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Polyline")]
+		[FeatureType("Simple")]
 		public object InputFeatures { get; set; }
 
 		/// <summary>
@@ -118,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 100)]
 		public object? Percentage { get; set; }
 
 		/// <summary>

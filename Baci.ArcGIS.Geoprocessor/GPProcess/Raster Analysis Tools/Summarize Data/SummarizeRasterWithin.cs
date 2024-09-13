@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Summarize Raster Within</para>
+	/// <para>Summarize Raster Within</para>
 	/// <para>Calculates statistics on values of a raster within the zones of another dataset.</para>
 	/// </summary>
 	public class SummarizeRasterWithin : AbstractGPProcess
@@ -48,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Summarize Raster Within</para>
 		/// </summary>
-		public override string DisplayName => "Summarize Raster Within";
+		public override string DisplayName() => "Summarize Raster Within";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeRasterWithin</para>
 		/// </summary>
-		public override string ToolName => "SummarizeRasterWithin";
+		public override string ToolName() => "SummarizeRasterWithin";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.SummarizeRasterWithin</para>
 		/// </summary>
-		public override string ExcuteName => "ra.SummarizeRasterWithin";
+		public override string ExcuteName() => "ra.SummarizeRasterWithin";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputzonelayer, Zonefield, Inputrasterlayertosummarize, Outputname, Statistictype!, Ignoremissingvalues!, Outputraster!, Processasmultidimensional!, Percentilevalue!, Percentileinterpolationtype!, Circularcalculation!, Circularwrapvalue! };
+		public override object[] Parameters() => new object[] { Inputzonelayer, Zonefield, Inputrasterlayertosummarize, Outputname, Statistictype!, Ignoremissingvalues!, Outputraster!, Processasmultidimensional!, Percentilevalue!, Percentileinterpolationtype!, Circularcalculation!, Circularwrapvalue! };
 
 		/// <summary>
 		/// <para>Input Zone Layer</para>

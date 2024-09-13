@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Generate Network Spatial Weights</para>
+	/// <para>Generate Network Spatial Weights</para>
 	/// <para>Constructs a spatial weights matrix file (.swm) using a Network dataset, defining feature spatial relationships in terms of the underlying network structure.</para>
 	/// </summary>
 	[Obsolete()]
@@ -51,37 +52,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Network Spatial Weights</para>
 		/// </summary>
-		public override string DisplayName => "Generate Network Spatial Weights";
+		public override string DisplayName() => "Generate Network Spatial Weights";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateNetworkSpatialWeights</para>
 		/// </summary>
-		public override string ToolName => "GenerateNetworkSpatialWeights";
+		public override string ToolName() => "GenerateNetworkSpatialWeights";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.GenerateNetworkSpatialWeights</para>
 		/// </summary>
-		public override string ExcuteName => "stats.GenerateNetworkSpatialWeights";
+		public override string ExcuteName() => "stats.GenerateNetworkSpatialWeights";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, UniqueIDField, OutputSpatialWeightsMatrixFile, InputNetwork, ImpedanceAttribute, ImpedanceCutoff!, MaximumNumberOfNeighbors!, Barriers!, UTurnPolicy!, Restrictions!, UseHierarchyInAnalysis!, SearchTolerance!, ConceptualizationOfSpatialRelationships!, Exponent!, RowStandardization!, TravelMode!, TimeOfDay! };
+		public override object[] Parameters() => new object[] { InputFeatureClass, UniqueIDField, OutputSpatialWeightsMatrixFile, InputNetwork, ImpedanceAttribute, ImpedanceCutoff!, MaximumNumberOfNeighbors!, Barriers!, UTurnPolicy!, Restrictions!, UseHierarchyInAnalysis!, SearchTolerance!, ConceptualizationOfSpatialRelationships!, Exponent!, RowStandardization!, TravelMode!, TimeOfDay! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -90,6 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InputFeatureClass { get; set; }
 
 		/// <summary>
@@ -99,6 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		public object UniqueIDField { get; set; }
 
 		/// <summary>
@@ -108,6 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("swm")]
 		public object OutputSpatialWeightsMatrixFile { get; set; }
 
 		/// <summary>
@@ -154,6 +159,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon", "Polyline")]
+		[FeatureType("Simple")]
 		[Category("Network Analysis Options")]
 		public object? Barriers { get; set; }
 

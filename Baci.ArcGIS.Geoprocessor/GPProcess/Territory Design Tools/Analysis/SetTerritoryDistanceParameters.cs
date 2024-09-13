@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Set Territory Distance Parameters</para>
+	/// <para>Set Territory Distance Parameters</para>
 	/// <para>Defines the type of distance calculation or distance constraints to use when creating territories.</para>
 	/// </summary>
 	public class SetTerritoryDistanceParameters : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Territory Distance Parameters</para>
 		/// </summary>
-		public override string DisplayName => "Set Territory Distance Parameters";
+		public override string DisplayName() => "Set Territory Distance Parameters";
 
 		/// <summary>
 		/// <para>Tool Name : SetTerritoryDistanceParameters</para>
 		/// </summary>
-		public override string ToolName => "SetTerritoryDistanceParameters";
+		public override string ToolName() => "SetTerritoryDistanceParameters";
 
 		/// <summary>
 		/// <para>Tool Excute Name : td.SetTerritoryDistanceParameters</para>
 		/// </summary>
-		public override string ExcuteName => "td.SetTerritoryDistanceParameters";
+		public override string ExcuteName() => "td.SetTerritoryDistanceParameters";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Territory Design Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Territory Design Tools";
+		public override string ToolboxDisplayName() => "Territory Design Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : td</para>
 		/// </summary>
-		public override string ToolboxAlise => "td";
+		public override string ToolboxAlise() => "td";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, DistanceType!, Units!, MaxRadius!, BufferDistance!, MinDistance!, OutTerritorySolution!, NetworkDatasource!, BuildIndex!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance! };
+		public override object[] Parameters() => new object[] { InTerritorySolution, Level, DistanceType!, Units!, MaxRadius!, BufferDistance!, MinDistance!, OutTerritorySolution!, NetworkDatasource!, BuildIndex!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>
@@ -206,6 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		[Category("Network Parameters")]
 		public object? SearchTolerance { get; set; }
 

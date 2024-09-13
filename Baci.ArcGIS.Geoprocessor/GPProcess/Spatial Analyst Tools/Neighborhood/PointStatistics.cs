@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Point Statistics</para>
+	/// <para>Point Statistics</para>
 	/// <para>Calculates a statistic on the points in a neighborhood around each output cell.</para>
 	/// </summary>
 	public class PointStatistics : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Point Statistics</para>
 		/// </summary>
-		public override string DisplayName => "Point Statistics";
+		public override string DisplayName() => "Point Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : PointStatistics</para>
 		/// </summary>
-		public override string ToolName => "PointStatistics";
+		public override string ToolName() => "PointStatistics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.PointStatistics</para>
 		/// </summary>
-		public override string ExcuteName => "sa.PointStatistics";
+		public override string ExcuteName() => "sa.PointStatistics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, Field, OutRaster, CellSize!, Neighborhood!, StatisticsType! };
+		public override object[] Parameters() => new object[] { InPointFeatures, Field, OutRaster, CellSize!, Neighborhood!, StatisticsType! };
 
 		/// <summary>
 		/// <para>Input point features</para>
@@ -83,7 +84,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DEFeatureClass", "GPFeatureLayer", "GPTableView", "DETextFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Geometry")]
+		[GeometryType("Point", "Multipoint")]
 		public object InPointFeatures { get; set; }
 
 		/// <summary>
@@ -94,6 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Geometry")]
 		public object Field { get; set; }
 
 		/// <summary>
@@ -111,7 +116,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? CellSize { get; set; }
 
 		/// <summary>
@@ -128,6 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSANeighborhood()]
 		[GPSANeighborhoodDomain()]
+		[NeighbourType("Rectangle", "Circle", "Annulus", "Wedge")]
 		public object? Neighborhood { get; set; } = "Rectangle 3 3 CELL";
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Process Air Traffic Service Routes</para>
+	/// <para>Process Air Traffic Service Routes</para>
 	/// <para>Identifies, generalizes, and offsets overlapping Air Traffic Service (ATS) routes.</para>
 	/// </summary>
 	public class ProcessAirTrafficServiceRoutes : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Process Air Traffic Service Routes</para>
 		/// </summary>
-		public override string DisplayName => "Process Air Traffic Service Routes";
+		public override string DisplayName() => "Process Air Traffic Service Routes";
 
 		/// <summary>
 		/// <para>Tool Name : ProcessAirTrafficServiceRoutes</para>
 		/// </summary>
-		public override string ToolName => "ProcessAirTrafficServiceRoutes";
+		public override string ToolName() => "ProcessAirTrafficServiceRoutes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.ProcessAirTrafficServiceRoutes</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.ProcessAirTrafficServiceRoutes";
+		public override string ExcuteName() => "aviation.ProcessAirTrafficServiceRoutes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRouteFeatures, TargetCartoRouteFeatures, AoiFeatures, PreferenceTable, Preference, UpdatedCartoRouteFeatures! };
+		public override object[] Parameters() => new object[] { InRouteFeatures, TargetCartoRouteFeatures, AoiFeatures, PreferenceTable, Preference, UpdatedCartoRouteFeatures! };
 
 		/// <summary>
 		/// <para>Input Route Features</para>
@@ -89,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InRouteFeatures { get; set; }
 
 		/// <summary>
@@ -98,6 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object TargetCartoRouteFeatures { get; set; }
 
 		/// <summary>
@@ -107,6 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object AoiFeatures { get; set; }
 
 		/// <summary>

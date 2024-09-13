@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Generate Territory Report</para>
+	/// <para>Generate Territory Report</para>
 	/// <para>Creates a summary report of a territory solution or a comparison report of two solutions.</para>
 	/// </summary>
 	public class GenerateTerritoryReport : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Territory Report</para>
 		/// </summary>
-		public override string DisplayName => "Generate Territory Report";
+		public override string DisplayName() => "Generate Territory Report";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateTerritoryReport</para>
 		/// </summary>
-		public override string ToolName => "GenerateTerritoryReport";
+		public override string ToolName() => "GenerateTerritoryReport";
 
 		/// <summary>
 		/// <para>Tool Excute Name : td.GenerateTerritoryReport</para>
 		/// </summary>
-		public override string ExcuteName => "td.GenerateTerritoryReport";
+		public override string ExcuteName() => "td.GenerateTerritoryReport";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Territory Design Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Territory Design Tools";
+		public override string ToolboxDisplayName() => "Territory Design Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : td</para>
 		/// </summary>
-		public override string ToolboxAlise => "td";
+		public override string ToolboxAlise() => "td";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, ReportType!, ReportFolder!, ReportTitle!, ReportFormat!, ComparisonTerritorySolution!, ComparisonLevel!, OutputReport! };
+		public override object[] Parameters() => new object[] { InTerritorySolution, Level, ReportType!, ReportFolder!, ReportTitle!, ReportFormat!, ComparisonTerritorySolution!, ComparisonLevel!, OutputReport! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>

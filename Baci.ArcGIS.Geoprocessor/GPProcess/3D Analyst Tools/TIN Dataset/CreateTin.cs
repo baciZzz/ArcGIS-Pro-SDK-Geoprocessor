@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Create TIN</para>
+	/// <para>Create TIN</para>
 	/// <para>Creates a triangulated irregular network (TIN) dataset.</para>
 	/// </summary>
 	public class CreateTin : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Create TIN</para>
 		/// </summary>
-		public override string DisplayName => "Create TIN";
+		public override string DisplayName() => "Create TIN";
 
 		/// <summary>
 		/// <para>Tool Name : CreateTin</para>
 		/// </summary>
-		public override string ToolName => "CreateTin";
+		public override string ToolName() => "CreateTin";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.CreateTin</para>
 		/// </summary>
-		public override string ExcuteName => "3d.CreateTin";
+		public override string ExcuteName() => "3d.CreateTin";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "tinSaveVersion", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "tinSaveVersion", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutTin, SpatialReference!, InFeatures!, ConstrainedDelaunay! };
+		public override object[] Parameters() => new object[] { OutTin, SpatialReference!, InFeatures!, ConstrainedDelaunay! };
 
 		/// <summary>
 		/// <para>Output TIN</para>

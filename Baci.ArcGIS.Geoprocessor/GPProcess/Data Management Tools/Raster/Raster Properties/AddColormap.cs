@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Colormap</para>
+	/// <para>Add Colormap</para>
 	/// <para>Adds a new color map or replaces an existing color map on a raster dataset.</para>
 	/// </summary>
 	public class AddColormap : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Colormap</para>
 		/// </summary>
-		public override string DisplayName => "Add Colormap";
+		public override string DisplayName() => "Add Colormap";
 
 		/// <summary>
 		/// <para>Tool Name : AddColormap</para>
 		/// </summary>
-		public override string ToolName => "AddColormap";
+		public override string ToolName() => "AddColormap";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddColormap</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddColormap";
+		public override string ExcuteName() => "management.AddColormap";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InTemplateRaster!, InputCLRFile!, OutRaster! };
+		public override object[] Parameters() => new object[] { InRaster, InTemplateRaster!, InputCLRFile!, OutRaster! };
 
 		/// <summary>
 		/// <para>Input Raster</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Point Cloud Scene Layer Content</para>
+	/// <para>Create Point Cloud Scene Layer Content</para>
 	/// <para>Creates a point cloud scene layer package (.slpk) or scene layer content (.i3sREST) in the cloud from LAS, zLAS, LAZ, or LAS dataset input.</para>
 	/// </summary>
 	public class CreatePointCloudSceneLayerPackage : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Point Cloud Scene Layer Content</para>
 		/// </summary>
-		public override string DisplayName => "Create Point Cloud Scene Layer Content";
+		public override string DisplayName() => "Create Point Cloud Scene Layer Content";
 
 		/// <summary>
 		/// <para>Tool Name : CreatePointCloudSceneLayerPackage</para>
 		/// </summary>
-		public override string ToolName => "CreatePointCloudSceneLayerPackage";
+		public override string ToolName() => "CreatePointCloudSceneLayerPackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreatePointCloudSceneLayerPackage</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreatePointCloudSceneLayerPackage";
+		public override string ExcuteName() => "management.CreatePointCloudSceneLayerPackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutSlpk!, OutCoorSystem!, TransformMethod!, Attributes!, PointSizeM!, XyMaxErrorM!, ZMaxErrorM!, InCoorSystem!, SceneLayerVersion!, TargetCloudConnection!, OutName! };
+		public override object[] Parameters() => new object[] { InDataset, OutSlpk!, OutCoorSystem!, TransformMethod!, Attributes!, PointSizeM!, XyMaxErrorM!, ZMaxErrorM!, InCoorSystem!, SceneLayerVersion!, TargetCloudConnection!, OutName! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -78,6 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("slpk")]
 		public object? OutSlpk { get; set; }
 
 		/// <summary>

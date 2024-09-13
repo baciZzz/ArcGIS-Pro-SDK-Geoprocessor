@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Reconstruct Surface</para>
+	/// <para>Reconstruct Surface</para>
 	/// <para>Generates DSM orthophotos, 2.5D meshes, 3D meshes, and point clouds from adjusted imagery.</para>
 	/// </summary>
 	public class ReconstructSurface : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Reconstruct Surface</para>
 		/// </summary>
-		public override string DisplayName => "Reconstruct Surface";
+		public override string DisplayName() => "Reconstruct Surface";
 
 		/// <summary>
 		/// <para>Tool Name : ReconstructSurface</para>
 		/// </summary>
-		public override string ToolName => "ReconstructSurface";
+		public override string ToolName() => "ReconstructSurface";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ReconstructSurface</para>
 		/// </summary>
-		public override string ExcuteName => "management.ReconstructSurface";
+		public override string ExcuteName() => "management.ReconstructSurface";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "processorType" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "processorType" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, ReconFolder, ReconOptions!, Scenario!, FwdOverlap!, SwdOverlap!, Quality!, Products!, CellSize!, Aoi!, WaterbodyFeatures!, CorrectionFeatures!, DerivedReconFolder! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, ReconFolder, ReconOptions!, Scenario!, FwdOverlap!, SwdOverlap!, Quality!, Products!, CellSize!, Aoi!, WaterbodyFeatures!, CorrectionFeatures!, DerivedReconFolder! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
@@ -113,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 60, Max = 99)]
 		public object? FwdOverlap { get; set; }
 
 		/// <summary>
@@ -123,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 30, Max = 99)]
 		public object? SwdOverlap { get; set; }
 
 		/// <summary>

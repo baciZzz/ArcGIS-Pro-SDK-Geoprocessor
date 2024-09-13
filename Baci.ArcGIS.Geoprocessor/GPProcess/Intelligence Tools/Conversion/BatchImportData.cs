@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Batch Import Data</para>
+	/// <para>Batch Import Data</para>
 	/// <para>Imports KML, KMZ, shapefiles, Excel worksheets, tabular text files, GeoJSON, and GPX files to feature classes stored in a single geodatabase.</para>
 	/// </summary>
 	public class BatchImportData : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Batch Import Data</para>
 		/// </summary>
-		public override string DisplayName => "Batch Import Data";
+		public override string DisplayName() => "Batch Import Data";
 
 		/// <summary>
 		/// <para>Tool Name : BatchImportData</para>
 		/// </summary>
-		public override string ToolName => "BatchImportData";
+		public override string ToolName() => "BatchImportData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.BatchImportData</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.BatchImportData";
+		public override string ExcuteName() => "intelligence.BatchImportData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, TargetGdb, Filter!, IncludeSubFolders!, OutGeodatabase!, IncludeGroundoverlay! };
+		public override object[] Parameters() => new object[] { InData, TargetGdb, Filter!, IncludeSubFolders!, OutGeodatabase!, IncludeGroundoverlay! };
 
 		/// <summary>
 		/// <para>Input Data</para>
@@ -83,6 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object TargetGdb { get; set; }
 
 		/// <summary>

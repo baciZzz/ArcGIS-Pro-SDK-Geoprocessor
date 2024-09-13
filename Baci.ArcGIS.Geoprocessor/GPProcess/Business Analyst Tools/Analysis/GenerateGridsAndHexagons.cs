@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Grids and Hexagons</para>
+	/// <para>Generate Grids and Hexagons</para>
 	/// <para>Creates features with vector-based square grid cells, hexagons, or H3 hexagons for a given area.</para>
 	/// </summary>
 	public class GenerateGridsAndHexagons : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Grids and Hexagons</para>
 		/// </summary>
-		public override string DisplayName => "Generate Grids and Hexagons";
+		public override string DisplayName() => "Generate Grids and Hexagons";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateGridsAndHexagons</para>
 		/// </summary>
-		public override string ToolName => "GenerateGridsAndHexagons";
+		public override string ToolName() => "GenerateGridsAndHexagons";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GenerateGridsAndHexagons</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GenerateGridsAndHexagons";
+		public override string ExcuteName() => "ba.GenerateGridsAndHexagons";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baNetworkSource", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { AreaOfInterest, OutFeatureClass, CellType!, EnrichType!, CellSize!, H3Resolution!, Variables!, DistanceType!, Distance!, Units!, OutEnrichedBuffers!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance!, PolygonDetail! };
+		public override object[] Parameters() => new object[] { AreaOfInterest, OutFeatureClass, CellType!, EnrichType!, CellSize!, H3Resolution!, Variables!, DistanceType!, Distance!, Units!, OutEnrichedBuffers!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance!, PolygonDetail! };
 
 		/// <summary>
 		/// <para>Area of Interest</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object AreaOfInterest { get; set; }
 
 		/// <summary>
@@ -124,6 +126,8 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
+		[High(Allow = true, Value = 15)]
 		public object? H3Resolution { get; set; } = "7";
 
 		/// <summary>

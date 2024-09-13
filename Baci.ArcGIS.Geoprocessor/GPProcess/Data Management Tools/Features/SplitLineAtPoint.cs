@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Split Line at Point</para>
+	/// <para>Split Line at Point</para>
 	/// <para>Splits line features based on intersection or proximity to point features.</para>
 	/// </summary>
 	public class SplitLineAtPoint : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Split Line at Point</para>
 		/// </summary>
-		public override string DisplayName => "Split Line at Point";
+		public override string DisplayName() => "Split Line at Point";
 
 		/// <summary>
 		/// <para>Tool Name : SplitLineAtPoint</para>
 		/// </summary>
-		public override string ToolName => "SplitLineAtPoint";
+		public override string ToolName() => "SplitLineAtPoint";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SplitLineAtPoint</para>
 		/// </summary>
-		public override string ExcuteName => "management.SplitLineAtPoint";
+		public override string ExcuteName() => "management.SplitLineAtPoint";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, PointFeatures, OutFeatureClass, SearchRadius! };
+		public override object[] Parameters() => new object[] { InFeatures, PointFeatures, OutFeatureClass, SearchRadius! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -88,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Multipoint", "Point")]
 		public object PointFeatures { get; set; }
 
 		/// <summary>

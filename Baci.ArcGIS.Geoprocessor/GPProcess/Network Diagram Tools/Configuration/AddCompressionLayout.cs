@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Compression Layout</para>
+	/// <para>Add Compression Layout</para>
 	/// <para>Adds the Compression Layout algorithm to the layout list of the input diagram template so it automatically executes at the end of diagram buildings. This tool also presets the Compression Layout algorithm parameters for any diagram based on that template.</para>
 	/// </summary>
 	public class AddCompressionLayout : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Compression Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Compression Layout";
+		public override string DisplayName() => "Add Compression Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddCompressionLayout</para>
 		/// </summary>
-		public override string ToolName => "AddCompressionLayout";
+		public override string ToolName() => "AddCompressionLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddCompressionLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddCompressionLayout";
+		public override string ExcuteName() => "nd.AddCompressionLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, GroupingDistanceAbsolute!, VerticesRemovalRule!, OutUtilityNetwork!, OutTemplateName! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, GroupingDistanceAbsolute!, VerticesRemovalRule!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>

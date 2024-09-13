@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Spatial Query Rule</para>
+	/// <para>Add Spatial Query Rule</para>
 	/// <para>Add a spatial query rule to a diagram template</para>
 	/// </summary>
 	[Obsolete()]
@@ -52,37 +53,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Spatial Query Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Spatial Query Rule";
+		public override string DisplayName() => "Add Spatial Query Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddSpatialQueryRule</para>
 		/// </summary>
-		public override string ToolName => "AddSpatialQueryRule";
+		public override string ToolName() => "AddSpatialQueryRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddSpatialQueryRule</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddSpatialQueryRule";
+		public override string ExcuteName() => "un.AddSpatialQueryRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AddedFeatures, OverlapType, ExistingFeatures, SearchDistance!, AddedWhereClause!, ExistingWhereClause!, Description!, OutUtilityNetwork!, OutTemplateName! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, AddedFeatures, OverlapType, ExistingFeatures, SearchDistance!, AddedWhereClause!, ExistingWhereClause!, Description!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>

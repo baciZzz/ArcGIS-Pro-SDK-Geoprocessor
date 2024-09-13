@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Letter Intersections</para>
+	/// <para>Letter Intersections</para>
 	/// <para>Identifies intersections in a line feature class and adds sequential letters to output point features.</para>
 	/// </summary>
 	public class LetterIntersections : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Letter Intersections</para>
 		/// </summary>
-		public override string DisplayName => "Letter Intersections";
+		public override string DisplayName() => "Letter Intersections";
 
 		/// <summary>
 		/// <para>Tool Name : LetterIntersections</para>
 		/// </summary>
-		public override string ToolName => "LetterIntersections";
+		public override string ToolName() => "LetterIntersections";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.LetterIntersections</para>
 		/// </summary>
-		public override string ExcuteName => "defense.LetterIntersections";
+		public override string ExcuteName() => "defense.LetterIntersections";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, FieldToLetter, InArea!, SpatialSortMethod!, LetteringFormat!, StartingLetter!, OmitLetters!, MinOutPointDistance!, CenterPoint!, AddDistanceAndBearing! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, FieldToLetter, InArea!, SpatialSortMethod!, LetteringFormat!, StartingLetter!, OmitLetters!, MinOutPointDistance!, CenterPoint!, AddDistanceAndBearing! };
 
 		/// <summary>
 		/// <para>Input Line Features</para>
@@ -79,6 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -96,6 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object FieldToLetter { get; set; }
 
 		/// <summary>
@@ -105,6 +109,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? InArea { get; set; }
 
 		/// <summary>
@@ -170,6 +176,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object? CenterPoint { get; set; }
 
 		/// <summary>

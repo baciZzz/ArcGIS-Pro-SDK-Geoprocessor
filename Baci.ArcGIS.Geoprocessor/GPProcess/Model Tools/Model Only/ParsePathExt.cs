@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Parse Path</para>
+	/// <para>Parse Path</para>
 	/// <para>Parses an input into its file name, extension, path, and the last workspace name. The output can be used as an inline variable in the output name of other tools.</para>
 	/// </summary>
 	public class ParsePathExt : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : Parse Path</para>
 		/// </summary>
-		public override string DisplayName => "Parse Path";
+		public override string DisplayName() => "Parse Path";
 
 		/// <summary>
 		/// <para>Tool Name : ParsePathExt</para>
 		/// </summary>
-		public override string ToolName => "ParsePathExt";
+		public override string ToolName() => "ParsePathExt";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.ParsePathExt</para>
 		/// </summary>
-		public override string ExcuteName => "mb.ParsePathExt";
+		public override string ExcuteName() => "mb.ParsePathExt";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataElement, Format!, Path!, Name!, ExtensionType!, WorkspaceName! };
+		public override object[] Parameters() => new object[] { InDataElement, Format!, Path!, Name!, ExtensionType!, WorkspaceName! };
 
 		/// <summary>
 		/// <para>Input Values</para>

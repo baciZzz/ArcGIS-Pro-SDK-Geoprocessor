@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Export Topology</para>
+	/// <para>Export Topology</para>
 	/// <para>Exports a topology from a geodatabase to an .xml file.</para>
 	/// </summary>
 	public class ExportTopology : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Topology</para>
 		/// </summary>
-		public override string DisplayName => "Export Topology";
+		public override string DisplayName() => "Export Topology";
 
 		/// <summary>
 		/// <para>Tool Name : ExportTopology</para>
 		/// </summary>
-		public override string ToolName => "ExportTopology";
+		public override string ToolName() => "ExportTopology";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.ExportTopology</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.ExportTopology";
+		public override string ExcuteName() => "topographic.ExportTopology";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Topology, Location, FileName, OutFile! };
+		public override object[] Parameters() => new object[] { Topology, Location, FileName, OutFile! };
 
 		/// <summary>
 		/// <para>Input Topology</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Terrain To TIN</para>
+	/// <para>Terrain To TIN</para>
 	/// <para>Converts a terrain dataset to a triangulated irregular network (TIN) dataset.</para>
 	/// </summary>
 	public class TerrainToTin : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Terrain To TIN</para>
 		/// </summary>
-		public override string DisplayName => "Terrain To TIN";
+		public override string DisplayName() => "Terrain To TIN";
 
 		/// <summary>
 		/// <para>Tool Name : TerrainToTin</para>
 		/// </summary>
-		public override string ToolName => "TerrainToTin";
+		public override string ToolName() => "TerrainToTin";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.TerrainToTin</para>
 		/// </summary>
-		public override string ExcuteName => "3d.TerrainToTin";
+		public override string ExcuteName() => "3d.TerrainToTin";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "terrainMemoryUsage", "tinSaveVersion", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "terrainMemoryUsage", "tinSaveVersion", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerrain, OutTin, PyramidLevelResolution!, MaxNodes!, ClipToExtent! };
+		public override object[] Parameters() => new object[] { InTerrain, OutTin, PyramidLevelResolution!, MaxNodes!, ClipToExtent! };
 
 		/// <summary>
 		/// <para>Input Terrain</para>

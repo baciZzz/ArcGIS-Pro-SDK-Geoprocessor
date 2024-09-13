@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Cell Statistics</para>
+	/// <para>Cell Statistics</para>
 	/// <para>Calculates a per-cell statistic from multiple rasters.</para>
 	/// </summary>
 	public class CellStatistics : AbstractGPProcess
@@ -38,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Cell Statistics</para>
 		/// </summary>
-		public override string DisplayName => "Cell Statistics";
+		public override string DisplayName() => "Cell Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : CellStatistics</para>
 		/// </summary>
-		public override string ToolName => "CellStatistics";
+		public override string ToolName() => "CellStatistics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.CellStatistics</para>
 		/// </summary>
-		public override string ExcuteName => "sa.CellStatistics";
+		public override string ExcuteName() => "sa.CellStatistics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRastersOrConstants, OutRaster, StatisticsType!, IgnoreNodata!, ProcessAsMultiband!, PercentileValue!, PercentileInterpolationType! };
+		public override object[] Parameters() => new object[] { InRastersOrConstants, OutRaster, StatisticsType!, IgnoreNodata!, ProcessAsMultiband!, PercentileValue!, PercentileInterpolationType! };
 
 		/// <summary>
 		/// <para>Input rasters or constant values</para>
@@ -78,7 +79,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "GPRasterFormulated", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile", "GPDouble", "GPLong")]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRastersOrConstants { get; set; }
 
 		/// <summary>
@@ -144,6 +148,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
+		[High(Allow = true, Value = 100)]
 		public object? PercentileValue { get; set; } = "90";
 
 		/// <summary>

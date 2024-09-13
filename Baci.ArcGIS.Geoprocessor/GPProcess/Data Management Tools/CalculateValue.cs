@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Calculate Value</para>
+	/// <para>Calculate Value</para>
 	/// <para>Returns a value based on a specified Python expression.</para>
 	/// </summary>
 	[Obsolete()]
@@ -31,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Value</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Value";
+		public override string DisplayName() => "Calculate Value";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateValue</para>
 		/// </summary>
-		public override string ToolName => "CalculateValue";
+		public override string ToolName() => "CalculateValue";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CalculateValue</para>
 		/// </summary>
-		public override string ExcuteName => "management.CalculateValue";
+		public override string ExcuteName() => "management.CalculateValue";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Expression, CodeBlock!, DataType!, Value! };
+		public override object[] Parameters() => new object[] { Expression, CodeBlock!, DataType!, Value! };
 
 		/// <summary>
 		/// <para>Expression</para>

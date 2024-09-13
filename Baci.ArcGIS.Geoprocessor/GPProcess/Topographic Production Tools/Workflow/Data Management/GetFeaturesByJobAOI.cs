@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Get Features By Job AOI</para>
+	/// <para>Get Features By Job AOI</para>
 	/// <para>Extracts features from a source geodatabase to a target geodatabase based on the Filter Feature Layer parameter value (or job AOI).</para>
 	/// </summary>
 	public class GetFeaturesByJobAOI : AbstractGPProcess
@@ -48,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Get Features By Job AOI</para>
 		/// </summary>
-		public override string DisplayName => "Get Features By Job AOI";
+		public override string DisplayName() => "Get Features By Job AOI";
 
 		/// <summary>
 		/// <para>Tool Name : GetFeaturesByJobAOI</para>
 		/// </summary>
-		public override string ToolName => "GetFeaturesByJobAOI";
+		public override string ToolName() => "GetFeaturesByJobAOI";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.GetFeaturesByJobAOI</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.GetFeaturesByJobAOI";
+		public override string ExcuteName() => "topographic.GetFeaturesByJobAOI";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { JobId, SourceDatabase, TargetDatabase, ExtractOperation, FilterFeature!, FilterType!, ReplicaType!, DatabasePath!, UpdatedDatabase! };
+		public override object[] Parameters() => new object[] { JobId, SourceDatabase, TargetDatabase, ExtractOperation, FilterFeature!, FilterType!, ReplicaType!, DatabasePath!, UpdatedDatabase! };
 
 		/// <summary>
 		/// <para>Job ID</para>
@@ -123,6 +124,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? FilterFeature { get; set; }
 
 		/// <summary>
@@ -159,6 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("jtc")]
 		public object? DatabasePath { get; set; }
 
 		/// <summary>

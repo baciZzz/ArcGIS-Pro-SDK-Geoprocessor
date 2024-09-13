@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>FAA 13A Runway Protection Surfaces</para>
+	/// <para>FAA 13A Runway Protection Surfaces</para>
 	/// <para>Generates runway protection surfaces based on FAA Advisory Circular 150/5300-13A.</para>
 	/// </summary>
 	public class FAA13ARunwayProtectionSurfaces : AbstractGPProcess
@@ -80,37 +81,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : FAA 13A Runway Protection Surfaces</para>
 		/// </summary>
-		public override string DisplayName => "FAA 13A Runway Protection Surfaces";
+		public override string DisplayName() => "FAA 13A Runway Protection Surfaces";
 
 		/// <summary>
 		/// <para>Tool Name : FAA13ARunwayProtectionSurfaces</para>
 		/// </summary>
-		public override string ToolName => "FAA13ARunwayProtectionSurfaces";
+		public override string ToolName() => "FAA13ARunwayProtectionSurfaces";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.FAA13ARunwayProtectionSurfaces</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.FAA13ARunwayProtectionSurfaces";
+		public override string ExcuteName() => "aviation.FAA13ARunwayProtectionSurfaces";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Target, SurfaceGeneration, VisibilityMinimums, ApproachCategory, ApproachDesignGroup, SmallAircraft!, ApproachGuidance!, RunwayDirection!, AirportElevation!, AirportControlPointFeatureClass!, RunwayEndFeatures!, LastLowLight!, LastHighLight!, CustomJsonFile!, DerivedOutfeatureclass! };
+		public override object[] Parameters() => new object[] { InFeatures, Target, SurfaceGeneration, VisibilityMinimums, ApproachCategory, ApproachDesignGroup, SmallAircraft!, ApproachGuidance!, RunwayDirection!, AirportElevation!, AirportControlPointFeatureClass!, RunwayEndFeatures!, LastLowLight!, LastHighLight!, CustomJsonFile!, DerivedOutfeatureclass! };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>
@@ -119,6 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -251,6 +253,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		[Category("Airfield Information")]
 		public object? AirportControlPointFeatureClass { get; set; }
 
@@ -261,6 +264,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		[Category("Airfield Information")]
 		public object? RunwayEndFeatures { get; set; }
 
@@ -289,6 +293,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("json")]
 		[Category("Customize Surfaces")]
 		public object? CustomJsonFile { get; set; }
 

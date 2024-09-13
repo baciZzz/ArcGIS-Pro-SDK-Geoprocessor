@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Unregistered Feature Class</para>
+	/// <para>Create Unregistered Feature Class</para>
 	/// <para>Creates an empty feature class in a database or enterprise geodatabase. The feature class is not registered with the geodatabase.</para>
 	/// </summary>
 	public class CreateUnRegisteredFeatureclass : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Unregistered Feature Class</para>
 		/// </summary>
-		public override string DisplayName => "Create Unregistered Feature Class";
+		public override string DisplayName() => "Create Unregistered Feature Class";
 
 		/// <summary>
 		/// <para>Tool Name : CreateUnRegisteredFeatureclass</para>
 		/// </summary>
-		public override string ToolName => "CreateUnRegisteredFeatureclass";
+		public override string ToolName() => "CreateUnRegisteredFeatureclass";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateUnRegisteredFeatureclass</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateUnRegisteredFeatureclass";
+		public override string ExcuteName() => "management.CreateUnRegisteredFeatureclass";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutPath, OutName, GeometryType!, Template!, HasM!, HasZ!, SpatialReference!, ConfigKeyword!, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { OutPath, OutName, GeometryType!, Template!, HasM!, HasZ!, SpatialReference!, ConfigKeyword!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Feature Class Location</para>

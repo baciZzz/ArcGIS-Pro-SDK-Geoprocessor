@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Footprints</para>
+	/// <para>Build Footprints</para>
 	/// <para>Computes the extent of every raster in a mosaic dataset. This tool is used when you have added or removed raster datasets from a mosaic dataset and want to recompute the footprints.</para>
 	/// </summary>
 	public class BuildFootprints : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Build Footprints</para>
 		/// </summary>
-		public override string DisplayName => "Build Footprints";
+		public override string DisplayName() => "Build Footprints";
 
 		/// <summary>
 		/// <para>Tool Name : BuildFootprints</para>
 		/// </summary>
-		public override string ToolName => "BuildFootprints";
+		public override string ToolName() => "BuildFootprints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.BuildFootprints</para>
 		/// </summary>
-		public override string ExcuteName => "management.BuildFootprints";
+		public override string ExcuteName() => "management.BuildFootprints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause!, ResetFootprint!, MinDataValue!, MaxDataValue!, ApproxNumVertices!, ShrinkDistance!, MaintainEdges!, SkipDerivedImages!, UpdateBoundary!, RequestSize!, MinRegionSize!, SimplificationMethod!, EdgeTolerance!, MaxSliverSize!, MinThinnessRatio!, OutMosaicDataset! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, WhereClause!, ResetFootprint!, MinDataValue!, MaxDataValue!, ApproxNumVertices!, ShrinkDistance!, MaintainEdges!, SkipDerivedImages!, UpdateBoundary!, RequestSize!, MinRegionSize!, SimplificationMethod!, EdgeTolerance!, MaxSliverSize!, MinThinnessRatio!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <para>Geometry— Restore the footprint to its original geometry.</para>
 		/// <para>Copy to sibling— Replace the panchromatic footprint with the multispectral footprint when using a pan-sharpened raster type. This can occur when the panchromatic and multispectral images do not have identical geometries.</para>
 		/// <para>None—Do not redefine the footprints.</para>
-		/// <para><para/></para>
+		/// <para>&lt;para/&gt;</para>
 		/// <para><see cref="ResetFootprintEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -115,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = -1, Max = 10000)]
 		public object? ApproxNumVertices { get; set; } = "80";
 
 		/// <summary>
@@ -169,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = -1, Max = 2147483647)]
 		[Category("Advanced Options")]
 		public object? RequestSize { get; set; } = "2000";
 
@@ -179,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 2147483647)]
 		[Category("Advanced Options")]
 		public object? MinRegionSize { get; set; } = "100";
 

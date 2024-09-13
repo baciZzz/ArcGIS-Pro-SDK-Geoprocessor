@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Table To dBASE</para>
+	/// <para>Table To dBASE</para>
 	/// <para>Converts one or more tables to dBASE tables.</para>
 	/// </summary>
 	public class TableToDBASE : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Table To dBASE</para>
 		/// </summary>
-		public override string DisplayName => "Table To dBASE";
+		public override string DisplayName() => "Table To dBASE";
 
 		/// <summary>
 		/// <para>Tool Name : TableToDBASE</para>
 		/// </summary>
-		public override string ToolName => "TableToDBASE";
+		public override string ToolName() => "TableToDBASE";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.TableToDBASE</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.TableToDBASE";
+		public override string ExcuteName() => "conversion.TableToDBASE";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "extent", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "extent", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputTable, OutputFolder, DerivedFolder! };
+		public override object[] Parameters() => new object[] { InputTable, OutputFolder, DerivedFolder! };
 
 		/// <summary>
 		/// <para>Input Tables</para>

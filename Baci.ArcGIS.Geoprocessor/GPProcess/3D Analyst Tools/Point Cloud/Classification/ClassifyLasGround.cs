@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Classify LAS Ground</para>
+	/// <para>Classify LAS Ground</para>
 	/// <para>Classifies ground points from LAS data.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Classify LAS Ground</para>
 		/// </summary>
-		public override string DisplayName => "Classify LAS Ground";
+		public override string DisplayName() => "Classify LAS Ground";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyLasGround</para>
 		/// </summary>
-		public override string ToolName => "ClassifyLasGround";
+		public override string ToolName() => "ClassifyLasGround";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.ClassifyLasGround</para>
 		/// </summary>
-		public override string ExcuteName => "3d.ClassifyLasGround";
+		public override string ExcuteName() => "3d.ClassifyLasGround";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, Method!, ReuseGround!, DemResolution!, ComputeStats!, Extent!, Boundary!, ProcessEntireFiles!, OutLasDataset!, UpdatePyramid! };
+		public override object[] Parameters() => new object[] { InLasDataset, Method!, ReuseGround!, DemResolution!, ComputeStats!, Extent!, Boundary!, ProcessEntireFiles!, OutLasDataset!, UpdatePyramid! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -139,6 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		[Category("Processing Extent")]
 		public object? Boundary { get; set; }
 

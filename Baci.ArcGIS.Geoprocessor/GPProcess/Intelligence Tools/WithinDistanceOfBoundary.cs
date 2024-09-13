@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Distance From Boundary</para>
+	/// <para>Distance From Boundary</para>
 	/// <para>Entities within distance of given boundary.</para>
 	/// </summary>
 	[Obsolete()]
@@ -38,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Distance From Boundary</para>
 		/// </summary>
-		public override string DisplayName => "Distance From Boundary";
+		public override string DisplayName() => "Distance From Boundary";
 
 		/// <summary>
 		/// <para>Tool Name : WithinDistanceOfBoundary</para>
 		/// </summary>
-		public override string ToolName => "WithinDistanceOfBoundary";
+		public override string ToolName() => "WithinDistanceOfBoundary";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.WithinDistanceOfBoundary</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.WithinDistanceOfBoundary";
+		public override string ExcuteName() => "intelligence.WithinDistanceOfBoundary";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputPointFeatures, InputAreaFeatures, InputDistance, InputSearchExpression!, InputAreaExpression!, OutputIdList! };
+		public override object[] Parameters() => new object[] { InputPointFeatures, InputAreaFeatures, InputDistance, InputSearchExpression!, InputAreaExpression!, OutputIdList! };
 
 		/// <summary>
 		/// <para>Input Points</para>
@@ -76,6 +77,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InputPointFeatures { get; set; }
 
 		/// <summary>
@@ -84,6 +87,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object InputAreaFeatures { get; set; }
 
 		/// <summary>

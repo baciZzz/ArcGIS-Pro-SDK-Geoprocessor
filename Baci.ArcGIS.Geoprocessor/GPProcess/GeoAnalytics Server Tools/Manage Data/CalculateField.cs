@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Calculate Field</para>
+	/// <para>Calculate Field</para>
 	/// <para>Creates a layer with calculated field values.</para>
 	/// </summary>
 	public class CalculateField : AbstractGPProcess
@@ -56,37 +57,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Field</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Field";
+		public override string DisplayName() => "Calculate Field";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateField</para>
 		/// </summary>
-		public override string ToolName => "CalculateField";
+		public override string ToolName() => "CalculateField";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.CalculateField</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.CalculateField";
+		public override string ExcuteName() => "geoanalytics.CalculateField";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputName, FieldName, FieldType, Expression, TrackAware!, TrackFields!, DataStore!, OutputTable!, TimeBoundarySplit!, TimeBoundaryReference! };
+		public override object[] Parameters() => new object[] { InputLayer, OutputName, FieldName, FieldType, Expression, TrackAware!, TrackFields!, DataStore!, OutputTable!, TimeBoundarySplit!, TimeBoundaryReference! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -95,6 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
 		[GPTablesDomain()]
+		[PortalType("DataStoreCatalogLayer")]
 		public object InputLayer { get; set; }
 
 		/// <summary>
@@ -155,6 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date")]
 		public object? TrackFields { get; set; }
 
 		/// <summary>

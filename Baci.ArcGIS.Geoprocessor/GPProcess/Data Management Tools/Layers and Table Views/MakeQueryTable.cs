@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Query Table</para>
+	/// <para>Make Query Table</para>
 	/// <para>Applies an SQL query to a database, and the results are represented in either a layer or table view. The query can be used to join several tables or return a subset of fields or rows from the original data in the database.</para>
 	/// </summary>
 	public class MakeQueryTable : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Query Table</para>
 		/// </summary>
-		public override string DisplayName => "Make Query Table";
+		public override string DisplayName() => "Make Query Table";
 
 		/// <summary>
 		/// <para>Tool Name : MakeQueryTable</para>
 		/// </summary>
-		public override string ToolName => "MakeQueryTable";
+		public override string ToolName() => "MakeQueryTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MakeQueryTable</para>
 		/// </summary>
-		public override string ExcuteName => "management.MakeQueryTable";
+		public override string ExcuteName() => "management.MakeQueryTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutTable, InKeyFieldOption, InKeyField!, InField!, WhereClause! };
+		public override object[] Parameters() => new object[] { InTable, OutTable, InKeyFieldOption, InKeyField!, InField!, WhereClause! };
 
 		/// <summary>
 		/// <para>Input Tables</para>
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
-		[xmlserialize()]
+		[xmlserialize(Xml = "<GPVirtualTableDomain xsi:type='typens:GPVirtualTableDomain' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.0.0'></GPVirtualTableDomain>")]
 		public object InTable { get; set; }
 
 		/// <summary>
@@ -114,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{74F6B060-5EB6-4851-8FFD-8B188A845F37}")]
 		public object? InKeyField { get; set; }
 
 		/// <summary>

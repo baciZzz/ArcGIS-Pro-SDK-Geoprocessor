@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Set Control Point At Intersect</para>
+	/// <para>Set Control Point At Intersect</para>
 	/// <para>Creates a control point at vertices that are shared by one or more line or polygon features. This tool is commonly used to synchronize boundary symbology on adjacent polygons.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Control Point At Intersect</para>
 		/// </summary>
-		public override string DisplayName => "Set Control Point At Intersect";
+		public override string DisplayName() => "Set Control Point At Intersect";
 
 		/// <summary>
 		/// <para>Tool Name : SetControlPointAtIntersect</para>
 		/// </summary>
-		public override string ToolName => "SetControlPointAtIntersect";
+		public override string ToolName() => "SetControlPointAtIntersect";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.SetControlPointAtIntersect</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.SetControlPointAtIntersect";
+		public override string ExcuteName() => "cartography.SetControlPointAtIntersect";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicPartitions" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicPartitions" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLineOrPolygonFeatures, InFeatures!, OutRepresentations! };
+		public override object[] Parameters() => new object[] { InLineOrPolygonFeatures, InFeatures!, OutRepresentations! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -71,6 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon")]
 		public object InLineOrPolygonFeatures { get; set; }
 
 		/// <summary>

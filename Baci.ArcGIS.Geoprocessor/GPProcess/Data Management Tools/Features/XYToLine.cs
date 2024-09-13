@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>XY To Line</para>
+	/// <para>XY To Line</para>
 	/// <para>Creates a feature class containing geodetic or planar line features from the values in a start x-coordinate field, start y-coordinate field, end x-coordinate field, and end y-coordinate field of a table.</para>
 	/// </summary>
 	public class XYToLine : AbstractGPProcess
@@ -55,37 +56,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : XY To Line</para>
 		/// </summary>
-		public override string DisplayName => "XY To Line";
+		public override string DisplayName() => "XY To Line";
 
 		/// <summary>
 		/// <para>Tool Name : XYToLine</para>
 		/// </summary>
-		public override string ToolName => "XYToLine";
+		public override string ToolName() => "XYToLine";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.XYToLine</para>
 		/// </summary>
-		public override string ExcuteName => "management.XYToLine";
+		public override string ExcuteName() => "management.XYToLine";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutFeatureclass, StartxField, StartyField, EndxField, EndyField, LineType!, IdField!, SpatialReference!, Attributes! };
+		public override object[] Parameters() => new object[] { InTable, OutFeatureclass, StartxField, StartyField, EndxField, EndyField, LineType!, IdField!, SpatialReference!, Attributes! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -110,6 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double", "Short", "Long")]
 		public object StartxField { get; set; }
 
 		/// <summary>
@@ -119,6 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double", "Short", "Long")]
 		public object StartyField { get; set; }
 
 		/// <summary>
@@ -128,6 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double", "Short", "Long")]
 		public object EndxField { get; set; }
 
 		/// <summary>
@@ -137,6 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double", "Short", "Long")]
 		public object EndyField { get; set; }
 
 		/// <summary>
@@ -161,6 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double", "Short", "Long", "Text")]
 		public object? IdField { get; set; }
 
 		/// <summary>

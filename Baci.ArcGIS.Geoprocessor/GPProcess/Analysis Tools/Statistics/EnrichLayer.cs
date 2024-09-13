@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Enrich Layer</para>
+	/// <para>Enrich Layer</para>
 	/// <para>Enriches your data by adding demographic and landscape facts about the people and places that surround or are inside your data locations. The output is a duplicate of your input with new attribute fields added to the table.</para>
 	/// <para>This tool requires an ArcGIS Online organizational account and consumes credits.</para>
 	/// </summary>
@@ -47,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Enrich Layer</para>
 		/// </summary>
-		public override string DisplayName => "Enrich Layer";
+		public override string DisplayName() => "Enrich Layer";
 
 		/// <summary>
 		/// <para>Tool Name : EnrichLayer</para>
 		/// </summary>
-		public override string ToolName => "EnrichLayer";
+		public override string ToolName() => "EnrichLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.EnrichLayer</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.EnrichLayer";
+		public override string ExcuteName() => "analysis.EnrichLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Country, DataCollection, Variables!, BufferType!, Distance!, Unit!, Collectionmemory! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, Country, DataCollection, Variables!, BufferType!, Distance!, Unit!, Collectionmemory! };
 
 		/// <summary>
 		/// <para>Input Features</para>

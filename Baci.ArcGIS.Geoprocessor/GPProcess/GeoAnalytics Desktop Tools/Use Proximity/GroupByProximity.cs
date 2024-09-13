@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Group By Proximity</para>
+	/// <para>Group By Proximity</para>
 	/// <para>Groups features that are within spatial or spatiotemporal proximity to each other.</para>
 	/// </summary>
 	public class GroupByProximity : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Group By Proximity</para>
 		/// </summary>
-		public override string DisplayName => "Group By Proximity";
+		public override string DisplayName() => "Group By Proximity";
 
 		/// <summary>
 		/// <para>Tool Name : GroupByProximity</para>
 		/// </summary>
-		public override string ToolName => "GroupByProximity";
+		public override string ToolName() => "GroupByProximity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.GroupByProximity</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.GroupByProximity";
+		public override string ExcuteName() => "gapro.GroupByProximity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, Output, SpatialRelationship, SpatialNearDistance!, TemporalRelationship!, TemporalNearDistance!, AttributeRelationship! };
+		public override object[] Parameters() => new object[] { InputLayer, Output, SpatialRelationship, SpatialNearDistance!, TemporalRelationship!, TemporalNearDistance!, AttributeRelationship! };
 
 		/// <summary>
 		/// <para>Input Layer</para>

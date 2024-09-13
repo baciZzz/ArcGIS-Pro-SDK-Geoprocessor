@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Color Composite</para>
+	/// <para>Create Color Composite</para>
 	/// <para>Creates a three-band raster dataset from a multiband raster dataset.</para>
 	/// </summary>
 	public class CreateColorComposite : AbstractGPProcess
@@ -64,37 +65,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Color Composite</para>
 		/// </summary>
-		public override string DisplayName => "Create Color Composite";
+		public override string DisplayName() => "Create Color Composite";
 
 		/// <summary>
 		/// <para>Tool Name : CreateColorComposite</para>
 		/// </summary>
-		public override string ToolName => "CreateColorComposite";
+		public override string ToolName() => "CreateColorComposite";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateColorComposite</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateColorComposite";
+		public override string ExcuteName() => "management.CreateColorComposite";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellAlignment", "cellSize", "compression", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellAlignment", "cellSize", "compression", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, Method, RedExpression, GreenExpression, BlueExpression };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, Method, RedExpression, GreenExpression, BlueExpression };
 
 		/// <summary>
 		/// <para>Input Raster</para>

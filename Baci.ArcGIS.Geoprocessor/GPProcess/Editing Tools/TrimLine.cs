@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Trim Line</para>
+	/// <para>Trim Line</para>
 	/// <para>Removes portions of a line that extend a specified distance past a line intersection (dangles). Any line that does not touch another line at both endpoints can be trimmed, but only the portion of the line that extends past the intersection by the specified distance will be removed.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Trim Line</para>
 		/// </summary>
-		public override string DisplayName => "Trim Line";
+		public override string DisplayName() => "Trim Line";
 
 		/// <summary>
 		/// <para>Tool Name : TrimLine</para>
 		/// </summary>
-		public override string ToolName => "TrimLine";
+		public override string ToolName() => "TrimLine";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.TrimLine</para>
 		/// </summary>
-		public override string ExcuteName => "edit.TrimLine";
+		public override string ExcuteName() => "edit.TrimLine";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DangleLength!, DeleteShorts!, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatures, DangleLength!, DeleteShorts!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -71,6 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

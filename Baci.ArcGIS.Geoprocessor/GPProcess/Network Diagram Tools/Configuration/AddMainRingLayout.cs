@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Main Ring Layout</para>
+	/// <para>Add Main Ring Layout</para>
 	/// <para>Adds the Main Ring Layout algorithm to the list of layouts to be automatically chained at the end of the building of diagrams based on a given template. This tool also presets the Main Ring Layout algorithm parameters for any diagram based on that template.</para>
 	/// </summary>
 	public class AddMainRingLayout : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Main Ring Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Main Ring Layout";
+		public override string DisplayName() => "Add Main Ring Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddMainRingLayout</para>
 		/// </summary>
-		public override string ToolName => "AddMainRingLayout";
+		public override string ToolName() => "AddMainRingLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddMainRingLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddMainRingLayout";
+		public override string ExcuteName() => "nd.AddMainRingLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, RingType!, IsUnitAbsolute!, RingWidthAbsolute!, RingWidthProportional!, RingHeightAbsolute!, RingHeightProportional!, TreeType!, PerpendicularAbsolute!, PerpendicularProportional!, AlongAbsolute!, AlongProportional!, BreakpointPosition!, EdgeDisplayType!, OutUtilityNetwork!, OutTemplateName!, OffsetAbsolute!, OffsetProportional! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, RingType!, IsUnitAbsolute!, RingWidthAbsolute!, RingWidthProportional!, RingHeightAbsolute!, RingHeightProportional!, TreeType!, PerpendicularAbsolute!, PerpendicularProportional!, AlongAbsolute!, AlongProportional!, BreakpointPosition!, EdgeDisplayType!, OutUtilityNetwork!, OutTemplateName!, OffsetAbsolute!, OffsetProportional! };
 
 		/// <summary>
 		/// <para>Input Network</para>

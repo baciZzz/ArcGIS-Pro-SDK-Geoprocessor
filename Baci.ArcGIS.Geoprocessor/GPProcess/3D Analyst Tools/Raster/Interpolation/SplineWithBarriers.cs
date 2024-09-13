@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Spline with Barriers</para>
+	/// <para>Spline with Barriers</para>
 	/// <para>Interpolates a raster surface, using barriers, from points using a minimum curvature spline technique. The barriers are entered as either polygon or polyline features.</para>
 	/// </summary>
 	public class SplineWithBarriers : AbstractGPProcess
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Spline with Barriers</para>
 		/// </summary>
-		public override string DisplayName => "Spline with Barriers";
+		public override string DisplayName() => "Spline with Barriers";
 
 		/// <summary>
 		/// <para>Tool Name : SplineWithBarriers</para>
 		/// </summary>
-		public override string ToolName => "SplineWithBarriers";
+		public override string ToolName() => "SplineWithBarriers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.SplineWithBarriers</para>
 		/// </summary>
-		public override string ExcuteName => "3d.SplineWithBarriers";
+		public override string ExcuteName() => "3d.SplineWithBarriers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputPointFeatures, ZValueField, InputBarrierFeatures!, OutputCellSize!, OutputRaster, SmoothingFactor! };
+		public override object[] Parameters() => new object[] { InputPointFeatures, ZValueField, InputBarrierFeatures!, OutputCellSize!, OutputRaster, SmoothingFactor! };
 
 		/// <summary>
 		/// <para>Input point features</para>
@@ -80,7 +81,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DEFeatureClass", "GPFeatureLayer", "GPTableView", "DETextFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Geometry")]
+		[GeometryType("Point", "Multipoint")]
 		public object InputPointFeatures { get; set; }
 
 		/// <summary>
@@ -91,6 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Geometry")]
 		public object ZValueField { get; set; }
 
 		/// <summary>
@@ -99,7 +104,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DEFeatureClass", "GPFeatureLayer", "GPTableView", "DETextFile")]
+		[FieldType("OID", "Short", "Long", "Float", "Double", "Text", "Geometry")]
+		[GeometryType("Polyline", "Polygon")]
 		public object? InputBarrierFeatures { get; set; }
 
 		/// <summary>
@@ -109,7 +117,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? OutputCellSize { get; set; }
 
 		/// <summary>
@@ -130,6 +141,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
+		[High(Allow = true, Value = 1)]
 		public object? SmoothingFactor { get; set; } = "0";
 
 		/// <summary>

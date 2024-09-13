@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Import Message</para>
+	/// <para>Import Message</para>
 	/// <para>Imports changes from a delta file into a replica geodatabase or imports an acknowledgment message into a replica geodatabase.</para>
 	/// </summary>
 	public class ImportMessage : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Import Message</para>
 		/// </summary>
-		public override string DisplayName => "Import Message";
+		public override string DisplayName() => "Import Message";
 
 		/// <summary>
 		/// <para>Tool Name : ImportMessage</para>
 		/// </summary>
-		public override string ToolName => "ImportMessage";
+		public override string ToolName() => "ImportMessage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ImportMessage</para>
 		/// </summary>
-		public override string ExcuteName => "management.ImportMessage";
+		public override string ExcuteName() => "management.ImportMessage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeodatabase, SourceDeltaFile, OutputAcknowledgementFile!, ConflictPolicy!, ConflictDefinition!, ReconcileWithParentVersion!, OutGeodatabase! };
+		public override object[] Parameters() => new object[] { InGeodatabase, SourceDeltaFile, OutputAcknowledgementFile!, ConflictPolicy!, ConflictDefinition!, ReconcileWithParentVersion!, OutGeodatabase! };
 
 		/// <summary>
 		/// <para>Import To Replica Geodatabase</para>
@@ -92,6 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object? OutputAcknowledgementFile { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Extract by Polygon</para>
+	/// <para>Extract by Polygon</para>
 	/// <para>Extracts the cells of a raster based on a polygon by specifying the polygon's vertices.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.SpatialAnalystTools.ExtractByMask"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
@@ -44,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Extract by Polygon</para>
 		/// </summary>
-		public override string DisplayName => "Extract by Polygon";
+		public override string DisplayName() => "Extract by Polygon";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractByPolygon</para>
 		/// </summary>
-		public override string ToolName => "ExtractByPolygon";
+		public override string ToolName() => "ExtractByPolygon";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.ExtractByPolygon</para>
 		/// </summary>
-		public override string ExcuteName => "sa.ExtractByPolygon";
+		public override string ExcuteName() => "sa.ExtractByPolygon";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, Polygon, OutRaster, ExtractionArea! };
+		public override object[] Parameters() => new object[] { InRaster, Polygon, OutRaster, ExtractionArea! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -82,7 +83,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRaster { get; set; }
 
 		/// <summary>

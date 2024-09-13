@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Aggregate Polygons</para>
+	/// <para>Aggregate Polygons</para>
 	/// <para>Combines polygons that are within a specified distance of each other into new polygons.</para>
 	/// </summary>
 	public class AggregatePolygons : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Aggregate Polygons</para>
 		/// </summary>
-		public override string DisplayName => "Aggregate Polygons";
+		public override string DisplayName() => "Aggregate Polygons";
 
 		/// <summary>
 		/// <para>Tool Name : AggregatePolygons</para>
 		/// </summary>
-		public override string ToolName => "AggregatePolygons";
+		public override string ToolName() => "AggregatePolygons";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.AggregatePolygons</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.AggregatePolygons";
+		public override string ExcuteName() => "cartography.AggregatePolygons";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "XYDomain", "XYTolerance", "cartographicPartitions", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "XYDomain", "XYTolerance", "cartographicPartitions", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, AggregationDistance, MinimumArea!, MinimumHoleSize!, OrthogonalityOption!, BarrierFeatures!, OutTable!, AggregateField! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, AggregationDistance, MinimumArea!, MinimumHoleSize!, OrthogonalityOption!, BarrierFeatures!, OutTable!, AggregateField! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -132,6 +135,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object? BarrierFeatures { get; set; }
 
 		/// <summary>
@@ -149,6 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text", "Date")]
 		public object? AggregateField { get; set; }
 
 		/// <summary>

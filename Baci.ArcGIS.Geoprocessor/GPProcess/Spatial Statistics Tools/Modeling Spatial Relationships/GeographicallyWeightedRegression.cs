@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Geographically Weighted Regression (GWR)</para>
+	/// <para>Geographically Weighted Regression (GWR)</para>
 	/// <para>Performs Geographically Weighted Regression (GWR), a local form of linear regression used to model spatially varying relationships.</para>
 	/// </summary>
 	[Obsolete()]
@@ -63,37 +64,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Geographically Weighted Regression (GWR)</para>
 		/// </summary>
-		public override string DisplayName => "Geographically Weighted Regression (GWR)";
+		public override string DisplayName() => "Geographically Weighted Regression (GWR)";
 
 		/// <summary>
 		/// <para>Tool Name : GeographicallyWeightedRegression</para>
 		/// </summary>
-		public override string ToolName => "GeographicallyWeightedRegression";
+		public override string ToolName() => "GeographicallyWeightedRegression";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.GeographicallyWeightedRegression</para>
 		/// </summary>
-		public override string ExcuteName => "stats.GeographicallyWeightedRegression";
+		public override string ExcuteName() => "stats.GeographicallyWeightedRegression";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentField, ExplanatoryField, OutFeatureclass, KernelType, BandwidthMethod, Distance!, NumberOfNeighbors!, WeightField!, CoefficientRasterWorkspace!, CellSize!, InPredictionLocations!, PredictionExplanatoryField!, OutPredictionFeatureclass!, OutTable!, OutRegressionRasters! };
+		public override object[] Parameters() => new object[] { InFeatures, DependentField, ExplanatoryField, OutFeatureclass, KernelType, BandwidthMethod, Distance!, NumberOfNeighbors!, WeightField!, CoefficientRasterWorkspace!, CellSize!, InPredictionLocations!, PredictionExplanatoryField!, OutPredictionFeatureclass!, OutTable!, OutRegressionRasters! };
 
 		/// <summary>
 		/// <para>Input features</para>
@@ -102,6 +103,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -111,6 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object DependentField { get; set; }
 
 		/// <summary>
@@ -120,6 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object ExplanatoryField { get; set; }
 
 		/// <summary>
@@ -161,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 1.7976900000000001e+308)]
 		public object? Distance { get; set; }
 
 		/// <summary>
@@ -170,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 1000)]
 		public object? NumberOfNeighbors { get; set; } = "30";
 
 		/// <summary>
@@ -180,6 +185,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? WeightField { get; set; }
 
 		/// <summary>
@@ -208,6 +214,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon")]
+		[FeatureType("Simple")]
 		[Category("Additional Parameters (Optional)")]
 		public object? InPredictionLocations { get; set; }
 
@@ -218,6 +226,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		[Category("Additional Parameters (Optional)")]
 		public object? PredictionExplanatoryField { get; set; }
 

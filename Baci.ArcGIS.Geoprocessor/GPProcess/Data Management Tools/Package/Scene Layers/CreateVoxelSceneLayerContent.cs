@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Voxel Scene Layer Content</para>
+	/// <para>Create Voxel Scene Layer Content</para>
 	/// <para>Creates a scene layer package (.slpk file) from a voxel layer input.</para>
 	/// </summary>
 	public class CreateVoxelSceneLayerContent : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Voxel Scene Layer Content</para>
 		/// </summary>
-		public override string DisplayName => "Create Voxel Scene Layer Content";
+		public override string DisplayName() => "Create Voxel Scene Layer Content";
 
 		/// <summary>
 		/// <para>Tool Name : CreateVoxelSceneLayerContent</para>
 		/// </summary>
-		public override string ToolName => "CreateVoxelSceneLayerContent";
+		public override string ToolName() => "CreateVoxelSceneLayerContent";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateVoxelSceneLayerContent</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateVoxelSceneLayerContent";
+		public override string ExcuteName() => "management.CreateVoxelSceneLayerContent";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutSlpk };
+		public override object[] Parameters() => new object[] { InDataset, OutSlpk };
 
 		/// <summary>
 		/// <para>Input Voxel Layer</para>
@@ -83,6 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("slpk")]
 		public object OutSlpk { get; set; }
 
 	}

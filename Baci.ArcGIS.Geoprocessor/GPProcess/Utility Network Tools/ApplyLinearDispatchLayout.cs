@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Apply Linear Dispatch Layout</para>
+	/// <para>Apply Linear Dispatch Layout</para>
 	/// <para>Apply the linear dispatch layout to a diagram</para>
 	/// </summary>
 	[Obsolete()]
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Linear Dispatch Layout</para>
 		/// </summary>
-		public override string DisplayName => "Apply Linear Dispatch Layout";
+		public override string DisplayName() => "Apply Linear Dispatch Layout";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyLinearDispatchLayout</para>
 		/// </summary>
-		public override string ToolName => "ApplyLinearDispatchLayout";
+		public override string ToolName() => "ApplyLinearDispatchLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.ApplyLinearDispatchLayout</para>
 		/// </summary>
-		public override string ExcuteName => "un.ApplyLinearDispatchLayout";
+		public override string ExcuteName() => "un.ApplyLinearDispatchLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, JunctionPlacementType!, IsUnitAbsolute!, MaximumShiftAbsolute!, MaximumShiftProportional!, MinimumShiftAbsolute!, MinimumShiftProportional!, IterationsNumber!, IsPathPreserved!, AreLeavesMoved!, AreLeavesExpanded!, ExpandShiftAbsolute!, ExpandShiftProportional!, OutNetworkDiagramLayer!, RunAsync! };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, JunctionPlacementType!, IsUnitAbsolute!, MaximumShiftAbsolute!, MaximumShiftProportional!, MinimumShiftAbsolute!, MinimumShiftProportional!, IterationsNumber!, IsPathPreserved!, AreLeavesMoved!, AreLeavesExpanded!, ExpandShiftAbsolute!, ExpandShiftProportional!, OutNetworkDiagramLayer!, RunAsync! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Calculate Kernel Density Ratio</para>
+	/// <para>Calculate Kernel Density Ratio</para>
 	/// <para>Calculates a spatial relative risk surface using two input feature datasets. The numerator in the ratio represents cases, such as number of crimes or number of patients, and the denominator represents the control, such as the total population.</para>
 	/// </summary>
 	public class CalculateKernelDensityRatio : AbstractGPProcess
@@ -57,37 +58,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Kernel Density Ratio</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Kernel Density Ratio";
+		public override string DisplayName() => "Calculate Kernel Density Ratio";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateKernelDensityRatio</para>
 		/// </summary>
-		public override string ToolName => "CalculateKernelDensityRatio";
+		public override string ToolName() => "CalculateKernelDensityRatio";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.CalculateKernelDensityRatio</para>
 		/// </summary>
-		public override string ExcuteName => "sa.CalculateKernelDensityRatio";
+		public override string ExcuteName() => "sa.CalculateKernelDensityRatio";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeaturesNumerator, InFeaturesDenominator, PopulationFieldNumerator, PopulationFieldDenominator, OutRaster, CellSize!, SearchRadiusNumerator!, SearchRadiusDenominator!, OutCellValues!, Method!, InBarriersNumerator!, InBarriersDenominator! };
+		public override object[] Parameters() => new object[] { InFeaturesNumerator, InFeaturesDenominator, PopulationFieldNumerator, PopulationFieldDenominator, OutRaster, CellSize!, SearchRadiusNumerator!, SearchRadiusDenominator!, OutCellValues!, Method!, InBarriersNumerator!, InBarriersDenominator! };
 
 		/// <summary>
 		/// <para>Input point or polyline features as numerator</para>
@@ -96,6 +97,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polyline")]
+		[FeatureType("Simple")]
 		public object InFeaturesNumerator { get; set; }
 
 		/// <summary>
@@ -105,6 +108,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polyline")]
+		[FeatureType("Simple")]
 		public object InFeaturesDenominator { get; set; }
 
 		/// <summary>
@@ -201,6 +206,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Polyline")]
+		[FeatureType("Simple")]
 		public object? InBarriersNumerator { get; set; }
 
 		/// <summary>
@@ -211,6 +218,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Polyline")]
+		[FeatureType("Simple")]
 		public object? InBarriersDenominator { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Cross Validation</para>
+	/// <para>Cross Validation</para>
 	/// <para>Removes one data location and predicts the associated data using the data at the rest of the locations. The primary use for this tool is to compare the predicted value to the observed value in order to obtain useful information about some of your model parameters.</para>
 	/// </summary>
 	public class CrossValidation : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Cross Validation</para>
 		/// </summary>
-		public override string DisplayName => "Cross Validation";
+		public override string DisplayName() => "Cross Validation";
 
 		/// <summary>
 		/// <para>Tool Name : CrossValidation</para>
 		/// </summary>
-		public override string ToolName => "CrossValidation";
+		public override string ToolName() => "CrossValidation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.CrossValidation</para>
 		/// </summary>
-		public override string ExcuteName => "ga.CrossValidation";
+		public override string ExcuteName() => "ga.CrossValidation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayer, OutPointFeatureClass!, Count!, MeanError!, RootMeanSquare!, AverageStandard!, MeanStandardized!, RootMeanSquareStandardized!, PercentIn90Interval!, PercentIn95Interval!, AverageCrps! };
+		public override object[] Parameters() => new object[] { InGeostatLayer, OutPointFeatureClass!, Count!, MeanError!, RootMeanSquare!, AverageStandard!, MeanStandardized!, RootMeanSquareStandardized!, PercentIn90Interval!, PercentIn95Interval!, AverageCrps! };
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>

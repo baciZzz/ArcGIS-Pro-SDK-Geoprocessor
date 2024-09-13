@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Linear Directional Mean</para>
+	/// <para>Linear Directional Mean</para>
 	/// <para>Identifies the mean direction, length, and geographic center for a set of lines.</para>
 	/// </summary>
 	public class DirectionalMean : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Linear Directional Mean</para>
 		/// </summary>
-		public override string DisplayName => "Linear Directional Mean";
+		public override string DisplayName() => "Linear Directional Mean";
 
 		/// <summary>
 		/// <para>Tool Name : DirectionalMean</para>
 		/// </summary>
-		public override string ToolName => "DirectionalMean";
+		public override string ToolName() => "DirectionalMean";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.DirectionalMean</para>
 		/// </summary>
-		public override string ExcuteName => "stats.DirectionalMean";
+		public override string ExcuteName() => "stats.DirectionalMean";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, OutputFeatureClass, OrientationOnly, CaseField! };
+		public override object[] Parameters() => new object[] { InputFeatureClass, OutputFeatureClass, OrientationOnly, CaseField! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -82,6 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object InputFeatureClass { get; set; }
 
 		/// <summary>
@@ -111,6 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text", "Date")]
 		public object? CaseField { get; set; }
 
 		/// <summary>

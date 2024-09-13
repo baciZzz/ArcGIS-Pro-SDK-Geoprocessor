@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Calculate Density</para>
+	/// <para>Calculate Density</para>
 	/// <para>Creates a density map from point or line features by spreading known quantities of some phenomenon (represented as attributes of the points or lines) across the map. The result is a layer of areas classified from least dense to most dense.</para>
 	/// </summary>
 	public class CalculateDensity : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Density</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Density";
+		public override string DisplayName() => "Calculate Density";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateDensity</para>
 		/// </summary>
-		public override string ToolName => "CalculateDensity";
+		public override string ToolName() => "CalculateDensity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sfa.CalculateDensity</para>
 		/// </summary>
-		public override string ExcuteName => "sfa.CalculateDensity";
+		public override string ExcuteName() => "sfa.CalculateDensity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Standard Feature Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Standard Feature Analysis Tools";
+		public override string ToolboxDisplayName() => "Standard Feature Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sfa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sfa";
+		public override string ToolboxAlise() => "sfa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputlayer, Outputname, Field!, Cellsize!, Cellsizeunits!, Radius!, Radiusunits!, Boundingpolygonlayer!, Areaunits!, Classificationtype!, Numclasses!, Outputlayer! };
+		public override object[] Parameters() => new object[] { Inputlayer, Outputname, Field!, Cellsize!, Cellsizeunits!, Radius!, Radiusunits!, Boundingpolygonlayer!, Areaunits!, Classificationtype!, Numclasses!, Outputlayer! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,6 +75,8 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polyline")]
+		[FeatureType("Simple")]
 		public object Inputlayer { get; set; }
 
 		/// <summary>
@@ -92,6 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? Field { get; set; }
 
 		/// <summary>
@@ -188,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 32)]
 		[Category("Additional Options")]
 		public object? Numclasses { get; set; } = "10";
 

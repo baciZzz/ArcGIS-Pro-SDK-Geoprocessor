@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Classify Indoor Pathways</para>
+	/// <para>Classify Indoor Pathways</para>
 	/// <para>Classifies pathways that pass through selected unit spaces, such as conference rooms or service areas, as lower priority.</para>
 	/// </summary>
 	public class ClassifyIndoorPathways : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Display Name : Classify Indoor Pathways</para>
 		/// </summary>
-		public override string DisplayName => "Classify Indoor Pathways";
+		public override string DisplayName() => "Classify Indoor Pathways";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyIndoorPathways</para>
 		/// </summary>
-		public override string ToolName => "ClassifyIndoorPathways";
+		public override string ToolName() => "ClassifyIndoorPathways";
 
 		/// <summary>
 		/// <para>Tool Excute Name : indoors.ClassifyIndoorPathways</para>
 		/// </summary>
-		public override string ExcuteName => "indoors.ClassifyIndoorPathways";
+		public override string ExcuteName() => "indoors.ClassifyIndoorPathways";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Indoors Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Indoors Tools";
+		public override string ToolboxDisplayName() => "Indoors Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : indoors</para>
 		/// </summary>
-		public override string ToolboxAlise => "indoors";
+		public override string ToolboxAlise() => "indoors";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUnitFeatures, TargetPathways, UpdatedPathways! };
+		public override object[] Parameters() => new object[] { InUnitFeatures, TargetPathways, UpdatedPathways! };
 
 		/// <summary>
 		/// <para>Input Unit Features</para>
@@ -74,6 +75,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object InUnitFeatures { get; set; }
 
 		/// <summary>
@@ -83,6 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object TargetPathways { get; set; }
 
 		/// <summary>

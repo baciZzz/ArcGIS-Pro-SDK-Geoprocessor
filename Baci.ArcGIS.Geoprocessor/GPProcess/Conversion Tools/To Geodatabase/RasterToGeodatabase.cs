@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Raster To Geodatabase</para>
+	/// <para>Raster To Geodatabase</para>
 	/// <para>Loads multiple raster datasets into a geodatabase.</para>
 	/// </summary>
 	public class RasterToGeodatabase : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Raster To Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "Raster To Geodatabase";
+		public override string DisplayName() => "Raster To Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToGeodatabase</para>
 		/// </summary>
-		public override string ToolName => "RasterToGeodatabase";
+		public override string ToolName() => "RasterToGeodatabase";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.RasterToGeodatabase</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.RasterToGeodatabase";
+		public override string ExcuteName() => "conversion.RasterToGeodatabase";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "ZDomain", "ZResolution", "compression", "configKeyword", "extent", "outputCoordinateSystem", "outputZFlag", "pyramid", "rasterStatistics", "scratchWorkspace", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "ZDomain", "ZResolution", "compression", "configKeyword", "extent", "outputCoordinateSystem", "outputZFlag", "pyramid", "rasterStatistics", "scratchWorkspace", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputRasters, OutputGeodatabase, ConfigurationKeyword!, DerivedGeodatabase! };
+		public override object[] Parameters() => new object[] { InputRasters, OutputGeodatabase, ConfigurationKeyword!, DerivedGeodatabase! };
 
 		/// <summary>
 		/// <para>Input Rasters</para>

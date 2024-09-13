@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Table To Table</para>
+	/// <para>Table To Table</para>
 	/// <para>Exports the rows of a table   to a different table.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.ConversionTools.ExportTable"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Table To Table</para>
 		/// </summary>
-		public override string DisplayName => "Table To Table";
+		public override string DisplayName() => "Table To Table";
 
 		/// <summary>
 		/// <para>Tool Name : TableToTable</para>
 		/// </summary>
-		public override string ToolName => "TableToTable";
+		public override string ToolName() => "TableToTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.TableToTable</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.TableToTable";
+		public override string ExcuteName() => "conversion.TableToTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "extent", "maintainAttachments", "preserveGlobalIds", "qualifiedFieldNames", "scratchWorkspace", "transferDomains", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "extent", "maintainAttachments", "preserveGlobalIds", "qualifiedFieldNames", "scratchWorkspace", "transferDomains", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRows, OutPath, OutName, WhereClause!, FieldMapping!, ConfigKeyword!, OutTable! };
+		public override object[] Parameters() => new object[] { InRows, OutPath, OutName, WhereClause!, FieldMapping!, ConfigKeyword!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Rows</para>

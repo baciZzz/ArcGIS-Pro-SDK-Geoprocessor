@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 {
 	/// <summary>
 	/// <para>Execute Reviewer Batch Job</para>
+	/// <para>Execute Reviewer Batch Job</para>
 	/// <para>Runs a Reviewer batch job on a workspace and writes the results to a Reviewer session. A Reviewer batch job contains groups of Reviewer checks. Checks validate data based on conditions, rules, and spatial relationships. Checks also specify sets of features or rows to validate and their source workspace. A Reviewer session stores information about validation tasks performed by Reviewer checks. This information is stored in a table and a dataset in the Reviewer workspace.</para>
 	/// </summary>
 	public class ExecuteReviewerBatchJob : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// <summary>
 		/// <para>Tool Display Name : Execute Reviewer Batch Job</para>
 		/// </summary>
-		public override string DisplayName => "Execute Reviewer Batch Job";
+		public override string DisplayName() => "Execute Reviewer Batch Job";
 
 		/// <summary>
 		/// <para>Tool Name : ExecuteReviewerBatchJob</para>
 		/// </summary>
-		public override string ToolName => "ExecuteReviewerBatchJob";
+		public override string ToolName() => "ExecuteReviewerBatchJob";
 
 		/// <summary>
 		/// <para>Tool Excute Name : Reviewer.ExecuteReviewerBatchJob</para>
 		/// </summary>
-		public override string ExcuteName => "Reviewer.ExecuteReviewerBatchJob";
+		public override string ExcuteName() => "Reviewer.ExecuteReviewerBatchJob";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Reviewer Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Reviewer Tools";
+		public override string ToolboxDisplayName() => "Data Reviewer Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : Reviewer</para>
 		/// </summary>
-		public override string ToolboxAlise => "Reviewer";
+		public override string ToolboxAlise() => "Reviewer";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ReviewerWorkspace, Session, BatchJobFile, ProductionWorkspace!, AnalysisArea!, ChangedFeatures!, Tableview!, ProductionWorkspaceversion! };
+		public override object[] Parameters() => new object[] { ReviewerWorkspace, Session, BatchJobFile, ProductionWorkspace!, AnalysisArea!, ChangedFeatures!, Tableview!, ProductionWorkspaceversion! };
 
 		/// <summary>
 		/// <para>Reviewer Workspace</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object ReviewerWorkspace { get; set; }
 
 		/// <summary>
@@ -97,6 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("rbj")]
 		public object BatchJobFile { get; set; }
 
 		/// <summary>
@@ -106,6 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object? ProductionWorkspace { get; set; }
 
 		/// <summary>

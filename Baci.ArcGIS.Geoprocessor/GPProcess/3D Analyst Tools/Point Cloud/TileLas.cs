@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Tile LAS</para>
+	/// <para>Tile LAS</para>
 	/// <para>Creates a set of nonoverlapping LAS files whose horizontal extents are divided by a regular grid.</para>
 	/// </summary>
 	public class TileLas : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Tile LAS</para>
 		/// </summary>
-		public override string DisplayName => "Tile LAS";
+		public override string DisplayName() => "Tile LAS";
 
 		/// <summary>
 		/// <para>Tool Name : TileLas</para>
 		/// </summary>
-		public override string ToolName => "TileLas";
+		public override string ToolName() => "TileLas";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.TileLas</para>
 		/// </summary>
-		public override string ExcuteName => "3d.TileLas";
+		public override string ExcuteName() => "3d.TileLas";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, TargetFolder, BaseName!, OutLasDataset!, ComputeStats!, LasVersion!, PointFormat!, Compression!, LasOptions!, TileFeature!, NamingMethod!, FileSize!, TileWidth!, TileHeight!, TileOrigin!, OutFolder! };
+		public override object[] Parameters() => new object[] { InLasDataset, TargetFolder, BaseName!, OutLasDataset!, ComputeStats!, LasVersion!, PointFormat!, Compression!, LasOptions!, TileFeature!, NamingMethod!, FileSize!, TileWidth!, TileHeight!, TileOrigin!, OutFolder! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
@@ -172,6 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		[Category("Tiling Options")]
 		public object? TileFeature { get; set; }
 

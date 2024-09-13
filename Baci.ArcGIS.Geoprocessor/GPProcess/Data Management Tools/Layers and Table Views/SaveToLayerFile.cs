@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Save To Layer File</para>
+	/// <para>Save To Layer File</para>
 	/// <para>Creates an output layer file (.lyrx) from a map layer. The layer file stores many properties of the input layer such as symbology, labeling, and custom pop-ups. Layer files saved from ArcGIS Pro cannot be used in ArcMap.</para>
 	/// </summary>
 	public class SaveToLayerFile : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Save To Layer File</para>
 		/// </summary>
-		public override string DisplayName => "Save To Layer File";
+		public override string DisplayName() => "Save To Layer File";
 
 		/// <summary>
 		/// <para>Tool Name : SaveToLayerFile</para>
 		/// </summary>
-		public override string ToolName => "SaveToLayerFile";
+		public override string ToolName() => "SaveToLayerFile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SaveToLayerFile</para>
 		/// </summary>
-		public override string ExcuteName => "management.SaveToLayerFile";
+		public override string ExcuteName() => "management.SaveToLayerFile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayer, OutLayer, IsRelativePath!, Version! };
+		public override object[] Parameters() => new object[] { InLayer, OutLayer, IsRelativePath!, Version! };
 
 		/// <summary>
 		/// <para>Input Layer</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Update GeoNames</para>
+	/// <para>Update GeoNames</para>
 	/// <para>Updates the name field on input features based on the information from GeoNames_FeaturesP and GEONAMES_TABLE.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -57,37 +58,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Update GeoNames</para>
 		/// </summary>
-		public override string DisplayName => "Update GeoNames";
+		public override string DisplayName() => "Update GeoNames";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateGeoNames</para>
 		/// </summary>
-		public override string ToolName => "UpdateGeoNames";
+		public override string ToolName() => "UpdateGeoNames";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.UpdateGeoNames</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.UpdateGeoNames";
+		public override string ExcuteName() => "topographic.UpdateGeoNames";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InGeonamesFeatures, InGeonamesTable, NamedFeatureIdField, NameIdField, NameField, OutFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, InGeonamesFeatures, InGeonamesTable, NamedFeatureIdField, NameIdField, NameField, OutFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -96,6 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polyline", "Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -105,6 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InGeonamesFeatures { get; set; }
 
 		/// <summary>

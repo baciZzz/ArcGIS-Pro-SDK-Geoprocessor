@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compute Camera Model</para>
+	/// <para>Compute Camera Model</para>
 	/// <para>Estimates the exterior camera model and interior camera model from the EXIF header of the raw image and refines the camera models. The model is then applied to the mosaic dataset with an option to use a tool-generated, high-resolution digital surface model (DSM) to achieve better orthorectification.</para>
 	/// </summary>
 	public class ComputeCameraModel : AbstractGPProcess
@@ -31,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Compute Camera Model</para>
 		/// </summary>
-		public override string DisplayName => "Compute Camera Model";
+		public override string DisplayName() => "Compute Camera Model";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeCameraModel</para>
 		/// </summary>
-		public override string ToolName => "ComputeCameraModel";
+		public override string ToolName() => "ComputeCameraModel";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ComputeCameraModel</para>
 		/// </summary>
-		public override string ExcuteName => "management.ComputeCameraModel";
+		public override string ExcuteName() => "management.ComputeCameraModel";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "gpuID", "parallelProcessingFactor", "processorType", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "gpuID", "parallelProcessingFactor", "processorType", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, OutDsm!, GpsAccuracy!, Estimate!, Refine!, ApplyAdjustment!, MaximumResidual!, InitialTiepointResolution!, OutControlPoints!, OutSolutionTable!, OutSolutionPointTable!, OutFlightPath!, MaximumOverlap!, MinimumCoverage!, Remove!, InControlPoints!, Options!, OutMosaicDataset! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, OutDsm!, GpsAccuracy!, Estimate!, Refine!, ApplyAdjustment!, MaximumResidual!, InitialTiepointResolution!, OutControlPoints!, OutSolutionTable!, OutSolutionPointTable!, OutFlightPath!, MaximumOverlap!, MinimumCoverage!, Remove!, InControlPoints!, Options!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>

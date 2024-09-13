@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Summary Statistics</para>
+	/// <para>Summary Statistics</para>
 	/// <para>Calculates summary statistics for fields in a table.</para>
 	/// </summary>
 	public class Statistics : AbstractGPProcess
@@ -55,37 +56,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Summary Statistics</para>
 		/// </summary>
-		public override string DisplayName => "Summary Statistics";
+		public override string DisplayName() => "Summary Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : Statistics</para>
 		/// </summary>
-		public override string ToolName => "Statistics";
+		public override string ToolName() => "Statistics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.Statistics</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.Statistics";
+		public override string ExcuteName() => "analysis.Statistics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutTable, StatisticsFields, CaseField!, ConcatenationSeparator! };
+		public override object[] Parameters() => new object[] { InTable, OutTable, StatisticsFields, CaseField!, ConcatenationSeparator! };
 
 		/// <summary>
 		/// <para>Input Table</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Parse Path</para>
+	/// <para>Parse Path</para>
 	/// <para>The Parse Path tool parses the input into its file, path, name, or extension. The output can be used as inline variable in the output name of other tools.</para>
 	/// </summary>
 	public class ParsePath : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : Parse Path</para>
 		/// </summary>
-		public override string DisplayName => "Parse Path";
+		public override string DisplayName() => "Parse Path";
 
 		/// <summary>
 		/// <para>Tool Name : ParsePath</para>
 		/// </summary>
-		public override string ToolName => "ParsePath";
+		public override string ToolName() => "ParsePath";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.ParsePath</para>
 		/// </summary>
-		public override string ExcuteName => "mb.ParsePath";
+		public override string ExcuteName() => "mb.ParsePath";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataElement, ParseType!, Value! };
+		public override object[] Parameters() => new object[] { InDataElement, ParseType!, Value! };
 
 		/// <summary>
 		/// <para>Input Values</para>

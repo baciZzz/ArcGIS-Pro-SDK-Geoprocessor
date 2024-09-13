@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Change Version</para>
+	/// <para>Change Version</para>
 	/// <para>Modifies the workspace of a  layer or table view to connect to the specified version.</para>
 	/// </summary>
 	public class ChangeVersion : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Change Version</para>
 		/// </summary>
-		public override string DisplayName => "Change Version";
+		public override string DisplayName() => "Change Version";
 
 		/// <summary>
 		/// <para>Tool Name : ChangeVersion</para>
 		/// </summary>
-		public override string ToolName => "ChangeVersion";
+		public override string ToolName() => "ChangeVersion";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ChangeVersion</para>
 		/// </summary>
-		public override string ExcuteName => "management.ChangeVersion";
+		public override string ExcuteName() => "management.ChangeVersion";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, VersionType, VersionName!, Date!, OutFeatureLayer!, IncludeParticipating! };
+		public override object[] Parameters() => new object[] { InFeatures, VersionType, VersionName!, Date!, OutFeatureLayer!, IncludeParticipating! };
 
 		/// <summary>
 		/// <para>Input Layer</para>

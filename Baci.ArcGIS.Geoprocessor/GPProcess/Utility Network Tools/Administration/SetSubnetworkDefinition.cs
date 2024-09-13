@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Set Subnetwork Definition</para>
+	/// <para>Set Subnetwork Definition</para>
 	/// <para>Sets the domain network tier's properties for a subnetwork in a utility network.</para>
 	/// </summary>
 	public class SetSubnetworkDefinition : AbstractGPProcess
@@ -48,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Subnetwork Definition</para>
 		/// </summary>
-		public override string DisplayName => "Set Subnetwork Definition";
+		public override string DisplayName() => "Set Subnetwork Definition";
 
 		/// <summary>
 		/// <para>Tool Name : SetSubnetworkDefinition</para>
 		/// </summary>
-		public override string ToolName => "SetSubnetworkDefinition";
+		public override string ToolName() => "SetSubnetworkDefinition";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.SetSubnetworkDefinition</para>
 		/// </summary>
-		public override string ExcuteName => "un.SetSubnetworkDefinition";
+		public override string ExcuteName() => "un.SetSubnetworkDefinition";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetwork, TierName, SupportDisjointSubnetwork, ValidDevices!, ValidSubnetworkController!, ValidLines!, AggregatedLine!, DiagramTemplate!, Summaries!, ConditionBarriers!, FunctionBarriers!, IncludeBarriers!, TraversabilityScope!, Propagators!, OutUtilityNetwork!, UpdateStructureFeatures!, UpdateContainerFeatures!, EditModeForDefaultVersion!, EditModeForNamedVersion!, ValidJunctions!, ValidJunctionObjects!, ValidJunctionObjectSubnetworkController!, ValidEdgeObjects!, ManageSubnetworkIsdirty!, IncludeContainers!, IncludeContent!, IncludeStructures!, ValidateLocatability! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, DomainNetwork, TierName, SupportDisjointSubnetwork, ValidDevices!, ValidSubnetworkController!, ValidLines!, AggregatedLine!, DiagramTemplate!, Summaries!, ConditionBarriers!, FunctionBarriers!, IncludeBarriers!, TraversabilityScope!, Propagators!, OutUtilityNetwork!, UpdateStructureFeatures!, UpdateContainerFeatures!, EditModeForDefaultVersion!, EditModeForNamedVersion!, ValidJunctions!, ValidJunctionObjects!, ValidJunctionObjectSubnetworkController!, ValidEdgeObjects!, ManageSubnetworkIsdirty!, IncludeContainers!, IncludeContent!, IncludeStructures!, ValidateLocatability! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

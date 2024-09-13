@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Query Layer</para>
+	/// <para>Make Query Layer</para>
 	/// <para>Creates a query layer  from a DBMS table based on an input SQL select statement.</para>
 	/// </summary>
 	public class MakeQueryLayer : AbstractGPProcess
@@ -47,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Query Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Query Layer";
+		public override string DisplayName() => "Make Query Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeQueryLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeQueryLayer";
+		public override string ToolName() => "MakeQueryLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MakeQueryLayer</para>
 		/// </summary>
-		public override string ExcuteName => "management.MakeQueryLayer";
+		public override string ExcuteName() => "management.MakeQueryLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, OutLayerName, Query, OidFields!, ShapeType!, Srid!, SpatialReference!, OutLayer!, SpatialProperties!, MValues!, ZValues!, Extent! };
+		public override object[] Parameters() => new object[] { InputDatabase, OutLayerName, Query, OidFields!, ShapeType!, Srid!, SpatialReference!, OutLayer!, SpatialProperties!, MValues!, ZValues!, Extent! };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
@@ -86,6 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Remote Database")]
 		public object InputDatabase { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Package Layer</para>
+	/// <para>Package Layer</para>
 	/// <para>Packages one or more layers and all referenced data sources to create a single compressed .lpkx file.</para>
 	/// </summary>
 	public class PackageLayer : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Package Layer</para>
 		/// </summary>
-		public override string DisplayName => "Package Layer";
+		public override string DisplayName() => "Package Layer";
 
 		/// <summary>
 		/// <para>Tool Name : PackageLayer</para>
 		/// </summary>
-		public override string ToolName => "PackageLayer";
+		public override string ToolName() => "PackageLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.PackageLayer</para>
 		/// </summary>
-		public override string ExcuteName => "management.PackageLayer";
+		public override string ExcuteName() => "management.PackageLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayer, OutputFile, ConvertData!, ConvertArcsdeData!, Extent!, ApplyExtentToArcsde!, SchemaOnly!, Version!, AdditionalFiles!, Summary!, Tags!, SelectRelatedRows! };
+		public override object[] Parameters() => new object[] { InLayer, OutputFile, ConvertData!, ConvertArcsdeData!, Extent!, ApplyExtentToArcsde!, SchemaOnly!, Version!, AdditionalFiles!, Summary!, Tags!, SelectRelatedRows! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -82,6 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("lpkx")]
 		public object OutputFile { get; set; }
 
 		/// <summary>

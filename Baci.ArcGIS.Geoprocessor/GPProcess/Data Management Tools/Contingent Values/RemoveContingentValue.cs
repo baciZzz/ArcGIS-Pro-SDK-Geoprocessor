@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Contingent Value</para>
+	/// <para>Remove Contingent Value</para>
 	/// <para>Removes a contingent value from a field group.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -38,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Contingent Value</para>
 		/// </summary>
-		public override string DisplayName => "Remove Contingent Value";
+		public override string DisplayName() => "Remove Contingent Value";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveContingentValue</para>
 		/// </summary>
-		public override string ToolName => "RemoveContingentValue";
+		public override string ToolName() => "RemoveContingentValue";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RemoveContingentValue</para>
 		/// </summary>
-		public override string ExcuteName => "management.RemoveContingentValue";
+		public override string ExcuteName() => "management.RemoveContingentValue";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetTable, Id, OutTable! };
+		public override object[] Parameters() => new object[] { TargetTable, Id, OutTable! };
 
 		/// <summary>
 		/// <para>Target Table</para>

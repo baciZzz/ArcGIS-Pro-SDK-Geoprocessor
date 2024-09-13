@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Features</para>
+	/// <para>Delete Features</para>
 	/// <para>Deletes all or the selected subset of features from the input.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete Features</para>
 		/// </summary>
-		public override string DisplayName => "Delete Features";
+		public override string DisplayName() => "Delete Features";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteFeatures</para>
 		/// </summary>
-		public override string ToolName => "DeleteFeatures";
+		public override string ToolName() => "DeleteFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DeleteFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "management.DeleteFeatures";
+		public override string ExcuteName() => "management.DeleteFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>

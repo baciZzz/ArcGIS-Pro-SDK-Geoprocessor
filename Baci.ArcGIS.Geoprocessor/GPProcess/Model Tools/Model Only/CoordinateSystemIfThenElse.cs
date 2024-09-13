@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>If Coordinate System Is</para>
+	/// <para>If Coordinate System Is</para>
 	/// <para>Evaluates the input data for  the specified coordinate system.</para>
 	/// </summary>
 	public class CoordinateSystemIfThenElse : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : If Coordinate System Is</para>
 		/// </summary>
-		public override string DisplayName => "If Coordinate System Is";
+		public override string DisplayName() => "If Coordinate System Is";
 
 		/// <summary>
 		/// <para>Tool Name : CoordinateSystemIfThenElse</para>
 		/// </summary>
-		public override string ToolName => "CoordinateSystemIfThenElse";
+		public override string ToolName() => "CoordinateSystemIfThenElse";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.CoordinateSystemIfThenElse</para>
 		/// </summary>
-		public override string ExcuteName => "mb.CoordinateSystemIfThenElse";
+		public override string ExcuteName() => "mb.CoordinateSystemIfThenElse";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, CoordinateSystem, True!, False! };
+		public override object[] Parameters() => new object[] { InData, CoordinateSystem, True!, False! };
 
 		/// <summary>
 		/// <para>Input Data Element</para>

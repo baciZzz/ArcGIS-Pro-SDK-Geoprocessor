@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Delete Routes</para>
+	/// <para>Delete Routes</para>
 	/// <para>Deletes routes and associated data elements from the LRS Network.</para>
 	/// </summary>
 	public class DeleteRoutes : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete Routes</para>
 		/// </summary>
-		public override string DisplayName => "Delete Routes";
+		public override string DisplayName() => "Delete Routes";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteRoutes</para>
 		/// </summary>
-		public override string ToolName => "DeleteRoutes";
+		public override string ToolName() => "DeleteRoutes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.DeleteRoutes</para>
 		/// </summary>
-		public override string ExcuteName => "locref.DeleteRoutes";
+		public override string ExcuteName() => "locref.DeleteRoutes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRouteFeatures, DeleteAssociatedCalibrationPoints!, DeleteAssociatedEvents!, DeleteAssociatedCenterlines!, UpdatedRouteFeatures!, OutDetailsFile!, OutDerivedRouteFeatures! };
+		public override object[] Parameters() => new object[] { InRouteFeatures, DeleteAssociatedCalibrationPoints!, DeleteAssociatedEvents!, DeleteAssociatedCenterlines!, UpdatedRouteFeatures!, OutDetailsFile!, OutDerivedRouteFeatures! };
 
 		/// <summary>
 		/// <para>Input Route Features</para>
@@ -69,6 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InRouteFeatures { get; set; }
 
 		/// <summary>

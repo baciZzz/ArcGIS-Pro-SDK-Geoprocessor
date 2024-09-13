@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Synchronize Job Data</para>
+	/// <para>Synchronize Job Data</para>
 	/// <para>Synchronizes multiple Workflow Manager (Classic) repositories participating in a Workflow Manager (Classic) cluster. The tool performs two-way synchronization; changes from the child repositories are sent to the parent repository and changes from the parent are sent to all child repositories.</para>
 	/// </summary>
 	public class SynchronizeJobData : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Display Name : Synchronize Job Data</para>
 		/// </summary>
-		public override string DisplayName => "Synchronize Job Data";
+		public override string DisplayName() => "Synchronize Job Data";
 
 		/// <summary>
 		/// <para>Tool Name : SynchronizeJobData</para>
 		/// </summary>
-		public override string ToolName => "SynchronizeJobData";
+		public override string ToolName() => "SynchronizeJobData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : wmx.SynchronizeJobData</para>
 		/// </summary>
-		public override string ExcuteName => "wmx.SynchronizeJobData";
+		public override string ExcuteName() => "wmx.SynchronizeJobData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Workflow Manager Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Workflow Manager Tools";
+		public override string ToolboxDisplayName() => "Workflow Manager Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : wmx</para>
 		/// </summary>
-		public override string ToolboxAlise => "wmx";
+		public override string ToolboxAlise() => "wmx";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputParentRepositoryURL, InputParentRepositoryName, InputMultiName, OutputSynchronizereplicastatus!, OutputLastsync! };
+		public override object[] Parameters() => new object[] { InputParentRepositoryURL, InputParentRepositoryName, InputMultiName, OutputSynchronizereplicastatus!, OutputLastsync! };
 
 		/// <summary>
 		/// <para>Parent Repository URL</para>

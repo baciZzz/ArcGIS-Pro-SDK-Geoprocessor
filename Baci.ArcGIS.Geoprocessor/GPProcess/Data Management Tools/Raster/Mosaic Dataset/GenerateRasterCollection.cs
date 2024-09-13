@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Raster Collection</para>
+	/// <para>Generate Raster Collection</para>
 	/// <para>Performs batch analysis or processing on image collections contained in a mosaic dataset. The images in the input mosaic dataset can be processed individually or as groups.</para>
 	/// </summary>
 	public class GenerateRasterCollection : AbstractGPProcess
@@ -46,37 +47,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Raster Collection</para>
 		/// </summary>
-		public override string DisplayName => "Generate Raster Collection";
+		public override string DisplayName() => "Generate Raster Collection";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateRasterCollection</para>
 		/// </summary>
-		public override string ToolName => "GenerateRasterCollection";
+		public override string ToolName() => "GenerateRasterCollection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.GenerateRasterCollection</para>
 		/// </summary>
-		public override string ExcuteName => "management.GenerateRasterCollection";
+		public override string ExcuteName() => "management.GenerateRasterCollection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "pyramid", "rasterStatistics" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor", "pyramid", "rasterStatistics" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutRasterCollection, CollectionBuilder, CollectionBuilderArguments, RasterFunction!, RasterFunctionArguments!, CollectionProperties!, GenerateRasters!, OutWorkspace!, Format!, OutBaseName! };
+		public override object[] Parameters() => new object[] { OutRasterCollection, CollectionBuilder, CollectionBuilderArguments, RasterFunction!, RasterFunctionArguments!, CollectionProperties!, GenerateRasters!, OutWorkspace!, Format!, OutBaseName! };
 
 		/// <summary>
 		/// <para>Output Raster Collection</para>

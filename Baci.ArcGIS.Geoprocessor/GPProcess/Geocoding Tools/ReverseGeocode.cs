@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Reverse Geocode</para>
+	/// <para>Reverse Geocode</para>
 	/// <para>Creates addresses from point locations in a feature class. The reverse geocoding process searches for the</para>
 	/// <para>nearest address, place, or intersection for the point location</para>
 	/// <para>based on optimized distance values for locators created with the</para>
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Display Name : Reverse Geocode</para>
 		/// </summary>
-		public override string DisplayName => "Reverse Geocode";
+		public override string DisplayName() => "Reverse Geocode";
 
 		/// <summary>
 		/// <para>Tool Name : ReverseGeocode</para>
 		/// </summary>
-		public override string ToolName => "ReverseGeocode";
+		public override string ToolName() => "ReverseGeocode";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geocoding.ReverseGeocode</para>
 		/// </summary>
-		public override string ExcuteName => "geocoding.ReverseGeocode";
+		public override string ExcuteName() => "geocoding.ReverseGeocode";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geocoding Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geocoding Tools";
+		public override string ToolboxDisplayName() => "Geocoding Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geocoding</para>
 		/// </summary>
-		public override string ToolboxAlise => "geocoding";
+		public override string ToolboxAlise() => "geocoding";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InAddressLocator, OutFeatureClass, AddressType!, SearchDistance, FeatureType!, LocationType! };
+		public override object[] Parameters() => new object[] { InFeatures, InAddressLocator, OutFeatureClass, AddressType!, SearchDistance, FeatureType!, LocationType! };
 
 		/// <summary>
 		/// <para>Input Feature Class or layer</para>
@@ -89,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -107,6 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPBrowseFiltersDomain()]
+		[Filters("esri_browseDialogFilters_geodatabaseItems_featureClasses")]
 		public object OutFeatureClass { get; set; }
 
 		/// <summary>

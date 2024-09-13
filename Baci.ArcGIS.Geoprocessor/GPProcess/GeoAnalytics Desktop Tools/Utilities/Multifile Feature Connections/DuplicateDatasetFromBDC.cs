@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Duplicate Dataset From Multifile Feature Connection</para>
+	/// <para>Duplicate Dataset From Multifile Feature Connection</para>
 	/// <para>Creates a duplicate of a multifile feature connection (MFC) dataset.</para>
 	/// </summary>
 	public class DuplicateDatasetFromBDC : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Duplicate Dataset From Multifile Feature Connection</para>
 		/// </summary>
-		public override string DisplayName => "Duplicate Dataset From Multifile Feature Connection";
+		public override string DisplayName() => "Duplicate Dataset From Multifile Feature Connection";
 
 		/// <summary>
 		/// <para>Tool Name : DuplicateDatasetFromBDC</para>
 		/// </summary>
-		public override string ToolName => "DuplicateDatasetFromBDC";
+		public override string ToolName() => "DuplicateDatasetFromBDC";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.DuplicateDatasetFromBDC</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.DuplicateDatasetFromBDC";
+		public override string ExcuteName() => "gapro.DuplicateDatasetFromBDC";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { BdcDataset, DuplicateName!, UpdatedBdc! };
+		public override object[] Parameters() => new object[] { BdcDataset, DuplicateName!, UpdatedBdc! };
 
 		/// <summary>
 		/// <para>Multifile Feature Connection Dataset</para>
@@ -84,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.derived)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("bdc", "mfc")]
 		public object? UpdatedBdc { get; set; }
 
 	}

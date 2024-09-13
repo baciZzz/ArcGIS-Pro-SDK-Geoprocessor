@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Export Trace Configurations</para>
+	/// <para>Export Trace Configurations</para>
 	/// <para>Exports named trace configurations from a utility network to JSON format (.json file).</para>
 	/// </summary>
 	public class ExportTraceConfigurations : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Trace Configurations</para>
 		/// </summary>
-		public override string DisplayName => "Export Trace Configurations";
+		public override string DisplayName() => "Export Trace Configurations";
 
 		/// <summary>
 		/// <para>Tool Name : ExportTraceConfigurations</para>
 		/// </summary>
-		public override string ToolName => "ExportTraceConfigurations";
+		public override string ToolName() => "ExportTraceConfigurations";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.ExportTraceConfigurations</para>
 		/// </summary>
-		public override string ExcuteName => "un.ExportTraceConfigurations";
+		public override string ExcuteName() => "un.ExportTraceConfigurations";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TraceConfigName, OutJsonFile };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TraceConfigName, OutJsonFile };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
@@ -96,6 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("JSON")]
 		public object OutJsonFile { get; set; }
 
 	}

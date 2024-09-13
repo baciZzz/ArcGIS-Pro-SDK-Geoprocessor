@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Add Surface Information</para>
+	/// <para>Add Surface Information</para>
 	/// <para>Attributes features with statistics derived from a  surface.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -52,37 +53,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Surface Information</para>
 		/// </summary>
-		public override string DisplayName => "Add Surface Information";
+		public override string DisplayName() => "Add Surface Information";
 
 		/// <summary>
 		/// <para>Tool Name : AddSurfaceInformation</para>
 		/// </summary>
-		public override string ToolName => "AddSurfaceInformation";
+		public override string ToolName() => "AddSurfaceInformation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.AddSurfaceInformation</para>
 		/// </summary>
-		public override string ExcuteName => "3d.AddSurfaceInformation";
+		public override string ExcuteName() => "3d.AddSurfaceInformation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "extent", "geographicTransformations", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "extent", "geographicTransformations", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, InSurface, OutProperty, Method!, SampleDistance!, ZFactor!, PyramidLevelResolution!, NoiseFiltering!, OutputFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatureClass, InSurface, OutProperty, Method!, SampleDistance!, ZFactor!, PyramidLevelResolution!, NoiseFiltering!, OutputFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -91,6 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon", "Point", "Multipoint")]
 		public object InFeatureClass { get; set; }
 
 		/// <summary>

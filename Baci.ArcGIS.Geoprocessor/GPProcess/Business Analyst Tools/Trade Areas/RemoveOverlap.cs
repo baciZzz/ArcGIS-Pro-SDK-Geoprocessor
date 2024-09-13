@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Remove Overlap</para>
+	/// <para>Remove Overlap</para>
 	/// <para>Removes overlap between two or more areas to form adjacent boundaries.</para>
 	/// </summary>
 	public class RemoveOverlap : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Overlap</para>
 		/// </summary>
-		public override string DisplayName => "Remove Overlap";
+		public override string DisplayName() => "Remove Overlap";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveOverlap</para>
 		/// </summary>
-		public override string ToolName => "RemoveOverlap";
+		public override string ToolName() => "RemoveOverlap";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.RemoveOverlap</para>
 		/// </summary>
-		public override string ExcuteName => "ba.RemoveOverlap";
+		public override string ExcuteName() => "ba.RemoveOverlap";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Method!, DefineTradeArea!, RingIdField!, WeightField!, StoreId!, InStoresLayer!, LinkField! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, Method!, DefineTradeArea!, RingIdField!, WeightField!, StoreId!, InStoresLayer!, LinkField! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -116,6 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "GUID", "GlobalID")]
 		public object? RingIdField { get; set; }
 
 		/// <summary>
@@ -125,6 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double", "Short", "Long")]
 		public object? WeightField { get; set; }
 
 		/// <summary>
@@ -134,6 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "GUID", "GlobalID")]
 		public object? StoreId { get; set; }
 
 		/// <summary>
@@ -143,6 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object? InStoresLayer { get; set; }
 
 		/// <summary>

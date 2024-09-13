@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Generate OIS Obstacle Data</para>
+	/// <para>Generate OIS Obstacle Data</para>
 	/// <para>Generates a JSON string that is stored in the OBSTACLEJSON field on the input Obstruction Identification Surface (OIS) multipatch feature class. This class contains the data necessary to depict obstacles to safety of flight within the approach surfaces (in the form of points, lines, or polygons) in the Terrain and Obstacle Profile layout element.</para>
 	/// </summary>
 	public class GenerateOISObstacleData : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate OIS Obstacle Data</para>
 		/// </summary>
-		public override string DisplayName => "Generate OIS Obstacle Data";
+		public override string DisplayName() => "Generate OIS Obstacle Data";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateOISObstacleData</para>
 		/// </summary>
-		public override string ToolName => "GenerateOISObstacleData";
+		public override string ToolName() => "GenerateOISObstacleData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.GenerateOISObstacleData</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.GenerateOISObstacleData";
+		public override string ExcuteName() => "aviation.GenerateOISObstacleData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRunwayFeatures, InDems!, InObstacleFeatures, TargetOisFeatures, ObstacleHeightField!, ObstacleHeightUnit!, InFlightpathFeatures!, OutOisFeatures!, LabelField!, HeightOption!, ElevationOption!, ElevationField!, ElevationFieldUnit!, ObstacleOutputMethod!, ShadowHorizontalDistance!, ShadowSlope! };
+		public override object[] Parameters() => new object[] { InRunwayFeatures, InDems!, InObstacleFeatures, TargetOisFeatures, ObstacleHeightField!, ObstacleHeightUnit!, InFlightpathFeatures!, OutOisFeatures!, LabelField!, HeightOption!, ElevationOption!, ElevationField!, ElevationFieldUnit!, ObstacleOutputMethod!, ShadowHorizontalDistance!, ShadowSlope! };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InRunwayFeatures { get; set; }
 
 		/// <summary>
@@ -96,6 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polyline", "Polygon")]
 		public object InObstacleFeatures { get; set; }
 
 		/// <summary>
@@ -105,6 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("MultiPatch")]
 		public object TargetOisFeatures { get; set; }
 
 		/// <summary>
@@ -147,6 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object? InFlightpathFeatures { get; set; }
 
 		/// <summary>

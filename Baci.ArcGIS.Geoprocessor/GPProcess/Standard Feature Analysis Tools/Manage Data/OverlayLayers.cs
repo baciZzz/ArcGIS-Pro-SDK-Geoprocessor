@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Overlay Layers</para>
+	/// <para>Overlay Layers</para>
 	/// <para>Overlays the geometries from multiple layers into one single layer.  Overlay can be used to combine, erase, modify, or update spatial features. Overlay is much more than a merging of geometries; all the attributes of the features taking part in the overlay are carried through to the result.</para>
 	/// </summary>
 	public class OverlayLayers : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Overlay Layers</para>
 		/// </summary>
-		public override string DisplayName => "Overlay Layers";
+		public override string DisplayName() => "Overlay Layers";
 
 		/// <summary>
 		/// <para>Tool Name : OverlayLayers</para>
 		/// </summary>
-		public override string ToolName => "OverlayLayers";
+		public override string ToolName() => "OverlayLayers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sfa.OverlayLayers</para>
 		/// </summary>
-		public override string ExcuteName => "sfa.OverlayLayers";
+		public override string ExcuteName() => "sfa.OverlayLayers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Standard Feature Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Standard Feature Analysis Tools";
+		public override string ToolboxDisplayName() => "Standard Feature Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sfa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sfa";
+		public override string ToolboxAlise() => "sfa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputlayer, Overlaylayer, Outputname, Overlaytype!, Outputtype!, Snaptoinput!, Tolerance!, Output! };
+		public override object[] Parameters() => new object[] { Inputlayer, Overlaylayer, Outputname, Overlaytype!, Outputtype!, Snaptoinput!, Tolerance!, Output! };
 
 		/// <summary>
 		/// <para>Input Layer</para>

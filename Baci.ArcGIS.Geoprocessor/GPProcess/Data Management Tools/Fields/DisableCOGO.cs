@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Disable COGO</para>
+	/// <para>Disable COGO</para>
 	/// <para>Disables COGO  on a line feature class and removes COGO fields and COGO-enabled labeling and symbology. COGO fields can be deleted.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Disable COGO</para>
 		/// </summary>
-		public override string DisplayName => "Disable COGO";
+		public override string DisplayName() => "Disable COGO";
 
 		/// <summary>
 		/// <para>Tool Name : DisableCOGO</para>
 		/// </summary>
-		public override string ToolName => "DisableCOGO";
+		public override string ToolName() => "DisableCOGO";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DisableCOGO</para>
 		/// </summary>
-		public override string ExcuteName => "management.DisableCOGO";
+		public override string ExcuteName() => "management.DisableCOGO";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLineFeatures, UpdatedLineFeatures! };
+		public override object[] Parameters() => new object[] { InLineFeatures, UpdatedLineFeatures! };
 
 		/// <summary>
 		/// <para>Input Line Features</para>
@@ -71,6 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InLineFeatures { get; set; }
 
 		/// <summary>

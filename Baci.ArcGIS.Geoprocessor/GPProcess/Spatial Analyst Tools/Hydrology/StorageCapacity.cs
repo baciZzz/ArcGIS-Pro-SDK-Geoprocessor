@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Storage Capacity</para>
+	/// <para>Storage Capacity</para>
 	/// <para>Creates a table and a chart of elevations and corresponding storage capacities for an input surface raster. The tool calculates the surface area and total volume of the underlying region at a series of elevation increments.</para>
 	/// </summary>
 	public class StorageCapacity : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Storage Capacity</para>
 		/// </summary>
-		public override string DisplayName => "Storage Capacity";
+		public override string DisplayName() => "Storage Capacity";
 
 		/// <summary>
 		/// <para>Tool Name : StorageCapacity</para>
 		/// </summary>
-		public override string ToolName => "StorageCapacity";
+		public override string ToolName() => "StorageCapacity";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.StorageCapacity</para>
 		/// </summary>
-		public override string ExcuteName => "sa.StorageCapacity";
+		public override string ExcuteName() => "sa.StorageCapacity";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurfaceRaster, OutTable, InZoneData!, ZoneField!, AnalysisType!, MinElevation!, MaxElevation!, IncrementType!, Increment!, ZUnit!, OutChart! };
+		public override object[] Parameters() => new object[] { InSurfaceRaster, OutTable, InZoneData!, ZoneField!, AnalysisType!, MinElevation!, MaxElevation!, IncrementType!, Increment!, ZUnit!, OutChart! };
 
 		/// <summary>
 		/// <para>Input surface raster</para>

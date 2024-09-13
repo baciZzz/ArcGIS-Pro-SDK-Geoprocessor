@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Analyze Airport Features</para>
+	/// <para>Analyze Airport Features</para>
 	/// <para>Analyzes specified point features around an airfield to find and record information such as distance from a given runway centerline or the end of the nearest runway and its designation.</para>
 	/// </summary>
 	public class AnalyzeAirportFeatures : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Analyze Airport Features</para>
 		/// </summary>
-		public override string DisplayName => "Analyze Airport Features";
+		public override string DisplayName() => "Analyze Airport Features";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeAirportFeatures</para>
 		/// </summary>
-		public override string ToolName => "AnalyzeAirportFeatures";
+		public override string ToolName() => "AnalyzeAirportFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.AnalyzeAirportFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.AnalyzeAirportFeatures";
+		public override string ExcuteName() => "aviation.AnalyzeAirportFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InRunwayFeatures, OutTable, InFeaturesHeight!, InFeaturesHeightUnit!, RunwayEndFeatures!, AirportRefPointFeatures!, RefPointHeight!, RefPointHeightUnit!, InOutHorizontalUnit! };
+		public override object[] Parameters() => new object[] { InFeatures, InRunwayFeatures, OutTable, InFeaturesHeight!, InFeaturesHeightUnit!, RunwayEndFeatures!, AirportRefPointFeatures!, RefPointHeight!, RefPointHeightUnit!, InOutHorizontalUnit! };
 
 		/// <summary>
 		/// <para>Input Analysis Features</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -88,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InRunwayFeatures { get; set; }
 
 		/// <summary>
@@ -137,6 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object? RunwayEndFeatures { get; set; }
 
 		/// <summary>
@@ -146,6 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object? AirportRefPointFeatures { get; set; }
 
 		/// <summary>

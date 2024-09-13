@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Generate Hachures For Defined Slopes</para>
+	/// <para>Generate Hachures For Defined Slopes</para>
 	/// <para>Creates multipart lines or polygons representing the slope between the lines representing the upper and lower parts of a slope.</para>
 	/// </summary>
 	public class GenerateHachuresForDefinedSlopes : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Hachures For Defined Slopes</para>
 		/// </summary>
-		public override string DisplayName => "Generate Hachures For Defined Slopes";
+		public override string DisplayName() => "Generate Hachures For Defined Slopes";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateHachuresForDefinedSlopes</para>
 		/// </summary>
-		public override string ToolName => "GenerateHachuresForDefinedSlopes";
+		public override string ToolName() => "GenerateHachuresForDefinedSlopes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.GenerateHachuresForDefinedSlopes</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.GenerateHachuresForDefinedSlopes";
+		public override string ExcuteName() => "cartography.GenerateHachuresForDefinedSlopes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "ZDomain", "extent", "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "ZDomain", "extent", "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { UpperLines, LowerLines, OutputFeatureClass, OutputType!, FullyConnected!, SearchDistance!, Interval!, MinimumLength!, AlternateHachures!, Perpendicular!, PolygonBaseWidth! };
+		public override object[] Parameters() => new object[] { UpperLines, LowerLines, OutputFeatureClass, OutputType!, FullyConnected!, SearchDistance!, Interval!, MinimumLength!, AlternateHachures!, Perpendicular!, PolygonBaseWidth! };
 
 		/// <summary>
 		/// <para>Upper Line Features</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object UpperLines { get; set; }
 
 		/// <summary>
@@ -88,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object LowerLines { get; set; }
 
 		/// <summary>

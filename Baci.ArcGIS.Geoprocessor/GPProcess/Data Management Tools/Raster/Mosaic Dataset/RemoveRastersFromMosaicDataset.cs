@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Rasters From Mosaic Dataset</para>
+	/// <para>Remove Rasters From Mosaic Dataset</para>
 	/// <para>Removes selected raster datasets from a mosaic dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Rasters From Mosaic Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Remove Rasters From Mosaic Dataset";
+		public override string DisplayName() => "Remove Rasters From Mosaic Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveRastersFromMosaicDataset</para>
 		/// </summary>
-		public override string ToolName => "RemoveRastersFromMosaicDataset";
+		public override string ToolName() => "RemoveRastersFromMosaicDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RemoveRastersFromMosaicDataset</para>
 		/// </summary>
-		public override string ExcuteName => "management.RemoveRastersFromMosaicDataset";
+		public override string ExcuteName() => "management.RemoveRastersFromMosaicDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause!, UpdateBoundary!, MarkOverviewsItems!, DeleteOverviewImages!, DeleteItemCache!, RemoveItems!, UpdateCellsizeRanges!, OutMosaicDataset! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, WhereClause!, UpdateBoundary!, MarkOverviewsItems!, DeleteOverviewImages!, DeleteItemCache!, RemoveItems!, UpdateCellsizeRanges!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

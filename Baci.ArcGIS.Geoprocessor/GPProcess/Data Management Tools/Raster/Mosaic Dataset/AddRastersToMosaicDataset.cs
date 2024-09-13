@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Rasters To Mosaic Dataset</para>
+	/// <para>Add Rasters To Mosaic Dataset</para>
 	/// <para>Adds raster datasets to a mosaic dataset from many sources, including a file, folder, table, or web service.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -52,37 +53,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Rasters To Mosaic Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Add Rasters To Mosaic Dataset";
+		public override string DisplayName() => "Add Rasters To Mosaic Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : AddRastersToMosaicDataset</para>
 		/// </summary>
-		public override string ToolName => "AddRastersToMosaicDataset";
+		public override string ToolName() => "AddRastersToMosaicDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddRastersToMosaicDataset</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddRastersToMosaicDataset";
+		public override string ExcuteName() => "management.AddRastersToMosaicDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "parallelProcessingFactor", "pyramid", "rasterStatistics", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "parallelProcessingFactor", "pyramid", "rasterStatistics", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, RasterType, InputPath, UpdateCellsizeRanges!, UpdateBoundary!, UpdateOverviews!, MaximumPyramidLevels!, MaximumCellSize!, MinimumDimension!, SpatialReference!, Filter!, SubFolder!, DuplicateItemsAction!, BuildPyramids!, CalculateStatistics!, BuildThumbnails!, OperationDescription!, ForceSpatialReference!, EstimateStatistics!, AuxInputs!, EnablePixelCache!, CacheLocation!, OutMosaicDataset! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, RasterType, InputPath, UpdateCellsizeRanges!, UpdateBoundary!, UpdateOverviews!, MaximumPyramidLevels!, MaximumCellSize!, MinimumDimension!, SpatialReference!, Filter!, SubFolder!, DuplicateItemsAction!, BuildPyramids!, CalculateStatistics!, BuildThumbnails!, OperationDescription!, ForceSpatialReference!, EstimateStatistics!, AuxInputs!, EnablePixelCache!, CacheLocation!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Minimum Bounding Volume</para>
+	/// <para>Minimum Bounding Volume</para>
 	/// <para>Creates multipatch features that represent the volume of space occupied by a set of 3D features.</para>
 	/// </summary>
 	public class MinimumBoundingVolume : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Minimum Bounding Volume</para>
 		/// </summary>
-		public override string DisplayName => "Minimum Bounding Volume";
+		public override string DisplayName() => "Minimum Bounding Volume";
 
 		/// <summary>
 		/// <para>Tool Name : MinimumBoundingVolume</para>
 		/// </summary>
-		public override string ToolName => "MinimumBoundingVolume";
+		public override string ToolName() => "MinimumBoundingVolume";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.MinimumBoundingVolume</para>
 		/// </summary>
-		public override string ExcuteName => "3d.MinimumBoundingVolume";
+		public override string ExcuteName() => "3d.MinimumBoundingVolume";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ZValue, OutFeatureClass, GeometryType!, Group!, GroupField!, MbvFields! };
+		public override object[] Parameters() => new object[] { InFeatures, ZValue, OutFeatureClass, GeometryType!, Group!, GroupField!, MbvFields! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -88,6 +89,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[ExcludeField("SHAPE_Length", "SHAPE_Area")]
+		[KeyField("Shape.Z")]
 		public object ZValue { get; set; }
 
 		/// <summary>
@@ -132,6 +136,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date")]
+		[ExcludeField("SHAPE_Length", "SHAPE_Area")]
 		public object? GroupField { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Merge</para>
+	/// <para>Merge</para>
 	/// <para>Combines multiple input datasets into a single, new output dataset. This tool can combine point, line, or polygon feature classes or tables.</para>
 	/// </summary>
 	[Obsolete()]
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Merge</para>
 		/// </summary>
-		public override string DisplayName => "Merge";
+		public override string DisplayName() => "Merge";
 
 		/// <summary>
 		/// <para>Tool Name : Merge</para>
 		/// </summary>
-		public override string ToolName => "Merge";
+		public override string ToolName() => "Merge";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Merge</para>
 		/// </summary>
-		public override string ExcuteName => "management.Merge";
+		public override string ExcuteName() => "management.Merge";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "preserveGlobalIds", "scratchWorkspace", "transferGDBAttributeProperties", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "preserveGlobalIds", "scratchWorkspace", "transferGDBAttributeProperties", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputs, Output, FieldMappings!, AddSource! };
+		public override object[] Parameters() => new object[] { Inputs, Output, FieldMappings!, AddSource! };
 
 		/// <summary>
 		/// <para>Input Datasets</para>

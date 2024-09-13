@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Import DCDT Change File</para>
+	/// <para>Import DCDT Change File</para>
 	/// <para>Imports an NGA Digital Chart Data Transaction (DCDT) change file into an aviation geodatabase.</para>
 	/// </summary>
 	public class ImportDCDTChangeFile : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Import DCDT Change File</para>
 		/// </summary>
-		public override string DisplayName => "Import DCDT Change File";
+		public override string DisplayName() => "Import DCDT Change File";
 
 		/// <summary>
 		/// <para>Tool Name : ImportDCDTChangeFile</para>
 		/// </summary>
-		public override string ToolName => "ImportDCDTChangeFile";
+		public override string ToolName() => "ImportDCDTChangeFile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.ImportDCDTChangeFile</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.ImportDCDTChangeFile";
+		public override string ExcuteName() => "aviation.ImportDCDTChangeFile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InChangeFile, TargetGdb, CurrentCycleDate, UpdatedGdb! };
+		public override object[] Parameters() => new object[] { InChangeFile, TargetGdb, CurrentCycleDate, UpdatedGdb! };
 
 		/// <summary>
 		/// <para>Input DCDT Change File</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("accdb", "mdb")]
 		public object InChangeFile { get; set; }
 
 		/// <summary>

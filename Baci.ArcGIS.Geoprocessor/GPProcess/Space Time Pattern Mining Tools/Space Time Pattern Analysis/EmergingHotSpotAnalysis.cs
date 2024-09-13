@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Emerging Hot Spot Analysis</para>
+	/// <para>Emerging Hot Spot Analysis</para>
 	/// <para>Identifies trends in the clustering of point densities (counts) or values in a space-time cube created using either the Create Space Time Cube By Aggregating Points, Create Space Time Cube From Defined Locations or Create Space Time Cube from Multidimensional Raster Layer  tool. Categories include new, consecutive, intensifying, persistent, diminishing, sporadic, oscillating, and historical hot and cold spots.</para>
 	/// </summary>
 	public class EmergingHotSpotAnalysis : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Display Name : Emerging Hot Spot Analysis</para>
 		/// </summary>
-		public override string DisplayName => "Emerging Hot Spot Analysis";
+		public override string DisplayName() => "Emerging Hot Spot Analysis";
 
 		/// <summary>
 		/// <para>Tool Name : EmergingHotSpotAnalysis</para>
 		/// </summary>
-		public override string ToolName => "EmergingHotSpotAnalysis";
+		public override string ToolName() => "EmergingHotSpotAnalysis";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stpm.EmergingHotSpotAnalysis</para>
 		/// </summary>
-		public override string ExcuteName => "stpm.EmergingHotSpotAnalysis";
+		public override string ExcuteName() => "stpm.EmergingHotSpotAnalysis";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Space Time Pattern Mining Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Space Time Pattern Mining Tools";
+		public override string ToolboxDisplayName() => "Space Time Pattern Mining Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stpm</para>
 		/// </summary>
-		public override string ToolboxAlise => "stpm";
+		public override string ToolboxAlise() => "stpm";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCube, AnalysisVariable, OutputFeatures, NeighborhoodDistance!, NeighborhoodTimeStep!, PolygonMask!, ConceptualizationOfSpatialRelationships!, NumberOfNeighbors!, DefineGlobalWindow! };
+		public override object[] Parameters() => new object[] { InCube, AnalysisVariable, OutputFeatures, NeighborhoodDistance!, NeighborhoodTimeStep!, PolygonMask!, ConceptualizationOfSpatialRelationships!, NumberOfNeighbors!, DefineGlobalWindow! };
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("nc")]
 		public object InCube { get; set; }
 
 		/// <summary>
@@ -112,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 10)]
 		public object? NeighborhoodTimeStep { get; set; } = "1";
 
 		/// <summary>
@@ -123,6 +125,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? PolygonMask { get; set; }
 
 		/// <summary>
@@ -145,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 1000)]
 		public object? NumberOfNeighbors { get; set; }
 
 		/// <summary>

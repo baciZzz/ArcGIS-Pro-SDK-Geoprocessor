@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 {
 	/// <summary>
 	/// <para>Train Text Transformation Model</para>
+	/// <para>Train Text Transformation Model</para>
 	/// <para>Trains a text transformation model to transform, translate, or summarize text.</para>
 	/// </summary>
 	public class TrainTextTransformationModel : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// <summary>
 		/// <para>Tool Display Name : Train Text Transformation Model</para>
 		/// </summary>
-		public override string DisplayName => "Train Text Transformation Model";
+		public override string DisplayName() => "Train Text Transformation Model";
 
 		/// <summary>
 		/// <para>Tool Name : TrainTextTransformationModel</para>
 		/// </summary>
-		public override string ToolName => "TrainTextTransformationModel";
+		public override string ToolName() => "TrainTextTransformationModel";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoai.TrainTextTransformationModel</para>
 		/// </summary>
-		public override string ExcuteName => "geoai.TrainTextTransformationModel";
+		public override string ExcuteName() => "geoai.TrainTextTransformationModel";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAI Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAI Tools";
+		public override string ToolboxDisplayName() => "GeoAI Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoai</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoai";
+		public override string ToolboxAlise() => "geoai";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "gpuID", "processorType" };
+		public override string[] ValidEnvironments() => new string[] { "gpuID", "processorType" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, TextField, LabelField, OutModel, PretrainedModelFile!, MaxEpochs!, ModelBackbone!, BatchSize!, ModelArguments!, LearningRate!, ValidationPercentage!, StopTraining!, MakeTrainable!, RemoveHtmlTags!, RemoveUrls! };
+		public override object[] Parameters() => new object[] { InTable, TextField, LabelField, OutModel, PretrainedModelFile!, MaxEpochs!, ModelBackbone!, BatchSize!, ModelArguments!, LearningRate!, ValidationPercentage!, StopTraining!, MakeTrainable!, RemoveHtmlTags!, RemoveUrls! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -92,6 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object TextField { get; set; }
 
 		/// <summary>
@@ -101,6 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object LabelField { get; set; }
 
 		/// <summary>
@@ -119,6 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("emd", "dlpk")]
 		public object? PretrainedModelFile { get; set; }
 
 		/// <summary>

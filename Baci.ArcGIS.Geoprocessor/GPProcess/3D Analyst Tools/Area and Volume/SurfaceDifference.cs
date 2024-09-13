@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Surface Difference</para>
+	/// <para>Surface Difference</para>
 	/// <para>Calculate the displacement between two surfaces to determine where one is above, below or the same as the other surface.</para>
 	/// </summary>
 	public class SurfaceDifference : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Surface Difference</para>
 		/// </summary>
-		public override string DisplayName => "Surface Difference";
+		public override string DisplayName() => "Surface Difference";
 
 		/// <summary>
 		/// <para>Tool Name : SurfaceDifference</para>
 		/// </summary>
-		public override string ToolName => "SurfaceDifference";
+		public override string ToolName() => "SurfaceDifference";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.SurfaceDifference</para>
 		/// </summary>
-		public override string ExcuteName => "3d.SurfaceDifference";
+		public override string ExcuteName() => "3d.SurfaceDifference";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "terrainMemoryUsage", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "terrainMemoryUsage", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, InReferenceSurface, OutFeatureClass, PyramidLevelResolution!, ReferencePyramidLevelResolution!, OutRaster!, RasterCellSize!, OutTinFolder!, OutTinBasename!, Method!, ReferenceMethod!, Extent!, Boundary! };
+		public override object[] Parameters() => new object[] { InSurface, InReferenceSurface, OutFeatureClass, PyramidLevelResolution!, ReferencePyramidLevelResolution!, OutRaster!, RasterCellSize!, OutTinFolder!, OutTinBasename!, Method!, ReferenceMethod!, Extent!, Boundary! };
 
 		/// <summary>
 		/// <para>Input Surface</para>
@@ -128,6 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 9.9999999999999995e-08)]
 		[Category("Raster Options")]
 		public object? RasterCellSize { get; set; } = "10";
 
@@ -197,6 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		[Category("Processing Extent")]
 		public object? Boundary { get; set; }
 

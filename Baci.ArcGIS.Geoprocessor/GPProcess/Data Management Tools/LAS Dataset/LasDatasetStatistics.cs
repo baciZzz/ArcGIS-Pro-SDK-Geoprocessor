@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>LAS Dataset Statistics</para>
+	/// <para>LAS Dataset Statistics</para>
 	/// <para>Calculates or updates statistics for a LAS dataset and generates an optional statistics report.</para>
 	/// </summary>
 	public class LasDatasetStatistics : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : LAS Dataset Statistics</para>
 		/// </summary>
-		public override string DisplayName => "LAS Dataset Statistics";
+		public override string DisplayName() => "LAS Dataset Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : LasDatasetStatistics</para>
 		/// </summary>
-		public override string ToolName => "LasDatasetStatistics";
+		public override string ToolName() => "LasDatasetStatistics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.LasDatasetStatistics</para>
 		/// </summary>
-		public override string ExcuteName => "management.LasDatasetStatistics";
+		public override string ExcuteName() => "management.LasDatasetStatistics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, CalculationType!, OutFile!, SummaryLevel!, Delimiter!, DecimalSeparator!, DerivedLasDataset! };
+		public override object[] Parameters() => new object[] { InLasDataset, CalculationType!, OutFile!, SummaryLevel!, Delimiter!, DecimalSeparator!, DerivedLasDataset! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>

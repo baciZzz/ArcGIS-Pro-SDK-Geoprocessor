@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Is Closed 3D</para>
+	/// <para>Is Closed 3D</para>
 	/// <para>Evaluates multipatch features to determine whether each feature completely encloses a volume of space.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Is Closed 3D</para>
 		/// </summary>
-		public override string DisplayName => "Is Closed 3D";
+		public override string DisplayName() => "Is Closed 3D";
 
 		/// <summary>
 		/// <para>Tool Name : IsClosed3D</para>
 		/// </summary>
-		public override string ToolName => "IsClosed3D";
+		public override string ToolName() => "IsClosed3D";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.IsClosed3D</para>
 		/// </summary>
-		public override string ExcuteName => "3d.IsClosed3D";
+		public override string ExcuteName() => "3d.IsClosed3D";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, OutputFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatureClass, OutputFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Multipatch Features</para>

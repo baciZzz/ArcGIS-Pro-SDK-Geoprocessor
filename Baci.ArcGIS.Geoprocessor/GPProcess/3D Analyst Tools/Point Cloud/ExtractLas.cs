@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Extract LAS</para>
+	/// <para>Extract LAS</para>
 	/// <para>Creates new LAS files from point cloud data in a LAS dataset or point cloud scene layer.</para>
 	/// </summary>
 	public class ExtractLas : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Extract LAS</para>
 		/// </summary>
-		public override string DisplayName => "Extract LAS";
+		public override string DisplayName() => "Extract LAS";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractLas</para>
 		/// </summary>
-		public override string ToolName => "ExtractLas";
+		public override string ToolName() => "ExtractLas";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.ExtractLas</para>
 		/// </summary>
-		public override string ExcuteName => "3d.ExtractLas";
+		public override string ExcuteName() => "3d.ExtractLas";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, TargetFolder, Extent!, Boundary!, ProcessEntireFiles!, NameSuffix!, RemoveVlr!, RearrangePoints!, ComputeStats!, OutLasDataset!, OutFolder!, Compression! };
+		public override object[] Parameters() => new object[] { InLasDataset, TargetFolder, Extent!, Boundary!, ProcessEntireFiles!, NameSuffix!, RemoveVlr!, RearrangePoints!, ComputeStats!, OutLasDataset!, OutFolder!, Compression! };
 
 		/// <summary>
 		/// <para>Input Point Cloud</para>
@@ -106,6 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		[Category("Processing Extent")]
 		public object? Boundary { get; set; }
 

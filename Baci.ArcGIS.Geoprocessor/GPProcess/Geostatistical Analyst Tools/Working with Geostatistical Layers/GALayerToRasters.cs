@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>GA Layer To Rasters</para>
+	/// <para>GA Layer To Rasters</para>
 	/// <para>Exports a geostatistical layer to one or multiple rasters.</para>
 	/// </summary>
 	public class GALayerToRasters : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : GA Layer To Rasters</para>
 		/// </summary>
-		public override string DisplayName => "GA Layer To Rasters";
+		public override string DisplayName() => "GA Layer To Rasters";
 
 		/// <summary>
 		/// <para>Tool Name : GALayerToRasters</para>
 		/// </summary>
-		public override string ToolName => "GALayerToRasters";
+		public override string ToolName() => "GALayerToRasters";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GALayerToRasters</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GALayerToRasters";
+		public override string ExcuteName() => "ga.GALayerToRasters";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayer, OutRaster, OutputType!, QuantileProbabilityValue!, CellSize!, PointsPerBlockHorz!, PointsPerBlockVert!, AdditionalRasters!, OutAdditionalRasters!, OutElevation! };
+		public override object[] Parameters() => new object[] { InGeostatLayer, OutRaster, OutputType!, QuantileProbabilityValue!, CellSize!, PointsPerBlockHorz!, PointsPerBlockVert!, AdditionalRasters!, OutAdditionalRasters!, OutElevation! };
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
@@ -107,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = -1.7976931348623157e+308, Max = 1.7976931348623157e+308)]
 		public object? QuantileProbabilityValue { get; set; }
 
 		/// <summary>
@@ -116,7 +117,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? CellSize { get; set; }
 
 		/// <summary>
@@ -125,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 256)]
 		public object? PointsPerBlockHorz { get; set; } = "1";
 
 		/// <summary>
@@ -134,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 256)]
 		public object? PointsPerBlockVert { get; set; } = "1";
 
 		/// <summary>

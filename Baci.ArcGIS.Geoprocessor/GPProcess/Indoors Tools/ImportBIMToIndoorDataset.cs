@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Import BIM To Indoor Dataset</para>
+	/// <para>Import BIM To Indoor Dataset</para>
 	/// <para>Imports features from a BIM file into an indoor dataset that conforms to the ArcGIS Indoors Information Model. The output of this tool can be used to create floor-aware maps and scenes for use in floor-aware apps, as well as to generate an indoor network for routing.</para>
 	/// </summary>
 	public class ImportBIMToIndoorDataset : AbstractGPProcess
@@ -65,37 +66,37 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Display Name : Import BIM To Indoor Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Import BIM To Indoor Dataset";
+		public override string DisplayName() => "Import BIM To Indoor Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : ImportBIMToIndoorDataset</para>
 		/// </summary>
-		public override string ToolName => "ImportBIMToIndoorDataset";
+		public override string ToolName() => "ImportBIMToIndoorDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : indoors.ImportBIMToIndoorDataset</para>
 		/// </summary>
-		public override string ExcuteName => "indoors.ImportBIMToIndoorDataset";
+		public override string ExcuteName() => "indoors.ImportBIMToIndoorDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Indoors Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Indoors Tools";
+		public override string ToolboxDisplayName() => "Indoors Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : indoors</para>
 		/// </summary>
-		public override string ToolboxAlise => "indoors";
+		public override string ToolboxAlise() => "indoors";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBimFloorplanLayer, TargetUnitFeatures, TargetDetailFeatures, TargetLevelFeatures, TargetFacilityFeatures, FacilityId, FacilityName, GroundFloorName, FloorplanPolygonUseTypeField!, FloorsToImport!, AreaUnitOfMeasure!, InBimRoomsLayer!, RoomPropertiesMapping!, AllowInsertNewFacility!, UpdatedUnits! };
+		public override object[] Parameters() => new object[] { InBimFloorplanLayer, TargetUnitFeatures, TargetDetailFeatures, TargetLevelFeatures, TargetFacilityFeatures, FacilityId, FacilityName, GroundFloorName, FloorplanPolygonUseTypeField!, FloorsToImport!, AreaUnitOfMeasure!, InBimRoomsLayer!, RoomPropertiesMapping!, AllowInsertNewFacility!, UpdatedUnits! };
 
 		/// <summary>
 		/// <para>Input BIM Floorplan Polygon Layer</para>
@@ -104,6 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InBimFloorplanLayer { get; set; }
 
 		/// <summary>
@@ -113,6 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object TargetUnitFeatures { get; set; }
 
 		/// <summary>
@@ -122,6 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object TargetDetailFeatures { get; set; }
 
 		/// <summary>
@@ -131,6 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object TargetLevelFeatures { get; set; }
 
 		/// <summary>
@@ -140,6 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object TargetFacilityFeatures { get; set; }
 
 		/// <summary>
@@ -201,6 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("MultiPatch")]
 		public object? InBimRoomsLayer { get; set; }
 
 		/// <summary>

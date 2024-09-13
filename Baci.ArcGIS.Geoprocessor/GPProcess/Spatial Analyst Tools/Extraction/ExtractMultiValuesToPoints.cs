@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Extract Multi Values to Points</para>
+	/// <para>Extract Multi Values to Points</para>
 	/// <para>Extracts cell values at locations specified in a point feature class from one or more rasters and records the values to the attribute table of the point feature class.</para>
 	/// </summary>
 	public class ExtractMultiValuesToPoints : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Extract Multi Values to Points</para>
 		/// </summary>
-		public override string DisplayName => "Extract Multi Values to Points";
+		public override string DisplayName() => "Extract Multi Values to Points";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractMultiValuesToPoints</para>
 		/// </summary>
-		public override string ToolName => "ExtractMultiValuesToPoints";
+		public override string ToolName() => "ExtractMultiValuesToPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.ExtractMultiValuesToPoints</para>
 		/// </summary>
-		public override string ExcuteName => "sa.ExtractMultiValuesToPoints";
+		public override string ExcuteName() => "sa.ExtractMultiValuesToPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "configKeyword", "extent", "mask", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "configKeyword", "extent", "mask", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, InRasters, BilinearInterpolateValues!, OutPointFeatures! };
+		public override object[] Parameters() => new object[] { InPointFeatures, InRasters, BilinearInterpolateValues!, OutPointFeatures! };
 
 		/// <summary>
 		/// <para>Input point features</para>
@@ -74,7 +75,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DEFeatureClass", "GPFeatureLayer", "GPTableView", "DETextFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Geometry")]
+		[GeometryType("Point", "Multipoint")]
 		public object InPointFeatures { get; set; }
 
 		/// <summary>

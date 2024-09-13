@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>File Compare</para>
+	/// <para>File Compare</para>
 	/// <para>Compares two files and returns the comparison results..</para>
 	/// </summary>
 	public class FileCompare : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : File Compare</para>
 		/// </summary>
-		public override string DisplayName => "File Compare";
+		public override string DisplayName() => "File Compare";
 
 		/// <summary>
 		/// <para>Tool Name : FileCompare</para>
 		/// </summary>
-		public override string ToolName => "FileCompare";
+		public override string ToolName() => "FileCompare";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.FileCompare</para>
 		/// </summary>
-		public override string ExcuteName => "management.FileCompare";
+		public override string ExcuteName() => "management.FileCompare";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBaseFile, InTestFile, FileType!, ContinueCompare!, OutCompareFile!, CompareStatus! };
+		public override object[] Parameters() => new object[] { InBaseFile, InTestFile, FileType!, ContinueCompare!, OutCompareFile!, CompareStatus! };
 
 		/// <summary>
 		/// <para>Input Base File</para>

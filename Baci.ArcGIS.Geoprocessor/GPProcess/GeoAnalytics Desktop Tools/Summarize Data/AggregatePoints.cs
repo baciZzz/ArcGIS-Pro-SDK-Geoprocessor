@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Aggregate Points</para>
+	/// <para>Aggregate Points</para>
 	/// <para>Aggregates points into polygon features or bins. A polygon is returned with a count of points as well as optional statistics at all locations where points exist.</para>
 	/// </summary>
 	public class AggregatePoints : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Aggregate Points</para>
 		/// </summary>
-		public override string DisplayName => "Aggregate Points";
+		public override string DisplayName() => "Aggregate Points";
 
 		/// <summary>
 		/// <para>Tool Name : AggregatePoints</para>
 		/// </summary>
-		public override string ToolName => "AggregatePoints";
+		public override string ToolName() => "AggregatePoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.AggregatePoints</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.AggregatePoints";
+		public override string ExcuteName() => "gapro.AggregatePoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { PointLayer, OutFeatureClass, PolygonOrBin, PolygonLayer!, BinType!, BinSize!, TimeStepInterval!, TimeStepRepeat!, TimeStepReference!, SummaryFields! };
+		public override object[] Parameters() => new object[] { PointLayer, OutFeatureClass, PolygonOrBin, PolygonLayer!, BinType!, BinSize!, TimeStepInterval!, TimeStepRepeat!, TimeStepReference!, SummaryFields! };
 
 		/// <summary>
 		/// <para>Point Layer</para>
@@ -82,6 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object PointLayer { get; set; }
 
 		/// <summary>
@@ -91,6 +94,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object OutFeatureClass { get; set; }
 
 		/// <summary>
@@ -112,6 +117,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? PolygonLayer { get; set; }
 
 		/// <summary>

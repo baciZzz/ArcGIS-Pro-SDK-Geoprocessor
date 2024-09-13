@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Enable Network Topology</para>
+	/// <para>Enable Network Topology</para>
 	/// <para>Enables a network topology for a utility network.</para>
 	/// </summary>
 	public class EnableNetworkTopology : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Enable Network Topology</para>
 		/// </summary>
-		public override string DisplayName => "Enable Network Topology";
+		public override string DisplayName() => "Enable Network Topology";
 
 		/// <summary>
 		/// <para>Tool Name : EnableNetworkTopology</para>
 		/// </summary>
-		public override string ToolName => "EnableNetworkTopology";
+		public override string ToolName() => "EnableNetworkTopology";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.EnableNetworkTopology</para>
 		/// </summary>
-		public override string ExcuteName => "un.EnableNetworkTopology";
+		public override string ExcuteName() => "un.EnableNetworkTopology";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, MaxNumberOfErrors!, OnlyGenerateErrors!, OutUtilityNetwork! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, MaxNumberOfErrors!, OnlyGenerateErrors!, OutUtilityNetwork! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

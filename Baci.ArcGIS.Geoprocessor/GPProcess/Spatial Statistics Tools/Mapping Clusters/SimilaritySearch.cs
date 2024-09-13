@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Similarity Search</para>
+	/// <para>Similarity Search</para>
 	/// <para>Identifies which candidate features are most similar or most dissimilar to one or more input features based on feature attributes.</para>
 	/// </summary>
 	public class SimilaritySearch : AbstractGPProcess
@@ -86,37 +87,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Similarity Search</para>
 		/// </summary>
-		public override string DisplayName => "Similarity Search";
+		public override string DisplayName() => "Similarity Search";
 
 		/// <summary>
 		/// <para>Tool Name : SimilaritySearch</para>
 		/// </summary>
-		public override string ToolName => "SimilaritySearch";
+		public override string ToolName() => "SimilaritySearch";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.SimilaritySearch</para>
 		/// </summary>
-		public override string ExcuteName => "stats.SimilaritySearch";
+		public override string ExcuteName() => "stats.SimilaritySearch";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeaturesToMatch, CandidateFeatures, OutputFeatures, CollapseOutputToPoints, MostOrLeastSimilar, MatchMethod, NumberOfResults, AttributesOfInterest, FieldsToAppendToOutput! };
+		public override object[] Parameters() => new object[] { InputFeaturesToMatch, CandidateFeatures, OutputFeatures, CollapseOutputToPoints, MostOrLeastSimilar, MatchMethod, NumberOfResults, AttributesOfInterest, FieldsToAppendToOutput! };
 
 		/// <summary>
 		/// <para>Input Features To Match</para>
@@ -206,6 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object AttributesOfInterest { get; set; }
 
 		/// <summary>
@@ -215,6 +217,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date")]
 		[Category("Additional Options")]
 		public object? FieldsToAppendToOutput { get; set; }
 

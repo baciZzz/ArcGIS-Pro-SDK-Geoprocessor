@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Repair Self Intersection</para>
+	/// <para>Repair Self Intersection</para>
 	/// <para>Repairs self-intersecting line or polygon features. The portion between the feature and the intersection points are either deleted or split into a new feature.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Repair Self Intersection</para>
 		/// </summary>
-		public override string DisplayName => "Repair Self Intersection";
+		public override string DisplayName() => "Repair Self Intersection";
 
 		/// <summary>
 		/// <para>Tool Name : RepairSelfIntersection</para>
 		/// </summary>
-		public override string ToolName => "RepairSelfIntersection";
+		public override string ToolName() => "RepairSelfIntersection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.RepairSelfIntersection</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.RepairSelfIntersection";
+		public override string ExcuteName() => "topographic.RepairSelfIntersection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, RepairType, MaxLength!, RepairAtEndPoint!, ModifiedInFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, RepairType, MaxLength!, RepairAtEndPoint!, ModifiedInFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

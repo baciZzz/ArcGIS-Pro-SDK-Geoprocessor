@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Standard Distance</para>
+	/// <para>Standard Distance</para>
 	/// <para>Measures the degree to which features are concentrated or dispersed around the geometric mean center.</para>
 	/// </summary>
 	public class StandardDistance : AbstractGPProcess
@@ -44,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Standard Distance</para>
 		/// </summary>
-		public override string DisplayName => "Standard Distance";
+		public override string DisplayName() => "Standard Distance";
 
 		/// <summary>
 		/// <para>Tool Name : StandardDistance</para>
 		/// </summary>
-		public override string ToolName => "StandardDistance";
+		public override string ToolName() => "StandardDistance";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.StandardDistance</para>
 		/// </summary>
-		public override string ExcuteName => "stats.StandardDistance";
+		public override string ExcuteName() => "stats.StandardDistance";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, OutputStandardDistanceFeatureClass, CircleSize, WeightField!, CaseField! };
+		public override object[] Parameters() => new object[] { InputFeatureClass, OutputStandardDistanceFeatureClass, CircleSize, WeightField!, CaseField! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -112,6 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? WeightField { get; set; }
 
 		/// <summary>
@@ -121,6 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text", "Date")]
 		public object? CaseField { get; set; }
 
 		/// <summary>

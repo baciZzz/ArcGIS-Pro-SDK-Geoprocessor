@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Create Thiessen Polygons</para>
+	/// <para>Create Thiessen Polygons</para>
 	/// <para>Creates Thiessen polygons from point features.</para>
 	/// </summary>
 	public class CreateThiessenPolygons : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Thiessen Polygons</para>
 		/// </summary>
-		public override string DisplayName => "Create Thiessen Polygons";
+		public override string DisplayName() => "Create Thiessen Polygons";
 
 		/// <summary>
 		/// <para>Tool Name : CreateThiessenPolygons</para>
 		/// </summary>
-		public override string ToolName => "CreateThiessenPolygons";
+		public override string ToolName() => "CreateThiessenPolygons";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.CreateThiessenPolygons</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.CreateThiessenPolygons";
+		public override string ExcuteName() => "analysis.CreateThiessenPolygons";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, FieldsToCopy! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, FieldsToCopy! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,6 +75,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Multipoint", "Point")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

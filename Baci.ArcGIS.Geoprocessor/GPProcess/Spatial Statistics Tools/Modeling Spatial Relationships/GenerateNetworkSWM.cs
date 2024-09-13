@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Generate Network Spatial Weights</para>
+	/// <para>Generate Network Spatial Weights</para>
 	/// <para>Constructs a spatial weights matrix file (.swm) using a network dataset, defining spatial relationships in terms of the underlying network structure.</para>
 	/// </summary>
 	public class GenerateNetworkSWM : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Network Spatial Weights</para>
 		/// </summary>
-		public override string DisplayName => "Generate Network Spatial Weights";
+		public override string DisplayName() => "Generate Network Spatial Weights";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateNetworkSWM</para>
 		/// </summary>
-		public override string ToolName => "GenerateNetworkSWM";
+		public override string ToolName() => "GenerateNetworkSWM";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.GenerateNetworkSWM</para>
 		/// </summary>
-		public override string ExcuteName => "stats.GenerateNetworkSWM";
+		public override string ExcuteName() => "stats.GenerateNetworkSWM";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, UniqueIDField, OutputSpatialWeightsMatrixFile, InputNetworkDataSource, TravelMode, ImpedanceDistanceCutoff!, ImpedanceTemporalCutoff!, ImpedanceCostCutoff!, MaximumNumberOfNeighbors!, TimeOfDay!, TimeZone!, Barriers!, SearchTolerance!, ConceptualizationOfSpatialRelationships!, Exponent!, RowStandardization! };
+		public override object[] Parameters() => new object[] { InputFeatureClass, UniqueIDField, OutputSpatialWeightsMatrixFile, InputNetworkDataSource, TravelMode, ImpedanceDistanceCutoff!, ImpedanceTemporalCutoff!, ImpedanceCostCutoff!, MaximumNumberOfNeighbors!, TimeOfDay!, TimeZone!, Barriers!, SearchTolerance!, ConceptualizationOfSpatialRelationships!, Exponent!, RowStandardization! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -89,6 +90,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InputFeatureClass { get; set; }
 
 		/// <summary>
@@ -98,6 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		public object UniqueIDField { get; set; }
 
 		/// <summary>
@@ -107,6 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("swm")]
 		public object OutputSpatialWeightsMatrixFile { get; set; }
 
 		/// <summary>
@@ -203,6 +208,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon", "Polyline")]
+		[FeatureType("Simple")]
 		[Category("Network Analysis Options")]
 		public object? Barriers { get; set; }
 
@@ -235,7 +242,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0.10000000000000001, Max = 4)]
 		[Category("Weights Options")]
 		public object? Exponent { get; set; } = "1";
 

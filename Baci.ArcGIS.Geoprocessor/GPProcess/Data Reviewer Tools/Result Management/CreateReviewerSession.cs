@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 {
 	/// <summary>
 	/// <para>Create Reviewer Session</para>
+	/// <para>Create Reviewer Session</para>
 	/// <para>Creates a new Reviewer session in the specified workspace.</para>
 	/// </summary>
 	public class CreateReviewerSession : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Reviewer Session</para>
 		/// </summary>
-		public override string DisplayName => "Create Reviewer Session";
+		public override string DisplayName() => "Create Reviewer Session";
 
 		/// <summary>
 		/// <para>Tool Name : CreateReviewerSession</para>
 		/// </summary>
-		public override string ToolName => "CreateReviewerSession";
+		public override string ToolName() => "CreateReviewerSession";
 
 		/// <summary>
 		/// <para>Tool Excute Name : Reviewer.CreateReviewerSession</para>
 		/// </summary>
-		public override string ExcuteName => "Reviewer.CreateReviewerSession";
+		public override string ExcuteName() => "Reviewer.CreateReviewerSession";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Reviewer Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Reviewer Tools";
+		public override string ToolboxDisplayName() => "Data Reviewer Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : Reviewer</para>
 		/// </summary>
-		public override string ToolboxAlise => "Reviewer";
+		public override string ToolboxAlise() => "Reviewer";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ReviewerWorkspace, SessionName, SessionTemplate!, Session!, DuplicateChecking!, StoreGeometry!, Username!, Version! };
+		public override object[] Parameters() => new object[] { ReviewerWorkspace, SessionName, SessionTemplate!, Session!, DuplicateChecking!, StoreGeometry!, Username!, Version! };
 
 		/// <summary>
 		/// <para>Reviewer Workspace</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object ReviewerWorkspace { get; set; }
 
 		/// <summary>

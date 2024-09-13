@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Expand Container By Attribute Rule</para>
+	/// <para>Add Expand Container By Attribute Rule</para>
 	/// <para>Adds a diagram rule to automatically expand container contents during diagram building based on an existing template. The containers to expand are filtered by attributes from a given container source class or object table.</para>
 	/// </summary>
 	public class AddExpandContainerByAttributeRule : AbstractGPProcess
@@ -56,37 +57,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Expand Container By Attribute Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Expand Container By Attribute Rule";
+		public override string DisplayName() => "Add Expand Container By Attribute Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddExpandContainerByAttributeRule</para>
 		/// </summary>
-		public override string ToolName => "AddExpandContainerByAttributeRule";
+		public override string ToolName() => "AddExpandContainerByAttributeRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddExpandContainerByAttributeRule</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddExpandContainerByAttributeRule";
+		public override string ExcuteName() => "nd.AddExpandContainerByAttributeRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, ContainersVisibility, ContainerSource, WhereClause!, Description!, OutUtilityNetwork!, OutTemplateName! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, ContainersVisibility, ContainerSource, WhereClause!, Description!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>

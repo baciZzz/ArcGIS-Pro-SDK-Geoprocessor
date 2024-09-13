@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Generate Changeover Points</para>
+	/// <para>Generate Changeover Points</para>
 	/// <para>Creates changeover points along routes.</para>
 	/// </summary>
 	public class GenerateChangeoverPoints : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Changeover Points</para>
 		/// </summary>
-		public override string DisplayName => "Generate Changeover Points";
+		public override string DisplayName() => "Generate Changeover Points";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateChangeoverPoints</para>
 		/// </summary>
-		public override string ToolName => "GenerateChangeoverPoints";
+		public override string ToolName() => "GenerateChangeoverPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.GenerateChangeoverPoints</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.GenerateChangeoverPoints";
+		public override string ExcuteName() => "aviation.GenerateChangeoverPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, TargetChangeoverFeatures, DistanceSourceType, UpdatedFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, TargetChangeoverFeatures, DistanceSourceType, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input ATS Route Features</para>
@@ -82,6 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -91,6 +94,8 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object TargetChangeoverFeatures { get; set; }
 
 		/// <summary>

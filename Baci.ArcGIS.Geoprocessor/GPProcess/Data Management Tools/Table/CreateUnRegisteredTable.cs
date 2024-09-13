@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Unregistered Table</para>
+	/// <para>Create Unregistered Table</para>
 	/// <para>Creates an empty table in a database or enterprise geodatabase. The table is not registered with the geodatabase.</para>
 	/// </summary>
 	public class CreateUnRegisteredTable : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Unregistered Table</para>
 		/// </summary>
-		public override string DisplayName => "Create Unregistered Table";
+		public override string DisplayName() => "Create Unregistered Table";
 
 		/// <summary>
 		/// <para>Tool Name : CreateUnRegisteredTable</para>
 		/// </summary>
-		public override string ToolName => "CreateUnRegisteredTable";
+		public override string ToolName() => "CreateUnRegisteredTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateUnRegisteredTable</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateUnRegisteredTable";
+		public override string ExcuteName() => "management.CreateUnRegisteredTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutPath, OutName, Template!, ConfigKeyword!, OutTable! };
+		public override object[] Parameters() => new object[] { OutPath, OutName, Template!, ConfigKeyword!, OutTable! };
 
 		/// <summary>
 		/// <para>Table Location</para>

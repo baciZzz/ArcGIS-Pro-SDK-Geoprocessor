@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Tabulate Intersection</para>
+	/// <para>Tabulate Intersection</para>
 	/// <para>Computes the intersection between two feature classes and cross tabulates the area, length, or count of the intersecting features.</para>
 	/// </summary>
 	public class TabulateIntersection : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Tabulate Intersection</para>
 		/// </summary>
-		public override string DisplayName => "Tabulate Intersection";
+		public override string DisplayName() => "Tabulate Intersection";
 
 		/// <summary>
 		/// <para>Tool Name : TabulateIntersection</para>
 		/// </summary>
-		public override string ToolName => "TabulateIntersection";
+		public override string ToolName() => "TabulateIntersection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.TabulateIntersection</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.TabulateIntersection";
+		public override string ExcuteName() => "analysis.TabulateIntersection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "autoCommit", "configKeyword", "extent", "outputCoordinateSystem", "qualifiedFieldNames", "scratchWorkspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "autoCommit", "configKeyword", "extent", "outputCoordinateSystem", "qualifiedFieldNames", "scratchWorkspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InZoneFeatures, ZoneFields, InClassFeatures, OutTable, ClassFields!, SumFields!, XyTolerance!, OutUnits! };
+		public override object[] Parameters() => new object[] { InZoneFeatures, ZoneFields, InClassFeatures, OutTable, ClassFields!, SumFields!, XyTolerance!, OutUnits! };
 
 		/// <summary>
 		/// <para>Input Zone Features</para>
@@ -84,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object InZoneFeatures { get; set; }
 
 		/// <summary>
@@ -93,6 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("OID", "Short", "Long", "Float", "Double", "Text", "Date", "GUID")]
 		public object ZoneFields { get; set; }
 
 		/// <summary>
@@ -102,6 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object InClassFeatures { get; set; }
 
 		/// <summary>
@@ -119,6 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("OID", "Short", "Long", "Float", "Double", "Text", "Date", "GUID")]
 		public object? ClassFields { get; set; }
 
 		/// <summary>
@@ -128,6 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? SumFields { get; set; }
 
 		/// <summary>

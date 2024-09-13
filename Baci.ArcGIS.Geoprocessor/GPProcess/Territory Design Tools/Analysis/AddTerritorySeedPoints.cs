@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Add Territory Seed Points</para>
+	/// <para>Add Territory Seed Points</para>
 	/// <para>Creates a point feature that is used to determine the starting point for creating territories.</para>
 	/// </summary>
 	public class AddTerritorySeedPoints : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Territory Seed Points</para>
 		/// </summary>
-		public override string DisplayName => "Add Territory Seed Points";
+		public override string DisplayName() => "Add Territory Seed Points";
 
 		/// <summary>
 		/// <para>Tool Name : AddTerritorySeedPoints</para>
 		/// </summary>
-		public override string ToolName => "AddTerritorySeedPoints";
+		public override string ToolName() => "AddTerritorySeedPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : td.AddTerritorySeedPoints</para>
 		/// </summary>
-		public override string ExcuteName => "td.AddTerritorySeedPoints";
+		public override string ExcuteName() => "td.AddTerritorySeedPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Territory Design Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Territory Design Tools";
+		public override string ToolboxDisplayName() => "Territory Design Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : td</para>
 		/// </summary>
-		public override string ToolboxAlise => "td";
+		public override string ToolboxAlise() => "td";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, InSeedPoints, FieldMap!, AppendData!, OutTerritorySolution! };
+		public override object[] Parameters() => new object[] { InTerritorySolution, Level, InSeedPoints, FieldMap!, AppendData!, OutTerritorySolution! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>
@@ -96,6 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InSeedPoints { get; set; }
 
 		/// <summary>

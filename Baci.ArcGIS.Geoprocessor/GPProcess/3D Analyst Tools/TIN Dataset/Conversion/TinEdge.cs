@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>TIN Edge</para>
+	/// <para>TIN Edge</para>
 	/// <para>Creates 3D line features using the triangle edges of a triangulated irregular network (TIN) dataset.</para>
 	/// </summary>
 	public class TinEdge : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : TIN Edge</para>
 		/// </summary>
-		public override string DisplayName => "TIN Edge";
+		public override string DisplayName() => "TIN Edge";
 
 		/// <summary>
 		/// <para>Tool Name : TinEdge</para>
 		/// </summary>
-		public override string ToolName => "TinEdge";
+		public override string ToolName() => "TinEdge";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.TinEdge</para>
 		/// </summary>
-		public override string ExcuteName => "3d.TinEdge";
+		public override string ExcuteName() => "3d.TinEdge";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTin, OutFeatureClass, EdgeType! };
+		public override object[] Parameters() => new object[] { InTin, OutFeatureClass, EdgeType! };
 
 		/// <summary>
 		/// <para>Input TIN</para>

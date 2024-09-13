@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Generate Elevation Guide Features</para>
+	/// <para>Generate Elevation Guide Features</para>
 	/// <para>Creates data required for an elevation guide diagram </para>
 	/// <para>surround element as required by various supported map product specifications.  This tool uses existing </para>
 	/// <para>banding </para>
@@ -44,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Elevation Guide Features</para>
 		/// </summary>
-		public override string DisplayName => "Generate Elevation Guide Features";
+		public override string DisplayName() => "Generate Elevation Guide Features";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateElevationGuideFeatures</para>
 		/// </summary>
-		public override string ToolName => "GenerateElevationGuideFeatures";
+		public override string ToolName() => "GenerateElevationGuideFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.GenerateElevationGuideFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.GenerateElevationGuideFeatures";
+		public override string ExcuteName() => "topographic.GenerateElevationGuideFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureDataset, AreaOfInterest, InRasters, HydroExclusionFeatures!, SpotHeightFeatures!, HydroLineFeatures!, HydroAreaFeatures!, ContourInterval!, BandsMinarea!, SmoothTolerance!, NumberOfBands!, HeightField!, SearchDistance!, HydrolineMinlength!, HydrolineMinspacing!, HydroareaMinlength!, HydroareaMinwidth!, OutFeatureDataset! };
+		public override object[] Parameters() => new object[] { InFeatureDataset, AreaOfInterest, InRasters, HydroExclusionFeatures!, SpotHeightFeatures!, HydroLineFeatures!, HydroAreaFeatures!, ContourInterval!, BandsMinarea!, SmoothTolerance!, NumberOfBands!, HeightField!, SearchDistance!, HydrolineMinlength!, HydrolineMinspacing!, HydroareaMinlength!, HydroareaMinwidth!, OutFeatureDataset! };
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>
@@ -91,6 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object AreaOfInterest { get; set; }
 
 		/// <summary>
@@ -108,6 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		[Category("Banding Settings (optional)")]
 		public object? HydroExclusionFeatures { get; set; }
 
@@ -118,6 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		[Category("Spot Settings (optional)")]
 		public object? SpotHeightFeatures { get; set; }
 
@@ -128,6 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		[Category("Hydro Settings (optional)")]
 		public object? HydroLineFeatures { get; set; }
 
@@ -138,6 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		[Category("Hydro Settings (optional)")]
 		public object? HydroAreaFeatures { get; set; }
 
@@ -195,6 +201,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double", "Long", "Float", "Short")]
 		[Category("Spot Settings (optional)")]
 		public object? HeightField { get; set; }
 

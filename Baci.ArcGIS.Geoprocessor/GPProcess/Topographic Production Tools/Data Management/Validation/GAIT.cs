@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>GAIT</para>
+	/// <para>GAIT</para>
 	/// <para>Validates data using the Geospatial Analysis Integrity Tool (GAIT), checking geometry, feature codes, attribute values and domains, and metadata.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -74,37 +75,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : GAIT</para>
 		/// </summary>
-		public override string DisplayName => "GAIT";
+		public override string DisplayName() => "GAIT";
 
 		/// <summary>
 		/// <para>Tool Name : GAIT</para>
 		/// </summary>
-		public override string ToolName => "GAIT";
+		public override string ToolName() => "GAIT";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.GAIT</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.GAIT";
+		public override string ExcuteName() => "topographic.GAIT";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, GaitExe, Folder, Schema, Project, Format, Metadata, Silent, ReviewerWorkspace!, Specfile!, OutFeaturelayers! };
+		public override object[] Parameters() => new object[] { InFeatures, GaitExe, Folder, Schema, Project, Format, Metadata, Silent, ReviewerWorkspace!, Specfile!, OutFeaturelayers! };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Collapse Hydro Polygon</para>
+	/// <para>Collapse Hydro Polygon</para>
 	/// <para>Collapses or partially collapses hydro polygons to a </para>
 	/// <para>centerline based on a collapse width.</para>
 	/// </summary>
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Collapse Hydro Polygon</para>
 		/// </summary>
-		public override string DisplayName => "Collapse Hydro Polygon";
+		public override string DisplayName() => "Collapse Hydro Polygon";
 
 		/// <summary>
 		/// <para>Tool Name : CollapseHydroPolygon</para>
 		/// </summary>
-		public override string ToolName => "CollapseHydroPolygon";
+		public override string ToolName() => "CollapseHydroPolygon";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.CollapseHydroPolygon</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.CollapseHydroPolygon";
+		public override string ExcuteName() => "cartography.CollapseHydroPolygon";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicPartitions" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicPartitions" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutLineFeatureClass, MergeAdjacentInputPolygons!, ConnectingFeatures!, CollapseWidth!, CollapseWidthTolerance!, MinimumLength!, TaperLengthPercentage!, OutPolyFeatureClass!, InPolyDecodeIdTable!, InLineDecodeIdTable! };
+		public override object[] Parameters() => new object[] { InFeatures, OutLineFeatureClass, MergeAdjacentInputPolygons!, ConnectingFeatures!, CollapseWidth!, CollapseWidthTolerance!, MinimumLength!, TaperLengthPercentage!, OutPolyFeatureClass!, InPolyDecodeIdTable!, InLineDecodeIdTable! };
 
 		/// <summary>
 		/// <para>Input Hydro Polygon Features</para>
@@ -75,6 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -84,6 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object OutLineFeatureClass { get; set; }
 
 		/// <summary>
@@ -105,6 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object? ConnectingFeatures { get; set; }
 
 		/// <summary>
@@ -146,6 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object? OutPolyFeatureClass { get; set; }
 
 		/// <summary>

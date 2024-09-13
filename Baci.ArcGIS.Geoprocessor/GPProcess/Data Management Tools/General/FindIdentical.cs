@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Find Identical</para>
+	/// <para>Find Identical</para>
 	/// <para>Reports any records in a feature class or table that have identical values in a list of fields, and generates a table listing these identical records. If the field Shape is selected, feature geometries are compared.</para>
 	/// </summary>
 	public class FindIdentical : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Find Identical</para>
 		/// </summary>
-		public override string DisplayName => "Find Identical";
+		public override string DisplayName() => "Find Identical";
 
 		/// <summary>
 		/// <para>Tool Name : FindIdentical</para>
 		/// </summary>
-		public override string ToolName => "FindIdentical";
+		public override string ToolName() => "FindIdentical";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.FindIdentical</para>
 		/// </summary>
-		public override string ExcuteName => "management.FindIdentical";
+		public override string ExcuteName() => "management.FindIdentical";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYTolerance", "ZTolerance", "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYTolerance", "ZTolerance", "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutDataset, Fields, XyTolerance!, ZTolerance!, OutputRecordOption! };
+		public override object[] Parameters() => new object[] { InDataset, OutDataset, Fields, XyTolerance!, ZTolerance!, OutputRecordOption! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>
@@ -95,6 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "Geometry", "GUID")]
 		public object Fields { get; set; }
 
 		/// <summary>

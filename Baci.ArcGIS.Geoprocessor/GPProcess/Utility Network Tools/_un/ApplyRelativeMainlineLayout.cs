@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Apply Relative Mainline Layout</para>
+	/// <para>Apply Relative Mainline Layout</para>
 	/// <para>Apply the relative mainline layout to a diagram</para>
 	/// </summary>
 	[Obsolete()]
@@ -34,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Relative Mainline Layout</para>
 		/// </summary>
-		public override string DisplayName => "Apply Relative Mainline Layout";
+		public override string DisplayName() => "Apply Relative Mainline Layout";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyRelativeMainlineLayout</para>
 		/// </summary>
-		public override string ToolName => "ApplyRelativeMainlineLayout";
+		public override string ToolName() => "ApplyRelativeMainlineLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.ApplyRelativeMainlineLayout</para>
 		/// </summary>
-		public override string ExcuteName => "un.ApplyRelativeMainlineLayout";
+		public override string ExcuteName() => "un.ApplyRelativeMainlineLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, LineAttribute, MainlineDirection!, OffsetBetweenBranches!, BreakpointAngle!, TypeAttribute!, MainlineValues!, BranchValues!, ExcludedValues!, IsCompressing!, CompressionRatio!, MinimalDistance!, AlignmentAttribute!, InitialDistances!, LengthAttribute!, OutNetworkDiagramLayer!, RunAsync! };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, LineAttribute, MainlineDirection!, OffsetBetweenBranches!, BreakpointAngle!, TypeAttribute!, MainlineValues!, BranchValues!, ExcludedValues!, IsCompressing!, CompressionRatio!, MinimalDistance!, AlignmentAttribute!, InitialDistances!, LengthAttribute!, OutNetworkDiagramLayer!, RunAsync! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>

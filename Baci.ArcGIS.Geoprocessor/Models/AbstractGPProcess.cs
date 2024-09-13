@@ -7,28 +7,80 @@ using System.Threading.Tasks;
 
 namespace Baci.ArcGIS.Geoprocessor.Models
 {
+    /// <summary>
+    /// AbstractGPProcess
+    /// </summary>
     public abstract class AbstractGPProcess : IGPProcess
     {
+        /// <summary>
+        /// 
+        /// </summary>
         protected Dictionary<string, string> environments = new Dictionary<string, string>();
 
-        public abstract string DisplayName { get; }
+        /// <summary>
+        /// Display Name
+        /// </summary>
+        /// <returns></returns>
+        public abstract string DisplayName();
 
-        public abstract string ToolName { get; }
+        /// <summary>
+        /// Tool Name
+        /// </summary>
+        /// <returns></returns>
+        public abstract string ToolName();
 
-        public abstract string ExcuteName { get; }
+        /// <summary>
+        /// Excute Name
+        /// </summary>
+        /// <returns></returns>
+        public abstract string ExcuteName();
 
-        public abstract string ToolboxDisplayName { get; }
+        /// <summary>
+        /// Toolbox Display Name
+        /// </summary>
+        /// <returns></returns>
+        public abstract string ToolboxDisplayName();
 
-        public abstract string ToolboxAlise { get; }
+        /// <summary>
+        /// Toolbox Alise
+        /// </summary>
+        /// <returns></returns>
+        public abstract string ToolboxAlise();
 
-        public abstract string[] ValidEnvironments { get; }
+        /// <summary>
+        /// Valid Environments
+        /// </summary>
+        /// <returns></returns>
+        public abstract string[] ValidEnvironments();
 
-        public abstract object[] Parameters { get; }
+        /// <summary>
+        /// Parameters
+        /// </summary>
+        /// <returns></returns>
+        public abstract object[] Parameters();
 
-        //public IEnumerable<KeyValuePair<string, string>> Environments { get { return environments; } }
-        public Dictionary<string, string> Environments { get { return environments; } }
+        /// <summary>
+        /// Environments
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, string> Environments() => environments;
 
-        public IGPResult GPResult { get ; set ; }
+        private IGPResult result = null;
+
+        /// <summary>
+        /// GPResult
+        /// </summary>
+        /// <returns></returns>
+        public IGPResult GPResult() => result;
+
+        /// <summary>
+        /// Set GPResult
+        /// </summary>
+        /// <returns></returns>
+        public void SetGPResult(IGPResult gPResult)
+        {
+            result = gPResult;
+        }
 
         protected void SetEnv(object? workspace = null, object? packageWorkspace = null, object? scratchFolder = null, object? scratchGDB = null,
             object? scratchWorkspace = null, object? outputCoordinateSystem = null, object? geographicTransformations = null, object? extent = null,

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Register Raster</para>
+	/// <para>Register Raster</para>
 	/// <para>Automatically aligns a raster to a reference image or uses a control point file for georegistration. If the input dataset is a mosaic dataset, the</para>
 	/// <para>tool will operate on each mosaic dataset item. To automatically register the image, the input raster</para>
 	/// <para>and the reference raster must be in a relatively close geographic</para>
@@ -47,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Register Raster</para>
 		/// </summary>
-		public override string DisplayName => "Register Raster";
+		public override string DisplayName() => "Register Raster";
 
 		/// <summary>
 		/// <para>Tool Name : RegisterRaster</para>
 		/// </summary>
-		public override string ToolName => "RegisterRaster";
+		public override string ToolName() => "RegisterRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RegisterRaster</para>
 		/// </summary>
-		public override string ExcuteName => "management.RegisterRaster";
+		public override string ExcuteName() => "management.RegisterRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, RegisterMode, ReferenceRaster!, InputLinkFile!, TransformationType!, OutputCptLinkFile!, MaximumRmsValue!, OutRaster! };
+		public override object[] Parameters() => new object[] { InRaster, RegisterMode, ReferenceRaster!, InputLinkFile!, TransformationType!, OutputCptLinkFile!, MaximumRmsValue!, OutRaster! };
 
 		/// <summary>
 		/// <para>Input Raster</para>

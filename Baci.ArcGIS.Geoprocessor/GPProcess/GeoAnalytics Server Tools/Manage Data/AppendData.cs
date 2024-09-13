@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Append Data</para>
+	/// <para>Append Data</para>
 	/// <para>Appends features to an existing hosted feature layer.</para>
 	/// </summary>
 	public class AppendData : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Append Data</para>
 		/// </summary>
-		public override string DisplayName => "Append Data";
+		public override string DisplayName() => "Append Data";
 
 		/// <summary>
 		/// <para>Tool Name : AppendData</para>
 		/// </summary>
-		public override string ToolName => "AppendData";
+		public override string ToolName() => "AppendData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.AppendData</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.AppendData";
+		public override string ExcuteName() => "geoanalytics.AppendData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, AppendLayer, AppendMethod, AppendFields!, AppendExpressions!, AppendResult! };
+		public override object[] Parameters() => new object[] { InputLayer, AppendLayer, AppendMethod, AppendFields!, AppendExpressions!, AppendResult! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -90,6 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
 		[GPTablesDomain()]
+		[PortalType("DataStoreCatalogLayer")]
 		public object AppendLayer { get; set; }
 
 		/// <summary>

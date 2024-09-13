@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 {
 	/// <summary>
 	/// <para>GTFS To Public Transit Data Model</para>
+	/// <para>GTFS To Public Transit Data Model</para>
 	/// <para>Converts one or more General Transit Feed Specification (GTFS) public transit datasets to a set of feature classes and tables that represent the transit stops, lines, and schedules in the format defined by the Network Analyst public transit data model.</para>
 	/// </summary>
 	public class GTFSToPublicTransitDataModel : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		/// <summary>
 		/// <para>Tool Display Name : GTFS To Public Transit Data Model</para>
 		/// </summary>
-		public override string DisplayName => "GTFS To Public Transit Data Model";
+		public override string DisplayName() => "GTFS To Public Transit Data Model";
 
 		/// <summary>
 		/// <para>Tool Name : GTFSToPublicTransitDataModel</para>
 		/// </summary>
-		public override string ToolName => "GTFSToPublicTransitDataModel";
+		public override string ToolName() => "GTFSToPublicTransitDataModel";
 
 		/// <summary>
 		/// <para>Tool Excute Name : transit.GTFSToPublicTransitDataModel</para>
 		/// </summary>
-		public override string ExcuteName => "transit.GTFSToPublicTransitDataModel";
+		public override string ExcuteName() => "transit.GTFSToPublicTransitDataModel";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Public Transit Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Public Transit Tools";
+		public override string ToolboxDisplayName() => "Public Transit Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : transit</para>
 		/// </summary>
-		public override string ToolboxAlise => "transit";
+		public override string ToolboxAlise() => "transit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGtfsFolders, TargetFeatureDataset, UpdatedTargetFeatureDataset!, OutputStops!, OutputLineVariantElements!, OutputCalendars!, OutputCalendarExceptions!, OutputLines!, OutputLineVariants!, OutputRuns!, OutputScheduleElements!, OutputSchedules!, Interpolate!, Append! };
+		public override object[] Parameters() => new object[] { InGtfsFolders, TargetFeatureDataset, UpdatedTargetFeatureDataset!, OutputStops!, OutputLineVariantElements!, OutputCalendars!, OutputCalendarExceptions!, OutputLines!, OutputLineVariants!, OutputRuns!, OutputScheduleElements!, OutputSchedules!, Interpolate!, Append! };
 
 		/// <summary>
 		/// <para>Input GTFS Folders</para>

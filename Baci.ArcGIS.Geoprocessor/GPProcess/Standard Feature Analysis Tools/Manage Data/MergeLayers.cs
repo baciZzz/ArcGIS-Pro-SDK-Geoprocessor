@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Merge Layers</para>
+	/// <para>Merge Layers</para>
 	/// <para>Copies all features from two layers into a new layer. The layers to be combined must contain the same feature types (points, lines, or polygons). You can control how the fields from the input layers are joined and copied.</para>
 	/// </summary>
 	public class MergeLayers : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Merge Layers</para>
 		/// </summary>
-		public override string DisplayName => "Merge Layers";
+		public override string DisplayName() => "Merge Layers";
 
 		/// <summary>
 		/// <para>Tool Name : MergeLayers</para>
 		/// </summary>
-		public override string ToolName => "MergeLayers";
+		public override string ToolName() => "MergeLayers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sfa.MergeLayers</para>
 		/// </summary>
-		public override string ExcuteName => "sfa.MergeLayers";
+		public override string ExcuteName() => "sfa.MergeLayers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Standard Feature Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Standard Feature Analysis Tools";
+		public override string ToolboxDisplayName() => "Standard Feature Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sfa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sfa";
+		public override string ToolboxAlise() => "sfa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputlayer, Mergelayer, Outputname, Mergingattributes!, Output! };
+		public override object[] Parameters() => new object[] { Inputlayer, Mergelayer, Outputname, Mergingattributes!, Output! };
 
 		/// <summary>
 		/// <para>Input Layer</para>

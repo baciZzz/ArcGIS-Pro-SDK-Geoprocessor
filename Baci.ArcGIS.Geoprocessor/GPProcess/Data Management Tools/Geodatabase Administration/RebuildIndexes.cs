@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Rebuild Indexes</para>
+	/// <para>Rebuild Indexes</para>
 	/// <para>Rebuild existing attribute or spatial indexes in enterprise geodatabases.  Indexes  can also be rebuilt on  states and state_lineage geodatabase system tables and the delta tables of datasets that are registered to participate in traditional versioning. Out-of-date indexes can lead to poor query performance.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Rebuild Indexes</para>
 		/// </summary>
-		public override string DisplayName => "Rebuild Indexes";
+		public override string DisplayName() => "Rebuild Indexes";
 
 		/// <summary>
 		/// <para>Tool Name : RebuildIndexes</para>
 		/// </summary>
-		public override string ToolName => "RebuildIndexes";
+		public override string ToolName() => "RebuildIndexes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RebuildIndexes</para>
 		/// </summary>
-		public override string ExcuteName => "management.RebuildIndexes";
+		public override string ExcuteName() => "management.RebuildIndexes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, IncludeSystem, InDatasets!, DeltaOnly!, OutWorkspace! };
+		public override object[] Parameters() => new object[] { InputDatabase, IncludeSystem, InDatasets!, DeltaOnly!, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
@@ -81,6 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Remote Database")]
 		public object InputDatabase { get; set; }
 
 		/// <summary>

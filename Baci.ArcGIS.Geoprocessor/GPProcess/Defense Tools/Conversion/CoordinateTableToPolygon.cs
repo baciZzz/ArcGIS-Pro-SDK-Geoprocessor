@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Coordinate Table To Polygon</para>
+	/// <para>Coordinate Table To Polygon</para>
 	/// <para>Creates polygon features from coordinates stored in a table.</para>
 	/// </summary>
 	public class CoordinateTableToPolygon : AbstractGPProcess
@@ -57,37 +58,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Coordinate Table To Polygon</para>
 		/// </summary>
-		public override string DisplayName => "Coordinate Table To Polygon";
+		public override string DisplayName() => "Coordinate Table To Polygon";
 
 		/// <summary>
 		/// <para>Tool Name : CoordinateTableToPolygon</para>
 		/// </summary>
-		public override string ToolName => "CoordinateTableToPolygon";
+		public override string ToolName() => "CoordinateTableToPolygon";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.CoordinateTableToPolygon</para>
 		/// </summary>
-		public override string ExcuteName => "defense.CoordinateTableToPolygon";
+		public override string ExcuteName() => "defense.CoordinateTableToPolygon";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutFeatureClass, XOrLonField, InCoordinateFormat, YOrLatField!, LineGroupField!, SortField!, CoordinateSystem! };
+		public override object[] Parameters() => new object[] { InTable, OutFeatureClass, XOrLonField, InCoordinateFormat, YOrLatField!, LineGroupField!, SortField!, CoordinateSystem! };
 
 		/// <summary>
 		/// <para>Input Table</para>

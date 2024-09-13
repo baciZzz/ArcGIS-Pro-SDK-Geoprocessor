@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 {
 	/// <summary>
 	/// <para>Dissolve Route Events</para>
+	/// <para>Dissolve Route Events</para>
 	/// <para>Removes redundant information from event tables or separates event tables having more than one descriptive attribute into individual tables.</para>
 	/// </summary>
 	public class DissolveRouteEvents : AbstractGPProcess
@@ -62,37 +63,37 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Dissolve Route Events</para>
 		/// </summary>
-		public override string DisplayName => "Dissolve Route Events";
+		public override string DisplayName() => "Dissolve Route Events";
 
 		/// <summary>
 		/// <para>Tool Name : DissolveRouteEvents</para>
 		/// </summary>
-		public override string ToolName => "DissolveRouteEvents";
+		public override string ToolName() => "DissolveRouteEvents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : lr.DissolveRouteEvents</para>
 		/// </summary>
-		public override string ExcuteName => "lr.DissolveRouteEvents";
+		public override string ExcuteName() => "lr.DissolveRouteEvents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Linear Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Linear Referencing Tools";
+		public override string ToolboxDisplayName() => "Linear Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : lr</para>
 		/// </summary>
-		public override string ToolboxAlise => "lr";
+		public override string ToolboxAlise() => "lr";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InEvents, InEventProperties, DissolveField, OutTable, OutEventProperties, DissolveType!, BuildIndex! };
+		public override object[] Parameters() => new object[] { InEvents, InEventProperties, DissolveField, OutTable, OutEventProperties, DissolveType!, BuildIndex! };
 
 		/// <summary>
 		/// <para>Input Event Table</para>
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
-		[xmlserialize()]
+		[xmlserialize(Xml = "<GPRouteMeasureEventDomain xsi:type='typens:GPRouteMeasureEventDomain' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.0.0'></GPRouteMeasureEventDomain>")]
 		public object InEvents { get; set; }
 
 		/// <summary>
@@ -124,6 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date")]
 		public object DissolveField { get; set; }
 
 		/// <summary>

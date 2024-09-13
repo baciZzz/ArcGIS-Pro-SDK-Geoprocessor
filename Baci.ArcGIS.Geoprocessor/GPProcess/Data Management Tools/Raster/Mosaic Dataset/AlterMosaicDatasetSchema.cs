@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Alter Mosaic Dataset Schema</para>
+	/// <para>Alter Mosaic Dataset Schema</para>
 	/// <para>Defines the editing operations that nonowners  have when editing a mosaic dataset in an enterprise geodatabase.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Alter Mosaic Dataset Schema</para>
 		/// </summary>
-		public override string DisplayName => "Alter Mosaic Dataset Schema";
+		public override string DisplayName() => "Alter Mosaic Dataset Schema";
 
 		/// <summary>
 		/// <para>Tool Name : AlterMosaicDatasetSchema</para>
 		/// </summary>
-		public override string ToolName => "AlterMosaicDatasetSchema";
+		public override string ToolName() => "AlterMosaicDatasetSchema";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AlterMosaicDatasetSchema</para>
 		/// </summary>
-		public override string ExcuteName => "management.AlterMosaicDatasetSchema";
+		public override string ExcuteName() => "management.AlterMosaicDatasetSchema";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, SideTables!, RasterTypeNames!, EditorTracking!, OutMosaicDataset! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, SideTables!, RasterTypeNames!, EditorTracking!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

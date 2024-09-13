@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Simplify By Straight Lines And Circular Arcs</para>
+	/// <para>Simplify By Straight Lines And Circular Arcs</para>
 	/// <para>Simplifies polygon and line features by replacing consecutive line segments  or edges with  fewer line segments or edges. Lines segments and polygon edges are simplified based on a specified maximum allowable offset.  Additionally, circular arcs can be created from consecutive  line segments or polygon edges.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Simplify By Straight Lines And Circular Arcs</para>
 		/// </summary>
-		public override string DisplayName => "Simplify By Straight Lines And Circular Arcs";
+		public override string DisplayName() => "Simplify By Straight Lines And Circular Arcs";
 
 		/// <summary>
 		/// <para>Tool Name : SimplifyByStraightLinesAndCircularArcs</para>
 		/// </summary>
-		public override string ToolName => "SimplifyByStraightLinesAndCircularArcs";
+		public override string ToolName() => "SimplifyByStraightLinesAndCircularArcs";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.SimplifyByStraightLinesAndCircularArcs</para>
 		/// </summary>
-		public override string ExcuteName => "edit.SimplifyByStraightLinesAndCircularArcs";
+		public override string ExcuteName() => "edit.SimplifyByStraightLinesAndCircularArcs";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, MaxOffset, FittingType!, CircularArcs!, MaxArcAngleStep!, MinVertexCount!, MinRadius!, MaxRadius!, MinArcAngle!, ClosedEnds!, OutFeatureClass!, AnchorPoints!, OutFeatureLayers! };
+		public override object[] Parameters() => new object[] { InFeatures, MaxOffset, FittingType!, CircularArcs!, MaxArcAngleStep!, MinVertexCount!, MinRadius!, MaxRadius!, MinArcAngle!, ClosedEnds!, OutFeatureClass!, AnchorPoints!, OutFeatureLayers! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -76,6 +77,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -118,6 +121,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 2)]
+		[High(Allow = true, Value = 95)]
 		public object? MaxArcAngleStep { get; set; } = "20";
 
 		/// <summary>
@@ -127,6 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = false, Value = 3)]
 		public object? MinVertexCount { get; set; } = "4";
 
 		/// <summary>
@@ -152,6 +158,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
+		[High(Allow = true, Value = 360)]
 		public object? MinArcAngle { get; set; } = "2";
 
 		/// <summary>
@@ -180,6 +188,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object? AnchorPoints { get; set; }
 
 		/// <summary>

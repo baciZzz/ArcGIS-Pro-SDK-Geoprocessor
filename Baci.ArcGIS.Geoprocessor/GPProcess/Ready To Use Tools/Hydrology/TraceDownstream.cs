@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 {
 	/// <summary>
 	/// <para>Trace Downstream</para>
+	/// <para>Trace Downstream</para>
 	/// <para>Determines the path water will take from a particular location to its furthest downhill path.</para>
 	/// </summary>
 	public class TraceDownstream : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Tool Display Name : Trace Downstream</para>
 		/// </summary>
-		public override string DisplayName => "Trace Downstream";
+		public override string DisplayName() => "Trace Downstream";
 
 		/// <summary>
 		/// <para>Tool Name : TraceDownstream</para>
 		/// </summary>
-		public override string ToolName => "TraceDownstream";
+		public override string ToolName() => "TraceDownstream";
 
 		/// <summary>
 		/// <para>Tool Excute Name : agolservices.TraceDownstream</para>
 		/// </summary>
-		public override string ExcuteName => "agolservices.TraceDownstream";
+		public override string ExcuteName() => "agolservices.TraceDownstream";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Ready To Use Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Ready To Use Tools";
+		public override string ToolboxDisplayName() => "Ready To Use Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : agolservices</para>
 		/// </summary>
-		public override string ToolboxAlise => "agolservices";
+		public override string ToolboxAlise() => "agolservices";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputpoints, Pointidfield!, Datasourceresolution!, Generalize!, Outputtraceline! };
+		public override object[] Parameters() => new object[] { Inputpoints, Pointidfield!, Datasourceresolution!, Generalize!, Outputtraceline! };
 
 		/// <summary>
 		/// <para>Input Points</para>

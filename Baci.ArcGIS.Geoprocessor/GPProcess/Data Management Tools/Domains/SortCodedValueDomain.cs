@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Sort Coded Value Domain</para>
+	/// <para>Sort Coded Value Domain</para>
 	/// <para>Sorts the code or description of a coded value domain in either ascending or descending order.</para>
 	/// </summary>
 	public class SortCodedValueDomain : AbstractGPProcess
@@ -51,37 +52,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Sort Coded Value Domain</para>
 		/// </summary>
-		public override string DisplayName => "Sort Coded Value Domain";
+		public override string DisplayName() => "Sort Coded Value Domain";
 
 		/// <summary>
 		/// <para>Tool Name : SortCodedValueDomain</para>
 		/// </summary>
-		public override string ToolName => "SortCodedValueDomain";
+		public override string ToolName() => "SortCodedValueDomain";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SortCodedValueDomain</para>
 		/// </summary>
-		public override string ExcuteName => "management.SortCodedValueDomain";
+		public override string ExcuteName() => "management.SortCodedValueDomain";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, DomainName, SortBy, SortOrder, OutWorkspace! };
+		public override object[] Parameters() => new object[] { InWorkspace, DomainName, SortBy, SortOrder, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -90,6 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object InWorkspace { get; set; }
 
 		/// <summary>

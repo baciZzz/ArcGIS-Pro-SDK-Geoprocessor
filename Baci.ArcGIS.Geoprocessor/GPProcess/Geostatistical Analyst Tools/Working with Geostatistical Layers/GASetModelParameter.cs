@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Set Model Parameter</para>
+	/// <para>Set Model Parameter</para>
 	/// <para>Sets parameter values in an existing geostatistical model source.</para>
 	/// </summary>
 	public class GASetModelParameter : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Model Parameter</para>
 		/// </summary>
-		public override string DisplayName => "Set Model Parameter";
+		public override string DisplayName() => "Set Model Parameter";
 
 		/// <summary>
 		/// <para>Tool Name : GASetModelParameter</para>
 		/// </summary>
-		public override string ToolName => "GASetModelParameter";
+		public override string ToolName() => "GASetModelParameter";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GASetModelParameter</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GASetModelParameter";
+		public override string ExcuteName() => "ga.GASetModelParameter";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGaModelSource, ModelParamXpath, InParamValue, OutGaModel };
+		public override object[] Parameters() => new object[] { InGaModelSource, ModelParamXpath, InParamValue, OutGaModel };
 
 		/// <summary>
 		/// <para>Input geostatistical model source</para>
@@ -109,6 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object OutGaModel { get; set; }
 
 		/// <summary>

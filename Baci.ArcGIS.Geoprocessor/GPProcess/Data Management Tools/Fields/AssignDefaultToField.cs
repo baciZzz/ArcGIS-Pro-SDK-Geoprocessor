@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Assign Default To Field</para>
+	/// <para>Assign Default To Field</para>
 	/// <para>Creates a default value for a specified field.  When a new row is added to the table or feature class, the specified field will be set to this default value.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Assign Default To Field</para>
 		/// </summary>
-		public override string DisplayName => "Assign Default To Field";
+		public override string DisplayName() => "Assign Default To Field";
 
 		/// <summary>
 		/// <para>Tool Name : AssignDefaultToField</para>
 		/// </summary>
-		public override string ToolName => "AssignDefaultToField";
+		public override string ToolName() => "AssignDefaultToField";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AssignDefaultToField</para>
 		/// </summary>
-		public override string ExcuteName => "management.AssignDefaultToField";
+		public override string ExcuteName() => "management.AssignDefaultToField";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, FieldName, DefaultValue!, SubtypeCode!, ClearValue!, OutTable! };
+		public override object[] Parameters() => new object[] { InTable, FieldName, DefaultValue!, SubtypeCode!, ClearValue!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -84,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date")]
 		public object FieldName { get; set; }
 
 		/// <summary>

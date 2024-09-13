@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Create Network Dataset</para>
+	/// <para>Create Network Dataset</para>
 	/// <para>Creates a network dataset in an existing feature dataset. The network dataset can be used to perform network analysis on the data in the feature dataset.</para>
 	/// </summary>
 	public class CreateNetworkDataset : AbstractGPProcess
@@ -52,37 +53,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Network Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Create Network Dataset";
+		public override string DisplayName() => "Create Network Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : CreateNetworkDataset</para>
 		/// </summary>
-		public override string ToolName => "CreateNetworkDataset";
+		public override string ToolName() => "CreateNetworkDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.CreateNetworkDataset</para>
 		/// </summary>
-		public override string ExcuteName => "na.CreateNetworkDataset";
+		public override string ExcuteName() => "na.CreateNetworkDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { FeatureDataset, OutName, SourceFeatureClassNames, ElevationModel, OutNetworkDataset! };
+		public override object[] Parameters() => new object[] { FeatureDataset, OutName, SourceFeatureClassNames, ElevationModel, OutNetworkDataset! };
 
 		/// <summary>
 		/// <para>Target Feature Dataset</para>

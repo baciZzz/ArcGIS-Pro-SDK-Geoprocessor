@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Raster to ASCII</para>
+	/// <para>Raster to ASCII</para>
 	/// <para>Converts a raster dataset to an ASCII text file representing raster data.</para>
 	/// </summary>
 	public class RasterToASCII : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Raster to ASCII</para>
 		/// </summary>
-		public override string DisplayName => "Raster to ASCII";
+		public override string DisplayName() => "Raster to ASCII";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToASCII</para>
 		/// </summary>
-		public override string ToolName => "RasterToASCII";
+		public override string ToolName() => "RasterToASCII";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.RasterToASCII</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.RasterToASCII";
+		public override string ExcuteName() => "conversion.RasterToASCII";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutAsciiFile };
+		public override object[] Parameters() => new object[] { InRaster, OutAsciiFile };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -75,7 +76,10 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRaster { get; set; }
 
 		/// <summary>
@@ -85,6 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("TXT", "ASC")]
 		public object OutAsciiFile { get; set; }
 
 		/// <summary>

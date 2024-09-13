@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Import VPF To Geodatabase</para>
+	/// <para>Import VPF To Geodatabase</para>
 	/// <para>Imports Vector Product Format (VPF) data in Digital Nautical Chart (DNC) and Tactical Ocean Data (TOD) formats into an ArcGIS Maritime geodatabase. Sources that can be imported include DNC and TOD0, TOD2, and TOD4.</para>
 	/// </summary>
 	public class ImportVPFToGeodatabase : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Display Name : Import VPF To Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "Import VPF To Geodatabase";
+		public override string DisplayName() => "Import VPF To Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : ImportVPFToGeodatabase</para>
 		/// </summary>
-		public override string ToolName => "ImportVPFToGeodatabase";
+		public override string ToolName() => "ImportVPFToGeodatabase";
 
 		/// <summary>
 		/// <para>Tool Excute Name : maritime.ImportVPFToGeodatabase</para>
 		/// </summary>
-		public override string ExcuteName => "maritime.ImportVPFToGeodatabase";
+		public override string ExcuteName() => "maritime.ImportVPFToGeodatabase";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Maritime Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Maritime Tools";
+		public override string ToolboxDisplayName() => "Maritime Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : maritime</para>
 		/// </summary>
-		public override string ToolboxAlise => "maritime";
+		public override string ToolboxAlise() => "maritime";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InVpfFeatures, TargetWorkspace, OutputWorkspace! };
+		public override object[] Parameters() => new object[] { InVpfFeatures, TargetWorkspace, OutputWorkspace! };
 
 		/// <summary>
 		/// <para>Input VPF Features</para>
@@ -82,6 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object TargetWorkspace { get; set; }
 
 		/// <summary>

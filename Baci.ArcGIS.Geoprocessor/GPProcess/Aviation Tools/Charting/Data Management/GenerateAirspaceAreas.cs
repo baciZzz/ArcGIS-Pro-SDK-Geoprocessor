@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Generate Airspace Areas</para>
+	/// <para>Generate Airspace Areas</para>
 	/// <para>Generates AirspaceArea features from Airspace features.</para>
 	/// </summary>
 	public class GenerateAirspaceAreas : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Airspace Areas</para>
 		/// </summary>
-		public override string DisplayName => "Generate Airspace Areas";
+		public override string DisplayName() => "Generate Airspace Areas";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateAirspaceAreas</para>
 		/// </summary>
-		public override string ToolName => "GenerateAirspaceAreas";
+		public override string ToolName() => "GenerateAirspaceAreas";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.GenerateAirspaceAreas</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.GenerateAirspaceAreas";
+		public override string ExcuteName() => "aviation.GenerateAirspaceAreas";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAirspaceFeatures, TargetAirspaceAreaFeatures, AoiFeatures, PreferenceTable, Preference, DerivedAirspacePartFeatures!, VerticalLimitOverrideTable!, UpdatedAirspaceAreaFeatures! };
+		public override object[] Parameters() => new object[] { InAirspaceFeatures, TargetAirspaceAreaFeatures, AoiFeatures, PreferenceTable, Preference, DerivedAirspacePartFeatures!, VerticalLimitOverrideTable!, UpdatedAirspaceAreaFeatures! };
 
 		/// <summary>
 		/// <para>Input Airspace Features</para>
@@ -89,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InAirspaceFeatures { get; set; }
 
 		/// <summary>
@@ -98,6 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object TargetAirspaceAreaFeatures { get; set; }
 
 		/// <summary>
@@ -107,6 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object AoiFeatures { get; set; }
 
 		/// <summary>
@@ -134,6 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object? DerivedAirspacePartFeatures { get; set; }
 
 		/// <summary>

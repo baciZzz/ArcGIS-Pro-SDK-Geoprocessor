@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Get Count</para>
+	/// <para>Get Count</para>
 	/// <para>Returns the total number of rows for a table.</para>
 	/// </summary>
 	public class GetCount : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Get Count</para>
 		/// </summary>
-		public override string DisplayName => "Get Count";
+		public override string DisplayName() => "Get Count";
 
 		/// <summary>
 		/// <para>Tool Name : GetCount</para>
 		/// </summary>
-		public override string ToolName => "GetCount";
+		public override string ToolName() => "GetCount";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.GetCount</para>
 		/// </summary>
-		public override string ExcuteName => "management.GetCount";
+		public override string ExcuteName() => "management.GetCount";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRows, RowCount! };
+		public override object[] Parameters() => new object[] { InRows, RowCount! };
 
 		/// <summary>
 		/// <para>Input Rows</para>

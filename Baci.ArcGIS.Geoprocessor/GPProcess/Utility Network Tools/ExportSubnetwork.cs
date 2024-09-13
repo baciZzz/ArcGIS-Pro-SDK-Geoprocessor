@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Export Subnetwork</para>
+	/// <para>Export Subnetwork</para>
 	/// <para>Exports subnetworks from a utility network into a .json file. This tool also allows you to delete a row in the Subnetworks table as long as the Is deleted attribute is set to true. This indicates that the subnetwork controller has been removed from the subnetwork.</para>
 	/// </summary>
 	public class ExportSubnetwork : AbstractGPProcess
@@ -58,37 +59,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Subnetwork</para>
 		/// </summary>
-		public override string DisplayName => "Export Subnetwork";
+		public override string DisplayName() => "Export Subnetwork";
 
 		/// <summary>
 		/// <para>Tool Name : ExportSubnetwork</para>
 		/// </summary>
-		public override string ToolName => "ExportSubnetwork";
+		public override string ToolName() => "ExportSubnetwork";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.ExportSubnetwork</para>
 		/// </summary>
-		public override string ExcuteName => "un.ExportSubnetwork";
+		public override string ExcuteName() => "un.ExportSubnetwork";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, DomainNetwork, Tier, SubnetworkName, ExportAcknowledged, OutJsonFile, ConditionBarriers!, FunctionBarriers!, IncludeBarriers!, TraversabilityScope!, Propagators!, OutUtilityNetwork!, IncludeGeometry!, ResultTypes!, ResultNetworkAttributes!, ResultFields!, IncludeDomainDescriptions! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, DomainNetwork, Tier, SubnetworkName, ExportAcknowledged, OutJsonFile, ConditionBarriers!, FunctionBarriers!, IncludeBarriers!, TraversabilityScope!, Propagators!, OutUtilityNetwork!, IncludeGeometry!, ResultTypes!, ResultNetworkAttributes!, ResultFields!, IncludeDomainDescriptions! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
@@ -141,6 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("json")]
 		public object OutJsonFile { get; set; }
 
 		/// <summary>

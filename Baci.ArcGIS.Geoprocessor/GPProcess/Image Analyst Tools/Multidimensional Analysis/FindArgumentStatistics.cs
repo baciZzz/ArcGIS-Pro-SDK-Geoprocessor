@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Find Argument Statistics</para>
+	/// <para>Find Argument Statistics</para>
 	/// <para>Extracts the dimension value or band index at which a given statistic is attained for each pixel in a multidimensional or multiband raster.</para>
 	/// </summary>
 	public class FindArgumentStatistics : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Find Argument Statistics</para>
 		/// </summary>
-		public override string DisplayName => "Find Argument Statistics";
+		public override string DisplayName() => "Find Argument Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : FindArgumentStatistics</para>
 		/// </summary>
-		public override string ToolName => "FindArgumentStatistics";
+		public override string ToolName() => "FindArgumentStatistics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.FindArgumentStatistics</para>
 		/// </summary>
-		public override string ExcuteName => "ia.FindArgumentStatistics";
+		public override string ExcuteName() => "ia.FindArgumentStatistics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, Dimension!, DimensionDef!, IntervalKeyword!, Variables!, StatisticsType!, Min!, Max!, MultipleOccurrence!, IgnoreNodata!, Value!, Comparison!, Occurrence! };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, Dimension!, DimensionDef!, IntervalKeyword!, Variables!, StatisticsType!, Min!, Max!, MultipleOccurrence!, IgnoreNodata!, Value!, Comparison!, Occurrence! };
 
 		/// <summary>
 		/// <para>Input Multidimensional or Multiband Raster</para>

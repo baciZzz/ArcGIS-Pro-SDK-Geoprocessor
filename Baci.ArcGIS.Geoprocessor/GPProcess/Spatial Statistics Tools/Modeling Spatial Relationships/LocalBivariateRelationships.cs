@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Local Bivariate Relationships</para>
+	/// <para>Local Bivariate Relationships</para>
 	/// <para>Analyzes two variables for statistically significant relationships using local entropy. Each feature is classified into one of six categories based on the type of relationship. The output can be used to visualize areas where the variables are related and explore how their relationship changes across the study area.</para>
 	/// </summary>
 	public class LocalBivariateRelationships : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Local Bivariate Relationships</para>
 		/// </summary>
-		public override string DisplayName => "Local Bivariate Relationships";
+		public override string DisplayName() => "Local Bivariate Relationships";
 
 		/// <summary>
 		/// <para>Tool Name : LocalBivariateRelationships</para>
 		/// </summary>
-		public override string ToolName => "LocalBivariateRelationships";
+		public override string ToolName() => "LocalBivariateRelationships";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.LocalBivariateRelationships</para>
 		/// </summary>
-		public override string ExcuteName => "stats.LocalBivariateRelationships";
+		public override string ExcuteName() => "stats.LocalBivariateRelationships";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "parallelProcessingFactor", "randomGenerator" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentVariable, ExplanatoryVariable, OutputFeatures, NumberOfNeighbors!, NumberOfPermutations!, EnableLocalScatterplotPopups!, LevelOfConfidence!, ApplyFalseDiscoveryRateFdrCorrection!, ScalingFactor! };
+		public override object[] Parameters() => new object[] { InFeatures, DependentVariable, ExplanatoryVariable, OutputFeatures, NumberOfNeighbors!, NumberOfPermutations!, EnableLocalScatterplotPopups!, LevelOfConfidence!, ApplyFalseDiscoveryRateFdrCorrection!, ScalingFactor! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -84,6 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -93,6 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object DependentVariable { get; set; }
 
 		/// <summary>
@@ -102,6 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object ExplanatoryVariable { get; set; }
 
 		/// <summary>
@@ -118,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 30, Max = 1000)]
 		public object? NumberOfNeighbors { get; set; } = "30";
 
 		/// <summary>
@@ -179,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0.01, Max = 1)]
 		[Category("Advanced Options")]
 		public object? ScalingFactor { get; set; } = "0.5";
 

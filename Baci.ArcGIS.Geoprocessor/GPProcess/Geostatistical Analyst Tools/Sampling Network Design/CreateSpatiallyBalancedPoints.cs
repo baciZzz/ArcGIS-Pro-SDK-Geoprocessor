@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Create Spatially Balanced Points</para>
+	/// <para>Create Spatially Balanced Points</para>
 	/// <para>Generates a set of sample points based on inclusion probabilities, resulting in a spatially balanced sample design. This tool is generally used for designing a monitoring network by suggesting locations to take samples, and a preference for particular locations can be defined using an inclusion probability raster.</para>
 	/// </summary>
 	public class CreateSpatiallyBalancedPoints : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Spatially Balanced Points</para>
 		/// </summary>
-		public override string DisplayName => "Create Spatially Balanced Points";
+		public override string DisplayName() => "Create Spatially Balanced Points";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSpatiallyBalancedPoints</para>
 		/// </summary>
-		public override string ToolName => "CreateSpatiallyBalancedPoints";
+		public override string ToolName() => "CreateSpatiallyBalancedPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.CreateSpatiallyBalancedPoints</para>
 		/// </summary>
-		public override string ExcuteName => "ga.CreateSpatiallyBalancedPoints";
+		public override string ExcuteName() => "ga.CreateSpatiallyBalancedPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "randomGenerator", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "randomGenerator", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InProbabilityRaster, NumberOutputPoints, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InProbabilityRaster, NumberOutputPoints, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Input inclusion probability raster</para>
@@ -86,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 2147483647)]
 		public object NumberOutputPoints { get; set; }
 
 		/// <summary>

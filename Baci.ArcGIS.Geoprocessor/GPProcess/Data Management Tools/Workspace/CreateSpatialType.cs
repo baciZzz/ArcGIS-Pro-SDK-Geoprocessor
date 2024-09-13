@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Spatial Type</para>
+	/// <para>Create Spatial Type</para>
 	/// <para>Adds the ST_Geometry SQL type, subtypes, and functions to an Oracle or a PostgreSQL database. This allows you to use the ST_Geometry SQL type to store geometries in a database that does not contain a geodatabase. You can also use this tool to upgrade the existing ST_Geometry type, subtypes, and functions in an Oracle or a PostgreSQL database.</para>
 	/// </summary>
 	public class CreateSpatialType : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Spatial Type</para>
 		/// </summary>
-		public override string DisplayName => "Create Spatial Type";
+		public override string DisplayName() => "Create Spatial Type";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSpatialType</para>
 		/// </summary>
-		public override string ToolName => "CreateSpatialType";
+		public override string ToolName() => "CreateSpatialType";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateSpatialType</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateSpatialType";
+		public override string ExcuteName() => "management.CreateSpatialType";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, SdeUserPassword, TablespaceName!, StShapeLibraryPath!, OutWorkspace! };
+		public override object[] Parameters() => new object[] { InputDatabase, SdeUserPassword, TablespaceName!, StShapeLibraryPath!, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Remote Database")]
 		public object InputDatabase { get; set; }
 
 		/// <summary>
@@ -99,6 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("dll", "so")]
 		public object? StShapeLibraryPath { get; set; }
 
 		/// <summary>

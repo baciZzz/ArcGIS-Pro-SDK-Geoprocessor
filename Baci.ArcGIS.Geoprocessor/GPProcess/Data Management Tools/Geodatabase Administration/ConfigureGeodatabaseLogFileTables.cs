@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Configure Geodatabase Log File Tables</para>
+	/// <para>Configure Geodatabase Log File Tables</para>
 	/// <para>Alters the type of log file tables used by an earlier release enterprise geodatabase to maintain lists of records cached by ArcGIS.</para>
 	/// </summary>
 	public class ConfigureGeodatabaseLogFileTables : AbstractGPProcess
@@ -38,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Configure Geodatabase Log File Tables</para>
 		/// </summary>
-		public override string DisplayName => "Configure Geodatabase Log File Tables";
+		public override string DisplayName() => "Configure Geodatabase Log File Tables";
 
 		/// <summary>
 		/// <para>Tool Name : ConfigureGeodatabaseLogFileTables</para>
 		/// </summary>
-		public override string ToolName => "ConfigureGeodatabaseLogFileTables";
+		public override string ToolName() => "ConfigureGeodatabaseLogFileTables";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ConfigureGeodatabaseLogFileTables</para>
 		/// </summary>
-		public override string ExcuteName => "management.ConfigureGeodatabaseLogFileTables";
+		public override string ExcuteName() => "management.ConfigureGeodatabaseLogFileTables";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, LogFileType, LogFilePoolSize!, UseTempdb!, OutWorkspace! };
+		public override object[] Parameters() => new object[] { InputDatabase, LogFileType, LogFilePoolSize!, UseTempdb!, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
@@ -77,6 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Remote Database")]
 		public object InputDatabase { get; set; }
 
 		/// <summary>

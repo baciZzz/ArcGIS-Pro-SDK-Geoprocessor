@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Construct Sight Lines</para>
+	/// <para>Construct Sight Lines</para>
 	/// <para>Creates line features that represent sight lines from one or more observer points to features in a  target feature class.</para>
 	/// </summary>
 	public class ConstructSightLines : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Construct Sight Lines</para>
 		/// </summary>
-		public override string DisplayName => "Construct Sight Lines";
+		public override string DisplayName() => "Construct Sight Lines";
 
 		/// <summary>
 		/// <para>Tool Name : ConstructSightLines</para>
 		/// </summary>
-		public override string ToolName => "ConstructSightLines";
+		public override string ToolName() => "ConstructSightLines";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.ConstructSightLines</para>
 		/// </summary>
-		public override string ExcuteName => "3d.ConstructSightLines";
+		public override string ExcuteName() => "3d.ConstructSightLines";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InObserverPoints, InTargetFeatures, OutLineFeatureClass, ObserverHeightField!, TargetHeightField!, JoinField!, SampleDistance!, OutputTheDirection!, SamplingMethod! };
+		public override object[] Parameters() => new object[] { InObserverPoints, InTargetFeatures, OutLineFeatureClass, ObserverHeightField!, TargetHeightField!, JoinField!, SampleDistance!, OutputTheDirection!, SamplingMethod! };
 
 		/// <summary>
 		/// <para>Observer Points</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InObserverPoints { get; set; }
 
 		/// <summary>
@@ -88,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polyline", "Polygon")]
 		public object InTargetFeatures { get; set; }
 
 		/// <summary>
@@ -154,6 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = false, Value = 1.0000000000000001e-05)]
 		public object? SampleDistance { get; set; } = "1";
 
 		/// <summary>

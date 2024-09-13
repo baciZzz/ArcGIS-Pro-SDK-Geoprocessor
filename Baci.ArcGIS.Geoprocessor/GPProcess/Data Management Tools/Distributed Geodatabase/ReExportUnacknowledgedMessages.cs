@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Re-export Unacknowledged Messages</para>
+	/// <para>Re-export Unacknowledged Messages</para>
 	/// <para>Creates an output delta file containing unacknowledged replica updates from a one-way or two-way replica geodatabase.</para>
 	/// </summary>
 	public class ReExportUnacknowledgedMessages : AbstractGPProcess
@@ -48,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Re-export Unacknowledged Messages</para>
 		/// </summary>
-		public override string DisplayName => "Re-export Unacknowledged Messages";
+		public override string DisplayName() => "Re-export Unacknowledged Messages";
 
 		/// <summary>
 		/// <para>Tool Name : ReExportUnacknowledgedMessages</para>
 		/// </summary>
-		public override string ToolName => "ReExportUnacknowledgedMessages";
+		public override string ToolName() => "ReExportUnacknowledgedMessages";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ReExportUnacknowledgedMessages</para>
 		/// </summary>
-		public override string ExcuteName => "management.ReExportUnacknowledgedMessages";
+		public override string ExcuteName() => "management.ReExportUnacknowledgedMessages";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeodatabase, OutputDeltaFile, InReplica, InExportOption };
+		public override object[] Parameters() => new object[] { InGeodatabase, OutputDeltaFile, InReplica, InExportOption };
 
 		/// <summary>
 		/// <para>Export from Replica Geodatabase</para>
@@ -96,6 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml", "gdb")]
 		public object OutputDeltaFile { get; set; }
 
 		/// <summary>

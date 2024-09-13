@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Geocode Addresses</para>
+	/// <para>Geocode Addresses</para>
 	/// <para>Geocodes a table of addresses. This process requires a table that stores the addresses you want to geocode and an address locator or a composite address locator. This tool matches the stored addresses against the locator and saves the result for each input record in a new point feature class. When using the ArcGIS World Geocoding Service, this operation may consume credits.</para>
 	/// </summary>
 	public class GeocodeAddresses : AbstractGPProcess
@@ -48,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Display Name : Geocode Addresses</para>
 		/// </summary>
-		public override string DisplayName => "Geocode Addresses";
+		public override string DisplayName() => "Geocode Addresses";
 
 		/// <summary>
 		/// <para>Tool Name : GeocodeAddresses</para>
 		/// </summary>
-		public override string ToolName => "GeocodeAddresses";
+		public override string ToolName() => "GeocodeAddresses";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geocoding.GeocodeAddresses</para>
 		/// </summary>
-		public override string ExcuteName => "geocoding.GeocodeAddresses";
+		public override string ExcuteName() => "geocoding.GeocodeAddresses";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geocoding Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geocoding Tools";
+		public override string ToolboxDisplayName() => "Geocoding Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geocoding</para>
 		/// </summary>
-		public override string ToolboxAlise => "geocoding";
+		public override string ToolboxAlise() => "geocoding";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, AddressLocator, InAddressFields, OutFeatureClass, OutRelationshipType!, Country!, LocationType!, Category!, OutputFields! };
+		public override object[] Parameters() => new object[] { InTable, AddressLocator, InAddressFields, OutFeatureClass, OutRelationshipType!, Country!, LocationType!, Category!, OutputFields! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -87,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
 		[GPBrowseFiltersDomain()]
+		[Filters("esri_browseDialogFilters_gt_tables")]
 		public object InTable { get; set; }
 
 		/// <summary>
@@ -115,6 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPBrowseFiltersDomain()]
+		[Filters("esri_browseDialogFilters_geodatabaseItems_featureClasses")]
 		public object OutFeatureClass { get; set; }
 
 		/// <summary>

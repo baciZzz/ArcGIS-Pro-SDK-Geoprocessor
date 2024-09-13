@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Apply Rotate Tree Layout</para>
+	/// <para>Apply Rotate Tree Layout</para>
 	/// <para>Rotates the tree or trees related to pivot junctions currently set up in a diagram to the specified angle.</para>
 	/// </summary>
 	public class ApplyRotateTreeLayout : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Rotate Tree Layout</para>
 		/// </summary>
-		public override string DisplayName => "Apply Rotate Tree Layout";
+		public override string DisplayName() => "Apply Rotate Tree Layout";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyRotateTreeLayout</para>
 		/// </summary>
-		public override string ToolName => "ApplyRotateTreeLayout";
+		public override string ToolName() => "ApplyRotateTreeLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.ApplyRotateTreeLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.ApplyRotateTreeLayout";
+		public override string ExcuteName() => "nd.ApplyRotateTreeLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved!, RotationAngle!, OutNetworkDiagramLayer!, RunAsync!, RotateJunction! };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, AreContainersPreserved!, RotationAngle!, OutNetworkDiagramLayer!, RunAsync!, RotateJunction! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>

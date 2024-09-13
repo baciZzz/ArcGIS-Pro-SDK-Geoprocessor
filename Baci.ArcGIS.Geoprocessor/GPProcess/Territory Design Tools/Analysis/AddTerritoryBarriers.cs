@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Add Territory Barriers</para>
+	/// <para>Add Territory Barriers</para>
 	/// <para>Allows the addition of polygon or line features to prevent or restrict the growth of territories.</para>
 	/// </summary>
 	public class AddTerritoryBarriers : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Territory Barriers</para>
 		/// </summary>
-		public override string DisplayName => "Add Territory Barriers";
+		public override string DisplayName() => "Add Territory Barriers";
 
 		/// <summary>
 		/// <para>Tool Name : AddTerritoryBarriers</para>
 		/// </summary>
-		public override string ToolName => "AddTerritoryBarriers";
+		public override string ToolName() => "AddTerritoryBarriers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : td.AddTerritoryBarriers</para>
 		/// </summary>
-		public override string ExcuteName => "td.AddTerritoryBarriers";
+		public override string ExcuteName() => "td.AddTerritoryBarriers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Territory Design Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Territory Design Tools";
+		public override string ToolboxDisplayName() => "Territory Design Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : td</para>
 		/// </summary>
-		public override string ToolboxAlise => "td";
+		public override string ToolboxAlise() => "td";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, InBarrierFeatures, BarrierType!, AppendData!, OutTerritorySolution! };
+		public override object[] Parameters() => new object[] { InTerritorySolution, Level, InBarrierFeatures, BarrierType!, AppendData!, OutTerritorySolution! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>
@@ -96,6 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon")]
 		public object InBarrierFeatures { get; set; }
 
 		/// <summary>

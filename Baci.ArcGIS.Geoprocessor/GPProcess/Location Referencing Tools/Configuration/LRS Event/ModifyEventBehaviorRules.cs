@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Modify Event Behavior Rules</para>
+	/// <para>Modify Event Behavior Rules</para>
 	/// <para>Modifies event behavior rules for the registered event  layer or feature class.</para>
 	/// </summary>
 	public class ModifyEventBehaviorRules : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Modify Event Behavior Rules</para>
 		/// </summary>
-		public override string DisplayName => "Modify Event Behavior Rules";
+		public override string DisplayName() => "Modify Event Behavior Rules";
 
 		/// <summary>
 		/// <para>Tool Name : ModifyEventBehaviorRules</para>
 		/// </summary>
-		public override string ToolName => "ModifyEventBehaviorRules";
+		public override string ToolName() => "ModifyEventBehaviorRules";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.ModifyEventBehaviorRules</para>
 		/// </summary>
-		public override string ExcuteName => "locref.ModifyEventBehaviorRules";
+		public override string ExcuteName() => "locref.ModifyEventBehaviorRules";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, CalibrateRule!, RetireRule!, ExtendRule!, ReassignRule!, RealignRule!, OutFeatureClass!, ReverseRule!, CartoRealignRule! };
+		public override object[] Parameters() => new object[] { InFeatureClass, CalibrateRule!, RetireRule!, ExtendRule!, ReassignRule!, RealignRule!, OutFeatureClass!, ReverseRule!, CartoRealignRule! };
 
 		/// <summary>
 		/// <para>Event Feature Class</para>
@@ -69,6 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polyline")]
 		public object InFeatureClass { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Summary Reports</para>
+	/// <para>Summary Reports</para>
 	/// <para>Creates and populates demographic style summary reports for a boundary layer using Esri report templates.</para>
 	/// </summary>
 	public class SummaryReports : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Summary Reports</para>
 		/// </summary>
-		public override string DisplayName => "Summary Reports";
+		public override string DisplayName() => "Summary Reports";
 
 		/// <summary>
 		/// <para>Tool Name : SummaryReports</para>
 		/// </summary>
-		public override string ToolName => "SummaryReports";
+		public override string ToolName() => "SummaryReports";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.SummaryReports</para>
 		/// </summary>
-		public override string ExcuteName => "ba.SummaryReports";
+		public override string ExcuteName() => "ba.SummaryReports";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "geographicTransformations", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "geographicTransformations", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ReportTemplates, ReportsFolder, SummarizationOptions!, SingleReport!, Formats!, StoreIdField!, StoreNameField!, StoreAddressField!, StoreLatitudeField!, StoreLongitudeField!, RingIdField!, AreaDescriptionField!, Title!, Subtitle!, OutputFiles!, ReportPerFeature! };
+		public override object[] Parameters() => new object[] { InFeatures, ReportTemplates, ReportsFolder, SummarizationOptions!, SingleReport!, Formats!, StoreIdField!, StoreNameField!, StoreAddressField!, StoreLatitudeField!, StoreLongitudeField!, RingIdField!, AreaDescriptionField!, Title!, Subtitle!, OutputFiles!, ReportPerFeature! };
 
 		/// <summary>
 		/// <para>Boundary Layer</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -141,6 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[KeyField("EMPTY")]
 		[Category("Report Header Options")]
 		public object? StoreIdField { get; set; }
 
@@ -151,6 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[KeyField("EMPTY")]
 		[Category("Report Header Options")]
 		public object? StoreNameField { get; set; }
 
@@ -161,6 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[KeyField("EMPTY")]
 		[Category("Report Header Options")]
 		public object? StoreAddressField { get; set; }
 
@@ -171,6 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[KeyField("EMPTY")]
 		[Category("Report Header Options")]
 		public object? StoreLatitudeField { get; set; }
 
@@ -181,6 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[KeyField("EMPTY")]
 		[Category("Report Header Options")]
 		public object? StoreLongitudeField { get; set; }
 
@@ -191,6 +198,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[KeyField("EMPTY")]
 		[Category("Report Header Options")]
 		public object? RingIdField { get; set; }
 
@@ -201,6 +209,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[KeyField("EMPTY")]
 		[Category("Report Header Options")]
 		public object? AreaDescriptionField { get; set; }
 

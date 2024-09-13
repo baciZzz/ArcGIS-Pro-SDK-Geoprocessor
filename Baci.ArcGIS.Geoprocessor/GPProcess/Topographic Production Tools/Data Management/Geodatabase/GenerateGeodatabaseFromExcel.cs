@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Generate Geodatabase From Excel</para>
+	/// <para>Generate Geodatabase From Excel</para>
 	/// <para>Creates a geodatabase from the contents of a Microsoft Excel file (.xls or .xlsx).</para>
 	/// </summary>
 	public class GenerateGeodatabaseFromExcel : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Geodatabase From Excel</para>
 		/// </summary>
-		public override string DisplayName => "Generate Geodatabase From Excel";
+		public override string DisplayName() => "Generate Geodatabase From Excel";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateGeodatabaseFromExcel</para>
 		/// </summary>
-		public override string ToolName => "GenerateGeodatabaseFromExcel";
+		public override string ToolName() => "GenerateGeodatabaseFromExcel";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.GenerateGeodatabaseFromExcel</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.GenerateGeodatabaseFromExcel";
+		public override string ExcuteName() => "topographic.GenerateGeodatabaseFromExcel";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InExcelFile, OutGeodatabase, UpdatedGeodatabase! };
+		public override object[] Parameters() => new object[] { InExcelFile, OutGeodatabase, UpdatedGeodatabase! };
 
 		/// <summary>
 		/// <para>Input Excel File</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xls", "xlsx")]
 		public object InExcelFile { get; set; }
 
 		/// <summary>
@@ -83,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object OutGeodatabase { get; set; }
 
 		/// <summary>
@@ -91,6 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.derived)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object? UpdatedGeodatabase { get; set; }
 
 	}

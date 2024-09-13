@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add GPS Metadata Fields</para>
+	/// <para>Add GPS Metadata Fields</para>
 	/// <para>Adds GNSS fields to a feature class in a geodatabase.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add GPS Metadata Fields</para>
 		/// </summary>
-		public override string DisplayName => "Add GPS Metadata Fields";
+		public override string DisplayName() => "Add GPS Metadata Fields";
 
 		/// <summary>
 		/// <para>Tool Name : AddGPSMetadataFields</para>
 		/// </summary>
-		public override string ToolName => "AddGPSMetadataFields";
+		public override string ToolName() => "AddGPSMetadataFields";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddGPSMetadataFields</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddGPSMetadataFields";
+		public override string ExcuteName() => "management.AddGPSMetadataFields";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointFeatures, UpdatedPointFeatures! };
+		public override object[] Parameters() => new object[] { InPointFeatures, UpdatedPointFeatures! };
 
 		/// <summary>
 		/// <para>Input Point Features</para>
@@ -71,6 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint")]
+		[FeatureType("Simple")]
 		public object InPointFeatures { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Generate Elevation Bands From Features</para>
+	/// <para>Generate Elevation Bands From Features</para>
 	/// <para>Generates band features that represent elevation levels on a map product. The tool can be run with set values from standardized product specifications or with custom-defined values.</para>
 	/// </summary>
 	public class GenerateElevationBandsFromFeatures : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Elevation Bands From Features</para>
 		/// </summary>
-		public override string DisplayName => "Generate Elevation Bands From Features";
+		public override string DisplayName() => "Generate Elevation Bands From Features";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateElevationBandsFromFeatures</para>
 		/// </summary>
-		public override string ToolName => "GenerateElevationBandsFromFeatures";
+		public override string ToolName() => "GenerateElevationBandsFromFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.GenerateElevationBandsFromFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.GenerateElevationBandsFromFeatures";
+		public override string ExcuteName() => "topographic.GenerateElevationBandsFromFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ContourFeatures, ElevationField, AreaOfInterest, OutFeatureClass, ExclusionFeatures!, Product!, BandInterval!, BandValues! };
+		public override object[] Parameters() => new object[] { ContourFeatures, ElevationField, AreaOfInterest, OutFeatureClass, ExclusionFeatures!, Product!, BandInterval!, BandValues! };
 
 		/// <summary>
 		/// <para>Contour Features</para>
@@ -84,6 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object ContourFeatures { get; set; }
 
 		/// <summary>
@@ -93,6 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double", "Long", "Short")]
 		public object ElevationField { get; set; }
 
 		/// <summary>
@@ -102,6 +106,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object AreaOfInterest { get; set; }
 
 		/// <summary>
@@ -111,6 +117,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object OutFeatureClass { get; set; }
 
 		/// <summary>
@@ -120,6 +128,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? ExclusionFeatures { get; set; }
 
 		/// <summary>

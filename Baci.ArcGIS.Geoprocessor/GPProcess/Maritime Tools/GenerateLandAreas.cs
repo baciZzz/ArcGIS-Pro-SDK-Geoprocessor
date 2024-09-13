@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Generate Land Areas</para>
+	/// <para>Generate Land Areas</para>
 	/// <para>Creates land area polygon features by identifying existing land topology features, such as coastline and shoreline construction, and eliminating any polygons over water or other exclusionary features. An area of interest is specified to limit the processing area.</para>
 	/// </summary>
 	public class GenerateLandAreas : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Land Areas</para>
 		/// </summary>
-		public override string DisplayName => "Generate Land Areas";
+		public override string DisplayName() => "Generate Land Areas";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateLandAreas</para>
 		/// </summary>
-		public override string ToolName => "GenerateLandAreas";
+		public override string ToolName() => "GenerateLandAreas";
 
 		/// <summary>
 		/// <para>Tool Excute Name : maritime.GenerateLandAreas</para>
 		/// </summary>
-		public override string ExcuteName => "maritime.GenerateLandAreas";
+		public override string ExcuteName() => "maritime.GenerateLandAreas";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Maritime Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Maritime Tools";
+		public override string ToolboxDisplayName() => "Maritime Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : maritime</para>
 		/// </summary>
-		public override string ToolboxAlise => "maritime";
+		public override string ToolboxAlise() => "maritime";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, TargetWorkspace, InExtentPolygon, InConfigurationFile!, UpdatedLandAreas! };
+		public override object[] Parameters() => new object[] { InWorkspace, TargetWorkspace, InExtentPolygon, InConfigurationFile!, UpdatedLandAreas! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object InWorkspace { get; set; }
 
 		/// <summary>
@@ -88,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object TargetWorkspace { get; set; }
 
 		/// <summary>
@@ -97,6 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InExtentPolygon { get; set; }
 
 		/// <summary>
@@ -106,6 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object? InConfigurationFile { get; set; }
 
 		/// <summary>

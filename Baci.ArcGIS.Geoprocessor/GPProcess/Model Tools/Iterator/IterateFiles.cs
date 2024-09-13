@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Iterate Files</para>
+	/// <para>Iterate Files</para>
 	/// <para>Iterates over files in a folder.</para>
 	/// </summary>
 	public class IterateFiles : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : Iterate Files</para>
 		/// </summary>
-		public override string DisplayName => "Iterate Files";
+		public override string DisplayName() => "Iterate Files";
 
 		/// <summary>
 		/// <para>Tool Name : IterateFiles</para>
 		/// </summary>
-		public override string ToolName => "IterateFiles";
+		public override string ToolName() => "IterateFiles";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.IterateFiles</para>
 		/// </summary>
-		public override string ExcuteName => "mb.IterateFiles";
+		public override string ExcuteName() => "mb.IterateFiles";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFolder, Wildcard!, Extension!, Recursive!, File!, Name! };
+		public override object[] Parameters() => new object[] { InFolder, Wildcard!, Extension!, Recursive!, File!, Name! };
 
 		/// <summary>
 		/// <para>Folder</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Add Feature Class To Terrain</para>
+	/// <para>Add Feature Class To Terrain</para>
 	/// <para>Adds one or more feature classes to a terrain dataset.</para>
 	/// </summary>
 	public class AddFeatureClassToTerrain : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Feature Class To Terrain</para>
 		/// </summary>
-		public override string DisplayName => "Add Feature Class To Terrain";
+		public override string DisplayName() => "Add Feature Class To Terrain";
 
 		/// <summary>
 		/// <para>Tool Name : AddFeatureClassToTerrain</para>
 		/// </summary>
-		public override string ToolName => "AddFeatureClassToTerrain";
+		public override string ToolName() => "AddFeatureClassToTerrain";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.AddFeatureClassToTerrain</para>
 		/// </summary>
-		public override string ExcuteName => "3d.AddFeatureClassToTerrain";
+		public override string ExcuteName() => "3d.AddFeatureClassToTerrain";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerrain, InFeatures, DerivedOutTerrain! };
+		public override object[] Parameters() => new object[] { InTerrain, InFeatures, DerivedOutTerrain! };
 
 		/// <summary>
 		/// <para>Input Terrain</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Manage Map Server Cache Scales</para>
+	/// <para>Manage Map Server Cache Scales</para>
 	/// <para>Updates the scale levels in an existing map image layer in ArcGIS Enterprise or in a cached map or image service on a stand-alone server. Use this tool to add new scales or delete existing scales from a cache.</para>
 	/// </summary>
 	public class ManageMapServerCacheScales : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Manage Map Server Cache Scales</para>
 		/// </summary>
-		public override string DisplayName => "Manage Map Server Cache Scales";
+		public override string DisplayName() => "Manage Map Server Cache Scales";
 
 		/// <summary>
 		/// <para>Tool Name : ManageMapServerCacheScales</para>
 		/// </summary>
-		public override string ToolName => "ManageMapServerCacheScales";
+		public override string ToolName() => "ManageMapServerCacheScales";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.ManageMapServerCacheScales</para>
 		/// </summary>
-		public override string ExcuteName => "server.ManageMapServerCacheScales";
+		public override string ExcuteName() => "server.ManageMapServerCacheScales";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputService, Scales, OutJobUrl! };
+		public override object[] Parameters() => new object[] { InputService, Scales, OutJobUrl! };
 
 		/// <summary>
 		/// <para>Input Service</para>

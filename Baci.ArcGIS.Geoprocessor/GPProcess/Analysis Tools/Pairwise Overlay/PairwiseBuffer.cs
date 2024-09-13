@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Pairwise Buffer</para>
+	/// <para>Pairwise Buffer</para>
 	/// <para>Creates buffer polygons around input features to a specified distance using a parallel processing approach.</para>
 	/// </summary>
 	public class PairwiseBuffer : AbstractGPProcess
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Pairwise Buffer</para>
 		/// </summary>
-		public override string DisplayName => "Pairwise Buffer";
+		public override string DisplayName() => "Pairwise Buffer";
 
 		/// <summary>
 		/// <para>Tool Name : PairwiseBuffer</para>
 		/// </summary>
-		public override string ToolName => "PairwiseBuffer";
+		public override string ToolName() => "PairwiseBuffer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.PairwiseBuffer</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.PairwiseBuffer";
+		public override string ExcuteName() => "analysis.PairwiseBuffer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "scratchWorkspace", "transferGDBAttributeProperties", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor", "scratchWorkspace", "transferGDBAttributeProperties", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, BufferDistanceOrField, DissolveOption!, DissolveField!, Method!, MaxDeviation! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, BufferDistanceOrField, DissolveOption!, DissolveField!, Method!, MaxDeviation! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -119,6 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "OID", "GUID")]
 		public object? DissolveField { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Join Field</para>
+	/// <para>Join Field</para>
 	/// <para>Permanently joins the contents of a table to another table based on a common attribute field. The input table is updated to contain the fields from the join table. You can select which fields from the join table will be added to the input table.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -47,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Join Field</para>
 		/// </summary>
-		public override string DisplayName => "Join Field";
+		public override string DisplayName() => "Join Field";
 
 		/// <summary>
 		/// <para>Tool Name : JoinField</para>
 		/// </summary>
-		public override string ToolName => "JoinField";
+		public override string ToolName() => "JoinField";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.JoinField</para>
 		/// </summary>
-		public override string ExcuteName => "management.JoinField";
+		public override string ExcuteName() => "management.JoinField";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InData, InField, JoinTable, Join_Field, Fields!, OutLayerOrView!, FmOption!, FieldMapping! };
+		public override object[] Parameters() => new object[] { InData, InField, JoinTable, Join_Field, Fields!, OutLayerOrView!, FmOption!, FieldMapping! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -94,6 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "OID", "GUID", "GlobalID")]
 		public object InField { get; set; }
 
 		/// <summary>
@@ -111,6 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "OID", "GUID", "GlobalID")]
 		public object Join_Field { get; set; }
 
 		/// <summary>
@@ -120,6 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "GUID")]
 		public object? Fields { get; set; }
 
 		/// <summary>

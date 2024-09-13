@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Transects Along Lines</para>
+	/// <para>Generate Transects Along Lines</para>
 	/// <para>Creates perpendicular transect lines at a regular interval along lines.</para>
 	/// </summary>
 	public class GenerateTransectsAlongLines : AbstractGPProcess
@@ -46,37 +47,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Transects Along Lines</para>
 		/// </summary>
-		public override string DisplayName => "Generate Transects Along Lines";
+		public override string DisplayName() => "Generate Transects Along Lines";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateTransectsAlongLines</para>
 		/// </summary>
-		public override string ToolName => "GenerateTransectsAlongLines";
+		public override string ToolName() => "GenerateTransectsAlongLines";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.GenerateTransectsAlongLines</para>
 		/// </summary>
-		public override string ExcuteName => "management.GenerateTransectsAlongLines";
+		public override string ExcuteName() => "management.GenerateTransectsAlongLines";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Interval, TransectLength, IncludeEnds! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, Interval, TransectLength, IncludeEnds! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -85,6 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

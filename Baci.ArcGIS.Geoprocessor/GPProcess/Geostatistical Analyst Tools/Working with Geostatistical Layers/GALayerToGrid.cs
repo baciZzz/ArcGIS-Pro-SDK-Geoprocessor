@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>GA Layer To Grid</para>
+	/// <para>GA Layer To Grid</para>
 	/// <para>Exports a Geostatistical layer to a raster.</para>
 	/// </summary>
 	public class GALayerToGrid : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : GA Layer To Grid</para>
 		/// </summary>
-		public override string DisplayName => "GA Layer To Grid";
+		public override string DisplayName() => "GA Layer To Grid";
 
 		/// <summary>
 		/// <para>Tool Name : GALayerToGrid</para>
 		/// </summary>
-		public override string ToolName => "GALayerToGrid";
+		public override string ToolName() => "GALayerToGrid";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GALayerToGrid</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GALayerToGrid";
+		public override string ExcuteName() => "ga.GALayerToGrid";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayer, OutSurfaceGrid, CellSize!, PointsPerBlockHorz!, PointsPerBlockVert! };
+		public override object[] Parameters() => new object[] { InGeostatLayer, OutSurfaceGrid, CellSize!, PointsPerBlockHorz!, PointsPerBlockVert! };
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
@@ -91,7 +92,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object? CellSize { get; set; }
 
 		/// <summary>
@@ -100,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 256)]
 		public object? PointsPerBlockHorz { get; set; } = "1";
 
 		/// <summary>
@@ -109,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 256)]
 		public object? PointsPerBlockVert { get; set; } = "1";
 
 		/// <summary>

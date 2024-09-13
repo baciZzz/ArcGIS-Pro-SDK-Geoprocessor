@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Append Control Points</para>
+	/// <para>Append Control Points</para>
 	/// <para>Combines control points to an existing control point table.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Append Control Points</para>
 		/// </summary>
-		public override string DisplayName => "Append Control Points";
+		public override string DisplayName() => "Append Control Points";
 
 		/// <summary>
 		/// <para>Tool Name : AppendControlPoints</para>
 		/// </summary>
-		public override string ToolName => "AppendControlPoints";
+		public override string ToolName() => "AppendControlPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AppendControlPoints</para>
 		/// </summary>
-		public override string ExcuteName => "management.AppendControlPoints";
+		public override string ExcuteName() => "management.AppendControlPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMasterControlPoints, InInputControlPoints, InZField!, InTagField!, InDem!, OutMasterControlPoints!, InXyAccuracy!, InZAccuracy!, Geoid!, AreaOfInterest!, AppendOption! };
+		public override object[] Parameters() => new object[] { InMasterControlPoints, InInputControlPoints, InZField!, InTagField!, InDem!, OutMasterControlPoints!, InXyAccuracy!, InZAccuracy!, Geoid!, AreaOfInterest!, AppendOption! };
 
 		/// <summary>
 		/// <para>Target Control Points</para>
@@ -93,6 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? InZField { get; set; }
 
 		/// <summary>
@@ -102,6 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
 		public object? InTagField { get; set; }
 
 		/// <summary>
@@ -127,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1.0000000000000001e-09, Max = 1.7976931348623157e+308)]
 		public object? InXyAccuracy { get; set; }
 
 		/// <summary>
@@ -137,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1.0000000000000001e-09, Max = 1.7976931348623157e+308)]
 		public object? InZAccuracy { get; set; }
 
 		/// <summary>

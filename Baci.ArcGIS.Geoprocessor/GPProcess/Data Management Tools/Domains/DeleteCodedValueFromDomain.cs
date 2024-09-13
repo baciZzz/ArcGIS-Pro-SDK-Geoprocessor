@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Coded Value From Domain</para>
+	/// <para>Delete Coded Value From Domain</para>
 	/// <para>Removes a value from a coded value domain.</para>
 	/// </summary>
 	public class DeleteCodedValueFromDomain : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete Coded Value From Domain</para>
 		/// </summary>
-		public override string DisplayName => "Delete Coded Value From Domain";
+		public override string DisplayName() => "Delete Coded Value From Domain";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteCodedValueFromDomain</para>
 		/// </summary>
-		public override string ToolName => "DeleteCodedValueFromDomain";
+		public override string ToolName() => "DeleteCodedValueFromDomain";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DeleteCodedValueFromDomain</para>
 		/// </summary>
-		public override string ExcuteName => "management.DeleteCodedValueFromDomain";
+		public override string ExcuteName() => "management.DeleteCodedValueFromDomain";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, DomainName, Code, OutWorkspace! };
+		public override object[] Parameters() => new object[] { InWorkspace, DomainName, Code, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object InWorkspace { get; set; }
 
 		/// <summary>

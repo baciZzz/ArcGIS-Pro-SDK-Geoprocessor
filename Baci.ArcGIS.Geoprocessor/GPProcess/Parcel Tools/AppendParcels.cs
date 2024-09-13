@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Append Parcels</para>
+	/// <para>Append Parcels</para>
 	/// <para>Appends parcels from an input parcel fabric to a target parcel fabric. If the input parcel fabric is a parcel fabric layer with selected polygons, the corresponding parcel features will be appended.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Display Name : Append Parcels</para>
 		/// </summary>
-		public override string DisplayName => "Append Parcels";
+		public override string DisplayName() => "Append Parcels";
 
 		/// <summary>
 		/// <para>Tool Name : AppendParcels</para>
 		/// </summary>
-		public override string ToolName => "AppendParcels";
+		public override string ToolName() => "AppendParcels";
 
 		/// <summary>
 		/// <para>Tool Excute Name : parcel.AppendParcels</para>
 		/// </summary>
-		public override string ExcuteName => "parcel.AppendParcels";
+		public override string ExcuteName() => "parcel.AppendParcels";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Parcel Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Parcel Tools";
+		public override string ToolboxDisplayName() => "Parcel Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : parcel</para>
 		/// </summary>
-		public override string ToolboxAlise => "parcel";
+		public override string ToolboxAlise() => "parcel";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InParcelFabric, TargetParcelFabric, UpdatedParcelFabric! };
+		public override object[] Parameters() => new object[] { InParcelFabric, TargetParcelFabric, UpdatedParcelFabric! };
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>

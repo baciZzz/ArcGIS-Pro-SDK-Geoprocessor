@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Polygon To Centerline</para>
+	/// <para>Polygon To Centerline</para>
 	/// <para>Creates centerlines from polygon features. This tool is useful for creating centerlines from hydrographic polygons for use at smaller scales.</para>
 	/// </summary>
 	public class PolygonToCenterline : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Polygon To Centerline</para>
 		/// </summary>
-		public override string DisplayName => "Polygon To Centerline";
+		public override string DisplayName() => "Polygon To Centerline";
 
 		/// <summary>
 		/// <para>Tool Name : PolygonToCenterline</para>
 		/// </summary>
-		public override string ToolName => "PolygonToCenterline";
+		public override string ToolName() => "PolygonToCenterline";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.PolygonToCenterline</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.PolygonToCenterline";
+		public override string ExcuteName() => "topographic.PolygonToCenterline";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, ConnectingFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, ConnectingFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,6 +75,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -91,6 +94,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polyline", "Polygon")]
+		[FeatureType("Simple")]
 		public object? ConnectingFeatures { get; set; }
 
 	}

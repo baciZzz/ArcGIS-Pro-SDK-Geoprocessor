@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make Location-Allocation Layer</para>
+	/// <para>Make Location-Allocation Layer</para>
 	/// <para>Makes a location-allocation network analysis layer and sets its analysis properties. A location-allocation analysis layer is useful for choosing a given number of facilities from a set of potential locations such that a demand will be allocated to facilities in an optimal and efficient manner.</para>
 	/// </summary>
 	[Obsolete()]
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Location-Allocation Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Location-Allocation Layer";
+		public override string DisplayName() => "Make Location-Allocation Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeLocationAllocationLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeLocationAllocationLayer";
+		public override string ToolName() => "MakeLocationAllocationLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.MakeLocationAllocationLayer</para>
 		/// </summary>
-		public override string ExcuteName => "na.MakeLocationAllocationLayer";
+		public override string ExcuteName() => "na.MakeLocationAllocationLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, OutNetworkAnalysisLayer, ImpedanceAttribute, LocAllocFromTo!, LocAllocProblemType!, NumberFacilitiesToFind!, ImpedanceCutoff!, ImpedanceTransformation!, ImpedanceParameter!, TargetMarketShare!, AccumulateAttributeName!, UturnPolicy!, RestrictionAttributeName!, Hierarchy!, OutputPathShape!, DefaultCapacity!, TimeOfDay!, OutputLayer! };
+		public override object[] Parameters() => new object[] { InNetworkDataset, OutNetworkAnalysisLayer, ImpedanceAttribute, LocAllocFromTo!, LocAllocProblemType!, NumberFacilitiesToFind!, ImpedanceCutoff!, ImpedanceTransformation!, ImpedanceParameter!, TargetMarketShare!, AccumulateAttributeName!, UturnPolicy!, RestrictionAttributeName!, Hierarchy!, OutputPathShape!, DefaultCapacity!, TimeOfDay!, OutputLayer! };
 
 		/// <summary>
 		/// <para>Input Analysis Network</para>

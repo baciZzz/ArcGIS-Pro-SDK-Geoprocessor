@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>ICAO Annex 4 Surfaces</para>
+	/// <para>ICAO Annex 4 Surfaces</para>
 	/// <para>Creates obstruction identification surfaces</para>
 	/// <para>(OIS) based on the ICAO Annex 4 specifications for either a</para>
 	/// <para>Take-Off Flight Path Area or a Precision Approach Terrain</para>
@@ -32,8 +33,8 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <param name="SurfaceGeneration">
 		/// <para>Surface Generation</para>
 		/// <para>Specifies the types of surfaces that will be created.</para>
-		/// <para>Precision approach terrain area— A surface that is 60 meters either side of the extended runway centerline to a distance of 900 meters from the threshold, with a 3 percent slope rising outward from the threshold will be created.The surface will be created pursuant to, Chapter 6, 6.5.1.<italics>ICAO Annex 4</italics></para>
-		/// <para>Takeoff flight path area— A surface with a 180 meter width at its point of origin (end of runway or clearway), which increases at a rate of 0.25D to a maximum of 1800 meters, where D is the distance from the point of origin will be created. This surface extends to a distance of 10 kilometers and has a 1.2 percent slope ascending outward from the point of origin. The surface will be created pursuant to, Chapter 3, 3.8.2.<italics>ICAO Annex 4</italics></para>
+		/// <para>Precision approach terrain area— A surface that is 60 meters either side of the extended runway centerline to a distance of 900 meters from the threshold, with a 3 percent slope rising outward from the threshold will be created.The surface will be created pursuant to, Chapter 6, 6.5.1.&lt;italics&gt;ICAO Annex 4&lt;/italics&gt;</para>
+		/// <para>Takeoff flight path area— A surface with a 180 meter width at its point of origin (end of runway or clearway), which increases at a rate of 0.25D to a maximum of 1800 meters, where D is the distance from the point of origin will be created. This surface extends to a distance of 10 kilometers and has a 1.2 percent slope ascending outward from the point of origin. The surface will be created pursuant to, Chapter 3, 3.8.2.&lt;italics&gt;ICAO Annex 4&lt;/italics&gt;</para>
 		/// <para><see cref="SurfaceGenerationEnum"/></para>
 		/// </param>
 		public ICAOAnnex4Surfaces(object InFeatures, object TargetOisFeatures, object SurfaceGeneration)
@@ -46,37 +47,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : ICAO Annex 4 Surfaces</para>
 		/// </summary>
-		public override string DisplayName => "ICAO Annex 4 Surfaces";
+		public override string DisplayName() => "ICAO Annex 4 Surfaces";
 
 		/// <summary>
 		/// <para>Tool Name : ICAOAnnex4Surfaces</para>
 		/// </summary>
-		public override string ToolName => "ICAOAnnex4Surfaces";
+		public override string ToolName() => "ICAOAnnex4Surfaces";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.ICAOAnnex4Surfaces</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.ICAOAnnex4Surfaces";
+		public override string ExcuteName() => "aviation.ICAOAnnex4Surfaces";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, TargetOisFeatures, SurfaceGeneration, RunwayDirection!, ClearWayLength!, ThresholdPointFeatureClass!, CustomJsonFile!, DerivedOutfeatureclass! };
+		public override object[] Parameters() => new object[] { InFeatures, TargetOisFeatures, SurfaceGeneration, RunwayDirection!, ClearWayLength!, ThresholdPointFeatureClass!, CustomJsonFile!, DerivedOutfeatureclass! };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>
@@ -85,6 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -99,8 +101,8 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Surface Generation</para>
 		/// <para>Specifies the types of surfaces that will be created.</para>
-		/// <para>Precision approach terrain area— A surface that is 60 meters either side of the extended runway centerline to a distance of 900 meters from the threshold, with a 3 percent slope rising outward from the threshold will be created.The surface will be created pursuant to, Chapter 6, 6.5.1.<italics>ICAO Annex 4</italics></para>
-		/// <para>Takeoff flight path area— A surface with a 180 meter width at its point of origin (end of runway or clearway), which increases at a rate of 0.25D to a maximum of 1800 meters, where D is the distance from the point of origin will be created. This surface extends to a distance of 10 kilometers and has a 1.2 percent slope ascending outward from the point of origin. The surface will be created pursuant to, Chapter 3, 3.8.2.<italics>ICAO Annex 4</italics></para>
+		/// <para>Precision approach terrain area— A surface that is 60 meters either side of the extended runway centerline to a distance of 900 meters from the threshold, with a 3 percent slope rising outward from the threshold will be created.The surface will be created pursuant to, Chapter 6, 6.5.1.&lt;italics&gt;ICAO Annex 4&lt;/italics&gt;</para>
+		/// <para>Takeoff flight path area— A surface with a 180 meter width at its point of origin (end of runway or clearway), which increases at a rate of 0.25D to a maximum of 1800 meters, where D is the distance from the point of origin will be created. This surface extends to a distance of 10 kilometers and has a 1.2 percent slope ascending outward from the point of origin. The surface will be created pursuant to, Chapter 3, 3.8.2.&lt;italics&gt;ICAO Annex 4&lt;/italics&gt;</para>
 		/// <para><see cref="SurfaceGenerationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -135,6 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object? ThresholdPointFeatureClass { get; set; }
 
 		/// <summary>
@@ -145,6 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("json")]
 		public object? CustomJsonFile { get; set; }
 
 		/// <summary>
@@ -172,14 +176,14 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		public enum SurfaceGenerationEnum 
 		{
 			/// <summary>
-			/// <para>Precision approach terrain area— A surface that is 60 meters either side of the extended runway centerline to a distance of 900 meters from the threshold, with a 3 percent slope rising outward from the threshold will be created.The surface will be created pursuant to, Chapter 6, 6.5.1.<italics>ICAO Annex 4</italics></para>
+			/// <para>Precision approach terrain area— A surface that is 60 meters either side of the extended runway centerline to a distance of 900 meters from the threshold, with a 3 percent slope rising outward from the threshold will be created.The surface will be created pursuant to, Chapter 6, 6.5.1.&lt;italics&gt;ICAO Annex 4&lt;/italics&gt;</para>
 			/// </summary>
 			[GPValue("PRECISION_APPROACH_TERRAIN_AREA")]
 			[Description("Precision approach terrain area")]
 			Precision_approach_terrain_area,
 
 			/// <summary>
-			/// <para>Takeoff flight path area— A surface with a 180 meter width at its point of origin (end of runway or clearway), which increases at a rate of 0.25D to a maximum of 1800 meters, where D is the distance from the point of origin will be created. This surface extends to a distance of 10 kilometers and has a 1.2 percent slope ascending outward from the point of origin. The surface will be created pursuant to, Chapter 3, 3.8.2.<italics>ICAO Annex 4</italics></para>
+			/// <para>Takeoff flight path area— A surface with a 180 meter width at its point of origin (end of runway or clearway), which increases at a rate of 0.25D to a maximum of 1800 meters, where D is the distance from the point of origin will be created. This surface extends to a distance of 10 kilometers and has a 1.2 percent slope ascending outward from the point of origin. The surface will be created pursuant to, Chapter 3, 3.8.2.&lt;italics&gt;ICAO Annex 4&lt;/italics&gt;</para>
 			/// </summary>
 			[GPValue("TAKEOFF_FLIGHT_PATH_AREA")]
 			[Description("Takeoff flight path area")]

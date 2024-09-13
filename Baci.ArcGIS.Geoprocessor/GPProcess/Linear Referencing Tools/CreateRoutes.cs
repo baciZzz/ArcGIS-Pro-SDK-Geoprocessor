@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 {
 	/// <summary>
 	/// <para>Create Routes</para>
+	/// <para>Create Routes</para>
 	/// <para>Creates routes from existing lines. The input line features that share a common identifier are merged to create a single route.</para>
 	/// </summary>
 	public class CreateRoutes : AbstractGPProcess
@@ -49,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Routes</para>
 		/// </summary>
-		public override string DisplayName => "Create Routes";
+		public override string DisplayName() => "Create Routes";
 
 		/// <summary>
 		/// <para>Tool Name : CreateRoutes</para>
 		/// </summary>
-		public override string ToolName => "CreateRoutes";
+		public override string ToolName() => "CreateRoutes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : lr.CreateRoutes</para>
 		/// </summary>
-		public override string ExcuteName => "lr.CreateRoutes";
+		public override string ExcuteName() => "lr.CreateRoutes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Linear Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Linear Referencing Tools";
+		public override string ToolboxDisplayName() => "Linear Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : lr</para>
 		/// </summary>
-		public override string ToolboxAlise => "lr";
+		public override string ToolboxAlise() => "lr";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "ZDomain", "configKeyword", "extent", "outputCoordinateSystem", "outputZFlag", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "ZDomain", "configKeyword", "extent", "outputCoordinateSystem", "outputZFlag", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLineFeatures, RouteIdField, OutFeatureClass, MeasureSource, FromMeasureField!, ToMeasureField!, CoordinatePriority!, MeasureFactor!, MeasureOffset!, IgnoreGaps!, BuildIndex! };
+		public override object[] Parameters() => new object[] { InLineFeatures, RouteIdField, OutFeatureClass, MeasureSource, FromMeasureField!, ToMeasureField!, CoordinatePriority!, MeasureFactor!, MeasureOffset!, IgnoreGaps!, BuildIndex! };
 
 		/// <summary>
 		/// <para>Input Line Features</para>
@@ -88,6 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InLineFeatures { get; set; }
 
 		/// <summary>
@@ -96,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{4A4F70B0-913C-4A82-A33F-E190FFA409EA}")]
 		public object RouteIdField { get; set; }
 
 		/// <summary>
@@ -126,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{C06E2425-30D9-4C9D-8CD3-7FE243B3AFCB}")]
 		public object? FromMeasureField { get; set; }
 
 		/// <summary>
@@ -135,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{C06E2425-30D9-4C9D-8CD3-7FE243B3AFCB}")]
 		public object? ToMeasureField { get; set; }
 
 		/// <summary>

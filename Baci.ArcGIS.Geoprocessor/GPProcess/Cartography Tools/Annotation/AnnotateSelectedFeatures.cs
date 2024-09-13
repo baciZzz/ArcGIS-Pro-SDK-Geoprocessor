@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Annotate Selected Features</para>
+	/// <para>Annotate Selected Features</para>
 	/// <para>Creates annotation for the selected features of a layer. The labeling properties defined in the annotation class properties of  the specified related annotation feature classes are used.</para>
 	/// </summary>
 	public class AnnotateSelectedFeatures : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Annotate Selected Features</para>
 		/// </summary>
-		public override string DisplayName => "Annotate Selected Features";
+		public override string DisplayName() => "Annotate Selected Features";
 
 		/// <summary>
 		/// <para>Tool Name : AnnotateSelectedFeatures</para>
 		/// </summary>
-		public override string ToolName => "AnnotateSelectedFeatures";
+		public override string ToolName() => "AnnotateSelectedFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.AnnotateSelectedFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.AnnotateSelectedFeatures";
+		public override string ExcuteName() => "cartography.AnnotateSelectedFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMap, InLayer, AnnoLayers, GenerateUnplaced!, OutAnnoLayers! };
+		public override object[] Parameters() => new object[] { InMap, InLayer, AnnoLayers, GenerateUnplaced!, OutAnnoLayers! };
 
 		/// <summary>
 		/// <para>Input Map</para>
@@ -87,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple")]
 		public object InLayer { get; set; }
 
 		/// <summary>

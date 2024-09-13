@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Ordinary Least Squares (OLS)</para>
+	/// <para>Ordinary Least Squares (OLS)</para>
 	/// <para>Performs global Ordinary Least Squares (OLS) linear regression to generate predictions or to model a dependent variable in terms of its relationships to a set of explanatory variables.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools.GeneralizedLinearRegression"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
@@ -52,37 +53,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Ordinary Least Squares (OLS)</para>
 		/// </summary>
-		public override string DisplayName => "Ordinary Least Squares (OLS)";
+		public override string DisplayName() => "Ordinary Least Squares (OLS)";
 
 		/// <summary>
 		/// <para>Tool Name : OrdinaryLeastSquares</para>
 		/// </summary>
-		public override string ToolName => "OrdinaryLeastSquares";
+		public override string ToolName() => "OrdinaryLeastSquares";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.OrdinaryLeastSquares</para>
 		/// </summary>
-		public override string ExcuteName => "stats.OrdinaryLeastSquares";
+		public override string ExcuteName() => "stats.OrdinaryLeastSquares";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, UniqueIDField, OutputFeatureClass, DependentVariable, ExplanatoryVariables, CoefficientOutputTable!, DiagnosticOutputTable!, OutputReportFile! };
+		public override object[] Parameters() => new object[] { InputFeatureClass, UniqueIDField, OutputFeatureClass, DependentVariable, ExplanatoryVariables, CoefficientOutputTable!, DiagnosticOutputTable!, OutputReportFile! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -99,6 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		public object UniqueIDField { get; set; }
 
 		/// <summary>
@@ -116,6 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object DependentVariable { get; set; }
 
 		/// <summary>
@@ -125,6 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object ExplanatoryVariables { get; set; }
 
 		/// <summary>
@@ -152,6 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("pdf")]
 		public object? OutputReportFile { get; set; }
 
 		/// <summary>

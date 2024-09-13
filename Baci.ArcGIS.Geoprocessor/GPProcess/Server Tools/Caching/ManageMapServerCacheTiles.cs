@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Manage Map Server Cache Tiles</para>
+	/// <para>Manage Map Server Cache Tiles</para>
 	/// <para>Creates and updates tiles in an existing web tile layer cache (in ArcGIS Enterprise or ArcGIS Online), web map image layers in ArcGIS Enterprise, and cached map or image services in a stand-alone server. This tool is used to create new tiles, replace missing tiles, overwrite outdated tiles, and delete tiles.</para>
 	/// </summary>
 	public class ManageMapServerCacheTiles : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Manage Map Server Cache Tiles</para>
 		/// </summary>
-		public override string DisplayName => "Manage Map Server Cache Tiles";
+		public override string DisplayName() => "Manage Map Server Cache Tiles";
 
 		/// <summary>
 		/// <para>Tool Name : ManageMapServerCacheTiles</para>
 		/// </summary>
-		public override string ToolName => "ManageMapServerCacheTiles";
+		public override string ToolName() => "ManageMapServerCacheTiles";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.ManageMapServerCacheTiles</para>
 		/// </summary>
-		public override string ExcuteName => "server.ManageMapServerCacheTiles";
+		public override string ExcuteName() => "server.ManageMapServerCacheTiles";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputService, Scales, UpdateMode, NumOfCachingServiceInstances!, AreaOfInterest!, UpdateExtent!, WaitForJobCompletion!, PortalUrl!, OutJobUrl! };
+		public override object[] Parameters() => new object[] { InputService, Scales, UpdateMode, NumOfCachingServiceInstances!, AreaOfInterest!, UpdateExtent!, WaitForJobCompletion!, PortalUrl!, OutJobUrl! };
 
 		/// <summary>
 		/// <para>Input Service</para>

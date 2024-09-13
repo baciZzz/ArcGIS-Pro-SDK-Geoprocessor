@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Radial Tree Layout</para>
+	/// <para>Add Radial Tree Layout</para>
 	/// <para>Add a radial tree layout to a diagram template</para>
 	/// </summary>
 	[Obsolete()]
@@ -39,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Radial Tree Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Radial Tree Layout";
+		public override string DisplayName() => "Add Radial Tree Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddRadialTreeLayout</para>
 		/// </summary>
-		public override string ToolName => "AddRadialTreeLayout";
+		public override string ToolName() => "AddRadialTreeLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddRadialTreeLayout</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddRadialTreeLayout";
+		public override string ExcuteName() => "un.AddRadialTreeLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, IsUnitAbsolute!, InitialRadiusAbsolute!, InitialRadiusProportional!, DisjoinedGraphAbsolute!, DisjoinedGraphProportional!, RadiusFactor!, OutUtilityNetwork!, OutTemplateName! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, IsUnitAbsolute!, InitialRadiusAbsolute!, InitialRadiusProportional!, DisjoinedGraphAbsolute!, DisjoinedGraphProportional!, RadiusFactor!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Alter Field Group</para>
+	/// <para>Alter Field Group</para>
 	/// <para>Alters the properties of a field group.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Alter Field Group</para>
 		/// </summary>
-		public override string DisplayName => "Alter Field Group";
+		public override string DisplayName() => "Alter Field Group";
 
 		/// <summary>
 		/// <para>Tool Name : AlterFieldGroup</para>
 		/// </summary>
-		public override string ToolName => "AlterFieldGroup";
+		public override string ToolName() => "AlterFieldGroup";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AlterFieldGroup</para>
 		/// </summary>
-		public override string ExcuteName => "management.AlterFieldGroup";
+		public override string ExcuteName() => "management.AlterFieldGroup";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetTable, Name, NewName!, Fields!, OutTable!, IsRestrictive! };
+		public override object[] Parameters() => new object[] { TargetTable, Name, NewName!, Fields!, OutTable!, IsRestrictive! };
 
 		/// <summary>
 		/// <para>Target Table</para>

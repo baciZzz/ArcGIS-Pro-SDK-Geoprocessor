@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Update Accuracy Assessment Points</para>
+	/// <para>Update Accuracy Assessment Points</para>
 	/// <para>Updates the Target field in the attribute table to compare reference points to the classified image.</para>
 	/// </summary>
 	public class UpdateAccuracyAssessmentPoints : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Update Accuracy Assessment Points</para>
 		/// </summary>
-		public override string DisplayName => "Update Accuracy Assessment Points";
+		public override string DisplayName() => "Update Accuracy Assessment Points";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateAccuracyAssessmentPoints</para>
 		/// </summary>
-		public override string ToolName => "UpdateAccuracyAssessmentPoints";
+		public override string ToolName() => "UpdateAccuracyAssessmentPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.UpdateAccuracyAssessmentPoints</para>
 		/// </summary>
-		public override string ExcuteName => "ia.UpdateAccuracyAssessmentPoints";
+		public override string ExcuteName() => "ia.UpdateAccuracyAssessmentPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InClassData, InPoints, OutPoints, TargetField!, PolygonDimensionField!, PointDimensionField! };
+		public override object[] Parameters() => new object[] { InClassData, InPoints, OutPoints, TargetField!, PolygonDimensionField!, PointDimensionField! };
 
 		/// <summary>
 		/// <para>Input Raster or Feature Class Data</para>

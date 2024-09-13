@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Polygon Volume</para>
+	/// <para>Polygon Volume</para>
 	/// <para>Calculates the volume and surface area between a polygon of a constant height and a surface.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Polygon Volume</para>
 		/// </summary>
-		public override string DisplayName => "Polygon Volume";
+		public override string DisplayName() => "Polygon Volume";
 
 		/// <summary>
 		/// <para>Tool Name : PolygonVolume</para>
 		/// </summary>
-		public override string ToolName => "PolygonVolume";
+		public override string ToolName() => "PolygonVolume";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.PolygonVolume</para>
 		/// </summary>
-		public override string ExcuteName => "3d.PolygonVolume";
+		public override string ExcuteName() => "3d.PolygonVolume";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "terrainMemoryUsage", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "terrainMemoryUsage", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, InFeatureClass, InHeightField, ReferencePlane!, OutVolumeField!, SurfaceAreaField!, PyramidLevelResolution!, OutputFeatureClass! };
+		public override object[] Parameters() => new object[] { InSurface, InFeatureClass, InHeightField, ReferencePlane!, OutVolumeField!, SurfaceAreaField!, PyramidLevelResolution!, OutputFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Surface</para>
@@ -89,6 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InFeatureClass { get; set; }
 
 		/// <summary>

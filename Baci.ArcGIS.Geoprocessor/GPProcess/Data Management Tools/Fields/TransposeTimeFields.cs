@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Transpose Time Fields</para>
+	/// <para>Transpose Time Fields</para>
 	/// <para>Shifts fields from columns to rows in a table or feature class that have time as the field names. This tool is useful when your table or feature class stores time in field names (such as Pop1980, Pop1990, Pop2000, and so on), and you want to create time stamps for the feature class or table so that it can be animated through time.</para>
 	/// </summary>
 	[Obsolete()]
@@ -52,37 +53,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Transpose Time Fields</para>
 		/// </summary>
-		public override string DisplayName => "Transpose Time Fields";
+		public override string DisplayName() => "Transpose Time Fields";
 
 		/// <summary>
 		/// <para>Tool Name : TransposeTimeFields</para>
 		/// </summary>
-		public override string ToolName => "TransposeTimeFields";
+		public override string ToolName() => "TransposeTimeFields";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.TransposeTimeFields</para>
 		/// </summary>
-		public override string ExcuteName => "management.TransposeTimeFields";
+		public override string ExcuteName() => "management.TransposeTimeFields";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClassOrTable, FieldsToTranspose, OutputFeatureClassOrTable, TimeFieldName, ValueFieldName, AttributeFields! };
+		public override object[] Parameters() => new object[] { InputFeatureClassOrTable, FieldsToTranspose, OutputFeatureClassOrTable, TimeFieldName, ValueFieldName, AttributeFields! };
 
 		/// <summary>
 		/// <para>Input Feature Class or Table</para>

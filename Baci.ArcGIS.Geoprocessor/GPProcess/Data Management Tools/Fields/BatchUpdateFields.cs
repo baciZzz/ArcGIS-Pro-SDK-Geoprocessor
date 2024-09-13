@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Batch Update Fields</para>
+	/// <para>Batch Update Fields</para>
 	/// <para>Transforms fields in a table or feature class based on schema defined in the definition table and creates a new table or feature class.</para>
 	/// </summary>
 	public class BatchUpdateFields : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Batch Update Fields</para>
 		/// </summary>
-		public override string DisplayName => "Batch Update Fields";
+		public override string DisplayName() => "Batch Update Fields";
 
 		/// <summary>
 		/// <para>Tool Name : BatchUpdateFields</para>
 		/// </summary>
-		public override string ToolName => "BatchUpdateFields";
+		public override string ToolName() => "BatchUpdateFields";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.BatchUpdateFields</para>
 		/// </summary>
-		public override string ExcuteName => "management.BatchUpdateFields";
+		public override string ExcuteName() => "management.BatchUpdateFields";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutTable, FieldDefinitionTable, ScriptFile!, OutputFieldName!, SourceFieldName!, OutputFieldType!, OutputFieldDecimalsOrLength!, OutputFieldAlias!, OutputFieldScript! };
+		public override object[] Parameters() => new object[] { InTable, OutTable, FieldDefinitionTable, ScriptFile!, OutputFieldName!, SourceFieldName!, OutputFieldType!, OutputFieldDecimalsOrLength!, OutputFieldAlias!, OutputFieldScript! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -103,6 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("py")]
 		public object? ScriptFile { get; set; }
 
 		/// <summary>
@@ -112,6 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		[Category("Output Schema Definition Table Fields")]
 		public object? OutputFieldName { get; set; }
 
@@ -122,6 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		[Category("Output Schema Definition Table Fields")]
 		public object? SourceFieldName { get; set; }
 
@@ -132,6 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		[Category("Output Schema Definition Table Fields")]
 		public object? OutputFieldType { get; set; }
 
@@ -142,6 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		[Category("Output Schema Definition Table Fields")]
 		public object? OutputFieldDecimalsOrLength { get; set; }
 
@@ -152,6 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		[Category("Output Schema Definition Table Fields")]
 		public object? OutputFieldAlias { get; set; }
 
@@ -162,6 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text")]
 		[Category("Output Schema Definition Table Fields")]
 		public object? OutputFieldScript { get; set; }
 

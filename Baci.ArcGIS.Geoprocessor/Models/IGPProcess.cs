@@ -13,22 +13,36 @@ namespace Baci.ArcGIS.Geoprocessor.Models
     /// </summary>
     public interface IGPProcess
     {
-        string DisplayName { get; }
+        string DisplayName();
 
-        string ToolName { get; }
+        string ToolName();
 
-        string ExcuteName { get; }
+        string ExcuteName();
 
-        string ToolboxDisplayName { get; }
+        string ToolboxDisplayName();
 
-        string ToolboxAlise { get; }
+        string ToolboxAlise();
 
-        string[] ValidEnvironments { get; }
+        string[] ValidEnvironments();
 
-        object[] Parameters { get; }
+        object[] Parameters();
 
-        IGPResult GPResult { get; set; }
+        /// <summary>
+        /// Get GPResult
+        /// </summary>
+        /// <returns></returns>
+        IGPResult GPResult();
 
-        Dictionary<string, string> Environments { get; }
+        /// <summary>
+        /// Set GPResult
+        /// </summary>
+        /// <param name="gPResult"></param>
+        void SetGPResult(IGPResult gPResult);
+
+        /// <summary>
+        /// Get The Accept Environment Params
+        /// </summary>
+        /// <returns></returns>
+        Dictionary<string, string> Environments();
     }
 }

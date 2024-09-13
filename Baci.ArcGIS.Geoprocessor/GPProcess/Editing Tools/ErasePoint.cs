@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Erase Point</para>
+	/// <para>Erase Point</para>
 	/// <para>Deletes points from the input that are either inside or outside the remove features, depending on the operation type.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Erase Point</para>
 		/// </summary>
-		public override string DisplayName => "Erase Point";
+		public override string DisplayName() => "Erase Point";
 
 		/// <summary>
 		/// <para>Tool Name : ErasePoint</para>
 		/// </summary>
-		public override string ToolName => "ErasePoint";
+		public override string ToolName() => "ErasePoint";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.ErasePoint</para>
 		/// </summary>
-		public override string ExcuteName => "edit.ErasePoint";
+		public override string ExcuteName() => "edit.ErasePoint";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, RemoveFeatures, OperationType!, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatures, RemoveFeatures, OperationType!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -76,6 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -85,6 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object RemoveFeatures { get; set; }
 
 		/// <summary>

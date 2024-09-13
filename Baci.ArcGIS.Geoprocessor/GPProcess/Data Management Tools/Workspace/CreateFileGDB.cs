@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create File Geodatabase</para>
+	/// <para>Create File Geodatabase</para>
 	/// <para>Creates a file geodatabase in a folder.</para>
 	/// </summary>
 	public class CreateFileGDB : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create File Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "Create File Geodatabase";
+		public override string DisplayName() => "Create File Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : CreateFileGDB</para>
 		/// </summary>
-		public override string ToolName => "CreateFileGDB";
+		public override string ToolName() => "CreateFileGDB";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateFileGDB</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateFileGDB";
+		public override string ExcuteName() => "management.CreateFileGDB";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutFolderPath, OutName, OutVersion!, OutFileGdb! };
+		public override object[] Parameters() => new object[] { OutFolderPath, OutName, OutVersion!, OutFileGdb! };
 
 		/// <summary>
 		/// <para>File Geodatabase Location</para>

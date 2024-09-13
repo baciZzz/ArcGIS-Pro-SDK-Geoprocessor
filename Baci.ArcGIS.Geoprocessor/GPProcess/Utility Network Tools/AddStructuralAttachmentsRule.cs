@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Structural Attachments Rule</para>
+	/// <para>Add Structural Attachments Rule</para>
 	/// <para>Add a structural attachments rule to a diagram template</para>
 	/// </summary>
 	[Obsolete()]
@@ -39,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Structural Attachments Rule</para>
 		/// </summary>
-		public override string DisplayName => "Add Structural Attachments Rule";
+		public override string DisplayName() => "Add Structural Attachments Rule";
 
 		/// <summary>
 		/// <para>Tool Name : AddStructuralAttachmentsRule</para>
 		/// </summary>
-		public override string ToolName => "AddStructuralAttachmentsRule";
+		public override string ToolName() => "AddStructuralAttachmentsRule";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddStructuralAttachmentsRule</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddStructuralAttachmentsRule";
+		public override string ExcuteName() => "un.AddStructuralAttachmentsRule";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, Description!, OutUtilityNetwork!, OutTemplateName! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, Description!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>

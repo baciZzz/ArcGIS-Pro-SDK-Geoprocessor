@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Copy To Data Store</para>
+	/// <para>Copy To Data Store</para>
 	/// <para>Copies features from the input to a new feature service in your portal.</para>
 	/// </summary>
 	public class CopyToDataStore : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Copy To Data Store</para>
 		/// </summary>
-		public override string DisplayName => "Copy To Data Store";
+		public override string DisplayName() => "Copy To Data Store";
 
 		/// <summary>
 		/// <para>Tool Name : CopyToDataStore</para>
 		/// </summary>
-		public override string ToolName => "CopyToDataStore";
+		public override string ToolName() => "CopyToDataStore";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.CopyToDataStore</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.CopyToDataStore";
+		public override string ExcuteName() => "geoanalytics.CopyToDataStore";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputName, DataStore!, Output! };
+		public override object[] Parameters() => new object[] { InputLayer, OutputName, DataStore!, Output! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -76,6 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
 		[GPTablesDomain()]
+		[PortalType("DataStoreCatalogLayer")]
 		public object InputLayer { get; set; }
 
 		/// <summary>

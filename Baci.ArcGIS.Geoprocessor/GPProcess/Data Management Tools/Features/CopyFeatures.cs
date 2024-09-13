@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Copy Features</para>
+	/// <para>Copy Features</para>
 	/// <para>Copies features from the input feature class or layer to a new feature class.</para>
 	/// </summary>
 	public class CopyFeatures : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Copy Features</para>
 		/// </summary>
-		public override string DisplayName => "Copy Features";
+		public override string DisplayName() => "Copy Features";
 
 		/// <summary>
 		/// <para>Tool Name : CopyFeatures</para>
 		/// </summary>
-		public override string ToolName => "CopyFeatures";
+		public override string ToolName() => "CopyFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CopyFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "management.CopyFeatures";
+		public override string ExcuteName() => "management.CopyFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "preserveGlobalIds", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "preserveGlobalIds", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, ConfigKeyword!, SpatialGrid1!, SpatialGrid2!, SpatialGrid3! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, ConfigKeyword!, SpatialGrid1!, SpatialGrid2!, SpatialGrid3! };
 
 		/// <summary>
 		/// <para>Input Features</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Features To GTFS Stops</para>
+	/// <para>Features To GTFS Stops</para>
 	/// <para>Converts a feature class to a GTFS stops.txt file for a GTFS public transit dataset.</para>
 	/// </summary>
 	[Obsolete()]
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Features To GTFS Stops</para>
 		/// </summary>
-		public override string DisplayName => "Features To GTFS Stops";
+		public override string DisplayName() => "Features To GTFS Stops";
 
 		/// <summary>
 		/// <para>Tool Name : FeaturesToGTFSStops</para>
 		/// </summary>
-		public override string ToolName => "FeaturesToGTFSStops";
+		public override string ToolName() => "FeaturesToGTFSStops";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.FeaturesToGTFSStops</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.FeaturesToGTFSStops";
+		public override string ExcuteName() => "conversion.FeaturesToGTFSStops";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutGtfsStopsFile };
+		public override object[] Parameters() => new object[] { InFeatures, OutGtfsStopsFile };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -75,6 +76,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -84,6 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("txt")]
 		public object OutGtfsStopsFile { get; set; }
 
 		/// <summary>

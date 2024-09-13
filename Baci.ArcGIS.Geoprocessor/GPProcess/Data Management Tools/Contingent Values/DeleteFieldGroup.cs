@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Field Group</para>
+	/// <para>Delete Field Group</para>
 	/// <para>Deletes a field group from a table or feature class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete Field Group</para>
 		/// </summary>
-		public override string DisplayName => "Delete Field Group";
+		public override string DisplayName() => "Delete Field Group";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteFieldGroup</para>
 		/// </summary>
-		public override string ToolName => "DeleteFieldGroup";
+		public override string ToolName() => "DeleteFieldGroup";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DeleteFieldGroup</para>
 		/// </summary>
-		public override string ExcuteName => "management.DeleteFieldGroup";
+		public override string ExcuteName() => "management.DeleteFieldGroup";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetTable, Name, OutTable! };
+		public override object[] Parameters() => new object[] { TargetTable, Name, OutTable! };
 
 		/// <summary>
 		/// <para>Target Table</para>

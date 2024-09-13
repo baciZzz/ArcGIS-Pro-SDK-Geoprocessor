@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Propagate Displacement</para>
+	/// <para>Propagate Displacement</para>
 	/// <para>Propagates the displacement resulting from road adjustment in the Resolve Road Conflicts  and Merge Divided Roads tools to adjacent features to reestablish spatial relationships.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -46,37 +47,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Propagate Displacement</para>
 		/// </summary>
-		public override string DisplayName => "Propagate Displacement";
+		public override string DisplayName() => "Propagate Displacement";
 
 		/// <summary>
 		/// <para>Tool Name : PropagateDisplacement</para>
 		/// </summary>
-		public override string ToolName => "PropagateDisplacement";
+		public override string ToolName() => "PropagateDisplacement";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.PropagateDisplacement</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.PropagateDisplacement";
+		public override string ExcuteName() => "cartography.PropagateDisplacement";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DisplacementFeatures, AdjustmentStyle, OutFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, DisplacementFeatures, AdjustmentStyle, OutFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -85,6 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Polyline", "Point")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -94,6 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object DisplacementFeatures { get; set; }
 
 		/// <summary>

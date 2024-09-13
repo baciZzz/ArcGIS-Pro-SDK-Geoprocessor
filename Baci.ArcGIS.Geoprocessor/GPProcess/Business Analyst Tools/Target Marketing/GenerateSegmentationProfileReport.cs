@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Segmentation Profile Report</para>
+	/// <para>Generate Segmentation Profile Report</para>
 	/// <para>Creates a report that displays segments of your customers and compares them to the study area (base profile).</para>
 	/// </summary>
 	public class GenerateSegmentationProfileReport : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Segmentation Profile Report</para>
 		/// </summary>
-		public override string DisplayName => "Generate Segmentation Profile Report";
+		public override string DisplayName() => "Generate Segmentation Profile Report";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateSegmentationProfileReport</para>
 		/// </summary>
-		public override string ToolName => "GenerateSegmentationProfileReport";
+		public override string ToolName() => "GenerateSegmentationProfileReport";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GenerateSegmentationProfileReport</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GenerateSegmentationProfileReport";
+		public override string ExcuteName() => "ba.GenerateSegmentationProfileReport";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetProfile, BaseProfile, ReportTitle!, ReportFolder!, ReportFormat!, OutputReport! };
+		public override object[] Parameters() => new object[] { TargetProfile, BaseProfile, ReportTitle!, ReportFolder!, ReportFormat!, OutputReport! };
 
 		/// <summary>
 		/// <para>Target Profile</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("sgprofile")]
 		public object TargetProfile { get; set; }
 
 		/// <summary>
@@ -83,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("sgprofile")]
 		public object BaseProfile { get; set; }
 
 		/// <summary>

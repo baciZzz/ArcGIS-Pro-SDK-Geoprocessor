@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Generate Calibration Points</para>
+	/// <para>Generate Calibration Points</para>
 	/// <para>Generates calibration points for any route shape provided, including  complex shapes such as self-closing, self-intersecting, and branched routes.</para>
 	/// </summary>
 	public class GenerateCalibrationPoints : AbstractGPProcess
@@ -55,37 +56,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Calibration Points</para>
 		/// </summary>
-		public override string DisplayName => "Generate Calibration Points";
+		public override string DisplayName() => "Generate Calibration Points";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateCalibrationPoints</para>
 		/// </summary>
-		public override string ToolName => "GenerateCalibrationPoints";
+		public override string ToolName() => "GenerateCalibrationPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.GenerateCalibrationPoints</para>
 		/// </summary>
-		public override string ExcuteName => "locref.GenerateCalibrationPoints";
+		public override string ExcuteName() => "locref.GenerateCalibrationPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPolylineFeatures, RouteIdField, FromDateField, ToDateField, InCalibrationPointFeatureClass, LrsNetwork, CalibrationDirection!, CalibrationMethod!, OutCalibrationPointFeatureClass!, OutDetailsFile!, FromMeasureField!, ToMeasureField! };
+		public override object[] Parameters() => new object[] { InPolylineFeatures, RouteIdField, FromDateField, ToDateField, InCalibrationPointFeatureClass, LrsNetwork, CalibrationDirection!, CalibrationMethod!, OutCalibrationPointFeatureClass!, OutDetailsFile!, FromMeasureField!, ToMeasureField! };
 
 		/// <summary>
 		/// <para>Input Polyline Features</para>
@@ -94,6 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InPolylineFeatures { get; set; }
 
 		/// <summary>
@@ -103,6 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "GUID")]
 		public object RouteIdField { get; set; }
 
 		/// <summary>
@@ -112,6 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object FromDateField { get; set; }
 
 		/// <summary>
@@ -121,6 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object ToDateField { get; set; }
 
 		/// <summary>
@@ -130,6 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InCalibrationPointFeatureClass { get; set; }
 
 		/// <summary>
@@ -188,6 +194,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double")]
 		public object? FromMeasureField { get; set; }
 
 		/// <summary>
@@ -198,6 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double")]
 		public object? ToMeasureField { get; set; }
 
 		/// <summary>

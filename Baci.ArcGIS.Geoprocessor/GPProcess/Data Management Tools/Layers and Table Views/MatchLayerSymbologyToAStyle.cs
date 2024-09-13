@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Match Layer Symbology To A Style</para>
+	/// <para>Match Layer Symbology To A Style</para>
 	/// <para>Creates unique value symbology for the input layer based on the input field or expression by matching input field or expression strings to symbol names from the input style.</para>
 	/// </summary>
 	public class MatchLayerSymbologyToAStyle : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Match Layer Symbology To A Style</para>
 		/// </summary>
-		public override string DisplayName => "Match Layer Symbology To A Style";
+		public override string DisplayName() => "Match Layer Symbology To A Style";
 
 		/// <summary>
 		/// <para>Tool Name : MatchLayerSymbologyToAStyle</para>
 		/// </summary>
-		public override string ToolName => "MatchLayerSymbologyToAStyle";
+		public override string ToolName() => "MatchLayerSymbologyToAStyle";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MatchLayerSymbologyToAStyle</para>
 		/// </summary>
-		public override string ExcuteName => "management.MatchLayerSymbologyToAStyle";
+		public override string ExcuteName() => "management.MatchLayerSymbologyToAStyle";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayer, MatchValues, InStyle, OutLayer! };
+		public override object[] Parameters() => new object[] { InLayer, MatchValues, InStyle, OutLayer! };
 
 		/// <summary>
 		/// <para>Input Layer</para>

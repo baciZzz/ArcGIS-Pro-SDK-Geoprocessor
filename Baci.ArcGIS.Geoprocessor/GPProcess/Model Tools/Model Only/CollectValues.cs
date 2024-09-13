@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Collect Values</para>
+	/// <para>Collect Values</para>
 	/// <para>Collects output values from an iterator or converts a list of values into a single input with multiple values.</para>
 	/// </summary>
 	public class CollectValues : AbstractGPProcess
@@ -25,37 +26,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : Collect Values</para>
 		/// </summary>
-		public override string DisplayName => "Collect Values";
+		public override string DisplayName() => "Collect Values";
 
 		/// <summary>
 		/// <para>Tool Name : CollectValues</para>
 		/// </summary>
-		public override string ToolName => "CollectValues";
+		public override string ToolName() => "CollectValues";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.CollectValues</para>
 		/// </summary>
-		public override string ExcuteName => "mb.CollectValues";
+		public override string ExcuteName() => "mb.CollectValues";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InValue!, OutValue!, OutTable! };
+		public override object[] Parameters() => new object[] { InValue!, OutValue!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Value</para>

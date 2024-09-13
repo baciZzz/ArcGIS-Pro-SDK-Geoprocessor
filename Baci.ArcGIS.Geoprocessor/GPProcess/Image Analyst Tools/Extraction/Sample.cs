@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Sample</para>
+	/// <para>Sample</para>
 	/// <para>Creates a table or a point feature class that shows the values of cells from a raster, or a set of rasters, for defined locations. The locations are defined by raster cells, points, polylines, or polygons.</para>
 	/// </summary>
 	public class Sample : AbstractGPProcess
@@ -44,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Sample</para>
 		/// </summary>
-		public override string DisplayName => "Sample";
+		public override string DisplayName() => "Sample";
 
 		/// <summary>
 		/// <para>Tool Name : Sample</para>
 		/// </summary>
-		public override string ToolName => "Sample";
+		public override string ToolName() => "Sample";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.Sample</para>
 		/// </summary>
-		public override string ExcuteName => "ia.Sample";
+		public override string ExcuteName() => "ia.Sample";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasters, InLocationData, OutTable, ResamplingType!, UniqueIdField!, ProcessAsMultidimensional!, AcquisitionDefinition!, StatisticsType!, PercentileValue!, BufferDistance!, Layout!, GenerateFeatureClass! };
+		public override object[] Parameters() => new object[] { InRasters, InLocationData, OutTable, ResamplingType!, UniqueIdField!, ProcessAsMultidimensional!, AcquisitionDefinition!, StatisticsType!, PercentileValue!, BufferDistance!, Layout!, GenerateFeatureClass! };
 
 		/// <summary>
 		/// <para>Input rasters</para>
@@ -83,7 +84,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRasters { get; set; }
 
 		/// <summary>
@@ -93,7 +97,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEFeatureClass", "GPFeatureLayer", "DEMosaicDataset", "GPMosaicLayer", "DEImageServer")]
+		[FieldType("Short", "Long", "Float", "Double", "OID")]
+		[GeometryType("Point")]
 		public object InLocationData { get; set; }
 
 		/// <summary>
@@ -125,7 +132,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(UseRasterFields = true)]
+		[FieldType("Short", "Long", "OID")]
 		public object? UniqueIdField { get; set; }
 
 		/// <summary>
@@ -181,6 +189,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
+		[High(Allow = true, Value = 100)]
 		public object? PercentileValue { get; set; }
 
 		/// <summary>

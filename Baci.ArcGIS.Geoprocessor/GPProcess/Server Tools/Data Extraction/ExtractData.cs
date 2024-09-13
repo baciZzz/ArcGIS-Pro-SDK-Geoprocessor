@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Extract Data</para>
+	/// <para>Extract Data</para>
 	/// <para>Extracts selected  layers in the specified area of interest to a specific format and spatial reference.   The extracted data is then written to a zip file.</para>
 	/// </summary>
 	public class ExtractData : AbstractGPProcess
@@ -88,37 +89,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Extract Data</para>
 		/// </summary>
-		public override string DisplayName => "Extract Data";
+		public override string DisplayName() => "Extract Data";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractData</para>
 		/// </summary>
-		public override string ToolName => "ExtractData";
+		public override string ToolName() => "ExtractData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : server.ExtractData</para>
 		/// </summary>
-		public override string ExcuteName => "server.ExtractData";
+		public override string ExcuteName() => "server.ExtractData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Server Tools";
+		public override string ToolboxDisplayName() => "Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : server</para>
 		/// </summary>
-		public override string ToolboxAlise => "server";
+		public override string ToolboxAlise() => "server";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { LayersToClip, AreaOfInterest, FeatureFormat, RasterFormat, SpatialReference, CustomSpatialReferenceFolder!, OutputZipFile };
+		public override object[] Parameters() => new object[] { LayersToClip, AreaOfInterest, FeatureFormat, RasterFormat, SpatialReference, CustomSpatialReferenceFolder!, OutputZipFile };
 
 		/// <summary>
 		/// <para>Layers to Clip</para>
@@ -135,6 +136,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object AreaOfInterest { get; set; }
 
 		/// <summary>

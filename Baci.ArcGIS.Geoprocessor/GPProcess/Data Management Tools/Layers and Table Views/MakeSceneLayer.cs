@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Scene Layer</para>
+	/// <para>Make Scene Layer</para>
 	/// <para>Creates a scene layer from a scene layer package (.slpk) or scene service.</para>
 	/// </summary>
 	public class MakeSceneLayer : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Scene Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Scene Layer";
+		public override string DisplayName() => "Make Scene Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeSceneLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeSceneLayer";
+		public override string ToolName() => "MakeSceneLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MakeSceneLayer</para>
 		/// </summary>
-		public override string ExcuteName => "management.MakeSceneLayer";
+		public override string ExcuteName() => "management.MakeSceneLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutLayer };
+		public override object[] Parameters() => new object[] { InDataset, OutLayer };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

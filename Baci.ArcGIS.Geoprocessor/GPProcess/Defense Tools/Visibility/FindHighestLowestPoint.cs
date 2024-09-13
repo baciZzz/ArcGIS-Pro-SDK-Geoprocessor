@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Find Highest Or Lowest Point</para>
+	/// <para>Find Highest Or Lowest Point</para>
 	/// <para>Finds the highest or lowest point  of the input surface within a defined area.</para>
 	/// </summary>
 	public class FindHighestLowestPoint : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Find Highest Or Lowest Point</para>
 		/// </summary>
-		public override string DisplayName => "Find Highest Or Lowest Point";
+		public override string DisplayName() => "Find Highest Or Lowest Point";
 
 		/// <summary>
 		/// <para>Tool Name : FindHighestLowestPoint</para>
 		/// </summary>
-		public override string ToolName => "FindHighestLowestPoint";
+		public override string ToolName() => "FindHighestLowestPoint";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.FindHighestLowestPoint</para>
 		/// </summary>
-		public override string ExcuteName => "defense.FindHighestLowestPoint";
+		public override string ExcuteName() => "defense.FindHighestLowestPoint";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurface, OutFeatureClass, HighLowOperationType, InFeature! };
+		public override object[] Parameters() => new object[] { InSurface, OutFeatureClass, HighLowOperationType, InFeature! };
 
 		/// <summary>
 		/// <para>Input Surface</para>
@@ -111,6 +112,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? InFeature { get; set; }
 
 		/// <summary>

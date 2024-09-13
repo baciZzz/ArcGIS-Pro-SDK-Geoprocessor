@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Principal Components</para>
+	/// <para>Principal Components</para>
 	/// <para>Performs Principal Component Analysis (PCA) on a set of raster bands and generates a single multiband raster as output.</para>
 	/// </summary>
 	public class PrincipalComponents : AbstractGPProcess
@@ -38,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Principal Components</para>
 		/// </summary>
-		public override string DisplayName => "Principal Components";
+		public override string DisplayName() => "Principal Components";
 
 		/// <summary>
 		/// <para>Tool Name : PrincipalComponents</para>
 		/// </summary>
-		public override string ToolName => "PrincipalComponents";
+		public override string ToolName() => "PrincipalComponents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.PrincipalComponents</para>
 		/// </summary>
-		public override string ExcuteName => "sa.PrincipalComponents";
+		public override string ExcuteName() => "sa.PrincipalComponents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRasterBands, OutMultibandRaster, NumberComponents!, OutDataFile! };
+		public override object[] Parameters() => new object[] { InRasterBands, OutMultibandRaster, NumberComponents!, OutDataFile! };
 
 		/// <summary>
 		/// <para>Input raster bands</para>
@@ -77,7 +78,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRasterBands { get; set; }
 
 		/// <summary>
@@ -99,6 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 1)]
 		public object? NumberComponents { get; set; }
 
 		/// <summary>
@@ -110,6 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("TXT", "ASC")]
 		public object? OutDataFile { get; set; }
 
 		/// <summary>

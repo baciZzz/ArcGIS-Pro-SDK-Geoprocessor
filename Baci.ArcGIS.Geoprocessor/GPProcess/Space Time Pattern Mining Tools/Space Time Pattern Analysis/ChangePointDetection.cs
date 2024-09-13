@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Change Point Detection</para>
+	/// <para>Change Point Detection</para>
 	/// <para>Detects time steps when a statistical property of the time series changes for each location of a space-time cube.</para>
 	/// </summary>
 	public class ChangePointDetection : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Display Name : Change Point Detection</para>
 		/// </summary>
-		public override string DisplayName => "Change Point Detection";
+		public override string DisplayName() => "Change Point Detection";
 
 		/// <summary>
 		/// <para>Tool Name : ChangePointDetection</para>
 		/// </summary>
-		public override string ToolName => "ChangePointDetection";
+		public override string ToolName() => "ChangePointDetection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stpm.ChangePointDetection</para>
 		/// </summary>
-		public override string ExcuteName => "stpm.ChangePointDetection";
+		public override string ExcuteName() => "stpm.ChangePointDetection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Space Time Pattern Mining Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Space Time Pattern Mining Tools";
+		public override string ToolboxDisplayName() => "Space Time Pattern Mining Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stpm</para>
 		/// </summary>
-		public override string ToolboxAlise => "stpm";
+		public override string ToolboxAlise() => "stpm";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InCube, AnalysisVariable, OutputFeatures, ChangeType!, Method!, NumChangePoints!, Sensitivity!, MinSegLen! };
+		public override object[] Parameters() => new object[] { InCube, AnalysisVariable, OutputFeatures, ChangeType!, Method!, NumChangePoints!, Sensitivity!, MinSegLen! };
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("nc")]
 		public object InCube { get; set; }
 
 		/// <summary>
@@ -137,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 1)]
 		public object? Sensitivity { get; set; } = "0.5";
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Overlay Layers</para>
+	/// <para>Overlay Layers</para>
 	/// <para>Overlays the geometries from multiple layers into a single layer.  Overlay can be used to combine, erase, modify, or update spatial features.</para>
 	/// </summary>
 	public class OverlayLayers : AbstractGPProcess
@@ -51,37 +52,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Overlay Layers</para>
 		/// </summary>
-		public override string DisplayName => "Overlay Layers";
+		public override string DisplayName() => "Overlay Layers";
 
 		/// <summary>
 		/// <para>Tool Name : OverlayLayers</para>
 		/// </summary>
-		public override string ToolName => "OverlayLayers";
+		public override string ToolName() => "OverlayLayers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.OverlayLayers</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.OverlayLayers";
+		public override string ExcuteName() => "geoanalytics.OverlayLayers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OverlayLayer, OutputName, OverlayType, IncludeOverlaps!, DataStore!, Output! };
+		public override object[] Parameters() => new object[] { InputLayer, OverlayLayer, OutputName, OverlayType, IncludeOverlaps!, DataStore!, Output! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -90,6 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple")]
+		[PortalType("DataStoreCatalogLayer")]
 		public object InputLayer { get; set; }
 
 		/// <summary>
@@ -99,6 +102,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple")]
+		[PortalType("DataStoreCatalogLayer")]
 		public object OverlayLayer { get; set; }
 
 		/// <summary>

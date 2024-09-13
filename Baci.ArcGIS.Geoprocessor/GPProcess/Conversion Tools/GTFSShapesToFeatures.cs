@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>GTFS Shapes To Features</para>
+	/// <para>GTFS Shapes To Features</para>
 	/// <para>Converts a GTFS shapes.txt file from a GTFS public transit dataset to a polyline feature class showing the physical paths taken by vehicles in the public transit system.</para>
 	/// </summary>
 	[Obsolete()]
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : GTFS Shapes To Features</para>
 		/// </summary>
-		public override string DisplayName => "GTFS Shapes To Features";
+		public override string DisplayName() => "GTFS Shapes To Features";
 
 		/// <summary>
 		/// <para>Tool Name : GTFSShapesToFeatures</para>
 		/// </summary>
-		public override string ToolName => "GTFSShapesToFeatures";
+		public override string ToolName() => "GTFSShapesToFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.GTFSShapesToFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.GTFSShapesToFeatures";
+		public override string ExcuteName() => "conversion.GTFSShapesToFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGtfsShapesFile, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InGtfsShapesFile, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Input GTFS Shapes File</para>
@@ -75,6 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("txt")]
 		public object InGtfsShapesFile { get; set; }
 
 		/// <summary>

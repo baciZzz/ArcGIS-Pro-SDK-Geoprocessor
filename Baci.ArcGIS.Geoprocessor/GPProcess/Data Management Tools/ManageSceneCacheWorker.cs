@@ -12,6 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Manage Scene Cache Worker</para>
 	/// <para>Manage Scene Cache Worker</para>
+	/// <para>Manage Scene Cache Worker</para>
 	/// </summary>
 	[Obsolete()]
 	public class ManageSceneCacheWorker : AbstractGPProcess
@@ -39,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Manage Scene Cache Worker</para>
 		/// </summary>
-		public override string DisplayName => "Manage Scene Cache Worker";
+		public override string DisplayName() => "Manage Scene Cache Worker";
 
 		/// <summary>
 		/// <para>Tool Name : ManageSceneCacheWorker</para>
 		/// </summary>
-		public override string ToolName => "ManageSceneCacheWorker";
+		public override string ToolName() => "ManageSceneCacheWorker";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ManageSceneCacheWorker</para>
 		/// </summary>
-		public override string ExcuteName => "management.ManageSceneCacheWorker";
+		public override string ExcuteName() => "management.ManageSceneCacheWorker";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ServiceUrl, Layer, UpdateMode, UpdateExtent!, AreaOfInterest!, OutServiceUrl! };
+		public override object[] Parameters() => new object[] { ServiceUrl, Layer, UpdateMode, UpdateExtent!, AreaOfInterest!, OutServiceUrl! };
 
 		/// <summary>
 		/// <para>Input Service URL</para>

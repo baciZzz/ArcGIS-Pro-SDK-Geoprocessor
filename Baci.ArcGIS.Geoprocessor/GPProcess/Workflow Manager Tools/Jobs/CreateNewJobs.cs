@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Create New Jobs</para>
+	/// <para>Create New Jobs</para>
 	/// <para>Creates one or more jobs of the selected job type and assigns the jobs to a user or user group. The created jobs can be prioritized and assigned a polygon or point location of interest (LOI).</para>
 	/// </summary>
 	public class CreateNewJobs : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Display Name : Create New Jobs</para>
 		/// </summary>
-		public override string DisplayName => "Create New Jobs";
+		public override string DisplayName() => "Create New Jobs";
 
 		/// <summary>
 		/// <para>Tool Name : CreateNewJobs</para>
 		/// </summary>
-		public override string ToolName => "CreateNewJobs";
+		public override string ToolName() => "CreateNewJobs";
 
 		/// <summary>
 		/// <para>Tool Excute Name : wmx.CreateNewJobs</para>
 		/// </summary>
-		public override string ExcuteName => "wmx.CreateNewJobs";
+		public override string ExcuteName() => "wmx.CreateNewJobs";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Workflow Manager Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Workflow Manager Tools";
+		public override string ToolboxDisplayName() => "Workflow Manager Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : wmx</para>
 		/// </summary>
-		public override string ToolboxAlise => "wmx";
+		public override string ToolboxAlise() => "wmx";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabasepath, JobType, NumberOfJobs, AssignmentType!, AssignTo!, Priority!, FeatureLayerLOI!, Union!, JobID! };
+		public override object[] Parameters() => new object[] { InputDatabasepath, JobType, NumberOfJobs, AssignmentType!, AssignTo!, Priority!, FeatureLayerLOI!, Union!, JobID! };
 
 		/// <summary>
 		/// <para>Input Database Path (.jtc)</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("jtc")]
 		public object InputDatabasepath { get; set; }
 
 		/// <summary>
@@ -131,6 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Multipoint", "Point")]
 		public object? FeatureLayerLOI { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Save Toolbox To Version</para>
+	/// <para>Save Toolbox To Version</para>
 	/// <para>Analyzes and saves a toolbox for use with a specific version of ArcGIS software.</para>
 	/// </summary>
 	public class SaveToolboxToVersion : AbstractGPProcess
@@ -53,37 +54,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Save Toolbox To Version</para>
 		/// </summary>
-		public override string DisplayName => "Save Toolbox To Version";
+		public override string DisplayName() => "Save Toolbox To Version";
 
 		/// <summary>
 		/// <para>Tool Name : SaveToolboxToVersion</para>
 		/// </summary>
-		public override string ToolName => "SaveToolboxToVersion";
+		public override string ToolName() => "SaveToolboxToVersion";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SaveToolboxToVersion</para>
 		/// </summary>
-		public override string ExcuteName => "management.SaveToolboxToVersion";
+		public override string ExcuteName() => "management.SaveToolboxToVersion";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InToolbox, Version, OutToolbox, MissingTool!, MissingParam!, InvalidParamValue! };
+		public override object[] Parameters() => new object[] { InToolbox, Version, OutToolbox, MissingTool!, MissingParam!, InvalidParamValue! };
 
 		/// <summary>
 		/// <para>Input Toolbox</para>

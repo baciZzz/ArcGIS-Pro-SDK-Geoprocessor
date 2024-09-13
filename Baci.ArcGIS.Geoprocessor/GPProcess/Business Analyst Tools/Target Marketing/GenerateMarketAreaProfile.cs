@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Market Area Segmentation Profile</para>
+	/// <para>Generate Market Area Segmentation Profile</para>
 	/// <para>Creates a segmentation profile by summarizing segments from standard geography boundaries within the input area.</para>
 	/// </summary>
 	public class GenerateMarketAreaProfile : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Market Area Segmentation Profile</para>
 		/// </summary>
-		public override string DisplayName => "Generate Market Area Segmentation Profile";
+		public override string DisplayName() => "Generate Market Area Segmentation Profile";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateMarketAreaProfile</para>
 		/// </summary>
-		public override string ToolName => "GenerateMarketAreaProfile";
+		public override string ToolName() => "GenerateMarketAreaProfile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GenerateMarketAreaProfile</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GenerateMarketAreaProfile";
+		public override string ExcuteName() => "ba.GenerateMarketAreaProfile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, SegmentationBase, OutProfile };
+		public override object[] Parameters() => new object[] { InFeatures, SegmentationBase, OutProfile };
 
 		/// <summary>
 		/// <para>Input features</para>
@@ -79,6 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -96,6 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("sgprofile")]
 		public object OutProfile { get; set; }
 
 		/// <summary>

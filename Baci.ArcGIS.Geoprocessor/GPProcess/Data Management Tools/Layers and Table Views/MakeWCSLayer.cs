@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make WCS Layer</para>
+	/// <para>Make WCS Layer</para>
 	/// <para>Creates a temporary raster layer from a WCS service.</para>
 	/// </summary>
 	public class MakeWCSLayer : AbstractGPProcess
@@ -39,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Make WCS Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make WCS Layer";
+		public override string DisplayName() => "Make WCS Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeWCSLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeWCSLayer";
+		public override string ToolName() => "MakeWCSLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MakeWCSLayer</para>
 		/// </summary>
-		public override string ExcuteName => "management.MakeWCSLayer";
+		public override string ExcuteName() => "management.MakeWCSLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWcsCoverage, OutWcsLayer, Template!, BandIndex! };
+		public override object[] Parameters() => new object[] { InWcsCoverage, OutWcsLayer, Template!, BandIndex! };
 
 		/// <summary>
 		/// <para>Input WCS Coverage</para>

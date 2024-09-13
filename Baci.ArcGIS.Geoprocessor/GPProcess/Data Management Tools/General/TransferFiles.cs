@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Transfer Files</para>
+	/// <para>Transfer Files</para>
 	/// <para>Transfers files between a file system and a cloud storage workspace.</para>
 	/// </summary>
 	public class TransferFiles : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Transfer Files</para>
 		/// </summary>
-		public override string DisplayName => "Transfer Files";
+		public override string DisplayName() => "Transfer Files";
 
 		/// <summary>
 		/// <para>Tool Name : TransferFiles</para>
 		/// </summary>
-		public override string ToolName => "TransferFiles";
+		public override string ToolName() => "TransferFiles";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.TransferFiles</para>
 		/// </summary>
-		public override string ExcuteName => "management.TransferFiles";
+		public override string ExcuteName() => "management.TransferFiles";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputPaths, OutputFolder, FileFilter!, DerivedOutputFolder! };
+		public override object[] Parameters() => new object[] { InputPaths, OutputFolder, FileFilter!, DerivedOutputFolder! };
 
 		/// <summary>
 		/// <para>Input Paths</para>

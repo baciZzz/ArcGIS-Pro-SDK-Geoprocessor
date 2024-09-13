@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Edit Raster Function</para>
+	/// <para>Edit Raster Function</para>
 	/// <para>Adds, replaces, or removes a function chain in a mosaic dataset or a raster layer that contains a raster function.</para>
 	/// </summary>
 	public class EditRasterFunction : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Edit Raster Function</para>
 		/// </summary>
-		public override string DisplayName => "Edit Raster Function";
+		public override string DisplayName() => "Edit Raster Function";
 
 		/// <summary>
 		/// <para>Tool Name : EditRasterFunction</para>
 		/// </summary>
-		public override string ToolName => "EditRasterFunction";
+		public override string ToolName() => "EditRasterFunction";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.EditRasterFunction</para>
 		/// </summary>
-		public override string ExcuteName => "management.EditRasterFunction";
+		public override string ExcuteName() => "management.EditRasterFunction";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, EditMosaicDatasetItem!, EditOptions!, FunctionChainDefinition!, LocationFunctionName!, OutRaster! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, EditMosaicDatasetItem!, EditOptions!, FunctionChainDefinition!, LocationFunctionName!, OutRaster! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -102,6 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("rft.xml", "rft.json", "rft", "xml", "json")]
 		public object? FunctionChainDefinition { get; set; }
 
 		/// <summary>

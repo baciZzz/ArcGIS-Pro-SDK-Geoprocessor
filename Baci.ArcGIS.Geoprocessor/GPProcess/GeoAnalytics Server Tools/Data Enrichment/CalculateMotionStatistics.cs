@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Calculate Motion Statistics</para>
+	/// <para>Calculate Motion Statistics</para>
 	/// <para>Calculates motion statistics for points in a time-enabled feature class.</para>
 	/// </summary>
 	public class CalculateMotionStatistics : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Motion Statistics</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Motion Statistics";
+		public override string DisplayName() => "Calculate Motion Statistics";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateMotionStatistics</para>
 		/// </summary>
-		public override string ToolName => "CalculateMotionStatistics";
+		public override string ToolName() => "CalculateMotionStatistics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.CalculateMotionStatistics</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.CalculateMotionStatistics";
+		public override string ExcuteName() => "geoanalytics.CalculateMotionStatistics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputLayer, OutputName, TrackFields, TrackHistoryWindow, MotionStatistics!, DistanceMethod!, IdleDistTolerance!, IdleTimeTolerance!, TimeBoundarySplit!, TimeBoundaryReference!, DistanceUnit!, DurationUnit!, SpeedUnit!, AccelerationUnit!, ElevationUnit!, DataStore!, Output! };
+		public override object[] Parameters() => new object[] { InputLayer, OutputName, TrackFields, TrackHistoryWindow, MotionStatistics!, DistanceMethod!, IdleDistTolerance!, IdleTimeTolerance!, TimeBoundarySplit!, TimeBoundaryReference!, DistanceUnit!, DurationUnit!, SpeedUnit!, AccelerationUnit!, ElevationUnit!, DataStore!, Output! };
 
 		/// <summary>
 		/// <para>Input Layer</para>
@@ -84,6 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple")]
+		[PortalType("DataStoreCatalogLayer")]
 		public object InputLayer { get; set; }
 
 		/// <summary>
@@ -101,6 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
 		public object TrackFields { get; set; }
 
 		/// <summary>

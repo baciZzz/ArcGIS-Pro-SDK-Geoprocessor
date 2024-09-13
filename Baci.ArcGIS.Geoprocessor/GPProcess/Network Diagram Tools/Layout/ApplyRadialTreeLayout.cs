@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Apply Radial Tree Layout</para>
+	/// <para>Apply Radial Tree Layout</para>
 	/// <para>Arranges diagram features hierarchically and places them in a radial tree.</para>
 	/// </summary>
 	public class ApplyRadialTreeLayout : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Radial Tree Layout</para>
 		/// </summary>
-		public override string DisplayName => "Apply Radial Tree Layout";
+		public override string DisplayName() => "Apply Radial Tree Layout";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyRadialTreeLayout</para>
 		/// </summary>
-		public override string ToolName => "ApplyRadialTreeLayout";
+		public override string ToolName() => "ApplyRadialTreeLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.ApplyRadialTreeLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.ApplyRadialTreeLayout";
+		public override string ExcuteName() => "nd.ApplyRadialTreeLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, AreContainersPreserved!, IsUnitAbsolute!, InitialRadiusAbsolute!, InitialRadiusProportional!, DisjoinedGraphAbsolute!, DisjoinedGraphProportional!, RadiusFactor!, OutNetworkDiagramLayer!, RunAsync! };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, AreContainersPreserved!, IsUnitAbsolute!, InitialRadiusAbsolute!, InitialRadiusProportional!, DisjoinedGraphAbsolute!, DisjoinedGraphProportional!, RadiusFactor!, OutNetworkDiagramLayer!, RunAsync! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 {
 	/// <summary>
 	/// <para>Validate Network Topology</para>
+	/// <para>Validate Network Topology</para>
 	/// <para>Validates the network topology of a trace network.  Validation of  the network topology is necessary after edits have been made to network attributes or the geometry of features in the network.</para>
 	/// </summary>
 	public class ValidateNetworkTopology : AbstractGPProcess
@@ -31,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Validate Network Topology</para>
 		/// </summary>
-		public override string DisplayName => "Validate Network Topology";
+		public override string DisplayName() => "Validate Network Topology";
 
 		/// <summary>
 		/// <para>Tool Name : ValidateNetworkTopology</para>
 		/// </summary>
-		public override string ToolName => "ValidateNetworkTopology";
+		public override string ToolName() => "ValidateNetworkTopology";
 
 		/// <summary>
 		/// <para>Tool Excute Name : tn.ValidateNetworkTopology</para>
 		/// </summary>
-		public override string ExcuteName => "tn.ValidateNetworkTopology";
+		public override string ExcuteName() => "tn.ValidateNetworkTopology";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Trace Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Trace Network Tools";
+		public override string ToolboxDisplayName() => "Trace Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : tn</para>
 		/// </summary>
-		public override string ToolboxAlise => "tn";
+		public override string ToolboxAlise() => "tn";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTraceNetwork, Extent!, OutTraceNetwork! };
+		public override object[] Parameters() => new object[] { InTraceNetwork, Extent!, OutTraceNetwork! };
 
 		/// <summary>
 		/// <para>Input Trace Network</para>

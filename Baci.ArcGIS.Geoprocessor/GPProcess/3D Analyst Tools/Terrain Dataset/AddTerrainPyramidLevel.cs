@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Add Terrain Pyramid Level</para>
+	/// <para>Add Terrain Pyramid Level</para>
 	/// <para>Adds one or more pyramid levels to an existing terrain dataset.</para>
 	/// </summary>
 	public class AddTerrainPyramidLevel : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Terrain Pyramid Level</para>
 		/// </summary>
-		public override string DisplayName => "Add Terrain Pyramid Level";
+		public override string DisplayName() => "Add Terrain Pyramid Level";
 
 		/// <summary>
 		/// <para>Tool Name : AddTerrainPyramidLevel</para>
 		/// </summary>
-		public override string ToolName => "AddTerrainPyramidLevel";
+		public override string ToolName() => "AddTerrainPyramidLevel";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.AddTerrainPyramidLevel</para>
 		/// </summary>
-		public override string ExcuteName => "3d.AddTerrainPyramidLevel";
+		public override string ExcuteName() => "3d.AddTerrainPyramidLevel";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerrain, PyramidType!, PyramidLevelDefinition, DerivedOutTerrain! };
+		public override object[] Parameters() => new object[] { InTerrain, PyramidType!, PyramidLevelDefinition, DerivedOutTerrain! };
 
 		/// <summary>
 		/// <para>Input Terrain</para>

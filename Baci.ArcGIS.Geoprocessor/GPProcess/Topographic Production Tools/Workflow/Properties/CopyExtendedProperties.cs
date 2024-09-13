@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Copy Extended Properties</para>
+	/// <para>Copy Extended Properties</para>
 	/// <para>Copies extended property values from one job to another job in the same Workflow Manager (Classic) repository.</para>
 	/// </summary>
 	public class CopyExtendedProperties : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Copy Extended Properties</para>
 		/// </summary>
-		public override string DisplayName => "Copy Extended Properties";
+		public override string DisplayName() => "Copy Extended Properties";
 
 		/// <summary>
 		/// <para>Tool Name : CopyExtendedProperties</para>
 		/// </summary>
-		public override string ToolName => "CopyExtendedProperties";
+		public override string ToolName() => "CopyExtendedProperties";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.CopyExtendedProperties</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.CopyExtendedProperties";
+		public override string ExcuteName() => "topographic.CopyExtendedProperties";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SourceJobId, TargetJobId, PropertyTableName, PropertyFields, DatabasePath!, UpdatedJobId! };
+		public override object[] Parameters() => new object[] { SourceJobId, TargetJobId, PropertyTableName, PropertyFields, DatabasePath!, UpdatedJobId! };
 
 		/// <summary>
 		/// <para>Source Job ID</para>
@@ -116,6 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("jtc")]
 		public object? DatabasePath { get; set; }
 
 		/// <summary>

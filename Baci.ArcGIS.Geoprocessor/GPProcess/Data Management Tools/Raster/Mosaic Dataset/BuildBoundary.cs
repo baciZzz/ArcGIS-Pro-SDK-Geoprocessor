@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Boundary</para>
+	/// <para>Build Boundary</para>
 	/// <para>Updates the extent of the boundary when adding new raster datasets to a mosaic dataset that extend beyond its previous coverage.</para>
 	/// </summary>
 	public class BuildBoundary : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Build Boundary</para>
 		/// </summary>
-		public override string DisplayName => "Build Boundary";
+		public override string DisplayName() => "Build Boundary";
 
 		/// <summary>
 		/// <para>Tool Name : BuildBoundary</para>
 		/// </summary>
-		public override string ToolName => "BuildBoundary";
+		public override string ToolName() => "BuildBoundary";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.BuildBoundary</para>
 		/// </summary>
-		public override string ExcuteName => "management.BuildBoundary";
+		public override string ExcuteName() => "management.BuildBoundary";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause!, AppendToExisting!, SimplificationMethod!, OutMosaicDataset! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, WhereClause!, AppendToExisting!, SimplificationMethod!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

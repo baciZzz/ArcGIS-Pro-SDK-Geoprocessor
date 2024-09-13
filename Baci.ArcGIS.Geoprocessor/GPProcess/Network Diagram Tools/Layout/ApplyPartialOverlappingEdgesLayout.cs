@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Apply Partial Overlapping Edges Layout</para>
+	/// <para>Apply Partial Overlapping Edges Layout</para>
 	/// <para>Spaces out collinear edges or collinear portions of edges (edge segments) inside a given buffer zone.</para>
 	/// </summary>
 	public class ApplyPartialOverlappingEdgesLayout : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Partial Overlapping Edges Layout</para>
 		/// </summary>
-		public override string DisplayName => "Apply Partial Overlapping Edges Layout";
+		public override string DisplayName() => "Apply Partial Overlapping Edges Layout";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyPartialOverlappingEdgesLayout</para>
 		/// </summary>
-		public override string ToolName => "ApplyPartialOverlappingEdgesLayout";
+		public override string ToolName() => "ApplyPartialOverlappingEdgesLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.ApplyPartialOverlappingEdgesLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.ApplyPartialOverlappingEdgesLayout";
+		public override string ExcuteName() => "nd.ApplyPartialOverlappingEdgesLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, BufferWidthAbsolute, OffsetAbsolute, OptimizeEdges!, OutNetworkDiagramLayer!, RunAsync! };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, BufferWidthAbsolute, OffsetAbsolute, OptimizeEdges!, OutNetworkDiagramLayer!, RunAsync! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>

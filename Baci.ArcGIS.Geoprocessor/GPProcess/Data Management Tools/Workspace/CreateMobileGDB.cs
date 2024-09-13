@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Mobile Geodatabase</para>
+	/// <para>Create Mobile Geodatabase</para>
 	/// <para>Creates a mobile geodatabase.</para>
 	/// </summary>
 	public class CreateMobileGDB : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Mobile Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "Create Mobile Geodatabase";
+		public override string DisplayName() => "Create Mobile Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : CreateMobileGDB</para>
 		/// </summary>
-		public override string ToolName => "CreateMobileGDB";
+		public override string ToolName() => "CreateMobileGDB";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateMobileGDB</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateMobileGDB";
+		public override string ExcuteName() => "management.CreateMobileGDB";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutFolderPath, OutName, OutGdb! };
+		public override object[] Parameters() => new object[] { OutFolderPath, OutName, OutGdb! };
 
 		/// <summary>
 		/// <para>Mobile Geodatabase Location</para>

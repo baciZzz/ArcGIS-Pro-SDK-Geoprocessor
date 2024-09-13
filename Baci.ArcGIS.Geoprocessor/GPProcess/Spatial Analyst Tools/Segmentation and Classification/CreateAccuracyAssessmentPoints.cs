@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Create Accuracy Assessment Points</para>
+	/// <para>Create Accuracy Assessment Points</para>
 	/// <para>Creates randomly sampled points for post-classification accuracy assessment.</para>
 	/// </summary>
 	public class CreateAccuracyAssessmentPoints : AbstractGPProcess
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Accuracy Assessment Points</para>
 		/// </summary>
-		public override string DisplayName => "Create Accuracy Assessment Points";
+		public override string DisplayName() => "Create Accuracy Assessment Points";
 
 		/// <summary>
 		/// <para>Tool Name : CreateAccuracyAssessmentPoints</para>
 		/// </summary>
-		public override string ToolName => "CreateAccuracyAssessmentPoints";
+		public override string ToolName() => "CreateAccuracyAssessmentPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.CreateAccuracyAssessmentPoints</para>
 		/// </summary>
-		public override string ExcuteName => "sa.CreateAccuracyAssessmentPoints";
+		public override string ExcuteName() => "sa.CreateAccuracyAssessmentPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InClassData, OutPoints, TargetField!, NumRandomPoints!, Sampling!, PolygonDimensionField! };
+		public override object[] Parameters() => new object[] { InClassData, OutPoints, TargetField!, NumRandomPoints!, Sampling!, PolygonDimensionField! };
 
 		/// <summary>
 		/// <para>Input Raster or Feature Class Data</para>

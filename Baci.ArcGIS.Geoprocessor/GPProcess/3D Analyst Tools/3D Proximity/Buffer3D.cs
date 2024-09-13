@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Buffer 3D</para>
+	/// <para>Buffer 3D</para>
 	/// <para>Creates a 3-dimensional buffer around points or lines to produce spherical or cylindrical multipatch features.</para>
 	/// </summary>
 	public class Buffer3D : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Buffer 3D</para>
 		/// </summary>
-		public override string DisplayName => "Buffer 3D";
+		public override string DisplayName() => "Buffer 3D";
 
 		/// <summary>
 		/// <para>Tool Name : Buffer3D</para>
 		/// </summary>
-		public override string ToolName => "Buffer3D";
+		public override string ToolName() => "Buffer3D";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Buffer3D</para>
 		/// </summary>
-		public override string ExcuteName => "3d.Buffer3D";
+		public override string ExcuteName() => "3d.Buffer3D";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "ZDomain", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "ZDomain", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, BufferDistanceOrField, BufferJointType!, BufferQuality!, SimplificationTolerance! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, BufferDistanceOrField, BufferJointType!, BufferQuality!, SimplificationTolerance! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -136,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 6, Max = 60)]
 		public object? BufferQuality { get; set; } = "20";
 
 		/// <summary>

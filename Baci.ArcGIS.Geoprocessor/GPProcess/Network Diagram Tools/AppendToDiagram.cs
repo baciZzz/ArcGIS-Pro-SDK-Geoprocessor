@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Append To Diagram</para>
+	/// <para>Append To Diagram</para>
 	/// <para>Appends network elements to a network diagram.</para>
 	/// </summary>
 	public class AppendToDiagram : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Append To Diagram</para>
 		/// </summary>
-		public override string DisplayName => "Append To Diagram";
+		public override string DisplayName() => "Append To Diagram";
 
 		/// <summary>
 		/// <para>Tool Name : AppendToDiagram</para>
 		/// </summary>
-		public override string ToolName => "AppendToDiagram";
+		public override string ToolName() => "AppendToDiagram";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AppendToDiagram</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AppendToDiagram";
+		public override string ExcuteName() => "nd.AppendToDiagram";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, Map, OutNetworkDiagramLayer! };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, Map, OutNetworkDiagramLayer! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
@@ -82,6 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMap()]
 		[GPMapDomain()]
+		[MapType("0", "4")]
 		public object Map { get; set; }
 
 		/// <summary>

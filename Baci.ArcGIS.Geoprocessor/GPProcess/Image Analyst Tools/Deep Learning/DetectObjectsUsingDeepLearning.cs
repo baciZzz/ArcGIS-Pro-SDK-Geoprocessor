@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Detect Objects Using Deep Learning</para>
+	/// <para>Detect Objects Using Deep Learning</para>
 	/// <para>Runs a trained deep learning model on an input raster to produce a feature class containing the objects it finds. The features can be bounding boxes or polygons around the objects found or points at the centers of the objects.</para>
 	/// </summary>
 	public class DetectObjectsUsingDeepLearning : AbstractGPProcess
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Detect Objects Using Deep Learning</para>
 		/// </summary>
-		public override string DisplayName => "Detect Objects Using Deep Learning";
+		public override string DisplayName() => "Detect Objects Using Deep Learning";
 
 		/// <summary>
 		/// <para>Tool Name : DetectObjectsUsingDeepLearning</para>
 		/// </summary>
-		public override string ToolName => "DetectObjectsUsingDeepLearning";
+		public override string ToolName() => "DetectObjectsUsingDeepLearning";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.DetectObjectsUsingDeepLearning</para>
 		/// </summary>
-		public override string ExcuteName => "ia.DetectObjectsUsingDeepLearning";
+		public override string ExcuteName() => "ia.DetectObjectsUsingDeepLearning";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "geographicTransformations", "gpuID", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "processorType", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "geographicTransformations", "gpuID", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "processorType", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutDetectedObjects, InModelDefinition, Arguments!, RunNms!, ConfidenceScoreField!, ClassValueField!, MaxOverlapRatio!, ProcessingMode!, OutClassifiedRaster! };
+		public override object[] Parameters() => new object[] { InRaster, OutDetectedObjects, InModelDefinition, Arguments!, RunNms!, ConfidenceScoreField!, ClassValueField!, MaxOverlapRatio!, ProcessingMode!, OutClassifiedRaster! };
 
 		/// <summary>
 		/// <para>Input Raster</para>

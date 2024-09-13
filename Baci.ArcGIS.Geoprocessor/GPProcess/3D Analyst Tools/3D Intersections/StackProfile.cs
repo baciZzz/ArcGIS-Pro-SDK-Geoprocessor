@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Stack Profile</para>
+	/// <para>Stack Profile</para>
 	/// <para>Creates a table and optional graph denoting the  profile of line features over one or more multipatch, raster, TIN, or terrain surfaces.</para>
 	/// </summary>
 	public class StackProfile : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Stack Profile</para>
 		/// </summary>
-		public override string DisplayName => "Stack Profile";
+		public override string DisplayName() => "Stack Profile";
 
 		/// <summary>
 		/// <para>Tool Name : StackProfile</para>
 		/// </summary>
-		public override string ToolName => "StackProfile";
+		public override string ToolName() => "StackProfile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.StackProfile</para>
 		/// </summary>
-		public override string ExcuteName => "3d.StackProfile";
+		public override string ExcuteName() => "3d.StackProfile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLineFeatures, ProfileTargets, OutTable, OutGraph! };
+		public override object[] Parameters() => new object[] { InLineFeatures, ProfileTargets, OutTable, OutGraph! };
 
 		/// <summary>
 		/// <para>Input Line Features</para>

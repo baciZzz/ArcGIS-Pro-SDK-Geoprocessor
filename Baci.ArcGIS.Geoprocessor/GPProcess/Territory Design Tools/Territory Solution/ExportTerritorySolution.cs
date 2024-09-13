@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Export Territory Solution</para>
+	/// <para>Export Territory Solution</para>
 	/// <para>Exports a territory solution to a feature class. The export includes records from all levels (hierarchy) of the solution.</para>
 	/// </summary>
 	public class ExportTerritorySolution : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Territory Solution</para>
 		/// </summary>
-		public override string DisplayName => "Export Territory Solution";
+		public override string DisplayName() => "Export Territory Solution";
 
 		/// <summary>
 		/// <para>Tool Name : ExportTerritorySolution</para>
 		/// </summary>
-		public override string ToolName => "ExportTerritorySolution";
+		public override string ToolName() => "ExportTerritorySolution";
 
 		/// <summary>
 		/// <para>Tool Excute Name : td.ExportTerritorySolution</para>
 		/// </summary>
-		public override string ExcuteName => "td.ExportTerritorySolution";
+		public override string ExcuteName() => "td.ExportTerritorySolution";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Territory Design Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Territory Design Tools";
+		public override string ToolboxDisplayName() => "Territory Design Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : td</para>
 		/// </summary>
-		public override string ToolboxAlise => "td";
+		public override string ToolboxAlise() => "td";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, OutFeatureClass, OutputGeometryType! };
+		public override object[] Parameters() => new object[] { InTerritorySolution, OutFeatureClass, OutputGeometryType! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>

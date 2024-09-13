@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Standardize Field</para>
+	/// <para>Standardize Field</para>
 	/// <para>Standardizes values in fields by converting them to values that follow a specified scale. Standardization methods include z-score, minimum-maximum, absolute maximum, and robust standardization.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Standardize Field</para>
 		/// </summary>
-		public override string DisplayName => "Standardize Field";
+		public override string DisplayName() => "Standardize Field";
 
 		/// <summary>
 		/// <para>Tool Name : StandardizeField</para>
 		/// </summary>
-		public override string ToolName => "StandardizeField";
+		public override string ToolName() => "StandardizeField";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.StandardizeField</para>
 		/// </summary>
-		public override string ExcuteName => "management.StandardizeField";
+		public override string ExcuteName() => "management.StandardizeField";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Fields, Method!, MinValue!, MaxValue!, UpdatedTable! };
+		public override object[] Parameters() => new object[] { InTable, Fields, Method!, MinValue!, MaxValue!, UpdatedTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>

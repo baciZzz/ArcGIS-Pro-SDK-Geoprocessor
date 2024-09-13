@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Configure Lookup Table</para>
+	/// <para>Configure Lookup Table</para>
 	/// <para>Configures a lookup table for one or more fields used in a multifield route ID.</para>
 	/// </summary>
 	public class ConfigureLookupTable : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Configure Lookup Table</para>
 		/// </summary>
-		public override string DisplayName => "Configure Lookup Table";
+		public override string DisplayName() => "Configure Lookup Table";
 
 		/// <summary>
 		/// <para>Tool Name : ConfigureLookupTable</para>
 		/// </summary>
-		public override string ToolName => "ConfigureLookupTable";
+		public override string ToolName() => "ConfigureLookupTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.ConfigureLookupTable</para>
 		/// </summary>
-		public override string ExcuteName => "locref.ConfigureLookupTable";
+		public override string ExcuteName() => "locref.ConfigureLookupTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureClass, LookupTable, FieldAppliedTo, LookupKey, LookupDisplay!, AllowAnyLookupValue!, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatureClass, LookupTable, FieldAppliedTo, LookupKey, LookupDisplay!, AllowAnyLookupValue!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>LRS Network Feature Class</para>
@@ -84,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InFeatureClass { get; set; }
 
 		/// <summary>

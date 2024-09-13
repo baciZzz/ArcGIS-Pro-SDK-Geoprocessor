@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Mosaic Dataset Item Cache</para>
+	/// <para>Build Mosaic Dataset Item Cache</para>
 	/// <para>Inserts the Cached Raster function as the final step in all function chains within a mosaic dataset.</para>
 	/// </summary>
 	public class BuildMosaicDatasetItemCache : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Build Mosaic Dataset Item Cache</para>
 		/// </summary>
-		public override string DisplayName => "Build Mosaic Dataset Item Cache";
+		public override string DisplayName() => "Build Mosaic Dataset Item Cache";
 
 		/// <summary>
 		/// <para>Tool Name : BuildMosaicDatasetItemCache</para>
 		/// </summary>
-		public override string ToolName => "BuildMosaicDatasetItemCache";
+		public override string ToolName() => "BuildMosaicDatasetItemCache";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.BuildMosaicDatasetItemCache</para>
 		/// </summary>
-		public override string ExcuteName => "management.BuildMosaicDatasetItemCache";
+		public override string ExcuteName() => "management.BuildMosaicDatasetItemCache";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause!, DefineCache!, GenerateCache!, ItemCacheFolder!, CompressionMethod!, CompressionQuality!, MaxAllowedRows!, MaxAllowedColumns!, RequestSizeType!, RequestSize!, OutMosaicDataset! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, WhereClause!, DefineCache!, GenerateCache!, ItemCacheFolder!, CompressionMethod!, CompressionQuality!, MaxAllowedRows!, MaxAllowedColumns!, RequestSizeType!, RequestSize!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -110,6 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("File System", "Local Database", "Remote Database")]
 		[Category("Cache Properties")]
 		public object? ItemCacheFolder { get; set; }
 
@@ -133,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 100)]
 		[Category("Cache Properties")]
 		public object? CompressionQuality { get; set; } = "80";
 
@@ -143,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 10, Max = 2147483647)]
 		[Category("Cache Properties")]
 		public object? MaxAllowedRows { get; set; } = "200000";
 
@@ -153,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 10, Max = 2147483647)]
 		[Category("Cache Properties")]
 		public object? MaxAllowedColumns { get; set; } = "200000";
 
@@ -176,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 1.7976931348623157e+308)]
 		[Category("Resampling")]
 		public object? RequestSize { get; set; } = "1";
 

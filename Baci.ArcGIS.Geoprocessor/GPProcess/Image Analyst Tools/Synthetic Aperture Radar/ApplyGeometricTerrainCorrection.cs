@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Apply Geometric Terrain Correction</para>
+	/// <para>Apply Geometric Terrain Correction</para>
 	/// <para>Orthorectifies the input synthetic aperture radar (SAR) data using a range-Doppler backgeocoding algorithm.</para>
 	/// </summary>
 	public class ApplyGeometricTerrainCorrection : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Apply Geometric Terrain Correction</para>
 		/// </summary>
-		public override string DisplayName => "Apply Geometric Terrain Correction";
+		public override string DisplayName() => "Apply Geometric Terrain Correction";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyGeometricTerrainCorrection</para>
 		/// </summary>
-		public override string ToolName => "ApplyGeometricTerrainCorrection";
+		public override string ToolName() => "ApplyGeometricTerrainCorrection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.ApplyGeometricTerrainCorrection</para>
 		/// </summary>
-		public override string ExcuteName => "ia.ApplyGeometricTerrainCorrection";
+		public override string ExcuteName() => "ia.ApplyGeometricTerrainCorrection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellAlignment", "cellSize", "compression", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellAlignment", "cellSize", "compression", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRadarData, OutRadarData, PolarizationBands!, InDemRaster!, Geoid! };
+		public override object[] Parameters() => new object[] { InRadarData, OutRadarData, PolarizationBands!, InDemRaster!, Geoid! };
 
 		/// <summary>
 		/// <para>Input Radar  Data</para>

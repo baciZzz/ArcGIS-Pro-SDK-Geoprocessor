@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Feature to NetCDF</para>
+	/// <para>Feature to NetCDF</para>
 	/// <para>Converts point features to a netCDF file.</para>
 	/// </summary>
 	public class FeatureToNetCDF : AbstractGPProcess
@@ -44,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Tool Display Name : Feature to NetCDF</para>
 		/// </summary>
-		public override string DisplayName => "Feature to NetCDF";
+		public override string DisplayName() => "Feature to NetCDF";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureToNetCDF</para>
 		/// </summary>
-		public override string ToolName => "FeatureToNetCDF";
+		public override string ToolName() => "FeatureToNetCDF";
 
 		/// <summary>
 		/// <para>Tool Excute Name : md.FeatureToNetCDF</para>
 		/// </summary>
-		public override string ExcuteName => "md.FeatureToNetCDF";
+		public override string ExcuteName() => "md.FeatureToNetCDF";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Multidimension Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Multidimension Tools";
+		public override string ToolboxDisplayName() => "Multidimension Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : md</para>
 		/// </summary>
-		public override string ToolboxAlise => "md";
+		public override string ToolboxAlise() => "md";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, FieldsToVariables, OutNetcdfFile, FieldsToDimensions! };
+		public override object[] Parameters() => new object[] { InFeatures, FieldsToVariables, OutNetcdfFile, FieldsToDimensions! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -83,6 +84,8 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -104,6 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("nc")]
 		public object OutNetcdfFile { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Train Maximum Likelihood Classifier</para>
+	/// <para>Train Maximum Likelihood Classifier</para>
 	/// <para>Generates an Esri classifier definition file (.ecd) using the Maximum Likelihood Classifier (MLC) classification definition.</para>
 	/// </summary>
 	public class TrainMaximumLikelihoodClassifier : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Train Maximum Likelihood Classifier</para>
 		/// </summary>
-		public override string DisplayName => "Train Maximum Likelihood Classifier";
+		public override string DisplayName() => "Train Maximum Likelihood Classifier";
 
 		/// <summary>
 		/// <para>Tool Name : TrainMaximumLikelihoodClassifier</para>
 		/// </summary>
-		public override string ToolName => "TrainMaximumLikelihoodClassifier";
+		public override string ToolName() => "TrainMaximumLikelihoodClassifier";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.TrainMaximumLikelihoodClassifier</para>
 		/// </summary>
-		public override string ExcuteName => "sa.TrainMaximumLikelihoodClassifier";
+		public override string ExcuteName() => "sa.TrainMaximumLikelihoodClassifier";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, InTrainingFeatures, OutClassifierDefinition, InAdditionalRaster!, UsedAttributes!, DimensionValueField! };
+		public override object[] Parameters() => new object[] { InRaster, InTrainingFeatures, OutClassifierDefinition, InAdditionalRaster!, UsedAttributes!, DimensionValueField! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -137,6 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Double", "Date")]
 		public object? DimensionValueField { get; set; }
 
 		/// <summary>

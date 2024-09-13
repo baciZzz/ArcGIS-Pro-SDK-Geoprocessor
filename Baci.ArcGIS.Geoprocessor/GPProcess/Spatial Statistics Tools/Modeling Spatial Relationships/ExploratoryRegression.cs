@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Exploratory Regression</para>
+	/// <para>Exploratory Regression</para>
 	/// <para>Evaluates all possible combinations of the input candidate explanatory variables, looking for OLS models that best explain the dependent variable within the context of user-specified criteria.</para>
 	/// </summary>
 	public class ExploratoryRegression : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Exploratory Regression</para>
 		/// </summary>
-		public override string DisplayName => "Exploratory Regression";
+		public override string DisplayName() => "Exploratory Regression";
 
 		/// <summary>
 		/// <para>Tool Name : ExploratoryRegression</para>
 		/// </summary>
-		public override string ToolName => "ExploratoryRegression";
+		public override string ToolName() => "ExploratoryRegression";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.ExploratoryRegression</para>
 		/// </summary>
-		public override string ExcuteName => "stats.ExploratoryRegression";
+		public override string ExcuteName() => "stats.ExploratoryRegression";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, DependentVariable, CandidateExplanatoryVariables, WeightsMatrixFile!, OutputReportFile!, OutputResultsTable!, MaximumNumberOfExplanatoryVariables!, MinimumNumberOfExplanatoryVariables!, MinimumAcceptableAdjRSquared!, MaximumCoefficientPValueCutoff!, MaximumVIFValueCutoff!, MinimumAcceptableJarqueBeraPValue!, MinimumAcceptableSpatialAutocorrelationPValue! };
+		public override object[] Parameters() => new object[] { InputFeatures, DependentVariable, CandidateExplanatoryVariables, WeightsMatrixFile!, OutputReportFile!, OutputResultsTable!, MaximumNumberOfExplanatoryVariables!, MinimumNumberOfExplanatoryVariables!, MinimumAcceptableAdjRSquared!, MaximumCoefficientPValueCutoff!, MaximumVIFValueCutoff!, MinimumAcceptableJarqueBeraPValue!, MinimumAcceptableSpatialAutocorrelationPValue! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -87,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object DependentVariable { get; set; }
 
 		/// <summary>
@@ -96,6 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object CandidateExplanatoryVariables { get; set; }
 
 		/// <summary>
@@ -106,6 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("swm", "gwt")]
 		public object? WeightsMatrixFile { get; set; }
 
 		/// <summary>
@@ -115,6 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("txt")]
 		public object? OutputReportFile { get; set; }
 
 		/// <summary>
@@ -149,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 1)]
 		[Category("Search Criteria")]
 		public object? MinimumAcceptableAdjRSquared { get; set; } = "0.5";
 
@@ -159,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 1)]
 		[Category("Search Criteria")]
 		public object? MaximumCoefficientPValueCutoff { get; set; } = "0.05";
 
@@ -169,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 99999999)]
 		[Category("Search Criteria")]
 		public object? MaximumVIFValueCutoff { get; set; } = "7.5";
 
@@ -179,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 1)]
 		[Category("Search Criteria")]
 		public object? MinimumAcceptableJarqueBeraPValue { get; set; } = "0.1";
 
@@ -189,7 +194,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 1)]
 		[Category("Search Criteria")]
 		public object? MinimumAcceptableSpatialAutocorrelationPValue { get; set; } = "0.1";
 

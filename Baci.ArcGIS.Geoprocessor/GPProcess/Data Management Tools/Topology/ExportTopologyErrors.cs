@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Topology Errors</para>
+	/// <para>Export Topology Errors</para>
 	/// <para>Exports the errors and exceptions from a geodatabase topology to the target geodatabase.  All information associated with the errors and exceptions, such as the features referenced by the error or exception, is exported.</para>
 	/// <para>Once the errors and exceptions are exported, the feature classes can be accessed using any license level of ArcGIS.  The feature classes can be used with the Select Layer By Location tool and can be shared with other users who do not have access to the topology.</para>
 	/// </summary>
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Topology Errors</para>
 		/// </summary>
-		public override string DisplayName => "Export Topology Errors";
+		public override string DisplayName() => "Export Topology Errors";
 
 		/// <summary>
 		/// <para>Tool Name : ExportTopologyErrors</para>
 		/// </summary>
-		public override string ToolName => "ExportTopologyErrors";
+		public override string ToolName() => "ExportTopologyErrors";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ExportTopologyErrors</para>
 		/// </summary>
-		public override string ExcuteName => "management.ExportTopologyErrors";
+		public override string ExcuteName() => "management.ExportTopologyErrors";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTopology, OutPath, OutBasename, OutFeatureClassPoints!, OutFeatureClassLines!, OutFeatureClassPolygons! };
+		public override object[] Parameters() => new object[] { InTopology, OutPath, OutBasename, OutFeatureClassPoints!, OutFeatureClassLines!, OutFeatureClassPolygons! };
 
 		/// <summary>
 		/// <para>Input Topology</para>

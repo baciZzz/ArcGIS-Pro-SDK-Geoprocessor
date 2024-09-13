@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Generate Parcel Fabric Links</para>
+	/// <para>Generate Parcel Fabric Links</para>
 	/// <para>Generates displacement links for parcel fabric points that have changed</para>
 	/// <para>locations in a specified time period.</para>
 	/// </summary>
@@ -46,37 +47,37 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Parcel Fabric Links</para>
 		/// </summary>
-		public override string DisplayName => "Generate Parcel Fabric Links";
+		public override string DisplayName() => "Generate Parcel Fabric Links";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateParcelFabricLinks</para>
 		/// </summary>
-		public override string ToolName => "GenerateParcelFabricLinks";
+		public override string ToolName() => "GenerateParcelFabricLinks";
 
 		/// <summary>
 		/// <para>Tool Excute Name : parcel.GenerateParcelFabricLinks</para>
 		/// </summary>
-		public override string ExcuteName => "parcel.GenerateParcelFabricLinks";
+		public override string ExcuteName() => "parcel.GenerateParcelFabricLinks";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Parcel Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Parcel Tools";
+		public override string ToolboxDisplayName() => "Parcel Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : parcel</para>
 		/// </summary>
-		public override string ToolboxAlise => "parcel";
+		public override string ToolboxAlise() => "parcel";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetParcelFabric, OutLinksFeatureClass, OutAnchorPointsFeatureClass, FromDate, ToDate!, MinLinkLength!, Extent! };
+		public override object[] Parameters() => new object[] { TargetParcelFabric, OutLinksFeatureClass, OutAnchorPointsFeatureClass, FromDate, ToDate!, MinLinkLength!, Extent! };
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
@@ -93,6 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Line")]
 		public object OutLinksFeatureClass { get; set; }
 
 		/// <summary>
@@ -102,6 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object OutAnchorPointsFeatureClass { get; set; }
 
 		/// <summary>

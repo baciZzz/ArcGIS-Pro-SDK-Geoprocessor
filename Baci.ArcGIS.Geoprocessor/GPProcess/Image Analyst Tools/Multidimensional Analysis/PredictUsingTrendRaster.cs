@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Predict Using Trend Raster</para>
+	/// <para>Predict Using Trend Raster</para>
 	/// <para>Computes a forecasted multidimensional raster using the output trend raster from the Generate Trend Raster tool.</para>
 	/// </summary>
 	public class PredictUsingTrendRaster : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Predict Using Trend Raster</para>
 		/// </summary>
-		public override string DisplayName => "Predict Using Trend Raster";
+		public override string DisplayName() => "Predict Using Trend Raster";
 
 		/// <summary>
 		/// <para>Tool Name : PredictUsingTrendRaster</para>
 		/// </summary>
-		public override string ToolName => "PredictUsingTrendRaster";
+		public override string ToolName() => "PredictUsingTrendRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.PredictUsingTrendRaster</para>
 		/// </summary>
-		public override string ExcuteName => "ia.PredictUsingTrendRaster";
+		public override string ExcuteName() => "ia.PredictUsingTrendRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMultidimensionalRaster, OutMultidimensionalRaster, Variables!, DimensionDef!, DimensionValues!, Start!, End!, IntervalValue!, IntervalUnit! };
+		public override object[] Parameters() => new object[] { InMultidimensionalRaster, OutMultidimensionalRaster, Variables!, DimensionDef!, DimensionValues!, Start!, End!, IntervalValue!, IntervalUnit! };
 
 		/// <summary>
 		/// <para>Input Trend Raster</para>

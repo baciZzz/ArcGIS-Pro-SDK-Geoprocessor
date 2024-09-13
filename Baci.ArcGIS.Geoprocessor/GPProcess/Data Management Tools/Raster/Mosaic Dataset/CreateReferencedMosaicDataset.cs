@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Referenced Mosaic Dataset</para>
+	/// <para>Create Referenced Mosaic Dataset</para>
 	/// <para>Creates a separate mosaic dataset from items in an existing mosaic dataset.</para>
 	/// </summary>
 	public class CreateReferencedMosaicDataset : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Referenced Mosaic Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Create Referenced Mosaic Dataset";
+		public override string DisplayName() => "Create Referenced Mosaic Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : CreateReferencedMosaicDataset</para>
 		/// </summary>
-		public override string ToolName => "CreateReferencedMosaicDataset";
+		public override string ToolName() => "CreateReferencedMosaicDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateReferencedMosaicDataset</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateReferencedMosaicDataset";
+		public override string ExcuteName() => "management.CreateReferencedMosaicDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, OutMosaicDataset, CoordinateSystem!, NumberOfBands!, PixelType!, WhereClause!, InTemplateDataset!, Extent!, SelectUsingFeatures!, LodField!, MinpsField!, MaxpsField!, Pixelsize!, BuildBoundary! };
+		public override object[] Parameters() => new object[] { InDataset, OutMosaicDataset, CoordinateSystem!, NumberOfBands!, PixelType!, WhereClause!, InTemplateDataset!, Extent!, SelectUsingFeatures!, LodField!, MinpsField!, MaxpsField!, Pixelsize!, BuildBoundary! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
@@ -168,6 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date")]
 		[Category("Visibility")]
 		public object? LodField { get; set; }
 
@@ -178,6 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date")]
 		[Category("Visibility")]
 		public object? MinpsField { get; set; }
 
@@ -188,6 +191,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date")]
 		[Category("Visibility")]
 		public object? MaxpsField { get; set; }
 

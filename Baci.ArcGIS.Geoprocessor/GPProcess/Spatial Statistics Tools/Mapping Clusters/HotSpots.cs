@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Hot Spot Analysis (Getis-Ord Gi*)</para>
+	/// <para>Hot Spot Analysis (Getis-Ord Gi*)</para>
 	/// <para>Given a set of weighted features, identifies statistically significant hot spots and cold spots using the Getis-Ord Gi* statistic.</para>
 	/// </summary>
 	public class HotSpots : AbstractGPProcess
@@ -70,37 +71,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Hot Spot Analysis (Getis-Ord Gi*)</para>
 		/// </summary>
-		public override string DisplayName => "Hot Spot Analysis (Getis-Ord Gi*)";
+		public override string DisplayName() => "Hot Spot Analysis (Getis-Ord Gi*)";
 
 		/// <summary>
 		/// <para>Tool Name : HotSpots</para>
 		/// </summary>
-		public override string ToolName => "HotSpots";
+		public override string ToolName() => "HotSpots";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.HotSpots</para>
 		/// </summary>
-		public override string ExcuteName => "stats.HotSpots";
+		public override string ExcuteName() => "stats.HotSpots";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MResolution", "MTolerance", "XYResolution", "XYTolerance", "ZResolution", "ZTolerance", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatureClass, InputField, OutputFeatureClass, ConceptualizationOfSpatialRelationships, DistanceMethod, Standardization, DistanceBandOrThresholdDistance!, SelfPotentialField!, WeightsMatrixFile!, ApplyFalseDiscoveryRateFDRCorrection!, ResultsField!, ProbabilityField!, SourceID!, NumberOfNeighbors! };
+		public override object[] Parameters() => new object[] { InputFeatureClass, InputField, OutputFeatureClass, ConceptualizationOfSpatialRelationships, DistanceMethod, Standardization, DistanceBandOrThresholdDistance!, SelfPotentialField!, WeightsMatrixFile!, ApplyFalseDiscoveryRateFDRCorrection!, ResultsField!, ProbabilityField!, SourceID!, NumberOfNeighbors! };
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
@@ -117,6 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object InputField { get; set; }
 
 		/// <summary>
@@ -177,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 999999999999999)]
 		public object? DistanceBandOrThresholdDistance { get; set; }
 
 		/// <summary>
@@ -187,6 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? SelfPotentialField { get; set; }
 
 		/// <summary>
@@ -196,6 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("swm", "gwt")]
 		public object? WeightsMatrixFile { get; set; }
 
 		/// <summary>
@@ -237,7 +241,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 2, Max = 1000)]
 		public object? NumberOfNeighbors { get; set; }
 
 		/// <summary>

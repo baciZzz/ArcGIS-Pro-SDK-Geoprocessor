@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Threshold Rings</para>
+	/// <para>Generate Threshold Rings</para>
 	/// <para>Creates a feature class of ring trade areas that expand around point features until the threshold value is reached.</para>
 	/// </summary>
 	public class GenerateThresholdRingTradeArea : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Threshold Rings</para>
 		/// </summary>
-		public override string DisplayName => "Generate Threshold Rings";
+		public override string DisplayName() => "Generate Threshold Rings";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateThresholdRingTradeArea</para>
 		/// </summary>
-		public override string ToolName => "GenerateThresholdRingTradeArea";
+		public override string ToolName() => "GenerateThresholdRingTradeArea";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GenerateThresholdRingTradeArea</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GenerateThresholdRingTradeArea";
+		public override string ExcuteName() => "ba.GenerateThresholdRingTradeArea";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "geographicTransformations", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "geographicTransformations", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, ThresholdVariable, ThresholdValues!, Units!, IdField!, InputMethod!, Expression!, MinimumStep!, TargetPercentDiff! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, ThresholdVariable, ThresholdValues!, Units!, IdField!, InputMethod!, Expression!, MinimumStep!, TargetPercentDiff! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -122,6 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "GUID", "GlobalID")]
 		public object? IdField { get; set; }
 
 		/// <summary>
@@ -161,6 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[High(Allow = false, Value = 100)]
 		[Category("Advanced Parameters")]
 		public object? TargetPercentDiff { get; set; } = "5";
 

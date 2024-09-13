@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Create S-57 Exchange Set</para>
+	/// <para>Create S-57 Exchange Set</para>
 	/// <para>Allows a mariner to view the Electronic Navigational Chart (ENC) datasets in an Electronic Chart Display and Information System (ECDIS) for shipboard navigation.</para>
 	/// </summary>
 	public class CreateS57ExchangeSet : AbstractGPProcess
@@ -38,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Display Name : Create S-57 Exchange Set</para>
 		/// </summary>
-		public override string DisplayName => "Create S-57 Exchange Set";
+		public override string DisplayName() => "Create S-57 Exchange Set";
 
 		/// <summary>
 		/// <para>Tool Name : CreateS57ExchangeSet</para>
 		/// </summary>
-		public override string ToolName => "CreateS57ExchangeSet";
+		public override string ToolName() => "CreateS57ExchangeSet";
 
 		/// <summary>
 		/// <para>Tool Excute Name : maritime.CreateS57ExchangeSet</para>
 		/// </summary>
-		public override string ExcuteName => "maritime.CreateS57ExchangeSet";
+		public override string ExcuteName() => "maritime.CreateS57ExchangeSet";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Maritime Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Maritime Tools";
+		public override string ToolboxDisplayName() => "Maritime Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : maritime</para>
 		/// </summary>
-		public override string ToolboxAlise => "maritime";
+		public override string ToolboxAlise() => "maritime";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDirectories, OutDirectory, LayoutFormat!, UpdatesOnly!, DerivedOutDirectory! };
+		public override object[] Parameters() => new object[] { InDirectories, OutDirectory, LayoutFormat!, UpdatesOnly!, DerivedOutDirectory! };
 
 		/// <summary>
 		/// <para>Input Directories</para>

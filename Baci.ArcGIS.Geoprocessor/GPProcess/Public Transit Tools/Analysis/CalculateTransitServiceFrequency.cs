@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 {
 	/// <summary>
 	/// <para>Calculate Transit Service Frequency</para>
+	/// <para>Calculate Transit Service Frequency</para>
 	/// <para>Calculates the frequency of scheduled public transit service available within one or more specified time windows at public transit stops, along public transit lines, at points of interest, or in areas.</para>
 	/// </summary>
 	public class CalculateTransitServiceFrequency : AbstractGPProcess
@@ -62,37 +63,37 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Transit Service Frequency</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Transit Service Frequency";
+		public override string DisplayName() => "Calculate Transit Service Frequency";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateTransitServiceFrequency</para>
 		/// </summary>
-		public override string ToolName => "CalculateTransitServiceFrequency";
+		public override string ToolName() => "CalculateTransitServiceFrequency";
 
 		/// <summary>
 		/// <para>Tool Excute Name : transit.CalculateTransitServiceFrequency</para>
 		/// </summary>
-		public override string ExcuteName => "transit.CalculateTransitServiceFrequency";
+		public override string ExcuteName() => "transit.CalculateTransitServiceFrequency";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Public Transit Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Public Transit Tools";
+		public override string ToolboxDisplayName() => "Public Transit Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : transit</para>
 		/// </summary>
-		public override string ToolboxAlise => "transit";
+		public override string ToolboxAlise() => "transit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTransitFeatureDataset, AnalysisType, OutFeatureClass, TimeWindows, SeparateCountsByLine!, InPointsOfInterest!, NetworkDataSource!, TravelMode!, TravelLimit!, TravelLimitUnits!, CellSize!, Barriers! };
+		public override object[] Parameters() => new object[] { InTransitFeatureDataset, AnalysisType, OutFeatureClass, TimeWindows, SeparateCountsByLine!, InPointsOfInterest!, NetworkDataSource!, TravelMode!, TravelLimit!, TravelLimitUnits!, CellSize!, Barriers! };
 
 		/// <summary>
 		/// <para>Input Transit Feature Dataset</para>
@@ -169,6 +170,8 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon")]
+		[FeatureType("Simple")]
 		public object? InPointsOfInterest { get; set; }
 
 		/// <summary>

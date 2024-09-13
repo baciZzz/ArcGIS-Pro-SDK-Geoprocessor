@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Data Change Message</para>
+	/// <para>Export Data Change Message</para>
 	/// <para>Creates an output delta file containing updates from an input replica.</para>
 	/// </summary>
 	public class ExportDataChangeMessage : AbstractGPProcess
@@ -67,37 +68,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Data Change Message</para>
 		/// </summary>
-		public override string DisplayName => "Export Data Change Message";
+		public override string DisplayName() => "Export Data Change Message";
 
 		/// <summary>
 		/// <para>Tool Name : ExportDataChangeMessage</para>
 		/// </summary>
-		public override string ToolName => "ExportDataChangeMessage";
+		public override string ToolName() => "ExportDataChangeMessage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ExportDataChangeMessage</para>
 		/// </summary>
-		public override string ExcuteName => "management.ExportDataChangeMessage";
+		public override string ExcuteName() => "management.ExportDataChangeMessage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeodatabase, OutDataChangesFile, InReplica, SwitchToReceiver, IncludeUnacknowledgedChanges, IncludeNewChanges };
+		public override object[] Parameters() => new object[] { InGeodatabase, OutDataChangesFile, InReplica, SwitchToReceiver, IncludeUnacknowledgedChanges, IncludeNewChanges };
 
 		/// <summary>
 		/// <para>Export from Replica Geodatabase</para>
@@ -115,6 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml", "gdb")]
 		public object OutDataChangesFile { get; set; }
 
 		/// <summary>

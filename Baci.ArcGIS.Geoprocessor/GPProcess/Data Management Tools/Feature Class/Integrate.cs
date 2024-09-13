@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Integrate</para>
+	/// <para>Integrate</para>
 	/// <para>Analyzes the coordinate locations of feature vertices among features in one or more feature classes. Those that fall within a specified distance of one another are assumed to represent the same location and are assigned a common coordinate value (in other words, they are colocated). The tool also adds vertices where feature vertices are within the x,y tolerance of an edge and where line segments intersect.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.AnalysisTools.PairwiseIntegrate"/> tool provides enhanced functionality or performance</para>
 	/// <para>Input Will Be Modified</para>
@@ -34,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Integrate</para>
 		/// </summary>
-		public override string DisplayName => "Integrate";
+		public override string DisplayName() => "Integrate";
 
 		/// <summary>
 		/// <para>Tool Name : Integrate</para>
 		/// </summary>
-		public override string ToolName => "Integrate";
+		public override string ToolName() => "Integrate";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Integrate</para>
 		/// </summary>
-		public override string ExcuteName => "management.Integrate";
+		public override string ExcuteName() => "management.Integrate";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYTolerance", "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYTolerance", "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ClusterTolerance!, OutFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, ClusterTolerance!, OutFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>

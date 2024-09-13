@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Mainline Tree Layout</para>
+	/// <para>Add Mainline Tree Layout</para>
 	/// <para>Adds the Mainline Tree Layout algorithm to the list of layouts to be automatically chained at the end of the building of diagrams based on a given template. This tool also presets the Mainline Tree Layout algorithm parameters for any diagram based on that template.</para>
 	/// </summary>
 	public class AddMainlineTreeLayout : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Mainline Tree Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Mainline Tree Layout";
+		public override string DisplayName() => "Add Mainline Tree Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddMainlineTreeLayout</para>
 		/// </summary>
-		public override string ToolName => "AddMainlineTreeLayout";
+		public override string ToolName() => "AddMainlineTreeLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddMainlineTreeLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddMainlineTreeLayout";
+		public override string ExcuteName() => "nd.AddMainlineTreeLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, TreeDirection!, BranchesPlacement!, IsUnitAbsolute!, PerpendicularAbsolute!, PerpendicularProportional!, AlongAbsolute!, AlongProportional!, DisjoinedGraphAbsolute!, DisjoinedGraphProportional!, AreEdgesOrthogonal!, BreakpointPosition!, OutUtilityNetwork!, OutTemplateName!, EdgeDisplayType!, OffsetAbsolute!, OffsetProportional! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, TreeDirection!, BranchesPlacement!, IsUnitAbsolute!, PerpendicularAbsolute!, PerpendicularProportional!, AlongAbsolute!, AlongProportional!, DisjoinedGraphAbsolute!, DisjoinedGraphProportional!, AreEdgesOrthogonal!, BreakpointPosition!, OutUtilityNetwork!, OutTemplateName!, EdgeDisplayType!, OffsetAbsolute!, OffsetProportional! };
 
 		/// <summary>
 		/// <para>Input Network</para>

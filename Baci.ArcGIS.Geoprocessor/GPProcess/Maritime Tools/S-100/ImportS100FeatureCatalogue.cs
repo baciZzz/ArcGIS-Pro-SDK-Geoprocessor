@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Import S-100 Feature Catalogue</para>
+	/// <para>Import S-100 Feature Catalogue</para>
 	/// <para>Imports the contents of an S-100 feature catalogue into an existing geodatabase. A feature catalogue is an XML document that describes the content of a data product.</para>
 	/// </summary>
 	public class ImportS100FeatureCatalogue : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Tool Display Name : Import S-100 Feature Catalogue</para>
 		/// </summary>
-		public override string DisplayName => "Import S-100 Feature Catalogue";
+		public override string DisplayName() => "Import S-100 Feature Catalogue";
 
 		/// <summary>
 		/// <para>Tool Name : ImportS100FeatureCatalogue</para>
 		/// </summary>
-		public override string ToolName => "ImportS100FeatureCatalogue";
+		public override string ToolName() => "ImportS100FeatureCatalogue";
 
 		/// <summary>
 		/// <para>Tool Excute Name : maritime.ImportS100FeatureCatalogue</para>
 		/// </summary>
-		public override string ExcuteName => "maritime.ImportS100FeatureCatalogue";
+		public override string ExcuteName() => "maritime.ImportS100FeatureCatalogue";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Maritime Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Maritime Tools";
+		public override string ToolboxDisplayName() => "Maritime Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : maritime</para>
 		/// </summary>
-		public override string ToolboxAlise => "maritime";
+		public override string ToolboxAlise() => "maritime";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "S100FeatureCatalogueFile", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "S100FeatureCatalogueFile", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureCatalogue, TargetWorkspace, AdminConnection!, OutputWorkspace! };
+		public override object[] Parameters() => new object[] { InFeatureCatalogue, TargetWorkspace, AdminConnection!, OutputWorkspace! };
 
 		/// <summary>
 		/// <para>S-100 Feature Catalogue</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object InFeatureCatalogue { get; set; }
 
 		/// <summary>
@@ -83,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object TargetWorkspace { get; set; }
 
 		/// <summary>
@@ -92,6 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("sde")]
 		public object? AdminConnection { get; set; }
 
 		/// <summary>

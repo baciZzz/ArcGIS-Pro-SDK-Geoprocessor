@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Alter Domain</para>
+	/// <para>Alter Domain</para>
 	/// <para>Alters the properties of an existing attribute domain in a workspace.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Alter Domain</para>
 		/// </summary>
-		public override string DisplayName => "Alter Domain";
+		public override string DisplayName() => "Alter Domain";
 
 		/// <summary>
 		/// <para>Tool Name : AlterDomain</para>
 		/// </summary>
-		public override string ToolName => "AlterDomain";
+		public override string ToolName() => "AlterDomain";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AlterDomain</para>
 		/// </summary>
-		public override string ExcuteName => "management.AlterDomain";
+		public override string ExcuteName() => "management.AlterDomain";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, DomainName, NewDomainName!, NewDomainDescription!, SplitPolicy!, MergePolicy!, OutWorkspace!, NewDomainOwner! };
+		public override object[] Parameters() => new object[] { InWorkspace, DomainName, NewDomainName!, NewDomainDescription!, SplitPolicy!, MergePolicy!, OutWorkspace!, NewDomainOwner! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -76,6 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object InWorkspace { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Export Job Data</para>
+	/// <para>Export Job Data</para>
 	/// <para>This tool will export the Workflow Manager (Classic) repository to a .jxl file in the specified folder location. The .jxl file will contain all the configuration information for the repository as well as information about all the jobs. The .jxl file can be imported into another Workflow Manager (Classic) repository using the Import Job Data  tool.</para>
 	/// </summary>
 	public class ExportJobData : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Job Data</para>
 		/// </summary>
-		public override string DisplayName => "Export Job Data";
+		public override string DisplayName() => "Export Job Data";
 
 		/// <summary>
 		/// <para>Tool Name : ExportJobData</para>
 		/// </summary>
-		public override string ToolName => "ExportJobData";
+		public override string ToolName() => "ExportJobData";
 
 		/// <summary>
 		/// <para>Tool Excute Name : wmx.ExportJobData</para>
 		/// </summary>
-		public override string ExcuteName => "wmx.ExportJobData";
+		public override string ExcuteName() => "wmx.ExportJobData";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Workflow Manager Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Workflow Manager Tools";
+		public override string ToolboxDisplayName() => "Workflow Manager Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : wmx</para>
 		/// </summary>
-		public override string ToolboxAlise => "wmx";
+		public override string ToolboxAlise() => "wmx";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFolder, InputDatabasepath!, InputRepositoryName!, InputExportSince!, InputExportUntil!, OutputStatus! };
+		public override object[] Parameters() => new object[] { InputFolder, InputDatabasepath!, InputRepositoryName!, InputExportSince!, InputExportUntil!, OutputStatus! };
 
 		/// <summary>
 		/// <para>Folder To Export To</para>
@@ -77,6 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("jtc")]
 		public object? InputDatabasepath { get; set; }
 
 		/// <summary>

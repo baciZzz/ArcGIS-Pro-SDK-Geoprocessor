@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>GeoNames To Geodatabase</para>
+	/// <para>GeoNames To Geodatabase</para>
 	/// <para>Loads GeoNames data into a feature class and table. The feature class is composed of point features, and the table contains fields with information concerning the naming conventions used for the features. The feature class contains the Unique Feature Identifier (UFI) and Unique Name Identifier (UNI), which match the same fields in the GeoNames table.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : GeoNames To Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "GeoNames To Geodatabase";
+		public override string DisplayName() => "GeoNames To Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : GeoNamesToGeodatabase</para>
 		/// </summary>
-		public override string ToolName => "GeoNamesToGeodatabase";
+		public override string ToolName() => "GeoNamesToGeodatabase";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.GeoNamesToGeodatabase</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.GeoNamesToGeodatabase";
+		public override string ExcuteName() => "topographic.GeoNamesToGeodatabase";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSource, InFeatureClass, InAllowDuplicates, InTable, OutFeatureclass!, OutTable! };
+		public override object[] Parameters() => new object[] { InSource, InFeatureClass, InAllowDuplicates, InTable, OutFeatureclass!, OutTable! };
 
 		/// <summary>
 		/// <para>GeoNames Source File</para>
@@ -97,6 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InFeatureClass { get; set; }
 
 		/// <summary>

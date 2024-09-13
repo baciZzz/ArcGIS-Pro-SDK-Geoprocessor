@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Configure External Event With LRS</para>
+	/// <para>Configure External Event With LRS</para>
 	/// <para>Associates event data stored in an external system with an LRS.</para>
 	/// </summary>
 	public class ConfigureExternalEventWithLRS : AbstractGPProcess
@@ -55,37 +56,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Configure External Event With LRS</para>
 		/// </summary>
-		public override string DisplayName => "Configure External Event With LRS";
+		public override string DisplayName() => "Configure External Event With LRS";
 
 		/// <summary>
 		/// <para>Tool Name : ConfigureExternalEventWithLRS</para>
 		/// </summary>
-		public override string ToolName => "ConfigureExternalEventWithLRS";
+		public override string ToolName() => "ConfigureExternalEventWithLRS";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.ConfigureExternalEventWithLRS</para>
 		/// </summary>
-		public override string ExcuteName => "locref.ConfigureExternalEventWithLRS";
+		public override string ExcuteName() => "locref.ConfigureExternalEventWithLRS";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InEvent, ParentNetwork, EventName, EventIdField, RouteIdField, MeasureField, GeometryType!, ToMeasureField!, FromDateField!, ToDateField!, EventSpansRoutes!, ToRouteIdField!, StoreRouteName!, RouteNameField!, ToRouteNameField!, CalibrateRule!, RetireRule!, ExtendRule!, ReassignRule!, RealignRule!, OutExternalEventTable!, ReverseRule!, CartoRealignRule! };
+		public override object[] Parameters() => new object[] { InEvent, ParentNetwork, EventName, EventIdField, RouteIdField, MeasureField, GeometryType!, ToMeasureField!, FromDateField!, ToDateField!, EventSpansRoutes!, ToRouteIdField!, StoreRouteName!, RouteNameField!, ToRouteNameField!, CalibrateRule!, RetireRule!, ExtendRule!, ReassignRule!, RealignRule!, OutExternalEventTable!, ReverseRule!, CartoRealignRule! };
 
 		/// <summary>
 		/// <para>Input Event</para>
@@ -102,6 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object ParentNetwork { get; set; }
 
 		/// <summary>
@@ -119,6 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "GUID")]
 		public object EventIdField { get; set; }
 
 		/// <summary>
@@ -128,6 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "GUID")]
 		public object RouteIdField { get; set; }
 
 		/// <summary>
@@ -137,6 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double")]
 		public object MeasureField { get; set; }
 
 		/// <summary>
@@ -158,6 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double")]
 		public object? ToMeasureField { get; set; }
 
 		/// <summary>
@@ -167,6 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object? FromDateField { get; set; }
 
 		/// <summary>
@@ -176,6 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object? ToDateField { get; set; }
 
 		/// <summary>
@@ -198,6 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "GUID")]
 		public object? ToRouteIdField { get; set; }
 
 		/// <summary>
@@ -220,6 +229,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object? RouteNameField { get; set; }
 
 		/// <summary>
@@ -229,6 +239,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object? ToRouteNameField { get; set; }
 
 		/// <summary>

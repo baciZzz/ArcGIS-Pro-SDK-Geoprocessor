@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Set Balance Variables</para>
+	/// <para>Set Balance Variables</para>
 	/// <para>Configures variables to be used in the balancing process.</para>
 	/// </summary>
 	public class SetBalanceVariables : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Balance Variables</para>
 		/// </summary>
-		public override string DisplayName => "Set Balance Variables";
+		public override string DisplayName() => "Set Balance Variables";
 
 		/// <summary>
 		/// <para>Tool Name : SetBalanceVariables</para>
 		/// </summary>
-		public override string ToolName => "SetBalanceVariables";
+		public override string ToolName() => "SetBalanceVariables";
 
 		/// <summary>
 		/// <para>Tool Excute Name : td.SetBalanceVariables</para>
 		/// </summary>
-		public override string ExcuteName => "td.SetBalanceVariables";
+		public override string ExcuteName() => "td.SetBalanceVariables";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Territory Design Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Territory Design Tools";
+		public override string ToolboxDisplayName() => "Territory Design Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : td</para>
 		/// </summary>
-		public override string ToolboxAlise => "td";
+		public override string ToolboxAlise() => "td";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerritorySolution, Level, Variables!, OutTerritorySolution! };
+		public override object[] Parameters() => new object[] { InTerritorySolution, Level, Variables!, OutTerritorySolution! };
 
 		/// <summary>
 		/// <para>Input Territory Solution</para>

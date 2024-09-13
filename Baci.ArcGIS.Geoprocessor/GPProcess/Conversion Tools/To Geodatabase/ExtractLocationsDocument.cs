@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Extract Locations From Document</para>
+	/// <para>Extract Locations From Document</para>
 	/// <para>Analyzes documents containing unstructured or semistructured text, such as email messages, travel forms, and so on, and extracts locations to a point feature class.</para>
 	/// </summary>
 	public class ExtractLocationsDocument : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Extract Locations From Document</para>
 		/// </summary>
-		public override string DisplayName => "Extract Locations From Document";
+		public override string DisplayName() => "Extract Locations From Document";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractLocationsDocument</para>
 		/// </summary>
-		public override string ToolName => "ExtractLocationsDocument";
+		public override string ToolName() => "ExtractLocationsDocument";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.ExtractLocationsDocument</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.ExtractLocationsDocument";
+		public override string ExcuteName() => "conversion.ExtractLocationsDocument";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFile, OutFeatureClass, InTemplate!, CoordDdLatlon!, CoordDdXydeg!, CoordDdXyplain!, CoordDmLatlon!, CoordDmXymin!, CoordDmsLatlon!, CoordDmsXysec!, CoordDmsXysep!, CoordUtm!, CoordUpsNorth!, CoordUpsSouth!, CoordMgrs!, CoordMgrsNorthpolar!, CoordMgrsSouthpolar!, CommaDecimal!, CoordUseLonlat!, InCoorSystem!, InCustomLocations!, FuzzyMatch!, MaxFeaturesExtracted!, IgnoreFirstFeatures!, DateMonthname!, DateMDY!, DateYyyymmdd!, DateYymmdd!, DateYyjjj!, MaxDatesExtracted!, IgnoreFirstDates!, DateRangeBegin!, DateRangeEnd!, InCustomAttributes!, FileLink!, FileModDatetime!, PreTextLength!, PostTextLength!, StdCoordFmt!, ReqWordBreaks! };
+		public override object[] Parameters() => new object[] { InFile, OutFeatureClass, InTemplate!, CoordDdLatlon!, CoordDdXydeg!, CoordDdXyplain!, CoordDmLatlon!, CoordDmXymin!, CoordDmsLatlon!, CoordDmsXysec!, CoordDmsXysep!, CoordUtm!, CoordUpsNorth!, CoordUpsSouth!, CoordMgrs!, CoordMgrsNorthpolar!, CoordMgrsSouthpolar!, CommaDecimal!, CoordUseLonlat!, InCoorSystem!, InCustomLocations!, FuzzyMatch!, MaxFeaturesExtracted!, IgnoreFirstFeatures!, DateMonthname!, DateMDY!, DateYyyymmdd!, DateYymmdd!, DateYyjjj!, MaxDatesExtracted!, IgnoreFirstDates!, DateRangeBegin!, DateRangeEnd!, InCustomAttributes!, FileLink!, FileModDatetime!, PreTextLength!, PostTextLength!, StdCoordFmt!, ReqWordBreaks! };
 
 		/// <summary>
 		/// <para>Input File</para>
@@ -82,6 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object OutFeatureClass { get; set; }
 
 		/// <summary>
@@ -96,6 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("lxttmpl")]
 		public object? InTemplate { get; set; }
 
 		/// <summary>
@@ -322,6 +326,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("lxtgaz")]
 		[Category("Custom Locations")]
 		public object? InCustomLocations { get; set; }
 
@@ -344,7 +349,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 2147483647)]
 		[Category("Feature Options")]
 		public object? MaxFeaturesExtracted { get; set; }
 
@@ -354,7 +359,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 2147483647)]
 		[Category("Feature Options")]
 		public object? IgnoreFirstFeatures { get; set; }
 
@@ -429,7 +434,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 2147483647)]
 		[Category("Date Options")]
 		public object? MaxDatesExtracted { get; set; }
 
@@ -439,7 +444,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 2147483647)]
 		[Category("Date Options")]
 		public object? IgnoreFirstDates { get; set; }
 
@@ -468,6 +473,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("lxtca")]
 		[Category("Custom Attributes")]
 		public object? InCustomAttributes { get; set; }
 
@@ -495,7 +501,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 2147483647)]
 		[Category("Feature Options")]
 		public object? PreTextLength { get; set; } = "254";
 
@@ -505,7 +511,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 2147483647)]
 		[Category("Feature Options")]
 		public object? PostTextLength { get; set; } = "254";
 

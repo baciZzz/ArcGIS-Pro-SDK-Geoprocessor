@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Measure Cannibalization</para>
+	/// <para>Measure Cannibalization</para>
 	/// <para>Calculates the amount of overlap between two or more polygons. Overlap refers to the extent of the polygons beyond intersection.</para>
 	/// </summary>
 	public class MeasureCannibalization : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Measure Cannibalization</para>
 		/// </summary>
-		public override string DisplayName => "Measure Cannibalization";
+		public override string DisplayName() => "Measure Cannibalization";
 
 		/// <summary>
 		/// <para>Tool Name : MeasureCannibalization</para>
 		/// </summary>
-		public override string ToolName => "MeasureCannibalization";
+		public override string ToolName() => "MeasureCannibalization";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.MeasureCannibalization</para>
 		/// </summary>
-		public override string ExcuteName => "ba.MeasureCannibalization";
+		public override string ExcuteName() => "ba.MeasureCannibalization";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "geographicTransformations", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "geographicTransformations", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, AreaIdField, AreaDescriptionField, OutFeatureClass, StoreIdField!, CreateReport!, ReportTitle!, ReportFolder!, ReportFormat!, OutputReport!, Variables! };
+		public override object[] Parameters() => new object[] { InFeatures, AreaIdField, AreaDescriptionField, OutFeatureClass, StoreIdField!, CreateReport!, ReportTitle!, ReportFolder!, ReportFormat!, OutputReport!, Variables! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -84,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -93,6 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "GUID", "GlobalID")]
 		public object AreaIdField { get; set; }
 
 		/// <summary>
@@ -102,6 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object AreaDescriptionField { get; set; }
 
 		/// <summary>
@@ -119,6 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "GUID", "GlobalID")]
 		public object? StoreIdField { get; set; }
 
 		/// <summary>

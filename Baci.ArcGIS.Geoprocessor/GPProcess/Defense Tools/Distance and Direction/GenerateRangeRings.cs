@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Generate Range Rings</para>
+	/// <para>Generate Range Rings</para>
 	/// <para>Creates a set of concentric circles from a point, given a number of rings and distance between rings or a minimum and maximum distance from center.</para>
 	/// </summary>
 	[Obsolete()]
@@ -44,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Range Rings</para>
 		/// </summary>
-		public override string DisplayName => "Generate Range Rings";
+		public override string DisplayName() => "Generate Range Rings";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateRangeRings</para>
 		/// </summary>
-		public override string ToolName => "GenerateRangeRings";
+		public override string ToolName() => "GenerateRangeRings";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.GenerateRangeRings</para>
 		/// </summary>
-		public override string ExcuteName => "defense.GenerateRangeRings";
+		public override string ExcuteName() => "defense.GenerateRangeRings";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClassRings, RangeRingsType, OutFeatureClassRadials!, NumberOfRadials!, DistanceUnits!, NumberOfRings!, IntervalBetweenRings!, MinimumRange!, MaximumRange! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClassRings, RangeRingsType, OutFeatureClassRadials!, NumberOfRadials!, DistanceUnits!, NumberOfRings!, IntervalBetweenRings!, MinimumRange!, MaximumRange! };
 
 		/// <summary>
 		/// <para>Input Features (Center Points)</para>
@@ -83,6 +84,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

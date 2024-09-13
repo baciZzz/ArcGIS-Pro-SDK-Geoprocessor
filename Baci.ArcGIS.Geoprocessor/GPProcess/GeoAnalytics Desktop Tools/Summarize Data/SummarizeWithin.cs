@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Summarize Within</para>
+	/// <para>Summarize Within</para>
 	/// <para>Overlays a polygon layer with another layer to summarize the number of points, length of the lines, or area of the polygons within each polygon and calculates attribute field statistics about those features within the polygons.</para>
 	/// </summary>
 	public class SummarizeWithin : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Tool Display Name : Summarize Within</para>
 		/// </summary>
-		public override string DisplayName => "Summarize Within";
+		public override string DisplayName() => "Summarize Within";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeWithin</para>
 		/// </summary>
-		public override string ToolName => "SummarizeWithin";
+		public override string ToolName() => "SummarizeWithin";
 
 		/// <summary>
 		/// <para>Tool Excute Name : gapro.SummarizeWithin</para>
 		/// </summary>
-		public override string ExcuteName => "gapro.SummarizeWithin";
+		public override string ExcuteName() => "gapro.SummarizeWithin";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Desktop Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Desktop Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Desktop Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : gapro</para>
 		/// </summary>
-		public override string ToolboxAlise => "gapro";
+		public override string ToolboxAlise() => "gapro";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { SummarizedLayer, OutFeatureClass, PolygonOrBin!, BinType!, BinSize!, SummaryPolygons!, SumShape!, ShapeUnits!, StandardSummaryFields!, WeightedSummaryFields!, GroupByField!, AddMinorityMajority!, AddPercentages!, GroupBySummary! };
+		public override object[] Parameters() => new object[] { SummarizedLayer, OutFeatureClass, PolygonOrBin!, BinType!, BinSize!, SummaryPolygons!, SumShape!, ShapeUnits!, StandardSummaryFields!, WeightedSummaryFields!, GroupByField!, AddMinorityMajority!, AddPercentages!, GroupBySummary! };
 
 		/// <summary>
 		/// <para>Summarized  Layer</para>
@@ -74,6 +75,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon", "Polyline")]
+		[FeatureType("Simple")]
 		public object SummarizedLayer { get; set; }
 
 		/// <summary>
@@ -124,6 +127,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? SummaryPolygons { get; set; }
 
 		/// <summary>
@@ -193,6 +198,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Text", "Date")]
 		public object? GroupByField { get; set; }
 
 		/// <summary>

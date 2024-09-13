@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Point Cloud To Raster</para>
+	/// <para>Point Cloud To Raster</para>
 	/// <para>Creates a raster surface from height values in a point cloud scene layer package file (*.slpk).</para>
 	/// </summary>
 	public class PointCloudToRaster : AbstractGPProcess
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Point Cloud To Raster</para>
 		/// </summary>
-		public override string DisplayName => "Point Cloud To Raster";
+		public override string DisplayName() => "Point Cloud To Raster";
 
 		/// <summary>
 		/// <para>Tool Name : PointCloudToRaster</para>
 		/// </summary>
-		public override string ToolName => "PointCloudToRaster";
+		public override string ToolName() => "PointCloudToRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.PointCloudToRaster</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.PointCloudToRaster";
+		public override string ExcuteName() => "conversion.PointCloudToRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "pyramid", "rasterStatistics", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "pyramid", "rasterStatistics", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InPointCloud, CellSize, OutRaster, CellAssignment!, VoidFill!, ZFactor! };
+		public override object[] Parameters() => new object[] { InPointCloud, CellSize, OutRaster, CellAssignment!, VoidFill!, ZFactor! };
 
 		/// <summary>
 		/// <para>Input Point Cloud</para>

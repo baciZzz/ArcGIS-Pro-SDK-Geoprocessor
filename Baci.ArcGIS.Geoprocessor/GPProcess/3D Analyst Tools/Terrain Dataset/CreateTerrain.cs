@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Create Terrain</para>
+	/// <para>Create Terrain</para>
 	/// <para>Creates a terrain dataset.</para>
 	/// </summary>
 	public class CreateTerrain : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Terrain</para>
 		/// </summary>
-		public override string DisplayName => "Create Terrain";
+		public override string DisplayName() => "Create Terrain";
 
 		/// <summary>
 		/// <para>Tool Name : CreateTerrain</para>
 		/// </summary>
-		public override string ToolName => "CreateTerrain";
+		public override string ToolName() => "CreateTerrain";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.CreateTerrain</para>
 		/// </summary>
-		public override string ExcuteName => "3d.CreateTerrain";
+		public override string ExcuteName() => "3d.CreateTerrain";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "configKeyword", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "configKeyword", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureDataset, OutTerrainName, AveragePointSpacing, MaxOverviewSize!, ConfigKeyword!, PyramidType!, WindowsizeMethod!, SecondaryThinningMethod!, SecondaryThinningThreshold!, DerivedOutTerrain!, TriangulationMethod! };
+		public override object[] Parameters() => new object[] { InFeatureDataset, OutTerrainName, AveragePointSpacing, MaxOverviewSize!, ConfigKeyword!, PyramidType!, WindowsizeMethod!, SecondaryThinningMethod!, SecondaryThinningThreshold!, DerivedOutTerrain!, TriangulationMethod! };
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Multiscale Geographically Weighted Regression (MGWR)</para>
+	/// <para>Multiscale Geographically Weighted Regression (MGWR)</para>
 	/// <para>Performs multiscale geographically weighted regression (MGWR), which is a local form of linear regression that models spatially varying relationships.</para>
 	/// </summary>
 	public class MGWR : AbstractGPProcess
@@ -69,37 +70,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Multiscale Geographically Weighted Regression (MGWR)</para>
 		/// </summary>
-		public override string DisplayName => "Multiscale Geographically Weighted Regression (MGWR)";
+		public override string DisplayName() => "Multiscale Geographically Weighted Regression (MGWR)";
 
 		/// <summary>
 		/// <para>Tool Name : MGWR</para>
 		/// </summary>
-		public override string ToolName => "MGWR";
+		public override string ToolName() => "MGWR";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.MGWR</para>
 		/// </summary>
-		public override string ExcuteName => "stats.MGWR";
+		public override string ExcuteName() => "stats.MGWR";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeatures, NeighborhoodType, NeighborhoodSelectionMethod, MinimumNumberOfNeighbors!, MaximumNumberOfNeighbors!, DistanceUnit!, MinimumSearchDistance!, MaximumSearchDistance!, NumberOfNeighborsIncrement!, SearchDistanceIncrement!, NumberOfIncrements!, NumberOfNeighbors!, DistanceBand!, NumberOfNeighborsGolden!, NumberOfNeighborsManual!, NumberOfNeighborsDefined!, DistanceGolden!, DistanceManual!, DistanceDefined!, PredictionLocations!, ExplanatoryVariablesToMatch!, OutputPredictedFeatures!, RobustPrediction!, LocalWeightingScheme!, OutputTable!, CoefficientRasterWorkspace!, Scale!, CoefficientRasterLayers!, OutputLayerGroup! };
+		public override object[] Parameters() => new object[] { InFeatures, DependentVariable, ModelType, ExplanatoryVariables, OutputFeatures, NeighborhoodType, NeighborhoodSelectionMethod, MinimumNumberOfNeighbors!, MaximumNumberOfNeighbors!, DistanceUnit!, MinimumSearchDistance!, MaximumSearchDistance!, NumberOfNeighborsIncrement!, SearchDistanceIncrement!, NumberOfIncrements!, NumberOfNeighbors!, DistanceBand!, NumberOfNeighborsGolden!, NumberOfNeighborsManual!, NumberOfNeighborsDefined!, DistanceGolden!, DistanceManual!, DistanceDefined!, PredictionLocations!, ExplanatoryVariablesToMatch!, OutputPredictedFeatures!, RobustPrediction!, LocalWeightingScheme!, OutputTable!, CoefficientRasterWorkspace!, Scale!, CoefficientRasterLayers!, OutputLayerGroup! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -108,6 +109,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -117,6 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object DependentVariable { get; set; }
 
 		/// <summary>
@@ -137,6 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object ExplanatoryVariables { get; set; }
 
 		/// <summary>
@@ -240,7 +245,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 2, Max = 20)]
 		public object? NumberOfIncrements { get; set; }
 
 		/// <summary>
@@ -326,6 +331,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon")]
+		[FeatureType("Simple")]
 		[Category("Prediction Options")]
 		public object? PredictionLocations { get; set; }
 

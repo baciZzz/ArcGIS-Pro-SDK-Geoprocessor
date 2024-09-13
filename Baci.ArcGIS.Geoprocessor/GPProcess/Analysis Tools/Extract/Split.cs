@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Split</para>
+	/// <para>Split</para>
 	/// <para>Splits an input with overlaying features to  create a subset of output feature classes.</para>
 	/// </summary>
 	public class Split : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Split</para>
 		/// </summary>
-		public override string DisplayName => "Split";
+		public override string DisplayName() => "Split";
 
 		/// <summary>
 		/// <para>Tool Name : Split</para>
 		/// </summary>
-		public override string ToolName => "Split";
+		public override string ToolName() => "Split";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.Split</para>
 		/// </summary>
-		public override string ExcuteName => "analysis.Split";
+		public override string ExcuteName() => "analysis.Split";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Analysis Tools";
+		public override string ToolboxDisplayName() => "Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : analysis</para>
 		/// </summary>
-		public override string ToolboxAlise => "analysis";
+		public override string ToolboxAlise() => "analysis";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "configKeyword", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, SplitFeatures, SplitField, OutWorkspace, ClusterTolerance!, OutWorkspace2! };
+		public override object[] Parameters() => new object[] { InFeatures, SplitFeatures, SplitField, OutWorkspace, ClusterTolerance!, OutWorkspace2! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -92,6 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object SplitFeatures { get; set; }
 
 		/// <summary>
@@ -101,6 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object SplitField { get; set; }
 
 		/// <summary>

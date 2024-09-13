@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Delete Terrain Points</para>
+	/// <para>Delete Terrain Points</para>
 	/// <para>Deletes points within a specified area of interest from one or more features that participate in a terrain dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -42,37 +43,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete Terrain Points</para>
 		/// </summary>
-		public override string DisplayName => "Delete Terrain Points";
+		public override string DisplayName() => "Delete Terrain Points";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteTerrainPoints</para>
 		/// </summary>
-		public override string ToolName => "DeleteTerrainPoints";
+		public override string ToolName() => "DeleteTerrainPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.DeleteTerrainPoints</para>
 		/// </summary>
-		public override string ExcuteName => "3d.DeleteTerrainPoints";
+		public override string ExcuteName() => "3d.DeleteTerrainPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTerrain, DataSource, PolygonFeaturesOrExtent, DerivedOutTerrain! };
+		public override object[] Parameters() => new object[] { InTerrain, DataSource, PolygonFeaturesOrExtent, DerivedOutTerrain! };
 
 		/// <summary>
 		/// <para>Input Terrain</para>

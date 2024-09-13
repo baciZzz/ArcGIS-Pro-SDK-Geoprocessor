@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Coordinate Table To Line Of Bearing</para>
+	/// <para>Coordinate Table To Line Of Bearing</para>
 	/// <para>Creates lines of bearing from coordinates stored in a table.</para>
 	/// </summary>
 	public class CoordinateTableToLineOfBearing : AbstractGPProcess
@@ -67,37 +68,37 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Tool Display Name : Coordinate Table To Line Of Bearing</para>
 		/// </summary>
-		public override string DisplayName => "Coordinate Table To Line Of Bearing";
+		public override string DisplayName() => "Coordinate Table To Line Of Bearing";
 
 		/// <summary>
 		/// <para>Tool Name : CoordinateTableToLineOfBearing</para>
 		/// </summary>
-		public override string ToolName => "CoordinateTableToLineOfBearing";
+		public override string ToolName() => "CoordinateTableToLineOfBearing";
 
 		/// <summary>
 		/// <para>Tool Excute Name : defense.CoordinateTableToLineOfBearing</para>
 		/// </summary>
-		public override string ExcuteName => "defense.CoordinateTableToLineOfBearing";
+		public override string ExcuteName() => "defense.CoordinateTableToLineOfBearing";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Defense Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Defense Tools";
+		public override string ToolboxDisplayName() => "Defense Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : defense</para>
 		/// </summary>
-		public override string ToolboxAlise => "defense";
+		public override string ToolboxAlise() => "defense";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutFeatureClass, XOrLonField, BearingField, DistanceField, InCoordinateFormat, BearingUnits!, DistanceUnits!, YOrLatField!, LineType!, CoordinateSystem! };
+		public override object[] Parameters() => new object[] { InTable, OutFeatureClass, XOrLonField, BearingField, DistanceField, InCoordinateFormat, BearingUnits!, DistanceUnits!, YOrLatField!, LineType!, CoordinateSystem! };
 
 		/// <summary>
 		/// <para>Input Table</para>

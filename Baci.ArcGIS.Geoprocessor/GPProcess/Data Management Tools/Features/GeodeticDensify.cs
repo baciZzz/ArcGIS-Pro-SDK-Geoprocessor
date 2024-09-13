@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Geodetic Densify</para>
+	/// <para>Geodetic Densify</para>
 	/// <para>Creates new features by replacing input feature's segments with densified approximations of geodesic segments. Four type of geodesic segments can be constructed: Geodesic, Great Elliptic, Loxodrome, and Normal Section.</para>
 	/// </summary>
 	public class GeodeticDensify : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Geodetic Densify</para>
 		/// </summary>
-		public override string DisplayName => "Geodetic Densify";
+		public override string DisplayName() => "Geodetic Densify";
 
 		/// <summary>
 		/// <para>Tool Name : GeodeticDensify</para>
 		/// </summary>
-		public override string ToolName => "GeodeticDensify";
+		public override string ToolName() => "GeodeticDensify";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.GeodeticDensify</para>
 		/// </summary>
-		public override string ExcuteName => "management.GeodeticDensify";
+		public override string ExcuteName() => "management.GeodeticDensify";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, GeodeticType, Distance! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, GeodeticType, Distance! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -84,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline", "Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

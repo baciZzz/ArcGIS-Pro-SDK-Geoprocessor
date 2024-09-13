@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Feature To 3D By Time</para>
+	/// <para>Feature To 3D By Time</para>
 	/// <para>Creates a 3D feature class using date values from</para>
 	/// <para>input features.</para>
 	/// </summary>
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Display Name : Feature To 3D By Time</para>
 		/// </summary>
-		public override string DisplayName => "Feature To 3D By Time";
+		public override string DisplayName() => "Feature To 3D By Time";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureTo3DByTime</para>
 		/// </summary>
-		public override string ToolName => "FeatureTo3DByTime";
+		public override string ToolName() => "FeatureTo3DByTime";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ca.FeatureTo3DByTime</para>
 		/// </summary>
-		public override string ExcuteName => "ca.FeatureTo3DByTime";
+		public override string ExcuteName() => "ca.FeatureTo3DByTime";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Crime Analysis and Safety Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Crime Analysis and Safety Tools";
+		public override string ToolboxDisplayName() => "Crime Analysis and Safety Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ca</para>
 		/// </summary>
-		public override string ToolboxAlise => "ca";
+		public override string ToolboxAlise() => "ca";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "outputZValue", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "outputZValue", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, DateField, TimeZUnit!, BaseZ!, BaseDate! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, DateField, TimeZUnit!, BaseZ!, BaseDate! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -80,6 +81,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon", "Polyline")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -97,6 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object DateField { get; set; }
 
 		/// <summary>

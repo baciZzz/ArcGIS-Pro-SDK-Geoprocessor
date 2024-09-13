@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 {
 	/// <summary>
 	/// <para>GTFS Shapes To Features</para>
+	/// <para>GTFS Shapes To Features</para>
 	/// <para>Converts a GTFS shapes.txt file from a GTFS public transit dataset to a polyline feature class showing the physical paths taken by vehicles in the public transit system.</para>
 	/// </summary>
 	public class GTFSShapesToFeatures : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		/// <summary>
 		/// <para>Tool Display Name : GTFS Shapes To Features</para>
 		/// </summary>
-		public override string DisplayName => "GTFS Shapes To Features";
+		public override string DisplayName() => "GTFS Shapes To Features";
 
 		/// <summary>
 		/// <para>Tool Name : GTFSShapesToFeatures</para>
 		/// </summary>
-		public override string ToolName => "GTFSShapesToFeatures";
+		public override string ToolName() => "GTFSShapesToFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : transit.GTFSShapesToFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "transit.GTFSShapesToFeatures";
+		public override string ExcuteName() => "transit.GTFSShapesToFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Public Transit Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Public Transit Tools";
+		public override string ToolboxDisplayName() => "Public Transit Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : transit</para>
 		/// </summary>
-		public override string ToolboxAlise => "transit";
+		public override string ToolboxAlise() => "transit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGtfsShapesFile, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InGtfsShapesFile, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Input GTFS Shapes File</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("txt")]
 		public object InGtfsShapesFile { get; set; }
 
 		/// <summary>

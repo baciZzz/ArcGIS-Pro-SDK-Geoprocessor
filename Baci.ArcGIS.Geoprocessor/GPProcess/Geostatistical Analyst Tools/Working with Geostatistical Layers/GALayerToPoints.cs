@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>GA Layer To Points</para>
+	/// <para>GA Layer To Points</para>
 	/// <para>Exports a geostatistical layer to points. The tool can also be used to predict values at unmeasured locations or to validate predictions made at measured locations.</para>
 	/// </summary>
 	public class GALayerToPoints : AbstractGPProcess
@@ -65,37 +66,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : GA Layer To Points</para>
 		/// </summary>
-		public override string DisplayName => "GA Layer To Points";
+		public override string DisplayName() => "GA Layer To Points";
 
 		/// <summary>
 		/// <para>Tool Name : GALayerToPoints</para>
 		/// </summary>
-		public override string ToolName => "GALayerToPoints";
+		public override string ToolName() => "GALayerToPoints";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.GALayerToPoints</para>
 		/// </summary>
-		public override string ExcuteName => "ga.GALayerToPoints";
+		public override string ExcuteName() => "ga.GALayerToPoints";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayer, InLocations, ZField!, OutFeatureClass, AppendAllFields!, ElevationField!, ElevationUnits! };
+		public override object[] Parameters() => new object[] { InGeostatLayer, InLocations, ZField!, OutFeatureClass, AppendAllFields!, ElevationField!, ElevationUnits! };
 
 		/// <summary>
 		/// <para>Input geostatistical layer</para>
@@ -112,6 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InLocations { get; set; }
 
 		/// <summary>
@@ -121,6 +123,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[ExcludeField("Predicted", "StdError", "Error", "Stdd_Error", "NormValue", "Source_ID", "Included")]
 		public object? ZField { get; set; }
 
 		/// <summary>
@@ -175,6 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? ElevationField { get; set; }
 
 		/// <summary>

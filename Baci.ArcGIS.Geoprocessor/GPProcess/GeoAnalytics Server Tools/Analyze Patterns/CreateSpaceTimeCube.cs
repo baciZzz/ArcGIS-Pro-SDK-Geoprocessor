@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Create Space Time Cube</para>
+	/// <para>Create Space Time Cube</para>
 	/// <para>Summarizes a set of points into a netCDF data structure by aggregating them into space-time bins.  Within each bin, the points are counted, and specified attributes are aggregated.  For all bin locations, the trend for counts and summary field values are evaluated.</para>
 	/// </summary>
 	public class CreateSpaceTimeCube : AbstractGPProcess
@@ -46,37 +47,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Space Time Cube</para>
 		/// </summary>
-		public override string DisplayName => "Create Space Time Cube";
+		public override string DisplayName() => "Create Space Time Cube";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSpaceTimeCube</para>
 		/// </summary>
-		public override string ToolName => "CreateSpaceTimeCube";
+		public override string ToolName() => "CreateSpaceTimeCube";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoanalytics.CreateSpaceTimeCube</para>
 		/// </summary>
-		public override string ExcuteName => "geoanalytics.CreateSpaceTimeCube";
+		public override string ExcuteName() => "geoanalytics.CreateSpaceTimeCube";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAnalytics Server Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAnalytics Server Tools";
+		public override string ToolboxDisplayName() => "GeoAnalytics Server Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoanalytics</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoanalytics";
+		public override string ToolboxAlise() => "geoanalytics";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { PointLayer, OutputName, DistanceInterval, TimeStepInterval, TimeStepIntervalAlignment!, ReferenceTime!, SummaryFields!, Output! };
+		public override object[] Parameters() => new object[] { PointLayer, OutputName, DistanceInterval, TimeStepInterval, TimeStepIntervalAlignment!, ReferenceTime!, SummaryFields!, Output! };
 
 		/// <summary>
 		/// <para>Point Layer</para>
@@ -85,6 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple")]
+		[PortalType("DataStoreCatalogLayer")]
 		public object PointLayer { get; set; }
 
 		/// <summary>

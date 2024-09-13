@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Delineate Built-Up Areas</para>
+	/// <para>Delineate Built-Up Areas</para>
 	/// <para>Creates polygons to represent built-up areas by delineating densely clustered arrangements of buildings on small-scale maps.</para>
 	/// </summary>
 	public class DelineateBuiltUpAreas : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Delineate Built-Up Areas</para>
 		/// </summary>
-		public override string DisplayName => "Delineate Built-Up Areas";
+		public override string DisplayName() => "Delineate Built-Up Areas";
 
 		/// <summary>
 		/// <para>Tool Name : DelineateBuiltUpAreas</para>
 		/// </summary>
-		public override string ToolName => "DelineateBuiltUpAreas";
+		public override string ToolName() => "DelineateBuiltUpAreas";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.DelineateBuiltUpAreas</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.DelineateBuiltUpAreas";
+		public override string ExcuteName() => "cartography.DelineateBuiltUpAreas";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicPartitions", "referenceScale" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicPartitions", "referenceScale" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InBuildings, IdentifierField!, EdgeFeatures!, GroupingDistance, MinimumDetailSize, OutFeatureClass, MinimumBuildingCount! };
+		public override object[] Parameters() => new object[] { InBuildings, IdentifierField!, EdgeFeatures!, GroupingDistance, MinimumDetailSize, OutFeatureClass, MinimumBuildingCount! };
 
 		/// <summary>
 		/// <para>Input Building Layers</para>
@@ -84,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Point")]
 		public object InBuildings { get; set; }
 
 		/// <summary>
@@ -105,6 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Polyline")]
 		public object? EdgeFeatures { get; set; }
 
 		/// <summary>
@@ -130,6 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object OutFeatureClass { get; set; }
 
 		/// <summary>

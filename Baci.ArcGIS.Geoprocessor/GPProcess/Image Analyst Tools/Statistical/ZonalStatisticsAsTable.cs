@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Zonal Statistics as Table</para>
+	/// <para>Zonal Statistics as Table</para>
 	/// <para>Summarizes the values of a raster within the zones of another dataset and reports the results as a table.</para>
 	/// </summary>
 	public class ZonalStatisticsAsTable : AbstractGPProcess
@@ -48,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Zonal Statistics as Table</para>
 		/// </summary>
-		public override string DisplayName => "Zonal Statistics as Table";
+		public override string DisplayName() => "Zonal Statistics as Table";
 
 		/// <summary>
 		/// <para>Tool Name : ZonalStatisticsAsTable</para>
 		/// </summary>
-		public override string ToolName => "ZonalStatisticsAsTable";
+		public override string ToolName() => "ZonalStatisticsAsTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.ZonalStatisticsAsTable</para>
 		/// </summary>
-		public override string ExcuteName => "ia.ZonalStatisticsAsTable";
+		public override string ExcuteName() => "ia.ZonalStatisticsAsTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "qualifiedFieldNames", "scratchWorkspace", "snapRaster", "tileSize", "transferDomains", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "qualifiedFieldNames", "scratchWorkspace", "snapRaster", "tileSize", "transferDomains", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InZoneData, ZoneField, InValueRaster, OutTable, IgnoreNodata!, StatisticsType!, ProcessAsMultidimensional!, PercentileValues!, PercentileInterpolationType!, CircularCalculation!, CircularWrapValue! };
+		public override object[] Parameters() => new object[] { InZoneData, ZoneField, InValueRaster, OutTable, IgnoreNodata!, StatisticsType!, ProcessAsMultidimensional!, PercentileValues!, PercentileInterpolationType!, CircularCalculation!, CircularWrapValue! };
 
 		/// <summary>
 		/// <para>Input Raster or Feature Zone Data</para>
@@ -87,7 +88,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEFeatureClass", "GPFeatureLayer", "DETin", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InZoneData { get; set; }
 
 		/// <summary>
@@ -97,7 +101,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{4B6CA858-5716-4AC3-A2EE-70EE2D29C1BD}", UseRasterFields = true)]
+		[FieldType("Short", "Long", "OID", "Text")]
 		public object ZoneField { get; set; }
 
 		/// <summary>
@@ -106,7 +111,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InValueRaster { get; set; }
 
 		/// <summary>
@@ -175,6 +183,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
+		[High(Allow = true, Value = 100)]
 		public object? PercentileValues { get; set; }
 
 		/// <summary>

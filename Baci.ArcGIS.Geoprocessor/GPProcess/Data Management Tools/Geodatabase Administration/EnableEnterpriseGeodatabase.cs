@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Enable Enterprise Geodatabase</para>
+	/// <para>Enable Enterprise Geodatabase</para>
 	/// <para>Creates geodatabase system tables, stored procedures, functions, and types in an existing database, which enable geodatabase functionality in the database.</para>
 	/// </summary>
 	public class EnableEnterpriseGeodatabase : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Enable Enterprise Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "Enable Enterprise Geodatabase";
+		public override string DisplayName() => "Enable Enterprise Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : EnableEnterpriseGeodatabase</para>
 		/// </summary>
-		public override string ToolName => "EnableEnterpriseGeodatabase";
+		public override string ToolName() => "EnableEnterpriseGeodatabase";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.EnableEnterpriseGeodatabase</para>
 		/// </summary>
-		public override string ExcuteName => "management.EnableEnterpriseGeodatabase";
+		public override string ExcuteName() => "management.EnableEnterpriseGeodatabase";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, AuthorizationFile, OutWorkspace! };
+		public override object[] Parameters() => new object[] { InputDatabase, AuthorizationFile, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
@@ -75,6 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Remote Database")]
 		public object InputDatabase { get; set; }
 
 		/// <summary>

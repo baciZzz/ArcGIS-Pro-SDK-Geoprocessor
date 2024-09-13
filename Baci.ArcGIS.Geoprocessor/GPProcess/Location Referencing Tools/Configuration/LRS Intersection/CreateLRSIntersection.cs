@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Create LRS Intersection</para>
+	/// <para>Create LRS Intersection</para>
 	/// <para>Creates an intersection feature class for an existing LRS Network.</para>
 	/// </summary>
 	public class CreateLRSIntersection : AbstractGPProcess
@@ -49,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Create LRS Intersection</para>
 		/// </summary>
-		public override string DisplayName => "Create LRS Intersection";
+		public override string DisplayName() => "Create LRS Intersection";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLRSIntersection</para>
 		/// </summary>
-		public override string ToolName => "CreateLRSIntersection";
+		public override string ToolName() => "CreateLRSIntersection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.CreateLRSIntersection</para>
 		/// </summary>
-		public override string ExcuteName => "locref.CreateLRSIntersection";
+		public override string ExcuteName() => "locref.CreateLRSIntersection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { ParentNetwork, NetworkDescriptionField, IntersectionFeatureClassName, IntersectingLayers, ConsiderZ!, ZTolerance!, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { ParentNetwork, NetworkDescriptionField, IntersectionFeatureClassName, IntersectingLayers, ConsiderZ!, ZTolerance!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Parent LRS Network</para>
@@ -88,6 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object ParentNetwork { get; set; }
 
 		/// <summary>
@@ -97,6 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text")]
 		public object NetworkDescriptionField { get; set; }
 
 		/// <summary>

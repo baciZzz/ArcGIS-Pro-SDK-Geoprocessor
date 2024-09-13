@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Report Aviation Chart Changes</para>
+	/// <para>Report Aviation Chart Changes</para>
 	/// <para>Compares feature classes in two enterprise geodatabase versions and returns the differences in a report. You can filter the reported changes to determine which charts are affected by the differing data sources. You can set  filters based on areas of interest (AOI), definition queries, and Report Chart Changes preferences.</para>
 	/// </summary>
 	public class ReportAviationChartChanges : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : Report Aviation Chart Changes</para>
 		/// </summary>
-		public override string DisplayName => "Report Aviation Chart Changes";
+		public override string DisplayName() => "Report Aviation Chart Changes";
 
 		/// <summary>
 		/// <para>Tool Name : ReportAviationChartChanges</para>
 		/// </summary>
-		public override string ToolName => "ReportAviationChartChanges";
+		public override string ToolName() => "ReportAviationChartChanges";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.ReportAviationChartChanges</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.ReportAviationChartChanges";
+		public override string ExcuteName() => "aviation.ReportAviationChartChanges";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { AviationWorkspace, BaseVersion, ComparisonVersion, ReportPreference, ReportName, AoiFeatures!, ReportId! };
+		public override object[] Parameters() => new object[] { AviationWorkspace, BaseVersion, ComparisonVersion, ReportPreference, ReportName, AoiFeatures!, ReportId! };
 
 		/// <summary>
 		/// <para>Aviation Workspace</para>
@@ -129,6 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object? AoiFeatures { get; set; }
 
 		/// <summary>

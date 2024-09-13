@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Folder</para>
+	/// <para>Create Folder</para>
 	/// <para>Creates a folder in the specified location.</para>
 	/// </summary>
 	public class CreateFolder : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Folder</para>
 		/// </summary>
-		public override string DisplayName => "Create Folder";
+		public override string DisplayName() => "Create Folder";
 
 		/// <summary>
 		/// <para>Tool Name : CreateFolder</para>
 		/// </summary>
-		public override string ToolName => "CreateFolder";
+		public override string ToolName() => "CreateFolder";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateFolder</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateFolder";
+		public override string ExcuteName() => "management.CreateFolder";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { OutFolderPath, OutName, OutFolder! };
+		public override object[] Parameters() => new object[] { OutFolderPath, OutName, OutFolder! };
 
 		/// <summary>
 		/// <para>Folder Location</para>

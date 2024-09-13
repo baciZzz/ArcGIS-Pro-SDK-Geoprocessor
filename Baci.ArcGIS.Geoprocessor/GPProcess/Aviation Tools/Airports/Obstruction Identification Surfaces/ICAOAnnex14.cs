@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>ICAO Annex 14</para>
+	/// <para>ICAO Annex 14</para>
 	/// <para>Creates obstruction identification surfaces (OIS) based on ICAO Annex 14 specifications. These surfaces define the airspace around aerodromes to be free of obstacles so flight operations can be performed safely. This tool creates surfaces as a polygon or multipatch features.</para>
 	/// </summary>
 	public class ICAOAnnex14 : AbstractGPProcess
@@ -52,37 +53,37 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Tool Display Name : ICAO Annex 14</para>
 		/// </summary>
-		public override string DisplayName => "ICAO Annex 14";
+		public override string DisplayName() => "ICAO Annex 14";
 
 		/// <summary>
 		/// <para>Tool Name : ICAOAnnex14</para>
 		/// </summary>
-		public override string ToolName => "ICAOAnnex14";
+		public override string ToolName() => "ICAOAnnex14";
 
 		/// <summary>
 		/// <para>Tool Excute Name : aviation.ICAOAnnex14</para>
 		/// </summary>
-		public override string ExcuteName => "aviation.ICAOAnnex14";
+		public override string ExcuteName() => "aviation.ICAOAnnex14";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Aviation Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Aviation Tools";
+		public override string ToolboxDisplayName() => "Aviation Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : aviation</para>
 		/// </summary>
-		public override string ToolboxAlise => "aviation";
+		public override string ToolboxAlise() => "aviation";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, Target, RunwayType, HighendClearWayLength!, LowendClearWayLength!, AirportElevation!, RunwayDirection!, IncludeMergedSurface!, DerivedOutfeatureclass!, CustomJsonFile!, AirportControlPointFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatures, Target, RunwayType, HighendClearWayLength!, LowendClearWayLength!, AirportElevation!, RunwayDirection!, IncludeMergedSurface!, DerivedOutfeatureclass!, CustomJsonFile!, AirportControlPointFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Runway Features</para>
@@ -91,6 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -187,6 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("json")]
 		public object? CustomJsonFile { get; set; }
 
 		/// <summary>
@@ -196,6 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object? AirportControlPointFeatureClass { get; set; }
 
 		/// <summary>

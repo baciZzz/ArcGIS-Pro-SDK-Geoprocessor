@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Transform Field</para>
+	/// <para>Transform Field</para>
 	/// <para>Transforms continuous values in one or more fields by applying mathematical functions to each value and</para>
 	/// <para>changing the shape of the distribution. The transformation methods</para>
 	/// <para>in the tool include log, square root, Box-Cox, multiplicative</para>
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Transform Field</para>
 		/// </summary>
-		public override string DisplayName => "Transform Field";
+		public override string DisplayName() => "Transform Field";
 
 		/// <summary>
 		/// <para>Tool Name : TransformField</para>
 		/// </summary>
-		public override string ToolName => "TransformField";
+		public override string ToolName() => "TransformField";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.TransformField</para>
 		/// </summary>
-		public override string ExcuteName => "management.TransformField";
+		public override string ExcuteName() => "management.TransformField";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Fields, Method!, Power!, Shift!, UpdatedTable! };
+		public override object[] Parameters() => new object[] { InTable, Fields, Method!, Power!, Shift!, UpdatedTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = -5, Max = 5)]
 		public object? Power { get; set; }
 
 		/// <summary>

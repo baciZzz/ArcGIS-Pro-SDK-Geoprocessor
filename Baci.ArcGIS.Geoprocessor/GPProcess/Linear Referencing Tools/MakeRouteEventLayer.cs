@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 {
 	/// <summary>
 	/// <para>Make Route Event Layer</para>
+	/// <para>Make Route Event Layer</para>
 	/// <para>Creates a temporary feature layer using routes and route events.</para>
 	/// </summary>
 	public class MakeRouteEventLayer : AbstractGPProcess
@@ -56,37 +57,37 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Route Event Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Route Event Layer";
+		public override string DisplayName() => "Make Route Event Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeRouteEventLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeRouteEventLayer";
+		public override string ToolName() => "MakeRouteEventLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : lr.MakeRouteEventLayer</para>
 		/// </summary>
-		public override string ExcuteName => "lr.MakeRouteEventLayer";
+		public override string ExcuteName() => "lr.MakeRouteEventLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Linear Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Linear Referencing Tools";
+		public override string ToolboxDisplayName() => "Linear Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : lr</para>
 		/// </summary>
-		public override string ToolboxAlise => "lr";
+		public override string ToolboxAlise() => "lr";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRoutes, RouteIdField, InTable, InEventProperties, OutLayer, OffsetField!, AddErrorField!, AddAngleField!, AngleType!, ComplementAngle!, OffsetDirection!, PointEventType! };
+		public override object[] Parameters() => new object[] { InRoutes, RouteIdField, InTable, InEventProperties, OutLayer, OffsetField!, AddErrorField!, AddAngleField!, AngleType!, ComplementAngle!, OffsetDirection!, PointEventType! };
 
 		/// <summary>
 		/// <para>Input Route Features</para>
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
-		[xmlserialize()]
+		[xmlserialize(Xml = "<GPRouteDomain xsi:type='typens:GPRouteDomain' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.0.0'></GPRouteDomain>")]
 		public object InRoutes { get; set; }
 
 		/// <summary>
@@ -103,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{4A4F70B0-913C-4A82-A33F-E190FFA409EA}")]
 		public object RouteIdField { get; set; }
 
 		/// <summary>
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
-		[xmlserialize()]
+		[xmlserialize(Xml = "<GPRouteMeasureEventDomain xsi:type='typens:GPRouteMeasureEventDomain' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.0.0'></GPRouteMeasureEventDomain>")]
 		public object InTable { get; set; }
 
 		/// <summary>
@@ -143,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{C06E2425-30D9-4C9D-8CD3-7FE243B3AFCB}")]
 		public object? OffsetField { get; set; }
 
 		/// <summary>

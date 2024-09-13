@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Mobile Scene Package</para>
+	/// <para>Create Mobile Scene Package</para>
 	/// <para>Creates a mobile scene package file (.mspk) from one or more scenes for use across the ArcGIS platform.</para>
 	/// </summary>
 	public class CreateMobileScenePackage : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Mobile Scene Package</para>
 		/// </summary>
-		public override string DisplayName => "Create Mobile Scene Package";
+		public override string DisplayName() => "Create Mobile Scene Package";
 
 		/// <summary>
 		/// <para>Tool Name : CreateMobileScenePackage</para>
 		/// </summary>
-		public override string ToolName => "CreateMobileScenePackage";
+		public override string ToolName() => "CreateMobileScenePackage";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateMobileScenePackage</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateMobileScenePackage";
+		public override string ExcuteName() => "management.CreateMobileScenePackage";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InScene, OutputFile, InLocator!, AreaOfInterest!, Extent!, ClipFeatures!, Title!, Summary!, Description!, Tags!, Credits!, UseLimitations!, AnonymousUse!, TextureOptimization!, EnableSceneExpiration!, SceneExpirationType!, ExpirationDate!, ExpirationMessage!, SelectRelatedRows!, ReferenceOnlineContent! };
+		public override object[] Parameters() => new object[] { InScene, OutputFile, InLocator!, AreaOfInterest!, Extent!, ClipFeatures!, Title!, Summary!, Description!, Tags!, Credits!, UseLimitations!, AnonymousUse!, TextureOptimization!, EnableSceneExpiration!, SceneExpirationType!, ExpirationDate!, ExpirationMessage!, SelectRelatedRows!, ReferenceOnlineContent! };
 
 		/// <summary>
 		/// <para>Input Scene</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPMapDomain()]
+		[MapType("1")]
 		public object InScene { get; set; }
 
 		/// <summary>
@@ -83,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("mspk")]
 		public object OutputFile { get; set; }
 
 		/// <summary>
@@ -101,6 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object? AreaOfInterest { get; set; }
 
 		/// <summary>

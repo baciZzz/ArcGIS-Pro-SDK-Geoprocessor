@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Migrate ObjectID to 64-Bit</para>
+	/// <para>Migrate ObjectID to 64-Bit</para>
 	/// <para>Migrates the ObjectID to 64-Bit Precision</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Migrate ObjectID to 64-Bit</para>
 		/// </summary>
-		public override string DisplayName => "Migrate ObjectID to 64-Bit";
+		public override string DisplayName() => "Migrate ObjectID to 64-Bit";
 
 		/// <summary>
 		/// <para>Tool Name : MigrateObjectIDTo64Bit</para>
 		/// </summary>
-		public override string ToolName => "MigrateObjectIDTo64Bit";
+		public override string ToolName() => "MigrateObjectIDTo64Bit";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MigrateObjectIDTo64Bit</para>
 		/// </summary>
-		public override string ExcuteName => "management.MigrateObjectIDTo64Bit";
+		public override string ExcuteName() => "management.MigrateObjectIDTo64Bit";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDatasets, OutDatasets! };
+		public override object[] Parameters() => new object[] { InDatasets, OutDatasets! };
 
 		/// <summary>
 		/// <para>Input Datasets</para>

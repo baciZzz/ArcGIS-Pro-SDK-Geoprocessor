@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Make Diagram Layer</para>
+	/// <para>Make Diagram Layer</para>
 	/// <para>Creates a network diagram layer from a  network diagram.</para>
 	/// </summary>
 	public class MakeDiagramLayer : AbstractGPProcess
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Diagram Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Diagram Layer";
+		public override string DisplayName() => "Make Diagram Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeDiagramLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeDiagramLayer";
+		public override string ToolName() => "MakeDiagramLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.MakeDiagramLayer</para>
 		/// </summary>
-		public override string ExcuteName => "nd.MakeDiagramLayer";
+		public override string ExcuteName() => "nd.MakeDiagramLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, NetworkDiagramName, OutLayer };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, NetworkDiagramName, OutLayer };
 
 		/// <summary>
 		/// <para>Input Network</para>

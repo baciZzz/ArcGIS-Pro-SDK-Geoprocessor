@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Surface Parameters</para>
+	/// <para>Surface Parameters</para>
 	/// <para>Determines parameters of a surface raster such as aspect, slope, and several types of curvatures using geodesic methods.</para>
 	/// </summary>
 	public class SurfaceParameters : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Surface Parameters</para>
 		/// </summary>
-		public override string DisplayName => "Surface Parameters";
+		public override string DisplayName() => "Surface Parameters";
 
 		/// <summary>
 		/// <para>Tool Name : SurfaceParameters</para>
 		/// </summary>
-		public override string ToolName => "SurfaceParameters";
+		public override string ToolName() => "SurfaceParameters";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.SurfaceParameters</para>
 		/// </summary>
-		public override string ExcuteName => "ra.SurfaceParameters";
+		public override string ExcuteName() => "ra.SurfaceParameters";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "pyramid", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputsurfaceraster, Outputrastername, Parametertype!, Localsurfacetype!, Neighborhooddistance!, Useadaptiveneighborhood!, Zunit!, Outputslopemeasurement!, Projectgeodesicazimuths!, Useequatorialaspect!, Outputraster! };
+		public override object[] Parameters() => new object[] { Inputsurfaceraster, Outputrastername, Parametertype!, Localsurfacetype!, Neighborhooddistance!, Useadaptiveneighborhood!, Zunit!, Outputslopemeasurement!, Projectgeodesicazimuths!, Useequatorialaspect!, Outputraster! };
 
 		/// <summary>
 		/// <para>Input Surface Raster</para>

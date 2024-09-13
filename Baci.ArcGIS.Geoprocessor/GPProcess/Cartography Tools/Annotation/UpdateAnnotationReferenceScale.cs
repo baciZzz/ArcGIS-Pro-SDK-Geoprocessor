@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Update Annotation Reference Scale</para>
+	/// <para>Update Annotation Reference Scale</para>
 	/// <para>Updates the reference scale of an existing annotation or dimension feature class.</para>
 	/// </summary>
 	public class UpdateAnnotationReferenceScale : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Update Annotation Reference Scale</para>
 		/// </summary>
-		public override string DisplayName => "Update Annotation Reference Scale";
+		public override string DisplayName() => "Update Annotation Reference Scale";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateAnnotationReferenceScale</para>
 		/// </summary>
-		public override string ToolName => "UpdateAnnotationReferenceScale";
+		public override string ToolName() => "UpdateAnnotationReferenceScale";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.UpdateAnnotationReferenceScale</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.UpdateAnnotationReferenceScale";
+		public override string ExcuteName() => "cartography.UpdateAnnotationReferenceScale";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InAnnoFeatures, ReferenceScale, UpdatedAnnotation! };
+		public override object[] Parameters() => new object[] { InAnnoFeatures, ReferenceScale, UpdatedAnnotation! };
 
 		/// <summary>
 		/// <para>Input Annotation Features</para>

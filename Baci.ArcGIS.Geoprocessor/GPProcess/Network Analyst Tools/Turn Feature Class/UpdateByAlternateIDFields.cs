@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Update by Alternate ID Fields</para>
+	/// <para>Update by Alternate ID Fields</para>
 	/// <para>Updates all the edge references in turn feature classes using an alternate ID field. This tool should be used after making edits to the input line features that are referenced by the turn features to synchronize the turn features based on the alternate ID fields.</para>
 	/// </summary>
 	public class UpdateByAlternateIDFields : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Update by Alternate ID Fields</para>
 		/// </summary>
-		public override string DisplayName => "Update by Alternate ID Fields";
+		public override string DisplayName() => "Update by Alternate ID Fields";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateByAlternateIDFields</para>
 		/// </summary>
-		public override string ToolName => "UpdateByAlternateIDFields";
+		public override string ToolName() => "UpdateByAlternateIDFields";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.UpdateByAlternateIDFields</para>
 		/// </summary>
-		public override string ExcuteName => "na.UpdateByAlternateIDFields";
+		public override string ExcuteName() => "na.UpdateByAlternateIDFields";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, AlternateIDFieldName, OutNetworkDataset! };
+		public override object[] Parameters() => new object[] { InNetworkDataset, AlternateIDFieldName, OutNetworkDataset! };
 
 		/// <summary>
 		/// <para>Input Network Dataset</para>

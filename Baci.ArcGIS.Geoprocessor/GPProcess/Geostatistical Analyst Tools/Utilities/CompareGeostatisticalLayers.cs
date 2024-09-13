@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Compare Geostatistical Layers</para>
+	/// <para>Compare Geostatistical Layers</para>
 	/// <para>Compares and ranks geostatistical layers using customizable criteria based on cross validation statistics.</para>
 	/// </summary>
 	public class CompareGeostatisticalLayers : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Compare Geostatistical Layers</para>
 		/// </summary>
-		public override string DisplayName => "Compare Geostatistical Layers";
+		public override string DisplayName() => "Compare Geostatistical Layers";
 
 		/// <summary>
 		/// <para>Tool Name : CompareGeostatisticalLayers</para>
 		/// </summary>
-		public override string ToolName => "CompareGeostatisticalLayers";
+		public override string ToolName() => "CompareGeostatisticalLayers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.CompareGeostatisticalLayers</para>
 		/// </summary>
-		public override string ExcuteName => "ga.CompareGeostatisticalLayers";
+		public override string ExcuteName() => "ga.CompareGeostatisticalLayers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InGeostatLayers, OutCvTable, OutGeostatLayer!, ComparisonMethod!, Criterion!, CriteriaHierarchy!, WeightedCriteria!, ExclusionCriteria! };
+		public override object[] Parameters() => new object[] { InGeostatLayers, OutCvTable, OutGeostatLayer!, ComparisonMethod!, Criterion!, CriteriaHierarchy!, WeightedCriteria!, ExclusionCriteria! };
 
 		/// <summary>
 		/// <para>Input geostatistical layers</para>

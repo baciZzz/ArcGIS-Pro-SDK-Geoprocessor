@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Raster Layer</para>
+	/// <para>Make Raster Layer</para>
 	/// <para>Creates a raster layer from an input raster dataset or layer file. The layer created by the tool is temporary and will not persist after the session ends unless the layer is saved to disk or the map document is saved.</para>
 	/// </summary>
 	public class MakeRasterLayer : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Raster Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Raster Layer";
+		public override string DisplayName() => "Make Raster Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeRasterLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeRasterLayer";
+		public override string ToolName() => "MakeRasterLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MakeRasterLayer</para>
 		/// </summary>
-		public override string ExcuteName => "management.MakeRasterLayer";
+		public override string ExcuteName() => "management.MakeRasterLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRasterlayer, WhereClause!, Envelope!, BandIndex! };
+		public override object[] Parameters() => new object[] { InRaster, OutRasterlayer, WhereClause!, Envelope!, BandIndex! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -75,7 +76,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false, Guid = "{91BF8D7D-195F-4E08-8D03-D204FA3C7A13}")]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRaster { get; set; }
 
 		/// <summary>

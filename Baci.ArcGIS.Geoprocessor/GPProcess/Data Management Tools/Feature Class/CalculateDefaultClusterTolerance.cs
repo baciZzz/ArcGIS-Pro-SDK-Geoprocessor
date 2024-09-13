@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Calculate Default XY Tolerance</para>
+	/// <para>Calculate Default XY Tolerance</para>
 	/// <para>Calculates the default xy tolerance.</para>
 	/// </summary>
 	[Obsolete()]
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Default XY Tolerance</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Default XY Tolerance";
+		public override string DisplayName() => "Calculate Default XY Tolerance";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateDefaultClusterTolerance</para>
 		/// </summary>
-		public override string ToolName => "CalculateDefaultClusterTolerance";
+		public override string ToolName() => "CalculateDefaultClusterTolerance";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CalculateDefaultClusterTolerance</para>
 		/// </summary>
-		public override string ExcuteName => "management.CalculateDefaultClusterTolerance";
+		public override string ExcuteName() => "management.CalculateDefaultClusterTolerance";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ClusterTolerance! };
+		public override object[] Parameters() => new object[] { InFeatures, ClusterTolerance! };
 
 		/// <summary>
 		/// <para>Input Features</para>

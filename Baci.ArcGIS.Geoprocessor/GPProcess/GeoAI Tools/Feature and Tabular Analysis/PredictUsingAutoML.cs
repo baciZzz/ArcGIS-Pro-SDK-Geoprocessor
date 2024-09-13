@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 {
 	/// <summary>
 	/// <para>Predict Using AutoML</para>
+	/// <para>Predict Using AutoML</para>
 	/// <para>Uses the trained  .dlpk model produced by the Train Using AutoML tool to predict continuous variables (regression) or categorical variables (classification) on unseen compatible datasets.</para>
 	/// </summary>
 	public class PredictUsingAutoML : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// <summary>
 		/// <para>Tool Display Name : Predict Using AutoML</para>
 		/// </summary>
-		public override string DisplayName => "Predict Using AutoML";
+		public override string DisplayName() => "Predict Using AutoML";
 
 		/// <summary>
 		/// <para>Tool Name : PredictUsingAutoML</para>
 		/// </summary>
-		public override string ToolName => "PredictUsingAutoML";
+		public override string ToolName() => "PredictUsingAutoML";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geoai.PredictUsingAutoML</para>
 		/// </summary>
-		public override string ExcuteName => "geoai.PredictUsingAutoML";
+		public override string ExcuteName() => "geoai.PredictUsingAutoML";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : GeoAI Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "GeoAI Tools";
+		public override string ToolboxDisplayName() => "GeoAI Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geoai</para>
 		/// </summary>
-		public override string ToolboxAlise => "geoai";
+		public override string ToolboxAlise() => "geoai";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InModelDefinition, PredictionType, InFeatures, ExplanatoryRasters!, DistanceFeatures!, OutPredictionFeatures!, OutPredictionSurface!, MatchExplanatoryVariables!, MatchDistanceVariables!, MatchExplanatoryRasters! };
+		public override object[] Parameters() => new object[] { InModelDefinition, PredictionType, InFeatures, ExplanatoryRasters!, DistanceFeatures!, OutPredictionFeatures!, OutPredictionSurface!, MatchExplanatoryVariables!, MatchDistanceVariables!, MatchExplanatoryRasters! };
 
 		/// <summary>
 		/// <para>Model Definition</para>
@@ -82,6 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("dlpk")]
 		public object InModelDefinition { get; set; }
 
 		/// <summary>
@@ -119,6 +121,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon")]
+		[FeatureType("Simple")]
 		public object? DistanceFeatures { get; set; }
 
 		/// <summary>

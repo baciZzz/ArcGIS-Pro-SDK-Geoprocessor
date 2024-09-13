@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Building Layer</para>
+	/// <para>Make Building Layer</para>
 	/// <para>Creates a composite building layer from a dataset, either a BIM file workspace or a geodatabase dataset, such as the output of the BIM File To Geodatabase tool.</para>
 	/// </summary>
 	public class MakeBuildingLayer : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Building Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Building Layer";
+		public override string DisplayName() => "Make Building Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeBuildingLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeBuildingLayer";
+		public override string ToolName() => "MakeBuildingLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MakeBuildingLayer</para>
 		/// </summary>
-		public override string ExcuteName => "management.MakeBuildingLayer";
+		public override string ExcuteName() => "management.MakeBuildingLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatureDataset, OutLayer };
+		public override object[] Parameters() => new object[] { InFeatureDataset, OutLayer };
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>

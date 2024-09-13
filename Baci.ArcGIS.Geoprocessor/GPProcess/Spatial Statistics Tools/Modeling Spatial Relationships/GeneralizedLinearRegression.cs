@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Generalized Linear Regression</para>
+	/// <para>Generalized Linear Regression</para>
 	/// <para>Performs generalized linear regression </para>
 	/// <para>(GLR) to generate predictions or to model a dependent variable in terms of its relationship to a set of explanatory variables.  This tool can be used to fit continuous (OLS), binary (logistic), and count (Poisson) models.</para>
 	/// </summary>
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Generalized Linear Regression</para>
 		/// </summary>
-		public override string DisplayName => "Generalized Linear Regression";
+		public override string DisplayName() => "Generalized Linear Regression";
 
 		/// <summary>
 		/// <para>Tool Name : GeneralizedLinearRegression</para>
 		/// </summary>
-		public override string ToolName => "GeneralizedLinearRegression";
+		public override string ToolName() => "GeneralizedLinearRegression";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.GeneralizedLinearRegression</para>
 		/// </summary>
-		public override string ExcuteName => "stats.GeneralizedLinearRegression";
+		public override string ExcuteName() => "stats.GeneralizedLinearRegression";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentVariable, ModelType, OutputFeatures, ExplanatoryVariables!, DistanceFeatures!, PredictionLocations!, ExplanatoryVariablesToMatch!, ExplanatoryDistanceMatching!, OutputPredictedFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, DependentVariable, ModelType, OutputFeatures, ExplanatoryVariables!, DistanceFeatures!, PredictionLocations!, ExplanatoryVariablesToMatch!, ExplanatoryDistanceMatching!, OutputPredictedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -89,6 +90,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -98,6 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object DependentVariable { get; set; }
 
 		/// <summary>
@@ -128,6 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? ExplanatoryVariables { get; set; }
 
 		/// <summary>
@@ -137,6 +142,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon", "Point", "Polyline")]
+		[FeatureType("Simple")]
 		public object? DistanceFeatures { get; set; }
 
 		/// <summary>
@@ -146,6 +153,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon")]
+		[FeatureType("Simple")]
 		[Category("Prediction Options")]
 		public object? PredictionLocations { get; set; }
 

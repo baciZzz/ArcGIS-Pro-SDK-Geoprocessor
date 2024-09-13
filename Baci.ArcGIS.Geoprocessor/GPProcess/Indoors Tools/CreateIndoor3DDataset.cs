@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Create Indoor 3D Dataset</para>
+	/// <para>Create Indoor 3D Dataset</para>
 	/// <para>Creates an indoor 3D dataset containing the necessary multipatch feature classes to maintain floor plan data using a streamlined schema that conforms to the ArcGIS Indoors Information Model. You can use these feature classes when preparing 3D scenes of floor plans and share them across your organization.</para>
 	/// </summary>
 	public class CreateIndoor3DDataset : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Indoor 3D Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Create Indoor 3D Dataset";
+		public override string DisplayName() => "Create Indoor 3D Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : CreateIndoor3DDataset</para>
 		/// </summary>
-		public override string ToolName => "CreateIndoor3DDataset";
+		public override string ToolName() => "CreateIndoor3DDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : indoors.CreateIndoor3DDataset</para>
 		/// </summary>
-		public override string ExcuteName => "indoors.CreateIndoor3DDataset";
+		public override string ExcuteName() => "indoors.CreateIndoor3DDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Indoors Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Indoors Tools";
+		public override string ToolboxDisplayName() => "Indoors Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : indoors</para>
 		/// </summary>
-		public override string ToolboxAlise => "indoors";
+		public override string ToolboxAlise() => "indoors";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetGdb, IndoorDatasetName, SpatialReference, OutputDataset! };
+		public override object[] Parameters() => new object[] { TargetGdb, IndoorDatasetName, SpatialReference, OutputDataset! };
 
 		/// <summary>
 		/// <para>Target Geodatabase</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object TargetGdb { get; set; }
 
 		/// <summary>

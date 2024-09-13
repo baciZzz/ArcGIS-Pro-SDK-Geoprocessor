@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Trim Archive History</para>
+	/// <para>Trim Archive History</para>
 	/// <para>Deletes retired archive records from nonversioned archive-enabled datasets.</para>
 	/// </summary>
 	public class TrimArchiveHistory : AbstractGPProcess
@@ -38,37 +39,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Trim Archive History</para>
 		/// </summary>
-		public override string DisplayName => "Trim Archive History";
+		public override string DisplayName() => "Trim Archive History";
 
 		/// <summary>
 		/// <para>Tool Name : TrimArchiveHistory</para>
 		/// </summary>
-		public override string ToolName => "TrimArchiveHistory";
+		public override string ToolName() => "TrimArchiveHistory";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.TrimArchiveHistory</para>
 		/// </summary>
-		public override string ExcuteName => "management.TrimArchiveHistory";
+		public override string ExcuteName() => "management.TrimArchiveHistory";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, TrimMode, TrimBeforeDate!, OutTable! };
+		public override object[] Parameters() => new object[] { InTable, TrimMode, TrimBeforeDate!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>

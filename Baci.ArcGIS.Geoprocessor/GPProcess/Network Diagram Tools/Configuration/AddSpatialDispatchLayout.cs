@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Spatial Dispatch Layout</para>
+	/// <para>Add Spatial Dispatch Layout</para>
 	/// <para>Adds the Spatial Dispatch Layout algorithm to the list of layouts to be automatically chained at the end of the building of diagrams based on a given template. This tool also presets the Spatial Dispatch Layout algorithm parameters for any diagram based on that template.</para>
 	/// </summary>
 	public class AddSpatialDispatchLayout : AbstractGPProcess
@@ -43,37 +44,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Spatial Dispatch Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Spatial Dispatch Layout";
+		public override string DisplayName() => "Add Spatial Dispatch Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddSpatialDispatchLayout</para>
 		/// </summary>
-		public override string ToolName => "AddSpatialDispatchLayout";
+		public override string ToolName() => "AddSpatialDispatchLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AddSpatialDispatchLayout</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AddSpatialDispatchLayout";
+		public override string ExcuteName() => "nd.AddSpatialDispatchLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, IterationsNumber!, MaximumShiftFactor!, OutUtilityNetwork!, OutTemplateName! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, IterationsNumber!, MaximumShiftFactor!, OutUtilityNetwork!, OutTemplateName! };
 
 		/// <summary>
 		/// <para>Input Network</para>

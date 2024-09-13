@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Solve</para>
+	/// <para>Solve</para>
 	/// <para>Solves the network analysis layer problem based on its network locations and properties.</para>
 	/// </summary>
 	[Obsolete()]
@@ -31,37 +32,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Solve</para>
 		/// </summary>
-		public override string DisplayName => "Solve";
+		public override string DisplayName() => "Solve";
 
 		/// <summary>
 		/// <para>Tool Name : Solve</para>
 		/// </summary>
-		public override string ToolName => "Solve";
+		public override string ToolName() => "Solve";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.Solve</para>
 		/// </summary>
-		public override string ExcuteName => "na.Solve";
+		public override string ExcuteName() => "na.Solve";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, IgnoreInvalids!, TerminateOnSolveError!, SimplificationTolerance!, OutputLayer!, SolveSucceeded!, Overrides! };
+		public override object[] Parameters() => new object[] { InNetworkAnalysisLayer, IgnoreInvalids!, TerminateOnSolveError!, SimplificationTolerance!, OutputLayer!, SolveSucceeded!, Overrides! };
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>

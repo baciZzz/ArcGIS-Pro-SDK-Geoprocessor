@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Update COGO</para>
+	/// <para>Update COGO</para>
 	/// <para>Updates the COGO attributes of COGO-enabled line features to match their line shape geometries.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Update COGO</para>
 		/// </summary>
-		public override string DisplayName => "Update COGO";
+		public override string DisplayName() => "Update COGO";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateCOGO</para>
 		/// </summary>
-		public override string ToolName => "UpdateCOGO";
+		public override string ToolName() => "UpdateCOGO";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.UpdateCOGO</para>
 		/// </summary>
-		public override string ExcuteName => "edit.UpdateCOGO";
+		public override string ExcuteName() => "edit.UpdateCOGO";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLineFeatures, DistancesType!, DistanceTolerance!, DirectionType!, MinimumDirectionDifference!, MinimumDirectionLateralOffset!, CombinedScaleFactor!, DirectionOffset!, UpdatedLineFeatures! };
+		public override object[] Parameters() => new object[] { InLineFeatures, DistancesType!, DistanceTolerance!, DirectionType!, MinimumDirectionDifference!, MinimumDirectionLateralOffset!, CombinedScaleFactor!, DirectionOffset!, UpdatedLineFeatures! };
 
 		/// <summary>
 		/// <para>Input Line Features</para>
@@ -71,6 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InLineFeatures { get; set; }
 
 		/// <summary>

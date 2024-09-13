@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Add Locations</para>
+	/// <para>Add Locations</para>
 	/// <para>Adds input features or records to a network analysis layer. The inputs are added to specific sublayers such as stops and barriers. When the network analysis layer references a network dataset as its network data source, the tool calculates the network locations of the inputs, unless precalculated network location fields are mapped from the inputs.</para>
 	/// </summary>
 	public class AddLocations : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Locations</para>
 		/// </summary>
-		public override string DisplayName => "Add Locations";
+		public override string DisplayName() => "Add Locations";
 
 		/// <summary>
 		/// <para>Tool Name : AddLocations</para>
 		/// </summary>
-		public override string ToolName => "AddLocations";
+		public override string ToolName() => "AddLocations";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.AddLocations</para>
 		/// </summary>
-		public override string ExcuteName => "na.AddLocations";
+		public override string ExcuteName() => "na.AddLocations";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, SubLayer, InTable, FieldMappings!, SearchTolerance!, SortField!, SearchCriteria!, MatchType!, Append!, SnapToPositionAlongNetwork!, SnapOffset!, ExcludeRestrictedElements!, SearchQuery!, OutputLayer!, AllowAutoRelocate! };
+		public override object[] Parameters() => new object[] { InNetworkAnalysisLayer, SubLayer, InTable, FieldMappings!, SearchTolerance!, SortField!, SearchCriteria!, MatchType!, Append!, SnapToPositionAlongNetwork!, SnapOffset!, ExcludeRestrictedElements!, SearchQuery!, OutputLayer!, AllowAutoRelocate! };
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>
@@ -130,6 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "OID", "GUID")]
 		[Category("Advanced")]
 		public object? SortField { get; set; }
 

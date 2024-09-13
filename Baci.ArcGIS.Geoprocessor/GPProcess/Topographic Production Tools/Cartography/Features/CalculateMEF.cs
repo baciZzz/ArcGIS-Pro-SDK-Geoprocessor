@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Calculate Max Elevation Figures</para>
+	/// <para>Calculate Max Elevation Figures</para>
 	/// <para>Calculates the maximum elevation figures (MEF) for each polygon cell or quadrangle in a polygon layer.  These values are used as labels for the MEF feature layer.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -67,37 +68,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Max Elevation Figures</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Max Elevation Figures";
+		public override string DisplayName() => "Calculate Max Elevation Figures";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateMEF</para>
 		/// </summary>
-		public override string ToolName => "CalculateMEF";
+		public override string ToolName() => "CalculateMEF";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.CalculateMEF</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.CalculateMEF";
+		public override string ExcuteName() => "topographic.CalculateMEF";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { TargetMefFeatures, InTerrain, ObstructionFeatures, MefField, MaxVoField, MaxTerrainField, Specification, TerrainElevField!, VoAllowance!, VoAccuracy!, TerrainAccuracy!, UpdatedMefFeatures! };
+		public override object[] Parameters() => new object[] { TargetMefFeatures, InTerrain, ObstructionFeatures, MefField, MaxVoField, MaxTerrainField, Specification, TerrainElevField!, VoAllowance!, VoAccuracy!, TerrainAccuracy!, UpdatedMefFeatures! };
 
 		/// <summary>
 		/// <para>Target Max Elevation Figures Features</para>
@@ -106,6 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPLayerDomain()]
+		[GeometryType("Polygon")]
 		public object TargetMefFeatures { get; set; }
 
 		/// <summary>
@@ -132,6 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double", "Long", "Float", "Short")]
 		public object MefField { get; set; }
 
 		/// <summary>
@@ -141,6 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double", "Long", "Float", "Short")]
 		public object MaxVoField { get; set; }
 
 		/// <summary>
@@ -150,6 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double", "Long", "Float", "Short")]
 		public object MaxTerrainField { get; set; }
 
 		/// <summary>
@@ -173,6 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Double", "Long", "Float", "Short")]
 		public object? TerrainElevField { get; set; }
 
 		/// <summary>
@@ -205,6 +211,8 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.derived)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? UpdatedMefFeatures { get; set; }
 
 		/// <summary>

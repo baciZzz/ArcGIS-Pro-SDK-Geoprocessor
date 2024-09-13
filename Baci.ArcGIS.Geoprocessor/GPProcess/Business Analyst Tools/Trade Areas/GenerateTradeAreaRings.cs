@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Trade Area Rings</para>
+	/// <para>Generate Trade Area Rings</para>
 	/// <para>Creates rings around point locations.</para>
 	/// </summary>
 	public class GenerateTradeAreaRings : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Trade Area Rings</para>
 		/// </summary>
-		public override string DisplayName => "Generate Trade Area Rings";
+		public override string DisplayName() => "Generate Trade Area Rings";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateTradeAreaRings</para>
 		/// </summary>
-		public override string ToolName => "GenerateTradeAreaRings";
+		public override string ToolName() => "GenerateTradeAreaRings";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GenerateTradeAreaRings</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GenerateTradeAreaRings";
+		public override string ExcuteName() => "ba.GenerateTradeAreaRings";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, Radii!, Units!, IdField!, RemoveOverlap!, DissolveOption!, InputMethod!, Expression! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, Radii!, Units!, IdField!, RemoveOverlap!, DissolveOption!, InputMethod!, Expression! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -108,6 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "GUID", "GlobalID")]
 		public object? IdField { get; set; }
 
 		/// <summary>

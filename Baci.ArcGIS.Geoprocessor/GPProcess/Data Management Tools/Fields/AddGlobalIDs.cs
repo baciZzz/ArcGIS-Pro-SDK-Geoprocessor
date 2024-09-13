@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Global IDs</para>
+	/// <para>Add Global IDs</para>
 	/// <para>Adds global IDs to a list of geodatabase feature classes, tables, and feature datasets.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Global IDs</para>
 		/// </summary>
-		public override string DisplayName => "Add Global IDs";
+		public override string DisplayName() => "Add Global IDs";
 
 		/// <summary>
 		/// <para>Tool Name : AddGlobalIDs</para>
 		/// </summary>
-		public override string ToolName => "AddGlobalIDs";
+		public override string ToolName() => "AddGlobalIDs";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddGlobalIDs</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddGlobalIDs";
+		public override string ExcuteName() => "management.AddGlobalIDs";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDatasets, OutDatasets! };
+		public override object[] Parameters() => new object[] { InDatasets, OutDatasets! };
 
 		/// <summary>
 		/// <para>Input Datasets</para>

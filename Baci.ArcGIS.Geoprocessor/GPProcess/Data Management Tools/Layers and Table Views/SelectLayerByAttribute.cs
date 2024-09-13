@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Select Layer By Attribute</para>
+	/// <para>Select Layer By Attribute</para>
 	/// <para>Adds, updates, or removes a selection based on an attribute query.</para>
 	/// </summary>
 	public class SelectLayerByAttribute : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Select Layer By Attribute</para>
 		/// </summary>
-		public override string DisplayName => "Select Layer By Attribute";
+		public override string DisplayName() => "Select Layer By Attribute";
 
 		/// <summary>
 		/// <para>Tool Name : SelectLayerByAttribute</para>
 		/// </summary>
-		public override string ToolName => "SelectLayerByAttribute";
+		public override string ToolName() => "SelectLayerByAttribute";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SelectLayerByAttribute</para>
 		/// </summary>
-		public override string ExcuteName => "management.SelectLayerByAttribute";
+		public override string ExcuteName() => "management.SelectLayerByAttribute";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayerOrView, SelectionType!, WhereClause!, OutLayerOrView!, InvertWhereClause!, Count! };
+		public override object[] Parameters() => new object[] { InLayerOrView, SelectionType!, WhereClause!, OutLayerOrView!, InvertWhereClause!, Count! };
 
 		/// <summary>
 		/// <para>Input Rows</para>

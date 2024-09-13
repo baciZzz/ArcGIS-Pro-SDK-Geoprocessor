@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Majority Filter</para>
+	/// <para>Majority Filter</para>
 	/// <para>Replaces cells in a raster based on the majority of their contiguous neighboring cells.</para>
 	/// </summary>
 	public class MajorityFilter : AbstractGPProcess
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Majority Filter</para>
 		/// </summary>
-		public override string DisplayName => "Majority Filter";
+		public override string DisplayName() => "Majority Filter";
 
 		/// <summary>
 		/// <para>Tool Name : MajorityFilter</para>
 		/// </summary>
-		public override string ToolName => "MajorityFilter";
+		public override string ToolName() => "MajorityFilter";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.MajorityFilter</para>
 		/// </summary>
-		public override string ExcuteName => "sa.MajorityFilter";
+		public override string ExcuteName() => "sa.MajorityFilter";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, NumberNeighbors!, MajorityDefinition! };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, NumberNeighbors!, MajorityDefinition! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -76,7 +77,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRaster { get; set; }
 
 		/// <summary>

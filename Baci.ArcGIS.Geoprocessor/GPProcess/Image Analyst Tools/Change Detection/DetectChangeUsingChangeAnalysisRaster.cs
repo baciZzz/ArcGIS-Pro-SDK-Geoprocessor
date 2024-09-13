@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Detect Change Using Change Analysis Raster</para>
+	/// <para>Detect Change Using Change Analysis Raster</para>
 	/// <para>Generates a raster containing pixel change information using the output change analysis raster from the Analyze Changes Using CCDC tool or the Analyze Changes Using LandTrendr tool.</para>
 	/// </summary>
 	public class DetectChangeUsingChangeAnalysisRaster : AbstractGPProcess
@@ -49,37 +50,37 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Detect Change Using Change Analysis Raster</para>
 		/// </summary>
-		public override string DisplayName => "Detect Change Using Change Analysis Raster";
+		public override string DisplayName() => "Detect Change Using Change Analysis Raster";
 
 		/// <summary>
 		/// <para>Tool Name : DetectChangeUsingChangeAnalysisRaster</para>
 		/// </summary>
-		public override string ToolName => "DetectChangeUsingChangeAnalysisRaster";
+		public override string ToolName() => "DetectChangeUsingChangeAnalysisRaster";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.DetectChangeUsingChangeAnalysisRaster</para>
 		/// </summary>
-		public override string ExcuteName => "ia.DetectChangeUsingChangeAnalysisRaster";
+		public override string ExcuteName() => "ia.DetectChangeUsingChangeAnalysisRaster";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Image Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Image Analyst Tools";
+		public override string ToolboxDisplayName() => "Image Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ia</para>
 		/// </summary>
-		public override string ToolboxAlise => "ia";
+		public override string ToolboxAlise() => "ia";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InChangeAnalysisRaster, OutRaster, ChangeType, MaxNumberChanges!, SegmentDate!, ChangeDirection!, FilterByYear!, MinYear!, MaxYear!, FilterByDuration!, MinDuration!, MaxDuration!, FilterByMagnitude!, MinMagnitude!, MaxMagnitude!, FilterByStartValue!, MinStartValue!, MaxStartValue!, FilterByEndValue!, MinEndValue!, MaxEndValue! };
+		public override object[] Parameters() => new object[] { InChangeAnalysisRaster, OutRaster, ChangeType, MaxNumberChanges!, SegmentDate!, ChangeDirection!, FilterByYear!, MinYear!, MaxYear!, FilterByDuration!, MinDuration!, MaxDuration!, FilterByMagnitude!, MinMagnitude!, MaxMagnitude!, FilterByStartValue!, MinStartValue!, MaxStartValue!, FilterByEndValue!, MinEndValue!, MaxEndValue! };
 
 		/// <summary>
 		/// <para>Input Change Analysis Raster</para>
@@ -123,6 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 1)]
 		public object? MaxNumberChanges { get; set; } = "1";
 
 		/// <summary>
@@ -208,6 +210,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		[Category("Filter By Attributes")]
 		public object? MinDuration { get; set; }
 
@@ -219,6 +222,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		[Category("Filter By Attributes")]
 		public object? MaxDuration { get; set; }
 
@@ -246,6 +250,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		[Category("Filter By Attributes")]
 		public object? MinMagnitude { get; set; }
 
@@ -257,6 +262,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		[Category("Filter By Attributes")]
 		public object? MaxMagnitude { get; set; }
 

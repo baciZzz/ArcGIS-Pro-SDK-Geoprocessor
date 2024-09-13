@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Simplify Building</para>
+	/// <para>Simplify Building</para>
 	/// <para>Simplifies the boundary or footprint of building polygons while maintaining their essential shape and size.</para>
 	/// </summary>
 	public class SimplifyBuilding : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Simplify Building</para>
 		/// </summary>
-		public override string DisplayName => "Simplify Building";
+		public override string DisplayName() => "Simplify Building";
 
 		/// <summary>
 		/// <para>Tool Name : SimplifyBuilding</para>
 		/// </summary>
-		public override string ToolName => "SimplifyBuilding";
+		public override string ToolName() => "SimplifyBuilding";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.SimplifyBuilding</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.SimplifyBuilding";
+		public override string ExcuteName() => "cartography.SimplifyBuilding";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "XYDomain", "XYTolerance", "cartographicPartitions", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "XYDomain", "XYTolerance", "cartographicPartitions", "extent", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, SimplificationTolerance, MinimumArea!, ConflictOption!, InBarriers!, OutPointFeatureClass!, CollapsedPointOption! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, SimplificationTolerance, MinimumArea!, ConflictOption!, InBarriers!, OutPointFeatureClass!, CollapsedPointOption! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexJunction", "ComplexEdge", "RasterCatalogItem")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Alter Field</para>
+	/// <para>Alter Field</para>
 	/// <para>Renames fields and field aliases or alters field properties.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Alter Field</para>
 		/// </summary>
-		public override string DisplayName => "Alter Field";
+		public override string DisplayName() => "Alter Field";
 
 		/// <summary>
 		/// <para>Tool Name : AlterField</para>
 		/// </summary>
-		public override string ToolName => "AlterField";
+		public override string ToolName() => "AlterField";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AlterField</para>
 		/// </summary>
-		public override string ExcuteName => "management.AlterField";
+		public override string ExcuteName() => "management.AlterField";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Field, NewFieldName!, NewFieldAlias!, FieldType!, FieldLength!, FieldIsNullable!, ClearFieldAlias!, OutTable! };
+		public override object[] Parameters() => new object[] { InTable, Field, NewFieldName!, NewFieldAlias!, FieldType!, FieldLength!, FieldIsNullable!, ClearFieldAlias!, OutTable! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
-		[GPTablesDomain()]
+		[GPTablesDomain(HideJoinedLayers = true, ShowOnlyStandaloneTables = false)]
 		public object InTable { get; set; }
 
 		/// <summary>

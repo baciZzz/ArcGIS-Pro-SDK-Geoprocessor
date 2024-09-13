@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Fuzzy Membership</para>
+	/// <para>Fuzzy Membership</para>
 	/// <para>Transforms  the input raster   into a 0 to 1 scale, indicating the strength of a membership in a set, based on a specified fuzzification algorithm.</para>
 	/// </summary>
 	public class FuzzyMembership : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Fuzzy Membership</para>
 		/// </summary>
-		public override string DisplayName => "Fuzzy Membership";
+		public override string DisplayName() => "Fuzzy Membership";
 
 		/// <summary>
 		/// <para>Tool Name : FuzzyMembership</para>
 		/// </summary>
-		public override string ToolName => "FuzzyMembership";
+		public override string ToolName() => "FuzzyMembership";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.FuzzyMembership</para>
 		/// </summary>
-		public override string ExcuteName => "sa.FuzzyMembership";
+		public override string ExcuteName() => "sa.FuzzyMembership";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, FuzzyFunction!, Hedge! };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, FuzzyFunction!, Hedge! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -75,7 +76,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InRaster { get; set; }
 
 		/// <summary>

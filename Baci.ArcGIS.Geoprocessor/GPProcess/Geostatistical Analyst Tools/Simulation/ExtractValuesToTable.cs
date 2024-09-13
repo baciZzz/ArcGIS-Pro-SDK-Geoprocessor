@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Extract Values To Table</para>
+	/// <para>Extract Values To Table</para>
 	/// <para>Extracts cell values from a set of rasters to a table, based on a point or polygon feature class.</para>
 	/// </summary>
 	public class ExtractValuesToTable : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Extract Values To Table</para>
 		/// </summary>
-		public override string DisplayName => "Extract Values To Table";
+		public override string DisplayName() => "Extract Values To Table";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractValuesToTable</para>
 		/// </summary>
-		public override string ToolName => "ExtractValuesToTable";
+		public override string ToolName() => "ExtractValuesToTable";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.ExtractValuesToTable</para>
 		/// </summary>
-		public override string ExcuteName => "ga.ExtractValuesToTable";
+		public override string ExcuteName() => "ga.ExtractValuesToTable";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InRasters, OutTable, OutRasterNamesTable!, AddWarningField! };
+		public override object[] Parameters() => new object[] { InFeatures, InRasters, OutTable, OutRasterNamesTable!, AddWarningField! };
 
 		/// <summary>
 		/// <para>Input features</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polygon")]
 		public object InFeatures { get; set; }
 
 		/// <summary>

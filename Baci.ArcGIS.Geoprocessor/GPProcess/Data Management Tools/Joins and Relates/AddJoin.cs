@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Join</para>
+	/// <para>Add Join</para>
 	/// <para>Joins a layer to another layer or table based on a common field. Feature layers, table views, and raster layers with a raster attribute table are supported.</para>
 	/// </summary>
 	public class AddJoin : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Join</para>
 		/// </summary>
-		public override string DisplayName => "Add Join";
+		public override string DisplayName() => "Add Join";
 
 		/// <summary>
 		/// <para>Tool Name : AddJoin</para>
 		/// </summary>
-		public override string ToolName => "AddJoin";
+		public override string ToolName() => "AddJoin";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AddJoin</para>
 		/// </summary>
-		public override string ExcuteName => "management.AddJoin";
+		public override string ExcuteName() => "management.AddJoin";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLayerOrView, InField, JoinTable, JoinField, JoinType!, OutLayerOrView!, IndexJoinFields! };
+		public override object[] Parameters() => new object[] { InLayerOrView, InField, JoinTable, JoinField, JoinType!, OutLayerOrView!, IndexJoinFields! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -92,6 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "OID", "GUID", "GlobalID")]
 		public object InField { get; set; }
 
 		/// <summary>
@@ -109,6 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Date", "OID", "GUID", "GlobalID")]
 		public object JoinField { get; set; }
 
 		/// <summary>

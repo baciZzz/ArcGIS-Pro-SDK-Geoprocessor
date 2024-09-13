@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Generate Spot Heights</para>
+	/// <para>Generate Spot Heights</para>
 	/// <para>Creates elevation point features based on contour tops and depressions. Elevation points are created in each top and depression. Point height values are populated based on a digital elevation model.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -52,37 +53,37 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Spot Heights</para>
 		/// </summary>
-		public override string DisplayName => "Generate Spot Heights";
+		public override string DisplayName() => "Generate Spot Heights";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateSpotHeights</para>
 		/// </summary>
-		public override string ToolName => "GenerateSpotHeights";
+		public override string ToolName() => "GenerateSpotHeights";
 
 		/// <summary>
 		/// <para>Tool Excute Name : topographic.GenerateSpotHeights</para>
 		/// </summary>
-		public override string ExcuteName => "topographic.GenerateSpotHeights";
+		public override string ExcuteName() => "topographic.GenerateSpotHeights";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Topographic Production Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Topographic Production Tools";
+		public override string ToolboxDisplayName() => "Topographic Production Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : topographic</para>
 		/// </summary>
-		public override string ToolboxAlise => "topographic";
+		public override string ToolboxAlise() => "topographic";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InContourFeatures, InRaster, TargetSpotFeatures, ContourHeightField, SpotHeightField, SpotHeightSubtype!, AreaOfInterest!, UpdatedSpotFeatures!, Scale!, ZFactor! };
+		public override object[] Parameters() => new object[] { InContourFeatures, InRaster, TargetSpotFeatures, ContourHeightField, SpotHeightField, SpotHeightSubtype!, AreaOfInterest!, UpdatedSpotFeatures!, Scale!, ZFactor! };
 
 		/// <summary>
 		/// <para>Input Contours</para>
@@ -91,6 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InContourFeatures { get; set; }
 
 		/// <summary>
@@ -108,6 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object TargetSpotFeatures { get; set; }
 
 		/// <summary>
@@ -141,6 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object? AreaOfInterest { get; set; }
 
 		/// <summary>

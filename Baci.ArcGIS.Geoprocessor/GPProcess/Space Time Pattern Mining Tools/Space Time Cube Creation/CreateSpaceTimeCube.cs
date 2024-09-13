@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Create Space Time Cube By Aggregating Points</para>
+	/// <para>Create Space Time Cube By Aggregating Points</para>
 	/// <para>Summarizes a set of points into a netCDF data structure by aggregating them into space-time bins.  Within each bin, the points are counted, and specified attributes are aggregated.  For all bin locations, the trend for counts and summary field values are evaluated.</para>
 	/// </summary>
 	public class CreateSpaceTimeCube : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Space Time Cube By Aggregating Points</para>
 		/// </summary>
-		public override string DisplayName => "Create Space Time Cube By Aggregating Points";
+		public override string DisplayName() => "Create Space Time Cube By Aggregating Points";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSpaceTimeCube</para>
 		/// </summary>
-		public override string ToolName => "CreateSpaceTimeCube";
+		public override string ToolName() => "CreateSpaceTimeCube";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stpm.CreateSpaceTimeCube</para>
 		/// </summary>
-		public override string ExcuteName => "stpm.CreateSpaceTimeCube";
+		public override string ExcuteName() => "stpm.CreateSpaceTimeCube";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Space Time Pattern Mining Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Space Time Pattern Mining Tools";
+		public override string ToolboxDisplayName() => "Space Time Pattern Mining Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stpm</para>
 		/// </summary>
-		public override string ToolboxAlise => "stpm";
+		public override string ToolboxAlise() => "stpm";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "geographicTransformations", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutputCube, TimeField, TemplateCube!, TimeStepInterval!, TimeStepAlignment!, ReferenceTime!, DistanceInterval!, SummaryFields!, AggregationShapeType!, DefinedPolygonLocations!, LocationId! };
+		public override object[] Parameters() => new object[] { InFeatures, OutputCube, TimeField, TemplateCube!, TimeStepInterval!, TimeStepAlignment!, ReferenceTime!, DistanceInterval!, SummaryFields!, AggregationShapeType!, DefinedPolygonLocations!, LocationId! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -88,6 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("nc")]
 		public object OutputCube { get; set; }
 
 		/// <summary>
@@ -97,6 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object TimeField { get; set; }
 
 		/// <summary>
@@ -107,6 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("nc")]
 		public object? TemplateCube { get; set; }
 
 		/// <summary>
@@ -190,6 +196,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object? DefinedPolygonLocations { get; set; }
 
 		/// <summary>
@@ -199,6 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long")]
 		public object? LocationId { get; set; }
 
 		/// <summary>

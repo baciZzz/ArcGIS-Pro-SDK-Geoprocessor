@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Append Events</para>
+	/// <para>Append Events</para>
 	/// <para>Appends event records from a table, layer, or feature class to an existing ArcGIS Location Referencing event feature class.</para>
 	/// </summary>
 	public class AppendEvents : AbstractGPProcess
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Append Events</para>
 		/// </summary>
-		public override string DisplayName => "Append Events";
+		public override string DisplayName() => "Append Events";
 
 		/// <summary>
 		/// <para>Tool Name : AppendEvents</para>
 		/// </summary>
-		public override string ToolName => "AppendEvents";
+		public override string ToolName() => "AppendEvents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : locref.AppendEvents</para>
 		/// </summary>
-		public override string ExcuteName => "locref.AppendEvents";
+		public override string ExcuteName() => "locref.AppendEvents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Location Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Location Referencing Tools";
+		public override string ToolboxDisplayName() => "Location Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : locref</para>
 		/// </summary>
-		public override string ToolboxAlise => "locref";
+		public override string ToolboxAlise() => "locref";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, InTargetEvent, FieldMapping, LoadType!, GenerateEventIds!, GenerateShapes!, OutTargetEvent!, OutDetailsFile! };
+		public override object[] Parameters() => new object[] { InDataset, InTargetEvent, FieldMapping, LoadType!, GenerateEventIds!, GenerateShapes!, OutTargetEvent!, OutDetailsFile! };
 
 		/// <summary>
 		/// <para>Input Event</para>
@@ -88,6 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polyline")]
 		public object InTargetEvent { get; set; }
 
 		/// <summary>

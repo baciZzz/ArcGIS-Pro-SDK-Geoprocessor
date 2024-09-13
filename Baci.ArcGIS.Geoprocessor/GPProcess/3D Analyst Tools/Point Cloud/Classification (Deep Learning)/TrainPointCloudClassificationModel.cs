@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Train Point Cloud Classification Model</para>
+	/// <para>Train Point Cloud Classification Model</para>
 	/// <para>Trains a deep learning model for point cloud classification using the PointCNN architecture.</para>
 	/// </summary>
 	public class TrainPointCloudClassificationModel : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Train Point Cloud Classification Model</para>
 		/// </summary>
-		public override string DisplayName => "Train Point Cloud Classification Model";
+		public override string DisplayName() => "Train Point Cloud Classification Model";
 
 		/// <summary>
 		/// <para>Tool Name : TrainPointCloudClassificationModel</para>
 		/// </summary>
-		public override string ToolName => "TrainPointCloudClassificationModel";
+		public override string ToolName() => "TrainPointCloudClassificationModel";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.TrainPointCloudClassificationModel</para>
 		/// </summary>
-		public override string ExcuteName => "3d.TrainPointCloudClassificationModel";
+		public override string ExcuteName() => "3d.TrainPointCloudClassificationModel";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "gpuID", "processorType" };
+		public override string[] ValidEnvironments() => new string[] { "gpuID", "processorType" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTrainingData, OutModelLocation, OutModelName, PretrainedModel!, Attributes!, MinPoints!, ClassRemap!, TargetClasses!, BackgroundClass!, ClassDescriptions!, ModelSelectionCriteria!, MaxEpochs!, EpochIterations!, LearningRate!, BatchSize!, EarlyStop!, OutModel!, OutModelStats!, LearningRateStrategy!, OutEpochStats! };
+		public override object[] Parameters() => new object[] { InTrainingData, OutModelLocation, OutModelName, PretrainedModel!, Attributes!, MinPoints!, ClassRemap!, TargetClasses!, BackgroundClass!, ClassDescriptions!, ModelSelectionCriteria!, MaxEpochs!, EpochIterations!, LearningRate!, BatchSize!, EarlyStop!, OutModel!, OutModelStats!, LearningRateStrategy!, OutEpochStats! };
 
 		/// <summary>
 		/// <para>Input Training Data</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("pctd")]
 		public object InTrainingData { get; set; }
 
 		/// <summary>
@@ -104,6 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("emd", "dlpk")]
 		public object? PretrainedModel { get; set; }
 
 		/// <summary>
@@ -203,7 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0.01, Max = 100)]
 		[Category("Training Parameters")]
 		public object? EpochIterations { get; set; } = "100";
 
@@ -213,7 +216,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1e-10, Max = 0.99999999989999999)]
 		[Category("Training Parameters")]
 		public object? LearningRate { get; set; }
 
@@ -223,7 +226,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 256)]
 		[Category("Training Parameters")]
 		public object? BatchSize { get; set; } = "2";
 

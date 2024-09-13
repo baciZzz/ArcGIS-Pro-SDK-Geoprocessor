@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Bearing Distance To Line</para>
+	/// <para>Bearing Distance To Line</para>
 	/// <para>Creates a feature class containing geodetic or planar line features from the values in an x-coordinate field, y-coordinate field, bearing field, and distance field of a table.</para>
 	/// </summary>
 	public class BearingDistanceToLine : AbstractGPProcess
@@ -77,37 +78,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Bearing Distance To Line</para>
 		/// </summary>
-		public override string DisplayName => "Bearing Distance To Line";
+		public override string DisplayName() => "Bearing Distance To Line";
 
 		/// <summary>
 		/// <para>Tool Name : BearingDistanceToLine</para>
 		/// </summary>
-		public override string ToolName => "BearingDistanceToLine";
+		public override string ToolName() => "BearingDistanceToLine";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.BearingDistanceToLine</para>
 		/// </summary>
-		public override string ExcuteName => "management.BearingDistanceToLine";
+		public override string ExcuteName() => "management.BearingDistanceToLine";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, OutFeatureclass, XField, YField, DistanceField, DistanceUnits, BearingField, BearingUnits, LineType!, IdField!, SpatialReference!, Attributes! };
+		public override object[] Parameters() => new object[] { InTable, OutFeatureclass, XField, YField, DistanceField, DistanceUnits, BearingField, BearingUnits, LineType!, IdField!, SpatialReference!, Attributes! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -132,6 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double", "Short", "Long")]
 		public object XField { get; set; }
 
 		/// <summary>
@@ -141,6 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double", "Short", "Long")]
 		public object YField { get; set; }
 
 		/// <summary>
@@ -150,6 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double", "Short", "Long")]
 		public object DistanceField { get; set; }
 
 		/// <summary>
@@ -175,6 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double", "Short", "Long")]
 		public object BearingField { get; set; }
 
 		/// <summary>
@@ -213,6 +218,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Float", "Double", "Short", "Long", "Text")]
 		public object? IdField { get; set; }
 
 		/// <summary>

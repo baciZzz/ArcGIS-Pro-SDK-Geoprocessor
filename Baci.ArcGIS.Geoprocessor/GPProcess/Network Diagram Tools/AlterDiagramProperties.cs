@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Alter Diagram Properties</para>
+	/// <para>Alter Diagram Properties</para>
 	/// <para>Alters properties for a stored network diagram.</para>
 	/// </summary>
 	public class AlterDiagramProperties : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Tool Display Name : Alter Diagram Properties</para>
 		/// </summary>
-		public override string DisplayName => "Alter Diagram Properties";
+		public override string DisplayName() => "Alter Diagram Properties";
 
 		/// <summary>
 		/// <para>Tool Name : AlterDiagramProperties</para>
 		/// </summary>
-		public override string ToolName => "AlterDiagramProperties";
+		public override string ToolName() => "AlterDiagramProperties";
 
 		/// <summary>
 		/// <para>Tool Excute Name : nd.AlterDiagramProperties</para>
 		/// </summary>
-		public override string ExcuteName => "nd.AlterDiagramProperties";
+		public override string ExcuteName() => "nd.AlterDiagramProperties";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Diagram Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Diagram Tools";
+		public override string ToolboxDisplayName() => "Network Diagram Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : nd</para>
 		/// </summary>
-		public override string ToolboxAlise => "nd";
+		public override string ToolboxAlise() => "nd";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, OutName!, AccessRightType!, Tags!, OutNetworkDiagramLayer! };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, OutName!, AccessRightType!, Tags!, OutNetworkDiagramLayer! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>

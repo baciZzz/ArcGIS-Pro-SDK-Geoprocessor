@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Update Analysis Layer Attribute Parameter</para>
+	/// <para>Update Analysis Layer Attribute Parameter</para>
 	/// <para>Updates the network attribute parameter value for a network analysis layer. The tool should be used to update the value of an attribute parameter for a network analysis layer prior to solving with the Solve tool.  This ensures that the  solve operation uses the specified value of the attribute parameter to produce appropriate results.</para>
 	/// </summary>
 	[Obsolete()]
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Update Analysis Layer Attribute Parameter</para>
 		/// </summary>
-		public override string DisplayName => "Update Analysis Layer Attribute Parameter";
+		public override string DisplayName() => "Update Analysis Layer Attribute Parameter";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateAnalysisLayerAttributeParameter</para>
 		/// </summary>
-		public override string ToolName => "UpdateAnalysisLayerAttributeParameter";
+		public override string ToolName() => "UpdateAnalysisLayerAttributeParameter";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.UpdateAnalysisLayerAttributeParameter</para>
 		/// </summary>
-		public override string ExcuteName => "na.UpdateAnalysisLayerAttributeParameter";
+		public override string ExcuteName() => "na.UpdateAnalysisLayerAttributeParameter";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkAnalysisLayer, ParameterizedAttribute, AttributeParameterName, AttributeParameterValue!, OutputLayer! };
+		public override object[] Parameters() => new object[] { InNetworkAnalysisLayer, ParameterizedAttribute, AttributeParameterName, AttributeParameterValue!, OutputLayer! };
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>

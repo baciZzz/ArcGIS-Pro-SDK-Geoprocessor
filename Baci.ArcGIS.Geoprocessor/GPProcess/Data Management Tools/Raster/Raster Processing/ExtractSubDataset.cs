@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Extract Subdataset</para>
+	/// <para>Extract Subdataset</para>
 	/// <para>Creates a new raster dataset from a selection of an HDF or NITF dataset.</para>
 	/// </summary>
 	public class ExtractSubDataset : AbstractGPProcess
@@ -50,37 +51,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Extract Subdataset</para>
 		/// </summary>
-		public override string DisplayName => "Extract Subdataset";
+		public override string DisplayName() => "Extract Subdataset";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractSubDataset</para>
 		/// </summary>
-		public override string ToolName => "ExtractSubDataset";
+		public override string ToolName() => "ExtractSubDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ExtractSubDataset</para>
 		/// </summary>
-		public override string ExcuteName => "management.ExtractSubDataset";
+		public override string ExcuteName() => "management.ExtractSubDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "compression", "configKeyword", "extent", "geographicTransformations", "nodata", "outputCoordinateSystem", "parallelProcessingFactor", "pyramid", "rasterStatistics", "resamplingMethod", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, OutRaster, SubdatasetIndex! };
+		public override object[] Parameters() => new object[] { InRaster, OutRaster, SubdatasetIndex! };
 
 		/// <summary>
 		/// <para>Input Raster</para>

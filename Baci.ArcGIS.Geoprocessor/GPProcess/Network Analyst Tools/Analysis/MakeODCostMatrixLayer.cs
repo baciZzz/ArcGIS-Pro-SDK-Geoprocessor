@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make OD Cost Matrix Layer</para>
+	/// <para>Make OD Cost Matrix Layer</para>
 	/// <para>Makes an origin–destination (OD) cost matrix network analysis layer and sets its analysis properties. An OD cost matrix analysis layer is useful for representing a matrix of costs going from a set of origin locations to a set of destination locations.</para>
 	/// </summary>
 	[Obsolete()]
@@ -41,37 +42,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Make OD Cost Matrix Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make OD Cost Matrix Layer";
+		public override string DisplayName() => "Make OD Cost Matrix Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeODCostMatrixLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeODCostMatrixLayer";
+		public override string ToolName() => "MakeODCostMatrixLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.MakeODCostMatrixLayer</para>
 		/// </summary>
-		public override string ExcuteName => "na.MakeODCostMatrixLayer";
+		public override string ExcuteName() => "na.MakeODCostMatrixLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDataset, OutNetworkAnalysisLayer, ImpedanceAttribute, DefaultCutoff!, DefaultNumberDestinationsToFind!, AccumulateAttributeName!, UturnPolicy!, RestrictionAttributeName!, Hierarchy!, HierarchySettings!, OutputPathShape!, TimeOfDay!, OutputLayer! };
+		public override object[] Parameters() => new object[] { InNetworkDataset, OutNetworkAnalysisLayer, ImpedanceAttribute, DefaultCutoff!, DefaultNumberDestinationsToFind!, AccumulateAttributeName!, UturnPolicy!, RestrictionAttributeName!, Hierarchy!, HierarchySettings!, OutputPathShape!, TimeOfDay!, OutputLayer! };
 
 		/// <summary>
 		/// <para>Input Analysis Network</para>

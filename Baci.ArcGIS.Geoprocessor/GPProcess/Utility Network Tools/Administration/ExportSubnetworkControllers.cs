@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Export Subnetwork Controllers</para>
+	/// <para>Export Subnetwork Controllers</para>
 	/// <para>Exports subnetwork controllers from a utility network to a .csv file.</para>
 	/// </summary>
 	public class ExportSubnetworkControllers : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Subnetwork Controllers</para>
 		/// </summary>
-		public override string DisplayName => "Export Subnetwork Controllers";
+		public override string DisplayName() => "Export Subnetwork Controllers";
 
 		/// <summary>
 		/// <para>Tool Name : ExportSubnetworkControllers</para>
 		/// </summary>
-		public override string ToolName => "ExportSubnetworkControllers";
+		public override string ToolName() => "ExportSubnetworkControllers";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.ExportSubnetworkControllers</para>
 		/// </summary>
-		public override string ExcuteName => "un.ExportSubnetworkControllers";
+		public override string ExcuteName() => "un.ExportSubnetworkControllers";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, OutCsvFile };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, OutCsvFile };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
@@ -82,6 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("CSV")]
 		public object OutCsvFile { get; set; }
 
 	}

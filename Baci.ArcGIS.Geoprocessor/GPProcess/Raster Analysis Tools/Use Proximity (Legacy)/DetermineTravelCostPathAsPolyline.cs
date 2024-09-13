@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Determine Travel Cost Path As Polyline</para>
+	/// <para>Determine Travel Cost Path As Polyline</para>
 	/// <para>Calculates the least-cost polyline path between sources and destinations.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.RasterAnalysisTools.OptimalPathAsLine"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
@@ -53,37 +54,37 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Determine Travel Cost Path As Polyline</para>
 		/// </summary>
-		public override string DisplayName => "Determine Travel Cost Path As Polyline";
+		public override string DisplayName() => "Determine Travel Cost Path As Polyline";
 
 		/// <summary>
 		/// <para>Tool Name : DetermineTravelCostPathAsPolyline</para>
 		/// </summary>
-		public override string ToolName => "DetermineTravelCostPathAsPolyline";
+		public override string ToolName() => "DetermineTravelCostPathAsPolyline";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ra.DetermineTravelCostPathAsPolyline</para>
 		/// </summary>
-		public override string ExcuteName => "ra.DetermineTravelCostPathAsPolyline";
+		public override string ExcuteName() => "ra.DetermineTravelCostPathAsPolyline";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Raster Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Raster Analysis Tools";
+		public override string ToolboxDisplayName() => "Raster Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ra</para>
 		/// </summary>
-		public override string ToolboxAlise => "ra";
+		public override string ToolboxAlise() => "ra";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "extent", "mask", "outputCoordinateSystem", "snapRaster" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Inputsourcerasterorfeatures, Inputcostraster, Inputdestinationrasterorfeatures, Outputpolylinename, Pathtype!, Outputpolylinefeatures!, Destinationfield! };
+		public override object[] Parameters() => new object[] { Inputsourcerasterorfeatures, Inputcostraster, Inputdestinationrasterorfeatures, Outputpolylinename, Pathtype!, Outputpolylinefeatures!, Destinationfield! };
 
 		/// <summary>
 		/// <para>Input Source Raster or Features</para>

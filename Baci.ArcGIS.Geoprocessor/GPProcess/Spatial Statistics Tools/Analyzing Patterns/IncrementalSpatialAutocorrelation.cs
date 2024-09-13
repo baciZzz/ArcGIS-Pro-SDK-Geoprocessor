@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Incremental Spatial Autocorrelation</para>
+	/// <para>Incremental Spatial Autocorrelation</para>
 	/// <para>Measures spatial autocorrelation for a series of distances and optionally creates a line graph of those distances and their corresponding z-scores.  Z-scores reflect the intensity of spatial clustering, and statistically significant peak z-scores indicate distances where spatial processes promoting clustering are most pronounced.  These peak distances are often appropriate values to use for tools with a Distance Band or Distance Radius parameter.</para>
 	/// </summary>
 	public class IncrementalSpatialAutocorrelation : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Tool Display Name : Incremental Spatial Autocorrelation</para>
 		/// </summary>
-		public override string DisplayName => "Incremental Spatial Autocorrelation";
+		public override string DisplayName() => "Incremental Spatial Autocorrelation";
 
 		/// <summary>
 		/// <para>Tool Name : IncrementalSpatialAutocorrelation</para>
 		/// </summary>
-		public override string ToolName => "IncrementalSpatialAutocorrelation";
+		public override string ToolName() => "IncrementalSpatialAutocorrelation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stats.IncrementalSpatialAutocorrelation</para>
 		/// </summary>
-		public override string ExcuteName => "stats.IncrementalSpatialAutocorrelation";
+		public override string ExcuteName() => "stats.IncrementalSpatialAutocorrelation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Statistics Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Statistics Tools";
+		public override string ToolboxDisplayName() => "Spatial Statistics Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stats</para>
 		/// </summary>
-		public override string ToolboxAlise => "stats";
+		public override string ToolboxAlise() => "stats";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, InputField, NumberOfDistanceBands, BeginningDistance!, DistanceIncrement!, DistanceMethod!, RowStandardization!, OutputTable!, OutputReportFile!, FirstPeak!, MaxPeak! };
+		public override object[] Parameters() => new object[] { InputFeatures, InputField, NumberOfDistanceBands, BeginningDistance!, DistanceIncrement!, DistanceMethod!, RowStandardization!, OutputTable!, OutputReportFile!, FirstPeak!, MaxPeak! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -87,6 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object InputField { get; set; }
 
 		/// <summary>
@@ -95,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 2, Max = 30)]
 		public object NumberOfDistanceBands { get; set; } = "10";
 
 		/// <summary>
@@ -104,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 999999999)]
 		public object? BeginningDistance { get; set; }
 
 		/// <summary>
@@ -113,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1.0000000000000001e-09, Max = 999999999)]
 		public object? DistanceIncrement { get; set; }
 
 		/// <summary>
@@ -155,6 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("pdf")]
 		public object? OutputReportFile { get; set; }
 
 		/// <summary>

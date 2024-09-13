@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Spatial Index</para>
+	/// <para>Remove Spatial Index</para>
 	/// <para>Deletes the spatial index from a shapefile or file geodatabase, mobile geodatabase, or an enterprise geodatabase feature class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Spatial Index</para>
 		/// </summary>
-		public override string DisplayName => "Remove Spatial Index";
+		public override string DisplayName() => "Remove Spatial Index";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveSpatialIndex</para>
 		/// </summary>
-		public override string ToolName => "RemoveSpatialIndex";
+		public override string ToolName() => "RemoveSpatialIndex";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RemoveSpatialIndex</para>
 		/// </summary>
-		public override string ExcuteName => "management.RemoveSpatialIndex";
+		public override string ExcuteName() => "management.RemoveSpatialIndex";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>

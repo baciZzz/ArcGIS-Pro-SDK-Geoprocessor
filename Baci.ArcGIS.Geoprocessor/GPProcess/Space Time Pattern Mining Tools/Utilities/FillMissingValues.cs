@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Fill Missing Values</para>
+	/// <para>Fill Missing Values</para>
 	/// <para>Replaces missing (null) values with estimated values based on spatial neighbors, space-time neighbors, time-series, or global statistic values.</para>
 	/// </summary>
 	public class FillMissingValues : AbstractGPProcess
@@ -47,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Tool Display Name : Fill Missing Values</para>
 		/// </summary>
-		public override string DisplayName => "Fill Missing Values";
+		public override string DisplayName() => "Fill Missing Values";
 
 		/// <summary>
 		/// <para>Tool Name : FillMissingValues</para>
 		/// </summary>
-		public override string ToolName => "FillMissingValues";
+		public override string ToolName() => "FillMissingValues";
 
 		/// <summary>
 		/// <para>Tool Excute Name : stpm.FillMissingValues</para>
 		/// </summary>
-		public override string ExcuteName => "stpm.FillMissingValues";
+		public override string ExcuteName() => "stpm.FillMissingValues";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Space Time Pattern Mining Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Space Time Pattern Mining Tools";
+		public override string ToolboxDisplayName() => "Space Time Pattern Mining Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : stpm</para>
 		/// </summary>
-		public override string ToolboxAlise => "stpm";
+		public override string ToolboxAlise() => "stpm";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "geographicTransformations", "outputCoordinateSystem" };
+		public override string[] ValidEnvironments() => new string[] { "geographicTransformations", "outputCoordinateSystem" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatures!, FieldsToFill, FillMethod, ConceptualizationOfSpatialRelationships!, DistanceBand!, TemporalNeighborhood!, TimeField!, NumberOfSpatialNeighbors!, LocationId!, RelatedTable!, RelatedLocationId!, WeightsMatrixFile!, UniqueId!, NullValue!, OutTable!, AppendToInput!, UpdatedFeatures! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatures!, FieldsToFill, FillMethod, ConceptualizationOfSpatialRelationships!, DistanceBand!, TemporalNeighborhood!, TimeField!, NumberOfSpatialNeighbors!, LocationId!, RelatedTable!, RelatedLocationId!, WeightsMatrixFile!, UniqueId!, NullValue!, OutTable!, AppendToInput!, UpdatedFeatures! };
 
 		/// <summary>
 		/// <para>Input Features or Table</para>
@@ -106,6 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFieldDomain()]
+		[FieldType("Double", "Long", "Float", "Short")]
 		public object FieldsToFill { get; set; }
 
 		/// <summary>
@@ -165,6 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Date")]
 		public object? TimeField { get; set; }
 
 		/// <summary>
@@ -184,6 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short", "Text")]
 		public object? LocationId { get; set; }
 
 		/// <summary>
@@ -201,6 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short", "Text")]
 		public object? RelatedLocationId { get; set; }
 
 		/// <summary>
@@ -210,6 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("swm")]
 		public object? WeightsMatrixFile { get; set; }
 
 		/// <summary>
@@ -220,11 +226,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short")]
 		public object? UniqueId { get; set; }
 
 		/// <summary>
 		/// <para>Null Value</para>
-		/// <para>The value that represents null (missing) values. If no value is provided, <Null> is assumed for geodatabase feature classes and tables. If a value is provided, both the value and all <Null> values will be filled. If the input or output is a shapefile or dBASE table, a numeric value of the null placeholder is required.</para>
+		/// <para>The value that represents null (missing) values. If no value is provided, &lt;Null&gt; is assumed for geodatabase feature classes and tables. If a value is provided, both the value and all &lt;Null&gt; values will be filled. If the input or output is a shapefile or dBASE table, a numeric value of the null placeholder is required.</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

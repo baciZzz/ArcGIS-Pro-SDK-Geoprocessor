@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Solar Radiation Graphics</para>
+	/// <para>Solar Radiation Graphics</para>
 	/// <para>Derives raster representations of a hemispherical viewshed, sun map, and sky map, which are used in the calculation of direct, diffuse, and global solar radiation.</para>
 	/// </summary>
 	public class SolarRadiationGraphics : AbstractGPProcess
@@ -36,37 +37,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Solar Radiation Graphics</para>
 		/// </summary>
-		public override string DisplayName => "Solar Radiation Graphics";
+		public override string DisplayName() => "Solar Radiation Graphics";
 
 		/// <summary>
 		/// <para>Tool Name : SolarRadiationGraphics</para>
 		/// </summary>
-		public override string ToolName => "SolarRadiationGraphics";
+		public override string ToolName() => "SolarRadiationGraphics";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.SolarRadiationGraphics</para>
 		/// </summary>
-		public override string ExcuteName => "sa.SolarRadiationGraphics";
+		public override string ExcuteName() => "sa.SolarRadiationGraphics";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "outputCoordinateSystem", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSurfaceRaster, OutViewshedRaster, InPointsFeatureOrTable!, SkySize!, HeightOffset!, CalculationDirections!, Latitude!, TimeConfiguration!, DayInterval!, HourInterval!, OutSunmapRaster!, ZenithDivisions!, AzimuthDivisions!, OutSkymapRaster! };
+		public override object[] Parameters() => new object[] { InSurfaceRaster, OutViewshedRaster, InPointsFeatureOrTable!, SkySize!, HeightOffset!, CalculationDirections!, Latitude!, TimeConfiguration!, DayInterval!, HourInterval!, OutSunmapRaster!, ZenithDivisions!, AzimuthDivisions!, OutSkymapRaster! };
 
 		/// <summary>
 		/// <para>Input raster</para>
@@ -74,7 +75,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InSurfaceRaster { get; set; }
 
 		/// <summary>
@@ -92,7 +96,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = false, SingleBand = false)]
+		[DataType("DEFeatureClass", "GPFeatureLayer", "GPTableView", "DETextFile", "DETable")]
+		[FieldType("Short", "Long", "Float", "Double", "Geometry")]
+		[GeometryType("Point", "Multipoint")]
 		public object? InPointsFeatureOrTable { get; set; }
 
 		/// <summary>
@@ -103,6 +110,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 100)]
+		[High(Allow = true, Value = 10000)]
 		public object? SkySize { get; set; } = "200";
 
 		/// <summary>
@@ -113,6 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 0)]
 		public object? HeightOffset { get; set; } = "0";
 
 		/// <summary>
@@ -123,6 +133,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 8)]
+		[High(Allow = true, Value = 360)]
 		public object? CalculationDirections { get; set; } = "32";
 
 		/// <summary>
@@ -133,6 +145,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = -90)]
+		[High(Allow = true, Value = 90)]
 		[Category("Optional sunmap output")]
 		public object? Latitude { get; set; }
 
@@ -159,6 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 1)]
 		[Category("Optional sunmap output")]
 		public object? DayInterval { get; set; } = "14";
 
@@ -191,6 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 1)]
 		[Category("Optional skymap output")]
 		public object? ZenithDivisions { get; set; } = "8";
 

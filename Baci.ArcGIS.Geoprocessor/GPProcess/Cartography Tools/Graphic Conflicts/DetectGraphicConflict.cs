@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Detect Graphic Conflict</para>
+	/// <para>Detect Graphic Conflict</para>
 	/// <para>Creates polygons where two or more symbolized features graphically conflict.</para>
 	/// </summary>
 	public class DetectGraphicConflict : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Tool Display Name : Detect Graphic Conflict</para>
 		/// </summary>
-		public override string DisplayName => "Detect Graphic Conflict";
+		public override string DisplayName() => "Detect Graphic Conflict";
 
 		/// <summary>
 		/// <para>Tool Name : DetectGraphicConflict</para>
 		/// </summary>
-		public override string ToolName => "DetectGraphicConflict";
+		public override string ToolName() => "DetectGraphicConflict";
 
 		/// <summary>
 		/// <para>Tool Excute Name : cartography.DetectGraphicConflict</para>
 		/// </summary>
-		public override string ExcuteName => "cartography.DetectGraphicConflict";
+		public override string ExcuteName() => "cartography.DetectGraphicConflict";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Cartography Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Cartography Tools";
+		public override string ToolboxDisplayName() => "Cartography Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : cartography</para>
 		/// </summary>
-		public override string ToolboxAlise => "cartography";
+		public override string ToolboxAlise() => "cartography";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cartographicCoordinateSystem", "cartographicPartitions", "referenceScale" };
+		public override string[] ValidEnvironments() => new string[] { "cartographicCoordinateSystem", "cartographicPartitions", "referenceScale" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, ConflictFeatures, OutFeatureClass, ConflictDistance!, LineConnectionAllowance! };
+		public override object[] Parameters() => new object[] { InFeatures, ConflictFeatures, OutFeatureClass, ConflictDistance!, LineConnectionAllowance! };
 
 		/// <summary>
 		/// <para>Input Layer</para>

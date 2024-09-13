@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Files From LAS Dataset</para>
+	/// <para>Remove Files From LAS Dataset</para>
 	/// <para>Removes one or more LAS files and surface constraint features from a LAS dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Remove Files From LAS Dataset</para>
 		/// </summary>
-		public override string DisplayName => "Remove Files From LAS Dataset";
+		public override string DisplayName() => "Remove Files From LAS Dataset";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveFilesFromLasDataset</para>
 		/// </summary>
-		public override string ToolName => "RemoveFilesFromLasDataset";
+		public override string ToolName() => "RemoveFilesFromLasDataset";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.RemoveFilesFromLasDataset</para>
 		/// </summary>
-		public override string ExcuteName => "management.RemoveFilesFromLasDataset";
+		public override string ExcuteName() => "management.RemoveFilesFromLasDataset";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InLasDataset, InFiles!, InSurfaceConstraints!, DerivedLasDataset!, DeletePyramid! };
+		public override object[] Parameters() => new object[] { InLasDataset, InFiles!, InSurfaceConstraints!, DerivedLasDataset!, DeletePyramid! };
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>

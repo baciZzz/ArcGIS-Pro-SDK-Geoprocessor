@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Cost Back Link</para>
+	/// <para>Cost Back Link</para>
 	/// <para>Defines the neighbor that is the next cell on the least accumulative cost path to the least-cost source.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.SpatialAnalystTools.DistanceAccumulation"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
@@ -48,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Cost Back Link</para>
 		/// </summary>
-		public override string DisplayName => "Cost Back Link";
+		public override string DisplayName() => "Cost Back Link";
 
 		/// <summary>
 		/// <para>Tool Name : CostBackLink</para>
 		/// </summary>
-		public override string ToolName => "CostBackLink";
+		public override string ToolName() => "CostBackLink";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.CostBackLink</para>
 		/// </summary>
-		public override string ExcuteName => "sa.CostBackLink";
+		public override string ExcuteName() => "sa.CostBackLink";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSourceData, InCostRaster, OutBacklinkRaster, MaximumDistance!, OutDistanceRaster!, SourceCostMultiplier!, SourceStartCost!, SourceResistanceRate!, SourceCapacity!, SourceDirection! };
+		public override object[] Parameters() => new object[] { InSourceData, InCostRaster, OutBacklinkRaster, MaximumDistance!, OutDistanceRaster!, SourceCostMultiplier!, SourceStartCost!, SourceResistanceRate!, SourceCapacity!, SourceDirection! };
 
 		/// <summary>
 		/// <para>Input raster or feature source data</para>
@@ -88,7 +89,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEFeatureClass", "GPFeatureLayer", "DETin", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("OID", "Short", "Long", "Float", "Double", "Text", "Geometry")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InSourceData { get; set; }
 
 		/// <summary>
@@ -99,7 +103,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InCostRaster { get; set; }
 
 		/// <summary>

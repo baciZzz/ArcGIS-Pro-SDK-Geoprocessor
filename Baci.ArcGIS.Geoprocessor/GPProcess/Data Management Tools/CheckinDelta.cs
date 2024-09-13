@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Check In From Delta</para>
+	/// <para>Check In From Delta</para>
 	/// <para>Imports Changes from a delta file into the parent replica.</para>
 	/// </summary>
 	[Obsolete()]
@@ -34,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Check In From Delta</para>
 		/// </summary>
-		public override string DisplayName => "Check In From Delta";
+		public override string DisplayName() => "Check In From Delta";
 
 		/// <summary>
 		/// <para>Tool Name : CheckinDelta</para>
 		/// </summary>
-		public override string ToolName => "CheckinDelta";
+		public override string ToolName() => "CheckinDelta";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CheckinDelta</para>
 		/// </summary>
-		public override string ExcuteName => "management.CheckinDelta";
+		public override string ExcuteName() => "management.CheckinDelta";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDeltaDatabase, DestWorkspace, Reconcile!, OutputWorkspace! };
+		public override object[] Parameters() => new object[] { InDeltaDatabase, DestWorkspace, Reconcile!, OutputWorkspace! };
 
 		/// <summary>
 		/// <para>Check-in from Delta Database</para>
@@ -72,6 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("mdb", "xml")]
 		public object InDeltaDatabase { get; set; }
 
 		/// <summary>
@@ -80,6 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Remote Database")]
 		public object DestWorkspace { get; set; }
 
 		/// <summary>

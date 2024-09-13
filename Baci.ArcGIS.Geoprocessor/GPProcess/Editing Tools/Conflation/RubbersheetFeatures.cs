@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Rubbersheet Features</para>
+	/// <para>Rubbersheet Features</para>
 	/// <para>Modifies input features by spatially adjusting them through rubbersheeting, using the specified rubbersheet links, so they are better aligned with the intended target features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Tool Display Name : Rubbersheet Features</para>
 		/// </summary>
-		public override string DisplayName => "Rubbersheet Features";
+		public override string DisplayName() => "Rubbersheet Features";
 
 		/// <summary>
 		/// <para>Tool Name : RubbersheetFeatures</para>
 		/// </summary>
-		public override string ToolName => "RubbersheetFeatures";
+		public override string ToolName() => "RubbersheetFeatures";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.RubbersheetFeatures</para>
 		/// </summary>
-		public override string ExcuteName => "edit.RubbersheetFeatures";
+		public override string ExcuteName() => "edit.RubbersheetFeatures";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Editing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Editing Tools";
+		public override string ToolboxDisplayName() => "Editing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : edit</para>
 		/// </summary>
-		public override string ToolboxAlise => "edit";
+		public override string ToolboxAlise() => "edit";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InLinkFeatures, InIdentityLinks!, Method!, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatures, InLinkFeatures, InIdentityLinks!, Method!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -76,6 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "Annotation", "CoverageAnnotation")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -85,6 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		public object InLinkFeatures { get; set; }
 
 		/// <summary>
@@ -94,6 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object? InIdentityLinks { get; set; }
 
 		/// <summary>

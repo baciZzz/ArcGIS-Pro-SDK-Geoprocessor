@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Disable Replica Tracking</para>
+	/// <para>Disable Replica Tracking</para>
 	/// <para>Disables replica tracking on data.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -32,37 +33,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Disable Replica Tracking</para>
 		/// </summary>
-		public override string DisplayName => "Disable Replica Tracking";
+		public override string DisplayName() => "Disable Replica Tracking";
 
 		/// <summary>
 		/// <para>Tool Name : DisableReplicaTracking</para>
 		/// </summary>
-		public override string ToolName => "DisableReplicaTracking";
+		public override string ToolName() => "DisableReplicaTracking";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DisableReplicaTracking</para>
 		/// </summary>
-		public override string ExcuteName => "management.DisableReplicaTracking";
+		public override string ExcuteName() => "management.DisableReplicaTracking";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InDataset, UpdatedDataset! };
+		public override object[] Parameters() => new object[] { InDataset, UpdatedDataset! };
 
 		/// <summary>
 		/// <para>Input Dataset</para>

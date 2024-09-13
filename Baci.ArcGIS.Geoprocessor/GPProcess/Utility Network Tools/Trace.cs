@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Trace</para>
+	/// <para>Trace</para>
 	/// <para>Returns network features in a utility network based on connectivity or traversability from the specified starting points.</para>
 	/// </summary>
 	public class Trace : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Trace</para>
 		/// </summary>
-		public override string DisplayName => "Trace";
+		public override string DisplayName() => "Trace";
 
 		/// <summary>
 		/// <para>Tool Name : Trace</para>
 		/// </summary>
-		public override string ToolName => "Trace";
+		public override string ToolName() => "Trace";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.Trace</para>
 		/// </summary>
-		public override string ExcuteName => "un.Trace";
+		public override string ExcuteName() => "un.Trace";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TraceType!, StartingPoints!, Barriers!, DomainNetwork!, Tier!, TargetTier!, SubnetworkName!, ShortestPathNetworkAttributeName!, IncludeContainers!, IncludeContent!, IncludeStructures!, IncludeBarriers!, ValidateConsistency!, ConditionBarriers!, FunctionBarriers!, TraversabilityScope!, FilterBarriers!, FilterFunctionBarriers!, FilterScope!, FilterBitsetNetworkAttributeName!, FilterNearest!, NearestCount!, NearestCostNetworkAttribute!, NearestCategories!, NearestAssets!, Functions!, Propagators!, OutputAssettypes!, OutputConditions!, OutUtilityNetwork!, IncludeIsolatedFeatures!, IgnoreBarriersAtStartingPoints!, IncludeUpToFirstSpatialContainer!, ResultTypes!, SelectionType!, ClearAllPreviousTraceResults!, TraceName!, AggregatedPoints!, AggregatedLines!, AggregatedPolygons!, AllowIndeterminateFlow!, ValidateLocatability!, UseTraceConfig!, TraceConfigName!, OutJsonFile!, RunAsync! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TraceType!, StartingPoints!, Barriers!, DomainNetwork!, Tier!, TargetTier!, SubnetworkName!, ShortestPathNetworkAttributeName!, IncludeContainers!, IncludeContent!, IncludeStructures!, IncludeBarriers!, ValidateConsistency!, ConditionBarriers!, FunctionBarriers!, TraversabilityScope!, FilterBarriers!, FilterFunctionBarriers!, FilterScope!, FilterBitsetNetworkAttributeName!, FilterNearest!, NearestCount!, NearestCostNetworkAttribute!, NearestCategories!, NearestAssets!, Functions!, Propagators!, OutputAssettypes!, OutputConditions!, OutUtilityNetwork!, IncludeIsolatedFeatures!, IgnoreBarriersAtStartingPoints!, IncludeUpToFirstSpatialContainer!, ResultTypes!, SelectionType!, ClearAllPreviousTraceResults!, TraceName!, AggregatedPoints!, AggregatedLines!, AggregatedPolygons!, AllowIndeterminateFlow!, ValidateLocatability!, UseTraceConfig!, TraceConfigName!, OutJsonFile!, RunAsync! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
@@ -638,6 +639,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Multipoint")]
 		[Category("Output")]
 		public object? AggregatedPoints { get; set; } = "Trace_Results_Aggregated_Points";
 
@@ -649,6 +651,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
 		[Category("Output")]
 		public object? AggregatedLines { get; set; } = "Trace_Results_Aggregated_Lines";
 
@@ -660,6 +663,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		[Category("Output")]
 		public object? AggregatedPolygons { get; set; } = "Trace_Results_Aggregated_Polygons";
 
@@ -718,6 +722,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("json")]
 		[Category("Output")]
 		public object? OutJsonFile { get; set; }
 

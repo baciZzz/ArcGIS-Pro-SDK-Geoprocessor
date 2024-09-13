@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Export Diagram Layer Definition</para>
+	/// <para>Export Diagram Layer Definition</para>
 	/// <para>Export a diagram template layer definition to a file</para>
 	/// </summary>
 	[Obsolete()]
@@ -34,37 +35,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Diagram Layer Definition</para>
 		/// </summary>
-		public override string DisplayName => "Export Diagram Layer Definition";
+		public override string DisplayName() => "Export Diagram Layer Definition";
 
 		/// <summary>
 		/// <para>Tool Name : ExportDiagramLayerDefinition</para>
 		/// </summary>
-		public override string ToolName => "ExportDiagramLayerDefinition";
+		public override string ToolName() => "ExportDiagramLayerDefinition";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.ExportDiagramLayerDefinition</para>
 		/// </summary>
-		public override string ExcuteName => "un.ExportDiagramLayerDefinition";
+		public override string ExcuteName() => "un.ExportDiagramLayerDefinition";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InNetworkDiagramLayer, OutNdldFile, OutNetworkDiagramLayer! };
+		public override object[] Parameters() => new object[] { InNetworkDiagramLayer, OutNdldFile, OutNetworkDiagramLayer! };
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("ndld")]
 		public object OutNdldFile { get; set; }
 
 		/// <summary>

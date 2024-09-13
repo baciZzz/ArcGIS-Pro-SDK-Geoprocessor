@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Geodatabase Configuration Keywords</para>
+	/// <para>Export Geodatabase Configuration Keywords</para>
 	/// <para>Exports the configuration keywords, parameters, and values from the specified enterprise geodatabase to an editable file. Change parameter values or add custom configuration keywords to the file and use the Import Geodatabase Configuration Keywords tool to import the changes to the geodatabase.</para>
 	/// </summary>
 	public class ExportGeodatabaseConfigurationKeywords : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Export Geodatabase Configuration Keywords</para>
 		/// </summary>
-		public override string DisplayName => "Export Geodatabase Configuration Keywords";
+		public override string DisplayName() => "Export Geodatabase Configuration Keywords";
 
 		/// <summary>
 		/// <para>Tool Name : ExportGeodatabaseConfigurationKeywords</para>
 		/// </summary>
-		public override string ToolName => "ExportGeodatabaseConfigurationKeywords";
+		public override string ToolName() => "ExportGeodatabaseConfigurationKeywords";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ExportGeodatabaseConfigurationKeywords</para>
 		/// </summary>
-		public override string ExcuteName => "management.ExportGeodatabaseConfigurationKeywords";
+		public override string ExcuteName() => "management.ExportGeodatabaseConfigurationKeywords";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputDatabase, OutFile, OutWorkspace! };
+		public override object[] Parameters() => new object[] { InputDatabase, OutFile, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Remote Database")]
 		public object InputDatabase { get; set; }
 
 		/// <summary>

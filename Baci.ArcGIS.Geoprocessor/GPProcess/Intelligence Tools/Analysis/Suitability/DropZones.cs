@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Drop Zone Suitability</para>
+	/// <para>Drop Zone Suitability</para>
 	/// <para>Identifies drop zone locations suitable for parachuting equipment or personnel within a designated area of interest given slope and vegetation data.</para>
 	/// </summary>
 	public class DropZones : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Tool Display Name : Drop Zone Suitability</para>
 		/// </summary>
-		public override string DisplayName => "Drop Zone Suitability";
+		public override string DisplayName() => "Drop Zone Suitability";
 
 		/// <summary>
 		/// <para>Tool Name : DropZones</para>
 		/// </summary>
-		public override string ToolName => "DropZones";
+		public override string ToolName() => "DropZones";
 
 		/// <summary>
 		/// <para>Tool Excute Name : intelligence.DropZones</para>
 		/// </summary>
-		public override string ExcuteName => "intelligence.DropZones";
+		public override string ExcuteName() => "intelligence.DropZones";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Intelligence Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Intelligence Tools";
+		public override string ToolboxDisplayName() => "Intelligence Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : intelligence</para>
 		/// </summary>
-		public override string ToolboxAlise => "intelligence";
+		public override string ToolboxAlise() => "intelligence";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InSlopeRaster, InVegetationFeatures, ClipFeatures, OutFeatureClass };
+		public override object[] Parameters() => new object[] { InSlopeRaster, InVegetationFeatures, ClipFeatures, OutFeatureClass };
 
 		/// <summary>
 		/// <para>Input Percent Slope Raster</para>
@@ -100,6 +101,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object ClipFeatures { get; set; }
 
 		/// <summary>

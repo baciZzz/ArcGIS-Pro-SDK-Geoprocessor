@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Feature Class To Shapefile</para>
+	/// <para>Feature Class To Shapefile</para>
 	/// <para>Converts the features from one or more feature classes or feature layers to shapefiles and adds them to a folder of shapefiles.</para>
 	/// </summary>
 	public class FeatureClassToShapefile : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Feature Class To Shapefile</para>
 		/// </summary>
-		public override string DisplayName => "Feature Class To Shapefile";
+		public override string DisplayName() => "Feature Class To Shapefile";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureClassToShapefile</para>
 		/// </summary>
-		public override string ToolName => "FeatureClassToShapefile";
+		public override string ToolName() => "FeatureClassToShapefile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.FeatureClassToShapefile</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.FeatureClassToShapefile";
+		public override string ExcuteName() => "conversion.FeatureClassToShapefile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "transferDomains", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "outputZValue", "qualifiedFieldNames", "scratchWorkspace", "transferDomains", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, OutputFolder, DerivedFolder! };
+		public override object[] Parameters() => new object[] { InputFeatures, OutputFolder, DerivedFolder! };
 
 		/// <summary>
 		/// <para>Input Features</para>

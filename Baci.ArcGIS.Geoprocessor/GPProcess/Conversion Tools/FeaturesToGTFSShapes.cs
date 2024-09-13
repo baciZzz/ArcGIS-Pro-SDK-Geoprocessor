@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Features To GTFS Shapes</para>
+	/// <para>Features To GTFS Shapes</para>
 	/// <para>Creates a  shapes.txt file for a GTFS public transit dataset based on route line representations created by the Generate Shapes Features From GTFS tool.</para>
 	/// </summary>
 	[Obsolete()]
@@ -57,37 +58,37 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Tool Display Name : Features To GTFS Shapes</para>
 		/// </summary>
-		public override string DisplayName => "Features To GTFS Shapes";
+		public override string DisplayName() => "Features To GTFS Shapes";
 
 		/// <summary>
 		/// <para>Tool Name : FeaturesToGTFSShapes</para>
 		/// </summary>
-		public override string ToolName => "FeaturesToGTFSShapes";
+		public override string ToolName() => "FeaturesToGTFSShapes";
 
 		/// <summary>
 		/// <para>Tool Excute Name : conversion.FeaturesToGTFSShapes</para>
 		/// </summary>
-		public override string ExcuteName => "conversion.FeaturesToGTFSShapes";
+		public override string ExcuteName() => "conversion.FeaturesToGTFSShapes";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Conversion Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Conversion Tools";
+		public override string ToolboxDisplayName() => "Conversion Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : conversion</para>
 		/// </summary>
-		public override string ToolboxAlise => "conversion";
+		public override string ToolboxAlise() => "conversion";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "randomGenerator" };
+		public override string[] ValidEnvironments() => new string[] { "randomGenerator" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InShapeLines, InShapeStops, InGtfsTrips, InGtfsStopTimes, OutGtfsShapes, OutGtfsStopTimes, DistanceUnits! };
+		public override object[] Parameters() => new object[] { InShapeLines, InShapeStops, InGtfsTrips, InGtfsStopTimes, OutGtfsShapes, OutGtfsStopTimes, DistanceUnits! };
 
 		/// <summary>
 		/// <para>Input Shape Lines</para>
@@ -96,6 +97,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polyline")]
+		[FeatureType("Simple")]
 		public object InShapeLines { get; set; }
 
 		/// <summary>
@@ -106,6 +109,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InShapeStops { get; set; }
 
 		/// <summary>
@@ -115,6 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("txt")]
 		public object InGtfsTrips { get; set; }
 
 		/// <summary>
@@ -124,6 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("txt")]
 		public object InGtfsStopTimes { get; set; }
 
 		/// <summary>
@@ -133,6 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("txt")]
 		public object OutGtfsShapes { get; set; }
 
 		/// <summary>
@@ -142,6 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("txt")]
 		public object OutGtfsStopTimes { get; set; }
 
 		/// <summary>

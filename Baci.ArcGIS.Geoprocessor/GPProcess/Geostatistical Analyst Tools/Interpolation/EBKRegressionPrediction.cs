@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>EBK Regression Prediction</para>
+	/// <para>EBK Regression Prediction</para>
 	/// <para>EBK Regression Prediction is a geostatistical interpolation method that uses Empirical Bayesian Kriging with explanatory variable rasters that are known to affect the value of the data that you are interpolating. This approach combines kriging with regression analysis to make predictions that are more accurate than either regression or kriging can achieve on their own.</para>
 	/// </summary>
 	public class EBKRegressionPrediction : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : EBK Regression Prediction</para>
 		/// </summary>
-		public override string DisplayName => "EBK Regression Prediction";
+		public override string DisplayName() => "EBK Regression Prediction";
 
 		/// <summary>
 		/// <para>Tool Name : EBKRegressionPrediction</para>
 		/// </summary>
-		public override string ToolName => "EBKRegressionPrediction";
+		public override string ToolName() => "EBKRegressionPrediction";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ga.EBKRegressionPrediction</para>
 		/// </summary>
-		public override string ExcuteName => "ga.EBKRegressionPrediction";
+		public override string ExcuteName() => "ga.EBKRegressionPrediction";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geostatistical Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geostatistical Analyst Tools";
+		public override string ToolboxDisplayName() => "Geostatistical Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ga</para>
 		/// </summary>
-		public override string ToolboxAlise => "ga";
+		public override string ToolboxAlise() => "ga";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "cellSize", "coincidentPoints", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, DependentField, InExplanatoryRasters, OutGaLayer, OutRaster!, OutDiagnosticFeatureClass!, MeasurementErrorField!, MinCumulativeVariance!, InSubsetFeatures!, TransformationType!, SemivariogramModelType!, MaxLocalPoints!, OverlapFactor!, NumberSimulations!, SearchNeighborhood! };
+		public override object[] Parameters() => new object[] { InFeatures, DependentField, InExplanatoryRasters, OutGaLayer, OutRaster!, OutDiagnosticFeatureClass!, MeasurementErrorField!, MinCumulativeVariance!, InSubsetFeatures!, TransformationType!, SemivariogramModelType!, MaxLocalPoints!, OverlapFactor!, NumberSimulations!, SearchNeighborhood! };
 
 		/// <summary>
 		/// <para>Input dependent variable features</para>
@@ -84,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -93,6 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object DependentField { get; set; }
 
 		/// <summary>
@@ -101,7 +104,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "analysis_cell_size", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long", "Float", "Double", "Text", "Geometry")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InExplanatoryRasters { get; set; }
 
 		/// <summary>
@@ -145,6 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? MeasurementErrorField { get; set; }
 
 		/// <summary>
@@ -155,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 0, Max = 99.989999999999995)]
 		[Category("Additional Model Parameters")]
 		public object? MinCumulativeVariance { get; set; } = "95";
 
@@ -167,6 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		[Category("Additional Model Parameters")]
 		public object? InSubsetFeatures { get; set; }
 
@@ -205,7 +213,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 20, Max = 1000)]
 		[Category("Additional Model Parameters")]
 		public object? MaxLocalPoints { get; set; } = "100";
 
@@ -215,7 +223,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 1, Max = 5)]
 		[Category("Additional Model Parameters")]
 		public object? OverlapFactor { get; set; } = "1";
 
@@ -225,7 +233,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
-		[GPRangeDomain()]
+		[GPRangeDomain(Min = 30, Max = 10000)]
 		[Category("Additional Model Parameters")]
 		public object? NumberSimulations { get; set; } = "100";
 
@@ -248,7 +256,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGASearchNeighborhood()]
-		[GPGASearchNeighborhoodDomain()]
+		[GPGASearchNeighborhoodDomain(ChordalDistance = true)]
+		[NeighbourType("StandardCircular", "SmoothCircular")]
 		[Category("Search Neighborhood Parameters")]
 		public object? SearchNeighborhood { get; set; } = "NBRTYPE=StandardCircular RADIUS=nan ANGLE=0 NBR_MAX=15 NBR_MIN=10 SECTOR_TYPE=ONE_SECTOR";
 

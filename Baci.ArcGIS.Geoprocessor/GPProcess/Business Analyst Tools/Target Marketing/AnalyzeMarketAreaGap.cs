@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Analyze Market Area Gap</para>
+	/// <para>Analyze Market Area Gap</para>
 	/// <para>Generates a layer that displays the gap between total customers and expected customers.</para>
 	/// </summary>
 	public class AnalyzeMarketAreaGap : AbstractGPProcess
@@ -65,37 +66,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Analyze Market Area Gap</para>
 		/// </summary>
-		public override string DisplayName => "Analyze Market Area Gap";
+		public override string DisplayName() => "Analyze Market Area Gap";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeMarketAreaGap</para>
 		/// </summary>
-		public override string ToolName => "AnalyzeMarketAreaGap";
+		public override string ToolName() => "AnalyzeMarketAreaGap";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.AnalyzeMarketAreaGap</para>
 		/// </summary>
-		public override string ExcuteName => "ba.AnalyzeMarketAreaGap";
+		public override string ExcuteName() => "ba.AnalyzeMarketAreaGap";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { CustomerLayer, TargetProfile, BaseProfile, GeographyLevel, OutFeatureClass, TargetGroup, CoreTarget, DevelopmentalTarget, BoundaryLayer!, CreateReport!, ReportTitle!, ReportFolder!, ReportFormat!, OutputReport! };
+		public override object[] Parameters() => new object[] { CustomerLayer, TargetProfile, BaseProfile, GeographyLevel, OutFeatureClass, TargetGroup, CoreTarget, DevelopmentalTarget, BoundaryLayer!, CreateReport!, ReportTitle!, ReportFolder!, ReportFormat!, OutputReport! };
 
 		/// <summary>
 		/// <para>Customer Layer</para>
@@ -104,6 +105,8 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object CustomerLayer { get; set; }
 
 		/// <summary>
@@ -113,6 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("sgprofile")]
 		public object TargetProfile { get; set; }
 
 		/// <summary>
@@ -122,6 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("sgprofile")]
 		public object BaseProfile { get; set; }
 
 		/// <summary>
@@ -147,6 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("sgtargetgroup")]
 		public object TargetGroup { get; set; }
 
 		/// <summary>
@@ -172,6 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
 		public object? BoundaryLayer { get; set; }
 
 		/// <summary>

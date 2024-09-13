@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Enterprise Geodatabase</para>
+	/// <para>Create Enterprise Geodatabase</para>
 	/// <para>Creates a database, storage locations, and a database user to act as the geodatabase administrator and owner of the geodatabase. Functionality varies depending on the database management system used. The tool grants the geodatabase administrator the privileges required to create a geodatabase; it then creates a geodatabase in the database.</para>
 	/// </summary>
 	public class CreateEnterpriseGeodatabase : AbstractGPProcess
@@ -48,37 +49,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Create Enterprise Geodatabase</para>
 		/// </summary>
-		public override string DisplayName => "Create Enterprise Geodatabase";
+		public override string DisplayName() => "Create Enterprise Geodatabase";
 
 		/// <summary>
 		/// <para>Tool Name : CreateEnterpriseGeodatabase</para>
 		/// </summary>
-		public override string ToolName => "CreateEnterpriseGeodatabase";
+		public override string ToolName() => "CreateEnterpriseGeodatabase";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CreateEnterpriseGeodatabase</para>
 		/// </summary>
-		public override string ExcuteName => "management.CreateEnterpriseGeodatabase";
+		public override string ExcuteName() => "management.CreateEnterpriseGeodatabase";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { DatabasePlatform, InstanceName, DatabaseName!, AccountAuthentication!, DatabaseAdmin!, DatabaseAdminPassword!, SdeSchema!, GdbAdminName!, GdbAdminPassword!, TablespaceName!, AuthorizationFile, OutResult!, SpatialType! };
+		public override object[] Parameters() => new object[] { DatabasePlatform, InstanceName, DatabaseName!, AccountAuthentication!, DatabaseAdmin!, DatabaseAdminPassword!, SdeSchema!, GdbAdminName!, GdbAdminPassword!, TablespaceName!, AuthorizationFile, OutResult!, SpatialType! };
 
 		/// <summary>
 		/// <para>Database Platform</para>

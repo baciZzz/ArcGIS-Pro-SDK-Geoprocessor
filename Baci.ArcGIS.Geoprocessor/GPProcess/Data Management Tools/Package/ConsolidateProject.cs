@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Consolidate Project</para>
+	/// <para>Consolidate Project</para>
 	/// <para>Consolidates a project (an .aprx file) and referenced maps and data into a specified output folder.</para>
 	/// </summary>
 	public class ConsolidateProject : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Consolidate Project</para>
 		/// </summary>
-		public override string DisplayName => "Consolidate Project";
+		public override string DisplayName() => "Consolidate Project";
 
 		/// <summary>
 		/// <para>Tool Name : ConsolidateProject</para>
 		/// </summary>
-		public override string ToolName => "ConsolidateProject";
+		public override string ToolName() => "ConsolidateProject";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.ConsolidateProject</para>
 		/// </summary>
-		public override string ExcuteName => "management.ConsolidateProject";
+		public override string ExcuteName() => "management.ConsolidateProject";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InProject, OutputFolder, SharingInternal!, Extent!, ApplyExtentToEnterpriseGeo!, PackageAsTemplate!, PreserveSqlite!, Version!, SelectRelatedRows! };
+		public override object[] Parameters() => new object[] { InProject, OutputFolder, SharingInternal!, Extent!, ApplyExtentToEnterpriseGeo!, PackageAsTemplate!, PreserveSqlite!, Version!, SelectRelatedRows! };
 
 		/// <summary>
 		/// <para>Input Project</para>
@@ -74,6 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("aprx")]
 		public object InProject { get; set; }
 
 		/// <summary>

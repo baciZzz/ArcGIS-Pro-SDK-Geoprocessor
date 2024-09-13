@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Geocode File</para>
+	/// <para>Geocode File</para>
 	/// <para>Converts large local tables of addresses or places into points in a feature class or as a stand-alone .csv or .xls table. This tool uses locators hosted on an ArcGIS Enterprise portal.</para>
 	/// </summary>
 	public class GeocodeFile : AbstractGPProcess
@@ -65,37 +66,37 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Tool Display Name : Geocode File</para>
 		/// </summary>
-		public override string DisplayName => "Geocode File";
+		public override string DisplayName() => "Geocode File";
 
 		/// <summary>
 		/// <para>Tool Name : GeocodeFile</para>
 		/// </summary>
-		public override string ToolName => "GeocodeFile";
+		public override string ToolName() => "GeocodeFile";
 
 		/// <summary>
 		/// <para>Tool Excute Name : geocoding.GeocodeFile</para>
 		/// </summary>
-		public override string ExcuteName => "geocoding.GeocodeFile";
+		public override string ExcuteName() => "geocoding.GeocodeFile";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Geocoding Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Geocoding Tools";
+		public override string ToolboxDisplayName() => "Geocoding Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : geocoding</para>
 		/// </summary>
-		public override string ToolboxAlise => "geocoding";
+		public override string ToolboxAlise() => "geocoding";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "outputCoordinateSystem", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "outputCoordinateSystem", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Locator, AddressFields, OutputType, OutputLocation, OutputName, Country!, LocationType!, Category!, OutFeatureClass!, OutTable!, OutputFields! };
+		public override object[] Parameters() => new object[] { InTable, Locator, AddressFields, OutputType, OutputLocation, OutputName, Country!, LocationType!, Category!, OutFeatureClass!, OutTable!, OutputFields! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -104,6 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
 		[GPBrowseFiltersDomain()]
+		[Filters("esri_browseDialogFilters_tables_geocode_file")]
 		public object InTable { get; set; }
 
 		/// <summary>
@@ -148,6 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("File System")]
 		public object OutputLocation { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Threshold Drive Times</para>
+	/// <para>Generate Threshold Drive Times</para>
 	/// <para>Creates a feature class of network distance trade areas that expand around point features until criteria is reached.</para>
 	/// </summary>
 	public class GenerateThresholdDriveTimeTradeArea : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Generate Threshold Drive Times</para>
 		/// </summary>
-		public override string DisplayName => "Generate Threshold Drive Times";
+		public override string DisplayName() => "Generate Threshold Drive Times";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateThresholdDriveTimeTradeArea</para>
 		/// </summary>
-		public override string ToolName => "GenerateThresholdDriveTimeTradeArea";
+		public override string ToolName() => "GenerateThresholdDriveTimeTradeArea";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ba.GenerateThresholdDriveTimeTradeArea</para>
 		/// </summary>
-		public override string ExcuteName => "ba.GenerateThresholdDriveTimeTradeArea";
+		public override string ExcuteName() => "ba.GenerateThresholdDriveTimeTradeArea";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Business Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Business Analyst Tools";
+		public override string ToolboxDisplayName() => "Business Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ba</para>
 		/// </summary>
-		public override string ToolboxAlise => "ba";
+		public override string ToolboxAlise() => "ba";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "baDataSource", "baNetworkSource", "geographicTransformations", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "baDataSource", "baNetworkSource", "geographicTransformations", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, OutFeatureClass, ThresholdVariable, ThresholdValues!, DistanceType, Units!, IdField!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance!, PolygonDetail!, IterationsLimit!, MinimumStep!, TargetPercentDiff!, InputMethod!, Expression! };
+		public override object[] Parameters() => new object[] { InFeatures, OutFeatureClass, ThresholdVariable, ThresholdValues!, DistanceType, Units!, IdField!, TravelDirection!, TimeOfDay!, TimeZone!, SearchTolerance!, PolygonDetail!, IterationsLimit!, MinimumStep!, TargetPercentDiff!, InputMethod!, Expression! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -84,6 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -136,6 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Short", "Long", "GUID", "GlobalID")]
 		public object? IdField { get; set; }
 
 		/// <summary>
@@ -204,6 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
 		[GPNumericDomain()]
+		[Low(Inclusive = true, Value = 1)]
 		public object? IterationsLimit { get; set; }
 
 		/// <summary>
@@ -223,6 +227,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
 		[GPNumericDomain()]
+		[High(Allow = false, Value = 100)]
 		[Category("Advanced Parameters")]
 		public object? TargetPercentDiff { get; set; } = "5";
 

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Summarize Incident Count</para>
+	/// <para>Summarize Incident Count</para>
 	/// <para>Creates a feature class with coincident point counts. Coincident point counts for line and point features are determined by a specified maximum distance. Point counts for polygon features are determine by whether point features or portions of features overlap with the polygon feature.</para>
 	/// </summary>
 	public class SummarizeIncidentCount : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Tool Display Name : Summarize Incident Count</para>
 		/// </summary>
-		public override string DisplayName => "Summarize Incident Count";
+		public override string DisplayName() => "Summarize Incident Count";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeIncidentCount</para>
 		/// </summary>
-		public override string ToolName => "SummarizeIncidentCount";
+		public override string ToolName() => "SummarizeIncidentCount";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ca.SummarizeIncidentCount</para>
 		/// </summary>
-		public override string ExcuteName => "ca.SummarizeIncidentCount";
+		public override string ExcuteName() => "ca.SummarizeIncidentCount";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Crime Analysis and Safety Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Crime Analysis and Safety Tools";
+		public override string ToolboxDisplayName() => "Crime Analysis and Safety Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : ca</para>
 		/// </summary>
-		public override string ToolboxAlise => "ca";
+		public override string ToolboxAlise() => "ca";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "MDomain", "MResolution", "MTolerance", "XYDomain", "XYResolution", "XYTolerance", "ZDomain", "ZResolution", "ZTolerance", "autoCommit", "configKeyword", "extent", "geographicTransformations", "maintainAttachments", "outputCoordinateSystem", "outputMFlag", "outputZFlag", "qualifiedFieldNames", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, InSumFeatures, OutFeatureClass, SearchRadius!, GroupField! };
+		public override object[] Parameters() => new object[] { InFeatures, InSumFeatures, OutFeatureClass, SearchRadius!, GroupField! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -79,6 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Polyline", "Polygon")]
+		[FeatureType("Simple")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -88,6 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point")]
+		[FeatureType("Simple")]
 		public object InSumFeatures { get; set; }
 
 		/// <summary>
@@ -115,6 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Text", "Long", "Short")]
 		public object? GroupField { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make Route Analysis Layer</para>
+	/// <para>Make Route Analysis Layer</para>
 	/// <para>Makes a route network analysis layer and sets its analysis properties. A route analysis layer is useful for determining the best route between a set of network locations based on a specified network cost. The layer can be created using a local network dataset or a routing service hosted online or in a portal.</para>
 	/// </summary>
 	public class MakeRouteAnalysisLayer : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Make Route Analysis Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make Route Analysis Layer";
+		public override string DisplayName() => "Make Route Analysis Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeRouteAnalysisLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeRouteAnalysisLayer";
+		public override string ToolName() => "MakeRouteAnalysisLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : na.MakeRouteAnalysisLayer</para>
 		/// </summary>
-		public override string ExcuteName => "na.MakeRouteAnalysisLayer";
+		public override string ExcuteName() => "na.MakeRouteAnalysisLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Network Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Network Analyst Tools";
+		public override string ToolboxDisplayName() => "Network Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : na</para>
 		/// </summary>
-		public override string ToolboxAlise => "na";
+		public override string ToolboxAlise() => "na";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { NetworkDataSource, LayerName!, TravelMode!, Sequence!, TimeOfDay!, TimeZone!, LineShape!, AccumulateAttributes!, GenerateDirectionsOnSolve!, OutNetworkAnalysisLayer!, TimeZoneForTimeFields!, IgnoreInvalidLocations! };
+		public override object[] Parameters() => new object[] { NetworkDataSource, LayerName!, TravelMode!, Sequence!, TimeOfDay!, TimeZone!, LineShape!, AccumulateAttributes!, GenerateDirectionsOnSolve!, OutNetworkAnalysisLayer!, TimeZoneForTimeFields!, IgnoreInvalidLocations! };
 
 		/// <summary>
 		/// <para>Network Data Source</para>

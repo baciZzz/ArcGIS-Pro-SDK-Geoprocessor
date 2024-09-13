@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Summarize Within</para>
+	/// <para>Summarize Within</para>
 	/// <para>Finds the point, line, or polygon features (or portions of these features) that are within the boundaries of polygons in another layer.</para>
 	/// </summary>
 	public class SummarizeWithin : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Tool Display Name : Summarize Within</para>
 		/// </summary>
-		public override string DisplayName => "Summarize Within";
+		public override string DisplayName() => "Summarize Within";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeWithin</para>
 		/// </summary>
-		public override string ToolName => "SummarizeWithin";
+		public override string ToolName() => "SummarizeWithin";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sfa.SummarizeWithin</para>
 		/// </summary>
-		public override string ExcuteName => "sfa.SummarizeWithin";
+		public override string ExcuteName() => "sfa.SummarizeWithin";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Standard Feature Analysis Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Standard Feature Analysis Tools";
+		public override string ToolboxDisplayName() => "Standard Feature Analysis Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sfa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sfa";
+		public override string ToolboxAlise() => "sfa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent" };
+		public override string[] ValidEnvironments() => new string[] { "extent" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Sumwithinlayer, Summarylayer, Outputname, Sumshape!, Shapeunits!, Summaryfields!, Groupbyfield!, Minoritymajority!, Percentshape!, Outputlayer!, Groupbysummarylayer! };
+		public override object[] Parameters() => new object[] { Sumwithinlayer, Summarylayer, Outputname, Sumshape!, Shapeunits!, Summaryfields!, Groupbyfield!, Minoritymajority!, Percentshape!, Outputlayer!, Groupbysummarylayer! };
 
 		/// <summary>
 		/// <para>Input Polygons</para>
@@ -79,6 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Polygon")]
+		[FeatureType("Simple")]
 		public object Sumwithinlayer { get; set; }
 
 		/// <summary>
@@ -88,6 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
 		[GPFeatureClassDomain()]
+		[GeometryType("Point", "Multipoint", "Polyline", "Polygon")]
+		[FeatureType("Simple")]
 		public object Summarylayer { get; set; }
 
 		/// <summary>
@@ -154,6 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
 		[GPFieldDomain()]
+		[FieldType("Short", "Long", "Float", "Double", "Text")]
 		public object? Groupbyfield { get; set; }
 
 		/// <summary>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Watershed</para>
+	/// <para>Watershed</para>
 	/// <para>Determines the contributing area above a set of cells in a raster.</para>
 	/// </summary>
 	public class Watershed : AbstractGPProcess
@@ -44,37 +45,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Watershed</para>
 		/// </summary>
-		public override string DisplayName => "Watershed";
+		public override string DisplayName() => "Watershed";
 
 		/// <summary>
 		/// <para>Tool Name : Watershed</para>
 		/// </summary>
-		public override string ToolName => "Watershed";
+		public override string ToolName() => "Watershed";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Watershed</para>
 		/// </summary>
-		public override string ExcuteName => "sa.Watershed";
+		public override string ExcuteName() => "sa.Watershed";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFlowDirectionRaster, InPourPointData, OutRaster, PourPointField! };
+		public override object[] Parameters() => new object[] { InFlowDirectionRaster, InPourPointData, OutRaster, PourPointField! };
 
 		/// <summary>
 		/// <para>Input D8 flow direction raster</para>
@@ -83,7 +84,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("Short", "Long")]
+		[GeometryType("Point", "Polygon", "Polyline", "Multipoint")]
 		public object InFlowDirectionRaster { get; set; }
 
 		/// <summary>
@@ -94,7 +98,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
-		[GPSAGeoDataDomain()]
+		[GPSAGeoDataDomain(CheckField = true, SingleBand = false)]
+		[DataType("DERasterDataset", "DERasterBand", "GPRasterLayer", "DEFeatureClass", "GPFeatureLayer", "DETin", "DEMosaicDataset", "GPMosaicLayer", "GPRasterCalculatorExpression", "DETable", "DEImageServer", "DEFile")]
+		[FieldType("OID", "Short", "Long", "Float", "Double", "Text", "Geometry")]
+		[GeometryType("Point", "Polyline", "Multipoint")]
 		public object InPourPointData { get; set; }
 
 		/// <summary>
@@ -114,7 +121,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(UseRasterFields = true)]
+		[FieldType("Short", "Long", "Float", "Double")]
 		public object? PourPointField { get; set; }
 
 		/// <summary>

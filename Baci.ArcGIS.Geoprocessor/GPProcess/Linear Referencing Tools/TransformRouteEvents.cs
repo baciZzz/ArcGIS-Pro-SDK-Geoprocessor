@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 {
 	/// <summary>
 	/// <para>Transform Route Events</para>
+	/// <para>Transform Route Events</para>
 	/// <para>Transforms the measures of events from one route reference to another and writes them to a new event table.</para>
 	/// </summary>
 	public class TransformRouteEvents : AbstractGPProcess
@@ -82,37 +83,37 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Tool Display Name : Transform Route Events</para>
 		/// </summary>
-		public override string DisplayName => "Transform Route Events";
+		public override string DisplayName() => "Transform Route Events";
 
 		/// <summary>
 		/// <para>Tool Name : TransformRouteEvents</para>
 		/// </summary>
-		public override string ToolName => "TransformRouteEvents";
+		public override string ToolName() => "TransformRouteEvents";
 
 		/// <summary>
 		/// <para>Tool Excute Name : lr.TransformRouteEvents</para>
 		/// </summary>
-		public override string ExcuteName => "lr.TransformRouteEvents";
+		public override string ExcuteName() => "lr.TransformRouteEvents";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Linear Referencing Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Linear Referencing Tools";
+		public override string ToolboxDisplayName() => "Linear Referencing Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : lr</para>
 		/// </summary>
-		public override string ToolboxAlise => "lr";
+		public override string ToolboxAlise() => "lr";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "configKeyword", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, InEventProperties, InRoutes, RouteIdField, TargetRoutes, TargetRouteIdField, OutTable, OutEventProperties, ClusterTolerance, InFields! };
+		public override object[] Parameters() => new object[] { InTable, InEventProperties, InRoutes, RouteIdField, TargetRoutes, TargetRouteIdField, OutTable, OutEventProperties, ClusterTolerance, InFields! };
 
 		/// <summary>
 		/// <para>Input Event Table</para>
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
-		[xmlserialize()]
+		[xmlserialize(Xml = "<GPRouteMeasureEventDomain xsi:type='typens:GPRouteMeasureEventDomain' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.0.0'></GPRouteMeasureEventDomain>")]
 		public object InTable { get; set; }
 
 		/// <summary>
@@ -143,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
-		[xmlserialize()]
+		[xmlserialize(Xml = "<GPRouteDomain xsi:type='typens:GPRouteDomain' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.0.0'></GPRouteDomain>")]
 		public object InRoutes { get; set; }
 
 		/// <summary>
@@ -152,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{4A4F70B0-913C-4A82-A33F-E190FFA409EA}")]
 		public object RouteIdField { get; set; }
 
 		/// <summary>
@@ -161,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
-		[xmlserialize()]
+		[xmlserialize(Xml = "<GPRouteDomain xsi:type='typens:GPRouteDomain' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.0.0'></GPRouteDomain>")]
 		public object TargetRoutes { get; set; }
 
 		/// <summary>
@@ -170,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{4A4F70B0-913C-4A82-A33F-E190FFA409EA}")]
 		public object TargetRouteIdField { get; set; }
 
 		/// <summary>

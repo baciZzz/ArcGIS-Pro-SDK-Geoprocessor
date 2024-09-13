@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Delete Trace Configuration</para>
+	/// <para>Delete Trace Configuration</para>
 	/// <para>Deletes one or more named trace configurations  from a utility network.</para>
 	/// </summary>
 	public class DeleteTraceConfiguration : AbstractGPProcess
@@ -35,37 +36,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete Trace Configuration</para>
 		/// </summary>
-		public override string DisplayName => "Delete Trace Configuration";
+		public override string DisplayName() => "Delete Trace Configuration";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteTraceConfiguration</para>
 		/// </summary>
-		public override string ToolName => "DeleteTraceConfiguration";
+		public override string ToolName() => "DeleteTraceConfiguration";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.DeleteTraceConfiguration</para>
 		/// </summary>
-		public override string ExcuteName => "un.DeleteTraceConfiguration";
+		public override string ExcuteName() => "un.DeleteTraceConfiguration";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TraceConfigName, OutUtilityNetwork! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TraceConfigName, OutUtilityNetwork! };
 
 		/// <summary>
 		/// <para>Input Utility Network</para>

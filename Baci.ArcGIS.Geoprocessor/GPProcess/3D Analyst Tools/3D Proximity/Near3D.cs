@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Near 3D</para>
+	/// <para>Near 3D</para>
 	/// <para>Calculates the three-dimensional distance from each input feature to the nearest feature that resides in one or more near feature classes.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Tool Display Name : Near 3D</para>
 		/// </summary>
-		public override string DisplayName => "Near 3D";
+		public override string DisplayName() => "Near 3D";
 
 		/// <summary>
 		/// <para>Tool Name : Near3D</para>
 		/// </summary>
-		public override string ToolName => "Near3D";
+		public override string ToolName() => "Near3D";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Near3D</para>
 		/// </summary>
-		public override string ExcuteName => "3d.Near3D";
+		public override string ExcuteName() => "3d.Near3D";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : 3D Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "3D Analyst Tools";
+		public override string ToolboxDisplayName() => "3D Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : 3d</para>
 		/// </summary>
-		public override string ToolboxAlise => "3d";
+		public override string ToolboxAlise() => "3d";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "extent", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "extent", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InFeatures, NearFeatures, SearchRadius!, Location!, Angle!, Delta!, OutFeatureClass! };
+		public override object[] Parameters() => new object[] { InFeatures, NearFeatures, SearchRadius!, Location!, Angle!, Delta!, OutFeatureClass! };
 
 		/// <summary>
 		/// <para>Input Features</para>
@@ -76,6 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object InFeatures { get; set; }
 
 		/// <summary>
@@ -85,6 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Simple", "SimpleJunction", "SimpleEdge", "ComplexEdge", "RasterCatalogItem")]
 		public object NearFeatures { get; set; }
 
 		/// <summary>

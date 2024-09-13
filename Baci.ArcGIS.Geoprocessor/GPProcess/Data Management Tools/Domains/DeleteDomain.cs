@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Domain</para>
+	/// <para>Delete Domain</para>
 	/// <para>Deletes a domain from a workspace.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -37,37 +38,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Delete Domain</para>
 		/// </summary>
-		public override string DisplayName => "Delete Domain";
+		public override string DisplayName() => "Delete Domain";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteDomain</para>
 		/// </summary>
-		public override string ToolName => "DeleteDomain";
+		public override string ToolName() => "DeleteDomain";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.DeleteDomain</para>
 		/// </summary>
-		public override string ExcuteName => "management.DeleteDomain";
+		public override string ExcuteName() => "management.DeleteDomain";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWorkspace, DomainName, OutWorkspace! };
+		public override object[] Parameters() => new object[] { InWorkspace, DomainName, OutWorkspace! };
 
 		/// <summary>
 		/// <para>Input Workspace</para>
@@ -76,6 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
 		[GPWorkspaceDomain()]
+		[WorkspaceType("Local Database", "Remote Database")]
 		public object InWorkspace { get; set; }
 
 		/// <summary>

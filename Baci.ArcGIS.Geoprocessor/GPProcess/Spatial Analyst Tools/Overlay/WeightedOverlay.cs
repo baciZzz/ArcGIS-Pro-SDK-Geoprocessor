@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Weighted Overlay</para>
+	/// <para>Weighted Overlay</para>
 	/// <para>Overlays several rasters using a common measurement scale and weights each according to its importance.</para>
 	/// </summary>
 	public class WeightedOverlay : AbstractGPProcess
@@ -45,37 +46,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Tool Display Name : Weighted Overlay</para>
 		/// </summary>
-		public override string DisplayName => "Weighted Overlay";
+		public override string DisplayName() => "Weighted Overlay";
 
 		/// <summary>
 		/// <para>Tool Name : WeightedOverlay</para>
 		/// </summary>
-		public override string ToolName => "WeightedOverlay";
+		public override string ToolName() => "WeightedOverlay";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.WeightedOverlay</para>
 		/// </summary>
-		public override string ExcuteName => "sa.WeightedOverlay";
+		public override string ExcuteName() => "sa.WeightedOverlay";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Spatial Analyst Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Spatial Analyst Tools";
+		public override string ToolboxDisplayName() => "Spatial Analyst Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : sa</para>
 		/// </summary>
-		public override string ToolboxAlise => "sa";
+		public override string ToolboxAlise() => "sa";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "cellSize", "cellSizeProjectionMethod", "compression", "configKeyword", "extent", "geographicTransformations", "mask", "outputCoordinateSystem", "parallelProcessingFactor", "scratchWorkspace", "snapRaster", "tileSize", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InWeightedOverlayTable, OutRaster };
+		public override object[] Parameters() => new object[] { InWeightedOverlayTable, OutRaster };
 
 		/// <summary>
 		/// <para>Weighted overlay table</para>

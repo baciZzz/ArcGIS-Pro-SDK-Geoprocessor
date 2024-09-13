@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Mainline Tree Layout</para>
+	/// <para>Add Mainline Tree Layout</para>
 	/// <para>Add a mainline tree layout to a diagram template</para>
 	/// </summary>
 	[Obsolete()]
@@ -39,37 +40,37 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Tool Display Name : Add Mainline Tree Layout</para>
 		/// </summary>
-		public override string DisplayName => "Add Mainline Tree Layout";
+		public override string DisplayName() => "Add Mainline Tree Layout";
 
 		/// <summary>
 		/// <para>Tool Name : AddMainlineTreeLayout</para>
 		/// </summary>
-		public override string ToolName => "AddMainlineTreeLayout";
+		public override string ToolName() => "AddMainlineTreeLayout";
 
 		/// <summary>
 		/// <para>Tool Excute Name : un.AddMainlineTreeLayout</para>
 		/// </summary>
-		public override string ExcuteName => "un.AddMainlineTreeLayout";
+		public override string ExcuteName() => "un.AddMainlineTreeLayout";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Utility Network Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Utility Network Tools";
+		public override string ToolboxDisplayName() => "Utility Network Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : un</para>
 		/// </summary>
-		public override string ToolboxAlise => "un";
+		public override string ToolboxAlise() => "un";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] {  };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, TreeDirection!, BranchesPlacement!, IsUnitAbsolute!, PerpendicularAbsolute!, PerpendicularProportional!, AlongAbsolute!, AlongProportional!, DisjoinedGraphAbsolute!, DisjoinedGraphProportional!, AreEdgesOrthogonal!, BreakpointPosition!, OutUtilityNetwork!, OutTemplateName!, EdgeDisplayType!, OffsetAbsolute!, OffsetProportional! };
+		public override object[] Parameters() => new object[] { InUtilityNetwork, TemplateName, IsActive, AreContainersPreserved!, TreeDirection!, BranchesPlacement!, IsUnitAbsolute!, PerpendicularAbsolute!, PerpendicularProportional!, AlongAbsolute!, AlongProportional!, DisjoinedGraphAbsolute!, DisjoinedGraphProportional!, AreEdgesOrthogonal!, BreakpointPosition!, OutUtilityNetwork!, OutTemplateName!, EdgeDisplayType!, OffsetAbsolute!, OffsetProportional! };
 
 		/// <summary>
 		/// <para>Input Network</para>

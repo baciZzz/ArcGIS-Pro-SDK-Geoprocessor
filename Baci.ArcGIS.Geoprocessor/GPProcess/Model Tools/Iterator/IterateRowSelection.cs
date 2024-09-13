@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Iterate Row Selection</para>
+	/// <para>Iterate Row Selection</para>
 	/// <para>Iterates over rows in a table.</para>
 	/// </summary>
 	public class IterateRowSelection : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Tool Display Name : Iterate Row Selection</para>
 		/// </summary>
-		public override string DisplayName => "Iterate Row Selection";
+		public override string DisplayName() => "Iterate Row Selection";
 
 		/// <summary>
 		/// <para>Tool Name : IterateRowSelection</para>
 		/// </summary>
-		public override string ToolName => "IterateRowSelection";
+		public override string ToolName() => "IterateRowSelection";
 
 		/// <summary>
 		/// <para>Tool Excute Name : mb.IterateRowSelection</para>
 		/// </summary>
-		public override string ExcuteName => "mb.IterateRowSelection";
+		public override string ExcuteName() => "mb.IterateRowSelection";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Model Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Model Tools";
+		public override string ToolboxDisplayName() => "Model Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : mb</para>
 		/// </summary>
-		public override string ToolboxAlise => "mb";
+		public override string ToolboxAlise() => "mb";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InTable, Fields!, SkipNulls!, Selection!, Value! };
+		public override object[] Parameters() => new object[] { InTable, Fields!, SkipNulls!, Selection!, Value! };
 
 		/// <summary>
 		/// <para>Input Table</para>
@@ -77,6 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
 		[GPFieldDomain()]
+		[FieldType("Long", "Short", "Text", "OID", "Float", "Double", "Date", "GUID", "GlobalID", "XML")]
 		public object? Fields { get; set; }
 
 		/// <summary>

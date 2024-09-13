@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make XY Event Layer</para>
+	/// <para>Make XY Event Layer</para>
 	/// <para>Creates a new point feature layer based on x- and y-coordinates defined in a table. If the source table contains z-coordinates (elevation values), that field can also be specified in the creation of the event layer. The layer created by this tool is temporary.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.DataManagementTools.XYTableToPoint"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
@@ -47,37 +48,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Make XY Event Layer</para>
 		/// </summary>
-		public override string DisplayName => "Make XY Event Layer";
+		public override string DisplayName() => "Make XY Event Layer";
 
 		/// <summary>
 		/// <para>Tool Name : MakeXYEventLayer</para>
 		/// </summary>
-		public override string ToolName => "MakeXYEventLayer";
+		public override string ToolName() => "MakeXYEventLayer";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.MakeXYEventLayer</para>
 		/// </summary>
-		public override string ExcuteName => "management.MakeXYEventLayer";
+		public override string ExcuteName() => "management.MakeXYEventLayer";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { Table, InXField, InYField, OutLayer, SpatialReference!, InZField! };
+		public override object[] Parameters() => new object[] { Table, InXField, InYField, OutLayer, SpatialReference!, InZField! };
 
 		/// <summary>
 		/// <para>XY Table</para>
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{C06E2425-30D9-4C9D-8CD3-7FE243B3AFCB}")]
 		public object InXField { get; set; }
 
 		/// <summary>
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{C06E2425-30D9-4C9D-8CD3-7FE243B3AFCB}")]
 		public object InYField { get; set; }
 
 		/// <summary>
@@ -127,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
-		[GPFieldDomain()]
+		[GPFieldDomain(GUID = "{C06E2425-30D9-4C9D-8CD3-7FE243B3AFCB}")]
 		public object? InZField { get; set; }
 
 		/// <summary>

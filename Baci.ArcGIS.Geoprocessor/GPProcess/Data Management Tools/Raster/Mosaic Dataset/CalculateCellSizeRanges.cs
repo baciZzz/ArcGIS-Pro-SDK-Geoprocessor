@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Calculate Cell Size Ranges</para>
+	/// <para>Calculate Cell Size Ranges</para>
 	/// <para>Computes the visibility levels of raster datasets in a mosaic dataset based on the spatial resolution.</para>
 	/// </summary>
 	public class CalculateCellSizeRanges : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Calculate Cell Size Ranges</para>
 		/// </summary>
-		public override string DisplayName => "Calculate Cell Size Ranges";
+		public override string DisplayName() => "Calculate Cell Size Ranges";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateCellSizeRanges</para>
 		/// </summary>
-		public override string ToolName => "CalculateCellSizeRanges";
+		public override string ToolName() => "CalculateCellSizeRanges";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.CalculateCellSizeRanges</para>
 		/// </summary>
-		public override string ExcuteName => "management.CalculateCellSizeRanges";
+		public override string ExcuteName() => "management.CalculateCellSizeRanges";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "parallelProcessingFactor" };
+		public override string[] ValidEnvironments() => new string[] { "parallelProcessingFactor" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InMosaicDataset, WhereClause!, DoComputeMin!, DoComputeMax!, MaxRangeFactor!, CellSizeToleranceFactor!, UpdateMissingOnly!, OutMosaicDataset! };
+		public override object[] Parameters() => new object[] { InMosaicDataset, WhereClause!, DoComputeMin!, DoComputeMax!, MaxRangeFactor!, CellSizeToleranceFactor!, UpdateMissingOnly!, OutMosaicDataset! };
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>

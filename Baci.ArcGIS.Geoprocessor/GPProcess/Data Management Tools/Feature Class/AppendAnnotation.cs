@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Append Annotation Feature Classes</para>
+	/// <para>Append Annotation Feature Classes</para>
 	/// <para>Creates a geodatabase annotation feature class or appends to an existing annotation feature class by combining annotation from multiple input geodatabase annotation feature classes into a single feature class with annotation classes.</para>
 	/// </summary>
 	public class AppendAnnotation : AbstractGPProcess
@@ -40,37 +41,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Append Annotation Feature Classes</para>
 		/// </summary>
-		public override string DisplayName => "Append Annotation Feature Classes";
+		public override string DisplayName() => "Append Annotation Feature Classes";
 
 		/// <summary>
 		/// <para>Tool Name : AppendAnnotation</para>
 		/// </summary>
-		public override string ToolName => "AppendAnnotation";
+		public override string ToolName() => "AppendAnnotation";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.AppendAnnotation</para>
 		/// </summary>
-		public override string ExcuteName => "management.AppendAnnotation";
+		public override string ExcuteName() => "management.AppendAnnotation";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "autoCommit", "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "autoCommit", "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InputFeatures, OutputFeatureclass, ReferenceScale, CreateSingleClass!, RequireSymbolFromTable!, CreateAnnotationWhenFeatureAdded!, UpdateAnnotationWhenFeatureModified! };
+		public override object[] Parameters() => new object[] { InputFeatures, OutputFeatureclass, ReferenceScale, CreateSingleClass!, RequireSymbolFromTable!, CreateAnnotationWhenFeatureAdded!, UpdateAnnotationWhenFeatureModified! };
 
 		/// <summary>
 		/// <para>Input features</para>
@@ -79,6 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
 		[GPFeatureClassDomain()]
+		[FeatureType("Annotation")]
 		public object InputFeatures { get; set; }
 
 		/// <summary>

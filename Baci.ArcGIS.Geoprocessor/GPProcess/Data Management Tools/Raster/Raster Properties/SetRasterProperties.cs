@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Set Raster Properties</para>
+	/// <para>Set Raster Properties</para>
 	/// <para>Sets the data type, statistics, and NoData values on a raster or mosaic dataset.</para>
 	/// </summary>
 	public class SetRasterProperties : AbstractGPProcess
@@ -30,37 +31,37 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Tool Display Name : Set Raster Properties</para>
 		/// </summary>
-		public override string DisplayName => "Set Raster Properties";
+		public override string DisplayName() => "Set Raster Properties";
 
 		/// <summary>
 		/// <para>Tool Name : SetRasterProperties</para>
 		/// </summary>
-		public override string ToolName => "SetRasterProperties";
+		public override string ToolName() => "SetRasterProperties";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.SetRasterProperties</para>
 		/// </summary>
-		public override string ExcuteName => "management.SetRasterProperties";
+		public override string ExcuteName() => "management.SetRasterProperties";
 
 		/// <summary>
 		/// <para>Toolbox Display Name : Data Management Tools</para>
 		/// </summary>
-		public override string ToolboxDisplayName => "Data Management Tools";
+		public override string ToolboxDisplayName() => "Data Management Tools";
 
 		/// <summary>
 		/// <para>Toolbox Alise : management</para>
 		/// </summary>
-		public override string ToolboxAlise => "management";
+		public override string ToolboxAlise() => "management";
 
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments => new string[] { "scratchWorkspace", "workspace" };
+		public override string[] ValidEnvironments() => new string[] { "scratchWorkspace", "workspace" };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
 		/// </summary>
-		public override object[] Parameters => new object[] { InRaster, DataType!, Statistics!, StatsFile!, Nodata!, KeyProperties!, OutRaster!, MultidimensionalInfo! };
+		public override object[] Parameters() => new object[] { InRaster, DataType!, Statistics!, StatsFile!, Nodata!, KeyProperties!, OutRaster!, MultidimensionalInfo! };
 
 		/// <summary>
 		/// <para>Input Raster</para>
@@ -102,6 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
 		[GPFileDomain()]
+		[FileTypes("xml")]
 		public object? StatsFile { get; set; }
 
 		/// <summary>
