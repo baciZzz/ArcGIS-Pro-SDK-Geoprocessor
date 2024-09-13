@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Prepare Point Cloud Training Data</para>
-	/// <para>Prepare Point Cloud Training Data</para>
-	/// <para>Generates the data that will be used to train and validate a PointCNN model for point cloud classification.</para>
+	/// <para>准备点云训练数据</para>
+	/// <para>用于生成相应数据，这些数据用于训练和验证 PointCNN 模型以进行点云分类。</para>
 	/// </summary>
 	public class PreparePointCloudTrainingData : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InPointCloud">
 		/// <para>Input Point Cloud</para>
-		/// <para>The point cloud that will be used to create the training data and, potentially, the validation data if no validation point cloud is specified. In this case, both the training boundary and the validation boundary must be defined.</para>
+		/// <para>如果未指定任何验证点云，则将用于创建训练数据以及可能用于创建验证数据的点云。 在这种情况下，必须同时定义训练边界和验证边界。</para>
 		/// </param>
 		/// <param name="BlockSize">
 		/// <para>Block Size</para>
-		/// <para>The diameter size of each circular HDF5 tile created from the input point cloud. As a general rule, the block size should be large enough to capture the objects of interest and their surrounding context.</para>
+		/// <para>根据输入点云创建的每个圆形 HDF5 切片的直径大小。 通常，块大小应足够大，才能捕获感兴趣对象及其周围环境。</para>
 		/// </param>
 		/// <param name="OutTrainingData">
 		/// <para>Output Training Data</para>
-		/// <para>The location and name of the output training data (*.pctd).</para>
+		/// <para>输出训练数据 (*.pctd) 的位置和名称。</para>
 		/// </param>
 		public PreparePointCloudTrainingData(object InPointCloud, object BlockSize, object OutTrainingData)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Prepare Point Cloud Training Data</para>
+		/// <para>Tool Display Name : 准备点云训练数据</para>
 		/// </summary>
-		public override string DisplayName() => "Prepare Point Cloud Training Data";
+		public override string DisplayName() => "准备点云训练数据";
 
 		/// <summary>
 		/// <para>Tool Name : PreparePointCloudTrainingData</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Point Cloud</para>
-		/// <para>The point cloud that will be used to create the training data and, potentially, the validation data if no validation point cloud is specified. In this case, both the training boundary and the validation boundary must be defined.</para>
+		/// <para>如果未指定任何验证点云，则将用于创建训练数据以及可能用于创建验证数据的点云。 在这种情况下，必须同时定义训练边界和验证边界。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Block Size</para>
-		/// <para>The diameter size of each circular HDF5 tile created from the input point cloud. As a general rule, the block size should be large enough to capture the objects of interest and their surrounding context.</para>
+		/// <para>根据输入点云创建的每个圆形 HDF5 切片的直径大小。 通常，块大小应足够大，才能捕获感兴趣对象及其周围环境。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Training Data</para>
-		/// <para>The location and name of the output training data (*.pctd).</para>
+		/// <para>输出训练数据 (*.pctd) 的位置和名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Training Boundary Features</para>
-		/// <para>The boundary polygons that will delineate the subset of points from the input point cloud that will be used to train the deep learning model.</para>
+		/// <para>将根据用于训练深度学习模型的输入点云描绘点的子集的边界面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Validation Point Cloud</para>
-		/// <para>The point cloud that will be used to validate the deep learning model during the training process. This dataset must reference a different set of points than the input point cloud to ensure the quality of the trained model. If a validation point cloud is not specified, the input point cloud can be used to define the training and validation datasets by providing polygon feature classes for the Training Boundary Features and Validation Boundary Features parameters.</para>
+		/// <para>在训练过程中将用于验证深度学习模型的点云。 该数据集必须引用与输入点云不同的点集，才能确保经过训练的模型的质量。 如果未指定验证点云，则输入点云可用于通过为训练边界要素和验证边界要素参数提供面要素类来定义训练和验证数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Validation Boundary Features</para>
-		/// <para>The polygon features that will delineate the subset of points to be used for evaluating the model during the training process. If a validation point cloud is not specified, the points will be sourced from the input point cloud.</para>
+		/// <para>将描绘用于在训练过程中评估模型的点子集的面要素。 如果未指定验证点云，则将从输入点云中获取这些点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Filter Blocks By Class Code</para>
-		/// <para>The class codes that will be used to limit the exported training data blocks. All points in the blocks that contain at least one of the values listed for this parameter will be exported, except the classes specified in the Excluded Class Codes parameter or the points that are flagged as Withheld. Any value in the range of 0 to 255 can be specified.</para>
+		/// <para>将用于限制导出的训练数据块的类代码。 块中所有至少包含一个为此参数列出的值的点都将被导出，但排除的类代码参数中指定的类或标记为保留点的点除外。 可以指定 0 到 255 范围内的任何值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Block Point Limit</para>
-		/// <para>The maximum number of points that will be allowed in each block of the training data. When a block contains points in excess of this value, multiple blocks will be created for the same location to ensure that all of the points are used when training.</para>
+		/// <para>每个训练数据块中将允许的最大点数。 如果某个块中包含的点数超过该值，则将针对同一位置创建多个块，以确保训练时使用所有这些点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Reference Surface</para>
-		/// <para>The raster surface that will be used to provide relative height values for each point in the point cloud data. Points that do not overlap with the raster will be omitted from the analysis.</para>
+		/// <para>将用于为点云数据中的每个点提供相对高度值的栅格表面。 与栅格不重叠的点将在分析中忽略。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Excluded Class Codes</para>
-		/// <para>The class codes that will be excluded from the training data. Any value in the range of 0 to 255 can be specified.</para>
+		/// <para>将从训练数据中排除的类代码。 可以指定 0 到 255 范围内的任何值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

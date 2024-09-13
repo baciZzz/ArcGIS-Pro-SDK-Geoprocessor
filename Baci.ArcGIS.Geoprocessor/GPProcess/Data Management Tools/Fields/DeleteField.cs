@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Field</para>
-	/// <para>Delete Field</para>
-	/// <para>Deletes one or more fields from a table, feature class, feature layer, or raster dataset.</para>
+	/// <para>删除字段</para>
+	/// <para>可从表、要素类、要素图层或栅格数据集中删除一个或多个字段。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The table containing the fields to be deleted. The existing input table will be modified.</para>
+		/// <para>包含要删除字段的表。 将修改现有输入字段。</para>
 		/// </param>
 		/// <param name="DropField">
 		/// <para>Field(s)</para>
-		/// <para>The fields to be deleted or kept from the input table, as specified by the Method parameter. Only nonrequired fields can be deleted.</para>
+		/// <para>按照方法参数指定的方式从输入表中删除或保留的字段。 仅可删除非必填字段。</para>
 		/// </param>
 		public DeleteField(object InTable, object DropField)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Delete Field</para>
+		/// <para>Tool Display Name : 删除字段</para>
 		/// </summary>
-		public override string DisplayName() => "Delete Field";
+		public override string DisplayName() => "删除字段";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteField</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The table containing the fields to be deleted. The existing input table will be modified.</para>
+		/// <para>包含要删除字段的表。 将修改现有输入字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field(s)</para>
-		/// <para>The fields to be deleted or kept from the input table, as specified by the Method parameter. Only nonrequired fields can be deleted.</para>
+		/// <para>按照方法参数指定的方式从输入表中删除或保留的字段。 仅可删除非必填字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -97,9 +97,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>Specifies whether the fields specified by the Field(s) parameter will be deleted or kept.</para>
-		/// <para>Delete Fields—The fields specified by the Field(s) parameter will be deleted. This is the default.</para>
-		/// <para>Keep Fields—The fields specified by the Field(s) parameter will be kept; all other fields will be deleted.</para>
+		/// <para>指定由字段参数指定的字段将被删除或保留。</para>
+		/// <para>删除字段—由字段参数指定的字段将被删除。 这是默认设置。</para>
+		/// <para>保留字段—由字段参数指定的字段将被保留；所有其他字段将被删除。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -124,17 +124,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Delete Fields—The fields specified by the Field(s) parameter will be deleted. This is the default.</para>
+			/// <para>删除字段—由字段参数指定的字段将被删除。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("DELETE_FIELDS")]
-			[Description("Delete Fields")]
+			[Description("删除字段")]
 			Delete_Fields,
 
 			/// <summary>
-			/// <para>Keep Fields—The fields specified by the Field(s) parameter will be kept; all other fields will be deleted.</para>
+			/// <para>保留字段—由字段参数指定的字段将被保留；所有其他字段将被删除。</para>
 			/// </summary>
 			[GPValue("KEEP_FIELDS")]
-			[Description("Keep Fields")]
+			[Description("保留字段")]
 			Keep_Fields,
 
 		}

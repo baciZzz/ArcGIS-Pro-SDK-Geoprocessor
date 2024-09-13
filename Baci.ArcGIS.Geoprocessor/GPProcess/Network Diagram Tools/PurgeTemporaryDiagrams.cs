@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Purge Temporary Diagrams</para>
-	/// <para>Purge Temporary Diagrams</para>
-	/// <para>Purges temporary network diagrams related to a given utility network or trace network.</para>
+	/// <para>清除临时逻辑示意图</para>
+	/// <para>用于清除与给定 utility network or trace network 相关的临时网络逻辑示意图。</para>
 	/// </summary>
 	public class PurgeTemporaryDiagrams : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network data element with the temporary diagrams to be purged.</para>
+		/// <para>带有要清除的临时逻辑示意图的 utility network or trace network 数据元素。</para>
 		/// </param>
 		public PurgeTemporaryDiagrams(object InUtilityNetwork)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Purge Temporary Diagrams</para>
+		/// <para>Tool Display Name : 清除临时逻辑示意图</para>
 		/// </summary>
-		public override string DisplayName() => "Purge Temporary Diagrams";
+		public override string DisplayName() => "清除临时逻辑示意图";
 
 		/// <summary>
 		/// <para>Tool Name : PurgeTemporaryDiagrams</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network data element with the temporary diagrams to be purged.</para>
+		/// <para>带有要清除的临时逻辑示意图的 utility network or trace network 数据元素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,8 +73,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Created Before</para>
-		/// <para>The cutoff date for temporary network diagrams to be purged. All temporary network diagrams created before this date will be purged.</para>
-		/// <para>By default, the date in this dialog box is the current date.</para>
+		/// <para>清除临时网络逻辑示意图的截止日期。将清除在此日期之前创建的所有临时网络逻辑示意图。</para>
+		/// <para>默认情况下，此对话框中的日期为当前日期。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Overlay Layers</para>
-	/// <para>Overlay Layers</para>
-	/// <para>Overlays the geometries from multiple layers into a single layer.  Overlay can be used to combine, erase, modify, or update spatial features.</para>
+	/// <para>叠加图层</para>
+	/// <para>将多个图层中的几何叠加到一个图层中。 叠加可用于合并、擦除、修改或更新空间要素。</para>
 	/// </summary>
 	public class OverlayLayers : AbstractGPProcess
 	{
@@ -21,24 +21,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>The point, line, or polygon features that will be overlaid with the overlay layer.</para>
+		/// <para>将与叠加图层重叠的点、线或面要素。</para>
 		/// </param>
 		/// <param name="OverlayLayer">
 		/// <para>Overlay Layer</para>
-		/// <para>The features that will be overlaid with the input layer features.</para>
+		/// <para>将与输入图层要素重叠的要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>A new feature class with overlaid features.</para>
+		/// <para>包含叠加要素的新要素类。</para>
 		/// </param>
 		/// <param name="OverlayType">
 		/// <para>Overlay Type</para>
-		/// <para>Specifies the type of overlay to be performed.</para>
-		/// <para>Intersect—A geometric intersection of the input layers will be computed. Features or portions of features that overlap in both the input layer and overlay layer will be written to the output layer. This is the default.</para>
-		/// <para>Erase—Only those features or portions of features in the input layer that do not overlap the features in the overlay layer will be written to the output.</para>
-		/// <para>Union—A geometric union of the input layer and overlay layer will be computed. All features and their attributes will be written to the layer.</para>
-		/// <para>Identity—A geometric intersection of the input features and identity features will be computed. Features or portions of features that overlap in both the input layer and the overlay layer will be written to the output layer.</para>
-		/// <para>Symmetrical Difference— Features or portions of features in the input layer and overlay layer that do not overlap will be written to the output layer.</para>
+		/// <para>指定要执行的叠加的类型。</para>
+		/// <para>相交—将计算输入图层的几何交集。 输入图层和叠加图层中相叠置的要素或要素的各部分将被写入到输出图层中。 这是默认设置。</para>
+		/// <para>擦除—仅会将输入图层中与叠加图层中的要素不重叠的要素或要素的各部分写入输出。</para>
+		/// <para>联合—将计算输入图层和叠加图层的几何并集。 将所有要素及其属性都写入图层。</para>
+		/// <para>标识—将计算输入要素和标识要素的几何交集。 输入图层和叠加图层中相叠置的要素或要素的各部分将被写入到输出图层中。</para>
+		/// <para>交集取反—输入图层和叠加图层中不叠置的要素或要素的各部分将被写入到输出图层。</para>
 		/// <para><see cref="OverlayTypeEnum"/></para>
 		/// </param>
 		public OverlayLayers(object InputLayer, object OverlayLayer, object OutFeatureClass, object OverlayType)
@@ -50,9 +50,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Overlay Layers</para>
+		/// <para>Tool Display Name : 叠加图层</para>
 		/// </summary>
-		public override string DisplayName() => "Overlay Layers";
+		public override string DisplayName() => "叠加图层";
 
 		/// <summary>
 		/// <para>Tool Name : OverlayLayers</para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The point, line, or polygon features that will be overlaid with the overlay layer.</para>
+		/// <para>将与叠加图层重叠的点、线或面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Overlay Layer</para>
-		/// <para>The features that will be overlaid with the input layer features.</para>
+		/// <para>将与输入图层要素重叠的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>A new feature class with overlaid features.</para>
+		/// <para>包含叠加要素的新要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -113,12 +113,12 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Overlay Type</para>
-		/// <para>Specifies the type of overlay to be performed.</para>
-		/// <para>Intersect—A geometric intersection of the input layers will be computed. Features or portions of features that overlap in both the input layer and overlay layer will be written to the output layer. This is the default.</para>
-		/// <para>Erase—Only those features or portions of features in the input layer that do not overlap the features in the overlay layer will be written to the output.</para>
-		/// <para>Union—A geometric union of the input layer and overlay layer will be computed. All features and their attributes will be written to the layer.</para>
-		/// <para>Identity—A geometric intersection of the input features and identity features will be computed. Features or portions of features that overlap in both the input layer and the overlay layer will be written to the output layer.</para>
-		/// <para>Symmetrical Difference— Features or portions of features in the input layer and overlay layer that do not overlap will be written to the output layer.</para>
+		/// <para>指定要执行的叠加的类型。</para>
+		/// <para>相交—将计算输入图层的几何交集。 输入图层和叠加图层中相叠置的要素或要素的各部分将被写入到输出图层中。 这是默认设置。</para>
+		/// <para>擦除—仅会将输入图层中与叠加图层中的要素不重叠的要素或要素的各部分写入输出。</para>
+		/// <para>联合—将计算输入图层和叠加图层的几何并集。 将所有要素及其属性都写入图层。</para>
+		/// <para>标识—将计算输入要素和标识要素的几何交集。 输入图层和叠加图层中相叠置的要素或要素的各部分将被写入到输出图层中。</para>
+		/// <para>交集取反—输入图层和叠加图层中不叠置的要素或要素的各部分将被写入到输出图层。</para>
 		/// <para><see cref="OverlayTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -143,38 +143,38 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum OverlayTypeEnum 
 		{
 			/// <summary>
-			/// <para>Intersect—A geometric intersection of the input layers will be computed. Features or portions of features that overlap in both the input layer and overlay layer will be written to the output layer. This is the default.</para>
+			/// <para>相交—将计算输入图层的几何交集。 输入图层和叠加图层中相叠置的要素或要素的各部分将被写入到输出图层中。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("INTERSECT")]
-			[Description("Intersect")]
+			[Description("相交")]
 			Intersect,
 
 			/// <summary>
-			/// <para>Erase—Only those features or portions of features in the input layer that do not overlap the features in the overlay layer will be written to the output.</para>
+			/// <para>擦除—仅会将输入图层中与叠加图层中的要素不重叠的要素或要素的各部分写入输出。</para>
 			/// </summary>
 			[GPValue("ERASE")]
-			[Description("Erase")]
+			[Description("擦除")]
 			Erase,
 
 			/// <summary>
-			/// <para>Identity—A geometric intersection of the input features and identity features will be computed. Features or portions of features that overlap in both the input layer and the overlay layer will be written to the output layer.</para>
+			/// <para>标识—将计算输入要素和标识要素的几何交集。 输入图层和叠加图层中相叠置的要素或要素的各部分将被写入到输出图层中。</para>
 			/// </summary>
 			[GPValue("IDENTITY")]
-			[Description("Identity")]
+			[Description("标识")]
 			Identity,
 
 			/// <summary>
-			/// <para>Union—A geometric union of the input layer and overlay layer will be computed. All features and their attributes will be written to the layer.</para>
+			/// <para>联合—将计算输入图层和叠加图层的几何并集。 将所有要素及其属性都写入图层。</para>
 			/// </summary>
 			[GPValue("UNION")]
-			[Description("Union")]
+			[Description("联合")]
 			Union,
 
 			/// <summary>
-			/// <para>Symmetrical Difference— Features or portions of features in the input layer and overlay layer that do not overlap will be written to the output layer.</para>
+			/// <para>交集取反—输入图层和叠加图层中不叠置的要素或要素的各部分将被写入到输出图层。</para>
 			/// </summary>
 			[GPValue("SYMMETRICAL_DIFFERENCE")]
-			[Description("Symmetrical Difference")]
+			[Description("交集取反")]
 			Symmetrical_Difference,
 
 		}

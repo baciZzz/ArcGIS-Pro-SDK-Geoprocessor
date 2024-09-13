@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make Closest Facility Analysis Layer</para>
-	/// <para>Make Closest Facility Analysis Layer</para>
-	/// <para>Makes a closest facility network analysis layer and sets its analysis properties. A closest facility analysis layer is useful in determining the closest facility or facilities to an incident based on a specified travel mode. The layer can be created using a local network dataset or using a service hosted online or in a portal.</para>
+	/// <para>创建最近设施点分析图层</para>
+	/// <para>创建最近设施点网络分析图层并设置其分析属性。 最近设施点分析图层对于根据指定的出行模式确定与事件点距离最近的设施点十分有用。 该图层可通过本地网络数据集进行创建，也可通过在线托管服务或门户托管服务进行创建。</para>
 	/// </summary>
 	public class MakeClosestFacilityAnalysisLayer : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="NetworkDataSource">
 		/// <para>Network Data Source</para>
-		/// <para>The network dataset or service on which the network analysis will be performed. Use the portal URL for a service.</para>
+		/// <para>将对其执行网络分析的网络数据集或服务。 将门户 URL 用于服务。</para>
 		/// </param>
 		public MakeClosestFacilityAnalysisLayer(object NetworkDataSource)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Make Closest Facility Analysis Layer</para>
+		/// <para>Tool Display Name : 创建最近设施点分析图层</para>
 		/// </summary>
-		public override string DisplayName() => "Make Closest Facility Analysis Layer";
+		public override string DisplayName() => "创建最近设施点分析图层";
 
 		/// <summary>
 		/// <para>Tool Name : MakeClosestFacilityAnalysisLayer</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Network Data Source</para>
-		/// <para>The network dataset or service on which the network analysis will be performed. Use the portal URL for a service.</para>
+		/// <para>将对其执行网络分析的网络数据集或服务。 将门户 URL 用于服务。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Layer Name</para>
-		/// <para>The name of the network analysis layer to create.</para>
+		/// <para>要创建的网络分析图层的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -81,8 +81,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Travel Mode</para>
-		/// <para>The name of the travel mode to use in the analysis. The travel mode represents a collection of network settings, such as travel restrictions and U-turn policies, that determine how a pedestrian, car, truck, or other medium of transportation moves through the network. Travel modes are defined on your network data source.</para>
-		/// <para>An arcpy.na.TravelMode object and a string containing the valid JSON representation of a travel mode can also be used as input to the parameter.</para>
+		/// <para>分析中使用的出行模式名称。 出行模式为一组网络设置（例如行驶限制和 U 形转弯），用于确定行人、车辆、卡车或其他交通媒介在网络中的移动方式。 出行模式在网络数据源中进行定义。</para>
+		/// <para>arcpy.na.TravelMode 对象和包含出行模式有效 JSON 表示的字符串也可用作参数的输入。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -91,10 +91,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Travel Direction</para>
-		/// <para>Specifies the direction of travel between facilities and incidents.</para>
-		/// <para>Toward facilities—Direction of travel is from incidents to facilities. Retail stores commonly use this setting, since they are concerned with the time it takes the shoppers (incidents) to reach the store (facility). This is the default.</para>
-		/// <para>Away from facilities—Direction of travel is from facilities to incidents. Fire departments commonly use this setting, since they are concerned with the time it takes to travel from the fire station (facility) to the location of the emergency (incident).</para>
-		/// <para>The direction of travel may influence the facilities found if the network contains one-way streets or impedances based on the direction of travel. For instance, it might take 10 minutes to drive from a particular incident to a particular facility, but the journey might take 15 minutes traveling in the other direction, from the facility to the incident, because of one-way streets or different traffic conditions.</para>
+		/// <para>指定设施点与事件点之间的行驶方向。</para>
+		/// <para>朝向设施点—行驶方向 - 从事件点到设施点。 零售店通常使用该设置，因为他们需要关注购物者（事件点）到达商店（设施点）所需的时间。 这是默认设置。</para>
+		/// <para>远离设施点—行驶方向 - 从设施点到事件点。 消防部门通常使用该设置，因为他们需要关注从消防站（设施点）行驶到紧急救援位置（事件点）所需的时间。</para>
+		/// <para>如果网络包含基于出行方向的单行道或抗阻，则出行方向可能会影响找到的设施点。 例如，从特定事件点到特定设施点驾车可能需要 10 分钟，但是从另一个方向，即设施点到时间点可能需要 15 分钟，因为存在单行线或交通状况不同。</para>
 		/// <para><see cref="TravelDirectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Cutoff</para>
-		/// <para>The impedance value at which to stop searching for facilities for a given incident in the units of the impedance attribute used by your chosen Travel Mode. This cutoff can be overridden on a per-incident basis by specifying individual cutoff values in the incidents sublayer when the Travel Direction is Toward facilities or on a per-facility basis by specifying individual cutoff values in the facilities sublayer when the Travel Direction is Away from facilities. By default, no cutoff is used for the analysis.</para>
+		/// <para>抗阻值到达该值后将停止搜索指定事件点的设施点（以您所选出行模式使用的抗阻属性为单位）。 行驶方向为朝向设施点时，在事件点子图层中指定单个中断值可按事件点覆盖中断，行驶方向为远离设施点时，在事件点子图层中指定单个中断值可按设施点覆盖中断。 默认情况下分析不使用中断。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Number of Facilities to Find</para>
-		/// <para>The number of closest facilities to find per incident. This default can be overridden by specifying an individual value for the TargetFacilityCount property in the incidents sublayer. The default number of facilities to find is one.</para>
+		/// <para>要按事件点查找的最近设施点数。 可通过在事件点子图层中指定 TargetFacilityCount 属性的各个值来覆盖此默认值。 要查找的设施点默认数量为一。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -120,17 +120,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time of Day</para>
-		/// <para>The time and date at which the routes should begin or end. The interpretation of this value depends on whether Time of Day Usage is set to be the start time or the end time of the route.</para>
-		/// <para>If you have chosen a traffic-based impedance attribute, the solution will be generated given dynamic traffic conditions at the time of day specified here. A date and time can be specified as 5/14/2012 10:30 AM.</para>
-		/// <para>Instead of using a particular date, a day of the week can be specified using the following dates:</para>
-		/// <para>Today—12/30/1899</para>
-		/// <para>Sunday—12/31/1899</para>
-		/// <para>Monday—1/1/1900</para>
-		/// <para>Tuesday—1/2/1900</para>
-		/// <para>Wednesday—1/3/1900</para>
-		/// <para>Thursday—1/4/1900</para>
-		/// <para>Friday—1/5/1900</para>
-		/// <para>Saturday—1/6/1900</para>
+		/// <para>路径应该开始或结束的时间和日期。 对该值的解释取决于是将时间用法设置为路径的起始时间还是终止时间。</para>
+		/// <para>如果您已经选择了基于流量的阻抗属性，将会根据特定的某天某时的动态交通状况来生成解决方案。 日期和时间可被指定为 5/14/2012 10:30 AM。</para>
+		/// <para>可使用以下日期来指定一周中的每一天，而无需使用特定的日期：</para>
+		/// <para>今天 - 12/30/1899</para>
+		/// <para>星期日 - 12/31/1899</para>
+		/// <para>星期一 - 1/1/1900</para>
+		/// <para>星期二 - 1/2/1900</para>
+		/// <para>星期三 - 1/3/1900</para>
+		/// <para>星期四 - 1/4/1900</para>
+		/// <para>星期五 - 1/5/1900</para>
+		/// <para>星期六 - 1/6/1900</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -139,13 +139,13 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time Zone</para>
-		/// <para>The time zone of the Time of Day parameter.</para>
-		/// <para>Local time at locations—The Time of Day parameter refers to the time zone in which the facilities or incidents are located. This is the default.</para>
-		/// <para>If Time of Day Usage is set to Start time and Travel Direction is Away from facilities, this is the time zone of the facilities.</para>
-		/// <para>If Time of Day Usage is set to Start time and Travel Direction is Towards facilities, this is the time zone of the incidents.</para>
-		/// <para>If Time of Day Usage is set to End time and Travel Direction is Away from facilities, this is the time zone of the incidents.</para>
-		/// <para>If Time of Day Usage is set to End time and Travel Direction is Towards facilities, this is the time zone of the facilities.</para>
-		/// <para>UTC—The Time of Day parameter refers to Coordinated Universal Time (UTC). Choose this option if you want to find what&apos;s nearest for a specific time, such as now, but aren&apos;t certain in which time zone the facilities or incidents will be located.</para>
+		/// <para>时间参数的时区。</para>
+		/// <para>各位置的本地时间—时间参数采用设施点或事件点所处的时区。 这是默认设置。</para>
+		/// <para>如果将时间用法设置为起始时间，行驶方向设置为远离设施点，则为设施点所在时区。</para>
+		/// <para>如果将时间用法设置为起始时间，行驶方向设置为朝向设施点，则为事件点所在时区。</para>
+		/// <para>如果将时间用法设置为结束时间，行驶方向设置为远离设施点，则为事件点所在时区。</para>
+		/// <para>如果将时间用法设置为结束时间，行驶方向设置为朝向设施点，则为设施点所在时区。</para>
+		/// <para>UTC—时间参数是指协调世界时间 (UTC)。 如果您想要在指定时间内（如现在）找到最近位置，但不确定设施点或事件点所在的时区，请选择此选项。</para>
 		/// <para><see cref="TimeZoneEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -156,9 +156,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time of Day Usage</para>
-		/// <para>Specifies whether the value of the Time of Day parameter represents the arrival or departure time for the route or routes.</para>
-		/// <para>Start time—Time of Day is interpreted as the departure time from the facility or incident. This is the default.When this setting is chosen, Time of Day indicates the solver should find the best route given a departure time.</para>
-		/// <para>End time—Time of Day is interpreted as the arrival time at the facility or incident. This option is useful if you want to know what time to depart from a location so you arrive at the destination at the time specified in Time of Day.</para>
+		/// <para>指定时间参数值是表示路径的到达时间还是出发时间。</para>
+		/// <para>开始时间—时间参数可理解为从设施点或事件点出发的时间。 这是默认设置。当选择此设置时，时间参数表示求解程序应该基于给定离开时间找到最佳路径。</para>
+		/// <para>结束时间—时间参数可理解为到达设施点或事件点的时间。如果您想知道何时从一个地点离开，从而能在时间所指定的时间到达目的地，该选项将十分有用。</para>
 		/// <para><see cref="TimeOfDayUsageEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -169,11 +169,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Line Shape</para>
-		/// <para>Specifies the shape type that will be used for the route features that are output by the analysis.</para>
-		/// <para>Regardless of the output shape type specified, the best route is always determined by the network impedance, never Euclidean distance. This means that only the route shapes are different, not the underlying traversal of the network.</para>
-		/// <para>Along network—The output routes will have the exact shape of the underlying network sources. The output includes route measurements for linear referencing. The measurements increase from the first stop and record the cumulative impedance to reach a given position.</para>
-		/// <para>No lines—No shape will be generated for the output routes.</para>
-		/// <para>Straight lines—The output route shape will be a single straight line between the stops.</para>
+		/// <para>为分析所输出的路径要素指定要使用的形状类型。</para>
+		/// <para>无论选择何种输出 shape 类型，最佳路径始终由网络阻抗（而非欧氏距离）决定。 这表示只是路径形状不同，而对网络进行的基础遍历则相同。</para>
+		/// <para>沿网络—输出路径将具有基础网络源的精确形状。 输出包括线性参考的路径测量值。 测量值从第一个停靠点增加并将记录到达指定位置的累积阻抗。</para>
+		/// <para>无线—将不会为输出路径生成任何形状。</para>
+		/// <para>直线—输出路径形状为两个停靠点之间的一条直线。</para>
 		/// <para><see cref="LineShapeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -184,9 +184,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Accumulate Attributes</para>
-		/// <para>A list of cost attributes to be accumulated during analysis. These accumulated attributes are for reference only; the solver only uses the cost attribute used by the designated travel mode when solving the analysis.</para>
-		/// <para>For each cost attribute that is accumulated, a Total_[Impedance] property is populated in the network analysis output features.</para>
-		/// <para>This parameter is not available if the network data source is an ArcGIS Online service or the network data source is a service on a version of Portal for ArcGIS that does not support accumulation.</para>
+		/// <para>分析过程中要累积的成本属性的列表。 这些累积属性仅供参考；求解程序仅使用求解分析时指定的出行模式所使用的成本属性。</para>
+		/// <para>对于每个累积的成本属性，会在网络分析输出要素中填充 Total_[阻抗] 属性。</para>
+		/// <para>如果网络数据源为 ArcGIS Online 服务，或如果网络数据源是不支持累积的 Portal for ArcGIS 版本上的服务，则此参数不可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -196,10 +196,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Generate Directions on Solve</para>
-		/// <para>Specifies whether directions will be generated when running the analysis.</para>
-		/// <para>Checked—Indicates that the turn-by-turn directions will be generated on solve.</para>
-		/// <para>Unchecked—Indicates that the turn-by-turn directions will not be generated on solve. This is the default.</para>
-		/// <para>For an analysis in which generating turn-by-turn directions is not needed, leaving this option unchecked will considerably reduce the time it takes to solve the analysis.</para>
+		/// <para>指定运行分析时是否生成方向。</para>
+		/// <para>选中 - 指示在求解时会生成转向指示。</para>
+		/// <para>未选中 - 指示在求解时不会生成转向指示。 这是默认设置。</para>
+		/// <para>对于不需要生成转向指示的分析，保持此选项的未选中状态可以显著减少求解分析的时间。</para>
 		/// <para><see cref="GenerateDirectionsOnSolveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -217,9 +217,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Ignore Invalid Locations at Solve Time</para>
-		/// <para>Specifies whether invalid input locations will be ignored. Typically, locations are invalid if they cannot be located on the network. When invalid locations are ignored, the solver will skip them and attempt to perform the analysis using the remaining locations.</para>
-		/// <para>Checked—Invalid input locations will be ignored and only valid locations will be used. This is the default.</para>
-		/// <para>Unchecked—All input locations will be used. Invalid locations will cause the analysis to fail.</para>
+		/// <para>指定是否忽略无效的输入位置。 通常，如果无法在网络上定位，则位置无效。 当无效位置被忽略时，求解器将跳过它们并尝试使用剩余位置执行分析。</para>
+		/// <para>选中 - 将忽略无效的输入位置，并且仅使用有效的位置。 这是默认设置。</para>
+		/// <para>未选中 - 将使用所有输入位置。 无效的位置将导致分析失败。</para>
 		/// <para><see cref="IgnoreInvalidLocationsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -245,17 +245,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TravelDirectionEnum 
 		{
 			/// <summary>
-			/// <para>Toward facilities—Direction of travel is from incidents to facilities. Retail stores commonly use this setting, since they are concerned with the time it takes the shoppers (incidents) to reach the store (facility). This is the default.</para>
+			/// <para>朝向设施点—行驶方向 - 从事件点到设施点。 零售店通常使用该设置，因为他们需要关注购物者（事件点）到达商店（设施点）所需的时间。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("TO_FACILITIES")]
-			[Description("Toward facilities")]
+			[Description("朝向设施点")]
 			Toward_facilities,
 
 			/// <summary>
-			/// <para>Away from facilities—Direction of travel is from facilities to incidents. Fire departments commonly use this setting, since they are concerned with the time it takes to travel from the fire station (facility) to the location of the emergency (incident).</para>
+			/// <para>远离设施点—行驶方向 - 从设施点到事件点。 消防部门通常使用该设置，因为他们需要关注从消防站（设施点）行驶到紧急救援位置（事件点）所需的时间。</para>
 			/// </summary>
 			[GPValue("FROM_FACILITIES")]
-			[Description("Away from facilities")]
+			[Description("远离设施点")]
 			Away_from_facilities,
 
 		}
@@ -266,17 +266,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TimeZoneEnum 
 		{
 			/// <summary>
-			/// <para>UTC—The Time of Day parameter refers to Coordinated Universal Time (UTC). Choose this option if you want to find what&apos;s nearest for a specific time, such as now, but aren&apos;t certain in which time zone the facilities or incidents will be located.</para>
+			/// <para>UTC—时间参数是指协调世界时间 (UTC)。 如果您想要在指定时间内（如现在）找到最近位置，但不确定设施点或事件点所在的时区，请选择此选项。</para>
 			/// </summary>
 			[GPValue("UTC")]
 			[Description("UTC")]
 			UTC,
 
 			/// <summary>
-			/// <para>Local time at locations—The Time of Day parameter refers to the time zone in which the facilities or incidents are located. This is the default.</para>
+			/// <para>各位置的本地时间—时间参数采用设施点或事件点所处的时区。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("LOCAL_TIME_AT_LOCATIONS")]
-			[Description("Local time at locations")]
+			[Description("各位置的本地时间")]
 			Local_time_at_locations,
 
 		}
@@ -287,17 +287,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TimeOfDayUsageEnum 
 		{
 			/// <summary>
-			/// <para>Start time—Time of Day is interpreted as the departure time from the facility or incident. This is the default.When this setting is chosen, Time of Day indicates the solver should find the best route given a departure time.</para>
+			/// <para>开始时间—时间参数可理解为从设施点或事件点出发的时间。 这是默认设置。当选择此设置时，时间参数表示求解程序应该基于给定离开时间找到最佳路径。</para>
 			/// </summary>
 			[GPValue("START_TIME")]
-			[Description("Start time")]
+			[Description("开始时间")]
 			Start_time,
 
 			/// <summary>
-			/// <para>End time—Time of Day is interpreted as the arrival time at the facility or incident. This option is useful if you want to know what time to depart from a location so you arrive at the destination at the time specified in Time of Day.</para>
+			/// <para>结束时间—时间参数可理解为到达设施点或事件点的时间。如果您想知道何时从一个地点离开，从而能在时间所指定的时间到达目的地，该选项将十分有用。</para>
 			/// </summary>
 			[GPValue("END_TIME")]
-			[Description("End time")]
+			[Description("结束时间")]
 			End_time,
 
 		}
@@ -308,24 +308,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum LineShapeEnum 
 		{
 			/// <summary>
-			/// <para>No lines—No shape will be generated for the output routes.</para>
+			/// <para>无线—将不会为输出路径生成任何形状。</para>
 			/// </summary>
 			[GPValue("NO_LINES")]
-			[Description("No lines")]
+			[Description("无线")]
 			No_lines,
 
 			/// <summary>
-			/// <para>Straight lines—The output route shape will be a single straight line between the stops.</para>
+			/// <para>直线—输出路径形状为两个停靠点之间的一条直线。</para>
 			/// </summary>
 			[GPValue("STRAIGHT_LINES")]
-			[Description("Straight lines")]
+			[Description("直线")]
 			Straight_lines,
 
 			/// <summary>
-			/// <para>Along network—The output routes will have the exact shape of the underlying network sources. The output includes route measurements for linear referencing. The measurements increase from the first stop and record the cumulative impedance to reach a given position.</para>
+			/// <para>沿网络—输出路径将具有基础网络源的精确形状。 输出包括线性参考的路径测量值。 测量值从第一个停靠点增加并将记录到达指定位置的累积阻抗。</para>
 			/// </summary>
 			[GPValue("ALONG_NETWORK")]
-			[Description("Along network")]
+			[Description("沿网络")]
 			Along_network,
 
 		}
@@ -336,14 +336,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum GenerateDirectionsOnSolveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Indicates that the turn-by-turn directions will be generated on solve.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DIRECTIONS")]
 			DIRECTIONS,
 
 			/// <summary>
-			/// <para>Unchecked—Indicates that the turn-by-turn directions will not be generated on solve. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DIRECTIONS")]
@@ -357,14 +357,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum IgnoreInvalidLocationsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Invalid input locations will be ignored and only valid locations will be used. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SKIP")]
 			SKIP,
 
 			/// <summary>
-			/// <para>Unchecked—All input locations will be used. Invalid locations will cause the analysis to fail.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("HALT")]

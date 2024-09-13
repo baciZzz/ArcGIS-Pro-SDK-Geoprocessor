@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Flip Line</para>
-	/// <para>Flip Line</para>
-	/// <para>Reverses the from-to direction of line features.</para>
+	/// <para>翻转线</para>
+	/// <para>颠倒线要素的“自-至”方向。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input line feature class or layer.</para>
+		/// <para>输入线要素类或图层。</para>
 		/// </param>
 		public FlipLine(object InFeatures)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Flip Line</para>
+		/// <para>Tool Display Name : 翻转线</para>
 		/// </summary>
-		public override string DisplayName() => "Flip Line";
+		public override string DisplayName() => "翻转线";
 
 		/// <summary>
 		/// <para>Tool Name : FlipLine</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input line feature class or layer.</para>
+		/// <para>输入线要素类或图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

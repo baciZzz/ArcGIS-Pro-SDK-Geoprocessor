@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Points To Line</para>
-	/// <para>Points To Line</para>
-	/// <para>Creates line features from points.</para>
+	/// <para>点集转线</para>
+	/// <para>根据点创建线要素。</para>
 	/// </summary>
 	public class PointsToLine : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputFeatures">
 		/// <para>Input Features</para>
-		/// <para>The point features to be converted into lines.</para>
+		/// <para>要转换为线的点要素。</para>
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The line feature class that will be created from the input points.</para>
+		/// <para>将通过输入点创建的线要素类。</para>
 		/// </param>
 		public PointsToLine(object InputFeatures, object OutputFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Points To Line</para>
+		/// <para>Tool Display Name : 点集转线</para>
 		/// </summary>
-		public override string DisplayName() => "Points To Line";
+		public override string DisplayName() => "点集转线";
 
 		/// <summary>
 		/// <para>Tool Name : PointsToLine</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The point features to be converted into lines.</para>
+		/// <para>要转换为线的点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The line feature class that will be created from the input points.</para>
+		/// <para>将通过输入点创建的线要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Line Field</para>
-		/// <para>The field that will be used to identify unique attribute values. Point features with a unique attribute value will be combined to form an output line feature.</para>
+		/// <para>用于识别唯一属性值的字段。 包含唯一属性值的点要素将合并以形成输出线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Sort Field</para>
-		/// <para>The field that will be used to sort the order of the points. By default, points used to create each output line feature will be used in the order they are found.</para>
+		/// <para>用于对点进行排序的字段。 默认情况下，用于创建各个输出线要素的点将按照点被发现的顺序进行使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -109,9 +109,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Close Line</para>
-		/// <para>Specifies whether output line features will be closed.</para>
-		/// <para>Checked—An extra vertex will be added to ensure that every output line feature&apos;s end point will match its start point.</para>
-		/// <para>Unchecked—No extra vertices will be added to close an output line feature. This is the default.</para>
+		/// <para>指定输出线要素是否闭合。</para>
+		/// <para>选中 - 将添加额外的顶点，以确保每个输出线要素的终点与起点匹配。</para>
+		/// <para>未选中 - 不会添加额外的顶点以闭合输出线要素。 这是默认设置。</para>
 		/// <para><see cref="CloseLineEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,14 +136,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CloseLineEnum 
 		{
 			/// <summary>
-			/// <para>Checked—An extra vertex will be added to ensure that every output line feature&apos;s end point will match its start point.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLOSE")]
 			CLOSE,
 
 			/// <summary>
-			/// <para>Unchecked—No extra vertices will be added to close an output line feature. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CLOSE")]

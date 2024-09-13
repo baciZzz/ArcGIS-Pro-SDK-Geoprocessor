@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Contingent Value</para>
-	/// <para>Remove Contingent Value</para>
-	/// <para>Removes a contingent value from a field group.</para>
+	/// <para>移除条件值</para>
+	/// <para>从字段组中移除条件值。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,12 +23,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="TargetTable">
 		/// <para>Target Table</para>
-		/// <para>The input geodatabase feature class or table containing the contingent value that will be removed.</para>
+		/// <para>输入地理数据库要素类或表，其中包含将要移除的条件值。</para>
 		/// </param>
 		/// <param name="Id">
 		/// <para>Contingent Value ID</para>
-		/// <para>The unique contingent value ID.</para>
-		/// <para>To view the contingent value ID in the Contingent Values view, click the Toggle Value IDs button on the ribbon. In Python, this value can be accessed using the arcpy.da.ListContingentValues function.</para>
+		/// <para>唯一的条件值 ID。</para>
+		/// <para>要在条件值视图中查看条件值 ID，请单击功能区上的切换值 ID 按钮。在 Python 中，可以使用 arcpy.da.ListContingentValues 函数访问此值。</para>
 		/// </param>
 		public RemoveContingentValue(object TargetTable, object Id)
 		{
@@ -37,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Remove Contingent Value</para>
+		/// <para>Tool Display Name : 移除条件值</para>
 		/// </summary>
-		public override string DisplayName() => "Remove Contingent Value";
+		public override string DisplayName() => "移除条件值";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveContingentValue</para>
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Table</para>
-		/// <para>The input geodatabase feature class or table containing the contingent value that will be removed.</para>
+		/// <para>输入地理数据库要素类或表，其中包含将要移除的条件值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -81,8 +81,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Contingent Value ID</para>
-		/// <para>The unique contingent value ID.</para>
-		/// <para>To view the contingent value ID in the Contingent Values view, click the Toggle Value IDs button on the ribbon. In Python, this value can be accessed using the arcpy.da.ListContingentValues function.</para>
+		/// <para>唯一的条件值 ID。</para>
+		/// <para>要在条件值视图中查看条件值 ID，请单击功能区上的切换值 ID 按钮。在 Python 中，可以使用 arcpy.da.ListContingentValues 函数访问此值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

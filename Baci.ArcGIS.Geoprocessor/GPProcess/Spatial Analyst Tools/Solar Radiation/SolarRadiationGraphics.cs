@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Solar Radiation Graphics</para>
-	/// <para>Solar Radiation Graphics</para>
-	/// <para>Derives raster representations of a hemispherical viewshed, sun map, and sky map, which are used in the calculation of direct, diffuse, and global solar radiation.</para>
+	/// <para>太阳辐射图</para>
+	/// <para>获得用于计算直接太阳辐射、散射太阳辐射和整体太阳辐射的半球视域、太阳图和星空图的栅格表达。</para>
 	/// </summary>
 	public class SolarRadiationGraphics : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InSurfaceRaster">
 		/// <para>Input raster</para>
-		/// <para>The input elevation surface raster.</para>
+		/// <para>输入高程表面栅格。</para>
 		/// </param>
 		/// <param name="OutViewshedRaster">
 		/// <para>Output viewshed raster</para>
-		/// <para>The output viewshed raster.</para>
-		/// <para>The resulting viewshed for a location represents which sky directions are visible and which are obscured. This is similar to the view provided by upward-looking hemispherical (fisheye) photographs.</para>
+		/// <para>输出视域栅格。</para>
+		/// <para>生成的某一位置的视域表示哪些星空方向可见，哪些星空方向模糊不清。这与通过仰视半球（鱼眼镜头）照片提供的视角类似。</para>
 		/// </param>
 		public SolarRadiationGraphics(object InSurfaceRaster, object OutViewshedRaster)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Solar Radiation Graphics</para>
+		/// <para>Tool Display Name : 太阳辐射图</para>
 		/// </summary>
-		public override string DisplayName() => "Solar Radiation Graphics";
+		public override string DisplayName() => "太阳辐射图";
 
 		/// <summary>
 		/// <para>Tool Name : SolarRadiationGraphics</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input elevation surface raster.</para>
+		/// <para>输入高程表面栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -83,8 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output viewshed raster</para>
-		/// <para>The output viewshed raster.</para>
-		/// <para>The resulting viewshed for a location represents which sky directions are visible and which are obscured. This is similar to the view provided by upward-looking hemispherical (fisheye) photographs.</para>
+		/// <para>输出视域栅格。</para>
+		/// <para>生成的某一位置的视域表示哪些星空方向可见，哪些星空方向模糊不清。这与通过仰视半球（鱼眼镜头）照片提供的视角类似。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input points feature or table</para>
-		/// <para>The input point feature class or table specifying the locations to analyze solar radiation.</para>
+		/// <para>指定位置以分析太阳辐射位置的输入点要素类或表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
@@ -104,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Sky size / Resolution</para>
-		/// <para>The resolution or sky size for the viewshed, sky map, and sun map rasters. The units are cells.</para>
-		/// <para>The default is a raster of 200 by 200 cells.</para>
+		/// <para>视域、天空图和阳光图栅格的分辨率或天空大小。 单位为像元。</para>
+		/// <para>默认为 200 x 200 像元的栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -116,8 +116,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Height offset</para>
-		/// <para>The height (in meters) above the DEM surface for which calculations will be performed.</para>
-		/// <para>The height offset will be applied to all input locations.</para>
+		/// <para>将执行计算的 DEM 表面之上的高度（以米为单位）。</para>
+		/// <para>高度偏移将应用到所有输入位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -127,8 +127,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Calculation directions</para>
-		/// <para>The number of azimuth directions that will be used when calculating the viewshed.</para>
-		/// <para>Valid values must be multiples of 8 (8, 16, 24, 32, and so on). The default value is 32 directions, which is adequate for complex topography.</para>
+		/// <para>计算视域时将使用的方位角方向数。</para>
+		/// <para>有效值必须是 8 的倍数（8、16、24、32，依此类推）。 默认值为 32 个方向，该值适用于复杂地形。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -139,8 +139,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Latitude</para>
-		/// <para>The latitude for the site area. The units are decimal degrees with positive values for the northern hemisphere and negative values for the southern hemisphere.</para>
-		/// <para>For input surface rasters containing a spatial reference, the mean latitude is automatically calculated; otherwise, the latitude default is 45 degrees.</para>
+		/// <para>位置区域的纬度。 单位为十进制度，北半球为正值，南半球为负值。</para>
+		/// <para>对于包含空间参考的输入表面栅格，会自动计算平均纬度；否则，纬度将默认为 45 度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -152,13 +152,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Time configuration</para>
-		/// <para>Specifies the time period that will be used for the calculations.</para>
-		/// <para>Special days—Solar insolation will be calculated for the solstice days (summer and winter) and the equinox days (when the insolation for both spring and fall equinox are the same).</para>
-		/// <para>Within day—Calculations will be performed for a specified time period within a single day.Select the Julian day and enter the start and end times. When the start time and the end time are the same, instantaneous insolation will be calculated. When the start time is before sunrise and the end time is after sunset, insolation will be calculated for the whole day.</para>
-		/// <para>To enter the correct day, use the calendar button to open the Calendar dialog box.</para>
-		/// <para>Multiple days—Calculations will be performed for a specific multiple-day period within a year.Specify the start year, start day, and end day. When the end day is smaller than the start day, the end day is considered to be in the following year. The default time configuration starts on day 5 and ends on day 160 of the current Julian year.</para>
-		/// <para>To enter the correct days, use the calendar button to open the Calendar dialog box.</para>
-		/// <para>Whole year—Calculations will be performed for an entire year using monthly intervals for calculations.If the Create outputs for each interval option is checked, output files will be created for each month; otherwise, a single output will be created for the whole year.</para>
+		/// <para>指定将用于计算的时间段。</para>
+		/// <para>特殊日期 - 将计算夏至、冬至和春秋分（春分和秋分的日照是相同的）的太阳日照。</para>
+		/// <para>一天内 - 将对一天内的指定时间段执行计算。选择儒略日，然后输入起始时间和结束时间。 起始时间和结束时间相同时，将计算瞬时日照。 起始时间在日出前而结束时间在日出后时，将计算全天的日照。</para>
+		/// <para>要输入正确日期，可以使用日历按钮打开日历对话框。</para>
+		/// <para>多天 - 将对一年中的特定多天时间段执行计算。指定起始年、起始日和结束日。 如果结束日小于起始日，则将结束日视为在下一年中。 默认时间配置起始于当前儒略年的第 5 天，结束于第 160 天。</para>
+		/// <para>要输入正确日期，可以使用日历按钮打开日历对话框。</para>
+		/// <para>整年 - 将使用计算的每月间隔对整年执行计算。如果选中为每种间隔创建输出选项，将为每月创建输出文件；否则，将为整年创建一个输出。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSATimeConfiguration()]
@@ -167,8 +167,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Day interval</para>
-		/// <para>The time interval through the year (units: days) that will be used to calculate sky sectors for the sun map.</para>
-		/// <para>The default value is 14 (biweekly).</para>
+		/// <para>用于为太阳图计算天空分区的一年中的时间间隔（单位：天）。</para>
+		/// <para>默认值为 14（两周）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -179,8 +179,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Hour interval</para>
-		/// <para>The time interval through the day (units: hours) that will be used to calculate sky sectors for the sun map.</para>
-		/// <para>The default value is 0.5.</para>
+		/// <para>用于为太阳图计算天空分区的一天中的时间间隔（单位：小时）。</para>
+		/// <para>默认值为 0.5。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -190,8 +190,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output sunmap raster</para>
-		/// <para>The output sun map raster.</para>
-		/// <para>The output is a representation that specifies sun tracks, the apparent position of the sun as it varies through time. The output is at the same resolution as the viewshed and sky map.</para>
+		/// <para>输出太阳图栅格。</para>
+		/// <para>该输出是指定太阳轨迹（即，太阳随着时间的推移而发生变化时所处的明显位置）的栅格表达。该输出的分辨率与视域和星空图相同。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -200,8 +200,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Zenith divisions</para>
-		/// <para>The number of zenith divisions that will be used to create sky sectors in the sky map.</para>
-		/// <para>The default is eight divisions (relative to zenith). Values must be greater than zero and less than half the sky size value.</para>
+		/// <para>用于创建天空图中的天空分区的天顶分割数。</para>
+		/// <para>默认值为八个分割（相对于天顶）。 值必须大于零并且小于天空大小值的一半。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -212,8 +212,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Azimuth divisions</para>
-		/// <para>The number of azimuth divisions that will be used to create sky sectors in the sky map.</para>
-		/// <para>The default is eight divisions (relative to north). Valid values must be multiples of 8. Values must be greater than zero and less than 160.</para>
+		/// <para>用于创建天空图中的天空分区的方位角分割数。</para>
+		/// <para>默认值为八个分割（相对于北方）。 有效值必须是 8 的倍数。 值必须大于零且小于 160。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -223,8 +223,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output skymap raster</para>
-		/// <para>The output sky map raster.</para>
-		/// <para>The output is constructed by dividing the whole sky into a series of sky sectors defined by zenith and azimuth divisions. The output is at the same resolution as the viewshed and sun map.</para>
+		/// <para>输出星空图栅格。</para>
+		/// <para>可通过将整个星空分成一系列由天顶分割和方位角分割定义的天空扇区来构造输出。该输出的分辨率与视域和太阳图相同。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]

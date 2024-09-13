@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Diffusion Interpolation With Barriers</para>
-	/// <para>Diffusion Interpolation With Barriers</para>
-	/// <para>Interpolates a surface using a kernel that is based upon the heat equation and allows one to use raster and feature  barriers to redefine distances between input points.</para>
+	/// <para>含障碍的扩散插值</para>
+	/// <para>使用基于热方程的核插值表面，并且允许使用栅格和要素障碍重新定义输入点间的距离。</para>
 	/// </summary>
 	public class DiffusionInterpolationWithBarriers : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input features</para>
-		/// <para>The input point features containing the z-values to be interpolated.</para>
+		/// <para>包含要插入的 z 值的输入点要素。</para>
 		/// </param>
 		/// <param name="ZField">
 		/// <para>Z value field</para>
-		/// <para>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contain z-values or m-values.</para>
+		/// <para>表示每个点的高度或量级值的字段。如果输入要素包含 z 值或 m 值，则该字段可以是数值字段或 Shape 字段。</para>
 		/// </param>
 		public DiffusionInterpolationWithBarriers(object InFeatures, object ZField)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Diffusion Interpolation With Barriers</para>
+		/// <para>Tool Display Name : 含障碍的扩散插值</para>
 		/// </summary>
-		public override string DisplayName() => "Diffusion Interpolation With Barriers";
+		public override string DisplayName() => "含障碍的扩散插值";
 
 		/// <summary>
 		/// <para>Tool Name : DiffusionInterpolationWithBarriers</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input features</para>
-		/// <para>The input point features containing the z-values to be interpolated.</para>
+		/// <para>包含要插入的 z 值的输入点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Z value field</para>
-		/// <para>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contain z-values or m-values.</para>
+		/// <para>表示每个点的高度或量级值的字段。如果输入要素包含 z 值或 m 值，则该字段可以是数值字段或 Shape 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output geostatistical layer</para>
-		/// <para>The geostatistical layer produced. This layer is required output only if no output raster is requested.</para>
+		/// <para>生成的地统计图层。只有未请求任何输出栅格时才需要输出该图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGALayer()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster. This raster is required output only if no output geostatistical layer is requested.</para>
+		/// <para>输出栅格。只有未请求任何输出地统计图层时才需要输出该栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -106,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>The cell size at which the output raster will be created.</para>
-		/// <para>This value can be explicitly set in the Environments by the Cell Size parameter.</para>
-		/// <para>If not set, it is the shorter of the width or the height of the extent of the input point features, in the input spatial reference, divided by 250.</para>
+		/// <para>要创建的输出栅格的像元大小。</para>
+		/// <para>可以通过像元大小参数在环境中明确设置该值。</para>
+		/// <para>如果未设置，则该值为输入空间参考中输入点要素范围的宽度与高度中的较小值除以 250。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input absolute barrier features</para>
-		/// <para>Absolute barrier features using non-Euclidean distances rather than line-of-sight distances.</para>
+		/// <para>使用“非欧氏”距离而非“通视”距离的绝对障碍要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Bandwidth</para>
-		/// <para>Used to specify the maximum distance at which data points are used for prediction. With increasing bandwidth, prediction bias increases and prediction variance decreases.</para>
+		/// <para>用于指定预测所用数据点之间的最大距离。随着带宽的增加，预测偏差将增加，而预测方差会减少。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Number of iterations</para>
-		/// <para>The iteration count controls the accuracy of the numerical solution because the model solves the diffusion equation numerically. The larger this number, the more accurate the predictions, yet the longer the processing time. The more complex the barrier's geometry and the larger the bandwidth, the more iterations are required for accurate predictions.</para>
+		/// <para>由于模型在数值上求解扩散方程，迭代计数将控制数值解的精度。迭代计数越大，预测越精确，但处理时间也将越长。障碍几何越复杂且带宽越大，精确预测所需的迭代也越多。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Weight field</para>
-		/// <para>Used to emphasize an observation. The larger the weight, the more impact it has on the prediction. For coincident observations, assign the largest weight to the most reliable measurement.</para>
+		/// <para>用于强调某个观测。权重越大，对预测的影响就越大。对于重合的观测，为最可靠的测量值分配最大权重。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -158,8 +158,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input additive barrier raster</para>
-		/// <para>The travel distance from one raster cell to the next based on this formula:</para>
-		/// <para>(average cost value in the neighboring cells) x (distance between cell centers)</para>
+		/// <para>基于以下公式计算出的两个相邻栅格像元之间的行程距离：</para>
+		/// <para>（相邻像元的平均成本值）x（像元中心间的距离）</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRasterLayer()]
@@ -168,8 +168,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input cumulative barrier raster</para>
-		/// <para>The travel distance from one raster cell to the next based on this formula:</para>
-		/// <para>(difference between cost values in the neighboring cells) + (distance between cell centers)</para>
+		/// <para>基于以下公式计算出的两个相邻栅格像元之间的行程距离：</para>
+		/// <para>（相邻像元的成本值之差）+（像元中心间的距离）</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRasterLayer()]
@@ -178,9 +178,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input flow barrier raster</para>
-		/// <para>A flow barrier is used when interpolating data with preferential direction of data variation, based on this formula:</para>
-		/// <para>Indicator (cost values in theneighboring cell &gt; cost values in theneighboring cell) * (cost values in theneighboring cell - cost values in theneighboring cell) + (distance between cell centers),&lt;italics&gt;to&lt;/italics&gt;&lt;italics&gt;from&lt;/italics&gt;&lt;italics&gt;to&lt;/italics&gt;&lt;italics&gt;from&lt;/italics&gt;</para>
-		/// <para>where indicator(true) = 1 and indicator(false) = 0.</para>
+		/// <para>如果想在插入数据时指明数据变化的主方向，可基于以下公式使用流动障碍：</para>
+		/// <para>指示符（相邻像元的成本值 &gt;相邻像元的成本值）*（相邻像元的成本值 -相邻像元的成本值）+（像元中心间的距离），&lt;italics&gt;至&lt;/italics&gt;&lt;italics&gt;自&lt;/italics&gt;&lt;italics&gt;至&lt;/italics&gt;&lt;italics&gt;自&lt;/italics&gt;</para>
+		/// <para>其中，指示符（真）= 1，指示符（假）= 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPRasterLayer()]

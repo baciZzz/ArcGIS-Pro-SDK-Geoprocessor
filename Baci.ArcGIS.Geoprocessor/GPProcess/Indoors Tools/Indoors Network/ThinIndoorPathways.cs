@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Thin Indoor Pathways</para>
-	/// <para>Thin Indoor Pathways</para>
-	/// <para>Removes preliminary network pathways that are not needed for routing between selected locations on each level, reducing the network dataset size and improving its route-solving performance.</para>
+	/// <para>稀疏化室内路径</para>
+	/// <para>用于移除每个楼层上所选位置之间路径选择不需要的初步网络路径，从而减小网络数据集大小并改善其路径求解性能。</para>
 	/// </summary>
 	public class ThinIndoorPathways : AbstractGPProcess
 	{
@@ -21,27 +21,27 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		/// <param name="InLevelFeatures">
 		/// <para>Input Level Features</para>
-		/// <para>The input polygon features representing a level or levels in one or more facilities. In the ArcGIS Indoors Information Model, this will be the Levels layer. Only the levels represented by these features will be processed.</para>
+		/// <para>输入面要素，表示一个或多个设施点中的一个或多个楼层。 在 ArcGIS Indoors 信息模型中，此项将为 Levels 图层。 系统将仅处理这些要素表示的楼层。</para>
 		/// </param>
 		/// <param name="InPathwayFeatures">
 		/// <para>Input Pathway Features</para>
-		/// <para>The input polyline features representing the preliminary pathways to be thinned. In the Indoors model, this will be the PrelimPathways layer.</para>
+		/// <para>表示要细化的初步路径的输入折线要素。 在 Indoors 模型中，此项将为 PrelimPathways 图层。</para>
 		/// </param>
 		/// <param name="InTransitionFeatures">
 		/// <para>Input Transition Features</para>
-		/// <para>The input polyline features representing the preliminary transitions to be thinned. In the Indoors model, this will be the PrelimTransitions layer.</para>
+		/// <para>表示要细化的初步过渡的输入折线要素。 在 Indoors 模型中，此项将为 PrelimTransitions 图层。</para>
 		/// </param>
 		/// <param name="RoutableLocations">
 		/// <para>Routable Locations</para>
-		/// <para>The input point or polygon features representing the locations used to calculate routes. This can be any point or polygon features that conform to the Indoors model or are configured as floor aware.</para>
+		/// <para>表示用于计算路径的位置的输入点或面要素。 该要素可以是符合 Indoors 模型或配置为楼层感知型的任何点或面要素。</para>
 		/// </param>
 		/// <param name="TargetPathways">
 		/// <para>Target Pathways</para>
-		/// <para>The existing feature class or feature layer to which the thinned pathways will be added. In the Indoors model, this will be the Pathways layer.</para>
+		/// <para>将添加细化路径的现有要素类或要素图层。 在 Indoors 模型中，此项将为 Pathways 图层。</para>
 		/// </param>
 		/// <param name="TargetTransitions">
 		/// <para>Target Transitions</para>
-		/// <para>The existing feature class or feature to which thinned transitions will be added. In the Indoors model, this will be the Transitions layer.</para>
+		/// <para>将添加细化过渡的现有要素类或要素。 在 Indoors 模型中，此项将为 Transitions 图层。</para>
 		/// </param>
 		public ThinIndoorPathways(object InLevelFeatures, object InPathwayFeatures, object InTransitionFeatures, object RoutableLocations, object TargetPathways, object TargetTransitions)
 		{
@@ -54,9 +54,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Thin Indoor Pathways</para>
+		/// <para>Tool Display Name : 稀疏化室内路径</para>
 		/// </summary>
-		public override string DisplayName() => "Thin Indoor Pathways";
+		public override string DisplayName() => "稀疏化室内路径";
 
 		/// <summary>
 		/// <para>Tool Name : ThinIndoorPathways</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Level Features</para>
-		/// <para>The input polygon features representing a level or levels in one or more facilities. In the ArcGIS Indoors Information Model, this will be the Levels layer. Only the levels represented by these features will be processed.</para>
+		/// <para>输入面要素，表示一个或多个设施点中的一个或多个楼层。 在 ArcGIS Indoors 信息模型中，此项将为 Levels 图层。 系统将仅处理这些要素表示的楼层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Pathway Features</para>
-		/// <para>The input polyline features representing the preliminary pathways to be thinned. In the Indoors model, this will be the PrelimPathways layer.</para>
+		/// <para>表示要细化的初步路径的输入折线要素。 在 Indoors 模型中，此项将为 PrelimPathways 图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Transition Features</para>
-		/// <para>The input polyline features representing the preliminary transitions to be thinned. In the Indoors model, this will be the PrelimTransitions layer.</para>
+		/// <para>表示要细化的初步过渡的输入折线要素。 在 Indoors 模型中，此项将为 PrelimTransitions 图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Routable Locations</para>
-		/// <para>The input point or polygon features representing the locations used to calculate routes. This can be any point or polygon features that conform to the Indoors model or are configured as floor aware.</para>
+		/// <para>表示用于计算路径的位置的输入点或面要素。 该要素可以是符合 Indoors 模型或配置为楼层感知型的任何点或面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Target Pathways</para>
-		/// <para>The existing feature class or feature layer to which the thinned pathways will be added. In the Indoors model, this will be the Pathways layer.</para>
+		/// <para>将添加细化路径的现有要素类或要素图层。 在 Indoors 模型中，此项将为 Pathways 图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Target Transitions</para>
-		/// <para>The existing feature class or feature to which thinned transitions will be added. In the Indoors model, this will be the Transitions layer.</para>
+		/// <para>将添加细化过渡的现有要素类或要素。 在 Indoors 模型中，此项将为 Transitions 图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Search Tolerance</para>
-		/// <para>The distance, in meters, the tool will search for Routable Locations features near the input pathways. Routable Locations features farther away than this value will not be used for thinning. The default value is 5.The value must be 0 or greater.</para>
+		/// <para>该工具将搜索的距离（以米为单位），以查找输入路径附近的可路由位置要素。 距离大于此值的可路由位置要素将不会用于稀疏化。 默认值为 5。该值必须大于等于 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -164,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Neighbor Solve Count</para>
-		/// <para>The number of closest neighboring locations that will be solved when calculating routes between a given location and other routable locations in the facility. The default value is 50.The value must be 1 or greater.</para>
+		/// <para>在计算设施点中给定位置与其他可路由位置之间的路径时，将要求解的最接近相邻位置数量。 默认值为 50。该值必须大于等于 1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]

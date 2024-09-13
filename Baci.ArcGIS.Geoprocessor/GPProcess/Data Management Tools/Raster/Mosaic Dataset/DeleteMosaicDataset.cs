@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Mosaic Dataset</para>
-	/// <para>Delete Mosaic Dataset</para>
-	/// <para>Deletes a mosaic dataset, its overviews, and its item cache from disk.</para>
+	/// <para>删除镶嵌数据集</para>
+	/// <para>从磁盘删除镶嵌数据集、其概视图和其项目缓存。</para>
 	/// </summary>
 	public class DeleteMosaicDataset : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset that you want to delete.</para>
+		/// <para>想要删除的镶嵌数据集。</para>
 		/// </param>
 		public DeleteMosaicDataset(object InMosaicDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Delete Mosaic Dataset</para>
+		/// <para>Tool Display Name : 删除镶嵌数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Delete Mosaic Dataset";
+		public override string DisplayName() => "删除镶嵌数据集";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteMosaicDataset</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset that you want to delete.</para>
+		/// <para>想要删除的镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMosaicLayer()]
@@ -73,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Delete Overview Images</para>
-		/// <para>Deletes all overviews associated with the mosaic dataset.</para>
-		/// <para>Checked—Delete the overviews associated with the mosaic dataset. This is the default.</para>
-		/// <para>Unchecked—Do not delete the overviews.</para>
+		/// <para>删除所有与镶嵌数据集相关的概视图。</para>
+		/// <para>选中 - 删除与镶嵌数据集相关的概视图。这是默认设置。</para>
+		/// <para>未选中 - 不会删除这些概视图。</para>
 		/// <para><see cref="DeleteOverviewImagesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -85,9 +85,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Delete Item Cache</para>
-		/// <para>Delete the item cache associated with the mosaic dataset.</para>
-		/// <para>Checked—Delete the item cache associated with the mosaic dataset. This is the default.</para>
-		/// <para>Unchecked—Do not delete the item cache.</para>
+		/// <para>删除与镶嵌数据集相关的项目缓存。</para>
+		/// <para>选中 - 删除与镶嵌数据集相关的项目缓存。这是默认设置。</para>
+		/// <para>未选中 - 不会删除这些项目缓存。</para>
 		/// <para><see cref="DeleteItemCacheEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -110,14 +110,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DeleteOverviewImagesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Delete the overviews associated with the mosaic dataset. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_OVERVIEW_IMAGES")]
 			DELETE_OVERVIEW_IMAGES,
 
 			/// <summary>
-			/// <para>Unchecked—Do not delete the overviews.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DELETE_OVERVIEW_IMAGES")]
@@ -131,14 +131,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DeleteItemCacheEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Delete the item cache associated with the mosaic dataset. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_ITEM_CACHE")]
 			DELETE_ITEM_CACHE,
 
 			/// <summary>
-			/// <para>Unchecked—Do not delete the item cache.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DELETE_ITEM_CACHE")]

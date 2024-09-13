@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Extract by Mask</para>
-	/// <para>Extract by Mask</para>
-	/// <para>Extracts the cells of a raster that correspond to the areas defined by a mask.</para>
+	/// <para>按掩膜提取</para>
+	/// <para>提取掩膜所定义区域内的相应栅格像元。</para>
 	/// </summary>
 	public class ExtractByMask : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster from which cells will be extracted.</para>
+		/// <para>从中提取像元的输入栅格。</para>
 		/// </param>
 		/// <param name="InMaskData">
 		/// <para>Input raster or feature mask data</para>
-		/// <para>The input mask data defining the cell locations to extract.</para>
-		/// <para>It can be a raster or a feature dataset.</para>
-		/// <para>When the input mask data is a raster, NoData cells on the mask will be assigned NoData values on the output raster.</para>
-		/// <para>When the input mask is feature data, cells in the input raster whose center falls within the specified shape of the feature will be included in the output, while cells whose center falls outside will receive NoData.</para>
+		/// <para>用于定义要提取的像元位置的输入掩膜数据。</para>
+		/// <para>它可以是栅格，也可以是要素数据集。</para>
+		/// <para>当输入掩膜数据为栅格时，将在输出栅格中为掩膜数据中的 NoData 像元指定 NoData 值。</para>
+		/// <para>当输入掩膜是要素数据时，如果输入栅格中像元的中心位于要素指定形状内，则会在输出中包含这些像元，而其中心落在要素周长之外的像元将会收到 NoData。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster containing the cell values extracted from the input raster.</para>
+		/// <para>包含从输入栅格中提取的像元值的输出栅格。</para>
 		/// </param>
 		public ExtractByMask(object InRaster, object InMaskData, object OutRaster)
 		{
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Extract by Mask</para>
+		/// <para>Tool Display Name : 按掩膜提取</para>
 		/// </summary>
-		public override string DisplayName() => "Extract by Mask";
+		public override string DisplayName() => "按掩膜提取";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractByMask</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster from which cells will be extracted.</para>
+		/// <para>从中提取像元的输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -90,10 +90,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature mask data</para>
-		/// <para>The input mask data defining the cell locations to extract.</para>
-		/// <para>It can be a raster or a feature dataset.</para>
-		/// <para>When the input mask data is a raster, NoData cells on the mask will be assigned NoData values on the output raster.</para>
-		/// <para>When the input mask is feature data, cells in the input raster whose center falls within the specified shape of the feature will be included in the output, while cells whose center falls outside will receive NoData.</para>
+		/// <para>用于定义要提取的像元位置的输入掩膜数据。</para>
+		/// <para>它可以是栅格，也可以是要素数据集。</para>
+		/// <para>当输入掩膜数据为栅格时，将在输出栅格中为掩膜数据中的 NoData 像元指定 NoData 值。</para>
+		/// <para>当输入掩膜是要素数据时，如果输入栅格中像元的中心位于要素指定形状内，则会在输出中包含这些像元，而其中心落在要素周长之外的像元将会收到 NoData。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster containing the cell values extracted from the input raster.</para>
+		/// <para>包含从输入栅格中提取的像元值的输出栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -113,9 +113,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Extraction Area</para>
-		/// <para>Specifies whether cells inside or outside the locations defined by the input mask will be selected and written to the output raster.</para>
-		/// <para>Inside—Cells within the input mask will be selected and written to the output raster. All cells outside the mask will receive NoData on the output raster. This is default.</para>
-		/// <para>Outside—Cells outside the input mask will be selected and written to the output raster. All cells covered by the mask will receive NoData.</para>
+		/// <para>指定是选择输入掩膜定义的位置内部还是外部的像元并将其写入输出栅格。</para>
+		/// <para>内部—将选择输入掩膜内部的像元并将其写入输出栅格。 掩膜外部的所有像元都将在输出栅格中获得 NoData 值。 这是默认设置。</para>
+		/// <para>外部—将选择输入掩膜外部的像元并将其写入输出栅格。 掩膜覆盖的所有像元均会获得 NoData。</para>
 		/// <para><see cref="ExtractionAreaEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -125,10 +125,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Analysis Extent</para>
-		/// <para>The extent that defines the area to be extracted.</para>
-		/// <para>By default, the extent is calculated as the intersection of the Input raster value and the Input raster or feature mask data value. Processing will occur out to the x and y limits, and cells outside that extent will be NoData.</para>
-		/// <para>The parameters identified with the left and down arrows define the lower left coordinate of the area to be extracted, and those with the right and up arrows define the upper right coordinate.</para>
-		/// <para>The coordinates are specified in the same map units as the input raster if not explicitly set by the analysis environment</para>
+		/// <para>用于定义待提取区域的范围。</para>
+		/// <para>默认情况下，该范围是根据输入栅格值与输入栅格或要素掩膜数据值的交集计算得出的。 处理可能会超出 x 和 y 坐标范围，在此范围之外的像元将为 NoData。</para>
+		/// <para>使用通过左箭头和下箭头识别的参数定义待提取区域左下方的坐标，并使用通过右箭头和上箭头识别的参数定义右上方的坐标。</para>
+		/// <para>如果分析环境未显式设置，则将指定坐标使用与输入栅格相同的地图单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -151,17 +151,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ExtractionAreaEnum 
 		{
 			/// <summary>
-			/// <para>Inside—Cells within the input mask will be selected and written to the output raster. All cells outside the mask will receive NoData on the output raster. This is default.</para>
+			/// <para>内部—将选择输入掩膜内部的像元并将其写入输出栅格。 掩膜外部的所有像元都将在输出栅格中获得 NoData 值。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("INSIDE")]
-			[Description("Inside")]
+			[Description("内部")]
 			Inside,
 
 			/// <summary>
-			/// <para>Outside—Cells outside the input mask will be selected and written to the output raster. All cells covered by the mask will receive NoData.</para>
+			/// <para>外部—将选择输入掩膜外部的像元并将其写入输出栅格。 掩膜覆盖的所有像元均会获得 NoData。</para>
 			/// </summary>
 			[GPValue("OUTSIDE")]
-			[Description("Outside")]
+			[Description("外部")]
 			Outside,
 
 		}

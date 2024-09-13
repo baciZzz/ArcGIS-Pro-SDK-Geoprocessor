@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 {
 	/// <summary>
 	/// <para>Create Routes</para>
-	/// <para>Create Routes</para>
-	/// <para>Creates routes from existing lines. The input line features that share a common identifier are merged to create a single route.</para>
+	/// <para>创建路径</para>
+	/// <para>根据现有的线创建路径。 合并共享通用标识符的输入线要素以创建单个路径。</para>
 	/// </summary>
 	public class CreateRoutes : AbstractGPProcess
 	{
@@ -21,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		/// <param name="InLineFeatures">
 		/// <para>Input Line Features</para>
-		/// <para>The features from which routes will be created.</para>
+		/// <para>将创建路径的要素。</para>
 		/// </param>
 		/// <param name="RouteIdField">
 		/// <para>Route Identifier Field</para>
-		/// <para>The field containing values that uniquely identify each route.</para>
+		/// <para>包含可唯一识别每条路径的值的字段。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Route Feature Class</para>
-		/// <para>The feature class to be created. It can be a shapefile or a geodatabase feature class.</para>
+		/// <para>待创建的要素类。 可以是 shapefile 或地理数据库要素类。</para>
 		/// </param>
 		/// <param name="MeasureSource">
 		/// <para>Measure Source</para>
-		/// <para>Specifies how route measures will be obtained.</para>
-		/// <para>Length of features—The geometric length of the input features will be used to accumulate the measures. This is the default.</para>
-		/// <para>Values from a single field—The value stored in a single field will be used to accumulate the measures.</para>
-		/// <para>Values from two fields—The values stored in both from- and to- measure fields will be used to set the measures.</para>
+		/// <para>指定如何获取路径测量值。</para>
+		/// <para>要素的长度—使用输入要素的几何长度累积测量值。 这是默认设置。</para>
+		/// <para>值来自单个字段—使用单个字段中存储的值累积测量值。</para>
+		/// <para>值来自两个字段—使用“测量始于字段”和“测量止于字段”中存储的值设置测量值。</para>
 		/// <para><see cref="MeasureSourceEnum"/></para>
 		/// </param>
 		public CreateRoutes(object InLineFeatures, object RouteIdField, object OutFeatureClass, object MeasureSource)
@@ -48,9 +48,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Routes</para>
+		/// <para>Tool Display Name : 创建路径</para>
 		/// </summary>
-		public override string DisplayName() => "Create Routes";
+		public override string DisplayName() => "创建路径";
 
 		/// <summary>
 		/// <para>Tool Name : CreateRoutes</para>
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Input Line Features</para>
-		/// <para>The features from which routes will be created.</para>
+		/// <para>将创建路径的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Route Identifier Field</para>
-		/// <para>The field containing values that uniquely identify each route.</para>
+		/// <para>包含可唯一识别每条路径的值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Output Route Feature Class</para>
-		/// <para>The feature class to be created. It can be a shapefile or a geodatabase feature class.</para>
+		/// <para>待创建的要素类。 可以是 shapefile 或地理数据库要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -111,10 +111,10 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Measure Source</para>
-		/// <para>Specifies how route measures will be obtained.</para>
-		/// <para>Length of features—The geometric length of the input features will be used to accumulate the measures. This is the default.</para>
-		/// <para>Values from a single field—The value stored in a single field will be used to accumulate the measures.</para>
-		/// <para>Values from two fields—The values stored in both from- and to- measure fields will be used to set the measures.</para>
+		/// <para>指定如何获取路径测量值。</para>
+		/// <para>要素的长度—使用输入要素的几何长度累积测量值。 这是默认设置。</para>
+		/// <para>值来自单个字段—使用单个字段中存储的值累积测量值。</para>
+		/// <para>值来自两个字段—使用“测量始于字段”和“测量止于字段”中存储的值设置测量值。</para>
 		/// <para><see cref="MeasureSourceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>From-Measure Field</para>
-		/// <para>A field containing measure values. This field must be numeric and is required when the measure source is Values from a single field or Values from two fields.</para>
+		/// <para>包含测量值的字段。 此字段必须为数值，并且当测量源为来自单个字段的值或来自两个字段的值时必填。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>To-Measure Field</para>
-		/// <para>A field containing measure values. This field must be numeric and is required when the measure source is Values from two fields.</para>
+		/// <para>包含测量值的字段。 此字段必须为数值，并且当测量源为来自两个字段的值时必填。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -142,11 +142,11 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Coordinate Priority</para>
-		/// <para>The position from which measures will be accumulated for each output route. This parameter is ignored when the measure source is Values from two fields.</para>
-		/// <para>Upper left corner—Measures will be accumulated from the point closest to the minimum bounding rectangle&apos;s upper left corner. This is the default.</para>
-		/// <para>Lower left corner—Measures will be accumulated from the point closest to the minimum bounding rectangle&apos;s lower left corner.</para>
-		/// <para>Upper right corner—Measures will be accumulated from the point closest to the minimum bounding rectangle&apos;s upper right corner.</para>
-		/// <para>Lower right corner—Measures will be accumulated from the point closest to the minimum bounding rectangle&apos;s lower right corner.</para>
+		/// <para>用于为每条输出路径累积测量值的位置。 当测量源为来自两个字段的值时，将忽略此参数。</para>
+		/// <para>左上角—从最接近最小外接矩形左上角的点累积测量值。 这是默认设置。</para>
+		/// <para>左下角—从最接近最小外接矩形左下角的点累积测量值。</para>
+		/// <para>右上角—从最接近最小外接矩形右上角的点累积测量值。</para>
+		/// <para>右下角—从最接近最小外接矩形右下角的点累积测量值。</para>
 		/// <para><see cref="CoordinatePriorityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Measure Factor</para>
-		/// <para>A value multiplied by the measure length of each input line before they are merged to create route measures. The default is 1.</para>
+		/// <para>合并输入线创建路径测量值之前，每条输入线的测量长度乘以的值。 默认值为 1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -164,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Measure Offset</para>
-		/// <para>A value added to the route measures after the input lines have been merged to create a route. The default is 0.</para>
+		/// <para>合并输入线创建路径后，加到路径测量值的值。 默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -172,9 +172,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Ignore spatial gaps</para>
-		/// <para>Specifies whether spatial gaps will be ignored when calculating the measures on disjointed routes. This parameter is applicable when the measure source is Length of features or Values from a single field.</para>
-		/// <para>Checked—Spatial gaps will be ignored. Measure values will be continuous for disjointed routes. This is the default.</para>
-		/// <para>Unchecked—Do not ignore spatial gaps. The measure values on disjointed routes will have gaps. The gap distance is calculated using the straight-line distance between the endpoints of the disjointed parts.</para>
+		/// <para>指定在计算不相交路径上的测量值时是否忽略空间间距。 此参数适用于测量源是要素长度或值来自单个字段的情况。</para>
+		/// <para>选中 - 忽略空间间距。 不相交路径的测量值将是连续的。 这是默认设置。</para>
+		/// <para>未选中 - 不忽略空间间距。 不相交路径的测量值将有间距。 间距距离通过不相交部分端点之间的直线距离进行计算。</para>
 		/// <para><see cref="IgnoreGapsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -184,9 +184,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Build index</para>
-		/// <para>Specifies whether an attribute index will be created for the route identifier field that is written to the output route feature class.</para>
-		/// <para>Checked—Create an attribute index. This is the default.</para>
-		/// <para>Unchecked—Do not create an attribute index.</para>
+		/// <para>指定是否为写入输出路径要素类的路径标识符字段创建属性索引。</para>
+		/// <para>选中 - 创建属性索引。 这是默认设置。</para>
+		/// <para>未选中 - 不创建属性索引。</para>
 		/// <para><see cref="BuildIndexEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -211,24 +211,24 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum MeasureSourceEnum 
 		{
 			/// <summary>
-			/// <para>Length of features—The geometric length of the input features will be used to accumulate the measures. This is the default.</para>
+			/// <para>要素的长度—使用输入要素的几何长度累积测量值。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("LENGTH")]
-			[Description("Length of features")]
+			[Description("要素的长度")]
 			Length_of_features,
 
 			/// <summary>
-			/// <para>Values from a single field—The value stored in a single field will be used to accumulate the measures.</para>
+			/// <para>值来自单个字段—使用单个字段中存储的值累积测量值。</para>
 			/// </summary>
 			[GPValue("ONE_FIELD")]
-			[Description("Values from a single field")]
+			[Description("值来自单个字段")]
 			Values_from_a_single_field,
 
 			/// <summary>
-			/// <para>Values from two fields—The values stored in both from- and to- measure fields will be used to set the measures.</para>
+			/// <para>值来自两个字段—使用“测量始于字段”和“测量止于字段”中存储的值设置测量值。</para>
 			/// </summary>
 			[GPValue("TWO_FIELDS")]
-			[Description("Values from two fields")]
+			[Description("值来自两个字段")]
 			Values_from_two_fields,
 
 		}
@@ -239,31 +239,31 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum CoordinatePriorityEnum 
 		{
 			/// <summary>
-			/// <para>Upper left corner—Measures will be accumulated from the point closest to the minimum bounding rectangle&apos;s upper left corner. This is the default.</para>
+			/// <para>左上角—从最接近最小外接矩形左上角的点累积测量值。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("UPPER_LEFT")]
-			[Description("Upper left corner")]
+			[Description("左上角")]
 			Upper_left_corner,
 
 			/// <summary>
-			/// <para>Lower left corner—Measures will be accumulated from the point closest to the minimum bounding rectangle&apos;s lower left corner.</para>
+			/// <para>左下角—从最接近最小外接矩形左下角的点累积测量值。</para>
 			/// </summary>
 			[GPValue("LOWER_LEFT")]
-			[Description("Lower left corner")]
+			[Description("左下角")]
 			Lower_left_corner,
 
 			/// <summary>
-			/// <para>Upper right corner—Measures will be accumulated from the point closest to the minimum bounding rectangle&apos;s upper right corner.</para>
+			/// <para>右上角—从最接近最小外接矩形右上角的点累积测量值。</para>
 			/// </summary>
 			[GPValue("UPPER_RIGHT")]
-			[Description("Upper right corner")]
+			[Description("右上角")]
 			Upper_right_corner,
 
 			/// <summary>
-			/// <para>Lower right corner—Measures will be accumulated from the point closest to the minimum bounding rectangle&apos;s lower right corner.</para>
+			/// <para>右下角—从最接近最小外接矩形右下角的点累积测量值。</para>
 			/// </summary>
 			[GPValue("LOWER_RIGHT")]
-			[Description("Lower right corner")]
+			[Description("右下角")]
 			Lower_right_corner,
 
 		}
@@ -274,14 +274,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum IgnoreGapsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Spatial gaps will be ignored. Measure values will be continuous for disjointed routes. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("IGNORE")]
 			IGNORE,
 
 			/// <summary>
-			/// <para>Unchecked—Do not ignore spatial gaps. The measure values on disjointed routes will have gaps. The gap distance is calculated using the straight-line distance between the endpoints of the disjointed parts.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_IGNORE")]
@@ -295,14 +295,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum BuildIndexEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Create an attribute index. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INDEX")]
 			INDEX,
 
 			/// <summary>
-			/// <para>Unchecked—Do not create an attribute index.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_INDEX")]

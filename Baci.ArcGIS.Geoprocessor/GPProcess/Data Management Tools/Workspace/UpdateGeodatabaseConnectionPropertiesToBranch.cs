@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Update Geodatabase Connection Properties To Branch</para>
-	/// <para>Update Geodatabase Connection Properties To Branch</para>
-	/// <para>Updates an enterprise geodatabase connection to work with branch versioning.</para>
+	/// <para>将地理数据库连接属性更新到分支中</para>
+	/// <para>更新企业级地理数据库连接以使用分支版本化。</para>
 	/// </summary>
 	public class UpdateGeodatabaseConnectionPropertiesToBranch : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputDatabase">
 		/// <para>Input Geodatabase Connection</para>
-		/// <para>The input enterprise geodatabase connection to update.</para>
+		/// <para>要更新的输入企业级地理数据库连接。</para>
 		/// </param>
 		public UpdateGeodatabaseConnectionPropertiesToBranch(object InputDatabase)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Update Geodatabase Connection Properties To Branch</para>
+		/// <para>Tool Display Name : 将地理数据库连接属性更新到分支中</para>
 		/// </summary>
-		public override string DisplayName() => "Update Geodatabase Connection Properties To Branch";
+		public override string DisplayName() => "将地理数据库连接属性更新到分支中";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateGeodatabaseConnectionPropertiesToBranch</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Geodatabase Connection</para>
-		/// <para>The input enterprise geodatabase connection to update.</para>
+		/// <para>要更新的输入企业级地理数据库连接。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]

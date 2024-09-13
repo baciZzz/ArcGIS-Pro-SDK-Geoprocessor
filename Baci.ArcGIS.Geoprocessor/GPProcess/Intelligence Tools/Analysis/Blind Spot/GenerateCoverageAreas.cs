@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Generate Coverage Areas</para>
-	/// <para>Generate Coverage Areas</para>
-	/// <para>Creates a proximity buffer for input Intelligence, Surveillance, and Reconnaissance (ISR) or patrol assets for use in the Generate Blind Spot Areas tool.</para>
+	/// <para>生成覆盖区</para>
+	/// <para>可为输入情报、监测和侦察 (ISR) 或巡逻资产创建邻近缓冲区，以便在生成盲点区域工具中使用。</para>
 	/// </summary>
 	public class GenerateCoverageAreas : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input asset features.</para>
+		/// <para>输入资产要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Blind Spot Buffer</para>
-		/// <para>The output blind spot buffer features.</para>
+		/// <para>输出盲点缓冲区要素。</para>
 		/// </param>
 		/// <param name="BufferType">
 		/// <para>Buffer Type</para>
-		/// <para>The distance around the input features that will be buffered. Distances can be provided as either a linear distance or a field from the Input Features parameter value that defines the individual ranges and units to buffer each feature.</para>
+		/// <para>与要缓冲的输入要素之间的距离。 该距离可以用线性距离来指定，也可以用输入要素参数值中的某个字段（定义用来对每个要素进行缓冲的各个范围和单位）来指定。</para>
 		/// </param>
 		public GenerateCoverageAreas(object InFeatures, object OutFeatureClass, object BufferType)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Coverage Areas</para>
+		/// <para>Tool Display Name : 生成覆盖区</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Coverage Areas";
+		public override string DisplayName() => "生成覆盖区";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateCoverageAreas</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input asset features.</para>
+		/// <para>输入资产要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Blind Spot Buffer</para>
-		/// <para>The output blind spot buffer features.</para>
+		/// <para>输出盲点缓冲区要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Buffer Type</para>
-		/// <para>The distance around the input features that will be buffered. Distances can be provided as either a linear distance or a field from the Input Features parameter value that defines the individual ranges and units to buffer each feature.</para>
+		/// <para>与要缓冲的输入要素之间的距离。 该距离可以用线性距离来指定，也可以用输入要素参数值中的某个字段（定义用来对每个要素进行缓冲的各个范围和单位）来指定。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -100,12 +100,12 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Range Unit</para>
-		/// <para>Specifies the linear unit that will be used when the chosen Buffer Type parameter value does not contain the unit of distance.</para>
-		/// <para>Meters—The distance unit will be meters.</para>
-		/// <para>Kilometers—The distance unit will be kilometers.</para>
-		/// <para>Feet—The distance unit will be feet.</para>
-		/// <para>Miles—The distance unit will be miles.</para>
-		/// <para>Nautical Miles—The distance unit will be nautical miles.</para>
+		/// <para>用于指定在所选缓冲区类型参数值不包含距离单位时将使用的线性单位。</para>
+		/// <para>米—距离单位将为米。</para>
+		/// <para>千米—距离单位将为公里。</para>
+		/// <para>英尺—距离单位将为英尺。</para>
+		/// <para>英里—距离单位将为英里。</para>
+		/// <para>海里—距离单位将为海里。</para>
 		/// <para><see cref="RangeUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Start Time Field</para>
-		/// <para>The field containing the start date and time the asset is available.</para>
+		/// <para>包含资产可用的起始日期和时间的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>End Time Field</para>
-		/// <para>The field containing the end date and time the asset is no longer available.</para>
+		/// <para>包含资产不再可用的结束日期和时间的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -141,38 +141,38 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		public enum RangeUnitEnum 
 		{
 			/// <summary>
-			/// <para>Meters—The distance unit will be meters.</para>
+			/// <para>米—距离单位将为米。</para>
 			/// </summary>
 			[GPValue("Meters")]
-			[Description("Meters")]
+			[Description("米")]
 			Meters,
 
 			/// <summary>
-			/// <para>Kilometers—The distance unit will be kilometers.</para>
+			/// <para>千米—距离单位将为公里。</para>
 			/// </summary>
 			[GPValue("Kilometers")]
-			[Description("Kilometers")]
+			[Description("千米")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>Feet—The distance unit will be feet.</para>
+			/// <para>英尺—距离单位将为英尺。</para>
 			/// </summary>
 			[GPValue("Feet")]
-			[Description("Feet")]
+			[Description("英尺")]
 			Feet,
 
 			/// <summary>
-			/// <para>Miles—The distance unit will be miles.</para>
+			/// <para>英里—距离单位将为英里。</para>
 			/// </summary>
 			[GPValue("Miles")]
-			[Description("Miles")]
+			[Description("英里")]
 			Miles,
 
 			/// <summary>
-			/// <para>Nautical Miles—The distance unit will be nautical miles.</para>
+			/// <para>海里—距离单位将为海里。</para>
 			/// </summary>
 			[GPValue("NauticalMiles")]
-			[Description("Nautical Miles")]
+			[Description("海里")]
 			Nautical_Miles,
 
 		}

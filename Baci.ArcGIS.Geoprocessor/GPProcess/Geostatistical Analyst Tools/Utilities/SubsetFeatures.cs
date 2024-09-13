@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Subset Features</para>
-	/// <para>Subset Features</para>
-	/// <para>Divides the original dataset into two parts: one part to be used to model the spatial structure and produce a surface, the other to be used to compare and validate the output surface.</para>
+	/// <para>子集要素</para>
+	/// <para>将原始数据集分为两部分：一部分用于建立空间结构模型和生成表面，另一部分用于比较和验证输出表面。</para>
 	/// </summary>
 	public class SubsetFeatures : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input features</para>
-		/// <para>Points, lines, polygon features, or table from which to create a subset.</para>
+		/// <para>用于创建子集的点、线、面要素或表。</para>
 		/// </param>
 		/// <param name="OutTrainingFeatureClass">
 		/// <para>Output training feature class</para>
-		/// <para>The subset of training features to be created.</para>
+		/// <para>要创建的训练要素的子集。</para>
 		/// </param>
 		public SubsetFeatures(object InFeatures, object OutTrainingFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Subset Features</para>
+		/// <para>Tool Display Name : 子集要素</para>
 		/// </summary>
-		public override string DisplayName() => "Subset Features";
+		public override string DisplayName() => "子集要素";
 
 		/// <summary>
 		/// <para>Tool Name : SubsetFeatures</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input features</para>
-		/// <para>Points, lines, polygon features, or table from which to create a subset.</para>
+		/// <para>用于创建子集的点、线、面要素或表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output training feature class</para>
-		/// <para>The subset of training features to be created.</para>
+		/// <para>要创建的训练要素的子集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output test feature class</para>
-		/// <para>The subset of test features to be created.</para>
+		/// <para>要创建的测试要素的子集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Size of training  feature subset</para>
-		/// <para>The size of the output training feature class, entered either as a percentage of the input features or as an absolute number of features.</para>
+		/// <para>作为输入要素百分数或要素绝对数量输入的输出训练要素类的大小。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -103,9 +103,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Subset size units</para>
-		/// <para>Type of subset size.</para>
-		/// <para>Percentage of input— The percentage of the input features that will be in the training dataset.</para>
-		/// <para>Absolute value— The number of features that will be in the training dataset.</para>
+		/// <para>子集大小的类型。</para>
+		/// <para>Percentage of input— 将要出现在训练数据集中的输入要素的百分数。</para>
+		/// <para>Absolute value— 将要出现在训练数据集中的要素的数量。</para>
 		/// <para><see cref="SubsetSizeUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]

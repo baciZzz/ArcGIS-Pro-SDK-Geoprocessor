@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Fence Diagram</para>
-	/// <para>Fence Diagram</para>
-	/// <para>Constructs a vertical cross-section of a collection of surfaces.</para>
+	/// <para>栅状图</para>
+	/// <para>用于构建表面集合的垂直截面。</para>
 	/// </summary>
 	public class FenceDiagram : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLineFeatures">
 		/// <para>Input Line Features</para>
-		/// <para>The line features that will be used to construct the fence diagram.</para>
+		/// <para>构建栅状图时使用的线要素。</para>
 		/// </param>
 		/// <param name="InSurface">
 		/// <para>Input Surface</para>
-		/// <para>The surfaces that will be used to construct the fence diagram.</para>
+		/// <para>构建栅状图时使用的表面。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Multipatch Feature Class</para>
-		/// <para>The output multipatch that is composed of vertical faces that depict the fence diagram.</para>
+		/// <para>由用于描绘栅状图的垂直面组成的输出多面体。</para>
 		/// </param>
 		public FenceDiagram(object InLineFeatures, object InSurface, object OutFeatureClass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Fence Diagram</para>
+		/// <para>Tool Display Name : 栅状图</para>
 		/// </summary>
-		public override string DisplayName() => "Fence Diagram";
+		public override string DisplayName() => "栅状图";
 
 		/// <summary>
 		/// <para>Tool Name : FenceDiagram</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Line Features</para>
-		/// <para>The line features that will be used to construct the fence diagram.</para>
+		/// <para>构建栅状图时使用的线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Surface</para>
-		/// <para>The surfaces that will be used to construct the fence diagram.</para>
+		/// <para>构建栅状图时使用的表面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Multipatch Feature Class</para>
-		/// <para>The output multipatch that is composed of vertical faces that depict the fence diagram.</para>
+		/// <para>由用于描绘栅状图的垂直面组成的输出多面体。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -102,9 +102,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Interpolation Method</para>
-		/// <para>The interpolation method that will be used to obtain z-values from TIN surfaces when constructing the fence diagram. This parameter does not apply to raster surfaces.</para>
-		/// <para>Linear—Linear interpolation will be used. This is the default.</para>
-		/// <para>Natural Neighbors—Natural neighbors interpolation will be used.</para>
+		/// <para>此插值法用于在构建栅状图时从 TIN 表面获取 z 值。该参数不适用于栅格表面。</para>
+		/// <para>线性—将使用线性插值法。这是默认设置。</para>
+		/// <para>自然邻域法—将使用自然邻域插值法。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Floor Height</para>
-		/// <para>A constant height used to define the lowest height of the fence diagram.</para>
+		/// <para>用于定义栅状图最低高度的恒定高度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Ceiling Height</para>
-		/// <para>A constant height used to define the highest height of the fence diagram.</para>
+		/// <para>用于定义栅状图最高高度的恒定高度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Sample Distance</para>
-		/// <para>The horizontal distance used for determining the positions where height measurements are interpolated from the underlying surfaces.</para>
+		/// <para>用于确定从底层表面插入高度测量值的位置的水平距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -155,17 +155,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Linear—Linear interpolation will be used. This is the default.</para>
+			/// <para>线性—将使用线性插值法。这是默认设置。</para>
 			/// </summary>
 			[GPValue("LINEAR")]
-			[Description("Linear")]
+			[Description("线性")]
 			Linear,
 
 			/// <summary>
-			/// <para>Natural Neighbors—Natural neighbors interpolation will be used.</para>
+			/// <para>自然邻域法—将使用自然邻域插值法。</para>
 			/// </summary>
 			[GPValue("NATURAL_NEIGHBORS")]
-			[Description("Natural Neighbors")]
+			[Description("自然邻域法")]
 			Natural_Neighbors,
 
 		}

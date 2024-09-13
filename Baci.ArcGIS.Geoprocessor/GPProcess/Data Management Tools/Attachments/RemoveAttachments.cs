@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Attachments</para>
-	/// <para>Remove Attachments</para>
-	/// <para>Removes attachments from geodatabase feature class or table records.</para>
+	/// <para>移除附件</para>
+	/// <para>从地理数据库要素类或表记录中移除附件。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,19 +23,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>A geodatabase table or feature class from which attachments will be removed. Attachments are not removed directly from this table; they are removed from the related attachment table that stores the attachments. The dataset must have attachments enabled.</para>
+		/// <para>要从中移除附件的地理数据库表或要素类。 不会直接从此表中移除附件，而是从存储附件的关联附件表中移除。 数据集必须启用附件。</para>
 		/// </param>
 		/// <param name="InJoinField">
 		/// <para>Input Join Field</para>
-		/// <para>A field from the Input Dataset parameter value that contains values that match the values in the Match Join Field parameter value. Records that have join field values that match the Input Dataset parameter value and the Match Table parameter value will have attachments removed. This field can be an Object ID field or any other identifying attribute.</para>
+		/// <para>输入数据集参数值中的字段，其中包含与匹配连接字段参数值中的值匹配的值。 输入数据集参数值和匹配表参数值之间的连接字段值匹配的记录将移除附件。 该字段可以是“Object ID”字段或其他任何标识属性。</para>
 		/// </param>
 		/// <param name="InMatchTable">
 		/// <para>Match Table</para>
-		/// <para>A table that identifies which input records will have attachments removed.</para>
+		/// <para>标识将从中移除附件的输入记录的表。</para>
 		/// </param>
 		/// <param name="InMatchJoinField">
 		/// <para>Match Join Field</para>
-		/// <para>A field from the match table that indicates which records in the Input Dataset parameter value will have specified attachments removed. This field can have values that match the Input Dataset Object ID field or some other identifying attribute.</para>
+		/// <para>匹配表中的字段，指示输入数据集参数值中的哪些记录将移除指定附件。 该字段的值可与输入数据集 Object ID 字段或某些其他标识属性相匹配。</para>
 		/// </param>
 		public RemoveAttachments(object InDataset, object InJoinField, object InMatchTable, object InMatchJoinField)
 		{
@@ -46,9 +46,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Remove Attachments</para>
+		/// <para>Tool Display Name : 移除附件</para>
 		/// </summary>
-		public override string DisplayName() => "Remove Attachments";
+		public override string DisplayName() => "移除附件";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveAttachments</para>
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>A geodatabase table or feature class from which attachments will be removed. Attachments are not removed directly from this table; they are removed from the related attachment table that stores the attachments. The dataset must have attachments enabled.</para>
+		/// <para>要从中移除附件的地理数据库表或要素类。 不会直接从此表中移除附件，而是从存储附件的关联附件表中移除。 数据集必须启用附件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Join Field</para>
-		/// <para>A field from the Input Dataset parameter value that contains values that match the values in the Match Join Field parameter value. Records that have join field values that match the Input Dataset parameter value and the Match Table parameter value will have attachments removed. This field can be an Object ID field or any other identifying attribute.</para>
+		/// <para>输入数据集参数值中的字段，其中包含与匹配连接字段参数值中的值匹配的值。 输入数据集参数值和匹配表参数值之间的连接字段值匹配的记录将移除附件。 该字段可以是“Object ID”字段或其他任何标识属性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Match Table</para>
-		/// <para>A table that identifies which input records will have attachments removed.</para>
+		/// <para>标识将从中移除附件的输入记录的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Match Join Field</para>
-		/// <para>A field from the match table that indicates which records in the Input Dataset parameter value will have specified attachments removed. This field can have values that match the Input Dataset Object ID field or some other identifying attribute.</para>
+		/// <para>匹配表中的字段，指示输入数据集参数值中的哪些记录将移除指定附件。 该字段的值可与输入数据集 Object ID 字段或某些其他标识属性相匹配。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Match Name Field</para>
-		/// <para>A field from the match table that has the names of the attachments that will be removed from the Input Dataset parameter value's records. If no name field is specified, all attachments will be removed from each record specified in the Match Join Field parameter value. If a name field is specified but a record has a null or empty value in the name field, all attachments will be removed from that record. This field's values should be the short names of the attachments to remove, not the full paths to the files used to make the original attachments.</para>
+		/// <para>匹配表中的字段，包含要从输入数据集参数值记录中移除的附件的名称。 如果未指定名称字段，则会从匹配连接字段参数值指定的每条记录中移除所有附件。 如果指定了名称字段，但是记录的名称字段值为 null 或为空，则将从该记录中移除所有附件。 此字段的值应为要移除的附件的简称，而不是用于制作原始附件的文件的完整路径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

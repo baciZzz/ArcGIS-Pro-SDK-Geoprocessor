@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Presence-only Prediction (MaxEnt)</para>
-	/// <para>Presence-only Prediction (MaxEnt)</para>
-	/// <para>Models the presence of a phenomenon given known presence locations and explanatory variables using a maximum entropy approach (MaxEnt). The tool provides output features and rasters that include the probability of presence and can be applied to problems in which only presence is known and absence is not known.</para>
+	/// <para>仅存在预测 (MaxEnt)</para>
+	/// <para>使用最大熵方法 (MaxEnt) 对已知存在位置和解释变量的现象的存在进行建模。 该工具提供包含存在概率的输出要素和栅格，可应用于仅存在已知和缺失未知的问题。</para>
 	/// </summary>
 	public class PresenceOnlyPrediction : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputPointFeatures">
 		/// <para>Input Point Features</para>
-		/// <para>The point features representing locations where presence of a phenomenon of interest is known to occur.</para>
+		/// <para>点要素表示已知发生感兴趣现象的位置。</para>
 		/// </param>
 		public PresenceOnlyPrediction(object InputPointFeatures)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Presence-only Prediction (MaxEnt)</para>
+		/// <para>Tool Display Name : 仅存在预测 (MaxEnt)</para>
 		/// </summary>
-		public override string DisplayName() => "Presence-only Prediction (MaxEnt)";
+		public override string DisplayName() => "仅存在预测 (MaxEnt)";
 
 		/// <summary>
 		/// <para>Tool Name : PresenceOnlyPrediction</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Point Features</para>
-		/// <para>The point features representing locations where presence of a phenomenon of interest is known to occur.</para>
+		/// <para>点要素表示已知发生感兴趣现象的位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -76,10 +76,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Contains Background Points</para>
-		/// <para>Specifies whether the input point features contain background points.</para>
-		/// <para>If the input points do not contain background points, the tool will generate background points using cells in the explanatory training rasters. The tool uses background points to model the characteristics of the landscape in unknown locations and compare them to landscape characteristics in known presence locations. Therefore, background points can be considered as the study area. Generally, these are locations where presence of a phenomenon of interest is unknown. However, if any information is known about the background points, the Relative Weight of Presence to Background parameter can be used to indicate this.</para>
-		/// <para>Checked—The input point features include background points.</para>
-		/// <para>Unchecked—The input point features do not include background points. This is the default.</para>
+		/// <para>指定输入点要素是否包含背景点。</para>
+		/// <para>如果输入点不包含背景点，该工具将使用解释训练栅格中的像元生成背景点。 该工具使用背景点对未知位置的景观特征进行建模，并将它们与已知存在位置的景观特征进行比较。 因此，可以将背景点视为研究区域。 通常情况下，这些是未知感兴趣现象存在的位置。 然而，如果任何关于背景点的信息是已知的，则可以使用存在与背景的相对权重参数来指示此内容。</para>
+		/// <para>选中 - 输入点要素包含背景点。</para>
+		/// <para>未选中 - 输入点要素不包含背景点。 这是默认设置。</para>
 		/// <para><see cref="ContainsBackgroundEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Presence Indicator Field</para>
-		/// <para>The field from the input point features containing binary values that indicate each point as presence (1) or background (0). The field must be numeric (Short, Long, Float, or Double types).</para>
+		/// <para>来自输入点要素的字段，其中包含指示每个点为存在 (1) 或背景 (0) 的二进制值。 字段必须为数值字段（短整型、长整型、浮点型、双精度型）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Explanatory Training Variables</para>
-		/// <para>A list of fields representing the explanatory variables that will help predict the probability of presence. You can specify whether each variable is categorical or numeric. Check the Categorical check box for each variable that represents a class or category (such as land cover).</para>
+		/// <para>表示解释变量的字段列表，这些变量将有助于预测存在概率。 可以指定每个变量是分类变量还是数值变量。 选中代表类或类别（例如土地覆被）的每个变量的分类复选框。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Explanatory Training Distance Features</para>
-		/// <para>A list of feature layers or feature classes that will be used to automatically create explanatory variables that represent the distance from the input point features to the nearest provided distance features. If the input explanatory training distance features are polygons or lines, the distance attributes are calculated as the distance between the closest segment and the point.</para>
+		/// <para>将用于自动创建解释变量的要素图层或要素类列表，这些解释变量表示从输入点要素到最近提供的距离要素的距离。 如果输入解释训练距离要素为面要素或线要素，则距离属性将计算为最近线段和点之间的距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -119,9 +119,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Explanatory Training Rasters</para>
-		/// <para>A list of rasters that will be used to automatically create explanatory training variables in the model whose values are extracted from rasters. For each feature (presence and background points) in the input point features, the value of the raster cell will be extracted at that exact location.</para>
-		/// <para>Bilinear raster resampling will be used when extracting the raster value for continuous rasters. Nearest neighbor assignment will be used when extracting a raster value from categorical rasters.</para>
-		/// <para>You can specify whether each raster value is categorical or numeric. Check the Categorical check box for each raster that represents a class or category (such as land cover).</para>
+		/// <para>将用于在模型中自动创建解释训练变量的栅格列表，其值是从栅格中提取的。 对于输入点要素中的每个要素（存在点和背景点），将在此确切位置提取栅格像元的值。</para>
+		/// <para>提取连续栅格的栅格值时，将使用双线性栅格重采样。 从分类栅格中提取栅格值时，将使用最邻近分配法。</para>
+		/// <para>可以指定每个栅格值是分类变量还是数值变量。 选中代表类或类别（例如土地覆被）的每个栅格的分类复选框。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -130,12 +130,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Explanatory Variable Expansions (Basis Functions)</para>
-		/// <para>Specifies the basis function that will be used to transform the provided explanatory variables for use in the model. If multiple basis functions are selected, the tool will produce multiple transformed variables and attempt to use them in the model.</para>
-		/// <para>Original (Linear)— A linear transformation to the input variables will be applied. This is the default</para>
-		/// <para>Pairwise interaction (Product)— A pairwise multiplication on continuous explanatory variables will be used, yielding interaction variables. This option is only available when multiple explanatory variables have been provided.</para>
-		/// <para>Smoothed step (Hinge)— The continuous explanatory variable values will be converted into two segments, a static segment (composed of zeroes or ones) and a linear function segment (increasing or decreasing).</para>
-		/// <para>Discrete step (Threshold)— The continuous explanatory variable values will be converted into a binary variable composed of zeroes and ones.</para>
-		/// <para>Squared (Quadratic)— The square of each continuous explanatory variable value will be returned.</para>
+		/// <para>指定将用于变换提供的解释变量以在模型中使用的基函数。 如果选择了多个基函数，该工具将生成多个变换后的变量并尝试在模型中使用它们。</para>
+		/// <para>原始（线性）—将应用对输入变量的线性变换。 这是默认设置</para>
+		/// <para>成对交互（乘积）—将使用连续解释变量的成对乘法，生成交互变量。 此选项仅在提供了多个解释变量时可用。</para>
+		/// <para>平滑步长（铰链）—将连续解释变量值转换为两个段，一个静态段（全为 0 或 1）和一个线性函数（增加或减少）。</para>
+		/// <para>离散步长（阈值）—连续解释变量值将转换为由 0 和 1 组成的二进制变量。</para>
+		/// <para>平方（二次）—将返回每个连续解释变量值的平方。</para>
 		/// <para><see cref="BasisExpansionFunctionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Knots</para>
-		/// <para>The number of knots that will be used by the hinge and threshold explanatory variable expansions. The value controls how many thresholds are created, which are used to create multiple explanatory variable expansions using each threshold. The value must be between 2 and 50. The default is 10.</para>
+		/// <para>铰链和阈值解释变量扩展将使用的节数。 该值控制创建的阈值数量，并将使用每个阈值创建多个解释变量扩展。 该值必须介于 2 到 50 之间。 默认值为 10。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -154,10 +154,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Study Area</para>
-		/// <para>Specifies the type of study area that will be used to define where presence is possible when the input point features do not contain background points.</para>
-		/// <para>Convex hull— The smallest convex polygon that encloses all the presence points in the input point features will be used. This is the default</para>
-		/// <para>Raster extent—The extent of the intersection of the explanatory training rasters will be used.</para>
-		/// <para>Polygon study area—A custom study area that is defined by a polygon feature class will be used.</para>
+		/// <para>指定将用于定义当输入点要素不包含背景点时可能存在的位置的研究区域类型。</para>
+		/// <para>凸包—将使用包含输入点要素中所有存在点的最小凸多边形。 这是默认设置</para>
+		/// <para>栅格范围—将使用解释训练栅格的相交范围。</para>
+		/// <para>面研究区域—将使用由面要素类定义的自定义研究区域。</para>
 		/// <para><see cref="StudyAreaTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Study Area Polygon</para>
-		/// <para>A feature class containing the polygons that define a custom study area. The input point features must be located within the custom study area covered by the polygon features. A study area can be composed of multiple polygons.</para>
+		/// <para>包含定义自定义研究区域的面要素类。 输入点要素必须位于面要素覆盖的自定义研究区域内。 一个研究区域可以由多个面组成。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -178,10 +178,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Apply Spatial Thinning</para>
-		/// <para>Specifies whether spatial thinning will be applied to presence and background points before training the model.</para>
-		/// <para>Spatial thinning helps to reduce sampling bias by removing points and ensuring that remaining points have a minimum nearest-neighbor distance, set in the Minimum Nearest Neighbors parameter. Spatial thinning is also applied to background points whether they are provided in input point features or generated by the tool.</para>
-		/// <para>Checked—Spatial thinning will be applied.</para>
-		/// <para>Unchecked—Spatial thinning will not be applied. This is the default.</para>
+		/// <para>指定在训练模型之前是否将空间细化应用于存在点和背景点。</para>
+		/// <para>空间细化通过移除点并确保剩余点具有最小最近邻距离（在最小最近邻参数中设置）来帮助减少采样偏差。 空间细化也适用于背景点，无论它们是在输入点要素中提供还是由工具生成。</para>
+		/// <para>选中 - 将应用空间细化。</para>
+		/// <para>未选中 - 不应用空间细化。 这是默认设置。</para>
 		/// <para><see cref="SpatialThinningEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -191,7 +191,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Minimum Nearest Neighbor Distance</para>
-		/// <para>The minimum distance between any two presence points or any two background points when spatial thinning is applied.</para>
+		/// <para>应用空间细化时任何两个存在点或任何两个背景点之间的最小距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -200,8 +200,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Iterations for Thinning</para>
-		/// <para>The number of runs that will be used to find the optimal spatial thinning solution, seeking to maintain as many presence and background points as possible while ensuring that no two presence or two background points are within the specified Minimum Nearest Neighbor Distance parameter value. The minimum possible is 1 iteration and the maximum possible is 50 iterations. The default is 10.</para>
-		/// <para>This parameter is only applicable for spatial thinning applied to presence and background points in the input point features. Spatial thinning that is applied to background points generated from raster cells undergo spatial thinning by resampling the raster cells to the specified Minimum Nearest Distance parameter value without needing to iterate for an optimal solution.</para>
+		/// <para>将用于寻找最佳空间细化解决方案的运行次数，力求在保持尽可能多的存在点和背景点的同时，确保任何两个存在点或两个背景点之间的距离均不在指定的最小最近邻距离参数值内。 最少可能是 1 次迭代，最多可能是 50 次迭代。 默认值为 10。</para>
+		/// <para>此参数仅适用于应用于输入点要素中的存在点和背景点的空间细化。 应用于从栅格单元生成的背景点的空间细化通过将栅格单元重新采样到指定的最小最近距离参数值来进行空间细化，而无需迭代以获得最佳解决方案。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -210,8 +210,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Relative Weight of Presence to Background</para>
-		/// <para>A value between 1 and 100 that specifies the relative information weight of presence points to background points. The default is 100.</para>
-		/// <para>A higher value indicates that presence points are the primary source of information; it is unknown whether background points represent presence or absence and background points receive lower weight in the model. A lower value indicates that background points also contribute valuable information that can be used in conjunction with presence points; there is greater confidence that background points represent absence and their information can be used in the model as absence locations.</para>
+		/// <para>一个介于 1 和 100 之间的值，用于指定存在点与背景点的相对信息权重。 默认值为 100。</para>
+		/// <para>较高的值表明存在点是主要的信息来源；背景点是否代表存在或缺失是未知的，背景点在模型中的权重较低。 较低的值表示背景点也提供可与存在点结合使用的有价值的信息；背景点代表缺失的可信度更高，它们的信息可以在模型中用作缺失位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -221,9 +221,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Presence Probability Transformation (Link Function)</para>
-		/// <para>Specifies the function that will convert the unbounded outputs of the model to a number between 0 and 1. This value can be interpreted as the probability of presence at the location. Each option converts the same continuous value to a different probability.</para>
-		/// <para>C-log-log— The C-log-log link function will be used to convert the predictions to probabilities. This option is recommended when the presence and location of a phenomenon is unambiguous, for example, when modeling the presence of an immobile plant species. This is the default.</para>
-		/// <para>Logistic—The logistic link function will be used to convert predictions to probabilities. This option is recommended when the presence and location of a phenomenon is ambiguous, for example, when modeling the presence of a migratory animal species.</para>
+		/// <para>指定将模型的无界输出转换为 0 到 1 之间的数字的函数。 该值可以解释为该位置的存在概率。 每个选项将相同的连续值转换为不同的概率。</para>
+		/// <para>C-log-log—C-log-log 链接函数将用于将预测转换为概率。 当现象的存在和位置明确时，建议使用此选项，例如，在模拟固定植物物种的存在时。 这是默认设置。</para>
+		/// <para>逻辑—逻辑链接函数将用于将预测转换为概率。 当现象的存在和位置不明确时，建议使用此选项，例如，在模拟迁徙动物物种的存在时。</para>
 		/// <para><see cref="LinkFunctionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -234,7 +234,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Presence Probability Cutoff</para>
-		/// <para>A cutoff value between 0.01 and 0.99 that establishes which probabilities correspond with presence in the resulting classification. The cutoff value is used to help evaluate the model's performance using training data and known presence points. Classification diagnostics are provided in geoprocessing messages and in the output trained features.</para>
+		/// <para>中断值介于 0.01 和 0.99 之间，用于确定哪些概率与结果分类中的存在相对应。 中断值用于使用训练数据和已知存在点帮助评估模型的性能。 在地理处理消息和输出训练要素中提供分类诊断信息。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -244,7 +244,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Trained Features</para>
-		/// <para>An output feature class that will contain all features and explanatory variables used in the training of the model.</para>
+		/// <para>将包含模型训练中使用的所有要素和解释变量的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -253,7 +253,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Trained Raster</para>
-		/// <para>The output raster with cell values indicating the probability of presence using the selected link function. The default cell size is the maximum of the cell sizes of the explanatory training rasters. An output trained raster can only be created if the input point features do not contain background points.</para>
+		/// <para>具有像元值的输出栅格，使用所选链接函数指示存在概率。 默认像元大小为解释训练栅格中像元大小的最大值。 仅当输入点要素不包含背景点时，才能创建输出训练栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -262,8 +262,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Response Curve Table</para>
-		/// <para>The output table that will contain diagnostics from the training model that indicate the effect of each explanatory variable on the probability of presence after accounting for the average effects of all other explanatory variables in the model.</para>
-		/// <para>The table will have up to two derived charts of partial dependence plots: one set of line charts for continuous variables and one set of bar charts for categorical variables.</para>
+		/// <para>输出表将包含来自训练模型的诊断，这些诊断表明在考虑模型中所有其他解释变量的平均影响的情况下，每个解释变量对存在概率的影响。</para>
+		/// <para>该表将有最多两个部分依赖性图的派生图表：一组连续变量的折线图和一组分类变量的条形图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -272,7 +272,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Sensitivity Table</para>
-		/// <para>The output table that will contain diagnostics of training model accuracy as the probability presence cutoff changes from 0 to 1.</para>
+		/// <para>当概率存在中断值从 0 变为 1 时，输出表将包含训练模型准确性的诊断信息。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -281,8 +281,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Prediction Features</para>
-		/// <para>The feature class representing locations where predictions will be made. The feature class must contain any provided explanatory variable fields that were used from the input point features.</para>
-		/// <para>When using spatial thinning, you can use the original input point features as input prediction features to receive a prediction for the entire dataset.</para>
+		/// <para>表示将进行预测的位置的要素类。 要素类必须包含从输入点要素中使用的任何提供的解释变量字段。</para>
+		/// <para>使用空间细化时，可以使用原始输入点要素作为输入预测要素来接收对整个数据集的预测。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -291,7 +291,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Prediction Features</para>
-		/// <para>The output feature class that will contain the results of the prediction model applied to the input prediction features.</para>
+		/// <para>输出要素类将包含应用于输入预测要素的预测模型的结果。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -300,7 +300,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Prediction Raster</para>
-		/// <para>The output raster containing the prediction results at each cell of the matched explanatory rasters. The default cell size is the maximum of the cell sizes of the explanatory training rasters.</para>
+		/// <para>包含匹配解释栅格的每个像元的预测结果的输出栅格。 默认像元大小为解释训练栅格中像元大小的最大值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -309,7 +309,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Match Explanatory Variables</para>
-		/// <para>The matching explanatory variable fields for the input point features and input prediction features.</para>
+		/// <para>输入点要素和输入预测要素的匹配解释变量字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -319,7 +319,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Match Distance Features</para>
-		/// <para>The matching distance features for the training and prediction.</para>
+		/// <para>用于训练和预测的匹配距离要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -329,7 +329,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Match Explanatory Rasters</para>
-		/// <para>The matching rasters for the training and prediction.</para>
+		/// <para>用于训练和预测的匹配栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -339,9 +339,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Allow Predictions Outside of Data Ranges</para>
-		/// <para>Specifies whether the prediction will allow extrapolation when explanatory variable values are out of the range of values used in training.</para>
-		/// <para>Checked—The prediction will allow extrapolation beyond the range of values used in training. This is the default.</para>
-		/// <para>Unchecked—The prediction will not allow extrapolation beyond the range of values used in training.</para>
+		/// <para>指定当解释变量值超出训练中使用的值范围时，预测是否允许外推。</para>
+		/// <para>选中 - 预测将允许外推超出训练中使用的值范围。 这是默认设置。</para>
+		/// <para>未选中 - 预测不允许外推超出训练中使用的值范围。</para>
 		/// <para><see cref="AllowPredictionsOutsideOfDataRangesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -352,9 +352,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Resampling Scheme</para>
-		/// <para>Specifies the method that will be used to perform cross validation of the prediction model. Cross validation excludes a portion of the data during training of the model and uses it to test the model&apos;s performance after it is trained.</para>
-		/// <para>None—Cross validation will not be performed. This is the default</para>
-		/// <para>Random— The points will be randomly divided into groups, and each group will be left out once when performing cross validation. The number of groups is specified in the Number of Groups parameter.</para>
+		/// <para>指定将用于执行预测模型的交叉验证的方法。 交叉验证会在模型训练期间排除一部分数据，并在模型训练后使用该数据来测试模型的性能。</para>
+		/// <para>无—不会执行交叉验证。 这是默认设置</para>
+		/// <para>随机—点将被随机分组，在进行交叉验证时每组将被排除一次。 在组数参数中指定组的数量。</para>
 		/// <para><see cref="ResamplingSchemeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -365,7 +365,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Groups</para>
-		/// <para>The number of groups that will be used in cross validation for the random resampling scheme. A field in the output trained features indicates the group that each point was assigned to. The default is 3. A minimum of 2 groups and a maximum of 10 groups are allowed.</para>
+		/// <para>将用于随机重采样方案的交叉验证的组数。 输出训练要素中的字段指示每个点分配到的组。 默认值为 3。 最少 2 组，最多 10 组。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -390,14 +390,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum ContainsBackgroundEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The input point features include background points.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESENCE_AND_BACKGROUND_POINTS")]
 			PRESENCE_AND_BACKGROUND_POINTS,
 
 			/// <summary>
-			/// <para>Unchecked—The input point features do not include background points. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("PRESENCE_ONLY_POINTS")]
@@ -411,38 +411,38 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum BasisExpansionFunctionsEnum 
 		{
 			/// <summary>
-			/// <para>Original (Linear)— A linear transformation to the input variables will be applied. This is the default</para>
+			/// <para>原始（线性）—将应用对输入变量的线性变换。 这是默认设置</para>
 			/// </summary>
 			[GPValue("LINEAR")]
-			[Description("Original (Linear)")]
+			[Description("原始（线性）")]
 			LINEAR,
 
 			/// <summary>
-			/// <para>Squared (Quadratic)— The square of each continuous explanatory variable value will be returned.</para>
+			/// <para>平方（二次）—将返回每个连续解释变量值的平方。</para>
 			/// </summary>
 			[GPValue("QUADRATIC")]
-			[Description("Squared (Quadratic)")]
+			[Description("平方（二次）")]
 			QUADRATIC,
 
 			/// <summary>
-			/// <para>Pairwise interaction (Product)— A pairwise multiplication on continuous explanatory variables will be used, yielding interaction variables. This option is only available when multiple explanatory variables have been provided.</para>
+			/// <para>成对交互（乘积）—将使用连续解释变量的成对乘法，生成交互变量。 此选项仅在提供了多个解释变量时可用。</para>
 			/// </summary>
 			[GPValue("PRODUCT")]
-			[Description("Pairwise interaction (Product)")]
+			[Description("成对交互（乘积）")]
 			PRODUCT,
 
 			/// <summary>
-			/// <para>Smoothed step (Hinge)— The continuous explanatory variable values will be converted into two segments, a static segment (composed of zeroes or ones) and a linear function segment (increasing or decreasing).</para>
+			/// <para>平滑步长（铰链）—将连续解释变量值转换为两个段，一个静态段（全为 0 或 1）和一个线性函数（增加或减少）。</para>
 			/// </summary>
 			[GPValue("HINGE")]
-			[Description("Smoothed step (Hinge)")]
+			[Description("平滑步长（铰链）")]
 			HINGE,
 
 			/// <summary>
-			/// <para>Discrete step (Threshold)— The continuous explanatory variable values will be converted into a binary variable composed of zeroes and ones.</para>
+			/// <para>离散步长（阈值）—连续解释变量值将转换为由 0 和 1 组成的二进制变量。</para>
 			/// </summary>
 			[GPValue("THRESHOLD")]
-			[Description("Discrete step (Threshold)")]
+			[Description("离散步长（阈值）")]
 			THRESHOLD,
 
 		}
@@ -453,24 +453,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum StudyAreaTypeEnum 
 		{
 			/// <summary>
-			/// <para>Convex hull— The smallest convex polygon that encloses all the presence points in the input point features will be used. This is the default</para>
+			/// <para>凸包—将使用包含输入点要素中所有存在点的最小凸多边形。 这是默认设置</para>
 			/// </summary>
 			[GPValue("CONVEX_HULL")]
-			[Description("Convex hull")]
+			[Description("凸包")]
 			Convex_hull,
 
 			/// <summary>
-			/// <para>Raster extent—The extent of the intersection of the explanatory training rasters will be used.</para>
+			/// <para>栅格范围—将使用解释训练栅格的相交范围。</para>
 			/// </summary>
 			[GPValue("RASTER_EXTENT")]
-			[Description("Raster extent")]
+			[Description("栅格范围")]
 			Raster_extent,
 
 			/// <summary>
-			/// <para>Polygon study area—A custom study area that is defined by a polygon feature class will be used.</para>
+			/// <para>面研究区域—将使用由面要素类定义的自定义研究区域。</para>
 			/// </summary>
 			[GPValue("STUDY_POLYGON")]
-			[Description("Polygon study area")]
+			[Description("面研究区域")]
 			Polygon_study_area,
 
 		}
@@ -481,14 +481,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum SpatialThinningEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Spatial thinning will be applied.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("THINNING")]
 			THINNING,
 
 			/// <summary>
-			/// <para>Unchecked—Spatial thinning will not be applied. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_THINNING")]
@@ -502,17 +502,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum LinkFunctionEnum 
 		{
 			/// <summary>
-			/// <para>C-log-log— The C-log-log link function will be used to convert the predictions to probabilities. This option is recommended when the presence and location of a phenomenon is unambiguous, for example, when modeling the presence of an immobile plant species. This is the default.</para>
+			/// <para>C-log-log—C-log-log 链接函数将用于将预测转换为概率。 当现象的存在和位置明确时，建议使用此选项，例如，在模拟固定植物物种的存在时。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("CLOGLOG")]
 			[Description("C-log-log")]
 			CLOGLOG,
 
 			/// <summary>
-			/// <para>Logistic—The logistic link function will be used to convert predictions to probabilities. This option is recommended when the presence and location of a phenomenon is ambiguous, for example, when modeling the presence of a migratory animal species.</para>
+			/// <para>逻辑—逻辑链接函数将用于将预测转换为概率。 当现象的存在和位置不明确时，建议使用此选项，例如，在模拟迁徙动物物种的存在时。</para>
 			/// </summary>
 			[GPValue("LOGISTIC")]
-			[Description("Logistic")]
+			[Description("逻辑")]
 			Logistic,
 
 		}
@@ -523,14 +523,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum AllowPredictionsOutsideOfDataRangesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The prediction will allow extrapolation beyond the range of values used in training. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ALLOWED")]
 			ALLOWED,
 
 			/// <summary>
-			/// <para>Unchecked—The prediction will not allow extrapolation beyond the range of values used in training.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_ALLOWED")]
@@ -544,17 +544,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum ResamplingSchemeEnum 
 		{
 			/// <summary>
-			/// <para>None—Cross validation will not be performed. This is the default</para>
+			/// <para>无—不会执行交叉验证。 这是默认设置</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 			/// <summary>
-			/// <para>Random— The points will be randomly divided into groups, and each group will be left out once when performing cross validation. The number of groups is specified in the Number of Groups parameter.</para>
+			/// <para>随机—点将被随机分组，在进行交叉验证时每组将被排除一次。 在组数参数中指定组的数量。</para>
 			/// </summary>
 			[GPValue("RANDOM")]
-			[Description("Random")]
+			[Description("随机")]
 			Random,
 
 		}

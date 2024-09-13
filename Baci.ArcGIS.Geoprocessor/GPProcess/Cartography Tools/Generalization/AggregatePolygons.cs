@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Aggregate Polygons</para>
-	/// <para>Aggregate Polygons</para>
-	/// <para>Combines polygons that are within a specified distance of each other into new polygons.</para>
+	/// <para>聚合面</para>
+	/// <para>将指定距离内的面要素合并成新的面要素。</para>
 	/// </summary>
 	public class AggregatePolygons : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The polygon features to be aggregated. If this is a layer referencing a representation and shape overrides are present on the input features, the overridden shapes, not the feature shapes, will be considered in aggregation processing.</para>
+		/// <para>要聚合的面要素。 如果这是一个引用某个制图表达的图层，并且在输入要素中存在形状覆盖，则在聚合处理中将采用这些覆盖的形状、而不是要素形状。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class to be created.</para>
+		/// <para>要创建的输出要素类。</para>
 		/// </param>
 		/// <param name="AggregationDistance">
 		/// <para>Aggregation Distance</para>
-		/// <para>The distance to be satisfied between polygon boundaries for aggregation to occur. A distance must be specified, and it must be greater than zero. You can choose a preferred unit; the default is the feature unit.</para>
+		/// <para>聚合时面要素边界间要满足的距离。 必须指定一个距离，且此距离必须大于零。 可以选择首选单位；默认为要素单位。</para>
 		/// </param>
 		public AggregatePolygons(object InFeatures, object OutFeatureClass, object AggregationDistance)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Aggregate Polygons</para>
+		/// <para>Tool Display Name : 聚合面</para>
 		/// </summary>
-		public override string DisplayName() => "Aggregate Polygons";
+		public override string DisplayName() => "聚合面";
 
 		/// <summary>
 		/// <para>Tool Name : AggregatePolygons</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The polygon features to be aggregated. If this is a layer referencing a representation and shape overrides are present on the input features, the overridden shapes, not the feature shapes, will be considered in aggregation processing.</para>
+		/// <para>要聚合的面要素。 如果这是一个引用某个制图表达的图层，并且在输入要素中存在形状覆盖，则在聚合处理中将采用这些覆盖的形状、而不是要素形状。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class to be created.</para>
+		/// <para>要创建的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Aggregation Distance</para>
-		/// <para>The distance to be satisfied between polygon boundaries for aggregation to occur. A distance must be specified, and it must be greater than zero. You can choose a preferred unit; the default is the feature unit.</para>
+		/// <para>聚合时面要素边界间要满足的距离。 必须指定一个距离，且此距离必须大于零。 可以选择首选单位；默认为要素单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Minimum Area</para>
-		/// <para>The minimum area for an aggregated polygon to be retained. The default value is zero, that is, to keep all polygons. You can specify a preferred unit; the default is the feature unit.</para>
+		/// <para>聚合面得以保留的最小面积。 默认值为零，即保留所有面。 可以指定首选单位；默认为要素单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPArealUnit()]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Minimum Hole Size</para>
-		/// <para>The minimum size of a polygon hole to be retained. The default value is zero, that is, to keep all polygon holes. You can specify a preferred unit; the default is the feature unit.</para>
+		/// <para>面要素中的孔洞得以保留的最小大小。 默认值为零，即保留所有面要素中的孔洞。 可以指定首选单位；默认为要素单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPArealUnit()]
@@ -118,9 +118,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Preserve orthogonal shape</para>
-		/// <para>Specifies the characteristic of the output features when constructing the aggregated boundaries.</para>
-		/// <para>Unchecked--Organically shaped output features will be created. This is suitable for natural features, such as vegetation or soil polygons. This is the default.</para>
-		/// <para>Checked--Orthogonally shaped output features will be created. This is suitable for preserving the geometric characteristic of anthropogenic input features, such as building footprints.</para>
+		/// <para>指定构造聚合边界时输出要素的特征。</para>
+		/// <para>不选中 - 将创建有机形状的输出要素。 这适用于自然要素，例如，植被或土壤多边形。 这是默认设置。</para>
+		/// <para>选中 - 将创建正交形状的输出要素。 此选项适用于保留人为输入要素的几何特性，例如，建筑物轮廓线。</para>
 		/// <para><see cref="OrthogonalityOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Barrier Features</para>
-		/// <para>The layers containing the line or polygon features that are aggregation barriers for input features. Features will not be aggregated across barrier features. Barrier features that are in geometric conflict with input features will be ignored.</para>
+		/// <para>包含在输入要素中作为聚合障碍的线要素或面要素的图层。 要素不会跨障碍要素聚合。 与输入要素存在几何冲突的障碍要素将被忽略。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>A one-to-many relationship table that links the aggregated polygons to their source polygon features. This table contains two fields, OUTPUT_FID and INPUT_FID, that store the aggregated feature IDs and their source feature IDs, respectively. Use this table to derive necessary attributes for the output features from their source features. The default name for this table is the name of the output feature class, appended with _tbl. The default path is the same as the output feature class. If the output features location is specified in a feature dataset, this table will be created one level higher, at the geodatabase level. No table is created when this parameter is left blank.</para>
+		/// <para>将聚合的面连接到其源面要素的一对多关系表。 该表包含两个字段（OUTPUT_FID 和 INPUT_FID），分别用于存储聚合要素 ID 和其源要素 ID。 使用此表根据源要素派生输出要素的必要属性。 该表的默认名称为输出要素类名称加上 _tbl。 默认路径与输出要素类相同。 如果在要素数据集中指定了输出要素位置，则会在地理数据库级别上创建更高级别的表。 当该参数留空时，不创建任何表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Aggregate Field</para>
-		/// <para>The field that contains attributes for aggregation. Features must share the same attribute value to be considered for aggregation. For example, use a building classification field as the aggregate field to prevent commercial buildings from aggregating with residential buildings.</para>
+		/// <para>包含聚合属性的字段。 要素必须共享相同的属性值才能进行聚合。 例如，可将建筑物分类字段用作聚合字段，以防止商业建筑物与住宅建筑物聚合在一起。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -174,14 +174,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum OrthogonalityOptionEnum 
 		{
 			/// <summary>
-			/// <para>Checked--Orthogonally shaped output features will be created. This is suitable for preserving the geometric characteristic of anthropogenic input features, such as building footprints.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ORTHOGONAL")]
 			ORTHOGONAL,
 
 			/// <summary>
-			/// <para>Unchecked--Organically shaped output features will be created. This is suitable for natural features, such as vegetation or soil polygons. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NON_ORTHOGONAL")]

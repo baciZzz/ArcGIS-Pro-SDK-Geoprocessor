@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Multipatch To COLLADA</para>
-	/// <para>Multipatch To COLLADA</para>
-	/// <para>Converts one or more multipatch features into a collection of COLLADA files (.dae) and referenced texture image files in an output folder.</para>
+	/// <para>多面体转 COLLADA</para>
+	/// <para>用于将一个或多个多面体要素转换为输出文件夹中的 COLLADA 文件 (.dae) 和引用纹理影像文件的集合。</para>
 	/// </summary>
 	public class MultipatchToCollada : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Multipatch Features</para>
-		/// <para>The multipatch features to be exported.</para>
+		/// <para>要导出的多面体要素。</para>
 		/// </param>
 		/// <param name="OutputFolder">
 		/// <para>Output COLLADA Folder</para>
-		/// <para>The destination folder where the output COLLADA files and texture image files will be placed.</para>
+		/// <para>将放置输出 COLLADA 文件和纹理图像文件的目标文件夹。</para>
 		/// </param>
 		public MultipatchToCollada(object InFeatures, object OutputFolder)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Multipatch To COLLADA</para>
+		/// <para>Tool Display Name : 多面体转 COLLADA</para>
 		/// </summary>
-		public override string DisplayName() => "Multipatch To COLLADA";
+		public override string DisplayName() => "多面体转 COLLADA";
 
 		/// <summary>
 		/// <para>Tool Name : MultipatchToCollada</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Multipatch Features</para>
-		/// <para>The multipatch features to be exported.</para>
+		/// <para>要导出的多面体要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output COLLADA Folder</para>
-		/// <para>The destination folder where the output COLLADA files and texture image files will be placed.</para>
+		/// <para>将放置输出 COLLADA 文件和纹理图像文件的目标文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -88,9 +88,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Prepend Source Name</para>
-		/// <para>Specifies whether the names of the output COLLADA files will be prepended with the name of the source feature layer.</para>
-		/// <para>Checked—The file names will be prepended with the name of the source feature layer.</para>
-		/// <para>Unchecked—The file names will not be prepended with the name of the source feature layer. This is the default.</para>
+		/// <para>指定是否在输出 COLLADA 文件的名称前面附加源要素图层的名称。</para>
+		/// <para>选中 - 将在文件名前面附加源要素图层的名称。</para>
+		/// <para>未选中 - 不会在文件名前面附加源要素图层的名称。 这是默认设置。</para>
 		/// <para><see cref="PrependSourceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Use Field Name</para>
-		/// <para>The feature attribute that will be used as the output COLLADA file name for each exported feature. If no field is specified, the feature's Object ID will be used.</para>
+		/// <para>将用作每个导出要素的输出 COLLADA 文件名称的要素属性。 如果未指定字段，将使用要素的对象 ID。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -110,9 +110,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>COLLADA Version</para>
-		/// <para>Specifies the COLLADA version to which the files will be exported.</para>
-		/// <para>1.5—Files will be exported to COLLADA version 1.5. Version 1.5 supports the inclusion of georeferencing information and enhanced rendering capabilities. This is the default.</para>
-		/// <para>1.4—Files will be exported to COLLADA version 1.4. Version 1.4 is the widely supported standard used in many design related application platforms. Select this version if the COLLADA file will be used on systems that do not support version 1.5.</para>
+		/// <para>指定导出文件的目标 COLLADA 版本。</para>
+		/// <para>1.5—文件将导出到 COLLADA 版本 1.5。 版本 1.5 支持添加地理配准信息和增强渲染功能。 这是默认设置。</para>
+		/// <para>1.4—文件将导出到 COLLADA 版本 1.4。 版本 1.4 是可在许多设计相关的应用程序平台中使用的广泛支持的标准版本。 如果 COLLADA 文件将用于不支持版本 1.5 的系统，请选择此版本。</para>
 		/// <para><see cref="ColladaVersionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,14 +128,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum PrependSourceEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The file names will be prepended with the name of the source feature layer.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PREPEND_SOURCE_NAME")]
 			PREPEND_SOURCE_NAME,
 
 			/// <summary>
-			/// <para>Unchecked—The file names will not be prepended with the name of the source feature layer. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("PREPEND_NONE")]
@@ -149,14 +149,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum ColladaVersionEnum 
 		{
 			/// <summary>
-			/// <para>1.4—Files will be exported to COLLADA version 1.4. Version 1.4 is the widely supported standard used in many design related application platforms. Select this version if the COLLADA file will be used on systems that do not support version 1.5.</para>
+			/// <para>1.4—文件将导出到 COLLADA 版本 1.4。 版本 1.4 是可在许多设计相关的应用程序平台中使用的广泛支持的标准版本。 如果 COLLADA 文件将用于不支持版本 1.5 的系统，请选择此版本。</para>
 			/// </summary>
 			[GPValue("1.4")]
 			[Description("1.4")]
 			_14,
 
 			/// <summary>
-			/// <para>1.5—Files will be exported to COLLADA version 1.5. Version 1.5 supports the inclusion of georeferencing information and enhanced rendering capabilities. This is the default.</para>
+			/// <para>1.5—文件将导出到 COLLADA 版本 1.5。 版本 1.5 支持添加地理配准信息和增强渲染功能。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("1.5")]
 			[Description("1.5")]

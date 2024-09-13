@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Geodesic Viewshed</para>
-	/// <para>Geodesic Viewshed</para>
-	/// <para>Determines the raster surface locations visible to a set of observer features using geodesic methods.</para>
+	/// <para>测地线视域</para>
+	/// <para>使用测地线方法，确定对一组观察点要素可见的栅格表面位置。</para>
 	/// </summary>
 	public class Viewshed2 : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input surface raster. It can be an integer or a floating-point raster.</para>
-		/// <para>The input raster is transformed into a 3D geocentric coordinate system during the visibility calculation. NoData cells on the input raster do not block the visibility determination.</para>
+		/// <para>输入表面栅格。 它可以是整型栅格或浮点型栅格。</para>
+		/// <para>可见性计算期间，输入栅格将转换为 3D 地心坐标系。 输入栅格上的 NoData 像元不会阻止可视性的确定。</para>
 		/// </param>
 		/// <param name="InObserverFeatures">
 		/// <para>Input point or polyline observer features</para>
-		/// <para>The input feature class that identifies the observer locations. It can be point, multipoint, or polyline features.</para>
-		/// <para>The input feature class is transformed into a 3D geocentric coordinate system during the visibility calculation. Observers outside of the extent of the surface raster or located on NoData cells will be ignored in the calculation.</para>
+		/// <para>用于识别观察点位置的输入要素类。 它可以是点要素、多点要素或折线要素。</para>
+		/// <para>可见性计算期间，输入要素类将转换为 3D 地心坐标系。 计算将忽略表面栅格范围之外或 NoData 像元上的观察点。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>For the Frequency analysis type, when the vertical error parameter is 0 or not specified, the output raster records the number of times that each cell location in the input surface raster can be seen by the input observation points. When the vertical error parameter is greater than 0, each cell on the output raster records the sum of probabilities that the cell is visible to any of the observers. For the Observers analysis type, the output raster records the unique region IDs for the visible areas, which can be related back to the observer features through the output observer-region relationship table.</para>
+		/// <para>输出栅格。</para>
+		/// <para>对于频数分析类型，当垂直错误参数为 0 或未指定时，输出栅格将记录输入表面栅格中每个像元位置可被输入观察点看到的次数。 当垂直错误参数大于 0 时，输出栅格上的每个像元将记录该像元对所有观察点可见的可能性总和。 对于观察点分析类型，输出栅格将记录可见区域的唯一区域 ID，它们可通过输出观察点-区域关系表关联到观察点要素。</para>
 		/// </param>
 		public Viewshed2(object InRaster, object InObserverFeatures, object OutRaster)
 		{
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Geodesic Viewshed</para>
+		/// <para>Tool Display Name : 测地线视域</para>
 		/// </summary>
-		public override string DisplayName() => "Geodesic Viewshed";
+		public override string DisplayName() => "测地线视域";
 
 		/// <summary>
 		/// <para>Tool Name : Viewshed2</para>
@@ -78,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input surface raster. It can be an integer or a floating-point raster.</para>
-		/// <para>The input raster is transformed into a 3D geocentric coordinate system during the visibility calculation. NoData cells on the input raster do not block the visibility determination.</para>
+		/// <para>输入表面栅格。 它可以是整型栅格或浮点型栅格。</para>
+		/// <para>可见性计算期间，输入栅格将转换为 3D 地心坐标系。 输入栅格上的 NoData 像元不会阻止可视性的确定。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -91,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input point or polyline observer features</para>
-		/// <para>The input feature class that identifies the observer locations. It can be point, multipoint, or polyline features.</para>
-		/// <para>The input feature class is transformed into a 3D geocentric coordinate system during the visibility calculation. Observers outside of the extent of the surface raster or located on NoData cells will be ignored in the calculation.</para>
+		/// <para>用于识别观察点位置的输入要素类。 它可以是点要素、多点要素或折线要素。</para>
+		/// <para>可见性计算期间，输入要素类将转换为 3D 地心坐标系。 计算将忽略表面栅格范围之外或 NoData 像元上的观察点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -104,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>For the Frequency analysis type, when the vertical error parameter is 0 or not specified, the output raster records the number of times that each cell location in the input surface raster can be seen by the input observation points. When the vertical error parameter is greater than 0, each cell on the output raster records the sum of probabilities that the cell is visible to any of the observers. For the Observers analysis type, the output raster records the unique region IDs for the visible areas, which can be related back to the observer features through the output observer-region relationship table.</para>
+		/// <para>输出栅格。</para>
+		/// <para>对于频数分析类型，当垂直错误参数为 0 或未指定时，输出栅格将记录输入表面栅格中每个像元位置可被输入观察点看到的次数。 当垂直错误参数大于 0 时，输出栅格上的每个像元将记录该像元对所有观察点可见的可能性总和。 对于观察点分析类型，输出栅格将记录可见区域的唯一区域 ID，它们可通过输出观察点-区域关系表关联到观察点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -113,9 +113,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output above ground level raster</para>
-		/// <para>The output above ground level (AGL) raster.</para>
-		/// <para>The AGL result is a raster where each cell value is the minimum height that must be added to an otherwise nonvisible cell to make it visible by at least one observer. Cells that were already visible will be assigned 0 in this output raster.</para>
-		/// <para>When the vertical error parameter is 0, the output AGL raster is a one-band raster. When vertical error is greater than 0, to account for the random effects from the input raster, the output AGL raster is created as a three-band raster. The first band represents the mean AGL values, the second band represents the minimum AGL values, and the third band represents the maximum AGL values.</para>
+		/// <para>地面以上 (AGL) 输出栅格。</para>
+		/// <para>AGL 结果是一个栅格，其中每个像元值都记录了为保证像元至少对一个观察点可见而需要向该像元添加的最小高度（若不添加此高度，像元不可见）。 在输出栅格中为已可见的像元分配 0。</para>
+		/// <para>当垂直错误参数为 0 时，输出 AGL 栅格为单波段栅格。 当垂直错误参数大于 0 时，输出 AGL 栅格会被创建为三波段栅格以对输入栅格的随机效果作出解释。 第一波段表示 AGL 平均值，第二波段表示最小 AGL 值，第三波段表示最大 AGL 值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -124,9 +124,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Analysis type</para>
-		/// <para>Specifies the type of visibility analysis you wish to perform, either determining how visible each cell is to the observers, or identifying for each surface location which observers are visible.</para>
-		/// <para>Frequency—The output records the number of times that each cell location in the input surface raster can be seen by the input observation locations (as points or as vertices for polyline observer features). This is the default.</para>
-		/// <para>Observers—The output identifies exactly which observer points are visible from each raster surface location. The allowed maximum number of input observers is 32 with this analysis type.</para>
+		/// <para>指定要执行的可见性分析类型，是确定每个像元对观察点的可见性，还是识别各表面位置上可见的观察点。</para>
+		/// <para>频数—输出将记录输入表面栅格中每个像元位置对于输入观测位置（如点或观察折线要素的折点）可见的次数。 这是默认设置。</para>
+		/// <para>观察点—输出将精确识别从各栅格表面位置进行观察时可见的观察点。 此分析类型所允许的最大输入观察点数为 32。</para>
 		/// <para><see cref="AnalysisTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -137,8 +137,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Vertical error</para>
-		/// <para>The amount of uncertainty (the Root Mean Square error, or RMSE) in the surface elevation values. It is a floating-point value representing the expected error of the input elevation values. When this parameter is assigned a value greater than 0, the output visibility raster will be floating point. In this case, each cell value on the output visibility raster represents the sum of probabilities that the cell is visible to any of the observers.</para>
-		/// <para>When the analysis type is Observers or the analysis method is Perimeter Sightlines, this parameter is disabled.</para>
+		/// <para>表面高程值中不确定项（均方根错误，或称 RMSE）的数量。 它是表示输入高程值预计误差的浮点值。 为此参数分配的值大于 0 时，输出可见性栅格将为浮点型。 此时，输出可见性栅格上的每个像元值将表示该像元对所有观察点可见的可能性总和。</para>
+		/// <para>当分析类型为观察点或分析方法为周长视线时，此参数将处于禁用状态。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -147,8 +147,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output observer-region relationship table</para>
-		/// <para>The output table for identifying the regions that are visible to each observer. This table can be related to the input observer feature class and the output visibility raster for identifying the regions visible to given observers.</para>
-		/// <para>This output is only created when the analysis type is Observers.</para>
+		/// <para>用于识别对于每个观察点都可见的区域的输出表。 此表可关联到输入观察点要素类以及输出可见性栅格（用于识别对给定观察点可见的区域）。</para>
+		/// <para>只有在分析类型为观察点时，才会创建此输出。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -157,8 +157,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Refractivity coefficient</para>
-		/// <para>The coefficient of the refraction of visible light in air.</para>
-		/// <para>The default value is 0.13.</para>
+		/// <para>空气中可见光的折射系数。</para>
+		/// <para>默认值为 0.13。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -170,11 +170,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Surface offset</para>
-		/// <para>A vertical distance to be added to the z-value of each cell as it is considered for visibility. It must be a positive integer or floating-point value.</para>
-		/// <para>You can select a field in the input observers dataset, or you can specify a numerical value.</para>
-		/// <para>For example, if the object to be observed is a vehicle, the height of the vehicle should be specified here.</para>
-		/// <para>If this parameter is set to a value, that value will be used by all the observers. To specify different values for each observer, set this parameter to a field in the input observer features dataset.</para>
-		/// <para>The default value is 0.</para>
+		/// <para>要添加到各像元 z 值的垂直距离，因为分析可见性时需要考虑该距离。 它必须为正整数值或浮点值。</para>
+		/// <para>可以选择输入观察点数据集中的字段，也可以指定数值。</para>
+		/// <para>例如，如果要观察的对象为车辆，则应在此处指定车辆的高度。</para>
+		/// <para>如果为此参数设置了一个值，则所有观察点均将使用该值。 要为每个观察点指定不同的值，请将此参数设置为输入观察点要素数据集中的某个字段。</para>
+		/// <para>默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -184,9 +184,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Observer elevation</para>
-		/// <para>The surface elevations of the observer points or vertices.</para>
-		/// <para>You can select a field in the input observers dataset, or you can specify a numerical value.</para>
-		/// <para>If this parameter is not specified, the observer elevation will be obtained from the surface raster using bilinear interpolation. If this parameter is set to a value, that value will be applied to all the observers. To specify different values for each observer, set this parameter to a field in the input observer features dataset.</para>
+		/// <para>观察点或折点的表面高程。</para>
+		/// <para>可以选择输入观察点数据集中的字段，也可以指定数值。</para>
+		/// <para>如果未指定此参数，则会使用双线性插值法从表面栅格中获取观察点高程。 如果为此参数设置了一个值，则该值将应用到所有观察点。 要为每个观察点指定不同的值，请将此参数设置为输入观察点要素数据集中的某个字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -196,11 +196,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Observer offset</para>
-		/// <para>A vertical distance to be added to the observer elevation. It must be a positive integer or floating-point value.</para>
-		/// <para>You can select a field in the input observers dataset, or you can specify a numerical value.</para>
-		/// <para>For example, if an observer is looking from a tower, the height of that tower should be specified here.</para>
-		/// <para>If this parameter is set to a value, that value will be applied to all the observers. To specify different values for each observer, set this parameter to a field in the input observer features dataset.</para>
-		/// <para>The default value is 1 meter.</para>
+		/// <para>要添加到观察点高程的垂直距离。 它必须为正整数值或浮点值。</para>
+		/// <para>可以选择输入观察点数据集中的字段，也可以指定数值。</para>
+		/// <para>例如，如果观察点从塔上观察，则应在此处指定塔的高度。</para>
+		/// <para>如果为此参数设置了一个值，则该值将应用到所有观察点。 要为每个观察点指定不同的值，请将此参数设置为输入观察点要素数据集中的某个字段。</para>
+		/// <para>默认值是 1 米。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -210,10 +210,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Inner radius</para>
-		/// <para>The start distance from which visibility is determined. Cells closer than this distance are not visible in the output but can still block visibility of the cells between inner radius and outer radius.</para>
-		/// <para>You can select a field in the input observers dataset, or you can specify a numerical value.</para>
-		/// <para>If this parameter is set to a value, that value will be applied to all the observers. To specify different values for each observer, set this parameter to a field in the input observer features dataset.</para>
-		/// <para>The default value is 0.</para>
+		/// <para>确定可见性的起始距离。 小于此距离的像元在输出中不可见，但仍会妨碍内半径和外半径之间像元的可见性。</para>
+		/// <para>可以选择输入观察点数据集中的字段，也可以指定数值。</para>
+		/// <para>如果为此参数设置了一个值，则该值将应用到所有观察点。 要为每个观察点指定不同的值，请将此参数设置为输入观察点要素数据集中的某个字段。</para>
+		/// <para>默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -223,9 +223,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Inner radius is 3D distance</para>
-		/// <para>Specifies the type of distance for the inner radius parameter.</para>
-		/// <para>Unchecked—The inner radius is to be interpreted as a 2D distance. This is the default.</para>
-		/// <para>Checked—The inner radius is to be interpreted as a 3D distance.</para>
+		/// <para>指定内半径参数的距离类型。</para>
+		/// <para>未选中 - 内半径将被视为 2D 距离。 这是默认设置。</para>
+		/// <para>选中 - 内半径将被视为 3D 距离。</para>
 		/// <para><see cref="InnerRadiusIs3DEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -236,9 +236,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Outer radius</para>
-		/// <para>The maximum distance from which visibility is determined. Cells beyond this distance are excluded from the analysis.</para>
-		/// <para>You can select a field in the input observers dataset, or you can specify a numerical value.</para>
-		/// <para>If this parameter is set to a value, that value will be applied to all the observers. To specify different values for each observer, set this parameter to a field in the input observer features dataset.</para>
+		/// <para>确定可见性的最大距离。 超出此距离的像元将从分析中排除。</para>
+		/// <para>可以选择输入观察点数据集中的字段，也可以指定数值。</para>
+		/// <para>如果为此参数设置了一个值，则该值将应用到所有观察点。 要为每个观察点指定不同的值，请将此参数设置为输入观察点要素数据集中的某个字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -248,9 +248,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Outer radius is 3D distance</para>
-		/// <para>Specifies the type of distance for the outer radius parameter.</para>
-		/// <para>Unchecked—The outer radius is to be interpreted as a 2D distance. This is the default.</para>
-		/// <para>Checked—The outer radius is to be interpreted as a 3D distance.</para>
+		/// <para>指定外半径参数的距离类型。</para>
+		/// <para>未选中 - 外半径将被视为 2D 距离。 这是默认设置。</para>
+		/// <para>选中 - 外半径将被视为 3D 距离。</para>
 		/// <para><see cref="OuterRadiusIs3DEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -261,9 +261,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Horizontal start angle</para>
-		/// <para>The start angle of the horizontal scan range. The value should be specified in degrees from 0 to 360, either as integer or floating point, with 0 oriented to north. The default value is 0.</para>
-		/// <para>You can select a field in the input observers dataset, or you can specify a numerical value.</para>
-		/// <para>If this parameter is set to a value, that value will be applied to all the observers. To specify different values for each observer, set this parameter to a field in the input observer features dataset.</para>
+		/// <para>水平扫描范围的起始角度。 该值应以度为单位，介于 0 至 360 之间，可为整数或浮点数，其中 0 指向北。 默认值为 0。</para>
+		/// <para>可以选择输入观察点数据集中的字段，也可以指定数值。</para>
+		/// <para>如果为此参数设置了一个值，则该值将应用到所有观察点。 要为每个观察点指定不同的值，请将此参数设置为输入观察点要素数据集中的某个字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -273,9 +273,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Horizontal end angle</para>
-		/// <para>The end angle of the horizontal scan range. The value should be specified in degrees from 0 to 360, either as integer or floating point, with 0 oriented to north. The default value is 360.</para>
-		/// <para>You can select a field in the input observers dataset, or you can specify a numerical value.</para>
-		/// <para>If this parameter is set to a value, that value will be applied to all the observers. To specify different values for each observer, set this parameter to a field in the input observer features dataset.</para>
+		/// <para>水平扫描范围的终止角度。 该值应以度为单位，介于 0 至 360 之间，可为整数或浮点数，其中 0 指向北。 默认值为 360。</para>
+		/// <para>可以选择输入观察点数据集中的字段，也可以指定数值。</para>
+		/// <para>如果为此参数设置了一个值，则该值将应用到所有观察点。 要为每个观察点指定不同的值，请将此参数设置为输入观察点要素数据集中的某个字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -285,11 +285,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Vertical upper angle</para>
-		/// <para>The upper vertical angle limit of the scan relative to the horizontal plane. The value is specified in degrees and can be integer or floating point. The allowed range is from above -90 up to and including 90.</para>
-		/// <para>This parameter value must be greater than the Vertical Lower Angle parameter value.</para>
-		/// <para>You can select a field in the input observers dataset, or you can specify a numerical value.</para>
-		/// <para>If this parameter is set to a value, that value will be applied to all the observers. To specify different values for each observer, set this parameter to a field in the input observer features dataset.</para>
-		/// <para>The default value is 90 (straight up).</para>
+		/// <para>扫描的（相对于水平面的）垂直角上限。 该值以度为单位，且可为整数或浮点数。 允许的范围为 -90 到（并包括） 90。</para>
+		/// <para>此参数值必须大于垂直下角参数值。</para>
+		/// <para>可以选择输入观察点数据集中的字段，也可以指定数值。</para>
+		/// <para>如果为此参数设置了一个值，则该值将应用到所有观察点。 要为每个观察点指定不同的值，请将此参数设置为输入观察点要素数据集中的某个字段。</para>
+		/// <para>默认值为 90（垂直向上）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -299,11 +299,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Vertical lower angle</para>
-		/// <para>The lower vertical angle limit of the scan relative to the horizontal plane. The value is specified in degrees and can be integer or floating point. The allowed range is from -90 up to but not including 90.</para>
-		/// <para>This parameter value must be less than the Vertical Upper Angle parameter value.</para>
-		/// <para>You can select a field in the input observers dataset, or you can specify a numerical value.</para>
-		/// <para>If this parameter is set to a value, that value will be applied to all the observers. To specify different values for each observer, set this parameter to a field in the input observer features dataset.</para>
-		/// <para>The default value is -90 (straight down).</para>
+		/// <para>扫描的（位于水平面下的）垂直角上限。 该值以度为单位，且可为整数或浮点数。 允许的范围是从 -90 到（但不包括）90。</para>
+		/// <para>此参数值必须小于垂直上角参数值。</para>
+		/// <para>可以选择输入观察点数据集中的字段，也可以指定数值。</para>
+		/// <para>如果为此参数设置了一个值，则该值将应用到所有观察点。 要为每个观察点指定不同的值，请将此参数设置为输入观察点要素数据集中的某个字段。</para>
+		/// <para>默认值为 -90（垂直向下）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -313,9 +313,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Analysis method</para>
-		/// <para>Specifies the method by which the visibility will be calculated. This option allows you to trade some accuracy for increased performance.</para>
-		/// <para>All Sightlines—A sightline is run to every cell on the raster in order to establish visible areas. This is the default method.</para>
-		/// <para>Perimeter Sightlines—Sightlines are only run to the cells on the perimeter of the visible areas in order to establish visibility areas. This method has a better performance than the All Sightlines method since less sightlines are run in the calculation.</para>
+		/// <para>指定用于计算可见性的方法。 此选项允许您牺牲一些精度以获得更好的性能。</para>
+		/// <para>所有视线—视线会运行到栅格上的每个像元以创建可见区域。 这是默认方法。</para>
+		/// <para>周长视线—视线仅会运行到可见区域周边的像元以创建可见区域。 这种方法的性能比所有视线方法好，因为这种方法的计算中所运行的视线较少。</para>
 		/// <para><see cref="AnalysisMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -341,17 +341,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum AnalysisTypeEnum 
 		{
 			/// <summary>
-			/// <para>Frequency—The output records the number of times that each cell location in the input surface raster can be seen by the input observation locations (as points or as vertices for polyline observer features). This is the default.</para>
+			/// <para>频数—输出将记录输入表面栅格中每个像元位置对于输入观测位置（如点或观察折线要素的折点）可见的次数。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("FREQUENCY")]
-			[Description("Frequency")]
+			[Description("频数")]
 			Frequency,
 
 			/// <summary>
-			/// <para>Observers—The output identifies exactly which observer points are visible from each raster surface location. The allowed maximum number of input observers is 32 with this analysis type.</para>
+			/// <para>观察点—输出将精确识别从各栅格表面位置进行观察时可见的观察点。 此分析类型所允许的最大输入观察点数为 32。</para>
 			/// </summary>
 			[GPValue("OBSERVERS")]
-			[Description("Observers")]
+			[Description("观察点")]
 			Observers,
 
 		}
@@ -362,14 +362,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum InnerRadiusIs3DEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The inner radius is to be interpreted as a 3D distance.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("3D")]
 			_3D,
 
 			/// <summary>
-			/// <para>Unchecked—The inner radius is to be interpreted as a 2D distance. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("GROUND")]
@@ -383,14 +383,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum OuterRadiusIs3DEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The outer radius is to be interpreted as a 3D distance.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("3D")]
 			_3D,
 
 			/// <summary>
-			/// <para>Unchecked—The outer radius is to be interpreted as a 2D distance. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("GROUND")]
@@ -404,17 +404,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum AnalysisMethodEnum 
 		{
 			/// <summary>
-			/// <para>All Sightlines—A sightline is run to every cell on the raster in order to establish visible areas. This is the default method.</para>
+			/// <para>所有视线—视线会运行到栅格上的每个像元以创建可见区域。 这是默认方法。</para>
 			/// </summary>
 			[GPValue("ALL_SIGHTLINES")]
-			[Description("All Sightlines")]
+			[Description("所有视线")]
 			All_Sightlines,
 
 			/// <summary>
-			/// <para>Perimeter Sightlines—Sightlines are only run to the cells on the perimeter of the visible areas in order to establish visibility areas. This method has a better performance than the All Sightlines method since less sightlines are run in the calculation.</para>
+			/// <para>周长视线—视线仅会运行到可见区域周边的像元以创建可见区域。 这种方法的性能比所有视线方法好，因为这种方法的计算中所运行的视线较少。</para>
 			/// </summary>
 			[GPValue("PERIMETER_SIGHTLINES")]
-			[Description("Perimeter Sightlines")]
+			[Description("周长视线")]
 			Perimeter_Sightlines,
 
 		}

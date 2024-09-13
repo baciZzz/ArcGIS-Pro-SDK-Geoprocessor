@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Trace Locations</para>
-	/// <para>Add Trace Locations</para>
-	/// <para>Creates a feature class to be used as the starting points and barriers input for the Trace tool.</para>
+	/// <para>添加追踪位置</para>
+	/// <para>用于创建要用作追踪工具的起点和障碍输入的要素类。</para>
 	/// </summary>
 	public class AddTraceLocations : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The input utility network where the trace locations will be added.</para>
+		/// <para>将添加追踪位置的输入公共设施网络。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class containing the trace locations. If you specify a new feature class name, a new output feature class will be created.</para>
-		/// <para>To use an existing feature class that was previously created by this tool and append or overwrite the existing locations, specify the name of the existing feature class.</para>
+		/// <para>包含追踪位置的输出要素类。 如果指定新要素类名称，则将创建新的输出要素类。</para>
+		/// <para>要使用之前由此工具创建的现有要素类，并追加或覆盖现有位置，请指定现有要素类的名称。</para>
 		/// </param>
 		public AddTraceLocations(object InUtilityNetwork, object OutFeatureClass)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Trace Locations</para>
+		/// <para>Tool Display Name : 添加追踪位置</para>
 		/// </summary>
-		public override string DisplayName() => "Add Trace Locations";
+		public override string DisplayName() => "添加追踪位置";
 
 		/// <summary>
 		/// <para>Tool Name : AddTraceLocations</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The input utility network where the trace locations will be added.</para>
+		/// <para>将添加追踪位置的输入公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -79,8 +79,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class containing the trace locations. If you specify a new feature class name, a new output feature class will be created.</para>
-		/// <para>To use an existing feature class that was previously created by this tool and append or overwrite the existing locations, specify the name of the existing feature class.</para>
+		/// <para>包含追踪位置的输出要素类。 如果指定新要素类名称，则将创建新的输出要素类。</para>
+		/// <para>要使用之前由此工具创建的现有要素类，并追加或覆盖现有位置，请指定现有要素类的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -88,9 +88,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Load Selected Features</para>
-		/// <para>Specifies whether selected features in the active map will be loaded as trace locations.</para>
-		/// <para>Checked—Trace locations will be loaded based on the selection in the map.</para>
-		/// <para>Unchecked—Trace locations will not be loaded based on the selection in the map. This is the default. However, trace locations can be loaded using the Trace Locations parameter.</para>
+		/// <para>指定是否将活动地图中的选定要素作为追踪位置加载。</para>
+		/// <para>选中 - 将根据地图中选择的内容加载追踪位置。</para>
+		/// <para>未选中 - 不会根据地图中选择的内容加载追踪位置。 这是默认设置。 但是，可以使用追踪位置参数加载追踪位置。</para>
 		/// <para><see cref="LoadSelectedFeaturesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -100,9 +100,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Clear Trace Locations</para>
-		/// <para>Specifies whether existing trace locations will be cleared from the output feature class.</para>
-		/// <para>Checked—Existing trace locations will be cleared.</para>
-		/// <para>Unchecked—Existing trace locations will not be cleared; they will be kept. This is the default.</para>
+		/// <para>指定是否清除输出要素类中的现有追踪位置。</para>
+		/// <para>选中 - 将清除现有追踪位置。</para>
+		/// <para>未选中 - 现有位置将不会清除，而会保留。 这是默认设置。</para>
 		/// <para><see cref="ClearTraceLocationsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -112,12 +112,12 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Trace Locations</para>
-		/// <para>The trace locations that will be added to the output feature class. If you are not using the Load Selected Features parameter in an active map, you can use this parameter to specify the utility network features to add as trace locations by providing the required values in the value table.</para>
-		/// <para>The trace locations properties are as follows:</para>
-		/// <para>Layer Name—The layer participating in the utility network that contains a starting point or barrier location to be added. If there is an active map, only layers from the map are allowed.</para>
-		/// <para>Global ID—The Global ID of the layer feature for the location to add.</para>
-		/// <para>Terminal ID—The terminal ID of the layer feature for the location to add.</para>
-		/// <para>Percent Along—The percent along value of the layer feature. For line features, the default value is 0.5.</para>
+		/// <para>将添加到输出要素类的追踪位置。 如果在活动地图中未使用加载所选要素参数，则可以使用此参数，通过在值表中提供所需值来指定要作为追踪位置添加的公共设施网络要素。</para>
+		/// <para>追踪位置属性如下所示：</para>
+		/// <para>图层名称 - 参与公共设施网络（包含要添加的起点或障碍位置）的图层。 如果存在活动地图，则仅允许地图中的图层。</para>
+		/// <para>全局 ID - 要添加位置的图层要素的全局 ID。</para>
+		/// <para>终端 ID - 要添加位置的图层要素的终端 ID。</para>
+		/// <para>延伸百分比 - 图层要素的延伸百分比值。 对于线要素，默认值为 0.5。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -126,10 +126,10 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Filter Barrier</para>
-		/// <para>Specifies whether the barriers for the trace locations will behave as filter barriers.</para>
-		/// <para>Checked—The barriers will behave as filter barriers. This is useful for subnetwork-based traces in which the barrier allows the subnetwork to be evaluated first and is then applied on a second traversal of the network features.</para>
-		/// <para>Unchecked—The barriers will not behave as filter barriers; they will behave as traversability barriers, which define the extent of subnetworks, and will be evaluated on the first pass. This is the default.</para>
-		/// <para>This parameter requires ArcGIS Enterprise10.8.1or later.</para>
+		/// <para>指定追踪位置的障碍是否作为过滤器障碍。</para>
+		/// <para>选中 - 障碍作为过滤器障碍。 这对于基于子网的追踪很有用，障碍将首先评估子网，然后应用于网络要素的第二次遍历。</para>
+		/// <para>未选中 - 障碍不会作为过滤器障碍；它们将作为可遍历性障碍，可定义子网的范围并将在第一次通过时进行评估。 这是默认设置。</para>
+		/// <para>此参数需要 ArcGIS Enterprise 10.8.1 或更高版本。</para>
 		/// <para><see cref="FilterBarrierEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -154,14 +154,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum LoadSelectedFeaturesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Trace locations will be loaded based on the selection in the map.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("LOAD_SELECTED_FEATURES")]
 			LOAD_SELECTED_FEATURES,
 
 			/// <summary>
-			/// <para>Unchecked—Trace locations will not be loaded based on the selection in the map. This is the default. However, trace locations can be loaded using the Trace Locations parameter.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_LOAD_SELECTED_FEATURES")]
@@ -175,14 +175,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum ClearTraceLocationsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Existing trace locations will be cleared.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLEAR_LOCATIONS")]
 			CLEAR_LOCATIONS,
 
 			/// <summary>
-			/// <para>Unchecked—Existing trace locations will not be cleared; they will be kept. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_LOCATIONS")]
@@ -196,14 +196,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum FilterBarrierEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The barriers will behave as filter barriers. This is useful for subnetwork-based traces in which the barrier allows the subnetwork to be evaluated first and is then applied on a second traversal of the network features.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FILTER_BARRIER")]
 			FILTER_BARRIER,
 
 			/// <summary>
-			/// <para>Unchecked—The barriers will not behave as filter barriers; they will behave as traversability barriers, which define the extent of subnetworks, and will be evaluated on the first pass. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("TRAVERSABILITY_BARRIER")]

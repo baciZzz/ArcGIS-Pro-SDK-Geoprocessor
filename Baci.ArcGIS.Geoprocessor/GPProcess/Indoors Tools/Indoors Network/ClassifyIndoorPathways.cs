@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Classify Indoor Pathways</para>
-	/// <para>Classify Indoor Pathways</para>
-	/// <para>Classifies pathways that pass through selected unit spaces, such as conference rooms or service areas, as lower priority.</para>
+	/// <para>分类室内路径</para>
+	/// <para>用于将通过所选单位空间（例如会议室或服务区）的路径分类为较低优先级。</para>
 	/// </summary>
 	public class ClassifyIndoorPathways : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		/// <param name="InUnitFeatures">
 		/// <para>Input Unit Features</para>
-		/// <para>The input polygon features representing spaces in a building for which the Target Pathways parameter values will be classified. In the ArcGIS Indoors Information Model, this is the Units layer. Select features in the units layer before running the tool.</para>
+		/// <para>输入面要素，表示将对目标路径参数值进行分类的建筑物内的空间。 在 ArcGIS Indoors 信息模型中，此项将为 Units 图层。 在运行该工具之前选择单位图层中的要素。</para>
 		/// </param>
 		/// <param name="TargetPathways">
 		/// <para>Target Pathways</para>
-		/// <para>The existing feature class or feature layer in which pathways will be updated. In the Indoors model, this is the Pathways layer.</para>
+		/// <para>将更新其中路径的现有要素类或要素图层。 在 Indoors 模型中，此项将为 Pathways 图层。</para>
 		/// </param>
 		public ClassifyIndoorPathways(object InUnitFeatures, object TargetPathways)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Classify Indoor Pathways</para>
+		/// <para>Tool Display Name : 分类室内路径</para>
 		/// </summary>
-		public override string DisplayName() => "Classify Indoor Pathways";
+		public override string DisplayName() => "分类室内路径";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyIndoorPathways</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Unit Features</para>
-		/// <para>The input polygon features representing spaces in a building for which the Target Pathways parameter values will be classified. In the ArcGIS Indoors Information Model, this is the Units layer. Select features in the units layer before running the tool.</para>
+		/// <para>输入面要素，表示将对目标路径参数值进行分类的建筑物内的空间。 在 ArcGIS Indoors 信息模型中，此项将为 Units 图层。 在运行该工具之前选择单位图层中的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Target Pathways</para>
-		/// <para>The existing feature class or feature layer in which pathways will be updated. In the Indoors model, this is the Pathways layer.</para>
+		/// <para>将更新其中路径的现有要素类或要素图层。 在 Indoors 模型中，此项将为 Pathways 图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

@@ -11,9 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Raster From Raster Function</para>
-	/// <para>Generate Raster From Raster Function</para>
-	/// <para>Generates a raster dataset from an</para>
-	/// <para>input raster function or function chain.</para>
+	/// <para>使用栅格函数生成栅格</para>
+	/// <para>从输入栅格函数或函数链生成栅格数据集。</para>
 	/// </summary>
 	public class GenerateRasterFromRasterFunction : AbstractGPProcess
 	{
@@ -22,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="RasterFunction">
 		/// <para>Input Raster Function</para>
-		/// <para>The name of a raster function, raster function JSON object, or function chain (in .rft.xml format).</para>
+		/// <para>栅格函数名称、栅格函数 JSON 对象或函数链（以 .rft.xml 格式）。</para>
 		/// </param>
 		/// <param name="OutRasterDataset">
 		/// <para>Output Raster Dataset</para>
-		/// <para>The output raster dataset.</para>
+		/// <para>输出栅格数据集。</para>
 		/// </param>
 		public GenerateRasterFromRasterFunction(object RasterFunction, object OutRasterDataset)
 		{
@@ -35,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Raster From Raster Function</para>
+		/// <para>Tool Display Name : 使用栅格函数生成栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Raster From Raster Function";
+		public override string DisplayName() => "使用栅格函数生成栅格";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateRasterFromRasterFunction</para>
@@ -71,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster Function</para>
-		/// <para>The name of a raster function, raster function JSON object, or function chain (in .rft.xml format).</para>
+		/// <para>栅格函数名称、栅格函数 JSON 对象或函数链（以 .rft.xml 格式）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -80,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Raster Dataset</para>
-		/// <para>The output raster dataset.</para>
+		/// <para>输出栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -88,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Raster Function Arguments</para>
-		/// <para>The parameters associated with the function chain. For example, if the function chain applies the Hillshade raster function, set the data source, azimuth, and altitude.</para>
+		/// <para>参数与函数链相关联。例如，如果函数链应用山体阴影栅格函数，则设置数据源、方位角和高度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -96,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Raster Properties</para>
-		/// <para>The output raster dataset key properties, such as the sensor or wavelength.</para>
+		/// <para>输出栅格数据集关键属性（如传感器或波长）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -104,14 +103,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Format</para>
-		/// <para>The output raster format.</para>
-		/// <para>The default format will be derived from the file extension that was specified in the Output Raster Dataset.</para>
-		/// <para>TIFF—Tagged Image File Format for raster datasets</para>
-		/// <para>Cloud Optimized GeoTIFF—Cloud Optimized GeoTIFF format.</para>
-		/// <para>ERDAS IMAGINE file—ERDAS IMAGINE raster data format</para>
-		/// <para>Esri Grid—Esri Grid raster dataset format</para>
-		/// <para>CRF—Cloud Raster Format</para>
-		/// <para>MRF—Meta Raster Format</para>
+		/// <para>输出栅格格式。</para>
+		/// <para>默认格式将派生自在输出栅格数据集中指定的文件扩展名。</para>
+		/// <para>TIFF—栅格数据集的标记图像文件格式</para>
+		/// <para>Cloud Optimized GeoTIFF—Cloud Optimized GeoTIFF 格式。</para>
+		/// <para>ERDAS IMAGINE 文件—ERDAS IMAGINE 栅格数据格式</para>
+		/// <para>Esri Grid—Esri 格网栅格数据集格式</para>
+		/// <para>CRF—云栅格格式</para>
+		/// <para>MRF—元栅格格式</para>
 		/// <para><see cref="FormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -121,9 +120,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Process as Multidimensional</para>
-		/// <para>Specifies whether the input mosaic dataset will be processed as a multidimensional raster dataset.</para>
-		/// <para>Unchecked—The input will not be processed as a multidimensional raster dataset. If the input is multidimensional, only the slice that is currently displayed will be processed. This is the default.</para>
-		/// <para>Checked—The input will be processed as a multidimensional raster dataset and all slices will be processed to produce a new multidimensional raster dataset. Set the Format parameter to Cloud raster format to use this option.</para>
+		/// <para>指定是否将输入镶嵌数据集作为多维栅格数据集进行处理。</para>
+		/// <para>未选中 - 输入不会作为多维栅格数据集进行处理。 如果输入是多维的，则仅处理当前显示的切片。 这是默认设置。</para>
+		/// <para>选中 - 输入将作为多维栅格数据集进行处理，并对所有剖切片进行处理以生成新的多维栅格数据集。 将格式参数设置为云栅格格式以使用此选项。</para>
 		/// <para><see cref="ProcessAsMultidimensionalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -148,42 +147,42 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FormatEnum 
 		{
 			/// <summary>
-			/// <para>TIFF—Tagged Image File Format for raster datasets</para>
+			/// <para>TIFF—栅格数据集的标记图像文件格式</para>
 			/// </summary>
 			[GPValue("TIFF")]
 			[Description("TIFF")]
 			TIFF,
 
 			/// <summary>
-			/// <para>Cloud Optimized GeoTIFF—Cloud Optimized GeoTIFF format.</para>
+			/// <para>Cloud Optimized GeoTIFF—Cloud Optimized GeoTIFF 格式。</para>
 			/// </summary>
 			[GPValue("COG")]
 			[Description("Cloud Optimized GeoTIFF")]
 			Cloud_Optimized_GeoTIFF,
 
 			/// <summary>
-			/// <para>ERDAS IMAGINE file—ERDAS IMAGINE raster data format</para>
+			/// <para>ERDAS IMAGINE 文件—ERDAS IMAGINE 栅格数据格式</para>
 			/// </summary>
 			[GPValue("IMAGINE Image")]
-			[Description("ERDAS IMAGINE file")]
+			[Description("ERDAS IMAGINE 文件")]
 			ERDAS_IMAGINE_file,
 
 			/// <summary>
-			/// <para>Esri Grid—Esri Grid raster dataset format</para>
+			/// <para>Esri Grid—Esri 格网栅格数据集格式</para>
 			/// </summary>
 			[GPValue("GRID")]
 			[Description("Esri Grid")]
 			Esri_Grid,
 
 			/// <summary>
-			/// <para>CRF—Cloud Raster Format</para>
+			/// <para>CRF—云栅格格式</para>
 			/// </summary>
 			[GPValue("CRF")]
 			[Description("CRF")]
 			CRF,
 
 			/// <summary>
-			/// <para>MRF—Meta Raster Format</para>
+			/// <para>MRF—元栅格格式</para>
 			/// </summary>
 			[GPValue("MRF")]
 			[Description("MRF")]
@@ -197,14 +196,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ProcessAsMultidimensionalEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The input will be processed as a multidimensional raster dataset and all slices will be processed to produce a new multidimensional raster dataset. Set the Format parameter to Cloud raster format to use this option.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ALL_SLICES")]
 			ALL_SLICES,
 
 			/// <summary>
-			/// <para>Unchecked—The input will not be processed as a multidimensional raster dataset. If the input is multidimensional, only the slice that is currently displayed will be processed. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CURRENT_SLICE")]

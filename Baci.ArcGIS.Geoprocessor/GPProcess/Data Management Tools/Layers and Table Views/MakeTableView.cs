@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Table View</para>
-	/// <para>Make Table View</para>
-	/// <para>Creates a table view from an input table or feature class. The table view that is created by the tool is temporary and will not persist after the session ends unless the document is saved.</para>
+	/// <para>创建表视图</para>
+	/// <para>根据输入表或要素类创建表视图。由于此工具创建的表视图是临时性的，如果不保存文档，该图层将在会话结束后消失。</para>
 	/// </summary>
 	public class MakeTableView : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input table or feature class.</para>
+		/// <para>输入表或要素类。</para>
 		/// </param>
 		/// <param name="OutView">
 		/// <para>Table Name</para>
-		/// <para>The name of the table view to be created.</para>
+		/// <para>要创建的表视图的名称。</para>
 		/// </param>
 		public MakeTableView(object InTable, object OutView)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Make Table View</para>
+		/// <para>Tool Display Name : 创建表视图</para>
 		/// </summary>
-		public override string DisplayName() => "Make Table View";
+		public override string DisplayName() => "创建表视图";
 
 		/// <summary>
 		/// <para>Tool Name : MakeTableView</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input table or feature class.</para>
+		/// <para>输入表或要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Table Name</para>
-		/// <para>The name of the table view to be created.</para>
+		/// <para>要创建的表视图的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>An SQL expression used to select a subset of records.</para>
+		/// <para>用于选择记录子集的 SQL 表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Workspace</para>
-		/// <para>The input workspace used to validate the field names. If the input is a geodatabase table and the output workspace is a dBASE table, the field names may be truncated, since dBASE fields can only have names of ten characters or less.</para>
+		/// <para>用于验证字段名的输入工作空间。如果输入是地理数据库表，而输出工作空间是 dBASE 表，则字段名可能会被截断，这是由于 dBASE 字段名最多只能具有十个字符。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEWorkspace()]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Info</para>
-		/// <para>Specifies which fields from the input table to make visible in the output table view.</para>
+		/// <para>指定输入表中的哪些字段在输出表视图中可见</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFieldInfo()]

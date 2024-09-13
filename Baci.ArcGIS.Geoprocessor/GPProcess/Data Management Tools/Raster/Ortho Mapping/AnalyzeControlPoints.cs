@@ -11,10 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Analyze Control Points</para>
-	/// <para>Analyze Control Points</para>
-	/// <para>Analyzes the control point</para>
-	/// <para>coverage and identifies the areas that need</para>
-	/// <para>additional control points to improve the block adjust result.</para>
+	/// <para>分析控制点</para>
+	/// <para>分析控制点覆盖范围并标识需要额外控制点来改善局域网平差结果的区域。</para>
 	/// </summary>
 	public class AnalyzeControlPoints : AbstractGPProcess
 	{
@@ -23,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>The input mosaic dataset against which to analyze the control points.</para>
+		/// <para>要分析输入镶嵌数据集的控制点。</para>
 		/// </param>
 		/// <param name="InControlPoints">
 		/// <para>Input Control Points</para>
-		/// <para>The input control point feature class.</para>
-		/// <para>It is normally created from the Compute Tie Points or the Compute Control Points tool.</para>
+		/// <para>输入控制点要素类。</para>
+		/// <para>通常通过计算连接点或计算控制点工具进行创建。</para>
 		/// </param>
 		/// <param name="OutCoverageTable">
 		/// <para>Output Control Point Coverage Feature Class</para>
-		/// <para>A polygon feature class output that contains the control point coverage and the percentage of the area within the corresponding image.</para>
+		/// <para>包含控制点覆盖范围和相应影像内区域百分比的面要素类输出。</para>
 		/// </param>
 		public AnalyzeControlPoints(object InMosaicDataset, object InControlPoints, object OutCoverageTable)
 		{
@@ -42,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Analyze Control Points</para>
+		/// <para>Tool Display Name : 分析控制点</para>
 		/// </summary>
-		public override string DisplayName() => "Analyze Control Points";
+		public override string DisplayName() => "分析控制点";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeControlPoints</para>
@@ -78,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>The input mosaic dataset against which to analyze the control points.</para>
+		/// <para>要分析输入镶嵌数据集的控制点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -86,8 +84,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Control Points</para>
-		/// <para>The input control point feature class.</para>
-		/// <para>It is normally created from the Compute Tie Points or the Compute Control Points tool.</para>
+		/// <para>输入控制点要素类。</para>
+		/// <para>通常通过计算连接点或计算控制点工具进行创建。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -95,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Control Point Coverage Feature Class</para>
-		/// <para>A polygon feature class output that contains the control point coverage and the percentage of the area within the corresponding image.</para>
+		/// <para>包含控制点覆盖范围和相应影像内区域百分比的面要素类输出。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -103,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Overlap Feature Class</para>
-		/// <para>A polygon feature class output that contains all the overlap areas between images.</para>
+		/// <para>包含影像间所有重叠区域的面要素类输出。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -111,8 +109,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Mask</para>
-		/// <para>A polygon feature class used to exclude areas that you do not want in the analysis of the control points computation.</para>
-		/// <para>A field with a name of mask can control the inclusion or exclusion of areas. A value of 1 indicates that the areas defined by the polygons (inside) will be excluded from the computation. A value of 2 indicates the defined polygons (inside) will be included in the computation while areas outside of the polygons will be excluded.</para>
+		/// <para>用于排除控制点计算分析中不需要的区域的面要素类。</para>
+		/// <para>名为 mask 的字段可控制区域的纳入或排除。 值为 1 时表示由面（内部）定义的区域将从计算中排除。 值为 2 时表示计算中将包括定义面（内部）而不包括面外部的区域。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -120,8 +118,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Minimum Overlap Area</para>
-		/// <para>Specify the minimum percent that the overlap area must be, in relation to the image. Areas that are lower than the specified percent threshold will be excluded from the analysis.</para>
-		/// <para>Ensure that you do not have areas that are too small; otherwise, you will have small slivers being analyzed.</para>
+		/// <para>相对于影像，指定重叠区域所必须的最小百分比。小于指定百分比阈值的区域将从分析中排除。</para>
+		/// <para>请确保您拥有的区域不要过小；否者，将需要分析很小的狭长面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -129,8 +127,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Overlap Level</para>
-		/// <para>The maximum number of images that can be overlapped when analyzing the control points.</para>
-		/// <para>For example, if there are four images in your mosaic dataset, and a maximum overlap value of 3 was specified, then there are ten different combinations that will appear in the Overlap Window. If the four images were named i1, i2, i3, and i4, the ten combinations that would appear are [i1, i2, i3], [i1 i2 i4], [i1 i3 i4], [i2 i3 i4], [i1, i2], [i1, i3], [i1, i4], [i2, i3], [i2, i4], and [i3, i4].</para>
+		/// <para>分析控制点时，可以重叠的最大图像数。</para>
+		/// <para>例如，如果镶嵌数据集中有四张图像，且指定的最大重叠值为 3，则将有十种不同的组合显示在重叠窗口中。如果四张图像分别以 i1、i2、i3 和 i4 命名，则将显示的十种组合为 [i1, i2, i3]、[i1 i2 i4]、[i1 i3 i4]、[i2 i3 i4]、[i1, i2]、[i1, i3]、[i1, i4]、[i2, i3]、[i2, i4] 和 [i3, i4]。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]

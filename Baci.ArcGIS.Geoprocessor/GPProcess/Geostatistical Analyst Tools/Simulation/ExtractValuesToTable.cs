@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Extract Values To Table</para>
-	/// <para>Extract Values To Table</para>
-	/// <para>Extracts cell values from a set of rasters to a table, based on a point or polygon feature class.</para>
+	/// <para>提取值到表</para>
+	/// <para>基于点或面要素类将一组栅格中的单元值提取到表。</para>
 	/// </summary>
 	public class ExtractValuesToTable : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input features</para>
-		/// <para>The points or polygon features to be created.</para>
+		/// <para>要创建的点或面要素。</para>
 		/// </param>
 		/// <param name="InRasters">
 		/// <para>Input rasters</para>
-		/// <para>The rasters must all have the same extent, coordinate system, and cell size.</para>
+		/// <para>栅格必须具有相同的范围、坐标系和像元大小。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output table</para>
-		/// <para>The output table contains a record for each point and each raster that has data. If polygon features are input, they are converted to points that coincide with the raster cell centers.</para>
+		/// <para>对于每个包含数据的点和栅格，输出表中都有对应的记录。如果输入为面要素，则将它们转换为与栅格像元中心重合的点。</para>
 		/// </param>
 		public ExtractValuesToTable(object InFeatures, object InRasters, object OutTable)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Extract Values To Table</para>
+		/// <para>Tool Display Name : 提取值到表</para>
 		/// </summary>
-		public override string DisplayName() => "Extract Values To Table";
+		public override string DisplayName() => "提取值到表";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractValuesToTable</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input features</para>
-		/// <para>The points or polygon features to be created.</para>
+		/// <para>要创建的点或面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input rasters</para>
-		/// <para>The rasters must all have the same extent, coordinate system, and cell size.</para>
+		/// <para>栅格必须具有相同的范围、坐标系和像元大小。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output table</para>
-		/// <para>The output table contains a record for each point and each raster that has data. If polygon features are input, they are converted to points that coincide with the raster cell centers.</para>
+		/// <para>对于每个包含数据的点和栅格，输出表中都有对应的记录。如果输入为面要素，则将它们转换为与栅格像元中心重合的点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output raster names table</para>
-		/// <para>Saves the names of the Input rasters to disc.</para>
+		/// <para>将“输入”栅格的名称保存到磁盘中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -109,9 +109,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Add warnings to output table</para>
-		/// <para>Records if input features are partially or completely covered by the Input rasters.</para>
-		/// <para>Checked—Warning field is added to the output table and populated with a P when a feature is partially covered by raster values.</para>
-		/// <para>Unchecked—Warning field is not added to the output table.</para>
+		/// <para>用于在“输入”栅格部分或全部覆盖输入要素时进行记录。</para>
+		/// <para>选中 - 向输出表中添加警告字段，且当栅格值部分覆盖要素时用“P”填充该字段。</para>
+		/// <para>未选中 - 不向输出表中添加警告字段。</para>
 		/// <para><see cref="AddWarningFieldEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,14 +136,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum AddWarningFieldEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Warning field is added to the output table and populated with a P when a feature is partially covered by raster values.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_WARNING_FIELD")]
 			ADD_WARNING_FIELD,
 
 			/// <summary>
-			/// <para>Unchecked—Warning field is not added to the output table.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_ADD_WARNING_FIELD")]

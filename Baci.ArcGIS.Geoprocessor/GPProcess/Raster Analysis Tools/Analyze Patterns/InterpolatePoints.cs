@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Interpolate Points</para>
-	/// <para>Interpolate Points</para>
-	/// <para>Predicts values at new locations based on measurements from a collection of points. The tool takes point data with values at each point and returns a raster of predicted values.</para>
+	/// <para>插值点</para>
+	/// <para>根据一组点的测量结果来预测新位置上的值。 该工具对具有数值的点数据进行处理，并返回预测值的栅格。</para>
 	/// </summary>
 	public class InterpolatePoints : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		/// <param name="Inputpointfeatures">
 		/// <para>Input Point Features</para>
-		/// <para>The input point features you want to interpolate.</para>
+		/// <para>要执行插值操作的输入点要素。</para>
 		/// </param>
 		/// <param name="Interpolatefield">
 		/// <para>Interpolate Field</para>
-		/// <para>The field containing the data values you want to interpolate. The field must be numeric.</para>
+		/// <para>包含要进行插值的数据值的字段。 该字段必须为数值型。</para>
 		/// </param>
 		/// <param name="Outputname">
 		/// <para>Output Name</para>
-		/// <para>The name of the output raster service.</para>
-		/// <para>The default name is based on the tool name and the input layer name. If the layer name already exists, you will be prompted to provide another name.</para>
+		/// <para>输出栅格服务的名称。</para>
+		/// <para>默认名称基于工具名称以及输入图层名称。 如果该图层名称已存在，则系统将提示您提供其他名称。</para>
 		/// </param>
 		public InterpolatePoints(object Inputpointfeatures, object Interpolatefield, object Outputname)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Interpolate Points</para>
+		/// <para>Tool Display Name : 插值点</para>
 		/// </summary>
-		public override string DisplayName() => "Interpolate Points";
+		public override string DisplayName() => "插值点";
 
 		/// <summary>
 		/// <para>Tool Name : InterpolatePoints</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Point Features</para>
-		/// <para>The input point features you want to interpolate.</para>
+		/// <para>要执行插值操作的输入点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Interpolate Field</para>
-		/// <para>The field containing the data values you want to interpolate. The field must be numeric.</para>
+		/// <para>包含要进行插值的数据值的字段。 该字段必须为数值型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -97,8 +97,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output raster service.</para>
-		/// <para>The default name is based on the tool name and the input layer name. If the layer name already exists, you will be prompted to provide another name.</para>
+		/// <para>输出栅格服务的名称。</para>
+		/// <para>默认名称基于工具名称以及输入图层名称。 如果该图层名称已存在，则系统将提示您提供其他名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -106,10 +106,10 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Optimize For</para>
-		/// <para>Choose your preference for speed versus accuracy. More accurate predictions will take longer to calculate.</para>
-		/// <para>Speed—The operation is optimized for speed.</para>
-		/// <para>Balance—A balance between speed and accuracy. This is the default.</para>
-		/// <para>Accuracy—The operation is optimized for accuracy.</para>
+		/// <para>根据您的偏好选择“快速”或“精确”。 预测结果越精确，所花费的计算时间就越长。</para>
+		/// <para>速度—此操作可用于优化速度。</para>
+		/// <para>平衡—速度与精度之间的平衡。 这是默认设置。</para>
+		/// <para>准确性—此操作可用于优化精度。</para>
 		/// <para><see cref="OptimizeforEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -119,9 +119,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Transform Data to Normal Distribution</para>
-		/// <para>Choose whether to transform your data to a normal distribution before performing analysis. If your data values do not appear to be normally distributed (bell-shaped), it is recommended to perform a transformation.</para>
-		/// <para>Checked—A transformation to the normal distribution is applied.</para>
-		/// <para>Unchecked—No transformation is applied. This is the default.</para>
+		/// <para>选择是否在执行分析前将数据转换为正态分布。 如果您的数据值似乎未采用正态分布（钟形），则建议您进行转换。</para>
+		/// <para>选中 - 应用正态分布转换。</para>
+		/// <para>未选中 - 不应用转换。 这是默认设置。</para>
 		/// <para><see cref="TransformdataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Size of Local Models</para>
-		/// <para>Choose the number of points in each of the local models. A larger value will make the interpolation more global and stable, but small-scale effects may be missed. Smaller values will make the interpolation more local, so small-scale effects are more likely to be captured, but the interpolation may be unstable.</para>
+		/// <para>选择各局部模型中的点数。 数值越大，插值的全局性和稳定性越好，但是可能会失去小比例的效果。 数值越小，插值的局部性越好，因此更可能获得小比例的效果，但是插值可能不稳定。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Number of Neighbors</para>
-		/// <para>The number of neighbors to use when calculating the prediction at a particular cell.</para>
+		/// <para>计算特定像元的预测值时使用的相邻要素的数量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -152,9 +152,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Cell Size</para>
-		/// <para>Set the cell size and units of the output raster. If a prediction error raster is created, it will also use this cell size.</para>
-		/// <para>The units can be Kilometers, Meters, Miles, or Feet.</para>
-		/// <para>The default units are Meters.</para>
+		/// <para>设置输出栅格的像元大小和单位。 如果要创建预测误差栅格，则仍将使用此像元大小。</para>
+		/// <para>单位可以是千米、米、英里或英尺。</para>
+		/// <para>默认单位是米。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -163,11 +163,11 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Prediction Error</para>
-		/// <para>Choose whether to output a raster of standard errors of the interpolated predictions.</para>
-		/// <para>Standard errors are useful because they provide information about the reliability of the predicted values. A simple rule of thumb is that the true value will fall within two standard errors of the predicted value 95 percent of the time. For example, suppose a new location gets a predicted value of 50 with a standard error of 5. This means that this task&apos;s best guess is that the true value at that location is 50, but it reasonably could be as low as 40 or as high as 60. To calculate this range of reasonable values, multiply the standard error by 2, add this value to the predicted value to get the upper end of the range, and subtract it from the predicted value to get the lower end of the range.</para>
-		/// <para>If a raster of standard errors for the interpolated predictions is requested, it will have the same name as the Result layer name but with Errors appended.</para>
-		/// <para>Unchecked—No output prediction error is generated. This is the default.</para>
-		/// <para>Checked—An output prediction error is generated.</para>
+		/// <para>选择是否输出插值预测的标准误差栅格。</para>
+		/// <para>标准误差可提供有关预测值的可信度的信息，因此非常有用。 一般来说，有 95% 的真值会落在两个预测值标准误差之间。 例如，假设一个新地区的预测值是 50，标准误差是 5。 这意味着通过此任务预测出此地区的真值是 50，但不排除真值低至 40 或高至 60 的可能。 为计算合理值的范围，可先用标准误差乘以 2，然后将得出的值加上预测值来获得范围上限，再用预测值减去乘以 2 后得出的值来获得范围下限。</para>
+		/// <para>如果需要插值预测的标准误差栅格，则其名称与结果图层名称相同，但是会追加 Errors。</para>
+		/// <para>未选中 - 不生成输出预测误差。 这是默认设置。</para>
+		/// <para>选中 - 生成输出预测误差。</para>
 		/// <para><see cref="OutputpredictionerrorEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -206,24 +206,24 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum OptimizeforEnum 
 		{
 			/// <summary>
-			/// <para>Speed—The operation is optimized for speed.</para>
+			/// <para>速度—此操作可用于优化速度。</para>
 			/// </summary>
 			[GPValue("SPEED")]
-			[Description("Speed")]
+			[Description("速度")]
 			Speed,
 
 			/// <summary>
-			/// <para>Balance—A balance between speed and accuracy. This is the default.</para>
+			/// <para>平衡—速度与精度之间的平衡。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("BALANCE")]
-			[Description("Balance")]
+			[Description("平衡")]
 			Balance,
 
 			/// <summary>
-			/// <para>Accuracy—The operation is optimized for accuracy.</para>
+			/// <para>准确性—此操作可用于优化精度。</para>
 			/// </summary>
 			[GPValue("ACCURACY")]
-			[Description("Accuracy")]
+			[Description("准确性")]
 			Accuracy,
 
 		}
@@ -234,14 +234,14 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum TransformdataEnum 
 		{
 			/// <summary>
-			/// <para>Checked—A transformation to the normal distribution is applied.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TRANSFORM")]
 			TRANSFORM,
 
 			/// <summary>
-			/// <para>Unchecked—No transformation is applied. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_TRANSFORM")]
@@ -255,14 +255,14 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		public enum OutputpredictionerrorEnum 
 		{
 			/// <summary>
-			/// <para>Checked—An output prediction error is generated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("OUTPUT_ERROR")]
 			OUTPUT_ERROR,
 
 			/// <summary>
-			/// <para>Unchecked—No output prediction error is generated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_OUTPUT_ERROR")]

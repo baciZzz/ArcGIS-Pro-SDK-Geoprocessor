@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Delete Network Category</para>
-	/// <para>Delete Network Category</para>
-	/// <para>Deletes a network category in a utility network.</para>
+	/// <para>删除网络类别</para>
+	/// <para>用于删除公共设施网络中的网络类别。</para>
 	/// </summary>
 	public class DeleteNetworkCategory : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that contains the network category to be deleted.</para>
+		/// <para>包含要删除的网络类别的公共设施网络。</para>
 		/// </param>
 		/// <param name="CategoryName">
 		/// <para>Category Name</para>
-		/// <para>The name of the network category to delete.</para>
+		/// <para>要删除的网络类别的名称。</para>
 		/// </param>
 		public DeleteNetworkCategory(object InUtilityNetwork, object CategoryName)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Delete Network Category</para>
+		/// <para>Tool Display Name : 删除网络类别</para>
 		/// </summary>
-		public override string DisplayName() => "Delete Network Category";
+		public override string DisplayName() => "删除网络类别";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteNetworkCategory</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that contains the network category to be deleted.</para>
+		/// <para>包含要删除的网络类别的公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Category Name</para>
-		/// <para>The name of the network category to delete.</para>
+		/// <para>要删除的网络类别的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

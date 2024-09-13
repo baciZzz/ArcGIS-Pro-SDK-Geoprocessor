@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Generate Spatial Weights Matrix</para>
-	/// <para>Generate Spatial Weights Matrix</para>
-	/// <para>Generates a spatial weights matrix file (.swm) to represent the spatial relationships among features in a dataset.</para>
+	/// <para>生成空间权重矩阵</para>
+	/// <para>生成一个空间权重矩阵 (.swm) 文件，以表示数据集中各要素间的空间关系。</para>
 	/// </summary>
 	public class GenerateSpatialWeightsMatrix : AbstractGPProcess
 	{
@@ -21,27 +21,27 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputFeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>The feature class for which spatial relationships of features will be assessed.</para>
+		/// <para>将被评估要素间空间关系的要素类。</para>
 		/// </param>
 		/// <param name="UniqueIDField">
 		/// <para>Unique ID Field</para>
-		/// <para>An integer field containing a different value for every feature in the input feature class. If you don't have a Unique ID field, you can create one by adding an integer field to your feature class table and calculating the field values to equal the FID or OBJECTID field.</para>
+		/// <para>包含输入要素类中每个要素不同值的整型字段。如果没有“唯一 ID”字段，则可以创建一个，方法是向要素类表添加一个整型字段，然后将此字段的值计算为与 FID 或 OBJECTID 字段的值相等。</para>
 		/// </param>
 		/// <param name="OutputSpatialWeightsMatrixFile">
 		/// <para>Output Spatial Weights Matrix File</para>
-		/// <para>The full path for the output spatial weights matrix file (.swm).</para>
+		/// <para>输出空间权重矩阵文件 (.swm) 的完整路径。</para>
 		/// </param>
 		/// <param name="ConceptualizationOfSpatialRelationships">
 		/// <para>Conceptualization of Spatial Relationships</para>
-		/// <para>Specifies how spatial relationships among features will be conceptualized.</para>
-		/// <para>Inverse distance—The impact of one feature on another feature will decrease with distance.</para>
-		/// <para>Fixed distance—Everything within a specified critical distance of each feature will be included in the analysis; everything outside the critical distance will be excluded.</para>
-		/// <para>K nearest neighbors—The closest k features will be included in the analysis; k is a specified numeric parameter.</para>
-		/// <para>Contiguity edges only—Polygon features that share a boundary will be neighbors.</para>
-		/// <para>Contiguity edges corners—Polygon features that share a boundary or share a node will be neighbors.</para>
-		/// <para>Delaunay triangulation—A mesh of nonoverlapping triangles will be created from feature centroids, and features associated with triangle nodes that share edges will be neighbors.</para>
-		/// <para>Space time window—Features within a specified critical distance and specified time interval of each other will be neighbors.</para>
-		/// <para>Convert table—Spatial relationships will be defined in a table.</para>
+		/// <para>指定要素空间关系的概念化方式。</para>
+		/// <para>反距离—一个要素对另一个要素的影响会随着距离的增加而减小。</para>
+		/// <para>固定距离—将每个要素的指定临界距离内的所有要素都包含在分析中；将临界距离外的所有要素都将排除在外。</para>
+		/// <para>K - 最近邻—将最近的 k 要素包含在分析中；k 是指定的数字参数。</para>
+		/// <para>仅邻接边—共享一个边界的面要素将为相邻要素。</para>
+		/// <para>邻接边拐角—共享一个边界或一个结点的面要素将为相邻要素。</para>
+		/// <para>Delaunay 三角测量—基于要素质心创建不重叠三角形的网格，并且共享边且与三角形结点关联的要素将为相邻要素。</para>
+		/// <para>空间时间窗—指定临界距离和指定时间间隔内的要素将成为彼此的相邻要素。</para>
+		/// <para>转换表—将在表中定义空间关系。</para>
 		/// <para><see cref="ConceptualizationOfSpatialRelationshipsEnum"/></para>
 		/// </param>
 		public GenerateSpatialWeightsMatrix(object InputFeatureClass, object UniqueIDField, object OutputSpatialWeightsMatrixFile, object ConceptualizationOfSpatialRelationships)
@@ -53,9 +53,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Spatial Weights Matrix</para>
+		/// <para>Tool Display Name : 生成空间权重矩阵</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Spatial Weights Matrix";
+		public override string DisplayName() => "生成空间权重矩阵";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateSpatialWeightsMatrix</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>The feature class for which spatial relationships of features will be assessed.</para>
+		/// <para>将被评估要素间空间关系的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Unique ID Field</para>
-		/// <para>An integer field containing a different value for every feature in the input feature class. If you don't have a Unique ID field, you can create one by adding an integer field to your feature class table and calculating the field values to equal the FID or OBJECTID field.</para>
+		/// <para>包含输入要素类中每个要素不同值的整型字段。如果没有“唯一 ID”字段，则可以创建一个，方法是向要素类表添加一个整型字段，然后将此字段的值计算为与 FID 或 OBJECTID 字段的值相等。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Spatial Weights Matrix File</para>
-		/// <para>The full path for the output spatial weights matrix file (.swm).</para>
+		/// <para>输出空间权重矩阵文件 (.swm) 的完整路径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -117,15 +117,15 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Conceptualization of Spatial Relationships</para>
-		/// <para>Specifies how spatial relationships among features will be conceptualized.</para>
-		/// <para>Inverse distance—The impact of one feature on another feature will decrease with distance.</para>
-		/// <para>Fixed distance—Everything within a specified critical distance of each feature will be included in the analysis; everything outside the critical distance will be excluded.</para>
-		/// <para>K nearest neighbors—The closest k features will be included in the analysis; k is a specified numeric parameter.</para>
-		/// <para>Contiguity edges only—Polygon features that share a boundary will be neighbors.</para>
-		/// <para>Contiguity edges corners—Polygon features that share a boundary or share a node will be neighbors.</para>
-		/// <para>Delaunay triangulation—A mesh of nonoverlapping triangles will be created from feature centroids, and features associated with triangle nodes that share edges will be neighbors.</para>
-		/// <para>Space time window—Features within a specified critical distance and specified time interval of each other will be neighbors.</para>
-		/// <para>Convert table—Spatial relationships will be defined in a table.</para>
+		/// <para>指定要素空间关系的概念化方式。</para>
+		/// <para>反距离—一个要素对另一个要素的影响会随着距离的增加而减小。</para>
+		/// <para>固定距离—将每个要素的指定临界距离内的所有要素都包含在分析中；将临界距离外的所有要素都将排除在外。</para>
+		/// <para>K - 最近邻—将最近的 k 要素包含在分析中；k 是指定的数字参数。</para>
+		/// <para>仅邻接边—共享一个边界的面要素将为相邻要素。</para>
+		/// <para>邻接边拐角—共享一个边界或一个结点的面要素将为相邻要素。</para>
+		/// <para>Delaunay 三角测量—基于要素质心创建不重叠三角形的网格，并且共享边且与三角形结点关联的要素将为相邻要素。</para>
+		/// <para>空间时间窗—指定临界距离和指定时间间隔内的要素将成为彼此的相邻要素。</para>
+		/// <para>转换表—将在表中定义空间关系。</para>
 		/// <para><see cref="ConceptualizationOfSpatialRelationshipsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -135,9 +135,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Distance Method</para>
-		/// <para>Specifies how distances will be calculated from each feature to neighboring features.</para>
-		/// <para>Euclidean—The straight-line distance between two points (as the crow flies) will be calculated. This is the default.</para>
-		/// <para>Manhattan—The distance between two points measured along axes at right angles (city block) will be calculated by summing the (absolute) difference between the x- and y-coordinates.</para>
+		/// <para>指定计算每个要素与邻近要素之间的距离的方式。</para>
+		/// <para>欧氏—将计算两点间的直线距离。 这是默认设置。</para>
+		/// <para>曼哈顿—将通过对两点的 x 和 y 坐标的差值（绝对值）求和来计算沿垂直轴度量的两点间的距离（城市街区）。</para>
 		/// <para><see cref="DistanceMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Exponent</para>
-		/// <para>The value for inverse distance calculation. A typical value is 1 or 2.</para>
+		/// <para>反距离计算值。 典型值为 1 或 2。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -155,8 +155,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Threshold Distance</para>
-		/// <para>The cutoff distance for the Conceptualization of Spatial Relationships parameter&apos;s Inverse distance and Fixed distance options. Enter this value using the units specified in the environment output coordinate system. This defines the size of the space window for the Space time window option.</para>
-		/// <para>When this parameter is left blank, a default threshold value is computed based on the output feature class extent and the number of features. For the inverse distance conceptualization of spatial relationships, a value of zero indicates that no threshold distance will be applied and all features will be neighbors of every other feature.</para>
+		/// <para>用于空间关系的概念化参数的反距离和固定距离选项的中断距离。 使用环境输出坐标系中指定的单位输入此值。 为空间时间窗选项定义空间窗的大小。</para>
+		/// <para>此参数留空时，将根据输出要素类范围和要素数目计算默认阈值。 对于空间关系的反距离概念化，零值表示将不应用阈值距离，并且所有要素都将是其他所有要素的相邻要素</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Neighbors</para>
-		/// <para>An integer reflecting either the minimum or the exact number of neighbors. When the Conceptualization of Spatial Relationships parameter is set to K nearest neighbors, each feature will have exactly this specified number of neighbors. For the Inverse distance or Fixed distance option, each feature will have at least this many neighbors (the threshold distance will be temporarily extended to ensure this many neighbors, if necessary). When the Contiguity edges only or Contiguity edges corners option is chosen, each polygon will be assigned this minimum number of neighbors. For polygons with fewer than this number of contiguous neighbors, additional neighbors will be based on feature centroid proximity.</para>
+		/// <para>用于反映指定相邻要素的最小数目或精确数目。 当将空间关系的概念化参数设置为 K - 最近邻时，每个要素都将具有指定数量的相邻要素。 对于反距离或固定距离选项，每个要素将至少具有这些数目的相邻要素（如有必要，距离阈值将临时增大以确保达到这个相邻要素数目）。 当选择仅邻接边或邻接边拐角选项时，每个面将被分配此最小数目的相邻要素。 对于具有少于此相邻要素数目的面，将根据要素质心邻近性获得附加相邻要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -173,9 +173,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Row Standardization</para>
-		/// <para>Specifies whether spatial weights will be standardized by row. Row standardization is recommended whenever feature distribution is potentially biased due to sampling design or to an imposed aggregation scheme.</para>
-		/// <para>Checked—Spatial weights will be standardized by row. Each weight is divided by its row sum. This is the default.</para>
-		/// <para>Unchecked—No standardization of spatial weights will be applied.</para>
+		/// <para>指定是否按行标准化空间权重。 当要素分布由于采样设计或施加的聚合方案而可能偏离时，建议使用行标准化。</para>
+		/// <para>选中 - 将按行对空间权重执行标准化。 每个权重都除以它的行总和。 这是默认设置。</para>
+		/// <para>未选中 - 将不会对空间权重执行标准化。</para>
 		/// <para><see cref="RowStandardizationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -185,7 +185,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>A table containing numeric weights relating every feature to every other feature in the input feature class. Required fields for the table are the Unique ID Field parameter value, NID (neighbor ID), and WEIGHT.</para>
+		/// <para>由输入要素类中每个要素相对于其他要素的数字权重组成的表。 该表的必填字段是唯一 ID 字段参数值、NID（邻居 ID）和 WEIGHT。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -193,7 +193,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Date/Time Field</para>
-		/// <para>A date field with a time stamp for each feature.</para>
+		/// <para>具有每个要素的时间戳的日期字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -203,14 +203,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Date/Time Interval Type</para>
-		/// <para>Specifies the units that will be used for measuring time.</para>
-		/// <para>Seconds—The unit will be seconds.</para>
-		/// <para>Minutes—The unit will be minutes.</para>
-		/// <para>Hours—The unit will be hours.</para>
-		/// <para>Days—The unit will be days.</para>
-		/// <para>Weeks—The unit will be weeks.</para>
-		/// <para>Months—The unit will be 30 days.</para>
-		/// <para>Years—The unit will be years.</para>
+		/// <para>指定将用于测量时间的单位。</para>
+		/// <para>秒—单位将为秒。</para>
+		/// <para>分—单位将为分钟。</para>
+		/// <para>小时—单位将为小时。</para>
+		/// <para>天—单位将为天。</para>
+		/// <para>周—单位将为周。</para>
+		/// <para>月—单位将为 30 天。</para>
+		/// <para>年—单位将为年。</para>
 		/// <para><see cref="DateTimeIntervalTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -220,9 +220,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Date/Time Interval Value</para>
-		/// <para>An integer reflecting the number of time units comprising the time window.</para>
-		/// <para>For example, if you choose Hours for the Date/Time Interval Type parameter and specify 3 for the Date/Time Interval Value parameter, the time window will be 3 hours; features within the specified space window and within the specified time window will be neighbors.</para>
-		/// <para>For example, if you choose HOURS for the Date_Time_Interval_Type parameter and specify 3 for the Date_Time_Interval_Value parameter, the time window will be 3 hours; features within the specified space window and within the specified time window will be neighbors.</para>
+		/// <para>反映构成时间窗的时间单位数量的整数。</para>
+		/// <para>例如，如果为日期/时间间隔类型参数选择小时，并为日期/时间间隔值参数指定 3，则时间窗将为 3 小时；位于指定空间窗和指定时间窗内的要素将成为相邻要素。</para>
+		/// <para>例如，如果为 Date_Time_Interval_Type 参数选择 HOURS，并为 Date_Time_Interval_Value 参数指定 3，则时间窗将为 3 小时；位于指定空间窗和指定时间窗内的要素将成为相邻要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -230,9 +230,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Use Z values</para>
-		/// <para>Specifies whether z-coordinates will be used in the construction of the spatial weights matrix if the input features are z-enabled.</para>
-		/// <para>Checked—Z-values will be used in the construction of the spatial weights matrix.</para>
-		/// <para>Unchecked—Z-values will not be used; they will be ignored and only x- and y-coordinates will be considered in the construction of the spatial weights matrix. This is the default.</para>
+		/// <para>指定在输入要素启用 z 的情况下是否在构建空间权重矩阵时使用 z 坐标。</para>
+		/// <para>选中 - Z 值将用于空间权重矩阵的构建中。</para>
+		/// <para>未选中 - 不会使用 Z 值；将忽略 Z 值并且在空间权重矩阵的构建中将仅考虑 x 和 y 坐标。 这是默认设置。</para>
 		/// <para><see cref="UseZValuesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -257,59 +257,59 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum ConceptualizationOfSpatialRelationshipsEnum 
 		{
 			/// <summary>
-			/// <para>Inverse distance—The impact of one feature on another feature will decrease with distance.</para>
+			/// <para>反距离—一个要素对另一个要素的影响会随着距离的增加而减小。</para>
 			/// </summary>
 			[GPValue("INVERSE_DISTANCE")]
-			[Description("Inverse distance")]
+			[Description("反距离")]
 			Inverse_distance,
 
 			/// <summary>
-			/// <para>Fixed distance—Everything within a specified critical distance of each feature will be included in the analysis; everything outside the critical distance will be excluded.</para>
+			/// <para>固定距离—将每个要素的指定临界距离内的所有要素都包含在分析中；将临界距离外的所有要素都将排除在外。</para>
 			/// </summary>
 			[GPValue("FIXED_DISTANCE")]
-			[Description("Fixed distance")]
+			[Description("固定距离")]
 			Fixed_distance,
 
 			/// <summary>
-			/// <para>K nearest neighbors—The closest k features will be included in the analysis; k is a specified numeric parameter.</para>
+			/// <para>K - 最近邻—将最近的 k 要素包含在分析中；k 是指定的数字参数。</para>
 			/// </summary>
 			[GPValue("K_NEAREST_NEIGHBORS")]
-			[Description("K nearest neighbors")]
+			[Description("K - 最近邻")]
 			K_nearest_neighbors,
 
 			/// <summary>
-			/// <para>Contiguity edges only—Polygon features that share a boundary will be neighbors.</para>
+			/// <para>仅邻接边—共享一个边界的面要素将为相邻要素。</para>
 			/// </summary>
 			[GPValue("CONTIGUITY_EDGES_ONLY")]
-			[Description("Contiguity edges only")]
+			[Description("仅邻接边")]
 			Contiguity_edges_only,
 
 			/// <summary>
-			/// <para>Contiguity edges corners—Polygon features that share a boundary or share a node will be neighbors.</para>
+			/// <para>邻接边拐角—共享一个边界或一个结点的面要素将为相邻要素。</para>
 			/// </summary>
 			[GPValue("CONTIGUITY_EDGES_CORNERS")]
-			[Description("Contiguity edges corners")]
+			[Description("邻接边拐角")]
 			Contiguity_edges_corners,
 
 			/// <summary>
-			/// <para>Delaunay triangulation—A mesh of nonoverlapping triangles will be created from feature centroids, and features associated with triangle nodes that share edges will be neighbors.</para>
+			/// <para>Delaunay 三角测量—基于要素质心创建不重叠三角形的网格，并且共享边且与三角形结点关联的要素将为相邻要素。</para>
 			/// </summary>
 			[GPValue("DELAUNAY_TRIANGULATION")]
-			[Description("Delaunay triangulation")]
+			[Description("Delaunay 三角测量")]
 			Delaunay_triangulation,
 
 			/// <summary>
-			/// <para>Space time window—Features within a specified critical distance and specified time interval of each other will be neighbors.</para>
+			/// <para>空间时间窗—指定临界距离和指定时间间隔内的要素将成为彼此的相邻要素。</para>
 			/// </summary>
 			[GPValue("SPACE_TIME_WINDOW")]
-			[Description("Space time window")]
+			[Description("空间时间窗")]
 			Space_time_window,
 
 			/// <summary>
-			/// <para>Convert table—Spatial relationships will be defined in a table.</para>
+			/// <para>转换表—将在表中定义空间关系。</para>
 			/// </summary>
 			[GPValue("CONVERT_TABLE")]
-			[Description("Convert table")]
+			[Description("转换表")]
 			Convert_table,
 
 		}
@@ -320,17 +320,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum DistanceMethodEnum 
 		{
 			/// <summary>
-			/// <para>Euclidean—The straight-line distance between two points (as the crow flies) will be calculated. This is the default.</para>
+			/// <para>欧氏—将计算两点间的直线距离。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("EUCLIDEAN")]
-			[Description("Euclidean")]
+			[Description("欧氏")]
 			Euclidean,
 
 			/// <summary>
-			/// <para>Manhattan—The distance between two points measured along axes at right angles (city block) will be calculated by summing the (absolute) difference between the x- and y-coordinates.</para>
+			/// <para>曼哈顿—将通过对两点的 x 和 y 坐标的差值（绝对值）求和来计算沿垂直轴度量的两点间的距离（城市街区）。</para>
 			/// </summary>
 			[GPValue("MANHATTAN")]
-			[Description("Manhattan")]
+			[Description("曼哈顿")]
 			Manhattan,
 
 		}
@@ -341,14 +341,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum RowStandardizationEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Spatial weights will be standardized by row. Each weight is divided by its row sum. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ROW_STANDARDIZATION")]
 			ROW_STANDARDIZATION,
 
 			/// <summary>
-			/// <para>Unchecked—No standardization of spatial weights will be applied.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_STANDARDIZATION")]
@@ -362,52 +362,52 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum DateTimeIntervalTypeEnum 
 		{
 			/// <summary>
-			/// <para>Seconds—The unit will be seconds.</para>
+			/// <para>秒—单位将为秒。</para>
 			/// </summary>
 			[GPValue("SECONDS")]
-			[Description("Seconds")]
+			[Description("秒")]
 			Seconds,
 
 			/// <summary>
-			/// <para>Minutes—The unit will be minutes.</para>
+			/// <para>分—单位将为分钟。</para>
 			/// </summary>
 			[GPValue("MINUTES")]
-			[Description("Minutes")]
+			[Description("分")]
 			Minutes,
 
 			/// <summary>
-			/// <para>Hours—The unit will be hours.</para>
+			/// <para>小时—单位将为小时。</para>
 			/// </summary>
 			[GPValue("HOURS")]
-			[Description("Hours")]
+			[Description("小时")]
 			Hours,
 
 			/// <summary>
-			/// <para>Days—The unit will be days.</para>
+			/// <para>天—单位将为天。</para>
 			/// </summary>
 			[GPValue("DAYS")]
-			[Description("Days")]
+			[Description("天")]
 			Days,
 
 			/// <summary>
-			/// <para>Weeks—The unit will be weeks.</para>
+			/// <para>周—单位将为周。</para>
 			/// </summary>
 			[GPValue("WEEKS")]
-			[Description("Weeks")]
+			[Description("周")]
 			Weeks,
 
 			/// <summary>
-			/// <para>Months—The unit will be 30 days.</para>
+			/// <para>月—单位将为 30 天。</para>
 			/// </summary>
 			[GPValue("MONTHS")]
-			[Description("Months")]
+			[Description("月")]
 			Months,
 
 			/// <summary>
-			/// <para>Years—The unit will be years.</para>
+			/// <para>年—单位将为年。</para>
 			/// </summary>
 			[GPValue("YEARS")]
-			[Description("Years")]
+			[Description("年")]
 			Years,
 
 		}
@@ -418,14 +418,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum UseZValuesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Z-values will be used in the construction of the spatial weights matrix.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("USE_Z_VALUES")]
 			USE_Z_VALUES,
 
 			/// <summary>
-			/// <para>Unchecked—Z-values will not be used; they will be ignored and only x- and y-coordinates will be considered in the construction of the spatial weights matrix. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_USE_Z_VALUES")]

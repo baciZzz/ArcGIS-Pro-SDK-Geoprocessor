@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Raster Collection</para>
-	/// <para>Generate Raster Collection</para>
-	/// <para>Performs batch analysis or processing on image collections contained in a mosaic dataset. The images in the input mosaic dataset can be processed individually or as groups.</para>
+	/// <para>生成栅格集合</para>
+	/// <para>用于对镶嵌数据集中包含的影像集合执行批量分析或处理。可以单独或以组的形式处理输入镶嵌数据集中的影像。</para>
 	/// </summary>
 	public class GenerateRasterCollection : AbstractGPProcess
 	{
@@ -21,21 +21,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="OutRasterCollection">
 		/// <para>Output Raster Collection</para>
-		/// <para>The full path of the mosaic dataset to be created. The mosaic dataset must be stored in a geodatabase.</para>
+		/// <para>要创建的镶嵌数据集的完整路径。镶嵌数据集必须存储在地理数据库中。</para>
 		/// </param>
 		/// <param name="CollectionBuilder">
 		/// <para>Collection Builder</para>
-		/// <para>The input image collection. It can be seen as a template that contains arguments such as the source mosaic dataset path, filters to extract a subset from the input data source, and so on.</para>
-		/// <para>Currently, this tool only supports Simple Collection, which allows you to define a single data source and a query filter, for the data source.</para>
-		/// <para>Simple collection—Allows you to define a data source and a query filter.</para>
+		/// <para>输入影像集合。可将其视为一个模板，其中包含诸如源镶嵌数据集路径、用于从输入数据源中提取子集的过滤器等参数。</para>
+		/// <para>目前，此工具仅支持简单集合，可用于定义单个数据源以及数据源的查询过滤器。</para>
+		/// <para>简单集合—可用于定义数据源和查询过滤器。</para>
 		/// <para><see cref="CollectionBuilderEnum"/></para>
 		/// </param>
 		/// <param name="CollectionBuilderArguments">
 		/// <para>Collection Builder Arguments</para>
-		/// <para>The list of arguments to create a subset collection of the mosaic dataset.</para>
-		/// <para>This tool only supports the data source and filter to subset the mosaic dataset. The Data Source and Where Clause values must be completed, otherwise the tool cannot be executed.</para>
-		/// <para>Data Source—The path of the data source.</para>
-		/// <para>Where Clause—The filter used to subset the mosaic dataset.</para>
+		/// <para>用于创建镶嵌数据集的子集集合的参数。</para>
+		/// <para>此工具仅支持数据源以及用于查询镶嵌数据集子集的过滤器。数据源和 Where 子句值必须完整，否则无法执行此工具。</para>
+		/// <para>数据源—数据源的路径。</para>
+		/// <para>Where 子句—用于查询镶嵌数据集子集的过滤器。</para>
 		/// </param>
 		public GenerateRasterCollection(object OutRasterCollection, object CollectionBuilder, object CollectionBuilderArguments)
 		{
@@ -45,9 +45,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Raster Collection</para>
+		/// <para>Tool Display Name : 生成栅格集合</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Raster Collection";
+		public override string DisplayName() => "生成栅格集合";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateRasterCollection</para>
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Raster Collection</para>
-		/// <para>The full path of the mosaic dataset to be created. The mosaic dataset must be stored in a geodatabase.</para>
+		/// <para>要创建的镶嵌数据集的完整路径。镶嵌数据集必须存储在地理数据库中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEMosaicDataset()]
@@ -89,9 +89,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Collection Builder</para>
-		/// <para>The input image collection. It can be seen as a template that contains arguments such as the source mosaic dataset path, filters to extract a subset from the input data source, and so on.</para>
-		/// <para>Currently, this tool only supports Simple Collection, which allows you to define a single data source and a query filter, for the data source.</para>
-		/// <para>Simple collection—Allows you to define a data source and a query filter.</para>
+		/// <para>输入影像集合。可将其视为一个模板，其中包含诸如源镶嵌数据集路径、用于从输入数据源中提取子集的过滤器等参数。</para>
+		/// <para>目前，此工具仅支持简单集合，可用于定义单个数据源以及数据源的查询过滤器。</para>
+		/// <para>简单集合—可用于定义数据源和查询过滤器。</para>
 		/// <para><see cref="CollectionBuilderEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -101,10 +101,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Collection Builder Arguments</para>
-		/// <para>The list of arguments to create a subset collection of the mosaic dataset.</para>
-		/// <para>This tool only supports the data source and filter to subset the mosaic dataset. The Data Source and Where Clause values must be completed, otherwise the tool cannot be executed.</para>
-		/// <para>Data Source—The path of the data source.</para>
-		/// <para>Where Clause—The filter used to subset the mosaic dataset.</para>
+		/// <para>用于创建镶嵌数据集的子集集合的参数。</para>
+		/// <para>此工具仅支持数据源以及用于查询镶嵌数据集子集的过滤器。数据源和 Where 子句值必须完整，否则无法执行此工具。</para>
+		/// <para>数据源—数据源的路径。</para>
+		/// <para>Where 子句—用于查询镶嵌数据集子集的过滤器。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster Function</para>
-		/// <para>The path to a raster function template file (.rft.xml or .rft.json). The raster function template will be applied to every item in the input mosaic dataset. The Function Editor can be used to create the template. If no RFT is defined, this tool will create the output mosaic based on the Collection Builder Arguments parameter.</para>
+		/// <para>栅格函数模板文件（.rft.xml 或 .rft.json）的路径。栅格函数模板将应用于输入镶嵌数据集中的每个项目。函数编辑器可用于创建模板。如果未定义 RFT，则此工具将基于集合构建器参数参数创建输出镶嵌。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -121,8 +121,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Raster Function Arguments</para>
-		/// <para>The parameters associated with the function chain.</para>
-		/// <para>For example, if the function chain applies the NDVI function, set the visible and infrared IDs. The raster variable name of the RFT should be the Tag field value in the input data source.</para>
+		/// <para>参数与函数链相关联。</para>
+		/// <para>例如，如果函数链应用 NDVI 函数，则设置可见红外 ID。RFT 的栅格变量名应为输入数据源中的 Tag 字段值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -130,8 +130,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Raster Collection Properties</para>
-		/// <para>The output mosaic dataset key properties.</para>
-		/// <para>The key metadata properties that are available is based on the type of sensor that captured the imagery. Some examples of key metadata properties include the following:</para>
+		/// <para>输出镶嵌数据集关键属性。</para>
+		/// <para>可用关键元数据属性基于捕获影像的传感器类型。关键元数据属性的部分示例如下：</para>
 		/// <para>SensorName</para>
 		/// <para>ProductName</para>
 		/// <para>AcquisitionDate</para>
@@ -157,9 +157,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Generate Rasters</para>
-		/// <para>Generate raster dataset files of the mosaic dataset items, after the application of the RFT.</para>
-		/// <para>Unchecked—The processing defined by the raster function template will be appended to the image items from the input data source to produce an image item in the output mosaic dataset. This is the default.</para>
-		/// <para>Checked—Create raster datasets on disk. You will also need to specify the Output Raster Workspace and Format.</para>
+		/// <para>应用 RFT 后，生成镶嵌数据集项目的栅格数据集文件。</para>
+		/// <para>未选中 - 由栅格函数模板定义的处理将追加到输入数据源中的影像项目，以在输出镶嵌数据集中生成影像项目。这是默认设置。</para>
+		/// <para>选中 - 在磁盘上创建栅格数据集。您还需要指定输出栅格工作空间和格式。</para>
 		/// <para><see cref="GenerateRastersEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -170,8 +170,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Raster Workspace</para>
-		/// <para>Defines the output location for the persisted raster datasets, if the Generate Rasters parameter is checked on.</para>
-		/// <para>The naming convention for the output raster files is oid_&lt;oid#&gt;_&lt;Unique_GUID&gt;.</para>
+		/// <para>如果选中生成栅格参数，则需要定义永久栅格数据集的输出位置。</para>
+		/// <para>输出栅格文件的命名约定为 oid_&lt;oid#&gt;_&lt;Unique_GUID&gt;。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -180,11 +180,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Format</para>
-		/// <para>The format type of the raster to be generated.</para>
-		/// <para>Tiff—Tagged Image File Format (TIFF)</para>
-		/// <para>ERDAS IMAGINE—ERDAS IMAGINE file</para>
-		/// <para>CRF—Cloud Raster Format. This is the default.</para>
-		/// <para>MRF—Meta Raster Format</para>
+		/// <para>要生成的栅格的格式类型。</para>
+		/// <para>Tiff—标记图像文件格式 (TIFF)</para>
+		/// <para>ERDAS IMAGINE—ERDAS IMAGINE 文件</para>
+		/// <para>CRF—云栅格格式。这是默认设置。</para>
+		/// <para>MRF—元栅格格式</para>
 		/// <para><see cref="FormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -195,8 +195,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Base Name</para>
-		/// <para>Defines the output base name of the persisted raster datasets, if the Generate Rasters parameter is checked on. Multiple raster dataset outputs will have a number alias appended to their base name.</para>
-		/// <para>The resulting mosaic dataset will reference the CRF directly without maintaining the raster function chain.</para>
+		/// <para>如果选中生成栅格参数，则需要定义永久栅格数据集的输出基本名称。多个栅格数据集输出将在其基本名称后附加数字别名。</para>
+		/// <para>生成的镶嵌数据集将直接引用 CRF，而无需维护栅格函数链。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -220,10 +220,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CollectionBuilderEnum 
 		{
 			/// <summary>
-			/// <para>Simple collection—Allows you to define a data source and a query filter.</para>
+			/// <para>简单集合—可用于定义数据源和查询过滤器。</para>
 			/// </summary>
 			[GPValue("SIMPLE_COLLECTION")]
-			[Description("Simple collection")]
+			[Description("简单集合")]
 			Simple_collection,
 
 		}
@@ -234,14 +234,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum GenerateRastersEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Create raster datasets on disk. You will also need to specify the Output Raster Workspace and Format.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GENERATE_RASTERS")]
 			GENERATE_RASTERS,
 
 			/// <summary>
-			/// <para>Unchecked—The processing defined by the raster function template will be appended to the image items from the input data source to produce an image item in the output mosaic dataset. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_GENERATE_RASTERS")]
@@ -255,28 +255,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum FormatEnum 
 		{
 			/// <summary>
-			/// <para>Tiff—Tagged Image File Format (TIFF)</para>
+			/// <para>Tiff—标记图像文件格式 (TIFF)</para>
 			/// </summary>
 			[GPValue("TIFF")]
 			[Description("Tiff")]
 			Tiff,
 
 			/// <summary>
-			/// <para>ERDAS IMAGINE—ERDAS IMAGINE file</para>
+			/// <para>ERDAS IMAGINE—ERDAS IMAGINE 文件</para>
 			/// </summary>
 			[GPValue("IMAGINE Image")]
 			[Description("ERDAS IMAGINE")]
 			ERDAS_IMAGINE,
 
 			/// <summary>
-			/// <para>CRF—Cloud Raster Format. This is the default.</para>
+			/// <para>CRF—云栅格格式。这是默认设置。</para>
 			/// </summary>
 			[GPValue("CRF")]
 			[Description("CRF")]
 			CRF,
 
 			/// <summary>
-			/// <para>MRF—Meta Raster Format</para>
+			/// <para>MRF—元栅格格式</para>
 			/// </summary>
 			[GPValue("MRF")]
 			[Description("MRF")]

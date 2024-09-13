@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Train ISO Cluster Classifier</para>
-	/// <para>Train ISO Cluster Classifier</para>
-	/// <para>Generates an Esri classifier definition file (.ecd) using the Iso Cluster classification definition.</para>
+	/// <para>训练 ISO 聚类分类器</para>
+	/// <para>使用 Iso 聚类分类定义生成 Esri 分类器定义文件 (.ecd)。</para>
 	/// </summary>
 	public class TrainIsoClusterClassifier : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset to classify.</para>
+		/// <para>待分类的栅格数据集。</para>
 		/// </param>
 		/// <param name="MaxClasses">
 		/// <para>Max Number Of Classes / Clusters</para>
-		/// <para>Maximum number of desired classes to group pixels or segments. This should be set to be greater than the number of classes in your legend.</para>
-		/// <para>It is possible that you will get fewer classes than what you specified for this parameter. If you need more, increase this value and aggregate classes after the training process is complete.</para>
+		/// <para>分组像素或分割影像时所需的最大类数。此参数应设置为大于图例中类的数量。</para>
+		/// <para>您获取的要素类可能会少于此参数中指定的数量。如果需要更多要素类，可在训练过程结束后增加此值并聚集类。</para>
 		/// </param>
 		/// <param name="OutClassifierDefinition">
 		/// <para>Output Classifier Definition File</para>
-		/// <para>The output JSON format file that will contain attribute information, statistics, hyperplane vectors, and other information for the classifier. An .ecd file will be created.</para>
+		/// <para>包含属性信息、统计数据、超平面矢量和分类器所需的其他信息的输出 JSON 格式文件。 将创建 .ecd 文件。</para>
 		/// </param>
 		public TrainIsoClusterClassifier(object InRaster, object MaxClasses, object OutClassifierDefinition)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Train ISO Cluster Classifier</para>
+		/// <para>Tool Display Name : 训练 ISO 聚类分类器</para>
 		/// </summary>
-		public override string DisplayName() => "Train ISO Cluster Classifier";
+		public override string DisplayName() => "训练 ISO 聚类分类器";
 
 		/// <summary>
 		/// <para>Tool Name : TrainIsoClusterClassifier</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset to classify.</para>
+		/// <para>待分类的栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -84,8 +84,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Max Number Of Classes / Clusters</para>
-		/// <para>Maximum number of desired classes to group pixels or segments. This should be set to be greater than the number of classes in your legend.</para>
-		/// <para>It is possible that you will get fewer classes than what you specified for this parameter. If you need more, increase this value and aggregate classes after the training process is complete.</para>
+		/// <para>分组像素或分割影像时所需的最大类数。此参数应设置为大于图例中类的数量。</para>
+		/// <para>您获取的要素类可能会少于此参数中指定的数量。如果需要更多要素类，可在训练过程结束后增加此值并聚集类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output Classifier Definition File</para>
-		/// <para>The output JSON format file that will contain attribute information, statistics, hyperplane vectors, and other information for the classifier. An .ecd file will be created.</para>
+		/// <para>包含属性信息、统计数据、超平面矢量和分类器所需的其他信息的输出 JSON 格式文件。 将创建 .ecd 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Additional Input Raster</para>
-		/// <para>Ancillary raster datasets, such as a multispectral image or a DEM, will be incorporated to generate attributes and other required information for classification. This parameter is optional.</para>
+		/// <para>将对其他栅格数据集（如多光谱影像或 DEM）进行整合，从而为分类生成属性和其他所需信息。 设置此参数属于可选操作。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -110,8 +110,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Maximum Number Of Iterations</para>
-		/// <para>The maximum number of iterations the clustering process will run.</para>
-		/// <para>The recommended range is between 10 and 20 iterations. Increasing this value will linearly increase the processing time.</para>
+		/// <para>聚类过程将运行的最大迭代次数。</para>
+		/// <para>推荐迭代次数范围为 10 到 20 之间。 增加此值将会使处理时间呈线性增加。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -119,8 +119,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Minimum Number of Samples Per Cluster</para>
-		/// <para>The minimum number of pixels or segments in a valid cluster or class.</para>
-		/// <para>The default value of 20 is effective in creating statistically significant classes. You can increase this number for more larger clusters and less slivers; however, it may limit the overall number of classes that are created.</para>
+		/// <para>一个有效聚类或类中的最小像素数或分割数。</para>
+		/// <para>默认值 20 对于创建具有统计显著性的类有效。 您可以增加此数字以获得更大的聚类和更少的狭长面；但是，它可能会限制创建的类的总数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Skip Factor</para>
-		/// <para>Number of pixels to skip for a pixel image input. If a segmented image is an input, specify the number of segments to skip.</para>
+		/// <para>像素影像输入所需跳过的像素数。如果输入是分割影像，则请指定要跳过的分割数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -136,14 +136,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Segment Attributes Used</para>
-		/// <para>Specifies the attributes that will be included in the attribute table associated with the output raster.</para>
-		/// <para>Converged color—The RGB color values will be derived from the input raster on a per-segment basis. This is also known as average chromaticity color.</para>
-		/// <para>Mean digital number—The average digital number (DN) will be derived from the optional pixel image on a per-segment basis.</para>
-		/// <para>Standard deviation—The standard deviation will be derived from the optional pixel image on a per-segment basis.</para>
-		/// <para>Count of pixels—The number of pixels composing the segment, on a per-segment basis.</para>
-		/// <para>Compactness—The degree to which a segment is compact or circular, on a per-segment basis. The values range from 0 to 1, in which 1 is a circle.</para>
-		/// <para>Rectangularity—The degree to which the segment is rectangular, on a per-segment basis. The values range from 0 to 1, in which 1 is a rectangle.</para>
-		/// <para>This parameter is only active if the Segmented key property is set to true on the input raster. If the only input to the tool is a segmented image, the default attributes are Converged color, Count of pixels, Compactness, and Rectangularity. If an Additional Input Raster value is included as an input with a segmented image, Mean digital number and Standard deviation are also available attributes.</para>
+		/// <para>指定要包括在与输出栅格相关联的属性表中的属性。</para>
+		/// <para>聚合颜色—RGB 颜色值将基于每个分割从输入栅格获取。 这也称为平均色度。</para>
+		/// <para>平均数字值—基于每个分割，将从可选像素图像中获取的平均数字值 (DN)。</para>
+		/// <para>标准差—基于每个分割，将从可选像素影像中获取的标准差。</para>
+		/// <para>像素计数—基于每个分割，构成分割的像素数。</para>
+		/// <para>紧密度—基于每个分割，决定分割为紧凑型还是圆形的度数。 值的范围从 0 到 1，1 表示圆形。</para>
+		/// <para>垂直度—基于每个分割，决定分割为矩形的度数。 值的范围从 0 到 1，1 表示矩形。</para>
+		/// <para>仅当在输入栅格上将分割关键属性设置为 true 时，此参数才会激活。 如果该工具中的唯一输入是分割影像，则默认属性为聚合颜色、像素计数、紧密度和垂直度。 如果将附加输入栅格值作为输入与分割影像一起添加进来，则还可以使用平均数字值和标准差属性。</para>
 		/// <para><see cref="UsedAttributesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Maximum Number Of Cluster Merges per Iteration</para>
-		/// <para>The maximum number of cluster merges per iteration. Increasing the number of merges will reduce the number of classes that are created. A lower value will result in more classes.</para>
+		/// <para>每个迭代的最大聚类合并数。 增加合并的数量将减少所创建的类。 较小值将生成较多的类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Maximum Merge Distance</para>
-		/// <para>The maximum distance between cluster centers in feature space. Increasing the distance will allow more clusters to merge, resulting in fewer classes. A lower value will result in more classes. Values from 0 to 5 typically return the best results.</para>
+		/// <para>要素空间中聚类中心间的最大距离。 增加距离将允许更多的聚类合并，从而生成较少的类。 较小值将生成较多的类。 使用值 0 到 5 通常可获得最佳结果。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -185,45 +185,45 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum UsedAttributesEnum 
 		{
 			/// <summary>
-			/// <para>Converged color—The RGB color values will be derived from the input raster on a per-segment basis. This is also known as average chromaticity color.</para>
+			/// <para>聚合颜色—RGB 颜色值将基于每个分割从输入栅格获取。 这也称为平均色度。</para>
 			/// </summary>
 			[GPValue("COLOR")]
-			[Description("Converged color")]
+			[Description("聚合颜色")]
 			Converged_color,
 
 			/// <summary>
-			/// <para>Mean digital number—The average digital number (DN) will be derived from the optional pixel image on a per-segment basis.</para>
+			/// <para>平均数字值—基于每个分割，将从可选像素图像中获取的平均数字值 (DN)。</para>
 			/// </summary>
 			[GPValue("MEAN")]
-			[Description("Mean digital number")]
+			[Description("平均数字值")]
 			Mean_digital_number,
 
 			/// <summary>
-			/// <para>Standard deviation—The standard deviation will be derived from the optional pixel image on a per-segment basis.</para>
+			/// <para>标准差—基于每个分割，将从可选像素影像中获取的标准差。</para>
 			/// </summary>
 			[GPValue("STD")]
-			[Description("Standard deviation")]
+			[Description("标准差")]
 			Standard_deviation,
 
 			/// <summary>
-			/// <para>Count of pixels—The number of pixels composing the segment, on a per-segment basis.</para>
+			/// <para>像素计数—基于每个分割，构成分割的像素数。</para>
 			/// </summary>
 			[GPValue("COUNT")]
-			[Description("Count of pixels")]
+			[Description("像素计数")]
 			Count_of_pixels,
 
 			/// <summary>
-			/// <para>Compactness—The degree to which a segment is compact or circular, on a per-segment basis. The values range from 0 to 1, in which 1 is a circle.</para>
+			/// <para>紧密度—基于每个分割，决定分割为紧凑型还是圆形的度数。 值的范围从 0 到 1，1 表示圆形。</para>
 			/// </summary>
 			[GPValue("COMPACTNESS")]
-			[Description("Compactness")]
+			[Description("紧密度")]
 			Compactness,
 
 			/// <summary>
-			/// <para>Rectangularity—The degree to which the segment is rectangular, on a per-segment basis. The values range from 0 to 1, in which 1 is a rectangle.</para>
+			/// <para>垂直度—基于每个分割，决定分割为矩形的度数。 值的范围从 0 到 1，1 表示矩形。</para>
 			/// </summary>
 			[GPValue("RECTANGULARITY")]
-			[Description("Rectangularity")]
+			[Description("垂直度")]
 			Rectangularity,
 
 		}

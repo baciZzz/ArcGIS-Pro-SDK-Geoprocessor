@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Describe Dataset</para>
-	/// <para>Describe Dataset</para>
-	/// <para>Summarizes features into calculated field statistics,  sample features, and extent boundaries.</para>
+	/// <para>描述数据集</para>
+	/// <para>将要素汇总到所计算的字段统计信息、样本要素和范围边界中。</para>
 	/// </summary>
 	public class DescribeDataset : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>The point, line, polygon, or tabular features to be described.</para>
+		/// <para>要描述的点、线、面或表格要素。</para>
 		/// </param>
 		/// <param name="Output">
 		/// <para>Output Table</para>
-		/// <para>A new table with the summary information.</para>
+		/// <para>包含汇总信息的新表。</para>
 		/// </param>
 		public DescribeDataset(object InputLayer, object Output)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Describe Dataset</para>
+		/// <para>Tool Display Name : 描述数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Describe Dataset";
+		public override string DisplayName() => "描述数据集";
 
 		/// <summary>
 		/// <para>Tool Name : DescribeDataset</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The point, line, polygon, or tabular features to be described.</para>
+		/// <para>要描述的点、线、面或表格要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>A new table with the summary information.</para>
+		/// <para>包含汇总信息的新表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Number of Sample Features</para>
-		/// <para>The number of features that will be included in the output sample layer. No sample is returned if you select 0 features or don't provide a number. By default, no sample layer is returned.</para>
+		/// <para>将包含在输出样本图层中的要素数量。如果选择 0 个要素或不提供数量，则不会返回任何样本。默认情况下，不返回任何样本图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Sample Layer</para>
-		/// <para>A new feature class with a sample of the input data.</para>
+		/// <para>包含输入数据样本的新要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Extent Layer</para>
-		/// <para>A new feature class with the spatial and temporal extent of the input data.</para>
+		/// <para>包含输入数据的空间和时态范围的新要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Raster to Point</para>
-	/// <para>Raster to Point</para>
-	/// <para>Converts a raster dataset to point features.</para>
+	/// <para>栅格转点</para>
+	/// <para>将栅格数据集转换为点要素。</para>
 	/// </summary>
 	public class RasterToPoint : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster dataset.</para>
-		/// <para>The raster can be integer or floating-point type.</para>
+		/// <para>输入栅格数据集。</para>
+		/// <para>栅格数据可为整型或浮点型。</para>
 		/// </param>
 		/// <param name="OutPointFeatures">
 		/// <para>Output point features</para>
-		/// <para>The output feature class that will contain the converted points.</para>
+		/// <para>包含已转换点的输出要素类。</para>
 		/// </param>
 		public RasterToPoint(object InRaster, object OutPointFeatures)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Raster to Point</para>
+		/// <para>Tool Display Name : 栅格转点</para>
 		/// </summary>
-		public override string DisplayName() => "Raster to Point";
+		public override string DisplayName() => "栅格转点";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToPoint</para>
@@ -71,8 +71,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster dataset.</para>
-		/// <para>The raster can be integer or floating-point type.</para>
+		/// <para>输入栅格数据集。</para>
+		/// <para>栅格数据可为整型或浮点型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output point features</para>
-		/// <para>The output feature class that will contain the converted points.</para>
+		/// <para>包含已转换点的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -92,8 +92,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Field</para>
-		/// <para>The field to assign values from the cells in the input raster to the points in the output dataset.</para>
-		/// <para>It can be an integer, floating point, or string field.</para>
+		/// <para>此字段用于将输入栅格中像元值指定给输出数据集中的点。</para>
+		/// <para>栅格字段可为整型、浮点型或字符串型字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

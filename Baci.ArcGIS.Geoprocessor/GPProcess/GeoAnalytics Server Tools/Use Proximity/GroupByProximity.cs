@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Group By Proximity</para>
-	/// <para>Group By Proximity</para>
-	/// <para>Groups features that are within spatial or spatiotemporal proximity to each other.</para>
+	/// <para>按邻近性分组</para>
+	/// <para>可对空间或时空上彼此接近的要素进行分组。</para>
 	/// </summary>
 	public class GroupByProximity : AbstractGPProcess
 	{
@@ -21,20 +21,20 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>The point, line, or polygon features that will be grouped.</para>
+		/// <para>将对点、线或面要素进行分组。</para>
 		/// </param>
 		/// <param name="OutputName">
 		/// <para>Output Name</para>
-		/// <para>The name of the output feature service.</para>
-		/// <para>The name of the output feature service with grouped features represented by a new field named group_id</para>
+		/// <para>输出要素服务的名称。</para>
+		/// <para>具有分组要素的输出要素服务的名称将由新命名的字段表示 group_id</para>
 		/// </param>
 		/// <param name="SpatialRelationship">
 		/// <para>Spatial Relationship</para>
-		/// <para>Specifies the type of relationship that features will be grouped by.</para>
-		/// <para>Intersects—Features will be grouped when features or portions of features overlap. This is the default.</para>
-		/// <para>Touches—Features will be grouped with another feature if they have an intersecting vertex, but the features do not overlap.</para>
-		/// <para>Planar Near—Features will be grouped when a vertex or edge is within a given planar distance of another feature.</para>
-		/// <para>Geodesic Near—Features will be grouped when a vertex or edge is within a given geodesic distance of another feature.</para>
+		/// <para>指定要素分组所依据的关系类型。</para>
+		/// <para>相交—当某些要素或其中的部分重叠时，则将对这些要素进行分组。 这是默认设置。</para>
+		/// <para>接触—如果要素与另一个要素具有相交顶点，但两者不重叠，则将对要素进行分组。</para>
+		/// <para>平面邻近—如果顶点或边在另一个要素的给定平面距离内，则将对要素进行分组。</para>
+		/// <para>测地线邻近—如果顶点或边在另一个要素的给定测地线距离内，则将对要素进行分组。</para>
 		/// <para><see cref="SpatialRelationshipEnum"/></para>
 		/// </param>
 		public GroupByProximity(object InputLayer, object OutputName, object SpatialRelationship)
@@ -45,9 +45,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Group By Proximity</para>
+		/// <para>Tool Display Name : 按邻近性分组</para>
 		/// </summary>
-		public override string DisplayName() => "Group By Proximity";
+		public override string DisplayName() => "按邻近性分组";
 
 		/// <summary>
 		/// <para>Tool Name : GroupByProximity</para>
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The point, line, or polygon features that will be grouped.</para>
+		/// <para>将对点、线或面要素进行分组。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -92,8 +92,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output feature service.</para>
-		/// <para>The name of the output feature service with grouped features represented by a new field named group_id</para>
+		/// <para>输出要素服务的名称。</para>
+		/// <para>具有分组要素的输出要素服务的名称将由新命名的字段表示 group_id</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -101,11 +101,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Spatial Relationship</para>
-		/// <para>Specifies the type of relationship that features will be grouped by.</para>
-		/// <para>Intersects—Features will be grouped when features or portions of features overlap. This is the default.</para>
-		/// <para>Touches—Features will be grouped with another feature if they have an intersecting vertex, but the features do not overlap.</para>
-		/// <para>Planar Near—Features will be grouped when a vertex or edge is within a given planar distance of another feature.</para>
-		/// <para>Geodesic Near—Features will be grouped when a vertex or edge is within a given geodesic distance of another feature.</para>
+		/// <para>指定要素分组所依据的关系类型。</para>
+		/// <para>相交—当某些要素或其中的部分重叠时，则将对这些要素进行分组。 这是默认设置。</para>
+		/// <para>接触—如果要素与另一个要素具有相交顶点，但两者不重叠，则将对要素进行分组。</para>
+		/// <para>平面邻近—如果顶点或边在另一个要素的给定平面距离内，则将对要素进行分组。</para>
+		/// <para>测地线邻近—如果顶点或边在另一个要素的给定测地线距离内，则将对要素进行分组。</para>
 		/// <para><see cref="SpatialRelationshipEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Spatial Near Distance</para>
-		/// <para>The distance that will be used to group near features. This parameter is only used when the Spatial Relationship parameter value is Planar Near or Geodesic Near.</para>
+		/// <para>该距离将用于对邻近要素进行分组。 仅当空间关系参数值为邻近平面或邻近测地线时，使用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -124,10 +124,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Temporal Relationship</para>
-		/// <para>Specifies the time criteria that will be used to match features. When the parameter is set to Intersects or Near, features are grouped when both the spatial and time criteria are met. Time must be enabled on the input to support this option.</para>
-		/// <para>Intersects—Features will be grouped when any part of a feature&apos;s time overlaps another feature. This is the default.</para>
-		/// <para>Near—Features will be grouped when the feature&apos;s time is within a range of time of another feature.</para>
-		/// <para>None—Time will not be used to group features.</para>
+		/// <para>指定将用于匹配要素的时间条件。 当将该参数设置为相交或邻近且当空间和时间条件都满足时，要素将被分组。 要支持此功能必须在输入上启用时间。</para>
+		/// <para>相交—当要素时间的任何部分与另一要素重叠时，要素将被分组。 这是默认设置。</para>
+		/// <para>邻近—如果要素的时间在另一要素的时间范围内，则要素将被分组。</para>
+		/// <para>无—时间将不会用于对要素进行分组。</para>
 		/// <para><see cref="TemporalRelationshipEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Temporal Near Distance</para>
-		/// <para>The temporal distance that will be used to group near features. This parameter is only used when the Temporal Relationship parameter value is Near.</para>
+		/// <para>时间距离将用于对邻近要素进行分组。 仅当空间关系参数值为邻近时，使用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -146,9 +146,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Data Store</para>
-		/// <para>Specifies the ArcGIS Data Store where the output will be saved. The default is Spatiotemporal big data store. All results stored in a spatiotemporal big data store will be stored in WGS84. Results stored in a relational data store will maintain their coordinate system.</para>
-		/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
-		/// <para>Relational data store—Output will be stored in a relational data store.</para>
+		/// <para>指定将用于保存输出的 ArcGIS Data Store。 默认设置为时空大数据存储。 在时空大数据存储中存储的所有结果都将存储在 WGS84 中。 在关系数据存储中存储的结果都将保持各自的坐标系。</para>
+		/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
+		/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 		/// <para><see cref="DataStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -166,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Attribute Relationship</para>
-		/// <para>An ArcGIS Arcade expression that will be used to group features by. For example, $a["Amount"] == $b["Amount"] groups features when the Amount field has the same value.</para>
+		/// <para>此 ArcGIS Arcade 表达式将用于对要素进行分组。 例如，当 Amount 字段具有相同的值时，$a["Amount"] == $b["Amount"] 将对要素进行分组。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -189,31 +189,31 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum SpatialRelationshipEnum 
 		{
 			/// <summary>
-			/// <para>Planar Near—Features will be grouped when a vertex or edge is within a given planar distance of another feature.</para>
+			/// <para>平面邻近—如果顶点或边在另一个要素的给定平面距离内，则将对要素进行分组。</para>
 			/// </summary>
 			[GPValue("NEAR_PLANAR")]
-			[Description("Planar Near")]
+			[Description("平面邻近")]
 			Planar_Near,
 
 			/// <summary>
-			/// <para>Geodesic Near—Features will be grouped when a vertex or edge is within a given geodesic distance of another feature.</para>
+			/// <para>测地线邻近—如果顶点或边在另一个要素的给定测地线距离内，则将对要素进行分组。</para>
 			/// </summary>
 			[GPValue("NEAR_GEODESIC")]
-			[Description("Geodesic Near")]
+			[Description("测地线邻近")]
 			Geodesic_Near,
 
 			/// <summary>
-			/// <para>Touches—Features will be grouped with another feature if they have an intersecting vertex, but the features do not overlap.</para>
+			/// <para>接触—如果要素与另一个要素具有相交顶点，但两者不重叠，则将对要素进行分组。</para>
 			/// </summary>
 			[GPValue("TOUCHES")]
-			[Description("Touches")]
+			[Description("接触")]
 			Touches,
 
 			/// <summary>
-			/// <para>Intersects—Features will be grouped when features or portions of features overlap. This is the default.</para>
+			/// <para>相交—当某些要素或其中的部分重叠时，则将对这些要素进行分组。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("INTERSECTS")]
-			[Description("Intersects")]
+			[Description("相交")]
 			Intersects,
 
 		}
@@ -224,24 +224,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum TemporalRelationshipEnum 
 		{
 			/// <summary>
-			/// <para>Intersects—Features will be grouped when any part of a feature&apos;s time overlaps another feature. This is the default.</para>
+			/// <para>相交—当要素时间的任何部分与另一要素重叠时，要素将被分组。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("INTERSECTS")]
-			[Description("Intersects")]
+			[Description("相交")]
 			Intersects,
 
 			/// <summary>
-			/// <para>Near—Features will be grouped when the feature&apos;s time is within a range of time of another feature.</para>
+			/// <para>邻近—如果要素的时间在另一要素的时间范围内，则要素将被分组。</para>
 			/// </summary>
 			[GPValue("NEAR")]
-			[Description("Near")]
+			[Description("邻近")]
 			Near,
 
 			/// <summary>
-			/// <para>None—Time will not be used to group features.</para>
+			/// <para>无—时间将不会用于对要素进行分组。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 		}
@@ -252,17 +252,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DataStoreEnum 
 		{
 			/// <summary>
-			/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
+			/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("SPATIOTEMPORAL_DATA_STORE")]
-			[Description("Spatiotemporal big data store")]
+			[Description("时空大数据存储")]
 			Spatiotemporal_big_data_store,
 
 			/// <summary>
-			/// <para>Relational data store—Output will be stored in a relational data store.</para>
+			/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 			/// </summary>
 			[GPValue("RELATIONAL_DATA_STORE")]
-			[Description("Relational data store")]
+			[Description("关系数据存储")]
 			Relational_data_store,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Update Annotation Reference Scale</para>
-	/// <para>Update Annotation Reference Scale</para>
-	/// <para>Updates the reference scale of an existing annotation or dimension feature class.</para>
+	/// <para>更新注记参考比例</para>
+	/// <para>用于更新现有注记要素类或尺寸注记要素类的参考比例。</para>
 	/// </summary>
 	public class UpdateAnnotationReferenceScale : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InAnnoFeatures">
 		/// <para>Input Annotation Features</para>
-		/// <para>The input annotation or dimension features.</para>
+		/// <para>输入注记或尺寸注记要素。</para>
 		/// </param>
 		/// <param name="ReferenceScale">
 		/// <para>Reference Scale</para>
-		/// <para>The feature class reference scale to be updated.</para>
+		/// <para>要更新的要素类参考比例。</para>
 		/// </param>
 		public UpdateAnnotationReferenceScale(object InAnnoFeatures, object ReferenceScale)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Update Annotation Reference Scale</para>
+		/// <para>Tool Display Name : 更新注记参考比例</para>
 		/// </summary>
-		public override string DisplayName() => "Update Annotation Reference Scale";
+		public override string DisplayName() => "更新注记参考比例";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateAnnotationReferenceScale</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Annotation Features</para>
-		/// <para>The input annotation or dimension features.</para>
+		/// <para>输入注记或尺寸注记要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Reference Scale</para>
-		/// <para>The feature class reference scale to be updated.</para>
+		/// <para>要更新的要素类参考比例。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]

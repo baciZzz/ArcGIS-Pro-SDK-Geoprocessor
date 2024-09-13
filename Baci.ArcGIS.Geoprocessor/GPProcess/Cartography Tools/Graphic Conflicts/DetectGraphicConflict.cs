@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Detect Graphic Conflict</para>
-	/// <para>Detect Graphic Conflict</para>
-	/// <para>Creates polygons where two or more symbolized features graphically conflict.</para>
+	/// <para>检测图形冲突</para>
+	/// <para>在两个或多个符号化要素发生图形冲突的位置处创建面。</para>
 	/// </summary>
 	public class DetectGraphicConflict : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Layer</para>
-		/// <para>The input feature layer containing symbolized features. CAD, coverage, or VPF annotation, and dimensions, charts, dot-density or proportional symbols, raster layers, network datasets, and 3D symbols are not acceptable inputs.</para>
+		/// <para>包含符号化要素的输入要素图层。 CAD、coverage 或 VPF 注记，以及尺寸、图表、点密度或比例符号、栅格图层、网络数据集和 3D 符号不是可接受的输入。</para>
 		/// </param>
 		/// <param name="ConflictFeatures">
 		/// <para>Conflict Layer</para>
-		/// <para>The feature layer containing symbolized features potentially in conflict with symbolized features in the input layer.</para>
+		/// <para>包含可能与输入图层中符号化要素产生冲突的符号化要素的要素图层。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class to be created to store conflict polygons. It cannot be one of the feature classes associated with the input layers.</para>
+		/// <para>为存储冲突面而创建的输出要素类。 它不能是一个与输入图层关联的要素类。</para>
 		/// </param>
 		public DetectGraphicConflict(object InFeatures, object ConflictFeatures, object OutFeatureClass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Detect Graphic Conflict</para>
+		/// <para>Tool Display Name : 检测图形冲突</para>
 		/// </summary>
-		public override string DisplayName() => "Detect Graphic Conflict";
+		public override string DisplayName() => "检测图形冲突";
 
 		/// <summary>
 		/// <para>Tool Name : DetectGraphicConflict</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The input feature layer containing symbolized features. CAD, coverage, or VPF annotation, and dimensions, charts, dot-density or proportional symbols, raster layers, network datasets, and 3D symbols are not acceptable inputs.</para>
+		/// <para>包含符号化要素的输入要素图层。 CAD、coverage 或 VPF 注记，以及尺寸、图表、点密度或比例符号、栅格图层、网络数据集和 3D 符号不是可接受的输入。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Conflict Layer</para>
-		/// <para>The feature layer containing symbolized features potentially in conflict with symbolized features in the input layer.</para>
+		/// <para>包含可能与输入图层中符号化要素产生冲突的符号化要素的要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class to be created to store conflict polygons. It cannot be one of the feature classes associated with the input layers.</para>
+		/// <para>为存储冲突面而创建的输出要素类。 它不能是一个与输入图层关联的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Conflict Distance</para>
-		/// <para>The area where input and conflict symbology is closer than a certain distance. Temporary buffers one-half the size of the conflict distance value are created around symbols in both the input and conflict layers. Conflict polygons will be generated where these buffers overlap. Conflict distance is measured in page units (points, inches, millimeters, or centimeters). If you enter a conflict distance in map units, it will be converted to page units using the reference scale. The default conflict distance is 0, where no buffers are created and only symbols that physically overlap one another are detected as conflicts.</para>
+		/// <para>输入和冲突符号系统比指定距离近的区域。 将在输入和冲突图层中的符号周围创建一个大小为冲突距离值一半的临时缓冲区。 将在这些缓冲区叠置的位置处生成冲突面。 冲突距离以页面单位（磅、英寸、毫米或厘米）测量。 如果以地图单位输入冲突距离，则会使用参考比例将其转换为页面单位。 默认冲突距离为 0，此时不创建缓冲区，而且只会将物理上互相叠置的符号检测为冲突。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Line Connection Allowance</para>
-		/// <para>The radius of a circle, centered where lines join, within which graphic overlaps won't be detected. This parameter is only considered when the input layer and the conflict layer are identical. Zero allowance will detect a conflict at each line join (if end caps are overlapping). Line connection allowance is calculated in page units (points, inches, millimeters, or centimeters). If you enter an allowance in map units, it will be converted to page units using the reference scale. The value cannot be negative; the default value is 1 point.</para>
+		/// <para>中心位于线连接位置的圆的半径，在此圆内不会检测到图形叠置。 仅在输入图层和冲突图层相同时，才考虑此参数。 零容许值将检测各线连接处的冲突（如果端头叠置）。 以页面单位（磅、英寸、毫米或厘米）计算线连接容许值。 如果以地图单位输入容许值，则会使用参考比例将其转换为页面单位。 该值不能为负；默认值是 1 磅。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]

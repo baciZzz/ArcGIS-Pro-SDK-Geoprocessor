@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Raster to Float</para>
-	/// <para>Raster to Float</para>
-	/// <para>Converts a raster dataset to a file of binary floating-point values representing raster data.</para>
+	/// <para>栅格转浮点型</para>
+	/// <para>将栅格数据集转换为可表示栅格数据的二进制浮点值文件。</para>
 	/// </summary>
 	public class RasterToFloat : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster dataset.</para>
-		/// <para>The raster can be integer or floating-point type.</para>
+		/// <para>输入栅格数据集。</para>
+		/// <para>栅格数据可为整型或浮点型。</para>
 		/// </param>
 		/// <param name="OutFloatFile">
 		/// <para>Output floating point raster file</para>
-		/// <para>The output floating-point raster file.</para>
-		/// <para>The file name must have a .flt extension.</para>
+		/// <para>输出浮点栅格文件。</para>
+		/// <para>文件名的扩展名必须是 .flt。</para>
 		/// </param>
 		public RasterToFloat(object InRaster, object OutFloatFile)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Raster to Float</para>
+		/// <para>Tool Display Name : 栅格转浮点型</para>
 		/// </summary>
-		public override string DisplayName() => "Raster to Float";
+		public override string DisplayName() => "栅格转浮点型";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToFloat</para>
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster dataset.</para>
-		/// <para>The raster can be integer or floating-point type.</para>
+		/// <para>输入栅格数据集。</para>
+		/// <para>栅格数据可为整型或浮点型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output floating point raster file</para>
-		/// <para>The output floating-point raster file.</para>
-		/// <para>The file name must have a .flt extension.</para>
+		/// <para>输出浮点栅格文件。</para>
+		/// <para>文件名的扩展名必须是 .flt。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

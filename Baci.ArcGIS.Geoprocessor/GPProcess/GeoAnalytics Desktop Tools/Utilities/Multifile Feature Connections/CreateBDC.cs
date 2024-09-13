@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Create Multifile Feature Connection</para>
-	/// <para>Create Multifile Feature Connection</para>
-	/// <para>Creates a multifile feature connection file (.mfc) and item. Datasets registered in a multifile feature connection (MFC) can be used as input to GeoAnalytics Desktop tools and other geoprocessing tools.</para>
+	/// <para>创建多文件要素连接</para>
+	/// <para>用于创建多文件要素连接文件 (.mfc) 和项目。 在多文件要素连接 (MFC) 中注册的数据集可用作 GeoAnalytics Desktop 工具和其他地理处理工具的输入。</para>
 	/// </summary>
 	public class CreateBDC : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="BdcLocation">
 		/// <para>Multifile Feature Connection Output Location</para>
-		/// <para>The folder where the .mfc file will be created.</para>
+		/// <para>将在其中创建 .mfc 文件的文件夹。</para>
 		/// </param>
 		/// <param name="BdcName">
 		/// <para>Output Multifile Feature Connection Name</para>
-		/// <para>The name of the .mfc file to be created.</para>
+		/// <para>要创建的 .mfc 文件的名称。</para>
 		/// </param>
 		/// <param name="ConnectionType">
 		/// <para>Connection Type</para>
-		/// <para>Specifies the type of connection to be created.</para>
-		/// <para>Folder—Connect to a file system location. This is the default.</para>
+		/// <para>指定要创建的连接类型。</para>
+		/// <para>文件夹—连接到文件系统位置。 这是默认设置。</para>
 		/// <para><see cref="ConnectionTypeEnum"/></para>
 		/// </param>
 		public CreateBDC(object BdcLocation, object BdcName, object ConnectionType)
@@ -41,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Multifile Feature Connection</para>
+		/// <para>Tool Display Name : 创建多文件要素连接</para>
 		/// </summary>
-		public override string DisplayName() => "Create Multifile Feature Connection";
+		public override string DisplayName() => "创建多文件要素连接";
 
 		/// <summary>
 		/// <para>Tool Name : CreateBDC</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Multifile Feature Connection Output Location</para>
-		/// <para>The folder where the .mfc file will be created.</para>
+		/// <para>将在其中创建 .mfc 文件的文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Multifile Feature Connection Name</para>
-		/// <para>The name of the .mfc file to be created.</para>
+		/// <para>要创建的 .mfc 文件的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -93,8 +93,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Connection Type</para>
-		/// <para>Specifies the type of connection to be created.</para>
-		/// <para>Folder—Connect to a file system location. This is the default.</para>
+		/// <para>指定要创建的连接类型。</para>
+		/// <para>文件夹—连接到文件系统位置。 这是默认设置。</para>
 		/// <para><see cref="ConnectionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Data Source Folder</para>
-		/// <para>The folder containing the datasets to be registered with the MFC.</para>
+		/// <para>包含要在 MFC 中注册的数据集的文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
@@ -112,9 +112,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Visible Geometry Fields</para>
-		/// <para>Specifies whether the fields used to specify the geometry will be visible as fields when the MFC file is used as input to other geoprocessing tools. When the geometry fields are not visible, geometry is still applied to the dataset. The geometry visibility setting can be modified in the MFC.</para>
-		/// <para>Checked—Geometry fields will be included as fields for analysis. This is the default.</para>
-		/// <para>Unchecked—Geometry fields will not be included as fields for analysis.</para>
+		/// <para>指定当 MFC 文件用作其他地理处理工具的输入时，用于指定几何的字段是否作为字段可见。 当几何字段不可见时，几何仍会应用于数据集。 可以在 MFC 中修改几何可见性设置。</para>
+		/// <para>选中 - 几何字段将包含在待分析字段范围内。 这是默认设置。</para>
+		/// <para>未选中 - 几何字段将不在待分析字段范围内。</para>
 		/// <para><see cref="VisibleGeometryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -124,9 +124,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Visible Time Fields</para>
-		/// <para>Specifies whether the fields used to specify the time will be visible as fields when the MFC file is used as input to other geoprocessing tools. When the time fields are not visible, time is still applied to the dataset. The time visibility setting can be modified in the MFC.</para>
-		/// <para>Checked—Time fields will be included as fields for analysis. This is the default.</para>
-		/// <para>Unchecked—Time fields will not be included as fields for analysis.</para>
+		/// <para>指定当 MFC 文件用作其他地理处理工具的输入时，用于指定时间的字段是否作为字段可见。 当时间字段不可见时，时间仍会应用于数据集。 可以在 MFC 中修改时间可见性设置。</para>
+		/// <para>选中 - 时间字段将包含在待分析字段范围内。 这是默认设置。</para>
+		/// <para>未选中 - 时间字段将不在待分析字段范围内。</para>
 		/// <para><see cref="VisibleTimeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -151,10 +151,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum ConnectionTypeEnum 
 		{
 			/// <summary>
-			/// <para>Folder—Connect to a file system location. This is the default.</para>
+			/// <para>文件夹—连接到文件系统位置。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("FOLDER")]
-			[Description("Folder")]
+			[Description("文件夹")]
 			Folder,
 
 		}
@@ -165,14 +165,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum VisibleGeometryEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Geometry fields will be included as fields for analysis. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GEOMETRY_VISIBLE")]
 			GEOMETRY_VISIBLE,
 
 			/// <summary>
-			/// <para>Unchecked—Geometry fields will not be included as fields for analysis.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("GEOMETRY_NOT_VISIBLE")]
@@ -186,14 +186,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum VisibleTimeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Time fields will be included as fields for analysis. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TIME_VISIBLE")]
 			TIME_VISIBLE,
 
 			/// <summary>
-			/// <para>Unchecked—Time fields will not be included as fields for analysis.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("TIME_NOT_VISIBLE")]

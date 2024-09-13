@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Create Template From Network Dataset</para>
-	/// <para>Create Template From Network Dataset</para>
-	/// <para>Creates a file containing the schema of an existing network dataset. This template file can then be used to create a new network dataset with the same schema.</para>
+	/// <para>通过网络数据集创建模板</para>
+	/// <para>创建包含现有网络数据集方案的文件。然后即可使用该模板文件来创建具有相同方案的新网络数据集。</para>
 	/// </summary>
 	public class CreateTemplateFromNetworkDataset : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="NetworkDataset">
 		/// <para>Network Dataset</para>
-		/// <para>The network dataset whose schema will be written to the output template file.</para>
+		/// <para>该网络数据集的方案将被写入输出模板文件。</para>
 		/// </param>
 		/// <param name="OutputNetworkDatasetTemplate">
 		/// <para>Output Network Dataset Template</para>
-		/// <para>The output file (.xml) that will contain the schema of the input network dataset.</para>
+		/// <para>输出文件 (.xml) 中将包含输入网络数据集的方案。</para>
 		/// </param>
 		public CreateTemplateFromNetworkDataset(object NetworkDataset, object OutputNetworkDatasetTemplate)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Template From Network Dataset</para>
+		/// <para>Tool Display Name : 通过网络数据集创建模板</para>
 		/// </summary>
-		public override string DisplayName() => "Create Template From Network Dataset";
+		public override string DisplayName() => "通过网络数据集创建模板";
 
 		/// <summary>
 		/// <para>Tool Name : CreateTemplateFromNetworkDataset</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Network Dataset</para>
-		/// <para>The network dataset whose schema will be written to the output template file.</para>
+		/// <para>该网络数据集的方案将被写入输出模板文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPNetworkDatasetLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Network Dataset Template</para>
-		/// <para>The output file (.xml) that will contain the schema of the input network dataset.</para>
+		/// <para>输出文件 (.xml) 中将包含输入网络数据集的方案。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

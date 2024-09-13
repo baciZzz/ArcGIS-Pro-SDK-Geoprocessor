@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Generate Routes</para>
-	/// <para>Generate Routes</para>
-	/// <para>Re-creates shapes and applies calibration changes for route features in an LRS Network.</para>
+	/// <para>生成路径</para>
+	/// <para>为 LRS 网络中的路径要素重新创建形状并应用校准更改。</para>
 	/// </summary>
 	public class GenerateRoutes : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InRouteFeatures">
 		/// <para>Input Route Features</para>
-		/// <para>The LRS Network for which route shapes will be regenerated and calibration changes will be applied.</para>
+		/// <para>将为其重新生成路径形状并应用校准更改的 LRS 网络。</para>
 		/// </param>
 		public GenerateRoutes(object InRouteFeatures)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Routes</para>
+		/// <para>Tool Display Name : 生成路径</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Routes";
+		public override string DisplayName() => "生成路径";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateRoutes</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Input Route Features</para>
-		/// <para>The LRS Network for which route shapes will be regenerated and calibration changes will be applied.</para>
+		/// <para>将为其重新生成路径形状并应用校准更改的 LRS 网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -75,9 +75,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Record calibration changes for event location updates</para>
-		/// <para>Specifies whether event behaviors will be applied.</para>
-		/// <para>Checked—Any calibration points created, modified, or deleted outside the Location Referencing tools will be applied to the routes in the network, and event behaviors will be applied the next time Apply Event Behaviors is run.</para>
-		/// <para>Unchecked—Calibration changes will be applied to the routes in the LRS Network, but no event behaviors will be applied. This is the default.</para>
+		/// <para>指定是否会应用事件行为。</para>
+		/// <para>选中 - 在 Location Referencing 工具之外创建、修改或删除的任何校准点都将应用于网络中的路径，并且事件行为将在下次运行应用事件行为时应用。</para>
+		/// <para>未选中 - 校准更改将应用于 LRS 网络中的路径，但不会应用任何事件行为。 这是默认设置。</para>
 		/// <para><see cref="RecordCalibrationChangesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -123,14 +123,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum RecordCalibrationChangesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Any calibration points created, modified, or deleted outside the Location Referencing tools will be applied to the routes in the network, and event behaviors will be applied the next time Apply Event Behaviors is run.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RECORD_CALIBRATION_CHANGES")]
 			RECORD_CALIBRATION_CHANGES,
 
 			/// <summary>
-			/// <para>Unchecked—Calibration changes will be applied to the routes in the LRS Network, but no event behaviors will be applied. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_RECORD_CALIBRATION_CHANGES")]

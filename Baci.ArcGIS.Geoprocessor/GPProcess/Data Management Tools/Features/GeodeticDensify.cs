@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Geodetic Densify</para>
-	/// <para>Geodetic Densify</para>
-	/// <para>Creates new features by replacing input feature's segments with densified approximations of geodesic segments. Four type of geodesic segments can be constructed: Geodesic, Great Elliptic, Loxodrome, and Normal Section.</para>
+	/// <para>测地线增密</para>
+	/// <para>通过将输入要素线段替换为近似的增密测地线线段来创建新要素。可以构建四种类型的测地线线段：测地线、大椭圆、等角航线以及法向截面。</para>
 	/// </summary>
 	public class GeodeticDensify : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input line or polygon features.</para>
+		/// <para>输入线或面要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class containing the densified geodesic features.</para>
+		/// <para>包含增密测地线要素的输出要素类。</para>
 		/// </param>
 		/// <param name="GeodeticType">
 		/// <para>Geodetic Type</para>
-		/// <para>Specifies the type of geodetic segment to construct. Geodetic calculations are performed on the ellipsoid associated with the input data&apos;s coordinate system.</para>
-		/// <para>Geodesic—The shortest distance between two points on the surface of the spheroid (ellipsoid).</para>
-		/// <para>Loxodrome—The line of equal azimuth (from a pole) connecting the two points.</para>
-		/// <para>Great elliptic— The line made by the intersection of a plane that contains the center of the spheroid and the two points.</para>
-		/// <para>Normal section—The line made by the intersection of a plane that contains the center of the spheroid and is perpendicular to the surface at the first point.</para>
+		/// <para>指定要构造的测地线线段的类型。在与输入数据坐标系相关的椭圆体上执行测地线计算。</para>
+		/// <para>测地线—椭球体（椭圆体）上两点间的最短距离。</para>
+		/// <para>等角航线—连接两点的相等方位角的线（从一个极点）。</para>
+		/// <para>大椭圆— 由平面相交得出的线包含椭球体中心以及这两个点。</para>
+		/// <para>法向截面—由平面相交得出的线包含椭球体中心且在第一个点处与表面垂直。</para>
 		/// <para><see cref="GeodeticTypeEnum"/></para>
 		/// </param>
 		public GeodeticDensify(object InFeatures, object OutFeatureClass, object GeodeticType)
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Geodetic Densify</para>
+		/// <para>Tool Display Name : 测地线增密</para>
 		/// </summary>
-		public override string DisplayName() => "Geodetic Densify";
+		public override string DisplayName() => "测地线增密";
 
 		/// <summary>
 		/// <para>Tool Name : GeodeticDensify</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input line or polygon features.</para>
+		/// <para>输入线或面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class containing the densified geodesic features.</para>
+		/// <para>包含增密测地线要素的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -98,11 +98,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Geodetic Type</para>
-		/// <para>Specifies the type of geodetic segment to construct. Geodetic calculations are performed on the ellipsoid associated with the input data&apos;s coordinate system.</para>
-		/// <para>Geodesic—The shortest distance between two points on the surface of the spheroid (ellipsoid).</para>
-		/// <para>Loxodrome—The line of equal azimuth (from a pole) connecting the two points.</para>
-		/// <para>Great elliptic— The line made by the intersection of a plane that contains the center of the spheroid and the two points.</para>
-		/// <para>Normal section—The line made by the intersection of a plane that contains the center of the spheroid and is perpendicular to the surface at the first point.</para>
+		/// <para>指定要构造的测地线线段的类型。在与输入数据坐标系相关的椭圆体上执行测地线计算。</para>
+		/// <para>测地线—椭球体（椭圆体）上两点间的最短距离。</para>
+		/// <para>等角航线—连接两点的相等方位角的线（从一个极点）。</para>
+		/// <para>大椭圆— 由平面相交得出的线包含椭球体中心以及这两个点。</para>
+		/// <para>法向截面—由平面相交得出的线包含椭球体中心且在第一个点处与表面垂直。</para>
 		/// <para><see cref="GeodeticTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Distance</para>
-		/// <para>The distance between vertices along the output geodesic segment. The default value is 50 kilometers.</para>
+		/// <para>沿输出测地线线段的折点间的距离。默认值为 50 千米。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -135,31 +135,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum GeodeticTypeEnum 
 		{
 			/// <summary>
-			/// <para>Geodesic—The shortest distance between two points on the surface of the spheroid (ellipsoid).</para>
+			/// <para>测地线—椭球体（椭圆体）上两点间的最短距离。</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("Geodesic")]
+			[Description("测地线")]
 			Geodesic,
 
 			/// <summary>
-			/// <para>Loxodrome—The line of equal azimuth (from a pole) connecting the two points.</para>
+			/// <para>等角航线—连接两点的相等方位角的线（从一个极点）。</para>
 			/// </summary>
 			[GPValue("LOXODROME")]
-			[Description("Loxodrome")]
+			[Description("等角航线")]
 			Loxodrome,
 
 			/// <summary>
-			/// <para>Great elliptic— The line made by the intersection of a plane that contains the center of the spheroid and the two points.</para>
+			/// <para>大椭圆— 由平面相交得出的线包含椭球体中心以及这两个点。</para>
 			/// </summary>
 			[GPValue("GREAT_ELLIPTIC")]
-			[Description("Great elliptic")]
+			[Description("大椭圆")]
 			Great_elliptic,
 
 			/// <summary>
-			/// <para>Normal section—The line made by the intersection of a plane that contains the center of the spheroid and is perpendicular to the surface at the first point.</para>
+			/// <para>法向截面—由平面相交得出的线包含椭球体中心且在第一个点处与表面垂直。</para>
 			/// </summary>
 			[GPValue("NORMAL_SECTION")]
-			[Description("Normal section")]
+			[Description("法向截面")]
 			Normal_section,
 
 		}

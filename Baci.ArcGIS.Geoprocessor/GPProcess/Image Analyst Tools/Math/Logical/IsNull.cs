@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Is Null</para>
-	/// <para>Is Null</para>
-	/// <para>Determines which values from the input raster are NoData on a cell-by-cell basis.</para>
+	/// <para>为空</para>
+	/// <para>逐个像元来确定输入栅格中哪些值为 NoData。</para>
 	/// </summary>
 	public class IsNull : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster being tested to identify the cells that are NoData (null).</para>
-		/// <para>The input can be either integer or floating-point type.</para>
+		/// <para>要进行检测以识别 NoData（空）像元的输入栅格。</para>
+		/// <para>输入可以是整型，也可以是浮点型。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The output identifies with an integer value of 1 which cells in the input are NoData. If the input is any other value, the output is 0.</para>
+		/// <para>输出栅格。</para>
+		/// <para>输出将输入中值为 NoData 的像元识别为整数值 1。 如果输入为任何其他值，则输出为 0。</para>
 		/// </param>
 		public IsNull(object InRaster, object OutRaster)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Is Null</para>
+		/// <para>Tool Display Name : 为空</para>
 		/// </summary>
-		public override string DisplayName() => "Is Null";
+		public override string DisplayName() => "为空";
 
 		/// <summary>
 		/// <para>Tool Name : IsNull</para>
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster being tested to identify the cells that are NoData (null).</para>
-		/// <para>The input can be either integer or floating-point type.</para>
+		/// <para>要进行检测以识别 NoData（空）像元的输入栅格。</para>
+		/// <para>输入可以是整型，也可以是浮点型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The output identifies with an integer value of 1 which cells in the input are NoData. If the input is any other value, the output is 0.</para>
+		/// <para>输出栅格。</para>
+		/// <para>输出将输入中值为 NoData 的像元识别为整数值 1。 如果输入为任何其他值，则输出为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

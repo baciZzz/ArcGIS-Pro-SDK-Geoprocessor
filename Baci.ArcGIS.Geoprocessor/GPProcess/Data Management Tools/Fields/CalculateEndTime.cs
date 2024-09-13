@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Calculate End Time</para>
-	/// <para>Calculate End Time</para>
-	/// <para>Calculates the end time of features based on the time values stored in another field.</para>
+	/// <para>计算结束时间</para>
+	/// <para>根据存储在另一个字段中的时间值计算要素的结束时间。</para>
 	/// </summary>
 	public class CalculateEndTime : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The feature class or table for which an End Time Field is calculated based on the Start Time Field specified.</para>
+		/// <para>根据指定的开始时间字段计算结束时间字段的要素类或表。</para>
 		/// </param>
 		/// <param name="StartField">
 		/// <para>Start Time Field</para>
-		/// <para>The field containing values that will be used to calculate values for the End Time Field. The Start Time Field and the End Time Field must be of the same type. For example, if the Start Time Field is of type LONG, the End Time Field should be of type LONG as well.</para>
+		/// <para>包含的值要用来计算结束时间字段值的字段。开始时间字段和结束时间字段的类型必须相同。例如，如果开始时间字段的类型为 LONG，则结束时间字段的类型也应该为 LONG。</para>
 		/// </param>
 		/// <param name="EndField">
 		/// <para>End Time Field</para>
-		/// <para>The field that will be populated with values based on the Start Time Field specified. The Start Time Field and the End Time Field must be of the same format.</para>
+		/// <para>将使用基于指定的开始时间字段的值进行填充的字段。开始时间字段和结束时间字段的格式必须相同。</para>
 		/// </param>
 		public CalculateEndTime(object InTable, object StartField, object EndField)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Calculate End Time</para>
+		/// <para>Tool Display Name : 计算结束时间</para>
 		/// </summary>
-		public override string DisplayName() => "Calculate End Time";
+		public override string DisplayName() => "计算结束时间";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateEndTime</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The feature class or table for which an End Time Field is calculated based on the Start Time Field specified.</para>
+		/// <para>根据指定的开始时间字段计算结束时间字段的要素类或表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Start Time Field</para>
-		/// <para>The field containing values that will be used to calculate values for the End Time Field. The Start Time Field and the End Time Field must be of the same type. For example, if the Start Time Field is of type LONG, the End Time Field should be of type LONG as well.</para>
+		/// <para>包含的值要用来计算结束时间字段值的字段。开始时间字段和结束时间字段的类型必须相同。例如，如果开始时间字段的类型为 LONG，则结束时间字段的类型也应该为 LONG。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>End Time Field</para>
-		/// <para>The field that will be populated with values based on the Start Time Field specified. The Start Time Field and the End Time Field must be of the same format.</para>
+		/// <para>将使用基于指定的开始时间字段的值进行填充的字段。开始时间字段和结束时间字段的格式必须相同。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>ID Fields</para>
-		/// <para>The name of the field or fields that can be used to uniquely identify spatial entities. These fields are used to first sort based on entity type if there is more than one entity. For instance, for a feature class representing population values per state over time, the state name could be the unique value field (the entity). If population figures are per county, you would need to set the county name and state name as the unique value fields, since some county names are the same for different states. If there is only one entity, this parameter can be ignored.</para>
+		/// <para>可用于唯一识别空间实体的一个或多个字段的名称。如果存在多个实体，则首先根据实体类型对这些字段进行排序。例如，某个要素类表示各个州随时间变化的人口值，则州名称可作为唯一值字段（实体）。如果人口图是按县绘制的，则需要将县名称和州名称设置为唯一值字段，因为不同州的某些县名称是相同的。如果只有一个实体，则可忽略该参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

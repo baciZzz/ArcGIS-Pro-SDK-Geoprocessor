@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Enrich</para>
-	/// <para>Enrich</para>
-	/// <para>Enriches data by adding demographic and landscape facts about the people and places that surround or are inside data locations.  The output is a duplicate of your input with additional attribute fields.  This tool requires an ArcGIS Online organizational account or a locally installed Business Analyst dataset.</para>
+	/// <para>丰富</para>
+	/// <para>可通过添加与数据位置周围或内部的人员及地点相关的人口统计和景观信息来丰富数据。 输出是您的输入的副本，其中包含其他属性字段。 此工具需要 ArcGIS Online 组织帐户或本地安装的 Business Analyst 数据集。</para>
 	/// </summary>
 	[Obsolete()]
 	public class Enrich : AbstractGPProcess
@@ -22,11 +22,11 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The features to be enriched.</para>
+		/// <para>要丰富的要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output feature class</para>
-		/// <para>A new layer containing both the input attributes and user-selected attributes. User-selected attributes are summarized from underlying demographic boundaries. Only the area inside the input boundary is considered.</para>
+		/// <para>包含输入属性和用户所选属性的新图层。 可以根据基本人口统计边界来汇总用户所选属性。 仅考虑输入边界内的区域。</para>
 		/// </param>
 		public Enrich(object InFeatures, object OutFeatureClass)
 		{
@@ -35,14 +35,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Enrich</para>
+		/// <para>Tool Display Name : 丰富</para>
 		/// </summary>
-		public override string DisplayName() => "Enrich";
+		public override string DisplayName() => "丰富";
 
 		/// <summary>
-		/// <para>Tool Name : Enrich</para>
+		/// <para>Tool Name : 丰富</para>
 		/// </summary>
-		public override string ToolName() => "Enrich";
+		public override string ToolName() => "丰富";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.Enrich</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The features to be enriched.</para>
+		/// <para>要丰富的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output feature class</para>
-		/// <para>A new layer containing both the input attributes and user-selected attributes. User-selected attributes are summarized from underlying demographic boundaries. Only the area inside the input boundary is considered.</para>
+		/// <para>包含输入属性和用户所选属性的新图层。 可以根据基本人口统计边界来汇总用户所选属性。 仅考虑输入边界内的区域。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Variables</para>
-		/// <para>The variables to be summarized and added to the output feature class.</para>
+		/// <para>要进行汇总并添加到输出要素类的变量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Define areas to enrich</para>
-		/// <para>Input point features must have an associated boundary polygon to enrich. When connected to ArcGIS Online, travel mode options are dynamically populated. Input line features can only use Straight Line distance. The default value is Straight Line.</para>
+		/// <para>输入点要素必须具有相关联的边界面，才能对其进行丰富。 连接到 ArcGIS Online 后，将动态填充出行模式选项。 输入线要素只能使用直线距离。 默认值为直线。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Distance or time</para>
-		/// <para>Determines the distance or size of an area to enrich (for example, a 1-mile buffer or 5-minute walk time). Units correspond to the buffer type. The default value is 1.</para>
+		/// <para>确定要丰富的区域的距离或大小（例如，1 英里缓冲区或 5 分钟步行时间）。 单位对应于缓冲区类型。 默认值为 1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -111,15 +111,15 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Unit</para>
-		/// <para>The units associated with the distance or time parameter.</para>
-		/// <para>Miles—Miles</para>
-		/// <para>Yards—Yards</para>
-		/// <para>Feet—Feet</para>
-		/// <para>Kilometers—Kilometers</para>
-		/// <para>Meters—Meters</para>
-		/// <para>Hours—Hours</para>
-		/// <para>Minutes—Minutes</para>
-		/// <para>Seconds—Seconds</para>
+		/// <para>与距离或时间参数相关联的单位。</para>
+		/// <para>Miles—英里</para>
+		/// <para>Yards—码</para>
+		/// <para>Feet—英尺</para>
+		/// <para>Kilometers—千米</para>
+		/// <para>Meters—米</para>
+		/// <para>Hours—小时</para>
+		/// <para>Minutes—分</para>
+		/// <para>Seconds—秒</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

@@ -11,9 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Transform Features</para>
-	/// <para>Transform Features</para>
-	/// <para>Converts the coordinates of input features from one location to another through scaling,  </para>
-	/// <para>shifting, and rotating based on the transformation links between known corresponding control points.</para>
+	/// <para>变换要素</para>
+	/// <para>根据已知相应控制点之间的变换链接通过缩放、平移和旋转将输入要素的坐标从一个位置转换到另一个位置。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -24,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input features, the coordinates of which are to be transformed. They can be points, lines, polygons, or annotations.</para>
+		/// <para>其坐标要进行变换的输入要素。 可以为点、线、面或注记。</para>
 		/// </param>
 		/// <param name="InLinkFeatures">
 		/// <para>Input Link Features</para>
-		/// <para>The input link features that link known control points for the transformation.</para>
+		/// <para>链接要进行变换的已知控制点的输入链接要素。</para>
 		/// </param>
 		public TransformFeatures(object InFeatures, object InLinkFeatures)
 		{
@@ -37,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Transform Features</para>
+		/// <para>Tool Display Name : 变换要素</para>
 		/// </summary>
-		public override string DisplayName() => "Transform Features";
+		public override string DisplayName() => "变换要素";
 
 		/// <summary>
 		/// <para>Tool Name : TransformFeatures</para>
@@ -73,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input features, the coordinates of which are to be transformed. They can be points, lines, polygons, or annotations.</para>
+		/// <para>其坐标要进行变换的输入要素。 可以为点、线、面或注记。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -83,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Link Features</para>
-		/// <para>The input link features that link known control points for the transformation.</para>
+		/// <para>链接要进行变换的已知控制点的输入链接要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -93,10 +92,10 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>Specifies the transformation method to use to convert input feature coordinates.</para>
-		/// <para>Affine transformation—Affine transformation requires a minimum of three transformation links. This is the default.</para>
-		/// <para>Projective transformation—Projective transformation requires a minimum of four transformation links.</para>
-		/// <para>Similarity transformation—Similarity transformation requires a minimum of two transformation links.</para>
+		/// <para>指定用于转换输入要素坐标的变换方法。</para>
+		/// <para>仿射变换—仿射变换至少需要三个变换链接。 这是默认设置。</para>
+		/// <para>投影变换—射影变换至少需要四个变换链接。</para>
+		/// <para>相似变换—相似变换至少需要两个变换链接。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -106,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Output Link Table</para>
-		/// <para>The output table containing input links and their residual errors.</para>
+		/// <para>包含输入链接及其残差的输出表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -143,24 +142,24 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Affine transformation—Affine transformation requires a minimum of three transformation links. This is the default.</para>
+			/// <para>仿射变换—仿射变换至少需要三个变换链接。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("AFFINE")]
-			[Description("Affine transformation")]
+			[Description("仿射变换")]
 			Affine_transformation,
 
 			/// <summary>
-			/// <para>Projective transformation—Projective transformation requires a minimum of four transformation links.</para>
+			/// <para>投影变换—射影变换至少需要四个变换链接。</para>
 			/// </summary>
 			[GPValue("PROJECTIVE")]
-			[Description("Projective transformation")]
+			[Description("投影变换")]
 			Projective_transformation,
 
 			/// <summary>
-			/// <para>Similarity transformation—Similarity transformation requires a minimum of two transformation links.</para>
+			/// <para>相似变换—相似变换至少需要两个变换链接。</para>
 			/// </summary>
 			[GPValue("SIMILARITY")]
-			[Description("Similarity transformation")]
+			[Description("相似变换")]
 			Similarity_transformation,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Detect Change Using Change Analysis Raster</para>
-	/// <para>Detect Change Using Change Analysis Raster</para>
-	/// <para>Generates a raster containing pixel change information using the output change analysis raster from the Analyze Changes Using CCDC tool or the Analyze Changes Using LandTrendr tool.</para>
+	/// <para>使用更改分析栅格检测更改</para>
+	/// <para>可以利用使用 CCDC 分析变化工具或使用 LandTrendr 分析变化工具的输出变化分析栅格来生成包含像素变化信息的栅格。</para>
 	/// </summary>
 	public class DetectChangeUsingChangeAnalysisRaster : AbstractGPProcess
 	{
@@ -21,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InChangeAnalysisRaster">
 		/// <para>Input Change Analysis Raster</para>
-		/// <para>The change analysis raster generated from the Analyze Changes Using CCDC tool or the Analyze Changes Using LandTrendr tool.</para>
+		/// <para>通过使用 CCDC 分析变化工具或使用 LandTrendr 分析变化工具生成的变化分析栅格。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster</para>
-		/// <para>The output raster containing the detected change information.</para>
+		/// <para>包含检测变化信息的输出栅格。</para>
 		/// </param>
 		/// <param name="ChangeType">
 		/// <para>Change Type</para>
-		/// <para>Specifies the change information that will be calculated for each pixel.</para>
-		/// <para>Time of latest change—Each pixel will contain the date of its most recent change in the time series. This is the default.</para>
-		/// <para>Time of earliest change—Each pixel will contain the date of its earliest change in the time series.</para>
-		/// <para>Time of largest change—Each pixel will contain the date of its most significant change in the time series.</para>
-		/// <para>Number of changes—Each pixel will contain the total number of times it changed in the time series.</para>
-		/// <para>Time of longest change—Each pixel will contain the date of change at the beginning or end of the longest transition segment in the time series.</para>
-		/// <para>Time of shortest change—Each pixel will contain the date of change at the beginning or end of the shortest transition segment in the time series.</para>
-		/// <para>Time of fastest change—Each pixel will contain the date of change at the beginning or end of the transition that occurred most quickly.</para>
-		/// <para>Time of slowest change—Each pixel will contain the date of change at the beginning or end of the transition that occurred most slowly.</para>
+		/// <para>指定要为每个像素计算的变化信息。</para>
+		/// <para>最新变化的时间—每个像素都将包含其在时间序列中最近变化的日期。 这是默认设置。</para>
+		/// <para>最早变化的日期—每个像素都将包含其在时间序列中最早变化的日期。</para>
+		/// <para>最大变化的日期—每个像素都将包含其在时间序列中最显著变化的日期。</para>
+		/// <para>变化次数—每个像素都将包含其在时间序列中发生变化的总次数。</para>
+		/// <para>最长变化的时间—每个像素将包含时间序列中位于最长过渡段的起点或终点处的变化日期。</para>
+		/// <para>最短变化的时间—每个像素将包含时间序列中位于最短过渡段的起点或终点处的变化日期。</para>
+		/// <para>最快变化的时间—每个像素将包含位于最快发生的过渡起点或终点的变化日期。</para>
+		/// <para>最慢变化的时间—每个像素将包含位于最慢发生的过渡起点或终点的变化日期。</para>
 		/// <para><see cref="ChangeTypeEnum"/></para>
 		/// </param>
 		public DetectChangeUsingChangeAnalysisRaster(object InChangeAnalysisRaster, object OutRaster, object ChangeType)
@@ -48,9 +48,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Detect Change Using Change Analysis Raster</para>
+		/// <para>Tool Display Name : 使用更改分析栅格检测更改</para>
 		/// </summary>
-		public override string DisplayName() => "Detect Change Using Change Analysis Raster";
+		public override string DisplayName() => "使用更改分析栅格检测更改";
 
 		/// <summary>
 		/// <para>Tool Name : DetectChangeUsingChangeAnalysisRaster</para>
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Change Analysis Raster</para>
-		/// <para>The change analysis raster generated from the Analyze Changes Using CCDC tool or the Analyze Changes Using LandTrendr tool.</para>
+		/// <para>通过使用 CCDC 分析变化工具或使用 LandTrendr 分析变化工具生成的变化分析栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Raster</para>
-		/// <para>The output raster containing the detected change information.</para>
+		/// <para>包含检测变化信息的输出栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -100,15 +100,15 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Change Type</para>
-		/// <para>Specifies the change information that will be calculated for each pixel.</para>
-		/// <para>Time of latest change—Each pixel will contain the date of its most recent change in the time series. This is the default.</para>
-		/// <para>Time of earliest change—Each pixel will contain the date of its earliest change in the time series.</para>
-		/// <para>Time of largest change—Each pixel will contain the date of its most significant change in the time series.</para>
-		/// <para>Number of changes—Each pixel will contain the total number of times it changed in the time series.</para>
-		/// <para>Time of longest change—Each pixel will contain the date of change at the beginning or end of the longest transition segment in the time series.</para>
-		/// <para>Time of shortest change—Each pixel will contain the date of change at the beginning or end of the shortest transition segment in the time series.</para>
-		/// <para>Time of fastest change—Each pixel will contain the date of change at the beginning or end of the transition that occurred most quickly.</para>
-		/// <para>Time of slowest change—Each pixel will contain the date of change at the beginning or end of the transition that occurred most slowly.</para>
+		/// <para>指定要为每个像素计算的变化信息。</para>
+		/// <para>最新变化的时间—每个像素都将包含其在时间序列中最近变化的日期。 这是默认设置。</para>
+		/// <para>最早变化的日期—每个像素都将包含其在时间序列中最早变化的日期。</para>
+		/// <para>最大变化的日期—每个像素都将包含其在时间序列中最显著变化的日期。</para>
+		/// <para>变化次数—每个像素都将包含其在时间序列中发生变化的总次数。</para>
+		/// <para>最长变化的时间—每个像素将包含时间序列中位于最长过渡段的起点或终点处的变化日期。</para>
+		/// <para>最短变化的时间—每个像素将包含时间序列中位于最短过渡段的起点或终点处的变化日期。</para>
+		/// <para>最快变化的时间—每个像素将包含位于最快发生的过渡起点或终点的变化日期。</para>
+		/// <para>最慢变化的时间—每个像素将包含位于最慢发生的过渡起点或终点的变化日期。</para>
 		/// <para><see cref="ChangeTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -118,8 +118,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Maximum Number of Changes</para>
-		/// <para>The maximum number of changes per pixel that will be calculated. This number corresponds to the number of bands in the output raster. The default is 1, meaning only one change date will be calculated, and the output raster will contain only one band.</para>
-		/// <para>This parameter is not active when the Change Type parameter is set to Number of changes.</para>
+		/// <para>要计算的每个像素的最大变化次数。 该数字与输出栅格中的波段数相对应。 默认值为 1，表示将仅计算一个变化日期，且输出栅格将仅包含一个波段。</para>
+		/// <para>当变化类型参数设置为变化次数时，此参数将处于非活动状态。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -129,10 +129,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Segment Date</para>
-		/// <para>Specifies whether the date at the beginning of a change segment will be extracted or at the end.</para>
-		/// <para>This parameter is available only when the input change analysis raster is the output from the Analyze Changes Using LandTrendr tool.</para>
-		/// <para>Beginning of segment—The date at the beginning of a change segment will be extracted. This is the default.</para>
-		/// <para>End of segment—The date at the end of a change segment will be extracted.</para>
+		/// <para>指定是提取位于变化段的起点还是终点处的日期。</para>
+		/// <para>仅当输入变化分析栅格是来自使用 LandTrendr 分析变化工具的输出时，此参数才可用。</para>
+		/// <para>段起点—将提取位于变化段的起点处的日期。 这是默认设置。</para>
+		/// <para>段终点—将提取位于变化段的终点处的日期。</para>
 		/// <para><see cref="SegmentDateEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -142,11 +142,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Change Direction</para>
-		/// <para>Specifies the direction of change that will be included in the analysis.</para>
-		/// <para>This parameter is available only when the input change analysis raster is the output from the Analyze Changes Using LandTrendr tool.</para>
-		/// <para>All directions—All change directions will be included in the output. This is the default.</para>
-		/// <para>Increasing—Only change in the positive or increasing direction will be included in the output.</para>
-		/// <para>Decreasing—Only change in the negative or decreasing direction will be included in the output.</para>
+		/// <para>指定要在分析中包含的变化方向。</para>
+		/// <para>仅当输入变化分析栅格是来自使用 LandTrendr 分析变化工具的输出时，此参数才可用。</para>
+		/// <para>全部方向—所有变化方向将包含在输出中。 这是默认设置。</para>
+		/// <para>递增—输出中仅包含正向或递增方向的变化。</para>
+		/// <para>递减—输出中仅包含负向或递减方向的变化。</para>
 		/// <para><see cref="ChangeDirectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -156,9 +156,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Filter by Year</para>
-		/// <para>Specifies whether the output will be filtered by a range of years.</para>
-		/// <para>Checked—Results will be filtered so that only changes that occurred within a specific range of years will be included in the output.</para>
-		/// <para>Unchecked—Results will not be filtered by year. This is the default.</para>
+		/// <para>指定是否按年范围过滤输出。</para>
+		/// <para>选中 - 将过滤结果，以仅在输出中包含特定年范围内发生的变化。</para>
+		/// <para>未选中 - 不会按年对结果进行过滤。 这是默认设置。</para>
 		/// <para><see cref="FilterByYearEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -169,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Minimum Value</para>
-		/// <para>The earliest year that will be used to filter results. This parameter is required if the Filter by Year parameter is checked.</para>
+		/// <para>用于过滤结果的最早年份。 选中按年过滤参数时，此参数为必需项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -179,8 +179,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Maximum Value</para>
-		/// <para>The latest year that will be used to filter results.</para>
-		/// <para>This parameter is required if the Filter by Year parameter is checked.</para>
+		/// <para>用于过滤结果的最近年份。</para>
+		/// <para>选中按年过滤参数时，此参数为必需项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -190,10 +190,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Filter by Duration</para>
-		/// <para>Specifies whether results will be filtered by the change duration.</para>
-		/// <para>This parameter is active only when the input change analysis raster is the output from the Analyze Changes Using LandTrendr tool.</para>
-		/// <para>Checked—Results will be filtered by duration so that only the changes that lasted a given amount of time will be included in the output.</para>
-		/// <para>Unchecked—Results will not be filtered by duration. This is the default.</para>
+		/// <para>指定是否按变化持续时间对结果进行过滤。</para>
+		/// <para>仅当输入变化分析栅格是来自使用 LandTrendr 分析变化工具的输出时，此参数才处于活动状态。</para>
+		/// <para>选中 - 将按持续时间过滤结果，以仅在输出中包含持续给定时间的变化。</para>
+		/// <para>未选中 - 不会按持续时间对结果进行过滤。 这是默认设置。</para>
 		/// <para><see cref="FilterByDurationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -204,8 +204,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Minimum  Duration (in years)</para>
-		/// <para>The minimum number of consecutive years that will be included in the results.</para>
-		/// <para>This parameter is required if the Filter by Duration parameter is checked.</para>
+		/// <para>将包含在结果中的最小连续年数。</para>
+		/// <para>当选中按持续时间过滤参数时，此参数为必需项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -216,8 +216,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Maximum  Duration (in years)</para>
-		/// <para>The maximum number of consecutive years that will be included in the results.</para>
-		/// <para>This parameter is required if the Filter by Duration parameter is checked.</para>
+		/// <para>将包含在结果中的最大连续年数。</para>
+		/// <para>当选中按持续时间过滤参数时，此参数为必需项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -228,12 +228,12 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Filter by Magnitude</para>
-		/// <para>Specifies whether results will be filtered by change magnitude.</para>
-		/// <para>Checked—Results will be filtered by magnitude so that only the changes of a given magnitude will be included in the output.</para>
-		/// <para>Unchecked—Results will not be filtered by magnitude. This is the default.</para>
-		/// <para>Specifies whether results will be filtered by change magnitude.</para>
-		/// <para>FILTER_BY_MAGNITUDE—Results will be filtered by magnitude so that only the changes of a given magnitude will be included in the output.</para>
-		/// <para>NO_FILTER_BY_MAGNITUDE—Results will not be filtered by magnitude. This is the default.</para>
+		/// <para>指定是否按变化量级对结果进行过滤。</para>
+		/// <para>选中 - 将按量级过滤结果，以仅在输出中包含给定量级的变化。</para>
+		/// <para>未选中 - 不会按量级对结果进行过滤。 这是默认设置。</para>
+		/// <para>指定是否按变化量级对结果进行过滤。</para>
+		/// <para>FILTER_BY_MAGNITUDE—将按量级过滤结果，以仅在输出中包含给定量级的变化。</para>
+		/// <para>NO_FILTER_BY_MAGNITUDE—不会按量级对结果进行过滤。 这是默认设置。</para>
 		/// <para><see cref="FilterByMagnitudeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -244,8 +244,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Minimum  Magnitude</para>
-		/// <para>The minimum magnitude that will be included in the results.</para>
-		/// <para>This parameter is required if the Filter by Magnitude parameter is checked.</para>
+		/// <para>将包含在结果中的最小量级。</para>
+		/// <para>当选中按量级过滤参数时，此参数为必需项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -256,8 +256,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Maximum  Magnitude</para>
-		/// <para>The maximum magnitude that will be included in the results.</para>
-		/// <para>This parameter is required if the Filter by Duration parameter is checked.</para>
+		/// <para>将包含在结果中的最大量级。</para>
+		/// <para>当选中按持续时间过滤参数时，此参数为必需项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -268,10 +268,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Filter by Start Value</para>
-		/// <para>Specifies whether results will be filtered by start value.</para>
-		/// <para>This parameter is active only when the input change analysis raster is the output from the Analyze Changes Using LandTrendr tool.</para>
-		/// <para>Checked—Results will be filtered by start value so that only the changes of a given start value will be included in the output.</para>
-		/// <para>Unchecked—Results will not be filtered by start value. This is the default.</para>
+		/// <para>指定是否按起始值对结果进行过滤。</para>
+		/// <para>仅当输入变化分析栅格是来自使用 LandTrendr 分析变化工具的输出时，此参数才处于活动状态。</para>
+		/// <para>选中 - 将按起始值过滤结果，以仅在输出中包含给定起始值的变化。</para>
+		/// <para>未选中 - 不会按起始值对结果进行过滤。 这是默认设置。</para>
 		/// <para><see cref="FilterByStartValueEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -282,8 +282,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Minimum  Start Value</para>
-		/// <para>The minimum start value that will be included in the results.</para>
-		/// <para>This parameter is required if the Filter by Start Value parameter is checked.</para>
+		/// <para>将包含在结果中的最小起始值。</para>
+		/// <para>选中按起始值过滤参数时，此参数为必需项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -293,8 +293,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Maximum  Start Value</para>
-		/// <para>The maximum start value that will be included in the results.</para>
-		/// <para>This parameter is required if the Filter by Start Value parameter is checked.</para>
+		/// <para>将包含在结果中的最大起始值。</para>
+		/// <para>选中按起始值过滤参数时，此参数为必需项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -304,10 +304,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Filter by End Value</para>
-		/// <para>Specifies whether results will be filtered by end value.</para>
-		/// <para>This parameter is active only when the input change analysis raster is the output from the Analyze Changes Using LandTrendr tool.</para>
-		/// <para>Checked—Results will be filtered by end value so that only the changes of a given end value will be included in the output.</para>
-		/// <para>Unchecked—Results will not be filtered by end value. This is the default.</para>
+		/// <para>指定是否按结束值对结果进行过滤。</para>
+		/// <para>仅当输入变化分析栅格是来自使用 LandTrendr 分析变化工具的输出时，此参数才处于活动状态。</para>
+		/// <para>选中 - 将按结束值过滤结果，以仅在输出中包含给定结束值的变化。</para>
+		/// <para>未选中 - 不会按结束值对结果进行过滤。 这是默认设置。</para>
 		/// <para><see cref="FilterByEndValueEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -318,8 +318,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Minimum  End Value</para>
-		/// <para>The minimum end value that will be included in the results.</para>
-		/// <para>This parameter is required if the Filter by End Value parameter is checked.</para>
+		/// <para>将包含在结果中的最小结束值。</para>
+		/// <para>选中按结束值过滤参数时，此参数为必需项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -329,8 +329,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Maximum  End Value</para>
-		/// <para>The maximum end value that will be included in the results.</para>
-		/// <para>This parameter is required if the Filter by End Value parameter is checked.</para>
+		/// <para>将包含在结果中的最大结束值。</para>
+		/// <para>选中按结束值过滤参数时，此参数为必需项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -355,59 +355,59 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum ChangeTypeEnum 
 		{
 			/// <summary>
-			/// <para>Time of latest change—Each pixel will contain the date of its most recent change in the time series. This is the default.</para>
+			/// <para>最新变化的时间—每个像素都将包含其在时间序列中最近变化的日期。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("TIME_OF_LATEST_CHANGE")]
-			[Description("Time of latest change")]
+			[Description("最新变化的时间")]
 			Time_of_latest_change,
 
 			/// <summary>
-			/// <para>Time of earliest change—Each pixel will contain the date of its earliest change in the time series.</para>
+			/// <para>最早变化的日期—每个像素都将包含其在时间序列中最早变化的日期。</para>
 			/// </summary>
 			[GPValue("TIME_OF_EARLIEST_CHANGE")]
-			[Description("Time of earliest change")]
+			[Description("最早变化的日期")]
 			Time_of_earliest_change,
 
 			/// <summary>
-			/// <para>Time of largest change—Each pixel will contain the date of its most significant change in the time series.</para>
+			/// <para>最大变化的日期—每个像素都将包含其在时间序列中最显著变化的日期。</para>
 			/// </summary>
 			[GPValue("TIME_OF_LARGEST_CHANGE")]
-			[Description("Time of largest change")]
+			[Description("最大变化的日期")]
 			Time_of_largest_change,
 
 			/// <summary>
-			/// <para>Number of changes—Each pixel will contain the total number of times it changed in the time series.</para>
+			/// <para>变化次数—每个像素都将包含其在时间序列中发生变化的总次数。</para>
 			/// </summary>
 			[GPValue("NUM_OF_CHANGES")]
-			[Description("Number of changes")]
+			[Description("变化次数")]
 			Number_of_changes,
 
 			/// <summary>
-			/// <para>Time of longest change—Each pixel will contain the date of change at the beginning or end of the longest transition segment in the time series.</para>
+			/// <para>最长变化的时间—每个像素将包含时间序列中位于最长过渡段的起点或终点处的变化日期。</para>
 			/// </summary>
 			[GPValue("TIME_OF_LONGEST_CHANGE")]
-			[Description("Time of longest change")]
+			[Description("最长变化的时间")]
 			Time_of_longest_change,
 
 			/// <summary>
-			/// <para>Time of shortest change—Each pixel will contain the date of change at the beginning or end of the shortest transition segment in the time series.</para>
+			/// <para>最短变化的时间—每个像素将包含时间序列中位于最短过渡段的起点或终点处的变化日期。</para>
 			/// </summary>
 			[GPValue("TIME_OF_SHORTEST_CHANGE")]
-			[Description("Time of shortest change")]
+			[Description("最短变化的时间")]
 			Time_of_shortest_change,
 
 			/// <summary>
-			/// <para>Time of fastest change—Each pixel will contain the date of change at the beginning or end of the transition that occurred most quickly.</para>
+			/// <para>最快变化的时间—每个像素将包含位于最快发生的过渡起点或终点的变化日期。</para>
 			/// </summary>
 			[GPValue("TIME_OF_FASTEST_CHANGE")]
-			[Description("Time of fastest change")]
+			[Description("最快变化的时间")]
 			Time_of_fastest_change,
 
 			/// <summary>
-			/// <para>Time of slowest change—Each pixel will contain the date of change at the beginning or end of the transition that occurred most slowly.</para>
+			/// <para>最慢变化的时间—每个像素将包含位于最慢发生的过渡起点或终点的变化日期。</para>
 			/// </summary>
 			[GPValue("TIME_OF_SLOWEST_CHANGE")]
-			[Description("Time of slowest change")]
+			[Description("最慢变化的时间")]
 			Time_of_slowest_change,
 
 		}
@@ -418,17 +418,17 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum SegmentDateEnum 
 		{
 			/// <summary>
-			/// <para>Beginning of segment—The date at the beginning of a change segment will be extracted. This is the default.</para>
+			/// <para>段起点—将提取位于变化段的起点处的日期。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("BEGINNING_OF_SEGMENT")]
-			[Description("Beginning of segment")]
+			[Description("段起点")]
 			Beginning_of_segment,
 
 			/// <summary>
-			/// <para>End of segment—The date at the end of a change segment will be extracted.</para>
+			/// <para>段终点—将提取位于变化段的终点处的日期。</para>
 			/// </summary>
 			[GPValue("END_OF_SEGMENT")]
-			[Description("End of segment")]
+			[Description("段终点")]
 			End_of_segment,
 
 		}
@@ -439,24 +439,24 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum ChangeDirectionEnum 
 		{
 			/// <summary>
-			/// <para>All directions—All change directions will be included in the output. This is the default.</para>
+			/// <para>全部方向—所有变化方向将包含在输出中。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All directions")]
+			[Description("全部方向")]
 			All_directions,
 
 			/// <summary>
-			/// <para>Increasing—Only change in the positive or increasing direction will be included in the output.</para>
+			/// <para>递增—输出中仅包含正向或递增方向的变化。</para>
 			/// </summary>
 			[GPValue("INCREASE")]
-			[Description("Increasing")]
+			[Description("递增")]
 			Increasing,
 
 			/// <summary>
-			/// <para>Decreasing—Only change in the negative or decreasing direction will be included in the output.</para>
+			/// <para>递减—输出中仅包含负向或递减方向的变化。</para>
 			/// </summary>
 			[GPValue("DECREASE")]
-			[Description("Decreasing")]
+			[Description("递减")]
 			Decreasing,
 
 		}
@@ -467,14 +467,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum FilterByYearEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Results will be filtered so that only changes that occurred within a specific range of years will be included in the output.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FILTER_BY_YEAR")]
 			FILTER_BY_YEAR,
 
 			/// <summary>
-			/// <para>Unchecked—Results will not be filtered by year. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_FILTER_BY_YEAR")]
@@ -488,14 +488,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum FilterByDurationEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Results will be filtered by duration so that only the changes that lasted a given amount of time will be included in the output.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FILTER_BY_DURATION")]
 			FILTER_BY_DURATION,
 
 			/// <summary>
-			/// <para>Unchecked—Results will not be filtered by duration. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_FILTER_BY_DURATION")]
@@ -509,14 +509,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum FilterByMagnitudeEnum 
 		{
 			/// <summary>
-			/// <para>FILTER_BY_MAGNITUDE—Results will be filtered by magnitude so that only the changes of a given magnitude will be included in the output.</para>
+			/// <para>FILTER_BY_MAGNITUDE—将按量级过滤结果，以仅在输出中包含给定量级的变化。</para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FILTER_BY_MAGNITUDE")]
 			FILTER_BY_MAGNITUDE,
 
 			/// <summary>
-			/// <para>NO_FILTER_BY_MAGNITUDE—Results will not be filtered by magnitude. This is the default.</para>
+			/// <para>NO_FILTER_BY_MAGNITUDE—不会按量级对结果进行过滤。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_FILTER_BY_MAGNITUDE")]
@@ -530,14 +530,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum FilterByStartValueEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Results will be filtered by start value so that only the changes of a given start value will be included in the output.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FILTER_BY_START_VALUE")]
 			FILTER_BY_START_VALUE,
 
 			/// <summary>
-			/// <para>Unchecked—Results will not be filtered by start value. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_FILTER_BY_START_VALUE")]
@@ -551,14 +551,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum FilterByEndValueEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Results will be filtered by end value so that only the changes of a given end value will be included in the output.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FILTER_BY_END_VALUE")]
 			FILTER_BY_END_VALUE,
 
 			/// <summary>
-			/// <para>Unchecked—Results will not be filtered by end value. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_FILTER_BY_END_VALUE")]

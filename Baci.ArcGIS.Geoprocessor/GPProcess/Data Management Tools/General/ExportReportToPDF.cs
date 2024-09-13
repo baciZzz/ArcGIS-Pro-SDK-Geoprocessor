@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Report To PDF</para>
-	/// <para>Export Report To PDF</para>
-	/// <para>Exports an ArcGIS Pro report to a PDF file.</para>
+	/// <para>将报表导出为 PDF</para>
+	/// <para>将 ArcGIS Pro 报表导出至 PDF 文件。</para>
 	/// </summary>
 	public class ExportReportToPDF : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InReport">
 		/// <para>Input Report</para>
-		/// <para>The input report or .rptx file.</para>
+		/// <para>输入报表或 .rptx 文件。</para>
 		/// </param>
 		/// <param name="OutPdfFile">
 		/// <para>PDF File</para>
-		/// <para>The output PDF file.</para>
+		/// <para>输出 PDF 文件。</para>
 		/// </param>
 		public ExportReportToPDF(object InReport, object OutPdfFile)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Export Report To PDF</para>
+		/// <para>Tool Display Name : 将报表导出为 PDF</para>
 		/// </summary>
-		public override string DisplayName() => "Export Report To PDF";
+		public override string DisplayName() => "将报表导出为 PDF";
 
 		/// <summary>
 		/// <para>Tool Name : ExportReportToPDF</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Report</para>
-		/// <para>The input report or .rptx file.</para>
+		/// <para>输入报表或 .rptx 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>PDF File</para>
-		/// <para>The output PDF file.</para>
+		/// <para>输出 PDF 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>An SQL expression used to select a subset of records. This expression is applied in addition to any existing expressions.</para>
+		/// <para>用于选择记录子集的 SQL 表达式。除了任何现有表达式之外，还应用此表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Resolution (DPI)</para>
-		/// <para>The resolution of the exported PDF in dots per inch (dpi).</para>
+		/// <para>已导出 PDF 的分辨率，单位为每英寸点数 (dpi)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -108,12 +108,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Image Quality</para>
-		/// <para>Specifies the output image quality of the PDF. The image quality option controls the quality of rasterized data going into the export.</para>
-		/// <para>Best—The highest available image quality. This is the default.</para>
-		/// <para>Better—High image quality.</para>
-		/// <para>Normal—A compromise between image quality and speed.</para>
-		/// <para>Faster—Lower image quality to generate the report faster.</para>
-		/// <para>Fastest—The lowest image quality to create the report the fastest.</para>
+		/// <para>指定 PDF 的输出图像质量。“图像质量”选项用于控制要导出的栅格化数据的质量。</para>
+		/// <para>最佳—可用的最高图像质量。这是默认设置。</para>
+		/// <para>更佳—高图像质量。</para>
+		/// <para>正常—图像质量和速度之间的折衷。</para>
+		/// <para>较快—图像质量越低，报表生成速度越快。</para>
+		/// <para>最快—图像质量最低时，创建报表的速度最快。</para>
 		/// <para><see cref="ImageQualityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -124,9 +124,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Embed Fonts</para>
-		/// <para>Specifies whether fonts are embedded in the output report. Font embedding allows text and markers built from font glyphs to be displayed correctly when the PDF is viewed on a computer that does not have the necessary fonts installed.</para>
-		/// <para>Checked—Fonts will be embedded in the output report. This is the default.</para>
-		/// <para>Unchecked—Fonts will not be embedded in the output report.</para>
+		/// <para>指定是否在输出报表中嵌入字体。当在未安装所需字体的计算机上查看 PDF 时，允许在字体嵌入中使用基于字体字形构建的文本和标记。</para>
+		/// <para>选中 - 将在输出报表中嵌入字体。这是默认设置。</para>
+		/// <para>未选中 - 不会在输出报表中嵌入字体。</para>
 		/// <para><see cref="EmbedFontEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -137,9 +137,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compress Vector Graphics</para>
-		/// <para>Specifies whether to compress the vector content streams in the PDF.</para>
-		/// <para>Checked—Vector graphics will be compressed. This option should be set unless clear text is desired for troubleshooting. This is the default.</para>
-		/// <para>Unchecked—Vector graphics will not be compressed.</para>
+		/// <para>指定是否在 PDF 中压缩矢量内容流。</para>
+		/// <para>选中 - 将压缩矢量图形。应设置此选项，除非需要使用明文进行故障排除。这是默认设置。</para>
+		/// <para>未选中 - 不会压缩矢量图形。</para>
 		/// <para><see cref="CompressVectorGraphicsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -150,13 +150,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Image Compression</para>
-		/// <para>Specifies the compression scheme used to compress image or raster data in the output PDF file.</para>
-		/// <para>No image compression—Do not compress image or raster data.</para>
-		/// <para>Run-length encoded (RLE) compression—Uses Run-length encoded compression.</para>
-		/// <para>Deflate compression—Uses Deflate, a lossless data compression.</para>
-		/// <para>Lempel-Ziv-Welch (LZW) compression—Uses Lempel-Ziv-Welch, a lossless data compression.</para>
-		/// <para>Joint Photographic Experts Group (JPEG) compression—Uses JPEG, a lossy data compression.</para>
-		/// <para>Adaptive compression—Uses Adaptive, which automatically selects the best compression type for each image on the page. JPEG will be used for large images with many unique colors. Deflate will be used for all other images. This is the default.</para>
+		/// <para>指定在输出 PDF 文件中压缩图像或栅格数据时使用的压缩方案。</para>
+		/// <para>无图像压缩—请勿压缩图像或栅格数据。</para>
+		/// <para>游程编码 (RLE) 压缩—使用游程编码压缩。</para>
+		/// <para>Deflate 压缩—使用 Deflate 无损数据压缩。</para>
+		/// <para>Lempel-Ziv-Welch (LZW) 压缩—使用 Lempel-Ziv-Welch 无损数据压缩。</para>
+		/// <para>联合图像专家组 (JPEG) 压缩—使用 JPEG 有损数据压缩。</para>
+		/// <para>Adaptive 压缩—使用自动为页面中的每个图像选择最佳压缩类型的 Adaptive。JPEG 适用于包含许多唯一颜色的较大图像。Deflate 适用于所有其他图像。这是默认设置。</para>
 		/// <para><see cref="ImageCompressionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -167,9 +167,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Password Protect</para>
-		/// <para>Specifies whether password protection is needed to view the output PDF report.</para>
-		/// <para>Checked—The output PDF report document will require a password to open.</para>
-		/// <para>Unchecked—The output PDF report document can be opened without providing a password. This is the default.</para>
+		/// <para>指定是否需要密码保护才能查看输出 PDF 报表。</para>
+		/// <para>选中 - 输出 PDF 报表文档需要密码才能打开。</para>
+		/// <para>未选中 - 无需提供密码即可打开输出 PDF 报表文档。这是默认设置。</para>
 		/// <para><see cref="PasswordProtectEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -180,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>PDF Password</para>
-		/// <para>A password to restrict opening the PDF.</para>
+		/// <para>用于限制打开 PDF 的密码。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEncryptedString()]
@@ -189,12 +189,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Page Range Type</para>
-		/// <para>Specifies the page range of the report to export.</para>
-		/// <para>All pages—Export all pages. This is the default.</para>
-		/// <para>Last page—Export the last page only.</para>
-		/// <para>Odd numbered pages—Export the odd numbered pages.</para>
-		/// <para>Even numbered pages—Export the even numbered pages.</para>
-		/// <para>Custom page range—Export a custom page range.</para>
+		/// <para>指定要导出的报表页面范围。</para>
+		/// <para>所有页面—导出所有页面。这是默认设置。</para>
+		/// <para>最后一页—仅导出最后一页。</para>
+		/// <para>奇数页面—导出奇数页面。</para>
+		/// <para>偶数页面—导出偶数页面。</para>
+		/// <para>自定义页面范围—导出自定义页面范围。</para>
 		/// <para><see cref="PageRangeTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -205,7 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Custom Page Range</para>
-		/// <para>The pages to be exported when the Page Range Type parameter is set to Custom. You can set individual pages, ranges, or a combination of both separated by commas, such as 1, 3-5, 10.</para>
+		/// <para>页面范围类型参数设置为自定义时要导出的页面。可设置单独页面、范围或者以逗号分隔的两者组合，例如 1, 3-5, 10。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -214,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Initial Page Number</para>
-		/// <para>The initial page number of the report to create a page numbering offset to add additional pages to the beginning of the report.</para>
+		/// <para>报表的初始页码来创建页面编号偏移，以将其他页面添加到报表开头。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -224,7 +224,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Final Page Number</para>
-		/// <para>The page number to display on the last page of the exported PDF.</para>
+		/// <para>要在导出的 PDF 最后一页上显示的页码。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -240,38 +240,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ImageQualityEnum 
 		{
 			/// <summary>
-			/// <para>Best—The highest available image quality. This is the default.</para>
+			/// <para>最佳—可用的最高图像质量。这是默认设置。</para>
 			/// </summary>
 			[GPValue("BEST")]
-			[Description("Best")]
+			[Description("最佳")]
 			Best,
 
 			/// <summary>
-			/// <para>Better—High image quality.</para>
+			/// <para>更佳—高图像质量。</para>
 			/// </summary>
 			[GPValue("BETTER")]
-			[Description("Better")]
+			[Description("更佳")]
 			Better,
 
 			/// <summary>
-			/// <para>Normal—A compromise between image quality and speed.</para>
+			/// <para>正常—图像质量和速度之间的折衷。</para>
 			/// </summary>
 			[GPValue("NORMAL")]
-			[Description("Normal")]
+			[Description("正常")]
 			Normal,
 
 			/// <summary>
-			/// <para>Faster—Lower image quality to generate the report faster.</para>
+			/// <para>较快—图像质量越低，报表生成速度越快。</para>
 			/// </summary>
 			[GPValue("FASTER")]
-			[Description("Faster")]
+			[Description("较快")]
 			Faster,
 
 			/// <summary>
-			/// <para>Fastest—The lowest image quality to create the report the fastest.</para>
+			/// <para>最快—图像质量最低时，创建报表的速度最快。</para>
 			/// </summary>
 			[GPValue("FASTEST")]
-			[Description("Fastest")]
+			[Description("最快")]
 			Fastest,
 
 		}
@@ -282,14 +282,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum EmbedFontEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Fonts will be embedded in the output report. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EMBED_FONTS")]
 			EMBED_FONTS,
 
 			/// <summary>
-			/// <para>Unchecked—Fonts will not be embedded in the output report.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_EMBED_FONTS")]
@@ -303,14 +303,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CompressVectorGraphicsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Vector graphics will be compressed. This option should be set unless clear text is desired for troubleshooting. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMPRESS_GRAPHICS")]
 			COMPRESS_GRAPHICS,
 
 			/// <summary>
-			/// <para>Unchecked—Vector graphics will not be compressed.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_COMPRESS_GRAPHICS")]
@@ -324,45 +324,45 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ImageCompressionEnum 
 		{
 			/// <summary>
-			/// <para>No image compression—Do not compress image or raster data.</para>
+			/// <para>无图像压缩—请勿压缩图像或栅格数据。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("No image compression")]
+			[Description("无图像压缩")]
 			No_image_compression,
 
 			/// <summary>
-			/// <para>Run-length encoded (RLE) compression—Uses Run-length encoded compression.</para>
+			/// <para>游程编码 (RLE) 压缩—使用游程编码压缩。</para>
 			/// </summary>
 			[GPValue("RLE")]
-			[Description("Run-length encoded (RLE) compression")]
+			[Description("游程编码 (RLE) 压缩")]
 			RLE,
 
 			/// <summary>
-			/// <para>Deflate compression—Uses Deflate, a lossless data compression.</para>
+			/// <para>Deflate 压缩—使用 Deflate 无损数据压缩。</para>
 			/// </summary>
 			[GPValue("DEFLATE")]
-			[Description("Deflate compression")]
+			[Description("Deflate 压缩")]
 			Deflate_compression,
 
 			/// <summary>
-			/// <para>Lempel-Ziv-Welch (LZW) compression—Uses Lempel-Ziv-Welch, a lossless data compression.</para>
+			/// <para>Lempel-Ziv-Welch (LZW) 压缩—使用 Lempel-Ziv-Welch 无损数据压缩。</para>
 			/// </summary>
 			[GPValue("LZW")]
-			[Description("Lempel-Ziv-Welch (LZW) compression")]
+			[Description("Lempel-Ziv-Welch (LZW) 压缩")]
 			LZW,
 
 			/// <summary>
-			/// <para>Joint Photographic Experts Group (JPEG) compression—Uses JPEG, a lossy data compression.</para>
+			/// <para>联合图像专家组 (JPEG) 压缩—使用 JPEG 有损数据压缩。</para>
 			/// </summary>
 			[GPValue("JPEG")]
-			[Description("Joint Photographic Experts Group (JPEG) compression")]
+			[Description("联合图像专家组 (JPEG) 压缩")]
 			JPEG,
 
 			/// <summary>
-			/// <para>Adaptive compression—Uses Adaptive, which automatically selects the best compression type for each image on the page. JPEG will be used for large images with many unique colors. Deflate will be used for all other images. This is the default.</para>
+			/// <para>Adaptive 压缩—使用自动为页面中的每个图像选择最佳压缩类型的 Adaptive。JPEG 适用于包含许多唯一颜色的较大图像。Deflate 适用于所有其他图像。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ADAPTIVE")]
-			[Description("Adaptive compression")]
+			[Description("Adaptive 压缩")]
 			Adaptive_compression,
 
 		}
@@ -373,14 +373,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PasswordProtectEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output PDF report document will require a password to open.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PASSWORD_PROTECT")]
 			PASSWORD_PROTECT,
 
 			/// <summary>
-			/// <para>Unchecked—The output PDF report document can be opened without providing a password. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_PASSWORD_PROTECT")]
@@ -394,38 +394,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PageRangeTypeEnum 
 		{
 			/// <summary>
-			/// <para>All pages—Export all pages. This is the default.</para>
+			/// <para>所有页面—导出所有页面。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All pages")]
+			[Description("所有页面")]
 			All_pages,
 
 			/// <summary>
-			/// <para>Last page—Export the last page only.</para>
+			/// <para>最后一页—仅导出最后一页。</para>
 			/// </summary>
 			[GPValue("LAST")]
-			[Description("Last page")]
+			[Description("最后一页")]
 			Last_page,
 
 			/// <summary>
-			/// <para>Odd numbered pages—Export the odd numbered pages.</para>
+			/// <para>奇数页面—导出奇数页面。</para>
 			/// </summary>
 			[GPValue("ODD")]
-			[Description("Odd numbered pages")]
+			[Description("奇数页面")]
 			Odd_numbered_pages,
 
 			/// <summary>
-			/// <para>Even numbered pages—Export the even numbered pages.</para>
+			/// <para>偶数页面—导出偶数页面。</para>
 			/// </summary>
 			[GPValue("EVEN")]
-			[Description("Even numbered pages")]
+			[Description("偶数页面")]
 			Even_numbered_pages,
 
 			/// <summary>
-			/// <para>Custom page range—Export a custom page range.</para>
+			/// <para>自定义页面范围—导出自定义页面范围。</para>
 			/// </summary>
 			[GPValue("CUSTOM")]
-			[Description("Custom page range")]
+			[Description("自定义页面范围")]
 			Custom_page_range,
 
 		}

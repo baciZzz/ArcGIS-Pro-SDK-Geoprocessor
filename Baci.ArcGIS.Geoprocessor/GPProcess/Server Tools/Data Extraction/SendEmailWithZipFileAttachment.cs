@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Send Email With Zip File Attachment</para>
-	/// <para>Send Email With Zip File Attachment</para>
-	/// <para>Emails a file to an email address using an SMTP email server.</para>
+	/// <para>发送电子邮件（附 Zip 文件）</para>
+	/// <para>使用 SMTP 电子邮件服务器将文件以电子邮件形式发送到某个电子邮件地址。</para>
 	/// </summary>
 	public class SendEmailWithZipFileAttachment : AbstractGPProcess
 	{
@@ -21,32 +21,32 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		/// <param name="To">
 		/// <para>To</para>
-		/// <para>The email address of the recipient.</para>
+		/// <para>收件人的电子邮件地址。</para>
 		/// </param>
 		/// <param name="From">
 		/// <para>From</para>
-		/// <para>The email address of the sender.</para>
+		/// <para>发件人的电子邮件地址。</para>
 		/// </param>
 		/// <param name="Subject">
 		/// <para>Subject</para>
-		/// <para>The text in the subject line of the email.</para>
+		/// <para>电子邮件主题文字。</para>
 		/// </param>
 		/// <param name="Text">
 		/// <para>Text</para>
-		/// <para>The body text of the email.</para>
+		/// <para>电子邮件的正文文字。</para>
 		/// </param>
 		/// <param name="ZipFile">
 		/// <para>Zip File</para>
-		/// <para>The file to be attached to the email.</para>
+		/// <para>电子邮件的附件。</para>
 		/// </param>
 		/// <param name="MaxFileSizeMB">
 		/// <para>Max File Size (MB)</para>
-		/// <para>The maximum allowable size of an attachment.</para>
-		/// <para>If you don&apos;t know what to use for Max File Size, check the attachment size limit of your SMTP mail server and the recipient email provider.</para>
+		/// <para>附件大小的上限。</para>
+		/// <para>如果不确定应将“文件最大大小”设置为什么值，请参考 SMTP 电子邮件服务器和收件人电子邮件提供方的附件大小限制。</para>
 		/// </param>
 		/// <param name="SMTPEmailServer">
 		/// <para>SMTP Email Server</para>
-		/// <para>The SMTP email server that will deliver the email.</para>
+		/// <para>传送电子邮件的 SMTP 电子邮件服务器。</para>
 		/// </param>
 		public SendEmailWithZipFileAttachment(object To, object From, object Subject, object Text, object ZipFile, object MaxFileSizeMB, object SMTPEmailServer)
 		{
@@ -60,9 +60,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Send Email With Zip File Attachment</para>
+		/// <para>Tool Display Name : 发送电子邮件（附 Zip 文件）</para>
 		/// </summary>
-		public override string DisplayName() => "Send Email With Zip File Attachment";
+		public override string DisplayName() => "发送电子邮件（附 Zip 文件）";
 
 		/// <summary>
 		/// <para>Tool Name : SendEmailWithZipFileAttachment</para>
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>To</para>
-		/// <para>The email address of the recipient.</para>
+		/// <para>收件人的电子邮件地址。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>From</para>
-		/// <para>The email address of the sender.</para>
+		/// <para>发件人的电子邮件地址。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Subject</para>
-		/// <para>The text in the subject line of the email.</para>
+		/// <para>电子邮件主题文字。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Text</para>
-		/// <para>The body text of the email.</para>
+		/// <para>电子邮件的正文文字。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Zip File</para>
-		/// <para>The file to be attached to the email.</para>
+		/// <para>电子邮件的附件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -136,8 +136,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Max File Size (MB)</para>
-		/// <para>The maximum allowable size of an attachment.</para>
-		/// <para>If you don&apos;t know what to use for Max File Size, check the attachment size limit of your SMTP mail server and the recipient email provider.</para>
+		/// <para>附件大小的上限。</para>
+		/// <para>如果不确定应将“文件最大大小”设置为什么值，请参考 SMTP 电子邮件服务器和收件人电子邮件提供方的附件大小限制。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>SMTP Email Server</para>
-		/// <para>The SMTP email server that will deliver the email.</para>
+		/// <para>传送电子邮件的 SMTP 电子邮件服务器。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>User</para>
-		/// <para>The user which will log in to the SMTP email server.</para>
+		/// <para>将登录到 SMTP 电子邮件服务器的用户。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Password</para>
-		/// <para>The user password used to connect to the SMTP email server (if necessary).</para>
+		/// <para>连接到 SMTP 电子邮件服务器所使用的用户密码（如有必要）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

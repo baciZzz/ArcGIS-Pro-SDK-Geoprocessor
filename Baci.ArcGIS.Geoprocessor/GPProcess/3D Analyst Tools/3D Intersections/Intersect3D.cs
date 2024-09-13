@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Intersect 3D</para>
-	/// <para>Intersect 3D</para>
-	/// <para>Computes the intersection of multipatch features to produce closed multipatches  encompassing the overlapping volumes, open multipatch features from the common surface areas, or lines from the intersecting edges.</para>
+	/// <para>3D 相交</para>
+	/// <para>计算多面体要素的交集，以便生成包含重叠体积的闭合多面体，根据公共表面积生成非闭合多面体要素，或根据相交边生成线要素。</para>
 	/// </summary>
 	public class Intersect3D : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatureClass1">
 		/// <para>Input Multipatch Features</para>
-		/// <para>The multipatch features that will be intersected. When only one input feature layer or feature class is provided, the output will indicate the intersection of its own features.</para>
+		/// <para>要相交的多面体属性。当只提供一个输入要素图层或要素类时，输出将表示其自身要素的交集。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </param>
 		public Intersect3D(object InFeatureClass1, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Intersect 3D</para>
+		/// <para>Tool Display Name : 3D 相交</para>
 		/// </summary>
-		public override string DisplayName() => "Intersect 3D";
+		public override string DisplayName() => "3D 相交";
 
 		/// <summary>
 		/// <para>Tool Name : Intersect3D</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Multipatch Features</para>
-		/// <para>The multipatch features that will be intersected. When only one input feature layer or feature class is provided, the output will indicate the intersection of its own features.</para>
+		/// <para>要相交的多面体属性。当只提供一个输入要素图层或要素类时，输出将表示其自身要素的交集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Multipatch Features</para>
-		/// <para>The optional second multipatch feature layer or feature class to be intersected with the first.</para>
+		/// <para>与第一个多面体要素图层或要素类相交的第二个多面体要素图层或要素类（可选）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -96,10 +96,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Geometry Type</para>
-		/// <para>Determines the type of intersection geometry created.</para>
-		/// <para>Solid—Creates a closed multipatch representing the overlapping volumes between input features. This is the default.</para>
-		/// <para>Surface—Creates a multipatch surface representing shared faces between input features.</para>
-		/// <para>Line— Creates lines representing shared edges between input features.</para>
+		/// <para>确定创建的相交几何的类型。</para>
+		/// <para>实线—创建表示输入要素之间重叠体积的闭合多面体。这是默认设置。</para>
+		/// <para>表面分析—创建表示输入要素之间共享面的多面体表面。</para>
+		/// <para>折线— 创建表示输入要素之间共享边的线。</para>
 		/// <para><see cref="OutputGeometryTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -124,24 +124,24 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum OutputGeometryTypeEnum 
 		{
 			/// <summary>
-			/// <para>Solid—Creates a closed multipatch representing the overlapping volumes between input features. This is the default.</para>
+			/// <para>实线—创建表示输入要素之间重叠体积的闭合多面体。这是默认设置。</para>
 			/// </summary>
 			[GPValue("SOLID")]
-			[Description("Solid")]
+			[Description("实线")]
 			Solid,
 
 			/// <summary>
-			/// <para>Surface—Creates a multipatch surface representing shared faces between input features.</para>
+			/// <para>表面分析—创建表示输入要素之间共享面的多面体表面。</para>
 			/// </summary>
 			[GPValue("SURFACE")]
-			[Description("Surface")]
+			[Description("表面分析")]
 			Surface,
 
 			/// <summary>
-			/// <para>Line— Creates lines representing shared edges between input features.</para>
+			/// <para>折线— 创建表示输入要素之间共享边的线。</para>
 			/// </summary>
 			[GPValue("LINE")]
-			[Description("Line")]
+			[Description("折线")]
 			Line,
 
 		}

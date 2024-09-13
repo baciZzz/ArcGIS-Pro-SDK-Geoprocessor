@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Reclassify Field</para>
-	/// <para>Reclassify Field</para>
-	/// <para>Reclassifies values in a numerical or text field into classes based on bounds defined manually or using a reclassification method.</para>
+	/// <para>重分类字段</para>
+	/// <para>根据手动定义的边界或使用重分类方法将数值字段或文本字段中的值重分类为多个类。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input table or feature class containing the field to be reclassified.</para>
+		/// <para>包含要重分类的字段的输入表或要素类。</para>
 		/// </param>
 		/// <param name="Field">
 		/// <para>Field to Reclassify</para>
-		/// <para>The field to be reclassified. The field must be numeric or text.</para>
+		/// <para>要重分类的字段。 字段必须为数值或文本字段。</para>
 		/// </param>
 		public ReclassifyField(object InTable, object Field)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Reclassify Field</para>
+		/// <para>Tool Display Name : 重分类字段</para>
 		/// </summary>
-		public override string DisplayName() => "Reclassify Field";
+		public override string DisplayName() => "重分类字段";
 
 		/// <summary>
 		/// <para>Tool Name : ReclassifyField</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input table or feature class containing the field to be reclassified.</para>
+		/// <para>包含要重分类的字段的输入表或要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field to Reclassify</para>
-		/// <para>The field to be reclassified. The field must be numeric or text.</para>
+		/// <para>要重分类的字段。 字段必须为数值或文本字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -90,15 +90,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Reclassification Method</para>
-		/// <para>Specifies how the values contained in the field specified in the Field to Reclassify parameter.</para>
-		/// <para>Defined interval— Creates classes with the same class range over the span of the values of the field to reclassify.</para>
-		/// <para>Equal interval—Creates classes with equal class ranges divided into a specified number of classes. This is the default.</para>
-		/// <para>Geometric interval—Creates classes with geometrically increasing or decreasing class ranges into a specified number of classes.</para>
-		/// <para>Manual interval— Class breaks and reclassed values are manually specified.</para>
-		/// <para>Natural breaks (Jenks)— Creates classes of natural groupings in the data using the Jenks natural breaks algorithm.</para>
-		/// <para>Quantile— Creates classes where each class includes an equal number of values.</para>
-		/// <para>Standard deviation— Creates classes by adding and subtracting a fraction of the standard deviation above and below the average value.</para>
-		/// <para>Unique values—Creates classes where each unique value of the field becomes a class.</para>
+		/// <para>指定在要重分类的字段参数中指定的字段中包含值的方式。</para>
+		/// <para>定义的间隔—创建基于要重分类的字段值的跨度分类范围相同的类。</para>
+		/// <para>相等间隔—创建类范围整除指定分类数量的类。 这是默认设置。</para>
+		/// <para>几何间隔—创建在几何上将分类范围增加或减小为指定数量的分类的类。</para>
+		/// <para>手动间隔—分类间隔和重分类值手动指定。</para>
+		/// <para>自然间断点分级法 (Jenks)—创建使用 Jenks 自然间断点分级法算法在数据中自然分组的类。</para>
+		/// <para>分位数—创建每个类包含相等数量的值的类。</para>
+		/// <para>标准差—通过加减高于和低于平均值一定比例的标准差创建类。</para>
+		/// <para>唯一值—创建字段的每个唯一值变为一个类的类。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Number of Classes</para>
-		/// <para>The target number of classes in the reclassified field. The maximum number of classes is 256.</para>
+		/// <para>重分类字段中的目标分类数量。 类的最大数量为 256。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Interval Size</para>
-		/// <para>The class interval size for the reclassified field. The provided value must result in at least 3 classes and not more than 1000 classes.</para>
+		/// <para>重分类字段的类间隔大小。 提供的值必须生成至少 3 个类，并且不超过 1000 个类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -125,11 +125,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Number of Standard Deviations</para>
-		/// <para>Specifies the number of standard deviations for the reclassified field. Class breaks and categories are created with equal interval ranges that are a proportion of the standard deviation from the mean.</para>
-		/// <para>One standard deviation—Intervals are created using one standard deviation. This is the default.</para>
-		/// <para>One half of a standard deviation—Intervals are created using half of one standard deviation.</para>
-		/// <para>One third of a standard deviation—Intervals are created using a third of one standard deviation.</para>
-		/// <para>One quarter of a standard deviation—Intervals are created using a quarter of one standard deviation.</para>
+		/// <para>指定重分类字段的标准差数。 分类间隔和类别以相等间隔范围创建，这些间隔范围与相对于平均值的标准差成比例。</para>
+		/// <para>一个标准差—间隔使用一个标准差进行创建。 这是默认设置。</para>
+		/// <para>二分之一标准差—间隔使用二分之一标准差进行创建。</para>
+		/// <para>三分之一标准差—间隔使用三分之一标准差进行创建。</para>
+		/// <para>四分之一标准差—间隔使用四分之一标准差进行创建。</para>
 		/// <para><see cref="StandardDeviationsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Reclassification Table</para>
-		/// <para>The upper bound and reclassed value for the manual reclassification method.</para>
+		/// <para>手动重分类方法的上限和重分类值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -147,9 +147,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Reverse Values (Descending)</para>
-		/// <para>Specifies how the reclassified values are ordered.</para>
-		/// <para>Checked—Classes are assigned values in descending order; the class with the highest values is assigned 1, the next highest class is assigned 2, and so on.</para>
-		/// <para>Unchecked—Classes are assigned values in ascending order; the class with the lowest values is assigned 1, the next lowest class is assigned 2, and so on. This is the default.</para>
+		/// <para>指定如何对重分类值进行排序。</para>
+		/// <para>选中 - 按降序向类分配值；值最高的类将分配 1，下一个最高类将分配 2，依此类推。</para>
+		/// <para>未选中 - 按升序向类分配值；值最低的类将分配 1，下一个最低类将分配 2，依此类推。 这是默认设置。</para>
 		/// <para><see cref="ReverseValuesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Field Name</para>
-		/// <para>The name or prefix of the output field. If the field to reclassify is a numerical field, two fields will be created, and this name will prefix the field names. If the field to reclassify is a text field, one new field will be created with this name.</para>
+		/// <para>输出字段的名称或前缀。 如果要重分类的字段是数值字段，则将创建两个字段，并且将以该名称作为字段名称的前缀。 如果要重分类的字段是文本字段，则将使用此名称创建一个新字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -189,59 +189,59 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Defined interval— Creates classes with the same class range over the span of the values of the field to reclassify.</para>
+			/// <para>定义的间隔—创建基于要重分类的字段值的跨度分类范围相同的类。</para>
 			/// </summary>
 			[GPValue("DEFINED_INTERVAL")]
-			[Description("Defined interval")]
+			[Description("定义的间隔")]
 			Defined_interval,
 
 			/// <summary>
-			/// <para>Equal interval—Creates classes with equal class ranges divided into a specified number of classes. This is the default.</para>
+			/// <para>相等间隔—创建类范围整除指定分类数量的类。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("EQUAL_INTERVAL")]
-			[Description("Equal interval")]
+			[Description("相等间隔")]
 			Equal_interval,
 
 			/// <summary>
-			/// <para>Geometric interval—Creates classes with geometrically increasing or decreasing class ranges into a specified number of classes.</para>
+			/// <para>几何间隔—创建在几何上将分类范围增加或减小为指定数量的分类的类。</para>
 			/// </summary>
 			[GPValue("GEOMETRIC_INTERVAL")]
-			[Description("Geometric interval")]
+			[Description("几何间隔")]
 			Geometric_interval,
 
 			/// <summary>
-			/// <para>Manual interval— Class breaks and reclassed values are manually specified.</para>
+			/// <para>手动间隔—分类间隔和重分类值手动指定。</para>
 			/// </summary>
 			[GPValue("MANUAL")]
-			[Description("Manual interval")]
+			[Description("手动间隔")]
 			Manual_interval,
 
 			/// <summary>
-			/// <para>Natural breaks (Jenks)— Creates classes of natural groupings in the data using the Jenks natural breaks algorithm.</para>
+			/// <para>自然间断点分级法 (Jenks)—创建使用 Jenks 自然间断点分级法算法在数据中自然分组的类。</para>
 			/// </summary>
 			[GPValue("NATURAL_BREAKS")]
-			[Description("Natural breaks (Jenks)")]
+			[Description("自然间断点分级法 (Jenks)")]
 			NATURAL_BREAKS,
 
 			/// <summary>
-			/// <para>Quantile— Creates classes where each class includes an equal number of values.</para>
+			/// <para>分位数—创建每个类包含相等数量的值的类。</para>
 			/// </summary>
 			[GPValue("QUANTILE")]
-			[Description("Quantile")]
+			[Description("分位数")]
 			Quantile,
 
 			/// <summary>
-			/// <para>Standard deviation— Creates classes by adding and subtracting a fraction of the standard deviation above and below the average value.</para>
+			/// <para>标准差—通过加减高于和低于平均值一定比例的标准差创建类。</para>
 			/// </summary>
 			[GPValue("STANDARD_DEVIATION")]
-			[Description("Standard deviation")]
+			[Description("标准差")]
 			Standard_deviation,
 
 			/// <summary>
-			/// <para>Unique values—Creates classes where each unique value of the field becomes a class.</para>
+			/// <para>唯一值—创建字段的每个唯一值变为一个类的类。</para>
 			/// </summary>
 			[GPValue("UNIQUE_VALUES")]
-			[Description("Unique values")]
+			[Description("唯一值")]
 			Unique_values,
 
 		}
@@ -252,31 +252,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum StandardDeviationsEnum 
 		{
 			/// <summary>
-			/// <para>One standard deviation—Intervals are created using one standard deviation. This is the default.</para>
+			/// <para>一个标准差—间隔使用一个标准差进行创建。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("ONE")]
-			[Description("One standard deviation")]
+			[Description("一个标准差")]
 			One_standard_deviation,
 
 			/// <summary>
-			/// <para>One half of a standard deviation—Intervals are created using half of one standard deviation.</para>
+			/// <para>二分之一标准差—间隔使用二分之一标准差进行创建。</para>
 			/// </summary>
 			[GPValue("HALF")]
-			[Description("One half of a standard deviation")]
+			[Description("二分之一标准差")]
 			One_half_of_a_standard_deviation,
 
 			/// <summary>
-			/// <para>One third of a standard deviation—Intervals are created using a third of one standard deviation.</para>
+			/// <para>三分之一标准差—间隔使用三分之一标准差进行创建。</para>
 			/// </summary>
 			[GPValue("THIRD")]
-			[Description("One third of a standard deviation")]
+			[Description("三分之一标准差")]
 			One_third_of_a_standard_deviation,
 
 			/// <summary>
-			/// <para>One quarter of a standard deviation—Intervals are created using a quarter of one standard deviation.</para>
+			/// <para>四分之一标准差—间隔使用四分之一标准差进行创建。</para>
 			/// </summary>
 			[GPValue("QUARTER")]
-			[Description("One quarter of a standard deviation")]
+			[Description("四分之一标准差")]
 			One_quarter_of_a_standard_deviation,
 
 		}
@@ -287,14 +287,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ReverseValuesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Classes are assigned values in descending order; the class with the highest values is assigned 1, the next highest class is assigned 2, and so on.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DESC")]
 			DESC,
 
 			/// <summary>
-			/// <para>Unchecked—Classes are assigned values in ascending order; the class with the lowest values is assigned 1, the next lowest class is assigned 2, and so on. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ASC")]

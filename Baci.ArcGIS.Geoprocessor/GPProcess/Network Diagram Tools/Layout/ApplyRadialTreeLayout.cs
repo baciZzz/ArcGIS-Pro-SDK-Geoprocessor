@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Apply Radial Tree Layout</para>
-	/// <para>Apply Radial Tree Layout</para>
-	/// <para>Arranges diagram features hierarchically and places them in a radial tree.</para>
+	/// <para>应用径向树布局</para>
+	/// <para>用于按等级排列逻辑示意图要素并将其置于径向树中。</para>
 	/// </summary>
 	public class ApplyRadialTreeLayout : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InNetworkDiagramLayer">
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>The network diagram to which the layout will be applied.</para>
+		/// <para>将应用布局的网络逻辑示意图。</para>
 		/// </param>
 		public ApplyRadialTreeLayout(object InNetworkDiagramLayer)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Apply Radial Tree Layout</para>
+		/// <para>Tool Display Name : 应用径向树布局</para>
 		/// </summary>
-		public override string DisplayName() => "Apply Radial Tree Layout";
+		public override string DisplayName() => "应用径向树布局";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyRadialTreeLayout</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>The network diagram to which the layout will be applied.</para>
+		/// <para>将应用布局的网络逻辑示意图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDiagramLayer()]
@@ -73,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Preserve container layout</para>
-		/// <para>Specifies how the algorithm will process containers.</para>
-		/// <para>Checked—The layout algorithm will execute on the top graph of the diagram so containers are preserved.</para>
-		/// <para>Unchecked—The layout algorithm will execute on both content and noncontent features in the diagram. This is the default.</para>
+		/// <para>指定算法将如何处理容器。</para>
+		/// <para>选中 - 将对逻辑示意图的上方图执行布局算法，以保留容器。</para>
+		/// <para>未选中 - 将对逻辑示意图中的内容要素和非内容要素执行布局算法。 这是默认设置。</para>
 		/// <para><see cref="AreContainersPreservedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -85,9 +85,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Spacing values interpreted as absolute units in the diagram coordinate system</para>
-		/// <para>Specifies how parameters representing distances will be interpreted.</para>
-		/// <para>Checked—The layout algorithm will interpret any distance values as linear units.</para>
-		/// <para>Unchecked—The layout algorithm will interpret any distance values as relative units to an estimation of the average of the junction sizes in the current diagram extent. This is the default.</para>
+		/// <para>指定将如何解释表示距离的参数。</para>
+		/// <para>选中 - 布局算法会按线性单位来解释任意距离值。</para>
+		/// <para>未选中 - 布局算法会将所有距离值解释为当前逻辑示意图范围内交汇点大小的估算平均值的相对单位。 这是默认设置。</para>
 		/// <para><see cref="IsUnitAbsoluteEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Initial Radius</para>
-		/// <para>The radius of the first concentric circle whose center is the radial tree root junction—that is, the radius of the circle around which the diagram junctions belonging to the first hierarchical level are placed. The default is 5 in the units of the diagram's coordinate system. This parameter can only be used with absolute units.</para>
+		/// <para>圆心为径向树根交汇点的第一个同心圆的半径；即，放置属于第一个级别的逻辑示意图交汇点的圆的半径。默认值为 5（采用逻辑示意图坐标系的单位）。此参数只能与绝对单位搭配使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Initial Radius</para>
-		/// <para>The radius of the first concentric circle whose center is the radial tree root junction—that is, the radius of the circle around which the diagram junctions belonging to the first hierarchical level are placed. The default is 5. This parameter can only be used with proportional units.</para>
+		/// <para>圆心为径向树根交汇点的第一个同心圆的半径；即，放置属于第一个级别的逻辑示意图交汇点的圆的半径。默认值为 5。此参数只能与比例单位搭配使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Between Disjoined Graphs</para>
-		/// <para>The minimum spacing that will separate features belonging to disjoined graphs when the diagram contains such graphs. This parameter is used with absolute units. The default is 4 in the units of the diagram's coordinate system.</para>
+		/// <para>当逻辑示意图包含不相交图形时，属于此类图形的要素之间的最小间距。 此参数与绝对单位搭配使用。 默认值为逻辑示意图坐标系中的 4 个单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Between Disjoined Graphs</para>
-		/// <para>The minimum spacing that will separate features belonging to disjoined graphs when the diagram contains such graphs. This parameter is used with proportional units. The default is 4.</para>
+		/// <para>当逻辑示意图包含不相交图形时，属于此类图形的要素之间的最小间距。 此参数与比例单位搭配使用。 默认值为 4。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Radius Factor</para>
-		/// <para>The multiplicative factor used to increase or decrease the radius of each concentric circle. It is also the distance that separates each concentric circle related to a hierarchical level. When using a radius factor less than 1, the distance that separates the diagram junctions belonging to the (n) hierarchical level and the (n+1) hierarchical level progressively decreases. With a factor greater than 1, the distance between the hierarchical levels increases progressively. The default is 1.</para>
+		/// <para>用来增大或减小每个同心圆半径的倍乘系数。还表示分隔各级别同心圆的距离。如果使用的半径系数小于 1，则用来分隔级别 (n) 与级别 (n+1) 逻辑示意图交汇点的距离会逐渐减小。如果该系数大于 1，则不同级别间的距离会逐渐增大。默认值为 1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -144,9 +144,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Run in asynchronous mode on the server</para>
-		/// <para>Specifies whether the layout algorithm will run asynchronously or synchronously on the server.</para>
-		/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out (for example, Partial Overlapping Edges) and applying to large diagrams (more than 25,000 features).</para>
-		/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service default time-out value of 600 seconds. This is the default.</para>
+		/// <para>指定布局算法在服务器上将异步运行还是同步运行。</para>
+		/// <para>选中 - 布局算法将在服务器上异步运行。 服务器资源可通过该选项来运行超时较长的布局算法。 当执行耗时且可能导致服务器超时的布局（例如，部分重叠边）并应用于大型逻辑示意图（超过 25,000 个要素）时，建议进行异步运行。</para>
+		/// <para>未选中 - 布局算法将在服务器上同步运行。 如果执行时超过服务默认超时值（600 秒），则布局算法可能失败，无法完成。 这是默认设置。</para>
 		/// <para><see cref="RunAsyncEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -163,14 +163,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum AreContainersPreservedEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The layout algorithm will execute on the top graph of the diagram so containers are preserved.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE_CONTAINERS")]
 			PRESERVE_CONTAINERS,
 
 			/// <summary>
-			/// <para>Unchecked—The layout algorithm will execute on both content and noncontent features in the diagram. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("IGNORE_CONTAINERS")]
@@ -184,14 +184,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsUnitAbsoluteEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The layout algorithm will interpret any distance values as linear units.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ABSOLUTE_UNIT")]
 			ABSOLUTE_UNIT,
 
 			/// <summary>
-			/// <para>Unchecked—The layout algorithm will interpret any distance values as relative units to an estimation of the average of the junction sizes in the current diagram extent. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("PROPORTIONAL_UNIT")]
@@ -205,14 +205,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum RunAsyncEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The layout algorithm will run asynchronously on the server. This option dedicates server resources to run the layout algorithm with a longer time-out. Running asynchronously is recommended when executing layouts that are time consuming and may exceed the server time-out (for example, Partial Overlapping Edges) and applying to large diagrams (more than 25,000 features).</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RUN_ASYNCHRONOUSLY")]
 			RUN_ASYNCHRONOUSLY,
 
 			/// <summary>
-			/// <para>Unchecked—The layout algorithm will run synchronously on the server. It can fail without completion if its execution exceeds the service default time-out value of 600 seconds. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("RUN_SYNCHRONOUSLY")]

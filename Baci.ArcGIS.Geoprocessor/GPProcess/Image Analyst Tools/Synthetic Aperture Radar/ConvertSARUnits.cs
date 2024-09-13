@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Convert SAR Units</para>
-	/// <para>Convert SAR Units</para>
-	/// <para>Converts the scaling of the input synthetic aperture radar (SAR) data between amplitude and power and between  linear and decibels (dB).</para>
+	/// <para>转换 SAR 单位</para>
+	/// <para>在振幅和功率之间以及线性和分贝 (dB) 之间转换输入合成孔径雷达 (SAR) 数据的比例。</para>
 	/// </summary>
 	public class ConvertSARUnits : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRadarData">
 		/// <para>Input Radar Data</para>
-		/// <para>The input radar data.</para>
+		/// <para>输入雷达数据。</para>
 		/// </param>
 		/// <param name="OutRadarData">
 		/// <para>Output Radar Data</para>
-		/// <para>The converted radar dataset.</para>
+		/// <para>转换的雷达数据集。</para>
 		/// </param>
 		public ConvertSARUnits(object InRadarData, object OutRadarData)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Convert SAR Units</para>
+		/// <para>Tool Display Name : 转换 SAR 单位</para>
 		/// </summary>
-		public override string DisplayName() => "Convert SAR Units";
+		public override string DisplayName() => "转换 SAR 单位";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertSARUnits</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Radar Data</para>
-		/// <para>The input radar data.</para>
+		/// <para>输入雷达数据。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Radar Data</para>
-		/// <para>The converted radar dataset.</para>
+		/// <para>转换的雷达数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -86,11 +86,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Conversion Type</para>
-		/// <para>Specifies the type of backscatter conversion that will be applied.</para>
-		/// <para>Linear to dB—The unitless value will be converted to decibels (dB) values. This is the default.</para>
-		/// <para>dB to linear—The dB values will be converted to unitless values.</para>
-		/// <para>Amplitude to power—The amplitude values will be converted to power values by squaring the amplitude.</para>
-		/// <para>Power to amplitude—The power values will converted to amplitude values by applying the square root to the power.</para>
+		/// <para>指定将应用的反向散射转换类型。</para>
+		/// <para>线性转 dB—无单位值将转换为分贝 (dB) 值。 这是默认设置。</para>
+		/// <para>dB 转线性—dB 值将转换为无单位值。</para>
+		/// <para>振幅转功率—通过计算振幅的平方，将振幅值将转换为功率值。</para>
+		/// <para>功率转振幅—通过计算功率的平方根，将功率值转换为振幅值。</para>
 		/// <para><see cref="ConversionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -115,31 +115,31 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum ConversionTypeEnum 
 		{
 			/// <summary>
-			/// <para>Linear to dB—The unitless value will be converted to decibels (dB) values. This is the default.</para>
+			/// <para>线性转 dB—无单位值将转换为分贝 (dB) 值。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("LINEAR_TO_DB")]
-			[Description("Linear to dB")]
+			[Description("线性转 dB")]
 			Linear_to_dB,
 
 			/// <summary>
-			/// <para>dB to linear—The dB values will be converted to unitless values.</para>
+			/// <para>dB 转线性—dB 值将转换为无单位值。</para>
 			/// </summary>
 			[GPValue("DB_TO_LINEAR")]
-			[Description("dB to linear")]
+			[Description("dB 转线性")]
 			dB_to_linear,
 
 			/// <summary>
-			/// <para>Amplitude to power—The amplitude values will be converted to power values by squaring the amplitude.</para>
+			/// <para>振幅转功率—通过计算振幅的平方，将振幅值将转换为功率值。</para>
 			/// </summary>
 			[GPValue("AMPLITUDE_TO_POWER")]
-			[Description("Amplitude to power")]
+			[Description("振幅转功率")]
 			Amplitude_to_power,
 
 			/// <summary>
-			/// <para>Power to amplitude—The power values will converted to amplitude values by applying the square root to the power.</para>
+			/// <para>功率转振幅—通过计算功率的平方根，将功率值转换为振幅值。</para>
 			/// </summary>
 			[GPValue("POWER_TO_AMPLITUDE")]
-			[Description("Power to amplitude")]
+			[Description("功率转振幅")]
 			Power_to_amplitude,
 
 		}

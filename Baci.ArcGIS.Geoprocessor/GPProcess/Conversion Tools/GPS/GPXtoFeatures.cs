@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>GPX To Features</para>
-	/// <para>GPX To Features</para>
-	/// <para>Converts the point data in a .gpx file to features.</para>
+	/// <para>GPX 转要素</para>
+	/// <para>用于将 .gpx 文件中的点数据转换为要素。</para>
 	/// </summary>
 	public class GPXtoFeatures : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InputGPXFile">
 		/// <para>Input GPX File</para>
-		/// <para>The input .gpx file to be converted.</para>
+		/// <para>要转换的输入 .gpx 文件。</para>
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature class</para>
-		/// <para>The output point feature class.</para>
+		/// <para>输出点要素类。</para>
 		/// </param>
 		/// <param name="OutputType">
 		/// <para>Output Type</para>
-		/// <para>Specifies the geometry type of the output feature class.</para>
-		/// <para>Points—An output point feature class will be created. All GPX points will be included in the output. This is the default.</para>
-		/// <para>Tracks as polylines—An output polyline feature class will be created. Only GPX track points will be included in the output.</para>
+		/// <para>指定输出要素类的几何类型。</para>
+		/// <para>点—将创建输出点要素类。 输出中将包含所有 GPX 点。 这是默认设置。</para>
+		/// <para>轨迹作为折线—将创建输出折线要素类。 输出中仅会包含 GPX 轨迹点。</para>
 		/// <para><see cref="OutputTypeEnum"/></para>
 		/// </param>
 		public GPXtoFeatures(object InputGPXFile, object OutputFeatureClass, object OutputType)
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : GPX To Features</para>
+		/// <para>Tool Display Name : GPX 转要素</para>
 		/// </summary>
-		public override string DisplayName() => "GPX To Features";
+		public override string DisplayName() => "GPX 转要素";
 
 		/// <summary>
 		/// <para>Tool Name : GPXtoFeatures</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input GPX File</para>
-		/// <para>The input .gpx file to be converted.</para>
+		/// <para>要转换的输入 .gpx 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Feature class</para>
-		/// <para>The output point feature class.</para>
+		/// <para>输出点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -96,9 +96,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Type</para>
-		/// <para>Specifies the geometry type of the output feature class.</para>
-		/// <para>Points—An output point feature class will be created. All GPX points will be included in the output. This is the default.</para>
-		/// <para>Tracks as polylines—An output polyline feature class will be created. Only GPX track points will be included in the output.</para>
+		/// <para>指定输出要素类的几何类型。</para>
+		/// <para>点—将创建输出点要素类。 输出中将包含所有 GPX 点。 这是默认设置。</para>
+		/// <para>轨迹作为折线—将创建输出折线要素类。 输出中仅会包含 GPX 轨迹点。</para>
 		/// <para><see cref="OutputTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -123,17 +123,17 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum OutputTypeEnum 
 		{
 			/// <summary>
-			/// <para>Points—An output point feature class will be created. All GPX points will be included in the output. This is the default.</para>
+			/// <para>点—将创建输出点要素类。 输出中将包含所有 GPX 点。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("POINTS")]
-			[Description("Points")]
+			[Description("点")]
 			Points,
 
 			/// <summary>
-			/// <para>Tracks as polylines—An output polyline feature class will be created. Only GPX track points will be included in the output.</para>
+			/// <para>轨迹作为折线—将创建输出折线要素类。 输出中仅会包含 GPX 轨迹点。</para>
 			/// </summary>
 			[GPValue("TRACKS_AS_LINES")]
-			[Description("Tracks as polylines")]
+			[Description("轨迹作为折线")]
 			Tracks_as_polylines,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>LAS Dataset To TIN</para>
-	/// <para>LAS Dataset To TIN</para>
-	/// <para>Exports a triangulated irregular network (TIN) from a  LAS dataset.</para>
+	/// <para>LAS 数据集转 TIN</para>
+	/// <para>通过 LAS 数据集导出不规则三角网 (TIN)。</para>
 	/// </summary>
 	public class LasDatasetToTin : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset to process.</para>
+		/// <para>待处理的 LAS 数据集。</para>
 		/// </param>
 		/// <param name="OutTin">
 		/// <para>Output TIN</para>
-		/// <para>The TIN dataset that will be generated.</para>
+		/// <para>将要生成的 TIN 数据集。</para>
 		/// </param>
 		public LasDatasetToTin(object InLasDataset, object OutTin)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : LAS Dataset To TIN</para>
+		/// <para>Tool Display Name : LAS 数据集转 TIN</para>
 		/// </summary>
-		public override string DisplayName() => "LAS Dataset To TIN";
+		public override string DisplayName() => "LAS 数据集转 TIN";
 
 		/// <summary>
 		/// <para>Tool Name : LasDatasetToTin</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset to process.</para>
+		/// <para>待处理的 LAS 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output TIN</para>
-		/// <para>The TIN dataset that will be generated.</para>
+		/// <para>将要生成的 TIN 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETin()]
@@ -86,10 +86,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Thinning Type</para>
-		/// <para>Specifies the type of thinning to be used to reduce the LAS data points saved as the nodes in the resulting TIN.</para>
-		/// <para>No Thinning—No thinning is applied. This is the default.</para>
-		/// <para>Random—LAS data points are randomly selected based on the corresponding Thinning Method selection and Thinning Value entry.</para>
-		/// <para>Window Size—The LAS dataset is divided into square tiles defined by Thinning Value and LAS points are selected using Thinning Method.</para>
+		/// <para>指定用于减少生成的 TIN 中被保存为结点的 LAS 数据点的稀疏化类型。</para>
+		/// <para>无细化—不应用稀疏化功能。这是默认设置。</para>
+		/// <para>随机—基于相应的稀疏化方法选择和稀疏化值条目随机选择 LAS 数据点。</para>
+		/// <para>窗口大小—LAS 数据集分为由稀疏化值定义的方形切片，并使用稀疏化方法选择 LAS 点。</para>
 		/// <para><see cref="ThinningTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -99,12 +99,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Thinning Method</para>
-		/// <para>Specifies the technique to be used to reduce the LAS data points, which impacts the interpretation of Thinning Value. The available options depend on the selected Thinning Type.</para>
-		/// <para>Percent—Thinning value will reflect the percentage of LAS points that will be preserved in the output</para>
-		/// <para>Node Count—Thinning value will reflect the total number of nodes that are allowed in the output</para>
-		/// <para>Minimum Z—Selects the LAS data point with the lowest elevation in each window size area</para>
-		/// <para>Maximum Z—Selects the LAS data point with the highest elevation in each of the automatically determined window size areas</para>
-		/// <para>Closest To Mean Z—Selects the LAS data point with the elevation closest to the average value found in the automatically determined window size areas</para>
+		/// <para>指定用于减少 LAS 数据点的技术，该技术将对稀疏化值的解释产生影响。可用选项取决于所选的稀疏化类型。</para>
+		/// <para>百分比—稀疏化值将反映将在输出中保留的 LAS 点的百分比</para>
+		/// <para>节点计数—稀疏化值将反映输出中所允许的结点总数。</para>
+		/// <para>Z 最小值—在每个窗口大小区域中选择具有最低高程的 LAS 数据点。</para>
+		/// <para>Z 最大值—在每个自动确定的窗口大小区域中选择具有最高高程的 LAS 数据点。</para>
+		/// <para>最接近平均值的 Z 值—选择高程最接近自动确定的窗口大小区域中平均值的 LAS 数据点。</para>
 		/// <para><see cref="ThinningMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -114,10 +114,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Thinning Value</para>
-		/// <para>The thinning value&apos;s interpretation depends on the selection made for Thinning Type.</para>
-		/// <para>If Thinning Type is set to Window Size, this value represents the sampling area by which the LAS dataset will be divided.</para>
-		/// <para>If Thinning Type is set to Random and Thinning Method is set to Percent, this value represents the percentage of LAS points that will be exported to the TIN.</para>
-		/// <para>If Thinning Type is set to Random and Thinning Method is set to Node Count, this value represents the total number of LAS points that can be exported to the TIN.</para>
+		/// <para>稀疏化值的解释取决于所选稀疏化类型。</para>
+		/// <para>如果稀疏化类型设为窗口大小，则值表示要划分 LAS 数据集的采样区。</para>
+		/// <para>如果稀疏化类型设置为随机，稀疏化方法设置为百分比，此值表示将导出到 TIN 的 LAS 点的百分比。</para>
+		/// <para>如果稀疏化类型设置为随机，稀疏化方法设置为结点计数，此值表示可以导出到 TIN 的 LAS 点的总数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Maximum Number of Output Nodes</para>
-		/// <para>The maximum number of nodes permitted in the output TIN. The default is 5 million.</para>
+		/// <para>输出 TIN 中允许的结点的最大数量。默认值为 5 百万。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z Factor</para>
-		/// <para>The factor by which z-values will be multiplied. This is typically used to convert z linear units to match x,y linear units. The default is 1, which leaves elevation values unchanged. This parameter is not available if the spatial reference of the input surface has a z datum with a specified linear unit.</para>
+		/// <para>Z 值将乘上的系数。 此值通常用于转换 z 线性单位来匹配 x,y 线性单位。 默认值为 1，此时高程值保持不变。 如果输入表面的空间参考具有已指定线性单位的 z 基准，则此参数不可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -143,9 +143,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Clip to Extent</para>
-		/// <para>Specifies whether the resulting TIN will be clipped against the analysis extent. This only has an effect if the analysis extent is a subset of the input LAS dataset.</para>
-		/// <para>Checked—Clips the output TIN against the analysis extent. This is the default.</para>
-		/// <para>Unchecked—Does not clip the output TIN against the analysis extent.</para>
+		/// <para>指定是否根据分析范围裁剪生成的 TIN。仅当分析范围是输入 LAS 数据集的子集时，该选项才有效。</para>
+		/// <para>选中 - 根据分析范围裁剪输出 TIN。这是默认设置。</para>
+		/// <para>未选中 - 不根据分析范围裁剪输出 TIN。</para>
 		/// <para><see cref="ClipToExtentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -170,24 +170,24 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ThinningTypeEnum 
 		{
 			/// <summary>
-			/// <para>No Thinning—No thinning is applied. This is the default.</para>
+			/// <para>无细化—不应用稀疏化功能。这是默认设置。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("No Thinning")]
+			[Description("无细化")]
 			No_Thinning,
 
 			/// <summary>
-			/// <para>Random—LAS data points are randomly selected based on the corresponding Thinning Method selection and Thinning Value entry.</para>
+			/// <para>随机—基于相应的稀疏化方法选择和稀疏化值条目随机选择 LAS 数据点。</para>
 			/// </summary>
 			[GPValue("RANDOM")]
-			[Description("Random")]
+			[Description("随机")]
 			Random,
 
 			/// <summary>
-			/// <para>Window Size—The LAS dataset is divided into square tiles defined by Thinning Value and LAS points are selected using Thinning Method.</para>
+			/// <para>窗口大小—LAS 数据集分为由稀疏化值定义的方形切片，并使用稀疏化方法选择 LAS 点。</para>
 			/// </summary>
 			[GPValue("WINDOW_SIZE")]
-			[Description("Window Size")]
+			[Description("窗口大小")]
 			Window_Size,
 
 		}
@@ -198,38 +198,38 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ThinningMethodEnum 
 		{
 			/// <summary>
-			/// <para>Percent—Thinning value will reflect the percentage of LAS points that will be preserved in the output</para>
+			/// <para>百分比—稀疏化值将反映将在输出中保留的 LAS 点的百分比</para>
 			/// </summary>
 			[GPValue("PERCENT")]
-			[Description("Percent")]
+			[Description("百分比")]
 			Percent,
 
 			/// <summary>
-			/// <para>Node Count—Thinning value will reflect the total number of nodes that are allowed in the output</para>
+			/// <para>节点计数—稀疏化值将反映输出中所允许的结点总数。</para>
 			/// </summary>
 			[GPValue("NODE_COUNT")]
-			[Description("Node Count")]
+			[Description("节点计数")]
 			Node_Count,
 
 			/// <summary>
-			/// <para>Minimum Z—Selects the LAS data point with the lowest elevation in each window size area</para>
+			/// <para>Z 最小值—在每个窗口大小区域中选择具有最低高程的 LAS 数据点。</para>
 			/// </summary>
 			[GPValue("MIN")]
-			[Description("Minimum Z")]
+			[Description("Z 最小值")]
 			Minimum_Z,
 
 			/// <summary>
-			/// <para>Maximum Z—Selects the LAS data point with the highest elevation in each of the automatically determined window size areas</para>
+			/// <para>Z 最大值—在每个自动确定的窗口大小区域中选择具有最高高程的 LAS 数据点。</para>
 			/// </summary>
 			[GPValue("MAX")]
-			[Description("Maximum Z")]
+			[Description("Z 最大值")]
 			Maximum_Z,
 
 			/// <summary>
-			/// <para>Closest To Mean Z—Selects the LAS data point with the elevation closest to the average value found in the automatically determined window size areas</para>
+			/// <para>最接近平均值的 Z 值—选择高程最接近自动确定的窗口大小区域中平均值的 LAS 数据点。</para>
 			/// </summary>
 			[GPValue("CLOSEST_TO_MEAN")]
-			[Description("Closest To Mean Z")]
+			[Description("最接近平均值的 Z 值")]
 			Closest_To_Mean_Z,
 
 		}
@@ -240,14 +240,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ClipToExtentEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Clips the output TIN against the analysis extent. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLIP")]
 			CLIP,
 
 			/// <summary>
-			/// <para>Unchecked—Does not clip the output TIN against the analysis extent.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CLIP")]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>For</para>
-	/// <para>For</para>
-	/// <para>Iterates over a starting and ending value by a given value.</para>
+	/// <para>对于</para>
+	/// <para>按照给定的增量从起始值迭代至终止值。</para>
 	/// </summary>
 	public class IterateCount : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="From">
 		/// <para>From Value</para>
-		/// <para>The value used to start the iteration.</para>
+		/// <para>用于开始迭代的值。</para>
 		/// </param>
 		/// <param name="To">
 		/// <para>To Value</para>
-		/// <para>The value used to run the iteration.</para>
+		/// <para>用于运行迭代的值。</para>
 		/// </param>
 		/// <param name="Increment">
 		/// <para>By Value</para>
-		/// <para>The value used to increment.</para>
+		/// <para>用于递增的值。</para>
 		/// </param>
 		public IterateCount(object From, object To, object Increment)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : For</para>
+		/// <para>Tool Display Name : 对于</para>
 		/// </summary>
-		public override string DisplayName() => "For";
+		public override string DisplayName() => "对于";
 
 		/// <summary>
 		/// <para>Tool Name : IterateCount</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>From Value</para>
-		/// <para>The value used to start the iteration.</para>
+		/// <para>用于开始迭代的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>To Value</para>
-		/// <para>The value used to run the iteration.</para>
+		/// <para>用于运行迭代的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>By Value</para>
-		/// <para>The value used to increment.</para>
+		/// <para>用于递增的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]

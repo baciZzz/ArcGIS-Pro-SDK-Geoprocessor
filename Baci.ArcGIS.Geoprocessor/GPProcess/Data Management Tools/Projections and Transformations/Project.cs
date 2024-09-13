@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Project</para>
-	/// <para>Project</para>
-	/// <para>Projects spatial data from one coordinate system to another.</para>
+	/// <para>投影</para>
+	/// <para>将空间数据从一种坐标系投影到另一种坐标系。</para>
 	/// </summary>
 	public class Project : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset or Feature Class</para>
-		/// <para>The feature class, feature layer, feature dataset, scene layer, or scene layer package to be projected.</para>
+		/// <para>要投影的要素类、要素图层、要素数据集、场景图层或场景图层包。</para>
 		/// </param>
 		/// <param name="OutDataset">
 		/// <para>Output Dataset or Feature Class</para>
-		/// <para>The output dataset to which the results will be written.</para>
+		/// <para>将要写入结果的输出数据集。</para>
 		/// </param>
 		/// <param name="OutCoorSystem">
 		/// <para>Output Coordinate System</para>
-		/// <para>The coordinate system to which the input data will be projected.</para>
+		/// <para>输入数据待投影到的目标坐标系。</para>
 		/// </param>
 		public Project(object InDataset, object OutDataset, object OutCoorSystem)
 		{
@@ -39,14 +39,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Project</para>
+		/// <para>Tool Display Name : 投影</para>
 		/// </summary>
-		public override string DisplayName() => "Project";
+		public override string DisplayName() => "投影";
 
 		/// <summary>
-		/// <para>Tool Name : Project</para>
+		/// <para>Tool Name : 投影</para>
 		/// </summary>
-		public override string ToolName() => "Project";
+		public override string ToolName() => "投影";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Project</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset or Feature Class</para>
-		/// <para>The feature class, feature layer, feature dataset, scene layer, or scene layer package to be projected.</para>
+		/// <para>要投影的要素类、要素图层、要素数据集、场景图层或场景图层包。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Dataset or Feature Class</para>
-		/// <para>The output dataset to which the results will be written.</para>
+		/// <para>将要写入结果的输出数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Coordinate System</para>
-		/// <para>The coordinate system to which the input data will be projected.</para>
+		/// <para>输入数据待投影到的目标坐标系。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPCoordinateSystem()]
@@ -99,9 +99,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Geographic Transformation</para>
-		/// <para>This method can be used to convert data between two geographic coordinate systems or datums. This optional parameter may be required if the input and output coordinate systems have different datums.</para>
-		/// <para>The tool automatically selects a default transformation. You can choose a different transformation from the drop-down list. Transformations are bidirectional. For example, if you&apos;re converting data from WGS 1984 to NAD 1927, you can choose a transformation called NAD_1927_to_WGS_1984_3, and the tool will apply it correctly.</para>
-		/// <para>The parameter provides a drop-down list of valid transformation methods. See the usage tips for further information on how to choose one or more appropriate transformations.</para>
+		/// <para>此方法可用于在两个地理坐标系或基准面之间对数据进行转换。如果输入和输出坐标系具有不同的基准面，则可能需要此可选参数。</para>
+		/// <para>该工具自动选择默认变换。 您可从下拉列表中选择其他变换。 变换是双向的。 例如，如果将数据从 WGS 1984 转换为 NAD 1927，可以选取一个名为 NAD_1927_to_WGS_1984_3 的变换，然后此工具即可正确应用它。</para>
+		/// <para>参数会提供一个包含有效变换方法的下拉列表。 要详细了解如何选择一个或多个适当的变换，请参阅使用提示。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Coordinate System</para>
-		/// <para>The coordinate system of the input feature class or dataset. This parameter becomes active when the input has an unknown or unspecified coordinate system. This allows you to specify the data's coordinate system without having to modify the input data (which may not be possible if the input is in read-only format).</para>
+		/// <para>输入要素类或数据集的坐标系。 当输入具有未知或未指定的坐标系时，此参数将变为活动参数。 这样，无需修改输入数据就可以指定数据的坐标系（当输入数据为只读格式时，可能无法修改）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
@@ -117,9 +117,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Preserve Shape</para>
-		/// <para>Specifies whether vertices will be added to the output lines or polygons so their projected shape is more accurate.</para>
-		/// <para>Unchecked—Extra vertices will not be added to the output lines or polygons. This is the default.</para>
-		/// <para>Checked—Extra vertices will be added to the output lines or polygons as needed, so their projected shape is more accurate.</para>
+		/// <para>指定是否向输出线或面添加折点，以便其投影形状更加准确。</para>
+		/// <para>未选中 - 不会向输出线或面添加额外折点。 这是默认设置。</para>
+		/// <para>选中 - 根据需要向输出线或面添加额外折点，以便其投影形状更加准确。</para>
 		/// <para><see cref="PreserveShapeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Offset Deviation</para>
-		/// <para>The distance a projected line or polygon can deviate from its exact projected location when the Preserve Shape parameter is checked. The default is 100 times the x,y tolerance of the spatial reference of the output dataset.</para>
+		/// <para>当选中保留形状参数时，投影线或面可从其准确投影位置偏移的距离。 默认为输出数据集空间参考 x,y 容差的 100 倍。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -137,12 +137,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Vertical</para>
-		/// <para>Specifies whether a vertical transformation will be applied.</para>
-		/// <para>The parameter is only active when the input and output coordinate systems have a vertical coordinate system and the input feature class coordinates have z-values. Also, many vertical transformations require additional data files that must be installed using the ArcGIS Coordinate Systems Data installation package.</para>
-		/// <para>When Vertical is checked, the Geographic Transformation parameter can include ellipsoidal transformations and transformations between vertical datums. For example, ~NAD_1983_To_NAVD88_CONUS_GEOID12B_Height + NAD_1983_To_WGS_1984_1 transforms geometry vertices that are defined on NAD 1983 datum with NAVD 1988 heights into vertices on the WGS 1984 ellipsoid (with z-values representing ellipsoidal heights). The tilde (~) indicates the reversed direction of transformation.</para>
-		/// <para>This parameter is not compatible with the Preserve Shape parameter.</para>
-		/// <para>Unchecked—A vertical transformation will not be applied. The z-values of geometry coordinates will be ignored and the z-values will not be modified. This is the default.</para>
-		/// <para>Checked—The transformation specified in the Geographic Transformation parameter will be applied. The Project tool transforms x-, y-, and z-values of geometry coordinates.</para>
+		/// <para>指定是否将应用垂直变换。</para>
+		/// <para>此选项仅在输入坐标系和输出坐标系都具有垂直坐标系且输入要素类坐标具有 Z 值时才会处于活动状态。 此外，许多垂直变换需要附加数据文件，而这些文件必须通过 ArcGIS Coordinate Systems Data 安装包进行安装。</para>
+		/// <para>当选中垂直时，地理变换参数可以包括椭圆体变换和垂直基准面之间的变换。 例如，~NAD_1983_To_NAVD88_CONUS_GEOID12B_Height + NAD_1983_To_WGS_1984_1 可将在 NAD 1983 基准面（具有 NAVD 1988 高度）上定义的几何折点变换为 WGS 1984 椭圆体（具有表示椭圆体高度的 Z 值）上的折点。 波形符 (~) 表示变换的反转方向。</para>
+		/// <para>此参数与保留形状参数不兼容。</para>
+		/// <para>未选中 - 将不会应用垂直变换。 几何坐标的 Z 值将被忽略，并且 z 值将不会进行修改。 这是默认设置。</para>
+		/// <para>选中 - 将应用地理变换参数中指定的变换。 投影工具将变换几何坐标的 X、Y 和 Z 值。</para>
 		/// <para><see cref="VerticalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -167,14 +167,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PreserveShapeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Extra vertices will be added to the output lines or polygons as needed, so their projected shape is more accurate.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE_SHAPE")]
 			PRESERVE_SHAPE,
 
 			/// <summary>
-			/// <para>Unchecked—Extra vertices will not be added to the output lines or polygons. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_PRESERVE_SHAPE")]
@@ -188,14 +188,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum VerticalEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The transformation specified in the Geographic Transformation parameter will be applied. The Project tool transforms x-, y-, and z-values of geometry coordinates.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("VERTICAL")]
 			VERTICAL,
 
 			/// <summary>
-			/// <para>Unchecked—A vertical transformation will not be applied. The z-values of geometry coordinates will be ignored and the z-values will not be modified. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_VERTICAL")]

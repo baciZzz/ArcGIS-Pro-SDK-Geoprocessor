@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Feature Envelope To Polygon</para>
-	/// <para>Feature Envelope To Polygon</para>
-	/// <para>Creates a feature class containing polygons, each of which represents the envelope of an input feature.</para>
+	/// <para>要素包络矩形转面</para>
+	/// <para>创建包含面的要素类，每个面表示一个输入要素的包络矩形。</para>
 	/// </summary>
 	public class FeatureEnvelopeToPolygon : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input features that can be multipoint, line, polygon, or annotation.</para>
+		/// <para>输入要素可以是多点、线、面或注记。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output polygon feature class.</para>
+		/// <para>输出面要素类。</para>
 		/// </param>
 		public FeatureEnvelopeToPolygon(object InFeatures, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Feature Envelope To Polygon</para>
+		/// <para>Tool Display Name : 要素包络矩形转面</para>
 		/// </summary>
-		public override string DisplayName() => "Feature Envelope To Polygon";
+		public override string DisplayName() => "要素包络矩形转面";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureEnvelopeToPolygon</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input features that can be multipoint, line, polygon, or annotation.</para>
+		/// <para>输入要素可以是多点、线、面或注记。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output polygon feature class.</para>
+		/// <para>输出面要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -88,9 +88,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Create multipart features</para>
-		/// <para>Specifies whether to use one envelope for each entire multipart feature or one envelope per part of a multipart feature. This parameter will affect the results of multipart input features only.</para>
-		/// <para>Unchecked—Uses one envelope containing an entire multipart feature; therefore, the resulting polygon will be singlepart. This is the default.</para>
-		/// <para>Checked—Uses one envelope for each part of a multipart feature; the resulting polygon of the multipart feature will remain multipart.</para>
+		/// <para>指定是为整个多部件要素的使用一个包络矩形，还是为多部件要素的每个部件使用一个包络矩形。 此参数将仅影响多部件输入要素的结果。</para>
+		/// <para>未选中 - 使用一个包含整个多部件要素的包络矩形；因此，生成的面为单部件面。 这是默认设置。</para>
+		/// <para>选中 - 为多部件要素的每个部件使用一个包络矩形；多部件要素生成的面仍为多部件。</para>
 		/// <para><see cref="SingleEnvelopeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -115,14 +115,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SingleEnvelopeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Uses one envelope for each part of a multipart feature; the resulting polygon of the multipart feature will remain multipart.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MULTIPART")]
 			MULTIPART,
 
 			/// <summary>
-			/// <para>Unchecked—Uses one envelope containing an entire multipart feature; therefore, the resulting polygon will be singlepart. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SINGLEPART")]

@@ -11,9 +11,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Upgrade Network</para>
-	/// <para>Upgrade Network</para>
-	/// <para>Upgrades the schema of the network dataset. Upgrading the network dataset allows the network dataset to make use of the new functionality available in the current software release. </para>
-	/// <para>This is a deprecated tool. To learn more about how this tool works, view the  archived documentation. This functionality has been replaced by the Upgrade Dataset tool in the Geodatabase Administration toolset. Upgrade Dataset has the ability to upgrade network datasets as well as other types of datasets, such as parcel fabrics, to the current ArcGIS release.</para>
+	/// <para>升级网络</para>
+	/// <para>升级网络数据集的方案。 升级网络数据集可以允许网络数据集利用当前软件版本中可用的新功能。</para>
+	/// <para>此工具已弃用。 要了解有关此工具工作原理的详细信息，请查看归档文档。 “地理数据库管理”工具集中的升级数据集工具已代替了此功能。 升级数据集具有将网络数据集以及其他类型的数据集（例如宗地结构）升级到当前 ArcGIS 版本的功能。</para>
 	/// </summary>
 	[Obsolete()]
 	public class UpgradeNetwork : AbstractGPProcess
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InNetworkDataset">
 		/// <para>Input Network Dataset</para>
-		/// <para>The network dataset to be upgraded. The network dataset must be a geodatabase-based network dataset.</para>
+		/// <para>要升级的网络数据集。 网络数据集必须是基于地理数据库的网络数据集。</para>
 		/// </param>
 		public UpgradeNetwork(object InNetworkDataset)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Upgrade Network</para>
+		/// <para>Tool Display Name : 升级网络</para>
 		/// </summary>
-		public override string DisplayName() => "Upgrade Network";
+		public override string DisplayName() => "升级网络";
 
 		/// <summary>
 		/// <para>Tool Name : UpgradeNetwork</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Network Dataset</para>
-		/// <para>The network dataset to be upgraded. The network dataset must be a geodatabase-based network dataset.</para>
+		/// <para>要升级的网络数据集。 网络数据集必须是基于地理数据库的网络数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPNetworkDatasetLayer()]

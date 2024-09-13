@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Tile LAS</para>
-	/// <para>Tile LAS</para>
-	/// <para>Creates a set of nonoverlapping LAS files whose horizontal extents are divided by a regular grid.</para>
+	/// <para>切片 LAS</para>
+	/// <para>创建一组不重叠的 LAS 文件，按规则格网划分其水平范围。</para>
 	/// </summary>
 	public class TileLas : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset to process.</para>
+		/// <para>待处理的 LAS 数据集。</para>
 		/// </param>
 		/// <param name="TargetFolder">
 		/// <para>Target Folder</para>
-		/// <para>The folder where the tiled LAS files will be written.</para>
+		/// <para>将在其中写入切片 LAS 文件的文件夹。</para>
 		/// </param>
 		public TileLas(object InLasDataset, object TargetFolder)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Tile LAS</para>
+		/// <para>Tool Display Name : 切片 LAS</para>
 		/// </summary>
-		public override string DisplayName() => "Tile LAS";
+		public override string DisplayName() => "切片 LAS";
 
 		/// <summary>
 		/// <para>Tool Name : TileLas</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset to process.</para>
+		/// <para>待处理的 LAS 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Target Folder</para>
-		/// <para>The folder where the tiled LAS files will be written.</para>
+		/// <para>将在其中写入切片 LAS 文件的文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Base Name</para>
-		/// <para>The name that each output file will begin with.</para>
+		/// <para>每个输出文件均以该名称开头。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output LAS Dataset</para>
-		/// <para>The new LAS dataset that references the tiled LAS files created by this tool. This is optional.</para>
+		/// <para>引用由此工具创建的切片 LAS 文件的新 LAS 数据集。此操作是可选的。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DELasDataset()]
@@ -102,9 +102,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Compute statistics</para>
-		/// <para>Specifies whether statistics will be computed for the .las files referenced by the LAS dataset. Computing statistics provides a spatial index for each .las file, which improves analysis and display performance. Statistics also enhance the filtering and symbology experience by limiting the display of LAS attributes, such as classification codes and return information, to values that are present in the .las file.</para>
-		/// <para>Checked—Statistics will be computed. This is the default.</para>
-		/// <para>Unchecked—Statistics will not be computed.</para>
+		/// <para>指定是否将计算 LAS 数据集引用的 .las 文件的统计数据。 计算统计数据时会为每个 .las 文件提供一个空间索引，从而提高了分析和显示性能。 统计数据还可通过将 LAS 属性（例如分类代码和返回信息）显示限制为 .las 文件中存在的值来提升过滤和符号系统体验。</para>
+		/// <para>选中 - 将计算统计数据。 这是默认设置。</para>
+		/// <para>未选中 - 不计算统计数据。</para>
 		/// <para><see cref="ComputeStatsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -114,12 +114,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Version</para>
-		/// <para>Specifies the LAS file version of each output file. The default is 1.4.</para>
-		/// <para>1.0—This version supported 256 unique class codes but did not have a predefined classification schema.</para>
-		/// <para>1.1—This version introduced a predefined classification scheme, and point record formats 0 and 1, and the synthetic classification flag for points that were derived from a source other than a lidar sensor.</para>
-		/// <para>1.2—This version featured support for GPS time and RGB records in point records 2 and 3.</para>
-		/// <para>1.3—This version added support for point records 4 and 5 for waveform data. However, waveform information is not read in ArcGIS.</para>
-		/// <para>1.4—This version introduced point record formats 6 through 10, along with new class definitions, 256 unique class codes, and the overlap classification flag.</para>
+		/// <para>指定每个输出文件的 LAS 文件版本。默认值为 1.4。</para>
+		/// <para>1.0—此版本支持 256 种唯一类代码，但是没有预定义的分类方案。</para>
+		/// <para>1.1—该版本引入了预定义的分类方案和点记录格式 0 和 1，以及从激光雷达传感器以外的源获取的点的合成分类标记。</para>
+		/// <para>1.2—此版本的特点是支持 GPS 时间以及点记录 2 和 3 中的 RGB 记录。</para>
+		/// <para>1.3—该版本新增了对波形数据的点记录 4 和 5 的支持。但是，不会在 ArcGIS 中读取波形信息。</para>
+		/// <para>1.4—此版本引入了点记录格式 6 到 10，以及新的类定义、256 种唯一类代码和重叠分类标记。</para>
 		/// <para><see cref="LasVersionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Point Format</para>
-		/// <para>The point record format of the output LAS files. The available options will vary based on the LAS file version specified in the Output Version parameter.</para>
+		/// <para>输出 LAS 文件的点记录格式。可用选项取决于输出版本参数中指定的 LAS 文件版本。</para>
 		/// <para><see cref="PointFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -141,9 +141,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Compression</para>
-		/// <para>Specifies whether the output LAS file will be in a compressed format or the standard LAS format.</para>
-		/// <para>No Compression—The output will be in the standard LAS format (*.las file). This is the default.</para>
-		/// <para>zLAS Compression—Output LAS files will be compressed in the zLAS format.</para>
+		/// <para>指定输出 LAS 文件将为压缩格式还是标准 LAS 格式。</para>
+		/// <para>不压缩—输出将为标准 LAS 格式（*.las 文件）。这是默认设置。</para>
+		/// <para>zLAS 压缩—输出 LAS 文件将压缩为 zLAS 格式。</para>
 		/// <para><see cref="CompressionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -154,10 +154,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>LAS Options</para>
-		/// <para>A list of optional modifications to the output LAS files.</para>
-		/// <para>Rearrange Points—LAS points will be arranged according to their spatial clustering.</para>
-		/// <para>Remove Variable Length Records—Variable-length records that are added after the header and the point records of each file will be removed.</para>
-		/// <para>Remove Extra Bytes—Extra bytes that are present with each point record in the input LAS file will be removed.</para>
+		/// <para>输出 LAS 文件的可选修改列表。</para>
+		/// <para>重新排列点—LAS 点将根据其空间聚类进行排列。</para>
+		/// <para>移除可变长度记录—添加在标题后的可变长度记录以及每个文件的点记录将被移除。</para>
+		/// <para>移除多余字节—输入 LAS 文件中每个点记录存在的额外字节将被移除。</para>
 		/// <para><see cref="LasOptionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Import from Feature Class</para>
-		/// <para>The polygon features that define the tile width and height to be used when tiling the lidar data. The polygons are presumed to be rectangular, and the first feature's extent is used to define the tile width and height.</para>
+		/// <para>定义在切片激光雷达数据时使用的切片宽度和高度的面要素。假定面为矩形，并使用首个要素范围来定义切片宽度和高度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -179,10 +179,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Naming Method</para>
-		/// <para>Specifies the method used to provide a unique name for each output LAS file. Each file name will be appended to the text specified in the Output Base Name parameter. When input features are used to define the tiling scheme, its text or numeric field names will also be included as a source for defining the file name. The following automatically generated naming conventions are supported:</para>
-		/// <para>XY Coordinates—The X and Y coordinates of the center point of each tile will be appended. This is the default.</para>
-		/// <para>Rows and Columns—The tile name will be assigned based on the row and column it belongs to in the overall tiling scheme. The rows increment from the top down, while the columns increment from left to right.</para>
-		/// <para>Ordinal Designation—The tile name will be assigned based on its order of creation, where 1 is the first tile, 2 is the second, and so on.</para>
+		/// <para>指定为每个输出 LAS 文件提供唯一名称的方法。每个文件名将追加到输出基本名称参数中指定的文本。使用输入要素来定义切片方案时，还将包含其文本或数值字段名称用作定义文件名的源。支持以下自动生成的命名约定：</para>
+		/// <para>XY 坐标—在每个切片的中间点处追加 X 和 Y 坐标。这是默认设置。</para>
+		/// <para>行和列—根据所属的整体切片方案中的行与列来分配切片名称。行将从上至下逐渐增加，而列将从左至右逐渐增加。</para>
+		/// <para>序数标识—根据创建顺序分配切片名称，其中 1 为第一切片，2 为第二切片，以此类推。</para>
 		/// <para><see cref="NamingMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -193,8 +193,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Target File Size (MB)</para>
-		/// <para>This value, which is expressed in megabytes, represents the upper limit of the uncompressed file size of an output LAS tile with uniform point distribution across its entire extent. The default is 250, and the value is used to estimate the tile width and height.</para>
-		/// <para>The value of this parameter changes when the Tile Width and Tile Height parameters are modified. When input features are specified in the Import from Feature Class parameter, this parameter will be disabled.</para>
+		/// <para>该值以兆字节表示，代表在整个范围内等值分布的输出 LAS 切片的未压缩文件大小的上限。默认值为 250，该值用于估算切片宽度和高度。</para>
+		/// <para>此参数的值会在切片宽度和切片高度参数修改时发生变化。当在从要素类导入参数中指定了输入要素时，将会禁用该参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -203,7 +203,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Tile Width</para>
-		/// <para>The width of each tile. Specifying a value will update the target file size and point count if a tile height is also present. Similarly, if the target file size or point count is independently updated, the tile width and height will also be changed to reflect the size of the corresponding tile. When input features are specified in the Import from Feature Class parameter, the tile width will be derived from the height of the first feature, and this parameter will be disabled.</para>
+		/// <para>每个切片的宽度。如果切片高度同时存在，指定一个值时会更新目标文件大小和点计数。同样，如果单独更新了目标文件大小或点计数，切片宽度和高度也将发生变化，以反映相应切片的大小。当已在从要素类导入参数中指定了输入要素时，切片宽度将通过第一要素的高度获取，而此参数将被禁用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -212,7 +212,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Tile Height</para>
-		/// <para>The height of each tile. Specifying a value will update the target file size if a tile width is also present. Similarly, if the target file size is independently updated, the tile width and height will also be proportionately changed to reflect the size of the corresponding tile. When input features are specified in the Import from Feature Class parameter, the tile height will be derived from the height of the first feature, and this parameter will be disabled.</para>
+		/// <para>每个切片的高度。如果切片宽度同时存在，指定一个值时会更新目标文件大小。同样，如果单独更新了目标文件，切片宽度和高度也将按照比例发生变化，以反映相应切片的大小。当已在从要素类导入参数中指定了输入要素时，切片高度将通过第一要素的高度获取，而此参数将被禁用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -221,7 +221,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Tile Origin</para>
-		/// <para>The coordinates of the origin of the tiling grid. The default values are obtained from the lower left corner of the input LAS dataset. When input features are specified in the Import from Feature Class parameter, the origin will be inherited from the lower left corner of the first feature, and this parameter will be disabled.</para>
+		/// <para>切片网格原点的坐标。可在输入 LAS 数据集的左下角获取默认值。当已在从要素类导入参数中指定了输入要素时，将从第一要素的左下角继承原点，而此参数将被禁用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
@@ -252,14 +252,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ComputeStatsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Statistics will be computed. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMPUTE_STATS")]
 			COMPUTE_STATS,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics will not be computed.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_COMPUTE_STATS")]
@@ -273,35 +273,35 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum LasVersionEnum 
 		{
 			/// <summary>
-			/// <para>1.0—This version supported 256 unique class codes but did not have a predefined classification schema.</para>
+			/// <para>1.0—此版本支持 256 种唯一类代码，但是没有预定义的分类方案。</para>
 			/// </summary>
 			[GPValue("1.0")]
 			[Description("1.0")]
 			_10,
 
 			/// <summary>
-			/// <para>1.1—This version introduced a predefined classification scheme, and point record formats 0 and 1, and the synthetic classification flag for points that were derived from a source other than a lidar sensor.</para>
+			/// <para>1.1—该版本引入了预定义的分类方案和点记录格式 0 和 1，以及从激光雷达传感器以外的源获取的点的合成分类标记。</para>
 			/// </summary>
 			[GPValue("1.1")]
 			[Description("1.1")]
 			_11,
 
 			/// <summary>
-			/// <para>1.2—This version featured support for GPS time and RGB records in point records 2 and 3.</para>
+			/// <para>1.2—此版本的特点是支持 GPS 时间以及点记录 2 和 3 中的 RGB 记录。</para>
 			/// </summary>
 			[GPValue("1.2")]
 			[Description("1.2")]
 			_12,
 
 			/// <summary>
-			/// <para>1.3—This version added support for point records 4 and 5 for waveform data. However, waveform information is not read in ArcGIS.</para>
+			/// <para>1.3—该版本新增了对波形数据的点记录 4 和 5 的支持。但是，不会在 ArcGIS 中读取波形信息。</para>
 			/// </summary>
 			[GPValue("1.3")]
 			[Description("1.3")]
 			_13,
 
 			/// <summary>
-			/// <para>1.4—This version introduced point record formats 6 through 10, along with new class definitions, 256 unique class codes, and the overlap classification flag.</para>
+			/// <para>1.4—此版本引入了点记录格式 6 到 10，以及新的类定义、256 种唯一类代码和重叠分类标记。</para>
 			/// </summary>
 			[GPValue("1.4")]
 			[Description("1.4")]
@@ -371,17 +371,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum CompressionEnum 
 		{
 			/// <summary>
-			/// <para>No Compression—The output will be in the standard LAS format (*.las file). This is the default.</para>
+			/// <para>不压缩—输出将为标准 LAS 格式（*.las 文件）。这是默认设置。</para>
 			/// </summary>
 			[GPValue("NO_COMPRESSION")]
-			[Description("No Compression")]
+			[Description("不压缩")]
 			No_Compression,
 
 			/// <summary>
-			/// <para>zLAS Compression—Output LAS files will be compressed in the zLAS format.</para>
+			/// <para>zLAS 压缩—输出 LAS 文件将压缩为 zLAS 格式。</para>
 			/// </summary>
 			[GPValue("ZLAS")]
-			[Description("zLAS Compression")]
+			[Description("zLAS 压缩")]
 			zLAS_Compression,
 
 		}
@@ -392,24 +392,24 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum LasOptionsEnum 
 		{
 			/// <summary>
-			/// <para>Rearrange Points—LAS points will be arranged according to their spatial clustering.</para>
+			/// <para>重新排列点—LAS 点将根据其空间聚类进行排列。</para>
 			/// </summary>
 			[GPValue("REARRANGE_POINTS")]
-			[Description("Rearrange Points")]
+			[Description("重新排列点")]
 			Rearrange_Points,
 
 			/// <summary>
-			/// <para>Remove Variable Length Records—Variable-length records that are added after the header and the point records of each file will be removed.</para>
+			/// <para>移除可变长度记录—添加在标题后的可变长度记录以及每个文件的点记录将被移除。</para>
 			/// </summary>
 			[GPValue("REMOVE_VLR")]
-			[Description("Remove Variable Length Records")]
+			[Description("移除可变长度记录")]
 			Remove_Variable_Length_Records,
 
 			/// <summary>
-			/// <para>Remove Extra Bytes—Extra bytes that are present with each point record in the input LAS file will be removed.</para>
+			/// <para>移除多余字节—输入 LAS 文件中每个点记录存在的额外字节将被移除。</para>
 			/// </summary>
 			[GPValue("REMOVE_EXTRA_BYTES")]
-			[Description("Remove Extra Bytes")]
+			[Description("移除多余字节")]
 			Remove_Extra_Bytes,
 
 		}
@@ -420,24 +420,24 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum NamingMethodEnum 
 		{
 			/// <summary>
-			/// <para>XY Coordinates—The X and Y coordinates of the center point of each tile will be appended. This is the default.</para>
+			/// <para>XY 坐标—在每个切片的中间点处追加 X 和 Y 坐标。这是默认设置。</para>
 			/// </summary>
 			[GPValue("XY_COORDS")]
-			[Description("XY Coordinates")]
+			[Description("XY 坐标")]
 			XY_Coordinates,
 
 			/// <summary>
-			/// <para>Rows and Columns—The tile name will be assigned based on the row and column it belongs to in the overall tiling scheme. The rows increment from the top down, while the columns increment from left to right.</para>
+			/// <para>行和列—根据所属的整体切片方案中的行与列来分配切片名称。行将从上至下逐渐增加，而列将从左至右逐渐增加。</para>
 			/// </summary>
 			[GPValue("ROW_COLUMN")]
-			[Description("Rows and Columns")]
+			[Description("行和列")]
 			Rows_and_Columns,
 
 			/// <summary>
-			/// <para>Ordinal Designation—The tile name will be assigned based on its order of creation, where 1 is the first tile, 2 is the second, and so on.</para>
+			/// <para>序数标识—根据创建顺序分配切片名称，其中 1 为第一切片，2 为第二切片，以此类推。</para>
 			/// </summary>
 			[GPValue("ORDINAL")]
-			[Description("Ordinal Designation")]
+			[Description("序数标识")]
 			Ordinal_Designation,
 
 		}

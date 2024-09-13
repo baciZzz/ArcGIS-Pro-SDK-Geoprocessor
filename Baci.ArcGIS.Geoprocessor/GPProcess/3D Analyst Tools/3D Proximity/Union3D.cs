@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Union 3D</para>
-	/// <para>Union 3D</para>
-	/// <para>Merges closed, overlapping multipatch features from an input feature class.</para>
+	/// <para>3D 联合</para>
+	/// <para>基于输入要素类对闭合的重叠多面体要素进行合并。</para>
 	/// </summary>
 	public class Union3D : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatureClass">
 		/// <para>Input Multipatch Features</para>
-		/// <para>The multipatch features that will be unioned.</para>
+		/// <para>要联合的多面体要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output multipatch feature class that will store the aggregated features.</para>
+		/// <para>将存储聚合要素的输出多面体要素类。</para>
 		/// </param>
 		public Union3D(object InFeatureClass, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Union 3D</para>
+		/// <para>Tool Display Name : 3D 联合</para>
 		/// </summary>
-		public override string DisplayName() => "Union 3D";
+		public override string DisplayName() => "3D 联合";
 
 		/// <summary>
 		/// <para>Tool Name : Union3D</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Multipatch Features</para>
-		/// <para>The multipatch features that will be unioned.</para>
+		/// <para>要联合的多面体要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output multipatch feature class that will store the aggregated features.</para>
+		/// <para>将存储聚合要素的输出多面体要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Grouping Field</para>
-		/// <para>The field used to identify the features that should be grouped together.</para>
+		/// <para>用于标识应归到一组的要素的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -97,9 +97,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Disable Optimization</para>
-		/// <para>Specifies whether optimization is performed or not performed on the input data. Optimization will preprocess the input data by grouping them to improve performance and create unique outputs for each set of overlapping features.</para>
-		/// <para>Unchecked—Optimization is enabled, and the grouping field is ignored. This is the default.</para>
-		/// <para>Checked—No optimization is performed on the input data. Features will either be stored in a single output feature or be unioned according to their grouping field, if one is provided.</para>
+		/// <para>指定是否对输入数据执行优化。优化操作将会预处理输入数据，方法是对它们进行分组以提高性能并针对每个重叠要素集创建唯一输出。</para>
+		/// <para>未选中 - 启用优化，但忽略分组字段。这是默认设置。</para>
+		/// <para>选中 - 不对输入数据执行优化。要素会存储在单个输出要素中，或者根据其分组字段（如果提供）进行联合。</para>
 		/// <para><see cref="DisableOptimizationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -109,9 +109,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output All Solids</para>
-		/// <para>Determines if the output feature class contains all features or only the overlapping ones that were unioned.</para>
-		/// <para>Checked—All input features are written to the output. This is the default.</para>
-		/// <para>Unchecked—Only unioned features are written to the output. Non-overlapping features will be ignored.</para>
+		/// <para>确定输出要素类是包含所有要素还是仅包含已联合的重叠要素。</para>
+		/// <para>选中 - 将所有输入要素写到输出中。这是默认设置。</para>
+		/// <para>未选中 - 仅将已联合的要素写到输出中。非重叠要素将被忽略。</para>
 		/// <para><see cref="OutputAllEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>A many-to-one table that identifies the input features that contribute to each output.</para>
+		/// <para>用于标识影响每个输出的输入要素的多对一表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -144,14 +144,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum DisableOptimizationEnum 
 		{
 			/// <summary>
-			/// <para>Checked—No optimization is performed on the input data. Features will either be stored in a single output feature or be unioned according to their grouping field, if one is provided.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DISABLE")]
 			DISABLE,
 
 			/// <summary>
-			/// <para>Unchecked—Optimization is enabled, and the grouping field is ignored. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ENABLE")]
@@ -165,14 +165,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum OutputAllEnum 
 		{
 			/// <summary>
-			/// <para>Checked—All input features are written to the output. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ENABLE")]
 			ENABLE,
 
 			/// <summary>
-			/// <para>Unchecked—Only unioned features are written to the output. Non-overlapping features will be ignored.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DISABLE")]

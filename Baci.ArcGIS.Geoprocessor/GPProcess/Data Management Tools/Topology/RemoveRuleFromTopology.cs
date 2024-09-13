@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Rule From Topology</para>
-	/// <para>Remove Rule From Topology</para>
-	/// <para>Removes a rule from a topology.</para>
+	/// <para>移除拓扑规则</para>
+	/// <para>从拓扑中移除规则。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTopology">
 		/// <para>Input Topology</para>
-		/// <para>The topology from which to remove a rule.</para>
+		/// <para>要移除规则的拓扑。</para>
 		/// </param>
 		/// <param name="InRule">
 		/// <para>Rule</para>
-		/// <para>The topology rule to remove from the topology.</para>
+		/// <para>要从拓扑中移除的拓扑规则。</para>
 		/// </param>
 		public RemoveRuleFromTopology(object InTopology, object InRule)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Remove Rule From Topology</para>
+		/// <para>Tool Display Name : 移除拓扑规则</para>
 		/// </summary>
-		public override string DisplayName() => "Remove Rule From Topology";
+		public override string DisplayName() => "移除拓扑规则";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveRuleFromTopology</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Topology</para>
-		/// <para>The topology from which to remove a rule.</para>
+		/// <para>要移除规则的拓扑。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTopologyLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Rule</para>
-		/// <para>The topology rule to remove from the topology.</para>
+		/// <para>要从拓扑中移除的拓扑规则。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

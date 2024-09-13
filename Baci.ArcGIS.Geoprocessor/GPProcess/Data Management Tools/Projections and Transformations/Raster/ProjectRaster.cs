@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Project Raster</para>
-	/// <para>Project Raster</para>
-	/// <para>Transforms a raster dataset from one coordinate system to another.</para>
+	/// <para>投影栅格</para>
+	/// <para>用于将栅格数据集从一种坐标系变换到另一种坐标系。</para>
 	/// </summary>
 	public class ProjectRaster : AbstractGPProcess
 	{
@@ -21,32 +21,32 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset that will be transformed into a new projection.</para>
+		/// <para>将变换为新投影的栅格数据集。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster Dataset</para>
-		/// <para>The raster dataset with the new projection that will be created.</para>
-		/// <para>When storing the raster dataset in a file format, specify the file extension as follows:</para>
-		/// <para>.bil—Esri BIL</para>
-		/// <para>.bip—Esri BIP</para>
-		/// <para>.bmp—BMP</para>
-		/// <para>.bsq—Esri BSQ</para>
-		/// <para>.dat—ENVI DAT</para>
-		/// <para>.gif—GIF</para>
-		/// <para>.img—ERDAS IMAGINE</para>
-		/// <para>.jpg—JPEG</para>
-		/// <para>.jp2—JPEG 2000</para>
-		/// <para>.png—PNG</para>
-		/// <para>.tif—TIFF</para>
-		/// <para>.mrf—MRF</para>
-		/// <para>.crf—CRF</para>
-		/// <para>No extension for Esri Grid</para>
-		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
-		/// <para>When storing a raster dataset to a JPEG format file, a JPEG 2000 format file, a TIFF format file, or a geodatabase, you can specify Compression Type and Compression Quality values in the geoprocessing environments.</para>
+		/// <para>将要创建的带有新投影的栅格数据集。</para>
+		/// <para>以文件格式存储栅格数据集时，请指定文件扩展名，具体如下：</para>
+		/// <para>.bil - Esri BIL</para>
+		/// <para>.bip - Esri BIP</para>
+		/// <para>.bmp - BMP</para>
+		/// <para>.bsq - Esri BSQ</para>
+		/// <para>.dat - ENVI DAT</para>
+		/// <para>.gif - GIF</para>
+		/// <para>.img - ERDAS IMAGINE</para>
+		/// <para>.jpg - JPEG</para>
+		/// <para>.jp2 - JPEG 2000</para>
+		/// <para>.png - PNG</para>
+		/// <para>.tif - TIFF</para>
+		/// <para>.mrf - MRF</para>
+		/// <para>.crf - CRF</para>
+		/// <para>Esri Grid 无扩展名</para>
+		/// <para>将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。</para>
+		/// <para>将栅格数据集存储为 JPEG 格式文件、JPEG 2000 格式文件、TIFF 格式文件或地理数据库时，可在地理处理环境中指定压缩类型和压缩质量值。</para>
 		/// </param>
 		/// <param name="OutCoorSystem">
 		/// <para>Output Coordinate System</para>
-		/// <para>The coordinate system of the new raster dataset.</para>
+		/// <para>新栅格数据集的坐标系。</para>
 		/// </param>
 		public ProjectRaster(object InRaster, object OutRaster, object OutCoorSystem)
 		{
@@ -56,9 +56,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Project Raster</para>
+		/// <para>Tool Display Name : 投影栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Project Raster";
+		public override string DisplayName() => "投影栅格";
 
 		/// <summary>
 		/// <para>Tool Name : ProjectRaster</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset that will be transformed into a new projection.</para>
+		/// <para>将变换为新投影的栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -100,24 +100,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Raster Dataset</para>
-		/// <para>The raster dataset with the new projection that will be created.</para>
-		/// <para>When storing the raster dataset in a file format, specify the file extension as follows:</para>
-		/// <para>.bil—Esri BIL</para>
-		/// <para>.bip—Esri BIP</para>
-		/// <para>.bmp—BMP</para>
-		/// <para>.bsq—Esri BSQ</para>
-		/// <para>.dat—ENVI DAT</para>
-		/// <para>.gif—GIF</para>
-		/// <para>.img—ERDAS IMAGINE</para>
-		/// <para>.jpg—JPEG</para>
-		/// <para>.jp2—JPEG 2000</para>
-		/// <para>.png—PNG</para>
-		/// <para>.tif—TIFF</para>
-		/// <para>.mrf—MRF</para>
-		/// <para>.crf—CRF</para>
-		/// <para>No extension for Esri Grid</para>
-		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset.</para>
-		/// <para>When storing a raster dataset to a JPEG format file, a JPEG 2000 format file, a TIFF format file, or a geodatabase, you can specify Compression Type and Compression Quality values in the geoprocessing environments.</para>
+		/// <para>将要创建的带有新投影的栅格数据集。</para>
+		/// <para>以文件格式存储栅格数据集时，请指定文件扩展名，具体如下：</para>
+		/// <para>.bil - Esri BIL</para>
+		/// <para>.bip - Esri BIP</para>
+		/// <para>.bmp - BMP</para>
+		/// <para>.bsq - Esri BSQ</para>
+		/// <para>.dat - ENVI DAT</para>
+		/// <para>.gif - GIF</para>
+		/// <para>.img - ERDAS IMAGINE</para>
+		/// <para>.jpg - JPEG</para>
+		/// <para>.jp2 - JPEG 2000</para>
+		/// <para>.png - PNG</para>
+		/// <para>.tif - TIFF</para>
+		/// <para>.mrf - MRF</para>
+		/// <para>.crf - CRF</para>
+		/// <para>Esri Grid 无扩展名</para>
+		/// <para>将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。</para>
+		/// <para>将栅格数据集存储为 JPEG 格式文件、JPEG 2000 格式文件、TIFF 格式文件或地理数据库时，可在地理处理环境中指定压缩类型和压缩质量值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Coordinate System</para>
-		/// <para>The coordinate system of the new raster dataset.</para>
+		/// <para>新栅格数据集的坐标系。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPCoordinateSystem()]
@@ -133,13 +133,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Resampling Technique</para>
-		/// <para>Specifies the resampling technique that will be used. The default is Nearest.</para>
-		/// <para>Nearest neighbor— The nearest neighbor technique will be used. It minimizes changes to pixel values since no new values are created and is the fastest resampling technique. It is suitable for discrete data, such as land cover.</para>
-		/// <para>Bilinear interpolation— The bilinear interpolation technique will be used. It calculates the value of each pixel by averaging (weighted for distance) the values of the surrounding four pixels. It is suitable for continuous data.</para>
-		/// <para>Cubic convolution—The cubic convolution technique will be used. It calculates the value of each pixel by fitting a smooth curve based on the surrounding 16 pixels. This produces the smoothest image but can create values outside of the range found in the source data. It is suitable for continuous data.</para>
-		/// <para>Majority resampling—The majority resampling technique will be used. It determines the value of each pixel based on the most popular value in a 3 by 3 window. It is suitable for discrete data.</para>
-		/// <para>The Nearest and Majority options are used for categorical data, such as a land-use classification. The Nearest option is the default. It is the quickest and does not change the pixel values. Do not use either of these options for continuous data, such as elevation surfaces.</para>
-		/// <para>The Bilinear and Cubic options are most appropriate for continuous data. It is recommended that you do not use either of these with categorical data because the pixel values may be altered.</para>
+		/// <para>指定将使用的重采样技术。 默认设置为最邻近。</para>
+		/// <para>最邻近—将使用最近相邻要素技术。 因为没有新值创建，此方法可将像素值的更改内容最小化，这是最快的重采样技术。 适用于离散数据，例如土地覆被。</para>
+		/// <para>双线性插值法—将使用双线性插值技术。 其采用平均化（距离权重）周围四个像素的值计算每个像素的值。 适用于连续数据。</para>
+		/// <para>三次卷积插值法—将使用三次卷积插值技术。 其通过根据周围的 16 像素拟合平滑曲线来计算每个像素的值。 此操作将生成平滑影像，但可创建位于源数据中超出范围外的值。 适用于连续数据。</para>
+		/// <para>众数重采样法—将使用众数重采样技术。 其基于 3 x 3 窗口中出现频率最高的值来确定每个像素的值。 适用于离散数据。</para>
+		/// <para>最邻近和众数选项用于分类数据，如土地利用分类。 最邻近选项是默认选项。 其速度最快并且不会改变像素值。 请勿对连续数据（如高程表面）使用其中任何一个选项。</para>
+		/// <para>双线性和三次选项最适用于连续数据。 建议不要对分类数据使用其中任何一个选项，因为像素值可能被更改。</para>
 		/// <para><see cref="ResamplingTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Cell Size</para>
-		/// <para>The cell size of the new raster using an existing raster dataset or by specifying its width (x) and height (y).</para>
+		/// <para>使用现有栅格数据集的新栅格的像元大小或指定其宽度 (x) 和高度 (y)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCellSizeXY()]
@@ -157,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Geographic Transformation</para>
-		/// <para>The geographic transformation when projecting from one geographic system or datum to another. A transformation is required when the input and output coordinate systems have different datums.</para>
+		/// <para>从一个地理系统或基准面投影到另一个地理系统或基准面时的地理变换。输入坐标系和输出坐标系的基准面不同时需要进行变换。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -165,8 +165,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Registration Point</para>
-		/// <para>The lower left point for anchoring the output cells. This point does not have to be a corner coordinate or fall within the raster dataset.</para>
-		/// <para>The Snap Raster Environment setting will take priority over the Registration Point parameter. To set the registration point, make sure Snap Raster is not set.</para>
+		/// <para>用于对输出像元进行定位的左下角的点。该点的坐标不必位于一角，也不必落入栅格数据集中。</para>
+		/// <para>捕捉栅格环境设置参数将优先于配准点参数。要设置配准点，请确保尚未设置捕捉栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
@@ -174,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Coordinate System</para>
-		/// <para>The coordinate system of the input raster dataset.</para>
+		/// <para>输入栅格数据集的坐标系。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCoordinateSystem()]
@@ -182,12 +182,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Vertical</para>
-		/// <para>Specifies whether a vertical transformation will be applied.</para>
-		/// <para>This option is active when the input and output coordinate systems have a vertical coordinate system and the input raster&apos;s coordinates have z-values.</para>
-		/// <para>When Vertical is checked, the Geographic Transformation parameter can include ellipsoidal transformations and transformations between vertical datums. For example, ~NAD_1983_To_NAVD88_CONUS_GEOID12B_Height + NAD_1983_To_WGS_1984_1 transforms geometry vertices that are defined on NAD 1983 datum with NAVD 1988 heights into vertices on the WGS 1984 ellipsoid (with z-values representing ellipsoidal heights). The tilde (~) indicates reversed direction of transformation.</para>
-		/// <para>Unchecked—No vertical transformation is applied. The z-values of geometry coordinates will be ignored and the z-values will not be modified. This is the default.</para>
-		/// <para>Checked—The transformation specified in the Geographic Transformation parameter is applied. The Project Raster tool transforms x-, y-, and z-values of geometry coordinates.</para>
-		/// <para>Many vertical transformations require additional data files that must be installed using the ArcGIS Coordinate Systems Data installation package.</para>
+		/// <para>指定是否将应用垂直变换。</para>
+		/// <para>此选项在输入坐标系和输出坐标系都具有垂直坐标系且输入栅格的坐标具有 Z 值时处于活动状态。</para>
+		/// <para>当选中垂直时，地理变换参数可以包括椭圆体变换和垂直基准面之间的变换。例如，~NAD_1983_To_NAVD88_CONUS_GEOID12B_Height + NAD_1983_To_WGS_1984_1 可将在 NAD 1983 基准面（具有 NAVD 1988 高度）上定义的几何折点变换为 WGS 1984 椭圆体（具有表示椭圆体高度的 Z 值）上的折点。波形符 (~) 表示变换的反转方向。</para>
+		/// <para>未选中 - 不应用垂直变换。几何坐标的 Z 值将被忽略，并且 z 值将不会进行修改。这是默认设置。</para>
+		/// <para>选中 - 将应用地理变换参数中指定的变换。投影栅格工具将变换几何坐标的 X、Y 和 Z 值。</para>
+		/// <para>许多垂直变换需要附加数据文件，而这些文件必须通过 ArcGIS Coordinate Systems Data 安装包进行安装。</para>
 		/// <para><see cref="VerticalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -212,31 +212,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ResamplingTypeEnum 
 		{
 			/// <summary>
-			/// <para>Nearest neighbor— The nearest neighbor technique will be used. It minimizes changes to pixel values since no new values are created and is the fastest resampling technique. It is suitable for discrete data, such as land cover.</para>
+			/// <para>最邻近—将使用最近相邻要素技术。 因为没有新值创建，此方法可将像素值的更改内容最小化，这是最快的重采样技术。 适用于离散数据，例如土地覆被。</para>
 			/// </summary>
 			[GPValue("NEAREST")]
-			[Description("Nearest neighbor")]
+			[Description("最邻近")]
 			Nearest_neighbor,
 
 			/// <summary>
-			/// <para>Bilinear interpolation— The bilinear interpolation technique will be used. It calculates the value of each pixel by averaging (weighted for distance) the values of the surrounding four pixels. It is suitable for continuous data.</para>
+			/// <para>双线性插值法—将使用双线性插值技术。 其采用平均化（距离权重）周围四个像素的值计算每个像素的值。 适用于连续数据。</para>
 			/// </summary>
 			[GPValue("BILINEAR")]
-			[Description("Bilinear interpolation")]
+			[Description("双线性插值法")]
 			Bilinear_interpolation,
 
 			/// <summary>
-			/// <para>Cubic convolution—The cubic convolution technique will be used. It calculates the value of each pixel by fitting a smooth curve based on the surrounding 16 pixels. This produces the smoothest image but can create values outside of the range found in the source data. It is suitable for continuous data.</para>
+			/// <para>三次卷积插值法—将使用三次卷积插值技术。 其通过根据周围的 16 像素拟合平滑曲线来计算每个像素的值。 此操作将生成平滑影像，但可创建位于源数据中超出范围外的值。 适用于连续数据。</para>
 			/// </summary>
 			[GPValue("CUBIC")]
-			[Description("Cubic convolution")]
+			[Description("三次卷积插值法")]
 			Cubic_convolution,
 
 			/// <summary>
-			/// <para>Majority resampling—The majority resampling technique will be used. It determines the value of each pixel based on the most popular value in a 3 by 3 window. It is suitable for discrete data.</para>
+			/// <para>众数重采样法—将使用众数重采样技术。 其基于 3 x 3 窗口中出现频率最高的值来确定每个像素的值。 适用于离散数据。</para>
 			/// </summary>
 			[GPValue("MAJORITY")]
-			[Description("Majority resampling")]
+			[Description("众数重采样法")]
 			Majority_resampling,
 
 		}
@@ -247,14 +247,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum VerticalEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The transformation specified in the Geographic Transformation parameter is applied. The Project Raster tool transforms x-, y-, and z-values of geometry coordinates.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("VERTICAL")]
 			VERTICAL,
 
 			/// <summary>
-			/// <para>Unchecked—No vertical transformation is applied. The z-values of geometry coordinates will be ignored and the z-values will not be modified. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_VERTICAL")]

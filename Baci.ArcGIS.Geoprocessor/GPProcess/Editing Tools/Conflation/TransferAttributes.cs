@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Transfer Attributes</para>
-	/// <para>Transfer Attributes</para>
-	/// <para>Finds where the source line features spatially match the target line features and transfers specified attributes from source features to matched target features.</para>
+	/// <para>传递属性</para>
+	/// <para>查找源线要素与目标线要素空间上匹配的位置，并将指定属性从源要素传递到互相匹配的目标要素。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,19 +23,19 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		/// <param name="SourceFeatures">
 		/// <para>Source Features</para>
-		/// <para>Line features from which to transfer attributes.</para>
+		/// <para>传递属性的源线要素。</para>
 		/// </param>
 		/// <param name="TargetFeatures">
 		/// <para>Target Features</para>
-		/// <para>Line features to which to transfer attributes. The specified transfer fields are added to the target features.</para>
+		/// <para>传递属性的目标线要素。 指定的传递字段会添加到目标要素。</para>
 		/// </param>
 		/// <param name="TransferFields">
 		/// <para>Transfer Field(s)</para>
-		/// <para>List of source fields to be transferred to target features. At least one field must be specified.</para>
+		/// <para>要传递至目标要素的源字段列表。 必须至少指定一个字段。</para>
 		/// </param>
 		/// <param name="SearchDistance">
 		/// <para>Search Distance</para>
-		/// <para>The distance used to search for match candidates. A distance must be specified and it must be greater than zero. You can choose a preferred unit; the default is the feature unit.</para>
+		/// <para>用于搜索匹配候选项的距离。必须指定一个距离，且此距离必须大于零。可以选择首选单位；默认为要素单位。</para>
 		/// </param>
 		public TransferAttributes(object SourceFeatures, object TargetFeatures, object TransferFields, object SearchDistance)
 		{
@@ -46,9 +46,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Transfer Attributes</para>
+		/// <para>Tool Display Name : 传递属性</para>
 		/// </summary>
-		public override string DisplayName() => "Transfer Attributes";
+		public override string DisplayName() => "传递属性";
 
 		/// <summary>
 		/// <para>Tool Name : TransferAttributes</para>
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Source Features</para>
-		/// <para>Line features from which to transfer attributes.</para>
+		/// <para>传递属性的源线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Target Features</para>
-		/// <para>Line features to which to transfer attributes. The specified transfer fields are added to the target features.</para>
+		/// <para>传递属性的目标线要素。 指定的传递字段会添加到目标要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Transfer Field(s)</para>
-		/// <para>List of source fields to be transferred to target features. At least one field must be specified.</para>
+		/// <para>要传递至目标要素的源字段列表。 必须至少指定一个字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Search Distance</para>
-		/// <para>The distance used to search for match candidates. A distance must be specified and it must be greater than zero. You can choose a preferred unit; the default is the feature unit.</para>
+		/// <para>用于搜索匹配候选项的距离。必须指定一个距离，且此距离必须大于零。可以选择首选单位；默认为要素单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Match Fields</para>
-		/// <para>Lists of fields from source and target features. If specified, each pair of fields are checked for match candidates to help determine the right match.</para>
+		/// <para>来自源要素与目标要素的字段的列表。如果指定，将检查每对字段中的匹配候选项，以帮助确定正确的匹配。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Output Match Table</para>
-		/// <para>The output table containing complete feature matching information.</para>
+		/// <para>包含完整的要素匹配信息的输出表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -149,11 +149,11 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Transfer Rule Field(s)</para>
-		/// <para>Sets rules to control which source feature will be used to transfer attributes from when multiple source features matched target feature(s). The source feature to be used for the transfer is determined by the specified rule fields and the ruling values, which are ranked from high to low priority as they appear in the specified list. If no rules are set, the longest of the multiple matched source features will be used for the transfer.</para>
-		/// <para>Available rule types are as follows:</para>
-		/// <para>MIN—The minimum value for integer or date field. If for a date field, the most recent date.</para>
-		/// <para>MAX—The maximum value for integer or date field. If for a date field, the oldest date.</para>
-		/// <para>A text or integer value that may exist in your source features.</para>
+		/// <para>当多个源要素与目标要素匹配时，设置规则以控制用于将属性传递到目标要素的源要素。 用于传递的源要素由指定的规则字段和规则值确定，按其在指定列表中的显示顺序为其分配从高至低优先级。 如果未指定规则，则将使用多个匹配的源要素中最长的源要素进行传递。</para>
+		/// <para>可用规则类型如下：</para>
+		/// <para>MIN - 整型或日期型字段的最小值。 对于日期字段，则为最近日期。</para>
+		/// <para>MAX - 整型或日期型字段的最大值。 对于日期字段，则为最早日期。</para>
+		/// <para>可能存在于源要素中的文本或整数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]

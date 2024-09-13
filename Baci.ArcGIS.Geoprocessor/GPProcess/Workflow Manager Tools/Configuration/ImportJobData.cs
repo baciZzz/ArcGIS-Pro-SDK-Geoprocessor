@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Import Job Data</para>
-	/// <para>Import Job Data</para>
-	/// <para>Imports configuration and job information from a Workflow Manager (Classic) repository to a destination repository.  This tool is most useful for setting up a repository similar to an existing repository, disconnected repository replica creation, and changing synchronization.</para>
+	/// <para>导入作业数据</para>
+	/// <para>从 Workflow Manager (Classic) 资料档案库中导入配置和作业信息到目标存储库。此工具对于设置与现有资料档案库相似的资料档案库、创建已断开连接的资料档案库副本和更改同步最为有用。</para>
 	/// </summary>
 	public class ImportJobData : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		/// <param name="InputFile">
 		/// <para>Input JXL/Acknowledgement</para>
-		/// <para>The JXL file that contains the jobs and configuration elements generated using the Export Job Data tool.</para>
+		/// <para>包含使用导出作业数据工具生成的作业和配置元素的 JXL 文件。</para>
 		/// </param>
 		/// <param name="InputMerge">
 		/// <para>Merge</para>
-		/// <para>Specifies whether contents of the destination Workflow Manager (Classic) repository should be combined rather than overwritten with the contents of the input configuration file.</para>
-		/// <para>Checked—Combines the contents of the destination Workflow Manager (Classic) database with the contents of the input configuration file.</para>
-		/// <para>Unchecked—Replaces the entire contents of the destination Workflow Manager (Classic) database with the contents of the input configuration file.</para>
+		/// <para>指定将目标 Workflow Manager (Classic) 资料档案库的内容与输入配置文件的内容合并还是用输入配置文件的内容将其覆盖。</para>
+		/// <para>选中 - 将目标 Workflow Manager (Classic) 数据库的内容与输入配置文件的内容合并。</para>
+		/// <para>未选中 - 用输入配置文件的内容替换目标 Workflow Manager (Classic) 数据库的全部内容。</para>
 		/// <para><see cref="InputMergeEnum"/></para>
 		/// </param>
 		public ImportJobData(object InputFile, object InputMerge)
@@ -37,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Import Job Data</para>
+		/// <para>Tool Display Name : 导入作业数据</para>
 		/// </summary>
-		public override string DisplayName() => "Import Job Data";
+		public override string DisplayName() => "导入作业数据";
 
 		/// <summary>
 		/// <para>Tool Name : ImportJobData</para>
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Input JXL/Acknowledgement</para>
-		/// <para>The JXL file that contains the jobs and configuration elements generated using the Export Job Data tool.</para>
+		/// <para>包含使用导出作业数据工具生成的作业和配置元素的 JXL 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -83,9 +83,9 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Merge</para>
-		/// <para>Specifies whether contents of the destination Workflow Manager (Classic) repository should be combined rather than overwritten with the contents of the input configuration file.</para>
-		/// <para>Checked—Combines the contents of the destination Workflow Manager (Classic) database with the contents of the input configuration file.</para>
-		/// <para>Unchecked—Replaces the entire contents of the destination Workflow Manager (Classic) database with the contents of the input configuration file.</para>
+		/// <para>指定将目标 Workflow Manager (Classic) 资料档案库的内容与输入配置文件的内容合并还是用输入配置文件的内容将其覆盖。</para>
+		/// <para>选中 - 将目标 Workflow Manager (Classic) 数据库的内容与输入配置文件的内容合并。</para>
+		/// <para>未选中 - 用输入配置文件的内容替换目标 Workflow Manager (Classic) 数据库的全部内容。</para>
 		/// <para><see cref="InputMergeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Input Database Path</para>
-		/// <para>The Workflow Manager (Classic) connection file that contains the connection information to the destination repository. If no connection file is specified, the current default Workflow Manager (Classic) database in the project will be used.</para>
+		/// <para>包含目标资料档案库连接信息的 Workflow Manager (Classic) 连接文件。如果未指定连接文件，将使用工程中当前默认的 Workflow Manager (Classic) 数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Repository Name</para>
-		/// <para>The name of the repository as specified in the Workflow Manager (Classic) system settings. This name should be unique within all the repositories in your cluster. If the repository name is not specified, the current default Workflow Manager (Classic) repository name will be used.</para>
+		/// <para>在 Workflow Manager (Classic) 系统设置中指定的资料档案库名称。此名称应与聚类中所有资料档案库名称不同。如果未指定资料档案库名称，将使用当前默认的 Workflow Manager (Classic) 资料档案库名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -126,14 +126,14 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		public enum InputMergeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Combines the contents of the destination Workflow Manager (Classic) database with the contents of the input configuration file.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMBINE")]
 			COMBINE,
 
 			/// <summary>
-			/// <para>Unchecked—Replaces the entire contents of the destination Workflow Manager (Classic) database with the contents of the input configuration file.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("REPLACE")]

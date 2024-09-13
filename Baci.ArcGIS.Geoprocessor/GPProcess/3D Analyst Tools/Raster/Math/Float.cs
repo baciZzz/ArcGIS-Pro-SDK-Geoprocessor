@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Float</para>
-	/// <para>Float</para>
-	/// <para>Converts each cell value of a raster into a floating-point representation.</para>
+	/// <para>转为浮点型</para>
+	/// <para>将每个栅格像元的值转换为浮点型表达形式。</para>
 	/// </summary>
 	public class Float : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InRasterOrConstant">
 		/// <para>Input raster or constant value</para>
-		/// <para>The input raster to be converted to floating point.</para>
-		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
+		/// <para>要转换为浮点型的输入栅格。</para>
+		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the floating-point representation of the input values.</para>
+		/// <para>输出栅格。</para>
+		/// <para>像元值为输入值的浮点型表达。</para>
 		/// </param>
 		public Float(object InRasterOrConstant, object OutRaster)
 		{
@@ -36,14 +36,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Float</para>
+		/// <para>Tool Display Name : 转为浮点型</para>
 		/// </summary>
-		public override string DisplayName() => "Float";
+		public override string DisplayName() => "转为浮点型";
 
 		/// <summary>
-		/// <para>Tool Name : Float</para>
+		/// <para>Tool Name : 转为浮点型</para>
 		/// </summary>
-		public override string ToolName() => "Float";
+		public override string ToolName() => "转为浮点型";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Float</para>
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input raster or constant value</para>
-		/// <para>The input raster to be converted to floating point.</para>
-		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
+		/// <para>要转换为浮点型的输入栅格。</para>
+		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the floating-point representation of the input values.</para>
+		/// <para>输出栅格。</para>
+		/// <para>像元值为输入值的浮点型表达。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Create Constant Raster</para>
-	/// <para>Create Constant Raster</para>
-	/// <para>Creates a raster of a constant value within the extent and cell size of the analysis window.</para>
+	/// <para>创建常量栅格</para>
+	/// <para>基于分析窗口的范围和像元大小创建值为常量的栅格。</para>
 	/// </summary>
 	public class CreateConstantRaster : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster for which each cell will have the specified constant value.</para>
+		/// <para>各像元均将具有指定常量值的输出栅格。</para>
 		/// </param>
 		/// <param name="ConstantValue">
 		/// <para>Constant value</para>
-		/// <para>The constant value with which to populate all the cells in the output raster.</para>
+		/// <para>用于填充输出栅格中所有像元的常量值。</para>
 		/// </param>
 		public CreateConstantRaster(object OutRaster, object ConstantValue)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Constant Raster</para>
+		/// <para>Tool Display Name : 创建常量栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Create Constant Raster";
+		public override string DisplayName() => "创建常量栅格";
 
 		/// <summary>
 		/// <para>Tool Name : CreateConstantRaster</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster for which each cell will have the specified constant value.</para>
+		/// <para>各像元均将具有指定常量值的输出栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Constant value</para>
-		/// <para>The constant value with which to populate all the cells in the output raster.</para>
+		/// <para>用于填充输出栅格中所有像元的常量值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -86,10 +86,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output data type</para>
-		/// <para>Data type of the output raster dataset.</para>
-		/// <para>Integer—An integer raster will be created.</para>
-		/// <para>Float—A floating-point raster will be created.</para>
-		/// <para>If the specified data type is Float, the values of the cells in the output raster will only be accurate to the constant value of 7 decimal places, regardless of the output format.</para>
+		/// <para>输出栅格数据集的数据类型。</para>
+		/// <para>整型—将创建整型栅格。</para>
+		/// <para>浮点型—将创建浮点栅格。</para>
+		/// <para>如果指定的数据类型为浮点型，则无论采用何种输出格式，输出栅格中像元的值仅精确到具有 7 个小数位的常量值。</para>
 		/// <para><see cref="DataTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -99,8 +99,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>The cell size of the output raster that will be created.</para>
-		/// <para>This parameter can be defined by a numeric value or obtained from an existing raster dataset. If the cell size hasn&apos;t been explicitly specified as the parameter value, the environment cell size value will be used if specified; otherwise, additional rules will be used to calculate it from the other inputs. See the usage section for more detail.</para>
+		/// <para>将创建的输出栅格的像元大小。</para>
+		/// <para>此参数可以通过数值进行定义，也可以从现有栅格数据集获取。 如果未将像元大小明确指定为参数值，则将使用环境像元大小值（如果已指定）；否则，将使用其他规则通过其他输出计算像元大小。 有关详细信息，请参阅用法部分。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -112,8 +112,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output extent</para>
-		/// <para>The extent for the output raster dataset.</para>
-		/// <para>The extent will be the value in the environment if specifically set. If not specifically set, the default is 0, 0, 250, 250.</para>
+		/// <para>输出栅格数据集的范围。</para>
+		/// <para>如果专门进行设置，则范围将为环境中的值。如果未进行专门设置，默认值将为 0、0、250、250。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -137,17 +137,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum DataTypeEnum 
 		{
 			/// <summary>
-			/// <para>Integer—An integer raster will be created.</para>
+			/// <para>整型—将创建整型栅格。</para>
 			/// </summary>
 			[GPValue("INTEGER")]
-			[Description("Integer")]
+			[Description("整型")]
 			Integer,
 
 			/// <summary>
-			/// <para>Float—A floating-point raster will be created.</para>
+			/// <para>浮点型—将创建浮点栅格。</para>
 			/// </summary>
 			[GPValue("FLOAT")]
-			[Description("Float")]
+			[Description("浮点型")]
 			Float,
 
 		}

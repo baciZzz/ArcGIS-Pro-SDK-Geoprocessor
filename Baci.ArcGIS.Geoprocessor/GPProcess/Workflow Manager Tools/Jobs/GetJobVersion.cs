@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Get Job Version</para>
-	/// <para>Get Job Version</para>
-	/// <para>Gets the job version as an enterprise geodatabase connection file to process data in a version.</para>
+	/// <para>获取作业版本</para>
+	/// <para>获取作业版本作为企业级地理数据库连接文件，以在某一版本中处理数据。</para>
 	/// </summary>
 	public class GetJobVersion : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		/// <param name="InputJobid">
 		/// <para>Input Job ID</para>
-		/// <para>The ID for the job whose version is to be retrieved.</para>
+		/// <para>要检索版本的作业的 ID。</para>
 		/// </param>
 		public GetJobVersion(object InputJobid)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Get Job Version</para>
+		/// <para>Tool Display Name : 获取作业版本</para>
 		/// </summary>
-		public override string DisplayName() => "Get Job Version";
+		public override string DisplayName() => "获取作业版本";
 
 		/// <summary>
 		/// <para>Tool Name : GetJobVersion</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Input Job ID</para>
-		/// <para>The ID for the job whose version is to be retrieved.</para>
+		/// <para>要检索版本的作业的 ID。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Input Database Path</para>
-		/// <para>The Workflow Manager (Classic) database connection file that contains the job information. If no connection file is specified, the current default Workflow Manager (Classic) database in the project is used.</para>
+		/// <para>包含作业信息的 Workflow Manager (Classic) 数据库连接文件。如果未指定连接文件，将使用项目中当前默认的 Workflow Manager (Classic) 数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]

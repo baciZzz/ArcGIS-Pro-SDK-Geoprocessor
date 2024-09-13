@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Spatial Query Rule</para>
-	/// <para>Add Spatial Query Rule</para>
-	/// <para>Adds a diagram rule that automatically appends new network features to the diagrams based on their location relative to the network features currently represented in the diagram.</para>
+	/// <para>添加空间查询规则</para>
+	/// <para>添加逻辑示意图规则，根据逻辑示意图中当前显示的网络要素的位置，自动将新的网络要素追加到逻辑示意图中。</para>
 	/// </summary>
 	public class AddSpatialQueryRule : AbstractGPProcess
 	{
@@ -21,38 +21,38 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template that will be modified.</para>
+		/// <para>要修改的逻辑示意图模板名称</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
-		/// <para>Specifies whether the rule will be active when generating and updating diagrams based on the specified template.</para>
-		/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
-		/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+		/// <para>指定在基于指定模板生成并更新逻辑示意图时，规则是否将处于激活状态。</para>
+		/// <para>选中 - 在基于输入模板生成并更新逻辑示意图的过程中，添加的规则将会变为激活状态。 这是默认设置。</para>
+		/// <para>未选中 - 在基于输入模板生成或更新逻辑示意图的过程中，添加的规则将不会变为激活状态。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </param>
 		/// <param name="AddedFeatures">
 		/// <para>Add Features</para>
-		/// <para>The source feature class to which features will be added.</para>
+		/// <para>将向其添加要素的源要素类。</para>
 		/// </param>
 		/// <param name="OverlapType">
 		/// <para>Relationship</para>
-		/// <para>Specifies the spatial relationship between the features.</para>
-		/// <para>Intersect— The features in the Add Features source feature class will be appended to the diagram if they intersect one of the Existing Features. This is the default.</para>
-		/// <para>Within a distance— The features in the Add Features source feature class will be appended to the diagram if they are within the specified distance (using Euclidean distance) of one of the Existing Features. Use the Search Distance parameter to specify the distance.</para>
-		/// <para>Contains | Is contained of— The features in the Add Features source feature class will be appended to the diagram if they contain features from or are contained in the Existing Features.</para>
-		/// <para>Within— The features in the Add Features source feature class will be appended to the diagram if they are within Existing Features.</para>
-		/// <para>Boundary touches— The features in the Add Features source feature class will be appended to the diagram if they have a boundary that touches one of the Existing Features. When the Existing Features are lines or polygons, the boundary of the Add Features input feature can only touch the boundary of one of the Existing Features, and no part of the input feature can cross the boundary of one of the Existing Features.</para>
-		/// <para>Share a line segment with— The features in the Add Features source feature class will be appended to the diagram if they share a line segment with one of the Existing Features. The added and existing features must be line or polygon.</para>
-		/// <para>Crossed by the outline of— The features in the Add Features source feature class will be appended to the diagram if they are crossed by the outline of one of the Existing Features. The added and existing features must be lines or polygons. If polygons are used for the Existing Features, the polygon&apos;s boundary (line) will be used. Lines that cross at a point will be appended; lines that share a line segment will not.</para>
+		/// <para>指定要素之间的空间关系。</para>
+		/// <para>相交— 如果添加要素源要素类中的要素与一个现有要素相交，则这些要素将追加到逻辑示意图中。这是默认设置。</para>
+		/// <para>在某一距离范围内— 如果添加要素源要素类中的要素与一个现有要素在指定距离（采用欧氏距离）范围内，则这些要素将追加到逻辑示意图中。使用搜索距离参数指定距离。</para>
+		/// <para>包含|属于— 如果添加要素源要素类中的要素来自或包含于现有要素，则这些要素将追加到逻辑示意图中。</para>
+		/// <para>位于— 如果添加要素源要素类中的要素在现有要素范围内，则这些要素将追加到逻辑示意图中。</para>
+		/// <para>边界接触— 如果添加要素源要素类中的要素的边界与现有要素相接触，则这些要素将追加到逻辑示意图中。如果现有要素为线或面，则添加要素输入要素的边界只能接触一个现有要素的边界，且输入要素的任何部分均不可跨越现有要素的边界。</para>
+		/// <para>与其他要素共线— 如果添加要素源要素类中的要素与一个现有要素共线，则这些要素将追加到逻辑示意图中。已添加要素和现有要素必须是线或面。</para>
+		/// <para>与轮廓交叉— 如果添加要素源要素类中的要素与一个现有要素的轮廓交叉，则这些要素将追加到逻辑示意图中。已添加要素和现有要素必须是线或面。如果将面用于现有要素，则会使用面的边界（线）。将追加在某一点交叉的线；不会追加共线的线。</para>
 		/// <para><see cref="OverlapTypeEnum"/></para>
 		/// </param>
 		/// <param name="ExistingFeatures">
 		/// <para>Existing Features</para>
-		/// <para>The source feature class on which the spatial query will execute.</para>
+		/// <para>将对其执行空间查询的源要素类。</para>
 		/// </param>
 		public AddSpatialQueryRule(object InUtilityNetwork, object TemplateName, object IsActive, object AddedFeatures, object OverlapType, object ExistingFeatures)
 		{
@@ -65,9 +65,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Spatial Query Rule</para>
+		/// <para>Tool Display Name : 添加空间查询规则</para>
 		/// </summary>
-		public override string DisplayName() => "Add Spatial Query Rule";
+		public override string DisplayName() => "添加空间查询规则";
 
 		/// <summary>
 		/// <para>Tool Name : AddSpatialQueryRule</para>
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template that will be modified.</para>
+		/// <para>要修改的逻辑示意图模板名称</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -117,9 +117,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Active</para>
-		/// <para>Specifies whether the rule will be active when generating and updating diagrams based on the specified template.</para>
-		/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
-		/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+		/// <para>指定在基于指定模板生成并更新逻辑示意图时，规则是否将处于激活状态。</para>
+		/// <para>选中 - 在基于输入模板生成并更新逻辑示意图的过程中，添加的规则将会变为激活状态。 这是默认设置。</para>
+		/// <para>未选中 - 在基于输入模板生成或更新逻辑示意图的过程中，添加的规则将不会变为激活状态。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Add Features</para>
-		/// <para>The source feature class to which features will be added.</para>
+		/// <para>将向其添加要素的源要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -137,14 +137,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Relationship</para>
-		/// <para>Specifies the spatial relationship between the features.</para>
-		/// <para>Intersect— The features in the Add Features source feature class will be appended to the diagram if they intersect one of the Existing Features. This is the default.</para>
-		/// <para>Within a distance— The features in the Add Features source feature class will be appended to the diagram if they are within the specified distance (using Euclidean distance) of one of the Existing Features. Use the Search Distance parameter to specify the distance.</para>
-		/// <para>Contains | Is contained of— The features in the Add Features source feature class will be appended to the diagram if they contain features from or are contained in the Existing Features.</para>
-		/// <para>Within— The features in the Add Features source feature class will be appended to the diagram if they are within Existing Features.</para>
-		/// <para>Boundary touches— The features in the Add Features source feature class will be appended to the diagram if they have a boundary that touches one of the Existing Features. When the Existing Features are lines or polygons, the boundary of the Add Features input feature can only touch the boundary of one of the Existing Features, and no part of the input feature can cross the boundary of one of the Existing Features.</para>
-		/// <para>Share a line segment with— The features in the Add Features source feature class will be appended to the diagram if they share a line segment with one of the Existing Features. The added and existing features must be line or polygon.</para>
-		/// <para>Crossed by the outline of— The features in the Add Features source feature class will be appended to the diagram if they are crossed by the outline of one of the Existing Features. The added and existing features must be lines or polygons. If polygons are used for the Existing Features, the polygon&apos;s boundary (line) will be used. Lines that cross at a point will be appended; lines that share a line segment will not.</para>
+		/// <para>指定要素之间的空间关系。</para>
+		/// <para>相交— 如果添加要素源要素类中的要素与一个现有要素相交，则这些要素将追加到逻辑示意图中。这是默认设置。</para>
+		/// <para>在某一距离范围内— 如果添加要素源要素类中的要素与一个现有要素在指定距离（采用欧氏距离）范围内，则这些要素将追加到逻辑示意图中。使用搜索距离参数指定距离。</para>
+		/// <para>包含|属于— 如果添加要素源要素类中的要素来自或包含于现有要素，则这些要素将追加到逻辑示意图中。</para>
+		/// <para>位于— 如果添加要素源要素类中的要素在现有要素范围内，则这些要素将追加到逻辑示意图中。</para>
+		/// <para>边界接触— 如果添加要素源要素类中的要素的边界与现有要素相接触，则这些要素将追加到逻辑示意图中。如果现有要素为线或面，则添加要素输入要素的边界只能接触一个现有要素的边界，且输入要素的任何部分均不可跨越现有要素的边界。</para>
+		/// <para>与其他要素共线— 如果添加要素源要素类中的要素与一个现有要素共线，则这些要素将追加到逻辑示意图中。已添加要素和现有要素必须是线或面。</para>
+		/// <para>与轮廓交叉— 如果添加要素源要素类中的要素与一个现有要素的轮廓交叉，则这些要素将追加到逻辑示意图中。已添加要素和现有要素必须是线或面。如果将面用于现有要素，则会使用面的边界（线）。将追加在某一点交叉的线；不会追加共线的线。</para>
 		/// <para><see cref="OverlapTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Existing Features</para>
-		/// <para>The source feature class on which the spatial query will execute.</para>
+		/// <para>将对其执行空间查询的源要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Search Distance</para>
-		/// <para>The distance between features in the Existing Features parameter and features in the Add Features parameter. This parameter is only valid if the Relationship parameter is set to Intersect, Within a distance, Contains, or Within</para>
+		/// <para>现有要素参数中的要素与添加要素参数中的要素之间的距离。仅当关系参数设置为以下选项时，该参数才有效：相交、在某一距离范围内、包含或位于。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Added Features Query Definition</para>
-		/// <para>The SQL query that will be used to filter the features to be added to the diagram. Without an SQL query, the features based on the specified source class that are spatially related to the specified existing features will be appended to the diagram.</para>
+		/// <para>用于过滤要添加到逻辑示意图中的要素的 SQL 查询。如果没有 SQL 查询，基于指定源类的与指定现有要素在空间上相关的要素将追加到逻辑示意图中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Existing Features Query Definition</para>
-		/// <para>The SQL query that will be used to filter the features existing in the diagram. Without an SQL query, the features based on the specified source class that exist in the diagram will be considered.</para>
+		/// <para>用于过滤逻辑示意图中现有要素的 SQL 查询。如果没有 SQL 查询，将考虑基于逻辑示意图中存在的指定源类的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -186,7 +186,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Description</para>
-		/// <para>The description of the rule.</para>
+		/// <para>规则的描述。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -214,14 +214,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsActiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACTIVE")]
 			ACTIVE,
 
 			/// <summary>
-			/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INACTIVE")]
@@ -235,52 +235,52 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum OverlapTypeEnum 
 		{
 			/// <summary>
-			/// <para>Intersect— The features in the Add Features source feature class will be appended to the diagram if they intersect one of the Existing Features. This is the default.</para>
+			/// <para>相交— 如果添加要素源要素类中的要素与一个现有要素相交，则这些要素将追加到逻辑示意图中。这是默认设置。</para>
 			/// </summary>
 			[GPValue("INTERSECT")]
-			[Description("Intersect")]
+			[Description("相交")]
 			Intersect,
 
 			/// <summary>
-			/// <para>Within a distance— The features in the Add Features source feature class will be appended to the diagram if they are within the specified distance (using Euclidean distance) of one of the Existing Features. Use the Search Distance parameter to specify the distance.</para>
+			/// <para>在某一距离范围内— 如果添加要素源要素类中的要素与一个现有要素在指定距离（采用欧氏距离）范围内，则这些要素将追加到逻辑示意图中。使用搜索距离参数指定距离。</para>
 			/// </summary>
 			[GPValue("WITHIN_A_DISTANCE")]
-			[Description("Within a distance")]
+			[Description("在某一距离范围内")]
 			Within_a_distance,
 
 			/// <summary>
-			/// <para>Contains | Is contained of— The features in the Add Features source feature class will be appended to the diagram if they contain features from or are contained in the Existing Features.</para>
+			/// <para>包含|属于— 如果添加要素源要素类中的要素来自或包含于现有要素，则这些要素将追加到逻辑示意图中。</para>
 			/// </summary>
 			[GPValue("CONTAINS")]
-			[Description("Contains | Is contained of")]
+			[Description("包含|属于")]
 			CONTAINS,
 
 			/// <summary>
-			/// <para>Within a distance— The features in the Add Features source feature class will be appended to the diagram if they are within the specified distance (using Euclidean distance) of one of the Existing Features. Use the Search Distance parameter to specify the distance.</para>
+			/// <para>位于— 如果添加要素源要素类中的要素在现有要素范围内，则这些要素将追加到逻辑示意图中。</para>
 			/// </summary>
 			[GPValue("WITHIN")]
-			[Description("Within")]
+			[Description("位于")]
 			Within,
 
 			/// <summary>
-			/// <para>Boundary touches— The features in the Add Features source feature class will be appended to the diagram if they have a boundary that touches one of the Existing Features. When the Existing Features are lines or polygons, the boundary of the Add Features input feature can only touch the boundary of one of the Existing Features, and no part of the input feature can cross the boundary of one of the Existing Features.</para>
+			/// <para>边界接触— 如果添加要素源要素类中的要素的边界与现有要素相接触，则这些要素将追加到逻辑示意图中。如果现有要素为线或面，则添加要素输入要素的边界只能接触一个现有要素的边界，且输入要素的任何部分均不可跨越现有要素的边界。</para>
 			/// </summary>
 			[GPValue("BOUNDARY_TOUCHES")]
-			[Description("Boundary touches")]
+			[Description("边界接触")]
 			Boundary_touches,
 
 			/// <summary>
-			/// <para>Share a line segment with— The features in the Add Features source feature class will be appended to the diagram if they share a line segment with one of the Existing Features. The added and existing features must be line or polygon.</para>
+			/// <para>与其他要素共线— 如果添加要素源要素类中的要素与一个现有要素共线，则这些要素将追加到逻辑示意图中。已添加要素和现有要素必须是线或面。</para>
 			/// </summary>
 			[GPValue("SHARE_A_LINE_SEGMENT_WITH")]
-			[Description("Share a line segment with")]
+			[Description("与其他要素共线")]
 			Share_a_line_segment_with,
 
 			/// <summary>
-			/// <para>Crossed by the outline of— The features in the Add Features source feature class will be appended to the diagram if they are crossed by the outline of one of the Existing Features. The added and existing features must be lines or polygons. If polygons are used for the Existing Features, the polygon&apos;s boundary (line) will be used. Lines that cross at a point will be appended; lines that share a line segment will not.</para>
+			/// <para>与轮廓交叉— 如果添加要素源要素类中的要素与一个现有要素的轮廓交叉，则这些要素将追加到逻辑示意图中。已添加要素和现有要素必须是线或面。如果将面用于现有要素，则会使用面的边界（线）。将追加在某一点交叉的线；不会追加共线的线。</para>
 			/// </summary>
 			[GPValue("CROSSED_BY_THE_OUTLINE_OF")]
-			[Description("Crossed by the outline of")]
+			[Description("与轮廓交叉")]
 			Crossed_by_the_outline_of,
 
 		}

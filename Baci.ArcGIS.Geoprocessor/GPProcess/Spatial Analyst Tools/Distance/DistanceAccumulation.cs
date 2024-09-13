@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Distance Accumulation</para>
-	/// <para>Distance Accumulation</para>
-	/// <para>Calculates accumulated distance for each cell to sources, allowing for straight-line distance, cost distance, and true surface distance, as well as vertical and horizontal cost factors.</para>
+	/// <para>距离累积</para>
+	/// <para>计算每个像元到源的累积距离，允许直线距离、成本距离、真实表面距离以及垂直和水平成本系数。</para>
 	/// </summary>
 	public class DistanceAccumulation : AbstractGPProcess
 	{
@@ -21,14 +21,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InSourceData">
 		/// <para>Input raster or feature source data</para>
-		/// <para>The input source locations.</para>
-		/// <para>This is a raster or feature (point, line, or polygon) identifying the cells or locations that will be used to calculate the least accumulated cost distance for each output cell location.</para>
-		/// <para>For rasters, the input type can be integer or floating point.</para>
+		/// <para>输入源位置。</para>
+		/// <para>此为栅格或要素（点、线或面），用于标识在计算每个输出像元位置的最小累积成本距离时将使用的像元或位置。</para>
+		/// <para>对于栅格，输入类型可以为整型或浮点型。</para>
 		/// </param>
 		/// <param name="OutDistanceAccumulationRaster">
 		/// <para>Output distance accumulation raster</para>
-		/// <para>The output distance raster.</para>
-		/// <para>The output raster is of floating-point type.</para>
+		/// <para>输出距离栅格。</para>
+		/// <para>输出栅格为浮点型。</para>
 		/// </param>
 		public DistanceAccumulation(object InSourceData, object OutDistanceAccumulationRaster)
 		{
@@ -37,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Distance Accumulation</para>
+		/// <para>Tool Display Name : 距离累积</para>
 		/// </summary>
-		public override string DisplayName() => "Distance Accumulation";
+		public override string DisplayName() => "距离累积";
 
 		/// <summary>
 		/// <para>Tool Name : DistanceAccumulation</para>
@@ -73,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature source data</para>
-		/// <para>The input source locations.</para>
-		/// <para>This is a raster or feature (point, line, or polygon) identifying the cells or locations that will be used to calculate the least accumulated cost distance for each output cell location.</para>
-		/// <para>For rasters, the input type can be integer or floating point.</para>
+		/// <para>输入源位置。</para>
+		/// <para>此为栅格或要素（点、线或面），用于标识在计算每个输出像元位置的最小累积成本距离时将使用的像元或位置。</para>
+		/// <para>对于栅格，输入类型可以为整型或浮点型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -87,8 +87,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output distance accumulation raster</para>
-		/// <para>The output distance raster.</para>
-		/// <para>The output raster is of floating-point type.</para>
+		/// <para>输出距离栅格。</para>
+		/// <para>输出栅格为浮点型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -96,9 +96,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input barrier raster or feature data</para>
-		/// <para>The dataset that defines the barriers.</para>
-		/// <para>The barriers can be defined by an integer or a floating-point raster, or by a point, line, or polygon feature.</para>
-		/// <para>For a raster barrier, the barrier must have a valid value, including zero, and the areas that are not barriers must be NoData.</para>
+		/// <para>定义障碍的数据集。</para>
+		/// <para>可通过整型栅格或浮点型栅格，或通过点、线或面要素来定义障碍。</para>
+		/// <para>对于栅格障碍，该障碍必须具有有效值（包括零），并且非障碍区域必须为 NoData。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
@@ -110,8 +110,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input surface raster</para>
-		/// <para>A raster defining the elevation values at each cell location.</para>
-		/// <para>The values are used to calculate the actual surface distance covered when passing between cells.</para>
+		/// <para>定义每个像元位置的高程值的栅格。</para>
+		/// <para>这些值用于计算经过两个像元时所涉及的实际表面距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
@@ -123,9 +123,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input cost raster</para>
-		/// <para>A raster defining the impedance or cost to move planimetrically through each cell.</para>
-		/// <para>The value at each cell location represents the cost-per-unit distance for moving through the cell. Each cell location value is multiplied by the cell resolution while also compensating for diagonal movement to obtain the total cost of passing through the cell.</para>
-		/// <para>The values of the cost raster can be integer or floating point, but they cannot be negative or zero (you cannot have a negative or zero cost).</para>
+		/// <para>定义以平面测量的经过每个像元所需的阻抗或成本。</para>
+		/// <para>每个像元位置上的值表示经过像元时移动每单位距离所需的成本。 每个像元位置值乘以像元分辨率，同时也会补偿对角线移动来获取经过像元的总成本。</para>
+		/// <para>成本栅格的值可以是整型或浮点型，但不可以为负值或零（不存在负成本或零成本）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
@@ -137,8 +137,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input vertical raster</para>
-		/// <para>A raster defining the z-values for each cell location.</para>
-		/// <para>The values are used for calculating the slope used to identify the vertical factor incurred when moving from one cell to another.</para>
+		/// <para>定义每个像元位置的 z 值的栅格。</para>
+		/// <para>这些 z 值用于计算坡度，而坡度用于标识在不同的像元之间移动时产生的垂直系数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
@@ -151,26 +151,26 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Vertical factor</para>
-		/// <para>Specifies the relationship between the vertical cost factor and the vertical relative moving angle (VRMA).</para>
-		/// <para>There are several factors with modifiers that identify a defined vertical factor graph. Additionally, a table can be used to create a custom graph. The graphs are used to identify the vertical factor used in calculating the total cost for moving into a neighboring cell.</para>
-		/// <para>In the descriptions below, two acronyms are used: VF stands for vertical factor, which defines the vertical difficulty encountered in moving from one cell to the next; and VRMA stands for vertical relative moving angle, which identifies the slope angle between the FROM or processing cell and the TO cell.</para>
-		/// <para>The Vertical factor options are as follows:</para>
-		/// <para>Binary—If the VRMA is greater than the low-cut angle and less than the high-cut angle, the VF is set to the value associated with the zero factor; otherwise, it is infinity.</para>
-		/// <para>Linear—The VF is a linear function of the VRMA.</para>
-		/// <para>Symmetric Linear—The VF is a linear function of the VRMA in either the negative or positive side of the VRMA, respectively, and the two linear functions are symmetrical with respect to the VF (y) axis.</para>
-		/// <para>Inverse Linear—The VF is an inverse linear function of the VRMA.</para>
-		/// <para>Symmetric Inverse Linear—The VF is an inverse linear function of the VRMA in either the negative or positive side of the VRMA, respectively, and the two linear functions are symmetrical with respect to the VF (y) axis.</para>
-		/// <para>Cos—The VF is the cosine-based function of the VRMA.</para>
-		/// <para>Sec—The VF is the secant-based function of the VRMA.</para>
-		/// <para>Cos-Sec—The VF is the cosine-based function of the VRMA when the VRMA is negative and is the secant-based function of the VRMA when the VRMA is not negative.</para>
-		/// <para>Sec-Cos—The VF is the secant-based function of the VRMA when the VRMA is negative and is the cosine-based function of the VRMA when the VRMA is not negative.</para>
-		/// <para>Table—A table file will be used to define the vertical-factor graph that is used to determine the VFs.</para>
-		/// <para>Modifiers to the vertical keywords are the following:</para>
-		/// <para>Zero factor—The vertical factor used when the VRMA is zero. This factor positions the y-intercept of the specified function. By definition, the zero factor is not applicable to any of the trigonometric vertical functions (COS, SEC, COS-SEC, or SEC-COS). The y-intercept is defined by these functions.</para>
-		/// <para>Low Cut angle—The VRMA angle below which the VF will be set to infinity.</para>
-		/// <para>High Cut angle—The VRMA angle above which the VF will be set to infinity.</para>
-		/// <para>Slope—The slope of the straight line used with the Linear and Inverse Linear vertical-factor keywords. The slope is specified as a fraction of rise over run (for example, 45 percent slope is 1/45, which is input as 0.02222).</para>
-		/// <para>Table name—The name of the table defining the VF.</para>
+		/// <para>指定垂直成本系数和垂直相对移动角度 (VRMA) 之间的关系。</para>
+		/// <para>有若干个带有修饰属性的系数可用于标识定义的垂直系数图。 此外，可使用表格来创建自定义图表。 这些图表用于标识在计算移动到相邻像元的总成本时的垂直系数。</para>
+		/// <para>在下面的描述中，将使用两个英文首字母缩写词：VF 表示垂直系数，用于定义从一个像元移至下一像元时所遇到的垂直阻力；VRMA 表示垂直相对移动角度，用于定义“起始”像元或处理像元与“终止”像元之间的坡度角度。</para>
+		/// <para>垂直系数选项如下：</para>
+		/// <para>二元 - 如果 VRMA 大于交角的下限且小于交角的上限，则将 VF 设置为与零系数相关联的值；否则为无穷大。</para>
+		/// <para>线性 - VF 是 VRMA 的线性函数。</para>
+		/// <para>对称线性 - 无论在 VRMA 正侧还是负侧，VF 均为 VRMA 的线性函数，并且这两个线性函数关于 VF (y) 轴对称。</para>
+		/// <para>逆线性 - VF 是 VRMA 的逆线性函数。</para>
+		/// <para>对称逆线性 - 无论在 VRMA 正侧还是负侧，VF 均为 VRMA 的逆线性函数，并且这两个线性函数关于 VF (y) 轴对称。</para>
+		/// <para>Cos - VF 为 VRMA 的余弦函数。</para>
+		/// <para>Sec - VF 为 VRMA 的正割函数。</para>
+		/// <para>Cos-Sec - 当 VRMA 为负时，VF 为 VRMA 的余弦函数；当 VRMA 为非负时，VF 为 VRMA 的正割函数。</para>
+		/// <para>Sec-Cos - 当 VRMA 为负时，VF 为 VRMA 的正割函数；当 VRMA 为非负时，VF 为 VRMA 的余弦函数。</para>
+		/// <para>表 - 将用于定义垂直系数图（确定 VF）的表文件。</para>
+		/// <para>垂直关键字的修饰属性如下：</para>
+		/// <para>零系数 - VRMA 为零时要使用的垂直系数。 该系数可确定指定函数的 y 截距。 按照定义，零系数对于任意三角垂直函数（COS、SEC、COS-SEC 或 SEC-COS）都不适用。 y 截距由以上函数定义。</para>
+		/// <para>交角下限 - 一个 VRMA 角度，小于该角度时 VF 将被设置为无穷大。</para>
+		/// <para>交角上限 - 一个 VRMA 角度，大于该角度时 VF 将被设置为无穷大。</para>
+		/// <para>坡度 - 与线性和逆线性垂直系数关键字相结合使用的直线坡度。 坡度被指定为垂直增量与水平增量的比值（例如，45 百分比坡度是 1/45，以 0.02222 的方式输入）。</para>
+		/// <para>表名 - 定义 VF 的表名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAVerticalFactor()]
@@ -179,8 +179,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input horizontal raster</para>
-		/// <para>A raster defining the horizontal direction at each cell.</para>
-		/// <para>The values on the raster must be integers ranging from 0 to 360, with 0 degrees being north, or toward the top of the screen, and increasing clockwise. Flat areas should be given a value of -1. The values at each location will be used in conjunction with the Horizontal factor parameter to determine the horizontal cost incurred when moving from a cell to its neighbors.</para>
+		/// <para>定义每个像元的水平方向的栅格。</para>
+		/// <para>在栅格上的这些值必须是整数，以北纬 0 度（或朝向屏幕顶部）为起始值，范围为 0 至 360，顺时针增加。 平坦区域应赋值为 -1。 每个位置上的值与水平系数参数结合使用，用来确定在相邻像元之间移动时产生的水平成本。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
@@ -193,21 +193,21 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Horizontal factor</para>
-		/// <para>Specifies the relationship between the horizontal cost factor and the horizontal relative moving angle (HRMA).</para>
-		/// <para>There are several factors with modifiers that identify a defined horizontal factor graph. Additionally, a table can be used to create a custom graph. The graphs are used to identify the horizontal factor used in calculating the total cost of moving into a neighboring cell.</para>
-		/// <para>In the descriptions below, two acronyms are used: HF stands for horizontal factor, which defines the horizontal difficulty encountered when moving from one cell to the next; and HRMA stands for horizontal relative moving angle, which identifies the angle between the horizontal direction from a cell and the moving direction.</para>
-		/// <para>The Horizontal factor options are as follows:</para>
-		/// <para>Binary—If the HRMA is less than the cut angle, the HF is set to the value associated with the zero factor; otherwise, it is infinity.</para>
-		/// <para>Forward—Only forward movement is allowed. The HRMA must be greater than or equal to 0 and less than 90 degrees (0 &lt;= HRMA &lt; 90). If the HRMA is greater than 0 and less than 45 degrees, the HF for the cell is set to the value associated with the zero factor. If the HRMA is greater than or equal to 45 degrees, the side value modifier value is used. The HF for any HRMA equal to or greater than 90 degrees is set to infinity.</para>
-		/// <para>Linear—The HF is a linear function of the HRMA.</para>
-		/// <para>Inverse Linear—The HF is an inverse linear function of the HRMA.</para>
-		/// <para>Table—A table file will be used to define the horizontal factor graph used to determine the HFs.</para>
-		/// <para>Modifiers to the horizontal factors are the following:</para>
-		/// <para>Zero factor—The horizontal factor to be used when the HRMA is zero. This factor positions the y-intercept for any of the horizontal factor functions.</para>
-		/// <para>Cut angle—The HRMA angle beyond which the HF will be set to infinity.</para>
-		/// <para>Slope—The slope of the straight line used with the Linear and Inverse Linear horizontal factor keywords. The slope is specified as a fraction of rise over run (for example, 45 percent slope is 1/45, which is input as 0.02222).</para>
-		/// <para>Side value—The HF when the HRMA is greater than or equal to 45 degrees and less than 90 degrees when the Forward horizontal-factor keyword is specified.</para>
-		/// <para>Table name—The name of the table defining the HF.</para>
+		/// <para>指定水平成本系数和水平相对移动角度 (HRMA) 之间的关系。</para>
+		/// <para>有若干个带有修饰属性的系数可用于标识定义的水平系数图。 此外，可使用表格来创建自定义图表。 这些图表用于标识在计算移动到相邻像元的总成本时的水平系数。</para>
+		/// <para>在下面的描述中，将使用两个英文首字母缩写词：HF 表示水平系数，用于定义从一个像元移动到下一像元时所遇到的水平阻力；HRMA 表示水平相对移动角度，用于定义像元的水平方向与移动方向之间的角度。</para>
+		/// <para>水平系数选项如下：</para>
+		/// <para>二元 - 如果 HRMA 小于交角，则将 HF 设置为与零系数相关联的值；否则为无穷大。</para>
+		/// <para>前向 - 只允许向前的移动。 HRMA 必须大于等于 0 度且小于 90 度 (0 &lt;= HRMA &lt; 90)。 如果 HRMA 大于 0 度且小于 45 度，则将像元的 HF 设置为与零系数相关联的值。 如果 HRMA 大于等于 45 度，则使用边值修饰属性值。 对于 HRMA 等于或大于 90 度的任何情况，均将 HF 设置为无穷大。</para>
+		/// <para>线性 - HF 是 HRMA 的线性函数。</para>
+		/// <para>逆线性 - HF 是 HRMA 的逆线性函数。</para>
+		/// <para>表 - 将用于定义水平系数图（以确定 HF）的表文件。</para>
+		/// <para>水平系数的修饰属性如下：</para>
+		/// <para>零系数 - HRMA 为零时要使用的水平系数。 该系数可确定任意水平系数函数的 y 截距。</para>
+		/// <para>交角 - 一个 HRMA 角度，大于该角度时 HF 将被设置为无穷大。</para>
+		/// <para>坡度 - 与线性和逆线性水平系数关键字相结合使用的直线坡度。 坡度被指定为垂直增量与水平增量的比值（例如，45 百分比坡度是 1/45，以 0.02222 的方式输入）。</para>
+		/// <para>边值 - 在指定了前向水平系数关键字的情况下，HRMA 大于或等于 45 度且小于 90 度时的 HF。</para>
+		/// <para>表名 - 定义 HF 的表名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAHorizontalFactor()]
@@ -216,9 +216,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Out back direction raster</para>
-		/// <para>The back direction raster contains the calculated direction in degrees. The direction identifies the next cell along the shortest path back to the closest source while avoiding barriers.</para>
-		/// <para>The range of values is from 0 degrees to 360 degrees, with 0 reserved for the source cells. Due east (right) is 90, and the values increase clockwise (180 is south, 270 is west, and 360 is north).</para>
-		/// <para>The output raster is of type float.</para>
+		/// <para>反向栅格中包含以度为单位的计算方向。 该方向可用于识别沿最短路径返回最近源同时避开障碍的下一像元。</para>
+		/// <para>值的范围是 0 度到 360 度，并为源像元保留 0 度。 正东（右侧）是 90 度，且值以顺时针方向增加（180 是南方、270 是西方、360 是北方）。</para>
+		/// <para>输出栅格为浮点类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -226,9 +226,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Out source direction raster</para>
-		/// <para>The source direction raster identifies the direction of the least accumulated cost source cell as an azimuth in degrees.</para>
-		/// <para>The range of values is from 0 degrees to 360 degrees, with 0 reserved for the source cells. Due east (right) is 90, and the values increase clockwise (180 is south, 270 is west, and 360 is north).</para>
-		/// <para>The output raster is of type float.</para>
+		/// <para>源方向栅格将最小积累成本源像元的方向标识为方位角（以度为单位）。</para>
+		/// <para>值的范围是 0 度到 360 度，并为源像元保留 0 度。 正东（右侧）是 90 度，且值以顺时针方向增加（180 是南方、270 是西方、360 是北方）。</para>
+		/// <para>输出栅格为浮点类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -237,7 +237,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Out source location raster</para>
-		/// <para>The source location raster is a multiband output. The first band contains a row index, and the second band contains a column index. These indexes identify the location of the source cell that is the least accumulated cost distance away.</para>
+		/// <para>源位置栅格为多波段输出。 第一个波段包含行索引，第二个波段包含列索引。 这些索引用于标识相距最小积累成本距离的源像元的位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -246,9 +246,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Initial accumulation</para>
-		/// <para>The initial accumulative cost that will be used to begin the cost calculation.</para>
-		/// <para>Allows for the specification of the fixed cost associated with a source. Instead of starting at a cost of zero, the cost algorithm will begin with the value set by Initial accumulation.</para>
-		/// <para>The values must be zero or greater. The default is 0.</para>
+		/// <para>开始进行成本计算的初始累积成本。</para>
+		/// <para>适用于与源相关的固定成本规范。 成本算法将从通过初始累积设置的值开始，而非从零成本开始。</para>
+		/// <para>值必须大于等于零。 默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -258,9 +258,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Maximum accumulation</para>
-		/// <para>The maximum accumulation for the traveler for a source.</para>
-		/// <para>The cost calculations continue for each source until the specified accumulation is reached.</para>
-		/// <para>The values must be greater than zero. The default accumulation is to the edge of the output raster.</para>
+		/// <para>源的旅行者的最大累积。</para>
+		/// <para>每个源的成本计算将在达到指定累积后停止。</para>
+		/// <para>值必须大于零。 默认累积为到输出栅格边的边。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -270,9 +270,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Multiplier to apply to costs</para>
-		/// <para>The multiplier that will be applied to the cost values.</para>
-		/// <para>This allows for control of the mode of travel or the magnitude at a source. The greater the multiplier, the greater the cost to move through each cell.</para>
-		/// <para>The values must be greater than zero. The default is 1.</para>
+		/// <para>要应用于成本值的乘数。</para>
+		/// <para>可将其用于控制源的出行或放大模式。 乘数越大，在每个像元间移动的成本将越大。</para>
+		/// <para>值必须大于零。 默认值为 1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -282,11 +282,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Travel direction</para>
-		/// <para>Specifies the direction of the traveler when applying horizontal and vertical factors.</para>
-		/// <para>Travel from source—The horizontal factor and vertical factor will be applied beginning at the input source and travel out to the nonsource cells. This is the default.</para>
-		/// <para>Travel to source—The horizontal factor and vertical factor will be applied beginning at each nonsource cell and travel back to the input source.</para>
-		/// <para>If you select the String option, you can choose between from and to options, which will be applied to all sources.</para>
-		/// <para>If you select the Field option, you can select the field from the source data that determines the direction to use for each source. The field must contain the text string FROM_SOURCE or TO_SOURCE.</para>
+		/// <para>当应用水平和垂直系数时，指定旅行者的方向。</para>
+		/// <para>行驶来自源—水平系数和垂直系数将应用于从输入源开始并行驶至非源像元的情况。 这是默认设置。</para>
+		/// <para>行驶到源—水平系数和垂直系数将应用于从每个非源像元开始并行驶回输入源的情况。</para>
+		/// <para>如果选择字符串选项，您可以选择将应用于所有源的“从”和“到”选项。</para>
+		/// <para>如果您选择字段选项，您可以选择可确定各个源使用方向的来自源数据的字段。 字段必须包含文本字符串 FROM_SOURCE 或 TO_SOURCE。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -296,9 +296,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Distance Method</para>
-		/// <para>Specifies whether the distance will be calculated using a planar (flat earth) or a geodesic (ellipsoid) method.</para>
-		/// <para>Planar—The distance calculation will be performed on a projected flat plane using a 2D Cartesian coordinate system. This is the default.</para>
-		/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Regardless of input or output projection, the results will not change.</para>
+		/// <para>指定是否使用平面（平地）或测地线（椭球）方法计算距离。</para>
+		/// <para>平面—将使用 2D 笛卡尔坐标系对投影平面执行距离计算。 这是默认设置。</para>
+		/// <para>测地线—距离计算将在椭圆体上执行。 无论输入或输出投影，结果均不会改变。</para>
 		/// <para><see cref="DistanceMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -323,17 +323,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum DistanceMethodEnum 
 		{
 			/// <summary>
-			/// <para>Planar—The distance calculation will be performed on a projected flat plane using a 2D Cartesian coordinate system. This is the default.</para>
+			/// <para>平面—将使用 2D 笛卡尔坐标系对投影平面执行距离计算。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("PLANAR")]
-			[Description("Planar")]
+			[Description("平面")]
 			Planar,
 
 			/// <summary>
-			/// <para>Geodesic—The distance calculation will be performed on the ellipsoid. Regardless of input or output projection, the results will not change.</para>
+			/// <para>测地线—距离计算将在椭圆体上执行。 无论输入或输出投影，结果均不会改变。</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("Geodesic")]
+			[Description("测地线")]
 			Geodesic,
 
 		}

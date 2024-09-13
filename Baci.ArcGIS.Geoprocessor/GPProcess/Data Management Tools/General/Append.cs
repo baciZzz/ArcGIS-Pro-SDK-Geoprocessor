@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Append</para>
-	/// <para>Append</para>
-	/// <para>Appends multiple input datasets into an existing target dataset. Input datasets can be feature classes, tables, shapefiles, rasters, or annotation or dimensions feature classes.</para>
+	/// <para>追加</para>
+	/// <para>将多个输入数据集追加到现有目标数据集。 输入数据集可以是要素类、表格、shapefile、栅格、注记或尺寸注记要素类。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,12 +23,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="Inputs">
 		/// <para>Input Datasets</para>
-		/// <para>The input datasets containing the data to be appended to the target dataset. Input datasets can be point, line, or polygon feature classes, tables, rasters, annotation feature classes, or dimensions feature classes.</para>
-		/// <para>Tables and feature classes can be combined. If a feature class is appended to a table, attributes will be transferred; however, the features will be dropped. If a table is appended to a feature class, the rows from the input table will have null geometry.</para>
+		/// <para>所含数据将被追加到目标数据集的输入数据集。 输入数据集可以是点、线、面要素类、表、栅格、注记要素类或尺寸要素类。</para>
+		/// <para>可将表和要素类组合起来。 如果将要素类追加到表，则将传递属性，但不会移除要素。 如果将表追加到要素类中，则输入表中的行将具有空几何。</para>
 		/// </param>
 		/// <param name="Target">
 		/// <para>Target Dataset</para>
-		/// <para>The existing dataset where the data of the input datasets will be appended.</para>
+		/// <para>将追加输入数据集数据的现有数据集。</para>
 		/// </param>
 		public Append(object Inputs, object Target)
 		{
@@ -37,14 +37,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Append</para>
+		/// <para>Tool Display Name : 追加</para>
 		/// </summary>
-		public override string DisplayName() => "Append";
+		public override string DisplayName() => "追加";
 
 		/// <summary>
-		/// <para>Tool Name : Append</para>
+		/// <para>Tool Name : 追加</para>
 		/// </summary>
-		public override string ToolName() => "Append";
+		public override string ToolName() => "追加";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Append</para>
@@ -73,8 +73,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Datasets</para>
-		/// <para>The input datasets containing the data to be appended to the target dataset. Input datasets can be point, line, or polygon feature classes, tables, rasters, annotation feature classes, or dimensions feature classes.</para>
-		/// <para>Tables and feature classes can be combined. If a feature class is appended to a table, attributes will be transferred; however, the features will be dropped. If a table is appended to a feature class, the rows from the input table will have null geometry.</para>
+		/// <para>所含数据将被追加到目标数据集的输入数据集。 输入数据集可以是点、线、面要素类、表、栅格、注记要素类或尺寸要素类。</para>
+		/// <para>可将表和要素类组合起来。 如果将要素类追加到表，则将传递属性，但不会移除要素。 如果将表追加到要素类中，则输入表中的行将具有空几何。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Dataset</para>
-		/// <para>The existing dataset where the data of the input datasets will be appended.</para>
+		/// <para>将追加输入数据集数据的现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -90,10 +90,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Matching Type</para>
-		/// <para>Specifies whether the fields of the input dataset must match the fields of the target dataset for data to be appended.</para>
-		/// <para>Input fields must match target fields—Fields from the input dataset must match the fields of the target dataset. An error will be returned if the fields do not match.</para>
-		/// <para>Use the field map to reconcile field differences—Fields from the input dataset do not need to match the fields of the target dataset. Any fields from the input datasets that do not match the fields of the target dataset will not be mapped to the target dataset unless the mapping is explicitly set in the Field Map parameter.</para>
-		/// <para>Skip and warn if schema does not match—Fields from the input dataset must match the fields of the target dataset. If any of the input datasets contain fields that do not match the target dataset, that input dataset will be omitted with a warning message.</para>
+		/// <para>指定输入数据集的方案是否必须与目标数据集的字段相匹配才能追加数据。</para>
+		/// <para>输入字段必须与目标字段匹配—输入数据集的字段必须与目标数据集的字段相匹配。 如果字段不匹配，则系统将返回一条错误。</para>
+		/// <para>使用字段映射协调字段差异—输入数据集的字段不需要与目标数据集的字段相匹配。 如果输入数据集的任何字段与目标数据集的字段不匹配，将不会被映射到目标数据集，除非在字段映射参数中对映射进行了显式设置。</para>
+		/// <para>方案不匹配时跳过并警告—输入数据集的字段必须与目标数据集的字段相匹配。 如果任何输入数据集包含与目标数据集不匹配的字段，则该输入数据集将被忽略，并会出现警告消息。</para>
 		/// <para><see cref="SchemaTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -103,21 +103,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Map</para>
-		/// <para>Controls how the attribute fields from the input datasets will be transferred or mapped to the target dataset.</para>
-		/// <para>This parameter can only be used if the Field Matching Type parameter is set to Use the field map to reconcile field differences.</para>
-		/// <para>Because the input datasets are appended to an existing target dataset that has predefined fields, you cannot add, remove, or change the type of the fields in the field map. You can set merge rules for each output field.</para>
-		/// <para>Merge rules allow you to specify how values from two or more input fields are merged or combined into a single output value. There are several merge rules you can use to determine how the output field will be populated with values.</para>
-		/// <para>First—Use the input fields&apos; first value.</para>
-		/// <para>Last—Use the input fields&apos; last value.</para>
-		/// <para>Join—Concatenate (join) the input field values.</para>
-		/// <para>Sum—Calculate the total of the input field values.</para>
-		/// <para>Mean—Calculate the mean (average) of the input field values.</para>
-		/// <para>Median—Calculate the median (middle) of the input field values.</para>
-		/// <para>Mode—Use the value with the highest frequency.</para>
-		/// <para>Min—Use the minimum value of all the input field values.</para>
-		/// <para>Max—Use the maximum value of all the input field values.</para>
-		/// <para>Standard deviation—Use the standard deviation classification method on all the input field values.</para>
-		/// <para>Count—Find the number of records included in the calculation.</para>
+		/// <para>控制如何将输入数据集中的属性字段传输或映射到目标数据集。</para>
+		/// <para>仅当将字段匹配类型参数设置为使用字段映射协调字段差异时，才能使用此参数。</para>
+		/// <para>由于输入数据集追加到具有预定义字段的现有目标数据集，因此无法在字段映射中添加、删除或更改字段类型。 您可以为每个输出字段设置合并规则。</para>
+		/// <para>合并规则用于指定如何将两个或更多个输入字段的值合并或组合为一个输出值。 有多种合并规则可用于确定如何用值填充输出字段。</para>
+		/// <para>First - 使用输入字段的第一个值。</para>
+		/// <para>Last - 使用输入字段的最后一个值。</para>
+		/// <para>Join - 串连（连接）输入字段的值。</para>
+		/// <para>Sum - 计算输入字段值的总和。</para>
+		/// <para>Mean - 计算输入字段值的平均值。</para>
+		/// <para>Median - 计算输入字段值的中值。</para>
+		/// <para>Mode - 使用具有最高频率的值。</para>
+		/// <para>Min - 使用所有输入字段值中的最小值。</para>
+		/// <para>Max - 使用所有输入字段值中的最大值。</para>
+		/// <para>Standard deviation - 对所有输入字段值使用标准差分类方法。</para>
+		/// <para>Count - 查找计算中所包含的记录数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFieldMapping()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Subtype</para>
-		/// <para>The subtype description that will be assigned to all new data that is appended to the target dataset.</para>
+		/// <para>将分配给追加到目标数据集的所有新数据的子类型描述。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -140,8 +140,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>The SQL expression that will be used to select a subset of the input datasets&apos; records. If multiple input datasets are specified, they will all be evaluated using the expression. If no records match the expression for an input dataset, no records from that dataset will be appended to the target.</para>
-		/// <para>For more information about SQL syntax, see SQL reference for query expressions used in ArcGIS.</para>
+		/// <para>用于选择输入数据集记录子集的 SQL 表达式。 如果指定了多个输入数据集，将使用表达式对它们进行评估。 如果没有与输入数据集表达式匹配的记录，将不会向目标追加该数据集的记录。</para>
+		/// <para>有关 SQL 语法的详细信息，请参阅在 ArcGIS 中使用的查询表达式的 SQL 参考。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -164,24 +164,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SchemaTypeEnum 
 		{
 			/// <summary>
-			/// <para>Input fields must match target fields—Fields from the input dataset must match the fields of the target dataset. An error will be returned if the fields do not match.</para>
+			/// <para>输入字段必须与目标字段匹配—输入数据集的字段必须与目标数据集的字段相匹配。 如果字段不匹配，则系统将返回一条错误。</para>
 			/// </summary>
 			[GPValue("TEST")]
-			[Description("Input fields must match target fields")]
+			[Description("输入字段必须与目标字段匹配")]
 			Input_fields_must_match_target_fields,
 
 			/// <summary>
-			/// <para>Use the field map to reconcile field differences—Fields from the input dataset do not need to match the fields of the target dataset. Any fields from the input datasets that do not match the fields of the target dataset will not be mapped to the target dataset unless the mapping is explicitly set in the Field Map parameter.</para>
+			/// <para>使用字段映射协调字段差异—输入数据集的字段不需要与目标数据集的字段相匹配。 如果输入数据集的任何字段与目标数据集的字段不匹配，将不会被映射到目标数据集，除非在字段映射参数中对映射进行了显式设置。</para>
 			/// </summary>
 			[GPValue("NO_TEST")]
-			[Description("Use the field map to reconcile field differences")]
+			[Description("使用字段映射协调字段差异")]
 			Use_the_field_map_to_reconcile_field_differences,
 
 			/// <summary>
-			/// <para>Skip and warn if schema does not match—Fields from the input dataset must match the fields of the target dataset. If any of the input datasets contain fields that do not match the target dataset, that input dataset will be omitted with a warning message.</para>
+			/// <para>方案不匹配时跳过并警告—输入数据集的字段必须与目标数据集的字段相匹配。 如果任何输入数据集包含与目标数据集不匹配的字段，则该输入数据集将被忽略，并会出现警告消息。</para>
 			/// </summary>
 			[GPValue("TEST_AND_SKIP")]
-			[Description("Skip and warn if schema does not match")]
+			[Description("方案不匹配时跳过并警告")]
 			Skip_and_warn_if_schema_does_not_match,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Re-export Unacknowledged Messages</para>
-	/// <para>Re-export Unacknowledged Messages</para>
-	/// <para>Creates an output delta file containing unacknowledged replica updates from a one-way or two-way replica geodatabase.</para>
+	/// <para>重新导出未确认的消息</para>
+	/// <para>创建包含来自单向或双向复本地理数据库的未确认复本更新的输出增量文件。</para>
 	/// </summary>
 	public class ReExportUnacknowledgedMessages : AbstractGPProcess
 	{
@@ -21,21 +21,21 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InGeodatabase">
 		/// <para>Export from Replica Geodatabase</para>
-		/// <para>The replica geodatabase from which the unacknowledged messages will be reexported. The geodatabase can be a local geodatabase or a geodata service.</para>
+		/// <para>将从中重新导出未确认消息的复本地理数据库。 该地理数据库可以是本地地理数据库，也可以是地理数据服务。</para>
 		/// </param>
 		/// <param name="OutputDeltaFile">
 		/// <para>Output Delta File</para>
-		/// <para>The delta file to which data changes will be reexported.</para>
+		/// <para>将向其重新导出数据变更的增量文件。</para>
 		/// </param>
 		/// <param name="InReplica">
 		/// <para>Replica</para>
-		/// <para>The replica from which the unacknowledged messages will be reexported.</para>
+		/// <para>将从中重新导出未确认消息的复本。</para>
 		/// </param>
 		/// <param name="InExportOption">
 		/// <para>Export options</para>
-		/// <para>Specifies the changes that will be reexported.</para>
-		/// <para>All unacknowledged—All changes with unacknowledged messages will be reexported.</para>
-		/// <para>Most recent—Only those changes made since the last set of exported changes was sent will be reexported.</para>
+		/// <para>指定将重新导出的变更。</para>
+		/// <para>所有未确认—将重新导出包含未确认消息的所有变更。</para>
+		/// <para>最近—仅重新导出最后一组导出变更后所做的变更。</para>
 		/// <para><see cref="InExportOptionEnum"/></para>
 		/// </param>
 		public ReExportUnacknowledgedMessages(object InGeodatabase, object OutputDeltaFile, object InReplica, object InExportOption)
@@ -47,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Re-export Unacknowledged Messages</para>
+		/// <para>Tool Display Name : 重新导出未确认的消息</para>
 		/// </summary>
-		public override string DisplayName() => "Re-export Unacknowledged Messages";
+		public override string DisplayName() => "重新导出未确认的消息";
 
 		/// <summary>
 		/// <para>Tool Name : ReExportUnacknowledgedMessages</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Export from Replica Geodatabase</para>
-		/// <para>The replica geodatabase from which the unacknowledged messages will be reexported. The geodatabase can be a local geodatabase or a geodata service.</para>
+		/// <para>将从中重新导出未确认消息的复本地理数据库。 该地理数据库可以是本地地理数据库，也可以是地理数据服务。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Delta File</para>
-		/// <para>The delta file to which data changes will be reexported.</para>
+		/// <para>将向其重新导出数据变更的增量文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Replica</para>
-		/// <para>The replica from which the unacknowledged messages will be reexported.</para>
+		/// <para>将从中重新导出未确认消息的复本。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -110,9 +110,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Export options</para>
-		/// <para>Specifies the changes that will be reexported.</para>
-		/// <para>All unacknowledged—All changes with unacknowledged messages will be reexported.</para>
-		/// <para>Most recent—Only those changes made since the last set of exported changes was sent will be reexported.</para>
+		/// <para>指定将重新导出的变更。</para>
+		/// <para>所有未确认—将重新导出包含未确认消息的所有变更。</para>
+		/// <para>最近—仅重新导出最后一组导出变更后所做的变更。</para>
 		/// <para><see cref="InExportOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -137,17 +137,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum InExportOptionEnum 
 		{
 			/// <summary>
-			/// <para>All unacknowledged—All changes with unacknowledged messages will be reexported.</para>
+			/// <para>所有未确认—将重新导出包含未确认消息的所有变更。</para>
 			/// </summary>
 			[GPValue("ALL_UNACKNOWLEDGED")]
-			[Description("All unacknowledged")]
+			[Description("所有未确认")]
 			All_unacknowledged,
 
 			/// <summary>
-			/// <para>Most recent—Only those changes made since the last set of exported changes was sent will be reexported.</para>
+			/// <para>最近—仅重新导出最后一组导出变更后所做的变更。</para>
 			/// </summary>
 			[GPValue("MOST_RECENT")]
-			[Description("Most recent")]
+			[Description("最近")]
 			Most_recent,
 
 		}

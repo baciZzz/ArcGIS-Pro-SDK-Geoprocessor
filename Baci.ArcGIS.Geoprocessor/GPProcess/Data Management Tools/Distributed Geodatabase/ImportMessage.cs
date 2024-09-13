@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Import Message</para>
-	/// <para>Import Message</para>
-	/// <para>Imports changes from a delta file into a replica geodatabase or imports an acknowledgment message into a replica geodatabase.</para>
+	/// <para>导入消息</para>
+	/// <para>将增量文件中的变更导入复本地理数据库或将确认消息导入复本地理数据库。</para>
 	/// </summary>
 	public class ImportMessage : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InGeodatabase">
 		/// <para>Import To Replica Geodatabase</para>
-		/// <para>The replica geodatabase that will receive the imported message. The geodatabase can be local or remote.</para>
+		/// <para>将接收导入消息的复本地理数据库。 地理数据库可以是本地地理数据库也可以是远程地理数据库。</para>
 		/// </param>
 		/// <param name="SourceDeltaFile">
 		/// <para>Import from Delta file</para>
-		/// <para>The file from which the message will be imported.</para>
+		/// <para>将从中导入消息的文件。</para>
 		/// </param>
 		public ImportMessage(object InGeodatabase, object SourceDeltaFile)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Import Message</para>
+		/// <para>Tool Display Name : 导入消息</para>
 		/// </summary>
-		public override string DisplayName() => "Import Message";
+		public override string DisplayName() => "导入消息";
 
 		/// <summary>
 		/// <para>Tool Name : ImportMessage</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Import To Replica Geodatabase</para>
-		/// <para>The replica geodatabase that will receive the imported message. The geodatabase can be local or remote.</para>
+		/// <para>将接收导入消息的复本地理数据库。 地理数据库可以是本地地理数据库也可以是远程地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Import from Delta file</para>
-		/// <para>The file from which the message will be imported.</para>
+		/// <para>将从中导入消息的文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Acknowledgement File</para>
-		/// <para>The file that will contain the acknowledgement message. When importing data changes, you can also export a message to acknowledge the import of a data change message. This parameter is only supported for a data change message.</para>
+		/// <para>将包含确认消息的文件。 导入数据变更时，还可以导出消息以确认数据变更消息的导入。 仅数据变更消息支持此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -98,10 +98,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Conflict Resolution Policy</para>
-		/// <para>Specifies how conflicts will be resolved when they are encountered while importing a data change message.</para>
-		/// <para>Manually resolve conflicts—Conflicts must be manually resolved in the versioning reconcile environment.</para>
-		/// <para>In favor of the database—Conflicts will be automatically resolved in favor of the database receiving the changes.</para>
-		/// <para>In favor of imported changes—Conflicts will be automatically resolved in favor of the imported changes.</para>
+		/// <para>指定在导入数据变更消息时遇到冲突的情况下将如何解决冲突。</para>
+		/// <para>手动解决冲突—必须在版本协调环境中手动解决冲突。</para>
+		/// <para>数据库优先—冲突将自动解决，以便于数据库接收变更。</para>
+		/// <para>导入变更优先—冲突将自动解决，以便于导入变更。</para>
 		/// <para><see cref="ConflictPolicyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -111,9 +111,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Conflict Definition</para>
-		/// <para>Specifies whether the conditions required for a conflict to occur will be detected by object (row) or by attribute (column).</para>
-		/// <para>By object—Conflicts will be detected by row.</para>
-		/// <para>By attribute—Conflicts will be detected by column.</para>
+		/// <para>指定是按对象（行）还是按属性（列）检测发生冲突所需的条件。</para>
+		/// <para>按对象—将按行检测冲突。</para>
+		/// <para>按属性—将按列检测冲突。</para>
 		/// <para><see cref="ConflictDefinitionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -123,9 +123,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Reconcile with the Parent Version (Check-out replicas)</para>
-		/// <para>Specifies whether data changes will be automatically reconciled once they are sent to the parent replica if no conflicts are present. This parameter is only active for check-out/check-in replicas.</para>
-		/// <para>Unchecked—Changes will not be reconciled with the parent version. This is the default.</para>
-		/// <para>Checked—Changes will be reconciled with the parent version.</para>
+		/// <para>指定在不存在冲突的情况下，是否在将数据变更发送到父复本后自动协调。 此参数仅对检出/检入复本有效。</para>
+		/// <para>未选中 - 变更将不会与父版本协调。 这是默认设置。</para>
+		/// <para>选中 - 变更将与父版本协调。</para>
 		/// <para><see cref="ReconcileWithParentVersionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -157,24 +157,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ConflictPolicyEnum 
 		{
 			/// <summary>
-			/// <para>Manually resolve conflicts—Conflicts must be manually resolved in the versioning reconcile environment.</para>
+			/// <para>手动解决冲突—必须在版本协调环境中手动解决冲突。</para>
 			/// </summary>
 			[GPValue("MANUAL")]
-			[Description("Manually resolve conflicts")]
+			[Description("手动解决冲突")]
 			Manually_resolve_conflicts,
 
 			/// <summary>
-			/// <para>In favor of imported changes—Conflicts will be automatically resolved in favor of the imported changes.</para>
+			/// <para>导入变更优先—冲突将自动解决，以便于导入变更。</para>
 			/// </summary>
 			[GPValue("IN_FAVOR_OF_IMPORTED_CHANGES")]
-			[Description("In favor of imported changes")]
+			[Description("导入变更优先")]
 			In_favor_of_imported_changes,
 
 			/// <summary>
-			/// <para>In favor of the database—Conflicts will be automatically resolved in favor of the database receiving the changes.</para>
+			/// <para>数据库优先—冲突将自动解决，以便于数据库接收变更。</para>
 			/// </summary>
 			[GPValue("IN_FAVOR_OF_DATABASE")]
-			[Description("In favor of the database")]
+			[Description("数据库优先")]
 			In_favor_of_the_database,
 
 		}
@@ -185,17 +185,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ConflictDefinitionEnum 
 		{
 			/// <summary>
-			/// <para>By object—Conflicts will be detected by row.</para>
+			/// <para>按对象—将按行检测冲突。</para>
 			/// </summary>
 			[GPValue("BY_OBJECT")]
-			[Description("By object")]
+			[Description("按对象")]
 			By_object,
 
 			/// <summary>
-			/// <para>By attribute—Conflicts will be detected by column.</para>
+			/// <para>按属性—将按列检测冲突。</para>
 			/// </summary>
 			[GPValue("BY_ATTRIBUTE")]
-			[Description("By attribute")]
+			[Description("按属性")]
 			By_attribute,
 
 		}
@@ -206,14 +206,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ReconcileWithParentVersionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Changes will be reconciled with the parent version.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RECONCILE ")]
 			RECONCILE_,
 
 			/// <summary>
-			/// <para>Unchecked—Changes will not be reconciled with the parent version. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_RECONCILE")]

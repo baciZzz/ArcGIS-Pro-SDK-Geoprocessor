@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Reconstruct Surface</para>
-	/// <para>Reconstruct Surface</para>
-	/// <para>Generates DSM orthophotos, 2.5D meshes, 3D meshes, and point clouds from adjusted imagery.</para>
+	/// <para>重新构建表面</para>
+	/// <para>根据调整后的影像生成 DSM 正射影像、2.5D 网格、3D 网格和点云。</para>
 	/// </summary>
 	public class ReconstructSurface : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>The adjusted input mosaic dataset.</para>
+		/// <para>调整的输入镶嵌数据集。</para>
 		/// </param>
 		/// <param name="ReconFolder">
 		/// <para>Reconstruction Folder</para>
-		/// <para>The output dataset folder.</para>
+		/// <para>输出数据集文件夹。</para>
 		/// </param>
 		public ReconstructSurface(object InMosaicDataset, object ReconFolder)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Reconstruct Surface</para>
+		/// <para>Tool Display Name : 重新构建表面</para>
 		/// </summary>
-		public override string DisplayName() => "Reconstruct Surface";
+		public override string DisplayName() => "重新构建表面";
 
 		/// <summary>
 		/// <para>Tool Name : ReconstructSurface</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>The adjusted input mosaic dataset.</para>
+		/// <para>调整的输入镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Reconstruction Folder</para>
-		/// <para>The output dataset folder.</para>
+		/// <para>输出数据集文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -86,8 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Reconstruction Options</para>
-		/// <para>A .json file or JSON string that specifies the values for the tool parameters.</para>
-		/// <para>If this parameter is specified, the properties of the .json file or JSON string will set the defaults for the remaining optional parameters.</para>
+		/// <para>用于指定工具参数值的 .json 文件或 JSON 字符串。</para>
+		/// <para>如果指定了此参数，则 .json 文件或 JSON 字符串的属性将为其余可选参数设置默认值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -96,10 +96,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Scenario</para>
-		/// <para>Specifies the type of imagery that will be used to generate the output products.</para>
-		/// <para>Default—The input imagery will be defined as having been acquired with drones or terrestrial cameras.</para>
-		/// <para>Aerial Nadir—The input imagery will be defined as having been acquired with large, photogrammetric camera systems.</para>
-		/// <para>Aerial Oblique—The input imagery will be defined as having been acquired with oblique camera systems.</para>
+		/// <para>指定将用于生成输出产品的影像类型。</para>
+		/// <para>默认值—输入影像将被定义为使用无人机或地面照相机获取。</para>
+		/// <para>航空像底点—输入影像将被定义为使用大型摄影测量照相机系统获取。</para>
+		/// <para>航空倾斜—输入影像将被定义为使用倾斜照相机系统获取。</para>
 		/// <para><see cref="ScenarioEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -109,8 +109,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Forward Overlap</para>
-		/// <para>The forward (in-strip) overlap percentage that will be used between the images. The default is 60.</para>
-		/// <para>This parameter is active when the Scenario parameter is set to Aerial Nadir.</para>
+		/// <para>将在图像之间使用的向前（条带内）重叠百分比。 默认值为 60。</para>
+		/// <para>在将方案参数设置为航空像底点时才启用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -119,8 +119,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Sideward Overlap</para>
-		/// <para>The sideward (cross-strip) overlap percentage that will be used between the images. The default is 30.</para>
-		/// <para>This parameter is active when the Scenario parameter is set to Aerial Nadir.</para>
+		/// <para>将在图像之间使用的侧方（跨条带）重叠百分比。 默认值为 30。</para>
+		/// <para>在将方案参数设置为航空像底点时才启用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -129,11 +129,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Quality</para>
-		/// <para>Specifies the quality of the final product.</para>
-		/// <para>Ultra—Input images will be used at their original (full) resolution.</para>
-		/// <para>High—Input images will be downsampled two times.</para>
-		/// <para>Medium—Input images will be downsampled four times.</para>
-		/// <para>Low—Input images will be downsampled eight times.</para>
+		/// <para>指定最终产品的质量。</para>
+		/// <para>超级—输入图像将以其原始（全）分辨率使用。</para>
+		/// <para>高—输入图像将被降采样 2 倍。</para>
+		/// <para>中—输入图像将被降采样 4 倍。</para>
+		/// <para>低—输入图像将被降采样 8 倍。</para>
 		/// <para><see cref="QualityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -143,12 +143,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Products</para>
-		/// <para>Specifies the products that will be generated.</para>
-		/// <para>DSM—A digital surface model (DSM) will be generated. This product will be selected by default when the Scenario parameter is set to Aerial Nadir.</para>
-		/// <para>True Ortho—The imagery will be orthorectified. This product will be selected by default when the Scenario parameter is set to Aerial Nadir.</para>
-		/// <para>DSM Mesh—A DSM mesh will be generated. This product will be selected by default when the Scenario parameter is set to Aerial Nadir.</para>
-		/// <para>Point Cloud—An image point cloud will be generated. This product will be selected by default when the Scenario parameter is set to Default or Aerial Oblique.</para>
-		/// <para>Mesh—A 3D mesh will be generated. This product will be selected by default when the Scenario parameter is set to Default or Aerial Oblique.</para>
+		/// <para>指定将要生成的产品。</para>
+		/// <para>DSM—将生成数字表面模型 (DSM)。 默认情况下，当方案参数设置为航空像底点时，将选择该产品。</para>
+		/// <para>真正射—将对此影像进行正射校正。 默认情况下，当方案参数设置为航空像底点时，将选择该产品。</para>
+		/// <para>DSM 网格—将生成 DSM 网格。 默认情况下，当方案参数设置为航空像底点时，将选择该产品。</para>
+		/// <para>点云—将生成图像点云。 默认情况下，当方案参数设置为默认值或航空像底点时，将选择该产品。</para>
+		/// <para>网格—将生成 3D 网格。 默认情况下，当方案参数设置为默认值或航空像底点时，将选择该产品。</para>
 		/// <para><see cref="ProductsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -158,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Cell Size</para>
-		/// <para>The cell size of the output product.</para>
+		/// <para>输出产品的像元大小。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -168,10 +168,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Area of Interest</para>
-		/// <para>The area of interest that will be used to select images for processing. The area of interest can be computed automatically or defined using an input shapefile.</para>
-		/// <para>If the value contains 3D geometries, the z-component will be ignored. If the value includes overlapping features, the union of these features will be computed.</para>
-		/// <para>None—All images will be used in processing.</para>
-		/// <para>Auto—The processing extent will be calculated automatically. This is the default.</para>
+		/// <para>将用于选择要处理的图像的感兴趣区域。 感兴趣区域可以自动计算或使用输入 shapefile 定义。</para>
+		/// <para>如果该值包含 3D 几何，则将忽略 z 分量。 如果该值包括重叠要素，则将计算这些要素的并集。</para>
+		/// <para>无—所有影像都将用于处理。</para>
+		/// <para>自动—将自动计算处理范围。 这是默认设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -181,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Waterbody Features</para>
-		/// <para>A polygon that will define the extent of large water bodies. For the best results, use a 3D shapefile.</para>
+		/// <para>将用于定义大型水体范围的面。 要获得最佳效果，请使用 3D shapefile。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -191,7 +191,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Correction Features</para>
-		/// <para>A polygon that will define the extent of all surfaces that are not water bodies. The value must be a 3D shapefile.</para>
+		/// <para>将用于定义所有非水体表面的范围的面。 该值必须为 3D shapefile。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -223,24 +223,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ScenarioEnum 
 		{
 			/// <summary>
-			/// <para>Default—The input imagery will be defined as having been acquired with drones or terrestrial cameras.</para>
+			/// <para>默认值—输入影像将被定义为使用无人机或地面照相机获取。</para>
 			/// </summary>
 			[GPValue("DEFAULT")]
-			[Description("Default")]
+			[Description("默认值")]
 			Default,
 
 			/// <summary>
-			/// <para>Aerial Nadir—The input imagery will be defined as having been acquired with large, photogrammetric camera systems.</para>
+			/// <para>航空像底点—输入影像将被定义为使用大型摄影测量照相机系统获取。</para>
 			/// </summary>
 			[GPValue("AERIAL_NADIR")]
-			[Description("Aerial Nadir")]
+			[Description("航空像底点")]
 			Aerial_Nadir,
 
 			/// <summary>
-			/// <para>Aerial Oblique—The input imagery will be defined as having been acquired with oblique camera systems.</para>
+			/// <para>航空倾斜—输入影像将被定义为使用倾斜照相机系统获取。</para>
 			/// </summary>
 			[GPValue("AERIAL_OBLIQUE")]
-			[Description("Aerial Oblique")]
+			[Description("航空倾斜")]
 			Aerial_Oblique,
 
 		}
@@ -251,31 +251,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum QualityEnum 
 		{
 			/// <summary>
-			/// <para>Ultra—Input images will be used at their original (full) resolution.</para>
+			/// <para>超级—输入图像将以其原始（全）分辨率使用。</para>
 			/// </summary>
 			[GPValue("ULTRA")]
-			[Description("Ultra")]
+			[Description("超级")]
 			Ultra,
 
 			/// <summary>
-			/// <para>High—Input images will be downsampled two times.</para>
+			/// <para>高—输入图像将被降采样 2 倍。</para>
 			/// </summary>
 			[GPValue("HIGH")]
-			[Description("High")]
+			[Description("高")]
 			High,
 
 			/// <summary>
-			/// <para>Medium—Input images will be downsampled four times.</para>
+			/// <para>中—输入图像将被降采样 4 倍。</para>
 			/// </summary>
 			[GPValue("MEDIUM")]
-			[Description("Medium")]
+			[Description("中")]
 			Medium,
 
 			/// <summary>
-			/// <para>Low—Input images will be downsampled eight times.</para>
+			/// <para>低—输入图像将被降采样 8 倍。</para>
 			/// </summary>
 			[GPValue("LOW")]
-			[Description("Low")]
+			[Description("低")]
 			Low,
 
 		}
@@ -286,38 +286,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ProductsEnum 
 		{
 			/// <summary>
-			/// <para>DSM—A digital surface model (DSM) will be generated. This product will be selected by default when the Scenario parameter is set to Aerial Nadir.</para>
+			/// <para>DSM—将生成数字表面模型 (DSM)。 默认情况下，当方案参数设置为航空像底点时，将选择该产品。</para>
 			/// </summary>
 			[GPValue("DSM")]
 			[Description("DSM")]
 			DSM,
 
 			/// <summary>
-			/// <para>True Ortho—The imagery will be orthorectified. This product will be selected by default when the Scenario parameter is set to Aerial Nadir.</para>
+			/// <para>真正射—将对此影像进行正射校正。 默认情况下，当方案参数设置为航空像底点时，将选择该产品。</para>
 			/// </summary>
 			[GPValue("TRUE_ORTHO")]
-			[Description("True Ortho")]
+			[Description("真正射")]
 			True_Ortho,
 
 			/// <summary>
-			/// <para>DSM Mesh—A DSM mesh will be generated. This product will be selected by default when the Scenario parameter is set to Aerial Nadir.</para>
+			/// <para>DSM 网格—将生成 DSM 网格。 默认情况下，当方案参数设置为航空像底点时，将选择该产品。</para>
 			/// </summary>
 			[GPValue("DSM_MESH")]
-			[Description("DSM Mesh")]
+			[Description("DSM 网格")]
 			DSM_Mesh,
 
 			/// <summary>
-			/// <para>Point Cloud—An image point cloud will be generated. This product will be selected by default when the Scenario parameter is set to Default or Aerial Oblique.</para>
+			/// <para>点云—将生成图像点云。 默认情况下，当方案参数设置为默认值或航空像底点时，将选择该产品。</para>
 			/// </summary>
 			[GPValue("POINT_CLOUD")]
-			[Description("Point Cloud")]
+			[Description("点云")]
 			Point_Cloud,
 
 			/// <summary>
-			/// <para>Mesh—A 3D mesh will be generated. This product will be selected by default when the Scenario parameter is set to Default or Aerial Oblique.</para>
+			/// <para>网格—将生成 3D 网格。 默认情况下，当方案参数设置为默认值或航空像底点时，将选择该产品。</para>
 			/// </summary>
 			[GPValue("MESH")]
-			[Description("Mesh")]
+			[Description("网格")]
 			Mesh,
 
 		}

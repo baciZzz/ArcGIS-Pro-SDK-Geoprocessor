@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Float to Raster</para>
-	/// <para>Float to Raster</para>
-	/// <para>Converts a file of binary floating-point values representing raster data to a raster dataset.</para>
+	/// <para>浮点型转栅格</para>
+	/// <para>将表示栅格数据的二进制浮点型值文件转换为栅格数据集。</para>
 	/// </summary>
 	[Obsolete()]
 	public class FloatToRaster : AbstractGPProcess
@@ -22,13 +22,13 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InFloatFile">
 		/// <para>Input floating point raster file</para>
-		/// <para>The input floating-point binary file.</para>
-		/// <para>The file must have a .flt extension. There must be a header file in association with the floating-point binary file, with a .hdr extension.</para>
+		/// <para>输入的浮点型二进制文件。</para>
+		/// <para>该文件的扩展名必须是 .flt。必须存在一个与浮点型二进制文件相关联且扩展名为 .hdr 的头文件。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster dataset to be created.</para>
-		/// <para>If the output raster will not be saved to a geodatabase, specify .tif for TIFF file format, .CRF for CRF file format, .img for ERDAS IMAGINE file format, or no extension for Esri Grid raster format.</para>
+		/// <para>要创建的输出栅格数据集。</para>
+		/// <para>如果不希望将输出栅格保存到地理数据库，请为 TIFF 文件格式指定 .tif，为 CRF 文件格式指定 .CRF，为 ERDAS IMAGINE 文件格式指定 .img，而对于 Esri Grid 栅格格式，无需指定扩展名。</para>
 		/// </param>
 		public FloatToRaster(object InFloatFile, object OutRaster)
 		{
@@ -37,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Float to Raster</para>
+		/// <para>Tool Display Name : 浮点型转栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Float to Raster";
+		public override string DisplayName() => "浮点型转栅格";
 
 		/// <summary>
 		/// <para>Tool Name : FloatToRaster</para>
@@ -73,8 +73,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input floating point raster file</para>
-		/// <para>The input floating-point binary file.</para>
-		/// <para>The file must have a .flt extension. There must be a header file in association with the floating-point binary file, with a .hdr extension.</para>
+		/// <para>输入的浮点型二进制文件。</para>
+		/// <para>该文件的扩展名必须是 .flt。必须存在一个与浮点型二进制文件相关联且扩展名为 .hdr 的头文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -84,8 +84,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster dataset to be created.</para>
-		/// <para>If the output raster will not be saved to a geodatabase, specify .tif for TIFF file format, .CRF for CRF file format, .img for ERDAS IMAGINE file format, or no extension for Esri Grid raster format.</para>
+		/// <para>要创建的输出栅格数据集。</para>
+		/// <para>如果不希望将输出栅格保存到地理数据库，请为 TIFF 文件格式指定 .tif，为 CRF 文件格式指定 .CRF，为 ERDAS IMAGINE 文件格式指定 .img，而对于 Esri Grid 栅格格式，无需指定扩展名。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

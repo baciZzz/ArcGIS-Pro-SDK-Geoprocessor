@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Summarize Incident Count</para>
-	/// <para>Summarize Incident Count</para>
-	/// <para>Creates a feature class with coincident point counts. Coincident point counts for line and point features are determined by a specified maximum distance. Point counts for polygon features are determine by whether point features or portions of features overlap with the polygon feature.</para>
+	/// <para>汇总事件计数</para>
+	/// <para>用于创建具有重合点计数的要素类。线和点要素的重合点计数由指定的最大距离确定。面要素的点计数取决于点要素或部分要素是否与面要素重叠。</para>
 	/// </summary>
 	public class SummarizeIncidentCount : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input features to which coincident point counts will be calculated.</para>
+		/// <para>将要计算重合点计数的输入要素。</para>
 		/// </param>
 		/// <param name="InSumFeatures">
 		/// <para>Input Summary Features</para>
-		/// <para>The point features coincident with the input features.</para>
+		/// <para>与输入要素重合的点要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output choropleth count feature class, symbolized by total count.</para>
+		/// <para>输出分区统计计数要素类，按总计数进行符号化。</para>
 		/// </param>
 		public SummarizeIncidentCount(object InFeatures, object InSumFeatures, object OutFeatureClass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Summarize Incident Count</para>
+		/// <para>Tool Display Name : 汇总事件计数</para>
 		/// </summary>
-		public override string DisplayName() => "Summarize Incident Count";
+		public override string DisplayName() => "汇总事件计数";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeIncidentCount</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input features to which coincident point counts will be calculated.</para>
+		/// <para>将要计算重合点计数的输入要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Input Summary Features</para>
-		/// <para>The point features coincident with the input features.</para>
+		/// <para>与输入要素重合的点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output choropleth count feature class, symbolized by total count.</para>
+		/// <para>输出分区统计计数要素类，按总计数进行符号化。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -105,8 +105,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Search Radius</para>
-		/// <para>The maximum distance from an Input Features point or line that a point feature will be considered coincident.</para>
-		/// <para>This parameter is not active when the Input Features is a polygon.</para>
+		/// <para>将视为点要素重合的与输入要素点或线的最大距离。</para>
+		/// <para>如果输入要素为面，则此参数将处于非活动状态。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Group Field</para>
-		/// <para>A field containing the value used to split point counts. Additional fields containing counts for each unique value in the group field will be generated.</para>
+		/// <para>一个字段，其中包含用于分割点计数的值。将生成附加字段，其中包含分组字段中每个唯一值的计数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

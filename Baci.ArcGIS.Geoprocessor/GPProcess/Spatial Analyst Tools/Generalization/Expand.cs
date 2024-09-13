@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Expand</para>
-	/// <para>Expand</para>
-	/// <para>Expands specified zones of a raster by a specified number of cells.</para>
+	/// <para>扩展</para>
+	/// <para>按指定的像元数目扩展指定的栅格区域。</para>
 	/// </summary>
 	public class Expand : AbstractGPProcess
 	{
@@ -21,24 +21,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster for which the identified zones are to be expanded</para>
-		/// <para>It must be of integer type.</para>
+		/// <para>要扩展识别区域的输入栅格</para>
+		/// <para>必须为整型。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output generalized raster.</para>
-		/// <para>The specified zones of the input raster will be expanded by the specified number of cells.</para>
-		/// <para>The output is always of integer type.</para>
+		/// <para>输出概化的栅格。</para>
+		/// <para>将按指定数量扩展的输入栅格指定区域。</para>
+		/// <para>输出始终为整型。</para>
 		/// </param>
 		/// <param name="NumberCells">
 		/// <para>Number of cells</para>
-		/// <para>The number of cells to expand each specified zone by.</para>
-		/// <para>The value must be an integer greater than 1.</para>
+		/// <para>每个指定区域要扩展的像元数。</para>
+		/// <para>该值必须为大于 1 的整数。</para>
 		/// </param>
 		/// <param name="ZoneValues">
 		/// <para>Zone values</para>
-		/// <para>The list of zone values to expand.</para>
-		/// <para>The zone values must be integers. They can be in any order.</para>
+		/// <para>要扩展的区域值列表。</para>
+		/// <para>区域值必须为整数。可以按任意顺序排列。</para>
 		/// </param>
 		public Expand(object InRaster, object OutRaster, object NumberCells, object ZoneValues)
 		{
@@ -49,14 +49,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Expand</para>
+		/// <para>Tool Display Name : 扩展</para>
 		/// </summary>
-		public override string DisplayName() => "Expand";
+		public override string DisplayName() => "扩展";
 
 		/// <summary>
-		/// <para>Tool Name : Expand</para>
+		/// <para>Tool Name : 扩展</para>
 		/// </summary>
-		public override string ToolName() => "Expand";
+		public override string ToolName() => "扩展";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Expand</para>
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster for which the identified zones are to be expanded</para>
-		/// <para>It must be of integer type.</para>
+		/// <para>要扩展识别区域的输入栅格</para>
+		/// <para>必须为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -98,9 +98,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output generalized raster.</para>
-		/// <para>The specified zones of the input raster will be expanded by the specified number of cells.</para>
-		/// <para>The output is always of integer type.</para>
+		/// <para>输出概化的栅格。</para>
+		/// <para>将按指定数量扩展的输入栅格指定区域。</para>
+		/// <para>输出始终为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -108,8 +108,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Number of cells</para>
-		/// <para>The number of cells to expand each specified zone by.</para>
-		/// <para>The value must be an integer greater than 1.</para>
+		/// <para>每个指定区域要扩展的像元数。</para>
+		/// <para>该值必须为大于 1 的整数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -118,8 +118,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Zone values</para>
-		/// <para>The list of zone values to expand.</para>
-		/// <para>The zone values must be integers. They can be in any order.</para>
+		/// <para>要扩展的区域值列表。</para>
+		/// <para>区域值必须为整数。可以按任意顺序排列。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -127,10 +127,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Expand method</para>
-		/// <para>The method used to expand the selected zones.</para>
-		/// <para>Morphological—Uses a mathematical morphology method to expand the zones. This is the default.</para>
-		/// <para>Distance—Uses a distance-based method to expand the zones.</para>
-		/// <para>The Distance option supports parallelization, and can be controlled with the Parallel Processing Factor environment setting.</para>
+		/// <para>用于扩展所选区域的方法。</para>
+		/// <para>形态—使用数学形态学方法扩展区域。 这是默认设置。</para>
+		/// <para>距离—使用基于距离的方法扩展区域。</para>
+		/// <para>距离选项支持并行处理，可以使用并行处理因子环境设定进行控制。</para>
 		/// <para><see cref="ExpandMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -155,17 +155,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ExpandMethodEnum 
 		{
 			/// <summary>
-			/// <para>Morphological—Uses a mathematical morphology method to expand the zones. This is the default.</para>
+			/// <para>形态—使用数学形态学方法扩展区域。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("MORPHOLOGICAL")]
-			[Description("Morphological")]
+			[Description("形态")]
 			Morphological,
 
 			/// <summary>
-			/// <para>Distance—Uses a distance-based method to expand the zones.</para>
+			/// <para>距离—使用基于距离的方法扩展区域。</para>
 			/// </summary>
 			[GPValue("DISTANCE")]
-			[Description("Distance")]
+			[Description("距离")]
 			Distance,
 
 		}

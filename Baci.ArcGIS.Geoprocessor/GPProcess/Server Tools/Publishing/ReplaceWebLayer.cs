@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Replace Web Layer</para>
-	/// <para>Replace Web Layer</para>
-	/// <para>Replaces the content of a web layer in a portal with the content of another web layer.</para>
+	/// <para>替换 Web 图层</para>
+	/// <para>用于将门户中某一 web 图层的内容替换为其他 web 图层的内容。</para>
 	/// </summary>
 	public class ReplaceWebLayer : AbstractGPProcess
 	{
@@ -21,25 +21,25 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		/// <param name="TargetLayer">
 		/// <para>Target Layer</para>
-		/// <para>The web layer to be replaced. In addition to a layer or catalog path, it can also be specified using the item ID or service URL of one of the following:</para>
-		/// <para>Vector tile</para>
-		/// <para>Tile layer</para>
-		/// <para>Scene layer published from one of the following sources:</para>
-		/// <para>Scene layer package</para>
-		/// <para>Referenced scene cache in folder or cloud data stores</para>
+		/// <para>要替换的 web 图层。 除了图层或目录路径之外，还可以使用以下某项的项目 ID 或服务 URL 进行指定。</para>
+		/// <para>矢量切片</para>
+		/// <para>切片图层</para>
+		/// <para>从以下源之一发布的场景图层：</para>
+		/// <para>场景图层包</para>
+		/// <para>文件夹或云数据存储中引用的场景缓存</para>
 		/// </param>
 		/// <param name="ArchiveLayerName">
 		/// <para>Archive Layer Name</para>
-		/// <para>A unique name for the archive layer. The web layer that is replaced remains in the portal as an archive layer.</para>
+		/// <para>用于存档图层的唯一名称。 替换的 web 图层将作为存档图层保留在门户中。</para>
 		/// </param>
 		/// <param name="UpdateLayer">
 		/// <para>Update Layer</para>
-		/// <para>The replacement web layer. In addition to a layer or catalog path, it can also be specified using the item ID or service URL of one of the following:</para>
-		/// <para>Vector tile</para>
-		/// <para>Tile layer</para>
-		/// <para>Scene layer published from one of the following sources:</para>
-		/// <para>Scene layer package</para>
-		/// <para>Referenced scene cache in folder or cloud data stores</para>
+		/// <para>替换 web 图层。 除了图层或目录路径之外，还可以使用以下某项的项目 ID 或服务 URL 进行指定。</para>
+		/// <para>矢量切片</para>
+		/// <para>切片图层</para>
+		/// <para>从以下源之一发布的场景图层：</para>
+		/// <para>场景图层包</para>
+		/// <para>文件夹或云数据存储中引用的场景缓存</para>
 		/// </param>
 		public ReplaceWebLayer(object TargetLayer, object ArchiveLayerName, object UpdateLayer)
 		{
@@ -49,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Replace Web Layer</para>
+		/// <para>Tool Display Name : 替换 Web 图层</para>
 		/// </summary>
-		public override string DisplayName() => "Replace Web Layer";
+		public override string DisplayName() => "替换 Web 图层";
 
 		/// <summary>
 		/// <para>Tool Name : ReplaceWebLayer</para>
@@ -85,12 +85,12 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Target Layer</para>
-		/// <para>The web layer to be replaced. In addition to a layer or catalog path, it can also be specified using the item ID or service URL of one of the following:</para>
-		/// <para>Vector tile</para>
-		/// <para>Tile layer</para>
-		/// <para>Scene layer published from one of the following sources:</para>
-		/// <para>Scene layer package</para>
-		/// <para>Referenced scene cache in folder or cloud data stores</para>
+		/// <para>要替换的 web 图层。 除了图层或目录路径之外，还可以使用以下某项的项目 ID 或服务 URL 进行指定。</para>
+		/// <para>矢量切片</para>
+		/// <para>切片图层</para>
+		/// <para>从以下源之一发布的场景图层：</para>
+		/// <para>场景图层包</para>
+		/// <para>文件夹或云数据存储中引用的场景缓存</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Archive Layer Name</para>
-		/// <para>A unique name for the archive layer. The web layer that is replaced remains in the portal as an archive layer.</para>
+		/// <para>用于存档图层的唯一名称。 替换的 web 图层将作为存档图层保留在门户中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -106,12 +106,12 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Update Layer</para>
-		/// <para>The replacement web layer. In addition to a layer or catalog path, it can also be specified using the item ID or service URL of one of the following:</para>
-		/// <para>Vector tile</para>
-		/// <para>Tile layer</para>
-		/// <para>Scene layer published from one of the following sources:</para>
-		/// <para>Scene layer package</para>
-		/// <para>Referenced scene cache in folder or cloud data stores</para>
+		/// <para>替换 web 图层。 除了图层或目录路径之外，还可以使用以下某项的项目 ID 或服务 URL 进行指定。</para>
+		/// <para>矢量切片</para>
+		/// <para>切片图层</para>
+		/// <para>从以下源之一发布的场景图层：</para>
+		/// <para>场景图层包</para>
+		/// <para>文件夹或云数据存储中引用的场景缓存</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -119,9 +119,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Replace Item Information</para>
-		/// <para>Specifies whether the thumbnail image, summary, description, and tags will be replaced. In either case, the item&apos;s credits (attribution), terms of use, and created from information are not replaced.</para>
-		/// <para>Unchecked—The target layer&apos;s item information will not be replaced when the layer is updated. This is the default.</para>
-		/// <para>Checked—The target layer&apos;s item information will be replaced by the update layer&apos;s item information.</para>
+		/// <para>指定是否替换缩略图、摘要、描述和标签。 无论哪种情况，都不会替换项目的“制作者名单（属性）”、“使用条款”和“创建时间”信息。</para>
+		/// <para>未选中 - 更新图层时，将不会替换目标图层的项目信息。 这是默认设置。</para>
+		/// <para>选中 - 目标图层的项目信息将替换为更新图层的项目信息。</para>
 		/// <para><see cref="ReplaceItemInfoEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -138,9 +138,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Create New Item For Archive Layer</para>
-		/// <para>Specifies whether an item will be created for the archive layer. This option is supported on portals in ArcGIS Online and ArcGIS Enterprise 10.8 or later.</para>
-		/// <para>Unchecked—The item ID of the update layer will be used for the archive layer. This is the default for vector tile layers and tile layers.</para>
-		/// <para>Checked—An item ID will be created for the archive layer. This is the default for scene layers.</para>
+		/// <para>指定是否为归档图层创建项目。 此选项适用于 ArcGIS Online 和 ArcGIS Enterprise 10.8 或更高版本中的门户。</para>
+		/// <para>未选中 - 将更新图层的项目 ID 用于归档图层。 这是矢量切片图层和切片图层的默认设置。</para>
+		/// <para>选中 - 将为归档图层创建项目 ID。 这是场景图层的默认值。</para>
 		/// <para><see cref="CreateNewItemEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -165,14 +165,14 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		public enum ReplaceItemInfoEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The target layer&apos;s item information will be replaced by the update layer&apos;s item information.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REPLACE")]
 			REPLACE,
 
 			/// <summary>
-			/// <para>Unchecked—The target layer&apos;s item information will not be replaced when the layer is updated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP")]
@@ -186,14 +186,14 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		public enum CreateNewItemEnum 
 		{
 			/// <summary>
-			/// <para>Checked—An item ID will be created for the archive layer. This is the default for scene layers.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TRUE")]
 			TRUE,
 
 			/// <summary>
-			/// <para>Unchecked—The item ID of the update layer will be used for the archive layer. This is the default for vector tile layers and tile layers.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FALSE")]

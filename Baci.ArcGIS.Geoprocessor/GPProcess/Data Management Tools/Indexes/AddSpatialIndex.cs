@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Spatial Index</para>
-	/// <para>Add Spatial Index</para>
-	/// <para>Adds a spatial index to a shapefile, file geodatabase, mobile geodatabase, or enterprise geodatabase feature class.   Use this tool to either add a spatial index to a shapefile or feature class that does not already have one or to re-create an existing spatial index.</para>
+	/// <para>添加空间索引</para>
+	/// <para>将空间索引添加到 shapefile、文件地理数据库、移动地理数据库或企业级地理数据库要素类中。使用此工具可将空间索引添加到尚无空间索引的 shapefile 或要素类或者重新创建现有空间索引。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>An enterprise geodatabase feature class, file geodatabase feature class, mobile geodatabase feature class, or shapefile to which a spatial index is to be added or rebuilt.</para>
+		/// <para>要添加或重构空间索引的企业级地理数据库要素类、文件地理数据库要素类、移动地理数据库要素类或 shapefile。</para>
 		/// </param>
 		public AddSpatialIndex(object InFeatures)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Spatial Index</para>
+		/// <para>Tool Display Name : 添加空间索引</para>
 		/// </summary>
-		public override string DisplayName() => "Add Spatial Index";
+		public override string DisplayName() => "添加空间索引";
 
 		/// <summary>
 		/// <para>Tool Name : AddSpatialIndex</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>An enterprise geodatabase feature class, file geodatabase feature class, mobile geodatabase feature class, or shapefile to which a spatial index is to be added or rebuilt.</para>
+		/// <para>要添加或重构空间索引的企业级地理数据库要素类、文件地理数据库要素类、移动地理数据库要素类或 shapefile。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Spatial Grid 1</para>
-		/// <para>This parameter has been deprecated in ArcGIS Pro. Any value you enter will be ignored.</para>
+		/// <para>已在 ArcGIS Pro 中弃用此参数。将忽略您输入的任何值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Spatial Grid 2</para>
-		/// <para>This parameter has been deprecated in ArcGIS Pro. Any value you enter will be ignored.</para>
+		/// <para>已在 ArcGIS Pro 中弃用此参数。将忽略您输入的任何值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Spatial Grid 3</para>
-		/// <para>This parameter has been deprecated in ArcGIS Pro. Any value you enter will be ignored.</para>
+		/// <para>已在 ArcGIS Pro 中弃用此参数。将忽略您输入的任何值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

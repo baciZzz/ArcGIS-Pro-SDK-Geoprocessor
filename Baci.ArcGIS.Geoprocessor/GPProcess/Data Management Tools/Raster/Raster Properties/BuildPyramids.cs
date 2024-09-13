@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Pyramids</para>
-	/// <para>Build Pyramids</para>
-	/// <para>Builds raster pyramids for your raster dataset.</para>
+	/// <para>构建金字塔</para>
+	/// <para>为栅格数据集构建栅格金字塔。</para>
 	/// </summary>
 	public class BuildPyramids : AbstractGPProcess
 	{
@@ -21,8 +21,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRasterDataset">
 		/// <para>Input Raster Dataset</para>
-		/// <para>The raster dataset for which you want to build pyramids.</para>
-		/// <para>The input should have more than 1,024 rows and 1,024 columns.</para>
+		/// <para>要构建金字塔的栅格数据集。</para>
+		/// <para>输入数据集的行数和列数都应超过 1,024 个。</para>
 		/// </param>
 		public BuildPyramids(object InRasterDataset)
 		{
@@ -30,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Build Pyramids</para>
+		/// <para>Tool Display Name : 构建金字塔</para>
 		/// </summary>
-		public override string DisplayName() => "Build Pyramids";
+		public override string DisplayName() => "构建金字塔";
 
 		/// <summary>
 		/// <para>Tool Name : BuildPyramids</para>
@@ -66,8 +66,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster Dataset</para>
-		/// <para>The raster dataset for which you want to build pyramids.</para>
-		/// <para>The input should have more than 1,024 rows and 1,024 columns.</para>
+		/// <para>要构建金字塔的栅格数据集。</para>
+		/// <para>输入数据集的行数和列数都应超过 1,024 个。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -75,9 +75,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pyramid levels</para>
-		/// <para>The number of reduced-resolution dataset layers that will be built. The default value is -1, which will build full pyramids. A value of 0 will result in no pyramid levels.</para>
-		/// <para>To delete pyramids, set the number of levels to 0.</para>
-		/// <para>The maximum number of pyramid levels you can specify is 29. Any value that is 30 or higher will revert to a value of -1, which will create a full set of pyramids.</para>
+		/// <para>将构建的递减分辨率数据集图层的数量。 默认值为 -1（将构建完整的金字塔）。 值为 0 时，将不会获得金字塔等级。</para>
+		/// <para>要删除金字塔，请将等级数设为 0。</para>
+		/// <para>可以指定的最大金字塔等级数为 29。任何大于或等于 30 的值都将恢复成 -1，并将创建一组完整的金字塔。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -85,9 +85,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Skip first level</para>
-		/// <para>Specifies whether the first pyramid level will be skipped. Skipping the first level will take up slightly less disk space, but it will slow down performance at these scales.</para>
-		/// <para>Unchecked—The first pyramid level will not be skipped; it will be built. This is the default.</para>
-		/// <para>Checked—The first pyramid level will be skipped; it will not be built.</para>
+		/// <para>指定是否将跳过第一个金字塔等级。 跳过第一个等级将略微降低占用的磁盘空间大小，但将降低这些比例的性能。</para>
+		/// <para>未选中 - 不会跳过第一个金字塔等级，将构建该等级。 这是默认设置。</para>
+		/// <para>选中 - 将跳过第一个金字塔等级，不会构建该等级。</para>
 		/// <para><see cref="SKIPFIRSTEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -97,10 +97,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pyramid resampling technique</para>
-		/// <para>Specifies the resampling technique that will be used to build the pyramids.</para>
-		/// <para>Nearest—The value of the closest pixel will be used to assign a value to the output pixel when resampling. This is the default.</para>
-		/// <para>Bilinear—The new value of a pixel will be based on a weighted distance average of the four nearest input pixel centers.</para>
-		/// <para>Cubic—The new value of a pixel will be based on fitting a smooth curve through the 16 nearest input pixel centers.</para>
+		/// <para>指定将用于构建金字塔的重采样技术。</para>
+		/// <para>最邻近—重采样时，将使用最邻近像素的值将为输出像素分配值。 这是默认设置。</para>
+		/// <para>双线性法—将基于四个最邻近的输入像素中心的加权平均距离确定像素的新值。</para>
+		/// <para>三次—将通过拟合穿过 16 个最邻近输入像素中心的平滑曲线确定像素的新值。</para>
 		/// <para><see cref="ResampleTechniqueEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -110,12 +110,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pyramid compression type</para>
-		/// <para>Specifies the compression type that will be used when building the raster pyramids.</para>
-		/// <para>Default—If the source data is compressed using a wavelet compression, it will build pyramids with the JPEG compression type; otherwise, LZ77 will be used. This is the default compression method.</para>
-		/// <para>LZ77—The LZ77 compression algorithm will be used to build the pyramids. LZ77 can be used for any data type.</para>
-		/// <para>Jpeg—The JPEG compression algorithm will be used to build pyramids. Only data that adheres to the JPEG compression specification can use this compression type. If JPEG is chosen, you can then set the compression quality.</para>
-		/// <para>Jpeg Luma and Chroma—A lossy compression using the luma (Y) and chroma (Cb and Cr) color space components will be used to build pyramids.</para>
-		/// <para>No compression—No compression will be used when building pyramids.</para>
+		/// <para>指定构建栅格金字塔时将使用的压缩类型。</para>
+		/// <para>默认—如果使用小波压缩方法对源数据进行压缩，则将使用 JPEG 压缩类型构建金字塔；否则，将使用 LZ77。这是默认压缩方法。</para>
+		/// <para>LZ77—将使用 LZ77 压缩算法来构建金字塔。LZ77 可用于任意数据类型。</para>
+		/// <para>Jpeg—将使用 JPEG 压缩算法构建金字塔。只有符合 JPEG 压缩规范的数据才能使用此压缩类型。如果选择 JPEG，则可以设置压缩质量。</para>
+		/// <para>Jpeg 亮度和色度—将通过使用亮度 (Y) 和色度（Cb 与 Cr）颜色空间组件进行的有损压缩构建金字塔。</para>
+		/// <para>无压缩—构建金字塔时不使用任何压缩方法。</para>
 		/// <para><see cref="CompressionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compression quality (1-100)</para>
-		/// <para>The compression quality that will be used when pyramids are built with the JPEG compression method. The value must be between 0 and 100. The values closer to 100 will produce a higher-quality image, but the compression ratio will be lower.</para>
+		/// <para>使用 JPEG 压缩方法构建金字塔时将使用的压缩质量。 该值必须介于 0 到 100 之间 值越接近 100，图像质量越高，但压缩比越低。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -133,9 +133,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Skip Existing</para>
-		/// <para>Specifies whether pyramids will be built only when they are missing or will be regenerated even if they exist.</para>
-		/// <para>Unchecked—Pyramids will be built even if they already exist, and existing pyramids will be overwritten. This is the default.</para>
-		/// <para>Checked—Pyramids will only be built if they do not already exist.</para>
+		/// <para>指定是在缺少金字塔的位置进行构建，还是重新生成金字塔（即使已经存在）。</para>
+		/// <para>未选中 - 即使金字塔已经存在仍将构建金字塔，现有金字塔将被覆盖。 这是默认设置。</para>
+		/// <para>选中 - 仅在不存在金字塔时才构建金字塔。</para>
 		/// <para><see cref="SkipExistingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -167,14 +167,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SKIPFIRSTEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The first pyramid level will be skipped; it will not be built.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SKIP_FIRST")]
 			SKIP_FIRST,
 
 			/// <summary>
-			/// <para>Unchecked—The first pyramid level will not be skipped; it will be built. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]
@@ -188,24 +188,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ResampleTechniqueEnum 
 		{
 			/// <summary>
-			/// <para>Nearest—The value of the closest pixel will be used to assign a value to the output pixel when resampling. This is the default.</para>
+			/// <para>最邻近—重采样时，将使用最邻近像素的值将为输出像素分配值。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("NEAREST")]
-			[Description("Nearest")]
+			[Description("最邻近")]
 			Nearest,
 
 			/// <summary>
-			/// <para>Bilinear—The new value of a pixel will be based on a weighted distance average of the four nearest input pixel centers.</para>
+			/// <para>双线性法—将基于四个最邻近的输入像素中心的加权平均距离确定像素的新值。</para>
 			/// </summary>
 			[GPValue("BILINEAR")]
-			[Description("Bilinear")]
+			[Description("双线性法")]
 			Bilinear,
 
 			/// <summary>
-			/// <para>Cubic—The new value of a pixel will be based on fitting a smooth curve through the 16 nearest input pixel centers.</para>
+			/// <para>三次—将通过拟合穿过 16 个最邻近输入像素中心的平滑曲线确定像素的新值。</para>
 			/// </summary>
 			[GPValue("CUBIC")]
-			[Description("Cubic")]
+			[Description("三次")]
 			Cubic,
 
 		}
@@ -216,38 +216,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CompressionTypeEnum 
 		{
 			/// <summary>
-			/// <para>Default—If the source data is compressed using a wavelet compression, it will build pyramids with the JPEG compression type; otherwise, LZ77 will be used. This is the default compression method.</para>
+			/// <para>默认—如果使用小波压缩方法对源数据进行压缩，则将使用 JPEG 压缩类型构建金字塔；否则，将使用 LZ77。这是默认压缩方法。</para>
 			/// </summary>
 			[GPValue("DEFAULT")]
-			[Description("Default")]
+			[Description("默认")]
 			Default,
 
 			/// <summary>
-			/// <para>Jpeg—The JPEG compression algorithm will be used to build pyramids. Only data that adheres to the JPEG compression specification can use this compression type. If JPEG is chosen, you can then set the compression quality.</para>
+			/// <para>Jpeg—将使用 JPEG 压缩算法构建金字塔。只有符合 JPEG 压缩规范的数据才能使用此压缩类型。如果选择 JPEG，则可以设置压缩质量。</para>
 			/// </summary>
 			[GPValue("JPEG")]
 			[Description("Jpeg")]
 			Jpeg,
 
 			/// <summary>
-			/// <para>LZ77—The LZ77 compression algorithm will be used to build the pyramids. LZ77 can be used for any data type.</para>
+			/// <para>LZ77—将使用 LZ77 压缩算法来构建金字塔。LZ77 可用于任意数据类型。</para>
 			/// </summary>
 			[GPValue("LZ77")]
 			[Description("LZ77")]
 			LZ77,
 
 			/// <summary>
-			/// <para>No compression—No compression will be used when building pyramids.</para>
+			/// <para>无压缩—构建金字塔时不使用任何压缩方法。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("No compression")]
+			[Description("无压缩")]
 			No_compression,
 
 			/// <summary>
-			/// <para>Jpeg Luma and Chroma—A lossy compression using the luma (Y) and chroma (Cb and Cr) color space components will be used to build pyramids.</para>
+			/// <para>Jpeg 亮度和色度—将通过使用亮度 (Y) 和色度（Cb 与 Cr）颜色空间组件进行的有损压缩构建金字塔。</para>
 			/// </summary>
 			[GPValue("JPEG_YCbCr")]
-			[Description("Jpeg Luma and Chroma")]
+			[Description("Jpeg 亮度和色度")]
 			Jpeg_Luma_and_Chroma,
 
 		}
@@ -258,14 +258,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SkipExistingEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Pyramids will only be built if they do not already exist.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SKIP_EXISTING")]
 			SKIP_EXISTING,
 
 			/// <summary>
-			/// <para>Unchecked—Pyramids will be built even if they already exist, and existing pyramids will be overwritten. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("OVERWRITE")]

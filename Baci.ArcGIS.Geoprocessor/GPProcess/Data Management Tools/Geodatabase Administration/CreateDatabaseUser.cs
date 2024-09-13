@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Database User</para>
-	/// <para>Create Database User</para>
-	/// <para>Creates a database user with privileges sufficient to create data in the database.</para>
+	/// <para>创建数据库用户</para>
+	/// <para>在数据库中创建具有足够权限可创建数据的数据库用户。</para>
 	/// </summary>
 	public class CreateDatabaseUser : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputDatabase">
 		/// <para>Input Database Connection</para>
-		/// <para>The connection file to an enterprise geodatabase in Oracle, PostgreSQL, or SQL Server. Ensure that the connection is made as a database administrator user. When connecting to Oracle, you must connect as the sys user.</para>
+		/// <para>Oracle、PostgreSQL 或 SQL Server 中的企业级地理数据库的连接文件。 请确保以数据库管理员用户身份建立连接。 连接到 Oracle 时，必须以系统用户身份进行连接。</para>
 		/// </param>
 		/// <param name="UserName">
 		/// <para>Database User</para>
-		/// <para>The name of the new database user.</para>
-		/// <para>If you chose to create a database user for an operating system login, the user name must match the login name.</para>
+		/// <para>新数据库用户的名称。</para>
+		/// <para>如果您选择为操作系统登录创建数据库用户，则用户名必须与登录名匹配。</para>
 		/// </param>
 		public CreateDatabaseUser(object InputDatabase, object UserName)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Database User</para>
+		/// <para>Tool Display Name : 创建数据库用户</para>
 		/// </summary>
-		public override string DisplayName() => "Create Database User";
+		public override string DisplayName() => "创建数据库用户";
 
 		/// <summary>
 		/// <para>Tool Name : CreateDatabaseUser</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
-		/// <para>The connection file to an enterprise geodatabase in Oracle, PostgreSQL, or SQL Server. Ensure that the connection is made as a database administrator user. When connecting to Oracle, you must connect as the sys user.</para>
+		/// <para>Oracle、PostgreSQL 或 SQL Server 中的企业级地理数据库的连接文件。 请确保以数据库管理员用户身份建立连接。 连接到 Oracle 时，必须以系统用户身份进行连接。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -81,9 +81,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Create Operating System Authenticated User</para>
-		/// <para>Specifies the authentication type for the user. Use this parameter only if an operating system login exists for which you want to create a database user. This option is only supported for SQL Server and Oracle databases, as those are the only two databases for which ArcGIS supports operating system authentication.</para>
-		/// <para>Checked—An operating system-authenticated user will be created. The corresponding login must already exist.</para>
-		/// <para>Unchecked—A database-authenticated user will be created. This is the default.</para>
+		/// <para>指定用户的身份验证类型。 仅当要为其创建数据库用户的操作系统登录存在时，才使用此参数。 仅 SQL Server 和 Oracle 数据库支持此选项，因为 ArcGIS 仅支持对这两个数据库进行操作系统身份验证。</para>
+		/// <para>选中 - 将创建经过操作系统身份验证的用户。 相应的登录帐户必须已存在。</para>
+		/// <para>未选中 - 将创建经过数据库身份验证的用户。 这是默认设置。</para>
 		/// <para><see cref="UserAuthenticationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -93,8 +93,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Database User</para>
-		/// <para>The name of the new database user.</para>
-		/// <para>If you chose to create a database user for an operating system login, the user name must match the login name.</para>
+		/// <para>新数据库用户的名称。</para>
+		/// <para>如果您选择为操作系统登录创建数据库用户，则用户名必须与登录名匹配。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -102,8 +102,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Database User Password</para>
-		/// <para>The password for the new user. The password policy of the underlying database is enforced.</para>
-		/// <para>If you chose to create a database user for an operating system login, no input is required.</para>
+		/// <para>新用户的密码。 强制实行基础数据库的密码策略。</para>
+		/// <para>如果您选择为操作系统登录创建数据库用户，则将不需要任何输入。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPEncryptedString()]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Role</para>
-		/// <para>The name of the existing database role to which the new user will be added.</para>
+		/// <para>要将新用户添加到的现有数据库角色的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Tablespace Name</para>
-		/// <para>The name of the tablespace that will be used as the default tablespace for the new user in an Oracle database. You can specify a preconfigured tablespace, or, if the tablespace does not exist, it will be created in the Oracle default storage location with its size set to 400 MB. If no tablespace is specified, the user's default tablespace will be set to the Oracle default tablespace.</para>
+		/// <para>将用作 Oracle 数据库中新用户的默认表空间的表空间的名称。 可指定预配置表空间，如果表空间不存在，则将在 Oracle 默认存储位置创建大小设置为 400 MB 的表空间。 如果未指定表空间，则用户的默认表空间将设置为 Oracle 默认表空间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -149,14 +149,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum UserAuthenticationTypeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—An operating system-authenticated user will be created. The corresponding login must already exist.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("OPERATING_SYSTEM_USER")]
 			OPERATING_SYSTEM_USER,
 
 			/// <summary>
-			/// <para>Unchecked—A database-authenticated user will be created. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DATABASE_USER")]

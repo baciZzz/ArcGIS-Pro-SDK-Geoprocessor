@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Rasters From Mosaic Dataset</para>
-	/// <para>Remove Rasters From Mosaic Dataset</para>
-	/// <para>Removes selected raster datasets from a mosaic dataset.</para>
+	/// <para>从镶嵌数据集中移除栅格</para>
+	/// <para>从镶嵌数据集中移除选定栅格数据集。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset containing the rasters you want to remove</para>
+		/// <para>包含要移除的栅格的镶嵌数据集</para>
 		/// </param>
 		public RemoveRastersFromMosaicDataset(object InMosaicDataset)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Remove Rasters From Mosaic Dataset</para>
+		/// <para>Tool Display Name : 从镶嵌数据集中移除栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Remove Rasters From Mosaic Dataset";
+		public override string DisplayName() => "从镶嵌数据集中移除栅格";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveRastersFromMosaicDataset</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset containing the rasters you want to remove</para>
+		/// <para>包含要移除的栅格的镶嵌数据集</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMosaicLayer()]
@@ -75,8 +75,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>An SQL expression to select the raster datasets that you want removed from the mosaic dataset.</para>
-		/// <para>There must be a selection or a query specified; otherwise, the tool will not run. If you want to delete all the records from the mosaic dataset, specify a query that would select all the rasters, such as &quot;OBJECTID&gt;=0&quot;.</para>
+		/// <para>SQL 表达式将选择要从镶嵌数据集中移除的栅格数据集。</para>
+		/// <para>必须指定选择或查询，否则此工具不会运行。如果要从镶嵌数据集中删除所有记录，请指定一个用于选择所有栅格的查询，例如 &quot;OBJECTID&gt;=0&quot;。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -84,9 +84,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Update Boundary</para>
-		/// <para>Updates the boundary polygon of a mosaic dataset. By default, the boundary merges all the footprint polygons to create a single boundary representing the extent of the valid pixels.</para>
-		/// <para>Checked—The boundary will be updated. This is the default.</para>
-		/// <para>Unchecked—The boundary will not be updated.</para>
+		/// <para>更新镶嵌数据集的边界面。默认情况下，边界会合并所有轮廓线面以创建一个表示有效像素范围的边界。</para>
+		/// <para>选中 - 将更新边界。这是默认设置。</para>
+		/// <para>取消选中 - 不更新边界。</para>
 		/// <para><see cref="UpdateBoundaryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -97,9 +97,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mark Affected Overviews</para>
-		/// <para>When the rasters in a mosaic catalog have been removed, any overviews created using those rasters may no longer be accurate; therefore, they can be identified so they can be updated or removed if they are no longer needed.</para>
-		/// <para>Checked—The affected overviews will be identified. This is the default.</para>
-		/// <para>Unchecked—The affected overviews will not be identified.</para>
+		/// <para>镶嵌目录中的栅格被移除后，任何使用这些栅格创建的金字塔可能都不再准确，因此，可将其识别出来以便更新，如果不再需要这些金字塔，也可以将其移除。</para>
+		/// <para>选中 - 识别受影响的概视图。这是默认设置。</para>
+		/// <para>取消选中 - 不识别受影响的概视图。</para>
 		/// <para><see cref="MarkOverviewsItemsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -110,9 +110,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Delete Overview Images</para>
-		/// <para>Remove overviews associated with the selected rasters.</para>
-		/// <para>Checked—Delete overviews associated with the selected rasters. This is the default.</para>
-		/// <para>Unchecked—Do not delete the overviews associated with the selected rasters.</para>
+		/// <para>移除与所选栅格相关的概视图。</para>
+		/// <para>选中 - 删除与所选栅格相关的概视图。这是默认设置。</para>
+		/// <para>取消选中 - 不删除与所选栅格相关的概视图。</para>
 		/// <para><see cref="DeleteOverviewImagesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -122,9 +122,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Delete Item Cache</para>
-		/// <para>Remove cache that is based on any source raster datasets that you are removing from the mosaic dataset.</para>
-		/// <para>Checked—Remove the item and its corresponding cache. This is the default.</para>
-		/// <para>Unchecked—Keep the cache as part of the mosaic dataset.</para>
+		/// <para>将基于任何要从镶嵌数据集中移除的源栅格数据集移除缓存。</para>
+		/// <para>选中 - 移除项目及其相应缓存。这是默认设置。</para>
+		/// <para>取消选中 - 将缓存保留为镶嵌数据集的一部分。</para>
 		/// <para><see cref="DeleteItemCacheEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -134,9 +134,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Remove Mosaic Dataset Items</para>
-		/// <para>Remove item, cache, overviews, and raster datasets. Or, remove only the cache and overviews, and keep the raster datasets.</para>
-		/// <para>Checked—Remove the item from the mosaic dataset. This is the default.</para>
-		/// <para>Unchecked—Remove the item cache and any associated overviews, but not the item itself.</para>
+		/// <para>移除项目、缓存、概视图和栅格数据集。或仅移除缓存和概视图，并保留栅格数据集。</para>
+		/// <para>选中 - 从镶嵌数据集中移除项目。这是默认设置。</para>
+		/// <para>取消选中 - 移除项目缓存和任何相关概视图，而不是项目本身。</para>
 		/// <para><see cref="RemoveItemsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -147,9 +147,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Update Cell Size Ranges</para>
-		/// <para>Update cell size ranges for the mosaic dataset. Choose this option if you are removing all of the imagery at a specific cell size.</para>
-		/// <para>Checked—Update the cell size ranges. This is the default.</para>
-		/// <para>Unchecked—Do not update the cell size ranges.</para>
+		/// <para>更新镶嵌数据集的像元大小范围。如果要移除所有具有特定像元大小的图像，请选择此选项。</para>
+		/// <para>选中 - 更新像元大小范围。这是默认设置。</para>
+		/// <para>取消选中 - 不更新像元大小范围。</para>
 		/// <para><see cref="UpdateCellsizeRangesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -182,14 +182,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum UpdateBoundaryEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The boundary will be updated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_BOUNDARY")]
 			UPDATE_BOUNDARY,
 
 			/// <summary>
-			/// <para>Unchecked—The boundary will not be updated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_BOUNDARY")]
@@ -203,14 +203,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MarkOverviewsItemsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The affected overviews will be identified. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MARK_OVERVIEW_ITEMS")]
 			MARK_OVERVIEW_ITEMS,
 
 			/// <summary>
-			/// <para>Unchecked—The affected overviews will not be identified.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_MARK_OVERVIEW_ITEMS")]
@@ -224,14 +224,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DeleteOverviewImagesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Delete overviews associated with the selected rasters. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_OVERVIEW_IMAGES")]
 			DELETE_OVERVIEW_IMAGES,
 
 			/// <summary>
-			/// <para>Unchecked—Do not delete the overviews associated with the selected rasters.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DELETE_OVERVIEW_IMAGES")]
@@ -245,14 +245,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DeleteItemCacheEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Remove the item and its corresponding cache. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_ITEM_CACHE")]
 			DELETE_ITEM_CACHE,
 
 			/// <summary>
-			/// <para>Unchecked—Keep the cache as part of the mosaic dataset.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DELETE_ITEM_CACHE")]
@@ -266,14 +266,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum RemoveItemsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Remove the item from the mosaic dataset. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REMOVE_MOSAICDATASET_ITEMS")]
 			REMOVE_MOSAICDATASET_ITEMS,
 
 			/// <summary>
-			/// <para>Unchecked—Remove the item cache and any associated overviews, but not the item itself.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_REMOVE_MOSAICDATASET_ITEMS")]
@@ -287,14 +287,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum UpdateCellsizeRangesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Update the cell size ranges. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_CELL_SIZES")]
 			UPDATE_CELL_SIZES,
 
 			/// <summary>
-			/// <para>Unchecked—Do not update the cell size ranges.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CELL_SIZES")]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Summarize Categorical Raster</para>
-	/// <para>Summarize Categorical Raster</para>
-	/// <para>Generates a table containing the pixel count for each class, in each slice of an input categorical raster.</para>
+	/// <para>汇总分类栅格</para>
+	/// <para>用于生成一个表，其中包含输入分类栅格的每个剖切片中，每个类的像素计数。</para>
 	/// </summary>
 	public class SummarizeCategoricalRaster : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Categorical Raster</para>
-		/// <para>The input multidimensional, categorical raster.</para>
+		/// <para>输入多维分类栅格。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Summary Table</para>
-		/// <para>The output summary table. Geodatabase, database, text, Microsoft Excel, and comma-separated value (CSV) tables are supported.</para>
+		/// <para>输出汇总表。支持地理数据库、数据库、文本、Microsoft Excel 和逗号分隔值 (CSV) 表。</para>
 		/// </param>
 		public SummarizeCategoricalRaster(object InRaster, object OutTable)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Summarize Categorical Raster</para>
+		/// <para>Tool Display Name : 汇总分类栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Summarize Categorical Raster";
+		public override string DisplayName() => "汇总分类栅格";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeCategoricalRaster</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Categorical Raster</para>
-		/// <para>The input multidimensional, categorical raster.</para>
+		/// <para>输入多维分类栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Summary Table</para>
-		/// <para>The output summary table. Geodatabase, database, text, Microsoft Excel, and comma-separated value (CSV) tables are supported.</para>
+		/// <para>输出汇总表。支持地理数据库、数据库、文本、Microsoft Excel 和逗号分隔值 (CSV) 表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Dimension</para>
-		/// <para>The input dimension to use for the summary. If there is more than one dimension and no value is specified, all slices will be summarized using all combinations of dimension values.</para>
+		/// <para>用于汇总的输入维度。如果存在多个维度，并且未指定任何值，则将使用维度值的所有组合来汇总所有切片。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Area Of Interest</para>
-		/// <para>The polygon feature layer containing the area or areas of interest to use when calculating the pixel count per category. If no area of interest is specified, the entire raster dataset will be included in the analysis.</para>
+		/// <para>包含要在计算每个类别的像素计数时使用的一个或多个感兴趣区域的面要素图层。如果未指定感兴趣区域，则整个栅格数据集将包含在分析中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Area Of Interest ID Field</para>
-		/// <para>The field in the polygon feature layer that defines each area of interest. Text and integer fields are supported.</para>
+		/// <para>面要素图层中用于定义每个感兴趣区域的字段。支持文本和整数字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

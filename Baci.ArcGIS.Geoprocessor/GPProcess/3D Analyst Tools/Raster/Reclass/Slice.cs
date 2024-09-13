@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Slice</para>
-	/// <para>Slice</para>
-	/// <para>Slices or reclassifies the range of values of the input cells into zones (classes). The available data classification methods are equal interval, equal area (quantile), natural breaks, standard deviation (mean-centered), standard deviation (mean as a break), defined interval, and geometric interval.</para>
+	/// <para>分割</para>
+	/// <para>将输入像元值的范围分割或重分类为区域。 可用的数据分类方法包括相等间隔、相等面积（分位数）、自然间断、标准偏差（以平均值为中心）、标准偏差（平均值作为间断）、定义间隔和几何间隔。</para>
 	/// </summary>
 	public class Slice : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster to be reclassified.</para>
+		/// <para>要进行重分类的输入栅格。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output reclassified raster.</para>
-		/// <para>The output will always be of integer type.</para>
-		/// <para>The attribute table of the output raster will have two new fields in addition to the standard ObjectID, Value, and Count fields. The Value field indicates the class value. The ZoneMin and ZoneMax fields record the minimum and maximum values, respectively, used for generating a class.</para>
+		/// <para>输出重分类栅格。</para>
+		/// <para>输出将始终为整型。</para>
+		/// <para>除了标准 ObjectID、Value 和 Count 字段之外，输出栅格的属性表还将有两个新字段。 该 Value 字段指示类值。 ZoneMin 和 ZoneMax 字段分别记录用于生成类的最小值和最大值。</para>
 		/// </param>
 		public Slice(object InRaster, object OutRaster)
 		{
@@ -36,14 +36,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Slice</para>
+		/// <para>Tool Display Name : 分割</para>
 		/// </summary>
-		public override string DisplayName() => "Slice";
+		public override string DisplayName() => "分割";
 
 		/// <summary>
-		/// <para>Tool Name : Slice</para>
+		/// <para>Tool Name : 分割</para>
 		/// </summary>
-		public override string ToolName() => "Slice";
+		public override string ToolName() => "分割";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Slice</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster to be reclassified.</para>
+		/// <para>要进行重分类的输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -84,9 +84,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output reclassified raster.</para>
-		/// <para>The output will always be of integer type.</para>
-		/// <para>The attribute table of the output raster will have two new fields in addition to the standard ObjectID, Value, and Count fields. The Value field indicates the class value. The ZoneMin and ZoneMax fields record the minimum and maximum values, respectively, used for generating a class.</para>
+		/// <para>输出重分类栅格。</para>
+		/// <para>输出将始终为整型。</para>
+		/// <para>除了标准 ObjectID、Value 和 Count 字段之外，输出栅格的属性表还将有两个新字段。 该 Value 字段指示类值。 ZoneMin 和 ZoneMax 字段分别记录用于生成类的最小值和最大值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -94,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Number of output zones</para>
-		/// <para>The number of zones that the input raster will be reclassified into.</para>
-		/// <para>This parameter is required when the Slice method parameter value is Equal area, Equal interval, Natural breaks, or Geometric interval.</para>
-		/// <para>When the Slice method parameter value is Defined interval, Standard deviation (mean-centered), or Standard deviation (mean as a break), the Number of output zones parameter will be inactive. The number of output zones will be determined by the Interval size parameter value.</para>
+		/// <para>输入栅格将被重新分类到的区域数。</para>
+		/// <para>当分割方法参数值为等面积、等间隔、自然中断或几何间隔时，需要此参数。</para>
+		/// <para>当分割方法参数值为定义间隔、标准差（以平均值为中心）或标准差（以平均值为间断）时，输出区域数参数将处于非活动状态。 输出区域的数量将由间隔大小参数值决定。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -105,14 +105,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Slice method</para>
-		/// <para>Specifies the manner in which the input raster will be reclassified into zones.</para>
-		/// <para>Equal interval—The range of input values will be equally divided into the specified number of output zones to determine the class breaks. This is the default.</para>
-		/// <para>Equal area—The number of input cells will be equally divided into the specified number of output zones to determine the class breaks. Each zone will have a similar number of cells, indicating a similar amount of area.</para>
-		/// <para>Natural breaks—The class breaks will be determined in a way that minimizes the variance within classes and maximizes the variance between classes. The breaks are usually set at relatively big changes in the data values.</para>
-		/// <para>Standard deviation (mean-centered)—The class breaks will be placed above and below the mean value at a specified interval size, such as 2, 1, or 0.5, in the unit of standard deviation, until reaching the minimum and maximum values of the input raster. Mean is not used as a break but centered by two class breaks. One break is at half of the specified interval size above the mean and the other is at half of the specified interval size below the mean. Standard deviation is calculated with the n-1 denominator, where n is the number of pixels with value.</para>
-		/// <para>Standard deviation (mean as a break)—The mean value will be used as a class break. Other class breaks will be placed above and below the mean value at a specified interval size, such as 2, 1, or 0.5, in the unit of standard deviation, until reaching the minimum and maximum values of the input raster. Standard deviation is calculated with the n-1 denominator, where n is the number of pixels with value.</para>
-		/// <para>Defined interval—The class breaks will be set to zero and a multiple of the specified interval size relative to zero. They will then be clipped to the minimum and maximum values of the input data for the first and last classes. For a value range that contains zero, zero will always be included as a break point.</para>
-		/// <para>Geometric interval—The class breaks will be created based on class intervals that have a geometric series. This is a pattern in which the current value equals the previous value divided by a geometric coefficient. The geometric coefficient in this classifier can change once (to its inverse) to optimize the class ranges. The algorithm creates these geometrical intervals by minimizing the sum of squares of the number of elements in each class. This ensures that each class has approximately the same number of values and that the change between intervals is consistent.</para>
+		/// <para>指定将输入栅格重新分类为区域的方式。</para>
+		/// <para>相等间隔—输入值的范围将被平均划分为指定数量的输出区域以确定类间断。 这是默认设置。</para>
+		/// <para>相等面积—输入像元的数量将被平均划分为指定数量的输出区域以确定类间断。 每个区域将具有相似数量的像元，表示相似的面积。</para>
+		/// <para>自然间断点—以最小化分类内方差和最大化分类间方差的方式确定类间断。 中断通常设置在数据值中变化相对较大的位置。</para>
+		/// <para>标准差（以平均值为中心）—类中断将以标准差为单位、以指定的间隔大小（例如 2、1 或 0.5）置于平均值的上方和下方，直到达到输入栅格的最小值和最大值。 平均值不用作中断，而是以两个类中断为中心。 一个中断在平均值之上的指定间隔大小的一半处，另一个中断在平均值之下的指定间隔大小的一半处。 使用 N-1 分母计算标准差，其中 N 是具有值的像素数量。</para>
+		/// <para>标准差（以平均值为中断）—将平均值用作类中断。 其他类中断将以标准差为单位、以指定的间隔大小（例如 2、1 或 0.5）置于平均值的上方和下方，直到达到输入栅格的最小值和最大值。 使用 N-1 分母计算标准差，其中 N 是具有值的像素数量。</para>
+		/// <para>定义的间隔—类中断将被设置为零和相对于零的指定间隔大小的倍数。 然后，它们将被裁剪到第一类和最后一类的输入数据的最小值和最大值。 对于包含零的值范围，将始终包含零作为中断点。</para>
+		/// <para>几何间隔—将基于具有几何系列的类间隔创建类中断。 在此模式中，当前值等于前一值除以几何系数。 分类器中的几何系数可以更改一次（可更改为其倒数），以便优化类范围。 该算法创建这些几何间隔的原理是，使每个类的元素数的平方和最小。 此方法可确保每个类中所拥有的值的数量大致相同，且间隔之间的变化一致。</para>
 		/// <para><see cref="SliceTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -122,9 +122,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Starting value for output</para>
-		/// <para>The starting value that will be used for zones (classes) on the output raster dataset.</para>
-		/// <para>Classes will be assigned integer values, increasing by 1 from the starting value.</para>
-		/// <para>The default starting value is 1.</para>
+		/// <para>将用于输出栅格数据集上区域（类）的起始值。</para>
+		/// <para>将为类分配整数值，从起始值开始逐渐加 1。</para>
+		/// <para>默认起始值为 1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -135,8 +135,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Change NoData to value for output</para>
-		/// <para>Replace NoData with a value in the output.</para>
-		/// <para>If this parameter is not set, NoData cells will remain as NoData in the output raster.</para>
+		/// <para>将 NoData 替换为输出中的值。</para>
+		/// <para>如果未设置此参数，则输出栅格中的 NoData 像元将继续保留为 NoData。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -147,10 +147,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Interval size</para>
-		/// <para>The size of the interval between classes.</para>
-		/// <para>This parameter is required when the Slice method parameter is set to Defined interval, Standard deviation (mean-centered), or Standard deviation (mean as a break).</para>
-		/// <para>If Defined interval is used, the interval size indicates the actual value range of a class used to calculate class breaks.</para>
-		/// <para>If Standard deviation (mean-centered) or Standard deviation (mean as a break) is used, the interval size indicates the number of standard deviations used to calculate class breaks.</para>
+		/// <para>类之间间隔的大小。</para>
+		/// <para>当分割方法参数被设置为定义间隔、标准差（以平均值为中心）或标准差（以平均值为中断）时，需要该参数。</para>
+		/// <para>如果使用定义间隔，则间隔大小表示的是用于计算类中断的类的实际值范围。</para>
+		/// <para>如果使用标准差（以平均值为中心）或标准差（以平均值为间断），则间隔大小表示的是用于计算类中断的标准差的数量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -174,52 +174,52 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum SliceTypeEnum 
 		{
 			/// <summary>
-			/// <para>Equal interval—The range of input values will be equally divided into the specified number of output zones to determine the class breaks. This is the default.</para>
+			/// <para>相等间隔—输入值的范围将被平均划分为指定数量的输出区域以确定类间断。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("EQUAL_INTERVAL")]
-			[Description("Equal interval")]
+			[Description("相等间隔")]
 			Equal_interval,
 
 			/// <summary>
-			/// <para>Equal area—The number of input cells will be equally divided into the specified number of output zones to determine the class breaks. Each zone will have a similar number of cells, indicating a similar amount of area.</para>
+			/// <para>相等面积—输入像元的数量将被平均划分为指定数量的输出区域以确定类间断。 每个区域将具有相似数量的像元，表示相似的面积。</para>
 			/// </summary>
 			[GPValue("EQUAL_AREA")]
-			[Description("Equal area")]
+			[Description("相等面积")]
 			Equal_area,
 
 			/// <summary>
-			/// <para>Natural breaks—The class breaks will be determined in a way that minimizes the variance within classes and maximizes the variance between classes. The breaks are usually set at relatively big changes in the data values.</para>
+			/// <para>自然间断点—以最小化分类内方差和最大化分类间方差的方式确定类间断。 中断通常设置在数据值中变化相对较大的位置。</para>
 			/// </summary>
 			[GPValue("NATURAL_BREAKS")]
-			[Description("Natural breaks")]
+			[Description("自然间断点")]
 			Natural_breaks,
 
 			/// <summary>
-			/// <para>Standard deviation (mean-centered)—The class breaks will be placed above and below the mean value at a specified interval size, such as 2, 1, or 0.5, in the unit of standard deviation, until reaching the minimum and maximum values of the input raster. Mean is not used as a break but centered by two class breaks. One break is at half of the specified interval size above the mean and the other is at half of the specified interval size below the mean. Standard deviation is calculated with the n-1 denominator, where n is the number of pixels with value.</para>
+			/// <para>标准差（以平均值为中心）—类中断将以标准差为单位、以指定的间隔大小（例如 2、1 或 0.5）置于平均值的上方和下方，直到达到输入栅格的最小值和最大值。 平均值不用作中断，而是以两个类中断为中心。 一个中断在平均值之上的指定间隔大小的一半处，另一个中断在平均值之下的指定间隔大小的一半处。 使用 N-1 分母计算标准差，其中 N 是具有值的像素数量。</para>
 			/// </summary>
 			[GPValue("STANDARD_DEVIATION_MEAN_CENTERED")]
-			[Description("Standard deviation (mean-centered)")]
+			[Description("标准差（以平均值为中心）")]
 			STANDARD_DEVIATION_MEAN_CENTERED,
 
 			/// <summary>
-			/// <para>Standard deviation (mean as a break)—The mean value will be used as a class break. Other class breaks will be placed above and below the mean value at a specified interval size, such as 2, 1, or 0.5, in the unit of standard deviation, until reaching the minimum and maximum values of the input raster. Standard deviation is calculated with the n-1 denominator, where n is the number of pixels with value.</para>
+			/// <para>标准差（以平均值为中断）—将平均值用作类中断。 其他类中断将以标准差为单位、以指定的间隔大小（例如 2、1 或 0.5）置于平均值的上方和下方，直到达到输入栅格的最小值和最大值。 使用 N-1 分母计算标准差，其中 N 是具有值的像素数量。</para>
 			/// </summary>
 			[GPValue("STANDARD_DEVIATION_MEAN_BREAK")]
-			[Description("Standard deviation (mean as a break)")]
+			[Description("标准差（以平均值为中断）")]
 			STANDARD_DEVIATION_MEAN_BREAK,
 
 			/// <summary>
-			/// <para>Defined interval—The class breaks will be set to zero and a multiple of the specified interval size relative to zero. They will then be clipped to the minimum and maximum values of the input data for the first and last classes. For a value range that contains zero, zero will always be included as a break point.</para>
+			/// <para>定义的间隔—类中断将被设置为零和相对于零的指定间隔大小的倍数。 然后，它们将被裁剪到第一类和最后一类的输入数据的最小值和最大值。 对于包含零的值范围，将始终包含零作为中断点。</para>
 			/// </summary>
 			[GPValue("DEFINED_INTERVAL")]
-			[Description("Defined interval")]
+			[Description("定义的间隔")]
 			Defined_interval,
 
 			/// <summary>
-			/// <para>Geometric interval—The class breaks will be created based on class intervals that have a geometric series. This is a pattern in which the current value equals the previous value divided by a geometric coefficient. The geometric coefficient in this classifier can change once (to its inverse) to optimize the class ranges. The algorithm creates these geometrical intervals by minimizing the sum of squares of the number of elements in each class. This ensures that each class has approximately the same number of values and that the change between intervals is consistent.</para>
+			/// <para>几何间隔—将基于具有几何系列的类间隔创建类中断。 在此模式中，当前值等于前一值除以几何系数。 分类器中的几何系数可以更改一次（可更改为其倒数），以便优化类范围。 该算法创建这些几何间隔的原理是，使每个类的元素数的平方和最小。 此方法可确保每个类中所拥有的值的数量大致相同，且间隔之间的变化一致。</para>
 			/// </summary>
 			[GPValue("GEOMETRIC_INTERVAL")]
-			[Description("Geometric interval")]
+			[Description("几何间隔")]
 			Geometric_interval,
 
 		}

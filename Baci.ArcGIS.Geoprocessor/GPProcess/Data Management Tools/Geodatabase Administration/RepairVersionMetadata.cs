@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Repair Version Metadata</para>
-	/// <para>Repair Version Metadata</para>
-	/// <para>Repairs inconsistencies in the versioning system tables of a geodatabase that contains traditional versions.</para>
+	/// <para>修复版本元数据</para>
+	/// <para>修复包含传统版本的地理数据库的版本化系统表中的不一致。</para>
 	/// </summary>
 	public class RepairVersionMetadata : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputDatabase">
 		/// <para>Input Database Connection</para>
-		/// <para>The database connection (.sde file) to the enterprise geodatabase in which versioning system table inconsistencies exist. The connection must be made as the geodatabase administrator.</para>
+		/// <para>与企业级地理数据库的数据库连接（.sde 文件），其中存在版本化系统表不一致。 必须由地理数据库管理员建立此连接。</para>
 		/// </param>
 		/// <param name="OutLog">
 		/// <para>Repair Version Metadata Log</para>
-		/// <para>The output log file. The log file is an ASCII file containing the results of the repair operation.</para>
+		/// <para>输出日志文件。 日志文件是包含修复操作结果的 ASCII 文件。</para>
 		/// </param>
 		public RepairVersionMetadata(object InputDatabase, object OutLog)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Repair Version Metadata</para>
+		/// <para>Tool Display Name : 修复版本元数据</para>
 		/// </summary>
-		public override string DisplayName() => "Repair Version Metadata";
+		public override string DisplayName() => "修复版本元数据";
 
 		/// <summary>
 		/// <para>Tool Name : RepairVersionMetadata</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
-		/// <para>The database connection (.sde file) to the enterprise geodatabase in which versioning system table inconsistencies exist. The connection must be made as the geodatabase administrator.</para>
+		/// <para>与企业级地理数据库的数据库连接（.sde 文件），其中存在版本化系统表不一致。 必须由地理数据库管理员建立此连接。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Repair Version Metadata Log</para>
-		/// <para>The output log file. The log file is an ASCII file containing the results of the repair operation.</para>
+		/// <para>输出日志文件。 日志文件是包含修复操作结果的 ASCII 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Create Underpass</para>
-	/// <para>Create Underpass</para>
-	/// <para>Creates bridge parapets and polygon masks at line intersections to indicate underpasses.</para>
+	/// <para>创建地下通道</para>
+	/// <para>在两线交点处创建桥护栏和面掩膜来指示地下通道。</para>
 	/// </summary>
 	public class CreateUnderpass : AbstractGPProcess
 	{
@@ -21,27 +21,27 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InAboveFeatures">
 		/// <para>Input Above Features</para>
-		/// <para>The input line feature layer containing lines that intersect—and will be symbolized as passing above—lines in the Input Below Features parameter.</para>
+		/// <para>输入线要素图层。该图层所包含的线与输入下层要素参数中的线相交，并被符号化为上层要素。</para>
 		/// </param>
 		/// <param name="InBelowFeatures">
 		/// <para>Input Below Features</para>
-		/// <para>The input line feature layer that intersects—and will be symbolized as passing below—lines in the Input Above Features parameter. These features will be masked by the polygons created in the Output Underpass Feature Class parameter.</para>
+		/// <para>输入线要素图层会与输入上层要素参数中的线相交，并被符号化为下层要素。 这些要素将被输出地下通道要素类参数中创建的面掩膜。</para>
 		/// </param>
 		/// <param name="MarginAlong">
 		/// <para>Margin Along</para>
-		/// <para>Sets the length of the mask polygons along the Input Above Features parameter by specifying the distance in page units that the mask should extend beyond the width of the stroke symbol of the Input Below Features parameter. The Margin Along parameter must be specified, and it must be greater than or equal to zero. Choose a page unit for the margin; the default is points.</para>
+		/// <para>设置沿输入上层要素参数的掩膜面的长度，方法是以页面单位指定掩膜应超出输入下层要素参数笔划符号宽度的距离。 必须指定延伸边距参数，而且其必须大于或等于零。 选择页边距单位；默认值为磅。</para>
 		/// </param>
 		/// <param name="MarginAcross">
 		/// <para>Margin Across</para>
-		/// <para>Sets the width of the mask polygons across the Input Above Features parameter by specifying the distance in page units that the mask should extend beyond the width of the stroke symbol of the Input Below Features parameter. The Margin Across parameter must be specified, and it must be greater than or equal to zero. Choose a page unit for the margin; the default is points.</para>
+		/// <para>设置穿过输入上层要素参数的掩膜面的宽度，方法是以页面单位指定掩膜应超出输入下层要素参数笔划符号宽度的距离。 必须指定覆盖边距参数，而且其必须大于或等于零。 选择页边距单位；默认值为磅。</para>
 		/// </param>
 		/// <param name="OutUnderpassFeatureClass">
 		/// <para>Output Underpass Feature Class</para>
-		/// <para>The output feature class that will be created to store polygons to mask the Input Below Features parameter.</para>
+		/// <para>为存储掩膜输入下层要素参数的面而创建的输出要素类。</para>
 		/// </param>
 		/// <param name="OutMaskRelationshipClass">
 		/// <para>Output Mask Relationship Class</para>
-		/// <para>The output relationship class that will be created to store links between underpass mask polygons and the lines of the Input Below Features parameter.</para>
+		/// <para>为存储地下通道掩膜面和输入下层要素参数的线之间的连接而创建的输出关系类。</para>
 		/// </param>
 		public CreateUnderpass(object InAboveFeatures, object InBelowFeatures, object MarginAlong, object MarginAcross, object OutUnderpassFeatureClass, object OutMaskRelationshipClass)
 		{
@@ -54,9 +54,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Underpass</para>
+		/// <para>Tool Display Name : 创建地下通道</para>
 		/// </summary>
-		public override string DisplayName() => "Create Underpass";
+		public override string DisplayName() => "创建地下通道";
 
 		/// <summary>
 		/// <para>Tool Name : CreateUnderpass</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Above Features</para>
-		/// <para>The input line feature layer containing lines that intersect—and will be symbolized as passing above—lines in the Input Below Features parameter.</para>
+		/// <para>输入线要素图层。该图层所包含的线与输入下层要素参数中的线相交，并被符号化为上层要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Below Features</para>
-		/// <para>The input line feature layer that intersects—and will be symbolized as passing below—lines in the Input Above Features parameter. These features will be masked by the polygons created in the Output Underpass Feature Class parameter.</para>
+		/// <para>输入线要素图层会与输入上层要素参数中的线相交，并被符号化为下层要素。 这些要素将被输出地下通道要素类参数中创建的面掩膜。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Margin Along</para>
-		/// <para>Sets the length of the mask polygons along the Input Above Features parameter by specifying the distance in page units that the mask should extend beyond the width of the stroke symbol of the Input Below Features parameter. The Margin Along parameter must be specified, and it must be greater than or equal to zero. Choose a page unit for the margin; the default is points.</para>
+		/// <para>设置沿输入上层要素参数的掩膜面的长度，方法是以页面单位指定掩膜应超出输入下层要素参数笔划符号宽度的距离。 必须指定延伸边距参数，而且其必须大于或等于零。 选择页边距单位；默认值为磅。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Margin Across</para>
-		/// <para>Sets the width of the mask polygons across the Input Above Features parameter by specifying the distance in page units that the mask should extend beyond the width of the stroke symbol of the Input Below Features parameter. The Margin Across parameter must be specified, and it must be greater than or equal to zero. Choose a page unit for the margin; the default is points.</para>
+		/// <para>设置穿过输入上层要素参数的掩膜面的宽度，方法是以页面单位指定掩膜应超出输入下层要素参数笔划符号宽度的距离。 必须指定覆盖边距参数，而且其必须大于或等于零。 选择页边距单位；默认值为磅。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Underpass Feature Class</para>
-		/// <para>The output feature class that will be created to store polygons to mask the Input Below Features parameter.</para>
+		/// <para>为存储掩膜输入下层要素参数的面而创建的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Mask Relationship Class</para>
-		/// <para>The output relationship class that will be created to store links between underpass mask polygons and the lines of the Input Below Features parameter.</para>
+		/// <para>为存储地下通道掩膜面和输入下层要素参数的线之间的连接而创建的输出关系类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERelationshipClass()]
@@ -146,9 +146,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>An SQL expression used to select a subset of features in the Input Above Features parameter.</para>
-		/// <para>Use quotation marks—for example, &quot;MY_FIELD&quot;—or if you&apos;re querying personal geodatabases, enclose fields in square brackets—for example, [MY_FIELD].</para>
-		/// <para>See SQL reference for query expressions used in ArcGIS for more information on SQL syntax.</para>
+		/// <para>此 SQL 表达式用于选择输入上层要素参数中的要素子集。</para>
+		/// <para>使用引号（例如“MY_FIELD”），或者如果要查询个人地理数据库，需将字段用方括号括起（例如 [MY_FIELD]）。</para>
+		/// <para>有关 SQL 语法的详细信息，请参阅在 ArcGIS 中使用的查询表达式的 SQL 参考。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Decoration Feature Class</para>
-		/// <para>The output line feature class that will be created to store parapet features.</para>
+		/// <para>为存储护栏要素而创建的输出线要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -164,10 +164,10 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Wing Type</para>
-		/// <para>Specifies the wing style of the parapet features.</para>
-		/// <para>Wing ticks angled between above and below features—The wing tick of the parapet will be angled between the Input Above Features parameter and the Input Below Features parameter. This is the default.</para>
-		/// <para>Wing ticks parallel to below features—The wing tick of the underpass wing will be parallel to the Input Below Features parameter.</para>
-		/// <para>No wing ticks created—No wing ticks will be created on the parapets.</para>
+		/// <para>指定护栏要素的翼类型。</para>
+		/// <para>翼梢在上层和下层要素之间成角度—护栏翼梢将在输入上层要素参数和输入下层要素参数之间成角度。 这是默认设置。</para>
+		/// <para>翼梢平行于下层要素—指定地下通道翼的翼梢将与输入下层要素参数平行。</para>
+		/// <para>未创建翼梢—将不在护栏上创建翼梢。</para>
 		/// <para><see cref="WingTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -177,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Wing Tick Length</para>
-		/// <para>The length of the parapet wings in page units. The length must be greater than or equal to zero; the default length is 1. Choose a page unit (points, millimeters, and so on) for the length; the default is points. This parameter does not apply to the Wing Type value of NONE.</para>
+		/// <para>护栏翼长度（页面单位）。 其长度必须大于或等于零；默认长度为 1。 为长度选择页面单位（磅、毫米等）；默认单位是磅。 此参数不适用于 NONE 翼类型值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -202,24 +202,24 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum WingTypeEnum 
 		{
 			/// <summary>
-			/// <para>Wing ticks angled between above and below features—The wing tick of the parapet will be angled between the Input Above Features parameter and the Input Below Features parameter. This is the default.</para>
+			/// <para>翼梢在上层和下层要素之间成角度—护栏翼梢将在输入上层要素参数和输入下层要素参数之间成角度。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("ANGLED")]
-			[Description("Wing ticks angled between above and below features")]
+			[Description("翼梢在上层和下层要素之间成角度")]
 			Wing_ticks_angled_between_above_and_below_features,
 
 			/// <summary>
-			/// <para>Wing ticks parallel to below features—The wing tick of the underpass wing will be parallel to the Input Below Features parameter.</para>
+			/// <para>翼梢平行于下层要素—指定地下通道翼的翼梢将与输入下层要素参数平行。</para>
 			/// </summary>
 			[GPValue("PARALLEL")]
-			[Description("Wing ticks parallel to below features")]
+			[Description("翼梢平行于下层要素")]
 			Wing_ticks_parallel_to_below_features,
 
 			/// <summary>
-			/// <para>No wing ticks created—No wing ticks will be created on the parapets.</para>
+			/// <para>未创建翼梢—将不在护栏上创建翼梢。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("No wing ticks created")]
+			[Description("未创建翼梢")]
 			No_wing_ticks_created,
 
 		}

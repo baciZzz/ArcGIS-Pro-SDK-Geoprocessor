@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Block Statistics</para>
-	/// <para>Block Statistics</para>
-	/// <para>Partitions the input into non-overlapping blocks and calculates the statistic of the values within each block. The value is assigned to all of the cells in each block in the output.</para>
+	/// <para>块统计</para>
+	/// <para>将输入分割放入非重叠块中，然后计算每个块中值的统计数据。 在输出中，将值分配给每个块中的所有像元。</para>
 	/// </summary>
 	public class BlockStatistics : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The raster for which the block statistics will be calculated.</para>
+		/// <para>系统将计算其块统计数据的栅格。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output block statistics raster.</para>
+		/// <para>输出块统计栅格。</para>
 		/// </param>
 		public BlockStatistics(object InRaster, object OutRaster)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Block Statistics</para>
+		/// <para>Tool Display Name : 块统计</para>
 		/// </summary>
-		public override string DisplayName() => "Block Statistics";
+		public override string DisplayName() => "块统计";
 
 		/// <summary>
 		/// <para>Tool Name : BlockStatistics</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The raster for which the block statistics will be calculated.</para>
+		/// <para>系统将计算其块统计数据的栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output block statistics raster.</para>
+		/// <para>输出块统计栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -90,17 +90,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Neighborhood</para>
-		/// <para>The cells of the processing block that will be used in the statistic calculation. There are several predefined neighborhood types to choose from, or a custom kernel can be defined.</para>
-		/// <para>Once the neighborhood type is selected, other parameters can be set to fully define the shape, size, and units of measure. The default neighborhood is a square rectangle with a width and height of three cells.</para>
-		/// <para>The following are the forms of the available neighborhood types:</para>
-		/// <para>Annulus, Inner radius, Outer radius, Units typeA torus (donut-shaped) neighborhood defined by an inner radius and an outer radius. The default annulus is an inner radius of one cell and an outer radius of three cells.</para>
-		/// <para>Circle, Radius, Units typeA circular neighborhood with the given radius. The default radius is three cells.</para>
-		/// <para>Rectangle, Height, Width, Units typeA rectangular neighborhood defined by height and width. The default is a square with a height and width of three cells.</para>
-		/// <para>Wedge, Radius, Start angle, End angle, Units typeA wedge-shaped neighborhood defined by a radius, the start angle, and the end angle. The wedge extends counterclockwise from the starting angle to the ending angle. Angles are specified in degrees, with 0 or 360 representing east. Negative angles can be used. The default wedge is from 0 to 90 degrees, with a radius of three cells.</para>
-		/// <para>Irregular, Kernel fileA custom neighborhood with specifications set by the identified kernel text file.</para>
-		/// <para>Weight, Kernel fileA custom neighborhood with specifications set by the identified kernel text file, which can apply weights to the members of the neighborhood.</para>
-		/// <para>For the annulus, circle, rectangle and wedge neighborhood types, the distance units for the parameters can be specified in Cell units or Map units. Cell units is the default.</para>
-		/// <para>For kernel neighborhoods, the first line in the kernel file defines the width and height of the neighborhood in numbers of cells. The subsequent lines indicate how the input value that corresponds to that location in the kernel will be processed. A value of 0 in the kernel file for either the irregular or the weight neighborhood type indicates the corresponding location will not be included in the calculation. For the irregular neighborhood, a value of 1 in the kernel file indicates that the corresponding input cell will be included in the operation. For the weight neighborhood, the value at each position indicates what the corresponding input cell value is to be multiplied by. Positive, negative, and decimal values can be used.</para>
+		/// <para>统计计算中将使用的处理块的像元。 有多种预定义邻域类型可供选择，也可以定义自定义核。</para>
+		/// <para>选择邻域类型后，可设置其他参数来完全定义形状、大小和测量单位。 默认邻域是宽和高为三个像元的方矩形。</para>
+		/// <para>以下为可用邻域类型的形式：</para>
+		/// <para>环形，内半径，外半径，单位类型由内半径或外半径定义的环形（圆环形）邻域。 默认环形具有一个像元的内半径以及三个像元的外半径。</para>
+		/// <para>圆，半径，单位类型具有给定半径的圆形邻域。 默认半径为三个像元。</para>
+		/// <para>矩形，高度，宽度，单位类型由高度和宽度定义的矩形邻域。 默认设置是高和宽为三个像元的正方形。</para>
+		/// <para>楔形，半径，起始角度，终止角度，单位类型由半径、起始角度和终止角度定义的楔形邻域。 楔形按逆时针方向从起始角延伸到终止角。 角度以度为单位进行指定，0 或 360 的值表示东方。 也可使用负角度。 默认楔形起始角度为 0 度，终止角度为 90 度，半径为三个像元。</para>
+		/// <para>不规则，核文件带有通过已识别核文本文件设置的规范的自定义邻域。</para>
+		/// <para>权重，核文件带有通过已识别核文本文件设置的规范的自定义邻域，可将权重应用于邻域的成员。</para>
+		/// <para>对于环形、圆形、矩形和楔形邻域类型，参数的距离单位能够以像元单位或地图单位进行指定。 默认设置为“像元”单位。</para>
+		/// <para>对于核邻域，核文件中的第一行将以像元数来定义邻域的宽度和高度。 后续各行将指示如何处理与核中该位置相对应的输入值。 核文件中不规则邻域或权重邻域类型的值为 0 表示相应位置将不包括在计算中。 对于不规则邻域，核文件中的值为 1 表示相应的输入像元将包含在运算中。 对于权重邻域，每个位置的值均表示需要与对应输入像元值相乘的值。 可以使用正值、负值和小数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSANeighborhood()]
@@ -110,19 +110,19 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Statistics type</para>
-		/// <para>Specifies the statistic type to be calculated.</para>
-		/// <para>Mean—The mean (average value) of the cells in the neighborhood will be calculated.</para>
-		/// <para>Majority—The majority (value that occurs most often) of the cells in the neighborhood will be identified.</para>
-		/// <para>Maximum—The maximum (largest value) of the cells in the neighborhood will be identified.</para>
-		/// <para>Median—The median of the cells in the neighborhood will be calculated.</para>
-		/// <para>Minimum—The minimum (smallest value) of the cells in the neighborhood will be identified.</para>
-		/// <para>Minority—The minority (value that occurs least often) of the cells in the neighborhood will be identified.</para>
-		/// <para>Range—The range (difference between largest and smallest value) of the cells in the neighborhood will be calculated.</para>
-		/// <para>Standard deviation—The standard deviation of the cells in the neighborhood will be calculated.</para>
-		/// <para>Sum—The sum of the cells in the neighborhood will be calculated.</para>
-		/// <para>Variety—The variety (the number of unique values) of the cells in the neighborhood will be calculated.</para>
-		/// <para>The default statistic type is Mean.</para>
-		/// <para>If the input raster is integer, all the statistics types will be available. If the input raster is floating point, only the Mean, Maximum, Minimum, Range, Standard deviation, and Sum statistic types will be available.</para>
+		/// <para>指定要计算的统计数据类型。</para>
+		/// <para>平均值—将计算邻域内像元的平均值。</para>
+		/// <para>众数—将识别邻域内像元的众数（出现次数最多的值）。</para>
+		/// <para>最大值—将识别邻域内像元的最大值。</para>
+		/// <para>中值—将计算邻域内像元的中值。</para>
+		/// <para>最小值—将识别邻域内像元的最小值。</para>
+		/// <para>少数—将识别邻域内像元的少数（出现次数最少的值）。</para>
+		/// <para>范围—将计算邻域内像元的范围（最大值和最小值之差）。</para>
+		/// <para>标准差—将计算邻域内像元的标准差。</para>
+		/// <para>总和—将计算邻域内像元的总和。</para>
+		/// <para>变异度—将计算邻域内像元的变异度（唯一值的数量）。</para>
+		/// <para>默认统计类型为平均值。</para>
+		/// <para>如果输入栅格为整型，则所有统计类型均可用。 如果输入栅格为浮点型，则只有平均值、最大值、最小值、范围、标准差和总和统计类型可用。</para>
 		/// <para><see cref="StatisticsTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -132,9 +132,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Ignore NoData in calculations</para>
-		/// <para>Specifies whether NoData values will be ignored by the statistic calculation.</para>
-		/// <para>Checked—If a NoData value exists within a block neighborhood, the NoData value will be ignored. Only cells within the neighborhood that have data values will be used in determining the output value. This is the default.</para>
-		/// <para>Unchecked—If any cell in a block neighborhood has a value of NoData, the output for each cell in the corresponding block will be NoData. The presence of a NoData value implies that there is insufficient information to determine the statistic value for the neighborhood.</para>
+		/// <para>指定在进行统计计算时是否将忽略 NoData 值。</para>
+		/// <para>选中 - 当块邻域中存在 NoData 值时，将忽略此 NoData 值。 将仅使用邻域内具有数据值的像元来确定输出值。 这是默认设置。</para>
+		/// <para>未选中 - 如果块邻域内任意像元的值都是 NoData，则相应块中各像元的输出均为 NoData。 存在 NoData 值表明确定邻域的统计值所需要的信息不足。</para>
 		/// <para><see cref="IgnoreNodataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -159,73 +159,73 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum StatisticsTypeEnum 
 		{
 			/// <summary>
-			/// <para>Mean—The mean (average value) of the cells in the neighborhood will be calculated.</para>
+			/// <para>平均值—将计算邻域内像元的平均值。</para>
 			/// </summary>
 			[GPValue("MEAN")]
-			[Description("Mean")]
+			[Description("平均值")]
 			Mean,
 
 			/// <summary>
-			/// <para>Majority—The majority (value that occurs most often) of the cells in the neighborhood will be identified.</para>
+			/// <para>众数—将识别邻域内像元的众数（出现次数最多的值）。</para>
 			/// </summary>
 			[GPValue("MAJORITY")]
-			[Description("Majority")]
+			[Description("众数")]
 			Majority,
 
 			/// <summary>
-			/// <para>Maximum—The maximum (largest value) of the cells in the neighborhood will be identified.</para>
+			/// <para>最大值—将识别邻域内像元的最大值。</para>
 			/// </summary>
 			[GPValue("MAXIMUM")]
-			[Description("Maximum")]
+			[Description("最大值")]
 			Maximum,
 
 			/// <summary>
-			/// <para>Median—The median of the cells in the neighborhood will be calculated.</para>
+			/// <para>中值—将计算邻域内像元的中值。</para>
 			/// </summary>
 			[GPValue("MEDIAN")]
-			[Description("Median")]
+			[Description("中值")]
 			Median,
 
 			/// <summary>
-			/// <para>Minimum—The minimum (smallest value) of the cells in the neighborhood will be identified.</para>
+			/// <para>最小值—将识别邻域内像元的最小值。</para>
 			/// </summary>
 			[GPValue("MINIMUM")]
-			[Description("Minimum")]
+			[Description("最小值")]
 			Minimum,
 
 			/// <summary>
-			/// <para>Minority—The minority (value that occurs least often) of the cells in the neighborhood will be identified.</para>
+			/// <para>少数—将识别邻域内像元的少数（出现次数最少的值）。</para>
 			/// </summary>
 			[GPValue("MINORITY")]
-			[Description("Minority")]
+			[Description("少数")]
 			Minority,
 
 			/// <summary>
-			/// <para>Range—The range (difference between largest and smallest value) of the cells in the neighborhood will be calculated.</para>
+			/// <para>范围—将计算邻域内像元的范围（最大值和最小值之差）。</para>
 			/// </summary>
 			[GPValue("RANGE")]
-			[Description("Range")]
+			[Description("范围")]
 			Range,
 
 			/// <summary>
-			/// <para>Standard deviation—The standard deviation of the cells in the neighborhood will be calculated.</para>
+			/// <para>标准差—将计算邻域内像元的标准差。</para>
 			/// </summary>
 			[GPValue("STD")]
-			[Description("Standard deviation")]
+			[Description("标准差")]
 			Standard_deviation,
 
 			/// <summary>
-			/// <para>Sum—The sum of the cells in the neighborhood will be calculated.</para>
+			/// <para>总和—将计算邻域内像元的总和。</para>
 			/// </summary>
 			[GPValue("SUM")]
-			[Description("Sum")]
+			[Description("总和")]
 			Sum,
 
 			/// <summary>
-			/// <para>Variety—The variety (the number of unique values) of the cells in the neighborhood will be calculated.</para>
+			/// <para>变异度—将计算邻域内像元的变异度（唯一值的数量）。</para>
 			/// </summary>
 			[GPValue("VARIETY")]
-			[Description("Variety")]
+			[Description("变异度")]
 			Variety,
 
 		}
@@ -236,14 +236,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum IgnoreNodataEnum 
 		{
 			/// <summary>
-			/// <para>Checked—If a NoData value exists within a block neighborhood, the NoData value will be ignored. Only cells within the neighborhood that have data values will be used in determining the output value. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DATA")]
 			DATA,
 
 			/// <summary>
-			/// <para>Unchecked—If any cell in a block neighborhood has a value of NoData, the output for each cell in the corresponding block will be NoData. The presence of a NoData value implies that there is insufficient information to determine the statistic value for the neighborhood.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NODATA")]

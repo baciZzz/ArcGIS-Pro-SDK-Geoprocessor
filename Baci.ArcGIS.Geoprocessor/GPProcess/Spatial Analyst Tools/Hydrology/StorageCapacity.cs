@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Storage Capacity</para>
-	/// <para>Storage Capacity</para>
-	/// <para>Creates a table and a chart of elevations and corresponding storage capacities for an input surface raster. The tool calculates the surface area and total volume of the underlying region at a series of elevation increments.</para>
+	/// <para>存储容量</para>
+	/// <para>将为输入表面栅格创建表格和高程图以及相应的存储容量。 该工具将计算一系列高程增量处基础区域的表面面积和总体积。</para>
 	/// </summary>
 	public class StorageCapacity : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InSurfaceRaster">
 		/// <para>Input surface raster</para>
-		/// <para>The input raster representing a continuous surface.</para>
+		/// <para>输入栅格表示连续表面。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output table</para>
-		/// <para>The output table that contains for each zone the surface area and total volumes for each increment in elevation.</para>
+		/// <para>此输出表包含每个区域中每个高程增量的表面积和总体积。</para>
 		/// </param>
 		public StorageCapacity(object InSurfaceRaster, object OutTable)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Storage Capacity</para>
+		/// <para>Tool Display Name : 存储容量</para>
 		/// </summary>
-		public override string DisplayName() => "Storage Capacity";
+		public override string DisplayName() => "存储容量";
 
 		/// <summary>
 		/// <para>Tool Name : StorageCapacity</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input surface raster</para>
-		/// <para>The input raster representing a continuous surface.</para>
+		/// <para>输入栅格表示连续表面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output table</para>
-		/// <para>The output table that contains for each zone the surface area and total volumes for each increment in elevation.</para>
+		/// <para>此输出表包含每个区域中每个高程增量的表面积和总体积。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -86,8 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature zone data</para>
-		/// <para>The dataset that defines the zones.</para>
-		/// <para>The zones can be defined by an integer raster or a feature layer.</para>
+		/// <para>定义区域的数据集。</para>
+		/// <para>可通过整型栅格或要素图层来定义区域。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -95,8 +95,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Zone field</para>
-		/// <para>The field that contains the values that define each zone.</para>
-		/// <para>It can be an integer or a string field of the zone dataset.</para>
+		/// <para>包含定义每个区域的值的字段。</para>
+		/// <para>该字段可以是区域数据集的整型字段或字符串型字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -104,10 +104,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Analysis type</para>
-		/// <para>Specifies the analysis type.</para>
-		/// <para>Area and Volume—Both surface areas and total volumes are calculated at each elevation increment. This is the default.</para>
-		/// <para>Area—Surface area is calculated at each elevation increment.</para>
-		/// <para>Volume—Total volume is calculated at each elevation increment.</para>
+		/// <para>指定分析类型。</para>
+		/// <para>面积和体积—将计算每个高程增量的表面积和总体积。这是默认设置。</para>
+		/// <para>面积—将计算每个高程增量的表面积。</para>
+		/// <para>体积—将计算每个高程增量的总体积。</para>
 		/// <para><see cref="AnalysisTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -117,8 +117,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Minimum elevation</para>
-		/// <para>The minimum elevation from which storage capacities are assessed.</para>
-		/// <para>By default, the tool uses the minimum surface raster value in each zone as the minimum elevation for that zone. If a value is provided, it is used as the minimum elevation across all zones.</para>
+		/// <para>评估存储容量基于的最小高程。</para>
+		/// <para>默认情况下，该工具将每个区域中的最小表面栅格值用作该区域的最小高程。如果提供了一个值，将使用该值作为所有区域的最小高程。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -126,8 +126,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Maximum elevation</para>
-		/// <para>The maximum elevation from which storage capacities are assessed.</para>
-		/// <para>By default, the tool uses the maximum surface raster value in each zone as the maximum elevation for that zone. If a value is provided, it is used as the maximum elevation across all zones.</para>
+		/// <para>评估存储容量基于的最大高程。</para>
+		/// <para>默认情况下，该工具将每个区域中的最大表面栅格值用作该区域的最大高程。如果提供了一个值，将使用该值作为所有区域的最大高程。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -135,9 +135,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Increment type</para>
-		/// <para>Specifies the increment type to use when computing elevation increments between minimum and maximum elevations.</para>
-		/// <para>Number of Increments—The number of increments between minimum and maximum elevations is used. This is the default.</para>
-		/// <para>Value of Increment—The elevation difference between each increment is used.</para>
+		/// <para>指定计算最小和最大高程之间的高程增量时要使用的增量类型。</para>
+		/// <para>增量数—将使用最小和最大高程之间的增量数。这是默认设置。</para>
+		/// <para>增量值—将使用每个增量之间的高程差。</para>
 		/// <para><see cref="IncrementTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Increment</para>
-		/// <para>An incremental value that is either the number of increments or the difference in elevation between increments. The value is determined based on the increment type parameter value.</para>
+		/// <para>一个增量值，可以是增量数或增量之间的高程差。该值根据增量类型参数值进行确定。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -155,17 +155,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Z unit</para>
-		/// <para>The linear unit of vertical z-values.</para>
-		/// <para>Inch—The linear unit will be inches.</para>
-		/// <para>Foot—The linear unit will be feet.</para>
-		/// <para>Yard—The linear unit will be yards.</para>
-		/// <para>Mile US—The linear unit will be miles.</para>
-		/// <para>Nautical mile—The linear unit will be nautical miles.</para>
-		/// <para>Millimeter—The linear unit will be millimeters.</para>
-		/// <para>Centimeter—The linear unit will be centimeters.</para>
-		/// <para>Meter—The linear unit will be meters.</para>
-		/// <para>Kilometer—The linear unit will be kilometers.</para>
-		/// <para>Decimeter—The linear unit will be decimeters.</para>
+		/// <para>垂直 z 值的线性单位。</para>
+		/// <para>英寸—线性单位将为英寸。</para>
+		/// <para>英尺—线性单位将为英尺。</para>
+		/// <para>码—线性单位将为码。</para>
+		/// <para>英里(美制)—线性单位将为英里。</para>
+		/// <para>海里—线性单位将为海里。</para>
+		/// <para>毫米—线性单位将为毫米。</para>
+		/// <para>厘米—线性单位将为厘米。</para>
+		/// <para>米—线性单位将为米。</para>
+		/// <para>千米—线性单位将为公里。</para>
+		/// <para>分米—线性单位将为分米。</para>
 		/// <para><see cref="ZUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -175,8 +175,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output chart name</para>
-		/// <para>The name of the output chart for display.</para>
-		/// <para>The chart is listed in the Contents pane under Standalone Tables.</para>
+		/// <para>用于显示的输出图表的名称。</para>
+		/// <para>该图表将在内容窗格中的独立表下列出。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -199,24 +199,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum AnalysisTypeEnum 
 		{
 			/// <summary>
-			/// <para>Area and Volume—Both surface areas and total volumes are calculated at each elevation increment. This is the default.</para>
+			/// <para>面积和体积—将计算每个高程增量的表面积和总体积。这是默认设置。</para>
 			/// </summary>
 			[GPValue("AREA_VOLUME")]
-			[Description("Area and Volume")]
+			[Description("面积和体积")]
 			Area_and_Volume,
 
 			/// <summary>
-			/// <para>Area and Volume—Both surface areas and total volumes are calculated at each elevation increment. This is the default.</para>
+			/// <para>面积和体积—将计算每个高程增量的表面积和总体积。这是默认设置。</para>
 			/// </summary>
 			[GPValue("AREA")]
-			[Description("Area")]
+			[Description("面积")]
 			Area,
 
 			/// <summary>
-			/// <para>Volume—Total volume is calculated at each elevation increment.</para>
+			/// <para>体积—将计算每个高程增量的总体积。</para>
 			/// </summary>
 			[GPValue("VOLUME")]
-			[Description("Volume")]
+			[Description("体积")]
 			Volume,
 
 		}
@@ -227,17 +227,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum IncrementTypeEnum 
 		{
 			/// <summary>
-			/// <para>Number of Increments—The number of increments between minimum and maximum elevations is used. This is the default.</para>
+			/// <para>增量数—将使用最小和最大高程之间的增量数。这是默认设置。</para>
 			/// </summary>
 			[GPValue("NUMBER_OF_INCREMENTS")]
-			[Description("Number of Increments")]
+			[Description("增量数")]
 			Number_of_Increments,
 
 			/// <summary>
-			/// <para>Value of Increment—The elevation difference between each increment is used.</para>
+			/// <para>增量值—将使用每个增量之间的高程差。</para>
 			/// </summary>
 			[GPValue("VALUE_OF_INCREMENT")]
-			[Description("Value of Increment")]
+			[Description("增量值")]
 			Value_of_Increment,
 
 		}
@@ -248,73 +248,73 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ZUnitEnum 
 		{
 			/// <summary>
-			/// <para>Meter—The linear unit will be meters.</para>
+			/// <para>米—线性单位将为米。</para>
 			/// </summary>
 			[GPValue("METER")]
-			[Description("Meter")]
+			[Description("米")]
 			Meter,
 
 			/// <summary>
-			/// <para>Inch—The linear unit will be inches.</para>
+			/// <para>英寸—线性单位将为英寸。</para>
 			/// </summary>
 			[GPValue("INCH")]
-			[Description("Inch")]
+			[Description("英寸")]
 			Inch,
 
 			/// <summary>
-			/// <para>Foot—The linear unit will be feet.</para>
+			/// <para>英尺—线性单位将为英尺。</para>
 			/// </summary>
 			[GPValue("FOOT")]
-			[Description("Foot")]
+			[Description("英尺")]
 			Foot,
 
 			/// <summary>
-			/// <para>Yard—The linear unit will be yards.</para>
+			/// <para>码—线性单位将为码。</para>
 			/// </summary>
 			[GPValue("YARD")]
-			[Description("Yard")]
+			[Description("码")]
 			Yard,
 
 			/// <summary>
-			/// <para>Mile US—The linear unit will be miles.</para>
+			/// <para>英里(美制)—线性单位将为英里。</para>
 			/// </summary>
 			[GPValue("MILE_US")]
-			[Description("Mile US")]
+			[Description("英里(美制)")]
 			Mile_US,
 
 			/// <summary>
-			/// <para>Nautical mile—The linear unit will be nautical miles.</para>
+			/// <para>海里—线性单位将为海里。</para>
 			/// </summary>
 			[GPValue("NAUTICAL_MILE")]
-			[Description("Nautical mile")]
+			[Description("海里")]
 			Nautical_mile,
 
 			/// <summary>
-			/// <para>Millimeter—The linear unit will be millimeters.</para>
+			/// <para>毫米—线性单位将为毫米。</para>
 			/// </summary>
 			[GPValue("MILLIMETER")]
-			[Description("Millimeter")]
+			[Description("毫米")]
 			Millimeter,
 
 			/// <summary>
-			/// <para>Centimeter—The linear unit will be centimeters.</para>
+			/// <para>厘米—线性单位将为厘米。</para>
 			/// </summary>
 			[GPValue("CENTIMETER")]
-			[Description("Centimeter")]
+			[Description("厘米")]
 			Centimeter,
 
 			/// <summary>
-			/// <para>Kilometer—The linear unit will be kilometers.</para>
+			/// <para>千米—线性单位将为公里。</para>
 			/// </summary>
 			[GPValue("KILOMETER")]
-			[Description("Kilometer")]
+			[Description("千米")]
 			Kilometer,
 
 			/// <summary>
-			/// <para>Decimeter—The linear unit will be decimeters.</para>
+			/// <para>分米—线性单位将为分米。</para>
 			/// </summary>
 			[GPValue("DECIMETER")]
-			[Description("Decimeter")]
+			[Description("分米")]
 			Decimeter,
 
 		}

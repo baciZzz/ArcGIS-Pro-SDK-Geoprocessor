@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Contour with Barriers</para>
-	/// <para>Contour with Barriers</para>
-	/// <para>Creates contours from a raster surface. The inclusion of barrier features allows you to independently generate contours on either side of a barrier.</para>
+	/// <para>含障碍的等值线</para>
+	/// <para>根据栅格表面创建等值线。 如果包含障碍要素，则允许在障碍两侧独立生成等值线。</para>
 	/// </summary>
 	public class ContourWithBarriers : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The input surface raster.</para>
+		/// <para>输入表面栅格。</para>
 		/// </param>
 		/// <param name="OutContourFeatureClass">
 		/// <para>Output Contour Features</para>
-		/// <para>The output contour features.</para>
+		/// <para>输出等值线要素。</para>
 		/// </param>
 		public ContourWithBarriers(object InRaster, object OutContourFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Contour with Barriers</para>
+		/// <para>Tool Display Name : 含障碍的等值线</para>
 		/// </summary>
-		public override string DisplayName() => "Contour with Barriers";
+		public override string DisplayName() => "含障碍的等值线";
 
 		/// <summary>
 		/// <para>Tool Name : ContourWithBarriers</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The input surface raster.</para>
+		/// <para>输入表面栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output Contour Features</para>
-		/// <para>The output contour features.</para>
+		/// <para>输出等值线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -88,8 +88,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Barrier Features</para>
-		/// <para>The input barrier features.</para>
-		/// <para>The features can be polyline or polygon type.</para>
+		/// <para>输入障碍要素。</para>
+		/// <para>要素可以是折线或面类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -99,10 +99,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Type of Contours</para>
-		/// <para>The type of contour to create.</para>
-		/// <para>Polylines— The contour or isoline representation of the input raster.</para>
-		/// <para>Polygons— Closed polygons representing the contours.</para>
-		/// <para>The current version of this tool only supports polyline output. If the polygon output option is used, it will be ignored and polyline output will be created.</para>
+		/// <para>要创建的等值线的类型。</para>
+		/// <para>折线— 用等值线或等值线图表示输入栅格。</para>
+		/// <para>面— 用闭合面表示等值线。</para>
+		/// <para>此工具的当前版本仅支持折线输出。如果使用面输出选项，则会将其忽略并会创建折线输出。</para>
 		/// <para><see cref="InContourTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>File Containing Contour Value Specifications</para>
-		/// <para>The base contour, contour interval, indexed contour interval, and explicit contour values can also be specified via a text file.</para>
+		/// <para>也可通过文本文件指定起始等值线、等值线间距、计曲线间距和明确的等值线值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -120,9 +120,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Enter Explicit Contour Values Only</para>
-		/// <para>Only explicit contour values are used. Base contour, contour interval, and indexed contour intervals are not specified.</para>
-		/// <para>Unchecked—The default, contour interval must be specified.</para>
-		/// <para>Checked—Only explicit contour values are specified.</para>
+		/// <para>只使用明确的等值线值。未指定起始等值线、等值线间距和计曲线间距。</para>
+		/// <para>取消选中 - 必须指定默认的等值线间距。</para>
+		/// <para>选中 - 仅指定明确的等值线值。</para>
 		/// <para><see cref="ExplicitOnlyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -132,8 +132,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Base Contour</para>
-		/// <para>The base contour value.</para>
-		/// <para>Contours are generated above and below this value as needed to cover the entire value range of the input raster. The default is zero.</para>
+		/// <para>起始等值线值。</para>
+		/// <para>根据需要生成高于和低于该值的等值线以覆盖输入栅格的整个值范围。 默认值为零。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -141,8 +141,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Contour Interval</para>
-		/// <para>The interval, or distance, between contour lines.</para>
-		/// <para>This can be any positive number.</para>
+		/// <para>等值线间的间距或距离。</para>
+		/// <para>该值可为任意正数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Indexed Contour Interval</para>
-		/// <para>Contours will also be generated for this interval and will be flagged accordingly in the output feature class.</para>
+		/// <para>此外，也会在输出要素类中按此间距生成等值线并相应地进行标记。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Explicit Contour Values</para>
-		/// <para>Explicit values at which to create contours.</para>
+		/// <para>创建等值线的明确值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -169,9 +169,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Factor Applied to Raster Z-values</para>
-		/// <para>The unit conversion factor used when generating contours. The default value is 1.</para>
-		/// <para>The contour lines are generated based on the z-values in the input raster, which are often measured in units of meters or feet. With the default value of 1, the contours will be in the same units as the z-values of the input raster. To create contours in a unit other than that of the z-values, set an appropriate value for the z-factor. It is not necessary to have the ground x,y and surface z-units be consistent for this tool.</para>
-		/// <para>For example, if the elevation values in your input raster are in feet, but you want the contours to be generated based on units of meters, set the z-factor to 0.3048 (since 1 foot = 0.3048 meter).</para>
+		/// <para>在生成等值线时使用的单位转换因子。 默认值为 1。</para>
+		/// <para>等值线是基于输入栅格中的 z 值生成的，所采用的测量单位通常为米或英尺。 如果使用默认值 1，等值线将采用与输入栅格中的 z 值相同的单位。 要以不同于 z 值的单位创建等值线，请为 z 因子设置适当的值。 对于此工具，没有必要使地面 x,y 单位与表面 z 单位保持一致。</para>
+		/// <para>例如，如果输入栅格中的高程值单位为英尺，但您希望以米为单位来生成等值线，则可将 z 因子设置为 0.3048（因为 1 英尺 = 0.3048 米）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -195,17 +195,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum InContourTypeEnum 
 		{
 			/// <summary>
-			/// <para>Polylines— The contour or isoline representation of the input raster.</para>
+			/// <para>折线— 用等值线或等值线图表示输入栅格。</para>
 			/// </summary>
 			[GPValue("POLYLINES")]
-			[Description("Polylines")]
+			[Description("折线")]
 			Polylines,
 
 			/// <summary>
-			/// <para>Polygons— Closed polygons representing the contours.</para>
+			/// <para>面— 用闭合面表示等值线。</para>
 			/// </summary>
 			[GPValue("POLYGONS")]
-			[Description("Polygons")]
+			[Description("面")]
 			Polygons,
 
 		}
@@ -216,14 +216,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ExplicitOnlyEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Only explicit contour values are specified.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EXPLICIT_VALUES_ONLY")]
 			EXPLICIT_VALUES_ONLY,
 
 			/// <summary>
-			/// <para>Unchecked—The default, contour interval must be specified.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_EXPLICIT_VALUES_ONLY")]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>TIN Node</para>
-	/// <para>TIN Node</para>
-	/// <para>Exports the nodes of a triangulated irregular network (TIN) dataset to a point feature class.</para>
+	/// <para>TIN 结点</para>
+	/// <para>可将不规则三角网 (TIN) 数据集的结点导出到点要素类。</para>
 	/// </summary>
 	public class TinNode : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTin">
 		/// <para>Input TIN</para>
-		/// <para>The TIN dataset to process.</para>
+		/// <para>待处理的 TIN 数据集。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </param>
 		public TinNode(object InTin, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : TIN Node</para>
+		/// <para>Tool Display Name : TIN 结点</para>
 		/// </summary>
-		public override string DisplayName() => "TIN Node";
+		public override string DisplayName() => "TIN 结点";
 
 		/// <summary>
 		/// <para>Tool Name : TinNode</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input TIN</para>
-		/// <para>The TIN dataset to process.</para>
+		/// <para>待处理的 TIN 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTinLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Spot Field</para>
-		/// <para>The name of the elevation attribute field of the output feature class. If a name is given, the feature class will be 2D; otherwise, it will be 3D. No name is provided by default, which results in the creation of 3D point features.</para>
+		/// <para>输出要素类的高程属性字段的名称。如果指定名称，要素类将是 2D 的；否则，要素类将是 3D 的。默认情况下不提供名称，因此会创建 3D 点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Tag Value Field</para>
-		/// <para>The name of the field storing the tag attribute in the output feature class. By default, no tag value field is created.</para>
+		/// <para>将标签属性存储在输出要素类中的字段的名称。默认情况下，不创建任何标签值字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

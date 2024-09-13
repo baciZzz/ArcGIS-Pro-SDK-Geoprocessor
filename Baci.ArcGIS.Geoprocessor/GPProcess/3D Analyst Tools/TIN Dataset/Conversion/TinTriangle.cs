@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>TIN Triangle</para>
-	/// <para>TIN Triangle</para>
-	/// <para>Exports triangle faces from a TIN dataset to polygon features  and provides slope, aspect, and optional attributes of hillshade and tag values for each triangle.</para>
+	/// <para>TIN 三角形</para>
+	/// <para>将三角面从 TIN 数据集导出至面要素，并为每个三角提供坡度、坡向以及山体阴影和标签值的可选属性。</para>
 	/// </summary>
 	public class TinTriangle : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTin">
 		/// <para>Input TIN</para>
-		/// <para>The TIN dataset to process.</para>
+		/// <para>待处理的 TIN 数据集。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </param>
 		public TinTriangle(object InTin, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : TIN Triangle</para>
+		/// <para>Tool Display Name : TIN 三角形</para>
 		/// </summary>
-		public override string DisplayName() => "TIN Triangle";
+		public override string DisplayName() => "TIN 三角形";
 
 		/// <summary>
 		/// <para>Tool Name : TinTriangle</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input TIN</para>
-		/// <para>The TIN dataset to process.</para>
+		/// <para>待处理的 TIN 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTinLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -86,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Slope Units</para>
-		/// <para>The units of measure to be used in calculating slope.</para>
-		/// <para>Percent—Slope is expressed as a percentage value. This is the default.</para>
-		/// <para>Degree—Slope is expressed as the angle of inclination from a horizontal plane.</para>
+		/// <para>在计算坡度中所用的测量单位。</para>
+		/// <para>百分比—坡度以百分比值形式表示。这是默认设置。</para>
+		/// <para>度—坡度以相对于水平面的倾角形式表示。</para>
 		/// <para><see cref="UnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z Factor</para>
-		/// <para>The factor by which z-values will be multiplied. This is typically used to convert z linear units to match x,y linear units. The default is 1, which leaves elevation values unchanged. This parameter is not available if the spatial reference of the input surface has a z datum with a specified linear unit.</para>
+		/// <para>Z 值将乘上的系数。 此值通常用于转换 z 线性单位来匹配 x,y 线性单位。 默认值为 1，此时高程值保持不变。 如果输入表面的空间参考具有已指定线性单位的 z 基准，则此参数不可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>HILLSHADE azimuth, altitude</para>
-		/// <para>Specifies the azimuth and altitude angles of the light source when applying a hillshade effect for the feature layer output. Azimuth can range from 0 to 360 degrees, whereas altitude can range from 0 to 90. An azimuth of 45 degrees and altitude of 30 degrees would be entered as "HILLSHADE 45, 30".</para>
+		/// <para>为要素图层输出应用山体阴影效果时指定光源的方位角和高度角。方位角的范围为 0 至 360 度，高度角的范围为 0 至 90。方位角为 45 度，高度角为 30 度的输入形式为“HILLSHADE 45,30”。</para>
 		/// <para><see cref="HillshadeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Tag Value Field</para>
-		/// <para>The field name in the output feature that will store the triangle tag value. This parameter is empty by default, which will result in tag values not being written to the output.</para>
+		/// <para>将存储三角形标签值的输出要素中的字段名称。该参数默认为空，将导致标签值无法写入输出。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -139,17 +139,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum UnitsEnum 
 		{
 			/// <summary>
-			/// <para>Percent—Slope is expressed as a percentage value. This is the default.</para>
+			/// <para>百分比—坡度以百分比值形式表示。这是默认设置。</para>
 			/// </summary>
 			[GPValue("PERCENT")]
-			[Description("Percent")]
+			[Description("百分比")]
 			Percent,
 
 			/// <summary>
-			/// <para>Degree—Slope is expressed as the angle of inclination from a horizontal plane.</para>
+			/// <para>度—坡度以相对于水平面的倾角形式表示。</para>
 			/// </summary>
 			[GPValue("DEGREE")]
-			[Description("Degree")]
+			[Description("度")]
 			Degree,
 
 		}

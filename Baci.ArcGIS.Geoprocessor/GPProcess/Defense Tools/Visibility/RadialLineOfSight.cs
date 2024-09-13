@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Radial Line Of Sight</para>
-	/// <para>Radial Line Of Sight</para>
-	/// <para>Shows  areas visible to one or more observer locations.</para>
+	/// <para>径向通视分析</para>
+	/// <para>显示一个或多个观察点位置可见的区域。</para>
 	/// </summary>
 	public class RadialLineOfSight : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		/// <param name="InObserverFeatures">
 		/// <para>Input Observer Features</para>
-		/// <para>The input observer points.</para>
+		/// <para>输入观察点。</para>
 		/// </param>
 		/// <param name="InSurface">
 		/// <para>Input Surface</para>
-		/// <para>The input elevation raster surface.</para>
+		/// <para>输入高程栅格表面。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Visibility</para>
-		/// <para>The output polygon feature class showing visible and nonvisible surface areas.</para>
+		/// <para>用于显示可见和不可见表面区域的输出面要素类。</para>
 		/// </param>
 		public RadialLineOfSight(object InObserverFeatures, object InSurface, object OutFeatureClass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Radial Line Of Sight</para>
+		/// <para>Tool Display Name : 径向通视分析</para>
 		/// </summary>
-		public override string DisplayName() => "Radial Line Of Sight";
+		public override string DisplayName() => "径向通视分析";
 
 		/// <summary>
 		/// <para>Tool Name : RadialLineOfSight</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Observer Features</para>
-		/// <para>The input observer points.</para>
+		/// <para>输入观察点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Surface</para>
-		/// <para>The input elevation raster surface.</para>
+		/// <para>输入高程栅格表面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Visibility</para>
-		/// <para>The output polygon feature class showing visible and nonvisible surface areas.</para>
+		/// <para>用于显示可见和不可见表面区域的输出面要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Radius Of Observer (meters)</para>
-		/// <para>The radius of the analysis area from the observer.</para>
+		/// <para>分析区域距离观察点的半径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Observer Height Above Surface (meters)</para>
-		/// <para>The height added to the surface elevation of the observer. The default is 2.</para>
+		/// <para>观察点表面高程以上的高度。 默认值为 2。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Predict Using Trend Raster</para>
-	/// <para>Predict Using Trend Raster</para>
-	/// <para>Computes a forecasted multidimensional raster using the output trend raster from the Generate Trend Raster tool.</para>
+	/// <para>使用趋势栅格预测</para>
+	/// <para>使用来自生成趋势栅格工具的输出趋势栅格来计算预测多维栅格。</para>
 	/// </summary>
 	public class PredictUsingTrendRaster : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InMultidimensionalRaster">
 		/// <para>Input Trend Raster</para>
-		/// <para>The input multidimensional trend raster from the Generate Trend Raster tool.</para>
+		/// <para>来自生成趋势栅格工具的输入多维趋势栅格。</para>
 		/// </param>
 		/// <param name="OutMultidimensionalRaster">
 		/// <para>Output Multidimensional Raster</para>
-		/// <para>The output Cloud Raster Format (CRF) multidimensional raster dataset.</para>
+		/// <para>输出云栅格格式 (CRF) 多维栅格数据集。</para>
 		/// </param>
 		public PredictUsingTrendRaster(object InMultidimensionalRaster, object OutMultidimensionalRaster)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Predict Using Trend Raster</para>
+		/// <para>Tool Display Name : 使用趋势栅格预测</para>
 		/// </summary>
-		public override string DisplayName() => "Predict Using Trend Raster";
+		public override string DisplayName() => "使用趋势栅格预测";
 
 		/// <summary>
 		/// <para>Tool Name : PredictUsingTrendRaster</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Trend Raster</para>
-		/// <para>The input multidimensional trend raster from the Generate Trend Raster tool.</para>
+		/// <para>来自生成趋势栅格工具的输入多维趋势栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Multidimensional Raster</para>
-		/// <para>The output Cloud Raster Format (CRF) multidimensional raster dataset.</para>
+		/// <para>输出云栅格格式 (CRF) 多维栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Variables [Dimension Info] (Description)</para>
-		/// <para>The variable or variables that will be predicted in the analysis. If no variables are specified, all variables will be used.</para>
+		/// <para>将在分析中预测的一个或多个变量。如果未指定任何变量，则将使用所有变量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -95,9 +95,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Dimension Definition</para>
-		/// <para>Specifies the method used to provide prediction dimension values.</para>
-		/// <para>By value—The prediction will be calculated for a single dimension value or a list of dimension values defined by the Values parameter (dimension_values in Python). This is the default.For example, you want to predict yearly precipitation for the years 2050, 2100, and 2150.</para>
-		/// <para>By interval—The prediction will be calculated for an interval of the dimension defined by a start and an end value.For example, you want to predict yearly precipitation for every year between 2050 and 2150.</para>
+		/// <para>指定用于提供预测维度值的方法。</para>
+		/// <para>按值—将针对单个维度值或由值参数（在 Python 中为 dimension_values）定义的一系列维度值来计算预测。这是默认设置。例如，您要预测 2050、2100 和 2150 年的年降水量。</para>
+		/// <para>按间隔—将针对由起始值和结束值定义的维度间隔来计算预测。例如，您要预测 2050 年到 2150 年之间每年的年降水量。</para>
 		/// <para><see cref="DimensionDefEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -107,9 +107,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Values</para>
-		/// <para>The dimension value or values to be used in the prediction.</para>
-		/// <para>The format of the time, depth, and height values must match the format of the dimension values used to generate the trend raster. If the trend raster was generated for the StdTime dimension, the format would be YYYY-MM-DDTHH:MM:SS, for example 2050-01-01T00:00:00. Multiple values are separated with a semicolon.</para>
-		/// <para>This parameter is required when the Dimension Definition parameter is set to By value.</para>
+		/// <para>预测中要使用的一个或多个维度值。</para>
+		/// <para>时间、深度和高度值的格式必须与用于生成趋势栅格的维度值的格式相匹配。如果为 StdTime 维度生成了趋势栅格，则其格式应为 YYYY-MM-DDTHH:MM:SS，例如 2050-01-01T00:00:00。用分号分隔多个值。</para>
+		/// <para>当维度定义参数设置为按值时，此参数为必需项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Start</para>
-		/// <para>The start date, height, or depth of the dimension interval to be used in the prediction.</para>
+		/// <para>预测中要使用的维度间隔的开始日期、高度或深度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>End</para>
-		/// <para>The end date, height, or depth of the dimension interval to be used in the prediction.</para>
+		/// <para>预测中要使用的维度间隔的结束日期、高度或深度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -133,8 +133,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Value Interval</para>
-		/// <para>The number of steps between two dimension values to be included in the prediction. The default value is 1.</para>
-		/// <para>For example, to predict temperature values every five years, use a value of 5.</para>
+		/// <para>要包含在预测中的两个维度值之间的步长数量。默认值为 1。</para>
+		/// <para>例如，要预测每五年的温度值，请使用值 5。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -142,12 +142,12 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Unit</para>
-		/// <para>Specifies the unit that will be used for the interval value. This parameter only applies when the dimension of analysis is a time dimension.</para>
-		/// <para>Hours—The prediction will be calculated for each hour in the range of time described by the Start, End, and Value Interval parameters.</para>
-		/// <para>Days—The prediction will be calculated for each day in the range of time described by the Start, End, and Value Interval parameters.</para>
-		/// <para>Weeks—The prediction will be calculated for each week in the range of time described by the Start, End, and Value Interval parameters.</para>
-		/// <para>Months—The prediction will be calculated for each month in the range of time described by the Start, End, and Value Interval parameters.</para>
-		/// <para>Years—The prediction will be calculated for each year in the range of time described by the Start, End, and Value Interval parameters.</para>
+		/// <para>指定将用于间隔值的单位。仅当分析的维度是时间维度时，此参数才适用。</para>
+		/// <para>小时—将在用开始、结束和值间隔参数描述的时间范围内计算每小时的预测。</para>
+		/// <para>天—将在用开始、结束和值间隔参数描述的时间范围内计算每天的预测。</para>
+		/// <para>周—将在用开始、结束和值间隔参数描述的时间范围内计算每周的预测。</para>
+		/// <para>月—将在用开始、结束和值间隔参数描述的时间范围内计算每月的预测。</para>
+		/// <para>年—将在用开始、结束和值间隔参数描述的时间范围内计算每年的预测。</para>
 		/// <para><see cref="IntervalUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -172,17 +172,17 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum DimensionDefEnum 
 		{
 			/// <summary>
-			/// <para>By value—The prediction will be calculated for a single dimension value or a list of dimension values defined by the Values parameter (dimension_values in Python). This is the default.For example, you want to predict yearly precipitation for the years 2050, 2100, and 2150.</para>
+			/// <para>按值—将针对单个维度值或由值参数（在 Python 中为 dimension_values）定义的一系列维度值来计算预测。这是默认设置。例如，您要预测 2050、2100 和 2150 年的年降水量。</para>
 			/// </summary>
 			[GPValue("BY_VALUE")]
-			[Description("By value")]
+			[Description("按值")]
 			By_value,
 
 			/// <summary>
-			/// <para>By interval—The prediction will be calculated for an interval of the dimension defined by a start and an end value.For example, you want to predict yearly precipitation for every year between 2050 and 2150.</para>
+			/// <para>按间隔—将针对由起始值和结束值定义的维度间隔来计算预测。例如，您要预测 2050 年到 2150 年之间每年的年降水量。</para>
 			/// </summary>
 			[GPValue("BY_INTERVAL")]
-			[Description("By interval")]
+			[Description("按间隔")]
 			By_interval,
 
 		}
@@ -193,38 +193,38 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum IntervalUnitEnum 
 		{
 			/// <summary>
-			/// <para>Hours—The prediction will be calculated for each hour in the range of time described by the Start, End, and Value Interval parameters.</para>
+			/// <para>小时—将在用开始、结束和值间隔参数描述的时间范围内计算每小时的预测。</para>
 			/// </summary>
 			[GPValue("HOURS")]
-			[Description("Hours")]
+			[Description("小时")]
 			Hours,
 
 			/// <summary>
-			/// <para>Days—The prediction will be calculated for each day in the range of time described by the Start, End, and Value Interval parameters.</para>
+			/// <para>天—将在用开始、结束和值间隔参数描述的时间范围内计算每天的预测。</para>
 			/// </summary>
 			[GPValue("DAYS")]
-			[Description("Days")]
+			[Description("天")]
 			Days,
 
 			/// <summary>
-			/// <para>Weeks—The prediction will be calculated for each week in the range of time described by the Start, End, and Value Interval parameters.</para>
+			/// <para>周—将在用开始、结束和值间隔参数描述的时间范围内计算每周的预测。</para>
 			/// </summary>
 			[GPValue("WEEKS")]
-			[Description("Weeks")]
+			[Description("周")]
 			Weeks,
 
 			/// <summary>
-			/// <para>Months—The prediction will be calculated for each month in the range of time described by the Start, End, and Value Interval parameters.</para>
+			/// <para>月—将在用开始、结束和值间隔参数描述的时间范围内计算每月的预测。</para>
 			/// </summary>
 			[GPValue("MONTHS")]
-			[Description("Months")]
+			[Description("月")]
 			Months,
 
 			/// <summary>
-			/// <para>Years—The prediction will be calculated for each year in the range of time described by the Start, End, and Value Interval parameters.</para>
+			/// <para>年—将在用开始、结束和值间隔参数描述的时间范围内计算每年的预测。</para>
 			/// </summary>
 			[GPValue("YEARS")]
-			[Description("Years")]
+			[Description("年")]
 			Years,
 
 		}

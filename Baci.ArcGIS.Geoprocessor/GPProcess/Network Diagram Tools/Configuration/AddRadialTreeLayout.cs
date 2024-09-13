@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Radial Tree Layout</para>
-	/// <para>Add Radial Tree Layout</para>
-	/// <para>Adds the Radial Tree Layout algorithm to the list of layouts to be automatically chained at the end of the building of diagrams based on a given template. This tool also presets the Radial Tree Layout algorithm parameters for any diagram based on that template.</para>
+	/// <para>添加径向树布局</para>
+	/// <para>用于将“径向树布局”算法添加到基于给定模板构建逻辑示意图结束时自动进行链接的布局列表。此工具还会针对基于该模板的任意逻辑示意图预设“径向树布局”算法参数。</para>
 	/// </summary>
 	public class AddRadialTreeLayout : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template that will be modified.</para>
+		/// <para>要修改的逻辑示意图模板名称</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
-		/// <para>Specifies whether the layout algorithm will automatically run when generating diagrams based on the specified template.</para>
-		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
-		/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+		/// <para>指定是否将在基于指定模板生成逻辑示意图时自动运行布局算法。</para>
+		/// <para>选中 - 添加的布局算法会在基于输入逻辑示意图模板参数值生成任何逻辑示意图的过程中自动运行。 这是默认设置。为布局算法指定的参数值是在生成逻辑示意图的过程中用于运行布局的参数值。 如果要对基于输入模板的任何逻辑示意图运行此算法，则还会默认加载这些参数值。</para>
+		/// <para>未选中 - 如果要对基于输入模板的任何逻辑示意图运行此算法，则还将默认加载当前为添加的布局逻辑示意图指定的所有参数值。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </param>
 		public AddRadialTreeLayout(object InUtilityNetwork, object TemplateName, object IsActive)
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Radial Tree Layout</para>
+		/// <para>Tool Display Name : 添加径向树布局</para>
 		/// </summary>
-		public override string DisplayName() => "Add Radial Tree Layout";
+		public override string DisplayName() => "添加径向树布局";
 
 		/// <summary>
 		/// <para>Tool Name : AddRadialTreeLayout</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template that will be modified.</para>
+		/// <para>要修改的逻辑示意图模板名称</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -94,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Active</para>
-		/// <para>Specifies whether the layout algorithm will automatically run when generating diagrams based on the specified template.</para>
-		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
-		/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+		/// <para>指定是否将在基于指定模板生成逻辑示意图时自动运行布局算法。</para>
+		/// <para>选中 - 添加的布局算法会在基于输入逻辑示意图模板参数值生成任何逻辑示意图的过程中自动运行。 这是默认设置。为布局算法指定的参数值是在生成逻辑示意图的过程中用于运行布局的参数值。 如果要对基于输入模板的任何逻辑示意图运行此算法，则还会默认加载这些参数值。</para>
+		/// <para>未选中 - 如果要对基于输入模板的任何逻辑示意图运行此算法，则还将默认加载当前为添加的布局逻辑示意图指定的所有参数值。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -106,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Preserve container layout</para>
-		/// <para>Specifies how the algorithm will process containers.</para>
-		/// <para>Checked—The layout algorithm will execute on the top graph of the diagram so containers are preserved.</para>
-		/// <para>Unchecked—The layout algorithm will execute on both content and noncontent features in the diagram. This is the default.</para>
+		/// <para>指定算法将如何处理容器。</para>
+		/// <para>选中 - 将对逻辑示意图的上方图执行布局算法，以保留容器。</para>
+		/// <para>未选中 - 将对逻辑示意图中的内容要素和非内容要素执行布局算法。 这是默认设置。</para>
 		/// <para><see cref="AreContainersPreservedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -118,9 +118,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Spacing values interpreted as absolute units in the diagram coordinate system</para>
-		/// <para>Specifies how parameters representing distances will be interpreted.</para>
-		/// <para>Checked—The layout algorithm will interpret any distance values as linear units.</para>
-		/// <para>Unchecked—The layout algorithm will interpret any distance values as relative units to an estimation of the average of the junction sizes in the current diagram extent. This is the default.</para>
+		/// <para>指定将如何解释表示距离的参数。</para>
+		/// <para>选中 - 布局算法会按线性单位来解释任意距离值。</para>
+		/// <para>未选中 - 布局算法会将所有距离值解释为当前逻辑示意图范围内交汇点大小的估算平均值的相对单位。 这是默认设置。</para>
 		/// <para><see cref="IsUnitAbsoluteEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Initial Radius</para>
-		/// <para>The radius of the first concentric circle whose center is the radial tree root junction—that is, the radius of the circle around which the diagram junctions belonging to the first hierarchical level are placed. The default is 5 in the units of the diagram's coordinate system. This parameter can only be used with absolute units.</para>
+		/// <para>圆心为径向树根交汇点的第一个同心圆的半径；即，放置属于第一个级别的逻辑示意图交汇点的圆的半径。默认值为 5（采用逻辑示意图坐标系的单位）。此参数只能与绝对单位搭配使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Initial Radius</para>
-		/// <para>The radius of the first concentric circle whose center is the radial tree root junction—that is, the radius of the circle around which the diagram junctions belonging to the first hierarchical level are placed. The default is 5. This parameter can only be used with proportional units.</para>
+		/// <para>圆心为径向树根交汇点的第一个同心圆的半径；即，放置属于第一个级别的逻辑示意图交汇点的圆的半径。默认值为 5。此参数只能与比例单位搭配使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Between Disjoined Graphs</para>
-		/// <para>The minimum spacing that will separate features belonging to disjoined graphs when the diagram contains such graphs. This parameter is used with absolute units. The default is 4 in the units of the diagram's coordinate system.</para>
+		/// <para>当逻辑示意图包含不相交图形时，属于此类图形的要素之间的最小间距。 此参数与绝对单位搭配使用。 默认值为逻辑示意图坐标系中的 4 个单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Between Disjoined Graphs</para>
-		/// <para>The minimum spacing that will separate features belonging to disjoined graphs when the diagram contains such graphs. This parameter is used with proportional units. The default is 4.</para>
+		/// <para>当逻辑示意图包含不相交图形时，属于此类图形的要素之间的最小间距。 此参数与比例单位搭配使用。 默认值为 4。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Radius Factor</para>
-		/// <para>The multiplicative factor used to increase or decrease the radius of each concentric circle. It is also the distance that separates each concentric circle related to a hierarchical level. When using a radius factor less than 1, the distance that separates the diagram junctions belonging to the (n) hierarchical level and the (n+1) hierarchical level progressively decreases. With a factor greater than 1, the distance between the hierarchical levels increases progressively. The default is 1.</para>
+		/// <para>用来增大或减小每个同心圆半径的倍乘系数。还表示分隔各级别同心圆的距离。如果使用的半径系数小于 1，则用来分隔级别 (n) 与级别 (n+1) 逻辑示意图交汇点的距离会逐渐减小。如果该系数大于 1，则不同级别间的距离会逐渐增大。默认值为 1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -190,14 +190,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsActiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACTIVE")]
 			ACTIVE,
 
 			/// <summary>
-			/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INACTIVE")]
@@ -211,14 +211,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum AreContainersPreservedEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The layout algorithm will execute on the top graph of the diagram so containers are preserved.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE_CONTAINERS")]
 			PRESERVE_CONTAINERS,
 
 			/// <summary>
-			/// <para>Unchecked—The layout algorithm will execute on both content and noncontent features in the diagram. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("IGNORE_CONTAINERS")]
@@ -232,14 +232,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsUnitAbsoluteEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The layout algorithm will interpret any distance values as linear units.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ABSOLUTE_UNIT")]
 			ABSOLUTE_UNIT,
 
 			/// <summary>
-			/// <para>Unchecked—The layout algorithm will interpret any distance values as relative units to an estimation of the average of the junction sizes in the current diagram extent. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("PROPORTIONAL_UNIT")]

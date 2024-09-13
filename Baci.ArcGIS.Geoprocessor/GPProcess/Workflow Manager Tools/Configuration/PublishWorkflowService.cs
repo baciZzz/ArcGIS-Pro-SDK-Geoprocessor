@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Publish Workflow Service</para>
-	/// <para>Publish Workflow Service</para>
-	/// <para>Uploads and shares a workflow service and a map service of job locations for an ArcGIS Workflow Manager (Classic) repository.</para>
+	/// <para>发布工作流服务</para>
+	/// <para>为 ArcGIS Workflow Manager (Classic) 存储库上传和共享作业位置的工作流服务和地图服务。</para>
 	/// </summary>
 	public class PublishWorkflowService : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		/// <param name="ServiceName">
 		/// <para>Service Name</para>
-		/// <para>The name of the workflow service that will be uploaded and shared.</para>
+		/// <para>将上传和共享的工作流服务的名称。</para>
 		/// </param>
 		/// <param name="AoiServiceName">
 		/// <para>AOI Service Name</para>
-		/// <para>The name of the map service that will be uploaded and shared.</para>
+		/// <para>将上传和共享的地图服务的名称。</para>
 		/// </param>
 		/// <param name="Server">
 		/// <para>Server</para>
-		/// <para>The ArcGIS Server connection file (.ags) that contains the information needed to connect to ArcGIS Server or the URL to the ArcGIS Enterprise portal federated server.</para>
+		/// <para>包含连接到 ArcGIS Server 所需的信息或连接到 ArcGIS Enterprise 门户联合服务器的 URL 的 ArcGIS Server 连接文件 (.ags)。</para>
 		/// </param>
 		/// <param name="OutServiceDraftLocation">
 		/// <para>Output Service Draft Location</para>
-		/// <para>The folder where service definitions will be saved.</para>
+		/// <para>将保存服务定义的文件夹。</para>
 		/// </param>
 		public PublishWorkflowService(object ServiceName, object AoiServiceName, object Server, object OutServiceDraftLocation)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Publish Workflow Service</para>
+		/// <para>Tool Display Name : 发布工作流服务</para>
 		/// </summary>
-		public override string DisplayName() => "Publish Workflow Service";
+		public override string DisplayName() => "发布工作流服务";
 
 		/// <summary>
 		/// <para>Tool Name : PublishWorkflowService</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Service Name</para>
-		/// <para>The name of the workflow service that will be uploaded and shared.</para>
+		/// <para>将上传和共享的工作流服务的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>AOI Service Name</para>
-		/// <para>The name of the map service that will be uploaded and shared.</para>
+		/// <para>将上传和共享的地图服务的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Server</para>
-		/// <para>The ArcGIS Server connection file (.ags) that contains the information needed to connect to ArcGIS Server or the URL to the ArcGIS Enterprise portal federated server.</para>
+		/// <para>包含连接到 ArcGIS Server 所需的信息或连接到 ArcGIS Enterprise 门户联合服务器的 URL 的 ArcGIS Server 连接文件 (.ags)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEServerConnection()]
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Output Service Draft Location</para>
-		/// <para>The folder where service definitions will be saved.</para>
+		/// <para>将保存服务定义的文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -113,8 +113,8 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Input Database Path (.jtc)</para>
-		/// <para>The workflow connection file (.jtc) that contains the information needed to connect to the Workflow Manager (Classic) repository.</para>
-		/// <para>The workflow connection in your ArcGIS Pro project will be used if a workflow connection file is not defined.</para>
+		/// <para>包含连接到 Workflow Manager (Classic) 存储库所需的信息的工作流连接文件 (.jtc)。</para>
+		/// <para>如果未定义工作流连接文件，则将使用 ArcGIS Pro 工程中的工作流连接。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -124,8 +124,8 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Server Folder</para>
-		/// <para>The folder to which the services will be published on ArcGIS Server.</para>
-		/// <para>If a folder is not specified, the services will be published to the root folder of ArcGIS Server.</para>
+		/// <para>ArcGIS Server 上服务将发布至的文件夹。</para>
+		/// <para>如果未指定文件夹，服务将发布到 ArcGIS Server 的根文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Description</para>
-		/// <para>A description of the services that will be published.</para>
+		/// <para>将发布的服务的描述。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -159,10 +159,10 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Overwrite Existing Service</para>
-		/// <para>Specifies whether the Service Name and AOI Service Name services will be overwritten.</para>
-		/// <para>Checked—The services will be overwritten.</para>
-		/// <para>Unchecked—The services will not be overwritten. This is the default.</para>
-		/// <para>If the Service Name, AOI Service Name, and Server Folder doesn&apos;t match the existing service names and location, new services will be published.</para>
+		/// <para>指定是否覆盖服务名称和 AOI 服务名称服务。</para>
+		/// <para>选中 - 将覆盖服务。</para>
+		/// <para>未选中 - 将不会覆盖服务。 这是默认设置。</para>
+		/// <para>如果服务名称、AOI 服务名称和服务器文件夹与现有服务名称和位置不匹配，则系统将发布新服务。</para>
 		/// <para><see cref="OverwriteEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -178,14 +178,14 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		public enum OverwriteEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The services will be overwritten.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("OVERWRITE")]
 			OVERWRITE,
 
 			/// <summary>
-			/// <para>Unchecked—The services will not be overwritten. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_OVERWRITE")]

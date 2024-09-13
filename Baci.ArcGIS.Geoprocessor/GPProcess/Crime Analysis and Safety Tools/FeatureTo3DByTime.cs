@@ -11,9 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Feature To 3D By Time</para>
-	/// <para>Feature To 3D By Time</para>
-	/// <para>Creates a 3D feature class using date values from</para>
-	/// <para>input features.</para>
+	/// <para>依据时间实现要素转 3D</para>
+	/// <para>可使用输入要素中的日期值来创建 3D 要素类。</para>
 	/// </summary>
 	public class FeatureTo3DByTime : AbstractGPProcess
 	{
@@ -22,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The features used to create 3D features.</para>
+		/// <para>用于创建 3D 要素的要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output z-enabled feature class.</para>
+		/// <para>输出启用 z 值的要素类。</para>
 		/// </param>
 		/// <param name="DateField">
 		/// <para>Date Field</para>
-		/// <para>A date field from the input that will be used to calculate the extrusion of the feature..</para>
+		/// <para>输入中的日期字段，将用于计算要素的拉伸。</para>
 		/// </param>
 		public FeatureTo3DByTime(object InFeatures, object OutFeatureClass, object DateField)
 		{
@@ -40,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Feature To 3D By Time</para>
+		/// <para>Tool Display Name : 依据时间实现要素转 3D</para>
 		/// </summary>
-		public override string DisplayName() => "Feature To 3D By Time";
+		public override string DisplayName() => "依据时间实现要素转 3D";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureTo3DByTime</para>
@@ -76,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The features used to create 3D features.</para>
+		/// <para>用于创建 3D 要素的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -87,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output z-enabled feature class.</para>
+		/// <para>输出启用 z 值的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -95,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Date Field</para>
-		/// <para>A date field from the input that will be used to calculate the extrusion of the feature..</para>
+		/// <para>输入中的日期字段，将用于计算要素的拉伸。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -105,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Time Z Interval and Unit</para>
-		/// <para>The time interval and unit that will be represented by one vertical linear unit in the output feature class.</para>
-		/// <para>For example, if the output feature class has a vertical coordinate system based in meters and this parameter has a value of 1 second, the resulting feature class will have features extruded in which 1 meter of elevation is equal to 1 second of time.</para>
+		/// <para>时间间隔和单位，将由输出要素类中的一个垂直线性单位表示。</para>
+		/// <para>例如，如果输出要素类具有以米为单位的垂直坐标系，并且此参数的值为 1 秒，则生成的要素类将具有经过拉伸的要素，其中 1 米高程等于 1 秒时间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -115,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Base z-value</para>
-		/// <para>The base z-value from which the output feature will start the extrusion.</para>
+		/// <para>输出要素将开始拉伸的基础 z 值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -123,8 +122,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Base Date and Time</para>
-		/// <para>The date and time on which the time extrusion will be based.</para>
-		/// <para>When no value is specified, the minimum date value of the input will be used.</para>
+		/// <para>时间拉伸将基于的日期和时间。</para>
+		/// <para>如果未指定任何值，则将使用输入的最小日期值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]

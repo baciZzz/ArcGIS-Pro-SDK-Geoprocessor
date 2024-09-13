@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Attribute Rules</para>
-	/// <para>Export Attribute Rules</para>
-	/// <para>Exports attribute rules from a dataset to a comma-separated values (.csv) file.</para>
+	/// <para>导出属性规则</para>
+	/// <para>将属性规则从数据集导出到逗号分隔值 (.csv) 文件。</para>
 	/// </summary>
 	public class ExportAttributeRules : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The table or feature class from which the attribute rules will be exported.</para>
+		/// <para>将从中导出属性规则的表或要素类。</para>
 		/// </param>
 		/// <param name="OutCsvFile">
 		/// <para>Output File</para>
-		/// <para>The folder location and name of the .csv file to be created.</para>
+		/// <para>待创建的 .csv 文件的文件夹位置和名称。</para>
 		/// </param>
 		public ExportAttributeRules(object InTable, object OutCsvFile)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Export Attribute Rules</para>
+		/// <para>Tool Display Name : 导出属性规则</para>
 		/// </summary>
-		public override string DisplayName() => "Export Attribute Rules";
+		public override string DisplayName() => "导出属性规则";
 
 		/// <summary>
 		/// <para>Tool Name : ExportAttributeRules</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The table or feature class from which the attribute rules will be exported.</para>
+		/// <para>将从中导出属性规则的表或要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>The folder location and name of the .csv file to be created.</para>
+		/// <para>待创建的 .csv 文件的文件夹位置和名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Find Space Time Matches</para>
-	/// <para>Find Space Time Matches</para>
-	/// <para>Identifies matches between two feature classes based on proximity, time extent, or both.</para>
+	/// <para>查找时空匹配</para>
+	/// <para>可基于邻域、时间范围或两者来标识两个要素类之间的匹配。</para>
 	/// </summary>
 	public class FindSpaceTimeMatches : AbstractGPProcess
 	{
@@ -21,26 +21,26 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		/// <param name="InPrimaryFeatures">
 		/// <para>Input Primary Features</para>
-		/// <para>The primary input feature class.</para>
+		/// <para>主要输入要素类。</para>
 		/// </param>
 		/// <param name="InComparisonFeatures">
 		/// <para>Input Comparison Features</para>
-		/// <para>The comparison input feature class.</para>
+		/// <para>比较输入要素类。</para>
 		/// </param>
 		/// <param name="OutPrimaryFeatureClass">
 		/// <para>Output Matched Primary Features</para>
-		/// <para>The output feature class containing features from the input primary features where output match types occurred.</para>
+		/// <para>输出要素类，其中包含出现输出匹配类型的输入主要要素中的要素。</para>
 		/// </param>
 		/// <param name="OutComparisonFeatureClass">
 		/// <para>Output Matched Comparison Features</para>
-		/// <para>The output feature class containing features from input comparison features where output match types occurred.</para>
+		/// <para>输出要素类，其中包含出现输出匹配类型的输入比较要素中的要素。</para>
 		/// </param>
 		/// <param name="MatchTypes">
 		/// <para>Output Match Types</para>
-		/// <para>Specifies the types of matches to compare.</para>
-		/// <para>Space and time—Matches based on both the time extent and proximity defined in the temporal and spatial search radius will be compared, for example, 25 meters and 10 minutes.</para>
-		/// <para>Space only—Matches based only on the proximity defined in the spatial search radius will be compared, for example, 25 meters.</para>
-		/// <para>Time only—Matches based only on the time extent defined in the temporal search radius will be compared, for example, 10 minutes.</para>
+		/// <para>用于指定要比较的匹配类型。</para>
+		/// <para>空间和时间—将对基于时间和空间搜索半径中定义的时间范围和邻域的匹配进行比较，例如 25 米和 10 分钟。</para>
+		/// <para>仅空间—将对仅基于空间搜索半径中定义的邻域的匹配进行比较，例如 25 米。</para>
+		/// <para>仅时间—将对仅基于时间搜索半径中定义的时间范围的匹配进行比较，例如 10 分钟。</para>
 		/// <para><see cref="MatchTypesEnum"/></para>
 		/// </param>
 		public FindSpaceTimeMatches(object InPrimaryFeatures, object InComparisonFeatures, object OutPrimaryFeatureClass, object OutComparisonFeatureClass, object MatchTypes)
@@ -53,9 +53,9 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Find Space Time Matches</para>
+		/// <para>Tool Display Name : 查找时空匹配</para>
 		/// </summary>
-		public override string DisplayName() => "Find Space Time Matches";
+		public override string DisplayName() => "查找时空匹配";
 
 		/// <summary>
 		/// <para>Tool Name : FindSpaceTimeMatches</para>
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Input Primary Features</para>
-		/// <para>The primary input feature class.</para>
+		/// <para>主要输入要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Input Comparison Features</para>
-		/// <para>The comparison input feature class.</para>
+		/// <para>比较输入要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Output Matched Primary Features</para>
-		/// <para>The output feature class containing features from the input primary features where output match types occurred.</para>
+		/// <para>输出要素类，其中包含出现输出匹配类型的输入主要要素中的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Output Matched Comparison Features</para>
-		/// <para>The output feature class containing features from input comparison features where output match types occurred.</para>
+		/// <para>输出要素类，其中包含出现输出匹配类型的输入比较要素中的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -121,10 +121,10 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Output Match Types</para>
-		/// <para>Specifies the types of matches to compare.</para>
-		/// <para>Space and time—Matches based on both the time extent and proximity defined in the temporal and spatial search radius will be compared, for example, 25 meters and 10 minutes.</para>
-		/// <para>Space only—Matches based only on the proximity defined in the spatial search radius will be compared, for example, 25 meters.</para>
-		/// <para>Time only—Matches based only on the time extent defined in the temporal search radius will be compared, for example, 10 minutes.</para>
+		/// <para>用于指定要比较的匹配类型。</para>
+		/// <para>空间和时间—将对基于时间和空间搜索半径中定义的时间范围和邻域的匹配进行比较，例如 25 米和 10 分钟。</para>
+		/// <para>仅空间—将对仅基于空间搜索半径中定义的邻域的匹配进行比较，例如 25 米。</para>
+		/// <para>仅时间—将对仅基于时间搜索半径中定义的时间范围的匹配进行比较，例如 10 分钟。</para>
 		/// <para><see cref="MatchTypesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Search Radius</para>
-		/// <para>The radius used to search between input feature classes.</para>
+		/// <para>用于在输入要素类之间进行搜索的半径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Temporal Search Radius</para>
-		/// <para>The time extent used to search between input feature classes.</para>
+		/// <para>用于在输入要素类之间进行搜索的时间范围。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Primary Features Start Date Field</para>
-		/// <para>The primary start date and time field of the input primary features.</para>
+		/// <para>输入主要要素的主要起始日期和时间字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -162,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Comparison Features Start Date Field</para>
-		/// <para>The comparison start date and time field of the input comparison features.</para>
+		/// <para>输入比较要素的比较起始日期和时间字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -172,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Primary Features End Date Field</para>
-		/// <para>The primary end date and time field of the input primary features. When specified, the time range defined by the start and end date and the temporal search radius will be used to search comparison features. The temporal search radius can be set to 0 to compare only the time defined by the feature's time range.</para>
+		/// <para>输入主要要素的主要结束日期和时间字段。如果指定，则将使用起始及结束日期和时间搜索半径定义的时间范围来搜索比较要素。可以将时间搜索半径设置为 0，以仅比较由要素的时间范围定义的时间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -182,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Comparison Features End Date Field</para>
-		/// <para>The comparison end date and time field of the input comparison features. When specified, the time range defined by the start and end date and the temporal search radius will be used to evaluate relationships with primary features. The temporal search radius can be set to 0 to compare only the time defined by the feature's time range.</para>
+		/// <para>输入比较要素的比较结束日期和时间字段。如果指定，则将使用起始及结束日期和时间搜索半径定义的时间范围来评估与主要要素的关系。可以将时间搜索半径设置为 0，以仅比较由要素的时间范围定义的时间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -207,24 +207,24 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		public enum MatchTypesEnum 
 		{
 			/// <summary>
-			/// <para>Space and time—Matches based on both the time extent and proximity defined in the temporal and spatial search radius will be compared, for example, 25 meters and 10 minutes.</para>
+			/// <para>空间和时间—将对基于时间和空间搜索半径中定义的时间范围和邻域的匹配进行比较，例如 25 米和 10 分钟。</para>
 			/// </summary>
 			[GPValue("SPACE_AND_TIME")]
-			[Description("Space and time")]
+			[Description("空间和时间")]
 			Space_and_time,
 
 			/// <summary>
-			/// <para>Space only—Matches based only on the proximity defined in the spatial search radius will be compared, for example, 25 meters.</para>
+			/// <para>仅空间—将对仅基于空间搜索半径中定义的邻域的匹配进行比较，例如 25 米。</para>
 			/// </summary>
 			[GPValue("SPACE_ONLY")]
-			[Description("Space only")]
+			[Description("仅空间")]
 			Space_only,
 
 			/// <summary>
-			/// <para>Time only—Matches based only on the time extent defined in the temporal search radius will be compared, for example, 10 minutes.</para>
+			/// <para>仅时间—将对仅基于时间搜索半径中定义的时间范围的匹配进行比较，例如 10 分钟。</para>
 			/// </summary>
 			[GPValue("TIME_ONLY")]
-			[Description("Time only")]
+			[Description("仅时间")]
 			Time_only,
 
 		}

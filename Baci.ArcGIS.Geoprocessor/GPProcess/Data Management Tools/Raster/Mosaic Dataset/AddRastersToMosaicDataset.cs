@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Rasters To Mosaic Dataset</para>
-	/// <para>Add Rasters To Mosaic Dataset</para>
-	/// <para>Adds raster datasets to a mosaic dataset from many sources, including a file, folder, table, or web service.</para>
+	/// <para>添加栅格至镶嵌数据集</para>
+	/// <para>将文件、文件夹、表或 Web 服务等多种来源的栅格数据集添加到镶嵌数据集。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,25 +23,25 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>The path and name of the mosaic dataset to which the raster data will be added.</para>
+		/// <para>要添加栅格数据的镶嵌数据集的路径和名称。</para>
 		/// </param>
 		/// <param name="RasterType">
 		/// <para>Raster Type</para>
-		/// <para>The type of raster that will be added. The raster type is specific to imagery products. It identifies metadata, such as georeferencing, acquisition date, and sensor type, along with a raster format.</para>
-		/// <para>If you are using a LAS, LAS Dataset, or Terrain raster type, a cell size must be specified on the Raster Type properties page.</para>
-		/// <para>The Processing Templates drop-down list contains functions that will be applied to items that are added to the mosaic dataset and how, or in what order, they will be applied. You can use a single function, such as the Stretch function, or you can chain multiple functions together to create a more advanced product. Most raster types have several preexisting functions associated with them. Use this drop-down list to edit existing functions or add new functions to items that will be added to the mosaic dataset.</para>
-		/// <para>To edit a template, select it in the Processing Templates drop-down list, and click Edit . Once you finish editing the template, click Save to update the template, or click Save As to save it as a new item in the drop-down list. To export a template to disk for use with other mosaic datasets, click the Export button .</para>
-		/// <para>To create a template, click Create New Template in the Processing Templates drop-down list. For more information, see Raster function template.</para>
-		/// <para>To import a function chain from disk or from the Raster Function pane, click Import in the Processing Templates drop-down list. If the template was created independently of the raster type template editor, you need to change the name of the primary input raster variable to Dataset. To do this, double-click the first function in the chain and click the Variables tab. Change the value in the Name field of the raster parameter to Dataset.</para>
+		/// <para>将添加的栅格类型。 栅格类型特定于影像产品。 它与栅格格式一起标识元数据信息，例如地理配准、采集日期和传感器类型。</para>
+		/// <para>如果要使用 LAS、LAS 数据集或 Terrain 栅格类型，则必须在栅格类型属性页面上指定像元大小。</para>
+		/// <para>处理模板下拉列表中包含将应用于添加到镶嵌数据集的各项目的函数，以及应用函数的方式或顺序。 可以使用单个函数（例如拉伸函数），也可以将多个函数链接到一起以创建更高级的产品。 大多数镶嵌类型具有多个预先存在的关联函数。 可以使用此下拉列表来编辑现有函数，或将新函数添加到要添加到镶嵌数据集的项目。</para>
+		/// <para>要编辑模板，请在处理模板下拉列表中选择模板，然后单击编辑 。 完成模板编辑后，单击保存 更新模板，或单击另存为 将其另存为下拉列表中的新项目。 要将模板导出到磁盘，以与其他镶嵌数据集配合使用，请单击导出按钮 。</para>
+		/// <para>要创建模板，请在处理模板下拉列表中单击创建新模板 。 有关详细信息，请参阅栅格函数。</para>
+		/// <para>要从磁盘或栅格函数窗格导入函数链，请在处理模板下拉列表中单击导入 。 如果未使用栅格类型模板编辑器创建模板，则需要将主要输入栅格变量的名称更改为 Dataset。 为此，请双击链中的第一个函数，然后单击变量选项卡。 将栅格参数的 Name 字段中的值更改为 Dataset。</para>
 		/// </param>
 		/// <param name="InputPath">
 		/// <para>Input Data</para>
-		/// <para>Specifies the path and name of the input file, folder, raster dataset, mosaic dataset, table, or service.</para>
-		/// <para>Not all input options will be available. The selected raster type determines the available options.</para>
-		/// <para>Dataset—An ArcGIS geographic dataset, such as a raster or mosaic dataset in a geodatabase or table, will be used as input.</para>
-		/// <para>Workspace—A folder containing multiple raster datasets will be used as input. The folder can contain subfolders.This option is affected by the Include Sub Folders and Input Data Filter parameters.</para>
-		/// <para>File—One or more raster datasets stored in a folder on disk, an image service definition file (.ISDef), or a raster process definition file (.RPDef) will be used as input. Files that do not correspond to the raster type being added will be ignored. Do not use this option with file formats that are raster datasets, such as TIFF or MrSID files; use the Dataset input type instead.</para>
-		/// <para>Service—A WCS, a map, an image service, or a web service layer file will be used as input.</para>
+		/// <para>指定输入文件、文件夹、栅格数据集、镶嵌数据集、表或服务的路径和名称。</para>
+		/// <para>并非所有输入选项都可用。 所选栅格类型将确定可用选项。</para>
+		/// <para>数据集—ArcGIS 地理数据集（例如地理数据库或表中的栅格或镶嵌数据集）将被用作输入。</para>
+		/// <para>工作空间—包含多个栅格数据集的文件夹将被用作输入。 该文件夹可包含子文件夹。此选项受包括子文件夹和输入数据过滤器参数的影响。</para>
+		/// <para>文件—一个或多个存储于磁盘的文件夹、影像服务定义文件 (.ISDef) 或栅格处理定义文件 (.RPDef) 中的栅格数据集将被用作输入。将忽略与添加的栅格类型不对应的文件。此选项不得与栅格数据集文件格式（如 TIFF 或 MrSID 文件）配合使用，请改为使用数据集输入类型。</para>
+		/// <para>服务—WCS、地图、影像服务或 web 服务图层文件将被用作输入。</para>
 		/// </param>
 		public AddRastersToMosaicDataset(object InMosaicDataset, object RasterType, object InputPath)
 		{
@@ -51,9 +51,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Rasters To Mosaic Dataset</para>
+		/// <para>Tool Display Name : 添加栅格至镶嵌数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Add Rasters To Mosaic Dataset";
+		public override string DisplayName() => "添加栅格至镶嵌数据集";
 
 		/// <summary>
 		/// <para>Tool Name : AddRastersToMosaicDataset</para>
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>The path and name of the mosaic dataset to which the raster data will be added.</para>
+		/// <para>要添加栅格数据的镶嵌数据集的路径和名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -95,12 +95,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Raster Type</para>
-		/// <para>The type of raster that will be added. The raster type is specific to imagery products. It identifies metadata, such as georeferencing, acquisition date, and sensor type, along with a raster format.</para>
-		/// <para>If you are using a LAS, LAS Dataset, or Terrain raster type, a cell size must be specified on the Raster Type properties page.</para>
-		/// <para>The Processing Templates drop-down list contains functions that will be applied to items that are added to the mosaic dataset and how, or in what order, they will be applied. You can use a single function, such as the Stretch function, or you can chain multiple functions together to create a more advanced product. Most raster types have several preexisting functions associated with them. Use this drop-down list to edit existing functions or add new functions to items that will be added to the mosaic dataset.</para>
-		/// <para>To edit a template, select it in the Processing Templates drop-down list, and click Edit . Once you finish editing the template, click Save to update the template, or click Save As to save it as a new item in the drop-down list. To export a template to disk for use with other mosaic datasets, click the Export button .</para>
-		/// <para>To create a template, click Create New Template in the Processing Templates drop-down list. For more information, see Raster function template.</para>
-		/// <para>To import a function chain from disk or from the Raster Function pane, click Import in the Processing Templates drop-down list. If the template was created independently of the raster type template editor, you need to change the name of the primary input raster variable to Dataset. To do this, double-click the first function in the chain and click the Variables tab. Change the value in the Name field of the raster parameter to Dataset.</para>
+		/// <para>将添加的栅格类型。 栅格类型特定于影像产品。 它与栅格格式一起标识元数据信息，例如地理配准、采集日期和传感器类型。</para>
+		/// <para>如果要使用 LAS、LAS 数据集或 Terrain 栅格类型，则必须在栅格类型属性页面上指定像元大小。</para>
+		/// <para>处理模板下拉列表中包含将应用于添加到镶嵌数据集的各项目的函数，以及应用函数的方式或顺序。 可以使用单个函数（例如拉伸函数），也可以将多个函数链接到一起以创建更高级的产品。 大多数镶嵌类型具有多个预先存在的关联函数。 可以使用此下拉列表来编辑现有函数，或将新函数添加到要添加到镶嵌数据集的项目。</para>
+		/// <para>要编辑模板，请在处理模板下拉列表中选择模板，然后单击编辑 。 完成模板编辑后，单击保存 更新模板，或单击另存为 将其另存为下拉列表中的新项目。 要将模板导出到磁盘，以与其他镶嵌数据集配合使用，请单击导出按钮 。</para>
+		/// <para>要创建模板，请在处理模板下拉列表中单击创建新模板 。 有关详细信息，请参阅栅格函数。</para>
+		/// <para>要从磁盘或栅格函数窗格导入函数链，请在处理模板下拉列表中单击导入 。 如果未使用栅格类型模板编辑器创建模板，则需要将主要输入栅格变量的名称更改为 Dataset。 为此，请双击链中的第一个函数，然后单击变量选项卡。 将栅格参数的 Name 字段中的值更改为 Dataset。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterBuilder()]
@@ -108,12 +108,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Data</para>
-		/// <para>Specifies the path and name of the input file, folder, raster dataset, mosaic dataset, table, or service.</para>
-		/// <para>Not all input options will be available. The selected raster type determines the available options.</para>
-		/// <para>Dataset—An ArcGIS geographic dataset, such as a raster or mosaic dataset in a geodatabase or table, will be used as input.</para>
-		/// <para>Workspace—A folder containing multiple raster datasets will be used as input. The folder can contain subfolders.This option is affected by the Include Sub Folders and Input Data Filter parameters.</para>
-		/// <para>File—One or more raster datasets stored in a folder on disk, an image service definition file (.ISDef), or a raster process definition file (.RPDef) will be used as input. Files that do not correspond to the raster type being added will be ignored. Do not use this option with file formats that are raster datasets, such as TIFF or MrSID files; use the Dataset input type instead.</para>
-		/// <para>Service—A WCS, a map, an image service, or a web service layer file will be used as input.</para>
+		/// <para>指定输入文件、文件夹、栅格数据集、镶嵌数据集、表或服务的路径和名称。</para>
+		/// <para>并非所有输入选项都可用。 所选栅格类型将确定可用选项。</para>
+		/// <para>数据集—ArcGIS 地理数据集（例如地理数据库或表中的栅格或镶嵌数据集）将被用作输入。</para>
+		/// <para>工作空间—包含多个栅格数据集的文件夹将被用作输入。 该文件夹可包含子文件夹。此选项受包括子文件夹和输入数据过滤器参数的影响。</para>
+		/// <para>文件—一个或多个存储于磁盘的文件夹、影像服务定义文件 (.ISDef) 或栅格处理定义文件 (.RPDef) 中的栅格数据集将被用作输入。将忽略与添加的栅格类型不对应的文件。此选项不得与栅格数据集文件格式（如 TIFF 或 MrSID 文件）配合使用，请改为使用数据集输入类型。</para>
+		/// <para>服务—WCS、地图、影像服务或 web 服务图层文件将被用作输入。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -121,9 +121,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Update Cell Size Ranges</para>
-		/// <para>Specifies whether the cell size ranges of each raster in the mosaic dataset will be calculated. These values are written to the attribute table in the minPS and maxPS fields.</para>
-		/// <para>Checked—The cell size ranges will be calculated for all the rasters in the mosaic dataset. This is the default.</para>
-		/// <para>Unchecked—The cell size ranges will not be calculated.</para>
+		/// <para>指定是否计算镶嵌数据集中每个栅格的像元大小范围。 这些值将写入 minPS 和 maxPS 字段中的属性表。</para>
+		/// <para>选中 - 计算镶嵌数据集中所有栅格的像元大小范围。 这是默认设置。</para>
+		/// <para>取消选中 - 不会计算像元大小范围。</para>
 		/// <para><see cref="UpdateCellsizeRangesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -134,9 +134,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Update Boundary</para>
-		/// <para>Specifies whether the boundary polygon of a mosaic dataset will be generated or updated. By default, the boundary merges all the footprint polygons to create a single boundary representing the extent of the valid pixels.</para>
-		/// <para>Checked—The boundary will be generated or updated. This is the default.</para>
-		/// <para>Unchecked—The boundary will not be generated or updated.</para>
+		/// <para>指定是否生成或更新镶嵌数据集的边界面。 默认情况下，边界会合并所有轮廓线面以创建一个表示有效像素范围的边界。</para>
+		/// <para>选中 - 生成或更新边界。 这是默认设置。</para>
+		/// <para>未选中 - 不会生成或更新边界。</para>
 		/// <para><see cref="UpdateBoundaryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -147,9 +147,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Update Overviews</para>
-		/// <para>Specifies whether overviews for a mosaic dataset will be defined and generated.</para>
-		/// <para>Checked—Overviews will be defined and generated.</para>
-		/// <para>Unchecked—Overviews will not be defined or generated. This is the default.</para>
+		/// <para>指定是否定义和生成镶嵌数据集的概视图。</para>
+		/// <para>选中 - 将定义和生成概览。</para>
+		/// <para>取消选中 - 将不会定义或生成概视图。 这是默认设置。</para>
 		/// <para><see cref="UpdateOverviewsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -160,8 +160,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Levels</para>
-		/// <para>The maximum number of pyramid levels that will be used in the mosaic dataset. For example, a value of 2 will use only the first two pyramid levels from the source raster. Leaving this parameter blank or typing a value of -1 will build pyramids for all levels.</para>
-		/// <para>This value can affect the display and number of overviews that will be generated.</para>
+		/// <para>将在镶嵌数据集中使用的最大金字塔等级数。 例如，值 2 表示仅使用源栅格的前两个金字塔等级。 将此参数留空或输入值 -1 将会构建所有等级的金字塔。</para>
+		/// <para>该值可影响显示及将要生成的概视图数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Cell Size</para>
-		/// <para>The maximum pyramid cell size that will be used in the mosaic dataset.</para>
+		/// <para>将在镶嵌数据集中使用的最大金字塔像元大小。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -179,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Minimum Rows or Columns</para>
-		/// <para>The minimum dimensions of a raster pyramid that will be used in the mosaic dataset.</para>
+		/// <para>将在镶嵌数据集中使用的栅格金字塔的最小尺寸。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -188,8 +188,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Coordinate System for Input Data</para>
-		/// <para>The spatial reference system of the input data.</para>
-		/// <para>This should be specified if the data does not have a coordinate system; otherwise, the coordinate system of the mosaic dataset will be used. This can also be used to override the coordinate system of the input data.</para>
+		/// <para>输入数据的空间参考系统。</para>
+		/// <para>如果数据没有坐标系，则应指定此参数；否则，将使用镶嵌数据集的坐标系。 它还可用于覆盖输入数据的坐标系。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
@@ -198,19 +198,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Data Filter</para>
-		/// <para>A filter for the data being added to the mosaic dataset. You can use SQL expressions to create the data filter. The wildcards for the filter work on the full path to the input data.</para>
-		/// <para>The following SQL statement will select the rows in which the following object IDs match:</para>
+		/// <para>将被添加到镶嵌数据集的数据的过滤器。 可以使用 SQL 表达式来创建数据过滤器。 过滤器的通配符适用于输入数据的完整路径。</para>
+		/// <para>以下 SQL 语句将用于选择与以下对象 ID 相匹配的行：</para>
 		/// <para>OBJECTID IN (19745, 19680, 19681, 19744, 5932, 5931, 5889, 5890, 14551, 14552, 14590, 14591)</para>
-		/// <para>To add only a TIFF image, add an asterisk before a file extension.</para>
+		/// <para>要仅添加一个 TIFF 图像，可以在文件扩展名前添加一个星号。</para>
 		/// <para>*.TIF</para>
-		/// <para>To add an image with the word sensor in the file path or file name, add an asterisk before and after the word sensor.</para>
+		/// <para>要添加文件路径或文件名中包含单词 sensor 的图像，则需要在单词 sensor 前后都填加一个星号。</para>
 		/// <para>*sensor2009*</para>
-		/// <para>You can also use PERL syntax to create a data filter.</para>
+		/// <para>您还可以使用 PERL 语法来创建数据过滤器。</para>
 		/// <para>REGEX:.*1923.*|.*1922.*</para>
 		/// <para>REGEX:.*192[34567].*|.*194.*|.*195.*</para>
-		/// <para>The following PERL syntax with multiple lexical groupings as part of the expression is not supported:</para>
+		/// <para>不支持以下将多个词汇分组作为表达式一部分的 PERL 语法：</para>
 		/// <para>REGEX:.* map_mean_.*(?:(?:[a-z0-9]*)_pptPct_(?:[0-9]|1[0-2]*?)_2[0-9]_*\w*).img</para>
-		/// <para>Alternatively, you can use the following syntax:</para>
+		/// <para>或者也可以使用以下语法：</para>
 		/// <para>REGEX:.*map_mean_*[a-z0-9]*_pptPct_([0-9]|1[0-2])_2[0-9]*_\w*.img</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -220,9 +220,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Include Sub Folders</para>
-		/// <para>Specifies whether subfolders will be recursively explored.</para>
-		/// <para>Checked—All subfolders will be explored for data. This is the default.</para>
-		/// <para>Unchecked—Only the top-level folder will be explored for data.</para>
+		/// <para>指定是否递归搜索子文件夹。</para>
+		/// <para>选中 - 在所有子文件夹中搜索数据。 这是默认设置。</para>
+		/// <para>取消选中 - 仅浏览顶级文件夹以查找数据。</para>
 		/// <para><see cref="SubFolderEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -233,10 +233,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Add New Datasets Only</para>
-		/// <para>Specifies how duplicate rasters will be handled. A check will be performed to determine whether each raster has already been added, using the original path and file name. Choose the action to be performed when a duplicate path and file name are found.</para>
-		/// <para>Allow duplicates—All rasters will be added even if they already exist in the mosaic dataset. This is the default.</para>
-		/// <para>Exclude duplicates—Duplicate rasters will not be added.</para>
-		/// <para>Overwrite duplicates—Duplicate rasters will overwrite existing rasters.</para>
+		/// <para>指定如何处理重复栅格。 将使用原始路径和文件名来执行检查，以确定是否已添加各个栅格。 选择在发现重复路径和文件名后执行的操作。</para>
+		/// <para>允许副本—将添加所有栅格，即使它们已经存在于镶嵌数据集中。 这是默认设置。</para>
+		/// <para>排除副本—不会添加重复栅格。</para>
+		/// <para>覆盖副本—重复栅格将覆盖现有栅格。</para>
 		/// <para><see cref="DuplicateItemsActionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -247,9 +247,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Build Raster Pyramids</para>
-		/// <para>Specifies whether pyramids will be built for each source raster.</para>
-		/// <para>Unchecked—Pyramids will not be built. This is the default.</para>
-		/// <para>Checked—Pyramids will be built.</para>
+		/// <para>指定是否为每个源栅格构建金字塔。</para>
+		/// <para>未选中 - 不构建金字塔。 这是默认设置。</para>
+		/// <para>选中 - 将构建金字塔。</para>
 		/// <para><see cref="BuildPyramidsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -260,9 +260,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Calculate Statistics</para>
-		/// <para>Specifies whether statistics will be calculated for each source raster.</para>
-		/// <para>Unchecked—Statistics will not be calculated. This is the default.</para>
-		/// <para>Checked—Statistics will be calculated.</para>
+		/// <para>指定是否为每个源栅格计算统计数据。</para>
+		/// <para>未选中 - 不计算统计数据。 这是默认设置。</para>
+		/// <para>选中 - 计算统计数据。</para>
 		/// <para><see cref="CalculateStatisticsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -273,9 +273,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Build Thumbnails</para>
-		/// <para>Specifies whether thumbnails will be built for each source raster.</para>
-		/// <para>Unchecked—Thumbnails will not be built. This is the default.</para>
-		/// <para>Checked—Thumbnails will be built.</para>
+		/// <para>指定是否为每个源栅格构建缩略图。</para>
+		/// <para>未选中 - 不构建缩略图。 这是默认设置。</para>
+		/// <para>选中 - 构建缩略图。</para>
 		/// <para><see cref="BuildThumbnailsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -286,7 +286,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Operation Description</para>
-		/// <para>The description used to represent the operation of adding raster data. It will be added to the raster type table, which can be used as part of a search or as a reference at another time.</para>
+		/// <para>用于介绍栅格数据添加操作的描述。 它将添加到可用作搜索的一部分或在其他时间作为引用的栅格类型表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -295,9 +295,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Force this Coordinate System for Input Data</para>
-		/// <para>Specifies whether the Coordinate System for Input Data parameter value will be used for all the rasters when loading data into the mosaic dataset. This option does not reproject the data; it uses the coordinate system defined in the tool to construct items in the mosaic dataset. The extent of the image will be used, but the projection will be overwritten.</para>
-		/// <para>Unchecked—The coordinate system of each raster data will be used when loading data. This is the default. If unchecked and the input image does not have a coordinate system (that is, it&apos;s unknown), the mosaic dataset coordinate system will be used in constructing mosaic dataset items. If the image has a coordinate system, that coordinate system will be used.</para>
-		/// <para>Checked—The coordinate system specified in the Coordinate System for Input Data parameter will be used for each raster dataset when loading data.</para>
+		/// <para>将数据加载到镶嵌数据集中时，指定是否将输入数据的坐标系参数值用于所有栅格。 此选项不会重新投影数据；而是使用在工具中定义的坐标系构建镶嵌数据集中的项目。 将会使用影像的范围，但会覆盖投影。</para>
+		/// <para>未选中 - 加载数据时，将使用各个栅格数据的坐标系。 这是默认设置。 如果未选中此选项，并且输入图像不具备坐标系（即坐标系未知），则会在构建镶嵌数据集项目时使用镶嵌数据集坐标系。 如果图像具备坐标系，则将使用此坐标系。</para>
+		/// <para>选中 - 加载数据时，输入数据的坐标系参数中指定的坐标系将用于各个栅格数据集。</para>
 		/// <para><see cref="ForceSpatialReferenceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -308,9 +308,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Estimate Mosaic Dataset Statistics</para>
-		/// <para>Specifies whether statistics will be estimated on the mosaic dataset for faster rendering and processing at the mosaic dataset level.</para>
-		/// <para>Unchecked—Statistics will not be estimated. Statistics generated from each item in the mosaic dataset will be used for display and processing. This is the default.</para>
-		/// <para>Checked—Statistics will be estimated at the mosaic dataset level. This will use the distribution of pixels to display the mosaic dataset rather than the distribution of the source item in the mosaic dataset.</para>
+		/// <para>指定是否在镶嵌数据集级别对镶嵌数据集估算统计数据，以便更快地进行渲染和处理。</para>
+		/// <para>未选中 - 不估算统计数据。 将使用每个项目在镶嵌数据集中生成的统计数据进行显示和处理。 这是默认设置。</para>
+		/// <para>选中 - 将在镶嵌数据集级别估算统计数据。 将会使用用于显示镶嵌数据集的像素分布，而非镶嵌数据集中的源项目分布。</para>
 		/// <para><see cref="EstimateStatisticsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -321,7 +321,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Auxiliary Inputs</para>
-		/// <para>The raster type settings that will be defined on the Raster Type Properties page. The settings in this parameter will override the settings defined on the Raster Type Properties page.</para>
+		/// <para>栅格类型设置，可在栅格类型属性页面中进行定义。 此参数中的设置将覆盖在栅格类型属性页面中定义的设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -330,9 +330,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Enable Pixel Cache</para>
-		/// <para>Specifies whether the pixel cache will be generated for faster display and processing of the mosaic dataset.</para>
-		/// <para>Unchecked—The pixel cache will not be generated. This is the default.</para>
-		/// <para>Checked—The pixel cache will be generated.</para>
+		/// <para>指定是否生成像素缓存，以便更快地显示和处理镶嵌数据集。</para>
+		/// <para>未选中 - 不生成像素缓存。 这是默认设置。</para>
+		/// <para>选中 - 生成像素缓存。</para>
 		/// <para><see cref="EnablePixelCacheEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -343,8 +343,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pixel Cache Location</para>
-		/// <para>The location of the pixel cache. If no location is defined, the cache is written to C:\Users\&lt;Username&gt;\AppData\Local\ESRI\rasterproxies\.</para>
-		/// <para>Once the location is defined, you do not need to redefine the path when adding new rasters to the mosaic dataset. You only need to check the Enable Pixel Cache parameter (enable_pixel_cache = &quot;USE_PIXEL_CACHE&quot; in Python) when adding the new data.</para>
+		/// <para>像素缓存的位置。 如果未定义位置，则缓存将写入 C:\Users\&lt;Username&gt;\AppData\Local\ESRI\rasterproxies\。</para>
+		/// <para>如果已定义位置，则向镶嵌数据集添加新栅格时无需重新定义路径。 您只需在添加新数据时选中启用像素缓存参数（Python 中的 enable_pixel_cache = &quot;USE_PIXEL_CACHE&quot;）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -375,14 +375,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum UpdateCellsizeRangesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The cell size ranges will be calculated for all the rasters in the mosaic dataset. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_CELL_SIZES")]
 			UPDATE_CELL_SIZES,
 
 			/// <summary>
-			/// <para>Unchecked—The cell size ranges will not be calculated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CELL_SIZES")]
@@ -396,14 +396,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum UpdateBoundaryEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The boundary will be generated or updated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_BOUNDARY")]
 			UPDATE_BOUNDARY,
 
 			/// <summary>
-			/// <para>Unchecked—The boundary will not be generated or updated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_BOUNDARY")]
@@ -417,14 +417,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum UpdateOverviewsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Overviews will be defined and generated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_OVERVIEWS")]
 			UPDATE_OVERVIEWS,
 
 			/// <summary>
-			/// <para>Unchecked—Overviews will not be defined or generated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_OVERVIEWS")]
@@ -438,14 +438,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SubFolderEnum 
 		{
 			/// <summary>
-			/// <para>Checked—All subfolders will be explored for data. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SUBFOLDERS")]
 			SUBFOLDERS,
 
 			/// <summary>
-			/// <para>Unchecked—Only the top-level folder will be explored for data.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SUBFOLDERS")]
@@ -459,24 +459,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DuplicateItemsActionEnum 
 		{
 			/// <summary>
-			/// <para>Allow duplicates—All rasters will be added even if they already exist in the mosaic dataset. This is the default.</para>
+			/// <para>允许副本—将添加所有栅格，即使它们已经存在于镶嵌数据集中。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("ALLOW_DUPLICATES")]
-			[Description("Allow duplicates")]
+			[Description("允许副本")]
 			Allow_duplicates,
 
 			/// <summary>
-			/// <para>Exclude duplicates—Duplicate rasters will not be added.</para>
+			/// <para>排除副本—不会添加重复栅格。</para>
 			/// </summary>
 			[GPValue("EXCLUDE_DUPLICATES")]
-			[Description("Exclude duplicates")]
+			[Description("排除副本")]
 			Exclude_duplicates,
 
 			/// <summary>
-			/// <para>Overwrite duplicates—Duplicate rasters will overwrite existing rasters.</para>
+			/// <para>覆盖副本—重复栅格将覆盖现有栅格。</para>
 			/// </summary>
 			[GPValue("OVERWRITE_DUPLICATES")]
-			[Description("Overwrite duplicates")]
+			[Description("覆盖副本")]
 			Overwrite_duplicates,
 
 		}
@@ -487,14 +487,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum BuildPyramidsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Pyramids will be built.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BUILD_PYRAMIDS")]
 			BUILD_PYRAMIDS,
 
 			/// <summary>
-			/// <para>Unchecked—Pyramids will not be built. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_PYRAMIDS")]
@@ -508,14 +508,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CalculateStatisticsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Statistics will be calculated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CALCULATE_STATISTICS")]
 			CALCULATE_STATISTICS,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics will not be calculated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_STATISTICS")]
@@ -529,14 +529,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum BuildThumbnailsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Thumbnails will be built.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BUILD_THUMBNAILS")]
 			BUILD_THUMBNAILS,
 
 			/// <summary>
-			/// <para>Unchecked—Thumbnails will not be built. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_THUMBNAILS")]
@@ -550,14 +550,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ForceSpatialReferenceEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The coordinate system specified in the Coordinate System for Input Data parameter will be used for each raster dataset when loading data.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FORCE_SPATIAL_REFERENCE")]
 			FORCE_SPATIAL_REFERENCE,
 
 			/// <summary>
-			/// <para>Unchecked—The coordinate system of each raster data will be used when loading data. This is the default. If unchecked and the input image does not have a coordinate system (that is, it&apos;s unknown), the mosaic dataset coordinate system will be used in constructing mosaic dataset items. If the image has a coordinate system, that coordinate system will be used.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_FORCE_SPATIAL_REFERENCE")]
@@ -571,14 +571,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum EstimateStatisticsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Statistics will be estimated at the mosaic dataset level. This will use the distribution of pixels to display the mosaic dataset rather than the distribution of the source item in the mosaic dataset.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ESTIMATE_STATISTICS")]
 			ESTIMATE_STATISTICS,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics will not be estimated. Statistics generated from each item in the mosaic dataset will be used for display and processing. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_STATISTICS")]
@@ -592,14 +592,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum EnablePixelCacheEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The pixel cache will be generated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("USE_PIXEL_CACHE")]
 			USE_PIXEL_CACHE,
 
 			/// <summary>
-			/// <para>Unchecked—The pixel cache will not be generated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_PIXEL_CACHE")]

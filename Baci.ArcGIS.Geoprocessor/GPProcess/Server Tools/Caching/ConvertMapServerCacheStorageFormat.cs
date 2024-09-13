@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Convert Map Server Cache Storage Format</para>
-	/// <para>Convert Map Server Cache Storage Format</para>
-	/// <para>Converts the storage of a web map image layer or of a  map or image service cache between the exploded format and the compactV2  format.</para>
+	/// <para>转换地图服务器缓存存储格式</para>
+	/// <para>在松散格式和 compactV2 格式之间转换 Web 地图影像图层或地图或影像服务缓存的存储。</para>
 	/// </summary>
 	public class ConvertMapServerCacheStorageFormat : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		/// <param name="InputService">
 		/// <para>Input Service</para>
-		/// <para>The map or image service whose cache format will be converted. In ArcGIS Enterprise, this is a string containing the REST endpoint of the web map image layer. In a stand-alone ArcGIS Server, this is a string containing both the server and the service information.</para>
+		/// <para>要转换缓存格式的地图或影像服务。 在 ArcGIS Enterprise 中，是包含 Web 地图图像图层 REST 端点的字符串。 在独立 ArcGIS Server 中，这是包含服务器和服务信息的字符串。</para>
 		/// </param>
 		public ConvertMapServerCacheStorageFormat(object InputService)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Convert Map Server Cache Storage Format</para>
+		/// <para>Tool Display Name : 转换地图服务器缓存存储格式</para>
 		/// </summary>
-		public override string DisplayName() => "Convert Map Server Cache Storage Format";
+		public override string DisplayName() => "转换地图服务器缓存存储格式";
 
 		/// <summary>
 		/// <para>Tool Name : ConvertMapServerCacheStorageFormat</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Input Service</para>
-		/// <para>The map or image service whose cache format will be converted. In ArcGIS Enterprise, this is a string containing the REST endpoint of the web map image layer. In a stand-alone ArcGIS Server, this is a string containing both the server and the service information.</para>
+		/// <para>要转换缓存格式的地图或影像服务。 在 ArcGIS Enterprise 中，是包含 Web 地图图像图层 REST 端点的字符串。 在独立 ArcGIS Server 中，这是包含服务器和服务信息的字符串。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Number of caching service instances</para>
-		/// <para>The total number of instances of the System/CachingTools service that will be dedicated to running this tool. The default value of -1 is used, all the caching tool instances of the ArcGIS Enterprise setup will be used. Use a lower value to use fewer caching tool instances.</para>
-		/// <para>You can increase the Maximum number of instances per machine setting of the System/CachingTools service using the Service Editor window available through an administrative connection to ArcGIS Server. Ensure that the server machines can support the chosen number of instances.</para>
-		/// <para>When connecting to a stand-alone server, the default number of instances is equal to the value of the Maximum number of instances setting of the caching tool service.</para>
+		/// <para>专用于运行该工具的 System/CachingTools 服务实例的总数。 将使用默认值 -1，即使用 ArcGIS Enterprise 设置的所有缓存工具实例。 使用较小的值可以使用较少的缓存工具实例。</para>
+		/// <para>您可以使用服务编辑器窗口增加 System/CachingTools 服务的每台计算机的最大实例数设置，该窗口可通过 ArcGIS Server 的管理连接访问。 确保服务器计算机可以支持所选数量的实例。</para>
+		/// <para>连接到独立服务器时，默认实例数等于缓存工具服务的最大实例数设置的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]

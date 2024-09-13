@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Attribute Index</para>
-	/// <para>Remove Attribute Index</para>
-	/// <para>This tool deletes an attribute index from an existing table, feature class, shapefile, or attributed relationship class.</para>
+	/// <para>移除属性索引</para>
+	/// <para>此工具可从现有的表、要素类、shapefile 或属性关系类中删除属性索引。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The table containing the index or indexes to be deleted. Table can refer to an actual table, a feature class attribute table, or an attributed relationship class.</para>
+		/// <para>包含待删除索引（一个或多个）的表。此处的表可指代实际的表、要素类属性表或属性关系类。</para>
 		/// </param>
 		/// <param name="IndexName">
 		/// <para>Index Name or Indexed Item</para>
-		/// <para>The name of the index or indexes to be deleted.</para>
+		/// <para>待删除索引（一个或多个）的名称。</para>
 		/// </param>
 		public RemoveIndex(object InTable, object IndexName)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Remove Attribute Index</para>
+		/// <para>Tool Display Name : 移除属性索引</para>
 		/// </summary>
-		public override string DisplayName() => "Remove Attribute Index";
+		public override string DisplayName() => "移除属性索引";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveIndex</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The table containing the index or indexes to be deleted. Table can refer to an actual table, a feature class attribute table, or an attributed relationship class.</para>
+		/// <para>包含待删除索引（一个或多个）的表。此处的表可指代实际的表、要素类属性表或属性关系类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Index Name or Indexed Item</para>
-		/// <para>The name of the index or indexes to be deleted.</para>
+		/// <para>待删除索引（一个或多个）的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]

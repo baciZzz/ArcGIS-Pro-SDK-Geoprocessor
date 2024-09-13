@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Build Terrain</para>
-	/// <para>Build Terrain</para>
-	/// <para>Performs tasks required for analyzing and displaying a terrain dataset.</para>
+	/// <para>构建 Terrain</para>
+	/// <para>执行分析和显示 terrain 数据集时所需的任务。</para>
 	/// </summary>
 	public class BuildTerrain : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTerrain">
 		/// <para>Input Terrain</para>
-		/// <para>The terrain dataset to process.</para>
+		/// <para>待处理的 terrain 数据集。</para>
 		/// </param>
 		public BuildTerrain(object InTerrain)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Build Terrain</para>
+		/// <para>Tool Display Name : 构建 Terrain</para>
 		/// </summary>
-		public override string DisplayName() => "Build Terrain";
+		public override string DisplayName() => "构建 Terrain";
 
 		/// <summary>
 		/// <para>Tool Name : BuildTerrain</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Terrain</para>
-		/// <para>The terrain dataset to process.</para>
+		/// <para>待处理的 terrain 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTerrainLayer()]
@@ -73,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Update Extent</para>
-		/// <para>Recalculates the data extent of a window-size-based terrain dataset when the data area has been reduced through editing. It is not needed if the data extent has increased or if the terrain dataset is z-tolerance based. It will scan through all the terrain data to determine the new extent.</para>
-		/// <para>Maintain Extent— The extent of the terrain dataset will not be recalculated. This is the default.</para>
-		/// <para>Update Extent— The extent of the terrain dataset will be recalculated.</para>
+		/// <para>当数据区域在编辑过程中变小时，将重新计算基于窗口大小的 terrain 数据集的数据范围。如果数据范围增加，或者 terrain 数据集是基于 z 容差的，则无需使用此命令。它会扫描所有 terrain 数据以确定新范围。</para>
+		/// <para>保持范围— 将不会重新计算 terrain 数据集的范围。这是默认设置。</para>
+		/// <para>更新范围— 将会重新计算 terrain 数据集的范围。</para>
 		/// <para><see cref="UpdateExtentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -107,17 +107,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum UpdateExtentEnum 
 		{
 			/// <summary>
-			/// <para>Maintain Extent— The extent of the terrain dataset will not be recalculated. This is the default.</para>
+			/// <para>保持范围— 将不会重新计算 terrain 数据集的范围。这是默认设置。</para>
 			/// </summary>
 			[GPValue("NO_UPDATE_EXTENT")]
-			[Description("Maintain Extent")]
+			[Description("保持范围")]
 			Maintain_Extent,
 
 			/// <summary>
-			/// <para>Update Extent</para>
+			/// <para>更新范围— 将会重新计算 terrain 数据集的范围。</para>
 			/// </summary>
 			[GPValue("UPDATE_EXTENT")]
-			[Description("Update Extent")]
+			[Description("更新范围")]
 			Update_Extent,
 
 		}

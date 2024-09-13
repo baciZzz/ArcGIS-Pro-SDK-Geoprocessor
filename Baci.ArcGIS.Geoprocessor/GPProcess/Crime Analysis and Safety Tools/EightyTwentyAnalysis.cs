@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>80-20 Analysis</para>
-	/// <para>80-20 Analysis</para>
-	/// <para>Conducts an 80/20 analysis of features and creates point clusters, lines, or polygons based on the number of associated incidents. The tool calculates a cumulative percentage field to identify the locations where incidents are disproportionately occurring.</para>
+	/// <para>80-20 分析</para>
+	/// <para>执行要素的 80/20 分析，并根据关联事件点的数量创建点聚类、线或面。 此工具将计算一个累积的百分比字段，用于标识事件不成比例发生的位置。</para>
 	/// </summary>
 	public class EightyTwentyAnalysis : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Point Features</para>
-		/// <para>The input point features that will be used to create clusters, lines, or polygons.</para>
+		/// <para>将用于创建聚类、线或面的输入点要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class.</para>
-		/// <para>When the Aggregation Method parameter is set to Cluster, the output will be a point feature class.</para>
-		/// <para>When the Aggregation Method parameter is set to Closest Feature, the geometry type of the output will be the same as the Input Comparison Features parameter value.</para>
+		/// <para>输出要素类。</para>
+		/// <para>当将聚合方法参数设置为聚类时，输出将为点要素类。</para>
+		/// <para>当将聚合方法参数设置为最近要素时，输出的几何类型将与输入比较要素参数值相同。</para>
 		/// </param>
 		public EightyTwentyAnalysis(object InFeatures, object OutFeatureClass)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : 80-20 Analysis</para>
+		/// <para>Tool Display Name : 80-20 分析</para>
 		/// </summary>
-		public override string DisplayName() => "80-20 Analysis";
+		public override string DisplayName() => "80-20 分析";
 
 		/// <summary>
 		/// <para>Tool Name : EightyTwentyAnalysis</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Input Point Features</para>
-		/// <para>The input point features that will be used to create clusters, lines, or polygons.</para>
+		/// <para>将用于创建聚类、线或面的输入点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -83,9 +83,9 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class.</para>
-		/// <para>When the Aggregation Method parameter is set to Cluster, the output will be a point feature class.</para>
-		/// <para>When the Aggregation Method parameter is set to Closest Feature, the geometry type of the output will be the same as the Input Comparison Features parameter value.</para>
+		/// <para>输出要素类。</para>
+		/// <para>当将聚合方法参数设置为聚类时，输出将为点要素类。</para>
+		/// <para>当将聚合方法参数设置为最近要素时，输出的几何类型将与输入比较要素参数值相同。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -93,9 +93,9 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Cluster Tolerance</para>
-		/// <para>The maximum distance separating points at which they will be considered part of the same cluster.</para>
-		/// <para>If no cluster tolerance is specified, the tool will create a cluster where point features overlap.</para>
-		/// <para>This parameter is active when the Aggregation Method parameter is set to Cluster.</para>
+		/// <para>用于分隔点的最大距离，该距离内的点将视为相同聚类的一部分。</para>
+		/// <para>如果未指定聚类容差，则该工具将创建点要素重叠的聚类。</para>
+		/// <para>当将聚合方法参数设置为聚类时，此参数处于活动状态。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Output Fields</para>
-		/// <para>The fields from the input features that will be transferred to the output.</para>
+		/// <para>输入要素的字段将传递到输出中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -114,9 +114,9 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Aggregation Method</para>
-		/// <para>Specifies how the input point features will be aggregated.</para>
-		/// <para>Cluster—The input point features will be clustered. This is the default.</para>
-		/// <para>Closest Feature—The input point features will be aggregated to the closest comparison polygon or line feature.</para>
+		/// <para>指定输入点要素的聚合方式。</para>
+		/// <para>聚类—将聚类输入点要素。 这是默认设置。</para>
+		/// <para>最近的要素—输入点要素将聚合到最近的比较面或线要素。</para>
 		/// <para><see cref="AggregationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -126,8 +126,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Input Comparison Features</para>
-		/// <para>The comparison input polygon or line feature class by which the Input Point Features parameter value is aggregated.</para>
-		/// <para>This parameter is active when the Aggregation Method parameter is set to Closest Feature.</para>
+		/// <para>聚合输入点要素参数值所依据的比较输入面或线要素类。</para>
+		/// <para>当将聚合方法参数设置为最近要素时，此参数处于活动状态。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -153,17 +153,17 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		public enum AggregationMethodEnum 
 		{
 			/// <summary>
-			/// <para>Cluster—The input point features will be clustered. This is the default.</para>
+			/// <para>聚类—将聚类输入点要素。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("POINT_CLUSTER")]
-			[Description("Cluster")]
+			[Description("聚类")]
 			Cluster,
 
 			/// <summary>
-			/// <para>Closest Feature—The input point features will be aggregated to the closest comparison polygon or line feature.</para>
+			/// <para>最近的要素—输入点要素将聚合到最近的比较面或线要素。</para>
 			/// </summary>
 			[GPValue("CLOSEST_FEATURE")]
-			[Description("Closest Feature")]
+			[Description("最近的要素")]
 			Closest_Feature,
 
 		}

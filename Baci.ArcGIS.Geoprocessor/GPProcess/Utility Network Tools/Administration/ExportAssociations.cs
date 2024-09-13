@@ -11,9 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Export Associations</para>
-	/// <para>Export Associations</para>
-	/// <para>Exports associations from a utility network to a comma-separated-values file (.csv). </para>
-	/// <para>This tool can be used in conjunction with the Import Associations tool.</para>
+	/// <para>导出关联</para>
+	/// <para>将公共设施网络中的关联导出至逗号分隔值文件 (.csv)。此工具可以与导入关联工具一起使用。</para>
 	/// </summary>
 	public class ExportAssociations : AbstractGPProcess
 	{
@@ -22,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network containing the associations to export.</para>
+		/// <para>包含要导出关联的公共设施网络。</para>
 		/// </param>
 		/// <param name="AssociationType">
 		/// <para>Association Type</para>
-		/// <para>Specifies the type of association to export.</para>
-		/// <para>All—All association types in the utility network will be exported to a .csv file.</para>
-		/// <para>Junction-junction connectivity—Connectivity associations allowing two junction subtypes to connect via a connectivity association (features are offset geometrically) will be exported to a .csv file.</para>
-		/// <para>Containment—The containment association type will be exported to a .csv file.</para>
-		/// <para>Attachment—The structural attachment association type will be exported to a .csv file.</para>
-		/// <para>Junction-edge connectivity (from side of edge)—The junction-edge (from side of edge) connectivity association type will be exported to a .csv file.</para>
-		/// <para>Junction-edge connectivity (midspan)—The junction-edge (midspan) connectivity association type will be exported to a .csv file.</para>
-		/// <para>Junction-edge connectivity (to side of edge)—The junction-edge (to side of edge) connectivity association type will be exported to a .csv file.</para>
+		/// <para>指定要导出的关联类型。</para>
+		/// <para>所有—公共设施网络中的所有关联类型均导出至 .csv 文件。</para>
+		/// <para>交汇点-交汇点连通性—允许两个交汇点子类型通过连通性关联连接（要素发生几何偏移）的连通性关联将导出至 .csv 文件。</para>
+		/// <para>包含—包含关联类型将导出至 .csv 文件。</para>
+		/// <para>附件—结构附件关联类型将导出至 .csv 文件。</para>
+		/// <para>交汇点-边连通性（自边的一侧）—交汇点-边（自边的一侧）连通性关联类型将导出至 .csv 文件。</para>
+		/// <para>交汇点-边连通规则（中跨）—交汇点-边（中跨）连通性关联类型将导出至 .csv 文件。</para>
+		/// <para>交汇点-边连通性（至边的一侧）—交汇点-边（至边的一侧）连通性关联类型将导出至 .csv 文件。</para>
 		/// <para><see cref="AssociationTypeEnum"/></para>
 		/// </param>
 		/// <param name="OutCsvFile">
 		/// <para>Output  File</para>
-		/// <para>The name and location of the .csv file that will be generated.</para>
+		/// <para>将生成的 .csv 文件的名称和位置。</para>
 		/// </param>
 		public ExportAssociations(object InUtilityNetwork, object AssociationType, object OutCsvFile)
 		{
@@ -48,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Export Associations</para>
+		/// <para>Tool Display Name : 导出关联</para>
 		/// </summary>
-		public override string DisplayName() => "Export Associations";
+		public override string DisplayName() => "导出关联";
 
 		/// <summary>
 		/// <para>Tool Name : ExportAssociations</para>
@@ -84,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network containing the associations to export.</para>
+		/// <para>包含要导出关联的公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -92,14 +91,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Association Type</para>
-		/// <para>Specifies the type of association to export.</para>
-		/// <para>All—All association types in the utility network will be exported to a .csv file.</para>
-		/// <para>Junction-junction connectivity—Connectivity associations allowing two junction subtypes to connect via a connectivity association (features are offset geometrically) will be exported to a .csv file.</para>
-		/// <para>Containment—The containment association type will be exported to a .csv file.</para>
-		/// <para>Attachment—The structural attachment association type will be exported to a .csv file.</para>
-		/// <para>Junction-edge connectivity (from side of edge)—The junction-edge (from side of edge) connectivity association type will be exported to a .csv file.</para>
-		/// <para>Junction-edge connectivity (midspan)—The junction-edge (midspan) connectivity association type will be exported to a .csv file.</para>
-		/// <para>Junction-edge connectivity (to side of edge)—The junction-edge (to side of edge) connectivity association type will be exported to a .csv file.</para>
+		/// <para>指定要导出的关联类型。</para>
+		/// <para>所有—公共设施网络中的所有关联类型均导出至 .csv 文件。</para>
+		/// <para>交汇点-交汇点连通性—允许两个交汇点子类型通过连通性关联连接（要素发生几何偏移）的连通性关联将导出至 .csv 文件。</para>
+		/// <para>包含—包含关联类型将导出至 .csv 文件。</para>
+		/// <para>附件—结构附件关联类型将导出至 .csv 文件。</para>
+		/// <para>交汇点-边连通性（自边的一侧）—交汇点-边（自边的一侧）连通性关联类型将导出至 .csv 文件。</para>
+		/// <para>交汇点-边连通规则（中跨）—交汇点-边（中跨）连通性关联类型将导出至 .csv 文件。</para>
+		/// <para>交汇点-边连通性（至边的一侧）—交汇点-边（至边的一侧）连通性关联类型将导出至 .csv 文件。</para>
 		/// <para><see cref="AssociationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -109,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Output  File</para>
-		/// <para>The name and location of the .csv file that will be generated.</para>
+		/// <para>将生成的 .csv 文件的名称和位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -125,52 +124,52 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum AssociationTypeEnum 
 		{
 			/// <summary>
-			/// <para>All—All association types in the utility network will be exported to a .csv file.</para>
+			/// <para>所有—公共设施网络中的所有关联类型均导出至 .csv 文件。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All")]
+			[Description("所有")]
 			All,
 
 			/// <summary>
-			/// <para>Junction-junction connectivity—Connectivity associations allowing two junction subtypes to connect via a connectivity association (features are offset geometrically) will be exported to a .csv file.</para>
+			/// <para>交汇点-交汇点连通性—允许两个交汇点子类型通过连通性关联连接（要素发生几何偏移）的连通性关联将导出至 .csv 文件。</para>
 			/// </summary>
 			[GPValue("JUNCTION_JUNCTION_CONNECTIVITY")]
-			[Description("Junction-junction connectivity")]
+			[Description("交汇点-交汇点连通性")]
 			JUNCTION_JUNCTION_CONNECTIVITY,
 
 			/// <summary>
-			/// <para>Containment—The containment association type will be exported to a .csv file.</para>
+			/// <para>包含—包含关联类型将导出至 .csv 文件。</para>
 			/// </summary>
 			[GPValue("CONTAINMENT")]
-			[Description("Containment")]
+			[Description("包含")]
 			Containment,
 
 			/// <summary>
-			/// <para>Attachment—The structural attachment association type will be exported to a .csv file.</para>
+			/// <para>附件—结构附件关联类型将导出至 .csv 文件。</para>
 			/// </summary>
 			[GPValue("STRUCTURAL_ATTACHMENT")]
-			[Description("Attachment")]
+			[Description("附件")]
 			Attachment,
 
 			/// <summary>
-			/// <para>Junction-edge connectivity (from side of edge)—The junction-edge (from side of edge) connectivity association type will be exported to a .csv file.</para>
+			/// <para>交汇点-边连通性（自边的一侧）—交汇点-边（自边的一侧）连通性关联类型将导出至 .csv 文件。</para>
 			/// </summary>
 			[GPValue("JUNCTION_EDGE_FROM_CONNECTIVITY")]
-			[Description("Junction-edge connectivity (from side of edge)")]
+			[Description("交汇点-边连通性（自边的一侧）")]
 			JUNCTION_EDGE_FROM_CONNECTIVITY,
 
 			/// <summary>
-			/// <para>Junction-edge connectivity (midspan)—The junction-edge (midspan) connectivity association type will be exported to a .csv file.</para>
+			/// <para>交汇点-边连通规则（中跨）—交汇点-边（中跨）连通性关联类型将导出至 .csv 文件。</para>
 			/// </summary>
 			[GPValue("JUNCTION_EDGE_MIDSPAN_CONNECTIVITY")]
-			[Description("Junction-edge connectivity (midspan)")]
+			[Description("交汇点-边连通规则（中跨）")]
 			JUNCTION_EDGE_MIDSPAN_CONNECTIVITY,
 
 			/// <summary>
-			/// <para>Junction-edge connectivity (to side of edge)—The junction-edge (to side of edge) connectivity association type will be exported to a .csv file.</para>
+			/// <para>交汇点-边连通性（至边的一侧）—交汇点-边（至边的一侧）连通性关联类型将导出至 .csv 文件。</para>
 			/// </summary>
 			[GPValue("JUNCTION_EDGE_TO_CONNECTIVITY")]
-			[Description("Junction-edge connectivity (to side of edge)")]
+			[Description("交汇点-边连通性（至边的一侧）")]
 			JUNCTION_EDGE_TO_CONNECTIVITY,
 
 		}

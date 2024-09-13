@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Calculate Field</para>
-	/// <para>Calculate Field</para>
-	/// <para>Creates a layer with calculated field values.</para>
+	/// <para>计算字段</para>
+	/// <para>可使用计算的字段值创建图层。</para>
 	/// </summary>
 	public class CalculateField : AbstractGPProcess
 	{
@@ -21,29 +21,29 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>The input features that will have a field calculated.</para>
+		/// <para>将计算字段的输入要素。</para>
 		/// </param>
 		/// <param name="OutputName">
 		/// <para>Output Name</para>
-		/// <para>The name of the output feature service.</para>
+		/// <para>输出要素服务的名称。</para>
 		/// </param>
 		/// <param name="FieldName">
 		/// <para>Field Name</para>
-		/// <para>The name of the field that will have values calculated. This can be an existing field or a new field name.</para>
+		/// <para>将具有计算值的字段的名称。 可以为现有字段名称或新字段名称。</para>
 		/// </param>
 		/// <param name="FieldType">
 		/// <para>Field Type</para>
-		/// <para>Specifies the field type for the calculated field.</para>
-		/// <para>String—Any string of characters</para>
-		/// <para>Integer—Whole numbers</para>
-		/// <para>Double— Fractional numbers</para>
-		/// <para>Date— Date</para>
+		/// <para>指定已计算字段的字段类型。</para>
+		/// <para>字符串—任何字符串</para>
+		/// <para>整型—整数</para>
+		/// <para>双精度—小数</para>
+		/// <para>日期—日期</para>
 		/// <para><see cref="FieldTypeEnum"/></para>
 		/// </param>
 		/// <param name="Expression">
 		/// <para>Expression</para>
-		/// <para>Calculates values in the field. Expressions are written in Arcade and can include [+ - * / ] operators and multiple fields. Calculated values are applied in the units of the spatial reference of the input unless you are using a geographic coordinate system, in which case they will be in meters.</para>
-		/// <para>If the layer is added to the map, the Fields and Helpers filters can be used to build an expression.</para>
+		/// <para>计算字段中的值。 以 Arcade 格式写入表达式，其中可包括 [+ - * / ] 运算符和多个字段。 将应用经计算的值，且采用输入空间参考的单位，除非您所使用的是地理坐标系，在这种情况下，单位为米。</para>
+		/// <para>如果将图层添加到地图中，则可以使用字段和助手过滤器来构建表达式。</para>
 		/// </param>
 		public CalculateField(object InputLayer, object OutputName, object FieldName, object FieldType, object Expression)
 		{
@@ -55,9 +55,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Calculate Field</para>
+		/// <para>Tool Display Name : 计算字段</para>
 		/// </summary>
-		public override string DisplayName() => "Calculate Field";
+		public override string DisplayName() => "计算字段";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateField</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The input features that will have a field calculated.</para>
+		/// <para>将计算字段的输入要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output feature service.</para>
+		/// <para>输出要素服务的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Field Name</para>
-		/// <para>The name of the field that will have values calculated. This can be an existing field or a new field name.</para>
+		/// <para>将具有计算值的字段的名称。 可以为现有字段名称或新字段名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -117,11 +117,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Field Type</para>
-		/// <para>Specifies the field type for the calculated field.</para>
-		/// <para>String—Any string of characters</para>
-		/// <para>Integer—Whole numbers</para>
-		/// <para>Double— Fractional numbers</para>
-		/// <para>Date— Date</para>
+		/// <para>指定已计算字段的字段类型。</para>
+		/// <para>字符串—任何字符串</para>
+		/// <para>整型—整数</para>
+		/// <para>双精度—小数</para>
+		/// <para>日期—日期</para>
 		/// <para><see cref="FieldTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -131,8 +131,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>Calculates values in the field. Expressions are written in Arcade and can include [+ - * / ] operators and multiple fields. Calculated values are applied in the units of the spatial reference of the input unless you are using a geographic coordinate system, in which case they will be in meters.</para>
-		/// <para>If the layer is added to the map, the Fields and Helpers filters can be used to build an expression.</para>
+		/// <para>计算字段中的值。 以 Arcade 格式写入表达式，其中可包括 [+ - * / ] 运算符和多个字段。 将应用经计算的值，且采用输入空间参考的单位，除非您所使用的是地理坐标系，在这种情况下，单位为米。</para>
+		/// <para>如果将图层添加到地图中，则可以使用字段和助手过滤器来构建表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPCalculatorExpression()]
@@ -140,9 +140,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Track Aware</para>
-		/// <para>Specifies whether the expression will use a track-aware expression.</para>
-		/// <para>Checked—The expression will use a track-aware expression, and a track field must be specified.</para>
-		/// <para>Unchecked—The expression will not use a track-aware expression. This is the default.</para>
+		/// <para>指定表达式是否会使用追踪感知型表达式。</para>
+		/// <para>选中 - 表达式将使用追踪感知型表达式，且必须指定追踪字段。</para>
+		/// <para>未选中 - 表达式不会使用追踪感知型表达式。 这是默认设置。</para>
 		/// <para><see cref="TrackAwareEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Track Fields</para>
-		/// <para>One or more fields that will be used to identify unique tracks.</para>
+		/// <para>将用于标识唯一轨迹的一个或多个字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -162,9 +162,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Data Store</para>
-		/// <para>Specifies the ArcGIS Data Store where the output will be saved. The default is Spatiotemporal big data store. All results stored in a spatiotemporal big data store will be stored in WGS84. Results stored in a relational data store will maintain their coordinate system.</para>
-		/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
-		/// <para>Relational data store—Output will be stored in a relational data store.</para>
+		/// <para>指定将用于保存输出的 ArcGIS Data Store。 默认设置为时空大数据存储。 在时空大数据存储中存储的所有结果都将存储在 WGS84 中。 在关系数据存储中存储的结果都将保持各自的坐标系。</para>
+		/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
+		/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 		/// <para><see cref="DataStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -182,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Boundary Split</para>
-		/// <para>A time span to split the input data into for analysis. A time boundary allows you to analyze values within a defined time span. For example, if you use a time boundary of 1 day, starting on January 1, 1980, tracks will be split at the beginning of every day. This parameter is only available with ArcGIS Enterprise 10.7 and later.</para>
+		/// <para>用于分割输入数据以进行分析的时间跨度。 您可通过时间界限分析定义的时间跨度内的值。 例如，如果您使用始于 1980 年 1 月 1 日的 1 天的时间界限，则轨迹将在每天开始时被分割。 此参数仅适用于 ArcGIS Enterprise 10.7 及更高版本。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -191,7 +191,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Boundary Reference</para>
-		/// <para>The reference time used to split the input data into for analysis. Time boundaries will be created for the entire span of the data, and the reference time does not need to occur at the start. If no reference time is specified, January 1, 1970, is used. This parameter is only available with ArcGIS Enterprise 10.7 and later.</para>
+		/// <para>用于分割输入数据以进行分析的参考时间。 将为整个数据跨度创建时间界限，且不需要在开始时产生参考时间。 如果未指定参考时间，则将使用 1970 年 1 月 1 日。 此参数仅适用于 ArcGIS Enterprise 10.7 及更高版本。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -214,31 +214,31 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum FieldTypeEnum 
 		{
 			/// <summary>
-			/// <para>Date— Date</para>
+			/// <para>日期—日期</para>
 			/// </summary>
 			[GPValue("DATE")]
-			[Description("Date")]
+			[Description("日期")]
 			Date,
 
 			/// <summary>
-			/// <para>Double— Fractional numbers</para>
+			/// <para>双精度—小数</para>
 			/// </summary>
 			[GPValue("DOUBLE")]
-			[Description("Double")]
+			[Description("双精度")]
 			Double,
 
 			/// <summary>
-			/// <para>Integer—Whole numbers</para>
+			/// <para>整型—整数</para>
 			/// </summary>
 			[GPValue("INTEGER")]
-			[Description("Integer")]
+			[Description("整型")]
 			Integer,
 
 			/// <summary>
-			/// <para>String—Any string of characters</para>
+			/// <para>字符串—任何字符串</para>
 			/// </summary>
 			[GPValue("STRING")]
-			[Description("String")]
+			[Description("字符串")]
 			String,
 
 		}
@@ -249,14 +249,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum TrackAwareEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The expression will use a track-aware expression, and a track field must be specified.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TRACK_AWARE")]
 			TRACK_AWARE,
 
 			/// <summary>
-			/// <para>Unchecked—The expression will not use a track-aware expression. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_TRACK_AWARE")]
@@ -270,17 +270,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DataStoreEnum 
 		{
 			/// <summary>
-			/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
+			/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("SPATIOTEMPORAL_DATA_STORE")]
-			[Description("Spatiotemporal big data store")]
+			[Description("时空大数据存储")]
 			Spatiotemporal_big_data_store,
 
 			/// <summary>
-			/// <para>Relational data store—Output will be stored in a relational data store.</para>
+			/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 			/// </summary>
 			[GPValue("RELATIONAL_DATA_STORE")]
-			[Description("Relational data store")]
+			[Description("关系数据存储")]
 			Relational_data_store,
 
 		}

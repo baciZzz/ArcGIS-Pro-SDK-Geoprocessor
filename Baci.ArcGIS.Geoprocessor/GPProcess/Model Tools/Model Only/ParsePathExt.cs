@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Parse Path</para>
-	/// <para>Parse Path</para>
-	/// <para>Parses an input into its file name, extension, path, and the last workspace name. The output can be used as an inline variable in the output name of other tools.</para>
+	/// <para>解析路径</para>
+	/// <para>用于将输入解析成相应的文件名、扩展名、路径和最后一个工作空间名称。输出可用作其他工具的输出名称中的行内变量。</para>
 	/// </summary>
 	public class ParsePathExt : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InDataElement">
 		/// <para>Input Values</para>
-		/// <para>The input values to parse.</para>
+		/// <para>要解析的输入值。</para>
 		/// </param>
 		public ParsePathExt(object InDataElement)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Parse Path</para>
+		/// <para>Tool Display Name : 解析路径</para>
 		/// </summary>
-		public override string DisplayName() => "Parse Path";
+		public override string DisplayName() => "解析路径";
 
 		/// <summary>
 		/// <para>Tool Name : ParsePathExt</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Input Values</para>
-		/// <para>The input values to parse.</para>
+		/// <para>要解析的输入值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPType()]
@@ -73,11 +73,11 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Format Name, Extension and Workspace</para>
-		/// <para>Removes all reserved characters. Given the input value of C:\1Tool Data\InputFC.shp:</para>
-		/// <para>Path—The output will be the file path, for example, C:\1Tool Data.</para>
-		/// <para>Name—The output will be the file name, for example, InputFC.</para>
-		/// <para>Extension—The output will be the file extension, for example, shp.</para>
-		/// <para>Workspace Name—The output will be the workspace name, for example, _1Tool_Data.</para>
+		/// <para>移除所有保留字符。给定 C:\1Tool Data\InputFC.shp 的输入值：</para>
+		/// <para>路径 - 输出将为文件路径，例如 C:\1Tool Data。</para>
+		/// <para>名称 - 输出将为文件名，例如 InputFC。</para>
+		/// <para>扩展名 - 输出将为文件扩展名，例如 shp。</para>
+		/// <para>工作空间名称 - 输出将为工作空间名称，例如 _1Tool_Data。</para>
 		/// <para><see cref="FormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Darcy Flow</para>
-	/// <para>Darcy Flow</para>
-	/// <para>Calculates the groundwater volume balance residual and other outputs for steady flow in an aquifer.</para>
+	/// <para>达西流</para>
+	/// <para>计算蓄水层中稳流的地下水量平衡残差以及其他输出。</para>
 	/// </summary>
 	public class DarcyFlow : AbstractGPProcess
 	{
@@ -21,27 +21,27 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InHeadRaster">
 		/// <para>Input groundwater head elevation raster</para>
-		/// <para>The input raster where each cell value represents the groundwater head elevation at that location.</para>
-		/// <para>The head is typically an elevation above some datum, such as mean sea level.</para>
+		/// <para>所包含的每一单元值都代表该处地下水位高程的输入栅格。</para>
+		/// <para>水位通常是高于某些基准面（如平均海平面）的高程。</para>
 		/// </param>
 		/// <param name="InPorosityRaster">
 		/// <para>Input effective formation porosity raster</para>
-		/// <para>The input raster where each cell value represents the effective formation porosity at that location.</para>
+		/// <para>所包含的每一单元值都代表该处有效地层孔隙度的输入栅格。</para>
 		/// </param>
 		/// <param name="InThicknessRaster">
 		/// <para>Input saturated thickness raster</para>
-		/// <para>The input raster where each cell value represents the saturated thickness at that location.</para>
-		/// <para>The value for the thickness is interpreted from geological properties of the aquifer.</para>
+		/// <para>所包含的每一单元值都代表该处饱和厚度的输入栅格。</para>
+		/// <para>厚度值根据蓄水层的地质属性进行解释。</para>
 		/// </param>
 		/// <param name="InTransmissivityRaster">
 		/// <para>Input formation transmissivity raster</para>
-		/// <para>The input raster where each cell value represents the formation transmissivity at that location.</para>
-		/// <para>The transmissivity of an aquifer is defined as the hydraulic conductivity K times the saturated aquifer thickness b, as units of length squared over time. This property is generally estimated from field experimental data such as pumping tests. Tables 1 and 2 in How Darcy Flow and Darcy Velocity work list ranges of hydraulic conductivities for some generalized geologic materials.</para>
+		/// <para>所包含的每一单元值都代表该地层导水系数的输入栅格。</para>
+		/// <para>蓄水层的导水系数定义为导水率 K 乘以饱和蓄水层厚度 b，长度单位随时间变化进行乘方。此属性通常从字段实验数据（例如抽水测试）中估计得出。达西流和达西速度的工作原理中的表 1 和 2 列出了一些常见地质材料的导水率范围。</para>
 		/// </param>
 		/// <param name="OutVolumeRaster">
 		/// <para>Output groundwater volume balance residual raster</para>
-		/// <para>The output volume balance residual raster.</para>
-		/// <para>Each cell value represents the groundwater volume balance residual for steady flow in an aquifer, as determined by Darcy&apos;s Law.</para>
+		/// <para>输出水量平衡残差栅格数据。</para>
+		/// <para>其中各个像元均用于表示蓄水层中稳流的地下水量平衡残差，具体取决于达西定律。</para>
 		/// </param>
 		public DarcyFlow(object InHeadRaster, object InPorosityRaster, object InThicknessRaster, object InTransmissivityRaster, object OutVolumeRaster)
 		{
@@ -53,9 +53,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Darcy Flow</para>
+		/// <para>Tool Display Name : 达西流</para>
 		/// </summary>
-		public override string DisplayName() => "Darcy Flow";
+		public override string DisplayName() => "达西流";
 
 		/// <summary>
 		/// <para>Tool Name : DarcyFlow</para>
@@ -89,8 +89,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input groundwater head elevation raster</para>
-		/// <para>The input raster where each cell value represents the groundwater head elevation at that location.</para>
-		/// <para>The head is typically an elevation above some datum, such as mean sea level.</para>
+		/// <para>所包含的每一单元值都代表该处地下水位高程的输入栅格。</para>
+		/// <para>水位通常是高于某些基准面（如平均海平面）的高程。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input effective formation porosity raster</para>
-		/// <para>The input raster where each cell value represents the effective formation porosity at that location.</para>
+		/// <para>所包含的每一单元值都代表该处有效地层孔隙度的输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -114,8 +114,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input saturated thickness raster</para>
-		/// <para>The input raster where each cell value represents the saturated thickness at that location.</para>
-		/// <para>The value for the thickness is interpreted from geological properties of the aquifer.</para>
+		/// <para>所包含的每一单元值都代表该处饱和厚度的输入栅格。</para>
+		/// <para>厚度值根据蓄水层的地质属性进行解释。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -127,8 +127,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input formation transmissivity raster</para>
-		/// <para>The input raster where each cell value represents the formation transmissivity at that location.</para>
-		/// <para>The transmissivity of an aquifer is defined as the hydraulic conductivity K times the saturated aquifer thickness b, as units of length squared over time. This property is generally estimated from field experimental data such as pumping tests. Tables 1 and 2 in How Darcy Flow and Darcy Velocity work list ranges of hydraulic conductivities for some generalized geologic materials.</para>
+		/// <para>所包含的每一单元值都代表该地层导水系数的输入栅格。</para>
+		/// <para>蓄水层的导水系数定义为导水率 K 乘以饱和蓄水层厚度 b，长度单位随时间变化进行乘方。此属性通常从字段实验数据（例如抽水测试）中估计得出。达西流和达西速度的工作原理中的表 1 和 2 列出了一些常见地质材料的导水率范围。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -140,8 +140,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output groundwater volume balance residual raster</para>
-		/// <para>The output volume balance residual raster.</para>
-		/// <para>Each cell value represents the groundwater volume balance residual for steady flow in an aquifer, as determined by Darcy&apos;s Law.</para>
+		/// <para>输出水量平衡残差栅格数据。</para>
+		/// <para>其中各个像元均用于表示蓄水层中稳流的地下水量平衡残差，具体取决于达西定律。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -149,9 +149,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output direction raster</para>
-		/// <para>The output flow direction raster.</para>
-		/// <para>Each cell value represents the direction of the seepage velocity vector (average linear velocity) at the center of the cell, calculated as the average value of the seepage velocity through the four faces of the cell.</para>
-		/// <para>It is used with the output magnitude raster to describe the flow vector.</para>
+		/// <para>输出流向栅格。</para>
+		/// <para>每一单元值都表示单元中心渗流速度矢量（平均线速度）的方向，以通过单元四个面渗流速度平均值的形式进行计算。</para>
+		/// <para>该栅格与输出量级栅格一起来描述流向矢量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -159,8 +159,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output magnitude raster</para>
-		/// <para>An optional output raster where each cell value represents the magnitude of the seepage velocity vector (average linear velocity) at the center of the cell, calculated as the average value of the seepage velocity through the four faces of the cell.</para>
-		/// <para>It is used with the output direction raster to describe the flow vector.</para>
+		/// <para>可选输出栅格，其中的每一单元值都表示单元中心渗流速度矢量（平均线速度）的量级，以通过单元四个面渗流速度平均值的形式进行计算。</para>
+		/// <para>该栅格与输出方向栅格一起来描述流向矢量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Pick</para>
-	/// <para>Pick</para>
-	/// <para>The value from a position raster is used to determine from which raster in a list of input rasters the output cell value will be obtained.</para>
+	/// <para>选取</para>
+	/// <para>位置栅格数据的值用于确定要从输入栅格列表中的哪一个栅格获取输出像元值。</para>
 	/// </summary>
 	public class Pick : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InPositionRaster">
 		/// <para>Input position raster</para>
-		/// <para>The input raster defining the position of the raster to use for the output value.</para>
-		/// <para>The input can be an integer or float raster.</para>
+		/// <para>定义要用于输出值的栅格位置的输入栅格。</para>
+		/// <para>输入可以是整型或浮点型栅格。</para>
 		/// </param>
 		/// <param name="InRastersOrConstants">
 		/// <para>Input rasters or constant values</para>
-		/// <para>The list of inputs from which the output value will be selected.</para>
-		/// <para>The inputs can be integer or float rasters. A number can also be used as an input.</para>
+		/// <para>将从中选择输出值的输入的列表。</para>
+		/// <para>输入可以是整型栅格或浮点型栅格。也可使用数字作为输入。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
+		/// <para>输出栅格。</para>
 		/// </param>
 		public Pick(object InPositionRaster, object InRastersOrConstants, object OutRaster)
 		{
@@ -41,14 +41,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Pick</para>
+		/// <para>Tool Display Name : 选取</para>
 		/// </summary>
-		public override string DisplayName() => "Pick";
+		public override string DisplayName() => "选取";
 
 		/// <summary>
-		/// <para>Tool Name : Pick</para>
+		/// <para>Tool Name : 选取</para>
 		/// </summary>
-		public override string ToolName() => "Pick";
+		public override string ToolName() => "选取";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Pick</para>
@@ -77,8 +77,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input position raster</para>
-		/// <para>The input raster defining the position of the raster to use for the output value.</para>
-		/// <para>The input can be an integer or float raster.</para>
+		/// <para>定义要用于输出值的栅格位置的输入栅格。</para>
+		/// <para>输入可以是整型或浮点型栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -90,8 +90,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input rasters or constant values</para>
-		/// <para>The list of inputs from which the output value will be selected.</para>
-		/// <para>The inputs can be integer or float rasters. A number can also be used as an input.</para>
+		/// <para>将从中选择输出值的输入的列表。</para>
+		/// <para>输入可以是整型栅格或浮点型栅格。也可使用数字作为输入。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
+		/// <para>输出栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -111,9 +111,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Process as multiband</para>
-		/// <para>Specifies how the input multiband raster bands will be processed.</para>
-		/// <para>Unchecked—Each band from a multiband raster input will be processed separately as a single band raster. This is the default.</para>
-		/// <para>Checked—Each multiband raster input will be processed as a multiband raster. The operation will be performed for each band from one input using the corresponding band number from the other inputs.</para>
+		/// <para>指定如何处理输入多波段栅格波段。</para>
+		/// <para>未选中 - 来自多波段栅格输入的每个波段将被单独处理为单波段栅格。 这是默认设置。</para>
+		/// <para>选中 - 每个多波段栅格输入都将作为多波段栅格进行处理。 将使用其他输入的相应波段数对一个输入的每个波段执行操作。</para>
 		/// <para><see cref="ProcessAsMultibandEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -138,14 +138,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ProcessAsMultibandEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Each band from a multiband raster input will be processed separately as a single band raster. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SINGLE_BAND")]
 			SINGLE_BAND,
 
 			/// <summary>
-			/// <para>Checked—Each multiband raster input will be processed as a multiband raster. The operation will be performed for each band from one input using the corresponding band number from the other inputs.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MULTI_BAND")]

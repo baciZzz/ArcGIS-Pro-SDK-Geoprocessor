@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Unregistered Table</para>
-	/// <para>Create Unregistered Table</para>
-	/// <para>Creates an empty table in a database or enterprise geodatabase. The table is not registered with the geodatabase.</para>
+	/// <para>创建未注册表</para>
+	/// <para>在数据库或企业级地理数据库中创建空表。此表未注册到地理数据库。</para>
 	/// </summary>
 	public class CreateUnRegisteredTable : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="OutPath">
 		/// <para>Table Location</para>
-		/// <para>The enterprise geodatabase or database in which the output table will be created.</para>
+		/// <para>将创建输出表的企业级地理数据库或数据库。</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Table Name</para>
-		/// <para>The name of the table to be created.</para>
+		/// <para>要创建的表的名称。</para>
 		/// </param>
 		public CreateUnRegisteredTable(object OutPath, object OutName)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Unregistered Table</para>
+		/// <para>Tool Display Name : 创建未注册表</para>
 		/// </summary>
-		public override string DisplayName() => "Create Unregistered Table";
+		public override string DisplayName() => "创建未注册表";
 
 		/// <summary>
 		/// <para>Tool Name : CreateUnRegisteredTable</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Table Location</para>
-		/// <para>The enterprise geodatabase or database in which the output table will be created.</para>
+		/// <para>将创建输出表的企业级地理数据库或数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Table Name</para>
-		/// <para>The name of the table to be created.</para>
+		/// <para>要创建的表的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Template Table Name</para>
-		/// <para>An existing table or list of tables with fields and attribute schema used to define the fields in the output table.</para>
+		/// <para>现有表或者具有用于定义输出表中字段的字段和属性方案的表列表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -94,8 +94,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
-		/// <para>Specifies the default storage parameters (configurations) for geodatabases in a relational database management system (RDBMS). This setting is applicable only when using enterprise geodatabase tables.</para>
-		/// <para>Configuration keywords are set by the database administrator.</para>
+		/// <para>指定关系数据库管理系统 (RDBMS) 中的地理数据库的默认存储参数（配置）。此设置仅在使用企业级地理数据库表时可用。</para>
+		/// <para>配置关键字由数据库管理员进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

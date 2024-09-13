@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Features To GTFS Shapes</para>
-	/// <para>Features To GTFS Shapes</para>
-	/// <para>Creates a  shapes.txt file for a GTFS public transit dataset based on route line representations created by the Generate Shapes Features From GTFS tool.</para>
+	/// <para>要素转 GTFS 形状</para>
+	/// <para>基于根据 GTFS 生成形状要素工具创建的路线制图表达，为 GTFS 公共交通数据集创建 shapes.txt 文件。</para>
 	/// </summary>
 	[Obsolete()]
 	public class FeaturesToGTFSShapes : AbstractGPProcess
@@ -22,28 +22,28 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InShapeLines">
 		/// <para>Input Shape Lines</para>
-		/// <para>A line feature class representing the GTFS shapes created by running the Generate Shapes Features From GTFS tool. The feature class must contain a shape_id field with values corresponding to the shape_id field values in the other tool inputs.</para>
+		/// <para>一个线要素类，表示通过运行根据 GTFS 生成形状要素工具创建的 GTFS形状。 该要素类必须包含 shape_id 字段，其中值对应于其他工具输入中的 shape_id 字段值。</para>
 		/// </param>
 		/// <param name="InShapeStops">
 		/// <para>Input Shape Stops</para>
-		/// <para>A point feature class representing the GTFS stops associated with each shape created by running the Generate Shapes Features From GTFS tool. If a transit stop is used by multiple shapes, the stop should be duplicated in this feature class for each shape that uses it.</para>
-		/// <para>The feature class must contain a shape_id field with values corresponding to the shape_id field values in the other tool inputs. It must also contain a stop_id field with values corresponding to those in the shape_id column of the input GTFS stop_times.txt file.</para>
+		/// <para>一个点要素类，表示与通过运行根据 GTFS 生成形状要素工具创建的每个形状相关联的 GTFS 停靠点。 如果多个形状使用交通停靠点，则应在此要素类中针对使用该停靠点的每个形状复制该停靠点。</para>
+		/// <para>该要素类必须包含 shape_id 字段，其中值对应于其他工具输入中的 shape_id 字段值。 它还必须包含 stop_id 字段，其中值对应于输入 GTFS stop_times.txt 文件中 shape_id 列的值。</para>
 		/// </param>
 		/// <param name="InGtfsTrips">
 		/// <para>Input Updated GTFS Trips</para>
-		/// <para>The updated GTFS trips.txt file created by running the Generate Shapes Features From GTFS tool. This file must have the shape_id column with values corresponding to those in the shape_id fields in the other tool inputs.</para>
+		/// <para>通过运行根据 GTFS 生成形状要素工具创建的更新后的 GTFS trips.txt 文件。 该文件必须具有 shape_id 列，其值对应于其他工具输入中 shape_id 字段的值。</para>
 		/// </param>
 		/// <param name="InGtfsStopTimes">
 		/// <para>Input GTFS Stop Times</para>
-		/// <para>The original stop_times.txt file from the GTFS dataset that was used when running the Generate Shapes Features From GTFS tool.</para>
+		/// <para>运行根据 GTFS 生成形状要素工具时使用的 GTFS 数据集中的原始 stop_times.txt 文件。</para>
 		/// </param>
 		/// <param name="OutGtfsShapes">
 		/// <para>Output GTFS Shapes</para>
-		/// <para>The output GTFS shapes.txt file.</para>
+		/// <para>输出 GTFS shapes.txt 文件。</para>
 		/// </param>
 		/// <param name="OutGtfsStopTimes">
 		/// <para>Output GTFS Stop Times</para>
-		/// <para>The output GTFS stop_times.txt file This file will contain the shape_dist_traveled field with values derived from the new shapes.</para>
+		/// <para>输出 GTFS stop_times.txt 文件，此文件将包含 shape_dist_traveled 字段，其中值源自新形状。</para>
 		/// </param>
 		public FeaturesToGTFSShapes(object InShapeLines, object InShapeStops, object InGtfsTrips, object InGtfsStopTimes, object OutGtfsShapes, object OutGtfsStopTimes)
 		{
@@ -56,9 +56,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Features To GTFS Shapes</para>
+		/// <para>Tool Display Name : 要素转 GTFS 形状</para>
 		/// </summary>
-		public override string DisplayName() => "Features To GTFS Shapes";
+		public override string DisplayName() => "要素转 GTFS 形状";
 
 		/// <summary>
 		/// <para>Tool Name : FeaturesToGTFSShapes</para>
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Shape Lines</para>
-		/// <para>A line feature class representing the GTFS shapes created by running the Generate Shapes Features From GTFS tool. The feature class must contain a shape_id field with values corresponding to the shape_id field values in the other tool inputs.</para>
+		/// <para>一个线要素类，表示通过运行根据 GTFS 生成形状要素工具创建的 GTFS形状。 该要素类必须包含 shape_id 字段，其中值对应于其他工具输入中的 shape_id 字段值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -103,8 +103,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Shape Stops</para>
-		/// <para>A point feature class representing the GTFS stops associated with each shape created by running the Generate Shapes Features From GTFS tool. If a transit stop is used by multiple shapes, the stop should be duplicated in this feature class for each shape that uses it.</para>
-		/// <para>The feature class must contain a shape_id field with values corresponding to the shape_id field values in the other tool inputs. It must also contain a stop_id field with values corresponding to those in the shape_id column of the input GTFS stop_times.txt file.</para>
+		/// <para>一个点要素类，表示与通过运行根据 GTFS 生成形状要素工具创建的每个形状相关联的 GTFS 停靠点。 如果多个形状使用交通停靠点，则应在此要素类中针对使用该停靠点的每个形状复制该停靠点。</para>
+		/// <para>该要素类必须包含 shape_id 字段，其中值对应于其他工具输入中的 shape_id 字段值。 它还必须包含 stop_id 字段，其中值对应于输入 GTFS stop_times.txt 文件中 shape_id 列的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Updated GTFS Trips</para>
-		/// <para>The updated GTFS trips.txt file created by running the Generate Shapes Features From GTFS tool. This file must have the shape_id column with values corresponding to those in the shape_id fields in the other tool inputs.</para>
+		/// <para>通过运行根据 GTFS 生成形状要素工具创建的更新后的 GTFS trips.txt 文件。 该文件必须具有 shape_id 列，其值对应于其他工具输入中 shape_id 字段的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input GTFS Stop Times</para>
-		/// <para>The original stop_times.txt file from the GTFS dataset that was used when running the Generate Shapes Features From GTFS tool.</para>
+		/// <para>运行根据 GTFS 生成形状要素工具时使用的 GTFS 数据集中的原始 stop_times.txt 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output GTFS Shapes</para>
-		/// <para>The output GTFS shapes.txt file.</para>
+		/// <para>输出 GTFS shapes.txt 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output GTFS Stop Times</para>
-		/// <para>The output GTFS stop_times.txt file This file will contain the shape_dist_traveled field with values derived from the new shapes.</para>
+		/// <para>输出 GTFS stop_times.txt 文件，此文件将包含 shape_dist_traveled 字段，其中值源自新形状。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -155,10 +155,10 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Distance Units</para>
-		/// <para>Specifies the distance units to use when populating the shape_dist_traveled field in the output GTFS files.</para>
-		/// <para>Miles—The unit is miles. This is the default.</para>
-		/// <para>Meters—The unit is meters</para>
-		/// <para>Kilometers—The unit is kilometers</para>
+		/// <para>指定在填充输出 GTFS 文件中的 shape_dist_traveled 字段时要使用的距离单位。</para>
+		/// <para>英里—单位为英里。 这是默认设置。</para>
+		/// <para>米—单位为米</para>
+		/// <para>千米—单位为千米</para>
 		/// <para><see cref="DistanceUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -183,24 +183,24 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum DistanceUnitsEnum 
 		{
 			/// <summary>
-			/// <para>Miles—The unit is miles. This is the default.</para>
+			/// <para>英里—单位为英里。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("MILES")]
-			[Description("Miles")]
+			[Description("英里")]
 			Miles,
 
 			/// <summary>
-			/// <para>Meters—The unit is meters</para>
+			/// <para>米—单位为米</para>
 			/// </summary>
 			[GPValue("METERS")]
-			[Description("Meters")]
+			[Description("米")]
 			Meters,
 
 			/// <summary>
-			/// <para>Kilometers—The unit is kilometers</para>
+			/// <para>千米—单位为千米</para>
 			/// </summary>
 			[GPValue("KILOMETERS")]
-			[Description("Kilometers")]
+			[Description("千米")]
 			Kilometers,
 
 		}

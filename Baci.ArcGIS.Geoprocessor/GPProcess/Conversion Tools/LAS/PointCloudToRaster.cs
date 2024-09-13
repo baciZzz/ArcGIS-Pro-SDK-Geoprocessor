@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Point Cloud To Raster</para>
-	/// <para>Point Cloud To Raster</para>
-	/// <para>Creates a raster surface from height values in a point cloud scene layer package file (*.slpk).</para>
+	/// <para>点云转栅格</para>
+	/// <para>根据点云场景图层包文件 (*.slpk) 中的高度值创建栅格表面。</para>
 	/// </summary>
 	public class PointCloudToRaster : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InPointCloud">
 		/// <para>Input Point Cloud</para>
-		/// <para>The point cloud scene layer package file (*.slpk) that will be processed</para>
+		/// <para>将处理的点云场景图层包文件 (*.slpk)。</para>
 		/// </param>
 		/// <param name="CellSize">
 		/// <para>Cell Size</para>
-		/// <para>The length and width of each cell in the output raster.</para>
+		/// <para>输出栅格中每个像元的长度和宽度。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster</para>
-		/// <para>The location and name of the output raster. When storing a raster dataset in a geodatabase or in a folder such as an Esri Grid, do not add a file extension to the name of the raster dataset. A file extension can be provided to define the raster&apos;s format when storing it in a folder, such as .tif to generate a GeoTIFF or .img to generate an ERDAS IMAGINE format file.</para>
-		/// <para>If the raster is stored as a TIFF file or in a geodatabase, its raster compression type and quality can be specified using geoprocessing environment settings.</para>
+		/// <para>输出栅格的位置和名称。 将栅格数据集存储到地理数据库或文件夹（例如 Esri GRID）时，请勿向栅格数据集的名称添加文件扩展名。 在将栅格存储到文件夹中时，可提供文件扩展名以定义栅格的格式，例如 .tif（生成 GeoTIFF）或 .img（生成 ERDAS IMAGINE 格式文件）。</para>
+		/// <para>如果栅格存储为 TIFF 文件或存储在地理数据库中，可使用地理处理环境设置指定其栅格压缩类型和质量。</para>
 		/// </param>
 		public PointCloudToRaster(object InPointCloud, object CellSize, object OutRaster)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Point Cloud To Raster</para>
+		/// <para>Tool Display Name : 点云转栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Point Cloud To Raster";
+		public override string DisplayName() => "点云转栅格";
 
 		/// <summary>
 		/// <para>Tool Name : PointCloudToRaster</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Point Cloud</para>
-		/// <para>The point cloud scene layer package file (*.slpk) that will be processed</para>
+		/// <para>将处理的点云场景图层包文件 (*.slpk)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Cell Size</para>
-		/// <para>The length and width of each cell in the output raster.</para>
+		/// <para>输出栅格中每个像元的长度和宽度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -93,8 +93,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Raster</para>
-		/// <para>The location and name of the output raster. When storing a raster dataset in a geodatabase or in a folder such as an Esri Grid, do not add a file extension to the name of the raster dataset. A file extension can be provided to define the raster&apos;s format when storing it in a folder, such as .tif to generate a GeoTIFF or .img to generate an ERDAS IMAGINE format file.</para>
-		/// <para>If the raster is stored as a TIFF file or in a geodatabase, its raster compression type and quality can be specified using geoprocessing environment settings.</para>
+		/// <para>输出栅格的位置和名称。 将栅格数据集存储到地理数据库或文件夹（例如 Esri GRID）时，请勿向栅格数据集的名称添加文件扩展名。 在将栅格存储到文件夹中时，可提供文件扩展名以定义栅格的格式，例如 .tif（生成 GeoTIFF）或 .img（生成 ERDAS IMAGINE 格式文件）。</para>
+		/// <para>如果栅格存储为 TIFF 文件或存储在地理数据库中，可使用地理处理环境设置指定其栅格压缩类型和质量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -102,12 +102,12 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Cell Assignment Type</para>
-		/// <para>Specifies the method that will be used for assigning values to cells containing points.</para>
-		/// <para>Average Height—The cell value will be defined by the average of the z-values for all points in the cell. This is the default.</para>
-		/// <para>Minimum Height—The cell value will be defined by the lowest z-value from the points in the cell.</para>
-		/// <para>Maximum Height—The cell value will be defined by the highest z-value from the points in the cell.</para>
-		/// <para>Inverse Distance Weighted—The cell value will be interpolated at the cell center using the inverse distance weighted method, which applies a linear weight to each LAS point in the neighborhood of a given cell based on its distance from the cell center.</para>
-		/// <para>Nearest Neighbor—The cell value will be assigned based on the height of the point closest to the cell center.</para>
+		/// <para>指定用于将值分配给包含点的像元的方法。</para>
+		/// <para>平均高度—像元值将由像元中所有点的 z 值的平均值定义。 这是默认设置。</para>
+		/// <para>最小高度—像元值将由像元中各点的最低 z 值定义。</para>
+		/// <para>最大高度—像元值将由像元中各点的最高 z 值定义。</para>
+		/// <para>反距离权重法—将使用反距离权重插值法在像元中心对像元值进行插值，该方法根据给定像元与像元中心的距离对其邻域中的每个 LAS 点应用线性权重。</para>
+		/// <para>最邻近法—像元值将基于与像元中心最近点的高度进行分配。</para>
 		/// <para><see cref="CellAssignmentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -117,11 +117,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Void Fill Method</para>
-		/// <para>Specifies the method that will be used for interpolating the values of cells within the interpolation zone that do not contain points.</para>
-		/// <para>None—No value will be assigned to raster cells that do not contain points.</para>
-		/// <para>Simple—The z-value of points located in the cells that immediately surround the empty cell will be averaged to eliminate small voids.</para>
-		/// <para>Linear—Void areas will be triangulated and linear interpolation will be used to assign the cell value. This is the default.</para>
-		/// <para>Natural Neighbor—Natural neighbor interpolation will be used to determine the cell value.</para>
+		/// <para>指定将用于在不包含点的插值区域内进行像元值插值的方法。</para>
+		/// <para>无—不会为不包含点的栅格像元分配任何值。</para>
+		/// <para>简单—对于紧邻空像元的像元中的点，其 z 值将被平均以消除小空白。</para>
+		/// <para>线性—空白区域将分割为三角形，然后将使用线性插值法分配像元值。 这是默认设置。</para>
+		/// <para>自然邻域法—将使用自然邻域法插值确定像元值。</para>
 		/// <para><see cref="VoidFillEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Z Factor</para>
-		/// <para>The factor by which z-values will be multiplied. This is typically used to convert z linear units to match x,y linear units. The default is 1, which leaves the z-values unchanged.</para>
+		/// <para>Z 值将乘上的系数。 此值通常用于转换 z 线性单位来匹配 x,y 线性单位。 默认值为 1，此时 z 值保持不变。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -155,31 +155,31 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum CellAssignmentEnum 
 		{
 			/// <summary>
-			/// <para>Average Height—The cell value will be defined by the average of the z-values for all points in the cell. This is the default.</para>
+			/// <para>平均高度—像元值将由像元中所有点的 z 值的平均值定义。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("AVERAGE")]
-			[Description("Average Height")]
+			[Description("平均高度")]
 			Average_Height,
 
 			/// <summary>
-			/// <para>Minimum Height—The cell value will be defined by the lowest z-value from the points in the cell.</para>
+			/// <para>最小高度—像元值将由像元中各点的最低 z 值定义。</para>
 			/// </summary>
 			[GPValue("MINIMUM")]
-			[Description("Minimum Height")]
+			[Description("最小高度")]
 			Minimum_Height,
 
 			/// <summary>
-			/// <para>Maximum Height—The cell value will be defined by the highest z-value from the points in the cell.</para>
+			/// <para>最大高度—像元值将由像元中各点的最高 z 值定义。</para>
 			/// </summary>
 			[GPValue("MAXIMUM")]
-			[Description("Maximum Height")]
+			[Description("最大高度")]
 			Maximum_Height,
 
 			/// <summary>
-			/// <para>Nearest Neighbor—The cell value will be assigned based on the height of the point closest to the cell center.</para>
+			/// <para>最邻近法—像元值将基于与像元中心最近点的高度进行分配。</para>
 			/// </summary>
 			[GPValue("NEAREST")]
-			[Description("Nearest Neighbor")]
+			[Description("最邻近法")]
 			Nearest_Neighbor,
 
 		}
@@ -190,31 +190,31 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum VoidFillEnum 
 		{
 			/// <summary>
-			/// <para>None—No value will be assigned to raster cells that do not contain points.</para>
+			/// <para>无—不会为不包含点的栅格像元分配任何值。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 			/// <summary>
-			/// <para>Simple—The z-value of points located in the cells that immediately surround the empty cell will be averaged to eliminate small voids.</para>
+			/// <para>简单—对于紧邻空像元的像元中的点，其 z 值将被平均以消除小空白。</para>
 			/// </summary>
 			[GPValue("SIMPLE")]
-			[Description("Simple")]
+			[Description("简单")]
 			Simple,
 
 			/// <summary>
-			/// <para>Linear—Void areas will be triangulated and linear interpolation will be used to assign the cell value. This is the default.</para>
+			/// <para>线性—空白区域将分割为三角形，然后将使用线性插值法分配像元值。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("LINEAR")]
-			[Description("Linear")]
+			[Description("线性")]
 			Linear,
 
 			/// <summary>
-			/// <para>Natural Neighbor—Natural neighbor interpolation will be used to determine the cell value.</para>
+			/// <para>自然邻域法—将使用自然邻域法插值确定像元值。</para>
 			/// </summary>
 			[GPValue("NATURAL_NEIGHBOR")]
-			[Description("Natural Neighbor")]
+			[Description("自然邻域法")]
 			Natural_Neighbor,
 
 		}

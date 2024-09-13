@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>ASCII To Raster</para>
-	/// <para>ASCII To Raster</para>
-	/// <para>Converts an ASCII file representing raster data to a raster dataset.</para>
+	/// <para>ASCII 转栅格</para>
+	/// <para>将表示栅格数据的 ASCII 文件转换为栅格数据集。</para>
 	/// </summary>
 	[Obsolete()]
 	public class ASCIIToRaster : AbstractGPProcess
@@ -22,12 +22,12 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InAsciiFile">
 		/// <para>Input ASCII raster file</para>
-		/// <para>The input ASCII file to be converted.</para>
+		/// <para>要转换的输入 ASCII 文件。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster dataset to be created.</para>
-		/// <para>If the output raster will not be saved to a geodatabase, specify .tif for TIFF file format, .CRF for CRF file format, .img for ERDAS IMAGINE file format, or no extension for Esri Grid raster format.</para>
+		/// <para>要创建的输出栅格数据集。</para>
+		/// <para>如果不希望将输出栅格保存到地理数据库，请为 TIFF 文件格式指定 .tif，为 CRF 文件格式指定 .CRF，为 ERDAS IMAGINE 文件格式指定 .img，而对于 Esri Grid 栅格格式，无需指定扩展名。</para>
 		/// </param>
 		public ASCIIToRaster(object InAsciiFile, object OutRaster)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : ASCII To Raster</para>
+		/// <para>Tool Display Name : ASCII 转栅格</para>
 		/// </summary>
-		public override string DisplayName() => "ASCII To Raster";
+		public override string DisplayName() => "ASCII 转栅格";
 
 		/// <summary>
 		/// <para>Tool Name : ASCIIToRaster</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input ASCII raster file</para>
-		/// <para>The input ASCII file to be converted.</para>
+		/// <para>要转换的输入 ASCII 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -82,8 +82,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster dataset to be created.</para>
-		/// <para>If the output raster will not be saved to a geodatabase, specify .tif for TIFF file format, .CRF for CRF file format, .img for ERDAS IMAGINE file format, or no extension for Esri Grid raster format.</para>
+		/// <para>要创建的输出栅格数据集。</para>
+		/// <para>如果不希望将输出栅格保存到地理数据库，请为 TIFF 文件格式指定 .tif，为 CRF 文件格式指定 .CRF，为 ERDAS IMAGINE 文件格式指定 .img，而对于 Esri Grid 栅格格式，无需指定扩展名。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -91,9 +91,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output data type</para>
-		/// <para>Specifies the data type of the output raster dataset.</para>
-		/// <para>Integer—An integer raster dataset will be created.</para>
-		/// <para>Float—A floating-point raster dataset will be created.</para>
+		/// <para>指定输出栅格数据集的数据类型。</para>
+		/// <para>整型—将创建整型栅格数据集。</para>
+		/// <para>浮点型—将创建浮点栅格数据集。</para>
 		/// <para><see cref="DataTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -118,17 +118,17 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum DataTypeEnum 
 		{
 			/// <summary>
-			/// <para>Integer—An integer raster dataset will be created.</para>
+			/// <para>整型—将创建整型栅格数据集。</para>
 			/// </summary>
 			[GPValue("INTEGER")]
-			[Description("Integer")]
+			[Description("整型")]
 			Integer,
 
 			/// <summary>
-			/// <para>Float—A floating-point raster dataset will be created.</para>
+			/// <para>浮点型—将创建浮点栅格数据集。</para>
 			/// </summary>
 			[GPValue("FLOAT")]
-			[Description("Float")]
+			[Description("浮点型")]
 			Float,
 
 		}

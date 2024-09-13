@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Iterate Fields</para>
-	/// <para>Iterate Fields</para>
-	/// <para>Iterates fields in a table.</para>
+	/// <para>迭代字段</para>
+	/// <para>迭代表中的字段。</para>
 	/// </summary>
 	public class IterateFields : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input table with fields to be iterated.</para>
+		/// <para>具有要迭代字段的输入表。</para>
 		/// </param>
 		public IterateFields(object InTable)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Iterate Fields</para>
+		/// <para>Tool Display Name : 迭代字段</para>
 		/// </summary>
-		public override string DisplayName() => "Iterate Fields";
+		public override string DisplayName() => "迭代字段";
 
 		/// <summary>
 		/// <para>Tool Name : IterateFields</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input table with fields to be iterated.</para>
+		/// <para>具有要迭代字段的输入表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -74,16 +74,16 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Field Type</para>
-		/// <para>Specifies the field type used to filter the fields. If a field type is not specified, all fields of the supported field types will be iterated.</para>
-		/// <para>Blob—BLOB fields will be iterated.</para>
-		/// <para>Date—Date fields will be iterated.</para>
-		/// <para>Double—Double fields will be iterated.</para>
-		/// <para>Float—Float fields will be iterated.</para>
-		/// <para>GUID—GUID fields will be iterated.</para>
-		/// <para>Long—Long integer fields will be iterated.</para>
-		/// <para>Raster—Raster fields will be iterated.</para>
-		/// <para>Short—Short integer fields will be iterated.</para>
-		/// <para>Text—Text fields will be iterated.</para>
+		/// <para>指定用于过滤字段的字段类型。如果未指定字段类型，则将迭代受支持字段类型的所有字段。</para>
+		/// <para>Blob—BLOB 字段将被迭代。</para>
+		/// <para>日期—日期字段将被迭代。</para>
+		/// <para>双精度—双精度型字段将被迭代。</para>
+		/// <para>浮点型—浮点型字段将被迭代。</para>
+		/// <para>GUID—GUID 字段将被迭代。</para>
+		/// <para>长整型—长整型字段将被迭代。</para>
+		/// <para>栅格—栅格字段将被迭代。</para>
+		/// <para>短整型—短整型字段将被迭代。</para>
+		/// <para>文本型—文本字段将被迭代。</para>
 		/// <para><see cref="FieldTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Wildcard</para>
-		/// <para>Limits the fields that will be iterated. The wildcard works on both field names and field aliases and is a combination of * and other characters. For example, this parameter can be used to restrict iteration of input field names or field aliases starting with a certain character or word (for example, A* or Ari* or Land*, and so on). An asterisk is equivalent to searching for all the fields. If a wildcard is not specified, all inputs will be returned.</para>
+		/// <para>限制将要迭代的字段。通配符可用于字段名称和字段别名，并且是 * 和其他字符的组合。例如，可使用此参数来限制对以某个字符或词语（例如 A* 或 Ari* 或 Land* 等）开头的输入字段名称或字段别名进行迭代。星号等同于搜索所有字段。如果未指定通配符，则将返回所有输入。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Field Names</para>
-		/// <para>The list of fields that will be iterated.</para>
+		/// <para>将要迭代的字段列表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -130,63 +130,63 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum FieldTypeEnum 
 		{
 			/// <summary>
-			/// <para>Text—Text fields will be iterated.</para>
+			/// <para>文本型—文本字段将被迭代。</para>
 			/// </summary>
 			[GPValue("TEXT")]
-			[Description("Text")]
+			[Description("文本型")]
 			Text,
 
 			/// <summary>
-			/// <para>Float—Float fields will be iterated.</para>
+			/// <para>浮点型—浮点型字段将被迭代。</para>
 			/// </summary>
 			[GPValue("FLOAT")]
-			[Description("Float")]
+			[Description("浮点型")]
 			Float,
 
 			/// <summary>
-			/// <para>Double—Double fields will be iterated.</para>
+			/// <para>双精度—双精度型字段将被迭代。</para>
 			/// </summary>
 			[GPValue("DOUBLE")]
-			[Description("Double")]
+			[Description("双精度")]
 			Double,
 
 			/// <summary>
-			/// <para>Short—Short integer fields will be iterated.</para>
+			/// <para>短整型—短整型字段将被迭代。</para>
 			/// </summary>
 			[GPValue("SHORT")]
-			[Description("Short")]
+			[Description("短整型")]
 			Short,
 
 			/// <summary>
-			/// <para>Long—Long integer fields will be iterated.</para>
+			/// <para>长整型—长整型字段将被迭代。</para>
 			/// </summary>
 			[GPValue("LONG")]
-			[Description("Long")]
+			[Description("长整型")]
 			Long,
 
 			/// <summary>
-			/// <para>Date—Date fields will be iterated.</para>
+			/// <para>日期—日期字段将被迭代。</para>
 			/// </summary>
 			[GPValue("DATE")]
-			[Description("Date")]
+			[Description("日期")]
 			Date,
 
 			/// <summary>
-			/// <para>Blob—BLOB fields will be iterated.</para>
+			/// <para>Blob—BLOB 字段将被迭代。</para>
 			/// </summary>
 			[GPValue("BLOB")]
 			[Description("Blob")]
 			Blob,
 
 			/// <summary>
-			/// <para>Raster—Raster fields will be iterated.</para>
+			/// <para>栅格—栅格字段将被迭代。</para>
 			/// </summary>
 			[GPValue("RASTER")]
-			[Description("Raster")]
+			[Description("栅格")]
 			Raster,
 
 			/// <summary>
-			/// <para>GUID—GUID fields will be iterated.</para>
+			/// <para>GUID—GUID 字段将被迭代。</para>
 			/// </summary>
 			[GPValue("GUID")]
 			[Description("GUID")]

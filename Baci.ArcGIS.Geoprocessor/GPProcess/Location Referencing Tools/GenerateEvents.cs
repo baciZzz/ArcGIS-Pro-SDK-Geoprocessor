@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Generate Events</para>
-	/// <para>Generate Events</para>
-	/// <para>Regenerates shapes for event features registered with an LRS Network.</para>
+	/// <para>生成事件</para>
+	/// <para>为注册到 LRS 网络的事件要素重新生成形状。</para>
 	/// </summary>
 	public class GenerateEvents : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InEventLayer">
 		/// <para>Event Layer</para>
-		/// <para>The event for which shapes will be regenerated.</para>
+		/// <para>将为其重新生成形状的事件。</para>
 		/// </param>
 		public GenerateEvents(object InEventLayer)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Events</para>
+		/// <para>Tool Display Name : 生成事件</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Events";
+		public override string DisplayName() => "生成事件";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateEvents</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Event Layer</para>
-		/// <para>The event for which shapes will be regenerated.</para>
+		/// <para>将为其重新生成形状的事件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 {
 	/// <summary>
 	/// <para>Dissolve Route Events</para>
-	/// <para>Dissolve Route Events</para>
-	/// <para>Removes redundant information from event tables or separates event tables having more than one descriptive attribute into individual tables.</para>
+	/// <para>融合路径事件</para>
+	/// <para>用于将冗余信息从事件表中移除，或将包含多个描述性属性的事件表分解为单独的表。</para>
 	/// </summary>
 	public class DissolveRouteEvents : AbstractGPProcess
 	{
@@ -21,35 +21,35 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		/// <param name="InEvents">
 		/// <para>Input Event Table</para>
-		/// <para>The table with the rows that will be aggregated.</para>
+		/// <para>该表包含将要进行聚合的行。</para>
 		/// </param>
 		/// <param name="InEventProperties">
 		/// <para>Event Table Properties</para>
-		/// <para>Parameter consisting of the route location fields and the type of events in the input event table.</para>
-		/// <para>Route Identifier Field—The field containing values that indicate the route on which each event is located. This field can be numeric or character.</para>
-		/// <para>Event Type—The type of events in the input event table (POINT or LINE).</para>
-		/// <para>POINT—Point events occur at a precise location along a route. Only a from-measure field must be specified.</para>
-		/// <para>LINE—Line events define a portion of a route. Both from- and to-measure fields must be specified.</para>
-		/// <para>From-Measure Field—A field containing measure values. This field must be numeric and is required when the event type is POINT or LINE. Note when the Event Type is POINT, the label for this parameter becomes Measure Field.</para>
-		/// <para>To-Measure Field—A field containing measure values. This field must be numeric and is required when the event type is LINE.</para>
+		/// <para>输入事件表中由路径位置字段和事件类型组成的参数。</para>
+		/// <para>路径标识符字段 - 该字段包含指示每个事件所在路径的值。 字段可以是数值或字符。</para>
+		/// <para>事件类型 - 输入事件表中的事件类型（POINT 或 LINE）。</para>
+		/// <para>POINT - 点事件出现在沿路径的确切点位置处。 只有“测量始于”是必须指定的字段。</para>
+		/// <para>LINE - 线事件定义路径的一部分。 “测量始于”和“测量止于”都是必须指定的字段。</para>
+		/// <para>测量始于字段 - 包含测量值的字段。 此字段必须是数值型字段，并且在事件类型是 POINT 或 LINE 时必填。 请注意，在事件类型是 POINT 时，此参数的标注将变为测量字段。</para>
+		/// <para>测量止于字段 - 包含测量值的字段。 此字段必须是数值字段，在事件类型是 LINE 时必填。</para>
 		/// </param>
 		/// <param name="DissolveField">
 		/// <para>Dissolve Fields</para>
-		/// <para>The fields that will be used to aggregate rows.</para>
+		/// <para>用于聚合行的字段。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Event Table</para>
-		/// <para>The table that will be created.</para>
+		/// <para>要创建的表。</para>
 		/// </param>
 		/// <param name="OutEventProperties">
 		/// <para>Output Event Table Properties</para>
-		/// <para>Parameter consisting of the route location fields and the type of events that will be written to the output event table.</para>
-		/// <para>Route Identifier Field—The field that will contain values that indicate the route on which each event is located.</para>
-		/// <para>Event Type—The type of events the output event table will contain (POINT or LINE).</para>
-		/// <para>POINT—Point events occur at a precise location along a route. Only a single measure field must be specified.</para>
-		/// <para>LINE—Line events define a portion of a route. Both from- and to-measure fields must be specified.</para>
-		/// <para>From-Measure Field—A field that will contain measure values. Required when the event type is POINT or LINE. Note when the Event Type is POINT, the label for this parameter becomes Measure Field.</para>
-		/// <para>To-Measure Field—A field that will contain measure values. Required when the event type is LINE.</para>
+		/// <para>由将写入输出事件表的路径位置字段和事件类型组成的参数。</para>
+		/// <para>路径标识符字段 - 该字段将包含指示每个事件所在路径的值。</para>
+		/// <para>事件类型 - 输出事件表中将包含的事件类型（POINT 或 LINE）。</para>
+		/// <para>POINT - 点事件出现在沿路径的确切点位置处。 仅可指定只有单一测量字段</para>
+		/// <para>LINE - 线事件定义路径的一部分。 “测量始于”和“测量止于”都是必须指定的字段。</para>
+		/// <para>测量始于字段 - 将包含测量值的字段。 此字段在事件类型是 POINT 或 LINE 时必填。 请注意，在事件类型是 POINT 时，此参数的标注将变为测量字段。</para>
+		/// <para>测量止于字段 - 将包含测量值的字段。 此字段在事件类型是 LINE 时必填。</para>
 		/// </param>
 		public DissolveRouteEvents(object InEvents, object InEventProperties, object DissolveField, object OutTable, object OutEventProperties)
 		{
@@ -61,9 +61,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Dissolve Route Events</para>
+		/// <para>Tool Display Name : 融合路径事件</para>
 		/// </summary>
-		public override string DisplayName() => "Dissolve Route Events";
+		public override string DisplayName() => "融合路径事件";
 
 		/// <summary>
 		/// <para>Tool Name : DissolveRouteEvents</para>
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Input Event Table</para>
-		/// <para>The table with the rows that will be aggregated.</para>
+		/// <para>该表包含将要进行聚合的行。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -106,13 +106,13 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Event Table Properties</para>
-		/// <para>Parameter consisting of the route location fields and the type of events in the input event table.</para>
-		/// <para>Route Identifier Field—The field containing values that indicate the route on which each event is located. This field can be numeric or character.</para>
-		/// <para>Event Type—The type of events in the input event table (POINT or LINE).</para>
-		/// <para>POINT—Point events occur at a precise location along a route. Only a from-measure field must be specified.</para>
-		/// <para>LINE—Line events define a portion of a route. Both from- and to-measure fields must be specified.</para>
-		/// <para>From-Measure Field—A field containing measure values. This field must be numeric and is required when the event type is POINT or LINE. Note when the Event Type is POINT, the label for this parameter becomes Measure Field.</para>
-		/// <para>To-Measure Field—A field containing measure values. This field must be numeric and is required when the event type is LINE.</para>
+		/// <para>输入事件表中由路径位置字段和事件类型组成的参数。</para>
+		/// <para>路径标识符字段 - 该字段包含指示每个事件所在路径的值。 字段可以是数值或字符。</para>
+		/// <para>事件类型 - 输入事件表中的事件类型（POINT 或 LINE）。</para>
+		/// <para>POINT - 点事件出现在沿路径的确切点位置处。 只有“测量始于”是必须指定的字段。</para>
+		/// <para>LINE - 线事件定义路径的一部分。 “测量始于”和“测量止于”都是必须指定的字段。</para>
+		/// <para>测量始于字段 - 包含测量值的字段。 此字段必须是数值型字段，并且在事件类型是 POINT 或 LINE 时必填。 请注意，在事件类型是 POINT 时，此参数的标注将变为测量字段。</para>
+		/// <para>测量止于字段 - 包含测量值的字段。 此字段必须是数值字段，在事件类型是 LINE 时必填。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRouteMeasureEventProperties()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Dissolve Fields</para>
-		/// <para>The fields that will be used to aggregate rows.</para>
+		/// <para>用于聚合行的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Output Event Table</para>
-		/// <para>The table that will be created.</para>
+		/// <para>要创建的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -138,13 +138,13 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Output Event Table Properties</para>
-		/// <para>Parameter consisting of the route location fields and the type of events that will be written to the output event table.</para>
-		/// <para>Route Identifier Field—The field that will contain values that indicate the route on which each event is located.</para>
-		/// <para>Event Type—The type of events the output event table will contain (POINT or LINE).</para>
-		/// <para>POINT—Point events occur at a precise location along a route. Only a single measure field must be specified.</para>
-		/// <para>LINE—Line events define a portion of a route. Both from- and to-measure fields must be specified.</para>
-		/// <para>From-Measure Field—A field that will contain measure values. Required when the event type is POINT or LINE. Note when the Event Type is POINT, the label for this parameter becomes Measure Field.</para>
-		/// <para>To-Measure Field—A field that will contain measure values. Required when the event type is LINE.</para>
+		/// <para>由将写入输出事件表的路径位置字段和事件类型组成的参数。</para>
+		/// <para>路径标识符字段 - 该字段将包含指示每个事件所在路径的值。</para>
+		/// <para>事件类型 - 输出事件表中将包含的事件类型（POINT 或 LINE）。</para>
+		/// <para>POINT - 点事件出现在沿路径的确切点位置处。 仅可指定只有单一测量字段</para>
+		/// <para>LINE - 线事件定义路径的一部分。 “测量始于”和“测量止于”都是必须指定的字段。</para>
+		/// <para>测量始于字段 - 将包含测量值的字段。 此字段在事件类型是 POINT 或 LINE 时必填。 请注意，在事件类型是 POINT 时，此参数的标注将变为测量字段。</para>
+		/// <para>测量止于字段 - 将包含测量值的字段。 此字段在事件类型是 LINE 时必填。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRouteMeasureEventProperties()]
@@ -152,9 +152,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Combine adjacent events only</para>
-		/// <para>Specifies whether the input events will be aggregated or dissolved.</para>
-		/// <para>Unchecked—Events will be aggregated wherever there is measure overlap. This is the default.</para>
-		/// <para>Checked—Events will be aggregated where the to-measure of one event matches the from-measure of the next event. This option is applicable only for line events.</para>
+		/// <para>指定是否对输入事件进行聚合或是分解。</para>
+		/// <para>未选中 - 只要存在测量值重叠就聚合事件。 这是默认设置。</para>
+		/// <para>选中 - 仅在一个事件的“测量止于”与下一事件的“测量始于”相匹配时聚合事件。 此选项仅适用于线事件。</para>
 		/// <para><see cref="DissolveTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -164,9 +164,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Build index</para>
-		/// <para>Specifies whether an attribute index will be created for the route identifier field that is written to the output event table.</para>
-		/// <para>Checked—An attribute index will be created. This is the default.</para>
-		/// <para>Unchecked—An attribute index will not be created.</para>
+		/// <para>指定是否为写入输出事件表的路径标识符字段创建属性索引。</para>
+		/// <para>选中 - 将创建属性索引。 这是默认设置。</para>
+		/// <para>未选中 - 不会创建属性索引。</para>
 		/// <para><see cref="BuildIndexEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -191,14 +191,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum DissolveTypeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Events will be aggregated where the to-measure of one event matches the from-measure of the next event. This option is applicable only for line events.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CONCATENATE")]
 			CONCATENATE,
 
 			/// <summary>
-			/// <para>Unchecked—Events will be aggregated wherever there is measure overlap. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DISSOLVE")]
@@ -212,14 +212,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum BuildIndexEnum 
 		{
 			/// <summary>
-			/// <para>Checked—An attribute index will be created. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INDEX")]
 			INDEX,
 
 			/// <summary>
-			/// <para>Unchecked—An attribute index will not be created.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_INDEX")]

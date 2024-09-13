@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>TIN Domain</para>
-	/// <para>TIN Domain</para>
-	/// <para>Creates a line or polygon feature class representing the interpolation zone of a triangulated irregular network (TIN) dataset.</para>
+	/// <para>TIN 范围</para>
+	/// <para>可创建表示不规则三角网 (TIN) 数据集插值区的线或面要素类。</para>
 	/// </summary>
 	public class TinDomain : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTin">
 		/// <para>Input TIN</para>
-		/// <para>The TIN dataset to process.</para>
+		/// <para>待处理的 TIN 数据集。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </param>
 		/// <param name="OutGeometryType">
 		/// <para>Output Feature Class Type</para>
-		/// <para>The geometry of the output feature class.</para>
-		/// <para>Line—The output will be a z-enabled line feature class.</para>
-		/// <para>Polygon—The output will be a z-enabled polygon feature class.</para>
+		/// <para>输出要素类的几何。</para>
+		/// <para>线—输出将是启用了 z 值的线要素类。</para>
+		/// <para>面—输出将是启用了 z 值的面要素类。</para>
 		/// <para><see cref="OutGeometryTypeEnum"/></para>
 		/// </param>
 		public TinDomain(object InTin, object OutFeatureClass, object OutGeometryType)
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : TIN Domain</para>
+		/// <para>Tool Display Name : TIN 范围</para>
 		/// </summary>
-		public override string DisplayName() => "TIN Domain";
+		public override string DisplayName() => "TIN 范围";
 
 		/// <summary>
 		/// <para>Tool Name : TinDomain</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input TIN</para>
-		/// <para>The TIN dataset to process.</para>
+		/// <para>待处理的 TIN 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTinLayer()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -94,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class Type</para>
-		/// <para>The geometry of the output feature class.</para>
-		/// <para>Line—The output will be a z-enabled line feature class.</para>
-		/// <para>Polygon—The output will be a z-enabled polygon feature class.</para>
+		/// <para>输出要素类的几何。</para>
+		/// <para>线—输出将是启用了 z 值的线要素类。</para>
+		/// <para>面—输出将是启用了 z 值的面要素类。</para>
 		/// <para><see cref="OutGeometryTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -121,17 +121,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum OutGeometryTypeEnum 
 		{
 			/// <summary>
-			/// <para>Line—The output will be a z-enabled line feature class.</para>
+			/// <para>线—输出将是启用了 z 值的线要素类。</para>
 			/// </summary>
 			[GPValue("LINE")]
-			[Description("Line")]
+			[Description("线")]
 			Line,
 
 			/// <summary>
-			/// <para>Polygon—The output will be a z-enabled polygon feature class.</para>
+			/// <para>面—输出将是启用了 z 值的面要素类。</para>
 			/// </summary>
 			[GPValue("POLYGON")]
-			[Description("Polygon")]
+			[Description("面")]
 			Polygon,
 
 		}

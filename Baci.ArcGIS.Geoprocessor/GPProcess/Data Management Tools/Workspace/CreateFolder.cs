@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Folder</para>
-	/// <para>Create Folder</para>
-	/// <para>Creates a folder in the specified location.</para>
+	/// <para>创建文件夹</para>
+	/// <para>在指定位置创建文件夹。</para>
 	/// </summary>
 	public class CreateFolder : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="OutFolderPath">
 		/// <para>Folder Location</para>
-		/// <para>The disk location where the folder is created.</para>
+		/// <para>要创建文件夹的磁盘位置。</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Folder Name</para>
-		/// <para>The folder to be created.</para>
+		/// <para>要创建的文件夹。</para>
 		/// </param>
 		public CreateFolder(object OutFolderPath, object OutName)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Folder</para>
+		/// <para>Tool Display Name : 创建文件夹</para>
 		/// </summary>
-		public override string DisplayName() => "Create Folder";
+		public override string DisplayName() => "创建文件夹";
 
 		/// <summary>
 		/// <para>Tool Name : CreateFolder</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Folder Location</para>
-		/// <para>The disk location where the folder is created.</para>
+		/// <para>要创建文件夹的磁盘位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Folder Name</para>
-		/// <para>The folder to be created.</para>
+		/// <para>要创建的文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

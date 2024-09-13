@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Compute Segment Attributes</para>
-	/// <para>Compute Segment Attributes</para>
-	/// <para>Computes a set of attributes associated with the segmented image. The input raster can be a single-band or 3-band, 8-bit segmented image.</para>
+	/// <para>计算分割影像属性</para>
+	/// <para>计算一组与分割影像相关的属性。 输入栅格可以是单波段或 3 波段的8 位分割影像。</para>
 	/// </summary>
 	public class ComputeSegmentAttributes : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InSegmentedRaster">
 		/// <para>Input Segmented RGB Or Gray Raster</para>
-		/// <para>The input segmented raster dataset, where all the pixels belonging to a segment have the same converged RGB color. Usually, it is an 8-bit, 3-band RGB raster, but it can also be a 1-band grayscale raster.</para>
+		/// <para>输入分割栅格数据集中所有属于某个分割的像素均具有相同的聚合 RGB 颜色。通常是 8 位，3 波段的 RGB 栅格，但也可以是 1 波段的灰度栅格。</para>
 		/// </param>
 		/// <param name="OutIndexRasterDataset">
 		/// <para>Output Segment Index Raster</para>
-		/// <para>The output segment index raster, where the attributes for each segment are recorded in the associated attribute table.</para>
+		/// <para>输出分割索引栅格中各个分割影像的属性均记录在相关属性表中。</para>
 		/// </param>
 		public ComputeSegmentAttributes(object InSegmentedRaster, object OutIndexRasterDataset)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Compute Segment Attributes</para>
+		/// <para>Tool Display Name : 计算分割影像属性</para>
 		/// </summary>
-		public override string DisplayName() => "Compute Segment Attributes";
+		public override string DisplayName() => "计算分割影像属性";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeSegmentAttributes</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Segmented RGB Or Gray Raster</para>
-		/// <para>The input segmented raster dataset, where all the pixels belonging to a segment have the same converged RGB color. Usually, it is an 8-bit, 3-band RGB raster, but it can also be a 1-band grayscale raster.</para>
+		/// <para>输入分割栅格数据集中所有属于某个分割的像素均具有相同的聚合 RGB 颜色。通常是 8 位，3 波段的 RGB 栅格，但也可以是 1 波段的灰度栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Segment Index Raster</para>
-		/// <para>The output segment index raster, where the attributes for each segment are recorded in the associated attribute table.</para>
+		/// <para>输出分割索引栅格中各个分割影像的属性均记录在相关属性表中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Additional Input Raster</para>
-		/// <para>Ancillary raster datasets, such as a multispectral image or a DEM, will be incorporated to generate attributes and other required information for the classifier. This raster is necessary when calculating attributes such as mean or standard deviation. This parameter is optional.</para>
+		/// <para>将对其他栅格数据集（如多光谱影像或 DEM）进行整合，从而为分类器生成属性和其他所需信息。 计算平均值或标准差等属性时需要使用此栅格。 设置此参数属于可选操作。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -94,14 +94,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Segment Attributes Used</para>
-		/// <para>Specifies the attributes that will be included in the attribute table associated with the output raster.</para>
-		/// <para>Converged color—The RGB color values will be derived from the input raster on a per-segment basis. This is also known as average chromaticity color.</para>
-		/// <para>Mean digital number—The average digital number (DN) will be derived from the optional pixel image on a per-segment basis.</para>
-		/// <para>Standard deviation—The standard deviation will be derived from the optional pixel image on a per-segment basis.</para>
-		/// <para>Count of pixels—The number of pixels composing the segment, on a per-segment basis.</para>
-		/// <para>Compactness—The degree to which a segment is compact or circular, on a per-segment basis. The values range from 0 to 1, in which 1 is a circle.</para>
-		/// <para>Rectangularity—The degree to which the segment is rectangular, on a per-segment basis. The values range from 0 to 1, in which 1 is a rectangle.</para>
-		/// <para>If the only input into the tool is a segmented image, the default attributes are Average chromaticity color, Count of pixels, Compactness, and Rectangularity. If an Additional Input Raster is also included as an input along with a segmented image, then Mean digital number and Standard deviation are available as options.</para>
+		/// <para>指定要包括在与输出栅格相关联的属性表中的属性。</para>
+		/// <para>聚合颜色—RGB 颜色值将基于每个分割从输入栅格获取。 这也称为平均色度。</para>
+		/// <para>平均数字值—基于每个分割，将从可选像素图像中获取的平均数字值 (DN)。</para>
+		/// <para>标准差—基于每个分割，将从可选像素影像中获取的标准差。</para>
+		/// <para>像素计数—基于每个分割，构成分割的像素数。</para>
+		/// <para>紧密度—基于每个分割，决定分割为紧凑型还是圆形的度数。 值的范围从 0 到 1，1 表示圆形。</para>
+		/// <para>垂直度—基于每个分割，决定分割为矩形的度数。 值的范围从 0 到 1，1 表示矩形。</para>
+		/// <para>如果该工具中的唯一输入是分割影像，则默认属性为平均色度、像素计数、紧密度和垂直度。如果还将附加输入栅格作为输入与分割影像一起添加进来，则平均数字值和标准差选项也将可用。</para>
 		/// <para>&lt;para/&gt;</para>
 		/// <para><see cref="UsedAttributesEnum"/></para>
 		/// </summary>
@@ -128,45 +128,45 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum UsedAttributesEnum 
 		{
 			/// <summary>
-			/// <para>Converged color—The RGB color values will be derived from the input raster on a per-segment basis. This is also known as average chromaticity color.</para>
+			/// <para>聚合颜色—RGB 颜色值将基于每个分割从输入栅格获取。 这也称为平均色度。</para>
 			/// </summary>
 			[GPValue("COLOR")]
-			[Description("Converged color")]
+			[Description("聚合颜色")]
 			Converged_color,
 
 			/// <summary>
-			/// <para>Mean digital number—The average digital number (DN) will be derived from the optional pixel image on a per-segment basis.</para>
+			/// <para>平均数字值—基于每个分割，将从可选像素图像中获取的平均数字值 (DN)。</para>
 			/// </summary>
 			[GPValue("MEAN")]
-			[Description("Mean digital number")]
+			[Description("平均数字值")]
 			Mean_digital_number,
 
 			/// <summary>
-			/// <para>Standard deviation—The standard deviation will be derived from the optional pixel image on a per-segment basis.</para>
+			/// <para>标准差—基于每个分割，将从可选像素影像中获取的标准差。</para>
 			/// </summary>
 			[GPValue("STD")]
-			[Description("Standard deviation")]
+			[Description("标准差")]
 			Standard_deviation,
 
 			/// <summary>
-			/// <para>Count of pixels—The number of pixels composing the segment, on a per-segment basis.</para>
+			/// <para>像素计数—基于每个分割，构成分割的像素数。</para>
 			/// </summary>
 			[GPValue("COUNT")]
-			[Description("Count of pixels")]
+			[Description("像素计数")]
 			Count_of_pixels,
 
 			/// <summary>
-			/// <para>Compactness—The degree to which a segment is compact or circular, on a per-segment basis. The values range from 0 to 1, in which 1 is a circle.</para>
+			/// <para>紧密度—基于每个分割，决定分割为紧凑型还是圆形的度数。 值的范围从 0 到 1，1 表示圆形。</para>
 			/// </summary>
 			[GPValue("COMPACTNESS")]
-			[Description("Compactness")]
+			[Description("紧密度")]
 			Compactness,
 
 			/// <summary>
-			/// <para>Rectangularity—The degree to which the segment is rectangular, on a per-segment basis. The values range from 0 to 1, in which 1 is a rectangle.</para>
+			/// <para>垂直度—基于每个分割，决定分割为矩形的度数。 值的范围从 0 到 1，1 表示矩形。</para>
 			/// </summary>
 			[GPValue("RECTANGULARITY")]
-			[Description("Rectangularity")]
+			[Description("垂直度")]
 			Rectangularity,
 
 		}

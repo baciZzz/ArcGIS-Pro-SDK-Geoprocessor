@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 {
 	/// <summary>
 	/// <para>Set Flow Direction</para>
-	/// <para>Set Flow Direction</para>
-	/// <para>Sets the flow direction of line features in a version 1 trace network.</para>
+	/// <para>设置流向</para>
+	/// <para>设置版本 1 追踪网络中线要素的流向。</para>
 	/// </summary>
 	public class SetFlowDirection : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// </summary>
 		/// <param name="InputTraceNetwork">
 		/// <para>Input Trace Network</para>
-		/// <para>The trace network that contains the line feature class on which the flow direction will be set.</para>
-		/// <para>This parameter requires a Trace Network Version 1 as input.</para>
+		/// <para>包含要为其设置流向的线要素类的追踪网络。</para>
+		/// <para>此参数需要一个追踪网络版本 1 作为输入。</para>
 		/// </param>
 		/// <param name="InEdges">
 		/// <para>Feature Layers</para>
-		/// <para>The polyline features that participate in the input trace network.</para>
+		/// <para>参与输入追踪网络的折线要素。</para>
 		/// </param>
 		/// <param name="FlowDirection">
 		/// <para>Flow Direction</para>
-		/// <para>Specifies the flow direction of the edges.</para>
-		/// <para>With digitized direction—Flow direction will be along the digitized direction of the edges.</para>
-		/// <para>Against digitized direction—Flow direction will be against the digitized direction of the edges.</para>
-		/// <para>Indeterminate direction—Flow direction will be indeterminate.</para>
+		/// <para>指定边的流向。</para>
+		/// <para>沿数字化方向—流向将沿着边的数字化方向。</para>
+		/// <para>沿数字化方向的反方向—流向将沿着边的数字化方向的反方向。</para>
+		/// <para>不确定的方向—流向将不确定。</para>
 		/// <para><see cref="FlowDirectionEnum"/></para>
 		/// </param>
 		public SetFlowDirection(object InputTraceNetwork, object InEdges, object FlowDirection)
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Set Flow Direction</para>
+		/// <para>Tool Display Name : 设置流向</para>
 		/// </summary>
-		public override string DisplayName() => "Set Flow Direction";
+		public override string DisplayName() => "设置流向";
 
 		/// <summary>
 		/// <para>Tool Name : SetFlowDirection</para>
@@ -80,8 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Input Trace Network</para>
-		/// <para>The trace network that contains the line feature class on which the flow direction will be set.</para>
-		/// <para>This parameter requires a Trace Network Version 1 as input.</para>
+		/// <para>包含要为其设置流向的线要素类的追踪网络。</para>
+		/// <para>此参数需要一个追踪网络版本 1 作为输入。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Feature Layers</para>
-		/// <para>The polyline features that participate in the input trace network.</para>
+		/// <para>参与输入追踪网络的折线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -97,10 +97,10 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Flow Direction</para>
-		/// <para>Specifies the flow direction of the edges.</para>
-		/// <para>With digitized direction—Flow direction will be along the digitized direction of the edges.</para>
-		/// <para>Against digitized direction—Flow direction will be against the digitized direction of the edges.</para>
-		/// <para>Indeterminate direction—Flow direction will be indeterminate.</para>
+		/// <para>指定边的流向。</para>
+		/// <para>沿数字化方向—流向将沿着边的数字化方向。</para>
+		/// <para>沿数字化方向的反方向—流向将沿着边的数字化方向的反方向。</para>
+		/// <para>不确定的方向—流向将不确定。</para>
 		/// <para><see cref="FlowDirectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -123,24 +123,24 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		public enum FlowDirectionEnum 
 		{
 			/// <summary>
-			/// <para>With digitized direction—Flow direction will be along the digitized direction of the edges.</para>
+			/// <para>沿数字化方向—流向将沿着边的数字化方向。</para>
 			/// </summary>
 			[GPValue("WITH_DIGITIZED_DIRECTION")]
-			[Description("With digitized direction")]
+			[Description("沿数字化方向")]
 			With_digitized_direction,
 
 			/// <summary>
-			/// <para>Against digitized direction—Flow direction will be against the digitized direction of the edges.</para>
+			/// <para>沿数字化方向的反方向—流向将沿着边的数字化方向的反方向。</para>
 			/// </summary>
 			[GPValue("AGAINST_DIGITIZED_DIRECTION")]
-			[Description("Against digitized direction")]
+			[Description("沿数字化方向的反方向")]
 			Against_digitized_direction,
 
 			/// <summary>
-			/// <para>Indeterminate direction—Flow direction will be indeterminate.</para>
+			/// <para>不确定的方向—流向将不确定。</para>
 			/// </summary>
 			[GPValue("INDETERMINATE")]
-			[Description("Indeterminate direction")]
+			[Description("不确定的方向")]
 			Indeterminate_direction,
 
 		}

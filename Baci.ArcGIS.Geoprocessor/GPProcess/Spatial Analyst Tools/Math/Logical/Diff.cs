@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Diff</para>
-	/// <para>Diff</para>
-	/// <para>Determines which values from the first input are logically different from the values of the second input on a cell-by-cell basis.</para>
+	/// <para>差异</para>
+	/// <para>以逐个像元比较的方式，确定第一个输入的哪些值与第二个输入的值在逻辑上不同。</para>
 	/// </summary>
 	public class Diff : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant1">
 		/// <para>Input raster or constant value 1</para>
-		/// <para>The input to which the second input will be compared.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>该输入将与第二个输入相比较。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="InRasterOrConstant2">
 		/// <para>Input raster or constant value 2</para>
-		/// <para>The input to which the first input will be compared.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>该输入将与第一个输入相比较。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The values in the output will be either 0 if the two input values are the same, or the first input value if they are not.</para>
+		/// <para>输出栅格。</para>
+		/// <para>如果两个输入值相同则输出值为 0，如果输入值不同则输出第一个输入值。</para>
 		/// </param>
 		public Diff(object InRasterOrConstant1, object InRasterOrConstant2, object OutRaster)
 		{
@@ -42,14 +42,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Diff</para>
+		/// <para>Tool Display Name : 差异</para>
 		/// </summary>
-		public override string DisplayName() => "Diff";
+		public override string DisplayName() => "差异";
 
 		/// <summary>
-		/// <para>Tool Name : Diff</para>
+		/// <para>Tool Name : 差异</para>
 		/// </summary>
-		public override string ToolName() => "Diff";
+		public override string ToolName() => "差异";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Diff</para>
@@ -78,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 1</para>
-		/// <para>The input to which the second input will be compared.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>该输入将与第二个输入相比较。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -91,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value 2</para>
-		/// <para>The input to which the first input will be compared.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>该输入将与第一个输入相比较。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -104,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The values in the output will be either 0 if the two input values are the same, or the first input value if they are not.</para>
+		/// <para>输出栅格。</para>
+		/// <para>如果两个输入值相同则输出值为 0，如果输入值不同则输出第一个输入值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

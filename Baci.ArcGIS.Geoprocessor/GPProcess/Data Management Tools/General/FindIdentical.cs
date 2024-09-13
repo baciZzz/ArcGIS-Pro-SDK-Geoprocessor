@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Find Identical</para>
-	/// <para>Find Identical</para>
-	/// <para>Reports any records in a feature class or table that have identical values in a list of fields, and generates a table listing these identical records. If the field Shape is selected, feature geometries are compared.</para>
+	/// <para>查找相同项</para>
+	/// <para>报告要素类或表中在一系列字段中具有相同值的所有记录并生成一个列表文件以列出记录。如果选择了 Shape 字段，将会对要素几何进行比较。</para>
 	/// </summary>
 	public class FindIdentical : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>The table or feature class for which identical records will be found.</para>
+		/// <para>要查找相同记录的表或要素类。</para>
 		/// </param>
 		/// <param name="OutDataset">
 		/// <para>Output Dataset</para>
-		/// <para>The output table reporting identical records. The FEAT_SEQ field in the output table will have the same value for identical records.</para>
+		/// <para>用于报告相同记录的输出表。在输出表中，相同记录的 FEAT_SEQ 字段具有相同值。</para>
 		/// </param>
 		/// <param name="Fields">
 		/// <para>Field(s)</para>
-		/// <para>The field or fields whose values will be compared to find identical records.</para>
+		/// <para>将对字段值进行比较以查找相同记录的一个或多个字段。</para>
 		/// </param>
 		public FindIdentical(object InDataset, object OutDataset, object Fields)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Find Identical</para>
+		/// <para>Tool Display Name : 查找相同项</para>
 		/// </summary>
-		public override string DisplayName() => "Find Identical";
+		public override string DisplayName() => "查找相同项";
 
 		/// <summary>
 		/// <para>Tool Name : FindIdentical</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>The table or feature class for which identical records will be found.</para>
+		/// <para>要查找相同记录的表或要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Dataset</para>
-		/// <para>The output table reporting identical records. The FEAT_SEQ field in the output table will have the same value for identical records.</para>
+		/// <para>用于报告相同记录的输出表。在输出表中，相同记录的 FEAT_SEQ 字段具有相同值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field(s)</para>
-		/// <para>The field or fields whose values will be compared to find identical records.</para>
+		/// <para>将对字段值进行比较以查找相同记录的一个或多个字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
-		/// <para>The xy tolerance that will be applied to each vertex when evaluating if there is an identical vertex in another feature. This parameter is enabled only when Shape is selected as one of the fields.</para>
+		/// <para>在计算时应用于每个折点的 xy 容差（如果另一要素中存在相同的折点）。仅当 Shape 被选作其中一个输入字段时，此参数才可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Z Tolerance</para>
-		/// <para>The Z tolerance that will be applied to each vertex when evaluating if there is an identical vertex in another feature. This parameter is enabled only when Shape is selected as one of the fields.</para>
+		/// <para>在计算时应用于每个折点的 z 容差（如果另一要素中存在相同的折点）。仅当 Shape 被选作其中一个输入字段时，此参数才可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -117,9 +117,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output only duplicated records</para>
-		/// <para>Choose if you want only duplicated records in the output table.</para>
-		/// <para>Unchecked—All input records will have corresponding records in the output table. This is the default.</para>
-		/// <para>Checked—Only duplicate records will have corresponding records in the output table. The output will be empty if no duplicate is found.</para>
+		/// <para>当仅需要在输出表中包含重复记录时选择。</para>
+		/// <para>未选中 - 所有输入记录在输出表中都有对应的记录。这是默认设置。</para>
+		/// <para>选中 - 仅重复记录在输出表中有对应的记录。无重复记录时输出为空。</para>
 		/// <para><see cref="OutputRecordOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -144,14 +144,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum OutputRecordOptionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Only duplicate records will have corresponding records in the output table. The output will be empty if no duplicate is found.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ONLY_DUPLICATES")]
 			ONLY_DUPLICATES,
 
 			/// <summary>
-			/// <para>Unchecked—All input records will have corresponding records in the output table. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ALL")]

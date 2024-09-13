@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Database Sequence</para>
-	/// <para>Delete Database Sequence</para>
-	/// <para>Deletes a database sequence from a geodatabase.</para>
+	/// <para>删除数据库序列</para>
+	/// <para>从地理数据库中删除数据库序列。</para>
 	/// </summary>
 	public class DeleteDatabaseSequence : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Input Workspace</para>
-		/// <para>The full path to the location of the file geodatabase from which you want to delete a sequence or the database connection file (.sde) to connect to the enterprise geodatabase from which you want to delete a sequence. The user specified in the database connection must have the following permissions in the database:</para>
-		/// <para>Db2—DBADM authority</para>
-		/// <para>Oracle—Must be the sequence owner or have the DROP ANY SEQUENCE system privilege</para>
-		/// <para>PostgreSQL—Must be the sequence owner</para>
-		/// <para>SAP HANA—Must be a standard user</para>
-		/// <para>SQL Server—ALTER OR CONTROL permission on the database schema where the sequence is stored</para>
+		/// <para>要从中删除序列的文件地理数据库位置的完整路径，或用于连接到要从中删除序列的企业级地理数据库的数据库连接文件 (.sde)。在数据库连接中指定的用户必须在数据库中具有以下权限：</para>
+		/// <para>Db2 - DBADM 权限</para>
+		/// <para>Oracle - 必须是序列所有者或具有 DROP ANY SEQUENCE 系统权限</para>
+		/// <para>PostgreSQL - 必须是序列所有者</para>
+		/// <para>SAP HANA - 必须是标准用户</para>
+		/// <para>SQL Server - 在存储序列的数据库方案中具有 ALTER OR CONTROL 权限</para>
 		/// </param>
 		/// <param name="SeqName">
 		/// <para>Sequence Name</para>
-		/// <para>The name of the database sequence you want to delete. Once deleted, the sequence cannot be used to generate sequence IDs when called from existing custom applications or expressions.</para>
+		/// <para>要删除的数据库序列的名称。序列删除后，如果从现有自定义应用程序或表达式调用此序列，则其无法用于生成序列 ID。</para>
 		/// </param>
 		public DeleteDatabaseSequence(object InWorkspace, object SeqName)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Delete Database Sequence</para>
+		/// <para>Tool Display Name : 删除数据库序列</para>
 		/// </summary>
-		public override string DisplayName() => "Delete Database Sequence";
+		public override string DisplayName() => "删除数据库序列";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteDatabaseSequence</para>
@@ -75,12 +75,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>The full path to the location of the file geodatabase from which you want to delete a sequence or the database connection file (.sde) to connect to the enterprise geodatabase from which you want to delete a sequence. The user specified in the database connection must have the following permissions in the database:</para>
-		/// <para>Db2—DBADM authority</para>
-		/// <para>Oracle—Must be the sequence owner or have the DROP ANY SEQUENCE system privilege</para>
-		/// <para>PostgreSQL—Must be the sequence owner</para>
-		/// <para>SAP HANA—Must be a standard user</para>
-		/// <para>SQL Server—ALTER OR CONTROL permission on the database schema where the sequence is stored</para>
+		/// <para>要从中删除序列的文件地理数据库位置的完整路径，或用于连接到要从中删除序列的企业级地理数据库的数据库连接文件 (.sde)。在数据库连接中指定的用户必须在数据库中具有以下权限：</para>
+		/// <para>Db2 - DBADM 权限</para>
+		/// <para>Oracle - 必须是序列所有者或具有 DROP ANY SEQUENCE 系统权限</para>
+		/// <para>PostgreSQL - 必须是序列所有者</para>
+		/// <para>SAP HANA - 必须是标准用户</para>
+		/// <para>SQL Server - 在存储序列的数据库方案中具有 ALTER OR CONTROL 权限</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Sequence Name</para>
-		/// <para>The name of the database sequence you want to delete. Once deleted, the sequence cannot be used to generate sequence IDs when called from existing custom applications or expressions.</para>
+		/// <para>要删除的数据库序列的名称。序列删除后，如果从现有自定义应用程序或表达式调用此序列，则其无法用于生成序列 ID。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

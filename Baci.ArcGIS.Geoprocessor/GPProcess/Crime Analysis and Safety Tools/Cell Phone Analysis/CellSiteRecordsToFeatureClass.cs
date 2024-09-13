@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Cell Site Records To Feature Class</para>
-	/// <para>Cell Site Records To Feature Class</para>
-	/// <para>Creates cell site points and sector polygons based on input latitude, longitude, azimuth, beamwidth, and radius information from a cell site table.</para>
+	/// <para>蜂窝基站记录转要素类</para>
+	/// <para>根据来自蜂窝基站点表的输入纬度、经度、方位角、波束宽度和半径信息，创建蜂窝基站点和扇区面。</para>
 	/// </summary>
 	public class CellSiteRecordsToFeatureClass : AbstractGPProcess
 	{
@@ -21,46 +21,46 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Cell Site Table</para>
-		/// <para>The input table containing cell site information provided by the wireless network provider.</para>
+		/// <para>输入表包含由无线网络提供商提供的蜂窝基站信息。</para>
 		/// </param>
 		/// <param name="OutSiteFeatureClass">
 		/// <para>Output Cell Site Points</para>
-		/// <para>The feature class containing the output cell site points.</para>
+		/// <para>包含输出蜂窝基站点的要素类。</para>
 		/// </param>
 		/// <param name="OutSectorFeatureClass">
 		/// <para>Output Cell Site Sectors</para>
-		/// <para>The feature class containing the output cell site sectors.</para>
+		/// <para>包含输出蜂窝基站扇区的要素类。</para>
 		/// </param>
 		/// <param name="IdFields">
 		/// <para>Cell Sector ID Fields</para>
-		/// <para>Specifies the unique ID field type and the fields that will be added to the output feature.</para>
-		/// <para>Use the Unique ID value when the Input Cell Site Table parameter has a unique identifier for all cell sector antennas. Use a combination of other ID Type values when the Input Cell Site Table parameter does not contain a universal unique identifier for all cell sector antennas.</para>
-		/// <para>ID Type—The field name to be included in the output feature classes.</para>
-		/// <para>Field—The name of the fields that uniquely identify the cell sector antennas. These will be added to the output feature class.</para>
-		/// <para>ID Type options are as follows:</para>
-		/// <para>Unique ID—Uniquely identifies a cell sector antenna</para>
-		/// <para>Site ID—Uniquely identifies a cell site</para>
-		/// <para>Sector ID—Uniquely identifies a cell sector</para>
-		/// <para>Switch ID—Uniquely identifies a wireless network switch</para>
-		/// <para>LAC ID—Uniquely identifies the Location Area Code</para>
-		/// <para>Cascade ID—Uniquely identifies the sector in the wireless network cascade</para>
-		/// <para>Cell ID—Identifies the sector within an Location Area Code</para>
+		/// <para>指定唯一 ID 字段类型以及将添加到输出要素的字段。</para>
+		/// <para>当输入蜂窝基站表参数包含所有蜂窝扇区天线的唯一标识符时，请使用唯一 ID 值。当输入蜂窝基站表参数不包含所有蜂窝扇区天线的通用唯一标识符时，请结合使用其他 ID 类型值。</para>
+		/// <para>ID 类型 - 要包含在输出要素类中的字段名称。</para>
+		/// <para>字段 - 用于唯一标识蜂窝扇区天线的字段名称。这些将被添加至输出要素类中。</para>
+		/// <para>ID 类型选项如下：</para>
+		/// <para>唯一 ID - 用于唯一标识蜂窝扇区天线</para>
+		/// <para>站点 ID - 用于唯一表示蜂窝基站</para>
+		/// <para>扇区 ID - 用于唯一标识蜂窝扇区</para>
+		/// <para>交换机 ID - 用于唯一标识无线网络交换机</para>
+		/// <para>LAC ID - 用于唯一标识位置区号</para>
+		/// <para>Cascade ID - 用于唯一标识无线网络 Cascade 中的扇区</para>
+		/// <para>蜂窝 ID - 用于标识位置区号中的扇区</para>
 		/// </param>
 		/// <param name="XField">
 		/// <para>X Field</para>
-		/// <para>The field in the input table that contains the x-coordinate of the cell site.</para>
+		/// <para>输入表中包含蜂窝基站的 X 坐标的字段。</para>
 		/// </param>
 		/// <param name="YField">
 		/// <para>Y Field</para>
-		/// <para>The field in the input table that contains the y-coordinate of the cell site.</para>
+		/// <para>输入表中包含蜂窝基站的 Y 坐标的字段。</para>
 		/// </param>
 		/// <param name="InCoordinateSystem">
 		/// <para>Input Coordinate System</para>
-		/// <para>The coordinate system of the coordinates specified in the X Field and Y Field parameters.</para>
+		/// <para>X 字段和 Y 字段参数中指定的坐标的坐标系。</para>
 		/// </param>
 		/// <param name="OutCoordinateSystem">
 		/// <para>Output Projected Coordinate System</para>
-		/// <para>The projected coordinate system of the output sites and sectors.</para>
+		/// <para>输出基站和扇区的投影坐标系。</para>
 		/// </param>
 		public CellSiteRecordsToFeatureClass(object InTable, object OutSiteFeatureClass, object OutSectorFeatureClass, object IdFields, object XField, object YField, object InCoordinateSystem, object OutCoordinateSystem)
 		{
@@ -75,9 +75,9 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Cell Site Records To Feature Class</para>
+		/// <para>Tool Display Name : 蜂窝基站记录转要素类</para>
 		/// </summary>
-		public override string DisplayName() => "Cell Site Records To Feature Class";
+		public override string DisplayName() => "蜂窝基站记录转要素类";
 
 		/// <summary>
 		/// <para>Tool Name : CellSiteRecordsToFeatureClass</para>
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Input Cell Site Table</para>
-		/// <para>The input table containing cell site information provided by the wireless network provider.</para>
+		/// <para>输入表包含由无线网络提供商提供的蜂窝基站信息。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Output Cell Site Points</para>
-		/// <para>The feature class containing the output cell site points.</para>
+		/// <para>包含输出蜂窝基站点的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Output Cell Site Sectors</para>
-		/// <para>The feature class containing the output cell site sectors.</para>
+		/// <para>包含输出蜂窝基站扇区的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -135,18 +135,18 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Cell Sector ID Fields</para>
-		/// <para>Specifies the unique ID field type and the fields that will be added to the output feature.</para>
-		/// <para>Use the Unique ID value when the Input Cell Site Table parameter has a unique identifier for all cell sector antennas. Use a combination of other ID Type values when the Input Cell Site Table parameter does not contain a universal unique identifier for all cell sector antennas.</para>
-		/// <para>ID Type—The field name to be included in the output feature classes.</para>
-		/// <para>Field—The name of the fields that uniquely identify the cell sector antennas. These will be added to the output feature class.</para>
-		/// <para>ID Type options are as follows:</para>
-		/// <para>Unique ID—Uniquely identifies a cell sector antenna</para>
-		/// <para>Site ID—Uniquely identifies a cell site</para>
-		/// <para>Sector ID—Uniquely identifies a cell sector</para>
-		/// <para>Switch ID—Uniquely identifies a wireless network switch</para>
-		/// <para>LAC ID—Uniquely identifies the Location Area Code</para>
-		/// <para>Cascade ID—Uniquely identifies the sector in the wireless network cascade</para>
-		/// <para>Cell ID—Identifies the sector within an Location Area Code</para>
+		/// <para>指定唯一 ID 字段类型以及将添加到输出要素的字段。</para>
+		/// <para>当输入蜂窝基站表参数包含所有蜂窝扇区天线的唯一标识符时，请使用唯一 ID 值。当输入蜂窝基站表参数不包含所有蜂窝扇区天线的通用唯一标识符时，请结合使用其他 ID 类型值。</para>
+		/// <para>ID 类型 - 要包含在输出要素类中的字段名称。</para>
+		/// <para>字段 - 用于唯一标识蜂窝扇区天线的字段名称。这些将被添加至输出要素类中。</para>
+		/// <para>ID 类型选项如下：</para>
+		/// <para>唯一 ID - 用于唯一标识蜂窝扇区天线</para>
+		/// <para>站点 ID - 用于唯一表示蜂窝基站</para>
+		/// <para>扇区 ID - 用于唯一标识蜂窝扇区</para>
+		/// <para>交换机 ID - 用于唯一标识无线网络交换机</para>
+		/// <para>LAC ID - 用于唯一标识位置区号</para>
+		/// <para>Cascade ID - 用于唯一标识无线网络 Cascade 中的扇区</para>
+		/// <para>蜂窝 ID - 用于标识位置区号中的扇区</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>X Field</para>
-		/// <para>The field in the input table that contains the x-coordinate of the cell site.</para>
+		/// <para>输入表中包含蜂窝基站的 X 坐标的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Y Field</para>
-		/// <para>The field in the input table that contains the y-coordinate of the cell site.</para>
+		/// <para>输入表中包含蜂窝基站的 Y 坐标的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Input Coordinate System</para>
-		/// <para>The coordinate system of the coordinates specified in the X Field and Y Field parameters.</para>
+		/// <para>X 字段和 Y 字段参数中指定的坐标的坐标系。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPCoordinateSystem()]
@@ -179,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Output Projected Coordinate System</para>
-		/// <para>The projected coordinate system of the output sites and sectors.</para>
+		/// <para>输出基站和扇区的投影坐标系。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPCoordinateSystem()]
@@ -187,8 +187,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Azimuth Field</para>
-		/// <para>The field in the input table that contains the direction of the antenna signal (cell sector).</para>
-		/// <para>The azimuth field values must be expressed in positive degrees from 0 to 360, measured clockwise from north.</para>
+		/// <para>输入表中包含天线信号方向的字段（蜂窝扇区）。</para>
+		/// <para>方位角字段值必须以 0 到 360 度之间的正度数表示，以北为基准方向按顺时针进行测量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -198,10 +198,10 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Default Start Azimuth</para>
-		/// <para>The starting azimuth value of the antenna signals (cell sectors) to be used when the azimuth field is not specified.</para>
-		/// <para>For example, if three cell sectors exist at the same location and this parameter is set to 0 degrees. The first sector is generated with an azimuth of 0 degrees, the second sector is generated with an azimuth of 120 degrees, and the third sector is generated with an azimuth of 240 degrees.</para>
-		/// <para>This parameter is used when the azimuth field is not specified.</para>
-		/// <para>The azimuth value must be expressed in positive degrees from 0 to 360. The default is 0.</para>
+		/// <para>未指定方位角字段时所要使用的天线信号（蜂窝扇区）的起始方位角值。</para>
+		/// <para>例如，如果三个蜂窝扇区位于同一位置，并且此参数设置为 0 度。第一扇区以 0 度的方位角生成，第二扇区以 120 度的方位角生成，而第三扇区则以 240 度的方位角生成。</para>
+		/// <para>未指定方位角字段时，使用此参数。</para>
+		/// <para>方位角值必须以 0 到 360 之间的正度数表示。默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -210,8 +210,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Beamwidth Field</para>
-		/// <para>The field in the input table containing the full or half beamwidth value (angle) of the antenna signal (cell sector).</para>
-		/// <para>The beamwidth must be expressed in positive degrees from 0 to 360. Use 360 for omnidirectional antennas.</para>
+		/// <para>输入表中包含天线信号（蜂窝扇区）的全部或一半波束宽度值（角度）的字段。</para>
+		/// <para>波束宽度必须以 0 到 360 之间的正度数表示。将 360 用于全向天线。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -221,9 +221,9 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Beamwidth Type</para>
-		/// <para>Specifies the type of beamwidth value represented in the input cell type table.</para>
-		/// <para>Full Beamwidth—Full beamwidth is represented in the input. This is the default.</para>
-		/// <para>Half Beamwidth—Half beamwidth is represented in the input</para>
+		/// <para>指定输入像元类型表中表示的波束宽度值的类型。</para>
+		/// <para>全部波束宽度—全部波束宽度将在输入中表示。这是默认设置。</para>
+		/// <para>一半波束宽度—一半波束宽度将在输入中表示。</para>
 		/// <para><see cref="BeamwidthTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -233,8 +233,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Default Beamwidth</para>
-		/// <para>The beamwidth (in degrees) of the antenna signal (cell sector) to be used when the beamwidth field is not specified.</para>
-		/// <para>The default is 90 degrees.</para>
+		/// <para>未指定波束宽度字段时所要使用的天线信号（蜂窝扇区）的波束宽度（度）。</para>
+		/// <para>默认值为 90 度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -243,7 +243,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Radius Field</para>
-		/// <para>The field in the input table that contains the radial length (signal distance) of the antenna signal (cell sector).</para>
+		/// <para>输入表中包含天线信号（蜂窝扇区）的半径长度（信号距离）的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -253,12 +253,12 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Radius Unit</para>
-		/// <para>Specifies the linear unit of measurement for the radius field..</para>
-		/// <para>Kilometers—The unit will be kilometers.</para>
-		/// <para>Meters—The unit will be meters.</para>
-		/// <para>Miles—The unit will be miles. This is the default.</para>
-		/// <para>Yards—The unit will be yards.</para>
-		/// <para>Feet—The unit will be feet.</para>
+		/// <para>指定半径字段的线性测量单位。.</para>
+		/// <para>千米—单位将为公里。</para>
+		/// <para>米—单位将为米。</para>
+		/// <para>英里—单位将为英里。这是默认设置。</para>
+		/// <para>码—单位将为码。</para>
+		/// <para>英尺—单位将为英尺。</para>
 		/// <para><see cref="RadiusUnitEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -268,8 +268,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Default Radius Length</para>
-		/// <para>The radius length (signal distance) of the antenna signal (cell sector) to be used when the radial field is not specified.</para>
-		/// <para>The default is 2.</para>
+		/// <para>未指定径向字段时要使用的天线信号（蜂窝扇区）的半径长度（信号距离）。</para>
+		/// <para>默认值为 2。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -292,17 +292,17 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		public enum BeamwidthTypeEnum 
 		{
 			/// <summary>
-			/// <para>Full Beamwidth—Full beamwidth is represented in the input. This is the default.</para>
+			/// <para>全部波束宽度—全部波束宽度将在输入中表示。这是默认设置。</para>
 			/// </summary>
 			[GPValue("FULL_BEAMWIDTH")]
-			[Description("Full Beamwidth")]
+			[Description("全部波束宽度")]
 			Full_Beamwidth,
 
 			/// <summary>
-			/// <para>Half Beamwidth—Half beamwidth is represented in the input</para>
+			/// <para>一半波束宽度—一半波束宽度将在输入中表示。</para>
 			/// </summary>
 			[GPValue("HALF_BEAMWIDTH")]
-			[Description("Half Beamwidth")]
+			[Description("一半波束宽度")]
 			Half_Beamwidth,
 
 		}
@@ -313,38 +313,38 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		public enum RadiusUnitEnum 
 		{
 			/// <summary>
-			/// <para>Kilometers—The unit will be kilometers.</para>
+			/// <para>千米—单位将为公里。</para>
 			/// </summary>
 			[GPValue("KILOMETERS")]
-			[Description("Kilometers")]
+			[Description("千米")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>Meters—The unit will be meters.</para>
+			/// <para>米—单位将为米。</para>
 			/// </summary>
 			[GPValue("METERS")]
-			[Description("Meters")]
+			[Description("米")]
 			Meters,
 
 			/// <summary>
-			/// <para>Miles—The unit will be miles. This is the default.</para>
+			/// <para>英里—单位将为英里。这是默认设置。</para>
 			/// </summary>
 			[GPValue("MILES")]
-			[Description("Miles")]
+			[Description("英里")]
 			Miles,
 
 			/// <summary>
-			/// <para>Yards—The unit will be yards.</para>
+			/// <para>码—单位将为码。</para>
 			/// </summary>
 			[GPValue("YARDS")]
-			[Description("Yards")]
+			[Description("码")]
 			Yards,
 
 			/// <summary>
-			/// <para>Feet—The unit will be feet.</para>
+			/// <para>英尺—单位将为英尺。</para>
 			/// </summary>
 			[GPValue("FEET")]
-			[Description("Feet")]
+			[Description("英尺")]
 			Feet,
 
 		}

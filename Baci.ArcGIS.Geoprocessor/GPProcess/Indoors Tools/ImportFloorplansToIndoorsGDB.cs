@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Import Floorplans To Indoors Geodatabase</para>
-	/// <para>Import Floorplans To Indoors Geodatabase</para>
-	/// <para>Imports floor plans from CAD files into an Indoors workspace that conforms to the ArcGIS Indoors Information Model. The output of this tool can be used to create floor-aware maps and scenes for use in floor-aware apps, as well as to generate an indoor network for routing.</para>
+	/// <para>将楼层平面图导入 Indoors 地理数据库</para>
+	/// <para>将楼层平面图从 CAD 文件导入到符合 ArcGIS Indoors 信息模型的 Indoors 工作空间中。 可使用该工具的输出创建楼层感知型地图和场景，以用于楼层感知型应用程序，以及生成用于路由的室内网络。</para>
 	/// </summary>
 	public class ImportFloorplansToIndoorsGDB : AbstractGPProcess
 	{
@@ -21,30 +21,30 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		/// <param name="TargetUnitFeatures">
 		/// <para>Target Unit Features</para>
-		/// <para>The target Units feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Facilities, Levels, and Details features.</para>
+		/// <para>符合 ArcGIS Indoors 信息模型并与目标设施点、楼层和详细信息要素位于同一工作空间中的目标单元要素图层、要素类或要素服务。</para>
 		/// </param>
 		/// <param name="TargetDetailFeatures">
 		/// <para>Target Detail Features</para>
-		/// <para>The target Details feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Facilities, Levels, and Units features.</para>
+		/// <para>符合 ArcGIS Indoors 信息模型并与目标设施点、楼层和单元要素位于同一工作空间中的目标详细信息要素图层、要素类或要素服务。</para>
 		/// </param>
 		/// <param name="TargetLevelFeatures">
 		/// <para>Target Level Features</para>
-		/// <para>The target Levels feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Facilities, Units, and Details features.</para>
+		/// <para>符合 ArcGIS Indoors 信息模型并与目标设施点、单元和详细信息要素位于同一工作空间中的目标楼层要素图层、要素类或要素服务。</para>
 		/// </param>
 		/// <param name="TargetFacilityFeatures">
 		/// <para>Target Facility Features</para>
-		/// <para>The target Facilities feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Levels, Units, and Details features.</para>
+		/// <para>符合 ArcGIS Indoors 信息模型并与目标楼层、单元和详细信息要素位于同一工作空间中的目标设施点要素图层、要素类或要素服务。</para>
 		/// </param>
 		/// <param name="InExcelTemplate">
 		/// <para>Input Excel Template File</para>
-		/// <para>An Excel spreadsheet (.xls or .xlsx file) that contains input and configuration parameters.</para>
+		/// <para>包含输入和配置参数的 Excel 电子表格（.xls 或 .xlsx 文件）。</para>
 		/// </param>
 		/// <param name="UniqueidDelimiter">
 		/// <para>Unique ID Delimiter</para>
-		/// <para>Specifies the delimiter that will separate key values in the Indoors model hierarchy.</para>
-		/// <para>Period—The ID will include key values separated by periods. This is default.</para>
-		/// <para>Hyphen—The ID will include key values separated by hyphens.</para>
-		/// <para>Underscore—The ID will include key values separated by underscores.</para>
+		/// <para>指定将按 Indoors 模型等级分隔键值的分隔符。</para>
+		/// <para>句点—该 ID 将包含以句点分隔的键值。 这是默认设置。</para>
+		/// <para>连字符—该 ID 将包含以连字符分隔的键值。</para>
+		/// <para>下划线—该 ID 将包含以下划线分隔的键值。</para>
 		/// <para><see cref="UniqueidDelimiterEnum"/></para>
 		/// </param>
 		public ImportFloorplansToIndoorsGDB(object TargetUnitFeatures, object TargetDetailFeatures, object TargetLevelFeatures, object TargetFacilityFeatures, object InExcelTemplate, object UniqueidDelimiter)
@@ -58,9 +58,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Import Floorplans To Indoors Geodatabase</para>
+		/// <para>Tool Display Name : 将楼层平面图导入 Indoors 地理数据库</para>
 		/// </summary>
-		public override string DisplayName() => "Import Floorplans To Indoors Geodatabase";
+		public override string DisplayName() => "将楼层平面图导入 Indoors 地理数据库";
 
 		/// <summary>
 		/// <para>Tool Name : ImportFloorplansToIndoorsGDB</para>
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Target Unit Features</para>
-		/// <para>The target Units feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Facilities, Levels, and Details features.</para>
+		/// <para>符合 ArcGIS Indoors 信息模型并与目标设施点、楼层和详细信息要素位于同一工作空间中的目标单元要素图层、要素类或要素服务。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Target Detail Features</para>
-		/// <para>The target Details feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Facilities, Levels, and Units features.</para>
+		/// <para>符合 ArcGIS Indoors 信息模型并与目标设施点、楼层和单元要素位于同一工作空间中的目标详细信息要素图层、要素类或要素服务。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Target Level Features</para>
-		/// <para>The target Levels feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Facilities, Units, and Details features.</para>
+		/// <para>符合 ArcGIS Indoors 信息模型并与目标设施点、单元和详细信息要素位于同一工作空间中的目标楼层要素图层、要素类或要素服务。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Target Facility Features</para>
-		/// <para>The target Facilities feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Levels, Units, and Details features.</para>
+		/// <para>符合 ArcGIS Indoors 信息模型并与目标楼层、单元和详细信息要素位于同一工作空间中的目标设施点要素图层、要素类或要素服务。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Excel Template File</para>
-		/// <para>An Excel spreadsheet (.xls or .xlsx file) that contains input and configuration parameters.</para>
+		/// <para>包含输入和配置参数的 Excel 电子表格（.xls 或 .xlsx 文件）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -148,10 +148,10 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Unique ID Delimiter</para>
-		/// <para>Specifies the delimiter that will separate key values in the Indoors model hierarchy.</para>
-		/// <para>Period—The ID will include key values separated by periods. This is default.</para>
-		/// <para>Hyphen—The ID will include key values separated by hyphens.</para>
-		/// <para>Underscore—The ID will include key values separated by underscores.</para>
+		/// <para>指定将按 Indoors 模型等级分隔键值的分隔符。</para>
+		/// <para>句点—该 ID 将包含以句点分隔的键值。 这是默认设置。</para>
+		/// <para>连字符—该 ID 将包含以连字符分隔的键值。</para>
+		/// <para>下划线—该 ID 将包含以下划线分隔的键值。</para>
 		/// <para><see cref="UniqueidDelimiterEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Sliver Threshold</para>
-		/// <para>The ratio of perimeter to area that defines a sliver polygon. It is used when importing Unit polygons to improve the quality of the imported data. Unit polygons that are determined to be slivers are placed in a review geodatabase located in the scratch folder of the ArcGIS Pro project. The default value is 2.</para>
+		/// <para>定义狭长面的周长与面积之比。 可在导入单位面时使用，以提高导入数据的质量。 确定为狭长面的单位面将置于位于 ArcGIS Pro 工程的临时文件夹中的检查地理数据库中。 默认值为 2。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Door Close Buffer</para>
-		/// <para>The distance, in inches, the tool will search from a door to find and snap to the nearest wall. This parameter is used when the CLOSE_DOORS column is set to Y in the input Excel template file. The default value is 0.</para>
+		/// <para>该工具以门为原点搜索的距离（以英寸为单位），以查找并捕捉到最近的墙壁。 当在输入 Excel 模板文件中将 CLOSE_DOORS 列设置为 Y 时，将使用此参数。 默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -179,9 +179,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Area Unit of Measure</para>
-		/// <para>Specifies the unit of measure that will be used to calculate area for the area fields when importing floor plans.</para>
-		/// <para>Square Feet—Area will be defined in square feet. This is default.</para>
-		/// <para>Square Meters—Area will be defined in square meters.</para>
+		/// <para>在导入楼层平面图时，指定将用于计算区域字段的面积的测量单位。</para>
+		/// <para>平方英尺—将以平方英尺为单位来定义面积。 这是默认设置。</para>
+		/// <para>平方米—将以平方米为单位来定义面积。</para>
 		/// <para><see cref="AreaUnitOfMeasureEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -191,9 +191,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Measurement Mode</para>
-		/// <para>Specifies the measurement mode that will be used to calculate the area fields when importing floor plans.</para>
-		/// <para>Geodesic—Area will be calculated using geodesic distance. Geodesic distance is calculated in a 3D spherical space as the distance across the curved surface of the world. This is default.</para>
-		/// <para>Planar—Area will be calculated using planar distance. Planar distance is straight-line Euclidean distance calculated in a 2D Cartesian coordinate system.</para>
+		/// <para>在导入楼层平面图时，指定将用于计算面积字段的测量模式。</para>
+		/// <para>测地线—将使用测地线距离计算面积。 测地线距离（即跨世界曲面的距离）在 3D 球空间中进行计算。 这是默认设置。</para>
+		/// <para>平面—将使用平面距离计算面积。 平面距离为在 2D 笛卡尔坐标系中计算的直线欧氏距离。</para>
 		/// <para><see cref="MeasurementModeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -203,7 +203,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Target Section Features</para>
-		/// <para>The target Sections feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Facility, Level, Unit, and Detail features.</para>
+		/// <para>符合 ArcGIS Indoors 信息模型并与目标设施点、楼层、单元和详细信息要素位于同一工作空间中的目标地区要素图层、要素类或要素服务。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -214,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Target Zone Features</para>
-		/// <para>The target Zones feature layer, feature class, or feature service that conforms to the ArcGIS Indoors Information Model and resides in the same workspace as the target Facility, Level, Unit, and Detail features.</para>
+		/// <para>符合 ArcGIS Indoors 信息模型并与目标设施点、楼层、单元和详细信息要素位于同一工作空间中的目标区域要素图层、要素类或要素服务。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -247,24 +247,24 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		public enum UniqueidDelimiterEnum 
 		{
 			/// <summary>
-			/// <para>Period—The ID will include key values separated by periods. This is default.</para>
+			/// <para>句点—该 ID 将包含以句点分隔的键值。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("PERIOD")]
-			[Description("Period")]
+			[Description("句点")]
 			Period,
 
 			/// <summary>
-			/// <para>Hyphen—The ID will include key values separated by hyphens.</para>
+			/// <para>连字符—该 ID 将包含以连字符分隔的键值。</para>
 			/// </summary>
 			[GPValue("HYPHEN")]
-			[Description("Hyphen")]
+			[Description("连字符")]
 			Hyphen,
 
 			/// <summary>
-			/// <para>Underscore—The ID will include key values separated by underscores.</para>
+			/// <para>下划线—该 ID 将包含以下划线分隔的键值。</para>
 			/// </summary>
 			[GPValue("UNDERSCORE")]
-			[Description("Underscore")]
+			[Description("下划线")]
 			Underscore,
 
 		}
@@ -275,17 +275,17 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		public enum AreaUnitOfMeasureEnum 
 		{
 			/// <summary>
-			/// <para>Square Feet—Area will be defined in square feet. This is default.</para>
+			/// <para>平方英尺—将以平方英尺为单位来定义面积。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("SQUARE_FEET")]
-			[Description("Square Feet")]
+			[Description("平方英尺")]
 			Square_Feet,
 
 			/// <summary>
-			/// <para>Square Meters—Area will be defined in square meters.</para>
+			/// <para>平方米—将以平方米为单位来定义面积。</para>
 			/// </summary>
 			[GPValue("SQUARE_METERS")]
-			[Description("Square Meters")]
+			[Description("平方米")]
 			Square_Meters,
 
 		}
@@ -296,17 +296,17 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		public enum MeasurementModeEnum 
 		{
 			/// <summary>
-			/// <para>Geodesic—Area will be calculated using geodesic distance. Geodesic distance is calculated in a 3D spherical space as the distance across the curved surface of the world. This is default.</para>
+			/// <para>测地线—将使用测地线距离计算面积。 测地线距离（即跨世界曲面的距离）在 3D 球空间中进行计算。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("Geodesic")]
+			[Description("测地线")]
 			Geodesic,
 
 			/// <summary>
-			/// <para>Planar—Area will be calculated using planar distance. Planar distance is straight-line Euclidean distance calculated in a 2D Cartesian coordinate system.</para>
+			/// <para>平面—将使用平面距离计算面积。 平面距离为在 2D 笛卡尔坐标系中计算的直线欧氏距离。</para>
 			/// </summary>
 			[GPValue("PLANAR")]
-			[Description("Planar")]
+			[Description("平面")]
 			Planar,
 
 		}

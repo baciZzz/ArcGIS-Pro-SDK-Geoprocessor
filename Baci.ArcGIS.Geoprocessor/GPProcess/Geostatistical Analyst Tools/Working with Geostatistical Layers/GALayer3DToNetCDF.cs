@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>GA Layer 3D To NetCDF</para>
-	/// <para>GA Layer 3D To NetCDF</para>
-	/// <para>Exports one or more 3D geostatistical layers created using the Empirical Bayesian Kriging 3D tool to netCDF format (*.nc file). The primary purpose of this tool is to prepare the 3D geostatistical layers for visualization as a voxel layer in a local scene.</para>
+	/// <para>3D GA 图层转 NetCDF</para>
+	/// <para>将使用 3D 经验贝叶斯克里金工具创建的一个或多个 3D 地统计图层导出为 netCDF 格式（*.nc 文件）。此工具的主要目的是准备 3D 地统计图层，以将其可视化为局部场景中的体素图层。</para>
 	/// </summary>
 	public class GALayer3DToNetCDF : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="In3DGeostatLayers">
 		/// <para>Input 3D geostatistical layers</para>
-		/// <para>The 3D geostatistical layers that will be exported to the Output netCDF file. If more than one layer is provided, the output will be a multivariate netCDF file.</para>
+		/// <para>将导出到输出 netCDF 文件的 3D 地统计图层。如果提供了多个图层，则输出将是多元 netCDF 文件。</para>
 		/// </param>
 		/// <param name="OutNetcdfFile">
 		/// <para>Output netCDF file</para>
-		/// <para>The output netCDF file containing the exported values from the Input 3D geostatistical layers.</para>
+		/// <para>包含从 输入 3D 地统计图层导出的值的输出 netCDF 文件。</para>
 		/// </param>
 		public GALayer3DToNetCDF(object In3DGeostatLayers, object OutNetcdfFile)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : GA Layer 3D To NetCDF</para>
+		/// <para>Tool Display Name : 3D GA 图层转 NetCDF</para>
 		/// </summary>
-		public override string DisplayName() => "GA Layer 3D To NetCDF";
+		public override string DisplayName() => "3D GA 图层转 NetCDF";
 
 		/// <summary>
 		/// <para>Tool Name : GALayer3DToNetCDF</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input 3D geostatistical layers</para>
-		/// <para>The 3D geostatistical layers that will be exported to the Output netCDF file. If more than one layer is provided, the output will be a multivariate netCDF file.</para>
+		/// <para>将导出到输出 netCDF 文件的 3D 地统计图层。如果提供了多个图层，则输出将是多元 netCDF 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output netCDF file</para>
-		/// <para>The output netCDF file containing the exported values from the Input 3D geostatistical layers.</para>
+		/// <para>包含从 输入 3D 地统计图层导出的值的输出 netCDF 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -88,9 +88,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Export locations</para>
-		/// <para>Specifies the locations to export from the Input 3D geostatistical layers. You can export to 3D gridded points or provide custom 3D point features to represent the export locations. If you choose 3D gridded points, you must provide values for the X spacing, Y spacing, and Elevation spacing parameters that represent the distance between each gridded point in all dimensions. If you choose Custom 3D points, you must provide 3D point features in the 3D point locations parameter representing the locations to export.</para>
-		/// <para>3D gridded points—Prediction locations are 3D gridded points. This is the default.</para>
-		/// <para>Custom 3D points—Prediction locations are defined by custom 3D point features.</para>
+		/// <para>指定要从输入 3D 地统计图层导出的位置。您可以导出到 3D 格网化点或提供自定义 3D 点要素来表示导出位置。如果您选择 3D 格网化点，则必须提供 X 间距、Y 间距和高程间距参数的值，这些参数表示所有维度上每个格网化的点之间的距离。如果您选择自定义 3D 点，则必须在 3D 点位置参数中提供 3D 点要素，其表示要导出的位置。</para>
+		/// <para>3D 格网化点—预测位置是 3D 格网化点。这是默认设置。</para>
+		/// <para>自定义 3D 点—预测位置由自定义 3D 点要素定义。</para>
 		/// <para><see cref="ExportLocationsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>X spacing</para>
-		/// <para>The spacing between each gridded point in the x-dimension. The default value creates 40 points along the output x-extent.</para>
+		/// <para>x 维度中每个格网化点之间的间距。默认值沿输出 x 范围创建 40 个点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Y spacing</para>
-		/// <para>The spacing between each gridded point in the y-dimension. The default value creates 40 points along the output y-extent.</para>
+		/// <para>y 维度中每个格网化点之间的间距。默认值沿输出 y 范围创建 40 个点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Elevation spacing</para>
-		/// <para>The spacing between each gridded point in the elevation (z) dimension. The default value creates 40 points along the output z-extent.</para>
+		/// <para>高程 (z) 维度中每个格网化点之间的间距。默认值沿输出 z 范围创建 40 个点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>3D point locations</para>
-		/// <para>The 3D point features representing locations to export. The point features must have their elevations stored in the Shape.Z geometry attribute.</para>
+		/// <para>表示要导出的位置的 3D 点要素。点要素的高程必须存储在 Shape.Z 几何属性中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -137,8 +137,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output variables</para>
-		/// <para>Specifies the output types for the Input 3D geostatistical layers. You can specify one or more output types for each of the layers or you can apply an output type to all input geostatistical layers. By default, the predictions for all layers will be exported.</para>
-		/// <para>To export other output types, specify the layer to export (or choose All to specify all layers) in the first entry of the value table. Specify the output type in the second entry of the value table. If you choose Probability or Quantile as the output type, specify the threshold value (for probability) or the quantile value (for quantile) in the third entry of the value table. If you choose Prediction or Prediction standard error as the output type, you can leave the third entry in the value table empty.</para>
+		/// <para>指定输入 3D 地统计图层的输出类型。您可以为每个图层指定一个或多个输出类型，也可以将输出类型应用于所有输入地统计图层。默认情况下，将导出所有图层的预测。</para>
+		/// <para>要导出其他输出类型，请在值表的第一个条目中指定要导出的图层（或选择所有以指定所有图层）。在值表的第二个条目中指定输出类型。如果您选择概率或分位数作为输出类型，请在值表的第三个条目中指定阈值（用于概率）或分位数（用于分位数）。如果您选择预测或预测标准误差作为输出类型，则可将值表中的第三个条目留空。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input study area polygons</para>
-		/// <para>The polygon features that represent the study area. Only points that are within the study area are saved in the output netCDF file. When visualized as a voxel layer, only voxels within the study area will display in the scene. Points are determined to be inside or outside of the study area using only their x- and y-coordinates.</para>
+		/// <para>表示研究区域的面要素。仅研究区域内的点保存在输出 netCDF 文件中。如果可视化为体素图层，则场景中将仅显示研究区域内的体素。将仅使用点的 x 和 y 坐标来确定点位于研究区域内部还是外部。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -172,17 +172,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum ExportLocationsEnum 
 		{
 			/// <summary>
-			/// <para>3D gridded points—Prediction locations are 3D gridded points. This is the default.</para>
+			/// <para>3D 格网化点—预测位置是 3D 格网化点。这是默认设置。</para>
 			/// </summary>
 			[GPValue("3D_GRIDDED_POINTS")]
-			[Description("3D gridded points")]
+			[Description("3D 格网化点")]
 			_3D_gridded_points,
 
 			/// <summary>
-			/// <para>Custom 3D points—Prediction locations are defined by custom 3D point features.</para>
+			/// <para>自定义 3D 点—预测位置由自定义 3D 点要素定义。</para>
 			/// </summary>
 			[GPValue("CUSTOM_3D_POINTS")]
-			[Description("Custom 3D points")]
+			[Description("自定义 3D 点")]
 			Custom_3D_points,
 
 		}

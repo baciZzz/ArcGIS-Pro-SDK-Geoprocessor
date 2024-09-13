@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Update Analysis Layer Attribute Parameter</para>
-	/// <para>Update Analysis Layer Attribute Parameter</para>
-	/// <para>Updates the network attribute parameter value for a network analysis layer. The tool should be used to update the value of an attribute parameter for a network analysis layer prior to solving with the Solve tool.  This ensures that the  solve operation uses the specified value of the attribute parameter to produce appropriate results.</para>
+	/// <para>更新分析图层属性参数</para>
+	/// <para>更新网络分析图层的网络属性参数值。在使用求解工具求解前，应使用该工具更新网络分析图层的属性参数值。此操作将确保求解操作使用属性参数的特定值生成恰当的结果。</para>
 	/// </summary>
 	[Obsolete()]
 	public class UpdateAnalysisLayerAttributeParameter : AbstractGPProcess
@@ -22,15 +22,15 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InNetworkAnalysisLayer">
 		/// <para>Input Network Analysis Layer</para>
-		/// <para>Network analysis layer for which the attribute parameter value will be updated.</para>
+		/// <para>要更新属性参数值的网络分析图层。</para>
 		/// </param>
 		/// <param name="ParameterizedAttribute">
 		/// <para>Attribute</para>
-		/// <para>The network attribute whose attribute parameter will be updated.</para>
+		/// <para>要更新属性参数的网络属性。</para>
 		/// </param>
 		/// <param name="AttributeParameterName">
 		/// <para>Parameter</para>
-		/// <para>The parameter of the network attribute that will be updated. The parameters of type Object cannot be updated using the tool.</para>
+		/// <para>要更新的网络属性的参数。“对象”类型的参数不能使用该工具进行更新。</para>
 		/// </param>
 		public UpdateAnalysisLayerAttributeParameter(object InNetworkAnalysisLayer, object ParameterizedAttribute, object AttributeParameterName)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Update Analysis Layer Attribute Parameter</para>
+		/// <para>Tool Display Name : 更新分析图层属性参数</para>
 		/// </summary>
-		public override string DisplayName() => "Update Analysis Layer Attribute Parameter";
+		public override string DisplayName() => "更新分析图层属性参数";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateAnalysisLayerAttributeParameter</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>
-		/// <para>Network analysis layer for which the attribute parameter value will be updated.</para>
+		/// <para>要更新属性参数值的网络分析图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPNALayer()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Attribute</para>
-		/// <para>The network attribute whose attribute parameter will be updated.</para>
+		/// <para>要更新属性参数的网络属性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Parameter</para>
-		/// <para>The parameter of the network attribute that will be updated. The parameters of type Object cannot be updated using the tool.</para>
+		/// <para>要更新的网络属性的参数。“对象”类型的参数不能使用该工具进行更新。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -102,8 +102,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Value</para>
-		/// <para>The value that will be set for the attribute parameter. It can be a string, number, date, or Boolean (True, False). If the value is not specified, then the attribute parameter value is set to Null.</para>
-		/// <para>If the attribute parameter has a restriction usage type, the value can be specified as a string keyword or a numeric value. The string keyword or the numeric value determines whether the restriction attribute prohibits, avoids, or prefers the network elements it is associated with. Furthermore, the degree to which network elements are avoided or preferred can be defined by choosing HIGH, MEDIUM, or LOW keywords. The following keywords are supported:</para>
+		/// <para>要为属性参数设置的值。该值可以是字符串、数值、日期或布尔值（True 和 False）。如果未指定值，则属性参数值将被设置为空。</para>
+		/// <para>如果属性参数为限制使用类型，则参数值可被指定为字符串关键字或数值。字符串关键字或数值决定了限制属性是否禁止、避开或优先选择与之关联的网络元素。并且，网络元素避开或优先选择的程度可通过选择 HIGH、MEDIUM、或 LOW 关键字来定义。可支持的关键字如下：</para>
 		/// <para>PROHIBITED</para>
 		/// <para>AVOID_HIGH</para>
 		/// <para>AVOID_MEDIUM</para>
@@ -111,8 +111,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <para>PREFER_LOW</para>
 		/// <para>PREFER_MEDIUM</para>
 		/// <para>PREFER_HIGH</para>
-		/// <para>Numeric values that are greater than one cause restricted elements to be avoided; the larger the number, the more the elements are avoided. Numeric values between zero and one cause restricted elements to be preferred; the smaller the number, the more restricted elements are preferred. Negative numbers prohibit restricted elements.</para>
-		/// <para>If the parameter value holds an array, separate the items in the array with the localized separator character. For example, in the U.S., you would most likely use the comma character to separate the items. So representing an array of three numbers might look like the following: &quot;5,10,15&quot;.</para>
+		/// <para>大于一的数值会避开限制元素；数值越大，避开的元素就越多。零和一之间的数值会导致优先选择限制元素；数值越小，优先选择的限制元素就越多。负值会禁止限制元素。</para>
+		/// <para>如果参数值包含一个数组，则使用本地分隔符分隔数组中的各项。例如，在美国，倾向于使用逗号分隔项目。因此，表示包含三个数值的数组时可以显示为：&quot;5,10,15&quot;。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

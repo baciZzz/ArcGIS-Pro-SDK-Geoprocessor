@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Classify LAS Ground</para>
-	/// <para>Classify LAS Ground</para>
-	/// <para>Classifies ground points from LAS data.</para>
+	/// <para>分类 LAS 地面</para>
+	/// <para>LAS 数据中的地面点。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset to process. Only the last return of LAS points with class code values of 0, 1, and 2 will be evaluated.</para>
+		/// <para>待处理的 LAS 数据集。 仅评估类代码值为 0、1 或 2 的 LAS 点的最近返回结果。</para>
 		/// </param>
 		public ClassifyLasGround(object InLasDataset)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Classify LAS Ground</para>
+		/// <para>Tool Display Name : 分类 LAS 地面</para>
 		/// </summary>
-		public override string DisplayName() => "Classify LAS Ground";
+		public override string DisplayName() => "分类 LAS 地面";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyLasGround</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset to process. Only the last return of LAS points with class code values of 0, 1, and 2 will be evaluated.</para>
+		/// <para>待处理的 LAS 数据集。 仅评估类代码值为 0、1 或 2 的 LAS 点的最近返回结果。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -75,10 +75,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Ground Detection Method</para>
-		/// <para>Specifies the method that will be used to detect ground points.</para>
-		/// <para>Standard Classification—This method has a tolerance for slope variation that allows it to capture gradual undulations in the ground&apos;s topography that would typically be missed by the conservative option but not capture the type of sharp reliefs that would be captured by the aggressive option. This is the default.</para>
-		/// <para>Conservative Classification— When compared to other options, this method uses a tighter restriction on the variation of the ground&apos;s slope that allows it to differentiate the ground from low-lying vegetation such as grass and shrubbery. It is best suited for topography with minimal curvature.</para>
-		/// <para>Aggressive Classification— This method detects ground areas with sharper reliefs, such as ridges and hill tops, that may be ignored by the Standard Classification method. This method is best used in a second iteration of this tool with the Reuse existing ground parameter checked. Avoid using this method in urban areas or flat, rural areas, as it may result in the misclassification of taller objects—such as utility towers, vegetation, and portions of buildings—as ground.</para>
+		/// <para>指定将用于检测地面点的方法。</para>
+		/// <para>标准分类—该方法对坡度变化具有容差，因此可以捕获到使用保守的传统方法无法捕获到的地面地形上的平缓波动，但是该方法无法捕获到通过激进方法捕获到的坡度起伏较大的地貌波动。 这是默认设置。</para>
+		/// <para>传统分类—与其他方法相比，该方法对地面坡度的变化使用了更为严格的限制，因此该方法可将地面与草地和灌木丛等低地植被区分开来。 该方法最适合最小曲率的地形。</para>
+		/// <para>大胆分类—对于标准分类方法容易忽略的山脊和山顶等地貌起伏较大的地面区域，此方法可检测到这些内容。 该方法最好在重新使用现有地面参数选中的情况下用于该工具的第二次迭代。 该方法不宜用于城市区域或地势平坦的乡村区域，因为可能会将地势较高的对象（例如，发电塔、植被和建筑物局部）错误分类为地面。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -88,9 +88,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Reuse existing ground</para>
-		/// <para>Specifies whether existing ground points will be reclassified or reused.</para>
-		/// <para>Unchecked—Existing ground points will be reclassified. Points that are not found to be a part of the ground will be reassigned a class code value of 1, which represents unclassified points. This is the default.</para>
-		/// <para>Checked—Existing ground points will be accepted and reused without scrutiny and contribute to the determination of unclassified points.</para>
+		/// <para>指定现有地面点是否会重新分类或重新使用。</para>
+		/// <para>未选中 - 现有地面点将会重新分类。 将会为不属于地面的点重新分配类代码值 1，表示未分类的点。 这是默认设置。</para>
+		/// <para>选中 - 现有地面点不经详查即可接受并重用，且可帮助确定未分类的点。</para>
 		/// <para><see cref="ReuseGroundEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>DEM Resolution</para>
-		/// <para>A distance that will result in only a subset of points being evaluated for classification as ground, thereby making the process faster. Consider using this parameter when a faster method for generating a DEM surface is needed. The minimum distance is 0.3 meters, but the specified distance must be at least 1.5 times the average point spacing of the lidar data for this process to take effect.</para>
+		/// <para>将导致仅评估分类为地面的点子集，从而加快分类过程的距离。 需要更迅速地生成 DEM 表面时可考虑使用该参数。 最小距离为 0.3 米，但指定距离必须至少为激光雷达数据平均点间距的 1.5 倍，否则该过程将无法生效。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -108,9 +108,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Compute statistics</para>
-		/// <para>Specifies whether statistics will be computed for the .las files referenced by the LAS dataset. Computing statistics provides a spatial index for each .las file, which improves analysis and display performance. Statistics also enhance the filtering and symbology experience by limiting the display of LAS attributes, such as classification codes and return information, to values that are present in the .las file.</para>
-		/// <para>Checked—Statistics will be computed. This is the default.</para>
-		/// <para>Unchecked—Statistics will not be computed.</para>
+		/// <para>指定是否将计算 LAS 数据集引用的 .las 文件的统计数据。 计算统计数据时会为每个 .las 文件提供一个空间索引，从而提高了分析和显示性能。 统计数据还可通过将 LAS 属性（例如分类代码和返回信息）显示限制为 .las 文件中存在的值来提升过滤和符号系统体验。</para>
+		/// <para>选中 - 将计算统计数据。 这是默认设置。</para>
+		/// <para>未选中 - 不计算统计数据。</para>
 		/// <para><see cref="ComputeStatsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -120,13 +120,13 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Processing Extent</para>
-		/// <para>The extent of the data that will be evaluated.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
-		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
-		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>待评估数据的范围。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
+		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
+		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Processing Boundary</para>
-		/// <para>A polygon feature that defines the area of interest to be processed.</para>
+		/// <para>定义将进行处理的感兴趣区域的面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -146,9 +146,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Process entire LAS files that intersect extent</para>
-		/// <para>Specifies how the area of interest will be used in determining how .las files will be processed. The area of interest is defined by the Processing Extent parameter value, the Processing Boundary parameter value, or a combination of both.</para>
-		/// <para>Unchecked—Only LAS points that intersect the area of interest will be processed. This is the default.</para>
-		/// <para>Checked—If any portion of a .las file intersects the area of interest, all the points in that .las file, including those outside the area of interest, will be processed.</para>
+		/// <para>指定将如何使用感兴趣区以确定 .las 文件的处理方式。 感兴趣区由处理范围参数值和处理边界参数值定义，或由二者共同定义。</para>
+		/// <para>未选中 - 仅处理与感兴趣区相交的 LAS 点。 这是默认设置。</para>
+		/// <para>选中 - 如果 .las 文件的任何部分与感兴趣区相交，则该 .las 文件中的所有点（包括感兴趣区以外的点）都会得到处理。</para>
 		/// <para><see cref="ProcessEntireFilesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -166,9 +166,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Update pyramid</para>
-		/// <para>Specifies whether the LAS dataset pyramid will be updated after the class codes are modified.</para>
-		/// <para>Checked—The LAS dataset pyramid will be updated. This is the default.</para>
-		/// <para>Unchecked—The LAS dataset pyramid will not be updated.</para>
+		/// <para>指定修改类代码后，LAS 数据集金字塔是否会更新。</para>
+		/// <para>选中 - LAS 数据集金字塔将更新。 这是默认设置。</para>
+		/// <para>未选中 - LAS 数据集金字塔不会更新。</para>
 		/// <para><see cref="UpdatePyramidEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -193,24 +193,24 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Standard Classification—This method has a tolerance for slope variation that allows it to capture gradual undulations in the ground&apos;s topography that would typically be missed by the conservative option but not capture the type of sharp reliefs that would be captured by the aggressive option. This is the default.</para>
+			/// <para>标准分类—该方法对坡度变化具有容差，因此可以捕获到使用保守的传统方法无法捕获到的地面地形上的平缓波动，但是该方法无法捕获到通过激进方法捕获到的坡度起伏较大的地貌波动。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("STANDARD")]
-			[Description("Standard Classification")]
+			[Description("标准分类")]
 			Standard_Classification,
 
 			/// <summary>
-			/// <para>Conservative Classification— When compared to other options, this method uses a tighter restriction on the variation of the ground&apos;s slope that allows it to differentiate the ground from low-lying vegetation such as grass and shrubbery. It is best suited for topography with minimal curvature.</para>
+			/// <para>传统分类—与其他方法相比，该方法对地面坡度的变化使用了更为严格的限制，因此该方法可将地面与草地和灌木丛等低地植被区分开来。 该方法最适合最小曲率的地形。</para>
 			/// </summary>
 			[GPValue("CONSERVATIVE")]
-			[Description("Conservative Classification")]
+			[Description("传统分类")]
 			Conservative_Classification,
 
 			/// <summary>
-			/// <para>Aggressive Classification— This method detects ground areas with sharper reliefs, such as ridges and hill tops, that may be ignored by the Standard Classification method. This method is best used in a second iteration of this tool with the Reuse existing ground parameter checked. Avoid using this method in urban areas or flat, rural areas, as it may result in the misclassification of taller objects—such as utility towers, vegetation, and portions of buildings—as ground.</para>
+			/// <para>大胆分类—对于标准分类方法容易忽略的山脊和山顶等地貌起伏较大的地面区域，此方法可检测到这些内容。 该方法最好在重新使用现有地面参数选中的情况下用于该工具的第二次迭代。 该方法不宜用于城市区域或地势平坦的乡村区域，因为可能会将地势较高的对象（例如，发电塔、植被和建筑物局部）错误分类为地面。</para>
 			/// </summary>
 			[GPValue("AGGRESSIVE")]
-			[Description("Aggressive Classification")]
+			[Description("大胆分类")]
 			Aggressive_Classification,
 
 		}
@@ -221,14 +221,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ReuseGroundEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Existing ground points will be accepted and reused without scrutiny and contribute to the determination of unclassified points.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REUSE_GROUND")]
 			REUSE_GROUND,
 
 			/// <summary>
-			/// <para>Unchecked—Existing ground points will be reclassified. Points that are not found to be a part of the ground will be reassigned a class code value of 1, which represents unclassified points. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("RECLASSIFY_GROUND")]
@@ -242,14 +242,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ComputeStatsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Statistics will be computed. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMPUTE_STATS")]
 			COMPUTE_STATS,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics will not be computed.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_COMPUTE_STATS")]
@@ -263,14 +263,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ProcessEntireFilesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—If any portion of a .las file intersects the area of interest, all the points in that .las file, including those outside the area of interest, will be processed.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PROCESS_ENTIRE_FILES")]
 			PROCESS_ENTIRE_FILES,
 
 			/// <summary>
-			/// <para>Unchecked—Only LAS points that intersect the area of interest will be processed. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("PROCESS_EXTENT")]
@@ -284,14 +284,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum UpdatePyramidEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The LAS dataset pyramid will be updated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_PYRAMID")]
 			UPDATE_PYRAMID,
 
 			/// <summary>
-			/// <para>Unchecked—The LAS dataset pyramid will not be updated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_UPDATE_PYRAMID")]

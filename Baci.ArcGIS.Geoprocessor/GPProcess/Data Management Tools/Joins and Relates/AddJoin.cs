@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Join</para>
-	/// <para>Add Join</para>
-	/// <para>Joins a layer to another layer or table based on a common field. Feature layers, table views, and raster layers with a raster attribute table are supported.</para>
+	/// <para>添加连接</para>
+	/// <para>基于公共字段将图层连接到另一图层或表。 支持带有栅格属性表的要素图层、表视图和栅格图层。</para>
 	/// </summary>
 	public class AddJoin : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLayerOrView">
 		/// <para>Input Table</para>
-		/// <para>The layer or table view to which the join table will be joined.</para>
+		/// <para>连接表将连接的图层或表视图。</para>
 		/// </param>
 		/// <param name="InField">
 		/// <para>Input Join Field</para>
-		/// <para>The field in the input layer or table view on which the join will be based.</para>
+		/// <para>连接所依据的输入图层或表视图中的字段。</para>
 		/// </param>
 		/// <param name="JoinTable">
 		/// <para>Join Table</para>
-		/// <para>The table or table view to be joined to the input layer or table view.</para>
+		/// <para>要连接到输入图层或表视图的表或表视图。</para>
 		/// </param>
 		/// <param name="JoinField">
 		/// <para>Join Table Field</para>
-		/// <para>The field in the join table that contains the values on which the join will be based.</para>
+		/// <para>连接表中的字段，其中包含连接所依据的值。</para>
 		/// </param>
 		public AddJoin(object InLayerOrView, object InField, object JoinTable, object JoinField)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Join</para>
+		/// <para>Tool Display Name : 添加连接</para>
 		/// </summary>
-		public override string DisplayName() => "Add Join";
+		public override string DisplayName() => "添加连接";
 
 		/// <summary>
 		/// <para>Tool Name : AddJoin</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The layer or table view to which the join table will be joined.</para>
+		/// <para>连接表将连接的图层或表视图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Join Field</para>
-		/// <para>The field in the input layer or table view on which the join will be based.</para>
+		/// <para>连接所依据的输入图层或表视图中的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Join Table</para>
-		/// <para>The table or table view to be joined to the input layer or table view.</para>
+		/// <para>要连接到输入图层或表视图的表或表视图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Join Table Field</para>
-		/// <para>The field in the join table that contains the values on which the join will be based.</para>
+		/// <para>连接表中的字段，其中包含连接所依据的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -116,9 +116,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Keep All Target Features</para>
-		/// <para>Specifies whether only records in the input that match a record in the join table will be included in the output.</para>
-		/// <para>Checked—All records in the input layer or table view will be included in the output. This is also known as an outer join. This is the default.</para>
-		/// <para>Unchecked—Only those records in the input that match a row in the join table will be included in the output. This is also known as an inner join.</para>
+		/// <para>指定是否仅将输入中与连接表内的记录相匹配的记录包括在输出中。</para>
+		/// <para>选中 - 输入图层或表视图中的所有记录都将包含在输出中。 这也称为外部连接。 这是默认设置。</para>
+		/// <para>未选中 - 仅将输入中与连接表中的行相匹配的记录包括在输出中。 这也成为内部连接。</para>
 		/// <para><see cref="JoinTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -135,9 +135,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Index Joined Fields</para>
-		/// <para>Specifies whether table attribute indexes will be added to both joining fields.</para>
-		/// <para>Checked—Both join fields will be indexed. If the table already has an index, a new index will not be added.</para>
-		/// <para>Unchecked—Indexes will not be added. This is the default.</para>
+		/// <para>指定是否将表属性索引添加到两个连接字段。</para>
+		/// <para>选中 - 将为两个连接字段创建索引。 如果表已包含索引，则不会添加新索引。</para>
+		/// <para>未选中 - 不会添加索引。 这是默认设置。</para>
 		/// <para><see cref="IndexJoinFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -162,14 +162,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum JoinTypeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—All records in the input layer or table view will be included in the output. This is also known as an outer join. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("KEEP_ALL")]
 			KEEP_ALL,
 
 			/// <summary>
-			/// <para>Unchecked—Only those records in the input that match a row in the join table will be included in the output. This is also known as an inner join.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_COMMON")]
@@ -183,14 +183,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IndexJoinFieldsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Both join fields will be indexed. If the table already has an index, a new index will not be added.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INDEX_JOIN_FIELDS")]
 			INDEX_JOIN_FIELDS,
 
 			/// <summary>
-			/// <para>Unchecked—Indexes will not be added. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_INDEX_JOIN_FIELDS")]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Stream Order</para>
-	/// <para>Stream Order</para>
-	/// <para>Assigns a numeric order to segments of a raster representing branches of a linear network.</para>
+	/// <para>河网分级</para>
+	/// <para>为表示线状网络分支的栅格线段指定数值级别</para>
 	/// </summary>
 	public class StreamOrder : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InStreamRaster">
 		/// <para>Input stream raster</para>
-		/// <para>An input raster that represents a linear stream network.</para>
-		/// <para>The input stream raster linear network should be represented as values greater than or equal to one on a background of NoData.</para>
+		/// <para>表示线性流网络的输入栅格。</para>
+		/// <para>在 NoData 的背景上，输入河流栅格数据线状网络应表示为大于或等于一的值。</para>
 		/// </param>
 		/// <param name="InFlowDirectionRaster">
 		/// <para>Input flow direction raster</para>
-		/// <para>The input raster that shows the direction of flow out of each cell.</para>
-		/// <para>The flow direction raster can be created using the Flow Direction tool, run using the default flow direction type D8.</para>
+		/// <para>根据每个像元来显示流向的输入栅格。</para>
+		/// <para>可以在流向工具中，运行使用默认流向类型 D8 创建流向栅格。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output stream order raster.</para>
-		/// <para>This output is of integer type.</para>
+		/// <para>输出河网分级栅格数据。</para>
+		/// <para>输出为整型。</para>
 		/// </param>
 		public StreamOrder(object InStreamRaster, object InFlowDirectionRaster, object OutRaster)
 		{
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Stream Order</para>
+		/// <para>Tool Display Name : 河网分级</para>
 		/// </summary>
-		public override string DisplayName() => "Stream Order";
+		public override string DisplayName() => "河网分级";
 
 		/// <summary>
 		/// <para>Tool Name : StreamOrder</para>
@@ -78,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input stream raster</para>
-		/// <para>An input raster that represents a linear stream network.</para>
-		/// <para>The input stream raster linear network should be represented as values greater than or equal to one on a background of NoData.</para>
+		/// <para>表示线性流网络的输入栅格。</para>
+		/// <para>在 NoData 的背景上，输入河流栅格数据线状网络应表示为大于或等于一的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -91,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input flow direction raster</para>
-		/// <para>The input raster that shows the direction of flow out of each cell.</para>
-		/// <para>The flow direction raster can be created using the Flow Direction tool, run using the default flow direction type D8.</para>
+		/// <para>根据每个像元来显示流向的输入栅格。</para>
+		/// <para>可以在流向工具中，运行使用默认流向类型 D8 创建流向栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -104,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output stream order raster.</para>
-		/// <para>This output is of integer type.</para>
+		/// <para>输出河网分级栅格数据。</para>
+		/// <para>输出为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -113,9 +113,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Method of stream ordering</para>
-		/// <para>The method used for assigning stream order.</para>
-		/// <para>Strahler—The method of stream ordering proposed by Strahler in 1952. Stream order only increases when streams of the same order intersect. Therefore, the intersection of a first-order and second-order link will remain a second-order link, rather than creating a third-order link. This is the default.</para>
-		/// <para>Shreve—The method of stream ordering by magnitude, proposed by Shreve in 1967. All links with no tributaries are assigned a magnitude (order) of one. Magnitudes are additive downslope. When two links intersect, their magnitudes are added and assigned to the downslope link.</para>
+		/// <para>用于指定河网分级的方法。</para>
+		/// <para>放射状/发射状—此河网分级方法由 Strahler 于 1952 年提出。仅当级别相同的河流交汇时，河网分级才会升高。因此，一级连接线与二级连接线相交会保留二级连接线，而不会创建三级连接线。这是默认设置。</para>
+		/// <para>Shreve—此按量级的河网分级方法由 Shreve 于 1967 年提出。所有没有支流的连接线的量级（分级）将被指定为一。量级是指可相加的河流下坡坡度。当两个连接线相交时，将它们的量级相加，然后将其指定为下坡连接线。</para>
 		/// <para><see cref="OrderMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -140,14 +140,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum OrderMethodEnum 
 		{
 			/// <summary>
-			/// <para>Strahler—The method of stream ordering proposed by Strahler in 1952. Stream order only increases when streams of the same order intersect. Therefore, the intersection of a first-order and second-order link will remain a second-order link, rather than creating a third-order link. This is the default.</para>
+			/// <para>放射状/发射状—此河网分级方法由 Strahler 于 1952 年提出。仅当级别相同的河流交汇时，河网分级才会升高。因此，一级连接线与二级连接线相交会保留二级连接线，而不会创建三级连接线。这是默认设置。</para>
 			/// </summary>
 			[GPValue("STRAHLER")]
-			[Description("Strahler")]
+			[Description("放射状/发射状")]
 			Strahler,
 
 			/// <summary>
-			/// <para>Shreve—The method of stream ordering by magnitude, proposed by Shreve in 1967. All links with no tributaries are assigned a magnitude (order) of one. Magnitudes are additive downslope. When two links intersect, their magnitudes are added and assigned to the downslope link.</para>
+			/// <para>Shreve—此按量级的河网分级方法由 Shreve 于 1967 年提出。所有没有支流的连接线的量级（分级）将被指定为一。量级是指可相加的河流下坡坡度。当两个连接线相交时，将它们的量级相加，然后将其指定为下坡连接线。</para>
 			/// </summary>
 			[GPValue("SHREVE")]
 			[Description("Shreve")]

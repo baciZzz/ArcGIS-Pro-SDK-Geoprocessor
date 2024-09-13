@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>If Spatial Relationship Is</para>
-	/// <para>If Spatial Relationship Is</para>
-	/// <para>Evaluates whether the inputs have a specified spatial relationship.</para>
+	/// <para>如果空间关系为</para>
+	/// <para>用于评估输入是否有指定的空间关系。</para>
 	/// </summary>
 	public class SpatialRelationshipIfThenElse : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input features to evaluate.</para>
+		/// <para>要进行评估的输入要素。</para>
 		/// </param>
 		/// <param name="SelectionCondition">
 		/// <para>Selection Condition</para>
-		/// <para>Specifies the selection condition that will be used for the spatial relationship between the input and selecting features.</para>
-		/// <para>Exists—Checks if the spatial relationship exists between any features in the input and selecting features. This is the default.</para>
-		/// <para>No Selection—Checks if the spatial relationship does not exist between any of the input and selecting features.</para>
-		/// <para>All Selected—Checks if the spatial relationship exists for all features in the input features.</para>
-		/// <para>Is Equal to—Checks if the number of input features with the spatial relationship is equal to the Count value.</para>
-		/// <para>Is Between—Checks if the number of input features with the spatial relationship is between the Minimum Count value and Maximum Count value.</para>
-		/// <para>Is Less Than—Checks if the number of input features with the spatial relationship is less than the Count value.</para>
-		/// <para>Is Greater Than—Checks if the field value of the records matching the SQL expression is greater than the Count value.</para>
-		/// <para>Is Not Equal to—Checks if the number of input features with the spatial relationship is not equal to the Count value.</para>
+		/// <para>指定将使用的介于输入和选择要素间的空间关系选择条件。</para>
+		/// <para>Exists—检查空间关系是否存在于输入中的任意要素与选择要素之间。 这是默认设置。</para>
+		/// <para>无选择内容—检查空间关系是否不存在于任意输入与选择要素之间。</para>
+		/// <para>全部选中—检查空间关系是否存在于输入要素的所有要素中。</para>
+		/// <para>等于—检查具有空间关系的输入要素的数量是否等于计数值。</para>
+		/// <para>介于—检查具有空间关系的输入要素的数量是否介于最小计数值与最大计数值之间。</para>
+		/// <para>小于—检查具有空间关系的输入要素的数量是否小于计数值。</para>
+		/// <para>大于—检查与 SQL 表达式匹配的记录，其字段值是否大于计数值。</para>
+		/// <para>不等于—检查具有空间关系的输入要素的数量是否不等于计数值。</para>
 		/// <para><see cref="SelectionConditionEnum"/></para>
 		/// </param>
 		public SpatialRelationshipIfThenElse(object InFeatures, object SelectionCondition)
@@ -43,9 +43,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : If Spatial Relationship Is</para>
+		/// <para>Tool Display Name : 如果空间关系为</para>
 		/// </summary>
-		public override string DisplayName() => "If Spatial Relationship Is";
+		public override string DisplayName() => "如果空间关系为";
 
 		/// <summary>
 		/// <para>Tool Name : SpatialRelationshipIfThenElse</para>
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input features to evaluate.</para>
+		/// <para>要进行评估的输入要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -87,23 +87,23 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Relationship</para>
-		/// <para>Specifies the spatial relationship to be evaluated.</para>
-		/// <para>Intersect—The features in the input layer will be selected if they intersect a selecting feature. This is the default.</para>
-		/// <para>Intersect 3D—The features in the input layer will be selected if they intersect a selecting feature in three-dimensional space (x, y, and z).</para>
-		/// <para>Within a distance—The features in the input layer will be selected if they are within the specified distance (using Euclidean distance) of a selecting feature. Use the Search Distance parameter to specify the distance.</para>
-		/// <para>Within a distance 3D—The features in the input layer will be selected if they are within a specified distance of a selecting feature in three-dimensional space. Use the Search Distance parameter to specify the distance.</para>
-		/// <para>Within a distance geodesic—The features in the input layer will be selected if they are within a specified distance of a selecting feature. Distance between features will be calculated using a geodesic formula that takes into account the curvature of the spheroid and correctly handles data near and across the dateline and poles. Use the Search Distance parameter to specify the distance.</para>
-		/// <para>Contains—The features in the input layer will be selected if they contain a selecting feature.</para>
-		/// <para>Completely contains—The features in the input layer will be selected if they completely contain a selecting feature.</para>
-		/// <para>Contains Clementini—This spatial relationship yields the same results as Completely contains with the exception that if the selecting feature is entirely on the boundary of the input feature (no part is properly inside or outside), the feature will not be selected. Clementini defines the boundary polygon as the line separating inside and outside, the boundary of a line is defined as its end points, and the boundary of a point is always empty.</para>
-		/// <para>Within—The features in the input layer will be selected if they are within a selecting feature.</para>
-		/// <para>Completely within—The features in the input layer will be selected if they are completely within or contained by a selecting feature.</para>
-		/// <para>Within Clementini—The result will be identical to Within with the exception that if the entirety of the feature in the input layer is on the boundary of the feature in the selecting layer, the feature will not be selected. Clementini defines the boundary polygon as the line separating inside and outside, the boundary of a line is defined as its end points, and the boundary of a point is always empty.</para>
-		/// <para>Are identical to—The features in the input layer will be selected if they are identical (in geometry) to a selecting feature.</para>
-		/// <para>Boundary touches—The features in the input layer will be selected if they have a boundary that touches a selecting feature. When the input features are lines or polygons, the boundary of the input feature can only touch the boundary of the selecting feature, and no part of the input feature can cross the boundary of the selecting feature.</para>
-		/// <para>Share a line segment with—The features in the input layer will be selected if they share a line segment with a selecting feature. The input and selecting features must be line or polygon.</para>
-		/// <para>Crossed by the outline of—The features in the input layer will be selected if they are crossed by the outline of a selecting feature. The input and selecting features must be lines or polygons. If polygons are used for the input or selecting layer, the polygon&apos;s boundary (line) will be used. Lines that cross at a point will be selected; lines that share a line segment will not be selected.</para>
-		/// <para>Have their center in—The features in the input layer will be selected if their center falls within a selecting feature. The center of the feature is calculated as follows: for polygon and multipoint, the geometry&apos;s centroid is used; for line input, the geometry&apos;s midpoint is used.</para>
+		/// <para>指定要评估的空间关系。</para>
+		/// <para>相交—如果输入图层中的要素与某一选择要素相交，则会选择这些要素。 这是默认设置。</para>
+		/// <para>3D 相交—如果输入要素中的要素与三维空间（x、y 和 z）中的某一选择要素相交，则将选择这些要素。</para>
+		/// <para>在某一距离范围内—如果输入图层中的要素在某一选择要素的指定距离内（使用欧氏距离），则将选择这些要素。 使用搜索距离参数指定距离。</para>
+		/// <para>在某一 3D 距离范围内—如果输入图层中的要素在三维空间中的某一选择要素的指定距离内，则会选择这些要素。 使用搜索距离参数指定距离。</para>
+		/// <para>在某一测地线距离范围内—如果输入图层中的要素在某一选择要素的指定距离内，则会选择这些要素。 将使用测地线公式计算要素间的距离，这种方法考虑到椭球体的曲率，并可以正确处理跨越日期变更线和两极及其附近的数据。 使用搜索距离参数指定距离。</para>
+		/// <para>包含—如果输入图层中的要素包含选择要素，则将选择这些要素。</para>
+		/// <para>完全包含—如果输入图层中的要素完全包含选择要素，则将选择这些要素。</para>
+		/// <para>Clementini 包含—该空间关系产生的结果同完全包含，但有一种情况例外：如果选择要素完全位于输入要素的边界上（没有任何一部分完全位于里面或外面），则不会选择要素。Clementini 将边界面定义为用来分隔内部和外部的线，将线的边界定义为其端点，点的边界始终为空。</para>
+		/// <para>位于—如果输入图层中的要素在选择要素中，则将选择这些要素。</para>
+		/// <para>完全在其他要素范围内—如果输入图层中的要素完全在选择要素之内或由选择要素包含，则将选择这些要素。</para>
+		/// <para>Clementini 位于—结果同位于，但下述情况例外：如果输入图层中的要素完全位于选择图层中要素的边界上，则不会选择该要素。Clementini 将边界面定义为用来分隔内部和外部的线，将线的边界定义为其端点，点的边界始终为空。</para>
+		/// <para>与其他要素相同—如果输入图层中的要素与选择要素相同（在几何中），则将选择这些要素。</para>
+		/// <para>边界接触—如果输入图层中要素的边界与某一选择要素接触，则会选择这些要素。 如果输入要素为线或面，则输入要素的边界只能接触选择要素的边界，且输入要素的任何部分均不可跨越选择要素的边界。</para>
+		/// <para>与其他要素共线—如果输入图层中的要素与某一选择要素共线，则会选择这些要素。 输入要素和选择要素必须是线或面。</para>
+		/// <para>与轮廓交叉—如果输入图层中的要素与某一选择要素的轮廓交叉，则会选择这些要素。 输入和选择要素必须是线或面。 如果将面用于输入或选择图层，则会使用面的边界（线）。 将选择在某一点交叉的线，而不会选择共线的线。</para>
+		/// <para>中心在要素范围内—如果输入图层中要素的中心落在某一选择要素内，则会选择这些要素。 要素中心的计算方式如下：对于面和多点，将使用几何的质心；对于线输入，则会使用几何的中点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Selecting Features</para>
-		/// <para>The features in the Input Features parameter will be selected based on their relationship to the features from this layer or feature class.</para>
+		/// <para>输入要素参数中的要素将根据它们与此图层或要素类中要素的关系进行选择。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -120,8 +120,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Search Distance</para>
-		/// <para>The distance that will be searched. This parameter is only valid if the Relationship parameter is set to Within a distance, Within a distance geodesic, Within a distance 3D, Intersect, Intersect 3D, Have their center in, or Contains.</para>
-		/// <para>If the Within a distance geodesic option is selected, use a linear unit such as kilometers or miles.</para>
+		/// <para>将被搜索的距离。 仅当关系参数设置为在某一距离范围内、在某一测地线距离范围内、在某一 3D 距离范围内、相交、3D 相交、中心在要素范围内或者包含时，该参数才有效。</para>
+		/// <para>如果选择在某一测地线距离范围内选项，请使用线性单位（如千米或英里）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -129,9 +129,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Invert Spatial Relationship</para>
-		/// <para>Specifies whether the spatial relationship evaluation result or the opposite result will be used. For example, this parameter can be used to get a list of features that do not intersect or are not within a given distance of features in another dataset.</para>
-		/// <para>Unchecked—The query result will be used. This is the default.</para>
-		/// <para>Checked—The opposite of the query result will be used. If the Selection Type parameter is used, the reversal of the selection occurs before it is combined with existing selections.</para>
+		/// <para>指定将使用空间关系评估结果，还是使用反转结果。 例如，可使用此参数获取不相交或与另一数据集中的要素不在指定距离范围内的要素的列表。</para>
+		/// <para>未选中 - 将使用查询结果。 这是默认设置。</para>
+		/// <para>选中 - 将使用反转查询结果。 如果使用选择类型参数，则将先反转选择，然后再将其与现有选择组合。</para>
 		/// <para><see cref="InvertSpatialRelationshipEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -141,15 +141,15 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Selection Condition</para>
-		/// <para>Specifies the selection condition that will be used for the spatial relationship between the input and selecting features.</para>
-		/// <para>Exists—Checks if the spatial relationship exists between any features in the input and selecting features. This is the default.</para>
-		/// <para>No Selection—Checks if the spatial relationship does not exist between any of the input and selecting features.</para>
-		/// <para>All Selected—Checks if the spatial relationship exists for all features in the input features.</para>
-		/// <para>Is Equal to—Checks if the number of input features with the spatial relationship is equal to the Count value.</para>
-		/// <para>Is Between—Checks if the number of input features with the spatial relationship is between the Minimum Count value and Maximum Count value.</para>
-		/// <para>Is Less Than—Checks if the number of input features with the spatial relationship is less than the Count value.</para>
-		/// <para>Is Greater Than—Checks if the field value of the records matching the SQL expression is greater than the Count value.</para>
-		/// <para>Is Not Equal to—Checks if the number of input features with the spatial relationship is not equal to the Count value.</para>
+		/// <para>指定将使用的介于输入和选择要素间的空间关系选择条件。</para>
+		/// <para>Exists—检查空间关系是否存在于输入中的任意要素与选择要素之间。 这是默认设置。</para>
+		/// <para>无选择内容—检查空间关系是否不存在于任意输入与选择要素之间。</para>
+		/// <para>全部选中—检查空间关系是否存在于输入要素的所有要素中。</para>
+		/// <para>等于—检查具有空间关系的输入要素的数量是否等于计数值。</para>
+		/// <para>介于—检查具有空间关系的输入要素的数量是否介于最小计数值与最大计数值之间。</para>
+		/// <para>小于—检查具有空间关系的输入要素的数量是否小于计数值。</para>
+		/// <para>大于—检查与 SQL 表达式匹配的记录，其字段值是否大于计数值。</para>
+		/// <para>不等于—检查具有空间关系的输入要素的数量是否不等于计数值。</para>
 		/// <para><see cref="SelectionConditionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Count</para>
-		/// <para>The integer count value.</para>
+		/// <para>整数计数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Minimum Count</para>
-		/// <para>The minimum integer count value.</para>
+		/// <para>最小整数计数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -175,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Maximum Count</para>
-		/// <para>The maximum integer count value.</para>
+		/// <para>最大整数计数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -203,14 +203,14 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum InvertSpatialRelationshipEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The opposite of the query result will be used. If the Selection Type parameter is used, the reversal of the selection occurs before it is combined with existing selections.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INVERT")]
 			INVERT,
 
 			/// <summary>
-			/// <para>Unchecked—The query result will be used. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_INVERT")]
@@ -224,59 +224,59 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum SelectionConditionEnum 
 		{
 			/// <summary>
-			/// <para>Exists—Checks if the spatial relationship exists between any features in the input and selecting features. This is the default.</para>
+			/// <para>Exists—检查空间关系是否存在于输入中的任意要素与选择要素之间。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("EXISTS")]
 			[Description("Exists")]
 			Exists,
 
 			/// <summary>
-			/// <para>No Selection—Checks if the spatial relationship does not exist between any of the input and selecting features.</para>
+			/// <para>无选择内容—检查空间关系是否不存在于任意输入与选择要素之间。</para>
 			/// </summary>
 			[GPValue("NO_SELECTION")]
-			[Description("No Selection")]
+			[Description("无选择内容")]
 			No_Selection,
 
 			/// <summary>
-			/// <para>All Selected—Checks if the spatial relationship exists for all features in the input features.</para>
+			/// <para>全部选中—检查空间关系是否存在于输入要素的所有要素中。</para>
 			/// </summary>
 			[GPValue("ALL_SELECTED")]
-			[Description("All Selected")]
+			[Description("全部选中")]
 			All_Selected,
 
 			/// <summary>
-			/// <para>Is Equal to—Checks if the number of input features with the spatial relationship is equal to the Count value.</para>
+			/// <para>等于—检查具有空间关系的输入要素的数量是否等于计数值。</para>
 			/// </summary>
 			[GPValue("IS_EQUAL_TO")]
-			[Description("Is Equal to")]
+			[Description("等于")]
 			Is_Equal_to,
 
 			/// <summary>
-			/// <para>Is Between—Checks if the number of input features with the spatial relationship is between the Minimum Count value and Maximum Count value.</para>
+			/// <para>介于—检查具有空间关系的输入要素的数量是否介于最小计数值与最大计数值之间。</para>
 			/// </summary>
 			[GPValue("IS_BETWEEN")]
-			[Description("Is Between")]
+			[Description("介于")]
 			Is_Between,
 
 			/// <summary>
-			/// <para>Is Less Than—Checks if the number of input features with the spatial relationship is less than the Count value.</para>
+			/// <para>小于—检查具有空间关系的输入要素的数量是否小于计数值。</para>
 			/// </summary>
 			[GPValue("IS_LESS_THAN")]
-			[Description("Is Less Than")]
+			[Description("小于")]
 			Is_Less_Than,
 
 			/// <summary>
-			/// <para>Is Greater Than—Checks if the field value of the records matching the SQL expression is greater than the Count value.</para>
+			/// <para>大于—检查与 SQL 表达式匹配的记录，其字段值是否大于计数值。</para>
 			/// </summary>
 			[GPValue("IS_GREATER_THAN")]
-			[Description("Is Greater Than")]
+			[Description("大于")]
 			Is_Greater_Than,
 
 			/// <summary>
-			/// <para>Is Not Equal to—Checks if the number of input features with the spatial relationship is not equal to the Count value.</para>
+			/// <para>不等于—检查具有空间关系的输入要素的数量是否不等于计数值。</para>
 			/// </summary>
 			[GPValue("IS_NOT_EQUAL_TO")]
-			[Description("Is Not Equal to")]
+			[Description("不等于")]
 			Is_Not_Equal_to,
 
 		}

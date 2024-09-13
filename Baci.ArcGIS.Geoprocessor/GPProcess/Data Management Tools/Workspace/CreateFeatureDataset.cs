@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Feature Dataset</para>
-	/// <para>Create Feature Dataset</para>
-	/// <para>Creates a feature dataset in the output location—an existing enterprise,  file, or mobile geodatabase.</para>
+	/// <para>创建要素数据集</para>
+	/// <para>在输出位置（现有的企业级、文件或移动地理数据库）创建要素数据集。</para>
 	/// </summary>
 	public class CreateFeatureDataset : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="OutDatasetPath">
 		/// <para>Output Geodatabase</para>
-		/// <para>The enterprise, file, or mobile geodatabase in which the output feature dataset will be created.</para>
+		/// <para>将在其中创建输出要素数据集的企业级地理数据库、文件地理数据库或移动地理数据库。</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Feature Dataset Name</para>
-		/// <para>The name of the feature dataset to be created.</para>
+		/// <para>要创建的要素数据集的名称。</para>
 		/// </param>
 		public CreateFeatureDataset(object OutDatasetPath, object OutName)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Feature Dataset</para>
+		/// <para>Tool Display Name : 创建要素数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Create Feature Dataset";
+		public override string DisplayName() => "创建要素数据集";
 
 		/// <summary>
 		/// <para>Tool Name : CreateFeatureDataset</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Geodatabase</para>
-		/// <para>The enterprise, file, or mobile geodatabase in which the output feature dataset will be created.</para>
+		/// <para>将在其中创建输出要素数据集的企业级地理数据库、文件地理数据库或移动地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Feature Dataset Name</para>
-		/// <para>The name of the feature dataset to be created.</para>
+		/// <para>要创建的要素数据集的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>The spatial reference of the output feature dataset. On the Spatial Reference Properties dialog box, you can select, import, or create a new coordinate system. To set aspects of the spatial reference, such as the x,y-, z-, or m-domain, resolution, or tolerance, use the Environments dialog box.</para>
+		/// <para>输出要素数据集的空间参考。在空间参考属性对话框中，可以选择、导入或新建坐标系。要设置空间参考的各个方面（例如，x,y 值域、z 值域、m 值域、分辨率或容差），请使用环境对话框。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]

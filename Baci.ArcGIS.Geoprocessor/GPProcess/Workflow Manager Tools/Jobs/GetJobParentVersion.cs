@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Get Job Parent Version</para>
-	/// <para>Get Job Parent Version</para>
-	/// <para>Gets the parent version of a job as an enterprise geodatabase connection file to be used for posting edits in a geoprocessing model to the correct parent version.</para>
+	/// <para>获取作业父版本</para>
+	/// <para>获取作业父版本作为企业级地理数据库连接文件，用于在地理处理模型中将编辑内容提交到正确的父版本。</para>
 	/// </summary>
 	public class GetJobParentVersion : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		/// <param name="InputJobid">
 		/// <para>Input Job ID</para>
-		/// <para>The ID for the job's parent version to be retrieved.</para>
+		/// <para>要检索的作业父版本的 ID。</para>
 		/// </param>
 		public GetJobParentVersion(object InputJobid)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Get Job Parent Version</para>
+		/// <para>Tool Display Name : 获取作业父版本</para>
 		/// </summary>
-		public override string DisplayName() => "Get Job Parent Version";
+		public override string DisplayName() => "获取作业父版本";
 
 		/// <summary>
 		/// <para>Tool Name : GetJobParentVersion</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Input Job ID</para>
-		/// <para>The ID for the job's parent version to be retrieved.</para>
+		/// <para>要检索的作业父版本的 ID。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Input Database Path</para>
-		/// <para>The Workflow Manager (Classic) database connection file that contains the job information. If no connection file is specified, the current default Workflow Manager (Classic) database in the project is used.</para>
+		/// <para>包含作业信息的 Workflow Manager (Classic) 数据库连接文件。如果未指定连接文件，将使用项目中当前默认的 Workflow Manager (Classic) 数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]

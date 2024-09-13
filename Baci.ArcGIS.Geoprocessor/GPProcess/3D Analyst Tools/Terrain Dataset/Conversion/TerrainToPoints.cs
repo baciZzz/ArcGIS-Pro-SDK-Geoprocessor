@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Terrain To Points</para>
-	/// <para>Terrain To Points</para>
-	/// <para>Converts a terrain dataset into a new point or multipoint feature class.</para>
+	/// <para>Terrain 转点</para>
+	/// <para>将 terrain 数据集转换为一个新的点或多点要素类。</para>
 	/// </summary>
 	public class TerrainToPoints : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTerrain">
 		/// <para>Input Terrain</para>
-		/// <para>The terrain dataset to process.</para>
+		/// <para>待处理的 terrain 数据集。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </param>
 		public TerrainToPoints(object InTerrain, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Terrain To Points</para>
+		/// <para>Tool Display Name : Terrain 转点</para>
 		/// </summary>
-		public override string DisplayName() => "Terrain To Points";
+		public override string DisplayName() => "Terrain 转点";
 
 		/// <summary>
 		/// <para>Tool Name : TerrainToPoints</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Terrain</para>
-		/// <para>The terrain dataset to process.</para>
+		/// <para>待处理的 terrain 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTerrainLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
-		/// <para>The z-tolerance or window-size resolution of the terrain pyramid level that will be used. The default is 0, or full resolution.</para>
+		/// <para>将使用 terrain 金字塔等级的 z 容差或窗口大小分辨率。 默认值为 0，或全分辨率。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Embedded Feature Class</para>
-		/// <para>The name of the terrain dataset's embedded points to be exported. If an embedded feature is specified, only the points from the feature will be written to the output. Otherwise, all points from all data sources in the terrain will be exported.</para>
+		/// <para>要导出的 terrain 数据集嵌入点的名称。如果指定一个嵌入要素，则只有来自该要素的点会写入到输出。否则，将会导出参与 terrain 的所有数据源中的全部点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -103,9 +103,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class Type</para>
-		/// <para>The geometry of the output feature class.</para>
-		/// <para>Multipoint—The output point features will be written to a multipoint feature class. This is the default.</para>
-		/// <para>Point—The output point features will be written to a point feature class.</para>
+		/// <para>输出要素类的几何。</para>
+		/// <para>多点—输出点要素将被写入一个多点要素类。这是默认设置。</para>
+		/// <para>点—输出点要素将被写入一个点要素类。</para>
 		/// <para><see cref="OutGeometryTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -130,17 +130,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum OutGeometryTypeEnum 
 		{
 			/// <summary>
-			/// <para>Multipoint—The output point features will be written to a multipoint feature class. This is the default.</para>
+			/// <para>多点—输出点要素将被写入一个多点要素类。这是默认设置。</para>
 			/// </summary>
 			[GPValue("MULTIPOINT")]
-			[Description("Multipoint")]
+			[Description("多点")]
 			Multipoint,
 
 			/// <summary>
-			/// <para>Point—The output point features will be written to a point feature class.</para>
+			/// <para>点—输出点要素将被写入一个点要素类。</para>
 			/// </summary>
 			[GPValue("POINT")]
-			[Description("Point")]
+			[Description("点")]
 			Point,
 
 		}

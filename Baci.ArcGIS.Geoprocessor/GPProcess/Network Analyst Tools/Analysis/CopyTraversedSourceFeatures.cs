@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Copy Traversed Source Features</para>
-	/// <para>Copy Traversed Source Features</para>
-	/// <para>Creates two feature classes and a table, which together contain information about the edges, junctions, and turns that are traversed while solving a network analysis layer.</para>
+	/// <para>复制遍历的源要素</para>
+	/// <para>创建两个要素类和一个表，它们组合在一起以包含求解网络分析图层时所遍历的边、交汇点和转弯的信息。</para>
 	/// </summary>
 	public class CopyTraversedSourceFeatures : AbstractGPProcess
 	{
@@ -21,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InputNetworkAnalysisLayer">
 		/// <para>Input Network Analysis Layer</para>
-		/// <para>The network analysis layer from which traversed source features will be copied. If the network analysis layer does not have a valid result, the layer will be solved to produce one.</para>
+		/// <para>将复制遍历源要素的网络分析图层。如果网络分析图层没有有效结果，则会通过求解图层以生成有效结果。</para>
 		/// </param>
 		/// <param name="OutputLocation">
 		/// <para>Output Location</para>
-		/// <para>The workspace where the output table and two feature classes will be saved.</para>
+		/// <para>用来保存输出表和两个要素类的工作空间。</para>
 		/// </param>
 		/// <param name="EdgeFeatureClassName">
 		/// <para>Edge Feature Class Name</para>
-		/// <para>The name of the feature class that will contain information about the traversed edge source features. If the solved network analysis layer doesn't traverse any edge features, an empty feature class is created.</para>
+		/// <para>将包含遍历边源要素相关信息的要素类的名称。如果求解的网络分析图层不遍历任何边要素，则会创建空要素类。</para>
 		/// </param>
 		/// <param name="JunctionFeatureClassName">
 		/// <para>Junction Feature Class Name</para>
-		/// <para>The name of the feature class that will contain information about the traversed junction source features, including system junctions and relevant points from the input network analysis layer. If the solved network analysis layer doesn't traverse any junctions, an empty feature class is created.</para>
+		/// <para>将包含遍历交汇点源要素（包括输入网络分析图层中的系统交汇点和相关点）相关信息的要素类的名称。如果求解的网络分析图层不遍历任何交汇点，则会创建空要素类。</para>
 		/// </param>
 		/// <param name="TurnTableName">
 		/// <para>Turn Table Name</para>
-		/// <para>The name of the table that will contain information about the traversed global turns and turn features that scale cost for the underlying edges. If the solved network analysis layer doesn't traverse any turns, an empty table is created. Since restricted turns are never traversed, they are never included in the output.</para>
+		/// <para>将包含基础边成本按比例增加的遍历通用转弯和转弯要素相关信息的表的名称。如果求解的网络分析图层不遍历任何转弯，则会创建空表。因为始终不会遍历受限制的转弯，因此它们始终不会包含在输出中。</para>
 		/// </param>
 		public CopyTraversedSourceFeatures(object InputNetworkAnalysisLayer, object OutputLocation, object EdgeFeatureClassName, object JunctionFeatureClassName, object TurnTableName)
 		{
@@ -49,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Copy Traversed Source Features</para>
+		/// <para>Tool Display Name : 复制遍历的源要素</para>
 		/// </summary>
-		public override string DisplayName() => "Copy Traversed Source Features";
+		public override string DisplayName() => "复制遍历的源要素";
 
 		/// <summary>
 		/// <para>Tool Name : CopyTraversedSourceFeatures</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>
-		/// <para>The network analysis layer from which traversed source features will be copied. If the network analysis layer does not have a valid result, the layer will be solved to produce one.</para>
+		/// <para>将复制遍历源要素的网络分析图层。如果网络分析图层没有有效结果，则会通过求解图层以生成有效结果。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPNALayer()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Location</para>
-		/// <para>The workspace where the output table and two feature classes will be saved.</para>
+		/// <para>用来保存输出表和两个要素类的工作空间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Edge Feature Class Name</para>
-		/// <para>The name of the feature class that will contain information about the traversed edge source features. If the solved network analysis layer doesn't traverse any edge features, an empty feature class is created.</para>
+		/// <para>将包含遍历边源要素相关信息的要素类的名称。如果求解的网络分析图层不遍历任何边要素，则会创建空要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Junction Feature Class Name</para>
-		/// <para>The name of the feature class that will contain information about the traversed junction source features, including system junctions and relevant points from the input network analysis layer. If the solved network analysis layer doesn't traverse any junctions, an empty feature class is created.</para>
+		/// <para>将包含遍历交汇点源要素（包括输入网络分析图层中的系统交汇点和相关点）相关信息的要素类的名称。如果求解的网络分析图层不遍历任何交汇点，则会创建空要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Turn Table Name</para>
-		/// <para>The name of the table that will contain information about the traversed global turns and turn features that scale cost for the underlying edges. If the solved network analysis layer doesn't traverse any turns, an empty table is created. Since restricted turns are never traversed, they are never included in the output.</para>
+		/// <para>将包含基础边成本按比例增加的遍历通用转弯和转弯要素相关信息的表的名称。如果求解的网络分析图层不遍历任何转弯，则会创建空表。因为始终不会遍历受限制的转弯，因此它们始终不会包含在输出中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Random Raster</para>
-	/// <para>Create Random Raster</para>
-	/// <para>Creates a raster dataset of random values with a distribution you define.</para>
+	/// <para>创建随机栅格</para>
+	/// <para>使用您定义的分布创建随机值的栅格数据集。</para>
 	/// </summary>
 	public class CreateRandomRaster : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="OutPath">
 		/// <para>Output Location</para>
-		/// <para>The folder or geodatabase where the output raster dataset will be stored.</para>
+		/// <para>存储输出栅格数据集的文件夹以及地理数据库。</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Raster Dataset Name with Extension</para>
-		/// <para>The name and format of the raster dataset you are creating.</para>
-		/// <para>To store the output as a raster dataset in a geodatabase, do not add a file extension to the raster dataset name.</para>
-		/// <para>For file-based rasters, use the appropriate extension to specify the format to create as follows:</para>
-		/// <para>.tif—TIFF raster</para>
-		/// <para>.img—ERDAS IMAGINE raster</para>
-		/// <para>.crf—CRF raster</para>
-		/// <para>No extension—Esri Grid</para>
+		/// <para>要创建的栅格数据集的名称和格式。</para>
+		/// <para>要将输出存储为地理数据库中的栅格数据集，请勿在栅格数据集名称中添加文件扩展名。</para>
+		/// <para>对于基于文件的栅格，使用相应扩展名来指定要创建的格式，如下所示：</para>
+		/// <para>.tif - TIFF 栅格</para>
+		/// <para>.img - ERDAS IMAGINE 栅格</para>
+		/// <para>.crf - CRF 栅格</para>
+		/// <para>Esri Grid 无扩展名</para>
 		/// </param>
 		public CreateRandomRaster(object OutPath, object OutName)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Random Raster</para>
+		/// <para>Tool Display Name : 创建随机栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Create Random Raster";
+		public override string DisplayName() => "创建随机栅格";
 
 		/// <summary>
 		/// <para>Tool Name : CreateRandomRaster</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Location</para>
-		/// <para>The folder or geodatabase where the output raster dataset will be stored.</para>
+		/// <para>存储输出栅格数据集的文件夹以及地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -84,13 +84,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Raster Dataset Name with Extension</para>
-		/// <para>The name and format of the raster dataset you are creating.</para>
-		/// <para>To store the output as a raster dataset in a geodatabase, do not add a file extension to the raster dataset name.</para>
-		/// <para>For file-based rasters, use the appropriate extension to specify the format to create as follows:</para>
-		/// <para>.tif—TIFF raster</para>
-		/// <para>.img—ERDAS IMAGINE raster</para>
-		/// <para>.crf—CRF raster</para>
-		/// <para>No extension—Esri Grid</para>
+		/// <para>要创建的栅格数据集的名称和格式。</para>
+		/// <para>要将输出存储为地理数据库中的栅格数据集，请勿在栅格数据集名称中添加文件扩展名。</para>
+		/// <para>对于基于文件的栅格，使用相应扩展名来指定要创建的格式，如下所示：</para>
+		/// <para>.tif - TIFF 栅格</para>
+		/// <para>.img - ERDAS IMAGINE 栅格</para>
+		/// <para>.crf - CRF 栅格</para>
+		/// <para>Esri Grid 无扩展名</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -98,18 +98,18 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Distribution</para>
-		/// <para>Specifies the random value distribution method to use.</para>
-		/// <para>Each type has one or two settings to control the distribution.</para>
-		/// <para>Uniform—A uniform distribution with the defined range between the Minimum and Maximum values. The default values are 0.0 for Minimum and 1.0 for Maximum. This is the default.</para>
-		/// <para>Integer—An integer distribution with the defined range between the Minimum and Maximum values. The default values are 1 for Minimum and 10 for Maximum.</para>
-		/// <para>Normal—A normal distribution with defined Mean and Standard Deviation values. The default values are 0.0 for Mean and 1.0 for Standard Deviation.</para>
-		/// <para>Exponential—An exponential distribution with a defined Mean value. The default value is 1.0.</para>
-		/// <para>Poisson-—A Poisson distribution with a defined Mean value. The default value is 1.0.</para>
-		/// <para>Gamma—A gamma distribution with defined Alpha and Beta values. The default values are 1.0 for Alpha and 1.0 for Beta.</para>
-		/// <para>Binomial—A binomial distribution with defined N and Probability values. The default values are 10 for N and 0.5 for Probability.</para>
-		/// <para>Geometric—A geometric distribution with a defined Probability value. The default value is 0.5.</para>
-		/// <para>Negative Binomial—A Pascal distribution with defined r and Probability values. The default values are 10.0 for r and 0.5 for Probability.</para>
-		/// <para>To edit the default value, click the value in the table and type the new value.</para>
+		/// <para>指定要使用的随机值分布方法。</para>
+		/// <para>每种类型都有一个或两个设置来控制分布。</para>
+		/// <para>均匀 - 最小和最大值之间已定义范围的均匀分布。最小值的默认值为 0.0，最大值的默认值为 1.0。这是默认设置。</para>
+		/// <para>整数 - 最小和最大值之间已定义范围的整数分布。最小值的默认值为 1，最大值的默认值为 10。</para>
+		/// <para>正态 - 已定义平均值和标准差值的正态分布。平均值的默认值为 0.0，标准差的默认值为 1.0。</para>
+		/// <para>指数 - 已定义平均值的指数分布。默认值为 1.0。</para>
+		/// <para>泊松 - 已定义平均值的泊松分布。默认值为 1.0。</para>
+		/// <para>Gamma - 已定义 Alpha 和 Beta 值的 Gamma 分布。Alpha 和 Beta 的默认值都是 1.0。</para>
+		/// <para>二项 - 已定义 N 和概率值的二项分布。N 的默认值为 10，概率的默认值为 0.5。</para>
+		/// <para>几何 - 已定义概率值的几何分布。默认值为 0.5。</para>
+		/// <para>负二项 - 已定义 r 和概率值的帕斯卡分布。r 的默认值为 10.0，概率的默认值为 0.5。</para>
+		/// <para>要编辑默认值，请单击表中的值，然后输入新值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -117,11 +117,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output extent</para>
-		/// <para>The extent of the output raster dataset.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Current Display Extent—The extent is equal to the data frame or visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>输出栅格数据集的范围。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>当前显示范围 - 该范围与数据框或可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Cellsize</para>
-		/// <para>The spatial resolution of the output raster dataset.</para>
+		/// <para>输出栅格数据集的空间分辨率。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -144,10 +144,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Build raster attribute table</para>
-		/// <para>Specifies whether the tool will unconditionally build a raster attribute table for the output raster in which the selected distribution results in an integer output raster.</para>
-		/// <para>This parameter has no effect if the output raster is floating point.</para>
-		/// <para>Checked—A raster attribute table will be unconditionally built for integer output rasters. This is the default.</para>
-		/// <para>Unchecked—A raster attribute table will not be built for integer output rasters if the number of unique values is greater than or equal to 65535. If the number of unique values is less than 65535, a raster attribute table will be built.</para>
+		/// <para>指定该工具是否将无条件地为输出栅格构建栅格属性表，其中所选分布将生成整数输出栅格。</para>
+		/// <para>如果输出栅格为浮点，则此参数无效。</para>
+		/// <para>选中 - 将为整数输出栅格无条件构建栅格属性表。这是默认设置。</para>
+		/// <para>未选中 - 如果唯一值数量大于或等于 65535，则不会为整数输出栅格构建栅格属性表。如果唯一值数量小于 65535，则将构建栅格属性表。</para>
 		/// <para><see cref="BuildRatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -172,14 +172,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum BuildRatEnum 
 		{
 			/// <summary>
-			/// <para>Checked—A raster attribute table will be unconditionally built for integer output rasters. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BUILD")]
 			BUILD,
 
 			/// <summary>
-			/// <para>Unchecked—A raster attribute table will not be built for integer output rasters if the number of unique values is greater than or equal to 65535. If the number of unique values is less than 65535, a raster attribute table will be built.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_BUILD")]

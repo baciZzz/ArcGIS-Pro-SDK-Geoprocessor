@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Evaluate Rules</para>
-	/// <para>Evaluate Rules</para>
-	/// <para>Evaluates geodatabase rules and functionality.</para>
+	/// <para>评估规则</para>
+	/// <para>评估地理数据库规则和功能。</para>
 	/// </summary>
 	public class EvaluateRules : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Input Workspace</para>
-		/// <para>A file geodatabase or feature service URL. An example of a feature service URL is https://myserver/server/rest/services/myservicename/FeatureServer.</para>
+		/// <para>文件地理数据库或要素服务 URL。 下面是要素服务 URL 的示例：https://myserver/server/rest/services/myservicename/FeatureServer。</para>
 		/// </param>
 		/// <param name="EvaluationTypes">
 		/// <para>Evaluation Types</para>
-		/// <para>Specifies the types of evaluation that will be used.</para>
-		/// <para>Calculation rules—Batch calculation attribute rules will be evaluated.</para>
-		/// <para>Validation rules—Validation attribute rules will be evaluated.</para>
+		/// <para>指定要使用的评估类型。</para>
+		/// <para>计算规则—将评估批处理计算属性规则。</para>
+		/// <para>验证规则—将评估验证属性规则。</para>
 		/// <para><see cref="EvaluationTypesEnum"/></para>
 		/// </param>
 		public EvaluateRules(object InWorkspace, object EvaluationTypes)
@@ -37,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Evaluate Rules</para>
+		/// <para>Tool Display Name : 评估规则</para>
 		/// </summary>
-		public override string DisplayName() => "Evaluate Rules";
+		public override string DisplayName() => "评估规则";
 
 		/// <summary>
 		/// <para>Tool Name : EvaluateRules</para>
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>A file geodatabase or feature service URL. An example of a feature service URL is https://myserver/server/rest/services/myservicename/FeatureServer.</para>
+		/// <para>文件地理数据库或要素服务 URL。 下面是要素服务 URL 的示例：https://myserver/server/rest/services/myservicename/FeatureServer。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -83,9 +83,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Evaluation Types</para>
-		/// <para>Specifies the types of evaluation that will be used.</para>
-		/// <para>Calculation rules—Batch calculation attribute rules will be evaluated.</para>
-		/// <para>Validation rules—Validation attribute rules will be evaluated.</para>
+		/// <para>指定要使用的评估类型。</para>
+		/// <para>计算规则—将评估批处理计算属性规则。</para>
+		/// <para>验证规则—将评估验证属性规则。</para>
 		/// <para><see cref="EvaluationTypesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -95,13 +95,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>The extent to be evaluated. If there is a selection in the map, only selected features within the specified extent will be evaluated.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
-		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
-		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>要评估的范围。 如果在地图中进行了选择，则将仅评估指定范围内的选定要素。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
+		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
+		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -109,9 +109,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Async</para>
-		/// <para>Specifies whether the evaluation will run synchronously or asynchronously. This parameter is only supported when the input workspace is a feature service.</para>
-		/// <para>Checked—The evaluation will run asynchronously. This option dedicates server resources to run the evaluation with a longer time-out. Running asynchronously is recommended when evaluating large datasets that contain many features requiring calculation or validation. This is the default.</para>
-		/// <para>Unchecked—The evaluation will run synchronously. This option has a shorter time-out and is best used when evaluating an extent with a small number of features requiring calculation or validation.</para>
+		/// <para>指定同步还是异步运行评估。 仅当输入工作空间为要素服务时，才支持此参数。</para>
+		/// <para>选中 - 将异步运行评估。 服务器资源可通过该选项来运行超时时间较长的评估。 当评估包含许多需要计算或验证的要素的大型数据集时，建议使用异步运行。 这是默认设置。</para>
+		/// <para>未选中 - 将同步运行评估。 此选项超时时间较短，特别适用于评估需要计算或验证的要素数量较少的范围。</para>
 		/// <para><see cref="RunAsyncEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -134,17 +134,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum EvaluationTypesEnum 
 		{
 			/// <summary>
-			/// <para>Calculation rules—Batch calculation attribute rules will be evaluated.</para>
+			/// <para>计算规则—将评估批处理计算属性规则。</para>
 			/// </summary>
 			[GPValue("CALCULATION_RULES")]
-			[Description("Calculation rules")]
+			[Description("计算规则")]
 			Calculation_rules,
 
 			/// <summary>
-			/// <para>Validation rules—Validation attribute rules will be evaluated.</para>
+			/// <para>验证规则—将评估验证属性规则。</para>
 			/// </summary>
 			[GPValue("VALIDATION_RULES")]
-			[Description("Validation rules")]
+			[Description("验证规则")]
 			Validation_rules,
 
 		}
@@ -155,14 +155,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum RunAsyncEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The evaluation will run asynchronously. This option dedicates server resources to run the evaluation with a longer time-out. Running asynchronously is recommended when evaluating large datasets that contain many features requiring calculation or validation. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ASYNC")]
 			ASYNC,
 
 			/// <summary>
-			/// <para>Unchecked—The evaluation will run synchronously. This option has a shorter time-out and is best used when evaluating an extent with a small number of features requiring calculation or validation.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SYNC")]

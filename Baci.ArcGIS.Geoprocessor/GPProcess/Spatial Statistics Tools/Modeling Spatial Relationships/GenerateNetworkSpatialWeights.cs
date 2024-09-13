@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Generate Network Spatial Weights</para>
-	/// <para>Generate Network Spatial Weights</para>
-	/// <para>Constructs a spatial weights matrix file (.swm) using a Network dataset, defining feature spatial relationships in terms of the underlying network structure.</para>
+	/// <para>生成网络空间权重</para>
+	/// <para>使用网络数据集构建一个空间权重矩阵文件 (.swm)，从而在基础网络结构方面定义要素空间关系。</para>
 	/// </summary>
 	[Obsolete()]
 	public class GenerateNetworkSpatialWeights : AbstractGPProcess
@@ -22,23 +22,23 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputFeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>The point feature class for which network spatial relationships among features will be assessed.</para>
+		/// <para>要素间网络空间关系的点要素类将被评估。</para>
 		/// </param>
 		/// <param name="UniqueIDField">
 		/// <para>Unique ID Field</para>
-		/// <para>An integer field containing a different value for every feature in the input feature class. If you don't have a Unique ID field, you can create one by adding an integer field to your feature class table and calculating the field values to equal the FID or OBJECTID field.</para>
+		/// <para>包含输入要素类中每个要素不同值的整型字段。如果没有“唯一 ID”字段，则可以创建一个，方法是向要素类表添加一个整型字段，然后将此字段的值计算为与 FID 或 OBJECTID 字段的值相等。</para>
 		/// </param>
 		/// <param name="OutputSpatialWeightsMatrixFile">
 		/// <para>Output Spatial Weights Matrix File</para>
-		/// <para>The output network spatial weights matrix (.swm) file.</para>
+		/// <para>输出网络空间权重矩阵 (.swm) 文件。</para>
 		/// </param>
 		/// <param name="InputNetwork">
 		/// <para>Input Network</para>
-		/// <para>The network dataset for which spatial relationships among features in the input feature class will be defined. Network datasets most often represent street networks but may represent other kinds of transportation networks as well. The network dataset needs at least one time-based and one distance-based cost attribute.</para>
+		/// <para>将对输入要素类中各要素间空间关系进行定义的网络数据集。网络数据集通常表示街道网络，但也可能表示其他种类的交通网。网络数据集至少需要一个基于时间和一个基于距离的成本属性。</para>
 		/// </param>
 		/// <param name="ImpedanceAttribute">
 		/// <para>Impedance Attribute</para>
-		/// <para>The type of cost units to use as impedance in the analysis.</para>
+		/// <para>在分析中被用作阻抗的成本单位类型。</para>
 		/// </param>
 		public GenerateNetworkSpatialWeights(object InputFeatureClass, object UniqueIDField, object OutputSpatialWeightsMatrixFile, object InputNetwork, object ImpedanceAttribute)
 		{
@@ -50,9 +50,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Network Spatial Weights</para>
+		/// <para>Tool Display Name : 生成网络空间权重</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Network Spatial Weights";
+		public override string DisplayName() => "生成网络空间权重";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateNetworkSpatialWeights</para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>The point feature class for which network spatial relationships among features will be assessed.</para>
+		/// <para>要素间网络空间关系的点要素类将被评估。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Unique ID Field</para>
-		/// <para>An integer field containing a different value for every feature in the input feature class. If you don't have a Unique ID field, you can create one by adding an integer field to your feature class table and calculating the field values to equal the FID or OBJECTID field.</para>
+		/// <para>包含输入要素类中每个要素不同值的整型字段。如果没有“唯一 ID”字段，则可以创建一个，方法是向要素类表添加一个整型字段，然后将此字段的值计算为与 FID 或 OBJECTID 字段的值相等。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Spatial Weights Matrix File</para>
-		/// <para>The output network spatial weights matrix (.swm) file.</para>
+		/// <para>输出网络空间权重矩阵 (.swm) 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The network dataset for which spatial relationships among features in the input feature class will be defined. Network datasets most often represent street networks but may represent other kinds of transportation networks as well. The network dataset needs at least one time-based and one distance-based cost attribute.</para>
+		/// <para>将对输入要素类中各要素间空间关系进行定义的网络数据集。网络数据集通常表示街道网络，但也可能表示其他种类的交通网。网络数据集至少需要一个基于时间和一个基于距离的成本属性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPNetworkDatasetLayer()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Impedance Attribute</para>
-		/// <para>The type of cost units to use as impedance in the analysis.</para>
+		/// <para>在分析中被用作阻抗的成本单位类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -135,8 +135,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Impedance Cutoff</para>
-		/// <para>Specifies a cutoff value for Inverse and Fixed conceptualizations of spatial relationships. Enter this value using the units specified by the Impedance Attribute parameter.</para>
-		/// <para>A value of zero indicates that no threshold is applied. When this parameter is left blank, a default threshold value is computed based on input feature class extent and the number of features.</para>
+		/// <para>为空间关系的反距离和固定距离概念化指定中断值。使用由阻抗属性参数指定的单位输入此值。</para>
+		/// <para>零值表明应未应用任何阈值。此参数留空时，将根据输入要素类范围和要素数量计算默认阈值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Maximum Number of Neighbors</para>
-		/// <para>An integer reflecting the maximum number of neighbors to find for each feature.</para>
+		/// <para>用于表示要为各要素查找的最大相邻要素数的整数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Barriers</para>
-		/// <para>The name of a point feature class with features representing blocked intersections, road closures, accident sites, or other locations where travel is blocked along the network.</para>
+		/// <para>一种点要素类的名称，其中的要素用于表示阻塞的路口、封锁的道路、事故现场或网络中行程被阻止的其他位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -166,11 +166,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>U-turn Policy</para>
-		/// <para>Specifies optional U-turn restrictions.</para>
-		/// <para>Allow U-turns—U-turns will be allowed anywhere. This is the default.</para>
-		/// <para>No U-turns—No U-turns will be allowed during navigation.</para>
-		/// <para>Allow U-turns at dead ends only—U-turns will be allowed only at dead ends (that is, single-valent junctions).</para>
-		/// <para>Allow U-turns at dead ends and intersections only—U-turns will be allowed only at dead ends and intersections.</para>
+		/// <para>指定可选的 U 形转弯限制。</para>
+		/// <para>允许 U 形转弯—U 形转弯可以出现在任何位置。这是默认设置。</para>
+		/// <para>禁止 U 形转弯—导航过程中不允许有任何 U 形转弯。</para>
+		/// <para>仅在死角处允许 U 形转弯—U 形转弯仅允许出现在死角（即单价交汇点）。</para>
+		/// <para>仅在死角和交点处允许 U 形转弯—U 形转弯仅允许出现在死角和交点处。</para>
 		/// <para><see cref="UTurnPolicyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -181,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Restrictions</para>
-		/// <para>A list of restrictions. Check the restrictions to be honored in spatial relationship computations.</para>
+		/// <para>限制列表。选中在计算空间关系时要遵守的限制。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -191,9 +191,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Use Hierarchy in Analysis</para>
-		/// <para>Specifies whether to use a hierarchy in the analysis.</para>
-		/// <para>Checked—The network dataset&apos;s hierarchy attribute will be used in a heuristic path algorithm to speed analysis.</para>
-		/// <para>Unchecked—An exact path algorithm will be used instead. If there is no hierarchy attribute, this option does not affect analysis.</para>
+		/// <para>指定是否在分析中使用等级。</para>
+		/// <para>选中 - 将在启发式路径算法中使用网络数据集的等级属性来加速分析过程。</para>
+		/// <para>未选中 - 将改为使用精确的路径算法。如果不存在等级属性，此选项不影响分析。</para>
 		/// <para><see cref="UseHierarchyInAnalysisEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -204,7 +204,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Search Tolerance</para>
-		/// <para>The search threshold used to locate features in the Input Feature Class onto the network dataset. This parameter includes a search value and the units for the tolerance.</para>
+		/// <para>在网络数据集的输入要素类中查找要素时使用的搜索阈值。该参数包括搜索值和容差单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -213,9 +213,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Conceptualization of Spatial Relationships</para>
-		/// <para>Specifies how the weighting associated with each spatial relationship is specified.</para>
-		/// <para>Inverse—Features farther away have a smaller weight than features nearby.</para>
-		/// <para>Fixed—Features within the Impedance Cutoff are neighbors (weight of 1); features outside the Impedance Cutoff are not weighted (weight of 0).</para>
+		/// <para>指明如何指定与每个空间关系关联的加权方式。</para>
+		/// <para>反向—远处要素的权重比近处要素的权重小。</para>
+		/// <para>固定—阻抗中断之内的要素是相邻要素（权重为 1）；阻抗中断之外的要素没有加权（权重为 0）。</para>
 		/// <para><see cref="ConceptualizationOfSpatialRelationshipsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -226,7 +226,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Exponent</para>
-		/// <para>Parameter for the Inverse Conceptualization of Spatial Relationships calculation. Typical values are 1 or 2. Weights drop off quicker with distance as this exponent value increases.</para>
+		/// <para>空间关系概念计算的反距离参数。典型值是 1 或 2。在此指数值增大时，权重会随着距离的增加快速下降。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -235,9 +235,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Row Standardization</para>
-		/// <para>Specifies whether row standardization is applied. Row standardization is recommended whenever feature distribution is potentially biased due to sampling design or to an imposed aggregation scheme.</para>
-		/// <para>Checked—Spatial weights are standardized by row. Each weight is divided by its row sum.</para>
-		/// <para>Unchecked—No standardization of spatial weights is applied.</para>
+		/// <para>指定是否应用行标准化。当要素的分布由于采样设计或施加的聚合方案而可能出现偏离时，建议使用行标准化。</para>
+		/// <para>选中 - 按行对空间权重执行标准化。每个权重都除以它的行总和。</para>
+		/// <para>取消选中 - 不对空间权重执行标准化。</para>
 		/// <para><see cref="RowStandardizationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -248,8 +248,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Travel Mode</para>
-		/// <para>The mode of transportation for the analysis. Custom is always a choice. For other travel modes to appear, they must be present in the network dataset specified in the Network Dataset parameter.</para>
-		/// <para>A travel mode is defined on a network dataset and provides override values for parameters that model car, truck, pedestrian, or other modes of travel.</para>
+		/// <para>用于分析的交通模式。始终选择自定义。要显示其他出行模式，必须使其显示在网络数据集参数指定的网络数据集中。</para>
+		/// <para>出行模式是在网络数据集上定义的，并会提供模型车、货车、步行或其他出行模式的参数的覆盖值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -258,7 +258,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Time of Day</para>
-		/// <para>Specifies whether travel times should consider traffic conditions. Especially in urbanized areas, traffic conditions can significantly impact the area covered within a specified travel time. If no date or time is specified, the distance covered during a specified travel time will not be impacted by traffic.</para>
+		/// <para>指定行驶时间是否应该考虑交通状况。尤其是城市化地区的交通状况，可以显著影响指定行驶时间内涉及的区域。如果未指定日期或时间，在某一特定行驶时间内行驶的距离将不受交通影响。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -282,31 +282,31 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum UTurnPolicyEnum 
 		{
 			/// <summary>
-			/// <para>Allow U-turns—U-turns will be allowed anywhere. This is the default.</para>
+			/// <para>允许 U 形转弯—U 形转弯可以出现在任何位置。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ALLOW_UTURNS")]
-			[Description("Allow U-turns")]
+			[Description("允许 U 形转弯")]
 			ALLOW_UTURNS,
 
 			/// <summary>
-			/// <para>No U-turns—No U-turns will be allowed during navigation.</para>
+			/// <para>禁止 U 形转弯—导航过程中不允许有任何 U 形转弯。</para>
 			/// </summary>
 			[GPValue("NO_UTURNS")]
-			[Description("No U-turns")]
+			[Description("禁止 U 形转弯")]
 			NO_UTURNS,
 
 			/// <summary>
-			/// <para>Allow U-turns at dead ends only—U-turns will be allowed only at dead ends (that is, single-valent junctions).</para>
+			/// <para>仅在死角处允许 U 形转弯—U 形转弯仅允许出现在死角（即单价交汇点）。</para>
 			/// </summary>
 			[GPValue("ALLOW_DEAD_ENDS_ONLY")]
-			[Description("Allow U-turns at dead ends only")]
+			[Description("仅在死角处允许 U 形转弯")]
 			ALLOW_DEAD_ENDS_ONLY,
 
 			/// <summary>
-			/// <para>Allow U-turns at dead ends and intersections only—U-turns will be allowed only at dead ends and intersections.</para>
+			/// <para>仅在死角和交点处允许 U 形转弯—U 形转弯仅允许出现在死角和交点处。</para>
 			/// </summary>
 			[GPValue("ALLOW_DEAD_ENDS_AND_INTERSECTIONS_ONLY")]
-			[Description("Allow U-turns at dead ends and intersections only")]
+			[Description("仅在死角和交点处允许 U 形转弯")]
 			ALLOW_DEAD_ENDS_AND_INTERSECTIONS_ONLY,
 
 		}
@@ -317,14 +317,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum UseHierarchyInAnalysisEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The network dataset&apos;s hierarchy attribute will be used in a heuristic path algorithm to speed analysis.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("USE_HIERARCHY")]
 			USE_HIERARCHY,
 
 			/// <summary>
-			/// <para>Unchecked—An exact path algorithm will be used instead. If there is no hierarchy attribute, this option does not affect analysis.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_HIERARCHY")]
@@ -338,17 +338,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum ConceptualizationOfSpatialRelationshipsEnum 
 		{
 			/// <summary>
-			/// <para>Inverse—Features farther away have a smaller weight than features nearby.</para>
+			/// <para>反向—远处要素的权重比近处要素的权重小。</para>
 			/// </summary>
 			[GPValue("INVERSE")]
-			[Description("Inverse")]
+			[Description("反向")]
 			Inverse,
 
 			/// <summary>
-			/// <para>Fixed—Features within the Impedance Cutoff are neighbors (weight of 1); features outside the Impedance Cutoff are not weighted (weight of 0).</para>
+			/// <para>固定—阻抗中断之内的要素是相邻要素（权重为 1）；阻抗中断之外的要素没有加权（权重为 0）。</para>
 			/// </summary>
 			[GPValue("FIXED")]
-			[Description("Fixed")]
+			[Description("固定")]
 			Fixed,
 
 		}
@@ -359,14 +359,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum RowStandardizationEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Spatial weights are standardized by row. Each weight is divided by its row sum.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ROW_STANDARDIZATION")]
 			ROW_STANDARDIZATION,
 
 			/// <summary>
-			/// <para>Unchecked—No standardization of spatial weights is applied.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_STANDARDIZATION")]

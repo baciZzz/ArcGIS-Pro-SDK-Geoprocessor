@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Inside Boundary</para>
-	/// <para>Inside Boundary</para>
+	/// <para>内部边界</para>
 	/// <para>Find like entities within specified boundary feature. </para>
 	/// </summary>
 	[Obsolete()]
@@ -33,9 +33,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Inside Boundary</para>
+		/// <para>Tool Display Name : 内部边界</para>
 		/// </summary>
-		public override string DisplayName() => "Inside Boundary";
+		public override string DisplayName() => "内部边界";
 
 		/// <summary>
 		/// <para>Tool Name : InsideBoundary</para>

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Import Rules</para>
-	/// <para>Import Rules</para>
-	/// <para>Import connectivity, structural attachment, and containment rules from a comma-separated values file into an existing utility network.</para>
+	/// <para>导入规则</para>
+	/// <para>用于将逗号分隔值文件中的连通性、结构附件和包含规则导入到现有公共设施网络。</para>
 	/// </summary>
 	public class ImportRules : AbstractGPProcess
 	{
@@ -21,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>Specifies the utility network to import the rules to.</para>
+		/// <para>指定要导入规则的公共设施网络。</para>
 		/// </param>
 		/// <param name="RuleType">
 		/// <para>Rule Type</para>
-		/// <para>Specifies the type of rules to import.</para>
-		/// <para>All—One or more types of rules</para>
-		/// <para>Junction-junction connectivity—Junction-junction connectivity association rules</para>
-		/// <para>Junction-edge connectivity—Junction-edge connectivity rules</para>
-		/// <para>Containment—Containment association rules</para>
-		/// <para>Structural attachment—Structural attachment association rules</para>
-		/// <para>Edge-junction-edge connectivity— Edge-junction-edge association rules</para>
+		/// <para>指定要导入规则的类型。</para>
+		/// <para>所有—一种或多种规则类型</para>
+		/// <para>交汇点-交汇点连通性—交汇点-交汇点连通性关联规则</para>
+		/// <para>交汇点-边连通性—交汇点-边连通性规则</para>
+		/// <para>包含—包含关联规则</para>
+		/// <para>结构附件—结构附件关联规则</para>
+		/// <para>边-交汇点-边连通性— 边-交汇点-边关联规则</para>
 		/// <para><see cref="RuleTypeEnum"/></para>
 		/// </param>
 		/// <param name="CsvFile">
 		/// <para>Input  File</para>
-		/// <para>Specifies the .csv file containing the rules to import.</para>
+		/// <para>指定包含待导入规则的 .csv 文件。</para>
 		/// </param>
 		public ImportRules(object InUtilityNetwork, object RuleType, object CsvFile)
 		{
@@ -46,9 +46,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Import Rules</para>
+		/// <para>Tool Display Name : 导入规则</para>
 		/// </summary>
-		public override string DisplayName() => "Import Rules";
+		public override string DisplayName() => "导入规则";
 
 		/// <summary>
 		/// <para>Tool Name : ImportRules</para>
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>Specifies the utility network to import the rules to.</para>
+		/// <para>指定要导入规则的公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -90,13 +90,13 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Rule Type</para>
-		/// <para>Specifies the type of rules to import.</para>
-		/// <para>All—One or more types of rules</para>
-		/// <para>Junction-junction connectivity—Junction-junction connectivity association rules</para>
-		/// <para>Junction-edge connectivity—Junction-edge connectivity rules</para>
-		/// <para>Containment—Containment association rules</para>
-		/// <para>Structural attachment—Structural attachment association rules</para>
-		/// <para>Edge-junction-edge connectivity— Edge-junction-edge association rules</para>
+		/// <para>指定要导入规则的类型。</para>
+		/// <para>所有—一种或多种规则类型</para>
+		/// <para>交汇点-交汇点连通性—交汇点-交汇点连通性关联规则</para>
+		/// <para>交汇点-边连通性—交汇点-边连通性规则</para>
+		/// <para>包含—包含关联规则</para>
+		/// <para>结构附件—结构附件关联规则</para>
+		/// <para>边-交汇点-边连通性— 边-交汇点-边关联规则</para>
 		/// <para><see cref="RuleTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input  File</para>
-		/// <para>Specifies the .csv file containing the rules to import.</para>
+		/// <para>指定包含待导入规则的 .csv 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -138,45 +138,45 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum RuleTypeEnum 
 		{
 			/// <summary>
-			/// <para>All—One or more types of rules</para>
+			/// <para>所有—一种或多种规则类型</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All")]
+			[Description("所有")]
 			All,
 
 			/// <summary>
-			/// <para>Junction-junction connectivity—Junction-junction connectivity association rules</para>
+			/// <para>交汇点-交汇点连通性—交汇点-交汇点连通性关联规则</para>
 			/// </summary>
 			[GPValue("JUNCTION_JUNCTION_CONNECTIVITY")]
-			[Description("Junction-junction connectivity")]
+			[Description("交汇点-交汇点连通性")]
 			JUNCTION_JUNCTION_CONNECTIVITY,
 
 			/// <summary>
-			/// <para>Junction-edge connectivity—Junction-edge connectivity rules</para>
+			/// <para>交汇点-边连通性—交汇点-边连通性规则</para>
 			/// </summary>
 			[GPValue("JUNCTION_EDGE_CONNECTIVITY")]
-			[Description("Junction-edge connectivity")]
+			[Description("交汇点-边连通性")]
 			JUNCTION_EDGE_CONNECTIVITY,
 
 			/// <summary>
-			/// <para>Containment—Containment association rules</para>
+			/// <para>包含—包含关联规则</para>
 			/// </summary>
 			[GPValue("CONTAINMENT")]
-			[Description("Containment")]
+			[Description("包含")]
 			Containment,
 
 			/// <summary>
-			/// <para>Structural attachment—Structural attachment association rules</para>
+			/// <para>结构附件—结构附件关联规则</para>
 			/// </summary>
 			[GPValue("STRUCTURAL_ATTACHMENT")]
-			[Description("Structural attachment")]
+			[Description("结构附件")]
 			Structural_attachment,
 
 			/// <summary>
-			/// <para>Edge-junction-edge connectivity— Edge-junction-edge association rules</para>
+			/// <para>边-交汇点-边连通性— 边-交汇点-边关联规则</para>
 			/// </summary>
 			[GPValue("EDGE_JUNCTION_EDGE_CONNECTIVITY")]
-			[Description("Edge-junction-edge connectivity")]
+			[Description("边-交汇点-边连通性")]
 			EDGE_JUNCTION_EDGE_CONNECTIVITY,
 
 		}

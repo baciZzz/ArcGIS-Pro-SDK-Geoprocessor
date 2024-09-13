@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Summarize Nearby</para>
-	/// <para>Summarize Nearby</para>
-	/// <para>Finds features that are within a specified distance of features in the input layer.</para>
+	/// <para>邻近汇总</para>
+	/// <para>在输入图层中查找处于指定要素距离内的要素。</para>
 	/// </summary>
 	public class SummarizeNearby : AbstractGPProcess
 	{
@@ -21,44 +21,44 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// </summary>
 		/// <param name="Sumnearbylayer">
 		/// <para>Input Nearby Layer</para>
-		/// <para>Point, line, or polygon features from which distances will be measured to features in the input summary layer.</para>
+		/// <para>用作输入汇总图层中到要素的距离的测量起点的点、线或面要素。</para>
 		/// </param>
 		/// <param name="Summarylayer">
 		/// <para>Input Summary Features</para>
-		/// <para>Point, line, or polygon features. Features in this layer that are within the specified distance to features in the input nearby layer will be summarized.</para>
+		/// <para>点、线或面要素。将汇总此图层中与输入邻近要素图层中的要素相距指定距离的要素。</para>
 		/// </param>
 		/// <param name="Outputname">
 		/// <para>Output Name</para>
-		/// <para>The name of the output layer to create on your portal.</para>
+		/// <para>要在门户中创建的输出图层的名称。</para>
 		/// </param>
 		/// <param name="Neartype">
 		/// <para>Distance Measurement</para>
-		/// <para>Defines what kind of distance measurement you want to use: straight-line distance or by measuring travel time or travel distance along a street network using various modes of transportation known as travel modes.</para>
-		/// <para>Straight-line—Use straight-line Euclidean measurement of distance. This is the default.</para>
-		/// <para>Driving distance—Use distance as driven in an automobile.</para>
-		/// <para>Driving time—Use distance covered during a specified driving time in an automobile.</para>
-		/// <para>Trucking distance—Use distance as driven in a truck.</para>
-		/// <para>Trucking time—Use distance covered during a specified driving time in a truck.</para>
-		/// <para>Walking distance—Use distance as walked along a street.</para>
-		/// <para>Walking time—Use distance covered during a specified walking time.</para>
+		/// <para>定义要使用的距离测量方式：按直线距离进行测量，或利用多种交通方式（称为出行模式）通过测量沿街道网络的行驶时间或行驶距离来进行测量。</para>
+		/// <para>直线—使用直线欧式距离测量法。这是默认设置。</para>
+		/// <para>行驶距离—使用汽车行驶距离。</para>
+		/// <para>行驶时间—使用在指定汽车行驶时间内行驶的距离。</para>
+		/// <para>货运距离—使用卡车行驶距离。</para>
+		/// <para>货运时间—使用在指定卡车行驶时间内行驶的距离。</para>
+		/// <para>步行距离—使用沿街道步行的距离。</para>
+		/// <para>步行时间—使用指定步行时间内行驶的距离。</para>
 		/// <para><see cref="NeartypeEnum"/></para>
 		/// </param>
 		/// <param name="Distances">
 		/// <para>Distances</para>
-		/// <para>A list of double values that defines the search distance (for straight-line and distance-based travel modes) or time (for time-based travel modes). You can enter a single distance value or multiple values. Features that are within (or equal to) the distances you enter will be summarized. The units of the distance values is supplied by the units parameter.</para>
+		/// <para>定义搜索距离（针对直线和基于距离的出行模式）或时间（针对基于时间的出行模式）的双精度值列表。可以输入一个距离值或多个距离值。汇总处于您所输入距离内（包含该距离）的要素。距离值的 units 由 units 参数提供。</para>
 		/// </param>
 		/// <param name="Units">
 		/// <para>Distance Units</para>
-		/// <para>If the near type is straight-line or a distance-based travel mode, this is the linear unit to be used with the distance values specified in distances. Valid options include meters, kilometers, feet, yards, and miles.</para>
-		/// <para>If the near type is a time-based travel mode, values include seconds, minutes, and hours.</para>
-		/// <para>Miles—Miles</para>
-		/// <para>Feet—Feet</para>
-		/// <para>Kilometers—Kilometers</para>
-		/// <para>Meters—Meters</para>
-		/// <para>Yards—Yards</para>
-		/// <para>Seconds—Seconds</para>
-		/// <para>Minutes—Minutes</para>
-		/// <para>Hours—Hours</para>
+		/// <para>如果邻近类型为基于直线或基于距离的出行模式，则此单位应为与距离中指定的距离值一同使用的线性单位。有效选项包括米、千米、英尺、码和英里。</para>
+		/// <para>如果邻近要素类型为基于时间的出行模式，则值将包括秒、分钟和小时。</para>
+		/// <para>英里—英里</para>
+		/// <para>英尺—英尺</para>
+		/// <para>千米—千米</para>
+		/// <para>米—米</para>
+		/// <para>码—码</para>
+		/// <para>秒—秒</para>
+		/// <para>分—分</para>
+		/// <para>小时—小时</para>
 		/// <para><see cref="UnitsEnum"/></para>
 		/// </param>
 		public SummarizeNearby(object Sumnearbylayer, object Summarylayer, object Outputname, object Neartype, object Distances, object Units)
@@ -72,9 +72,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Summarize Nearby</para>
+		/// <para>Tool Display Name : 邻近汇总</para>
 		/// </summary>
-		public override string DisplayName() => "Summarize Nearby";
+		public override string DisplayName() => "邻近汇总";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeNearby</para>
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Input Nearby Layer</para>
-		/// <para>Point, line, or polygon features from which distances will be measured to features in the input summary layer.</para>
+		/// <para>用作输入汇总图层中到要素的距离的测量起点的点、线或面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Input Summary Features</para>
-		/// <para>Point, line, or polygon features. Features in this layer that are within the specified distance to features in the input nearby layer will be summarized.</para>
+		/// <para>点、线或面要素。将汇总此图层中与输入邻近要素图层中的要素相距指定距离的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output layer to create on your portal.</para>
+		/// <para>要在门户中创建的输出图层的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -138,14 +138,14 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Distance Measurement</para>
-		/// <para>Defines what kind of distance measurement you want to use: straight-line distance or by measuring travel time or travel distance along a street network using various modes of transportation known as travel modes.</para>
-		/// <para>Straight-line—Use straight-line Euclidean measurement of distance. This is the default.</para>
-		/// <para>Driving distance—Use distance as driven in an automobile.</para>
-		/// <para>Driving time—Use distance covered during a specified driving time in an automobile.</para>
-		/// <para>Trucking distance—Use distance as driven in a truck.</para>
-		/// <para>Trucking time—Use distance covered during a specified driving time in a truck.</para>
-		/// <para>Walking distance—Use distance as walked along a street.</para>
-		/// <para>Walking time—Use distance covered during a specified walking time.</para>
+		/// <para>定义要使用的距离测量方式：按直线距离进行测量，或利用多种交通方式（称为出行模式）通过测量沿街道网络的行驶时间或行驶距离来进行测量。</para>
+		/// <para>直线—使用直线欧式距离测量法。这是默认设置。</para>
+		/// <para>行驶距离—使用汽车行驶距离。</para>
+		/// <para>行驶时间—使用在指定汽车行驶时间内行驶的距离。</para>
+		/// <para>货运距离—使用卡车行驶距离。</para>
+		/// <para>货运时间—使用在指定卡车行驶时间内行驶的距离。</para>
+		/// <para>步行距离—使用沿街道步行的距离。</para>
+		/// <para>步行时间—使用指定步行时间内行驶的距离。</para>
 		/// <para><see cref="NeartypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Distances</para>
-		/// <para>A list of double values that defines the search distance (for straight-line and distance-based travel modes) or time (for time-based travel modes). You can enter a single distance value or multiple values. Features that are within (or equal to) the distances you enter will be summarized. The units of the distance values is supplied by the units parameter.</para>
+		/// <para>定义搜索距离（针对直线和基于距离的出行模式）或时间（针对基于时间的出行模式）的双精度值列表。可以输入一个距离值或多个距离值。汇总处于您所输入距离内（包含该距离）的要素。距离值的 units 由 units 参数提供。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -163,16 +163,16 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Distance Units</para>
-		/// <para>If the near type is straight-line or a distance-based travel mode, this is the linear unit to be used with the distance values specified in distances. Valid options include meters, kilometers, feet, yards, and miles.</para>
-		/// <para>If the near type is a time-based travel mode, values include seconds, minutes, and hours.</para>
-		/// <para>Miles—Miles</para>
-		/// <para>Feet—Feet</para>
-		/// <para>Kilometers—Kilometers</para>
-		/// <para>Meters—Meters</para>
-		/// <para>Yards—Yards</para>
-		/// <para>Seconds—Seconds</para>
-		/// <para>Minutes—Minutes</para>
-		/// <para>Hours—Hours</para>
+		/// <para>如果邻近类型为基于直线或基于距离的出行模式，则此单位应为与距离中指定的距离值一同使用的线性单位。有效选项包括米、千米、英尺、码和英里。</para>
+		/// <para>如果邻近要素类型为基于时间的出行模式，则值将包括秒、分钟和小时。</para>
+		/// <para>英里—英里</para>
+		/// <para>英尺—英尺</para>
+		/// <para>千米—千米</para>
+		/// <para>米—米</para>
+		/// <para>码—码</para>
+		/// <para>秒—秒</para>
+		/// <para>分—分</para>
+		/// <para>小时—小时</para>
 		/// <para><see cref="UnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -182,17 +182,17 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Time Of Day</para>
-		/// <para>Specify whether travel times should consider traffic conditions. To use traffic in the analysis, you must set the near type to a travel-time-based mode. The time of day value represents the time at which travel begins, or departs, from the input points.</para>
-		/// <para>Two kinds of traffic are supported: typical and live. Typical traffic references travel speeds that are made up of historical averages for each 5-minute interval spanning a week. Live traffic retrieves speeds from a traffic feed that processes phone probe records, sensors, and other data sources to record actual travel speeds and predict speeds for the near future.</para>
-		/// <para>To ensure the task uses typical traffic in locations where it is available, choose a time and day of the week and convert the day of the week to one of the following dates from 1990:Although the dates representing days of the week are from 1990, typical traffic is calculated from recent traffic trends—usually over the last several months.</para>
-		/// <para>Monday—1/1/1990</para>
-		/// <para>Tuesday—1/2/1990</para>
-		/// <para>Wednesday—1/3/1990</para>
-		/// <para>Thursday—1/4/1990</para>
-		/// <para>Friday—1/5/1990</para>
-		/// <para>Saturday—1/6/1990</para>
-		/// <para>Sunday—1/7/1990</para>
-		/// <para>To use live traffic when and where it is available, choose a date and time within 12 hours of the current time. Esri saves live traffic data for 12 hours and references predictive data extending 12 hours into the future. If the time and date you specify for this parameter is outside the 24-hour time window, or the travel time in the analysis continues past the predictive data window, the task falls back to typical traffic speeds.</para>
+		/// <para>指定行驶时间是否应该考虑交通状况。要在分析中使用流量，必须将邻近要素类型设置为基于出行时间的模式。时间值表示出行开始或离开输入点的时间。</para>
+		/// <para>支持两种类型的流量：典型流量和实时流量。典型流量将参考行驶速度，该速度由一周内每 5 分钟执行一次测速所得的历史平均速度组成。实时流量从流量源（用于处理电话调查记录、传感器和其他数据源）检索速度以记录实际行驶速度并预测近期速度。</para>
+		/// <para>要确保任务在适用的位置使用典型流量，请选择该周的某个时间和某天，并将这天转换为 1990 年的以下某个日期：尽管用来表示该周各天的日期来自 1990 年，但典型流量将根据近期的交通趋势（通常在过去的几个月中）进行计算。</para>
+		/// <para>星期一 - 1/1/1990</para>
+		/// <para>星期二 - 1/2/1990</para>
+		/// <para>星期三 - 1/3/1990</para>
+		/// <para>星期四 - 1/4/1990</para>
+		/// <para>星期五 - 1/5/1990</para>
+		/// <para>星期六 - 1/6/1990</para>
+		/// <para>星期日 - 1/7/1990</para>
+		/// <para>要在适用的情况下使用实时流量，请选择当前时间 12 小时范围内的日期和时间。Esri 会保存 12 小时的实时交通数据并参考 12 小时以后的预测数据。如果为此参数指定的时间和日期在 24 小时时间窗之外，或分析中的行驶时间继续超过预测数据窗，则任务将回退到典型流量速度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -200,9 +200,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Time Zone</para>
-		/// <para>Specify the time zone or zones of the chosen time of day. There are two options: GeoLocal (default) and UTC.</para>
-		/// <para>Geolocal—The time of day value refers to the time zone or zones in which the input points are located. This option causes the analysis to have rolling start times across time zones. This is the default.</para>
-		/// <para>Coordinated Universal Time (UTC)—The time of day value refers to Coordinated Universal Time (UTC). The start times for all points are simultaneous, regardless of time zones.</para>
+		/// <para>指定所选时间的一个或多个时区。有两个选项可供选择：GeoLocal（默认）和 UTC。</para>
+		/// <para>Geolocal—时间值采用输入点所在的一个或多个时区。该选项会导致各时区中分析的起始时间有所变动。这是默认设置。</para>
+		/// <para>协调世界时间 (UTC)—时间值采用协调世界时间 (UTC)。无论时区差异，所有点的开始时间均应同步。</para>
 		/// <para><see cref="TimezonefortimeofdayEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -212,9 +212,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Return boundaries</para>
-		/// <para>Specifies whether the input geometries will be returned or the straight-line or travel mode buffer geometry.</para>
-		/// <para>Checked—The output layer will contain areas defined by the specified near type. For example, if using a straight-line distance of 5 miles, the output will contain areas with a 5-mile radius around the input nearby layer features. This is the default.</para>
-		/// <para>Unchecked—The output layer will contain the same features as the input nearby layer.</para>
+		/// <para>指定是返回输入几何还是返回直线或出行模式缓冲区几何。</para>
+		/// <para>选中 - 输出图层将包含由指定邻近要素类型定义的区域。例如，如果使用 5 英里的直线距离，则输出中将包含输入邻近要素图层要素周围以 5 英里为半径的区域。这是默认设置。</para>
+		/// <para>未选中 - 输出图层将包含与输入邻近要素图层相同的要素。</para>
 		/// <para><see cref="ReturnboundariesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -224,9 +224,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Add shape summary attributes</para>
-		/// <para>Calculate statistics based on the shape of the input summary features, such as the length of lines or areas of polygons of the summary features within each polygon in the input summary layer.</para>
-		/// <para>Checked—Calculate the shape summary attributes. This is the default.</para>
-		/// <para>Unchecked—Do not calculate the shape summary attributes.</para>
+		/// <para>根据输入汇总要素的形状计算统计数据，例如输入汇总图层中各个面内汇总要素线的长度或面的面积。</para>
+		/// <para>选中 - 计算形状汇总属性。这是默认设置。</para>
+		/// <para>未选中 - 不计算形状汇总属性。</para>
 		/// <para><see cref="SumshapeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -236,21 +236,21 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Shape Unit</para>
-		/// <para>If summarizing the shape of the nearby features, specify the units of the shape summary.</para>
-		/// <para>When the input summary features are polygons, the valid options are acres, hectares, square meters, square kilometers, square feet, square yards, and square miles.</para>
-		/// <para>When the input summary features are lines, the valid options are meters, kilometers, feet, yards, and miles.</para>
-		/// <para>Miles—Miles</para>
-		/// <para>Feet—Feet</para>
-		/// <para>Kilometers—Kilometers</para>
-		/// <para>Meters—Meters</para>
-		/// <para>Yards—Yards</para>
-		/// <para>Acres—Acres</para>
-		/// <para>Hectares—Hectares</para>
-		/// <para>Square meters—Square meters</para>
-		/// <para>Square kilometers—Square kilometers</para>
-		/// <para>Square feet—Square feet</para>
-		/// <para>Square yards—Square yards</para>
-		/// <para>Square miles—Square miles</para>
+		/// <para>如果要汇总邻近要素的形状，请指定形状汇总的单位。</para>
+		/// <para>如果输入汇总要素为面，则有效选项为英亩、公顷、平方米、平方千米、平方英尺、平方码和平方英里。</para>
+		/// <para>如果输入汇总要素为线，则有效选项为米、千米、英尺、码和英里。</para>
+		/// <para>英里—英里</para>
+		/// <para>英尺—英尺</para>
+		/// <para>千米—千米</para>
+		/// <para>米—米</para>
+		/// <para>码—码</para>
+		/// <para>英亩—英亩</para>
+		/// <para>公顷—公顷</para>
+		/// <para>平方米—平方米</para>
+		/// <para>平方千米—平方千米</para>
+		/// <para>平方英尺—平方英尺</para>
+		/// <para>平方码—平方码</para>
+		/// <para>平方英里—平方英里</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -259,12 +259,12 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Summary Fields</para>
-		/// <para>A list of field names and statistical summary type that you wish to calculate for all points within each polygon. The count of points within each polygon is always returned. The following statistic types are supported:</para>
-		/// <para>Sum—The total value.</para>
-		/// <para>Minimum—The smallest value.</para>
-		/// <para>Max—The largest value.</para>
-		/// <para>Mean—The average or mean value.</para>
-		/// <para>Standard deviation—The standard deviation.</para>
+		/// <para>字段名称及您想要为各面内全部点计算的统计汇总类型的列表。始终返回每个面内的点计数。支持的统计数据类型如下：</para>
+		/// <para>Sum - 总值。</para>
+		/// <para>Minimum - 最小值。</para>
+		/// <para>Max - 最大值。</para>
+		/// <para>Mean - 平均值。</para>
+		/// <para>Standard deviation - 标准差。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -273,7 +273,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Group By Field</para>
-		/// <para>This is a field from the input summary features you can use to calculate statistics separately for each unique attribute value. For example, suppose the input summary features contain point locations of businesses that store hazardous materials, and one of the fields is HazardClass containing codes that describe the type of hazardous material stored. To calculate summaries by each unique value of HazardClass, use it as the group by field.</para>
+		/// <para>这是输入汇总要素的一个字段，可用于分别计算每个唯一属性值的统计数据。例如，假设输入汇总要素包含存储危险材料的企业的点位置，且其中一个字段为 HazardClass，字段中含有用于描述所存储危险材料类型的代码。要根据每个 HazardClass 唯一值计算汇总，请将其用作分组条件字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -283,9 +283,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Add minority and majority attributes</para>
-		/// <para>This only applies when using a group by field. If checked, the minority (least dominant) or the majority (most dominant) attribute values for each group field within each boundary are calculated. Two new fields are added to the output layer prefixed with Majority_ and Minority_.</para>
-		/// <para>Unchecked—Do not add minority and majority fields. This is the default.</para>
-		/// <para>Checked—Add minority and majority fields.</para>
+		/// <para>仅当使用分组条件字段时适用。如果选中，将对各个边界内每个组字段的少数（所占比例最小）或众数（所占比例最大）属性值进行计算。前缀为众数_和少数_的两个新字段将添加至输出图层。</para>
+		/// <para>未选中 - 不添加少数和众数字段。这是默认设置。</para>
+		/// <para>选中 - 添加少数和众数字段。</para>
 		/// <para><see cref="MinoritymajorityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -295,9 +295,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Add group percentages</para>
-		/// <para>This only applies when using a group by field. If checked, the percentage of each unique group value is calculated for each input nearby feature.</para>
-		/// <para>Unchecked—Do not add percentage fields. This is the default.</para>
-		/// <para>Checked—Add percentage fields.</para>
+		/// <para>仅当使用分组条件字段时适用。如果选中，则系统将针对每个输入邻近要素计算各唯一组值的百分比。</para>
+		/// <para>未选中 - 不添加百分比字段。这是默认设置。</para>
+		/// <para>选中 - 添加百分比字段。</para>
 		/// <para><see cref="PercentshapeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -336,52 +336,52 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum NeartypeEnum 
 		{
 			/// <summary>
-			/// <para>Driving distance—Use distance as driven in an automobile.</para>
+			/// <para>行驶距离—使用汽车行驶距离。</para>
 			/// </summary>
 			[GPValue("DRIVINGDISTANCE")]
-			[Description("Driving distance")]
+			[Description("行驶距离")]
 			Driving_distance,
 
 			/// <summary>
-			/// <para>Driving time—Use distance covered during a specified driving time in an automobile.</para>
+			/// <para>行驶时间—使用在指定汽车行驶时间内行驶的距离。</para>
 			/// </summary>
 			[GPValue("DRIVINGTIME")]
-			[Description("Driving time")]
+			[Description("行驶时间")]
 			Driving_time,
 
 			/// <summary>
-			/// <para>Straight-line—Use straight-line Euclidean measurement of distance. This is the default.</para>
+			/// <para>直线—使用直线欧式距离测量法。这是默认设置。</para>
 			/// </summary>
 			[GPValue("STRAIGHTLINE")]
-			[Description("Straight-line")]
+			[Description("直线")]
 			STRAIGHTLINE,
 
 			/// <summary>
-			/// <para>Trucking distance—Use distance as driven in a truck.</para>
+			/// <para>货运距离—使用卡车行驶距离。</para>
 			/// </summary>
 			[GPValue("TRUCKINGDISTANCE")]
-			[Description("Trucking distance")]
+			[Description("货运距离")]
 			Trucking_distance,
 
 			/// <summary>
-			/// <para>Trucking time—Use distance covered during a specified driving time in a truck.</para>
+			/// <para>货运时间—使用在指定卡车行驶时间内行驶的距离。</para>
 			/// </summary>
 			[GPValue("TRUCKINGTIME")]
-			[Description("Trucking time")]
+			[Description("货运时间")]
 			Trucking_time,
 
 			/// <summary>
-			/// <para>Walking distance—Use distance as walked along a street.</para>
+			/// <para>步行距离—使用沿街道步行的距离。</para>
 			/// </summary>
 			[GPValue("WALKINGDISTANCE")]
-			[Description("Walking distance")]
+			[Description("步行距离")]
 			Walking_distance,
 
 			/// <summary>
-			/// <para>Walking time—Use distance covered during a specified walking time.</para>
+			/// <para>步行时间—使用指定步行时间内行驶的距离。</para>
 			/// </summary>
 			[GPValue("WALKINGTIME")]
-			[Description("Walking time")]
+			[Description("步行时间")]
 			Walking_time,
 
 		}
@@ -392,59 +392,59 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum UnitsEnum 
 		{
 			/// <summary>
-			/// <para>Meters—Meters</para>
+			/// <para>米—米</para>
 			/// </summary>
 			[GPValue("METERS")]
-			[Description("Meters")]
+			[Description("米")]
 			Meters,
 
 			/// <summary>
-			/// <para>Kilometers—Kilometers</para>
+			/// <para>千米—千米</para>
 			/// </summary>
 			[GPValue("KILOMETERS")]
-			[Description("Kilometers")]
+			[Description("千米")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>Feet—Feet</para>
+			/// <para>英尺—英尺</para>
 			/// </summary>
 			[GPValue("FEET")]
-			[Description("Feet")]
+			[Description("英尺")]
 			Feet,
 
 			/// <summary>
-			/// <para>Yards—Yards</para>
+			/// <para>码—码</para>
 			/// </summary>
 			[GPValue("YARDS")]
-			[Description("Yards")]
+			[Description("码")]
 			Yards,
 
 			/// <summary>
-			/// <para>Miles—Miles</para>
+			/// <para>英里—英里</para>
 			/// </summary>
 			[GPValue("MILES")]
-			[Description("Miles")]
+			[Description("英里")]
 			Miles,
 
 			/// <summary>
-			/// <para>Seconds—Seconds</para>
+			/// <para>秒—秒</para>
 			/// </summary>
 			[GPValue("SECONDS")]
-			[Description("Seconds")]
+			[Description("秒")]
 			Seconds,
 
 			/// <summary>
-			/// <para>Minutes—Minutes</para>
+			/// <para>分—分</para>
 			/// </summary>
 			[GPValue("MINUTES")]
-			[Description("Minutes")]
+			[Description("分")]
 			Minutes,
 
 			/// <summary>
-			/// <para>Hours—Hours</para>
+			/// <para>小时—小时</para>
 			/// </summary>
 			[GPValue("HOURS")]
-			[Description("Hours")]
+			[Description("小时")]
 			Hours,
 
 		}
@@ -455,14 +455,14 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum TimezonefortimeofdayEnum 
 		{
 			/// <summary>
-			/// <para>Coordinated Universal Time (UTC)—The time of day value refers to Coordinated Universal Time (UTC). The start times for all points are simultaneous, regardless of time zones.</para>
+			/// <para>协调世界时间 (UTC)—时间值采用协调世界时间 (UTC)。无论时区差异，所有点的开始时间均应同步。</para>
 			/// </summary>
 			[GPValue("UTC")]
-			[Description("Coordinated Universal Time (UTC)")]
+			[Description("协调世界时间 (UTC)")]
 			UTC,
 
 			/// <summary>
-			/// <para>Geolocal—The time of day value refers to the time zone or zones in which the input points are located. This option causes the analysis to have rolling start times across time zones. This is the default.</para>
+			/// <para>Geolocal—时间值采用输入点所在的一个或多个时区。该选项会导致各时区中分析的起始时间有所变动。这是默认设置。</para>
 			/// </summary>
 			[GPValue("GEOLOCAL")]
 			[Description("Geolocal")]
@@ -476,14 +476,14 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum ReturnboundariesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output layer will contain areas defined by the specified near type. For example, if using a straight-line distance of 5 miles, the output will contain areas with a 5-mile radius around the input nearby layer features. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RETURN_BOUNDARIES")]
 			RETURN_BOUNDARIES,
 
 			/// <summary>
-			/// <para>Unchecked—The output layer will contain the same features as the input nearby layer.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("RETURN_INPUT")]
@@ -497,14 +497,14 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum SumshapeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Calculate the shape summary attributes. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_SHAPE_SUM")]
 			ADD_SHAPE_SUM,
 
 			/// <summary>
-			/// <para>Unchecked—Do not calculate the shape summary attributes.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SHAPE_SUM")]
@@ -518,14 +518,14 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum MinoritymajorityEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Add minority and majority fields.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_MIN_MAJ")]
 			ADD_MIN_MAJ,
 
 			/// <summary>
-			/// <para>Unchecked—Do not add minority and majority fields. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_MIN_MAJ")]
@@ -539,14 +539,14 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum PercentshapeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Add percentage fields.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_PERCENT")]
 			ADD_PERCENT,
 
 			/// <summary>
-			/// <para>Unchecked—Do not add percentage fields. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_PERCENT")]

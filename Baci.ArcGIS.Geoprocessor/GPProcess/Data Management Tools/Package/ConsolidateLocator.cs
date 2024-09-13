@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Consolidate Locator</para>
-	/// <para>Consolidate Locator</para>
-	/// <para>Consolidate a locator or composite locator  by copying all locators into a single folder.</para>
+	/// <para>合并定位器</para>
+	/// <para>通过将所有定位器复制到同一文件夹中，可以合并定位器或复合定位器。</para>
 	/// </summary>
 	public class ConsolidateLocator : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLocator">
 		/// <para>Input Locator</para>
-		/// <para>The input locator or composite locator that will be consolidated.</para>
+		/// <para>要合并的输入定位器或复合定位器。</para>
 		/// </param>
 		/// <param name="OutputFolder">
 		/// <para>Output Folder</para>
-		/// <para>The output folder that will contain the consolidated locator or composite locator with its participating locators.</para>
-		/// <para>If the specified folder does not exist, a new folder will be created.</para>
+		/// <para>将包含合并定位器或复合定位器及其参与定位器的输出文件夹。</para>
+		/// <para>如果指定的文件夹不存在，将创建一个新文件夹。</para>
 		/// </param>
 		public ConsolidateLocator(object InLocator, object OutputFolder)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Consolidate Locator</para>
+		/// <para>Tool Display Name : 合并定位器</para>
 		/// </summary>
-		public override string DisplayName() => "Consolidate Locator";
+		public override string DisplayName() => "合并定位器";
 
 		/// <summary>
 		/// <para>Tool Name : ConsolidateLocator</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Locator</para>
-		/// <para>The input locator or composite locator that will be consolidated.</para>
+		/// <para>要合并的输入定位器或复合定位器。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEAddressLocator()]
@@ -79,8 +79,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Folder</para>
-		/// <para>The output folder that will contain the consolidated locator or composite locator with its participating locators.</para>
-		/// <para>If the specified folder does not exist, a new folder will be created.</para>
+		/// <para>将包含合并定位器或复合定位器及其参与定位器的输出文件夹。</para>
+		/// <para>如果指定的文件夹不存在，将创建一个新文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Composite locator only: copy participating locators in enterprise database instead of referencing them</para>
-		/// <para>This parameter has no effect in ArcGIS Pro. It remains only to support backward compatibility.</para>
+		/// <para>此参数在 ArcGIS Pro 中不起作用。保留它仅是为了支持向后兼容。</para>
 		/// <para><see cref="CopyArcsdeLocatorEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]

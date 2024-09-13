@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Select Movement Tracks</para>
-	/// <para>Select Movement Tracks</para>
-	/// <para>Selects movement tracks based on an  area of interest.</para>
+	/// <para>选择运动轨迹</para>
+	/// <para>根据感兴趣区域选择运动轨迹。</para>
 	/// </summary>
 	public class SelectMovementTracks : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The features that will be compared with the Area Of Interest parameter value to identify unique tracks and select the relevant tracks.</para>
+		/// <para>将与感兴趣区域参数值进行比较以识别唯一轨迹并选择相关轨迹的要素。</para>
 		/// </param>
 		/// <param name="TrackIdField">
 		/// <para>Track ID Field</para>
-		/// <para>The field containing the unique identifiers for the movement track points. The field can be either a number or a string.</para>
+		/// <para>此字段包含运动轨迹点的唯一标识符。 该字段可以是数值型或字符串型字段。</para>
 		/// </param>
 		/// <param name="AreaOfInterest">
 		/// <para>Area Of Interest</para>
-		/// <para>The feature or features that will be compared with the Input Features value to determine the tracks to select.</para>
+		/// <para>将与输入要素值进行比较以确定要选择的轨迹的要素。</para>
 		/// </param>
 		public SelectMovementTracks(object InFeatures, object TrackIdField, object AreaOfInterest)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Select Movement Tracks</para>
+		/// <para>Tool Display Name : 选择运动轨迹</para>
 		/// </summary>
-		public override string DisplayName() => "Select Movement Tracks";
+		public override string DisplayName() => "选择运动轨迹";
 
 		/// <summary>
 		/// <para>Tool Name : SelectMovementTracks</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The features that will be compared with the Area Of Interest parameter value to identify unique tracks and select the relevant tracks.</para>
+		/// <para>将与感兴趣区域参数值进行比较以识别唯一轨迹并选择相关轨迹的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Track ID Field</para>
-		/// <para>The field containing the unique identifiers for the movement track points. The field can be either a number or a string.</para>
+		/// <para>此字段包含运动轨迹点的唯一标识符。 该字段可以是数值型或字符串型字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Area Of Interest</para>
-		/// <para>The feature or features that will be compared with the Input Features value to determine the tracks to select.</para>
+		/// <para>将与输入要素值进行比较以确定要选择的轨迹的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -105,11 +105,11 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Time Relationship</para>
-		/// <para>Specifies the time relationship between the Input Features and Area Of Interest parameter values. If the Before, After, or Before and after option is specified, only features that are present in the Area Of Interest value within the specified time window will be included in the output selection.</para>
-		/// <para>Before and after—When a feature&apos;s time is before the first time identified and after the last time identified for the Area Of Interest value but within the specified range of time from the first identified time and the last identified time, the time relationship will be before and after the selection time.</para>
-		/// <para>Before—When a feature&apos;s time is before the first time identified for the Area Of Interest value but within the specified range of time from the first identified time, the time relationship will be before the selection time.</para>
-		/// <para>After—When a feature&apos;s time is after the last time identified for the Area Of Interest value but within the specified range of time from the last identified time, the time relationship will be after the selection time.</para>
-		/// <para>None—All tracks associated with the unique identifier specified in Track ID Field that are present in the Area Of Interest value will be returned.</para>
+		/// <para>指定输入要素和感兴趣区域参数值之间的时间关系。 如果指定了之前、之后或之前和之后选项，则输出选择中将仅包含指定时间窗内感兴趣区域值中存在的要素。</para>
+		/// <para>之前和之后—当要素的时间在第一次识别感兴趣区域值之前和最后一次识别该值之后，但在第一次识别时间和最后一次识别时间之间指定的时间范围内时，则时间关系将在选择时间之前和之后。</para>
+		/// <para>之前—当要素的时间在第一次识别感兴趣区域值之前，但在第一次识别时间指定时间范围内时，则时间关系将在选择时间之前。</para>
+		/// <para>之后—当要素的时间在最后一次识别感兴趣区域值之后，但在最后一次识别时间指定时间范围内时，则时间关系将在选择时间之后。</para>
+		/// <para>无—将返回在感兴趣区域值内，与追踪 ID 字段中指定的唯一标识符相关联的所有轨迹。</para>
 		/// <para><see cref="TimeRelationshipEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -119,8 +119,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Selection Time</para>
-		/// <para>The time frame that will be used to select features if Before, After, or Before and after is specified for the Time Relationship parameter.</para>
-		/// <para>If Before or Before and after is specified, the earliest time selected will be the first identified time of the features selected from the initial selection generated from the Input Features and Area Of Interest parameters, subtracting the time value specified. If After or Before and after is specified, the selection time will be added to the latest time from the initial selection to determine the selected features.</para>
+		/// <para>如果为时间关系参数指定了之前、之后或之前和之后，将用于选择要素的时间范围。</para>
+		/// <para>如果指定了之前或之前和之后，则选择的最早时间将是从输入要素和感兴趣区域参数生成的初始选择中选择的要素的第一个识别时间减去指定的时间值。 如果指定了之后或之前和之后，则选择时间将添加到从初始选择开始的最晚时间以确定所选要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -141,31 +141,31 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		public enum TimeRelationshipEnum 
 		{
 			/// <summary>
-			/// <para>Before and after—When a feature&apos;s time is before the first time identified and after the last time identified for the Area Of Interest value but within the specified range of time from the first identified time and the last identified time, the time relationship will be before and after the selection time.</para>
+			/// <para>之前和之后—当要素的时间在第一次识别感兴趣区域值之前和最后一次识别该值之后，但在第一次识别时间和最后一次识别时间之间指定的时间范围内时，则时间关系将在选择时间之前和之后。</para>
 			/// </summary>
 			[GPValue("BEFORE_AFTER")]
-			[Description("Before and after")]
+			[Description("之前和之后")]
 			Before_and_after,
 
 			/// <summary>
-			/// <para>Before and after—When a feature&apos;s time is before the first time identified and after the last time identified for the Area Of Interest value but within the specified range of time from the first identified time and the last identified time, the time relationship will be before and after the selection time.</para>
+			/// <para>之前和之后—当要素的时间在第一次识别感兴趣区域值之前和最后一次识别该值之后，但在第一次识别时间和最后一次识别时间之间指定的时间范围内时，则时间关系将在选择时间之前和之后。</para>
 			/// </summary>
 			[GPValue("BEFORE")]
-			[Description("Before")]
+			[Description("之前")]
 			Before,
 
 			/// <summary>
-			/// <para>After—When a feature&apos;s time is after the last time identified for the Area Of Interest value but within the specified range of time from the last identified time, the time relationship will be after the selection time.</para>
+			/// <para>之后—当要素的时间在最后一次识别感兴趣区域值之后，但在最后一次识别时间指定时间范围内时，则时间关系将在选择时间之后。</para>
 			/// </summary>
 			[GPValue("AFTER")]
-			[Description("After")]
+			[Description("之后")]
 			After,
 
 			/// <summary>
-			/// <para>None—All tracks associated with the unique identifier specified in Track ID Field that are present in the Area Of Interest value will be returned.</para>
+			/// <para>无—将返回在感兴趣区域值内，与追踪 ID 字段中指定的唯一标识符相关联的所有轨迹。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 		}

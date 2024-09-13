@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Create Parcel Fabric</para>
-	/// <para>Create Parcel Fabric</para>
-	/// <para>Creates a parcel fabric and its associated datasets. The parcel fabric is created  in a feature dataset that resides in a file, enterprise, or mobile  geodatabase.</para>
+	/// <para>创建宗地结构</para>
+	/// <para>创建宗地结构及其关联的数据集。 宗地结构将在位于文件地理数据库、企业级地理数据库或移动地理数据库中的要素数据集中创建。</para>
 	/// </summary>
 	public class CreateParcelFabric : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="TargetDataset">
 		/// <para>Target Feature Dataset</para>
-		/// <para>The feature dataset in which the parcel fabric and related schema will be created. The feature dataset can reside in a file, enterprise, or mobile geodatabase.</para>
+		/// <para>将在其中创建宗地结构和相关方案的要素数据集。 要素数据集可位于文件地理数据库、企业级地理数据库或移动地理数据库中。</para>
 		/// </param>
 		/// <param name="Name">
 		/// <para>Name</para>
-		/// <para>The name of the parcel fabric that will be created. Associated datasets will be prefixed with the parcel fabric name.</para>
+		/// <para>将创建的宗地结构的名称。 关联的数据集将前缀宗地结构名称。</para>
 		/// </param>
 		public CreateParcelFabric(object TargetDataset, object Name)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Parcel Fabric</para>
+		/// <para>Tool Display Name : 创建宗地结构</para>
 		/// </summary>
-		public override string DisplayName() => "Create Parcel Fabric";
+		public override string DisplayName() => "创建宗地结构";
 
 		/// <summary>
 		/// <para>Tool Name : CreateParcelFabric</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Target Feature Dataset</para>
-		/// <para>The feature dataset in which the parcel fabric and related schema will be created. The feature dataset can reside in a file, enterprise, or mobile geodatabase.</para>
+		/// <para>将在其中创建宗地结构和相关方案的要素数据集。 要素数据集可位于文件地理数据库、企业级地理数据库或移动地理数据库中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureDataset()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Name</para>
-		/// <para>The name of the parcel fabric that will be created. Associated datasets will be prefixed with the parcel fabric name.</para>
+		/// <para>将创建的宗地结构的名称。 关联的数据集将前缀宗地结构名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
-		/// <para>The configuration keyword applies to enterprise geodatabase data only. It determines the storage parameters of the database table.</para>
+		/// <para>配置关键字仅适用于企业级地理数据库数据。 它用于确定数据库表的存储参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

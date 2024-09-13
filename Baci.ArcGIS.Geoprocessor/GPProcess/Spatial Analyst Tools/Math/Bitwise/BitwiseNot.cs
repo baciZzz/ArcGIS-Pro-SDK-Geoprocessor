@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Bitwise Not</para>
-	/// <para>Bitwise Not</para>
-	/// <para>Performs a Bitwise Not (complement) operation on the binary value of an input raster.</para>
+	/// <para>按位非</para>
+	/// <para>对输入栅格的二进制值执行“按位非”（求反）运算。</para>
 	/// </summary>
 	public class BitwiseNot : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant">
 		/// <para>Input raster or constant value</para>
-		/// <para>The input raster on which to perform the Bitwise Not (complement) operation.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>用于执行“按位非”（求反）运算的输入栅格。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the result of a Bitwise Not operation on the input.</para>
+		/// <para>输出栅格。</para>
+		/// <para>像元值是对输入进行“按位非”运算的结果。</para>
 		/// </param>
 		public BitwiseNot(object InRasterOrConstant, object OutRaster)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Bitwise Not</para>
+		/// <para>Tool Display Name : 按位非</para>
 		/// </summary>
-		public override string DisplayName() => "Bitwise Not";
+		public override string DisplayName() => "按位非";
 
 		/// <summary>
 		/// <para>Tool Name : BitwiseNot</para>
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value</para>
-		/// <para>The input raster on which to perform the Bitwise Not (complement) operation.</para>
-		/// <para>A number can be used as an input for this parameter, provided a raster is specified for the other parameter. To specify a number for both inputs, the cell size and extent must first be set in the environment.</para>
+		/// <para>用于执行“按位非”（求反）运算的输入栅格。</para>
+		/// <para>假如已为其他参数指定栅格，则可将数字用作此参数的输入。 要为两个输入指定数字，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the result of a Bitwise Not operation on the input.</para>
+		/// <para>输出栅格。</para>
+		/// <para>像元值是对输入进行“按位非”运算的结果。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

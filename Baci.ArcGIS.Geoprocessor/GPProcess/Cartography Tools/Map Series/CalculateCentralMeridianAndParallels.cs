@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Calculate Central Meridian And Parallels</para>
-	/// <para>Calculate Central Meridian And Parallels</para>
-	/// <para>Calculates the central meridian and optional standard parallels based on the center point of a feature's extent; stores this coordinate system as a spatial reference string in a specified text field; and repeats this for a set, or subset, of features. This field can be used with a spatial map series  to update the data frame coordinate system for each page.</para>
+	/// <para>计算中央经线和纬线</para>
+	/// <para>基于要素范围的中心点计算中央经线和标准纬线（可选）；将此坐标系作为空间参考字符串存储到指定的文本字段中，并对要素集或要素子集重复此操作。此字段可与空间地图系列结合使用，以更新每个页面的数据框坐标系。</para>
 	/// </summary>
 	public class CalculateCentralMeridianAndParallels : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input feature layer.</para>
+		/// <para>输入要素图层。</para>
 		/// </param>
 		/// <param name="InField">
 		/// <para>Coordinate System Field</para>
-		/// <para>The text field where the coordinate system string will be stored.</para>
+		/// <para>系统将存储坐标系字符串所在的文本字段。</para>
 		/// </param>
 		public CalculateCentralMeridianAndParallels(object InFeatures, object InField)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Calculate Central Meridian And Parallels</para>
+		/// <para>Tool Display Name : 计算中央经线和纬线</para>
 		/// </summary>
-		public override string DisplayName() => "Calculate Central Meridian And Parallels";
+		public override string DisplayName() => "计算中央经线和纬线";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateCentralMeridianAndParallels</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input feature layer.</para>
+		/// <para>输入要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Coordinate System Field</para>
-		/// <para>The text field where the coordinate system string will be stored.</para>
+		/// <para>系统将存储坐标系字符串所在的文本字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Standard Parallel Offset</para>
-		/// <para>The percentage of the height of the input feature used to offset the standard parallels from the center latitude of the input feature. The default is 25 percent or 0.25. Negative values and values greater than 1 are acceptable inputs.</para>
+		/// <para>输入要素的高度百分比，用于计算标准纬线偏离输入要素中心纬度的量。默认值为 25% 或 0.25。可接受的输入为负值和大于 1 的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

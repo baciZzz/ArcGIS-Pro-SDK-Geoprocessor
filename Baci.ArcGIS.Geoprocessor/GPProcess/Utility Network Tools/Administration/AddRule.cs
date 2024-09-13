@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Rule</para>
-	/// <para>Add Rule</para>
-	/// <para>Adds a rule to a utility network.</para>
+	/// <para>添加规则</para>
+	/// <para>用于向公共设施网络中添加规则。</para>
 	/// </summary>
 	public class AddRule : AbstractGPProcess
 	{
@@ -21,45 +21,45 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network for which the rule will be added.</para>
+		/// <para>将添加规则的公共设施网络。</para>
 		/// </param>
 		/// <param name="RuleType">
 		/// <para>Rule Type</para>
-		/// <para>The type of rule to be created.</para>
-		/// <para>Junction-junction connectivity—Creates a junction-junction connectivity rule allowing two point features to connect via a connectivity association (features are offset geometrically).</para>
-		/// <para>Containment—Creates a containment rule where the from parameters are the container and the to parameters are the contents in a containment association.</para>
-		/// <para>Structural attachment—Creates a structural attachment rule where the from parameters are the structure features and the to parameters are the attachment features in a structural attachment association.</para>
-		/// <para>Junction-edge connectivity—Creates an edge-junction connectivity rule allowing edge and junction features to connect via geometric coincidence (features are at the same x,y,z location).</para>
-		/// <para>Edge-junction-edge connectivity—Creates an edge-junction-edge connectivity rule allowing a edge to connect to either side of a junction feature.</para>
+		/// <para>要创建的规则类型。</para>
+		/// <para>交汇点-交汇点连通性—创建交汇点-交汇点连通性关联规则，允许两点通过连通性进行连接（要素会发生几何偏移）。</para>
+		/// <para>包含—创建包含规则，其中“自”参数为容器，“至”参数为包含关联中的内容。</para>
+		/// <para>结构附件—创建结构附件规则，其中“自”参数为结构要素，“至”参数为结构附件关联中的附件要素。</para>
+		/// <para>交汇点-边连通性—创建边-交汇点规则，允许边和交汇点要素通过几何重叠进行连接（要素位于相同的 x,y,z 位置）。</para>
+		/// <para>边-交汇点-边连通性—创建边-交汇点-边连通性规则，允许边连接到交汇点要素的任一侧。</para>
 		/// <para><see cref="RuleTypeEnum"/></para>
 		/// </param>
 		/// <param name="FromClass">
 		/// <para>From Table</para>
-		/// <para>The from utility network feature class or table that will be included in the rule.</para>
-		/// <para>Structural attachment and containment association rules require that the container or structure feature be in this parameter.</para>
-		/// <para>Ordering is irrelevant for the junction-junction, junction-edge, and edge-junction-edge connectivity rules.</para>
+		/// <para>将包括在规则中的“自”公共设施网络要素类或表。</para>
+		/// <para>结构附件和包含关联规则要求容器或结构要素在此参数中。</para>
+		/// <para>交汇点-交汇点、交汇点-边和边-交汇点-边连通性规则的顺序不重要。</para>
 		/// </param>
 		/// <param name="FromAssetgroup">
 		/// <para>From Asset Group</para>
-		/// <para>An asset group for the From Table to which the rule will apply.</para>
+		/// <para>要应用规则的自表的资产组。</para>
 		/// </param>
 		/// <param name="FromAssettype">
 		/// <para>From Asset Type</para>
-		/// <para>An asset type for the From Table to which the rule will apply.</para>
+		/// <para>要应用规则的自表的资产类型。</para>
 		/// </param>
 		/// <param name="ToClass">
 		/// <para>To Table</para>
-		/// <para>The to utility network feature class or table that will be included in the rule.</para>
-		/// <para>Structural attachment and containment associations rules require that the content or attachment feature be in this parameter.</para>
-		/// <para>Ordering is irrelevant for the junction-junction, junction-edge, and edge-junction-edge connectivity rules.</para>
+		/// <para>将包括在规则中的“至”公共设施网络要素类或表。</para>
+		/// <para>结构附件和包含关联规则要求内容或附件要素在此参数中。</para>
+		/// <para>交汇点-交汇点、交汇点-边和边-交汇点-边连通性规则的顺序不重要。</para>
 		/// </param>
 		/// <param name="ToAssetgroup">
 		/// <para>To Asset Group</para>
-		/// <para>An asset group for the To Table to which the rule will apply.</para>
+		/// <para>要应用规则的至表的资产组。</para>
 		/// </param>
 		/// <param name="ToAssettype">
 		/// <para>To Asset Type</para>
-		/// <para>An asset type for the To Table to which the rule will apply.</para>
+		/// <para>要应用规则的至表的资产类型。</para>
 		/// </param>
 		public AddRule(object InUtilityNetwork, object RuleType, object FromClass, object FromAssetgroup, object FromAssettype, object ToClass, object ToAssetgroup, object ToAssettype)
 		{
@@ -74,9 +74,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Rule</para>
+		/// <para>Tool Display Name : 添加规则</para>
 		/// </summary>
-		public override string DisplayName() => "Add Rule";
+		public override string DisplayName() => "添加规则";
 
 		/// <summary>
 		/// <para>Tool Name : AddRule</para>
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network for which the rule will be added.</para>
+		/// <para>将添加规则的公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -118,12 +118,12 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Rule Type</para>
-		/// <para>The type of rule to be created.</para>
-		/// <para>Junction-junction connectivity—Creates a junction-junction connectivity rule allowing two point features to connect via a connectivity association (features are offset geometrically).</para>
-		/// <para>Containment—Creates a containment rule where the from parameters are the container and the to parameters are the contents in a containment association.</para>
-		/// <para>Structural attachment—Creates a structural attachment rule where the from parameters are the structure features and the to parameters are the attachment features in a structural attachment association.</para>
-		/// <para>Junction-edge connectivity—Creates an edge-junction connectivity rule allowing edge and junction features to connect via geometric coincidence (features are at the same x,y,z location).</para>
-		/// <para>Edge-junction-edge connectivity—Creates an edge-junction-edge connectivity rule allowing a edge to connect to either side of a junction feature.</para>
+		/// <para>要创建的规则类型。</para>
+		/// <para>交汇点-交汇点连通性—创建交汇点-交汇点连通性关联规则，允许两点通过连通性进行连接（要素会发生几何偏移）。</para>
+		/// <para>包含—创建包含规则，其中“自”参数为容器，“至”参数为包含关联中的内容。</para>
+		/// <para>结构附件—创建结构附件规则，其中“自”参数为结构要素，“至”参数为结构附件关联中的附件要素。</para>
+		/// <para>交汇点-边连通性—创建边-交汇点规则，允许边和交汇点要素通过几何重叠进行连接（要素位于相同的 x,y,z 位置）。</para>
+		/// <para>边-交汇点-边连通性—创建边-交汇点-边连通性规则，允许边连接到交汇点要素的任一侧。</para>
 		/// <para><see cref="RuleTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -133,9 +133,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>From Table</para>
-		/// <para>The from utility network feature class or table that will be included in the rule.</para>
-		/// <para>Structural attachment and containment association rules require that the container or structure feature be in this parameter.</para>
-		/// <para>Ordering is irrelevant for the junction-junction, junction-edge, and edge-junction-edge connectivity rules.</para>
+		/// <para>将包括在规则中的“自”公共设施网络要素类或表。</para>
+		/// <para>结构附件和包含关联规则要求容器或结构要素在此参数中。</para>
+		/// <para>交汇点-交汇点、交汇点-边和边-交汇点-边连通性规则的顺序不重要。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>From Asset Group</para>
-		/// <para>An asset group for the From Table to which the rule will apply.</para>
+		/// <para>要应用规则的自表的资产组。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>From Asset Type</para>
-		/// <para>An asset type for the From Table to which the rule will apply.</para>
+		/// <para>要应用规则的自表的资产类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -159,9 +159,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>To Table</para>
-		/// <para>The to utility network feature class or table that will be included in the rule.</para>
-		/// <para>Structural attachment and containment associations rules require that the content or attachment feature be in this parameter.</para>
-		/// <para>Ordering is irrelevant for the junction-junction, junction-edge, and edge-junction-edge connectivity rules.</para>
+		/// <para>将包括在规则中的“至”公共设施网络要素类或表。</para>
+		/// <para>结构附件和包含关联规则要求内容或附件要素在此参数中。</para>
+		/// <para>交汇点-交汇点、交汇点-边和边-交汇点-边连通性规则的顺序不重要。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -169,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>To Asset Group</para>
-		/// <para>An asset group for the To Table to which the rule will apply.</para>
+		/// <para>要应用规则的至表的资产组。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -177,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>To Asset Type</para>
-		/// <para>An asset type for the To Table to which the rule will apply.</para>
+		/// <para>要应用规则的至表的资产类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -185,8 +185,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>From Terminal</para>
-		/// <para>The from terminal to which the rule will apply. This will be a terminal in the From Table. When creating a connectivity rule for feature with terminals to connect to another feature, the terminal side to connect from must be specified, for example, the high-side terminal on a transformer.</para>
-		/// <para>This parameter is required if the asset type has terminals. It is disabled when the structural attachment or containment association rule is specified in the Rule Type parameter.</para>
+		/// <para>要应用规则的“自”终端。该终端为自表中的终端。为具有终端的要素创建连通性规则以连接到另一个要素时，必须指定连接自的终端侧，例如变压器上的高压侧终端。</para>
+		/// <para>如果资产类型包括终端，则此参数为必填项。在规则类型参数中指定结构附件或包含关联规则时，它将处于禁用状态。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -194,8 +194,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>To Terminal</para>
-		/// <para>The to terminal to which the rule will apply. This will be a terminal in the To Table. When creating a connectivity rule for feature to connect to another feature with terminals, the terminal side to connect to must be specified, for example, the low-side terminal on a transformer.</para>
-		/// <para>This parameter is required if the asset type has terminals. It is disabled for structural attachment or containment association rule types.</para>
+		/// <para>要应用规则的“至”终端。该终端为至表中的终端。为要素创建连通性规则以连接到另一个要素时，必须指定连接到的终端侧，例如变压器上的高压侧终端。</para>
+		/// <para>如果资产类型包括终端，则此参数为必填项。如果为结构附件或包含关联规则类型，则将禁用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -203,7 +203,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Via Table</para>
-		/// <para>The junction utility network feature class or table to which the rule will apply. This parameter is available only when edge-junction-edge connectivity is selected for the Rule Type parameter, since three feature classes or tables are required to participate in edge-junction-edge connectivity.</para>
+		/// <para>要应用规则的交汇点公共设施网络要素类或表。仅在为规则类型参数选择边-交汇点-边连通性时，此参数才可用，因为需要三个要素类或表参与边-交汇点-边连通性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -211,7 +211,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Via Asset Group</para>
-		/// <para>An asset group of the Via Table to which the rule will apply. This parameter is available only when edge-junction-edge connectivity is selected for the Rule Type parameter.</para>
+		/// <para>要应用规则的通过表的资产组。仅在为规则类型参数选择边-交汇点-边连通性时，此参数才可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -219,7 +219,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Via Asset Type</para>
-		/// <para>An asset type of the Via Table to which the rule will apply. This parameter is available only when edge-junction-edge connectivity is selected for the Rule Type parameter</para>
+		/// <para>要应用规则的通过表的资产类型。仅在为规则类型参数选择边-交汇点-边连通性时，此参数才可用</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -227,7 +227,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Via Terminal</para>
-		/// <para>The terminal from the Via Table to which the rule will apply. This parameter is available only when edge-junction-edge connectivity is selected for the Rule Type parameter.</para>
+		/// <para>要应用规则的通过表的终端。仅在为规则类型参数选择边-交汇点-边连通性时，此参数才可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -248,38 +248,38 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum RuleTypeEnum 
 		{
 			/// <summary>
-			/// <para>Junction-junction connectivity—Creates a junction-junction connectivity rule allowing two point features to connect via a connectivity association (features are offset geometrically).</para>
+			/// <para>交汇点-交汇点连通性—创建交汇点-交汇点连通性关联规则，允许两点通过连通性进行连接（要素会发生几何偏移）。</para>
 			/// </summary>
 			[GPValue("JUNCTION_JUNCTION_CONNECTIVITY")]
-			[Description("Junction-junction connectivity")]
+			[Description("交汇点-交汇点连通性")]
 			JUNCTION_JUNCTION_CONNECTIVITY,
 
 			/// <summary>
-			/// <para>Junction-edge connectivity—Creates an edge-junction connectivity rule allowing edge and junction features to connect via geometric coincidence (features are at the same x,y,z location).</para>
+			/// <para>交汇点-边连通性—创建边-交汇点规则，允许边和交汇点要素通过几何重叠进行连接（要素位于相同的 x,y,z 位置）。</para>
 			/// </summary>
 			[GPValue("JUNCTION_EDGE_CONNECTIVITY")]
-			[Description("Junction-edge connectivity")]
+			[Description("交汇点-边连通性")]
 			JUNCTION_EDGE_CONNECTIVITY,
 
 			/// <summary>
-			/// <para>Containment—Creates a containment rule where the from parameters are the container and the to parameters are the contents in a containment association.</para>
+			/// <para>包含—创建包含规则，其中“自”参数为容器，“至”参数为包含关联中的内容。</para>
 			/// </summary>
 			[GPValue("CONTAINMENT")]
-			[Description("Containment")]
+			[Description("包含")]
 			Containment,
 
 			/// <summary>
-			/// <para>Structural attachment—Creates a structural attachment rule where the from parameters are the structure features and the to parameters are the attachment features in a structural attachment association.</para>
+			/// <para>结构附件—创建结构附件规则，其中“自”参数为结构要素，“至”参数为结构附件关联中的附件要素。</para>
 			/// </summary>
 			[GPValue("STRUCTURAL_ATTACHMENT")]
-			[Description("Structural attachment")]
+			[Description("结构附件")]
 			Structural_attachment,
 
 			/// <summary>
-			/// <para>Edge-junction-edge connectivity—Creates an edge-junction-edge connectivity rule allowing a edge to connect to either side of a junction feature.</para>
+			/// <para>边-交汇点-边连通性—创建边-交汇点-边连通性规则，允许边连接到交汇点要素的任一侧。</para>
 			/// </summary>
 			[GPValue("EDGE_JUNCTION_EDGE_CONNECTIVITY")]
-			[Description("Edge-junction-edge connectivity")]
+			[Description("边-交汇点-边连通性")]
 			EDGE_JUNCTION_EDGE_CONNECTIVITY,
 
 		}

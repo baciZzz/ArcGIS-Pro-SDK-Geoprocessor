@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Truncate Table</para>
-	/// <para>Truncate Table</para>
-	/// <para>Removes all rows from a database table or feature class using truncate procedures in the database.</para>
+	/// <para>截断表</para>
+	/// <para>在数据库中使用截断过程移除数据库表或要素类的所有行。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input database table or feature class that will be truncated.</para>
+		/// <para>要截断的输入数据库表或要素类。</para>
 		/// </param>
 		public TruncateTable(object InTable)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Truncate Table</para>
+		/// <para>Tool Display Name : 截断表</para>
 		/// </summary>
-		public override string DisplayName() => "Truncate Table";
+		public override string DisplayName() => "截断表";
 
 		/// <summary>
 		/// <para>Tool Name : TruncateTable</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input database table or feature class that will be truncated.</para>
+		/// <para>要截断的输入数据库表或要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]

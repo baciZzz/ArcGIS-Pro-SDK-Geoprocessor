@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Export Diagram Layer Definition</para>
-	/// <para>Export Diagram Layer Definition</para>
-	/// <para>Exports the diagram layer definition  currently set up for the input diagram layer into a network diagram layer definition file (.ndld).</para>
+	/// <para>导出逻辑示意图图层定义</para>
+	/// <para>用于将当前为输入逻辑示意图图层设置的逻辑示意图图层定义导出为网络逻辑示意图图层定义文件 (.ndld)。</para>
 	/// </summary>
 	public class ExportDiagramLayerDefinition : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InNetworkDiagramLayer">
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>The network diagram layer from which the layer definition will be exported.</para>
+		/// <para>将导出图层定义的网络逻辑示意图图层。</para>
 		/// </param>
 		/// <param name="OutNdldFile">
 		/// <para>Output File</para>
-		/// <para>The network diagram layer definition file (.ndld) to be created.</para>
+		/// <para>要创建的网络逻辑示意图图层定义文件 (.ndld)。</para>
 		/// </param>
 		public ExportDiagramLayerDefinition(object InNetworkDiagramLayer, object OutNdldFile)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Export Diagram Layer Definition</para>
+		/// <para>Tool Display Name : 导出逻辑示意图图层定义</para>
 		/// </summary>
-		public override string DisplayName() => "Export Diagram Layer Definition";
+		public override string DisplayName() => "导出逻辑示意图图层定义";
 
 		/// <summary>
 		/// <para>Tool Name : ExportDiagramLayerDefinition</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>The network diagram layer from which the layer definition will be exported.</para>
+		/// <para>将导出图层定义的网络逻辑示意图图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDiagramLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>The network diagram layer definition file (.ndld) to be created.</para>
+		/// <para>要创建的网络逻辑示意图图层定义文件 (.ndld)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

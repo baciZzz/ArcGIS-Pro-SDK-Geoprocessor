@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Vector Tile Package</para>
-	/// <para>Create Vector Tile Package</para>
-	/// <para>Generates vector tiles from a map or basemap and packages the tiles in a single .vtpk file.</para>
+	/// <para>创建矢量切片包</para>
+	/// <para>从地图或底图生成矢量切片，并将切片打包为单个 .vtpk 文件。</para>
 	/// </summary>
 	public class CreateVectorTilePackage : AbstractGPProcess
 	{
@@ -21,26 +21,26 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMap">
 		/// <para>Input Map</para>
-		/// <para>The map from which tiles are generated and packaged. The input map must have metadata description and tags.</para>
+		/// <para>用于生成切片并对其进行打包的地图。 输入地图必须具有元数据描述和标签。</para>
 		/// </param>
 		/// <param name="OutputFile">
 		/// <para>Output File</para>
-		/// <para>The output vector tile package. The file extension of the package is .vtpk.</para>
+		/// <para>输出矢量切片包。 该包的文件扩展名为 .vtpk。</para>
 		/// </param>
 		/// <param name="ServiceType">
 		/// <para>Package for ArcGIS Online | Bing Maps | Google Maps</para>
-		/// <para>Determines whether the tiling scheme will be generated from an existing map service or if map tiles will be generated for ArcGIS Online, Bing Maps, and Google Maps.</para>
-		/// <para>Checked—The ArcGIS Online/Bing Maps/Google Maps tiling scheme is used. The ArcGIS Online/Bing Maps/Google Maps tiling scheme allows you to overlay your cache tiles with tiles from these online mapping services. ArcGIS Pro includes this tiling scheme as a built-in option when loading a tiling scheme. When you choose this tiling scheme, the data frame of your source map must use the WGS 1984 Web Mercator (Auxiliary Sphere) projected coordinate system. This is the default.</para>
-		/// <para>Unchecked—Tiling scheme from an existing vector tile service will be used. Only tiling schemes with scales that double in progression through levels and have 512-by-512 tile size are supported. You must specify a vector tile service or tiling scheme file in the tiling_scheme parameter.</para>
+		/// <para>确定是从现有地图服务生成切片方案还是根据 ArcGIS Online、Bing Maps 和 Google Maps 生成地图切片。</para>
+		/// <para>选中 - 使用 ArcGIS Online/Bing Maps/Google Maps 的切片方案。 ArcGIS Online/Bing Maps/Google Maps 切片方案可用于将您的缓存切片与这些在线地图服务的切片进行叠加。 加载切片方案时，ArcGIS Pro 以内置选项形式包括此切片方案。 选择此切片方案时，源地图的数据框必须使用 WGS 1984 Web Mercator（辅助球体）投影坐标系。 这是默认设置。</para>
+		/// <para>未选中 - 使用一个现有矢量切片服务的切片方案。 仅支持不同等级间的比例逐渐加倍且有 512 × 512 切片尺寸的切片方案。 必须在 tiling_scheme 参数中指定矢量切片服务或切片方案文件。</para>
 		/// <para><see cref="ServiceTypeEnum"/></para>
 		/// </param>
 		/// <param name="MinCachedScale">
 		/// <para>Minimum Cached Scale</para>
-		/// <para>The minimum (smallest) scale at which tiles are generated. This does not have to be the smallest scale in your tiling scheme. The minimum cached scale determines which scales are used to generate cache.</para>
+		/// <para>生成切片的最小比例。 这不必是您的切片方案中的最小比例。 由最小缓存比例确定生成缓存时将使用哪个比例。</para>
 		/// </param>
 		/// <param name="MaxCachedScale">
 		/// <para>Maximum Cached Scale</para>
-		/// <para>The maximum (largest) scale at which tiles are generated. This does not have to be the largest scale in your tiling scheme. The maximum cached scale determines which scales are used to generate cache.</para>
+		/// <para>生成切片的最大比例。 这不必是您的切片方案中的最大比例。 由最大缓存比例确定生成缓存时将使用哪个比例。</para>
 		/// </param>
 		public CreateVectorTilePackage(object InMap, object OutputFile, object ServiceType, object MinCachedScale, object MaxCachedScale)
 		{
@@ -52,9 +52,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Vector Tile Package</para>
+		/// <para>Tool Display Name : 创建矢量切片包</para>
 		/// </summary>
-		public override string DisplayName() => "Create Vector Tile Package";
+		public override string DisplayName() => "创建矢量切片包";
 
 		/// <summary>
 		/// <para>Tool Name : CreateVectorTilePackage</para>
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Map</para>
-		/// <para>The map from which tiles are generated and packaged. The input map must have metadata description and tags.</para>
+		/// <para>用于生成切片并对其进行打包的地图。 输入地图必须具有元数据描述和标签。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMap()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>The output vector tile package. The file extension of the package is .vtpk.</para>
+		/// <para>输出矢量切片包。 该包的文件扩展名为 .vtpk。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -106,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Package for ArcGIS Online | Bing Maps | Google Maps</para>
-		/// <para>Determines whether the tiling scheme will be generated from an existing map service or if map tiles will be generated for ArcGIS Online, Bing Maps, and Google Maps.</para>
-		/// <para>Checked—The ArcGIS Online/Bing Maps/Google Maps tiling scheme is used. The ArcGIS Online/Bing Maps/Google Maps tiling scheme allows you to overlay your cache tiles with tiles from these online mapping services. ArcGIS Pro includes this tiling scheme as a built-in option when loading a tiling scheme. When you choose this tiling scheme, the data frame of your source map must use the WGS 1984 Web Mercator (Auxiliary Sphere) projected coordinate system. This is the default.</para>
-		/// <para>Unchecked—Tiling scheme from an existing vector tile service will be used. Only tiling schemes with scales that double in progression through levels and have 512-by-512 tile size are supported. You must specify a vector tile service or tiling scheme file in the tiling_scheme parameter.</para>
+		/// <para>确定是从现有地图服务生成切片方案还是根据 ArcGIS Online、Bing Maps 和 Google Maps 生成地图切片。</para>
+		/// <para>选中 - 使用 ArcGIS Online/Bing Maps/Google Maps 的切片方案。 ArcGIS Online/Bing Maps/Google Maps 切片方案可用于将您的缓存切片与这些在线地图服务的切片进行叠加。 加载切片方案时，ArcGIS Pro 以内置选项形式包括此切片方案。 选择此切片方案时，源地图的数据框必须使用 WGS 1984 Web Mercator（辅助球体）投影坐标系。 这是默认设置。</para>
+		/// <para>未选中 - 使用一个现有矢量切片服务的切片方案。 仅支持不同等级间的比例逐渐加倍且有 512 × 512 切片尺寸的切片方案。 必须在 tiling_scheme 参数中指定矢量切片服务或切片方案文件。</para>
 		/// <para><see cref="ServiceTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Tiling scheme</para>
-		/// <para>A vector tile service or tiling scheme file to be used if the Package for ArcGIS Online | Bing Maps | Google Maps parameter is unchecked. The tiling scheme tile size must be 512 by 512 and must have consecutive scales in a ratio of two.</para>
+		/// <para>当未选中适用于 ArcGIS Online、Bing Maps 或 Google Maps 的包参数时，要使用的矢量切片服务或切片方案文件。 切片方案尺寸必须为 512 × 512 并具有 2 倍比率的连续缩放。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -127,9 +127,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Tiling Format</para>
-		/// <para>Specifies whether the tile generation structure is optimized with an indexed structure or as a flat array of all tiles at all levels of detail. The optimized indexed structure is the default and results in a smaller cache.</para>
-		/// <para>Indexed—Produce tiles based on an index of feature density that optimizes the tile generation and file sizes. This is the default.</para>
-		/// <para>Flat—Produce regular tiles for each level of detail without regard to feature density. This cache is larger than that produced with an indexed structure.</para>
+		/// <para>请指定是使用索引结构对切片生成结构进行优化，还是在所有细节层次上将其优化为所有切片的平面数组。 默认情况下系统会优化索引结构，并生成较小的缓存。</para>
+		/// <para>索引—根据优化切片生成和文件大小的要素密度索引生成切片。 这是默认设置。</para>
+		/// <para>平整—在不考虑要素密度的情况下，针对各个细节层次生成常规切片。 此缓存要大于使用索引结构生成的缓存。</para>
 		/// <para><see cref="TileStructureEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Minimum Cached Scale</para>
-		/// <para>The minimum (smallest) scale at which tiles are generated. This does not have to be the smallest scale in your tiling scheme. The minimum cached scale determines which scales are used to generate cache.</para>
+		/// <para>生成切片的最小比例。 这不必是您的切片方案中的最小比例。 由最小缓存比例确定生成缓存时将使用哪个比例。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Cached Scale</para>
-		/// <para>The maximum (largest) scale at which tiles are generated. This does not have to be the largest scale in your tiling scheme. The maximum cached scale determines which scales are used to generate cache.</para>
+		/// <para>生成切片的最大比例。 这不必是您的切片方案中的最大比例。 由最大缓存比例确定生成缓存时将使用哪个比例。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -157,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Index Polygons</para>
-		/// <para>Specifies a pregenerated index of tiles based on feature density, applicable only when the Tiling Format parameter is Indexed. Use the Create Vector Tile Index tool to create index polygons. If no index polygons are specified in this parameter, optimized index polygons are generated during processing to aid in tile creation, but they are not saved or output.</para>
+		/// <para>依照要素密度指定预生成切片索引，仅在切片格式参数为索引时可用。 使用创建矢量切片索引工具来创建索引面。 如果此参数中未指定索引面，则在处理过程中会生成优化索引面以辅助切片的创建，但这些索引面无法保存或输出。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Summary</para>
-		/// <para>Adds summary information to properties of the output vector tile package.</para>
+		/// <para>将汇总信息添加到输出矢量切片包的属性中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -175,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Tags</para>
-		/// <para>Adds tag information to the properties of the output vector tile package. Separate multiple tags with commas or semicolons.</para>
+		/// <para>将标签信息添加到输出矢量切片包的属性中。 多个标签之间使用逗号或分号进行分隔。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -189,14 +189,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ServiceTypeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The ArcGIS Online/Bing Maps/Google Maps tiling scheme is used. The ArcGIS Online/Bing Maps/Google Maps tiling scheme allows you to overlay your cache tiles with tiles from these online mapping services. ArcGIS Pro includes this tiling scheme as a built-in option when loading a tiling scheme. When you choose this tiling scheme, the data frame of your source map must use the WGS 1984 Web Mercator (Auxiliary Sphere) projected coordinate system. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ONLINE")]
 			ONLINE,
 
 			/// <summary>
-			/// <para>Unchecked—Tiling scheme from an existing vector tile service will be used. Only tiling schemes with scales that double in progression through levels and have 512-by-512 tile size are supported. You must specify a vector tile service or tiling scheme file in the tiling_scheme parameter.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXISTING")]
@@ -210,17 +210,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TileStructureEnum 
 		{
 			/// <summary>
-			/// <para>Indexed—Produce tiles based on an index of feature density that optimizes the tile generation and file sizes. This is the default.</para>
+			/// <para>索引—根据优化切片生成和文件大小的要素密度索引生成切片。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("INDEXED")]
-			[Description("Indexed")]
+			[Description("索引")]
 			Indexed,
 
 			/// <summary>
-			/// <para>Flat—Produce regular tiles for each level of detail without regard to feature density. This cache is larger than that produced with an indexed structure.</para>
+			/// <para>平整—在不考虑要素密度的情况下，针对各个细节层次生成常规切片。 此缓存要大于使用索引结构生成的缓存。</para>
 			/// </summary>
 			[GPValue("FLAT")]
-			[Description("Flat")]
+			[Description("平整")]
 			Flat,
 
 		}

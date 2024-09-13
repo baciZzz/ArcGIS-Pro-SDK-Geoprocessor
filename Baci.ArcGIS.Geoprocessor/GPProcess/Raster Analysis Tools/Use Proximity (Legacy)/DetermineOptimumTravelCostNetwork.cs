@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Determine Optimum Travel Cost Network</para>
-	/// <para>Determine Optimum Travel Cost Network</para>
-	/// <para>Calculates the optimum cost network from a set of input regions.</para>
+	/// <para>确定最佳行程成本网络</para>
+	/// <para>计算一组输入区域的最佳成本网络。</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.RasterAnalysisTools.OptimalRegionConnections"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.RasterAnalysisTools.OptimalRegionConnections))]
@@ -23,28 +23,28 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// </summary>
 		/// <param name="Inputregionsrasterorfeatures">
 		/// <para>Input Regions Raster or Features</para>
-		/// <para>The input regions that are to be connected by the least-cost network.</para>
-		/// <para>Regions can be defined by either an image service or a feature service.</para>
-		/// <para>If the region input is a raster, the regions are defined by groups of contiguous (adjacent) cells of the same value. Each region must be uniquely numbered. The cells that are not part of any region must be NoData. The raster type must be integer, and the values can be either positive or negative.</para>
-		/// <para>If the region input is a feature, it can be polygons, lines, or points. Polygon feature regions cannot be composed of multipart polygons.</para>
+		/// <para>要通过最低成本网络连接的输入区域。</para>
+		/// <para>区域可以通过影像服务或要素服务来定义。</para>
+		/// <para>如果区域输入为栅格，则区域将通过值相同的连续（邻近）像元组进行定义。 每个区域必须具有唯一的编号。 不属于任何区域的像元一定是 NoData。 栅格类型必须为整型，值可正可负。</para>
+		/// <para>如果区域输入为要素，则其可以是面、线或点。 面要素区域不能包含多部分面。</para>
 		/// </param>
 		/// <param name="Inputcostraster">
 		/// <para>Input Cost Raster</para>
-		/// <para>A raster defining the impedance or cost to move planimetrically through each cell.</para>
-		/// <para>The value at each cell location represents the cost-per-unit distance for moving through the cell. Each cell location value is multiplied by the cell resolution while also compensating for diagonal movement to obtain the total cost of passing through the cell.</para>
-		/// <para>The values of the cost raster can be integer or floating point, but they cannot be negative or zero (you cannot have a negative or zero cost).</para>
+		/// <para>定义以平面测量的经过每个像元所需的阻抗或成本。</para>
+		/// <para>每个像元位置上的值表示经过像元时移动每单位距离所需的成本。 每个像元位置值乘以像元分辨率，同时也会补偿对角线移动来获取经过像元的总成本。</para>
+		/// <para>成本栅格的值可以是整型或浮点型，但不可以为负值或零（不存在负成本或零成本）。</para>
 		/// </param>
 		/// <param name="Outputoptimumnetworkname">
 		/// <para>Output Optimum Network Name</para>
-		/// <para>The name of the output optimum network feature service.</para>
-		/// <para>The polyline feature service of the optimum (least-cost) network of paths necessary to connect each of the input regions.</para>
-		/// <para>Each path (or line) is uniquely numbered, and additional fields in the attribute table store specific information about the path. Those fields include the following:</para>
-		/// <para>PATHID—Unique identifier for the path</para>
-		/// <para>PATHCOST—Total accumulative cost for the path</para>
-		/// <para>REGION1—The first region the path connects</para>
-		/// <para>REGION2—The other region the path connects</para>
-		/// <para>This information provides you insight into the paths within the network.</para>
-		/// <para>Since each path is represented by a unique line, there will be multiple lines in locations where paths travel the same route.</para>
+		/// <para>输出最佳网络要素服务的名称。</para>
+		/// <para>最佳（成本最低）路径网络的折线要素服务需要连接每个输入区域。</para>
+		/// <para>每条路径（或线）都是唯一标识的，同时属性表中的其他字段用于存储有关路径的特定信息。 这些字段包括：</para>
+		/// <para>PATHID- 路径的唯一标识符</para>
+		/// <para>PATHCOST- 路径的总累计成本</para>
+		/// <para>REGION1- 该路径连接的第一个区域</para>
+		/// <para>REGION2- 该路径连接的另一个区域</para>
+		/// <para>该信息有助于您深入分析网络内的路径。</para>
+		/// <para>由于每条路径都是由唯一的线所表示，因此多条路径经过同一路线的位置会存在多条线。</para>
 		/// </param>
 		public DetermineOptimumTravelCostNetwork(object Inputregionsrasterorfeatures, object Inputcostraster, object Outputoptimumnetworkname)
 		{
@@ -54,9 +54,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Determine Optimum Travel Cost Network</para>
+		/// <para>Tool Display Name : 确定最佳行程成本网络</para>
 		/// </summary>
-		public override string DisplayName() => "Determine Optimum Travel Cost Network";
+		public override string DisplayName() => "确定最佳行程成本网络";
 
 		/// <summary>
 		/// <para>Tool Name : DetermineOptimumTravelCostNetwork</para>
@@ -90,10 +90,10 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Regions Raster or Features</para>
-		/// <para>The input regions that are to be connected by the least-cost network.</para>
-		/// <para>Regions can be defined by either an image service or a feature service.</para>
-		/// <para>If the region input is a raster, the regions are defined by groups of contiguous (adjacent) cells of the same value. Each region must be uniquely numbered. The cells that are not part of any region must be NoData. The raster type must be integer, and the values can be either positive or negative.</para>
-		/// <para>If the region input is a feature, it can be polygons, lines, or points. Polygon feature regions cannot be composed of multipart polygons.</para>
+		/// <para>要通过最低成本网络连接的输入区域。</para>
+		/// <para>区域可以通过影像服务或要素服务来定义。</para>
+		/// <para>如果区域输入为栅格，则区域将通过值相同的连续（邻近）像元组进行定义。 每个区域必须具有唯一的编号。 不属于任何区域的像元一定是 NoData。 栅格类型必须为整型，值可正可负。</para>
+		/// <para>如果区域输入为要素，则其可以是面、线或点。 面要素区域不能包含多部分面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -102,9 +102,9 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Input Cost Raster</para>
-		/// <para>A raster defining the impedance or cost to move planimetrically through each cell.</para>
-		/// <para>The value at each cell location represents the cost-per-unit distance for moving through the cell. Each cell location value is multiplied by the cell resolution while also compensating for diagonal movement to obtain the total cost of passing through the cell.</para>
-		/// <para>The values of the cost raster can be integer or floating point, but they cannot be negative or zero (you cannot have a negative or zero cost).</para>
+		/// <para>定义以平面测量的经过每个像元所需的阻抗或成本。</para>
+		/// <para>每个像元位置上的值表示经过像元时移动每单位距离所需的成本。 每个像元位置值乘以像元分辨率，同时也会补偿对角线移动来获取经过像元的总成本。</para>
+		/// <para>成本栅格的值可以是整型或浮点型，但不可以为负值或零（不存在负成本或零成本）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -113,15 +113,15 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Optimum Network Name</para>
-		/// <para>The name of the output optimum network feature service.</para>
-		/// <para>The polyline feature service of the optimum (least-cost) network of paths necessary to connect each of the input regions.</para>
-		/// <para>Each path (or line) is uniquely numbered, and additional fields in the attribute table store specific information about the path. Those fields include the following:</para>
-		/// <para>PATHID—Unique identifier for the path</para>
-		/// <para>PATHCOST—Total accumulative cost for the path</para>
-		/// <para>REGION1—The first region the path connects</para>
-		/// <para>REGION2—The other region the path connects</para>
-		/// <para>This information provides you insight into the paths within the network.</para>
-		/// <para>Since each path is represented by a unique line, there will be multiple lines in locations where paths travel the same route.</para>
+		/// <para>输出最佳网络要素服务的名称。</para>
+		/// <para>最佳（成本最低）路径网络的折线要素服务需要连接每个输入区域。</para>
+		/// <para>每条路径（或线）都是唯一标识的，同时属性表中的其他字段用于存储有关路径的特定信息。 这些字段包括：</para>
+		/// <para>PATHID- 路径的唯一标识符</para>
+		/// <para>PATHCOST- 路径的总累计成本</para>
+		/// <para>REGION1- 该路径连接的第一个区域</para>
+		/// <para>REGION2- 该路径连接的另一个区域</para>
+		/// <para>该信息有助于您深入分析网络内的路径。</para>
+		/// <para>由于每条路径都是由唯一的线所表示，因此多条路径经过同一路线的位置会存在多条线。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -129,15 +129,15 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 
 		/// <summary>
 		/// <para>Output Neighbor Network Name</para>
-		/// <para>The name of the output Neighbor network feature service.</para>
-		/// <para>The polyline feature service identifying all paths from each region to each of its closest-cost neighbors.</para>
-		/// <para>Each path (or line) is uniquely numbered, and additional fields in the attribute table store specific information about the path. Those fields include the following:</para>
-		/// <para>PATHID—Unique identifier for the path</para>
-		/// <para>PATHCOST—Total accumulative cost for the path</para>
-		/// <para>REGION1—The first region the path connects</para>
-		/// <para>REGION2—The other region the path connects</para>
-		/// <para>This information provides you insight into the paths within the network and is particularly useful when deciding which paths should be removed if necessary.</para>
-		/// <para>Since each path is represented by a unique line, there will be multiple lines in locations where paths travel the same route.</para>
+		/// <para>输出邻域网络要素服务的名称。</para>
+		/// <para>该折线要素服务用于标识从每个区域到其每个最近成本邻域的所有路径。</para>
+		/// <para>每条路径（或线）都是唯一标识的，同时属性表中的其他字段用于存储有关路径的特定信息。 这些字段包括：</para>
+		/// <para>PATHID- 路径的唯一标识符</para>
+		/// <para>PATHCOST- 路径的总累计成本</para>
+		/// <para>REGION1- 该路径连接的第一个区域</para>
+		/// <para>REGION2- 该路径连接的另一个区域</para>
+		/// <para>该信息有助于深入分析网络内的路径，而且对于决定应该移除哪条路径尤其有用（如有必要）。</para>
+		/// <para>由于每条路径都是由唯一的线所表示，因此多条路径经过同一路线的位置会存在多条线。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

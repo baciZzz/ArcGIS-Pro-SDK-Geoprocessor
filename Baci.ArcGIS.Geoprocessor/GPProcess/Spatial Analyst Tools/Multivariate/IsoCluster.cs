@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Iso Cluster</para>
-	/// <para>Iso Cluster</para>
-	/// <para>Uses an isodata clustering algorithm to determine the characteristics of the natural groupings of cells in multidimensional attribute space and stores the results in an output ASCII signature file.</para>
+	/// <para>Iso 聚类</para>
+	/// <para>使用 isodata 聚类算法来确定多维属性空间中像元自然分组的特征并将结果存储在输出 ASCII 特征文件中。</para>
 	/// </summary>
 	public class IsoCluster : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterBands">
 		/// <para>Input raster bands</para>
-		/// <para>The input raster bands.</para>
-		/// <para>They can be integer or floating point type.</para>
+		/// <para>输入栅格波段。</para>
+		/// <para>可为整型或浮点型。</para>
 		/// </param>
 		/// <param name="OutSignatureFile">
 		/// <para>Output signature file</para>
-		/// <para>The output signature file.</para>
-		/// <para>A .gsg extension must be specified.</para>
+		/// <para>输出特征文件。</para>
+		/// <para>必须指定 .gsg 扩展名。</para>
 		/// </param>
 		/// <param name="NumberClasses">
 		/// <para>Number of classes</para>
-		/// <para>Number of classes into which to group the cells.</para>
+		/// <para>要将像元划分成的类数目。</para>
 		/// </param>
 		public IsoCluster(object InRasterBands, object OutSignatureFile, object NumberClasses)
 		{
@@ -41,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Iso Cluster</para>
+		/// <para>Tool Display Name : Iso 聚类</para>
 		/// </summary>
-		public override string DisplayName() => "Iso Cluster";
+		public override string DisplayName() => "Iso 聚类";
 
 		/// <summary>
 		/// <para>Tool Name : IsoCluster</para>
@@ -77,8 +77,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster bands</para>
-		/// <para>The input raster bands.</para>
-		/// <para>They can be integer or floating point type.</para>
+		/// <para>输入栅格波段。</para>
+		/// <para>可为整型或浮点型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -90,8 +90,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output signature file</para>
-		/// <para>The output signature file.</para>
-		/// <para>A .gsg extension must be specified.</para>
+		/// <para>输出特征文件。</para>
+		/// <para>必须指定 .gsg 扩展名。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Number of classes</para>
-		/// <para>Number of classes into which to group the cells.</para>
+		/// <para>要将像元划分成的类数目。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -111,8 +111,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Number of iterations</para>
-		/// <para>Number of iterations of the clustering process to run.</para>
-		/// <para>The default is 20.</para>
+		/// <para>要运行的聚类过程的迭代次数。</para>
+		/// <para>默认值为 20。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -121,8 +121,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Minimum class size</para>
-		/// <para>Minimum number of cells in a valid class.</para>
-		/// <para>The default is 20.</para>
+		/// <para>一个有效类中的最小像元数。</para>
+		/// <para>默认值为 20。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -131,8 +131,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Sample interval</para>
-		/// <para>The interval to be used for sampling.</para>
-		/// <para>The default is 10.</para>
+		/// <para>采样所使用的间隔。</para>
+		/// <para>默认值为 10。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]

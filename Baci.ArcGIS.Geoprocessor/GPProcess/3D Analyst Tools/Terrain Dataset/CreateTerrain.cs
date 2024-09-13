@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Create Terrain</para>
-	/// <para>Create Terrain</para>
-	/// <para>Creates a terrain dataset.</para>
+	/// <para>创建 Terrain</para>
+	/// <para>创建 terrain 数据集</para>
 	/// </summary>
 	public class CreateTerrain : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatureDataset">
 		/// <para>Input Feature Dataset</para>
-		/// <para>The feature dataset that will contain the terrain dataset.</para>
+		/// <para>将包含 terrain 数据集的要素数据集。</para>
 		/// </param>
 		/// <param name="OutTerrainName">
 		/// <para>Output Terrain</para>
-		/// <para>The name of the terrain dataset.</para>
+		/// <para>Terrain 数据集的名称。</para>
 		/// </param>
 		/// <param name="AveragePointSpacing">
 		/// <para>Average Point Spacing</para>
-		/// <para>The average horizontal distance between the data points that will be used in modeling the terrain. Sensor based measurements—such as photogrammetric, lidar, and sonar surveys—typically have a known spacing that should be used. Use the horizontal units of the feature dataset's coordinate system for the spacing.</para>
+		/// <para>对 terrain 建模时所用数据点之间的平均水平距离。 对于摄影测量、激光雷达和声纳测量等基于传感器的测量，通常已知所需使用的间距。 间距使用要素数据集坐标系的水平单位。</para>
 		/// </param>
 		public CreateTerrain(object InFeatureDataset, object OutTerrainName, object AveragePointSpacing)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Terrain</para>
+		/// <para>Tool Display Name : 创建 Terrain</para>
 		/// </summary>
-		public override string DisplayName() => "Create Terrain";
+		public override string DisplayName() => "创建 Terrain";
 
 		/// <summary>
 		/// <para>Tool Name : CreateTerrain</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Feature Dataset</para>
-		/// <para>The feature dataset that will contain the terrain dataset.</para>
+		/// <para>将包含 terrain 数据集的要素数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureDataset()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Terrain</para>
-		/// <para>The name of the terrain dataset.</para>
+		/// <para>Terrain 数据集的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Average Point Spacing</para>
-		/// <para>The average horizontal distance between the data points that will be used in modeling the terrain. Sensor based measurements—such as photogrammetric, lidar, and sonar surveys—typically have a known spacing that should be used. Use the horizontal units of the feature dataset's coordinate system for the spacing.</para>
+		/// <para>对 terrain 建模时所用数据点之间的平均水平距离。 对于摄影测量、激光雷达和声纳测量等基于传感器的测量，通常已知所需使用的间距。 间距使用要素数据集坐标系的水平单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Maximum Overview Size</para>
-		/// <para>The terrain overview is similar to the image thumbnail concept. It is the coarsest representation of the terrain dataset, and the maximum size represents the upper limit of the number of measurement points that can be sampled to create the overview.</para>
+		/// <para>Terrain 概貌类似于缩略图概念。 它是 terrain 数据集的最粗略表示，其最大大小表示为创建概貌而进行采样的测量点的数量上限。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Config Keyword</para>
-		/// <para>The configuration keyword that will be used to optimize the terrain's storage in an enterprise database.</para>
+		/// <para>用于优化企业级数据库中 terrain 存储的配置关键字。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -116,9 +116,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Pyramid Type</para>
-		/// <para>Specifies the point thinning method that will be used to construct the terrain pyramids.</para>
-		/// <para>Window Size—Data points in the area defined by a given window size for each pyramid level will be selected using the Window Size Method parameter value. This is the default.</para>
-		/// <para>Z Tolerance—The vertical accuracy of each pyramid level relative to the full resolution of the data points will be specified.</para>
+		/// <para>指定将用于构建地形金字塔的点细化方法。</para>
+		/// <para>窗口大小—将使用窗口大小方法参数值，为每个金字塔等级选择由给定窗口大小定义的区域中的数据点。 这是默认设置。</para>
+		/// <para>Z 容差—将指定每个金字塔等级相对于数据点全分辨率的垂直精度。</para>
 		/// <para><see cref="PyramidTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,11 +128,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Window Size Method</para>
-		/// <para>Specifies how points in the area defined by the window size will be selected. This parameter is only applicable when Window Size is specified for the Pyramid Type parameter.</para>
-		/// <para>Minimum Z—The point with the smallest elevation value will be selected. This is the default.</para>
-		/// <para>Maximum Z—The point with the largest elevation value will be selected.</para>
-		/// <para>Closest To Mean Z—The point with the elevation value closest to the average of all values will be selected.</para>
-		/// <para>Minimum and Maximum Z—The points with the smallest and largest elevation values will be selected.</para>
+		/// <para>指定如何在由窗口大小定义的区域中选择点。 仅当在金字塔类型参数中指定窗口大小时，此参数才适用。</para>
+		/// <para>Z 最小值—将选择具有最小高程值的点。 这是默认设置。</para>
+		/// <para>Z 最大值—将选择具有最大高程值的点。</para>
+		/// <para>最接近平均值的 Z 值—将选择具有最接近所有高程值的平均值的点。</para>
+		/// <para>最小和最大 Z 值—将选择具有最小和最大高程值的点。</para>
 		/// <para><see cref="WindowsizeMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -142,11 +142,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Secondary Thinning Method</para>
-		/// <para>Specifies additional thinning that will be performed to reduce the number of points used over flat areas when window size pyramids are used. An area is considered flat if the heights of points in that area are within the Secondary Thinning Threshold parameter value. Its effect is more evident at higher-resolution pyramid levels, since smaller areas are more likely to be flat than larger areas.</para>
-		/// <para>None—No secondary thinning will be performed. This is the default.</para>
-		/// <para>Mild—Mild thinning will be performed to preserve linear discontinuities (for example, building sides and forest boundaries). This method is recommended for lidar that includes both ground and nonground points. It will thin the fewest points.</para>
-		/// <para>Moderate—Moderate thinning will be performed, which provides a balance between performance and accuracy. This method does not preserve as much detail as mild thinning but comes close while eliminating more points overall.</para>
-		/// <para>Strong—Strong thinning will be performed, which removes the most points but is less likely to preserve sharply delineated features. Limit its use to surfaces where slope tends to change gradually. For example, strong thinning is efficient for bare-earth lidar and bathymetry.</para>
+		/// <para>当使用窗口大小金字塔时，指定要执行的外加细化来减少在平坦区域上所用的点数。 如果某个区域内点的高度均在二次细化阈值参数值内，则可将该区域视为平坦区域。 它的效果在更高分辨率的金字塔等级上更为明显，因为与较大的区域相比，较小的区域更可能是平坦的。</para>
+		/// <para>无—将不执行任何二次细化。 这是默认设置。</para>
+		/// <para>轻度—将执行轻度抽稀，以保留线性不连续的地形（如建筑面和森林边界）。 建议对包括地面点和非地面点的激光雷达数据使用该方法。 其将抽稀最少的点。</para>
+		/// <para>中等—将执行中度抽稀，以在性能和精度之间实现平衡。 该方法不像轻度抽稀方法那样保留很多细节，尽管消除更多点，但整体上这两种方法相差无几。</para>
+		/// <para>高度—将执行高度抽稀，以移除大多数点，不大可能保留轮廓清晰的要素。 该方法仅限于使用在坡度逐渐更改的表面。 例如，高度抽稀对裸地激光雷达或深海探测数据具有效果。</para>
 		/// <para><see cref="SecondaryThinningMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Secondary Thinning Threshold</para>
-		/// <para>The vertical threshold that will be used to activate secondary thinning when the Pyramid Type parameter is set to Window Size. Set the value equal to or larger than the vertical accuracy of the data.</para>
+		/// <para>将金字塔类型参数设置为窗口大小后，用于激活二次细化的垂直阈值。 将该值设置为等于或大于数据的垂直精度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -171,11 +171,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Triangulation Method</para>
-		/// <para>Specifies whether breakline features will be incorporated into the terrain surface by densifying their segments to conform to Delaunay triangulation rules for constructing a TIN surface.</para>
-		/// <para>Delaunay triangulation will densify breakline features to accommodate the points surrounding them in a manner that avoids the creation of long, thin triangles that typically yield undesirable results when analyzing a TIN-based surface. Additionally, natural neighbor interpolation and Thiessen (Voronoi) polygon generation can only be performed on conforming Delaunay triangulations.</para>
-		/// <para>A constrained Delaunay triangulation will avoid densifying breakline features, incorporating breakline segments as edges into the TIN surface. Consider this option when you need to explicitly define certain edges that are guaranteed not to be modified (that is, split into multiple edges) by the triangulator.</para>
-		/// <para>Delaunay—Breaklines will be densified to construct Delaunay triangles that accommodate the points surrounding them. This is the default.</para>
-		/// <para>Constrained Delaunay—Breaklines will not be densified.</para>
+		/// <para>指定是否要通过增密隔断线要素的线段使其符合用于构建 TIN 表面的 Delaunay 三角测量规则，从而将其合并到 terrain 表面中。</para>
+		/// <para>Delaunay 三角测量将增密隔断线要素以容纳其周围的点，从而避免创建细长三角形。在分析基于 TIN 的表面时，这些三角形通常会产生不良结果。 此外，只能对符合 Delaunay 准则的三角测量执行自然邻域插值和泰森多边形生成。</para>
+		/// <para>受约束的 Delaunay 三角测量将避免增密隔断线要素，而是将隔断线段作为边合并到 TIN 表面中。 当您需要明确定义以确保不会被三角仪修改（即，分割为多条边）的某些边时，请考虑使用此选项。</para>
+		/// <para>Delaunay—将增密隔断线以构建容纳其周围点的 Delaunay 三角形。 这是默认设置。</para>
+		/// <para>约束型 Delaunay—隔断线不会被增密。</para>
 		/// <para><see cref="TriangulationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -200,17 +200,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum PyramidTypeEnum 
 		{
 			/// <summary>
-			/// <para>Window Size—Data points in the area defined by a given window size for each pyramid level will be selected using the Window Size Method parameter value. This is the default.</para>
+			/// <para>窗口大小—将使用窗口大小方法参数值，为每个金字塔等级选择由给定窗口大小定义的区域中的数据点。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("WINDOWSIZE")]
-			[Description("Window Size")]
+			[Description("窗口大小")]
 			Window_Size,
 
 			/// <summary>
-			/// <para>Z Tolerance—The vertical accuracy of each pyramid level relative to the full resolution of the data points will be specified.</para>
+			/// <para>Z 容差—将指定每个金字塔等级相对于数据点全分辨率的垂直精度。</para>
 			/// </summary>
 			[GPValue("ZTOLERANCE")]
-			[Description("Z Tolerance")]
+			[Description("Z 容差")]
 			Z_Tolerance,
 
 		}
@@ -221,31 +221,31 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum WindowsizeMethodEnum 
 		{
 			/// <summary>
-			/// <para>Minimum Z—The point with the smallest elevation value will be selected. This is the default.</para>
+			/// <para>Z 最小值—将选择具有最小高程值的点。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("ZMIN")]
-			[Description("Minimum Z")]
+			[Description("Z 最小值")]
 			Minimum_Z,
 
 			/// <summary>
-			/// <para>Maximum Z—The point with the largest elevation value will be selected.</para>
+			/// <para>Z 最大值—将选择具有最大高程值的点。</para>
 			/// </summary>
 			[GPValue("ZMAX")]
-			[Description("Maximum Z")]
+			[Description("Z 最大值")]
 			Maximum_Z,
 
 			/// <summary>
-			/// <para>Closest To Mean Z—The point with the elevation value closest to the average of all values will be selected.</para>
+			/// <para>最接近平均值的 Z 值—将选择具有最接近所有高程值的平均值的点。</para>
 			/// </summary>
 			[GPValue("ZMEAN")]
-			[Description("Closest To Mean Z")]
+			[Description("最接近平均值的 Z 值")]
 			Closest_To_Mean_Z,
 
 			/// <summary>
-			/// <para>Minimum and Maximum Z—The points with the smallest and largest elevation values will be selected.</para>
+			/// <para>最小和最大 Z 值—将选择具有最小和最大高程值的点。</para>
 			/// </summary>
 			[GPValue("ZMINMAX")]
-			[Description("Minimum and Maximum Z")]
+			[Description("最小和最大 Z 值")]
 			Minimum_and_Maximum_Z,
 
 		}
@@ -256,31 +256,31 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum SecondaryThinningMethodEnum 
 		{
 			/// <summary>
-			/// <para>None—No secondary thinning will be performed. This is the default.</para>
+			/// <para>无—将不执行任何二次细化。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 			/// <summary>
-			/// <para>Mild—Mild thinning will be performed to preserve linear discontinuities (for example, building sides and forest boundaries). This method is recommended for lidar that includes both ground and nonground points. It will thin the fewest points.</para>
+			/// <para>轻度—将执行轻度抽稀，以保留线性不连续的地形（如建筑面和森林边界）。 建议对包括地面点和非地面点的激光雷达数据使用该方法。 其将抽稀最少的点。</para>
 			/// </summary>
 			[GPValue("MILD")]
-			[Description("Mild")]
+			[Description("轻度")]
 			Mild,
 
 			/// <summary>
-			/// <para>Moderate—Moderate thinning will be performed, which provides a balance between performance and accuracy. This method does not preserve as much detail as mild thinning but comes close while eliminating more points overall.</para>
+			/// <para>中等—将执行中度抽稀，以在性能和精度之间实现平衡。 该方法不像轻度抽稀方法那样保留很多细节，尽管消除更多点，但整体上这两种方法相差无几。</para>
 			/// </summary>
 			[GPValue("MODERATE")]
-			[Description("Moderate")]
+			[Description("中等")]
 			Moderate,
 
 			/// <summary>
-			/// <para>Strong—Strong thinning will be performed, which removes the most points but is less likely to preserve sharply delineated features. Limit its use to surfaces where slope tends to change gradually. For example, strong thinning is efficient for bare-earth lidar and bathymetry.</para>
+			/// <para>高度—将执行高度抽稀，以移除大多数点，不大可能保留轮廓清晰的要素。 该方法仅限于使用在坡度逐渐更改的表面。 例如，高度抽稀对裸地激光雷达或深海探测数据具有效果。</para>
 			/// </summary>
 			[GPValue("STRONG")]
-			[Description("Strong")]
+			[Description("高度")]
 			Strong,
 
 		}
@@ -291,17 +291,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum TriangulationMethodEnum 
 		{
 			/// <summary>
-			/// <para>Delaunay triangulation will densify breakline features to accommodate the points surrounding them in a manner that avoids the creation of long, thin triangles that typically yield undesirable results when analyzing a TIN-based surface. Additionally, natural neighbor interpolation and Thiessen (Voronoi) polygon generation can only be performed on conforming Delaunay triangulations.</para>
+			/// <para>Delaunay 三角测量将增密隔断线要素以容纳其周围的点，从而避免创建细长三角形。在分析基于 TIN 的表面时，这些三角形通常会产生不良结果。 此外，只能对符合 Delaunay 准则的三角测量执行自然邻域插值和泰森多边形生成。</para>
 			/// </summary>
 			[GPValue("DELAUNAY")]
 			[Description("Delaunay")]
 			Delaunay,
 
 			/// <summary>
-			/// <para>Constrained Delaunay—Breaklines will not be densified.</para>
+			/// <para>约束型 Delaunay—隔断线不会被增密。</para>
 			/// </summary>
 			[GPValue("CONSTRAINED_DELAUNAY")]
-			[Description("Constrained Delaunay")]
+			[Description("约束型 Delaunay")]
 			Constrained_Delaunay,
 
 		}

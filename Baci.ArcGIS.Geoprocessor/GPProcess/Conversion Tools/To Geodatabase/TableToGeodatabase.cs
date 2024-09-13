@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Table To Geodatabase</para>
-	/// <para>Table To Geodatabase</para>
-	/// <para>Converts one or more tables to geodatabase tables in an output geodatabase.</para>
+	/// <para>表转地理数据库</para>
+	/// <para>将一个或多个表转换为输出地理数据库中的地理数据库表。</para>
 	/// </summary>
 	public class TableToGeodatabase : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InputTable">
 		/// <para>Input Table</para>
-		/// <para>The list of tables to be converted to geodatabase tables. Input tables can be INFO, dBASE, OLE DB, geodatabase tables, or table views.</para>
+		/// <para>要转换为地理数据库表的表列表。 输入表可以为 INFO、dBASE、OLE DB、地理数据库表或表视图。</para>
 		/// </param>
 		/// <param name="OutputGeodatabase">
 		/// <para>Output Geodatabase</para>
-		/// <para>The destination geodatabase where the tables will be placed.</para>
+		/// <para>将放置表的目标地理数据库。</para>
 		/// </param>
 		public TableToGeodatabase(object InputTable, object OutputGeodatabase)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Table To Geodatabase</para>
+		/// <para>Tool Display Name : 表转地理数据库</para>
 		/// </summary>
-		public override string DisplayName() => "Table To Geodatabase";
+		public override string DisplayName() => "表转地理数据库";
 
 		/// <summary>
 		/// <para>Tool Name : TableToGeodatabase</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The list of tables to be converted to geodatabase tables. Input tables can be INFO, dBASE, OLE DB, geodatabase tables, or table views.</para>
+		/// <para>要转换为地理数据库表的表列表。 输入表可以为 INFO、dBASE、OLE DB、地理数据库表或表视图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Geodatabase</para>
-		/// <para>The destination geodatabase where the tables will be placed.</para>
+		/// <para>将放置表的目标地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]

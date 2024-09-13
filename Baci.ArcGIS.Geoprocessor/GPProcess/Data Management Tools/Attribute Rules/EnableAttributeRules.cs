@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Enable Attribute Rules</para>
-	/// <para>Enable Attribute Rules</para>
-	/// <para>Enables one or more attribute rules in a dataset</para>
+	/// <para>启用属性规则</para>
+	/// <para>用于启用数据集中的一个或多个属性规则。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The table or feature class that contains the attribute rule to be enabled.</para>
+		/// <para>包含要启用的属性规则的表或要素类。</para>
 		/// </param>
 		/// <param name="Names">
 		/// <para>Rule Names</para>
-		/// <para>The names of the rules to enable for the dataset.</para>
+		/// <para>要启用的数据集规则的名称。</para>
 		/// </param>
 		public EnableAttributeRules(object InTable, object Names)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Enable Attribute Rules</para>
+		/// <para>Tool Display Name : 启用属性规则</para>
 		/// </summary>
-		public override string DisplayName() => "Enable Attribute Rules";
+		public override string DisplayName() => "启用属性规则";
 
 		/// <summary>
 		/// <para>Tool Name : EnableAttributeRules</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The table or feature class that contains the attribute rule to be enabled.</para>
+		/// <para>包含要启用的属性规则的表或要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Rule Names</para>
-		/// <para>The names of the rules to enable for the dataset.</para>
+		/// <para>要启用的数据集规则的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -89,10 +89,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Type</para>
-		/// <para>Specifies the type of attribute rules to enable.</para>
-		/// <para>Calculation—Filters the Rule Names parameter to display only calculation type rules.</para>
-		/// <para>Constraint—Filters the Rule Names parameter to display only constraint type rules.</para>
-		/// <para>Validation—Filters the Rule Names parameter to display only validation type rules.</para>
+		/// <para>指定要启用的属性规则的类型。</para>
+		/// <para>计算 - 过滤规则名称参数以仅显示计算类型规则。</para>
+		/// <para>约束 - 过滤规则名称参数以仅显示约束类型规则。</para>
+		/// <para>验证 - 过滤规则名称参数以仅显示验证类型规则。</para>
 		/// <para><see cref="TypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -124,24 +124,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TypeEnum 
 		{
 			/// <summary>
-			/// <para>Calculation—Filters the Rule Names parameter to display only calculation type rules.</para>
+			/// <para>计算 - 过滤规则名称参数以仅显示计算类型规则。</para>
 			/// </summary>
 			[GPValue("CALCULATION")]
-			[Description("Calculation")]
+			[Description("计算")]
 			Calculation,
 
 			/// <summary>
-			/// <para>Constraint—Filters the Rule Names parameter to display only constraint type rules.</para>
+			/// <para>约束 - 过滤规则名称参数以仅显示约束类型规则。</para>
 			/// </summary>
 			[GPValue("CONSTRAINT")]
-			[Description("Constraint")]
+			[Description("约束")]
 			Constraint,
 
 			/// <summary>
-			/// <para>Validation—Filters the Rule Names parameter to display only validation type rules.</para>
+			/// <para>验证 - 过滤规则名称参数以仅显示验证类型规则。</para>
 			/// </summary>
 			[GPValue("VALIDATION")]
-			[Description("Validation")]
+			[Description("验证")]
 			Validation,
 
 		}

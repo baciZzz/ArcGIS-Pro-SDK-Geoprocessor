@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Topo to Raster</para>
-	/// <para>Topo to Raster</para>
-	/// <para>Interpolates a hydrologically correct raster surface from point, line, and polygon data.</para>
+	/// <para>地形转栅格</para>
+	/// <para>将点、线和面数据插值成符合真实地表的栅格表面。</para>
 	/// </summary>
 	public class TopoToRaster : AbstractGPProcess
 	{
@@ -21,26 +21,26 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InTopoFeatures">
 		/// <para>Input feature data</para>
-		/// <para>The input features containing the z-values to be interpolated into a surface raster.</para>
-		/// <para>Each feature input can have a field specified that contains the z-values and one of six types specified.</para>
-		/// <para>Feature layer—The input feature dataset.</para>
-		/// <para>Field—The name of the field that stores the attributes, where appropriate.</para>
-		/// <para>Type—The type of input feature dataset.</para>
-		/// <para>There are nine types of accepted inputs:</para>
-		/// <para>Point elevation—A point feature class representing surface elevations. The Field stores the elevations of the points.</para>
-		/// <para>Contour—A line feature class that represents elevation contours. The Field stores the elevations of the contour lines.</para>
-		/// <para>Stream—A line feature class of stream locations. All arcs must be oriented to point downstream. The feature class should only contain single arc streams. There is no Field option for this input type.</para>
-		/// <para>Sink—A point feature class that represents known topographic depressions. The tool will not attempt to remove from the analysis any points explicitly identified as sinks. The Field used should be one that stores the elevation of the legitimate sink. If NONE is selected, only the location of the sink is used.</para>
-		/// <para>Boundary—A feature class containing a single polygon that represents the outer boundary of the output raster. Cells in the output raster outside this boundary will be NoData. This option can be used for clipping out water areas along coastlines before making the final output raster. There is no Field option for this input type.</para>
-		/// <para>Lake—A polygon feature class that specifies the location of lakes. All output raster cells within a lake will be assigned to the minimum elevation value of all cells along the shoreline. There is no Field option for this input type.</para>
-		/// <para>Cliff—A line feature class of the cliffs. The cliff line features must be oriented so that the left-hand side of the line is on the low side of the cliff and the right-hand side is the high side of the cliff. There is no Field option for this input type.</para>
-		/// <para>Exclusion—A polygon feature class of the areas in which the input data should be ignored. These polygons permit removal of elevation data from the interpolation process. This is typically used to remove elevation data associated with dam walls and bridges. This enables interpolation of the underlying valley with connected drainage structure. There is no Field option for this input type.</para>
-		/// <para>Coast—A polygon feature class containing the outline of a coastal area. Cells in the final output raster that lie outside these polygons are set to a value that is less than the user-specified minimum height limit. There is no Field option for this input type.</para>
+		/// <para>包含要插值到表面栅格中的 z 值的输入要素。</para>
+		/// <para>每个要素输入均可具有一个包含 z 值的特定字段并可指定为六种输入类型之一。</para>
+		/// <para>要素图层 - 输入要素数据集。</para>
+		/// <para>字段 - 用于存储属性的字段名称（适当时）。</para>
+		/// <para>类型 - 输入要素数据集的类型。</para>
+		/// <para>共有九种支持的输入类型：</para>
+		/// <para>点高程 - 表示表面高程的点要素类。“字段”用于存储点的高程。</para>
+		/// <para>Contour - 表示高程等值线的线要素类。“字段” 用于存储等值线的高程。</para>
+		/// <para>Stream - 河流位置的线要素类。所有弧线必须定向为指向下游。要素类中应该仅包含单条弧线组成的河流。此输入类型没有“字段”选项。</para>
+		/// <para>Sink - 表示已知地形凹陷的点要素类。此工具不会试图将任何明确指定为汇的点从分析中移除。所用“字段”应存储了合理的汇高程。如果选择了 NONE，将仅使用汇的位置。</para>
+		/// <para>Boundary - 包含表示输出栅格外边界的单个面的要素类。在输出栅格中，位于此边界以外的像元将为 NoData。此选项可用于在创建最终输出栅格之前沿海岸线裁剪出水域。此输入类型没有“字段”选项。</para>
+		/// <para>Lake - 指定湖泊位置的面要素类。湖面内的所有输出栅格像元均将指定为使用沿湖岸线所有像元高程值中最小的那个高程值。此输入类型没有“字段”选项。</para>
+		/// <para>Cliff - 悬崖的线要素类。必须对悬崖线要素进行定向以使线的左侧位于悬崖的低侧，线的右侧位于悬崖的高侧。此输入类型没有“字段”选项。</para>
+		/// <para>Exclusion - 其中的输入数据应被忽略的区域的面要素类。这些面允许从插值过程中移除高程数据。通常将其用于移除与堤壁和桥相关联的高程数据。这样就可以内插带有连续地形结构的基础山谷。此输入类型没有“字段”选项。</para>
+		/// <para>Coast - 包含沿海地区轮廓的面要素类。位于这些面之外的最终输出栅格中的像元会被设置为小于用户所指定的最小高度限制的值。此输入类型没有“字段”选项。</para>
 		/// </param>
 		/// <param name="OutSurfaceRaster">
 		/// <para>Output surface raster</para>
-		/// <para>The output interpolated surface raster.</para>
-		/// <para>It is always a floating-point raster.</para>
+		/// <para>输出插值后的表面栅格。</para>
+		/// <para>其总为浮点栅格。</para>
 		/// </param>
 		public TopoToRaster(object InTopoFeatures, object OutSurfaceRaster)
 		{
@@ -49,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Topo to Raster</para>
+		/// <para>Tool Display Name : 地形转栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Topo to Raster";
+		public override string DisplayName() => "地形转栅格";
 
 		/// <summary>
 		/// <para>Tool Name : TopoToRaster</para>
@@ -85,21 +85,21 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input feature data</para>
-		/// <para>The input features containing the z-values to be interpolated into a surface raster.</para>
-		/// <para>Each feature input can have a field specified that contains the z-values and one of six types specified.</para>
-		/// <para>Feature layer—The input feature dataset.</para>
-		/// <para>Field—The name of the field that stores the attributes, where appropriate.</para>
-		/// <para>Type—The type of input feature dataset.</para>
-		/// <para>There are nine types of accepted inputs:</para>
-		/// <para>Point elevation—A point feature class representing surface elevations. The Field stores the elevations of the points.</para>
-		/// <para>Contour—A line feature class that represents elevation contours. The Field stores the elevations of the contour lines.</para>
-		/// <para>Stream—A line feature class of stream locations. All arcs must be oriented to point downstream. The feature class should only contain single arc streams. There is no Field option for this input type.</para>
-		/// <para>Sink—A point feature class that represents known topographic depressions. The tool will not attempt to remove from the analysis any points explicitly identified as sinks. The Field used should be one that stores the elevation of the legitimate sink. If NONE is selected, only the location of the sink is used.</para>
-		/// <para>Boundary—A feature class containing a single polygon that represents the outer boundary of the output raster. Cells in the output raster outside this boundary will be NoData. This option can be used for clipping out water areas along coastlines before making the final output raster. There is no Field option for this input type.</para>
-		/// <para>Lake—A polygon feature class that specifies the location of lakes. All output raster cells within a lake will be assigned to the minimum elevation value of all cells along the shoreline. There is no Field option for this input type.</para>
-		/// <para>Cliff—A line feature class of the cliffs. The cliff line features must be oriented so that the left-hand side of the line is on the low side of the cliff and the right-hand side is the high side of the cliff. There is no Field option for this input type.</para>
-		/// <para>Exclusion—A polygon feature class of the areas in which the input data should be ignored. These polygons permit removal of elevation data from the interpolation process. This is typically used to remove elevation data associated with dam walls and bridges. This enables interpolation of the underlying valley with connected drainage structure. There is no Field option for this input type.</para>
-		/// <para>Coast—A polygon feature class containing the outline of a coastal area. Cells in the final output raster that lie outside these polygons are set to a value that is less than the user-specified minimum height limit. There is no Field option for this input type.</para>
+		/// <para>包含要插值到表面栅格中的 z 值的输入要素。</para>
+		/// <para>每个要素输入均可具有一个包含 z 值的特定字段并可指定为六种输入类型之一。</para>
+		/// <para>要素图层 - 输入要素数据集。</para>
+		/// <para>字段 - 用于存储属性的字段名称（适当时）。</para>
+		/// <para>类型 - 输入要素数据集的类型。</para>
+		/// <para>共有九种支持的输入类型：</para>
+		/// <para>点高程 - 表示表面高程的点要素类。“字段”用于存储点的高程。</para>
+		/// <para>Contour - 表示高程等值线的线要素类。“字段” 用于存储等值线的高程。</para>
+		/// <para>Stream - 河流位置的线要素类。所有弧线必须定向为指向下游。要素类中应该仅包含单条弧线组成的河流。此输入类型没有“字段”选项。</para>
+		/// <para>Sink - 表示已知地形凹陷的点要素类。此工具不会试图将任何明确指定为汇的点从分析中移除。所用“字段”应存储了合理的汇高程。如果选择了 NONE，将仅使用汇的位置。</para>
+		/// <para>Boundary - 包含表示输出栅格外边界的单个面的要素类。在输出栅格中，位于此边界以外的像元将为 NoData。此选项可用于在创建最终输出栅格之前沿海岸线裁剪出水域。此输入类型没有“字段”选项。</para>
+		/// <para>Lake - 指定湖泊位置的面要素类。湖面内的所有输出栅格像元均将指定为使用沿湖岸线所有像元高程值中最小的那个高程值。此输入类型没有“字段”选项。</para>
+		/// <para>Cliff - 悬崖的线要素类。必须对悬崖线要素进行定向以使线的左侧位于悬崖的低侧，线的右侧位于悬崖的高侧。此输入类型没有“字段”选项。</para>
+		/// <para>Exclusion - 其中的输入数据应被忽略的区域的面要素类。这些面允许从插值过程中移除高程数据。通常将其用于移除与堤壁和桥相关联的高程数据。这样就可以内插带有连续地形结构的基础山谷。此输入类型没有“字段”选项。</para>
+		/// <para>Coast - 包含沿海地区轮廓的面要素类。位于这些面之外的最终输出栅格中的像元会被设置为小于用户所指定的最小高度限制的值。此输入类型没有“字段”选项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSATopoFeatures()]
@@ -108,8 +108,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output surface raster</para>
-		/// <para>The output interpolated surface raster.</para>
-		/// <para>It is always a floating-point raster.</para>
+		/// <para>输出插值后的表面栅格。</para>
+		/// <para>其总为浮点栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -117,8 +117,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>The cell size of the output raster that will be created.</para>
-		/// <para>This parameter can be defined by a numeric value or obtained from an existing raster dataset. If the cell size hasn&apos;t been explicitly specified as the parameter value, the environment cell size value will be used if specified; otherwise, additional rules will be used to calculate it from the other inputs. See the usage section for more detail.</para>
+		/// <para>将创建的输出栅格的像元大小。</para>
+		/// <para>此参数可以通过数值进行定义，也可以从现有栅格数据集获取。 如果未将像元大小明确指定为参数值，则将使用环境像元大小值（如果已指定）；否则，将使用其他规则通过其他输出计算像元大小。 有关详细信息，请参阅用法部分。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -130,13 +130,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output extent</para>
-		/// <para>Extent for the output raster dataset.</para>
-		/// <para>Interpolation will occur out to the x and y limits, and cells outside that extent will be NoData. For best interpolation results along the edges of the output raster, the x and y limits should be smaller than the extent of the input data by at least 10 cells on each side.</para>
-		/// <para>Left—The default is the smallest x coordinate of all inputs.</para>
-		/// <para>Bottom—The default is the smallest y coordinate of all inputs.</para>
-		/// <para>Right—The default is the largest x coordinate of all inputs.</para>
-		/// <para>Top—The default is the largest y coordinate of all inputs.</para>
-		/// <para>The default extent is the largest of all extents of the input feature data.</para>
+		/// <para>输出栅格数据集的范围。</para>
+		/// <para>插值可能会超出 x 和 y 坐标范围，在此范围之外的像元将为 NoData。要在输出栅格边界上获得最佳插值结果，四边的 x 和 y 坐标界限应该比输入数据的范围至少小 10 个像元。</para>
+		/// <para>左 - 默认值为所有输入的最小 x 坐标值。</para>
+		/// <para>下 - 默认值为所有输入的最小 y 坐标值。</para>
+		/// <para>右 - 默认值为所有输入的最大 x 坐标值。</para>
+		/// <para>上 - 默认值为所有输入的最大 y 坐标值。</para>
+		/// <para>默认范围是输入要素数据所有范围中的最大范围。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -144,9 +144,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Margin in cells</para>
-		/// <para>Distance in cells to interpolate beyond the specified output extent and boundary.</para>
-		/// <para>The value must be greater than or equal to 0 (zero). The default value is 20.</para>
-		/// <para>If the Output extent and Boundary feature datasets are the same as the limit of the input data (the default), values interpolated along the edge of the DEM will not match well with adjacent DEM data. This is because they have been interpolated using one-half as much data as the points inside the raster, which are surrounded on all sides by input data. The Margin In Cells option allows input data beyond these limits to be used in the interpolation.</para>
+		/// <para>在超出指定输出范围和边界外进行像元插值的距离。</para>
+		/// <para>该值必须大于或等于 0（零）。默认值为 20。</para>
+		/// <para>如果输出范围和边界要素数据集与输入数据的界限相同（默认值），则沿 DEM 边内插的值与相邻的 DEM 数据将无法很好的匹配。这是因为插值时使用的是四周均环绕输入数据的点，仅相当于栅格内一半点数的数据。通过像元间距选项可使输入数据超出这些界限从而应用于插值过程。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -156,8 +156,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Smallest z value to be used in interpolation</para>
-		/// <para>The minimum z-value to be used in the interpolation.</para>
-		/// <para>The default is 20 percent below the smallest of all the input values.</para>
+		/// <para>插值所用的最小 z 值。</para>
+		/// <para>默认值比所有输入值中最小的值低 20%。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -165,8 +165,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Largest z value to be used in interpolation</para>
-		/// <para>The maximum z-value to be used in the interpolation.</para>
-		/// <para>The default is 20 percent above the largest of all input values.</para>
+		/// <para>插值所用的最大 z 值。</para>
+		/// <para>默认值比所有输入值中最大的值高 20%。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -174,11 +174,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Drainage enforcement</para>
-		/// <para>The type of drainage enforcement to apply.</para>
-		/// <para>The drainage enforcement option can be set to attempt to remove all sinks or depressions so a hydrologically correct DEM can be created. If sink points have been explicitly identified in the input feature data, these depressions will not be filled.</para>
-		/// <para>Enforce—The algorithm will attempt to remove all sinks it encounters, whether they are real or spurious. This is the default.</para>
-		/// <para>Do not enforce—No sinks will be filled.</para>
-		/// <para>Enforce with sink—Points identified as sinks in Input feature data represent known topographic depressions and will not be altered. Any sink not identified in input feature data is considered spurious, and the algorithm will attempt to fill it.Having more than 8,000 spurious sinks causes the tool to fail.</para>
+		/// <para>要应用的地形强化类型。</para>
+		/// <para>可对地形强化选项进行设置以便移除所有汇或洼地，从而创建符合真实地表的 DEM。如果输入要素数据中已明确指出这些汇点，则这些洼地将不会被填充。</para>
+		/// <para>强制—该算法将尝试移除遇到的所有汇，无论是“真”汇还是“伪”汇。这是默认设置。</para>
+		/// <para>不强化—汇不会被填充。</para>
+		/// <para>通过凹陷强化—输入要素数据中已指出为汇的点表示已知的地形凹陷并且将不会被更改。输入要素数据中未指出的所有汇均将视为伪汇，算法将尝试填充此汇。伪汇数量超过 8,000 个将导致工具无法使用。</para>
 		/// <para><see cref="EnforceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -188,10 +188,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Primary type of input data</para>
-		/// <para>The dominant elevation data type of the input feature data.</para>
-		/// <para>Contour—The dominant type of input data will be elevation contours. This is the default.</para>
-		/// <para>Spot—The dominant type of input will be point.</para>
-		/// <para>Specifying the relevant selection optimizes the search method used during the generation of streams and ridges.</para>
+		/// <para>输入要素数据的主要高程数据类型。</para>
+		/// <para>等值线—输入数据的主要类型为高程等值线。这是默认设置。</para>
+		/// <para>点—输入的主要类型为点。</para>
+		/// <para>指定相关的选项可优化河流和山脊生成期间所用搜索方法。</para>
 		/// <para><see cref="DataTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -201,9 +201,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Maximum number of iterations</para>
-		/// <para>The maximum number of interpolation iterations.</para>
-		/// <para>The number of iterations must be greater than zero. A default of 20 is normally adequate for both contour and line data.</para>
-		/// <para>A value of 30 will clear fewer sinks. Rarely, higher values (45–50) may be useful to clear more sinks or to set more ridges and streams. Iteration ceases for each grid resolution when the maximum number of iterations has been reached.</para>
+		/// <para>插值迭代的最大次数。</para>
+		/// <para>迭代次数必须大于零。通常，默认值 20 适合等值线数据也适合线数据。</para>
+		/// <para>值 30 可清除少量的汇。在极少数情况下，设置成更高的值 (45–50) 可能适合于清除更多的汇或设置更多的山脊和河流。达到最大迭代次数后，各格网分辨率的迭代将停止。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -212,8 +212,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Roughness penalty</para>
-		/// <para>The integrated squared second derivative as a measure of roughness.</para>
-		/// <para>The roughness penalty must be zero or greater. If the primary input data type is Contour, the default is zero. If the primary data type is Spot, the default is 0.5. Larger values are not normally recommended.</para>
+		/// <para>作为粗糙度衡量指标的二阶导数平方积分。</para>
+		/// <para>粗糙度惩罚系数必须大于等于零。如果主要输入数据类型为 等值线，则默认值为零。如果主要数据类型为 点，则默认值为 0.5。通常不建议使用更大的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -224,8 +224,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Discretisation error factor</para>
-		/// <para>The discrete error factor is used to adjust the amount of smoothing when converting the input data to a raster.</para>
-		/// <para>The value must be greater than zero. The normal range of adjustment is 0.25 to 4, and the default is 1. A smaller value results in less data smoothing; a larger value causes greater smoothing.</para>
+		/// <para>离散误差系数用于在将输入数据转换为栅格时调整平滑量。</para>
+		/// <para>值必须大于零。正常的调整范围是 0.25 到 4，默认值为 1。值越小，数据的平滑处理就越少；而值越大，平滑处理也就越多。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -235,9 +235,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Vertical standard error</para>
-		/// <para>The amount of random error in the z-values of the input data.</para>
-		/// <para>The value must be zero or greater. The default is zero.</para>
-		/// <para>The vertical standard error may be set to a small positive value if the data has significant random (non-systematic) vertical errors with uniform variance. In this case, set the vertical standard error to the standard deviation of these errors. For most elevation datasets, the vertical error should be set to zero, but it may be set to a small positive value to stabilize convergence when rasterizing point data with stream line data.</para>
+		/// <para>输入数据 z 值的随机误差量。</para>
+		/// <para>该值必须大于等于零。默认值为零。</para>
+		/// <para>如果数据的垂直误差的方差一致性检验为显著随机（非系统），则垂直标准误差可设置为较小的正值。这种情况下，请将垂直标准误差设置为这些误差的标准差。对于大多数高程数据集，垂直误差应该设置为零，但当通过河流线数据对点数据进行栅格化时，可能会将其设置为较小的正值以稳定收敛。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -247,9 +247,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Tolerance 1</para>
-		/// <para>This tolerance reflects the accuracy and density of the elevation points in relation to surface drainage.</para>
-		/// <para>For point datasets, set the tolerance to the standard error of the data heights. For contour datasets, use one-half the average contour interval.</para>
-		/// <para>The value must be zero or greater. The default is 2.5 if the data type is Contour and zero if the data type is Spot.</para>
+		/// <para>此容差可反映出高程点相对于表面地形的精度和密度。</para>
+		/// <para>对于点数据集，请将容差设置为数据高度的标准误差。对于等值线数据集，请使用平均等值线间距的一半。</para>
+		/// <para>该值必须大于等于零。如果数据类型是 等值线，则默认值为 2.5；如果数据类型是 点，则默认值为零。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -259,8 +259,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Tolerance 2</para>
-		/// <para>This tolerance prevents drainage clearance through unrealistically high barriers.</para>
-		/// <para>The value must be greater than zero. The default is 100 if the data type is Contour and 200 if the data type is Spot.</para>
+		/// <para>此容差将通过极大的界限值防止产生地形间隙。</para>
+		/// <para>值必须大于零。如果数据类型是 等值线，则默认值为 100；如果数据类型是 点，则默认值为 200。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -270,18 +270,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output stream polyline features</para>
-		/// <para>The output line feature class of stream polyline features and ridge line features.</para>
-		/// <para>The line features are created at the beginning of the interpolation process. It provides the general morphology of the surface for interpolation. It can be used to verify correct drainage and morphology by comparing known stream and ridge data.</para>
-		/// <para>The polyline features are coded as follows:</para>
-		/// <para>1. Input stream line not over cliff.</para>
-		/// <para>2. Input stream line over cliff (waterfall).</para>
-		/// <para>3. Drainage enforcement clearing a spurious sink.</para>
-		/// <para>4. Stream line determined from contour corner.</para>
-		/// <para>5. Ridge line determined from contour corner.</para>
-		/// <para>6. Code not used.</para>
-		/// <para>7. Data stream line side conditions.</para>
-		/// <para>8. Code not used.</para>
-		/// <para>9. Line indicating large elevation data clearance.</para>
+		/// <para>河流折线要素和山脊线要素的输出线要素类。</para>
+		/// <para>线要素创建于插值过程开始之时。它提供了插值表面的大致形态。此值可用于通过比较已知河流和山脊数据验证地形和形态的正确性。</para>
+		/// <para>折线要素按如下方式编码：</para>
+		/// <para>1. 不在悬崖上的输入河流线。</para>
+		/// <para>2. 在悬崖上的输入河流线（瀑布）。</para>
+		/// <para>3. 清除伪汇的地形强化。</para>
+		/// <para>4. 从等值线拐角确定的河流线。</para>
+		/// <para>5. 从等值线拐角确定的山脊线。</para>
+		/// <para>6. 未使用代码。</para>
+		/// <para>7. 数据河流线边条件。</para>
+		/// <para>8. 未使用代码。</para>
+		/// <para>9. 表示大型高程数据间隙的线。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -290,8 +290,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output remaining sink point features</para>
-		/// <para>The output point feature class of the remaining sink point features.</para>
-		/// <para>These are the sinks that were not specified in the sink input feature data and were not cleared during drainage enforcement. Adjusting the values of the tolerances, Tolerance 1 and Tolerance 2, can reduce the number of remaining sinks. Remaining sinks often indicate errors in the input data that the drainage enforcement algorithm could not resolve. This can be an efficient way of detecting subtle elevation errors.</para>
+		/// <para>遗留汇点要素的输出点要素类。</para>
+		/// <para>这些汇未在汇输入要素数据中进行指定且在地形强化期间未被清除。调整容差值（容差 1 和容差 2）可减少遗留汇的数量。遗留汇通常用于指示输入数据中地形加强算法无法解决的误差。这是检测微小高程误差的有效方法。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -300,7 +300,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output diagnostic file</para>
-		/// <para>The output diagnostic file listing all inputs and parameters used and the number of sinks cleared at each resolution and iteration.</para>
+		/// <para>此输出诊断文件列出了使用的所有输入和参数以及各分辨率和迭代中清除的汇数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -311,7 +311,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output parameter file</para>
-		/// <para>The output parameter file listing all inputs and parameters used, which can be used with Topo to Raster by File to run the interpolation again.</para>
+		/// <para>此输出参数文件列出了使用的所有输入和参数，这些输入和参数可与通过文件实现地形转栅格结合使用以便再次运行插值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -322,8 +322,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Profile curvature roughness penalty</para>
-		/// <para>The profile curvature roughness penalty is a locally adaptive penalty that can be used to partly replace total curvature.</para>
-		/// <para>It can yield good results with high-quality contour data but can lead to instability in convergence with poor data. Set to 0.0 for no profile curvature (the default), set to 0.5 for moderate profile curvature, and set to 0.8 for maximum profile curvature. Values larger than 0.8 are not recommended and should not be used.</para>
+		/// <para>剖面曲率粗糙度惩罚系数是一个可用于部分替换总曲率的局部自适应惩罚系数。</para>
+		/// <para>使用高质量的等值线数据会获得良好的成果，但是对于质量差的数据，会导致收敛不稳定。对于无剖面曲率，设置为 0.0（默认值）；对于中等剖面曲率，设置为 0.5；对于最大剖面曲率，设置为 0.8。不建议并且也不应使用大于 0.8 的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -333,8 +333,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output residual point features</para>
-		/// <para>The output point feature class of all the large elevation residuals as scaled by the local discretisation error.</para>
-		/// <para>All the scaled residuals larger than 10 should be inspected for possible errors in input elevation and stream data. Large-scaled residuals indicate conflicts between input elevation data and streamline data. These may also be associated with poor automatic drainage enforcements. These conflicts can be remedied by providing additional streamline and/or point elevation data after first checking and correcting errors in existing input data. Large unscaled residuals usually indicate input elevation errors.</para>
+		/// <para>由局部离散误差进行衡量的所有大高程残差的输出点要素类。</para>
+		/// <para>应对所有大于 10 的比例缩放残差进行检查，查看输入高程和河流数据是否存在错误。大比例缩放残差表示输入高程数据和河流线数据之间存在冲突。这可能也与不良的自动地形强化有关。这些冲突可以通过在首次检查和纠正现有输入数据中的错误后提供附加的流线和/或点高程数据来进行修复。未大比例缩放的残差通常表示存在输入高程误差。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -343,22 +343,22 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output stream and cliff error point features</para>
-		/// <para>The output point feature class of locations where possible stream and cliff errors occur.</para>
-		/// <para>The locations where the streams have closed loops, distributaries, and streams over cliffs can be identified from the point feature class. Cliffs with neighboring cells that are inconsistent with the high and low sides of the cliff are also indicated. This can be a good indicator of cliffs with incorrect direction.</para>
-		/// <para>Points are coded as follows:</para>
-		/// <para>1. True circuit in data streamline network.</para>
-		/// <para>2. Circuit in stream network as encoded on the out raster.</para>
-		/// <para>3. Circuit in stream network via connecting lakes.</para>
-		/// <para>4. Distributaries point.</para>
-		/// <para>5. Stream over a cliff (waterfall).</para>
-		/// <para>6. Points indicating multiple stream outflows from lakes.</para>
-		/// <para>7. Code not used.</para>
-		/// <para>8. Points beside cliffs with heights inconsistent with cliff direction.</para>
-		/// <para>9. Code not used.</para>
-		/// <para>10. Circular distributary removed.</para>
-		/// <para>11. Distributary with no inflowing stream.</para>
-		/// <para>12. Rasterized distributary in output cell different to where the data stream line distributary occurs.</para>
-		/// <para>13. Error processing side conditions—an indicator of very complex streamline data.</para>
+		/// <para>可能出现河流和悬崖错误的位置的输出点要素类。</para>
+		/// <para>可从点要素类来识别其河流有闭合环、支流和悬崖上河流的位置。还可识别相邻像元与悬崖高低边不一致的悬崖。这可以理想地指出方向错误的悬崖。</para>
+		/// <para>点按如下方式编码：</para>
+		/// <para>1. 数据河流线网络中的真回路。</para>
+		/// <para>2. 以外栅格编码的河流网络中的回路。</para>
+		/// <para>3. 通过连接湖泊的河流网络中的回路。</para>
+		/// <para>4. 支流点。</para>
+		/// <para>5. 悬崖上的河流（瀑布）。</para>
+		/// <para>6. 表示从湖泊流出多条河流的点。</para>
+		/// <para>7. 未使用代码。</para>
+		/// <para>8. 悬崖旁高度与悬崖方向不一致的点。</para>
+		/// <para>9. 未使用代码。</para>
+		/// <para>10. 已移除圆形支流。</para>
+		/// <para>11. 无流入河流的支流。</para>
+		/// <para>12. 不同于出现数据河流线支流位置的输出像元中的栅格化支流。</para>
+		/// <para>13. 处理边条件时出错 - 非常复杂的河流线数据的指示符。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -367,8 +367,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output contour error point features</para>
-		/// <para>The output point feature class of possible errors pertaining to the input contour data.</para>
-		/// <para>Contours with bias in height exceeding five times the standard deviation of the contour values as represented on the output raster are reported to this feature class. Contours that join other contours with a different elevation are flagged in this feature class by the code 1; this is a sure sign of a contour label error.</para>
+		/// <para>可能发生的与输入等值线数据相关的错误的输出点要素类。</para>
+		/// <para>高度偏差达到输出栅格所示等值线值标准偏差五倍以上的等值线会报告至此要素类。与不同高程值的等值线相连接的等值线在此要素类中会使用代码 1 进行标记，这是等值线标注错误的明确标志。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -392,24 +392,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum EnforceEnum 
 		{
 			/// <summary>
-			/// <para>Enforce—The algorithm will attempt to remove all sinks it encounters, whether they are real or spurious. This is the default.</para>
+			/// <para>强制—该算法将尝试移除遇到的所有汇，无论是“真”汇还是“伪”汇。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ENFORCE")]
-			[Description("Enforce")]
+			[Description("强制")]
 			Enforce,
 
 			/// <summary>
-			/// <para>Do not enforce—No sinks will be filled.</para>
+			/// <para>不强化—汇不会被填充。</para>
 			/// </summary>
 			[GPValue("NO_ENFORCE")]
-			[Description("Do not enforce")]
+			[Description("不强化")]
 			Do_not_enforce,
 
 			/// <summary>
-			/// <para>Enforce with sink—Points identified as sinks in Input feature data represent known topographic depressions and will not be altered. Any sink not identified in input feature data is considered spurious, and the algorithm will attempt to fill it.Having more than 8,000 spurious sinks causes the tool to fail.</para>
+			/// <para>通过凹陷强化—输入要素数据中已指出为汇的点表示已知的地形凹陷并且将不会被更改。输入要素数据中未指出的所有汇均将视为伪汇，算法将尝试填充此汇。伪汇数量超过 8,000 个将导致工具无法使用。</para>
 			/// </summary>
 			[GPValue("ENFORCE_WITH_SINK")]
-			[Description("Enforce with sink")]
+			[Description("通过凹陷强化")]
 			Enforce_with_sink,
 
 		}
@@ -420,17 +420,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum DataTypeEnum 
 		{
 			/// <summary>
-			/// <para>Contour—The dominant type of input data will be elevation contours. This is the default.</para>
+			/// <para>等值线—输入数据的主要类型为高程等值线。这是默认设置。</para>
 			/// </summary>
 			[GPValue("CONTOUR")]
-			[Description("Contour")]
+			[Description("等值线")]
 			Contour,
 
 			/// <summary>
-			/// <para>Spot—The dominant type of input will be point.</para>
+			/// <para>点—输入的主要类型为点。</para>
 			/// </summary>
 			[GPValue("SPOT")]
-			[Description("Spot")]
+			[Description("点")]
 			Spot,
 
 		}

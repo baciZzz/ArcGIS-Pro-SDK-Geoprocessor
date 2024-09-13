@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Enable Referent Fields</para>
-	/// <para>Enable Referent Fields</para>
-	/// <para>Enables or modifies the referent fields so that you can  manage referent information for the registered LRS event.</para>
+	/// <para>启用参考字段</para>
+	/// <para>启用或修改参考字段，这样您可以管理已注册 LRS 事件的参考信息。</para>
 	/// </summary>
 	public class EnableReferentFields : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InFeatureClass">
 		/// <para>Event Feature Class</para>
-		/// <para>The feature class that will be used for the LRS event.</para>
+		/// <para>将用于 LRS 事件的要素类。</para>
 		/// </param>
 		public EnableReferentFields(object InFeatureClass)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Enable Referent Fields</para>
+		/// <para>Tool Display Name : 启用参考字段</para>
 		/// </summary>
-		public override string DisplayName() => "Enable Referent Fields";
+		public override string DisplayName() => "启用参考字段";
 
 		/// <summary>
 		/// <para>Tool Name : EnableReferentFields</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Event Feature Class</para>
-		/// <para>The feature class that will be used for the LRS event.</para>
+		/// <para>将用于 LRS 事件的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Referent Method Field</para>
-		/// <para>The From referent method field.</para>
+		/// <para>自参考方法字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Referent Location Field</para>
-		/// <para>The From referent location field.</para>
+		/// <para>自参考位置字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Referent Offset Field</para>
-		/// <para>The From referent offset field.</para>
+		/// <para>自参考偏移字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Referent Method Field</para>
-		/// <para>The To referent method field.</para>
+		/// <para>至参考方法字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Referent Location Field</para>
-		/// <para>The To referent location field.</para>
+		/// <para>至参考位置字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Referent Offset Field</para>
-		/// <para>The To referent offset field.</para>
+		/// <para>至参考偏移字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -135,18 +135,18 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Offset Units</para>
-		/// <para>Specifies the offset units that will be used.</para>
-		/// <para>Miles (US Survey)—The unit of measure will be miles. This is the default.</para>
-		/// <para>Inches (US Survey)—The unit of measure will be inches.</para>
-		/// <para>Feet (US Survey)—The unit of measure will be feet.</para>
-		/// <para>Yards (US Survey)—The unit of measure will be yards.</para>
-		/// <para>Nautical miles (US Survey)—The unit of measure will be nautical miles.</para>
-		/// <para>Feet (International)—The unit of measure will be international feet.</para>
-		/// <para>Millimeters—The unit of measure will be millimeters.</para>
-		/// <para>Centimeters—The unit of measure will be centimeters</para>
-		/// <para>Meters—The unit of measure will be meters.</para>
-		/// <para>Kilometers—The unit of measure will be kilometers.</para>
-		/// <para>Decimeters—The unit of measure will be decimeters.</para>
+		/// <para>指定要使用的偏移单位。</para>
+		/// <para>英里(美制测量)—测量单位为英里。 这是默认设置。</para>
+		/// <para>英寸(美制测量)—测量单位为英寸。</para>
+		/// <para>英尺(美制测量)—测量单位为英尺。</para>
+		/// <para>码(美制测量)—测量单位为码。</para>
+		/// <para>海里(美制测量)—测量单位为海里。</para>
+		/// <para>英尺(国际)—测量单位为国际英尺。</para>
+		/// <para>毫米—测量单位为毫米。</para>
+		/// <para>厘米—测量单位为厘米。</para>
+		/// <para>米—测量单位为米。</para>
+		/// <para>千米—测量单位为千米。</para>
+		/// <para>分米—测量单位为分米。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

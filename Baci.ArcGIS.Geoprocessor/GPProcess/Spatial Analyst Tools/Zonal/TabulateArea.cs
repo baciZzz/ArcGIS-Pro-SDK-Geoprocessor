@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Tabulate Area</para>
-	/// <para>Tabulate Area</para>
-	/// <para>Calculates cross-tabulated areas between two datasets and outputs a table.</para>
+	/// <para>区域制表</para>
+	/// <para>计算两个数据集之间交叉制表的区域并输出表。</para>
 	/// </summary>
 	public class TabulateArea : AbstractGPProcess
 	{
@@ -21,28 +21,28 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InZoneData">
 		/// <para>Input raster or feature zone data</para>
-		/// <para>The dataset that defines the zones.</para>
-		/// <para>The zones can be defined by an integer raster or a feature layer.</para>
+		/// <para>定义区域的数据集。</para>
+		/// <para>可通过整型栅格或要素图层来定义区域。</para>
 		/// </param>
 		/// <param name="ZoneField">
 		/// <para>Zone field</para>
-		/// <para>The field that contains the values that define each zone.</para>
-		/// <para>It can be an integer or a string field of the zone dataset.</para>
+		/// <para>包含定义每个区域的值的字段。</para>
+		/// <para>该字段可以是区域数据集的整型字段或字符串型字段。</para>
 		/// </param>
 		/// <param name="InClassData">
 		/// <para>Input raster or feature class data</para>
-		/// <para>The dataset that defines the classes that will have their area summarized within each zone.</para>
-		/// <para>The class input can be an integer raster layer or a feature layer.</para>
+		/// <para>定义类的数据集将在各个区域内对类的面积进行汇总。</para>
+		/// <para>类输入可以是整型栅格图层或要素图层。</para>
 		/// </param>
 		/// <param name="ClassField">
 		/// <para>Class field</para>
-		/// <para>The field that holds the class values.</para>
-		/// <para>It can be an integer or a string field of the input class data.</para>
+		/// <para>用于保存类值的字段。</para>
+		/// <para>该字段可以是输入类数据的整型或字符串型字段。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output table</para>
-		/// <para>The output table that will contain the summary of the area of each class in each zone.</para>
-		/// <para>The format of the table is determined by the output location and path. By default, the output will be a geodatabase table if in a geodatabase workspace, and a dBASE table if in a file workspace.</para>
+		/// <para>将包含各区域中各个类面积的汇总的输出表。</para>
+		/// <para>表的格式由输出位置和路径确定。 默认情况下，如果在地理数据库工作空间中，则输出将是一个地理数据库表；如果在文件工作空间中，则输出将为 dBASE 表。</para>
 		/// </param>
 		public TabulateArea(object InZoneData, object ZoneField, object InClassData, object ClassField, object OutTable)
 		{
@@ -54,9 +54,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Tabulate Area</para>
+		/// <para>Tool Display Name : 区域制表</para>
 		/// </summary>
-		public override string DisplayName() => "Tabulate Area";
+		public override string DisplayName() => "区域制表";
 
 		/// <summary>
 		/// <para>Tool Name : TabulateArea</para>
@@ -90,8 +90,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature zone data</para>
-		/// <para>The dataset that defines the zones.</para>
-		/// <para>The zones can be defined by an integer raster or a feature layer.</para>
+		/// <para>定义区域的数据集。</para>
+		/// <para>可通过整型栅格或要素图层来定义区域。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -103,8 +103,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Zone field</para>
-		/// <para>The field that contains the values that define each zone.</para>
-		/// <para>It can be an integer or a string field of the zone dataset.</para>
+		/// <para>包含定义每个区域的值的字段。</para>
+		/// <para>该字段可以是区域数据集的整型字段或字符串型字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -114,8 +114,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature class data</para>
-		/// <para>The dataset that defines the classes that will have their area summarized within each zone.</para>
-		/// <para>The class input can be an integer raster layer or a feature layer.</para>
+		/// <para>定义类的数据集将在各个区域内对类的面积进行汇总。</para>
+		/// <para>类输入可以是整型栅格图层或要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -127,8 +127,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Class field</para>
-		/// <para>The field that holds the class values.</para>
-		/// <para>It can be an integer or a string field of the input class data.</para>
+		/// <para>用于保存类值的字段。</para>
+		/// <para>该字段可以是输入类数据的整型或字符串型字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -138,8 +138,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output table</para>
-		/// <para>The output table that will contain the summary of the area of each class in each zone.</para>
-		/// <para>The format of the table is determined by the output location and path. By default, the output will be a geodatabase table if in a geodatabase workspace, and a dBASE table if in a file workspace.</para>
+		/// <para>将包含各区域中各个类面积的汇总的输出表。</para>
+		/// <para>表的格式由输出位置和路径确定。 默认情况下，如果在地理数据库工作空间中，则输出将是一个地理数据库表；如果在文件工作空间中，则输出将为 dBASE 表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -147,8 +147,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Processing cell size</para>
-		/// <para>The cell size of the output raster that will be created.</para>
-		/// <para>This parameter can be defined by a numeric value or obtained from an existing raster dataset. If the cell size hasn&apos;t been explicitly specified as the parameter value, the environment cell size value will be used if specified; otherwise, additional rules will be used to calculate it from the other inputs. See the usage section for more detail.</para>
+		/// <para>将创建的输出栅格的像元大小。</para>
+		/// <para>此参数可以通过数值进行定义，也可以从现有栅格数据集获取。 如果未将像元大小明确指定为参数值，则将使用环境像元大小值（如果已指定）；否则，将使用其他规则通过其他输出计算像元大小。 有关详细信息，请参阅用法部分。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -160,9 +160,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Classes as rows in output table</para>
-		/// <para>Specifies how the values from the input class raster will be represented in the output table.</para>
-		/// <para>Unchecked—Classes will be represented as fields. This is the default.</para>
-		/// <para>Checked—Classes will be represented as rows.</para>
+		/// <para>指定输入类栅格中的值在输出表中的表示方式。</para>
+		/// <para>未选中 - 类将表示为字段。这是默认设置。</para>
+		/// <para>选中 - 类将表示为行。</para>
 		/// <para><see cref="ClassesAsRowsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -187,14 +187,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ClassesAsRowsEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Classes will be represented as fields. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CLASSES_AS_FIELDS")]
 			CLASSES_AS_FIELDS,
 
 			/// <summary>
-			/// <para>Checked—Classes will be represented as rows.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLASSES_AS_ROWS")]

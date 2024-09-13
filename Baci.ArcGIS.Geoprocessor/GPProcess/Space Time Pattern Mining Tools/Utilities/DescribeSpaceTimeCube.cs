@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Describe Space Time Cube</para>
-	/// <para>Describe Space Time Cube</para>
-	/// <para>Summarizes the contents and characteristics of a space-time cube. The tool describes the temporal and spatial extent of the space-time cube, the variables in the space-time cube, the analyses performed on each variable, and the 2D and 3D display themes available for each variable.</para>
+	/// <para>描述时空立方体</para>
+	/// <para>汇总时空立方体的内容和特征。 该工具描述了时空立方体的时间和空间范围、时空立方体中的变量、对每个变量执行的分析以及每个变量可用的 2D 和 3D 显示主题。</para>
 	/// </summary>
 	public class DescribeSpaceTimeCube : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		/// <param name="InCube">
 		/// <para>Input Space Time Cube</para>
-		/// <para>The space-time cube to be described. Space-time cubes have an .nc file extension and are created using various tools in the Space Time Pattern Mining toolbox.</para>
+		/// <para>要描述的时空立方体。 时空立方体具有 .nc 文件扩展名，是使用时空模式挖掘工具箱中的各种工具创建的。</para>
 		/// </param>
 		public DescribeSpaceTimeCube(object InCube)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Describe Space Time Cube</para>
+		/// <para>Tool Display Name : 描述时空立方体</para>
 		/// </summary>
-		public override string DisplayName() => "Describe Space Time Cube";
+		public override string DisplayName() => "描述时空立方体";
 
 		/// <summary>
 		/// <para>Tool Name : DescribeSpaceTimeCube</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Input Space Time Cube</para>
-		/// <para>The space-time cube to be described. Space-time cubes have an .nc file extension and are created using various tools in the Space Time Pattern Mining toolbox.</para>
+		/// <para>要描述的时空立方体。 时空立方体具有 .nc 文件扩展名，是使用时空模式挖掘工具箱中的各种工具创建的。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Output Characteristics Table</para>
-		/// <para>The table containing summary information about the input space-time cube.</para>
+		/// <para>包含有关输入时空立方体的汇总信息的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Output Spatial Extent Features</para>
-		/// <para>A feature class with a single rectangle that represents the spatial extent of the input space-time cube.</para>
+		/// <para>此要素类中包含一个表示输入时空立方体空间范围的矩形。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Export Map Server Cache</para>
-	/// <para>Export Map Server Cache</para>
-	/// <para>Exports tiles from a map image layer cache as a cache dataset or tile package to a folder on disk. The tiles can be imported into other caches, or they can be accessed from ArcGIS Desktop or mobile devices as a raster dataset, independent from their parent service.</para>
+	/// <para>导出地图服务器缓存</para>
+	/// <para>用于将地图图像图层缓存的切片作为缓存数据集或切片包导出至磁盘上的文件夹中。 切片可导入至其他缓存中，也可以以独立于其父服务的方式，作为一个栅格数据集从 ArcGIS Desktop 或移动设备中进行访问。</para>
 	/// </summary>
 	public class ExportMapServerCache : AbstractGPProcess
 	{
@@ -21,37 +21,37 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		/// <param name="InputService">
 		/// <para>Input Service</para>
-		/// <para>The map image layer with the cache tiles to be exported. You can choose it by browsing to the desired service in a portal or you can drag a web tile layer from the Portal tab in the Project pane to supply this parameter.</para>
+		/// <para>带有要导出的缓存切片的地图图像图层。 可以通过在门户中浏览至所需的服务来对其进行选择，也可以从工程窗格的门户选项卡拖放一个 web 切片图层来提供此参数。</para>
 		/// </param>
 		/// <param name="TargetCachePath">
 		/// <para>Target Cache Path</para>
-		/// <para>The folder into which the cache will be exported. This folder does not have to be a registered server cache directory. The ArcGIS Server account must have write access to the target cache folder. If the server account cannot be granted write access to the destination folder but the ArcGIS Desktop or ArcGIS Pro client has write access to it, choose the Copy data from server parameter.</para>
+		/// <para>缓存将被导出到的目标文件夹。 此文件夹不必是一个已注册的服务器缓存目录。 ArcGIS Server 帐户必须拥有对目标缓存文件夹的写入权限。 如果无法对服务器帐户授予目标文件夹的写入权限，但 ArcGIS Desktop 或 ArcGIS Pro 客户端拥有目标文件夹的写入权限，请选择从服务器复制数据参数。</para>
 		/// </param>
 		/// <param name="ExportCacheType">
 		/// <para>Export cache type</para>
-		/// <para>Exports a cache as a cache dataset or a tile package. Tile packages are suitable for ArcGIS Runtime and ArcGIS Mobile deployments.</para>
-		/// <para>Cache dataset—A map or image service cache that is generated using ArcGIS Server. It can be used in ArcGIS Desktop and by ArcGIS Server map or image services. This is the default.</para>
-		/// <para>Tile package—A single compressed file where the cache dataset is added as a layer and consolidated so that it can be shared. In can be used in ArcGIS Desktop, ArcGIS Runtime, and mobile apps.</para>
+		/// <para>将缓存作为缓存数据集或切片包导出。 切片包适用于 ArcGIS Runtime 和 ArcGIS Mobile 部署。</para>
+		/// <para>缓存数据集—使用 ArcGIS Server 生成的地图或影像服务缓存。 其可用于 ArcGIS Desktop 并通过 ArcGIS Server 地图或影像服务对其进行使用。 这是默认设置。</para>
+		/// <para>切片包—将缓存数据集作为图层添加并合并以便实现共享的单个压缩文件。 其可用于 ArcGIS Desktop、ArcGIS Runtime 和移动应用程序。</para>
 		/// <para><see cref="ExportCacheTypeEnum"/></para>
 		/// </param>
 		/// <param name="CopyDataFromServer">
 		/// <para>Copy data from server</para>
-		/// <para>Check this parameter only if the ArcGIS Server account cannot be granted write access to the target folder and the ArcGIS Desktop or ArcGIS Pro client has write access to it. The software exports the tiles in the server output directory before moving them to the target folder.</para>
-		/// <para>Checked—Tiles are placed in the server output directory and are then moved to the target folder. The ArcGIS Desktop client must have write access to the target folder.</para>
-		/// <para>Unchecked—Tiles are exported directly into the target folder. The ArcGIS Server account must have write access to the target folder.</para>
+		/// <para>只在以下情况下选中此参数：无法向 ArcGIS Server 帐户授予目标文件夹的写入权限，但 ArcGIS Desktop 或 ArcGIS Pro 客户端拥有目标文件夹的写入权限。 软件会在将服务器输出目录中的切片移至目标文件夹前将其导出。</para>
+		/// <para>选中 - 将切片放入服务器输出目录中，随后将其移至目标文件夹。 ArcGIS Desktop 客户端必须具有对目标文件夹的写入权限。</para>
+		/// <para>未选中 - 切片被直接导出到目标文件夹。 ArcGIS Server 帐户必须具有对目标文件夹的写入权限。</para>
 		/// <para><see cref="CopyDataFromServerEnum"/></para>
 		/// </param>
 		/// <param name="StorageFormatType">
 		/// <para>Storage Format Type</para>
-		/// <para>The storage format of the exported cache.</para>
-		/// <para>Compact— Tiles are grouped in bundle and bundlex files to save space on disk and allow for faster copying of caches. If the Export cache type parameter is set to Tile package, this is the default.</para>
-		/// <para>Compact V2— Tiles are grouped in bundle files only. This format provides better performance on network shares and cloudstore directories. If the Export cache type parameter is set to Tile package then the extension of the tile package is (.tpkx),which is supported by newer versions of the ArcGIS Platform such as ArcGIS Online, ArcGIS Enterprise 11 and ArcGIS Runtime 100.5.</para>
-		/// <para>Exploded—Each tile is stored as an individual file (the way caches were stored prior to ArcGIS Server).</para>
+		/// <para>导出的缓存的存储格式。</para>
+		/// <para>紧凑型—切片被组织到包和 bundlex 文件中以节省磁盘空间并允许以较快的速度复制缓存。 如果将导出缓存类型参数设置为切片包，则此为默认设置。</para>
+		/// <para>紧凑型 V2—仅能将切片组织到包文件中。 这种格式使得网络共享和云存储目录拥有了更好的性能。 如果将导出缓存类型参数设置为切片包，则切片包的扩展名为较新版本的 ArcGIS 平台，如 ArcGIS Online、ArcGIS Enterprise 11 和 ArcGIS Runtime 100.5 均支持的 (.tpkx)。</para>
+		/// <para>松散型—每个文件都将作为单个文件进行存储（在 ArcGIS Server 之前的版本中，均以这种方式存储缓存）。</para>
 		/// <para><see cref="StorageFormatTypeEnum"/></para>
 		/// </param>
 		/// <param name="Scales">
 		/// <para>Scales</para>
-		/// <para>A list of scale levels at which tiles will be exported.</para>
+		/// <para>导出切片时使用的比例级别列表。</para>
 		/// </param>
 		public ExportMapServerCache(object InputService, object TargetCachePath, object ExportCacheType, object CopyDataFromServer, object StorageFormatType, object Scales)
 		{
@@ -64,9 +64,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Export Map Server Cache</para>
+		/// <para>Tool Display Name : 导出地图服务器缓存</para>
 		/// </summary>
-		public override string DisplayName() => "Export Map Server Cache";
+		public override string DisplayName() => "导出地图服务器缓存";
 
 		/// <summary>
 		/// <para>Tool Name : ExportMapServerCache</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Input Service</para>
-		/// <para>The map image layer with the cache tiles to be exported. You can choose it by browsing to the desired service in a portal or you can drag a web tile layer from the Portal tab in the Project pane to supply this parameter.</para>
+		/// <para>带有要导出的缓存切片的地图图像图层。 可以通过在门户中浏览至所需的服务来对其进行选择，也可以从工程窗格的门户选项卡拖放一个 web 切片图层来提供此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Target Cache Path</para>
-		/// <para>The folder into which the cache will be exported. This folder does not have to be a registered server cache directory. The ArcGIS Server account must have write access to the target cache folder. If the server account cannot be granted write access to the destination folder but the ArcGIS Desktop or ArcGIS Pro client has write access to it, choose the Copy data from server parameter.</para>
+		/// <para>缓存将被导出到的目标文件夹。 此文件夹不必是一个已注册的服务器缓存目录。 ArcGIS Server 帐户必须拥有对目标缓存文件夹的写入权限。 如果无法对服务器帐户授予目标文件夹的写入权限，但 ArcGIS Desktop 或 ArcGIS Pro 客户端拥有目标文件夹的写入权限，请选择从服务器复制数据参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -116,9 +116,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Export cache type</para>
-		/// <para>Exports a cache as a cache dataset or a tile package. Tile packages are suitable for ArcGIS Runtime and ArcGIS Mobile deployments.</para>
-		/// <para>Cache dataset—A map or image service cache that is generated using ArcGIS Server. It can be used in ArcGIS Desktop and by ArcGIS Server map or image services. This is the default.</para>
-		/// <para>Tile package—A single compressed file where the cache dataset is added as a layer and consolidated so that it can be shared. In can be used in ArcGIS Desktop, ArcGIS Runtime, and mobile apps.</para>
+		/// <para>将缓存作为缓存数据集或切片包导出。 切片包适用于 ArcGIS Runtime 和 ArcGIS Mobile 部署。</para>
+		/// <para>缓存数据集—使用 ArcGIS Server 生成的地图或影像服务缓存。 其可用于 ArcGIS Desktop 并通过 ArcGIS Server 地图或影像服务对其进行使用。 这是默认设置。</para>
+		/// <para>切片包—将缓存数据集作为图层添加并合并以便实现共享的单个压缩文件。 其可用于 ArcGIS Desktop、ArcGIS Runtime 和移动应用程序。</para>
 		/// <para><see cref="ExportCacheTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -128,9 +128,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Copy data from server</para>
-		/// <para>Check this parameter only if the ArcGIS Server account cannot be granted write access to the target folder and the ArcGIS Desktop or ArcGIS Pro client has write access to it. The software exports the tiles in the server output directory before moving them to the target folder.</para>
-		/// <para>Checked—Tiles are placed in the server output directory and are then moved to the target folder. The ArcGIS Desktop client must have write access to the target folder.</para>
-		/// <para>Unchecked—Tiles are exported directly into the target folder. The ArcGIS Server account must have write access to the target folder.</para>
+		/// <para>只在以下情况下选中此参数：无法向 ArcGIS Server 帐户授予目标文件夹的写入权限，但 ArcGIS Desktop 或 ArcGIS Pro 客户端拥有目标文件夹的写入权限。 软件会在将服务器输出目录中的切片移至目标文件夹前将其导出。</para>
+		/// <para>选中 - 将切片放入服务器输出目录中，随后将其移至目标文件夹。 ArcGIS Desktop 客户端必须具有对目标文件夹的写入权限。</para>
+		/// <para>未选中 - 切片被直接导出到目标文件夹。 ArcGIS Server 帐户必须具有对目标文件夹的写入权限。</para>
 		/// <para><see cref="CopyDataFromServerEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -140,10 +140,10 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Storage Format Type</para>
-		/// <para>The storage format of the exported cache.</para>
-		/// <para>Compact— Tiles are grouped in bundle and bundlex files to save space on disk and allow for faster copying of caches. If the Export cache type parameter is set to Tile package, this is the default.</para>
-		/// <para>Compact V2— Tiles are grouped in bundle files only. This format provides better performance on network shares and cloudstore directories. If the Export cache type parameter is set to Tile package then the extension of the tile package is (.tpkx),which is supported by newer versions of the ArcGIS Platform such as ArcGIS Online, ArcGIS Enterprise 11 and ArcGIS Runtime 100.5.</para>
-		/// <para>Exploded—Each tile is stored as an individual file (the way caches were stored prior to ArcGIS Server).</para>
+		/// <para>导出的缓存的存储格式。</para>
+		/// <para>紧凑型—切片被组织到包和 bundlex 文件中以节省磁盘空间并允许以较快的速度复制缓存。 如果将导出缓存类型参数设置为切片包，则此为默认设置。</para>
+		/// <para>紧凑型 V2—仅能将切片组织到包文件中。 这种格式使得网络共享和云存储目录拥有了更好的性能。 如果将导出缓存类型参数设置为切片包，则切片包的扩展名为较新版本的 ArcGIS 平台，如 ArcGIS Online、ArcGIS Enterprise 11 和 ArcGIS Runtime 100.5 均支持的 (.tpkx)。</para>
+		/// <para>松散型—每个文件都将作为单个文件进行存储（在 ArcGIS Server 之前的版本中，均以这种方式存储缓存）。</para>
 		/// <para><see cref="StorageFormatTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Scales</para>
-		/// <para>A list of scale levels at which tiles will be exported.</para>
+		/// <para>导出切片时使用的比例级别列表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Number of caching service instances</para>
-		/// <para>Specifies the number of instances that will be used to update or generate the tiles. The value for this parameter is set to unlimited (-1) and cannot be modified.</para>
+		/// <para>指定用于更新或生成切片的实例数。 该参数的值将设置为无限 (-1)，且无法进行修改。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -169,8 +169,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Area Of Interest</para>
-		/// <para>An area of interest that spatially constrains where tiles are exported from the cache. This parameter is useful if you want to export irregularly shaped areas, as the tool clips the cache dataset at pixel resolution.</para>
-		/// <para>If you do not specify an area of interest, the full extent of the map is exported.</para>
+		/// <para>对从缓存中导出切片的位置进行空间约束的感兴趣区。 由于该工具在像素级别上裁剪缓存数据集，所以此参数在您想要导出形状不规则的区域时非常有用。</para>
+		/// <para>若未指定感兴趣区，则会导出地图的全图范围。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -178,11 +178,11 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Export Extent</para>
-		/// <para>A rectangular extent defining the tiles to be exported. By default, the extent is set to the full extent of the map service into which you are importing. Note that the optional parameter on this tool, Area Of Interest, allows you to alternatively import using a polygon. It is recommended that you not provide values for both parameters for a job. If values are provided for both parameters, the Area Of Interest parameter takes precedence over Import Extent.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Current Display Extent—The extent is equal to the data frame or visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>定义要导出的切片的矩形范围。 默认情况下，此范围将设置为要导入切片所属的地图服务的全图范围。 请注意此感兴趣区工具中的可选参数，它允许您使用面要素进行导入操作。 建议不要为一个作业的两个参数都提供值。 如果为两个参数都提供了值，则感兴趣区参数的优先级高于导入范围。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>当前显示范围 - 该范围与数据框或可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -191,9 +191,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Overwrite Tiles</para>
-		/// <para>Specifies whether the images in the receiving cache will be merged with the tiles from the originating cache or overwritten by them.</para>
-		/// <para>Checked—The export replaces all pixels in the area of interest, effectively overwriting tiles in the destination cache with tiles from the originating cache.</para>
-		/// <para>Unchecked—When the tiles are exported, transparent pixels in the originating cache are ignored by default. This results in a merged or blended image in the destination cache. This is the default.</para>
+		/// <para>指定接收缓存中的图像是与原始缓存中的切片合并，还是被其覆盖。</para>
+		/// <para>选中 - 导出过程会替换感兴趣区域的所有像素，并用原始缓存中的切片有效覆盖目标缓存中的切片。</para>
+		/// <para>未选中 - 导出切片后，默认情况下将忽略原始缓存中的透明像素。 将导致目标缓存中的图像合并或混合。 这是默认设置。</para>
 		/// <para><see cref="OverwriteEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -216,17 +216,17 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		public enum ExportCacheTypeEnum 
 		{
 			/// <summary>
-			/// <para>Tile package—A single compressed file where the cache dataset is added as a layer and consolidated so that it can be shared. In can be used in ArcGIS Desktop, ArcGIS Runtime, and mobile apps.</para>
+			/// <para>切片包—将缓存数据集作为图层添加并合并以便实现共享的单个压缩文件。 其可用于 ArcGIS Desktop、ArcGIS Runtime 和移动应用程序。</para>
 			/// </summary>
 			[GPValue("TILE_PACKAGE")]
-			[Description("Tile package")]
+			[Description("切片包")]
 			Tile_package,
 
 			/// <summary>
-			/// <para>Cache dataset—A map or image service cache that is generated using ArcGIS Server. It can be used in ArcGIS Desktop and by ArcGIS Server map or image services. This is the default.</para>
+			/// <para>缓存数据集—使用 ArcGIS Server 生成的地图或影像服务缓存。 其可用于 ArcGIS Desktop 并通过 ArcGIS Server 地图或影像服务对其进行使用。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("CACHE_DATASET")]
-			[Description("Cache dataset")]
+			[Description("缓存数据集")]
 			Cache_dataset,
 
 		}
@@ -237,14 +237,14 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		public enum CopyDataFromServerEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Tiles are placed in the server output directory and are then moved to the target folder. The ArcGIS Desktop client must have write access to the target folder.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COPY_DATA")]
 			COPY_DATA,
 
 			/// <summary>
-			/// <para>Unchecked—Tiles are exported directly into the target folder. The ArcGIS Server account must have write access to the target folder.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_COPY")]
@@ -258,24 +258,24 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		public enum StorageFormatTypeEnum 
 		{
 			/// <summary>
-			/// <para>Compact V2— Tiles are grouped in bundle files only. This format provides better performance on network shares and cloudstore directories. If the Export cache type parameter is set to Tile package then the extension of the tile package is (.tpkx),which is supported by newer versions of the ArcGIS Platform such as ArcGIS Online, ArcGIS Enterprise 11 and ArcGIS Runtime 100.5.</para>
+			/// <para>紧凑型 V2—仅能将切片组织到包文件中。 这种格式使得网络共享和云存储目录拥有了更好的性能。 如果将导出缓存类型参数设置为切片包，则切片包的扩展名为较新版本的 ArcGIS 平台，如 ArcGIS Online、ArcGIS Enterprise 11 和 ArcGIS Runtime 100.5 均支持的 (.tpkx)。</para>
 			/// </summary>
 			[GPValue("COMPACT_V2")]
-			[Description("Compact V2")]
+			[Description("紧凑型 V2")]
 			Compact_V2,
 
 			/// <summary>
-			/// <para>Compact— Tiles are grouped in bundle and bundlex files to save space on disk and allow for faster copying of caches. If the Export cache type parameter is set to Tile package, this is the default.</para>
+			/// <para>紧凑型—切片被组织到包和 bundlex 文件中以节省磁盘空间并允许以较快的速度复制缓存。 如果将导出缓存类型参数设置为切片包，则此为默认设置。</para>
 			/// </summary>
 			[GPValue("COMPACT")]
-			[Description("Compact")]
+			[Description("紧凑型")]
 			Compact,
 
 			/// <summary>
-			/// <para>Exploded—Each tile is stored as an individual file (the way caches were stored prior to ArcGIS Server).</para>
+			/// <para>松散型—每个文件都将作为单个文件进行存储（在 ArcGIS Server 之前的版本中，均以这种方式存储缓存）。</para>
 			/// </summary>
 			[GPValue("EXPLODED")]
-			[Description("Exploded")]
+			[Description("松散型")]
 			Exploded,
 
 		}
@@ -286,14 +286,14 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		public enum OverwriteEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The export replaces all pixels in the area of interest, effectively overwriting tiles in the destination cache with tiles from the originating cache.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("OVERWRITE")]
 			OVERWRITE,
 
 			/// <summary>
-			/// <para>Unchecked—When the tiles are exported, transparent pixels in the originating cache are ignored by default. This results in a merged or blended image in the destination cache. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("MERGE")]

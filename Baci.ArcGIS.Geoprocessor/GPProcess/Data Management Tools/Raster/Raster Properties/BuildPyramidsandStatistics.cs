@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Pyramids And Statistics</para>
-	/// <para>Build Pyramids And Statistics</para>
-	/// <para>Traverses a folder structure, building pyramids and calculating statistics for all the raster datasets it contains. It can also build pyramids and calculate statistics for all the items in a mosaic dataset.</para>
+	/// <para>构建金字塔和统计数据</para>
+	/// <para>遍历文件夹结构，从而为其所包含的所有栅格数据集构建金字塔并计算统计数据。 也可以为镶嵌数据集中的所有项目构建金字塔并计算统计值。</para>
 	/// </summary>
 	public class BuildPyramidsandStatistics : AbstractGPProcess
 	{
@@ -21,8 +21,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Input Data or Workspace</para>
-		/// <para>The workspace that contains all the raster datasets or mosaic datasets to be processed.</para>
-		/// <para>If the workspace includes a mosaic dataset, only the statistics associated with the mosaic dataset will be included. The statistics associated with the items within the mosaic dataset will not be included.</para>
+		/// <para>包含要处理的所有栅格数据集和镶嵌数据集的工作空间。</para>
+		/// <para>如果工作空间包含镶嵌数据集，则将仅包含与镶嵌数据集相关联的统计数据。 不包含与镶嵌数据集中的各项相关联的统计数据。</para>
 		/// </param>
 		public BuildPyramidsandStatistics(object InWorkspace)
 		{
@@ -30,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Build Pyramids And Statistics</para>
+		/// <para>Tool Display Name : 构建金字塔和统计数据</para>
 		/// </summary>
-		public override string DisplayName() => "Build Pyramids And Statistics";
+		public override string DisplayName() => "构建金字塔和统计数据";
 
 		/// <summary>
 		/// <para>Tool Name : BuildPyramidsandStatistics</para>
@@ -66,8 +66,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Data or Workspace</para>
-		/// <para>The workspace that contains all the raster datasets or mosaic datasets to be processed.</para>
-		/// <para>If the workspace includes a mosaic dataset, only the statistics associated with the mosaic dataset will be included. The statistics associated with the items within the mosaic dataset will not be included.</para>
+		/// <para>包含要处理的所有栅格数据集和镶嵌数据集的工作空间。</para>
+		/// <para>如果工作空间包含镶嵌数据集，则将仅包含与镶嵌数据集相关联的统计数据。 不包含与镶嵌数据集中的各项相关联的统计数据。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -75,10 +75,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Include Sub-directories</para>
-		/// <para>Specifies whether subdirectories will be included.</para>
-		/// <para>Unchecked—Does not include subdirectories.</para>
-		/// <para>Checked—Includes all the raster datasets within the subdirectories when loading. This is the default.</para>
-		/// <para>Mosaic datasets must be specified as an input workspace if you want to include the items within the mosaic dataset. Otherwise, only the statistics associated with the mosaic dataset will be used.</para>
+		/// <para>指定是否包含子目录。</para>
+		/// <para>未选中 - 不包括子目录。</para>
+		/// <para>选中 - 加载时包括子目录中的所有栅格数据集。 这是默认设置。</para>
+		/// <para>如果希望包含镶嵌数据集中的各项，则必须将镶嵌数据集指定为输入工作空间。 否则，将仅使用与镶嵌数据集相关联的统计数据。</para>
 		/// <para><see cref="IncludeSubdirectoriesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -88,9 +88,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Build Pyramids</para>
-		/// <para>Specify whether to build pyramids.</para>
-		/// <para>Unchecked—Does not build pyramids.</para>
-		/// <para>Checked—Builds pyramids. This is the default.</para>
+		/// <para>指定是否构建金字塔。</para>
+		/// <para>未选中 - 不构建金字塔。</para>
+		/// <para>选中 - 构建金字塔。这是默认设置。</para>
 		/// <para><see cref="BuildPyramidsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -100,9 +100,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Calculate Statistics</para>
-		/// <para>Specify whether to calculate statistics.</para>
-		/// <para>Unchecked—Does not calculate statistics.</para>
-		/// <para>Checked—Calculates statistics. This is the default.</para>
+		/// <para>指定是否计算统计数据。</para>
+		/// <para>未选中 - 不计算统计数据。</para>
+		/// <para>选中 - 计算统计数据。这是默认设置。</para>
 		/// <para><see cref="CalculateStatisticsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -112,9 +112,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Include Source Datasets</para>
-		/// <para>Specify whether to calculate statistics on the source raster datasets, or calculate statistics on the raster items in a mosaic dataset. This option only applies to mosaic datasets.</para>
-		/// <para>Unchecked—Statistics will be calculated for each raster item in the mosaic dataset (on each row in the attribute table). Any functions added to the raster item will be applied before generating the statistics. This is the default.</para>
-		/// <para>Checked—Calculates statistics on the source data of the mosaic dataset.</para>
+		/// <para>指定是为源栅格数据集计算统计数据还是为镶嵌数据集中的栅格条目构建金字塔并计算统计数据。 此选项仅适用于镶嵌数据集。</para>
+		/// <para>未选中 - 为镶嵌数据集中的每个栅格条目（对应于属性表中的每一行）计算统计数据。 在生成统计数据前，将应用为栅格条目添加的所有函数。 这是默认设置。</para>
+		/// <para>选中 - 计算镶嵌数据集源数据的统计数据。</para>
 		/// <para><see cref="BUILDONSOURCEEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Block Field</para>
-		/// <para>The name of the field within a mosaic dataset's attribute table used to identify items that should be considered one item when performing some calculations and operations.</para>
+		/// <para>镶嵌数据集属性表中的字段名称，用于标识在执行某些计算和操作时应被视为单一项目的多个项目。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -134,9 +134,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Estimate Mosaic Dataset Statistics</para>
-		/// <para>Specify whether to calculate statistics for the mosaic dataset (not the rasters within it). The statistics are derived from the existing statistics that have been calculated for each raster in the mosaic dataset.</para>
-		/// <para>Unchecked—Statistics are not calculated for the mosaic dataset. This is the default.</para>
-		/// <para>Checked—Statistics will be calculated for the mosaic dataset.</para>
+		/// <para>指定是否计算镶嵌数据集（不是其中的栅格）的统计数据。 统计数据派生于已为镶嵌数据集中每个栅格计算的现有统计数据。</para>
+		/// <para>未选中 - 不计算镶嵌数据集的统计数据。 这是默认设置。</para>
+		/// <para>选中 - 为镶嵌数据集计算统计数据。</para>
 		/// <para><see cref="EstimateStatisticsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -147,9 +147,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>X Skip Factor</para>
-		/// <para>The number of horizontal pixels between samples.</para>
-		/// <para>A skip factor controls the portion of the raster that is used when calculating the statistics. The input value indicates the horizontal or vertical skip factor, where a value of 1 will use each pixel and a value of 2 will use every second pixel. The skip factor can only range from 1 to the number of columns/rows in the raster.</para>
-		/// <para>The value must be greater than zero and less than or equal to the number of columns in the raster. The default is 1 or the last skip factor used.</para>
+		/// <para>样本之间水平像素的数量。</para>
+		/// <para>在计算统计值时使用的那部分栅格由跳跃因子控制。特定输入值可指示水平或垂直跳跃因子，值为 1 时使用每个像素，值为 2 时则每隔一个像素使用一个。此跳跃因子的取值范围只能从 1 至栅格中列/行的数量。</para>
+		/// <para>此值必须大于零并小于等于栅格中的列数。默认值为 1 或者为上次使用的跳跃因子。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -158,9 +158,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Y Skip Factor</para>
-		/// <para>The number of vertical pixels between samples.</para>
-		/// <para>A skip factor controls the portion of the raster that is used when calculating the statistics. The input value indicates the horizontal or vertical skip factor, where a value of 1 will use each pixel and a value of 2 will use every second pixel. The skip factor can only range from 1 to the number of columns/rows in the raster.</para>
-		/// <para>The value must be greater than zero and less than or equal to the number of rows in the raster. The default is 1 or the last y skip factor used.</para>
+		/// <para>样本之间垂直像素的数量。</para>
+		/// <para>在计算统计值时使用的那部分栅格由跳跃因子控制。特定输入值可指示水平或垂直跳跃因子，值为 1 时使用每个像素，值为 2 时则每隔一个像素使用一个。此跳跃因子的取值范围只能从 1 至栅格中列/行的数量。</para>
+		/// <para>此值必须大于零并小于等于栅格中的行数。默认值为 1 或者为上次使用的 y 跳跃因子。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -169,8 +169,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Ignore Values</para>
-		/// <para>The pixel values that are not to be included in the statistics calculation.</para>
-		/// <para>The default is no value.</para>
+		/// <para>排除在统计值计算之外的像素值。</para>
+		/// <para>默认情况下没有值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -179,8 +179,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pyramid levels</para>
-		/// <para>The number of reduced-resolution dataset layers that will be built. The default value is -1, which will build full pyramids. A value of 0 will result in no pyramid levels.</para>
-		/// <para>The maximum number of pyramid levels you can specify is 29. Any value of 30 or higher will create a full set of pyramids.</para>
+		/// <para>将构建的递减分辨率数据集图层的数量。 默认值为 -1（将构建完整的金字塔）。 值为 0 时，将不会获得金字塔等级。</para>
+		/// <para>可以指定的最大金字塔等级数为 29。 任何等于或大于 30 的值都将创建一组完整的金字塔。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -189,9 +189,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Skip first level</para>
-		/// <para>Specifies whether the first pyramid level will be skipped. Skipping the first level will take up slightly less disk space, but it will slow down performance at these scales.</para>
-		/// <para>Unchecked—The first pyramid level will not be skipped; it will be built. This is the default.</para>
-		/// <para>Checked—The first pyramid level will be skipped; it will not be built.</para>
+		/// <para>指定是否将跳过第一个金字塔等级。 跳过第一个等级将略微降低占用的磁盘空间大小，但将降低这些比例的性能。</para>
+		/// <para>未选中 - 不会跳过第一个金字塔等级，将构建该等级。 这是默认设置。</para>
+		/// <para>选中 - 将跳过第一个金字塔等级，不会构建该等级。</para>
 		/// <para><see cref="SKIPFIRSTEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -202,10 +202,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pyramid resampling technique</para>
-		/// <para>Specifies the resampling technique that will be used to build the pyramids.</para>
-		/// <para>Nearest neighbor—The value of the closest pixel will be used to assign a value to the output pixel when resampling. This is the default.</para>
-		/// <para>Bilinear—The new value of a pixel will be based on a weighted distance average of the four nearest input pixel centers.</para>
-		/// <para>Cubic—The new value of a pixel will be based on fitting a smooth curve through the 16 nearest input pixel centers.</para>
+		/// <para>指定将用于构建金字塔的重采样技术。</para>
+		/// <para>最邻近—重采样时，将使用最邻近像素的值将为输出像素分配值。 这是默认设置。</para>
+		/// <para>双线性—将基于四个最邻近的输入像素中心的加权平均距离确定像素的新值。</para>
+		/// <para>三次卷积—将通过拟合穿过 16 个最邻近输入像素中心的平滑曲线确定像素的新值。</para>
 		/// <para><see cref="ResampleTechniqueEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -216,12 +216,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pyramid compression type</para>
-		/// <para>Specifies the compression type that will be used when building the raster pyramids.</para>
-		/// <para>Default—If the source data is compressed using a wavelet compression, pyramids will be built using the JPEG compression type; otherwise, LZ77 will be used. This is the default.</para>
-		/// <para>LZ77 Compression—The LZ77 compression algorithm will be used to build the pyramids. LZ77 can be used for any data type.</para>
-		/// <para>JPEG Compression—The JPEG compression algorithm will be used build pyramids. Only data that adheres to the JPEG compression specification can use this compression type. If JPEG is chosen, you can then set the Compression Quality value.</para>
-		/// <para>JPEG Luma and Chroma—A lossy compression using the luma (Y) and chroma (Cb and Cr) color space components will be used.</para>
-		/// <para>No compression—No compression will be used when building pyramids.</para>
+		/// <para>指定构建栅格金字塔时将使用的压缩类型。</para>
+		/// <para>默认值—如果使用小波压缩方法对源数据进行压缩，则将使用 JPEG 压缩类型构建金字塔；否则，将使用 LZ77。 这是默认设置。</para>
+		/// <para>LZ77 压缩—将使用 LZ77 压缩算法来构建金字塔。 LZ77 可用于任意数据类型。</para>
+		/// <para>JPEG 压缩—将使用 JPEG 压缩算法构建金字塔。 只有符合 JPEG 压缩规范的数据才能使用此压缩类型。 如果选择 JPEG，则可以设置压缩质量值。</para>
+		/// <para>JPEG 亮度和色度—将使用有损压缩使用亮度 (Y) 和色度（Cb 和 Cr）颜色空间组件。</para>
+		/// <para>不压缩—构建金字塔时不使用任何压缩方法。</para>
 		/// <para><see cref="CompressionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -232,7 +232,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compression quality (1-100)</para>
-		/// <para>The compression quality that will be used when pyramids are built with the JPEG compression method. The value must be between 0 and 100. The values closer to 100 will produce a higher-quality image, but the compression ratio will be lower.</para>
+		/// <para>使用 JPEG 压缩方法构建金字塔时将使用的压缩质量。 该值必须介于 0 到 100 之间 值越接近 100，图像质量越高，但压缩比越低。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -241,9 +241,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Skip Existing</para>
-		/// <para>Specify whether to calculate statistics only where they are missing, or regenerate them even if they exist.</para>
-		/// <para>Checked—Statistics will only be calculated if they do not already exist. This is the default.</para>
-		/// <para>Unchecked—Statistics will be calculated even if they already exist; existing statistics will be overwritten.</para>
+		/// <para>指定在缺少统计数据的位置进行计算，还是重新计算全部统计数据（即使已经存在仍重新计算）。</para>
+		/// <para>选中 - 只有当统计数据不存在时才会计算统计数据。 这是默认设置。</para>
+		/// <para>取消选中 - 即使统计数据已经存在仍要重新计算；现有统计数据将被覆盖。</para>
 		/// <para><see cref="SkipExistingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -260,7 +260,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>An SQL expression to select raster datasets that will be processed.</para>
+		/// <para>用于选择要处理的栅格数据集的 SQL 表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -268,9 +268,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>SIPS Mode</para>
-		/// <para>Specifies whether to enable building of pyramid files using key processes and algorithms defined in the Softcopy Image Processing Standard (SIPS), NGA.STND.0014.</para>
-		/// <para>Unchecked—Pyramids will be built using standard subsampling methods. This is the default.</para>
-		/// <para>Checked—Pyramids will be built using SIPS processing.</para>
+		/// <para>指定是否使用软拷贝图像处理标准 (SIPS) NGA.STND.0014 中定义的关键流程和算法来启用金字塔文件的构建。</para>
+		/// <para>未选中 - 将使用标准的子采样方法来构建金字塔。 这是默认设置。</para>
+		/// <para>选中 - 将使用 SIPS 处理来构建金字塔。</para>
 		/// <para><see cref="SipsModeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -296,14 +296,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IncludeSubdirectoriesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Includes all the raster datasets within the subdirectories when loading. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_SUBDIRECTORIES")]
 			INCLUDE_SUBDIRECTORIES,
 
 			/// <summary>
-			/// <para>Unchecked—Does not include subdirectories.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]
@@ -317,14 +317,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum BuildPyramidsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Builds pyramids. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BUILD_PYRAMIDS")]
 			BUILD_PYRAMIDS,
 
 			/// <summary>
-			/// <para>Unchecked—Does not build pyramids.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]
@@ -338,14 +338,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CalculateStatisticsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Calculates statistics. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CALCULATE_STATISTICS")]
 			CALCULATE_STATISTICS,
 
 			/// <summary>
-			/// <para>Unchecked—Does not calculate statistics.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]
@@ -359,14 +359,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum BUILDONSOURCEEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Calculates statistics on the source data of the mosaic dataset.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BUILD_ON_SOURCE")]
 			BUILD_ON_SOURCE,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics will be calculated for each raster item in the mosaic dataset (on each row in the attribute table). Any functions added to the raster item will be applied before generating the statistics. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]
@@ -380,14 +380,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum EstimateStatisticsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Statistics will be calculated for the mosaic dataset.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ESTIMATE_STATISTICS")]
 			ESTIMATE_STATISTICS,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics are not calculated for the mosaic dataset. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]
@@ -401,14 +401,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SKIPFIRSTEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The first pyramid level will be skipped; it will not be built.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SKIP_FIRST")]
 			SKIP_FIRST,
 
 			/// <summary>
-			/// <para>Unchecked—The first pyramid level will not be skipped; it will be built. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]
@@ -422,24 +422,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ResampleTechniqueEnum 
 		{
 			/// <summary>
-			/// <para>Nearest neighbor—The value of the closest pixel will be used to assign a value to the output pixel when resampling. This is the default.</para>
+			/// <para>最邻近—重采样时，将使用最邻近像素的值将为输出像素分配值。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("NEAREST")]
-			[Description("Nearest neighbor")]
+			[Description("最邻近")]
 			Nearest_neighbor,
 
 			/// <summary>
-			/// <para>Bilinear—The new value of a pixel will be based on a weighted distance average of the four nearest input pixel centers.</para>
+			/// <para>双线性—将基于四个最邻近的输入像素中心的加权平均距离确定像素的新值。</para>
 			/// </summary>
 			[GPValue("BILINEAR")]
-			[Description("Bilinear")]
+			[Description("双线性")]
 			Bilinear,
 
 			/// <summary>
-			/// <para>Cubic—The new value of a pixel will be based on fitting a smooth curve through the 16 nearest input pixel centers.</para>
+			/// <para>三次卷积—将通过拟合穿过 16 个最邻近输入像素中心的平滑曲线确定像素的新值。</para>
 			/// </summary>
 			[GPValue("CUBIC")]
-			[Description("Cubic")]
+			[Description("三次卷积")]
 			Cubic,
 
 		}
@@ -450,38 +450,38 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CompressionTypeEnum 
 		{
 			/// <summary>
-			/// <para>Default—If the source data is compressed using a wavelet compression, pyramids will be built using the JPEG compression type; otherwise, LZ77 will be used. This is the default.</para>
+			/// <para>默认值—如果使用小波压缩方法对源数据进行压缩，则将使用 JPEG 压缩类型构建金字塔；否则，将使用 LZ77。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("DEFAULT")]
-			[Description("Default")]
+			[Description("默认值")]
 			Default,
 
 			/// <summary>
-			/// <para>JPEG Compression—The JPEG compression algorithm will be used build pyramids. Only data that adheres to the JPEG compression specification can use this compression type. If JPEG is chosen, you can then set the Compression Quality value.</para>
+			/// <para>JPEG 压缩—将使用 JPEG 压缩算法构建金字塔。 只有符合 JPEG 压缩规范的数据才能使用此压缩类型。 如果选择 JPEG，则可以设置压缩质量值。</para>
 			/// </summary>
 			[GPValue("JPEG")]
-			[Description("JPEG Compression")]
+			[Description("JPEG 压缩")]
 			JPEG_Compression,
 
 			/// <summary>
-			/// <para>LZ77 Compression—The LZ77 compression algorithm will be used to build the pyramids. LZ77 can be used for any data type.</para>
+			/// <para>LZ77 压缩—将使用 LZ77 压缩算法来构建金字塔。 LZ77 可用于任意数据类型。</para>
 			/// </summary>
 			[GPValue("LZ77")]
-			[Description("LZ77 Compression")]
+			[Description("LZ77 压缩")]
 			LZ77_Compression,
 
 			/// <summary>
-			/// <para>No compression—No compression will be used when building pyramids.</para>
+			/// <para>不压缩—构建金字塔时不使用任何压缩方法。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("No compression")]
+			[Description("不压缩")]
 			No_compression,
 
 			/// <summary>
-			/// <para>JPEG Luma and Chroma—A lossy compression using the luma (Y) and chroma (Cb and Cr) color space components will be used.</para>
+			/// <para>JPEG 亮度和色度—将使用有损压缩使用亮度 (Y) 和色度（Cb 和 Cr）颜色空间组件。</para>
 			/// </summary>
 			[GPValue("JPEG_YCBCR")]
-			[Description("JPEG Luma and Chroma")]
+			[Description("JPEG 亮度和色度")]
 			JPEG_Luma_and_Chroma,
 
 		}
@@ -492,14 +492,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SkipExistingEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Statistics will only be calculated if they do not already exist. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SKIP_EXISTING")]
 			SKIP_EXISTING,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics will be calculated even if they already exist; existing statistics will be overwritten.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("OVERWRITE")]
@@ -513,14 +513,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SipsModeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Pyramids will be built using SIPS processing.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SIPS_MODE")]
 			SIPS_MODE,
 
 			/// <summary>
-			/// <para>Unchecked—Pyramids will be built using standard subsampling methods. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]

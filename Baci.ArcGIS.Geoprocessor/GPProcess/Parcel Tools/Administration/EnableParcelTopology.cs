@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Enable Parcel Topology</para>
-	/// <para>Enable Parcel Topology</para>
-	/// <para>Enables geodatabase topology on a parcel fabric.</para>
+	/// <para>启用宗地拓扑</para>
+	/// <para>在宗地结构上启用地理数据库拓扑。</para>
 	/// </summary>
 	public class EnableParcelTopology : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFabric">
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric for which the geodatabase topology will be enabled. The input parcel fabric can be from a file, enterprise, or mobile geodatabase.</para>
+		/// <para>将启用地理数据库拓扑的宗地结构。 输入宗地结构可来自文件地理数据库、企业级地理数据库或移动地理数据库。</para>
 		/// </param>
 		public EnableParcelTopology(object InParcelFabric)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Enable Parcel Topology</para>
+		/// <para>Tool Display Name : 启用宗地拓扑</para>
 		/// </summary>
-		public override string DisplayName() => "Enable Parcel Topology";
+		public override string DisplayName() => "启用宗地拓扑";
 
 		/// <summary>
 		/// <para>Tool Name : EnableParcelTopology</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric for which the geodatabase topology will be enabled. The input parcel fabric can be from a file, enterprise, or mobile geodatabase.</para>
+		/// <para>将启用地理数据库拓扑的宗地结构。 输入宗地结构可来自文件地理数据库、企业级地理数据库或移动地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPParcelLayer()]

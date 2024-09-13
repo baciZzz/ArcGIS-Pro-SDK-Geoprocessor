@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Set Parcel Line Label Position</para>
-	/// <para>Set Parcel Line Label Position</para>
-	/// <para>Sets the   label position of the line's COGO dimension to the left of the parcel  line, to the right of the parcel  line, or centered over the parcel line.</para>
+	/// <para>设置宗地线标注位置</para>
+	/// <para>将线的 COGO 尺寸的标注位置设置在宗地线的左侧、右侧或位于宗地线的中心。</para>
 	/// </summary>
 	public class SetParcelLineLabelPosition : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFeatures">
 		/// <para>Input Parcel Features</para>
-		/// <para>The input parcel line layers with label positions that will be updated.</para>
+		/// <para>具有将被更新的标注位置的输入宗地线图层。</para>
 		/// </param>
 		public SetParcelLineLabelPosition(object InParcelFeatures)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Set Parcel Line Label Position</para>
+		/// <para>Tool Display Name : 设置宗地线标注位置</para>
 		/// </summary>
-		public override string DisplayName() => "Set Parcel Line Label Position";
+		public override string DisplayName() => "设置宗地线标注位置";
 
 		/// <summary>
 		/// <para>Tool Name : SetParcelLineLabelPosition</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Input Parcel Features</para>
-		/// <para>The input parcel line layers with label positions that will be updated.</para>
+		/// <para>具有将被更新的标注位置的输入宗地线图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]

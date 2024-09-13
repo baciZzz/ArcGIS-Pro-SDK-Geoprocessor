@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Aggregation Query Layer</para>
-	/// <para>Make Aggregation Query Layer</para>
-	/// <para>Creates a query layer that summarizes, aggregates,  and filters DBMS tables dynamically based on time, range, and attribute queries from a related table, and joins the result to a feature layer.</para>
+	/// <para>创建聚合查询图层</para>
+	/// <para>创建一个查询图层，该图层根据相关表的时间、范围和属性查询动态地汇总、聚合和过滤 DBMS 表，并将结果连接到要素图层。</para>
 	/// </summary>
 	public class MakeAggregationQueryLayer : AbstractGPProcess
 	{
@@ -21,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="TargetFeatureClass">
 		/// <para>Target Feature Class</para>
-		/// <para>The feature class or spatial table from an enterprise database.</para>
+		/// <para>来自企业级地理数据库的要素类或空间表。</para>
 		/// </param>
 		/// <param name="TargetJoinField">
 		/// <para>Target Join Field</para>
-		/// <para>The field in the target feature class on which the join will be based.</para>
+		/// <para>连接所依据的目标要素类中的字段。</para>
 		/// </param>
 		/// <param name="RelatedTable">
 		/// <para>Related Table</para>
-		/// <para>The input table containing the fields that will be used to calculate statistics. Statistics are joined to the Output Layer value.</para>
+		/// <para>包含用于计算统计数据的字段的输入表。 统计数据连接到输出图层值。</para>
 		/// </param>
 		/// <param name="RelatedJoinField">
 		/// <para>Related Join Field</para>
-		/// <para>A field in the summary table that contains the values on which the join will be based. Aggregation or summary statistics are also calculated separately for each unique attribute value from this field.</para>
+		/// <para>汇总表中的字段，其中包含连接所依据的值。 还会根据此字段单独为每个唯一属性值计算聚合或汇总统计数据。</para>
 		/// </param>
 		/// <param name="OutLayer">
 		/// <para>Output Layer</para>
-		/// <para>The output name of the query layer that will be created.</para>
+		/// <para>将要创建的查询图层的输出名称。</para>
 		/// </param>
 		public MakeAggregationQueryLayer(object TargetFeatureClass, object TargetJoinField, object RelatedTable, object RelatedJoinField, object OutLayer)
 		{
@@ -49,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Make Aggregation Query Layer</para>
+		/// <para>Tool Display Name : 创建聚合查询图层</para>
 		/// </summary>
-		public override string DisplayName() => "Make Aggregation Query Layer";
+		public override string DisplayName() => "创建聚合查询图层";
 
 		/// <summary>
 		/// <para>Tool Name : MakeAggregationQueryLayer</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Feature Class</para>
-		/// <para>The feature class or spatial table from an enterprise database.</para>
+		/// <para>来自企业级地理数据库的要素类或空间表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Join Field</para>
-		/// <para>The field in the target feature class on which the join will be based.</para>
+		/// <para>连接所依据的目标要素类中的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Related Table</para>
-		/// <para>The input table containing the fields that will be used to calculate statistics. Statistics are joined to the Output Layer value.</para>
+		/// <para>包含用于计算统计数据的字段的输入表。 统计数据连接到输出图层值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Related Join Field</para>
-		/// <para>A field in the summary table that contains the values on which the join will be based. Aggregation or summary statistics are also calculated separately for each unique attribute value from this field.</para>
+		/// <para>汇总表中的字段，其中包含连接所依据的值。 还会根据此字段单独为每个唯一属性值计算聚合或汇总统计数据。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Layer</para>
-		/// <para>The output name of the query layer that will be created.</para>
+		/// <para>将要创建的查询图层的输出名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -129,15 +129,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Summary Field(s)</para>
-		/// <para>Specifies the numeric field or fields containing the attribute values that will be used to calculate the specified statistic. Multiple statistic and field combinations can be specified. Null values are excluded from all statistical calculations.</para>
-		/// <para>The output layer will include a ROW_COUNT field showing total count (or frequency) of each unique value from the Related Join Field value. The difference between the ROW_COUNT field and the Count statistic type is that ROW_COUNT includes null values while Count excludes null values.</para>
-		/// <para>Available statistics types are as follows:</para>
-		/// <para>Count—The number of values included in the statistical calculations will be found. Each value will be counted except null values.</para>
-		/// <para>Sum—The values for the specified field will be added together.</para>
-		/// <para>Average—The average for the specified field will be calculated.</para>
-		/// <para>Minimum—The smallest value for all records of the specified field will be found.</para>
-		/// <para>Maximum—The largest value for all records of the specified field will be found.</para>
-		/// <para>Standard deviation—The standard deviation of values in the specified field will be calculated.</para>
+		/// <para>指定包含用于计算指定统计数据的属性值的一个或多个数值字段。 可以指定多项统计和字段组合。 空值将被排除在所有统计计算之外。</para>
+		/// <para>输出图层将包括一个 ROW_COUNT 字段，显示相关连接字段值的每个唯一值的总数（或频数）。 ROW_COUNT 字段和计数统计类型的区别在于 ROW_COUNT 包括空值，而计数不包括空值。</para>
+		/// <para>可用统计类型如下：</para>
+		/// <para>计数 - 将查找统计计算中包括的值的数目。 计数包括除空值外的所有值。</para>
+		/// <para>总和 - 将指定字段的值相加在一起。</para>
+		/// <para>平均值 - 将计算指定字段的平均值。</para>
+		/// <para>最小值 - 将查找指定字段所有记录的最小值。</para>
+		/// <para>最大值 - 将查找指定字段所有记录的最大值。</para>
+		/// <para>标准差 - 将计算指定字段中值的标准差。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -146,35 +146,35 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Parameter Definitions</para>
-		/// <para>Specifies one or more query parameters for criteria or conditions; records matching these criteria are used while computing aggregated results. A query parameter is similar to an SQL statement variable for which the value is defined when the query is run. This allows you to dynamically change query filters for the output layer. You can think of a parameter as a predicate or condition in a SQL where clause. For example Country_Name = &apos;Nigeria&apos; in a SQL where clause is called a predicate in which the = is a comparison operator, Country_Name is a field name on the left, and &apos;Nigeria&apos; is a value on the right. When you define more than one parameter, you must specify a logical operator between them (such as AND, OR, and so on).</para>
-		/// <para>When not specified, all records from the related table will be used in computing aggregated or summary results.</para>
-		/// <para>The two parameter definition types are the following:</para>
-		/// <para>Range—Connect numeric or temporal values dynamically to the range and time sliders.</para>
-		/// <para>Discrete—Update a query with literal values when the query is run.</para>
-		/// <para>The following properties are available:</para>
-		/// <para>Parameter Type—The parameter type can be Range or Discrete.</para>
-		/// <para>Name—The name of the parameter, which is similar to a variable name. A name cannot contain spaces or special characters. Once the output query layer is created and the layer source SQL statement is checked, this name in the SQL statement that defines the output query layer source,will be prefixed with either ::r: (for range parameter) or :: (for discrete parameter).</para>
-		/// <para>Alias—The alias for the parameter name. The alias can include spaces and special characters.</para>
-		/// <para>Field or Expression—A field name or a valid SQL expression that will be used in the left side of a predicate or condition in a where clause.</para>
-		/// <para>Data type—The data type of the field or expression specified in the Field or Expression column. When the Parameter Type value is Range, the Data type column value cannot be String.</para>
-		/// <para>Date—The data type of the field or expression will be Date (date time).</para>
-		/// <para>String—The data type of the field or expression will be String (text).</para>
-		/// <para>Integer—The data type of the field or expression will be Integer (whole numbers).</para>
-		/// <para>Double—The data type of the field or expression will be Double (fractional numbers).</para>
-		/// <para>Start Value—The default start value for the Range column. This is the value that will be used when the time or range slider is not enabled. When the Start Value and End Value column values are omitted and the time or range slider is disabled, all records from the related table will be used to compute aggregated results. This value is ignored when the Parameter Type column is set to Discrete.</para>
-		/// <para>End Value—The default end value for the Range parameter. This is the value that will be used when the time or range slider is not enabled. When the Start Value and End Value column values are omitted and the time or range slider is disabled, all records from the related table will be used to compute aggregated results. This value is ignored when the Parameter Type column is set to Discrete.</para>
-		/// <para>Operator for Discrete Parameter—The comparison operator that will be used between the Field or Expression column value and a value in an SQL predicate or condition.</para>
-		/// <para>None—Choose None, when Parameter Type is set to Range.</para>
-		/// <para>Equal to—Compare the equality of a field or expression to a value.</para>
-		/// <para>Not equal to—Test whether a field or expression is not equal to a value.</para>
-		/// <para>Greater than—Test whether a field or expression is higher than a value.</para>
-		/// <para>Less than—Test whether a field or expression is lower than a value.</para>
-		/// <para>Include values—Determine whether a value from a field or expression matches any value in a list.</para>
-		/// <para>Default Discrete Values—When the Parameter Type value is Discrete, you must provide a default value. When Operator for Discrete Parameter is Include values, you can provide multiple values separated by commas, for example VANDALISM,BURGLARY/THEFT.</para>
-		/// <para>Operator for Next Parameter—The logical operator between this operator and the next one. This column is only applicable when you have more than one parameter definition.</para>
-		/// <para>None—Choose None when there are no more parameters.</para>
-		/// <para>And—Combine two conditions and select a record if both conditions are true.</para>
-		/// <para>Or—Combine two conditions and select a record if at least one condition is true.</para>
+		/// <para>为标准或条件指定一个或多个查询参数，并在计算聚合结果时使用与这些条件相匹配的记录。 查询参数类似于 SQL 语句的变量，进行查询时即会定义该变量的值。 这样，您便可以动态地更改输出图层的查询过滤器。 您可以将参数视为 SQL where 子句中的谓词或条件。 例如，Country_Name = &apos;Nigeria&apos; 在 SQL where 子句中称为谓词，其中 = 是比较运算符，Country_Name 是左侧的字段名称，&apos;Nigeria&apos; 是右侧的值。 当您定义多个参数时，必须在这些参数之间指定一个逻辑运算符（如 AND、OR 等）。</para>
+		/// <para>如果未进行指定，则相关表中的所有记录都将用于计算聚合或汇总结果。</para>
+		/// <para>两种参数定义类型如下所示：</para>
+		/// <para>范围 - 可将数值或时态值动态连接至范围和时间滑块。</para>
+		/// <para>离散 - 可在进行查询时更新具有文本值的查询。</para>
+		/// <para>以下属性可用：</para>
+		/// <para>参数类型 - 参数类型可以是范围或离散。</para>
+		/// <para>名称 - 参数的名称，与变量名称类似。 名称不能包含空格或特殊字符。 创建输出查询图层并选中图层源 SQL 语句后，在定义输出查询图层源的 SQL 语句中，这个名称将以 ::r:（对于范围参数）或 ::（对于离散参数）为前缀。</para>
+		/// <para>别名 - 参数名称的别名。 别名可以包括空格和特殊字符。</para>
+		/// <para>字段或表达式 - 字段名称或有效的 SQL 表达式，可用于 where 子句中谓词或条件的左侧。</para>
+		/// <para>数据类型 - 字段或表达式列中指定的字段或表达式的数据类型。 当参数类型的值为范围时，数据类型列的值不得为字符串。</para>
+		/// <para>日期 - 字段或表达式的数据类型将是日期（日期时间）。</para>
+		/// <para>字符串 - 字段或表达式的数据类型将是字符串（文本）。</para>
+		/// <para>整型 - 字段或表达式的数据类型将是整型（整数）。</para>
+		/// <para>双精度 - 字段或表达式的数据类型将是双精度（小数）。</para>
+		/// <para>起始值 - 范围列的默认起始值。 未启用时间或范围滑块时将使用此值。 当忽略起始值和结束值列的值并禁用时间或范围滑块时，相关表中的记录将用于计算聚合结果。 当参数类型列设置为离散时，将忽略此值。</para>
+		/// <para>结束值 - 范围参数的默认结束值。 未启用时间或范围滑块时将使用此值。 当忽略起始值和结束值列的值并禁用时间或范围滑块时，相关表中的记录将用于计算聚合结果。 当参数类型列设置为离散时，将忽略此值。</para>
+		/// <para>离散参数运算符 - 将在字段或表达式列的值和 SQL 谓词或条件中的值之间使用的比较运算符。</para>
+		/// <para>无 - 当参数类型设置为范围时，选择无。</para>
+		/// <para>等于 - 比较字段或表达式是否与值相等。</para>
+		/// <para>不等于 - 测试字段或表达式是否与值不相等。</para>
+		/// <para>大于 - 测试字段或表达式是否大于值。</para>
+		/// <para>小于 - 测试字段或表达式是否小于值。</para>
+		/// <para>包括值 - 确定来自字段或表达式的值是否与列表中的某个值匹配。</para>
+		/// <para>默认离散值 - 当参数类型值为离散时，您必须提供默认值。 当离散参数运算符为包括值时，您可以提供以逗号分隔的多个值，例如 VANDALISM,BURGLARY/THEFT。</para>
+		/// <para>下一个参数的运算符 - 此运算符和下一个运算符之间的逻辑运算符。 本列仅适用于具有多个参数定义的情况。</para>
+		/// <para>无 - 当没有更多参数时，选择无。</para>
+		/// <para>和 - 结合两个条件，如果两个条件都为 true 则选择记录。</para>
+		/// <para>或 - 结合两个条件，如果两个条件中至少有一个为 true 则选择记录。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -183,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Unique Identifier Field(s)</para>
-		/// <para>The unique identifier fields that will be used to uniquely identify each row in the table.</para>
+		/// <para>唯一标识符字段将用于唯一标识表中各行的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -191,11 +191,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Shape Type</para>
-		/// <para>Specifies the shape type of the query layer. Only those records from the result set of the query that match the specified shape type will be used in the output query layer. By default, the shape type of the first record in the result set will be used. This parameter is ignored if the result set of the query does not return a geometry field.</para>
-		/// <para>Point—The output query layer will use point geometry.</para>
-		/// <para>Multipoint—The output query layer will use multipoint geometry.</para>
-		/// <para>Polygon—The output query layer will use polygon geometry.</para>
-		/// <para>Polyline—The output query layer will use polyline geometry.</para>
+		/// <para>指定查询图层的形状类型。 在输出查询图层中只会使用查询结果集中与指定形状类型匹配的那些记录。 默认情况下，将使用结果集中第一条记录的 shape 类型。 如果查询结果集未返回几何字段，则忽略此参数。</para>
+		/// <para>点—输出查询图层将使用点几何。</para>
+		/// <para>多点—输出查询图层将使用多点几何。</para>
+		/// <para>面—输出查询图层将使用面几何。</para>
+		/// <para>折线—输出查询图层将使用折线几何。</para>
 		/// <para><see cref="ShapeTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -205,7 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Spatial Reference ID (SRID)</para>
-		/// <para>The spatial reference identifier (SRID) value for queries that return geometry. Only those records from the result set of the query that match the specified SRID value will be used in the output query layer. By default, the SRID value of the first record in the result set will be used. This parameter is ignored if the result set of the query does not return a geometry field.</para>
+		/// <para>返回几何查询的空间参考标识符 (SRID) 值。 在输出查询图层中只会使用查询结果集中与指定 SRID 值匹配的那些记录。 默认情况下，将使用结果集中第一条记录的 SRID 值。 如果查询结果集未返回几何字段，则忽略此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -213,7 +213,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>The coordinate system that will be used by the output query layer. By default, the spatial reference of the first record in the result set will be used. This parameter is ignored if the result set of the query does not return a geometry field.</para>
+		/// <para>输出查询图层将使用的坐标系。 默认情况下，将使用结果集中第一条记录的空间参考。 如果查询结果集未返回几何字段，则忽略此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
@@ -221,9 +221,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Coordinates include M values</para>
-		/// <para>Specifies whether the output layer will include linear measurements (m-values).</para>
-		/// <para>Checked—The layer will include m-values.</para>
-		/// <para>Unchecked—The layer will not include m-values. This is the default.</para>
+		/// <para>指定输出图层是否包括线性测量（m 值）。</para>
+		/// <para>选中 - 图层将包括 m 值。</para>
+		/// <para>未选中 - 图层将不包括 m 值。 这是默认设置。</para>
 		/// <para><see cref="MValuesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -233,9 +233,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Coordinates include Z values</para>
-		/// <para>Specifies whether the output layer will include elevation values (z-values).</para>
-		/// <para>Checked—The layer will include z-values.</para>
-		/// <para>Unchecked—The layer will not include z-values. This is the default.</para>
+		/// <para>指定输出图层是否将包括高程值（z 值）。</para>
+		/// <para>选中 - 图层将包括 z 值。</para>
+		/// <para>未选中 - 图层将不包括 z 值。 这是默认设置。</para>
 		/// <para><see cref="ZValuesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -245,11 +245,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>Specifies the extent of the layer. The extent must include all features in the table.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Current Display Extent—The extent is equal to the data frame or visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>指定图层范围。 范围必须包括表中的所有要素。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>当前显示范围 - 该范围与数据框或可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -272,31 +272,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ShapeTypeEnum 
 		{
 			/// <summary>
-			/// <para>Point—The output query layer will use point geometry.</para>
+			/// <para>点—输出查询图层将使用点几何。</para>
 			/// </summary>
 			[GPValue("POINT")]
-			[Description("Point")]
+			[Description("点")]
 			Point,
 
 			/// <summary>
-			/// <para>Multipoint—The output query layer will use multipoint geometry.</para>
+			/// <para>多点—输出查询图层将使用多点几何。</para>
 			/// </summary>
 			[GPValue("MULTIPOINT")]
-			[Description("Multipoint")]
+			[Description("多点")]
 			Multipoint,
 
 			/// <summary>
-			/// <para>Polygon—The output query layer will use polygon geometry.</para>
+			/// <para>面—输出查询图层将使用面几何。</para>
 			/// </summary>
 			[GPValue("POLYGON")]
-			[Description("Polygon")]
+			[Description("面")]
 			Polygon,
 
 			/// <summary>
-			/// <para>Polyline—The output query layer will use polyline geometry.</para>
+			/// <para>折线—输出查询图层将使用折线几何。</para>
 			/// </summary>
 			[GPValue("POLYLINE")]
-			[Description("Polyline")]
+			[Description("折线")]
 			Polyline,
 
 		}
@@ -307,14 +307,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MValuesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The layer will include m-values.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_M_VALUES")]
 			INCLUDE_M_VALUES,
 
 			/// <summary>
-			/// <para>Unchecked—The layer will not include m-values. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_INCLUDE_M_VALUES")]
@@ -328,14 +328,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ZValuesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The layer will include z-values.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_Z_VALUES")]
 			INCLUDE_Z_VALUES,
 
 			/// <summary>
-			/// <para>Unchecked—The layer will not include z-values. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_INCLUDE_Z_VALUES")]

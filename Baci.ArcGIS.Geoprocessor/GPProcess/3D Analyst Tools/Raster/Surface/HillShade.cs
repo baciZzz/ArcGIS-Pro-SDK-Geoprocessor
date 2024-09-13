@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>HillShade</para>
-	/// <para>HillShade</para>
-	/// <para>Creates a shaded relief from a surface raster by considering the illumination source angle and shadows.</para>
+	/// <para>山体阴影</para>
+	/// <para>通过考虑光照源的角度和阴影，根据表面栅格创建地貌晕渲。</para>
 	/// </summary>
 	public class HillShade : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input surface raster.</para>
+		/// <para>输入表面栅格。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output hillshade raster.</para>
-		/// <para>The hillshade raster has an integer value range of 0 to 255.</para>
+		/// <para>输出山体阴影栅格。</para>
+		/// <para>山体阴影栅格的整数值范围为 0 到 255。</para>
 		/// </param>
 		public HillShade(object InRaster, object OutRaster)
 		{
@@ -35,14 +35,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : HillShade</para>
+		/// <para>Tool Display Name : 山体阴影</para>
 		/// </summary>
-		public override string DisplayName() => "HillShade";
+		public override string DisplayName() => "山体阴影";
 
 		/// <summary>
-		/// <para>Tool Name : HillShade</para>
+		/// <para>Tool Name : 山体阴影</para>
 		/// </summary>
-		public override string ToolName() => "HillShade";
+		public override string ToolName() => "山体阴影";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.HillShade</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input surface raster.</para>
+		/// <para>输入表面栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -83,8 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output hillshade raster.</para>
-		/// <para>The hillshade raster has an integer value range of 0 to 255.</para>
+		/// <para>输出山体阴影栅格。</para>
+		/// <para>山体阴影栅格的整数值范围为 0 到 255。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -92,9 +92,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Azimuth</para>
-		/// <para>Azimuth angle of the light source.</para>
-		/// <para>The azimuth is expressed in positive degrees from 0 to 360, measured clockwise from north.</para>
-		/// <para>The default is 315 degrees.</para>
+		/// <para>光源的方位角。</para>
+		/// <para>方位角由 0 到 360 度之间的正度数表示，以北为基准方向按顺时针进行测量。</para>
+		/// <para>默认值为 315 度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -105,9 +105,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Altitude</para>
-		/// <para>Altitude angle of the light source above the horizon.</para>
-		/// <para>The altitude is expressed in positive degrees, with 0 degrees at the horizon and 90 degrees directly overhead.</para>
-		/// <para>The default is 45 degrees.</para>
+		/// <para>高于地平线的光源高度角。</para>
+		/// <para>高度角由正度数表示，0 度代表地平线，而 90 度代表头顶正上方。</para>
+		/// <para>默认值为 45 度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -118,9 +118,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Model shadows</para>
-		/// <para>Type of shaded relief to be generated.</para>
-		/// <para>Unchecked—The output raster only considers local illumination angles; the effects of shadows are not considered.The output values can range from 0 to 255, with 0 representing the darkest areas, and 255 the brightest. This is the default.</para>
-		/// <para>Checked—The output shaded raster considers both local illumination angles and shadows.The output values range from 0 to 255, with 0 representing the shadow areas, and 255 the brightest.</para>
+		/// <para>要生成的地貌晕渲类型。</para>
+		/// <para>未选中 - 输出栅格只会考虑本地光照入射角度而不会考虑阴影的影响。输出值的范围从 0 到 255，0 表示最暗区域，255 表示最亮区域。这是默认设置。</para>
+		/// <para>选中 - 输出晕渲栅格会同时考虑本地光照入射角度和阴影。输出值的范围从 0 到 255，0 表示阴影区域，255 表示最亮区域。</para>
 		/// <para><see cref="ModelShadowsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -130,10 +130,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z factor</para>
-		/// <para>The number of ground x,y units in one surface z-unit.</para>
-		/// <para>The z-factor adjusts the units of measure for the z-units when they are different from the x,y units of the input surface. The z-values of the input surface are multiplied by the z-factor when calculating the final output surface.</para>
-		/// <para>If the x,y units and z-units are in the same units of measure, the z-factor is 1. This is the default.</para>
-		/// <para>If the x,y units and z-units are in different units of measure, the z-factor must be set to the appropriate factor or the results will be incorrect. For example, if the z-units are feet and the x,y units are meters, you would use a z-factor of 0.3048 to convert the z-units from feet to meters (1 foot = 0.3048 meter).</para>
+		/// <para>一个表面 z 单位中地面 x,y 单位的数量。</para>
+		/// <para>z 单位与输入表面的 x,y 单位不同时，可使用 z 因子调整 z 单位的测量单位。 计算最终输出表面时，将用 z 因子乘以输入表面的 z 值。</para>
+		/// <para>如果 x,y 单位和 z 单位采用相同的测量单位，则 z 因子为 1。 这是默认设置。</para>
+		/// <para>如果 x,y 单位和 z 单位采用不同的测量单位，则必须将 z 因子设置为适当的因子，否则会得到错误的结果。 例如，如果 z 单位是英尺，而 x,y 单位是米，则应使用 z 因子 0.3048 将 z 单位从英尺转换为米（1 英尺 = 0.3048 米）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -157,14 +157,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ModelShadowsEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—The output raster only considers local illumination angles; the effects of shadows are not considered.The output values can range from 0 to 255, with 0 representing the darkest areas, and 255 the brightest. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SHADOWS")]
 			NO_SHADOWS,
 
 			/// <summary>
-			/// <para>Checked—The output shaded raster considers both local illumination angles and shadows.The output values range from 0 to 255, with 0 representing the shadow areas, and 255 the brightest.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SHADOWS")]

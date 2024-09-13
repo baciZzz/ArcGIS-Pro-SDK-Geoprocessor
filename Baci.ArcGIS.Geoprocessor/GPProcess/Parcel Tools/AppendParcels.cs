@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Append Parcels</para>
-	/// <para>Append Parcels</para>
-	/// <para>Appends parcels from an input parcel fabric to a target parcel fabric. If the input parcel fabric is a parcel fabric layer with selected polygons, the corresponding parcel features will be appended.</para>
+	/// <para>追加宗地</para>
+	/// <para>将宗地从输入宗地结构追加到目标宗地结构。 如果输入宗地结构为包含所选面的宗地结构图层，则系统将追加相应的宗地要素。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFabric">
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The input parcels that will be appended to the target parcel fabric. The input parcel fabric can be from a file, enterprise, or mobile geodatabase, or a feature service.</para>
+		/// <para>将被追加到目标宗地结构的输入宗地。 输入宗地结构可来自文件地理数据库、企业级地理数据库、移动地理数据库或要素服务。</para>
 		/// </param>
 		/// <param name="TargetParcelFabric">
 		/// <para>Target Parcel Fabric</para>
-		/// <para>The target parcel fabric to which the parcels will be appended. The target parcel fabric can be from a file, enterprise, or mobile geodatabase.</para>
+		/// <para>宗地将被追加到的目标宗地结构。 目标宗地结构可来自文件地理数据库、企业级地理数据库或移动地理数据库。</para>
 		/// </param>
 		public AppendParcels(object InParcelFabric, object TargetParcelFabric)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Append Parcels</para>
+		/// <para>Tool Display Name : 追加宗地</para>
 		/// </summary>
-		public override string DisplayName() => "Append Parcels";
+		public override string DisplayName() => "追加宗地";
 
 		/// <summary>
 		/// <para>Tool Name : AppendParcels</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The input parcels that will be appended to the target parcel fabric. The input parcel fabric can be from a file, enterprise, or mobile geodatabase, or a feature service.</para>
+		/// <para>将被追加到目标宗地结构的输入宗地。 输入宗地结构可来自文件地理数据库、企业级地理数据库、移动地理数据库或要素服务。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPParcelLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Target Parcel Fabric</para>
-		/// <para>The target parcel fabric to which the parcels will be appended. The target parcel fabric can be from a file, enterprise, or mobile geodatabase.</para>
+		/// <para>宗地将被追加到的目标宗地结构。 目标宗地结构可来自文件地理数据库、企业级地理数据库或移动地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPParcelLayer()]

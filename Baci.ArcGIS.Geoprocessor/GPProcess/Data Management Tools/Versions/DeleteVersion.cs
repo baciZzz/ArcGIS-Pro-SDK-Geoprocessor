@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Version</para>
-	/// <para>Delete Version</para>
-	/// <para>Deletes the specified version from the input enterprise, workgroup, or desktop geodatabase.</para>
+	/// <para>删除版本</para>
+	/// <para>可从输入企业级、工作组或桌面地理数据库中删除指定的版本。</para>
 	/// </summary>
 	public class DeleteVersion : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Input Workspace</para>
-		/// <para>Specifies the database connection file to the enterprise, workgroup, or desktop geodatabase containing the version to be deleted.</para>
-		/// <para>For branch versioning, you can use a feature service URL (that is, https://mysite.mydomain/server/rest/services/ElectricNetwork/FeatureServer) or a feature layer portal item. You can also delete a branch version via a database connection file (connected to a branch versioned workspace) when connected as the geodatabase admin user (sde).</para>
+		/// <para>指定要删除的版本所在的企业级、工作组和桌面地理数据库的数据库连接文件。</para>
+		/// <para>对于分支版本化，可以使用要素服务 URL（即 https://mysite.mydomain/server/rest/services/ElectricNetwork/FeatureServer）或要素图层门户项目。当以地理数据库管理员用户 (sde) 身份连接时，您还可以通过数据库连接文件（连接到分支版本化工作空间）删除分支版本。</para>
 		/// </param>
 		/// <param name="VersionName">
 		/// <para>Version Name</para>
-		/// <para>Specifies the name of the version to be deleted.</para>
-		/// <para>For branch versioning, the name of the branch version to delete should be fully qualified. E.g. servicename.portaluser.versionname.</para>
+		/// <para>指定要删除的版本的名称。</para>
+		/// <para>对于分支版本化，要删除的分支版本的名称应完全限定。例如 servicename.portaluser.versionname。</para>
 		/// </param>
 		public DeleteVersion(object InWorkspace, object VersionName)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Delete Version</para>
+		/// <para>Tool Display Name : 删除版本</para>
 		/// </summary>
-		public override string DisplayName() => "Delete Version";
+		public override string DisplayName() => "删除版本";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteVersion</para>
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>Specifies the database connection file to the enterprise, workgroup, or desktop geodatabase containing the version to be deleted.</para>
-		/// <para>For branch versioning, you can use a feature service URL (that is, https://mysite.mydomain/server/rest/services/ElectricNetwork/FeatureServer) or a feature layer portal item. You can also delete a branch version via a database connection file (connected to a branch versioned workspace) when connected as the geodatabase admin user (sde).</para>
+		/// <para>指定要删除的版本所在的企业级、工作组和桌面地理数据库的数据库连接文件。</para>
+		/// <para>对于分支版本化，可以使用要素服务 URL（即 https://mysite.mydomain/server/rest/services/ElectricNetwork/FeatureServer）或要素图层门户项目。当以地理数据库管理员用户 (sde) 身份连接时，您还可以通过数据库连接文件（连接到分支版本化工作空间）删除分支版本。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -83,8 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Version Name</para>
-		/// <para>Specifies the name of the version to be deleted.</para>
-		/// <para>For branch versioning, the name of the branch version to delete should be fully qualified. E.g. servicename.portaluser.versionname.</para>
+		/// <para>指定要删除的版本的名称。</para>
+		/// <para>对于分支版本化，要删除的分支版本的名称应完全限定。例如 servicename.portaluser.versionname。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

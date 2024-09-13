@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Edit TIN</para>
-	/// <para>Edit TIN</para>
-	/// <para>Loads data from one or more input features  to modify the surface of an existing triangulated irregular network (TIN).</para>
+	/// <para>编辑 TIN</para>
+	/// <para>从一个或多个输入要素中加载数据以修改现有不规则三角网 (TIN) 的表面。</para>
 	/// </summary>
 	public class EditTin : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTin">
 		/// <para>Input TIN</para>
-		/// <para>The TIN dataset to process.</para>
+		/// <para>待处理的 TIN 数据集。</para>
 		/// </param>
 		/// <param name="InFeatures">
 		/// <para>Input Feature Class</para>
-		/// <para>The input features and their related properties that will contribute to the definition of the TIN.</para>
-		/// <para>Input Features—The feature with the geometry that will be imported to the TIN.</para>
-		/// <para>Height Field— The source of elevation for the input features. Any numeric field from the input feature&apos;s attribute table can be used, along with the Z or M values stored in the Shape field. Choosing the &lt;None&gt; keyword will result in the feature&apos;s elevation being interpolated from the surrounding surface.</para>
-		/// <para>Tag Field—A numeric attribute will be assigned to the TIN&apos;s data elements using values obtained from an integer field in the input feature&apos;s attribute table.</para>
-		/// <para>Type—The feature&apos;s role in shaping the TIN surface will be defined. See the tool&apos;s usage tips for more information about surface feature types.</para>
-		/// <para>Use Z— Indicates whether Z or M values are used when the SHAPE field is indicated as the height source. Setting this option to True implies Z values will be used, whereas setting it to False results in M values being used.</para>
+		/// <para>将构成 TIN 定义的输入要素及其相关属性。</para>
+		/// <para>输入要素 - 所包含的几何将要导入至 TIN 的要素。</para>
+		/// <para>高度字段 - 输入要素的高程源。 可以使用输入要素属性表中的任何数值字段以及存储于 Shape 字段中的 Z 或 M 值。 选择 &lt;None&gt; 关键字将导致要素的高程通过周围表面进行插值处理。</para>
+		/// <para>标签字段 - 将使用从输入要素属性表的整型字段中获得的值分配给 TIN 的数据元素的数值属性。</para>
+		/// <para>类型 - 将定义 TIN 表面修整中要素的角色。 有关表面要素类型的详细信息，请参阅工具的使用提示。</para>
+		/// <para>使用 Z - 指示将 SHAPE 字段表示为高度源时是否使用 Z 或 M 值。 将此选项设为 True 表示将使用 Z 值，而将其设为 False 将导致使用 M 值。</para>
 		/// </param>
 		public EditTin(object InTin, object InFeatures)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Edit TIN</para>
+		/// <para>Tool Display Name : 编辑 TIN</para>
 		/// </summary>
-		public override string DisplayName() => "Edit TIN";
+		public override string DisplayName() => "编辑 TIN";
 
 		/// <summary>
 		/// <para>Tool Name : EditTin</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input TIN</para>
-		/// <para>The TIN dataset to process.</para>
+		/// <para>待处理的 TIN 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTinLayer()]
@@ -83,12 +83,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>The input features and their related properties that will contribute to the definition of the TIN.</para>
-		/// <para>Input Features—The feature with the geometry that will be imported to the TIN.</para>
-		/// <para>Height Field— The source of elevation for the input features. Any numeric field from the input feature&apos;s attribute table can be used, along with the Z or M values stored in the Shape field. Choosing the &lt;None&gt; keyword will result in the feature&apos;s elevation being interpolated from the surrounding surface.</para>
-		/// <para>Tag Field—A numeric attribute will be assigned to the TIN&apos;s data elements using values obtained from an integer field in the input feature&apos;s attribute table.</para>
-		/// <para>Type—The feature&apos;s role in shaping the TIN surface will be defined. See the tool&apos;s usage tips for more information about surface feature types.</para>
-		/// <para>Use Z— Indicates whether Z or M values are used when the SHAPE field is indicated as the height source. Setting this option to True implies Z values will be used, whereas setting it to False results in M values being used.</para>
+		/// <para>将构成 TIN 定义的输入要素及其相关属性。</para>
+		/// <para>输入要素 - 所包含的几何将要导入至 TIN 的要素。</para>
+		/// <para>高度字段 - 输入要素的高程源。 可以使用输入要素属性表中的任何数值字段以及存储于 Shape 字段中的 Z 或 M 值。 选择 &lt;None&gt; 关键字将导致要素的高程通过周围表面进行插值处理。</para>
+		/// <para>标签字段 - 将使用从输入要素属性表的整型字段中获得的值分配给 TIN 的数据元素的数值属性。</para>
+		/// <para>类型 - 将定义 TIN 表面修整中要素的角色。 有关表面要素类型的详细信息，请参阅工具的使用提示。</para>
+		/// <para>使用 Z - 指示将 SHAPE 字段表示为高度源时是否使用 Z 或 M 值。 将此选项设为 True 表示将使用 Z 值，而将其设为 False 将导致使用 M 值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -97,9 +97,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Constrained Delaunay</para>
-		/// <para>Specifies the triangulation technique that will be used along the breaklines of the TIN.</para>
-		/// <para>Unchecked—The TIN will use Delaunay conforming triangulation, which may densify each segment of the breaklines to produce multiple triangle edges. This is the default.</para>
-		/// <para>Checked—The TIN will use constrained Delaunay triangulation, which will add each segment as a single edge. Delaunay triangulation rules are honored everywhere except along breaklines, which will not be densified.</para>
+		/// <para>指定将与 TIN 隔断线一同使用的三角测量技术。</para>
+		/// <para>未选中 - TIN 将使用符合 Delaunay 的三角测量，这可能会增密每条隔断线线段以生成多条三角形边。 这是默认设置。</para>
+		/// <para>选中 - TIN 将使用约束型 Delaunay 三角测量，这会将各线段作为单独的边添加。 所有位置均支持 Delaunay 三角测量规则，但沿隔断线处除外，因为它无法增密。</para>
 		/// <para><see cref="ConstrainedDelaunayEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -131,14 +131,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ConstrainedDelaunayEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The TIN will use constrained Delaunay triangulation, which will add each segment as a single edge. Delaunay triangulation rules are honored everywhere except along breaklines, which will not be densified.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CONSTRAINED_DELAUNAY")]
 			CONSTRAINED_DELAUNAY,
 
 			/// <summary>
-			/// <para>Unchecked—The TIN will use Delaunay conforming triangulation, which may densify each segment of the breaklines to produce multiple triangle edges. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DELAUNAY")]

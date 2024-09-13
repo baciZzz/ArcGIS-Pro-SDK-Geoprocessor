@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Add Locations</para>
-	/// <para>Add Locations</para>
-	/// <para>Adds input features or records to a network analysis layer. The inputs are added to specific sublayers such as stops and barriers. When the network analysis layer references a network dataset as its network data source, the tool calculates the network locations of the inputs, unless precalculated network location fields are mapped from the inputs.</para>
+	/// <para>添加位置</para>
+	/// <para>将输入要素或记录添加到网络分析图层。 向特定子图层（如“停靠点”图层和“障碍”图层）添加输入。 当网络分析图层引用网络数据集作为其网络数据源时，该工具会计算输入的网络位置，除非预先计算的网络位置字段是从输入映射的。</para>
 	/// </summary>
 	public class AddLocations : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InNetworkAnalysisLayer">
 		/// <para>Input Network Analysis Layer</para>
-		/// <para>The network analysis layer to which the network analysis objects will be added.</para>
+		/// <para>要添加网络分析对象的网络分析图层。</para>
 		/// </param>
 		/// <param name="SubLayer">
 		/// <para>Sub Layer</para>
-		/// <para>The name of the sublayer of the network analysis layer to which the network analysis objects will be added.</para>
+		/// <para>要添加网络分析对象的网络分析图层的子图层名称。</para>
 		/// </param>
 		/// <param name="InTable">
 		/// <para>Input Locations</para>
-		/// <para>The feature class or table containing the locations to be added to the network analysis sublayer.</para>
+		/// <para>包含要添加到网络分析子图层的位置的要素类或表。</para>
 		/// </param>
 		public AddLocations(object InNetworkAnalysisLayer, object SubLayer, object InTable)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Locations</para>
+		/// <para>Tool Display Name : 添加位置</para>
 		/// </summary>
-		public override string DisplayName() => "Add Locations";
+		public override string DisplayName() => "添加位置";
 
 		/// <summary>
 		/// <para>Tool Name : AddLocations</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer</para>
-		/// <para>The network analysis layer to which the network analysis objects will be added.</para>
+		/// <para>要添加网络分析对象的网络分析图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPNALayer()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Sub Layer</para>
-		/// <para>The name of the sublayer of the network analysis layer to which the network analysis objects will be added.</para>
+		/// <para>要添加网络分析对象的网络分析图层的子图层名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Locations</para>
-		/// <para>The feature class or table containing the locations to be added to the network analysis sublayer.</para>
+		/// <para>包含要添加到网络分析子图层的位置的要素类或表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -100,12 +100,12 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Field Mappings</para>
-		/// <para>The mapping between the input fields of the network analysis sublayer to which locations will be added and the fields in the input data or specified constants.</para>
-		/// <para>Input sublayers of network analysis layers have a set of input fields that can be populated to modify or control analysis behavior. When adding locations to the sublayer, you can use this parameter to map field values from the input table to these fields in the sublayer. You can also use field mappings to specify a constant default value for each property.</para>
-		/// <para>If neither the Field value nor the Default value is specified for a property, the resulting network analysis objects will have null values for that property.</para>
-		/// <para>A complete list of input fields for each sublayer for each network analysis layer type is available in the documentation for each layer. For example, examine the Route layer&apos;s Stops sublayer&apos;s input fields.</para>
-		/// <para>If the data being loaded contains precalculated network locations or location ranges based on the network data source and travel mode used for the analysis, choose the Use Network Location Fields option from the drop-down menu. Adding the network analysis objects using the network location fields is quicker than loading by geometry.</para>
-		/// <para>ArcGIS Online and some ArcGIS Enterprise portals do not support using network location fields. For network analysis layers that use one of these portals as the network data source, all inputs will be located at solve time, and any mapped location fields will be ignored.</para>
+		/// <para>您要添加位置的网络分析子图层的输入字段与输入数据或指定常量中的字段之间的映射。</para>
+		/// <para>网络分析图层的输入子图层具有一组输入字段，可以填充这些字段以修改或控制分析行为。 将位置添加到子图层时，可以使用此参数将输入表中的字段值映射到子图层中的这些字段。 您还可以使用字段映射为每个属性指定恒定默认值。</para>
+		/// <para>如果属性的字段和默认值都没有指定，则生成的网络分析对象的属性值为空。</para>
+		/// <para>每个图层的文档中提供了每种网络分析图层类型的每个子图层的输入字段的完整列表。 例如，检查 Route 图层 Stops 子图层的输入字段。</para>
+		/// <para>如果加载的数据包含基于用于分析的网络数据源和出行模式预先计算的网络位置或位置范围，请从下拉菜单中选择使用网络位置字段选项。 使用网络位置字段来添加网络分析对象比按照几何加载速度更快。</para>
+		/// <para>ArcGIS Online 和一些 ArcGIS Enterprise 门户不支持使用网络位置字段。 对于使用这些门户之一作为网络数据源的网络分析图层，所有输入都将在求解时定位，并且任何映射的位置字段都将被忽略。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[NAClassFieldMap()]
@@ -113,11 +113,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Search Tolerance</para>
-		/// <para>The maximum search distance that will be used when locating the input features on the network. Features that are outside the search tolerance will be left unlocated. The parameter includes a value and units.</para>
-		/// <para>The default value for this parameter is determined based on location properties stored in the input network analysis layer. If the network analysis layer has location settings overrides for the selected sublayer, those settings will be used. Otherwise, the network analysis layer&apos;s default location settings will be used. Setting a nondefault value for this parameter updates the network analysis layer&apos;s location settings overrides for the selected sublayer.</para>
-		/// <para>The parameter is not used when adding locations to sublayers with line or polygon geometry, such as Line Barriers and Polygon Barriers.</para>
-		/// <para>This parameter is not used when adding locations using existing network location fields.</para>
-		/// <para>This parameter is not used when the network analysis layer&apos;s network data source is a portal running a version of ArcGIS Enterprise older than 11.0.</para>
+		/// <para>在网络上定位输入要素所需的最大搜索距离。 搜索容差以外的要素将保持未定位状态。 该参数包括值和单位。</para>
+		/// <para>此参数的默认值由存储在输入网络分析图层中的位置属性确定。 如果网络分析图层具有所选子图层的位置设置替代，则将使用这些设置。 否则，将使用网络分析图层的默认位置设置。 为此参数设置非默认值将更新网络分析图层的位置设置，覆盖选定子图层。</para>
+		/// <para>在将位置添加到具有线或面几何（如“线障碍”和“面障碍”）的子图层时，不使用该参数。</para>
+		/// <para>使用现有网络位置字段添加位置时不使用此参数。</para>
+		/// <para>当网络分析图层的网络数据源为早于 11.0 版本的 ArcGIS Enterprise 门户时，不使用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Sort Field</para>
-		/// <para>The field on which the network analysis objects will be sorted as they are added to the network analysis layer. The default is the ObjectID field in the input feature class or table.</para>
+		/// <para>当网络分析对象被添加到网络分析图层时用于排序网络分析对象的字段。 默认设置为输入要素类或表中的 ObjectID 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -137,16 +137,16 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Search Criteria</para>
-		/// <para>The edge and junction sources in the network dataset that will be searched when locating inputs on the network. For example, if the network dataset references separate feature classes representing streets and sidewalks, you can choose to locate inputs on streets but not on sidewalks.</para>
-		/// <para>The following are the available snap type choices for each network source:</para>
-		/// <para>None—The point will not locate on elements in this network source.</para>
-		/// <para>Shape—The point will locate on the closest point of an element in this network source.</para>
-		/// <para>Middle—This option is deprecated and behaves the same as Shape.</para>
-		/// <para>End—This option is deprecated and behaves the same as Shape.</para>
-		/// <para>The default value for this parameter is determined based on location properties stored in the input network analysis layer. If the network analysis layer has location settings overrides for the selected sublayer, those settings will be used. Otherwise, the network analysis layer&apos;s default location settings will be used. Setting a nondefault value for this parameter updates the network analysis layer&apos;s location settings overrides for the selected sublayer.</para>
-		/// <para>This parameter is not used when adding locations using existing network location fields.</para>
-		/// <para>This parameter is not used when the network analysis layer&apos;s network data source is ArcGIS Online.</para>
-		/// <para>This parameter is not used when the network analysis layer&apos;s network data source is a portal running a version of ArcGIS Enterprise older than 11.0.</para>
+		/// <para>在网络上定位输入时，将搜索的网络数据集中的边和交汇点源。 例如，如果网络数据集引用表示街道和人行道的单独要素类，则可以选择在街道上定位输入，而非人行道。</para>
+		/// <para>以下是每个网络源可用的捕捉类型选择：</para>
+		/// <para>NONE - 点将不位于此网络源的元素上。</para>
+		/// <para>SHAPE - 点将位于此网络源中元素的最近点处。</para>
+		/// <para>MIDDLE - 此选项已弃用，其行为与 Shape 相同。</para>
+		/// <para>END - 此选项已弃用，其行为与 Shape 相同。</para>
+		/// <para>此参数的默认值由存储在输入网络分析图层中的位置属性确定。 如果网络分析图层具有所选子图层的位置设置替代，则将使用这些设置。 否则，将使用网络分析图层的默认位置设置。 为此参数设置非默认值将更新网络分析图层的位置设置，覆盖选定子图层。</para>
+		/// <para>使用现有网络位置字段添加位置时不使用此参数。</para>
+		/// <para>当网络分析图层的网络数据源为 ArcGIS Online 时，不使用此参数。</para>
+		/// <para>当网络分析图层的网络数据源为早于 11.0 版本的 ArcGIS Enterprise 门户时，不使用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Find Closest among All Classes</para>
-		/// <para>This parameter is deprecated and maintained only for backward compatibility. Inputs will always be matched to the closest network source among all the sources used for locating, corresponding to a parameter value of MATCH_TO_CLOSEST or True.</para>
+		/// <para>此参数已弃用和维护，只是为了向后兼容。 输入将始终与用于定位的所有源中最近的网络源匹配，对应于参数值 MATCH_TO_CLOSEST 或 True。</para>
 		/// <para><see cref="MatchTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -166,9 +166,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Append to Existing Locations</para>
-		/// <para>Specifies whether new network analysis objects will be appended to existing objects.</para>
-		/// <para>Checked—The new network analysis objects will be appended to the existing set of objects in the selected sublayer. This is the default.</para>
-		/// <para>Unchecked—The existing network analysis objects will be deleted and replaced with the new objects.</para>
+		/// <para>指定是否将新网络分析对象附加到现有对象。</para>
+		/// <para>选中 - 会将新的网络分析对象追加到所选子图层中的现有对象集中。 这是默认设置。</para>
+		/// <para>未选中 - 将删除现有的网络分析对象并使用新的对象来代替。</para>
 		/// <para><see cref="AppendEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -178,12 +178,12 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Snap to Network</para>
-		/// <para>Specifies whether the inputs will be snapped to their calculated network locations or represented at their original geographic location.</para>
-		/// <para>To use curb approach in the analysis to control which side of the road a vehicle must use to approach a location, do not snap the inputs to their network locations, or use a snap offset to ensure that the point remains clearly to one side of the road.</para>
-		/// <para>The parameter is not used when adding locations to sublayers with line or polygon geometry, such as Line Barriers and Polygon Barriers.</para>
-		/// <para>This parameter is not used when the input network analysis layer&apos;s network data source is a portal service.</para>
-		/// <para>Checked—The geometries of the network locations will be snapped to their network locations.</para>
-		/// <para>Unchecked—The geometries of the network locations will be based on the geometries of the input features. This is the default.</para>
+		/// <para>指定将输入捕捉到其计算出的网络位置，还是由其原始地理位置表示它。</para>
+		/// <para>要在分析中使用路边通道来控制车辆在靠近位置时必须使用道路的哪一侧，请勿将输入捕捉到其网络位置，或使用捕捉偏移来确保该点始终清晰地保持在道路的一侧。</para>
+		/// <para>在将位置添加到具有线或面几何（如“线障碍”和“面障碍”）的子图层时，不使用该参数。</para>
+		/// <para>当输入网络分析图层的网络数据源为门户服务时，不使用此参数。</para>
+		/// <para>选中 - 网络位置的几何将被捕捉到其网络位置。</para>
+		/// <para>未选中 - 网络位置的几何将基于输入要素的几何。 这是默认设置。</para>
 		/// <para><see cref="SnapToPositionAlongNetworkEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -193,10 +193,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Snap Offset</para>
-		/// <para>An offset distance that will be applied when snapping a point to the network. An offset distance of zero means the point will be coincident with the network feature (typically a line). To offset the point from the network feature, enter an offset distance. The offset is in relation to the original point location; that is, if the original point was on the left side, its new location will be offset to the left. If it was originally on the right side, its new location will be offset to the right.</para>
-		/// <para>The default is 5 meters. However, this parameter is ignored if Snap to Network is unchecked.</para>
-		/// <para>The parameter is not used when adding locations to sublayers with line or polygon geometry, such as Line Barriers and Polygon Barriers.</para>
-		/// <para>This parameter is not used when the input network analysis layer&apos;s network data source is a portal service.</para>
+		/// <para>将点捕捉到网络时将应用的偏移距离。 偏移距离为零表示点将与网络要素（通常是线）重合。 要使点偏离网络要素，请输入偏移距离。 偏移与起始点的位置有关；即，如果起始点在左侧，它的新位置就会向左偏移。 如果起始点在右侧，它的新位置就会向右偏移。</para>
+		/// <para>默认设置为 5 米。 但是，如果未选中捕捉到网络，则会忽略此参数。</para>
+		/// <para>在将位置添加到具有线或面几何（如“线障碍”和“面障碍”）的子图层时，不使用该参数。</para>
+		/// <para>当输入网络分析图层的网络数据源为门户服务时，不使用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -204,7 +204,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Exclude Restricted Portions of the Network</para>
-		/// <para>This parameter is deprecated and maintained only for backward compatibility. Analysis inputs will never be located on network elements that are restricted, corresponding to a parameter value of EXCLUDE or True.</para>
+		/// <para>此参数已弃用和维护，只是为了向后兼容。 分析输入永远不会位于受限制的网络元素上，对应于 EXCLUDE 或 True 的参数值。</para>
 		/// <para><see cref="ExcludeRestrictedElementsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -214,12 +214,12 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Search Query</para>
-		/// <para>A query that restricts the search to a subset of the features within a source feature class. This is useful if you don&apos;t want to find features that may be unsuited for a network location. For example, if you don&apos;t want to locate on highway ramps, you can define a query to exclude them. A separate SQL expression can be specified per edge or junction source feature class of the network dataset.</para>
-		/// <para>Any network source not explicitly specified in the Geoprocessing pane will have no query applied.</para>
-		/// <para>The default value for this parameter is determined based on location properties stored in the input network analysis layer. If the network analysis layer has location settings overrides for the selected sublayer, those settings will be used. Otherwise, the network analysis layer&apos;s default location settings will be used. Setting a nondefault value for this parameter updates the network analysis layer&apos;s location settings overrides for the selected sublayer.</para>
-		/// <para>This parameter is not used when adding locations using existing network location fields.</para>
-		/// <para>This parameter is not used when the network analysis layer&apos;s network data source is ArcGIS Online.</para>
-		/// <para>This parameter is not used when the network analysis layer&apos;s network data source is a portal running a version of ArcGIS Enterprise older than 11.0.</para>
+		/// <para>将搜索限制在源要素类的要素子集内的查询。 这在不想查找可能不适合网络位置的要素时很有用。 例如，如果您不想定位在高速公路坡道上，则可定义一个查询将其排除。 可以为网络数据集的每个边或交汇点源要素类指定一个单独的 SQL 表达式。</para>
+		/// <para>任何在地理处理窗格中未明确指定的网络源都不会应用查询。</para>
+		/// <para>此参数的默认值由存储在输入网络分析图层中的位置属性确定。 如果网络分析图层具有所选子图层的位置设置替代，则将使用这些设置。 否则，将使用网络分析图层的默认位置设置。 为此参数设置非默认值将更新网络分析图层的位置设置，覆盖选定子图层。</para>
+		/// <para>使用现有网络位置字段添加位置时不使用此参数。</para>
+		/// <para>当网络分析图层的网络数据源为 ArcGIS Online 时，不使用此参数。</para>
+		/// <para>当网络分析图层的网络数据源为早于 11.0 版本的 ArcGIS Enterprise 门户时，不使用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -236,14 +236,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Allow automatic relocating at solve time</para>
-		/// <para>Specifies whether inputs with existing network location fields can be automatically relocated at solve time to ensure valid, routable location fields for the analysis.</para>
-		/// <para>Checked—Points located on restricted network elements and points affected by barriers will be relocated at solve time to the closest routable location. This is the default.</para>
-		/// <para>Unchecked—Network location fields will be used at solve time as is, even if the points are unreachable, and this may cause the solve to fail.</para>
-		/// <para>The default value for this parameter is determined based on location properties stored in the input network analysis layer. If the network analysis layer has location settings overrides for the selected sublayer, those settings will be used. Otherwise, the network analysis layer&apos;s default location settings will be used. Setting a nondefault value for this parameter updates the network analysis layer&apos;s location settings overrides for the selected sublayer.</para>
-		/// <para>Even if the automatic relocating at solve time is not allowed, inputs with no location fields or incomplete location fields will be located at solve time.</para>
-		/// <para>This parameter is not used when the network analysis layer&apos;s network data source is ArcGIS Online.</para>
-		/// <para>This parameter is not used when the network analysis layer&apos;s network data source is an ArcGIS Enterprise portal that does not support using network location fields.</para>
-		/// <para>This parameter is not used when the network analysis layer&apos;s network data source is a portal running a version of ArcGIS Enterprise older than 11.0.</para>
+		/// <para>指定是否可以在求解时自动重定位具有现有网络位置字段的输入，以确保分析的位置字段有效并且可路由。</para>
+		/// <para>选中 - 位于限制网络元素上的点和受障碍影响的点将在求解时重定位至最近的可路由位置。 这是默认设置。</para>
+		/// <para>取消选中 - 求解时网络位置字段将按原样使用（即使点无法访问），并且这可能会导致求解失败。</para>
+		/// <para>此参数的默认值由存储在输入网络分析图层中的位置属性确定。 如果网络分析图层具有所选子图层的位置设置替代，则将使用这些设置。 否则，将使用网络分析图层的默认位置设置。 为此参数设置非默认值将更新网络分析图层的位置设置，覆盖选定子图层。</para>
+		/// <para>即使不允许在求解时自动重新定位，也将在求解时定位没有位置字段或位置字段不完整的输入。</para>
+		/// <para>当网络分析图层的网络数据源为 ArcGIS Online 时，不使用此参数。</para>
+		/// <para>当网络分析图层的网络数据源是不支持使用网络位置字段的 ArcGIS Enterprise 门户时，不使用此参数。</para>
+		/// <para>当网络分析图层的网络数据源为早于 11.0 版本的 ArcGIS Enterprise 门户时，不使用此参数。</para>
 		/// <para><see cref="AllowAutoRelocateEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -290,14 +290,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum AppendEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The new network analysis objects will be appended to the existing set of objects in the selected sublayer. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("APPEND")]
 			APPEND,
 
 			/// <summary>
-			/// <para>Unchecked—The existing network analysis objects will be deleted and replaced with the new objects.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CLEAR")]
@@ -311,14 +311,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum SnapToPositionAlongNetworkEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The geometries of the network locations will be snapped to their network locations.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SNAP")]
 			SNAP,
 
 			/// <summary>
-			/// <para>Unchecked—The geometries of the network locations will be based on the geometries of the input features. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SNAP")]
@@ -353,14 +353,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum AllowAutoRelocateEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Points located on restricted network elements and points affected by barriers will be relocated at solve time to the closest routable location. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ALLOW")]
 			ALLOW,
 
 			/// <summary>
-			/// <para>Unchecked—Network location fields will be used at solve time as is, even if the points are unreachable, and this may cause the solve to fail.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ALLOW")]

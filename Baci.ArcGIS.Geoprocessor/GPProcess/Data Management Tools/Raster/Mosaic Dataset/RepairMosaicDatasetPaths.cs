@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Repair Mosaic Dataset Paths</para>
-	/// <para>Repair Mosaic Dataset Paths</para>
-	/// <para>Resets paths to source imagery if you have moved or copied a mosaic dataset.</para>
+	/// <para>修复镶嵌数据集路径</para>
+	/// <para>如果曾移动或复制镶嵌数据集，请重置源影像的路径。</para>
 	/// </summary>
 	public class RepairMosaicDatasetPaths : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset with the broken paths.</para>
+		/// <para>包含损坏路径的镶嵌数据集。</para>
 		/// </param>
 		/// <param name="PathsList">
 		/// <para>Paths List</para>
-		/// <para>A list of the paths to remap. Include the current path stored in the mosaic dataset and the path to which it will be changed. You can enter an asterisk (*) as the original path if you wish to change all your paths.</para>
+		/// <para>一系列要重新映射的路径。其中包括在镶嵌数据集中存储的当前路径以及将更改的路径。如果要更改所有路径，可输入星号 (*) 作为原始路径。</para>
 		/// </param>
 		public RepairMosaicDatasetPaths(object InMosaicDataset, object PathsList)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Repair Mosaic Dataset Paths</para>
+		/// <para>Tool Display Name : 修复镶嵌数据集路径</para>
 		/// </summary>
-		public override string DisplayName() => "Repair Mosaic Dataset Paths";
+		public override string DisplayName() => "修复镶嵌数据集路径";
 
 		/// <summary>
 		/// <para>Tool Name : RepairMosaicDatasetPaths</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset with the broken paths.</para>
+		/// <para>包含损坏路径的镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Paths List</para>
-		/// <para>A list of the paths to remap. Include the current path stored in the mosaic dataset and the path to which it will be changed. You can enter an asterisk (*) as the original path if you wish to change all your paths.</para>
+		/// <para>一系列要重新映射的路径。其中包括在镶嵌数据集中存储的当前路径以及将更改的路径。如果要更改所有路径，可输入星号 (*) 作为原始路径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>An SQL expression to limit the repairs to selected rasters within the mosaic dataset.</para>
+		/// <para>将修复限制为镶嵌数据集中所选栅格的 SQL 表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]

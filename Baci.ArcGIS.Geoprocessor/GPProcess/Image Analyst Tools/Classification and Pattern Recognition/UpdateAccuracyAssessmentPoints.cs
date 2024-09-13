@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Update Accuracy Assessment Points</para>
-	/// <para>Update Accuracy Assessment Points</para>
-	/// <para>Updates the Target field in the attribute table to compare reference points to the classified image.</para>
+	/// <para>更新精度评估点</para>
+	/// <para>更新属性表中的 Target 字段，将参考点与分类的影像进行比较。</para>
 	/// </summary>
 	public class UpdateAccuracyAssessmentPoints : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InClassData">
 		/// <para>Input Raster or Feature Class Data</para>
-		/// <para>The input classification image or other thematic GIS reference data. The input can be a raster or feature class.</para>
-		/// <para>Typical data is a classification image of a single band, integer data type.</para>
-		/// <para>If using polygons as input, only use those that are not used as training samples. You can also use land-cover data in shapefile or feature class format.</para>
+		/// <para>输入分类影像或其他专题 GIS 参考数据。 输入可以是栅格或要素类。</para>
+		/// <para>典型数据是单波段、整型数据类型的分类影像。</para>
+		/// <para>如果使用面作为输出，则仅使用未用作训练样本的面。 还可以用 shapefile 或要素类格式的土地覆被数据。</para>
 		/// </param>
 		/// <param name="InPoints">
 		/// <para>Input Accuracy Assessment Points</para>
-		/// <para>The point feature class providing the accuracy assessment points to be updated.</para>
-		/// <para>All points from this input will be copied to the updated output feature class, and the Target Field parameter value will be updated from the input raster or feature class data.</para>
+		/// <para>该点要素类提供了要更新的精度评估点。</para>
+		/// <para>此输入中的所有点都将复制到更新的输出要素类中，同时会通过输入栅格或要素类数据更新目标字段参数值。</para>
 		/// </param>
 		/// <param name="OutPoints">
 		/// <para>Output Accuracy Assessment Points</para>
-		/// <para>The output point feature class that contains the updated random point field for accuracy assessment purposes.</para>
+		/// <para>包含用于精度评估的更新随机点字段的输出点要素类。</para>
 		/// </param>
 		public UpdateAccuracyAssessmentPoints(object InClassData, object InPoints, object OutPoints)
 		{
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Update Accuracy Assessment Points</para>
+		/// <para>Tool Display Name : 更新精度评估点</para>
 		/// </summary>
-		public override string DisplayName() => "Update Accuracy Assessment Points";
+		public override string DisplayName() => "更新精度评估点";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateAccuracyAssessmentPoints</para>
@@ -78,9 +78,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Raster or Feature Class Data</para>
-		/// <para>The input classification image or other thematic GIS reference data. The input can be a raster or feature class.</para>
-		/// <para>Typical data is a classification image of a single band, integer data type.</para>
-		/// <para>If using polygons as input, only use those that are not used as training samples. You can also use land-cover data in shapefile or feature class format.</para>
+		/// <para>输入分类影像或其他专题 GIS 参考数据。 输入可以是栅格或要素类。</para>
+		/// <para>典型数据是单波段、整型数据类型的分类影像。</para>
+		/// <para>如果使用面作为输出，则仅使用未用作训练样本的面。 还可以用 shapefile 或要素类格式的土地覆被数据。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -88,8 +88,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Accuracy Assessment Points</para>
-		/// <para>The point feature class providing the accuracy assessment points to be updated.</para>
-		/// <para>All points from this input will be copied to the updated output feature class, and the Target Field parameter value will be updated from the input raster or feature class data.</para>
+		/// <para>该点要素类提供了要更新的精度评估点。</para>
+		/// <para>此输入中的所有点都将复制到更新的输出要素类中，同时会通过输入栅格或要素类数据更新目标字段参数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Accuracy Assessment Points</para>
-		/// <para>The output point feature class that contains the updated random point field for accuracy assessment purposes.</para>
+		/// <para>包含用于精度评估的更新随机点字段的输出点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -105,9 +105,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Target Field</para>
-		/// <para>Specifies whether the input data is a classified image or ground truth data.</para>
-		/// <para>Classified—The input is a classified image. This is the default.</para>
-		/// <para>Ground truth—The input is reference data.</para>
+		/// <para>指定输入数据是分类影像还是实际地表数据。</para>
+		/// <para>分类—输入为分类影像。 这是默认设置。</para>
+		/// <para>实际地表—输入为参考数据。</para>
 		/// <para><see cref="TargetFieldEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Dimension Field for Feature Class</para>
-		/// <para>The dimension field for the Input Accuracy Assessment Points parameter value. The assessment points will be updated based on the matching dimension values with this field.</para>
+		/// <para>输入精度评估点参数值的维度字段。 评估点将根据与此字段匹配的维度值进行更新。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -125,8 +125,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Dimension Field for Test Points</para>
-		/// <para>The dimension field in the Input Accuracy Assessment Points parameter value. Input data with identical dimension values will be used to update corresponding points.</para>
-		/// <para>When the Input Raster or Feature Class Data parameter value is a multidimensional raster, rasters with dimension values that match the dimension field in the test points will be used in updating. The multidimensional raster is expected to have one time dimension (StdTime). Otherwise, the first dimension will be used to match the dimension field of the test points.</para>
+		/// <para>输入精度评估点参数值的维度字段。 具有相同维度值的输入数据将用于更新相应的点。</para>
+		/// <para>当输入栅格或要素类数据参数值为多维栅格时，将使用维度值与测试点中的维度字段匹配的栅格进行更新。 多维栅格应具有一个时间维度 (StdTime)。 否则，将使用第一个维度来匹配测试点的维度字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -140,17 +140,17 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum TargetFieldEnum 
 		{
 			/// <summary>
-			/// <para>Classified—The input is a classified image. This is the default.</para>
+			/// <para>分类—输入为分类影像。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("CLASSIFIED")]
-			[Description("Classified")]
+			[Description("分类")]
 			Classified,
 
 			/// <summary>
-			/// <para>Ground truth—The input is reference data.</para>
+			/// <para>实际地表—输入为参考数据。</para>
 			/// </summary>
 			[GPValue("GROUND_TRUTH")]
-			[Description("Ground truth")]
+			[Description("实际地表")]
 			Ground_truth,
 
 		}

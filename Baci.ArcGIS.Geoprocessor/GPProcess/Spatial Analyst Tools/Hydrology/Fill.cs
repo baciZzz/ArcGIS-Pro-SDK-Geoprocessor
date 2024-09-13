@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Fill</para>
-	/// <para>Fill</para>
-	/// <para>Fills sinks in a surface raster to remove small imperfections in the data.</para>
+	/// <para>填洼</para>
+	/// <para>通过填充表面栅格中的汇来移除数据中的小缺陷。</para>
 	/// </summary>
 	public class Fill : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InSurfaceRaster">
 		/// <para>Input surface raster</para>
-		/// <para>The input raster representing a continuous surface.</para>
+		/// <para>输入栅格表示连续表面。</para>
 		/// </param>
 		/// <param name="OutSurfaceRaster">
 		/// <para>Output surface raster</para>
-		/// <para>The output surface raster after the sinks have been filled.</para>
-		/// <para>If the surface raster is integer, the output filled raster will be integer type. If the input is floating point, the output raster will be floating point.</para>
+		/// <para>已填充凹陷点的输出表面栅格。</para>
+		/// <para>如果表面栅格数据为整型，则输出已填充栅格数据也为整型。如果输入栅格数据为浮点型，则输出栅格数据也为浮点型。</para>
 		/// </param>
 		public Fill(object InSurfaceRaster, object OutSurfaceRaster)
 		{
@@ -35,14 +35,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Fill</para>
+		/// <para>Tool Display Name : 填洼</para>
 		/// </summary>
-		public override string DisplayName() => "Fill";
+		public override string DisplayName() => "填洼";
 
 		/// <summary>
-		/// <para>Tool Name : Fill</para>
+		/// <para>Tool Name : 填洼</para>
 		/// </summary>
-		public override string ToolName() => "Fill";
+		public override string ToolName() => "填洼";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Fill</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input surface raster</para>
-		/// <para>The input raster representing a continuous surface.</para>
+		/// <para>输入栅格表示连续表面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -83,8 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output surface raster</para>
-		/// <para>The output surface raster after the sinks have been filled.</para>
-		/// <para>If the surface raster is integer, the output filled raster will be integer type. If the input is floating point, the output raster will be floating point.</para>
+		/// <para>已填充凹陷点的输出表面栅格。</para>
+		/// <para>如果表面栅格数据为整型，则输出已填充栅格数据也为整型。如果输入栅格数据为浮点型，则输出栅格数据也为浮点型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -92,10 +92,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Z limit</para>
-		/// <para>Maximum elevation difference between a sink and its pour point to be filled.</para>
-		/// <para>If the difference in z-values between a sink and its pour point is greater than the z_limit, that sink will not be filled.</para>
-		/// <para>The value for z-limit must be greater than zero.</para>
-		/// <para>Unless a value is specified for this parameter, all sinks will be filled, regardless of depth.</para>
+		/// <para>要填充的凹陷点与其倾泻点之间的最大高程差。</para>
+		/// <para>如果凹陷点与其倾泻点之间的 z 值差大于 z 限制，则不会填充此凹陷点。</para>
+		/// <para>Z 限制值必须大于零。</para>
+		/// <para>除非已指定该参数的值，否则将填充所有凹陷点（不考虑深度）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

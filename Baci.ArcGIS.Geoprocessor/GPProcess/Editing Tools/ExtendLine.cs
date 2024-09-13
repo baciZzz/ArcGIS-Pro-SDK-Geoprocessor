@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Extend Line</para>
-	/// <para>Extend Line</para>
-	/// <para>Extends line segments to the first intersecting feature within a specified distance. If no intersecting feature is within the specified distance, the line segment will not be extended. Tool use is intended for quality control tasks such as cleaning up topology errors in features that were digitized without having set proper snapping environments.</para>
+	/// <para>延伸线</para>
+	/// <para>将线段延伸至指定距离范围内的第一个相交要素。 如果在指定距离范围内不存在相交的要素，则不会延伸该线段。 工具用于完成质量控制任务，例如，清除在未设置适合的捕捉环境的情况下而进行数字化的要素中的拓扑错误。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The line input features to be extended.</para>
+		/// <para>要延伸的线输入要素。</para>
 		/// </param>
 		public ExtendLine(object InFeatures)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Extend Line</para>
+		/// <para>Tool Display Name : 延伸线</para>
 		/// </summary>
-		public override string DisplayName() => "Extend Line";
+		public override string DisplayName() => "延伸线";
 
 		/// <summary>
 		/// <para>Tool Name : ExtendLine</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The line input features to be extended.</para>
+		/// <para>要延伸的线输入要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Extend Length</para>
-		/// <para>The maximum distance a line segment can be extended to an intersecting feature.</para>
+		/// <para>线段延伸到相交要素所需的最大距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -85,9 +85,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Extend to Extensions</para>
-		/// <para>Specifies whether line segments can be extended to other extended line segments within the specified extend length.</para>
-		/// <para>Checked—Line segments can be extended to other extended line segments as well as existing line features. This is the default.</para>
-		/// <para>Unchecked—Line segments can only be extended to existing line features.</para>
+		/// <para>指定线段是否可延伸至指定延伸长度范围内的其他延伸线段。</para>
+		/// <para>选中 - 线段可延伸至其他延伸线段以及现有线要素。 这是默认设置。</para>
+		/// <para>未选中 - 线段只能延伸至现有线要素。</para>
 		/// <para><see cref="ExtendToEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -119,14 +119,14 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		public enum ExtendToEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Line segments can be extended to other extended line segments as well as existing line features. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EXTENSION")]
 			EXTENSION,
 
 			/// <summary>
-			/// <para>Unchecked—Line segments can only be extended to existing line features.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FEATURE")]

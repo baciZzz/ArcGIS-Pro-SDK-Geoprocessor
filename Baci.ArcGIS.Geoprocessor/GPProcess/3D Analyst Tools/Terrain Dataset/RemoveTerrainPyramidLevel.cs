@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Remove Terrain Pyramid Level</para>
-	/// <para>Remove Terrain Pyramid Level</para>
-	/// <para>Removes a pyramid level from a terrain dataset.</para>
+	/// <para>移除 Terrain 金字塔等级</para>
+	/// <para>从 terrain 数据集中移除金字塔等级。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTerrain">
 		/// <para>Input Terrain</para>
-		/// <para>The terrain dataset to process.</para>
+		/// <para>待处理的 terrain 数据集。</para>
 		/// </param>
 		/// <param name="PyramidLevelResolution">
 		/// <para>Pyramid Level Resolution</para>
-		/// <para>The pyramid level to be removed as specified by its resolution.</para>
+		/// <para>要移除的由分辨率指定的金字塔等级。</para>
 		/// </param>
 		public RemoveTerrainPyramidLevel(object InTerrain, object PyramidLevelResolution)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Remove Terrain Pyramid Level</para>
+		/// <para>Tool Display Name : 移除 Terrain 金字塔等级</para>
 		/// </summary>
-		public override string DisplayName() => "Remove Terrain Pyramid Level";
+		public override string DisplayName() => "移除 Terrain 金字塔等级";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveTerrainPyramidLevel</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Terrain</para>
-		/// <para>The terrain dataset to process.</para>
+		/// <para>待处理的 terrain 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTerrainLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
-		/// <para>The pyramid level to be removed as specified by its resolution.</para>
+		/// <para>要移除的由分辨率指定的金字塔等级。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]

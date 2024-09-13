@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Split Mosaic Dataset Items</para>
-	/// <para>Split Mosaic Dataset Items</para>
-	/// <para>Splits mosaic dataset items that were merged together using Merge Mosaic Dataset Items.</para>
+	/// <para>分割镶嵌数据集项目</para>
+	/// <para>对使用合并镶嵌数据集项目合并在一起的镶嵌数据集项目进行分割。</para>
 	/// </summary>
 	public class SplitMosaicDatasetItems : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset containing the items to split.</para>
+		/// <para>包含要分割的项目的镶嵌数据集。</para>
 		/// </param>
 		public SplitMosaicDatasetItems(object InMosaicDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Split Mosaic Dataset Items</para>
+		/// <para>Tool Display Name : 分割镶嵌数据集项目</para>
 		/// </summary>
-		public override string DisplayName() => "Split Mosaic Dataset Items";
+		public override string DisplayName() => "分割镶嵌数据集项目";
 
 		/// <summary>
 		/// <para>Tool Name : SplitMosaicDatasetItems</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset containing the items to split.</para>
+		/// <para>包含要分割的项目的镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,8 +73,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>An SQL expression to select items to split.</para>
-		/// <para>If the query does not contain any previously merged items, the tool will return an error.</para>
+		/// <para>用于选择要分割项目的 SQL 表达式。</para>
+		/// <para>如果查询未包含先前合并的任何项目，则该工具将返回错误。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]

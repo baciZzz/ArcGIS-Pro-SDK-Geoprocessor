@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Dissolve Boundaries</para>
-	/// <para>Dissolve Boundaries</para>
-	/// <para>Finds polygons that overlap or share a common boundary and merges them together to form a single polygon.</para>
+	/// <para>融合边界</para>
+	/// <para>查找重叠或共用公共边界的面，然后将其合并到一起以形成一个单个面。</para>
 	/// </summary>
 	public class DissolveBoundaries : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// </summary>
 		/// <param name="Inputlayer">
 		/// <para>Input Layer</para>
-		/// <para>The layer containing polygon features that will be dissolved or combined.</para>
+		/// <para>包含将进行融合或组合的面要素的图层。</para>
 		/// </param>
 		/// <param name="Outputname">
 		/// <para>Output Name</para>
-		/// <para>The name of the output layer to create on your portal.</para>
+		/// <para>要在门户中创建的输出图层的名称。</para>
 		/// </param>
 		public DissolveBoundaries(object Inputlayer, object Outputname)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Dissolve Boundaries</para>
+		/// <para>Tool Display Name : 融合边界</para>
 		/// </summary>
-		public override string DisplayName() => "Dissolve Boundaries";
+		public override string DisplayName() => "融合边界";
 
 		/// <summary>
 		/// <para>Tool Name : DissolveBoundaries</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The layer containing polygon features that will be dissolved or combined.</para>
+		/// <para>包含将进行融合或组合的面要素的图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output layer to create on your portal.</para>
+		/// <para>要在门户中创建的输出图层的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -86,8 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Dissolve Fields</para>
-		/// <para>One or more fields from the input layer that control which polygons are merged. If you don&apos;t supply dissolve fields, polygons that share a common border (that is, they are adjacent) or polygon areas that overlap will be dissolved into one polygon.</para>
-		/// <para>If you do supply fields, polygons that share a common border and contain the same value in one or more fields will be dissolved. For example, if you have a layer of counties and each county has a State_Name attribute, you can dissolve boundaries using the State_Name attribute. Adjacent counties will be merged together if they have the same value for State_Name. The end result is a layer of state boundaries. If two or more fields are specified, the values in these fields must be the same for the boundary to be dissolved.</para>
+		/// <para>输入图层中控制要合并的面的一个或多个字段。如果您不提供融合字段，则共用公共边界的面（也就是说它们是相邻的）或重叠的面区域将会被融合为一个面。</para>
+		/// <para>如果您不提供字段，则共用公共边界以及在一个或多个字段中包含相同值的面将被融合。例如，如果有一个县图层，并且每个县都具有 State_Name 属性，则可以使用 State_Name 属性来融合边界。如果相邻的县具有相同的 State_Name 值，则将它们合并到一起。最终结果是一个州边界图层。如果指定了两个或多个字段，则这些字段中的值必须相同才能融合边界。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -97,12 +97,12 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Summary Fields</para>
-		/// <para>A list of field names and statistical summary type that you wish to calculate for all points within each polygon. The count of points within each polygon is always returned. The following statistic types are supported:</para>
-		/// <para>Sum—The total value.</para>
-		/// <para>Minimum—The smallest value.</para>
-		/// <para>Max—The largest value.</para>
-		/// <para>Mean—The average or mean value.</para>
-		/// <para>Standard deviation—The standard deviation.</para>
+		/// <para>字段名称及您想要为各面内全部点计算的统计汇总类型的列表。始终返回每个面内的点计数。支持的统计数据类型如下：</para>
+		/// <para>Sum - 总值。</para>
+		/// <para>Minimum - 最小值。</para>
+		/// <para>Max - 最大值。</para>
+		/// <para>Mean - 平均值。</para>
+		/// <para>Standard deviation - 标准差。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Modify Route ID Padding</para>
-	/// <para>Modify Route ID Padding</para>
-	/// <para>Modifies the padding, null, and length properties for fields that are part of a multifield route ID.</para>
+	/// <para>修改路径 ID 填充</para>
+	/// <para>修改属于多字段路径 ID 的字段的填充、空值和长度属性。</para>
 	/// </summary>
 	public class ModifyRouteIdPadding : AbstractGPProcess
 	{
@@ -21,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InFeatureClass">
 		/// <para>LRS Network Feature Class</para>
-		/// <para>The input multifield route ID network layer that contains fields for padding, null, and length values that need to be modified.</para>
+		/// <para>输入多字段路径 ID 网络图层，其中包含需要修改的填充、空值和长度值字段。</para>
 		/// </param>
 		/// <param name="RouteIdPadding">
 		/// <para>Route ID Padding</para>
-		/// <para>A table of values that specifies the field to be modified and its corresponding padding, null, and length values.</para>
-		/// <para>Field—The field to be modified.</para>
-		/// <para>Length—The length value of the field to be modified. The field length should be between 1 and the length of the database field.</para>
-		/// <para>Variable Length—Specifies if the Length value is a variable value or a fixed value.</para>
-		/// <para>Enable Padding—Specifies if the field supports padding.</para>
-		/// <para>Padding Character—The padding character for the field. The default is a space.</para>
-		/// <para>Padding Location—Specifies where the padding should be applied to the field value.</para>
-		/// <para>Left—Adds the padding characters to the left of the value in the field. This is the default.</para>
-		/// <para>Right—Adds the padding characters to the right of the value in the field.</para>
-		/// <para>Left and Right—Adds the padding characters to the left and right of the value in the field.</para>
-		/// <para>Pad if Null—Specifies if the padding characters are added when the field has a null value.</para>
-		/// <para>Allow Null Values—Specifies if the field supports null values.</para>
+		/// <para>在此值表中指定了要修改的字段及其对应的填充、空值和长度值。</para>
+		/// <para>Field—要修改的字段。</para>
+		/// <para>Length—要修改的字段的长度值。 字段长度应介于 1 和数据库字段的长度之间。</para>
+		/// <para>Variable Length—指定长度值是可变值还是固定值。</para>
+		/// <para>Enable Padding—指定字段是否支持填充。</para>
+		/// <para>Padding Character—字段的填充字符。 默认为空格。</para>
+		/// <para>Padding Location—指定应将填充应用于字段值的位置。</para>
+		/// <para>左侧 - 将填充字符添加到字段中值的左侧。 这是默认设置。</para>
+		/// <para>右侧 - 将填充字符添加到字段中值的右侧。</para>
+		/// <para>左侧和右侧 - 将填充字符添加到字段中值的左右两侧。</para>
+		/// <para>Pad if Null—指定当字段具有空值时是否添加填充字符。</para>
+		/// <para>Allow Null Values—指定字段是否支持空值。</para>
 		/// </param>
 		public ModifyRouteIdPadding(object InFeatureClass, object RouteIdPadding)
 		{
@@ -45,9 +45,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Modify Route ID Padding</para>
+		/// <para>Tool Display Name : 修改路径 ID 填充</para>
 		/// </summary>
-		public override string DisplayName() => "Modify Route ID Padding";
+		public override string DisplayName() => "修改路径 ID 填充";
 
 		/// <summary>
 		/// <para>Tool Name : ModifyRouteIdPadding</para>
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>LRS Network Feature Class</para>
-		/// <para>The input multifield route ID network layer that contains fields for padding, null, and length values that need to be modified.</para>
+		/// <para>输入多字段路径 ID 网络图层，其中包含需要修改的填充、空值和长度值字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -91,18 +91,18 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Route ID Padding</para>
-		/// <para>A table of values that specifies the field to be modified and its corresponding padding, null, and length values.</para>
-		/// <para>Field—The field to be modified.</para>
-		/// <para>Length—The length value of the field to be modified. The field length should be between 1 and the length of the database field.</para>
-		/// <para>Variable Length—Specifies if the Length value is a variable value or a fixed value.</para>
-		/// <para>Enable Padding—Specifies if the field supports padding.</para>
-		/// <para>Padding Character—The padding character for the field. The default is a space.</para>
-		/// <para>Padding Location—Specifies where the padding should be applied to the field value.</para>
-		/// <para>Left—Adds the padding characters to the left of the value in the field. This is the default.</para>
-		/// <para>Right—Adds the padding characters to the right of the value in the field.</para>
-		/// <para>Left and Right—Adds the padding characters to the left and right of the value in the field.</para>
-		/// <para>Pad if Null—Specifies if the padding characters are added when the field has a null value.</para>
-		/// <para>Allow Null Values—Specifies if the field supports null values.</para>
+		/// <para>在此值表中指定了要修改的字段及其对应的填充、空值和长度值。</para>
+		/// <para>Field—要修改的字段。</para>
+		/// <para>Length—要修改的字段的长度值。 字段长度应介于 1 和数据库字段的长度之间。</para>
+		/// <para>Variable Length—指定长度值是可变值还是固定值。</para>
+		/// <para>Enable Padding—指定字段是否支持填充。</para>
+		/// <para>Padding Character—字段的填充字符。 默认为空格。</para>
+		/// <para>Padding Location—指定应将填充应用于字段值的位置。</para>
+		/// <para>左侧 - 将填充字符添加到字段中值的左侧。 这是默认设置。</para>
+		/// <para>右侧 - 将填充字符添加到字段中值的右侧。</para>
+		/// <para>左侧和右侧 - 将填充字符添加到字段中值的左右两侧。</para>
+		/// <para>Pad if Null—指定当字段具有空值时是否添加填充字符。</para>
+		/// <para>Allow Null Values—指定字段是否支持空值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]

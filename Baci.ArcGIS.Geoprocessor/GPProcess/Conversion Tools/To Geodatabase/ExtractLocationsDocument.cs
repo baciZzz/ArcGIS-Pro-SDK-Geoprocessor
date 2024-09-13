@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Extract Locations From Document</para>
-	/// <para>Extract Locations From Document</para>
-	/// <para>Analyzes documents containing unstructured or semistructured text, such as email messages, travel forms, and so on, and extracts locations to a point feature class.</para>
+	/// <para>从文档中提取位置</para>
+	/// <para>分析包含非结构化或半结构化文本（例如电子邮件消息、行程表单等）的文档，并将位置提取到点要素类。</para>
 	/// </summary>
 	public class ExtractLocationsDocument : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InFile">
 		/// <para>Input File</para>
-		/// <para>The input file that will be scanned for locations (coordinates or custom locations), dates, and custom attributes; or a folder in which all files in the folder will be scanned for locations.</para>
+		/// <para>将扫描以查找位置 （坐标或自定义位置）、日期和自定义属性的输入文件；或者将扫描其中所有文件以查找位置的文件夹。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Extract Locations From Document</para>
+		/// <para>Tool Display Name : 从文档中提取位置</para>
 		/// </summary>
-		public override string DisplayName() => "Extract Locations From Document";
+		public override string DisplayName() => "从文档中提取位置";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractLocationsDocument</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input File</para>
-		/// <para>The input file that will be scanned for locations (coordinates or custom locations), dates, and custom attributes; or a folder in which all files in the folder will be scanned for locations.</para>
+		/// <para>将扫描以查找位置 （坐标或自定义位置）、日期和自定义属性的输入文件；或者将扫描其中所有文件以查找位置的文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

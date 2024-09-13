@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>TIN To Raster</para>
-	/// <para>TIN To Raster</para>
-	/// <para>Interpolates a raster using z-values from the input TIN.</para>
+	/// <para>TIN 转栅格</para>
+	/// <para>使用 z 值将输入 TIN 插值成栅格。</para>
 	/// </summary>
 	public class TinRaster : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTin">
 		/// <para>Input TIN</para>
-		/// <para>The TIN dataset to process.</para>
+		/// <para>待处理的 TIN 数据集。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster</para>
-		/// <para>The location and name of the output raster. When storing a raster dataset in a geodatabase or in a folder such as an Esri Grid, do not add a file extension to the name of the raster dataset. A file extension can be provided to define the raster&apos;s format when storing it in a folder, such as .tif to generate a GeoTIFF or .img to generate an ERDAS IMAGINE format file.</para>
-		/// <para>If the raster is stored as a TIFF file or in a geodatabase, its raster compression type and quality can be specified using geoprocessing environment settings.</para>
+		/// <para>输出栅格的位置和名称。 将栅格数据集存储到地理数据库或文件夹（例如 Esri GRID）时，请勿向栅格数据集的名称添加文件扩展名。 在将栅格存储到文件夹中时，可提供文件扩展名以定义栅格的格式，例如 .tif（生成 GeoTIFF）或 .img（生成 ERDAS IMAGINE 格式文件）。</para>
+		/// <para>如果栅格存储为 TIFF 文件或存储在地理数据库中，可使用地理处理环境设置指定其栅格压缩类型和质量。</para>
 		/// </param>
 		public TinRaster(object InTin, object OutRaster)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : TIN To Raster</para>
+		/// <para>Tool Display Name : TIN 转栅格</para>
 		/// </summary>
-		public override string DisplayName() => "TIN To Raster";
+		public override string DisplayName() => "TIN 转栅格";
 
 		/// <summary>
 		/// <para>Tool Name : TinRaster</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input TIN</para>
-		/// <para>The TIN dataset to process.</para>
+		/// <para>待处理的 TIN 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTinLayer()]
@@ -79,8 +79,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Raster</para>
-		/// <para>The location and name of the output raster. When storing a raster dataset in a geodatabase or in a folder such as an Esri Grid, do not add a file extension to the name of the raster dataset. A file extension can be provided to define the raster&apos;s format when storing it in a folder, such as .tif to generate a GeoTIFF or .img to generate an ERDAS IMAGINE format file.</para>
-		/// <para>If the raster is stored as a TIFF file or in a geodatabase, its raster compression type and quality can be specified using geoprocessing environment settings.</para>
+		/// <para>输出栅格的位置和名称。 将栅格数据集存储到地理数据库或文件夹（例如 Esri GRID）时，请勿向栅格数据集的名称添加文件扩展名。 在将栅格存储到文件夹中时，可提供文件扩展名以定义栅格的格式，例如 .tif（生成 GeoTIFF）或 .img（生成 ERDAS IMAGINE 格式文件）。</para>
+		/// <para>如果栅格存储为 TIFF 文件或存储在地理数据库中，可使用地理处理环境设置指定其栅格压缩类型和质量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -88,9 +88,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Data Type</para>
-		/// <para>Specifies the type of numeric values stored in the output raster.</para>
-		/// <para>Floating Point—The output raster will use 32-bit floating point, which supports values ranging from -3.402823466e+38 to 3.402823466e+38. This is the default.</para>
-		/// <para>Integer—The output raster will use an appropriate integer bit depth. This option will round z-values to the nearest whole number and write an integer to each raster cell value.</para>
+		/// <para>指定输出栅格中所存储数值的类型。</para>
+		/// <para>浮点型—输出栅格将使用 32 位浮点型，支持介于 -3.402823466e+38 到 3.402823466e+38 之间的值。 这是默认设置。</para>
+		/// <para>整型—输出栅格将使用合适的整型位深度。 该选项可将 z 值四舍五入为最接近的整数值，并将该整数写入每个栅格像元值。</para>
 		/// <para><see cref="DataTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -100,9 +100,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>The interpolation method used to create the raster.</para>
-		/// <para>Linear—Calculates cell values by applying linear interpolation to the TIN triangles. This is the default.</para>
-		/// <para>Natural Neighbors—Calculates cell values by using natural neighbors interpolation of TIN triangles</para>
+		/// <para>该插值方法用于创建栅格。</para>
+		/// <para>线性—通过向 TIN 三角形应用线性插值法来计算像元值。这是默认设置。</para>
+		/// <para>自然邻域法—通过使用 TIN 三角形的自然邻域插值法计算像元值</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -112,9 +112,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Sampling Distance</para>
-		/// <para>The sampling method and distance used to define the cell size of the output raster.</para>
-		/// <para>Observations—Defines the number of cells that divide the longest side of the output raster. This method is used by default with the value of 250.</para>
-		/// <para>Cell Size—Defines the cell size of the output raster.</para>
+		/// <para>用于定义输出栅格的像元大小的采样方法和距离。</para>
+		/// <para>观测—定义分割输出栅格最长边上的像元数。默认方法使用的值为 250。</para>
+		/// <para>像元大小—定义输出栅格的像元大小。</para>
 		/// <para><see cref="SampleDistanceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z Factor</para>
-		/// <para>The factor by which z-values will be multiplied. This is typically used to convert z linear units to match x,y linear units. The default is 1, which leaves elevation values unchanged. This parameter is not available if the spatial reference of the input surface has a z datum with a specified linear unit.</para>
+		/// <para>Z 值将乘上的系数。 此值通常用于转换 z 线性单位来匹配 x,y 线性单位。 默认值为 1，此时高程值保持不变。 如果输入表面的空间参考具有已指定线性单位的 z 基准，则此参数不可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Sampling Value</para>
-		/// <para>The value that corresponds with the Sampling Distance for specifying the output raster's cell size.</para>
+		/// <para>用于指定输出栅格像元大小的采样距离对应的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -155,17 +155,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum DataTypeEnum 
 		{
 			/// <summary>
-			/// <para>Floating Point—The output raster will use 32-bit floating point, which supports values ranging from -3.402823466e+38 to 3.402823466e+38. This is the default.</para>
+			/// <para>浮点型—输出栅格将使用 32 位浮点型，支持介于 -3.402823466e+38 到 3.402823466e+38 之间的值。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("FLOAT")]
-			[Description("Floating Point")]
+			[Description("浮点型")]
 			Floating_Point,
 
 			/// <summary>
-			/// <para>Integer—The output raster will use an appropriate integer bit depth. This option will round z-values to the nearest whole number and write an integer to each raster cell value.</para>
+			/// <para>整型—输出栅格将使用合适的整型位深度。 该选项可将 z 值四舍五入为最接近的整数值，并将该整数写入每个栅格像元值。</para>
 			/// </summary>
 			[GPValue("INT")]
-			[Description("Integer")]
+			[Description("整型")]
 			Integer,
 
 		}
@@ -176,17 +176,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Linear—Calculates cell values by applying linear interpolation to the TIN triangles. This is the default.</para>
+			/// <para>线性—通过向 TIN 三角形应用线性插值法来计算像元值。这是默认设置。</para>
 			/// </summary>
 			[GPValue("LINEAR")]
-			[Description("Linear")]
+			[Description("线性")]
 			Linear,
 
 			/// <summary>
-			/// <para>Natural Neighbors—Calculates cell values by using natural neighbors interpolation of TIN triangles</para>
+			/// <para>自然邻域法—通过使用 TIN 三角形的自然邻域插值法计算像元值</para>
 			/// </summary>
 			[GPValue("NATURAL_NEIGHBORS")]
-			[Description("Natural Neighbors")]
+			[Description("自然邻域法")]
 			Natural_Neighbors,
 
 		}
@@ -197,17 +197,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum SampleDistanceEnum 
 		{
 			/// <summary>
-			/// <para>Observations—Defines the number of cells that divide the longest side of the output raster. This method is used by default with the value of 250.</para>
+			/// <para>观测—定义分割输出栅格最长边上的像元数。默认方法使用的值为 250。</para>
 			/// </summary>
 			[GPValue("OBSERVATIONS")]
-			[Description("Observations")]
+			[Description("观测")]
 			Observations,
 
 			/// <summary>
-			/// <para>Cell Size—Defines the cell size of the output raster.</para>
+			/// <para>像元大小—定义输出栅格的像元大小。</para>
 			/// </summary>
 			[GPValue("CELLSIZE")]
-			[Description("Cell Size")]
+			[Description("像元大小")]
 			Cell_Size,
 
 		}

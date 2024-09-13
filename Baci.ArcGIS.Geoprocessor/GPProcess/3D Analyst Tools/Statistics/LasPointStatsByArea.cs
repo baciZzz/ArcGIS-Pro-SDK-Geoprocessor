@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>LAS Point Statistics By Area</para>
-	/// <para>LAS Point Statistics By Area</para>
-	/// <para>Evaluates the statistics of LAS points that overlay the area defined by polygon features.</para>
+	/// <para>按区域统计 LAS 点</para>
+	/// <para>评估与面要素定义的区域叠加的 LAS 点的统计信息。</para>
 	/// </summary>
 	public class LasPointStatsByArea : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset to process.</para>
+		/// <para>待处理的 LAS 数据集。</para>
 		/// </param>
 		/// <param name="InFeatures">
 		/// <para>Input Polygons</para>
-		/// <para>The polygon that defines the area for which statistics will be reported.</para>
+		/// <para>用于定义将要为其报告统计数据的区域的面。</para>
 		/// </param>
 		public LasPointStatsByArea(object InLasDataset, object InFeatures)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : LAS Point Statistics By Area</para>
+		/// <para>Tool Display Name : 按区域统计 LAS 点</para>
 		/// </summary>
-		public override string DisplayName() => "LAS Point Statistics By Area";
+		public override string DisplayName() => "按区域统计 LAS 点";
 
 		/// <summary>
 		/// <para>Tool Name : LasPointStatsByArea</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset to process.</para>
+		/// <para>待处理的 LAS 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Polygons</para>
-		/// <para>The polygon that defines the area for which statistics will be reported.</para>
+		/// <para>用于定义将要为其报告统计数据的区域的面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -89,12 +89,12 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Property</para>
-		/// <para>The properties that will be calculated.</para>
-		/// <para>Minimum Z—The lowest Z value of LAS points overlapping the feature.</para>
-		/// <para>Maximum Z—The highest Z value of LAS points overlapping the feature.</para>
-		/// <para>Average Z—The average Z value of LAS points overlapping the feature.</para>
-		/// <para>LAS Point Count—The tally of LAS points that were evaluated.</para>
-		/// <para>Standard Deviation—The standard deviation of Z values.</para>
+		/// <para>将要计算的属性。</para>
+		/// <para>Z 最小值—与要素重叠的 LAS 点的最低 Z 值。</para>
+		/// <para>Z 最大值—与要素重叠的 LAS 点的最高 Z 值。</para>
+		/// <para>Z 平均值—与要素重叠的 LAS 点的平均 Z 值。</para>
+		/// <para>LAS 点计数—已评估的 LAS 点的计数。</para>
+		/// <para>标准差—Z 值的标准差。</para>
 		/// <para><see cref="OutPropertyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -126,38 +126,38 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum OutPropertyEnum 
 		{
 			/// <summary>
-			/// <para>Minimum Z—The lowest Z value of LAS points overlapping the feature.</para>
+			/// <para>Z 最小值—与要素重叠的 LAS 点的最低 Z 值。</para>
 			/// </summary>
 			[GPValue("Z_MIN")]
-			[Description("Minimum Z")]
+			[Description("Z 最小值")]
 			Minimum_Z,
 
 			/// <summary>
-			/// <para>Maximum Z—The highest Z value of LAS points overlapping the feature.</para>
+			/// <para>Z 最大值—与要素重叠的 LAS 点的最高 Z 值。</para>
 			/// </summary>
 			[GPValue("Z_MAX")]
-			[Description("Maximum Z")]
+			[Description("Z 最大值")]
 			Maximum_Z,
 
 			/// <summary>
-			/// <para>Average Z—The average Z value of LAS points overlapping the feature.</para>
+			/// <para>Z 平均值—与要素重叠的 LAS 点的平均 Z 值。</para>
 			/// </summary>
 			[GPValue("Z_MEAN")]
-			[Description("Average Z")]
+			[Description("Z 平均值")]
 			Average_Z,
 
 			/// <summary>
-			/// <para>LAS Point Count—The tally of LAS points that were evaluated.</para>
+			/// <para>LAS 点计数—已评估的 LAS 点的计数。</para>
 			/// </summary>
 			[GPValue("POINT_COUNT")]
-			[Description("LAS Point Count")]
+			[Description("LAS 点计数")]
 			LAS_Point_Count,
 
 			/// <summary>
-			/// <para>Standard Deviation—The standard deviation of Z values.</para>
+			/// <para>标准差—Z 值的标准差。</para>
 			/// </summary>
 			[GPValue("STANDARD_DEVIATION")]
-			[Description("Standard Deviation")]
+			[Description("标准差")]
 			Standard_Deviation,
 
 		}

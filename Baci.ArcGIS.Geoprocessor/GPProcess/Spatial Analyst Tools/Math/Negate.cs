@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Negate</para>
-	/// <para>Negate</para>
-	/// <para>Changes the sign (multiplies by -1) of the cell values of the input raster on a cell-by-cell basis.</para>
+	/// <para>取反</para>
+	/// <para>逐个像元地更改输入栅格的像元值符号（乘以 -1）。</para>
 	/// </summary>
 	public class Negate : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant">
 		/// <para>Input raster or constant value</para>
-		/// <para>The input raster to be negated (multiplied by -1).</para>
-		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
+		/// <para>要取反的输入栅格（乘以 -1）。</para>
+		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the input values negated (multiplied by -1).</para>
+		/// <para>输出栅格。</para>
+		/// <para>像元值为取反后（乘以 -1）的输入值。</para>
 		/// </param>
 		public Negate(object InRasterOrConstant, object OutRaster)
 		{
@@ -36,14 +36,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Negate</para>
+		/// <para>Tool Display Name : 取反</para>
 		/// </summary>
-		public override string DisplayName() => "Negate";
+		public override string DisplayName() => "取反";
 
 		/// <summary>
-		/// <para>Tool Name : Negate</para>
+		/// <para>Tool Name : 取反</para>
 		/// </summary>
-		public override string ToolName() => "Negate";
+		public override string ToolName() => "取反";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Negate</para>
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value</para>
-		/// <para>The input raster to be negated (multiplied by -1).</para>
-		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
+		/// <para>要取反的输入栅格（乘以 -1）。</para>
+		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the input values negated (multiplied by -1).</para>
+		/// <para>输出栅格。</para>
+		/// <para>像元值为取反后（乘以 -1）的输入值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

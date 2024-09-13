@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Merge Mosaic Dataset Items</para>
-	/// <para>Merge Mosaic Dataset Items</para>
-	/// <para>Groups multiple items in a mosaic dataset together as one item.</para>
+	/// <para>合并镶嵌数据集项目</para>
+	/// <para>将镶嵌数据集中的多个项目分组为一个项目。</para>
 	/// </summary>
 	public class MergeMosaicDatasetItems : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset that has the items that you want to merge.</para>
+		/// <para>想要合并的项目所在的镶嵌数据集。</para>
 		/// </param>
 		public MergeMosaicDatasetItems(object InMosaicDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Merge Mosaic Dataset Items</para>
+		/// <para>Tool Display Name : 合并镶嵌数据集项目</para>
 		/// </summary>
-		public override string DisplayName() => "Merge Mosaic Dataset Items";
+		public override string DisplayName() => "合并镶嵌数据集项目";
 
 		/// <summary>
 		/// <para>Tool Name : MergeMosaicDatasetItems</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset that has the items that you want to merge.</para>
+		/// <para>想要合并的项目所在的镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>An SQL expression to select specific rasters to merge in the mosaic dataset.</para>
+		/// <para>用来在镶嵌数据集中选择要合并的特定栅格的 SQL 表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Block Field</para>
-		/// <para>The field in the attribute table that you want to use to group images. Only date, numeric, and string fields can be specified as Block fields.</para>
+		/// <para>属性表中希望用于对图像进行分组的字段。只能将日期、数值和字符串字段指定为块字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Allowed Rows Per Merged Item</para>
-		/// <para>Limits the number of items to merge. If the maximum is exceeded, the tool will create multiple merged items. The default is 1,000 rows.</para>
+		/// <para>限制要合并的项目数。如果超出最大值，该工具将创建多个合并项目。默认值为 1000 行。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]

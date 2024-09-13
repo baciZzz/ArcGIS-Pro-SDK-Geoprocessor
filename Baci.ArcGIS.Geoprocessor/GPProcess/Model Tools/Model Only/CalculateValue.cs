@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Calculate Value</para>
-	/// <para>Calculate Value</para>
-	/// <para>Returns a value based on a specified Python expression.</para>
+	/// <para>计算值</para>
+	/// <para>基于指定的 Python 表达式返回值。</para>
 	/// </summary>
 	public class CalculateValue : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="Expression">
 		/// <para>Expression</para>
-		/// <para>The Python expression to be evaluated.</para>
+		/// <para>要进行求值的 Python 表达式。</para>
 		/// </param>
 		public CalculateValue(object Expression)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Calculate Value</para>
+		/// <para>Tool Display Name : 计算值</para>
 		/// </summary>
-		public override string DisplayName() => "Calculate Value";
+		public override string DisplayName() => "计算值";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateValue</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>The Python expression to be evaluated.</para>
+		/// <para>要进行求值的 Python 表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSQLExpression()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Code Block</para>
-		/// <para>A Python code block. The code in the code block must be referenced in the Expression parameter.</para>
+		/// <para>Python 代码块。 必需在表达式参数中引用代码块中的代码。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -81,165 +81,165 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Data type</para>
-		/// <para>Specifies the data type of the return value of the Python expression. This parameter helps chain Calculate Value with other tools.</para>
-		/// <para>Address Locator—Address Locator</para>
-		/// <para>Analysis Cell Size—Analysis Cell Size</para>
-		/// <para>Annotation Layer—Annotation Layer</para>
-		/// <para>Any Value—Any Value</para>
-		/// <para>ArcMap Document—ArcMap Document</para>
-		/// <para>Areal Unit—Areal Unit</para>
-		/// <para>BIM File Workspace—BIM File Workspace</para>
-		/// <para>Boolean—Boolean</para>
-		/// <para>Building Discipline Layer—Building Discipline Layer</para>
-		/// <para>Building Scene Discipline Layer—Building Scene Discipline Layer</para>
-		/// <para>Building Layer—Building Layer</para>
-		/// <para>Building Scene Layer—Building Scene Layer</para>
-		/// <para>CAD Drawing Dataset—CAD Drawing Dataset</para>
-		/// <para>Calculator Expression—Calculator Expression</para>
-		/// <para>Catalog Root—Catalog Root</para>
-		/// <para>Cell Size—Cell Size</para>
-		/// <para>Cell Size XY—Cell Size XY</para>
-		/// <para>Composite Layer—Composite Layer</para>
-		/// <para>Compression—Compression</para>
-		/// <para>Coordinate System—Coordinate System</para>
-		/// <para>Coordinate Systems Folder—Coordinate Systems Folder</para>
+		/// <para>指定 Python 表达式返回值的数据类型。 此参数有助于将计算值工具与其他工具相连接。</para>
+		/// <para>地址定位器—地址定位器</para>
+		/// <para>分析像元大小—分析像元大小</para>
+		/// <para>注记图层—注记图层</para>
+		/// <para>任何值—任何值</para>
+		/// <para>ArcMap 文档—ArcMap 文档</para>
+		/// <para>面积单位—面积单位</para>
+		/// <para>BIM 文件工作空间—BIM 文件工作空间</para>
+		/// <para>布尔—布尔</para>
+		/// <para>建筑领域图层—建筑领域图层</para>
+		/// <para>建筑场景领域图层—建筑场景领域图层</para>
+		/// <para>建筑图层—建筑图层</para>
+		/// <para>构建场景图层—构建场景图层</para>
+		/// <para>CAD 工程图数据集—CAD 工程图数据集</para>
+		/// <para>计算器表达式—计算器表达式</para>
+		/// <para>目录根—目录根</para>
+		/// <para>像元大小—像元大小</para>
+		/// <para>像元大小 XY—像元大小 XY</para>
+		/// <para>复合图层—复合图层</para>
+		/// <para>压缩—压缩</para>
+		/// <para>坐标系—坐标系</para>
+		/// <para>坐标系文件夹—坐标系文件夹</para>
 		/// <para>Coverage—Coverage</para>
-		/// <para>Coverage Feature Class—Coverage Feature Class</para>
-		/// <para>Data Element—Data Element</para>
-		/// <para>Data File—Data File</para>
-		/// <para>Database Connections—Database Connections</para>
-		/// <para>Dataset—Dataset</para>
-		/// <para>Date—Date</para>
-		/// <para>dBASE Table—dBASE Table</para>
-		/// <para>Decimate—Decimate</para>
-		/// <para>Diagram Layer—Diagram Layer</para>
-		/// <para>Dimension Layer—Dimension Layer</para>
-		/// <para>Disk Connection—Disk Connection</para>
-		/// <para>Double—Double</para>
-		/// <para>Elevation Surface Layer—Elevation Surface Layer</para>
-		/// <para>Encrypted String—Encrypted String</para>
-		/// <para>Envelope—Envelope</para>
-		/// <para>Evaluation Scale—Evaluation Scale</para>
-		/// <para>Extent—Extent</para>
-		/// <para>Extract Values—Extract Values</para>
-		/// <para>Feature Class—Feature Class</para>
-		/// <para>Feature Dataset—Feature Dataset</para>
-		/// <para>Feature Layer—Feature Layer</para>
-		/// <para>Feature Set—Feature Set</para>
-		/// <para>Field—Field</para>
-		/// <para>Field Info—Field Info</para>
-		/// <para>Field Mappings—Field Mappings</para>
-		/// <para>File—File</para>
-		/// <para>Folder—Folder</para>
-		/// <para>Formulated Raster—Formulated Raster</para>
-		/// <para>Fuzzy Function—Fuzzy Function</para>
+		/// <para>Coverage 要素类—Coverage 要素类</para>
+		/// <para>数据元素—数据元素</para>
+		/// <para>数据文件—数据文件</para>
+		/// <para>数据库连接—数据库连接</para>
+		/// <para>数据集—数据集</para>
+		/// <para>日期—日期</para>
+		/// <para>dBASE 表—dBASE 表</para>
+		/// <para>抽稀—抽稀</para>
+		/// <para>逻辑示意图图层—逻辑示意图图层</para>
+		/// <para>尺寸图层—尺寸图层</para>
+		/// <para>磁盘连接—磁盘连接</para>
+		/// <para>双精度—双精度</para>
+		/// <para>高程表面图层—高程表面图层</para>
+		/// <para>加密字符串—加密字符串</para>
+		/// <para>包络矩形—包络矩形</para>
+		/// <para>评估等级—评估等级</para>
+		/// <para>范围—范围</para>
+		/// <para>提取值—提取值</para>
+		/// <para>要素类—要素类</para>
+		/// <para>要素数据集—要素数据集</para>
+		/// <para>要素图层—要素图层</para>
+		/// <para>要素集—要素集</para>
+		/// <para>字段—字段</para>
+		/// <para>字段信息—字段信息</para>
+		/// <para>字段映射—字段映射</para>
+		/// <para>文件—文件</para>
+		/// <para>文件夹—文件夹</para>
+		/// <para>格式化栅格—格式化栅格</para>
+		/// <para>模糊函数—模糊函数</para>
 		/// <para>GeoDataServer—GeoDataServer</para>
-		/// <para>Geodataset—Geodataset</para>
-		/// <para>Geometric Network—Geometric Network</para>
-		/// <para>Geostatistical Layer—Geostatistical Layer</para>
-		/// <para>Geostatistical Search Neighborhood—Geostatistical Search Neighborhood</para>
-		/// <para>Geostatistical Value Table—Geostatistical Value Table</para>
+		/// <para>地理数据集—地理数据集</para>
+		/// <para>几何网络—几何网络</para>
+		/// <para>地统计图层—地统计图层</para>
+		/// <para>地统计搜索邻域—地统计搜索邻域</para>
+		/// <para>地统计值表—地统计值表</para>
 		/// <para>GlobeServer—GlobeServer</para>
 		/// <para>GPServer—GPServer</para>
-		/// <para>Graph—Graph</para>
-		/// <para>Graph Data Table—Graph Data Table</para>
-		/// <para>Graphics Layer—Graphics Layer</para>
-		/// <para>Group Layer—Group Layer</para>
-		/// <para>Horizontal Factor—Horizontal Factor</para>
-		/// <para>Image Service—Image Service</para>
-		/// <para>Index—Index</para>
-		/// <para>INFO Expression—INFO Expression</para>
-		/// <para>INFO Item—INFO Item</para>
-		/// <para>INFO Table—INFO Table</para>
-		/// <para>Internet Tiled Layer—Internet Tiled Layer</para>
-		/// <para>KML Layer—KML Layer</para>
-		/// <para>LAS Dataset—LAS Dataset</para>
-		/// <para>LAS Dataset Layer—LAS Dataset Layer</para>
-		/// <para>Layer—Layer</para>
-		/// <para>Layer File—Layer File</para>
-		/// <para>Layout—Layout</para>
-		/// <para>Line—Line</para>
-		/// <para>Linear Unit—Linear Unit</para>
-		/// <para>Long—Long</para>
-		/// <para>M Domain—M Domain</para>
-		/// <para>Map—Map</para>
-		/// <para>Map Server—Map Server</para>
-		/// <para>Map Server Layer—Map Server Layer</para>
-		/// <para>Mosaic Dataset—Mosaic Dataset</para>
-		/// <para>Mosaic Layer—Mosaic Layer</para>
-		/// <para>Neighborhood—Neighborhood</para>
-		/// <para>Network Analyst Class FieldMap—Network Analyst Class FieldMap</para>
-		/// <para>Network Analyst Hierarchy Settings—Network Analyst Hierarchy Settings</para>
-		/// <para>Network Analyst Layer—Network Analyst Layer</para>
-		/// <para>Network Data Source—Network Data Source</para>
-		/// <para>Network Dataset—Network Dataset</para>
-		/// <para>Network Dataset Layer—Network Dataset Layer</para>
-		/// <para>Network Travel Mode—Network Travel Mode</para>
-		/// <para>Parcel Fabric—Parcel Fabric</para>
-		/// <para>Parcel Fabric for ArcMap—Parcel Fabric for ArcMap</para>
-		/// <para>Parcel Fabric Layer for ArcMap—Parcel Fabric Layer for ArcMap</para>
-		/// <para>Parcel Layer—Parcel Layer</para>
-		/// <para>Point—Point</para>
-		/// <para>Polygon—Polygon</para>
-		/// <para>Projection File—Projection File</para>
-		/// <para>Pyramid—Pyramid</para>
-		/// <para>Radius—Radius</para>
-		/// <para>Random Number Generator—Random Number Generator</para>
-		/// <para>Raster Band—Raster Band</para>
-		/// <para>Raster Calculator Expression—Raster Calculator Expression</para>
-		/// <para>Raster Catalog—Raster Catalog</para>
-		/// <para>Raster Catalog Layer—Raster Catalog Layer</para>
-		/// <para>Raster Data Layer—Raster Data Layer</para>
-		/// <para>Raster Dataset—Raster Dataset</para>
-		/// <para>Raster Layer—Raster Layer</para>
-		/// <para>Raster Statistics—Raster Statistics</para>
-		/// <para>Raster Type—Raster Type</para>
-		/// <para>Record Set—Record Set</para>
-		/// <para>Relationship Class—Relationship Class</para>
-		/// <para>Remap—Remap</para>
-		/// <para>Report—Report</para>
-		/// <para>Route Measure Event Properties—Route Measure Event Properties</para>
-		/// <para>Scene Layer—Scene Layer</para>
-		/// <para>Semivariogram—Semivariogram</para>
+		/// <para>图表—图表</para>
+		/// <para>图表数据表—图表数据表</para>
+		/// <para>图形图层—图形图层</para>
+		/// <para>分组图层—分组图层</para>
+		/// <para>水平系数—水平系数</para>
+		/// <para>影像服务—影像服务</para>
+		/// <para>索引—索引</para>
+		/// <para>INFO 表达式—INFO 表达式</para>
+		/// <para>INFO 项目—INFO 项目</para>
+		/// <para>INFO 表—INFO 表</para>
+		/// <para>Internet 切片图层—Internet 切片图层</para>
+		/// <para>KML 图层—KML 图层</para>
+		/// <para>LAS 数据集—LAS 数据集</para>
+		/// <para>LAS 数据集图层—LAS 数据集图层</para>
+		/// <para>图层—图层</para>
+		/// <para>图层文件—图层文件</para>
+		/// <para>布局—布局</para>
+		/// <para>线—线</para>
+		/// <para>线性单位—线性单位</para>
+		/// <para>长整型—长整型</para>
+		/// <para>M 值域—M 值域</para>
+		/// <para>地图—地图</para>
+		/// <para>地图服务器—地图服务器</para>
+		/// <para>地图服务器图层—地图服务器图层</para>
+		/// <para>镶嵌数据集—镶嵌数据集</para>
+		/// <para>镶嵌图层—镶嵌图层</para>
+		/// <para>邻域分析—邻域分析</para>
+		/// <para>Network Analyst 类 FieldMap—Network Analyst 类 FieldMap</para>
+		/// <para>Network Analyst 等级设置—Network Analyst 等级设置</para>
+		/// <para>网络分析图层—网络分析图层</para>
+		/// <para>网络数据源—网络数据源</para>
+		/// <para>网络数据集—网络数据集</para>
+		/// <para>网络数据集图层—网络数据集图层</para>
+		/// <para>网络出行模式—网络出行模式</para>
+		/// <para>宗地结构—宗地结构</para>
+		/// <para>ArcMap 宗地结构—ArcMap 宗地结构</para>
+		/// <para>ArcMap 宗地结构图层—ArcMap 宗地结构图层</para>
+		/// <para>宗地图层—宗地图层</para>
+		/// <para>点—点</para>
+		/// <para>面—面</para>
+		/// <para>投影文件—投影文件</para>
+		/// <para>金字塔—金字塔</para>
+		/// <para>半径—半径</para>
+		/// <para>随机数生成器—随机数生成器</para>
+		/// <para>栅格波段—栅格波段</para>
+		/// <para>栅格计算器表达式—栅格计算器表达式</para>
+		/// <para>栅格目录—栅格目录</para>
+		/// <para>栅格目录图层—栅格目录图层</para>
+		/// <para>栅格数据图层—栅格数据图层</para>
+		/// <para>栅格数据集—栅格数据集</para>
+		/// <para>栅格图层—栅格图层</para>
+		/// <para>栅格统计—栅格统计</para>
+		/// <para>栅格类型—栅格类型</para>
+		/// <para>记录集—记录集</para>
+		/// <para>关系类—关系类</para>
+		/// <para>重映射—重映射</para>
+		/// <para>报表—报表</para>
+		/// <para>路径测量事件属性—路径测量事件属性</para>
+		/// <para>场景图层—场景图层</para>
+		/// <para>半变异函数—半变异函数</para>
 		/// <para>ServerConnection—ServerConnection</para>
 		/// <para>Shapefile—Shapefile</para>
-		/// <para>Spatial Reference—Spatial Reference</para>
-		/// <para>SQL Expression—SQL Expression</para>
-		/// <para>String—String</para>
-		/// <para>String Hidden—String Hidden</para>
-		/// <para>Table—Table</para>
-		/// <para>Table View—Table View</para>
-		/// <para>Terrain Layer—Terrain Layer</para>
-		/// <para>Text File—Text File</para>
-		/// <para>Tile Size—Tile Size</para>
-		/// <para>Time Configuration—Time Configuration</para>
-		/// <para>Time Unit—Time Unit</para>
+		/// <para>空间参考—空间参考</para>
+		/// <para>SQL 表达式—SQL 表达式</para>
+		/// <para>字符串—字符串</para>
+		/// <para>隐藏字符串—隐藏字符串</para>
+		/// <para>表—表</para>
+		/// <para>表视图—表视图</para>
+		/// <para>Terrain 图层—Terrain 图层</para>
+		/// <para>文本文件—文本文件</para>
+		/// <para>分块大小—分块大小</para>
+		/// <para>时间配置—时间配置</para>
+		/// <para>时间单位—时间单位</para>
 		/// <para>TIN—TIN</para>
-		/// <para>TIN Layer—TIN Layer</para>
-		/// <para>Tool—Tool</para>
-		/// <para>Toolbox—Toolbox</para>
-		/// <para>Topo Features—Topo Features</para>
-		/// <para>Topology—Topology</para>
-		/// <para>Topology Layer—Topology Layer</para>
-		/// <para>Trace Network—Trace Network</para>
-		/// <para>Trace Network Layer—Trace Network Layer</para>
-		/// <para>Transformation Function—Transformation Function</para>
-		/// <para>Utility Network—Utility Network</para>
-		/// <para>Utility Network Layer—Utility Network Layer</para>
-		/// <para>Variant—Variant</para>
-		/// <para>Vector Tile Layer—Vector Tile Layer</para>
-		/// <para>Vertical Factor—Vertical Factor</para>
-		/// <para>Voxel Layer—Voxel Layer</para>
+		/// <para>TIN 图层—TIN 图层</para>
+		/// <para>工具—工具</para>
+		/// <para>工具箱—工具箱</para>
+		/// <para>拓扑要素—拓扑要素</para>
+		/// <para>拓扑—拓扑</para>
+		/// <para>拓扑图层—拓扑图层</para>
+		/// <para>追踪网络—追踪网络</para>
+		/// <para>追踪网络图层—追踪网络图层</para>
+		/// <para>变换函数—变换函数</para>
+		/// <para>公共设施网络—公共设施网络</para>
+		/// <para>公共设施网络图层—公共设施网络图层</para>
+		/// <para>变量—变量</para>
+		/// <para>矢量切片图层—矢量切片图层</para>
+		/// <para>垂直系数—垂直系数</para>
+		/// <para>体元图层—体元图层</para>
 		/// <para>VPF Coverage—VPF Coverage</para>
-		/// <para>VPF Table—VPF Table</para>
+		/// <para>VPF 表—VPF 表</para>
 		/// <para>WCS Coverage—WCS Coverage</para>
-		/// <para>Weighted Overlay Table—Weighted Overlay Table</para>
-		/// <para>Weighted Sum—Weighted Sum</para>
-		/// <para>WMS Map—WMS Map</para>
-		/// <para>WMTS Layer—WMTS Layer</para>
-		/// <para>Workspace—Workspace</para>
-		/// <para>XY Domain—XY Domain</para>
-		/// <para>Z Domain—Z Domain</para>
+		/// <para>加权叠加表—加权叠加表</para>
+		/// <para>加权总和—加权总和</para>
+		/// <para>WMS 地图—WMS 地图</para>
+		/// <para>WMTS 图层—WMTS 图层</para>
+		/// <para>工作空间—工作空间</para>
+		/// <para>XY 值域—XY 值域</para>
+		/// <para>Z 值域—Z 值域</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

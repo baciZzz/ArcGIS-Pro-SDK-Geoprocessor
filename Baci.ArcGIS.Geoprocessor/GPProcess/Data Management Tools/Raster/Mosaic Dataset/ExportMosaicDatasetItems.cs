@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Mosaic Dataset Items</para>
-	/// <para>Export Mosaic Dataset Items</para>
-	/// <para>Saves a copy of processed images in a mosaic dataset to a specified folder and raster file format.</para>
+	/// <para>导出镶嵌数据集项目</para>
+	/// <para>将镶嵌数据集中处理过的影像副本以栅格文件格式保存到指定的文件夹。</para>
 	/// </summary>
 	public class ExportMosaicDatasetItems : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset that contains the images to be exported.</para>
+		/// <para>包含要导出的影像的镶嵌数据集。</para>
 		/// </param>
 		/// <param name="OutFolder">
 		/// <para>Output Folder</para>
-		/// <para>The folder where the images will be saved.</para>
+		/// <para>将保存影像的文件夹。</para>
 		/// </param>
 		public ExportMosaicDatasetItems(object InMosaicDataset, object OutFolder)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Export Mosaic Dataset Items</para>
+		/// <para>Tool Display Name : 导出镶嵌数据集项目</para>
 		/// </summary>
-		public override string DisplayName() => "Export Mosaic Dataset Items";
+		public override string DisplayName() => "导出镶嵌数据集项目";
 
 		/// <summary>
 		/// <para>Tool Name : ExportMosaicDatasetItems</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset that contains the images to be exported.</para>
+		/// <para>包含要导出的影像的镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Folder</para>
-		/// <para>The folder where the images will be saved.</para>
+		/// <para>将保存影像的文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -86,8 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Base Name</para>
-		/// <para>A prefix to add to the name of each item after it is copied. The prefix will be followed by the Object ID value from the mosaic dataset footprints table.</para>
-		/// <para>If no base name is set, the text in the Name field of the mosaic dataset item will be used.</para>
+		/// <para>复制后添加到每个项目名称的前缀。 前缀后跟镶嵌数据集覆盖区表中的 Object ID 值。</para>
+		/// <para>如果未设置基本名称，则将使用镶嵌数据集项的 Name 字段中的文本。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>An SQL expression that will be used to save selected images in the mosaic dataset.</para>
+		/// <para>用来在镶嵌数据集中保存选定影像的 SQL 表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -103,22 +103,22 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Format</para>
-		/// <para>Specifies the format that will be used for the output raster datasets.</para>
-		/// <para>TIFF—TIFF format will be used. This is the default.</para>
-		/// <para>Cloud Optimized GeoTIFF—Cloud Optimized GeoTIFF format will be used.</para>
-		/// <para>BMP—BMP format will be used.</para>
-		/// <para>ENVI DAT—ENVI DAT format will be used.</para>
-		/// <para>Esri BIL—Esri BIL format will be used.</para>
-		/// <para>Esri BIP—Esri BIP format will be used.</para>
-		/// <para>Esri BSQ—Esri BSQ format will be used.</para>
-		/// <para>GIF—GIF format will be used.</para>
-		/// <para>Esri Grid—Esri Grid format will be used.</para>
-		/// <para>ERDAS IMAGINE—ERDAS IMAGINE format will be used.</para>
-		/// <para>JPEG 2000—JPEG 2000 format will be used.</para>
-		/// <para>JPEG—JPEG format will be used.</para>
-		/// <para>PNG—PNG format will be used.</para>
-		/// <para>Cloud raster format—Cloud raster format will be used.</para>
-		/// <para>Meta raster format—Meta raster format will be used.</para>
+		/// <para>指定输出栅格数据集的格式。</para>
+		/// <para>TIFF—将使用 TIFF 格式。 这是默认设置。</para>
+		/// <para>Cloud Optimized GeoTIFF—使用 Cloud Optimized GeoTIFF 格式。</para>
+		/// <para>BMP—使用 BMP 格式。</para>
+		/// <para>ENVI DAT—使用 ENVI DAT 格式。</para>
+		/// <para>Esri BIL—使用 Esri BIL 格式。</para>
+		/// <para>Esri BIP—使用 Esri BIP 格式。</para>
+		/// <para>Esri BSQ—使用 Esri BSQ 格式。</para>
+		/// <para>GIF—将使用图形交换格式 (GIF)。</para>
+		/// <para>Esri 格网—将使用 Esri Grid 栅格数据集格式。</para>
+		/// <para>ERDAS IMAGINE—将使用 ERDAS Imagine 格式。</para>
+		/// <para>JPEG 2000—使用 JPEG 2000 格式。</para>
+		/// <para>JPEG—将使用 JPEG 格式。</para>
+		/// <para>PNG—将使用 PNG 格式。</para>
+		/// <para>云栅格格式—将使用云栅格格式。</para>
+		/// <para>元栅格格式—将使用元栅格格式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -127,8 +127,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>NoData Value</para>
-		/// <para>All the pixels with the specified value will be set to NoData in the output raster dataset.</para>
-		/// <para>It is recommended that you specify a NoData value if the output images will be clipped.</para>
+		/// <para>具有指定值的所有像素将在输出栅格数据集中被设置为 NoData。</para>
+		/// <para>如果将裁剪输出影像，建议指定 NoData 值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -136,10 +136,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Clip Type</para>
-		/// <para>Specifies the output extent of the raster datasets. If you choose an extent or feature class that covers an area larger than the raster data, the output will have the larger extent.</para>
-		/// <para>No clipping—The output will not be clipped. This is the default.</para>
-		/// <para>Clip to extent—An extent will be used to clip the output.</para>
-		/// <para>Clip to feature class—A feature class extent will be used to clip the output.</para>
+		/// <para>指定栅格数据集的处理范围。 如果选择的范围或要素类涵盖的区域大于栅格数据，则输出将具有更大的范围。</para>
+		/// <para>无裁剪—将不会裁剪输出。 这是默认设置。</para>
+		/// <para>裁剪至范围—将使用范围裁剪输出。</para>
+		/// <para>裁剪至要素类—将使用要素类范围裁剪输出。</para>
 		/// <para><see cref="ClipTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -150,11 +150,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Clipping Template</para>
-		/// <para>The feature class or bounding box that will be used to limit the extent.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Current Display Extent—The extent is equal to the data frame or visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>将用于限制范围的要素类或边界框。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>当前显示范围 - 该范围与数据框或可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -163,8 +163,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Cell Size</para>
-		/// <para>The horizontal (x) and vertical (y) dimensions of the output cells.</para>
-		/// <para>If the cell size is not specified, the spatial resolution of the input will be used.</para>
+		/// <para>输出像元的水平 (x) 和垂直 (y) 尺寸。</para>
+		/// <para>如果未指定像元大小，则将使用输入的空间分辨率。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPPoint()]
@@ -180,9 +180,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Export images to image space</para>
-		/// <para>Specifies whether raster items will be exported in map space or image space.</para>
-		/// <para>Unchecked— Raster items will be exported in map space. This is the default.</para>
-		/// <para>Checked—Raster items will be exported in image space.</para>
+		/// <para>指定将栅格项目导出到地图空间还是影像空间。</para>
+		/// <para>未选中 - 栅格项目将在地图空间中导出。 这是默认设置。</para>
+		/// <para>选中 - 栅格项目将在影像空间中导出。</para>
 		/// <para><see cref="ImageSpaceEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -207,24 +207,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ClipTypeEnum 
 		{
 			/// <summary>
-			/// <para>No clipping—The output will not be clipped. This is the default.</para>
+			/// <para>无裁剪—将不会裁剪输出。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("No clipping")]
+			[Description("无裁剪")]
 			No_clipping,
 
 			/// <summary>
-			/// <para>Clip to extent—An extent will be used to clip the output.</para>
+			/// <para>裁剪至范围—将使用范围裁剪输出。</para>
 			/// </summary>
 			[GPValue("EXTENT")]
-			[Description("Clip to extent")]
+			[Description("裁剪至范围")]
 			Clip_to_extent,
 
 			/// <summary>
-			/// <para>Clip to feature class—A feature class extent will be used to clip the output.</para>
+			/// <para>裁剪至要素类—将使用要素类范围裁剪输出。</para>
 			/// </summary>
 			[GPValue("FEATURE_CLASS")]
-			[Description("Clip to feature class")]
+			[Description("裁剪至要素类")]
 			Clip_to_feature_class,
 
 		}
@@ -235,14 +235,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ImageSpaceEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Raster items will be exported in image space.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("IMAGESPACE")]
 			IMAGESPACE,
 
 			/// <summary>
-			/// <para>Unchecked— Raster items will be exported in map space. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("MAPSPACE")]

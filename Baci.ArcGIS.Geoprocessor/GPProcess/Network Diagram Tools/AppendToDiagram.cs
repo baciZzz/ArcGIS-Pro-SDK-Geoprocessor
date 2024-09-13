@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Append To Diagram</para>
-	/// <para>Append To Diagram</para>
-	/// <para>Appends network elements to a network diagram.</para>
+	/// <para>追加到逻辑示意图</para>
+	/// <para>将网络元素追加到网络逻辑示意图。</para>
 	/// </summary>
 	public class AppendToDiagram : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InNetworkDiagramLayer">
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>The network diagram layer to which network elements will be appended.</para>
+		/// <para>将追加网络元素的网络逻辑示意图图层。</para>
 		/// </param>
 		/// <param name="Map">
 		/// <para>Input Map</para>
-		/// <para>The map with selected network elements to append to the network diagram.</para>
+		/// <para>包含要追加到网络逻辑示意图的所选网络要素的地图。</para>
 		/// </param>
 		public AppendToDiagram(object InNetworkDiagramLayer, object Map)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Append To Diagram</para>
+		/// <para>Tool Display Name : 追加到逻辑示意图</para>
 		/// </summary>
-		public override string DisplayName() => "Append To Diagram";
+		public override string DisplayName() => "追加到逻辑示意图";
 
 		/// <summary>
 		/// <para>Tool Name : AppendToDiagram</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network Diagram Layer</para>
-		/// <para>The network diagram layer to which network elements will be appended.</para>
+		/// <para>将追加网络元素的网络逻辑示意图图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDiagramLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Map</para>
-		/// <para>The map with selected network elements to append to the network diagram.</para>
+		/// <para>包含要追加到网络逻辑示意图的所选网络要素的地图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMap()]

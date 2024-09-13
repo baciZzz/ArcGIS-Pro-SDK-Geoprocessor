@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Update Occupant Features</para>
-	/// <para>Update Occupant Features</para>
-	/// <para>Updates the Occupants feature class that conforms to the ArcGIS Indoors Information Model.</para>
+	/// <para>更新占用者要素</para>
+	/// <para>更新符合 ArcGIS Indoors 信息模型的 Occupants 要素类。</para>
 	/// </summary>
 	public class UpdateOccupantFeatures : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		/// <param name="TargetOccupantFeatures">
 		/// <para>Target Occupant Features</para>
-		/// <para>The target feature layer, feature class, or feature service to which occupant records will be added, updated, or deleted. The input must contain unique values that identify each occupant and must conform to the Occupants feature class in the Indoors model.</para>
+		/// <para>将添加、更新或删除占用者记录的目标要素图层、要素类或要素服务。 输入必须包含可标识每个占用者的唯一值，并且必须与 Indoors 模型中的 Occupants 要素类相符。</para>
 		/// </param>
 		public UpdateOccupantFeatures(object TargetOccupantFeatures)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Update Occupant Features</para>
+		/// <para>Tool Display Name : 更新占用者要素</para>
 		/// </summary>
-		public override string DisplayName() => "Update Occupant Features";
+		public override string DisplayName() => "更新占用者要素";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateOccupantFeatures</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Target Occupant Features</para>
-		/// <para>The target feature layer, feature class, or feature service to which occupant records will be added, updated, or deleted. The input must contain unique values that identify each occupant and must conform to the Occupants feature class in the Indoors model.</para>
+		/// <para>将添加、更新或删除占用者记录的目标要素图层、要素类或要素服务。 输入必须包含可标识每个占用者的唯一值，并且必须与 Indoors 模型中的 Occupants 要素类相符。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Unit Features</para>
-		/// <para>The input polygon features representing building spaces that may be occupied. In the ArcGIS Indoors Information Model, this is the Units layer. The centroid of each space will be used as the point location of the occupant or occupants.</para>
+		/// <para>输入面要素，表示可能被占用的建筑空间。 在 ArcGIS Indoors 信息模型中，此项将为 Units 图层。 每个空间的质心将用作一个或多个占用者的点位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Occupant Table</para>
-		/// <para>The input table that contains information about building occupants.</para>
-		/// <para>The information can be stored in a geodatabase table, a sheet in an Excel workbook (.xls or .xlsx file), or a .csv file.</para>
+		/// <para>包含有关建筑占用者信息的输入表。</para>
+		/// <para>信息可以存储在地理数据库表、Excel 工作簿中的工作表（.xls 或 .xlsx 文件）或 .csv 文件中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Occupant Identifier (Target Occupant Features)</para>
-		/// <para>The field in the Target Occupant Features parameter value that will be used as the primary key to associate occupants with the Input Occupant Table parameter values. The field values must be unique.</para>
+		/// <para>目标占用者要素参数值中的字段，将用作主键以将占用者与输入占用者表参数值相关联。 字段值必须唯一。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Occupant Identifier (Input Occupant Table)</para>
-		/// <para>The field in the Input Occupant Table parameter value that will be used as the primary key to associate occupants with the Target Occupant Features parameter values. The field values must be unique.</para>
+		/// <para>输入占用者表参数值中的字段，将用作主键以将占用者与目标占用者要素参数值相关联。 字段值必须唯一。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Unit Identifier (Input Units Features)</para>
-		/// <para>The field in the Input Unit Features parameter value that stores the unique space identification information that will match the unit identifier from the Input Occupant Table parameter value. The field values must be unique.</para>
+		/// <para>输入单元要素参数值中的字段，用于存储与输入占用者表参数值中的单元标识符相匹配的唯一空间标识信息。 字段值必须唯一。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Unit Identifier (Input Occupant Table)</para>
-		/// <para>The field in the Input Occupant Table parameter value that will be used as the primary key to associate occupant space assignment with the Input Unit Features parameter values. If a field value is empty, the occupant will be loaded as unassigned.</para>
+		/// <para>输入占用者表参数值中的字段，将用作主键以将占用者空间分配与输入单元要素参数值相关联。 如果字段值为空，则占用者将以未分配状态加载。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Occupant Attributes Mapping</para>
-		/// <para>The attribute fields in the Target Occupant Features parameter that will be populated with field values from the Input Occupant Table parameter value. The fields must exist in the Target Occupant Features parameter value before running the tool. It is recommended that you map fields from the Input Occupant Table parameter value to fields from the Target Occupant Features parameter value that have the same field type.</para>
+		/// <para>目标占用者要素参数中的属性字段，将使用输入占用者表参数值中的字段值填充。 在运行工具之前，这些字段必须存在于目标占用者要素参数值中。 建议您将输入占用者表参数值中的字段映射到目标占用者要素参数值中具有相同字段类型的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFieldMapping()]
@@ -142,9 +142,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Insert new occupants</para>
-		/// <para>Specifies whether unique occupant records for the Input Occupant Table parameter value will be added to the target occupant features layer.</para>
-		/// <para>Checked—Unmatched occupant records will be added to the target occupant features layer. This is the default.</para>
-		/// <para>Unchecked—Unmatched occupant records will not be added to the target occupant features layer.</para>
+		/// <para>指定是否将向目标占用者要素图层添加输入占用者表参数值的唯一占用者记录。</para>
+		/// <para>选中 - 不匹配的占用者记录将添加到目标占用者要素图层。 这是默认设置。</para>
+		/// <para>未选中 - 不匹配的占用者记录不会添加到目标占用者要素图层。</para>
 		/// <para><see cref="AllowInsertEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -154,9 +154,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Delete occupants not included in the Input Occupant Table</para>
-		/// <para>Specifies whether unique occupant records for the Input Occupant Table parameter value will be deleted from the target occupant features layer.</para>
-		/// <para>Checked—Unmatched occupant records will be deleted from the target occupant features layer. This is the default.</para>
-		/// <para>Unchecked—Unmatched occupant records will not be deleted from the target occupant features layer.</para>
+		/// <para>指定是否将从目标占用者要素图层删除输入占用者表参数值的唯一占用者记录。</para>
+		/// <para>选中 - 不匹配的占用者记录将从目标占用者要素图层中删除。 这是默认设置。</para>
+		/// <para>未选中 - 不匹配的占用者记录不会从目标占用者要素图层中删除。</para>
 		/// <para><see cref="AllowDeleteEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -188,14 +188,14 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		public enum AllowInsertEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Unmatched occupant records will be added to the target occupant features layer. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INSERT_OCCUPANTS")]
 			INSERT_OCCUPANTS,
 
 			/// <summary>
-			/// <para>Unchecked—Unmatched occupant records will not be added to the target occupant features layer.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_INSERT_OCCUPANTS")]
@@ -209,14 +209,14 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		public enum AllowDeleteEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Unmatched occupant records will be deleted from the target occupant features layer. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_OCCUPANTS")]
 			DELETE_OCCUPANTS,
 
 			/// <summary>
-			/// <para>Unchecked—Unmatched occupant records will not be deleted from the target occupant features layer.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DELETE_OCCUPANTS")]

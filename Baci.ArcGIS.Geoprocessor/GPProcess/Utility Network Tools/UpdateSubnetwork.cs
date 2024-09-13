@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Update Subnetwork</para>
-	/// <para>Update Subnetwork</para>
-	/// <para>Updates subnetwork information in the Subnetworks table, the SubnetLine feature class, and subnetwork system diagrams for the specified subnetworks. Also certain attributes are created or updated for subnetwork features. A record for any new subnetworks will be generated, the records for any deleted subnetworks will be removed, and the shape and information for any modified subnetworks will be updated.</para>
+	/// <para>更新子网</para>
+	/// <para>更新指定子网的子网表、SubnetLine 要素类和子网系统逻辑示意图中的子网信息。 同时创建或更新子网要素的某些属性。 将生成所有新子网的记录，将移除所有已删除子网的记录，并将更新所有已修改子网的形状和信息。</para>
 	/// </summary>
 	public class UpdateSubnetwork : AbstractGPProcess
 	{
@@ -21,21 +21,21 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that contains the subnetwork.</para>
+		/// <para>包含子网的公共设施网络。</para>
 		/// </param>
 		/// <param name="DomainNetwork">
 		/// <para>Domain Network</para>
-		/// <para>The domain network that contains the subnetwork.</para>
+		/// <para>包含子网的域网络。</para>
 		/// </param>
 		/// <param name="Tier">
 		/// <para>Tier</para>
-		/// <para>The tier that contains the subnetwork.</para>
+		/// <para>包含子网的层。</para>
 		/// </param>
 		/// <param name="AllSubnetworksInTier">
 		/// <para>All subnetworks in tier</para>
-		/// <para>Specifies whether all subnetworks in the tier are updated. To update a subset of subnetworks in the tier, use the Subnetwork Name(s) parameter.</para>
-		/// <para>Checked—Updates all subnetworks in the tier. This option uses asynchronous processing to update the subnetworks using the system UtilityNetworkTools geoprocessing service. The service is reserved for utility network geoprocessing tasks and has a longer default timeout setting. This is the default.</para>
-		/// <para>Unchecked—Updates only the subnetworks that are specified in the Subnetwork Name(s) parameter.</para>
+		/// <para>指定是否更新层中的所有子网。 要更新层中的子网子集，请使用子网名称参数。</para>
+		/// <para>选中 - 更新层中的所有子网。 此选项使用异步处理通过系统 UtilityNetworkTools 地理处理服务更新子网。 此服务为公共设施网络地理处理任务而保留，并具有较长的默认超时设置。 这是默认设置。</para>
+		/// <para>未选中 - 仅更新子网名称参数中指定的子网。</para>
 		/// <para><see cref="AllSubnetworksInTierEnum"/></para>
 		/// </param>
 		public UpdateSubnetwork(object InUtilityNetwork, object DomainNetwork, object Tier, object AllSubnetworksInTier)
@@ -47,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Update Subnetwork</para>
+		/// <para>Tool Display Name : 更新子网</para>
 		/// </summary>
-		public override string DisplayName() => "Update Subnetwork";
+		public override string DisplayName() => "更新子网";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateSubnetwork</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that contains the subnetwork.</para>
+		/// <para>包含子网的公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Domain Network</para>
-		/// <para>The domain network that contains the subnetwork.</para>
+		/// <para>包含子网的域网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Tier</para>
-		/// <para>The tier that contains the subnetwork.</para>
+		/// <para>包含子网的层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -107,9 +107,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>All subnetworks in tier</para>
-		/// <para>Specifies whether all subnetworks in the tier are updated. To update a subset of subnetworks in the tier, use the Subnetwork Name(s) parameter.</para>
-		/// <para>Checked—Updates all subnetworks in the tier. This option uses asynchronous processing to update the subnetworks using the system UtilityNetworkTools geoprocessing service. The service is reserved for utility network geoprocessing tasks and has a longer default timeout setting. This is the default.</para>
-		/// <para>Unchecked—Updates only the subnetworks that are specified in the Subnetwork Name(s) parameter.</para>
+		/// <para>指定是否更新层中的所有子网。 要更新层中的子网子集，请使用子网名称参数。</para>
+		/// <para>选中 - 更新层中的所有子网。 此选项使用异步处理通过系统 UtilityNetworkTools 地理处理服务更新子网。 此服务为公共设施网络地理处理任务而保留，并具有较长的默认超时设置。 这是默认设置。</para>
+		/// <para>未选中 - 仅更新子网名称参数中指定的子网。</para>
 		/// <para><see cref="AllSubnetworksInTierEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Subnetwork Name</para>
-		/// <para>The name of the subnetworks to update. If all subnetworks will be updated using the All subnetworks in tier parameter, this parameter is ignored.</para>
+		/// <para>要更新的子网的名称。 如果将使用层中的所有子网参数来更新所有子网，则将忽略此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -127,9 +127,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Continue on failure</para>
-		/// <para>Specifies whether to stop the update process if a subnetwork fails to update when updating multiple subnetworks.</para>
-		/// <para>Checked—Continues to update subnetworks upon failure.</para>
-		/// <para>Unchecked—Stops updating subnetworks if a failure occurs. This is the default.</para>
+		/// <para>指定如果在更新多个子网时某一子网更新失败，则是否停止更新进程。</para>
+		/// <para>选中 - 如果失败，则继续更新子网。</para>
+		/// <para>未选中 - 如果失败，则停止更新子网。 这是默认设置。</para>
 		/// <para><see cref="ContinueOnFailureEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Condition Barriers</para>
-		/// <para>This parameter is only available via Python.</para>
+		/// <para>此参数仅可通过 Python 获得。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Function Barriers</para>
-		/// <para>This parameter is only available via Python.</para>
+		/// <para>此参数仅可通过 Python 获得。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Include Barrier Features</para>
-		/// <para>This parameter is only available via Python.</para>
+		/// <para>此参数仅可通过 Python 获得。</para>
 		/// <para><see cref="IncludeBarriersEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -170,11 +170,11 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Apply Traversability To</para>
-		/// <para>Specifies the type of traversability to enforce. Traversability scope dictates whether traversability is enforced at junctions, edges, or both. For example, if a condition barrier is defined to stop the trace if DEVICESTATUS is equal to Open and traversability scope is set to edges only, the trace would not stop even if the trace encounters an open device, because the DEVICESTATUS is only applicable for junctions. In other words, this parameter indicates to the trace whether to ignore junctions, edges, or both.</para>
-		/// <para>Both junctions and edges—Apply traversability to both junctions and edges. This is the default.</para>
-		/// <para>Junctions only—Apply traversability to only junctions.</para>
-		/// <para>Edges only—Apply traversability to only edges.</para>
-		/// <para>This parameter is only available via Python.</para>
+		/// <para>指定要强制使用的可遍历性的类型。 可遍历性范围指明是否在交汇点、边或这两处强制使用可遍历性。 例如，如果定义了用于停止追踪的条件障碍，其中 DEVICESTATUS 等于 Open 并将遍历范围仅设置为边，则即使追踪遇到开路设备，追踪也不会停止，因为 DEVICESTATUS 仅适用于交汇点。 换言之，此参数会向追踪指出是否要忽略交汇点、边或这两者。</para>
+		/// <para>交汇点和边—将可遍历性同时应用于交汇点和边。 这是默认设置。</para>
+		/// <para>仅交汇点—仅将可遍历性应用于交汇点。</para>
+		/// <para>仅边—仅将可遍历性应用于边。</para>
+		/// <para>此参数仅可通过 Python 获得。</para>
 		/// <para><see cref="TraversabilityScopeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -185,7 +185,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Propagators</para>
-		/// <para>This parameter is only available via Python.</para>
+		/// <para>此参数仅可通过 Python 获得。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -208,14 +208,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum AllSubnetworksInTierEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Updates all subnetworks in the tier. This option uses asynchronous processing to update the subnetworks using the system UtilityNetworkTools geoprocessing service. The service is reserved for utility network geoprocessing tasks and has a longer default timeout setting. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ALL_SUBNETWORKS_IN_TIER")]
 			ALL_SUBNETWORKS_IN_TIER,
 
 			/// <summary>
-			/// <para>Unchecked—Updates only the subnetworks that are specified in the Subnetwork Name(s) parameter.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SPECIFIC_SUBNETWORK")]
@@ -229,14 +229,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum ContinueOnFailureEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Continues to update subnetworks upon failure.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CONTINUE_ON_FAILURE")]
 			CONTINUE_ON_FAILURE,
 
 			/// <summary>
-			/// <para>Unchecked—Stops updating subnetworks if a failure occurs. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("STOP_ON_FAILURE")]
@@ -271,24 +271,24 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum TraversabilityScopeEnum 
 		{
 			/// <summary>
-			/// <para>Both junctions and edges—Apply traversability to both junctions and edges. This is the default.</para>
+			/// <para>交汇点和边—将可遍历性同时应用于交汇点和边。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("BOTH_JUNCTIONS_AND_EDGES")]
-			[Description("Both junctions and edges")]
+			[Description("交汇点和边")]
 			Both_junctions_and_edges,
 
 			/// <summary>
-			/// <para>Junctions only—Apply traversability to only junctions.</para>
+			/// <para>仅交汇点—仅将可遍历性应用于交汇点。</para>
 			/// </summary>
 			[GPValue("JUNCTIONS_ONLY")]
-			[Description("Junctions only")]
+			[Description("仅交汇点")]
 			Junctions_only,
 
 			/// <summary>
-			/// <para>Edges only—Apply traversability to only edges.</para>
+			/// <para>仅边—仅将可遍历性应用于边。</para>
 			/// </summary>
 			[GPValue("EDGES_ONLY")]
-			[Description("Edges only")]
+			[Description("仅边")]
 			Edges_only,
 
 		}

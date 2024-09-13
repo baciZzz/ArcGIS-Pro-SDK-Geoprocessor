@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Calculate Distance Band from Neighbor Count</para>
-	/// <para>Calculate Distance Band from Neighbor Count</para>
-	/// <para>Returns the minimum, the maximum, and the average distance to the specified Nth nearest neighbor (N is an input parameter) for a set of features.  Results are written as tool execution messages.</para>
+	/// <para>计算近邻点距离</para>
+	/// <para>返回一组要素与指定的第 N 个最邻近点（N 为输入参数）的最小、最大和平均距离。结果以工具执行消息的形式写入。</para>
 	/// </summary>
 	public class CalculateDistanceBand : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputFeatures">
 		/// <para>Input Features</para>
-		/// <para>The feature class or layer used to calculate distance statistics.</para>
+		/// <para>用于计算距离统计值的要素类或图层。</para>
 		/// </param>
 		/// <param name="Neighbors">
 		/// <para>Neighbors</para>
-		/// <para>The number of neighbors (N) to consider for each feature. This number should be any integer between one and the total number of features in the feature class. A list of distances between each feature and its Nth neighbor is compiled, and the maximum, minimum, and average distances are output to the Results window.</para>
+		/// <para>将要考虑的各要素的相邻点数目 (N)。此数目应为介于 1 和要素类中的要素总数之间的任意整数。各要素与其第 N 个相邻点之间的距离的列表将被编译，并且最大、最小和平均距离将被输出到“结果”窗口。</para>
 		/// </param>
 		/// <param name="DistanceMethod">
 		/// <para>Distance Method</para>
-		/// <para>Specifies how distances are calculated from each feature to neighboring features.</para>
-		/// <para>Euclidean—The straight-line distance between two points (as the crow flies)</para>
-		/// <para>Manhattan—The distance between two points measured along axes at right angles (city block); calculated by summing the (absolute) difference between the x- and y-coordinates</para>
+		/// <para>指定计算每个要素与邻近要素之间的距离的方式。</para>
+		/// <para>欧氏—两点间的直线距离</para>
+		/// <para>曼哈顿—沿垂直轴度量的两点间的距离（城市街区）；计算方法是对两点的 x 和 y 坐标的差值（绝对值）求和。</para>
 		/// <para><see cref="DistanceMethodEnum"/></para>
 		/// </param>
 		public CalculateDistanceBand(object InputFeatures, object Neighbors, object DistanceMethod)
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Calculate Distance Band from Neighbor Count</para>
+		/// <para>Tool Display Name : 计算近邻点距离</para>
 		/// </summary>
-		public override string DisplayName() => "Calculate Distance Band from Neighbor Count";
+		public override string DisplayName() => "计算近邻点距离";
 
 		/// <summary>
 		/// <para>Tool Name : CalculateDistanceBand</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The feature class or layer used to calculate distance statistics.</para>
+		/// <para>用于计算距离统计值的要素类或图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Neighbors</para>
-		/// <para>The number of neighbors (N) to consider for each feature. This number should be any integer between one and the total number of features in the feature class. A list of distances between each feature and its Nth neighbor is compiled, and the maximum, minimum, and average distances are output to the Results window.</para>
+		/// <para>将要考虑的各要素的相邻点数目 (N)。此数目应为介于 1 和要素类中的要素总数之间的任意整数。各要素与其第 N 个相邻点之间的距离的列表将被编译，并且最大、最小和平均距离将被输出到“结果”窗口。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -95,9 +95,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Distance Method</para>
-		/// <para>Specifies how distances are calculated from each feature to neighboring features.</para>
-		/// <para>Euclidean—The straight-line distance between two points (as the crow flies)</para>
-		/// <para>Manhattan—The distance between two points measured along axes at right angles (city block); calculated by summing the (absolute) difference between the x- and y-coordinates</para>
+		/// <para>指定计算每个要素与邻近要素之间的距离的方式。</para>
+		/// <para>欧氏—两点间的直线距离</para>
+		/// <para>曼哈顿—沿垂直轴度量的两点间的距离（城市街区）；计算方法是对两点的 x 和 y 坐标的差值（绝对值）求和。</para>
 		/// <para><see cref="DistanceMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -143,17 +143,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum DistanceMethodEnum 
 		{
 			/// <summary>
-			/// <para>Euclidean—The straight-line distance between two points (as the crow flies)</para>
+			/// <para>欧氏—两点间的直线距离</para>
 			/// </summary>
 			[GPValue("EUCLIDEAN_DISTANCE")]
-			[Description("Euclidean")]
+			[Description("欧氏")]
 			Euclidean,
 
 			/// <summary>
-			/// <para>Manhattan—The distance between two points measured along axes at right angles (city block); calculated by summing the (absolute) difference between the x- and y-coordinates</para>
+			/// <para>曼哈顿—沿垂直轴度量的两点间的距离（城市街区）；计算方法是对两点的 x 和 y 坐标的差值（绝对值）求和。</para>
 			/// </summary>
 			[GPValue("MANHATTAN_DISTANCE")]
-			[Description("Manhattan")]
+			[Description("曼哈顿")]
 			Manhattan,
 
 		}

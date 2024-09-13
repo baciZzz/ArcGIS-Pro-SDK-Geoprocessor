@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Aggregate Points</para>
-	/// <para>Aggregate Points</para>
-	/// <para>Aggregates points into polygon features or bins. A polygon is returned with a count of points as well as optional statistics at all locations where points exist.</para>
+	/// <para>聚合点</para>
+	/// <para>将点聚合到面要素或立方图格。系统将返回一个面，其中包含存在点的所有位置的点计数以及可选统计数据。</para>
 	/// </summary>
 	public class AggregatePoints : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="PointLayer">
 		/// <para>Point Layer</para>
-		/// <para>The point features to be aggregated into polygons or bins.</para>
+		/// <para>聚合到面或立方图格的点要素。</para>
 		/// </param>
 		/// <param name="OutputName">
 		/// <para>Output Name</para>
-		/// <para>The name of the output feature service.</para>
+		/// <para>输出要素服务的名称。</para>
 		/// </param>
 		/// <param name="PolygonOrBin">
 		/// <para>Polygon or Bin</para>
-		/// <para>Specifies how the Point Layer will be aggregated.</para>
-		/// <para>Polygon—The point layer will be aggregated into a polygon dataset.</para>
-		/// <para>Bin—The point layer will be aggregated into square or hexagonal bins that are generated when the tool is run.</para>
+		/// <para>指定点图层的聚合方式。</para>
+		/// <para>面—点图层将聚合到面数据集。</para>
+		/// <para>图格—点图层将聚合到运行此工具时生成的方形或六角立方图格。</para>
 		/// <para><see cref="PolygonOrBinEnum"/></para>
 		/// </param>
 		public AggregatePoints(object PointLayer, object OutputName, object PolygonOrBin)
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Aggregate Points</para>
+		/// <para>Tool Display Name : 聚合点</para>
 		/// </summary>
-		public override string DisplayName() => "Aggregate Points";
+		public override string DisplayName() => "聚合点";
 
 		/// <summary>
 		/// <para>Tool Name : AggregatePoints</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Point Layer</para>
-		/// <para>The point features to be aggregated into polygons or bins.</para>
+		/// <para>聚合到面或立方图格的点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output feature service.</para>
+		/// <para>输出要素服务的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -98,9 +98,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Polygon or Bin</para>
-		/// <para>Specifies how the Point Layer will be aggregated.</para>
-		/// <para>Polygon—The point layer will be aggregated into a polygon dataset.</para>
-		/// <para>Bin—The point layer will be aggregated into square or hexagonal bins that are generated when the tool is run.</para>
+		/// <para>指定点图层的聚合方式。</para>
+		/// <para>面—点图层将聚合到面数据集。</para>
+		/// <para>图格—点图层将聚合到运行此工具时生成的方形或六角立方图格。</para>
 		/// <para><see cref="PolygonOrBinEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Polygon Layer</para>
-		/// <para>The polygon features into which the input points will be aggregated.</para>
+		/// <para>输入点将聚合到的面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -122,9 +122,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Bin Type</para>
-		/// <para>Specifies the bin shape that will be generated to hold the aggregated points.</para>
-		/// <para>Square—Square bins will be generated, in which Bin Size represents the height of a square. This is the default.</para>
-		/// <para>Hexagon—Hexagonal bins will be generated, in which Bin Size represents the height between two parallel sides.</para>
+		/// <para>指定将生成的用于保存聚合点的立方图格形状。</para>
+		/// <para>正方形—将生成方形立方图格，其中立方图格大小表示方形的高度。这是默认设置。</para>
+		/// <para>六边形—将生成六边形立方图格，其中图格大小表示两条平行边之间的高度。</para>
 		/// <para><see cref="BinTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -134,8 +134,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Bin Size</para>
-		/// <para>The distance interval that represents the bin size and units into which the Point Layer will be aggregated. The distance interval must be a linear unit.</para>
-		/// <para>The distance interval that represents the Bin Size and units into which the Point Layer will be aggregated. The distance interval must be a linear unit.</para>
+		/// <para>表示点图层将聚合到的立方图格大小和单位的距离间隔。距离间隔必须为线性单位。</para>
+		/// <para>距离间隔，表示点图层将聚合到的立方图格大小和单位。距离间隔必须为线性单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -144,8 +144,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Step Interval</para>
-		/// <para>A value that specifies the duration of the time step. This parameter is only available if the input points are time enabled and represent an instant in time.</para>
-		/// <para>Time stepping can only be applied if time is enabled on the input.</para>
+		/// <para>用来指定时间步长持续时间的值。 只有在输入点启用了时间且表示时刻时，此参数才可用。</para>
+		/// <para>只有对输入启用了时间的情况下，才可应用时间步长。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Step Repeat</para>
-		/// <para>A value that specifies how often the time-step interval occurs. This parameter is only available if the input points are time enabled and represent an instant in time.</para>
+		/// <para>用来指定时间步长间隔发生频率的值。 只有在输入点启用了时间且表示时刻时，此参数才可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Step Reference</para>
-		/// <para>A date that specifies the reference time with which to align the time steps. The default is January 1, 1970, at 12:00 a.m. This parameter is only available if the input points are time enabled and represent an instant in time.</para>
+		/// <para>用来指定时间步长所要对齐的参考时间的日期。 默认情况下为 1970 年 1 月 1 日 12:00 a.m.。只有在输入点启用了时间且表示时刻时，此参数才可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Summary Fields</para>
-		/// <para>The statistics that will be calculated on specified fields.</para>
+		/// <para>将根据指定字段进行计算的统计数据。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -187,9 +187,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Data Store</para>
-		/// <para>Specifies the ArcGIS Data Store where the output will be saved. The default is Spatiotemporal big data store. All results stored in a spatiotemporal big data store will be stored in WGS84. Results stored in a relational data store will maintain their coordinate system.</para>
-		/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
-		/// <para>Relational data store—Output will be stored in a relational data store.</para>
+		/// <para>指定将用于保存输出的 ArcGIS Data Store。 默认设置为时空大数据存储。 在时空大数据存储中存储的所有结果都将存储在 WGS84 中。 在关系数据存储中存储的结果都将保持各自的坐标系。</para>
+		/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
+		/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 		/// <para><see cref="DataStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -215,17 +215,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum PolygonOrBinEnum 
 		{
 			/// <summary>
-			/// <para>Polygon or Bin</para>
+			/// <para>面—点图层将聚合到面数据集。</para>
 			/// </summary>
 			[GPValue("POLYGON")]
-			[Description("Polygon")]
+			[Description("面")]
 			Polygon,
 
 			/// <summary>
-			/// <para>Bin—The point layer will be aggregated into square or hexagonal bins that are generated when the tool is run.</para>
+			/// <para>图格—点图层将聚合到运行此工具时生成的方形或六角立方图格。</para>
 			/// </summary>
 			[GPValue("BIN")]
-			[Description("Bin")]
+			[Description("图格")]
 			Bin,
 
 		}
@@ -236,17 +236,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum BinTypeEnum 
 		{
 			/// <summary>
-			/// <para>Square—Square bins will be generated, in which Bin Size represents the height of a square. This is the default.</para>
+			/// <para>正方形—将生成方形立方图格，其中立方图格大小表示方形的高度。这是默认设置。</para>
 			/// </summary>
 			[GPValue("SQUARE")]
-			[Description("Square")]
+			[Description("正方形")]
 			Square,
 
 			/// <summary>
-			/// <para>Hexagon—Hexagonal bins will be generated, in which Bin Size represents the height between two parallel sides.</para>
+			/// <para>六边形—将生成六边形立方图格，其中图格大小表示两条平行边之间的高度。</para>
 			/// </summary>
 			[GPValue("HEXAGON")]
-			[Description("Hexagon")]
+			[Description("六边形")]
 			Hexagon,
 
 		}
@@ -257,17 +257,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DataStoreEnum 
 		{
 			/// <summary>
-			/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
+			/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("SPATIOTEMPORAL_DATA_STORE")]
-			[Description("Spatiotemporal big data store")]
+			[Description("时空大数据存储")]
 			Spatiotemporal_big_data_store,
 
 			/// <summary>
-			/// <para>Relational data store—Output will be stored in a relational data store.</para>
+			/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 			/// </summary>
 			[GPValue("RELATIONAL_DATA_STORE")]
-			[Description("Relational data store")]
+			[Description("关系数据存储")]
 			Relational_data_store,
 
 		}

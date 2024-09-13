@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 {
 	/// <summary>
 	/// <para>Watershed</para>
-	/// <para>Watershed</para>
-	/// <para>Determines the contributing area above each input point. A watershed is the upslope area that contributes flow.</para>
+	/// <para>集水区</para>
+	/// <para>用于确定各个输入点之上的汇流区域。集水区是汇集水流的上坡区域。</para>
 	/// </summary>
 	public class Watershed : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// </summary>
 		/// <param name="Inputpoints">
 		/// <para>Input Points</para>
-		/// <para>The point features used for calculating watersheds. These are referred to as pour points, because it is the location at which water pours out of the watershed.</para>
+		/// <para>用于计算集水区的点要素。这些点要素被称为倾泻点，因为其是水从集水区倾泻而出的位置。</para>
 		/// </param>
 		public Watershed(object Inputpoints)
 		{
@@ -29,14 +29,14 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Watershed</para>
+		/// <para>Tool Display Name : 集水区</para>
 		/// </summary>
-		public override string DisplayName() => "Watershed";
+		public override string DisplayName() => "集水区";
 
 		/// <summary>
-		/// <para>Tool Name : Watershed</para>
+		/// <para>Tool Name : 集水区</para>
 		/// </summary>
-		public override string ToolName() => "Watershed";
+		public override string ToolName() => "集水区";
 
 		/// <summary>
 		/// <para>Tool Excute Name : agolservices.Watershed</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Input Points</para>
-		/// <para>The point features used for calculating watersheds. These are referred to as pour points, because it is the location at which water pours out of the watershed.</para>
+		/// <para>用于计算集水区的点要素。这些点要素被称为倾泻点，因为其是水从集水区倾泻而出的位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -73,8 +73,8 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Point Identification Field</para>
-		/// <para>An integer or string field used to identify to the input points.</para>
-		/// <para>The default is to use the unique ID field.</para>
+		/// <para>用于标识输入点的整型或字符串字段。</para>
+		/// <para>默认使用唯一 ID 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -82,9 +82,9 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Snap Distance</para>
-		/// <para>The maximum distance to move the location of an input point.</para>
-		/// <para>Interactive input points and documented gage locations may not exactly align with the stream location in the DEM. This parameter allows the service to move the point to a nearby location with the largest contributing area.</para>
-		/// <para>By default, the snapping distance is calculated as the resolution of the source data multiplied by 5.</para>
+		/// <para>用于移动输入点位置的最大距离。</para>
+		/// <para>交互式输入点和记录的标尺位置可能与 DEM 中的河流位置未完全对齐。此参数允许服务将该点移动到具有最大汇集水流面积的附近位置。</para>
+		/// <para>默认情况下，捕捉距离的计算方法为源数据的分辨率乘以 5。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -92,12 +92,12 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Snap Distance Units</para>
-		/// <para>The linear units specified for the snap distance.</para>
-		/// <para>Meters—The units are meters. This is the default.</para>
-		/// <para>Kilometers—The units are kilometers.</para>
-		/// <para>Feet—The units are feet.</para>
-		/// <para>Yards—The units are yards.</para>
-		/// <para>Miles—The units are miles.</para>
+		/// <para>针对捕捉距离指定的线性单位。</para>
+		/// <para>米—单位为米。 这是默认设置。</para>
+		/// <para>千米—单位为千米。</para>
+		/// <para>英尺—单位为英尺。</para>
+		/// <para>码—单位为码。</para>
+		/// <para>英里—单位为英里。</para>
 		/// <para><see cref="SnapdistanceunitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -107,12 +107,12 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Data Source Resolution</para>
-		/// <para>Specifies the source data resolution that will be used in the analysis. The values are an approximation of the spatial resolution of the digital elevation model used to build the foundation hydrologic database. Since many elevation sources are distributed in units of arc seconds, an approximation is provided in meters for easier understanding.</para>
-		/// <para>Blank—The hydrologic source, built from a 3-arc second data source, which is approximately 90-meter resolution elevation data, will be used. This is the default.</para>
-		/// <para>Finest—The finest resolution available at each location from all possible data sources will be used.</para>
-		/// <para>10 meters—The hydrologic source, built from a 1/3 arc second data source, which is approximately 10-meter resolution elevation data, will be used.</para>
-		/// <para>30 meters—The hydrologic source, built from a 1-arc second data source, which is approximately 30-meter resolution elevation data, will be used.</para>
-		/// <para>90 meters—The hydrologic source, built from a 3-arc second data source, which is approximately 90-meter resolution elevation data, will be used.</para>
+		/// <para>指定将用于分析的源数据分辨率。 这些值是用于构建基础水文数据库的数字高程模型的空间分辨率近似值。 由于许多高程源以弧秒为单位进行分布，为了更方便理解，我们提供了以米为单位的近似值。</para>
+		/// <para>空—将使用基于 3 弧秒的数据源（分辨率大约为 90 米的高程数据）构建的水文源。 这是默认设置。</para>
+		/// <para>最精细—将使用所有可能数据源的每个位置的最佳可用分辨率。</para>
+		/// <para>10 米—将使用基于 1/3 弧秒的数据源（分辨率大约为 10 米的高程数据）构建的水文源。</para>
+		/// <para>30 米—将使用基于 1 弧秒的数据源（分辨率大约为 30 米的高程数据）构建的水文源。</para>
+		/// <para>90 米—将使用基于 3 弧秒的数据源（分辨率大约为 90 米的高程数据）构建的水文源。</para>
 		/// <para><see cref="DatasourceresolutionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -122,9 +122,9 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Generalize</para>
-		/// <para>Specifies whether the output watersheds will be smoothed into simpler shapes or conform to the cell edges of the original DEM.</para>
-		/// <para>Unchecked—The edges of the polygons will conform to the cell edges of the original DEM. This is the default.</para>
-		/// <para>Checked—The polygon boundaries will be smoothed into simpler shapes.</para>
+		/// <para>指定是将输出流域平滑处理为更简单的形状还是将其与原始 DEM 的像元边保持一致。</para>
+		/// <para>未选中 - 面的边缘将与原始 DEM 的像元边缘保持一致。 这是默认设置。</para>
+		/// <para>选中 - 面边界将被平滑处理为简单的形状。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
@@ -132,9 +132,9 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 
 		/// <summary>
 		/// <para>Return Snapped Points</para>
-		/// <para>Determines if a point feature at the watershed&apos;s pour point will be returned. If snapping is enabled, this might not be the same as the input point.</para>
-		/// <para>Unchecked–No point features will be returned.</para>
-		/// <para>Checked–A point feature will be returned. This is the default.</para>
+		/// <para>确定是否返回集水区倾泻点处的点要素。如果启用捕捉，则捕捉到的点可能与输入点不同。</para>
+		/// <para>未选中 - 将不返回点要素。</para>
+		/// <para>选中 - 将返回点要素。这是默认设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]
@@ -162,38 +162,38 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		public enum SnapdistanceunitsEnum 
 		{
 			/// <summary>
-			/// <para>Meters—The units are meters. This is the default.</para>
+			/// <para>米—单位为米。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("Meters")]
-			[Description("Meters")]
+			[Description("米")]
 			Meters,
 
 			/// <summary>
-			/// <para>Kilometers—The units are kilometers.</para>
+			/// <para>千米—单位为千米。</para>
 			/// </summary>
 			[GPValue("Kilometers")]
-			[Description("Kilometers")]
+			[Description("千米")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>Feet—The units are feet.</para>
+			/// <para>英尺—单位为英尺。</para>
 			/// </summary>
 			[GPValue("Feet")]
-			[Description("Feet")]
+			[Description("英尺")]
 			Feet,
 
 			/// <summary>
-			/// <para>Yards—The units are yards.</para>
+			/// <para>码—单位为码。</para>
 			/// </summary>
 			[GPValue("Yards")]
-			[Description("Yards")]
+			[Description("码")]
 			Yards,
 
 			/// <summary>
-			/// <para>Miles—The units are miles.</para>
+			/// <para>英里—单位为英里。</para>
 			/// </summary>
 			[GPValue("Miles")]
-			[Description("Miles")]
+			[Description("英里")]
 			Miles,
 
 		}
@@ -211,31 +211,31 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 			_,
 
 			/// <summary>
-			/// <para>Finest—The finest resolution available at each location from all possible data sources will be used.</para>
+			/// <para>最精细—将使用所有可能数据源的每个位置的最佳可用分辨率。</para>
 			/// </summary>
 			[GPValue("FINEST")]
-			[Description("Finest")]
+			[Description("最精细")]
 			Finest,
 
 			/// <summary>
-			/// <para>10 meters—The hydrologic source, built from a 1/3 arc second data source, which is approximately 10-meter resolution elevation data, will be used.</para>
+			/// <para>10 米—将使用基于 1/3 弧秒的数据源（分辨率大约为 10 米的高程数据）构建的水文源。</para>
 			/// </summary>
 			[GPValue("10m")]
-			[Description("10 meters")]
+			[Description("10 米")]
 			_10_meters,
 
 			/// <summary>
-			/// <para>30 meters—The hydrologic source, built from a 1-arc second data source, which is approximately 30-meter resolution elevation data, will be used.</para>
+			/// <para>30 米—将使用基于 1 弧秒的数据源（分辨率大约为 30 米的高程数据）构建的水文源。</para>
 			/// </summary>
 			[GPValue("30m")]
-			[Description("30 meters")]
+			[Description("30 米")]
 			_30_meters,
 
 			/// <summary>
-			/// <para>90 meters—The hydrologic source, built from a 3-arc second data source, which is approximately 90-meter resolution elevation data, will be used.</para>
+			/// <para>90 米—将使用基于 3 弧秒的数据源（分辨率大约为 90 米的高程数据）构建的水文源。</para>
 			/// </summary>
 			[GPValue("90m")]
-			[Description("90 meters")]
+			[Description("90 米")]
 			_90_meters,
 
 		}

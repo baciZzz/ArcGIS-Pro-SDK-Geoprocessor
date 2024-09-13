@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Create Thiessen Polygons</para>
-	/// <para>Create Thiessen Polygons</para>
-	/// <para>Creates Thiessen polygons from point features.</para>
+	/// <para>创建泰森多边形</para>
+	/// <para>根据点要素创建泰森多边形。</para>
 	/// </summary>
 	public class CreateThiessenPolygons : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The point input features from which Thiessen polygons will be generated.</para>
+		/// <para>生成泰森多边形所依据的点输入要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class containing the Thiessen polygons that are generated from the point input features.</para>
+		/// <para>包含根据点输入要素生成的泰森多边形的输出要素类。</para>
 		/// </param>
 		public CreateThiessenPolygons(object InFeatures, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Thiessen Polygons</para>
+		/// <para>Tool Display Name : 创建泰森多边形</para>
 		/// </summary>
-		public override string DisplayName() => "Create Thiessen Polygons";
+		public override string DisplayName() => "创建泰森多边形";
 
 		/// <summary>
 		/// <para>Tool Name : CreateThiessenPolygons</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The point input features from which Thiessen polygons will be generated.</para>
+		/// <para>生成泰森多边形所依据的点输入要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class containing the Thiessen polygons that are generated from the point input features.</para>
+		/// <para>包含根据点输入要素生成的泰森多边形的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -89,9 +89,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Fields</para>
-		/// <para>Specifies which fields from the input features will be transferred to the output feature class.</para>
-		/// <para>Only Feature ID—Only the FID field from the input features will be transferred to the output feature class. This is the default.</para>
-		/// <para>All fields—All fields from the input features will be transferred to the output feature class.</para>
+		/// <para>指定将输入要素的哪些字段传递到输出要素类。</para>
+		/// <para>仅要素 ID—仅输入要素的 FID 字段将传递到输出要素类。 这是默认设置。</para>
+		/// <para>所有字段—输入要素的所有字段都将传递到输出要素类。</para>
 		/// <para><see cref="FieldsToCopyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -116,17 +116,17 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum FieldsToCopyEnum 
 		{
 			/// <summary>
-			/// <para>Only Feature ID—Only the FID field from the input features will be transferred to the output feature class. This is the default.</para>
+			/// <para>仅要素 ID—仅输入要素的 FID 字段将传递到输出要素类。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("ONLY_FID")]
-			[Description("Only Feature ID")]
+			[Description("仅要素 ID")]
 			Only_Feature_ID,
 
 			/// <summary>
-			/// <para>All fields—All fields from the input features will be transferred to the output feature class.</para>
+			/// <para>所有字段—输入要素的所有字段都将传递到输出要素类。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All fields")]
+			[Description("所有字段")]
 			All_fields,
 
 		}

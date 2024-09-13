@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Regularize Adjacent Building Footprint</para>
-	/// <para>Regularize Adjacent Building Footprint</para>
-	/// <para>Regularizes building footprints that have common boundaries.</para>
+	/// <para>规则化邻近建筑物覆盖区</para>
+	/// <para>规则化具有公共边界的建筑物覆盖区。</para>
 	/// </summary>
 	public class RegularizeAdjacentBuildingFootprint : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input features to process.</para>
+		/// <para>待处理的输入要素。</para>
 		/// </param>
 		/// <param name="Group">
 		/// <para>Grouping Field</para>
-		/// <para>The field that will be used to determine which features share coincident, non-overlapping boundaries.</para>
+		/// <para>此字段用于确定哪些要素将共享重合、非重叠边界。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </param>
 		public RegularizeAdjacentBuildingFootprint(object InFeatures, object Group, object OutFeatureClass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Regularize Adjacent Building Footprint</para>
+		/// <para>Tool Display Name : 规则化邻近建筑物覆盖区</para>
 		/// </summary>
-		public override string DisplayName() => "Regularize Adjacent Building Footprint";
+		public override string DisplayName() => "规则化邻近建筑物覆盖区";
 
 		/// <summary>
 		/// <para>Tool Name : RegularizeAdjacentBuildingFootprint</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input features to process.</para>
+		/// <para>待处理的输入要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Grouping Field</para>
-		/// <para>The field that will be used to determine which features share coincident, non-overlapping boundaries.</para>
+		/// <para>此字段用于确定哪些要素将共享重合、非重叠边界。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -103,10 +103,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>The method that will be used to regularize the input features.</para>
-		/// <para>Right angles—Identifies the best line segments that fit the input feature vertices along 90° and 180° angles.</para>
-		/// <para>Right angles and diagonals—Identifies the best line segments that fit the input feature vertices along 90°, 135°, and 180° interior angles.</para>
-		/// <para>Any angles—Identifies the best fit line that falls along any angle while reducing the overall vertex count of the input features.</para>
+		/// <para>规则化输入要素时使用的方法。</para>
+		/// <para>直角—标识符合沿 90° 和 180° 角的输入要素折点的最佳线段。</para>
+		/// <para>直角和对角—标识符合沿 90°、135° 和 180° 内角的输入要素折点的最佳线段。</para>
+		/// <para>任意角—标识沿任意角度的最佳拟合线，同时减少输入要素的总折点数。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Tolerance</para>
-		/// <para>The maximum distance that the regularized footprint can deviate from the boundary of its originating feature.</para>
+		/// <para>规则化覆盖区可从其原始要素的边界偏移的最大距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Precision</para>
-		/// <para>The precision of the spatial grid that will be used in the regularization process. Valid values range from 0.05 to 0.25.</para>
+		/// <para>将在规则化过程中使用的空间格网精度。 值的有效范围为 0.05 到 0.25。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Angular Deviation Limit</para>
-		/// <para>The maximum deviation of the best fit line's interior angles that will be tolerated when using the Right Angles and Diagonals (RIGHT_ANGLES_AND_DIAGONALS) method. This value should generally be kept to less than 5° to obtain best results. This parameter is disabled for other regularization methods.</para>
+		/// <para>最佳拟合线内角的最大偏差，可适用于使用直角和对角 (RIGHT_ANGLES_AND_DIAGONALS) 方法时。为获得最佳结果，通常应保持此值小于 5°。对于其他规则化方法，此参数将处于禁用状态。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -157,24 +157,24 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Any angles—Identifies the best fit line that falls along any angle while reducing the overall vertex count of the input features.</para>
+			/// <para>任意角—标识沿任意角度的最佳拟合线，同时减少输入要素的总折点数。</para>
 			/// </summary>
 			[GPValue("ANY_ANGLES")]
-			[Description("Any angles")]
+			[Description("任意角")]
 			Any_angles,
 
 			/// <summary>
-			/// <para>Right angles—Identifies the best line segments that fit the input feature vertices along 90° and 180° angles.</para>
+			/// <para>直角—标识符合沿 90° 和 180° 角的输入要素折点的最佳线段。</para>
 			/// </summary>
 			[GPValue("RIGHT_ANGLES")]
-			[Description("Right angles")]
+			[Description("直角")]
 			Right_angles,
 
 			/// <summary>
-			/// <para>Right angles and diagonals—Identifies the best line segments that fit the input feature vertices along 90°, 135°, and 180° interior angles.</para>
+			/// <para>直角和对角—标识符合沿 90°、135° 和 180° 内角的输入要素折点的最佳线段。</para>
 			/// </summary>
 			[GPValue("RIGHT_ANGLES_AND_DIAGONALS")]
-			[Description("Right angles and diagonals")]
+			[Description("直角和对角")]
 			Right_angles_and_diagonals,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Files From LAS Dataset</para>
-	/// <para>Remove Files From LAS Dataset</para>
-	/// <para>Removes one or more LAS files and surface constraint features from a LAS dataset.</para>
+	/// <para>从 LAS 数据集移除文件</para>
+	/// <para>从 LAS 数据集移除一个或多个 LAS 文件和表面约束要素。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset to process.</para>
+		/// <para>待处理的 LAS 数据集。</para>
 		/// </param>
 		public RemoveFilesFromLasDataset(object InLasDataset)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Remove Files From LAS Dataset</para>
+		/// <para>Tool Display Name : 从 LAS 数据集移除文件</para>
 		/// </summary>
-		public override string DisplayName() => "Remove Files From LAS Dataset";
+		public override string DisplayName() => "从 LAS 数据集移除文件";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveFilesFromLasDataset</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset to process.</para>
+		/// <para>待处理的 LAS 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>LAS Files or Folders</para>
-		/// <para>The name of the LAS files or folders containing LAS files whose reference will be removed from the LAS dataset.</para>
+		/// <para>LAS 文件或包含要从 LAS 数据集移除参考的 LAS 文件的文件夹的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Surface Constraints</para>
-		/// <para>The name of the surface constraint features that will be removed from the LAS dataset.</para>
+		/// <para>将从 LAS 数据集中移除的表面约束要素的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -100,9 +100,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Delete Pyramid</para>
-		/// <para>Specifies whether the LAS dataset&apos;s display pyramid will be deleted.</para>
-		/// <para>Checked—The LAS dataset&apos;s display pyramid will be deleted.</para>
-		/// <para>Unchecked—The LAS dataset&apos;s display pyramid will not be deleted. This is the default.</para>
+		/// <para>指定是否将删除 LAS 数据集的显示金字塔。</para>
+		/// <para>选中 - 将删除 LAS 数据集的显示金字塔。</para>
+		/// <para>未选中 - 不会删除 LAS数据集的显示金字塔。这是默认设置。</para>
 		/// <para><see cref="DeletePyramidEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -127,14 +127,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DeletePyramidEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The LAS dataset&apos;s display pyramid will be deleted.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_PYRAMID")]
 			DELETE_PYRAMID,
 
 			/// <summary>
-			/// <para>Unchecked—The LAS dataset&apos;s display pyramid will not be deleted. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DELETE_PYRAMID")]

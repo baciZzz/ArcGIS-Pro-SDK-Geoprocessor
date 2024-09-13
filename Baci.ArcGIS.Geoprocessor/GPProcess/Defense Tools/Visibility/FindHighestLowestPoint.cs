@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Find Highest Or Lowest Point</para>
-	/// <para>Find Highest Or Lowest Point</para>
-	/// <para>Finds the highest or lowest point  of the input surface within a defined area.</para>
+	/// <para>查找最高点或最低点</para>
+	/// <para>用于在定义区域内查找输入表面的最高点或最低点。</para>
 	/// </summary>
 	public class FindHighestLowestPoint : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		/// <param name="InSurface">
 		/// <para>Input Surface</para>
-		/// <para>The input elevation raster surface.</para>
+		/// <para>输入高程栅格表面。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class containing the output highest or lowest point.</para>
+		/// <para>包含输出最高点或最低点的要素类。</para>
 		/// </param>
 		/// <param name="HighLowOperationType">
 		/// <para>Highest or Lowest Point</para>
-		/// <para>Specifies the type of operation the tool will perform.</para>
-		/// <para>Highest points—The highest points will be found. This is the default.</para>
-		/// <para>Lowest points—The lowest points will be found.</para>
+		/// <para>用于指定该工具将执行的操作类型。</para>
+		/// <para>最高点—将找到最高点。 这是默认设置。</para>
+		/// <para>最低点—将找到最低点。</para>
 		/// <para><see cref="HighLowOperationTypeEnum"/></para>
 		/// </param>
 		public FindHighestLowestPoint(object InSurface, object OutFeatureClass, object HighLowOperationType)
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Find Highest Or Lowest Point</para>
+		/// <para>Tool Display Name : 查找最高点或最低点</para>
 		/// </summary>
-		public override string DisplayName() => "Find Highest Or Lowest Point";
+		public override string DisplayName() => "查找最高点或最低点";
 
 		/// <summary>
 		/// <para>Tool Name : FindHighestLowestPoint</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Surface</para>
-		/// <para>The input elevation raster surface.</para>
+		/// <para>输入高程栅格表面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class containing the output highest or lowest point.</para>
+		/// <para>包含输出最高点或最低点的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -95,9 +95,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Highest or Lowest Point</para>
-		/// <para>Specifies the type of operation the tool will perform.</para>
-		/// <para>Highest points—The highest points will be found. This is the default.</para>
-		/// <para>Lowest points—The lowest points will be found.</para>
+		/// <para>用于指定该工具将执行的操作类型。</para>
+		/// <para>最高点—将找到最高点。 这是默认设置。</para>
+		/// <para>最低点—将找到最低点。</para>
 		/// <para><see cref="HighLowOperationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Area</para>
-		/// <para>The input polygon feature class within which the highest or lowest point will be found.</para>
+		/// <para>将在其中查找最高点或最低点的输入面要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -133,17 +133,17 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum HighLowOperationTypeEnum 
 		{
 			/// <summary>
-			/// <para>Highest points—The highest points will be found. This is the default.</para>
+			/// <para>最高点—将找到最高点。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("HIGHEST")]
-			[Description("Highest points")]
+			[Description("最高点")]
 			Highest_points,
 
 			/// <summary>
-			/// <para>Lowest points—The lowest points will be found.</para>
+			/// <para>最低点—将找到最低点。</para>
 			/// </summary>
 			[GPValue("LOWEST")]
-			[Description("Lowest points")]
+			[Description("最低点")]
 			Lowest_points,
 
 		}

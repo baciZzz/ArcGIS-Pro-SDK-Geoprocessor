@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Get Model Parameter</para>
-	/// <para>Get Model Parameter</para>
-	/// <para>Gets model parameter value from an existing geostatistical model source.</para>
+	/// <para>获取模型参数</para>
+	/// <para>从现有的地统计模型源获取模型参数值。</para>
 	/// </summary>
 	public class GAGetModelParameter : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InGaModelSource">
 		/// <para>Input geostatistical model source</para>
-		/// <para>The geostatistical model source to be analyzed.</para>
+		/// <para>要分析的地统计模型源。</para>
 		/// </param>
 		/// <param name="ModelParamXpath">
 		/// <para>Parameter XML Path</para>
-		/// <para>XML path to the required model parameter.</para>
+		/// <para>所需模型参数的 XML 路径。</para>
 		/// </param>
 		public GAGetModelParameter(object InGaModelSource, object ModelParamXpath)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Get Model Parameter</para>
+		/// <para>Tool Display Name : 获取模型参数</para>
 		/// </summary>
-		public override string DisplayName() => "Get Model Parameter";
+		public override string DisplayName() => "获取模型参数";
 
 		/// <summary>
 		/// <para>Tool Name : GAGetModelParameter</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input geostatistical model source</para>
-		/// <para>The geostatistical model source to be analyzed.</para>
+		/// <para>要分析的地统计模型源。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Parameter XML Path</para>
-		/// <para>XML path to the required model parameter.</para>
+		/// <para>所需模型参数的 XML 路径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

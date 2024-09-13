@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Feature Outline Masks</para>
-	/// <para>Feature Outline Masks</para>
-	/// <para>Creates mask polygons at a specified distance and shape around the symbolized features in the input layer.</para>
+	/// <para>要素轮廓线掩膜</para>
+	/// <para>在输入图层中的符号化要素周围按照指定的距离和形状创建掩膜面。</para>
 	/// </summary>
 	public class FeatureOutlineMasks : AbstractGPProcess
 	{
@@ -21,47 +21,47 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>The symbolized input layer from which the masks will be created.</para>
+		/// <para>创建掩膜所使用的符号化输入图层。</para>
 		/// </param>
 		/// <param name="OutputFc">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will contain the mask features.</para>
+		/// <para>含有掩膜要素的要素类。</para>
 		/// </param>
 		/// <param name="ReferenceScale">
 		/// <para>Reference Scale</para>
-		/// <para>The reference scale used for calculating the masking geometry when masks are specified in page units. This is typically the reference scale of the map.</para>
+		/// <para>用于在使用页面单位指定掩膜时计算掩膜几何的参考比例。 该比例通常是地图的参考比例。</para>
 		/// </param>
 		/// <param name="SpatialReference">
 		/// <para>Calculation coordinate system</para>
-		/// <para>The spatial reference of the map in which the masking polygons will be created. This is not the spatial reference that will be assigned to the output feature class. It is the spatial reference of the map in which the masking polygons will be used, since the position of symbology may change when features are projected.</para>
+		/// <para>将创建掩膜面的地图的空间参考。 该空间参考不是要分配给输出要素类的空间参考。 它是地图的空间参考；由于投影要素时，符号系统的位置可能发生变化，所以在该空间参考内将使用掩膜面。</para>
 		/// </param>
 		/// <param name="Margin">
 		/// <para>Margin</para>
-		/// <para>The space in page units surrounding the symbolized input features used to create the mask polygons. Typically, masking polygons are created with a small margin around the symbol to improve visual appearance. Margin values are specified in either page units or map units. Most of the time, you will specify your margin distance value in page units.</para>
-		/// <para>The margin cannot be negative.</para>
+		/// <para>在用于创建掩膜面的符号化输入要素周围的间距（使用页面单位）。 通常，创建掩膜面时，在符号的周围留有小边距，以提高显示效果。 边距值可使用页面单位或地图单位指定。 通常，您需要使用页面单位来指定边距值。</para>
+		/// <para>边距值不能为负。</para>
 		/// </param>
 		/// <param name="Method">
 		/// <para>Mask Kind</para>
-		/// <para>Specifies the type of masking geometry that will be created.</para>
-		/// <para>Box—A polygon representing the extent of the symbolized feature.</para>
-		/// <para>Convex hull—The convex hull of the symbolized geometry of the feature. This is the default.</para>
-		/// <para>Exact simplified—A generalized polygon representing the exact shape of the symbolized feature. Polygons created with this method will have a significantly smaller number of vertices compared to polygons created with the EXACT method.</para>
-		/// <para>Exact—A polygon representing the exact shape of the symbolized feature.</para>
+		/// <para>指定要创建的掩膜几何类型。</para>
+		/// <para>箱形图—表示符号化要素的范围的面。</para>
+		/// <para>凸包—要素的符号化几何的凸包。 这是默认设置。</para>
+		/// <para>精确简化—表示符号化要素的确切形状的概化面。 与使用 EXACT 方法创建的面相比，使用该方法创建的面的折点数将显著降低。</para>
+		/// <para>精确—表示符号化要素的确切形状的面。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </param>
 		/// <param name="MaskForNonPlacedAnno">
 		/// <para>Create masks for unplaced annotation</para>
-		/// <para>Specifies whether to create masks for unplaced annotation. This option is only used when masking geodatabase annotation layers.</para>
-		/// <para>All annotation features—Creates masks for all the annotation features.</para>
-		/// <para>Only placed annotation features—Only creates masks for features with a status of placed.</para>
+		/// <para>指定是否为未放置的注记创建掩膜。 该选项仅在对地理数据库注记图层执行掩膜操作时使用。</para>
+		/// <para>所有注记要素—为所有的注记要素创建掩膜。</para>
+		/// <para>仅放置的注记要素—仅为状态为已放置的要素创建掩膜。</para>
 		/// <para><see cref="MaskForNonPlacedAnnoEnum"/></para>
 		/// </param>
 		/// <param name="Attributes">
 		/// <para>Transfer Attributes</para>
-		/// <para>Specifies the attributes that will be transferred from the input features to the output features.</para>
-		/// <para>Only the FID field—Only the FID field from the input features will be transferred to the output features. This is the default.</para>
-		/// <para>All attributes except the FID field—All the attributes except the FID from the input features will be transferred to the output features.</para>
-		/// <para>All attributes— All the attributes from the input features will be transferred to the output features.</para>
+		/// <para>指定将从输入要素传递到输出要素的属性。</para>
+		/// <para>仅 FID 字段—仅输入要素的 FID 字段将传递到输出要素。 这是默认设置。</para>
+		/// <para>除 FID 字段以外的所有属性—输入要素中，除 FID 以外的所有属性都将传递到输出要素。</para>
+		/// <para>所有属性—输入要素的所有属性都将传递到输出要素。</para>
 		/// <para><see cref="AttributesEnum"/></para>
 		/// </param>
 		public FeatureOutlineMasks(object InputLayer, object OutputFc, object ReferenceScale, object SpatialReference, object Margin, object Method, object MaskForNonPlacedAnno, object Attributes)
@@ -77,9 +77,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Feature Outline Masks</para>
+		/// <para>Tool Display Name : 要素轮廓线掩膜</para>
 		/// </summary>
-		public override string DisplayName() => "Feature Outline Masks";
+		public override string DisplayName() => "要素轮廓线掩膜";
 
 		/// <summary>
 		/// <para>Tool Name : FeatureOutlineMasks</para>
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The symbolized input layer from which the masks will be created.</para>
+		/// <para>创建掩膜所使用的符号化输入图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will contain the mask features.</para>
+		/// <para>含有掩膜要素的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Reference Scale</para>
-		/// <para>The reference scale used for calculating the masking geometry when masks are specified in page units. This is typically the reference scale of the map.</para>
+		/// <para>用于在使用页面单位指定掩膜时计算掩膜几何的参考比例。 该比例通常是地图的参考比例。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Calculation coordinate system</para>
-		/// <para>The spatial reference of the map in which the masking polygons will be created. This is not the spatial reference that will be assigned to the output feature class. It is the spatial reference of the map in which the masking polygons will be used, since the position of symbology may change when features are projected.</para>
+		/// <para>将创建掩膜面的地图的空间参考。 该空间参考不是要分配给输出要素类的空间参考。 它是地图的空间参考；由于投影要素时，符号系统的位置可能发生变化，所以在该空间参考内将使用掩膜面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSpatialReference()]
@@ -148,8 +148,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Margin</para>
-		/// <para>The space in page units surrounding the symbolized input features used to create the mask polygons. Typically, masking polygons are created with a small margin around the symbol to improve visual appearance. Margin values are specified in either page units or map units. Most of the time, you will specify your margin distance value in page units.</para>
-		/// <para>The margin cannot be negative.</para>
+		/// <para>在用于创建掩膜面的符号化输入要素周围的间距（使用页面单位）。 通常，创建掩膜面时，在符号的周围留有小边距，以提高显示效果。 边距值可使用页面单位或地图单位指定。 通常，您需要使用页面单位来指定边距值。</para>
+		/// <para>边距值不能为负。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -159,11 +159,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Mask Kind</para>
-		/// <para>Specifies the type of masking geometry that will be created.</para>
-		/// <para>Box—A polygon representing the extent of the symbolized feature.</para>
-		/// <para>Convex hull—The convex hull of the symbolized geometry of the feature. This is the default.</para>
-		/// <para>Exact simplified—A generalized polygon representing the exact shape of the symbolized feature. Polygons created with this method will have a significantly smaller number of vertices compared to polygons created with the EXACT method.</para>
-		/// <para>Exact—A polygon representing the exact shape of the symbolized feature.</para>
+		/// <para>指定要创建的掩膜几何类型。</para>
+		/// <para>箱形图—表示符号化要素的范围的面。</para>
+		/// <para>凸包—要素的符号化几何的凸包。 这是默认设置。</para>
+		/// <para>精确简化—表示符号化要素的确切形状的概化面。 与使用 EXACT 方法创建的面相比，使用该方法创建的面的折点数将显著降低。</para>
+		/// <para>精确—表示符号化要素的确切形状的面。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -173,9 +173,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Create masks for unplaced annotation</para>
-		/// <para>Specifies whether to create masks for unplaced annotation. This option is only used when masking geodatabase annotation layers.</para>
-		/// <para>All annotation features—Creates masks for all the annotation features.</para>
-		/// <para>Only placed annotation features—Only creates masks for features with a status of placed.</para>
+		/// <para>指定是否为未放置的注记创建掩膜。 该选项仅在对地理数据库注记图层执行掩膜操作时使用。</para>
+		/// <para>所有注记要素—为所有的注记要素创建掩膜。</para>
+		/// <para>仅放置的注记要素—仅为状态为已放置的要素创建掩膜。</para>
 		/// <para><see cref="MaskForNonPlacedAnnoEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -185,10 +185,10 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Transfer Attributes</para>
-		/// <para>Specifies the attributes that will be transferred from the input features to the output features.</para>
-		/// <para>Only the FID field—Only the FID field from the input features will be transferred to the output features. This is the default.</para>
-		/// <para>All attributes except the FID field—All the attributes except the FID from the input features will be transferred to the output features.</para>
-		/// <para>All attributes— All the attributes from the input features will be transferred to the output features.</para>
+		/// <para>指定将从输入要素传递到输出要素的属性。</para>
+		/// <para>仅 FID 字段—仅输入要素的 FID 字段将传递到输出要素。 这是默认设置。</para>
+		/// <para>除 FID 字段以外的所有属性—输入要素中，除 FID 以外的所有属性都将传递到输出要素。</para>
+		/// <para>所有属性—输入要素的所有属性都将传递到输出要素。</para>
 		/// <para><see cref="AttributesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -213,31 +213,31 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Box—A polygon representing the extent of the symbolized feature.</para>
+			/// <para>箱形图—表示符号化要素的范围的面。</para>
 			/// </summary>
 			[GPValue("BOX")]
-			[Description("Box")]
+			[Description("箱形图")]
 			Box,
 
 			/// <summary>
-			/// <para>Convex hull—The convex hull of the symbolized geometry of the feature. This is the default.</para>
+			/// <para>凸包—要素的符号化几何的凸包。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("CONVEX_HULL")]
-			[Description("Convex hull")]
+			[Description("凸包")]
 			Convex_hull,
 
 			/// <summary>
-			/// <para>Exact simplified—A generalized polygon representing the exact shape of the symbolized feature. Polygons created with this method will have a significantly smaller number of vertices compared to polygons created with the EXACT method.</para>
+			/// <para>精确简化—表示符号化要素的确切形状的概化面。 与使用 EXACT 方法创建的面相比，使用该方法创建的面的折点数将显著降低。</para>
 			/// </summary>
 			[GPValue("EXACT_SIMPLIFIED")]
-			[Description("Exact simplified")]
+			[Description("精确简化")]
 			Exact_simplified,
 
 			/// <summary>
-			/// <para>Exact simplified—A generalized polygon representing the exact shape of the symbolized feature. Polygons created with this method will have a significantly smaller number of vertices compared to polygons created with the EXACT method.</para>
+			/// <para>精确简化—表示符号化要素的确切形状的概化面。 与使用 EXACT 方法创建的面相比，使用该方法创建的面的折点数将显著降低。</para>
 			/// </summary>
 			[GPValue("EXACT")]
-			[Description("Exact")]
+			[Description("精确")]
 			Exact,
 
 		}
@@ -248,17 +248,17 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum MaskForNonPlacedAnnoEnum 
 		{
 			/// <summary>
-			/// <para>All annotation features—Creates masks for all the annotation features.</para>
+			/// <para>所有注记要素—为所有的注记要素创建掩膜。</para>
 			/// </summary>
 			[GPValue("ALL_FEATURES")]
-			[Description("All annotation features")]
+			[Description("所有注记要素")]
 			All_annotation_features,
 
 			/// <summary>
-			/// <para>Only placed annotation features—Only creates masks for features with a status of placed.</para>
+			/// <para>仅放置的注记要素—仅为状态为已放置的要素创建掩膜。</para>
 			/// </summary>
 			[GPValue("ONLY_PLACED")]
-			[Description("Only placed annotation features")]
+			[Description("仅放置的注记要素")]
 			Only_placed_annotation_features,
 
 		}
@@ -269,24 +269,24 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum AttributesEnum 
 		{
 			/// <summary>
-			/// <para>All attributes except the FID field—All the attributes except the FID from the input features will be transferred to the output features.</para>
+			/// <para>除 FID 字段以外的所有属性—输入要素中，除 FID 以外的所有属性都将传递到输出要素。</para>
 			/// </summary>
 			[GPValue("NO_FID")]
-			[Description("All attributes except the FID field")]
+			[Description("除 FID 字段以外的所有属性")]
 			All_attributes_except_the_FID_field,
 
 			/// <summary>
-			/// <para>Only the FID field—Only the FID field from the input features will be transferred to the output features. This is the default.</para>
+			/// <para>仅 FID 字段—仅输入要素的 FID 字段将传递到输出要素。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("ONLY_FID")]
-			[Description("Only the FID field")]
+			[Description("仅 FID 字段")]
 			Only_the_FID_field,
 
 			/// <summary>
-			/// <para>All attributes except the FID field—All the attributes except the FID from the input features will be transferred to the output features.</para>
+			/// <para>所有属性—输入要素的所有属性都将传递到输出要素。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All attributes")]
+			[Description("所有属性")]
 			All_attributes,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Enable Attachments</para>
-	/// <para>Enable Attachments</para>
-	/// <para>Enables attachments on a geodatabase feature class or table. The tool creates the necessary attachment relationship class and attachment table that will store attachment files internally.</para>
+	/// <para>启用附件</para>
+	/// <para>启用地理数据库要素类或表的附件。该工具用于创建必要的附件关系类和附件表，以在内部存储附件文件。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>The geodatabase table or feature class for which attachments will be enabled. The input must be in a version 10 or later geodatabase.</para>
+		/// <para>将启用附件的地理数据库表或要素类。输入的表或要素类必须处于 10 或更高版本的地理数据库中。</para>
 		/// </param>
 		public EnableAttachments(object InDataset)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Enable Attachments</para>
+		/// <para>Tool Display Name : 启用附件</para>
 		/// </summary>
-		public override string DisplayName() => "Enable Attachments";
+		public override string DisplayName() => "启用附件";
 
 		/// <summary>
 		/// <para>Tool Name : EnableAttachments</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>The geodatabase table or feature class for which attachments will be enabled. The input must be in a version 10 or later geodatabase.</para>
+		/// <para>将启用附件的地理数据库表或要素类。输入的表或要素类必须处于 10 或更高版本的地理数据库中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]

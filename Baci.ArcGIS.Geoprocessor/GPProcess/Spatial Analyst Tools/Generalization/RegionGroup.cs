@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Region Group</para>
-	/// <para>Region Group</para>
-	/// <para>For each cell in the output, the identity of the connected region to which that cell belongs is recorded. A unique number is assigned to each region.</para>
+	/// <para>区域分组</para>
+	/// <para>记录输出中每个像元所属的连接区域的标识。系统将会为每个区域分配唯一编号。</para>
 	/// </summary>
 	public class RegionGroup : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster for which unique connected regions of cells will be identified.</para>
-		/// <para>It must be of integer type.</para>
+		/// <para>将标识唯一连接像元区域的输入栅格。</para>
+		/// <para>必须为整型。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output region group raster.</para>
-		/// <para>The output is always of integer type.</para>
+		/// <para>输出区域分组栅格。</para>
+		/// <para>输出始终为整型。</para>
 		/// </param>
 		public RegionGroup(object InRaster, object OutRaster)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Region Group</para>
+		/// <para>Tool Display Name : 区域分组</para>
 		/// </summary>
-		public override string DisplayName() => "Region Group";
+		public override string DisplayName() => "区域分组";
 
 		/// <summary>
 		/// <para>Tool Name : RegionGroup</para>
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster for which unique connected regions of cells will be identified.</para>
-		/// <para>It must be of integer type.</para>
+		/// <para>将标识唯一连接像元区域的输入栅格。</para>
+		/// <para>必须为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output region group raster.</para>
-		/// <para>The output is always of integer type.</para>
+		/// <para>输出区域分组栅格。</para>
+		/// <para>输出始终为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -94,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Number of neighbors to use</para>
-		/// <para>Specifies the number of neighboring cells to use when evaluating connectivity between cells that define a region.</para>
-		/// <para>Four—Connectivity is evaluated for the four nearest (orthogonal) neighbors of each input cell. Only the cells with the same value that share at least one side will contribute to an individual region. If two cells with the same value are diagonal from one another, they are not considered connected. This is the default.</para>
-		/// <para>Eight—Connectivity is evaluated for the eight nearest neighbors (both orthogonal and diagonal) of each input cell. Cells with the same value that are connected either along a common edge or corner to each other will contribute to an individual region.</para>
+		/// <para>指定评估定义区域的像元间的连通性时使用的相邻像元数。</para>
+		/// <para>四—评估每个输入像元中四个最近（正交）相邻像元的连通性。只有具有相同值且至少共享一侧的像元才会组成单个区域。如果两个具有相同值的像元彼此只是对角线连接，则其不会被视为相连接。这是默认设置。</para>
+		/// <para>八—评估每个输入像元中八个最近相邻像元（正交和对角线）的连通性。沿公共边或角相互连接的具有相同值的像元将构成单个区域。</para>
 		/// <para><see cref="NumberNeighborsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -106,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Zone grouping method</para>
-		/// <para>Defines which cell values should be considered when testing for connectivity.</para>
-		/// <para>Within—Connectivity for a region is evaluated for input cells that are part of the same zone (cell value). The only cells that can be grouped are cells from the same zone that meet the spatial requirements of connectivity specified by the Number of neighbors to use parameter (four or eight). This is the default.</para>
-		/// <para>Cross—Connectivity for a region is evaluated between cells of any value, except for the zone cells identified to be excluded by the Excluded value parameter, and subject to the spatial requirements specified by the Number of neighbors to use parameter. Groupings of regions in the input that are separated from other groupings by a buffer of NoData cells will be processed independently from each other.</para>
+		/// <para>定义在进行连通性测试时应考虑的像元值。</para>
+		/// <para>位于—将针对部分同一区域（像元值）的输入像元评估区域的连通性。只能对满足空间连通性要求（由四向或八向要使用的相邻数参数指定）的同一区域中的像元进行分组。这是默认设置。</para>
+		/// <para>交叉—评估任何值的像元间区域的连通性（不包括由排除值参数排除的区域像元），并遵守由要使用的相邻数参数指定的空间要求。输入中通过 NoData 像元的缓冲区独立于其他分组的区域分组将彼此独立地进行处理。</para>
 		/// <para><see cref="ZoneConnectivityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -118,9 +118,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Add link field to output</para>
-		/// <para>Specifies whether a link field will be added to the table of the output when the Zone grouping method parameter is set to Within. It is ignored if that parameter is set to Cross.</para>
-		/// <para>Checked—A LINK field will be added to the table of the output raster. This field stores the value of the zone to which the cells of each region in the output belong, according to the connectivity rule defined in the Number of neighbors to use parameter. This is the default.</para>
-		/// <para>Unchecked—A LINK field will not be added. The attribute table for the output raster will only contain the Value and Count fields.</para>
+		/// <para>指定将区域分组方法参数设置为 Within 时是否向输出表添加链接字段。如果将该参数设置为 Cross，则将忽略此参数。</para>
+		/// <para>选中 - 将 LINK 字段添加到输出栅格的表中。根据要使用的相邻数参数中定义的连通性规则，该字段将存储输出中每个区域的像元所属区域的值。这是默认设置。</para>
+		/// <para>未选中 - 将不添加 LINK 字段。输出栅格的属性表仅包含 Value 和 Count 字段。</para>
 		/// <para><see cref="AddLinkEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -130,9 +130,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Excluded value</para>
-		/// <para>A value that excludes all cells of that zone from the connectivity evaluation. If a cell location contains the value, no spatial connectivity will be evaluated, regardless of how the number of neighbors is specified.</para>
-		/// <para>Cells with the excluded value will be treated in a similar way to NoData cells, and are eliminated from consideration in the operation. Input cells that contain the excluded value will receive 0 on the output raster. The excluded value is similar to the concept of a background value.</para>
-		/// <para>By default, there is no value defined for this parameter, which means that all of the input cells will be considered in the operation.</para>
+		/// <para>从连通性评估中排除该区域所有像元的值。如果像元位置包含该值，则不管将邻近像元数指定为多少，都不会评估空间连通性。</para>
+		/// <para>具有排除值的像元与 NoData 像元将以相似的方式进行处理，且在运算中不在考量范围内。在输出栅格上，包含排除的值的输入像元将接收 0。排除的值类似于背景值的概念。</para>
+		/// <para>默认情况下，此参数未定义任何值，这表示在运算中将考虑所有输入像元。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -155,17 +155,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum NumberNeighborsEnum 
 		{
 			/// <summary>
-			/// <para>Four—Connectivity is evaluated for the four nearest (orthogonal) neighbors of each input cell. Only the cells with the same value that share at least one side will contribute to an individual region. If two cells with the same value are diagonal from one another, they are not considered connected. This is the default.</para>
+			/// <para>四—评估每个输入像元中四个最近（正交）相邻像元的连通性。只有具有相同值且至少共享一侧的像元才会组成单个区域。如果两个具有相同值的像元彼此只是对角线连接，则其不会被视为相连接。这是默认设置。</para>
 			/// </summary>
 			[GPValue("FOUR")]
-			[Description("Four")]
+			[Description("四")]
 			Four,
 
 			/// <summary>
-			/// <para>Eight—Connectivity is evaluated for the eight nearest neighbors (both orthogonal and diagonal) of each input cell. Cells with the same value that are connected either along a common edge or corner to each other will contribute to an individual region.</para>
+			/// <para>八—评估每个输入像元中八个最近相邻像元（正交和对角线）的连通性。沿公共边或角相互连接的具有相同值的像元将构成单个区域。</para>
 			/// </summary>
 			[GPValue("EIGHT")]
-			[Description("Eight")]
+			[Description("八")]
 			Eight,
 
 		}
@@ -176,17 +176,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ZoneConnectivityEnum 
 		{
 			/// <summary>
-			/// <para>Within—Connectivity for a region is evaluated for input cells that are part of the same zone (cell value). The only cells that can be grouped are cells from the same zone that meet the spatial requirements of connectivity specified by the Number of neighbors to use parameter (four or eight). This is the default.</para>
+			/// <para>位于—将针对部分同一区域（像元值）的输入像元评估区域的连通性。只能对满足空间连通性要求（由四向或八向要使用的相邻数参数指定）的同一区域中的像元进行分组。这是默认设置。</para>
 			/// </summary>
 			[GPValue("WITHIN")]
-			[Description("Within")]
+			[Description("位于")]
 			Within,
 
 			/// <summary>
-			/// <para>Cross—Connectivity for a region is evaluated between cells of any value, except for the zone cells identified to be excluded by the Excluded value parameter, and subject to the spatial requirements specified by the Number of neighbors to use parameter. Groupings of regions in the input that are separated from other groupings by a buffer of NoData cells will be processed independently from each other.</para>
+			/// <para>交叉—评估任何值的像元间区域的连通性（不包括由排除值参数排除的区域像元），并遵守由要使用的相邻数参数指定的空间要求。输入中通过 NoData 像元的缓冲区独立于其他分组的区域分组将彼此独立地进行处理。</para>
 			/// </summary>
 			[GPValue("CROSS")]
-			[Description("Cross")]
+			[Description("交叉")]
 			Cross,
 
 		}
@@ -197,14 +197,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum AddLinkEnum 
 		{
 			/// <summary>
-			/// <para>Checked—A LINK field will be added to the table of the output raster. This field stores the value of the zone to which the cells of each region in the output belong, according to the connectivity rule defined in the Number of neighbors to use parameter. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_LINK")]
 			ADD_LINK,
 
 			/// <summary>
-			/// <para>Unchecked—A LINK field will not be added. The attribute table for the output raster will only contain the Value and Count fields.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_LINK")]

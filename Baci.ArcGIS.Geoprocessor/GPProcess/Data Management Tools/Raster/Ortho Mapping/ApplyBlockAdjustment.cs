@@ -11,9 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Apply Block Adjustment</para>
-	/// <para>Apply Block Adjustment</para>
-	/// <para>Applies the geographic adjustments</para>
-	/// <para>to the mosaic dataset items. This tool uses the solution table from the Compute Block Adjustments tool.</para>
+	/// <para>应用区域网平差</para>
+	/// <para>将地理校正应用到镶嵌数据集项目。该工具使用计算区域网平差工具中的解决方案表。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -24,14 +23,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>The input mosaic dataset to adjust.</para>
+		/// <para>要校正的输入镶嵌数据集。</para>
 		/// </param>
 		/// <param name="AdjustmentOperation">
 		/// <para>Adjustment Operation</para>
-		/// <para>Choose whether you want to adjust the mosaic dataset using the solution table or if you want to reset the mosaic dataset so there are no adjustments applied.</para>
-		/// <para>Adjust the mosaic dataset—Adjust the mosaic dataset using the input solution table.</para>
-		/// <para>Reset the mosaic dataset—Reset the mosaic dataset so there are no adjustments applied to it.</para>
-		/// <para>Reactivate image status—Images dropped from the adjustment will be restored to active status. Images without the minimum number of control points required for adjustment are dropped from the computation in the standard adjustment operation, such that the images are categorized as Inactive in the footprints table, the maxPS value is set to 0, the imagery is not visible in the map, and the tie points statuses for the dropped images are disabled. This option will restore the Category status to Primary and ensure the maxPS value is resumed. Images that were included in the adjustment process are unaffected by this option.</para>
+		/// <para>选择是希望使用解决方案表校正镶嵌数据集还是要重置镶嵌数据集而不应用任何校正。</para>
+		/// <para>校正镶嵌数据集—使用输入解决方案表校正镶嵌数据集。</para>
+		/// <para>重置镶嵌数据集—重置镶嵌数据集，而不应用任何校正。</para>
+		/// <para>重新激活图像状态—在校正过程中删除的图像将恢复为活动状态。在标准校正操作中，系统将在计算中删除无校正所需最小控制点数限制的图像，这样轮廓线表中的图像就会被分类为非活动状态，maxPS 值将设置为 0，影像在地图中不可见，且所删除图像的连接点状态将变为已禁用。此选项会将 Category 状态还原为主状态，并确保恢复 maxPS 值。校正过程中涉及的图像则不受此选项影响。</para>
 		/// <para><see cref="AdjustmentOperationEnum"/></para>
 		/// </param>
 		public ApplyBlockAdjustment(object InMosaicDataset, object AdjustmentOperation)
@@ -41,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Apply Block Adjustment</para>
+		/// <para>Tool Display Name : 应用区域网平差</para>
 		/// </summary>
-		public override string DisplayName() => "Apply Block Adjustment";
+		public override string DisplayName() => "应用区域网平差";
 
 		/// <summary>
 		/// <para>Tool Name : ApplyBlockAdjustment</para>
@@ -77,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Mosaic Dataset</para>
-		/// <para>The input mosaic dataset to adjust.</para>
+		/// <para>要校正的输入镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -85,10 +84,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Adjustment Operation</para>
-		/// <para>Choose whether you want to adjust the mosaic dataset using the solution table or if you want to reset the mosaic dataset so there are no adjustments applied.</para>
-		/// <para>Adjust the mosaic dataset—Adjust the mosaic dataset using the input solution table.</para>
-		/// <para>Reset the mosaic dataset—Reset the mosaic dataset so there are no adjustments applied to it.</para>
-		/// <para>Reactivate image status—Images dropped from the adjustment will be restored to active status. Images without the minimum number of control points required for adjustment are dropped from the computation in the standard adjustment operation, such that the images are categorized as Inactive in the footprints table, the maxPS value is set to 0, the imagery is not visible in the map, and the tie points statuses for the dropped images are disabled. This option will restore the Category status to Primary and ensure the maxPS value is resumed. Images that were included in the adjustment process are unaffected by this option.</para>
+		/// <para>选择是希望使用解决方案表校正镶嵌数据集还是要重置镶嵌数据集而不应用任何校正。</para>
+		/// <para>校正镶嵌数据集—使用输入解决方案表校正镶嵌数据集。</para>
+		/// <para>重置镶嵌数据集—重置镶嵌数据集，而不应用任何校正。</para>
+		/// <para>重新激活图像状态—在校正过程中删除的图像将恢复为活动状态。在标准校正操作中，系统将在计算中删除无校正所需最小控制点数限制的图像，这样轮廓线表中的图像就会被分类为非活动状态，maxPS 值将设置为 0，影像在地图中不可见，且所删除图像的连接点状态将变为已禁用。此选项会将 Category 状态还原为主状态，并确保恢复 maxPS 值。校正过程中涉及的图像则不受此选项影响。</para>
 		/// <para><see cref="AdjustmentOperationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -98,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Solution Table</para>
-		/// <para>Specify a solution table to use when adjusting your mosaic dataset. This is the output from the Compute Block Adjustments tool.</para>
+		/// <para>指定校正镶嵌数据集时使用的解决方案表。这是计算区域网平差工具的输出。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
@@ -106,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Pan-To-MS Scaling Factor</para>
-		/// <para>If your mosaic dataset contains pan-sharpened rasters, specify the scaling factor between the pan-sharpened resolution and the multispectral resolution.</para>
+		/// <para>如果镶嵌数据集中包含全色锐化栅格，请指定全色锐化分辨率和多光谱分辨率之间的比例因子。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -121,8 +120,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input DEM</para>
-		/// <para>A DEM to use within the application of the block adjustment. This DEM will only be used if it is a higher resolution than any DEM that may already exist within the mosaic dataset.</para>
-		/// <para>If this input DEM is used, the geometric function of the mosaic dataset will be updated using this input.</para>
+		/// <para>在区域网平差中使用的 DEM。仅当此 DEM 比已存在于镶嵌数据集中的 DEM 分辨率高时才会用到它。</para>
+		/// <para>如果使用了此输入 DEM，则镶嵌数据集的几何函数将使用此输入进行更新。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -130,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Z offset</para>
-		/// <para>The vertical offset used to adjust the elevation layer within the mosaic dataset's Geometric function.</para>
+		/// <para>垂直偏移用于调整镶嵌数据集几何函数中的高程图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -138,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Control Point Table</para>
-		/// <para>The input control point table will have the same adjustments applied as the solution table adjustments.</para>
+		/// <para>输入控制点表有与解决方案校正中应用的相同的校正。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
@@ -146,9 +145,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Adjust Footprints</para>
-		/// <para>Choose whether to update the footprint geometry using the same transformation that was applied to the image.</para>
-		/// <para>Unchecked—Do not update the footprint geometry. This is the default.</para>
-		/// <para>Checked—Update the footprint geometry to the image geometry. The control point table will also be transformed, if one is provided.</para>
+		/// <para>使用与应用至影像相同的变换来选择是否更新轮廓线几何。</para>
+		/// <para>未选中 - 不要更新轮廓线几何。这是默认设置。</para>
+		/// <para>选中 - 将轮廓线几何更新至影像几何。如果提供了控制点表，也可以将其转换。</para>
 		/// <para><see cref="AdjustFootprintsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -158,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Solution Point Table</para>
-		/// <para>Specify a solution points table to use to update the status field for the control point table. This parameter is used only when the Control Point Table parameter is set.</para>
+		/// <para>指定用于更新控制点表状态字段的解决方案点表。只能在设置了控制点表参数时使用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
@@ -179,24 +178,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AdjustmentOperationEnum 
 		{
 			/// <summary>
-			/// <para>Adjust the mosaic dataset—Adjust the mosaic dataset using the input solution table.</para>
+			/// <para>校正镶嵌数据集—使用输入解决方案表校正镶嵌数据集。</para>
 			/// </summary>
 			[GPValue("ADJUST")]
-			[Description("Adjust the mosaic dataset")]
+			[Description("校正镶嵌数据集")]
 			Adjust_the_mosaic_dataset,
 
 			/// <summary>
-			/// <para>Reset the mosaic dataset—Reset the mosaic dataset so there are no adjustments applied to it.</para>
+			/// <para>重置镶嵌数据集—重置镶嵌数据集，而不应用任何校正。</para>
 			/// </summary>
 			[GPValue("RESET")]
-			[Description("Reset the mosaic dataset")]
+			[Description("重置镶嵌数据集")]
 			Reset_the_mosaic_dataset,
 
 			/// <summary>
-			/// <para>Reactivate image status—Images dropped from the adjustment will be restored to active status. Images without the minimum number of control points required for adjustment are dropped from the computation in the standard adjustment operation, such that the images are categorized as Inactive in the footprints table, the maxPS value is set to 0, the imagery is not visible in the map, and the tie points statuses for the dropped images are disabled. This option will restore the Category status to Primary and ensure the maxPS value is resumed. Images that were included in the adjustment process are unaffected by this option.</para>
+			/// <para>重新激活图像状态—在校正过程中删除的图像将恢复为活动状态。在标准校正操作中，系统将在计算中删除无校正所需最小控制点数限制的图像，这样轮廓线表中的图像就会被分类为非活动状态，maxPS 值将设置为 0，影像在地图中不可见，且所删除图像的连接点状态将变为已禁用。此选项会将 Category 状态还原为主状态，并确保恢复 maxPS 值。校正过程中涉及的图像则不受此选项影响。</para>
 			/// </summary>
 			[GPValue("REACTIVATE")]
-			[Description("Reactivate image status")]
+			[Description("重新激活图像状态")]
 			Reactivate_image_status,
 
 		}
@@ -207,14 +206,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AdjustFootprintsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Update the footprint geometry to the image geometry. The control point table will also be transformed, if one is provided.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADJUST_FOOTPRINTS")]
 			ADJUST_FOOTPRINTS,
 
 			/// <summary>
-			/// <para>Unchecked—Do not update the footprint geometry. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ADJUST_FOOTPRINTS")]

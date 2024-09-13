@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Classify Raster</para>
-	/// <para>Classify Raster</para>
-	/// <para>Classifies a raster dataset based on an Esri classifier definition file (.ecd) and raster dataset inputs.</para>
+	/// <para>分类栅格</para>
+	/// <para>根据 Esri 分类器定义文件 (.ecd) 和栅格数据集输入对栅格数据集进行分类。</para>
 	/// </summary>
 	public class ClassifyRaster : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset to classify.</para>
+		/// <para>待分类的栅格数据集。</para>
 		/// </param>
 		/// <param name="InClassifierDefinition">
 		/// <para>Input Classifier Definition File</para>
-		/// <para>The input Esri classifier definition file (.ecd) containing the statistics for the chosen attributes for the classifier.</para>
+		/// <para>包含分类器选定属性的统计数据的输入 Esri 分类器定义文件 (.ecd)。</para>
 		/// </param>
 		/// <param name="OutRasterDataset">
 		/// <para>Output Classified Raster</para>
-		/// <para>The path and name of the classified image you are creating.</para>
-		/// <para>The output classified raster is defined by the input raster dataset and .ecd file inputs.</para>
+		/// <para>您正在创建的分类影像的路径和名称。</para>
+		/// <para>输出分类栅格由输入栅格数据集和 .ecd 文件输入进行定义。</para>
 		/// </param>
 		public ClassifyRaster(object InRaster, object InClassifierDefinition, object OutRasterDataset)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Classify Raster</para>
+		/// <para>Tool Display Name : 分类栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Classify Raster";
+		public override string DisplayName() => "分类栅格";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyRaster</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset to classify.</para>
+		/// <para>待分类的栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Classifier Definition File</para>
-		/// <para>The input Esri classifier definition file (.ecd) containing the statistics for the chosen attributes for the classifier.</para>
+		/// <para>包含分类器选定属性的统计数据的输入 Esri 分类器定义文件 (.ecd)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -93,8 +93,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Classified Raster</para>
-		/// <para>The path and name of the classified image you are creating.</para>
-		/// <para>The output classified raster is defined by the input raster dataset and .ecd file inputs.</para>
+		/// <para>您正在创建的分类影像的路径和名称。</para>
+		/// <para>输出分类栅格由输入栅格数据集和 .ecd 文件输入进行定义。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Additional Input Raster</para>
-		/// <para>Ancillary raster datasets, such as a multispectral image or a DEM, will be incorporated to generate attributes and other required information for the classifier. This raster is necessary when calculating attributes such as mean or standard deviation. This parameter is optional.</para>
+		/// <para>将对其他栅格数据集（如多光谱影像或 DEM）进行整合，从而为分类器生成属性和其他所需信息。 计算平均值或标准差等属性时需要使用此栅格。 设置此参数属于可选操作。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]

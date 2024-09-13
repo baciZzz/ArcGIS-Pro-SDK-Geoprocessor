@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Summarize Within</para>
-	/// <para>Summarize Within</para>
-	/// <para>Overlays a polygon layer with another layer to summarize the number of points, length of the lines, or area of the polygons within each polygon and calculates attribute field statistics about those features within the polygons.</para>
+	/// <para>范围内汇总</para>
+	/// <para>将一个面图层与另一个图层叠加，以便汇总各面内点的数量、线的长度或面的面积，并计算面内此类要素的属性字段统计数据。</para>
 	/// </summary>
 	public class SummarizeWithin : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="SummarizedLayer">
 		/// <para>Summarized  Layer</para>
-		/// <para>The point, line, or polygon features that will be summarized by either polygons or bins.</para>
+		/// <para>将按面或图格进行汇总的点、线或面要素。</para>
 		/// </param>
 		/// <param name="OutputName">
 		/// <para>Output  Name</para>
-		/// <para>The name of the output polygon feature service containing the intersecting geometries and attributes.</para>
+		/// <para>包含相交几何和属性的输出面要素服务的名称。</para>
 		/// </param>
 		public SummarizeWithin(object SummarizedLayer, object OutputName)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Summarize Within</para>
+		/// <para>Tool Display Name : 范围内汇总</para>
 		/// </summary>
-		public override string DisplayName() => "Summarize Within";
+		public override string DisplayName() => "范围内汇总";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeWithin</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Summarized  Layer</para>
-		/// <para>The point, line, or polygon features that will be summarized by either polygons or bins.</para>
+		/// <para>将按面或图格进行汇总的点、线或面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output  Name</para>
-		/// <para>The name of the output polygon feature service containing the intersecting geometries and attributes.</para>
+		/// <para>包含相交几何和属性的输出面要素服务的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -89,9 +89,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Polygon or Bin</para>
-		/// <para>Specifies whether Summarized Layer will be summarized by polygons or bins.</para>
-		/// <para>Polygon—The summarized layer will be aggregated into a polygon dataset.</para>
-		/// <para>Bin—The summarized layer will be aggregated into square or hexagonal bins that are generated when the tool is run.</para>
+		/// <para>用于指定是否按面或图格对汇总图层进行汇总。</para>
+		/// <para>面—汇总图层将聚合到面数据集。</para>
+		/// <para>图格—汇总图层将聚合到运行此工具时生成的方形或六角图格。</para>
 		/// <para><see cref="PolygonOrBinEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -101,9 +101,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Bin Type</para>
-		/// <para>Specifies the bin shape that will be generated to summarize features.</para>
-		/// <para>Square—Bin Size represents the height of a square. This is the default.</para>
-		/// <para>Hexagon—Bin Size represents the height between two parallel sides.</para>
+		/// <para>指定将生成以汇总要素的图格形状。</para>
+		/// <para>方形—图格大小表示方形的高度。 这是默认设置。</para>
+		/// <para>六边形—图格大小表示两条平行边之间的高度。</para>
 		/// <para><see cref="BinTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Bin Size</para>
-		/// <para>The distance interval that represents the bin size and units by which the input features will be summarized.</para>
+		/// <para>表示图格大小和汇总输入要素时所采用单位的距离间隔。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Summary Polygons</para>
-		/// <para>The polygons used to summarize the features in the input summarized layer.</para>
+		/// <para>用于汇总输入汇总图层内要素的面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -133,9 +133,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Add shape summary attributes</para>
-		/// <para>Specifies whether the length of lines or area of polygons within the summary layer (polygon or bin) will be calculated. The count of points, lines, and polygons intersecting the summary shape will always be included.</para>
-		/// <para>Checked—Summary shape values will be calculated. This is the default.</para>
-		/// <para>Unchecked—Summary shape values will not be calculated.</para>
+		/// <para>指定是要计算汇总图层（面或图格）内线的长度还是面的面积。 将始终包括与汇总形状相交的点、线和面的计数。</para>
+		/// <para>选中 - 将计算汇总形状值。 这是默认设置。</para>
+		/// <para>未选中 - 不计算汇总形状值。</para>
 		/// <para><see cref="SumShapeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -145,19 +145,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Shape Units</para>
-		/// <para>Specifies the unit to be used to calculate shape summary attributes. If the input summary features are points, a shape unit is unnecessary, since only the count of points within each input polygon is added. If the input summary features are lines, specify a linear unit. If the input summary features are polygons, specify an areal unit.</para>
-		/// <para>Meters—The shape units will be meters.</para>
-		/// <para>Kilometers—The shape units will be kilometers.</para>
-		/// <para>Feet—The shape units will be feet.</para>
-		/// <para>Yards—The shape units will be yards.</para>
-		/// <para>Miles—The shape units will be miles.</para>
-		/// <para>Acres—The shape units will be acres.</para>
-		/// <para>Hectares—The shape units will be hectares.</para>
-		/// <para>Square meters—The shape units will be square meters.</para>
-		/// <para>Square kilometers—The shape units will be square kilometers.</para>
-		/// <para>Square feet—The shape units will be square feet.</para>
-		/// <para>Square yards—The shape units will be square yards.</para>
-		/// <para>Square miles—The shape units will be square miles.</para>
+		/// <para>指定要用于计算形状汇总属性的单位。 如果输入汇总要素为点，则不需要使用形状单位，因为仅添加各输入面内点的计数。 如果输入汇总要素为线，则指定一个线性单位。 如果输入汇总要素为面，则指定一个面积单位。</para>
+		/// <para>米—形状单位将为米。</para>
+		/// <para>千米—形状单位将为公里。</para>
+		/// <para>英尺—形状单位将为英尺。</para>
+		/// <para>码—形状单位将为码。</para>
+		/// <para>英里—形状单位将为英里。</para>
+		/// <para>英亩—形状单位将为英亩。</para>
+		/// <para>公顷—形状单位将为公顷。</para>
+		/// <para>平方米—形状单位将为平方米。</para>
+		/// <para>平方千米—形状单位将为平方公里。</para>
+		/// <para>平方英尺—形状单位将为平方英尺。</para>
+		/// <para>平方码—形状单位将为平方码。</para>
+		/// <para>平方英里—形状单位将为平方英里。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -166,10 +166,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Standard Summary Fields</para>
-		/// <para>The statistics that will be calculated on specified fields.</para>
-		/// <para>Specifies whether a field represents a count or a rate.</para>
-		/// <para>Count—For line and polygon layers, the summarized field values will be proportioned by the percentage of the summarized features that intersect the summary polygons prior to calculating statistics. Values will not be proportioned for point layers.</para>
-		/// <para>Rate—The summarized field values will never be proportioned. The raw field values will be used to calculate statistics.</para>
+		/// <para>将根据指定字段进行计算的统计数据。</para>
+		/// <para>指定字段是表示计数还是比率。</para>
+		/// <para>计数—对于线和面图层，在计算统计数据之前，汇总字段值将根据与汇总面相交的汇总要素的百分比按比例划分。 对于点图层，不会将值按比例划分。</para>
+		/// <para>比率—不会将汇总字段值按比例划分。 原始字段值将用于计算统计数据。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -178,13 +178,13 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Weighted Summary Fields</para>
-		/// <para>Specifies the weighted statistics that will be calculated on specified fields.</para>
-		/// <para>Mean—The weighted mean of each field will be calculated in which the weight applied is the proportion of the summarized layer within the polygons.</para>
-		/// <para>Standard deviation—The weighted standard deviation of each field will be calculated in which the weight applied is the proportion of the summarized layer within the polygons.</para>
-		/// <para>Variance—The weighted variance of each field will be calculated in which the weight applied is the proportion of the summarized layer within the polygons.</para>
-		/// <para>Specifies whether a field represents a count or a rate.</para>
-		/// <para>Count—The summarized field values will be proportioned by the percentage of the summarized features that intersect the summary polygons prior to calculating statistics.</para>
-		/// <para>Rate—The summarized field values will never be proportioned. The raw field values will be used to calculate statistics.</para>
+		/// <para>指定将根据指定字段进行计算的加权统计数据。</para>
+		/// <para>平均值—将计算每个字段的加权平均值，其中应用的权重是面内汇总图层的比例。</para>
+		/// <para>标准差—将计算每个字段的加权标准差，其中应用的权重是面内汇总图层的比例。</para>
+		/// <para>方差—将计算每个字段的加权方差，其中应用的权重是面内汇总图层的比例。</para>
+		/// <para>指定字段是表示计数还是比率。</para>
+		/// <para>计数—在计算统计数据之前，汇总字段值将根据与汇总面相交的汇总要素的百分比按比例划分。</para>
+		/// <para>比率—不会将汇总字段值按比例划分。 原始字段值将用于计算统计数据。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -200,9 +200,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Data Store</para>
-		/// <para>Specifies the ArcGIS Data Store where the output will be saved. The default is Spatiotemporal big data store. All results stored in a spatiotemporal big data store will be stored in WGS84. Results stored in a relational data store will maintain their coordinate system.</para>
-		/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
-		/// <para>Relational data store—Output will be stored in a relational data store.</para>
+		/// <para>指定将用于保存输出的 ArcGIS Data Store。 默认设置为时空大数据存储。 在时空大数据存储中存储的所有结果都将存储在 WGS84 中。 在关系数据存储中存储的结果都将保持各自的坐标系。</para>
+		/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
+		/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 		/// <para><see cref="DataStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -213,7 +213,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Group By Field</para>
-		/// <para>A field from the input summary features that will be used to calculate statistics for each unique attribute value. For example, the input summary features contain point locations of businesses that store hazardous materials, and one of the fields is HazardClass, containing codes that describe the type of hazardous material stored. To calculate summaries by each unique value of HazardClass, use it as the group by field.</para>
+		/// <para>输入汇总要素中的字段，将用于计算每个唯一属性值的统计数据。 例如，输入汇总要素包含存储危险材料的企业的点位置，且其中一个字段为 HazardClass，字段中含有用于描述所存储危险材料类型的代码。 要根据每个 HazardClass 唯一值计算汇总，请将其用作分组条件字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -223,9 +223,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Add Minority and Majority Attributes</para>
-		/// <para>Specifies whether minority (least dominant) and majority (most dominant) attribute values for each group field within each boundary will be added. If they are, two new fields are added to the output layer prefixed with Majority_ and Minority_. This parameter only applies when the Group By Field parameter is used.</para>
-		/// <para>Unchecked—Minority and majority fields will not be added. This is the default.</para>
-		/// <para>Checked—Minority and majority fields will be added.</para>
+		/// <para>用于指定是否添加各个边界内每个组字段的少数（所占比例最小）或众数（所占比例最大）属性值。 如果添加，则前缀为众数_和少数_的两个新字段将添加至输出图层。 此参数仅当使用按字段分组参数时适用。</para>
+		/// <para>未选中 - 将不添加少数和众数字段。 这是默认设置。</para>
+		/// <para>选中 - 将添加少数和众数字段。</para>
 		/// <para><see cref="AddMinorityMajorityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -235,9 +235,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Add Group Percentages</para>
-		/// <para>Specifies whether percentage fields will be added. If they are, the percentage of each unique group value is calculated for each input polygon. This parameter only applies when the Group By Field and Add Minority and Majority Attributes parameters are used.</para>
-		/// <para>Unchecked—Percentage fields will not be added. This is the default.</para>
-		/// <para>Checked—Percentage fields will be added.</para>
+		/// <para>用于指定是否将添加百分比字段。 如果添加，则系统将针对每个输入面计算每个唯一组百分比值。 此参数仅当使用按字段分组和添加少数和众数属性时适用。</para>
+		/// <para>未选中 - 将不添加百分比字段。 这是默认设置。</para>
+		/// <para>选中 - 将添加百分比字段。</para>
 		/// <para><see cref="AddPercentagesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -269,17 +269,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum PolygonOrBinEnum 
 		{
 			/// <summary>
-			/// <para>Polygon or Bin</para>
+			/// <para>面—汇总图层将聚合到面数据集。</para>
 			/// </summary>
 			[GPValue("POLYGON")]
-			[Description("Polygon")]
+			[Description("面")]
 			Polygon,
 
 			/// <summary>
-			/// <para>Bin—The summarized layer will be aggregated into square or hexagonal bins that are generated when the tool is run.</para>
+			/// <para>图格—汇总图层将聚合到运行此工具时生成的方形或六角图格。</para>
 			/// </summary>
 			[GPValue("BIN")]
-			[Description("Bin")]
+			[Description("图格")]
 			Bin,
 
 		}
@@ -290,17 +290,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum BinTypeEnum 
 		{
 			/// <summary>
-			/// <para>Square—Bin Size represents the height of a square. This is the default.</para>
+			/// <para>方形—图格大小表示方形的高度。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("SQUARE")]
-			[Description("Square")]
+			[Description("方形")]
 			Square,
 
 			/// <summary>
-			/// <para>Hexagon—Bin Size represents the height between two parallel sides.</para>
+			/// <para>六边形—图格大小表示两条平行边之间的高度。</para>
 			/// </summary>
 			[GPValue("HEXAGON")]
-			[Description("Hexagon")]
+			[Description("六边形")]
 			Hexagon,
 
 		}
@@ -311,14 +311,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum SumShapeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Summary shape values will be calculated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_SUMMARY")]
 			ADD_SUMMARY,
 
 			/// <summary>
-			/// <para>Unchecked—Summary shape values will not be calculated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SUMMARY")]
@@ -332,17 +332,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DataStoreEnum 
 		{
 			/// <summary>
-			/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
+			/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("SPATIOTEMPORAL_DATA_STORE")]
-			[Description("Spatiotemporal big data store")]
+			[Description("时空大数据存储")]
 			Spatiotemporal_big_data_store,
 
 			/// <summary>
-			/// <para>Relational data store—Output will be stored in a relational data store.</para>
+			/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 			/// </summary>
 			[GPValue("RELATIONAL_DATA_STORE")]
-			[Description("Relational data store")]
+			[Description("关系数据存储")]
 			Relational_data_store,
 
 		}
@@ -353,14 +353,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum AddMinorityMajorityEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Minority and majority fields will be added.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_MIN_MAJ")]
 			ADD_MIN_MAJ,
 
 			/// <summary>
-			/// <para>Unchecked—Minority and majority fields will not be added. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_MIN_MAJ")]
@@ -374,14 +374,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum AddPercentagesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Percentage fields will be added.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_PERCENT")]
 			ADD_PERCENT,
 
 			/// <summary>
-			/// <para>Unchecked—Percentage fields will not be added. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_PERCENT")]

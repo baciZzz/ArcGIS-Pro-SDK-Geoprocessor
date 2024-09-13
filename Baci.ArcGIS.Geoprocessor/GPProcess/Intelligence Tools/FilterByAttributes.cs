@@ -11,7 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Filter By Attributes</para>
-	/// <para>Filter By Attributes</para>
+	/// <para>按属性过滤</para>
 	/// <para>Find features that match an attribute query.</para>
 	/// </summary>
 	[Obsolete()]
@@ -33,9 +33,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Filter By Attributes</para>
+		/// <para>Tool Display Name : 按属性过滤</para>
 		/// </summary>
-		public override string DisplayName() => "Filter By Attributes";
+		public override string DisplayName() => "按属性过滤";
 
 		/// <summary>
 		/// <para>Tool Name : FilterByAttributes</para>

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Spatial Outlier Detection</para>
-	/// <para>Spatial Outlier Detection</para>
-	/// <para>Identifies global or local spatial outliers in point features.</para>
+	/// <para>空间异常值检测</para>
+	/// <para>识别点要素中的全局或局部空间异常值。</para>
 	/// </summary>
 	public class SpatialOutlierDetection : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The point features that will be used to build the spatial outlier detection model. Each point will be classified as an outlier or inlier based on its local outlier factor.</para>
+		/// <para>将用于构建空间异常值检测模型的点要素。 将根据每个点的局部异常值因子将其分类为异常值或正常值。</para>
 		/// </param>
 		/// <param name="OutputFeatures">
 		/// <para>Output Features</para>
-		/// <para>The output feature class containing the local outlier factor for each input feature as well as an indicator of whether the point is a spatial outlier.</para>
+		/// <para>输出要素类，其中包含每个输入要素的局部异常值因子以及该点是否为空间异常值的指示符。</para>
 		/// </param>
 		public SpatialOutlierDetection(object InFeatures, object OutputFeatures)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Spatial Outlier Detection</para>
+		/// <para>Tool Display Name : 空间异常值检测</para>
 		/// </summary>
-		public override string DisplayName() => "Spatial Outlier Detection";
+		public override string DisplayName() => "空间异常值检测";
 
 		/// <summary>
 		/// <para>Tool Name : SpatialOutlierDetection</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The point features that will be used to build the spatial outlier detection model. Each point will be classified as an outlier or inlier based on its local outlier factor.</para>
+		/// <para>将用于构建空间异常值检测模型的点要素。 将根据每个点的局部异常值因子将其分类为异常值或正常值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>The output feature class containing the local outlier factor for each input feature as well as an indicator of whether the point is a spatial outlier.</para>
+		/// <para>输出要素类，其中包含每个输入要素的局部异常值因子以及该点是否为空间异常值的指示符。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -89,9 +89,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Neighbors</para>
-		/// <para>The number of neighbors that will be used to detect spatial outliers for each input point.</para>
-		/// <para>For local outlier detection, the value must be at least 2, and all features within the neighborhood will be used as neighbors. If no value is specified, a value is estimated at run time and is displayed as a geoprocessing message.</para>
-		/// <para>For global outlier detection, only the farthest neighbor in the neighborhood will be used, and the default is 1 (the closest neighbor). For example, a value of 3 indicates that global outliers are detected using distances to the third nearest neighbor of each point.</para>
+		/// <para>将用于检测每个输入点的空间异常值的相邻要素数。</para>
+		/// <para>对于局部异常值检测，该值必须至少为 2，并且邻域内的所有要素都将用作相邻要素。 如果未指定任何值，则将在运行时估计一个值，并将其显示为地理处理消息。</para>
+		/// <para>对于全局异常值检测，将仅使用邻域中最远的相邻要素，默认为 1（最近的相邻要素）。 例如，值为 3 表示使用到每个点的第三个最近相邻要素的距离来检测全局异常值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Percent of Locations Considered Outliers</para>
-		/// <para>The percent of locations that will be identified as spatial outliers by defining the threshold of the local outlier factor. If no value is specified, a value is estimated at run time and is displayed as a geoprocessing message. A maximum of 50 percent of the features can be identified as spatial outliers.</para>
+		/// <para>通过定义局部异常值因子的阈值，将标识为空间异常值的位置的百分比。 如果未指定任何值，则将在运行时估计一个值，并将其显示为地理处理消息。 最多 50% 的要素可以被识别为空间异常值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -108,8 +108,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Prediction Raster</para>
-		/// <para>The output raster containing the local outlier factors at each cell, which is calculated based on the spatial distribution of the input features.</para>
-		/// <para>This parameter is only available with a Desktop Advanced license.</para>
+		/// <para>输出栅格，其中包含每个像元处的局部异常值因子，将基于输入要素的空间分布进行计算。</para>
+		/// <para>仅当具有 Desktop Advanced 许可时，此参数才可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -117,9 +117,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Outlier Type</para>
-		/// <para>Specifies the type of outlier that will be detected. A global outlier is a point that is far away from all other points in the feature class. A local outlier is a point that is farther away from its neighbors than would be expected by the density of points in the surrounding area.</para>
-		/// <para>Global—Global outliers of input points will be detected. This is the default.</para>
-		/// <para>Local—Local outliers of input points will be detected.</para>
+		/// <para>为检测到的异常值指定类型。 全局异常值是指远离要素类中所有其他点的点。 局部异常值是指该点距离其相邻点的距离，比周围区域中预期的点密度的距离大。</para>
+		/// <para>全球—将检测输入点的全局异常值。 这是默认设置。</para>
+		/// <para>局部分析—将检测输入点的局部异常值。</para>
 		/// <para><see cref="OutlierTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -129,11 +129,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Detection Sensitivity</para>
-		/// <para>Specifies the sensitivity level that will be used to detect global outliers. The higher the sensitivity, the more points that will be detected as outliers.</para>
-		/// <para>The sensitivity value will determine the threshold, and any point with a neighbor distance larger than this threshold will be identified as a global outlier. The thresholds are determined using the box plot rule, in which the threshold for high sensitivity is one interquartile range above the third quartile. For medium sensitivity, the threshold is 1.5 interquartile ranges above the third quartile. For low sensitivity, the threshold is two interquartile ranges above the third quartile.</para>
-		/// <para>Low—Outliers will be detected using low sensitivity. This option will detect the fewest outliers.</para>
-		/// <para>Medium—Outliers will be detected using moderate sensitivity. This is the default.</para>
-		/// <para>High—Outliers will be detected using high sensitivity. This option will detect the most outliers.</para>
+		/// <para>指定用于检测全局异常值的灵敏度。 灵敏度越高，将被检测为异常值的点就越多。</para>
+		/// <para>灵敏度值将决定阈值，任何相邻距离大于该阈值的点都将被识别为全局异常值。 阈值使用箱形图规则确定的，其中高灵敏度的阈值为第三个四分位数以上的 1 个四分位距。 对于中灵敏度，阈值为第三个四分位数以上的 1.5 个四分位距。 对于低灵敏度，阈值为第三个四分位数以上的 2 个四分位距。</para>
+		/// <para>低—将使用低灵敏度检测异常值。 此选项将检测最少的异常值。</para>
+		/// <para>中—将使用中灵敏度检测异常值。 这是默认设置。</para>
+		/// <para>高—将使用高低灵敏度检测异常值。 此选项将检测最多的异常值。</para>
 		/// <para><see cref="SensitivityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -143,9 +143,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Keep Only Spatial Outliers</para>
-		/// <para>Specifies whether the output features will contain all input features or only features identified as spatial outliers.</para>
-		/// <para>Checked—The output features will only contain features identified as spatial outliers.</para>
-		/// <para>Unchecked—The output features will contain all input features. This is the default.</para>
+		/// <para>指定输出要素是否包含所有输入要素还是仅包含标识为空间异常值的要素。</para>
+		/// <para>选中 - 输出要素仅包含标识为空间异常值的要素。</para>
+		/// <para>取消选中 - 输出要素将包含所有输入要素。 这是默认设置。</para>
 		/// <para><see cref="KeepTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -170,17 +170,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum OutlierTypeEnum 
 		{
 			/// <summary>
-			/// <para>Global—Global outliers of input points will be detected. This is the default.</para>
+			/// <para>全球—将检测输入点的全局异常值。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("GLOBAL")]
-			[Description("Global")]
+			[Description("全球")]
 			Global,
 
 			/// <summary>
-			/// <para>Local—Local outliers of input points will be detected.</para>
+			/// <para>局部分析—将检测输入点的局部异常值。</para>
 			/// </summary>
 			[GPValue("LOCAL")]
-			[Description("Local")]
+			[Description("局部分析")]
 			Local,
 
 		}
@@ -191,24 +191,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum SensitivityEnum 
 		{
 			/// <summary>
-			/// <para>Low—Outliers will be detected using low sensitivity. This option will detect the fewest outliers.</para>
+			/// <para>低—将使用低灵敏度检测异常值。 此选项将检测最少的异常值。</para>
 			/// </summary>
 			[GPValue("LOW")]
-			[Description("Low")]
+			[Description("低")]
 			Low,
 
 			/// <summary>
-			/// <para>Medium—Outliers will be detected using moderate sensitivity. This is the default.</para>
+			/// <para>中—将使用中灵敏度检测异常值。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("MEDIUM")]
-			[Description("Medium")]
+			[Description("中")]
 			Medium,
 
 			/// <summary>
-			/// <para>High—Outliers will be detected using high sensitivity. This option will detect the most outliers.</para>
+			/// <para>高—将使用高低灵敏度检测异常值。 此选项将检测最多的异常值。</para>
 			/// </summary>
 			[GPValue("HIGH")]
-			[Description("High")]
+			[Description("高")]
 			High,
 
 		}
@@ -219,14 +219,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum KeepTypeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output features will only contain features identified as spatial outliers.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("KEEP_OUTLIER")]
 			KEEP_OUTLIER,
 
 			/// <summary>
-			/// <para>Unchecked—The output features will contain all input features. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_ALL")]

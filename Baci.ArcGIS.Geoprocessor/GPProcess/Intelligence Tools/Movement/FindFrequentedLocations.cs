@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Find Frequented Locations</para>
-	/// <para>Find Frequented Locations</para>
-	/// <para>Identifies areas where a movement track has dwelled for multiple time periods and aggregates those locations based on a track identifier.</para>
+	/// <para>查找常用位置</para>
+	/// <para>识别运动轨迹已停留多个时间段的区域，并根据轨迹标识符聚合这些位置。</para>
 	/// </summary>
 	public class FindFrequentedLocations : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input movement track points that will be analyzed for possible frequented locations. The layer must be time enabled.</para>
+		/// <para>输入运动轨迹点，用于分析是否为可能的常用地点。 图层必须已启用时间。</para>
 		/// </param>
 		/// <param name="TrackIdField">
 		/// <para>Track ID Field</para>
-		/// <para>The field containing the unique identifiers that will organize the source data into movement tracks.</para>
+		/// <para>包含将源数据组织成运动轨迹的唯一标识符的字段。</para>
 		/// </param>
 		/// <param name="OutFeatureclass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output polygon feature class containing the possible frequented locations.</para>
+		/// <para>包含可能常用位置的输出面要素类。</para>
 		/// </param>
 		public FindFrequentedLocations(object InFeatures, object TrackIdField, object OutFeatureclass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Find Frequented Locations</para>
+		/// <para>Tool Display Name : 查找常用位置</para>
 		/// </summary>
-		public override string DisplayName() => "Find Frequented Locations";
+		public override string DisplayName() => "查找常用位置";
 
 		/// <summary>
 		/// <para>Tool Name : FindFrequentedLocations</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input movement track points that will be analyzed for possible frequented locations. The layer must be time enabled.</para>
+		/// <para>输入运动轨迹点，用于分析是否为可能的常用地点。 图层必须已启用时间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Track ID Field</para>
-		/// <para>The field containing the unique identifiers that will organize the source data into movement tracks.</para>
+		/// <para>包含将源数据组织成运动轨迹的唯一标识符的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output polygon feature class containing the possible frequented locations.</para>
+		/// <para>包含可能常用位置的输出面要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>An SQL expression used to select a subset of records.</para>
+		/// <para>用于选择记录子集的 SQL 表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Search Distance</para>
-		/// <para>The maximum distance a movement track point can loiter before it is no longer considered part of a frequented location. The default is 100 meters.</para>
+		/// <para>运动轨迹点在不再被视为常用位置的一部分之前可以徘徊的最大距离。 默认值是 100 米。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -121,8 +121,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Minimum Loiter Time</para>
-		/// <para>The minimum amount of time a movement track point can loiter in an area before it is considered to be dwelling.</para>
-		/// <para>This value helps identify possible frequented locations where multiple unique movement tracks are dwelling in the same time and space. The default is 10 minutes.</para>
+		/// <para>运动轨迹点在被视为停留之前可以在区域中徘徊的最短时间。</para>
+		/// <para>该值有助于识别可能常用位置，其中多个唯一运动轨迹停留在同一时间和空间。 默认值为 10 分钟。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Time Boundary</para>
-		/// <para>The time span that will be used to split the Input Features parameter value. For example, if you use a time boundary of 1 day, tracks will be split at the beginning of every day.</para>
+		/// <para>将用于拆分输入要素参数值的时间跨度。 例如，如果您使用始于 1 天的时间界限，则轨迹将在每天开始时被分割。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Minimum Dwells Per Location</para>
-		/// <para>The minimum number of overlapping individual dwells that will need to occur to be defined as a frequented location. By default, all locations that meet the criteria for a dwell will be returned.</para>
+		/// <para>要定义为常用位置所需发生的重叠单次停留的最小数量。 默认情况下，将返回满足停留条件的所有位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -148,9 +148,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Normalize Daily Distribution</para>
-		/// <para>Specifies whether the daily distribution of dwell locations will be normalized. Normalized values represent a percentage of total time that a dwell location occurred on the particular day, while the real values represent the total number of dwells that occurred on the given day.</para>
-		/// <para>Checked—The daily distribution of dwell locations values will be normalized.</para>
-		/// <para>Unchecked—The daily distribution of dwell locations values will not be normalized. This is the default.</para>
+		/// <para>指定是否对停留位置的每日分布进行归一化。 归一化值表示在特定日期停留位置发生的总时间的百分比，而实际值表示在给定日期发生的停留总数。</para>
+		/// <para>选中 - 将对停留位置值的每日分布进行归一化。</para>
+		/// <para>未选中 - 不对停留位置值的每日分布进行归一化。 这是默认设置。</para>
 		/// <para><see cref="NormalizeDailyDistributionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -160,16 +160,16 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Summary Fields</para>
-		/// <para>Specifies the statistics that will be calculated.</para>
-		/// <para>Statistics can be calculated for the following variables:</para>
-		/// <para>Start Time—The time in hours that the individual dwell location was first detected. The time is rounded to the nearest hour.</para>
-		/// <para>End Time—The time in hours that the individual dwell location was last detected. The time is rounded to the nearest hour.</para>
-		/// <para>Dwell Duration—The time in seconds that the individual dwell location was active.</para>
-		/// <para>The following statistics are supported:</para>
-		/// <para>Mean—The mean of numeric values.</para>
-		/// <para>Min—The minimum value of a numeric field.</para>
-		/// <para>Max—The maximum value of a numeric field.</para>
-		/// <para>Standard Deviation—The standard deviation of a numeric field.</para>
+		/// <para>指定将计算的统计数据。</para>
+		/// <para>可以计算以下变量的统计数据：</para>
+		/// <para>开始时间 - 首次检测到单次停留位置的时间（以小时为单位）。 时间将舍入为最接近的小时。</para>
+		/// <para>结束时间 - 最后一次检测到单次停留位置的时间（以小时为单位）。 时间将舍入为最接近的小时。</para>
+		/// <para>停留持续时间 - 每个单次停留位置处于活动状态的时间（以秒为单位）</para>
+		/// <para>支持以下统计数据：</para>
+		/// <para>平均值 - 数值的平均值。</para>
+		/// <para>最小值 - 数值字段的最小值。</para>
+		/// <para>最大值 - 数值字段的最大值。</para>
+		/// <para>标准差 - 数值字段的标准差。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -193,14 +193,14 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		public enum NormalizeDailyDistributionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The daily distribution of dwell locations values will be normalized.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("NORMALIZED")]
 			NORMALIZED,
 
 			/// <summary>
-			/// <para>Unchecked—The daily distribution of dwell locations values will not be normalized. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("REAL")]

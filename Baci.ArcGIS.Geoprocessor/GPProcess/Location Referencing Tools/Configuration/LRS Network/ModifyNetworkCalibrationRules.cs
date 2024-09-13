@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Modify Network Calibration Rules</para>
-	/// <para>Modify Network Calibration Rules</para>
-	/// <para>Modifies the network calibration rules for an LRS Network.</para>
+	/// <para>修改网络校准规则</para>
+	/// <para>修改 LRS 网络的网络校准规则。</para>
 	/// </summary>
 	public class ModifyNetworkCalibrationRules : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InFeatureClass">
 		/// <para>LRS Network Feature Class</para>
-		/// <para>The input LRS Network feature class.</para>
+		/// <para>输入 LRS 网络要素类。</para>
 		/// </param>
 		public ModifyNetworkCalibrationRules(object InFeatureClass)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Modify Network Calibration Rules</para>
+		/// <para>Tool Display Name : 修改网络校准规则</para>
 		/// </summary>
-		public override string DisplayName() => "Modify Network Calibration Rules";
+		public override string DisplayName() => "修改网络校准规则";
 
 		/// <summary>
 		/// <para>Tool Name : ModifyNetworkCalibrationRules</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>LRS Network Feature Class</para>
-		/// <para>The input LRS Network feature class.</para>
+		/// <para>输入 LRS 网络要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -75,11 +75,11 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Rule</para>
-		/// <para>Specifies the method that will be used to define calibration gap measures.</para>
-		/// <para>As Is—The existing defined method in the network will be used while changing the calibration offset value.</para>
-		/// <para>Adding Euclidean Distance—The Euclidean, or straight-line, distance will be calculated and added at each physical gap along an edited route.</para>
-		/// <para>Stepping Increment—A value will be defined that will adjust, or step, at each physical gap in the route. This is the default.</para>
-		/// <para>Adding Increment— A value will be defined and added to each measure of a route at each physical gap, in addition to the total length of the from and to measures of the route.</para>
+		/// <para>指定将用于定义校准间距测量值的方法。</para>
+		/// <para>保留原样—更改校准偏移值时将使用网络中现有定义的方法。</para>
+		/// <para>添加欧氏距离—将沿编辑路径在每个物理间距处计算并添加欧氏距离或直线距离。</para>
+		/// <para>步进增量—将定义一个值，用于在路径中的每个物理间距处进行调整或步进。 这是默认设置。</para>
+		/// <para>添加增量—除了路径起点和终点测量值间的总长度之外，还可以定义该值并将其添加到每个物理间距处每个路径测量值。</para>
 		/// <para><see cref="CalibrationRuleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibration Offset</para>
-		/// <para>The value of the Calibration Rule parameter's Adding Increment or Stepping Increment method. The increment value must be numeric and can include decimals.</para>
+		/// <para>校准规则参数中添加增量或步进增量方法的值。 增量值必须是数值并且可以包含小数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -104,10 +104,10 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Update route measures in cartographic realignment</para>
-		/// <para>Specifies whether or not to recalibrate route measures based on length changes in cartographic realignment.</para>
-		/// <para>As is—The existing defined method in the network will be used. This is the default.</para>
-		/// <para>Enable—Enable recalibration of route measures based on length changes in cartographic realignment.</para>
-		/// <para>Disable—Disable recalibration of route measures based on length changes in cartographic realignment.</para>
+		/// <para>指定是否根据制图重新对齐中的长度变化重新校准路径测量值。</para>
+		/// <para>保留原样—将使用网络中现有定义的方法。 这是默认设置。</para>
+		/// <para>启用—启用根据制图重新对齐中的长度变化重新校准路径测量值。</para>
+		/// <para>禁用—禁用根据制图重新对齐中的长度变化重新校准路径测量值。</para>
 		/// <para><see cref="UpdateMeasureCartorealignEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -132,31 +132,31 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum CalibrationRuleEnum 
 		{
 			/// <summary>
-			/// <para>As Is—The existing defined method in the network will be used while changing the calibration offset value.</para>
+			/// <para>保留原样—更改校准偏移值时将使用网络中现有定义的方法。</para>
 			/// </summary>
 			[GPValue("AS_IS")]
-			[Description("As Is")]
+			[Description("保留原样")]
 			As_Is,
 
 			/// <summary>
-			/// <para>Adding Euclidean Distance—The Euclidean, or straight-line, distance will be calculated and added at each physical gap along an edited route.</para>
+			/// <para>添加欧氏距离—将沿编辑路径在每个物理间距处计算并添加欧氏距离或直线距离。</para>
 			/// </summary>
 			[GPValue("ADDING_EUCLIDEAN_DISTANCE")]
-			[Description("Adding Euclidean Distance")]
+			[Description("添加欧氏距离")]
 			Adding_Euclidean_Distance,
 
 			/// <summary>
-			/// <para>Stepping Increment—A value will be defined that will adjust, or step, at each physical gap in the route. This is the default.</para>
+			/// <para>步进增量—将定义一个值，用于在路径中的每个物理间距处进行调整或步进。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("STEPPING_INCREMENT")]
-			[Description("Stepping Increment")]
+			[Description("步进增量")]
 			Stepping_Increment,
 
 			/// <summary>
-			/// <para>Adding Increment— A value will be defined and added to each measure of a route at each physical gap, in addition to the total length of the from and to measures of the route.</para>
+			/// <para>添加增量—除了路径起点和终点测量值间的总长度之外，还可以定义该值并将其添加到每个物理间距处每个路径测量值。</para>
 			/// </summary>
 			[GPValue("ADDING_INCREMENT")]
-			[Description("Adding Increment")]
+			[Description("添加增量")]
 			Adding_Increment,
 
 		}
@@ -167,24 +167,24 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum UpdateMeasureCartorealignEnum 
 		{
 			/// <summary>
-			/// <para>As is—The existing defined method in the network will be used. This is the default.</para>
+			/// <para>保留原样—将使用网络中现有定义的方法。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("AS_IS")]
-			[Description("As is")]
+			[Description("保留原样")]
 			As_is,
 
 			/// <summary>
-			/// <para>Enable—Enable recalibration of route measures based on length changes in cartographic realignment.</para>
+			/// <para>启用—启用根据制图重新对齐中的长度变化重新校准路径测量值。</para>
 			/// </summary>
 			[GPValue("ENABLE")]
-			[Description("Enable")]
+			[Description("启用")]
 			Enable,
 
 			/// <summary>
-			/// <para>Disable—Disable recalibration of route measures based on length changes in cartographic realignment.</para>
+			/// <para>禁用—禁用根据制图重新对齐中的长度变化重新校准路径测量值。</para>
 			/// </summary>
 			[GPValue("DISABLE")]
-			[Description("Disable")]
+			[Description("禁用")]
 			Disable,
 
 		}

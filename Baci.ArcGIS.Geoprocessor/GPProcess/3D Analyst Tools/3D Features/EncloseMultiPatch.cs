@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Enclose Multipatch</para>
-	/// <para>Enclose Multipatch</para>
-	/// <para>Creates  closed multipatch features from open multipatch features.</para>
+	/// <para>封闭多面体</para>
+	/// <para>根据非闭合多面体要素创建闭合多面体要素。</para>
 	/// </summary>
 	public class EncloseMultiPatch : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Multipatch Features</para>
-		/// <para>The multipatch features that will be used to construct closed multipatches.</para>
+		/// <para>用于构造闭合多面体的多面体要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Multipatch Feature Class</para>
-		/// <para>The output closed multipatch features.</para>
+		/// <para>输出闭合多面体要素。</para>
 		/// </param>
 		public EncloseMultiPatch(object InFeatures, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Enclose Multipatch</para>
+		/// <para>Tool Display Name : 封闭多面体</para>
 		/// </summary>
-		public override string DisplayName() => "Enclose Multipatch";
+		public override string DisplayName() => "封闭多面体";
 
 		/// <summary>
 		/// <para>Tool Name : EncloseMultiPatch</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Multipatch Features</para>
-		/// <para>The multipatch features that will be used to construct closed multipatches.</para>
+		/// <para>用于构造闭合多面体的多面体要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Multipatch Feature Class</para>
-		/// <para>The output closed multipatch features.</para>
+		/// <para>输出闭合多面体要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Grid Size</para>
-		/// <para>The resolution that will be used to construct the closed multipatch features. This value is defined using the linear units of the input feature's spatial reference.</para>
+		/// <para>用于构造闭合多面体要素的分辨率。此值使用输入要素空间参考的线性单位定义。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

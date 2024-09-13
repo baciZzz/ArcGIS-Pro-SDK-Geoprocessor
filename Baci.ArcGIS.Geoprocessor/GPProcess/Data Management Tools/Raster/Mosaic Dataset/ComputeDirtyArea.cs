@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compute Dirty Area</para>
-	/// <para>Compute Dirty Area</para>
-	/// <para>Identifies areas within a mosaic dataset that have changed since a specified point in time. This is used commonly when a mosaic dataset is updated or synchronized, or when  derived products, such as cache, need to be updated. This tool will enable you to limit such processes to only the areas that have changed.</para>
+	/// <para>计算脏区</para>
+	/// <para>识别在指定时间点后发生更改的镶嵌数据集中的区域。对镶嵌数据集进行更新或同步，或需要更新衍生产品（例如缓存）时经常使用该工具。该工具可将此类进程限制为仅适用于已更改的区域。</para>
 	/// </summary>
 	public class ComputeDirtyArea : AbstractGPProcess
 	{
@@ -21,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset that you want to analyze for changes.</para>
+		/// <para>想要针对更改进行分析的镶嵌数据集。</para>
 		/// </param>
 		/// <param name="Timestamp">
 		/// <para>Start Date and Time</para>
-		/// <para>Compute the areas that have changed since the input time.</para>
-		/// <para>XML time syntax:</para>
+		/// <para>计算自输入时间起更改的区域。</para>
+		/// <para>XML 时间语法：</para>
 		/// <para>YYYY-MM-DDThh:mm:ss</para>
 		/// <para>YYYY-MM-DDThh:mm:ss.ssssZ</para>
 		/// <para>2002-10-10T12:00:00.ssss-00:00</para>
 		/// <para>2002-10-10T12:00:00+00:00</para>
-		/// <para>Non-XML time syntax:</para>
+		/// <para>非 XML 时间语法：</para>
 		/// <para>2002/12/25 23:59:58.123</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class containing the areas that have changed.</para>
+		/// <para>包含已更改区域的要素类。</para>
 		/// </param>
 		public ComputeDirtyArea(object InMosaicDataset, object Timestamp, object OutFeatureClass)
 		{
@@ -46,9 +46,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Compute Dirty Area</para>
+		/// <para>Tool Display Name : 计算脏区</para>
 		/// </summary>
-		public override string DisplayName() => "Compute Dirty Area";
+		public override string DisplayName() => "计算脏区";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeDirtyArea</para>
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset that you want to analyze for changes.</para>
+		/// <para>想要针对更改进行分析的镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMosaicLayer()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>SQL expression to select specific rasters within the mosaic dataset on which to compute dirty areas.</para>
+		/// <para>用于选择镶嵌数据集中的特定栅格（将在其中计算脏区）的 SQL 表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -98,13 +98,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Start Date and Time</para>
-		/// <para>Compute the areas that have changed since the input time.</para>
-		/// <para>XML time syntax:</para>
+		/// <para>计算自输入时间起更改的区域。</para>
+		/// <para>XML 时间语法：</para>
 		/// <para>YYYY-MM-DDThh:mm:ss</para>
 		/// <para>YYYY-MM-DDThh:mm:ss.ssssZ</para>
 		/// <para>2002-10-10T12:00:00.ssss-00:00</para>
 		/// <para>2002-10-10T12:00:00+00:00</para>
-		/// <para>Non-XML time syntax:</para>
+		/// <para>非 XML 时间语法：</para>
 		/// <para>2002/12/25 23:59:58.123</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class containing the areas that have changed.</para>
+		/// <para>包含已更改区域的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]

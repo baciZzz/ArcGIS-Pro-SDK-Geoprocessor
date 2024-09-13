@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Alter Domain</para>
-	/// <para>Alter Domain</para>
-	/// <para>Alters the properties of an existing attribute domain in a workspace.</para>
+	/// <para>更改属性域</para>
+	/// <para>更改工作空间中现有属性域的属性。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Input Workspace</para>
-		/// <para>The geodatabase that contains the domain that will be altered.</para>
+		/// <para>包含将更改的属性域的地理数据库。</para>
 		/// </param>
 		/// <param name="DomainName">
 		/// <para>Domain Name</para>
-		/// <para>The name of the domain the will be altered.</para>
+		/// <para>将更改的属性域的名称。</para>
 		/// </param>
 		public AlterDomain(object InWorkspace, object DomainName)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Alter Domain</para>
+		/// <para>Tool Display Name : 更改属性域</para>
 		/// </summary>
-		public override string DisplayName() => "Alter Domain";
+		public override string DisplayName() => "更改属性域";
 
 		/// <summary>
 		/// <para>Tool Name : AlterDomain</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>The geodatabase that contains the domain that will be altered.</para>
+		/// <para>包含将更改的属性域的地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Domain Name</para>
-		/// <para>The name of the domain the will be altered.</para>
+		/// <para>将更改的属性域的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>New Domain Name</para>
-		/// <para>The new name of the domain.</para>
+		/// <para>属性域的新名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>New Domain Description</para>
-		/// <para>The new description of the domain.</para>
+		/// <para>属性域的新描述。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -106,10 +106,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>New Split Policy</para>
-		/// <para>Specifies the split policy that will used for the domain. The behavior of an attribute&apos;s values when a feature is split is controlled by its split policy.</para>
-		/// <para>Use the attribute&apos;s default value—The attributes of the two resulting features will be the default value of the attribute of the given feature class or subtype.</para>
-		/// <para>Duplicate attribute values—The attribute of the two resulting features will be a copy of the original object&apos;s attribute value.</para>
-		/// <para>Use geometric ratio—The attributes of resulting features will be a ratio of the original feature&apos;s value. The ratio is based on the proportion into which the original geometry is divided. If the geometry is divided equally, the attribute of each new feature will be one-half the value of the original object&apos;s attribute. This option only applies to range domains.</para>
+		/// <para>指定将用于属性域的分割策略。 分割要素时，属性值的行为受控于它的分割策略。</para>
+		/// <para>使用属性的默认值—两个结果要素的属性将为给定要素类或子类型的默认属性值。</para>
+		/// <para>复制属性值—两个结果要素的属性将为原始对象的属性值副本。</para>
+		/// <para>使用几何比—结果要素的属性将是原始要素值的比率。 该比率取决于原始几何的分割比例。 如果几何被分割成相等的两部分，则每个新要素的属性值将是原始对象属性值的一半。 此选项仅适用于范围属性域。</para>
 		/// <para><see cref="SplitPolicyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -119,10 +119,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>New Merge Policy</para>
-		/// <para>Specifies the merge policy that will be used for the domain. When two features are merged into a single feature, merge policies will control attribute values in the new feature. This parameter is only applicable to range domains, as coded value domains can only use the default merge policy.</para>
-		/// <para>Use the attribute&apos;s default value—The attribute of the resulting feature will be the default value of the attribute of the given feature class or subtype. This option only applies to nonnumeric fields and coded value domains.</para>
-		/// <para>Sum of the values—The attribute of the resulting feature will be on the sum of the values from the original feature&apos;s attribute. This option only applies to range domains.</para>
-		/// <para>Area weighted average—The attribute of the resulting feature will be the weighted average of the attribute values of the original features. The average is based on the original feature&apos;s geometry. This option only applies to range domains.</para>
+		/// <para>指定将用于属性域的合并策略。 在将两个要素合并为一个要素时，合并策略将控制新要素的属性值。 由于编码值属性域可能仅使用默认合并策略，因此此参数仅适用于范围属性域。</para>
+		/// <para>使用属性的默认值—结果要素的属性将为给定要素类或子类型的默认属性值。 此选项仅适用于非数字字段和编码值属性域。</para>
+		/// <para>值的总和—结果要素的属性将基于原始要素属性值的总和。 此选项仅适用于范围属性域。</para>
+		/// <para>面积加权平均值—结果要素的属性将使用原始要素属性值的加权平均值。 此平均值取决于原始要素的几何。 此选项仅适用于范围属性域。</para>
 		/// <para><see cref="MergePolicyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>New Domain Owner</para>
-		/// <para>The name of the database user that the domain ownership will be transferred to. Ensure that the new domain owner exists in the database; the tool does not check the validity of the owner name specified. This parameter is not applicable for domains created in a file geodatabase.</para>
+		/// <para>属性域所有权将转移到的数据库用户的名称。 确保数据库中存在新的属性域所有者；该工具不会检查指定所有者名称的有效性。 此参数不适用于在文件地理数据库中创建的属性域。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -162,24 +162,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SplitPolicyEnum 
 		{
 			/// <summary>
-			/// <para>Use the attribute&apos;s default value—The attributes of the two resulting features will be the default value of the attribute of the given feature class or subtype.</para>
+			/// <para>使用属性的默认值—两个结果要素的属性将为给定要素类或子类型的默认属性值。</para>
 			/// </summary>
 			[GPValue("DEFAULT")]
-			[Description("Use the attribute's default value")]
+			[Description("使用属性的默认值")]
 			DEFAULT,
 
 			/// <summary>
-			/// <para>Duplicate attribute values—The attribute of the two resulting features will be a copy of the original object&apos;s attribute value.</para>
+			/// <para>复制属性值—两个结果要素的属性将为原始对象的属性值副本。</para>
 			/// </summary>
 			[GPValue("DUPLICATE")]
-			[Description("Duplicate attribute values")]
+			[Description("复制属性值")]
 			Duplicate_attribute_values,
 
 			/// <summary>
-			/// <para>Use geometric ratio—The attributes of resulting features will be a ratio of the original feature&apos;s value. The ratio is based on the proportion into which the original geometry is divided. If the geometry is divided equally, the attribute of each new feature will be one-half the value of the original object&apos;s attribute. This option only applies to range domains.</para>
+			/// <para>使用几何比—结果要素的属性将是原始要素值的比率。 该比率取决于原始几何的分割比例。 如果几何被分割成相等的两部分，则每个新要素的属性值将是原始对象属性值的一半。 此选项仅适用于范围属性域。</para>
 			/// </summary>
 			[GPValue("GEOMETRY_RATIO")]
-			[Description("Use geometric ratio")]
+			[Description("使用几何比")]
 			Use_geometric_ratio,
 
 		}
@@ -190,24 +190,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum MergePolicyEnum 
 		{
 			/// <summary>
-			/// <para>Use the attribute&apos;s default value—The attribute of the resulting feature will be the default value of the attribute of the given feature class or subtype. This option only applies to nonnumeric fields and coded value domains.</para>
+			/// <para>使用属性的默认值—结果要素的属性将为给定要素类或子类型的默认属性值。 此选项仅适用于非数字字段和编码值属性域。</para>
 			/// </summary>
 			[GPValue("DEFAULT")]
-			[Description("Use the attribute's default value")]
+			[Description("使用属性的默认值")]
 			DEFAULT,
 
 			/// <summary>
-			/// <para>Sum of the values—The attribute of the resulting feature will be on the sum of the values from the original feature&apos;s attribute. This option only applies to range domains.</para>
+			/// <para>值的总和—结果要素的属性将基于原始要素属性值的总和。 此选项仅适用于范围属性域。</para>
 			/// </summary>
 			[GPValue("SUM_VALUES")]
-			[Description("Sum of the values")]
+			[Description("值的总和")]
 			Sum_of_the_values,
 
 			/// <summary>
-			/// <para>Area weighted average—The attribute of the resulting feature will be the weighted average of the attribute values of the original features. The average is based on the original feature&apos;s geometry. This option only applies to range domains.</para>
+			/// <para>面积加权平均值—结果要素的属性将使用原始要素属性值的加权平均值。 此平均值取决于原始要素的几何。 此选项仅适用于范围属性域。</para>
 			/// </summary>
 			[GPValue("AREA_WEIGHTED")]
-			[Description("Area weighted average")]
+			[Description("面积加权平均值")]
 			Area_weighted_average,
 
 		}

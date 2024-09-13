@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Analyze Datasets</para>
-	/// <para>Analyze Datasets</para>
-	/// <para>Updates database statistics of base tables, delta tables, and archive tables, along with the statistics on the indexes of those tables. This tool is used in enterprise geodatabases to help get optimal performance from the relational database management system (RDBMS) query optimizer. Stale statistics can affect geodatabase performance.</para>
+	/// <para>分析数据集</para>
+	/// <para>更新基表、增量表和存档表的数据库统计数据，以及这些表的索引的统计数据。 此工具用于企业级地理数据库，以便关系数据库管理系统 (RDBMS) 的查询优化程序获得最佳性能。 过时的统计数据可能会影响地理数据库的性能。</para>
 	/// </summary>
 	public class AnalyzeDatasets : AbstractGPProcess
 	{
@@ -21,14 +21,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputDatabase">
 		/// <para>Input Database Connection</para>
-		/// <para>The database that contains the data to be analyzed.</para>
+		/// <para>包含待分析数据的数据库。</para>
 		/// </param>
 		/// <param name="IncludeSystem">
 		/// <para>Include System Tables</para>
-		/// <para>Specifies whether statistics will be gathered on the states and state lineages tables.</para>
-		/// <para>Unchecked—Statistics will not be gathered on the states and state lineages tables. This is the default.</para>
-		/// <para>Checked—Statistics will be gathered on the states and state lineages tables.You must be the geodatabase administrator for this parameter to be active.</para>
-		/// <para>This parameter only applies to geodatabases. If the input workspace is a database, this parameter will be inactive.</para>
+		/// <para>指定是否收集状态和状态谱系表中的统计数据。</para>
+		/// <para>未选中 - 不收集状态和状态谱系表中的统计数据。 这是默认设置。</para>
+		/// <para>选中 - 收集状态和状态谱系表中的统计数据。要激活此参数，您必须具有地理数据库管理员身份。</para>
+		/// <para>此参数仅适用于地理数据库。 如果输入工作空间为数据库，则此参数将处于非活动状态。</para>
 		/// <para><see cref="IncludeSystemEnum"/></para>
 		/// </param>
 		public AnalyzeDatasets(object InputDatabase, object IncludeSystem)
@@ -38,9 +38,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Analyze Datasets</para>
+		/// <para>Tool Display Name : 分析数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Analyze Datasets";
+		public override string DisplayName() => "分析数据集";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeDatasets</para>
@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
-		/// <para>The database that contains the data to be analyzed.</para>
+		/// <para>包含待分析数据的数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -84,10 +84,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Include System Tables</para>
-		/// <para>Specifies whether statistics will be gathered on the states and state lineages tables.</para>
-		/// <para>Unchecked—Statistics will not be gathered on the states and state lineages tables. This is the default.</para>
-		/// <para>Checked—Statistics will be gathered on the states and state lineages tables.You must be the geodatabase administrator for this parameter to be active.</para>
-		/// <para>This parameter only applies to geodatabases. If the input workspace is a database, this parameter will be inactive.</para>
+		/// <para>指定是否收集状态和状态谱系表中的统计数据。</para>
+		/// <para>未选中 - 不收集状态和状态谱系表中的统计数据。 这是默认设置。</para>
+		/// <para>选中 - 收集状态和状态谱系表中的统计数据。要激活此参数，您必须具有地理数据库管理员身份。</para>
+		/// <para>此参数仅适用于地理数据库。 如果输入工作空间为数据库，则此参数将处于非活动状态。</para>
 		/// <para><see cref="IncludeSystemEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Datasets to Analyze</para>
-		/// <para>The names of the datasets that will be analyzed. Only datasets that are owned by the connected user will be displayed.</para>
+		/// <para>待分析数据集的名称。 仅显示已连接用户所有的数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -105,10 +105,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Analyze Base Tables for Selected Dataset(s)</para>
-		/// <para>Specifies whether the selected dataset base tables will be analyzed.</para>
-		/// <para>This parameter only applies to geodatabases. If the input workspace is a database, this parameter will be inactive.</para>
-		/// <para>Checked—Statistics will be gathered for the base tables for the selected datasets. This is the default.</para>
-		/// <para>Unchecked—Statistics will not be gathered for the base tables for the selected datasets.</para>
+		/// <para>指定是否分析所选数据集的基表。</para>
+		/// <para>此参数仅适用于地理数据库。 如果输入工作空间为数据库，则此参数将处于非活动状态。</para>
+		/// <para>选中 - 收集所选数据集基表的统计数据。 这是默认设置。</para>
+		/// <para>未选中 - 不收集所选数据集基表的统计数据。</para>
 		/// <para><see cref="AnalyzeBaseEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -118,10 +118,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Analyze Delta Tables for Selected Dataset(s)</para>
-		/// <para>Specifies whether the selected dataset delta tables will be analyzed.</para>
-		/// <para>This parameter only applies to geodatabases that contain traditional versions. If the input workspace is a database or does not participate in traditional versioning, this parameter will be inactive.</para>
-		/// <para>Checked—Statistics will be gathered for the delta tables for the selected datasets. This is the default.</para>
-		/// <para>Unchecked—Statistics will not be gathered for the delta tables for the selected datasets.</para>
+		/// <para>指定是否分析所选数据集的增量表。</para>
+		/// <para>此参数仅适用于包含传统版本的地理数据库。 如果输入工作空间为数据库或不参与传统版本化，则此参数将处于非活动状态。</para>
+		/// <para>选中 - 收集所选数据集增量表的统计数据。 这是默认设置。</para>
+		/// <para>未选中 - 不收集所选数据集增量表的统计数据。</para>
 		/// <para><see cref="AnalyzeDeltaEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -131,10 +131,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Analyze Archive Tables for Selected Dataset(s)</para>
-		/// <para>Specifies whether the selected dataset archive tables will be analyzed.</para>
-		/// <para>This parameter only applies to geodatabases that contain archive-enabled datasets. If the input workspace is a database, this parameter will be inactive.</para>
-		/// <para>Checked—Statistics will be gathered for the archive tables for the selected datasets. This is the default.</para>
-		/// <para>Unchecked—Statistics will not be gathered for the archive tables for the selected datasets.</para>
+		/// <para>指定是否分析所选数据集的存档表。</para>
+		/// <para>此参数仅适用于包含启用了存档的数据集的地理数据库。 如果输入工作空间为数据库，则此参数将处于非活动状态。</para>
+		/// <para>选中 - 收集所选数据集存档表的统计数据。 这是默认设置。</para>
+		/// <para>未选中 - 不收集所选数据集存档表的统计数据。</para>
 		/// <para><see cref="AnalyzeArchiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -166,14 +166,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IncludeSystemEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Statistics will be gathered on the states and state lineages tables.You must be the geodatabase administrator for this parameter to be active.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SYSTEM")]
 			SYSTEM,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics will not be gathered on the states and state lineages tables. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SYSTEM")]
@@ -187,14 +187,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AnalyzeBaseEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Statistics will be gathered for the base tables for the selected datasets. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ANALYZE_BASE")]
 			ANALYZE_BASE,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics will not be gathered for the base tables for the selected datasets.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ANALYZE_BASE")]
@@ -208,14 +208,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AnalyzeDeltaEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Statistics will be gathered for the delta tables for the selected datasets. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ANALYZE_DELTA")]
 			ANALYZE_DELTA,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics will not be gathered for the delta tables for the selected datasets.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ANALYZE_DELTA")]
@@ -229,14 +229,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AnalyzeArchiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Statistics will be gathered for the archive tables for the selected datasets. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ANALYZE_ARCHIVE")]
 			ANALYZE_ARCHIVE,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics will not be gathered for the archive tables for the selected datasets.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ANALYZE_ARCHIVE")]

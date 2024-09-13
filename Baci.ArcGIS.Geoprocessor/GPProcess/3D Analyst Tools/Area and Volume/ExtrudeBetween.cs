@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Extrude Between</para>
-	/// <para>Extrude Between</para>
-	/// <para>Creates 3D features by extruding each input feature between two triangulated irregular network (TIN) datasets.</para>
+	/// <para>在两个 TIN 间拉伸</para>
+	/// <para>通过在两个不规则三角网 (TIN) 数据集间拉伸各输入要素创建 3D 要素。</para>
 	/// </summary>
 	public class ExtrudeBetween : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTin1">
 		/// <para>Input TIN</para>
-		/// <para>The first input TIN.</para>
+		/// <para>第一个输入 TIN。</para>
 		/// </param>
 		/// <param name="InTin2">
 		/// <para>Input TIN</para>
-		/// <para>The second input TIN.</para>
+		/// <para>第二个输入 TIN。</para>
 		/// </param>
 		/// <param name="InFeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>The features that will be extruded between the TINs.</para>
+		/// <para>将在 TIN 之间拉伸的要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output that will store the extruded features.</para>
+		/// <para>将存储拉伸后的要素输出。</para>
 		/// </param>
 		public ExtrudeBetween(object InTin1, object InTin2, object InFeatureClass, object OutFeatureClass)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Extrude Between</para>
+		/// <para>Tool Display Name : 在两个 TIN 间拉伸</para>
 		/// </summary>
-		public override string DisplayName() => "Extrude Between";
+		public override string DisplayName() => "在两个 TIN 间拉伸";
 
 		/// <summary>
 		/// <para>Tool Name : ExtrudeBetween</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input TIN</para>
-		/// <para>The first input TIN.</para>
+		/// <para>第一个输入 TIN。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input TIN</para>
-		/// <para>The second input TIN.</para>
+		/// <para>第二个输入 TIN。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>The features that will be extruded between the TINs.</para>
+		/// <para>将在 TIN 之间拉伸的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output that will store the extruded features.</para>
+		/// <para>将存储拉伸后的要素输出。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]

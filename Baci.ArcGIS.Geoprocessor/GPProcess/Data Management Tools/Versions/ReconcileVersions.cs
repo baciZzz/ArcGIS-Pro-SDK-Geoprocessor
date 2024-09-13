@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Reconcile Versions</para>
-	/// <para>Reconcile Versions</para>
-	/// <para>Reconciles a version or multiple versions with a target version.</para>
+	/// <para>协调版本</para>
+	/// <para>根据目标版本协调一个或多个版本。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,15 +23,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputDatabase">
 		/// <para>Input Workspace</para>
-		/// <para>The enterprise geodatabase that contains the versions to be reconciled.</para>
-		/// <para>For branch versioning, this will be the feature service URL (that is, https://mysite.mydomain/server/rest/services/ElectricNetwork/FeatureServer) or the feature layer portal item.</para>
+		/// <para>包含要协调的版本的企业级地理数据库。</para>
+		/// <para>对于分支版本化，这将为要素服务 URL（即 https://mysite.mydomain/server/rest/services/ElectricNetwork/FeatureServer）或要素图层门户项目。</para>
 		/// </param>
 		/// <param name="ReconcileMode">
 		/// <para>Reconcile Mode</para>
-		/// <para>Specifies the versions that will be reconciled when the tool is executed.</para>
-		/// <para>If the input is a branch workspace, the only valid option for this parameter is to reconcile all versions.</para>
-		/// <para>Reconcile all versions—Edit versions will be reconciled with the target version. This is the default.</para>
-		/// <para>Reconcile blocking versions only—Versions that are blocking the target version from compressing will be reconciled. This option uses the recommended reconcile order.</para>
+		/// <para>指定执行工具时要协调的版本。</para>
+		/// <para>如果输入为分支工作空间，则此参数的唯一有效选择是协调所有版本。</para>
+		/// <para>协调所有版本—编辑版本将与目标版本进行协调。 这是默认设置。</para>
+		/// <para>仅协调分块版本—协调阻止目标版本压缩的版本。 此选项使用建议的协调顺序。</para>
 		/// <para><see cref="ReconcileModeEnum"/></para>
 		/// </param>
 		public ReconcileVersions(object InputDatabase, object ReconcileMode)
@@ -41,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Reconcile Versions</para>
+		/// <para>Tool Display Name : 协调版本</para>
 		/// </summary>
-		public override string DisplayName() => "Reconcile Versions";
+		public override string DisplayName() => "协调版本";
 
 		/// <summary>
 		/// <para>Tool Name : ReconcileVersions</para>
@@ -77,8 +77,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>The enterprise geodatabase that contains the versions to be reconciled.</para>
-		/// <para>For branch versioning, this will be the feature service URL (that is, https://mysite.mydomain/server/rest/services/ElectricNetwork/FeatureServer) or the feature layer portal item.</para>
+		/// <para>包含要协调的版本的企业级地理数据库。</para>
+		/// <para>对于分支版本化，这将为要素服务 URL（即 https://mysite.mydomain/server/rest/services/ElectricNetwork/FeatureServer）或要素图层门户项目。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -88,10 +88,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Reconcile Mode</para>
-		/// <para>Specifies the versions that will be reconciled when the tool is executed.</para>
-		/// <para>If the input is a branch workspace, the only valid option for this parameter is to reconcile all versions.</para>
-		/// <para>Reconcile all versions—Edit versions will be reconciled with the target version. This is the default.</para>
-		/// <para>Reconcile blocking versions only—Versions that are blocking the target version from compressing will be reconciled. This option uses the recommended reconcile order.</para>
+		/// <para>指定执行工具时要协调的版本。</para>
+		/// <para>如果输入为分支工作空间，则此参数的唯一有效选择是协调所有版本。</para>
+		/// <para>协调所有版本—编辑版本将与目标版本进行协调。 这是默认设置。</para>
+		/// <para>仅协调分块版本—协调阻止目标版本压缩的版本。 此选项使用建议的协调顺序。</para>
 		/// <para><see cref="ReconcileModeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -101,9 +101,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Version</para>
-		/// <para>The name of any version in the direct ancestry of the edit version, such as the parent version or the default version.</para>
-		/// <para>It typically contains edits from other versions that you want included in the edit version.</para>
-		/// <para>If the input is a branch workspace, the only valid option for this parameter is to reconcile with the default version.</para>
+		/// <para>编辑版本的任何直系版本的名称，例如父版本或默认版本。</para>
+		/// <para>它通常包含您希望在编辑版本中包括的其他版本的编辑内容。</para>
+		/// <para>如果输入工作空间为分支版本服务，则此参数的唯一有效选择是协调默认版本。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -111,8 +111,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Edit Versions</para>
-		/// <para>The name of the edit version or versions to be reconciled with the selected target version.</para>
-		/// <para>Only versions that are in the direct ancestry of the selected target version will be displayed.</para>
+		/// <para>要与所选目标版本进行协调的版本或编辑版本的名称。</para>
+		/// <para>仅显示所选目标版本的直系版本。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -120,10 +120,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Acquire Locks</para>
-		/// <para>Specifies whether feature locks will be acquired.</para>
-		/// <para>If the input is a branch workspace, locks are not acquired during the reconcile process.</para>
-		/// <para>Checked—Locks will be acquired during the reconcile process. Use this option when the intention is to post edits. It ensures that the target version is not modified in the time between the reconcile and post operations. This is the default.</para>
-		/// <para>Unchecked—Locks will not be acquired during the reconcile process. This allows multiple users to reconcile in parallel. Use this option when the edit version will not be posted to the target version because there is a possibility that the target version may be modified in the time between the reconcile and post operations.</para>
+		/// <para>指定是否将获取要素锁定。</para>
+		/// <para>如果输入为分支工作空间，则协调过程中无法获取锁定。</para>
+		/// <para>选中 - 协调过程中将获取锁定。 要提交编辑时可使用此选项。 确保在协调和提交操作之间的时间内没有修改目标版本。 这是默认设置。</para>
+		/// <para>未选中 - 协调过程中将不获取任何锁定。 此时允许多个用户平行协调。 不将编辑版本提交到目标版本时可使用此选项，因为在协调和提交操作之间的时间内可能修改了目标版本。</para>
 		/// <para><see cref="AcquireLocksEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -133,9 +133,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Abort if Conflicts Detected</para>
-		/// <para>Specifies whether the reconcile process will be aborted if conflicts are found between the target version and the edit version during the reconcile process.</para>
-		/// <para>Checked—The reconcile will be aborted if conflicts are found.</para>
-		/// <para>Unchecked—The reconcile will not be aborted if conflicts are found. This is the default.</para>
+		/// <para>如果协调过程中在目标版本与编辑版本之间发现冲突，则指定是否将中止协调过程。</para>
+		/// <para>选中 - 如果发现冲突，将中止协调。</para>
+		/// <para>未选中 - 如果发现冲突，将不会中止协调。 这是默认设置。</para>
 		/// <para><see cref="AbortIfConflictsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -145,9 +145,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Conflict Definition</para>
-		/// <para>Specifies whether the conditions required for a conflict to occur will be defined by object (row) or by attribute (column).</para>
-		/// <para>Conflicts defined by object (by row)—Conflicts will be defined by object. Any changes to the same row or feature in the parent and child versions will conflict during reconcile. This is the default.</para>
-		/// <para>Conflicts defined by attribute (by column)—Conflicts will be defined by attribute. Only changes to the same attribute (column) of the same row or feature in the parent and child versions will be flagged as a conflict during reconcile. Changes to different attributes will not be considered a conflict during reconcile.</para>
+		/// <para>指定是按对象（行）还是按属性（列）定义发生冲突所需的条件。</para>
+		/// <para>按对象定义的冲突（按行）—将按对象定义冲突。 协调期间父版本和子版本中的相同行或要素发生任何更改。 这是默认设置。</para>
+		/// <para>按属性定义的冲突（按列）—将按属性定义冲突。 协调期间只有父版本和子版本中的相同行或要素的同一属性（列）发生的更改会被标记为冲突。 协调期间不同属性所发生的更改不会被视为冲突。</para>
 		/// <para><see cref="ConflictDefinitionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -157,10 +157,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Conflict Resolution</para>
-		/// <para>Specifies the resolution that will be used if a conflict is detected.</para>
-		/// <para>If the input is a branch workspace, the default is to favor the edit version.</para>
-		/// <para>Resolve conflicts in favor of the target version—All conflicts will be resolved in favor of the target version. This is the default for traditional versioning.</para>
-		/// <para>Resolve conflicts in favor of the edit version—All conflicts will be resolved in favor of the edit version. This is the default for branch versioning.</para>
+		/// <para>指定检测到冲突时将使用的解决方案。</para>
+		/// <para>如果输入为分支工作空间，则默认支持编辑版本。</para>
+		/// <para>优先使用目标版本解决冲突—将优先使用目标版本解决所有冲突。 这是传统版本化的默认值。</para>
+		/// <para>优先使用编辑版本解决冲突—将优先使用编辑版本解决所有冲突。 这是分支版本化的默认值。</para>
 		/// <para><see cref="ConflictResolutionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -170,9 +170,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Post Versions After Reconcile</para>
-		/// <para>Specifies whether the current edit session will be posted to the reconciled target version.</para>
-		/// <para>Checked—The current edit version will be posted to the target version after the reconcile.</para>
-		/// <para>Unchecked—The current edit version will not be posted to the target version after the reconcile. This is the default.</para>
+		/// <para>指定是否将当前编辑会话提交到已协调的目标版本。</para>
+		/// <para>选中 - 协调后将当前编辑版本提交到目标版本。</para>
+		/// <para>未选中 - 协调后不将当前编辑版本提交到目标版本。 这是默认设置。</para>
 		/// <para><see cref="WithPostEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -182,9 +182,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Delete Versions After Post</para>
-		/// <para>Specifies whether the reconciled edit version will be deleted after posting. This parameter only applies if the Post Versions After Reconcile parameter is checked.</para>
-		/// <para>Checked—The current edit version that was reconciled will be deleted after being posted to the target version.</para>
-		/// <para>Unchecked—The current edit version that was reconciled will not be deleted. This is the default.</para>
+		/// <para>指定提交后是否删除已协调的编辑版本。 此参数仅适用于选中协调后提交版本参数的情况。</para>
+		/// <para>选中 - 协调后的当前编辑版本在提交到目标版本后将被删除。</para>
+		/// <para>未选中 - 不会删除协调后的当前编辑版本。 这是默认设置。</para>
 		/// <para><see cref="WithDeleteEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -194,7 +194,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Reconcile Versions Log</para>
-		/// <para>The name and location where the log file will be written. The log file is an ASCII file containing the contents of the geoprocessing messages.</para>
+		/// <para>写入日志文件的名称和位置。 日志文件是包含地理处理消息内容的 ASCII 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -209,9 +209,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Proceed if unreviewed conflicts are detected</para>
-		/// <para>Specifies whether the reconcile will proceed if existing unreviewed conflicts are detected before the reconcile process starts. If you proceed, existing conflicts from previous sessions will be lost upon tool execution. This parameter is only applicable to branch versioning.</para>
-		/// <para>Checked—The reconcile process will proceed if existing unreviewed conflicts are detected. This is the default.</para>
-		/// <para>Unchecked—The reconcile process will not proceed if existing unreviewed conflicts are detected.</para>
+		/// <para>指定如果在协调过程开始之前检测到现有的未审查冲突，是否继续进行协调。 如果继续，则执行工具时，之前会话中的现有冲突将会丢失。 此参数仅适用于分支版本化。</para>
+		/// <para>选中 - 如果检测到现有的未审查冲突，将继续进行协调。 这是默认设置。</para>
+		/// <para>未选中 - 如果检测到现有的未审查冲突，不会继续进行协调。</para>
 		/// <para><see cref="ProceedIfConflictsNotReviewedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -221,9 +221,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Reconcile checkout replica versions</para>
-		/// <para>Specifies whether the reconcile process will include checkout replica versions. If you are creating a checkout replica as part of a geodatabase replication workflow, an associated version is created in the geodatabase. This option allows you to include or remove these types of versions from the list of versions to be reconciled. This parameter is not applicable for branch versioning.</para>
-		/// <para>Checked—The reconcile process will include checkout replica versions. This is the default.</para>
-		/// <para>Unchecked—The reconcile process will not include checkout replica versions.</para>
+		/// <para>指定协调过程是否将包括检出复本版本。 如果要将检出复本创建为地理数据库复制工作流的一部分，则系统会在地理数据库中创建相关联的版本。 您可通过此选项在要协调的版本列表中包括或移除这些类型的版本。 此参数不适用于分支版本化。</para>
+		/// <para>选中 - 协调过程将包括检出复本版本。 这是默认设置。</para>
+		/// <para>未选中 - 协调过程将不包括检出复本版本。</para>
 		/// <para><see cref="ReconcileCheckoutVersionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -248,17 +248,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ReconcileModeEnum 
 		{
 			/// <summary>
-			/// <para>Reconcile all versions—Edit versions will be reconciled with the target version. This is the default.</para>
+			/// <para>协调所有版本—编辑版本将与目标版本进行协调。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("ALL_VERSIONS")]
-			[Description("Reconcile all versions")]
+			[Description("协调所有版本")]
 			Reconcile_all_versions,
 
 			/// <summary>
-			/// <para>Reconcile blocking versions only—Versions that are blocking the target version from compressing will be reconciled. This option uses the recommended reconcile order.</para>
+			/// <para>仅协调分块版本—协调阻止目标版本压缩的版本。 此选项使用建议的协调顺序。</para>
 			/// </summary>
 			[GPValue("BLOCKING_VERSIONS")]
-			[Description("Reconcile blocking versions only")]
+			[Description("仅协调分块版本")]
 			Reconcile_blocking_versions_only,
 
 		}
@@ -269,14 +269,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AcquireLocksEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Locks will be acquired during the reconcile process. Use this option when the intention is to post edits. It ensures that the target version is not modified in the time between the reconcile and post operations. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("LOCK_ACQUIRED")]
 			LOCK_ACQUIRED,
 
 			/// <summary>
-			/// <para>Unchecked—Locks will not be acquired during the reconcile process. This allows multiple users to reconcile in parallel. Use this option when the edit version will not be posted to the target version because there is a possibility that the target version may be modified in the time between the reconcile and post operations.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_LOCK_ACQUIRED")]
@@ -290,14 +290,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AbortIfConflictsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The reconcile will be aborted if conflicts are found.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ABORT_CONFLICTS")]
 			ABORT_CONFLICTS,
 
 			/// <summary>
-			/// <para>Unchecked—The reconcile will not be aborted if conflicts are found. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ABORT")]
@@ -311,17 +311,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ConflictDefinitionEnum 
 		{
 			/// <summary>
-			/// <para>Conflicts defined by object (by row)—Conflicts will be defined by object. Any changes to the same row or feature in the parent and child versions will conflict during reconcile. This is the default.</para>
+			/// <para>按对象定义的冲突（按行）—将按对象定义冲突。 协调期间父版本和子版本中的相同行或要素发生任何更改。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("BY_OBJECT")]
-			[Description("Conflicts defined by object (by row)")]
+			[Description("按对象定义的冲突（按行）")]
 			BY_OBJECT,
 
 			/// <summary>
-			/// <para>Conflicts defined by attribute (by column)—Conflicts will be defined by attribute. Only changes to the same attribute (column) of the same row or feature in the parent and child versions will be flagged as a conflict during reconcile. Changes to different attributes will not be considered a conflict during reconcile.</para>
+			/// <para>按属性定义的冲突（按列）—将按属性定义冲突。 协调期间只有父版本和子版本中的相同行或要素的同一属性（列）发生的更改会被标记为冲突。 协调期间不同属性所发生的更改不会被视为冲突。</para>
 			/// </summary>
 			[GPValue("BY_ATTRIBUTE")]
-			[Description("Conflicts defined by attribute (by column)")]
+			[Description("按属性定义的冲突（按列）")]
 			BY_ATTRIBUTE,
 
 		}
@@ -332,17 +332,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ConflictResolutionEnum 
 		{
 			/// <summary>
-			/// <para>Resolve conflicts in favor of the target version—All conflicts will be resolved in favor of the target version. This is the default for traditional versioning.</para>
+			/// <para>优先使用目标版本解决冲突—将优先使用目标版本解决所有冲突。 这是传统版本化的默认值。</para>
 			/// </summary>
 			[GPValue("FAVOR_TARGET_VERSION")]
-			[Description("Resolve conflicts in favor of the target version")]
+			[Description("优先使用目标版本解决冲突")]
 			Resolve_conflicts_in_favor_of_the_target_version,
 
 			/// <summary>
-			/// <para>Resolve conflicts in favor of the edit version—All conflicts will be resolved in favor of the edit version. This is the default for branch versioning.</para>
+			/// <para>优先使用编辑版本解决冲突—将优先使用编辑版本解决所有冲突。 这是分支版本化的默认值。</para>
 			/// </summary>
 			[GPValue("FAVOR_EDIT_VERSION")]
-			[Description("Resolve conflicts in favor of the edit version")]
+			[Description("优先使用编辑版本解决冲突")]
 			Resolve_conflicts_in_favor_of_the_edit_version,
 
 		}
@@ -353,14 +353,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum WithPostEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The current edit version will be posted to the target version after the reconcile.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("POST")]
 			POST,
 
 			/// <summary>
-			/// <para>Unchecked—The current edit version will not be posted to the target version after the reconcile. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_POST")]
@@ -374,14 +374,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum WithDeleteEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The current edit version that was reconciled will be deleted after being posted to the target version.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_VERSION")]
 			DELETE_VERSION,
 
 			/// <summary>
-			/// <para>Unchecked—The current edit version that was reconciled will not be deleted. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_VERSION")]
@@ -395,14 +395,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ProceedIfConflictsNotReviewedEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The reconcile process will proceed if existing unreviewed conflicts are detected. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PROCEED")]
 			PROCEED,
 
 			/// <summary>
-			/// <para>Unchecked—The reconcile process will not proceed if existing unreviewed conflicts are detected.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_PROCEED")]
@@ -416,14 +416,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ReconcileCheckoutVersionsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The reconcile process will include checkout replica versions. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RECONCILE")]
 			RECONCILE,
 
 			/// <summary>
-			/// <para>Unchecked—The reconcile process will not include checkout replica versions.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_RECONCILE")]

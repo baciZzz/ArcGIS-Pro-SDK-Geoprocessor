@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Validate Scene Layer</para>
-	/// <para>Validate Scene Layer</para>
-	/// <para>Evaluates a scene layer package (*.slpk or *.i3sREST) in a cloud store to determine its conformity to I3S specifications.</para>
+	/// <para>验证场景图层</para>
+	/// <para>评估云存储中的场景图层包（*.slpk 或 *.i3sREST），以确定其是否符合 I3S 规范。</para>
 	/// </summary>
 	public class ValidateSceneLayerPackage : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="OutReport">
 		/// <para>Output Log File</para>
-		/// <para>The output log file that will summarize the results of the evaluation.</para>
+		/// <para>用于汇总评估结果的输出日志文件。</para>
 		/// </param>
 		public ValidateSceneLayerPackage(object OutReport)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Validate Scene Layer</para>
+		/// <para>Tool Display Name : 验证场景图层</para>
 		/// </summary>
-		public override string DisplayName() => "Validate Scene Layer";
+		public override string DisplayName() => "验证场景图层";
 
 		/// <summary>
 		/// <para>Tool Name : ValidateSceneLayerPackage</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Scene Layer</para>
-		/// <para>The scene layer package (*.slpk) that will be evaluated.</para>
+		/// <para>将进行评估的场景图层包 (*.slpk)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Log File</para>
-		/// <para>The output log file that will summarize the results of the evaluation.</para>
+		/// <para>用于汇总评估结果的输出日志文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Folder</para>
-		/// <para>The scene layer content (*.i3sREST) in a cloud store that will be evaluated.</para>
+		/// <para>将评估的云存储中的场景图层内容 (*.i3sREST)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]

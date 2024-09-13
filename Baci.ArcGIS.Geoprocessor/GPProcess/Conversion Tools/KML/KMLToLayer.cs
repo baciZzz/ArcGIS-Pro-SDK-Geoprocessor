@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>KML To Layer</para>
-	/// <para>KML To Layer</para>
-	/// <para>Converts a KML or KMZ file into feature classes  and a layer file.  The layer file  maintains the symbology found within the original KML or KMZ file.</para>
+	/// <para>KML 转图层</para>
+	/// <para>将 KML 或 KMZ 文件转换为要素类和图层文件。 图层文件用于保留于原始 KML 或 KMZ 文件中找到的符号。</para>
 	/// </summary>
 	public class KMLToLayer : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InKmlFile">
 		/// <para>Input KML File</para>
-		/// <para>The KML or KMZ file to translate.</para>
+		/// <para>要转换的 KML 或 KMZ 文件。</para>
 		/// </param>
 		/// <param name="OutputFolder">
 		/// <para>Output Location</para>
-		/// <para>The destination folder for the file geodatabase and layer (.lyrx) file.</para>
+		/// <para>文件地理数据库与图层 (.lyrx) 文件的目标文件夹。</para>
 		/// </param>
 		public KMLToLayer(object InKmlFile, object OutputFolder)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : KML To Layer</para>
+		/// <para>Tool Display Name : KML 转图层</para>
 		/// </summary>
-		public override string DisplayName() => "KML To Layer";
+		public override string DisplayName() => "KML 转图层";
 
 		/// <summary>
 		/// <para>Tool Name : KMLToLayer</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input KML File</para>
-		/// <para>The KML or KMZ file to translate.</para>
+		/// <para>要转换的 KML 或 KMZ 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Location</para>
-		/// <para>The destination folder for the file geodatabase and layer (.lyrx) file.</para>
+		/// <para>文件地理数据库与图层 (.lyrx) 文件的目标文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output Data Name</para>
-		/// <para>The name of the output file geodatabase and layer file. The default is the name of the input KML file.</para>
+		/// <para>输出文件地理数据库和图层文件的名称。 默认值为输入 KML 文件的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -95,9 +95,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Include Ground Overlay</para>
-		/// <para>Include ground overlays from the KML (raster, air photos, and so on). Use caution if the KMZ points to a service that serves raster imagery. The tool will attempt to translate the raster imagery at all available scales. This process could be lengthy and possibly overwhelm the service.</para>
-		/// <para>Checked—Ground overlay is included in the output.</para>
-		/// <para>Unchecked—Ground overlay is not included in the output. This is the default.</para>
+		/// <para>包括 KML 的地面叠加层（栅格、航空照片等）。 KMZ 指向提供栅格影像的服务时，请谨慎使用。 该工具将尝试按所有可用比例转换栅格影像。 此过程也许会较漫长且可能超出服务能力范围。</para>
+		/// <para>选中 - 地面叠加层包括在输出中。</para>
+		/// <para>未选中 - 地面叠加层不包括在输出中。 这是默认设置。</para>
 		/// <para><see cref="IncludeGroundoverlayEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,14 +136,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum IncludeGroundoverlayEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Ground overlay is included in the output.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GROUNDOVERLAY")]
 			GROUNDOVERLAY,
 
 			/// <summary>
-			/// <para>Unchecked—Ground overlay is not included in the output. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_GROUNDOVERLAY")]

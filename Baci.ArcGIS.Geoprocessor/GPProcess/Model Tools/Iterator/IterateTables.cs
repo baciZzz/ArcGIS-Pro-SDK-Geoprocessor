@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Iterate Tables</para>
-	/// <para>Iterate Tables</para>
-	/// <para>Iterates over tables in a workspace.</para>
+	/// <para>迭代表</para>
+	/// <para>用于在工作空间中对表进行迭代。</para>
 	/// </summary>
 	public class IterateTables : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Workspace</para>
-		/// <para>A workspace containing the tables to iterate.</para>
+		/// <para>包含要迭代的表的工作空间。</para>
 		/// </param>
 		public IterateTables(object InWorkspace)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Iterate Tables</para>
+		/// <para>Tool Display Name : 迭代表</para>
 		/// </summary>
-		public override string DisplayName() => "Iterate Tables";
+		public override string DisplayName() => "迭代表";
 
 		/// <summary>
 		/// <para>Tool Name : IterateTables</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Workspace</para>
-		/// <para>A workspace containing the tables to iterate.</para>
+		/// <para>包含要迭代的表的工作空间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Wildcard</para>
-		/// <para>A combination of * and characters that help to limit the results. The asterisk is the same as specifying ALL. If no wildcard is specified, all inputs will be returned. For example, it can be used to restrict Iteration over input names starting with a certain character or word (for example, A* or Ari* or Land* and so on).</para>
+		/// <para>* 与有助于限制结果的字符的组合。 星号相当于指定全部。 如果未指定通配符，将返回所有输入。 例如，可将其用于将输入名称迭代限制为从某一字符或词语开始（例如，A*、Ari* 或 Land* 等）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -81,9 +81,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Table Type</para>
-		/// <para>Specifies the table type for folder workspaces (shapefiles and coverages).</para>
-		/// <para>dBASE (shapefiles)—The table type will be dBASE tables (shapefiles).</para>
-		/// <para>INFO (coverages)—The table type will be INFO tables (coverages).</para>
+		/// <para>为文件夹工作空间（shapefile 和 coverage）指定表类型。</para>
+		/// <para>dBASE (shapefile)—表类型将为 dBASE 表 (shapefile)。</para>
+		/// <para>INFO (coverage)—表类型将为 INFO 表 (coverage)。</para>
 		/// <para><see cref="TableTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -93,9 +93,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Recursive</para>
-		/// <para>Specifies whether subfolders in the main folder will be iterated recursively.</para>
-		/// <para>Checked—All subfolders in the main folder will be iterated recursively.</para>
-		/// <para>Unchecked—Subfolders in the main folder will not be iterated recursively. Only the main folder will be used.</para>
+		/// <para>指定是否将递归迭代主文件夹中的子文件夹。</para>
+		/// <para>选中 - 将递归迭代主文件夹中的所有子文件夹。</para>
+		/// <para>未选中 - 将不会递归迭代主文件夹中的子文件夹。 将仅使用主文件夹。</para>
 		/// <para><see cref="RecursiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -125,17 +125,17 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum TableTypeEnum 
 		{
 			/// <summary>
-			/// <para>dBASE (shapefiles)—The table type will be dBASE tables (shapefiles).</para>
+			/// <para>dBASE (shapefile)—表类型将为 dBASE 表 (shapefile)。</para>
 			/// </summary>
 			[GPValue("DBASE")]
-			[Description("dBASE (shapefiles)")]
+			[Description("dBASE (shapefile)")]
 			DBASE,
 
 			/// <summary>
-			/// <para>INFO (coverages)—The table type will be INFO tables (coverages).</para>
+			/// <para>INFO (coverage)—表类型将为 INFO 表 (coverage)。</para>
 			/// </summary>
 			[GPValue("INFO")]
-			[Description("INFO (coverages)")]
+			[Description("INFO (coverage)")]
 			INFO,
 
 		}
@@ -146,14 +146,14 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum RecursiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—All subfolders in the main folder will be iterated recursively.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RECURSIVE")]
 			RECURSIVE,
 
 			/// <summary>
-			/// <para>Unchecked—Subfolders in the main folder will not be iterated recursively. Only the main folder will be used.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_RECURSIVE")]

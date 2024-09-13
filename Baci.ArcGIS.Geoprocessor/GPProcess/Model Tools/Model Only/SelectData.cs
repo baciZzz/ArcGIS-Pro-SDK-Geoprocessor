@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Select Data</para>
-	/// <para>Select Data</para>
-	/// <para>The Select Data tool selects data in a parent data element such as a folder, geodatabase, feature dataset, or coverage.</para>
+	/// <para>选择数据</para>
+	/// <para>选择数据工具在父数据元素（如文件夹、地理数据库、要素数据集或 coverage）中选择数据。</para>
 	/// </summary>
 	public class SelectData : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InDataelement">
 		/// <para>Input Data Element</para>
-		/// <para>The input data element can be a folder, geodatabase, or feature dataset.</para>
+		/// <para>输入数据元素可以为文件夹、地理数据库或要素数据集。</para>
 		/// </param>
 		public SelectData(object InDataelement)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Select Data</para>
+		/// <para>Tool Display Name : 选择数据</para>
 		/// </summary>
-		public override string DisplayName() => "Select Data";
+		public override string DisplayName() => "选择数据";
 
 		/// <summary>
 		/// <para>Tool Name : SelectData</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Input Data Element</para>
-		/// <para>The input data element can be a folder, geodatabase, or feature dataset.</para>
+		/// <para>输入数据元素可以为文件夹、地理数据库或要素数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Child Data Element</para>
-		/// <para>The child data element is contained by the input data element. Once the input data element is specified, the child data element control contains a drop-down list of the data elements contained in the input data element. For example, if the input is a feature dataset, all the feature classes within the feature dataset are included in the drop-down list. A single element is selected from this list.</para>
+		/// <para>子数据元素包含在输入数据元素中。指定输入数据元素后，子数据元素控件将包含一个下拉列表，列出输入数据元素中包含的数据元素。例如，如果输入为要素数据集，则要素数据集中的所有要素类都将包括在下拉列表中。可从此列表中选择单个元素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

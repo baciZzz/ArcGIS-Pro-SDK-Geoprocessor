@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Corridor</para>
-	/// <para>Corridor</para>
-	/// <para>Calculates the sum of accumulative costs for two input accumulative cost rasters.</para>
+	/// <para>廊道分析</para>
+	/// <para>计算两个输入累积成本栅格的累积成本总和。</para>
 	/// </summary>
 	public class Corridor : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InDistanceRaster1">
 		/// <para>Input cost distance raster 1</para>
-		/// <para>The first input distance raster.</para>
-		/// <para>It should be an accumulated cost distance output from a distance tool such as Cost Distance or Path Distance.</para>
+		/// <para>第一个输入距离栅格。</para>
+		/// <para>它应是来自距离工具的累积成本距离输出，如成本距离或路径距离。</para>
 		/// </param>
 		/// <param name="InDistanceRaster2">
 		/// <para>Input cost distance raster 2</para>
-		/// <para>The second input distance raster.</para>
-		/// <para>It should be an accumulated cost distance output from a distance tool such as Cost Distance or Path Distance.</para>
+		/// <para>第二个输入距离栅格。</para>
+		/// <para>它应是来自距离工具的累积成本距离输出，如成本距离或路径距离。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output corridor raster.</para>
-		/// <para>The output raster is of floating-point type.</para>
+		/// <para>输出廊道栅格。</para>
+		/// <para>输出栅格为浮点型。</para>
 		/// </param>
 		public Corridor(object InDistanceRaster1, object InDistanceRaster2, object OutRaster)
 		{
@@ -42,14 +42,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Corridor</para>
+		/// <para>Tool Display Name : 廊道分析</para>
 		/// </summary>
-		public override string DisplayName() => "Corridor";
+		public override string DisplayName() => "廊道分析";
 
 		/// <summary>
-		/// <para>Tool Name : Corridor</para>
+		/// <para>Tool Name : 廊道分析</para>
 		/// </summary>
-		public override string ToolName() => "Corridor";
+		public override string ToolName() => "廊道分析";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Corridor</para>
@@ -78,8 +78,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input cost distance raster 1</para>
-		/// <para>The first input distance raster.</para>
-		/// <para>It should be an accumulated cost distance output from a distance tool such as Cost Distance or Path Distance.</para>
+		/// <para>第一个输入距离栅格。</para>
+		/// <para>它应是来自距离工具的累积成本距离输出，如成本距离或路径距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -91,8 +91,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input cost distance raster 2</para>
-		/// <para>The second input distance raster.</para>
-		/// <para>It should be an accumulated cost distance output from a distance tool such as Cost Distance or Path Distance.</para>
+		/// <para>第二个输入距离栅格。</para>
+		/// <para>它应是来自距离工具的累积成本距离输出，如成本距离或路径距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -104,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output corridor raster.</para>
-		/// <para>The output raster is of floating-point type.</para>
+		/// <para>输出廊道栅格。</para>
+		/// <para>输出栅格为浮点型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

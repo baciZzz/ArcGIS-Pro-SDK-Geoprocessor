@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Collect Events</para>
-	/// <para>Collect Events</para>
-	/// <para>Converts event data, such as crime or disease incidents, to weighted point data.</para>
+	/// <para>收集事件</para>
+	/// <para>将事件数据(如犯罪或疾病事件点)转换为加权点数据。</para>
 	/// </summary>
 	public class CollectEvents : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputIncidentFeatures">
 		/// <para>Input Incident Features</para>
-		/// <para>The features representing event or incident data.</para>
+		/// <para>表示事件或事件点数据的要素。</para>
 		/// </param>
 		/// <param name="OutputWeightedPointFeatureClass">
 		/// <para>Output Weighted Point Feature Class</para>
-		/// <para>The output feature class to contain the weighted point data.</para>
+		/// <para>包含加权点数据的输出要素类。</para>
 		/// </param>
 		public CollectEvents(object InputIncidentFeatures, object OutputWeightedPointFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Collect Events</para>
+		/// <para>Tool Display Name : 收集事件</para>
 		/// </summary>
-		public override string DisplayName() => "Collect Events";
+		public override string DisplayName() => "收集事件";
 
 		/// <summary>
 		/// <para>Tool Name : CollectEvents</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Incident Features</para>
-		/// <para>The features representing event or incident data.</para>
+		/// <para>表示事件或事件点数据的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Weighted Point Feature Class</para>
-		/// <para>The output feature class to contain the weighted point data.</para>
+		/// <para>包含加权点数据的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]

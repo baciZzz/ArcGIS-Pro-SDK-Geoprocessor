@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make Vehicle Routing Problem Analysis Layer</para>
-	/// <para>Make Vehicle Routing Problem Analysis Layer</para>
-	/// <para>Creates a vehicle routing problem (VRP) network analysis layer and sets its analysis properties. A VRP analysis layer is useful for optimizing a set of routes using a fleet of vehicles. The layer can be created using a local network dataset or a service hosted online or in a portal.</para>
+	/// <para>创建车辆配送分析图层</para>
+	/// <para>创建车辆配送 (VRP) 网络分析图层并设置其分析属性。 VRP 分析图层可用于在使用一支车队时对一组路径进行优化。 该图层可通过本地网络数据集进行创建，也可通过在线托管服务或门户托管服务进行创建。</para>
 	/// </summary>
 	public class MakeVehicleRoutingProblemAnalysisLayer : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="NetworkDataSource">
 		/// <para>Network Data Source</para>
-		/// <para>The network dataset or service on which the network analysis will be performed. Use the portal URL for a service.</para>
+		/// <para>将对其执行网络分析的网络数据集或服务。 将门户 URL 用于服务。</para>
 		/// </param>
 		public MakeVehicleRoutingProblemAnalysisLayer(object NetworkDataSource)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Make Vehicle Routing Problem Analysis Layer</para>
+		/// <para>Tool Display Name : 创建车辆配送分析图层</para>
 		/// </summary>
-		public override string DisplayName() => "Make Vehicle Routing Problem Analysis Layer";
+		public override string DisplayName() => "创建车辆配送分析图层";
 
 		/// <summary>
 		/// <para>Tool Name : MakeVehicleRoutingProblemAnalysisLayer</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Network Data Source</para>
-		/// <para>The network dataset or service on which the network analysis will be performed. Use the portal URL for a service.</para>
+		/// <para>将对其执行网络分析的网络数据集或服务。 将门户 URL 用于服务。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Layer Name</para>
-		/// <para>The name of the VRP network analysis layer to create.</para>
+		/// <para>要创建的 VRP 网络分析图层的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -81,8 +81,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Travel Mode</para>
-		/// <para>The name of the travel mode to use in the analysis. The travel mode represents a collection of network settings, such as travel restrictions and U-turn policies, that determine how a pedestrian, car, truck, or other medium of transportation moves through the network. Travel modes are defined on your network data source. An arcpy.na.TravelMode object and a string containing the valid JSON representation of a travel mode can also be used as input to the parameter.</para>
-		/// <para>VRP only solves with a time-based impedance, so only time-based impedance travel modes are available for selection.</para>
+		/// <para>分析中使用的出行模式名称。 出行模式为一组网络设置（例如行驶限制和 U 形转弯），用于确定行人、车辆、卡车或其他交通媒介在网络中的移动方式。 出行模式在网络数据源中进行定义。 arcpy.na.TravelMode 对象和包含出行模式有效 JSON 表示的字符串也可用作参数的输入。</para>
+		/// <para>VRP 将仅使用基于时间的阻抗进行求解，因此仅基于时间的阻抗出行模式可供选择。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -91,11 +91,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time Field Units</para>
-		/// <para>Specifies the time units to be used by the temporal fields of the analysis layer&apos;s sublayers and tables (network analysis classes). This value does not need to match the units of the time cost attribute.</para>
-		/// <para>Minutes—The time units will be minutes. This is the default.</para>
-		/// <para>Seconds—The time units will be seconds.</para>
-		/// <para>Hours—The time units will be hours.</para>
-		/// <para>Days—The time units will be days.</para>
+		/// <para>指定分析图层的子图层和表（网络分析类）的时态字段所用的时间单位。 该值不必与时间成本属性的单位相匹配。</para>
+		/// <para>分—时间单位将为分钟。 这是默认设置。</para>
+		/// <para>秒—时间单位将为秒。</para>
+		/// <para>小时—时间单位将为小时。</para>
+		/// <para>天—时间单位将为天。</para>
 		/// <para><see cref="TimeUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -105,17 +105,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Distance Field Units</para>
-		/// <para>Specifies the distance units to be used by the distance fields of the analysis layer&apos;s sublayers and tables (network analysis classes). This value does not need to match the units of the optional distance cost attribute.</para>
-		/// <para>Miles—The distance units will be miles. This is the default.</para>
-		/// <para>Kilometers—The distance units will be kilometers.</para>
-		/// <para>Feet—The distance units will be feet.</para>
-		/// <para>Yards—The distance units will be yards.</para>
-		/// <para>Meters—The distance units will be meters.</para>
-		/// <para>Inches—The distance units will be inches.</para>
-		/// <para>Centimeters—The distance units will be centimeters.</para>
-		/// <para>Millimeters—The distance units will be millimeters.</para>
-		/// <para>Decimeters—The distance units will be decimeters.</para>
-		/// <para>Nautical Miles—The distance units will be nautical miles.</para>
+		/// <para>指定分析图层的子图层和表（网络分析类）的距离字段所用的距离单位。 该值不必与可选距离成本属性的单位相匹配。</para>
+		/// <para>英里—距离单位将为英里。 这是默认设置。</para>
+		/// <para>千米—距离单位将为公里。</para>
+		/// <para>英尺—距离单位将为英尺。</para>
+		/// <para>码—距离单位将为码。</para>
+		/// <para>米—距离单位将为米。</para>
+		/// <para>英寸—距离单位将为英寸。</para>
+		/// <para>厘米—距离单位将为厘米。</para>
+		/// <para>毫米—距离单位将为毫米。</para>
+		/// <para>分米—距离单位将为分米。</para>
+		/// <para>海里—距离单位将为海里。</para>
 		/// <para><see cref="DistanceUnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Default Date</para>
-		/// <para>The implied date for time field values that don't have a date specified with the time. If a time field for an order object, such as TimeWindowStart, has a time-only value, the date is assumed to be the default date. The default date has no effect on time field values that already have a date.</para>
+		/// <para>未用时间指定日期的时间字段值的隐式日期。 如果某个停靠点对象的时间字段（如 TimeWindowStart）只有时间值，则假定该日期为默认日期。 默认日期不影响已具有日期的时间字段值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -134,10 +134,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time Zone for Time Fields</para>
-		/// <para>Specifies the time zone to be used for the input date-time fields supported by the tool.</para>
-		/// <para>Local time at locations— The date-time values associated with the orders or depots will be in the time zone in which the orders and depots are located. For routes, the date-time values are based on the time zone in which the starting depot for the route is located. If a route does not have a starting depot, all orders and depots across all the routes must be in a single time zone. For breaks, the date-time values are based on the time zone of the routes. This is the default.</para>
-		/// <para>UTC—The date-time values associated with the orders or depots will be in coordinated universal time (UTC) and are not based on the time zone in which the orders or depots are located.</para>
-		/// <para>Specifying the date-time values in UTC is useful if you do not know the time zone in which the orders or depots are located or when you have orders and depots in multiple time zones and you want all the date-time values to start simultaneously. The UTC option is applicable only when your network dataset defines a time zone attribute. Otherwise, all the date-time values are always treated as the time zone corresponding with that location.</para>
+		/// <para>指定工具支持的输入日期时间字段所用的时区。</para>
+		/// <para>各位置的本地时间—与停靠点或站点相关的日期时间值位于停靠点和站点所在的时区内。 对于路径，日期时间值基于路径的起始站点所在的时区。 如果路径没有起始站点，则路径上的所有停靠点和站点必须位于一个时区中。 对于中断点，日期时间值基于路径的时区。 这是默认设置。</para>
+		/// <para>UTC—与停靠点或站点相关的日期时间值位于协调世界时间 (UTC) 中，且不基于停靠点或站点所在的时区。</para>
+		/// <para>如果不知道停靠点或站点所在的时区，或者停靠点或站点处在多个时区内并且您想要所有的日期时间值同时启动，那么在 UTC 中指定日期时间值非常有用。 UTC 选项仅在您的网络数据集定义了时区属性时才可用。 否则，所有日期时间值将始终被视为与该位置相对应的时区。</para>
 		/// <para><see cref="TimeZoneForTimeFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -148,11 +148,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Output Route Shape</para>
-		/// <para>Specifies the shape type that will be used for the route features that are output by the analysis.</para>
-		/// <para>Along network—The output routes will have the exact shape of the underlying network sources. The output includes route measurements for linear referencing. The measurements increase from the first stop and record the cumulative impedance to reach a given position.</para>
-		/// <para>No lines—No shape will be generated for the output routes.</para>
-		/// <para>Straight lines—The output route shape will be a single straight line between the stops.This option is not available if the selected network data source is a service.</para>
-		/// <para>Regardless of the output shape type specified, the best route is always determined by the network impedance, never Euclidean distance. This means that only the route shapes are different, not the underlying traversal of the network.</para>
+		/// <para>为分析所输出的路径要素指定要使用的形状类型。</para>
+		/// <para>沿网络—输出路径将具有基础网络源的精确形状。 输出包括线性参考的路径测量值。 测量值从第一个停靠点增加并将记录到达指定位置的累积阻抗。</para>
+		/// <para>无线—将不会为输出路径生成任何形状。</para>
+		/// <para>直线—输出路径形状为两个停靠点之间的一条直线。如果所选网络数据源为服务，则此选项不可用。</para>
+		/// <para>无论选择何种输出 shape 类型，最佳路径始终由网络阻抗（而非欧氏距离）决定。 这表示只是路径形状不同，而对网络进行的基础遍历则相同。</para>
 		/// <para><see cref="LineShapeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -163,10 +163,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Time Window Violation Importance</para>
-		/// <para>Specifies the importance of honoring time windows without causing violations. A time window violation occurs when a route arrives at an order, depot, or break after a time window has closed. The violation is the interval between the end of the time window and the arrival time of a route.</para>
-		/// <para>High—The solver searches for a solution that minimizes time window violations at the expense of increasing the overall travel time. Choose this setting if arriving on time at orders is more important than minimizing the overall solution cost. This may be the case if you are meeting customers at your orders and you don&apos;t want to inconvenience them with late arrivals (another option is to use rigid time windows that cannot be violated).Given other constraints of a vehicle routing problem, it may be impossible to visit all the orders within their time windows. In this case, even a High setting might produce violations.</para>
-		/// <para>Medium—The solver searches for a balance between meeting time windows and reducing the overall solution cost. This is the default.</para>
-		/// <para>Low—The solver searches for a solution that minimizes overall travel time, regardless of time windows. Choose this setting if respecting time windows is less important than reducing the overall solution cost. You may want to use this setting if you have a growing backlog of service requests. For the purpose of servicing more orders in a day and reducing the backlog, you can choose this setting even though customers may be inconvenienced with your fleet&apos;s late arrivals.</para>
+		/// <para>用于指定支持时间窗且不引起冲突的重要性。 如果路径在时间窗关闭后才到达停靠点、站点或休息点，将会产生时间窗冲突。 该冲突是时间窗关闭与路径到达时间之间的时间间隔。</para>
+		/// <para>高—求解程序需要寻求最小化时间窗冲突的解决方案（以增加总体行驶时间为代价）。 如果对您而言按时到达停靠点要比最小化总体解决方案成本更加重要，请选择此设置。 您可能会在以下情况下选择此设置：您要在自己的停靠点会见客户，且不想因为迟到给客户带来不便（另一种方法是使用根本不会出现冲突的硬性时间窗）。假设还要考虑车辆配送 (VRP) 的其他约束，可能无法在它们的时间窗内访问所有停靠点。 在这种情况下，即使选择“高”设置也可能会产生冲突。</para>
+		/// <para>中—求解程序在满足时间窗和减少总体解决方案成本之间寻求一种平衡。 这是默认设置。</para>
+		/// <para>低—求解程序需要寻求最小化总体行驶时间的解决方案（不考虑时间窗）。 如果减少您的总体解决方案成本要比满足时间窗更重要，请选择此设置。 如果积压的服务请求逐渐增多，则可以使用此设置。 如果为了在当日内为更多的停靠点提供服务并减少积压的订单，则可选择此设置，即使车队迟到会为客户带来不便。</para>
 		/// <para><see cref="TimeWindowFactorEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -177,10 +177,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Excess Transit Time Importance</para>
-		/// <para>Specifies the importance of reducing excess transit time. Excess transit time is the amount of time exceeding the time required to travel directly between paired orders. The excess time results from breaks or travel to other orders or depots between visits to the paired orders. This parameter is only relevant if you&apos;re using Order Pairs.</para>
-		/// <para>High—The solver searches for a solution with less excess transit time between paired orders at the expense of increasing the overall travel costs. Use this setting if you are transporting people between paired orders and you want to shorten their ride time. This is characteristic of taxi services.</para>
-		/// <para>Medium—The solver searches for a balance between reducing excess transit time and reducing the overall solution cost. This is the default.</para>
-		/// <para>Low—The solver searches for a solution that minimizes overall solution cost, regardless of excess transit time. This setting is commonly used with courier services. Since couriers transport packages as opposed to people, ride time is not as important. Using this setting allows couriers to service paired orders in the proper sequence and minimize the overall solution cost.</para>
+		/// <para>指定减少额外行驶时间的重要性。 额外行驶时间是指超出停靠点对间直线行驶所需时间的数量。 额外时间是由于在需求点对的访问期间进行休息或者行驶至其他停靠点或站点而导致的。 仅当您使用停靠点对时，此参数才相关。</para>
+		/// <para>高—求解程序需要寻求需求点对之间超出行驶时间较短的解决方案（以增加总体行驶成本为代价）。 如果您正在停靠点对间运载乘客并且想缩短他们的乘车时间，请使用此设置。 这是出租车服务的特征。</para>
+		/// <para>中—求解程序在减少超出行驶时间和减少总体解决方案成本之间寻求一种平衡。 这是默认设置。</para>
+		/// <para>低—求解程序需要寻求最小化总体解决方案成本的结果（不考虑额外行驶时间）。 此设置通常应用于快递服务。 由于快递运输的是包裹而不是人员，因此行驶时间并不十分重要。 使用此设置时，快递可以按照最适合的顺序为停靠点对提供服务，并且总体解决方案成本最低。</para>
 		/// <para><see cref="ExcessTransitFactorEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -191,9 +191,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Generate Directions on Solve</para>
-		/// <para>Specifies whether directions will be generated.</para>
-		/// <para>Checked—Turn-by-turn directions will be generated on solve. This is the default.</para>
-		/// <para>Unchecked—Turn-by-turn directions will not be generated on solve.</para>
+		/// <para>指定是否将生成方向。</para>
+		/// <para>选中 - 求解时会生成转向指示。 这是默认设置。</para>
+		/// <para>未选中 - 求解时不会生成转向指示。</para>
 		/// <para><see cref="GenerateDirectionsOnSolveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -204,9 +204,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Spatial Clustering</para>
-		/// <para>Specifies whether spatial clustering will be used.</para>
-		/// <para>Checked—The orders assigned to an individual route will be spatially clustered. Clustering orders tends to keep routes in smaller areas and reduce how often route lines intersect one another; yet, clustering can increase overall travel times. This is the default.</para>
-		/// <para>Unchecked—The solver will not prioritize spatially clustering orders and the route lines may intersect. Use this option if route zones are specified.</para>
+		/// <para>指定是否使用空间聚类。</para>
+		/// <para>选中 - 分配给各个路径的停靠点将在空间上聚类。 对停靠点进行聚类往往在较小区域保持路径，并减小路径线彼此相交的频率；然而，聚类可能会增加总行程时间。 这是默认设置。</para>
+		/// <para>未选中 - 求解器不会对空间聚类停靠点进行优先排序，并且路线可能会相交。 如果指定了路径区，使用此选项。</para>
 		/// <para><see cref="SpatialClusteringEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -224,9 +224,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Ignore Invalid Locations at Solve Time</para>
-		/// <para>Specifies whether invalid input locations will be ignored.</para>
-		/// <para>Checked—Invalid input locations will be ignored so that the analysis will succeed using only valid locations.</para>
-		/// <para>Unchecked—Invalid locations will not be ignored and will cause the analysis to fail. This is the default.</para>
+		/// <para>指定是否忽略无效的输入位置。</para>
+		/// <para>选中 - 表示将忽略无效的输入位置，仅使用有效位置即可成功进行分析。</para>
+		/// <para>取消选中 - 表示不会忽略无效位置，从而导致分析失败。 这是默认设置。</para>
 		/// <para><see cref="IgnoreInvalidLocationsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -252,31 +252,31 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TimeUnitsEnum 
 		{
 			/// <summary>
-			/// <para>Minutes—The time units will be minutes. This is the default.</para>
+			/// <para>分—时间单位将为分钟。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("Minutes")]
-			[Description("Minutes")]
+			[Description("分")]
 			Minutes,
 
 			/// <summary>
-			/// <para>Seconds—The time units will be seconds.</para>
+			/// <para>秒—时间单位将为秒。</para>
 			/// </summary>
 			[GPValue("Seconds")]
-			[Description("Seconds")]
+			[Description("秒")]
 			Seconds,
 
 			/// <summary>
-			/// <para>Hours—The time units will be hours.</para>
+			/// <para>小时—时间单位将为小时。</para>
 			/// </summary>
 			[GPValue("Hours")]
-			[Description("Hours")]
+			[Description("小时")]
 			Hours,
 
 			/// <summary>
-			/// <para>Days—The time units will be days.</para>
+			/// <para>天—时间单位将为天。</para>
 			/// </summary>
 			[GPValue("Days")]
-			[Description("Days")]
+			[Description("天")]
 			Days,
 
 		}
@@ -287,73 +287,73 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum DistanceUnitsEnum 
 		{
 			/// <summary>
-			/// <para>Miles—The distance units will be miles. This is the default.</para>
+			/// <para>英里—距离单位将为英里。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("Miles")]
-			[Description("Miles")]
+			[Description("英里")]
 			Miles,
 
 			/// <summary>
-			/// <para>Kilometers—The distance units will be kilometers.</para>
+			/// <para>千米—距离单位将为公里。</para>
 			/// </summary>
 			[GPValue("Kilometers")]
-			[Description("Kilometers")]
+			[Description("千米")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>Feet—The distance units will be feet.</para>
+			/// <para>英尺—距离单位将为英尺。</para>
 			/// </summary>
 			[GPValue("Feet")]
-			[Description("Feet")]
+			[Description("英尺")]
 			Feet,
 
 			/// <summary>
-			/// <para>Yards—The distance units will be yards.</para>
+			/// <para>码—距离单位将为码。</para>
 			/// </summary>
 			[GPValue("Yards")]
-			[Description("Yards")]
+			[Description("码")]
 			Yards,
 
 			/// <summary>
-			/// <para>Meters—The distance units will be meters.</para>
+			/// <para>米—距离单位将为米。</para>
 			/// </summary>
 			[GPValue("Meters")]
-			[Description("Meters")]
+			[Description("米")]
 			Meters,
 
 			/// <summary>
-			/// <para>Inches—The distance units will be inches.</para>
+			/// <para>英寸—距离单位将为英寸。</para>
 			/// </summary>
 			[GPValue("Inches")]
-			[Description("Inches")]
+			[Description("英寸")]
 			Inches,
 
 			/// <summary>
-			/// <para>Centimeters—The distance units will be centimeters.</para>
+			/// <para>厘米—距离单位将为厘米。</para>
 			/// </summary>
 			[GPValue("Centimeters")]
-			[Description("Centimeters")]
+			[Description("厘米")]
 			Centimeters,
 
 			/// <summary>
-			/// <para>Millimeters—The distance units will be millimeters.</para>
+			/// <para>毫米—距离单位将为毫米。</para>
 			/// </summary>
 			[GPValue("Millimeters")]
-			[Description("Millimeters")]
+			[Description("毫米")]
 			Millimeters,
 
 			/// <summary>
-			/// <para>Decimeters—The distance units will be decimeters.</para>
+			/// <para>分米—距离单位将为分米。</para>
 			/// </summary>
 			[GPValue("Decimeters")]
-			[Description("Decimeters")]
+			[Description("分米")]
 			Decimeters,
 
 			/// <summary>
-			/// <para>Nautical Miles—The distance units will be nautical miles.</para>
+			/// <para>海里—距离单位将为海里。</para>
 			/// </summary>
 			[GPValue("NauticalMiles")]
-			[Description("Nautical Miles")]
+			[Description("海里")]
 			Nautical_Miles,
 
 		}
@@ -364,17 +364,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TimeZoneForTimeFieldsEnum 
 		{
 			/// <summary>
-			/// <para>UTC—The date-time values associated with the orders or depots will be in coordinated universal time (UTC) and are not based on the time zone in which the orders or depots are located.</para>
+			/// <para>UTC—与停靠点或站点相关的日期时间值位于协调世界时间 (UTC) 中，且不基于停靠点或站点所在的时区。</para>
 			/// </summary>
 			[GPValue("UTC")]
 			[Description("UTC")]
 			UTC,
 
 			/// <summary>
-			/// <para>Local time at locations— The date-time values associated with the orders or depots will be in the time zone in which the orders and depots are located. For routes, the date-time values are based on the time zone in which the starting depot for the route is located. If a route does not have a starting depot, all orders and depots across all the routes must be in a single time zone. For breaks, the date-time values are based on the time zone of the routes. This is the default.</para>
+			/// <para>各位置的本地时间—与停靠点或站点相关的日期时间值位于停靠点和站点所在的时区内。 对于路径，日期时间值基于路径的起始站点所在的时区。 如果路径没有起始站点，则路径上的所有停靠点和站点必须位于一个时区中。 对于中断点，日期时间值基于路径的时区。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("LOCAL_TIME_AT_LOCATIONS")]
-			[Description("Local time at locations")]
+			[Description("各位置的本地时间")]
 			Local_time_at_locations,
 
 		}
@@ -385,24 +385,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum LineShapeEnum 
 		{
 			/// <summary>
-			/// <para>No lines—No shape will be generated for the output routes.</para>
+			/// <para>无线—将不会为输出路径生成任何形状。</para>
 			/// </summary>
 			[GPValue("NO_LINES")]
-			[Description("No lines")]
+			[Description("无线")]
 			No_lines,
 
 			/// <summary>
-			/// <para>Straight lines—The output route shape will be a single straight line between the stops.This option is not available if the selected network data source is a service.</para>
+			/// <para>直线—输出路径形状为两个停靠点之间的一条直线。如果所选网络数据源为服务，则此选项不可用。</para>
 			/// </summary>
 			[GPValue("STRAIGHT_LINES")]
-			[Description("Straight lines")]
+			[Description("直线")]
 			Straight_lines,
 
 			/// <summary>
-			/// <para>Along network—The output routes will have the exact shape of the underlying network sources. The output includes route measurements for linear referencing. The measurements increase from the first stop and record the cumulative impedance to reach a given position.</para>
+			/// <para>沿网络—输出路径将具有基础网络源的精确形状。 输出包括线性参考的路径测量值。 测量值从第一个停靠点增加并将记录到达指定位置的累积阻抗。</para>
 			/// </summary>
 			[GPValue("ALONG_NETWORK")]
-			[Description("Along network")]
+			[Description("沿网络")]
 			Along_network,
 
 		}
@@ -413,24 +413,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum TimeWindowFactorEnum 
 		{
 			/// <summary>
-			/// <para>High—The solver searches for a solution that minimizes time window violations at the expense of increasing the overall travel time. Choose this setting if arriving on time at orders is more important than minimizing the overall solution cost. This may be the case if you are meeting customers at your orders and you don&apos;t want to inconvenience them with late arrivals (another option is to use rigid time windows that cannot be violated).Given other constraints of a vehicle routing problem, it may be impossible to visit all the orders within their time windows. In this case, even a High setting might produce violations.</para>
+			/// <para>高—求解程序需要寻求最小化时间窗冲突的解决方案（以增加总体行驶时间为代价）。 如果对您而言按时到达停靠点要比最小化总体解决方案成本更加重要，请选择此设置。 您可能会在以下情况下选择此设置：您要在自己的停靠点会见客户，且不想因为迟到给客户带来不便（另一种方法是使用根本不会出现冲突的硬性时间窗）。假设还要考虑车辆配送 (VRP) 的其他约束，可能无法在它们的时间窗内访问所有停靠点。 在这种情况下，即使选择“高”设置也可能会产生冲突。</para>
 			/// </summary>
 			[GPValue("High")]
-			[Description("High")]
+			[Description("高")]
 			High,
 
 			/// <summary>
-			/// <para>Medium—The solver searches for a balance between meeting time windows and reducing the overall solution cost. This is the default.</para>
+			/// <para>中—求解程序在满足时间窗和减少总体解决方案成本之间寻求一种平衡。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("Medium")]
-			[Description("Medium")]
+			[Description("中")]
 			Medium,
 
 			/// <summary>
-			/// <para>Low—The solver searches for a solution that minimizes overall travel time, regardless of time windows. Choose this setting if respecting time windows is less important than reducing the overall solution cost. You may want to use this setting if you have a growing backlog of service requests. For the purpose of servicing more orders in a day and reducing the backlog, you can choose this setting even though customers may be inconvenienced with your fleet&apos;s late arrivals.</para>
+			/// <para>低—求解程序需要寻求最小化总体行驶时间的解决方案（不考虑时间窗）。 如果减少您的总体解决方案成本要比满足时间窗更重要，请选择此设置。 如果积压的服务请求逐渐增多，则可以使用此设置。 如果为了在当日内为更多的停靠点提供服务并减少积压的订单，则可选择此设置，即使车队迟到会为客户带来不便。</para>
 			/// </summary>
 			[GPValue("Low")]
-			[Description("Low")]
+			[Description("低")]
 			Low,
 
 		}
@@ -441,24 +441,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum ExcessTransitFactorEnum 
 		{
 			/// <summary>
-			/// <para>High—The solver searches for a solution with less excess transit time between paired orders at the expense of increasing the overall travel costs. Use this setting if you are transporting people between paired orders and you want to shorten their ride time. This is characteristic of taxi services.</para>
+			/// <para>高—求解程序需要寻求需求点对之间超出行驶时间较短的解决方案（以增加总体行驶成本为代价）。 如果您正在停靠点对间运载乘客并且想缩短他们的乘车时间，请使用此设置。 这是出租车服务的特征。</para>
 			/// </summary>
 			[GPValue("High")]
-			[Description("High")]
+			[Description("高")]
 			High,
 
 			/// <summary>
-			/// <para>Medium—The solver searches for a balance between reducing excess transit time and reducing the overall solution cost. This is the default.</para>
+			/// <para>中—求解程序在减少超出行驶时间和减少总体解决方案成本之间寻求一种平衡。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("Medium")]
-			[Description("Medium")]
+			[Description("中")]
 			Medium,
 
 			/// <summary>
-			/// <para>Low—The solver searches for a solution that minimizes overall solution cost, regardless of excess transit time. This setting is commonly used with courier services. Since couriers transport packages as opposed to people, ride time is not as important. Using this setting allows couriers to service paired orders in the proper sequence and minimize the overall solution cost.</para>
+			/// <para>低—求解程序需要寻求最小化总体解决方案成本的结果（不考虑额外行驶时间）。 此设置通常应用于快递服务。 由于快递运输的是包裹而不是人员，因此行驶时间并不十分重要。 使用此设置时，快递可以按照最适合的顺序为停靠点对提供服务，并且总体解决方案成本最低。</para>
 			/// </summary>
 			[GPValue("Low")]
-			[Description("Low")]
+			[Description("低")]
 			Low,
 
 		}
@@ -469,14 +469,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum GenerateDirectionsOnSolveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Turn-by-turn directions will be generated on solve. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DIRECTIONS")]
 			DIRECTIONS,
 
 			/// <summary>
-			/// <para>Unchecked—Turn-by-turn directions will not be generated on solve.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DIRECTIONS")]
@@ -490,14 +490,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum SpatialClusteringEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The orders assigned to an individual route will be spatially clustered. Clustering orders tends to keep routes in smaller areas and reduce how often route lines intersect one another; yet, clustering can increase overall travel times. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLUSTER")]
 			CLUSTER,
 
 			/// <summary>
-			/// <para>Unchecked—The solver will not prioritize spatially clustering orders and the route lines may intersect. Use this option if route zones are specified.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CLUSTER")]
@@ -511,14 +511,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum IgnoreInvalidLocationsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Invalid input locations will be ignored so that the analysis will succeed using only valid locations.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SKIP")]
 			SKIP,
 
 			/// <summary>
-			/// <para>Unchecked—Invalid locations will not be ignored and will cause the analysis to fail. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("HALT")]

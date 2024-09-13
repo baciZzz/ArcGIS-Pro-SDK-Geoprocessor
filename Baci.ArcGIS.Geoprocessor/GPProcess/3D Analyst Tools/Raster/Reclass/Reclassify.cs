@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Reclassify</para>
-	/// <para>Reclassify</para>
-	/// <para>Reclassifies (or changes) the values in a raster.</para>
+	/// <para>重分类</para>
+	/// <para>重分类（或更改）栅格中的值。</para>
 	/// </summary>
 	public class Reclassify : AbstractGPProcess
 	{
@@ -21,26 +21,26 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster to be reclassified.</para>
+		/// <para>要进行重分类的输入栅格。</para>
 		/// </param>
 		/// <param name="ReclassField">
 		/// <para>Reclass field</para>
-		/// <para>Field denoting the values that will be reclassified.</para>
+		/// <para>表示要进行重分类的值的字段。</para>
 		/// </param>
 		/// <param name="Remap">
 		/// <para>Reclassification</para>
-		/// <para>A remap table that defines how the values will be reclassified. Working with the table and it options are as follows:</para>
-		/// <para>The values of the input raster can be classified as ranges of values or as individual values. The table will be displayed with Start and End values or single unique values, respectively. If the input is a layer in Contents, it will import the unique values or classified breaks of the symbology.</para>
-		/// <para>Specify the New value that will be assigned in the output raster. Only integer values are supported.</para>
-		/// <para>Use the Classify or Unique options to generate a remap table based on the values of the input raster. The Classify option opens a dialog and allow you to specify a method from one of the Data classification methods and number of classes. The Unique option will populate the remap table using the unique values from the input dataset.</para>
-		/// <para>The Reverse New Values option resorts the new values list (for example, 1,2,3 becomes 3,2,1).</para>
-		/// <para>To modify the table, new entries can be added by typing in the empty cells in the table and pressing the Enter key. This will validate the new entry and create a new, empty row for subsequent input. You can delete rows by selecting one or many rows and pressing the Delete key.</para>
-		/// <para>Use the load and save options to save a remap for later use and apply it to other input data or for quickly repeating an analysis.</para>
+		/// <para>用于定义值的重分类方式的重映射表。 使用该表，其选项如下所示：</para>
+		/// <para>可将输入栅格的值分类为值范围或单个值。 该表将分别以开始值、结束值或单个唯一值进行显示。 如果输入是内容中的图层，它将导入符号系统的唯一值或分类中断。</para>
+		/// <para>指定将在输出栅格中分配的新值。 只支持整数值。</para>
+		/// <para>使用分类或唯一选项根据输入栅格中的值生成重映射表。 分类选项将打开一个对话框，并允许您根据其中一种数据分类方法和类数量指定一种方法。 唯一选项将使用输入数据集中的唯一值来填充重映射表。</para>
+		/// <para>对新值取反选项对新值列表反向排序（例如 1,2,3 重排序为 3,2,1）。</para>
+		/// <para>如果要对表进行修改，可以在表的空白单元格中进行输入以添加新条目，然后按 Enter 键。 此操作将验证新条目并为后续输入创建一个新的空行。 要删除行，可以选中一行或多行，然后按 Delete 键。</para>
+		/// <para>使用加载选项和保存选项可以保存重映射以供日后使用，并可将其用于其他输入数据或用于快速重复某一分析。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output reclassified raster.</para>
-		/// <para>The output will always be of integer type.</para>
+		/// <para>输出重分类栅格。</para>
+		/// <para>输出将始终为整型。</para>
 		/// </param>
 		public Reclassify(object InRaster, object ReclassField, object Remap, object OutRaster)
 		{
@@ -51,14 +51,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Reclassify</para>
+		/// <para>Tool Display Name : 重分类</para>
 		/// </summary>
-		public override string DisplayName() => "Reclassify";
+		public override string DisplayName() => "重分类";
 
 		/// <summary>
-		/// <para>Tool Name : Reclassify</para>
+		/// <para>Tool Name : 重分类</para>
 		/// </summary>
-		public override string ToolName() => "Reclassify";
+		public override string ToolName() => "重分类";
 
 		/// <summary>
 		/// <para>Tool Excute Name : 3d.Reclassify</para>
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster to be reclassified.</para>
+		/// <para>要进行重分类的输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Reclass field</para>
-		/// <para>Field denoting the values that will be reclassified.</para>
+		/// <para>表示要进行重分类的值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -109,13 +109,13 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Reclassification</para>
-		/// <para>A remap table that defines how the values will be reclassified. Working with the table and it options are as follows:</para>
-		/// <para>The values of the input raster can be classified as ranges of values or as individual values. The table will be displayed with Start and End values or single unique values, respectively. If the input is a layer in Contents, it will import the unique values or classified breaks of the symbology.</para>
-		/// <para>Specify the New value that will be assigned in the output raster. Only integer values are supported.</para>
-		/// <para>Use the Classify or Unique options to generate a remap table based on the values of the input raster. The Classify option opens a dialog and allow you to specify a method from one of the Data classification methods and number of classes. The Unique option will populate the remap table using the unique values from the input dataset.</para>
-		/// <para>The Reverse New Values option resorts the new values list (for example, 1,2,3 becomes 3,2,1).</para>
-		/// <para>To modify the table, new entries can be added by typing in the empty cells in the table and pressing the Enter key. This will validate the new entry and create a new, empty row for subsequent input. You can delete rows by selecting one or many rows and pressing the Delete key.</para>
-		/// <para>Use the load and save options to save a remap for later use and apply it to other input data or for quickly repeating an analysis.</para>
+		/// <para>用于定义值的重分类方式的重映射表。 使用该表，其选项如下所示：</para>
+		/// <para>可将输入栅格的值分类为值范围或单个值。 该表将分别以开始值、结束值或单个唯一值进行显示。 如果输入是内容中的图层，它将导入符号系统的唯一值或分类中断。</para>
+		/// <para>指定将在输出栅格中分配的新值。 只支持整数值。</para>
+		/// <para>使用分类或唯一选项根据输入栅格中的值生成重映射表。 分类选项将打开一个对话框，并允许您根据其中一种数据分类方法和类数量指定一种方法。 唯一选项将使用输入数据集中的唯一值来填充重映射表。</para>
+		/// <para>对新值取反选项对新值列表反向排序（例如 1,2,3 重排序为 3,2,1）。</para>
+		/// <para>如果要对表进行修改，可以在表的空白单元格中进行输入以添加新条目，然后按 Enter 键。 此操作将验证新条目并为后续输入创建一个新的空行。 要删除行，可以选中一行或多行，然后按 Delete 键。</para>
+		/// <para>使用加载选项和保存选项可以保存重映射以供日后使用，并可将其用于其他输入数据或用于快速重复某一分析。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSARemap()]
@@ -125,8 +125,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output reclassified raster.</para>
-		/// <para>The output will always be of integer type.</para>
+		/// <para>输出重分类栅格。</para>
+		/// <para>输出将始终为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -134,9 +134,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Change missing values to NoData</para>
-		/// <para>Denotes whether missing values in the reclass table retain their value or get mapped to NoData.</para>
-		/// <para>Unchecked—Signifies that if any cell location on the input raster contains a value that is not present or reclassed in a remap table, the value should remain intact and be written for that location to the output raster. This is the default.</para>
-		/// <para>Checked—Signifies that if any cell location on the input raster contains a value that is not present or reclassed in a remap table, the value will be reclassed to NoData for that location on the output raster.</para>
+		/// <para>指示重分类表中的缺失值是保持不变还是映射为 NoData。</para>
+		/// <para>未选中 - 表明如果输入栅格的任何像元位置含有未在重映射表中出现或重分类的值，则该值应保持不变，并且应写入输出栅格中的相应位置。 这是默认设置。</para>
+		/// <para>选中 - 表明如果输入栅格的任何像元位置含有未在重映射表中出现或重分类的值，则该值将在输出栅格中的相应位置被重分类为 NoData。</para>
 		/// <para><see cref="MissingValuesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -161,14 +161,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum MissingValuesEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Signifies that if any cell location on the input raster contains a value that is not present or reclassed in a remap table, the value should remain intact and be written for that location to the output raster. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DATA")]
 			DATA,
 
 			/// <summary>
-			/// <para>Checked—Signifies that if any cell location on the input raster contains a value that is not present or reclassed in a remap table, the value will be reclassed to NoData for that location on the output raster.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("NODATA")]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Empirical Bayesian Kriging</para>
-	/// <para>Empirical Bayesian Kriging</para>
-	/// <para>Empirical Bayesian kriging is an interpolation method that accounts for the error in estimating the underlying semivariogram through repeated simulations.</para>
+	/// <para>经验贝叶斯克里金法</para>
+	/// <para>经验贝叶斯克里金法是一种插值方法，可通过反复模拟，对基础半变异函数估算中的错误进行说明。</para>
 	/// </summary>
 	public class EmpiricalBayesianKriging : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input features</para>
-		/// <para>The input point features containing the z-values to be interpolated.</para>
+		/// <para>包含要插入的 z 值的输入点要素。</para>
 		/// </param>
 		/// <param name="ZField">
 		/// <para>Z value field</para>
-		/// <para>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contain z-values or m-values.</para>
+		/// <para>表示每个点的高度或量级值的字段。如果输入要素包含 z 值或 m 值，则该字段可以是数值字段或 Shape 字段。</para>
 		/// </param>
 		public EmpiricalBayesianKriging(object InFeatures, object ZField)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Empirical Bayesian Kriging</para>
+		/// <para>Tool Display Name : 经验贝叶斯克里金法</para>
 		/// </summary>
-		public override string DisplayName() => "Empirical Bayesian Kriging";
+		public override string DisplayName() => "经验贝叶斯克里金法";
 
 		/// <summary>
 		/// <para>Tool Name : EmpiricalBayesianKriging</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input features</para>
-		/// <para>The input point features containing the z-values to be interpolated.</para>
+		/// <para>包含要插入的 z 值的输入点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Z value field</para>
-		/// <para>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contain z-values or m-values.</para>
+		/// <para>表示每个点的高度或量级值的字段。如果输入要素包含 z 值或 m 值，则该字段可以是数值字段或 Shape 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output geostatistical layer</para>
-		/// <para>The geostatistical layer produced. This layer is required output only if no output raster is requested.</para>
+		/// <para>生成的地统计图层。只有未请求任何输出栅格时才需要输出该图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGALayer()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster. This raster is required output only if no output geostatistical layer is requested.</para>
+		/// <para>输出栅格。只有未请求任何输出地统计图层时才需要输出该栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -106,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>The cell size at which the output raster will be created.</para>
-		/// <para>This value can be explicitly set in the Environments by the Cell Size parameter.</para>
-		/// <para>If not set, it is the shorter of the width or the height of the extent of the input point features, in the input spatial reference, divided by 250.</para>
+		/// <para>要创建的输出栅格的像元大小。</para>
+		/// <para>可以通过像元大小参数在环境中明确设置该值。</para>
+		/// <para>如果未设置，则该值为输入空间参考中输入点要素范围的宽度与高度中的较小值除以 250。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -120,10 +120,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Data transformation type</para>
-		/// <para>Type of transformation to be applied to the input data.</para>
-		/// <para>None—Do not apply any transformation. This is the default.</para>
-		/// <para>Empirical—Multiplicative Skewing transformation with Empirical base function.</para>
-		/// <para>Log empirical—Multiplicative Skewing transformation with Log Empirical base function. All data values must be positive. If this option is chosen, all predictions will be positive.</para>
+		/// <para>将应用到输入数据的变换类型。</para>
+		/// <para>无—不应用任何变换。这是默认设置。</para>
+		/// <para>经验法—使用“经验”基本函数进行“乘偏斜”变换。</para>
+		/// <para>对数经验—使用“对数经验”基本函数进行“乘偏斜”变换。所有数据值必须为正。如果选择此选项，则所有预测均为正。</para>
 		/// <para><see cref="TransformationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Maximum number of points in each local model</para>
-		/// <para>The input data will automatically be divided into groups that do not have more than this number of points.</para>
+		/// <para>输入数据将自动分组，每一组的点数不大于这一数目。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Local model area overlap factor</para>
-		/// <para>A factor representing the degree of overlap between local models (also called subsets). Each input point can fall into several subsets, and the overlap factor specifies the average number of subsets that each point will fall into. A high value of the overlap factor makes the output surface smoother, but it also increases processing time. Typical values vary between 0.01 and 5.</para>
+		/// <para>表示本地模型（也称子集）之间重叠程度的系数。每个输入点均可落入多个子集中，重叠系数指定了各点将落入的子集的平均数。重叠系数值越高，输出表面就越平滑，但处理时间也越长。典型值在 0.01 到 5 范围内变化。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Number of simulated semivariograms</para>
-		/// <para>The number of simulated semivariograms of each local model.</para>
+		/// <para>每个本地模型模拟的半变异函数的数量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -163,20 +163,20 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Search neighborhood</para>
-		/// <para>Defines which surrounding points will be used to control the output. Standard Circular is the default.</para>
-		/// <para>Standard Circular</para>
-		/// <para>Max neighbors—The maximum number of neighbors that will be used to estimate the value at the unknown location.</para>
-		/// <para>Min neighbors—The minimum number of neighbors that will be used to estimate the value at the unknown location.</para>
-		/// <para>Sector Type—The geometry of the neighborhood.</para>
-		/// <para>One sector—Single ellipse.</para>
-		/// <para>Four sectors—Ellipse divided into four sectors.</para>
-		/// <para>Four sectors shifted—Ellipse divided into four sectors and shifted 45 degrees.</para>
-		/// <para>Eight sectors—Ellipse divided into eight sectors.</para>
-		/// <para>Angle—The angle of rotation for the axis (circle) or semimajor axis (ellipse) of the moving window.</para>
-		/// <para>Radius—The length of the radius of the search circle.</para>
-		/// <para>Smooth Circular</para>
-		/// <para>Smoothing factor—The Smooth Interpolation option creates an outer ellipse and an inner ellipse at a distance equal to the Major Semiaxis multiplied by the Smoothing factor. The points that fall outside the smallest ellipse but inside the largest ellipse are weighted using a sigmoidal function with a value between zero and one.</para>
-		/// <para>Radius—The length of the radius of the search circle.</para>
+		/// <para>定义用于控制输出的周围点。“标准圆形”为默认选项。</para>
+		/// <para>标准圆形</para>
+		/// <para>最大邻点数 - 用于估计未知位置值的最大相邻数。</para>
+		/// <para>最小邻点数 - 用于估计未知位置值的最小相邻数。</para>
+		/// <para>分区类型 - 邻域的几何。</para>
+		/// <para>单扇区 - 单个椭圆。</para>
+		/// <para>四扇区 - 分为四个扇区的椭圆。</para>
+		/// <para>偏移四扇区 - 分为四个扇区且偏移 45 度的椭圆。</para>
+		/// <para>八扇区 - 分为八个扇区的椭圆。</para>
+		/// <para>角度 - 移动窗口的轴（圆）或长半轴（椭圆）的旋转角度。</para>
+		/// <para>半径 - 搜索圆的半径长度。</para>
+		/// <para>平滑圆形</para>
+		/// <para>平滑系数 -“平滑插值”选项可在“长半轴”与“平滑系数”相乘所得的距离处创建一个外椭圆和一个内椭圆。使用反曲线函数可对位于最小椭圆外、最大椭圆内的点加权，加权值介于 0 和 1 之间。</para>
+		/// <para>半径 - 搜索圆的半径长度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGASearchNeighborhood()]
@@ -187,11 +187,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output surface type</para>
-		/// <para>Surface type to store the interpolation results.</para>
-		/// <para>Prediction—Prediction surfaces are produced from the interpolated values.</para>
-		/// <para>Standard error of prediction— Standard Error surfaces are produced from the standard errors of the interpolated values.</para>
-		/// <para>Probability—Probability surface of values exceeding or not exceeding a certain threshold.</para>
-		/// <para>Quantile—Quantile surface predicting the specified quantile of the prediction distribution.</para>
+		/// <para>用于存储插值结果的表面类型。</para>
+		/// <para>预测—可通过内插值生成的预测表面。</para>
+		/// <para>预测的标准误差— 标准误差表面可通过内插值的标准误差生成。</para>
+		/// <para>概率—值超过或未超过某一特定阈值的概率曲面。</para>
+		/// <para>分位数—可对预测分布指定分位数进行预测的分位数表面。</para>
 		/// <para><see cref="OutputTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -202,7 +202,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Quantile value</para>
-		/// <para>The quantile value for which the output raster will be generated.</para>
+		/// <para>用于生成输出栅格的分位数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -212,9 +212,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Probability threshold type</para>
-		/// <para>Specifies whether to calculate the probability of exceeding or not exceeding the specified threshold.</para>
-		/// <para>Exceed—Probability values exceed the threshold. This is the default.</para>
-		/// <para>Not exceed—Probability values will not exceed the threshold.</para>
+		/// <para>指定是否计算超过或未超过指定阈值的概率。</para>
+		/// <para>超出—概率值超过了阈值。这是默认设置。</para>
+		/// <para>未超出—概率值将不会超过阈值。</para>
 		/// <para><see cref="ThresholdTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -225,7 +225,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Probability threshold</para>
-		/// <para>The probability threshold value. If left empty, the median (50th quantile) of the input data will be used.</para>
+		/// <para>概率阈值。如果留空，将使用输入数据的中值（第 50 个分位数）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -234,19 +234,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Semivariogram model type</para>
-		/// <para>The semivariogram model that will be used for the interpolation.</para>
-		/// <para>Power—Power semivariogram</para>
-		/// <para>Linear—Linear semivariogram</para>
-		/// <para>Thin plate spline—Thin Plate Spline semivariogram</para>
-		/// <para>Exponential—Exponential semivariogram</para>
-		/// <para>Exponential detrended—Exponential semivariogram with first order trend removal</para>
-		/// <para>Whittle—Whittle semivariogram</para>
-		/// <para>Whittle detrended—Whittle semivariogram with first order trend removal</para>
-		/// <para>K-Bessel—K-Bessel semivariogram</para>
-		/// <para>K-Bessel detrended—K-Bessel semivariogram with first order trend removal</para>
-		/// <para>The available choices depend on the value of the Data transformation type parameter.</para>
-		/// <para>If the transformation type is set to None, only the first three semivariograms are available. If the type is Empirical or Log empirical, the last six semivariograms are available.</para>
-		/// <para>For more information about choosing an appropriate semivariogram for your data, see the topic What is Empirical Bayesian Kriging.</para>
+		/// <para>用于插值的半变异函数模型。</para>
+		/// <para>幂—幂半变异函数</para>
+		/// <para>线性—线性半变异函数</para>
+		/// <para>薄板样条函数—薄板样条半变异函数</para>
+		/// <para>指数—指数半变异函数</para>
+		/// <para>去除趋势的指数函数—应用一阶趋势移除的指数半变异函数</para>
+		/// <para>消减函数—消减半变异函数</para>
+		/// <para>去除趋势的消减函数—应用一阶趋势移除的消减半变异函数</para>
+		/// <para>K-Bessel—K-Bessel 半变异函数</para>
+		/// <para>去除趋势的 K-Bessel 函数—应用一阶趋势移除的 K-Bessel 半变异函数</para>
+		/// <para>可用的选择取决于数据变换类型参数的值。</para>
+		/// <para>如果将变换类型设置为 None，那么只有前三个半变异函数可用。如果类型是经验或对数经验，则最后六个半变异函数可用。</para>
+		/// <para>关于为数据选择适当半变异函数的详细信息，请参阅什么是经验贝叶斯克里金法主题。</para>
 		/// <para><see cref="SemivariogramModelTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -271,24 +271,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum TransformationTypeEnum 
 		{
 			/// <summary>
-			/// <para>None—Do not apply any transformation. This is the default.</para>
+			/// <para>无—不应用任何变换。这是默认设置。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 			/// <summary>
-			/// <para>Empirical—Multiplicative Skewing transformation with Empirical base function.</para>
+			/// <para>经验法—使用“经验”基本函数进行“乘偏斜”变换。</para>
 			/// </summary>
 			[GPValue("EMPIRICAL")]
-			[Description("Empirical")]
+			[Description("经验法")]
 			Empirical,
 
 			/// <summary>
-			/// <para>Log empirical—Multiplicative Skewing transformation with Log Empirical base function. All data values must be positive. If this option is chosen, all predictions will be positive.</para>
+			/// <para>对数经验—使用“对数经验”基本函数进行“乘偏斜”变换。所有数据值必须为正。如果选择此选项，则所有预测均为正。</para>
 			/// </summary>
 			[GPValue("LOGEMPIRICAL")]
-			[Description("Log empirical")]
+			[Description("对数经验")]
 			Log_empirical,
 
 		}
@@ -299,31 +299,31 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum OutputTypeEnum 
 		{
 			/// <summary>
-			/// <para>Prediction—Prediction surfaces are produced from the interpolated values.</para>
+			/// <para>预测—可通过内插值生成的预测表面。</para>
 			/// </summary>
 			[GPValue("PREDICTION")]
-			[Description("Prediction")]
+			[Description("预测")]
 			Prediction,
 
 			/// <summary>
-			/// <para>Quantile—Quantile surface predicting the specified quantile of the prediction distribution.</para>
+			/// <para>分位数—可对预测分布指定分位数进行预测的分位数表面。</para>
 			/// </summary>
 			[GPValue("QUANTILE")]
-			[Description("Quantile")]
+			[Description("分位数")]
 			Quantile,
 
 			/// <summary>
-			/// <para>Probability—Probability surface of values exceeding or not exceeding a certain threshold.</para>
+			/// <para>概率—值超过或未超过某一特定阈值的概率曲面。</para>
 			/// </summary>
 			[GPValue("PROBABILITY")]
-			[Description("Probability")]
+			[Description("概率")]
 			Probability,
 
 			/// <summary>
-			/// <para>Standard error of prediction— Standard Error surfaces are produced from the standard errors of the interpolated values.</para>
+			/// <para>预测的标准误差— 标准误差表面可通过内插值的标准误差生成。</para>
 			/// </summary>
 			[GPValue("PREDICTION_STANDARD_ERROR")]
-			[Description("Standard error of prediction")]
+			[Description("预测的标准误差")]
 			Standard_error_of_prediction,
 
 		}
@@ -334,17 +334,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum ThresholdTypeEnum 
 		{
 			/// <summary>
-			/// <para>Exceed—Probability values exceed the threshold. This is the default.</para>
+			/// <para>超出—概率值超过了阈值。这是默认设置。</para>
 			/// </summary>
 			[GPValue("EXCEED")]
-			[Description("Exceed")]
+			[Description("超出")]
 			Exceed,
 
 			/// <summary>
-			/// <para>Not exceed—Probability values will not exceed the threshold.</para>
+			/// <para>未超出—概率值将不会超过阈值。</para>
 			/// </summary>
 			[GPValue("NOT_EXCEED")]
-			[Description("Not exceed")]
+			[Description("未超出")]
 			Not_exceed,
 
 		}
@@ -355,66 +355,66 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum SemivariogramModelTypeEnum 
 		{
 			/// <summary>
-			/// <para>Power—Power semivariogram</para>
+			/// <para>幂—幂半变异函数</para>
 			/// </summary>
 			[GPValue("POWER")]
-			[Description("Power")]
+			[Description("幂")]
 			Power,
 
 			/// <summary>
-			/// <para>Linear—Linear semivariogram</para>
+			/// <para>线性—线性半变异函数</para>
 			/// </summary>
 			[GPValue("LINEAR")]
-			[Description("Linear")]
+			[Description("线性")]
 			Linear,
 
 			/// <summary>
-			/// <para>Thin plate spline—Thin Plate Spline semivariogram</para>
+			/// <para>薄板样条函数—薄板样条半变异函数</para>
 			/// </summary>
 			[GPValue("THIN_PLATE_SPLINE")]
-			[Description("Thin plate spline")]
+			[Description("薄板样条函数")]
 			Thin_plate_spline,
 
 			/// <summary>
-			/// <para>Exponential—Exponential semivariogram</para>
+			/// <para>指数—指数半变异函数</para>
 			/// </summary>
 			[GPValue("EXPONENTIAL")]
-			[Description("Exponential")]
+			[Description("指数")]
 			Exponential,
 
 			/// <summary>
-			/// <para>Exponential detrended—Exponential semivariogram with first order trend removal</para>
+			/// <para>去除趋势的指数函数—应用一阶趋势移除的指数半变异函数</para>
 			/// </summary>
 			[GPValue("EXPONENTIAL_DETRENDED")]
-			[Description("Exponential detrended")]
+			[Description("去除趋势的指数函数")]
 			Exponential_detrended,
 
 			/// <summary>
-			/// <para>Whittle—Whittle semivariogram</para>
+			/// <para>消减函数—消减半变异函数</para>
 			/// </summary>
 			[GPValue("WHITTLE")]
-			[Description("Whittle")]
+			[Description("消减函数")]
 			Whittle,
 
 			/// <summary>
-			/// <para>Whittle detrended—Whittle semivariogram with first order trend removal</para>
+			/// <para>去除趋势的消减函数—应用一阶趋势移除的消减半变异函数</para>
 			/// </summary>
 			[GPValue("WHITTLE_DETRENDED")]
-			[Description("Whittle detrended")]
+			[Description("去除趋势的消减函数")]
 			Whittle_detrended,
 
 			/// <summary>
-			/// <para>K-Bessel—K-Bessel semivariogram</para>
+			/// <para>K-Bessel—K-Bessel 半变异函数</para>
 			/// </summary>
 			[GPValue("K_BESSEL")]
 			[Description("K-Bessel")]
 			K_BESSEL,
 
 			/// <summary>
-			/// <para>K-Bessel detrended—K-Bessel semivariogram with first order trend removal</para>
+			/// <para>去除趋势的 K-Bessel 函数—应用一阶趋势移除的 K-Bessel 半变异函数</para>
 			/// </summary>
 			[GPValue("K_BESSEL_DETRENDED")]
-			[Description("K-Bessel detrended")]
+			[Description("去除趋势的 K-Bessel 函数")]
 			K_BESSEL_DETRENDED,
 
 		}

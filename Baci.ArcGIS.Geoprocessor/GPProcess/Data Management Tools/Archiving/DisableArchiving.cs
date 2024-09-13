@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Disable Archiving</para>
-	/// <para>Disable Archiving</para>
-	/// <para>Disables archiving on a geodatabase feature class, table, or feature dataset.</para>
+	/// <para>禁用存档</para>
+	/// <para>禁用地理数据库要素类、表或要素数据集的存档。</para>
 	/// </summary>
 	public class DisableArchiving : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>The geodatabase feature class, table, or feature dataset for which archiving will be disabled.</para>
+		/// <para>要禁用存档的地理数据库要素类、表或要素数据集。</para>
 		/// </param>
 		public DisableArchiving(object InDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Disable Archiving</para>
+		/// <para>Tool Display Name : 禁用存档</para>
 		/// </summary>
-		public override string DisplayName() => "Disable Archiving";
+		public override string DisplayName() => "禁用存档";
 
 		/// <summary>
 		/// <para>Tool Name : DisableArchiving</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>The geodatabase feature class, table, or feature dataset for which archiving will be disabled.</para>
+		/// <para>要禁用存档的地理数据库要素类、表或要素数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Preserve History Table</para>
-		/// <para>Specifies whether records that are not from the current moment will be preserved. If the table or feature class is versioned, the history table will become available. For nonversioned data, a table or feature class will be created with an appended _h that contains the history information.</para>
-		/// <para>Checked—Records that are not from the current moment will be preserved. This is the default.</para>
-		/// <para>Unchecked—Records that are not from the current moment will not be preserved; they will be deleted.</para>
+		/// <para>指定是否保留非当前时刻的记录。如果表或要素类已版本化，则历史记录表将变为可用状态。对于非版本化数据，将创建包含历史信息的附加 _h 的表或要素类。</para>
+		/// <para>选中 - 保留非当前时刻的记录。这是默认设置。</para>
+		/// <para>未选中 - 系统不会保留非当前时刻的记录；记录将被删除。</para>
 		/// <para><see cref="PreserveHistoryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -107,14 +107,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PreserveHistoryEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Records that are not from the current moment will be preserved. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE")]
 			PRESERVE,
 
 			/// <summary>
-			/// <para>Unchecked—Records that are not from the current moment will not be preserved; they will be deleted.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DELETE")]

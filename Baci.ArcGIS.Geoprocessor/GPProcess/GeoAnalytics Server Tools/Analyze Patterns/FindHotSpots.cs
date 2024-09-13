@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Find Hot Spots</para>
-	/// <para>Find Hot Spots</para>
-	/// <para>Given a set of features, identifies statistically significant hot spots and cold spots using the Getis-Ord Gi* statistic.</para>
+	/// <para>查找热点</para>
+	/// <para>给定一组要素，使用 Getis-Ord Gi* 统计识别具有统计显著性的热点和冷点。</para>
 	/// </summary>
 	public class FindHotSpots : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="PointLayer">
 		/// <para>Point Layer</para>
-		/// <para>The point feature class for which hot spot analysis will be performed.</para>
+		/// <para>将要执行热点分析的点要素类。</para>
 		/// </param>
 		/// <param name="OutputName">
 		/// <para>Output Name</para>
-		/// <para>The name of the output layer with the z-score and p-value results.</para>
+		/// <para>包含 z 得分和 p 值结果的输出图层的名称。</para>
 		/// </param>
 		public FindHotSpots(object PointLayer, object OutputName)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Find Hot Spots</para>
+		/// <para>Tool Display Name : 查找热点</para>
 		/// </summary>
-		public override string DisplayName() => "Find Hot Spots";
+		public override string DisplayName() => "查找热点";
 
 		/// <summary>
 		/// <para>Tool Name : FindHotSpots</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Point Layer</para>
-		/// <para>The point feature class for which hot spot analysis will be performed.</para>
+		/// <para>将要执行热点分析的点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output layer with the z-score and p-value results.</para>
+		/// <para>包含 z 得分和 p 值结果的输出图层的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Bin Size</para>
-		/// <para>The distance interval that represents the bin size and units into which the Point Layer will be aggregated. The distance interval must be a linear unit.</para>
+		/// <para>表示点图层将聚合到的条柱大小和单位的距离间隔。距离间隔必须为线性单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Neighborhood Size</para>
-		/// <para>The spatial extent of the analysis neighborhood. This value determines which features are analyzed together to assess local clustering.</para>
+		/// <para>分析邻域的空间范围。该值用于确定将哪些要素一起用于分析以便访问局部聚类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Step Interval</para>
-		/// <para>The interval that will be used for the time step. This parameter is only used if time is enabled for Point Layer.</para>
+		/// <para>将用于时间步长的间隔。 此参数仅在启用了点图层的时间时使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -116,10 +116,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Step Alignment</para>
-		/// <para>Specifies how time steps will be aligned. This parameter is only available if the input points are time enabled and represent an instant in time.</para>
-		/// <para>End time—Time steps will align to the last time event and aggregate back in time.</para>
-		/// <para>Start time—Time steps will align to the first time event and aggregate forward in time. This is the default.</para>
-		/// <para>Reference time—Time steps will align to a specified date or time. If all points in the input features have a time stamp larger than the specified reference time (or it falls exactly on the start time of the input features), the time-step interval will begin with that reference time and aggregate forward in time (as occurs with the Start time alignment). If all points in the input features have a time stamp smaller than the specified reference time (or it falls exactly on the end time of the input features), the time-step interval will end with that reference time and aggregate backward in time (as occurs with the End time alignment). If the specified reference time is in the middle of the time extent of the data, a time-step interval will be created ending with the reference time provided (as occurs with the End time alignment); additional intervals will be created both before and after the reference time until the full time extent of the data is covered.</para>
+		/// <para>指定时间步长对齐的方式。只有在输入点启用了时间且表示时刻时，此参数才可用。</para>
+		/// <para>结束时间—时间步长将与最后一次时间事件对齐，并向后聚合时间。</para>
+		/// <para>开始时间—时间步长将与第一次时间事件对齐，并向前聚合时间。这是默认设置。</para>
+		/// <para>参考时间—时间步长将与指定日期或时间对齐。如果输入要素中的所有点具有的时间戳大于指定的参考时间（或时间戳刚好位于输入要素的开始时间），则时间步长间隔将以该参考时间为起始时间，并向前聚合时间（与使用起始时间对齐的情况相同）。如果输入要素中的所有点具有的时间戳小于指定的参考时间（或时间戳刚好位于输入要素的结束时间），则时间步长间隔将以该参考时间为结束时间，并向后聚合时间（与使用结束时间对齐的情况相同）。如果指定的参考时间处于数据时间范围的中间，则将以提供的参考时间结束创建时间步长间隔（与使用结束时间对齐的情况相同）；其他间隔将在参考时间前后进行创建，直到覆盖数据的完整时间范围为止。</para>
 		/// <para><see cref="TimeStepAlignmentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Time Step Reference</para>
-		/// <para>The time that will be used to align the time steps and time intervals. This parameter is only used if time is enabled for Point Layer.</para>
+		/// <para>将用于对齐时间步长和时间间隔的时间。此参数仅在启用了点图层的时间时使用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -144,9 +144,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Data Store</para>
-		/// <para>Specifies the ArcGIS Data Store where the output will be saved. The default is Spatiotemporal big data store. All results stored in a spatiotemporal big data store will be stored in WGS84. Results stored in a relational data store will maintain their coordinate system.</para>
-		/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
-		/// <para>Relational data store—Output will be stored in a relational data store.</para>
+		/// <para>指定将用于保存输出的 ArcGIS Data Store。 默认设置为时空大数据存储。 在时空大数据存储中存储的所有结果都将存储在 WGS84 中。 在关系数据存储中存储的结果都将保持各自的坐标系。</para>
+		/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
+		/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 		/// <para><see cref="DataStoreEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -172,24 +172,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum TimeStepAlignmentEnum 
 		{
 			/// <summary>
-			/// <para>Start time—Time steps will align to the first time event and aggregate forward in time. This is the default.</para>
+			/// <para>开始时间—时间步长将与第一次时间事件对齐，并向前聚合时间。这是默认设置。</para>
 			/// </summary>
 			[GPValue("START_TIME")]
-			[Description("Start time")]
+			[Description("开始时间")]
 			Start_time,
 
 			/// <summary>
-			/// <para>End time—Time steps will align to the last time event and aggregate back in time.</para>
+			/// <para>结束时间—时间步长将与最后一次时间事件对齐，并向后聚合时间。</para>
 			/// </summary>
 			[GPValue("END_TIME")]
-			[Description("End time")]
+			[Description("结束时间")]
 			End_time,
 
 			/// <summary>
-			/// <para>Reference time—Time steps will align to a specified date or time. If all points in the input features have a time stamp larger than the specified reference time (or it falls exactly on the start time of the input features), the time-step interval will begin with that reference time and aggregate forward in time (as occurs with the Start time alignment). If all points in the input features have a time stamp smaller than the specified reference time (or it falls exactly on the end time of the input features), the time-step interval will end with that reference time and aggregate backward in time (as occurs with the End time alignment). If the specified reference time is in the middle of the time extent of the data, a time-step interval will be created ending with the reference time provided (as occurs with the End time alignment); additional intervals will be created both before and after the reference time until the full time extent of the data is covered.</para>
+			/// <para>参考时间—时间步长将与指定日期或时间对齐。如果输入要素中的所有点具有的时间戳大于指定的参考时间（或时间戳刚好位于输入要素的开始时间），则时间步长间隔将以该参考时间为起始时间，并向前聚合时间（与使用起始时间对齐的情况相同）。如果输入要素中的所有点具有的时间戳小于指定的参考时间（或时间戳刚好位于输入要素的结束时间），则时间步长间隔将以该参考时间为结束时间，并向后聚合时间（与使用结束时间对齐的情况相同）。如果指定的参考时间处于数据时间范围的中间，则将以提供的参考时间结束创建时间步长间隔（与使用结束时间对齐的情况相同）；其他间隔将在参考时间前后进行创建，直到覆盖数据的完整时间范围为止。</para>
 			/// </summary>
 			[GPValue("REFERENCE_TIME")]
-			[Description("Reference time")]
+			[Description("参考时间")]
 			Reference_time,
 
 		}
@@ -200,17 +200,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum DataStoreEnum 
 		{
 			/// <summary>
-			/// <para>Spatiotemporal big data store—Output will be stored in a spatiotemporal big data store. This is the default.</para>
+			/// <para>时空大数据存储—输出将存储在时空大数据存储中。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("SPATIOTEMPORAL_DATA_STORE")]
-			[Description("Spatiotemporal big data store")]
+			[Description("时空大数据存储")]
 			Spatiotemporal_big_data_store,
 
 			/// <summary>
-			/// <para>Relational data store—Output will be stored in a relational data store.</para>
+			/// <para>关系数据存储—输出将存储在关系数据存储中。</para>
 			/// </summary>
 			[GPValue("RELATIONAL_DATA_STORE")]
-			[Description("Relational data store")]
+			[Description("关系数据存储")]
 			Relational_data_store,
 
 		}

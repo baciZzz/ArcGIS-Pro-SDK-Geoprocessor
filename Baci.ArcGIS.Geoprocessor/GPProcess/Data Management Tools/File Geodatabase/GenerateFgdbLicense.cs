@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate File Geodatabase License</para>
-	/// <para>Generate File Geodatabase License</para>
-	/// <para>Generates a license file (.sdlic) for displaying the contents in a licensed file geodatabase created by the Generate Licensed File Geodatabase tool.</para>
+	/// <para>生成文件地理数据库许可</para>
+	/// <para>生成许可文件 (.sdlic) 以显示由生成经许可的文件地理数据库工具创建的经许可的文件地理数据库中的内容。</para>
 	/// </summary>
 	public class GenerateFgdbLicense : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLicDefFile">
 		/// <para>Input License Definition File</para>
-		/// <para>The license definition file (.licdef) created by the Generate Licensed File Geodatabase tool.</para>
+		/// <para>由生成经许可的文件地理数据库工具创建的许可定义文件 (.licdef)。</para>
 		/// </param>
 		/// <param name="OutLicFile">
 		/// <para>Output Data License File</para>
-		/// <para>The license file (.sdlic) for distribution.</para>
+		/// <para>用于分发的许可文件 (.sdlic)。</para>
 		/// </param>
 		public GenerateFgdbLicense(object InLicDefFile, object OutLicFile)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate File Geodatabase License</para>
+		/// <para>Tool Display Name : 生成文件地理数据库许可</para>
 		/// </summary>
-		public override string DisplayName() => "Generate File Geodatabase License";
+		public override string DisplayName() => "生成文件地理数据库许可";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateFgdbLicense</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input License Definition File</para>
-		/// <para>The license definition file (.licdef) created by the Generate Licensed File Geodatabase tool.</para>
+		/// <para>由生成经许可的文件地理数据库工具创建的许可定义文件 (.licdef)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Data License File</para>
-		/// <para>The license file (.sdlic) for distribution.</para>
+		/// <para>用于分发的许可文件 (.sdlic)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -90,9 +90,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Allow Export of Vector Data</para>
-		/// <para>Specifies whether the export of vector data is allowed.</para>
-		/// <para>Vector data cannot be exported—Vector data cannot be exported with the data license file (.sdlic) installed. This is the default.</para>
-		/// <para>Allow export of vector data— Vector data can be exported with the data license file (.sdlic) installed.</para>
+		/// <para>指定是否允许导出矢量数据。</para>
+		/// <para>矢量数据无法导出—无法通过安装数据许可文件 (.sdlic) 导出矢量数据。 这是默认设置。</para>
+		/// <para>允许导出矢量数据—可通过安装数据许可文件 (.sdlic) 导出矢量数据。</para>
 		/// <para><see cref="AllowExportEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Expiration Date</para>
-		/// <para>The expiration date of the data license file, after which the file geodatabase’s contents can no longer be displayed. The default value is empty (blank), which means the data license file will never expire.</para>
+		/// <para>数据许可文件的到期日期，到期后无法再显示文件地理数据库内容。 默认值为空（空白）也就是说数据许可文件永远不会到期。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -125,17 +125,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AllowExportEnum 
 		{
 			/// <summary>
-			/// <para>Vector data cannot be exported—Vector data cannot be exported with the data license file (.sdlic) installed. This is the default.</para>
+			/// <para>矢量数据无法导出—无法通过安装数据许可文件 (.sdlic) 导出矢量数据。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("DENY_EXPORT")]
-			[Description("Vector data cannot be exported")]
+			[Description("矢量数据无法导出")]
 			Vector_data_cannot_be_exported,
 
 			/// <summary>
-			/// <para>Allow export of vector data— Vector data can be exported with the data license file (.sdlic) installed.</para>
+			/// <para>允许导出矢量数据—可通过安装数据许可文件 (.sdlic) 导出矢量数据。</para>
 			/// </summary>
 			[GPValue("ALLOW_EXPORT")]
-			[Description("Allow export of vector data")]
+			[Description("允许导出矢量数据")]
 			Allow_export_of_vector_data,
 
 		}

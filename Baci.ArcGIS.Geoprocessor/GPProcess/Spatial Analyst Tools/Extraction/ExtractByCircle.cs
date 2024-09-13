@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Extract by Circle</para>
-	/// <para>Extract by Circle</para>
-	/// <para>Extracts the cells of a raster based on a circle by specifying the circle's center and radius.</para>
+	/// <para>按圆提取</para>
+	/// <para>通过指定圆心和半径，基于圆提取栅格像元。</para>
 	/// </summary>
 	public class ExtractByCircle : AbstractGPProcess
 	{
@@ -21,21 +21,21 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster from which cells will be extracted.</para>
+		/// <para>从中提取像元的输入栅格。</para>
 		/// </param>
 		/// <param name="CenterPoint">
 		/// <para>Center point</para>
-		/// <para>The center coordinate (x,y) of the circle defining the area to be extracted.</para>
-		/// <para>The coordinates are specified in the same map units as the input raster.</para>
+		/// <para>用于定义提取区域的圆的中心坐标 (x,y)。</para>
+		/// <para>将指定坐标使用与输入栅格相同的地图单位。</para>
 		/// </param>
 		/// <param name="Radius">
 		/// <para>Radius</para>
-		/// <para>The radius of the circle defining the area to be extracted.</para>
-		/// <para>The radius is specified in map units and is in the same units as the input raster.</para>
+		/// <para>用于定义提取区域的圆半径。</para>
+		/// <para>将以地图单位指定半径，并且与输入栅格的单位相同。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster containing the cell values extracted from the input raster.</para>
+		/// <para>包含从输入栅格中提取的像元值的输出栅格。</para>
 		/// </param>
 		public ExtractByCircle(object InRaster, object CenterPoint, object Radius, object OutRaster)
 		{
@@ -46,9 +46,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Extract by Circle</para>
+		/// <para>Tool Display Name : 按圆提取</para>
 		/// </summary>
-		public override string DisplayName() => "Extract by Circle";
+		public override string DisplayName() => "按圆提取";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractByCircle</para>
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster from which cells will be extracted.</para>
+		/// <para>从中提取像元的输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -94,8 +94,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Center point</para>
-		/// <para>The center coordinate (x,y) of the circle defining the area to be extracted.</para>
-		/// <para>The coordinates are specified in the same map units as the input raster.</para>
+		/// <para>用于定义提取区域的圆的中心坐标 (x,y)。</para>
+		/// <para>将指定坐标使用与输入栅格相同的地图单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPPoint()]
@@ -103,8 +103,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Radius</para>
-		/// <para>The radius of the circle defining the area to be extracted.</para>
-		/// <para>The radius is specified in map units and is in the same units as the input raster.</para>
+		/// <para>用于定义提取区域的圆半径。</para>
+		/// <para>将以地图单位指定半径，并且与输入栅格的单位相同。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDouble()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster containing the cell values extracted from the input raster.</para>
+		/// <para>包含从输入栅格中提取的像元值的输出栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -120,9 +120,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Extraction area</para>
-		/// <para>Specifies whether cells inside or outside the input circle will be selected and written to the output raster.</para>
-		/// <para>Inside—Cells inside the input circle will be selected and written to the output raster. All cells outside the circle will receive NoData values on the output raster.</para>
-		/// <para>Outside—Cells outside the input circle will be selected and written to the output raster. All cells inside the circle will receive NoData values on the output raster.</para>
+		/// <para>指定是选择输入圆内部还是外部的像元并将其写入输出栅格。</para>
+		/// <para>内部—将选择输入圆内部的像元并将其写入输出栅格。 圆形区域外部的所有像元都将在输出栅格中获得 NoData 值。</para>
+		/// <para>外部—将选择输入圆外部的像元并将其写入输出栅格。 圆形区域内部的所有像元都将在输出栅格中获得 NoData 值。</para>
 		/// <para><see cref="ExtractionAreaEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -147,17 +147,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ExtractionAreaEnum 
 		{
 			/// <summary>
-			/// <para>Inside—Cells inside the input circle will be selected and written to the output raster. All cells outside the circle will receive NoData values on the output raster.</para>
+			/// <para>内部—将选择输入圆内部的像元并将其写入输出栅格。 圆形区域外部的所有像元都将在输出栅格中获得 NoData 值。</para>
 			/// </summary>
 			[GPValue("INSIDE")]
-			[Description("Inside")]
+			[Description("内部")]
 			Inside,
 
 			/// <summary>
-			/// <para>Outside—Cells outside the input circle will be selected and written to the output raster. All cells inside the circle will receive NoData values on the output raster.</para>
+			/// <para>外部—将选择输入圆外部的像元并将其写入输出栅格。 圆形区域内部的所有像元都将在输出栅格中获得 NoData 值。</para>
 			/// </summary>
 			[GPValue("OUTSIDE")]
-			[Description("Outside")]
+			[Description("外部")]
 			Outside,
 
 		}

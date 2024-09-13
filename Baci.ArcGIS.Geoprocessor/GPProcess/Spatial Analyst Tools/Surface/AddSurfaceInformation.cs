@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Add Surface Information</para>
-	/// <para>Add Surface Information</para>
-	/// <para>Attributes features with statistics derived from a  surface.</para>
+	/// <para>添加表面信息</para>
+	/// <para>将获取自表面的统计数据添加到要素属性中。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,24 +23,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InFeatureClass">
 		/// <para>Input Features</para>
-		/// <para>The point, multipoint, polyline, or polygon features that define the locations for determining one or more surface properties.</para>
+		/// <para>定义位置的点、多点、折线或面要素，用于确定一个或多个表面属性。</para>
 		/// </param>
 		/// <param name="InSurface">
 		/// <para>Input Surface</para>
-		/// <para>The LAS dataset, mosaic, raster, terrain, or TIN surface used for interpolating z-values.</para>
+		/// <para>用于内插 z 值的 LAS 数据集、镶嵌、栅格、terrain 或 TIN 表面。</para>
 		/// </param>
 		/// <param name="OutProperty">
 		/// <para>Output Property</para>
-		/// <para>Specifies the surface elevation properties that will be added to the attribute table of the input feature class.</para>
-		/// <para>Z—The surface z-values interpolated for the x,y-location of each single-point feature will be added.</para>
-		/// <para>Minimum Z—The lowest surface z-values in the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record will be added.</para>
-		/// <para>Maximum Z—The highest surface elevation in the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record will be added.</para>
-		/// <para>Mean Z—The average surface elevation of the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record will be added.</para>
-		/// <para>Surface Area—The 3D surface area for the region defined by each polygon will be added.</para>
-		/// <para>Surface Length—The 3D distance of the line along the surface will be added.</para>
-		/// <para>Minimum Slope—The slope value closest to zero along the line or within the area defined by the polygon will be added.</para>
-		/// <para>Maximum Slope—The highest slope value along the line or within the area defined by the polygon will be added.</para>
-		/// <para>Average Slope—The average slope value along the line or within the area defined by the polygon will be added.</para>
+		/// <para>指定将添加到输入要素类属性表中的表面高程属性。</para>
+		/// <para>Z—将添加针对每个单点要素的 x,y 位置插值的表面 z 值。</para>
+		/// <para>Z 最小值—将添加由面、沿线的长度或多点记录中各点的插值定义的面积中最低的表面 z 值。</para>
+		/// <para>Z 最大值—将添加由面、沿线的长度或多点记录中各点的插值定义的面积中最高的表面高程。</para>
+		/// <para>Z 平均值—将添加由面、沿线的长度或多点记录中各点的插值定义的面积中的平均表面高程。</para>
+		/// <para>表面面积—将添加由每个面定义的区域的 3D 表面区域。</para>
+		/// <para>表面长度—将添加沿表面线的 3D 距离。</para>
+		/// <para>最小坡度—将添加沿线或面定义的区域中的最接近零的坡度值。</para>
+		/// <para>最大坡度—将添加沿线或面定义的区域中的最高坡度值。</para>
+		/// <para>平均坡度—将添加沿线或面定义的区域中的平均坡度值。</para>
 		/// <para><see cref="OutPropertyEnum"/></para>
 		/// </param>
 		public AddSurfaceInformation(object InFeatureClass, object InSurface, object OutProperty)
@@ -51,9 +51,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Surface Information</para>
+		/// <para>Tool Display Name : 添加表面信息</para>
 		/// </summary>
-		public override string DisplayName() => "Add Surface Information";
+		public override string DisplayName() => "添加表面信息";
 
 		/// <summary>
 		/// <para>Tool Name : AddSurfaceInformation</para>
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The point, multipoint, polyline, or polygon features that define the locations for determining one or more surface properties.</para>
+		/// <para>定义位置的点、多点、折线或面要素，用于确定一个或多个表面属性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input Surface</para>
-		/// <para>The LAS dataset, mosaic, raster, terrain, or TIN surface used for interpolating z-values.</para>
+		/// <para>用于内插 z 值的 LAS 数据集、镶嵌、栅格、terrain 或 TIN 表面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -105,16 +105,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output Property</para>
-		/// <para>Specifies the surface elevation properties that will be added to the attribute table of the input feature class.</para>
-		/// <para>Z—The surface z-values interpolated for the x,y-location of each single-point feature will be added.</para>
-		/// <para>Minimum Z—The lowest surface z-values in the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record will be added.</para>
-		/// <para>Maximum Z—The highest surface elevation in the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record will be added.</para>
-		/// <para>Mean Z—The average surface elevation of the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record will be added.</para>
-		/// <para>Surface Area—The 3D surface area for the region defined by each polygon will be added.</para>
-		/// <para>Surface Length—The 3D distance of the line along the surface will be added.</para>
-		/// <para>Minimum Slope—The slope value closest to zero along the line or within the area defined by the polygon will be added.</para>
-		/// <para>Maximum Slope—The highest slope value along the line or within the area defined by the polygon will be added.</para>
-		/// <para>Average Slope—The average slope value along the line or within the area defined by the polygon will be added.</para>
+		/// <para>指定将添加到输入要素类属性表中的表面高程属性。</para>
+		/// <para>Z—将添加针对每个单点要素的 x,y 位置插值的表面 z 值。</para>
+		/// <para>Z 最小值—将添加由面、沿线的长度或多点记录中各点的插值定义的面积中最低的表面 z 值。</para>
+		/// <para>Z 最大值—将添加由面、沿线的长度或多点记录中各点的插值定义的面积中最高的表面高程。</para>
+		/// <para>Z 平均值—将添加由面、沿线的长度或多点记录中各点的插值定义的面积中的平均表面高程。</para>
+		/// <para>表面面积—将添加由每个面定义的区域的 3D 表面区域。</para>
+		/// <para>表面长度—将添加沿表面线的 3D 距离。</para>
+		/// <para>最小坡度—将添加沿线或面定义的区域中的最接近零的坡度值。</para>
+		/// <para>最大坡度—将添加沿线或面定义的区域中的最高坡度值。</para>
+		/// <para>平均坡度—将添加沿线或面定义的区域中的平均坡度值。</para>
 		/// <para><see cref="OutPropertyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -124,14 +124,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>Specifies the interpolation method that will be used to determine information about the surface.</para>
-		/// <para>Bilinear—An interpolation method exclusive to the raster surface which determines cell values from the four nearest cells will be used. This is the only option available for a raster surface.</para>
-		/// <para>Linear— Elevation will be obtained from the plane defined by the triangle that contains the x,y-location of a query point. This is the default interpolation method for TINs, terrains, and LAS datasets.</para>
-		/// <para>Natural Neighbors—Elevation will be obtained by applying area-based weights to the natural neighbors of a query point.</para>
-		/// <para>Conflate Minimum Z— Elevation will be obtained from the smallest z-value found among the natural neighbors of a query point.</para>
-		/// <para>Conflate Maximum Z— Elevation will be obtained from the largest z-value found among the natural neighbors of a query point.</para>
-		/// <para>Conflate Nearest Z— Elevation will be obtained from the nearest value among the natural neighbors of a query point.</para>
-		/// <para>Conflate Z Closest To Mean— Elevation will be obtained from the z-value that is closest to the average of all the natural neighbors of a query point.</para>
+		/// <para>指定将用于确定表面相关信息的插值方法。</para>
+		/// <para>双线性—将使用的插值方法专用于从四个最邻近的像元中确定像元值的栅格表面。 这是为栅格表面提供的唯一选项。</para>
+		/// <para>线性—将根据由包含查询点 x,y 位置的三角形定义的平面获取高程。 此为 TIN、terrain 和 LAS 数据集的默认插值方法。</para>
+		/// <para>自然邻域法—通过将基于区域的权重应用于查询点的自然邻域获取高程。</para>
+		/// <para>合并最小 Z 值—将根据在查询点自然邻域中找到的最小 z 值获取高程。</para>
+		/// <para>合并最大 Z 值—将根据在查询点自然邻域中找到的最大 z 值获取高程。</para>
+		/// <para>合并最近的 Z 值—将根据在查询点自然邻域中找到的最邻近值获取高程。</para>
+		/// <para>合并最接近平均值的 z 值—将根据距查询点所有自然邻域的平均值最近的 z 值获取高程。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Sampling Distance</para>
-		/// <para>The spacing at which z-values will be interpolated. By default, the raster cell size is used when the input surface is a raster, and the natural densification of the triangulated surface is used when the input is a terrain or TIN dataset.</para>
+		/// <para>用于内插 z 值的间距。 默认情况下，如果输入表面是栅格，则使用栅格像元大小；如果输入是 terrain 或 TIN 数据集，则使用三角化网格面的自然增密。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Z Factor</para>
-		/// <para>The factor by which z-values will be multiplied. This is typically used to convert z linear units to match x,y linear units. The default is 1, which leaves elevation values unchanged. This parameter is not available if the spatial reference of the input surface has a z datum with a specified linear unit.</para>
+		/// <para>Z 值将乘上的系数。 此值通常用于转换 z 线性单位来匹配 x,y 线性单位。 默认值为 1，此时高程值保持不变。 如果输入表面的空间参考具有已指定线性单位的 z 基准，则此参数不可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -157,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
-		/// <para>The z-tolerance or window-size resolution of the terrain pyramid level that will be used. The default is 0, or full resolution.</para>
+		/// <para>将使用 terrain 金字塔等级的 z 容差或窗口大小分辨率。 默认值为 0，或全分辨率。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -165,8 +165,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Noise Filtering</para>
-		/// <para>Exclude portions of the surface that are potentially characterized by anomalous measurements from contributing to slope calculations. Other properties are not affected by this parameter.</para>
-		/// <para>Line features offer a length filter in which line segments with 3D lengths that are shorter than the specified value will be excluded from slope calculations. Polygon features offer an area filter in which polygons covering a surface area smaller than the specified value will be excluded.</para>
+		/// <para>排除以异常测量值为特征的部分表面参与到坡度计算过程中。 其他属性不受此参数影响。</para>
+		/// <para>线要素提供长度过滤器，其中 3D 长度短于指定值的线段将在坡度计算中被排除。 面要素提供面积过滤器，将排除表面面积小于指定值的面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -196,66 +196,66 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum OutPropertyEnum 
 		{
 			/// <summary>
-			/// <para>Z—The surface z-values interpolated for the x,y-location of each single-point feature will be added.</para>
+			/// <para>Z—将添加针对每个单点要素的 x,y 位置插值的表面 z 值。</para>
 			/// </summary>
 			[GPValue("Z")]
 			[Description("Z")]
 			Z,
 
 			/// <summary>
-			/// <para>Minimum Z—The lowest surface z-values in the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record will be added.</para>
+			/// <para>Z 最小值—将添加由面、沿线的长度或多点记录中各点的插值定义的面积中最低的表面 z 值。</para>
 			/// </summary>
 			[GPValue("Z_MIN")]
-			[Description("Minimum Z")]
+			[Description("Z 最小值")]
 			Minimum_Z,
 
 			/// <summary>
-			/// <para>Maximum Z—The highest surface elevation in the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record will be added.</para>
+			/// <para>Z 最大值—将添加由面、沿线的长度或多点记录中各点的插值定义的面积中最高的表面高程。</para>
 			/// </summary>
 			[GPValue("Z_MAX")]
-			[Description("Maximum Z")]
+			[Description("Z 最大值")]
 			Maximum_Z,
 
 			/// <summary>
-			/// <para>Mean Z—The average surface elevation of the area defined by the polygon, along the length of a line, or among the interpolated values for points in a multipoint record will be added.</para>
+			/// <para>Z 平均值—将添加由面、沿线的长度或多点记录中各点的插值定义的面积中的平均表面高程。</para>
 			/// </summary>
 			[GPValue("Z_MEAN")]
-			[Description("Mean Z")]
+			[Description("Z 平均值")]
 			Mean_Z,
 
 			/// <summary>
-			/// <para>Surface Length—The 3D distance of the line along the surface will be added.</para>
+			/// <para>表面长度—将添加沿表面线的 3D 距离。</para>
 			/// </summary>
 			[GPValue("SURFACE_LENGTH")]
-			[Description("Surface Length")]
+			[Description("表面长度")]
 			Surface_Length,
 
 			/// <summary>
-			/// <para>Surface Area—The 3D surface area for the region defined by each polygon will be added.</para>
+			/// <para>表面面积—将添加由每个面定义的区域的 3D 表面区域。</para>
 			/// </summary>
 			[GPValue("SURFACE_AREA")]
-			[Description("Surface Area")]
+			[Description("表面面积")]
 			Surface_Area,
 
 			/// <summary>
-			/// <para>Minimum Slope—The slope value closest to zero along the line or within the area defined by the polygon will be added.</para>
+			/// <para>最小坡度—将添加沿线或面定义的区域中的最接近零的坡度值。</para>
 			/// </summary>
 			[GPValue("MIN_SLOPE")]
-			[Description("Minimum Slope")]
+			[Description("最小坡度")]
 			Minimum_Slope,
 
 			/// <summary>
-			/// <para>Maximum Slope—The highest slope value along the line or within the area defined by the polygon will be added.</para>
+			/// <para>最大坡度—将添加沿线或面定义的区域中的最高坡度值。</para>
 			/// </summary>
 			[GPValue("MAX_SLOPE")]
-			[Description("Maximum Slope")]
+			[Description("最大坡度")]
 			Maximum_Slope,
 
 			/// <summary>
-			/// <para>Average Slope—The average slope value along the line or within the area defined by the polygon will be added.</para>
+			/// <para>平均坡度—将添加沿线或面定义的区域中的平均坡度值。</para>
 			/// </summary>
 			[GPValue("AVG_SLOPE")]
-			[Description("Average Slope")]
+			[Description("平均坡度")]
 			Average_Slope,
 
 		}
@@ -266,52 +266,52 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Linear— Elevation will be obtained from the plane defined by the triangle that contains the x,y-location of a query point. This is the default interpolation method for TINs, terrains, and LAS datasets.</para>
+			/// <para>线性—将根据由包含查询点 x,y 位置的三角形定义的平面获取高程。 此为 TIN、terrain 和 LAS 数据集的默认插值方法。</para>
 			/// </summary>
 			[GPValue("LINEAR")]
-			[Description("Linear")]
+			[Description("线性")]
 			Linear,
 
 			/// <summary>
-			/// <para>Natural Neighbors—Elevation will be obtained by applying area-based weights to the natural neighbors of a query point.</para>
+			/// <para>自然邻域法—通过将基于区域的权重应用于查询点的自然邻域获取高程。</para>
 			/// </summary>
 			[GPValue("NATURAL_NEIGHBORS")]
-			[Description("Natural Neighbors")]
+			[Description("自然邻域法")]
 			Natural_Neighbors,
 
 			/// <summary>
-			/// <para>Conflate Minimum Z— Elevation will be obtained from the smallest z-value found among the natural neighbors of a query point.</para>
+			/// <para>合并最小 Z 值—将根据在查询点自然邻域中找到的最小 z 值获取高程。</para>
 			/// </summary>
 			[GPValue("CONFLATE_ZMIN")]
-			[Description("Conflate Minimum Z")]
+			[Description("合并最小 Z 值")]
 			Conflate_Minimum_Z,
 
 			/// <summary>
-			/// <para>Conflate Maximum Z— Elevation will be obtained from the largest z-value found among the natural neighbors of a query point.</para>
+			/// <para>合并最大 Z 值—将根据在查询点自然邻域中找到的最大 z 值获取高程。</para>
 			/// </summary>
 			[GPValue("CONFLATE_ZMAX")]
-			[Description("Conflate Maximum Z")]
+			[Description("合并最大 Z 值")]
 			Conflate_Maximum_Z,
 
 			/// <summary>
-			/// <para>Conflate Nearest Z— Elevation will be obtained from the nearest value among the natural neighbors of a query point.</para>
+			/// <para>合并最近的 Z 值—将根据在查询点自然邻域中找到的最邻近值获取高程。</para>
 			/// </summary>
 			[GPValue("CONFLATE_NEAREST")]
-			[Description("Conflate Nearest Z")]
+			[Description("合并最近的 Z 值")]
 			Conflate_Nearest_Z,
 
 			/// <summary>
-			/// <para>Conflate Z Closest To Mean— Elevation will be obtained from the z-value that is closest to the average of all the natural neighbors of a query point.</para>
+			/// <para>合并最接近平均值的 z 值—将根据距查询点所有自然邻域的平均值最近的 z 值获取高程。</para>
 			/// </summary>
 			[GPValue("CONFLATE_CLOSEST_TO_MEAN")]
-			[Description("Conflate Z Closest To Mean")]
+			[Description("合并最接近平均值的 z 值")]
 			Conflate_Z_Closest_To_Mean,
 
 			/// <summary>
-			/// <para>Bilinear—An interpolation method exclusive to the raster surface which determines cell values from the four nearest cells will be used. This is the only option available for a raster surface.</para>
+			/// <para>双线性—将使用的插值方法专用于从四个最邻近的像元中确定像元值的栅格表面。 这是为栅格表面提供的唯一选项。</para>
 			/// </summary>
 			[GPValue("BILINEAR")]
-			[Description("Bilinear")]
+			[Description("双线性")]
 			Bilinear,
 
 		}

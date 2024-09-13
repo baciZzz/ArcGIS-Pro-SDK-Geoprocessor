@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Video Multiplexer</para>
-	/// <para>Video Multiplexer</para>
-	/// <para>Creates a video file that combines an archived video stream file and an associated metadata file synchronized by a time stamp.</para>
+	/// <para>视频多路复用器</para>
+	/// <para>创建一个视频文件，从而将存档视频流文件和按照时间戳同步的关联元数据文件相结合。</para>
 	/// </summary>
 	public class VideoMultiplexer : AbstractGPProcess
 	{
@@ -21,20 +21,20 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InVideoFile">
 		/// <para>Input Video File</para>
-		/// <para>The input video file that will be converted to a FMV-compliant video file.</para>
-		/// <para>The following video file types are supported: .avi (supports H.264, not H.265), .h264, .mp2, .mp4, .m2ts, .mpeg, .mpeg2, .mpeg4, .mpg, .mpg2, .mpg4, .ps, .ts, and vob.</para>
+		/// <para>将转换为兼容 FMV 的视频文件的输入视频文件。</para>
+		/// <para>支持以下视频文件类型：.avi（支持 H.264，而非 H.265）、.h264、.mp2、.mp4、.m2ts、.mpeg、.mpeg2、.mpeg4、.mpg、.mpg2、.mpg4、.ps、.ts 和 vob。</para>
 		/// </param>
 		/// <param name="MetadataFile">
 		/// <para>Metadata File</para>
-		/// <para>A comma-separated values (CSV) file containing metadata about the video frames for specific times.</para>
-		/// <para>Each column represents one metadata field, and one of the columns must be a time reference. The time reference is Unix Time Stamp (seconds past 1970) multiplied by one million, which is stored as an integer. The time is stored as such so that any instant in time (down to one millionth of a second) can be referenced with an integer. Consequently, a time difference between two entries of 500,000 represents one half of a second in elapsed time.</para>
-		/// <para>The first row contains the field names for the metadata columns. These field names are listed in the FMV_Multiplexer_Field_Mapping_Template.csv file in C:\Program Files\ArcGIS\Pro\Resources\FullMotionVideo, or custom field names can be matched to their corresponding FMV field names using the template. Each subsequent row contains the metadata values for a specific time, called a time stamp.</para>
-		/// <para>The metadata field names can be in any order and should be named exactly as listed in the FMV_Multiplexer_Field_Mapping_Template.csv template to map the metadata field names to the proper FMV metadata field names.</para>
+		/// <para>逗号分隔值 (CSV) 文件，其中包含有关特定时间的视频帧的元数据。</para>
+		/// <para>每列将代表一个元数据字段，且其中一列必须为时间参考。时间参考为 Unix 时间戳（1970 年至今的秒数）乘以一百万，且将以整数形式存储。之所以采用此种方式来存储时间，是为了可以用整数来引用任何时刻（最小单位为百万分之一秒）。因此，两个 500,000 条目之间的时间差表示历时半秒。</para>
+		/// <para>第一行中将包含元数据列的字段名称。 这些字段名称将在 C:\Program Files\ArcGIS\Pro\Resources\FullMotionVideo 中的 FMV_Multiplexer_Field_Mapping_Template.csv 文件中列出，或者也可以使用模板将自定义字段名称与其对应的 FMV 字段名称相匹配。 每个后续行中均包含特定时间的元数据值，我们称之为时间戳。</para>
+		/// <para>元数据字段名称可以按任何顺序进行排列，并且应完全按照 FMV_Multiplexer_Field_Mapping_Template.csv 模板中列出的名称命名，以便将元数据字段名称映射到正确的 FMV 元数据字段名称。</para>
 		/// </param>
 		/// <param name="OutVideoFile">
 		/// <para>Output Video File</para>
-		/// <para>The name of the output video file, including the file extension.</para>
-		/// <para>The supported output video file is .ts only.</para>
+		/// <para>输出视频文件的名称，包括文件扩展名。</para>
+		/// <para>受支持的输出视频文件仅为 .ts。</para>
 		/// </param>
 		public VideoMultiplexer(object InVideoFile, object MetadataFile, object OutVideoFile)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Video Multiplexer</para>
+		/// <para>Tool Display Name : 视频多路复用器</para>
 		/// </summary>
-		public override string DisplayName() => "Video Multiplexer";
+		public override string DisplayName() => "视频多路复用器";
 
 		/// <summary>
 		/// <para>Tool Name : VideoMultiplexer</para>
@@ -80,8 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Video File</para>
-		/// <para>The input video file that will be converted to a FMV-compliant video file.</para>
-		/// <para>The following video file types are supported: .avi (supports H.264, not H.265), .h264, .mp2, .mp4, .m2ts, .mpeg, .mpeg2, .mpeg4, .mpg, .mpg2, .mpg4, .ps, .ts, and vob.</para>
+		/// <para>将转换为兼容 FMV 的视频文件的输入视频文件。</para>
+		/// <para>支持以下视频文件类型：.avi（支持 H.264，而非 H.265）、.h264、.mp2、.mp4、.m2ts、.mpeg、.mpeg2、.mpeg4、.mpg、.mpg2、.mpg4、.ps、.ts 和 vob。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -91,10 +91,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Metadata File</para>
-		/// <para>A comma-separated values (CSV) file containing metadata about the video frames for specific times.</para>
-		/// <para>Each column represents one metadata field, and one of the columns must be a time reference. The time reference is Unix Time Stamp (seconds past 1970) multiplied by one million, which is stored as an integer. The time is stored as such so that any instant in time (down to one millionth of a second) can be referenced with an integer. Consequently, a time difference between two entries of 500,000 represents one half of a second in elapsed time.</para>
-		/// <para>The first row contains the field names for the metadata columns. These field names are listed in the FMV_Multiplexer_Field_Mapping_Template.csv file in C:\Program Files\ArcGIS\Pro\Resources\FullMotionVideo, or custom field names can be matched to their corresponding FMV field names using the template. Each subsequent row contains the metadata values for a specific time, called a time stamp.</para>
-		/// <para>The metadata field names can be in any order and should be named exactly as listed in the FMV_Multiplexer_Field_Mapping_Template.csv template to map the metadata field names to the proper FMV metadata field names.</para>
+		/// <para>逗号分隔值 (CSV) 文件，其中包含有关特定时间的视频帧的元数据。</para>
+		/// <para>每列将代表一个元数据字段，且其中一列必须为时间参考。时间参考为 Unix 时间戳（1970 年至今的秒数）乘以一百万，且将以整数形式存储。之所以采用此种方式来存储时间，是为了可以用整数来引用任何时刻（最小单位为百万分之一秒）。因此，两个 500,000 条目之间的时间差表示历时半秒。</para>
+		/// <para>第一行中将包含元数据列的字段名称。 这些字段名称将在 C:\Program Files\ArcGIS\Pro\Resources\FullMotionVideo 中的 FMV_Multiplexer_Field_Mapping_Template.csv 文件中列出，或者也可以使用模板将自定义字段名称与其对应的 FMV 字段名称相匹配。 每个后续行中均包含特定时间的元数据值，我们称之为时间戳。</para>
+		/// <para>元数据字段名称可以按任何顺序进行排列，并且应完全按照 FMV_Multiplexer_Field_Mapping_Template.csv 模板中列出的名称命名，以便将元数据字段名称映射到正确的 FMV 元数据字段名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -104,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Video File</para>
-		/// <para>The name of the output video file, including the file extension.</para>
-		/// <para>The supported output video file is .ts only.</para>
+		/// <para>输出视频文件的名称，包括文件扩展名。</para>
+		/// <para>受支持的输出视频文件仅为 .ts。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -115,8 +115,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Metadata Mapping File</para>
-		/// <para>A CSV file that contains 5 columns and 87 rows and is based on the FMV_Multiplexer_Field_Mapping_Template.csv template file obtained from C:\Program Files\ArcGIS\Pro\Resources\FullMotionVideo.</para>
-		/// <para>This CSV file cross references the metadata field name to the FMV field name. Each row represents one of the standard metadata parameters, such as sensor latitude. The first two columns contain the information for the tag and MISB parameter name already provided in the form. The third column contains the field name as it appears in the Input Metadata File parameter. When the third column is populated, the tool can match the metadata field names to the proper FMV metadata tags.</para>
+		/// <para>一个 CSV 文件中包含 5 个列和 87 个行，且基于从 C:\Program Files\ArcGIS\Pro\Resources\FullMotionVideo 中获取的 FMV_Multiplexer_Field_Mapping_Template.csv 模板文件。</para>
+		/// <para>此 CSV 文件将元数据字段名称交叉引用到 FMV 字段名称。 每行将代表一个标准元数据参数，例如传感器纬度。 前两列中包含已在表单中提供的标签以及 MISB 参数名称的相关信息。 第三列中包含显示在输入元数据文件参数中的字段名称。 填充第三列之后，该工具即可将元数据字段名称与正确的 FMV 元数据标签进行匹配。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -126,13 +126,13 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Timeshift File</para>
-		/// <para>A file containing defined time shift intervals.</para>
-		/// <para>Ideally, the video images and the metadata are synchronized in time. In this case, the image footprint in full motion video surrounds features that can be seen in the video image. Sometimes there is a mismatch between the timing of the video and the timing in the metadata. This leads to an apparent time delay between when a ground feature is surrounded by the image footprint and when that ground feature is visible in the video image. If this time shift is observable and consistent, the multiplexer can adjust the timing of the metadata to match the video.</para>
-		/// <para>If there is a mismatch between the timing of the video and metadata, specify the time shift in the FMV_Multiplexer_TimeShift_Template.csv template in C:\Program Files\ArcGIS\Pro\Resources\FullMotionVideo. The time shift observations file is a CSV file containing two columns (elapsed time and time shift) and one or more data rows. A row for column names is optional.</para>
-		/// <para>For example, if the video image has a 5-second lag for the entire time, the time shift observation file will have one line: 0:00, -5. The entire video is shifted 5 seconds.</para>
-		/// <para>If there is a 5-second lag at the 0:18 mark of the video, and a 9-second lag at the 2:21 mark of the video, the time shift observation file will have the following two lines:</para>
-		/// <para>&lt;code&gt;0:18, -5 2:21, -9&lt;/code&gt;In this case, the video is shifted differently at the beginning of the video and at the end of the video.</para>
-		/// <para>You can define any number of time shift intervals in the time shift observation file.</para>
+		/// <para>包含已定义时移间隔的文件。</para>
+		/// <para>在理想情况下，视频影像和元数据将在时间上同步。 在这种情况下，全动态视频中的影像轮廓线将围绕可在视频影像中看到的要素。 有时视频的时间与元数据中的时间会出现不匹配。 这会导致地面要素被影像轮廓线包围的时刻与该地面要素在视频影像中可见的时刻之间出现明显的时间延迟。 如果该时移是可观测且一致的，则多路复用器可以调整元数据的时间，使其与视频相匹配。</para>
+		/// <para>如果视频的时间与元数据不匹配，则请指定 FMV_Multiplexer_TimeShift_Template.csv 模板（位于 C:\Program Files\ArcGIS\Pro\Resources\FullMotionVideo 中）中的时移。 时移观测文件是一个 CSV 文件，其中包含两个列（elapsed time 和 time shift）以及一个或多个数据行。 列名称的行是可选的。</para>
+		/// <para>例如，如果视频影像在整个时间内存在 5 秒的滞后，则时移观测点文件将出现以下一行：0:00, -5。 整个视频将移动 5 秒。</para>
+		/// <para>如果视频的 0:18 标记存在 5 秒滞后，且视频的 2:21 标记存在 9 秒滞后，则时移观测点文件中将包含以下两行：</para>
+		/// <para>&lt;code&gt;0:18, -5 2:21, -9&lt;/code&gt;在这种情况下，该视频在视频开始时和视频结束时的移动方式将有所不同。</para>
+		/// <para>您可以在时移观测点文件中定义任意数量的时移间隔。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -142,9 +142,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Digital Elevation Model</para>
-		/// <para>The source of the elevation needed for calculating the video frame corner coordinates. The source can be a layer, image service, or an average ground elevation or ocean depth. The average elevation value must include the units of measurement such as meters or feet or other measure of length.</para>
-		/// <para>The accuracy of the video footprint and frame center depend on the accuracy of the DEM data source provided. It is recommended that you provide a DEM layer or image service. If you do not have access to DEM data, you can enter an average elevation and unit relative to sea level, such as 15 feet or 10 meters. In the case of a submersible, you can enter -15 feet or -10 meters. Using an average elevation or ocean depth is not as accurate as providing a DEM or bathymetric data.</para>
-		/// <para>To calculate frame corner coordinates, the average elevation value must always be less than the sensor&apos;s altitude or depth as recorded in the metadata. For example, if the video was filmed at a sensor altitude of 10 meters and higher, a valid average elevation could be 9 meters or less. If a video was filmed underwater at a depth of -10 meters and deeper, the valid average elevation (relative to sea level) could be -11 or deeper. If the Sensor Altitude value is less than the average elevation value, the four corner coordinates will not be calculated for that record. If you do not know the average elevation of the project area, use a DEM.</para>
+		/// <para>计算视频帧角坐标所需的高程源。 该源可以是图层、图像服务、平均地面高程或海洋深度。 平均高程值必须包含测量单位，如米、英尺或其他长度测量单位。</para>
+		/// <para>视频轮廓线和帧中心的精度取决于所提供的 DEM 数据源的精度。 建议您提供 DEM 图层或图像服务。 如果您无法访问 DEM 数据，则可以输入相对于海平面的平均高程和单位，例如 15 英尺或 10 米。 在使用潜水器的情况下，您可以输入 -15 英尺或 -10 米。 使用平均高程或海洋深度的精度要低于提供 DEM 或深海探测数据的情况。</para>
+		/// <para>要计算帧角坐标，平均高程值必须始终小于元数据中记录的传感器高度或深度。 例如，如果视频是在 10 米或以上的传感器高度下拍摄的，则有效平均高度可为 9 米或更低。 如果视频是在深度为 -10 米或更深的水下拍摄的，则有效平均高程（相对于海平面）可能为 -11 米或更深。 如果传感器高度值小于平均高程值，则系统不会为该记录计算四个角坐标。 如果您不知道工程区域的平均高程，请使用 DEM。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]

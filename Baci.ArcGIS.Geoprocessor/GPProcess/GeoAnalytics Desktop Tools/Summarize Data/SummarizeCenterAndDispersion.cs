@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Summarize Center And Dispersion</para>
-	/// <para>Summarize Center And Dispersion</para>
-	/// <para>Finds central features and directional distributions and calculates mean and median locations from the input.</para>
+	/// <para>汇总中心和离差</para>
+	/// <para>用于查找中心要素和方向分布，并根据输入计算平均和中位数位置。</para>
 	/// </summary>
 	public class SummarizeCenterAndDispersion : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>The point, line, or polygon layer to be summarized.</para>
+		/// <para>要进行汇总的点、线或面图层。</para>
 		/// </param>
 		public SummarizeCenterAndDispersion(object InputLayer)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Summarize Center And Dispersion</para>
+		/// <para>Tool Display Name : 汇总中心和离差</para>
 		/// </summary>
-		public override string DisplayName() => "Summarize Center And Dispersion";
+		public override string DisplayName() => "汇总中心和离差";
 
 		/// <summary>
 		/// <para>Tool Name : SummarizeCenterAndDispersion</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The point, line, or polygon layer to be summarized.</para>
+		/// <para>要进行汇总的点、线或面图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Central Feature</para>
-		/// <para>The output feature class that will contain the most centrally located feature in the input layer.</para>
+		/// <para>将包含位于输入图层最中心的要素的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Mean Center</para>
-		/// <para>The output point feature class that will contain features representing the mean centers of the input layer.</para>
+		/// <para>将包含用于表示输入图层的平均中心的要素的输出点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Median Center</para>
-		/// <para>The output point feature class that will contain features representing the median centers of the input layer.</para>
+		/// <para>将包含用于表示输入图层的中位数中心的要素的输出点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Ellipse</para>
-		/// <para>The output polygon feature class that will contain the directional ellipse representation of the input layer.</para>
+		/// <para>将包含输入图层的方向椭圆表示的输出面要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -108,10 +108,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Ellipse Size</para>
-		/// <para>Specifies the size of output ellipses in standard deviations.</para>
-		/// <para>One standard deviation—Output ellipses will cover one standard deviation of the input features. This is the default.</para>
-		/// <para>Two standard deviations—Output ellipses will cover two standard deviations of the input features.</para>
-		/// <para>Three standard deviations—Output ellipses will cover three standard deviations of the input features.</para>
+		/// <para>指定标准差中输出椭圆的大小。</para>
+		/// <para>一个标准差—输出椭圆将覆盖输入要素的一个标准差。 这是默认设置。</para>
+		/// <para>两个标准差—输出椭圆将覆盖输入要素的两个标准差。</para>
+		/// <para>三个标准差—输出椭圆将覆盖输入要素的三个标准差。</para>
 		/// <para><see cref="EllipseSizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Weight Field</para>
-		/// <para>A numeric field used to weight locations according to their relative importance. This applies to all summary types.</para>
+		/// <para>根据各位置的相对重要性对它们进行加权的数值型字段。 这适用于所有汇总类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Group By Field</para>
-		/// <para>The field used to group similar features. This applies to all summary types. For example, if you choose a field named PlantType that contains values of tree, bush, and grass, all of the features with the value tree will be analyzed for their own center or dispersion. This example will result in three features, one for each group of tree, bush, and grass.</para>
+		/// <para>该字段用于分组类似要素。 这适用于所有汇总类型。 例如，如果选择字段 PlantType，其中包含树木、矮树丛和草地的值，则将对值为树木的所有要素进行分析以获取其自已的中心或离差。 此示例将产生三个要素，针对每组树木、矮树丛和草地各产生一个要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -156,24 +156,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum EllipseSizeEnum 
 		{
 			/// <summary>
-			/// <para>One standard deviation—Output ellipses will cover one standard deviation of the input features. This is the default.</para>
+			/// <para>一个标准差—输出椭圆将覆盖输入要素的一个标准差。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("1_STANDARD_DEVIATION")]
-			[Description("One standard deviation")]
+			[Description("一个标准差")]
 			One_standard_deviation,
 
 			/// <summary>
-			/// <para>Two standard deviations—Output ellipses will cover two standard deviations of the input features.</para>
+			/// <para>两个标准差—输出椭圆将覆盖输入要素的两个标准差。</para>
 			/// </summary>
 			[GPValue("2_STANDARD_DEVIATIONS")]
-			[Description("Two standard deviations")]
+			[Description("两个标准差")]
 			Two_standard_deviations,
 
 			/// <summary>
-			/// <para>Three standard deviations—Output ellipses will cover three standard deviations of the input features.</para>
+			/// <para>三个标准差—输出椭圆将覆盖输入要素的三个标准差。</para>
 			/// </summary>
 			[GPValue("3_STANDARD_DEVIATIONS")]
-			[Description("Three standard deviations")]
+			[Description("三个标准差")]
 			Three_standard_deviations,
 
 		}

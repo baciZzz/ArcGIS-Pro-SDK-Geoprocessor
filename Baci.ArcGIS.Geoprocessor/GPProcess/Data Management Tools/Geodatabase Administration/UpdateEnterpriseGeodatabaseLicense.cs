@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Update Enterprise Geodatabase License</para>
-	/// <para>Update Enterprise Geodatabase License</para>
-	/// <para>Updates the ArcGIS Server license in an enterprise geodatabase.</para>
+	/// <para>更新企业级地理数据库许可</para>
+	/// <para>更新企业级地理数据库中的 ArcGIS Server 许可。</para>
 	/// </summary>
 	public class UpdateEnterpriseGeodatabaseLicense : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputDatabase">
 		/// <para>Input Database Connection</para>
-		/// <para>Provide a database connection (.sde file) to the enterprise geodatabase you want to authorize with a new ArcGIS Server enterprise authorization file.</para>
-		/// <para>You must connect to the database as the geodatabase administrator.</para>
+		/// <para>可利用新的 ArcGIS Server 企业级授权文件为想要授权的企业级数据库提供数据库连接（.sde 文件）。</para>
+		/// <para>您必须以地理数据库管理员的身份连接到数据库。</para>
 		/// </param>
 		/// <param name="AuthorizationFile">
 		/// <para>Authorization File</para>
-		/// <para>Provide the path and file name of the keycodes file generated when you authorized ArcGIS Server enterprise. If necessary, copy the file from the ArcGIS Server machine to a directory that the tool can access.</para>
-		/// <para>ArcGIS Server creates the keycodes file in the following location: \\Program Files\ESRI\License&lt;release#&gt;\sysgen (Microsoft Windows servers) or /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen (Linux servers).</para>
+		/// <para>提供授权企业级 ArcGIS Server 时生成的密钥代码文件的路径和文件名。 如有必要，请将文件从 ArcGIS Server 计算机复制到此工具可访问的目录。</para>
+		/// <para>ArcGIS Server 将在以下位置上创建密钥代码文件：\\Program Files\ESRI\License&lt;release#&gt;\sysgen（Microsoft Windows 服务器）或 /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen（Linux 服务器）。</para>
 		/// </param>
 		public UpdateEnterpriseGeodatabaseLicense(object InputDatabase, object AuthorizationFile)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Update Enterprise Geodatabase License</para>
+		/// <para>Tool Display Name : 更新企业级地理数据库许可</para>
 		/// </summary>
-		public override string DisplayName() => "Update Enterprise Geodatabase License";
+		public override string DisplayName() => "更新企业级地理数据库许可";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateEnterpriseGeodatabaseLicense</para>
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Database Connection</para>
-		/// <para>Provide a database connection (.sde file) to the enterprise geodatabase you want to authorize with a new ArcGIS Server enterprise authorization file.</para>
-		/// <para>You must connect to the database as the geodatabase administrator.</para>
+		/// <para>可利用新的 ArcGIS Server 企业级授权文件为想要授权的企业级数据库提供数据库连接（.sde 文件）。</para>
+		/// <para>您必须以地理数据库管理员的身份连接到数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -83,8 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Authorization File</para>
-		/// <para>Provide the path and file name of the keycodes file generated when you authorized ArcGIS Server enterprise. If necessary, copy the file from the ArcGIS Server machine to a directory that the tool can access.</para>
-		/// <para>ArcGIS Server creates the keycodes file in the following location: \\Program Files\ESRI\License&lt;release#&gt;\sysgen (Microsoft Windows servers) or /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen (Linux servers).</para>
+		/// <para>提供授权企业级 ArcGIS Server 时生成的密钥代码文件的路径和文件名。 如有必要，请将文件从 ArcGIS Server 计算机复制到此工具可访问的目录。</para>
+		/// <para>ArcGIS Server 将在以下位置上创建密钥代码文件：\\Program Files\ESRI\License&lt;release#&gt;\sysgen（Microsoft Windows 服务器）或 /arcgis/server/framework/runtime/.wine/drive_c/Program Files/ESRI/License&lt;release#&gt;/sysgen（Linux 服务器）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

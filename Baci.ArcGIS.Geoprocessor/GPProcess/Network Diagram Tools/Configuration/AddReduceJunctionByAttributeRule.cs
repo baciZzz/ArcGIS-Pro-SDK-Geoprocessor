@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Reduce Junction By Attribute Rule</para>
-	/// <para>Add Reduce Junction By Attribute Rule</para>
-	/// <para>Adds a diagram rule to automatically reduce diagram junctions during diagram building based on an existing template. The junctions to reduce are queried from a given network junction source class or object table by attributes according to the number of other junctions to which they are connected.</para>
+	/// <para>添加按属性减少交汇点规则</para>
+	/// <para>用于添加逻辑示意图规则，以在基于现有模板构建逻辑示意图的过程中自动减少逻辑示意图交汇点。根据所连接的其他交汇点的数量，按属性从给定网络交汇点源类或对象表对待减少交汇点进行查询。</para>
 	/// </summary>
 	public class AddReduceJunctionByAttributeRule : AbstractGPProcess
 	{
@@ -21,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template that will be modified.</para>
+		/// <para>要修改的逻辑示意图模板名称</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
-		/// <para>Specifies whether the rule will be active when generating and updating diagrams based on the specified template.</para>
-		/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
-		/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+		/// <para>指定在基于指定模板生成并更新逻辑示意图时，规则是否将处于激活状态。</para>
+		/// <para>选中 - 在基于输入模板生成并更新逻辑示意图的过程中，添加的规则将会变为激活状态。 这是默认设置。</para>
+		/// <para>未选中 - 在基于输入模板生成或更新逻辑示意图的过程中，添加的规则将不会变为激活状态。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </param>
 		/// <param name="JunctionSource">
 		/// <para>Junction Source to Reduce</para>
-		/// <para>The network junction source class or object table to process. All diagram junctions related to network junctions that belong to this source class or object table are reduction candidates.</para>
+		/// <para>要处理的网络交汇点源类或对象表。与属于此源类或对象表的网络交汇点相关的所有逻辑示意图交汇点均为减少的候选项。</para>
 		/// </param>
 		public AddReduceJunctionByAttributeRule(object InUtilityNetwork, object TemplateName, object IsActive, object JunctionSource)
 		{
@@ -47,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Reduce Junction By Attribute Rule</para>
+		/// <para>Tool Display Name : 添加按属性减少交汇点规则</para>
 		/// </summary>
-		public override string DisplayName() => "Add Reduce Junction By Attribute Rule";
+		public override string DisplayName() => "添加按属性减少交汇点规则";
 
 		/// <summary>
 		/// <para>Tool Name : AddReduceJunctionByAttributeRule</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template that will be modified.</para>
+		/// <para>要修改的逻辑示意图模板名称</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -99,9 +99,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Active</para>
-		/// <para>Specifies whether the rule will be active when generating and updating diagrams based on the specified template.</para>
-		/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
-		/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+		/// <para>指定在基于指定模板生成并更新逻辑示意图时，规则是否将处于激活状态。</para>
+		/// <para>选中 - 在基于输入模板生成并更新逻辑示意图的过程中，添加的规则将会变为激活状态。 这是默认设置。</para>
+		/// <para>未选中 - 在基于输入模板生成或更新逻辑示意图的过程中，添加的规则将不会变为激活状态。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Junction Source to Reduce</para>
-		/// <para>The network junction source class or object table to process. All diagram junctions related to network junctions that belong to this source class or object table are reduction candidates.</para>
+		/// <para>要处理的网络交汇点源类或对象表。与属于此源类或对象表的网络交汇点相关的所有逻辑示意图交汇点均为减少的候选项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>An SQL expression used to select the subset of network junctions from the junction reduction candidates in the diagrams based on the input template. For more information on SQL syntax, see the SQL reference for query expressions used in ArcGIS help topic.</para>
+		/// <para>SQL 表达式，用于从基于输入模板的逻辑示意图内的候选减少的交汇点中选择网络交汇点的子集。有关 SQL 语法的详细信息，请参阅帮助主题在 ArcGIS 中使用的查询表达式的 SQL 参考。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -127,9 +127,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Reduce Junctions With</para>
-		/// <para>Specifies the number of junction connections that will be considered for reduction.</para>
-		/// <para>Maximum two connected junctions—Junctions with two or less connections will be considered. In this case, a specific process will be executed according to the number of candidate junction connections that will be reduced. This is the default.</para>
-		/// <para>Minimum three connected junctions—Junctions with three or more connections will be considered. In this case, upstream traces will be executed to determine whether candidate junction connections will be reduced.</para>
+		/// <para>指定将要减少的交汇点连接数。</para>
+		/// <para>最多两个连接交汇点—将考虑具有两个或更少连接的交汇点。在这种情况下，将会根据待减少的候选交汇点连接数执行特定过程。这是默认设置。</para>
+		/// <para>最少三个连接交汇点—将考虑具有三个或更多连接的交汇点。在这种情况下，将执行上游追踪以确定是否减少候选交汇点连接。</para>
 		/// <para><see cref="ConnectivityOptionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -140,9 +140,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Reduce if unconnected</para>
-		/// <para>Specifies whether each unconnected network diagram junction candidate will be reduced. This parameter is only active when Reduce Junctions With is set to Maximum two connected junctions.</para>
-		/// <para>Checked—Unconnected network diagram junction candidates will be reduced. Each junction will be removed.</para>
-		/// <para>Unchecked—Unconnected network diagram junction candidates will not be reduced; they will be kept. This is the default.</para>
+		/// <para>指定是否将减少每个未连接的网络逻辑示意图交汇点候选项。此参数仅在减少交汇点被设置为最多两个连接交汇点时处于活动状态。</para>
+		/// <para>选中 - 未连接的网络逻辑示意图交汇点候选项将被减少。每个交汇点将被移除。</para>
+		/// <para>未选中 - 未连接的网络逻辑示意图交汇点候选项不会被减少；它们将被保留。这是默认设置。</para>
 		/// <para><see cref="UnconnectedJunctionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -153,9 +153,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Reduce if connected to a single junction</para>
-		/// <para>Specifies whether each network diagram junction reduction candidate that is connected to a single junction will be reduced. This parameter is only active when Reduce Junctions With is set to Maximum two connected junctions.</para>
-		/// <para>Checked—Network diagram junction reduction candidates that are connected to a single junction will be reduced. Each junction and its incident edge will be reduced onto its single connected junction.</para>
-		/// <para>Unchecked—Network diagram junction reduction candidates that are connected to a single junction will not be reduced; they will be kept. This is the default.</para>
+		/// <para>指定是否将减少连接到单个交汇点的每个网络逻辑示意图交汇点减少候选项。此参数仅在减少交汇点被设置为最多两个连接交汇点时处于活动状态。</para>
+		/// <para>选中 - 将减少连接到单个交汇点的网络逻辑示意图交汇点减少候选项。每一个交汇点及其事件边均会被减少到单个连接交汇点。</para>
+		/// <para>未选中 - 将不会减少连接到单个交汇点的网络逻辑示意图交汇点减少候选项；它们将被保留。这是默认设置。</para>
 		/// <para><see cref="OneConnectedJunctionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -166,9 +166,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Reduce if connected to 2 different junctions</para>
-		/// <para>Specifies whether each network diagram junction reduction candidate that is connected to two other junctions will be reduced. This parameter is only active when Reduce Junctions With is set to Maximum two connected junctions.</para>
-		/// <para>Checked—Network diagram junction reduction candidates that connect two other junctions will be reduced. Each junction and its incident edges will be reduced onto a super span edge (the reduction edge). This is the default.</para>
-		/// <para>Unchecked—Network diagram junction reduction candidates that connect two other junctions will not be reduced; they will be kept.</para>
+		/// <para>指定是否将减少连接到其他两个交汇点的每个网络逻辑示意图交汇点减少候选项。此参数仅在减少交汇点被设置为最多两个连接交汇点时处于活动状态。</para>
+		/// <para>选中 - 将减少连接其他两个交汇点的网络逻辑示意图交汇点减少候选项。每个交汇点及其事件边均会被减少到超跨度边（减少边）。这是默认设置。</para>
+		/// <para>未选中 - 将不会减少连接其他两个交汇点的网络逻辑示意图交汇点减少候选项；它们将被保留。</para>
 		/// <para><see cref="TwoConnectedJunctionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -179,8 +179,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Edge Attribute Names</para>
-		/// <para>The alias of the edge attributes adjacent to the junction reduction candidate.</para>
-		/// <para>The junction will be reduced only when all of its adjacent edges have the same values for each specified attribute alias.</para>
+		/// <para>邻近交汇点减少候选项的边属性的别名。</para>
+		/// <para>仅当每个指定属性别名的所有相邻边具有相同值时，交汇点才会减少。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -189,7 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Description</para>
-		/// <para>The description of the rule.</para>
+		/// <para>规则的描述。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -217,14 +217,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsActiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACTIVE")]
 			ACTIVE,
 
 			/// <summary>
-			/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INACTIVE")]
@@ -238,17 +238,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum ConnectivityOptionsEnum 
 		{
 			/// <summary>
-			/// <para>Maximum two connected junctions—Junctions with two or less connections will be considered. In this case, a specific process will be executed according to the number of candidate junction connections that will be reduced. This is the default.</para>
+			/// <para>最多两个连接交汇点—将考虑具有两个或更少连接的交汇点。在这种情况下，将会根据待减少的候选交汇点连接数执行特定过程。这是默认设置。</para>
 			/// </summary>
 			[GPValue("MAX_2_CONNECTED_JUNCTIONS")]
-			[Description("Maximum two connected junctions")]
+			[Description("最多两个连接交汇点")]
 			Maximum_two_connected_junctions,
 
 			/// <summary>
-			/// <para>Minimum three connected junctions—Junctions with three or more connections will be considered. In this case, upstream traces will be executed to determine whether candidate junction connections will be reduced.</para>
+			/// <para>最少三个连接交汇点—将考虑具有三个或更多连接的交汇点。在这种情况下，将执行上游追踪以确定是否减少候选交汇点连接。</para>
 			/// </summary>
 			[GPValue("MIN_3_CONNECTED_JUNCTIONS")]
-			[Description("Minimum three connected junctions")]
+			[Description("最少三个连接交汇点")]
 			Minimum_three_connected_junctions,
 
 		}
@@ -259,14 +259,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum UnconnectedJunctionsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Unconnected network diagram junction candidates will be reduced. Each junction will be removed.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REDUCE_UNCONNECTED_JCT")]
 			REDUCE_UNCONNECTED_JCT,
 
 			/// <summary>
-			/// <para>Unchecked—Unconnected network diagram junction candidates will not be reduced; they will be kept. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_UNCONNECTED_JCT")]
@@ -280,14 +280,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum OneConnectedJunctionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Network diagram junction reduction candidates that are connected to a single junction will be reduced. Each junction and its incident edge will be reduced onto its single connected junction.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REDUCE_JCT_TO_1JCT")]
 			REDUCE_JCT_TO_1JCT,
 
 			/// <summary>
-			/// <para>Unchecked—Network diagram junction reduction candidates that are connected to a single junction will not be reduced; they will be kept. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_JCT_TO_1JCT")]
@@ -301,14 +301,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum TwoConnectedJunctionsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Network diagram junction reduction candidates that connect two other junctions will be reduced. Each junction and its incident edges will be reduced onto a super span edge (the reduction edge). This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REDUCE_JCT_TO_2JCTS")]
 			REDUCE_JCT_TO_2JCTS,
 
 			/// <summary>
-			/// <para>Unchecked—Network diagram junction reduction candidates that connect two other junctions will not be reduced; they will be kept.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_JCT_TO_2JCTS")]

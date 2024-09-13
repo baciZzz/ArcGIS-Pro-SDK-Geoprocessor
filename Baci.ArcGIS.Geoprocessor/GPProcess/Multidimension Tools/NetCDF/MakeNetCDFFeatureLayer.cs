@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Make NetCDF Feature Layer</para>
-	/// <para>Make NetCDF Feature Layer</para>
-	/// <para>Makes a feature layer from a netCDF file.</para>
+	/// <para>创建 NetCDF 要素图层</para>
+	/// <para>根据 NetCDF 文件创建要素图层。</para>
 	/// </summary>
 	public class MakeNetCDFFeatureLayer : AbstractGPProcess
 	{
@@ -21,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		/// <param name="InNetcdfFile">
 		/// <para>Input netCDF File</para>
-		/// <para>The input netCDF file.</para>
+		/// <para>输入的 NetCDF 文件。</para>
 		/// </param>
 		/// <param name="Variable">
 		/// <para>Variables</para>
-		/// <para>The netCDF variable, or variables, that will be added as fields in the feature attribute table.</para>
+		/// <para>将以字段形式添加到要素属性表中的 netCDF 变量。</para>
 		/// </param>
 		/// <param name="XVariable">
 		/// <para>X Variable</para>
-		/// <para>A netCDF coordinate variable used to define the x, or longitude, coordinates of the output layer.</para>
+		/// <para>定义输出图层的 x 坐标或经度坐标时使用的 netCDF 坐标变量。</para>
 		/// </param>
 		/// <param name="YVariable">
 		/// <para>Y Variable</para>
-		/// <para>A netCDF coordinate variable used to define the y, or latitude, coordinates of the output layer.</para>
+		/// <para>定义输出图层的 y 坐标或纬度坐标时使用的 netCDF 坐标变量。</para>
 		/// </param>
 		/// <param name="OutFeatureLayer">
 		/// <para>Output Feature Layer</para>
-		/// <para>The name of the output feature layer.</para>
+		/// <para>输出要素图层的名称。</para>
 		/// </param>
 		public MakeNetCDFFeatureLayer(object InNetcdfFile, object Variable, object XVariable, object YVariable, object OutFeatureLayer)
 		{
@@ -49,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Make NetCDF Feature Layer</para>
+		/// <para>Tool Display Name : 创建 NetCDF 要素图层</para>
 		/// </summary>
-		public override string DisplayName() => "Make NetCDF Feature Layer";
+		public override string DisplayName() => "创建 NetCDF 要素图层";
 
 		/// <summary>
 		/// <para>Tool Name : MakeNetCDFFeatureLayer</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Input netCDF File</para>
-		/// <para>The input netCDF file.</para>
+		/// <para>输入的 NetCDF 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Variables</para>
-		/// <para>The netCDF variable, or variables, that will be added as fields in the feature attribute table.</para>
+		/// <para>将以字段形式添加到要素属性表中的 netCDF 变量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>X Variable</para>
-		/// <para>A netCDF coordinate variable used to define the x, or longitude, coordinates of the output layer.</para>
+		/// <para>定义输出图层的 x 坐标或经度坐标时使用的 netCDF 坐标变量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Y Variable</para>
-		/// <para>A netCDF coordinate variable used to define the y, or latitude, coordinates of the output layer.</para>
+		/// <para>定义输出图层的 y 坐标或纬度坐标时使用的 netCDF 坐标变量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Output Feature Layer</para>
-		/// <para>The name of the output feature layer.</para>
+		/// <para>输出要素图层的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -127,8 +127,8 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Row Dimensions</para>
-		/// <para>The netCDF dimension, or dimensions, used to create features with unique values in the feature layer. The dimension or dimensions set here determine the number of features in the feature layer and the fields that will be presented in the feature layer&apos;s attribute table.</para>
-		/// <para>For instance, if StationID is a dimension in the netCDF file and has 10 values, by setting StationID as the dimension to use, 10 features will be created (10 rows will be created in the feature layer&apos;s attribute table). If StationID and time are used, and there are 3 time slices, 30 features will be created (30 rows will be created in the feature layer&apos;s attribute table). If you will be animating the netCDF feature layer, it is recommended, for efficiency reasons, to not set time as a row dimension. Time will still be available as a dimension that you can set to animate through, but the attribute table will not store this information.</para>
+		/// <para>在要素图层中创建具有唯一值的要素时使用的 netCDF 维度。 此处设置的维度决定了要素图层中的要素数量以及将在要素图层的属性表中显示的字段。</para>
+		/// <para>例如，如果 StationID 是 netCDF 文件中的一个维度且具有 10 个值，则通过将 StationID 设置为要使用的维度，将可以创建 10 个要素（在要素图层的属性表中将创建 10 行）。 如果当前使用 StationID 和时间，且存在 3 个时间片，则将创建 30 个要素（要素图层的属性表中将创建 30 行）。 如果要以动画形式呈现 netCDF 要素图层，出于效率方面的考虑，建议您不要将时间设置为行维度。 在动画处理的整个过程中仍可以将时间用作维度，但属性表中将不存储此信息。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Z Variable</para>
-		/// <para>A netCDF variable used to specify elevation values (z-values) for features.</para>
+		/// <para>指定要素的高程值（z 值）时使用的 netCDF 变量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>M Variable</para>
-		/// <para>A netCDF variable used to specify linear measurement values (m-values) for features.</para>
+		/// <para>指定要素的线性测量值（m 值）时使用的 netCDF 变量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -152,9 +152,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Dimension Values</para>
-		/// <para>The value (such as 01/30/05) of the dimension (such as time) or dimensions to use when displaying the variable in the output layer. By default, the first value of the dimension or dimensions will be used.</para>
-		/// <para>Dimension—A netCDF dimension.</para>
-		/// <para>Value—The dimension value to use.</para>
+		/// <para>在输出图层中显示变量时要使用的维度（如时间）的值（如 01/30/05）。 默认情况下，将使用维度的第一个值。</para>
+		/// <para>维度 - netCDF 维度。</para>
+		/// <para>值 - 可用的维度值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -162,9 +162,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Value Selection Method</para>
-		/// <para>Specifies the dimension value selection method that will be used.</para>
-		/// <para>By value—The input value will be matched with the actual dimension value.</para>
-		/// <para>By index—The input value will be matched with the position or index of a dimension value. The index is 0 based; that is, the position starts at 0.</para>
+		/// <para>指定将使用的维度值选择方法。</para>
+		/// <para>按值—输入值将与实际维度值匹配。</para>
+		/// <para>按索引—输入值将与维度值的位置或索引匹配。 索引的第一个值为 0；即位置从 0 开始。</para>
 		/// <para><see cref="ValueSelectionMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -189,17 +189,17 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		public enum ValueSelectionMethodEnum 
 		{
 			/// <summary>
-			/// <para>By index—The input value will be matched with the position or index of a dimension value. The index is 0 based; that is, the position starts at 0.</para>
+			/// <para>按索引—输入值将与维度值的位置或索引匹配。 索引的第一个值为 0；即位置从 0 开始。</para>
 			/// </summary>
 			[GPValue("BY_INDEX")]
-			[Description("By index")]
+			[Description("按索引")]
 			By_index,
 
 			/// <summary>
-			/// <para>By value—The input value will be matched with the actual dimension value.</para>
+			/// <para>按值—输入值将与实际维度值匹配。</para>
 			/// </summary>
 			[GPValue("BY_VALUE")]
-			[Description("By value")]
+			[Description("按值")]
 			By_value,
 
 		}

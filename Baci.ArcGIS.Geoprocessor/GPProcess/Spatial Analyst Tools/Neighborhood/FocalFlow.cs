@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Focal Flow</para>
-	/// <para>Focal Flow</para>
-	/// <para>Determines the flow of the values in the input raster within each cell's immediate neighborhood.</para>
+	/// <para>焦点流</para>
+	/// <para>确定输入栅格中每个像元的直接邻域内值的流量。</para>
 	/// </summary>
 	public class FocalFlow : AbstractGPProcess
 	{
@@ -21,14 +21,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InSurfaceRaster">
 		/// <para>Input surface raster</para>
-		/// <para>The input surface raster for which to calculate the focal flow.</para>
-		/// <para>The eight immediate neighbors of each cell are evaluated to determine the flow.</para>
-		/// <para>The input raster can be integer or floating point.</para>
+		/// <para>要计算焦点流的输入表面栅格数据。</para>
+		/// <para>可评估每个像元的八个直接邻域来确定流量。</para>
+		/// <para>输入栅格数据可为整型或浮点型。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output focal flow raster.</para>
-		/// <para>The output raster is always of integer type.</para>
+		/// <para>输出焦点流栅格。</para>
+		/// <para>输出栅格始终为整型。</para>
 		/// </param>
 		public FocalFlow(object InSurfaceRaster, object OutRaster)
 		{
@@ -37,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Focal Flow</para>
+		/// <para>Tool Display Name : 焦点流</para>
 		/// </summary>
-		public override string DisplayName() => "Focal Flow";
+		public override string DisplayName() => "焦点流";
 
 		/// <summary>
 		/// <para>Tool Name : FocalFlow</para>
@@ -73,9 +73,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input surface raster</para>
-		/// <para>The input surface raster for which to calculate the focal flow.</para>
-		/// <para>The eight immediate neighbors of each cell are evaluated to determine the flow.</para>
-		/// <para>The input raster can be integer or floating point.</para>
+		/// <para>要计算焦点流的输入表面栅格数据。</para>
+		/// <para>可评估每个像元的八个直接邻域来确定流量。</para>
+		/// <para>输入栅格数据可为整型或浮点型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -87,8 +87,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output focal flow raster.</para>
-		/// <para>The output raster is always of integer type.</para>
+		/// <para>输出焦点流栅格。</para>
+		/// <para>输出栅格始终为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -96,9 +96,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Threshold value</para>
-		/// <para>Defines a value that constitutes the threshold, which must be equaled or exceeded before flow can occur.</para>
-		/// <para>The threshold value can be either an integer or floating-point value.</para>
-		/// <para>If the difference between the value at a neighboring cell location and the value of the processing cell is less than or equal to the threshold value, the output will be 0 (or no flow).</para>
+		/// <para>定义构成阈值的值（必须先等于或超过该值，然后才能出现流）。</para>
+		/// <para>阈值可以是整型或浮点型值。</para>
+		/// <para>如果相邻像元位置上的值与待处理像元的值之差小于或等于阈值，则输出将为 0（或无流量）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

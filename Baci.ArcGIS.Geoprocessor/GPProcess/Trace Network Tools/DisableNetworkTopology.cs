@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 {
 	/// <summary>
 	/// <para>Disable Network Topology</para>
-	/// <para>Disable Network Topology</para>
-	/// <para>Disables the network topology for an existing trace network.</para>
+	/// <para>禁用网络拓扑</para>
+	/// <para>禁用现有追踪网络的网络拓扑。</para>
 	/// </summary>
 	public class DisableNetworkTopology : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// </summary>
 		/// <param name="InTraceNetwork">
 		/// <para>Input Trace Network</para>
-		/// <para>The trace network where the network topology will be disabled.</para>
+		/// <para>将禁用网络拓扑的追踪网络。</para>
 		/// </param>
 		public DisableNetworkTopology(object InTraceNetwork)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Disable Network Topology</para>
+		/// <para>Tool Display Name : 禁用网络拓扑</para>
 		/// </summary>
-		public override string DisplayName() => "Disable Network Topology";
+		public override string DisplayName() => "禁用网络拓扑";
 
 		/// <summary>
 		/// <para>Tool Name : DisableNetworkTopology</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Input Trace Network</para>
-		/// <para>The trace network where the network topology will be disabled.</para>
+		/// <para>将禁用网络拓扑的追踪网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]

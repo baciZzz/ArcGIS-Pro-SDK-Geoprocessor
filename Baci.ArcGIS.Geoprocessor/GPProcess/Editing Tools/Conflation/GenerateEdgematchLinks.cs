@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Generate Edgematch Links</para>
-	/// <para>Generate Edgematch Links</para>
-	/// <para>Finds matching but disconnected line features along the edges of the source data's area and its adjacent data's area, and generates edgematch links from the source lines to the matched adjacent lines.</para>
+	/// <para>生成边匹配链接</para>
+	/// <para>沿着源数据区域及其相邻数据区域的边缘查找匹配但是已断开的线要素，并生成从源线到相匹配相邻线的边匹配链接。</para>
 	/// </summary>
 	public class GenerateEdgematchLinks : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		/// <param name="SourceFeatures">
 		/// <para>Source Features</para>
-		/// <para>Line features as edgematching source features. All edgematch links start at source features.</para>
+		/// <para>作为边匹配源要素的线要素。 所有边匹配链接均始于源要素。</para>
 		/// </param>
 		/// <param name="AdjacentFeatures">
 		/// <para>Adjacent Features</para>
-		/// <para>Line features adjacent to source features. All edgematch links end at matched adjacent features.</para>
+		/// <para>与源要素相邻的线要素。 所有边匹配链接均止于相匹配的相邻要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>Output feature class containing lines representing edgematch links.</para>
+		/// <para>包含线的输出要素类，该线表示边匹配链接。</para>
 		/// </param>
 		/// <param name="SearchDistance">
 		/// <para>Search Distance</para>
-		/// <para>The distance used to search for match candidates. A distance must be specified and it must be greater than zero. You can choose a preferred unit; the default is the feature unit.</para>
+		/// <para>用于搜索匹配候选项的距离。必须指定一个距离，且此距离必须大于零。可以选择首选单位；默认为要素单位。</para>
 		/// </param>
 		public GenerateEdgematchLinks(object SourceFeatures, object AdjacentFeatures, object OutFeatureClass, object SearchDistance)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Edgematch Links</para>
+		/// <para>Tool Display Name : 生成边匹配链接</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Edgematch Links";
+		public override string DisplayName() => "生成边匹配链接";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateEdgematchLinks</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Source Features</para>
-		/// <para>Line features as edgematching source features. All edgematch links start at source features.</para>
+		/// <para>作为边匹配源要素的线要素。 所有边匹配链接均始于源要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Adjacent Features</para>
-		/// <para>Line features adjacent to source features. All edgematch links end at matched adjacent features.</para>
+		/// <para>与源要素相邻的线要素。 所有边匹配链接均止于相匹配的相邻要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>Output feature class containing lines representing edgematch links.</para>
+		/// <para>包含线的输出要素类，该线表示边匹配链接。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Search Distance</para>
-		/// <para>The distance used to search for match candidates. A distance must be specified and it must be greater than zero. You can choose a preferred unit; the default is the feature unit.</para>
+		/// <para>用于搜索匹配候选项的距离。必须指定一个距离，且此距离必须大于零。可以选择首选单位；默认为要素单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Match Fields</para>
-		/// <para>Fields from source and target features, where target fields are from the adjacent features. If specified, each pair of fields are checked for match candidates to help determine the right match.</para>
+		/// <para>源要素和目标要素中的字段，其中目标字段来自相邻要素。 如果指定，将检查每对字段中的匹配候选项，以帮助确定正确的匹配。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]

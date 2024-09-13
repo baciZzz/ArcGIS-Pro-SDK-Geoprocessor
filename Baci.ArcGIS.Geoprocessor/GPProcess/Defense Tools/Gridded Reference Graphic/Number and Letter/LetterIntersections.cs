@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Letter Intersections</para>
-	/// <para>Letter Intersections</para>
-	/// <para>Identifies intersections in a line feature class and adds sequential letters to output point features.</para>
+	/// <para>使用字母标注交叉点</para>
+	/// <para>识别线要素类中的交点并向输出点要素添加连续字母。</para>
 	/// </summary>
 	public class LetterIntersections : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Line Features</para>
-		/// <para>The input line features with intersections that will be lettered.</para>
+		/// <para>将使用字母标注具有交叉点的输入线要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Intersection Points Feature Class</para>
-		/// <para>The output point feature class.</para>
+		/// <para>输出点要素类。</para>
 		/// </param>
 		/// <param name="FieldToLetter">
 		/// <para>Field to Letter (New Field Name)</para>
-		/// <para>The name of the field that will contain the letter designator for each intersection.</para>
+		/// <para>将包含每个交叉点的字母指示符的字段名称。</para>
 		/// </param>
 		public LetterIntersections(object InFeatures, object OutFeatureClass, object FieldToLetter)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Letter Intersections</para>
+		/// <para>Tool Display Name : 使用字母标注交叉点</para>
 		/// </summary>
-		public override string DisplayName() => "Letter Intersections";
+		public override string DisplayName() => "使用字母标注交叉点";
 
 		/// <summary>
 		/// <para>Tool Name : LetterIntersections</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Line Features</para>
-		/// <para>The input line features with intersections that will be lettered.</para>
+		/// <para>将使用字母标注具有交叉点的输入线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Intersection Points Feature Class</para>
-		/// <para>The output point feature class.</para>
+		/// <para>输出点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Field to Letter (New Field Name)</para>
-		/// <para>The name of the field that will contain the letter designator for each intersection.</para>
+		/// <para>将包含每个交叉点的字母指示符的字段名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Area to Letter</para>
-		/// <para>The area that will limit the intersections identified; only intersections within this area will be identified and lettered.</para>
+		/// <para>将限制识别交叉点的面；只有此面内的交叉点才会被识别和标记。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -115,16 +115,16 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Spatial Sort Method</para>
-		/// <para>Specifies how features will be spatially sorted for the purpose of lettering. Features are not reordered in the table.</para>
-		/// <para>Upper right—Features will be sorted starting at the upper right corner. This is the default.</para>
-		/// <para>Upper left—Features will be sorted starting at the upper left corner.</para>
-		/// <para>Lower right—Features will be sorted starting at the lower right corner.</para>
-		/// <para>Lower left—Features will be sorted starting at the lower left corner.</para>
-		/// <para>Peano curve—Features will be sorted using a space-filling curve algorithm, also known as a Peano curve.</para>
-		/// <para>Center—Features will be sorted starting from a center point (the mean center will be used if no center is supplied).</para>
-		/// <para>Clockwise—Features will be sorted starting from a center point and moving clockwise.</para>
-		/// <para>Counterclockwise—Features will be sorted starting from a center point and moving counterclockwise.</para>
-		/// <para>None—No spatial sort will be used. The same order as the feature class will be used.</para>
+		/// <para>指定如何对要素进行空间排序以进行字母标注。 不会对表中的要素重新排序。</para>
+		/// <para>右上角—要素将从右上角开始排序。 这是默认设置。</para>
+		/// <para>左上角—要素将从左上角开始排序。</para>
+		/// <para>右下角—要素将从右下角开始排序。</para>
+		/// <para>左下角—要素将从左下角开始排序。</para>
+		/// <para>皮亚诺曲线—要素将使用空间填充曲线算法（也称为皮亚诺曲线）进行排序。</para>
+		/// <para>居中—要素将从中心点开始排序（如果没有提供中心，将使用平均中心）。</para>
+		/// <para>顺时针—要素将从中心点开始排序，并按顺时针移动。</para>
+		/// <para>逆时针—要素将从中心点开始排序，并按逆时针移动。</para>
+		/// <para>无—不会使用空间排序。 将使用与要素类相同的顺序。</para>
 		/// <para><see cref="SpatialSortMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -134,10 +134,10 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Lettering Format</para>
-		/// <para>Specifies the labeling format that will be used for each feature.</para>
-		/// <para>Excel (A, B, C, ...)—An alpha character (for example, A, B, C) will be used as the label. This is the default.</para>
-		/// <para>Grid (AA, AB, AC, ...)—A constant alpha character with an incrementing second alpha character grid (for example, AA, AB, AC) will be used.</para>
-		/// <para>Alternating Grid (AA, BB, CC, ...)—A double alpha character that is incremented for each feature (for example, AA, BB, CC) will be used.</para>
+		/// <para>指定将用于每个要素的标注格式。</para>
+		/// <para>Excel（A、B、C...）—将字母字符（例如，A、B、C）用作标注。 这是默认设置。</para>
+		/// <para>Grid（AA、AB、AC...）—将使用具有递增的第二个字母字符格网的常量字母字符（例如，AA、AB、AC）。</para>
+		/// <para>交替 Grid（AA、BB、CC...）—将使用为每个要素递增的双字母字符（例如，AA、BB、CC）。</para>
 		/// <para><see cref="LetteringFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Starting Letter</para>
-		/// <para>The value that will be used to begin lettering.</para>
+		/// <para>将用于开始字母标注的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Omit Letters</para>
-		/// <para>The values that will be omitted from the lettering sequence.</para>
+		/// <para>将从字母序列中省略的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Minimum Distance Between Output Points</para>
-		/// <para>The minimum distance between intersections that are identified for lettering.</para>
+		/// <para>将被识别以进行字母标注的交叉点之间的最小距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Center Point</para>
-		/// <para>The center point that will be used to sort and letter features.</para>
+		/// <para>将用于排序和字母标注要素的中心点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -182,9 +182,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Add Distance and Bearing to Center</para>
-		/// <para>Specifies whether fields will be added to the output for distance and bearing to a center point.</para>
-		/// <para>Do not add distance and bearing—No distance or bearing fields will be added to the output. This is the default.</para>
-		/// <para>Add distance and bearing—DIST_TO_CENTER and ANGLE_TO_CENTER fields will be added to the output.</para>
+		/// <para>指定是否将距中心点距离和方向角字段添加到输出中。</para>
+		/// <para>不添加距离和方位角—不会将距离或方位字段添加到输出中。 这是默认设置。</para>
+		/// <para>添加距离和方位角—DIST_TO_CENTER 和 ANGLE_TO_CENTER 字段将被添加到输出中。</para>
 		/// <para><see cref="AddDistanceAndBearingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -209,66 +209,66 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum SpatialSortMethodEnum 
 		{
 			/// <summary>
-			/// <para>Upper right—Features will be sorted starting at the upper right corner. This is the default.</para>
+			/// <para>右上角—要素将从右上角开始排序。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("UR")]
-			[Description("Upper right")]
+			[Description("右上角")]
 			Upper_right,
 
 			/// <summary>
-			/// <para>Upper left—Features will be sorted starting at the upper left corner.</para>
+			/// <para>左上角—要素将从左上角开始排序。</para>
 			/// </summary>
 			[GPValue("UL")]
-			[Description("Upper left")]
+			[Description("左上角")]
 			Upper_left,
 
 			/// <summary>
-			/// <para>Lower right—Features will be sorted starting at the lower right corner.</para>
+			/// <para>右下角—要素将从右下角开始排序。</para>
 			/// </summary>
 			[GPValue("LR")]
-			[Description("Lower right")]
+			[Description("右下角")]
 			Lower_right,
 
 			/// <summary>
-			/// <para>Lower left—Features will be sorted starting at the lower left corner.</para>
+			/// <para>左下角—要素将从左下角开始排序。</para>
 			/// </summary>
 			[GPValue("LL")]
-			[Description("Lower left")]
+			[Description("左下角")]
 			Lower_left,
 
 			/// <summary>
-			/// <para>Peano curve—Features will be sorted using a space-filling curve algorithm, also known as a Peano curve.</para>
+			/// <para>皮亚诺曲线—要素将使用空间填充曲线算法（也称为皮亚诺曲线）进行排序。</para>
 			/// </summary>
 			[GPValue("PEANO")]
-			[Description("Peano curve")]
+			[Description("皮亚诺曲线")]
 			Peano_curve,
 
 			/// <summary>
-			/// <para>Center—Features will be sorted starting from a center point (the mean center will be used if no center is supplied).</para>
+			/// <para>居中—要素将从中心点开始排序（如果没有提供中心，将使用平均中心）。</para>
 			/// </summary>
 			[GPValue("CENTER")]
-			[Description("Center")]
+			[Description("居中")]
 			Center,
 
 			/// <summary>
-			/// <para>Counterclockwise—Features will be sorted starting from a center point and moving counterclockwise.</para>
+			/// <para>逆时针—要素将从中心点开始排序，并按逆时针移动。</para>
 			/// </summary>
 			[GPValue("COUNTERCLOCKWISE")]
-			[Description("Counterclockwise")]
+			[Description("逆时针")]
 			Counterclockwise,
 
 			/// <summary>
-			/// <para>Clockwise—Features will be sorted starting from a center point and moving clockwise.</para>
+			/// <para>顺时针—要素将从中心点开始排序，并按顺时针移动。</para>
 			/// </summary>
 			[GPValue("CLOCKWISE")]
-			[Description("Clockwise")]
+			[Description("顺时针")]
 			Clockwise,
 
 			/// <summary>
-			/// <para>None—No spatial sort will be used. The same order as the feature class will be used.</para>
+			/// <para>无—不会使用空间排序。 将使用与要素类相同的顺序。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 		}
@@ -279,24 +279,24 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum LetteringFormatEnum 
 		{
 			/// <summary>
-			/// <para>Excel (A, B, C, ...)—An alpha character (for example, A, B, C) will be used as the label. This is the default.</para>
+			/// <para>Excel（A、B、C...）—将字母字符（例如，A、B、C）用作标注。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("A_B_C")]
-			[Description("Excel (A, B, C, ...)")]
+			[Description("Excel（A、B、C...）")]
 			A_B_C,
 
 			/// <summary>
-			/// <para>Grid (AA, AB, AC, ...)—A constant alpha character with an incrementing second alpha character grid (for example, AA, AB, AC) will be used.</para>
+			/// <para>Grid（AA、AB、AC...）—将使用具有递增的第二个字母字符格网的常量字母字符（例如，AA、AB、AC）。</para>
 			/// </summary>
 			[GPValue("AA_AB_AC")]
-			[Description("Grid (AA, AB, AC, ...)")]
+			[Description("Grid（AA、AB、AC...）")]
 			AA_AB_AC,
 
 			/// <summary>
-			/// <para>Alternating Grid (AA, BB, CC, ...)—A double alpha character that is incremented for each feature (for example, AA, BB, CC) will be used.</para>
+			/// <para>交替 Grid（AA、BB、CC...）—将使用为每个要素递增的双字母字符（例如，AA、BB、CC）。</para>
 			/// </summary>
 			[GPValue("AA_BB_CC")]
-			[Description("Alternating Grid (AA, BB, CC, ...)")]
+			[Description("交替 Grid（AA、BB、CC...）")]
 			AA_BB_CC,
 
 		}

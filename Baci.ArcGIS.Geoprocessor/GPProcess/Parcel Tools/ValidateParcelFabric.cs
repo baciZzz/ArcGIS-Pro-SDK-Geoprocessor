@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Validate Parcel Fabric</para>
-	/// <para>Validate Parcel Fabric</para>
-	/// <para>Validates a parcel fabric using a predefined set of geodatabase topology rules and any other topology rules you have added for your organization.</para>
+	/// <para>验证宗地结构</para>
+	/// <para>使用预定义的一组地理数据库拓扑规则以及您为组织添加的任何其他拓扑规则来验证宗地结构。</para>
 	/// </summary>
 	[Obsolete()]
 	public class ValidateParcelFabric : AbstractGPProcess
@@ -22,7 +22,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFabric">
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric to be validated. The parcel fabric can be from a file or mobile geodatabase or from a feature service.</para>
+		/// <para>要验证的宗地结构。 宗地结构可来自文件地理数据库、移动地理数据库或要素服务。</para>
 		/// </param>
 		public ValidateParcelFabric(object InParcelFabric)
 		{
@@ -30,9 +30,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Validate Parcel Fabric</para>
+		/// <para>Tool Display Name : 验证宗地结构</para>
 		/// </summary>
-		public override string DisplayName() => "Validate Parcel Fabric";
+		public override string DisplayName() => "验证宗地结构";
 
 		/// <summary>
 		/// <para>Tool Name : ValidateParcelFabric</para>
@@ -66,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric to be validated. The parcel fabric can be from a file or mobile geodatabase or from a feature service.</para>
+		/// <para>要验证的宗地结构。 宗地结构可来自文件地理数据库、移动地理数据库或要素服务。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPParcelLayer()]
@@ -74,13 +74,13 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>The extent of the dataset to be processed. Only features that fall within the specified extent will be processed.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
-		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
-		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>要处理的数据集的范围。 仅会处理指定范围内的要素。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
+		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
+		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Extract Package</para>
-	/// <para>Extract Package</para>
-	/// <para>Extracts the contents of a package to a specified folder. The output folder will be  updated with the extracted contents of the input package.</para>
+	/// <para>提取包</para>
+	/// <para>将包中的内容提取到指定文件夹。 将使用输入包中所提取的内容更新输出文件夹。</para>
 	/// </summary>
 	public class ExtractPackage : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InPackage">
 		/// <para>Input Package</para>
-		/// <para>The input package that will be extracted.</para>
+		/// <para>要执行提取操作的输入包。</para>
 		/// </param>
 		public ExtractPackage(object InPackage)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Extract Package</para>
+		/// <para>Tool Display Name : 提取包</para>
 		/// </summary>
-		public override string DisplayName() => "Extract Package";
+		public override string DisplayName() => "提取包";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractPackage</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Package</para>
-		/// <para>The input package that will be extracted.</para>
+		/// <para>要执行提取操作的输入包。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -75,8 +75,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Folder</para>
-		/// <para>The output folder that will contain the contents of the package.</para>
-		/// <para>If the specified folder does not exist, a folder will be created.</para>
+		/// <para>用于存放包中内容的输出文件夹。</para>
+		/// <para>如果指定的文件夹不存在，将创建一个文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
@@ -84,10 +84,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Cache Package</para>
-		/// <para>Specifies whether a copy of the package will be cached to your profile.</para>
-		/// <para>When extracting a package, the output is first extracted to your user profile and appended with a unique ID before a copy is made to the directory specified in the Output Folder parameter. Downloading and extracting subsequent versions of the same package will only update this location. You do not need to manually create a cached version of the package in your user profile when using this parameter. This parameter is not active if the input package is a vector tile package (.vtpk) or a tile package (.tpk and .tpkx).</para>
-		/// <para>Checked—A copy of the package will be extracted and cached to your profile. This is the default.</para>
-		/// <para>Unchecked—A copy of the package will only be extracted to the output parameter specified; it will not be cached.</para>
+		/// <para>指定是否将包的副本缓存到您的配置文件。</para>
+		/// <para>提取包时，首先将输出提取到用户配置文件，并在复制到输出文件夹参数中指定目录前，附加唯一 ID。 下载和提取同一包的后续版本仅更新此位置。 在使用此参数时，您无需在用户配置文件中手动创建包的缓存版本。 如果输入包为矢量切片包 (.vtpk) 或切片包（.tpk 和 .tpkx），则此参数将处于非活动状态。</para>
+		/// <para>选中 - 将包的副本提取并缓存到您的配置文件。 这是默认设置。</para>
+		/// <para>未选中 - 仅将包的副本提取到指定的输出参数；并不会对其进行缓存。</para>
 		/// <para><see cref="CachePackageEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -97,9 +97,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Storage Format Type</para>
-		/// <para>Specifies the storage format that will be used for the extracted cache. This parameter is applicable only when the input package is a vector tile package (.vtpk).</para>
-		/// <para>Compact— The tiles will be grouped in bundle files using the Compact V2 storage format. This format provides better performance on network shares and cloud store directories. This is the default.</para>
-		/// <para>Exploded— Each tile will be stored as an individual file.</para>
+		/// <para>指定将用于提取的缓存的存储格式。 仅当输入包为矢量切片包 (.vtpk) 时，此参数才适应。</para>
+		/// <para>数据库碎片整理—将使用 Compact V2 存储格式对包文件中的切片进行分组。 这种格式使得网络共享和云存储目录拥有了更好的性能。 这是默认设置。</para>
+		/// <para>松散型—每个切片都将存储为单个文件。</para>
 		/// <para><see cref="StorageFormatTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -109,9 +109,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Create Ready To Serve Cache Dataset</para>
-		/// <para>Specifies whether a ready-to-serve format for ArcGIS Enterprise will be created. This parameter is active only when the input package is a vector tile package (.vtpk) or a tile package (.tpkx).</para>
-		/// <para>Checked—A folder structure with an extracted cache that can be used to create a tile layer in ArcGIS Enterprise will be created. The file extension of the folder signifies the content it stores: .tiles (cache dataset) for tile layer packages or .vtiles (vector cache dataset) for vector tile packages.</para>
-		/// <para>Unchecked—A folder structure with extracted contents of the package will be created. This is the default.</para>
+		/// <para>指定是否将针对 ArcGIS Enterprise 创建即用型格式。 仅当输入包为矢量切片包 (.vtpk) 或切片包 (.tpkx) 时，此参数才会处于活动状态。</para>
+		/// <para>选中 - 将创建包含提取的缓存的文件夹结构，可使用该结构在 ArcGIS Enterprise 中创建切片图层。 文件夹的文件扩展名将表示其存储的内容：.tiles（缓存数据集）用于切片图层包或 .vtiles（矢量缓存数据集）用于矢量切片包。</para>
+		/// <para>未选中 - 将创建包含包的提取内容的文件夹结构。 这是默认设置。</para>
 		/// <para><see cref="CreateReadyToServeFormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Cloud Connection</para>
-		/// <para>The target .acs file to which the package contents will be extracted. This parameter is enabled only when the input package is a scene layer package (.slpk), a vector tile package (.vtpk), or a tile package (.tpkx).</para>
+		/// <para>包内容将提取到的目标 .acs 文件。 仅当输入包为场景图层包 (.slpk)、矢量切片包 (.vtpk) 或切片包 (.tpkx) 时，才会启用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
@@ -144,14 +144,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CachePackageEnum 
 		{
 			/// <summary>
-			/// <para>Checked—A copy of the package will be extracted and cached to your profile. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CACHE")]
 			CACHE,
 
 			/// <summary>
-			/// <para>Unchecked—A copy of the package will only be extracted to the output parameter specified; it will not be cached.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CACHE")]
@@ -165,17 +165,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum StorageFormatTypeEnum 
 		{
 			/// <summary>
-			/// <para>Compact— The tiles will be grouped in bundle files using the Compact V2 storage format. This format provides better performance on network shares and cloud store directories. This is the default.</para>
+			/// <para>数据库碎片整理—将使用 Compact V2 存储格式对包文件中的切片进行分组。 这种格式使得网络共享和云存储目录拥有了更好的性能。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("COMPACT")]
-			[Description("Compact")]
+			[Description("数据库碎片整理")]
 			Compact,
 
 			/// <summary>
-			/// <para>Exploded— Each tile will be stored as an individual file.</para>
+			/// <para>松散型—每个切片都将存储为单个文件。</para>
 			/// </summary>
 			[GPValue("EXPLODED")]
-			[Description("Exploded")]
+			[Description("松散型")]
 			Exploded,
 
 		}
@@ -186,14 +186,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CreateReadyToServeFormatEnum 
 		{
 			/// <summary>
-			/// <para>Checked—A folder structure with an extracted cache that can be used to create a tile layer in ArcGIS Enterprise will be created. The file extension of the folder signifies the content it stores: .tiles (cache dataset) for tile layer packages or .vtiles (vector cache dataset) for vector tile packages.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("READY_TO_SERVE_CACHE_DATASET")]
 			READY_TO_SERVE_CACHE_DATASET,
 
 			/// <summary>
-			/// <para>Unchecked—A folder structure with extracted contents of the package will be created. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXTRACTED_PACKAGE")]

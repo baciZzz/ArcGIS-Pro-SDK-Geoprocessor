@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Attribute Rule</para>
-	/// <para>Add Attribute Rule</para>
-	/// <para>Adds an attribute rule to a dataset.</para>
+	/// <para>添加属性规则</para>
+	/// <para>用于向数据集添加属性规则。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,23 +23,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The table or feature class that will have the new rule applied.</para>
+		/// <para>将应用新规则的表或要素类。</para>
 		/// </param>
 		/// <param name="Name">
 		/// <para>Name</para>
-		/// <para>A unique name for the new rule.</para>
+		/// <para>新规则的唯一名称。</para>
 		/// </param>
 		/// <param name="Type">
 		/// <para>Type</para>
-		/// <para>Specifies the type of attribute rule that will be added.</para>
-		/// <para>Calculation—Attribute values will be automatically populated for features when another attribute is set on a feature. These rules are applied based on the triggering events specified. Long running calculations can be set to run in batch mode and will be evaluated at a user-defined time.When adding multiple calculation rules, the order in which the rules are added is important if there are circular dependencies. For example, Rule A calculates Field1 is equal to the value of $feature.Field2 + $feature.Field3, and Rule B calculates Field4 is equal to $feature.Field1 + $feature.Field5; the results of the calculation may be different depending on the order in which the rules are added.</para>
-		/// <para>Constraint—Permissible attribute configurations will be specified on a feature. When the constraint rule is violated, an error is generated and the feature is not stored. For example, if the value of Field A must be less than the sum of Field B and Field C, an error will be generated when that constraint is violated.</para>
-		/// <para>Validation—Existing features will be identified with a batch validation process. Rules are evaluated at a user-defined time. When a rule is violated, an error feature is created.</para>
+		/// <para>指定要添加的属性规则类型。</para>
+		/// <para>计算—在要素上设置其他属性时，将自动填充要素的属性值。 将基于指定的触发事件来应用这些规则。 可将长时间运行的计算设置为在批处理模式下运行，并在用户定义的时间进行评估。添加多个计算规则时，如果存在循环依赖关系，则添加规则的顺序非常重要。 例如，规则 A 计算 Field1 等于 $feature.Field2 + $feature.Field3 的值，规则 B 计算 Field4 等于 $feature.Field1 + $feature.Field5，则计算的结果可能不同，具体取决于添加规则的顺序。</para>
+		/// <para>约束—将指定要素上允许的属性配置。 如果违反约束规则，则将生成错误，并且不会存储该要素。 例如，如果 Field A 的值必须小于 Field B 与 Field C 的总和，则在违反该约束时将会生成错误。</para>
+		/// <para>验证—使用批处理验证过程对现有要素进行识别。 将在用户定义的时间评估规则。 违反规则时，将创建错误要素。</para>
 		/// <para><see cref="TypeEnum"/></para>
 		/// </param>
 		/// <param name="ScriptExpression">
 		/// <para>Script Expression</para>
-		/// <para>The Arcade expression that defines the rule.</para>
+		/// <para>用于定义规则的 Arcade 表达式。</para>
 		/// </param>
 		public AddAttributeRule(object InTable, object Name, object Type, object ScriptExpression)
 		{
@@ -50,9 +50,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Attribute Rule</para>
+		/// <para>Tool Display Name : 添加属性规则</para>
 		/// </summary>
-		public override string DisplayName() => "Add Attribute Rule";
+		public override string DisplayName() => "添加属性规则";
 
 		/// <summary>
 		/// <para>Tool Name : AddAttributeRule</para>
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The table or feature class that will have the new rule applied.</para>
+		/// <para>将应用新规则的表或要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Name</para>
-		/// <para>A unique name for the new rule.</para>
+		/// <para>新规则的唯一名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -102,10 +102,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Type</para>
-		/// <para>Specifies the type of attribute rule that will be added.</para>
-		/// <para>Calculation—Attribute values will be automatically populated for features when another attribute is set on a feature. These rules are applied based on the triggering events specified. Long running calculations can be set to run in batch mode and will be evaluated at a user-defined time.When adding multiple calculation rules, the order in which the rules are added is important if there are circular dependencies. For example, Rule A calculates Field1 is equal to the value of $feature.Field2 + $feature.Field3, and Rule B calculates Field4 is equal to $feature.Field1 + $feature.Field5; the results of the calculation may be different depending on the order in which the rules are added.</para>
-		/// <para>Constraint—Permissible attribute configurations will be specified on a feature. When the constraint rule is violated, an error is generated and the feature is not stored. For example, if the value of Field A must be less than the sum of Field B and Field C, an error will be generated when that constraint is violated.</para>
-		/// <para>Validation—Existing features will be identified with a batch validation process. Rules are evaluated at a user-defined time. When a rule is violated, an error feature is created.</para>
+		/// <para>指定要添加的属性规则类型。</para>
+		/// <para>计算—在要素上设置其他属性时，将自动填充要素的属性值。 将基于指定的触发事件来应用这些规则。 可将长时间运行的计算设置为在批处理模式下运行，并在用户定义的时间进行评估。添加多个计算规则时，如果存在循环依赖关系，则添加规则的顺序非常重要。 例如，规则 A 计算 Field1 等于 $feature.Field2 + $feature.Field3 的值，规则 B 计算 Field4 等于 $feature.Field1 + $feature.Field5，则计算的结果可能不同，具体取决于添加规则的顺序。</para>
+		/// <para>约束—将指定要素上允许的属性配置。 如果违反约束规则，则将生成错误，并且不会存储该要素。 例如，如果 Field A 的值必须小于 Field B 与 Field C 的总和，则在违反该约束时将会生成错误。</para>
+		/// <para>验证—使用批处理验证过程对现有要素进行识别。 将在用户定义的时间评估规则。 违反规则时，将创建错误要素。</para>
 		/// <para><see cref="TypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Script Expression</para>
-		/// <para>The Arcade expression that defines the rule.</para>
+		/// <para>用于定义规则的 Arcade 表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPCalculatorExpression()]
@@ -123,9 +123,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Is Editable</para>
-		/// <para>Specifies whether the attribute value can be edited. Attribute rules can be configured to either block or allow editors to edit the attribute values of the field being calculated. This parameter is only applicable for the calculation attribute rule type.</para>
-		/// <para>Checked—The attribute value can be edited. This is the default.</para>
-		/// <para>Unchecked—The attribute value cannot be edited.</para>
+		/// <para>指定是否可以编辑属性值。 可将属性规则配置为阻止或允许编辑者编辑正在进行计算的字段的属性值。 此参数仅适用于计算属性规则类型。</para>
+		/// <para>选中 - 可以编辑属性值。 这是默认设置。</para>
+		/// <para>未选中 - 不可以编辑属性值。</para>
 		/// <para><see cref="IsEditableEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -135,10 +135,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Triggering Events</para>
-		/// <para>Specifies the editing events that will trigger the attribute rule to take effect. This parameter is valid for calculation and constraint rule types only. At least one triggering event must be provided for calculation rules in which the Batch parameter is unchecked. Triggering events are not applicable for calculation rules that have the Batch parameter checked.</para>
-		/// <para>Insert—The rule will be applied when a new feature is added.</para>
-		/// <para>Update—The rule will be applied when a feature is updated.</para>
-		/// <para>Delete—The rule will be applied when a feature is deleted.</para>
+		/// <para>指定将触发属性规则生效的编辑事件。 该参数仅对计算和约束规则类型有效。 对于未选中批处理参数的计算规则，必须至少提供一个触发事件。 触发事件不适用于选中了批处理参数的计算规则。</para>
+		/// <para>插入—将在添加新要素后应用规则。</para>
+		/// <para>更新—将在更新要素后应用规则。</para>
+		/// <para>删除—将在删除要素后应用规则。</para>
 		/// <para><see cref="TriggeringEventsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -148,8 +148,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Error Number</para>
-		/// <para>An error number that will be returned when this rule is violated. This value is not required to be unique, so the same custom error number may be returned for multiple rules.</para>
-		/// <para>This parameter is required for the constraint and validation rule types. It is optional for the calculation rule type.</para>
+		/// <para>违反此规则时将返回的错误编号。 此值不必唯一，因此可以针对多个规则返回相同的自定义错误编号。</para>
+		/// <para>对于约束和验证规则类型，此参数为必需项。 对于计算规则类型，其为可选项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -157,8 +157,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Error Message</para>
-		/// <para>An error message that will be returned when this rule is violated. It is recommended that you use a descriptive message to help the editor understand the violation when it occurs. The message is limited to 2000 characters.</para>
-		/// <para>This parameter is required for the constraint and validation rule types. It is optional for the calculation rule type.</para>
+		/// <para>违反此规则时将返回的错误消息。 建议使用描述性消息，以便在出现冲突时帮助编辑者理解冲突。 消息最多包含 2000 个字符。</para>
+		/// <para>对于约束和验证规则类型，此参数为必需项。 对于计算规则类型，其为可选项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -166,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Description</para>
-		/// <para>The description of the new attribute rule. The description is limited to 256 characters.</para>
+		/// <para>新属性规则的描述。 描述最多包含 256 个字符。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -174,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Subtype</para>
-		/// <para>The subtype to which the rule will be applied if the dataset has subtypes.</para>
+		/// <para>如果数据集具有子类型，则将对其应用规则的子类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -182,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field</para>
-		/// <para>The name of an existing field to which the rule will be applied. This parameter is only applicable for the calculation attribute rule type.</para>
+		/// <para>将应用该规则的现有字段的名称。 此参数仅适用于计算属性规则类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -190,12 +190,12 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Exclude from application evaluation</para>
-		/// <para>Specifies whether the application will evaluate the rule locally before applying the edits to the workspace.</para>
-		/// <para>Not all clients have the capability to run all of the available rules so authors can exclude certain rules from client evaluation. For example, some rules may refer to data that has not been made available to all clients (reasons can include the data is offline, size, or security), or some rules may depend on the user or context (that is, a lightweight field update in a data collection app may not run a rule that requires additional user input or knowledge; however, a client such as ArcGIS Pro may support it).</para>
-		/// <para>This parameter is not applicable for validation rule or calculation rule types if the Batch parameter is checked.</para>
-		/// <para>Checked—The rule will be excluded from client evaluation.</para>
-		/// <para>Unchecked—The rule will not be excluded from client evaluation. This is the default.</para>
-		/// <para>Prior to ArcGIS Pro 2.4, this parameter was labeled Server only.</para>
+		/// <para>指定应用程序是否在将编辑内容应用到工作空间之前在本地评估规则。</para>
+		/// <para>并非所有客户端都能够运行所有可用规则，因此作者可以从客户端评估中排除某些规则。 例如，某些规则可能会参考尚未提供给所有客户端的数据（原因包括数据离线、大小或安全性），或者某些规则可能取决于用户或上下文（即数据采集应用程序中的轻量级字段更新可能不会运行需要其他用户输入或知识的规则，但 ArcGIS Pro 一类的客户端可能会为其提供支持）。</para>
+		/// <para>如果选中了批处理参数，则此参数不适用于验证规则和计算规则类型。</para>
+		/// <para>选中 - 将从客户端评估中排除该规则。</para>
+		/// <para>未选中 - 不会从客户端评估中排除该规则。 这是默认设置。</para>
+		/// <para>在 ArcGIS Pro 2.4 之前，此参数标注为仅限服务器。</para>
 		/// <para><see cref="ExcludeFromClientEvaluationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -212,10 +212,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Batch</para>
-		/// <para>Specifies whether the rule evaluation will be run in batch mode.</para>
-		/// <para>Checked—The rule evaluation will be run in batch mode at a later time by running validate.</para>
-		/// <para>Unchecked—The rule evaluation will not be run in batch mode. Triggering events will be used to determine when the rule is evaluated for insert, update, or delete edit operations. This is the default.</para>
-		/// <para>Calculation rules can be either checked or unchecked. Validation rules are always checked for this parameter, and constraint rules are always unchecked.</para>
+		/// <para>指定是否将在批处理模式下运行规则评估。</para>
+		/// <para>选中 - 稍后将通过运行验证在批处理模式下运行规则评估。</para>
+		/// <para>未选中 - 将不会在批处理模式下运行规则评估。 将使用触发事件来确定针对插入、更新或删除编辑操作进行规则评估的时间。 这是默认设置。</para>
+		/// <para>计算规则可处于选中或未选中状态。 此参数的验证规则始终处于选中状态，约束规则始终处于未选中状态。</para>
 		/// <para><see cref="BatchEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -225,9 +225,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Severity</para>
-		/// <para>The severity of the error.</para>
-		/// <para>A value within the range of 1 through 5 can be chosen to define the severity of the rule. A value of 1 is high, being the most severe, and a value of 5 is low, being the least severe. For example, you can provide a low severity for a specific attribute rule and ignore the error during data production workflows, or set a high severity in which the error would need to be fixed for accuracy of data collected.</para>
-		/// <para>This parameter is only applicable to validation rules.</para>
+		/// <para>错误的严重性。</para>
+		/// <para>可以在 1-5 范围内选择一个值定义规则的严重性。 值 1 为最高，代表最严重；值 5 为最低，代表最不严重。 例如，您可以为特定的属性规则选择低严重性，忽略数据生产流程中的错误，也可以设置高严重性，此时则需要修复错误以提高所收集数据的准确性。</para>
+		/// <para>此参数仅适用于验证规则。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -235,7 +235,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Tags</para>
-		/// <para>A set of tags that identify the rule (for searching and indexing) as a way to map to a functional requirement in a data model.</para>
+		/// <para>用于标识规则（搜索和索引）的一系列标签，作为映射到数据模型中的功能需求的方式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -258,24 +258,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TypeEnum 
 		{
 			/// <summary>
-			/// <para>Calculation—Attribute values will be automatically populated for features when another attribute is set on a feature. These rules are applied based on the triggering events specified. Long running calculations can be set to run in batch mode and will be evaluated at a user-defined time.When adding multiple calculation rules, the order in which the rules are added is important if there are circular dependencies. For example, Rule A calculates Field1 is equal to the value of $feature.Field2 + $feature.Field3, and Rule B calculates Field4 is equal to $feature.Field1 + $feature.Field5; the results of the calculation may be different depending on the order in which the rules are added.</para>
+			/// <para>计算—在要素上设置其他属性时，将自动填充要素的属性值。 将基于指定的触发事件来应用这些规则。 可将长时间运行的计算设置为在批处理模式下运行，并在用户定义的时间进行评估。添加多个计算规则时，如果存在循环依赖关系，则添加规则的顺序非常重要。 例如，规则 A 计算 Field1 等于 $feature.Field2 + $feature.Field3 的值，规则 B 计算 Field4 等于 $feature.Field1 + $feature.Field5，则计算的结果可能不同，具体取决于添加规则的顺序。</para>
 			/// </summary>
 			[GPValue("CALCULATION")]
-			[Description("Calculation")]
+			[Description("计算")]
 			Calculation,
 
 			/// <summary>
-			/// <para>Constraint—Permissible attribute configurations will be specified on a feature. When the constraint rule is violated, an error is generated and the feature is not stored. For example, if the value of Field A must be less than the sum of Field B and Field C, an error will be generated when that constraint is violated.</para>
+			/// <para>约束—将指定要素上允许的属性配置。 如果违反约束规则，则将生成错误，并且不会存储该要素。 例如，如果 Field A 的值必须小于 Field B 与 Field C 的总和，则在违反该约束时将会生成错误。</para>
 			/// </summary>
 			[GPValue("CONSTRAINT")]
-			[Description("Constraint")]
+			[Description("约束")]
 			Constraint,
 
 			/// <summary>
-			/// <para>Validation—Existing features will be identified with a batch validation process. Rules are evaluated at a user-defined time. When a rule is violated, an error feature is created.</para>
+			/// <para>验证—使用批处理验证过程对现有要素进行识别。 将在用户定义的时间评估规则。 违反规则时，将创建错误要素。</para>
 			/// </summary>
 			[GPValue("VALIDATION")]
-			[Description("Validation")]
+			[Description("验证")]
 			Validation,
 
 		}
@@ -286,14 +286,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IsEditableEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The attribute value can be edited. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EDITABLE")]
 			EDITABLE,
 
 			/// <summary>
-			/// <para>Unchecked—The attribute value cannot be edited.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONEDITABLE")]
@@ -307,24 +307,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TriggeringEventsEnum 
 		{
 			/// <summary>
-			/// <para>Insert—The rule will be applied when a new feature is added.</para>
+			/// <para>插入—将在添加新要素后应用规则。</para>
 			/// </summary>
 			[GPValue("INSERT")]
-			[Description("Insert")]
+			[Description("插入")]
 			Insert,
 
 			/// <summary>
-			/// <para>Delete—The rule will be applied when a feature is deleted.</para>
+			/// <para>删除—将在删除要素后应用规则。</para>
 			/// </summary>
 			[GPValue("DELETE")]
-			[Description("Delete")]
+			[Description("删除")]
 			Delete,
 
 			/// <summary>
-			/// <para>Update—The rule will be applied when a feature is updated.</para>
+			/// <para>更新—将在更新要素后应用规则。</para>
 			/// </summary>
 			[GPValue("UPDATE")]
-			[Description("Update")]
+			[Description("更新")]
 			Update,
 
 		}
@@ -335,14 +335,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ExcludeFromClientEvaluationEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The rule will be excluded from client evaluation.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("EXCLUDE")]
 			EXCLUDE,
 
 			/// <summary>
-			/// <para>Unchecked—The rule will not be excluded from client evaluation. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INCLUDE")]
@@ -356,14 +356,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum BatchEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The rule evaluation will be run in batch mode at a later time by running validate.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BATCH")]
 			BATCH,
 
 			/// <summary>
-			/// <para>Unchecked—The rule evaluation will not be run in batch mode. Triggering events will be used to determine when the rule is evaluated for insert, update, or delete edit operations. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_BATCH")]

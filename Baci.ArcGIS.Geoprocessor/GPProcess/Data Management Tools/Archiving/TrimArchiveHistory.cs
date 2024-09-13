@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Trim Archive History</para>
-	/// <para>Trim Archive History</para>
-	/// <para>Deletes retired archive records from nonversioned archive-enabled datasets.</para>
+	/// <para>修剪存档历史</para>
+	/// <para>从非版本化且已启用存档的数据集中删除已停用存档记录。</para>
 	/// </summary>
 	public class TrimArchiveHistory : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The nonversioned archive-enabled table with the archive history to be trimmed.</para>
+		/// <para>包含要修剪的存档历史的非版本化且已启用存档的表。</para>
 		/// </param>
 		/// <param name="TrimMode">
 		/// <para>Trim Mode</para>
-		/// <para>Specifies the trim mode that will be used to trim the archive history.</para>
-		/// <para>At the current version of ArcGIS Pro, only the delete trim mode is available.</para>
-		/// <para>Delete—The archive records will be deleted.</para>
+		/// <para>指定将用于修剪存档历史的修剪模式。</para>
+		/// <para>在 ArcGIS Pro 的当前版本中，仅删除修剪模式可用。</para>
+		/// <para>删除—将删除存档记录。</para>
 		/// <para><see cref="TrimModeEnum"/></para>
 		/// </param>
 		public TrimArchiveHistory(object InTable, object TrimMode)
@@ -37,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Trim Archive History</para>
+		/// <para>Tool Display Name : 修剪存档历史</para>
 		/// </summary>
-		public override string DisplayName() => "Trim Archive History";
+		public override string DisplayName() => "修剪存档历史";
 
 		/// <summary>
 		/// <para>Tool Name : TrimArchiveHistory</para>
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The nonversioned archive-enabled table with the archive history to be trimmed.</para>
+		/// <para>包含要修剪的存档历史的非版本化且已启用存档的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -81,9 +81,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Trim Mode</para>
-		/// <para>Specifies the trim mode that will be used to trim the archive history.</para>
-		/// <para>At the current version of ArcGIS Pro, only the delete trim mode is available.</para>
-		/// <para>Delete—The archive records will be deleted.</para>
+		/// <para>指定将用于修剪存档历史的修剪模式。</para>
+		/// <para>在 ArcGIS Pro 的当前版本中，仅删除修剪模式可用。</para>
+		/// <para>删除—将删除存档记录。</para>
 		/// <para><see cref="TrimModeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Trim Before Date</para>
-		/// <para>Archive records older than this date and time will be deleted. The date and time must be in UTC. If no date is provided, all archive records will be deleted.</para>
+		/// <para>将删除早于该日期和时间的存档记录。 日期和时间必须使用 UTC。 如果未提供日期，则将删除所有存档记录。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -114,10 +114,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TrimModeEnum 
 		{
 			/// <summary>
-			/// <para>Delete—The archive records will be deleted.</para>
+			/// <para>删除—将删除存档记录。</para>
 			/// </summary>
 			[GPValue("DELETE")]
-			[Description("Delete")]
+			[Description("删除")]
 			Delete,
 
 		}

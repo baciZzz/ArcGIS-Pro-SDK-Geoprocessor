@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Kernel Interpolation With Barriers</para>
-	/// <para>Kernel Interpolation With Barriers</para>
-	/// <para>A moving window predictor that uses the shortest distance between points so that points on either side of the line barriers are connected.</para>
+	/// <para>含障碍的核插值法</para>
+	/// <para>一个移动窗口预测器，它使用两点之间的最短距离，这样可以将线障碍任意一侧的点都连接起来。</para>
 	/// </summary>
 	public class KernelInterpolationWithBarriers : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input features</para>
-		/// <para>The input point features containing the z-values to be interpolated.</para>
+		/// <para>包含要插入的 z 值的输入点要素。</para>
 		/// </param>
 		/// <param name="ZField">
 		/// <para>Z value field</para>
-		/// <para>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contain z-values or m-values.</para>
+		/// <para>表示每个点的高度或量级值的字段。如果输入要素包含 z 值或 m 值，则该字段可以是数值字段或 Shape 字段。</para>
 		/// </param>
 		public KernelInterpolationWithBarriers(object InFeatures, object ZField)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Kernel Interpolation With Barriers</para>
+		/// <para>Tool Display Name : 含障碍的核插值法</para>
 		/// </summary>
-		public override string DisplayName() => "Kernel Interpolation With Barriers";
+		public override string DisplayName() => "含障碍的核插值法";
 
 		/// <summary>
 		/// <para>Tool Name : KernelInterpolationWithBarriers</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input features</para>
-		/// <para>The input point features containing the z-values to be interpolated.</para>
+		/// <para>包含要插入的 z 值的输入点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Z value field</para>
-		/// <para>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contain z-values or m-values.</para>
+		/// <para>表示每个点的高度或量级值的字段。如果输入要素包含 z 值或 m 值，则该字段可以是数值字段或 Shape 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output geostatistical layer</para>
-		/// <para>The geostatistical layer produced. This layer is required output only if no output raster is requested.</para>
+		/// <para>生成的地统计图层。只有未请求任何输出栅格时才需要输出该图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGALayer()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster. This raster is required output only if no output geostatistical layer is requested.</para>
+		/// <para>输出栅格。只有未请求任何输出地统计图层时才需要输出该栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -106,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>The cell size at which the output raster will be created.</para>
-		/// <para>This value can be explicitly set in the Environments by the Cell Size parameter.</para>
-		/// <para>If not set, it is the shorter of the width or the height of the extent of the input point features, in the input spatial reference, divided by 250.</para>
+		/// <para>要创建的输出栅格的像元大小。</para>
+		/// <para>可以通过像元大小参数在环境中明确设置该值。</para>
+		/// <para>如果未设置，则该值为输入空间参考中输入点要素范围的宽度与高度中的较小值除以 250。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input absolute barrier features</para>
-		/// <para>Absolute barrier features using non-Euclidean distances rather than line-of-sight distances.</para>
+		/// <para>使用“非欧氏”距离而非“通视”距离的绝对障碍要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -130,13 +130,13 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Kernel function</para>
-		/// <para>The kernel function used in the simulation.</para>
-		/// <para>Exponential— The function grows or decays proportionally.</para>
-		/// <para>Gaussian— Bell-shaped function that falls off quickly toward plus/minus infinity.</para>
-		/// <para>Quartic— Fourth-order polynomial function.</para>
-		/// <para>Epanechnikov— A discontinuous parabolic function.</para>
-		/// <para>Fifth order polynomial— Fifth-order polynomial function.</para>
-		/// <para>Constant—An indicator function.</para>
+		/// <para>模拟中所使用的核函数。</para>
+		/// <para>指数函数— 函数按比例增长或衰减。</para>
+		/// <para>高斯函数— 朝正/负无穷方向快速跌落的钟形函数。</para>
+		/// <para>四次式— 四阶多项式函数。</para>
+		/// <para>Epanechnikov— 不连续的抛物线函数。</para>
+		/// <para>五阶多项式— 五阶多项式函数。</para>
+		/// <para>常量—指示函数。</para>
 		/// <para><see cref="KernelFunctionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Bandwidth</para>
-		/// <para>Used to specify the maximum distance at which data points are used for prediction. With increasing bandwidth, prediction bias increases and prediction variance decreases.</para>
+		/// <para>用于指定预测所用数据点之间的最大距离。随着带宽的增加，预测偏差将增加，而预测方差会减少。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -155,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Order of polynomial</para>
-		/// <para>Sets the order of the polynomial.</para>
+		/// <para>设置多项式的阶数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -164,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Ridge parameter</para>
-		/// <para>Used for the numerical stabilization of the solution of the system of linear equations. It does not influence predictions in the case of regularly distributed data without barriers. Predictions for areas in which the data is located near the feature barrier or isolated by the barriers can be unstable and tend to require relatively large ridge parameter values.</para>
+		/// <para>用于线性方程组解的数值稳定性。对于不含障碍的规则分布数据，它不会影响预测。对于数据位于要素障碍附近或被障碍隔离的区域，预测可能不稳定，而往往需要相对较大的山脊参数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -173,9 +173,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output surface type</para>
-		/// <para>Surface type to store the interpolation results.</para>
-		/// <para>Prediction—Prediction surfaces are produced from the interpolated values.</para>
-		/// <para>Standard error of prediction— Standard Error surfaces are produced from the standard errors of the interpolated values.</para>
+		/// <para>用于存储插值结果的表面类型。</para>
+		/// <para>预测—可通过内插值生成的预测表面。</para>
+		/// <para>预测的标准误差— 标准误差表面可通过内插值的标准误差生成。</para>
 		/// <para><see cref="OutputTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -200,45 +200,45 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum KernelFunctionEnum 
 		{
 			/// <summary>
-			/// <para>Exponential— The function grows or decays proportionally.</para>
+			/// <para>指数函数— 函数按比例增长或衰减。</para>
 			/// </summary>
 			[GPValue("EXPONENTIAL")]
-			[Description("Exponential")]
+			[Description("指数函数")]
 			Exponential,
 
 			/// <summary>
-			/// <para>Gaussian— Bell-shaped function that falls off quickly toward plus/minus infinity.</para>
+			/// <para>高斯函数— 朝正/负无穷方向快速跌落的钟形函数。</para>
 			/// </summary>
 			[GPValue("GAUSSIAN")]
-			[Description("Gaussian")]
+			[Description("高斯函数")]
 			Gaussian,
 
 			/// <summary>
-			/// <para>Quartic— Fourth-order polynomial function.</para>
+			/// <para>四次式— 四阶多项式函数。</para>
 			/// </summary>
 			[GPValue("QUARTIC")]
-			[Description("Quartic")]
+			[Description("四次式")]
 			Quartic,
 
 			/// <summary>
-			/// <para>Epanechnikov— A discontinuous parabolic function.</para>
+			/// <para>Epanechnikov— 不连续的抛物线函数。</para>
 			/// </summary>
 			[GPValue("EPANECHNIKOV")]
 			[Description("Epanechnikov")]
 			Epanechnikov,
 
 			/// <summary>
-			/// <para>Fifth order polynomial— Fifth-order polynomial function.</para>
+			/// <para>五阶多项式— 五阶多项式函数。</para>
 			/// </summary>
 			[GPValue("POLYNOMIAL5")]
-			[Description("Fifth order polynomial")]
+			[Description("五阶多项式")]
 			Fifth_order_polynomial,
 
 			/// <summary>
-			/// <para>Constant—An indicator function.</para>
+			/// <para>常量—指示函数。</para>
 			/// </summary>
 			[GPValue("CONSTANT")]
-			[Description("Constant")]
+			[Description("常量")]
 			Constant,
 
 		}
@@ -249,17 +249,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum OutputTypeEnum 
 		{
 			/// <summary>
-			/// <para>Prediction—Prediction surfaces are produced from the interpolated values.</para>
+			/// <para>预测—可通过内插值生成的预测表面。</para>
 			/// </summary>
 			[GPValue("PREDICTION")]
-			[Description("Prediction")]
+			[Description("预测")]
 			Prediction,
 
 			/// <summary>
-			/// <para>Standard error of prediction— Standard Error surfaces are produced from the standard errors of the interpolated values.</para>
+			/// <para>预测的标准误差— 标准误差表面可通过内插值的标准误差生成。</para>
 			/// </summary>
 			[GPValue("PREDICTION_STANDARD_ERROR")]
-			[Description("Standard error of prediction")]
+			[Description("预测的标准误差")]
 			Standard_error_of_prediction,
 
 		}

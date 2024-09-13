@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Flow Length</para>
-	/// <para>Flow Length</para>
-	/// <para>Calculates the upstream or downstream distance, or weighted distance, along the flow path for each cell.</para>
+	/// <para>水流长度</para>
+	/// <para>计算沿每个像元的流路径的上游(或下游)距离或加权距离。</para>
 	/// </summary>
 	public class FlowLength : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InFlowDirectionRaster">
 		/// <para>Input flow direction raster</para>
-		/// <para>The input raster that shows the direction of flow out of each cell.</para>
-		/// <para>The flow direction raster can be created using the Flow Direction tool.</para>
+		/// <para>根据每个像元来显示流向的输入栅格。</para>
+		/// <para>可以使用流向工具创建流向栅格。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster that shows for each cell the upstream or downstream distance along a flow path.</para>
+		/// <para>显示每个像元的沿流路径的上游或下游距离的输出栅格。</para>
 		/// </param>
 		public FlowLength(object InFlowDirectionRaster, object OutRaster)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Flow Length</para>
+		/// <para>Tool Display Name : 水流长度</para>
 		/// </summary>
-		public override string DisplayName() => "Flow Length";
+		public override string DisplayName() => "水流长度";
 
 		/// <summary>
 		/// <para>Tool Name : FlowLength</para>
@@ -71,8 +71,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input flow direction raster</para>
-		/// <para>The input raster that shows the direction of flow out of each cell.</para>
-		/// <para>The flow direction raster can be created using the Flow Direction tool.</para>
+		/// <para>根据每个像元来显示流向的输入栅格。</para>
+		/// <para>可以使用流向工具创建流向栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster that shows for each cell the upstream or downstream distance along a flow path.</para>
+		/// <para>显示每个像元的沿流路径的上游或下游距离的输出栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -92,9 +92,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Direction of measurement</para>
-		/// <para>The direction of measurement along the flow path.</para>
-		/// <para>Downstream—Calculates the downslope distance along the flow path, from each cell to a sink or outlet on the edge of the raster.</para>
-		/// <para>Upstream—Calculates the longest upslope distance along the flow path, from each cell to the top of the drainage divide.</para>
+		/// <para>沿流路径的度量方向。</para>
+		/// <para>下游—计算沿流路径从每个像元到栅格边上的汇点或出水口的下坡距离。</para>
+		/// <para>上游—计算沿流路径从每个像元到分水岭顶部的最长上坡距离。</para>
 		/// <para><see cref="DirectionMeasurementEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -104,8 +104,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input weight raster</para>
-		/// <para>An optional input raster for applying a weight to each cell.</para>
-		/// <para>If no weight raster is specified, a default weight of 1 will be applied to each cell. For each cell in the output raster, the result will be the number of cells that flow into it.</para>
+		/// <para>对每一像元应用权重的可选输入栅格。</para>
+		/// <para>如果未指定权重栅格，则将默认的权重值 1 应用于每个像元。 对于输出栅格中的每个像元，结果将是流入其中的像元数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
@@ -132,17 +132,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum DirectionMeasurementEnum 
 		{
 			/// <summary>
-			/// <para>Downstream—Calculates the downslope distance along the flow path, from each cell to a sink or outlet on the edge of the raster.</para>
+			/// <para>下游—计算沿流路径从每个像元到栅格边上的汇点或出水口的下坡距离。</para>
 			/// </summary>
 			[GPValue("DOWNSTREAM")]
-			[Description("Downstream")]
+			[Description("下游")]
 			Downstream,
 
 			/// <summary>
-			/// <para>Upstream—Calculates the longest upslope distance along the flow path, from each cell to the top of the drainage divide.</para>
+			/// <para>上游—计算沿流路径从每个像元到分水岭顶部的最长上坡距离。</para>
 			/// </summary>
 			[GPValue("UPSTREAM")]
-			[Description("Upstream")]
+			[Description("上游")]
 			Upstream,
 
 		}

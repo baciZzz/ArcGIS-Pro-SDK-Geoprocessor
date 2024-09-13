@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Connect Network Dataset Transit Sources To Streets</para>
-	/// <para>Connect Network Dataset Transit Sources To Streets</para>
-	/// <para>Connects transit stops to street features for use in a transit-enabled network dataset. This tool creates the StopsOnStreets and StopConnectors feature classes defined by the Network Analyst public transit data model and is intended to be run as part of a larger workflow for creating a transit-network dataset described in Create and use a network dataset with public transit data.</para>
+	/// <para>将网络数据集交通源连接至街道</para>
+	/// <para>将交通停靠点连接到街道要素，以便在启用交通的网络数据集中使用。 此工具可创建 Network Analyst 公共交通数据模型所定义的 StopsOnStreets 和 StopConnectors 要素类，并可作为较大工作流的一部分运行，以创建和使用具有公共交通数据的网络数据集中所描述的交通网络数据集。</para>
 	/// </summary>
 	[Obsolete()]
 	public class ConnectNetworkDatasetTransitSourcesToStreets : AbstractGPProcess
@@ -22,18 +22,18 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="TargetFeatureDataset">
 		/// <para>Target Feature Dataset</para>
-		/// <para>The feature dataset where the transit-enabled network dataset will be created. This feature dataset must already exist and contain a point feature class called Stops with the schema described by the Network Analyst public transit data model. A valid Stops feature class can be created with the GTFS To Network Dataset Transit Sources tool.</para>
-		/// <para>The Stops feature class may be altered after running the tool. Stop features with a GStopType value of 2, representing station entrances, may be deleted. These stop features will instead be included in the output StopsOnStreets feature class to model correct connections from the streets, through the station entrances, and to the stops. Parent stations that are spatially coincident with stops may also be deleted.</para>
+		/// <para>将创建启用交通的网络数据集的要素数据集。 此要素数据集必须已经存在，并包含称为 Stops 的点要素类，以及 Network Analyst 公共交通数据模型中所描述的方案。 可使用 GTFS 转网络数据集交通源工具创建有效的 Stops 要素类。</para>
+		/// <para>运行该工具后，Stops 要素类可能会更改。 GStopType 值为 2 的停靠点要素表示入站口，可以删除。 这些停靠点要素将包括在输出 StopsOnStreets 要素类中，用于对从街道，通过入站口，到停靠点的正确连接进行建模。 也可以删除在空间上与停靠点重合的父站点。</para>
 		/// </param>
 		/// <param name="InStreetsFeatures">
 		/// <para>Input Streets Features</para>
-		/// <para>A polyline feature class of streets to which transit stops and lines will connect. This streets feature class should be the same feature class you intend to use in your transit-enabled network dataset for modeling pedestrians walking along streets. The feature class does not need to be in the target feature dataset to run this tool; however, the feature class must be in the target feature dataset at the time you create the network dataset.</para>
-		/// <para>The input streets features will be altered after running the tool. Vertices will be added at the locations where StopsOnStreets features intersect the streets. If you do not want your street data altered, make a copy of it before running this tool.</para>
+		/// <para>交通停靠点和交通线将连接到的街道的折线要素类。 此街道要素类应与您打算在启用交通的网络数据集中使用的要素类相同，以便对沿着街道行走的行人进行建模。 要运行此工具，要素类不需要位于目标要素数据集中；但是，在创建网络数据集时，要素类必须位于目标要素数据集中。</para>
+		/// <para>运行该工具后，输入街道要素将被更改。 折点将添加到 StopsOnStreets 要素与街道相交的位置。 如果您不希望更改街道数据，请在运行此工具之前创建副本。</para>
 		/// </param>
 		/// <param name="SearchDistance">
 		/// <para>Search Distance</para>
-		/// <para>The search distance for snapping transit stops to the input street features. Stops that are outside the search distance will not be snapped and will not be connected to the streets. A small search distance will ensure that stops do not snap to streets that are far away, but it increases the likelihood of stops failing to snap when they should. A large search distance increases the number of stops likely to snap but may lead to errors that should instead be corrected by editing the street data. If no street features are found within the search distance of a particular stop, the output StopsOnStreets feature will not be snapped to a street and will be coincident with its corresponding feature in Stops, which could lead to poor connectivity in the network dataset at that location.</para>
-		/// <para>The default is 100 meters.</para>
+		/// <para>用于将交通停靠点捕捉到输入街道要素的搜索距离。 超出搜索距离的停靠点不会被捕捉，也不会连接到街道。 较小的搜索距离可以确保停靠点不会捕捉到远处的街道，但是会增加停靠点在应进行捕捉时捕捉失败的可能性。 较大的搜索距离会增加停靠点可能的捕捉次数，但可能会导致误差，这些误差需要通过编辑街道数据来纠正。 如果在特定停靠点的搜索距离内没有找到街道要素，则输出 StopsOnStreets 要素将不会捕捉到街道，并将与 Stops 中的相应要素重合，这可能导致该位置的网络数据集中连接质量较差。</para>
+		/// <para>默认值是 100 米。</para>
 		/// </param>
 		public ConnectNetworkDatasetTransitSourcesToStreets(object TargetFeatureDataset, object InStreetsFeatures, object SearchDistance)
 		{
@@ -43,9 +43,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Connect Network Dataset Transit Sources To Streets</para>
+		/// <para>Tool Display Name : 将网络数据集交通源连接至街道</para>
 		/// </summary>
-		public override string DisplayName() => "Connect Network Dataset Transit Sources To Streets";
+		public override string DisplayName() => "将网络数据集交通源连接至街道";
 
 		/// <summary>
 		/// <para>Tool Name : ConnectNetworkDatasetTransitSourcesToStreets</para>
@@ -79,8 +79,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Target Feature Dataset</para>
-		/// <para>The feature dataset where the transit-enabled network dataset will be created. This feature dataset must already exist and contain a point feature class called Stops with the schema described by the Network Analyst public transit data model. A valid Stops feature class can be created with the GTFS To Network Dataset Transit Sources tool.</para>
-		/// <para>The Stops feature class may be altered after running the tool. Stop features with a GStopType value of 2, representing station entrances, may be deleted. These stop features will instead be included in the output StopsOnStreets feature class to model correct connections from the streets, through the station entrances, and to the stops. Parent stations that are spatially coincident with stops may also be deleted.</para>
+		/// <para>将创建启用交通的网络数据集的要素数据集。 此要素数据集必须已经存在，并包含称为 Stops 的点要素类，以及 Network Analyst 公共交通数据模型中所描述的方案。 可使用 GTFS 转网络数据集交通源工具创建有效的 Stops 要素类。</para>
+		/// <para>运行该工具后，Stops 要素类可能会更改。 GStopType 值为 2 的停靠点要素表示入站口，可以删除。 这些停靠点要素将包括在输出 StopsOnStreets 要素类中，用于对从街道，通过入站口，到停靠点的正确连接进行建模。 也可以删除在空间上与停靠点重合的父站点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureDataset()]
@@ -88,8 +88,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Streets Features</para>
-		/// <para>A polyline feature class of streets to which transit stops and lines will connect. This streets feature class should be the same feature class you intend to use in your transit-enabled network dataset for modeling pedestrians walking along streets. The feature class does not need to be in the target feature dataset to run this tool; however, the feature class must be in the target feature dataset at the time you create the network dataset.</para>
-		/// <para>The input streets features will be altered after running the tool. Vertices will be added at the locations where StopsOnStreets features intersect the streets. If you do not want your street data altered, make a copy of it before running this tool.</para>
+		/// <para>交通停靠点和交通线将连接到的街道的折线要素类。 此街道要素类应与您打算在启用交通的网络数据集中使用的要素类相同，以便对沿着街道行走的行人进行建模。 要运行此工具，要素类不需要位于目标要素数据集中；但是，在创建网络数据集时，要素类必须位于目标要素数据集中。</para>
+		/// <para>运行该工具后，输入街道要素将被更改。 折点将添加到 StopsOnStreets 要素与街道相交的位置。 如果您不希望更改街道数据，请在运行此工具之前创建副本。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -100,8 +100,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Search Distance</para>
-		/// <para>The search distance for snapping transit stops to the input street features. Stops that are outside the search distance will not be snapped and will not be connected to the streets. A small search distance will ensure that stops do not snap to streets that are far away, but it increases the likelihood of stops failing to snap when they should. A large search distance increases the number of stops likely to snap but may lead to errors that should instead be corrected by editing the street data. If no street features are found within the search distance of a particular stop, the output StopsOnStreets feature will not be snapped to a street and will be coincident with its corresponding feature in Stops, which could lead to poor connectivity in the network dataset at that location.</para>
-		/// <para>The default is 100 meters.</para>
+		/// <para>用于将交通停靠点捕捉到输入街道要素的搜索距离。 超出搜索距离的停靠点不会被捕捉，也不会连接到街道。 较小的搜索距离可以确保停靠点不会捕捉到远处的街道，但是会增加停靠点在应进行捕捉时捕捉失败的可能性。 较大的搜索距离会增加停靠点可能的捕捉次数，但可能会导致误差，这些误差需要通过编辑街道数据来纠正。 如果在特定停靠点的搜索距离内没有找到街道要素，则输出 StopsOnStreets 要素将不会捕捉到街道，并将与 Stops 中的相应要素重合，这可能导致该位置的网络数据集中连接质量较差。</para>
+		/// <para>默认值是 100 米。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>An SQL expression used to select a subset of input street feature records. Transit stops will be snapped only to street features matching this expression. For example, the expression can be used to prevent stops from snapping to streets where pedestrian travel is prohibited.</para>
+		/// <para>用于选择输入街道要素记录子集的 SQL 表达式。 交通停靠点仅会捕捉到与此表达式匹配的街道要素。 例如，此表达式可以用于防止停靠点捕捉到禁止行人通行的街道。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Collect Values</para>
-	/// <para>Collect Values</para>
-	/// <para>Collects output values from an iterator or converts a list of values into a single input with multiple values.</para>
+	/// <para>收集值</para>
+	/// <para>用于从迭代器收集输出值或将一组值转换为具有多个值的单个输入。</para>
 	/// </summary>
 	public class CollectValues : AbstractGPProcess
 	{
@@ -24,9 +24,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Collect Values</para>
+		/// <para>Tool Display Name : 收集值</para>
 		/// </summary>
-		public override string DisplayName() => "Collect Values";
+		public override string DisplayName() => "收集值";
 
 		/// <summary>
 		/// <para>Tool Name : CollectValues</para>
@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Input Value</para>
-		/// <para>The input values to be collected.</para>
+		/// <para>要收集的输入值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The output table with the collected values.</para>
+		/// <para>具有收集值的输出表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]

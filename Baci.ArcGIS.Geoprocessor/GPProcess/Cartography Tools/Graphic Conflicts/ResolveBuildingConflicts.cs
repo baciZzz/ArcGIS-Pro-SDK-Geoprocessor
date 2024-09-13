@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Resolve Building Conflicts</para>
-	/// <para>Resolve Building Conflicts</para>
-	/// <para>Resolves symbol conflicts among buildings with respect to linear barrier features by moving, resizing, or hiding buildings.</para>
+	/// <para>解决建筑物冲突</para>
+	/// <para>通过移动、调整大小或隐藏建筑物解决建筑物间的符号冲突以及与线状障碍要素有关的符号冲突。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,28 +23,28 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InBuildings">
 		/// <para>Input Building Layers</para>
-		/// <para>The input layers containing building features that may be in conflict or smaller than allowable size. Buildings can be either points or polygons. Buildings will be modified to resolve conflicts with other buildings and with barrier features.</para>
-		/// <para>When point building layers are used as inputs, the Angle property of the marker symbol layer must be set to a field in the feature class. This field will store the rotation adjustments</para>
+		/// <para>包含可能存在冲突或者小于容许大小的建筑物要素的输入图层。 建筑物可以是点或面。 将对建筑物进行修改以解决它们与其他建筑物和障碍要素的冲突。</para>
+		/// <para>将点建筑物图层用作输入时，必须将标记符号图层的角度属性设置为要素类中的字段。 该字段将存储旋转调整。</para>
 		/// </param>
 		/// <param name="InvisibilityField">
 		/// <para>Invisibility Field</para>
-		/// <para>The field that stores the invisibility values that can be used to remove some buildings from display to resolve symbol conflicts. Buildings with a value of 1 will be removed from display; those with a value of zero will not be removed. Use a definition query on the layer to display visible buildings only. No features are deleted.</para>
+		/// <para>存储不可见性值的字段，不可见性值可用于从显示中移除某些建筑物以解决符号冲突。 值为 1 的建筑物将从显示中移除；值为零的建筑物不会被移除。 对图层使用定义查询可只显示可见建筑物。 未删除要素。</para>
 		/// </param>
 		/// <param name="InBarriers">
 		/// <para>Input Barrier Layers</para>
-		/// <para>The layers containing the linear or polygon features that are conflict barriers for input building features. Buildings will be modified to resolve conflicts between buildings and barriers. The orient value is Boolean, specifying whether buildings will be oriented to the barrier layer.</para>
-		/// <para>Gap specifies the distance that buildings will move toward or away from the barrier layer. A unit must be entered with the value.</para>
-		/// <para>A gap value of 0 (zero) will snap buildings directly to the edge of the barrier line or outline symbology.</para>
-		/// <para>A null (unspecified) gap value means that buildings will not be moved toward or away from barrier lines or outlines except movement required by conflict resolution.</para>
-		/// <para>If no unit is entered with the gap value (that is, 10 instead of 10 meters), the linear unit from the input feature&apos;s coordinate system will be used.</para>
+		/// <para>作为与输入建筑物要素存在冲突的障碍的所有线状要素或面状要素所在的图层。 将对建筑物进行修改以解决建筑物与障碍之间的冲突。 定向值为布尔值，用于指定是否将建筑物定向到障碍图层。</para>
+		/// <para>间距用于指定建筑物将朝向或远离障碍图层所移动的距离。 输入此值时必须带有单位。</para>
+		/// <para>间距值 0（零）表示会将建筑物直接捕捉到障碍线或轮廓符号系统的边缘。</para>
+		/// <para>null（未指定）间距值表示除解决冲突所需的移动外，建筑物将不会移向或远离障碍线或轮廓线。</para>
+		/// <para>如果输入间距值时未带有单位（如输入 10 而不是 10 米），将使用输入要素的坐标系的线性单位。</para>
 		/// </param>
 		/// <param name="BuildingGap">
 		/// <para>Building Gap</para>
-		/// <para>The minimum allowable distance between symbolized buildings at scale. Buildings that are closer together will be displaced or hidden to enforce this distance. The minimum allowable distance is set relative to the reference scale (that is, 15 meters at 1:50,000 scale). The value is 0 if the reference scale is not set.</para>
+		/// <para>某比例下符号化的建筑物之间的最小容许距离。 将移动或隐藏间距小于此距离的建筑物以保持此距离。 最小容许距离将相对于参考比例进行设置（如，1:50,000 比例下为 15 米）。 如果未设置参考比例，最小容许距离值为 0。</para>
 		/// </param>
 		/// <param name="MinimumSize">
 		/// <para>Minimum Allowable Building Size</para>
-		/// <para>The minimum allowable size of the shortest side of a rotated best-fit bounding box around the symbolized building feature drawn at the reference scale. Buildings with a bounding box side smaller than this value will be enlarged to meet it. Resizing may occur nonproportionally, resulting in a change to the building morphology.</para>
+		/// <para>经旋转的最佳大小边界框的最短侧的最小容许大小，此边界框位于以参考比例绘制的符号化的建筑物要素周围。 会将边界框侧小于此值的建筑物进行扩大以达到此值。 可能会不按比例来调整建筑物大小，这将导致建筑物的形态发生改变。</para>
 		/// </param>
 		public ResolveBuildingConflicts(object InBuildings, object InvisibilityField, object InBarriers, object BuildingGap, object MinimumSize)
 		{
@@ -56,9 +56,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Resolve Building Conflicts</para>
+		/// <para>Tool Display Name : 解决建筑物冲突</para>
 		/// </summary>
-		public override string DisplayName() => "Resolve Building Conflicts";
+		public override string DisplayName() => "解决建筑物冲突";
 
 		/// <summary>
 		/// <para>Tool Name : ResolveBuildingConflicts</para>
@@ -92,8 +92,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Building Layers</para>
-		/// <para>The input layers containing building features that may be in conflict or smaller than allowable size. Buildings can be either points or polygons. Buildings will be modified to resolve conflicts with other buildings and with barrier features.</para>
-		/// <para>When point building layers are used as inputs, the Angle property of the marker symbol layer must be set to a field in the feature class. This field will store the rotation adjustments</para>
+		/// <para>包含可能存在冲突或者小于容许大小的建筑物要素的输入图层。 建筑物可以是点或面。 将对建筑物进行修改以解决它们与其他建筑物和障碍要素的冲突。</para>
+		/// <para>将点建筑物图层用作输入时，必须将标记符号图层的角度属性设置为要素类中的字段。 该字段将存储旋转调整。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Invisibility Field</para>
-		/// <para>The field that stores the invisibility values that can be used to remove some buildings from display to resolve symbol conflicts. Buildings with a value of 1 will be removed from display; those with a value of zero will not be removed. Use a definition query on the layer to display visible buildings only. No features are deleted.</para>
+		/// <para>存储不可见性值的字段，不可见性值可用于从显示中移除某些建筑物以解决符号冲突。 值为 1 的建筑物将从显示中移除；值为零的建筑物不会被移除。 对图层使用定义查询可只显示可见建筑物。 未删除要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -112,11 +112,11 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Barrier Layers</para>
-		/// <para>The layers containing the linear or polygon features that are conflict barriers for input building features. Buildings will be modified to resolve conflicts between buildings and barriers. The orient value is Boolean, specifying whether buildings will be oriented to the barrier layer.</para>
-		/// <para>Gap specifies the distance that buildings will move toward or away from the barrier layer. A unit must be entered with the value.</para>
-		/// <para>A gap value of 0 (zero) will snap buildings directly to the edge of the barrier line or outline symbology.</para>
-		/// <para>A null (unspecified) gap value means that buildings will not be moved toward or away from barrier lines or outlines except movement required by conflict resolution.</para>
-		/// <para>If no unit is entered with the gap value (that is, 10 instead of 10 meters), the linear unit from the input feature&apos;s coordinate system will be used.</para>
+		/// <para>作为与输入建筑物要素存在冲突的障碍的所有线状要素或面状要素所在的图层。 将对建筑物进行修改以解决建筑物与障碍之间的冲突。 定向值为布尔值，用于指定是否将建筑物定向到障碍图层。</para>
+		/// <para>间距用于指定建筑物将朝向或远离障碍图层所移动的距离。 输入此值时必须带有单位。</para>
+		/// <para>间距值 0（零）表示会将建筑物直接捕捉到障碍线或轮廓符号系统的边缘。</para>
+		/// <para>null（未指定）间距值表示除解决冲突所需的移动外，建筑物将不会移向或远离障碍线或轮廓线。</para>
+		/// <para>如果输入间距值时未带有单位（如输入 10 而不是 10 米），将使用输入要素的坐标系的线性单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Building Gap</para>
-		/// <para>The minimum allowable distance between symbolized buildings at scale. Buildings that are closer together will be displaced or hidden to enforce this distance. The minimum allowable distance is set relative to the reference scale (that is, 15 meters at 1:50,000 scale). The value is 0 if the reference scale is not set.</para>
+		/// <para>某比例下符号化的建筑物之间的最小容许距离。 将移动或隐藏间距小于此距离的建筑物以保持此距离。 最小容许距离将相对于参考比例进行设置（如，1:50,000 比例下为 15 米）。 如果未设置参考比例，最小容许距离值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Minimum Allowable Building Size</para>
-		/// <para>The minimum allowable size of the shortest side of a rotated best-fit bounding box around the symbolized building feature drawn at the reference scale. Buildings with a bounding box side smaller than this value will be enlarged to meet it. Resizing may occur nonproportionally, resulting in a change to the building morphology.</para>
+		/// <para>经旋转的最佳大小边界框的最短侧的最小容许大小，此边界框位于以参考比例绘制的符号化的建筑物要素周围。 会将边界框侧小于此值的建筑物进行扩大以达到此值。 可能会不按比例来调整建筑物大小，这将导致建筑物的形态发生改变。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Hierarchy Field</para>
-		/// <para>The field that contains hierarchical ranking of feature importance in which 1 is very important and larger integers reflect decreasing importance. A value of 0 (zero) causes the building to retain visibility, although it may be moved somewhat to resolve conflicts. If this parameter is not used, feature importance will be assessed by the tool based on perimeter length and proximity to barrier features.</para>
+		/// <para>该字段包含要素重要性的等级级别，其中 1 表示非常重要，重要性随整数值的增大而递减。 虽然可能会对建筑物进行一定程度的移动以解决冲突，但值 0（零）将使建筑物保持可见。 如果未使用此参数，此工具将根据要素的周长及其与障碍要素的距离对要素重要性进行评估。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

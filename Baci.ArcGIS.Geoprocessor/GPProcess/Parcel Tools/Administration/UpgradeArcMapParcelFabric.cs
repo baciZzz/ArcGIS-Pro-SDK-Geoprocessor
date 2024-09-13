@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Upgrade ArcMap Parcel Fabric</para>
-	/// <para>Upgrade ArcMap Parcel Fabric</para>
-	/// <para>Upgrades an ArcMap  parcel fabric to an ArcGIS Pro parcel fabric.</para>
+	/// <para>升级 ArcMap 宗地结构</para>
+	/// <para>将 ArcMap 宗地结构升级为 ArcGIS Pro 宗地结构。</para>
 	/// </summary>
 	public class UpgradeArcMapParcelFabric : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFabric">
 		/// <para>Input Parcel Fabric For ArcMap</para>
-		/// <para>The ArcMap parcel fabric that will be upgraded to an ArcGIS Pro parcel fabric.</para>
+		/// <para>将升级为 ArcGIS Pro 宗地结构的 ArcMap 宗地结构。</para>
 		/// </param>
 		/// <param name="TargetDataset">
 		/// <para>Target Feature Dataset</para>
-		/// <para>The feature dataset that will contain the upgraded ArcGIS Pro parcel fabric.</para>
+		/// <para>将包含已升级的 ArcGIS Pro 宗地结构的要素数据集。</para>
 		/// </param>
 		/// <param name="Name">
 		/// <para>Name</para>
-		/// <para>The name of the upgraded ArcGIS Pro parcel fabric.</para>
+		/// <para>已升级的 ArcGIS Pro 宗地结构的名称。</para>
 		/// </param>
 		public UpgradeArcMapParcelFabric(object InParcelFabric, object TargetDataset, object Name)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Upgrade ArcMap Parcel Fabric</para>
+		/// <para>Tool Display Name : 升级 ArcMap 宗地结构</para>
 		/// </summary>
-		public override string DisplayName() => "Upgrade ArcMap Parcel Fabric";
+		public override string DisplayName() => "升级 ArcMap 宗地结构";
 
 		/// <summary>
 		/// <para>Tool Name : UpgradeArcMapParcelFabric</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Input Parcel Fabric For ArcMap</para>
-		/// <para>The ArcMap parcel fabric that will be upgraded to an ArcGIS Pro parcel fabric.</para>
+		/// <para>将升级为 ArcGIS Pro 宗地结构的 ArcMap 宗地结构。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPCadastralFabricLayer()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Target Feature Dataset</para>
-		/// <para>The feature dataset that will contain the upgraded ArcGIS Pro parcel fabric.</para>
+		/// <para>将包含已升级的 ArcGIS Pro 宗地结构的要素数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureDataset()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Name</para>
-		/// <para>The name of the upgraded ArcGIS Pro parcel fabric.</para>
+		/// <para>已升级的 ArcGIS Pro 宗地结构的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -106,13 +106,13 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Delete identical overlapping lines</para>
-		/// <para>Specifies whether identical overlapping lines will be deleted. When this parameter is checked, overlapping lines will be deleted if the line shapes are identical (lines are coincident) and they have the following matching attributes:</para>
-		/// <para>Directions in the Direction field. This includes directions that are reversed by 180 degrees.</para>
-		/// <para>Distances in the Distance field. Distances are rounded to four decimal places.</para>
-		/// <para>Records in the Created By Record field.</para>
-		/// <para>Records in the Retired By Record field.</para>
-		/// <para>Checked—Identical overlapping lines will be deleted.</para>
-		/// <para>Unchecked—Identical overlapping lines will not be deleted. This is the default.</para>
+		/// <para>指定是否删除相同重叠线。 选中此参数后，如果线形状相同（线重合）并且具有以下匹配属性，则会将这些重叠线删除：</para>
+		/// <para>Direction 字段中的方向。 这包括反转 180 度的方向。</para>
+		/// <para>Distance 字段中的距离 距离舍入为四位小数。</para>
+		/// <para>Created By Record 字段中的记录。</para>
+		/// <para>Retired By Record 字段中的记录。</para>
+		/// <para>选中 - 将删除相同重叠线。</para>
+		/// <para>未选中 - 不会删除相同重叠线。 这是默认设置。</para>
 		/// <para><see cref="DeleteIdenticalEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -128,14 +128,14 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		public enum DeleteIdenticalEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Identical overlapping lines will be deleted.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DELETE_IDENTICAL_LINES")]
 			DELETE_IDENTICAL_LINES,
 
 			/// <summary>
-			/// <para>Unchecked—Identical overlapping lines will not be deleted. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("KEEP_IDENTICAL_LINES")]

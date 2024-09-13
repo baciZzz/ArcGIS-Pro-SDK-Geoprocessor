@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Watershed</para>
-	/// <para>Watershed</para>
-	/// <para>Determines the contributing area above a set of cells in a raster.</para>
+	/// <para>集水区</para>
+	/// <para>确定栅格中一组像元之上的汇流区域。</para>
 	/// </summary>
 	public class Watershed : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InFlowDirectionRaster">
 		/// <para>Input D8 flow direction raster</para>
-		/// <para>The input raster that shows the direction of flow out of each cell.</para>
-		/// <para>The flow direction raster can be created using the Flow Direction tool, run using the default flow direction type D8.</para>
+		/// <para>根据每个像元来显示流向的输入栅格。</para>
+		/// <para>可以在流向工具中，运行使用默认流向类型 D8 来创建流向栅格。</para>
 		/// </param>
 		/// <param name="InPourPointData">
 		/// <para>Input raster or feature pour point data</para>
-		/// <para>The input pour point locations.</para>
-		/// <para>For a raster, this represents cells above which the contributing area, or catchment, will be determined. All cells that are not NoData will be used as source cells.</para>
-		/// <para>For a point feature dataset, this represents locations above which the contributing area, or catchment, will be determined.</para>
+		/// <para>输入倾泻点位置。</para>
+		/// <para>对于栅格，输入倾泻点位置表示将确定的汇流区域或集水区之上的像元。所有非 NoData 的像元都将用作源像元。</para>
+		/// <para>对于点要素数据集，输入倾泻点位置表示将确定的汇流区域或集水区之上的位置。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster that shows the contributing area.</para>
-		/// <para>This output is of integer type.</para>
+		/// <para>显示汇流区域的输出栅格。</para>
+		/// <para>输出为整型。</para>
 		/// </param>
 		public Watershed(object InFlowDirectionRaster, object InPourPointData, object OutRaster)
 		{
@@ -43,14 +43,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Watershed</para>
+		/// <para>Tool Display Name : 集水区</para>
 		/// </summary>
-		public override string DisplayName() => "Watershed";
+		public override string DisplayName() => "集水区";
 
 		/// <summary>
-		/// <para>Tool Name : Watershed</para>
+		/// <para>Tool Name : 集水区</para>
 		/// </summary>
-		public override string ToolName() => "Watershed";
+		public override string ToolName() => "集水区";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Watershed</para>
@@ -79,8 +79,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input D8 flow direction raster</para>
-		/// <para>The input raster that shows the direction of flow out of each cell.</para>
-		/// <para>The flow direction raster can be created using the Flow Direction tool, run using the default flow direction type D8.</para>
+		/// <para>根据每个像元来显示流向的输入栅格。</para>
+		/// <para>可以在流向工具中，运行使用默认流向类型 D8 来创建流向栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -92,9 +92,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature pour point data</para>
-		/// <para>The input pour point locations.</para>
-		/// <para>For a raster, this represents cells above which the contributing area, or catchment, will be determined. All cells that are not NoData will be used as source cells.</para>
-		/// <para>For a point feature dataset, this represents locations above which the contributing area, or catchment, will be determined.</para>
+		/// <para>输入倾泻点位置。</para>
+		/// <para>对于栅格，输入倾泻点位置表示将确定的汇流区域或集水区之上的像元。所有非 NoData 的像元都将用作源像元。</para>
+		/// <para>对于点要素数据集，输入倾泻点位置表示将确定的汇流区域或集水区之上的位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -106,8 +106,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster that shows the contributing area.</para>
-		/// <para>This output is of integer type.</para>
+		/// <para>显示汇流区域的输出栅格。</para>
+		/// <para>输出为整型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -115,9 +115,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Pour point field</para>
-		/// <para>The field used to assign values to the pour point locations.</para>
-		/// <para>If the pour point dataset is a raster, use Value.</para>
-		/// <para>If the pour point dataset is a feature, use a numeric field. If the field contains floating-point values, they will be truncated into integers.</para>
+		/// <para>用于为倾泻点位置赋值的字段。</para>
+		/// <para>如果倾泻点数据集为栅格，则使用 Value。</para>
+		/// <para>如果倾泻点数据集为要素，则使用数值字段。 如果字段包含浮点型值，它们将被截断为整数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

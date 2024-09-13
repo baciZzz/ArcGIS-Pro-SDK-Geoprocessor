@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 {
 	/// <summary>
 	/// <para>Features To GTFS Stops</para>
-	/// <para>Features To GTFS Stops</para>
-	/// <para>Converts a feature class to a GTFS stops.txt file for a GTFS public transit dataset.</para>
+	/// <para>要素转 GTFS 停靠点</para>
+	/// <para>用于将要素类转换为 GTFS 公共交通数据集的 GTFS stops.txt 文件。</para>
 	/// </summary>
 	public class FeaturesToGTFSStops : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>A point feature class containing transit stop geometries and at least the minimum required GTFS stops.txt file fields except stop_lat and stop_lon.</para>
+		/// <para>此点要素类包含交通停靠点几何，且至少包含最低要求的 GTFS stops.txt 文件字段，但 stop_lat 和 stop_lon 除外。</para>
 		/// </param>
 		/// <param name="OutGtfsStopsFile">
 		/// <para>Output GTFS Stops File</para>
-		/// <para>The output stops.txt file.</para>
+		/// <para>输出 stops.txt 文件。</para>
 		/// </param>
 		public FeaturesToGTFSStops(object InFeatures, object OutGtfsStopsFile)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Features To GTFS Stops</para>
+		/// <para>Tool Display Name : 要素转 GTFS 停靠点</para>
 		/// </summary>
-		public override string DisplayName() => "Features To GTFS Stops";
+		public override string DisplayName() => "要素转 GTFS 停靠点";
 
 		/// <summary>
 		/// <para>Tool Name : FeaturesToGTFSStops</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>A point feature class containing transit stop geometries and at least the minimum required GTFS stops.txt file fields except stop_lat and stop_lon.</para>
+		/// <para>此点要素类包含交通停靠点几何，且至少包含最低要求的 GTFS stops.txt 文件字段，但 stop_lat 和 stop_lon 除外。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.PublicTransitTools
 
 		/// <summary>
 		/// <para>Output GTFS Stops File</para>
-		/// <para>The output stops.txt file.</para>
+		/// <para>输出 stops.txt 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

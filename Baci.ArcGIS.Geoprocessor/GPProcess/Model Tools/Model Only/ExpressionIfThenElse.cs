@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>If Expression Is</para>
-	/// <para>If Expression Is</para>
-	/// <para>Evaluates whether a given Python expression is True or False.</para>
+	/// <para>如果表达式为</para>
+	/// <para>评估给定 Python 表达式是 True 还是 False。</para>
 	/// </summary>
 	public class ExpressionIfThenElse : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="Expression">
 		/// <para>Expression</para>
-		/// <para>The Python expression to be evaluated.</para>
+		/// <para>要进行求值的 Python 表达式。</para>
 		/// </param>
 		public ExpressionIfThenElse(object Expression)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : If Expression Is</para>
+		/// <para>Tool Display Name : 如果表达式为</para>
 		/// </summary>
-		public override string DisplayName() => "If Expression Is";
+		public override string DisplayName() => "如果表达式为";
 
 		/// <summary>
 		/// <para>Tool Name : ExpressionIfThenElse</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>The Python expression to be evaluated.</para>
+		/// <para>要进行求值的 Python 表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSQLExpression()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Code Block</para>
-		/// <para>A Python code block. The code in the code block must be referenced in the Expression parameter.</para>
+		/// <para>Python 代码块。 必需在表达式参数中引用代码块中的代码。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

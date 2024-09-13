@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Manage Feature Bin Cache</para>
-	/// <para>Manage Feature Bin Cache</para>
-	/// <para>Manages the feature binning cache for data with feature binning enabled.</para>
+	/// <para>管理要素图格化缓存</para>
+	/// <para>管理启用要素图格的数据的要素图格缓存。</para>
 	/// </summary>
 	public class ManageFeatureBinCache : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The binning-enabled feature class that will have its static cache updated.</para>
+		/// <para>将更新其静态缓存的启用图格的要素类。</para>
 		/// </param>
 		public ManageFeatureBinCache(object InFeatures)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Manage Feature Bin Cache</para>
+		/// <para>Tool Display Name : 管理要素图格化缓存</para>
 		/// </summary>
-		public override string DisplayName() => "Manage Feature Bin Cache";
+		public override string DisplayName() => "管理要素图格化缓存";
 
 		/// <summary>
 		/// <para>Tool Name : ManageFeatureBinCache</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The binning-enabled feature class that will have its static cache updated.</para>
+		/// <para>将更新其静态缓存的启用图格的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -76,11 +76,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Bin Type</para>
-		/// <para>Specifies the type of binning that will be enabled.</para>
-		/// <para>Flat hexagon—The flat hexagon binning scheme, also known as flat geohex or flat hexbinning, will be enabled. The tiles are a tessellation of hexagons in which the orientation of the hexagons has a flat edge of the hexagon on top. This is the default for Microsoft SQL Server, Oracle, and PostgreSQL data.</para>
-		/// <para>Pointy hexagon—The pointy hexagon binning scheme, also known as pointy geohex or pointy hexbinning, will be enabled. The tiles are a tessellation of hexagons in which the orientation of the hexagons has a point of the hexagon on top.</para>
-		/// <para>Square—The square binning scheme in which the tiles are a tessellation of squares, also known as geosquare or squarebinning, will be enabled. This is the default for Db2 data.</para>
-		/// <para>Geohash—The geohash binning scheme in which the tiles are a tessellation of rectangles will be enabled. Because geohash bins always use the WGS84 geographic coordinate system (GCS WGS84, EPSG WKID 4326), you cannot specify a bin coordinate system for geohash bins.</para>
+		/// <para>指定要启用的图格化类型。</para>
+		/// <para>平六边形—将启用平面六边形图格化方案，也称为平面几何六边形或平面六边形图格化。 切片是六边形方向在顶部具有六边形平边的六边形镶嵌。 这是 Microsoft SQL Server、Oracle 和 PostgreSQL 数据的默认值。</para>
+		/// <para>尖六边形—将启用尖六边形图格化方案，也称为尖几何六边形或尖六边形图格化。 切片是六边形方向在顶部具有六边形点的六边形镶嵌。</para>
+		/// <para>方形—将启用正方形图格化方案，其中切片是正方形的细分，也称为几何正方形或正方形图格化。 这是 Db2 数据的默认值。</para>
+		/// <para>Geohash—将启用 Geohash 图格化方案，其中切片是矩形的细分。 由于 Geohash 图格始终使用 WGS84 地理坐标系（GCS WGS84、EPSG WKID 4326），因此无法为 Geohash 图格指定图格坐标系。</para>
 		/// <para><see cref="BinTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -90,19 +90,19 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Level of Detail</para>
-		/// <para>Specifies the maximum level of detail that will be used for the cache.</para>
-		/// <para>Tiling schemes are a continuum of scale ranges. Depending on the map, you may want to forego caching of some of the extremely large or small scales in the tiling scheme. This tool examines the scale dependencies in the map and attempts to provide a maximum range of scale for caching. Choose a level of detail that most closely matches the intended use of the map in which the data will be shown.</para>
-		/// <para>World—A world scale will be used as the maximum level of detail.</para>
-		/// <para>Continents—Multiple continents scale will be used as the maximum level of detail.</para>
-		/// <para>Continent—A single continent scale will be used as the maximum level of detail.</para>
-		/// <para>Countries—Multiple countries scale will be used as the maximum level of detail.</para>
-		/// <para>Country—A single country scale will be used as the maximum level of detail.</para>
-		/// <para>States—Multiple states scale will be used as the maximum level of detail.</para>
-		/// <para>State—A single state scale will be used as the maximum level of detail.</para>
-		/// <para>Counties—Multiple counties scale will be used as the maximum level of detail.</para>
-		/// <para>County—A single county scale will be used as the maximum level of detail.</para>
-		/// <para>Cities—Multiple cities scale will be used as the maximum level of detail.</para>
-		/// <para>City—A single city scale will be used as the maximum level of detail.</para>
+		/// <para>指定将用于缓存的最高细节层次。</para>
+		/// <para>切片方案是比例范围的连续体。 根据特定地图，您可能希望放弃针对切片方案中极大或极小的比例创建缓存。 此工具将检查地图中的比例可变选项，并提供进行缓存的最高比例范围。 选择与显示数据的地图的预期用途最匹配的细节层次。</para>
+		/// <para>世界—将使用世界比例作为最高细节层次。</para>
+		/// <para>多个大洲—将使用多个大洲比例作为最高细节层次。</para>
+		/// <para>单个大洲—将使用单个大洲比例作为最高细节层次。</para>
+		/// <para>多个国家/地区—将使用多个国家/地区比例作为最高细节层次。</para>
+		/// <para>国家/地区—将使用单个国家/地区比例作为最高细节层次。</para>
+		/// <para>多个省/自治区/直辖市—将使用多个省/自治区/直辖市比例作为最高细节层次。</para>
+		/// <para>单个省/自治区/直辖市—将使用单个省/自治区/直辖市比例作为最高细节层次。</para>
+		/// <para>多个县—将使用多个县比例作为最高细节层次。</para>
+		/// <para>单个县—将使用单个县比例作为最高细节层次。</para>
+		/// <para>多个城市—将使用多个城市比例作为最高细节层次。</para>
+		/// <para>单个城市—将使用单个城市比例作为最高细节层次。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -111,14 +111,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Add Statistic to Cache</para>
-		/// <para>Specifies the statistics that will be summarized and stored in the bin cache. Statistics are used to symbolize bins and provide aggregate information for all the points in a bin. One summary statistic, shape_count (which is the total feature count), is always available.</para>
-		/// <para>Field—The field on which the summary statistics will be calculated. Supported field types are short, long, float, and double.</para>
-		/// <para>Statistic Type—The type of statistic that will be calculated for the specified field. Statistics are calculated for all features in the bin. Available statistics types are as follows:</para>
-		/// <para>Mean (AVG)—Calculates the average for the specified field.</para>
-		/// <para>Minimum (MIN)—Finds the smallest value for all records of the specified field.</para>
-		/// <para>Maximum (MAX)—Finds the largest value for all records of the specified field.</para>
-		/// <para>Standard deviation (STDDEV)—Calculates the standard deviation value for the field.</para>
-		/// <para>Sum (SUM)—Adds the total value for the specified field.</para>
+		/// <para>指定将在图格缓存中汇总并存储的统计信息。 统计信息用于符号化图格，并为图格中的所有点提供聚合信息。 汇总统计信息 shape_count （总要素计数）始终可用。</para>
+		/// <para>字段 - 计算汇总统计信息时基于的字段。 支持的字段类型包括短整型、长整型、浮点型和双精度型。</para>
+		/// <para>统计类型 - 要为指定字段计算的统计类型。 可以计算图格中所有要素的统计信息。 可用统计类型如下：</para>
+		/// <para>平均值 (AVG) - 计算指定字段的平均值</para>
+		/// <para>最小值 (MIN) - 查找指定字段的所有记录的最小值</para>
+		/// <para>最大值 (MAX) - 查找指定字段的所有记录的最大值</para>
+		/// <para>标准差 (STDDEV) - 计算字段的标准差值</para>
+		/// <para>总和 (SUM) - 添加指定字段的总计值</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Delete Statistic from Cache</para>
-		/// <para>The summary statistic that will be deleted from the cache. You cannot delete the default COUNT summary statistic.</para>
+		/// <para>将从缓存中删除的汇总统计信息。 您无法删除默认 COUNT 汇总统计信息。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -157,28 +157,28 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum BinTypeEnum 
 		{
 			/// <summary>
-			/// <para>Flat hexagon—The flat hexagon binning scheme, also known as flat geohex or flat hexbinning, will be enabled. The tiles are a tessellation of hexagons in which the orientation of the hexagons has a flat edge of the hexagon on top. This is the default for Microsoft SQL Server, Oracle, and PostgreSQL data.</para>
+			/// <para>平六边形—将启用平面六边形图格化方案，也称为平面几何六边形或平面六边形图格化。 切片是六边形方向在顶部具有六边形平边的六边形镶嵌。 这是 Microsoft SQL Server、Oracle 和 PostgreSQL 数据的默认值。</para>
 			/// </summary>
 			[GPValue("FLAT_HEXAGON")]
-			[Description("Flat hexagon")]
+			[Description("平六边形")]
 			Flat_hexagon,
 
 			/// <summary>
-			/// <para>Pointy hexagon—The pointy hexagon binning scheme, also known as pointy geohex or pointy hexbinning, will be enabled. The tiles are a tessellation of hexagons in which the orientation of the hexagons has a point of the hexagon on top.</para>
+			/// <para>尖六边形—将启用尖六边形图格化方案，也称为尖几何六边形或尖六边形图格化。 切片是六边形方向在顶部具有六边形点的六边形镶嵌。</para>
 			/// </summary>
 			[GPValue("POINTY_HEXAGON")]
-			[Description("Pointy hexagon")]
+			[Description("尖六边形")]
 			Pointy_hexagon,
 
 			/// <summary>
-			/// <para>Square—The square binning scheme in which the tiles are a tessellation of squares, also known as geosquare or squarebinning, will be enabled. This is the default for Db2 data.</para>
+			/// <para>方形—将启用正方形图格化方案，其中切片是正方形的细分，也称为几何正方形或正方形图格化。 这是 Db2 数据的默认值。</para>
 			/// </summary>
 			[GPValue("SQUARE")]
-			[Description("Square")]
+			[Description("方形")]
 			Square,
 
 			/// <summary>
-			/// <para>Geohash—The geohash binning scheme in which the tiles are a tessellation of rectangles will be enabled. Because geohash bins always use the WGS84 geographic coordinate system (GCS WGS84, EPSG WKID 4326), you cannot specify a bin coordinate system for geohash bins.</para>
+			/// <para>Geohash—将启用 Geohash 图格化方案，其中切片是矩形的细分。 由于 Geohash 图格始终使用 WGS84 地理坐标系（GCS WGS84、EPSG WKID 4326），因此无法为 Geohash 图格指定图格坐标系。</para>
 			/// </summary>
 			[GPValue("GEOHASH")]
 			[Description("Geohash")]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Iterate Files</para>
-	/// <para>Iterate Files</para>
-	/// <para>Iterates over files in a folder.</para>
+	/// <para>迭代文件</para>
+	/// <para>迭代文件夹中的文件。</para>
 	/// </summary>
 	public class IterateFiles : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InFolder">
 		/// <para>Folder</para>
-		/// <para>Folder in which the input files are located.</para>
+		/// <para>输入文件所位于的文件夹。</para>
 		/// </param>
 		public IterateFiles(object InFolder)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Iterate Files</para>
+		/// <para>Tool Display Name : 迭代文件</para>
 		/// </summary>
-		public override string DisplayName() => "Iterate Files";
+		public override string DisplayName() => "迭代文件";
 
 		/// <summary>
 		/// <para>Tool Name : IterateFiles</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Folder</para>
-		/// <para>Folder in which the input files are located.</para>
+		/// <para>输入文件所位于的文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Wildcard</para>
-		/// <para>A combination of * and characters that help to limit the results. The asterisk is the same as specifying ALL. If no wildcard is specified, all inputs will be returned. For example, it can be used to restrict Iteration over input names starting with a certain character or word (for example, A* or Ari* or Land* and so on).</para>
+		/// <para>* 与有助于限制结果的字符的组合。 星号相当于指定全部。 如果未指定通配符，将返回所有输入。 例如，可将其用于将输入名称迭代限制为从某一字符或词语开始（例如，A*、Ari* 或 Land* 等）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>FileType</para>
-		/// <para>The file extension, such as TXT, ZIP, and so on. Only files with the extension will be iterated. Do not use a period before the file extension.</para>
+		/// <para>文件扩展名，例如 TXT、ZIP 等。只会迭代具有扩展名的文件。不要在文件扩展名前使用句点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -89,9 +89,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Recursive</para>
-		/// <para>Determines if all subfolders of the main folder will be recursively iterated through.</para>
-		/// <para>Checked—Will iterate through all subfolders.</para>
-		/// <para>Unchecked—Will not iterate through all subfolders.</para>
+		/// <para>确定是否递归迭代主文件夹的所有子文件夹。</para>
+		/// <para>选中 - 将递归迭代所有子文件夹。</para>
+		/// <para>未选中 - 将不会递归迭代所有子文件。</para>
 		/// <para><see cref="RecursiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -121,14 +121,14 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum RecursiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Will iterate through all subfolders.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RECURSIVE")]
 			RECURSIVE,
 
 			/// <summary>
-			/// <para>Unchecked—Will not iterate through all subfolders.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_RECURSIVE")]

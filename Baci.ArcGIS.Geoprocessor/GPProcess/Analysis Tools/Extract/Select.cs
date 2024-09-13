@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Select</para>
-	/// <para>Select</para>
-	/// <para>Extracts features from an input feature class or input feature layer, typically using a select or Structured Query Language (SQL) expression, and stores them in an output feature class.</para>
+	/// <para>选择</para>
+	/// <para>从输入要素类或输入要素图层中提取要素（通常使用选择或结构化查询语言 (SQL) 表达式），并将其存储于输出要素类中。</para>
 	/// </summary>
 	public class Select : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input feature class or layer from which features are selected.</para>
+		/// <para>从中选择要素的输入要素类或图层。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class to be created. If no expression is used, it contains all input features.</para>
+		/// <para>要创建的输出要素类。 如果不使用任何表达式，则其中将包含所有输入要素。</para>
 		/// </param>
 		public Select(object InFeatures, object OutFeatureClass)
 		{
@@ -34,14 +34,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Select</para>
+		/// <para>Tool Display Name : 选择</para>
 		/// </summary>
-		public override string DisplayName() => "Select";
+		public override string DisplayName() => "选择";
 
 		/// <summary>
-		/// <para>Tool Name : Select</para>
+		/// <para>Tool Name : 选择</para>
 		/// </summary>
-		public override string ToolName() => "Select";
+		public override string ToolName() => "选择";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.Select</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input feature class or layer from which features are selected.</para>
+		/// <para>从中选择要素的输入要素类或图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class to be created. If no expression is used, it contains all input features.</para>
+		/// <para>要创建的输出要素类。 如果不使用任何表达式，则其中将包含所有输入要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>An SQL expression used to select a subset of features.</para>
+		/// <para>用于选择要素子集的 SQL 表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]

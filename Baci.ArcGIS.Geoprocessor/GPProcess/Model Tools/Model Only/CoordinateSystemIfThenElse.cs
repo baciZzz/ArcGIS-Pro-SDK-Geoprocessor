@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>If Coordinate System Is</para>
-	/// <para>If Coordinate System Is</para>
-	/// <para>Evaluates the input data for  the specified coordinate system.</para>
+	/// <para>如果坐标系为</para>
+	/// <para>评估指定坐标系的输入数据。</para>
 	/// </summary>
 	public class CoordinateSystemIfThenElse : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InData">
 		/// <para>Input Data Element</para>
-		/// <para>The input data element to be evaluated.</para>
+		/// <para>要评估的输入数据元素。</para>
 		/// </param>
 		/// <param name="CoordinateSystem">
 		/// <para>Coordinate System</para>
-		/// <para>The coordinate system that will be evaluated.</para>
+		/// <para>将进行评估的坐标系。</para>
 		/// </param>
 		public CoordinateSystemIfThenElse(object InData, object CoordinateSystem)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : If Coordinate System Is</para>
+		/// <para>Tool Display Name : 如果坐标系为</para>
 		/// </summary>
-		public override string DisplayName() => "If Coordinate System Is";
+		public override string DisplayName() => "如果坐标系为";
 
 		/// <summary>
 		/// <para>Tool Name : CoordinateSystemIfThenElse</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Input Data Element</para>
-		/// <para>The input data element to be evaluated.</para>
+		/// <para>要评估的输入数据元素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>The coordinate system that will be evaluated.</para>
+		/// <para>将进行评估的坐标系。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]

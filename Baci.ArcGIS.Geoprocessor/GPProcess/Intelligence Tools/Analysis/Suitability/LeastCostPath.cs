@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Least Cost Path</para>
-	/// <para>Least Cost Path</para>
-	/// <para>Finds the shortest path between starting points and ending points across a cost surface.</para>
+	/// <para>最低成本路径</para>
+	/// <para>查找成本表面上起点和终点之间的最短路径。</para>
 	/// </summary>
 	public class LeastCostPath : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// </summary>
 		/// <param name="InCostSurface">
 		/// <para>Input Cost Surface</para>
-		/// <para>The input raster used to determine the cost to travel from starting point to ending point. No Data values cannot be crossed.</para>
+		/// <para>用于确定从起点行驶到终点的成本的输入栅格。 无法跨越“无数据”值。</para>
 		/// </param>
 		/// <param name="InStartPoint">
 		/// <para>Input Starting Point</para>
-		/// <para>The input starting point feature. Multiple start points will significantly increase processing time.</para>
+		/// <para>输入起点要素。 多个起点将显著增加处理时间。</para>
 		/// </param>
 		/// <param name="InEndPoint">
 		/// <para>Input Ending Point</para>
-		/// <para>The input ending point feature. Multiple end points will increase the number of output lines, as the resulting path will branch into separate paths.</para>
+		/// <para>输入终点要素。 多个终点将增加输出线的数量，因为生成的路径会分支为独立的路径。</para>
 		/// </param>
 		/// <param name="OutPathFeatureClass">
 		/// <para>Output Path Feature Class</para>
-		/// <para>The output path feature class.</para>
+		/// <para>输出路径要素类。</para>
 		/// </param>
 		public LeastCostPath(object InCostSurface, object InStartPoint, object InEndPoint, object OutPathFeatureClass)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Least Cost Path</para>
+		/// <para>Tool Display Name : 最低成本路径</para>
 		/// </summary>
-		public override string DisplayName() => "Least Cost Path";
+		public override string DisplayName() => "最低成本路径";
 
 		/// <summary>
 		/// <para>Tool Name : LeastCostPath</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Cost Surface</para>
-		/// <para>The input raster used to determine the cost to travel from starting point to ending point. No Data values cannot be crossed.</para>
+		/// <para>用于确定从起点行驶到终点的成本的输入栅格。 无法跨越“无数据”值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRasterLayer()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Starting Point</para>
-		/// <para>The input starting point feature. Multiple start points will significantly increase processing time.</para>
+		/// <para>输入起点要素。 多个起点将显著增加处理时间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Input Ending Point</para>
-		/// <para>The input ending point feature. Multiple end points will increase the number of output lines, as the resulting path will branch into separate paths.</para>
+		/// <para>输入终点要素。 多个终点将增加输出线的数量，因为生成的路径会分支为独立的路径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Output Path Feature Class</para>
-		/// <para>The output path feature class.</para>
+		/// <para>输出路径要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -118,9 +118,9 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 
 		/// <summary>
 		/// <para>Zero Cost Handled As</para>
-		/// <para>Specifies how zero values in the Input Cost Surface parameter will be handled.</para>
-		/// <para>Small positive—All zeros will be changed to a small positive value. This will allow the cells to be traversed. This is the default.</para>
-		/// <para>No data—All zeros will be changed to null values. The cells will not be traversed and will be avoided.</para>
+		/// <para>指定输入成本表面参数中零值的处理方式。</para>
+		/// <para>较小正值—所有零值都将更改为较小的正值。 这样即可遍历像元。 这是默认设置。</para>
+		/// <para>无数据—所有零值都将更改为空值。 不会遍历像元且将避开像元。</para>
 		/// <para><see cref="HandleZerosEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -150,17 +150,17 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		public enum HandleZerosEnum 
 		{
 			/// <summary>
-			/// <para>Small positive—All zeros will be changed to a small positive value. This will allow the cells to be traversed. This is the default.</para>
+			/// <para>较小正值—所有零值都将更改为较小的正值。 这样即可遍历像元。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("SMALL_POSITIVE")]
-			[Description("Small positive")]
+			[Description("较小正值")]
 			Small_positive,
 
 			/// <summary>
-			/// <para>No data—All zeros will be changed to null values. The cells will not be traversed and will be avoided.</para>
+			/// <para>无数据—所有零值都将更改为空值。 不会遍历像元且将避开像元。</para>
 			/// </summary>
 			[GPValue("NO_DATA")]
-			[Description("No data")]
+			[Description("无数据")]
 			No_data,
 
 		}

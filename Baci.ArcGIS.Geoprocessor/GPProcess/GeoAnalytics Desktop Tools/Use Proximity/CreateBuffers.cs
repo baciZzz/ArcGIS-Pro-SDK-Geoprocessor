@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Create Buffers</para>
-	/// <para>Create Buffers</para>
-	/// <para>Creates buffers around input features to a specified distance.</para>
+	/// <para>创建缓冲区</para>
+	/// <para>在输入要素周围某一指定距离内创建缓冲区。</para>
 	/// </summary>
 	public class CreateBuffers : AbstractGPProcess
 	{
@@ -21,25 +21,25 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>The point, polyline, or polygon features to be buffered.</para>
+		/// <para>要进行缓冲的点、折线或面要素。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>A new feature class of buffered results.</para>
+		/// <para>缓冲结果的新要素类。</para>
 		/// </param>
 		/// <param name="Method">
 		/// <para>Method</para>
-		/// <para>Specifies the method that will be used to create the buffer.</para>
-		/// <para>Geodesic— Buffers are created using a shape-preserving geodesic buffer method regardless of the input coordinate system. This is the default.</para>
-		/// <para>Planar— If the input features are in a projected coordinate system, Euclidean buffers are created. If the input features are in a geographic coordinate system, geodesic buffers are created. The Output Coordinate System environment setting can be used to specify a coordinate system.</para>
+		/// <para>指定将用于创建缓冲区的方法。</para>
+		/// <para>测地线—无论使用哪种输入坐标系，均使用形状不变的测地线缓冲区方法创建缓冲区。 这是默认设置。</para>
+		/// <para>平面—如果输入要素位于投影坐标系中，则将创建欧氏缓冲区。 如果输入要素位于投影坐标系中，则将创建测地线缓冲区。 “输出坐标系”的环境设置可用于指定坐标系。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </param>
 		/// <param name="BufferType">
 		/// <para>Buffer Type</para>
-		/// <para>Specifies how the buffer distance will be defined.</para>
-		/// <para>Distance—Apply the same linear distance to all features.</para>
-		/// <para>Field—Select a numeric or string field to represent the buffer distance.</para>
-		/// <para>Expression—Build an equation using fields, constants, and mathematical operations to represent the buffer distance.</para>
+		/// <para>指定缓冲距离将如何定义。</para>
+		/// <para>距离分析—为所有要素应用相同的线性距离。</para>
+		/// <para>字段—选择数字或字符串字段表示缓冲距离。</para>
+		/// <para>表达式—构建使用字段、常量和数学运算的方程来表示缓冲距离。</para>
 		/// <para><see cref="BufferTypeEnum"/></para>
 		/// </param>
 		public CreateBuffers(object InputLayer, object OutFeatureClass, object Method, object BufferType)
@@ -51,9 +51,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Buffers</para>
+		/// <para>Tool Display Name : 创建缓冲区</para>
 		/// </summary>
-		public override string DisplayName() => "Create Buffers";
+		public override string DisplayName() => "创建缓冲区";
 
 		/// <summary>
 		/// <para>Tool Name : CreateBuffers</para>
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The point, polyline, or polygon features to be buffered.</para>
+		/// <para>要进行缓冲的点、折线或面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>A new feature class of buffered results.</para>
+		/// <para>缓冲结果的新要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -109,9 +109,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Method</para>
-		/// <para>Specifies the method that will be used to create the buffer.</para>
-		/// <para>Geodesic— Buffers are created using a shape-preserving geodesic buffer method regardless of the input coordinate system. This is the default.</para>
-		/// <para>Planar— If the input features are in a projected coordinate system, Euclidean buffers are created. If the input features are in a geographic coordinate system, geodesic buffers are created. The Output Coordinate System environment setting can be used to specify a coordinate system.</para>
+		/// <para>指定将用于创建缓冲区的方法。</para>
+		/// <para>测地线—无论使用哪种输入坐标系，均使用形状不变的测地线缓冲区方法创建缓冲区。 这是默认设置。</para>
+		/// <para>平面—如果输入要素位于投影坐标系中，则将创建欧氏缓冲区。 如果输入要素位于投影坐标系中，则将创建测地线缓冲区。 “输出坐标系”的环境设置可用于指定坐标系。</para>
 		/// <para><see cref="MethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -121,10 +121,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Buffer Type</para>
-		/// <para>Specifies how the buffer distance will be defined.</para>
-		/// <para>Distance—Apply the same linear distance to all features.</para>
-		/// <para>Field—Select a numeric or string field to represent the buffer distance.</para>
-		/// <para>Expression—Build an equation using fields, constants, and mathematical operations to represent the buffer distance.</para>
+		/// <para>指定缓冲距离将如何定义。</para>
+		/// <para>距离分析—为所有要素应用相同的线性距离。</para>
+		/// <para>字段—选择数字或字符串字段表示缓冲距离。</para>
+		/// <para>表达式—构建使用字段、常量和数学运算的方程来表示缓冲距离。</para>
 		/// <para><see cref="BufferTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Buffer Field</para>
-		/// <para>The field that contains the buffer distance for each feature. If a field value is a number, it is assumed that the distance is in the linear unit of the Input Layer spatial reference, unless the Input Layer is in a geographic coordinate system, in which case, the value is assumed to be in meters. If the linear unit specified in the field values is invalid or not recognized, the linear unit of the input features' spatial reference will be used by default.</para>
+		/// <para>包含每个要素缓冲距离的字段。 如果字段值为数字，则假定距离使用输入图层空间参考的线性单位，除非该输入图层使用地理坐标系，这时该值以米为单位。 如果在字段值中指定的线性单位无效或无法识别，则默认情况下将使用输入要素空间参考的线性单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Buffer Distance</para>
-		/// <para>The distance around the input features that will be buffered. Distance can be expressed in meters, kilometers, feet, yards, miles, or nautical miles.</para>
+		/// <para>与要缓冲的输入要素之间的距离。 距离可以米、千米、英尺、码、英里或海里为单位表示。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -153,9 +153,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Buffer Expression</para>
-		/// <para>An equation using fields and mathematical operators that will be applied as a buffer to each feature. Fields must be numeric, and the expression can include [+ - * / ] operators and multiple fields. Calculated values are applied in meters unless otherwise specified. For example, apply a buffer that multiples a numeric field named distance in kilometers by 2 and adds 15 meters.</para>
-		/// <para>Use an Arcade expression such as as_kilometers($feature[&quot;distance&quot;]) * 2 + as_meters(15).</para>
-		/// <para>If the layer is added to the map, the Fields and Helpers filters can be used to build an expression.</para>
+		/// <para>将用作每个要素的缓冲区的使用字段和数学运算符的方程。 字段必须为数字形式，并且表达式可以包含 [+ - * / ] 运算符和多个字段。 除非另行指定，否则计算后的值以米为单位。 例如，应用将名为 distance 的数值字段（以千米为单位）乘以 2，然后加上 15 米所得到的缓冲区。</para>
+		/// <para>使用 Arcade 表达式，例如 as_kilometers($feature[&quot;distance&quot;]) * 2 + as_meters(15)。</para>
+		/// <para>如果将图层添加到地图中，则可以使用字段和助手过滤器来构建表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCalculatorExpression()]
@@ -163,10 +163,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Dissolve Option</para>
-		/// <para>Specifies the dissolve option that will be used to remove buffer overlap.</para>
-		/// <para>None—An individual buffer for each feature will be maintained regardless of overlap. This is the default.</para>
-		/// <para>All—All buffers will be dissolved together into a single feature, removing any overlap.</para>
-		/// <para>List—Any buffers sharing attribute values in the listed fields (carried over from the input features) will be dissolved.</para>
+		/// <para>指定将用于移除缓冲区重叠的融合选项。</para>
+		/// <para>无—不考虑重叠，将保持每个要素的独立缓冲区。 这是默认设置。</para>
+		/// <para>全部—将所有缓冲区融合为单个要素，从而移除所有重叠。</para>
+		/// <para>列表—将融合共享所列字段（传递自输入要素）属性值的所有缓冲区。</para>
 		/// <para><see cref="DissolveOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -176,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Dissolve Fields</para>
-		/// <para>A list of one or more fields from the input features on which output buffers will be dissolved. Any buffers sharing attribute values in the listed fields will be dissolved. This option is only required when Dissolve Option is List.</para>
+		/// <para>融合输出缓冲区所依据的输入要素的一个或多个字段列表。 将融合在所列字段中共享属性值的所有缓冲区。 仅当融合选项为列表时，才需要此选项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -186,16 +186,16 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Summary Fields</para>
-		/// <para>Specifies statistics that can be applied to numeric and string fields. If left empty, only count will be calculated. These statistics are only applied when Dissolve Option is List or All.</para>
-		/// <para>Count—The number of nonnull values. It can be used on numeric fields or strings. The count of [null, 0, 2] is 2.</para>
-		/// <para>Sum—The sum of numeric values in a field. The sum of [null, null, 3] is 3.</para>
-		/// <para>Mean—The mean of numeric values. The mean of [0, 2, null] is 1.</para>
-		/// <para>Min—The minimum value of a numeric field. The minimum of [0, 2, null] is 0.</para>
-		/// <para>Max—The maximum value of a numeric field. The maximum value of [0, 2, null] is 2.</para>
-		/// <para>Standard Deviation—The standard deviation of a numeric field. The standard deviation of [1] is null. The standard deviation of [null, 1,1,1] is null.</para>
-		/// <para>Variance—The variance of a numeric field in a track. The variance of [1] is null. The variance of [null, 1, 1, 1] is null.</para>
-		/// <para>Range—The range of a numeric field. This is calculated as the minimum value subtracted from the maximum value. The range of [0, null, 1] is 1. The range of [null, 4] is 0.</para>
-		/// <para>Any—A sample string from a field of type string.</para>
+		/// <para>指定可应用于数值型和字符串型字段的统计数据。 如果留空，则只计算计数。 仅当融合选项为列表或全部时才会应用这些统计数据。</para>
+		/// <para>计数 - 非空值的数目。 可用于数值字段或字符串。 [null, 0, 2] 的计数为 2。</para>
+		/// <para>总和 - 字段内数值的总和。 [null, null, 3] 的总和为 3。</para>
+		/// <para>平均值 - 数值的平均值。 [0, 2, null] 的平均值为 1。</para>
+		/// <para>最小值 - 数值字段的最小值。 [0, 2, null] 的最小值为 0。</para>
+		/// <para>最大值 - 数值字段的最大值。 [0, 2, null] 的最大值为 2。</para>
+		/// <para>标准差 - 数值字段的标准差。 [1] 的标准差为 null。 [null, 1,1,1] 的标准差为 null。</para>
+		/// <para>方差 - 轨迹中数值字段内数值的方差。 [1] 的方差为 null。 [null, 1, 1, 1] 的方差为 null。</para>
+		/// <para>范围 - 数值字段的范围。 其计算方法为最大值减去最小值。 [0, null, 1] 的范围为 1。 [null, 4] 的范围为 0。</para>
+		/// <para>任何 - 字符串型字段中的示例字符串。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -204,9 +204,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Multipart</para>
-		/// <para>Specifies whether multipart features will be created.</para>
-		/// <para>Checked—Output multipart features will be created where appropriate.</para>
-		/// <para>Unchecked—Instead of creating multipart features, individual features will be created for each part. This is the default.</para>
+		/// <para>指定是否将创建多部件要素。</para>
+		/// <para>选中 - 创建输出多部件要素（适当时）。</para>
+		/// <para>未选中 - 将为各部分创建单独的要素，而不是创建多部件要素。 这是默认设置。</para>
 		/// <para><see cref="MultipartEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -231,17 +231,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum MethodEnum 
 		{
 			/// <summary>
-			/// <para>Planar— If the input features are in a projected coordinate system, Euclidean buffers are created. If the input features are in a geographic coordinate system, geodesic buffers are created. The Output Coordinate System environment setting can be used to specify a coordinate system.</para>
+			/// <para>平面—如果输入要素位于投影坐标系中，则将创建欧氏缓冲区。 如果输入要素位于投影坐标系中，则将创建测地线缓冲区。 “输出坐标系”的环境设置可用于指定坐标系。</para>
 			/// </summary>
 			[GPValue("PLANAR")]
-			[Description("Planar")]
+			[Description("平面")]
 			Planar,
 
 			/// <summary>
-			/// <para>Geodesic— Buffers are created using a shape-preserving geodesic buffer method regardless of the input coordinate system. This is the default.</para>
+			/// <para>测地线—无论使用哪种输入坐标系，均使用形状不变的测地线缓冲区方法创建缓冲区。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("GEODESIC")]
-			[Description("Geodesic")]
+			[Description("测地线")]
 			Geodesic,
 
 		}
@@ -252,24 +252,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum BufferTypeEnum 
 		{
 			/// <summary>
-			/// <para>Distance—Apply the same linear distance to all features.</para>
+			/// <para>距离分析—为所有要素应用相同的线性距离。</para>
 			/// </summary>
 			[GPValue("DISTANCE")]
-			[Description("Distance")]
+			[Description("距离分析")]
 			Distance,
 
 			/// <summary>
-			/// <para>Field—Select a numeric or string field to represent the buffer distance.</para>
+			/// <para>字段—选择数字或字符串字段表示缓冲距离。</para>
 			/// </summary>
 			[GPValue("FIELD")]
-			[Description("Field")]
+			[Description("字段")]
 			Field,
 
 			/// <summary>
-			/// <para>Expression—Build an equation using fields, constants, and mathematical operations to represent the buffer distance.</para>
+			/// <para>表达式—构建使用字段、常量和数学运算的方程来表示缓冲距离。</para>
 			/// </summary>
 			[GPValue("EXPRESSION")]
-			[Description("Expression")]
+			[Description("表达式")]
 			Expression,
 
 		}
@@ -280,24 +280,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum DissolveOptionEnum 
 		{
 			/// <summary>
-			/// <para>None—An individual buffer for each feature will be maintained regardless of overlap. This is the default.</para>
+			/// <para>无—不考虑重叠，将保持每个要素的独立缓冲区。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 			/// <summary>
-			/// <para>All—All buffers will be dissolved together into a single feature, removing any overlap.</para>
+			/// <para>全部—将所有缓冲区融合为单个要素，从而移除所有重叠。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All")]
+			[Description("全部")]
 			All,
 
 			/// <summary>
-			/// <para>List—Any buffers sharing attribute values in the listed fields (carried over from the input features) will be dissolved.</para>
+			/// <para>列表—将融合共享所列字段（传递自输入要素）属性值的所有缓冲区。</para>
 			/// </summary>
 			[GPValue("LIST")]
-			[Description("List")]
+			[Description("列表")]
 			List,
 
 		}
@@ -308,14 +308,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum MultipartEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Output multipart features will be created where appropriate.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MULTI_PART")]
 			MULTI_PART,
 
 			/// <summary>
-			/// <para>Unchecked—Instead of creating multipart features, individual features will be created for each part. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("SINGLE_PART")]

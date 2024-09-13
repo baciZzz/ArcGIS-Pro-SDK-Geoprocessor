@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Iterate Feature Selection</para>
-	/// <para>Iterate Feature Selection</para>
-	/// <para>Iterates over features in a feature class.</para>
+	/// <para>迭代要素选择</para>
+	/// <para>迭代要素类中的要素。</para>
 	/// </summary>
 	public class IterateFeatureSelection : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>In Features</para>
-		/// <para>The input feature class or layer containing features to iterate.</para>
+		/// <para>包含要迭代的要素的输入要素类或图层。</para>
 		/// </param>
 		public IterateFeatureSelection(object InFeatures)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Iterate Feature Selection</para>
+		/// <para>Tool Display Name : 迭代要素选择</para>
 		/// </summary>
-		public override string DisplayName() => "Iterate Feature Selection";
+		public override string DisplayName() => "迭代要素选择";
 
 		/// <summary>
 		/// <para>Tool Name : IterateFeatureSelection</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>In Features</para>
-		/// <para>The input feature class or layer containing features to iterate.</para>
+		/// <para>包含要迭代的要素的输入要素类或图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Group By Fields</para>
-		/// <para>The input field or fields used to group the features for selection. Any number of input fields can be defined, resulting in a selection based on a unique combination of the fields. If a field is not specified, the Object ID is used to iterate over features.</para>
+		/// <para>用于对可供选择的要素进行分组的一个或多个输入字段。可定义多个输入字段，以根据字段的唯一组合进行选择。如果未指定字段，则使用“对象 ID”迭代要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -83,9 +83,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Skip Null Values</para>
-		/// <para>Specifies whether null values in the grouping field or fields are skipped during selection.</para>
-		/// <para>Checked—Skip through all the null values in the grouping fields during selection.</para>
-		/// <para>Unchecked—Set as default. Include all the null values in the grouping fields during selection. This is the default.</para>
+		/// <para>指定是否在选择过程中跳过一个或多个分组字段中的空值。</para>
+		/// <para>选中 - 选择过程中跳过分组字段中的所有空值。</para>
+		/// <para>未选中 - 设置为默认值。选择过程中包含分组字段中的所有空值。这是默认设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPBoolean()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Create Space Time Cube From Defined Locations</para>
-	/// <para>Create Space Time Cube From Defined Locations</para>
-	/// <para>Takes panel data or station data (defined locations where geography does not change but attributes are changing over time) and structures it into a netCDF data format by creating space-time bins.  For all locations, the trend for variables or summary fields is evaluated.</para>
+	/// <para>通过已定义位置创建时空立方体</para>
+	/// <para>获取面板数据或测点数据（地理位置不变但属性会随时间改变的已定义位置），并通过创建时空立方图格将其构建为 netCDF 数据格式。对于所有位置，评估变量或汇总字段趋势。</para>
 	/// </summary>
 	public class CreateSpaceTimeCubeDefinedLocations : AbstractGPProcess
 	{
@@ -21,32 +21,32 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input point or polygon feature class to be converted into a space-time cube.</para>
+		/// <para>要转换为时空立方体的输入点或面要素类。</para>
 		/// </param>
 		/// <param name="OutputCube">
 		/// <para>Output Space Time Cube</para>
-		/// <para>The output netCDF data cube that will be created.</para>
+		/// <para>将创建的输出 netCDF 数据立方体。</para>
 		/// </param>
 		/// <param name="LocationId">
 		/// <para>Location ID</para>
-		/// <para>An integer field containing the ID number for each unique location.</para>
+		/// <para>包含每个唯一位置的 ID 编号的整型字段。</para>
 		/// </param>
 		/// <param name="TemporalAggregation">
 		/// <para>Temporal Aggregation</para>
-		/// <para>Determines if there will be aggregation of the data temporally.</para>
-		/// <para>Unchecked—The space-time cube will be created using the existing temporal structure of your Input Features. For example, you have yearly data and want to create a cube with a yearly Time Step Interval. This is the default.</para>
-		/// <para>Checked—The space-time cube will temporally aggregate your features based on the Time Step Interval you provide. For example, you have data that has been collected daily and want to create a cube with a weekly Time Step Interval.</para>
+		/// <para>确定是否对数据进行时间聚合。</para>
+		/// <para>取消选中 - 时空立方体将通过输入要素的现有时间结构进行创建。例如，您有一组年度数据，并希望通过年度时间步长间隔创建立方体。这是默认设置。</para>
+		/// <para>选中 - 时空立方体将根据您提供的时间步长间隔对您的要素进行时间聚合。例如，您有一组每日收集的数据，并希望通过每周时间步长间隔创建立方体。</para>
 		/// <para><see cref="TemporalAggregationEnum"/></para>
 		/// </param>
 		/// <param name="TimeField">
 		/// <para>Time Field</para>
-		/// <para>The field containing the timestamp for each row in the dataset. This field must be of type Date.</para>
+		/// <para>包含数据集中每行的时间戳的字段。此字段必须为日期类型。</para>
 		/// </param>
 		/// <param name="TimeStepInterval">
 		/// <para>Time Step Interval</para>
-		/// <para>The number of seconds, minutes, hours, days, weeks, or years that will represent a single time step. Examples of valid entries for this parameter are 1 Weeks, 13 Days, or 1 Months.</para>
-		/// <para>If Temporal Aggregation is checked off, you are not aggregating temporally, and this parameter should be set to the existing temporal structure of your data.</para>
-		/// <para>If Temporal Aggregation is checked on, you are aggregating temporally, and this parameter should be set to the Time Step Interval you want to create. All features within the same Time Step Interval will be aggregated.</para>
+		/// <para>用来表示单个时间步长的秒数、分钟数、小时数、天数、周数或年数。此参数的有效条目示例为 1 周、13 天或 1 个月。</para>
+		/// <para>如果取消选中时间聚合，则不进行时间聚合，且此参数应设置为数据的现有时间结构。</para>
+		/// <para>如果选中时间聚合，则会进行时间聚合，且此参数应设置为您要创建的时间步长间隔。将聚合相同时间步长间隔内的所有要素。</para>
 		/// </param>
 		public CreateSpaceTimeCubeDefinedLocations(object InFeatures, object OutputCube, object LocationId, object TemporalAggregation, object TimeField, object TimeStepInterval)
 		{
@@ -59,9 +59,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Space Time Cube From Defined Locations</para>
+		/// <para>Tool Display Name : 通过已定义位置创建时空立方体</para>
 		/// </summary>
-		public override string DisplayName() => "Create Space Time Cube From Defined Locations";
+		public override string DisplayName() => "通过已定义位置创建时空立方体";
 
 		/// <summary>
 		/// <para>Tool Name : CreateSpaceTimeCubeDefinedLocations</para>
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input point or polygon feature class to be converted into a space-time cube.</para>
+		/// <para>要转换为时空立方体的输入点或面要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Output Space Time Cube</para>
-		/// <para>The output netCDF data cube that will be created.</para>
+		/// <para>将创建的输出 netCDF 数据立方体。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Location ID</para>
-		/// <para>An integer field containing the ID number for each unique location.</para>
+		/// <para>包含每个唯一位置的 ID 编号的整型字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -126,9 +126,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Temporal Aggregation</para>
-		/// <para>Determines if there will be aggregation of the data temporally.</para>
-		/// <para>Unchecked—The space-time cube will be created using the existing temporal structure of your Input Features. For example, you have yearly data and want to create a cube with a yearly Time Step Interval. This is the default.</para>
-		/// <para>Checked—The space-time cube will temporally aggregate your features based on the Time Step Interval you provide. For example, you have data that has been collected daily and want to create a cube with a weekly Time Step Interval.</para>
+		/// <para>确定是否对数据进行时间聚合。</para>
+		/// <para>取消选中 - 时空立方体将通过输入要素的现有时间结构进行创建。例如，您有一组年度数据，并希望通过年度时间步长间隔创建立方体。这是默认设置。</para>
+		/// <para>选中 - 时空立方体将根据您提供的时间步长间隔对您的要素进行时间聚合。例如，您有一组每日收集的数据，并希望通过每周时间步长间隔创建立方体。</para>
 		/// <para><see cref="TemporalAggregationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Time Field</para>
-		/// <para>The field containing the timestamp for each row in the dataset. This field must be of type Date.</para>
+		/// <para>包含数据集中每行的时间戳的字段。此字段必须为日期类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -148,9 +148,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Time Step Interval</para>
-		/// <para>The number of seconds, minutes, hours, days, weeks, or years that will represent a single time step. Examples of valid entries for this parameter are 1 Weeks, 13 Days, or 1 Months.</para>
-		/// <para>If Temporal Aggregation is checked off, you are not aggregating temporally, and this parameter should be set to the existing temporal structure of your data.</para>
-		/// <para>If Temporal Aggregation is checked on, you are aggregating temporally, and this parameter should be set to the Time Step Interval you want to create. All features within the same Time Step Interval will be aggregated.</para>
+		/// <para>用来表示单个时间步长的秒数、分钟数、小时数、天数、周数或年数。此参数的有效条目示例为 1 周、13 天或 1 个月。</para>
+		/// <para>如果取消选中时间聚合，则不进行时间聚合，且此参数应设置为数据的现有时间结构。</para>
+		/// <para>如果选中时间聚合，则会进行时间聚合，且此参数应设置为您要创建的时间步长间隔。将聚合相同时间步长间隔内的所有要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTimeUnit()]
@@ -159,10 +159,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Time Step Alignment</para>
-		/// <para>Defines how the cube structure will occur based on a given Time Step Interval.</para>
-		/// <para>End time—Time steps align to the last time event and aggregate back in time. This is the default.</para>
-		/// <para>Start time—Time steps align to the first time event and aggregate forward in time.</para>
-		/// <para>Reference time—Time steps align to a particular date/time that you specify. If all points in the input features have a timestamp larger than the Reference time you provide (or it falls exactly on the start time of the input features), the time-step interval will begin with that reference time and aggregate forward in time (as occurs with a Start time alignment). If all points in the input features have a timestamp smaller than the reference time you provide (or it falls exactly on the end time of the input features), the time-step interval will end with that reference time and aggregate backward in time (as occurs with an End time alignment). If the Reference time you provide is in the middle of the time extent of your data, a time-step interval will be created ending with the reference time provided (as occurs with an End time alignment); additional intervals will be created both before and after the reference time until the full time extent of your data is covered.</para>
+		/// <para>定义如何根据给定的时间步长间隔创建立方体结构。</para>
+		/// <para>结束时间—时间步长与最后一次时间事件对齐，并向后聚合时间。这是默认设置。</para>
+		/// <para>开始时间—时间步长与第一次时间事件对齐，并向前聚合时间。</para>
+		/// <para>参考时间—时间步长将与指定的特定日期/时间对齐。如果输入要素中的所有点的时间戳大于您所提供的参考时间（或时间戳刚好位于输入要素的开始时间），则时间步长间隔将以该参考时间为开始时间，并向前聚合时间（与使用开始时间对齐的效果相同）。如果输入要素中的所有点的时间戳小于您所提供的参考时间（或时间戳刚好位于输入要素的结束时间），则时间步长间隔将以该参考时间为结束时间，并向后聚合时间（与使用结束时间对齐的效果相同）。如果提供的参考时间处于数据时间范围的中间，则将以提供的参考时间结束创建时间步长间隔（与使用结束时间对齐的情况相同）；其他间隔将在参考时间前后进行创建，直到覆盖数据的完整时间范围为止。</para>
 		/// <para><see cref="TimeStepAlignmentEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -172,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Reference Time</para>
-		/// <para>The date/time to used to align the time-step intervals. If you want to bin your data weekly from Monday to Sunday, for example, you could set a reference time of Sunday at midnight to ensure bins break between Sunday and Monday at midnight.</para>
+		/// <para>用于对齐时间步长间隔的日期/时间。例如，如果想要按星期从星期一至星期天对数据进行归类，可以将星期天的午夜设置为参考时间，以确保立方图格在星期天和星期一之间的午夜进行划分。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -180,14 +180,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Variables</para>
-		/// <para>The numeric field containing attribute values that will be brought into the space-time cube.</para>
-		/// <para>Available fill types are:</para>
-		/// <para>DROP_LOCATIONS–Locations with missing data for any of the variables will be dropped from the output space-time cube.</para>
-		/// <para>ZEROS–Fills empty bins with zeros.</para>
-		/// <para>SPATIAL_NEIGHBORS–Fills empty bins with the average value of spatial neighbors.</para>
-		/// <para>SPACE_TIME_NEIGHBORS–Fills empty bins with the average value of space time neighbors.</para>
-		/// <para>TEMPORAL_TREND–Fills empty bins using an interpolated univariate spline algorithm.</para>
-		/// <para>Null values present in any of the variable records will result in an empty bin. If there are null values present in your input features, it is highly recommended that you run the Fill Missing Values tool first.</para>
+		/// <para>将在时空立方体中引入的包含属性值的数值字段。</para>
+		/// <para>可用填充类型有：</para>
+		/// <para>DROP_LOCATIONS - 缺少任何变量的数据的位置将从输出时空立方体中删除。</para>
+		/// <para>ZEROS - 用零填充空立方图格。</para>
+		/// <para>SPATIAL_NEIGHBORS - 用空间相邻要素平均值填充空立方图格。</para>
+		/// <para>SPACE_TIME_NEIGHBORS - 用时空相邻要素平均值填充空立方图格。</para>
+		/// <para>TEMPORAL_TREND - 使用一元样条插值算法填充空立方图格。</para>
+		/// <para>任何变量记录中出现的空值都将导致产生空立方图格。如果输入要素中出现空值，则强烈建议您先运行填充缺失值工具。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -196,20 +196,20 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Summary Fields</para>
-		/// <para>The numeric field containing attribute values used to calculate the specified statistic when aggregating into a space-time cube. Multiple statistic and field combinations can be specified. Null values in any of the fields specified will result in that feature being dropped from the output cube. If there are null values present in your input features, it is highly recommended you run the Fill Missing Values tool before creating a space time cube.</para>
-		/// <para>Available statistic types are:</para>
-		/// <para>SUM–Adds the total value for the specified field within each bin.</para>
-		/// <para>MEAN–Calculates the average for the specified field within each bin.</para>
-		/// <para>MIN–Finds the smallest value for all records of the specified field within each bin.</para>
-		/// <para>MAX–Finds the largest value for all records of the specified field within each bin.</para>
-		/// <para>STD–Finds the standard deviation on values in the specified field within each bin.</para>
-		/// <para>MEDIAN–Finds the sorted middle value of all records of the specified field within each bin.</para>
-		/// <para>Available fill types are:</para>
-		/// <para>ZEROS–Fills empty bins with zeros.</para>
-		/// <para>SPATIAL_NEIGHBORS–Fills empty bins with the average value of spatial neighbors</para>
-		/// <para>SPACE_TIME_NEIGHBORS–Fills empty bins with the average value of space time neighbors.</para>
-		/// <para>TEMPORAL_TREND–Fills empty bins using an interpolated univariate spline algorithm.</para>
-		/// <para>Null values present in any of the summary field records will result in those features being excluded from the output cube. If there are null values present in your Input Features, it is highly recommended that you run the Fill Missing Values tool first. If, after running the Fill Missing Values tool, there are still null values present and having the count of points in each bin is part of your analysis strategy, you may want to consider creating separate cubes, one for the count (without Summary Fields) and one for Summary Fields. If the set of null values is different for each summary field, you may also consider creating a separate cube for each summary field.</para>
+		/// <para>包含属性值的数值字段，用于在将数据聚合到时空立方体时计算指定的统计数据。可以指定多项统计和字段组合。在任何指定字段中出现的空值都将导致从输出立方体中删除相应要素。如果输入要素中出现空值，则强烈建议您在创建时空立方体前先运行填充缺失值工具。</para>
+		/// <para>可用的统计类型有：</para>
+		/// <para>SUM - 添加每个立方图格中指定字段的合计值。</para>
+		/// <para>MEAN - 计算每个立方图格中指定字段的平均值。</para>
+		/// <para>MIN - 查找每个立方图格中指定字段所有记录的最小值。</para>
+		/// <para>MAX - 查找每个立方图格中指定字段所有记录的最大值。</para>
+		/// <para>STD - 查找每个立方图格中指定字段的值的标准差。</para>
+		/// <para>MEDIAN - 查找每个立方图格中指定字段所有记录的中值。</para>
+		/// <para>可用填充类型有：</para>
+		/// <para>ZEROS - 用零填充空立方图格。</para>
+		/// <para>SPATIAL_NEIGHBORS - 用空间相邻要素平均值填充空立方图格</para>
+		/// <para>SPACE_TIME_NEIGHBORS - 用时空相邻要素平均值填充空立方图格。</para>
+		/// <para>TEMPORAL_TREND - 使用一元样条插值算法填充空立方图格。</para>
+		/// <para>任何汇总字段记录中出现的空值都将导致从输出立方体中排除这些要素。如果输入要素中出现空值，则强烈建议您先运行填充缺失值工具。如果在运行填充缺失值工具后，仍存在空值而每个立方图格中的点数是分析策略的一部分，您可能需要考虑创建单独的立方体，针对计数（不含汇总字段）创建一个，并针对汇总字段创建一个。如果每个汇总字段的空值集不相同，您可能还需要考虑为每个汇总字段创建一个单独的立方体。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -218,7 +218,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Related Table</para>
-		/// <para>The table or table view to be related to the input features.</para>
+		/// <para>将关联到输入要素的表或表视图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTableView()]
@@ -226,7 +226,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 
 		/// <summary>
 		/// <para>Related Location ID</para>
-		/// <para>An integer field in the related table that contains the location ID on which the relate will be based.</para>
+		/// <para>相关表中包含基于关联的位置 ID 的整型字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -251,14 +251,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		public enum TemporalAggregationEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The space-time cube will temporally aggregate your features based on the Time Step Interval you provide. For example, you have data that has been collected daily and want to create a cube with a weekly Time Step Interval.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("APPLY_TEMPORAL_AGGREGATION")]
 			APPLY_TEMPORAL_AGGREGATION,
 
 			/// <summary>
-			/// <para>Unchecked—The space-time cube will be created using the existing temporal structure of your Input Features. For example, you have yearly data and want to create a cube with a yearly Time Step Interval. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_TEMPORAL_AGGREGATION")]
@@ -272,24 +272,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		public enum TimeStepAlignmentEnum 
 		{
 			/// <summary>
-			/// <para>End time—Time steps align to the last time event and aggregate back in time. This is the default.</para>
+			/// <para>结束时间—时间步长与最后一次时间事件对齐，并向后聚合时间。这是默认设置。</para>
 			/// </summary>
 			[GPValue("END_TIME")]
-			[Description("End time")]
+			[Description("结束时间")]
 			End_time,
 
 			/// <summary>
-			/// <para>Start time—Time steps align to the first time event and aggregate forward in time.</para>
+			/// <para>开始时间—时间步长与第一次时间事件对齐，并向前聚合时间。</para>
 			/// </summary>
 			[GPValue("START_TIME")]
-			[Description("Start time")]
+			[Description("开始时间")]
 			Start_time,
 
 			/// <summary>
-			/// <para>Reference time—Time steps align to a particular date/time that you specify. If all points in the input features have a timestamp larger than the Reference time you provide (or it falls exactly on the start time of the input features), the time-step interval will begin with that reference time and aggregate forward in time (as occurs with a Start time alignment). If all points in the input features have a timestamp smaller than the reference time you provide (or it falls exactly on the end time of the input features), the time-step interval will end with that reference time and aggregate backward in time (as occurs with an End time alignment). If the Reference time you provide is in the middle of the time extent of your data, a time-step interval will be created ending with the reference time provided (as occurs with an End time alignment); additional intervals will be created both before and after the reference time until the full time extent of your data is covered.</para>
+			/// <para>参考时间—时间步长将与指定的特定日期/时间对齐。如果输入要素中的所有点的时间戳大于您所提供的参考时间（或时间戳刚好位于输入要素的开始时间），则时间步长间隔将以该参考时间为开始时间，并向前聚合时间（与使用开始时间对齐的效果相同）。如果输入要素中的所有点的时间戳小于您所提供的参考时间（或时间戳刚好位于输入要素的结束时间），则时间步长间隔将以该参考时间为结束时间，并向后聚合时间（与使用结束时间对齐的效果相同）。如果提供的参考时间处于数据时间范围的中间，则将以提供的参考时间结束创建时间步长间隔（与使用结束时间对齐的情况相同）；其他间隔将在参考时间前后进行创建，直到覆盖数据的完整时间范围为止。</para>
 			/// </summary>
 			[GPValue("REFERENCE_TIME")]
-			[Description("Reference time")]
+			[Description("参考时间")]
 			Reference_time,
 
 		}

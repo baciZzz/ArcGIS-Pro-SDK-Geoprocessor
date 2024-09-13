@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Create Buffers</para>
-	/// <para>Create Buffers</para>
-	/// <para>Creates polygons that cover a given distance from a point, line, or polygon feature.</para>
+	/// <para>创建缓冲区</para>
+	/// <para>通过点、线、面要素创建覆盖指定距离的面。</para>
 	/// </summary>
 	public class CreateBuffers : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// </summary>
 		/// <param name="Inputlayer">
 		/// <para>Input Layer</para>
-		/// <para>The point, line, or polygon features to be buffered.</para>
+		/// <para>要进行缓冲的点、线或面要素。</para>
 		/// </param>
 		/// <param name="Outputname">
 		/// <para>Output Name</para>
-		/// <para>The name of the output layer to create on your portal.</para>
+		/// <para>要在门户中创建的输出图层的名称。</para>
 		/// </param>
 		public CreateBuffers(object Inputlayer, object Outputname)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Buffers</para>
+		/// <para>Tool Display Name : 创建缓冲区</para>
 		/// </summary>
-		public override string DisplayName() => "Create Buffers";
+		public override string DisplayName() => "创建缓冲区";
 
 		/// <summary>
 		/// <para>Tool Name : CreateBuffers</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The point, line, or polygon features to be buffered.</para>
+		/// <para>要进行缓冲的点、线或面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Output Name</para>
-		/// <para>The name of the output layer to create on your portal.</para>
+		/// <para>要在门户中创建的输出图层的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Distances</para>
-		/// <para>A list of distance values to buffer the input features. You must supply values for either the distances or a distance field. You can enter a single distance value or multiple values. The units of the distance values is supplied by the distance units.</para>
+		/// <para>用于缓冲输入要素的距离值列表。您必须提供距离或距离字段的值。可以输入一个距离值或多个距离值。距离值的单位由距离单位提供。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Distance Field</para>
-		/// <para>A field from the input layer containing one buffer distance per feature.</para>
+		/// <para>每个要素包含一个缓冲距离的输入图层中的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -104,13 +104,13 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Distance Units</para>
-		/// <para>The units of the buffer distance. You must provide a value if cell size has been set.</para>
-		/// <para>Miles—Miles</para>
-		/// <para>Feet—Feet</para>
-		/// <para>Kilometers—Kilometers</para>
-		/// <para>Meters—Meters</para>
-		/// <para>Nautical miles—Nautical miles</para>
-		/// <para>Yards—Yards</para>
+		/// <para>缓冲距离的单位。如果已设置像元大小，则必须为其赋值。</para>
+		/// <para>英里—英里</para>
+		/// <para>英尺—英尺</para>
+		/// <para>千米—千米</para>
+		/// <para>米—米</para>
+		/// <para>海里—海里</para>
+		/// <para>码—码</para>
 		/// <para><see cref="UnitsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -120,9 +120,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Dissolve Type</para>
-		/// <para>Determines how overlapping buffers are processed.</para>
-		/// <para>No dissolve— Overlapping areas are kept. This is the default.</para>
-		/// <para>Dissolve overlapping areas— Overlapping areas are combined.</para>
+		/// <para>确定重叠缓冲区的处理方式。</para>
+		/// <para>未融合— 保留重叠区域。这是默认设置。</para>
+		/// <para>融合重叠区域— 合并重叠区域。</para>
 		/// <para><see cref="DissolvetypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -133,9 +133,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Buffer Ring Type</para>
-		/// <para>Determines how multiple-distance buffers are processed.</para>
-		/// <para>Concentric overlapping disks— Buffers are concentric and will overlap. For example, if your distances are 10 and 14, the result will be two buffers, one from 0 to 10 and one from 0 to 14. This is the default.</para>
-		/// <para>Nonoverlapping rings— Buffers will not overlap. For example, if your distances are 10 and 14, the result will be two buffers, one from 0 to 10 and one from 10 to 14.</para>
+		/// <para>确定多距离缓冲区的处理方式。</para>
+		/// <para>同心重叠圆盘— 缓冲区为同心并将重叠。例如，如果距离为 10 和 14，则结果将为两个缓冲区，一个为 0 到 10，另一个为 0 到 14。这是默认设置。</para>
+		/// <para>非重叠圆环— 缓冲区将不会重叠。例如，如果距离为 10 和 14，则结果将为两个缓冲区，一个为 0 到 10，另一个为 10 到 14。</para>
 		/// <para><see cref="RingtypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -146,13 +146,13 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>Side Type</para>
-		/// <para>When buffering line features, you can choose which side of the line to buffer. Typically, you choose both sides (Full, which is the default). Left and right are determined as if you were walking from the first x,y coordinate of the line (the start coordinate) to the last x,y coordinate of the line (the end coordinate). Choosing left or right usually means you know that your line features were created and stored in a particular direction (for example, upstream or downstream in a river network).</para>
-		/// <para>When buffering polygon features, you can choose whether the buffer includes or excludes the polygon being buffered.</para>
-		/// <para>If a side type is not supplied, the polygon being buffered is included in the result buffer. This is the default for polygon features.</para>
-		/// <para>Full— Both sides of the line will be buffered. This is the default for line features.</para>
-		/// <para>Right— Only the right side of the line will be buffered.</para>
-		/// <para>Left— Only the right side of the line will be buffered.</para>
-		/// <para>Outside— When buffering a polygon, the polygon being buffered is excluded in the result buffer.</para>
+		/// <para>缓冲线要素时，您可以选择要缓冲的线的某一侧。通常，您可以选择两侧（全部，此为默认设置）。左侧和右侧的确定犹如从该线的第一个 x,y 坐标（起点坐标）步行至最后一个 x,y 坐标（终点坐标）。选择左侧或右侧通常意味着您知道线要素在特定的方向进行创建和存储（例如，河流网络的上游或下游）。</para>
+		/// <para>当缓冲面要素时，您可以选择缓冲区中是否包括正在缓冲的面。</para>
+		/// <para>如果没有提供侧类型，则正在缓冲的面将包含在结果缓冲区中。这是面要素的默认选项。</para>
+		/// <para>全部— 将缓冲线的两侧。这是线要素的默认选项。</para>
+		/// <para>右— 仅在线的右侧进行缓冲。</para>
+		/// <para>左— 仅在线的右侧进行缓冲。</para>
+		/// <para>外部— 当缓冲面时，正在缓冲的面将排除在结果缓冲区之外。</para>
 		/// <para><see cref="SidetypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -163,9 +163,9 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 
 		/// <summary>
 		/// <para>End Type</para>
-		/// <para>The shape of the buffer at the end-of-line input features. This parameter is not valid for polygon input features. At the ends of lines, the buffer can be rounded (round) or be straight across (flat).</para>
-		/// <para>Round ends— Buffers will be rounded at the ends of lines. This is the default.</para>
-		/// <para>Flat ends— Buffers will be flat or straight across at the ends of lines.</para>
+		/// <para>线输入要素末端的缓冲区形状。此参数对于面输入要素无效。在线的两端，缓冲区可以是圆的（圆形）或者直的（平面）。</para>
+		/// <para>圆形末端— 在线的两端，缓冲区将会是圆的。这是默认设置。</para>
+		/// <para>平面末端— 在线的两端，缓冲区将会是平面或直的。</para>
 		/// <para><see cref="EndtypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -198,45 +198,45 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum UnitsEnum 
 		{
 			/// <summary>
-			/// <para>Meters—Meters</para>
+			/// <para>米—米</para>
 			/// </summary>
 			[GPValue("METERS")]
-			[Description("Meters")]
+			[Description("米")]
 			Meters,
 
 			/// <summary>
-			/// <para>Kilometers—Kilometers</para>
+			/// <para>千米—千米</para>
 			/// </summary>
 			[GPValue("KILOMETERS")]
-			[Description("Kilometers")]
+			[Description("千米")]
 			Kilometers,
 
 			/// <summary>
-			/// <para>Feet—Feet</para>
+			/// <para>英尺—英尺</para>
 			/// </summary>
 			[GPValue("FEET")]
-			[Description("Feet")]
+			[Description("英尺")]
 			Feet,
 
 			/// <summary>
-			/// <para>Miles—Miles</para>
+			/// <para>英里—英里</para>
 			/// </summary>
 			[GPValue("MILES")]
-			[Description("Miles")]
+			[Description("英里")]
 			Miles,
 
 			/// <summary>
-			/// <para>Nautical miles—Nautical miles</para>
+			/// <para>海里—海里</para>
 			/// </summary>
 			[GPValue("NAUTICALMILES")]
-			[Description("Nautical miles")]
+			[Description("海里")]
 			Nautical_miles,
 
 			/// <summary>
-			/// <para>Yards—Yards</para>
+			/// <para>码—码</para>
 			/// </summary>
 			[GPValue("YARDS")]
-			[Description("Yards")]
+			[Description("码")]
 			Yards,
 
 		}
@@ -247,17 +247,17 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum DissolvetypeEnum 
 		{
 			/// <summary>
-			/// <para>No dissolve— Overlapping areas are kept. This is the default.</para>
+			/// <para>未融合— 保留重叠区域。这是默认设置。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("No dissolve")]
+			[Description("未融合")]
 			No_dissolve,
 
 			/// <summary>
-			/// <para>Dissolve overlapping areas— Overlapping areas are combined.</para>
+			/// <para>融合重叠区域— 合并重叠区域。</para>
 			/// </summary>
 			[GPValue("DISSOLVE")]
-			[Description("Dissolve overlapping areas")]
+			[Description("融合重叠区域")]
 			Dissolve_overlapping_areas,
 
 		}
@@ -268,17 +268,17 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum RingtypeEnum 
 		{
 			/// <summary>
-			/// <para>Concentric overlapping disks— Buffers are concentric and will overlap. For example, if your distances are 10 and 14, the result will be two buffers, one from 0 to 10 and one from 0 to 14. This is the default.</para>
+			/// <para>同心重叠圆盘— 缓冲区为同心并将重叠。例如，如果距离为 10 和 14，则结果将为两个缓冲区，一个为 0 到 10，另一个为 0 到 14。这是默认设置。</para>
 			/// </summary>
 			[GPValue("DISKS")]
-			[Description("Concentric overlapping disks")]
+			[Description("同心重叠圆盘")]
 			Concentric_overlapping_disks,
 
 			/// <summary>
-			/// <para>Nonoverlapping rings— Buffers will not overlap. For example, if your distances are 10 and 14, the result will be two buffers, one from 0 to 10 and one from 10 to 14.</para>
+			/// <para>非重叠圆环— 缓冲区将不会重叠。例如，如果距离为 10 和 14，则结果将为两个缓冲区，一个为 0 到 10，另一个为 10 到 14。</para>
 			/// </summary>
 			[GPValue("RINGS")]
-			[Description("Nonoverlapping rings")]
+			[Description("非重叠圆环")]
 			Nonoverlapping_rings,
 
 		}
@@ -289,31 +289,31 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum SidetypeEnum 
 		{
 			/// <summary>
-			/// <para>Full— Both sides of the line will be buffered. This is the default for line features.</para>
+			/// <para>全部— 将缓冲线的两侧。这是线要素的默认选项。</para>
 			/// </summary>
 			[GPValue("FULL")]
-			[Description("Full")]
+			[Description("全部")]
 			Full,
 
 			/// <summary>
-			/// <para>Right— Only the right side of the line will be buffered.</para>
+			/// <para>右— 仅在线的右侧进行缓冲。</para>
 			/// </summary>
 			[GPValue("RIGHT")]
-			[Description("Right")]
+			[Description("右")]
 			Right,
 
 			/// <summary>
-			/// <para>Left— Only the right side of the line will be buffered.</para>
+			/// <para>左— 仅在线的右侧进行缓冲。</para>
 			/// </summary>
 			[GPValue("LEFT")]
-			[Description("Left")]
+			[Description("左")]
 			Left,
 
 			/// <summary>
-			/// <para>Outside— When buffering a polygon, the polygon being buffered is excluded in the result buffer.</para>
+			/// <para>外部— 当缓冲面时，正在缓冲的面将排除在结果缓冲区之外。</para>
 			/// </summary>
 			[GPValue("OUTSIDE")]
-			[Description("Outside")]
+			[Description("外部")]
 			Outside,
 
 		}
@@ -324,17 +324,17 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		public enum EndtypeEnum 
 		{
 			/// <summary>
-			/// <para>Round ends— Buffers will be rounded at the ends of lines. This is the default.</para>
+			/// <para>圆形末端— 在线的两端，缓冲区将会是圆的。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ROUND")]
-			[Description("Round ends")]
+			[Description("圆形末端")]
 			Round_ends,
 
 			/// <summary>
-			/// <para>Flat ends— Buffers will be flat or straight across at the ends of lines.</para>
+			/// <para>平面末端— 在线的两端，缓冲区将会是平面或直的。</para>
 			/// </summary>
 			[GPValue("FLAT")]
-			[Description("Flat ends")]
+			[Description("平面末端")]
 			Flat_ends,
 
 		}

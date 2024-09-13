@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Merge Branch</para>
-	/// <para>Merge Branch</para>
-	/// <para>Merges two or more logical branches into a single output.</para>
+	/// <para>合并分支</para>
+	/// <para>将两个或多个逻辑分支合并为一个输出。</para>
 	/// </summary>
 	public class MergeBranch : AbstractGPProcess
 	{
@@ -24,9 +24,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Merge Branch</para>
+		/// <para>Tool Display Name : 合并分支</para>
 		/// </summary>
-		public override string DisplayName() => "Merge Branch";
+		public override string DisplayName() => "合并分支";
 
 		/// <summary>
 		/// <para>Tool Name : MergeBranch</para>
@@ -60,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>In Values</para>
-		/// <para>A list of values from different branches. The first ready-to-run state value in the list will be the output of the tool.</para>
+		/// <para>不同分支中值的列表。列表中第一个处于就绪状态的值将成为该工具的输出。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

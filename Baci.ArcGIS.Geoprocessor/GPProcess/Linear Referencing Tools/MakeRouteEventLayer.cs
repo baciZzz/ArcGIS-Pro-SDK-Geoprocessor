@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 {
 	/// <summary>
 	/// <para>Make Route Event Layer</para>
-	/// <para>Make Route Event Layer</para>
-	/// <para>Creates a temporary feature layer using routes and route events.</para>
+	/// <para>创建路径事件图层</para>
+	/// <para>使用路径和路径事件创建临时要素图层。</para>
 	/// </summary>
 	public class MakeRouteEventLayer : AbstractGPProcess
 	{
@@ -21,29 +21,29 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		/// <param name="InRoutes">
 		/// <para>Input Route Features</para>
-		/// <para>The route features upon which events will be located.</para>
+		/// <para>用于定位事件的路径要素。</para>
 		/// </param>
 		/// <param name="RouteIdField">
 		/// <para>Route Identifier Field</para>
-		/// <para>The field containing values that uniquely identify each route.</para>
+		/// <para>包含可唯一识别每条路径的值的字段。</para>
 		/// </param>
 		/// <param name="InTable">
 		/// <para>Input Event Table</para>
-		/// <para>The table whose rows will be located along routes.</para>
+		/// <para>将沿路径定位行的表。</para>
 		/// </param>
 		/// <param name="InEventProperties">
 		/// <para>Event Table Properties</para>
-		/// <para>Parameter consisting of the route location fields and the type of events in the input event table.</para>
-		/// <para>Route Identifier Field—The field containing values that indicate the route on which each event is located. This field can be numeric or character.</para>
-		/// <para>Event Type—The type of events in the input event table (POINT or LINE).</para>
-		/// <para>POINT—Point events occur at a precise location along a route. Only a from-measure field must be specified.</para>
-		/// <para>LINE—Line events define a portion of a route. Both from- and to-measure fields must be specified.</para>
-		/// <para>From-Measure Field—A field containing measure values. This field must be numeric and is required when the event type is POINT or LINE. Note when the Event Type is POINT, the label for this parameter becomes Measure Field.</para>
-		/// <para>To-Measure Field—A field containing measure values. This field must be numeric and is required when the event type is LINE.</para>
+		/// <para>输入事件表中由路径位置字段和事件类型组成的参数。</para>
+		/// <para>路径标识符字段 - 该字段包含指示每个事件所在路径的值。 字段可以是数值或字符。</para>
+		/// <para>事件类型 - 输入事件表中的事件类型（POINT 或 LINE）。</para>
+		/// <para>POINT - 点事件出现在沿路径的确切点位置处。 只有“测量始于”是必须指定的字段。</para>
+		/// <para>LINE - 线事件定义路径的一部分。 “测量始于”和“测量止于”都是必须指定的字段。</para>
+		/// <para>测量始于字段 - 包含测量值的字段。 此字段必须是数值型字段，并且在事件类型是 POINT 或 LINE 时必填。 请注意，在事件类型是 POINT 时，此参数的标注将变为测量字段。</para>
+		/// <para>测量止于字段 - 包含测量值的字段。 此字段必须是数值字段，在事件类型是 LINE 时必填。</para>
 		/// </param>
 		/// <param name="OutLayer">
 		/// <para>Layer Name or Table View</para>
-		/// <para>The layer to be created. This layer is stored in memory, so a path is not necessary.</para>
+		/// <para>要创建的图层。 此图层存储在内存中，所以不需要路径。</para>
 		/// </param>
 		public MakeRouteEventLayer(object InRoutes, object RouteIdField, object InTable, object InEventProperties, object OutLayer)
 		{
@@ -55,9 +55,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Make Route Event Layer</para>
+		/// <para>Tool Display Name : 创建路径事件图层</para>
 		/// </summary>
-		public override string DisplayName() => "Make Route Event Layer";
+		public override string DisplayName() => "创建路径事件图层";
 
 		/// <summary>
 		/// <para>Tool Name : MakeRouteEventLayer</para>
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Input Route Features</para>
-		/// <para>The route features upon which events will be located.</para>
+		/// <para>用于定位事件的路径要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Route Identifier Field</para>
-		/// <para>The field containing values that uniquely identify each route.</para>
+		/// <para>包含可唯一识别每条路径的值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Input Event Table</para>
-		/// <para>The table whose rows will be located along routes.</para>
+		/// <para>将沿路径定位行的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -118,13 +118,13 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Event Table Properties</para>
-		/// <para>Parameter consisting of the route location fields and the type of events in the input event table.</para>
-		/// <para>Route Identifier Field—The field containing values that indicate the route on which each event is located. This field can be numeric or character.</para>
-		/// <para>Event Type—The type of events in the input event table (POINT or LINE).</para>
-		/// <para>POINT—Point events occur at a precise location along a route. Only a from-measure field must be specified.</para>
-		/// <para>LINE—Line events define a portion of a route. Both from- and to-measure fields must be specified.</para>
-		/// <para>From-Measure Field—A field containing measure values. This field must be numeric and is required when the event type is POINT or LINE. Note when the Event Type is POINT, the label for this parameter becomes Measure Field.</para>
-		/// <para>To-Measure Field—A field containing measure values. This field must be numeric and is required when the event type is LINE.</para>
+		/// <para>输入事件表中由路径位置字段和事件类型组成的参数。</para>
+		/// <para>路径标识符字段 - 该字段包含指示每个事件所在路径的值。 字段可以是数值或字符。</para>
+		/// <para>事件类型 - 输入事件表中的事件类型（POINT 或 LINE）。</para>
+		/// <para>POINT - 点事件出现在沿路径的确切点位置处。 只有“测量始于”是必须指定的字段。</para>
+		/// <para>LINE - 线事件定义路径的一部分。 “测量始于”和“测量止于”都是必须指定的字段。</para>
+		/// <para>测量始于字段 - 包含测量值的字段。 此字段必须是数值型字段，并且在事件类型是 POINT 或 LINE 时必填。 请注意，在事件类型是 POINT 时，此参数的标注将变为测量字段。</para>
+		/// <para>测量止于字段 - 包含测量值的字段。 此字段必须是数值字段，在事件类型是 LINE 时必填。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRouteMeasureEventProperties()]
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Layer Name or Table View</para>
-		/// <para>The layer to be created. This layer is stored in memory, so a path is not necessary.</para>
+		/// <para>要创建的图层。 此图层存储在内存中，所以不需要路径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Offset Field</para>
-		/// <para>The field containing values used to offset events from their underlying route. This field must be numeric.</para>
+		/// <para>包含用于使事件从其基础路径偏移的值的字段。 字段必须为数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -149,9 +149,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Generate a field for locating errors</para>
-		/// <para>Specifies whether a field named LOC_ERROR will be added to the temporary layer that is created.</para>
-		/// <para>Unchecked—Do not add a field to store locating errors. This is the default.</para>
-		/// <para>Checked—Add a field to store locating errors.</para>
+		/// <para>指定是否将名为 LOC_ERROR 的字段添加到创建的临时图层。</para>
+		/// <para>未选中 - 不添加用于存储定位错误的字段。 这是默认设置。</para>
+		/// <para>选中 - 添加用于存储定位错误的字段。</para>
 		/// <para><see cref="AddErrorFieldEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -161,9 +161,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Generate an angle field</para>
-		/// <para>Specifies whether a field named LOC_ANGLE will be added to the temporary layer that is created. This parameter is only valid when the event type is POINT.</para>
-		/// <para>Unchecked—Do not add a field to store locating angles. This is the default.</para>
-		/// <para>Checked—Add a field to store locating angles.</para>
+		/// <para>指定是否将名为 LOC_ANGLE 的字段添加到创建的临时图层。 此参数只有在事件类型为 POINT 时才有效。</para>
+		/// <para>未选中 - 不添加用于存储定位角的字段。 这是默认设置。</para>
+		/// <para>选中 - 添加用于存储定位角的字段。</para>
 		/// <para><see cref="AddAngleFieldEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -173,9 +173,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Calculated Angle Type</para>
-		/// <para>Specifies the type of locating angle that will be calculated. This parameter is only valid if Generate an angle field is checked.</para>
-		/// <para>Normal—The normal (perpendicular) angle will be calculated. This is the default.</para>
-		/// <para>Tangent—The tangent angle will be calculated.</para>
+		/// <para>指定要计算的定位角的类型。 此参数仅在选中生成角度字段时才有效。</para>
+		/// <para>正态—将计算法向角（直角）。 这是默认设置。</para>
+		/// <para>正切—将计算正切角。</para>
 		/// <para><see cref="AngleTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -185,9 +185,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Write the complement of the angle to the angle field</para>
-		/// <para>Specifies whether the complement of the locating angle will be calculated. This parameter is only valid if Generate an angle field is checked.</para>
-		/// <para>Unchecked—Do not write the complement of the angle. Write only the calculated angle. This is the default.</para>
-		/// <para>Checked—Write the complement of the angle.</para>
+		/// <para>指定是否计算定位角的余角。 此参数仅在选中生成角度字段时才有效。</para>
+		/// <para>未选中 - 不写入余角。 只写入计算的角度。 这是默认设置。</para>
+		/// <para>选中 - 写入余角。</para>
 		/// <para><see cref="ComplementAngleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -197,9 +197,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Events with a positive offset will be placed to the right of the routes</para>
-		/// <para>Specifies the side on which the route events with a positive offset are displayed. This parameter is only valid if an offset field has been specified.</para>
-		/// <para>Unchecked—Events with a positive offset will be displayed to the left of the route. The side of the route is determined by the measures and not necessarily the digitized direction. This is the default.</para>
-		/// <para>Checked—Events with a positive offset will be displayed to the right of the route. The side of the route is determined by the digitized direction.</para>
+		/// <para>指定将具有正向偏移的路径事件显示在哪一侧。 此参数只有在已指定偏移字段时才有效。</para>
+		/// <para>未选中 - 具有正向偏移的事件显示在路径左侧。 路径的这一侧由测量方向而不一定由数字化方向确定。 这是默认设置。</para>
+		/// <para>选中 - 具有正向偏移的事件显示在路径右侧。 路径的这一侧由数字化方向确定。</para>
 		/// <para><see cref="OffsetDirectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -209,9 +209,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Point events will be generated as multipoint features</para>
-		/// <para>Specifies whether point events will be treated as point features or multipoint features.</para>
-		/// <para>Unchecked—Point events will be treated as point features. This is the default.</para>
-		/// <para>Checked—Point events will be treated as multipoint features.</para>
+		/// <para>指定将点事件视为点要素还是多点要素。</para>
+		/// <para>未选中 - 将点事件视为点要素。 这是默认设置。</para>
+		/// <para>选中 - 将点事件视为多点要素。</para>
 		/// <para><see cref="PointEventTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -236,14 +236,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum AddErrorFieldEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Add a field to store locating errors.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ERROR_FIELD")]
 			ERROR_FIELD,
 
 			/// <summary>
-			/// <para>Unchecked—Do not add a field to store locating errors. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ERROR_FIELD")]
@@ -257,14 +257,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum AddAngleFieldEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Add a field to store locating angles.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ANGLE_FIELD")]
 			ANGLE_FIELD,
 
 			/// <summary>
-			/// <para>Unchecked—Do not add a field to store locating angles. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ANGLE_FIELD")]
@@ -278,17 +278,17 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum AngleTypeEnum 
 		{
 			/// <summary>
-			/// <para>Normal—The normal (perpendicular) angle will be calculated. This is the default.</para>
+			/// <para>正态—将计算法向角（直角）。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("NORMAL")]
-			[Description("Normal")]
+			[Description("正态")]
 			Normal,
 
 			/// <summary>
-			/// <para>Tangent—The tangent angle will be calculated.</para>
+			/// <para>正切—将计算正切角。</para>
 			/// </summary>
 			[GPValue("TANGENT")]
-			[Description("Tangent")]
+			[Description("正切")]
 			Tangent,
 
 		}
@@ -299,14 +299,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum ComplementAngleEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Write the complement of the angle.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMPLEMENT")]
 			COMPLEMENT,
 
 			/// <summary>
-			/// <para>Unchecked—Do not write the complement of the angle. Write only the calculated angle. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ANGLE")]
@@ -320,14 +320,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum OffsetDirectionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Events with a positive offset will be displayed to the right of the route. The side of the route is determined by the digitized direction.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RIGHT")]
 			RIGHT,
 
 			/// <summary>
-			/// <para>Unchecked—Events with a positive offset will be displayed to the left of the route. The side of the route is determined by the measures and not necessarily the digitized direction. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("LEFT")]
@@ -341,14 +341,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum PointEventTypeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Point events will be treated as multipoint features.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MULTIPOINT")]
 			MULTIPOINT,
 
 			/// <summary>
-			/// <para>Unchecked—Point events will be treated as point features. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("POINT")]

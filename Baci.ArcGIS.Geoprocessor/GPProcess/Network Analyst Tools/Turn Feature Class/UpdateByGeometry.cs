@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Update by Geometry</para>
-	/// <para>Update by Geometry</para>
-	/// <para>Updates all the edge references in the turn feature class using the geometry of the turn features. This tool is useful when the IDs listed for the turn can no longer find the edges participating in the turn due to edits to the underlying edges.</para>
+	/// <para>按几何更新</para>
+	/// <para>使用转弯要素的几何更新转弯要素类中的所有边引用。如果对基础边所做的编辑导致根据列出的转弯 ID 再也无法找到参与转弯的边，则此工具会很有用。</para>
 	/// </summary>
 	public class UpdateByGeometry : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InTurnFeatures">
 		/// <para>Input Turn Feature Class</para>
-		/// <para>The turn feature class to be updated.</para>
+		/// <para>要更新的转弯要素类。</para>
 		/// </param>
 		public UpdateByGeometry(object InTurnFeatures)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Update by Geometry</para>
+		/// <para>Tool Display Name : 按几何更新</para>
 		/// </summary>
-		public override string DisplayName() => "Update by Geometry";
+		public override string DisplayName() => "按几何更新";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateByGeometry</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Turn Feature Class</para>
-		/// <para>The turn feature class to be updated.</para>
+		/// <para>要更新的转弯要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Building Scene Layer Content</para>
-	/// <para>Create Building Scene Layer Content</para>
-	/// <para>Creates a scene layer package (.slpk) or scene layer content (.i3sREST) from a building layer input.</para>
+	/// <para>创建建筑物场景图层内容</para>
+	/// <para>用于从建筑物图层输入创建场景图层包 (.slpk) 或场景图层内容 (.i3sREST)</para>
 	/// </summary>
 	public class CreateBuildingSceneLayerPackage : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>The input building layer or layer file (.lyrx).</para>
+		/// <para>输入建筑物图层或图层文件 (.lyrx)。</para>
 		/// </param>
 		public CreateBuildingSceneLayerPackage(object InDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Building Scene Layer Content</para>
+		/// <para>Tool Display Name : 创建建筑物场景图层内容</para>
 		/// </summary>
-		public override string DisplayName() => "Create Building Scene Layer Content";
+		public override string DisplayName() => "创建建筑物场景图层内容";
 
 		/// <summary>
 		/// <para>Tool Name : CreateBuildingSceneLayerPackage</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>The input building layer or layer file (.lyrx).</para>
+		/// <para>输入建筑物图层或图层文件 (.lyrx)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -74,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Scene Layer Package</para>
-		/// <para>The output scene layer package (.slpk).</para>
+		/// <para>输出场景图层包 (.slpk)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -84,10 +84,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Coordinate System</para>
-		/// <para>The coordinate system of the output scene layer package. It can be any projected or custom coordinate system. Supported geographic coordinate systems include WGS 1984 and China Geodetic Coordinate System 2000. WGS 1984 and EGM96 Geoid are the default horizontal and vertical coordinate systems, respectively. The coordinate system can be specified in any of the following ways:</para>
-		/// <para>Specify the path to a .prj file.</para>
-		/// <para>Reference a dataset with the desired coordinate system.</para>
-		/// <para>Use an arcpy.SpatialReference object.</para>
+		/// <para>输出场景图层包的坐标系。 它可以是任意投影坐标系或自定义坐标系。 支持的地理坐标系包括 WGS 1984 和 China Geodetic Coordinate System 2000。 WGS 1984 和 EGM96 大地水准面分别是默认的水平和垂直坐标系。 可通过以下任一方式指定坐标系：</para>
+		/// <para>指定 .prj 文件的路径。</para>
+		/// <para>引用具有所需坐标系的数据集。</para>
+		/// <para>使用 arcpy.SpatialReference 对象。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSpatialReference()]
@@ -95,8 +95,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Geographic Transformation</para>
-		/// <para>The datum transformation method that will be used when the input layer&apos;s coordinate system uses a datum that differs from the output coordinate system. All transformations are bidirectional, regardless of the direction implied by their names. For example, NAD_1927_to_WGS_1984_3 will work correctly even if the datum conversion is from WGS84 to NAD 1927.</para>
-		/// <para>The ArcGIS coordinate system data is required for vertical datum transformations between ellipsoidal and gravity-related and two gravity-related datums.</para>
+		/// <para>此基准面变换方法适用于输入图层坐标系所使用的基准面不同于输出坐标系的情况。 所有变换均为双向，而不管其名称隐含的方向如何。 例如，即使基准变换为从 WGS84 到 NAD 1927，NAD_1927_to_WGS_1984_3 仍可正常运行。</para>
+		/// <para>在椭圆体和重力相关的基准面以及两个与重力相关的基准面之间进行垂直基准面变换时，需要使用 ArcGIS 坐标系数据。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -104,11 +104,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Texture Optimization</para>
-		/// <para>Specifies the textures that will be optimized according to the target platform where the scene layer package is used.Optimizations that include KTX2 may take significant time to process. For fastest results, use the Desktop or None options.</para>
-		/// <para>All—All texture formats will be optimized including JPEG, DXT, and KTX2 for use in desktop, web, and mobile platforms.</para>
-		/// <para>Desktop—Windows, Linux, and Mac supported textures will be optimized including JPEG and DXT for use in ArcGIS Pro clients on Windows and ArcGIS Runtime desktop clients on Windows, Linux, and Mac. This is the default.</para>
-		/// <para>Mobile—Android and iOS supported textures will be optimized including JPEG and KTX2 for use in ArcGIS Runtime mobile applications.</para>
-		/// <para>None—JPEG textures will be optimized for use in desktop and web platforms.</para>
+		/// <para>指定根据使用场景图层包的目标平台优化的纹理。可能需要大量时间来处理包括 KTX2 的优化。 要获得最快结果，请使用桌面或无选项。</para>
+		/// <para>全部—所有用于桌面、Web 和移动平台的纹理格式都将进行优化，包括 JPEG、DXT 和 KTX2。</para>
+		/// <para>桌面—支持 Windows、Linux 和 Mac 的纹理都将进行优化，包括 JPEG 和 DXT，可用于 Windows 上的 ArcGIS Pro 客户端和 Windows、Linux 和 Mac 上的 ArcGIS Runtime 桌面客户端。 这是默认设置。</para>
+		/// <para>移动—支持 Android 和 iOS 的纹理将进行优化，包括 JPEG 和 KTX2，可用于 ArcGIS Runtime 移动应用程序。</para>
+		/// <para>无—JPEG 纹理将进行优化，可用于桌面和 web 平台。</para>
 		/// <para><see cref="TextureOptimizationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Cloud Connection</para>
-		/// <para>The target cloud connection file (.acs) where the scene layer content (.i3sREST) will be output.</para>
+		/// <para>将输出场景图层内容 (.i3sREST) 的目标云连接文件 (.acs)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
@@ -141,31 +141,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum TextureOptimizationEnum 
 		{
 			/// <summary>
-			/// <para>All—All texture formats will be optimized including JPEG, DXT, and KTX2 for use in desktop, web, and mobile platforms.</para>
+			/// <para>全部—所有用于桌面、Web 和移动平台的纹理格式都将进行优化，包括 JPEG、DXT 和 KTX2。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All")]
+			[Description("全部")]
 			All,
 
 			/// <summary>
-			/// <para>Desktop—Windows, Linux, and Mac supported textures will be optimized including JPEG and DXT for use in ArcGIS Pro clients on Windows and ArcGIS Runtime desktop clients on Windows, Linux, and Mac. This is the default.</para>
+			/// <para>桌面—支持 Windows、Linux 和 Mac 的纹理都将进行优化，包括 JPEG 和 DXT，可用于 Windows 上的 ArcGIS Pro 客户端和 Windows、Linux 和 Mac 上的 ArcGIS Runtime 桌面客户端。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("DESKTOP")]
-			[Description("Desktop")]
+			[Description("桌面")]
 			Desktop,
 
 			/// <summary>
-			/// <para>Mobile—Android and iOS supported textures will be optimized including JPEG and KTX2 for use in ArcGIS Runtime mobile applications.</para>
+			/// <para>移动—支持 Android 和 iOS 的纹理将进行优化，包括 JPEG 和 KTX2，可用于 ArcGIS Runtime 移动应用程序。</para>
 			/// </summary>
 			[GPValue("MOBILE")]
-			[Description("Mobile")]
+			[Description("移动")]
 			Mobile,
 
 			/// <summary>
-			/// <para>None—JPEG textures will be optimized for use in desktop and web platforms.</para>
+			/// <para>无—JPEG 纹理将进行优化，可用于桌面和 web 平台。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 		}

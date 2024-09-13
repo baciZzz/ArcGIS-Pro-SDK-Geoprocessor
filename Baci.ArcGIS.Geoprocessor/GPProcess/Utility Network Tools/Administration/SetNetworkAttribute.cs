@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Set Network Attribute</para>
-	/// <para>Set Network Attribute</para>
-	/// <para>Assigns a network attribute to a feature class or table at the asset type level to be used during tracing operations.</para>
+	/// <para>设置网络属性</para>
+	/// <para>用于将网络属性分配到要在追踪操作中使用的资产类型级别要素类或表。</para>
 	/// </summary>
 	public class SetNetworkAttribute : AbstractGPProcess
 	{
@@ -21,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that contains the network attribute to set.</para>
+		/// <para>包含要设置的网络属性的公共设施网络。</para>
 		/// </param>
 		/// <param name="NetworkAttribute">
 		/// <para>Network Attribute</para>
-		/// <para>The network attribute to be assigned to the field in the feature class or table.</para>
+		/// <para>要分配给要素类或表字段的网络属性。</para>
 		/// </param>
 		/// <param name="DomainNetwork">
 		/// <para>Domain Network</para>
-		/// <para>The domain network that contains the feature class or table that will have a network attribute set on it.</para>
+		/// <para>包含将在其上设置网络属性的要素类或表的域网络。</para>
 		/// </param>
 		/// <param name="Featureclass">
 		/// <para>Input Table</para>
-		/// <para>The input feature class or table that contains the field that will be used to set the network attribute.</para>
+		/// <para>输入要素类或表，其中包括将用于设置网络属性的字段。</para>
 		/// </param>
 		/// <param name="Field">
 		/// <para>Field</para>
-		/// <para>An existing field that will be assigned the network attribute. The field data type must match the data type of the network attribute. For example, if the network attribute is a short integer type, the field must also be a short integer type. Network attributes that do not support nulls can only be assigned to fields that do not allow null values.</para>
+		/// <para>将分配网络属性的现有字段。字段数据类型必须与网络属性的数据类型相匹配。例如，如果网络属性是短整型，则字段必须也是短整型。仅可以将不支持空值的网络属性分配给不允许空值的字段。</para>
 		/// </param>
 		public SetNetworkAttribute(object InUtilityNetwork, object NetworkAttribute, object DomainNetwork, object Featureclass, object Field)
 		{
@@ -49,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Set Network Attribute</para>
+		/// <para>Tool Display Name : 设置网络属性</para>
 		/// </summary>
-		public override string DisplayName() => "Set Network Attribute";
+		public override string DisplayName() => "设置网络属性";
 
 		/// <summary>
 		/// <para>Tool Name : SetNetworkAttribute</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that contains the network attribute to set.</para>
+		/// <para>包含要设置的网络属性的公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Network Attribute</para>
-		/// <para>The network attribute to be assigned to the field in the feature class or table.</para>
+		/// <para>要分配给要素类或表字段的网络属性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Domain Network</para>
-		/// <para>The domain network that contains the feature class or table that will have a network attribute set on it.</para>
+		/// <para>包含将在其上设置网络属性的要素类或表的域网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input feature class or table that contains the field that will be used to set the network attribute.</para>
+		/// <para>输入要素类或表，其中包括将用于设置网络属性的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Field</para>
-		/// <para>An existing field that will be assigned the network attribute. The field data type must match the data type of the network attribute. For example, if the network attribute is a short integer type, the field must also be a short integer type. Network attributes that do not support nulls can only be assigned to fields that do not allow null values.</para>
+		/// <para>将分配网络属性的现有字段。字段数据类型必须与网络属性的数据类型相匹配。例如，如果网络属性是短整型，则字段必须也是短整型。仅可以将不支持空值的网络属性分配给不允许空值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

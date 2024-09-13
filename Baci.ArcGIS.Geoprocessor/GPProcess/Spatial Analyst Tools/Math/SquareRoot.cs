@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Square Root</para>
-	/// <para>Square Root</para>
-	/// <para>Calculates the square root of the cell values in a raster.</para>
+	/// <para>平方根</para>
+	/// <para>计算栅格中像元值的平方根。</para>
 	/// </summary>
 	public class SquareRoot : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant">
 		/// <para>Input raster or constant value</para>
-		/// <para>The input values to find the square root of.</para>
-		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
+		/// <para>要计算平方根的输入值。</para>
+		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the square root of the input cell values.</para>
+		/// <para>输出栅格。</para>
+		/// <para>像元值是输入像元值的平方根。</para>
 		/// </param>
 		public SquareRoot(object InRasterOrConstant, object OutRaster)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Square Root</para>
+		/// <para>Tool Display Name : 平方根</para>
 		/// </summary>
-		public override string DisplayName() => "Square Root";
+		public override string DisplayName() => "平方根";
 
 		/// <summary>
 		/// <para>Tool Name : SquareRoot</para>
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value</para>
-		/// <para>The input values to find the square root of.</para>
-		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
+		/// <para>要计算平方根的输入值。</para>
+		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the square root of the input cell values.</para>
+		/// <para>输出栅格。</para>
+		/// <para>像元值是输入像元值的平方根。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

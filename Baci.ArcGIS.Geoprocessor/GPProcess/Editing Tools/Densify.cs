@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Densify</para>
-	/// <para>Densify</para>
-	/// <para>Adds vertices along line or polygon features and replaces curve segments (Bezier, circular arcs, and elliptical arcs) with line segments.</para>
+	/// <para>增密</para>
+	/// <para>可以沿线要素或面要素添加折点，还可将曲线线段（贝塞尔、圆弧和椭圆弧）替换为线段。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The polygon or line feature class to be densified.</para>
+		/// <para>要增密的面或线要素类。</para>
 		/// </param>
 		public Densify(object InFeatures)
 		{
@@ -31,14 +31,14 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Densify</para>
+		/// <para>Tool Display Name : 增密</para>
 		/// </summary>
-		public override string DisplayName() => "Densify";
+		public override string DisplayName() => "增密";
 
 		/// <summary>
-		/// <para>Tool Name : Densify</para>
+		/// <para>Tool Name : 增密</para>
 		/// </summary>
-		public override string ToolName() => "Densify";
+		public override string ToolName() => "增密";
 
 		/// <summary>
 		/// <para>Tool Excute Name : edit.Densify</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The polygon or line feature class to be densified.</para>
+		/// <para>要增密的面或线要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -77,10 +77,10 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Densification Method</para>
-		/// <para>Specifies the feature densification method to be used.</para>
-		/// <para>Distance—Straight lines and curves will be densified using the specified distance. This is the default.</para>
-		/// <para>Offset—Curves will be densified using the specified maximum offset deviation.</para>
-		/// <para>Angle—Curves will be densified using the specified maximum deflection angle.</para>
+		/// <para>指定要使用的要素增密方法。</para>
+		/// <para>距离—直线和曲线将使用指定的距离进行增密。 这是默认设置。</para>
+		/// <para>偏移—曲线将使用指定的最大偏移偏差进行增密。</para>
+		/// <para>角—曲线将使用指定的最大偏转角进行增密。</para>
 		/// <para><see cref="DensificationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -90,8 +90,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Distance</para>
-		/// <para>The maximum distance between vertices. This distance will always be applied to line segments and to simplify curves. The default value is a function of the data&apos;s x,y tolerance.</para>
-		/// <para>New vertices may not be inserted at this exact interval along the line, rather they will be inserted within this distance of the previous vertex. There is no way to ensure that a vertex is added exactly at the specified interval along the line segment.</para>
+		/// <para>折点间的最大距离。 此距离始终应用于线段，并用来简化曲线。 默认值是关于数据的 x,y 容差的函数。</para>
+		/// <para>可能无法沿线以此确切间隔插入新折点，只能将它们插入到先前折点的此距离内。 无法确保沿线段以指定的间隔精确添加折点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Maximum Offset Deviation</para>
-		/// <para>The maximum distance the output segment will be from the original. This parameter only affects curves. The default value is a function of the data's x,y tolerance.</para>
+		/// <para>输出线段与原始线段之间的最大距离。 此参数仅影响曲线。 默认值是关于数据的 x,y 容差的函数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Maximum Deflection Angle (Degrees)</para>
-		/// <para>The maximum angle the output geometry can be from the input geometry. The valid range is 0 to 90. The default value is 10. This parameter only affects curves.</para>
+		/// <para>输出几何与输入几何之间的最大角度。 有效范围是 0 到 90。 默认值为 10。 此参数仅影响曲线。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Maximum Vertex Count (per segment)</para>
-		/// <para>The maximum vertex count allowed per segment. If no value or an invalid value (0 or less) is entered, there will be no vertex limit for linear segments, and curve segments will have a default of 12000.</para>
+		/// <para>每个线段所允许的最大折点计数。 如果未输入任何值或输入无效值（0 或更小），则线段将没有折点限制，且曲线段的默认值将为 12000。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -148,24 +148,24 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		public enum DensificationMethodEnum 
 		{
 			/// <summary>
-			/// <para>Distance—Straight lines and curves will be densified using the specified distance. This is the default.</para>
+			/// <para>距离—直线和曲线将使用指定的距离进行增密。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("DISTANCE")]
-			[Description("Distance")]
+			[Description("距离")]
 			Distance,
 
 			/// <summary>
-			/// <para>Offset—Curves will be densified using the specified maximum offset deviation.</para>
+			/// <para>偏移—曲线将使用指定的最大偏移偏差进行增密。</para>
 			/// </summary>
 			[GPValue("OFFSET")]
-			[Description("Offset")]
+			[Description("偏移")]
 			Offset,
 
 			/// <summary>
-			/// <para>Angle—Curves will be densified using the specified maximum deflection angle.</para>
+			/// <para>角—曲线将使用指定的最大偏转角进行增密。</para>
 			/// </summary>
 			[GPValue("ANGLE")]
-			[Description("Angle")]
+			[Description("角")]
 			Angle,
 
 		}

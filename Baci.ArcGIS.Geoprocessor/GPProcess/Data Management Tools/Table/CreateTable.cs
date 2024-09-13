@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Table</para>
-	/// <para>Create Table</para>
-	/// <para>Creates a geodatabase table or a dBASE table.</para>
+	/// <para>创建表</para>
+	/// <para>创建地理数据库表或 dBASE 表。</para>
 	/// </summary>
 	public class CreateTable : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="OutPath">
 		/// <para>Table Location</para>
-		/// <para>The workspace in which the output table will be created.</para>
+		/// <para>用于创建输出表的工作空间。</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Table Name</para>
-		/// <para>The name of the table to be created.</para>
+		/// <para>要创建的表的名称。</para>
 		/// </param>
 		public CreateTable(object OutPath, object OutName)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Table</para>
+		/// <para>Tool Display Name : 创建表</para>
 		/// </summary>
-		public override string DisplayName() => "Create Table";
+		public override string DisplayName() => "创建表";
 
 		/// <summary>
 		/// <para>Tool Name : CreateTable</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Table Location</para>
-		/// <para>The workspace in which the output table will be created.</para>
+		/// <para>用于创建输出表的工作空间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Table Name</para>
-		/// <para>The name of the table to be created.</para>
+		/// <para>要创建的表的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Template Table Name</para>
-		/// <para>A table with an attribute schema that is used to define the output table. Fields in the template tables will be added to the output table.</para>
+		/// <para>属性方案用于定义输出表的表。模板表中的字段将被添加到输出表中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
-		/// <para>The configuration keyword that determines the storage parameters of the table in an enterprise geodatabase.</para>
+		/// <para>用于确定企业级地理数据库中表的存储参数的配置关键字。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Table Alias Name</para>
-		/// <para>The alternate name of the output table that will be created.</para>
+		/// <para>将创建的输出表的备用名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

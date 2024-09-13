@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Configure Indoor Positioning</para>
-	/// <para>Configure Indoor Positioning</para>
-	/// <para>Writes indoor positioning system configuration information to an ArcGIS Indoors geodatabase. The values are used by ArcGIS Indoors for iOS and ArcGIS Indoors for Android.</para>
+	/// <para>配置室内定位</para>
+	/// <para>用于将室内定位系统配置信息写入 ArcGIS Indoors 地理数据库。 这些值由 ArcGIS Indoors for iOS 和 ArcGIS Indoors for Android 使用。</para>
 	/// </summary>
 	[Obsolete()]
 	public class ConfigureIndoorPositioning : AbstractGPProcess
@@ -22,19 +22,19 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		/// <param name="InGeodatabase">
 		/// <para>Input Geodatabase</para>
-		/// <para>The Indoors file or enterprise geodatabase for which IPS configuration information will be generated.</para>
+		/// <para>将为其生成 IPS 配置信息的 Indoors 文件或企业级地理数据库。</para>
 		/// </param>
 		/// <param name="EncryptionKey">
 		/// <para>Encryption Key</para>
-		/// <para>The key used by the tool and Indoors mobile apps to encrypt or unencrypt the API Key parameter (api_key in Python) value.</para>
+		/// <para>该工具和 Indoors 移动应用程序使用的密钥，用于对 API 密钥参数（Python 中的 api_key）值进行加密或解密。</para>
 		/// </param>
 		/// <param name="ApiKey">
 		/// <para>API Key</para>
-		/// <para>A unique value in the form of a GUID used by Indoors mobile apps to enable Indoo.rs indoor positioning. The API key is provided by Indoo.rs.</para>
+		/// <para>采用 GUID 形式的唯一值，由 Indoors 移动应用程序用于启用 Indoo.rs 室内定位。 API 密钥由 Indoo.rs 提供。</para>
 		/// </param>
 		/// <param name="BuildingId">
 		/// <para>Building ID</para>
-		/// <para>A unique alphanumerical value used by Indoors mobile apps to link the site in the mobile map package to the Indoo.rs indoor positioning survey. The building ID is provided by Indoo.rs.</para>
+		/// <para>Indoors 移动应用程序使用的唯一字母数字值，用于将移动地图包中的站点链接到 Indoo.rs 室内定位调查。 建筑物 ID 由 Indoo.rs 提供。</para>
 		/// </param>
 		public ConfigureIndoorPositioning(object InGeodatabase, object EncryptionKey, object ApiKey, object BuildingId)
 		{
@@ -45,9 +45,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Configure Indoor Positioning</para>
+		/// <para>Tool Display Name : 配置室内定位</para>
 		/// </summary>
-		public override string DisplayName() => "Configure Indoor Positioning";
+		public override string DisplayName() => "配置室内定位";
 
 		/// <summary>
 		/// <para>Tool Name : ConfigureIndoorPositioning</para>
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Input Geodatabase</para>
-		/// <para>The Indoors file or enterprise geodatabase for which IPS configuration information will be generated.</para>
+		/// <para>将为其生成 IPS 配置信息的 Indoors 文件或企业级地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Encryption Key</para>
-		/// <para>The key used by the tool and Indoors mobile apps to encrypt or unencrypt the API Key parameter (api_key in Python) value.</para>
+		/// <para>该工具和 Indoors 移动应用程序使用的密钥，用于对 API 密钥参数（Python 中的 api_key）值进行加密或解密。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>API Key</para>
-		/// <para>A unique value in the form of a GUID used by Indoors mobile apps to enable Indoo.rs indoor positioning. The API key is provided by Indoo.rs.</para>
+		/// <para>采用 GUID 形式的唯一值，由 Indoors 移动应用程序用于启用 Indoo.rs 室内定位。 API 密钥由 Indoo.rs 提供。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Building ID</para>
-		/// <para>A unique alphanumerical value used by Indoors mobile apps to link the site in the mobile map package to the Indoo.rs indoor positioning survey. The building ID is provided by Indoo.rs.</para>
+		/// <para>Indoors 移动应用程序使用的唯一字母数字值，用于将移动地图包中的站点链接到 Indoo.rs 室内定位调查。 建筑物 ID 由 Indoo.rs 提供。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

@@ -11,10 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Get Layout Templates Info</para>
-	/// <para>Get Layout Templates Info</para>
-	/// <para>Returns the content</para>
-	/// <para>of layout templates in JavaScript Object Notation</para>
-	/// <para>(JSON) format. Layout files (.pagx files) located in a folder are used as layout templates.</para>
+	/// <para>获取布局模板信息</para>
+	/// <para>以 JavaScript 对象表示法 (JSON) 格式返回布局模板的内容。位于文件夹中的布局文件（.pagx 文件）被用作布局模板。</para>
 	/// </summary>
 	public class GetLayoutTemplatesInfo : AbstractGPProcess
 	{
@@ -26,9 +24,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Get Layout Templates Info</para>
+		/// <para>Tool Display Name : 获取布局模板信息</para>
 		/// </summary>
-		public override string DisplayName() => "Get Layout Templates Info";
+		public override string DisplayName() => "获取布局模板信息";
 
 		/// <summary>
 		/// <para>Tool Name : GetLayoutTemplatesInfo</para>
@@ -62,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Layout Templates Folder</para>
-		/// <para>Full path to the folder where layout files (.pagx files), to be used as layout templates, are located. The default location is &lt;install_directory&gt;\Resources\ArcToolBox\Templates\ExportWebMapTemplates.</para>
+		/// <para>用作布局模板的布局文件（.pagx 文件）所在的文件夹的完整路径。默认位置为 &lt;install_directory&gt;\Resources\ArcToolBox\Templates\ExportWebMapTemplates。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]

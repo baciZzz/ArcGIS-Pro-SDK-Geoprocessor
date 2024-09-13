@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Create Locator</para>
-	/// <para>Create Locator</para>
-	/// <para>Creates a locator that can find the location of an address or a place, convert a table of addresses or places to a collection of point features, or identify the address of a point location.</para>
+	/// <para>创建定位器</para>
+	/// <para>创建定位器，以供查找地址或地点位置，将地址或地点表转换为点要素集合，或标识点位置的地址。</para>
 	/// </summary>
 	public class CreateLocator : AbstractGPProcess
 	{
@@ -21,66 +21,66 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// </summary>
 		/// <param name="CountryCode">
 		/// <para>Country or Region</para>
-		/// <para>Specifies where country-specific geocoding logic will be applied to the reference data for the locator.</para>
-		/// <para>The default is the regional setting of the operating system. It can be specified by selecting &lt;As defined in data&gt; from the list and mapping a value from the data in the field mapping, or it can be applied to the entire dataset by selecting one from the list.</para>
-		/// <para>It provides a country template containing the expected field names that display in the Field Mapping parameter for the specified country of the locator to be created.</para>
-		/// <para>&lt;As defined in data&gt;—Three-character country code value defined in the reference data for each feature</para>
-		/// <para>American Samoa—American Samoa</para>
-		/// <para>Australia—Australia</para>
-		/// <para>Austria—Austria</para>
-		/// <para>Belgium—Belgium</para>
-		/// <para>Canada—Canada</para>
-		/// <para>Switzerland— Switzerland</para>
-		/// <para>Germany—Germany</para>
-		/// <para>Spain—Spain</para>
-		/// <para>France—France</para>
-		/// <para>Great Britain—Great Britain</para>
-		/// <para>Guam—Guam</para>
-		/// <para>Japan—Japan</para>
-		/// <para>Israel—Israel</para>
-		/// <para>South Korea—South Korea</para>
-		/// <para>Northern Mariana Islands—Northern Mariana Islands</para>
-		/// <para>Netherlands— Netherlands</para>
-		/// <para>Puerto Rico—Puerto Rico</para>
-		/// <para>U.S. Virgin Islands—U.S. Virgin Islands</para>
-		/// <para>United States—United States</para>
-		/// <para>Minor Outlying Islands of the United States— Minor Outlying Islands of the United States</para>
+		/// <para>指定将于何处将特定于国家/地区的地理编码逻辑应用于定位器的参考数据。</para>
+		/// <para>默认值为操作系统的区域设置。 可通过从列表中选择 &lt;按数据中所定义的方式&gt; 并从字段映射中的数据内映射某一值来对其进行指定，或通过从列表中选择某一国家/地区来将其应用于整个数据集。</para>
+		/// <para>它提供了一个国家/地区模板，该模板中包含了显示于字段映射参数中的预期字段名称以便为定位器创建指定的国家/地区。</para>
+		/// <para>&lt;按数据中所定义的方式&gt;—在每个要素的参考数据中定义的三位字符国家/地区代码值</para>
+		/// <para>美属萨摩亚—美属萨摩亚</para>
+		/// <para>澳大利亚—澳大利亚</para>
+		/// <para>奥地利—奥地利</para>
+		/// <para>比利时—比利时</para>
+		/// <para>加拿大—加拿大</para>
+		/// <para>瑞士—瑞士</para>
+		/// <para>德国—德国</para>
+		/// <para>西班牙—西班牙</para>
+		/// <para>法国—法国</para>
+		/// <para>大不列颠—大不列颠</para>
+		/// <para>关岛—关岛</para>
+		/// <para>日本—日本</para>
+		/// <para>以色列—以色列</para>
+		/// <para>韩国—韩国</para>
+		/// <para>北马里亚纳群岛—北马里亚纳群岛</para>
+		/// <para>荷兰—荷兰</para>
+		/// <para>波多黎各—波多黎各</para>
+		/// <para>美属维京群岛—美属维京群岛</para>
+		/// <para>美国—美国</para>
+		/// <para>美属边疆群岛—美属边疆群岛</para>
 		/// </param>
 		/// <param name="PrimaryReferenceData">
 		/// <para>Primary Table(s)</para>
-		/// <para>The reference data feature classes and their roles that will be used to create the locator. Only one primary table can be used per role.</para>
-		/// <para>Feature classes represented as services are supported data types for use as primary reference data.</para>
-		/// <para>When a definition query is defined for the primary reference data or there are selected features, only the queried and selected features will be included when the locator is created.</para>
-		/// <para>When creating a locator with reference data that contains millions of features, you must have at least three to four times the size of the data in free disk space on the drive containing your temp directory, as files used to build the locator are written to this location before the locator is copied to the output location. If you do not have enough disk space, the tool will fail when it runs out of space. Also, when creating large locators, your machine must have enough RAM to handle large memory-intensive processes.</para>
+		/// <para>参考数据要素类及其将用于创建定位器的角色。 每个角色只能使用一个主表。</para>
+		/// <para>表示为服务的要素类作为数据类型，支持用作主要参考数据。</para>
+		/// <para>如果为主要参考数据定义了定义查询或存在选定要素，则在创建定位器时，仅将包含查询要素和所选要素。</para>
+		/// <para>如果使用包含数百万个要素的参考数据创建地址定位器，则包含临时目录的驱动上的可用磁盘空间必须至少为数据大小的 3 到 4 倍，原因是在将定位器复制到输出位置之前，需将用于构建定位器的文件写入此位置。 如果没有足够的磁盘空间，则一旦空间不足，工具将失败。 此外，在创建大型定位器时，计算机必须具备足够的 RAM，才能处理占用较大内存的进程。</para>
 		/// </param>
 		/// <param name="FieldMapping">
 		/// <para>Field Mapping</para>
-		/// <para>The mapping of primary reference dataset fields to the fields supported by the locator role. Fields with an asterisk (*) next to their names are required by the locator role. Map the relevant fields for each table from the Primary Table(s) parameter.</para>
-		/// <para>If you are using an alternate name table, map Join ID in Primary Table(s).</para>
-		/// <para>To add custom output fields, type the name of the fields in the Custom Output Fields parameter. The new fields will be added to the Field Mapping parameter. You can then select the fields from the Primary Table(s) parameter that contain the additional values to be included in the geocode output.</para>
+		/// <para>主参考数据集字段到定位器角色所支持字段的映射。 名称旁带有星号 (*) 的字段是定位器角色的必填字段。 映射主表参数中每个表的相关字段。</para>
+		/// <para>如果正在使用的是备用名称表，请映射主表中的连接 ID。</para>
+		/// <para>要添加自定义输出字段，请键入自定义输出字段参数中的字段名称。 新的字段将添加至字段映射参数。 然后，您可从主表参数中选择字段，这些字段包含了要纳入地理编码输出的附加值。</para>
 		/// </param>
 		/// <param name="OutLocator">
 		/// <para>Output Locator</para>
-		/// <para>The output address locator file.</para>
+		/// <para>输出地址定位器文件。</para>
 		/// </param>
 		/// <param name="LanguageCode">
 		/// <para>Language Code</para>
-		/// <para>Specifies where language-specific geocoding logic will be applied to the reference data for the locator.</para>
-		/// <para>If a language code field exists in the primary reference data, providing a language code can improve the results of the geocoding.</para>
-		/// <para>It can be specified by selecting &lt;As defined in data&gt; from the list and mapping a value from the primary reference data in the field mapping, or it can be applied to the entire dataset by selecting a language from the list.</para>
-		/// <para>&lt;As defined in data&gt;—Three-character language code value defined in the reference data for each feature</para>
-		/// <para>Basque—Basque</para>
-		/// <para>Catalan—Catalan</para>
-		/// <para>Dutch— Dutch</para>
-		/// <para>English—English</para>
-		/// <para>French—French</para>
-		/// <para>German—German</para>
-		/// <para>Galician—Galician</para>
-		/// <para>Hebrew—Hebrew</para>
-		/// <para>Italian— Italian</para>
-		/// <para>Japanese— Japanese</para>
-		/// <para>Korean— Korean</para>
-		/// <para>Spanish—Spanish</para>
+		/// <para>指定将于何处将特定于语言的地理编码逻辑应用于定位器的参考数据。</para>
+		/// <para>若主要参考数据中存在语言代码字段，则提供语言代码可改善地理编码的结果。</para>
+		/// <para>可通过从列表中选择 &lt;按数据中所定义的方式&gt; 并从字段映射中的主参考数据内映射某一值来对其进行指定，或通过从列表中选择某一语言来将其应用于整个数据集。</para>
+		/// <para>&lt;按数据中所定义的方式&gt;—在每个要素的参考数据中定义的三位字符语言代码值</para>
+		/// <para>巴斯克语—巴斯克语</para>
+		/// <para>加泰罗尼亚语—加泰罗尼亚语</para>
+		/// <para>荷兰语—荷兰语</para>
+		/// <para>英语—英语</para>
+		/// <para>法语—法语</para>
+		/// <para>德语—德语</para>
+		/// <para>加利西亚语—加利西亚语</para>
+		/// <para>希伯来语—希伯来语</para>
+		/// <para>意大利语—意大利语</para>
+		/// <para>日语—日语</para>
+		/// <para>朝鲜语—朝鲜语</para>
+		/// <para>西班牙语—西班牙语</para>
 		/// </param>
 		public CreateLocator(object CountryCode, object PrimaryReferenceData, object FieldMapping, object OutLocator, object LanguageCode)
 		{
@@ -92,9 +92,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Locator</para>
+		/// <para>Tool Display Name : 创建定位器</para>
 		/// </summary>
-		public override string DisplayName() => "Create Locator";
+		public override string DisplayName() => "创建定位器";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLocator</para>
@@ -128,30 +128,30 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Country or Region</para>
-		/// <para>Specifies where country-specific geocoding logic will be applied to the reference data for the locator.</para>
-		/// <para>The default is the regional setting of the operating system. It can be specified by selecting &lt;As defined in data&gt; from the list and mapping a value from the data in the field mapping, or it can be applied to the entire dataset by selecting one from the list.</para>
-		/// <para>It provides a country template containing the expected field names that display in the Field Mapping parameter for the specified country of the locator to be created.</para>
-		/// <para>&lt;As defined in data&gt;—Three-character country code value defined in the reference data for each feature</para>
-		/// <para>American Samoa—American Samoa</para>
-		/// <para>Australia—Australia</para>
-		/// <para>Austria—Austria</para>
-		/// <para>Belgium—Belgium</para>
-		/// <para>Canada—Canada</para>
-		/// <para>Switzerland— Switzerland</para>
-		/// <para>Germany—Germany</para>
-		/// <para>Spain—Spain</para>
-		/// <para>France—France</para>
-		/// <para>Great Britain—Great Britain</para>
-		/// <para>Guam—Guam</para>
-		/// <para>Japan—Japan</para>
-		/// <para>Israel—Israel</para>
-		/// <para>South Korea—South Korea</para>
-		/// <para>Northern Mariana Islands—Northern Mariana Islands</para>
-		/// <para>Netherlands— Netherlands</para>
-		/// <para>Puerto Rico—Puerto Rico</para>
-		/// <para>U.S. Virgin Islands—U.S. Virgin Islands</para>
-		/// <para>United States—United States</para>
-		/// <para>Minor Outlying Islands of the United States— Minor Outlying Islands of the United States</para>
+		/// <para>指定将于何处将特定于国家/地区的地理编码逻辑应用于定位器的参考数据。</para>
+		/// <para>默认值为操作系统的区域设置。 可通过从列表中选择 &lt;按数据中所定义的方式&gt; 并从字段映射中的数据内映射某一值来对其进行指定，或通过从列表中选择某一国家/地区来将其应用于整个数据集。</para>
+		/// <para>它提供了一个国家/地区模板，该模板中包含了显示于字段映射参数中的预期字段名称以便为定位器创建指定的国家/地区。</para>
+		/// <para>&lt;按数据中所定义的方式&gt;—在每个要素的参考数据中定义的三位字符国家/地区代码值</para>
+		/// <para>美属萨摩亚—美属萨摩亚</para>
+		/// <para>澳大利亚—澳大利亚</para>
+		/// <para>奥地利—奥地利</para>
+		/// <para>比利时—比利时</para>
+		/// <para>加拿大—加拿大</para>
+		/// <para>瑞士—瑞士</para>
+		/// <para>德国—德国</para>
+		/// <para>西班牙—西班牙</para>
+		/// <para>法国—法国</para>
+		/// <para>大不列颠—大不列颠</para>
+		/// <para>关岛—关岛</para>
+		/// <para>日本—日本</para>
+		/// <para>以色列—以色列</para>
+		/// <para>韩国—韩国</para>
+		/// <para>北马里亚纳群岛—北马里亚纳群岛</para>
+		/// <para>荷兰—荷兰</para>
+		/// <para>波多黎各—波多黎各</para>
+		/// <para>美属维京群岛—美属维京群岛</para>
+		/// <para>美国—美国</para>
+		/// <para>美属边疆群岛—美属边疆群岛</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -160,10 +160,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Primary Table(s)</para>
-		/// <para>The reference data feature classes and their roles that will be used to create the locator. Only one primary table can be used per role.</para>
-		/// <para>Feature classes represented as services are supported data types for use as primary reference data.</para>
-		/// <para>When a definition query is defined for the primary reference data or there are selected features, only the queried and selected features will be included when the locator is created.</para>
-		/// <para>When creating a locator with reference data that contains millions of features, you must have at least three to four times the size of the data in free disk space on the drive containing your temp directory, as files used to build the locator are written to this location before the locator is copied to the output location. If you do not have enough disk space, the tool will fail when it runs out of space. Also, when creating large locators, your machine must have enough RAM to handle large memory-intensive processes.</para>
+		/// <para>参考数据要素类及其将用于创建定位器的角色。 每个角色只能使用一个主表。</para>
+		/// <para>表示为服务的要素类作为数据类型，支持用作主要参考数据。</para>
+		/// <para>如果为主要参考数据定义了定义查询或存在选定要素，则在创建定位器时，仅将包含查询要素和所选要素。</para>
+		/// <para>如果使用包含数百万个要素的参考数据创建地址定位器，则包含临时目录的驱动上的可用磁盘空间必须至少为数据大小的 3 到 4 倍，原因是在将定位器复制到输出位置之前，需将用于构建定位器的文件写入此位置。 如果没有足够的磁盘空间，则一旦空间不足，工具将失败。 此外，在创建大型定位器时，计算机必须具备足够的 RAM，才能处理占用较大内存的进程。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -172,9 +172,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Field Mapping</para>
-		/// <para>The mapping of primary reference dataset fields to the fields supported by the locator role. Fields with an asterisk (*) next to their names are required by the locator role. Map the relevant fields for each table from the Primary Table(s) parameter.</para>
-		/// <para>If you are using an alternate name table, map Join ID in Primary Table(s).</para>
-		/// <para>To add custom output fields, type the name of the fields in the Custom Output Fields parameter. The new fields will be added to the Field Mapping parameter. You can then select the fields from the Primary Table(s) parameter that contain the additional values to be included in the geocode output.</para>
+		/// <para>主参考数据集字段到定位器角色所支持字段的映射。 名称旁带有星号 (*) 的字段是定位器角色的必填字段。 映射主表参数中每个表的相关字段。</para>
+		/// <para>如果正在使用的是备用名称表，请映射主表中的连接 ID。</para>
+		/// <para>要添加自定义输出字段，请键入自定义输出字段参数中的字段名称。 新的字段将添加至字段映射参数。 然后，您可从主表参数中选择字段，这些字段包含了要纳入地理编码输出的附加值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -182,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Output Locator</para>
-		/// <para>The output address locator file.</para>
+		/// <para>输出地址定位器文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEAddressLocator()]
@@ -190,22 +190,22 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Language Code</para>
-		/// <para>Specifies where language-specific geocoding logic will be applied to the reference data for the locator.</para>
-		/// <para>If a language code field exists in the primary reference data, providing a language code can improve the results of the geocoding.</para>
-		/// <para>It can be specified by selecting &lt;As defined in data&gt; from the list and mapping a value from the primary reference data in the field mapping, or it can be applied to the entire dataset by selecting a language from the list.</para>
-		/// <para>&lt;As defined in data&gt;—Three-character language code value defined in the reference data for each feature</para>
-		/// <para>Basque—Basque</para>
-		/// <para>Catalan—Catalan</para>
-		/// <para>Dutch— Dutch</para>
-		/// <para>English—English</para>
-		/// <para>French—French</para>
-		/// <para>German—German</para>
-		/// <para>Galician—Galician</para>
-		/// <para>Hebrew—Hebrew</para>
-		/// <para>Italian— Italian</para>
-		/// <para>Japanese— Japanese</para>
-		/// <para>Korean— Korean</para>
-		/// <para>Spanish—Spanish</para>
+		/// <para>指定将于何处将特定于语言的地理编码逻辑应用于定位器的参考数据。</para>
+		/// <para>若主要参考数据中存在语言代码字段，则提供语言代码可改善地理编码的结果。</para>
+		/// <para>可通过从列表中选择 &lt;按数据中所定义的方式&gt; 并从字段映射中的主参考数据内映射某一值来对其进行指定，或通过从列表中选择某一语言来将其应用于整个数据集。</para>
+		/// <para>&lt;按数据中所定义的方式&gt;—在每个要素的参考数据中定义的三位字符语言代码值</para>
+		/// <para>巴斯克语—巴斯克语</para>
+		/// <para>加泰罗尼亚语—加泰罗尼亚语</para>
+		/// <para>荷兰语—荷兰语</para>
+		/// <para>英语—英语</para>
+		/// <para>法语—法语</para>
+		/// <para>德语—德语</para>
+		/// <para>加利西亚语—加利西亚语</para>
+		/// <para>希伯来语—希伯来语</para>
+		/// <para>意大利语—意大利语</para>
+		/// <para>日语—日语</para>
+		/// <para>朝鲜语—朝鲜语</para>
+		/// <para>西班牙语—西班牙语</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -214,9 +214,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Alternate Name Tables</para>
-		/// <para>The tables that contain alternate names for the features in the primary role tables.</para>
-		/// <para>Tables represented as services are supported data types for use as alternate name tables.</para>
-		/// <para>When a definition query is defined for the alternate name table or there are selected records, only the queried and selected records will be included when the locator is created.</para>
+		/// <para>包含主角色表中备用要素名称的表。</para>
+		/// <para>表示为服务的表作为数据类型，支持用作备用名称表。</para>
+		/// <para>如果为备用名称表定义了定义查询或存在选定记录，则在创建定位器时，仅将包含查询记录和所选记录。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -226,8 +226,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Alternate Data Field Mapping</para>
-		/// <para>Maps alternate name table fields to the alternate data fields supported by the locator role. Fields with an asterisk (*) next to their names are required by the locator role. Map the relevant fields for each table in Alternate Name Tables.</para>
-		/// <para>If the data is normalized and the primary table does not contain city name values but the alternate name table does, the Primary Name Indicator field can be mapped to a field in the alternate name table that contains a value that indicates whether the record is the primary field (for example, true/false or Yes/No). If this field is not mapped, the first record in the alternate name table will be used as the primary value.</para>
+		/// <para>将备用名称表字段映射到定位器角色所支持的备用数据字段。 名称旁带有星号 (*) 的字段是定位器角色的必填字段。 映射替代名称表中每个表的相关字段。</para>
+		/// <para>如果数据已归一化且主表不包含城市名称值（但备用名称表中包含），则可将 Primary Name Indicator 字段映射至备用名称表中的字段，该字段包含一个值，该值指示了记录是否为主字段（例如，true/false 或 Yes/No）。 如果未映射此字段，则备用名称表中的第一条记录将被用作主值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -236,10 +236,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Custom Output Fields</para>
-		/// <para>Adds output fields to the geocode result. The values specified for this parameter will define the names of the output fields that will be returned by the geocode result; however, each new field must be mapped to a field in the reference data. This new output field will apply for all roles that were used in the locator. If the locator role has a left and right side, _left and _right will be appended to the end of the field name. The maximum number of fields supported in the locator is 50.</para>
-		/// <para>Do the following to add custom output fields to the locator for use in the geocode result:</para>
-		/// <para>Type the names of the custom output fields. The custom output field names will be added to the field mapping.</para>
-		/// <para>Select the field in the reference data that contains the additional values to be included in the geocode output.</para>
+		/// <para>将输出字段添加至地理编码结果。 针对此参数指定的值将定义由地理编码结果返回的输出字段的名称；但必须将各个新字段映射至参考数据中的字段。 这个新输出字段将应用于定位器中所使用的全部角色。 如果定位器角色具有左侧和右侧之分，则字段名称的末尾将附加 _left 和 _right。 定位器中支持的最大字段数量为 50。</para>
+		/// <para>执行以下操作，将自定义输出字段添加至定位器以在地理编码结果中使用：</para>
+		/// <para>键入自定义输出字段的名称。 自定义输出字段名称将被添加至字段映射。</para>
+		/// <para>选择参考数据中的字段，该字段包含了要纳入地理编码输出的附加值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -248,11 +248,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Precision Type</para>
-		/// <para>Specifies the precision of the locator.</para>
-		/// <para>Locators created with Global Extra High or Local Extra High precision can be used in ArcGIS Pro 2.6 or later and Enterprise 10.8.1 or later.</para>
-		/// <para>Global Extra High— The precision is approximately 1cm, which is consistent globally.</para>
-		/// <para>Global High— The precision is approximately 0.5m, which is consistent globally. This is the default.</para>
-		/// <para>Local Extra High— Increased precision is used for local areas.</para>
+		/// <para>指定定位器的精度。</para>
+		/// <para>使用全球超高或局部超高精度创建的定位器可用于 ArcGIS Pro 2.6 或更高版本以及 Enterprise 10.8.1 或更高版本。</para>
+		/// <para>全球超高—精度约为 1 厘米，在全球范围内保持一致。</para>
+		/// <para>全球高—精度约为 0.5 米，在全球范围内保持一致。 这是默认设置。</para>
+		/// <para>局部超高—将对局部区域使用更高的精度。</para>
 		/// <para><see cref="PrecisionTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -269,24 +269,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		public enum PrecisionTypeEnum 
 		{
 			/// <summary>
-			/// <para>Global High— The precision is approximately 0.5m, which is consistent globally. This is the default.</para>
+			/// <para>全球高—精度约为 0.5 米，在全球范围内保持一致。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("GLOBAL_HIGH")]
-			[Description("Global High")]
+			[Description("全球高")]
 			Global_High,
 
 			/// <summary>
-			/// <para>Global Extra High— The precision is approximately 1cm, which is consistent globally.</para>
+			/// <para>全球超高—精度约为 1 厘米，在全球范围内保持一致。</para>
 			/// </summary>
 			[GPValue("GLOBAL_EXTRA_HIGH")]
-			[Description("Global Extra High")]
+			[Description("全球超高")]
 			Global_Extra_High,
 
 			/// <summary>
-			/// <para>Local Extra High— Increased precision is used for local areas.</para>
+			/// <para>局部超高—将对局部区域使用更高的精度。</para>
 			/// </summary>
 			[GPValue("LOCAL_EXTRA_HIGH")]
-			[Description("Local Extra High")]
+			[Description("局部超高")]
 			Local_Extra_High,
 
 		}

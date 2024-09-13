@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Split</para>
-	/// <para>Split</para>
-	/// <para>Splits an input with overlaying features to  create a subset of output feature classes.</para>
+	/// <para>分割</para>
+	/// <para>分割具有叠加要素的输入以创建输出要素类的子集。</para>
 	/// </summary>
 	public class Split : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The features to be split.</para>
+		/// <para>要分割的要素。</para>
 		/// </param>
 		/// <param name="SplitFeatures">
 		/// <para>Split Features</para>
-		/// <para>Polygon features containing a tabular field whose unique values are used to split the input features and provide the output feature classes' names.</para>
+		/// <para>包含表格字段的面要素，其中表格字段的唯一值用于分割输入要素并提供输出要素类的名称。</para>
 		/// </param>
 		/// <param name="SplitField">
 		/// <para>Split Field</para>
-		/// <para>The character field used to split the input features. This field's values identify the split features used to create each output feature class. The split field's unique values provide the names of the output feature classes.</para>
+		/// <para>用于分割输入要素的字符字段。 此字段值可标识用于创建每个输出要素类的分割要素。 “分割字段”的唯一值用于生成输出要素类的名称。</para>
 		/// </param>
 		/// <param name="OutWorkspace">
 		/// <para>Target Workspace</para>
-		/// <para>The existing workspace where the output feature classes are stored.</para>
+		/// <para>用来存储输出要素类的现有工作空间。</para>
 		/// </param>
 		public Split(object InFeatures, object SplitFeatures, object SplitField, object OutWorkspace)
 		{
@@ -44,14 +44,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Split</para>
+		/// <para>Tool Display Name : 分割</para>
 		/// </summary>
-		public override string DisplayName() => "Split";
+		public override string DisplayName() => "分割";
 
 		/// <summary>
-		/// <para>Tool Name : Split</para>
+		/// <para>Tool Name : 分割</para>
 		/// </summary>
-		public override string ToolName() => "Split";
+		public override string ToolName() => "分割";
 
 		/// <summary>
 		/// <para>Tool Excute Name : analysis.Split</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The features to be split.</para>
+		/// <para>要分割的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Split Features</para>
-		/// <para>Polygon features containing a tabular field whose unique values are used to split the input features and provide the output feature classes' names.</para>
+		/// <para>包含表格字段的面要素，其中表格字段的唯一值用于分割输入要素并提供输出要素类的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Split Field</para>
-		/// <para>The character field used to split the input features. This field's values identify the split features used to create each output feature class. The split field's unique values provide the names of the output feature classes.</para>
+		/// <para>用于分割输入要素的字符字段。 此字段值可标识用于创建每个输出要素类的分割要素。 “分割字段”的唯一值用于生成输出要素类的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Target Workspace</para>
-		/// <para>The existing workspace where the output feature classes are stored.</para>
+		/// <para>用来存储输出要素类的现有工作空间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -116,8 +116,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
-		/// <para>The minimum distance separating all feature coordinates (nodes and vertices) as well as the distance a coordinate can move in x or y (or both). Set the value higher for data that has less coordinate accuracy and lower for datasets with extremely high accuracy.</para>
-		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that you do not modify this parameter. It has been removed from view on the tool dialog box. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
+		/// <para>所有要素坐标（节点和折点）之间的最小距离以及坐标可以沿 x 和/或 y 方向移动的距离。 如果将此值设置的较高，则数据会具有较低的坐标精度；如果将此值设置的较低，则数据会具有较高的坐标精度。</para>
+		/// <para>更改此参数的值可能会导致出现故障或意外结果。 建议不要修改此参数。 已将其从工具对话框的视图中移除。 默认情况下，将使用输入要素类的空间参考 x,y 容差属性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]

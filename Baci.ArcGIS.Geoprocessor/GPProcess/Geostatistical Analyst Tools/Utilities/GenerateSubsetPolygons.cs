@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Subset Polygons</para>
-	/// <para>Generate Subset Polygons</para>
-	/// <para>Generates nonoverlapping subset polygon features from a set of input points. The goal is to divide the points into compact, nonoverlapping subsets, and create polygon regions around each subset of points. The minimum and maximum number of points in each subset can be controlled.</para>
+	/// <para>生成子集面</para>
+	/// <para>从一组输入点生成不重叠的子集面要素。目标是将点划分为紧凑、不重叠的子集，并在每个点子集周围创建面区域。可对每个子集中的最小点数和最大点数进行控制。</para>
 	/// </summary>
 	public class GenerateSubsetPolygons : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InPointFeatures">
 		/// <para>Input point features</para>
-		/// <para>The points that will be grouped into subsets.</para>
+		/// <para>将被分组到子集的点。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output feature class</para>
-		/// <para>The polygons defining the region of each subset. All points within a single polygon feature are considered part of the same subset. The polygon feature class will contain a field named PointCount that will store the number of points contained in each polygon subset.</para>
+		/// <para>定义每个子集区域的面。单个面要素内的所有点都被视为同一子集的一部分。面要素类将包含一个名为 PointCount 的字段，该字段将存储每个面子集中包含的点数。</para>
 		/// </param>
 		public GenerateSubsetPolygons(object InPointFeatures, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Subset Polygons</para>
+		/// <para>Tool Display Name : 生成子集面</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Subset Polygons";
+		public override string DisplayName() => "生成子集面";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateSubsetPolygons</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input point features</para>
-		/// <para>The points that will be grouped into subsets.</para>
+		/// <para>将被分组到子集的点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output feature class</para>
-		/// <para>The polygons defining the region of each subset. All points within a single polygon feature are considered part of the same subset. The polygon feature class will contain a field named PointCount that will store the number of points contained in each polygon subset.</para>
+		/// <para>定义每个子集区域的面。单个面要素内的所有点都被视为同一子集的一部分。面要素类将包含一个名为 PointCount 的字段，该字段将存储每个面子集中包含的点数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Minimum number of points per subset</para>
-		/// <para>The minimum number of points that can be grouped into a subset. All subset polygons will contain at least this many points.</para>
+		/// <para>可以分组到一个子集中的最小点数。所有子集面将至少包含这么多的点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -97,8 +97,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Maximum number of points per subset</para>
-		/// <para>The maximum number of points that can be grouped into a subset.</para>
-		/// <para>Each subset will always contain fewer than two times the Minimum number of points per subset regardless of the maximum number provided. This is because if a subset contains at least twice the minimum number of points, it will always be subdivided into two or more new subsets.</para>
+		/// <para>可以分组到一个子集中的最大点数。</para>
+		/// <para>无论提供的最大点数为何，每个子集都将始终包含少于两倍的每子集最小点数。这是因为如果一个子集包含至少两倍的最小点数，它将始终被细分为两个或多个新子集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -107,11 +107,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Treat coincident points as a single point</para>
-		/// <para>Specifies whether coincident points (points that are at the same location) are treated like a single point or as multiple individual points.</para>
-		/// <para>If you intend to use the subset polygons as Subset polygon features in EBK Regression Prediction, you should maintain consistency between this parameter and the Coincident points environment in EBK Regression Prediction.</para>
-		/// <para>If this parameter is unchecked, your Output feature class polygons may overlap.</para>
-		/// <para>Checked—Coincident points will be treated as a single point in the subset. This is the default.</para>
-		/// <para>Unchecked—Coincident points will be treated as multiple individual points in the subset.</para>
+		/// <para>指定是否将重合点（位于同一位置的点）视为单个点或多个单独的点。</para>
+		/// <para>如果您打算在 EBK 回归预测中使用子集面作为子集面要素，您应保持此参数与 EBK 回归预测中重合点环境之间的一致性。</para>
+		/// <para>如果未选中此参数，则您的输出要素类面可能会重叠。</para>
+		/// <para>选中 - 重合点将被视为子集中的单个点。这是默认设置。</para>
+		/// <para>未选中 - 重合点将被视为子集中的多个单独点。</para>
 		/// <para><see cref="CoincidentPointsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,14 +136,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum CoincidentPointsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Coincident points will be treated as a single point in the subset. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COINCIDENT_SINGLE")]
 			COINCIDENT_SINGLE,
 
 			/// <summary>
-			/// <para>Unchecked—Coincident points will be treated as multiple individual points in the subset.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("COINCIDENT_ALL")]

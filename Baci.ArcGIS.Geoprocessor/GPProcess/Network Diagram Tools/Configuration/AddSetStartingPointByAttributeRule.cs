@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Set Starting Point By Attribute Rule</para>
-	/// <para>Add Set Starting Point By Attribute Rule</para>
-	/// <para>Adds a diagram rule to a diagram template to set diagram features currently represented in the diagram as starting points for tracing rules. The diagram features are queried from a given network source class or object table and can be filtered by their attributes.</para>
+	/// <para>添加按属性设置起点规则</para>
+	/// <para>用于将逻辑示意图规则添加至逻辑示意图模板，以将逻辑示意图中当前表示的逻辑示意图要素设置为追踪规则的起点。逻辑示意图要素需要从给定网络源类或对象表进行查询，并可按其属性进行过滤。</para>
 	/// </summary>
 	public class AddSetStartingPointByAttributeRule : AbstractGPProcess
 	{
@@ -21,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template that will be modified.</para>
+		/// <para>要修改的逻辑示意图模板名称</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
-		/// <para>Specifies whether the rule will be active when generating and updating diagrams based on the specified template.</para>
-		/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
-		/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+		/// <para>指定在基于指定模板生成并更新逻辑示意图时，规则是否将处于激活状态。</para>
+		/// <para>选中 - 在基于输入模板生成并更新逻辑示意图的过程中，添加的规则将会变为激活状态。 这是默认设置。</para>
+		/// <para>未选中 - 在基于输入模板生成或更新逻辑示意图的过程中，添加的规则将不会变为激活状态。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </param>
 		/// <param name="NetworkSource">
 		/// <para>Network Source</para>
-		/// <para>The network source class or object table that references the features or objects that will be set as starting points.</para>
+		/// <para>此网络源类或对象表引用将被设置为起点的要素或对象。</para>
 		/// </param>
 		public AddSetStartingPointByAttributeRule(object InUtilityNetwork, object TemplateName, object IsActive, object NetworkSource)
 		{
@@ -47,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Set Starting Point By Attribute Rule</para>
+		/// <para>Tool Display Name : 添加按属性设置起点规则</para>
 		/// </summary>
-		public override string DisplayName() => "Add Set Starting Point By Attribute Rule";
+		public override string DisplayName() => "添加按属性设置起点规则";
 
 		/// <summary>
 		/// <para>Tool Name : AddSetStartingPointByAttributeRule</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template that will be modified.</para>
+		/// <para>要修改的逻辑示意图模板名称</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -99,9 +99,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Active</para>
-		/// <para>Specifies whether the rule will be active when generating and updating diagrams based on the specified template.</para>
-		/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
-		/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+		/// <para>指定在基于指定模板生成并更新逻辑示意图时，规则是否将处于激活状态。</para>
+		/// <para>选中 - 在基于输入模板生成并更新逻辑示意图的过程中，添加的规则将会变为激活状态。 这是默认设置。</para>
+		/// <para>未选中 - 在基于输入模板生成或更新逻辑示意图的过程中，添加的规则将不会变为激活状态。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Network Source</para>
-		/// <para>The network source class or object table that references the features or objects that will be set as starting points.</para>
+		/// <para>此网络源类或对象表引用将被设置为起点的要素或对象。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>An SQL expression to select the subset of features or objects in the specified source class or object table that will be set as starting points. For more information on SQL syntax, see SQL reference for query expressions used in ArcGIS.</para>
+		/// <para>此 SQL 表达式用于选择指定源类或对象表中要设置为起点的要素或对象子集。有关 SQL 语法的详细信息，请参阅在 ArcGIS 中使用的查询表达式的 SQL 参考。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -127,9 +127,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Junction Terminal(s)</para>
-		/// <para>The terminal IDs that will start tracing if the network source class or object table references network junctions with terminals.</para>
-		/// <para>All the terminal IDs retrieved for the junctions in the Network Source parameter are listed. They correspond to those in the Terminal Configurations section on the Network Properties tab.</para>
-		/// <para>When both the Expression and Junction Terminal(s) parameters are configured, the specified terminals must correspond to queried features or objects; otherwise, no starting points will be set.</para>
+		/// <para>如果网络源类引用具有终端的网络交汇点，则这些终端 ID 将被视为追踪起点。</para>
+		/// <para>系统将列出针对网络源参数中的交汇点检索的所有终端 ID。这些 ID 与网络属性选项卡上终端配置部分中的 ID 相对应。</para>
+		/// <para>配置表达式和交汇点终端参数后，指定的终端必须与所查询的要素或对象相对应；否则，将不会设置任何起点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Description</para>
-		/// <para>The description of the rule.</para>
+		/// <para>规则的描述。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -165,14 +165,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsActiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACTIVE")]
 			ACTIVE,
 
 			/// <summary>
-			/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INACTIVE")]

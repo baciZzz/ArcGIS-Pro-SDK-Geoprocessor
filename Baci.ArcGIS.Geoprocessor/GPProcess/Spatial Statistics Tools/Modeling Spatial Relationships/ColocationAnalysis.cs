@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Colocation Analysis</para>
-	/// <para>Colocation Analysis</para>
-	/// <para>Measures local patterns of spatial association, or colocation, between two categories of point features using the colocation quotient statistic.</para>
+	/// <para>协同区位分析</para>
+	/// <para>使用协同区位商统计测量两类点要素之间的空间关联或区位协同的局部模式。</para>
 	/// </summary>
 	public class ColocationAnalysis : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputType">
 		/// <para>Input Type</para>
-		/// <para>Specifies whether the Input Features of Interest will come from the same dataset with specified categories, different datasets with specified categories, or different datasets that will be treated as their own category (for example, one dataset with all points representing cheetahs and a second dataset in which all points represent gazelles).</para>
-		/// <para>Single dataset—The categories to be analyzed exist in a field in a single dataset.</para>
-		/// <para>Two datasets—The categories to be analyzed exist in fields of separate datasets.</para>
-		/// <para>Datasets without categories—Two separate datasets representing two categories will be analyzed.</para>
+		/// <para>指定感兴趣的输入要素是来自包含指定类别的同一数据集、包含指定类别的不同数据集还是将被视为其自身类别的不同数据集（例如，一个数据集包含表示猎豹的所有点，另一个数据集包含表示瞪羚的所有点）。</para>
+		/// <para>单个数据集—要分析的类别存在于单个数据集的某个字段中。</para>
+		/// <para>两个数据集—要分析的类别存在于单独数据集的多个字段中。</para>
+		/// <para>不含类别的数据集—将分析表示两个类别的两个单独数据集。</para>
 		/// <para><see cref="InputTypeEnum"/></para>
 		/// </param>
 		/// <param name="InFeaturesOfInterest">
 		/// <para>Input Features of Interest</para>
-		/// <para>The feature class containing points with representative categories.</para>
+		/// <para>包含具有代表性类别的点的要素类。</para>
 		/// </param>
 		/// <param name="OutputFeatures">
 		/// <para>Output Features</para>
-		/// <para>The output feature class containing all the Input Features of Interest with fields containing the resulting local colocation quotient, symbology bin, and p-values.</para>
+		/// <para>该输出要素类包含所有感兴趣的输入要素并具有包含生成的局部协同区位商、符号系统立方图格和 p 值的字段。</para>
 		/// </param>
 		public ColocationAnalysis(object InputType, object InFeaturesOfInterest, object OutputFeatures)
 		{
@@ -43,9 +43,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Colocation Analysis</para>
+		/// <para>Tool Display Name : 协同区位分析</para>
 		/// </summary>
-		public override string DisplayName() => "Colocation Analysis";
+		public override string DisplayName() => "协同区位分析";
 
 		/// <summary>
 		/// <para>Tool Name : ColocationAnalysis</para>
@@ -79,10 +79,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Type</para>
-		/// <para>Specifies whether the Input Features of Interest will come from the same dataset with specified categories, different datasets with specified categories, or different datasets that will be treated as their own category (for example, one dataset with all points representing cheetahs and a second dataset in which all points represent gazelles).</para>
-		/// <para>Single dataset—The categories to be analyzed exist in a field in a single dataset.</para>
-		/// <para>Two datasets—The categories to be analyzed exist in fields of separate datasets.</para>
-		/// <para>Datasets without categories—Two separate datasets representing two categories will be analyzed.</para>
+		/// <para>指定感兴趣的输入要素是来自包含指定类别的同一数据集、包含指定类别的不同数据集还是将被视为其自身类别的不同数据集（例如，一个数据集包含表示猎豹的所有点，另一个数据集包含表示瞪羚的所有点）。</para>
+		/// <para>单个数据集—要分析的类别存在于单个数据集的某个字段中。</para>
+		/// <para>两个数据集—要分析的类别存在于单独数据集的多个字段中。</para>
+		/// <para>不含类别的数据集—将分析表示两个类别的两个单独数据集。</para>
 		/// <para><see cref="InputTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Features of Interest</para>
-		/// <para>The feature class containing points with representative categories.</para>
+		/// <para>包含具有代表性类别的点的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>The output feature class containing all the Input Features of Interest with fields containing the resulting local colocation quotient, symbology bin, and p-values.</para>
+		/// <para>该输出要素类包含所有感兴趣的输入要素并具有包含生成的局部协同区位商、符号系统立方图格和 p 值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Field of Interest</para>
-		/// <para>The field containing the category or categories to be analyzed.</para>
+		/// <para>包含要分析的一个或多个类别的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Time Field of Interest</para>
-		/// <para>A date field with an optional time stamp for each feature to analyze points using a space-time window. Features near each other in space and time will be considered neighbors and will be analyzed together.</para>
+		/// <para>具有每个要素的可选时间戳的日期字段，以供使用空间时间窗口分析点。在空间和时间上彼此相邻的要素将被视为相邻要素，并将一起进行分析。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Category of Interest</para>
-		/// <para>The base category for the analysis. The tool will identify, for each Category of Interest value, the degree to which the base category is attracted to or colocated with the Neighboring Category.</para>
+		/// <para>分析的基本类别。该工具将针对每个感兴趣类别值确定，基本类别被相邻类别吸引或与之区位协同的程度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Neighboring Features</para>
-		/// <para>The input feature class containing the points with the categories that will be compared.</para>
+		/// <para>该输入要素类包含具有要比较的类别的点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Field Containing Neighboring Category</para>
-		/// <para>The field from the Input Neighboring Features parameter containing the category to be compared.</para>
+		/// <para>来自输入相邻要素参数的字段，包含要比较的类别。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -160,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Time Field of Neighboring Features</para>
-		/// <para>A date field with a time stamp for each feature to analyze your points using a space-time window. Features near each other in space and time will be considered neighbors and will be analyzed together.</para>
+		/// <para>具有每个要素的时间戳的日期字段，以供使用空间时间窗分析点。在空间和时间上彼此相邻的要素将被视为相邻要素，并将一起进行分析。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Neighboring Category</para>
-		/// <para>The neighboring category for the analysis. The tool will identify the degree to which the Category of Interest is attracted to or isolated from the Neighboring Category.</para>
+		/// <para>分析的相邻类别。该工具将确定感兴趣类别被相邻类别吸引或与之相互隔离的程度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -178,10 +178,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Neighborhood Type</para>
-		/// <para>Specifies how the spatial relationships among features are defined.</para>
-		/// <para>Distance band—Each feature will be analyzed within the context of neighboring features. Neighboring features inside the specified critical distance specified by the Distance Band parameter receive a weight of one and exert influence on computations for the target feature. Neighboring features outside the critical distance receive a weight of zero and have no influence on a target feature&apos;s computations.</para>
-		/// <para>K nearest neighbors—The closest k features will be included in the analysis as neighbors. The number of neighbors is specified by the Number of Neighbors parameter. This is the default.</para>
-		/// <para>Get spatial weights from file—When Single dataset is used as the Input Tpe, spatial relationships will be defined by a specified spatial weights matrix file. The path to the spatial weights file is specified by the Weight Matrix File parameter.</para>
+		/// <para>指定要素空间关系的定义方式。</para>
+		/// <para>距离范围—将对邻近要素环境中的每个要素进行分析。指定临界距离（由距离范围参数指定）内的相邻要素的权重为 1，并对目标要素的计算产生影响。指定临界距离之外的相邻要素的权重为零，并且不会对目标要素的计算产生任何影响。</para>
+		/// <para>K - 最近邻—将最近的 k 个要素包含在分析中作为相邻要素。相邻要素数由相邻要素数参数指定。这是默认设置。</para>
+		/// <para>通过文件获取空间权重—当将单个数据集用作输入类型时，可以通过指定的空间权重矩阵文件定义空间关系。指向空间权重文件的路径由权重矩阵文件参数指定。</para>
 		/// <para><see cref="NeighborhoodTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -191,7 +191,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Neighbors</para>
-		/// <para>The number of neighbors around each feature that will be used to test for local relationships between categories. If no value is provided, the default of 8 is used. The provided value must be large enough to detect the relationships between features but small enough to still identify local patterns.</para>
+		/// <para>每个要素周围用于测试类别之间的局部关系的相邻要素数。如果未指定任何值，则将使用默认值 8。提供的值必须足够大，才能检测要素之间的关系，但同时要小到足以识别局部模式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -200,7 +200,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Distance Band</para>
-		/// <para>The neighborhood size is a constant or fixed distance for each feature. All features within this distance will be used to test for local relationships between categories. If no value is provided, the distance used will be the average distance at which each feature has at least eight neighbors.</para>
+		/// <para>邻域大小是每个要素的恒定或固定距离。此距离内的所有要素都将用于测试类别之间的局部关系。如果未提供任何值，则使用的距离将是每个要素至少具有八个相邻要素的平均距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -209,7 +209,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Weight Matrix File</para>
-		/// <para>The path to a file containing weights that define spatial, and potentially temporal, relationships among features.</para>
+		/// <para>包含权重（其定义要素间的空间关系以及可能的时态关系）的文件的路径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -219,10 +219,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Temporal Relationship Type</para>
-		/// <para>Specifies how temporal relationships among features will be defined.</para>
-		/// <para>Before—The time window will extend back in time for each of the Input Features of Interest values. Neighboring features must have a date/time stamp that occurs before the date/time stamp of the feature of interest to be included in the analysis. This is the default.</para>
-		/// <para>After—The time window will extend forward in time for each of the Input Features of Interest values. Neighboring features must have a date/time stamp that occurs after the date/time stamp of the feature of interest to be included in the analysis.</para>
-		/// <para>Span—The time window will extend both back and forward in time for each of the Input Features of Interest values. Neighboring features that have a date/time stamp that occurs within the Time Step Interval value either before or after the date/time stamp of the feature of interest will be included in the analysis. For example, if the Time Step Interval parameter is set to 1 week, the window will look 1 week before and 1 week after the target feature.</para>
+		/// <para>指定要素时态关系的定义方式。</para>
+		/// <para>之前—时间窗口将针对每个感兴趣的输入要素值向后延长时间。相邻要素的日期/时间戳必须发生在感兴趣要素的日期/时间戳之前才能包含在分析中。这是默认设置。</para>
+		/// <para>之后—时间窗口将针对每个感兴趣的输入要素值向前延长时间。相邻要素的日期/时间戳必须发生在感兴趣要素的日期/时间戳之后才能包含在分析中。</para>
+		/// <para>跨度—时间窗口将针对每个感兴趣的输入要素值同时向前和向后延长时间。将在分析中包含日期/时间戳发生在感兴趣要素的日期/时间戳时间步长间隔值之前或之后的相邻要素。例如，如果时间步长间隔参数设置为 1 周，则窗口将在目标要素 1 周之前和 1 周之后进行查找。</para>
 		/// <para><see cref="TemporalRelationshipTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -232,7 +232,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Time Step Interval</para>
-		/// <para>An integer and unit of measurement representing the number of time units composing the time window.</para>
+		/// <para>表示构成时间窗口的时间单位数的整数和测量单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -241,12 +241,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Permutations</para>
-		/// <para>The number of permutations that will be used to create a reference distribution. Choosing the number of permutations is a balance between precision and increased processing time. Choose your preference of speed versus precision. More robust and precise results take longer to calculate.</para>
-		/// <para>99—The analysis will use 99 permutations. With 99 permutations, the smallest possible pseudo p-value is 0.02 and all other pseudo p-values will be multiples of this value. This is the default.</para>
-		/// <para>199—The analysis will use 199 permutations. With 199 permutations, the smallest possible pseudo p-value is 0.01 and all other pseudo p-values will be even multiples of this value.</para>
-		/// <para>499—The analysis will use 499 permutations. With 499 permutations, the smallest possible pseudo p-value is 0.004 and all other pseudo p-values will be even multiples of this value.</para>
-		/// <para>999—The analysis will use 999 permutations. With 999 permutations, the smallest possible pseudo p-value is 0.002 and all other pseudo p-values will be even multiples of this value.</para>
-		/// <para>9999—The analysis will use 9,999 permutations. With 9,999 permutations, the smallest possible pseudo p-value is 0.0002 and all other pseudo p-values will be even multiples of this value.</para>
+		/// <para>用于创建参考分布的置换检验次数。选择置换检验次数时，需要兼顾精度和所需增加的处理时间。根据偏好选择速度或精度。结果越可靠越精确计算所花费的时间就会越长。</para>
+		/// <para>99—分析将使用 99 次置换检验。如果置换检验次数为 99，则可能的最小伪 p 值为 0.02，其他所有伪 p 值将是该值的倍数。这是默认设置。</para>
+		/// <para>199—分析将使用 199 次置换检验。如果置换次数为 199，则可能的最小伪 p 值为 0.01，其他所有伪 p 值将是该值的数倍。</para>
+		/// <para>499—分析将使用 499 次置换检验。如果置换次数为 499，则可能的最小伪 p 值为 0.004，其他所有伪 p 值将是该值的数倍。</para>
+		/// <para>999—分析将使用 999 次置换检验。如果置换次数为 999，则可能的最小伪 p 值为 0.002，其他所有伪 p 值将是该值的数倍。</para>
+		/// <para>9999—分析将使用 9999 次置换检验。如果置换检验次数为 9999，则可能的最小伪 p 值为 0.0002，其他所有伪 p 值将是该值的数倍。</para>
 		/// <para><see cref="NumberOfPermutationsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -256,10 +256,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Local Weighting Scheme</para>
-		/// <para>Specifies the kernel type that will be used to provide the spatial weighting. The kernel defines how each feature is related to other features within its neighborhood.</para>
-		/// <para>Bisquare—Features will be weighted based on the distance to the farthest neighbor or the edge of the distance band, and a weight of 0 will be assigned to any feature outside the neighborhood specified.</para>
-		/// <para>Gaussian—Features will be weighted based on the distance to the farthest neighbor or the edge of the distance band but drop off more quickly than the Bisquare option. A weight of 0 will be assigned to any feature outside the neighborhood specified. This is the default.</para>
-		/// <para>None—No weighting scheme will be applied, and all features within the neighborhood will be given a weight of 1 and contribute equally. All features outside the neighborhood will be given a weight of 0.</para>
+		/// <para>指定用于提供空间加权的核类型。核用于定义每个要素与其邻域内其他要素的关联方式。</para>
+		/// <para>双平方—将根据距最远相邻要素或距离范围边的距离对要素进行加权，并且将值为 0 的权重分配给指定邻域以外的任何要素。</para>
+		/// <para>高斯函数—将根据距最远相邻要素或距离范围边的距离对要素进行加权，但与双平方选项相比，下降速度更快。权重 0 将会分配给指定邻域外的任何要素。这是默认设置。</para>
+		/// <para>无—不应用加权方案，并且邻域内的所有要素的权重均为 1 且贡献均等。邻域外的所有要素的权重均为 0。</para>
 		/// <para><see cref="LocalWeightingSchemeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -270,8 +270,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Table for Global Relationships</para>
-		/// <para>A table that includes the global colocation quotients between all the categories in the Field of Interest parameter and all the categories in the Field Containing Neighboring Category parameter. This table can help you determine the local categories to analyze.</para>
-		/// <para>If Datasets without categories is used as the Input Type parameter value, global colocation quotients will be calculated for each dataset and between each dataset.</para>
+		/// <para>包含感兴趣字段参数中所有类别和包含相邻类别的字段参数中所有类别之间的全局协同区位商的表格。此表可帮助您确定要分析的局部类别。</para>
+		/// <para>如果将不含类别的数据集用作输入类型参数值，则将计算每个数据集和各个数据集之间的全局协同区位商。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -295,24 +295,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum InputTypeEnum 
 		{
 			/// <summary>
-			/// <para>Single dataset—The categories to be analyzed exist in a field in a single dataset.</para>
+			/// <para>单个数据集—要分析的类别存在于单个数据集的某个字段中。</para>
 			/// </summary>
 			[GPValue("SINGLE_DATASET")]
-			[Description("Single dataset")]
+			[Description("单个数据集")]
 			Single_dataset,
 
 			/// <summary>
-			/// <para>Datasets without categories—Two separate datasets representing two categories will be analyzed.</para>
+			/// <para>不含类别的数据集—将分析表示两个类别的两个单独数据集。</para>
 			/// </summary>
 			[GPValue("DATASETS_WITHOUT_CATEGORIES")]
-			[Description("Datasets without categories")]
+			[Description("不含类别的数据集")]
 			Datasets_without_categories,
 
 			/// <summary>
-			/// <para>Two datasets—The categories to be analyzed exist in fields of separate datasets.</para>
+			/// <para>两个数据集—要分析的类别存在于单独数据集的多个字段中。</para>
 			/// </summary>
 			[GPValue("TWO_DATASETS")]
-			[Description("Two datasets")]
+			[Description("两个数据集")]
 			Two_datasets,
 
 		}
@@ -323,24 +323,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum NeighborhoodTypeEnum 
 		{
 			/// <summary>
-			/// <para>K nearest neighbors—The closest k features will be included in the analysis as neighbors. The number of neighbors is specified by the Number of Neighbors parameter. This is the default.</para>
+			/// <para>K - 最近邻—将最近的 k 个要素包含在分析中作为相邻要素。相邻要素数由相邻要素数参数指定。这是默认设置。</para>
 			/// </summary>
 			[GPValue("K_NEAREST_NEIGHBORS")]
-			[Description("K nearest neighbors")]
+			[Description("K - 最近邻")]
 			K_nearest_neighbors,
 
 			/// <summary>
-			/// <para>Distance band—Each feature will be analyzed within the context of neighboring features. Neighboring features inside the specified critical distance specified by the Distance Band parameter receive a weight of one and exert influence on computations for the target feature. Neighboring features outside the critical distance receive a weight of zero and have no influence on a target feature&apos;s computations.</para>
+			/// <para>距离范围—将对邻近要素环境中的每个要素进行分析。指定临界距离（由距离范围参数指定）内的相邻要素的权重为 1，并对目标要素的计算产生影响。指定临界距离之外的相邻要素的权重为零，并且不会对目标要素的计算产生任何影响。</para>
 			/// </summary>
 			[GPValue("DISTANCE_BAND")]
-			[Description("Distance band")]
+			[Description("距离范围")]
 			Distance_band,
 
 			/// <summary>
-			/// <para>Get spatial weights from file—When Single dataset is used as the Input Tpe, spatial relationships will be defined by a specified spatial weights matrix file. The path to the spatial weights file is specified by the Weight Matrix File parameter.</para>
+			/// <para>通过文件获取空间权重—当将单个数据集用作输入类型时，可以通过指定的空间权重矩阵文件定义空间关系。指向空间权重文件的路径由权重矩阵文件参数指定。</para>
 			/// </summary>
 			[GPValue("GET_SPATIAL_WEIGHTS_FROM_FILE")]
-			[Description("Get spatial weights from file")]
+			[Description("通过文件获取空间权重")]
 			Get_spatial_weights_from_file,
 
 		}
@@ -351,24 +351,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum TemporalRelationshipTypeEnum 
 		{
 			/// <summary>
-			/// <para>Before—The time window will extend back in time for each of the Input Features of Interest values. Neighboring features must have a date/time stamp that occurs before the date/time stamp of the feature of interest to be included in the analysis. This is the default.</para>
+			/// <para>之前—时间窗口将针对每个感兴趣的输入要素值向后延长时间。相邻要素的日期/时间戳必须发生在感兴趣要素的日期/时间戳之前才能包含在分析中。这是默认设置。</para>
 			/// </summary>
 			[GPValue("BEFORE")]
-			[Description("Before")]
+			[Description("之前")]
 			Before,
 
 			/// <summary>
-			/// <para>After—The time window will extend forward in time for each of the Input Features of Interest values. Neighboring features must have a date/time stamp that occurs after the date/time stamp of the feature of interest to be included in the analysis.</para>
+			/// <para>之后—时间窗口将针对每个感兴趣的输入要素值向前延长时间。相邻要素的日期/时间戳必须发生在感兴趣要素的日期/时间戳之后才能包含在分析中。</para>
 			/// </summary>
 			[GPValue("AFTER")]
-			[Description("After")]
+			[Description("之后")]
 			After,
 
 			/// <summary>
-			/// <para>Span—The time window will extend both back and forward in time for each of the Input Features of Interest values. Neighboring features that have a date/time stamp that occurs within the Time Step Interval value either before or after the date/time stamp of the feature of interest will be included in the analysis. For example, if the Time Step Interval parameter is set to 1 week, the window will look 1 week before and 1 week after the target feature.</para>
+			/// <para>跨度—时间窗口将针对每个感兴趣的输入要素值同时向前和向后延长时间。将在分析中包含日期/时间戳发生在感兴趣要素的日期/时间戳时间步长间隔值之前或之后的相邻要素。例如，如果时间步长间隔参数设置为 1 周，则窗口将在目标要素 1 周之前和 1 周之后进行查找。</para>
 			/// </summary>
 			[GPValue("SPAN")]
-			[Description("Span")]
+			[Description("跨度")]
 			Span,
 
 		}
@@ -379,35 +379,35 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum NumberOfPermutationsEnum 
 		{
 			/// <summary>
-			/// <para>99—The analysis will use 99 permutations. With 99 permutations, the smallest possible pseudo p-value is 0.02 and all other pseudo p-values will be multiples of this value. This is the default.</para>
+			/// <para>99—分析将使用 99 次置换检验。如果置换检验次数为 99，则可能的最小伪 p 值为 0.02，其他所有伪 p 值将是该值的倍数。这是默认设置。</para>
 			/// </summary>
 			[GPValue("99")]
 			[Description("99")]
 			_99,
 
 			/// <summary>
-			/// <para>199—The analysis will use 199 permutations. With 199 permutations, the smallest possible pseudo p-value is 0.01 and all other pseudo p-values will be even multiples of this value.</para>
+			/// <para>199—分析将使用 199 次置换检验。如果置换次数为 199，则可能的最小伪 p 值为 0.01，其他所有伪 p 值将是该值的数倍。</para>
 			/// </summary>
 			[GPValue("199")]
 			[Description("199")]
 			_199,
 
 			/// <summary>
-			/// <para>499—The analysis will use 499 permutations. With 499 permutations, the smallest possible pseudo p-value is 0.004 and all other pseudo p-values will be even multiples of this value.</para>
+			/// <para>499—分析将使用 499 次置换检验。如果置换次数为 499，则可能的最小伪 p 值为 0.004，其他所有伪 p 值将是该值的数倍。</para>
 			/// </summary>
 			[GPValue("499")]
 			[Description("499")]
 			_499,
 
 			/// <summary>
-			/// <para>999—The analysis will use 999 permutations. With 999 permutations, the smallest possible pseudo p-value is 0.002 and all other pseudo p-values will be even multiples of this value.</para>
+			/// <para>999—分析将使用 999 次置换检验。如果置换次数为 999，则可能的最小伪 p 值为 0.002，其他所有伪 p 值将是该值的数倍。</para>
 			/// </summary>
 			[GPValue("999")]
 			[Description("999")]
 			_999,
 
 			/// <summary>
-			/// <para>9999—The analysis will use 9,999 permutations. With 9,999 permutations, the smallest possible pseudo p-value is 0.0002 and all other pseudo p-values will be even multiples of this value.</para>
+			/// <para>9999—分析将使用 9999 次置换检验。如果置换检验次数为 9999，则可能的最小伪 p 值为 0.0002，其他所有伪 p 值将是该值的数倍。</para>
 			/// </summary>
 			[GPValue("9999")]
 			[Description("9999")]
@@ -421,24 +421,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum LocalWeightingSchemeEnum 
 		{
 			/// <summary>
-			/// <para>Bisquare—Features will be weighted based on the distance to the farthest neighbor or the edge of the distance band, and a weight of 0 will be assigned to any feature outside the neighborhood specified.</para>
+			/// <para>双平方—将根据距最远相邻要素或距离范围边的距离对要素进行加权，并且将值为 0 的权重分配给指定邻域以外的任何要素。</para>
 			/// </summary>
 			[GPValue("BISQUARE")]
-			[Description("Bisquare")]
+			[Description("双平方")]
 			Bisquare,
 
 			/// <summary>
-			/// <para>Gaussian—Features will be weighted based on the distance to the farthest neighbor or the edge of the distance band but drop off more quickly than the Bisquare option. A weight of 0 will be assigned to any feature outside the neighborhood specified. This is the default.</para>
+			/// <para>高斯函数—将根据距最远相邻要素或距离范围边的距离对要素进行加权，但与双平方选项相比，下降速度更快。权重 0 将会分配给指定邻域外的任何要素。这是默认设置。</para>
 			/// </summary>
 			[GPValue("GAUSSIAN")]
-			[Description("Gaussian")]
+			[Description("高斯函数")]
 			Gaussian,
 
 			/// <summary>
-			/// <para>None—No weighting scheme will be applied, and all features within the neighborhood will be given a weight of 1 and contribute equally. All features outside the neighborhood will be given a weight of 0.</para>
+			/// <para>无—不应用加权方案，并且邻域内的所有要素的权重均为 1 且贡献均等。邻域外的所有要素的权重均为 0。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 		}

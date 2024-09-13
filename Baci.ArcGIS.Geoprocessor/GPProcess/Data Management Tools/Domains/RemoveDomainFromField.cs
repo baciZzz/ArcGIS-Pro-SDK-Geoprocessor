@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Domain From Field</para>
-	/// <para>Remove Domain From Field</para>
-	/// <para>Removes an attribute domain association from a feature class or table field.</para>
+	/// <para>从字段中移除属性域</para>
+	/// <para>从要素类或表字段中移除属性域关联。</para>
 	/// </summary>
 	public class RemoveDomainFromField : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input table containing the attribute domain that will be removed.</para>
+		/// <para>包含要移除的属性域的输入表。</para>
 		/// </param>
 		/// <param name="FieldName">
 		/// <para>Field Name</para>
-		/// <para>The field that will no longer be associated with an attribute domain.</para>
+		/// <para>不再与属性域关联的字段。</para>
 		/// </param>
 		public RemoveDomainFromField(object InTable, object FieldName)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Remove Domain From Field</para>
+		/// <para>Tool Display Name : 从字段中移除属性域</para>
 		/// </summary>
-		public override string DisplayName() => "Remove Domain From Field";
+		public override string DisplayName() => "从字段中移除属性域";
 
 		/// <summary>
 		/// <para>Tool Name : RemoveDomainFromField</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input table containing the attribute domain that will be removed.</para>
+		/// <para>包含要移除的属性域的输入表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Name</para>
-		/// <para>The field that will no longer be associated with an attribute domain.</para>
+		/// <para>不再与属性域关联的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Subtype</para>
-		/// <para>The subtype code(s) that will no longer be associated with an attribute domain.</para>
+		/// <para>不再与属性域关联的子类型编码。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

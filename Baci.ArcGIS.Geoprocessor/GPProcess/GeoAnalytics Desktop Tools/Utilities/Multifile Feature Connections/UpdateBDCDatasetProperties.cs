@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Update Multifile Feature Connection Dataset Properties</para>
-	/// <para>Update Multifile Feature Connection Dataset Properties</para>
-	/// <para>Updates the properties of a multifile feature connection (MFC) dataset. This tool modifies field, geometry, time, and file settings for a specified MFC dataset.</para>
+	/// <para>更新多文件要素连接数据集属性</para>
+	/// <para>更新多文件要素连接 (MFC) 数据集的属性。 此工具可以修改指定 MFC 数据集的字段、几何、时间和文件设置。</para>
 	/// </summary>
 	public class UpdateBDCDatasetProperties : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="BdcDataset">
 		/// <para>Multifile Feature Connection Dataset</para>
-		/// <para>The MFC dataset that will be updated. The options for editing will differ depending on the source data (shapefile, delimited file, ORC, or parquet file).</para>
+		/// <para>将更新的 MFC 数据集。 根据源数据（shapefile、分隔文件、ORC 或 parquet 文件），编辑选项将有所不同。</para>
 		/// </param>
 		public UpdateBDCDatasetProperties(object BdcDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Update Multifile Feature Connection Dataset Properties</para>
+		/// <para>Tool Display Name : 更新多文件要素连接数据集属性</para>
 		/// </summary>
-		public override string DisplayName() => "Update Multifile Feature Connection Dataset Properties";
+		public override string DisplayName() => "更新多文件要素连接数据集属性";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateBDCDatasetProperties</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Multifile Feature Connection Dataset</para>
-		/// <para>The MFC dataset that will be updated. The options for editing will differ depending on the source data (shapefile, delimited file, ORC, or parquet file).</para>
+		/// <para>将更新的 MFC 数据集。 根据源数据（shapefile、分隔文件、ORC 或 parquet 文件），编辑选项将有所不同。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>An expression used to limit the features that will be used in the analysis.</para>
+		/// <para>该表达式用于限制将在分析中使用的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -82,17 +82,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Field Properties</para>
-		/// <para>Specifies the field names and properties that will be modified.</para>
-		/// <para>Short—The field will be type short.</para>
-		/// <para>Long—The field will be type long</para>
-		/// <para>Double—The field will be type double.</para>
-		/// <para>Float—The field will be type float.</para>
-		/// <para>String—The field will be type string.</para>
-		/// <para>Date—The field will be type date.</para>
-		/// <para>BLOB—The field will be type BLOB.</para>
-		/// <para>Specifies whether fields will be visible or hidden.</para>
-		/// <para>Checked—The fields will be visible and available for use in geoprocessing tools. This is the default.</para>
-		/// <para>Unchecked—The fields will be hidden and cannot be used as input to geoprocessing tools.</para>
+		/// <para>指定将要修改的字段名称和属性。</para>
+		/// <para>短整型—此字段类型将为短型。</para>
+		/// <para>长整型—此字段类型将为长整型</para>
+		/// <para>双精度—此字段类型将为双精度。</para>
+		/// <para>浮点型—此字段类型将为浮点型。</para>
+		/// <para>字符串—此字段类型将为字符串。</para>
+		/// <para>日期—此字段类型将为日期类型。</para>
+		/// <para>BLOB—此字段类型将为 BLOB。</para>
+		/// <para>指定字段是可见还是隐藏。</para>
+		/// <para>选中 - 这些字段将被设置为可见，并且可在地理处理工具中使用。 这是默认设置。</para>
+		/// <para>未选中 - 这些字段将被隐藏，并且无法用作地理处理工具的输入。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -102,11 +102,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Geometry Type</para>
-		/// <para>Specifies the type of geometry that will be used to spatially represent the dataset. The geometry cannot be modified for shapefile-sourced datasets.</para>
-		/// <para>Point—The geometry type will be point.</para>
-		/// <para>Polyline—The geometry type will be polyline.</para>
-		/// <para>Polygon—The geometry type will be polygon.</para>
-		/// <para>None—No geometry type is specified.</para>
+		/// <para>指定将用于在空间上表示数据集的几何类型。 无法为源自 shapefile 的数据集修改几何。</para>
+		/// <para>点—该几何类型将为点。</para>
+		/// <para>折线—该几何类型将为折线。</para>
+		/// <para>面—该几何类型将为面。</para>
+		/// <para>无—未指定任何几何类型。</para>
 		/// <para><see cref="GeometryTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Spatial Reference</para>
-		/// <para>The WKID value or WKT string that will be used for the spatial reference of the dataset. The default is WKID 4326 (WGS84). The spatial reference cannot be modified for shapefile-sourced data.</para>
+		/// <para>WKID 值或 WKT 字符串将用于数据集的空间参考。 默认值为 WKID 4326 (WGS84)。 无法为源自 shapefile 的数据修改空间参考。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -126,13 +126,13 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Geometry Format Type</para>
-		/// <para>Specifies how the geometry will be formatted. The geometry cannot be modified for shapefile-sourced data.</para>
-		/// <para>XYZ—Two or more fields will represent x, y, and optionally z.</para>
-		/// <para>WKT—The geometry will be represented by a single field in a well-known text field.</para>
-		/// <para>WKB—The geometry will be represented by a single field in a well-known binary field.</para>
-		/// <para>GeoJSON—The geometry will be represented by a single field in GeoJSON format.</para>
-		/// <para>EsriJSON—The geometry will be represented by a single field in EsriJSON format.</para>
-		/// <para>EsriShape—The geometry will be represented by a single field in EsriShape format.</para>
+		/// <para>指定几何的格式化方式。 无法为源自 shapefile 的数据修改几何。</para>
+		/// <para>XYZ—两个或多个字段将代表x，y 和 z（可选）。</para>
+		/// <para>WKT—几何将由熟知的文本字段中的单个字段表示。</para>
+		/// <para>WKB—几何将由熟知的二进制字段中的单个字段表示。</para>
+		/// <para>GeoJSON—几何将由 GeoJSON 格式的单个字段表示。</para>
+		/// <para>EsriJSON—几何将由 EsriJSON 格式的单个字段表示。</para>
+		/// <para>EsriShape—几何将由 EsriShape 格式的单个字段表示。</para>
 		/// <para><see cref="GeometryFormatTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Geometry Field</para>
-		/// <para>A single field used to represent the geometry. This field is used when the geometry format is WKT, WKB, GeoJSON, EsriJSON, or EsriShape.</para>
+		/// <para>用于表示几何的单个字段。 当几何格式为 WKT、WKB、GeoJSON、EsriJSON 或 EsriShape 时，将使用此字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>X Field</para>
-		/// <para>The field used to represent the x-location. If more than one field represents the x-location, modify the .mfc file manually.</para>
+		/// <para>用于表示 x 位置的字段。 如果有多个表示 x 位置的字段，则需要手动修改 .mfc 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Y Field</para>
-		/// <para>The field used to represent the y-location. If more than one field represents the y-location, modify the .mfc file manually.</para>
+		/// <para>用于表示 y 位置的字段。 如果有多个表示 y 位置的字段，则需要手动修改 .mfc 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Z Field</para>
-		/// <para>The field used to represent the z-location. If more than one field represents the z-location, modify the .mfc file manually.</para>
+		/// <para>用于表示 z 位置的字段。 如果有多个表示 z 位置的字段，则需要手动修改 .mfc 文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -179,10 +179,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Time Type</para>
-		/// <para>Specifies the time type that will be used to temporally represent the dataset.</para>
-		/// <para>Interval—The time type will represent a duration of time with a start and end time.</para>
-		/// <para>Instant—The time type will represent an instant in time.</para>
-		/// <para>None—Time is not enabled.</para>
+		/// <para>指定将用于临时表示数据集的时间类型。</para>
+		/// <para>间隔—时间类型将表示具有开始时间和结束时间的持续时间。</para>
+		/// <para>即时—时间类型将表示时刻。</para>
+		/// <para>无—未启用时间。</para>
 		/// <para><see cref="TimeTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -193,7 +193,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Time Zone</para>
-		/// <para>The time zone of the dataset.</para>
+		/// <para>数据集的时区。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -202,7 +202,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Start Time</para>
-		/// <para>The fields used to define the start time and the time formatting.</para>
+		/// <para>用于定义开始时间和时间格式的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -212,7 +212,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>End Time</para>
-		/// <para>The fields used to define the end time and the time formatting.</para>
+		/// <para>用于定义结束时间和时间格式的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -222,7 +222,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>File Extension</para>
-		/// <para>The file extension of the source dataset. The parameter value cannot be modified.</para>
+		/// <para>源数据集的文件扩展名。 无法修改参数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -231,7 +231,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Field Delimiter</para>
-		/// <para>The field delimiter used in the source dataset.</para>
+		/// <para>源数据集中使用的字段分隔符。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -240,7 +240,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Record Terminator</para>
-		/// <para>The record terminator used in the source dataset.</para>
+		/// <para>源数据集中使用的记录终止符。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -249,7 +249,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Quote Character</para>
-		/// <para>The quote character used in the source dataset.</para>
+		/// <para>源数据集中使用的引号字符。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -258,9 +258,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Has Header Row</para>
-		/// <para>Specifies whether the source dataset includes a header row.</para>
-		/// <para>Checked—The source dataset includes a header row.</para>
-		/// <para>Unchecked—The source dataset does not include a header row.</para>
+		/// <para>指定源数据集中是否包含标题行。</para>
+		/// <para>选中 - 源数据集中包含标题行。</para>
+		/// <para>未选中 - 源数据集中不包含标题行。</para>
 		/// <para><see cref="HasHeaderRowEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -271,7 +271,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Encoding</para>
-		/// <para>The type of encoding used by the source dataset. UTF-8 is used by default.</para>
+		/// <para>用于源数据集的编码类型。 默认将使用 UTF-8。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -293,31 +293,31 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum GeometryTypeEnum 
 		{
 			/// <summary>
-			/// <para>Point—The geometry type will be point.</para>
+			/// <para>点—该几何类型将为点。</para>
 			/// </summary>
 			[GPValue("POINT")]
-			[Description("Point")]
+			[Description("点")]
 			Point,
 
 			/// <summary>
-			/// <para>Polyline—The geometry type will be polyline.</para>
+			/// <para>折线—该几何类型将为折线。</para>
 			/// </summary>
 			[GPValue("LINE")]
-			[Description("Polyline")]
+			[Description("折线")]
 			Polyline,
 
 			/// <summary>
-			/// <para>Polygon—The geometry type will be polygon.</para>
+			/// <para>面—该几何类型将为面。</para>
 			/// </summary>
 			[GPValue("POLYGON")]
-			[Description("Polygon")]
+			[Description("面")]
 			Polygon,
 
 			/// <summary>
-			/// <para>None—No geometry type is specified.</para>
+			/// <para>无—未指定任何几何类型。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 		}
@@ -328,42 +328,42 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum GeometryFormatTypeEnum 
 		{
 			/// <summary>
-			/// <para>XYZ—Two or more fields will represent x, y, and optionally z.</para>
+			/// <para>XYZ—两个或多个字段将代表x，y 和 z（可选）。</para>
 			/// </summary>
 			[GPValue("XYZ")]
 			[Description("XYZ")]
 			XYZ,
 
 			/// <summary>
-			/// <para>WKT—The geometry will be represented by a single field in a well-known text field.</para>
+			/// <para>WKT—几何将由熟知的文本字段中的单个字段表示。</para>
 			/// </summary>
 			[GPValue("WKT")]
 			[Description("WKT")]
 			WKT,
 
 			/// <summary>
-			/// <para>WKB—The geometry will be represented by a single field in a well-known binary field.</para>
+			/// <para>WKB—几何将由熟知的二进制字段中的单个字段表示。</para>
 			/// </summary>
 			[GPValue("WKB")]
 			[Description("WKB")]
 			WKB,
 
 			/// <summary>
-			/// <para>GeoJSON—The geometry will be represented by a single field in GeoJSON format.</para>
+			/// <para>GeoJSON—几何将由 GeoJSON 格式的单个字段表示。</para>
 			/// </summary>
 			[GPValue("GEOJSON")]
 			[Description("GeoJSON")]
 			GeoJSON,
 
 			/// <summary>
-			/// <para>EsriJSON—The geometry will be represented by a single field in EsriJSON format.</para>
+			/// <para>EsriJSON—几何将由 EsriJSON 格式的单个字段表示。</para>
 			/// </summary>
 			[GPValue("ESRIJSON")]
 			[Description("EsriJSON")]
 			EsriJSON,
 
 			/// <summary>
-			/// <para>EsriShape—The geometry will be represented by a single field in EsriShape format.</para>
+			/// <para>EsriShape—几何将由 EsriShape 格式的单个字段表示。</para>
 			/// </summary>
 			[GPValue("ESRISHAPE")]
 			[Description("EsriShape")]
@@ -377,24 +377,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum TimeTypeEnum 
 		{
 			/// <summary>
-			/// <para>Instant—The time type will represent an instant in time.</para>
+			/// <para>即时—时间类型将表示时刻。</para>
 			/// </summary>
 			[GPValue("INSTANT")]
-			[Description("Instant")]
+			[Description("即时")]
 			Instant,
 
 			/// <summary>
-			/// <para>Interval—The time type will represent a duration of time with a start and end time.</para>
+			/// <para>间隔—时间类型将表示具有开始时间和结束时间的持续时间。</para>
 			/// </summary>
 			[GPValue("INTERVAL")]
-			[Description("Interval")]
+			[Description("间隔")]
 			Interval,
 
 			/// <summary>
-			/// <para>None—Time is not enabled.</para>
+			/// <para>无—未启用时间。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 		}
@@ -405,14 +405,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum HasHeaderRowEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The source dataset includes a header row.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("HAS_HEADER")]
 			HAS_HEADER,
 
 			/// <summary>
-			/// <para>Unchecked—The source dataset does not include a header row.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_HEADER")]

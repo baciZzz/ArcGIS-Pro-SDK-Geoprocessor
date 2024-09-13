@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Custom Geographic Transformation</para>
-	/// <para>Create Custom Geographic Transformation</para>
-	/// <para>Creates a transformation method for converting data between two geographic coordinate systems or datums. The output of this tool can be used as a transformation method for any tool with a parameter that requires a geographic transformation.</para>
+	/// <para>创建自定义地理(坐标)变换</para>
+	/// <para>可创建一种变换方法，用于在两个地理坐标系或基准面之间对数据进行转换。对于任何参数要求进行地理变换的工具，都可使用此工具的输出作为变换方法。</para>
 	/// </summary>
 	public class CreateCustomGeoTransformation : AbstractGPProcess
 	{
@@ -21,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="GeotName">
 		/// <para>Geographic Transformation Name</para>
-		/// <para>Name of the custom transformation method.</para>
-		/// <para>All custom geographic transformation files are saved with a .gtf extension and stored in the ESRI\&lt;ArcGIS product&gt;\ArcToolbox\CustomTransformations folder in the user&apos;s Application Data folder. The CustomTransformations folder is created by the tool if it does not exist. If the Application Data folder is read-only or hidden, the output is created in ArcToolbox\CustomTransformations in the user&apos;s temp folder. The location or name of the Application Data and temp folders is dependent on the operating system.</para>
-		/// <para>In any Windows operating system the Application Data folder is located in %appdata% and a user&apos;s Temp folder is located in %temp%. Entering %appdata% in a command window returns the Application Data folder location. Entering %temp% returns the temp folder location.</para>
-		/// <para>In Unix systems, the tmp and Application Data folders are located in the user&apos;s home directory, under $HOME and $TMP, respectively. Typing /tmp in a terminal returns the location.</para>
+		/// <para>自定义变换方法的名称。</para>
+		/// <para>所有的自定义地理变换文件都将存储为扩展名为 .gtf 的文件，并存储在用户应用程序数据文件夹中的 ESRI\&lt;ArcGIS product&gt;\ArcToolbox\CustomTransformations 文件夹中。如果 CustomTransformations 文件夹不存在，此工具会自动创建。如果应用程序数据文件夹为只读或已隐藏，则输出会创建到用户临时文件夹中的 ArcToolbox\CustomTransformations 中。Application Data 和 temp 文件夹的位置或名称取决于操作系统。</para>
+		/// <para>在所有 Windows 操作系统中，应用程序数据文件夹均位于 %appdata% 中，而用户的临时文件夹则位于 %temp% 中。在命令窗口中输入 %appdata% 将返回应用程序数据文件夹位置。输入 %temp% 将返回临时文件夹位置。</para>
+		/// <para>在 Unix 系统中，tmp 文件夹和应用程序数据文件夹分别位于用户的主目录 $HOME 和 $TMP 下。在终端键入 /tmp 将返回该位置。</para>
 		/// </param>
 		/// <param name="InCoorSystem">
 		/// <para>Input Geographic Coordinate System</para>
-		/// <para>The starting geographic coordinate system.</para>
+		/// <para>起始地理坐标系。</para>
 		/// </param>
 		/// <param name="OutCoorSystem">
 		/// <para>Output Geographic Coordinate System</para>
-		/// <para>The final geographic coordinate system.</para>
+		/// <para>最终地理坐标系。</para>
 		/// </param>
 		/// <param name="CustomGeot">
 		/// <para>Custom Geographic Transformation</para>
-		/// <para>Select a transformation method from the drop-down list that will be used to transform the data from the input geographic coordinate system to the output geographic coordinate system. Once chosen, its parameters will appear in the table for editing.</para>
+		/// <para>从下拉列表中选择一种变换方法，将使用该方法在输入地理坐标系与输出地理坐标系之间变换数据。完成选择后，其参数将显示在表格中以供编辑。</para>
 		/// </param>
 		public CreateCustomGeoTransformation(object GeotName, object InCoorSystem, object OutCoorSystem, object CustomGeot)
 		{
@@ -47,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Custom Geographic Transformation</para>
+		/// <para>Tool Display Name : 创建自定义地理(坐标)变换</para>
 		/// </summary>
-		public override string DisplayName() => "Create Custom Geographic Transformation";
+		public override string DisplayName() => "创建自定义地理(坐标)变换";
 
 		/// <summary>
 		/// <para>Tool Name : CreateCustomGeoTransformation</para>
@@ -83,10 +83,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Geographic Transformation Name</para>
-		/// <para>Name of the custom transformation method.</para>
-		/// <para>All custom geographic transformation files are saved with a .gtf extension and stored in the ESRI\&lt;ArcGIS product&gt;\ArcToolbox\CustomTransformations folder in the user&apos;s Application Data folder. The CustomTransformations folder is created by the tool if it does not exist. If the Application Data folder is read-only or hidden, the output is created in ArcToolbox\CustomTransformations in the user&apos;s temp folder. The location or name of the Application Data and temp folders is dependent on the operating system.</para>
-		/// <para>In any Windows operating system the Application Data folder is located in %appdata% and a user&apos;s Temp folder is located in %temp%. Entering %appdata% in a command window returns the Application Data folder location. Entering %temp% returns the temp folder location.</para>
-		/// <para>In Unix systems, the tmp and Application Data folders are located in the user&apos;s home directory, under $HOME and $TMP, respectively. Typing /tmp in a terminal returns the location.</para>
+		/// <para>自定义变换方法的名称。</para>
+		/// <para>所有的自定义地理变换文件都将存储为扩展名为 .gtf 的文件，并存储在用户应用程序数据文件夹中的 ESRI\&lt;ArcGIS product&gt;\ArcToolbox\CustomTransformations 文件夹中。如果 CustomTransformations 文件夹不存在，此工具会自动创建。如果应用程序数据文件夹为只读或已隐藏，则输出会创建到用户临时文件夹中的 ArcToolbox\CustomTransformations 中。Application Data 和 temp 文件夹的位置或名称取决于操作系统。</para>
+		/// <para>在所有 Windows 操作系统中，应用程序数据文件夹均位于 %appdata% 中，而用户的临时文件夹则位于 %temp% 中。在命令窗口中输入 %appdata% 将返回应用程序数据文件夹位置。输入 %temp% 将返回临时文件夹位置。</para>
+		/// <para>在 Unix 系统中，tmp 文件夹和应用程序数据文件夹分别位于用户的主目录 $HOME 和 $TMP 下。在终端键入 /tmp 将返回该位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Geographic Coordinate System</para>
-		/// <para>The starting geographic coordinate system.</para>
+		/// <para>起始地理坐标系。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPCoordinateSystem()]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Geographic Coordinate System</para>
-		/// <para>The final geographic coordinate system.</para>
+		/// <para>最终地理坐标系。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPCoordinateSystem()]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Custom Geographic Transformation</para>
-		/// <para>Select a transformation method from the drop-down list that will be used to transform the data from the input geographic coordinate system to the output geographic coordinate system. Once chosen, its parameters will appear in the table for editing.</para>
+		/// <para>从下拉列表中选择一种变换方法，将使用该方法在输入地理坐标系与输出地理坐标系之间变换数据。完成选择后，其参数将显示在表格中以供编辑。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

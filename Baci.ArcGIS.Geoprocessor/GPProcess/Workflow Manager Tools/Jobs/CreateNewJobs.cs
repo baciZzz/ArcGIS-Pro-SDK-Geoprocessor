@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Create New Jobs</para>
-	/// <para>Create New Jobs</para>
-	/// <para>Creates one or more jobs of the selected job type and assigns the jobs to a user or user group. The created jobs can be prioritized and assigned a polygon or point location of interest (LOI).</para>
+	/// <para>创建新作业</para>
+	/// <para>创建一个或多个选定作业类型的作业并将作业分配给用户或用户群组。可为创建的作业设置优先级，并为其分配面或点感兴趣位置 (LOI)。</para>
 	/// </summary>
 	public class CreateNewJobs : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// </summary>
 		/// <param name="InputDatabasepath">
 		/// <para>Input Database Path (.jtc)</para>
-		/// <para>The Workflow Manager (Classic) database connection file that contains the job type information. If no connection file is specified, the current default Workflow Manager (Classic) database is used.</para>
+		/// <para>包含作业类型信息的 Workflow Manager (Classic) 数据库连接文件。如果未指定连接文件，将使用当前默认的 Workflow Manager (Classic) 数据库。</para>
 		/// </param>
 		/// <param name="JobType">
 		/// <para>Job Type</para>
-		/// <para>The job type to be used for creating the new job.</para>
+		/// <para>用于创建新作业的作业类型。</para>
 		/// </param>
 		/// <param name="NumberOfJobs">
 		/// <para>Number of Jobs</para>
-		/// <para>The number of jobs to be created. This input is ignored if LOI Extent has a value or if Merge features to create one LOI is checked.</para>
+		/// <para>要创建的作业数。如果 LOI 范围具有值或如果选中合并要素创建一个 LOI，则将忽略此输入。</para>
 		/// </param>
 		public CreateNewJobs(object InputDatabasepath, object JobType, object NumberOfJobs)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create New Jobs</para>
+		/// <para>Tool Display Name : 创建新作业</para>
 		/// </summary>
-		public override string DisplayName() => "Create New Jobs";
+		public override string DisplayName() => "创建新作业";
 
 		/// <summary>
 		/// <para>Tool Name : CreateNewJobs</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Input Database Path (.jtc)</para>
-		/// <para>The Workflow Manager (Classic) database connection file that contains the job type information. If no connection file is specified, the current default Workflow Manager (Classic) database is used.</para>
+		/// <para>包含作业类型信息的 Workflow Manager (Classic) 数据库连接文件。如果未指定连接文件，将使用当前默认的 Workflow Manager (Classic) 数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Job Type</para>
-		/// <para>The job type to be used for creating the new job.</para>
+		/// <para>用于创建新作业的作业类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Number of Jobs</para>
-		/// <para>The number of jobs to be created. This input is ignored if LOI Extent has a value or if Merge features to create one LOI is checked.</para>
+		/// <para>要创建的作业数。如果 LOI 范围具有值或如果选中合并要素创建一个 LOI，则将忽略此输入。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -101,10 +101,10 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Assignment Type</para>
-		/// <para>Specifies the assignment type to use to assign new jobs. If no value is specified, the default value configured in the job type is used.</para>
-		/// <para>Groups—The new jobs will be assigned to a group.</para>
-		/// <para>Users— The new jobs will be assigned to a user.</para>
-		/// <para>Unassigned—The new jobs will be unassigned.</para>
+		/// <para>指定用于分配新作业的分配类型。如果未指定任何值，则使用作业类型中配置的默认值。</para>
+		/// <para>组织—新作业将分配至群组。</para>
+		/// <para>用户— 新作业将分配给用户。</para>
+		/// <para>未分配—新作业将不进行分配。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Assigned To</para>
-		/// <para>The user or group to whom the new jobs will be assigned. The value is restricted to a user or group based on the selected assignment type.</para>
+		/// <para>向其分配新作业的用户或群组。该值仅限基于所选分配类型的用户或群组。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Priority</para>
-		/// <para>The priority of the jobs that will be created. If no priority is specified, the default value configured in the job type is used.</para>
+		/// <para>要创建的作业的优先级。如果未指定优先级，则使用作业类型中配置的默认值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>LOI Extent</para>
-		/// <para>The polygon, point, or multipoint features whose geometry will be used to create the LOI of the new jobs. One job will be created for each feature in the layer unless Merge features to create one LOI is checked.</para>
+		/// <para>几何将用于创建新作业的 LOI 的面、点或多点要素。选中合并要素创建一个 LOI 后，则会为图层中的每个要素创建一个作业。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -138,9 +138,9 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 
 		/// <summary>
 		/// <para>Merge features to create one LOI</para>
-		/// <para>Specifies whether one job will be created with the union of all polygons, point, or multipoint in the input feature layer as the LOI of the job.</para>
-		/// <para>Checked—One union polygon or multipont feature will be generated from the LOI features and one job will be created regardless of the input number of jobs.</para>
-		/// <para>Unchecked—Each feature in the input layer will be used to generate the LOI of one job. The total number of jobs created is equal to the total number of input features. This is the default.</para>
+		/// <para>指定是否将输入要素图层中所有面、点或多点的并集作为作业的 LOI 创建一个作业。</para>
+		/// <para>选中 - 将通过 LOI 要素生成一个并集面或多点要素，并且将创建一个作业，无论输入作业数为何。</para>
+		/// <para>未选中 - 将使用输入图层中的每个要素生成一个作业的 LOI。创建作业的总数等于输入要素的总数。这是默认设置。</para>
 		/// <para><see cref="UnionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -163,14 +163,14 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		public enum UnionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—One union polygon or multipont feature will be generated from the LOI features and one job will be created regardless of the input number of jobs.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UNION")]
 			UNION,
 
 			/// <summary>
-			/// <para>Unchecked—Each feature in the input layer will be used to generate the LOI of one job. The total number of jobs created is equal to the total number of input features. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_UNION")]

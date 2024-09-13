@@ -11,9 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Enable Stationing Fields</para>
-	/// <para>Enable Stationing Fields</para>
-	/// <para>Enables or modifies stationing fields so that you can manage</para>
-	/// <para>referent information for the registered LRS event.</para>
+	/// <para>启用定点字段</para>
+	/// <para>启用或修改定点字段，这样您可以管理已注册 LRS 事件的参考信息。</para>
 	/// </summary>
 	public class EnableStationingFields : AbstractGPProcess
 	{
@@ -22,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InFeatureClass">
 		/// <para>Event Feature Class</para>
-		/// <para>An existing event feature class or feature layer that is registered to an LRS.</para>
+		/// <para>已注册到 LRS 的现有事件要素类或要素图层。</para>
 		/// </param>
 		public EnableStationingFields(object InFeatureClass)
 		{
@@ -30,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Enable Stationing Fields</para>
+		/// <para>Tool Display Name : 启用定点字段</para>
 		/// </summary>
-		public override string DisplayName() => "Enable Stationing Fields";
+		public override string DisplayName() => "启用定点字段";
 
 		/// <summary>
 		/// <para>Tool Name : EnableStationingFields</para>
@@ -66,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Event Feature Class</para>
-		/// <para>An existing event feature class or feature layer that is registered to an LRS.</para>
+		/// <para>已注册到 LRS 的现有事件要素类或要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -76,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Station Field</para>
-		/// <para>The field that will be used as the starting reference station.</para>
+		/// <para>将用作起始参考站点的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -86,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Back Station Field</para>
-		/// <para>The field that will be used as the back station.</para>
+		/// <para>将用作后站的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -96,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Station Value Direction Field</para>
-		/// <para>The field that will be used to indicate the direction of increasing stations, either increasing toward the direction of calibration of the route or away from it.</para>
+		/// <para>用于指示增加站点的方向的字段，朝着或者远离路径的校准方向增加。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -106,18 +105,18 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Station Measure Units</para>
-		/// <para>Specifies the measure units that will be used for stationing.</para>
-		/// <para>Miles (US Survey)—The unit of measure will be miles. This is the default.</para>
-		/// <para>Inches (US Survey)—The unit of measure will be inches.</para>
-		/// <para>Feet (US Survey)—The unit of measure will be feet.</para>
-		/// <para>Yards (US Survey)—The unit of measure will be yards.</para>
-		/// <para>Nautical miles (US Survey)—The unit of measure will be nautical miles.</para>
-		/// <para>Feet (International)—The unit of measure will be international feet.</para>
-		/// <para>Millimeters—The unit of measure will be millimeters.</para>
-		/// <para>Centimeters—The unit of measure will be centimeters</para>
-		/// <para>Meters—The unit of measure will be meters.</para>
-		/// <para>Kilometers—The unit of measure will be kilometers.</para>
-		/// <para>Decimeters—The unit of measure will be decimeters.</para>
+		/// <para>指定将用于定点的测量单位。</para>
+		/// <para>英里(美制测量)—测量单位为英里。 这是默认设置。</para>
+		/// <para>英寸(美制测量)—测量单位为英寸。</para>
+		/// <para>英尺(美制测量)—测量单位为英尺。</para>
+		/// <para>码(美制测量)—测量单位为码。</para>
+		/// <para>海里(美制测量)—测量单位为海里。</para>
+		/// <para>英尺(国际)—测量单位为国际英尺。</para>
+		/// <para>毫米—测量单位为毫米。</para>
+		/// <para>厘米—测量单位为厘米。</para>
+		/// <para>米—测量单位为米。</para>
+		/// <para>千米—测量单位为千米。</para>
+		/// <para>分米—测量单位为分米。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -126,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Decreasing Station Values</para>
-		/// <para>A comma-separated list of user-provided values.</para>
+		/// <para>用户提供的逗号分隔列表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

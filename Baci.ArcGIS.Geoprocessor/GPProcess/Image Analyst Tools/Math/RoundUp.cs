@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Round Up</para>
-	/// <para>Round Up</para>
-	/// <para>Returns the next higher integer value, just represented as a floating point, for each cell in a raster.</para>
+	/// <para>上舍入</para>
+	/// <para>返回栅格中每个像元的最近的较大整数值（以浮点表示）。</para>
 	/// </summary>
 	public class RoundUp : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant">
 		/// <para>Input raster or constant value</para>
-		/// <para>The input values to be rounded up.</para>
-		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
+		/// <para>将被上舍入的输入值。</para>
+		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the result of rounding up the input values.</para>
+		/// <para>输出栅格。</para>
+		/// <para>像元值是将输入值向上舍入的结果。</para>
 		/// </param>
 		public RoundUp(object InRasterOrConstant, object OutRaster)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Round Up</para>
+		/// <para>Tool Display Name : 上舍入</para>
 		/// </summary>
-		public override string DisplayName() => "Round Up";
+		public override string DisplayName() => "上舍入";
 
 		/// <summary>
 		/// <para>Tool Name : RoundUp</para>
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value</para>
-		/// <para>The input values to be rounded up.</para>
-		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
+		/// <para>将被上舍入的输入值。</para>
+		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The cell values are the result of rounding up the input values.</para>
+		/// <para>输出栅格。</para>
+		/// <para>像元值是将输入值向上舍入的结果。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

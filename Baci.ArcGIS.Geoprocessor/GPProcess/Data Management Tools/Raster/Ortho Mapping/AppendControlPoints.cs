@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Append Control Points</para>
-	/// <para>Append Control Points</para>
-	/// <para>Combines control points to an existing control point table.</para>
+	/// <para>追加控制点</para>
+	/// <para>将控制点和现有控制点表结合在一起。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMasterControlPoints">
 		/// <para>Target Control Points</para>
-		/// <para>The input control point table. This is usually the output from the Compute Tie Points tool.</para>
+		/// <para>输入控制点表。这通常是计算连接点工具的输出。</para>
 		/// </param>
 		/// <param name="InInputControlPoints">
 		/// <para>Input Control Points</para>
-		/// <para>A point feature class that stores control points. It could be the control point table created from the Compute Control Points tool, the Compute Tie Points tool, or a point feature class that has ground control points.</para>
+		/// <para>存储控制点的点要素类。它可以是通过计算控制点工具、计算连接点工具，或具有地面控制点的点要素类所创建的控制点表。</para>
 		/// </param>
 		public AppendControlPoints(object InMasterControlPoints, object InInputControlPoints)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Append Control Points</para>
+		/// <para>Tool Display Name : 追加控制点</para>
 		/// </summary>
-		public override string DisplayName() => "Append Control Points";
+		public override string DisplayName() => "追加控制点";
 
 		/// <summary>
 		/// <para>Tool Name : AppendControlPoints</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Target Control Points</para>
-		/// <para>The input control point table. This is usually the output from the Compute Tie Points tool.</para>
+		/// <para>输入控制点表。这通常是计算连接点工具的输出。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Control Points</para>
-		/// <para>A point feature class that stores control points. It could be the control point table created from the Compute Control Points tool, the Compute Tie Points tool, or a point feature class that has ground control points.</para>
+		/// <para>存储控制点的点要素类。它可以是通过计算控制点工具、计算连接点工具，或具有地面控制点的点要素类所创建的控制点表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -88,8 +88,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Z Value Field Name</para>
-		/// <para>The field that stores the control point z-values.</para>
-		/// <para>If both the Z Value Field Name and the Input DEM parameters are set, the Z value field is used. If neither the Z Value Field Name nor the Input DEM parameter is set, the z-value is set to 0 for all ground control points and check points.</para>
+		/// <para>该字段存储控制点 Z 值。</para>
+		/// <para>如果既设置了 Z 值字段名称参数，又设置了输入 DEM 参数，那么将使用 Z 值字段。如果既没设置 Z 值字段名称参数，又没设置输入 DEM 参数，那么所有地面控制点和检测点的 Z 值都将被设置为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Tag Field Name</para>
-		/// <para>A field in the input control point table that has a unique value. This field will be added to the target control point table, where the tag field can be used to bring in identifiers associated with ground control points.</para>
+		/// <para>输入控制点表中的字段值是唯一的。该字段将被添加到目标控制点表中，标签字段可用于引入与地面控制点相关联的标识符。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -109,8 +109,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input DEM</para>
-		/// <para>A DEM to use to obtain the z-value for the control points in the input control point table.</para>
-		/// <para>If both the Z Value Field Name and Input DEM parameters are set, the Z value field is used. If neither the Z Value Field Name nor the Input DEM parameter is set, the z-value is set to 0 for all ground control points and check points.</para>
+		/// <para>DEM 用于获取输入控制点表中控制点的 Z 值。</para>
+		/// <para>如果既设置了 Z 值字段名称参数，又设置了输入 DEM 参数，那么将使用 Z 值字段。如果既没设置 Z 值字段名称参数，又没设置输入 DEM 参数，那么所有地面控制点和检测点的 Z 值都将被设置为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -125,8 +125,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>XY Accuracy</para>
-		/// <para>The input accuracy for the X and Y coordinates. The accuracy is in the same units as the Input Control Points.</para>
-		/// <para>This information should be provided by the data provider. If the accuracy information is not available, leave this optional parameter blank.</para>
+		/// <para>X 和 Y 坐标的输入精度。精度单位与输入控制点的单位相同。</para>
+		/// <para>此信息应由数据提供商提供。如果精度信息不可用，请将此可选参数留空。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -135,8 +135,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Z Accuracy</para>
-		/// <para>The input accuracy for the vertical coordinates. The accuracy is in the units of the Input Control Points.</para>
-		/// <para>This information should be provided by the data provider. If the accuracy information is not available, leave this optional parameter blank.</para>
+		/// <para>垂直坐标的输入精度。精度单位与输入控制点的单位相同。</para>
+		/// <para>此信息应由数据提供商提供。如果精度信息不可用，请将此可选参数留空。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -145,9 +145,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Geoid</para>
-		/// <para>The geoid correction is required by rational polynomial coefficients (RPC) that reference ellipsoidal heights. Most elevation datasets are referenced to sea level orthometric heights, so this correction would be required in these cases to convert to ellipsoidal heights.</para>
-		/// <para>Unchecked—No geoid correction is made. Use this option only if your DEM is already expressed in ellipsoidal heights. This is the default.</para>
-		/// <para>Checked—A geoid correction will be made to convert orthometric heights to ellipsoidal heights (based on EGM96 geoid).</para>
+		/// <para>参考椭球体高的有理多项式系数 (RPC) 需要进行大地水准面校正。大多数高程数据集均参考海平面正高，因此在这些情况下，需要进行此项校正以将海平面正高转换为椭球体高。</para>
+		/// <para>未选中 - 不进行大地水准面校正。只有在已使用椭球体高表示 DEM 的情况下，才能使用此选项。这是默认设置。</para>
+		/// <para>选中 - 将进行大地水准面校正以将正高转换为椭球体高（根据 EGM96 大地水准面）。</para>
 		/// <para><see cref="GeoidEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -157,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Area of Interest</para>
-		/// <para>Defines an area of interest extent by entering minimum and maximum x- and y-coordinates in the spatial reference of the input control point table.</para>
+		/// <para>通过在输入控制点表的空间参考中输入最小和最大的 x 和 y 坐标，来定义感兴趣区域的范围。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -165,10 +165,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Append Option</para>
-		/// <para>Specifies how control points will be appended to the control point table.</para>
-		/// <para>Add all points—Add all points in the input control point table to the target control point table, including GCPs, check points, and all tie points. This is the default.</para>
-		/// <para>Add GCPs only—Add only GCPs in the input point table to the target control point table.</para>
-		/// <para>Add GCPs and tie points—Add GCPs and tie points specifically associated with the GCPs to the target control point table.Use caution with this option—it is applicable only when the tie points in the input and target control point table have the same transformation. The tie points might not be in the desired positions if they were computed using a different adjustment process.</para>
+		/// <para>指定控制点追加到控制点表的方式。</para>
+		/// <para>添加所有点—将输入控制点表中的所有点添加到目标控制点表，包括 GCP、检测点和所有连接点。这是默认设置。</para>
+		/// <para>仅添加 GCP—仅将输入点表中的 GCP 添加到目标控制点表。</para>
+		/// <para>添加 GCP 和连接点—将与 GCP 明确相关联的 GCP 和连接点添加到目标控制点表。使用此选项时请注意 - 只有在输入和目标控制点表中的连接点具有相同的变换时此选项才适用。如果使用其他校正过程进行计算，则连接点可能不在所需的位置。</para>
 		/// <para><see cref="AppendOptionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -184,14 +184,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum GeoidEnum 
 		{
 			/// <summary>
-			/// <para>Checked—A geoid correction will be made to convert orthometric heights to ellipsoidal heights (based on EGM96 geoid).</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GEOID")]
 			GEOID,
 
 			/// <summary>
-			/// <para>Unchecked—No geoid correction is made. Use this option only if your DEM is already expressed in ellipsoidal heights. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]
@@ -205,24 +205,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AppendOptionEnum 
 		{
 			/// <summary>
-			/// <para>Add all points—Add all points in the input control point table to the target control point table, including GCPs, check points, and all tie points. This is the default.</para>
+			/// <para>添加所有点—将输入控制点表中的所有点添加到目标控制点表，包括 GCP、检测点和所有连接点。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("Add all points")]
+			[Description("添加所有点")]
 			Add_all_points,
 
 			/// <summary>
-			/// <para>Add GCPs only—Add only GCPs in the input point table to the target control point table.</para>
+			/// <para>仅添加 GCP—仅将输入点表中的 GCP 添加到目标控制点表。</para>
 			/// </summary>
 			[GPValue("GCP")]
-			[Description("Add GCPs only")]
+			[Description("仅添加 GCP")]
 			Add_GCPs_only,
 
 			/// <summary>
-			/// <para>Add GCPs and tie points—Add GCPs and tie points specifically associated with the GCPs to the target control point table.Use caution with this option—it is applicable only when the tie points in the input and target control point table have the same transformation. The tie points might not be in the desired positions if they were computed using a different adjustment process.</para>
+			/// <para>添加 GCP 和连接点—将与 GCP 明确相关联的 GCP 和连接点添加到目标控制点表。使用此选项时请注意 - 只有在输入和目标控制点表中的连接点具有相同的变换时此选项才适用。如果使用其他校正过程进行计算，则连接点可能不在所需的位置。</para>
 			/// </summary>
 			[GPValue("GCPSET")]
-			[Description("Add GCPs and tie points")]
+			[Description("添加 GCP 和连接点")]
 			Add_GCPs_and_tie_points,
 
 		}

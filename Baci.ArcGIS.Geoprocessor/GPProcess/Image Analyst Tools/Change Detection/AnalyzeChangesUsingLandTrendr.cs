@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Analyze Changes Using LandTrendr</para>
-	/// <para>Analyze Changes Using LandTrendr</para>
-	/// <para>Evaluates changes in pixel values over time using the Landsat-based detection of trends in disturbance and recovery (LandTrendr) method and generates a change analysis raster containing the model results.</para>
+	/// <para>使用 LandTrendr 分析变化</para>
+	/// <para>使用基于 Landsat 的干扰和恢复趋势检测 (LandTrendr) 方法评估像素值随时间的变化，并生成包含模型结果的变化分析栅格。</para>
 	/// </summary>
 	public class AnalyzeChangesUsingLandTrendr : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InMultidimensionalRaster">
 		/// <para>Input Multidimensional Raster</para>
-		/// <para>The input multidimensional raster dataset.</para>
+		/// <para>输入多维栅格数据集。</para>
 		/// </param>
 		/// <param name="OutMultidimensionalRaster">
 		/// <para>Output Multidimensional Raster</para>
-		/// <para>The output Cloud Raster Format (CRF) multidimensional raster dataset.</para>
-		/// <para>The output change analysis raster containing model information from the LandTrendr analysis.</para>
+		/// <para>输出云栅格格式 (CRF) 多维栅格数据集。</para>
+		/// <para>包含来自 LandTrendr 分析的模型信息的输出变化分析栅格。</para>
 		/// </param>
 		public AnalyzeChangesUsingLandTrendr(object InMultidimensionalRaster, object OutMultidimensionalRaster)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Analyze Changes Using LandTrendr</para>
+		/// <para>Tool Display Name : 使用 LandTrendr 分析变化</para>
 		/// </summary>
-		public override string DisplayName() => "Analyze Changes Using LandTrendr";
+		public override string DisplayName() => "使用 LandTrendr 分析变化";
 
 		/// <summary>
 		/// <para>Tool Name : AnalyzeChangesUsingLandTrendr</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input Multidimensional Raster</para>
-		/// <para>The input multidimensional raster dataset.</para>
+		/// <para>输入多维栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -80,8 +80,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Multidimensional Raster</para>
-		/// <para>The output Cloud Raster Format (CRF) multidimensional raster dataset.</para>
-		/// <para>The output change analysis raster containing model information from the LandTrendr analysis.</para>
+		/// <para>输出云栅格格式 (CRF) 多维栅格数据集。</para>
+		/// <para>包含来自 LandTrendr 分析的模型信息的输出变化分析栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -89,8 +89,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Processing Band Name</para>
-		/// <para>The image band name to use for segmenting the pixel value trajectories over time. Choose the band name that will best capture the changes in the feature you want to observe.</para>
-		/// <para>If no band value is specified and the input is multiband imagery, the first band in the multiband image will be used.</para>
+		/// <para>用于随时间分割像素值轨线的图像波段名称。 请选择最能捕获您要观测的要素变化的波段名称。</para>
+		/// <para>如果未指定波段值并且输入为多波段影像，则将使用多波段图像中的第一个波段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -98,8 +98,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Snapping Date</para>
-		/// <para>The date used to identify a slice for each year in the input multidimensional dataset. The slice with the date closest to the snapping date will be used. This parameter is required if the input dataset contains sub-yearly data.</para>
-		/// <para>The default is 06-30, or June 30, which is approximately midway through a calendar year.</para>
+		/// <para>用于在输入多维数据集中针对每年识别一个剖切片的日期。 将使用日期最接近捕捉日期的剖切片。 如果输入数据集包含次年数据，则此参数为必填项。</para>
+		/// <para>默认值为 06-30 或 June 30，大约是某一日历年的年中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Maximum Number of Segments</para>
-		/// <para>The maximum number of segments to be fitted to the time series for each pixel. The default is 5.</para>
+		/// <para>要拟合到每个像素的时间序列的最大段数。 默认值为 5。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Vertex Count Overshoot Threshold</para>
-		/// <para>The number of additional vertices beyond max_num_segments + 1 that can be used to fit the model during the initial stage of identifying vertices. Later in the modeling process, the number of additional vertices will be reduced to max_num_segments + 1. The default is 2.</para>
+		/// <para>在标识折点的初始阶段，超出 max_num_segments + 1 的附加折点数可用于拟合模型。 在建模过程的后期，附加折点数将减少为 max_num_segments + 1。 默认值为 2。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Spike Threshold</para>
-		/// <para>The threshold to use for dampening spikes or anomalies in the pixel value trajectory. The value must range between 0 and 1 in which 1 means no dampening. The default is 0.9.</para>
+		/// <para>用于衰减像素值轨线中的峰值或异常的阈值。 该值的范围必须介于 0 到 1 之间，其中 1 表示没有衰减。 默认值为 0.9。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Recovery Threshold</para>
-		/// <para>The recovery threshold value in years. If a segment has a recovery rate that is faster than 1/recovery threshold, the segment is discarded and not included in the time series model. The value must range between 0 and 1. The default is 0.25.</para>
+		/// <para>恢复阈值，以年为单位。 如果某段的恢复率快于 1/recovery threshold，则该段将被放弃，并且不会包含在时间序列模型中。 该值必须介于 0 到 1 之间。 默认值为 0.25。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -143,9 +143,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Prevent One Year Recovery</para>
-		/// <para>Specifies whether segments that exhibit a one year recovery will be excluded.</para>
-		/// <para>Checked—Segments that exhibit a one year recovery will be excluded. This is the default.</para>
-		/// <para>Unchecked—Segments that exhibit a one year recovery will be not be excluded.</para>
+		/// <para>指定是否将排除呈现一年恢复的段。</para>
+		/// <para>选中 - 将排除呈现一年恢复的段。 这是默认设置。</para>
+		/// <para>未选中 - 将不排除呈现一年恢复的段。</para>
 		/// <para><see cref="PreventOneYearRecoveryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -155,9 +155,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Recovery Has Increasing Trend</para>
-		/// <para>Specifies whether the recovery has an increasing (positive) trend.</para>
-		/// <para>Checked—The recovery has an increasing trend. This is the default.</para>
-		/// <para>Unchecked—The recovery has a decreasing trend.</para>
+		/// <para>指定恢复是否具有上升（正）趋势。</para>
+		/// <para>选中 - 恢复呈现上升趋势。 这是默认设置。</para>
+		/// <para>未选中 - 恢复呈现下降趋势。</para>
 		/// <para><see cref="RecoveryTrendEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Minimum Number of Observations</para>
-		/// <para>The minimum number of valid observations required to perform fitting. The number of years in the input multidimensional dataset must be equal to or greater than this value. The default is 6.</para>
+		/// <para>执行拟合所需的最小有效观测点数。 输入多维数据集中的年数必须等于或大于此值。 默认值为 6。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Best Model Proportion</para>
-		/// <para>The best model proportion value. During the model selection process, the tool will calculate the p-value for each model and identify a model that has the most vertices while maintaining the smallest (most significant) p-value based on this proportion value. A value of 1 means the model has the lowest p-value but may not have a high number of vertices. The default is 1.25.</para>
+		/// <para>最佳模型比例值。 在模型选择过程中，该工具将计算每个模型的 p 值，并根据此比例值来识别折点最多的模型，同时保持最小（最显著）p 值。 值为 1 表示模型的 p 值最低，但折点数量可能不多。 默认值为 1.25。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -187,7 +187,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>P-Value Threshold</para>
-		/// <para>The p-value threshold for a model to be selected. After the vertices are detected in the initial stage of the model fitting, the tool will fit each segment and calculate the p-value to determine the significance of the model. On the next iteration, the model will decrease the number of segments by one and recalculate the p-value. This will continue and, if the p-value is smaller than the value specified in this parameter, the model will be selected and the tool will stop searching for a better model. If no such model is selected, the tool will select a model with a p-value smaller than the lowest p-value × best model proportion value. The default is 0.01.</para>
+		/// <para>要选择的模型的 p 值阈值。 在模型拟合的初始阶段中检测到折点后，该工具将拟合每个段并计算 p 值以确定模型的显著性。 在下次迭代中，模型会将段数减 1 并重新计算 p 值。 由此继续，如果 p 值小于此参数中指定的值，则将选择该模型，并且该工具将停止搜索更好的模型。 如果未选择此类模型，则该工具将选择 p 值小于 lowest p-value × best model proportion value 的模型。 默认值为 0.01。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -196,9 +196,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Include Other Bands</para>
-		/// <para>Specifies whether other bands will be included in the results.</para>
-		/// <para>Checked—Other bands will be included in the results. The segmentation and vertices information from the initial segmentation band specified in the Processing Band parameter will also be fitted to the remaining bands in the multiband images. The model results will include the segmentation band first, then the remaining bands.</para>
-		/// <para>Unchecked—Other bands will not be included in the results. This is the default.</para>
+		/// <para>指定结果中是否将包含其他波段。</para>
+		/// <para>选中 - 结果中将包含其他波段。 还会将处理波段参数中指定的初始分割波段的分割和折点信息拟合到多波段图像中的其余波段。 模型结果将首先包含分割波段，然后包含其余波段。</para>
+		/// <para>未选中 - 结果中将不包含其他波段。 这是默认设置。</para>
 		/// <para><see cref="OutputOtherBandsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -223,14 +223,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum PreventOneYearRecoveryEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Segments that exhibit a one year recovery will be excluded. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PREVENT_ONE_YEAR_RECOVERY")]
 			PREVENT_ONE_YEAR_RECOVERY,
 
 			/// <summary>
-			/// <para>Unchecked—Segments that exhibit a one year recovery will be not be excluded.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ALLOW_ONE_YEAR_RECOVERY")]
@@ -244,14 +244,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum RecoveryTrendEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The recovery has an increasing trend. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCREASING_TREND")]
 			INCREASING_TREND,
 
 			/// <summary>
-			/// <para>Unchecked—The recovery has a decreasing trend.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DECREASING_TREND")]
@@ -265,14 +265,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		public enum OutputOtherBandsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Other bands will be included in the results. The segmentation and vertices information from the initial segmentation band specified in the Processing Band parameter will also be fitted to the remaining bands in the multiband images. The model results will include the segmentation band first, then the remaining bands.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_OTHER_BANDS")]
 			INCLUDE_OTHER_BANDS,
 
 			/// <summary>
-			/// <para>Unchecked—Other bands will not be included in the results. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_OTHER_BANDS")]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Domain</para>
-	/// <para>Delete Domain</para>
-	/// <para>Deletes a domain from a workspace.</para>
+	/// <para>删除域</para>
+	/// <para>从工作空间删除属性域。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,11 +23,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Input Workspace</para>
-		/// <para>The geodatabase that contains the domain to be deleted.</para>
+		/// <para>包含要删除的属性域的地理数据库。</para>
 		/// </param>
 		/// <param name="DomainName">
 		/// <para>Domain Name</para>
-		/// <para>The name of the domain to be deleted.</para>
+		/// <para>要删除的属性域的名称。</para>
 		/// </param>
 		public DeleteDomain(object InWorkspace, object DomainName)
 		{
@@ -36,9 +36,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Delete Domain</para>
+		/// <para>Tool Display Name : 删除域</para>
 		/// </summary>
-		public override string DisplayName() => "Delete Domain";
+		public override string DisplayName() => "删除域";
 
 		/// <summary>
 		/// <para>Tool Name : DeleteDomain</para>
@@ -72,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>The geodatabase that contains the domain to be deleted.</para>
+		/// <para>包含要删除的属性域的地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Domain Name</para>
-		/// <para>The name of the domain to be deleted.</para>
+		/// <para>要删除的属性域的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

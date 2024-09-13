@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Thin LAS</para>
-	/// <para>Thin LAS</para>
-	/// <para>Creates new LAS files that contain a subset of LAS points from the input LAS dataset.</para>
+	/// <para>稀疏化 LAS</para>
+	/// <para>创建新的 LAS 文件，其中包含来自输入 LAS 数据集的 LAS 点的子集。</para>
 	/// </summary>
 	public class ThinLas : AbstractGPProcess
 	{
@@ -21,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InLasDataset">
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset to process.</para>
+		/// <para>待处理的 LAS 数据集。</para>
 		/// </param>
 		/// <param name="TargetFolder">
 		/// <para>Target Folder</para>
-		/// <para>The existing folder to which the output .las files will be written.</para>
+		/// <para>输出 .las 文件将要写入的现有文件夹。</para>
 		/// </param>
 		/// <param name="ThinningDimension">
 		/// <para>Thinning Dimension</para>
-		/// <para>The type of thinning operation that will be conducted.</para>
-		/// <para>2D—Thinning will occur in tiles defined along the x,y-axis.</para>
-		/// <para>3D—Thinning will occur in volumes of space defined by tiles along the x,y-axis, and height gradients along the z-axis. This is the default.</para>
+		/// <para>待执行稀疏化操作的类型。</para>
+		/// <para>2D—稀疏化将发生在沿 x,y 轴定义的块中。</para>
+		/// <para>3D—稀疏化将发生在沿 x,y 轴的块及沿 z 轴的高度梯度所定义的空间体积中。这是默认设置。</para>
 		/// <para><see cref="ThinningDimensionEnum"/></para>
 		/// </param>
 		/// <param name="XyResolution">
 		/// <para>Target XY Resolution</para>
-		/// <para>The size of each side of the thinning tile along the x,y-axis.</para>
+		/// <para>沿 x,y 轴的稀疏化块的每一边的大小。</para>
 		/// </param>
 		public ThinLas(object InLasDataset, object TargetFolder, object ThinningDimension, object XyResolution)
 		{
@@ -47,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Thin LAS</para>
+		/// <para>Tool Display Name : 稀疏化 LAS</para>
 		/// </summary>
-		public override string DisplayName() => "Thin LAS";
+		public override string DisplayName() => "稀疏化 LAS";
 
 		/// <summary>
 		/// <para>Tool Name : ThinLas</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input LAS Dataset</para>
-		/// <para>The LAS dataset to process.</para>
+		/// <para>待处理的 LAS 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Target Folder</para>
-		/// <para>The existing folder to which the output .las files will be written.</para>
+		/// <para>输出 .las 文件将要写入的现有文件夹。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -99,9 +99,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Thinning Dimension</para>
-		/// <para>The type of thinning operation that will be conducted.</para>
-		/// <para>2D—Thinning will occur in tiles defined along the x,y-axis.</para>
-		/// <para>3D—Thinning will occur in volumes of space defined by tiles along the x,y-axis, and height gradients along the z-axis. This is the default.</para>
+		/// <para>待执行稀疏化操作的类型。</para>
+		/// <para>2D—稀疏化将发生在沿 x,y 轴定义的块中。</para>
+		/// <para>3D—稀疏化将发生在沿 x,y 轴的块及沿 z 轴的高度梯度所定义的空间体积中。这是默认设置。</para>
 		/// <para><see cref="ThinningDimensionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Target XY Resolution</para>
-		/// <para>The size of each side of the thinning tile along the x,y-axis.</para>
+		/// <para>沿 x,y 轴的稀疏化块的每一边的大小。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Target Z Resolution</para>
-		/// <para>The height of each thinning region when using the 3D thinning method.</para>
+		/// <para>使用 3D 稀疏化方法时，每个稀疏化区域的高度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -128,18 +128,18 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Point Selection Method</para>
-		/// <para>The method used to determine which points are retained in each thinning region.</para>
-		/// <para>Closest to Center—The LAS point that is closest to the center of the region being thinned. This is the default.</para>
-		/// <para>Class Code Weights—The LAS points with the class code that has the highest weight assigned.</para>
-		/// <para>Most Frequent Class Code—The LAS points with the most frequent class code value in the region being thinned.</para>
-		/// <para>Lowest Point—The lowest LAS point in the region being thinned.</para>
-		/// <para>Highest Point—The highest LAS point in the region being thinned.</para>
-		/// <para>Lowest and Highest Point—The highest and lowest LAS points in the region being thinned.</para>
-		/// <para>Closest to Average Height—The LAS point whose height is closest to the average of height of all points in the region being thinned.</para>
-		/// <para>Lowest Intensity—The LAS point whose intensity value is the lowest among the points in the region being thinned.</para>
-		/// <para>Highest Intensity—The LAS point whose intensity value is the highest among the points in the region being thinned.</para>
-		/// <para>Lowest and Highest Intensity—The two LAS points with the lowest and the highest intensity values among the points in the region being thinned.</para>
-		/// <para>Closest to Average Intensity—The LAS point whose intensity value is closest to the average of all intensity values from points in the region being thinned.</para>
+		/// <para>用于确定在每个稀疏化区域保留哪些点的方法。</para>
+		/// <para>最接近中心—最接近所稀疏化区域中心的 LAS 点。这是默认设置。</para>
+		/// <para>类代码权重—具有被分配最大权重的类代码的 LAS 点。</para>
+		/// <para>最常见类代码—具有稀疏化区域中最常见类代码值的 LAS 点。</para>
+		/// <para>最低点—所稀疏化区域中的最低 LAS 点。</para>
+		/// <para>最高点—所稀疏化区域中的最高 LAS 点。</para>
+		/// <para>最低点和最高点—所稀疏化区域中的最高和最低 LAS 点。</para>
+		/// <para>最接近平均高度—高度最接近所稀疏化区域中所有点平均高度的 LAS 点。</para>
+		/// <para>最低强度—所稀疏化区域所有点中强度值最低的 LAS 点。</para>
+		/// <para>最高强度—所稀疏化区域所有点中强度值最高的 LAS 点。</para>
+		/// <para>最低强度和最高强度—所稀疏化区域所有点中强度值最高和最低的两个 LAS 点。</para>
+		/// <para>最接近平均强度—强度值最接近所稀疏化区域中所有点平均强度值的 LAS 点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Class Codes and Weights</para>
-		/// <para>The weights assigned to each class code that determine which points are retained in each thinning region. This parameter is only enabled when the Class Code Weights option is specified in the Point Selection Method parameter. The class code with the highest weight will be retained in the thinning region. If two class codes with the same weight exist in a given thinning region, the class code with the smallest point source ID will be retained.</para>
+		/// <para>赋予每个类代码的权重，用于确定在每个稀疏化区域保留哪些点。仅当在点选择方法参数中指定了类代码权重选项时才会启用该参数。具有最高权重的类代码将保留在稀疏化区域中。如果给定稀疏化区域中存在两个具有相同权重的类代码，则将保留具有最小点源 ID 的类代码。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output File Name Suffix</para>
-		/// <para>The name added to each output file.</para>
+		/// <para>添加到每个输出文件中的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -164,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output LAS Dataset</para>
-		/// <para>The output LAS dataset referencing the newly created .las files.</para>
+		/// <para>参考新创建的 .las 文件的输出 LAS 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DELasDataset()]
@@ -172,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Preserved Classes</para>
-		/// <para>The input LAS points with the specified class code values will not be thinned from the output LAS files.</para>
+		/// <para>不会在输出 LAS 文件中对具有指定类代码值的输入 LAS 点进行稀疏化。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -184,11 +184,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Preserved Flags</para>
-		/// <para>The input LAS points with the specified class flag designations will be preserved in the output LAS files.</para>
-		/// <para>Model Key—Points with the model key class flag will be preserved.</para>
-		/// <para>Overlap—Points with the overlap class flag will be preserved.</para>
-		/// <para>Synthetic—Points with the synthetic class flag will be preserved.</para>
-		/// <para>Withheld—Points with the withheld class flag will be preserved.</para>
+		/// <para>具有指定类标记标识的输入 LAS 点将保留在输出 LAS 文件中。</para>
+		/// <para>模型关键点—具有模型关键类标记的点将被保留。</para>
+		/// <para>重叠—具有叠加类标记的点将被保留。</para>
+		/// <para>合成—具有合成类标记的点将被保留。</para>
+		/// <para>保留—具有保留类标记的点将被保留。</para>
 		/// <para><see cref="PreservedFlagsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -199,11 +199,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Preserved Returns</para>
-		/// <para>The input LAS points with the specified returns will be preserved in the output LAS files.</para>
-		/// <para>Single returns—All single return points will be included.</para>
-		/// <para>Last returns—All single and last returns will be included.</para>
-		/// <para>First of many returns—All points that are the first of multiple returns will be included.</para>
-		/// <para>Last of many returns—All points that are the last of multiple returns will be included.</para>
+		/// <para>具有指定返回值的输入 LAS 点将保留在输出 LAS 文件中。</para>
+		/// <para>单一回波—将包含所有单一返回点。</para>
+		/// <para>最后回波—将包含所有单一回波和最后回波。</para>
+		/// <para>第一个多重回波—将包含多个回波中的所有第一个返回点。</para>
+		/// <para>最后一个多重回波—将包含多个回波中的所有最后一个返回点。</para>
 		/// <para><see cref="PreservedReturnsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -214,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Excluded Classes</para>
-		/// <para>The input LAS points with the specified class code values will be excluded from the output LAS files.</para>
+		/// <para>具有指定类代码值的输入 LAS 点将从输出 LAS 文件中排除。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -226,11 +226,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Excluded Flags</para>
-		/// <para>The input LAS points with the specified class flag designations will be excluded from the output LAS files.</para>
-		/// <para>Model Key—Points with the model key class flag will be excluded.</para>
-		/// <para>Overlap—Points with the overlap class flag will be excluded.</para>
-		/// <para>Synthetic—Points with the synthetic class flag will be excluded.</para>
-		/// <para>Withheld—Points with the withheld class flag will be excluded.</para>
+		/// <para>具有指定类标记标识的输入 LAS 点将从输出 LAS 文件中排除。</para>
+		/// <para>模型关键点—具有模型关键类标记的点将被排除。</para>
+		/// <para>重叠—具有叠加类标记的点将被排除。</para>
+		/// <para>合成—具有合成类标记的点将被排除。</para>
+		/// <para>保留—具有保留类标记的点将被排除。</para>
 		/// <para><see cref="ExcludedFlagsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -241,11 +241,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Excluded Returns</para>
-		/// <para>The input LAS points with the specified returns will be excluded from the output LAS files.</para>
-		/// <para>Single returns—All single return points will be excluded.</para>
-		/// <para>Last returns—All single and last returns will be excluded.</para>
-		/// <para>First of many returns—All points that are the first of multiple returns will be excluded.</para>
-		/// <para>Last of many returns—All points that are the last of multiple returns will be excluded.</para>
+		/// <para>具有指定返回值的输入 LAS 点将从输出 LAS 文件中排除。</para>
+		/// <para>单一回波—将排除所有单一返回点。</para>
+		/// <para>最后回波—将排除所有单一回波和最后回波。</para>
+		/// <para>第一个多重回波—将排除多个回波中的所有第一个返回点。</para>
+		/// <para>最后一个多重回波—将排除多个回波中的所有最后一个返回点。</para>
 		/// <para><see cref="ExcludedReturnsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -256,9 +256,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Compression</para>
-		/// <para>Specifies whether the output .las file will be in a compressed format or the standard LAS format.</para>
-		/// <para>No Compression—The output will be in the standard LAS format (*.las file). This is the default.</para>
-		/// <para>zLAS Compression—Output .las files will be compressed in the zLAS format.</para>
+		/// <para>指定输出 .las 文件为压缩格式还是标准 LAS 格式。</para>
+		/// <para>不压缩—输出将为标准 LAS 格式（*.las 文件）。 这是默认设置。</para>
+		/// <para>zLAS 压缩—输出 .las 文件将以 zLAS 格式压缩。</para>
 		/// <para><see cref="CompressionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -269,9 +269,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Remove Variable Length Records</para>
-		/// <para>Indicates whether variable length records stored with the input LAS points will be preserved or eliminated in the output LAS data.</para>
-		/// <para>Unchecked—Variable length records will be maintained in the output LAS points. This is the default.</para>
-		/// <para>Checked—Variable length records will be removed from the output LAS points.</para>
+		/// <para>指示存储于输入 LAS 点中的可变长度记录是保留在输出 LAS 数据中，还是从中消除。</para>
+		/// <para>未选中 - 可变长度记录将保留在输出 LAS 点中。这是默认设置。</para>
+		/// <para>选中 - 可变长度记录将从输出 LAS 点中移除。</para>
 		/// <para><see cref="RemoveVlrEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -282,9 +282,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Rearrange LAS Points</para>
-		/// <para>Indicates if LAS points will be stored in spatially organized clusters.</para>
-		/// <para>Unchecked—The order of the points in the LAS files will remain the same.</para>
-		/// <para>Checked—The points in the LAS files will be rearranged. This is the default.</para>
+		/// <para>指示 LAS 点是否将存储在以空间方式组织的聚类中。</para>
+		/// <para>未选中 - LAS 文件中点的顺序将保持不变。</para>
+		/// <para>选中 - 将重新排列 LAS 文件中的点。这是默认设置。</para>
 		/// <para><see cref="RearrangePointsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -295,9 +295,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Compute Statistics</para>
-		/// <para>Specifies whether statistics will be computed for the .las files referenced by the LAS dataset. Computing statistics provides a spatial index for each .las file, which improves analysis and display performance. Statistics also enhance the filtering and symbology experience by limiting the display of LAS attributes, such as classification codes and return information, to values that are present in the .las file.</para>
-		/// <para>Checked—Statistics will be computed. This is the default.</para>
-		/// <para>Unchecked—Statistics will not be computed.</para>
+		/// <para>指定是否将计算 LAS 数据集引用的 .las 文件的统计数据。 计算统计数据时会为每个 .las 文件提供一个空间索引，从而提高了分析和显示性能。 统计数据还可通过将 LAS 属性（例如分类代码和返回信息）显示限制为 .las 文件中存在的值来提升过滤和符号系统体验。</para>
+		/// <para>选中 - 将计算统计数据。 这是默认设置。</para>
+		/// <para>未选中 - 不计算统计数据。</para>
 		/// <para><see cref="ComputeStatsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -330,14 +330,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ThinningDimensionEnum 
 		{
 			/// <summary>
-			/// <para>2D—Thinning will occur in tiles defined along the x,y-axis.</para>
+			/// <para>2D—稀疏化将发生在沿 x,y 轴定义的块中。</para>
 			/// </summary>
 			[GPValue("2D")]
 			[Description("2D")]
 			_2D,
 
 			/// <summary>
-			/// <para>3D—Thinning will occur in volumes of space defined by tiles along the x,y-axis, and height gradients along the z-axis. This is the default.</para>
+			/// <para>3D—稀疏化将发生在沿 x,y 轴的块及沿 z 轴的高度梯度所定义的空间体积中。这是默认设置。</para>
 			/// </summary>
 			[GPValue("3D")]
 			[Description("3D")]
@@ -351,31 +351,31 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum PreservedFlagsEnum 
 		{
 			/// <summary>
-			/// <para>Model Key—Points with the model key class flag will be preserved.</para>
+			/// <para>模型关键点—具有模型关键类标记的点将被保留。</para>
 			/// </summary>
 			[GPValue("MODEL_KEY")]
-			[Description("Model Key")]
+			[Description("模型关键点")]
 			Model_Key,
 
 			/// <summary>
-			/// <para>Overlap—Points with the overlap class flag will be preserved.</para>
+			/// <para>重叠—具有叠加类标记的点将被保留。</para>
 			/// </summary>
 			[GPValue("OVERLAP")]
-			[Description("Overlap")]
+			[Description("重叠")]
 			Overlap,
 
 			/// <summary>
-			/// <para>Synthetic—Points with the synthetic class flag will be preserved.</para>
+			/// <para>合成—具有合成类标记的点将被保留。</para>
 			/// </summary>
 			[GPValue("SYNTHETIC")]
-			[Description("Synthetic")]
+			[Description("合成")]
 			Synthetic,
 
 			/// <summary>
-			/// <para>Withheld—Points with the withheld class flag will be preserved.</para>
+			/// <para>保留—具有保留类标记的点将被保留。</para>
 			/// </summary>
 			[GPValue("WITHHELD")]
-			[Description("Withheld")]
+			[Description("保留")]
 			Withheld,
 
 		}
@@ -386,31 +386,31 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum PreservedReturnsEnum 
 		{
 			/// <summary>
-			/// <para>Single returns—All single return points will be included.</para>
+			/// <para>单一回波—将包含所有单一返回点。</para>
 			/// </summary>
 			[GPValue("SINGLE")]
-			[Description("Single returns")]
+			[Description("单一回波")]
 			Single_returns,
 
 			/// <summary>
-			/// <para>Last returns—All single and last returns will be included.</para>
+			/// <para>最后回波—将包含所有单一回波和最后回波。</para>
 			/// </summary>
 			[GPValue("LAST")]
-			[Description("Last returns")]
+			[Description("最后回波")]
 			Last_returns,
 
 			/// <summary>
-			/// <para>First of many returns—All points that are the first of multiple returns will be included.</para>
+			/// <para>第一个多重回波—将包含多个回波中的所有第一个返回点。</para>
 			/// </summary>
 			[GPValue("FIRST_OF_MANY")]
-			[Description("First of many returns")]
+			[Description("第一个多重回波")]
 			First_of_many_returns,
 
 			/// <summary>
-			/// <para>Last of many returns—All points that are the last of multiple returns will be included.</para>
+			/// <para>最后一个多重回波—将包含多个回波中的所有最后一个返回点。</para>
 			/// </summary>
 			[GPValue("LAST_OF_MANY")]
-			[Description("Last of many returns")]
+			[Description("最后一个多重回波")]
 			Last_of_many_returns,
 
 		}
@@ -421,31 +421,31 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ExcludedFlagsEnum 
 		{
 			/// <summary>
-			/// <para>Model Key—Points with the model key class flag will be excluded.</para>
+			/// <para>模型关键点—具有模型关键类标记的点将被排除。</para>
 			/// </summary>
 			[GPValue("MODEL_KEY")]
-			[Description("Model Key")]
+			[Description("模型关键点")]
 			Model_Key,
 
 			/// <summary>
-			/// <para>Overlap—Points with the overlap class flag will be excluded.</para>
+			/// <para>重叠—具有叠加类标记的点将被排除。</para>
 			/// </summary>
 			[GPValue("OVERLAP")]
-			[Description("Overlap")]
+			[Description("重叠")]
 			Overlap,
 
 			/// <summary>
-			/// <para>Synthetic—Points with the synthetic class flag will be excluded.</para>
+			/// <para>合成—具有合成类标记的点将被排除。</para>
 			/// </summary>
 			[GPValue("SYNTHETIC")]
-			[Description("Synthetic")]
+			[Description("合成")]
 			Synthetic,
 
 			/// <summary>
-			/// <para>Withheld—Points with the withheld class flag will be excluded.</para>
+			/// <para>保留—具有保留类标记的点将被排除。</para>
 			/// </summary>
 			[GPValue("WITHHELD")]
-			[Description("Withheld")]
+			[Description("保留")]
 			Withheld,
 
 		}
@@ -456,31 +456,31 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ExcludedReturnsEnum 
 		{
 			/// <summary>
-			/// <para>Single returns—All single return points will be excluded.</para>
+			/// <para>单一回波—将排除所有单一返回点。</para>
 			/// </summary>
 			[GPValue("SINGLE")]
-			[Description("Single returns")]
+			[Description("单一回波")]
 			Single_returns,
 
 			/// <summary>
-			/// <para>Last returns—All single and last returns will be excluded.</para>
+			/// <para>最后回波—将排除所有单一回波和最后回波。</para>
 			/// </summary>
 			[GPValue("LAST")]
-			[Description("Last returns")]
+			[Description("最后回波")]
 			Last_returns,
 
 			/// <summary>
-			/// <para>First of many returns—All points that are the first of multiple returns will be excluded.</para>
+			/// <para>第一个多重回波—将排除多个回波中的所有第一个返回点。</para>
 			/// </summary>
 			[GPValue("FIRST_OF_MANY")]
-			[Description("First of many returns")]
+			[Description("第一个多重回波")]
 			First_of_many_returns,
 
 			/// <summary>
-			/// <para>Last of many returns—All points that are the last of multiple returns will be excluded.</para>
+			/// <para>最后一个多重回波—将排除多个回波中的所有最后一个返回点。</para>
 			/// </summary>
 			[GPValue("LAST_OF_MANY")]
-			[Description("Last of many returns")]
+			[Description("最后一个多重回波")]
 			Last_of_many_returns,
 
 		}
@@ -491,17 +491,17 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum CompressionEnum 
 		{
 			/// <summary>
-			/// <para>No Compression—The output will be in the standard LAS format (*.las file). This is the default.</para>
+			/// <para>不压缩—输出将为标准 LAS 格式（*.las 文件）。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("NO_COMPRESSION")]
-			[Description("No Compression")]
+			[Description("不压缩")]
 			No_Compression,
 
 			/// <summary>
-			/// <para>zLAS Compression—Output .las files will be compressed in the zLAS format.</para>
+			/// <para>zLAS 压缩—输出 .las 文件将以 zLAS 格式压缩。</para>
 			/// </summary>
 			[GPValue("ZLAS")]
-			[Description("zLAS Compression")]
+			[Description("zLAS 压缩")]
 			zLAS_Compression,
 
 		}
@@ -512,14 +512,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum RemoveVlrEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Variable length records will be removed from the output LAS points.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REMOVE_VLR")]
 			REMOVE_VLR,
 
 			/// <summary>
-			/// <para>Unchecked—Variable length records will be maintained in the output LAS points. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("MAINTAIN_VLR")]
@@ -533,14 +533,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum RearrangePointsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The points in the LAS files will be rearranged. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REARRANGE_POINTS")]
 			REARRANGE_POINTS,
 
 			/// <summary>
-			/// <para>Unchecked—The order of the points in the LAS files will remain the same.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("MAINTAIN_POINTS")]
@@ -554,14 +554,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ComputeStatsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Statistics will be computed. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMPUTE_STATS")]
 			COMPUTE_STATS,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics will not be computed.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_COMPUTE_STATS")]

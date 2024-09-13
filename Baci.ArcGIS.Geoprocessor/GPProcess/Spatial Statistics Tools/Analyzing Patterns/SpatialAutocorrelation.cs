@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Spatial Autocorrelation (Global Moran's I)</para>
-	/// <para>Spatial Autocorrelation (Global Moran's I)</para>
-	/// <para>Measures spatial autocorrelation based on feature locations and attribute values using the Global Moran's I statistic.</para>
+	/// <para>空间自相关 (Global Moran's I)</para>
+	/// <para>根据要素位置和属性值使用 Global Moran's I 统计量测量空间自相关性。</para>
 	/// </summary>
 	public class SpatialAutocorrelation : AbstractGPProcess
 	{
@@ -21,37 +21,37 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputFeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>The feature class for which spatial autocorrelation will be calculated.</para>
+		/// <para>要计算空间自相关的要素类。</para>
 		/// </param>
 		/// <param name="InputField">
 		/// <para>Input Field</para>
-		/// <para>The numeric field used in assessing spatial autocorrelation.</para>
+		/// <para>用于评估空间自相关的数值字段。</para>
 		/// </param>
 		/// <param name="ConceptualizationOfSpatialRelationships">
 		/// <para>Conceptualization of Spatial Relationships</para>
-		/// <para>Specifies how spatial relationships among features are defined.</para>
-		/// <para>Inverse distance—Nearby neighboring features have a larger influence on the computations for a target feature than features that are far away.</para>
-		/// <para>Inverse distance squared—This is the same as Inverse distance except that the slope is sharper, so influence drops off more quickly, and only a target feature&apos;s closest neighbors will exert substantial influence on computations for that feature.</para>
-		/// <para>Fixed distance band—Each feature is analyzed within the context of neighboring features. Neighboring features inside the specified critical distance (Distance Band or Threshold Distance) receive a weight of one and exert influence on computations for the target feature. Neighboring features outside the critical distance receive a weight of zero and have no influence on a target feature&apos;s computations.</para>
-		/// <para>Zone of indifference—Features within the specified critical distance (Distance Band or Threshold Distance) of a target feature receive a weight of one and influence computations for that feature. Once the critical distance is exceeded, weights (and the influence a neighboring feature has on target feature computations) diminish with distance.</para>
-		/// <para>K nearest neighbors—The closest k features are included in the analysis. The number of neighbors (k) to include in the analysis is specified by the Number of Neighbors parameter.</para>
-		/// <para>Contiguity edges only—Only neighboring polygon features that share a boundary or overlap will influence computations for the target polygon feature.</para>
-		/// <para>Contiguity edges corners—Polygon features that share a boundary, share a node, or overlap will influence computations for the target polygon feature.</para>
-		/// <para>Get spatial weights from file—Spatial relationships are defined by a specified spatial weights file. The path to the spatial weights file is specified by the Weights Matrix File parameter.</para>
+		/// <para>指定要素空间关系的定义方式。</para>
+		/// <para>反距离—与远处的要素相比，附近的邻近要素对目标要素的计算的影响要大一些。</para>
+		/// <para>反距离平方—与反距离类似，但它的坡度更明显，因此影响下降得更快，并且只有目标要素的最近邻域会对要素的计算产生重大影响。</para>
+		/// <para>固定距离范围—将对邻近要素环境中的每个要素进行分析。在指定临界距离（距离范围或距离阈值）内的邻近要素将分配有值为 1 的权重，并对目标要素的计算产生影响。在指定临界距离外的邻近要素将分配值为零的权重，并且不会对目标要素的计算产生任何影响。</para>
+		/// <para>无差别的区域—在目标要素的指定临界距离（距离范围或距离阈值）内的要素将分配有值为 1 的权重，并且会影响目标要素的计算。一旦超出该临界距离，权重（以及邻近要素对目标要素计算的影响）就会随距离的增加而减小。</para>
+		/// <para>K - 最近邻—最近的 k 要素将包含在分析中。分析中要包含的相邻要素数目 (k) 由相邻要素的数目参数指定。</para>
+		/// <para>仅邻接边—只有共用边界或重叠的相邻面要素会影响目标面要素的计算。</para>
+		/// <para>邻接边拐角—共享边界、节点或重叠的面要素会影响目标面要素的计算。</para>
+		/// <para>通过文件获取空间权重—将由指定空间权重文件定义空间关系。指向空间权重文件的路径由权重矩阵文件参数指定。</para>
 		/// <para><see cref="ConceptualizationOfSpatialRelationshipsEnum"/></para>
 		/// </param>
 		/// <param name="DistanceMethod">
 		/// <para>Distance Method</para>
-		/// <para>Specifies how distances are calculated from each feature to neighboring features.</para>
-		/// <para>Euclidean—The straight-line distance between two points (as the crow flies) will be used.</para>
-		/// <para>Manhattan—The distance between two points measured along axes at right angles (city block) will be used. This is calculated by summing the (absolute) difference between the x- and y-coordinates</para>
+		/// <para>指定计算每个要素与邻近要素之间的距离的方式。</para>
+		/// <para>欧氏—将使用两点间的直线距离。</para>
+		/// <para>曼哈顿—将使用沿垂直轴度量的两点间的距离（城市街区）。计算方法是对两点的 x 和 y 坐标的差值（绝对值）求和</para>
 		/// <para><see cref="DistanceMethodEnum"/></para>
 		/// </param>
 		/// <param name="Standardization">
 		/// <para>Standardization</para>
-		/// <para>Specifies whether standardization of spatial weights will be applied. Row standardization is recommended whenever the distribution of your features is potentially biased due to sampling design or an imposed aggregation scheme.</para>
-		/// <para>None—No standardization of spatial weights is applied.</para>
-		/// <para>Row—Spatial weights are standardized; each weight is divided by its row sum (the sum of the weights of all neighboring features). This is the default.</para>
+		/// <para>指定是否对空间权重执行标准化。当要素的分布由于采样设计或施加的聚合方案而可能偏离时，建议使用行标准化。</para>
+		/// <para>无—不对空间权重执行标准化。</para>
+		/// <para>行—对空间权重执行标准化；每个权重都会除以行的和（所有相邻要素的权重和）。这是默认设置。</para>
 		/// <para><see cref="StandardizationEnum"/></para>
 		/// </param>
 		public SpatialAutocorrelation(object InputFeatureClass, object InputField, object ConceptualizationOfSpatialRelationships, object DistanceMethod, object Standardization)
@@ -64,9 +64,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Spatial Autocorrelation (Global Moran's I)</para>
+		/// <para>Tool Display Name : 空间自相关 (Global Moran's I)</para>
 		/// </summary>
-		public override string DisplayName() => "Spatial Autocorrelation (Global Moran's I)";
+		public override string DisplayName() => "空间自相关 (Global Moran's I)";
 
 		/// <summary>
 		/// <para>Tool Name : SpatialAutocorrelation</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>The feature class for which spatial autocorrelation will be calculated.</para>
+		/// <para>要计算空间自相关的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Field</para>
-		/// <para>The numeric field used in assessing spatial autocorrelation.</para>
+		/// <para>用于评估空间自相关的数值字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -118,9 +118,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Generate Report</para>
-		/// <para>Specifies whether the tool will create a graphical summary of results.</para>
-		/// <para>Checked—A graphical summary will be created as an HTML file.</para>
-		/// <para>Unchecked—No graphical summary will be created. This is the default.</para>
+		/// <para>指定工具是否将创建结果的图形汇总。</para>
+		/// <para>选中 - 图形汇总将以 HTML 文件形式创建。</para>
+		/// <para>未选中 - 不会创建图形汇总。这是默认设置。</para>
 		/// <para><see cref="GenerateReportEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -130,15 +130,15 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Conceptualization of Spatial Relationships</para>
-		/// <para>Specifies how spatial relationships among features are defined.</para>
-		/// <para>Inverse distance—Nearby neighboring features have a larger influence on the computations for a target feature than features that are far away.</para>
-		/// <para>Inverse distance squared—This is the same as Inverse distance except that the slope is sharper, so influence drops off more quickly, and only a target feature&apos;s closest neighbors will exert substantial influence on computations for that feature.</para>
-		/// <para>Fixed distance band—Each feature is analyzed within the context of neighboring features. Neighboring features inside the specified critical distance (Distance Band or Threshold Distance) receive a weight of one and exert influence on computations for the target feature. Neighboring features outside the critical distance receive a weight of zero and have no influence on a target feature&apos;s computations.</para>
-		/// <para>Zone of indifference—Features within the specified critical distance (Distance Band or Threshold Distance) of a target feature receive a weight of one and influence computations for that feature. Once the critical distance is exceeded, weights (and the influence a neighboring feature has on target feature computations) diminish with distance.</para>
-		/// <para>K nearest neighbors—The closest k features are included in the analysis. The number of neighbors (k) to include in the analysis is specified by the Number of Neighbors parameter.</para>
-		/// <para>Contiguity edges only—Only neighboring polygon features that share a boundary or overlap will influence computations for the target polygon feature.</para>
-		/// <para>Contiguity edges corners—Polygon features that share a boundary, share a node, or overlap will influence computations for the target polygon feature.</para>
-		/// <para>Get spatial weights from file—Spatial relationships are defined by a specified spatial weights file. The path to the spatial weights file is specified by the Weights Matrix File parameter.</para>
+		/// <para>指定要素空间关系的定义方式。</para>
+		/// <para>反距离—与远处的要素相比，附近的邻近要素对目标要素的计算的影响要大一些。</para>
+		/// <para>反距离平方—与反距离类似，但它的坡度更明显，因此影响下降得更快，并且只有目标要素的最近邻域会对要素的计算产生重大影响。</para>
+		/// <para>固定距离范围—将对邻近要素环境中的每个要素进行分析。在指定临界距离（距离范围或距离阈值）内的邻近要素将分配有值为 1 的权重，并对目标要素的计算产生影响。在指定临界距离外的邻近要素将分配值为零的权重，并且不会对目标要素的计算产生任何影响。</para>
+		/// <para>无差别的区域—在目标要素的指定临界距离（距离范围或距离阈值）内的要素将分配有值为 1 的权重，并且会影响目标要素的计算。一旦超出该临界距离，权重（以及邻近要素对目标要素计算的影响）就会随距离的增加而减小。</para>
+		/// <para>K - 最近邻—最近的 k 要素将包含在分析中。分析中要包含的相邻要素数目 (k) 由相邻要素的数目参数指定。</para>
+		/// <para>仅邻接边—只有共用边界或重叠的相邻面要素会影响目标面要素的计算。</para>
+		/// <para>邻接边拐角—共享边界、节点或重叠的面要素会影响目标面要素的计算。</para>
+		/// <para>通过文件获取空间权重—将由指定空间权重文件定义空间关系。指向空间权重文件的路径由权重矩阵文件参数指定。</para>
 		/// <para><see cref="ConceptualizationOfSpatialRelationshipsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -148,9 +148,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Distance Method</para>
-		/// <para>Specifies how distances are calculated from each feature to neighboring features.</para>
-		/// <para>Euclidean—The straight-line distance between two points (as the crow flies) will be used.</para>
-		/// <para>Manhattan—The distance between two points measured along axes at right angles (city block) will be used. This is calculated by summing the (absolute) difference between the x- and y-coordinates</para>
+		/// <para>指定计算每个要素与邻近要素之间的距离的方式。</para>
+		/// <para>欧氏—将使用两点间的直线距离。</para>
+		/// <para>曼哈顿—将使用沿垂直轴度量的两点间的距离（城市街区）。计算方法是对两点的 x 和 y 坐标的差值（绝对值）求和</para>
 		/// <para><see cref="DistanceMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -160,9 +160,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Standardization</para>
-		/// <para>Specifies whether standardization of spatial weights will be applied. Row standardization is recommended whenever the distribution of your features is potentially biased due to sampling design or an imposed aggregation scheme.</para>
-		/// <para>None—No standardization of spatial weights is applied.</para>
-		/// <para>Row—Spatial weights are standardized; each weight is divided by its row sum (the sum of the weights of all neighboring features). This is the default.</para>
+		/// <para>指定是否对空间权重执行标准化。当要素的分布由于采样设计或施加的聚合方案而可能偏离时，建议使用行标准化。</para>
+		/// <para>无—不对空间权重执行标准化。</para>
+		/// <para>行—对空间权重执行标准化；每个权重都会除以行的和（所有相邻要素的权重和）。这是默认设置。</para>
 		/// <para><see cref="StandardizationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -172,9 +172,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Distance Band or Threshold Distance</para>
-		/// <para>The cutoff distance for the various inverse distance and fixed distance options. Features outside the specified cutoff for a target feature are ignored in analyses for that feature. However, for Zone of indifference, the influence of features outside the given distance is reduced with distance, while those inside the distance threshold are equally considered. The distance value entered should match that of the output coordinate system.</para>
-		/// <para>For the inverse distance conceptualizations of spatial relationships, a value of 0 indicates that no threshold distance is applied; when this parameter is left blank, a default threshold value is computed and applied. This default value is the Euclidean distance, which ensures that every feature has at least one neighbor.</para>
-		/// <para>This parameter has no effect when polygon contiguity (Contiguity edges only or Contiguity edges corners) or Get spatial weights from file spatial conceptualization is selected.</para>
+		/// <para>各种“反距离”和“固定距离”选项的中断距离。将在对目标要素的分析中忽略为该要素指定的中断之外的要素。但是，对于无差别的区域，指定距离之外的要素的影响会随距离的减小而变弱，而在距离阈值之内的影响则被视为是等同的。输入的距离值应该与输出坐标系的值匹配。</para>
+		/// <para>对于空间关系的反距离概念化，值为 0 表示未应用任何阈值距离；当将此参数留空时，将计算并应用默认阈值。此默认值为确保每个要素至少具有一个邻域的欧氏距离。</para>
+		/// <para>当选择了面邻接（仅邻接边或邻接边拐角）或通过文件获取空间权重的空间概念化时，该参数无效。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -183,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Weights Matrix File</para>
-		/// <para>The path to a file containing weights that define spatial, and potentially temporal, relationships among features.</para>
+		/// <para>包含权重（其定义要素间的空间关系以及可能的时态关系）的文件的路径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -221,7 +221,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Number of Neighbors</para>
-		/// <para>An integer specifying the number of neighbors to include in the analysis.</para>
+		/// <para>用于指定将包含在分析中的相邻要素数目的整数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -245,14 +245,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum GenerateReportEnum 
 		{
 			/// <summary>
-			/// <para>Checked—A graphical summary will be created as an HTML file.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GENERATE_REPORT")]
 			GENERATE_REPORT,
 
 			/// <summary>
-			/// <para>Unchecked—No graphical summary will be created. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_REPORT")]
@@ -266,59 +266,59 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum ConceptualizationOfSpatialRelationshipsEnum 
 		{
 			/// <summary>
-			/// <para>Inverse distance—Nearby neighboring features have a larger influence on the computations for a target feature than features that are far away.</para>
+			/// <para>反距离—与远处的要素相比，附近的邻近要素对目标要素的计算的影响要大一些。</para>
 			/// </summary>
 			[GPValue("INVERSE_DISTANCE")]
-			[Description("Inverse distance")]
+			[Description("反距离")]
 			Inverse_distance,
 
 			/// <summary>
-			/// <para>Inverse distance squared—This is the same as Inverse distance except that the slope is sharper, so influence drops off more quickly, and only a target feature&apos;s closest neighbors will exert substantial influence on computations for that feature.</para>
+			/// <para>反距离平方—与反距离类似，但它的坡度更明显，因此影响下降得更快，并且只有目标要素的最近邻域会对要素的计算产生重大影响。</para>
 			/// </summary>
 			[GPValue("INVERSE_DISTANCE_SQUARED")]
-			[Description("Inverse distance squared")]
+			[Description("反距离平方")]
 			Inverse_distance_squared,
 
 			/// <summary>
-			/// <para>Fixed distance band—Each feature is analyzed within the context of neighboring features. Neighboring features inside the specified critical distance (Distance Band or Threshold Distance) receive a weight of one and exert influence on computations for the target feature. Neighboring features outside the critical distance receive a weight of zero and have no influence on a target feature&apos;s computations.</para>
+			/// <para>固定距离范围—将对邻近要素环境中的每个要素进行分析。在指定临界距离（距离范围或距离阈值）内的邻近要素将分配有值为 1 的权重，并对目标要素的计算产生影响。在指定临界距离外的邻近要素将分配值为零的权重，并且不会对目标要素的计算产生任何影响。</para>
 			/// </summary>
 			[GPValue("FIXED_DISTANCE_BAND")]
-			[Description("Fixed distance band")]
+			[Description("固定距离范围")]
 			Fixed_distance_band,
 
 			/// <summary>
-			/// <para>Zone of indifference—Features within the specified critical distance (Distance Band or Threshold Distance) of a target feature receive a weight of one and influence computations for that feature. Once the critical distance is exceeded, weights (and the influence a neighboring feature has on target feature computations) diminish with distance.</para>
+			/// <para>无差别的区域—在目标要素的指定临界距离（距离范围或距离阈值）内的要素将分配有值为 1 的权重，并且会影响目标要素的计算。一旦超出该临界距离，权重（以及邻近要素对目标要素计算的影响）就会随距离的增加而减小。</para>
 			/// </summary>
 			[GPValue("ZONE_OF_INDIFFERENCE")]
-			[Description("Zone of indifference")]
+			[Description("无差别的区域")]
 			Zone_of_indifference,
 
 			/// <summary>
-			/// <para>K nearest neighbors—The closest k features are included in the analysis. The number of neighbors (k) to include in the analysis is specified by the Number of Neighbors parameter.</para>
+			/// <para>K - 最近邻—最近的 k 要素将包含在分析中。分析中要包含的相邻要素数目 (k) 由相邻要素的数目参数指定。</para>
 			/// </summary>
 			[GPValue("K_NEAREST_NEIGHBORS")]
-			[Description("K nearest neighbors")]
+			[Description("K - 最近邻")]
 			K_nearest_neighbors,
 
 			/// <summary>
-			/// <para>Contiguity edges only—Only neighboring polygon features that share a boundary or overlap will influence computations for the target polygon feature.</para>
+			/// <para>仅邻接边—只有共用边界或重叠的相邻面要素会影响目标面要素的计算。</para>
 			/// </summary>
 			[GPValue("CONTIGUITY_EDGES_ONLY")]
-			[Description("Contiguity edges only")]
+			[Description("仅邻接边")]
 			Contiguity_edges_only,
 
 			/// <summary>
-			/// <para>Contiguity edges corners—Polygon features that share a boundary, share a node, or overlap will influence computations for the target polygon feature.</para>
+			/// <para>邻接边拐角—共享边界、节点或重叠的面要素会影响目标面要素的计算。</para>
 			/// </summary>
 			[GPValue("CONTIGUITY_EDGES_CORNERS")]
-			[Description("Contiguity edges corners")]
+			[Description("邻接边拐角")]
 			Contiguity_edges_corners,
 
 			/// <summary>
-			/// <para>Get spatial weights from file—Spatial relationships are defined by a specified spatial weights file. The path to the spatial weights file is specified by the Weights Matrix File parameter.</para>
+			/// <para>通过文件获取空间权重—将由指定空间权重文件定义空间关系。指向空间权重文件的路径由权重矩阵文件参数指定。</para>
 			/// </summary>
 			[GPValue("GET_SPATIAL_WEIGHTS_FROM_FILE")]
-			[Description("Get spatial weights from file")]
+			[Description("通过文件获取空间权重")]
 			Get_spatial_weights_from_file,
 
 		}
@@ -329,17 +329,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum DistanceMethodEnum 
 		{
 			/// <summary>
-			/// <para>Euclidean—The straight-line distance between two points (as the crow flies) will be used.</para>
+			/// <para>欧氏—将使用两点间的直线距离。</para>
 			/// </summary>
 			[GPValue("EUCLIDEAN_DISTANCE")]
-			[Description("Euclidean")]
+			[Description("欧氏")]
 			Euclidean,
 
 			/// <summary>
-			/// <para>Manhattan—The distance between two points measured along axes at right angles (city block) will be used. This is calculated by summing the (absolute) difference between the x- and y-coordinates</para>
+			/// <para>曼哈顿—将使用沿垂直轴度量的两点间的距离（城市街区）。计算方法是对两点的 x 和 y 坐标的差值（绝对值）求和</para>
 			/// </summary>
 			[GPValue("MANHATTAN_DISTANCE")]
-			[Description("Manhattan")]
+			[Description("曼哈顿")]
 			Manhattan,
 
 		}
@@ -350,17 +350,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum StandardizationEnum 
 		{
 			/// <summary>
-			/// <para>None—No standardization of spatial weights is applied.</para>
+			/// <para>无—不对空间权重执行标准化。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 			/// <summary>
-			/// <para>Row—Spatial weights are standardized; each weight is divided by its row sum (the sum of the weights of all neighboring features). This is the default.</para>
+			/// <para>行—对空间权重执行标准化；每个权重都会除以行的和（所有相邻要素的权重和）。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ROW")]
-			[Description("Row")]
+			[Description("行")]
 			Row,
 
 		}

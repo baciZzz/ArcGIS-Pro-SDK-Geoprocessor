@@ -11,9 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Generate Parcel Fabric Links</para>
-	/// <para>Generate Parcel Fabric Links</para>
-	/// <para>Generates displacement links for parcel fabric points that have changed</para>
-	/// <para>locations in a specified time period.</para>
+	/// <para>生成宗地结构链接</para>
+	/// <para>为在指定时间段内更改位置的宗地结构点生成位移链接。</para>
 	/// </summary>
 	public class GenerateParcelFabricLinks : AbstractGPProcess
 	{
@@ -22,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="TargetParcelFabric">
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric that will be used to generate links. The parcel fabric must be published as a feature service and the default version is used to generate links.</para>
+		/// <para>将用于生成链接的宗地结构。 必须将宗地结构发布为要素服务，且将使用默认版本生成链接。</para>
 		/// </param>
 		/// <param name="OutLinksFeatureClass">
 		/// <para>Output Links Feature Class</para>
-		/// <para>The output line feature class that will store the generated links.</para>
+		/// <para>将存储所生成链接的输出线要素类。</para>
 		/// </param>
 		/// <param name="OutAnchorPointsFeatureClass">
 		/// <para>Output Anchor Points Feature Class</para>
-		/// <para>The output point feature class that will store the anchor points.</para>
+		/// <para>将存储锚点的输出点要素类。</para>
 		/// </param>
 		/// <param name="FromDate">
 		/// <para>From Date</para>
-		/// <para>The date from which to search the parcel fabric for points that have changed locations. Links and anchor points will be only be generated for points on or after this date.</para>
+		/// <para>在宗地结构中搜索已更改位置的点的日期。 系统将仅针对该日期或该日期之后的点生成链接和锚点。</para>
 		/// </param>
 		public GenerateParcelFabricLinks(object TargetParcelFabric, object OutLinksFeatureClass, object OutAnchorPointsFeatureClass, object FromDate)
 		{
@@ -45,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Parcel Fabric Links</para>
+		/// <para>Tool Display Name : 生成宗地结构链接</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Parcel Fabric Links";
+		public override string DisplayName() => "生成宗地结构链接";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateParcelFabricLinks</para>
@@ -81,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric that will be used to generate links. The parcel fabric must be published as a feature service and the default version is used to generate links.</para>
+		/// <para>将用于生成链接的宗地结构。 必须将宗地结构发布为要素服务，且将使用默认版本生成链接。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPParcelLayer()]
@@ -89,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Output Links Feature Class</para>
-		/// <para>The output line feature class that will store the generated links.</para>
+		/// <para>将存储所生成链接的输出线要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -99,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Output Anchor Points Feature Class</para>
-		/// <para>The output point feature class that will store the anchor points.</para>
+		/// <para>将存储锚点的输出点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -109,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>From Date</para>
-		/// <para>The date from which to search the parcel fabric for points that have changed locations. Links and anchor points will be only be generated for points on or after this date.</para>
+		/// <para>在宗地结构中搜索已更改位置的点的日期。 系统将仅针对该日期或该日期之后的点生成链接和锚点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDate()]
@@ -117,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>To Date</para>
-		/// <para>The end date of the time period in which to search the parcel fabric for points that have changed locations. Links and anchor points will only be generated for points on or before this date. If no To date is specified, links and anchor points will be generated for all points on or after the specified From Date. If the To Date is specified at a future date, links will be generated in the time period between the From Date and the current date and time.</para>
+		/// <para>在宗地结构中搜索已更改位置的点的时间段的结束日期。 系统将仅针对该日期或该日期之前的点生成链接和锚点。 如果未指定“结束日期”，则系统将为指定开始日期或该日期之后的所有点生成链接和锚点。 如果将结束日期指定为某个未来的日期，则系统将在开始日期与当前日期和时间之间的时间段内生成链接。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -125,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Minimum Link Length</para>
-		/// <para>The minimum length of the generated links. If the link length between the current points and their original locations is smaller than the specified value, anchor points are created for the original locations of the points.</para>
+		/// <para>所生成链接的最小长度。 如果当前点与其原始位置之间的链接长度小于指定的值，则系统会为该点的原始位置创建锚点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -133,13 +132,13 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Extent</para>
-		/// <para>The extent of the dataset to be processed. Only features that fall within the specified extent will be processed.</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Union of Inputs—The extent will be based on the maximum extent of all inputs.</para>
-		/// <para>Intersection of Inputs—The extent will be based on the minimum area common to all inputs.</para>
-		/// <para>Current Display Extent—The extent is equal to the visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>要处理的数据集的范围。 仅会处理指定范围内的要素。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>输入的并集 - 该范围将基于所有输入的最大范围。</para>
+		/// <para>输入的交集 - 该范围将基于所有输入共用的最小区域。</para>
+		/// <para>当前显示范围 - 该范围与可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]

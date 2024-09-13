@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Export Web Map</para>
-	/// <para>Export Web Map</para>
-	/// <para>Takes the state of a web app (for example, included services, layer visibility settings, and client-side graphics) and returns a printable page layout or basic map of the specified area of interest.</para>
+	/// <para>导出 Web 地图</para>
+	/// <para>采用 web 应用程序的状态（例如，随附的服务、图层可见性设置和客户端图形）并返回可打印的页面布局或指定感兴趣区的基本地图。</para>
 	/// </summary>
 	public class ExportWebMap : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		/// <param name="WebMapAsJSON">
 		/// <para>Web Map as JSON</para>
-		/// <para>A JSON representation of the state of the map to be exported as it appears in the web app. See the ExportWebMap specification to understand how to format this text. The ArcGIS web APIs for JavaScript, Flex, Silverlight, and so on allow you to get this JSON string from the map.</para>
+		/// <para>要按照 Web 应用程序中显示的情况导出地图状态的 JSON 制图表达。请参阅 ExportWebMap 规范以了解如何设置此文本格式。 通过 ArcGIS Web API（针对 JavaScript、Flex、Silverlight 等），您可以从地图中获取此 JSON 字符串。</para>
 		/// </param>
 		/// <param name="OutputFile">
 		/// <para>Output File</para>
-		/// <para>The output file name. The extension of the file depends on the Format parameter value.</para>
+		/// <para>输出文件名。 文件扩展名取决于格式参数值。</para>
 		/// </param>
 		public ExportWebMap(object WebMapAsJSON, object OutputFile)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Export Web Map</para>
+		/// <para>Tool Display Name : 导出 Web 地图</para>
 		/// </summary>
-		public override string DisplayName() => "Export Web Map";
+		public override string DisplayName() => "导出 Web 地图";
 
 		/// <summary>
 		/// <para>Tool Name : ExportWebMap</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Web Map as JSON</para>
-		/// <para>A JSON representation of the state of the map to be exported as it appears in the web app. See the ExportWebMap specification to understand how to format this text. The ArcGIS web APIs for JavaScript, Flex, Silverlight, and so on allow you to get this JSON string from the map.</para>
+		/// <para>要按照 Web 应用程序中显示的情况导出地图状态的 JSON 制图表达。请参阅 ExportWebMap 规范以了解如何设置此文本格式。 通过 ArcGIS Web API（针对 JavaScript、Flex、Silverlight 等），您可以从地图中获取此 JSON 字符串。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>The output file name. The extension of the file depends on the Format parameter value.</para>
+		/// <para>输出文件名。 文件扩展名取决于格式参数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -86,18 +86,18 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Format</para>
-		/// <para>Specifies the format in which the map image for printing will be delivered.</para>
-		/// <para>8-bit Portable Network Graphics (PNG8)—8-bit Portable Network Graphics (PNG8) will be used. This is the default.</para>
-		/// <para>Portable Document Format (PDF)—Portable Document Format (PDF) will be used.</para>
-		/// <para>32-bit Portable Network Graphics (PNG32)—32-bit Portable Network Graphics (PNG32) will be used.</para>
-		/// <para>Joint Photographic Experts Group (JPG)— Joint Photographic Experts Group (JPG) will be used.</para>
-		/// <para>Graphics Interchange Format (GIF)— Graphics Interchange Format (GIF) will be used.</para>
-		/// <para>Encapsulated PostScript (EPS)— Encapsulated PostScript (EPS) will be used.</para>
-		/// <para>Scalable Vector Graphics (SVG)—Scalable Vector Graphics (SVG) will be used.</para>
-		/// <para>Compressed Scalable Vector Graphics (SVGZ)—Compressed Scalable Vector Graphics (SVGZ) will be used.</para>
-		/// <para>Adobe Illustrator Exchange (AIX)—Adobe Illustrator Exchange (AIX) will be used.</para>
-		/// <para>Tag Image File Format (TIFF)—Tag Image File Format (TIFF) will be used.</para>
-		/// <para>The background of the output file is always opaque.</para>
+		/// <para>指定传送打印用地图影像时所使用的格式。</para>
+		/// <para>8 位可移植网络图形 (PNG8)。—将使用 8 位可移植网络图形 (PNG8)。 这是默认设置。</para>
+		/// <para>便携文档格式(PDF)—将使用可移植文档格式 (PDF)。</para>
+		/// <para>32 位可移植网络图形 (PNG32)—将使用 32 位可移植网络图形 (PNG32)。</para>
+		/// <para>联合图像专家组 (JPG)—将使用联合图像专家组 (JPG)。</para>
+		/// <para>图形交换格式 (GIF)—将使用图形交换格式 (GIF)。</para>
+		/// <para>Encapsulated PostScript (EPS)—将使用 Encapsulated PostScript (EPS)。</para>
+		/// <para>可伸缩矢量图形 (SVG)—将使用可伸缩矢量图形 (SVG)。</para>
+		/// <para>压缩的可伸缩矢量图形 (SVGZ)—将使用压缩的可伸缩矢量图形 (SVGZ)。</para>
+		/// <para>Adobe Illustrator Exchange (AIX)—将使用 Adobe Illustrator Exchange (AIX)。</para>
+		/// <para>标记图像文件格式 (TIFF)—将使用标记图像文件格式 (TIFF)。</para>
+		/// <para>输出文件的背景始终是不透明的。</para>
 		/// <para><see cref="FormatEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Layout Templates Folder</para>
-		/// <para>The full path to the folder containing layout pages (.pagx files ) to be used as layout templates. The default location is &lt;install_directory&gt;\Resources\ArcToolBox\Templates\ExportWebMapTemplates.</para>
+		/// <para>包含要用作布局模板的布局页面（.pagx 文件）的文件夹的完整路径。 默认位置为 &lt;install_directory&gt;\Resources\ArcToolBox\Templates\ExportWebMapTemplates。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFolder()]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Layout Template</para>
-		/// <para>The name of a template from the list or the keyword MAP_ONLY. When MAP_ONLY is chosen or an empty string is passed in, the output map will not contain any page layout elements such as title, legend, or scale bar.</para>
+		/// <para>可以是列表中某个模板的名称，也可以是关键字 MAP_ONLY。 选择 MAP_ONLY 或传递空字符串时，输出地图将不包含任何页面布局元素，例如标题、图例和比例尺。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -129,73 +129,73 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		public enum FormatEnum 
 		{
 			/// <summary>
-			/// <para>Portable Document Format (PDF)—Portable Document Format (PDF) will be used.</para>
+			/// <para>便携文档格式(PDF)—将使用可移植文档格式 (PDF)。</para>
 			/// </summary>
 			[GPValue("PDF")]
-			[Description("Portable Document Format (PDF)")]
+			[Description("便携文档格式(PDF)")]
 			PDF,
 
 			/// <summary>
-			/// <para>32-bit Portable Network Graphics (PNG32)—32-bit Portable Network Graphics (PNG32) will be used.</para>
+			/// <para>32 位可移植网络图形 (PNG32)—将使用 32 位可移植网络图形 (PNG32)。</para>
 			/// </summary>
 			[GPValue("PNG32")]
-			[Description("32-bit Portable Network Graphics (PNG32)")]
+			[Description("32 位可移植网络图形 (PNG32)")]
 			PNG32,
 
 			/// <summary>
-			/// <para>8-bit Portable Network Graphics (PNG8)—8-bit Portable Network Graphics (PNG8) will be used. This is the default.</para>
+			/// <para>8 位可移植网络图形 (PNG8)。—将使用 8 位可移植网络图形 (PNG8)。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("PNG8")]
-			[Description("8-bit Portable Network Graphics (PNG8)")]
+			[Description("8 位可移植网络图形 (PNG8)。")]
 			PNG8,
 
 			/// <summary>
-			/// <para>Joint Photographic Experts Group (JPG)— Joint Photographic Experts Group (JPG) will be used.</para>
+			/// <para>联合图像专家组 (JPG)—将使用联合图像专家组 (JPG)。</para>
 			/// </summary>
 			[GPValue("JPG")]
-			[Description("Joint Photographic Experts Group (JPG)")]
+			[Description("联合图像专家组 (JPG)")]
 			JPG,
 
 			/// <summary>
-			/// <para>Graphics Interchange Format (GIF)— Graphics Interchange Format (GIF) will be used.</para>
+			/// <para>图形交换格式 (GIF)—将使用图形交换格式 (GIF)。</para>
 			/// </summary>
 			[GPValue("GIF")]
-			[Description("Graphics Interchange Format (GIF)")]
+			[Description("图形交换格式 (GIF)")]
 			GIF,
 
 			/// <summary>
-			/// <para>Encapsulated PostScript (EPS)— Encapsulated PostScript (EPS) will be used.</para>
+			/// <para>Encapsulated PostScript (EPS)—将使用 Encapsulated PostScript (EPS)。</para>
 			/// </summary>
 			[GPValue("EPS")]
 			[Description("Encapsulated PostScript (EPS)")]
 			EPS,
 
 			/// <summary>
-			/// <para>Scalable Vector Graphics (SVG)—Scalable Vector Graphics (SVG) will be used.</para>
+			/// <para>可伸缩矢量图形 (SVG)—将使用可伸缩矢量图形 (SVG)。</para>
 			/// </summary>
 			[GPValue("SVG")]
-			[Description("Scalable Vector Graphics (SVG)")]
+			[Description("可伸缩矢量图形 (SVG)")]
 			SVG,
 
 			/// <summary>
-			/// <para>Compressed Scalable Vector Graphics (SVGZ)—Compressed Scalable Vector Graphics (SVGZ) will be used.</para>
+			/// <para>压缩的可伸缩矢量图形 (SVGZ)—将使用压缩的可伸缩矢量图形 (SVGZ)。</para>
 			/// </summary>
 			[GPValue("SVGZ")]
-			[Description("Compressed Scalable Vector Graphics (SVGZ)")]
+			[Description("压缩的可伸缩矢量图形 (SVGZ)")]
 			SVGZ,
 
 			/// <summary>
-			/// <para>Adobe Illustrator Exchange (AIX)—Adobe Illustrator Exchange (AIX) will be used.</para>
+			/// <para>Adobe Illustrator Exchange (AIX)—将使用 Adobe Illustrator Exchange (AIX)。</para>
 			/// </summary>
 			[GPValue("AIX")]
 			[Description("Adobe Illustrator Exchange (AIX)")]
 			AIX,
 
 			/// <summary>
-			/// <para>Tag Image File Format (TIFF)—Tag Image File Format (TIFF) will be used.</para>
+			/// <para>标记图像文件格式 (TIFF)—将使用标记图像文件格式 (TIFF)。</para>
 			/// </summary>
 			[GPValue("TIFF")]
-			[Description("Tag Image File Format (TIFF)")]
+			[Description("标记图像文件格式 (TIFF)")]
 			TIFF,
 
 		}

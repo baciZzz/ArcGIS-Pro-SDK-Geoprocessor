@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Minimum Bounding Volume</para>
-	/// <para>Minimum Bounding Volume</para>
-	/// <para>Creates multipatch features that represent the volume of space occupied by a set of 3D features.</para>
+	/// <para>最小包围体</para>
+	/// <para>创建代表一组 3D 要素所占空间体积的多面体要素。</para>
 	/// </summary>
 	public class MinimumBoundingVolume : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The LAS dataset or 3D features whose minimum bounding volume will be evaluated.</para>
+		/// <para>将评估其最小包围体的 LAS 数据集或 3D 要素。</para>
 		/// </param>
 		/// <param name="ZValue">
 		/// <para>Z Value</para>
-		/// <para>The source of z-values for the input data.</para>
+		/// <para>输入数据 z 值的源。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </param>
 		public MinimumBoundingVolume(object InFeatures, object ZValue, object OutFeatureClass)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Minimum Bounding Volume</para>
+		/// <para>Tool Display Name : 最小包围体</para>
 		/// </summary>
-		public override string DisplayName() => "Minimum Bounding Volume";
+		public override string DisplayName() => "最小包围体";
 
 		/// <summary>
 		/// <para>Tool Name : MinimumBoundingVolume</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The LAS dataset or 3D features whose minimum bounding volume will be evaluated.</para>
+		/// <para>将评估其最小包围体的 LAS 数据集或 3D 要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Z Value</para>
-		/// <para>The source of z-values for the input data.</para>
+		/// <para>输入数据 z 值的源。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -104,11 +104,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class Type</para>
-		/// <para>Specifies the method that will be used to determine the geometry of the minimum bounding volume.</para>
-		/// <para>Convex hull—The smallest convex region surrounding the input data.</para>
-		/// <para>Sphere—The smallest sphere enclosing the input data.</para>
-		/// <para>Envelope—The XYZ extent of the input data.</para>
-		/// <para>Concave hull—The concave hull that encloses the input data.</para>
+		/// <para>指定用来确定最小包围体的几何的方法。</para>
+		/// <para>凸包—输入数据周围的最小凸形区域。</para>
+		/// <para>球体—封闭输入数据的最小球体。</para>
+		/// <para>包络—输入数据的 XYZ 范围。</para>
+		/// <para>凹包—包围输入数据的凹包。</para>
 		/// <para><see cref="GeometryTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -118,10 +118,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Group Options</para>
-		/// <para>Specifies how the input features will be grouped; each group will be enclosed with one output multipatch.</para>
-		/// <para>None—Input features will not be grouped. This is the default. This option is not available for point input.</para>
-		/// <para>All—All input features will be treated as one group.</para>
-		/// <para>List—Input features will be grouped based on their common values in the specified field or fields in the group field parameter.</para>
+		/// <para>指定如何对输入要素进行分组；每组都会通过一个输出多面体来封闭。</para>
+		/// <para>无—输入要素不会被分组。这是默认设置。此选项不适用于点输入数据。</para>
+		/// <para>所有—所有输入要素将视为位于一个组中。</para>
+		/// <para>列表—根据指定字段的公共值或分组字段参数中的字段对输入要素进行分组。</para>
 		/// <para><see cref="GroupEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Group Field(s)</para>
-		/// <para>The field or fields in the input features that will be used to group features when List is specified as Group Option. At least one group field is required for the List option. All features that have the same value in the specified field or fields will be treated as a group.</para>
+		/// <para>将 List 指定为组选项时用于对要素进行分组的输入要素的字段（一个或多个）。对于 List 选项，至少需要一个分组字段。指定字段（一个或多个）的值相同的所有要素均将视为位于一个组中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -142,9 +142,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Add geometry characteristics as attributes to output</para>
-		/// <para>Specifies whether each feature will be attributed with the volume and surface area of the minimum bounding volume.</para>
-		/// <para>Unchecked—No geometric attributes will be added to the output feature. This is the default.</para>
-		/// <para>Checked—Geometric attributes will be added to the output feature.</para>
+		/// <para>指定每个要素是否具有最小包围体的体积和表面积属性。</para>
+		/// <para>未选中 - 不会向输出要素添加几何属性。这是默认设置。</para>
+		/// <para>选中 - 将会向输出要素添加几何属性。</para>
 		/// <para><see cref="MbvFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -169,31 +169,31 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum GeometryTypeEnum 
 		{
 			/// <summary>
-			/// <para>Convex hull—The smallest convex region surrounding the input data.</para>
+			/// <para>凸包—输入数据周围的最小凸形区域。</para>
 			/// </summary>
 			[GPValue("CONVEX_HULL")]
-			[Description("Convex hull")]
+			[Description("凸包")]
 			Convex_hull,
 
 			/// <summary>
-			/// <para>Sphere—The smallest sphere enclosing the input data.</para>
+			/// <para>球体—封闭输入数据的最小球体。</para>
 			/// </summary>
 			[GPValue("SPHERE")]
-			[Description("Sphere")]
+			[Description("球体")]
 			Sphere,
 
 			/// <summary>
-			/// <para>Envelope—The XYZ extent of the input data.</para>
+			/// <para>包络—输入数据的 XYZ 范围。</para>
 			/// </summary>
 			[GPValue("ENVELOPE")]
-			[Description("Envelope")]
+			[Description("包络")]
 			Envelope,
 
 			/// <summary>
-			/// <para>Concave hull—The concave hull that encloses the input data.</para>
+			/// <para>凹包—包围输入数据的凹包。</para>
 			/// </summary>
 			[GPValue("CONCAVE_HULL")]
-			[Description("Concave hull")]
+			[Description("凹包")]
 			Concave_hull,
 
 		}
@@ -204,24 +204,24 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum GroupEnum 
 		{
 			/// <summary>
-			/// <para>None—Input features will not be grouped. This is the default. This option is not available for point input.</para>
+			/// <para>无—输入要素不会被分组。这是默认设置。此选项不适用于点输入数据。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 			/// <summary>
-			/// <para>All—All input features will be treated as one group.</para>
+			/// <para>所有—所有输入要素将视为位于一个组中。</para>
 			/// </summary>
 			[GPValue("ALL")]
-			[Description("All")]
+			[Description("所有")]
 			All,
 
 			/// <summary>
-			/// <para>List—Input features will be grouped based on their common values in the specified field or fields in the group field parameter.</para>
+			/// <para>列表—根据指定字段的公共值或分组字段参数中的字段对输入要素进行分组。</para>
 			/// </summary>
 			[GPValue("LIST")]
-			[Description("List")]
+			[Description("列表")]
 			List,
 
 		}
@@ -232,14 +232,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum MbvFieldsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Geometric attributes will be added to the output feature.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MBV_FIELDS")]
 			MBV_FIELDS,
 
 			/// <summary>
-			/// <para>Unchecked—No geometric attributes will be added to the output feature. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_MBV_FIELDS")]

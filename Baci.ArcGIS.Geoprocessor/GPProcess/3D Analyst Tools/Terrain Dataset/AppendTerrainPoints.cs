@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Append Terrain Points</para>
-	/// <para>Append Terrain Points</para>
-	/// <para>Appends points to a point  feature referenced by a terrain dataset.</para>
+	/// <para>追加 Terrain 点</para>
+	/// <para>向 terrain 数据集引用的点要素追加点。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,15 +23,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InTerrain">
 		/// <para>Input Terrain</para>
-		/// <para>The terrain dataset to process.</para>
+		/// <para>待处理的 terrain 数据集。</para>
 		/// </param>
 		/// <param name="TerrainFeatureClass">
 		/// <para>Input Terrain Data Source</para>
-		/// <para>The feature class that contributes to the terrain dataset into which the points or multipoints will be added.</para>
+		/// <para>要添加点或多点的 terrain 数据集的构成要素类。</para>
 		/// </param>
 		/// <param name="InPointFeatures">
 		/// <para>Input Points</para>
-		/// <para>The feature class of points or multipoints to add as an additional data source for the terrain dataset.</para>
+		/// <para>要添加为 terrain 数据集的附加数据源的点或多点的要素类。</para>
 		/// </param>
 		public AppendTerrainPoints(object InTerrain, object TerrainFeatureClass, object InPointFeatures)
 		{
@@ -41,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Append Terrain Points</para>
+		/// <para>Tool Display Name : 追加 Terrain 点</para>
 		/// </summary>
-		public override string DisplayName() => "Append Terrain Points";
+		public override string DisplayName() => "追加 Terrain 点";
 
 		/// <summary>
 		/// <para>Tool Name : AppendTerrainPoints</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Terrain</para>
-		/// <para>The terrain dataset to process.</para>
+		/// <para>待处理的 terrain 数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTerrainLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Terrain Data Source</para>
-		/// <para>The feature class that contributes to the terrain dataset into which the points or multipoints will be added.</para>
+		/// <para>要添加点或多点的 terrain 数据集的构成要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Points</para>
-		/// <para>The feature class of points or multipoints to add as an additional data source for the terrain dataset.</para>
+		/// <para>要添加为 terrain 数据集的附加数据源的点或多点的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Area of Interest</para>
-		/// <para>Specify a polygon feature class or extent values to define the area where point features will be added. This parameter is empty by default, which results in all the points from the input feature class being loaded to the terrain feature.</para>
+		/// <para>指定用于定义要添加点要素的区域的面要素类或范围值。默认情况下此参数为空，这样输入要素类的所有点都将被加载到 terrain 要素中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]

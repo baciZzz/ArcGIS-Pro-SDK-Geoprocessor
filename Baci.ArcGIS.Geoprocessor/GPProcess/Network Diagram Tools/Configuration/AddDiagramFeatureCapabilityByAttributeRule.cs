@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Diagram Feature Capability By Attribute Rule</para>
-	/// <para>Add Diagram Feature Capability By Attribute Rule</para>
-	/// <para>Adds a diagram rule to a diagram template to assign a particular capability on diagram features currently represented in the diagram. This capability is used by other rules executed later in the rule sequence. The diagram features that will be processed are queried from a network source class or object table by attributes.</para>
+	/// <para>添加按属性逻辑示意图要素功能规则</para>
+	/// <para>用于将逻辑示意图规则添加到逻辑示意图模板，以便对逻辑示意图中当前显示的逻辑示意图要素分配特定功能。 稍后在规则序列中执行的其他规则将会使用此功能。 将按属性从网络源类或对象表对待处理的逻辑示意图要素进行查询。</para>
 	/// </summary>
 	public class AddDiagramFeatureCapabilityByAttributeRule : AbstractGPProcess
 	{
@@ -21,34 +21,34 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template that will be modified.</para>
+		/// <para>要修改的逻辑示意图模板名称</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
-		/// <para>Specifies whether the rule will be active when generating and updating diagrams based on the specified template.</para>
-		/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
-		/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+		/// <para>指定在基于指定模板生成并更新逻辑示意图时，规则是否将处于激活状态。</para>
+		/// <para>选中 - 在基于输入模板生成并更新逻辑示意图的过程中，添加的规则将会变为激活状态。 这是默认设置。</para>
+		/// <para>未选中 - 在基于输入模板生成或更新逻辑示意图的过程中，添加的规则将不会变为激活状态。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </param>
 		/// <param name="NetworkSource">
 		/// <para>Network Source</para>
-		/// <para>The network source class or object table that references the features or objects associated with the diagram features to which the particular capability will be assigned.</para>
+		/// <para>此网络源类或对象表可引用与系统将为其分配特定功能的逻辑示意图要素相关联的要素。</para>
 		/// </param>
 		/// <param name="WhereClause">
 		/// <para>Expression</para>
-		/// <para>An SQL expression used to filter out the features or objects of interest among the specified network source feature class or objet table. For more information on SQL syntax, see SQL reference for query expressions used in ArcGIS.</para>
+		/// <para>此 SQL 表达式用于过滤掉指定网络源要素类或对象表中的感兴趣要素或对象。 有关 SQL 语法的详细信息，请参阅在 ArcGIS 中使用的查询表达式的 SQL 参考。</para>
 		/// </param>
 		/// <param name="Capability">
 		/// <para>Capability</para>
-		/// <para>Specifies the capability that will be assigned to the queried diagram features at the end of the rule execution. This capability will be used by other rules executed later in the rule sequence.</para>
-		/// <para>Prevent related container from collapse— All queried features will be flagged to prevent their related container from being collapsed by Collapse Container rules executed later in the rule sequence. This is the default.</para>
-		/// <para>Allow related container to collapse— All queried features will be flagged to allow their related container to be collapsed by Collapse Container rules executed later in the rule sequence.</para>
-		/// <para>Prevent reduce junction— All queried junctions will be flagged to prevent Reduce Junction rules executed later in the rule sequence to reduce them.</para>
-		/// <para>Allow reduce junction— All queried junctions will be flagged to allow Reduce Junction rules executed later in the rule sequence to reduce them.</para>
+		/// <para>指定将在规则执行结束时分配至所查询逻辑示意图要素的功能。 规则序列中稍后执行的其他规则将使用此功能。</para>
+		/// <para>阻止相关容器折叠—系统将标记所有已查询的要素，以阻止其父容器被规则序列中稍后执行的“折叠容器”规则折叠。 这是默认设置。</para>
+		/// <para>允许相关容器折叠—系统将标记所有已查询的要素，以允许通过规则序列中稍后执行的“折叠容器”规则折叠其相关容器。</para>
+		/// <para>阻止减少交汇点—系统将标记所有已查询的交汇点，以阻止在规则序列中稍后执行的“减少交汇点”规则减少这些交汇点。</para>
+		/// <para>允许减少交汇点—系统将标记所有已查询的交汇点，以允许在规则序列中稍后执行的“减少交汇点”规则减少这些交汇点。</para>
 		/// <para><see cref="CapabilityEnum"/></para>
 		/// </param>
 		public AddDiagramFeatureCapabilityByAttributeRule(object InUtilityNetwork, object TemplateName, object IsActive, object NetworkSource, object WhereClause, object Capability)
@@ -62,9 +62,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Diagram Feature Capability By Attribute Rule</para>
+		/// <para>Tool Display Name : 添加按属性逻辑示意图要素功能规则</para>
 		/// </summary>
-		public override string DisplayName() => "Add Diagram Feature Capability By Attribute Rule";
+		public override string DisplayName() => "添加按属性逻辑示意图要素功能规则";
 
 		/// <summary>
 		/// <para>Tool Name : AddDiagramFeatureCapabilityByAttributeRule</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template that will be modified.</para>
+		/// <para>要修改的逻辑示意图模板名称</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -114,9 +114,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Active</para>
-		/// <para>Specifies whether the rule will be active when generating and updating diagrams based on the specified template.</para>
-		/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
-		/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+		/// <para>指定在基于指定模板生成并更新逻辑示意图时，规则是否将处于激活状态。</para>
+		/// <para>选中 - 在基于输入模板生成并更新逻辑示意图的过程中，添加的规则将会变为激活状态。 这是默认设置。</para>
+		/// <para>未选中 - 在基于输入模板生成或更新逻辑示意图的过程中，添加的规则将不会变为激活状态。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Network Source</para>
-		/// <para>The network source class or object table that references the features or objects associated with the diagram features to which the particular capability will be assigned.</para>
+		/// <para>此网络源类或对象表可引用与系统将为其分配特定功能的逻辑示意图要素相关联的要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Expression</para>
-		/// <para>An SQL expression used to filter out the features or objects of interest among the specified network source feature class or objet table. For more information on SQL syntax, see SQL reference for query expressions used in ArcGIS.</para>
+		/// <para>此 SQL 表达式用于过滤掉指定网络源要素类或对象表中的感兴趣要素或对象。 有关 SQL 语法的详细信息，请参阅在 ArcGIS 中使用的查询表达式的 SQL 参考。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSQLExpression()]
@@ -142,11 +142,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Capability</para>
-		/// <para>Specifies the capability that will be assigned to the queried diagram features at the end of the rule execution. This capability will be used by other rules executed later in the rule sequence.</para>
-		/// <para>Prevent related container from collapse— All queried features will be flagged to prevent their related container from being collapsed by Collapse Container rules executed later in the rule sequence. This is the default.</para>
-		/// <para>Allow related container to collapse— All queried features will be flagged to allow their related container to be collapsed by Collapse Container rules executed later in the rule sequence.</para>
-		/// <para>Prevent reduce junction— All queried junctions will be flagged to prevent Reduce Junction rules executed later in the rule sequence to reduce them.</para>
-		/// <para>Allow reduce junction— All queried junctions will be flagged to allow Reduce Junction rules executed later in the rule sequence to reduce them.</para>
+		/// <para>指定将在规则执行结束时分配至所查询逻辑示意图要素的功能。 规则序列中稍后执行的其他规则将使用此功能。</para>
+		/// <para>阻止相关容器折叠—系统将标记所有已查询的要素，以阻止其父容器被规则序列中稍后执行的“折叠容器”规则折叠。 这是默认设置。</para>
+		/// <para>允许相关容器折叠—系统将标记所有已查询的要素，以允许通过规则序列中稍后执行的“折叠容器”规则折叠其相关容器。</para>
+		/// <para>阻止减少交汇点—系统将标记所有已查询的交汇点，以阻止在规则序列中稍后执行的“减少交汇点”规则减少这些交汇点。</para>
+		/// <para>允许减少交汇点—系统将标记所有已查询的交汇点，以允许在规则序列中稍后执行的“减少交汇点”规则减少这些交汇点。</para>
 		/// <para><see cref="CapabilityEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Description</para>
-		/// <para>The description of the rule.</para>
+		/// <para>规则的描述。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -184,14 +184,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsActiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACTIVE")]
 			ACTIVE,
 
 			/// <summary>
-			/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INACTIVE")]
@@ -205,31 +205,31 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum CapabilityEnum 
 		{
 			/// <summary>
-			/// <para>Allow related container to collapse— All queried features will be flagged to allow their related container to be collapsed by Collapse Container rules executed later in the rule sequence.</para>
+			/// <para>允许相关容器折叠—系统将标记所有已查询的要素，以允许通过规则序列中稍后执行的“折叠容器”规则折叠其相关容器。</para>
 			/// </summary>
 			[GPValue("ALLOW_TO_COLLAPSE_CONTAINER")]
-			[Description("Allow related container to collapse")]
+			[Description("允许相关容器折叠")]
 			Allow_related_container_to_collapse,
 
 			/// <summary>
-			/// <para>Prevent related container from collapse— All queried features will be flagged to prevent their related container from being collapsed by Collapse Container rules executed later in the rule sequence. This is the default.</para>
+			/// <para>阻止相关容器折叠—系统将标记所有已查询的要素，以阻止其父容器被规则序列中稍后执行的“折叠容器”规则折叠。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("PREVENT_TO_COLLAPSE_CONTAINER")]
-			[Description("Prevent related container from collapse")]
+			[Description("阻止相关容器折叠")]
 			Prevent_related_container_from_collapse,
 
 			/// <summary>
-			/// <para>Allow reduce junction— All queried junctions will be flagged to allow Reduce Junction rules executed later in the rule sequence to reduce them.</para>
+			/// <para>允许减少交汇点—系统将标记所有已查询的交汇点，以允许在规则序列中稍后执行的“减少交汇点”规则减少这些交汇点。</para>
 			/// </summary>
 			[GPValue("ALLOW_TO_REDUCE_JUNCTION")]
-			[Description("Allow reduce junction")]
+			[Description("允许减少交汇点")]
 			Allow_reduce_junction,
 
 			/// <summary>
-			/// <para>Prevent reduce junction— All queried junctions will be flagged to prevent Reduce Junction rules executed later in the rule sequence to reduce them.</para>
+			/// <para>阻止减少交汇点—系统将标记所有已查询的交汇点，以阻止在规则序列中稍后执行的“减少交汇点”规则减少这些交汇点。</para>
 			/// </summary>
 			[GPValue("PREVENT_TO_REDUCE_JUNCTION")]
-			[Description("Prevent reduce junction")]
+			[Description("阻止减少交汇点")]
 			Prevent_reduce_junction,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Test</para>
-	/// <para>Test</para>
-	/// <para>Performs a Boolean evaluation of the input raster using a logical expression.</para>
+	/// <para>条件测试</para>
+	/// <para>使用逻辑表达式对输入栅格执行布尔评估。</para>
 	/// </summary>
 	public class Test : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster on which the Boolean evaluation is performed, based on a logical expression.</para>
+		/// <para>基于逻辑表达式在其上执行布尔评估的输入栅格。</para>
 		/// </param>
 		/// <param name="WhereClause">
 		/// <para>Where clause</para>
-		/// <para>The logical expression that will determine which input cells will return a value of true (1) and which will be false (0).</para>
-		/// <para>The Where clause follows the general form of an SQL expression. It can be entered directly, for example, VALUE &gt; 100, if you click the Edit SQL mode button . If in the Edit Clause Mode , you can begin constructing the expression by clicking on the Add Clause Mode button.</para>
+		/// <para>用于确定哪些输入像元将返回“真”值 (1) 以及哪些输入像元将返回“假”值 (0) 的逻辑表达式。</para>
+		/// <para>Where 子句遵循 SQL 表达式的一般格式。 如果您单击编辑 SQL 模式按钮 ，则可以直接输入，例如 VALUE &gt; 100。 如果处于编辑子句模式 中，则可以通过单击添加子句模式按钮来开始构建表达式。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The output cell values will be either 0 or 1.</para>
+		/// <para>输出栅格。</para>
+		/// <para>输出像元值为 0 或 1。</para>
 		/// </param>
 		public Test(object InRaster, object WhereClause, object OutRaster)
 		{
@@ -41,14 +41,14 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Test</para>
+		/// <para>Tool Display Name : 条件测试</para>
 		/// </summary>
-		public override string DisplayName() => "Test";
+		public override string DisplayName() => "条件测试";
 
 		/// <summary>
-		/// <para>Tool Name : Test</para>
+		/// <para>Tool Name : 条件测试</para>
 		/// </summary>
-		public override string ToolName() => "Test";
+		public override string ToolName() => "条件测试";
 
 		/// <summary>
 		/// <para>Tool Excute Name : ia.Test</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster on which the Boolean evaluation is performed, based on a logical expression.</para>
+		/// <para>基于逻辑表达式在其上执行布尔评估的输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -89,8 +89,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Where clause</para>
-		/// <para>The logical expression that will determine which input cells will return a value of true (1) and which will be false (0).</para>
-		/// <para>The Where clause follows the general form of an SQL expression. It can be entered directly, for example, VALUE &gt; 100, if you click the Edit SQL mode button . If in the Edit Clause Mode , you can begin constructing the expression by clicking on the Add Clause Mode button.</para>
+		/// <para>用于确定哪些输入像元将返回“真”值 (1) 以及哪些输入像元将返回“假”值 (0) 的逻辑表达式。</para>
+		/// <para>Where 子句遵循 SQL 表达式的一般格式。 如果您单击编辑 SQL 模式按钮 ，则可以直接输入，例如 VALUE &gt; 100。 如果处于编辑子句模式 中，则可以通过单击添加子句模式按钮来开始构建表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSQLExpression()]
@@ -98,8 +98,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The output cell values will be either 0 or 1.</para>
+		/// <para>输出栅格。</para>
+		/// <para>输出像元值为 0 或 1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

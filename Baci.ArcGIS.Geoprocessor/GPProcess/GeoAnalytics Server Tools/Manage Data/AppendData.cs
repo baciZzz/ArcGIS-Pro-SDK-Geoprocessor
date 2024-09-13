@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Append Data</para>
-	/// <para>Append Data</para>
-	/// <para>Appends features to an existing hosted feature layer.</para>
+	/// <para>追加数据</para>
+	/// <para>用于将要素追加到现有托管图层。</para>
 	/// </summary>
 	public class AppendData : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// </summary>
 		/// <param name="InputLayer">
 		/// <para>Input Layer</para>
-		/// <para>The hosted feature layer to which features will be appended.</para>
+		/// <para>将追加要素的托管要素图层。</para>
 		/// </param>
 		/// <param name="AppendLayer">
 		/// <para>Append Layer</para>
-		/// <para>The layer containing features to append to the input layer.</para>
+		/// <para>包含要追加到输入图层的要素的图层。</para>
 		/// </param>
 		/// <param name="AppendMethod">
 		/// <para>Append Method</para>
-		/// <para>Specifies how fields from the Input Layer will be appended with values from the Append Layer.</para>
-		/// <para>Append matching fields only—Input layer fields will only be appended if they have a matching field in the append layer. Fields without a match will be appended with null values.</para>
-		/// <para>Append matching fields and resolve differences—Input layer fields can be appended with append layer fields of the same name and different type, or with values calculated from Arcade expressions.</para>
+		/// <para>指定如何对输入图层的字段追加追加图层的值。</para>
+		/// <para>仅追加匹配字段—仅当输入图层字段在追加图层中具有匹配字段时，才会追加该输入图层字段。 将为没有匹配的字段追加空值。</para>
+		/// <para>追加匹配字段并解决差异—可以为输入图层字段追加具有相同名称和不同类型的追加图层字段，也可以追加由 Arcade 表达式计算得出的值。</para>
 		/// <para><see cref="AppendMethodEnum"/></para>
 		/// </param>
 		public AppendData(object InputLayer, object AppendLayer, object AppendMethod)
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Append Data</para>
+		/// <para>Tool Display Name : 追加数据</para>
 		/// </summary>
-		public override string DisplayName() => "Append Data";
+		public override string DisplayName() => "追加数据";
 
 		/// <summary>
 		/// <para>Tool Name : AppendData</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The hosted feature layer to which features will be appended.</para>
+		/// <para>将追加要素的托管要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Append Layer</para>
-		/// <para>The layer containing features to append to the input layer.</para>
+		/// <para>包含要追加到输入图层的要素的图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRecordSet()]
@@ -96,9 +96,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Append Method</para>
-		/// <para>Specifies how fields from the Input Layer will be appended with values from the Append Layer.</para>
-		/// <para>Append matching fields only—Input layer fields will only be appended if they have a matching field in the append layer. Fields without a match will be appended with null values.</para>
-		/// <para>Append matching fields and resolve differences—Input layer fields can be appended with append layer fields of the same name and different type, or with values calculated from Arcade expressions.</para>
+		/// <para>指定如何对输入图层的字段追加追加图层的值。</para>
+		/// <para>仅追加匹配字段—仅当输入图层字段在追加图层中具有匹配字段时，才会追加该输入图层字段。 将为没有匹配的字段追加空值。</para>
+		/// <para>追加匹配字段并解决差异—可以为输入图层字段追加具有相同名称和不同类型的追加图层字段，也可以追加由 Arcade 表达式计算得出的值。</para>
 		/// <para><see cref="AppendMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Append Fields</para>
-		/// <para>The append layer fields of the same type and different name as the input layer fields to be appended. Select the Input Field you want to append to, and the Append Field containing the values you want to append.</para>
+		/// <para>追加图层字段与要追加的输入图层字段具有相同的类型和不同的名称。 选择要追加的输入字段，以及包含要追加的值的追加字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -117,8 +117,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 
 		/// <summary>
 		/// <para>Append Expressions</para>
-		/// <para>The Arcade expression used to calculate field values for the input field. Expressions are written in Arcade and can include mathematical operators and multiple fields.</para>
-		/// <para>Select the fields you want to append to, and enter an expression for each to calculate the values you want to append. If the layer is added to the map, the fields and helpers can be used to build an expression.</para>
+		/// <para>用于计算输入字段的字段值的 Arcade 表达式。 以 Arcade 格式写入表达式，其中可包括数学运算符和多个字段。</para>
+		/// <para>选择要追加到的字段，然后为每个字段输入一个表达式，以计算要追加的值。 如果将图层添加到地图中，则可以使用字段和助手来构建表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -149,17 +149,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		public enum AppendMethodEnum 
 		{
 			/// <summary>
-			/// <para>Append matching fields only—Input layer fields will only be appended if they have a matching field in the append layer. Fields without a match will be appended with null values.</para>
+			/// <para>仅追加匹配字段—仅当输入图层字段在追加图层中具有匹配字段时，才会追加该输入图层字段。 将为没有匹配的字段追加空值。</para>
 			/// </summary>
 			[GPValue("MATCHING_ONLY")]
-			[Description("Append matching fields only")]
+			[Description("仅追加匹配字段")]
 			Append_matching_fields_only,
 
 			/// <summary>
-			/// <para>Append matching fields and resolve differences—Input layer fields can be appended with append layer fields of the same name and different type, or with values calculated from Arcade expressions.</para>
+			/// <para>追加匹配字段并解决差异—可以为输入图层字段追加具有相同名称和不同类型的追加图层字段，也可以追加由 Arcade 表达式计算得出的值。</para>
 			/// </summary>
 			[GPValue("FIELD_MAPPING")]
-			[Description("Append matching fields and resolve differences")]
+			[Description("追加匹配字段并解决差异")]
 			Append_matching_fields_and_resolve_differences,
 
 		}

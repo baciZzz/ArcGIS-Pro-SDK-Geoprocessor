@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Create LRS Event From Existing Dataset</para>
-	/// <para>Create LRS Event From Existing Dataset</para>
-	/// <para>Registers an existing feature class as an LRS event.</para>
+	/// <para>基于现有数据集创建 LRS 事件</para>
+	/// <para>将现有要素类注册为 LRS 事件。</para>
 	/// </summary>
 	public class CreateLRSEventFromExistingDataset : AbstractGPProcess
 	{
@@ -21,35 +21,35 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="ParentNetwork">
 		/// <para>Parent LRS Network</para>
-		/// <para>The network to which the event will be registered.</para>
+		/// <para>事件将注册到的网络。</para>
 		/// </param>
 		/// <param name="InFeatureClass">
 		/// <para>Event Feature Class</para>
-		/// <para>The event to be registered.</para>
+		/// <para>要注册的事件。</para>
 		/// </param>
 		/// <param name="EventIdField">
 		/// <para>Event ID Field</para>
-		/// <para>The event ID field in the event feature class.</para>
+		/// <para>事件要素类中的事件 ID 字段。</para>
 		/// </param>
 		/// <param name="RouteIdField">
 		/// <para>Route ID Field</para>
-		/// <para>The route ID field if the feature class is a point event that doesn't span routes or the from route ID field if the feature class is a line event that spans routes.</para>
+		/// <para>如果要素类是不跨越路径的点事件，则为路径 ID 字段；如果要素类是跨越路径的线事件，则为路径始于 ID 字段。</para>
 		/// </param>
 		/// <param name="FromDateField">
 		/// <para>From Date Field</para>
-		/// <para>The from date field in the event feature class.</para>
+		/// <para>事件要素类中的开始日期字段。</para>
 		/// </param>
 		/// <param name="ToDateField">
 		/// <para>To Date Field</para>
-		/// <para>The to date field in the event feature class.</para>
+		/// <para>事件要素类中的结束日期字段。</para>
 		/// </param>
 		/// <param name="LocErrorField">
 		/// <para>Loc Error Field</para>
-		/// <para>The location error field in the event feature class.</para>
+		/// <para>事件要素类中的位置错误字段。</para>
 		/// </param>
 		/// <param name="MeasureField">
 		/// <para>Measure Field</para>
-		/// <para>The measure field if the feature class is a point event or the from measure field if the feature class is a line event.</para>
+		/// <para>如果要素类是点事件，则为测量字段；如果要素类是线事件，则为测量始于字段。</para>
 		/// </param>
 		public CreateLRSEventFromExistingDataset(object ParentNetwork, object InFeatureClass, object EventIdField, object RouteIdField, object FromDateField, object ToDateField, object LocErrorField, object MeasureField)
 		{
@@ -64,9 +64,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create LRS Event From Existing Dataset</para>
+		/// <para>Tool Display Name : 基于现有数据集创建 LRS 事件</para>
 		/// </summary>
-		public override string DisplayName() => "Create LRS Event From Existing Dataset";
+		public override string DisplayName() => "基于现有数据集创建 LRS 事件";
 
 		/// <summary>
 		/// <para>Tool Name : CreateLRSEventFromExistingDataset</para>
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Parent LRS Network</para>
-		/// <para>The network to which the event will be registered.</para>
+		/// <para>事件将注册到的网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Event Feature Class</para>
-		/// <para>The event to be registered.</para>
+		/// <para>要注册的事件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Event ID Field</para>
-		/// <para>The event ID field in the event feature class.</para>
+		/// <para>事件要素类中的事件 ID 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Route ID Field</para>
-		/// <para>The route ID field if the feature class is a point event that doesn't span routes or the from route ID field if the feature class is a line event that spans routes.</para>
+		/// <para>如果要素类是不跨越路径的点事件，则为路径 ID 字段；如果要素类是跨越路径的线事件，则为路径始于 ID 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>From Date Field</para>
-		/// <para>The from date field in the event feature class.</para>
+		/// <para>事件要素类中的开始日期字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Date Field</para>
-		/// <para>The to date field in the event feature class.</para>
+		/// <para>事件要素类中的结束日期字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -160,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Loc Error Field</para>
-		/// <para>The location error field in the event feature class.</para>
+		/// <para>事件要素类中的位置错误字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Measure Field</para>
-		/// <para>The measure field if the feature class is a point event or the from measure field if the feature class is a line event.</para>
+		/// <para>如果要素类是点事件，则为测量字段；如果要素类是线事件，则为测量始于字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -180,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Measure Field</para>
-		/// <para>The to measure field in the event feature class. This parameter is required for line events.</para>
+		/// <para>事件要素类中的测量止于字段。 此参数为线路事件的必需项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -190,9 +190,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Event Spans Routes</para>
-		/// <para>Specifies whether the event records will span routes.</para>
-		/// <para>Checked—The event records will span routes.</para>
-		/// <para>Unchecked—The event records will not span routes. This is the default.</para>
+		/// <para>指定事件记录是否跨越路径。</para>
+		/// <para>选中 - 事件记录将跨越路径。</para>
+		/// <para>未选中 - 事件记录不会跨越路径。 这是默认设置。</para>
 		/// <para><see cref="EventSpansRoutesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -202,7 +202,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Route ID Field</para>
-		/// <para>The to route ID field for events that span routes. This parameter is required if the event feature class geometry type is polyline.</para>
+		/// <para>跨越路径的事件的路径 ID 字段。 如果事件要素类几何类型为折线，则此参数为必需项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -212,9 +212,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Store Route Name</para>
-		/// <para>Specifies whether the route name will be stored with the event records.</para>
-		/// <para>Checked—The route name will be stored with the event records.</para>
-		/// <para>Unchecked—The route name will not be stored with the event records. This is the default.</para>
+		/// <para>指定是否将路径名称与事件记录一起存储。</para>
+		/// <para>选中 - 路径名称将与事件记录一起存储。</para>
+		/// <para>未选中 - 路径名称不会与事件记录一起存储。 这是默认设置。</para>
 		/// <para><see cref="StoreRouteNameEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -224,7 +224,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Route Name Field</para>
-		/// <para>The route name field if the feature class is a point event that doesn't span routes or the from route name field if the feature class is a line event that spans routes. This parameter is required if Store Route Name is checked.</para>
+		/// <para>如果要素类是不跨越路径的点事件，则为路径名称字段；如果要素类是跨越路径的线事件，则为路径始于名称字段。 如果选中存储路径名称，则该参数为必需项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -234,7 +234,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Route Name Field</para>
-		/// <para>The to route name field for line events that span routes. This parameter is required if Store Route Name is checked.</para>
+		/// <para>跨越路径的线事件的“路径止于名称”字段。 如果选中存储路径名称，则该参数为必需项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -257,14 +257,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum EventSpansRoutesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The event records will span routes.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SPANS_ROUTES")]
 			SPANS_ROUTES,
 
 			/// <summary>
-			/// <para>Unchecked—The event records will not span routes. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SPANS_ROUTES")]
@@ -278,14 +278,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum StoreRouteNameEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The route name will be stored with the event records.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("STORE_ROUTE_NAME")]
 			STORE_ROUTE_NAME,
 
 			/// <summary>
-			/// <para>Unchecked—The route name will not be stored with the event records. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_STORE_ROUTE_NAME")]

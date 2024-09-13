@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 {
 	/// <summary>
 	/// <para>Train Entity Recognition Model</para>
-	/// <para>Train Entity Recognition Model</para>
-	/// <para>Trains a named entity recognition model to extract a predefined set of entities from raw text.</para>
+	/// <para>训练实体识别模型</para>
+	/// <para>训练指定实体识别模型以从原始文本中提取一组预定义的实体。</para>
 	/// </summary>
 	public class TrainEntityRecognitionModel : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// </summary>
 		/// <param name="InFolder">
 		/// <para>Input Folder</para>
-		/// <para>A folder containing training data in the form of standard datasets for NER tasks. The training data must be in .json or .csv files. The file format determines the dataset type of the input.</para>
-		/// <para>The following are the supported dataset types:</para>
-		/// <para>ner_json—The training data folder should contain a .json file with text and the labelled entities formatted using the spaCy JSON training format.</para>
-		/// <para>IOB—The IOB (I - inside, O - outside, B - beginning tags) format proposed by Ramshaw and Marcus in the paper &quot;Text Chunking using Transformation-Based Learning&quot;.The training data folder should contain the following two .csv files:</para>
-		/// <para>token.csv—Contains text as input chunks.</para>
-		/// <para>tags.csv—Contains IOB tags for the text chunks.</para>
-		/// <para>BILUO—An extension of the IOB format that additionally contains &apos;L - last and U - unit tags.The training data folder should contain the following two .csv files:</para>
-		/// <para>token.csv—Contains text as input chunks.</para>
-		/// <para>tags.csv—Contains BILUO tags for the text chunks.</para>
+		/// <para>包含 NER 任务标准数据集形式的训练数据的文件夹。 训练数据必须为 .json 或 .csv 文件。 文件格式将决定输入的数据集类型。</para>
+		/// <para>受支持的数据集类型如下：</para>
+		/// <para>ner_json - 训练数据文件夹应包含一个 .json 文件，其中包含使用 spaCy JSON 训练格式格式的文本和标注实体。</para>
+		/// <para>IOB——Ramshaw 和 Marcus 在论文 Text Chunking using Transformation-Based Learning 中提出的 IOB（I - 内部，O - 外部，B - 开始标签）格式。训练数据文件夹应包含以下两个 .csv 文件：</para>
+		/// <para>token.csv - 包含作为输入区段的文本。</para>
+		/// <para>tags.csv - 包含文本区段的 IOB 标签。</para>
+		/// <para>BILUO - IOB 格式的扩展名，另外包含“&apos;L - 最后”和“U - 单位”标签。训练数据文件夹应包含以下两个 .csv 文件：</para>
+		/// <para>token.csv - 包含作为输入区段的文本。</para>
+		/// <para>tags.csv - 包含文本区段的 BILUO 标签。</para>
 		/// </param>
 		/// <param name="OutModel">
 		/// <para>Output Model</para>
-		/// <para>The output folder location that will store the trained model.</para>
+		/// <para>将存储经训练模型的输出文件夹位置。</para>
 		/// </param>
 		public TrainEntityRecognitionModel(object InFolder, object OutModel)
 		{
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Train Entity Recognition Model</para>
+		/// <para>Tool Display Name : 训练实体识别模型</para>
 		/// </summary>
-		public override string DisplayName() => "Train Entity Recognition Model";
+		public override string DisplayName() => "训练实体识别模型";
 
 		/// <summary>
 		/// <para>Tool Name : TrainEntityRecognitionModel</para>
@@ -78,15 +78,15 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Input Folder</para>
-		/// <para>A folder containing training data in the form of standard datasets for NER tasks. The training data must be in .json or .csv files. The file format determines the dataset type of the input.</para>
-		/// <para>The following are the supported dataset types:</para>
-		/// <para>ner_json—The training data folder should contain a .json file with text and the labelled entities formatted using the spaCy JSON training format.</para>
-		/// <para>IOB—The IOB (I - inside, O - outside, B - beginning tags) format proposed by Ramshaw and Marcus in the paper &quot;Text Chunking using Transformation-Based Learning&quot;.The training data folder should contain the following two .csv files:</para>
-		/// <para>token.csv—Contains text as input chunks.</para>
-		/// <para>tags.csv—Contains IOB tags for the text chunks.</para>
-		/// <para>BILUO—An extension of the IOB format that additionally contains &apos;L - last and U - unit tags.The training data folder should contain the following two .csv files:</para>
-		/// <para>token.csv—Contains text as input chunks.</para>
-		/// <para>tags.csv—Contains BILUO tags for the text chunks.</para>
+		/// <para>包含 NER 任务标准数据集形式的训练数据的文件夹。 训练数据必须为 .json 或 .csv 文件。 文件格式将决定输入的数据集类型。</para>
+		/// <para>受支持的数据集类型如下：</para>
+		/// <para>ner_json - 训练数据文件夹应包含一个 .json 文件，其中包含使用 spaCy JSON 训练格式格式的文本和标注实体。</para>
+		/// <para>IOB——Ramshaw 和 Marcus 在论文 Text Chunking using Transformation-Based Learning 中提出的 IOB（I - 内部，O - 外部，B - 开始标签）格式。训练数据文件夹应包含以下两个 .csv 文件：</para>
+		/// <para>token.csv - 包含作为输入区段的文本。</para>
+		/// <para>tags.csv - 包含文本区段的 IOB 标签。</para>
+		/// <para>BILUO - IOB 格式的扩展名，另外包含“&apos;L - 最后”和“U - 单位”标签。训练数据文件夹应包含以下两个 .csv 文件：</para>
+		/// <para>token.csv - 包含作为输入区段的文本。</para>
+		/// <para>tags.csv - 包含文本区段的 BILUO 标签。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Output Model</para>
-		/// <para>The output folder location that will store the trained model.</para>
+		/// <para>将存储经训练模型的输出文件夹位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFolder()]
@@ -102,8 +102,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Pretrained Model File</para>
-		/// <para>A pretrained model that will be used to fine-tune the new model. The input can be an Esri model definition file (.emd) or a deep learning package file (.dlpk).</para>
-		/// <para>A pretrained model with similar entities can be fine-tuned to fit the new model. The pretrained model must have been trained with the same model type and backbone model that will be used to train the new model.</para>
+		/// <para>将用于微调新模型的预训练模型。 输入可以是 Esri 模型定义文件 (.emd) 或深度学习包文件 (.dlpk)。</para>
+		/// <para>可以对具有相似实体的预训练模型进行微调以适应新模型。 预训练模型必须已使用将用于训练新模型的相同模型类型和骨干模型进行了训练。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Address Entity</para>
-		/// <para>An address entity that will be treated as a location. During inference, such entities will be geocoded using the specified locator, and a feature class will be produced as a result of the entity extraction process. If a locator is not provided or the trained model does not extract address entities, a table containing the extracted entities will be produced instead.</para>
+		/// <para>地址实体将被视为一个位置。 在推断过程中，将使用指定的定位器对此类实体进行地理编码，并且将生成实体提取过程的结果要素类。 如果未提供定位器或训练模型未提取地址实体，则会生成包含提取实体的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Max Epochs</para>
-		/// <para>The maximum number of epochs for which the model will be trained. A maximum epoch value of 1 means the dataset will be passed forward and backward through the neural network one time. The default value is 5.</para>
+		/// <para>将用于训练模型的最大时期数。 最大时期值为 1 意味着数据集将通过神经网络向前和向后传递一次。 默认值为 5。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -129,15 +129,15 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Model Backbone</para>
-		/// <para>Specifies the preconfigured neural network that will be used as the architecture for training the new model.</para>
-		/// <para>bert-base-cased—The model will be trained using the BERT neural network. BERT is pretrained using the masked language modeling objective and next sentence prediction.</para>
-		/// <para>roberta-base— The model will be trained using the RoBERTa neural network. RoBERTa modifies the key hyperparameters of BERT, eliminating the pretraining objective and training of the next sentence with small batches and higher learning rates.</para>
-		/// <para>albert-base-v1—The model will be trained using the ALBERT neural network. ALBERT uses a self-supervised loss that focuses on modeling intersentence coherence, resulting in better scalability than BERT.</para>
-		/// <para>xlnet-base-cased—The model will be trained using the XLNet neural network. XLNet is a generalized autoregressive pretraining method. It allows learning bidirectional contexts by maximizing the expected probability on all permutations of the factorization order, which overcomes BERT&apos;s drawbacks.</para>
-		/// <para>xlm-roberta-base—The model will be trained using the XLM-RoBERTa neural network. XLM-RoBERTa is a multilingual model trained on 100 different languages. Unlike some XLM multilingual models, it does not require language tensors to understand which language is used and identifies the correct language from the input IDs.</para>
-		/// <para>distilroberta-base—DistilRoBERTa is an English language model pretrained with the supervision of roberta-base solely on OpenWebTextCorpus, a reproduction of OpenAI&apos;s WebText dataset.</para>
-		/// <para>distilbert-base-cased—The model will be trained using the DistilBERT neural network. DistilBERT is a smaller general-purpose language representation model.</para>
-		/// <para>spacy—The model will be trained using the SpaCy neural network. SpaCy is an open-source library for advanced natural language processing.</para>
+		/// <para>指定要用作训练新模型的架构的、预先配置的神经网络。</para>
+		/// <para>bert-base-cased—该模型将使用 BERT 神经网络进行训练。 BERT 将使用已掩膜语言建模目标和下一句预测进行预训练。</para>
+		/// <para>roberta-base—该模型将使用 RoBERTa 神经网络进行训练。 RoBERTa 将修改 BERT 的关键超参数，并消除预训练目标以及小批量和更高学习率的下一句训练。</para>
+		/// <para>albert-base-v1—该模型将使用 ALBERT 神经网络进行训练。 ALBERT 将使用一种专注于对句子间一致性进行建模的自监督损失，因而比 BERT 具有更好的可扩展性。</para>
+		/// <para>xlnet-base-cased—该模型将使用 XLNet 神经网络进行训练。 XLNet 是一种广义自回归预训练方法。 该方法允许通过最大限度提升分解顺序的所有排列的预期概率来学习双向上下文，从而克服了 BERT 的缺点。</para>
+		/// <para>xlm-roberta-base—该模型将使用 XLM-RoBERTa 神经网络进行训练。 XLM-RoBERTa 是一种针对 100 种不同语言训练的多语言模型。 与某些 XLM 多语言模型不同，该模型不需要依靠语言张量来了解所使用的是哪种语言，并可根据输入 ID 来识别正确的语言。</para>
+		/// <para>distilroberta-base—DistilRoBERTa 是一种英语语言模型，仅在 OpenWebTextCorpus 上由 roberta-base 监督进行预训练（OpenWebTextCorpus 是 OpenAI 的 WebText 数据集的复制品）。</para>
+		/// <para>distilbert-base-cased—该模型将使用 DistilBERT 神经网络进行训练。 DistilBERT 是一种较小的通用语言表示模型。</para>
+		/// <para>spacy—该模型将使用 SpaCy 神经网络进行训练。 SpaCy 是一个用于高级自然语言处理的开源库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -146,8 +146,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Batch Size</para>
-		/// <para>The number of training samples that will be processed at one time. This parameter is not applicable to models with the spaCy backbone. The default value is 2.</para>
-		/// <para>Increasing the batch size can improve tool performance; however, as the batch size increases, more memory is used. If an out of memory error occurs, use a smaller batch size.</para>
+		/// <para>一次需要处理的训练样本数。 此参数不适用于具有 spaCy 骨干的模型。 默认值为 2。</para>
+		/// <para>增加批处理大小可以提高工具性能；但是，随着批处理大小的增加，会占用更多内存。 如果发生内存不足错误，请使用较小的批处理大小。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -156,8 +156,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Model Arguments</para>
-		/// <para>Additional arguments for initializing the model, such as seq_len for the maximum sequence length of the training data, that will be considered for training the model.</para>
-		/// <para>See keyword arguments in the EntityRecognizer documentation for the list of supported models arguments that can be used.</para>
+		/// <para>用于初始化模型的其他参数（例如，用于训练数据的最大序列长度的 seq_len）将被考虑用于训练模型。</para>
+		/// <para>有关可以使用的受支持模型参数列表，请参阅 EntityRecognizer 文档中的关键字参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -166,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Learning Rate</para>
-		/// <para>The step size indicating how much the model weights will be adjusted during the training process. If no value is specified, an optimal learning rate will be deduced automatically.</para>
+		/// <para>指示在训练过程中将调整多少模型权重的步长。 如果未指定值，将自动推断出最佳学习率。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -175,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Validation Percentage</para>
-		/// <para>The percentage of training samples that will be used for validating the model. The default value is 10.</para>
+		/// <para>将用于验证模型的训练样本的百分比。 默认值为 10。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -184,9 +184,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Stop when model stops improving</para>
-		/// <para>Specifies whether model training will stop when the model is no longer improving or until the Max Epochs parameter value is reached.</para>
-		/// <para>Checked—The model training will stop when the model is no longer improving, regardless of the Max Epochs parameter value specified. This is the default.</para>
-		/// <para>Unchecked—The model training will continue until the Max Epochs parameter value is reached.</para>
+		/// <para>指定模型训练是在模型不再改进时停止还是直至达到最大时期参数值时才停止。</para>
+		/// <para>选中 - 当模型不再改进时，无论所指定的最大时期参数值是什么，模型训练都将停止。 这是默认设置。</para>
+		/// <para>未选中 - 模型训练将一直持续，直至达到最大时期参数值为止。</para>
 		/// <para><see cref="StopTrainingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -197,9 +197,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Make model backbone trainable</para>
-		/// <para>Specifies whether the backbone layers in the pretrained model will be frozen, so that the weights and biases remain as originally designed.</para>
-		/// <para>Checked—The backbone layers will not be frozen, and the weights and biases of the Model Backbone parameter value can be altered to fit the training samples. This takes more time to process but typically produces better results. This is the default.</para>
-		/// <para>Unchecked—The backbone layers will be frozen, and the predefined weights and biases of the Model Backbone parameter value will not be altered during training.</para>
+		/// <para>指定是否冻结预训练模型中的骨干层，以使权重和偏差保持原始设计。</para>
+		/// <para>选中 - 不会冻结骨干图层，模型骨干参数值的权重和偏差可能会进行更改以更好地适合您的训练样本。 这将需要花费更多的时间来处理，但通常会产生更好的结果。 这是默认设置。</para>
+		/// <para>未选中 - 将冻结骨干图层，在训练过程中不会更改预定义的模型骨干参数值的权重和偏差。</para>
 		/// <para><see cref="MakeTrainableEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -225,14 +225,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		public enum StopTrainingEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The model training will stop when the model is no longer improving, regardless of the Max Epochs parameter value specified. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("STOP_TRAINING")]
 			STOP_TRAINING,
 
 			/// <summary>
-			/// <para>Unchecked—The model training will continue until the Max Epochs parameter value is reached.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("CONTINUE_TRAINING")]
@@ -246,14 +246,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		public enum MakeTrainableEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The backbone layers will not be frozen, and the weights and biases of the Model Backbone parameter value can be altered to fit the training samples. This takes more time to process but typically produces better results. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TRAIN_MODEL_BACKBONE")]
 			TRAIN_MODEL_BACKBONE,
 
 			/// <summary>
-			/// <para>Unchecked—The backbone layers will be frozen, and the predefined weights and biases of the Model Backbone parameter value will not be altered during training.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FREEZE_MODEL_BACKBONE")]

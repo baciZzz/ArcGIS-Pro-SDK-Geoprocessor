@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Save To Layer File</para>
-	/// <para>Save To Layer File</para>
-	/// <para>Creates an output layer file (.lyrx) from a map layer. The layer file stores many properties of the input layer such as symbology, labeling, and custom pop-ups. Layer files saved from ArcGIS Pro cannot be used in ArcMap.</para>
+	/// <para>保存至图层文件</para>
+	/// <para>从地图图层中创建输出图层文件 (.lyrx)。图层文件可存储很多输入图层的属性，例如：符号系统、标注和自定义弹出窗口。不能在 ArcMap 中使用从 ArcGIS Pro 中保存的图层文件。</para>
 	/// </summary>
 	public class SaveToLayerFile : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLayer">
 		/// <para>Input Layer</para>
-		/// <para>The map layer to be saved to disk as a layer file.</para>
+		/// <para>要作为图层文件保存到磁盘上的地图图层。</para>
 		/// </param>
 		/// <param name="OutLayer">
 		/// <para>Output Layer</para>
-		/// <para>The output layer file (.lyrx) to be created.</para>
+		/// <para>要创建的输出图层文件 (.lyrx)。</para>
 		/// </param>
 		public SaveToLayerFile(object InLayer, object OutLayer)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Save To Layer File</para>
+		/// <para>Tool Display Name : 保存至图层文件</para>
 		/// </summary>
-		public override string DisplayName() => "Save To Layer File";
+		public override string DisplayName() => "保存至图层文件";
 
 		/// <summary>
 		/// <para>Tool Name : SaveToLayerFile</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The map layer to be saved to disk as a layer file.</para>
+		/// <para>要作为图层文件保存到磁盘上的地图图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLayer()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Layer</para>
-		/// <para>The output layer file (.lyrx) to be created.</para>
+		/// <para>要创建的输出图层文件 (.lyrx)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DELayer()]
@@ -86,9 +86,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Store Relative Path</para>
-		/// <para>Determines if the output layer file will store a relative path to the source data stored on disk, or an absolute path.</para>
-		/// <para>Unchecked—The output layer file will store an absolute path to the source data stored on disk. This is the default.</para>
-		/// <para>Checked—The output layer file will store a relative path to the source data stored on disk. If the output layer file is moved, its source path will update to where the source data should be in relation to the new path.</para>
+		/// <para>确定输出图层文件是存储磁盘上源数据的相对路径还是绝对路径。</para>
+		/// <para>取消选中 - 输出图层文件将存储磁盘上源数据的绝对路径。这是默认设置。</para>
+		/// <para>已选中 - 输出图层文件将存储磁盘上源数据的相对路径。如果输出图层文件被移动，则其源路径将更新为源数据相对于新路径应处的位置。</para>
 		/// <para><see cref="IsRelativePathEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -98,8 +98,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Layer Version</para>
-		/// <para>The version of the output layer file.</para>
-		/// <para>Current—The current version. This is the default.</para>
+		/// <para>输出图层文件的版本。</para>
+		/// <para>当前—当前版本。这是默认设置。</para>
 		/// <para><see cref="VersionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -124,14 +124,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IsRelativePathEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output layer file will store a relative path to the source data stored on disk. If the output layer file is moved, its source path will update to where the source data should be in relation to the new path.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("RELATIVE")]
 			RELATIVE,
 
 			/// <summary>
-			/// <para>Unchecked—The output layer file will store an absolute path to the source data stored on disk. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ABSOLUTE")]
@@ -145,10 +145,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum VersionEnum 
 		{
 			/// <summary>
-			/// <para>Current—The current version. This is the default.</para>
+			/// <para>当前—当前版本。这是默认设置。</para>
 			/// </summary>
 			[GPValue("CURRENT")]
-			[Description("Current")]
+			[Description("当前")]
 			Current,
 
 		}

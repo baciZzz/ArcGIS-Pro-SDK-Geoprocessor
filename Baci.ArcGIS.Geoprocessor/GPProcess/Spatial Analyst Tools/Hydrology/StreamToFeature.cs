@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Stream to Feature</para>
-	/// <para>Stream to Feature</para>
-	/// <para>Converts a raster representing a linear network to features representing the linear network.</para>
+	/// <para>栅格河网矢量化</para>
+	/// <para>将表示线性网络的栅格转换为表示线性网络的要素。</para>
 	/// </summary>
 	public class StreamToFeature : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InStreamRaster">
 		/// <para>Input stream raster</para>
-		/// <para>An input raster that represents a linear stream network.</para>
+		/// <para>表示线性流网络的输入栅格。</para>
 		/// </param>
 		/// <param name="InFlowDirectionRaster">
 		/// <para>Input flow direction raster</para>
-		/// <para>The input raster that shows the direction of flow out of each cell.</para>
-		/// <para>The flow direction raster can be created using the Flow Direction tool.</para>
+		/// <para>根据每个像元来显示流向的输入栅格。</para>
+		/// <para>可以使用流向工具创建流向栅格。</para>
 		/// </param>
 		/// <param name="OutPolylineFeatures">
 		/// <para>Output polyline features</para>
-		/// <para>Output feature class that will hold the converted streams.</para>
+		/// <para>将保存转换后的输出河流要素类。</para>
 		/// </param>
 		public StreamToFeature(object InStreamRaster, object InFlowDirectionRaster, object OutPolylineFeatures)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Stream to Feature</para>
+		/// <para>Tool Display Name : 栅格河网矢量化</para>
 		/// </summary>
-		public override string DisplayName() => "Stream to Feature";
+		public override string DisplayName() => "栅格河网矢量化";
 
 		/// <summary>
 		/// <para>Tool Name : StreamToFeature</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input stream raster</para>
-		/// <para>An input raster that represents a linear stream network.</para>
+		/// <para>表示线性流网络的输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -88,8 +88,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input flow direction raster</para>
-		/// <para>The input raster that shows the direction of flow out of each cell.</para>
-		/// <para>The flow direction raster can be created using the Flow Direction tool.</para>
+		/// <para>根据每个像元来显示流向的输入栅格。</para>
+		/// <para>可以使用流向工具创建流向栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output polyline features</para>
-		/// <para>Output feature class that will hold the converted streams.</para>
+		/// <para>将保存转换后的输出河流要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -109,10 +109,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Simplify polylines</para>
-		/// <para>Specifies whether weeding is used.</para>
-		/// <para>Checked—The feature is weeded to reduce the number of vertices. The Douglas-Puecker algorithm for line generalization is used with a tolerance of sqrt(0.5) * cell size.</para>
-		/// <para>Unchecked—No weeding is applied.</para>
-		/// <para>By default, weeding is applied.</para>
+		/// <para>指定是否使用去点。</para>
+		/// <para>选中 - 对要素进行去点操作以减少折点数。用于线概化的道格拉斯-普克 (Douglas-Puecker) 算法可与容差 sqrt(0.5) * cell size 结合使用。</para>
+		/// <para>未选中 - 不使用去点功能。</para>
+		/// <para>默认情况下，应用去点功能。</para>
 		/// <para><see cref="SimplifyEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -137,14 +137,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum SimplifyEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The feature is weeded to reduce the number of vertices. The Douglas-Puecker algorithm for line generalization is used with a tolerance of sqrt(0.5) * cell size.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SIMPLIFY")]
 			SIMPLIFY,
 
 			/// <summary>
-			/// <para>Unchecked—No weeding is applied.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SIMPLIFY")]

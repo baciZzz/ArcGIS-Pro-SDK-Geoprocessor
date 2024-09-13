@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Tiled Labels To Annotation</para>
-	/// <para>Tiled Labels To Annotation</para>
-	/// <para>Converts labels to annotation for layers in a map based on a polygon index layer.</para>
+	/// <para>分块标注转注记</para>
+	/// <para>基于面索引图层将地图中的各图层的标注转换为注记。</para>
 	/// </summary>
 	public class TiledLabelsToAnnotation : AbstractGPProcess
 	{
@@ -21,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// </summary>
 		/// <param name="InputMap">
 		/// <para>Input Map</para>
-		/// <para>The map that contains the labels to convert to annotation.</para>
+		/// <para>包含要转换为注记的标注的地图。</para>
 		/// </param>
 		/// <param name="PolygonIndexLayer">
 		/// <para>Polygon Index Layer</para>
-		/// <para>The polygon layer that contains tile features.</para>
+		/// <para>包含分块要素的面图层。</para>
 		/// </param>
 		/// <param name="OutGeodatabase">
 		/// <para>Output Geodatabase</para>
-		/// <para>The workspace where the output feature classes will be saved. The workspace can be an existing geodatabase or an existing feature dataset.</para>
+		/// <para>用来保存输出要素类的工作空间。 此工作空间可以是现有地理数据库或现有要素数据集。</para>
 		/// </param>
 		/// <param name="OutLayer">
 		/// <para>Output Layer</para>
-		/// <para>The group layer that will contain the generated annotation. You can use the Save To Layer File tool to write the output group layer to a layer file.</para>
+		/// <para>包含所生成注记的图层组。 可使用保存至图层文件工具将输出图层组写入图层文件中。</para>
 		/// </param>
 		/// <param name="AnnoSuffix">
 		/// <para>Annotation Suffix</para>
-		/// <para>The suffix that will be added to each new annotation feature class. This suffix will be appended to the name of the source feature class for each new annotation feature class. The reference scale for the annotation will follow this suffix.</para>
+		/// <para>为每个新注记要素类添加的后缀。 该后缀将追加到各新注记要素类的源要素类名称之后。 注记的参考比例遵照该后缀。</para>
 		/// </param>
 		public TiledLabelsToAnnotation(object InputMap, object PolygonIndexLayer, object OutGeodatabase, object OutLayer, object AnnoSuffix)
 		{
@@ -49,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Tiled Labels To Annotation</para>
+		/// <para>Tool Display Name : 分块标注转注记</para>
 		/// </summary>
-		public override string DisplayName() => "Tiled Labels To Annotation";
+		public override string DisplayName() => "分块标注转注记";
 
 		/// <summary>
 		/// <para>Tool Name : TiledLabelsToAnnotation</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Input Map</para>
-		/// <para>The map that contains the labels to convert to annotation.</para>
+		/// <para>包含要转换为注记的标注的地图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMap()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Polygon Index Layer</para>
-		/// <para>The polygon layer that contains tile features.</para>
+		/// <para>包含分块要素的面图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Geodatabase</para>
-		/// <para>The workspace where the output feature classes will be saved. The workspace can be an existing geodatabase or an existing feature dataset.</para>
+		/// <para>用来保存输出要素类的工作空间。 此工作空间可以是现有地理数据库或现有要素数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Output Layer</para>
-		/// <para>The group layer that will contain the generated annotation. You can use the Save To Layer File tool to write the output group layer to a layer file.</para>
+		/// <para>包含所生成注记的图层组。 可使用保存至图层文件工具将输出图层组写入图层文件中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPGroupLayer()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Annotation Suffix</para>
-		/// <para>The suffix that will be added to each new annotation feature class. This suffix will be appended to the name of the source feature class for each new annotation feature class. The reference scale for the annotation will follow this suffix.</para>
+		/// <para>为每个新注记要素类添加的后缀。 该后缀将追加到各新注记要素类的源要素类名称之后。 注记的参考比例遵照该后缀。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Reference Scale Value</para>
-		/// <para>The scale value that will be used as a reference for the annotation. This is the scale on which all symbol and text sizes in the annotation will be based.</para>
+		/// <para>将用作注记参考的比例值。 注记中的所有符号及文本的大小都会参照此比例。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Reference Scale Field</para>
-		/// <para>The field in the polygon index layer that will determine the reference scale of the annotation. This is the scale on which all symbol and text sizes in the annotation will be based.</para>
+		/// <para>面索引图层中用于确定注记参考比例的字段。 注记中的所有符号及文本的大小都会参照此比例。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Tile ID Field</para>
-		/// <para>A field in the polygon index layer that uniquely identifies the tiled area. These values will populate the TileID field in the annotation feature class attribute table.</para>
+		/// <para>面索引图层中用于唯一标识分块区域的字段。 这些值将填充到注记要素类属性表中的 TileID 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Coordinate System Field</para>
-		/// <para>A field in the polygon index layer that contains the coordinate system information for each tile. Due to the length required for a field to store coordinate system information, a polygon index layer that contains a coordinate system field must be a geodatabase feature class.</para>
+		/// <para>面索引图层中包含各分块坐标系信息的字段。 考虑到存储坐标系信息时所需的字段长度，包含坐标系字段的面索引图层必须为地理数据库要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -166,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Map Rotation Field</para>
-		/// <para>A field in the polygon index layer that contains the angle by which the map will be rotated.</para>
+		/// <para>面索引图层中包含地图将旋转角度值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -176,10 +176,10 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Create feature-linked annotation</para>
-		/// <para>This parameter is only available with ArcGIS Desktop Standard and ArcGIS Desktop Advanced licenses.</para>
-		/// <para>Specifies whether the output annotation feature class will be linked to the features in another feature class.</para>
-		/// <para>Unchecked—The output annotation feature class will not be linked to the features in another feature class. This is the default.</para>
-		/// <para>Checked—The output annotation feature class will be linked to the features in another feature class.</para>
+		/// <para>仅当具有 ArcGIS Desktop Standard 和 ArcGIS Desktop Advanced 许可时，此参数才可用。</para>
+		/// <para>用于指定是否将输出注记要素类关联到其他要素类中的要素。</para>
+		/// <para>未选中 - 输出注记要素类将不会关联到其他要素类中的要素。 这是默认设置。</para>
+		/// <para>选中 - 输出注记要素类将关联到其他要素类中的要素。</para>
 		/// <para><see cref="FeatureLinkedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -189,9 +189,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Convert unplaced labels to unplaced annotation</para>
-		/// <para>Specifies whether unplaced annotation will be created from unplaced labels.</para>
-		/// <para>Unchecked—Annotation will only be created for features that are currently labeled. This is the default.</para>
-		/// <para>Checked—Unplaced annotation will be stored in the annotation feature class. The status field for these annotation is set to Unplaced.</para>
+		/// <para>指定是否将基于未放置标注创建未放置注记。</para>
+		/// <para>取消选中 - 仅为当前已标注的要素创建注记。 这是默认设置。</para>
+		/// <para>选中 - 未放置的注记将存储到注记要素类中。 这些注记的状态字段将设置为“未放置”。</para>
 		/// <para><see cref="GenerateUnplacedAnnotationEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -208,9 +208,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Convert</para>
-		/// <para>Specifies whether annotation will be created for all layers in the map or for a single layer. The single layer must be specified.</para>
-		/// <para>All layers in map—Labels will be converted to annotation for the entire map. This is the default.</para>
-		/// <para>Single layer—Labels will be converted to annotation for a single layer. The layer must be specified.</para>
+		/// <para>指定是为地图中的所有图层还是为单个图层创建注记。 必须指定单个图层。</para>
+		/// <para>地图中的所有图层—标注将转换为整个地图的注记。 这是默认设置。</para>
+		/// <para>单个图层—标注将转换为单个图层的注记。 必须指定图层。</para>
 		/// <para><see cref="WhichLayersEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -220,7 +220,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Feature Layer</para>
-		/// <para>The layer that will be converted when the Convert parameter is set to Single layer. This layer must be in the map.</para>
+		/// <para>当转换参数设置为单个图层时将转换的图层。 该图层必须位于地图中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -230,9 +230,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Require symbols to be selected from the symbol table</para>
-		/// <para>Specifies whether all text symbol properties can be edited.</para>
-		/// <para>Unchecked—All text symbol properties can be edited. This is the default.</para>
-		/// <para>Checked—Only symbol properties that enable annotation features to maintain reference to their associated text symbol in the collection can be edited.</para>
+		/// <para>指定是否可以编辑所有文本符号属性。</para>
+		/// <para>未选中 - 可以编辑所有文本符号属性。 这是默认设置。</para>
+		/// <para>已选中 - 只能编辑启用注记要素以保持集合中对其关联文本符号的引用的符号属性。</para>
 		/// <para><see cref="RequireSymbolIdEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -242,9 +242,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Create annotation when new features are added</para>
-		/// <para>Specifies whether annotation will be created when new features are added to the linked feature class if the Create feature-linked annotation parameter is checked.</para>
-		/// <para>Checked—Feature-linked annotation will be created when new features are added to the linked feature class. This is the default.</para>
-		/// <para>Unchecked—Feature-linked annotation will not be created when new features are added to the linked feature class.</para>
+		/// <para>如果已选中创建要素关联注记参数，用于指定在向链接要素类添加新要素时是否创建注记。</para>
+		/// <para>选中 - 向关联要素类添加新要素时，将创建关联要素注记。 这是默认设置。</para>
+		/// <para>未选中 - 向关联要素类添加新要素时，不会创建关联要素注记。</para>
 		/// <para><see cref="AutoCreateEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -254,9 +254,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Update annotation when feature's shape is modified</para>
-		/// <para>Specifies whether the position of annotation will be updated when the shape of the linked feature is updated if the Create feature-linked annotation parameter is checked.</para>
-		/// <para>Checked—The position of the annotation will be updated when the shape of the linked feature is modified. This is the default.</para>
-		/// <para>Unchecked—The position of the annotation will not be updated when the shape of the linked feature is modified.</para>
+		/// <para>如果已选中创建要素关联注记参数，用于指定在更新链接要素的形状时是否更新注记的位置。</para>
+		/// <para>已选中 - 修改链接要素的形状时，将更新注记的位置。 这是默认设置。</para>
+		/// <para>未选中 - 修改链接要素的形状时，不会更新注记的位置。</para>
 		/// <para><see cref="UpdateOnShapeChangeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -266,9 +266,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Convert labels from all layers to a single output feature class</para>
-		/// <para>Specifies whether labels will be converted to individual annotation feature classes or a single annotation feature class. If converting to a single annotation feature class, the annotation cannot be feature-linked.</para>
-		/// <para>Checked—Labels from all layers will be converted to a single annotation feature class.</para>
-		/// <para>Unchecked—Labels will be converted to individual annotation feature classes that correspond to their layers. This is the default.</para>
+		/// <para>指定标注将转换为单独的注记要素类还是单个注记要素类。 如果转换为单个注记要素类，则注记不能与要素关联。</para>
+		/// <para>已选中 - 所有图层中的标注将转换为单个注记要素类。</para>
+		/// <para>未选中 - 标注将转换为与其图层对应的单独注记要素类。 这是默认设置。</para>
 		/// <para><see cref="MultipleFeatureClassesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -278,9 +278,9 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 
 		/// <summary>
 		/// <para>Merge similar label classes</para>
-		/// <para>Specifies whether similar label classes will be merged if the Convert labels from all layers to a single output feature class parameter is checked.</para>
-		/// <para>Checked—Label classes with similar properties will be merged when creating a single feature class.</para>
-		/// <para>Unchecked—Label classes with similar properties will not be merged. This is the default.</para>
+		/// <para>如果已选中将所有图层中的标注转换为单个输出要素类参数，用于指定是否合并类似标注类。</para>
+		/// <para>选中 - 创建单个要素类时，将合并具有类似属性的标注类。</para>
+		/// <para>未选中 - 将合并具有类似属性的标注类。 这是默认设置。</para>
 		/// <para><see cref="MergeLabelClassesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -305,14 +305,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum FeatureLinkedEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output annotation feature class will be linked to the features in another feature class.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FEATURE_LINKED")]
 			FEATURE_LINKED,
 
 			/// <summary>
-			/// <para>Unchecked—The output annotation feature class will not be linked to the features in another feature class. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("STANDARD")]
@@ -326,14 +326,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum GenerateUnplacedAnnotationEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Unplaced annotation will be stored in the annotation feature class. The status field for these annotation is set to Unplaced.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GENERATE_UNPLACED_ANNOTATION")]
 			GENERATE_UNPLACED_ANNOTATION,
 
 			/// <summary>
-			/// <para>Unchecked—Annotation will only be created for features that are currently labeled. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_GENERATE_UNPLACED_ANNOTATION")]
@@ -347,17 +347,17 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum WhichLayersEnum 
 		{
 			/// <summary>
-			/// <para>All layers in map—Labels will be converted to annotation for the entire map. This is the default.</para>
+			/// <para>地图中的所有图层—标注将转换为整个地图的注记。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("ALL_LAYERS")]
-			[Description("All layers in map")]
+			[Description("地图中的所有图层")]
 			All_layers_in_map,
 
 			/// <summary>
-			/// <para>Single layer—Labels will be converted to annotation for a single layer. The layer must be specified.</para>
+			/// <para>单个图层—标注将转换为单个图层的注记。 必须指定图层。</para>
 			/// </summary>
 			[GPValue("SINGLE_LAYER")]
-			[Description("Single layer")]
+			[Description("单个图层")]
 			Single_layer,
 
 		}
@@ -368,14 +368,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum RequireSymbolIdEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Only symbol properties that enable annotation features to maintain reference to their associated text symbol in the collection can be edited.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REQUIRE_ID")]
 			REQUIRE_ID,
 
 			/// <summary>
-			/// <para>Unchecked—All text symbol properties can be edited. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_REQUIRE_ID")]
@@ -389,14 +389,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum AutoCreateEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Feature-linked annotation will be created when new features are added to the linked feature class. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("AUTO_CREATE")]
 			AUTO_CREATE,
 
 			/// <summary>
-			/// <para>Unchecked—Feature-linked annotation will not be created when new features are added to the linked feature class.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_AUTO_CREATE")]
@@ -410,14 +410,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum UpdateOnShapeChangeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The position of the annotation will be updated when the shape of the linked feature is modified. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SHAPE_UPDATE")]
 			SHAPE_UPDATE,
 
 			/// <summary>
-			/// <para>Unchecked—The position of the annotation will not be updated when the shape of the linked feature is modified.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SHAPE_UPDATE")]
@@ -431,14 +431,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum MultipleFeatureClassesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Labels from all layers will be converted to a single annotation feature class.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SINGLE_FEATURE_CLASS")]
 			SINGLE_FEATURE_CLASS,
 
 			/// <summary>
-			/// <para>Unchecked—Labels will be converted to individual annotation feature classes that correspond to their layers. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("FEATURE_CLASS_PER_FEATURE_LAYER")]
@@ -452,14 +452,14 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		public enum MergeLabelClassesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Label classes with similar properties will be merged when creating a single feature class.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MERGE_LABEL_CLASS")]
 			MERGE_LABEL_CLASS,
 
 			/// <summary>
-			/// <para>Unchecked—Label classes with similar properties will not be merged. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_MERGE_LABEL_CLASS")]

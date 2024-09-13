@@ -12,7 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 	/// <summary>
 	/// <para>ATanH</para>
 	/// <para>ATanH</para>
-	/// <para>Calculates the inverse hyperbolic tangent of cells in a raster.</para>
+	/// <para>计算栅格中各像元的反双曲正切值。</para>
 	/// </summary>
 	public class ATanH : AbstractGPProcess
 	{
@@ -21,13 +21,13 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRasterOrConstant">
 		/// <para>Input raster or constant value</para>
-		/// <para>The input for which to calculate the inverse hyperbolic tangent values.</para>
-		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
+		/// <para>用于计算反双曲正切值的输入数据。。</para>
+		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The values are the inverse hyperbolic tangent of the input values.</para>
+		/// <para>输出栅格。</para>
+		/// <para>这些值是输入值的反双曲正切。</para>
 		/// </param>
 		public ATanH(object InRasterOrConstant, object OutRaster)
 		{
@@ -72,8 +72,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or constant value</para>
-		/// <para>The input for which to calculate the inverse hyperbolic tangent values.</para>
-		/// <para>To use a number as an input for this parameter, the cell size and extent must first be set in the environment.</para>
+		/// <para>用于计算反双曲正切值的输入数据。。</para>
+		/// <para>要使用数字作为此参数的输入，像元大小和范围必须先在环境中进行设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output raster.</para>
-		/// <para>The values are the inverse hyperbolic tangent of the input values.</para>
+		/// <para>输出栅格。</para>
+		/// <para>这些值是输入值的反双曲正切。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

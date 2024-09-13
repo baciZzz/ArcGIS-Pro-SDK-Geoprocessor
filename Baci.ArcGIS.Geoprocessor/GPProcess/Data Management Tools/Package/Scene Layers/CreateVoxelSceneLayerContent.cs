@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Voxel Scene Layer Content</para>
-	/// <para>Create Voxel Scene Layer Content</para>
-	/// <para>Creates a scene layer package (.slpk file) from a voxel layer input.</para>
+	/// <para>创建体素场景图层内容</para>
+	/// <para>从体素图层输入创建场景图层包（.slpk 文件）。</para>
 	/// </summary>
 	public class CreateVoxelSceneLayerContent : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Voxel Layer</para>
-		/// <para>The input voxel layer or layer file.</para>
+		/// <para>输入体素图层或图层文件。</para>
 		/// </param>
 		/// <param name="OutSlpk">
 		/// <para>Output Scene Layer Package</para>
-		/// <para>The output scene layer package (.slpk file).</para>
+		/// <para>输出场景图层包（.slpk 文件）。</para>
 		/// </param>
 		public CreateVoxelSceneLayerContent(object InDataset, object OutSlpk)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Voxel Scene Layer Content</para>
+		/// <para>Tool Display Name : 创建体素场景图层内容</para>
 		/// </summary>
-		public override string DisplayName() => "Create Voxel Scene Layer Content";
+		public override string DisplayName() => "创建体素场景图层内容";
 
 		/// <summary>
 		/// <para>Tool Name : CreateVoxelSceneLayerContent</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Voxel Layer</para>
-		/// <para>The input voxel layer or layer file.</para>
+		/// <para>输入体素图层或图层文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Scene Layer Package</para>
-		/// <para>The output scene layer package (.slpk file).</para>
+		/// <para>输出场景图层包（.slpk 文件）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

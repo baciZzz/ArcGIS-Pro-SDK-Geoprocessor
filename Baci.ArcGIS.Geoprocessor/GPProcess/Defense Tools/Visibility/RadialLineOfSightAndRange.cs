@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Radial Line Of Sight And Range</para>
-	/// <para>Radial Line Of Sight And Range</para>
-	/// <para>Shows  areas visible to one or more observer locations given a specified distance and viewing angle.</para>
+	/// <para>径向通视分析和范围</para>
+	/// <para>可以根据给定距离和视角，显示一个或多个指定观察点位置的可见区域。</para>
 	/// </summary>
 	public class RadialLineOfSightAndRange : AbstractGPProcess
 	{
@@ -21,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		/// <param name="InObserverFeatures">
 		/// <para>Input Observer</para>
-		/// <para>The input observer points.</para>
+		/// <para>输入观察点。</para>
 		/// </param>
 		/// <param name="InSurface">
 		/// <para>Input Surface</para>
-		/// <para>The input elevation raster surface. The elevation surface must be projected.</para>
+		/// <para>输入高程栅格表面。 高程表面必须进行投影。</para>
 		/// </param>
 		/// <param name="OutViewshedFeatureClass">
 		/// <para>Output Viewshed Feature Class</para>
-		/// <para>The output polygon feature class showing visible and nonvisible areas.</para>
+		/// <para>用于显示可见和不可见区域的输出面要素类。</para>
 		/// </param>
 		/// <param name="OutFovFeatureClass">
 		/// <para>Output Field of View Outline Feature Class</para>
-		/// <para>The output polygon feature class containing the field of view range fan.</para>
+		/// <para>包含扇形视域的输出面要素类。</para>
 		/// </param>
 		/// <param name="OutRangeRadiusFeatureClass">
 		/// <para>Output Range</para>
-		/// <para>The output polygon feature class containing the viewing sector created by the range radius, start angle, and end angle.</para>
+		/// <para>输出面要素类，其中包含由范围半径、起始角和终止角创建的查看扇区。</para>
 		/// </param>
 		public RadialLineOfSightAndRange(object InObserverFeatures, object InSurface, object OutViewshedFeatureClass, object OutFovFeatureClass, object OutRangeRadiusFeatureClass)
 		{
@@ -49,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Radial Line Of Sight And Range</para>
+		/// <para>Tool Display Name : 径向通视分析和范围</para>
 		/// </summary>
-		public override string DisplayName() => "Radial Line Of Sight And Range";
+		public override string DisplayName() => "径向通视分析和范围";
 
 		/// <summary>
 		/// <para>Tool Name : RadialLineOfSightAndRange</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Observer</para>
-		/// <para>The input observer points.</para>
+		/// <para>输入观察点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureRecordSetLayer()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Surface</para>
-		/// <para>The input elevation raster surface. The elevation surface must be projected.</para>
+		/// <para>输入高程栅格表面。 高程表面必须进行投影。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Viewshed Feature Class</para>
-		/// <para>The output polygon feature class showing visible and nonvisible areas.</para>
+		/// <para>用于显示可见和不可见区域的输出面要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Field of View Outline Feature Class</para>
-		/// <para>The output polygon feature class containing the field of view range fan.</para>
+		/// <para>包含扇形视域的输出面要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Range</para>
-		/// <para>The output polygon feature class containing the viewing sector created by the range radius, start angle, and end angle.</para>
+		/// <para>输出面要素类，其中包含由范围半径、起始角和终止角创建的查看扇区。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Observer Height Offset (meters)</para>
-		/// <para>The height added to the surface elevation of the observer. The default is 2.</para>
+		/// <para>观察点表面高程以上的高度。 默认值为 2。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Minimum Distance (meters)</para>
-		/// <para>The minimum (nearest) distance from observers to consider for analysis in meters. The default is 1000.</para>
+		/// <para>距离分析中所考虑的观察点的最小（最近）距离，以米为单位。 默认值为 1000。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Maximum Distance (meters)</para>
-		/// <para>The maximum (farthest) distance from observers to consider for analysis in meters. The default is 3000.</para>
+		/// <para>距离分析中所考虑的观察点的最大（最远）距离，以米为单位。 默认值为 3000。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Horizontal Start Angle (degrees)</para>
-		/// <para>The left bearing limit in degrees. The default is 0.</para>
+		/// <para>左轴承限制，以度为单位。 默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Horizontal End Angle (degrees)</para>
-		/// <para>The right bearing limit in degrees. The default is 360.</para>
+		/// <para>右轴承限制，以度为单位。 默认值为 360。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

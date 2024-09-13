@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 {
 	/// <summary>
 	/// <para>Add Network Attribute</para>
-	/// <para>Add Network Attribute</para>
-	/// <para>Adds a network attribute to a trace network.</para>
+	/// <para>添加网络属性</para>
+	/// <para>用于向追踪网络中添加网络属性。</para>
 	/// </summary>
 	public class AddNetworkAttribute : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// </summary>
 		/// <param name="InTraceNetwork">
 		/// <para>Input Trace Network</para>
-		/// <para>The input trace network to which the network attribute will be added.</para>
+		/// <para>将添加网络属性的输入追踪网络。</para>
 		/// </param>
 		/// <param name="AttributeName">
 		/// <para>Attribute Name</para>
-		/// <para>The name of the network attribute to add to the trace network.</para>
+		/// <para>要添加至追踪网络的网络属性的名称。</para>
 		/// </param>
 		/// <param name="AttributeType">
 		/// <para>Attribute Type</para>
-		/// <para>Specifies the data type of the network attribute.</para>
-		/// <para>Short (16-bit integer)—The field type will be short.</para>
-		/// <para>Long (32-bit integer)—The field type will be long.</para>
-		/// <para>Double (64-bit floating point)—The field type will be double.</para>
-		/// <para>Date—The field type will be date.</para>
+		/// <para>指定网络属性的数据类型。</para>
+		/// <para>短整型（16 位整型）—字段类型将为短整型。</para>
+		/// <para>长整型（32 位整数）—字段类型将为长整型。</para>
+		/// <para>双精度型（64 位浮点型）—字段类型将为双精度型。</para>
+		/// <para>日期—字段类型将为日期型。</para>
 		/// <para><see cref="AttributeTypeEnum"/></para>
 		/// </param>
 		public AddNetworkAttribute(object InTraceNetwork, object AttributeName, object AttributeType)
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Network Attribute</para>
+		/// <para>Tool Display Name : 添加网络属性</para>
 		/// </summary>
-		public override string DisplayName() => "Add Network Attribute";
+		public override string DisplayName() => "添加网络属性";
 
 		/// <summary>
 		/// <para>Tool Name : AddNetworkAttribute</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Input Trace Network</para>
-		/// <para>The input trace network to which the network attribute will be added.</para>
+		/// <para>将添加网络属性的输入追踪网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -88,7 +88,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Attribute Name</para>
-		/// <para>The name of the network attribute to add to the trace network.</para>
+		/// <para>要添加至追踪网络的网络属性的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -96,11 +96,11 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Attribute Type</para>
-		/// <para>Specifies the data type of the network attribute.</para>
-		/// <para>Short (16-bit integer)—The field type will be short.</para>
-		/// <para>Long (32-bit integer)—The field type will be long.</para>
-		/// <para>Double (64-bit floating point)—The field type will be double.</para>
-		/// <para>Date—The field type will be date.</para>
+		/// <para>指定网络属性的数据类型。</para>
+		/// <para>短整型（16 位整型）—字段类型将为短整型。</para>
+		/// <para>长整型（32 位整数）—字段类型将为长整型。</para>
+		/// <para>双精度型（64 位浮点型）—字段类型将为双精度型。</para>
+		/// <para>日期—字段类型将为日期型。</para>
 		/// <para><see cref="AttributeTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -110,9 +110,9 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 
 		/// <summary>
 		/// <para>Nullable</para>
-		/// <para>Specifies whether the network attribute will support null values.</para>
-		/// <para>Checked—The network attribute will support null values.</para>
-		/// <para>Unchecked—The network attribute will not support null values. This is the default.</para>
+		/// <para>指定网络属性是否支持空值。</para>
+		/// <para>选中 - 网络属性支持空值。</para>
+		/// <para>未选中 - 网络属性不支持空值。 这是默认设置。</para>
 		/// <para><see cref="IsNullableEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -135,31 +135,31 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		public enum AttributeTypeEnum 
 		{
 			/// <summary>
-			/// <para>Short (16-bit integer)—The field type will be short.</para>
+			/// <para>短整型（16 位整型）—字段类型将为短整型。</para>
 			/// </summary>
 			[GPValue("SHORT")]
-			[Description("Short (16-bit integer)")]
+			[Description("短整型（16 位整型）")]
 			SHORT,
 
 			/// <summary>
-			/// <para>Long (32-bit integer)—The field type will be long.</para>
+			/// <para>长整型（32 位整数）—字段类型将为长整型。</para>
 			/// </summary>
 			[GPValue("LONG")]
-			[Description("Long (32-bit integer)")]
+			[Description("长整型（32 位整数）")]
 			LONG,
 
 			/// <summary>
-			/// <para>Double (64-bit floating point)—The field type will be double.</para>
+			/// <para>双精度型（64 位浮点型）—字段类型将为双精度型。</para>
 			/// </summary>
 			[GPValue("DOUBLE")]
-			[Description("Double (64-bit floating point)")]
+			[Description("双精度型（64 位浮点型）")]
 			DOUBLE,
 
 			/// <summary>
-			/// <para>Date—The field type will be date.</para>
+			/// <para>日期—字段类型将为日期型。</para>
 			/// </summary>
 			[GPValue("DATE")]
-			[Description("Date")]
+			[Description("日期")]
 			Date,
 
 		}
@@ -170,14 +170,14 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		public enum IsNullableEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The network attribute will support null values.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("NULLABLE")]
 			NULLABLE,
 
 			/// <summary>
-			/// <para>Unchecked—The network attribute will not support null values. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NOT_NULLABLE")]

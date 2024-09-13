@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Surface Aspect</para>
-	/// <para>Surface Aspect</para>
-	/// <para>Creates polygon features that represent aspect measurements derived  from a TIN, terrain, or LAS dataset surface.</para>
+	/// <para>表面坡向</para>
+	/// <para>创建表示派生自 TIN、terrain 或 LAS 数据集表面的坡向测量值的面要素。</para>
 	/// </summary>
 	public class SurfaceAspect : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InSurface">
 		/// <para>Input Surface</para>
-		/// <para>The TIN, terrain, or LAS dataset surface to process.</para>
+		/// <para>待处理的 TIN、terrain 或 LAS 数据集表面。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </param>
 		public SurfaceAspect(object InSurface, object OutFeatureClass)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Surface Aspect</para>
+		/// <para>Tool Display Name : 表面坡向</para>
 		/// </summary>
-		public override string DisplayName() => "Surface Aspect";
+		public override string DisplayName() => "表面坡向";
 
 		/// <summary>
 		/// <para>Tool Name : SurfaceAspect</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Surface</para>
-		/// <para>The TIN, terrain, or LAS dataset surface to process.</para>
+		/// <para>待处理的 TIN、terrain 或 LAS 数据集表面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The feature class that will be produced.</para>
+		/// <para>将生成的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Class Breaks Table</para>
-		/// <para>A table containing the classification breaks that will be used to define the aspect ranges in the output feature class.</para>
+		/// <para>包含将用于对输出要素类中的坡向范围进行定义的分类间隔的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Aspect Field</para>
-		/// <para>The field containing aspect code values.</para>
+		/// <para>包含坡向编码值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
-		/// <para>The z-tolerance or window-size resolution of the terrain pyramid level that will be used. The default is 0, or full resolution.</para>
+		/// <para>将使用 terrain 金字塔等级的 z 容差或窗口大小分辨率。 默认值为 0，或全分辨率。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

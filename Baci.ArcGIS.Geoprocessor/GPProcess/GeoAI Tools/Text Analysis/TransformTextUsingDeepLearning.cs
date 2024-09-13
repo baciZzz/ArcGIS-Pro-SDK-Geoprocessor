@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 {
 	/// <summary>
 	/// <para>Transform Text Using Deep Learning</para>
-	/// <para>Transform Text Using Deep Learning</para>
-	/// <para>Runs a trained sequence-to-sequence model on a text field in a feature class or table and updates it with a new field containing the converted, transformed, or translated text.</para>
+	/// <para>使用深度学习转换文本</para>
+	/// <para>在要素类或表中的文本字段上运行经过训练的序列到序列模型，并使用包含已转换、已变换或已翻译文本的新字段对其进行更新。</para>
 	/// </summary>
 	public class TransformTextUsingDeepLearning : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input point, line, or polygon feature class, or table, containing the text that will be transformed.</para>
+		/// <para>输入点、线或面要素类或表，其中包含将转换的文本。</para>
 		/// </param>
 		/// <param name="TextField">
 		/// <para>Text Field</para>
-		/// <para>A text field in the input feature class or table that contains the text that will be transformed.</para>
+		/// <para>输入要素类或表中的文本字段，其中包含将转换的文本。</para>
 		/// </param>
 		/// <param name="InModelDefinitionFile">
 		/// <para>Input Model Definition File</para>
-		/// <para>The trained model that will be used for classification. The model definition file can be an Esri model definition JSON file (.emd) or a deep learning model package (.dlpk) stored locally.</para>
+		/// <para>将用于分类的训练模型。 模型定义文件可以是本地存储的 Esri 模型定义 JSON 文件 (.emd) 或深度学习模型包 (.dlpk)。</para>
 		/// </param>
 		public TransformTextUsingDeepLearning(object InTable, object TextField, object InModelDefinitionFile)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Transform Text Using Deep Learning</para>
+		/// <para>Tool Display Name : 使用深度学习转换文本</para>
 		/// </summary>
-		public override string DisplayName() => "Transform Text Using Deep Learning";
+		public override string DisplayName() => "使用深度学习转换文本";
 
 		/// <summary>
 		/// <para>Tool Name : TransformTextUsingDeepLearning</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input point, line, or polygon feature class, or table, containing the text that will be transformed.</para>
+		/// <para>输入点、线或面要素类或表，其中包含将转换的文本。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Text Field</para>
-		/// <para>A text field in the input feature class or table that contains the text that will be transformed.</para>
+		/// <para>输入要素类或表中的文本字段，其中包含将转换的文本。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Input Model Definition File</para>
-		/// <para>The trained model that will be used for classification. The model definition file can be an Esri model definition JSON file (.emd) or a deep learning model package (.dlpk) stored locally.</para>
+		/// <para>将用于分类的训练模型。 模型定义文件可以是本地存储的 Esri 模型定义 JSON 文件 (.emd) 或深度学习模型包 (.dlpk)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Result Field</para>
-		/// <para>The name of the field that will contain the transformed text in the output feature class or table. The default field name is Result.</para>
+		/// <para>包含输出要素类或表中已转换文本的字段名称。 默认字段名称为 Result。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -111,8 +111,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Model Arguments</para>
-		/// <para>Additional arguments, such as a confidence threshold, that will be used to adjust the sensitivity of the model.</para>
-		/// <para>The names of the arguments will be populated by the tool.</para>
+		/// <para>将使用其他参数（例如，置信度阈值）调整模型的灵敏度。</para>
+		/// <para>将使用该工具填充参数名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -120,8 +120,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Batch Size</para>
-		/// <para>The number of training samples that will be processed at one time. The default value is 4.</para>
-		/// <para>Increasing the batch size can improve tool performance; however, as the batch size increases, more memory is used. If an out of memory error occurs, use a smaller batch size.</para>
+		/// <para>一次需要处理的训练样本数。 默认值为 4。</para>
+		/// <para>增加批处理大小可以提高工具性能；但是，随着批处理大小的增加，会占用更多内存。 如果发生内存不足错误，请使用较小的批处理大小。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Minimum Sequence Length</para>
-		/// <para>The minimum number of characters for the output text string. The default value is 20.</para>
+		/// <para>输出文本字符串的最小字符数。 默认值为 20。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 
 		/// <summary>
 		/// <para>Maximum Sequence Length</para>
-		/// <para>The maximum number of characters for the output text string. The default value is 50.</para>
+		/// <para>输出文本字符串的最大字符数。 默认值为 50。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]

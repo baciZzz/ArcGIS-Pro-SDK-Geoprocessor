@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 {
 	/// <summary>
 	/// <para>Locate Features Along Routes</para>
-	/// <para>Locate Features Along Routes</para>
-	/// <para>Computes the intersection of input features (point, line, or polygon) and route features and writes the route and measure information to a new event table.</para>
+	/// <para>沿路径定位要素</para>
+	/// <para>计算输入要素（点、线或面）与路径要素的交集，并将路径和测量信息写入新的事件表。</para>
 	/// </summary>
 	public class LocateFeaturesAlongRoutes : AbstractGPProcess
 	{
@@ -21,35 +21,35 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input point, line, or polygon features.</para>
+		/// <para>输入点、线或面要素。</para>
 		/// </param>
 		/// <param name="InRoutes">
 		/// <para>Input Route Features</para>
-		/// <para>The routes with which the Input Features parameter value will intersect.</para>
+		/// <para>将与输入要素参数值相交的路径。</para>
 		/// </param>
 		/// <param name="RouteIdField">
 		/// <para>Route Identifier Field</para>
-		/// <para>The field containing values that uniquely identify each route. The field can be numeric or character.</para>
+		/// <para>包含可唯一识别每条路径的值的字段。 字段可以是数值或字符。</para>
 		/// </param>
 		/// <param name="RadiusOrTolerance">
 		/// <para>Search Radius</para>
-		/// <para>If the Input Features parameter value is points, the search radius will be a numeric value defining how far around each point a search will be done to find a target route.</para>
-		/// <para>If the Input Features parameter value is lines, the search tolerance will be a cluster tolerance, which is a numeric value representing the maximum tolerated distance between the input lines and the target routes.</para>
-		/// <para>If the Input Features parameter value is polygons, this parameter is ignored and no search radius will be used.</para>
+		/// <para>如果输入要素参数值是点，则搜索半径是数值，定义可在每个点周围的多大范围内执行搜索以找到目标路径。</para>
+		/// <para>如果输入要素参数值是线，则搜索容差是拓扑容差，即表示输入线与目标路径之间的最大容许距离的数值。</para>
+		/// <para>如果输入要素参数值是面，则忽略此参数且不使用搜索半径。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Event Table</para>
-		/// <para>The table to be created.</para>
+		/// <para>要创建的表。</para>
 		/// </param>
 		/// <param name="OutEventProperties">
 		/// <para>Output Event Table Properties</para>
-		/// <para>Parameter consisting of the route location fields and the type of events that will be written to the output event table.</para>
-		/// <para>Route Identifier Field—The field that will contain values that indicate the route on which each event is located.</para>
-		/// <para>Event Type—The type of events the output event table will contain (POINT or LINE).</para>
-		/// <para>POINT—Point events occur at a precise location along a route. Only a single measure field must be specified.</para>
-		/// <para>LINE—Line events define a portion of a route. Both from- and to-measure fields must be specified.</para>
-		/// <para>From-Measure Field—A field that will contain measure values. Required when the event type is POINT or LINE. Note when the Event Type is POINT, the label for this parameter becomes Measure Field.</para>
-		/// <para>To-Measure Field—A field that will contain measure values. Required when the event type is LINE.</para>
+		/// <para>由将写入输出事件表的路径位置字段和事件类型组成的参数。</para>
+		/// <para>路径标识符字段 - 该字段将包含指示每个事件所在路径的值。</para>
+		/// <para>事件类型 - 输出事件表中将包含的事件类型（POINT 或 LINE）。</para>
+		/// <para>POINT - 点事件出现在沿路径的确切点位置处。 仅可指定只有单一测量字段</para>
+		/// <para>LINE - 线事件定义路径的一部分。 “测量始于”和“测量止于”都是必须指定的字段。</para>
+		/// <para>测量始于字段 - 将包含测量值的字段。 此字段在事件类型是 POINT 或 LINE 时必填。 请注意，在事件类型是 POINT 时，此参数的标注将变为测量字段。</para>
+		/// <para>测量止于字段 - 将包含测量值的字段。 此字段在事件类型是 LINE 时必填。</para>
 		/// </param>
 		public LocateFeaturesAlongRoutes(object InFeatures, object InRoutes, object RouteIdField, object RadiusOrTolerance, object OutTable, object OutEventProperties)
 		{
@@ -62,9 +62,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Locate Features Along Routes</para>
+		/// <para>Tool Display Name : 沿路径定位要素</para>
 		/// </summary>
-		public override string DisplayName() => "Locate Features Along Routes";
+		public override string DisplayName() => "沿路径定位要素";
 
 		/// <summary>
 		/// <para>Tool Name : LocateFeaturesAlongRoutes</para>
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input point, line, or polygon features.</para>
+		/// <para>输入点、线或面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Input Route Features</para>
-		/// <para>The routes with which the Input Features parameter value will intersect.</para>
+		/// <para>将与输入要素参数值相交的路径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Route Identifier Field</para>
-		/// <para>The field containing values that uniquely identify each route. The field can be numeric or character.</para>
+		/// <para>包含可唯一识别每条路径的值的字段。 字段可以是数值或字符。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -124,9 +124,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Search Radius</para>
-		/// <para>If the Input Features parameter value is points, the search radius will be a numeric value defining how far around each point a search will be done to find a target route.</para>
-		/// <para>If the Input Features parameter value is lines, the search tolerance will be a cluster tolerance, which is a numeric value representing the maximum tolerated distance between the input lines and the target routes.</para>
-		/// <para>If the Input Features parameter value is polygons, this parameter is ignored and no search radius will be used.</para>
+		/// <para>如果输入要素参数值是点，则搜索半径是数值，定义可在每个点周围的多大范围内执行搜索以找到目标路径。</para>
+		/// <para>如果输入要素参数值是线，则搜索容差是拓扑容差，即表示输入线与目标路径之间的最大容许距离的数值。</para>
+		/// <para>如果输入要素参数值是面，则忽略此参数且不使用搜索半径。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -134,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Output Event Table</para>
-		/// <para>The table to be created.</para>
+		/// <para>要创建的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -142,13 +142,13 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Output Event Table Properties</para>
-		/// <para>Parameter consisting of the route location fields and the type of events that will be written to the output event table.</para>
-		/// <para>Route Identifier Field—The field that will contain values that indicate the route on which each event is located.</para>
-		/// <para>Event Type—The type of events the output event table will contain (POINT or LINE).</para>
-		/// <para>POINT—Point events occur at a precise location along a route. Only a single measure field must be specified.</para>
-		/// <para>LINE—Line events define a portion of a route. Both from- and to-measure fields must be specified.</para>
-		/// <para>From-Measure Field—A field that will contain measure values. Required when the event type is POINT or LINE. Note when the Event Type is POINT, the label for this parameter becomes Measure Field.</para>
-		/// <para>To-Measure Field—A field that will contain measure values. Required when the event type is LINE.</para>
+		/// <para>由将写入输出事件表的路径位置字段和事件类型组成的参数。</para>
+		/// <para>路径标识符字段 - 该字段将包含指示每个事件所在路径的值。</para>
+		/// <para>事件类型 - 输出事件表中将包含的事件类型（POINT 或 LINE）。</para>
+		/// <para>POINT - 点事件出现在沿路径的确切点位置处。 仅可指定只有单一测量字段</para>
+		/// <para>LINE - 线事件定义路径的一部分。 “测量始于”和“测量止于”都是必须指定的字段。</para>
+		/// <para>测量始于字段 - 将包含测量值的字段。 此字段在事件类型是 POINT 或 LINE 时必填。 请注意，在事件类型是 POINT 时，此参数的标注将变为测量字段。</para>
+		/// <para>测量止于字段 - 将包含测量值的字段。 此字段在事件类型是 LINE 时必填。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPRouteMeasureEventProperties()]
@@ -156,9 +156,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Keep only the closest route location</para>
-		/// <para>Specifies whether the closest route location or every route location within the search radius will be written to the Output Event Table parameter value. When locating points along routes, more than one route may be within the search radius of any given point. This parameter is ignored when locating lines or polygons along routes.</para>
-		/// <para>Checked—Only the closest route location will be written to the Output Event Table parameter value. This is the default.</para>
-		/// <para>Unchecked—Every route location within the search radius will be written to the Output Event Table parameter value.</para>
+		/// <para>指定是否将最近的路线位置或搜索半径内的每个路线位置写入输出事件表参数值。 在沿路线定位点时，任何给定点的搜索半径内可能有不止一条路线。 沿路径定位线或面时将忽略此参数。</para>
+		/// <para>选中 - 只将最近的路径位置写入输出事件表参数值。 这是默认设置。</para>
+		/// <para>未选中 - 将每个路径位置（搜索半径范围内）都写入输出事件表参数值。</para>
 		/// <para><see cref="RouteLocationsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -168,9 +168,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Include distance field on output table</para>
-		/// <para>Specifies whether a field named DISTANCE will be added to the Output Event Table parameter value. The values in this field are in the units of the specified search radius. This parameter is ignored when locating lines or polygons along routes.</para>
-		/// <para>Checked—A field containing the point-to-route distance will be added to the Output Event Table parameter value. This is the default.</para>
-		/// <para>Unchecked—A field containing the point-to-route distance will not be added to the output event table.</para>
+		/// <para>指定是否将名为 DISTANCE 的字段添加到输出事件表参数值。 此字段中的值以指定的搜索半径为单位。 沿路径定位线或面时将忽略此参数。</para>
+		/// <para>选中 - 包含点到路径距离的字段被添加到输出事件表参数值。 这是默认设置。</para>
+		/// <para>未选中 - 包含点到路径距离的字段不被添加到输出事件表。</para>
 		/// <para><see cref="DistanceFieldEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -180,9 +180,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Keep zero length line events</para>
-		/// <para>Specifies whether zero-length line events will be written to the output. When locating polygons along routes, events may be created in which the from-measure value is equal to the to-measure value. This parameter is ignored when locating points or lines along routes.</para>
-		/// <para>Checked—Zero-length line events will be written to the Output Event Table parameter value. This is the default.</para>
-		/// <para>Unchecked—Zero-length line events will not be written to the Output Event Table parameter value.</para>
+		/// <para>指定是否将零长度线事件写入输出。 当沿路线定位面时，可能会创建其中“测量始于”等于“测量止于”的事件。 沿路径定位点或线时将忽略此参数。</para>
+		/// <para>选中 - 零长度线事件被写入输出事件表参数值。 这是默认设置。</para>
+		/// <para>取消选中 - 零长度线事件将不被写入输出事件表参数值。</para>
 		/// <para><see cref="ZeroLengthEventsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -192,9 +192,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Include all fields from input</para>
-		/// <para>Specifies whether the Output Event Table parameter value will contain route location fields and all the attributes from the Input Features parameter value.</para>
-		/// <para>Checked—The Output Event Table parameter value will contain route location fields and all the attributes from the Input Features parameter value. This is the default.</para>
-		/// <para>Unchecked—The Output Event Table parameter value will only contain route location fields and the ObjectID field from the Input Features parameter value.</para>
+		/// <para>指定输出事件表参数值是否包含路径位置字段以及所有来自输入要素参数值的所有属性。</para>
+		/// <para>选中 - 输出事件表参数值将包含路径位置字段以及所有来自输入要素参数值的所有属性。 这是默认设置。</para>
+		/// <para>取消选中 - 输出事件表参数值将仅包含路径位置字段以及来自输入要素参数值的 ObjectID 属性。</para>
 		/// <para><see cref="InFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -204,9 +204,9 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 
 		/// <summary>
 		/// <para>Use M direction offsetting</para>
-		/// <para>Specifies whether the offset distance calculated will be based on the m-direction or the digitized direction. Distances are included in the Output Event Table parameter value if the Include distance field on output table parameter value is checked.</para>
-		/// <para>Checked—The distance values in the Output Event Table parameter value will be calculated based on the m-direction of the route. Input features to the left of the m-direction of the route will be assigned a positive offset (+), and features to the right of the m-direction will be assigned a negative offset value (-). This is the default.</para>
-		/// <para>Unchecked—The distance values in the Output Event Table parameter value will be calculated based on the digitized direction of the route. Input features to the left of the digitized direction of the route will be assigned a negative (-) offset, and features to the right of the digitized direction will be assigned a positive offset value (+).</para>
+		/// <para>指定计算的偏移距离是基于 m 方向还是数字化方向。 如果选中输出表包括距离字段参数值，则距离将包含在输出事件表参数值中。</para>
+		/// <para>选中 - 将根据路径的 M 方向计算输出事件表参数值中的距离值。 位于路径 M 方向左侧的输入要素将被赋予正偏移值 (+)，位于 M 方向右侧的要素将被赋予负偏移值 (-)。 这是默认设置。</para>
+		/// <para>取消选中 - 将根据路径的数字化方向计算输出事件表参数值中的距离值。 位于路径数字化方向左侧的输入要素将被赋予负偏移值 (-)，位于路径数字化方向右侧的要素将被赋予正偏移值 (+)。</para>
 		/// <para><see cref="MDirectionOffsettingEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -231,14 +231,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum RouteLocationsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Only the closest route location will be written to the Output Event Table parameter value. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FIRST")]
 			FIRST,
 
 			/// <summary>
-			/// <para>Unchecked—Every route location within the search radius will be written to the Output Event Table parameter value.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ALL")]
@@ -252,14 +252,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum DistanceFieldEnum 
 		{
 			/// <summary>
-			/// <para>Checked—A field containing the point-to-route distance will be added to the Output Event Table parameter value. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DISTANCE")]
 			DISTANCE,
 
 			/// <summary>
-			/// <para>Unchecked—A field containing the point-to-route distance will not be added to the output event table.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DISTANCE")]
@@ -273,14 +273,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum ZeroLengthEventsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Zero-length line events will be written to the Output Event Table parameter value. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ZERO")]
 			ZERO,
 
 			/// <summary>
-			/// <para>Unchecked—Zero-length line events will not be written to the Output Event Table parameter value.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ZERO")]
@@ -294,14 +294,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum InFieldsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The Output Event Table parameter value will contain route location fields and all the attributes from the Input Features parameter value. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FIELDS")]
 			FIELDS,
 
 			/// <summary>
-			/// <para>Unchecked—The Output Event Table parameter value will only contain route location fields and the ObjectID field from the Input Features parameter value.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_FIELDS")]
@@ -315,14 +315,14 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		public enum MDirectionOffsettingEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The distance values in the Output Event Table parameter value will be calculated based on the m-direction of the route. Input features to the left of the m-direction of the route will be assigned a positive offset (+), and features to the right of the m-direction will be assigned a negative offset value (-). This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("M_DIRECTON")]
 			M_DIRECTON,
 
 			/// <summary>
-			/// <para>Unchecked—The distance values in the Output Event Table parameter value will be calculated based on the digitized direction of the route. Input features to the left of the digitized direction of the route will be assigned a negative (-) offset, and features to the right of the digitized direction will be assigned a positive offset value (+).</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_M_DIRECTION")]

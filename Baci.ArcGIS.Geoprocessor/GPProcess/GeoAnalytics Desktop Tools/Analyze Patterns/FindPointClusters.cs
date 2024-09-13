@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Find Point Clusters</para>
-	/// <para>Find Point Clusters</para>
-	/// <para>Finds clusters of point features in surrounding noise based on their spatial or spatiotemporal distribution.</para>
+	/// <para>查找点聚类</para>
+	/// <para>基于点要素的空间或时空分布查找周围噪点内的点要素聚类。</para>
 	/// </summary>
 	public class FindPointClusters : AbstractGPProcess
 	{
@@ -21,24 +21,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// </summary>
 		/// <param name="InputPoints">
 		/// <para>Input Point Layer</para>
-		/// <para>The point feature class containing the point clusters.</para>
+		/// <para>包含点聚类的点要素类。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>A new feature class with the resulting point clusters.</para>
+		/// <para>包含所生成点聚类的新要素类。</para>
 		/// </param>
 		/// <param name="ClusteringMethod">
 		/// <para>Clustering Method</para>
-		/// <para>Specifies the method that will be used to define clusters.</para>
-		/// <para>Defined distance (DBSCAN)— Uses a specified distance to separate dense clusters from sparser noise. DBSCAN is the fastest of the clustering methods but is only appropriate if there is a clear distance to use that works well to define all clusters that may be present. This results in clusters that have similar densities. This is the default.</para>
-		/// <para>Self-adjusting (HDBSCAN)— Uses varying distances to separate clusters of varying densities from sparser noise. HDBSCAN is the most data-driven of the clustering methods and requires the least user input.</para>
+		/// <para>指定将用于定义聚类的方法。</para>
+		/// <para>定义的距离 (DBSCAN)— 使用指定距离将密集聚类与稀疏噪点相分离。DBSCAN 是最快的聚类方法，但仅适用于要使用的距离明确，并且非常适用于定义可能存在的所有聚类。此方法将产生密度相似的聚类。这是默认设置。</para>
+		/// <para>自调整 (HDBSCAN)— 使用可变距离可将不同密度的聚类与稀疏噪点相分离。HDBSCAN 是最以数据为驱动的聚类方法，且需要的用户输入最少。</para>
 		/// <para><see cref="ClusteringMethodEnum"/></para>
 		/// </param>
 		/// <param name="MinimumPoints">
 		/// <para>Minimum Features per Cluster</para>
-		/// <para>This parameter is used differently depending on the clustering method chosen as follows:</para>
-		/// <para>Defined distance (DBSCAN)—Specifies the number of features that must be found within a certain distance of a point for that point to start to form a cluster. The distance is defined using the Search Distance parameter.</para>
-		/// <para>Self-adjusting (HDBSCAN)—Specifies the number of features neighboring each point (including the point) that will be considered when estimating density. This number is also the minimum cluster size allowed when extracting clusters.</para>
+		/// <para>根据选择的聚类方法，此参数的使用方式也不同，如下所示：</para>
+		/// <para>定义距离 (DBSCAN) - 可以指定在某点开始形成聚类的特定距离内必须找到的要素数。距离可使用搜索距离参数进行定义。</para>
+		/// <para>自调整 (HDBSCAN) - 可指定与估算密度时考虑的每个点相邻的要素数（包括该点）。此数字也是提取聚类时所允许的最小聚类大小。</para>
 		/// </param>
 		public FindPointClusters(object InputPoints, object OutFeatureClass, object ClusteringMethod, object MinimumPoints)
 		{
@@ -49,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Find Point Clusters</para>
+		/// <para>Tool Display Name : 查找点聚类</para>
 		/// </summary>
-		public override string DisplayName() => "Find Point Clusters";
+		public override string DisplayName() => "查找点聚类";
 
 		/// <summary>
 		/// <para>Tool Name : FindPointClusters</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Input Point Layer</para>
-		/// <para>The point feature class containing the point clusters.</para>
+		/// <para>包含点聚类的点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>A new feature class with the resulting point clusters.</para>
+		/// <para>包含所生成点聚类的新要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -104,9 +104,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Clustering Method</para>
-		/// <para>Specifies the method that will be used to define clusters.</para>
-		/// <para>Defined distance (DBSCAN)— Uses a specified distance to separate dense clusters from sparser noise. DBSCAN is the fastest of the clustering methods but is only appropriate if there is a clear distance to use that works well to define all clusters that may be present. This results in clusters that have similar densities. This is the default.</para>
-		/// <para>Self-adjusting (HDBSCAN)— Uses varying distances to separate clusters of varying densities from sparser noise. HDBSCAN is the most data-driven of the clustering methods and requires the least user input.</para>
+		/// <para>指定将用于定义聚类的方法。</para>
+		/// <para>定义的距离 (DBSCAN)— 使用指定距离将密集聚类与稀疏噪点相分离。DBSCAN 是最快的聚类方法，但仅适用于要使用的距离明确，并且非常适用于定义可能存在的所有聚类。此方法将产生密度相似的聚类。这是默认设置。</para>
+		/// <para>自调整 (HDBSCAN)— 使用可变距离可将不同密度的聚类与稀疏噪点相分离。HDBSCAN 是最以数据为驱动的聚类方法，且需要的用户输入最少。</para>
 		/// <para><see cref="ClusteringMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -116,9 +116,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Minimum Features per Cluster</para>
-		/// <para>This parameter is used differently depending on the clustering method chosen as follows:</para>
-		/// <para>Defined distance (DBSCAN)—Specifies the number of features that must be found within a certain distance of a point for that point to start to form a cluster. The distance is defined using the Search Distance parameter.</para>
-		/// <para>Self-adjusting (HDBSCAN)—Specifies the number of features neighboring each point (including the point) that will be considered when estimating density. This number is also the minimum cluster size allowed when extracting clusters.</para>
+		/// <para>根据选择的聚类方法，此参数的使用方式也不同，如下所示：</para>
+		/// <para>定义距离 (DBSCAN) - 可以指定在某点开始形成聚类的特定距离内必须找到的要素数。距离可使用搜索距离参数进行定义。</para>
+		/// <para>自调整 (HDBSCAN) - 可指定与估算密度时考虑的每个点相邻的要素数（包括该点）。此数字也是提取聚类时所允许的最小聚类大小。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -126,8 +126,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Search Distance</para>
-		/// <para>The maximum distance to be considered.</para>
-		/// <para>The Minimum Features per Cluster specified must be found within this distance for cluster membership. Individual clusters will be separated by at least this distance. If a feature is located farther than this distance from the next closest feature in the cluster, it will not be included in the cluster.</para>
+		/// <para>要考虑的最大距离。</para>
+		/// <para>必须在聚类成员的此距离内找到指定的每个聚类的最小要素数。将至少按此距离来分隔单个聚类。如果要素与聚类中下一最近要素的距离大于此距离，则不会将该要素包括在聚类中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -136,9 +136,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Use Time to Find Clusters</para>
-		/// <para>Specifies whether or not time will be used to discover clusters with DBSCAN.</para>
-		/// <para>Checked—Spatiotemporal clusters will be found using both a search distance and a search duration.</para>
-		/// <para>Unchecked—Spatial clusters will be found using a search distance and time will be ignored. This is the default.</para>
+		/// <para>用于指定是否将使用时间通过 DBSCAN 查找聚类。</para>
+		/// <para>选中 - 将使用搜索距离和搜索持续时间来查找时空聚类。</para>
+		/// <para>未选中 - 将使用搜索距离来查找空间聚类，而时间将被忽略。这是默认设置。</para>
 		/// <para><see cref="UseTimeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 
 		/// <summary>
 		/// <para>Search Duration</para>
-		/// <para>When searching for cluster members, the specified minimum number of points must be found within this time duration to form a cluster.</para>
+		/// <para>在搜索聚类成员时，必须在此持续时间内找到指定的最小点数方可形成聚类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPTimeUnit()]
@@ -172,17 +172,17 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum ClusteringMethodEnum 
 		{
 			/// <summary>
-			/// <para>Defined distance (DBSCAN)— Uses a specified distance to separate dense clusters from sparser noise. DBSCAN is the fastest of the clustering methods but is only appropriate if there is a clear distance to use that works well to define all clusters that may be present. This results in clusters that have similar densities. This is the default.</para>
+			/// <para>定义的距离 (DBSCAN)— 使用指定距离将密集聚类与稀疏噪点相分离。DBSCAN 是最快的聚类方法，但仅适用于要使用的距离明确，并且非常适用于定义可能存在的所有聚类。此方法将产生密度相似的聚类。这是默认设置。</para>
 			/// </summary>
 			[GPValue("DBSCAN")]
-			[Description("Defined distance (DBSCAN)")]
+			[Description("定义的距离 (DBSCAN)")]
 			DBSCAN,
 
 			/// <summary>
-			/// <para>Self-adjusting (HDBSCAN)— Uses varying distances to separate clusters of varying densities from sparser noise. HDBSCAN is the most data-driven of the clustering methods and requires the least user input.</para>
+			/// <para>自调整 (HDBSCAN)— 使用可变距离可将不同密度的聚类与稀疏噪点相分离。HDBSCAN 是最以数据为驱动的聚类方法，且需要的用户输入最少。</para>
 			/// </summary>
 			[GPValue("HDBSCAN")]
-			[Description("Self-adjusting (HDBSCAN)")]
+			[Description("自调整 (HDBSCAN)")]
 			HDBSCAN,
 
 		}
@@ -193,14 +193,14 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		public enum UseTimeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Spatiotemporal clusters will be found using both a search distance and a search duration.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("TIME")]
 			TIME,
 
 			/// <summary>
-			/// <para>Unchecked—Spatial clusters will be found using a search distance and time will be ignored. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_TIME")]

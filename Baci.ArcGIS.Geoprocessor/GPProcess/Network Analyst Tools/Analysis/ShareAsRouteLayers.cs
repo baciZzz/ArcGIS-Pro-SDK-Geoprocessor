@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Share As Route Layers</para>
-	/// <para>Share As Route Layers</para>
-	/// <para>Shares the results of network analyses as route layer items in a portal.  A route layer includes all the information for a particular route such as the stops assigned to the route as well as the travel directions.</para>
+	/// <para>共享为路径图层</para>
+	/// <para>用于将网络分析结果共享为门户中的路径图层项目。路径图层中包含特定路径的全部信息，例如分配至路径的停靠点，以及出行方向等。</para>
 	/// </summary>
 	public class ShareAsRouteLayers : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="InNetworkAnalysisLayer">
 		/// <para>Input Network Analysis Layer or  Route Data</para>
-		/// <para>The network analysis layer or a .zip file containing the route data from which the route layer items are created. When the input is a network analysis layer, it should already be solved.</para>
+		/// <para>网络分析图层或包含用于创建路径图层项目的路径数据的 .zip 文件。当输入为网络分析图层时，其应已得到求解。</para>
 		/// </param>
 		public ShareAsRouteLayers(object InNetworkAnalysisLayer)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Share As Route Layers</para>
+		/// <para>Tool Display Name : 共享为路径图层</para>
 		/// </summary>
-		public override string DisplayName() => "Share As Route Layers";
+		public override string DisplayName() => "共享为路径图层";
 
 		/// <summary>
 		/// <para>Tool Name : ShareAsRouteLayers</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Input Network Analysis Layer or  Route Data</para>
-		/// <para>The network analysis layer or a .zip file containing the route data from which the route layer items are created. When the input is a network analysis layer, it should already be solved.</para>
+		/// <para>网络分析图层或包含用于创建路径图层项目的路径数据的 .zip 文件。当输入为网络分析图层时，其应已得到求解。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Summary</para>
-		/// <para>The summary used by the route layer items. The summary is displayed as part of the item information for the route layer item. If a value is not specified, default summary text—Route and directions for &lt;route name&gt;—is used, where &lt;route name&gt; is replaced with the name of the route represented by the route layer.</para>
+		/// <para>路径图层项目使用的摘要。摘要显示为路径图层项目的项目信息的一部分。如果未指定任何值，则将使用默认摘要文本 - Route and directions for &lt;路径名称&gt;，其中 &lt;路径名称&gt; 可替换为由路径图层表示的路径的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Tags</para>
-		/// <para>The tags used to describe and identify the route layer items. Individual tags are separated with commas. The route name is always included as a tag even when a value is not specified.</para>
+		/// <para>用于描述和标识路径图层项目的标签。各个标签之间用逗号进行分隔。路径名称始终作为标签包含在内，即使在未指定任何值的情况下也是如此。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Route Name Prefix</para>
-		/// <para>A qualifier added to the title of every route layer item. For example, a route name prefix Monday morning deliveries can be used to group all route layer items created from a route analysis performed by deliveries that should be executed on Monday morning. If a value is not specified, the title of the route layer item is created using only the route name.</para>
+		/// <para>添加至每个路径图层项目标题的限定符。例如，路径名称前缀 Monday morning deliveries 可用于对基于星期一上午配送时所进行的路径分析创建的所有路径图层项目进行分组。如果未指定任何值，则仅使用路径名称创建路径图层项目的标题。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Portal Folder Name</para>
-		/// <para>The folder in your personal online workspace where the route layer items will be created. If a folder with the specified name does not exist, a folder will be created. If a folder with the specified name exists, the items will be created in the existing folder. If a value is not specified, the route layer items are created in the root folder of your online workspace.</para>
+		/// <para>个人在线工作空间中将创建路径图层项目的文件夹。如果具有指定名称的文件夹不存在，则会创建一个文件夹。如果存在具有指定名称的文件夹，则将在现有文件夹中创建项目。如果未指定任何值，则将在您的在线工作空间中的根文件夹内创建路径图层项目。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -105,11 +105,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Share with</para>
-		/// <para>Specifies who can access the route layer items. The parameter can be specified using the following keywords:</para>
-		/// <para>Everyone— The route layer items will be public and can be accessed by anyone with the URL to the items.</para>
-		/// <para>Not shared— The route layer items will only be shared with the owner of the item (the user connected to the portal when the tool is run). As a result, only the item owner can access the route layers. This is the default.</para>
-		/// <para>These groups— The route layer items will be shared with groups the connected user belongs to and its members. The groups are specified using the groups parameter.</para>
-		/// <para>Organization— The route layer items will be shared with all authenticated users in your organization.</para>
+		/// <para>指定可以访问路径图层项目的用户。可以使用以下关键字指定此参数：</para>
+		/// <para>所有人— 路径图层项目将公开，任何人都可以通过这些项目的 URL 进行访问。</para>
+		/// <para>不共享— 路径图层项目将仅共享给项目的所有者（运行该工具时连接到该门户的用户）。因此，仅项目的所有者才可以访问路径图层。这是默认设置。</para>
+		/// <para>以下群组— 路径图层项目将共享给连接的用户所属的组及其成员。这些组是使用组参数指定的。</para>
+		/// <para>组织— 路径图层项目将共享给您所在组织中所有经过身份验证的用户。</para>
 		/// <para><see cref="ShareWithEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Groups</para>
-		/// <para>The list of groups with which the route layer items will be shared. This option is applicable only when the Share with parameter is set to These groups.</para>
+		/// <para>将与之共享路径图层项目的群组列表。仅当共享给参数设置为这些群组时，此选项才适用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -149,31 +149,31 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum ShareWithEnum 
 		{
 			/// <summary>
-			/// <para>Everyone— The route layer items will be public and can be accessed by anyone with the URL to the items.</para>
+			/// <para>所有人— 路径图层项目将公开，任何人都可以通过这些项目的 URL 进行访问。</para>
 			/// </summary>
 			[GPValue("EVERYBODY")]
-			[Description("Everyone")]
+			[Description("所有人")]
 			Everyone,
 
 			/// <summary>
-			/// <para>Organization— The route layer items will be shared with all authenticated users in your organization.</para>
+			/// <para>组织— 路径图层项目将共享给您所在组织中所有经过身份验证的用户。</para>
 			/// </summary>
 			[GPValue("MYORGANIZATION")]
-			[Description("Organization")]
+			[Description("组织")]
 			Organization,
 
 			/// <summary>
-			/// <para>These groups— The route layer items will be shared with groups the connected user belongs to and its members. The groups are specified using the groups parameter.</para>
+			/// <para>以下群组— 路径图层项目将共享给连接的用户所属的组及其成员。这些组是使用组参数指定的。</para>
 			/// </summary>
 			[GPValue("MYGROUPS")]
-			[Description("These groups")]
+			[Description("以下群组")]
 			These_groups,
 
 			/// <summary>
-			/// <para>Not shared— The route layer items will only be shared with the owner of the item (the user connected to the portal when the tool is run). As a result, only the item owner can access the route layers. This is the default.</para>
+			/// <para>不共享— 路径图层项目将仅共享给项目的所有者（运行该工具时连接到该门户的用户）。因此，仅项目的所有者才可以访问路径图层。这是默认设置。</para>
 			/// </summary>
 			[GPValue("MYCONTENT")]
-			[Description("Not shared")]
+			[Description("不共享")]
 			Not_shared,
 
 		}

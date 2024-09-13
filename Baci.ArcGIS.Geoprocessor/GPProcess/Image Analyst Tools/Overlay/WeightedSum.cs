@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Weighted Sum</para>
-	/// <para>Weighted Sum</para>
-	/// <para>Overlays several rasters, multiplying each by their given weight and summing them together.</para>
+	/// <para>加权总和</para>
+	/// <para>通过将栅格各自乘以指定的权重并合计在一起来叠加多个栅格。</para>
 	/// </summary>
 	public class WeightedSum : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="InRasters">
 		/// <para>Input rasters</para>
-		/// <para>The weighted sum table allows you to apply different weights to individual input rasters before they are summed together.</para>
-		/// <para>Raster—The raster being weighted.</para>
-		/// <para>Field—The field of the raster to use for weighting.</para>
-		/// <para>Weight—The weight value by which to multiply the raster. It can be any positive or negative decimal value.</para>
+		/// <para>加权总和表允许您在对输入栅格求和之前对其应用不同的权重。</para>
+		/// <para>栅格 - 进行加权的栅格。</para>
+		/// <para>字段 - 用于加权的栅格字段。</para>
+		/// <para>权重 - 与栅格数据相乘的权重值。该值可以是正的或负的小数值。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output weighted raster.</para>
-		/// <para>It will be of floating-point type.</para>
+		/// <para>输出加权栅格。</para>
+		/// <para>此栅格为浮点类型。</para>
 		/// </param>
 		public WeightedSum(object InRasters, object OutRaster)
 		{
@@ -38,9 +38,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Weighted Sum</para>
+		/// <para>Tool Display Name : 加权总和</para>
 		/// </summary>
-		public override string DisplayName() => "Weighted Sum";
+		public override string DisplayName() => "加权总和";
 
 		/// <summary>
 		/// <para>Tool Name : WeightedSum</para>
@@ -74,10 +74,10 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Input rasters</para>
-		/// <para>The weighted sum table allows you to apply different weights to individual input rasters before they are summed together.</para>
-		/// <para>Raster—The raster being weighted.</para>
-		/// <para>Field—The field of the raster to use for weighting.</para>
-		/// <para>Weight—The weight value by which to multiply the raster. It can be any positive or negative decimal value.</para>
+		/// <para>加权总和表允许您在对输入栅格求和之前对其应用不同的权重。</para>
+		/// <para>栅格 - 进行加权的栅格。</para>
+		/// <para>字段 - 用于加权的栅格字段。</para>
+		/// <para>权重 - 与栅格数据相乘的权重值。该值可以是正的或负的小数值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAWeightedSum()]
@@ -86,8 +86,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output weighted raster.</para>
-		/// <para>It will be of floating-point type.</para>
+		/// <para>输出加权栅格。</para>
+		/// <para>此栅格为浮点类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]

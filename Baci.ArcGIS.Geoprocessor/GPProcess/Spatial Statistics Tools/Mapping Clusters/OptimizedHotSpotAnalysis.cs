@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Optimized Hot Spot Analysis</para>
-	/// <para>Optimized Hot Spot Analysis</para>
-	/// <para>Given incident points or weighted features (points or polygons), creates a map of statistically significant hot and cold spots using the Getis-Ord Gi* statistic. It evaluates the characteristics of the input feature class to produce optimal results.</para>
+	/// <para>优化的热点分析</para>
+	/// <para>假设存在事件点或加权要素（点或面），可以使用 Getis-Ord Gi* 统计数据创建具有统计显著性的热点和冷点的地图。它通过评估输入要素类的特征来生成可优化结果。</para>
 	/// </summary>
 	public class OptimizedHotSpotAnalysis : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputFeatures">
 		/// <para>Input Features</para>
-		/// <para>The point or polygon feature class for which hot spot analysis will be performed.</para>
+		/// <para>将要执行热点分析的点或面要素类。</para>
 		/// </param>
 		/// <param name="OutputFeatures">
 		/// <para>Output Features</para>
-		/// <para>The output feature class to receive the z-score, p-value, and Gi_Bin results.</para>
+		/// <para>接收 z 得分、p 值和 Gi_Bin 结果的输出要素类。</para>
 		/// </param>
 		public OptimizedHotSpotAnalysis(object InputFeatures, object OutputFeatures)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Optimized Hot Spot Analysis</para>
+		/// <para>Tool Display Name : 优化的热点分析</para>
 		/// </summary>
-		public override string DisplayName() => "Optimized Hot Spot Analysis";
+		public override string DisplayName() => "优化的热点分析";
 
 		/// <summary>
 		/// <para>Tool Name : OptimizedHotSpotAnalysis</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The point or polygon feature class for which hot spot analysis will be performed.</para>
+		/// <para>将要执行热点分析的点或面要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Features</para>
-		/// <para>The output feature class to receive the z-score, p-value, and Gi_Bin results.</para>
+		/// <para>接收 z 得分、p 值和 Gi_Bin 结果的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Analysis Field</para>
-		/// <para>The numeric field (number of incidents, crime rates, test scores, and so on) to be evaluated.</para>
+		/// <para>要评估的数值字段（事件数、犯罪率和测试得分等）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -99,11 +99,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Incident Data Aggregation Method</para>
-		/// <para>The aggregation method to use to create weighted features for analysis from incident point data.</para>
-		/// <para>Count incidents within fishnet grid—A fishnet polygon mesh will overlay the incident point data and the number of incidents within each polygon cell will be counted. If no bounding polygon is provided in the Bounding Polygons Defining Where Incidents Are Possible parameter, only cells with at least one incident will be used in the analysis; otherwise, all cells within the bounding polygons will be analyzed.</para>
-		/// <para>Count incidents within hexagon grid—A hexagon polygon mesh will overlay the incident point data and the number of incidents within each polygon cell will be counted. If no bounding polygon is provided in the Bounding Polygons Defining Where Incidents Are Possible parameter, only cells with at least one incident will be used in the analysis; otherwise, all cells within the bounding polygons will be analyzed.</para>
-		/// <para>Count incidents within aggregation polygons—You provide aggregation polygons to overlay the incident point data in the Polygons For Aggregating Incidents Into Counts parameter. The incidents within each polygon are counted.</para>
-		/// <para>Snap nearby incidents to create weighted points—Nearby incidents will be aggregated together to create a single weighted point. The weight for each point is the number of aggregated incidents at that location.</para>
+		/// <para>用于创建加权要素以通过事件点数据进行分析的聚合方法。</para>
+		/// <para>在渔网格网内计数事件—渔网面网格将覆盖事件点数据，并将计算每个面内的事件数。如果定义事件潜在发生位置的边界面参数中未提供任何边界面，则只分析至少含一个事件的像元；否则，将分析边界面之内的所有像元。</para>
+		/// <para>在六边形格网内计数事件—六边形面网格将覆盖事件点数据，并将计算每个面像元内的事件数。如果定义事件潜在发生位置的边界面参数中未提供任何边界面，则只分析至少含一个事件的像元；否则，将分析边界面之内的所有像元。</para>
+		/// <para>在渔网面内计数事件—提供聚合面以覆盖用于将事件聚合到计数的面参数中的事件点数据。计算每个面内的事件数。</para>
+		/// <para>捕捉附近事件以创建加权点—邻近事件将聚合在一起，从而创建单个加权点。各点的权重值是该位置的聚合事件数。</para>
 		/// <para><see cref="IncidentDataAggregationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Bounding Polygons Defining Where Incidents Are Possible</para>
-		/// <para>A polygon feature class defining where the incident Input Features could possibly occur.</para>
+		/// <para>面要素类定义可能会发生输入要素事件的区域。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Polygons For Aggregating Incidents Into Counts</para>
-		/// <para>The polygons to use to aggregate the incident Input Features in order to get an incident count for each polygon feature.</para>
+		/// <para>用于聚合输入要素事件以获得各面要素的事件计数的面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Density Surface</para>
-		/// <para>The Density Surface parameter is disabled; it remains as a tool parameter only to support backwards compatibility. The Kernel Density tool can be used if you would like a density surface visualization of your weighted points.</para>
+		/// <para>因此，密度表面参数会被禁用；其仍将作为一个工具参数而保留以保持向后兼容性。核密度工具可用于将您的加权点的密度表面可视化。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Cell Size</para>
-		/// <para>The size of the grid cells used to aggregate the Input Features. When aggregating into a hexagon grid, this distance is used as the height to construct the hexagon polygons.</para>
+		/// <para>用于聚合输入要素的格网像元的大小。当聚合到六边形网格时，该距离用作构建六边形面的高度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Distance Band</para>
-		/// <para>The spatial extent of the analysis neighborhood. This value determines which features are analyzed together in order to assess local clustering.</para>
+		/// <para>分析邻域的空间范围。该值用于确定将哪些要素一起用于分析以便访问局部聚类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -178,31 +178,31 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum IncidentDataAggregationMethodEnum 
 		{
 			/// <summary>
-			/// <para>Count incidents within fishnet grid—A fishnet polygon mesh will overlay the incident point data and the number of incidents within each polygon cell will be counted. If no bounding polygon is provided in the Bounding Polygons Defining Where Incidents Are Possible parameter, only cells with at least one incident will be used in the analysis; otherwise, all cells within the bounding polygons will be analyzed.</para>
+			/// <para>在渔网格网内计数事件—渔网面网格将覆盖事件点数据，并将计算每个面内的事件数。如果定义事件潜在发生位置的边界面参数中未提供任何边界面，则只分析至少含一个事件的像元；否则，将分析边界面之内的所有像元。</para>
 			/// </summary>
 			[GPValue("COUNT_INCIDENTS_WITHIN_FISHNET_POLYGONS")]
-			[Description("Count incidents within fishnet grid")]
+			[Description("在渔网格网内计数事件")]
 			Count_incidents_within_fishnet_grid,
 
 			/// <summary>
-			/// <para>Count incidents within hexagon grid—A hexagon polygon mesh will overlay the incident point data and the number of incidents within each polygon cell will be counted. If no bounding polygon is provided in the Bounding Polygons Defining Where Incidents Are Possible parameter, only cells with at least one incident will be used in the analysis; otherwise, all cells within the bounding polygons will be analyzed.</para>
+			/// <para>在六边形格网内计数事件—六边形面网格将覆盖事件点数据，并将计算每个面像元内的事件数。如果定义事件潜在发生位置的边界面参数中未提供任何边界面，则只分析至少含一个事件的像元；否则，将分析边界面之内的所有像元。</para>
 			/// </summary>
 			[GPValue("COUNT_INCIDENTS_WITHIN_HEXAGON_POLYGONS")]
-			[Description("Count incidents within hexagon grid")]
+			[Description("在六边形格网内计数事件")]
 			Count_incidents_within_hexagon_grid,
 
 			/// <summary>
-			/// <para>Count incidents within aggregation polygons—You provide aggregation polygons to overlay the incident point data in the Polygons For Aggregating Incidents Into Counts parameter. The incidents within each polygon are counted.</para>
+			/// <para>在渔网面内计数事件—提供聚合面以覆盖用于将事件聚合到计数的面参数中的事件点数据。计算每个面内的事件数。</para>
 			/// </summary>
 			[GPValue("COUNT_INCIDENTS_WITHIN_AGGREGATION_POLYGONS")]
-			[Description("Count incidents within aggregation polygons")]
+			[Description("在渔网面内计数事件")]
 			Count_incidents_within_aggregation_polygons,
 
 			/// <summary>
-			/// <para>Snap nearby incidents to create weighted points—Nearby incidents will be aggregated together to create a single weighted point. The weight for each point is the number of aggregated incidents at that location.</para>
+			/// <para>捕捉附近事件以创建加权点—邻近事件将聚合在一起，从而创建单个加权点。各点的权重值是该位置的聚合事件数。</para>
 			/// </summary>
 			[GPValue("SNAP_NEARBY_INCIDENTS_TO_CREATE_WEIGHTED_POINTS")]
-			[Description("Snap nearby incidents to create weighted points")]
+			[Description("捕捉附近事件以创建加权点")]
 			Snap_nearby_incidents_to_create_weighted_points,
 
 		}

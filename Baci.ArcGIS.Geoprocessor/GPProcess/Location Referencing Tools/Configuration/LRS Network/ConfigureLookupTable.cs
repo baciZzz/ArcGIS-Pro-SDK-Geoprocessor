@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Configure Lookup Table</para>
-	/// <para>Configure Lookup Table</para>
-	/// <para>Configures a lookup table for one or more fields used in a multifield route ID.</para>
+	/// <para>配置查找表</para>
+	/// <para>为多字段路径 ID 中使用的一个或多个字段配置查找表。</para>
 	/// </summary>
 	public class ConfigureLookupTable : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InFeatureClass">
 		/// <para>LRS Network Feature Class</para>
-		/// <para>The input LRS Network feature class in which the lookup table will be configured. The network must have a multifield route ID.</para>
+		/// <para>将在其中配置查找表的输入 LRS 网络要素类。 网络必须具有多字段路径 ID。</para>
 		/// </param>
 		/// <param name="LookupTable">
 		/// <para>Lookup Table</para>
-		/// <para>A table that contains a list of street names and their corresponding GNIS codes. It can be a stand-alone table or reside in an SDE.</para>
+		/// <para>包含街道名称及其对应 GNIS 代码列表的表。 它可以是独立表或位于 SDE 中。</para>
 		/// </param>
 		/// <param name="FieldAppliedTo">
 		/// <para>Field Applied To</para>
-		/// <para>The route ID field in the LRS Network in which the Lookup Table will be configured.</para>
+		/// <para>将在其中配置查找表的 LRS 网络中的路径 ID 字段。</para>
 		/// </param>
 		/// <param name="LookupKey">
 		/// <para>Lookup Key</para>
-		/// <para>The key field in the Lookup Table.</para>
+		/// <para>查找表中的键字段。</para>
 		/// </param>
 		public ConfigureLookupTable(object InFeatureClass, object LookupTable, object FieldAppliedTo, object LookupKey)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Configure Lookup Table</para>
+		/// <para>Tool Display Name : 配置查找表</para>
 		/// </summary>
-		public override string DisplayName() => "Configure Lookup Table";
+		public override string DisplayName() => "配置查找表";
 
 		/// <summary>
 		/// <para>Tool Name : ConfigureLookupTable</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>LRS Network Feature Class</para>
-		/// <para>The input LRS Network feature class in which the lookup table will be configured. The network must have a multifield route ID.</para>
+		/// <para>将在其中配置查找表的输入 LRS 网络要素类。 网络必须具有多字段路径 ID。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Lookup Table</para>
-		/// <para>A table that contains a list of street names and their corresponding GNIS codes. It can be a stand-alone table or reside in an SDE.</para>
+		/// <para>包含街道名称及其对应 GNIS 代码列表的表。 它可以是独立表或位于 SDE 中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Field Applied To</para>
-		/// <para>The route ID field in the LRS Network in which the Lookup Table will be configured.</para>
+		/// <para>将在其中配置查找表的 LRS 网络中的路径 ID 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Lookup Key</para>
-		/// <para>The key field in the Lookup Table.</para>
+		/// <para>查找表中的键字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Lookup Display</para>
-		/// <para>The Lookup Table description field. This field appears in the text box for the multifield route ID.</para>
+		/// <para>查找表描述字段。 此字段将显示在多字段路径 ID 的文本框中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -125,9 +125,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Allow any lookup value</para>
-		/// <para>Specifies whether a value that is not in the lookup table can be added. The Lookup Display parameter cannot be configured when this option is checked.</para>
-		/// <para>Checked—Allow a value to be configured when one is not present in the table.</para>
-		/// <para>Unchecked—Don&apos;t allow a lookup display value to be configured. This is the default.</para>
+		/// <para>指定是否可以添加不在查找表中的值。 选中此选项时，无法配置查找显示参数。</para>
+		/// <para>选中 - 允许在表中不存在值时配置值。</para>
+		/// <para>未选中 - 不允许配置查找显示值。 这是默认设置。</para>
 		/// <para><see cref="AllowAnyLookupValueEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -159,14 +159,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum AllowAnyLookupValueEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Allow a value to be configured when one is not present in the table.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ALLOW_ANY_VALUE")]
 			ALLOW_ANY_VALUE,
 
 			/// <summary>
-			/// <para>Unchecked—Don&apos;t allow a lookup display value to be configured. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("DO_NOT_ALLOW_ANY_VALUE")]

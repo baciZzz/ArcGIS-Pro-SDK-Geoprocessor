@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Find Local Peaks Or Valleys</para>
-	/// <para>Find Local Peaks Or Valleys</para>
-	/// <para>Finds  local peaks or valleys  within a defined area.</para>
+	/// <para>查找局部山峰或山谷</para>
+	/// <para>用于在定义区域内查找局部山峰或山谷。</para>
 	/// </summary>
 	public class FindLocalPeaksValleys : AbstractGPProcess
 	{
@@ -21,22 +21,22 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// </summary>
 		/// <param name="InSurface">
 		/// <para>Input Surface</para>
-		/// <para>The input elevation raster surface.</para>
+		/// <para>输入高程栅格表面。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output point feature class containing the local peaks or valleys.</para>
+		/// <para>包含局部山峰或山谷的输出点要素类。</para>
 		/// </param>
 		/// <param name="PeakValleyOpType">
 		/// <para>Peaks or Valleys</para>
-		/// <para>Specifies the type of operation the tool will perform.</para>
-		/// <para>Local peaks—Local peaks will be found. This is the default.</para>
-		/// <para>Local valleys—Local valleys will be found.</para>
+		/// <para>用于指定该工具将执行的操作类型。</para>
+		/// <para>局部山峰—将找到局部山峰。 这是默认设置。</para>
+		/// <para>局部山谷—将找到局部山谷。</para>
 		/// <para><see cref="PeakValleyOpTypeEnum"/></para>
 		/// </param>
 		/// <param name="NumPeaksValleys">
 		/// <para>Number of Peaks or Valleys</para>
-		/// <para>The number of peaks or valleys to find.</para>
+		/// <para>要查找的山峰或山谷的数量。</para>
 		/// </param>
 		public FindLocalPeaksValleys(object InSurface, object OutFeatureClass, object PeakValleyOpType, object NumPeaksValleys)
 		{
@@ -47,9 +47,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Find Local Peaks Or Valleys</para>
+		/// <para>Tool Display Name : 查找局部山峰或山谷</para>
 		/// </summary>
-		public override string DisplayName() => "Find Local Peaks Or Valleys";
+		public override string DisplayName() => "查找局部山峰或山谷";
 
 		/// <summary>
 		/// <para>Tool Name : FindLocalPeaksValleys</para>
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Surface</para>
-		/// <para>The input elevation raster surface.</para>
+		/// <para>输入高程栅格表面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -92,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output point feature class containing the local peaks or valleys.</para>
+		/// <para>包含局部山峰或山谷的输出点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -100,9 +100,9 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Peaks or Valleys</para>
-		/// <para>Specifies the type of operation the tool will perform.</para>
-		/// <para>Local peaks—Local peaks will be found. This is the default.</para>
-		/// <para>Local valleys—Local valleys will be found.</para>
+		/// <para>用于指定该工具将执行的操作类型。</para>
+		/// <para>局部山峰—将找到局部山峰。 这是默认设置。</para>
+		/// <para>局部山谷—将找到局部山谷。</para>
 		/// <para><see cref="PeakValleyOpTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Number of Peaks or Valleys</para>
-		/// <para>The number of peaks or valleys to find.</para>
+		/// <para>要查找的山峰或山谷的数量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 
 		/// <summary>
 		/// <para>Input Area</para>
-		/// <para>The input polygon feature class in which the local peaks or valleys will be found.</para>
+		/// <para>将在其中查找局部山峰或山谷的输入面要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureRecordSetLayer()]
@@ -146,17 +146,17 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		public enum PeakValleyOpTypeEnum 
 		{
 			/// <summary>
-			/// <para>Local peaks—Local peaks will be found. This is the default.</para>
+			/// <para>局部山峰—将找到局部山峰。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("PEAKS")]
-			[Description("Local peaks")]
+			[Description("局部山峰")]
 			Local_peaks,
 
 			/// <summary>
-			/// <para>Local valleys—Local valleys will be found.</para>
+			/// <para>局部山谷—将找到局部山谷。</para>
 			/// </summary>
 			[GPValue("VALLEYS")]
-			[Description("Local valleys")]
+			[Description("局部山谷")]
 			Local_valleys,
 
 		}

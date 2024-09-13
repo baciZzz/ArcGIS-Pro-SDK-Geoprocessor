@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Derive Stream As Raster</para>
-	/// <para>Derive Stream As Raster</para>
-	/// <para>Generates a stream raster from an input surface raster with no prior sink or depression filling required.</para>
+	/// <para>派生流作为栅格</para>
+	/// <para>从输入表面栅格生成流栅格，无需预先填充汇或洼地。</para>
 	/// </summary>
 	public class DeriveStreamAsRaster : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InSurfaceRaster">
 		/// <para>Input surface raster</para>
-		/// <para>The input surface raster.</para>
+		/// <para>输入表面栅格。</para>
 		/// </param>
 		/// <param name="OutStreamRaster">
 		/// <para>Output stream raster</para>
-		/// <para>The output raster representing stream locations.</para>
+		/// <para>表示流位置的输出栅格。</para>
 		/// </param>
 		public DeriveStreamAsRaster(object InSurfaceRaster, object OutStreamRaster)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Derive Stream As Raster</para>
+		/// <para>Tool Display Name : 派生流作为栅格</para>
 		/// </summary>
-		public override string DisplayName() => "Derive Stream As Raster";
+		public override string DisplayName() => "派生流作为栅格";
 
 		/// <summary>
 		/// <para>Tool Name : DeriveStreamAsRaster</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input surface raster</para>
-		/// <para>The input surface raster.</para>
+		/// <para>输入表面栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -82,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output stream raster</para>
-		/// <para>The output raster representing stream locations.</para>
+		/// <para>表示流位置的输出栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -90,9 +90,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster or feature depressions data</para>
-		/// <para>An optional dataset that defines real depressions.</para>
-		/// <para>The depressions can be defined either through a raster or a feature layer.</para>
-		/// <para>If input is a raster, the depression cells must take a valid value, including zero, and the areas that are not depressions must be NoData.</para>
+		/// <para>定义真实洼地的可选数据集。</para>
+		/// <para>可以通过栅格或要素图层定义洼地。</para>
+		/// <para>如果输入为栅格，则洼地像元必须采用有效值（包括零），并且不是洼地的区域必须为 NoData。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
@@ -104,9 +104,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input accumulation weight raster</para>
-		/// <para>An optional input raster dataset that defines the fraction of flow that contributes to flow accumulation at each cell.</para>
-		/// <para>The weight is only applied to the accumulation of flow.</para>
-		/// <para>If no accumulation weight raster is specified, a default weight of 1 will be applied to each cell.</para>
+		/// <para>可选的输入栅格数据集，用于定义有助于在每个像元处流量的流量比例。</para>
+		/// <para>权重仅适用于流量的累积。</para>
+		/// <para>如果未指定累积权重栅格，则将默认的权重值 1 应用于每个像元。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSAGeoData()]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Accumulation threshold</para>
-		/// <para>The threshold for determining whether a given cell is part of a stream in terms of the total area that flows into such cell.</para>
+		/// <para>用于根据流入该单元的总面积来确定给定单元是否为流的构成部分的阈值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPArealUnit()]
@@ -126,12 +126,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Stream designation method</para>
-		/// <para>Specifies the unique or order of the streams in the output.</para>
-		/// <para>Constant—The output cell values will all equal 1. This is the default.</para>
-		/// <para>Unique— Each stream will have a unique ID between intersections in the output.</para>
-		/// <para>Strahler— The Strahler method, in which stream order only increases when streams of the same order intersect, will be used. The intersection of a first-order and second-order link will remain a second-order link, rather than creating a third-order link.</para>
-		/// <para>Shreve—The Shreve method, in which stream order is assigned by magnitude, will be used. All links with no tributaries are assigned a magnitude (order) of one. Magnitudes are additive downslope. When two links intersect, their magnitudes are added and assigned to the downslope link.</para>
-		/// <para>Hack— The Hack method, in which each stream segment is assigned an order greater than the stream or river to which it discharges, will be used. For example, the main river channel is assigned an order of 1, all stream segments discharging to it are assigned an order of 2, any stream discharging to an order 2 stream is assigned an order of 3, and so on.</para>
+		/// <para>指定输出中流的唯一值或级别。</para>
+		/// <para>常量—输出像元值将全部等于 1。 这是默认设置。</para>
+		/// <para>唯一—每个流在输出的交叉点之间都具有唯一 ID。</para>
+		/// <para>放射状/发射状—将使用 Strahler 方法，在该方法中流级别仅在相同级别的流相交时增加。 一级连接线与二级连接线相交会保留二级连接线，而不会创建三级连接线。</para>
+		/// <para>Shreve—将使用 Shreve 方法，该方法将按量级分配流级别。 所有没有支流的连接线的量级（分级）将被指定为一。 量级是指可相加的河流下坡坡度。 当两条连接线相交时，其量级相加并分配给下坡连接线。</para>
+		/// <para>Hack—将使用 Hack 方法，其中为每个流段分配的级别大于其排放的流或河流。 例如，主河道的级别为 1，向其排放的所有流段的级别为 2，排放到 2 级流的所有流的级别为 3，依此类推。</para>
 		/// <para><see cref="StreamDesignationMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -141,9 +141,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Force all edge cells to flow outward</para>
-		/// <para>Specifies whether edge cells will always flow outward or follow normal flow rules.</para>
-		/// <para>Unchecked—If the maximum drop on the inside of an edge cell is greater than zero, the flow direction will be determined as usual; otherwise, the flow direction will be toward the edge. Cells that should flow from the edge of the surface raster inward will do so. This is the default.</para>
-		/// <para>Checked—All cells at the edge of the surface raster will flow outward from the surface raster.</para>
+		/// <para>指定边缘像元始终向外流还是遵循正常流动规则。</para>
+		/// <para>未选中 - 如果边缘像元内部的最大降幅大于零，则将照常确定流向；否则流向将朝向边缘。 应从表面栅格的边缘向内流的像元也将执行此行为。 这是默认设置。</para>
+		/// <para>选中 - 表面栅格边缘的所有像元将从表面栅格向外流。</para>
 		/// <para><see cref="ForceFlowEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -168,35 +168,35 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum StreamDesignationMethodEnum 
 		{
 			/// <summary>
-			/// <para>Constant—The output cell values will all equal 1. This is the default.</para>
+			/// <para>常量—输出像元值将全部等于 1。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("CONSTANT")]
-			[Description("Constant")]
+			[Description("常量")]
 			Constant,
 
 			/// <summary>
-			/// <para>Unique— Each stream will have a unique ID between intersections in the output.</para>
+			/// <para>唯一—每个流在输出的交叉点之间都具有唯一 ID。</para>
 			/// </summary>
 			[GPValue("UNIQUE")]
-			[Description("Unique")]
+			[Description("唯一")]
 			Unique,
 
 			/// <summary>
-			/// <para>Strahler— The Strahler method, in which stream order only increases when streams of the same order intersect, will be used. The intersection of a first-order and second-order link will remain a second-order link, rather than creating a third-order link.</para>
+			/// <para>放射状/发射状—将使用 Strahler 方法，在该方法中流级别仅在相同级别的流相交时增加。 一级连接线与二级连接线相交会保留二级连接线，而不会创建三级连接线。</para>
 			/// </summary>
 			[GPValue("STRAHLER")]
-			[Description("Strahler")]
+			[Description("放射状/发射状")]
 			Strahler,
 
 			/// <summary>
-			/// <para>Shreve—The Shreve method, in which stream order is assigned by magnitude, will be used. All links with no tributaries are assigned a magnitude (order) of one. Magnitudes are additive downslope. When two links intersect, their magnitudes are added and assigned to the downslope link.</para>
+			/// <para>Shreve—将使用 Shreve 方法，该方法将按量级分配流级别。 所有没有支流的连接线的量级（分级）将被指定为一。 量级是指可相加的河流下坡坡度。 当两条连接线相交时，其量级相加并分配给下坡连接线。</para>
 			/// </summary>
 			[GPValue("SHREVE")]
 			[Description("Shreve")]
 			Shreve,
 
 			/// <summary>
-			/// <para>Hack— The Hack method, in which each stream segment is assigned an order greater than the stream or river to which it discharges, will be used. For example, the main river channel is assigned an order of 1, all stream segments discharging to it are assigned an order of 2, any stream discharging to an order 2 stream is assigned an order of 3, and so on.</para>
+			/// <para>Hack—将使用 Hack 方法，其中为每个流段分配的级别大于其排放的流或河流。 例如，主河道的级别为 1，向其排放的所有流段的级别为 2，排放到 2 级流的所有流的级别为 3，依此类推。</para>
 			/// </summary>
 			[GPValue("HACK")]
 			[Description("Hack")]
@@ -210,14 +210,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum ForceFlowEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—If the maximum drop on the inside of an edge cell is greater than zero, the flow direction will be determined as usual; otherwise, the flow direction will be toward the edge. Cells that should flow from the edge of the surface raster inward will do so. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NORMAL")]
 			NORMAL,
 
 			/// <summary>
-			/// <para>Checked—All cells at the edge of the surface raster will flow outward from the surface raster.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("FORCE")]

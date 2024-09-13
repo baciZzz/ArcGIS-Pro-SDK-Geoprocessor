@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Reshape Diagram Edges Layout</para>
-	/// <para>Add Reshape Diagram Edges Layout</para>
-	/// <para>Adds the Reshape Diagram Edges Layout algorithm to the list of layouts to be automatically chained at the end of the building of diagrams based on a given template. This tool also presets the Reshape Diagram Edges Layout algorithm parameters for any diagram based on that template.</para>
+	/// <para>添加修整逻辑示意图边布局</para>
+	/// <para>用于将“修整逻辑示意图边布局”算法添加到基于给定模板构建逻辑示意图结束时自动进行链接的布局列表。此工具还会针对基于该模板的任意逻辑示意图预设“修整逻辑示意图边布局”算法参数。</para>
 	/// </summary>
 	public class AddReshapeDiagramEdgesLayout : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template that will be modified.</para>
+		/// <para>要修改的逻辑示意图模板名称</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
-		/// <para>Specifies whether the layout algorithm will automatically run when generating diagrams based on the specified template.</para>
-		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
-		/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+		/// <para>指定是否将在基于指定模板生成逻辑示意图时自动运行布局算法。</para>
+		/// <para>选中 - 添加的布局算法会在基于输入逻辑示意图模板参数值生成任何逻辑示意图的过程中自动运行。 这是默认设置。为布局算法指定的参数值是在生成逻辑示意图的过程中用于运行布局的参数值。 如果要对基于输入模板的任何逻辑示意图运行此算法，则还会默认加载这些参数值。</para>
+		/// <para>未选中 - 如果要对基于输入模板的任何逻辑示意图运行此算法，则还将默认加载当前为添加的布局逻辑示意图指定的所有参数值。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </param>
 		public AddReshapeDiagramEdgesLayout(object InUtilityNetwork, object TemplateName, object IsActive)
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Reshape Diagram Edges Layout</para>
+		/// <para>Tool Display Name : 添加修整逻辑示意图边布局</para>
 		/// </summary>
-		public override string DisplayName() => "Add Reshape Diagram Edges Layout";
+		public override string DisplayName() => "添加修整逻辑示意图边布局";
 
 		/// <summary>
 		/// <para>Tool Name : AddReshapeDiagramEdgesLayout</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -86,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template that will be modified.</para>
+		/// <para>要修改的逻辑示意图模板名称</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -94,9 +94,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Active</para>
-		/// <para>Specifies whether the layout algorithm will automatically run when generating diagrams based on the specified template.</para>
-		/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
-		/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+		/// <para>指定是否将在基于指定模板生成逻辑示意图时自动运行布局算法。</para>
+		/// <para>选中 - 添加的布局算法会在基于输入逻辑示意图模板参数值生成任何逻辑示意图的过程中自动运行。 这是默认设置。为布局算法指定的参数值是在生成逻辑示意图的过程中用于运行布局的参数值。 如果要对基于输入模板的任何逻辑示意图运行此算法，则还会默认加载这些参数值。</para>
+		/// <para>未选中 - 如果要对基于输入模板的任何逻辑示意图运行此算法，则还将默认加载当前为添加的布局逻辑示意图指定的所有参数值。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -106,9 +106,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Preserve container layout</para>
-		/// <para>Specifies how the algorithm will process containers.</para>
-		/// <para>Checked—The layout algorithm will execute on the top graph of the diagram so containers are preserved.</para>
-		/// <para>Unchecked—The layout algorithm will execute on both content and noncontent features in the diagram. This is the default.</para>
+		/// <para>指定算法将如何处理容器。</para>
+		/// <para>选中 - 将对逻辑示意图的上方图执行布局算法，以保留容器。</para>
+		/// <para>未选中 - 将对逻辑示意图中的内容要素和非内容要素执行布局算法。 这是默认设置。</para>
 		/// <para><see cref="AreContainersPreservedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -118,12 +118,12 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Reshape Operation</para>
-		/// <para>Specifies how edges will be reshaped.</para>
-		/// <para>Remove vertices—Vertices along any edges in the diagram will be removed.</para>
-		/// <para>Square edges—Vertices will be placed along diagram edges, and the edges will be displayed with right angles. This is the default.</para>
-		/// <para>Separate overlapping edges—Edges that connect the same origin and extremity junctions will be separated when they are overlapping.</para>
-		/// <para>Reduce vertices by angle—Some or all vertices displayed along diagram edges will be reduced according to the angle that separates the segments incident to those vertices.</para>
-		/// <para>Mark crossing edges—The horizontal and vertical diagram edges that cross each other at a right angle in the diagram will be marked, and the geometry of one of the crossing edges will be reshaped to display a circular arc at this location.</para>
+		/// <para>指定边的修整方法。</para>
+		/// <para>移除折点—将移除逻辑示意图中的所有沿边折点。</para>
+		/// <para>方边—折点将沿逻辑示意图边放置，且这些边将显示为直角。这是默认设置。</para>
+		/// <para>分离重叠边—当连接相同起始和末端交汇点的边发生重叠时，将对边进行分离。</para>
+		/// <para>按角度减少折点—根据关联于折点的线段之间的角度减少沿逻辑示意图边显示的部分或所有折点。</para>
+		/// <para>标记交叉边—将标记出彼此相交成直角的水平和垂直逻辑示意图边并修整其几何，以在相交位置显示圆弧。</para>
 		/// <para><see cref="ReshapeTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -133,9 +133,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Preserve path</para>
-		/// <para>Specifies whether vertices along the edges that are going to be squared will be preserved. This parameter can only be used when Reshape Operation is Square edges.</para>
-		/// <para>Checked—The direction of any edge will be considered, and vertices along that edge will be preserved from the first vertex to the last. This is the default.</para>
-		/// <para>Unchecked—Vertices along the diagram edges will not be considered, and the vertices will be removed during execution.</para>
+		/// <para>针对要组成方形的边，指定是否要保留沿这些边的折点。仅当修整操作为方边时，才能使用此参数。</para>
+		/// <para>选中 - 将考虑任意边的方向，并将保留沿该边的折点（从第一个折点到最后一个折点）。这是默认设置。</para>
+		/// <para>未选中 - 不会考虑沿逻辑示意图边的折点；将在执行过程中移除折点。</para>
 		/// <para><see cref="IsPathPreservedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Offset Between Edges</para>
-		/// <para>The spacing that will separate parallel segments of squared edges incident to the same junction. The default is 5 in the units of the diagram's coordinate system. This parameter can only be used when Reshape Operation is Square edges.</para>
+		/// <para>关联于相同交汇点的方边各平行线段之间的间距。默认值为 5（采用逻辑示意图坐标系的单位）。仅当修整操作为方边时，此参数才可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Break Point Position</para>
-		/// <para>The maximum distance between each junction to the first or last break point along edges incident to that junction when those edges are squared. The default is 8.66 in the units of the diagram's coordinate system. This parameter can only be used when Reshape Operation is Square edges.</para>
+		/// <para>当关联于交汇点的边组成方形时，各交汇点与沿这些边的第一个或最后一个中断点之间的最大距离。默认值为 8.66（采用逻辑示意图坐标系的单位）。仅当修整操作为方边时，才能使用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Offset Between Edges</para>
-		/// <para>The absolute spacing that will separate two edges. The default is 0.5 in the units of the diagram's coordinate system. This parameter can only be used when Reshape Operation is Separate overlapping edges.</para>
+		/// <para>两条边之间的绝对间距。默认值为 0.5（采用逻辑示意图坐标系的单位）。仅当修整操作为分离重叠边时，才能使用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -169,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Angle Threshold</para>
-		/// <para>The angle formed by the incident segments over which the vertex related to these segments is reduced. The wider the angle, the fewer number of vertices will be reduced. The default is 160 degrees. This parameter can only be used when Reshape Operation is Reduce vertices by angle.</para>
+		/// <para>由入射线段构成的角度，并根据此角度减少与这些线段相关的折点。角度越大，则将减少的折点数越少。默认值为 160 度。仅当修整操作为按角度减少折点时，才能使用此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -191,7 +191,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Circular Arc Radius</para>
-		/// <para>The radius of the circular arc that will be added to the crossing edge locations. The default is 5.</para>
+		/// <para>将向交叉边位置添加的圆弧的半径。默认值为 5。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -199,11 +199,11 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Circular Arc Position</para>
-		/// <para>Specifies the segment on which a circular arc will be placed.</para>
-		/// <para>Left of vertical segment—A circular arc will be placed to the left of the vertical segment.</para>
-		/// <para>Right of vertical segment—A circular arc will be placed to the right of the vertical segment.</para>
-		/// <para>Above horizontal segment—A circular arc will be placed above the horizontal segment.</para>
-		/// <para>Below horizontal segment—A circular arc will be placed below the horizontal segment.</para>
+		/// <para>指定将放置圆弧的线段。</para>
+		/// <para>垂直线段左侧—圆弧将放置在垂直线段左侧。</para>
+		/// <para>垂直线段右侧—圆弧将放置在垂直线段右侧。</para>
+		/// <para>水平线段上方—圆弧将放置在水平线段上方。</para>
+		/// <para>水平线段下方—圆弧将放置在水平线段下方。</para>
 		/// <para><see cref="CircularArcPositionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -219,14 +219,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsActiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The added layout algorithm will automatically run during the generation of any diagram that is based on the Input Diagram Template parameter value. This is the default.The parameter values specified for the layout algorithm are used to run the layout during diagram generation. They are also loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACTIVE")]
 			ACTIVE,
 
 			/// <summary>
-			/// <para>Unchecked—All the parameter values currently specified for the added layout algorithm will be loaded by default when the algorithm is to be run on any diagram based on the input template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INACTIVE")]
@@ -240,14 +240,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum AreContainersPreservedEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The layout algorithm will execute on the top graph of the diagram so containers are preserved.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE_CONTAINERS")]
 			PRESERVE_CONTAINERS,
 
 			/// <summary>
-			/// <para>Unchecked—The layout algorithm will execute on both content and noncontent features in the diagram. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("IGNORE_CONTAINERS")]
@@ -261,38 +261,38 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum ReshapeTypeEnum 
 		{
 			/// <summary>
-			/// <para>Remove vertices—Vertices along any edges in the diagram will be removed.</para>
+			/// <para>移除折点—将移除逻辑示意图中的所有沿边折点。</para>
 			/// </summary>
 			[GPValue("REMOVE_VERTICES")]
-			[Description("Remove vertices")]
+			[Description("移除折点")]
 			Remove_vertices,
 
 			/// <summary>
-			/// <para>Square edges—Vertices will be placed along diagram edges, and the edges will be displayed with right angles. This is the default.</para>
+			/// <para>方边—折点将沿逻辑示意图边放置，且这些边将显示为直角。这是默认设置。</para>
 			/// </summary>
 			[GPValue("SQUARE_EDGES")]
-			[Description("Square edges")]
+			[Description("方边")]
 			Square_edges,
 
 			/// <summary>
-			/// <para>Separate overlapping edges—Edges that connect the same origin and extremity junctions will be separated when they are overlapping.</para>
+			/// <para>分离重叠边—当连接相同起始和末端交汇点的边发生重叠时，将对边进行分离。</para>
 			/// </summary>
 			[GPValue("SEPARATE_OVERLAPPING_EDGES")]
-			[Description("Separate overlapping edges")]
+			[Description("分离重叠边")]
 			Separate_overlapping_edges,
 
 			/// <summary>
-			/// <para>Reduce vertices by angle—Some or all vertices displayed along diagram edges will be reduced according to the angle that separates the segments incident to those vertices.</para>
+			/// <para>按角度减少折点—根据关联于折点的线段之间的角度减少沿逻辑示意图边显示的部分或所有折点。</para>
 			/// </summary>
 			[GPValue("REDUCE_VERTICES_BY_ANGLE")]
-			[Description("Reduce vertices by angle")]
+			[Description("按角度减少折点")]
 			Reduce_vertices_by_angle,
 
 			/// <summary>
-			/// <para>Mark crossing edges—The horizontal and vertical diagram edges that cross each other at a right angle in the diagram will be marked, and the geometry of one of the crossing edges will be reshaped to display a circular arc at this location.</para>
+			/// <para>标记交叉边—将标记出彼此相交成直角的水平和垂直逻辑示意图边并修整其几何，以在相交位置显示圆弧。</para>
 			/// </summary>
 			[GPValue("MARK_CROSSING_EDGES")]
-			[Description("Mark crossing edges")]
+			[Description("标记交叉边")]
 			Mark_crossing_edges,
 
 		}
@@ -303,14 +303,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsPathPreservedEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The direction of any edge will be considered, and vertices along that edge will be preserved from the first vertex to the last. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("PRESERVE_PATH")]
 			PRESERVE_PATH,
 
 			/// <summary>
-			/// <para>Unchecked—Vertices along the diagram edges will not be considered, and the vertices will be removed during execution.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("IGNORE_PATH")]
@@ -324,31 +324,31 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum CircularArcPositionEnum 
 		{
 			/// <summary>
-			/// <para>Left of vertical segment—A circular arc will be placed to the left of the vertical segment.</para>
+			/// <para>垂直线段左侧—圆弧将放置在垂直线段左侧。</para>
 			/// </summary>
 			[GPValue("LEFT_OF_VERTICAL_SEGMENT")]
-			[Description("Left of vertical segment")]
+			[Description("垂直线段左侧")]
 			Left_of_vertical_segment,
 
 			/// <summary>
-			/// <para>Right of vertical segment—A circular arc will be placed to the right of the vertical segment.</para>
+			/// <para>垂直线段右侧—圆弧将放置在垂直线段右侧。</para>
 			/// </summary>
 			[GPValue("RIGHT_OF_VERTICAL_SEGMENT")]
-			[Description("Right of vertical segment")]
+			[Description("垂直线段右侧")]
 			Right_of_vertical_segment,
 
 			/// <summary>
-			/// <para>Above horizontal segment—A circular arc will be placed above the horizontal segment.</para>
+			/// <para>水平线段上方—圆弧将放置在水平线段上方。</para>
 			/// </summary>
 			[GPValue("ABOVE_HORIZONTAL_SEGMENT")]
-			[Description("Above horizontal segment")]
+			[Description("水平线段上方")]
 			Above_horizontal_segment,
 
 			/// <summary>
-			/// <para>Below horizontal segment—A circular arc will be placed below the horizontal segment.</para>
+			/// <para>水平线段下方—圆弧将放置在水平线段下方。</para>
 			/// </summary>
 			[GPValue("BELOW_HORIZONTAL_SEGMENT")]
-			[Description("Below horizontal segment")]
+			[Description("水平线段下方")]
 			Below_horizontal_segment,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Compute Accuracy For Object Detection</para>
-	/// <para>Compute Accuracy For Object Detection</para>
-	/// <para>Calculates the accuracy of a deep learning model by comparing the detected objects from the Detect Objects Using Deep Learning tool to ground truth data.</para>
+	/// <para>计算对象检测的精度</para>
+	/// <para>通过对深度学习检测对象使用工具检测到的对象和实际地表数据进行比较来计算深度学习模型的精度。</para>
 	/// </summary>
 	public class ComputeAccuracyForObjectDetection : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// </summary>
 		/// <param name="DetectedFeatures">
 		/// <para>Detected Features</para>
-		/// <para>The polygon feature class containing the objects detected from the Detect Objects Using Deep Learning tool.</para>
+		/// <para>面要素类，其中包含使用深度学习检测对象工具检测的对象。</para>
 		/// </param>
 		/// <param name="GroundTruthFeatures">
 		/// <para>Ground Truth Features</para>
-		/// <para>The polygon feature class containing ground truth data.</para>
+		/// <para>包含实际地表数据的面要素类。</para>
 		/// </param>
 		/// <param name="OutAccuracyTable">
 		/// <para>Output Accuracy Table</para>
-		/// <para>The output accuracy table.</para>
+		/// <para>输出精度表。</para>
 		/// </param>
 		public ComputeAccuracyForObjectDetection(object DetectedFeatures, object GroundTruthFeatures, object OutAccuracyTable)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Compute Accuracy For Object Detection</para>
+		/// <para>Tool Display Name : 计算对象检测的精度</para>
 		/// </summary>
-		public override string DisplayName() => "Compute Accuracy For Object Detection";
+		public override string DisplayName() => "计算对象检测的精度";
 
 		/// <summary>
 		/// <para>Tool Name : ComputeAccuracyForObjectDetection</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Detected Features</para>
-		/// <para>The polygon feature class containing the objects detected from the Detect Objects Using Deep Learning tool.</para>
+		/// <para>面要素类，其中包含使用深度学习检测对象工具检测的对象。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Ground Truth Features</para>
-		/// <para>The polygon feature class containing ground truth data.</para>
+		/// <para>包含实际地表数据的面要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Accuracy Table</para>
-		/// <para>The output accuracy table.</para>
+		/// <para>输出精度表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Output Accuracy Report</para>
-		/// <para>The name of the output accuracy report. The report is a PDF document containing accuracy metrics and charts.</para>
+		/// <para>输出精度报表的名称。 该报表是包含精度指标和图表的 PDF 文档。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -108,9 +108,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Detected Class Value Field</para>
-		/// <para>The field in the detected objects feature class that contains the class values or class names.</para>
-		/// <para>If a field name is not specified, a Classvalue or Value field will be used. If these fields do not exist, all records will be identified as belonging to one class.</para>
-		/// <para>The class values or class names must match those in the ground reference feature class exactly.</para>
+		/// <para>检测到的对象要素类中的字段，包含类值或类名称。</para>
+		/// <para>如果未指定字段名称，则 Classvalue 或 Value 字段将被使用。 如果这些字段不存在，则会将所有记录标识为属于一个类。</para>
+		/// <para>类值或类名称必须与地面参考要素类中的类值或类名称完全匹配。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -120,9 +120,9 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Ground Truth Class Value Field</para>
-		/// <para>The field in the ground truth feature class that contains the class values.</para>
-		/// <para>If a field name is not specified, a Classvalue or Value field will be used. If these fields do not exist, all records will be identified as belonging to one class.</para>
-		/// <para>The class values or class names must match those in the detected objects feature class exactly.</para>
+		/// <para>实际地表要素中的字段，包含类值。</para>
+		/// <para>如果未指定字段名称，则 Classvalue 或 Value 字段将被使用。 如果这些字段不存在，则会将所有记录标识为属于一个类。</para>
+		/// <para>类值或类名称必须与检测到的对象要素类中的类值或类名称完全匹配。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Minimum Intersection Over Union (IoU)</para>
-		/// <para>The IoU ratio to use as a threshold to evaluate the accuracy of the object-detection model. The numerator is the area of overlap between the predicted bounding box and the ground reference bounding box. The denominator is the area of union or the area encompassed by both bounding boxes. The IoU ranges from 0 to 1.</para>
+		/// <para>用作阈值的 IoU 比率，用于评估对象检测模型的精度。 分子是预测边界框与地面参考边界框之间的重叠区域。 分母是并集区域或者两个边界框所包含的区域。 IoU 的范围从 0 到 1。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 
 		/// <summary>
 		/// <para>Mask Features</para>
-		/// <para>A polygon feature class that delineates the area or areas where accuracy will be computed. Only the features that intersect the mask will be assessed for accuracy.</para>
+		/// <para>面要素类，用于描绘将计算精度的区域。 仅对与掩膜相交的要素进行精度评估。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]

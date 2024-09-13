@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>If Field Exists</para>
-	/// <para>If Field Exists</para>
-	/// <para>Evaluates if the input data has the specified fields.</para>
+	/// <para>如果字段已存在</para>
+	/// <para>用于评估输入数据是否具有指定字段。</para>
 	/// </summary>
 	public class FieldExistsIfThenElse : AbstractGPProcess
 	{
@@ -21,20 +21,20 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>Input table that will be evaluated for the existence of the specified fields.</para>
+		/// <para>将用于评估是否存在指定字段的输入表。</para>
 		/// </param>
 		/// <param name="FieldTestType">
 		/// <para>Field Test</para>
-		/// <para>The criteria to test the specified list of fields against.</para>
-		/// <para>Must have all fields—All fields must exists.</para>
-		/// <para>Must have at least one field—Must have at least one of the specified fields.</para>
-		/// <para>Must not have all fields—Must not have any of the specified fields.</para>
-		/// <para>Must not have at least one field—Must not have at least one of the specified fields.</para>
+		/// <para>用于测试指定字段列表的依据条件。</para>
+		/// <para>必须具有所有字段—所有字段必须存在。</para>
+		/// <para>必须至少具有一个字段—必须至少具有其中一个指定字段。</para>
+		/// <para>不能具有所有字段—不能具有任意指定字段。</para>
+		/// <para>不能只具有一个字段—不能至少具有其中一个指定字段。</para>
 		/// <para><see cref="FieldTestTypeEnum"/></para>
 		/// </param>
 		/// <param name="Field">
 		/// <para>Fields</para>
-		/// <para>Field names to check for in the input table.</para>
+		/// <para>输入表中要检查的字段名称。</para>
 		/// </param>
 		public FieldExistsIfThenElse(object InTable, object FieldTestType, object Field)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : If Field Exists</para>
+		/// <para>Tool Display Name : 如果字段已存在</para>
 		/// </summary>
-		public override string DisplayName() => "If Field Exists";
+		public override string DisplayName() => "如果字段已存在";
 
 		/// <summary>
 		/// <para>Tool Name : FieldExistsIfThenElse</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>Input table that will be evaluated for the existence of the specified fields.</para>
+		/// <para>将用于评估是否存在指定字段的输入表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -88,11 +88,11 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Field Test</para>
-		/// <para>The criteria to test the specified list of fields against.</para>
-		/// <para>Must have all fields—All fields must exists.</para>
-		/// <para>Must have at least one field—Must have at least one of the specified fields.</para>
-		/// <para>Must not have all fields—Must not have any of the specified fields.</para>
-		/// <para>Must not have at least one field—Must not have at least one of the specified fields.</para>
+		/// <para>用于测试指定字段列表的依据条件。</para>
+		/// <para>必须具有所有字段—所有字段必须存在。</para>
+		/// <para>必须至少具有一个字段—必须至少具有其中一个指定字段。</para>
+		/// <para>不能具有所有字段—不能具有任意指定字段。</para>
+		/// <para>不能只具有一个字段—不能至少具有其中一个指定字段。</para>
 		/// <para><see cref="FieldTestTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 
 		/// <summary>
 		/// <para>Fields</para>
-		/// <para>Field names to check for in the input table.</para>
+		/// <para>输入表中要检查的字段名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -130,31 +130,31 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		public enum FieldTestTypeEnum 
 		{
 			/// <summary>
-			/// <para>Must have all fields—All fields must exists.</para>
+			/// <para>必须具有所有字段—所有字段必须存在。</para>
 			/// </summary>
 			[GPValue("MUST_HAVE_ALL_FIELDS")]
-			[Description("Must have all fields")]
+			[Description("必须具有所有字段")]
 			Must_have_all_fields,
 
 			/// <summary>
-			/// <para>Must have at least one field—Must have at least one of the specified fields.</para>
+			/// <para>必须至少具有一个字段—必须至少具有其中一个指定字段。</para>
 			/// </summary>
 			[GPValue("MUST_HAVE_AT_LEAST_ONE_FIELD")]
-			[Description("Must have at least one field")]
+			[Description("必须至少具有一个字段")]
 			Must_have_at_least_one_field,
 
 			/// <summary>
-			/// <para>Must not have all fields—Must not have any of the specified fields.</para>
+			/// <para>不能具有所有字段—不能具有任意指定字段。</para>
 			/// </summary>
 			[GPValue("MUST_NOT_HAVE_ALL_FIELDS")]
-			[Description("Must not have all fields")]
+			[Description("不能具有所有字段")]
 			Must_not_have_all_fields,
 
 			/// <summary>
-			/// <para>Must not have at least one field—Must not have at least one of the specified fields.</para>
+			/// <para>不能只具有一个字段—不能至少具有其中一个指定字段。</para>
 			/// </summary>
 			[GPValue("MUST_NOT_HAVE_AT_LEAST_ONE_FIELD")]
-			[Description("Must not have at least one field")]
+			[Description("不能只具有一个字段")]
 			Must_not_have_at_least_one_field,
 
 		}

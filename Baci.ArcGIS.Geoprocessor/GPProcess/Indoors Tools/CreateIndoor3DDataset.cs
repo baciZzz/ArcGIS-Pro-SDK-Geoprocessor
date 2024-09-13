@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Create Indoor 3D Dataset</para>
-	/// <para>Create Indoor 3D Dataset</para>
-	/// <para>Creates an indoor 3D dataset containing the necessary multipatch feature classes to maintain floor plan data using a streamlined schema that conforms to the ArcGIS Indoors Information Model. You can use these feature classes when preparing 3D scenes of floor plans and share them across your organization.</para>
+	/// <para>创建 Indoor 3D 数据集</para>
+	/// <para>创建包含必要的多面体要素类的室内 3D 数据集，这些要素类可使用符合 ArcGIS Indoors 信息模型的简化方案维护楼层平面图数据。 在准备楼层平面图的 3D 场景并将其在整个组织中共享时，您可以使用这些要素类。</para>
 	/// </summary>
 	public class CreateIndoor3DDataset : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// </summary>
 		/// <param name="TargetGdb">
 		/// <para>Target Geodatabase</para>
-		/// <para>The target file or enterprise geodatabase that will contain the indoor 3D dataset.</para>
+		/// <para>将包含室内 3D 数据集的目标文件数据库或企业级地理数据库。</para>
 		/// </param>
 		/// <param name="IndoorDatasetName">
 		/// <para>Indoor 3D Dataset Name</para>
-		/// <para>The unique name assigned to the output indoor dataset. The default is Indoor3D. If a dataset with this name exists in the target geodatabase, the indoor 3D feature classes will be created in that dataset.</para>
+		/// <para>分配至输出室内数据集的唯一名称。 默认设置为 Indoor3D。 如果在目标地理数据库中已存在具有此名称的数据集，则会在该数据集中创建室内 3D 要素类。</para>
 		/// </param>
 		/// <param name="SpatialReference">
 		/// <para>Coordinate System</para>
-		/// <para>The horizontal and vertical coordinate system of the output indoor 3D dataset.</para>
+		/// <para>输出室内 3D 数据集的水平和垂直坐标系。</para>
 		/// </param>
 		public CreateIndoor3DDataset(object TargetGdb, object IndoorDatasetName, object SpatialReference)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Indoor 3D Dataset</para>
+		/// <para>Tool Display Name : 创建 Indoor 3D 数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Create Indoor 3D Dataset";
+		public override string DisplayName() => "创建 Indoor 3D 数据集";
 
 		/// <summary>
 		/// <para>Tool Name : CreateIndoor3DDataset</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Target Geodatabase</para>
-		/// <para>The target file or enterprise geodatabase that will contain the indoor 3D dataset.</para>
+		/// <para>将包含室内 3D 数据集的目标文件数据库或企业级地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Indoor 3D Dataset Name</para>
-		/// <para>The unique name assigned to the output indoor dataset. The default is Indoor3D. If a dataset with this name exists in the target geodatabase, the indoor 3D feature classes will be created in that dataset.</para>
+		/// <para>分配至输出室内数据集的唯一名称。 默认设置为 Indoor3D。 如果在目标地理数据库中已存在具有此名称的数据集，则会在该数据集中创建室内 3D 要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 
 		/// <summary>
 		/// <para>Coordinate System</para>
-		/// <para>The horizontal and vertical coordinate system of the output indoor 3D dataset.</para>
+		/// <para>输出室内 3D 数据集的水平和垂直坐标系。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSpatialReference()]

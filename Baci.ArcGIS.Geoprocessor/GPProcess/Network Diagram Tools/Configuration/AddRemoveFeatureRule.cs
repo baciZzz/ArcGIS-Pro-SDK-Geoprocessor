@@ -11,12 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Remove Feature Rule</para>
-	/// <para>Add Remove Feature Rule</para>
-	/// <para>Adds a diagram rule to automatically remove diagram features during diagram building based on an existing template. This rule removes diagram features based on different network source classes and object tables.</para>
-	/// <para></para>
-	/// <para></para>
-	/// <para></para>
-	/// <para>You can constrain the removal of features based on connectivity.</para>
+	/// <para>添加移除要素规则</para>
+	/// <para>用于添加逻辑示意图规则，以在基于现有模板构建逻辑示意图的过程中自动移除逻辑示意图要素。 此规则基于不同的网络源类和对象表移除逻辑示意图要素。 您可以根据连接限制删除功能。</para>
 	/// </summary>
 	public class AddRemoveFeatureRule : AbstractGPProcess
 	{
@@ -25,39 +21,39 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </param>
 		/// <param name="TemplateName">
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template that will be modified.</para>
+		/// <para>要修改的逻辑示意图模板名称</para>
 		/// </param>
 		/// <param name="IsActive">
 		/// <para>Active</para>
-		/// <para>Specifies whether the rule will be active when generating and updating diagrams based on the specified template.</para>
-		/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
-		/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+		/// <para>指定在基于指定模板生成并更新逻辑示意图时，规则是否将处于激活状态。</para>
+		/// <para>选中 - 在基于输入模板生成并更新逻辑示意图的过程中，添加的规则将会变为激活状态。 这是默认设置。</para>
+		/// <para>未选中 - 在基于输入模板生成或更新逻辑示意图的过程中，添加的规则将不会变为激活状态。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </param>
 		/// <param name="SourceType">
 		/// <para>Source Type</para>
-		/// <para>Specifies the geometry type of the source class or object table to be processed.</para>
-		/// <para>Junctions only—Only junction source classes or object tables (network polygon source classes, network point source classes, or junction object tables) will be processed.</para>
-		/// <para>Edges only—Only edge source classes or object tables (network line source classes or edge object tables) will be processed.</para>
-		/// <para>Both junctions and edges—Both junction and edge types will be processed. This is the default.</para>
+		/// <para>指定要处理的源类或对象表的几何类型。</para>
+		/// <para>仅交汇点—仅会处理交汇点源类或对象表（网络面源类、网络点源类或交汇点对象表）。</para>
+		/// <para>仅边—仅会处理边源类或对象表（网络线源类或边对象表）。</para>
+		/// <para>交汇点和边—交汇点和边类型均被处理。 这是默认设置。</para>
 		/// <para><see cref="SourceTypeEnum"/></para>
 		/// </param>
 		/// <param name="InverseSourceSelection">
 		/// <para>Rule Process</para>
-		/// <para>Specifies how the specified network source classes and object tables will be processed.</para>
-		/// <para>Exclude source classes—Features and objects based on the specified network source classes and object tables will not be removed, while other features and objects will be removed.</para>
-		/// <para>Include source classes—Features and objects based on the specified network source classes and object tables will be removed. This is the default.</para>
+		/// <para>指定如何处理指定的网络源类和对象表。</para>
+		/// <para>排除源类—将不会移除基于指定网络源类和对象表的要素和对象，但将移除其他要素和对象。</para>
+		/// <para>包括源类—基于指定网络源类和对象表的要素和对象将被移除。 这是默认设置。</para>
 		/// <para><see cref="InverseSourceSelectionEnum"/></para>
 		/// </param>
 		/// <param name="NetworkSource">
 		/// <para>Network Sources</para>
-		/// <para>The network source class (or classes) and object table (or tables) that will be excluded or included depending on the rule process.</para>
-		/// <para>By default, Rule Process parameter is set to Include source classes, and one or more network source classes or object tables will be processed. All diagram features related to network features and objects that belong to those classes and object tables will be removed.</para>
-		/// <para>When specifying the SystemJunctions class among the network source classes, the rule will systematically process both system junctions and system junction objects.</para>
+		/// <para>网络源类和对象表将根据规则过程而被排除或包括在内。</para>
+		/// <para>默认情况下，规则过程参数被设置为包括源类，并将处理一或多个网络源类或对象表。 与属于这些类和对象表的网络要素和对象有关的所有逻辑示意图要素都将被移除。</para>
+		/// <para>在网络源类中指定 SystemJunctions 时，该规则将系统地处理系统交汇点和系统交汇点对象。</para>
 		/// </param>
 		public AddRemoveFeatureRule(object InUtilityNetwork, object TemplateName, object IsActive, object SourceType, object InverseSourceSelection, object NetworkSource)
 		{
@@ -70,9 +66,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Add Remove Feature Rule</para>
+		/// <para>Tool Display Name : 添加移除要素规则</para>
 		/// </summary>
-		public override string DisplayName() => "Add Remove Feature Rule";
+		public override string DisplayName() => "添加移除要素规则";
 
 		/// <summary>
 		/// <para>Tool Name : AddRemoveFeatureRule</para>
@@ -106,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Network</para>
-		/// <para>The utility network or trace network containing the diagram template that will be modified.</para>
+		/// <para>包含要修改的逻辑示意图模板的公共设施网络或追踪网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -114,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Input Diagram Template</para>
-		/// <para>The name of the diagram template that will be modified.</para>
+		/// <para>要修改的逻辑示意图模板名称</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -122,9 +118,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Active</para>
-		/// <para>Specifies whether the rule will be active when generating and updating diagrams based on the specified template.</para>
-		/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
-		/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+		/// <para>指定在基于指定模板生成并更新逻辑示意图时，规则是否将处于激活状态。</para>
+		/// <para>选中 - 在基于输入模板生成并更新逻辑示意图的过程中，添加的规则将会变为激活状态。 这是默认设置。</para>
+		/// <para>未选中 - 在基于输入模板生成或更新逻辑示意图的过程中，添加的规则将不会变为激活状态。</para>
 		/// <para><see cref="IsActiveEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -134,10 +130,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Source Type</para>
-		/// <para>Specifies the geometry type of the source class or object table to be processed.</para>
-		/// <para>Junctions only—Only junction source classes or object tables (network polygon source classes, network point source classes, or junction object tables) will be processed.</para>
-		/// <para>Edges only—Only edge source classes or object tables (network line source classes or edge object tables) will be processed.</para>
-		/// <para>Both junctions and edges—Both junction and edge types will be processed. This is the default.</para>
+		/// <para>指定要处理的源类或对象表的几何类型。</para>
+		/// <para>仅交汇点—仅会处理交汇点源类或对象表（网络面源类、网络点源类或交汇点对象表）。</para>
+		/// <para>仅边—仅会处理边源类或对象表（网络线源类或边对象表）。</para>
+		/// <para>交汇点和边—交汇点和边类型均被处理。 这是默认设置。</para>
 		/// <para><see cref="SourceTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -147,9 +143,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Rule Process</para>
-		/// <para>Specifies how the specified network source classes and object tables will be processed.</para>
-		/// <para>Exclude source classes—Features and objects based on the specified network source classes and object tables will not be removed, while other features and objects will be removed.</para>
-		/// <para>Include source classes—Features and objects based on the specified network source classes and object tables will be removed. This is the default.</para>
+		/// <para>指定如何处理指定的网络源类和对象表。</para>
+		/// <para>排除源类—将不会移除基于指定网络源类和对象表的要素和对象，但将移除其他要素和对象。</para>
+		/// <para>包括源类—基于指定网络源类和对象表的要素和对象将被移除。 这是默认设置。</para>
 		/// <para><see cref="InverseSourceSelectionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -159,9 +155,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Network Sources</para>
-		/// <para>The network source class (or classes) and object table (or tables) that will be excluded or included depending on the rule process.</para>
-		/// <para>By default, Rule Process parameter is set to Include source classes, and one or more network source classes or object tables will be processed. All diagram features related to network features and objects that belong to those classes and object tables will be removed.</para>
-		/// <para>When specifying the SystemJunctions class among the network source classes, the rule will systematically process both system junctions and system junction objects.</para>
+		/// <para>网络源类和对象表将根据规则过程而被排除或包括在内。</para>
+		/// <para>默认情况下，规则过程参数被设置为包括源类，并将处理一或多个网络源类或对象表。 与属于这些类和对象表的网络要素和对象有关的所有逻辑示意图要素都将被移除。</para>
+		/// <para>在网络源类中指定 SystemJunctions 时，该规则将系统地处理系统交汇点和系统交汇点对象。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -169,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Description</para>
-		/// <para>The description of the rule.</para>
+		/// <para>规则的描述。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -191,10 +187,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Junctions must be unconnected</para>
-		/// <para>Specifies whether diagram junction and diagram container candidates must be unconnected to be removed.</para>
-		/// <para>Checked—Diagram junction and diagram container candidates must be unconnected to be removed.</para>
-		/// <para>Unchecked—Neither diagram junction nor diagram container candidates need to be unconnected to be removed. This is the default.</para>
-		/// <para>This parameter is active only when the Source Type parameter is set to Junctions only.</para>
+		/// <para>指定逻辑示意图交汇点和图容器候选项是否必须断开连接才能删除。</para>
+		/// <para>选中 - 逻辑示意图交汇点和图容器候选项必须断开连接才能删除。</para>
+		/// <para>取消选中 - 逻辑示意图交汇点和图容器候选项都不必须断开连接就能删除。 这是默认设置。</para>
+		/// <para>仅当将源类型参数设置为仅交汇点时，此参数才处于活动状态。</para>
 		/// <para><see cref="UnconnectedJunctionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -205,10 +201,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 
 		/// <summary>
 		/// <para>Junctions must be connected to a single junction</para>
-		/// <para>Specifies whether diagram junction and diagram container candidates must be connected to a single diagram junction or diagram container to be removed.</para>
-		/// <para>Checked—Diagram junction and diagram container candidates must be connected to a single diagram junction or diagram container to be removed.</para>
-		/// <para>Unchecked—Neither diagram junction nor diagram container candidates need to be connected to a single diagram junction or diagram container to be removed. This is the default.</para>
-		/// <para>This parameter is active only when the Source Type parameter is set to Junctions only.</para>
+		/// <para>指定逻辑示意图交汇点和图容器候选项是否必须连接到一个单个逻辑示意图交汇点或图容器才能删除。</para>
+		/// <para>选中 - 逻辑示意图交汇点和图容器候选项必须连接到一个单个逻辑示意图交汇点或图容器才能删除。</para>
+		/// <para>取消选中 - 逻辑示意图交汇点和图容器候选项都不必须连接到一个单个逻辑示意图交汇点或图容器就能删除。 这是默认设置。</para>
+		/// <para>仅当将源类型参数设置为仅交汇点时，此参数才处于活动状态。</para>
 		/// <para><see cref="OneConnectedJunctionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -225,14 +221,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum IsActiveEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The added rule will become active during the generation and update of any diagrams based on the input template. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACTIVE")]
 			ACTIVE,
 
 			/// <summary>
-			/// <para>Unchecked—The added rule will not become active during the generation or update of any diagrams based on the input template.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("INACTIVE")]
@@ -246,24 +242,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum SourceTypeEnum 
 		{
 			/// <summary>
-			/// <para>Junctions only—Only junction source classes or object tables (network polygon source classes, network point source classes, or junction object tables) will be processed.</para>
+			/// <para>仅交汇点—仅会处理交汇点源类或对象表（网络面源类、网络点源类或交汇点对象表）。</para>
 			/// </summary>
 			[GPValue("JUNCTIONS")]
-			[Description("Junctions only")]
+			[Description("仅交汇点")]
 			Junctions_only,
 
 			/// <summary>
-			/// <para>Edges only—Only edge source classes or object tables (network line source classes or edge object tables) will be processed.</para>
+			/// <para>仅边—仅会处理边源类或对象表（网络线源类或边对象表）。</para>
 			/// </summary>
 			[GPValue("EDGES")]
-			[Description("Edges only")]
+			[Description("仅边")]
 			Edges_only,
 
 			/// <summary>
-			/// <para>Both junctions and edges—Both junction and edge types will be processed. This is the default.</para>
+			/// <para>交汇点和边—交汇点和边类型均被处理。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("BOTH")]
-			[Description("Both junctions and edges")]
+			[Description("交汇点和边")]
 			Both_junctions_and_edges,
 
 		}
@@ -274,17 +270,17 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum InverseSourceSelectionEnum 
 		{
 			/// <summary>
-			/// <para>Exclude source classes—Features and objects based on the specified network source classes and object tables will not be removed, while other features and objects will be removed.</para>
+			/// <para>排除源类—将不会移除基于指定网络源类和对象表的要素和对象，但将移除其他要素和对象。</para>
 			/// </summary>
 			[GPValue("EXCLUDE_SOURCE_CLASSES")]
-			[Description("Exclude source classes")]
+			[Description("排除源类")]
 			Exclude_source_classes,
 
 			/// <summary>
-			/// <para>Include source classes—Features and objects based on the specified network source classes and object tables will be removed. This is the default.</para>
+			/// <para>包括源类—基于指定网络源类和对象表的要素和对象将被移除。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("INCLUDE_SOURCE_CLASSES")]
-			[Description("Include source classes")]
+			[Description("包括源类")]
 			Include_source_classes,
 
 		}
@@ -295,14 +291,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum UnconnectedJunctionsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Diagram junction and diagram container candidates must be unconnected to be removed.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MUST_BE_UNCONNECTED")]
 			MUST_BE_UNCONNECTED,
 
 			/// <summary>
-			/// <para>Unchecked—Neither diagram junction nor diagram container candidates need to be unconnected to be removed. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CONSTRAINT")]
@@ -316,14 +312,14 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		public enum OneConnectedJunctionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Diagram junction and diagram container candidates must be connected to a single diagram junction or diagram container to be removed.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("MUST_BE_CONNECTED_TO_SINGLE_JUNCTION")]
 			MUST_BE_CONNECTED_TO_SINGLE_JUNCTION,
 
 			/// <summary>
-			/// <para>Unchecked—Neither diagram junction nor diagram container candidates need to be connected to a single diagram junction or diagram container to be removed. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CONSTRAINT")]

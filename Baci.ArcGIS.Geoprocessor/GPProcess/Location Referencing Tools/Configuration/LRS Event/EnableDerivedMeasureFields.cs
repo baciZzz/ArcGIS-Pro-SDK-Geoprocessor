@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Enable Derived Measure Fields</para>
-	/// <para>Enable Derived Measure Fields</para>
-	/// <para>Enables fields to store the derived route ID, derived route name, and derived measure fields for the specified LRS event feature class.</para>
+	/// <para>启用派生的测量字段</para>
+	/// <para>通过字段存储指定 LRS 事件要素类的派生路径 ID、派生路径名称和派生测量字段。</para>
 	/// </summary>
 	public class EnableDerivedMeasureFields : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InFeatureClass">
 		/// <para>LRS Event Feature Class</para>
-		/// <para>An existing event feature class or feature layer that is registered to an LRS.</para>
+		/// <para>已注册到 LRS 的现有事件要素类或要素图层。</para>
 		/// </param>
 		public EnableDerivedMeasureFields(object InFeatureClass)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Enable Derived Measure Fields</para>
+		/// <para>Tool Display Name : 启用派生的测量字段</para>
 		/// </summary>
-		public override string DisplayName() => "Enable Derived Measure Fields";
+		public override string DisplayName() => "启用派生的测量字段";
 
 		/// <summary>
 		/// <para>Tool Name : EnableDerivedMeasureFields</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>LRS Event Feature Class</para>
-		/// <para>An existing event feature class or feature layer that is registered to an LRS.</para>
+		/// <para>已注册到 LRS 的现有事件要素类或要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Derived Route ID Field</para>
-		/// <para>The derived route ID field.</para>
+		/// <para>派生路径 ID 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Derived Route Name Field</para>
-		/// <para>The derived route name field.</para>
+		/// <para>派生路径名称字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Derived (From) Measure Field</para>
-		/// <para>The derived from measure field.</para>
+		/// <para>派生测量始于字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -105,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Derived To Measure Field</para>
-		/// <para>The derived to measure field.</para>
+		/// <para>派生测量止于字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Mosaic Dataset Item Cache</para>
-	/// <para>Build Mosaic Dataset Item Cache</para>
-	/// <para>Inserts the Cached Raster function as the final step in all function chains within a mosaic dataset.</para>
+	/// <para>构建镶嵌数据集项目缓存</para>
+	/// <para>插入“缓存栅格”函数，作为镶嵌数据集中所有函数链的最后一步。</para>
 	/// </summary>
 	public class BuildMosaicDatasetItemCache : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InMosaicDataset">
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset where you want to apply the cache function.</para>
+		/// <para>希望应用缓存函数的镶嵌数据集。</para>
 		/// </param>
 		public BuildMosaicDatasetItemCache(object InMosaicDataset)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Build Mosaic Dataset Item Cache</para>
+		/// <para>Tool Display Name : 构建镶嵌数据集项目缓存</para>
 		/// </summary>
-		public override string DisplayName() => "Build Mosaic Dataset Item Cache";
+		public override string DisplayName() => "构建镶嵌数据集项目缓存";
 
 		/// <summary>
 		/// <para>Tool Name : BuildMosaicDatasetItemCache</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Mosaic Dataset</para>
-		/// <para>The mosaic dataset where you want to apply the cache function.</para>
+		/// <para>希望应用缓存函数的镶嵌数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -73,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Query Definition</para>
-		/// <para>An SQL expression to select specific raster datasets within the mosaic dataset on which you want the item cache built.</para>
+		/// <para>在您希望构建项目缓存的镶嵌数据集中，用来选择特定栅格数据集的 SQL 表达式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPSQLExpression()]
@@ -81,9 +81,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Define Cache</para>
-		/// <para>Enable editing on the Cache properties.</para>
-		/// <para>Checked—Add the Cached Raster function to the selected items. If an item already has this function, it will not add another one. This is the default.</para>
-		/// <para>Unchecked—No raster cache will be defined.</para>
+		/// <para>启用缓存属性的编辑功能。</para>
+		/// <para>选中 - 将“缓存栅格”函数添加到选定项目。如果项目已经具有该函数，将不再添加。这是默认设置。</para>
+		/// <para>未选中 - 不定义栅格缓存。</para>
 		/// <para><see cref="DefineCacheEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -93,9 +93,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Generate Cache</para>
-		/// <para>Choose to generate the cache files based on the properties defined in the Cached Raster function, such as the location and the compression of the cache.</para>
-		/// <para>Checked—Cache will be generated. This is the default.</para>
-		/// <para>Unchecked—Cache will not be generated.</para>
+		/// <para>根据“缓存栅格”函数中定义的属性（例如，缓存的位置和压缩）选择生成缓存文件。</para>
+		/// <para>选中 - 将生成缓存。这是默认设置。</para>
+		/// <para>未选中 - 不生成缓存。</para>
 		/// <para><see cref="GenerateCacheEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -105,8 +105,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Cache Path</para>
-		/// <para>Choose to overwrite the default location to save your cache. If the mosaic dataset is inside of a file geodatabase, by default, the cache is saved in a folder with the same name as the geodatabase and a .cache extension. If the mosaic dataset is inside of an enterprise geodatabase, by default, the cache will be saved inside of that geodatabase. Once created, the cache will always save to the same location. To save the cache to a different location, you need to first use the Repair Mosaic Dataset tool to specify a new location and run this tool again.</para>
-		/// <para>Once an item cache is created, regenerating an item cache to a different location is not possible by specifying a different cache path and rerunning this tool. It will still generate the item cache in the location where it was generated the first time. However, you can remove this function and insert a new one with the new path or use the Repair Mosaic Dataset tool to modify the cache path and run this tool to generate the item cache in a different location.</para>
+		/// <para>选择覆盖保存缓存的默认位置。如果镶嵌数据集位于文件地理数据库中，则默认将缓存保存在与地理数据库名称相同的文件夹中，并使用 .cache 作为扩展名。如果镶嵌数据集位于企业级地理数据库中，则默认将缓存保存在该地理数据库中。创建后，缓存将始终保存到同一位置。要将缓存保存到其他位置，需要首先使用修复镶嵌数据集工具指定新位置，然后再次运行该工具。</para>
+		/// <para>项目缓存创建完成后，无法通过指定不同的缓存路径并重新运行该工具来在其他位置处重新生成项目缓存。只能继续在首次生成项目缓存的位置上生成。不过，可删除此函数，然后在新路径中插入一个新函数；或者使用修复镶嵌数据集工具修改缓存路径，然后运行此工具，在其它位置上生成项目缓存。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEWorkspace()]
@@ -117,10 +117,10 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compression Method</para>
-		/// <para>Choose how you want to compress your data for faster transmission.</para>
-		/// <para>Lossless compression— Retain the values of each pixel when generating cache. Lossless has a compression ratio of approximately 2:1.</para>
-		/// <para>Lossy compression— Appropriate when your imagery is only used as a backdrop. Lossy has the highest compression ratio (20:1) but groups similar pixel values to achieve higher compression.</para>
-		/// <para>No compression— Do not compress imagery. This will make your imagery slower to transmit but faster to draw because it will not need to be decompressed when viewed.</para>
+		/// <para>选择数据压缩方式以便加快传输。</para>
+		/// <para>无损压缩— 生成缓存时保留每个像素的值。无损压缩的压缩比接近 2:1。</para>
+		/// <para>有损压缩— 适用于仅将影像用作背景时。有损压缩的压缩比最高 (20:1)，但对相似的像素值进行分组可实现更高的压缩比。</para>
+		/// <para>无压缩— 不压缩影像。这样会降低影像的传输速度，但同时会加快绘制，因为不需要在查看时进行解压缩。</para>
 		/// <para><see cref="CompressionMethodEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Compression Quality</para>
-		/// <para>Set a compression quality when using the lossy method. The compression quality value is between 1 and 100 percent, with 100 compressing the least.</para>
+		/// <para>设置使用有损压缩方式时的压缩质量。压缩质量值介于 1% 到 100% 之间，其中 100% 的压缩程度最低。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Allowed Rows</para>
-		/// <para>Limit the size of the cache dataset by number of rows. If value is more than the number of rows in the dataset, the cache will not generate.</para>
+		/// <para>利用行数限制缓存数据集的大小。如果值大于数据集中的行数，缓存将不会生成。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Maximum Allowed Columns</para>
-		/// <para>Limit the size of the cache dataset by number of columns. If value is more than the number of columns in the dataset, the cache will not generate.</para>
+		/// <para>利用列数限制缓存数据集的大小。如果值大于数据集中的列数，缓存将不会生成。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -161,9 +161,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Request Size Type</para>
-		/// <para>Resample the cache using one of these two methods:</para>
-		/// <para>Pixel size factor— Set a scaling factor relative to the pixel size. To not resample the cache, choose Pixel size factor and set the Request Size parameter to 1.</para>
-		/// <para>Pixel size— Specify a pixel size for the cached raster.</para>
+		/// <para>使用以下两种方法之一对缓存进行重采样：</para>
+		/// <para>像素大小因子— 设置与像素大小相关的比例因子。如果不想对缓存进行重采样，请选择像素大小因子并将请求大小参数设置为 1。</para>
+		/// <para>像素大小— 为缓存栅格指定像素大小。</para>
 		/// <para><see cref="RequestSizeTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -174,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Request Size</para>
-		/// <para>Set a value to apply to the Request Size Type.</para>
+		/// <para>设置一个应用于请求大小类型的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -206,14 +206,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum DefineCacheEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Add the Cached Raster function to the selected items. If an item already has this function, it will not add another one. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DEFINE_CACHE")]
 			DEFINE_CACHE,
 
 			/// <summary>
-			/// <para>Unchecked—No raster cache will be defined.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_DEFINE_CACHE")]
@@ -227,14 +227,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum GenerateCacheEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Cache will be generated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("GENERATE_CACHE")]
 			GENERATE_CACHE,
 
 			/// <summary>
-			/// <para>Unchecked—Cache will not be generated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_GENERATE_CACHE")]
@@ -248,24 +248,24 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum CompressionMethodEnum 
 		{
 			/// <summary>
-			/// <para>No compression— Do not compress imagery. This will make your imagery slower to transmit but faster to draw because it will not need to be decompressed when viewed.</para>
+			/// <para>无压缩— 不压缩影像。这样会降低影像的传输速度，但同时会加快绘制，因为不需要在查看时进行解压缩。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("No compression")]
+			[Description("无压缩")]
 			No_compression,
 
 			/// <summary>
-			/// <para>Lossless compression— Retain the values of each pixel when generating cache. Lossless has a compression ratio of approximately 2:1.</para>
+			/// <para>无损压缩— 生成缓存时保留每个像素的值。无损压缩的压缩比接近 2:1。</para>
 			/// </summary>
 			[GPValue("LOSSLESS")]
-			[Description("Lossless compression")]
+			[Description("无损压缩")]
 			Lossless_compression,
 
 			/// <summary>
-			/// <para>Lossy compression— Appropriate when your imagery is only used as a backdrop. Lossy has the highest compression ratio (20:1) but groups similar pixel values to achieve higher compression.</para>
+			/// <para>有损压缩— 适用于仅将影像用作背景时。有损压缩的压缩比最高 (20:1)，但对相似的像素值进行分组可实现更高的压缩比。</para>
 			/// </summary>
 			[GPValue("LOSSY")]
-			[Description("Lossy compression")]
+			[Description("有损压缩")]
 			Lossy_compression,
 
 		}
@@ -276,17 +276,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum RequestSizeTypeEnum 
 		{
 			/// <summary>
-			/// <para>Pixel size factor— Set a scaling factor relative to the pixel size. To not resample the cache, choose Pixel size factor and set the Request Size parameter to 1.</para>
+			/// <para>像素大小因子— 设置与像素大小相关的比例因子。如果不想对缓存进行重采样，请选择像素大小因子并将请求大小参数设置为 1。</para>
 			/// </summary>
 			[GPValue("PIXEL_SIZE")]
-			[Description("Pixel size")]
+			[Description("像素大小")]
 			Pixel_size,
 
 			/// <summary>
-			/// <para>Pixel size factor— Set a scaling factor relative to the pixel size. To not resample the cache, choose Pixel size factor and set the Request Size parameter to 1.</para>
+			/// <para>像素大小因子— 设置与像素大小相关的比例因子。如果不想对缓存进行重采样，请选择像素大小因子并将请求大小参数设置为 1。</para>
 			/// </summary>
 			[GPValue("PIXEL_SIZE_FACTOR")]
-			[Description("Pixel size factor")]
+			[Description("像素大小因子")]
 			Pixel_size_factor,
 
 		}

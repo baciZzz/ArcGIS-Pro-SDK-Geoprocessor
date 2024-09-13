@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Generate Intersections</para>
-	/// <para>Generate Intersections</para>
-	/// <para>Generates new intersections and updates existing intersections.</para>
+	/// <para>生成交叉点</para>
+	/// <para>生成新的交叉点并更新现有交叉点。</para>
 	/// </summary>
 	public class GenerateIntersections : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InIntersectionFeatureClass">
 		/// <para>Intersection Feature Class</para>
-		/// <para>The input LRS intersection feature class or layer.</para>
+		/// <para>输入 LRS 交叉点要素类或图层。</para>
 		/// </param>
 		public GenerateIntersections(object InIntersectionFeatureClass)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Intersections</para>
+		/// <para>Tool Display Name : 生成交叉点</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Intersections";
+		public override string DisplayName() => "生成交叉点";
 
 		/// <summary>
 		/// <para>Tool Name : GenerateIntersections</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Intersection Feature Class</para>
-		/// <para>The input LRS intersection feature class or layer.</para>
+		/// <para>输入 LRS 交叉点要素类或图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Network Layer</para>
-		/// <para>The input LRS Network feature class or layer.</para>
+		/// <para>输入 LRS 网络要素类或图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Start Date</para>
-		/// <para>Filters routes that have been edited after a certain date so that intersections can be generated.</para>
+		/// <para>过滤在特定日期之后被编辑的路径，以生成交叉点。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDate()]
@@ -93,9 +93,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Only use routes edited by current user</para>
-		/// <para>Specifies whether intersections will be generated only for routes edited and locked by the current user.</para>
-		/// <para>Checked—Intersections will be generated only for routes edited by the current user. This is the default.</para>
-		/// <para>Unchecked—Intersections will be generated for all edited routes.</para>
+		/// <para>指定是否只为当前用户编辑和锁的路径生成交叉点。</para>
+		/// <para>选中 - 仅为当前用户编辑的路径生成交叉点。 这是默认设置。</para>
+		/// <para>未选中 - 将为所有已编辑的路径生成交叉点。</para>
 		/// <para><see cref="EditedByCurrentUserEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -125,14 +125,14 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum EditedByCurrentUserEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Intersections will be generated only for routes edited by the current user. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CURRENT_USER")]
 			CURRENT_USER,
 
 			/// <summary>
-			/// <para>Unchecked—Intersections will be generated for all edited routes.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ALL_USERS")]

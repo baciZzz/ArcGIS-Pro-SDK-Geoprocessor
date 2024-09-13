@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Batch Update Fields</para>
-	/// <para>Batch Update Fields</para>
-	/// <para>Transforms fields in a table or feature class based on schema defined in the definition table and creates a new table or feature class.</para>
+	/// <para>批量更新字段</para>
+	/// <para>用于根据定义表中定义的方案来转换表或要素类中的字段并创建新的表或要素类。</para>
 	/// </summary>
 	public class BatchUpdateFields : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input table or feature class.</para>
+		/// <para>输入表或要素类。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>The output table or feature class containing the updated fields.</para>
+		/// <para>包含已更新字段的输出表或要素类。</para>
 		/// </param>
 		/// <param name="FieldDefinitionTable">
 		/// <para>Output Schema Definition Table</para>
-		/// <para>A table containing the field definitions and calculations that will be used to create the output.</para>
+		/// <para>包含将用于创建输出的字段定义和计算的表。</para>
 		/// </param>
 		public BatchUpdateFields(object InTable, object OutTable, object FieldDefinitionTable)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Batch Update Fields</para>
+		/// <para>Tool Display Name : 批量更新字段</para>
 		/// </summary>
-		public override string DisplayName() => "Batch Update Fields";
+		public override string DisplayName() => "批量更新字段";
 
 		/// <summary>
 		/// <para>Tool Name : BatchUpdateFields</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input table or feature class.</para>
+		/// <para>输入表或要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The output table or feature class containing the updated fields.</para>
+		/// <para>包含已更新字段的输出表或要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Schema Definition Table</para>
-		/// <para>A table containing the field definitions and calculations that will be used to create the output.</para>
+		/// <para>包含将用于创建输出的字段定义和计算的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Script File</para>
-		/// <para>A Python file that stores multiple line Python functions to perform calculations for the Output Table parameter fields.</para>
+		/// <para>存储多行 Python 函数的 Python 文件，用于对输出表参数字段执行计算。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Field Name</para>
-		/// <para>The field name from the definition table that contains the target field names for the output table.</para>
+		/// <para>定义表中的字段名称，其中包含输出表的目标字段名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Source Field  Name</para>
-		/// <para>The field name from the definition table that contains the source field names from the input table.</para>
+		/// <para>定义表中的字段名称，其中包含输入表的源字段名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Field Type</para>
-		/// <para>The field name from the definition table that defines the data types for the output table.</para>
+		/// <para>定义表中的字段名称，用于定义输出表的数据类型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -142,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Field Decimals or Length</para>
-		/// <para>The field name from the definition table that defines the number of decimals or the length of the field for the output fields.</para>
+		/// <para>定义表中的字段名称，用于定义输出字段的小数位数或字段长度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Field Alias</para>
-		/// <para>The field name from the definition table that defines the alias names for the fields of the output table.</para>
+		/// <para>定义表中的字段名称，用于定义输出表字段的别名。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -164,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Field Script</para>
-		/// <para>The field name from the definition table that defines the calculations for the output fields.</para>
+		/// <para>定义表中的字段名称，用于定义输出字段的计算。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

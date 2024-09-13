@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Split By Attributes</para>
-	/// <para>Split By Attributes</para>
-	/// <para>Splits an input dataset by unique attributes.</para>
+	/// <para>按属性分割</para>
+	/// <para>按唯一属性分割输入数据集。</para>
 	/// </summary>
 	public class SplitByAttributes : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InputTable">
 		/// <para>Input Table or Features</para>
-		/// <para>The input feature class or table containing the data that will be split into the target workspace.</para>
+		/// <para>将分割到目标工作空间的数据所在的输入要素类或表。</para>
 		/// </param>
 		/// <param name="TargetWorkspace">
 		/// <para>Target Workspace</para>
-		/// <para>The existing workspace where the output feature classes or tables will be written.</para>
+		/// <para>将写入输出要素类或表的现有工作空间。</para>
 		/// </param>
 		/// <param name="SplitFields">
 		/// <para>Split Fields</para>
-		/// <para>The fields on which the input will be split into new feature classes or tables.</para>
+		/// <para>可根据该字段将输入分割为新的要素类或表。</para>
 		/// </param>
 		public SplitByAttributes(object InputTable, object TargetWorkspace, object SplitFields)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Split By Attributes</para>
+		/// <para>Tool Display Name : 按属性分割</para>
 		/// </summary>
-		public override string DisplayName() => "Split By Attributes";
+		public override string DisplayName() => "按属性分割";
 
 		/// <summary>
 		/// <para>Tool Name : SplitByAttributes</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Table or Features</para>
-		/// <para>The input feature class or table containing the data that will be split into the target workspace.</para>
+		/// <para>将分割到目标工作空间的数据所在的输入要素类或表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Target Workspace</para>
-		/// <para>The existing workspace where the output feature classes or tables will be written.</para>
+		/// <para>将写入输出要素类或表的现有工作空间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Split Fields</para>
-		/// <para>The fields on which the input will be split into new feature classes or tables.</para>
+		/// <para>可根据该字段将输入分割为新的要素类或表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]

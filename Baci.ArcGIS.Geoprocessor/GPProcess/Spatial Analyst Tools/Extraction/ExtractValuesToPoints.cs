@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Extract Values to Points</para>
-	/// <para>Extract Values to Points</para>
-	/// <para>Extracts the cell values of a raster based on a set of point features and records the values in the attribute table of an output feature class.</para>
+	/// <para>值提取至点</para>
+	/// <para>根据一组点要素提取栅格的像元值，并将值记录在输出要素类的属性表中。</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.SpatialAnalystTools.ExtractMultiValuesToPoints"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
 	[EnhancedFOP(typeof(Baci.ArcGIS.Geoprocessor.SpatialAnalystTools.ExtractMultiValuesToPoints))]
@@ -23,16 +23,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InPointFeatures">
 		/// <para>Input point features</para>
-		/// <para>The input point features defining the locations from which you want to extract the raster cell values.</para>
+		/// <para>输入点要素可定义要提取栅格像元值的位置。</para>
 		/// </param>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The raster dataset whose values will be extracted.</para>
-		/// <para>It can be an integer or floating-point type raster.</para>
+		/// <para>要提取其值的栅格数据集。</para>
+		/// <para>其栅格类型可为整型或浮点型。</para>
 		/// </param>
 		/// <param name="OutPointFeatures">
 		/// <para>Output point features</para>
-		/// <para>The output point feature dataset containing the extracted raster values.</para>
+		/// <para>包含已提取的栅格值的输出点要素数据集。</para>
 		/// </param>
 		public ExtractValuesToPoints(object InPointFeatures, object InRaster, object OutPointFeatures)
 		{
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Extract Values to Points</para>
+		/// <para>Tool Display Name : 值提取至点</para>
 		/// </summary>
-		public override string DisplayName() => "Extract Values to Points";
+		public override string DisplayName() => "值提取至点";
 
 		/// <summary>
 		/// <para>Tool Name : ExtractValuesToPoints</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input point features</para>
-		/// <para>The input point features defining the locations from which you want to extract the raster cell values.</para>
+		/// <para>输入点要素可定义要提取栅格像元值的位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -90,8 +90,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The raster dataset whose values will be extracted.</para>
-		/// <para>It can be an integer or floating-point type raster.</para>
+		/// <para>要提取其值的栅格数据集。</para>
+		/// <para>其栅格类型可为整型或浮点型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output point features</para>
-		/// <para>The output point feature dataset containing the extracted raster values.</para>
+		/// <para>包含已提取的栅格值的输出点要素数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -111,9 +111,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Interpolate values at the point locations</para>
-		/// <para>Specifies whether interpolation will be used.</para>
-		/// <para>Unchecked—No interpolation will be applied; the value of the cell center will be used. This is the default.</para>
-		/// <para>Checked—The value of the cell will be calculated from the adjacent cells with valid values using bilinear interpolation. NoData values will be ignored in the interpolation unless all adjacent cells are NoData.</para>
+		/// <para>指定是否使用插值。</para>
+		/// <para>未选中 - 不应用任何插值法；将使用像元中心值。 这是默认设置。</para>
+		/// <para>选中 - 将使用双线性插值法根据相邻像元的有效值计算像元值。 将在插值中忽略 NoData 值，除非所有相邻像元均为 NoData。</para>
 		/// <para><see cref="InterpolateValuesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -123,9 +123,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Append all the input raster attributes to the output point features</para>
-		/// <para>Determines if the raster attributes are written to the output point feature dataset.</para>
-		/// <para>Unchecked—Only the value of the input raster is added to the point attributes. This is the default.</para>
-		/// <para>Checked—All the fields from the input raster (except Count) will be added to the point attributes.</para>
+		/// <para>确定栅格属性是否写入输出点要素数据集。</para>
+		/// <para>未选中 - 仅将输入栅格的值添加到点属性。 这是默认设置。</para>
+		/// <para>选中 - 输入栅格的所有字段（Count 除外）都将添加到点属性。</para>
 		/// <para><see cref="AddAttributesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -150,14 +150,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum InterpolateValuesEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—No interpolation will be applied; the value of the cell center will be used. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NONE")]
 			NONE,
 
 			/// <summary>
-			/// <para>Checked—The value of the cell will be calculated from the adjacent cells with valid values using bilinear interpolation. NoData values will be ignored in the interpolation unless all adjacent cells are NoData.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INTERPOLATE")]
@@ -171,14 +171,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum AddAttributesEnum 
 		{
 			/// <summary>
-			/// <para>Unchecked—Only the value of the input raster is added to the point attributes. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("VALUE_ONLY")]
 			VALUE_ONLY,
 
 			/// <summary>
-			/// <para>Checked—All the fields from the input raster (except Count) will be added to the point attributes.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ALL")]

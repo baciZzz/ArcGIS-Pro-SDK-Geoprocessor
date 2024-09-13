@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Disable Parcel Topology</para>
-	/// <para>Disable Parcel Topology</para>
-	/// <para>Disables geodatabase topology on a parcel fabric.  System-defined  topology rules and parcel fabric feature classes will be removed from the topology.</para>
+	/// <para>禁用宗地拓扑</para>
+	/// <para>在宗地结构上禁用地理数据库拓扑。 将从拓扑中移除系统定义的拓扑规则以及宗地结构要素类。</para>
 	/// </summary>
 	public class DisableParcelTopology : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// </summary>
 		/// <param name="InParcelFabric">
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric for which the topology will be disabled. The input parcel fabric can be from a file, enterprise, or mobile geodatabase.</para>
+		/// <para>将禁用拓扑的宗地结构。 输入宗地结构可来自文件地理数据库、企业级地理数据库或移动地理数据库。</para>
 		/// </param>
 		public DisableParcelTopology(object InParcelFabric)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Disable Parcel Topology</para>
+		/// <para>Tool Display Name : 禁用宗地拓扑</para>
 		/// </summary>
-		public override string DisplayName() => "Disable Parcel Topology";
+		public override string DisplayName() => "禁用宗地拓扑";
 
 		/// <summary>
 		/// <para>Tool Name : DisableParcelTopology</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 
 		/// <summary>
 		/// <para>Input Parcel Fabric</para>
-		/// <para>The parcel fabric for which the topology will be disabled. The input parcel fabric can be from a file, enterprise, or mobile geodatabase.</para>
+		/// <para>将禁用拓扑的宗地结构。 输入宗地结构可来自文件地理数据库、企业级地理数据库或移动地理数据库。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPParcelLayer()]

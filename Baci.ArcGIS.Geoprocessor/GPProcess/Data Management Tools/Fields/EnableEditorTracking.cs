@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Enable Editor Tracking</para>
-	/// <para>Enable Editor Tracking</para>
-	/// <para>Enables editor tracking for a feature class, table, feature dataset, or relationship class in a geodatabase.</para>
+	/// <para>启用编辑者追踪</para>
+	/// <para>用于在地理数据库中对要素类、表、要素数据集或关系类启用编辑者追踪。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,7 +23,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InDataset">
 		/// <para>Input Dataset</para>
-		/// <para>The feature class, table, feature dataset, or relationship class in which editor tracking will be enabled.</para>
+		/// <para>要启用编辑者追踪的要素类、表、要素数据集或关系类。</para>
 		/// </param>
 		public EnableEditorTracking(object InDataset)
 		{
@@ -31,9 +31,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Enable Editor Tracking</para>
+		/// <para>Tool Display Name : 启用编辑者追踪</para>
 		/// </summary>
-		public override string DisplayName() => "Enable Editor Tracking";
+		public override string DisplayName() => "启用编辑者追踪";
 
 		/// <summary>
 		/// <para>Tool Name : EnableEditorTracking</para>
@@ -67,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Dataset</para>
-		/// <para>The feature class, table, feature dataset, or relationship class in which editor tracking will be enabled.</para>
+		/// <para>要启用编辑者追踪的要素类、表、要素数据集或关系类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Creator Field</para>
-		/// <para>The name of the field that will store the names of users who create features or records. If this field already exists, it must be a string field.</para>
+		/// <para>字段的名称，该字段将存储创建要素或记录的用户的名称。 如果此字段已存在，它必须为字符串型的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Creation Date Field</para>
-		/// <para>The name of the field that will store the date that features or records are created. If this field already exists, it must be a date field.</para>
+		/// <para>字段的名称，该字段将存储创建要素或记录的日期。 如果此字段已存在，它必须为日期型的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Last Editor Field</para>
-		/// <para>The name of the field that will store the names of users who last edited features or records. If this field already exists, it must be a string field.</para>
+		/// <para>字段的名称，该字段将存储上次编辑要素或记录的用户的名称。 如果此字段已存在，它必须为字符串型的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Last Edit Date Field</para>
-		/// <para>The name of the field that will store the date that features or records were last edited. If this field already exists, it must be a date field.</para>
+		/// <para>字段的名称，该字段将存储上次编辑要素或记录的日期。 如果此字段已存在，它必须为日期型的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -107,9 +107,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Add fields</para>
-		/// <para>Specifies whether fields will be added if they don&apos;t exist.</para>
-		/// <para>Unchecked—Fields will not be added. Fields specified must already exist in the Input Dataset parameter value. This is the default.</para>
-		/// <para>Checked—Fields will be added if they do not exist. You must specify the names of the fields to add in the Creator Field, Creation Date Field, Last Editor Field, and Last Edit Date Field parameters.</para>
+		/// <para>指定如果字段不存在是否添加字段。</para>
+		/// <para>未选中 - 不添加字段。 指定的字段必须在输入数据集参数值中已存在。 这是默认设置。</para>
+		/// <para>选中 - 如果字段不存在，则添加字段。 您必须指定要在以下参数中添加的字段名称：创建者字段、创建日期字段、上一个编辑者字段和最后一次编辑日期字段。</para>
 		/// <para><see cref="AddFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -119,9 +119,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Record Dates in</para>
-		/// <para>Specifies the time format in which the created date and last edited date will be recorded.</para>
-		/// <para>UTC (Coordinated Universal Time)—Dates will be recorded in UTC. This is the default.</para>
-		/// <para>Time zone of database—Dates will be recorded in the time zone in which the database is located.</para>
+		/// <para>指定记录创建日期和最后一次编辑日期采取的时间格式。</para>
+		/// <para>UTC（协调世界时间）—日期将以 UTC 进行记录。 这是默认设置。</para>
+		/// <para>数据库的时区—日期将以数据库所在的时区进行记录。</para>
 		/// <para><see cref="RecordDatesInEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -144,14 +144,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum AddFieldsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Fields will be added if they do not exist. You must specify the names of the fields to add in the Creator Field, Creation Date Field, Last Editor Field, and Last Edit Date Field parameters.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADD_FIELDS")]
 			ADD_FIELDS,
 
 			/// <summary>
-			/// <para>Unchecked—Fields will not be added. Fields specified must already exist in the Input Dataset parameter value. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ADD_FIELDS")]
@@ -165,17 +165,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum RecordDatesInEnum 
 		{
 			/// <summary>
-			/// <para>UTC (Coordinated Universal Time)—Dates will be recorded in UTC. This is the default.</para>
+			/// <para>UTC（协调世界时间）—日期将以 UTC 进行记录。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("UTC")]
-			[Description("UTC (Coordinated Universal Time)")]
+			[Description("UTC（协调世界时间）")]
 			UTC,
 
 			/// <summary>
-			/// <para>Time zone of database—Dates will be recorded in the time zone in which the database is located.</para>
+			/// <para>数据库的时区—日期将以数据库所在的时区进行记录。</para>
 			/// </summary>
 			[GPValue("DATABASE_TIME")]
-			[Description("Time zone of database")]
+			[Description("数据库的时区")]
 			Time_zone_of_database,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Filter</para>
-	/// <para>Filter</para>
-	/// <para>Performs either a smoothing (Low pass) or edge-enhancing (High pass) filter on a raster.</para>
+	/// <para>滤波器</para>
+	/// <para>对栅格执行平滑（低通）滤波器或边缘增强（高通）滤波器。</para>
 	/// </summary>
 	public class Filter : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster on which to perform the filter operation.</para>
+		/// <para>要执行滤波运算的输入栅格。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output filtered raster.</para>
-		/// <para>The output is always floating point.</para>
+		/// <para>过滤后的输出栅格。</para>
+		/// <para>输出栅格始终为浮点型。</para>
 		/// </param>
 		public Filter(object InRaster, object OutRaster)
 		{
@@ -35,14 +35,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Filter</para>
+		/// <para>Tool Display Name : 滤波器</para>
 		/// </summary>
-		public override string DisplayName() => "Filter";
+		public override string DisplayName() => "滤波器";
 
 		/// <summary>
-		/// <para>Tool Name : Filter</para>
+		/// <para>Tool Name : 滤波器</para>
 		/// </summary>
-		public override string ToolName() => "Filter";
+		public override string ToolName() => "滤波器";
 
 		/// <summary>
 		/// <para>Tool Excute Name : sa.Filter</para>
@@ -71,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster on which to perform the filter operation.</para>
+		/// <para>要执行滤波运算的输入栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -83,8 +83,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output filtered raster.</para>
-		/// <para>The output is always floating point.</para>
+		/// <para>过滤后的输出栅格。</para>
+		/// <para>输出栅格始终为浮点型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -92,9 +92,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Filter type</para>
-		/// <para>The type of filter operation to perform.</para>
-		/// <para>Low pass—Traverses a low pass 3-by-3 filter over the raster. This option smooths the entire input raster and reduces the significance of anomalous cells. This is the default.</para>
-		/// <para>High pass—Traverses a high pass 3-by-3 filter over the raster. This option enhances the edges of subdued features in a raster.</para>
+		/// <para>要执行的滤波运算类型。</para>
+		/// <para>低通—在栅格上横跨一个 3 x 3 低通滤波器。 该选项可平滑整个输入栅格，并降低异常像元的显著性。 这是默认设置。</para>
+		/// <para>高通—在栅格上横跨一个 3 x 3 高通滤波器。 此选项可增强栅格中弱化要素的边缘。</para>
 		/// <para><see cref="FilterTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -104,9 +104,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Ignore NoData in calculations</para>
-		/// <para>Denotes whether NoData values are ignored by the filter calculation.</para>
-		/// <para>Checked—If a NoData value exists within the filter, the NoData value will be ignored. Only cells within the filter that have data values will be used in determining the output. This is the default.</para>
-		/// <para>Unchecked—If a NoData value exists within the filter, the output for the processing cell will be NoData. With this option, the presence of a NoData value implies that there is insufficient information to determine the statistic value for the neighborhood.</para>
+		/// <para>指示在进行滤波计算时是否忽略 NoData 值。</para>
+		/// <para>选中 - 当滤波器中存在 NoData 值时，忽略此 NoData 值。 将仅使用滤波器中具有数据值的像元来确定输出。 这是默认设置。</para>
+		/// <para>未选中 - 当滤波器中存在 NoData 值时，相应待处理像元的输出将为 NoData。 使用此选项时，存在 NoData 值表明确定邻域的统计值所需要的信息不足。</para>
 		/// <para><see cref="IgnoreNodataEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -131,17 +131,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum FilterTypeEnum 
 		{
 			/// <summary>
-			/// <para>Low pass—Traverses a low pass 3-by-3 filter over the raster. This option smooths the entire input raster and reduces the significance of anomalous cells. This is the default.</para>
+			/// <para>低通—在栅格上横跨一个 3 x 3 低通滤波器。 该选项可平滑整个输入栅格，并降低异常像元的显著性。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("LOW")]
-			[Description("Low pass")]
+			[Description("低通")]
 			Low_pass,
 
 			/// <summary>
-			/// <para>High pass—Traverses a high pass 3-by-3 filter over the raster. This option enhances the edges of subdued features in a raster.</para>
+			/// <para>高通—在栅格上横跨一个 3 x 3 高通滤波器。 此选项可增强栅格中弱化要素的边缘。</para>
 			/// </summary>
 			[GPValue("HIGH")]
-			[Description("High pass")]
+			[Description("高通")]
 			High_pass,
 
 		}
@@ -152,14 +152,14 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		public enum IgnoreNodataEnum 
 		{
 			/// <summary>
-			/// <para>Checked—If a NoData value exists within the filter, the NoData value will be ignored. Only cells within the filter that have data values will be used in determining the output. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("DATA")]
 			DATA,
 
 			/// <summary>
-			/// <para>Unchecked—If a NoData value exists within the filter, the output for the processing cell will be NoData. With this option, the presence of a NoData value implies that there is insufficient information to determine the statistic value for the neighborhood.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NODATA")]

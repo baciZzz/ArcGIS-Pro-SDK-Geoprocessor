@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Match Layer Symbology To A Style</para>
-	/// <para>Match Layer Symbology To A Style</para>
-	/// <para>Creates unique value symbology for the input layer based on the input field or expression by matching input field or expression strings to symbol names from the input style.</para>
+	/// <para>将图层符号系统与样式匹配</para>
+	/// <para>可将输入字段或表达式字符串与输入样式中的符号名称进行匹配，从而根据输入字段或表达式为输入图层创建唯一值符号系统。</para>
 	/// </summary>
 	public class MatchLayerSymbologyToAStyle : AbstractGPProcess
 	{
@@ -21,15 +21,15 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InLayer">
 		/// <para>Input Layer</para>
-		/// <para>The input layer or layer file to which matched symbols are applied as unique values symbol classes. The input layer can contain point, line, polygon, multipoint, or multipatch symbology. Existing symbology on the layer is overwritten.</para>
+		/// <para>匹配符号作为唯一值符号类应用于其上的输入图层或图层文件。输入图层可以包含点、线、面、多点或多面体符号系统。图层上的现有符号系统将被覆盖。</para>
 		/// </param>
 		/// <param name="MatchValues">
 		/// <para>Match Values (Field or Expression)</para>
-		/// <para>The field or expression on which the input layer is symbolized. The field values or resultant expression values are matched to symbol names in the specified style to assign symbols to the resulting symbol classes.</para>
+		/// <para>用于符号化输入图层的字段或表达式。字段值或结果表达式值与指定样式的符号名称相匹配，以将符号分配给结果符号类。</para>
 		/// </param>
 		/// <param name="InStyle">
 		/// <para>Style</para>
-		/// <para>The style containing symbols with names matching the field or expression values.</para>
+		/// <para>包含名称与字段或表达式值相匹配的符号的样式。</para>
 		/// </param>
 		public MatchLayerSymbologyToAStyle(object InLayer, object MatchValues, object InStyle)
 		{
@@ -39,9 +39,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Match Layer Symbology To A Style</para>
+		/// <para>Tool Display Name : 将图层符号系统与样式匹配</para>
 		/// </summary>
-		public override string DisplayName() => "Match Layer Symbology To A Style";
+		public override string DisplayName() => "将图层符号系统与样式匹配";
 
 		/// <summary>
 		/// <para>Tool Name : MatchLayerSymbologyToAStyle</para>
@@ -75,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Layer</para>
-		/// <para>The input layer or layer file to which matched symbols are applied as unique values symbol classes. The input layer can contain point, line, polygon, multipoint, or multipatch symbology. Existing symbology on the layer is overwritten.</para>
+		/// <para>匹配符号作为唯一值符号类应用于其上的输入图层或图层文件。输入图层可以包含点、线、面、多点或多面体符号系统。图层上的现有符号系统将被覆盖。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Match Values (Field or Expression)</para>
-		/// <para>The field or expression on which the input layer is symbolized. The field values or resultant expression values are matched to symbol names in the specified style to assign symbols to the resulting symbol classes.</para>
+		/// <para>用于符号化输入图层的字段或表达式。字段值或结果表达式值与指定样式的符号名称相匹配，以将符号分配给结果符号类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPCalculatorExpression()]
@@ -91,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Style</para>
-		/// <para>The style containing symbols with names matching the field or expression values.</para>
+		/// <para>包含名称与字段或表达式值相匹配的符号的样式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]

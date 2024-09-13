@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Table to NetCDF</para>
-	/// <para>Table to NetCDF</para>
-	/// <para>Converts a table to a netCDF file.</para>
+	/// <para>表至 NetCDF</para>
+	/// <para>将表转换为 NetCDF 文件。</para>
 	/// </summary>
 	public class TableToNetCDF : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// </summary>
 		/// <param name="InTable">
 		/// <para>Input Table</para>
-		/// <para>The input table.</para>
+		/// <para>输入表。</para>
 		/// </param>
 		/// <param name="FieldsToVariables">
 		/// <para>Fields to Variables</para>
-		/// <para>The field or fields used to create variables in the netCDF file.</para>
-		/// <para>Field—A field in the input feature attribute table.</para>
-		/// <para>Variable—The netCDF variable name</para>
-		/// <para>Units—The units of the data represented by the field</para>
+		/// <para>在 netCDF 文件中创建变量时使用的字段。</para>
+		/// <para>Field - 输入要素属性表中的某个字段。</para>
+		/// <para>Variable - netCDF 变量名</para>
+		/// <para>Units - 由字段表示的数据的单位</para>
 		/// </param>
 		/// <param name="OutNetcdfFile">
 		/// <para>Output netCDF File</para>
-		/// <para>The output netCDF file. The file name must have an .nc extension.</para>
+		/// <para>输出的 netCDF 文件。 文件名的扩展名必须是 .nc。</para>
 		/// </param>
 		public TableToNetCDF(object InTable, object FieldsToVariables, object OutNetcdfFile)
 		{
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Table to NetCDF</para>
+		/// <para>Tool Display Name : 表至 NetCDF</para>
 		/// </summary>
-		public override string DisplayName() => "Table to NetCDF";
+		public override string DisplayName() => "表至 NetCDF";
 
 		/// <summary>
 		/// <para>Tool Name : TableToNetCDF</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Input Table</para>
-		/// <para>The input table.</para>
+		/// <para>输入表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -86,10 +86,10 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Fields to Variables</para>
-		/// <para>The field or fields used to create variables in the netCDF file.</para>
-		/// <para>Field—A field in the input feature attribute table.</para>
-		/// <para>Variable—The netCDF variable name</para>
-		/// <para>Units—The units of the data represented by the field</para>
+		/// <para>在 netCDF 文件中创建变量时使用的字段。</para>
+		/// <para>Field - 输入要素属性表中的某个字段。</para>
+		/// <para>Variable - netCDF 变量名</para>
+		/// <para>Units - 由字段表示的数据的单位</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPValueTable()]
@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Output netCDF File</para>
-		/// <para>The output netCDF file. The file name must have an .nc extension.</para>
+		/// <para>输出的 netCDF 文件。 文件名的扩展名必须是 .nc。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -107,10 +107,10 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 
 		/// <summary>
 		/// <para>Fields to Dimensions</para>
-		/// <para>The field or fields used to create dimensions in the netCDF file.</para>
-		/// <para>Field—A field in the input table.</para>
-		/// <para>Dimension—The netCDF dimension name</para>
-		/// <para>Units—The units of the data represented by the field</para>
+		/// <para>在 netCDF 文件中创建维度时使用的字段。</para>
+		/// <para>Field - 输入表中的某个字段。</para>
+		/// <para>Dimension - netCDF 维度名称</para>
+		/// <para>Units - 由字段表示的数据的单位</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]

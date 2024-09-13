@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Configure External Event With LRS</para>
-	/// <para>Configure External Event With LRS</para>
-	/// <para>Associates event data stored in an external system with an LRS.</para>
+	/// <para>使用 LRS 配置外部事件</para>
+	/// <para>将存储在外部系统中的事件数据与 LRS 相关联。</para>
 	/// </summary>
 	public class ConfigureExternalEventWithLRS : AbstractGPProcess
 	{
@@ -21,27 +21,27 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="InEvent">
 		/// <para>Input Event</para>
-		/// <para>The external event feature class or table to be registered to an LRS.</para>
+		/// <para>要注册到 LRS 的外部事件要素类或表。</para>
 		/// </param>
 		/// <param name="ParentNetwork">
 		/// <para>Parent LRS Network</para>
-		/// <para>The LRS Network to which the event will be registered.</para>
+		/// <para>事件将注册到的 LRS 网络。</para>
 		/// </param>
 		/// <param name="EventName">
 		/// <para>LRS Event Name</para>
-		/// <para>The name of the external event or table that will be registered to the LRS.</para>
+		/// <para>将注册到 LRS 的外部事件或表的名称。</para>
 		/// </param>
 		/// <param name="EventIdField">
 		/// <para>Event ID Field</para>
-		/// <para>The event ID field available in the event feature class or table.</para>
+		/// <para>事件要素类或表中可用的事件 ID 字段。</para>
 		/// </param>
 		/// <param name="RouteIdField">
 		/// <para>Route ID Field</para>
-		/// <para>The name of the route ID field if it is a point event or a line event that does not span routes, or the name of the from route ID field if the event spans routes. The field must be available in the external event table or feature class.</para>
+		/// <para>如果是不跨越路径的点事件或线事件，则为路径 ID 字段的名称；如果事件跨越路径，则为来自路径 ID 字段的名称。 该字段必须在外部事件表或要素类中可用。</para>
 		/// </param>
 		/// <param name="MeasureField">
 		/// <para>Measure Field</para>
-		/// <para>The name of the measure field if it is a point event or the name of the from measure field if it is a line event.</para>
+		/// <para>如果是点事件，则为“测量”字段的名称；如果是线事件，则为“测量始于”字段的名称。</para>
 		/// </param>
 		public ConfigureExternalEventWithLRS(object InEvent, object ParentNetwork, object EventName, object EventIdField, object RouteIdField, object MeasureField)
 		{
@@ -54,9 +54,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Configure External Event With LRS</para>
+		/// <para>Tool Display Name : 使用 LRS 配置外部事件</para>
 		/// </summary>
-		public override string DisplayName() => "Configure External Event With LRS";
+		public override string DisplayName() => "使用 LRS 配置外部事件";
 
 		/// <summary>
 		/// <para>Tool Name : ConfigureExternalEventWithLRS</para>
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Input Event</para>
-		/// <para>The external event feature class or table to be registered to an LRS.</para>
+		/// <para>要注册到 LRS 的外部事件要素类或表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Parent LRS Network</para>
-		/// <para>The LRS Network to which the event will be registered.</para>
+		/// <para>事件将注册到的 LRS 网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>LRS Event Name</para>
-		/// <para>The name of the external event or table that will be registered to the LRS.</para>
+		/// <para>将注册到 LRS 的外部事件或表的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Event ID Field</para>
-		/// <para>The event ID field available in the event feature class or table.</para>
+		/// <para>事件要素类或表中可用的事件 ID 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Route ID Field</para>
-		/// <para>The name of the route ID field if it is a point event or a line event that does not span routes, or the name of the from route ID field if the event spans routes. The field must be available in the external event table or feature class.</para>
+		/// <para>如果是不跨越路径的点事件或线事件，则为路径 ID 字段的名称；如果事件跨越路径，则为来自路径 ID 字段的名称。 该字段必须在外部事件表或要素类中可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Measure Field</para>
-		/// <para>The name of the measure field if it is a point event or the name of the from measure field if it is a line event.</para>
+		/// <para>如果是点事件，则为“测量”字段的名称；如果是线事件，则为“测量始于”字段的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -146,9 +146,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Geometry Type</para>
-		/// <para>Specifies the geometry type of the external event or table.</para>
-		/// <para>Point— The geometry type of the event will be point. This is the default.</para>
-		/// <para>Line— The geometry type of the event will be polyline.</para>
+		/// <para>指定外部事件或表的几何类型。</para>
+		/// <para>点—事件的几何类型将是点。 这是默认设置。</para>
+		/// <para>线—事件的几何类型将是折线。</para>
 		/// <para><see cref="GeometryTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -158,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Measure Field</para>
-		/// <para>The name of the to measure field. This field is only required for line events.</para>
+		/// <para>“测量止于”字段的名称 此字段仅对线路事件是必需的。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -168,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>From Date Field</para>
-		/// <para>The from date field in the event feature class or table.</para>
+		/// <para>事件要素类或表中的开始日期字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -178,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Date Field</para>
-		/// <para>The to date field in the event feature class or table.</para>
+		/// <para>事件要素类或表中的“结束日期”字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -188,10 +188,10 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Event Spans Routes</para>
-		/// <para>Specifies whether the event records will span routes.</para>
-		/// <para>As is—The property will not change. This is the default.</para>
-		/// <para>Do not span routes—The event records will not span routes. This is applicable to line events only.</para>
-		/// <para>Spans routes— The event records will span routes. This is applicable to line events only.</para>
+		/// <para>指定事件记录是否跨越路径。</para>
+		/// <para>原样—不会更改属性。 这是默认设置。</para>
+		/// <para>不跨越路径—事件记录不会跨越路径。 此选项仅适用于线事件。</para>
+		/// <para>跨越路径—事件记录将跨越路径。 此选项仅适用于线事件。</para>
 		/// <para><see cref="EventSpansRoutesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -201,7 +201,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Route ID Field</para>
-		/// <para>The name of the to route ID field available in the event feature class or table.</para>
+		/// <para>事件要素类或表中可用的“路径止于 ID”字段的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -211,10 +211,10 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Store Route Name</para>
-		/// <para>Specifies whether the route name will be stored with the event records.</para>
-		/// <para>As is—The property will not change. This is the default.</para>
-		/// <para>Do not store route name—The route name will not be stored with the event records.</para>
-		/// <para>Store route name—The route name will be stored with the event records.</para>
+		/// <para>指定是否将路径名称与事件记录一起存储。</para>
+		/// <para>原样—不会更改属性。 这是默认设置。</para>
+		/// <para>不存储路径名称—路径名称不会与事件记录一起存储。</para>
+		/// <para>存储路径名称—路径名称将与事件记录一起存储。</para>
 		/// <para><see cref="StoreRouteNameEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -224,7 +224,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Route Name Field</para>
-		/// <para>The route name field if it is a point event or line event that does not span routes, or the name of the from route name field if the event spans routes. The field must be available in the external event table or feature class.</para>
+		/// <para>如果是不跨越路径的点事件或线事件，则为路径名称字段；如果事件跨越路径，则为“路径始于名称”字段的名称。 该字段必须在外部事件表或要素类中可用。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -234,7 +234,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Route Name Field</para>
-		/// <para>The to route name field for line events that span routes. This parameter is required if the Store Route Name and Event Spans Routes parameters are set.</para>
+		/// <para>跨越路径的线事件的“路径止于名称”字段。 如果设置了存储路径名称和事件跨越路径参数，则需要此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -244,10 +244,10 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Calibrate Rule</para>
-		/// <para>Specifies the event behavior rule for the calibrate activity.</para>
-		/// <para>Stay put— The geographic location of the event will be preserved; measures may change. This is the default.</para>
-		/// <para>Retire—Both measure and geographic location will be preserved; the event will be retired.</para>
-		/// <para>Move—The measures of the event will be preserved; the geographic location may change.</para>
+		/// <para>指定校准活动的事件行为规则。</para>
+		/// <para>固定不动—事件的地理位置将被保留；测量值可能会改变。 这是默认设置。</para>
+		/// <para>停用—测量值和地理位置都将被保留；该事件将被停用。</para>
+		/// <para>移动—事件测量值将被保留，地理位置可能发生变化。</para>
 		/// <para><see cref="CalibrateRuleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -258,10 +258,10 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Retire Rule</para>
-		/// <para>Specifies the event behavior rule for the retire activity.</para>
-		/// <para>Stay put— The geographic location of the event will be preserved; measures may change. This is the default.</para>
-		/// <para>Retire— Both measure and geographic location will be preserved; the event will be retired.</para>
-		/// <para>Move— The measures of the event will be preserved; the geographic location may change.</para>
+		/// <para>指定停用活动的事件行为规则。</para>
+		/// <para>固定不动—事件的地理位置将被保留；测量值可能会改变。 这是默认设置。</para>
+		/// <para>停用—测量值和地理位置都将被保留；该事件将被停用。</para>
+		/// <para>移动—事件测量值将被保留，地理位置可能发生变化。</para>
 		/// <para><see cref="RetireRuleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -272,11 +272,11 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Extend Rule</para>
-		/// <para>Specifies the event behavior rule for the extend activity.</para>
-		/// <para>Stay put— The geographic location of the event will be preserved; measures may change. This is the default.</para>
-		/// <para>Retire— Both measure and geographic location will be preserved; the event will be retired.</para>
-		/// <para>Move— The measures of the event will be preserved; the geographic location may change.</para>
-		/// <para>Cover—The geometric location and measure of a line event will be modified to include a new or newly modified section.</para>
+		/// <para>指定扩展活动的事件行为规则。</para>
+		/// <para>固定不动—事件的地理位置将被保留；测量值可能会改变。 这是默认设置。</para>
+		/// <para>停用—测量值和地理位置都将被保留；该事件将被停用。</para>
+		/// <para>移动—事件测量值将被保留，地理位置可能发生变化。</para>
+		/// <para>覆盖—线事件的几何位置和测量值将被修改以包括新的或新修改的部分。</para>
 		/// <para><see cref="ExtendRuleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -287,11 +287,11 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Reassign Rule</para>
-		/// <para>Specifies the event behavior rule for the reassign activity.</para>
-		/// <para>Stay put— The geographic location of the event will be preserved; measures may change. This is the default.</para>
-		/// <para>Retire— Both measure and geographic location will be preserved; the event will be retired.</para>
-		/// <para>Move— The measures of the event will be preserved; the geographic location may change.</para>
-		/// <para>Snap— The geographic location of the event will be preserved by snapping the event to a concurrent route; measures may change.</para>
+		/// <para>指定重新分配活动的事件行为规则。</para>
+		/// <para>固定不动—事件的地理位置将被保留；测量值可能会改变。 这是默认设置。</para>
+		/// <para>停用—测量值和地理位置都将被保留；该事件将被停用。</para>
+		/// <para>移动—事件测量值将被保留，地理位置可能发生变化。</para>
+		/// <para>捕捉—通过将事件捕捉到并发路线，保留事件的地理位置；测量值可能会改变。</para>
 		/// <para><see cref="ReassignRuleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -302,12 +302,12 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Realign Rule</para>
-		/// <para>Specifies the event behavior rule for the realign activity.</para>
-		/// <para>Stay put— The geographic location of the event will be preserved; measures may change. This is the default.</para>
-		/// <para>Retire— Both measure and geographic location will be preserved; the event will be retired.</para>
-		/// <para>Move— The measures of the event will be preserved; the geographic location may change.</para>
-		/// <para>Snap—The geographic location of an event will be preserved by snapping the event to a concurrent route; measures may change.</para>
-		/// <para>Cover—The geometric location and measure of a line event will be modified to include a new or newly modified section.</para>
+		/// <para>指定重新对齐活动的事件行为规则。</para>
+		/// <para>固定不动—事件的地理位置将被保留；测量值可能会改变。 这是默认设置。</para>
+		/// <para>停用—测量值和地理位置都将被保留；该事件将被停用。</para>
+		/// <para>移动—事件测量值将被保留，地理位置可能发生变化。</para>
+		/// <para>捕捉—通过将事件捕捉到并发路线，保留事件的地理位置；测量值可能会改变。</para>
+		/// <para>覆盖—线事件的几何位置和测量值将被修改以包括新的或新修改的部分。</para>
 		/// <para><see cref="RealignRuleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -325,10 +325,10 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Reverse Rule</para>
-		/// <para>Specifies the event behavior rule for the reverse activity.</para>
-		/// <para>Stay put— The geographic location of the event will be preserved; measures may change. This is the default.</para>
-		/// <para>Retire— Both measure and geographic location will be preserved; the event will be retired.</para>
-		/// <para>Move— The measures of the event will be preserved; the geographic location may change.</para>
+		/// <para>指定反向活动的事件行为规则。</para>
+		/// <para>固定不动—事件的地理位置将被保留；测量值可能会改变。 这是默认设置。</para>
+		/// <para>停用—测量值和地理位置都将被保留；该事件将被停用。</para>
+		/// <para>移动—事件测量值将被保留，地理位置可能发生变化。</para>
 		/// <para><see cref="ReverseRuleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -339,8 +339,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Carto Realign Rule</para>
-		/// <para>Specifies the event behavior rule for the cartographic realign activity.</para>
-		/// <para>Honor Route Measure—The measure of the event will be preserved or changed proportionally to the route&apos;s measure change. This is the default.</para>
+		/// <para>指定制图重新对齐活动的事件行为规则。</para>
+		/// <para>支持路径测量—将保留事件的测量值，或与路径测量值更改成比例地更改测量值。 这是默认设置。</para>
 		/// <para><see cref="CartoRealignRuleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -357,17 +357,17 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum GeometryTypeEnum 
 		{
 			/// <summary>
-			/// <para>Point— The geometry type of the event will be point. This is the default.</para>
+			/// <para>点—事件的几何类型将是点。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("POINT")]
-			[Description("Point")]
+			[Description("点")]
 			Point,
 
 			/// <summary>
-			/// <para>Line— The geometry type of the event will be polyline.</para>
+			/// <para>线—事件的几何类型将是折线。</para>
 			/// </summary>
 			[GPValue("LINE")]
-			[Description("Line")]
+			[Description("线")]
 			Line,
 
 		}
@@ -378,24 +378,24 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum EventSpansRoutesEnum 
 		{
 			/// <summary>
-			/// <para>As is—The property will not change. This is the default.</para>
+			/// <para>原样—不会更改属性。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("AS_IS")]
-			[Description("As is")]
+			[Description("原样")]
 			As_is,
 
 			/// <summary>
-			/// <para>Do not span routes—The event records will not span routes. This is applicable to line events only.</para>
+			/// <para>不跨越路径—事件记录不会跨越路径。 此选项仅适用于线事件。</para>
 			/// </summary>
 			[GPValue("NO_SPANS_ROUTES")]
-			[Description("Do not span routes")]
+			[Description("不跨越路径")]
 			Do_not_span_routes,
 
 			/// <summary>
-			/// <para>Spans routes— The event records will span routes. This is applicable to line events only.</para>
+			/// <para>跨越路径—事件记录将跨越路径。 此选项仅适用于线事件。</para>
 			/// </summary>
 			[GPValue("SPANS_ROUTES")]
-			[Description("Spans routes")]
+			[Description("跨越路径")]
 			Spans_routes,
 
 		}
@@ -406,24 +406,24 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum StoreRouteNameEnum 
 		{
 			/// <summary>
-			/// <para>As is—The property will not change. This is the default.</para>
+			/// <para>原样—不会更改属性。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("AS_IS")]
-			[Description("As is")]
+			[Description("原样")]
 			As_is,
 
 			/// <summary>
-			/// <para>Do not store route name—The route name will not be stored with the event records.</para>
+			/// <para>不存储路径名称—路径名称不会与事件记录一起存储。</para>
 			/// </summary>
 			[GPValue("NO_STORE_ROUTE_NAME")]
-			[Description("Do not store route name")]
+			[Description("不存储路径名称")]
 			Do_not_store_route_name,
 
 			/// <summary>
-			/// <para>Store route name—The route name will be stored with the event records.</para>
+			/// <para>存储路径名称—路径名称将与事件记录一起存储。</para>
 			/// </summary>
 			[GPValue("STORE_ROUTE_NAME")]
-			[Description("Store route name")]
+			[Description("存储路径名称")]
 			Store_route_name,
 
 		}
@@ -434,24 +434,24 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum CalibrateRuleEnum 
 		{
 			/// <summary>
-			/// <para>Stay put— The geographic location of the event will be preserved; measures may change. This is the default.</para>
+			/// <para>固定不动—事件的地理位置将被保留；测量值可能会改变。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("STAY_PUT")]
-			[Description("Stay put")]
+			[Description("固定不动")]
 			Stay_put,
 
 			/// <summary>
-			/// <para>Retire—Both measure and geographic location will be preserved; the event will be retired.</para>
+			/// <para>停用—测量值和地理位置都将被保留；该事件将被停用。</para>
 			/// </summary>
 			[GPValue("RETIRE")]
-			[Description("Retire")]
+			[Description("停用")]
 			Retire,
 
 			/// <summary>
-			/// <para>Move—The measures of the event will be preserved; the geographic location may change.</para>
+			/// <para>移动—事件测量值将被保留，地理位置可能发生变化。</para>
 			/// </summary>
 			[GPValue("MOVE")]
-			[Description("Move")]
+			[Description("移动")]
 			Move,
 
 		}
@@ -462,24 +462,24 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum RetireRuleEnum 
 		{
 			/// <summary>
-			/// <para>Stay put— The geographic location of the event will be preserved; measures may change. This is the default.</para>
+			/// <para>固定不动—事件的地理位置将被保留；测量值可能会改变。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("STAY_PUT")]
-			[Description("Stay put")]
+			[Description("固定不动")]
 			Stay_put,
 
 			/// <summary>
-			/// <para>Retire Rule</para>
+			/// <para>停用—测量值和地理位置都将被保留；该事件将被停用。</para>
 			/// </summary>
 			[GPValue("RETIRE")]
-			[Description("Retire")]
+			[Description("停用")]
 			Retire,
 
 			/// <summary>
-			/// <para>Move— The measures of the event will be preserved; the geographic location may change.</para>
+			/// <para>移动—事件测量值将被保留，地理位置可能发生变化。</para>
 			/// </summary>
 			[GPValue("MOVE")]
-			[Description("Move")]
+			[Description("移动")]
 			Move,
 
 		}
@@ -490,31 +490,31 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum ExtendRuleEnum 
 		{
 			/// <summary>
-			/// <para>Stay put— The geographic location of the event will be preserved; measures may change. This is the default.</para>
+			/// <para>固定不动—事件的地理位置将被保留；测量值可能会改变。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("STAY_PUT")]
-			[Description("Stay put")]
+			[Description("固定不动")]
 			Stay_put,
 
 			/// <summary>
-			/// <para>Retire— Both measure and geographic location will be preserved; the event will be retired.</para>
+			/// <para>停用—测量值和地理位置都将被保留；该事件将被停用。</para>
 			/// </summary>
 			[GPValue("RETIRE")]
-			[Description("Retire")]
+			[Description("停用")]
 			Retire,
 
 			/// <summary>
-			/// <para>Move— The measures of the event will be preserved; the geographic location may change.</para>
+			/// <para>移动—事件测量值将被保留，地理位置可能发生变化。</para>
 			/// </summary>
 			[GPValue("MOVE")]
-			[Description("Move")]
+			[Description("移动")]
 			Move,
 
 			/// <summary>
-			/// <para>Cover—The geometric location and measure of a line event will be modified to include a new or newly modified section.</para>
+			/// <para>覆盖—线事件的几何位置和测量值将被修改以包括新的或新修改的部分。</para>
 			/// </summary>
 			[GPValue("COVER")]
-			[Description("Cover")]
+			[Description("覆盖")]
 			Cover,
 
 		}
@@ -525,31 +525,31 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum ReassignRuleEnum 
 		{
 			/// <summary>
-			/// <para>Stay put— The geographic location of the event will be preserved; measures may change. This is the default.</para>
+			/// <para>固定不动—事件的地理位置将被保留；测量值可能会改变。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("STAY_PUT")]
-			[Description("Stay put")]
+			[Description("固定不动")]
 			Stay_put,
 
 			/// <summary>
-			/// <para>Retire— Both measure and geographic location will be preserved; the event will be retired.</para>
+			/// <para>停用—测量值和地理位置都将被保留；该事件将被停用。</para>
 			/// </summary>
 			[GPValue("RETIRE")]
-			[Description("Retire")]
+			[Description("停用")]
 			Retire,
 
 			/// <summary>
-			/// <para>Move— The measures of the event will be preserved; the geographic location may change.</para>
+			/// <para>移动—事件测量值将被保留，地理位置可能发生变化。</para>
 			/// </summary>
 			[GPValue("MOVE")]
-			[Description("Move")]
+			[Description("移动")]
 			Move,
 
 			/// <summary>
-			/// <para>Snap— The geographic location of the event will be preserved by snapping the event to a concurrent route; measures may change.</para>
+			/// <para>捕捉—通过将事件捕捉到并发路线，保留事件的地理位置；测量值可能会改变。</para>
 			/// </summary>
 			[GPValue("SNAP")]
-			[Description("Snap")]
+			[Description("捕捉")]
 			Snap,
 
 		}
@@ -560,38 +560,38 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum RealignRuleEnum 
 		{
 			/// <summary>
-			/// <para>Stay put— The geographic location of the event will be preserved; measures may change. This is the default.</para>
+			/// <para>固定不动—事件的地理位置将被保留；测量值可能会改变。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("STAY_PUT")]
-			[Description("Stay put")]
+			[Description("固定不动")]
 			Stay_put,
 
 			/// <summary>
-			/// <para>Retire— Both measure and geographic location will be preserved; the event will be retired.</para>
+			/// <para>停用—测量值和地理位置都将被保留；该事件将被停用。</para>
 			/// </summary>
 			[GPValue("RETIRE")]
-			[Description("Retire")]
+			[Description("停用")]
 			Retire,
 
 			/// <summary>
-			/// <para>Move— The measures of the event will be preserved; the geographic location may change.</para>
+			/// <para>移动—事件测量值将被保留，地理位置可能发生变化。</para>
 			/// </summary>
 			[GPValue("MOVE")]
-			[Description("Move")]
+			[Description("移动")]
 			Move,
 
 			/// <summary>
-			/// <para>Snap—The geographic location of an event will be preserved by snapping the event to a concurrent route; measures may change.</para>
+			/// <para>捕捉—通过将事件捕捉到并发路线，保留事件的地理位置；测量值可能会改变。</para>
 			/// </summary>
 			[GPValue("SNAP")]
-			[Description("Snap")]
+			[Description("捕捉")]
 			Snap,
 
 			/// <summary>
-			/// <para>Cover—The geometric location and measure of a line event will be modified to include a new or newly modified section.</para>
+			/// <para>覆盖—线事件的几何位置和测量值将被修改以包括新的或新修改的部分。</para>
 			/// </summary>
 			[GPValue("COVER")]
-			[Description("Cover")]
+			[Description("覆盖")]
 			Cover,
 
 		}
@@ -602,24 +602,24 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum ReverseRuleEnum 
 		{
 			/// <summary>
-			/// <para>Stay put— The geographic location of the event will be preserved; measures may change. This is the default.</para>
+			/// <para>固定不动—事件的地理位置将被保留；测量值可能会改变。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("STAY_PUT")]
-			[Description("Stay put")]
+			[Description("固定不动")]
 			Stay_put,
 
 			/// <summary>
-			/// <para>Retire— Both measure and geographic location will be preserved; the event will be retired.</para>
+			/// <para>停用—测量值和地理位置都将被保留；该事件将被停用。</para>
 			/// </summary>
 			[GPValue("RETIRE")]
-			[Description("Retire")]
+			[Description("停用")]
 			Retire,
 
 			/// <summary>
-			/// <para>Move— The measures of the event will be preserved; the geographic location may change.</para>
+			/// <para>移动—事件测量值将被保留，地理位置可能发生变化。</para>
 			/// </summary>
 			[GPValue("MOVE")]
-			[Description("Move")]
+			[Description("移动")]
 			Move,
 
 		}
@@ -630,10 +630,10 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		public enum CartoRealignRuleEnum 
 		{
 			/// <summary>
-			/// <para>Honor Route Measure—The measure of the event will be preserved or changed proportionally to the route&apos;s measure change. This is the default.</para>
+			/// <para>支持路径测量—将保留事件的测量值，或与路径测量值更改成比例地更改测量值。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("HONOR_ROUTE_MEASURE")]
-			[Description("Honor Route Measure")]
+			[Description("支持路径测量")]
 			Honor_Route_Measure,
 
 		}

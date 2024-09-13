@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Update Measures From LRS</para>
-	/// <para>Update Measures From LRS</para>
-	/// <para>Populates or updates  the measures and route ID on Utility Network (UN) features such as pipes, devices, and junctions or on features in feature classes that are not UN or LRS feature classes.</para>
+	/// <para>从 LRS 更新测量值</para>
+	/// <para>用于填充或更新 Utility Network (UN) 要素，例如管道、设备和交汇点，或者非 UN 或 LRS 要素类中的要素上的测量值和路径 ID。</para>
 	/// </summary>
 	public class UpdateMeasuresFromLRS : AbstractGPProcess
 	{
@@ -21,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// </summary>
 		/// <param name="LrsNetwork">
 		/// <para>LRS Network</para>
-		/// <para>The feature layer that contains the routes, route IDs, and measures.</para>
+		/// <para>包含路径、路径 ID 和测量值的要素图层。</para>
 		/// </param>
 		/// <param name="LrsDate">
 		/// <para>LRS Date</para>
-		/// <para>The date used to define the temporal view of the network for collecting the route and measure values.</para>
+		/// <para>用于定义网络时间视图以收集路径和测量值的日期。</para>
 		/// </param>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The layer that includes route ID and measure fields that will be updated based on feature geometry relative to routes in the LRS Network parameter.</para>
+		/// <para>包含路径 ID 和测量字段的图层，这些字段将根据与 LRS 网络参数中的路径相关的要素几何进行更新。</para>
 		/// </param>
 		/// <param name="RouteIdField">
 		/// <para>Route ID Field</para>
-		/// <para>The field in the Input Features layer that contains the route ID value.</para>
+		/// <para>输入要素图层中包含路径 ID 值的字段。</para>
 		/// </param>
 		/// <param name="FromMeasureField">
 		/// <para>Measure Field</para>
-		/// <para>The field in the Input Features layer that contains the from measure value for polyline features.</para>
+		/// <para>输入要素图层中包含折线要素的测量值的字段。</para>
 		/// </param>
 		public UpdateMeasuresFromLRS(object LrsNetwork, object LrsDate, object InFeatures, object RouteIdField, object FromMeasureField)
 		{
@@ -49,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Update Measures From LRS</para>
+		/// <para>Tool Display Name : 从 LRS 更新测量值</para>
 		/// </summary>
-		public override string DisplayName() => "Update Measures From LRS";
+		public override string DisplayName() => "从 LRS 更新测量值";
 
 		/// <summary>
 		/// <para>Tool Name : UpdateMeasuresFromLRS</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>LRS Network</para>
-		/// <para>The feature layer that contains the routes, route IDs, and measures.</para>
+		/// <para>包含路径、路径 ID 和测量值的要素图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>LRS Date</para>
-		/// <para>The date used to define the temporal view of the network for collecting the route and measure values.</para>
+		/// <para>用于定义网络时间视图以收集路径和测量值的日期。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPDate()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The layer that includes route ID and measure fields that will be updated based on feature geometry relative to routes in the LRS Network parameter.</para>
+		/// <para>包含路径 ID 和测量字段的图层，这些字段将根据与 LRS 网络参数中的路径相关的要素几何进行更新。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Route ID Field</para>
-		/// <para>The field in the Input Features layer that contains the route ID value.</para>
+		/// <para>输入要素图层中包含路径 ID 值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>Measure Field</para>
-		/// <para>The field in the Input Features layer that contains the from measure value for polyline features.</para>
+		/// <para>输入要素图层中包含折线要素的测量值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 
 		/// <summary>
 		/// <para>To Measure Field</para>
-		/// <para>The field in the Input Features layer that contains the measure value for point features or the to measure value for polyline features.</para>
+		/// <para>输入要素图层中包含点要素测量值或折线要素测量值的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Points Along Lines</para>
-	/// <para>Generate Points Along Lines</para>
-	/// <para>Creates point features along lines or polygons at fixed intervals or by percentage of a feature's length.</para>
+	/// <para>沿线生成点</para>
+	/// <para>沿线或面以固定间隔或要素长度百分比创建点要素。</para>
 	/// </summary>
 	public class GeneratePointsAlongLines : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InputFeatures">
 		/// <para>Input Features</para>
-		/// <para>The line or polygon features to be converted into points.</para>
+		/// <para>用于转换为点的线或面要素。</para>
 		/// </param>
 		/// <param name="OutputFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The point feature class that will be created from the input features.</para>
+		/// <para>将基于输入要素创建的点要素类。</para>
 		/// </param>
 		/// <param name="PointPlacement">
 		/// <para>Point Placement</para>
-		/// <para>Specifies the method used to create points.</para>
-		/// <para>By percentage—The Percentage parameter value will be used to place points along the features by percentage.</para>
-		/// <para>By distance—The Distance parameter value will be used to place points at fixed distances along the features. This is the default.</para>
+		/// <para>指定用于创建点的方法。</para>
+		/// <para>按百分比—将使用百分比参数值按百分比沿要素放置点。</para>
+		/// <para>按距离—将使用距离参数值将按固定距离沿要素放置点。 这是默认设置。</para>
 		/// <para><see cref="PointPlacementEnum"/></para>
 		/// </param>
 		public GeneratePointsAlongLines(object InputFeatures, object OutputFeatureClass, object PointPlacement)
@@ -42,9 +42,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Generate Points Along Lines</para>
+		/// <para>Tool Display Name : 沿线生成点</para>
 		/// </summary>
-		public override string DisplayName() => "Generate Points Along Lines";
+		public override string DisplayName() => "沿线生成点";
 
 		/// <summary>
 		/// <para>Tool Name : GeneratePointsAlongLines</para>
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The line or polygon features to be converted into points.</para>
+		/// <para>用于转换为点的线或面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The point feature class that will be created from the input features.</para>
+		/// <para>将基于输入要素创建的点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -97,9 +97,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Point Placement</para>
-		/// <para>Specifies the method used to create points.</para>
-		/// <para>By percentage—The Percentage parameter value will be used to place points along the features by percentage.</para>
-		/// <para>By distance—The Distance parameter value will be used to place points at fixed distances along the features. This is the default.</para>
+		/// <para>指定用于创建点的方法。</para>
+		/// <para>按百分比—将使用百分比参数值按百分比沿要素放置点。</para>
+		/// <para>按距离—将使用距离参数值将按固定距离沿要素放置点。 这是默认设置。</para>
 		/// <para><see cref="PointPlacementEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Distance</para>
-		/// <para>The interval from the beginning of the feature at which points will be placed.</para>
+		/// <para>点将放置于距离要素始点的间隔。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Percentage</para>
-		/// <para>The percentage from the beginning of the feature at which points will be placed. For example, if a percentage of 40 is used, points will be placed at 40 percent and 80 percent of the feature's distance.</para>
+		/// <para>点将放置于距离要素始点的百分比。 例如，如果已使用 40%，则点将放置于要素距离的 40% 和 80% 位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -126,9 +126,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Include End Points</para>
-		/// <para>Specifies whether additional points will be included at the start point and end point of the feature.</para>
-		/// <para>Checked—Additional points will be included at the start point and end point of the feature.</para>
-		/// <para>Unchecked—No additional points will be included at the start point and end point of the feature. This is the default.</para>
+		/// <para>指定是否在要素的开始点和结束点包括其他点。</para>
+		/// <para>选中 - 将在要素的开始点和结束点包括其他点。</para>
+		/// <para>未选中 - 不在要素的开始点和结束点包括其他点。 这是默认设置。</para>
 		/// <para><see cref="IncludeEndPointsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -153,17 +153,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum PointPlacementEnum 
 		{
 			/// <summary>
-			/// <para>By percentage—The Percentage parameter value will be used to place points along the features by percentage.</para>
+			/// <para>按百分比—将使用百分比参数值按百分比沿要素放置点。</para>
 			/// </summary>
 			[GPValue("PERCENTAGE")]
-			[Description("By percentage")]
+			[Description("按百分比")]
 			By_percentage,
 
 			/// <summary>
-			/// <para>By distance—The Distance parameter value will be used to place points at fixed distances along the features. This is the default.</para>
+			/// <para>按距离—将使用距离参数值将按固定距离沿要素放置点。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("DISTANCE")]
-			[Description("By distance")]
+			[Description("按距离")]
 			By_distance,
 
 		}
@@ -174,14 +174,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum IncludeEndPointsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Additional points will be included at the start point and end point of the feature.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("END_POINTS")]
 			END_POINTS,
 
 			/// <summary>
-			/// <para>Unchecked—No additional points will be included at the start point and end point of the feature. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_END_POINTS")]

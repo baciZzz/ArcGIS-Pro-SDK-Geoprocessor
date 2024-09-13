@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>EBK Regression Prediction</para>
-	/// <para>EBK Regression Prediction</para>
-	/// <para>EBK Regression Prediction is a geostatistical interpolation method that uses Empirical Bayesian Kriging with explanatory variable rasters that are known to affect the value of the data that you are interpolating. This approach combines kriging with regression analysis to make predictions that are more accurate than either regression or kriging can achieve on their own.</para>
+	/// <para>EBK 回归预测</para>
+	/// <para>EBK 回归预测是一种地统计插值法，用到了经验贝叶斯克里金法及解释变量栅格，其中的解释变量栅格会影响正在内插的数据的值。这种方法整合了克里金法和回归分析，使得预测的结果比单独使用任何一种方法都更准确。</para>
 	/// </summary>
 	public class EBKRegressionPrediction : AbstractGPProcess
 	{
@@ -21,19 +21,19 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input dependent variable features</para>
-		/// <para>The input point features containing the field that will be interpolated.</para>
+		/// <para>包含要内插的字段的输入点要素。</para>
 		/// </param>
 		/// <param name="DependentField">
 		/// <para>Dependent variable field</para>
-		/// <para>The field of the Input dependent variable features containing the values of the dependent variable. This is the field that will be interpolated.</para>
+		/// <para>包含因变量值的输入因变量要素的字段。这是将要内插的字段。</para>
 		/// </param>
 		/// <param name="InExplanatoryRasters">
 		/// <para>Input explanatory variable rasters</para>
-		/// <para>Input rasters representing the explanatory variables that will be used to build the regression model. These rasters should represent variables that are known to influence the values of the dependent variable. For example, when interpolating temperature data, an elevation raster should be used as an explanatory variable because temperature is influenced by elevation. You can use up to 62 explanatory rasters.</para>
+		/// <para>表示用于构建回归模型的解释变量的输入栅格。这些栅格将表示会影响因变量值的变量。例如，内插温度数据时应该将高程栅格用作解释变量，这是因为温度会受到高程的影响。最多可以使用 62 个解释栅格。</para>
 		/// </param>
 		/// <param name="OutGaLayer">
 		/// <para>Output geostatistical layer</para>
-		/// <para>The output geostatistical layer displaying the result of the interpolation.</para>
+		/// <para>显示插值结果的输出地统计图层。</para>
 		/// </param>
 		public EBKRegressionPrediction(object InFeatures, object DependentField, object InExplanatoryRasters, object OutGaLayer)
 		{
@@ -44,9 +44,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : EBK Regression Prediction</para>
+		/// <para>Tool Display Name : EBK 回归预测</para>
 		/// </summary>
-		public override string DisplayName() => "EBK Regression Prediction";
+		public override string DisplayName() => "EBK 回归预测";
 
 		/// <summary>
 		/// <para>Tool Name : EBKRegressionPrediction</para>
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input dependent variable features</para>
-		/// <para>The input point features containing the field that will be interpolated.</para>
+		/// <para>包含要内插的字段的输入点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Dependent variable field</para>
-		/// <para>The field of the Input dependent variable features containing the values of the dependent variable. This is the field that will be interpolated.</para>
+		/// <para>包含因变量值的输入因变量要素的字段。这是将要内插的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -100,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Input explanatory variable rasters</para>
-		/// <para>Input rasters representing the explanatory variables that will be used to build the regression model. These rasters should represent variables that are known to influence the values of the dependent variable. For example, when interpolating temperature data, an elevation raster should be used as an explanatory variable because temperature is influenced by elevation. You can use up to 62 explanatory rasters.</para>
+		/// <para>表示用于构建回归模型的解释变量的输入栅格。这些栅格将表示会影响因变量值的变量。例如，内插温度数据时应该将高程栅格用作解释变量，这是因为温度会受到高程的影响。最多可以使用 62 个解释栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -112,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output geostatistical layer</para>
-		/// <para>The output geostatistical layer displaying the result of the interpolation.</para>
+		/// <para>显示插值结果的输出地统计图层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPGALayer()]
@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output prediction raster</para>
-		/// <para>The output raster displaying the result of the interpolation. The default cell size will be the maximum of the cell sizes of the Input explanatory variable rasters. To use a different cell size, use the cell size environmental setting.</para>
+		/// <para>显示插值结果的输出栅格。默认像元大小为输入解释变量栅格中像元尺寸的最大值。要应用其他像元大小，可使用像元大小环境设置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DERasterDataset()]
@@ -128,15 +128,15 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Output diagnostic feature class</para>
-		/// <para>Output polygon feature class that shows the regions of each local model and contains fields with diagnostic information for the local models. For each subset, a polygon will be created that surrounds the points in the subset so you can easily identify which points were used in each subset. For example, if there are 10 local models, there will be ten polygons in this output. The feature class will contain the following fields:</para>
-		/// <para>Number of Principal Components (PrincComps)—The number of principal components that were used as explanatory variables. The value will always be less than or equal to the number of explanatory variable rasters.</para>
-		/// <para>Percent of Variance (PercVar)—The percent of variance captured by the principal components. This value will be greater than or equal to the value specified in the Minimum cumulative percent of variance parameter below.</para>
-		/// <para>Root Mean Square Error (RMSE)—The square root of the average squared cross-validation errors. The smaller this value, the better the model fits.</para>
-		/// <para>Percent 90 Interval (Perc90)—The percent of data points that fall within a 90 percent cross-validation confidence interval. Ideally, this number should be close to 90. A value significantly smaller than 90 indicates that standard errors are being underestimated. A value significantly larger than 90 indicates that standard errors are being overestimated.</para>
-		/// <para>Percent 95 Interval (Perc95)—The percent of data points that fall within a 95 percent cross-validation confidence interval. Ideally, this number should be close to 95. A value significantly smaller than 95 indicates that standard errors are being underestimated. A value significantly larger than 95 indicates that standard errors are being overestimated.</para>
-		/// <para>Mean Absolute Error (MeanAbsErr)—The average of the absolute values of the cross-validation errors. This value should be as small as possible. It is similar to Root Mean Square Error, but it is less influenced by extreme values.</para>
-		/// <para>Mean Error (MeanError)—The average of the cross-validation errors. This value should be close to zero. A value significantly different than zero indicates that the predictions are biased.</para>
-		/// <para>Continuous Ranked Probability Score (CRPS)—The continuous ranked probability score is a diagnostic that measures the deviation from the predictive cumulative distribution function to each observed data value. This value should be as small as possible. This diagnostic has advantages over cross-validation diagnostics because it compares the data to a full distribution rather than to single-point predictions.</para>
+		/// <para>输出可显示每个本地模型区域及包含具有本地模型诊断信息字段的面要素类 对于每一个子集，都将围绕该子集中的点创建面，这样就可以很容易地识别出每个子集中所使用的点。例如，如果有 10 个本地模型，则此输出中将有 10 个面。要素类将包含以下字段：</para>
+		/// <para>主成分数目 (PrincComps) - 是指用作解释变量的主成分数目。该值将始终小于或等于解释变量栅格的数量。</para>
+		/// <para>方差百分比 (PercVar) - 是指由主成分捕获的方差百分比。该值将大于或等于下面的最小累积方差百分比参数中指定的值。</para>
+		/// <para>均方根误差 (RMSE) - 是指各个交叉验证误差的平方平均数的平方根。该值越小，模型的拟合状况越好。</para>
+		/// <para>90% 区间 (Perc90) - 是指落入 90% 交叉验证置信区间的数据点的百分比。理想情况下，该值应接近于 90。若该值远小于 90，则说明对标准误差的估计过低。若该值远大于 90，则说明对标准误差的估计过高。</para>
+		/// <para>95% 区间 (Perc95) - 是指落入 95% 交叉验证置信区间的数据点的百分比。理想情况下，该值应接近于 95。若该值远小于 95，则说明对标准误差的估计过低。若该值远大于 95，则说明对标准误差的估计过高。</para>
+		/// <para>平均绝对误差 (MeanAbsErr) - 是指交叉验证误差绝对值的平均数。该值应尽可能小。这与均方根误差相似，但它受极值的影响较小。</para>
+		/// <para>平均误差 (MeanError) - 交叉验证误差的平均数。该值应接近于 0。若该值显著异于零，则表示预测有偏倚。</para>
+		/// <para>连续分级概率评分 (CRPS) - 这是一种诊断方法，用于测量预测的累积分布函数与每个已观测数据值之间的偏差。该值应尽可能小。该诊断方法优于交叉验证诊断方法，因为它将数据与整个分布进行比较而不是与单点预测进行比较。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -144,9 +144,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Dependent variable measurement error field</para>
-		/// <para>A field that specifies the measurement error for each point in the dependent variable features. For each point, the value of this field should correspond to one standard deviation of the measured value of the point. Use this field if the measurement error values are not the same at each point.</para>
-		/// <para>A common source of nonconstant measurement error is when the data is measured with different devices. One device might be more precise than another, which means that it will have a smaller measurement error. For example, one thermometer rounds to the nearest degree and another thermometer rounds to the nearest tenth of a degree. The variability of measurements is often provided by the manufacturer of the measuring device, or it may be known from empirical practice.</para>
-		/// <para>Leave this parameter empty if there are no measurement error values or the measurement error values are unknown.</para>
+		/// <para>用于指定因变量要素中每个点的测量误差的字段。对于每个点，此字段的值都应对应于该点测量值的标准差。如果每个点的测量误差值不同，请使用此字段。</para>
+		/// <para>产生不稳定测量误差的常见原因是测量数据时所用的设备不同。一个设备可能比另一个精确，即其测量误差更小。例如，一个温度计舍入到最接近的度，而另一个温度计舍到最接近的度的十分之一。通常，测量误差范围由测量设备的制造商会提供，或通过实践经验获得。</para>
+		/// <para>如果没有测量误差值或测量误差值未知，请将此参数留空。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -156,9 +156,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Minimum cumulative percent of variance</para>
-		/// <para>Defines the minimum cumulative percent of variance from the principal components of the explanatory variable rasters. Before building the regression model, the principal components of the explanatory variables are calculated, and these principal components are used as explanatory variables in the regression. Each principal component captures a certain percent of the variance of the explanatory variables, and this parameter controls the minimum percent of variance that must be captured by the principal components of each local model. For example, if a value of 75 is provided, the software will use the minimum number of principal components that are necessary to capture at least 75 percent of the variance of the explanatory variables.</para>
-		/// <para>Principal components are all mutually uncorrelated with each other, so using principal components solves the problem of multicollinearity (explanatory variables that are correlated with each other). Most of the information contained in all explanatory variables can frequently be captured in just a few principal components. By discarding the least useful principal components, the model calculation becomes more stable and efficient without significant loss of accuracy.</para>
-		/// <para>To calculate principal components, there must be variability in the explanatory variables, so if any of your Input explanatory variable rasters contain constant values within a subset, these constant rasters will not be used to compute principal components for that subset. If all explanatory variable rasters in a subset contain constant values, the Output diagnostic feature class will report that zero principal components were used and that they captured zero percent of the variability.</para>
+		/// <para>通过解释变量栅格的主成分定义方差的最小累积百分比。在构建回归模型之前，将事先计算解释变量的主成分，并会在回归中将这些主成分用作解释变量。每一个主成分将捕获解释变量方差的某一特定百分比，且此参数将控制每个本地模型主成分必须捕获的方差的最小百分比。例如，如果所提供的值为 75，那么软件将使用至少捕获 75% 的解释变量方差所必须的最小主成分数。</para>
+		/// <para>各个主成分之间互不相关，因此将使用主成分解决多重共线性（相互关联的解释变量）问题。所有解释变量中包含的大部分信息通常只能在少数的几个主成分中捕获。因此，放弃最不实用的主成分，可使模型计算在不明显损失精度的情况下更稳定且更高效。</para>
+		/// <para>为计算主成分，解释变量必须具有变化性，因此，如果任意输入解释变量栅格包含子集内的常量值，这些常量栅格将不会用于计算该子集的主成分。如果子集中的所有解释变量栅格均包含常量值，则输出诊断要素类将报告：使用的主成分为零，捕获的变量百分比为零。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -168,8 +168,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Subset polygon features</para>
-		/// <para>Polygon features defining where the local models will be calculated. The points inside each polygon will be used for the local models. This parameter is useful when you know that the values of the dependent variable changes according to known regions. For example, these polygons may represent administrative health districts where health policy changes in different districts.</para>
-		/// <para>You can also use the Generate Subset Polygons tool to create subset polygons. The polygons created by this tool will be non-overlapping and compact.</para>
+		/// <para>用于定义计算本地模型位置的面要素。每个面内的点都将用于本地模型。此参数在因变量值需根据已知区域进行变化的情况下十分有用。例如，这些面可代表卫生政策会因区域不同而有所变化的行政卫生区。</para>
+		/// <para>还可以使用生成子集面工具来创建子集面。由此工具创建的面将紧凑而不重叠。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -180,10 +180,10 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Dependent variable transformation type</para>
-		/// <para>Type of transformation to be applied to the input data.</para>
-		/// <para>None—Do not apply any transformation. This is the default.</para>
-		/// <para>Empirical—Multiplicative Skewing transformation with Empirical base function.</para>
-		/// <para>Log empirical—Multiplicative Skewing transformation with Log Empirical base function. All data values must be positive. If this option is chosen, all predictions will be positive.</para>
+		/// <para>将应用到输入数据的变换类型。</para>
+		/// <para>无—不应用任何变换。这是默认设置。</para>
+		/// <para>经验法—使用“经验”基本函数进行“乘偏斜”变换。</para>
+		/// <para>对数经验—使用“对数经验”基本函数进行“乘偏斜”变换。所有数据值必须为正。如果选择此选项，则所有预测均为正。</para>
 		/// <para><see cref="TransformationTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -194,11 +194,11 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Semivariogram model type</para>
-		/// <para>The semivariogram model that will be used for the interpolation.</para>
-		/// <para>Exponential—Exponential semivariogram</para>
-		/// <para>Nugget—Nugget semivariogram</para>
-		/// <para>Whittle—Whittle semivariogram</para>
-		/// <para>K-Bessel—K-Bessel semivariogram</para>
+		/// <para>用于插值的半变异函数模型。</para>
+		/// <para>指数—指数半变异函数</para>
+		/// <para>块金值—块金半变异函数</para>
+		/// <para>消减函数—消减半变异函数</para>
+		/// <para>K-Bessel—K-Bessel 半变异函数</para>
 		/// <para><see cref="SemivariogramModelTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -209,7 +209,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Maximum number of points in each local model</para>
-		/// <para>The input data will automatically be divided into subsets that do not have more than this number of points. If Subset polygon features are supplied, the value of this parameter will be ignored.</para>
+		/// <para>输入数据将自动分成子集，每个子集的点数不大于这一数目。如果提供子集面要素，将会忽略此参数的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -219,7 +219,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Local model area overlap factor</para>
-		/// <para>A factor representing the degree of overlap between local models (also called subsets). Each input point can fall into several subsets, and the overlap factor specifies the average number of subsets that each point will fall into. A high value of the overlap factor makes the output surface smoother, but it also increases processing time. Values must be between 1 and 5. If Subset polygon features are supplied, the value of this parameter will be ignored.</para>
+		/// <para>表示本地模型（也称子集）之间重叠程度的系数。每个输入点均可落入多个子集中，重叠系数指定了各点将落入的子集的平均数。重叠系数值越高，输出表面就越平滑，但处理时间也越长。值必须介于 1 和 5 之间。如果提供子集面要素，将会忽略此参数的值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -229,7 +229,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Number of simulations</para>
-		/// <para>The number of simulated semivariograms of each local model. Using more simulations will make the model calculations more stable, but the model will take longer to calculate.</para>
+		/// <para>每个本地模型模拟的半变异函数的数量。使用的模拟越多，则模型计算越稳定，但模型所用的计算时间也会越长。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -239,20 +239,20 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 
 		/// <summary>
 		/// <para>Search neighborhood</para>
-		/// <para>Defines which surrounding points will be used to control the output. Standard is the default.</para>
-		/// <para>Standard Circular</para>
-		/// <para>Max neighbors—The maximum number of neighbors that will be used to estimate the value at the unknown location.</para>
-		/// <para>Min neighbors—The minimum number of neighbors that will be used to estimate the value at the unknown location.</para>
-		/// <para>Sector Type—The geometry of the neighborhood.</para>
-		/// <para>One sector—Single ellipse.</para>
-		/// <para>Four sectors—Ellipse divided into four sectors.</para>
-		/// <para>Four sectors shifted—Ellipse divided into four sectors and shifted 45 degrees.</para>
-		/// <para>Eight sectors—Ellipse divided into eight sectors.</para>
-		/// <para>Angle—The angle of rotation for the axis (circle) or semimajor axis (ellipse) of the moving window.</para>
-		/// <para>Radius—The length of the radius of the search circle.</para>
-		/// <para>Smooth Circular</para>
-		/// <para>Smoothing factor—The Smooth Interpolation option creates an outer ellipse and an inner ellipse at a distance equal to the Major Semiaxis multiplied by the Smoothing factor. The points that fall outside the smallest ellipse but inside the largest ellipse are weighted using a sigmoidal function with a value between zero and one.</para>
-		/// <para>Radius—The length of the radius of the search circle.</para>
+		/// <para>定义用于控制输出的周围点。“标准”为默认选项。</para>
+		/// <para>标准圆形</para>
+		/// <para>最大邻点数 - 用于估计未知位置值的最大相邻数。</para>
+		/// <para>最小邻点数 - 用于估计未知位置值的最小相邻数。</para>
+		/// <para>分区类型 - 邻域的几何。</para>
+		/// <para>单扇区 - 单个椭圆。</para>
+		/// <para>四扇区 - 分为四个扇区的椭圆。</para>
+		/// <para>偏移四扇区 - 分为四个扇区且偏移 45 度的椭圆。</para>
+		/// <para>八扇区 - 分为八个扇区的椭圆。</para>
+		/// <para>角度 - 移动窗口的轴（圆）或长半轴（椭圆）的旋转角度。</para>
+		/// <para>半径 - 搜索圆的半径长度。</para>
+		/// <para>平滑圆形</para>
+		/// <para>平滑系数 -“平滑插值”选项可在“长半轴”与“平滑系数”相乘所得的距离处创建一个外椭圆和一个内椭圆。使用反曲线函数可对位于最小椭圆外、最大椭圆内的点加权，加权值介于 0 和 1 之间。</para>
+		/// <para>半径 - 搜索圆的半径长度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGASearchNeighborhood()]
@@ -278,24 +278,24 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum TransformationTypeEnum 
 		{
 			/// <summary>
-			/// <para>None—Do not apply any transformation. This is the default.</para>
+			/// <para>无—不应用任何变换。这是默认设置。</para>
 			/// </summary>
 			[GPValue("NONE")]
-			[Description("None")]
+			[Description("无")]
 			None,
 
 			/// <summary>
-			/// <para>Empirical—Multiplicative Skewing transformation with Empirical base function.</para>
+			/// <para>经验法—使用“经验”基本函数进行“乘偏斜”变换。</para>
 			/// </summary>
 			[GPValue("EMPIRICAL")]
-			[Description("Empirical")]
+			[Description("经验法")]
 			Empirical,
 
 			/// <summary>
-			/// <para>Log empirical—Multiplicative Skewing transformation with Log Empirical base function. All data values must be positive. If this option is chosen, all predictions will be positive.</para>
+			/// <para>对数经验—使用“对数经验”基本函数进行“乘偏斜”变换。所有数据值必须为正。如果选择此选项，则所有预测均为正。</para>
 			/// </summary>
 			[GPValue("LOGEMPIRICAL")]
-			[Description("Log empirical")]
+			[Description("对数经验")]
 			Log_empirical,
 
 		}
@@ -306,28 +306,28 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		public enum SemivariogramModelTypeEnum 
 		{
 			/// <summary>
-			/// <para>Exponential—Exponential semivariogram</para>
+			/// <para>指数—指数半变异函数</para>
 			/// </summary>
 			[GPValue("EXPONENTIAL")]
-			[Description("Exponential")]
+			[Description("指数")]
 			Exponential,
 
 			/// <summary>
-			/// <para>Nugget—Nugget semivariogram</para>
+			/// <para>块金值—块金半变异函数</para>
 			/// </summary>
 			[GPValue("NUGGET")]
-			[Description("Nugget")]
+			[Description("块金值")]
 			Nugget,
 
 			/// <summary>
-			/// <para>Whittle—Whittle semivariogram</para>
+			/// <para>消减函数—消减半变异函数</para>
 			/// </summary>
 			[GPValue("WHITTLE")]
-			[Description("Whittle")]
+			[Description("消减函数")]
 			Whittle,
 
 			/// <summary>
-			/// <para>K-Bessel—K-Bessel semivariogram</para>
+			/// <para>K-Bessel—K-Bessel 半变异函数</para>
 			/// </summary>
 			[GPValue("K_BESSEL")]
 			[Description("K-Bessel")]

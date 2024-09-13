@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Skyline Graph</para>
-	/// <para>Skyline Graph</para>
-	/// <para>Calculates the sky visibility ratio and generates an optional table and a polar graph.</para>
+	/// <para>天际线图</para>
+	/// <para>计算天空的可见比，并选择性地生成表和极线图。</para>
 	/// </summary>
 	public class SkylineGraph : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InObserverPointFeatures">
 		/// <para>Input Observer Point Features</para>
-		/// <para>The input features containing one or more observer points.</para>
+		/// <para>包含一个或多个观察点的输入要素。</para>
 		/// </param>
 		/// <param name="InLineFeatures">
 		/// <para>Input Line Features</para>
-		/// <para>The line features that represent the skyline.</para>
+		/// <para>表示天际线的线要素。</para>
 		/// </param>
 		public SkylineGraph(object InObserverPointFeatures, object InLineFeatures)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Skyline Graph</para>
+		/// <para>Tool Display Name : 天际线图</para>
 		/// </summary>
-		public override string DisplayName() => "Skyline Graph";
+		public override string DisplayName() => "天际线图";
 
 		/// <summary>
 		/// <para>Tool Name : SkylineGraph</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Observer Point Features</para>
-		/// <para>The input features containing one or more observer points.</para>
+		/// <para>包含一个或多个观察点的输入要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Line Features</para>
-		/// <para>The line features that represent the skyline.</para>
+		/// <para>表示天际线的线要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -90,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Base  Visibility Angle</para>
-		/// <para>The baseline vertical angle that will be used to calculate the percentage of visible sky. Zero is the horizon, 90 is straight up; -90 is straight down. The default is 0.</para>
+		/// <para>用于计算可见天空百分比的基线的垂直角。 0 表示水平，90 表示竖直向上；-90 表示竖直向下。 默认值为 0。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -98,9 +98,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Additional Fields</para>
-		/// <para>Specifies whether additional fields will be included in the angles table.</para>
-		/// <para>Unchecked—Additional fields will not be included. This is the default.</para>
-		/// <para>Checked—Additional fields will be included.</para>
+		/// <para>指定角度表中是否包含附加字段。</para>
+		/// <para>未选中 - 不包含附加字段。 这是默认设置。</para>
+		/// <para>选中 - 将包含附加字段。</para>
 		/// <para><see cref="AdditionalFieldsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -110,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Angles Table</para>
-		/// <para>The table to be created for outputting the horizontal and vertical angles from the observer point to each of the vertices on the skyline.</para>
+		/// <para>将创建此表以输出从观察点到天际线上每个折点的水平和垂直角度。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DETable()]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Graph Name</para>
-		/// <para>This parameter is not supported.</para>
+		/// <para>不支持此参数。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPGraph()]
@@ -133,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Graph Image</para>
-		/// <para>The image of the polar chart depicting the radial view of the visible skyline. The image can be created in PNG, JPG, JPEG or SVG format.</para>
+		/// <para>描绘可见天际线径向视图的极区图图像。 此图像可以创建为 PNG、JPG、JPEG 或 SVG 格式。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]
@@ -158,14 +158,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum AdditionalFieldsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Additional fields will be included.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ADDITIONAL_FIELDS")]
 			ADDITIONAL_FIELDS,
 
 			/// <summary>
-			/// <para>Unchecked—Additional fields will not be included. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ADDITIONAL_FIELDS")]

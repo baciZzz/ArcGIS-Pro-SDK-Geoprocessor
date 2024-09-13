@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Export Subnetwork</para>
-	/// <para>Export Subnetwork</para>
-	/// <para>Exports subnetworks from a utility network into a .json file. This tool also allows you to delete a row in the Subnetworks table as long as the Is deleted attribute is set to true. This indicates that the subnetwork controller has been removed from the subnetwork.</para>
+	/// <para>导出子网</para>
+	/// <para>将公共设施网络的子网导出为 .json 文件。 如果 Is deleted 属性设置为 true，则该工具也可以用于删除子网表中的行。 这表示子网控制器已从子网中移除。</para>
 	/// </summary>
 	public class ExportSubnetwork : AbstractGPProcess
 	{
@@ -21,30 +21,30 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// </summary>
 		/// <param name="InUtilityNetwork">
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that contains the subnetwork to export.</para>
+		/// <para>包含要导出的子网的公共设施网络。</para>
 		/// </param>
 		/// <param name="DomainNetwork">
 		/// <para>Domain Network</para>
-		/// <para>The domain network that contains the subnetwork.</para>
+		/// <para>包含子网的域网络。</para>
 		/// </param>
 		/// <param name="Tier">
 		/// <para>Tier</para>
-		/// <para>The tier that contains the subnetwork.</para>
+		/// <para>包含子网的层。</para>
 		/// </param>
 		/// <param name="SubnetworkName">
 		/// <para>Subnetwork Name</para>
-		/// <para>The name of the subnetwork to export. Select a specific source to export the corresponding subnetwork information.</para>
+		/// <para>要导出的子网的名称。 选择一个特定源可导出相应的子网信息。</para>
 		/// </param>
 		/// <param name="ExportAcknowledged">
 		/// <para>Set export acknowledged</para>
-		/// <para>Specifies whether the LASTACKEXPORTSUBNETWORK attribute for the corresponding controller in the Subnetworks table and feature in the SubnetLine feature class will be updated.</para>
-		/// <para>Checked—The LASTACKEXPORTSUBNETWORK attribute for the corresponding controller in the Subnetworks table will be updated. If the controller has been marked for deletion (Is deleted = True), it will be deleted from the Subnetworks table. This option requires that the input utility network reference the default version.</para>
-		/// <para>Unchecked—The LASTACKEXPORTSUBNETWORK attribute for the corresponding controller in the Subnetworks table will not be updated. This is the default.</para>
+		/// <para>指定是否更新 Subnetworks 表中相应控制器的 LASTACKEXPORTSUBNETWORK 属性以及 SubnetLine 要素类中的要素。</para>
+		/// <para>选中 - 子网表中相应控制器的 LASTACKEXPORTSUBNETWORK 属性将更新。 如果控制器已标记为删除 (Is deleted = True)，则将从子网表中将其删除。 此选项要求输入公共设施网络引用默认版本。</para>
+		/// <para>未选中 - 子网表中相应控制器的 LASTACKEXPORTSUBNETWORK 属性不会更新。 这是默认设置。</para>
 		/// <para><see cref="ExportAcknowledgedEnum"/></para>
 		/// </param>
 		/// <param name="OutJsonFile">
 		/// <para>Output JSON</para>
-		/// <para>The name and location of the .json file that will be generated.</para>
+		/// <para>将生成的 .json 文件的名称和位置。</para>
 		/// </param>
 		public ExportSubnetwork(object InUtilityNetwork, object DomainNetwork, object Tier, object SubnetworkName, object ExportAcknowledged, object OutJsonFile)
 		{
@@ -57,9 +57,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Export Subnetwork</para>
+		/// <para>Tool Display Name : 导出子网</para>
 		/// </summary>
-		public override string DisplayName() => "Export Subnetwork";
+		public override string DisplayName() => "导出子网";
 
 		/// <summary>
 		/// <para>Tool Name : ExportSubnetwork</para>
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Input Utility Network</para>
-		/// <para>The utility network that contains the subnetwork to export.</para>
+		/// <para>包含要导出的子网的公共设施网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Domain Network</para>
-		/// <para>The domain network that contains the subnetwork.</para>
+		/// <para>包含子网的域网络。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Tier</para>
-		/// <para>The tier that contains the subnetwork.</para>
+		/// <para>包含子网的层。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Subnetwork Name</para>
-		/// <para>The name of the subnetwork to export. Select a specific source to export the corresponding subnetwork information.</para>
+		/// <para>要导出的子网的名称。 选择一个特定源可导出相应的子网信息。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -125,9 +125,9 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Set export acknowledged</para>
-		/// <para>Specifies whether the LASTACKEXPORTSUBNETWORK attribute for the corresponding controller in the Subnetworks table and feature in the SubnetLine feature class will be updated.</para>
-		/// <para>Checked—The LASTACKEXPORTSUBNETWORK attribute for the corresponding controller in the Subnetworks table will be updated. If the controller has been marked for deletion (Is deleted = True), it will be deleted from the Subnetworks table. This option requires that the input utility network reference the default version.</para>
-		/// <para>Unchecked—The LASTACKEXPORTSUBNETWORK attribute for the corresponding controller in the Subnetworks table will not be updated. This is the default.</para>
+		/// <para>指定是否更新 Subnetworks 表中相应控制器的 LASTACKEXPORTSUBNETWORK 属性以及 SubnetLine 要素类中的要素。</para>
+		/// <para>选中 - 子网表中相应控制器的 LASTACKEXPORTSUBNETWORK 属性将更新。 如果控制器已标记为删除 (Is deleted = True)，则将从子网表中将其删除。 此选项要求输入公共设施网络引用默认版本。</para>
+		/// <para>未选中 - 子网表中相应控制器的 LASTACKEXPORTSUBNETWORK 属性不会更新。 这是默认设置。</para>
 		/// <para><see cref="ExportAcknowledgedEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -137,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Output JSON</para>
-		/// <para>The name and location of the .json file that will be generated.</para>
+		/// <para>将生成的 .json 文件的名称和位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Condition Barriers</para>
-		/// <para>This parameter is only available for Python.</para>
+		/// <para>此参数仅可用于 Python。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -157,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Function Barriers</para>
-		/// <para>This parameter is only available for Python.</para>
+		/// <para>此参数仅可用于 Python。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Include Barrier Features</para>
-		/// <para>This parameter is only available for Python.</para>
+		/// <para>此参数仅可用于 Python。</para>
 		/// <para><see cref="IncludeBarriersEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -178,11 +178,11 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Apply Traversability To</para>
-		/// <para>Specifies the type of traversability that will be applied. Traversability scope determines whether traversability is applied to junctions, edges, or both. For example, if a condition barrier is defined to stop the trace if DEVICESTATUS is set to Open and the traversability scope is set to edges only, the trace will not stop even if the trace encounters an open device, because DEVICESTATUS is only applicable to junctions. In other words, this parameter indicates to the trace whether to ignore junctions, edges, or both.</para>
-		/// <para>Both junctions and edges—Traversability will be applied to both junctions and edges.</para>
-		/// <para>Junctions only—Traversability will be applied to junctions only.</para>
-		/// <para>Edges only—Traversability will be applied to edges only.</para>
-		/// <para>This parameter is only available for Python.</para>
+		/// <para>指定将应用的可遍历性类型。 可遍历性范围用于确定是否在交汇点和/或边处应用可遍历性。 例如，如果定义了一个用于停止追踪的条件障碍，其中 DEVICESTATUS 设置为 Open 且遍历范围设置为仅边，则即使遇到开路设备，追踪也不会停止，因为 DEVICESTATUS 仅适用于交汇点。 换言之，此参数会向追踪指出是否要忽略交汇点、边或这两者。</para>
+		/// <para>交汇点和边—可遍历性将同时应用于交汇点和边。</para>
+		/// <para>仅交汇点—可遍历性将仅应用于交汇点。</para>
+		/// <para>仅边—可遍历性将仅应用于边。</para>
+		/// <para>此参数仅可用于 Python。</para>
 		/// <para><see cref="TraversabilityScopeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -193,7 +193,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Propagators</para>
-		/// <para>This parameter is only available for Python.</para>
+		/// <para>此参数仅可用于 Python。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -210,10 +210,10 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Include geometry</para>
-		/// <para>Specifies whether geometry will be included in the results.</para>
-		/// <para>Checked—Geometry will be included in the results.</para>
-		/// <para>Unchecked—Geometry will not be included in the results. This is the default.</para>
-		/// <para>For enterprise geodatabases, this parameter requires ArcGIS Enterprise 10.7 or later.</para>
+		/// <para>指定是否在结果中包括几何。</para>
+		/// <para>选中 - 结果中将包含几何。</para>
+		/// <para>未选中 - 结果中将不包含几何。 这是默认设置。</para>
+		/// <para>对于企业级地理数据库，此参数需要 ArcGIS Enterprise 10.7 或更高版本。</para>
 		/// <para><see cref="IncludeGeometryEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -223,12 +223,12 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Result Types</para>
-		/// <para>Specifies the types of results that will be returned.</para>
-		/// <para>Connectivity—Features that are connected via geometric coincidence or connectivity associations will be returned. This is the default.</para>
-		/// <para>Features—Feature-level information will be returned.</para>
-		/// <para>Containment and attachment associations—Features that are associated via containment and structural attachment associations will be returned.</para>
-		/// <para>For enterprise geodatabases, this parameter requires ArcGIS Enterprise 10.7 or later.</para>
-		/// <para>The containment and attachment associations option requires ArcGIS Enterprise 10.8.1 or later.</para>
+		/// <para>指定将要返回的结果类型。</para>
+		/// <para>连通性—将返回通过几何重叠或连通性关联连接的要素。 这是默认设置。</para>
+		/// <para>要素—将返回要素级别信息。</para>
+		/// <para>包含和附件关联—将返回通过包含和结构附件关联关联的要素。</para>
+		/// <para>对于企业级地理数据库，此参数需要 ArcGIS Enterprise 10.7 或更高版本。</para>
+		/// <para>包含和附件关联选项需要 ArcGIS Enterprise 10.8.1 或更高版本。</para>
 		/// <para><see cref="ResultTypesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -238,8 +238,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Result Network Attributes</para>
-		/// <para>The network attributes that will be included in the results.</para>
-		/// <para>For enterprise geodatabases, this parameter requires ArcGIS Enterprise 10.7 or later.</para>
+		/// <para>将包含在结果中的网络属性。</para>
+		/// <para>对于企业级地理数据库，此参数需要 ArcGIS Enterprise 10.7 或更高版本。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -247,8 +247,8 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Result Fields</para>
-		/// <para>Fields from a feature class that will be returned as results. The values of the field will be returned in the results for the features in the subnetwork.</para>
-		/// <para>For enterprise geodatabases, this parameter requires ArcGIS Enterprise 10.7 or later.</para>
+		/// <para>要素类中将作为结果返回的字段。 字段的值将在子网中要素的结果中返回。</para>
+		/// <para>对于企业级地理数据库，此参数需要 ArcGIS Enterprise 10.7 或更高版本。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPValueTable()]
@@ -257,10 +257,10 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 
 		/// <summary>
 		/// <para>Include domain descriptions</para>
-		/// <para>Specifies whether domain descriptions will be included in the output .json file to communicate domain mapping for controllers, featureElements, connectivity, and associations.</para>
-		/// <para>Checked—Domain descriptions will be included in the results.</para>
-		/// <para>Unchecked—Domain descriptions will not be included in the results. This is the default.</para>
-		/// <para>For enterprise geodatabases, this parameter requires ArcGIS Enterprise 10.9.1 or later.</para>
+		/// <para>指定域描述是否将包含在输出 .json 文件中以传达控制器、要素元素、连通性和关联的域映射。</para>
+		/// <para>选中 - 将在结果中包含域描述。</para>
+		/// <para>未选中 - 不会在结果中包含域描述。 这是默认设置。</para>
+		/// <para>对于企业级地理数据库，此参数需要 ArcGIS Enterprise 10.9.1 或更高版本。</para>
 		/// <para><see cref="IncludeDomainDescriptionsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -276,14 +276,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum ExportAcknowledgedEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The LASTACKEXPORTSUBNETWORK attribute for the corresponding controller in the Subnetworks table will be updated. If the controller has been marked for deletion (Is deleted = True), it will be deleted from the Subnetworks table. This option requires that the input utility network reference the default version.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("ACKNOWLEDGE")]
 			ACKNOWLEDGE,
 
 			/// <summary>
-			/// <para>Unchecked—The LASTACKEXPORTSUBNETWORK attribute for the corresponding controller in the Subnetworks table will not be updated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_ACKNOWLEDGE")]
@@ -318,24 +318,24 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum TraversabilityScopeEnum 
 		{
 			/// <summary>
-			/// <para>Both junctions and edges—Traversability will be applied to both junctions and edges.</para>
+			/// <para>交汇点和边—可遍历性将同时应用于交汇点和边。</para>
 			/// </summary>
 			[GPValue("BOTH_JUNCTIONS_AND_EDGES")]
-			[Description("Both junctions and edges")]
+			[Description("交汇点和边")]
 			Both_junctions_and_edges,
 
 			/// <summary>
-			/// <para>Junctions only—Traversability will be applied to junctions only.</para>
+			/// <para>仅交汇点—可遍历性将仅应用于交汇点。</para>
 			/// </summary>
 			[GPValue("JUNCTIONS_ONLY")]
-			[Description("Junctions only")]
+			[Description("仅交汇点")]
 			Junctions_only,
 
 			/// <summary>
-			/// <para>Edges only—Traversability will be applied to edges only.</para>
+			/// <para>仅边—可遍历性将仅应用于边。</para>
 			/// </summary>
 			[GPValue("EDGES_ONLY")]
-			[Description("Edges only")]
+			[Description("仅边")]
 			Edges_only,
 
 		}
@@ -346,14 +346,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum IncludeGeometryEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Geometry will be included in the results.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_GEOMETRY")]
 			INCLUDE_GEOMETRY,
 
 			/// <summary>
-			/// <para>Unchecked—Geometry will not be included in the results. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_GEOMETRY")]
@@ -367,24 +367,24 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum ResultTypesEnum 
 		{
 			/// <summary>
-			/// <para>Features—Feature-level information will be returned.</para>
+			/// <para>要素—将返回要素级别信息。</para>
 			/// </summary>
 			[GPValue("FEATURES")]
-			[Description("Features")]
+			[Description("要素")]
 			Features,
 
 			/// <summary>
-			/// <para>Connectivity—Features that are connected via geometric coincidence or connectivity associations will be returned. This is the default.</para>
+			/// <para>连通性—将返回通过几何重叠或连通性关联连接的要素。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("CONNECTIVITY")]
-			[Description("Connectivity")]
+			[Description("连通性")]
 			Connectivity,
 
 			/// <summary>
-			/// <para>Containment and attachment associations—Features that are associated via containment and structural attachment associations will be returned.</para>
+			/// <para>包含和附件关联—将返回通过包含和结构附件关联关联的要素。</para>
 			/// </summary>
 			[GPValue("CONTAINMENT_AND_ATTACHMENT_ASSOCIATIONS")]
-			[Description("Containment and attachment associations")]
+			[Description("包含和附件关联")]
 			Containment_and_attachment_associations,
 
 		}
@@ -395,14 +395,14 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		public enum IncludeDomainDescriptionsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Domain descriptions will be included in the results.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("INCLUDE_DOMAIN_DESCRIPTIONS")]
 			INCLUDE_DOMAIN_DESCRIPTIONS,
 
 			/// <summary>
-			/// <para>Unchecked—Domain descriptions will not be included in the results. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("EXCLUDE_DOMAIN_DESCRIPTIONS")]

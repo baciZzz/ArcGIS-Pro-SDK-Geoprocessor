@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Natural Neighbor</para>
-	/// <para>Natural Neighbor</para>
-	/// <para>Interpolates a raster surface from points using a natural neighbor technique.</para>
+	/// <para>自然邻域法</para>
+	/// <para>使用自然邻域法将点插值成栅格表面。</para>
 	/// </summary>
 	public class NaturalNeighbor : AbstractGPProcess
 	{
@@ -21,17 +21,17 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InPointFeatures">
 		/// <para>Input point features</para>
-		/// <para>The input point features containing the z-values to be interpolated into a surface raster.</para>
+		/// <para>包含要插值到表面栅格中的 z 值的输入点要素。</para>
 		/// </param>
 		/// <param name="ZField">
 		/// <para>Z value field</para>
-		/// <para>The field that holds a height or magnitude value for each point.</para>
-		/// <para>This can be a numeric field or the Shape field if the input point features contain z-values.</para>
+		/// <para>存放每个点的高度值或量级值的字段。</para>
+		/// <para>如果输入点要素包含 z 值，则该字段可以是数值型字段或者 Shape 字段。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output raster</para>
-		/// <para>The output interpolated surface raster.</para>
-		/// <para>It is always a floating-point raster.</para>
+		/// <para>输出插值后的表面栅格。</para>
+		/// <para>其总为浮点栅格。</para>
 		/// </param>
 		public NaturalNeighbor(object InPointFeatures, object ZField, object OutRaster)
 		{
@@ -41,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Natural Neighbor</para>
+		/// <para>Tool Display Name : 自然邻域法</para>
 		/// </summary>
-		public override string DisplayName() => "Natural Neighbor";
+		public override string DisplayName() => "自然邻域法";
 
 		/// <summary>
 		/// <para>Tool Name : NaturalNeighbor</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input point features</para>
-		/// <para>The input point features containing the z-values to be interpolated into a surface raster.</para>
+		/// <para>包含要插值到表面栅格中的 z 值的输入点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -89,8 +89,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Z value field</para>
-		/// <para>The field that holds a height or magnitude value for each point.</para>
-		/// <para>This can be a numeric field or the Shape field if the input point features contain z-values.</para>
+		/// <para>存放每个点的高度值或量级值的字段。</para>
+		/// <para>如果输入点要素包含 z 值，则该字段可以是数值型字段或者 Shape 字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[Field()]
@@ -100,8 +100,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output raster</para>
-		/// <para>The output interpolated surface raster.</para>
-		/// <para>It is always a floating-point raster.</para>
+		/// <para>输出插值后的表面栅格。</para>
+		/// <para>其总为浮点栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -109,8 +109,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output cell size</para>
-		/// <para>The cell size of the output raster that will be created.</para>
-		/// <para>This parameter can be defined by a numeric value or obtained from an existing raster dataset. If the cell size hasn&apos;t been explicitly specified as the parameter value, the environment cell size value will be used if specified; otherwise, additional rules will be used to calculate it from the other inputs. See the usage section for more detail.</para>
+		/// <para>将创建的输出栅格的像元大小。</para>
+		/// <para>此参数可以通过数值进行定义，也可以从现有栅格数据集获取。 如果未将像元大小明确指定为参数值，则将使用环境像元大小值（如果已指定）；否则，将使用其他规则通过其他输出计算像元大小。 有关详细信息，请参阅用法部分。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[analysis_cell_size()]

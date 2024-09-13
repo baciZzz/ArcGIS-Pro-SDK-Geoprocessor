@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Map To KML</para>
-	/// <para>Map To KML</para>
-	/// <para>Converts a map to a KML file containing geometries and symbology. The output file is compressed using ZIP compression, has a .kmz extension, and can be read by any KML client including ArcGIS Earth and Google Earth.</para>
+	/// <para>地图转 KML</para>
+	/// <para>将地图转换为包含几何和符号系统的 KML 文件。 输出文件采用 ZIP 压缩方式压缩，具有 .kmz 扩展名，并且可以由任何 KML 客户端读取，包括 ArcGIS Earth 和 Google Earth。</para>
 	/// </summary>
 	public class MapToKML : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InMap">
 		/// <para>Input Map</para>
-		/// <para>The map, scene or basemap to convert to KML.</para>
+		/// <para>要转换为 KML 的地图、场景或底图。</para>
 		/// </param>
 		/// <param name="OutKmzFile">
 		/// <para>Output File</para>
-		/// <para>The output KML file. This file is compressed and has a .kmz extension. The file can be read by any KML client including ArcGIS Earth and Google Earth.</para>
+		/// <para>输出 KML 文件。 该文件是压缩文件，扩展名为 .kmz。 任何 KML 客户端都可读取该文件，包括 ArcGIS Earth 和 Google Earth。</para>
 		/// </param>
 		public MapToKML(object InMap, object OutKmzFile)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Map To KML</para>
+		/// <para>Tool Display Name : 地图转 KML</para>
 		/// </summary>
-		public override string DisplayName() => "Map To KML";
+		public override string DisplayName() => "地图转 KML";
 
 		/// <summary>
 		/// <para>Tool Name : MapToKML</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input Map</para>
-		/// <para>The map, scene or basemap to convert to KML.</para>
+		/// <para>要转换为 KML 的地图、场景或底图。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMap()]
@@ -78,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output File</para>
-		/// <para>The output KML file. This file is compressed and has a .kmz extension. The file can be read by any KML client including ArcGIS Earth and Google Earth.</para>
+		/// <para>输出 KML 文件。 该文件是压缩文件，扩展名为 .kmz。 任何 KML 客户端都可读取该文件，包括 ArcGIS Earth 和 Google Earth。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -88,11 +88,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Map Output Scale</para>
-		/// <para>The scale at which each layer in the map will be exported.</para>
-		/// <para>This parameter is important with any scale dependency, such as layer visibility or scale-dependent rendering. If the layer is not visible at the output scale, it is not included in the output KML. Any value, such as 1, can be used if there are no scale dependencies.</para>
-		/// <para>For raster layers, a value of 0 can be used to create one untiled output image. If a value greater than or equal to 1 is used, it determines the output resolution of the raster. This parameter has no effect on layers that are not raster layers.</para>
-		/// <para>Only numeric characters are accepted; for example, enter 20000 as the scale, not 1:20000. In languages that use commas as the decimal point, 20,000 is also acceptable.</para>
-		/// <para>If you&apos;re exporting a layer that is to be displayed as 3D vectors and the Return single composite image parameter is checked, you can set this parameter to any value as long as the features do not have any scale-dependent rendering.</para>
+		/// <para>将导出地图中每个图层的比例。</para>
+		/// <para>此参数对任何比例可变选项都很重要，例如图层可见性或按比例渲染。 如果图层在输出比例下不可见，则其不会包含在输出 KML 中。 如果没有比例相关选项，则可使用任何值（例如 1）。</para>
+		/// <para>对于栅格图层，可以将值 0 用来创建一个未平铺输出图像。 如果使用大于或等于 1 的值，则由该值确定栅格的输出分辨率。 此参数对栅格图层以外的图层无效。</para>
+		/// <para>仅接受数字字符；例如，输入 20000 作为比例，而不是 1:20000。 在使用逗号作为小数点的语言中，也可以输入 20,000。</para>
+		/// <para>如果要导出将以 3D 矢量形式显示的图层并且选中返回单一合成图像参数，则只要要素不具有任何取决于比例的渲染，您就可以将此参数设置为任何值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -100,9 +100,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Return single composite image</para>
-		/// <para>Specifies whether the output KML will contain a single composite image or separate layers.</para>
-		/// <para>Checked—The output KML will contain a single image that composites all the features in the map into a single raster image. The raster is draped over the terrain as a KML GroundOverlay. This option reduces the size of the output KML. Individual features and layers in the KML are not selectable.</para>
-		/// <para>Unchecked—The output KML will contain separate, individual layers. This is the default. Whether the layers are returned as rasters or as a combination of vectors and rasters is determined by the Convert Vector to Raster parameter.</para>
+		/// <para>指定输出 KML 将包含单个合成图像还是单独的图层。</para>
+		/// <para>选中 - 输出 KML 文件将包含将地图中的所有要素合成为单个栅格图像的单个图像。 栅格以 KML GroundOverlay 形式悬在地形上方。 此选项可减小输出 KMZ 的大小。 KML 中的各个要素和图层将不可选择。</para>
+		/// <para>未选中 - 输出 KML 将包含单独的单个图层。 这是默认设置。 可通过矢量转栅格参数确定是以栅格的形式还是以矢量和栅格组合的形式返回图层。</para>
 		/// <para><see cref="IsCompositeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -113,10 +113,10 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Convert Vector to Raster</para>
-		/// <para>Specifies whether each vector layer in the map will be converted to a separate raster image or preserved as vector layers.</para>
-		/// <para>This parameter is inactive if the Return single composite image parameter is checked.</para>
-		/// <para>Checked—Vector layers will be converted to a separate raster image in the KML output. Normal raster layers are also added to the KML output. Each output KML raster layer is selectable, and its transparency can be adjusted in certain KML clients.</para>
-		/// <para>Unchecked—Vector layers will be preserved as KML vectors. This is the default.</para>
+		/// <para>指定是将地图中的每个矢量图层转换为单独的栅格图像还是将其保留为矢量图层。</para>
+		/// <para>如果选中返回单一合成图像参数，则此参数处于非活动状态。</para>
+		/// <para>选中 - 矢量图层将在 KML 输出中转换为单独的栅格图像。 正态栅格图层也将被添加到 KML 输出中。 各输出 KML 栅格图层为可选状态，并且可以在特定 KML 客户端中调整其透明度。</para>
+		/// <para>未选中 - 矢量图层将保留为 KML 矢量。 这是默认设置。</para>
 		/// <para><see cref="IsVectorToRasterEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -127,11 +127,11 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Extent to Export</para>
-		/// <para>The geographic extent of the area to be exported. Specify the extent rectangle bounds as a space-delimited string of WGS84 geographic coordinates in the form left lower right upper (x-min, y-min, x-max, y-max).</para>
-		/// <para>Default—The extent will be based on the maximum extent of all participating inputs. This is the default.</para>
-		/// <para>Current Display Extent—The extent is equal to the data frame or visible display. The option is not available when there is no active map.</para>
-		/// <para>As Specified Below—The extent will be based on the minimum and maximum extent values specified.</para>
-		/// <para>Browse—The extent will be based on an existing dataset.</para>
+		/// <para>待导出区域的地理范围。 将矩形范围边界指定为按左下右上的形式（x-min、y-min、x-max、y-max）以空格分隔的 WGS84 地理坐标字符串。</para>
+		/// <para>默认 - 该范围将基于所有参与输入的最大范围设定。这是默认设置。</para>
+		/// <para>当前显示范围 - 该范围与数据框或可见显示范围相等。如果没有活动地图，则该选项将不可用。</para>
+		/// <para>如下面的指定 - 该范围将基于指定的最小和最大范围值。</para>
+		/// <para>浏览 - 该范围将基于现有数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPExtent()]
@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Size of returned image (pixels)</para>
-		/// <para>The size of the tiles for raster layers if the Map Output Scale parameter value is set to a value greater than or equal to 1. This parameter only has an effect on raster layers.</para>
+		/// <para>地图输出比例参数值设置为大于或等于 1 的值时，栅格图层的切片大小。 此参数仅对栅格图层有效。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>DPI of output image</para>
-		/// <para>The device resolution for any rasters in the output KML document. Typical screen resolution is 96 dpi. If the data in the map supports a high resolution and the KML requires it, consider increasing the value. Use this parameter with the Size of returned image (pixels) parameter to control output image resolution. The default value is 96.</para>
+		/// <para>输出 KML 文档中所有栅格的设备分辨率。 典型的屏幕分辨率是 96 dpi。 如果地图内的数据支持高分辨率并且 KML 需要高分辨率，则考虑增加值。 可将该参数与返回图像的大小（像素）参数一起用于控制输出图像分辨率。 默认值为 96。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -158,9 +158,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Clamped features to ground</para>
-		/// <para>Specifies whether features will be clamped to the ground.</para>
-		/// <para>Checked—The z-values of the input features will be ignored and the KML output will be created with the features clamped to the ground. The features will be draped over the terrain. Use this option when features that do not have z-values. This is the default.</para>
-		/// <para>Unchecked—The z-values of the input features will be used when creating the KML output. The features will be drawn in KML clients relative to sea level.</para>
+		/// <para>指定是否将要素强制固定于地面。</para>
+		/// <para>选中 - 将忽略输入要素的 z 值，并将在创建 KML 输出时将要素强制固定于地面。 要素将被叠加到 terrain 上。 当要素不具有 z 值时，将使用此选项。 这是默认设置。</para>
+		/// <para>未选中 - 在创建 KML 输出时，将使用输入要素的 z 值。 将在 KML 客户端中相对于海平面绘制要素。</para>
 		/// <para><see cref="IgnoreZvalueEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Legend Layout Source</para>
-		/// <para>The name of a layout that contains legend elements that will be included in the KML output as screen overlays.</para>
+		/// <para>包含将作为屏幕叠加层包含在 KML 输出中的图例元素的布局名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -185,14 +185,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum IsCompositeEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The output KML will contain a single image that composites all the features in the map into a single raster image. The raster is draped over the terrain as a KML GroundOverlay. This option reduces the size of the output KML. Individual features and layers in the KML are not selectable.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMPOSITE")]
 			COMPOSITE,
 
 			/// <summary>
-			/// <para>Unchecked—The output KML will contain separate, individual layers. This is the default. Whether the layers are returned as rasters or as a combination of vectors and rasters is determined by the Convert Vector to Raster parameter.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_COMPOSITE")]
@@ -206,14 +206,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum IsVectorToRasterEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Vector layers will be converted to a separate raster image in the KML output. Normal raster layers are also added to the KML output. Each output KML raster layer is selectable, and its transparency can be adjusted in certain KML clients.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("VECTOR_TO_IMAGE")]
 			VECTOR_TO_IMAGE,
 
 			/// <summary>
-			/// <para>Unchecked—Vector layers will be preserved as KML vectors. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("VECTOR_TO_VECTOR")]
@@ -227,14 +227,14 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		public enum IgnoreZvalueEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The z-values of the input features will be ignored and the KML output will be created with the features clamped to the ground. The features will be draped over the terrain. Use this option when features that do not have z-values. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CLAMPED_TO_GROUND")]
 			CLAMPED_TO_GROUND,
 
 			/// <summary>
-			/// <para>Unchecked—The z-values of the input features will be used when creating the KML output. The features will be drawn in KML clients relative to sea level.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("ABSOLUTE")]

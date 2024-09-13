@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Iso Cluster Unsupervised Classification</para>
-	/// <para>Iso Cluster Unsupervised Classification</para>
-	/// <para>Performs unsupervised classification on a series of input raster bands using the Iso Cluster and Maximum Likelihood Classification tools.</para>
+	/// <para>Iso 聚类非监督分类</para>
+	/// <para>使用 Iso 聚类工具和最大似然法分类工具对一系列输入栅格波段执行非监督分类。</para>
 	/// </summary>
 	public class IsoClusterUnsupervisedClassification : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// </summary>
 		/// <param name="InputRasterBands">
 		/// <para>Input raster bands</para>
-		/// <para>The input raster bands.</para>
-		/// <para>They can be integer or floating point type.</para>
+		/// <para>输入栅格波段。</para>
+		/// <para>可为整型或浮点型。</para>
 		/// </param>
 		/// <param name="NumberOfClasses">
 		/// <para>Number of classes</para>
-		/// <para>Number of classes into which to group the cells.</para>
+		/// <para>要将像元划分成的类数目。</para>
 		/// </param>
 		/// <param name="OutputClassifiedRaster">
 		/// <para>Output classified raster</para>
-		/// <para>The output classified raster.</para>
+		/// <para>输出分类的栅格。</para>
 		/// </param>
 		public IsoClusterUnsupervisedClassification(object InputRasterBands, object NumberOfClasses, object OutputClassifiedRaster)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Iso Cluster Unsupervised Classification</para>
+		/// <para>Tool Display Name : Iso 聚类非监督分类</para>
 		/// </summary>
-		public override string DisplayName() => "Iso Cluster Unsupervised Classification";
+		public override string DisplayName() => "Iso 聚类非监督分类";
 
 		/// <summary>
 		/// <para>Tool Name : IsoClusterUnsupervisedClassification</para>
@@ -76,8 +76,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Input raster bands</para>
-		/// <para>The input raster bands.</para>
-		/// <para>They can be integer or floating point type.</para>
+		/// <para>输入栅格波段。</para>
+		/// <para>可为整型或浮点型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Number of classes</para>
-		/// <para>Number of classes into which to group the cells.</para>
+		/// <para>要将像元划分成的类数目。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLong()]
@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output classified raster</para>
-		/// <para>The output classified raster.</para>
+		/// <para>输出分类的栅格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -101,8 +101,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Minimum class size</para>
-		/// <para>Minimum number of cells in a valid class.</para>
-		/// <para>The default is 20.</para>
+		/// <para>一个有效类中的最小像元数。</para>
+		/// <para>默认值为 20。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -110,8 +110,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Sample interval</para>
-		/// <para>The interval to be used for sampling.</para>
-		/// <para>The default is 10.</para>
+		/// <para>采样所使用的间隔。</para>
+		/// <para>默认值为 10。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -119,8 +119,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 
 		/// <summary>
 		/// <para>Output signature file</para>
-		/// <para>The output signature file.</para>
-		/// <para>A .gsg extension must be specified.</para>
+		/// <para>输出特征文件。</para>
+		/// <para>必须指定 .gsg 扩展名。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFile()]

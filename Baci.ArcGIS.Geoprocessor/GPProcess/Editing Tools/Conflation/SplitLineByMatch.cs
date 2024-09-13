@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Split Line By Match</para>
-	/// <para>Split Line By Match</para>
-	/// <para>Splits input features based on matching relationships to obtain better corresponding line segmentation.</para>
+	/// <para>按匹配分割线</para>
+	/// <para>可根据匹配关系来分割输入要素，以获得更好的相应线分割。</para>
 	/// </summary>
 	public class SplitLineByMatch : AbstractGPProcess
 	{
@@ -21,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input line features to be split. They must be prematched with the matched features.</para>
+		/// <para>要分割的输入线要素。 必须用匹配要素对其进行预匹配。</para>
 		/// </param>
 		/// <param name="MatchedFeatures">
 		/// <para>Matched Features</para>
-		/// <para>Matched features are used as reference when splitting the input features. They must be prematched with the input features.</para>
+		/// <para>匹配要素可作为分割输入要素时的参考使用。 必须用输入要素对其进行预匹配。</para>
 		/// </param>
 		/// <param name="InMatchTable">
 		/// <para>Input Match Table</para>
-		/// <para>A table that includes matching information between input and matched features.</para>
+		/// <para>包含输入和匹配要素间匹配信息的表格。</para>
 		/// </param>
 		/// <param name="OutFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class containing split lines and original lines that are not split.</para>
+		/// <para>包含分割线以及未分割的原始线的输出要素类。</para>
 		/// </param>
 		/// <param name="SearchDistance">
 		/// <para>Search Distance</para>
-		/// <para>The distance value used to determine split locations. The value must be greater than 0. If units are not specified, the units of the input will be used.</para>
+		/// <para>用于确定分割位置的距离值。 该值必须大于 0。 如果未指定单位，则将沿用输入的单位。</para>
 		/// </param>
 		public SplitLineByMatch(object InFeatures, object MatchedFeatures, object InMatchTable, object OutFeatureClass, object SearchDistance)
 		{
@@ -49,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Split Line By Match</para>
+		/// <para>Tool Display Name : 按匹配分割线</para>
 		/// </summary>
-		public override string DisplayName() => "Split Line By Match";
+		public override string DisplayName() => "按匹配分割线";
 
 		/// <summary>
 		/// <para>Tool Name : SplitLineByMatch</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input line features to be split. They must be prematched with the matched features.</para>
+		/// <para>要分割的输入线要素。 必须用匹配要素对其进行预匹配。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Matched Features</para>
-		/// <para>Matched features are used as reference when splitting the input features. They must be prematched with the input features.</para>
+		/// <para>匹配要素可作为分割输入要素时的参考使用。 必须用输入要素对其进行预匹配。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Match Table</para>
-		/// <para>A table that includes matching information between input and matched features.</para>
+		/// <para>包含输入和匹配要素间匹配信息的表格。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPTableView()]
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output feature class containing split lines and original lines that are not split.</para>
+		/// <para>包含分割线以及未分割的原始线的输出要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -124,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Search Distance</para>
-		/// <para>The distance value used to determine split locations. The value must be greater than 0. If units are not specified, the units of the input will be used.</para>
+		/// <para>用于确定分割位置的距离值。 该值必须大于 0。 如果未指定单位，则将沿用输入的单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLinearUnit()]
@@ -132,9 +132,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Input Features In Match</para>
-		/// <para>Specifies whether the input features in the match table are source features or target features, so the correct features will be split.</para>
-		/// <para>As source features—The input features are stored as the source features in the match table. This is the default.</para>
-		/// <para>As target features—The input features are stored as the target features in the match table.</para>
+		/// <para>用于指定匹配表中的输入要素是源要素还是目标要素，以便分割正确的要素。</para>
+		/// <para>作为源要素—输入要素作为源要素存储在匹配表中。 这是默认设置。</para>
+		/// <para>作为目标要素—输入要素作为目标要素存储在匹配表中。</para>
 		/// <para><see cref="InFeaturesAsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -144,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Output Split Points</para>
-		/// <para>The output point feature class containing points that represent split locations.</para>
+		/// <para>包含表示分割位置的点的输出点要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -155,9 +155,9 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Split dangle features</para>
-		/// <para>Specifies whether dangling lines will be split.</para>
-		/// <para>Checked—Dangling lines will be split following the tool&apos;s split rules. This is the default.</para>
-		/// <para>Unchecked—Dangling lines will not be split.</para>
+		/// <para>用于指定是否将分割悬挂线。</para>
+		/// <para>选中 - 将按照工具的分割规则分割悬挂线。 这是默认设置。</para>
+		/// <para>未选中 - 将不会分割悬挂线。</para>
 		/// <para><see cref="SplitDangleEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Minimum Match Group Length</para>
-		/// <para>A given match group will only participate in the splitting process if either the total length of the input features or the total length of the matched features are greater than the specified value.</para>
+		/// <para>如果输入要素的总长度或匹配要素的总长度大于指定值，则给定匹配组将只参与分割过程。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -175,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Minimum Split Length</para>
-		/// <para>If a split will result in one or both of the split pieces being shorter than the specified value, the split will not occur.</para>
+		/// <para>如果分割会导致一个或两个分割段短于指定值，则分割不会发生。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -183,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 
 		/// <summary>
 		/// <para>Split Field(s)</para>
-		/// <para>A list of numeric fields from input features. Their field values will be based on the proportions of the split lines.</para>
+		/// <para>输入要素的数值字段列表。 其字段值将基于分割线的比例。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -209,17 +209,17 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		public enum InFeaturesAsEnum 
 		{
 			/// <summary>
-			/// <para>As source features—The input features are stored as the source features in the match table. This is the default.</para>
+			/// <para>作为源要素—输入要素作为源要素存储在匹配表中。 这是默认设置。</para>
 			/// </summary>
 			[GPValue("AS_SOURCE")]
-			[Description("As source features")]
+			[Description("作为源要素")]
 			As_source_features,
 
 			/// <summary>
-			/// <para>As target features—The input features are stored as the target features in the match table.</para>
+			/// <para>作为目标要素—输入要素作为目标要素存储在匹配表中。</para>
 			/// </summary>
 			[GPValue("AS_TARGET")]
-			[Description("As target features")]
+			[Description("作为目标要素")]
 			As_target_features,
 
 		}
@@ -230,14 +230,14 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		public enum SplitDangleEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Dangling lines will be split following the tool&apos;s split rules. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("SPLIT_DANGLE")]
 			SPLIT_DANGLE,
 
 			/// <summary>
-			/// <para>Unchecked—Dangling lines will not be split.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_SPLIT_DANGLE")]

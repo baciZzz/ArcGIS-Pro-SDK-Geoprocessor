@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Classify Point Cloud Using Trained Model</para>
-	/// <para>Classify Point Cloud Using Trained Model</para>
-	/// <para>Classifies a point cloud using a PointCNN classification model.</para>
+	/// <para>使用训练模型对点云进行分类</para>
+	/// <para>使用 PointCNN 分类模型对点云进行分类。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,15 +23,15 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InPointCloud">
 		/// <para>Target Point Cloud</para>
-		/// <para>The point cloud that will be classified.</para>
+		/// <para>将进行分类的点云。</para>
 		/// </param>
 		/// <param name="InTrainedModel">
 		/// <para>Input Model Definition</para>
-		/// <para>The input Esri model definition file (*.emd) or deep learning package (*.dlpk) that will be used to classify the point cloud. A web address for a deep learning package that is published on ArcGIS Online or ArcGIS Living Atlas can also be used.</para>
+		/// <para>输入 Esri 模型定义文件 (*.emd) 或深度学习包 (*.dlpk) 将用于分类点云。 也可以使用在 ArcGIS Online 或 ArcGIS Living Atlas 上发布的深度学习包的网址。</para>
 		/// </param>
 		/// <param name="OutputClasses">
 		/// <para>Target Classification</para>
-		/// <para>The class codes from the trained model that will be used to classify the input point cloud. All classes from the input model will be used by default unless a subset is specified.</para>
+		/// <para>训练模型中的类代码，将用于对输入点云进行分类。 除非已指定子集，否则默认情况下将使用输入模型中的所有类。</para>
 		/// </param>
 		public ClassifyPointCloudUsingTrainedModel(object InPointCloud, object InTrainedModel, object OutputClasses)
 		{
@@ -41,9 +41,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Classify Point Cloud Using Trained Model</para>
+		/// <para>Tool Display Name : 使用训练模型对点云进行分类</para>
 		/// </summary>
-		public override string DisplayName() => "Classify Point Cloud Using Trained Model";
+		public override string DisplayName() => "使用训练模型对点云进行分类";
 
 		/// <summary>
 		/// <para>Tool Name : ClassifyPointCloudUsingTrainedModel</para>
@@ -77,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Target Point Cloud</para>
-		/// <para>The point cloud that will be classified.</para>
+		/// <para>将进行分类的点云。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPLasDatasetLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Model Definition</para>
-		/// <para>The input Esri model definition file (*.emd) or deep learning package (*.dlpk) that will be used to classify the point cloud. A web address for a deep learning package that is published on ArcGIS Online or ArcGIS Living Atlas can also be used.</para>
+		/// <para>输入 Esri 模型定义文件 (*.emd) 或深度学习包 (*.dlpk) 将用于分类点云。 也可以使用在 ArcGIS Online 或 ArcGIS Living Atlas 上发布的深度学习包的网址。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Target Classification</para>
-		/// <para>The class codes from the trained model that will be used to classify the input point cloud. All classes from the input model will be used by default unless a subset is specified.</para>
+		/// <para>训练模型中的类代码，将用于对输入点云进行分类。 除非已指定子集，否则默认情况下将使用输入模型中的所有类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -102,10 +102,10 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Existing Class Code Handling</para>
-		/// <para>Specifies how the editable points from the input point cloud will be defined.</para>
-		/// <para>EDIT_ALL—All points in the input point cloud will be edited. This is the default.</para>
-		/// <para>EDIT_SELECTED—Only points with class codes specified in the Existing Class Codes parameter will be edited; all other points will remain unchanged.</para>
-		/// <para>PRESERVE_SELECTED—Points with class codes specified in the Existing Class Codes parameter will be preserved; the remaining points will be edited.</para>
+		/// <para>指定如何定义输入点云中的可编辑点。</para>
+		/// <para>EDIT_ALL—将会编辑输入点云中的所有点。 这是默认设置。</para>
+		/// <para>EDIT_SELECTED—仅会编辑具有在现有类代码参数中指定的类代码的点；所有其他点保持不变。</para>
+		/// <para>PRESERVE_SELECTED—将会保留具有在现有类代码参数中指定的类代码的点；将会编辑其余点。</para>
 		/// <para><see cref="InClassModeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Existing Class Codes</para>
-		/// <para>The classes for which points will be edited or have their original class code designation preserved based on the Existing Class Code Handling parameter value.</para>
+		/// <para>将根据现有类代码处理参数值编辑点或保留原始类代码名称的类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -124,9 +124,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Compute statistics</para>
-		/// <para>Specifies whether statistics will be computed for the .las files referenced by the LAS dataset. Computing statistics provides a spatial index for each .las file, which improves analysis and display performance. Statistics also enhance the filtering and symbology experience by limiting the display of LAS attributes, such as classification codes and return information, to values that are present in the .las file.</para>
-		/// <para>Checked—Statistics will be computed. This is the default.</para>
-		/// <para>Unchecked—Statistics will not be computed.</para>
+		/// <para>指定是否将计算 LAS 数据集引用的 .las 文件的统计数据。 计算统计数据时会为每个 .las 文件提供一个空间索引，从而提高了分析和显示性能。 统计数据还可通过将 LAS 属性（例如分类代码和返回信息）显示限制为 .las 文件中存在的值来提升过滤和符号系统体验。</para>
+		/// <para>选中 - 将计算统计数据。 这是默认设置。</para>
+		/// <para>未选中 - 不计算统计数据。</para>
 		/// <para><see cref="ComputeStatsEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -136,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Processing Boundary</para>
-		/// <para>The polygon boundary that defines the subset of points to be processed from the input point cloud. Points outside the boundary features will not be evaluated.</para>
+		/// <para>面边界，可用于定义要通过输入点云处理的点的子集。 边界要素之外的点将不会进行评估。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -146,9 +146,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Update pyramid</para>
-		/// <para>Specifies whether the LAS dataset pyramid will be updated after the class codes are modified.</para>
-		/// <para>Checked—The LAS dataset pyramid will be updated. This is the default.</para>
-		/// <para>Unchecked—The LAS dataset pyramid will not be updated.</para>
+		/// <para>指定修改类代码后，LAS 数据集金字塔是否会更新。</para>
+		/// <para>选中 - LAS 数据集金字塔将更新。 这是默认设置。</para>
+		/// <para>未选中 - LAS 数据集金字塔不会更新。</para>
 		/// <para><see cref="UpdatePyramidEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Reference Surface</para>
-		/// <para>The raster surface that will be used to provide relative height values for each point in the point cloud data. Points that do not overlap with the raster will be omitted from the analysis.</para>
+		/// <para>将用于为点云数据中的每个点提供相对高度值的栅格表面。 与栅格不重叠的点将在分析中忽略。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPComposite()]
@@ -173,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Excluded Class Codes</para>
-		/// <para>The class codes that will be excluded from processing. Any value in the range of 0 to 255 can be specified.</para>
+		/// <para>将从处理过程中排除的类代码。 可以指定 0 到 255 范围内的任何值。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -184,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Batch Size</para>
-		/// <para>The point cloud data blocks that will be simultaneously processed by the neural network during the inferencing operation. When no value is specified, the optimal batch size will be calculated based on the available GPU memory. The amount of GPU memory used by a given block depends on the block point limit and point cloud attributes required by the model.</para>
+		/// <para>在推断操作期间由神经网络同时处理的点云数据块。 未指定值时，将根据可用的 GPU 内存计算最佳批量大小。 给定数据块使用的 GPU 内存量取决于模型所需的块点限制和点云属性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]
@@ -212,21 +212,21 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 			/// <para></para>
 			/// </summary>
 			[GPValue("EDIT_ALL")]
-			[Description("Edit All Points")]
+			[Description("编辑所有点")]
 			Edit_All_Points,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("EDIT_SELECTED")]
-			[Description("Edit Selected Points")]
+			[Description("编辑所选点")]
 			Edit_Selected_Points,
 
 			/// <summary>
 			/// <para></para>
 			/// </summary>
 			[GPValue("PRESERVE_SELECTED")]
-			[Description("Preserve Selected Points")]
+			[Description("保留所选点")]
 			Preserve_Selected_Points,
 
 		}
@@ -237,14 +237,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum ComputeStatsEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Statistics will be computed. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("COMPUTE_STATS")]
 			COMPUTE_STATS,
 
 			/// <summary>
-			/// <para>Unchecked—Statistics will not be computed.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_COMPUTE_STATS")]
@@ -258,14 +258,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum UpdatePyramidEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The LAS dataset pyramid will be updated. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("UPDATE_PYRAMID")]
 			UPDATE_PYRAMID,
 
 			/// <summary>
-			/// <para>Unchecked—The LAS dataset pyramid will not be updated.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_UPDATE_PYRAMID")]

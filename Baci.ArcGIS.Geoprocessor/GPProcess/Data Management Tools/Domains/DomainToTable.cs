@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Domain To Table</para>
-	/// <para>Domain To Table</para>
-	/// <para>Creates a table from an attribute domain.</para>
+	/// <para>属性域转表</para>
+	/// <para>根据属性域创建表。</para>
 	/// </summary>
 	public class DomainToTable : AbstractGPProcess
 	{
@@ -21,23 +21,23 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InWorkspace">
 		/// <para>Input Workspace</para>
-		/// <para>The workspace containing the attribute domain to be converted to a table.</para>
+		/// <para>包含要转换为表的属性域的工作空间。</para>
 		/// </param>
 		/// <param name="DomainName">
 		/// <para>Domain Name</para>
-		/// <para>The name of the existing attribute domain.</para>
+		/// <para>现有属性域的名称。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>The table to be created.</para>
+		/// <para>要创建的表。</para>
 		/// </param>
 		/// <param name="CodeField">
 		/// <para>Code Field</para>
-		/// <para>The name of the field in the created table that will store code values.</para>
+		/// <para>已创建表中用于储存编码值的字段的名称。</para>
 		/// </param>
 		/// <param name="DescriptionField">
 		/// <para>Field Description</para>
-		/// <para>The name of the field in the created table that will store code value descriptions.</para>
+		/// <para>已创建表中用于储存编码值描述的字段的名称。</para>
 		/// </param>
 		public DomainToTable(object InWorkspace, object DomainName, object OutTable, object CodeField, object DescriptionField)
 		{
@@ -49,9 +49,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Domain To Table</para>
+		/// <para>Tool Display Name : 属性域转表</para>
 		/// </summary>
-		public override string DisplayName() => "Domain To Table";
+		public override string DisplayName() => "属性域转表";
 
 		/// <summary>
 		/// <para>Tool Name : DomainToTable</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Workspace</para>
-		/// <para>The workspace containing the attribute domain to be converted to a table.</para>
+		/// <para>包含要转换为表的属性域的工作空间。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEWorkspace()]
@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Domain Name</para>
-		/// <para>The name of the existing attribute domain.</para>
+		/// <para>现有属性域的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The table to be created.</para>
+		/// <para>要创建的表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Code Field</para>
-		/// <para>The name of the field in the created table that will store code values.</para>
+		/// <para>已创建表中用于储存编码值的字段的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Field Description</para>
-		/// <para>The name of the field in the created table that will store code value descriptions.</para>
+		/// <para>已创建表中用于储存编码值描述的字段的名称。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -127,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Configuration Keyword</para>
-		/// <para>For geodatabase tables, the custom storage keywords for creating the table.</para>
+		/// <para>用于创建地理数据库表的自定义存储关键字。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]

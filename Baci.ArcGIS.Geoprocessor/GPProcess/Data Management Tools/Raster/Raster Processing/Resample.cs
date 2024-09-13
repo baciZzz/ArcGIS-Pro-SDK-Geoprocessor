@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Resample</para>
-	/// <para>Resample</para>
-	/// <para>Changes the spatial resolution of a raster dataset and sets rules for aggregating or interpolating values across the new pixel sizes.</para>
+	/// <para>重采样</para>
+	/// <para>更改栅格数据集的空间分辨率并针对所有新像素大小的聚合值或插值设置规则。</para>
 	/// </summary>
 	public class Resample : AbstractGPProcess
 	{
@@ -21,26 +21,26 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset with the spatial resolution to be changed.</para>
+		/// <para>具有要更改的空间分辨率的栅格数据集。</para>
 		/// </param>
 		/// <param name="OutRaster">
 		/// <para>Output Raster Dataset</para>
-		/// <para>The name, location, and format of the dataset being created.</para>
-		/// <para>.bil—Esri BIL</para>
-		/// <para>.bip—Esri BIP</para>
-		/// <para>.bmp—BMP</para>
-		/// <para>.bsq—Esri BSQ</para>
-		/// <para>.dat—ENVI DAT</para>
-		/// <para>.gif—GIF</para>
-		/// <para>.img—ERDAS IMAGINE</para>
-		/// <para>.jpg—JPEG</para>
-		/// <para>.jp2—JPEG 2000</para>
-		/// <para>.png—PNG</para>
-		/// <para>.tif—TIFF</para>
-		/// <para>.mrf—MRF</para>
-		/// <para>.crf—CRF</para>
-		/// <para>No extension for Esri Grid</para>
-		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset. When storing a raster dataset to JPEG, JPEG 2000, or TIFF format, or in a geodatabase, you can specify a compression type and compression quality.</para>
+		/// <para>正在创建的数据集的名称、位置和格式。</para>
+		/// <para>.bil - Esri BIL</para>
+		/// <para>.bip - Esri BIP</para>
+		/// <para>.bmp - BMP</para>
+		/// <para>.bsq - Esri BSQ</para>
+		/// <para>.dat - ENVI DAT</para>
+		/// <para>.gif - GIF</para>
+		/// <para>.img - ERDAS IMAGINE</para>
+		/// <para>.jpg - JPEG</para>
+		/// <para>.jp2 - JPEG 2000</para>
+		/// <para>.png - PNG</para>
+		/// <para>.tif - TIFF</para>
+		/// <para>.mrf - MRF</para>
+		/// <para>.crf - CRF</para>
+		/// <para>Esri Grid 无扩展名</para>
+		/// <para>将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。 将栅格数据集存储为 JPEG、JPEG 2000 或 TIFF 格式时，可以指定压缩类型和压缩质量。</para>
 		/// </param>
 		public Resample(object InRaster, object OutRaster)
 		{
@@ -49,14 +49,14 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Resample</para>
+		/// <para>Tool Display Name : 重采样</para>
 		/// </summary>
-		public override string DisplayName() => "Resample";
+		public override string DisplayName() => "重采样";
 
 		/// <summary>
-		/// <para>Tool Name : Resample</para>
+		/// <para>Tool Name : 重采样</para>
 		/// </summary>
-		public override string ToolName() => "Resample";
+		public override string ToolName() => "重采样";
 
 		/// <summary>
 		/// <para>Tool Excute Name : management.Resample</para>
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Raster</para>
-		/// <para>The raster dataset with the spatial resolution to be changed.</para>
+		/// <para>具有要更改的空间分辨率的栅格数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -93,22 +93,22 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Raster Dataset</para>
-		/// <para>The name, location, and format of the dataset being created.</para>
-		/// <para>.bil—Esri BIL</para>
-		/// <para>.bip—Esri BIP</para>
-		/// <para>.bmp—BMP</para>
-		/// <para>.bsq—Esri BSQ</para>
-		/// <para>.dat—ENVI DAT</para>
-		/// <para>.gif—GIF</para>
-		/// <para>.img—ERDAS IMAGINE</para>
-		/// <para>.jpg—JPEG</para>
-		/// <para>.jp2—JPEG 2000</para>
-		/// <para>.png—PNG</para>
-		/// <para>.tif—TIFF</para>
-		/// <para>.mrf—MRF</para>
-		/// <para>.crf—CRF</para>
-		/// <para>No extension for Esri Grid</para>
-		/// <para>When storing a raster dataset in a geodatabase, do not add a file extension to the name of the raster dataset. When storing a raster dataset to JPEG, JPEG 2000, or TIFF format, or in a geodatabase, you can specify a compression type and compression quality.</para>
+		/// <para>正在创建的数据集的名称、位置和格式。</para>
+		/// <para>.bil - Esri BIL</para>
+		/// <para>.bip - Esri BIP</para>
+		/// <para>.bmp - BMP</para>
+		/// <para>.bsq - Esri BSQ</para>
+		/// <para>.dat - ENVI DAT</para>
+		/// <para>.gif - GIF</para>
+		/// <para>.img - ERDAS IMAGINE</para>
+		/// <para>.jpg - JPEG</para>
+		/// <para>.jp2 - JPEG 2000</para>
+		/// <para>.png - PNG</para>
+		/// <para>.tif - TIFF</para>
+		/// <para>.mrf - MRF</para>
+		/// <para>.crf - CRF</para>
+		/// <para>Esri Grid 无扩展名</para>
+		/// <para>将栅格数据集存储到地理数据库时，请勿向栅格数据集的名称添加文件扩展名。 将栅格数据集存储为 JPEG、JPEG 2000 或 TIFF 格式时，可以指定压缩类型和压缩质量。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DERasterDataset()]
@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Output Cell Size</para>
-		/// <para>The cell size of the new raster using an existing raster dataset or by specifying its width (x) and height (y).</para>
+		/// <para>使用现有栅格数据集的新栅格的像元大小或指定其宽度 (x) 和高度 (y)。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPCellSizeXY()]
@@ -124,11 +124,11 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Resampling Technique</para>
-		/// <para>Specifies the resampling technique to be used.</para>
-		/// <para>Nearest— The nearest neighbor technique will be used. It minimizes changes to pixel values since no new values are created and is the fastest resampling technique. It is suitable for discrete data, such as land cover.</para>
-		/// <para>Bilinear— The bilinear interpolation technique will be used. It calculates the value of each pixel by averaging (weighted for distance) the values of the surrounding four pixels. It is suitable for continuous data.</para>
-		/// <para>Cubic—The cubic convolution technique will be used. It calculates the value of each pixel by fitting a smooth curve based on the surrounding 16 pixels. This produces the smoothest image but can create values outside of the range found in the source data. It is suitable for continuous data.</para>
-		/// <para>Majority—The majority resampling technique will be used. It determines the value of each pixel based on the most popular value in a 3 by 3 window. It is suitable for discrete data.</para>
+		/// <para>指定要使用的重采样技术。</para>
+		/// <para>最邻近—将使用最近相邻要素技术。 因为没有新值创建，此方法可将像素值的更改内容最小化，这是最快的重采样技术。 适用于离散数据，例如土地覆被。</para>
+		/// <para>双线性—将使用双线性插值技术。 其采用平均化（距离权重）周围四个像素的值计算每个像素的值。 适用于连续数据。</para>
+		/// <para>三次卷积—将使用三次卷积插值技术。 其通过根据周围的 16 像素拟合平滑曲线来计算每个像素的值。 此操作将生成平滑影像，但可创建位于源数据中超出范围外的值。 适用于连续数据。</para>
+		/// <para>众数—将使用众数重采样技术。 其基于 3 x 3 窗口中出现频率最高的值来确定每个像素的值。 适用于离散数据。</para>
 		/// <para><see cref="ResamplingTypeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -153,31 +153,31 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum ResamplingTypeEnum 
 		{
 			/// <summary>
-			/// <para>Nearest— The nearest neighbor technique will be used. It minimizes changes to pixel values since no new values are created and is the fastest resampling technique. It is suitable for discrete data, such as land cover.</para>
+			/// <para>最邻近—将使用最近相邻要素技术。 因为没有新值创建，此方法可将像素值的更改内容最小化，这是最快的重采样技术。 适用于离散数据，例如土地覆被。</para>
 			/// </summary>
 			[GPValue("NEAREST")]
-			[Description("Nearest")]
+			[Description("最邻近")]
 			Nearest,
 
 			/// <summary>
-			/// <para>Bilinear— The bilinear interpolation technique will be used. It calculates the value of each pixel by averaging (weighted for distance) the values of the surrounding four pixels. It is suitable for continuous data.</para>
+			/// <para>双线性—将使用双线性插值技术。 其采用平均化（距离权重）周围四个像素的值计算每个像素的值。 适用于连续数据。</para>
 			/// </summary>
 			[GPValue("BILINEAR")]
-			[Description("Bilinear")]
+			[Description("双线性")]
 			Bilinear,
 
 			/// <summary>
-			/// <para>Cubic—The cubic convolution technique will be used. It calculates the value of each pixel by fitting a smooth curve based on the surrounding 16 pixels. This produces the smoothest image but can create values outside of the range found in the source data. It is suitable for continuous data.</para>
+			/// <para>三次卷积—将使用三次卷积插值技术。 其通过根据周围的 16 像素拟合平滑曲线来计算每个像素的值。 此操作将生成平滑影像，但可创建位于源数据中超出范围外的值。 适用于连续数据。</para>
 			/// </summary>
 			[GPValue("CUBIC")]
-			[Description("Cubic")]
+			[Description("三次卷积")]
 			Cubic,
 
 			/// <summary>
-			/// <para>Majority—The majority resampling technique will be used. It determines the value of each pixel based on the most popular value in a 3 by 3 window. It is suitable for discrete data.</para>
+			/// <para>众数—将使用众数重采样技术。 其基于 3 x 3 窗口中出现频率最高的值来确定每个像素的值。 适用于离散数据。</para>
 			/// </summary>
 			[GPValue("MAJORITY")]
-			[Description("Majority")]
+			[Description("众数")]
 			Majority,
 
 		}

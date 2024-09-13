@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Stage Service</para>
-	/// <para>Stage Service</para>
-	/// <para>Stages a service definition. A staged service definition file (.sd) contains all the necessary information to share a web layer, locator, web tool, or service.</para>
+	/// <para>过渡服务</para>
+	/// <para>过渡服务定义。 过渡的服务定义文件 (.sd) 包含用于共享 Web 图层、定位器、Web 工具或服务的所有必要信息。</para>
 	/// </summary>
 	public class StageService : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// </summary>
 		/// <param name="InServiceDefinitionDraft">
 		/// <para>Service Definition Draft</para>
-		/// <para>The input draft service definition. Service definition drafts can be created using the arcpy.sharing module or the CreateGeocodeSDDraft, CreateGPSDDraft, or CreateImageSDDraft ArcPy functions.</para>
+		/// <para>输入草稿服务定义。 可以使用 arcpy.sharing 模块、CreateGeocodeSDDraft、CreateGPSDDraft 或 CreateImageSDDraft ArcPy 函数创建服务定义草稿。</para>
 		/// </param>
 		/// <param name="OutServiceDefinition">
 		/// <para>Service Definition</para>
-		/// <para>The resulting service definition. The default is to write the service definition to the same directory as the draft service definition.</para>
+		/// <para>生成的服务定义。 默认情况下，服务定义将写入与服务定义草稿相同的目录中。</para>
 		/// </param>
 		public StageService(object InServiceDefinitionDraft, object OutServiceDefinition)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Stage Service</para>
+		/// <para>Tool Display Name : 过渡服务</para>
 		/// </summary>
-		public override string DisplayName() => "Stage Service";
+		public override string DisplayName() => "过渡服务";
 
 		/// <summary>
 		/// <para>Tool Name : StageService</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Service Definition Draft</para>
-		/// <para>The input draft service definition. Service definition drafts can be created using the arcpy.sharing module or the CreateGeocodeSDDraft, CreateGPSDDraft, or CreateImageSDDraft ArcPy functions.</para>
+		/// <para>输入草稿服务定义。 可以使用 arcpy.sharing 模块、CreateGeocodeSDDraft、CreateGPSDDraft 或 CreateImageSDDraft ArcPy 函数创建服务定义草稿。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -80,7 +80,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Service Definition</para>
-		/// <para>The resulting service definition. The default is to write the service definition to the same directory as the draft service definition.</para>
+		/// <para>生成的服务定义。 默认情况下，服务定义将写入与服务定义草稿相同的目录中。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]
@@ -90,18 +90,18 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 
 		/// <summary>
 		/// <para>Staging Version</para>
-		/// <para>The version of the published service definition.</para>
-		/// <para>When sharing a feature, a tile, or an imagery layer to ArcGIS Enterprise, use 5 for the value. When sharing a map image layer or web tool to ArcGIS Enterprise, and any layer type to ArcGIS Online, use 102. This is the default.</para>
-		/// <para>When sharing a web tool or geoprocessing service to a 10.9.1 or earlier server using the CreateGPSDDraft ArcPy function, use the value corresponding to the version number from the following list:</para>
-		/// <para>10.9.1—209</para>
-		/// <para>10.9—208</para>
-		/// <para>10.8.1—206</para>
-		/// <para>10.8—205</para>
-		/// <para>10.7.1—204</para>
-		/// <para>10.7—203</para>
-		/// <para>10.6.1—202</para>
-		/// <para>10.6—201</para>
-		/// <para>10.5.1—200</para>
+		/// <para>发布的服务定义版本。</para>
+		/// <para>在将要素、切片或影像图层共享至 ArcGIS Enterprise 时，使用值 5。 在将地图影像图层或 Web 工具共享至 ArcGIS Enterprise 以及将任何图层类型共享至 ArcGIS Online 时，使用 102。 这是默认设置。</para>
+		/// <para>使用 CreateGPSDDraft ArcPy 函数将 Web 工具或地理处理服务共享到 10.9.1 或较早版本的服务器时，请使用与以下列表中的版本号对应的值：</para>
+		/// <para>10.9.1 - 209</para>
+		/// <para>10.9 - 208</para>
+		/// <para>10.8.1 - 206</para>
+		/// <para>10.8 - 205</para>
+		/// <para>10.7.1 - 204</para>
+		/// <para>10.7 - 203</para>
+		/// <para>10.6.1 - 202</para>
+		/// <para>10.6 - 201</para>
+		/// <para>10.5.1 - 200</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLong()]

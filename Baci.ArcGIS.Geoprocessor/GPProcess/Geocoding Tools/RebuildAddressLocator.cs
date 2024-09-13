@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Rebuild Address Locator</para>
-	/// <para>Rebuild Address Locator</para>
-	/// <para>Rebuilds an address locator to update the locator with the current reference data. Because a locator contains a snapshot of the reference data when it was created, it will not geocode addresses with the updated data  when the geometry and attributes of the reference data are changed.  To geocode addresses with the current version of the reference data, the  locator must be rebuilt if you want to update the changes in the locator.</para>
+	/// <para>重新构建地址定位器</para>
+	/// <para>重新构建地址定位器以用当前参考数据更新定位器。 由于定位器在创建时便包含参考数据的快照，因此在更改参考数据的几何和属性时，地址定位器并不会使用更新后的数据对地址进行地理编码。 要使用最新的参考数据对地址进行地理编码，必须在需要更新定位器中的更改内容时重新构建定位器。</para>
 	/// </summary>
 	public class RebuildAddressLocator : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// </summary>
 		/// <param name="InAddressLocator">
 		/// <para>Input Address Locator</para>
-		/// <para>The address locator to rebuild.</para>
+		/// <para>要重新构建的地址定位器。</para>
 		/// </param>
 		public RebuildAddressLocator(object InAddressLocator)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Rebuild Address Locator</para>
+		/// <para>Tool Display Name : 重新构建地址定位器</para>
 		/// </summary>
-		public override string DisplayName() => "Rebuild Address Locator";
+		public override string DisplayName() => "重新构建地址定位器";
 
 		/// <summary>
 		/// <para>Tool Name : RebuildAddressLocator</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 
 		/// <summary>
 		/// <para>Input Address Locator</para>
-		/// <para>The address locator to rebuild.</para>
+		/// <para>要重新构建的地址定位器。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEAddressLocator()]

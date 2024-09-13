@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Create Network Dataset</para>
-	/// <para>Create Network Dataset</para>
-	/// <para>Creates a network dataset in an existing feature dataset. The network dataset can be used to perform network analysis on the data in the feature dataset.</para>
+	/// <para>创建网络数据集</para>
+	/// <para>在现有要素数据集中创建网络数据集。网络数据集可用于对要素数据集中的数据执行网络分析。</para>
 	/// </summary>
 	public class CreateNetworkDataset : AbstractGPProcess
 	{
@@ -21,25 +21,25 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// </summary>
 		/// <param name="FeatureDataset">
 		/// <para>Target Feature Dataset</para>
-		/// <para>The feature dataset where the network dataset will be created. The feature dataset should contain the source feature classes that will participate in the network dataset.</para>
-		/// <para>If the feature dataset is in an enterprise geodatabase, the feature dataset and all source feature classes cannot be versioned.</para>
+		/// <para>将创建网络数据集的要素数据集。要素数据集应包含将参与网络数据集的源要素类。</para>
+		/// <para>如果要素数据集位于企业级地理数据库中，则无法对要素数据集和所有源要素类进行版本化。</para>
 		/// </param>
 		/// <param name="OutName">
 		/// <para>Network Dataset Name</para>
-		/// <para>The name of the network dataset to be created. The Target Feature Dataset and its parent geodatabase must not already contain a network dataset with this name.</para>
+		/// <para>要创建的网络数据集的名称。目标要素数据集及其父地理数据库不得包含具有此名称的网络数据集。</para>
 		/// </param>
 		/// <param name="SourceFeatureClassNames">
 		/// <para>Source Feature Classes</para>
-		/// <para>The names of the feature classes to be included in the network dataset as network source features. Specify this parameter as a list of strings.</para>
-		/// <para>You must choose at least one line feature class that is not a turn feature class. This line feature class will act as an edge source in the network dataset. You can optionally choose point feature classes to act as junction sources in the network dataset and turn feature classes to act as turn sources.</para>
-		/// <para>All source feature classes must reside in the Target Feature Dataset and must not already participate in a geometric network, a utility network, or another network dataset.</para>
+		/// <para>要作为网络源要素包含在网络数据集中的要素类的名称。将此参数指定为字符串列表。</para>
+		/// <para>必须至少选择一个不是转弯要素类的线要素类。该线要素类将在网络数据集中用作边源。您可以选择点要素类作为网络数据集中的交汇点源，选择转弯要素类作为转弯源。</para>
+		/// <para>所有源要素类必须位于目标要素数据集中，且不得参与几何网络、公共设施网络或其他网络数据集。</para>
 		/// </param>
 		/// <param name="ElevationModel">
 		/// <para>Elevation Model</para>
-		/// <para>Specifies the model to be used to control vertical connectivity in the network dataset.</para>
-		/// <para>Elevation fields— Coincident endpoints with the same elevation field values are considered connected in the network dataset. This is the default.</para>
-		/// <para>Z coordinates—The z-coordinate values in the line feature geometry determine vertical connectivity. Coincident points are considered connected only if they have matching z-coordinate values.</para>
-		/// <para>No elevation— Network dataset connectivity is determined only by horizontal coincidence.</para>
+		/// <para>指定用于控制网络数据集中垂直连通性的模型。</para>
+		/// <para>高程字段— 具有相同高程字段值的重合端点在网络数据集中被视为连接。这是默认设置。</para>
+		/// <para>Z 坐标—线要素几何中的 z 坐标值用于确定垂直连通性。仅当重合点具有匹配的 z 坐标值时，才将其视为连接。</para>
+		/// <para>无高程— 网络数据集连通性仅由水平重合确定。</para>
 		/// <para><see cref="ElevationModelEnum"/></para>
 		/// </param>
 		public CreateNetworkDataset(object FeatureDataset, object OutName, object SourceFeatureClassNames, object ElevationModel)
@@ -51,9 +51,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Create Network Dataset</para>
+		/// <para>Tool Display Name : 创建网络数据集</para>
 		/// </summary>
-		public override string DisplayName() => "Create Network Dataset";
+		public override string DisplayName() => "创建网络数据集";
 
 		/// <summary>
 		/// <para>Tool Name : CreateNetworkDataset</para>
@@ -87,8 +87,8 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Target Feature Dataset</para>
-		/// <para>The feature dataset where the network dataset will be created. The feature dataset should contain the source feature classes that will participate in the network dataset.</para>
-		/// <para>If the feature dataset is in an enterprise geodatabase, the feature dataset and all source feature classes cannot be versioned.</para>
+		/// <para>将创建网络数据集的要素数据集。要素数据集应包含将参与网络数据集的源要素类。</para>
+		/// <para>如果要素数据集位于企业级地理数据库中，则无法对要素数据集和所有源要素类进行版本化。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureDataset()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Network Dataset Name</para>
-		/// <para>The name of the network dataset to be created. The Target Feature Dataset and its parent geodatabase must not already contain a network dataset with this name.</para>
+		/// <para>要创建的网络数据集的名称。目标要素数据集及其父地理数据库不得包含具有此名称的网络数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPString()]
@@ -104,9 +104,9 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Source Feature Classes</para>
-		/// <para>The names of the feature classes to be included in the network dataset as network source features. Specify this parameter as a list of strings.</para>
-		/// <para>You must choose at least one line feature class that is not a turn feature class. This line feature class will act as an edge source in the network dataset. You can optionally choose point feature classes to act as junction sources in the network dataset and turn feature classes to act as turn sources.</para>
-		/// <para>All source feature classes must reside in the Target Feature Dataset and must not already participate in a geometric network, a utility network, or another network dataset.</para>
+		/// <para>要作为网络源要素包含在网络数据集中的要素类的名称。将此参数指定为字符串列表。</para>
+		/// <para>必须至少选择一个不是转弯要素类的线要素类。该线要素类将在网络数据集中用作边源。您可以选择点要素类作为网络数据集中的交汇点源，选择转弯要素类作为转弯源。</para>
+		/// <para>所有源要素类必须位于目标要素数据集中，且不得参与几何网络、公共设施网络或其他网络数据集。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPMultiValue()]
@@ -115,10 +115,10 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 
 		/// <summary>
 		/// <para>Elevation Model</para>
-		/// <para>Specifies the model to be used to control vertical connectivity in the network dataset.</para>
-		/// <para>Elevation fields— Coincident endpoints with the same elevation field values are considered connected in the network dataset. This is the default.</para>
-		/// <para>Z coordinates—The z-coordinate values in the line feature geometry determine vertical connectivity. Coincident points are considered connected only if they have matching z-coordinate values.</para>
-		/// <para>No elevation— Network dataset connectivity is determined only by horizontal coincidence.</para>
+		/// <para>指定用于控制网络数据集中垂直连通性的模型。</para>
+		/// <para>高程字段— 具有相同高程字段值的重合端点在网络数据集中被视为连接。这是默认设置。</para>
+		/// <para>Z 坐标—线要素几何中的 z 坐标值用于确定垂直连通性。仅当重合点具有匹配的 z 坐标值时，才将其视为连接。</para>
+		/// <para>无高程— 网络数据集连通性仅由水平重合确定。</para>
 		/// <para><see cref="ElevationModelEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -141,24 +141,24 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		public enum ElevationModelEnum 
 		{
 			/// <summary>
-			/// <para>Elevation fields— Coincident endpoints with the same elevation field values are considered connected in the network dataset. This is the default.</para>
+			/// <para>高程字段— 具有相同高程字段值的重合端点在网络数据集中被视为连接。这是默认设置。</para>
 			/// </summary>
 			[GPValue("ELEVATION_FIELDS")]
-			[Description("Elevation fields")]
+			[Description("高程字段")]
 			Elevation_fields,
 
 			/// <summary>
-			/// <para>Z coordinates—The z-coordinate values in the line feature geometry determine vertical connectivity. Coincident points are considered connected only if they have matching z-coordinate values.</para>
+			/// <para>Z 坐标—线要素几何中的 z 坐标值用于确定垂直连通性。仅当重合点具有匹配的 z 坐标值时，才将其视为连接。</para>
 			/// </summary>
 			[GPValue("Z_COORDINATES")]
-			[Description("Z coordinates")]
+			[Description("Z 坐标")]
 			Z_coordinates,
 
 			/// <summary>
-			/// <para>No elevation— Network dataset connectivity is determined only by horizontal coincidence.</para>
+			/// <para>无高程— 网络数据集连通性仅由水平重合确定。</para>
 			/// </summary>
 			[GPValue("NO_ELEVATION")]
-			[Description("No elevation")]
+			[Description("无高程")]
 			No_elevation,
 
 		}

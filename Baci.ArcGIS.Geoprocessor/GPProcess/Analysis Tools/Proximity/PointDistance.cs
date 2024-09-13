@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Point Distance</para>
-	/// <para>Point Distance</para>
-	/// <para>Determines the distances from input point features to all points in the near features within a specified search radius.</para>
+	/// <para>点距离</para>
+	/// <para>在某一指定搜索半径范围内，确定输入点要素与邻近要素中所有点之间的距离。</para>
 	/// </summary>
 	[Obsolete()]
 	public class PointDistance : AbstractGPProcess
@@ -22,15 +22,15 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The point features from which distances to the near features will be calculated.</para>
+		/// <para>计算点要素与邻近要素之间的距离时作为起点的点要素。</para>
 		/// </param>
 		/// <param name="NearFeatures">
 		/// <para>Near Features</para>
-		/// <para>The points to which distances from the input features will be calculated. Distances between points within the same feature class or layer can be determined by specifying the same feature class or layer for the input and near features.</para>
+		/// <para>计算输入要素与点之间的距离时作为终点的点。 可通过为输入要素和邻近要素指定同一要素类或图层来确定同一要素类或图层范围内各点之间的距离。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>The table containing the list of input features and information about all near features within the search radius. If a search radius is not specified, distances from all input features to all near features are calculated.</para>
+		/// <para>包含输入要素列表和搜索半径内所有邻近要素相关信息的表。 如果未指定搜索半径，则计算所有输入要素与所有邻近要素之间的距离。</para>
 		/// </param>
 		public PointDistance(object InFeatures, object NearFeatures, object OutTable)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Point Distance</para>
+		/// <para>Tool Display Name : 点距离</para>
 		/// </summary>
-		public override string DisplayName() => "Point Distance";
+		public override string DisplayName() => "点距离";
 
 		/// <summary>
 		/// <para>Tool Name : PointDistance</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The point features from which distances to the near features will be calculated.</para>
+		/// <para>计算点要素与邻近要素之间的距离时作为起点的点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Near Features</para>
-		/// <para>The points to which distances from the input features will be calculated. Distances between points within the same feature class or layer can be determined by specifying the same feature class or layer for the input and near features.</para>
+		/// <para>计算输入要素与点之间的距离时作为终点的点。 可通过为输入要素和邻近要素指定同一要素类或图层来确定同一要素类或图层范围内各点之间的距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The table containing the list of input features and information about all near features within the search radius. If a search radius is not specified, distances from all input features to all near features are calculated.</para>
+		/// <para>包含输入要素列表和搜索半径内所有邻近要素相关信息的表。 如果未指定搜索半径，则计算所有输入要素与所有邻近要素之间的距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Search Radius</para>
-		/// <para>Specifies the radius used to search for candidate near features. The near features within this radius are considered for calculating the nearest feature. If no value is specified (that is, the default (empty) radius is used) all near features are considered for calculation. The unit of search radius defaults to units of the input features. The units can be changed to any other unit. However, this has no impact on the units of the output DISTANCE field which is based on the units of the coordinate system of the input features.</para>
+		/// <para>指定用于搜索候选邻近要素的半径。 将考虑此半径中的邻近要素来计算最近的要素。 如果未指定值（即使用默认（空）半径），则在计算中考虑所有邻近要素。 搜索半径的单位默认为输入要素的单位。 可以将单位更改为任何其他单位。 但是，这对输出 DISTANCE 字段的单位不会产生任何影响，后者基于输入要素的坐标系单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]

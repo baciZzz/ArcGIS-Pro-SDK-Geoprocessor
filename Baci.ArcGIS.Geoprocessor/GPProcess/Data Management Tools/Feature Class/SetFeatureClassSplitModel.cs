@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Set Feature Class Split Model</para>
-	/// <para>Set Feature Class Split Model</para>
-	/// <para>Defines the behavior of a split operation on a feature class.</para>
+	/// <para>设置要素类分割模型</para>
+	/// <para>用于定义要素类上分割操作的行为。</para>
 	/// </summary>
 	public class SetFeatureClassSplitModel : AbstractGPProcess
 	{
@@ -21,7 +21,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// </summary>
 		/// <param name="InFeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>The feature class on which the split model will be set.</para>
+		/// <para>将在其上设置分割模型的要素类。</para>
 		/// </param>
 		public SetFeatureClassSplitModel(object InFeatureClass)
 		{
@@ -29,9 +29,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Set Feature Class Split Model</para>
+		/// <para>Tool Display Name : 设置要素类分割模型</para>
 		/// </summary>
-		public override string DisplayName() => "Set Feature Class Split Model";
+		public override string DisplayName() => "设置要素类分割模型";
 
 		/// <summary>
 		/// <para>Tool Name : SetFeatureClassSplitModel</para>
@@ -65,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>The feature class on which the split model will be set.</para>
+		/// <para>将在其上设置分割模型的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -76,9 +76,9 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 
 		/// <summary>
 		/// <para>Split Model</para>
-		/// <para>Specifies the split model to apply to the input feature class.</para>
-		/// <para>Delete/Insert/Insert—The original feature will be deleted, and both parts of the split feature will be inserted as new features with two new rows in the table.</para>
-		/// <para>Update/Insert—The original feature will be updated, becoming the largest feature, and the smaller feature will be inserted as a new row in the table. This is the default.</para>
+		/// <para>指定要应用于输入要素类的分割模型。</para>
+		/// <para>删除/插入/插入—将删除原始要素，并且将插入分割要素的两个部件作为新要素，并在表中新增两行。</para>
+		/// <para>更新/插入—原始要素将进行更新，成为最大的要素，并且较小的要素将作为新行插入表中。这是默认设置。</para>
 		/// <para><see cref="SplitModelEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -101,17 +101,17 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		public enum SplitModelEnum 
 		{
 			/// <summary>
-			/// <para>Delete/Insert/Insert—The original feature will be deleted, and both parts of the split feature will be inserted as new features with two new rows in the table.</para>
+			/// <para>删除/插入/插入—将删除原始要素，并且将插入分割要素的两个部件作为新要素，并在表中新增两行。</para>
 			/// </summary>
 			[GPValue("DELETE_INSERT_INSERT")]
-			[Description("Delete/Insert/Insert")]
+			[Description("删除/插入/插入")]
 			DELETE_INSERT_INSERT,
 
 			/// <summary>
-			/// <para>Update/Insert—The original feature will be updated, becoming the largest feature, and the smaller feature will be inserted as a new row in the table. This is the default.</para>
+			/// <para>更新/插入—原始要素将进行更新，成为最大的要素，并且较小的要素将作为新行插入表中。这是默认设置。</para>
 			/// </summary>
 			[GPValue("UPDATE_INSERT")]
-			[Description("Update/Insert")]
+			[Description("更新/插入")]
 			UPDATE_INSERT,
 
 		}

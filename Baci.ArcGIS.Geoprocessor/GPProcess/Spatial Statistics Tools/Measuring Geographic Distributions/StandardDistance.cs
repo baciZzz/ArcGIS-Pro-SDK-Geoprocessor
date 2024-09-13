@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Standard Distance</para>
-	/// <para>Standard Distance</para>
-	/// <para>Measures the degree to which features are concentrated or dispersed around the geometric mean center.</para>
+	/// <para>标准距离</para>
+	/// <para>测量要素在几何平均中心周围的集中或分散程度。</para>
 	/// </summary>
 	public class StandardDistance : AbstractGPProcess
 	{
@@ -21,18 +21,18 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// </summary>
 		/// <param name="InputFeatureClass">
 		/// <para>Input Feature Class</para>
-		/// <para>A feature class containing a distribution of features for which the standard distance will be calculated.</para>
+		/// <para>要计算标准距离的要素分布所在的要素类。</para>
 		/// </param>
 		/// <param name="OutputStandardDistanceFeatureClass">
 		/// <para>Output Standard Distance Feature Class</para>
-		/// <para>A polygon feature class that will contain a circle polygon for each input center. These circle polygons graphically portray the standard distance at each center point.</para>
+		/// <para>将包含每个输入中心的圆面的面要素类。这些圆面是以图形的方式描绘到每个中心点的标准距离。</para>
 		/// </param>
 		/// <param name="CircleSize">
 		/// <para>Circle Size</para>
-		/// <para>The size of output circles in standard deviations. The default circle size is 1; valid choices are 1, 2, or 3 standard deviations.</para>
-		/// <para>1 standard deviation—1 standard deviation</para>
-		/// <para>2 standard deviations—2 standard deviations</para>
-		/// <para>3 standard deviations—3 standard deviations</para>
+		/// <para>标准差中输出圆的大小。默认圆大小为 1；可供选择的选项为 1、2 或 3 标准差。</para>
+		/// <para>1 标准差—1 标准差</para>
+		/// <para>2 标准差—2 标准差</para>
+		/// <para>3 标准差—3 标准差</para>
 		/// <para><see cref="CircleSizeEnum"/></para>
 		/// </param>
 		public StandardDistance(object InputFeatureClass, object OutputStandardDistanceFeatureClass, object CircleSize)
@@ -43,9 +43,9 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Standard Distance</para>
+		/// <para>Tool Display Name : 标准距离</para>
 		/// </summary>
-		public override string DisplayName() => "Standard Distance";
+		public override string DisplayName() => "标准距离";
 
 		/// <summary>
 		/// <para>Tool Name : StandardDistance</para>
@@ -79,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Input Feature Class</para>
-		/// <para>A feature class containing a distribution of features for which the standard distance will be calculated.</para>
+		/// <para>要计算标准距离的要素分布所在的要素类。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Output Standard Distance Feature Class</para>
-		/// <para>A polygon feature class that will contain a circle polygon for each input center. These circle polygons graphically portray the standard distance at each center point.</para>
+		/// <para>将包含每个输入中心的圆面的面要素类。这些圆面是以图形的方式描绘到每个中心点的标准距离。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -95,10 +95,10 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Circle Size</para>
-		/// <para>The size of output circles in standard deviations. The default circle size is 1; valid choices are 1, 2, or 3 standard deviations.</para>
-		/// <para>1 standard deviation—1 standard deviation</para>
-		/// <para>2 standard deviations—2 standard deviations</para>
-		/// <para>3 standard deviations—3 standard deviations</para>
+		/// <para>标准差中输出圆的大小。默认圆大小为 1；可供选择的选项为 1、2 或 3 标准差。</para>
+		/// <para>1 标准差—1 标准差</para>
+		/// <para>2 标准差—2 标准差</para>
+		/// <para>3 标准差—3 标准差</para>
 		/// <para><see cref="CircleSizeEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Weight Field</para>
-		/// <para>The numeric field used to weight locations according to their relative importance.</para>
+		/// <para>根据各位置的相对重要性对它们进行加权的数值型字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 
 		/// <summary>
 		/// <para>Case Field</para>
-		/// <para>Field used to group features for separate standard distance calculations. The case field can be of integer, date, or string type.</para>
+		/// <para>用于对要素进行分组以独立计算各个标准距离的字段。案例分组字段可以为整型、日期型或字符串型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[Field()]
@@ -143,24 +143,24 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		public enum CircleSizeEnum 
 		{
 			/// <summary>
-			/// <para>1 standard deviation—1 standard deviation</para>
+			/// <para>1 标准差—1 标准差</para>
 			/// </summary>
 			[GPValue("1_STANDARD_DEVIATION")]
-			[Description("1 standard deviation")]
+			[Description("1 标准差")]
 			_1_standard_deviation,
 
 			/// <summary>
-			/// <para>2 standard deviations—2 standard deviations</para>
+			/// <para>2 标准差—2 标准差</para>
 			/// </summary>
 			[GPValue("2_STANDARD_DEVIATIONS")]
-			[Description("2 standard deviations")]
+			[Description("2 标准差")]
 			_2_standard_deviations,
 
 			/// <summary>
-			/// <para>3 standard deviations—3 standard deviations</para>
+			/// <para>3 标准差—3 标准差</para>
 			/// </summary>
 			[GPValue("3_STANDARD_DEVIATIONS")]
-			[Description("3 standard deviations")]
+			[Description("3 标准差")]
 			_3_standard_deviations,
 
 		}

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Line Of Sight</para>
-	/// <para>Line Of Sight</para>
-	/// <para>Determines the visibility of sight lines over obstructions consisting of a surface and an optional multipatch dataset.</para>
+	/// <para>通视分析</para>
+	/// <para>确定穿过由表面和可选多面体数据集组成的障碍物的视线的可见性。</para>
 	/// </summary>
 	public class LineOfSight : AbstractGPProcess
 	{
@@ -21,16 +21,16 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// </summary>
 		/// <param name="InSurface">
 		/// <para>Input Surface</para>
-		/// <para>The integrated mesh scene layer, LAS dataset, raster, TIN, or terrain surface used to determine visibility.</para>
+		/// <para>集成网格场景图层、LAS 数据集、栅格、TIN 或者用于确定可见性的地形表面。</para>
 		/// </param>
 		/// <param name="InLineFeatureClass">
 		/// <para>Input Line Features</para>
-		/// <para>The line features whose first vertex defines the observation point and last vertex identifies the target location. The heights of the observation and target locations are obtained from the z-values of 3D features and interpolated from the surface for 2D features.</para>
-		/// <para>2D lines also have a default offset of 1 added to their elevation to raise the points above the surface. If the feature has an OffsetA field, its value will be added to the height of the observation point. If the OffsetB field is present, its value will be added to the height of the target position.</para>
+		/// <para>线要素，其第一个折点定义为观测点，最后一个折点标识目标位置。观测和目标位置的高度通过 3D 要素的 z 值获得，并且通过 2D 要素的表面插值。</para>
+		/// <para>2D 线还将默认偏移量 1 添加到其高程，以使点位于表面之上。如果要素含有一个 OffsetA 字段，其值将加到观测点的高度上。如果存在 OffsetB 字段，其值将加到目标位置的高度上。</para>
 		/// </param>
 		/// <param name="OutLosFeatureClass">
 		/// <para>Output Feature Class</para>
-		/// <para>The output line feature class along which visibility has been determined. Two attribute fields are created. The VisCode field indicates visibility along the line: 1 being visible and 2 not visible. The TarIsVis field indicates the target visibility: 0 being not visible and 1 being visible.</para>
+		/// <para>确定可见性所依据的输出线要素类。将创建两个属性字段。VisCode 字段表示沿线的可见性：1 表示可见，2 表示不可见。TarIsVis 字段表示目标可见性：0 表示不可见，1 表示可见。</para>
 		/// </param>
 		public LineOfSight(object InSurface, object InLineFeatureClass, object OutLosFeatureClass)
 		{
@@ -40,9 +40,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Line Of Sight</para>
+		/// <para>Tool Display Name : 通视分析</para>
 		/// </summary>
-		public override string DisplayName() => "Line Of Sight";
+		public override string DisplayName() => "通视分析";
 
 		/// <summary>
 		/// <para>Tool Name : LineOfSight</para>
@@ -76,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Surface</para>
-		/// <para>The integrated mesh scene layer, LAS dataset, raster, TIN, or terrain surface used to determine visibility.</para>
+		/// <para>集成网格场景图层、LAS 数据集、栅格、TIN 或者用于确定可见性的地形表面。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPComposite()]
@@ -85,8 +85,8 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Line Features</para>
-		/// <para>The line features whose first vertex defines the observation point and last vertex identifies the target location. The heights of the observation and target locations are obtained from the z-values of 3D features and interpolated from the surface for 2D features.</para>
-		/// <para>2D lines also have a default offset of 1 added to their elevation to raise the points above the surface. If the feature has an OffsetA field, its value will be added to the height of the observation point. If the OffsetB field is present, its value will be added to the height of the target position.</para>
+		/// <para>线要素，其第一个折点定义为观测点，最后一个折点标识目标位置。观测和目标位置的高度通过 3D 要素的 z 值获得，并且通过 2D 要素的表面插值。</para>
+		/// <para>2D 线还将默认偏移量 1 添加到其高程，以使点位于表面之上。如果要素含有一个 OffsetA 字段，其值将加到观测点的高度上。如果存在 OffsetB 字段，其值将加到目标位置的高度上。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Feature Class</para>
-		/// <para>The output line feature class along which visibility has been determined. Two attribute fields are created. The VisCode field indicates visibility along the line: 1 being visible and 2 not visible. The TarIsVis field indicates the target visibility: 0 being not visible and 1 being visible.</para>
+		/// <para>确定可见性所依据的输出线要素类。将创建两个属性字段。VisCode 字段表示沿线的可见性：1 表示可见，2 表示不可见。TarIsVis 字段表示目标可见性：0 表示不可见，1 表示可见。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFeatureClass()]
@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Output Obstruction Point Feature Class</para>
-		/// <para>An optional point feature class identifying the location of the first obstruction on the observer's sight line to its target.</para>
+		/// <para>一个可选点要素类，用于标识其目标的观察点视线上的第一个障碍物的位置。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[DEFeatureClass()]
@@ -112,9 +112,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Use Curvature</para>
-		/// <para>Specifies whether the earth&apos;s curvature will be taken into consideration for the line-of-sight analysis. For this parameter to be active, the surface must have a defined spatial reference in projected coordinates with defined z-units.</para>
-		/// <para>Unchecked—The earth&apos;s curvature will not be taken into consideration. This is the default.</para>
-		/// <para>Checked—The earth&apos;s curvature will be taken into consideration.</para>
+		/// <para>指定在视线分析时是否将考虑地球的曲率。若激活此参数，则表面必须具有采用含已定义 z 单位的投影坐标定义的空间参考。</para>
+		/// <para>未选中 - 将不考虑地球的曲率。这是默认设置。</para>
+		/// <para>选中 - 将考虑地球的曲率。</para>
 		/// <para><see cref="UseCurvatureEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -125,9 +125,9 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Use Refraction</para>
-		/// <para>Specifies whether atmospheric refraction will be taken into consideration when generating a line of sight from a functional surface. This parameter does not apply if multipatch features are used.</para>
-		/// <para>Unchecked—Atmospheric refraction will not be taken into consideration. This is the default.</para>
-		/// <para>Checked—Atmospheric refraction will be taken into consideration.</para>
+		/// <para>指定在通过作用表面生成一条视线时是否将考虑大气折射。如果使用了多面体要素，则此参数不适用。</para>
+		/// <para>未选中 - 将不考虑大气折射。这是默认设置。</para>
+		/// <para>选中 - 将考虑大气折射。</para>
 		/// <para><see cref="UseRefractionEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Refraction Factor</para>
-		/// <para>The value to be used in the refraction factor. The default value is 0.13.</para>
+		/// <para>要用于折射系数中的值。默认值为 0.13。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Pyramid Level Resolution</para>
-		/// <para>The z-tolerance or window-size resolution of the terrain pyramid level that will be used. The default value is 0, or full resolution.</para>
+		/// <para>将使用 terrain 金字塔等级的 z 容差或窗口大小分辨率。默认值为 0（z 容差），或全分辨率（窗口大小）。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPDouble()]
@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>A multipatch feature that may define additional obstructing elements, such as buildings. Refraction options are not honored for this input.</para>
+		/// <para>可以定义其他阻碍元素（例如，建筑物）的多面体要素。此输入不支持折射选项。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPFeatureLayer()]
@@ -181,14 +181,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum UseCurvatureEnum 
 		{
 			/// <summary>
-			/// <para>Checked—The earth&apos;s curvature will be taken into consideration.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("CURVATURE")]
 			CURVATURE,
 
 			/// <summary>
-			/// <para>Unchecked—The earth&apos;s curvature will not be taken into consideration. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_CURVATURE")]
@@ -202,14 +202,14 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		public enum UseRefractionEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Atmospheric refraction will be taken into consideration.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("REFRACTION")]
 			REFRACTION,
 
 			/// <summary>
-			/// <para>Unchecked—Atmospheric refraction will not be taken into consideration. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_REFRACTION")]

@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Join Attributes From Polygon</para>
-	/// <para>Join Attributes From Polygon</para>
-	/// <para>Joins attributes from input polygon features to input point features.</para>
+	/// <para>连接面属性</para>
+	/// <para>将输入面要素的属性连接到输入点要素。</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
 	[InputWillBeModified()]
@@ -23,12 +23,12 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// </summary>
 		/// <param name="TargetFeatures">
 		/// <para>Target Point Features</para>
-		/// <para>The point features to be updated with attributes from the Input Polygon Features.</para>
-		/// <para>The point features to be updated with attributes from the in_features.</para>
+		/// <para>将使用输入面要素中的属性更新的点要素。</para>
+		/// <para>将使用 in_features 中的属性更新的点要素。</para>
 		/// </param>
 		/// <param name="InFeatures">
 		/// <para>Input Polygon Features</para>
-		/// <para>The input polygon features.</para>
+		/// <para>输入面要素。</para>
 		/// </param>
 		public JoinAttributesFromPolygon(object TargetFeatures, object InFeatures)
 		{
@@ -37,9 +37,9 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Join Attributes From Polygon</para>
+		/// <para>Tool Display Name : 连接面属性</para>
 		/// </summary>
-		public override string DisplayName() => "Join Attributes From Polygon";
+		public override string DisplayName() => "连接面属性";
 
 		/// <summary>
 		/// <para>Tool Name : JoinAttributesFromPolygon</para>
@@ -73,8 +73,8 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Target Point Features</para>
-		/// <para>The point features to be updated with attributes from the Input Polygon Features.</para>
-		/// <para>The point features to be updated with attributes from the in_features.</para>
+		/// <para>将使用输入面要素中的属性更新的点要素。</para>
+		/// <para>将使用 in_features 中的属性更新的点要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -85,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Input Polygon Features</para>
-		/// <para>The input polygon features.</para>
+		/// <para>输入面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 
 		/// <summary>
 		/// <para>Join Fields</para>
-		/// <para>The fields from the Input Polygon Features that will be appended to the Target Point Features.</para>
+		/// <para>输入面要素中将追加到目标点要素的字段。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]

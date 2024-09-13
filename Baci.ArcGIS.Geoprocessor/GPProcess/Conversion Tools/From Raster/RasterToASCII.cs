@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Raster to ASCII</para>
-	/// <para>Raster to ASCII</para>
-	/// <para>Converts a raster dataset to an ASCII text file representing raster data.</para>
+	/// <para>栅格转 ASCII</para>
+	/// <para>将栅格数据集转换为可表示栅格数据的 ASCII 文本文件。</para>
 	/// </summary>
 	public class RasterToASCII : AbstractGPProcess
 	{
@@ -21,12 +21,12 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// </summary>
 		/// <param name="InRaster">
 		/// <para>Input raster</para>
-		/// <para>The input raster dataset.</para>
-		/// <para>The raster can be integer or floating-point type.</para>
+		/// <para>输入栅格数据集。</para>
+		/// <para>栅格数据可为整型或浮点型。</para>
 		/// </param>
 		/// <param name="OutAsciiFile">
 		/// <para>Output ASCII raster file</para>
-		/// <para>The output ASCII raster file.</para>
+		/// <para>输出 ASCII 栅格文件。</para>
 		/// </param>
 		public RasterToASCII(object InRaster, object OutAsciiFile)
 		{
@@ -35,9 +35,9 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Raster to ASCII</para>
+		/// <para>Tool Display Name : 栅格转 ASCII</para>
 		/// </summary>
-		public override string DisplayName() => "Raster to ASCII";
+		public override string DisplayName() => "栅格转 ASCII";
 
 		/// <summary>
 		/// <para>Tool Name : RasterToASCII</para>
@@ -71,8 +71,8 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Input raster</para>
-		/// <para>The input raster dataset.</para>
-		/// <para>The raster can be integer or floating-point type.</para>
+		/// <para>输入栅格数据集。</para>
+		/// <para>栅格数据可为整型或浮点型。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPSAGeoData()]
@@ -84,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 
 		/// <summary>
 		/// <para>Output ASCII raster file</para>
-		/// <para>The output ASCII raster file.</para>
+		/// <para>输出 ASCII 栅格文件。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DEFile()]

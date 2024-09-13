@@ -11,8 +11,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Polygon Neighbors</para>
-	/// <para>Polygon Neighbors</para>
-	/// <para>Creates a table with statistics based on polygon contiguity (overlaps, coincident edges, or nodes).</para>
+	/// <para>面邻域</para>
+	/// <para>根据面邻接（重叠、重合边或结点）创建统计数据表。</para>
 	/// </summary>
 	public class PolygonNeighbors : AbstractGPProcess
 	{
@@ -21,11 +21,11 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// </summary>
 		/// <param name="InFeatures">
 		/// <para>Input Features</para>
-		/// <para>The input polygon features.</para>
+		/// <para>输入面要素。</para>
 		/// </param>
 		/// <param name="OutTable">
 		/// <para>Output Table</para>
-		/// <para>The output table.</para>
+		/// <para>输出表。</para>
 		/// </param>
 		public PolygonNeighbors(object InFeatures, object OutTable)
 		{
@@ -34,9 +34,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		}
 
 		/// <summary>
-		/// <para>Tool Display Name : Polygon Neighbors</para>
+		/// <para>Tool Display Name : 面邻域</para>
 		/// </summary>
-		public override string DisplayName() => "Polygon Neighbors";
+		public override string DisplayName() => "面邻域";
 
 		/// <summary>
 		/// <para>Tool Name : PolygonNeighbors</para>
@@ -70,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Input Features</para>
-		/// <para>The input polygon features.</para>
+		/// <para>输入面要素。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[GPFeatureLayer()]
@@ -81,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Table</para>
-		/// <para>The output table.</para>
+		/// <para>输出表。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.must)]
 		[DETable()]
@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Report By Field(s)</para>
-		/// <para>The input attribute field or fields that will be used to identify unique polygons or polygon groups and represent them in the output.</para>
+		/// <para>将使用一个或多个输入属性字段来确定唯一面或面组，并在输出中表示它们。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPMultiValue()]
@@ -99,9 +99,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Include area overlaps</para>
-		/// <para>Specifies whether overlapping area relationships will be analyzed and included in the output.</para>
-		/// <para>Unchecked—Overlapping relationships will not be analyzed or included in the output. This is the default.</para>
-		/// <para>Checked—Overlapping relationships will be analyzed and included in the output.</para>
+		/// <para>指定是否会在输出中分析和包括重叠区域关系。</para>
+		/// <para>未选中 - 不会在输出中分析或包括重叠关系。 这是默认设置。</para>
+		/// <para>选中 - 会在输出中分析和包括重叠关系。</para>
 		/// <para><see cref="AreaOverlapEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -111,9 +111,9 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Include both sides of neighbor relationship</para>
-		/// <para>Specifies whether both sides of neighbor relationships will be included in the output.</para>
-		/// <para>Checked—For a pair of neighboring polygons, both neighboring information of one polygon being the source and the other being the neighbor and vice versa will be included. This is the default.</para>
-		/// <para>Unchecked—For a pair of neighboring polygons, only neighboring information of one polygon being the source and the other being the neighbor will be included. The reciprocal relationship will not be included.</para>
+		/// <para>指定是否会在输出中包括邻域关系的两侧。</para>
+		/// <para>选中 - 对于邻域面对，将同时包括两种邻域信息：一个面是源且另一个面是邻域，以及一个面是邻域且另一个面是源。 这是默认设置。</para>
+		/// <para>未选中 - 对于邻域面对，仅包括一个面是源且另一个面是邻域的邻域信息。 不包括互反关系。</para>
 		/// <para><see cref="BothSidesEnum"/></para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
@@ -123,8 +123,8 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>XY Tolerance</para>
-		/// <para>The minimum distance between coordinates before they will be considered equal. By default, this is the x,y tolerance of the input features.</para>
-		/// <para>Changing this parameter&apos;s value may cause failure or unexpected results. It is recommended that you do not modify this parameter. It has been removed from view on the tool dialog box. By default, the input feature class&apos;s spatial reference x,y tolerance property is used.</para>
+		/// <para>在将两个坐标视为相同坐标之前它们之间的最小距离。 默认情况下，此为输入要素的 x,y 容差。</para>
+		/// <para>更改此参数的值可能会导致出现故障或意外结果。 建议不要修改此参数。 已将其从工具对话框的视图中移除。 默认情况下，将使用输入要素类的空间参考 x,y 容差属性。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPLinearUnit()]
@@ -132,20 +132,20 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Linear Units</para>
-		/// <para>Specifies the units that will be used to report the total length of the coincident edge between neighboring polygons. The default is the input feature units.</para>
-		/// <para>Unknown—The units will be unknown.</para>
-		/// <para>Inches—The units will be inches.</para>
-		/// <para>Feet—The units will be feet.</para>
-		/// <para>Yards—The units will be yards.</para>
-		/// <para>Miles—The units will be miles.</para>
-		/// <para>Nautical miles—The units will be nautical miles.</para>
-		/// <para>Millimeters—The units will be millimeters.</para>
-		/// <para>Centimeters—The units will be centimeters.</para>
-		/// <para>Decimeters—The units will be decimeters.</para>
-		/// <para>Meters—The units will be meters.</para>
-		/// <para>Kilometers—The units will be kilometers.</para>
-		/// <para>Decimal degrees—The units will be decimal degrees.</para>
-		/// <para>Points—The units will be points.</para>
+		/// <para>指定将用于报告两个邻域面之间重合边的总长度的单位。 默认值为输入要素单位。</para>
+		/// <para>未知—未知单位。</para>
+		/// <para>英寸—将以英寸为单位。</para>
+		/// <para>英尺—单位将为英尺。</para>
+		/// <para>码—将以码为单位。</para>
+		/// <para>英里—单位将为英里。</para>
+		/// <para>海里—单位将为海里。</para>
+		/// <para>毫米—将以毫米为单位。</para>
+		/// <para>厘米—将以厘米为单位。</para>
+		/// <para>分米—将以分米为单位。</para>
+		/// <para>米—单位将为米。</para>
+		/// <para>千米—单位将为公里。</para>
+		/// <para>十进制度—单位将为十进制度。</para>
+		/// <para>点—将以磅为单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -154,20 +154,20 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 
 		/// <summary>
 		/// <para>Output Area Units</para>
-		/// <para>Specifies the units that will be used to report the area overlap of neighboring polygons. The default is the input feature units. This parameter is only active when the Include area overlaps parameter is checked.</para>
-		/// <para>Unknown—The units will be unknown.</para>
-		/// <para>Ares—The units will be ares.</para>
-		/// <para>Acres—The units will be acres.</para>
-		/// <para>Hectares—The units will be hectares.</para>
-		/// <para>Square inches—The units will be square inches.</para>
-		/// <para>Square feet—The units will be square feet.</para>
-		/// <para>Square yards—The units will be square yards.</para>
-		/// <para>Square miles—The units will be square miles.</para>
-		/// <para>Square millimeters—The units will be square millimeters.</para>
-		/// <para>Square centimeters—The units will be square centimeters.</para>
-		/// <para>Square decimeters—The units will be square decimeters.</para>
-		/// <para>Square meters—The units will be square meters.</para>
-		/// <para>Square kilometers—The units will be square kilometers.</para>
+		/// <para>指定将用于报告邻域面的区域重叠的单位。 默认值为输入要素单位。 只有选中了包括区域重叠参数时，此参数才处于活动状态。</para>
+		/// <para>未知—未知单位。</para>
+		/// <para>公亩—将以公亩为单位。</para>
+		/// <para>英亩—将以英亩为单位。</para>
+		/// <para>公顷—将以公顷为单位。</para>
+		/// <para>平方英寸—将以平方英寸为单位。</para>
+		/// <para>平方英尺—将以平方英尺为单位。</para>
+		/// <para>平方码—将以平方码为单位。</para>
+		/// <para>平方英里—将以平方英里为单位。</para>
+		/// <para>平方毫米—将以平方毫米为单位。</para>
+		/// <para>平方厘米—将以平方厘米为单位。</para>
+		/// <para>平方分米—将以平方分米为单位。</para>
+		/// <para>平方米—将以平方米为单位。</para>
+		/// <para>平方千米—将以平方公里为单位。</para>
 		/// </summary>
 		[ParamType(ParamTypeEnum.optional)]
 		[GPString()]
@@ -191,14 +191,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum AreaOverlapEnum 
 		{
 			/// <summary>
-			/// <para>Checked—Overlapping relationships will be analyzed and included in the output.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("AREA_OVERLAP")]
 			AREA_OVERLAP,
 
 			/// <summary>
-			/// <para>Unchecked—Overlapping relationships will not be analyzed or included in the output. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_AREA_OVERLAP")]
@@ -212,14 +212,14 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		public enum BothSidesEnum 
 		{
 			/// <summary>
-			/// <para>Checked—For a pair of neighboring polygons, both neighboring information of one polygon being the source and the other being the neighbor and vice versa will be included. This is the default.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("true")]
 			[Description("BOTH_SIDES")]
 			BOTH_SIDES,
 
 			/// <summary>
-			/// <para>Unchecked—For a pair of neighboring polygons, only neighboring information of one polygon being the source and the other being the neighbor will be included. The reciprocal relationship will not be included.</para>
+			/// <para></para>
 			/// </summary>
 			[GPValue("false")]
 			[Description("NO_BOTH_SIDES")]
