@@ -186,7 +186,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GANeighborhoodSelection SetEnviroment(object workspace = null )
+		public GANeighborhoodSelection SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

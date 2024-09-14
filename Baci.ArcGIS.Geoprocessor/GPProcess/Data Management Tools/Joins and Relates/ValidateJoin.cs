@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ValidateJoin SetEnviroment(object workspace = null )
+		public ValidateJoin SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

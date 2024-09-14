@@ -199,7 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MosaicDatasetToMobileMosaicDataset SetEnviroment(object extent = null )
+		public MosaicDatasetToMobileMosaicDataset SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

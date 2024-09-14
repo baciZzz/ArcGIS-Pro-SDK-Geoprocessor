@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateIndoorNetworkDataset SetEnviroment(object configKeyword = null , object workspace = null )
+		public CreateIndoorNetworkDataset SetEnviroment(object configKeyword = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, workspace: workspace);
 			return this;

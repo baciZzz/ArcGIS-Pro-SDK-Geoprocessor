@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ReplaceTerrainPoints SetEnviroment(int? autoCommit = null , object workspace = null )
+		public ReplaceTerrainPoints SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

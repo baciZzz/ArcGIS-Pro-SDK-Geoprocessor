@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CrossValidation SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object workspace = null )
+		public CrossValidation SetEnviroment(object geographicTransformations = null, object outputCoordinateSystem = null, object parallelProcessingFactor = null, object workspace = null)
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;

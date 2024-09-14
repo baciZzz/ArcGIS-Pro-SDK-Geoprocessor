@@ -89,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportSegmentationProfile SetEnviroment(object workspace = null )
+		public ExportSegmentationProfile SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

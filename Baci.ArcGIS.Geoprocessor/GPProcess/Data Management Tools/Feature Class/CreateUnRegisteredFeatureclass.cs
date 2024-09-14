@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateUnRegisteredFeatureclass SetEnviroment(object configKeyword = null , object workspace = null )
+		public CreateUnRegisteredFeatureclass SetEnviroment(object configKeyword = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, workspace: workspace);
 			return this;

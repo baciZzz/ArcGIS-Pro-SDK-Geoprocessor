@@ -188,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GridIndexFeatures SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public GridIndexFeatures SetEnviroment(object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

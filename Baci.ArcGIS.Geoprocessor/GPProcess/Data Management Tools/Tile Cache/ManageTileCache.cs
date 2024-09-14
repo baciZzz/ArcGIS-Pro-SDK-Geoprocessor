@@ -198,7 +198,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ManageTileCache SetEnviroment(object parallelProcessingFactor = null )
+		public ManageTileCache SetEnviroment(object parallelProcessingFactor = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

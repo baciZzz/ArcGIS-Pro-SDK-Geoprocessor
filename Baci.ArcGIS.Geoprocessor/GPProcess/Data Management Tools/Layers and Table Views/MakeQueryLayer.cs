@@ -210,7 +210,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeQueryLayer SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public MakeQueryLayer SetEnviroment(object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

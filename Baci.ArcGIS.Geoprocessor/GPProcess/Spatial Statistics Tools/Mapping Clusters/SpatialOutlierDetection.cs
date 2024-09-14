@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SpatialOutlierDetection SetEnviroment(object cellSize = null , object extent = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object snapRaster = null )
+		public SpatialOutlierDetection SetEnviroment(object cellSize = null, object extent = null, object mask = null, object outputCoordinateSystem = null, object parallelProcessingFactor = null, object snapRaster = null)
 		{
 			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, snapRaster: snapRaster);
 			return this;

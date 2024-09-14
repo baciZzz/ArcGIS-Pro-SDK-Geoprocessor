@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateIndoorsDatabase SetEnviroment(object workspace = null )
+		public CreateIndoorsDatabase SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

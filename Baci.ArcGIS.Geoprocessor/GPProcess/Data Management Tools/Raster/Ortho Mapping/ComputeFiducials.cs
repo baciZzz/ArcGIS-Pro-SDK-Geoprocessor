@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ComputeFiducials SetEnviroment(object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public ComputeFiducials SetEnviroment(object parallelProcessingFactor = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

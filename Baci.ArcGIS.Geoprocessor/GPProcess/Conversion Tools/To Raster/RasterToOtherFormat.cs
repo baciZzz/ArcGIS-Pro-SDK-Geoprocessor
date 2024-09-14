@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RasterToOtherFormat SetEnviroment(object XYDomain = null , object ZDomain = null , object ZResolution = null , object compression = null , object configKeyword = null , object extent = null , object nodata = null , object outputCoordinateSystem = null , object outputZFlag = null , object pyramid = null , object rasterStatistics = null , object resamplingMethod = null , object scratchWorkspace = null , double[] tileSize = null , object workspace = null )
+		public RasterToOtherFormat SetEnviroment(object XYDomain = null, object ZDomain = null, object ZResolution = null, object compression = null, object configKeyword = null, object extent = null, object nodata = null, object outputCoordinateSystem = null, object outputZFlag = null, object pyramid = null, object rasterStatistics = null, object resamplingMethod = null, object scratchWorkspace = null, double[] tileSize = null, object workspace = null)
 		{
 			base.SetEnv(XYDomain: XYDomain, ZDomain: ZDomain, ZResolution: ZResolution, compression: compression, configKeyword: configKeyword, extent: extent, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, outputZFlag: outputZFlag, pyramid: pyramid, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, scratchWorkspace: scratchWorkspace, tileSize: tileSize, workspace: workspace);
 			return this;

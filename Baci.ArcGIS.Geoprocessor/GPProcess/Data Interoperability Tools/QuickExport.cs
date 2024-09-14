@@ -87,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataInteroperabilityTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public QuickExport SetEnviroment(object workspace = null , object scratchWorkspace = null )
+		public QuickExport SetEnviroment(object workspace = null, object scratchWorkspace = null)
 		{
 			base.SetEnv(workspace: workspace, scratchWorkspace: scratchWorkspace);
 			return this;

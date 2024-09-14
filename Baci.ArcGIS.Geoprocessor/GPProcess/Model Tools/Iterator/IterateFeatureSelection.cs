@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public IterateFeatureSelection SetEnviroment(object workspace = null )
+		public IterateFeatureSelection SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

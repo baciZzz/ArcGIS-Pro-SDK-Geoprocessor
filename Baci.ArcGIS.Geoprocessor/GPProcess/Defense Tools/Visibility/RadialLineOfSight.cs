@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RadialLineOfSight SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public RadialLineOfSight SetEnviroment(object outputCoordinateSystem = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -132,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateStatistics SetEnviroment(object rasterStatistics = null , object scratchWorkspace = null , object workspace = null )
+		public CalculateStatistics SetEnviroment(object rasterStatistics = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(rasterStatistics: rasterStatistics, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

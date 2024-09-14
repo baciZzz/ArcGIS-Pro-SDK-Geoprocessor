@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportMosaicDatasetGeometry SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ExportMosaicDatasetGeometry SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

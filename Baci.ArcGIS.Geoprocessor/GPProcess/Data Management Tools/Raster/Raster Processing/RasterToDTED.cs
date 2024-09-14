@@ -129,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RasterToDTED SetEnviroment(object resamplingMethod = null )
+		public RasterToDTED SetEnviroment(object resamplingMethod = null)
 		{
 			base.SetEnv(resamplingMethod: resamplingMethod);
 			return this;

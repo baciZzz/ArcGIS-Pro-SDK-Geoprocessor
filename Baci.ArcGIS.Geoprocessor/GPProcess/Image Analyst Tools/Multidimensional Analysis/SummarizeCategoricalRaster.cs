@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SummarizeCategoricalRaster SetEnviroment(object extent = null )
+		public SummarizeCategoricalRaster SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

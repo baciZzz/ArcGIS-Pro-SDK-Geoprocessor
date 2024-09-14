@@ -287,7 +287,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportTrainingDataForDeepLearning SetEnviroment(object cellSize = null , object extent = null , object scratchWorkspace = null , object workspace = null )
+		public ExportTrainingDataForDeepLearning SetEnviroment(object cellSize = null, object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(cellSize: cellSize, extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

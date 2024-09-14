@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateRubbersheetLinks SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateRubbersheetLinks SetEnviroment(object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

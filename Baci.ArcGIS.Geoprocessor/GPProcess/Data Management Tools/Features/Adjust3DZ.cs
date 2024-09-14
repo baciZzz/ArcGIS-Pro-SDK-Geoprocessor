@@ -138,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Adjust3DZ SetEnviroment(object extent = null , object workspace = null )
+		public Adjust3DZ SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

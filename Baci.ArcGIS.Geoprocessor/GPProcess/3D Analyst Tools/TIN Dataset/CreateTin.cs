@@ -107,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateTin SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object tinSaveVersion = null , object workspace = null )
+		public CreateTin SetEnviroment(object extent = null, object geographicTransformations = null, object outputCoordinateSystem = null, object tinSaveVersion = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, tinSaveVersion: tinSaveVersion, workspace: workspace);
 			return this;

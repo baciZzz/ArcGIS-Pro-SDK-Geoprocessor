@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CoordinateTableToPolyline SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public CoordinateTableToPolyline SetEnviroment(object outputCoordinateSystem = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddVariableBasedSuitabilityCriteria SetEnviroment(object workspace = null )
+		public AddVariableBasedSuitabilityCriteria SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

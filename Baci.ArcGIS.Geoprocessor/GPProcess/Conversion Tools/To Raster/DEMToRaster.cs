@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DEMToRaster SetEnviroment(int? autoCommit = null , object cellSize = null , object compression = null , object configKeyword = null , object extent = null , object pyramid = null , object rasterStatistics = null , object scratchWorkspace = null , double[] tileSize = null )
+		public DEMToRaster SetEnviroment(int? autoCommit = null, object cellSize = null, object compression = null, object configKeyword = null, object extent = null, object pyramid = null, object rasterStatistics = null, object scratchWorkspace = null, double[] tileSize = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, cellSize: cellSize, compression: compression, configKeyword: configKeyword, extent: extent, pyramid: pyramid, rasterStatistics: rasterStatistics, scratchWorkspace: scratchWorkspace, tileSize: tileSize);
 			return this;

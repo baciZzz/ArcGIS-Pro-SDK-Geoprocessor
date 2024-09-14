@@ -221,7 +221,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MosaicToNewRaster SetEnviroment(object compression = null , object configKeyword = null , object extent = null , object nodata = null , object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null , object resamplingMethod = null , double[] tileSize = null )
+		public MosaicToNewRaster SetEnviroment(object compression = null, object configKeyword = null, object extent = null, object nodata = null, object parallelProcessingFactor = null, object pyramid = null, object rasterStatistics = null, object resamplingMethod = null, double[] tileSize = null)
 		{
 			base.SetEnv(compression: compression, configKeyword: configKeyword, extent: extent, nodata: nodata, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics, resamplingMethod: resamplingMethod, tileSize: tileSize);
 			return this;

@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Project SetEnviroment(object XYResolution = null , object XYTolerance = null , object scratchWorkspace = null , object workspace = null )
+		public Project SetEnviroment(object XYResolution = null, object XYTolerance = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(XYResolution: XYResolution, XYTolerance: XYTolerance, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

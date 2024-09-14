@@ -181,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddSurfaceInformation SetEnviroment(int? autoCommit = null , object extent = null , object geographicTransformations = null , object workspace = null )
+		public AddSurfaceInformation SetEnviroment(int? autoCommit = null, object extent = null, object geographicTransformations = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, extent: extent, geographicTransformations: geographicTransformations, workspace: workspace);
 			return this;

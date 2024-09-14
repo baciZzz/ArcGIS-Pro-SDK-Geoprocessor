@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MergeLayers SetEnviroment(object extent = null )
+		public MergeLayers SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

@@ -126,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PivotTable SetEnviroment(object configKeyword = null , object scratchWorkspace = null , object workspace = null )
+		public PivotTable SetEnviroment(object configKeyword = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -342,7 +342,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GWR SetEnviroment(object cellSize = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , object workspace = null )
+		public GWR SetEnviroment(object cellSize = null, object geographicTransformations = null, object outputCoordinateSystem = null, object scratchWorkspace = null, object snapRaster = null, object workspace = null)
 		{
 			base.SetEnv(cellSize: cellSize, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, workspace: workspace);
 			return this;

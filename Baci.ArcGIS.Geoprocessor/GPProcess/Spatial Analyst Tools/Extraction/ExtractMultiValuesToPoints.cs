@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExtractMultiValuesToPoints SetEnviroment(int? autoCommit = null , object configKeyword = null , object extent = null , object mask = null , object scratchWorkspace = null , object workspace = null )
+		public ExtractMultiValuesToPoints SetEnviroment(int? autoCommit = null, object configKeyword = null, object extent = null, object mask = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, mask: mask, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

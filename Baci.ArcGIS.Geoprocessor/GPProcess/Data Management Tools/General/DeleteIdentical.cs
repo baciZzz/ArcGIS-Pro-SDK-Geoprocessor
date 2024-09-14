@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DeleteIdentical SetEnviroment(object XYTolerance = null , object ZTolerance = null , object extent = null , bool? maintainSpatialIndex = null , object workspace = null )
+		public DeleteIdentical SetEnviroment(object XYTolerance = null, object ZTolerance = null, object extent = null, bool? maintainSpatialIndex = null, object workspace = null)
 		{
 			base.SetEnv(XYTolerance: XYTolerance, ZTolerance: ZTolerance, extent: extent, maintainSpatialIndex: maintainSpatialIndex, workspace: workspace);
 			return this;

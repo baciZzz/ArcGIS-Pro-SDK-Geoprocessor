@@ -165,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TimeSeriesClustering SetEnviroment(object parallelProcessingFactor = null , object randomGenerator = null )
+		public TimeSeriesClustering SetEnviroment(object parallelProcessingFactor = null, object randomGenerator = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, randomGenerator: randomGenerator);
 			return this;

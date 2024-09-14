@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveOverlapMultiple SetEnviroment(object workspace = null )
+		public RemoveOverlapMultiple SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

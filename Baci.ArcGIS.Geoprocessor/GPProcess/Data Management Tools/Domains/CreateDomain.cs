@@ -158,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateDomain SetEnviroment(int? autoCommit = null , object workspace = null )
+		public CreateDomain SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

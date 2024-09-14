@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddTraceLocations SetEnviroment(object outputZFlag = null , object workspace = null )
+		public AddTraceLocations SetEnviroment(object outputZFlag = null, object workspace = null)
 		{
 			base.SetEnv(outputZFlag: outputZFlag, workspace: workspace);
 			return this;

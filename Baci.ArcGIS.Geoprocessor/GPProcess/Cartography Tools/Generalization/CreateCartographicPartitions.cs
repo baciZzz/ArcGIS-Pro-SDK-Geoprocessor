@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateCartographicPartitions SetEnviroment(object outputCoordinateSystem = null )
+		public CreateCartographicPartitions SetEnviroment(object outputCoordinateSystem = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;

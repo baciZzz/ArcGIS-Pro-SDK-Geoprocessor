@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Dendrogram SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public Dendrogram SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

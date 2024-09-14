@@ -177,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DissolveRouteEvents SetEnviroment(object configKeyword = null , object scratchWorkspace = null , object workspace = null )
+		public DissolveRouteEvents SetEnviroment(object configKeyword = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

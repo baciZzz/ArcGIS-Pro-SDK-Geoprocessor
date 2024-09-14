@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildMultidimensionalTranspose SetEnviroment(object parallelProcessingFactor = null )
+		public BuildMultidimensionalTranspose SetEnviroment(object parallelProcessingFactor = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

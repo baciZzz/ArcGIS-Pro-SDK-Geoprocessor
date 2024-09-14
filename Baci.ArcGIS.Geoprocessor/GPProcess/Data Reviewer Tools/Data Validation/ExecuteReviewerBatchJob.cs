@@ -151,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExecuteReviewerBatchJob SetEnviroment(object extent = null , object workspace = null )
+		public ExecuteReviewerBatchJob SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

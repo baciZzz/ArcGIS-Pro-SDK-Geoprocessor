@@ -123,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddFilesToLasDataset SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public AddFilesToLasDataset SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

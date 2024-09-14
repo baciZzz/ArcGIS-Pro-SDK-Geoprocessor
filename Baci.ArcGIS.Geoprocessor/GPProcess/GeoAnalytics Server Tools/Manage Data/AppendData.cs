@@ -135,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AppendData SetEnviroment(object extent = null , object workspace = null )
+		public AppendData SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

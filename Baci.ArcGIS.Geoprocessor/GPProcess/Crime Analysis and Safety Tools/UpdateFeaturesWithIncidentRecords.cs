@@ -345,7 +345,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UpdateFeaturesWithIncidentRecords SetEnviroment(object workspace = null )
+		public UpdateFeaturesWithIncidentRecords SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

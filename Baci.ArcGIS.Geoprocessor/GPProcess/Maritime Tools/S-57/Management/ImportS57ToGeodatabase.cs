@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportS57ToGeodatabase SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ImportS57ToGeodatabase SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

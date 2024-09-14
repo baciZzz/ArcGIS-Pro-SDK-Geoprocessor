@@ -95,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Integrate SetEnviroment(object XYTolerance = null , object extent = null , object workspace = null )
+		public Integrate SetEnviroment(object XYTolerance = null, object extent = null, object workspace = null)
 		{
 			base.SetEnv(XYTolerance: XYTolerance, extent: extent, workspace: workspace);
 			return this;

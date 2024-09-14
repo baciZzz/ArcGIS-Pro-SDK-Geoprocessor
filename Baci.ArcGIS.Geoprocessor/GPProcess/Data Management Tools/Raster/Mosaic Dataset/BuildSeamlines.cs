@@ -281,7 +281,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildSeamlines SetEnviroment(object parallelProcessingFactor = null )
+		public BuildSeamlines SetEnviroment(object parallelProcessingFactor = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

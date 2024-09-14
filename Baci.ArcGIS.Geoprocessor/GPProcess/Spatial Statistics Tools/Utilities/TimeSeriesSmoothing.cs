@@ -205,7 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TimeSeriesSmoothing SetEnviroment(object outputCoordinateSystem = null )
+		public TimeSeriesSmoothing SetEnviroment(object outputCoordinateSystem = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;

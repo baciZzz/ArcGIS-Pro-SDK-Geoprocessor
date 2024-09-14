@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FloatToRaster SetEnviroment(int? autoCommit = null , object compression = null , object configKeyword = null , object pyramid = null , object scratchWorkspace = null , double[] tileSize = null )
+		public FloatToRaster SetEnviroment(int? autoCommit = null, object compression = null, object configKeyword = null, object pyramid = null, object scratchWorkspace = null, double[] tileSize = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, compression: compression, configKeyword: configKeyword, pyramid: pyramid, scratchWorkspace: scratchWorkspace, tileSize: tileSize);
 			return this;

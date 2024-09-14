@@ -175,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DensityBasedClustering SetEnviroment(object outputCoordinateSystem = null , object outputZFlag = null , object parallelProcessingFactor = null )
+		public DensityBasedClustering SetEnviroment(object outputCoordinateSystem = null, object outputZFlag = null, object parallelProcessingFactor = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, outputZFlag: outputZFlag, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

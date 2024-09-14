@@ -161,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Buffer3D SetEnviroment(object XYDomain = null , object ZDomain = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public Buffer3D SetEnviroment(object XYDomain = null, object ZDomain = null, object configKeyword = null, object extent = null, object geographicTransformations = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(XYDomain: XYDomain, ZDomain: ZDomain, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

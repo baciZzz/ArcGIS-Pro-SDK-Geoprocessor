@@ -230,7 +230,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeocodeFile SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public GeocodeFile SetEnviroment(object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

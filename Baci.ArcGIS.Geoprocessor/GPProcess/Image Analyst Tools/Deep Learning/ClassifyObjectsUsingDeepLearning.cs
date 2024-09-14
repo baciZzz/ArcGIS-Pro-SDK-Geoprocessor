@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyObjectsUsingDeepLearning SetEnviroment(object cellSize = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null )
+		public ClassifyObjectsUsingDeepLearning SetEnviroment(object cellSize = null, object extent = null, object geographicTransformations = null, object outputCoordinateSystem = null, object parallelProcessingFactor = null)
 		{
 			base.SetEnv(cellSize: cellSize, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

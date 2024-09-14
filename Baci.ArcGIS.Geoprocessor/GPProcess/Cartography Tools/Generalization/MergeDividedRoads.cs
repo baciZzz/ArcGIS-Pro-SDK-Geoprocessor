@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MergeDividedRoads SetEnviroment(object cartographicCoordinateSystem = null , object cartographicPartitions = null , object referenceScale = null , object workspace = null )
+		public MergeDividedRoads SetEnviroment(object cartographicCoordinateSystem = null, object cartographicPartitions = null, object referenceScale = null, object workspace = null)
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, cartographicPartitions: cartographicPartitions, referenceScale: referenceScale, workspace: workspace);
 			return this;

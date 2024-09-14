@@ -189,7 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GASemivariogramSensitivity SetEnviroment(object coincidentPoints = null , object randomGenerator = null , object scratchWorkspace = null , object workspace = null )
+		public GASemivariogramSensitivity SetEnviroment(object coincidentPoints = null, object randomGenerator = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(coincidentPoints: coincidentPoints, randomGenerator: randomGenerator, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

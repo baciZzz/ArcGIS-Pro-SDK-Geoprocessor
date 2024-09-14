@@ -322,7 +322,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EmpiricalBayesianKriging3D SetEnviroment(object coincidentPoints = null , object extent = null , object parallelProcessingFactor = null )
+		public EmpiricalBayesianKriging3D SetEnviroment(object coincidentPoints = null, object extent = null, object parallelProcessingFactor = null)
 		{
 			base.SetEnv(coincidentPoints: coincidentPoints, extent: extent, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

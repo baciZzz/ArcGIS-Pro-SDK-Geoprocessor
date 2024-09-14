@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableSelect SetEnviroment(object configKeyword = null )
+		public TableSelect SetEnviroment(object configKeyword = null)
 		{
 			base.SetEnv(configKeyword: configKeyword);
 			return this;

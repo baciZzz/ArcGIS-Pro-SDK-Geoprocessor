@@ -139,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public NumberFeatures SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public NumberFeatures SetEnviroment(object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

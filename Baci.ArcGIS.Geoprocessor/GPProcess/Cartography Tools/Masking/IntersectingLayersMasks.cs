@@ -215,7 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public IntersectingLayersMasks SetEnviroment(object cartographicCoordinateSystem = null , object cartographicPartitions = null )
+		public IntersectingLayersMasks SetEnviroment(object cartographicCoordinateSystem = null, object cartographicPartitions = null)
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, cartographicPartitions: cartographicPartitions);
 			return this;

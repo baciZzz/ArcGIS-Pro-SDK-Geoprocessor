@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetControlPointAtIntersect SetEnviroment(object cartographicPartitions = null )
+		public SetControlPointAtIntersect SetEnviroment(object cartographicPartitions = null)
 		{
 			base.SetEnv(cartographicPartitions: cartographicPartitions);
 			return this;

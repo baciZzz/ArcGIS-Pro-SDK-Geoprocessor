@@ -169,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DetectObjectsUsingDeepLearning SetEnviroment(object cellSize = null , object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null )
+		public DetectObjectsUsingDeepLearning SetEnviroment(object cellSize = null, object extent = null, object outputCoordinateSystem = null, object parallelProcessingFactor = null)
 		{
 			base.SetEnv(cellSize: cellSize, extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

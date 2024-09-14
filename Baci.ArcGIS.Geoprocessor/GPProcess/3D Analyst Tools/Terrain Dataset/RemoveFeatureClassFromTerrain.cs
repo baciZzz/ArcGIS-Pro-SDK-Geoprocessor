@@ -97,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveFeatureClassFromTerrain SetEnviroment(int? autoCommit = null , object scratchWorkspace = null , object workspace = null )
+		public RemoveFeatureClassFromTerrain SetEnviroment(int? autoCommit = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

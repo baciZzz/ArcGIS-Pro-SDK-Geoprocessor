@@ -156,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Import3DFiles SetEnviroment(object XYDomain = null , object ZDomain = null , int? autoCommit = null , object configKeyword = null , object outputCoordinateSystem = null , object workspace = null )
+		public Import3DFiles SetEnviroment(object XYDomain = null, object ZDomain = null, int? autoCommit = null, object configKeyword = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(XYDomain: XYDomain, ZDomain: ZDomain, autoCommit: autoCommit, configKeyword: configKeyword, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

@@ -115,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Snap SetEnviroment(object extent = null , object workspace = null )
+		public Snap SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

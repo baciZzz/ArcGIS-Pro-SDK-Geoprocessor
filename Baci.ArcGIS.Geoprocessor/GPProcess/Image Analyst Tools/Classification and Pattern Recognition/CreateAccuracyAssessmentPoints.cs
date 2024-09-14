@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateAccuracyAssessmentPoints SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null )
+		public CreateAccuracyAssessmentPoints SetEnviroment(object extent = null, object geographicTransformations = null, object outputCoordinateSystem = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

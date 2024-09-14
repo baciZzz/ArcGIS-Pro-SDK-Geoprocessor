@@ -117,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LandXMLToTin SetEnviroment(object scratchWorkspace = null , object tinSaveVersion = null , object workspace = null )
+		public LandXMLToTin SetEnviroment(object scratchWorkspace = null, object tinSaveVersion = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, tinSaveVersion: tinSaveVersion, workspace: workspace);
 			return this;

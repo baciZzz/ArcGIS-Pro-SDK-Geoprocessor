@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableToExcel SetEnviroment(object scratchWorkspace = null , bool? transferDomains = null , object workspace = null )
+		public TableToExcel SetEnviroment(object scratchWorkspace = null, bool? transferDomains = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, transferDomains: transferDomains, workspace: workspace);
 			return this;

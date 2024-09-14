@@ -291,7 +291,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TiledLabelsToAnnotation SetEnviroment(object referenceScale = null )
+		public TiledLabelsToAnnotation SetEnviroment(object referenceScale = null)
 		{
 			base.SetEnv(referenceScale: referenceScale);
 			return this;

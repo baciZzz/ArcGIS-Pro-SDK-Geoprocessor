@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TerrainToRaster SetEnviroment(int? autoCommit = null , object compression = null , object configKeyword = null , object extent = null , object outputCoordinateSystem = null , object pyramid = null , object rasterStatistics = null , object snapRaster = null , object terrainMemoryUsage = null , object workspace = null )
+		public TerrainToRaster SetEnviroment(int? autoCommit = null, object compression = null, object configKeyword = null, object extent = null, object outputCoordinateSystem = null, object pyramid = null, object rasterStatistics = null, object snapRaster = null, object terrainMemoryUsage = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, compression: compression, configKeyword: configKeyword, extent: extent, outputCoordinateSystem: outputCoordinateSystem, pyramid: pyramid, rasterStatistics: rasterStatistics, snapRaster: snapRaster, terrainMemoryUsage: terrainMemoryUsage, workspace: workspace);
 			return this;

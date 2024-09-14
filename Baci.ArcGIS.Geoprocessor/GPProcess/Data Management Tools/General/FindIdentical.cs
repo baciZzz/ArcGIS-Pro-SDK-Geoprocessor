@@ -130,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindIdentical SetEnviroment(object XYTolerance = null , object ZTolerance = null , object extent = null , object scratchWorkspace = null , object workspace = null )
+		public FindIdentical SetEnviroment(object XYTolerance = null, object ZTolerance = null, object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(XYTolerance: XYTolerance, ZTolerance: ZTolerance, extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

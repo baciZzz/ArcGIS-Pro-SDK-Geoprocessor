@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DisperseMarkers SetEnviroment(object cartographicCoordinateSystem = null , object referenceScale = null )
+		public DisperseMarkers SetEnviroment(object cartographicCoordinateSystem = null, object referenceScale = null)
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, referenceScale: referenceScale);
 			return this;
