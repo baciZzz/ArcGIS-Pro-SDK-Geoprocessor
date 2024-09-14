@@ -94,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableToGeodatabase SetEnviroment(object? configKeyword = null , object? extent = null , bool? qualifiedFieldNames = null , object? scratchWorkspace = null , object? workspace = null )
+		public TableToGeodatabase SetEnviroment(object? configKeyword = null, object? extent = null, bool? qualifiedFieldNames = null, object? scratchWorkspace = null, object? workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, extent: extent, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

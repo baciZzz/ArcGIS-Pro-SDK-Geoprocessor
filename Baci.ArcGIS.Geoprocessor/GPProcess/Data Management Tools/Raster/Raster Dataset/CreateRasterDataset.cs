@@ -262,7 +262,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateRasterDataset SetEnviroment(object? compression = null , object? configKeyword = null , object? pyramid = null , object? tileSize = null )
+		public CreateRasterDataset SetEnviroment(object? compression = null, object? configKeyword = null, object? pyramid = null, object? tileSize = null)
 		{
 			base.SetEnv(compression: compression, configKeyword: configKeyword, pyramid: pyramid, tileSize: tileSize);
 			return this;

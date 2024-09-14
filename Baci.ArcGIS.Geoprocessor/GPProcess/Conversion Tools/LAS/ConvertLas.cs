@@ -176,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConvertLas SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
+		public ConvertLas SetEnviroment(object? scratchWorkspace = null, object? workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

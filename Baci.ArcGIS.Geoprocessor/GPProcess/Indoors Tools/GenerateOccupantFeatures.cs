@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateOccupantFeatures SetEnviroment(object? outputCoordinateSystem = null , object? workspace = null )
+		public GenerateOccupantFeatures SetEnviroment(object? outputCoordinateSystem = null, object? workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

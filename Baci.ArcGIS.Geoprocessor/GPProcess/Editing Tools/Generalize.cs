@@ -93,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Generalize SetEnviroment(int? autoCommit = null , object? workspace = null )
+		public Generalize SetEnviroment(int? autoCommit = null, object? workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

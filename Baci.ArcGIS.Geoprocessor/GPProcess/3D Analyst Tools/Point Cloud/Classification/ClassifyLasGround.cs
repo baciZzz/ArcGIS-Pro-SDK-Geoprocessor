@@ -179,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyLasGround SetEnviroment(object? extent = null , object? scratchWorkspace = null , object? workspace = null )
+		public ClassifyLasGround SetEnviroment(object? extent = null, object? scratchWorkspace = null, object? workspace = null)
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

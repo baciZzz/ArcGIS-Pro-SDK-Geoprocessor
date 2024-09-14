@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

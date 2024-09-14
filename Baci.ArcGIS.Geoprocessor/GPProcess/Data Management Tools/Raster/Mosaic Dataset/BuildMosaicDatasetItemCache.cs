@@ -192,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildMosaicDatasetItemCache SetEnviroment(object? extent = null , object? parallelProcessingFactor = null )
+		public BuildMosaicDatasetItemCache SetEnviroment(object? extent = null, object? parallelProcessingFactor = null)
 		{
 			base.SetEnv(extent: extent, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

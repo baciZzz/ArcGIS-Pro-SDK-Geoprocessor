@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FillGaps SetEnviroment(object? scratchWorkspace = null )
+		public FillGaps SetEnviroment(object? scratchWorkspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace);
 			return this;

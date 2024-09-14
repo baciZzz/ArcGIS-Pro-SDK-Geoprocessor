@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AggregatePoints SetEnviroment(object? XYResolution = null , object? extent = null , object? outputZFlag = null , double? outputZValue = null )
+		public AggregatePoints SetEnviroment(object? XYResolution = null, object? extent = null, object? outputZFlag = null, double? outputZValue = null)
 		{
 			base.SetEnv(XYResolution: XYResolution, extent: extent, outputZFlag: outputZFlag, outputZValue: outputZValue);
 			return this;

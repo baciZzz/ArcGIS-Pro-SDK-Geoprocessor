@@ -280,7 +280,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TrainPointCloudClassificationModel SetEnviroment(object? processorType = null )
+		public TrainPointCloudClassificationModel SetEnviroment(object? processorType = null)
 		{
 			base.SetEnv(processorType: processorType);
 			return this;

@@ -104,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddTerrainPyramidLevel SetEnviroment(int? autoCommit = null , object? workspace = null )
+		public AddTerrainPyramidLevel SetEnviroment(int? autoCommit = null, object? workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

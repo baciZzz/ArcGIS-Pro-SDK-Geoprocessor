@@ -255,7 +255,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateGeometryAttributes SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
+		public CalculateGeometryAttributes SetEnviroment(object? geographicTransformations = null, object? outputCoordinateSystem = null, object? workspace = null)
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

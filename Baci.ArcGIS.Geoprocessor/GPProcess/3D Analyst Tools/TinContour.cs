@@ -149,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TinContour SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? XYTolerance = null , object? extent = null , object? outputCoordinateSystem = null , object? scratchWorkspace = null , object? workspace = null )
+		public TinContour SetEnviroment(object? XYDomain = null, object? XYResolution = null, object? XYTolerance = null, object? extent = null, object? outputCoordinateSystem = null, object? scratchWorkspace = null, object? workspace = null)
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, extent: extent, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

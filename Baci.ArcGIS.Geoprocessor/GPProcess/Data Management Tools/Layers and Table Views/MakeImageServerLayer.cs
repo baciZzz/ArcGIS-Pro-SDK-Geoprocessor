@@ -182,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeImageServerLayer SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null )
+		public MakeImageServerLayer SetEnviroment(object? extent = null, object? geographicTransformations = null, object? outputCoordinateSystem = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

@@ -167,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateSurveyReportForProfile SetEnviroment(object? baDataSource = null , object? workspace = null )
+		public GenerateSurveyReportForProfile SetEnviroment(object? baDataSource = null, object? workspace = null)
 		{
 			base.SetEnv(baDataSource: baDataSource, workspace: workspace);
 			return this;

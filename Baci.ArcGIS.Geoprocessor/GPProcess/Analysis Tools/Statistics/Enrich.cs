@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Enrich SetEnviroment(object? baDataSource = null , object? workspace = null )
+		public Enrich SetEnviroment(object? baDataSource = null, object? workspace = null)
 		{
 			base.SetEnv(baDataSource: baDataSource, workspace: workspace);
 			return this;

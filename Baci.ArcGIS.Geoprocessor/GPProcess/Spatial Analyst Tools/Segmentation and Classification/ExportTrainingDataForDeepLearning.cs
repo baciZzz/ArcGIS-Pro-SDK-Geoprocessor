@@ -321,7 +321,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportTrainingDataForDeepLearning SetEnviroment(object? cellSize = null , object? extent = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
+		public ExportTrainingDataForDeepLearning SetEnviroment(object? cellSize = null, object? extent = null, object? parallelProcessingFactor = null, object? scratchWorkspace = null, object? workspace = null)
 		{
 			base.SetEnv(cellSize: cellSize, extent: extent, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

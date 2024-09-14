@@ -282,7 +282,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildPyramidsandStatistics SetEnviroment(object? parallelProcessingFactor = null , object? pyramid = null , object? rasterStatistics = null )
+		public BuildPyramidsandStatistics SetEnviroment(object? parallelProcessingFactor = null, object? pyramid = null, object? rasterStatistics = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics);
 			return this;

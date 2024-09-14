@@ -184,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LocalOutlierAnalysis SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? randomGenerator = null , object? scratchWorkspace = null , object? workspace = null )
+		public LocalOutlierAnalysis SetEnviroment(object? geographicTransformations = null, object? outputCoordinateSystem = null, object? parallelProcessingFactor = null, object? randomGenerator = null, object? scratchWorkspace = null, object? workspace = null)
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, randomGenerator: randomGenerator, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

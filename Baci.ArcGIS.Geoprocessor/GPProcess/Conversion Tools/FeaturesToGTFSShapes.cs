@@ -169,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FeaturesToGTFSShapes SetEnviroment(object? randomGenerator = null )
+		public FeaturesToGTFSShapes SetEnviroment(object? randomGenerator = null)
 		{
 			base.SetEnv(randomGenerator: randomGenerator);
 			return this;

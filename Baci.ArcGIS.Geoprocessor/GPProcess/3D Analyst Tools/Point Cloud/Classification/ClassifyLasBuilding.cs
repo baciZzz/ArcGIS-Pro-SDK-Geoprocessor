@@ -275,7 +275,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyLasBuilding SetEnviroment(object? extent = null , object? parallelProcessingFactor = null )
+		public ClassifyLasBuilding SetEnviroment(object? extent = null, object? parallelProcessingFactor = null)
 		{
 			base.SetEnv(extent: extent, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

@@ -258,7 +258,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildBalancedZones SetEnviroment(object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? randomGenerator = null )
+		public BuildBalancedZones SetEnviroment(object? outputCoordinateSystem = null, object? parallelProcessingFactor = null, object? randomGenerator = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, randomGenerator: randomGenerator);
 			return this;

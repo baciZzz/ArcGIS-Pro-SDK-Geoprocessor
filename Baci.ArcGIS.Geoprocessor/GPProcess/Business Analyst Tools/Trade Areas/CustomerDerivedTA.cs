@@ -361,7 +361,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CustomerDerivedTA SetEnviroment(object? baDataSource = null , object? baNetworkSource = null , object? workspace = null )
+		public CustomerDerivedTA SetEnviroment(object? baDataSource = null, object? baNetworkSource = null, object? workspace = null)
 		{
 			base.SetEnv(baDataSource: baDataSource, baNetworkSource: baNetworkSource, workspace: workspace);
 			return this;

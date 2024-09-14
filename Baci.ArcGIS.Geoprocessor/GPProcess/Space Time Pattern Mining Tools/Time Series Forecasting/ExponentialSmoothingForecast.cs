@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExponentialSmoothingForecast SetEnviroment(object? outputCoordinateSystem = null )
+		public ExponentialSmoothingForecast SetEnviroment(object? outputCoordinateSystem = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;

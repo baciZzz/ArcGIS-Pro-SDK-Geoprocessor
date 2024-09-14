@@ -203,7 +203,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SummarizeWithin SetEnviroment(object? extent = null )
+		public SummarizeWithin SetEnviroment(object? extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

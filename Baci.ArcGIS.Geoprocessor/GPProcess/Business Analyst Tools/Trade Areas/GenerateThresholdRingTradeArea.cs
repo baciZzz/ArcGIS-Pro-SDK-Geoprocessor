@@ -171,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateThresholdRingTradeArea SetEnviroment(object? baDataSource = null , object? geographicTransformations = null , object? workspace = null )
+		public GenerateThresholdRingTradeArea SetEnviroment(object? baDataSource = null, object? geographicTransformations = null, object? workspace = null)
 		{
 			base.SetEnv(baDataSource: baDataSource, geographicTransformations: geographicTransformations, workspace: workspace);
 			return this;

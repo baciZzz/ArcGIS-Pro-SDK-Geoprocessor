@@ -172,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ManageMultidimensionalRaster SetEnviroment(object? parallelProcessingFactor = null )
+		public ManageMultidimensionalRaster SetEnviroment(object? parallelProcessingFactor = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

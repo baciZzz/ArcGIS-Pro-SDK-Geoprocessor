@@ -101,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CheckGeometry SetEnviroment(object? configKeyword = null , object? extent = null , object? parallelProcessingFactor = null , object? scratchWorkspace = null , object? workspace = null )
+		public CheckGeometry SetEnviroment(object? configKeyword = null, object? extent = null, object? parallelProcessingFactor = null, object? scratchWorkspace = null, object? workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, extent: extent, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConsolidateMap SetEnviroment(object? extent = null , object? parallelProcessingFactor = null , object? workspace = null )
+		public ConsolidateMap SetEnviroment(object? extent = null, object? parallelProcessingFactor = null, object? workspace = null)
 		{
 			base.SetEnv(extent: extent, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;

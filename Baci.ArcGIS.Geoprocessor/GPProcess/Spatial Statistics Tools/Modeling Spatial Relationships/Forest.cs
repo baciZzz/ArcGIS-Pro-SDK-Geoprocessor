@@ -357,7 +357,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Forest SetEnviroment(object? cellSize = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? randomGenerator = null )
+		public Forest SetEnviroment(object? cellSize = null, object? mask = null, object? outputCoordinateSystem = null, object? parallelProcessingFactor = null, object? randomGenerator = null)
 		{
 			base.SetEnv(cellSize: cellSize, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, randomGenerator: randomGenerator);
 			return this;

@@ -254,7 +254,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateThresholdDriveTimeTradeArea SetEnviroment(object? baDataSource = null , object? baNetworkSource = null , object? geographicTransformations = null , object? workspace = null )
+		public GenerateThresholdDriveTimeTradeArea SetEnviroment(object? baDataSource = null, object? baNetworkSource = null, object? geographicTransformations = null, object? workspace = null)
 		{
 			base.SetEnv(baDataSource: baDataSource, baNetworkSource: baNetworkSource, geographicTransformations: geographicTransformations, workspace: workspace);
 			return this;

@@ -196,7 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public NetCDFProfilesToFeatureClass SetEnviroment(object? extent = null , object? outputCoordinateSystem = null )
+		public NetCDFProfilesToFeatureClass SetEnviroment(object? extent = null, object? outputCoordinateSystem = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

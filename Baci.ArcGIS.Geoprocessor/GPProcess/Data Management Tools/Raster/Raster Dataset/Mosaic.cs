@@ -184,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Mosaic SetEnviroment(object? parallelProcessingFactor = null , object? resamplingMethod = null )
+		public Mosaic SetEnviroment(object? parallelProcessingFactor = null, object? resamplingMethod = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, resamplingMethod: resamplingMethod);
 			return this;

@@ -312,7 +312,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SynchronizeMosaicDataset SetEnviroment(object? parallelProcessingFactor = null , object? rasterStatistics = null )
+		public SynchronizeMosaicDataset SetEnviroment(object? parallelProcessingFactor = null, object? rasterStatistics = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, rasterStatistics: rasterStatistics);
 			return this;

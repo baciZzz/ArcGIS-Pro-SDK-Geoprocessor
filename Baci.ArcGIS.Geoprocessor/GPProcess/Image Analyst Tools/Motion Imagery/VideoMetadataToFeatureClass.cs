@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public VideoMetadataToFeatureClass SetEnviroment(object? outputZFlag = null )
+		public VideoMetadataToFeatureClass SetEnviroment(object? outputZFlag = null)
 		{
 			base.SetEnv(outputZFlag: outputZFlag);
 			return this;

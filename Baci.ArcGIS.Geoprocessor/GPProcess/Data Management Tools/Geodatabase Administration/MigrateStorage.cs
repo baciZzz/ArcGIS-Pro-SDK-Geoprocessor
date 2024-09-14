@@ -96,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MigrateStorage SetEnviroment(object? configKeyword = null , object? workspace = null )
+		public MigrateStorage SetEnviroment(object? configKeyword = null, object? workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, workspace: workspace);
 			return this;

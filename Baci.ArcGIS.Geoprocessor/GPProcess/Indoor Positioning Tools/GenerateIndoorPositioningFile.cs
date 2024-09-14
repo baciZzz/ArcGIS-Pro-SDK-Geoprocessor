@@ -118,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorPositioningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateIndoorPositioningFile SetEnviroment(object? workspace = null )
+		public GenerateIndoorPositioningFile SetEnviroment(object? workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

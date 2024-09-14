@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public OptimalPathAsRaster SetEnviroment(object? pyramid = null )
+		public OptimalPathAsRaster SetEnviroment(object? pyramid = null)
 		{
 			base.SetEnv(pyramid: pyramid);
 			return this;

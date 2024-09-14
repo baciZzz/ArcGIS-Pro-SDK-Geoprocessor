@@ -207,7 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateMosaicDataset SetEnviroment(object? configKeyword = null )
+		public CreateMosaicDataset SetEnviroment(object? configKeyword = null)
 		{
 			base.SetEnv(configKeyword: configKeyword);
 			return this;

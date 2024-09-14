@@ -210,7 +210,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DimensionReduction SetEnviroment(object? outputCoordinateSystem = null , object? randomGenerator = null )
+		public DimensionReduction SetEnviroment(object? outputCoordinateSystem = null, object? randomGenerator = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, randomGenerator: randomGenerator);
 			return this;

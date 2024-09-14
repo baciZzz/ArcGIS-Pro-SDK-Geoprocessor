@@ -172,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public InterpolateFromPointCloud SetEnviroment(object? cellAlignment = null , object? extent = null , object? geographicTransformations = null , object? mask = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? pyramid = null , object? scratchWorkspace = null , object? workspace = null )
+		public InterpolateFromPointCloud SetEnviroment(object? cellAlignment = null, object? extent = null, object? geographicTransformations = null, object? mask = null, object? outputCoordinateSystem = null, object? parallelProcessingFactor = null, object? pyramid = null, object? scratchWorkspace = null, object? workspace = null)
 		{
 			base.SetEnv(cellAlignment: cellAlignment, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

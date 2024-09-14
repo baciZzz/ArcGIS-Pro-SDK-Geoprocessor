@@ -106,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateCentralMeridianAndParallels SetEnviroment(object? workspace = null )
+		public CalculateCentralMeridianAndParallels SetEnviroment(object? workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

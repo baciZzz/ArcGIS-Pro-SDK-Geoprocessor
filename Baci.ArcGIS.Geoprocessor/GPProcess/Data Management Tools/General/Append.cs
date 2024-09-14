@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Append SetEnviroment(object? extent = null , bool? maintainAttachments = null , bool? preserveGlobalIds = null , object? workspace = null )
+		public Append SetEnviroment(object? extent = null, bool? maintainAttachments = null, bool? preserveGlobalIds = null, object? workspace = null)
 		{
 			base.SetEnv(extent: extent, maintainAttachments: maintainAttachments, preserveGlobalIds: preserveGlobalIds, workspace: workspace);
 			return this;

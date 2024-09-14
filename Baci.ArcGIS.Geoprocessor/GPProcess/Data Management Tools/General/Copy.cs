@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Copy SetEnviroment(object? configKeyword = null , bool? maintainAttachments = null , object? scratchWorkspace = null , object? workspace = null )
+		public Copy SetEnviroment(object? configKeyword = null, bool? maintainAttachments = null, object? scratchWorkspace = null, object? workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, maintainAttachments: maintainAttachments, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

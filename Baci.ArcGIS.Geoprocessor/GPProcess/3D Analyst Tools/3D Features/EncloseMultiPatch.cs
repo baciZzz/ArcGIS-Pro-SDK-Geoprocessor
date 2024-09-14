@@ -98,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EncloseMultiPatch SetEnviroment(object? XYDomain = null , object? XYResolution = null , object? ZDomain = null , object? ZResolution = null , int? autoCommit = null , object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
+		public EncloseMultiPatch SetEnviroment(object? XYDomain = null, object? XYResolution = null, object? ZDomain = null, object? ZResolution = null, int? autoCommit = null, object? extent = null, object? geographicTransformations = null, object? outputCoordinateSystem = null, object? workspace = null)
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, ZDomain: ZDomain, ZResolution: ZResolution, autoCommit: autoCommit, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

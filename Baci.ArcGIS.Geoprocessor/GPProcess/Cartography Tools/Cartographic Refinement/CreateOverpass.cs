@@ -188,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateOverpass SetEnviroment(object? cartographicCoordinateSystem = null , double? referenceScale = null )
+		public CreateOverpass SetEnviroment(object? cartographicCoordinateSystem = null, double? referenceScale = null)
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, referenceScale: referenceScale);
 			return this;

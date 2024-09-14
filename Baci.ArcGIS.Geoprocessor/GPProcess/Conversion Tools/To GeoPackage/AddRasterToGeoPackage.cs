@@ -143,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddRasterToGeoPackage SetEnviroment(object? compression = null , object? pyramid = null )
+		public AddRasterToGeoPackage SetEnviroment(object? compression = null, object? pyramid = null)
 		{
 			base.SetEnv(compression: compression, pyramid: pyramid);
 			return this;

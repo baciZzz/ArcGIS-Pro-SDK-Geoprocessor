@@ -140,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GraphicsToFeatures SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null )
+		public GraphicsToFeatures SetEnviroment(object? geographicTransformations = null, object? outputCoordinateSystem = null)
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

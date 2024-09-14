@@ -195,7 +195,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyPointCloudUsingTrainedModel SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? processorType = null )
+		public ClassifyPointCloudUsingTrainedModel SetEnviroment(object? extent = null, object? geographicTransformations = null, object? outputCoordinateSystem = null, object? processorType = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, processorType: processorType);
 			return this;

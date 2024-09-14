@@ -152,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AppendAnnotation SetEnviroment(int? autoCommit = null , object? scratchWorkspace = null , object? workspace = null )
+		public AppendAnnotation SetEnviroment(int? autoCommit = null, object? scratchWorkspace = null, object? workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
