@@ -1,19 +1,19 @@
 # ArcGIS Pro SDK Geoprocessor
 
-#### Introduction
-In the ArcGIS Pro SDK (3.0), it mimics the Geoprocessor and IGPProcess in ArcGIS Engine.
+#### 介绍
+在ArcGIS Pro SDK(3.0)中仿 ArcGIS Engine 中的Geoprocessor、IGPProcess。
 
-You'll better modify the Geoprocessor and IGPProcessExtension to suit your habits.
+你最好把`Geoprocessor` `IGPProcessExtension`修改成你习惯的写法。
 
-## Implementation
-1. Generation of all tools under version 3.0, including obsolete tools (1924).
-2. 'Annotations' of methods, parameters, and enumerations.
-3. Provide the tools to set the environment variables that are 'supported by each'.
-4. Parameter 'optional' feature, default value.
-5. 'Parameter Construction' method for 'Required Parameters'.
-6. Added a corresponding enumeration class for parameters with data type 'string' or 'boolean'.
+## 实现
+1. 3.0版本下的所有工具的生成，包括已过时的工具(1924个).
+2. 方法、参数、枚举的`注释`，翻译（机翻）。
+3. 提供工具`各自支持`的环境变量设置。
+4. 参数`是否可选`特性，默认值。
+5. `必填参数`的`有参构造`方法。
+6. 数据类型为`字符串`或`布尔类型`的参数新增了对应的枚举类。
 
-## Example
+## 示例
 
 ```c#
 using Baci.ArcGIS.ConversionTools;
@@ -32,7 +32,7 @@ SelectLayerByAttribute tool = await new SelectLayerByAttribute(featureLayer)
     SelectionType = SelectLayerByAttribute.SelectionTypeEnum.New_selection. Value()
 }. Run();
 result = tool.GPResult();
-//Derived Parameter Reflow
+//Derived Parameter 回写
 Console.WriteLine(tool.Count);
 
 ```
