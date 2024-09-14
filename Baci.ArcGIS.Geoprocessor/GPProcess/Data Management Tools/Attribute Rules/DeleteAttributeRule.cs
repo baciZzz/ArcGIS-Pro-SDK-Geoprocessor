@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Attribute Rule</para>
+	/// <para>Delete Attribute Rule</para>
 	/// <para>Deletes one or more attribute rules from a dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DeleteAttributeRule SetEnviroment(object workspace = null )
+		public DeleteAttributeRule SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

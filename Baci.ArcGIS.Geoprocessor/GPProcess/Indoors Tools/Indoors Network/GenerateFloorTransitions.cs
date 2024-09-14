@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Generate Floor Transitions</para>
+	/// <para>Generate Floor Transitions</para>
 	/// <para>Creates or updates transition line features that connect floors vertically.</para>
 	/// </summary>
 	public class GenerateFloorTransitions : AbstractGPProcess
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Query Layer</para>
+	/// <para>Make Query Layer</para>
 	/// <para>Creates a query layer  from a DBMS table based on an input SQL select statement.</para>
 	/// </summary>
 	public class MakeQueryLayer : AbstractGPProcess
@@ -209,7 +210,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeQueryLayer SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public MakeQueryLayer SetEnviroment(object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

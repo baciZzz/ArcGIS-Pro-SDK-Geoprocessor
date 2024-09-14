@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Image Server Layer</para>
+	/// <para>Make Image Server Layer</para>
 	/// <para>Creates a temporary raster layer from an image service. The layer that is created will not persist after the session ends unless the document is saved.</para>
 	/// </summary>
 	public class MakeImageServerLayer : AbstractGPProcess
@@ -181,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeImageServerLayer SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null )
+		public MakeImageServerLayer SetEnviroment(object extent = null, object geographicTransformations = null, object outputCoordinateSystem = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

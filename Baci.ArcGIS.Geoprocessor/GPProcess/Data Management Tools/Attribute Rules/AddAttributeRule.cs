@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Attribute Rule</para>
+	/// <para>Add Attribute Rule</para>
 	/// <para>Adds an attribute rule to a dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -242,7 +243,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddAttributeRule SetEnviroment(object workspace = null )
+		public AddAttributeRule SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

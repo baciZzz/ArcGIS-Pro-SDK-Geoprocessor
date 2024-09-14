@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 {
 	/// <summary>
 	/// <para>Dissolve Route Events</para>
+	/// <para>Dissolve Route Events</para>
 	/// <para>Removes redundant information from event tables or separates event tables having more than one descriptive attribute into individual tables.</para>
 	/// </summary>
 	public class DissolveRouteEvents : AbstractGPProcess
@@ -176,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DissolveRouteEvents SetEnviroment(object configKeyword = null , object scratchWorkspace = null , object workspace = null )
+		public DissolveRouteEvents SetEnviroment(object configKeyword = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

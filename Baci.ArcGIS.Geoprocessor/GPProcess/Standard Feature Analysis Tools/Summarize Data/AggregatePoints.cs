@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Aggregate Points</para>
+	/// <para>Aggregate Points</para>
 	/// <para>Uses a layer of point features and a layer of polygon features to determine which points fall within each polygon's area. After determining this point-in-polygon spatial relationship, statistics about all points in the polygon are calculated and assigned to the area.</para>
 	/// </summary>
 	public class AggregatePoints : AbstractGPProcess
@@ -188,7 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AggregatePoints SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public AggregatePoints SetEnviroment(object extent = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

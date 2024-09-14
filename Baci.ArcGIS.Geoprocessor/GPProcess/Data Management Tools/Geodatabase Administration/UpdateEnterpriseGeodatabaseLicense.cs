@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Update Enterprise Geodatabase License</para>
+	/// <para>Update Enterprise Geodatabase License</para>
 	/// <para>Updates the ArcGIS Server license in an enterprise geodatabase.</para>
 	/// </summary>
 	public class UpdateEnterpriseGeodatabaseLicense : AbstractGPProcess
@@ -99,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UpdateEnterpriseGeodatabaseLicense SetEnviroment(object workspace = null )
+		public UpdateEnterpriseGeodatabaseLicense SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

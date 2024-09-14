@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Edgematch Features</para>
+	/// <para>Edgematch Features</para>
 	/// <para>Modifies input line features by spatially adjusting their shapes, guided by the specified edgematch links, so they become connected with the lines in the adjacent dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -134,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EdgematchFeatures SetEnviroment(object extent = null , object workspace = null )
+		public EdgematchFeatures SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

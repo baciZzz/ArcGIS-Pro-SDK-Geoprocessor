@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Create New Jobs</para>
+	/// <para>Create New Jobs</para>
 	/// <para>Creates one or more jobs of the selected job type and assigns the jobs to a user or user group. The created jobs can be prioritized and assigned a polygon or point location of interest (LOI).</para>
 	/// </summary>
 	public class CreateNewJobs : AbstractGPProcess
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

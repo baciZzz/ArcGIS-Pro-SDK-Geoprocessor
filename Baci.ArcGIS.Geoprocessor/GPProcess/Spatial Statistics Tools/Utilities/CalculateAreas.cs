@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Calculate Areas</para>
+	/// <para>Calculate Areas</para>
 	/// <para></para>
 	/// </summary>
 	[Obsolete()]
@@ -59,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

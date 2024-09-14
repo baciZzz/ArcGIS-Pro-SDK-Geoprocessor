@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Refresh Big Data Connection</para>
+	/// <para>Refresh Big Data Connection</para>
 	/// <para>Refreshes an existing big data connection (BDC) and registers any new datasets that have been added to the source location.</para>
 	/// </summary>
 	public class RefreshBDC : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

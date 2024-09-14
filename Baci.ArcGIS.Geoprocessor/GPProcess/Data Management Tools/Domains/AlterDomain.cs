@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Alter Domain</para>
+	/// <para>Alter Domain</para>
 	/// <para>Alters the properties of an existing attribute domain in a workspace.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -139,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AlterDomain SetEnviroment(object workspace = null )
+		public AlterDomain SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

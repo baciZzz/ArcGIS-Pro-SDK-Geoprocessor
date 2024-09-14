@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Footprints</para>
+	/// <para>Build Footprints</para>
 	/// <para>Computes the extent of every raster in a mosaic dataset. This tool is used when you have added or removed raster datasets from a mosaic dataset and want to recompute the footprints.</para>
 	/// </summary>
 	public class BuildFootprints : AbstractGPProcess
@@ -237,7 +238,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildFootprints SetEnviroment(object parallelProcessingFactor = null )
+		public BuildFootprints SetEnviroment(object parallelProcessingFactor = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Versioned View</para>
+	/// <para>Create Versioned View</para>
 	/// <para>Creates a versioned view on a table or feature class.</para>
 	/// </summary>
 	[Obsolete()]
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateVersionedView SetEnviroment(object workspace = null )
+		public CreateVersionedView SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

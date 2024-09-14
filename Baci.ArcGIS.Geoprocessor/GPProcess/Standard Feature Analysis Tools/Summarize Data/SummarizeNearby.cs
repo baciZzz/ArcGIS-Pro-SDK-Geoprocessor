@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Summarize Nearby</para>
+	/// <para>Summarize Nearby</para>
 	/// <para>Finds features that are within a specified distance of features in the input layer.</para>
 	/// </summary>
 	public class SummarizeNearby : AbstractGPProcess
@@ -321,7 +322,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SummarizeNearby SetEnviroment(object extent = null )
+		public SummarizeNearby SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

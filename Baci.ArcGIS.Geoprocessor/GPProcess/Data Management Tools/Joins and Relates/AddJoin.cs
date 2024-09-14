@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Join</para>
+	/// <para>Add Join</para>
 	/// <para>Joins a layer to another layer or table based on a common field. Feature layers, table views, and raster layers with a raster attribute table are supported.</para>
 	/// </summary>
 	public class AddJoin : AbstractGPProcess
@@ -135,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddJoin SetEnviroment(object workspace = null )
+		public AddJoin SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

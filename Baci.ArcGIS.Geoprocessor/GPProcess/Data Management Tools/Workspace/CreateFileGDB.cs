@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create File Geodatabase</para>
+	/// <para>Create File Geodatabase</para>
 	/// <para>Creates a file geodatabase in a folder.</para>
 	/// </summary>
 	public class CreateFileGDB : AbstractGPProcess
@@ -107,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateFileGDB SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public CreateFileGDB SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Analyze Market Area Gap</para>
+	/// <para>Analyze Market Area Gap</para>
 	/// <para>Generates a layer that displays the gap between total customers and expected customers.</para>
 	/// </summary>
 	public class AnalyzeMarketAreaGap : AbstractGPProcess
@@ -229,7 +230,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AnalyzeMarketAreaGap SetEnviroment(object extent = null , object workspace = null )
+		public AnalyzeMarketAreaGap SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

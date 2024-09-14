@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Export Trace Configurations</para>
+	/// <para>Export Trace Configurations</para>
 	/// <para>Exports named trace configurations from a utility network to JSON format (.json file).</para>
 	/// </summary>
 	public class ExportTraceConfigurations : AbstractGPProcess
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

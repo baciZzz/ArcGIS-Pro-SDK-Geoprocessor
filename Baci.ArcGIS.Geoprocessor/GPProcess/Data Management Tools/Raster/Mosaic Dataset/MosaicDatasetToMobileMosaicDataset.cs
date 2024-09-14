@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Mosaic Dataset To Mobile Mosaic Dataset</para>
+	/// <para>Mosaic Dataset To Mobile Mosaic Dataset</para>
 	/// <para>Converts a mosaic dataset into a mobile mosaic dataset compatible with ArcGIS Runtime SDK. A mobile mosaic dataset resides in a mobile geodatabase.</para>
 	/// </summary>
 	public class MosaicDatasetToMobileMosaicDataset : AbstractGPProcess
@@ -198,7 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MosaicDatasetToMobileMosaicDataset SetEnviroment(object extent = null )
+		public MosaicDatasetToMobileMosaicDataset SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

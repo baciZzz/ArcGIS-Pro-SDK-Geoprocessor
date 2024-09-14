@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Iterate Feature Selection</para>
+	/// <para>Iterate Feature Selection</para>
 	/// <para>Iterates over features in a feature class.</para>
 	/// </summary>
 	public class IterateFeatureSelection : AbstractGPProcess
@@ -107,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public IterateFeatureSelection SetEnviroment(object workspace = null )
+		public IterateFeatureSelection SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

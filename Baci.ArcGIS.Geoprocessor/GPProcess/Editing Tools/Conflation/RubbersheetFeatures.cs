@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Rubbersheet Features</para>
+	/// <para>Rubbersheet Features</para>
 	/// <para>Modifies input features by spatially adjusting them through rubbersheeting, using the specified rubbersheet links, so they are better aligned with the intended target features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -121,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RubbersheetFeatures SetEnviroment(object extent = null , object workspace = null )
+		public RubbersheetFeatures SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

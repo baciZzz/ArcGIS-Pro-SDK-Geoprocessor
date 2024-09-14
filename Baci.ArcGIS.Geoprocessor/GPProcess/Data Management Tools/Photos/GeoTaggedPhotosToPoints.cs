@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>GeoTagged Photos To Points</para>
+	/// <para>GeoTagged Photos To Points</para>
 	/// <para>Creates points from the x-, y-, and z-coordinates stored in geotagged photos. Optionally adds photo files to features in the output feature class as geodatabase attachments.</para>
 	/// </summary>
 	public class GeoTaggedPhotosToPoints : AbstractGPProcess
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeoTaggedPhotosToPoints SetEnviroment(object outputZFlag = null , object scratchWorkspace = null , object workspace = null )
+		public GeoTaggedPhotosToPoints SetEnviroment(object outputZFlag = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(outputZFlag: outputZFlag, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

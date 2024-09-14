@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Generate Range Fans From Features</para>
+	/// <para>Generate Range Fans From Features</para>
 	/// <para>Creates range fans with attributes derived from fields in a point feature class or shapefile.</para>
 	/// </summary>
 	public class GenerateRangeFansFromFeatures : AbstractGPProcess
@@ -181,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateRangeFansFromFeatures SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateRangeFansFromFeatures SetEnviroment(object outputCoordinateSystem = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

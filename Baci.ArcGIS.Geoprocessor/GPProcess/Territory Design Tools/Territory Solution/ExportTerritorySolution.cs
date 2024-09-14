@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Export Territory Solution</para>
+	/// <para>Export Territory Solution</para>
 	/// <para>Exports a territory solution to a feature class. The export includes records from all levels (hierarchy) of the solution.</para>
 	/// </summary>
 	public class ExportTerritorySolution : AbstractGPProcess
@@ -98,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportTerritorySolution SetEnviroment(object workspace = null )
+		public ExportTerritorySolution SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

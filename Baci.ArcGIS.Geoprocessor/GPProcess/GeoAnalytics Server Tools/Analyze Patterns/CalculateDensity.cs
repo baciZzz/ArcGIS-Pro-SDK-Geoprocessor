@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Calculate Density</para>
+	/// <para>Calculate Density</para>
 	/// <para>Calculates a magnitude-per-unit area from point features that fall within a neighborhood around each cell.</para>
 	/// </summary>
 	public class CalculateDensity : AbstractGPProcess
@@ -238,7 +239,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateDensity SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public CalculateDensity SetEnviroment(object extent = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Set Raster Properties</para>
+	/// <para>Set Raster Properties</para>
 	/// <para>Sets the data type, statistics, and NoData values on a raster or mosaic dataset.</para>
 	/// </summary>
 	public class SetRasterProperties : AbstractGPProcess
@@ -177,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetRasterProperties SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public SetRasterProperties SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

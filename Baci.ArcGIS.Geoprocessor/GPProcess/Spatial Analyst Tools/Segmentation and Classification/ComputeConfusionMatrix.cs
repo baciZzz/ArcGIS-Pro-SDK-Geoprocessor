@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Compute Confusion Matrix</para>
+	/// <para>Compute Confusion Matrix</para>
 	/// <para>Computes a confusion matrix with errors of omission and commission and derives a kappa index of agreement and an overall accuracy between the classified map and the reference data.</para>
 	/// </summary>
 	public class ComputeConfusionMatrix : AbstractGPProcess
@@ -61,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

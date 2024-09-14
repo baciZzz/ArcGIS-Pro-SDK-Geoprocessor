@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 {
 	/// <summary>
 	/// <para>Locate Features Along Routes</para>
+	/// <para>Locate Features Along Routes</para>
 	/// <para>Computes the intersection of input features (point, line, or polygon) and route features and writes the route and measure information to a new event table.</para>
 	/// </summary>
 	public class LocateFeaturesAlongRoutes : AbstractGPProcess
@@ -216,7 +217,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LocateFeaturesAlongRoutes SetEnviroment(object configKeyword = null , object extent = null , object scratchWorkspace = null , object workspace = null )
+		public LocateFeaturesAlongRoutes SetEnviroment(object configKeyword = null, object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Fill Gaps</para>
+	/// <para>Fill Gaps</para>
 	/// <para>Fills gaps between polygon features that participate in a topology where the coincident boundaries are evident.</para>
 	/// </summary>
 	public class FillGaps : AbstractGPProcess
@@ -128,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FillGaps SetEnviroment(object scratchWorkspace = null )
+		public FillGaps SetEnviroment(object scratchWorkspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace);
 			return this;

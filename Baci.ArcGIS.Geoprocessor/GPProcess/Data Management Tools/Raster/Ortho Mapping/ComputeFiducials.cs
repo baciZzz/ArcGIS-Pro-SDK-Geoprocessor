@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compute Fiducials</para>
+	/// <para>Compute Fiducials</para>
 	/// <para>Computes the fiducial coordinates in image and film space for each image in a mosaic dataset.</para>
 	/// </summary>
 	public class ComputeFiducials : AbstractGPProcess
@@ -117,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ComputeFiducials SetEnviroment(object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public ComputeFiducials SetEnviroment(object parallelProcessingFactor = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

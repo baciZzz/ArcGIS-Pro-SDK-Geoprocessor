@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Reduce Edge By Attribute Rule</para>
+	/// <para>Add Reduce Edge By Attribute Rule</para>
 	/// <para>Adds a diagram rule to automatically reduce diagram edges during diagram building  based on an existing template.</para>
 	/// <para>This rule can be set up to reduce diagram edges by attributes.</para>
 	/// </summary>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

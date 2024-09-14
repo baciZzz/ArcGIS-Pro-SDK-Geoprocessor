@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Domain</para>
+	/// <para>Create Domain</para>
 	/// <para>Creates an attribute domain in the specified workspace.</para>
 	/// </summary>
 	public class CreateDomain : AbstractGPProcess
@@ -157,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateDomain SetEnviroment(int? autoCommit = null , object workspace = null )
+		public CreateDomain SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

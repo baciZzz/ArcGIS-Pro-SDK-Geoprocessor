@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Select Layer By Attribute</para>
+	/// <para>Select Layer By Attribute</para>
 	/// <para>Adds, updates, or removes a selection based on an attribute query.</para>
 	/// </summary>
 	public class SelectLayerByAttribute : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

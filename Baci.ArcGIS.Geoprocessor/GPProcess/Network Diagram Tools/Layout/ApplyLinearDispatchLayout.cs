@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Apply Linear Dispatch Layout</para>
+	/// <para>Apply Linear Dispatch Layout</para>
 	/// <para>Adds space between diagram junctions that are visually too close, overlapping, or coincident.</para>
 	/// </summary>
 	public class ApplyLinearDispatchLayout : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

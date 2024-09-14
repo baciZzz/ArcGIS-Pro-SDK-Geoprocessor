@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compress</para>
+	/// <para>Compress</para>
 	/// <para>Compresses an enterprise geodatabase by removing states not referenced by a version and redundant rows.</para>
 	/// </summary>
 	public class Compress : AbstractGPProcess
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Compress SetEnviroment(object workspace = null )
+		public Compress SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

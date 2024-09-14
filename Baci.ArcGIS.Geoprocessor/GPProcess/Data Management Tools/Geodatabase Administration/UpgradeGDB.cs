@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Upgrade Geodatabase</para>
+	/// <para>Upgrade Geodatabase</para>
 	/// <para>Upgrades a geodatabase to the latest ArcGIS release to take advantage of new functionality.</para>
 	/// </summary>
 	public class UpgradeGDB : AbstractGPProcess
@@ -122,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UpgradeGDB SetEnviroment(object workspace = null )
+		public UpgradeGDB SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

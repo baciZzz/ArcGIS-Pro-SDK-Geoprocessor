@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Raster to NetCDF</para>
+	/// <para>Raster to NetCDF</para>
 	/// <para>Converts a raster dataset to a netCDF file.</para>
 	/// </summary>
 	public class RasterToNetCDF : AbstractGPProcess
@@ -150,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RasterToNetCDF SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public RasterToNetCDF SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

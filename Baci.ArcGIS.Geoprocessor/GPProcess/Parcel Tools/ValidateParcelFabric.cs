@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Validate Parcel Fabric</para>
+	/// <para>Validate Parcel Fabric</para>
 	/// <para>Validates a parcel fabric against a predefined set of geodatabase topology rules, and any additional topology rules you have added for your organization.</para>
 	/// </summary>
 	public class ValidateParcelFabric : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

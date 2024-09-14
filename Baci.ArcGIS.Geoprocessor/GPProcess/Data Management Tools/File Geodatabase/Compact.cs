@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compact</para>
+	/// <para>Compact</para>
 	/// <para>Compacts a file geodatabase. Compacting rearranges how the geodatabase is stored on disk, often reducing its size and improving performance.</para>
 	/// </summary>
 	public class Compact : AbstractGPProcess
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Compact SetEnviroment(object configKeyword = null , object scratchWorkspace = null , object workspace = null )
+		public Compact SetEnviroment(object configKeyword = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

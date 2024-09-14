@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Batch Calculate Statistics</para>
+	/// <para>Batch Calculate Statistics</para>
 	/// <para>Calculates statistics for  multiple raster datasets.</para>
 	/// </summary>
 	public class BatchCalculateStatistics : AbstractGPProcess
@@ -123,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BatchCalculateStatistics SetEnviroment(object rasterStatistics = null , object scratchWorkspace = null , object workspace = null )
+		public BatchCalculateStatistics SetEnviroment(object rasterStatistics = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(rasterStatistics: rasterStatistics, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

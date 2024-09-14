@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Validate Network Topology</para>
+	/// <para>Validate Network Topology</para>
 	/// <para>Validates the network topology of a utility network after there have been edits to features in the network.</para>
 	/// </summary>
 	public class ValidateNetworkTopology : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

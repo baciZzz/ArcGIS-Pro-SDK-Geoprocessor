@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Compute Segment Attributes</para>
+	/// <para>Compute Segment Attributes</para>
 	/// <para>Computes a set of attributes associated with the segmented image. The input raster can be a single-band or 3-band, 8-bit segmented image.</para>
 	/// </summary>
 	public class ComputeSegmentAttributes : AbstractGPProcess
@@ -113,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ComputeSegmentAttributes SetEnviroment(object compression = null , object extent = null , object geographicTransformations = null , object nodata = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object pyramid = null , object scratchWorkspace = null , object snapRaster = null , double[] tileSize = null , object workspace = null )
+		public ComputeSegmentAttributes SetEnviroment(object compression = null, object extent = null, object geographicTransformations = null, object nodata = null, object outputCoordinateSystem = null, object parallelProcessingFactor = null, object pyramid = null, object scratchWorkspace = null, object snapRaster = null, double[] tileSize = null, object workspace = null)
 		{
 			base.SetEnv(compression: compression, extent: extent, geographicTransformations: geographicTransformations, nodata: nodata, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, tileSize: tileSize, workspace: workspace);
 			return this;

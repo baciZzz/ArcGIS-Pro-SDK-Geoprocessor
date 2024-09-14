@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Analyze</para>
+	/// <para>Analyze</para>
 	/// <para>Updates database statistics of business tables, feature tables, and delta tables, along with the statistics of those tables' indexes.</para>
 	/// </summary>
 	public class Analyze : AbstractGPProcess
@@ -106,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Analyze SetEnviroment(object workspace = null )
+		public Analyze SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

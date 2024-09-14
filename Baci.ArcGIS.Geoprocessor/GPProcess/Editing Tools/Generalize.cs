@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Generalize</para>
+	/// <para>Generalize</para>
 	/// <para>Simplifies the input features using a specified maximum offset tolerance. The output features will contain a subset of the original input vertices.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Generalize SetEnviroment(int? autoCommit = null , object workspace = null )
+		public Generalize SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

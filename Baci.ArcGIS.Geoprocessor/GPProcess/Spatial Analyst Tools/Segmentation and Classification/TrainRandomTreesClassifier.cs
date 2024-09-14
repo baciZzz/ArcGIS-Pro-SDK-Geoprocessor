@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Train Random Trees Classifier</para>
+	/// <para>Train Random Trees Classifier</para>
 	/// <para>Generates an Esri classifier definition file (.ecd) using the Random Trees classification method.</para>
 	/// </summary>
 	public class TrainRandomTreesClassifier : AbstractGPProcess
@@ -170,7 +171,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TrainRandomTreesClassifier SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , object workspace = null )
+		public TrainRandomTreesClassifier SetEnviroment(object extent = null, object geographicTransformations = null, object outputCoordinateSystem = null, object scratchWorkspace = null, object snapRaster = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, workspace: workspace);
 			return this;

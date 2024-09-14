@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>If Feature Type Is</para>
+	/// <para>If Feature Type Is</para>
 	/// <para>Evaluates if a feature class is of the specified feature type.</para>
 	/// </summary>
 	public class FeatureTypeIfThenElse : AbstractGPProcess
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

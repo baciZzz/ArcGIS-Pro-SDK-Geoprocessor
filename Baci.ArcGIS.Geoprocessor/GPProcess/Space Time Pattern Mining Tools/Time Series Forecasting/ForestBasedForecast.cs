@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Forest-based Forecast</para>
+	/// <para>Forest-based Forecast</para>
 	/// <para>Forecasts the values of each location of a space-time cube using an adaptation of Leo Breiman's random forest algorithm. The forest regression model is trained using time windows on each location of the space-time cube.</para>
 	/// </summary>
 	public class ForestBasedForecast : AbstractGPProcess
@@ -224,7 +225,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ForestBasedForecast SetEnviroment(object outputCoordinateSystem = null , object parallelProcessingFactor = null , object randomGenerator = null )
+		public ForestBasedForecast SetEnviroment(object outputCoordinateSystem = null, object parallelProcessingFactor = null, object randomGenerator = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, randomGenerator: randomGenerator);
 			return this;

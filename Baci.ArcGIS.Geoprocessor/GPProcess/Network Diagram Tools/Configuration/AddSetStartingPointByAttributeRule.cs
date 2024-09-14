@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Set Starting Point By Attribute Rule</para>
+	/// <para>Add Set Starting Point By Attribute Rule</para>
 	/// <para>Adds a diagram rule to a diagram template to set diagram features currently represented in the diagram as starting points for tracing rules. The diagram features are queried from a given network source class or object table and can be filtered by their attributes.</para>
 	/// </summary>
 	public class AddSetStartingPointByAttributeRule : AbstractGPProcess
@@ -73,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

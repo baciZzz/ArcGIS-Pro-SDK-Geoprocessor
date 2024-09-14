@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Append Events</para>
+	/// <para>Append Events</para>
 	/// <para>Appends event records from a table, layer, or feature class to an existing ArcGIS Location Referencing event feature class.</para>
 	/// </summary>
 	public class AppendEvents : AbstractGPProcess
@@ -155,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AppendEvents SetEnviroment(object workspace = null )
+		public AppendEvents SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

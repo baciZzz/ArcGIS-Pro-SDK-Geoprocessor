@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Set Control Point At Intersect</para>
+	/// <para>Set Control Point At Intersect</para>
 	/// <para>Creates a control point at vertices that are shared by one or more line or polygon features. This tool is commonly used to synchronize boundary symbology on adjacent polygons.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetControlPointAtIntersect SetEnviroment(object cartographicPartitions = null )
+		public SetControlPointAtIntersect SetEnviroment(object cartographicPartitions = null)
 		{
 			base.SetEnv(cartographicPartitions: cartographicPartitions);
 			return this;

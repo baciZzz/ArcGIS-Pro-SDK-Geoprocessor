@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Replicate Job Data</para>
+	/// <para>Replicate Job Data</para>
 	/// <para>Replicates the ArcGIS Workflow Manager (Classic) configuration from a parent repository to child repositories using ArcGIS Workflow Manager (Classic) Server. Each child repository  becomes an identical copy (replica) of the parent repository.</para>
 	/// </summary>
 	public class CreateJobDataReplica : AbstractGPProcess
@@ -67,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

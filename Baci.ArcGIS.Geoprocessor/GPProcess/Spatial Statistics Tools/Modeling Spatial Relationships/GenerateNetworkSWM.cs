@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Generate Network Spatial Weights</para>
+	/// <para>Generate Network Spatial Weights</para>
 	/// <para>Constructs a spatial weights matrix file (.swm) using a network dataset, defining spatial relationships in terms of the underlying network structure.</para>
 	/// </summary>
 	public class GenerateNetworkSWM : AbstractGPProcess
@@ -262,7 +263,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateNetworkSWM SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateNetworkSWM SetEnviroment(object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

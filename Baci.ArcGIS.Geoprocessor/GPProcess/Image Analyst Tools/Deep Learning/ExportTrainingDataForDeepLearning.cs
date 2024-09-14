@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Export Training Data For Deep Learning</para>
+	/// <para>Export Training Data For Deep Learning</para>
 	/// <para>Converts labeled vector or raster data into deep learning training datasets using a remote sensing image. The output will be a folder of image chips and a folder of metadata files in the specified format.</para>
 	/// </summary>
 	public class ExportTrainingDataForDeepLearning : AbstractGPProcess
@@ -286,7 +287,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportTrainingDataForDeepLearning SetEnviroment(object cellSize = null , object extent = null , object scratchWorkspace = null , object workspace = null )
+		public ExportTrainingDataForDeepLearning SetEnviroment(object cellSize = null, object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(cellSize: cellSize, extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

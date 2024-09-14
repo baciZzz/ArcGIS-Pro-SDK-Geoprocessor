@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Import AIXM 5.1 Message</para>
+	/// <para>Import AIXM 5.1 Message</para>
 	/// <para>Imports Aeronautical Information Exchange Model (AIXM) version 5.1 data into an aviation geodatabase.</para>
 	/// </summary>
 	public class ImportAIXM51Message : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

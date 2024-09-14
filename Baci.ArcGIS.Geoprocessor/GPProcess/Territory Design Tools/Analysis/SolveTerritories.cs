@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Solve Territories</para>
+	/// <para>Solve Territories</para>
 	/// <para>Creates and balances territories on the specified territory level provided that the balancing variables are set.</para>
 	/// </summary>
 	public class SolveTerritories : AbstractGPProcess
@@ -136,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SolveTerritories SetEnviroment(object workspace = null )
+		public SolveTerritories SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Density-based Clustering</para>
+	/// <para>Density-based Clustering</para>
 	/// <para>Finds clusters of point features within surrounding noise based on their spatial distribution. Time can also be incorporated to find space-time clusters.</para>
 	/// </summary>
 	public class DensityBasedClustering : AbstractGPProcess
@@ -174,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DensityBasedClustering SetEnviroment(object outputCoordinateSystem = null , object outputZFlag = null , object parallelProcessingFactor = null )
+		public DensityBasedClustering SetEnviroment(object outputCoordinateSystem = null, object outputZFlag = null, object parallelProcessingFactor = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, outputZFlag: outputZFlag, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

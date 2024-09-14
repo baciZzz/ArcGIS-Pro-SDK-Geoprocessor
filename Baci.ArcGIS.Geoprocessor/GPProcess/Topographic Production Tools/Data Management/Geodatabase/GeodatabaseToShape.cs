@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Geodatabase To Shape</para>
+	/// <para>Geodatabase To Shape</para>
 	/// <para>Exports one or more feature classes in a geodatabase to shapefiles using one of three modes: defense, generic, and Multinational Geospatial Co-Production Program</para>
 	/// <para>(MGCP).</para>
 	/// </summary>
@@ -162,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeodatabaseToShape SetEnviroment(object extent = null , object workspace = null )
+		public GeodatabaseToShape SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

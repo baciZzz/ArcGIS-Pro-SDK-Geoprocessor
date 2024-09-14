@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Update Analysis Layer Attribute Parameter</para>
+	/// <para>Update Analysis Layer Attribute Parameter</para>
 	/// <para>Updates the network attribute parameter value for a network analysis layer. The tool should be used to update the value of an attribute parameter for a network analysis layer prior to solving with the Solve tool.  This ensures that the  solve operation uses the specified value of the attribute parameter to produce appropriate results.</para>
 	/// </summary>
 	[Obsolete()]
@@ -127,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UpdateAnalysisLayerAttributeParameter SetEnviroment(object workspace = null )
+		public UpdateAnalysisLayerAttributeParameter SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

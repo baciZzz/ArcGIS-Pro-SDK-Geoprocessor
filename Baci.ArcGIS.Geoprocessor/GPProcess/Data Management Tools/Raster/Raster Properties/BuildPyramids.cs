@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Pyramids</para>
+	/// <para>Build Pyramids</para>
 	/// <para>Builds raster pyramids for your raster dataset.</para>
 	/// </summary>
 	public class BuildPyramids : AbstractGPProcess
@@ -152,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildPyramids SetEnviroment(object parallelProcessingFactor = null , object pyramid = null , object scratchWorkspace = null , object workspace = null )
+		public BuildPyramids SetEnviroment(object parallelProcessingFactor = null, object pyramid = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Analyze Market Potential</para>
+	/// <para>Analyze Market Potential</para>
 	/// <para>Generates a layer that displays expected customers by a selected geography level.</para>
 	/// </summary>
 	public class AnalyzeMarketPotential : AbstractGPProcess
@@ -172,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AnalyzeMarketPotential SetEnviroment(object extent = null , object workspace = null )
+		public AnalyzeMarketPotential SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

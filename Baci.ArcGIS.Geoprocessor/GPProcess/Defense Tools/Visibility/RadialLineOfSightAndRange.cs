@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Radial Line Of Sight And Range</para>
+	/// <para>Radial Line Of Sight And Range</para>
 	/// <para>Shows  areas visible to one or more observer locations given a specified distance and viewing angle.</para>
 	/// </summary>
 	public class RadialLineOfSightAndRange : AbstractGPProcess
@@ -173,7 +174,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RadialLineOfSightAndRange SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public RadialLineOfSightAndRange SetEnviroment(object outputCoordinateSystem = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

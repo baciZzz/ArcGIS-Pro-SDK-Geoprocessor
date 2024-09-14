@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Create Spatially Balanced Points</para>
+	/// <para>Create Spatially Balanced Points</para>
 	/// <para>Generates a set of sample points based on inclusion probabilities, resulting in a spatially balanced sample design. This tool is generally used for designing a monitoring network by suggesting locations to take samples, and a preference for particular locations can be defined using an inclusion probability raster.</para>
 	/// </summary>
 	public class CreateSpatiallyBalancedPoints : AbstractGPProcess
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateSpatiallyBalancedPoints SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object randomGenerator = null , object scratchWorkspace = null , object workspace = null )
+		public CreateSpatiallyBalancedPoints SetEnviroment(object extent = null, object geographicTransformations = null, object outputCoordinateSystem = null, object randomGenerator = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, randomGenerator: randomGenerator, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

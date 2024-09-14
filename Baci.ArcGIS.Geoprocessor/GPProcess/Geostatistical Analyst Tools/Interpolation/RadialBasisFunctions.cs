@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Radial Basis Functions</para>
+	/// <para>Radial Basis Functions</para>
 	/// <para>Uses one of five basis functions to interpolate a surfaces that passes through the input points exactly.</para>
 	/// </summary>
 	public class RadialBasisFunctions : AbstractGPProcess
@@ -175,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RadialBasisFunctions SetEnviroment(object cellSize = null , object coincidentPoints = null , object extent = null , object geographicTransformations = null , object mask = null , object outputCoordinateSystem = null , object snapRaster = null , object workspace = null )
+		public RadialBasisFunctions SetEnviroment(object cellSize = null, object coincidentPoints = null, object extent = null, object geographicTransformations = null, object mask = null, object outputCoordinateSystem = null, object snapRaster = null, object workspace = null)
 		{
 			base.SetEnv(cellSize: cellSize, coincidentPoints: coincidentPoints, extent: extent, geographicTransformations: geographicTransformations, mask: mask, outputCoordinateSystem: outputCoordinateSystem, snapRaster: snapRaster, workspace: workspace);
 			return this;

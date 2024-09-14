@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Remove Parcel Type</para>
+	/// <para>Remove Parcel Type</para>
 	/// <para>Removes  a parcel type from a parcel fabric.</para>
 	/// </summary>
 	public class RemoveParcelType : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

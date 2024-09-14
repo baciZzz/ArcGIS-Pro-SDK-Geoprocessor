@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>If Data Type Is</para>
+	/// <para>If Data Type Is</para>
 	/// <para>Evaluates whether the input data matches the specified data type.</para>
 	/// </summary>
 	public class DataTypeIfThenElse : AbstractGPProcess
@@ -218,7 +219,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

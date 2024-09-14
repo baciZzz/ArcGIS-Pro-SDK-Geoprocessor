@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Disable Network Topology</para>
+	/// <para>Disable Network Topology</para>
 	/// <para>Disables the network topology for an existing utility network.</para>
 	/// </summary>
 	public class DisableNetworkTopology : AbstractGPProcess
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DisableNetworkTopology SetEnviroment(object workspace = null )
+		public DisableNetworkTopology SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

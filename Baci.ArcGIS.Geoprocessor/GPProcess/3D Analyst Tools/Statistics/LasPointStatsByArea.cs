@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>LAS Point Statistics By Area</para>
+	/// <para>LAS Point Statistics By Area</para>
 	/// <para>Evaluates the statistics of LAS points that overlay the area defined by polygon features.</para>
 	/// </summary>
 	public class LasPointStatsByArea : AbstractGPProcess
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LasPointStatsByArea SetEnviroment(object workspace = null )
+		public LasPointStatsByArea SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

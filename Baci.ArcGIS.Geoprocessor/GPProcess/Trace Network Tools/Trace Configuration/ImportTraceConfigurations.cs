@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 {
 	/// <summary>
 	/// <para>Import Trace Configurations</para>
+	/// <para>Import Trace Configurations</para>
 	/// <para>Imports named trace configurations from JSON format (.json file) to a trace network.</para>
 	/// </summary>
 	public class ImportTraceConfigurations : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

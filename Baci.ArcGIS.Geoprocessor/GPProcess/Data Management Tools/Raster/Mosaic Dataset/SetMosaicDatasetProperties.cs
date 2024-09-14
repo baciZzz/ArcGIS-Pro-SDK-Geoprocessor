@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Set Mosaic Dataset Properties</para>
+	/// <para>Set Mosaic Dataset Properties</para>
 	/// <para>Defines the defaults for displaying a mosaic dataset and serving it as an image service.</para>
 	/// </summary>
 	public class SetMosaicDatasetProperties : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

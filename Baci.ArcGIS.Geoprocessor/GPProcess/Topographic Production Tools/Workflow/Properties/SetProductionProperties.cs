@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Set Production Properties</para>
+	/// <para>Set Production Properties</para>
 	/// <para>Updates the production properties extended properties table of a Workflow Manager (Classic) job based on its production type to ensure that the job and any associated tasks use the correct data and maps.</para>
 	/// </summary>
 	public class SetProductionProperties : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

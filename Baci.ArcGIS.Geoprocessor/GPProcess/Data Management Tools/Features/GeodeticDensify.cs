@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Geodetic Densify</para>
+	/// <para>Geodetic Densify</para>
 	/// <para>Creates new features by replacing input feature's segments with densified approximations of geodesic segments. Four type of geodesic segments can be constructed: Geodesic, Great Elliptic, Loxodrome, and Normal Section.</para>
 	/// </summary>
 	public class GeodeticDensify : AbstractGPProcess
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeodeticDensify SetEnviroment(object extent = null , object outputCoordinateSystem = null , object outputMFlag = null , object outputZFlag = null , object outputZValue = null )
+		public GeodeticDensify SetEnviroment(object extent = null, object outputCoordinateSystem = null, object outputMFlag = null, object outputZFlag = null, object outputZValue = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, outputMFlag: outputMFlag, outputZFlag: outputZFlag, outputZValue: outputZValue);
 			return this;

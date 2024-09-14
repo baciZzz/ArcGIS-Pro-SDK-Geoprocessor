@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make LAS Dataset Layer</para>
+	/// <para>Make LAS Dataset Layer</para>
 	/// <para>Creates a  LAS dataset layer that can apply  filters to LAS points and control the enforcement of surface constraint features.</para>
 	/// </summary>
 	public class MakeLasDatasetLayer : AbstractGPProcess
@@ -212,7 +213,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeLasDatasetLayer SetEnviroment(object workspace = null )
+		public MakeLasDatasetLayer SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

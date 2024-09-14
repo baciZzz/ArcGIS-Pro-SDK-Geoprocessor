@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Analyze Runway Obstacles</para>
+	/// <para>Analyze Runway Obstacles</para>
 	/// <para>Analyzes obstacle data and obstruction identification surfaces (OIS) to determine if obstacles are penetrating.</para>
 	/// </summary>
 	public class AnalyzeRunwayObstacles : AbstractGPProcess
@@ -187,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AnalyzeRunwayObstacles SetEnviroment(object workspace = null )
+		public AnalyzeRunwayObstacles SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

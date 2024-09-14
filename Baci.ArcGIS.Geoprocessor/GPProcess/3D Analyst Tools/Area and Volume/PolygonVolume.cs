@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Polygon Volume</para>
+	/// <para>Polygon Volume</para>
 	/// <para>Calculates the volume and surface area between a polygon of a constant height and a surface.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -146,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PolygonVolume SetEnviroment(object extent = null , object geographicTransformations = null , object terrainMemoryUsage = null , object workspace = null )
+		public PolygonVolume SetEnviroment(object extent = null, object geographicTransformations = null, object terrainMemoryUsage = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, terrainMemoryUsage: terrainMemoryUsage, workspace: workspace);
 			return this;

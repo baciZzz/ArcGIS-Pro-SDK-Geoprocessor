@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Polygon To Centerline</para>
+	/// <para>Polygon To Centerline</para>
 	/// <para>Creates centerlines from polygon features. This tool is useful for creating centerlines from hydrographic polygons for use at smaller scales.</para>
 	/// </summary>
 	public class PolygonToCenterline : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

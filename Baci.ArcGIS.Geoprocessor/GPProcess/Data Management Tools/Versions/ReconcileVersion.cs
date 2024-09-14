@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Reconcile Version</para>
+	/// <para>Reconcile Version</para>
 	/// <para>Reconciles a version against another version in its lineage.</para>
 	/// </summary>
 	[Obsolete()]
@@ -171,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ReconcileVersion SetEnviroment(object configKeyword = null , object scratchWorkspace = null , object workspace = null )
+		public ReconcileVersion SetEnviroment(object configKeyword = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

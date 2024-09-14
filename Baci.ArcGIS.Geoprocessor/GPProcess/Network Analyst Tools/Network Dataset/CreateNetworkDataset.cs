@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Create Network Dataset</para>
+	/// <para>Create Network Dataset</para>
 	/// <para>Creates a network dataset in an existing feature dataset. The network dataset can be used to perform network analysis on the data in the feature dataset.</para>
 	/// </summary>
 	public class CreateNetworkDataset : AbstractGPProcess
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

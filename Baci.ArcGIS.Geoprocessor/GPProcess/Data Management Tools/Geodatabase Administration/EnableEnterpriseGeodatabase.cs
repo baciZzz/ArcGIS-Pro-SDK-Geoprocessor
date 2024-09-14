@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Enable Enterprise Geodatabase</para>
+	/// <para>Enable Enterprise Geodatabase</para>
 	/// <para>Creates geodatabase system tables, stored procedures, functions, and types in an existing database, thereby enabling geodatabase functionality in the database.</para>
 	/// </summary>
 	public class EnableEnterpriseGeodatabase : AbstractGPProcess
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EnableEnterpriseGeodatabase SetEnviroment(object workspace = null )
+		public EnableEnterpriseGeodatabase SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

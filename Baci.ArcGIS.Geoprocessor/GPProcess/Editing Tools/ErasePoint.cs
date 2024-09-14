@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Erase Point</para>
+	/// <para>Erase Point</para>
 	/// <para>Deletes points from the input that are either inside or outside the Remove Features, depending on the Operation Type.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ErasePoint SetEnviroment(object workspace = null )
+		public ErasePoint SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Find Dwell Locations</para>
+	/// <para>Find Dwell Locations</para>
 	/// <para>Finds locations where moving objects have stopped, or dwelled, using given time and distance thresholds.</para>
 	/// </summary>
 	public class FindDwellLocations : AbstractGPProcess
@@ -240,7 +241,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindDwellLocations SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public FindDwellLocations SetEnviroment(object extent = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

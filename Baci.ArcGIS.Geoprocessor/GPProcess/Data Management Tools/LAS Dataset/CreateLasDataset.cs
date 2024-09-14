@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create LAS Dataset</para>
+	/// <para>Create LAS Dataset</para>
 	/// <para>Creates a LAS dataset referencing one or more LAS files and optional surface constraint features.</para>
 	/// </summary>
 	public class CreateLasDataset : AbstractGPProcess
@@ -164,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateLasDataset SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public CreateLasDataset SetEnviroment(object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Delete Routes</para>
+	/// <para>Delete Routes</para>
 	/// <para>Deletes routes and associated data elements from the LRS Network.</para>
 	/// </summary>
 	public class DeleteRoutes : AbstractGPProcess
@@ -132,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DeleteRoutes SetEnviroment(object workspace = null )
+		public DeleteRoutes SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

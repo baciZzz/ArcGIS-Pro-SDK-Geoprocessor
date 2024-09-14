@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Replica</para>
+	/// <para>Create Replica</para>
 	/// <para>Creates a replica to a geodatabase from a specified list of feature classes, layers, datasets, and tables in an enterprise geodatabase.</para>
 	/// </summary>
 	public class CreateReplica : AbstractGPProcess
@@ -241,7 +242,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateReplica SetEnviroment(object configKeyword = null , object extent = null , object scratchWorkspace = null , object workspace = null )
+		public CreateReplica SetEnviroment(object configKeyword = null, object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

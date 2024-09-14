@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Calculate Transformation Errors</para>
+	/// <para>Calculate Transformation Errors</para>
 	/// <para>Calculates residue errors and root mean square error (RMSE) based on the coordinates of the input links between known control points to be used for spatial data transformation.</para>
 	/// </summary>
 	public class CalculateTransformationErrors : AbstractGPProcess
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateTransformationErrors SetEnviroment(object extent = null , object workspace = null )
+		public CalculateTransformationErrors SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

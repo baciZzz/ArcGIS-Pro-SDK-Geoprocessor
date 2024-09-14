@@ -12,6 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Manage Scene Cache Worker</para>
 	/// <para>Manage Scene Cache Worker</para>
+	/// <para>Manage Scene Cache Worker</para>
 	/// </summary>
 	[Obsolete()]
 	public class ManageSceneCacheWorker : AbstractGPProcess
@@ -64,7 +65,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

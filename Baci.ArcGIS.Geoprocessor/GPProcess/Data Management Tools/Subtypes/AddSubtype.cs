@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Subtype</para>
+	/// <para>Add Subtype</para>
 	/// <para>Adds a new subtype to the subtypes in the input table.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddSubtype SetEnviroment(int? autoCommit = null , object workspace = null )
+		public AddSubtype SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

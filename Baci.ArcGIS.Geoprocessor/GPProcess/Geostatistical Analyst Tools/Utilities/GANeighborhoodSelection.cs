@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Neighborhood Selection</para>
+	/// <para>Neighborhood Selection</para>
 	/// <para>Creates a layer of points based on a user-defined neighborhood.</para>
 	/// </summary>
 	public class GANeighborhoodSelection : AbstractGPProcess
@@ -185,7 +186,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GANeighborhoodSelection SetEnviroment(object workspace = null )
+		public GANeighborhoodSelection SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

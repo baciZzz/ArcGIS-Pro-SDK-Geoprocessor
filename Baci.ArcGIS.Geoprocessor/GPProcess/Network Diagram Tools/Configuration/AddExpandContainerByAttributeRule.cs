@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Expand Container By Attribute Rule</para>
+	/// <para>Add Expand Container By Attribute Rule</para>
 	/// <para>Adds a diagram rule to automatically expand container contents during diagram building based on an existing template. The containers to expand are filtered by attributes from a given container source class or object table.</para>
 	/// </summary>
 	public class AddExpandContainerByAttributeRule : AbstractGPProcess
@@ -81,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

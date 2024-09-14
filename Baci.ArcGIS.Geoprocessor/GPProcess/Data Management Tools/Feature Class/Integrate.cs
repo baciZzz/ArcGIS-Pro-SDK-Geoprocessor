@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Integrate</para>
+	/// <para>Integrate</para>
 	/// <para>Analyzes the coordinate locations of feature vertices among features in one or more feature classes. Those that fall within a specified distance of one another are assumed to represent the same location and are assigned a common coordinate value (in other words, they are colocated). The tool also adds vertices where feature vertices are within the x,y tolerance of an edge and where line segments intersect.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.AnalysisTools.PairwiseIntegrate"/> tool provides enhanced functionality or performance</para>
 	/// <para>Input Will Be Modified</para>
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Integrate SetEnviroment(object XYTolerance = null , object extent = null , object workspace = null )
+		public Integrate SetEnviroment(object XYTolerance = null, object extent = null, object workspace = null)
 		{
 			base.SetEnv(XYTolerance: XYTolerance, extent: extent, workspace: workspace);
 			return this;

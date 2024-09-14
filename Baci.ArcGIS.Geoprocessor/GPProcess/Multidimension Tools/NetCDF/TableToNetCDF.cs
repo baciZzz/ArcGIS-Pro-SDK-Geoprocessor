@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Table to NetCDF</para>
+	/// <para>Table to NetCDF</para>
 	/// <para>Converts a table to a netCDF file.</para>
 	/// </summary>
 	public class TableToNetCDF : AbstractGPProcess
@@ -118,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableToNetCDF SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public TableToNetCDF SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Apply Symbology From Layer</para>
+	/// <para>Apply Symbology From Layer</para>
 	/// <para>Applies the symbology from a specified layer or layer file to the input. It can be applied to feature, raster, network analysis, TIN, and geostatistical layers.</para>
 	/// </summary>
 	public class ApplySymbologyFromLayer : AbstractGPProcess
@@ -131,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ApplySymbologyFromLayer SetEnviroment(int? autoCommit = null , object workspace = null )
+		public ApplySymbologyFromLayer SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

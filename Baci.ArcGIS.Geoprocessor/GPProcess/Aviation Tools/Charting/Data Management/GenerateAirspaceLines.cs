@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Generate Airspace Lines</para>
+	/// <para>Generate Airspace Lines</para>
 	/// <para>Adds, modifies, or deletes polyline features from coincident edges of airspace polygons.</para>
 	/// </summary>
 	public class GenerateAirspaceLines : AbstractGPProcess
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

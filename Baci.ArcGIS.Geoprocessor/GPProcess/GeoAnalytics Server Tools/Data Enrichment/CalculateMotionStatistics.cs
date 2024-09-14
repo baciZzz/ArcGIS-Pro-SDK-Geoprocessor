@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Calculate Motion Statistics</para>
+	/// <para>Calculate Motion Statistics</para>
 	/// <para>Calculates motion statistics for points in a time-enabled feature class.</para>
 	/// </summary>
 	public class CalculateMotionStatistics : AbstractGPProcess
@@ -289,7 +290,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateMotionStatistics SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public CalculateMotionStatistics SetEnviroment(object extent = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

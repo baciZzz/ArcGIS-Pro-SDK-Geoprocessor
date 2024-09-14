@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Remove Overlap</para>
+	/// <para>Remove Overlap</para>
 	/// <para>Removes overlap between two or more areas to form adjacent boundaries.</para>
 	/// </summary>
 	public class RemoveOverlap : AbstractGPProcess
@@ -161,7 +162,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveOverlap SetEnviroment(object workspace = null )
+		public RemoveOverlap SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

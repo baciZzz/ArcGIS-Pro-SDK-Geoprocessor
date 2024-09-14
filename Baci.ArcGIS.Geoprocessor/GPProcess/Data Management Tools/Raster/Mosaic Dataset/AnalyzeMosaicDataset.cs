@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Analyze Mosaic Dataset</para>
+	/// <para>Analyze Mosaic Dataset</para>
 	/// <para>Performs checks on a mosaic dataset for errors and possible improvements.</para>
 	/// </summary>
 	public class AnalyzeMosaicDataset : AbstractGPProcess
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AnalyzeMosaicDataset SetEnviroment(object parallelProcessingFactor = null )
+		public AnalyzeMosaicDataset SetEnviroment(object parallelProcessingFactor = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

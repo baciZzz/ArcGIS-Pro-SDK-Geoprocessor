@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Contingent Values</para>
+	/// <para>Export Contingent Values</para>
 	/// <para>Exports field groups and contingent values to a .csv file.</para>
 	/// </summary>
 	public class ExportContingentValues : AbstractGPProcess
@@ -103,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportContingentValues SetEnviroment(object workspace = null )
+		public ExportContingentValues SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

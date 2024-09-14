@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Apply Block Adjustment</para>
+	/// <para>Apply Block Adjustment</para>
 	/// <para>Applies the geographic adjustments</para>
 	/// <para>to the mosaic dataset items. This tool uses the solution table from the Compute Block Adjustments tool.</para>
 	/// <para>Input Will Be Modified</para>
@@ -67,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

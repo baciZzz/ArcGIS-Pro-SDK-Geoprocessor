@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Add CAD Fields</para>
+	/// <para>Add CAD Fields</para>
 	/// <para>Adds several reserved CAD fields in one step. Fields created by this tool are used by the Export To CAD tool to generate CAD entities with specific properties.   After executing this tool, you must calculate or type the appropriate field values.</para>
 	/// </summary>
 	public class AddCADFields : AbstractGPProcess
@@ -148,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddCADFields SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public AddCADFields SetEnviroment(object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

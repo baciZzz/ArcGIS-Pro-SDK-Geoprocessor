@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make Network Dataset Layer</para>
+	/// <para>Make Network Dataset Layer</para>
 	/// <para>Creates a network dataset layer from a network  dataset.</para>
 	/// </summary>
 	public class MakeNetworkDatasetLayer : AbstractGPProcess
@@ -99,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeNetworkDatasetLayer SetEnviroment(object workspace = null )
+		public MakeNetworkDatasetLayer SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

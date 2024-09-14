@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Frequency</para>
+	/// <para>Frequency</para>
 	/// <para>Reads a table and a set of fields and creates a new table containing unique field values and the number of occurrences of each unique field value.</para>
 	/// </summary>
 	public class Frequency : AbstractGPProcess
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Frequency SetEnviroment(object configKeyword = null , object scratchWorkspace = null , object workspace = null )
+		public Frequency SetEnviroment(object configKeyword = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

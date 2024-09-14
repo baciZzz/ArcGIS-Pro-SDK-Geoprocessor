@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Import XML Workspace Document</para>
+	/// <para>Import XML Workspace Document</para>
 	/// <para>Imports the contents of an XML workspace document into an existing geodatabase.</para>
 	/// </summary>
 	public class ImportXMLWorkspaceDocument : AbstractGPProcess
@@ -118,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportXMLWorkspaceDocument SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ImportXMLWorkspaceDocument SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

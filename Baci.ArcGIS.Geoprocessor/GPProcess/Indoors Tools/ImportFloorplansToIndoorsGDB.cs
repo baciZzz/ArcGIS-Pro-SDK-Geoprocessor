@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Import Floorplans To Indoors Geodatabase</para>
+	/// <para>Import Floorplans To Indoors Geodatabase</para>
 	/// <para>Imports floor plans from CAD files into an indoor dataset that conforms to the ArcGIS Indoors Information Model. The output of this tool can be used to create floor-aware scenes for use in floor-aware apps, as well as to generate an indoor network for routing.</para>
 	/// </summary>
 	public class ImportFloorplansToIndoorsGDB : AbstractGPProcess
@@ -149,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportFloorplansToIndoorsGDB SetEnviroment(object workspace = null )
+		public ImportFloorplansToIndoorsGDB SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

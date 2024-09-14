@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Configure External Event With LRS</para>
+	/// <para>Configure External Event With LRS</para>
 	/// <para>Associates event data stored in an external system with an LRS.</para>
 	/// </summary>
 	public class ConfigureExternalEventWithLRS : AbstractGPProcess
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

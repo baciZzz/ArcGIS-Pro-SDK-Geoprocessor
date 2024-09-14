@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Optimal Path As Raster</para>
+	/// <para>Optimal Path As Raster</para>
 	/// <para>Calculates the optimal path from a source to a destination as a raster.</para>
 	/// </summary>
 	public class OptimalPathAsRaster : AbstractGPProcess
@@ -153,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public OptimalPathAsRaster SetEnviroment(int? autoCommit = null , object compression = null , object configKeyword = null , object scratchWorkspace = null , double[] tileSize = null , object workspace = null )
+		public OptimalPathAsRaster SetEnviroment(int? autoCommit = null, object compression = null, object configKeyword = null, object scratchWorkspace = null, double[] tileSize = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, compression: compression, configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, tileSize: tileSize, workspace: workspace);
 			return this;

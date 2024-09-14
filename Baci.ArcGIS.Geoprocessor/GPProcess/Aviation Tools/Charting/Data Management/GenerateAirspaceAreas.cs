@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Generate Airspace Areas</para>
+	/// <para>Generate Airspace Areas</para>
 	/// <para>Generates AirspaceArea features from Airspace features.</para>
 	/// </summary>
 	public class GenerateAirspaceAreas : AbstractGPProcess
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

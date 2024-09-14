@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Unregistered Feature Class</para>
+	/// <para>Create Unregistered Feature Class</para>
 	/// <para>Creates an empty feature class in a database or enterprise geodatabase. The feature class is not registered with the geodatabase.</para>
 	/// </summary>
 	public class CreateUnRegisteredFeatureclass : AbstractGPProcess
@@ -158,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateUnRegisteredFeatureclass SetEnviroment(object configKeyword = null , object workspace = null )
+		public CreateUnRegisteredFeatureclass SetEnviroment(object configKeyword = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Folder</para>
+	/// <para>Create Folder</para>
 	/// <para>Creates a folder in the specified location.</para>
 	/// </summary>
 	public class CreateFolder : AbstractGPProcess
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateFolder SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public CreateFolder SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

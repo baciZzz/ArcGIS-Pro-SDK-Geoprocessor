@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 {
 	/// <summary>
 	/// <para>Generate Origin Destination Cost Matrix</para>
+	/// <para>Generate Origin Destination Cost Matrix</para>
 	/// <para>Creates an origin-destination (OD) cost matrix from multiple origins to multiple destinations. An OD cost matrix is a table that contains the travel time and travel distance from each origin to each destination. Additionally, it ranks the destinations that each origin connects to in ascending order based on the minimum time or distance required to travel from that origin to each destination. The best path on the street network is discovered for each origin-destination pair, and the travel times and travel distances are stored as attributes of the output lines. Even though the lines are straight for performance reasons, they always store the travel time and travel distance along the street network, not straight-line distance.</para>
 	/// </summary>
 	public class GenerateOriginDestinationCostMatrix : AbstractGPProcess
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

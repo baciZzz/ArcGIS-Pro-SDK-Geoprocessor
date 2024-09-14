@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Update Features With Incident Records</para>
+	/// <para>Update Features With Incident Records</para>
 	/// <para>Converts a nonspatial table to point features based on x,y-coordinates or  street addresses and updates an existing dataset with the new or updated record information from the table.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -344,7 +345,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UpdateFeaturesWithIncidentRecords SetEnviroment(object workspace = null )
+		public UpdateFeaturesWithIncidentRecords SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

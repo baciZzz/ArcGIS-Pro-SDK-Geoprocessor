@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Generate Elevation Guide Features</para>
+	/// <para>Generate Elevation Guide Features</para>
 	/// <para>Creates data required for an elevation guide diagram </para>
 	/// <para>surround element as required by various supported map product specifications.  This tool leverages existing </para>
 	/// <para>banding </para>
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

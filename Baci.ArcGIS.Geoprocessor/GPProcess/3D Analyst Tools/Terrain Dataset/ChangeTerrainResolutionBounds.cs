@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Change Terrain Resolution Bounds</para>
+	/// <para>Change Terrain Resolution Bounds</para>
 	/// <para>Changes the pyramid levels at which a feature class will be enforced for a given terrain dataset.</para>
 	/// </summary>
 	public class ChangeTerrainResolutionBounds : AbstractGPProcess
@@ -121,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ChangeTerrainResolutionBounds SetEnviroment(int? autoCommit = null , object scratchWorkspace = null , object workspace = null )
+		public ChangeTerrainResolutionBounds SetEnviroment(int? autoCommit = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

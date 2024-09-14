@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Rename</para>
+	/// <para>Rename</para>
 	/// <para>Changes the name of a dataset.  This includes a wide variety of data types, among them feature dataset, raster, table, and shapefile.</para>
 	/// </summary>
 	public class Rename : AbstractGPProcess
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Rename SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public Rename SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

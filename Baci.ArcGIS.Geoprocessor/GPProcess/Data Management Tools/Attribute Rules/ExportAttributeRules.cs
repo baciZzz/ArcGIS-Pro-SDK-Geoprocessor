@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Attribute Rules</para>
+	/// <para>Export Attribute Rules</para>
 	/// <para>Exports attribute rules from a dataset to a comma-separated values (.csv) file.</para>
 	/// </summary>
 	public class ExportAttributeRules : AbstractGPProcess
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportAttributeRules SetEnviroment(object workspace = null )
+		public ExportAttributeRules SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

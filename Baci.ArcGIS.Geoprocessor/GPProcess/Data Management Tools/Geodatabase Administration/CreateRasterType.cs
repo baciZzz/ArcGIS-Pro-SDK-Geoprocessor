@@ -12,6 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 	/// <summary>
 	/// <para>Create Raster Type</para>
 	/// <para>Create Raster Type</para>
+	/// <para>Create Raster Type</para>
 	/// </summary>
 	[Obsolete()]
 	public class CreateRasterType : AbstractGPProcess
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateRasterType SetEnviroment(object workspace = null )
+		public CreateRasterType SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

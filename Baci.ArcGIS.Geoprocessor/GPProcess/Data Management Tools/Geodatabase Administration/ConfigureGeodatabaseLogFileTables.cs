@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Configure Geodatabase Log File Tables</para>
+	/// <para>Configure Geodatabase Log File Tables</para>
 	/// <para>Alters the type of log file tables used by an enterprise geodatabase to maintain lists of records cached by ArcGIS.</para>
 	/// </summary>
 	public class ConfigureGeodatabaseLogFileTables : AbstractGPProcess
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConfigureGeodatabaseLogFileTables SetEnviroment(object workspace = null )
+		public ConfigureGeodatabaseLogFileTables SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

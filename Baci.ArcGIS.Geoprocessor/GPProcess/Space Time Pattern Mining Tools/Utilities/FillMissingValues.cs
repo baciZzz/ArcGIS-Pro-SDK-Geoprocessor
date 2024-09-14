@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Fill Missing Values</para>
+	/// <para>Fill Missing Values</para>
 	/// <para>Replaces missing (null) values with estimated values based on spatial neighbors, space-time neighbors, or time-series values.</para>
 	/// </summary>
 	public class FillMissingValues : AbstractGPProcess
@@ -267,7 +268,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FillMissingValues SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null )
+		public FillMissingValues SetEnviroment(object geographicTransformations = null, object outputCoordinateSystem = null)
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Export Rules</para>
+	/// <para>Export Rules</para>
 	/// <para>Exports connectivity, structural attachment, and containment rules from a utility network into a comma-separated values file.</para>
 	/// </summary>
 	public class ExportRules : AbstractGPProcess
@@ -72,7 +73,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

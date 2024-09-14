@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Set Territory Distance Parameters</para>
+	/// <para>Set Territory Distance Parameters</para>
 	/// <para>Defines the type of distance calculation or distance constraints to use when creating territories.</para>
 	/// </summary>
 	public class SetTerritoryDistanceParameters : AbstractGPProcess
@@ -213,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetTerritoryDistanceParameters SetEnviroment(object workspace = null )
+		public SetTerritoryDistanceParameters SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

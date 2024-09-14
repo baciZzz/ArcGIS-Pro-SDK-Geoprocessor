@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Terminal Configuration</para>
+	/// <para>Add Terminal Configuration</para>
 	/// <para>Adds a terminal configuration to an existing utility network.</para>
 	/// </summary>
 	public class AddTerminalConfiguration : AbstractGPProcess
@@ -68,7 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

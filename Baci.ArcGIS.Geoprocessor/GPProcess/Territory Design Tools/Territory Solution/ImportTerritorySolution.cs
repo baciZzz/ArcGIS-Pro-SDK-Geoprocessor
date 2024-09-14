@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Import Territory Solution</para>
+	/// <para>Import Territory Solution</para>
 	/// <para>Creates a new territory solution and imports the territories hierarchy from a table or a layer.</para>
 	/// </summary>
 	public class ImportTerritorySolution : AbstractGPProcess
@@ -127,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportTerritorySolution SetEnviroment(object workspace = null )
+		public ImportTerritorySolution SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

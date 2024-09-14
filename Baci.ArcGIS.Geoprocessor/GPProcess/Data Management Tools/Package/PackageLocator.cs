@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Package Locator</para>
+	/// <para>Package Locator</para>
 	/// <para>Package a locator or composite locator  to create a single compressed .gcpk file.</para>
 	/// </summary>
 	public class PackageLocator : AbstractGPProcess
@@ -122,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PackageLocator SetEnviroment(object workspace = null )
+		public PackageLocator SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

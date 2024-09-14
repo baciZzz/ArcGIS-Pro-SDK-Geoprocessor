@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Update Interior Orientation</para>
+	/// <para>Update Interior Orientation</para>
 	/// <para>Refines the interior orientation for each image in the mosaic dataset by constructing an affine transformation from a fiducial table.</para>
 	/// </summary>
 	public class UpdateInteriorOrientation : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

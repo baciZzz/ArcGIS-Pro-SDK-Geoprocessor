@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Import Survey Profiles</para>
+	/// <para>Import Survey Profiles</para>
 	/// <para>Imports segmentation profiles consisting of survey variable data.</para>
 	/// </summary>
 	public class ImportSurveyProfiles : AbstractGPProcess
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportSurveyProfiles SetEnviroment(object workspace = null )
+		public ImportSurveyProfiles SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Convert Coordinate Notation</para>
+	/// <para>Convert Coordinate Notation</para>
 	/// <para>Converts coordinate notations contained in one or two fields from one notation format to another.</para>
 	/// </summary>
 	public class ConvertCoordinateNotation : AbstractGPProcess
@@ -261,7 +262,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConvertCoordinateNotation SetEnviroment(object XYTolerance = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public ConvertCoordinateNotation SetEnviroment(object XYTolerance = null, object geographicTransformations = null, object outputCoordinateSystem = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(XYTolerance: XYTolerance, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

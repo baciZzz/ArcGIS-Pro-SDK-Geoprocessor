@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Calculate Central Meridian And Parallels</para>
+	/// <para>Calculate Central Meridian And Parallels</para>
 	/// <para>Calculates the central meridian and optional standard parallels based on the center point of a feature's extent; stores this coordinate system as a spatial reference string in a specified text field; and repeats this for a set, or subset, of features. This field can be used with a spatial map series  to update the data frame coordinate system for each page.</para>
 	/// </summary>
 	public class CalculateCentralMeridianAndParallels : AbstractGPProcess
@@ -105,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateCentralMeridianAndParallels SetEnviroment(object workspace = null )
+		public CalculateCentralMeridianAndParallels SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

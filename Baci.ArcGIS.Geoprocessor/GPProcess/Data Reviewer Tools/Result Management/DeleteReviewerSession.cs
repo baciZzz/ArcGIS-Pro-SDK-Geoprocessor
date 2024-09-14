@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 {
 	/// <summary>
 	/// <para>Delete Reviewer Session</para>
+	/// <para>Delete Reviewer Session</para>
 	/// <para>Permanently deletes one or more sessions and all related records from a Reviewer workspace.</para>
 	/// </summary>
 	public class DeleteReviewerSession : AbstractGPProcess
@@ -98,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DeleteReviewerSession SetEnviroment(object workspace = null )
+		public DeleteReviewerSession SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

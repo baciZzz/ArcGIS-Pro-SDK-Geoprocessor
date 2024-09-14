@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Generate Blind Spot Areas</para>
+	/// <para>Generate Blind Spot Areas</para>
 	/// <para>Creates an output nonvisible area, or blind spot, for input Intelligence, Surveillance, Reconnaissance (ISR) or patrol visible buffer features based on start and end times. The output blind spot layer is used with the  time slider to visualize and explore areas that are not visible to ISR or patrol assets at specified times.</para>
 	/// </summary>
 	public class GenerateBlindSpotAreas : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

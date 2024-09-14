@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Generate OIS Intersection</para>
+	/// <para>Generate OIS Intersection</para>
 	/// <para>Creates the most restrictive (lowest) surfaces within the extent of all collective surfaces. Obstruction identification surfaces (OIS) determine which objects are vertical obstructions. An object is considered a vertical obstruction if it penetrates the OIS surface. Surfaces are used to support planning and design activities.</para>
 	/// </summary>
 	public class GenerateOISIntersection : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Repair Self Intersection</para>
+	/// <para>Repair Self Intersection</para>
 	/// <para>Repairs self-intersecting line or polygon features. The portion between the feature and the intersection points are either deleted or split into a new feature.</para>
 	/// </summary>
 	public class RepairSelfIntersection : AbstractGPProcess
@@ -63,7 +64,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

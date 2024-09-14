@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Add Vehicle Routing Problem Routes</para>
+	/// <para>Add Vehicle Routing Problem Routes</para>
 	/// <para>Creates routes in a Vehicle Routing Problem (VRP) layer. This tool will append rows to the Routes sublayer and can add rows with specific settings while creating a unique name field.</para>
 	/// </summary>
 	public class AddVehicleRoutingProblemRoutes : AbstractGPProcess
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Merge Collinear Parcel Boundaries</para>
+	/// <para>Merge Collinear Parcel Boundaries</para>
 	/// <para>Merges  connected collinear parcel lines  into a single parcel line.</para>
 	/// <para>  Shared parcel fabric points between connected collinear lines are deleted and vertices are created in their place.</para>
 	/// </summary>
@@ -61,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

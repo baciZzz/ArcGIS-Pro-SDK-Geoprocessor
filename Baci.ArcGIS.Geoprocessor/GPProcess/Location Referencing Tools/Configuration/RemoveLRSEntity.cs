@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Remove LRS Entity</para>
+	/// <para>Remove LRS Entity</para>
 	/// <para>Removes a linear referencing system (LRS) entity from an input geodatabase workspace.</para>
 	/// </summary>
 	public class RemoveLRSEntity : AbstractGPProcess
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

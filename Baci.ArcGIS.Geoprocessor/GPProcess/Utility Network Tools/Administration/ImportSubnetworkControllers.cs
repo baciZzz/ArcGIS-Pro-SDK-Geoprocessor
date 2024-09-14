@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Import Subnetwork Controllers</para>
+	/// <para>Import Subnetwork Controllers</para>
 	/// <para>Imports subnetwork controllers from a .csv file into a utility network.</para>
 	/// </summary>
 	public class ImportSubnetworkControllers : AbstractGPProcess
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportSubnetworkControllers SetEnviroment(object workspace = null )
+		public ImportSubnetworkControllers SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

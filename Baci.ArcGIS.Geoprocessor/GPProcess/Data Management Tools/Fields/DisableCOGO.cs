@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Disable COGO</para>
+	/// <para>Disable COGO</para>
 	/// <para>Disables COGO  on a line feature class and removes COGO fields and COGO-enabled labeling and symbology. COGO fields can be deleted.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -57,7 +58,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

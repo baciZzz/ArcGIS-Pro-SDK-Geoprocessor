@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Attachment Match Table</para>
+	/// <para>Generate Attachment Match Table</para>
 	/// <para>Creates a match table to be used with the Add Attachments and Remove Attachments tools.</para>
 	/// </summary>
 	public class GenerateAttachmentMatchTable : AbstractGPProcess
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

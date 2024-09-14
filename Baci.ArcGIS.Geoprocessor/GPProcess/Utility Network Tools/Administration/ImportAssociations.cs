@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Import Associations</para>
+	/// <para>Import Associations</para>
 	/// <para>Imports associations from a comma-separated values file (.csv) into an existing utility network. This tool can be used in conjunction with the Export Associations tool.</para>
 	/// </summary>
 	public class ImportAssociations : AbstractGPProcess
@@ -125,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportAssociations SetEnviroment(object workspace = null )
+		public ImportAssociations SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

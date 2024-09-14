@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Create Cartographic Partitions</para>
+	/// <para>Create Cartographic Partitions</para>
 	/// <para>Creates a mesh of polygon features that cover the input feature class in which each output polygon encloses no more than a specified number of  input features or input vertices. as determined by the density and distribution of the input features.</para>
 	/// </summary>
 	public class CreateCartographicPartitions : AbstractGPProcess
@@ -114,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateCartographicPartitions SetEnviroment(object outputCoordinateSystem = null )
+		public CreateCartographicPartitions SetEnviroment(object outputCoordinateSystem = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;

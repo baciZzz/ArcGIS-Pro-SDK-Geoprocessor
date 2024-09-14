@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Generate Near Table</para>
+	/// <para>Generate Near Table</para>
 	/// <para>Calculates distances and other proximity information between features in one or more feature class or layer. Unlike the Near tool, which modifies the input, Generate Near Table writes results to a new stand-alone table and supports finding more than one near feature.</para>
 	/// </summary>
 	public class GenerateNearTable : AbstractGPProcess
@@ -167,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateNearTable SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateNearTable SetEnviroment(object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Consolidate Locator</para>
+	/// <para>Consolidate Locator</para>
 	/// <para>Consolidate a locator or composite locator  by copying all locators into a single folder.</para>
 	/// </summary>
 	public class ConsolidateLocator : AbstractGPProcess
@@ -98,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConsolidateLocator SetEnviroment(object workspace = null )
+		public ConsolidateLocator SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Export Geodatabase To S-57</para>
+	/// <para>Export Geodatabase To S-57</para>
 	/// <para>Exports hydrographic data from a maritime charting geodatabase to an S-57 file.</para>
 	/// </summary>
 	public class ExportGeodatabaseToS57 : AbstractGPProcess
@@ -178,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportGeodatabaseToS57 SetEnviroment(object workspace = null )
+		public ExportGeodatabaseToS57 SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

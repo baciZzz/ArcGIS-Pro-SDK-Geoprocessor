@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Create Space Time Cube From Multidimensional Raster Layer</para>
+	/// <para>Create Space Time Cube From Multidimensional Raster Layer</para>
 	/// <para>Creates a space-time cube from a  multidimensional raster layer and structures the data into space-time bins for efficient space-time analysis and visualization.</para>
 	/// </summary>
 	public class CreateSpaceTimeCubeMDRasterLayer : AbstractGPProcess
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateSpaceTimeCubeMDRasterLayer SetEnviroment(object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null )
+		public CreateSpaceTimeCubeMDRasterLayer SetEnviroment(object extent = null, object outputCoordinateSystem = null, object parallelProcessingFactor = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

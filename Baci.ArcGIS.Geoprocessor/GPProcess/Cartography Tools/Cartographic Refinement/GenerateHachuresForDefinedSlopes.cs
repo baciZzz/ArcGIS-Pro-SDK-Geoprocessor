@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Generate Hachures For Defined Slopes</para>
+	/// <para>Generate Hachures For Defined Slopes</para>
 	/// <para>Creates multipart lines or polygons representing the slope between the lines representing the upper and lower parts of a slope.</para>
 	/// </summary>
 	public class GenerateHachuresForDefinedSlopes : AbstractGPProcess
@@ -183,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateHachuresForDefinedSlopes SetEnviroment(object MDomain = null , object ZDomain = null , object extent = null , object outputCoordinateSystem = null )
+		public GenerateHachuresForDefinedSlopes SetEnviroment(object MDomain = null, object ZDomain = null, object extent = null, object outputCoordinateSystem = null)
 		{
 			base.SetEnv(MDomain: MDomain, ZDomain: ZDomain, extent: extent, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

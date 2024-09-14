@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Calculate UTM Zone</para>
+	/// <para>Calculate UTM Zone</para>
 	/// <para>Calculates the UTM zone of each feature based on the center point and stores this spatial reference string in a specified field. This field can be used with a spatial map series  to update the spatial reference to the correct UTM zone for each map.</para>
 	/// </summary>
 	public class CalculateUTMZone : AbstractGPProcess
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateUTMZone SetEnviroment(object workspace = null )
+		public CalculateUTMZone SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Append Annotation Feature Classes</para>
+	/// <para>Append Annotation Feature Classes</para>
 	/// <para>Creates a geodatabase annotation feature class or appends to an existing annotation feature class by combining annotation from multiple input geodatabase annotation feature classes into a single feature class with annotation classes.</para>
 	/// </summary>
 	public class AppendAnnotation : AbstractGPProcess
@@ -151,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AppendAnnotation SetEnviroment(int? autoCommit = null , object scratchWorkspace = null , object workspace = null )
+		public AppendAnnotation SetEnviroment(int? autoCommit = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

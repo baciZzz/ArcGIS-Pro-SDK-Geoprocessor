@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Match Control Points</para>
+	/// <para>Match Control Points</para>
 	/// <para>Creates matching tie points for a given ground control point and initial tie point in one of the overlapping images.</para>
 	/// </summary>
 	public class MatchControlPoints : AbstractGPProcess
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MatchControlPoints SetEnviroment(object parallelProcessingFactor = null , object workspace = null )
+		public MatchControlPoints SetEnviroment(object parallelProcessingFactor = null, object workspace = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;

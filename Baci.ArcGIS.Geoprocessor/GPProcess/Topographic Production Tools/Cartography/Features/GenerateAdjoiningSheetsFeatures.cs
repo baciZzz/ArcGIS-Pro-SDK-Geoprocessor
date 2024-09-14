@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Generate Adjoining Sheets Features</para>
+	/// <para>Generate Adjoining Sheets Features</para>
 	/// <para>Generates features necessary for display in a typical topographic map adjoining sheets diagram.</para>
 	/// </summary>
 	public class GenerateAdjoiningSheetsFeatures : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

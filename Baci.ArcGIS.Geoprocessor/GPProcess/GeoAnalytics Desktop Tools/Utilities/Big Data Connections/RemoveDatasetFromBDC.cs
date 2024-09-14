@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Remove Dataset From Big Data Connection</para>
+	/// <para>Remove Dataset From Big Data Connection</para>
 	/// <para>Removes one or more datasets from an existing big data connection (BDC). This tool only removes the dataset from the BDC file, the source data is not modified.</para>
 	/// </summary>
 	public class RemoveDatasetFromBDC : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

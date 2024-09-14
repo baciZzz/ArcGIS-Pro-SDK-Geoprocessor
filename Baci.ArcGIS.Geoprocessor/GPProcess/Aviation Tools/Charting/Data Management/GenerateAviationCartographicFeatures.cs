@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Generate Aviation Cartographic Features</para>
+	/// <para>Generate Aviation Cartographic Features</para>
 	/// <para>Creates cartographic copies of features based on the area of interest they fall into.</para>
 	/// </summary>
 	public class GenerateAviationCartographicFeatures : AbstractGPProcess
@@ -61,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

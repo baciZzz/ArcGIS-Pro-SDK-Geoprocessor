@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Raster Collection</para>
+	/// <para>Generate Raster Collection</para>
 	/// <para>Performs batch analysis or processing on image collections contained in a mosaic dataset. The images in the input mosaic dataset can be processed individually or as groups.</para>
 	/// </summary>
 	public class GenerateRasterCollection : AbstractGPProcess
@@ -205,7 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateRasterCollection SetEnviroment(object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null )
+		public GenerateRasterCollection SetEnviroment(object parallelProcessingFactor = null, object pyramid = null, object rasterStatistics = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics);
 			return this;

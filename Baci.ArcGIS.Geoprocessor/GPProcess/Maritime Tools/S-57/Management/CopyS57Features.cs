@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Copy S-57 Features</para>
+	/// <para>Copy S-57 Features</para>
 	/// <para>Copies features from a layer or multiple</para>
 	/// <para>layers to a target geodatabase.</para>
 	/// </summary>
@@ -61,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

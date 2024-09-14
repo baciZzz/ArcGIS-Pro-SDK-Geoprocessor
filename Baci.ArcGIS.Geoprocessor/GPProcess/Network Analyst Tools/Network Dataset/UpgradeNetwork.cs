@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Upgrade Network</para>
+	/// <para>Upgrade Network</para>
 	/// <para>Upgrades the schema of the network dataset. Upgrading the network dataset allows the network dataset to make use of the new functionality available in the current software release. </para>
 	/// <para>This is a deprecated tool. To learn more about how this tool works, view the  archived documentation. This functionality has been replaced by the Upgrade Dataset tool in the Geodatabase Administration toolset. Upgrade Dataset has the ability to upgrade network datasets as well as other types of datasets, such as parcel fabrics, to the current ArcGIS release.</para>
 	/// </summary>
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UpgradeNetwork SetEnviroment(object workspace = null )
+		public UpgradeNetwork SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

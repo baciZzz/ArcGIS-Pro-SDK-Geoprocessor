@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Table To dBASE</para>
+	/// <para>Table To dBASE</para>
 	/// <para>Converts one or more tables to dBASE tables.</para>
 	/// </summary>
 	public class TableToDBASE : AbstractGPProcess
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableToDBASE SetEnviroment(object configKeyword = null , object extent = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null , object workspace = null )
+		public TableToDBASE SetEnviroment(object configKeyword = null, object extent = null, bool? qualifiedFieldNames = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, extent: extent, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Upgrade ArcMap Parcel Fabric</para>
+	/// <para>Upgrade ArcMap Parcel Fabric</para>
 	/// <para>Upgrades an ArcMap  parcel fabric to an ArcGIS Pro parcel fabric.</para>
 	/// </summary>
 	public class UpgradeArcMapParcelFabric : AbstractGPProcess
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

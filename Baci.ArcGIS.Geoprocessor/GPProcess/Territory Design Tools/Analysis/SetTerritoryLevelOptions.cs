@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Set Territory Level Options</para>
+	/// <para>Set Territory Level Options</para>
 	/// <para>Sets options for how territory levels are created.</para>
 	/// </summary>
 	public class SetTerritoryLevelOptions : AbstractGPProcess
@@ -153,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetTerritoryLevelOptions SetEnviroment(object workspace = null )
+		public SetTerritoryLevelOptions SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

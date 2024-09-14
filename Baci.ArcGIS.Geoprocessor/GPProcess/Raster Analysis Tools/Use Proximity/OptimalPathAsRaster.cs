@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Optimal Path As Raster</para>
+	/// <para>Optimal Path As Raster</para>
 	/// <para>Calculates the optimal path from a source to a destination as a raster.</para>
 	/// </summary>
 	public class OptimalPathAsRaster : AbstractGPProcess
@@ -73,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

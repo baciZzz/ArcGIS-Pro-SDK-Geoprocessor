@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compress File Geodatabase Data</para>
+	/// <para>Compress File Geodatabase Data</para>
 	/// <para>Compresses all the contents in a geodatabase, all the contents in a feature</para>
 	/// <para>dataset, or an individual stand-alone feature class or table.</para>
 	/// </summary>
@@ -103,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CompressFileGeodatabaseData SetEnviroment(object workspace = null )
+		public CompressFileGeodatabaseData SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

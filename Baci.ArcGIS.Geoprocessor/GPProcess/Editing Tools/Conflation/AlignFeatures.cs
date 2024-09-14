@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Align Features</para>
+	/// <para>Align Features</para>
 	/// <para>Identifies inconsistent portions of the input features against target features within a search distance and aligns them with the target features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -125,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AlignFeatures SetEnviroment(object extent = null , object workspace = null )
+		public AlignFeatures SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Rebuild Address Locator</para>
+	/// <para>Rebuild Address Locator</para>
 	/// <para>Rebuilds an address locator to update the locator with the current reference data. Because a locator contains a snapshot of the reference data when it was created, it will not geocode addresses with the updated data  when the geometry and attributes of the reference data are changed.  To geocode addresses with the current version of the reference data, the  locator must be rebuilt if you want to update the changes in the locator.</para>
 	/// </summary>
 	public class RebuildAddressLocator : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

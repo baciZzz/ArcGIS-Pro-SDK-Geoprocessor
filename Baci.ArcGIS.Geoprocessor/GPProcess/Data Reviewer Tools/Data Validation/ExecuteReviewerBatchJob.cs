@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 {
 	/// <summary>
 	/// <para>Execute Reviewer Batch Job</para>
+	/// <para>Execute Reviewer Batch Job</para>
 	/// <para>Runs a Reviewer batch job on a workspace and writes the results to a Reviewer session. A Reviewer batch job contains groups of Reviewer checks. Checks validate data based on conditions, rules, and spatial relationships. Checks also specify sets of features or rows to validate and their source workspace. A Reviewer session stores information about validation tasks performed by Reviewer checks. This information is stored in a table and a dataset in the Reviewer workspace.</para>
 	/// </summary>
 	public class ExecuteReviewerBatchJob : AbstractGPProcess
@@ -150,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExecuteReviewerBatchJob SetEnviroment(object extent = null , object workspace = null )
+		public ExecuteReviewerBatchJob SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Simplify By Straight Lines And Circular Arcs</para>
+	/// <para>Simplify By Straight Lines And Circular Arcs</para>
 	/// <para>Simplifies polygon and line features by replacing consecutive line segments  or edges with  fewer line segments or edges. Lines segments and polygon edges are simplified based on a specified maximum allowable offset.  Additionally, circular arcs can be created from consecutive  line segments or polygon edges.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -201,7 +202,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SimplifyByStraightLinesAndCircularArcs SetEnviroment(object extent = null , object workspace = null )
+		public SimplifyByStraightLinesAndCircularArcs SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

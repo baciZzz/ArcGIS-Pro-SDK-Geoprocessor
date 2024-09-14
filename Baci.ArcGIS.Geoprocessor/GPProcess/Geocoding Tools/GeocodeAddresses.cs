@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Geocode Addresses</para>
+	/// <para>Geocode Addresses</para>
 	/// <para>Geocodes a table of addresses.  This process requires a table that stores the addresses you want to geocode and an address locator or a composite address locator. This  tool matches the addresses against the locator and saves the result for each input record  in a new point feature class.  When using the ArcGIS World Geocoding Service, this operation may consume credits.</para>
 	/// </summary>
 	public class GeocodeAddresses : AbstractGPProcess
@@ -180,7 +181,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeocodeAddresses SetEnviroment(object configKeyword = null , object outputCoordinateSystem = null )
+		public GeocodeAddresses SetEnviroment(object configKeyword = null, object outputCoordinateSystem = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

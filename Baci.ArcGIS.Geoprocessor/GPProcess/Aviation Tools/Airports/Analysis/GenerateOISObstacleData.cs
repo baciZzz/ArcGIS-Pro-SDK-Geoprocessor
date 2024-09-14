@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Generate OIS Obstacle Data</para>
+	/// <para>Generate OIS Obstacle Data</para>
 	/// <para>Generates a JSON string that is stored in the OBSTACLEJSON field on the input Obstruction Identification Surface (OIS) multipatch feature class that contains the data necessary to depict obstacles to safety of flight within the approach surfaces (in the form of points, lines, or polygons) in the Terrain and Obstacle Profile layout element.</para>
 	/// </summary>
 	public class GenerateOISObstacleData : AbstractGPProcess
@@ -230,7 +231,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateOISObstacleData SetEnviroment(object workspace = null )
+		public GenerateOISObstacleData SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

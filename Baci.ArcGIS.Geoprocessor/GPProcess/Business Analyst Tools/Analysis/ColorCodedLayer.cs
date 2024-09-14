@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Color Coded Layer</para>
+	/// <para>Color Coded Layer</para>
 	/// <para>Creates a multigeography-level, scale-dependent choropleth layer from a variable describing a business, demographic, consumer, or landscape characteristic.</para>
 	/// </summary>
 	public class ColorCodedLayer : AbstractGPProcess
@@ -131,7 +132,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ColorCodedLayer SetEnviroment(object workspace = null )
+		public ColorCodedLayer SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

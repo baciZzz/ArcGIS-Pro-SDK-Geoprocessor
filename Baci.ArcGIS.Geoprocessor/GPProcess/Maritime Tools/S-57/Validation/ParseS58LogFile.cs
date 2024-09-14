@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Parse S-58 Log File</para>
+	/// <para>Parse S-58 Log File</para>
 	/// <para>Parses log files produced by the Validate S-57 File tool and third-party validation software against S-58 (recommended ENC validation checks). Critical errors and warnings are imported as records in a Data Reviewer table.</para>
 	/// </summary>
 	public class ParseS58LogFile : AbstractGPProcess
@@ -150,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ParseS58LogFile SetEnviroment(object workspace = null )
+		public ParseS58LogFile SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Import Job Data</para>
+	/// <para>Import Job Data</para>
 	/// <para>Imports configuration and job information from a Workflow Manager (Classic) repository to a destination repository.  This tool is most useful for setting up a repository similar to an existing repository, disconnected repository replica creation, and changing synchronization.</para>
 	/// </summary>
 	public class ImportJobData : AbstractGPProcess
@@ -63,7 +64,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

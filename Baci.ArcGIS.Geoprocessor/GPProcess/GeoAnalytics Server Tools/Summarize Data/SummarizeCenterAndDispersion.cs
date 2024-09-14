@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Summarize Center And Dispersion</para>
+	/// <para>Summarize Center And Dispersion</para>
 	/// <para>Finds central features and directional distributions and calculates mean and median locations from the input.</para>
 	/// </summary>
 	public class SummarizeCenterAndDispersion : AbstractGPProcess
@@ -187,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SummarizeCenterAndDispersion SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public SummarizeCenterAndDispersion SetEnviroment(object extent = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

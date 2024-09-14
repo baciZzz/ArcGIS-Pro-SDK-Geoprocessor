@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Get Job Parent Version</para>
+	/// <para>Get Job Parent Version</para>
 	/// <para>Gets the parent version of a job as an enterprise geodatabase connection file to be used for posting edits in a geoprocessing model to the correct parent version.</para>
 	/// </summary>
 	public class GetJobParentVersion : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Huff Model</para>
+	/// <para>Huff Model</para>
 	/// <para>Creates a probability surface to predict the sales potential of an area based on distance and an attractiveness factor.</para>
 	/// </summary>
 	public class HuffModel : AbstractGPProcess
@@ -281,7 +282,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public HuffModel SetEnviroment(object workspace = null )
+		public HuffModel SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

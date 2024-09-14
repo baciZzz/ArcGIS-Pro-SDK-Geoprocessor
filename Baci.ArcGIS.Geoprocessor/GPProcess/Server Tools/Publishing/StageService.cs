@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Stage Service</para>
+	/// <para>Stage Service</para>
 	/// <para>Stages a service definition. A staged service definition file (.sd) contains all the necessary information to share a web layer, web tool, or service.</para>
 	/// </summary>
 	public class StageService : AbstractGPProcess
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public StageService SetEnviroment(object workspace = null )
+		public StageService SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

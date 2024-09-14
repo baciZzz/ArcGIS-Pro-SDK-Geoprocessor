@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Database User</para>
+	/// <para>Create Database User</para>
 	/// <para>Creates a database user with privileges sufficient to create data in the database.</para>
 	/// </summary>
 	public class CreateDatabaseUser : AbstractGPProcess
@@ -134,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateDatabaseUser SetEnviroment(object workspace = null )
+		public CreateDatabaseUser SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

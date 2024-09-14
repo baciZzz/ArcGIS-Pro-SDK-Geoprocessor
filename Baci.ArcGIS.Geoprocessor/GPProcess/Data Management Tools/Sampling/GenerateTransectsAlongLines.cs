@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Transects Along Lines</para>
+	/// <para>Generate Transects Along Lines</para>
 	/// <para>Creates perpendicular transect lines at a regular interval along lines.</para>
 	/// </summary>
 	public class GenerateTransectsAlongLines : AbstractGPProcess
@@ -129,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateTransectsAlongLines SetEnviroment(object workspace = null )
+		public GenerateTransectsAlongLines SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

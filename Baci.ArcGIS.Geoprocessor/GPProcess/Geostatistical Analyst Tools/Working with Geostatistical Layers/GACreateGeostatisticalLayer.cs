@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Create Geostatistical Layer</para>
+	/// <para>Create Geostatistical Layer</para>
 	/// <para>Creates a new geostatistical layer. An  existing geostatistical layer  is required to populate the initial values for the new layer.</para>
 	/// </summary>
 	public class GACreateGeostatisticalLayer : AbstractGPProcess
@@ -100,7 +101,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GACreateGeostatisticalLayer SetEnviroment(object coincidentPoints = null , object extent = null , object parallelProcessingFactor = null , object workspace = null )
+		public GACreateGeostatisticalLayer SetEnviroment(object coincidentPoints = null, object extent = null, object parallelProcessingFactor = null, object workspace = null)
 		{
 			base.SetEnv(coincidentPoints: coincidentPoints, extent: extent, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;

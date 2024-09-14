@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Global IDs</para>
+	/// <para>Add Global IDs</para>
 	/// <para>Adds global IDs to a list of geodatabase feature classes, tables, and feature datasets.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddGlobalIDs SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public AddGlobalIDs SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

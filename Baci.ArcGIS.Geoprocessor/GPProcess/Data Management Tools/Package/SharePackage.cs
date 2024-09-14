@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Share Package</para>
+	/// <para>Share Package</para>
 	/// <para>Shares a package by uploading to ArcGIS Online or ArcGIS Enterprise.</para>
 	/// </summary>
 	public class SharePackage : AbstractGPProcess
@@ -214,7 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SharePackage SetEnviroment(object workspace = null )
+		public SharePackage SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Contour Annotation</para>
+	/// <para>Contour Annotation</para>
 	/// <para>Creates annotation for contour features.</para>
 	/// </summary>
 	public class ContourAnnotation : AbstractGPProcess
@@ -194,7 +195,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ContourAnnotation SetEnviroment(object outputCoordinateSystem = null , object referenceScale = null )
+		public ContourAnnotation SetEnviroment(object outputCoordinateSystem = null, object referenceScale = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, referenceScale: referenceScale);
 			return this;

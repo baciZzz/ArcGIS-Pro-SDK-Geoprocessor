@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Update Big Data Connection Dataset Properties</para>
+	/// <para>Update Big Data Connection Dataset Properties</para>
 	/// <para>Updates the properties of a big data connection (BDC) dataset. This tool modifies field, geometry, time, and file settings for a specified BDC dataset.</para>
 	/// </summary>
 	public class UpdateBDCDatasetProperties : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

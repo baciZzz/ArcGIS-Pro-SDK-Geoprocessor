@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Export FAA 18B Shapefiles</para>
+	/// <para>Export FAA 18B Shapefiles</para>
 	/// <para>Exports one or more FAA Advisory Circular 150/5300-18B compliant shapefiles from a geodatabase that contains the ArcGIS Aviation Airports schema.</para>
 	/// </summary>
 	public class ExportFAA18BShapefiles : AbstractGPProcess
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportFAA18BShapefiles SetEnviroment(object workspace = null )
+		public ExportFAA18BShapefiles SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

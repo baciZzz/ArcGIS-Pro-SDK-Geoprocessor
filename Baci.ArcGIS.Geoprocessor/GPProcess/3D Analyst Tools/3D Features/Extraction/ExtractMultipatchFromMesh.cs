@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Extract Multipatch From Mesh</para>
+	/// <para>Extract Multipatch From Mesh</para>
 	/// <para>Creates a multipatch feature from the portion of an integrated mesh that overlaps a polygon.</para>
 	/// </summary>
 	public class ExtractMultipatchFromMesh : AbstractGPProcess
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExtractMultipatchFromMesh SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null )
+		public ExtractMultipatchFromMesh SetEnviroment(object extent = null, object geographicTransformations = null, object outputCoordinateSystem = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

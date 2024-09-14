@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Select Layer By Date And Time</para>
+	/// <para>Select Layer By Date And Time</para>
 	/// <para>Selects records based on date and time ranges or date properties, for example, single date, time range, time period, days of the week, month, or year.</para>
 	/// </summary>
 	public class SelectLayerByDateAndTime : AbstractGPProcess
@@ -73,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

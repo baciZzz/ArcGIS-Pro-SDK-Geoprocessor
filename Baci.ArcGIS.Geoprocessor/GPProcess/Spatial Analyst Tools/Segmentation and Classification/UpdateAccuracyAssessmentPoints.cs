@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Update Accuracy Assessment Points</para>
+	/// <para>Update Accuracy Assessment Points</para>
 	/// <para>Updates the Target field in the attribute table to compare reference points to the classified image.</para>
 	/// </summary>
 	public class UpdateAccuracyAssessmentPoints : AbstractGPProcess
@@ -68,7 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

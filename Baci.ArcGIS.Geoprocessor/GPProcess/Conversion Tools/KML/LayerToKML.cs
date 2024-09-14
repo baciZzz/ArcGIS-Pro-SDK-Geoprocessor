@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Layer To KML</para>
+	/// <para>Layer To KML</para>
 	/// <para>Converts a feature or raster layer  into a KML file containing a translation of Esri geometries and symbology. This file is compressed using ZIP compression, has a .kmz extension, and can be read by any KML client including ArcGIS Earth, ArcGlobe, and Google Earth.</para>
 	/// </summary>
 	public class LayerToKML : AbstractGPProcess
@@ -153,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LayerToKML SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public LayerToKML SetEnviroment(object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>If Value Is</para>
+	/// <para>If Value Is</para>
 	/// <para>Evaluates an input value compared to a single value, a list of values, or a range of values using a defined comparison operator.</para>
 	/// </summary>
 	public class ValueIsIfThenElse : AbstractGPProcess
@@ -50,7 +51,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

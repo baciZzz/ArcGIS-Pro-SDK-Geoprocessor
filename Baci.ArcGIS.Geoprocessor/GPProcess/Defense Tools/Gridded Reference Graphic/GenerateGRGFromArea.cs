@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Generate Grid From Area</para>
+	/// <para>Generate Grid From Area</para>
 	/// <para>Generates a Gridded Reference Graphic (GRG) over a specified area with a custom size based on a bounding polygon.</para>
 	/// </summary>
 	public class GenerateGRGFromArea : AbstractGPProcess
@@ -168,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateGRGFromArea SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateGRGFromArea SetEnviroment(object outputCoordinateSystem = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

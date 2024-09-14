@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Set Control Point By Angle</para>
+	/// <para>Set Control Point By Angle</para>
 	/// <para>Places a control point at vertices along a line or polygon outline where the angle created by a change in line direction is less than or equal to a specified maximum angle.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetControlPointByAngle SetEnviroment(object workspace = null )
+		public SetControlPointByAngle SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

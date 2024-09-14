@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>GTFS Stops To Features</para>
+	/// <para>GTFS Stops To Features</para>
 	/// <para>Converts a GTFS stops.txt file from a GTFS public transit dataset  to a feature class of public transit stops.</para>
 	/// </summary>
 	public class GTFSStopsToFeatures : AbstractGPProcess
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GTFSStopsToFeatures SetEnviroment(object workspace = null )
+		public GTFSStopsToFeatures SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

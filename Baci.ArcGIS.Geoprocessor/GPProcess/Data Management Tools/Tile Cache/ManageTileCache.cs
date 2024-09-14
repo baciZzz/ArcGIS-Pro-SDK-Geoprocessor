@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Manage Tile Cache</para>
+	/// <para>Manage Tile Cache</para>
 	/// <para>Creates a tile cache or updates tiles in an existing tile cache. You can use this tool to create new tiles, replace missing tiles, overwrite outdated tiles, and delete tiles.</para>
 	/// </summary>
 	public class ManageTileCache : AbstractGPProcess
@@ -197,7 +198,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ManageTileCache SetEnviroment(object parallelProcessingFactor = null )
+		public ManageTileCache SetEnviroment(object parallelProcessingFactor = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

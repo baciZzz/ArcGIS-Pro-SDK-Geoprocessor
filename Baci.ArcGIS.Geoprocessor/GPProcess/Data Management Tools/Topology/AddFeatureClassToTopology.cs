@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Feature Class To Topology</para>
+	/// <para>Add Feature Class To Topology</para>
 	/// <para>Adds a feature class to a topology.</para>
 	/// </summary>
 	public class AddFeatureClassToTopology : AbstractGPProcess
@@ -119,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddFeatureClassToTopology SetEnviroment(object workspace = null )
+		public AddFeatureClassToTopology SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

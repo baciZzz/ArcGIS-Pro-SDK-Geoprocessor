@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Enrich Layer</para>
+	/// <para>Enrich Layer</para>
 	/// <para>Enriches data by adding demographic and landscape facts about the people and places that surround or are inside data locations.</para>
 	/// </summary>
 	public class EnrichLayer : AbstractGPProcess
@@ -119,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EnrichLayer SetEnviroment(object workspace = null )
+		public EnrichLayer SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

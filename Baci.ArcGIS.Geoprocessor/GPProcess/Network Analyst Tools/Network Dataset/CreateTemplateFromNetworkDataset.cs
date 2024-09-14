@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Create Template From Network Dataset</para>
+	/// <para>Create Template From Network Dataset</para>
 	/// <para>Creates a file containing the schema of an existing network dataset. This template file can then be used to create a new network dataset with the same schema.</para>
 	/// </summary>
 	public class CreateTemplateFromNetworkDataset : AbstractGPProcess
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateTemplateFromNetworkDataset SetEnviroment(object workspace = null )
+		public CreateTemplateFromNetworkDataset SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

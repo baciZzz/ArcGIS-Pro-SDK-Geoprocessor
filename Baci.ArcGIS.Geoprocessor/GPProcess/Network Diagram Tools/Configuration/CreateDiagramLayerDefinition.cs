@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Create Diagram Layer Definition</para>
+	/// <para>Create Diagram Layer Definition</para>
 	/// <para>Creates a diagram layer definition for the input diagram template using the settings of the network feature layers in the active map.</para>
 	/// </summary>
 	public class CreateDiagramLayerDefinition : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

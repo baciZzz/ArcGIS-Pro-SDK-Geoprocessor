@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Version</para>
+	/// <para>Delete Version</para>
 	/// <para>Deletes the specified version from the input enterprise, workgroup, or desktop geodatabase.</para>
 	/// </summary>
 	public class DeleteVersion : AbstractGPProcess
@@ -99,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DeleteVersion SetEnviroment(object workspace = null )
+		public DeleteVersion SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

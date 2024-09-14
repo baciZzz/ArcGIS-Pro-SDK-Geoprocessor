@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Relate</para>
+	/// <para>Add Relate</para>
 	/// <para>Relates a layer to another layer or table based on a field value. Feature layers, table views, and raster layers with a raster attribute table are supported.</para>
 	/// </summary>
 	public class AddRelate : AbstractGPProcess
@@ -149,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddRelate SetEnviroment(object workspace = null )
+		public AddRelate SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

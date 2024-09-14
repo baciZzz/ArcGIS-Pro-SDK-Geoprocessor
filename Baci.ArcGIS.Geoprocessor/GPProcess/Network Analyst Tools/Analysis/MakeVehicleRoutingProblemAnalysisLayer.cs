@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make Vehicle Routing Problem Analysis Layer</para>
+	/// <para>Make Vehicle Routing Problem Analysis Layer</para>
 	/// <para>Creates a vehicle routing problem (VRP) network analysis layer and sets its analysis properties. A VRP analysis layer is useful for optimizing a set of routes using a fleet of vehicles. The layer can be created using a local network dataset or a service hosted online or in a portal.</para>
 	/// </summary>
 	public class MakeVehicleRoutingProblemAnalysisLayer : AbstractGPProcess
@@ -224,7 +225,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeVehicleRoutingProblemAnalysisLayer SetEnviroment(object workspace = null )
+		public MakeVehicleRoutingProblemAnalysisLayer SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

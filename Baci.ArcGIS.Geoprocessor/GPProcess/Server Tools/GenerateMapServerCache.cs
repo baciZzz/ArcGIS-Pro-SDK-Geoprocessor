@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Generate Map Server Cache</para>
+	/// <para>Generate Map Server Cache</para>
 	/// <para>Generates pre-rendered tile cache for the map server.</para>
 	/// </summary>
 	[Obsolete()]
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

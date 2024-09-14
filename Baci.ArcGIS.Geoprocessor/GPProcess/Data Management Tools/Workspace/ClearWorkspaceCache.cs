@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Clear Workspace Cache</para>
+	/// <para>Clear Workspace Cache</para>
 	/// <para>Clears any enterprise geodatabase workspaces from the enterprise geodatabase workspace cache.</para>
 	/// </summary>
 	public class ClearWorkspaceCache : AbstractGPProcess
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClearWorkspaceCache SetEnviroment(object workspace = null )
+		public ClearWorkspaceCache SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

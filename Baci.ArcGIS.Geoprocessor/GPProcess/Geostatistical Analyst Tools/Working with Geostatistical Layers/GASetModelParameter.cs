@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Set Model Parameter</para>
+	/// <para>Set Model Parameter</para>
 	/// <para>Sets parameter values in an existing geostatistical model source.</para>
 	/// </summary>
 	public class GASetModelParameter : AbstractGPProcess
@@ -115,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GASetModelParameter SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public GASetModelParameter SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

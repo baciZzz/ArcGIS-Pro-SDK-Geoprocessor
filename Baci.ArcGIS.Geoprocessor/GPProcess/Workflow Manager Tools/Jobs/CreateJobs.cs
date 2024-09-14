@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Create Jobs</para>
+	/// <para>Create Jobs</para>
 	/// <para>Creates one or more jobs of the selected job type and assigns the jobs to a user.  The created jobs can be prioritized and have an area of interest (AOI) defined from a feature layer or feature class.</para>
 	/// </summary>
 	[Obsolete()]
@@ -66,7 +67,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

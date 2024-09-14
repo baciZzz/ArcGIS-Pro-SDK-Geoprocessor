@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Generate Shapes Features From GTFS</para>
+	/// <para>Generate Shapes Features From GTFS</para>
 	/// <para>Generates an estimate of the paths traveled by the vehicles in a public transit system. The output from this tool can be used to generate a new shapes.txt file for a GTFS public transit dataset.</para>
 	/// </summary>
 	public class GenerateShapesFeaturesFromGTFS : AbstractGPProcess
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

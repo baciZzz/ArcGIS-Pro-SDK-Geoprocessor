@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Feature Outline Masks</para>
+	/// <para>Feature Outline Masks</para>
 	/// <para>Creates mask polygons at a specified distance and shape around the symbolized features in the input layer.</para>
 	/// </summary>
 	public class FeatureOutlineMasks : AbstractGPProcess
@@ -198,7 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FeatureOutlineMasks SetEnviroment(object cartographicCoordinateSystem = null )
+		public FeatureOutlineMasks SetEnviroment(object cartographicCoordinateSystem = null)
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem);
 			return this;

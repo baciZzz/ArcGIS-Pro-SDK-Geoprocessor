@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Calculate Geometry Attributes</para>
+	/// <para>Calculate Geometry Attributes</para>
 	/// <para>Adds information to a feature's attribute fields representing the spatial or geometric characteristics and location of each feature, such as length or area and x-, y-, z-, and m-coordinates.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -253,7 +254,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateGeometryAttributes SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public CalculateGeometryAttributes SetEnviroment(object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

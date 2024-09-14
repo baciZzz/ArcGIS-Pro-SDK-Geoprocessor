@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Overlay Layers</para>
+	/// <para>Overlay Layers</para>
 	/// <para>Overlays the geometries from multiple layers into one single layer.  Overlay can be used to combine, erase, modify, or update spatial features. Overlay is much more than a merging of geometries; all the attributes of the features taking part in the overlay are carried through to the result.</para>
 	/// </summary>
 	public class OverlayLayers : AbstractGPProcess
@@ -152,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public OverlayLayers SetEnviroment(object extent = null )
+		public OverlayLayers SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

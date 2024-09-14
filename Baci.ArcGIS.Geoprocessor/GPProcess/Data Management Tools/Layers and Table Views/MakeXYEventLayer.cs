@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make XY Event Layer</para>
+	/// <para>Make XY Event Layer</para>
 	/// <para>Creates a new point feature layer based on x- and y-coordinates defined in a table. If the source table contains z-coordinates (elevation values), that field can also be specified in the creation of the event layer. The layer created by this tool is temporary.</para>
 	/// <para>The <see cref="Baci.ArcGIS.Geoprocessor.DataManagementTools.XYTableToPoint"/> tool provides enhanced functionality or performance</para>
 	/// </summary>
@@ -133,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeXYEventLayer SetEnviroment(object workspace = null )
+		public MakeXYEventLayer SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

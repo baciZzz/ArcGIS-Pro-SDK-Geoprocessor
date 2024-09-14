@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Create Terrain</para>
+	/// <para>Create Terrain</para>
 	/// <para>Creates a new terrain dataset.</para>
 	/// </summary>
 	public class CreateTerrain : AbstractGPProcess
@@ -171,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateTerrain SetEnviroment(int? autoCommit = null , object configKeyword = null , object workspace = null )
+		public CreateTerrain SetEnviroment(int? autoCommit = null, object configKeyword = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, configKeyword: configKeyword, workspace: workspace);
 			return this;

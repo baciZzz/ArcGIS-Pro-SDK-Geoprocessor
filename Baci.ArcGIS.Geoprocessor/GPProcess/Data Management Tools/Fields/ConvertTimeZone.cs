@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Convert Time Zone</para>
+	/// <para>Convert Time Zone</para>
 	/// <para>Converts time values recorded in a date field from one time zone to another time zone.</para>
 	/// </summary>
 	public class ConvertTimeZone : AbstractGPProcess
@@ -164,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConvertTimeZone SetEnviroment(object workspace = null )
+		public ConvertTimeZone SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

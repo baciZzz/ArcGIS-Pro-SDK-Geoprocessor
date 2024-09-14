@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Extract Data Task</para>
+	/// <para>Extract Data Task</para>
 	/// <para>Extracts the selected  layers in the specified area of interest to the selected formats and spatial reference, then returns all the data in a .zip file.</para>
 	/// </summary>
 	public class ExtractDataTask : AbstractGPProcess
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

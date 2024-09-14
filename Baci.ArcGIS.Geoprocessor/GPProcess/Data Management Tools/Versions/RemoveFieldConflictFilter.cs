@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Field Conflict Filter</para>
+	/// <para>Remove Field Conflict Filter</para>
 	/// <para>Removes a field conflict filter for a given field in a geodatabase table or feature class.</para>
 	/// </summary>
 	public class RemoveFieldConflictFilter : AbstractGPProcess
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveFieldConflictFilter SetEnviroment(object workspace = null )
+		public RemoveFieldConflictFilter SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

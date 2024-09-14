@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Compression Layout</para>
+	/// <para>Add Compression Layout</para>
 	/// <para>Adds the Compression Layout algorithm to the layout list of the input diagram template so it automatically executes at the end of diagram buildings. This tool also presets the Compression Layout algorithm parameters for any diagram based on that template.</para>
 	/// </summary>
 	public class AddCompressionLayout : AbstractGPProcess
@@ -68,7 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

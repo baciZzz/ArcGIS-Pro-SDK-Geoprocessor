@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Transpose Time Fields</para>
+	/// <para>Transpose Time Fields</para>
 	/// <para>Shifts fields from columns to rows in a table or feature class that have time as the field names. This tool is useful when your table or feature class stores time in field names (such as Pop1980, Pop1990, Pop2000, and so on), and you want to create time stamps for the feature class or table so that it can be animated through time.</para>
 	/// </summary>
 	[Obsolete()]
@@ -136,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TransposeTimeFields SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public TransposeTimeFields SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Map Server Cache Tiling Scheme To Polygons</para>
+	/// <para>Map Server Cache Tiling Scheme To Polygons</para>
 	/// <para>Creates a new polygon feature class from an existing tiling scheme.</para>
 	/// </summary>
 	public class MapServerCacheTilingSchemeToPolygons : AbstractGPProcess
@@ -81,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

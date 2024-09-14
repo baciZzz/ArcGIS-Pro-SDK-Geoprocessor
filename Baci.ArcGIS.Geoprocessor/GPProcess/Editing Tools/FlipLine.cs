@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Flip Line</para>
+	/// <para>Flip Line</para>
 	/// <para>Reverses the from-to direction of line features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FlipLine SetEnviroment(object workspace = null )
+		public FlipLine SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Extract Multi Values to Points</para>
+	/// <para>Extract Multi Values to Points</para>
 	/// <para>Extracts cell values at locations specified in a point feature class from one or more rasters and records the values to the attribute table of the point feature class.</para>
 	/// </summary>
 	public class ExtractMultiValuesToPoints : AbstractGPProcess
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExtractMultiValuesToPoints SetEnviroment(int? autoCommit = null , object configKeyword = null , object extent = null , object mask = null , object scratchWorkspace = null , object workspace = null )
+		public ExtractMultiValuesToPoints SetEnviroment(int? autoCommit = null, object configKeyword = null, object extent = null, object mask = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, mask: mask, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

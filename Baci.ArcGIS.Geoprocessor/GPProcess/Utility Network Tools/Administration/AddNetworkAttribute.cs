@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Network Attribute</para>
+	/// <para>Add Network Attribute</para>
 	/// <para>Adds a network attribute to a utility network.</para>
 	/// </summary>
 	public class AddNetworkAttribute : AbstractGPProcess
@@ -196,7 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddNetworkAttribute SetEnviroment(object workspace = null )
+		public AddNetworkAttribute SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

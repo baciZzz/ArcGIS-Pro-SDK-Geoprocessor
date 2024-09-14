@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Rectangles Along Lines</para>
+	/// <para>Generate Rectangles Along Lines</para>
 	/// <para>Creates a series of rectangular polygons that follow a single linear feature or a group of linear features.</para>
 	/// </summary>
 	public class GenerateRectanglesAlongLines : AbstractGPProcess
@@ -119,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateRectanglesAlongLines SetEnviroment(object workspace = null )
+		public GenerateRectanglesAlongLines SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

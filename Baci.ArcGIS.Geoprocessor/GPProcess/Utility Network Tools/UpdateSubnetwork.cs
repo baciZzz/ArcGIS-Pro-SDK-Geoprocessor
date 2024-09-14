@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Update Subnetwork</para>
+	/// <para>Update Subnetwork</para>
 	/// <para>Updates subnetwork information in the Subnetworks table, the SubnetLine feature class, and subnetwork system diagrams for the specified subnetworks. Also certain attributes are created or updated for subnetwork features. A record for any new subnetworks will be generated, the records for any deleted subnetworks will be removed, and the shape and information for any modified subnetworks will be updated.</para>
 	/// </summary>
 	public class UpdateSubnetwork : AbstractGPProcess
@@ -73,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

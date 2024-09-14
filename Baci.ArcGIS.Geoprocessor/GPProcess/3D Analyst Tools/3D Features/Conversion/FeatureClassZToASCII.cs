@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Feature Class Z To ASCII</para>
+	/// <para>Feature Class Z To ASCII</para>
 	/// <para>Exports 3D features to ASCII text files storing GENERATE, XYZ, or profile data.</para>
 	/// </summary>
 	public class FeatureClassZToASCII : AbstractGPProcess
@@ -167,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FeatureClassZToASCII SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public FeatureClassZToASCII SetEnviroment(object extent = null, object geographicTransformations = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

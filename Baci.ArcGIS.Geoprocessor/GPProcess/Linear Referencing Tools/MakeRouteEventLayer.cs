@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 {
 	/// <summary>
 	/// <para>Make Route Event Layer</para>
+	/// <para>Make Route Event Layer</para>
 	/// <para>Creates a temporary feature layer using routes and route events.</para>
 	/// </summary>
 	public class MakeRouteEventLayer : AbstractGPProcess
@@ -221,7 +222,7 @@ namespace Baci.ArcGIS.Geoprocessor.LinearReferencingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeRouteEventLayer SetEnviroment(object configKeyword = null , object scratchWorkspace = null , object workspace = null )
+		public MakeRouteEventLayer SetEnviroment(object configKeyword = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

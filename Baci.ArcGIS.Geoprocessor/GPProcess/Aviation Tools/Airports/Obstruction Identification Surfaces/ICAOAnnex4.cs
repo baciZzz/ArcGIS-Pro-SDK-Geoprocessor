@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>ICAO Annex 4</para>
+	/// <para>ICAO Annex 4</para>
 	/// <para>Creates obstruction identification surfaces (OIS) based on the ICAO Annex 4 specification for the Precision Approach Terrain chart.</para>
 	/// </summary>
 	public class ICAOAnnex4 : AbstractGPProcess
@@ -151,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ICAOAnnex4 SetEnviroment(object workspace = null )
+		public ICAOAnnex4 SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

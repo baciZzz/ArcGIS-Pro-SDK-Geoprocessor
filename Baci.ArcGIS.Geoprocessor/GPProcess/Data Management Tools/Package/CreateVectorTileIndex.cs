@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Vector Tile Index</para>
+	/// <para>Create Vector Tile Index</para>
 	/// <para>Creates a multiscale mesh of polygons that can be used as index polygons when creating vector tile packages.</para>
 	/// </summary>
 	public class CreateVectorTileIndex : AbstractGPProcess
@@ -68,7 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

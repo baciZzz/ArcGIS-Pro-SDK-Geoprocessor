@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>JSON To Features</para>
+	/// <para>JSON To Features</para>
 	/// <para>Converts feature collections in an Esri JSON (.json) file or GeoJSON (.geojson) file to a feature class.</para>
 	/// </summary>
 	public class JSONToFeatures : AbstractGPProcess
@@ -104,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public JSONToFeatures SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public JSONToFeatures SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

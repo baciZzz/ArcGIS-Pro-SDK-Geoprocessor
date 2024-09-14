@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Unregister As Versioned</para>
+	/// <para>Unregister As Versioned</para>
 	/// <para>Unregisters an enterprise geodatabase dataset as versioned.</para>
 	/// </summary>
 	public class UnregisterAsVersioned : AbstractGPProcess
@@ -104,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UnregisterAsVersioned SetEnviroment(object workspace = null )
+		public UnregisterAsVersioned SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

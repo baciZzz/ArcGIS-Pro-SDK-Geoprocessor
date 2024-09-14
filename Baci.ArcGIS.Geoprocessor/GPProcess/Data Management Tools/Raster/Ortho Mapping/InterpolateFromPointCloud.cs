@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Interpolate From Point Cloud</para>
+	/// <para>Interpolate From Point Cloud</para>
 	/// <para>Interpolates a digital terrain model (DTM) or a digital surface model (DSM) from a point cloud using one of the interpolation methods provided.</para>
 	/// </summary>
 	public class InterpolateFromPointCloud : AbstractGPProcess
@@ -171,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public InterpolateFromPointCloud SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object pyramid = null , object scratchWorkspace = null , object workspace = null )
+		public InterpolateFromPointCloud SetEnviroment(object extent = null, object geographicTransformations = null, object outputCoordinateSystem = null, object parallelProcessingFactor = null, object pyramid = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

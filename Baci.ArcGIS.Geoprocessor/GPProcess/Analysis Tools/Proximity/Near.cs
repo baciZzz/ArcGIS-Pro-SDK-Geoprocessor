@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Near</para>
+	/// <para>Near</para>
 	/// <para>Calculates distance and additional proximity information between the input features and the closest feature in another layer or feature class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -154,7 +155,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Near SetEnviroment(object extent = null , object workspace = null )
+		public Near SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

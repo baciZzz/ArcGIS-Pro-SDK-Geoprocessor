@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Forest-based Classification and Regression</para>
+	/// <para>Forest-based Classification and Regression</para>
 	/// <para>Creates models and generates predictions using an adaptation of Leo Breiman's random forest algorithm, which is a supervised machine learning method. Predictions can be performed for both categorical variables (classification) and continuous variables (regression). Explanatory variables can take the form of fields in the attribute table of the training features, raster datasets, and distance features used to calculate proximity values for use as additional variables. In addition to validation of model performance based on the training data, predictions can be made to either features or a prediction raster.</para>
 	/// </summary>
 	public class Forest : AbstractGPProcess
@@ -356,7 +357,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Forest SetEnviroment(object cellSize = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object randomGenerator = null )
+		public Forest SetEnviroment(object cellSize = null, object mask = null, object outputCoordinateSystem = null, object parallelProcessingFactor = null, object randomGenerator = null)
 		{
 			base.SetEnv(cellSize: cellSize, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, randomGenerator: randomGenerator);
 			return this;

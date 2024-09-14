@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Dissolve Boundaries</para>
+	/// <para>Dissolve Boundaries</para>
 	/// <para>Finds polygons that overlap or share a common boundary and merges them together to form a single polygon.</para>
 	/// </summary>
 	public class DissolveBoundaries : AbstractGPProcess
@@ -118,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DissolveBoundaries SetEnviroment(object extent = null )
+		public DissolveBoundaries SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

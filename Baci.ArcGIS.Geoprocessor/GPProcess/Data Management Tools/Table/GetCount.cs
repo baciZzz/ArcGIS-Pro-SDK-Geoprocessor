@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Get Count</para>
+	/// <para>Get Count</para>
 	/// <para>Returns the total number of rows for a table.</para>
 	/// </summary>
 	public class GetCount : AbstractGPProcess
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GetCount SetEnviroment(object extent = null , object workspace = null )
+		public GetCount SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

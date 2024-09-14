@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Create Overpass</para>
+	/// <para>Create Overpass</para>
 	/// <para>Creates bridge parapets and polygon masks at line intersections to indicate overpasses.</para>
 	/// </summary>
 	public class CreateOverpass : AbstractGPProcess
@@ -187,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateOverpass SetEnviroment(object cartographicCoordinateSystem = null , object referenceScale = null )
+		public CreateOverpass SetEnviroment(object cartographicCoordinateSystem = null, object referenceScale = null)
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, referenceScale: referenceScale);
 			return this;

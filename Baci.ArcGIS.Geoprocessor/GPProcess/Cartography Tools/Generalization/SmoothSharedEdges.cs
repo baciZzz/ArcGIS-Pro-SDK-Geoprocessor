@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Smooth Shared Edges</para>
+	/// <para>Smooth Shared Edges</para>
 	/// <para>Smooths the edges of the input features while maintaining the topological relationship with edges shared with other features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -144,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SmoothSharedEdges SetEnviroment(object cartographicPartitions = null )
+		public SmoothSharedEdges SetEnviroment(object cartographicPartitions = null)
 		{
 			base.SetEnv(cartographicPartitions: cartographicPartitions);
 			return this;

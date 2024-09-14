@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Download Rasters</para>
+	/// <para>Download Rasters</para>
 	/// <para>Downloads the source  files from an image service or mosaic dataset.</para>
 	/// </summary>
 	public class DownloadRasters : AbstractGPProcess
@@ -195,7 +196,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DownloadRasters SetEnviroment(object extent = null )
+		public DownloadRasters SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

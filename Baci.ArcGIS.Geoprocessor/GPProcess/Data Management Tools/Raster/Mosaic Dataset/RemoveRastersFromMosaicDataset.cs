@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Rasters From Mosaic Dataset</para>
+	/// <para>Remove Rasters From Mosaic Dataset</para>
 	/// <para>Removes selected raster datasets from a mosaic dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -167,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveRastersFromMosaicDataset SetEnviroment(object extent = null )
+		public RemoveRastersFromMosaicDataset SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

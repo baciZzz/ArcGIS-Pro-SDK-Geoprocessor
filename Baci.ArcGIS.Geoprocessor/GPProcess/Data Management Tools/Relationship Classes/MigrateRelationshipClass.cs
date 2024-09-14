@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Migrate Relationship Class</para>
+	/// <para>Migrate Relationship Class</para>
 	/// <para>Migrates an ObjectID-based relationship class to a GlobalID-based relationship class.</para>
 	/// </summary>
 	public class MigrateRelationshipClass : AbstractGPProcess
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MigrateRelationshipClass SetEnviroment(object workspace = null )
+		public MigrateRelationshipClass SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

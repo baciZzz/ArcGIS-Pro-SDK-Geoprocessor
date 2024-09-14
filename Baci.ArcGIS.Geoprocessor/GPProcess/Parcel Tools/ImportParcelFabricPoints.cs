@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Import Parcel Fabric Points</para>
+	/// <para>Import Parcel Fabric Points</para>
 	/// <para>Imports point data from a source point feature class into the parcel fabric points feature class. Parcel fabric points that match or lie within a proximity tolerance of the source points will be updated with the imported point data. If the source points layer has a selection, only the selected point information will be imported.</para>
 	/// </summary>
 	public class ImportParcelFabricPoints : AbstractGPProcess
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

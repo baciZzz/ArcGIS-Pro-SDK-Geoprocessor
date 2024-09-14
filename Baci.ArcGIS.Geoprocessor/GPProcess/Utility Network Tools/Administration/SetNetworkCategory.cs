@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Set Network Category</para>
+	/// <para>Set Network Category</para>
 	/// <para>Assigns a network category to a feature class or table at the asset type level to be used during tracing operations.</para>
 	/// </summary>
 	public class SetNetworkCategory : AbstractGPProcess
@@ -142,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetNetworkCategory SetEnviroment(object workspace = null )
+		public SetNetworkCategory SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

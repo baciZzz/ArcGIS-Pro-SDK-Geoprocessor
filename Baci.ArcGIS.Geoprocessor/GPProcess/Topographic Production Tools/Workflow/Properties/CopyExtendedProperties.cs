@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Copy Extended Properties</para>
+	/// <para>Copy Extended Properties</para>
 	/// <para>Copies extended property values from one job to another job in the same Workflow Manager (Classic) repository.</para>
 	/// </summary>
 	public class CopyExtendedProperties : AbstractGPProcess
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

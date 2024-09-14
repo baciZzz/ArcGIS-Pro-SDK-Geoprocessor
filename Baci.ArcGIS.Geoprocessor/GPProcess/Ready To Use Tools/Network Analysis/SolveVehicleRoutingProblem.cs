@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 {
 	/// <summary>
 	/// <para>Solve Vehicle Routing Problem</para>
+	/// <para>Solve Vehicle Routing Problem</para>
 	/// <para>Solves a vehicle routing problem (VRP) to find the best routes for a fleet of vehicles.</para>
 	/// </summary>
 	public class SolveVehicleRoutingProblem : AbstractGPProcess
@@ -286,7 +287,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

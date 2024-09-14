@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Transform Field</para>
+	/// <para>Transform Field</para>
 	/// <para>Transforms continuous values in one or more fields by applying mathematical functions to each value and</para>
 	/// <para>changing the shape of the distribution. The transformation methods</para>
 	/// <para>in the tool include log, square root, Box-Cox, multiplicative</para>
@@ -135,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TransformField SetEnviroment(object extent = null )
+		public TransformField SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

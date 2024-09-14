@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Alter Diagram Template</para>
+	/// <para>Alter Diagram Template</para>
 	/// <para>Alters the properties of a diagram template such as its name, how it handles vertices along input network edges, whether the related diagrams can be stored or extended, the margin between containers and their contents in these diagrams, the removal of its rule and layout, and the reset of the diagram layer definition to default.</para>
 	/// </summary>
 	public class AlterDiagramTemplate : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

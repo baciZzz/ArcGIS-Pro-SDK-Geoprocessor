@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Increase Maximum Edges</para>
+	/// <para>Increase Maximum Edges</para>
 	/// <para>Increases the maximum number of edges per turn in a turn feature class.</para>
 	/// </summary>
 	public class IncreaseMaximumEdges : AbstractGPProcess
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public IncreaseMaximumEdges SetEnviroment(object workspace = null )
+		public IncreaseMaximumEdges SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

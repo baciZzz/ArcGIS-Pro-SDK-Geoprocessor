@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create 3D Object Scene Layer Package</para>
+	/// <para>Create 3D Object Scene Layer Package</para>
 	/// <para>Creates a scene layer package (.slpk file) from a multipatch or 3D object feature layer input.</para>
 	/// </summary>
 	public class Create3DObjectSceneLayerPackage : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

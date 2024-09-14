@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Neighborhood Summary Statistics</para>
+	/// <para>Neighborhood Summary Statistics</para>
 	/// <para>Calculates summary  statistics of one or more numeric fields using local neighborhoods around each feature.  The local statistics include mean (average), median, standard deviation, interquartile range, skewness, and quantile imbalance, and all statistics can be geographically weighted using kernels to give more influence to neighbors closer to the focal feature.  Various neighborhood types can be used, including distance band, number of neighbors, polygon contiguity, Delaunay triangulation, and spatial weights matrix (.swm) files.</para>
 	/// <para>Summary statistics are also calculated for the distances to the neighbors of each feature.</para>
 	/// </summary>
@@ -209,7 +210,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public NeighborhoodSummaryStatistics SetEnviroment(object outputCoordinateSystem = null )
+		public NeighborhoodSummaryStatistics SetEnviroment(object outputCoordinateSystem = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;

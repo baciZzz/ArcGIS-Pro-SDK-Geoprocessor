@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Create Map Server Cache</para>
+	/// <para>Create Map Server Cache</para>
 	/// <para>Creates the tiling scheme and preparatory folders for a map or image service cache. After running this tool, use the Manage Map Server Cache Tiles tool to add tiles to the cache.</para>
 	/// </summary>
 	public class CreateMapServerCache : AbstractGPProcess
@@ -96,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

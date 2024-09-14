@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Summary Reports</para>
+	/// <para>Summary Reports</para>
 	/// <para>Populates and creates demographic style summary reports for any boundary layer using Esri report templates.</para>
 	/// </summary>
 	public class SummaryReports : AbstractGPProcess
@@ -240,7 +241,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SummaryReports SetEnviroment(object workspace = null )
+		public SummaryReports SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

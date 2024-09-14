@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Get Layout Templates Info</para>
+	/// <para>Get Layout Templates Info</para>
 	/// <para>Returns the content</para>
 	/// <para>of layout templates in JavaScript Object Notation</para>
 	/// <para>(JSON) format. Layout files (.pagx files) located in a folder are used as layout templates.</para>
@@ -52,7 +53,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

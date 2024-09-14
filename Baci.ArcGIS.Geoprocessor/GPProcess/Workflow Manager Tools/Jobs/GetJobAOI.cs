@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Get Job AOI</para>
+	/// <para>Get Job AOI</para>
 	/// <para>Gets the job's location of interest (LOI)  as a feature layer. The output layer has either the polygon representing the area of interest (AOI) of the job or point representing the point of interest (POI) of the job.</para>
 	/// </summary>
 	public class GetJobAOI : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

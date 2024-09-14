@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Inside 3D</para>
+	/// <para>Inside 3D</para>
 	/// <para>Determines if 3D features from an input feature class are contained inside a closed multipatch, and writes an output table recording the features that are partially or fully inside the multipatch.</para>
 	/// </summary>
 	public class Inside3D : AbstractGPProcess
@@ -113,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Inside3D SetEnviroment(int? autoCommit = null , object configKeyword = null , object extent = null , object workspace = null )
+		public Inside3D SetEnviroment(int? autoCommit = null, object configKeyword = null, object extent = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Mosaic Dataset Item Cache</para>
+	/// <para>Build Mosaic Dataset Item Cache</para>
 	/// <para>Inserts the Cached Raster function as the final step in all function chains within a mosaic dataset.</para>
 	/// </summary>
 	public class BuildMosaicDatasetItemCache : AbstractGPProcess
@@ -191,7 +192,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildMosaicDatasetItemCache SetEnviroment(object extent = null , object parallelProcessingFactor = null )
+		public BuildMosaicDatasetItemCache SetEnviroment(object extent = null, object parallelProcessingFactor = null)
 		{
 			base.SetEnv(extent: extent, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

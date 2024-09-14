@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Create Indoors Database</para>
+	/// <para>Create Indoors Database</para>
 	/// <para>Adds the necessary datasets, feature classes, tables, and configurations to a geodatabase to host ArcGIS Indoors data.</para>
 	/// </summary>
 	public class CreateIndoorsDatabase : AbstractGPProcess
@@ -94,7 +95,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateIndoorsDatabase SetEnviroment(object workspace = null )
+		public CreateIndoorsDatabase SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

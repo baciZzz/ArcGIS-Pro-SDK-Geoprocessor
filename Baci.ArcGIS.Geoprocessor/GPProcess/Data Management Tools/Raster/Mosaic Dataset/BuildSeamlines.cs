@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Seamlines</para>
+	/// <para>Build Seamlines</para>
 	/// <para>Generate or update seamlines for your mosaic dataset. Seamlines are used to sort overlapping imagery and produce a smoother-looking mosaic.</para>
 	/// </summary>
 	public class BuildSeamlines : AbstractGPProcess
@@ -280,7 +281,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildSeamlines SetEnviroment(object parallelProcessingFactor = null )
+		public BuildSeamlines SetEnviroment(object parallelProcessingFactor = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

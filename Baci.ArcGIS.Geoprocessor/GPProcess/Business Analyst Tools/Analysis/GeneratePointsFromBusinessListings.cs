@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Points From Business Listings</para>
+	/// <para>Generate Points From Business Listings</para>
 	/// <para>Generates a point feature layer from a business point location search.</para>
 	/// </summary>
 	public class GeneratePointsFromBusinessListings : AbstractGPProcess
@@ -144,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeneratePointsFromBusinessListings SetEnviroment(object extent = null , object workspace = null )
+		public GeneratePointsFromBusinessListings SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

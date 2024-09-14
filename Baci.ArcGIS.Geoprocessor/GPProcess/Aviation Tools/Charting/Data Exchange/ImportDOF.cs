@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Import Digital Obstacle File</para>
+	/// <para>Import Digital Obstacle File</para>
 	/// <para>Adds, deletes, and updates the obstacle point features in an input obstacle feature class using an input digital obstacle file (DOF).</para>
 	/// </summary>
 	public class ImportDOF : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

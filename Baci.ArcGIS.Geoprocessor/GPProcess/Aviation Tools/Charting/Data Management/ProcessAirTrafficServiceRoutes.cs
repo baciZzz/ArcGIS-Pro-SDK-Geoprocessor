@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Process Air Traffic Service Routes</para>
+	/// <para>Process Air Traffic Service Routes</para>
 	/// <para>Identifies, generalizes, and offsets overlapping Air Traffic Service (ATS) routes.</para>
 	/// </summary>
 	public class ProcessAirTrafficServiceRoutes : AbstractGPProcess
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

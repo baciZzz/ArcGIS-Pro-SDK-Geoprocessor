@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Time Series Smoothing</para>
+	/// <para>Time Series Smoothing</para>
 	/// <para>Smooths a numeric variable of one or more time series using centered, forward, and backward moving averages, as well as an adaptive method based on</para>
 	/// <para>local linear regression. After smoothing short-term</para>
 	/// <para>fluctuations, longer-term trends or cycles often become apparent.</para>
@@ -206,7 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TimeSeriesSmoothing SetEnviroment(object outputCoordinateSystem = null )
+		public TimeSeriesSmoothing SetEnviroment(object outputCoordinateSystem = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;

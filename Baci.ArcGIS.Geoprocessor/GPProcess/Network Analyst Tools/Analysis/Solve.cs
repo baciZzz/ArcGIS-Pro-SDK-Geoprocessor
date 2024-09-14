@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Solve</para>
+	/// <para>Solve</para>
 	/// <para>Solves the network analysis layer problem based on its network locations and properties.</para>
 	/// </summary>
 	[Obsolete()]
@@ -133,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Solve SetEnviroment(object workspace = null )
+		public Solve SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

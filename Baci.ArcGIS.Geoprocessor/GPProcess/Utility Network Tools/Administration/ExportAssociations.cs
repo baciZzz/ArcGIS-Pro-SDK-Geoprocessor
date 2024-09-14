@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Export Associations</para>
+	/// <para>Export Associations</para>
 	/// <para>Exports associations from a utility network to a comma-separated-values file (.csv). </para>
 	/// <para>This tool can be used in conjunction with the Import Associations tool.</para>
 	/// </summary>
@@ -74,7 +75,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

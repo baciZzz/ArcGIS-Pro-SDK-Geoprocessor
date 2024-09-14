@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Block Adjustment Report</para>
+	/// <para>Generate Block Adjustment Report</para>
 	/// <para>Generates a  report after performing ortho mapping block adjustment to a mosaic dataset. The report is critical in evaluating the quality and accuracy of the ortho mapping products.</para>
 	/// </summary>
 	public class GenerateBlockAdjustmentReport : AbstractGPProcess
@@ -133,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateBlockAdjustmentReport SetEnviroment(object workspace = null )
+		public GenerateBlockAdjustmentReport SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

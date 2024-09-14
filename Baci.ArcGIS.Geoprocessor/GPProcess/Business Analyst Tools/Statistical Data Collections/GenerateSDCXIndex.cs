@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate SDCX Index</para>
+	/// <para>Generate SDCX Index</para>
 	/// <para>Creates an index for a Statistical Data Collection (SDCX). The index will improve performance when using the custom data in analysis tools such as Enrich Layer.</para>
 	/// </summary>
 	public class GenerateSDCXIndex : AbstractGPProcess
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateSDCXIndex SetEnviroment(object workspace = null )
+		public GenerateSDCXIndex SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

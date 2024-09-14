@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Add Trace Locations</para>
+	/// <para>Add Trace Locations</para>
 	/// <para>Creates a feature class to be used as the starting points and barriers input for the Trace tool.</para>
 	/// </summary>
 	public class AddTraceLocations : AbstractGPProcess
@@ -139,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddTraceLocations SetEnviroment(object outputZFlag = null , object workspace = null )
+		public AddTraceLocations SetEnviroment(object outputZFlag = null, object workspace = null)
 		{
 			base.SetEnv(outputZFlag: outputZFlag, workspace: workspace);
 			return this;

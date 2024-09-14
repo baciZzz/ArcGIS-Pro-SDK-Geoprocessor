@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Create LRS Intersection From Existing Dataset</para>
+	/// <para>Create LRS Intersection From Existing Dataset</para>
 	/// <para>Registers an existing intersection feature class as an intersection.</para>
 	/// </summary>
 	public class CreateLRSIntersectionFromExistingDataset : AbstractGPProcess
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

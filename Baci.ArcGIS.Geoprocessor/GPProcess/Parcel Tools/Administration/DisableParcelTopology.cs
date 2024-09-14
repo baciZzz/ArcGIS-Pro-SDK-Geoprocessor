@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Disable Parcel Topology</para>
+	/// <para>Disable Parcel Topology</para>
 	/// <para>Disables geodatabase topology on a parcel fabric.  System-defined  topology rules and parcel fabric feature classes will be removed from the topology.</para>
 	/// </summary>
 	public class DisableParcelTopology : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

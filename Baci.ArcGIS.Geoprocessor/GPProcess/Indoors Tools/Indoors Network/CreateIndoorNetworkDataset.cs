@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Create Indoor Network Dataset</para>
+	/// <para>Create Indoor Network Dataset</para>
 	/// <para>Creates an indoor network dataset containing the necessary feature classes to maintain indoor network data using a streamlined schema that conforms to the ArcGIS Indoors Information Model. The indoor network dataset can be used to support indoor routable networks.</para>
 	/// </summary>
 	public class CreateIndoorNetworkDataset : AbstractGPProcess
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateIndoorNetworkDataset SetEnviroment(object configKeyword = null , object workspace = null )
+		public CreateIndoorNetworkDataset SetEnviroment(object configKeyword = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Clear Job Replication Information</para>
+	/// <para>Clear Job Replication Information</para>
 	/// <para>Deletes the  replication information on a parent repository and sends  a web service call to all the child repositories in the cluster. Consequently, the replication information is cleared from all the repositories participating in the cluster.</para>
 	/// </summary>
 	public class ClearJobReplicationInfo : AbstractGPProcess
@@ -56,7 +57,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

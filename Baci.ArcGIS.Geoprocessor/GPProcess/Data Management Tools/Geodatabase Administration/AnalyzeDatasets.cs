@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Analyze Datasets</para>
+	/// <para>Analyze Datasets</para>
 	/// <para>Updates database statistics of base tables, delta tables, and archive tables, along with the statistics on the indexes of those tables. This tool is used in enterprise geodatabases to help get optimal performance from the RDBMS query optimizer. Stale statistics can affect geodatabase performance.</para>
 	/// </summary>
 	public class AnalyzeDatasets : AbstractGPProcess
@@ -151,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AnalyzeDatasets SetEnviroment(object workspace = null )
+		public AnalyzeDatasets SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Delineate Built-Up Areas</para>
+	/// <para>Delineate Built-Up Areas</para>
 	/// <para>Creates polygons to represent built-up areas by delineating densely clustered arrangements of buildings on small-scale maps.</para>
 	/// </summary>
 	public class DelineateBuiltUpAreas : AbstractGPProcess
@@ -146,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DelineateBuiltUpAreas SetEnviroment(object cartographicPartitions = null , object referenceScale = null )
+		public DelineateBuiltUpAreas SetEnviroment(object cartographicPartitions = null, object referenceScale = null)
 		{
 			base.SetEnv(cartographicPartitions: cartographicPartitions, referenceScale: referenceScale);
 			return this;

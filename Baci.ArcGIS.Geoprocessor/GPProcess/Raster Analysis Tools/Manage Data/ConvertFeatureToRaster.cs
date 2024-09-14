@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Convert Feature To Raster</para>
+	/// <para>Convert Feature To Raster</para>
 	/// <para>Converts features to a raster dataset.</para>
 	/// </summary>
 	public class ConvertFeatureToRaster : AbstractGPProcess
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConvertFeatureToRaster SetEnviroment(object cellSize = null , object extent = null , object outputCoordinateSystem = null , object snapRaster = null )
+		public ConvertFeatureToRaster SetEnviroment(object cellSize = null, object extent = null, object outputCoordinateSystem = null, object snapRaster = null)
 		{
 			base.SetEnv(cellSize: cellSize, extent: extent, outputCoordinateSystem: outputCoordinateSystem, snapRaster: snapRaster);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Import Contingent Values</para>
+	/// <para>Import Contingent Values</para>
 	/// <para>Imports multiple contingent values and field groups from a comma-separated values file (.csv) into a dataset.</para>
 	/// </summary>
 	public class ImportContingentValues : AbstractGPProcess
@@ -122,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportContingentValues SetEnviroment(object workspace = null )
+		public ImportContingentValues SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

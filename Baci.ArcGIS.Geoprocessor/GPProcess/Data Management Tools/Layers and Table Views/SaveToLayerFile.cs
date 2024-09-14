@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Save To Layer File</para>
+	/// <para>Save To Layer File</para>
 	/// <para>Creates an output layer file (.lyrx) from a map layer. The layer file stores many properties of the input layer such as symbology, labeling, and custom pop-ups. Layer files saved from ArcGIS Pro cannot be used in ArcMap.</para>
 	/// </summary>
 	public class SaveToLayerFile : AbstractGPProcess
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SaveToLayerFile SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public SaveToLayerFile SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

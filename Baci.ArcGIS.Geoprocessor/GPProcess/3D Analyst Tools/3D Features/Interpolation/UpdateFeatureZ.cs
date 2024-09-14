@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Update Feature Z</para>
+	/// <para>Update Feature Z</para>
 	/// <para>Updates the z-coordinates of 3D feature vertices using a surface.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -124,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UpdateFeatureZ SetEnviroment(object extent = null , object workspace = null )
+		public UpdateFeatureZ SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

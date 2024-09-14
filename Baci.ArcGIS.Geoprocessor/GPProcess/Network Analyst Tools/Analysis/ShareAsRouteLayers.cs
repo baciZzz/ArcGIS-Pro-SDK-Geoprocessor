@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Share As Route Layers</para>
+	/// <para>Share As Route Layers</para>
 	/// <para>Shares the results of network analyses as route layer items in a portal.  A route layer includes all the information for a particular route such as the stops assigned to the route as well as the travel directions.</para>
 	/// </summary>
 	public class ShareAsRouteLayers : AbstractGPProcess
@@ -134,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ShareAsRouteLayers SetEnviroment(object outputCoordinateSystem = null )
+		public ShareAsRouteLayers SetEnviroment(object outputCoordinateSystem = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;

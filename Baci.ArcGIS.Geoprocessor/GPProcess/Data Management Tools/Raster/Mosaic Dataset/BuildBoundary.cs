@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Boundary</para>
+	/// <para>Build Boundary</para>
 	/// <para>Updates the extent of the boundary when adding new raster datasets to a mosaic dataset that extend beyond its previous coverage.</para>
 	/// </summary>
 	public class BuildBoundary : AbstractGPProcess
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildBoundary SetEnviroment(object parallelProcessingFactor = null )
+		public BuildBoundary SetEnviroment(object parallelProcessingFactor = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

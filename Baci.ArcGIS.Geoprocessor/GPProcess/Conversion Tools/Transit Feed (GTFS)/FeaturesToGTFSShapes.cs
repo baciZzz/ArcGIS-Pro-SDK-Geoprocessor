@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Features To GTFS Shapes</para>
+	/// <para>Features To GTFS Shapes</para>
 	/// <para>Creates a  shapes.txt file for a GTFS public transit dataset based on route line representations created by the Generate Shapes Features From GTFS tool.</para>
 	/// </summary>
 	public class FeaturesToGTFSShapes : AbstractGPProcess
@@ -167,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FeaturesToGTFSShapes SetEnviroment(object randomGenerator = null )
+		public FeaturesToGTFSShapes SetEnviroment(object randomGenerator = null)
 		{
 			base.SetEnv(randomGenerator: randomGenerator);
 			return this;

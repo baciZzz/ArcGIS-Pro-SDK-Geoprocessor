@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Stop</para>
+	/// <para>Stop</para>
 	/// <para>Exits a model out of the iteration loop if the input values are set to true or set to false.  For the set of input values, iteration will continue if all the inputs are true and stop if any one of the inputs is false. It is functionally similar to the While tool but is useful to stop a model if there is one While iterator in a model and no additional iterators can be added.</para>
 	/// </summary>
 	public class Stop : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

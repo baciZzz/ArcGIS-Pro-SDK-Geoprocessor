@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>WFS To Feature Class</para>
+	/// <para>WFS To Feature Class</para>
 	/// <para>Imports a feature type from a web feature service (WFS) to a feature class in a geodatabase.</para>
 	/// </summary>
 	public class WFSToFeatureClass : AbstractGPProcess
@@ -178,7 +179,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public WFSToFeatureClass SetEnviroment(object configKeyword = null , object extent = null )
+		public WFSToFeatureClass SetEnviroment(object configKeyword = null, object extent = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, extent: extent);
 			return this;

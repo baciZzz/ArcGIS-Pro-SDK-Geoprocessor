@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Create Space Time Cube From Defined Locations</para>
+	/// <para>Create Space Time Cube From Defined Locations</para>
 	/// <para>Takes panel data or station data (defined locations where geography does not change but attributes are changing over time) and structures it into a netCDF data format by creating space-time bins.  For all locations, the trend for variables or summary fields is evaluated.</para>
 	/// </summary>
 	public class CreateSpaceTimeCubeDefinedLocations : AbstractGPProcess
@@ -238,7 +239,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateSpaceTimeCubeDefinedLocations SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public CreateSpaceTimeCubeDefinedLocations SetEnviroment(object geographicTransformations = null, object outputCoordinateSystem = null, object parallelProcessingFactor = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>ASCII To Raster</para>
+	/// <para>ASCII To Raster</para>
 	/// <para>Converts an ASCII file representing raster data to a raster dataset.</para>
 	/// </summary>
 	[Obsolete()]
@@ -103,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ASCIIToRaster SetEnviroment(int? autoCommit = null , object compression = null , object configKeyword = null , object pyramid = null , object rasterStatistics = null , object scratchWorkspace = null , double[] tileSize = null , object workspace = null )
+		public ASCIIToRaster SetEnviroment(int? autoCommit = null, object compression = null, object configKeyword = null, object pyramid = null, object rasterStatistics = null, object scratchWorkspace = null, double[] tileSize = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, compression: compression, configKeyword: configKeyword, pyramid: pyramid, rasterStatistics: rasterStatistics, scratchWorkspace: scratchWorkspace, tileSize: tileSize, workspace: workspace);
 			return this;

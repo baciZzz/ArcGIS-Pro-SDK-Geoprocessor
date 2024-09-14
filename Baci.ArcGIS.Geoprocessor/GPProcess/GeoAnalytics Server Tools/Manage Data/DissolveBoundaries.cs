@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Dissolve Boundaries</para>
+	/// <para>Dissolve Boundaries</para>
 	/// <para>Finds polygons that intersect or have the same field values and merges them to form a single polygon.</para>
 	/// </summary>
 	public class DissolveBoundaries : AbstractGPProcess
@@ -159,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DissolveBoundaries SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public DissolveBoundaries SetEnviroment(object extent = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

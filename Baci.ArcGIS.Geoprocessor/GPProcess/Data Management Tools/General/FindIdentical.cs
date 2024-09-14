@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Find Identical</para>
+	/// <para>Find Identical</para>
 	/// <para>Reports any records in a feature class or table that have identical values in a list of fields, and generates a table listing these identical records. If the field Shape is selected, feature geometries are compared.</para>
 	/// </summary>
 	public class FindIdentical : AbstractGPProcess
@@ -129,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindIdentical SetEnviroment(object XYTolerance = null , object ZTolerance = null , object extent = null , object scratchWorkspace = null , object workspace = null )
+		public FindIdentical SetEnviroment(object XYTolerance = null, object ZTolerance = null, object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(XYTolerance: XYTolerance, ZTolerance: ZTolerance, extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

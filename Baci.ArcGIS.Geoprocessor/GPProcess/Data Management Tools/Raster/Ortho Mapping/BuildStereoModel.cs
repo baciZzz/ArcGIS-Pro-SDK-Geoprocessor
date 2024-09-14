@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Stereo Model</para>
+	/// <para>Build Stereo Model</para>
 	/// <para>Builds a stereo model of a mosaic dataset based on a user-provided stereo pair.</para>
 	/// </summary>
 	public class BuildStereoModel : AbstractGPProcess
@@ -56,7 +57,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

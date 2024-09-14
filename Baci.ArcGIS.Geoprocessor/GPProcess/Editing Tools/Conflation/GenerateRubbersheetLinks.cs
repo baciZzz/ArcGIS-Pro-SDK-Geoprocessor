@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Generate Rubbersheet Links</para>
+	/// <para>Generate Rubbersheet Links</para>
 	/// <para>Finds where the source line features spatially match the target line features and generates lines representing links from source locations to corresponding target locations for rubbersheeting.</para>
 	/// </summary>
 	public class GenerateRubbersheetLinks : AbstractGPProcess
@@ -144,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateRubbersheetLinks SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateRubbersheetLinks SetEnviroment(object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

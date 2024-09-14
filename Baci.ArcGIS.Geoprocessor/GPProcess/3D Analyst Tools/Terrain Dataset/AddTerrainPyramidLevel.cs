@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Add Terrain Pyramid Level</para>
+	/// <para>Add Terrain Pyramid Level</para>
 	/// <para>Adds one or more pyramid levels to an existing terrain dataset.</para>
 	/// </summary>
 	public class AddTerrainPyramidLevel : AbstractGPProcess
@@ -103,7 +104,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddTerrainPyramidLevel SetEnviroment(int? autoCommit = null , object workspace = null )
+		public AddTerrainPyramidLevel SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

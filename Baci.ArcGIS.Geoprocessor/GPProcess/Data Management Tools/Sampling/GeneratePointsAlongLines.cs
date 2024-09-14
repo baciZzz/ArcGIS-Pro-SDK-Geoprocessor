@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Points Along Lines</para>
+	/// <para>Generate Points Along Lines</para>
 	/// <para>Creates point features along lines or polygons at fixed intervals or by percentage of a feature's length.</para>
 	/// </summary>
 	public class GeneratePointsAlongLines : AbstractGPProcess
@@ -138,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeneratePointsAlongLines SetEnviroment(object configKeyword = null , object outputMFlag = null , object outputZFlag = null , object workspace = null )
+		public GeneratePointsAlongLines SetEnviroment(object configKeyword = null, object outputMFlag = null, object outputZFlag = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, outputMFlag: outputMFlag, outputZFlag: outputZFlag, workspace: workspace);
 			return this;

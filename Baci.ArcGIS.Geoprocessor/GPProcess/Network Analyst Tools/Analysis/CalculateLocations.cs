@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Calculate Locations</para>
+	/// <para>Calculate Locations</para>
 	/// <para>Locates input features on a network and adds fields describing these network locations  to the input features. The tool is used to store the network location information as feature attributes to quickly load the features as inputs for a network analysis.</para>
 	/// </summary>
 	public class CalculateLocations : AbstractGPProcess
@@ -277,7 +278,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateLocations SetEnviroment(object workspace = null )
+		public CalculateLocations SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

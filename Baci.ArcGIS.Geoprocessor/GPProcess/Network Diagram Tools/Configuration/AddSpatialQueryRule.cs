@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Spatial Query Rule</para>
+	/// <para>Add Spatial Query Rule</para>
 	/// <para>Adds a diagram rule that automatically appends new network features to the diagrams based on their location relative to the network features currently represented in the diagram.</para>
 	/// </summary>
 	public class AddSpatialQueryRule : AbstractGPProcess
@@ -91,7 +92,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

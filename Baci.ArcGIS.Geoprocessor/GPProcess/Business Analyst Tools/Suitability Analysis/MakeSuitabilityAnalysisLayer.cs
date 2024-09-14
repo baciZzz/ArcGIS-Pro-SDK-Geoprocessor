@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Make Suitability Analysis Layer</para>
+	/// <para>Make Suitability Analysis Layer</para>
 	/// <para>Creates a Suitability Analysis layer for a given input site's polygonal layer.</para>
 	/// </summary>
 	public class MakeSuitabilityAnalysisLayer : AbstractGPProcess
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeSuitabilityAnalysisLayer SetEnviroment(object workspace = null )
+		public MakeSuitabilityAnalysisLayer SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

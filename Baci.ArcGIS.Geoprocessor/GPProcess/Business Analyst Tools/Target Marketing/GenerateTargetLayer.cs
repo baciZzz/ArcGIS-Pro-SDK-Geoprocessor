@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Target Layer</para>
+	/// <para>Generate Target Layer</para>
 	/// <para>Creates a layer that identifies geographies that contain selected segments and geographies that do not contain selected segments.</para>
 	/// </summary>
 	public class GenerateTargetLayer : AbstractGPProcess
@@ -156,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateTargetLayer SetEnviroment(object extent = null , object workspace = null )
+		public GenerateTargetLayer SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

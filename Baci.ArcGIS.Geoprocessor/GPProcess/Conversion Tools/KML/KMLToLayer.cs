@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>KML To Layer</para>
+	/// <para>KML To Layer</para>
 	/// <para>Converts a KML or KMZ file into feature classes  and a layer file.  The layer file  maintains the symbology found within the original KML or KMZ file.</para>
 	/// </summary>
 	public class KMLToLayer : AbstractGPProcess
@@ -121,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public KMLToLayer SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public KMLToLayer SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

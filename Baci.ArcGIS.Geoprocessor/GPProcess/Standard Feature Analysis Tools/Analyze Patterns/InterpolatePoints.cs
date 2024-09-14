@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Interpolate Points</para>
+	/// <para>Interpolate Points</para>
 	/// <para>Predicts values at new locations based on measurements from a collection of points. The tool uses point data with values at each point as input and makes areas classified by predicted values.</para>
 	/// </summary>
 	public class InterpolatePoints : AbstractGPProcess
@@ -199,7 +200,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public InterpolatePoints SetEnviroment(object extent = null )
+		public InterpolatePoints SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

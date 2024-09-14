@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Validate Topology</para>
+	/// <para>Validate Topology</para>
 	/// <para>Validates a geodatabase topology.</para>
 	/// </summary>
 	public class ValidateTopology : AbstractGPProcess
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ValidateTopology SetEnviroment(object workspace = null )
+		public ValidateTopology SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

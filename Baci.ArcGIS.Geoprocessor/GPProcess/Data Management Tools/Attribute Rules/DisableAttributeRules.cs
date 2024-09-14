@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Disable Attribute Rules</para>
+	/// <para>Disable Attribute Rules</para>
 	/// <para>Disables one or more attribute rules for a dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DisableAttributeRules SetEnviroment(object workspace = null )
+		public DisableAttributeRules SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

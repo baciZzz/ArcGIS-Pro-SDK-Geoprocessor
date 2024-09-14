@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Classify LAS Noise</para>
+	/// <para>Classify LAS Noise</para>
 	/// <para>Classifies LAS points with anomalous spatial characteristics as noise.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -234,7 +235,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyLasNoise SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public ClassifyLasNoise SetEnviroment(object geographicTransformations = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Set Subtype Field</para>
+	/// <para>Set Subtype Field</para>
 	/// <para>Defines the field in the input table or feature class that stores the subtype codes.</para>
 	/// </summary>
 	public class SetSubtypeField : AbstractGPProcess
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetSubtypeField SetEnviroment(int? autoCommit = null , object workspace = null )
+		public SetSubtypeField SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Create LRS Network From Existing Dataset</para>
+	/// <para>Create LRS Network From Existing Dataset</para>
 	/// <para>Creates an LRS Network using an existing polyline feature class.</para>
 	/// </summary>
 	public class CreateLRSNetworkFromExistingDataset : AbstractGPProcess
@@ -235,7 +236,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateLRSNetworkFromExistingDataset SetEnviroment(object workspace = null )
+		public CreateLRSNetworkFromExistingDataset SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

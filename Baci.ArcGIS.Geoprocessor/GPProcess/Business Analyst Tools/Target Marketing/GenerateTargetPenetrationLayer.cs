@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Target Penetration Layer</para>
+	/// <para>Generate Target Penetration Layer</para>
 	/// <para>Generates a layer based on the percent of penetration of selected segments, providing a detailed view of the concentrations of your target segments.</para>
 	/// </summary>
 	public class GenerateTargetPenetrationLayer : AbstractGPProcess
@@ -156,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateTargetPenetrationLayer SetEnviroment(object extent = null , object workspace = null )
+		public GenerateTargetPenetrationLayer SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

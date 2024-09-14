@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Add Locations</para>
+	/// <para>Add Locations</para>
 	/// <para>Adds input features or records to a network analysis layer. The inputs are added to specific sublayers such as stops and barriers.</para>
 	/// </summary>
 	public class AddLocations : AbstractGPProcess
@@ -234,7 +235,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddLocations SetEnviroment(object workspace = null )
+		public AddLocations SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

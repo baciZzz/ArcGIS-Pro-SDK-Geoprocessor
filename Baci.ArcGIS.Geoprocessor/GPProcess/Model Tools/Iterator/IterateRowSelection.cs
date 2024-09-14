@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Iterate Row Selection</para>
+	/// <para>Iterate Row Selection</para>
 	/// <para>Iterates over rows in a table.</para>
 	/// </summary>
 	public class IterateRowSelection : AbstractGPProcess
@@ -107,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public IterateRowSelection SetEnviroment(object workspace = null )
+		public IterateRowSelection SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

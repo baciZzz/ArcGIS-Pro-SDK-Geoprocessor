@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Train Point Cloud Classification Model</para>
+	/// <para>Train Point Cloud Classification Model</para>
 	/// <para>Trains a deep learning model for point cloud classification using the PointCNN architecture.</para>
 	/// </summary>
 	public class TrainPointCloudClassificationModel : AbstractGPProcess

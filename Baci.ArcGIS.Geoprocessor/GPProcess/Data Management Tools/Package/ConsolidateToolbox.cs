@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Consolidate Toolbox</para>
+	/// <para>Consolidate Toolbox</para>
 	/// <para>Consolidates one or more toolboxes (a .tbx or .pyt file) to a specified output folder.</para>
 	/// </summary>
 	public class ConsolidateToolbox : AbstractGPProcess
@@ -61,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

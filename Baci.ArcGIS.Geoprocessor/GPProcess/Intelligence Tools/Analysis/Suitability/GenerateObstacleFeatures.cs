@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Generate Obstacle Features</para>
+	/// <para>Generate Obstacle Features</para>
 	/// <para>Converts features with a height field to a 3D obstacle feature and an obstacle restriction buffer for use in evaluating helicopter landing zones.</para>
 	/// </summary>
 	public class GenerateObstacleFeatures : AbstractGPProcess
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Color Balance Mosaic Dataset</para>
+	/// <para>Color Balance Mosaic Dataset</para>
 	/// <para>Makes transitions from one image to an adjoining image appear seamless.</para>
 	/// </summary>
 	public class ColorBalanceMosaicDataset : AbstractGPProcess
@@ -157,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ColorBalanceMosaicDataset SetEnviroment(object parallelProcessingFactor = null )
+		public ColorBalanceMosaicDataset SetEnviroment(object parallelProcessingFactor = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

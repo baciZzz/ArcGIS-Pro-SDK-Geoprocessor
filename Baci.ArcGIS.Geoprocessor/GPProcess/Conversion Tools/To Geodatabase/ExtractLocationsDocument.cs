@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Extract Locations From Document</para>
+	/// <para>Extract Locations From Document</para>
 	/// <para>Analyzes documents containing unstructured or semistructured text, such as email messages, travel forms, and so on, and extracts locations to a point feature class.</para>
 	/// </summary>
 	public class ExtractLocationsDocument : AbstractGPProcess
@@ -547,7 +548,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExtractLocationsDocument SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public ExtractLocationsDocument SetEnviroment(object geographicTransformations = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

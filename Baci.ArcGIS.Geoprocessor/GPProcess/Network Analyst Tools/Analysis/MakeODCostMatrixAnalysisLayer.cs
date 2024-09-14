@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make OD Cost Matrix Analysis Layer</para>
+	/// <para>Make OD Cost Matrix Analysis Layer</para>
 	/// <para>Makes an origin–destination (OD) cost matrix network analysis layer and sets its analysis properties. An OD cost matrix analysis layer is useful for representing a matrix of costs going from a set of origin locations to a set of destination locations. The layer can be created using a local network dataset or a service hosted online or in a portal.</para>
 	/// </summary>
 	public class MakeODCostMatrixAnalysisLayer : AbstractGPProcess
@@ -171,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeODCostMatrixAnalysisLayer SetEnviroment(object workspace = null )
+		public MakeODCostMatrixAnalysisLayer SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

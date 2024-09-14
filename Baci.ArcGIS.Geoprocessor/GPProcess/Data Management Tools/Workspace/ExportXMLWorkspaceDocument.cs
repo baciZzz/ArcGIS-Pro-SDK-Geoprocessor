@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export XML Workspace Document</para>
+	/// <para>Export XML Workspace Document</para>
 	/// <para>Creates a readable XML document of the geodatabase contents.</para>
 	/// </summary>
 	public class ExportXMLWorkspaceDocument : AbstractGPProcess
@@ -124,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportXMLWorkspaceDocument SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ExportXMLWorkspaceDocument SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

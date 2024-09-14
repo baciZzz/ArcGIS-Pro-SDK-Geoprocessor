@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Classify LAS Overlap</para>
+	/// <para>Classify LAS Overlap</para>
 	/// <para>Classifies LAS points from overlapping scans of aerial lidar surveys.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -142,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyLasOverlap SetEnviroment(object extent = null , object workspace = null )
+		public ClassifyLasOverlap SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

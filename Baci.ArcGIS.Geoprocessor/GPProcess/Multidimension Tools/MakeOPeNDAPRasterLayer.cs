@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Make OPeNDAP Raster Layer</para>
+	/// <para>Make OPeNDAP Raster Layer</para>
 	/// <para>Creates a raster layer from data stored on an OPeNDAP server.</para>
 	/// </summary>
 	public class MakeOPeNDAPRasterLayer : AbstractGPProcess
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

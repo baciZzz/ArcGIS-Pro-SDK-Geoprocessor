@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Empirical Bayesian Kriging 3D</para>
+	/// <para>Empirical Bayesian Kriging 3D</para>
 	/// <para>Empirical Bayesian kriging 3D is a geostatistical interpolation method that uses Empirical Bayesian Kriging to interpolate 3D point data. All points must have x-, y-, and z-coordinates and a measured value to be interpolated. The output is a 3D geostatistical layer that calculates and renders itself as a 2D transect at a given elevation. The elevation of the layer can be changed with the range slider, and the layer will update to show the interpolated predictions for the new elevation.</para>
 	/// </summary>
 	public class EmpiricalBayesianKriging3D : AbstractGPProcess
@@ -321,7 +322,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EmpiricalBayesianKriging3D SetEnviroment(object coincidentPoints = null , object extent = null , object parallelProcessingFactor = null )
+		public EmpiricalBayesianKriging3D SetEnviroment(object coincidentPoints = null, object extent = null, object parallelProcessingFactor = null)
 		{
 			base.SetEnv(coincidentPoints: coincidentPoints, extent: extent, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

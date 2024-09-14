@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>PAPI Obstacle Clearance Surface</para>
+	/// <para>PAPI Obstacle Clearance Surface</para>
 	/// <para>Creates a Precision Approach Path Indicator (PAPI) Obstacle Clearance Surface (OCS) based on the FAA Engineering Brief (EB) 95.</para>
 	/// </summary>
 	public class PAPIObstacleClearanceSurface : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Validate Join</para>
+	/// <para>Validate Join</para>
 	/// <para>Validates a  join between two layers or tables to determine if the layers or tables have valid field names and Object ID fields, if the join produces matching records, is a one-to-one or one-to-many join, and other properties of the join.</para>
 	/// </summary>
 	public class ValidateJoin : AbstractGPProcess
@@ -138,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ValidateJoin SetEnviroment(object workspace = null )
+		public ValidateJoin SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 {
 	/// <summary>
 	/// <para>Create Big Data Connection</para>
+	/// <para>Create Big Data Connection</para>
 	/// <para>Creates a big data connection file (.bdc) and item. Datasets registered in a big data connection (BDC) can be used as input to GeoAnalytics Desktop tools and other geoprocessing tools.</para>
 	/// </summary>
 	public class CreateBDC : AbstractGPProcess
@@ -67,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsDesktopTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

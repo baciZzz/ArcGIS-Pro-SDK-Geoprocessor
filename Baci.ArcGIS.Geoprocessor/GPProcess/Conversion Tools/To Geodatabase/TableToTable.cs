@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Table To Table</para>
+	/// <para>Table To Table</para>
 	/// <para>Exports the rows of a table, table view, feature layer, feature class, or raster with attribute table to a new geodatabase, .csv, .txt, or .dbf table.</para>
 	/// </summary>
 	public class TableToTable : AbstractGPProcess
@@ -148,7 +149,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableToTable SetEnviroment(object configKeyword = null , object extent = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null , bool? transferDomains = null , object workspace = null )
+		public TableToTable SetEnviroment(object configKeyword = null, object extent = null, bool? qualifiedFieldNames = null, object scratchWorkspace = null, bool? transferDomains = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, extent: extent, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, transferDomains: transferDomains, workspace: workspace);
 			return this;

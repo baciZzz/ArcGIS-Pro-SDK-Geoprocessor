@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compute Tie Points</para>
+	/// <para>Compute Tie Points</para>
 	/// <para>Computes the tie points between  overlapped mosaic dataset items.</para>
 	/// <para>The tie points can then be used to compute the block adjustments for the mosaic dataset.</para>
 	/// </summary>
@@ -163,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ComputeTiePoints SetEnviroment(object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public ComputeTiePoints SetEnviroment(object parallelProcessingFactor = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

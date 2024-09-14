@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Diagnose Version Metadata</para>
+	/// <para>Diagnose Version Metadata</para>
 	/// <para>Identifies inconsistencies in the system tables used to manage traditional versions and states in a geodatabase.</para>
 	/// </summary>
 	public class DiagnoseVersionMetadata : AbstractGPProcess
@@ -99,7 +100,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DiagnoseVersionMetadata SetEnviroment(object workspace = null )
+		public DiagnoseVersionMetadata SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

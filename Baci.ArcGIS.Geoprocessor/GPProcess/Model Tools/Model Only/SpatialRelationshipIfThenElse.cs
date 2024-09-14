@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>If Spatial Relationship Is</para>
+	/// <para>If Spatial Relationship Is</para>
 	/// <para>Evaluates whether the inputs have a specified spatial relationship.</para>
 	/// </summary>
 	public class SpatialRelationshipIfThenElse : AbstractGPProcess
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

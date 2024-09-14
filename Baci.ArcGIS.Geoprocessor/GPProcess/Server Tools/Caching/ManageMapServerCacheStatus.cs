@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Manage Map Server Cache Status</para>
+	/// <para>Manage Map Server Cache Status</para>
 	/// <para>Manages internal data kept by the server about the built tiles in a map or image service cache.</para>
 	/// </summary>
 	public class ManageMapServerCacheStatus : AbstractGPProcess
@@ -63,7 +64,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 {
 	/// <summary>
 	/// <para>Convert Geometric Network To Trace Network</para>
+	/// <para>Convert Geometric Network To Trace Network</para>
 	/// <para>Converts a geometric network to a trace network.</para>
 	/// </summary>
 	public class ConvertGeometricNetworkToTraceNetwork : AbstractGPProcess
@@ -61,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.TraceNetworkTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

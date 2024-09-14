@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Transfer Files</para>
+	/// <para>Transfer Files</para>
 	/// <para>Transfers files between a file system and a cloud storage workspace.</para>
 	/// </summary>
 	public class TransferFiles : AbstractGPProcess
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TransferFiles SetEnviroment(object parallelProcessingFactor = null )
+		public TransferFiles SetEnviroment(object parallelProcessingFactor = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

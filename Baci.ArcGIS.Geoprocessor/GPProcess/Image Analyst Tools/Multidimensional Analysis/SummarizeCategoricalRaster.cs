@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Summarize Categorical Raster</para>
+	/// <para>Summarize Categorical Raster</para>
 	/// <para>Generates a table containing the pixel count for each class, in each slice of an input categorical raster.</para>
 	/// </summary>
 	public class SummarizeCategoricalRaster : AbstractGPProcess
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SummarizeCategoricalRaster SetEnviroment(object extent = null )
+		public SummarizeCategoricalRaster SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

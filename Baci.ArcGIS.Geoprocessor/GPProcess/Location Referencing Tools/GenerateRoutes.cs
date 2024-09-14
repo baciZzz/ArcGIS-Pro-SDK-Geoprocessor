@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Generate Routes</para>
+	/// <para>Generate Routes</para>
 	/// <para>Re-creates shapes and applies calibration changes for route features in an LRS Network.</para>
 	/// </summary>
 	public class GenerateRoutes : AbstractGPProcess
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateRoutes SetEnviroment(object workspace = null )
+		public GenerateRoutes SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

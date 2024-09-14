@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Find Point Clusters</para>
+	/// <para>Find Point Clusters</para>
 	/// <para>Finds clusters of point features in surrounding noise based on their spatial or spatiotemporal distribution.</para>
 	/// </summary>
 	public class FindPointClusters : AbstractGPProcess
@@ -171,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindPointClusters SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public FindPointClusters SetEnviroment(object extent = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

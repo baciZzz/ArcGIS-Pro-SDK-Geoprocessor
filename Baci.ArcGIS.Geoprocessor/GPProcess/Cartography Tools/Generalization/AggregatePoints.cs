@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Aggregate Points</para>
+	/// <para>Aggregate Points</para>
 	/// <para>Creates polygon features around clusters of proximate point features.</para>
 	/// </summary>
 	public class AggregatePoints : AbstractGPProcess
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AggregatePoints SetEnviroment(object XYResolution = null , object extent = null , object outputZFlag = null , object outputZValue = null )
+		public AggregatePoints SetEnviroment(object XYResolution = null, object extent = null, object outputZFlag = null, object outputZValue = null)
 		{
 			base.SetEnv(XYResolution: XYResolution, extent: extent, outputZFlag: outputZFlag, outputZValue: outputZValue);
 			return this;

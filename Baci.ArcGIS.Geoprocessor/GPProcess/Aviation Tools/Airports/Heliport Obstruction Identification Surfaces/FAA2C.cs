@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>FAA 2C</para>
+	/// <para>FAA 2C</para>
 	/// <para>Generates an Obstruction Identification Surface (OIS) for helipads based on specifications from FAA Advisory Circular 150/5390-2C.</para>
 	/// </summary>
 	public class FAA2C : AbstractGPProcess
@@ -68,7 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

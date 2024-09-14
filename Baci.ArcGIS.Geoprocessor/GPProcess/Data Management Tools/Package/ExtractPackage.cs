@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Extract Package</para>
+	/// <para>Extract Package</para>
 	/// <para>Extracts the contents of a package to a specified folder. The output folder will be  updated with the extracted contents of the input package.</para>
 	/// </summary>
 	public class ExtractPackage : AbstractGPProcess
@@ -129,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExtractPackage SetEnviroment(object workspace = null )
+		public ExtractPackage SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

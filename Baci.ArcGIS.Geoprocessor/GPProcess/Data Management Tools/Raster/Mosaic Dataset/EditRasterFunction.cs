@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Edit Raster Function</para>
+	/// <para>Edit Raster Function</para>
 	/// <para>Adds, replaces, or removes a function chain in a mosaic dataset or a raster layer that contains a raster function.</para>
 	/// </summary>
 	public class EditRasterFunction : AbstractGPProcess
@@ -124,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EditRasterFunction SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public EditRasterFunction SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Summarize Within</para>
+	/// <para>Summarize Within</para>
 	/// <para>Finds the point, line, or polygon features (or portions of these features) that are within the boundaries of polygons in another layer.</para>
 	/// </summary>
 	public class SummarizeWithin : AbstractGPProcess
@@ -202,7 +203,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SummarizeWithin SetEnviroment(object extent = null )
+		public SummarizeWithin SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

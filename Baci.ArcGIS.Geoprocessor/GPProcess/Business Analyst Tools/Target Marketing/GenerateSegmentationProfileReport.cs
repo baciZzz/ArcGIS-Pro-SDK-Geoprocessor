@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Segmentation Profile Report</para>
+	/// <para>Generate Segmentation Profile Report</para>
 	/// <para>Creates a report that displays segments of your customers and compares them to the study area (base profile).</para>
 	/// </summary>
 	public class GenerateSegmentationProfileReport : AbstractGPProcess
@@ -124,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateSegmentationProfileReport SetEnviroment(object workspace = null )
+		public GenerateSegmentationProfileReport SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

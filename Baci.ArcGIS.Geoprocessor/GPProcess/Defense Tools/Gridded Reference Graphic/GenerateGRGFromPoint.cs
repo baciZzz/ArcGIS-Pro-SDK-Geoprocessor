@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Generate Grid From Point</para>
+	/// <para>Generate Grid From Point</para>
 	/// <para>Generates a Gridded Reference Graphic (GRG) as a polygon feature class over a specified area with a custom size.</para>
 	/// </summary>
 	public class GenerateGRGFromPoint : AbstractGPProcess
@@ -208,7 +209,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateGRGFromPoint SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateGRGFromPoint SetEnviroment(object outputCoordinateSystem = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

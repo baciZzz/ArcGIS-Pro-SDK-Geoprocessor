@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Turn Table To Turn Feature Class</para>
+	/// <para>Turn Table To Turn Feature Class</para>
 	/// <para>Converts an ArcView turn table or ArcInfo Workstation coverage turn table to an ArcGIS turn feature class.</para>
 	/// </summary>
 	public class TurnTableToTurnFeatureClass : AbstractGPProcess
@@ -160,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TurnTableToTurnFeatureClass SetEnviroment(object configKeyword = null , object workspace = null )
+		public TurnTableToTurnFeatureClass SetEnviroment(object configKeyword = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Field Group</para>
+	/// <para>Delete Field Group</para>
 	/// <para>Deletes a field group from a table or feature class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DeleteFieldGroup SetEnviroment(object workspace = null )
+		public DeleteFieldGroup SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

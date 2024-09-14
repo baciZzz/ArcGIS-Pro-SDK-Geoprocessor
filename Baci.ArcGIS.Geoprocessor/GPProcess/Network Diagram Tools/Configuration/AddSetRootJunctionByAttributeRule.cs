@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Set Root Junction By Attribute Rule</para>
+	/// <para>Add Set Root Junction By Attribute Rule</para>
 	/// <para>Adds a diagram rule to automatically flag diagram junctions as root junctions during diagram building based on an existing template. This rule specifies root junctions based on a particular junction source class or object table and filters using their attributes.</para>
 	/// </summary>
 	public class AddSetRootJunctionByAttributeRule : AbstractGPProcess
@@ -73,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

@@ -12,6 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 	/// <summary>
 	/// <para>Execute Raster Analysis Tasks</para>
 	/// <para>Execute Raster Analysis Tasks</para>
+	/// <para>Execute Raster Analysis Tasks</para>
 	/// </summary>
 	[Obsolete()]
 	public class ExecuteRasterAnalysisTasks : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

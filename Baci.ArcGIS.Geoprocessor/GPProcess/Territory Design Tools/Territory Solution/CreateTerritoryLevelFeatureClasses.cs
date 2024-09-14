@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Create Territory Level Feature Classes</para>
+	/// <para>Create Territory Level Feature Classes</para>
 	/// <para>Creates feature classes for a specified level.</para>
 	/// </summary>
 	public class CreateTerritoryLevelFeatureClasses : AbstractGPProcess
@@ -118,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateTerritoryLevelFeatureClasses SetEnviroment(object workspace = null )
+		public CreateTerritoryLevelFeatureClasses SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

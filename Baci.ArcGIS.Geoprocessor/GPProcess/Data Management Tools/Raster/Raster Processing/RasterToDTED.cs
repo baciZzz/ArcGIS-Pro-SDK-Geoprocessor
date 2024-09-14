@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Raster To DTED</para>
+	/// <para>Raster To DTED</para>
 	/// <para>Splits a raster dataset into separate files based on the DTED tiling structure.</para>
 	/// </summary>
 	public class RasterToDTED : AbstractGPProcess
@@ -128,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RasterToDTED SetEnviroment(object resamplingMethod = null )
+		public RasterToDTED SetEnviroment(object resamplingMethod = null)
 		{
 			base.SetEnv(resamplingMethod: resamplingMethod);
 			return this;

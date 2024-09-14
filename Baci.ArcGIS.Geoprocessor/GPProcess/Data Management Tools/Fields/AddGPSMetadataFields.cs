@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add GPS Metadata Fields</para>
+	/// <para>Add GPS Metadata Fields</para>
 	/// <para>Adds GNSS fields to a feature class in a geodatabase.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddGPSMetadataFields SetEnviroment(object workspace = null )
+		public AddGPSMetadataFields SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

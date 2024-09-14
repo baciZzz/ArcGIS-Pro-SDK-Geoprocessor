@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Role</para>
+	/// <para>Create Role</para>
 	/// <para>Creates a database role, allowing you to add users to or remove them from the role.</para>
 	/// </summary>
 	public class CreateRole : AbstractGPProcess
@@ -115,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateRole SetEnviroment(object workspace = null )
+		public CreateRole SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

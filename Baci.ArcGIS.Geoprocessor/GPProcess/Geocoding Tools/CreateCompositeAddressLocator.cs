@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Create Composite Address Locator</para>
+	/// <para>Create Composite Address Locator</para>
 	/// <para>Creates a composite address locator. A composite locator consists of two or more individual  locators that allow addresses to be matched against the multiple locators.</para>
 	/// </summary>
 	public class CreateCompositeAddressLocator : AbstractGPProcess
@@ -113,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateCompositeAddressLocator SetEnviroment(object configKeyword = null , object outputCoordinateSystem = null )
+		public CreateCompositeAddressLocator SetEnviroment(object configKeyword = null, object outputCoordinateSystem = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

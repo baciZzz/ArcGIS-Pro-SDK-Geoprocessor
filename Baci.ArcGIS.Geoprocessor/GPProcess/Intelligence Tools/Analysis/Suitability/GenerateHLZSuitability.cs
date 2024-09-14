@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Generate HLZ Suitability</para>
+	/// <para>Generate HLZ Suitability</para>
 	/// <para>Creates a helicopter landing zone (HLZ) suitability raster layer from reclassified slope, reclassified land cover, and obstacle buffers.</para>
 	/// </summary>
 	public class GenerateHLZSuitability : AbstractGPProcess
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Threshold Drive Times</para>
+	/// <para>Generate Threshold Drive Times</para>
 	/// <para>Creates a feature class of network distance trade areas that expand around point features until criteria is reached.</para>
 	/// </summary>
 	public class GenerateThresholdDriveTimeTradeArea : AbstractGPProcess
@@ -253,7 +254,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateThresholdDriveTimeTradeArea SetEnviroment(object workspace = null )
+		public GenerateThresholdDriveTimeTradeArea SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

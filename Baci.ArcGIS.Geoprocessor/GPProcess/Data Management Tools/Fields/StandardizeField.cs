@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Standardize Field</para>
+	/// <para>Standardize Field</para>
 	/// <para>Standardizes values in fields by converting them to values that follow a specified scale. Standardization methods include z-score, minimum-maximum, absolute maximum, and robust standardization.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -126,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public StandardizeField SetEnviroment(object extent = null )
+		public StandardizeField SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

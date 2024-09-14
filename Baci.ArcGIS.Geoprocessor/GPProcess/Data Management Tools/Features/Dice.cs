@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Dice</para>
+	/// <para>Dice</para>
 	/// <para>Subdivides a feature into smaller features based on a specified vertex limit. This tool is intended as a way to subdivide extremely large features that cause issues with drawing, analysis, editing, and/or performance but are difficult to split up with standard editing and geoprocessing tools. This tool should not be used in any cases other than those where tools are failing to complete successfully due to the size of features.</para>
 	/// </summary>
 	public class Dice : AbstractGPProcess
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Dice SetEnviroment(int? autoCommit = null , object configKeyword = null , bool? qualifiedFieldNames = null )
+		public Dice SetEnviroment(int? autoCommit = null, object configKeyword = null, bool? qualifiedFieldNames = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, configKeyword: configKeyword, qualifiedFieldNames: qualifiedFieldNames);
 			return this;

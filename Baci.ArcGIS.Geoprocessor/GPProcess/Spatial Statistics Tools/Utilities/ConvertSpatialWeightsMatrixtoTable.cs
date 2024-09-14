@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Convert Spatial Weights Matrix to Table</para>
+	/// <para>Convert Spatial Weights Matrix to Table</para>
 	/// <para>Converts a binary spatial weights matrix file (.swm) to a table.</para>
 	/// </summary>
 	public class ConvertSpatialWeightsMatrixtoTable : AbstractGPProcess
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConvertSpatialWeightsMatrixtoTable SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ConvertSpatialWeightsMatrixtoTable SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

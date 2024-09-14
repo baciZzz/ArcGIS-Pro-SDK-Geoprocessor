@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Generate Map Server Cache Tiling Scheme</para>
+	/// <para>Generate Map Server Cache Tiling Scheme</para>
 	/// <para>Generates a custom tiling scheme file that defines the scale levels, tile dimensions, and other properties for a web tile layer.</para>
 	/// </summary>
 	public class GenerateMapServerCacheTilingScheme : AbstractGPProcess
@@ -164,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateMapServerCacheTilingScheme SetEnviroment(object workspace = null )
+		public GenerateMapServerCacheTilingScheme SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

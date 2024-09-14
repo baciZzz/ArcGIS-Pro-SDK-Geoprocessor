@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Analyze Parcels By Least Squares Adjustment</para>
+	/// <para>Analyze Parcels By Least Squares Adjustment</para>
 	/// <para>Analyzes the parcel fabric measurement network by running a least-squares adjustment on the input parcels. A least-squares adjustment is a mathematical procedure that uses statistical analysis to estimate  the most likely coordinates for connected points in a measurement network. A least-squares adjustment can be run on the parcel fabric to evaluate and improve spatial accuracy of parcel corner point locations.</para>
 	/// </summary>
 	public class AnalyzeParcelsByLeastSquaresAdjustment : AbstractGPProcess
@@ -63,7 +64,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

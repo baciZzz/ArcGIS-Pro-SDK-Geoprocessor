@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Split Line By Match</para>
+	/// <para>Split Line By Match</para>
 	/// <para>Splits input features based on matching relationships to obtain better corresponding line segmentation.</para>
 	/// </summary>
 	public class SplitLineByMatch : AbstractGPProcess
@@ -194,7 +195,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SplitLineByMatch SetEnviroment(object extent = null , object workspace = null )
+		public SplitLineByMatch SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

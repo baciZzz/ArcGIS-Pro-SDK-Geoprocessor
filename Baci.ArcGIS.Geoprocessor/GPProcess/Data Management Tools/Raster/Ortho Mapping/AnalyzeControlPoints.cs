@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Analyze Control Points</para>
+	/// <para>Analyze Control Points</para>
 	/// <para>Analyzes the control point</para>
 	/// <para>coverage and identifies the areas that need</para>
 	/// <para>additional control points to improve the block adjust result.</para>
@@ -138,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AnalyzeControlPoints SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public AnalyzeControlPoints SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

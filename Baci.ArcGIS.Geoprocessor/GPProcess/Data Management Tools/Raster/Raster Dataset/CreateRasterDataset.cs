@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Raster Dataset</para>
+	/// <para>Create Raster Dataset</para>
 	/// <para>Creates an empty raster dataset.</para>
 	/// </summary>
 	public class CreateRasterDataset : AbstractGPProcess
@@ -264,7 +265,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateRasterDataset SetEnviroment(object compression = null , object configKeyword = null , object pyramid = null , double[] tileSize = null )
+		public CreateRasterDataset SetEnviroment(object compression = null, object configKeyword = null, object pyramid = null, double[] tileSize = null)
 		{
 			base.SetEnv(compression: compression, configKeyword: configKeyword, pyramid: pyramid, tileSize: tileSize);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Package Map</para>
+	/// <para>Package Map</para>
 	/// <para>Packages a map and all referenced data sources to create a single compressed .mpkx file.</para>
 	/// </summary>
 	public class PackageMap : AbstractGPProcess
@@ -213,7 +214,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PackageMap SetEnviroment(object extent = null , object workspace = null )
+		public PackageMap SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

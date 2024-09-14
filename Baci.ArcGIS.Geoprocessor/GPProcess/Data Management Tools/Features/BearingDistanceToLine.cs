@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Bearing Distance To Line</para>
+	/// <para>Bearing Distance To Line</para>
 	/// <para>Creates a feature class containing geodetic line features constructed based on the values in an x-coordinate field, y-coordinate field, bearing field, and distance field of a table.</para>
 	/// </summary>
 	public class BearingDistanceToLine : AbstractGPProcess
@@ -242,7 +243,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BearingDistanceToLine SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public BearingDistanceToLine SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

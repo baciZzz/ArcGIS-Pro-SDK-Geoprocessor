@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Trace Rule</para>
+	/// <para>Add Trace Rule</para>
 	/// <para>Adds a diagram rule to automatically execute a trace on a utility network or trace network  during the building of diagrams based on an existing template. The resulting traced network features and network objects are used to build the diagram content.</para>
 	/// </summary>
 	public class AddTraceRule : AbstractGPProcess
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

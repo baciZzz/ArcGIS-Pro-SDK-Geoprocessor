@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Curve Fit Forecast</para>
+	/// <para>Curve Fit Forecast</para>
 	/// <para>Forecasts the values of each location of a space-time cube using curve fitting.</para>
 	/// </summary>
 	public class CurveFitForecast : AbstractGPProcess
@@ -176,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CurveFitForecast SetEnviroment(object outputCoordinateSystem = null )
+		public CurveFitForecast SetEnviroment(object outputCoordinateSystem = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Create Utility Network</para>
+	/// <para>Create Utility Network</para>
 	/// <para>Creates a utility network in an enterprise or file  geodatabase feature dataset.</para>
 	/// </summary>
 	public class CreateUtilityNetwork : AbstractGPProcess
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateUtilityNetwork SetEnviroment(object workspace = null )
+		public CreateUtilityNetwork SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

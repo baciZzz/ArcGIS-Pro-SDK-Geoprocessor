@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Geocode Locations From Table</para>
+	/// <para>Geocode Locations From Table</para>
 	/// <para>Geocodes hosted tables using locators hosted on an ArcGIS Enterprise portal, which creates a hosted feature layer containing the geocoded results.</para>
 	/// </summary>
 	public class GeocodeLocationsFromTable : AbstractGPProcess
@@ -181,7 +182,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeocodeLocationsFromTable SetEnviroment(object outputCoordinateSystem = null )
+		public GeocodeLocationsFromTable SetEnviroment(object outputCoordinateSystem = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;

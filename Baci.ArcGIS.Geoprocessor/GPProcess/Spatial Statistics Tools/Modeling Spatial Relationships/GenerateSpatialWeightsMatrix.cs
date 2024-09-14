@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Generate Spatial Weights Matrix</para>
+	/// <para>Generate Spatial Weights Matrix</para>
 	/// <para>Constructs a spatial weights matrix (.swm) file to represent the spatial relationships among features in a dataset.</para>
 	/// </summary>
 	public class GenerateSpatialWeightsMatrix : AbstractGPProcess
@@ -241,7 +242,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateSpatialWeightsMatrix SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateSpatialWeightsMatrix SetEnviroment(object geographicTransformations = null, object outputCoordinateSystem = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Remove Feature Rule</para>
+	/// <para>Add Remove Feature Rule</para>
 	/// <para>Adds a diagram rule to automatically remove diagram features during diagram building based on an existing template. This rule removes diagram features based on different network source classes and object tables.</para>
 	/// </summary>
 	public class AddRemoveFeatureRule : AbstractGPProcess
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

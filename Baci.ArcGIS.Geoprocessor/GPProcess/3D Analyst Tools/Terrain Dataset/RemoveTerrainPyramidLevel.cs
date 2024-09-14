@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Remove Terrain Pyramid Level</para>
+	/// <para>Remove Terrain Pyramid Level</para>
 	/// <para>Removes a pyramid level from a terrain dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveTerrainPyramidLevel SetEnviroment(int? autoCommit = null , object workspace = null )
+		public RemoveTerrainPyramidLevel SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

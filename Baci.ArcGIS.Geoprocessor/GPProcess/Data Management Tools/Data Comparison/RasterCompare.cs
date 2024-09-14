@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Raster Compare</para>
+	/// <para>Raster Compare</para>
 	/// <para>Compares the properties of two raster or mosaic datasets.</para>
 	/// </summary>
 	public class RasterCompare : AbstractGPProcess
@@ -177,7 +178,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RasterCompare SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public RasterCompare SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

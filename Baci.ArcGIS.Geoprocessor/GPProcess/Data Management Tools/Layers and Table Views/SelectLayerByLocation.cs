@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Select Layer By Location</para>
+	/// <para>Select Layer By Location</para>
 	/// <para>Selects features  based on a spatial relationship to features in another dataset.</para>
 	/// </summary>
 	public class SelectLayerByLocation : AbstractGPProcess
@@ -164,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SelectLayerByLocation SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public SelectLayerByLocation SetEnviroment(object extent = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

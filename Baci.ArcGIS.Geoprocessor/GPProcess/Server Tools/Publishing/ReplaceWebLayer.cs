@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Replace Web Layer</para>
+	/// <para>Replace Web Layer</para>
 	/// <para>Replaces the content of a web layer in a portal with the content of another web layer.</para>
 	/// </summary>
 	public class ReplaceWebLayer : AbstractGPProcess
@@ -150,7 +151,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ReplaceWebLayer SetEnviroment(object workspace = null )
+		public ReplaceWebLayer SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

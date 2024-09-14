@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Split Mosaic Dataset Items</para>
+	/// <para>Split Mosaic Dataset Items</para>
 	/// <para>Splits mosaic dataset items that were merged together using Merge Mosaic Dataset Items.</para>
 	/// </summary>
 	public class SplitMosaicDatasetItems : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

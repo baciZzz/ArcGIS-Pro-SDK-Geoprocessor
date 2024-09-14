@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Generate Events</para>
+	/// <para>Generate Events</para>
 	/// <para>Re-creates shapes for event features registered with an LRS Network.</para>
 	/// </summary>
 	public class GenerateEvents : AbstractGPProcess
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateEvents SetEnviroment(object workspace = null )
+		public GenerateEvents SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

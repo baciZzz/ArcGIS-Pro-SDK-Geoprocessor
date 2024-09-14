@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>GPX To Features</para>
+	/// <para>GPX To Features</para>
 	/// <para>Converts the point information inside a GPX file to features.</para>
 	/// </summary>
 	public class GPXtoFeatures : AbstractGPProcess
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GPXtoFeatures SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public GPXtoFeatures SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

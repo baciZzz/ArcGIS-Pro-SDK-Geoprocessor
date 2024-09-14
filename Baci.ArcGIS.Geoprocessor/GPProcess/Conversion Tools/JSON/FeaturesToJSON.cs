@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Features To JSON</para>
+	/// <para>Features To JSON</para>
 	/// <para>Converts features to  JSON or GeoJSON format. The fields, geometry, and spatial reference of  features will be converted to their corresponding  JSON representation and written to a file with a .json or  .geojson extension.</para>
 	/// </summary>
 	public class FeaturesToJSON : AbstractGPProcess
@@ -162,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FeaturesToJSON SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public FeaturesToJSON SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

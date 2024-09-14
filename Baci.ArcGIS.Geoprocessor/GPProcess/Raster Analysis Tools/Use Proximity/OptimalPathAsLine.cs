@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Optimal Path As Line</para>
+	/// <para>Optimal Path As Line</para>
 	/// <para>Calculates the optimal path from a source to a destination as a line.</para>
 	/// </summary>
 	public class OptimalPathAsLine : AbstractGPProcess
@@ -162,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public OptimalPathAsLine SetEnviroment(object outputCoordinateSystem = null )
+		public OptimalPathAsLine SetEnviroment(object outputCoordinateSystem = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Mobile Map Package</para>
+	/// <para>Create Mobile Map Package</para>
 	/// <para>Packages maps and basemaps along with all referenced data sources into a single .mmpk file.</para>
 	/// </summary>
 	public class CreateMobileMapPackage : AbstractGPProcess
@@ -264,7 +265,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateMobileMapPackage SetEnviroment(object extent = null , object workspace = null )
+		public CreateMobileMapPackage SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

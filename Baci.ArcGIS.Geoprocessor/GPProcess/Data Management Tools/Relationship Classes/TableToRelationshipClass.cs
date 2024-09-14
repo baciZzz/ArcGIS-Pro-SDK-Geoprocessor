@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Table To Relationship Class</para>
+	/// <para>Table To Relationship Class</para>
 	/// <para>Creates an attributed relationship class from the origin, destination, and relationship tables.</para>
 	/// </summary>
 	public class TableToRelationshipClass : AbstractGPProcess
@@ -273,7 +274,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableToRelationshipClass SetEnviroment(int? autoCommit = null , object workspace = null )
+		public TableToRelationshipClass SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

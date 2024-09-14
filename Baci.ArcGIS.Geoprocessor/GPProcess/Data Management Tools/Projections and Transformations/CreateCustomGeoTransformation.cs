@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Custom Geographic Transformation</para>
+	/// <para>Create Custom Geographic Transformation</para>
 	/// <para>Creates a transformation method for converting data between two geographic coordinate systems or datums. The output of this tool can be used as a transformation method for any tool with a parameter that requires a geographic transformation.</para>
 	/// </summary>
 	public class CreateCustomGeoTransformation : AbstractGPProcess
@@ -73,7 +74,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Thin Road Network</para>
+	/// <para>Thin Road Network</para>
 	/// <para>Generates a simplified road network that retains connectivity and general character for display at a smaller scale.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -123,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ThinRoadNetwork SetEnviroment(object cartographicCoordinateSystem = null , object cartographicPartitions = null , object referenceScale = null )
+		public ThinRoadNetwork SetEnviroment(object cartographicCoordinateSystem = null, object cartographicPartitions = null, object referenceScale = null)
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, cartographicPartitions: cartographicPartitions, referenceScale: referenceScale);
 			return this;

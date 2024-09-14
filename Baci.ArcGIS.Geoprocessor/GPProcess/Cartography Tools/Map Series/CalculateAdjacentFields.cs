@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Calculate Adjacent Fields</para>
+	/// <para>Calculate Adjacent Fields</para>
 	/// <para>Creates fields and calculates values for the neighboring pages (polygon) of a grid polygon feature class.</para>
 	/// </summary>
 	public class CalculateAdjacentFields : AbstractGPProcess
@@ -98,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateAdjacentFields SetEnviroment(object workspace = null )
+		public CalculateAdjacentFields SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Add Feature Class To Terrain</para>
+	/// <para>Add Feature Class To Terrain</para>
 	/// <para>Adds one or more feature classes to a terrain dataset.</para>
 	/// </summary>
 	public class AddFeatureClassToTerrain : AbstractGPProcess
@@ -114,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddFeatureClassToTerrain SetEnviroment(int? autoCommit = null , object workspace = null )
+		public AddFeatureClassToTerrain SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

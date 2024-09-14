@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Build Parcel Fabric</para>
+	/// <para>Build Parcel Fabric</para>
 	/// <para>Builds parcels in a parcel fabric.  Parcels can be built from polygons or lines. If parcels are built from polygons, the tool creates parcel lines and parcel points. If parcels are built from lines, the tool creates the missing polygons and points.</para>
 	/// <para>When building parcels from lines, parcel seeds are required.</para>
 	/// </summary>
@@ -56,7 +57,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

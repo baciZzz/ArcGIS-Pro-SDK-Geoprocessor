@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Make NetCDF Feature Layer</para>
+	/// <para>Make NetCDF Feature Layer</para>
 	/// <para>Makes a feature layer from a netCDF file.</para>
 	/// </summary>
 	public class MakeNetCDFFeatureLayer : AbstractGPProcess
@@ -174,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeNetCDFFeatureLayer SetEnviroment(object workspace = null )
+		public MakeNetCDFFeatureLayer SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

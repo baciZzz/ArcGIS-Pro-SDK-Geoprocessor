@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Recalculate Feature Class Extent</para>
+	/// <para>Recalculate Feature Class Extent</para>
 	/// <para>Recalculates the XY, Z, and M extent properties of a feature class based on the features in the feature class.</para>
 	/// </summary>
 	public class RecalculateFeatureClassExtent : AbstractGPProcess
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RecalculateFeatureClassExtent SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public RecalculateFeatureClassExtent SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

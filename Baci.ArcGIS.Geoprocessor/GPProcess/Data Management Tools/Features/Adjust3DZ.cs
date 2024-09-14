@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Adjust 3D Z</para>
+	/// <para>Adjust 3D Z</para>
 	/// <para>Modifies z-values of 3D features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -137,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Adjust3DZ SetEnviroment(object extent = null , object workspace = null )
+		public Adjust3DZ SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

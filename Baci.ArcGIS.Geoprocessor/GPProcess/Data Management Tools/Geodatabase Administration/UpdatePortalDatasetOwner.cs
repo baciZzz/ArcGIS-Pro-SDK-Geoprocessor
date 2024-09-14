@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Update Portal Dataset Owner</para>
+	/// <para>Update Portal Dataset Owner</para>
 	/// <para>Updates the portal owner of a dataset to another user.</para>
 	/// </summary>
 	public class UpdatePortalDatasetOwner : AbstractGPProcess
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UpdatePortalDatasetOwner SetEnviroment(object workspace = null )
+		public UpdatePortalDatasetOwner SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

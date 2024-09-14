@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make Closest Facility Analysis Layer</para>
+	/// <para>Make Closest Facility Analysis Layer</para>
 	/// <para>Makes a closest facility network analysis layer and sets its analysis properties. A closest facility analysis layer is useful in determining the closest facility or facilities to an incident based on a specified travel mode. The layer can be created using a local network dataset or using a service hosted online or in a portal.</para>
 	/// </summary>
 	public class MakeClosestFacilityAnalysisLayer : AbstractGPProcess
@@ -217,7 +218,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeClosestFacilityAnalysisLayer SetEnviroment(object workspace = null )
+		public MakeClosestFacilityAnalysisLayer SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

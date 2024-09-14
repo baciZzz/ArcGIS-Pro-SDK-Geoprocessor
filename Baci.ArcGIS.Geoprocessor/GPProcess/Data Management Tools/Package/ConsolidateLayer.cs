@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Consolidate Layer</para>
+	/// <para>Consolidate Layer</para>
 	/// <para>Consolidates one or more layers by copying all referenced data sources  into a single folder.</para>
 	/// </summary>
 	public class ConsolidateLayer : AbstractGPProcess
@@ -162,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConsolidateLayer SetEnviroment(object extent = null , object workspace = null )
+		public ConsolidateLayer SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

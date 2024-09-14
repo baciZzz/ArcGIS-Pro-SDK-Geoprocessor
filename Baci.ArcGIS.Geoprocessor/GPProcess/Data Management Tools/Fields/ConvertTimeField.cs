@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Convert Time Field</para>
+	/// <para>Convert Time Field</para>
 	/// <para>Converts time values stored in a string or numeric field to a date field. The tool can also be used to convert time values stored in string, numeric, or date fields into custom formats such as day of the week and month of the year.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -160,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConvertTimeField SetEnviroment(object workspace = null )
+		public ConvertTimeField SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

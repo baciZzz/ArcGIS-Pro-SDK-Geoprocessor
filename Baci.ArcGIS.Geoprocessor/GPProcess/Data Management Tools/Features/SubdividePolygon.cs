@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Subdivide Polygon</para>
+	/// <para>Subdivide Polygon</para>
 	/// <para>Divides polygon features into a number of equal areas or parts.</para>
 	/// </summary>
 	public class SubdividePolygon : AbstractGPProcess
@@ -156,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SubdividePolygon SetEnviroment(object parallelProcessingFactor = null )
+		public SubdividePolygon SetEnviroment(object parallelProcessingFactor = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

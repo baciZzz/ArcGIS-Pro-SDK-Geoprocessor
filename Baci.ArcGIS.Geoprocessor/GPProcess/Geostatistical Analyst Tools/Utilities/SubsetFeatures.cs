@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Subset Features</para>
+	/// <para>Subset Features</para>
 	/// <para>Divides the original dataset into two parts: one part to be used to model the spatial structure and produce a surface, the other to be used to compare and validate the output surface.</para>
 	/// </summary>
 	public class SubsetFeatures : AbstractGPProcess
@@ -115,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SubsetFeatures SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object randomGenerator = null , object scratchWorkspace = null , object workspace = null )
+		public SubsetFeatures SetEnviroment(object extent = null, object geographicTransformations = null, object outputCoordinateSystem = null, object randomGenerator = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, randomGenerator: randomGenerator, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

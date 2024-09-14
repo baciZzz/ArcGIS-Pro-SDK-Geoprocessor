@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Calculate Field</para>
+	/// <para>Calculate Field</para>
 	/// <para>Calculates the values of a field for a feature class, feature layer, or raster.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -171,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateField SetEnviroment(object extent = null , bool? transferDomains = null , object workspace = null )
+		public CalculateField SetEnviroment(object extent = null, bool? transferDomains = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, transferDomains: transferDomains, workspace: workspace);
 			return this;

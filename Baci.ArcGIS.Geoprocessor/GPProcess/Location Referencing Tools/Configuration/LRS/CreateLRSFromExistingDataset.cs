@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Create LRS From Existing Dataset</para>
+	/// <para>Create LRS From Existing Dataset</para>
 	/// <para>Creates a linear referencing system (LRS) in the specified workspace using existing datasets.</para>
 	/// </summary>
 	public class CreateLRSFromExistingDataset : AbstractGPProcess
@@ -430,7 +431,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateLRSFromExistingDataset SetEnviroment(object workspace = null )
+		public CreateLRSFromExistingDataset SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

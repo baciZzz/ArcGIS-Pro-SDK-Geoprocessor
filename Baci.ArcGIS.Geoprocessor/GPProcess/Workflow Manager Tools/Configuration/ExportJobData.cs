@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Export Job Data</para>
+	/// <para>Export Job Data</para>
 	/// <para>This tool will export the Workflow Manager (Classic) repository to a .jxl file in the specified folder location. The .jxl file will contain all the configuration information for the repository as well as information about all the jobs. The .jxl file can be imported into another Workflow Manager (Classic) repository using the Import Job Data  tool.</para>
 	/// </summary>
 	public class ExportJobData : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

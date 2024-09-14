@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Import Mosaic Dataset Geometry</para>
+	/// <para>Import Mosaic Dataset Geometry</para>
 	/// <para>Modifies the geometry for the footprints, boundary, or seamlines in a mosaic dataset to match those in a feature class.</para>
 	/// </summary>
 	public class ImportMosaicDatasetGeometry : AbstractGPProcess
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

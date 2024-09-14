@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Set Terminal Configuration</para>
+	/// <para>Set Terminal Configuration</para>
 	/// <para>Assigns a  terminal configuration to an asset type in a utility network.</para>
 	/// </summary>
 	public class SetTerminalConfiguration : AbstractGPProcess
@@ -145,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetTerminalConfiguration SetEnviroment(object workspace = null )
+		public SetTerminalConfiguration SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

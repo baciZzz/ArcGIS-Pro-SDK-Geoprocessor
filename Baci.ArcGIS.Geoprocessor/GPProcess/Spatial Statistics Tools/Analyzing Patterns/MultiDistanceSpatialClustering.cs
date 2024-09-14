@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Multi-Distance Spatial Cluster Analysis (Ripley's K Function)</para>
+	/// <para>Multi-Distance Spatial Cluster Analysis (Ripley's K Function)</para>
 	/// <para>Determines whether features, or the values associated with features, exhibit statistically significant clustering or dispersion over a range of distances.</para>
 	/// </summary>
 	public class MultiDistanceSpatialClustering : AbstractGPProcess
@@ -196,7 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MultiDistanceSpatialClustering SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object randomGenerator = null , object scratchWorkspace = null , object workspace = null )
+		public MultiDistanceSpatialClustering SetEnviroment(object geographicTransformations = null, object outputCoordinateSystem = null, object randomGenerator = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, randomGenerator: randomGenerator, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

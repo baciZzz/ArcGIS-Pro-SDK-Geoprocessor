@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Table From Raster Function</para>
+	/// <para>Generate Table From Raster Function</para>
 	/// <para>Converts a raster function dataset to a table or feature class.  The input raster function should be a raster function designed to output a table or feature class.</para>
 	/// </summary>
 	public class GenerateTableFromRasterFunction : AbstractGPProcess
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateTableFromRasterFunction SetEnviroment(object cellSize = null , object extent = null , object parallelProcessingFactor = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateTableFromRasterFunction SetEnviroment(object cellSize = null, object extent = null, object parallelProcessingFactor = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(cellSize: cellSize, extent: extent, parallelProcessingFactor: parallelProcessingFactor, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

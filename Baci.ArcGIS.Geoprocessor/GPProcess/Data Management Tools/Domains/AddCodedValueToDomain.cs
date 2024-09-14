@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Coded Value To Domain</para>
+	/// <para>Add Coded Value To Domain</para>
 	/// <para>Adds a value to a domain's coded value list.</para>
 	/// </summary>
 	public class AddCodedValueToDomain : AbstractGPProcess
@@ -121,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddCodedValueToDomain SetEnviroment(int? autoCommit = null , object workspace = null )
+		public AddCodedValueToDomain SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

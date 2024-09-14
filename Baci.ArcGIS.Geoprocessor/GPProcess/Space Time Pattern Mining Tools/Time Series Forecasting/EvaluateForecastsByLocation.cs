@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Evaluate Forecasts By Location</para>
+	/// <para>Evaluate Forecasts By Location</para>
 	/// <para>Selects the most accurate among multiple forecasting results for each location of a space-time cube. This allows you to use multiple tools in the Time Series Forecasting toolset with the same time series data and select the best forecast for each location.</para>
 	/// </summary>
 	public class EvaluateForecastsByLocation : AbstractGPProcess
@@ -110,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EvaluateForecastsByLocation SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public EvaluateForecastsByLocation SetEnviroment(object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

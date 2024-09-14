@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Configure Utility Network Feature Class</para>
+	/// <para>Configure Utility Network Feature Class</para>
 	/// <para>Configures a Utility Network pipeline feature class for use with a linear referencing system (LRS).</para>
 	/// </summary>
 	public class ConfigureUtilityNetworkFeatureClass : AbstractGPProcess
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

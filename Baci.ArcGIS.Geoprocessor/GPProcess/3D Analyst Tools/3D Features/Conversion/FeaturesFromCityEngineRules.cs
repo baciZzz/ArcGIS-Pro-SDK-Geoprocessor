@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Features From CityEngine Rules</para>
+	/// <para>Features From CityEngine Rules</para>
 	/// <para>Generates 3D geometries  from existing 2D and 3D input features using rules authored in ArcGIS CityEngine.</para>
 	/// </summary>
 	public class FeaturesFromCityEngineRules : AbstractGPProcess
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

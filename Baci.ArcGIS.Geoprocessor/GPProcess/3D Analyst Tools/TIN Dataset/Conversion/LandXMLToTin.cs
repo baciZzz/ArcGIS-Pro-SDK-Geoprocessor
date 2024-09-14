@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>LandXML To TIN</para>
+	/// <para>LandXML To TIN</para>
 	/// <para>This tool imports one or more triangulated irregular network (TIN) surfaces from a LandXML file to output Esri TINs.</para>
 	/// </summary>
 	public class LandXMLToTin : AbstractGPProcess
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LandXMLToTin SetEnviroment(object scratchWorkspace = null , object tinSaveVersion = null , object workspace = null )
+		public LandXMLToTin SetEnviroment(object scratchWorkspace = null, object tinSaveVersion = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, tinSaveVersion: tinSaveVersion, workspace: workspace);
 			return this;

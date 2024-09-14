@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Survey Report For Targets</para>
+	/// <para>Generate Survey Report For Targets</para>
 	/// <para>Displays the top characteristics, in each of the selected survey categories, of your Core and Developmental target groups, as well as your overall customer profile.</para>
 	/// </summary>
 	public class GenerateSurveyReportForTargets : AbstractGPProcess
@@ -176,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateSurveyReportForTargets SetEnviroment(object workspace = null )
+		public GenerateSurveyReportForTargets SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

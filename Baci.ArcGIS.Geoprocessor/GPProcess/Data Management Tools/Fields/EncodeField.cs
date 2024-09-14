@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Encode Field</para>
+	/// <para>Encode Field</para>
 	/// <para>Converts categorical values (string, integer, or date) into multiple numerical fields, each representing a category. The encoded numerical fields can be used in most data science and statistical workflows including regression models.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -142,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EncodeField SetEnviroment(object extent = null )
+		public EncodeField SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

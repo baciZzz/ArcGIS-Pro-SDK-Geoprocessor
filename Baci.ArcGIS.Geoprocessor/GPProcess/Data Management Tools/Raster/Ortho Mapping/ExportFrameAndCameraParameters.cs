@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Frame And Camera Parameters</para>
+	/// <para>Export Frame And Camera Parameters</para>
 	/// <para>Exports frame and camera parameters from a mosaic dataset that contains frame imagery.</para>
 	/// </summary>
 	public class ExportFrameAndCameraParameters : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

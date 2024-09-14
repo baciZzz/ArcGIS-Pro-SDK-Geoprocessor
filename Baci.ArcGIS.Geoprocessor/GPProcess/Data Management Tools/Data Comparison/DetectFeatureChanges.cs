@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Detect Feature Changes</para>
+	/// <para>Detect Feature Changes</para>
 	/// <para>Finds where the update line features spatially match the base line features and detects spatial changes, attribute changes, or both, as well as no change. It then creates an output feature class containing matched update features with information about their changes, unmatched update features, and unmatched base features.</para>
 	/// </summary>
 	public class DetectFeatureChanges : AbstractGPProcess
@@ -168,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DetectFeatureChanges SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public DetectFeatureChanges SetEnviroment(object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

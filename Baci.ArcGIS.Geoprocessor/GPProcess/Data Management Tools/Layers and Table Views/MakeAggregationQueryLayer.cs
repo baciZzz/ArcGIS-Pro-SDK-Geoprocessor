@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Aggregation Query Layer</para>
+	/// <para>Make Aggregation Query Layer</para>
 	/// <para>Creates a query layer that summarizes, aggregates,  and filters DBMS tables dynamically based on time, range, and attribute queries from a related table, and joins the result to a feature layer.</para>
 	/// </summary>
 	public class MakeAggregationQueryLayer : AbstractGPProcess
@@ -257,7 +258,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeAggregationQueryLayer SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public MakeAggregationQueryLayer SetEnviroment(object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

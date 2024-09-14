@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Mosaic Dataset</para>
+	/// <para>Create Mosaic Dataset</para>
 	/// <para>Creates  an empty mosaic dataset in a geodatabase.</para>
 	/// </summary>
 	public class CreateMosaicDataset : AbstractGPProcess
@@ -204,7 +205,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateMosaicDataset SetEnviroment(object configKeyword = null )
+		public CreateMosaicDataset SetEnviroment(object configKeyword = null)
 		{
 			base.SetEnv(configKeyword: configKeyword);
 			return this;

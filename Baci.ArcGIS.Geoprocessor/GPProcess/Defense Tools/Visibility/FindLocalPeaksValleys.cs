@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Find Local Peaks Or Valleys</para>
+	/// <para>Find Local Peaks Or Valleys</para>
 	/// <para>Finds  local peaks or valleys  within a defined area.</para>
 	/// </summary>
 	public class FindLocalPeaksValleys : AbstractGPProcess
@@ -130,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindLocalPeaksValleys SetEnviroment(object extent = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public FindLocalPeaksValleys SetEnviroment(object extent = null, object outputCoordinateSystem = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

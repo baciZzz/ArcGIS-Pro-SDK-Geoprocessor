@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Consolidate Project</para>
+	/// <para>Consolidate Project</para>
 	/// <para>Consolidates a project (.aprx file) and referenced maps and data to a specified output folder.</para>
 	/// </summary>
 	public class ConsolidateProject : AbstractGPProcess
@@ -179,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConsolidateProject SetEnviroment(object workspace = null )
+		public ConsolidateProject SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Drop Zone Suitability</para>
+	/// <para>Drop Zone Suitability</para>
 	/// <para>Identifies drop zone locations suitable for parachuting equipment or personnel within a designated area of interest given slope and vegetation data.</para>
 	/// </summary>
 	public class DropZones : AbstractGPProcess
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

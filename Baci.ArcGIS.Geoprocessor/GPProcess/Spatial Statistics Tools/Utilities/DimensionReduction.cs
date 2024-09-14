@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Dimension Reduction</para>
+	/// <para>Dimension Reduction</para>
 	/// <para>Reduces the number of dimensions of a set of continuous variables by aggregating the highest possible amount of variance into fewer components using Principal Component Analysis (PCA) or Reduced-Rank Linear Discriminant Analysis (LDA).</para>
 	/// </summary>
 	public class DimensionReduction : AbstractGPProcess
@@ -209,7 +210,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DimensionReduction SetEnviroment(object outputCoordinateSystem = null , object randomGenerator = null )
+		public DimensionReduction SetEnviroment(object outputCoordinateSystem = null, object randomGenerator = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, randomGenerator: randomGenerator);
 			return this;

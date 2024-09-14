@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Visualize Space Time Cube in 3D</para>
+	/// <para>Visualize Space Time Cube in 3D</para>
 	/// <para>Visualizes  the variables stored in a netCDF cube created with the Space Time Pattern Mining tools.  Output from this tool is a three-dimensional representation uniquely rendered based on the variable and theme specified.</para>
 	/// </summary>
 	public class VisualizeSpaceTimeCube3D : AbstractGPProcess
@@ -136,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public VisualizeSpaceTimeCube3D SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public VisualizeSpaceTimeCube3D SetEnviroment(object geographicTransformations = null, object outputCoordinateSystem = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

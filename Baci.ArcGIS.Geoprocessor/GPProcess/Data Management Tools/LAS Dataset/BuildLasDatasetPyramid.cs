@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build LAS Dataset Pyramid</para>
+	/// <para>Build LAS Dataset Pyramid</para>
 	/// <para>Constructs or updates a LAS dataset display cache, which optimizes its rendering performance.</para>
 	/// </summary>
 	public class BuildLasDatasetPyramid : AbstractGPProcess
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildLasDatasetPyramid SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public BuildLasDatasetPyramid SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

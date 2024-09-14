@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Define Mosaic Dataset NoData</para>
+	/// <para>Define Mosaic Dataset NoData</para>
 	/// <para>Specifies one or more values to be represented as NoData.</para>
 	/// </summary>
 	public class DefineMosaicDatasetNoData : AbstractGPProcess
@@ -132,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DefineMosaicDatasetNoData SetEnviroment(object extent = null )
+		public DefineMosaicDatasetNoData SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

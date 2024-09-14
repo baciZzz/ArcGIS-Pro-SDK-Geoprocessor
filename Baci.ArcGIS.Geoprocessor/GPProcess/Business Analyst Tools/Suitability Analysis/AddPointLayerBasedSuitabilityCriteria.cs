@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Add Point Layer Based Suitability Criteria</para>
+	/// <para>Add Point Layer Based Suitability Criteria</para>
 	/// <para>Adds criteria based on spatial relationships between the input layer and a given point layer.</para>
 	/// </summary>
 	public class AddPointLayerBasedSuitabilityCriteria : AbstractGPProcess
@@ -215,7 +216,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddPointLayerBasedSuitabilityCriteria SetEnviroment(object workspace = null )
+		public AddPointLayerBasedSuitabilityCriteria SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

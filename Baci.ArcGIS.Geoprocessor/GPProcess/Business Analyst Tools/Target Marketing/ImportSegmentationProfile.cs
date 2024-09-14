@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Import Segmentation Profile</para>
+	/// <para>Import Segmentation Profile</para>
 	/// <para>Generates a segmentation profile from a table.</para>
 	/// </summary>
 	public class ImportSegmentationProfile : AbstractGPProcess
@@ -141,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportSegmentationProfile SetEnviroment(object workspace = null )
+		public ImportSegmentationProfile SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

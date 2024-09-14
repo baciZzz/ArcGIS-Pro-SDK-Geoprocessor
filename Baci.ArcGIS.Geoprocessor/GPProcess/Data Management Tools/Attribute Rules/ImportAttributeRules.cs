@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Import Attribute Rules</para>
+	/// <para>Import Attribute Rules</para>
 	/// <para>Imports attribute rules from a comma-separated values (.csv) file to a dataset.</para>
 	/// </summary>
 	public class ImportAttributeRules : AbstractGPProcess
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportAttributeRules SetEnviroment(object workspace = null )
+		public ImportAttributeRules SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

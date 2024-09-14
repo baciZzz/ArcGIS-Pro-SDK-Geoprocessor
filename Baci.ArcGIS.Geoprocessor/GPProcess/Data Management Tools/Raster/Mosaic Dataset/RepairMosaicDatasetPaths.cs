@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Repair Mosaic Dataset Paths</para>
+	/// <para>Repair Mosaic Dataset Paths</para>
 	/// <para>Resets paths to source imagery if you have moved or copied a mosaic dataset.</para>
 	/// </summary>
 	public class RepairMosaicDatasetPaths : AbstractGPProcess
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RepairMosaicDatasetPaths SetEnviroment(object extent = null , object parallelProcessingFactor = null )
+		public RepairMosaicDatasetPaths SetEnviroment(object extent = null, object parallelProcessingFactor = null)
 		{
 			base.SetEnv(extent: extent, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

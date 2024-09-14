@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Semivariogram Sensitivity</para>
+	/// <para>Semivariogram Sensitivity</para>
 	/// <para>This tool performs a sensitivity analysis on the predicted values and associated standard errors by changing the model's semivariogram parameters (the nugget, partial sill, and major/minor ranges) within a percentage of the original values. The tool takes a geostatistical model source in order to populate these initial values of the nugget, partial sill, and major/minor ranges. The tool's output is a table indicating which parameter values were used and what the resulting predicted and standard error values were. If there are large fluctuations in the output with small changes in the model's parameter values, then you cannot have much confidence in the output. On the other hand, if changes in the output are small, then you can be confident in the model's predictions and make decisions based on its output.</para>
 	/// </summary>
 	public class GASemivariogramSensitivity : AbstractGPProcess
@@ -188,7 +189,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GASemivariogramSensitivity SetEnviroment(object coincidentPoints = null , object randomGenerator = null , object scratchWorkspace = null , object workspace = null )
+		public GASemivariogramSensitivity SetEnviroment(object coincidentPoints = null, object randomGenerator = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(coincidentPoints: coincidentPoints, randomGenerator: randomGenerator, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

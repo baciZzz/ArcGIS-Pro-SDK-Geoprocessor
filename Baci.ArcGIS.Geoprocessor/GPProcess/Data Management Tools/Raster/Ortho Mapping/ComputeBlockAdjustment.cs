@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Compute Block Adjustment</para>
+	/// <para>Compute Block Adjustment</para>
 	/// <para>Computes the adjustments</para>
 	/// <para>to the mosaic dataset. This tool will create a solution  table that can be used to apply the actual adjustments.</para>
 	/// </summary>
@@ -179,7 +180,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ComputeBlockAdjustment SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ComputeBlockAdjustment SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

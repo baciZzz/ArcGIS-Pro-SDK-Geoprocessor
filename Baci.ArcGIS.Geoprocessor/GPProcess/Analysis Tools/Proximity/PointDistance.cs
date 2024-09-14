@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Point Distance</para>
+	/// <para>Point Distance</para>
 	/// <para>Determines the distances from input point features to all points in the near features within a specified search radius.</para>
 	/// </summary>
 	[Obsolete()]
@@ -114,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PointDistance SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public PointDistance SetEnviroment(object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

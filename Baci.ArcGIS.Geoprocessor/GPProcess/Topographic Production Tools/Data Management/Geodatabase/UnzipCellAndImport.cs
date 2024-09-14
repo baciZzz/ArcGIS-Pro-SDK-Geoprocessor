@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Unzip MGCP Cell And Import</para>
+	/// <para>Unzip MGCP Cell And Import</para>
 	/// <para>Unzips and imports compressed Multinational Geospatial Co-production Program (MGCP) 1-degree-by-1-degree cell packages (*.zip) into a target geodatabase.</para>
 	/// </summary>
 	public class UnzipCellAndImport : AbstractGPProcess
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UnzipCellAndImport SetEnviroment(object workspace = null )
+		public UnzipCellAndImport SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

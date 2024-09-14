@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Transfer Attributes</para>
+	/// <para>Transfer Attributes</para>
 	/// <para>Finds where the source line features spatially match the target line features and transfers specified attributes from source features to matched target features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -162,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TransferAttributes SetEnviroment(object extent = null , object workspace = null )
+		public TransferAttributes SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

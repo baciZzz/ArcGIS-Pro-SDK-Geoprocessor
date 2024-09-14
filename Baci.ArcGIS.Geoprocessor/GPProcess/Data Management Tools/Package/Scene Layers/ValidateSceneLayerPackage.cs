@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Validate Scene Layer</para>
+	/// <para>Validate Scene Layer</para>
 	/// <para>Evaluates a scene layer package file (*.slpk) to determine its conformity to I3S specification.</para>
 	/// </summary>
 	public class ValidateSceneLayerPackage : AbstractGPProcess
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ValidateSceneLayerPackage SetEnviroment(object workspace = null )
+		public ValidateSceneLayerPackage SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

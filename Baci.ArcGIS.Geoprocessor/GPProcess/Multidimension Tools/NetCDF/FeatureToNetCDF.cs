@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Feature to NetCDF</para>
+	/// <para>Feature to NetCDF</para>
 	/// <para>Converts a point feature class to a netCDF file.</para>
 	/// </summary>
 	public class FeatureToNetCDF : AbstractGPProcess
@@ -123,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FeatureToNetCDF SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public FeatureToNetCDF SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

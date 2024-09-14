@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Table To Geodatabase</para>
+	/// <para>Table To Geodatabase</para>
 	/// <para>Converts one or more tables to geodatabase tables in an output geodatabase. The inputs can be dBASE, INFO, VPF, OLE DB tables, geodatabase tables, or table views.</para>
 	/// </summary>
 	public class TableToGeodatabase : AbstractGPProcess
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableToGeodatabase SetEnviroment(object configKeyword = null , object extent = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null , object workspace = null )
+		public TableToGeodatabase SetEnviroment(object configKeyword = null, object extent = null, bool? qualifiedFieldNames = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, extent: extent, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Table To Domain</para>
+	/// <para>Table To Domain</para>
 	/// <para>Creates or updates a coded value domain with values from a table.</para>
 	/// </summary>
 	public class TableToDomain : AbstractGPProcess
@@ -158,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableToDomain SetEnviroment(int? autoCommit = null , object workspace = null )
+		public TableToDomain SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

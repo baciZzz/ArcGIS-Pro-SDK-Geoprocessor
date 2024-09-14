@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Skyline Graph</para>
+	/// <para>Skyline Graph</para>
 	/// <para>Calculates sky visibility and generates an optional table and polar graph.</para>
 	/// </summary>
 	public class SkylineGraph : AbstractGPProcess
@@ -133,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SkylineGraph SetEnviroment(object extent = null , object geographicTransformations = null , object workspace = null )
+		public SkylineGraph SetEnviroment(object extent = null, object geographicTransformations = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, workspace: workspace);
 			return this;

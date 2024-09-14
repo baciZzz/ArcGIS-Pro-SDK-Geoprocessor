@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Point Cloud Scene Layer Package</para>
+	/// <para>Create Point Cloud Scene Layer Package</para>
 	/// <para>Creates a point cloud scene layer package (.slpk file) from LAS, zLAS, LAZ, or LAS dataset input.</para>
 	/// </summary>
 	public class CreatePointCloudSceneLayerPackage : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

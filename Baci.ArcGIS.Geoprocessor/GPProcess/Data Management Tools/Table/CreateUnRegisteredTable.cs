@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Unregistered Table</para>
+	/// <para>Create Unregistered Table</para>
 	/// <para>Creates an empty table in a database or enterprise geodatabase. The table is not registered with the geodatabase.</para>
 	/// </summary>
 	public class CreateUnRegisteredTable : AbstractGPProcess
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateUnRegisteredTable SetEnviroment(object configKeyword = null , object workspace = null )
+		public CreateUnRegisteredTable SetEnviroment(object configKeyword = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, workspace: workspace);
 			return this;

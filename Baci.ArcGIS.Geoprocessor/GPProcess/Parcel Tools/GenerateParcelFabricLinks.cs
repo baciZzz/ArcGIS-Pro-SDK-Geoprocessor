@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Generate Parcel Fabric Links</para>
+	/// <para>Generate Parcel Fabric Links</para>
 	/// <para>Generates displacement links for parcel fabric points that have changed</para>
 	/// <para>locations in a specified time period.</para>
 	/// </summary>
@@ -71,7 +72,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

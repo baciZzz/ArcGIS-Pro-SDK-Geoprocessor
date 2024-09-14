@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Change LAS Class Codes</para>
+	/// <para>Change LAS Class Codes</para>
 	/// <para>Reassigns the classification codes and flags of .las files.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -159,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ChangeLasClassCodes SetEnviroment(object extent = null , object workspace = null )
+		public ChangeLasClassCodes SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

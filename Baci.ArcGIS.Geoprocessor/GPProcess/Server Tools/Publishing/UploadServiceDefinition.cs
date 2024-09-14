@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Upload Service Definition</para>
+	/// <para>Upload Service Definition</para>
 	/// <para>Uploads and shares a web layer, web tool, or service to ArcGIS Online, ArcGIS Enterprise, or ArcGIS Server.</para>
 	/// </summary>
 	public class UploadServiceDefinition : AbstractGPProcess
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

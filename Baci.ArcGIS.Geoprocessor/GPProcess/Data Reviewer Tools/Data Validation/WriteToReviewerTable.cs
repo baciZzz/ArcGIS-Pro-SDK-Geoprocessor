@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 {
 	/// <summary>
 	/// <para>Write To Reviewer Table</para>
+	/// <para>Write To Reviewer Table</para>
 	/// <para>Writes a feature class, feature layer,  table, or table view to the Reviewer workspace.</para>
 	/// </summary>
 	public class WriteToReviewerTable : AbstractGPProcess
@@ -84,7 +85,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

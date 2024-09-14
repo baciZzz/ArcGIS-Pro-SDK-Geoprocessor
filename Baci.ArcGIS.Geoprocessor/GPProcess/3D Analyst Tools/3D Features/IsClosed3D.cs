@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Is Closed 3D</para>
+	/// <para>Is Closed 3D</para>
 	/// <para>Evaluates multipatch features to determine whether each feature completely encloses a volume of space.</para>
 	/// </summary>
 	public class IsClosed3D : AbstractGPProcess
@@ -81,7 +82,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public IsClosed3D SetEnviroment(object extent = null , object workspace = null )
+		public IsClosed3D SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

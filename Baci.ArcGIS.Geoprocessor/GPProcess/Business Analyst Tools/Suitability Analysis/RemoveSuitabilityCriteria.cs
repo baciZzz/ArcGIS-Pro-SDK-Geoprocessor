@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Remove Suitability Criteria</para>
+	/// <para>Remove Suitability Criteria</para>
 	/// <para>Removes criteria from a suitability analysis layer.</para>
 	/// </summary>
 	public class RemoveSuitabilityCriteria : AbstractGPProcess
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveSuitabilityCriteria SetEnviroment(object workspace = null )
+		public RemoveSuitabilityCriteria SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

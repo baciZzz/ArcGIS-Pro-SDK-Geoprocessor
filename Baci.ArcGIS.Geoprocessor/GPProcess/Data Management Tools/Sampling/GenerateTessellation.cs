@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Tessellation</para>
+	/// <para>Generate Tessellation</para>
 	/// <para>Generates a tessellated grid of regular polygon features to cover a given extent.  The tessellation can be of triangles, squares, diamonds, hexagons, or transverse hexagons.</para>
 	/// </summary>
 	public class GenerateTessellation : AbstractGPProcess
@@ -129,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateTessellation SetEnviroment(object XYDomain = null , object XYResolution = null , object XYTolerance = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateTessellation SetEnviroment(object XYDomain = null, object XYResolution = null, object XYTolerance = null, object extent = null, object geographicTransformations = null, object outputCoordinateSystem = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, XYTolerance: XYTolerance, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

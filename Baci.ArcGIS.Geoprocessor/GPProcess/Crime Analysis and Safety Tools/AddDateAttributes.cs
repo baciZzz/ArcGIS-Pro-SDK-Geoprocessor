@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Add Date Attributes</para>
+	/// <para>Add Date Attributes</para>
 	/// <para>Adds fields containing date or time properties from an input date field, for example, day full name, day of the month, month, and year.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -114,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddDateAttributes SetEnviroment(object extent = null , object workspace = null )
+		public AddDateAttributes SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

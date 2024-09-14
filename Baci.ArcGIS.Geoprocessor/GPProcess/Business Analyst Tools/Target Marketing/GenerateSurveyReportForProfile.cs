@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Survey Report For Profile</para>
+	/// <para>Generate Survey Report For Profile</para>
 	/// <para>Displays characteristics from the consumer survey data for your target profile to determine customer lifestyle habits and preferences.</para>
 	/// </summary>
 	public class GenerateSurveyReportForProfile : AbstractGPProcess
@@ -166,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateSurveyReportForProfile SetEnviroment(object workspace = null )
+		public GenerateSurveyReportForProfile SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

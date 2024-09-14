@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Append Routes</para>
+	/// <para>Append Routes</para>
 	/// <para>Appends routes from an input polyline into an LRS Network.</para>
 	/// </summary>
 	public class AppendRoutes : AbstractGPProcess
@@ -201,7 +202,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AppendRoutes SetEnviroment(object workspace = null )
+		public AppendRoutes SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

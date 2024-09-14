@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Calculate Grid Convergence Angle</para>
+	/// <para>Calculate Grid Convergence Angle</para>
 	/// <para>Calculates the rotation angle for true north based on the center point of each feature in a feature class and populates this value in a specified field. This field can be used in conjunction with a spatial map series to rotate each map to true north.</para>
 	/// </summary>
 	public class CalculateGridConvergenceAngle : AbstractGPProcess
@@ -121,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateGridConvergenceAngle SetEnviroment(object cartographicCoordinateSystem = null , object workspace = null )
+		public CalculateGridConvergenceAngle SetEnviroment(object cartographicCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, workspace: workspace);
 			return this;

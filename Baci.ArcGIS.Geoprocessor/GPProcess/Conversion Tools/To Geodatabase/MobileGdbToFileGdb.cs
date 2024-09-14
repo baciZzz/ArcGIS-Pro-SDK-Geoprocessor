@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Mobile Geodatabase To File Geodatabase</para>
+	/// <para>Mobile Geodatabase To File Geodatabase</para>
 	/// <para>Copies the contents of a mobile geodatabase to a new file geodatabase.</para>
 	/// </summary>
 	public class MobileGdbToFileGdb : AbstractGPProcess
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MobileGdbToFileGdb SetEnviroment(object workspace = null )
+		public MobileGdbToFileGdb SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

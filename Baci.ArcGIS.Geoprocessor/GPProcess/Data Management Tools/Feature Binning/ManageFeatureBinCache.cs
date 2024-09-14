@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Manage Feature Bin Cache</para>
+	/// <para>Manage Feature Bin Cache</para>
 	/// <para>Manages the feature binning cache for data with feature binning enabled.</para>
 	/// </summary>
 	public class ManageFeatureBinCache : AbstractGPProcess
@@ -142,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ManageFeatureBinCache SetEnviroment(object workspace = null )
+		public ManageFeatureBinCache SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

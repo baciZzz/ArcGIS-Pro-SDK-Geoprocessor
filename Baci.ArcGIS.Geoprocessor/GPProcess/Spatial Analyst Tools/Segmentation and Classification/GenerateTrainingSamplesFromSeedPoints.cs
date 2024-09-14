@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Training Samples From Seed Points</para>
+	/// <para>Generate Training Samples From Seed Points</para>
 	/// <para>Generates training samples from seed points, such as accuracy assessment points or training sample points. A typical use case is generating training samples from an existing source, such as a thematic raster or a feature class.</para>
 	/// </summary>
 	public class GenerateTrainingSamplesFromSeedPoints : AbstractGPProcess
@@ -115,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateTrainingSamplesFromSeedPoints SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateTrainingSamplesFromSeedPoints SetEnviroment(object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

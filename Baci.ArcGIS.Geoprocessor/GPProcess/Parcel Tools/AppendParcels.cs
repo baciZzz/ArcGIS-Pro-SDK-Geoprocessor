@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Append Parcels</para>
+	/// <para>Append Parcels</para>
 	/// <para>Appends parcels from an input parcel fabric to a target parcel fabric. If the input parcel fabric is a parcel fabric layer with selected polygons, the corresponding parcel features will be appended.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -62,7 +63,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

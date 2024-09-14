@@ -12,6 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 	/// <summary>
 	/// <para>Expression</para>
 	/// <para>Expression</para>
+	/// <para>Expression</para>
 	/// </summary>
 	public class ExpressionIfThenElse : AbstractGPProcess
 	{
@@ -54,7 +55,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Detect Graphic Conflict</para>
+	/// <para>Detect Graphic Conflict</para>
 	/// <para>Creates polygons where two or more symbolized features graphically conflict.</para>
 	/// </summary>
 	public class DetectGraphicConflict : AbstractGPProcess
@@ -115,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DetectGraphicConflict SetEnviroment(object cartographicCoordinateSystem = null , object cartographicPartitions = null , object referenceScale = null )
+		public DetectGraphicConflict SetEnviroment(object cartographicCoordinateSystem = null, object cartographicPartitions = null, object referenceScale = null)
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, cartographicPartitions: cartographicPartitions, referenceScale: referenceScale);
 			return this;

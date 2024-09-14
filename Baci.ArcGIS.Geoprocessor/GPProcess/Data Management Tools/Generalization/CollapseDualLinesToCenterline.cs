@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Collapse Dual Lines To Centerline</para>
+	/// <para>Collapse Dual Lines To Centerline</para>
 	/// <para>Determines the centerlines of features with dual lines.</para>
 	/// </summary>
 	[Obsolete()]
@@ -63,7 +64,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

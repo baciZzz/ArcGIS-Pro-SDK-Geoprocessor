@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Find Highest Or Lowest Point</para>
+	/// <para>Find Highest Or Lowest Point</para>
 	/// <para>Finds the highest or lowest point  of the input surface within a defined area.</para>
 	/// </summary>
 	public class FindHighestLowestPoint : AbstractGPProcess
@@ -117,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindHighestLowestPoint SetEnviroment(object extent = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public FindHighestLowestPoint SetEnviroment(object extent = null, object outputCoordinateSystem = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

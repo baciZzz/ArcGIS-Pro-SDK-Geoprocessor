@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Package Layer</para>
+	/// <para>Package Layer</para>
 	/// <para>Packages one or more layers and all referenced data sources to create a single compressed .lpkx file.</para>
 	/// </summary>
 	public class PackageLayer : AbstractGPProcess
@@ -200,7 +201,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PackageLayer SetEnviroment(object extent = null , object workspace = null )
+		public PackageLayer SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

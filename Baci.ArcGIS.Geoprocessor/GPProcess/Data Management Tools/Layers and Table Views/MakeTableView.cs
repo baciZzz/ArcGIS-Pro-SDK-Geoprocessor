@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Table View</para>
+	/// <para>Make Table View</para>
 	/// <para>Creates a table view from an input table or feature class. The table view that is created by the tool is temporary and will not persist after the session ends unless the document is saved.</para>
 	/// </summary>
 	public class MakeTableView : AbstractGPProcess
@@ -110,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeTableView SetEnviroment(object workspace = null )
+		public MakeTableView SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

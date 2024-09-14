@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Disable Feature Binning</para>
+	/// <para>Disable Feature Binning</para>
 	/// <para>Disables feature binning on a feature class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DisableFeatureBinning SetEnviroment(object workspace = null )
+		public DisableFeatureBinning SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

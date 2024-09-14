@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Field Group</para>
+	/// <para>Create Field Group</para>
 	/// <para>Create a field group for a feature class or table. Field groups are used when creating contingent values.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateFieldGroup SetEnviroment(object workspace = null )
+		public CreateFieldGroup SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

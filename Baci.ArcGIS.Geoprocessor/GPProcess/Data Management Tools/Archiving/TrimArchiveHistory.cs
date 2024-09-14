@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Trim Archive History</para>
+	/// <para>Trim Archive History</para>
 	/// <para>Deletes retired archive records from nonversioned archive-enabled datasets.</para>
 	/// </summary>
 	public class TrimArchiveHistory : AbstractGPProcess
@@ -63,7 +64,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

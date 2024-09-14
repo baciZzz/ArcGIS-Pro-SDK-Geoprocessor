@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 {
 	/// <summary>
 	/// <para>Detect Objects Using Deep Learning</para>
+	/// <para>Detect Objects Using Deep Learning</para>
 	/// <para>Runs a trained deep learning model on an input raster to produce a feature class containing the objects it identifies. The feature class can be shared as a hosted feature layer in your portal. The features can be bounding boxes or polygons around the objects found, or points at the centers of the objects.</para>
 	/// </summary>
 	public class DetectObjectsUsingDeepLearning : AbstractGPProcess
@@ -168,7 +169,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DetectObjectsUsingDeepLearning SetEnviroment(object cellSize = null , object extent = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null )
+		public DetectObjectsUsingDeepLearning SetEnviroment(object cellSize = null, object extent = null, object outputCoordinateSystem = null, object parallelProcessingFactor = null)
 		{
 			base.SetEnv(cellSize: cellSize, extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

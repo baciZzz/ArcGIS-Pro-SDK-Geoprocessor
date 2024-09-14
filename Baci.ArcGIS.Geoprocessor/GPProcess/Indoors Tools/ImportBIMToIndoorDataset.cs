@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Import BIM To Indoor Dataset</para>
+	/// <para>Import BIM To Indoor Dataset</para>
 	/// <para>Imports features from a BIM file into an indoor dataset.</para>
 	/// </summary>
 	public class ImportBIMToIndoorDataset : AbstractGPProcess
@@ -144,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportBIMToIndoorDataset SetEnviroment(object workspace = null )
+		public ImportBIMToIndoorDataset SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

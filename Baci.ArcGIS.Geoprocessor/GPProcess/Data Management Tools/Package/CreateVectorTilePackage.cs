@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Vector Tile Package</para>
+	/// <para>Create Vector Tile Package</para>
 	/// <para>Generates vector tiles from a map or basemap and packages the tiles in a single .vtpk file.</para>
 	/// </summary>
 	public class CreateVectorTilePackage : AbstractGPProcess
@@ -78,7 +79,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

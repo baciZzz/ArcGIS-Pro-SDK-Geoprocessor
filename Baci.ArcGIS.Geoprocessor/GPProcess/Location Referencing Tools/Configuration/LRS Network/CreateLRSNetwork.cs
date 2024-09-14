@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Create LRS Network</para>
+	/// <para>Create LRS Network</para>
 	/// <para>Creates an LRS Network in an ArcGIS Location Referencing linear referencing system (LRS).</para>
 	/// </summary>
 	public class CreateLRSNetwork : AbstractGPProcess
@@ -236,7 +237,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateLRSNetwork SetEnviroment(object workspace = null )
+		public CreateLRSNetwork SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Analyze LAS Runway Obstacles</para>
+	/// <para>Analyze LAS Runway Obstacles</para>
 	/// <para>Analyzes lidar data and obstruction identification surfaces (OIS) to determine if lidar points are penetrating.</para>
 	/// </summary>
 	public class AnalyzeLASRunwayObstacles : AbstractGPProcess
@@ -143,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AnalyzeLASRunwayObstacles SetEnviroment(object workspace = null )
+		public AnalyzeLASRunwayObstacles SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Simplify Shared Edges</para>
+	/// <para>Simplify Shared Edges</para>
 	/// <para>Simplifies the edges of input features while maintaining the topological relationship with edges shared with other features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -164,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SimplifySharedEdges SetEnviroment(object cartographicPartitions = null )
+		public SimplifySharedEdges SetEnviroment(object cartographicPartitions = null)
 		{
 			base.SetEnv(cartographicPartitions: cartographicPartitions);
 			return this;

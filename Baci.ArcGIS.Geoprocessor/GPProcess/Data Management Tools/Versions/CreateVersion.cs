@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Version</para>
+	/// <para>Create Version</para>
 	/// <para>Creates a new version in the specified geodatabase.</para>
 	/// </summary>
 	[Obsolete()]
@@ -124,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateVersion SetEnviroment(object workspace = null )
+		public CreateVersion SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

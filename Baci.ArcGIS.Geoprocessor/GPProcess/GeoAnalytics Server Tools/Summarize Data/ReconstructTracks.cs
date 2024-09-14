@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Reconstruct Tracks</para>
+	/// <para>Reconstruct Tracks</para>
 	/// <para>Creates line or polygon tracks from time-enabled input data.</para>
 	/// </summary>
 	public class ReconstructTracks : AbstractGPProcess
@@ -272,7 +273,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ReconstructTracks SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public ReconstructTracks SetEnviroment(object extent = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

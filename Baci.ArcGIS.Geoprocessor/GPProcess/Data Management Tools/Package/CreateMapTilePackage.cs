@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Map Tile Package</para>
+	/// <para>Create Map Tile Package</para>
 	/// <para>Generates tiles from a map or basemap and packages the tiles to create a single compressed .tpk file.</para>
 	/// </summary>
 	public class CreateMapTilePackage : AbstractGPProcess
@@ -232,7 +233,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateMapTilePackage SetEnviroment(object parallelProcessingFactor = null , object workspace = null )
+		public CreateMapTilePackage SetEnviroment(object parallelProcessingFactor = null, object workspace = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Table Compare</para>
+	/// <para>Table Compare</para>
 	/// <para>Compares two tables or table views and returns the comparison results.</para>
 	/// </summary>
 	public class TableCompare : AbstractGPProcess
@@ -172,7 +173,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableCompare SetEnviroment(object workspace = null )
+		public TableCompare SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 {
 	/// <summary>
 	/// <para>Generate Reference System Grid From Area</para>
+	/// <para>Generate Reference System Grid From Area</para>
 	/// <para>Creates Gridded Reference Graphics (GRG) based on Military Grid Reference System (MGRS) or United States National Grid (USNG) reference grids.</para>
 	/// </summary>
 	public class GenerateReferenceSystemGRGFromArea : AbstractGPProcess
@@ -149,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.DefenseTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateReferenceSystemGRGFromArea SetEnviroment(object outputCoordinateSystem = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateReferenceSystemGRGFromArea SetEnviroment(object outputCoordinateSystem = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

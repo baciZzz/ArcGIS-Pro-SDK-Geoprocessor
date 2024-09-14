@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Diagram Feature Capability By Attribute Rule</para>
+	/// <para>Add Diagram Feature Capability By Attribute Rule</para>
 	/// <para>Adds a diagram rule to a diagram template to assign a particular capability on diagram features currently represented in the diagram. This capability is used by other rules executed later in the rule sequence. The diagram features that will be processed are queried from a network source class or object table by attributes.</para>
 	/// </summary>
 	public class AddDiagramFeatureCapabilityByAttributeRule : AbstractGPProcess
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

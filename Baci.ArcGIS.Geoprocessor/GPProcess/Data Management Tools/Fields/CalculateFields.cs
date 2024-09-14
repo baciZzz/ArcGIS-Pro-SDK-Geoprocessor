@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Calculate Fields (multiple)</para>
+	/// <para>Calculate Fields (multiple)</para>
 	/// <para>Calculates the values of two or more fields for a feature class, feature layer, or raster.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -146,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateFields SetEnviroment(object workspace = null )
+		public CalculateFields SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

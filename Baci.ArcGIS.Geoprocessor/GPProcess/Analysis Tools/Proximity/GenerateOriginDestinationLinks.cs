@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Generate Origin-Destination Links</para>
+	/// <para>Generate Origin-Destination Links</para>
 	/// <para>Generates connecting lines from origin features to destination features. This is often referred to as a spider diagram.</para>
 	/// </summary>
 	public class GenerateOriginDestinationLinks : AbstractGPProcess
@@ -196,7 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateOriginDestinationLinks SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateOriginDestinationLinks SetEnviroment(object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

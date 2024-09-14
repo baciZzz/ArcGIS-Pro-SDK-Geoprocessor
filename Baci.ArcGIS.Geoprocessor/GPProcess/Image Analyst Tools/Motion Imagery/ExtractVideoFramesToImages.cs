@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Extract Video Frames To Images</para>
+	/// <para>Extract Video Frames To Images</para>
 	/// <para>Extracts video frame images and associated metadata from a FMV-compliant video stream.  The extracted images can be added to a mosaic dataset or other tools and functions for further analysis.</para>
 	/// </summary>
 	public class ExtractVideoFramesToImages : AbstractGPProcess
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

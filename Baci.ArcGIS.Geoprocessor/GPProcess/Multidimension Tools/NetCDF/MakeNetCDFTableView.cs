@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Make NetCDF Table View</para>
+	/// <para>Make NetCDF Table View</para>
 	/// <para>Makes a table view from a netCDF file.</para>
 	/// </summary>
 	public class MakeNetCDFTableView : AbstractGPProcess
@@ -132,7 +133,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeNetCDFTableView SetEnviroment(object workspace = null )
+		public MakeNetCDFTableView SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

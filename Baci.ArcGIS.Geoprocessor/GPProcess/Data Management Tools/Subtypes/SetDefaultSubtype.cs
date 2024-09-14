@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Set Default Subtype</para>
+	/// <para>Set Default Subtype</para>
 	/// <para>Sets the default value or code for the input table's subtype.</para>
 	/// </summary>
 	public class SetDefaultSubtype : AbstractGPProcess
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetDefaultSubtype SetEnviroment(int? autoCommit = null , object workspace = null )
+		public SetDefaultSubtype SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

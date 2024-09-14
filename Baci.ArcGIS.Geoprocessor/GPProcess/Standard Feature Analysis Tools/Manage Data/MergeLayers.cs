@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Merge Layers</para>
+	/// <para>Merge Layers</para>
 	/// <para>Copies all features from two layers into a new layer. The layers to be combined must contain the same feature types (points, lines, or polygons). You can control how the fields from the input layers are joined and copied.</para>
 	/// </summary>
 	public class MergeLayers : AbstractGPProcess
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MergeLayers SetEnviroment(object extent = null )
+		public MergeLayers SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

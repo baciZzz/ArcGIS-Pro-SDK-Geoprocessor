@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 {
 	/// <summary>
 	/// <para>Calculate Z-value</para>
+	/// <para>Calculate Z-value</para>
 	/// <para>Uses the interpolation model in a geostatistical layer to predict a value at a single location.</para>
 	/// </summary>
 	public class GACalculateZValue : AbstractGPProcess
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GACalculateZValue SetEnviroment(object workspace = null )
+		public GACalculateZValue SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

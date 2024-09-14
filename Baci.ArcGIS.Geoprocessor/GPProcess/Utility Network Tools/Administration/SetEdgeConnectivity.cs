@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Set Edge Connectivity</para>
+	/// <para>Set Edge Connectivity</para>
 	/// <para>Defines how features will connect to a line or edge object of a given asset type.</para>
 	/// </summary>
 	public class SetEdgeConnectivity : AbstractGPProcess
@@ -152,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetEdgeConnectivity SetEnviroment(object workspace = null )
+		public SetEdgeConnectivity SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Set Criteria Properties</para>
+	/// <para>Set Criteria Properties</para>
 	/// <para>Define parameters for criteria.</para>
 	/// </summary>
 	public class SetCriteriaProperties : AbstractGPProcess
@@ -118,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetCriteriaProperties SetEnviroment(object workspace = null )
+		public SetCriteriaProperties SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

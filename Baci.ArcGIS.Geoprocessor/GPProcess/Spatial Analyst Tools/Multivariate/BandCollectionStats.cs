@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Band Collection Statistics</para>
+	/// <para>Band Collection Statistics</para>
 	/// <para>Calculates the statistics for a set of raster bands.</para>
 	/// </summary>
 	public class BandCollectionStats : AbstractGPProcess
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BandCollectionStats SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public BandCollectionStats SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

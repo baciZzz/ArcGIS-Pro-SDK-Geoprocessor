@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Grid Index Features</para>
+	/// <para>Grid Index Features</para>
 	/// <para>Creates a grid of rectangular polygon features that can be used as an index to specify pages in a spatial map series. A grid can be created that includes only polygon features that intersect another feature layer.</para>
 	/// </summary>
 	public class GridIndexFeatures : AbstractGPProcess
@@ -187,7 +188,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GridIndexFeatures SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public GridIndexFeatures SetEnviroment(object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

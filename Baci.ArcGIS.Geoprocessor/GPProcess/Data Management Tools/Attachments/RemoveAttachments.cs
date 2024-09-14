@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Attachments</para>
+	/// <para>Remove Attachments</para>
 	/// <para>Removes attachments from geodatabase feature class or table records. Since attachments are not actually stored in the input dataset, no changes will be made to that feature class or table, but rather to the related geodatabase table that stores the attachments and maintains linkage with the input dataset. A match table is used to identify which input records (or attribute groups of records) will have attachments removed.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -135,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveAttachments SetEnviroment(object workspace = null )
+		public RemoveAttachments SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

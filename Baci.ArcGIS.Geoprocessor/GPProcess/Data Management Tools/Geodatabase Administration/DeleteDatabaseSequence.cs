@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Database Sequence</para>
+	/// <para>Delete Database Sequence</para>
 	/// <para>Deletes a database sequence from a geodatabase.</para>
 	/// </summary>
 	public class DeleteDatabaseSequence : AbstractGPProcess
@@ -105,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DeleteDatabaseSequence SetEnviroment(object workspace = null )
+		public DeleteDatabaseSequence SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

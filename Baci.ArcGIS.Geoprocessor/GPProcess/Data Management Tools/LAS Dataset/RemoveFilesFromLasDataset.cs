@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Files From LAS Dataset</para>
+	/// <para>Remove Files From LAS Dataset</para>
 	/// <para>Removes one or more LAS files and surface constraint features from a LAS dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveFilesFromLasDataset SetEnviroment(object workspace = null )
+		public RemoveFilesFromLasDataset SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

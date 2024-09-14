@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Unified Facilities Criteria</para>
+	/// <para>Unified Facilities Criteria</para>
 	/// <para>Creates obstruction identification surfaces based on the Unified Facilities Criteria (UFC) 3-260-01 that is prescribed by MIL-STD 3007. These surfaces provide planning, design, construction, sustainment, restoration, and modernization criteria for the United States Department of Defense. Surfaces are created as polygon or multipatch features.</para>
 	/// </summary>
 	public class UnifiedFacilitiesCriteria : AbstractGPProcess
@@ -227,7 +228,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UnifiedFacilitiesCriteria SetEnviroment(object workspace = null )
+		public UnifiedFacilitiesCriteria SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Identify Narrow Polygons</para>
+	/// <para>Identify Narrow Polygons</para>
 	/// <para>Splits a polygon based on its width and classifies each portion as narrow or wide based on its width and length.</para>
 	/// </summary>
 	public class IdentifyNarrowPolygons : AbstractGPProcess
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

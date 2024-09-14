@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Create LRS</para>
+	/// <para>Create LRS</para>
 	/// <para>Creates a linear referencing system (LRS) and minimum schema items in a specified workspace.</para>
 	/// </summary>
 	public class CreateLRS : AbstractGPProcess
@@ -218,7 +219,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateLRS SetEnviroment(object workspace = null )
+		public CreateLRS SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

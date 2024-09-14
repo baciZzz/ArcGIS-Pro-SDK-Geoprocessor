@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Contingent Value</para>
+	/// <para>Add Contingent Value</para>
 	/// <para>Adds a contingent value to a field group on a feature class or table.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -142,7 +143,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddContingentValue SetEnviroment(object workspace = null )
+		public AddContingentValue SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

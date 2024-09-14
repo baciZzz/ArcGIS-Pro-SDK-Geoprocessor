@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Change Terrain Reference Scale</para>
+	/// <para>Change Terrain Reference Scale</para>
 	/// <para>Changes the reference scale associated with a terrain pyramid level.</para>
 	/// </summary>
 	public class ChangeTerrainReferenceScale : AbstractGPProcess
@@ -106,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ChangeTerrainReferenceScale SetEnviroment(int? autoCommit = null , object scratchWorkspace = null , object workspace = null )
+		public ChangeTerrainReferenceScale SetEnviroment(int? autoCommit = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>LAS Dataset To TIN</para>
+	/// <para>LAS Dataset To TIN</para>
 	/// <para>Exports a triangulated irregular network (TIN) from a  LAS dataset.</para>
 	/// </summary>
 	public class LasDatasetToTin : AbstractGPProcess
@@ -155,7 +156,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LasDatasetToTin SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object tinSaveVersion = null , object workspace = null )
+		public LasDatasetToTin SetEnviroment(object extent = null, object geographicTransformations = null, object outputCoordinateSystem = null, object tinSaveVersion = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, tinSaveVersion: tinSaveVersion, workspace: workspace);
 			return this;

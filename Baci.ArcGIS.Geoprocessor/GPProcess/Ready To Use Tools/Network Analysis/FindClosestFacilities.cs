@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 {
 	/// <summary>
 	/// <para>Find Closest Facilities</para>
+	/// <para>Find Closest Facilities</para>
 	/// <para>Finds one or more facilities that are closest from an</para>
 	/// <para>incident based on travel time or travel distance and outputs the</para>
 	/// <para>best routes, driving directions between the incidents and the</para>
@@ -156,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 {
 	/// <summary>
 	/// <para>Create Reviewer Session</para>
+	/// <para>Create Reviewer Session</para>
 	/// <para>Creates a new Reviewer session in the specified workspace.</para>
 	/// </summary>
 	public class CreateReviewerSession : AbstractGPProcess
@@ -145,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateReviewerSession SetEnviroment(object workspace = null )
+		public CreateReviewerSession SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

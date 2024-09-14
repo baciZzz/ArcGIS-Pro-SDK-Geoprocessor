@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Manage Map Server Cache Tiles</para>
+	/// <para>Manage Map Server Cache Tiles</para>
 	/// <para>Creates and updates tiles in an existing web tile layer cache. This tool is used to create new tiles, replace missing tiles, overwrite outdated tiles, and delete tiles.</para>
 	/// </summary>
 	public class ManageMapServerCacheTiles : AbstractGPProcess
@@ -167,7 +168,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ManageMapServerCacheTiles SetEnviroment(object workspace = null )
+		public ManageMapServerCacheTiles SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

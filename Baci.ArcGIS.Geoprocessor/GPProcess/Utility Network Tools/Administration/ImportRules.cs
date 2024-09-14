@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 {
 	/// <summary>
 	/// <para>Import Rules</para>
+	/// <para>Import Rules</para>
 	/// <para>Import connectivity, structural attachment, and containment rules from a comma-separated values file into an existing utility network.</para>
 	/// </summary>
 	public class ImportRules : AbstractGPProcess
@@ -123,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.UtilityNetworkTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportRules SetEnviroment(object workspace = null )
+		public ImportRules SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

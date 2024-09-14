@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Geometry Attributes</para>
+	/// <para>Add Geometry Attributes</para>
 	/// <para>Adds new attribute fields to the input features representing the spatial or geometric characteristics and location of each feature, such as length or area and x-, y-, z-, and m-coordinates.</para>
 	/// </summary>
 	public class AddGeometryAttributes : AbstractGPProcess
@@ -166,7 +167,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddGeometryAttributes SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public AddGeometryAttributes SetEnviroment(object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

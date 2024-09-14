@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Resolve Building Conflicts</para>
+	/// <para>Resolve Building Conflicts</para>
 	/// <para>Resolves symbol conflicts among buildings with respect to linear barrier features by moving, resizing, or hiding buildings.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -156,7 +157,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ResolveBuildingConflicts SetEnviroment(object cartographicCoordinateSystem = null , object cartographicPartitions = null , object referenceScale = null )
+		public ResolveBuildingConflicts SetEnviroment(object cartographicCoordinateSystem = null, object cartographicPartitions = null, object referenceScale = null)
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, cartographicPartitions: cartographicPartitions, referenceScale: referenceScale);
 			return this;

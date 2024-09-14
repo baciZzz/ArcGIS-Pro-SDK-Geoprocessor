@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Enable Replica Tracking</para>
+	/// <para>Enable Replica Tracking</para>
 	/// <para>Enables replica tracking on data, allowing you to work with  offline maps. Replica tracking applies to services that are configured with the sync capability with the option of creating a version for each downloaded map.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -57,7 +58,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

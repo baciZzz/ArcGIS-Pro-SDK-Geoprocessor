@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>GTFS To Network Dataset Transit Sources</para>
+	/// <para>GTFS To Network Dataset Transit Sources</para>
 	/// <para>Converts one or more General Transit Feed Specification (GTFS) public transit datasets to a set of feature classes and tables that can be used when creating a network dataset. The output feature classes and tables represent the transit stops, lines, and schedules in the format defined by the Network Analyst public transit data model, which can be interpreted by the Public Transit evaluator in a network dataset.</para>
 	/// </summary>
 	public class GTFSToNetworkDatasetTransitSources : AbstractGPProcess
@@ -61,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

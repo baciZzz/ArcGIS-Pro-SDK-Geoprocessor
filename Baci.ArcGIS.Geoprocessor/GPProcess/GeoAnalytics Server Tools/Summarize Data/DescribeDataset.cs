@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Describe Dataset</para>
+	/// <para>Describe Dataset</para>
 	/// <para>Summarizes features into calculated field statistics,  sample features, and extent boundaries.</para>
 	/// </summary>
 	public class DescribeDataset : AbstractGPProcess
@@ -149,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DescribeDataset SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public DescribeDataset SetEnviroment(object extent = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

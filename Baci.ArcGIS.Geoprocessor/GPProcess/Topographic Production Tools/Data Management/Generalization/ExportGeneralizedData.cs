@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Export Generalized Data</para>
+	/// <para>Export Generalized Data</para>
 	/// <para>Exports data generalized by the ArcGIS Production Mapping theme-based generalization models into a production schema using generalization rules defined in a Microsoft Excel spreadsheet.</para>
 	/// </summary>
 	public class ExportGeneralizedData : AbstractGPProcess
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

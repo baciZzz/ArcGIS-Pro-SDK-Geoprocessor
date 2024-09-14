@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Rasters To Mosaic Dataset</para>
+	/// <para>Add Rasters To Mosaic Dataset</para>
 	/// <para>Adds raster datasets to a mosaic dataset from many sources, including a file, folder, table, or web service.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -360,7 +361,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddRastersToMosaicDataset SetEnviroment(object extent = null , object geographicTransformations = null , object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null , object scratchWorkspace = null , object workspace = null )
+		public AddRastersToMosaicDataset SetEnviroment(object extent = null, object geographicTransformations = null, object parallelProcessingFactor = null, object pyramid = null, object rasterStatistics = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

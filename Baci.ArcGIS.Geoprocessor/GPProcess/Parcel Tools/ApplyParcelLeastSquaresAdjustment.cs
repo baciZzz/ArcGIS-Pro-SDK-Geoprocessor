@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Apply Parcel Least Squares Adjustment</para>
+	/// <para>Apply Parcel Least Squares Adjustment</para>
 	/// <para>Applies the results of a least squares adjustment to parcel  fabric feature classes. Least squares adjustment results stored in the AdjustmentLines and AdjustmentPoints feature classes are applied to the corresponding parcel line, connection line, and parcel fabric point feature classes.</para>
 	/// </summary>
 	public class ApplyParcelLeastSquaresAdjustment : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

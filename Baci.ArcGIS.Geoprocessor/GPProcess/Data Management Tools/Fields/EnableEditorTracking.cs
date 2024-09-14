@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Enable Editor Tracking</para>
+	/// <para>Enable Editor Tracking</para>
 	/// <para>Enables editor tracking for a feature class, table, feature dataset, or relationship class in a geodatabase.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -57,7 +58,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

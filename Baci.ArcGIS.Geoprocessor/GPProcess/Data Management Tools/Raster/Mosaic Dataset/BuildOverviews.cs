@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Overviews</para>
+	/// <para>Build Overviews</para>
 	/// <para>Defines and generates overviews on a mosaic dataset.</para>
 	/// </summary>
 	public class BuildOverviews : AbstractGPProcess
@@ -138,7 +139,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildOverviews SetEnviroment(object parallelProcessingFactor = null )
+		public BuildOverviews SetEnviroment(object parallelProcessingFactor = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

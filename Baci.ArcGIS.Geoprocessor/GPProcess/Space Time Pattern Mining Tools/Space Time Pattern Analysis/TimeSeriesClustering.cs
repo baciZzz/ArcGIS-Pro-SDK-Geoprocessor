@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Time Series Clustering</para>
+	/// <para>Time Series Clustering</para>
 	/// <para>Partitions a collection of time series, stored in a space-time cube, based on the similarity of time series characteristics. Time series can be clustered based on three criteria: having similar values across time, tending to increase and decrease at the same time, and having similar repeating patterns. The output of this tool is a 2D map displaying each location in the cube symbolized by cluster membership and messages. The output also includes charts containing information about the representative time series signature for each cluster.</para>
 	/// </summary>
 	public class TimeSeriesClustering : AbstractGPProcess
@@ -164,7 +165,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TimeSeriesClustering SetEnviroment(object parallelProcessingFactor = null , object randomGenerator = null )
+		public TimeSeriesClustering SetEnviroment(object parallelProcessingFactor = null, object randomGenerator = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, randomGenerator: randomGenerator);
 			return this;

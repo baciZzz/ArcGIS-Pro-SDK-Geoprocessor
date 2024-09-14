@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Change Privileges</para>
+	/// <para>Change Privileges</para>
 	/// <para>Establishes or changes user access privileges to the input enterprise database datasets, stand-alone feature classes, or tables.</para>
 	/// </summary>
 	public class ChangePrivileges : AbstractGPProcess
@@ -119,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ChangePrivileges SetEnviroment(object workspace = null )
+		public ChangePrivileges SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

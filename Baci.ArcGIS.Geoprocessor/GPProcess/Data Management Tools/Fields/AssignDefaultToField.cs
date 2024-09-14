@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Assign Default To Field</para>
+	/// <para>Assign Default To Field</para>
 	/// <para>Creates a default value for a specified field.  When a new row is added to the table or feature class, the specified field will be set to this default value.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -125,7 +126,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AssignDefaultToField SetEnviroment(object workspace = null )
+		public AssignDefaultToField SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

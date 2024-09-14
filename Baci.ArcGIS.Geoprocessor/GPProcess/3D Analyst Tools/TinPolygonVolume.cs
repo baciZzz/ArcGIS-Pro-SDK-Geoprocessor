@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>TIN Polygon Volume</para>
+	/// <para>TIN Polygon Volume</para>
 	/// <para>Calculates the volumetric and surface area between polygons of an input feature class and a TIN surface.</para>
 	/// </summary>
 	[Obsolete()]
@@ -135,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TinPolygonVolume SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public TinPolygonVolume SetEnviroment(object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

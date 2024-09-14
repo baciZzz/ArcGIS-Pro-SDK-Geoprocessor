@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 {
 	/// <summary>
 	/// <para>Generate Service Areas</para>
+	/// <para>Generate Service Areas</para>
 	/// <para>Determines network service areas around facilities. A</para>
 	/// <para>network service area is a region that encompasses all streets that</para>
 	/// <para>can be accessed within a given distance or travel time from one or</para>
@@ -122,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

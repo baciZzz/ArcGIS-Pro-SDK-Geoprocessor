@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Load Data</para>
+	/// <para>Load Data</para>
 	/// <para>Moves features from one schema to another by loading data from a source to a target workspace.   Data mapping rules described in a cross-reference database are applied during loading.</para>
 	/// </summary>
 	public class LoadData : AbstractGPProcess
@@ -133,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LoadData SetEnviroment(object workspace = null )
+		public LoadData SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

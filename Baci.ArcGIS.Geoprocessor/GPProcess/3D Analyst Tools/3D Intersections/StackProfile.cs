@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Stack Profile</para>
+	/// <para>Stack Profile</para>
 	/// <para>Creates a table and optional graph denoting the  profile of line features over one or more multipatch, raster, TIN, or terrain surfaces.</para>
 	/// </summary>
 	public class StackProfile : AbstractGPProcess
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public StackProfile SetEnviroment(object extent = null , object workspace = null )
+		public StackProfile SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

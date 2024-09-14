@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add 3D Formats To Multipatch</para>
+	/// <para>Add 3D Formats To Multipatch</para>
 	/// <para>Converts a multipatch to a 3D object feature</para>
 	/// <para>layer by linking the feature class with one or more 3D model</para>
 	/// <para>formats.</para>
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Add3DFormats SetEnviroment(object workspace = null )
+		public Add3DFormats SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

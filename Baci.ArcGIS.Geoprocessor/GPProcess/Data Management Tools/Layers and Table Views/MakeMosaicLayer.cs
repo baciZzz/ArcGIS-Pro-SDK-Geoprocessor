@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Make Mosaic Layer</para>
+	/// <para>Make Mosaic Layer</para>
 	/// <para>Creates a  mosaic layer from a mosaic dataset or layer file. The layer that is created by the tool is temporary and will not persist after the session ends unless the layer is saved as a layer file or the map  is saved.</para>
 	/// </summary>
 	public class MakeMosaicLayer : AbstractGPProcess
@@ -210,7 +211,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeMosaicLayer SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null )
+		public MakeMosaicLayer SetEnviroment(object extent = null, object geographicTransformations = null, object outputCoordinateSystem = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

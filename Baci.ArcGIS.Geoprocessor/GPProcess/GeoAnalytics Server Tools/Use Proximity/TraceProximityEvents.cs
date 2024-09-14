@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Trace Proximity Events</para>
+	/// <para>Trace Proximity Events</para>
 	/// <para>Traces events near each other in space (location) and time. The time-enabled point data must include features that represent an instant in time.</para>
 	/// </summary>
 	public class TraceProximityEvents : AbstractGPProcess
@@ -257,7 +258,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TraceProximityEvents SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public TraceProximityEvents SetEnviroment(object extent = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

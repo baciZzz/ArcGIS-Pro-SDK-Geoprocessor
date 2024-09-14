@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>If Field Value Is</para>
+	/// <para>If Field Value Is</para>
 	/// <para>Evaluates if the values in an attribute field match a specified value, expression, or second field.</para>
 	/// </summary>
 	public class FieldValueIsIfThenElse : AbstractGPProcess
@@ -69,7 +70,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Add Level Variables</para>
+	/// <para>Add Level Variables</para>
 	/// <para>Adds a new field at the specified level.</para>
 	/// </summary>
 	public class AddLevelVariables : AbstractGPProcess
@@ -146,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddLevelVariables SetEnviroment(object workspace = null )
+		public AddLevelVariables SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

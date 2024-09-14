@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Interpolate Polygon To Multipatch</para>
+	/// <para>Interpolate Polygon To Multipatch</para>
 	/// <para>Creates surface-conforming  multipatch features by draping polygon features over a surface.</para>
 	/// </summary>
 	public class InterpolatePolyToPatch : AbstractGPProcess
@@ -141,7 +142,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public InterpolatePolyToPatch SetEnviroment(object XYDomain = null , object XYResolution = null , object ZDomain = null , object ZResolution = null , int? autoCommit = null , object configKeyword = null , object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object workspace = null )
+		public InterpolatePolyToPatch SetEnviroment(object XYDomain = null, object XYResolution = null, object ZDomain = null, object ZResolution = null, int? autoCommit = null, object configKeyword = null, object extent = null, object geographicTransformations = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(XYDomain: XYDomain, XYResolution: XYResolution, ZDomain: ZDomain, ZResolution: ZResolution, autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

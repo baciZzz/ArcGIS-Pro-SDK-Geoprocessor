@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Repair Nautical Data</para>
+	/// <para>Repair Nautical Data</para>
 	/// <para>Repairs selected data processes on a database with the Nautical schema. Processes include repairing noncollocated structure-equipment features, deleting orphaned FREL and COLLECTIONS records, and resolving blank or duplicate  LNAM attribute values.</para>
 	/// </summary>
 	public class RepairNauticalData : AbstractGPProcess
@@ -104,7 +105,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RepairNauticalData SetEnviroment(object workspace = null )
+		public RepairNauticalData SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

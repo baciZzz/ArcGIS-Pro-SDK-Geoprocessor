@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Generate Indoor Pathways</para>
+	/// <para>Generate Indoor Pathways</para>
 	/// <para>Generates preliminary pathways that are cut according to obstructions, such as walls or columns, on selected levels in one or more facilities.</para>
 	/// </summary>
 	public class GenerateIndoorPathways : AbstractGPProcess
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Database Connection</para>
+	/// <para>Create Database Connection</para>
 	/// <para>Creates a file that ArcGIS uses to connect to a database or an enterprise geodatabase.</para>
 	/// </summary>
 	public class CreateDatabaseConnection : AbstractGPProcess
@@ -254,7 +255,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateDatabaseConnection SetEnviroment(object workspace = null )
+		public CreateDatabaseConnection SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

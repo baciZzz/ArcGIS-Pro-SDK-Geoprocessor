@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Calculate Suitability Score</para>
+	/// <para>Calculate Suitability Score</para>
 	/// <para>Calculates or recalculates a suitability score.</para>
 	/// </summary>
 	public class CalculateSuitabilityScore : AbstractGPProcess
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateSuitabilityScore SetEnviroment(object workspace = null )
+		public CalculateSuitabilityScore SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

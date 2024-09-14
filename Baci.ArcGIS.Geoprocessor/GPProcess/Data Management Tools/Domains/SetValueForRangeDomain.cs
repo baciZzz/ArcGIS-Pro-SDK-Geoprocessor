@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Set Value For Range Domain</para>
+	/// <para>Set Value For Range Domain</para>
 	/// <para>Sets the minimum and maximum values for an existing Range domain.</para>
 	/// </summary>
 	public class SetValueForRangeDomain : AbstractGPProcess
@@ -121,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetValueForRangeDomain SetEnviroment(int? autoCommit = null , object workspace = null )
+		public SetValueForRangeDomain SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

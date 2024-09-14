@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Generate Spot Heights</para>
+	/// <para>Generate Spot Heights</para>
 	/// <para>Creates elevation point features based on contour tops and depressions. Elevation points are created in each top and depression. Point height values are populated based on a digital elevation model.</para>
 	/// </summary>
 	public class GenerateSpotHeights : AbstractGPProcess
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

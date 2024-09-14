@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Geocode File</para>
+	/// <para>Geocode File</para>
 	/// <para>Converts large local tables of addresses or places into points in a feature class or as a stand-alone .csv or .xls table. This tool uses locators hosted on an ArcGIS Enterprise portal.</para>
 	/// </summary>
 	public class GeocodeFile : AbstractGPProcess
@@ -229,7 +230,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeocodeFile SetEnviroment(object outputCoordinateSystem = null , object workspace = null )
+		public GeocodeFile SetEnviroment(object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

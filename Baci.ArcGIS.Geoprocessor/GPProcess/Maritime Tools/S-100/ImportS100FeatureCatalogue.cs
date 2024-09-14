@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Import S-100 Feature Catalogue</para>
+	/// <para>Import S-100 Feature Catalogue</para>
 	/// <para>Imports the contents of an S-100 feature catalogue into an existing geodatabase. A feature catalogue is an XML document that describes the content of a data product.</para>
 	/// </summary>
 	public class ImportS100FeatureCatalogue : AbstractGPProcess
@@ -107,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportS100FeatureCatalogue SetEnviroment(object workspace = null )
+		public ImportS100FeatureCatalogue SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Multipatch To Collada</para>
+	/// <para>Multipatch To Collada</para>
 	/// <para>Converts one or more multipatch features into a collection of COLLADA (.dae) files and referenced texture image files in an output folder. The inputs can be a layer or a feature class.</para>
 	/// </summary>
 	public class MultipatchToCollada : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

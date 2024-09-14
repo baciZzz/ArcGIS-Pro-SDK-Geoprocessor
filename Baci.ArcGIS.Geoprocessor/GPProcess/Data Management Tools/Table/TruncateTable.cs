@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Truncate Table</para>
+	/// <para>Truncate Table</para>
 	/// <para>Removes all rows from a database table or feature class using truncate procedures in the database.</para>
 	/// </summary>
 	public class TruncateTable : AbstractGPProcess
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TruncateTable SetEnviroment(object workspace = null )
+		public TruncateTable SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

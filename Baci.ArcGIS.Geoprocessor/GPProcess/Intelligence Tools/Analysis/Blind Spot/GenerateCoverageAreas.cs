@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Generate Coverage Areas</para>
+	/// <para>Generate Coverage Areas</para>
 	/// <para>Creates a proximity buffer for input Intelligence, Surveillance, and Reconnaissance (ISR) or patrol assets for use in the Generate Blind Spot Areas tool.</para>
 	/// </summary>
 	public class GenerateCoverageAreas : AbstractGPProcess
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

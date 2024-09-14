@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Map To KML</para>
+	/// <para>Map To KML</para>
 	/// <para>Converts a map to a KML file containing geometries and symbology. The output file is compressed using ZIP compression, has a .kmz extension, and can be read by any KML client including ArcGIS Earth and Google Earth.</para>
 	/// </summary>
 	public class MapToKML : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Calculate Cell Size Ranges</para>
+	/// <para>Calculate Cell Size Ranges</para>
 	/// <para>Computes the visibility levels of raster datasets in a mosaic dataset based on the spatial resolution.</para>
 	/// </summary>
 	public class CalculateCellSizeRanges : AbstractGPProcess
@@ -147,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateCellSizeRanges SetEnviroment(object parallelProcessingFactor = null )
+		public CalculateCellSizeRanges SetEnviroment(object parallelProcessingFactor = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

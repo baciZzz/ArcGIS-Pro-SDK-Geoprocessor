@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Create Workflow Database</para>
+	/// <para>Create Workflow Database</para>
 	/// <para>Creates Workflow Manager (Classic) schema and configures an enterprise geodatabase as the Workflow Manager (Classic) database.</para>
 	/// </summary>
 	public class CreateWorkflowDatabase : AbstractGPProcess
@@ -145,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateWorkflowDatabase SetEnviroment(object configKeyword = null )
+		public CreateWorkflowDatabase SetEnviroment(object configKeyword = null)
 		{
 			base.SetEnv(configKeyword: configKeyword);
 			return this;

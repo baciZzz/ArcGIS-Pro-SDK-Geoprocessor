@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Trade Area Rings</para>
+	/// <para>Generate Trade Area Rings</para>
 	/// <para>Creates rings around point locations.</para>
 	/// </summary>
 	public class GenerateTradeAreaRings : AbstractGPProcess
@@ -159,7 +160,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateTradeAreaRings SetEnviroment(object workspace = null )
+		public GenerateTradeAreaRings SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

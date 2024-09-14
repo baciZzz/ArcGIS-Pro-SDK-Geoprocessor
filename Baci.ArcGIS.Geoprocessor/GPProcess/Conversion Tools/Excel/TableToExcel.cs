@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Table To Excel</para>
+	/// <para>Table To Excel</para>
 	/// <para>Converts  a table to a Microsoft Excel file (.xls or .xlsx).</para>
 	/// </summary>
 	public class TableToExcel : AbstractGPProcess
@@ -112,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableToExcel SetEnviroment(object scratchWorkspace = null , bool? transferDomains = null , object workspace = null )
+		public TableToExcel SetEnviroment(object scratchWorkspace = null, bool? transferDomains = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, transferDomains: transferDomains, workspace: workspace);
 			return this;

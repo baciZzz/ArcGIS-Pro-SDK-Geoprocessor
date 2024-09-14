@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Attribute Index</para>
+	/// <para>Add Attribute Index</para>
 	/// <para>Adds an attribute index to an existing table, feature class, shapefile, or attributed relationship class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -129,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddIndex SetEnviroment(object workspace = null )
+		public AddIndex SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Video Metadata To Feature Class</para>
+	/// <para>Video Metadata To Feature Class</para>
 	/// <para>Extracts the platform, frame center, frame outline, and attributes metadata from an FMV-compliant video. The output geometry and attributes are saved as feature classes.</para>
 	/// </summary>
 	public class VideoMetadataToFeatureClass : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

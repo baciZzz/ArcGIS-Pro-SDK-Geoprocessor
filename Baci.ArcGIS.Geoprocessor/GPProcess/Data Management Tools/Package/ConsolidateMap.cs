@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Consolidate Map</para>
+	/// <para>Consolidate Map</para>
 	/// <para>Consolidates a map and all referenced data sources to a specified output folder.</para>
 	/// </summary>
 	public class ConsolidateMap : AbstractGPProcess
@@ -162,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConsolidateMap SetEnviroment(object extent = null , object workspace = null )
+		public ConsolidateMap SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

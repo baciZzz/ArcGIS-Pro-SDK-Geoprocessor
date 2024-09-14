@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Add Field To Analysis Layer</para>
+	/// <para>Add Field To Analysis Layer</para>
 	/// <para>Adds a field to a sublayer of a network analysis layer.</para>
 	/// </summary>
 	public class AddFieldToAnalysisLayer : AbstractGPProcess
@@ -182,7 +183,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddFieldToAnalysisLayer SetEnviroment(object workspace = null )
+		public AddFieldToAnalysisLayer SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Raster World File</para>
+	/// <para>Export Raster World File</para>
 	/// <para>Creates a world file based on the pixel size and the location of the upper left pixel.</para>
 	/// </summary>
 	public class ExportRasterWorldFile : AbstractGPProcess
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportRasterWorldFile SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ExportRasterWorldFile SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

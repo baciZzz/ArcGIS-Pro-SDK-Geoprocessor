@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Sort Coded Value Domain</para>
+	/// <para>Sort Coded Value Domain</para>
 	/// <para>Sorts the code or description of a coded value domain in either ascending or descending order.</para>
 	/// </summary>
 	public class SortCodedValueDomain : AbstractGPProcess
@@ -135,7 +136,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SortCodedValueDomain SetEnviroment(object workspace = null )
+		public SortCodedValueDomain SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

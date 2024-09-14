@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Tiled Labels To Annotation</para>
+	/// <para>Tiled Labels To Annotation</para>
 	/// <para>Converts labels to annotation for layers in a map based on a polygon index layer.</para>
 	/// </summary>
 	public class TiledLabelsToAnnotation : AbstractGPProcess
@@ -290,7 +291,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TiledLabelsToAnnotation SetEnviroment(object referenceScale = null )
+		public TiledLabelsToAnnotation SetEnviroment(object referenceScale = null)
 		{
 			base.SetEnv(referenceScale: referenceScale);
 			return this;

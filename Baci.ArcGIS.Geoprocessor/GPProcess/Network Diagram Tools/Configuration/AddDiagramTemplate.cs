@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Diagram Template</para>
+	/// <para>Add Diagram Template</para>
 	/// <para>Adds a new diagram template to a network. Both a network diagram rule and layout definitions file (.ndbd) and a network diagram layer definition file (.ndld) can be imported.</para>
 	/// </summary>
 	public class AddDiagramTemplate : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

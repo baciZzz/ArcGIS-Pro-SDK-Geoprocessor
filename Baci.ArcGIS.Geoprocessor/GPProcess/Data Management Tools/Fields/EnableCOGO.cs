@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Enable COGO</para>
+	/// <para>Enable COGO</para>
 	/// <para>Enables COGO on a line feature class and adds COGO fields and COGO-enabled labeling to a line feature class. COGO fields store  dimensions  that are used to create line features in relation to each other.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -57,7 +58,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

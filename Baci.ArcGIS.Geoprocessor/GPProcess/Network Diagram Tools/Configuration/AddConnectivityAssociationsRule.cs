@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Connectivity Associations Rule</para>
+	/// <para>Add Connectivity Associations Rule</para>
 	/// <para>Adds a diagram rule to automatically represent connectivity associations during the building of diagrams based on an existing template. This rule processes connectivity associations in which both the from and to junctions are currently represented in the diagrams.</para>
 	/// </summary>
 	public class AddConnectivityAssociationsRule : AbstractGPProcess
@@ -68,7 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

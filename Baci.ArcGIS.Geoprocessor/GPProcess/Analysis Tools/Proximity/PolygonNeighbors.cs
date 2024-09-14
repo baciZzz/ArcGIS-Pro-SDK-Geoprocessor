@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Polygon Neighbors</para>
+	/// <para>Polygon Neighbors</para>
 	/// <para>Creates a table with statistics based on polygon contiguity (overlaps, coincident edges, or nodes).</para>
 	/// </summary>
 	public class PolygonNeighbors : AbstractGPProcess
@@ -176,7 +177,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PolygonNeighbors SetEnviroment(int? autoCommit = null , object extent = null , bool? qualifiedFieldNames = null , object scratchWorkspace = null , object workspace = null )
+		public PolygonNeighbors SetEnviroment(int? autoCommit = null, object extent = null, bool? qualifiedFieldNames = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, extent: extent, qualifiedFieldNames: qualifiedFieldNames, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Import MGCP Metadata</para>
+	/// <para>Import MGCP Metadata</para>
 	/// <para>Imports Multinational Geospatial Co-production Program (MGCP) metadata into an MGCP database to perform maintenance on cells and subregions.</para>
 	/// </summary>
 	public class ImportMetadata : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

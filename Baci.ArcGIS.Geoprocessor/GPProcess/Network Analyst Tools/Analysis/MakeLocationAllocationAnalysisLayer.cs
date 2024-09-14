@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make Location-Allocation Analysis Layer</para>
+	/// <para>Make Location-Allocation Analysis Layer</para>
 	/// <para>Makes a location-allocation network analysis layer and sets its analysis properties. A location-allocation analysis layer is useful for choosing a given number of facilities from a set of potential locations such that a demand will be allocated to facilities in an optimal and efficient manner. The layer can be created using a local network dataset or using a service hosted online or in a portal.</para>
 	/// </summary>
 	public class MakeLocationAllocationAnalysisLayer : AbstractGPProcess
@@ -254,7 +255,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeLocationAllocationAnalysisLayer SetEnviroment(object workspace = null )
+		public MakeLocationAllocationAnalysisLayer SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

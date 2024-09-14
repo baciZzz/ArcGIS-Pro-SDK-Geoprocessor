@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Alter Mosaic Dataset Schema</para>
+	/// <para>Alter Mosaic Dataset Schema</para>
 	/// <para>Defines the editing operations that nonowners  have when editing a mosaic dataset in an enterprise geodatabase.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -57,7 +58,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

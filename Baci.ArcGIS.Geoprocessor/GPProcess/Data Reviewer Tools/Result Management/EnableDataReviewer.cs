@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 {
 	/// <summary>
 	/// <para>Enable Data Reviewer</para>
+	/// <para>Enable Data Reviewer</para>
 	/// <para>Adds a feature dataset and tables necessary for an existing geodatabase to be considered a Reviewer workspace and store Data Reviewer results. The Reviewer workspace tables are required by ArcGIS Data Reviewer to manage Reviewer sessions.</para>
 	/// </summary>
 	public class EnableDataReviewer : AbstractGPProcess
@@ -110,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EnableDataReviewer SetEnviroment(object configKeyword = null , object workspace = null )
+		public EnableDataReviewer SetEnviroment(object configKeyword = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, workspace: workspace);
 			return this;

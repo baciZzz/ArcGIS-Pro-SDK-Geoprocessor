@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Assign Customers By Distance</para>
+	/// <para>Assign Customers By Distance</para>
 	/// <para>Assigns customers to the closest store based on a selected distance type.</para>
 	/// </summary>
 	public class AssignCustomersByDistance : AbstractGPProcess
@@ -189,7 +190,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AssignCustomersByDistance SetEnviroment(object workspace = null )
+		public AssignCustomersByDistance SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

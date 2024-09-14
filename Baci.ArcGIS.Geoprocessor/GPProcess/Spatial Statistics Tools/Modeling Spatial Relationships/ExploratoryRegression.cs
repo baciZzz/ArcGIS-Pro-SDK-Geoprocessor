@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Exploratory Regression</para>
+	/// <para>Exploratory Regression</para>
 	/// <para>Evaluates all possible combinations of the input candidate explanatory variables, looking for OLS models that best explain the dependent variable within the context of user-specified criteria.</para>
 	/// </summary>
 	public class ExploratoryRegression : AbstractGPProcess
@@ -200,7 +201,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExploratoryRegression SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ExploratoryRegression SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Send Email With Zip File Attachment</para>
+	/// <para>Send Email With Zip File Attachment</para>
 	/// <para>Emails a file to an email address using an SMTP email server.</para>
 	/// </summary>
 	public class SendEmailWithZipFileAttachment : AbstractGPProcess
@@ -86,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

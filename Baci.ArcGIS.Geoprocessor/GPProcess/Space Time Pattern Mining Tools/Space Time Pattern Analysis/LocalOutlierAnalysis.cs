@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Local Outlier Analysis</para>
+	/// <para>Local Outlier Analysis</para>
 	/// <para>Identifies statistically significant clusters and outliers in the context of both space and time.  This tool is a space-time implementation of the Anselin Local Moran's I statistic.</para>
 	/// </summary>
 	public class LocalOutlierAnalysis : AbstractGPProcess
@@ -184,7 +185,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public LocalOutlierAnalysis SetEnviroment(object geographicTransformations = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object randomGenerator = null , object scratchWorkspace = null , object workspace = null )
+		public LocalOutlierAnalysis SetEnviroment(object geographicTransformations = null, object outputCoordinateSystem = null, object parallelProcessingFactor = null, object randomGenerator = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, randomGenerator: randomGenerator, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

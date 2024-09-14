@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Create Indoor Dataset</para>
+	/// <para>Create Indoor Dataset</para>
 	/// <para>Creates an indoor dataset containing the necessary feature classes to maintain floor plan data using a streamlined schema that conforms to the ArcGIS Indoors Information Model. The indoor dataset can be used for visualizing, analyzing, and editing indoor data.</para>
 	/// </summary>
 	public class CreateIndoorDataset : AbstractGPProcess
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateIndoorDataset SetEnviroment(object configKeyword = null , object workspace = null )
+		public CreateIndoorDataset SetEnviroment(object configKeyword = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, workspace: workspace);
 			return this;

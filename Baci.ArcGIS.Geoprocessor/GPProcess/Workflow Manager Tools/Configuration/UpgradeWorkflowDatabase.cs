@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Upgrade Workflow Database</para>
+	/// <para>Upgrade Workflow Database</para>
 	/// <para>Upgrades an existing Workflow Manager (Classic) database with the latest  schema and configuration. The Workflow Manager (Classic) database is used to store the job and configuration information for your work management system and one feature class that is used to store the geometries for the location of interest (LOI) for your jobs.</para>
 	/// </summary>
 	public class UpgradeWorkflowDatabase : AbstractGPProcess
@@ -96,7 +97,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UpgradeWorkflowDatabase SetEnviroment(object configKeyword = null )
+		public UpgradeWorkflowDatabase SetEnviroment(object configKeyword = null)
 		{
 			base.SetEnv(configKeyword: configKeyword);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Pyramids And Statistics</para>
+	/// <para>Build Pyramids And Statistics</para>
 	/// <para>Traverses a folder structure, building pyramids and calculating statistics for all the raster datasets it contains. It can also build pyramids and calculate statistics for all the items in a mosaic dataset.</para>
 	/// </summary>
 	public class BuildPyramidsandStatistics : AbstractGPProcess
@@ -283,7 +284,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildPyramidsandStatistics SetEnviroment(object parallelProcessingFactor = null , object pyramid = null , object rasterStatistics = null )
+		public BuildPyramidsandStatistics SetEnviroment(object parallelProcessingFactor = null, object pyramid = null, object rasterStatistics = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, pyramid: pyramid, rasterStatistics: rasterStatistics);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Features</para>
+	/// <para>Delete Features</para>
 	/// <para>Deletes all or the selected subset of features from the input.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DeleteFeatures SetEnviroment(object extent = null , object workspace = null )
+		public DeleteFeatures SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

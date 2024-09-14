@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create SQLite Database</para>
+	/// <para>Create SQLite Database</para>
 	/// <para>Creates a GeoPackage or an SQLite database that contains the ST_Geometry or SpatiaLite spatial type.</para>
 	/// </summary>
 	public class CreateSQLiteDatabase : AbstractGPProcess
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateSQLiteDatabase SetEnviroment(object workspace = null )
+		public CreateSQLiteDatabase SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

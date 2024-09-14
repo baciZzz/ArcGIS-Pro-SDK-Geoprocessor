@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 {
 	/// <summary>
 	/// <para>Train Maximum Likelihood Classifier</para>
+	/// <para>Train Maximum Likelihood Classifier</para>
 	/// <para>Generates an Esri classifier definition file (.ecd) using the Maximum Likelihood Classifier (MLC) classification definition.</para>
 	/// </summary>
 	public class TrainMaximumLikelihoodClassifier : AbstractGPProcess
@@ -143,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TrainMaximumLikelihoodClassifier SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null , object scratchWorkspace = null , object snapRaster = null , object workspace = null )
+		public TrainMaximumLikelihoodClassifier SetEnviroment(object extent = null, object geographicTransformations = null, object outputCoordinateSystem = null, object scratchWorkspace = null, object snapRaster = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, scratchWorkspace: scratchWorkspace, snapRaster: snapRaster, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Files To LAS Dataset</para>
+	/// <para>Add Files To LAS Dataset</para>
 	/// <para>Adds references for one or more LAS files and  surface constraint features to a LAS dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -122,7 +123,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddFilesToLasDataset SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public AddFilesToLasDataset SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

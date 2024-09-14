@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Transpose Fields</para>
+	/// <para>Transpose Fields</para>
 	/// <para>Switch  data stored in fields or columns to rows in a new table or feature class.</para>
 	/// </summary>
 	public class TransposeFields : AbstractGPProcess
@@ -139,7 +140,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TransposeFields SetEnviroment(object workspace = null )
+		public TransposeFields SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

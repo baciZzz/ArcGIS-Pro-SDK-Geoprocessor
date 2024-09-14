@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Export Diagram Layer Definition</para>
+	/// <para>Export Diagram Layer Definition</para>
 	/// <para>Exports the diagram layer definition  currently set up for the input diagram layer into a network diagram layer definition file (.ndld).</para>
 	/// </summary>
 	public class ExportDiagramLayerDefinition : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

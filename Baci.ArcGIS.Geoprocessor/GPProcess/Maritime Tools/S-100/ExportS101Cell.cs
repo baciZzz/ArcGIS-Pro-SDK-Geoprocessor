@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Export S-101 Cell</para>
+	/// <para>Export S-101 Cell</para>
 	/// <para>Exports S-101 hydrographic data from a geodatabase to an S-101 file.</para>
 	/// </summary>
 	public class ExportS101Cell : AbstractGPProcess
@@ -143,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportS101Cell SetEnviroment(object workspace = null )
+		public ExportS101Cell SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

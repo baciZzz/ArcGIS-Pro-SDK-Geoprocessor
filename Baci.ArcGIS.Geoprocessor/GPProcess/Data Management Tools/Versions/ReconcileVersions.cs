@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Reconcile Versions</para>
+	/// <para>Reconcile Versions</para>
 	/// <para>Reconciles a version or multiple versions with a target version.</para>
 	/// </summary>
 	public class ReconcileVersions : AbstractGPProcess
@@ -231,7 +232,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ReconcileVersions SetEnviroment(object workspace = null )
+		public ReconcileVersions SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

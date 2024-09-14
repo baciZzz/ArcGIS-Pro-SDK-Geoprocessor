@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Remove Overlap (multiple)</para>
+	/// <para>Remove Overlap (multiple)</para>
 	/// <para>Removes overlap between polygons contained in multiple input layers.</para>
 	/// </summary>
 	public class RemoveOverlapMultiple : AbstractGPProcess
@@ -114,7 +115,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveOverlapMultiple SetEnviroment(object workspace = null )
+		public RemoveOverlapMultiple SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

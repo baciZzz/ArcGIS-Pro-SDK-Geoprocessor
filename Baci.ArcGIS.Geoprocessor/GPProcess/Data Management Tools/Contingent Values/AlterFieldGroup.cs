@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Alter Field Group</para>
+	/// <para>Alter Field Group</para>
 	/// <para>Alters the properties of a field group.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -123,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AlterFieldGroup SetEnviroment(object workspace = null )
+		public AlterFieldGroup SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

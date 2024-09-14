@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 {
 	/// <summary>
 	/// <para>Exponential Smoothing Forecast</para>
+	/// <para>Exponential Smoothing Forecast</para>
 	/// <para>Forecasts the values of each location of a space-time cube using the Holt-Winters exponential smoothing method by decomposing the time series at each location cube into seasonal  and trend components.</para>
 	/// </summary>
 	public class ExponentialSmoothingForecast : AbstractGPProcess
@@ -169,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExponentialSmoothingForecast SetEnviroment(object outputCoordinateSystem = null )
+		public ExponentialSmoothingForecast SetEnviroment(object outputCoordinateSystem = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;

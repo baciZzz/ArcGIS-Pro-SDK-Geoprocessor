@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Geodatabase Configuration Keywords</para>
+	/// <para>Export Geodatabase Configuration Keywords</para>
 	/// <para>Exports the configuration keywords, parameters, and values from the specified enterprise geodatabase to an editable file. Change parameter values or add custom configuration keywords to the file and use the Import Geodatabase Configuration Keywords tool to import the changes to the geodatabase.</para>
 	/// </summary>
 	public class ExportGeodatabaseConfigurationKeywords : AbstractGPProcess
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportGeodatabaseConfigurationKeywords SetEnviroment(object workspace = null )
+		public ExportGeodatabaseConfigurationKeywords SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

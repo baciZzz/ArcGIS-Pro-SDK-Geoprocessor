@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Excel To Table</para>
+	/// <para>Excel To Table</para>
 	/// <para>Converts Microsoft Excel files into a table.</para>
 	/// </summary>
 	public class ExcelToTable : AbstractGPProcess
@@ -127,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExcelToTable SetEnviroment(object configKeyword = null , object scratchWorkspace = null , object workspace = null )
+		public ExcelToTable SetEnviroment(object configKeyword = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

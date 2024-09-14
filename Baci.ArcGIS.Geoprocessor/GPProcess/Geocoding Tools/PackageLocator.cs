@@ -12,6 +12,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 	/// <summary>
 	/// <para>Package Locator</para>
 	/// <para>Package Locator</para>
+	/// <para>Package Locator</para>
 	/// </summary>
 	[Obsolete()]
 	public class PackageLocator : AbstractGPProcess
@@ -59,7 +60,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

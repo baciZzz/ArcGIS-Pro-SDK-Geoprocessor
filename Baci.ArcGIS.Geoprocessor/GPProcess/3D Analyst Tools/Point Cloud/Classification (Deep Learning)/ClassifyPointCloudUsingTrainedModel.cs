@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Classify Point Cloud Using Trained Model</para>
+	/// <para>Classify Point Cloud Using Trained Model</para>
 	/// <para>Classifies a point cloud using a PointCNN classification model.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -165,7 +166,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyPointCloudUsingTrainedModel SetEnviroment(object extent = null , object geographicTransformations = null , object outputCoordinateSystem = null )
+		public ClassifyPointCloudUsingTrainedModel SetEnviroment(object extent = null, object geographicTransformations = null, object outputCoordinateSystem = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

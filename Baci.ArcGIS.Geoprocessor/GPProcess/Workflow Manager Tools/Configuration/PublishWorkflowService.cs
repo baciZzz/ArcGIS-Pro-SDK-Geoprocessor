@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Publish Workflow Service</para>
+	/// <para>Publish Workflow Service</para>
 	/// <para>Uploads and shares a workflow service and a map service of job locations for an ArcGIS Workflow Manager (Classic) repository.</para>
 	/// </summary>
 	public class PublishWorkflowService : AbstractGPProcess
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

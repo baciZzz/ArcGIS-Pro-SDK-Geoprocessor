@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Relate</para>
+	/// <para>Remove Relate</para>
 	/// <para>Removes a relate from a feature layer or a table view.</para>
 	/// </summary>
 	public class RemoveRelate : AbstractGPProcess
@@ -89,7 +90,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveRelate SetEnviroment(object workspace = null )
+		public RemoveRelate SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

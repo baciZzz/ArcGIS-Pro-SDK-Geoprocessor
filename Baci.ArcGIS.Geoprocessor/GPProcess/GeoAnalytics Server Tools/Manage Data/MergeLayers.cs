@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 {
 	/// <summary>
 	/// <para>Merge Layers</para>
+	/// <para>Merge Layers</para>
 	/// <para>Combines feature layers to create a single output layer.</para>
 	/// </summary>
 	public class MergeLayers : AbstractGPProcess
@@ -137,7 +138,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MergeLayers SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public MergeLayers SetEnviroment(object extent = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

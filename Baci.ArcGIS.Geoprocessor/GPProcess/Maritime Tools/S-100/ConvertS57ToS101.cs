@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 {
 	/// <summary>
 	/// <para>Convert S-57 to S-101 Cell</para>
+	/// <para>Convert S-57 to S-101 Cell</para>
 	/// <para>Converts the S-57 vector product for storing nautical charting data to the new vector S-101 format.</para>
 	/// </summary>
 	public class ConvertS57ToS101 : AbstractGPProcess

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Attribute Index</para>
+	/// <para>Remove Attribute Index</para>
 	/// <para>This tool deletes an attribute index from an existing table, feature class, shapefile, or attributed relationship class.</para>
 	/// </summary>
 	public class RemoveIndex : AbstractGPProcess
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveIndex SetEnviroment(object workspace = null )
+		public RemoveIndex SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Huff Model Calibration</para>
+	/// <para>Huff Model Calibration</para>
 	/// <para>Calculates exponent values for use in the Huff Model tool.</para>
 	/// </summary>
 	public class HuffModelCalibration : AbstractGPProcess
@@ -242,7 +243,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public HuffModelCalibration SetEnviroment(object workspace = null )
+		public HuffModelCalibration SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

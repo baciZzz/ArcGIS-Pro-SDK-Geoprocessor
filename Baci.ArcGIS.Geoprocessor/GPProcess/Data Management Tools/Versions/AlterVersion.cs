@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Alter Version</para>
+	/// <para>Alter Version</para>
 	/// <para>Alters the properties of a geodatabase version.</para>
 	/// </summary>
 	public class AlterVersion : AbstractGPProcess
@@ -134,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AlterVersion SetEnviroment(object workspace = null )
+		public AlterVersion SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

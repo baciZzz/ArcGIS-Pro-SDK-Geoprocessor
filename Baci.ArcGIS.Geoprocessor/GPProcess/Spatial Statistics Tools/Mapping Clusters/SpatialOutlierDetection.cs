@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 {
 	/// <summary>
 	/// <para>Spatial Outlier Detection</para>
+	/// <para>Spatial Outlier Detection</para>
 	/// <para>Identifies spatial outliers in point features by calculating the local outlier factor (LOF) of each feature.  Spatial outliers are features in locations that are abnormally isolated, and the LOF is a measurement that describes how isolated a location is from its local neighbors. A higher LOF value indicates higher isolation. The tool can also be used to produce a raster prediction surface that can be used to estimate if new features will be classified as outliers given the spatial distribution of the data.</para>
 	/// </summary>
 	public class SpatialOutlierDetection : AbstractGPProcess
@@ -115,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SpatialOutlierDetection SetEnviroment(object cellSize = null , object extent = null , object mask = null , object outputCoordinateSystem = null , object parallelProcessingFactor = null , object snapRaster = null )
+		public SpatialOutlierDetection SetEnviroment(object cellSize = null, object extent = null, object mask = null, object outputCoordinateSystem = null, object parallelProcessingFactor = null, object snapRaster = null)
 		{
 			base.SetEnv(cellSize: cellSize, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, snapRaster: snapRaster);
 			return this;

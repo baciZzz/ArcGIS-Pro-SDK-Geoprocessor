@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Build Multidimensional Info</para>
+	/// <para>Build Multidimensional Info</para>
 	/// <para>Generates multidimensional metadata in the mosaic dataset, including information regarding variables and dimensions.</para>
 	/// </summary>
 	public class BuildMultidimensionalInfo : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

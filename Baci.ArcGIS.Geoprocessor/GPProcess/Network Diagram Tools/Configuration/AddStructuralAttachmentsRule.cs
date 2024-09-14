@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Structural Attachments Rule</para>
+	/// <para>Add Structural Attachments Rule</para>
 	/// <para>Adds a diagram rule to automatically represent structural attachments during diagram building based on an existing template. This rule applies to structural attachment associations in which both the attached network element and the structure element are currently represented in the diagrams.</para>
 	/// </summary>
 	public class AddStructuralAttachmentsRule : AbstractGPProcess
@@ -68,7 +69,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

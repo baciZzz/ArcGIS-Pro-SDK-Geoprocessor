@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Subtype</para>
+	/// <para>Remove Subtype</para>
 	/// <para>Removes a subtype from the input table using its code.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveSubtype SetEnviroment(int? autoCommit = null , object workspace = null )
+		public RemoveSubtype SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

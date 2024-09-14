@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Transform Features</para>
+	/// <para>Transform Features</para>
 	/// <para>Converts the coordinates of input features from one location to another through scaling,  </para>
 	/// <para>shifting, and rotating based on the transformation links between known corresponding control points.</para>
 	/// <para>Input Will Be Modified</para>
@@ -128,7 +129,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TransformFeatures SetEnviroment(object extent = null , object workspace = null )
+		public TransformFeatures SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

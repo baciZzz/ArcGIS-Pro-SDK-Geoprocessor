@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Collapse Container Rule</para>
+	/// <para>Add Collapse Container Rule</para>
 	/// <para>Adds a diagram rule that automatically collapses container contents during the building of diagrams based on an existing template. This rule collapses the entire contents of containers in the diagrams.</para>
 	/// </summary>
 	public class AddCollapseContainerRule : AbstractGPProcess
@@ -85,7 +86,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

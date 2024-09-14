@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Upgrade Dataset</para>
+	/// <para>Upgrade Dataset</para>
 	/// <para>Upgrades the schema of a mosaic dataset, network dataset, annotation dataset, dimension dataset, parcel fabric, parcel fabric for ArcMap, trace network, or utility network to the current ArcGIS release. Upgrading the dataset allows the dataset to use new functionality in the current software release.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UpgradeDataset SetEnviroment(object workspace = null )
+		public UpgradeDataset SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

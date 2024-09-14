@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Create Parcel Fabric</para>
+	/// <para>Create Parcel Fabric</para>
 	/// <para>Creates a parcel fabric and its associated datasets. The parcel fabric is created  in a feature dataset that resides in a file or an enterprise geodatabase.</para>
 	/// </summary>
 	public class CreateParcelFabric : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

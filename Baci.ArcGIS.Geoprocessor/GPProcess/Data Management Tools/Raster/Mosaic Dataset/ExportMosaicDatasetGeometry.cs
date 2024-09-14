@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Export Mosaic Dataset Geometry</para>
+	/// <para>Export Mosaic Dataset Geometry</para>
 	/// <para>Creates a feature class showing the footprints, boundary, seamlines or spatial resolutions of a mosaic dataset.</para>
 	/// </summary>
 	public class ExportMosaicDatasetGeometry : AbstractGPProcess
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportMosaicDatasetGeometry SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ExportMosaicDatasetGeometry SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

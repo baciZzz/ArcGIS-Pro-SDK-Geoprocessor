@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Database View</para>
+	/// <para>Create Database View</para>
 	/// <para>Creates a view in a database based on an SQL expression.</para>
 	/// </summary>
 	public class CreateDatabaseView : AbstractGPProcess
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateDatabaseView SetEnviroment(object workspace = null )
+		public CreateDatabaseView SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

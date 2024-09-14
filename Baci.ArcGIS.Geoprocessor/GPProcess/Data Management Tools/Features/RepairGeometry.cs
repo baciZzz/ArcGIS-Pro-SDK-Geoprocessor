@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Repair Geometry</para>
+	/// <para>Repair Geometry</para>
 	/// <para>Inspects each  feature in a feature class for problems with its geometry.  Upon discovery of a problem, a fix will be applied, and a one-line description will identify the feature, as well as the geometry problem that was fixed.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -106,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RepairGeometry SetEnviroment(object extent = null , object workspace = null )
+		public RepairGeometry SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Classify Indoor Pathways</para>
+	/// <para>Classify Indoor Pathways</para>
 	/// <para>Classifies pathways that pass through selected unit spaces, such as conference rooms or service areas, as lower priority.</para>
 	/// </summary>
 	public class ClassifyIndoorPathways : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

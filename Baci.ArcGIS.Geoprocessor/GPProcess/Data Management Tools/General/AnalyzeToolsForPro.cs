@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Analyze Tools For Pro</para>
+	/// <para>Analyze Tools For Pro</para>
 	/// <para>Analyzes Python scripts and custom geoprocessing tools and toolboxes for functionality that is not supported in ArcGIS Pro.</para>
 	/// </summary>
 	public class AnalyzeToolsForPro : AbstractGPProcess
@@ -82,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AnalyzeToolsForPro SetEnviroment(object workspace = null )
+		public AnalyzeToolsForPro SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

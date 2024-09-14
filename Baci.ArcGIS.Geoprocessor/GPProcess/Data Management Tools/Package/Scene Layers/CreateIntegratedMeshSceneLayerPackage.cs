@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Integrated Mesh Scene Layer Package</para>
+	/// <para>Create Integrated Mesh Scene Layer Package</para>
 	/// <para>Creates a scene layer package from OpenSceneGraph binary (OSGB) data.</para>
 	/// </summary>
 	public class CreateIntegratedMeshSceneLayerPackage : AbstractGPProcess
@@ -143,7 +144,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateIntegratedMeshSceneLayerPackage SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public CreateIntegratedMeshSceneLayerPackage SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

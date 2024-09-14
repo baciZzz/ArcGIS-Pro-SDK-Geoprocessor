@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Field</para>
+	/// <para>Delete Field</para>
 	/// <para>Deletes one or more fields from a table, feature class, feature layer, or raster dataset.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DeleteField SetEnviroment(object workspace = null )
+		public DeleteField SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

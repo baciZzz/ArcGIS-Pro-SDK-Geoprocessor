@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 {
 	/// <summary>
 	/// <para>Update Task Group Metrics</para>
+	/// <para>Update Task Group Metrics</para>
 	/// <para>Updates and summarizes task group metrics that are part of the standard Topographic Workflow deployment of Workflow Manager (Classic).</para>
 	/// </summary>
 	public class UpdateTaskGroupMetrics : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

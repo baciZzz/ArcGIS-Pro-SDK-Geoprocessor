@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Collapse Road Detail</para>
+	/// <para>Collapse Road Detail</para>
 	/// <para>Collapses small, open  configurations of road segments that interrupt the general trend of a road network, such as traffic circles, and replaces them with a simplified depiction.</para>
 	/// </summary>
 	public class CollapseRoadDetail : AbstractGPProcess
@@ -113,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CollapseRoadDetail SetEnviroment(object cartographicPartitions = null , object referenceScale = null )
+		public CollapseRoadDetail SetEnviroment(object cartographicPartitions = null, object referenceScale = null)
 		{
 			base.SetEnv(cartographicPartitions: cartographicPartitions, referenceScale: referenceScale);
 			return this;

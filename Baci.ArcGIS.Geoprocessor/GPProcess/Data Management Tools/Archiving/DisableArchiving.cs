@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Disable Archiving</para>
+	/// <para>Disable Archiving</para>
 	/// <para>Disables archiving on a geodatabase feature class, table, or feature dataset.</para>
 	/// </summary>
 	public class DisableArchiving : AbstractGPProcess
@@ -92,7 +93,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DisableArchiving SetEnviroment(object workspace = null )
+		public DisableArchiving SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

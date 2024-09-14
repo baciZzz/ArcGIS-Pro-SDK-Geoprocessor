@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Create Feature Locator</para>
+	/// <para>Create Feature Locator</para>
 	/// <para>Creates a locator using reference data that contains a unique name or value for every feature stored in a single field. A locator created with this tool has broad applications. It can be used to search for names or unique attributes of your features, such as water meters, short place names, cell towers, or alphanumeric strings used to identify locations (for example, N1N115).</para>
 	/// </summary>
 	public class CreateFeatureLocator : AbstractGPProcess
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateFeatureLocator SetEnviroment(object workspace = null )
+		public CreateFeatureLocator SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

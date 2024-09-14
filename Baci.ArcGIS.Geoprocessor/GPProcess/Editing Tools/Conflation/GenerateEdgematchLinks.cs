@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Generate Edgematch Links</para>
+	/// <para>Generate Edgematch Links</para>
 	/// <para>Finds matching but disconnected line features along the edges of the source data's area and its adjacent data's area, and generates edgematch links from the source lines to the matched adjacent lines.</para>
 	/// </summary>
 	public class GenerateEdgematchLinks : AbstractGPProcess
@@ -129,7 +130,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateEdgematchLinks SetEnviroment(object extent = null , object scratchWorkspace = null , object workspace = null )
+		public GenerateEdgematchLinks SetEnviroment(object extent = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

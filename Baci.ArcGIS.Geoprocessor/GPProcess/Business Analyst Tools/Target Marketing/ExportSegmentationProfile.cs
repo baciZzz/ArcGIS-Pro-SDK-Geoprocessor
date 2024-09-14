@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Export Segmentation Profile</para>
+	/// <para>Export Segmentation Profile</para>
 	/// <para>Exports a segmentation profile to a table.</para>
 	/// </summary>
 	public class ExportSegmentationProfile : AbstractGPProcess
@@ -88,7 +89,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExportSegmentationProfile SetEnviroment(object workspace = null )
+		public ExportSegmentationProfile SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

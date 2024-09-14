@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Add Vehicle Routing Problem Breaks</para>
+	/// <para>Add Vehicle Routing Problem Breaks</para>
 	/// <para>Creates breaks in a Vehicle Routing Problem (VRP) layer.</para>
 	/// </summary>
 	public class AddVehicleRoutingProblemBreaks : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

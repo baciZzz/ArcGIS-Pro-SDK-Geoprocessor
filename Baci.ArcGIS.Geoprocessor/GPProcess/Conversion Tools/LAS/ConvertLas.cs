@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 {
 	/// <summary>
 	/// <para>Convert LAS</para>
+	/// <para>Convert LAS</para>
 	/// <para>Converts LAS format files between different compression methods, file versions,  and  point record formats.</para>
 	/// </summary>
 	public class ConvertLas : AbstractGPProcess
@@ -175,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.ConversionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConvertLas SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ConvertLas SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

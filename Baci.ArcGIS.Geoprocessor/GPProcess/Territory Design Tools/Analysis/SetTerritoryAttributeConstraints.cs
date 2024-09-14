@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Set Territory Attribute Constraints</para>
+	/// <para>Set Territory Attribute Constraints</para>
 	/// <para>Sets variables for adding constraints when solving the territory solution.</para>
 	/// </summary>
 	public class SetTerritoryAttributeConstraints : AbstractGPProcess
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetTerritoryAttributeConstraints SetEnviroment(object workspace = null )
+		public SetTerritoryAttributeConstraints SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

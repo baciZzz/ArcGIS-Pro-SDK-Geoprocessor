@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Convert Raster Function Template</para>
+	/// <para>Convert Raster Function Template</para>
 	/// <para>Converts a raster function template between formats (rft.xml, json, and binary).</para>
 	/// </summary>
 	public class ConvertRasterFunctionTemplate : AbstractGPProcess
@@ -102,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ConvertRasterFunctionTemplate SetEnviroment(object scratchWorkspace = null , object workspace = null )
+		public ConvertRasterFunctionTemplate SetEnviroment(object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

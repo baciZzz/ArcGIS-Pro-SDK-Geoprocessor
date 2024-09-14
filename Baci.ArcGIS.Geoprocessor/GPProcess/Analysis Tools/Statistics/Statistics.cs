@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Summary Statistics</para>
+	/// <para>Summary Statistics</para>
 	/// <para>Calculates summary statistics for fields in a table.</para>
 	/// </summary>
 	public class Statistics : AbstractGPProcess
@@ -136,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Statistics SetEnviroment(object configKeyword = null , object scratchWorkspace = null , object workspace = null )
+		public Statistics SetEnviroment(object configKeyword = null, object scratchWorkspace = null, object workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

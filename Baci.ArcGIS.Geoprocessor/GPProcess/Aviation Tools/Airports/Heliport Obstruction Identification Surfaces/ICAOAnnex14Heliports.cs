@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>ICAO Annex 14 Heliports</para>
+	/// <para>ICAO Annex 14 Heliports</para>
 	/// <para>Generates obstruction identification surfaces (OIS) for heliports based on ICAO Annex 14 Volume II specifications.</para>
 	/// </summary>
 	public class ICAOAnnex14Heliports : AbstractGPProcess
@@ -77,7 +78,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

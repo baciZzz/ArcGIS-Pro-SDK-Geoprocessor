@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Match Photos To Rows By Time</para>
+	/// <para>Match Photos To Rows By Time</para>
 	/// <para>Matches photo files to table or feature class rows according to the photo and row time stamps. The row with the time stamp closest to the capture time of a photo will be matched to that photo. Creates a new table containing the ObjectIDs from the input rows and their matching photo paths. Optionally adds matching photo files to the rows of the input table as geodatabase attachments.</para>
 	/// </summary>
 	public class MatchPhotosToRowsByTime : AbstractGPProcess
@@ -153,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MatchPhotosToRowsByTime SetEnviroment(object extent = null , object workspace = null )
+		public MatchPhotosToRowsByTime SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

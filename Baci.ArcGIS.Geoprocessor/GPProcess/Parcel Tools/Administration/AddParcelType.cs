@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 {
 	/// <summary>
 	/// <para>Add Parcel Type</para>
+	/// <para>Add Parcel Type</para>
 	/// <para>Adds a parcel type to a parcel fabric.</para>
 	/// <para>A parcel type is defined by a separate polygon and  line feature class. Parcel type feature classes are controlled by the parcel fabric dataset.</para>
 	/// </summary>
@@ -61,7 +62,7 @@ namespace Baci.ArcGIS.Geoprocessor.ParcelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

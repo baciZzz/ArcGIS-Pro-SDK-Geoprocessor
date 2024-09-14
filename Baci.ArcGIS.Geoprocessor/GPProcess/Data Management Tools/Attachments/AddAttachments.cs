@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Attachments</para>
+	/// <para>Add Attachments</para>
 	/// <para>Adds file attachments to the records of a geodatabase feature class or table. The attachments are stored internally in the geodatabase in a separate attachment table that maintains linkage to the target dataset. Attachments are added to the target dataset using a match table that dictates for each input record (or an attribute group of records) the path to a file to add as an attachment to that record.</para>
 	/// </summary>
 	public class AddAttachments : AbstractGPProcess
@@ -149,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddAttachments SetEnviroment(object workspace = null )
+		public AddAttachments SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

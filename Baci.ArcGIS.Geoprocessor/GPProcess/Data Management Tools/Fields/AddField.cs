@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Add Field</para>
+	/// <para>Add Field</para>
 	/// <para>Adds a new field to a table or the table of a feature class or feature layer, as well as to rasters with attribute tables.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -198,7 +199,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AddField SetEnviroment(object workspace = null )
+		public AddField SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

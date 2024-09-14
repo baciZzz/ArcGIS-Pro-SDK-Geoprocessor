@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 {
 	/// <summary>
 	/// <para>Create Locator</para>
+	/// <para>Create Locator</para>
 	/// <para>Creates a locator that can find the location of an address or a place, convert a table of addresses or places to a collection of point features, or identify the address of a point location.</para>
 	/// </summary>
 	public class CreateLocator : AbstractGPProcess
@@ -113,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

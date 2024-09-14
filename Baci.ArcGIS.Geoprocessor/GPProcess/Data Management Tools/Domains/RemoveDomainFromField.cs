@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Domain From Field</para>
+	/// <para>Remove Domain From Field</para>
 	/// <para>Removes an attribute domain association from a feature class or table field.</para>
 	/// </summary>
 	public class RemoveDomainFromField : AbstractGPProcess
@@ -101,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveDomainFromField SetEnviroment(int? autoCommit = null , object workspace = null )
+		public RemoveDomainFromField SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

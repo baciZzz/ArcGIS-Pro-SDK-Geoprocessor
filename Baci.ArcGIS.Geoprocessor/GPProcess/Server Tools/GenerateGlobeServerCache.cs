@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Generate Globe Server Cache</para>
+	/// <para>Generate Globe Server Cache</para>
 	/// <para>Generates a pre-rendered tiled cache for Globe Server.</para>
 	/// </summary>
 	[Obsolete()]
@@ -75,7 +76,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

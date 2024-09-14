@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 {
 	/// <summary>
 	/// <para>Import FAA 18B Shapefiles</para>
+	/// <para>Import FAA 18B Shapefiles</para>
 	/// <para>Imports one or more FAA Advisory Circular 150/5300-18B compliant shapefiles into a geodatabase that contains the ArcGIS Aviation Airports schema.</para>
 	/// </summary>
 	public class ImportFAA18BShapefiles : AbstractGPProcess
@@ -93,7 +94,7 @@ namespace Baci.ArcGIS.Geoprocessor.AviationTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportFAA18BShapefiles SetEnviroment(object workspace = null )
+		public ImportFAA18BShapefiles SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

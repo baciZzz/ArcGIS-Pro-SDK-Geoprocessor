@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Batch Import Data</para>
+	/// <para>Batch Import Data</para>
 	/// <para>Imports KML, KMZ, shapefiles, Excel worksheets, tabular text files, GeoJSON, and GPX files to feature classes stored in a single geodatabase.</para>
 	/// </summary>
 	public class BatchImportData : AbstractGPProcess
@@ -60,7 +61,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

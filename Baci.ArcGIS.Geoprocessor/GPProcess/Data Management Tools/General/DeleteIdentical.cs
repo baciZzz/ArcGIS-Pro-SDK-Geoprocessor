@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Identical</para>
+	/// <para>Delete Identical</para>
 	/// <para>Deletes records in a feature class or table which have identical values in a list of fields. If the geometry field is selected, feature geometries are compared.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -113,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DeleteIdentical SetEnviroment(object XYTolerance = null , object ZTolerance = null , object extent = null , bool? maintainSpatialIndex = null , object workspace = null )
+		public DeleteIdentical SetEnviroment(object XYTolerance = null, object ZTolerance = null, object extent = null, bool? maintainSpatialIndex = null, object workspace = null)
 		{
 			base.SetEnv(XYTolerance: XYTolerance, ZTolerance: ZTolerance, extent: extent, maintainSpatialIndex: maintainSpatialIndex, workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Reorder Attribute Rule</para>
+	/// <para>Reorder Attribute Rule</para>
 	/// <para>Reorders the evaluation order of an attribute rule.</para>
 	/// </summary>
 	public class ReorderAttributeRule : AbstractGPProcess
@@ -106,7 +107,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ReorderAttributeRule SetEnviroment(object workspace = null )
+		public ReorderAttributeRule SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

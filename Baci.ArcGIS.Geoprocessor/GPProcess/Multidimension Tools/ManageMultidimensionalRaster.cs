@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 {
 	/// <summary>
 	/// <para>Manage Multidimensional Raster</para>
+	/// <para>Manage Multidimensional Raster</para>
 	/// <para>Edits a multidimensional raster by adding or deleting variables or dimensions.</para>
 	/// </summary>
 	public class ManageMultidimensionalRaster : AbstractGPProcess
@@ -171,7 +172,7 @@ namespace Baci.ArcGIS.Geoprocessor.MultidimensionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ManageMultidimensionalRaster SetEnviroment(object parallelProcessingFactor = null )
+		public ManageMultidimensionalRaster SetEnviroment(object parallelProcessingFactor = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

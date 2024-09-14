@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Schema Geodatabase</para>
+	/// <para>Delete Schema Geodatabase</para>
 	/// <para>Deletes a geodatabase</para>
 	/// <para>from a user's schema in Oracle.</para>
 	/// </summary>
@@ -83,7 +84,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DeleteSchemaGeodatabase SetEnviroment(object workspace = null )
+		public DeleteSchemaGeodatabase SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

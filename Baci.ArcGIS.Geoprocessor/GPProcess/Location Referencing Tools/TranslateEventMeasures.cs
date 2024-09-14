@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 {
 	/// <summary>
 	/// <para>Translate Event Measures</para>
+	/// <para>Translate Event Measures</para>
 	/// <para>Translates the measures (m-values) of a point or line event layer from one linear referencing method (LRM) to another.</para>
 	/// </summary>
 	public class TranslateEventMeasures : AbstractGPProcess
@@ -116,7 +117,7 @@ namespace Baci.ArcGIS.Geoprocessor.LocationReferencingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TranslateEventMeasures SetEnviroment(object workspace = null )
+		public TranslateEventMeasures SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

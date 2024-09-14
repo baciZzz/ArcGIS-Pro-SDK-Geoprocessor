@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Thin Indoor Pathways</para>
+	/// <para>Thin Indoor Pathways</para>
 	/// <para>Removes preliminary network pathways that are not needed for routing between selected locations on each level, reducing the network dataset size and improving its route-solving performance.</para>
 	/// </summary>
 	public class ThinIndoorPathways : AbstractGPProcess
@@ -80,7 +81,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

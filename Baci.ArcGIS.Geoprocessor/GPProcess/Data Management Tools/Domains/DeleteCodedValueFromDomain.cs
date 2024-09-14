@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Delete Coded Value From Domain</para>
+	/// <para>Delete Coded Value From Domain</para>
 	/// <para>Removes a value from a coded value domain.</para>
 	/// </summary>
 	public class DeleteCodedValueFromDomain : AbstractGPProcess
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DeleteCodedValueFromDomain SetEnviroment(int? autoCommit = null , object workspace = null )
+		public DeleteCodedValueFromDomain SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

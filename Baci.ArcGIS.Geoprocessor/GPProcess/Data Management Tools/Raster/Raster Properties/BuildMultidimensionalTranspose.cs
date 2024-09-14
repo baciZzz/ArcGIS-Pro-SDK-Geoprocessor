@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Build Multidimensional Transpose</para>
+	/// <para>Build Multidimensional Transpose</para>
 	/// <para>Transposes a multidimensional raster dataset, which divides the  multidimensional data along each dimension to optimize performance when accessing pixel values across all slices.</para>
 	/// </summary>
 	[Obsolete()]
@@ -90,7 +91,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BuildMultidimensionalTranspose SetEnviroment(object parallelProcessingFactor = null )
+		public BuildMultidimensionalTranspose SetEnviroment(object parallelProcessingFactor = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

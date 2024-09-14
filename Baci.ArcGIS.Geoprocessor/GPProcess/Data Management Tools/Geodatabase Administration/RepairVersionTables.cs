@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Repair Version Tables</para>
+	/// <para>Repair Version Tables</para>
 	/// <para>Repairs inconsistencies in the delta (A and D) tables of datasets that are registered for traditional versioning.</para>
 	/// </summary>
 	public class RepairVersionTables : AbstractGPProcess
@@ -111,7 +112,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RepairVersionTables SetEnviroment(object workspace = null )
+		public RepairVersionTables SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

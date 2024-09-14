@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Synchronize Mosaic Dataset</para>
+	/// <para>Synchronize Mosaic Dataset</para>
 	/// <para>Keeps your mosaic dataset up to date. In addition to syncing data, you can update overviews if the underlying imagery has been changed, generate new overviews and cache, and restore the original configuration of mosaic dataset items. You can also remove paths to source data with this tool. To repair paths, you need to use the Repair Mosaic Dataset Paths  tool.</para>
 	/// </summary>
 	public class SynchronizeMosaicDataset : AbstractGPProcess
@@ -312,7 +313,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SynchronizeMosaicDataset SetEnviroment(object parallelProcessingFactor = null , object rasterStatistics = null )
+		public SynchronizeMosaicDataset SetEnviroment(object parallelProcessingFactor = null, object rasterStatistics = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, rasterStatistics: rasterStatistics);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove 3D Formats From Multipatch</para>
+	/// <para>Remove 3D Formats From Multipatch</para>
 	/// <para>Removes the 3D formats  referenced by a 3D object feature layer.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -109,7 +110,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Remove3DFormats SetEnviroment(object workspace = null )
+		public Remove3DFormats SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 {
 	/// <summary>
 	/// <para>Join Attributes From Polygon</para>
+	/// <para>Join Attributes From Polygon</para>
 	/// <para>Joins attributes from input polygon features to input point features.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -113,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.CrimeAnalysisandSafetyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public JoinAttributesFromPolygon SetEnviroment(object workspace = null )
+		public JoinAttributesFromPolygon SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

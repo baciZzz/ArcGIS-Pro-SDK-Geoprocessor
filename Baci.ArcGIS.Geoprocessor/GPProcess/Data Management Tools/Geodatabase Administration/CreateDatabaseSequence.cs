@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Create Database Sequence</para>
+	/// <para>Create Database Sequence</para>
 	/// <para>Creates a database sequence in a geodatabase. You can use the sequences in custom applications that access the geodatabase.</para>
 	/// </summary>
 	public class CreateDatabaseSequence : AbstractGPProcess
@@ -123,7 +124,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateDatabaseSequence SetEnviroment(object workspace = null )
+		public CreateDatabaseSequence SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

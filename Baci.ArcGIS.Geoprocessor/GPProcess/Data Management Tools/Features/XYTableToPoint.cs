@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>XY Table To Point</para>
+	/// <para>XY Table To Point</para>
 	/// <para>Creates a new point feature class based on x-, y-, and z-coordinates from a table.</para>
 	/// </summary>
 	public class XYTableToPoint : AbstractGPProcess
@@ -134,7 +135,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public XYTableToPoint SetEnviroment(object extent = null , object outputCoordinateSystem = null , object workspace = null )
+		public XYTableToPoint SetEnviroment(object extent = null, object outputCoordinateSystem = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

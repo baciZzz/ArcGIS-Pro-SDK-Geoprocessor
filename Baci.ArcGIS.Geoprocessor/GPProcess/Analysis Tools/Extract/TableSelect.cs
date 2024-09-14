@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 {
 	/// <summary>
 	/// <para>Table Select</para>
+	/// <para>Table Select</para>
 	/// <para>Selects table records matching a Structured Query Language (SQL) expression and writes them to an output table.</para>
 	/// </summary>
 	public class TableSelect : AbstractGPProcess
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.AnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TableSelect SetEnviroment(object configKeyword = null )
+		public TableSelect SetEnviroment(object configKeyword = null)
 		{
 			base.SetEnv(configKeyword: configKeyword);
 			return this;

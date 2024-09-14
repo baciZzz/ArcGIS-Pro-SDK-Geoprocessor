@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 {
 	/// <summary>
 	/// <para>Make Service Area Analysis Layer</para>
+	/// <para>Make Service Area Analysis Layer</para>
 	/// <para>Makes a service area network analysis layer and sets its analysis properties. A service area analysis layer is useful in determining the area of accessibility within a given cutoff cost from a facility location. The layer can be created using a local network dataset or using a routing service hosted online or in a portal.</para>
 	/// </summary>
 	public class MakeServiceAreaAnalysisLayer : AbstractGPProcess
@@ -250,7 +251,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeServiceAreaAnalysisLayer SetEnviroment(object workspace = null )
+		public MakeServiceAreaAnalysisLayer SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

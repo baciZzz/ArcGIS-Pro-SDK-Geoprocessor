@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 {
 	/// <summary>
 	/// <para>Create Location File From Text File</para>
+	/// <para>Create Location File From Text File</para>
 	/// <para>Creates a location file for use in ArcGIS LocateXT from a text file from GeoNames, National Geospatial-Intelligence Agency Geonet Names Server, or U.S. Geological Survey Geographic Names Information Service.</para>
 	/// </summary>
 	public class CreateLocationFileFromTextFile : AbstractGPProcess
@@ -70,7 +71,7 @@ namespace Baci.ArcGIS.Geoprocessor.IntelligenceTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

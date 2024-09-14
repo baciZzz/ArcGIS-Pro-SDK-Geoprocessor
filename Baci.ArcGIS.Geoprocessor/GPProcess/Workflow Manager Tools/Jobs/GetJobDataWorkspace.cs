@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 {
 	/// <summary>
 	/// <para>Get Job Data Workspace</para>
+	/// <para>Get Job Data Workspace</para>
 	/// <para>Gets the job data workspace as an enterprise geodatabase connection file. This tool is typically used in ModelBuilder to retrieve the connection file for use as an input to other tools such as Reconcile Versions in the model.</para>
 	/// </summary>
 	public class GetJobDataWorkspace : AbstractGPProcess
@@ -55,7 +56,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

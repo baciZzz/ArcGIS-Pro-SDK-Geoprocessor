@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Register with Geodatabase</para>
+	/// <para>Register with Geodatabase</para>
 	/// <para>Registers with the geodatabase the feature classes, tables, views, and raster layers that were created in the database using third-party tools or views created with the  Create Database View  tool. Once registered, information about the items—such as table and column names, spatial extent, and geometry type—is stored in the geodatabase's system tables, allowing these registered items to participate in geodatabase functionality.</para>
 	/// </summary>
 	public class RegisterWithGeodatabase : AbstractGPProcess
@@ -126,7 +127,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RegisterWithGeodatabase SetEnviroment(object workspace = null )
+		public RegisterWithGeodatabase SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

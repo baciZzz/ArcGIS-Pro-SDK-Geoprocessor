@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 {
 	/// <summary>
 	/// <para>Densify</para>
+	/// <para>Densify</para>
 	/// <para>Adds vertices along line or polygon features and replaces curve segments (Bezier, circular arcs, and elliptical arcs) with line segments.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -133,7 +134,7 @@ namespace Baci.ArcGIS.Geoprocessor.EditingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Densify SetEnviroment(int? autoCommit = null , object workspace = null )
+		public Densify SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

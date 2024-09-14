@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Generate Licensed File Geodatabase</para>
+	/// <para>Generate Licensed File Geodatabase</para>
 	/// <para>Generates a license definition file (.licdef) that defines and restricts the display of contents in a file geodatabase.  The contents of the licensed file geodatabase can be viewed by creating  a license file (*.sdlic) and installing it with ArcGIS Administrator.  The license file is created using the Generate File Geodatabase License tool.</para>
 	/// </summary>
 	public class GenerateLicensedFgdb : AbstractGPProcess
@@ -105,7 +106,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateLicensedFgdb SetEnviroment(object workspace = null )
+		public GenerateLicensedFgdb SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

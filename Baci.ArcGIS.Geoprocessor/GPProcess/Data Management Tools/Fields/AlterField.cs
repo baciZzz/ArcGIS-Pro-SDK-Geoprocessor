@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Alter Field</para>
+	/// <para>Alter Field</para>
 	/// <para>Renames fields and field aliases, or alters field properties.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -163,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AlterField SetEnviroment(object workspace = null )
+		public AlterField SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

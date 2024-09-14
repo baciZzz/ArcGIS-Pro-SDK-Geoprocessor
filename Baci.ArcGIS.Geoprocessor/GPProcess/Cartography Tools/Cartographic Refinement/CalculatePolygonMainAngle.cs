@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Calculate Polygon Main Angle</para>
+	/// <para>Calculate Polygon Main Angle</para>
 	/// <para>Calculates the dominant angles of  input polygon features and assigns the values to a specified field in the feature class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -113,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculatePolygonMainAngle SetEnviroment(object cartographicCoordinateSystem = null )
+		public CalculatePolygonMainAngle SetEnviroment(object cartographicCoordinateSystem = null)
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem);
 			return this;

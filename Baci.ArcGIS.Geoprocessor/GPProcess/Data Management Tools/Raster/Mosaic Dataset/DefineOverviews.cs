@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Define Overviews</para>
+	/// <para>Define Overviews</para>
 	/// <para>Lets you set how mosaic dataset overviews are generated. The settings made with this tool are used by the Build Overviews tool.</para>
 	/// </summary>
 	public class DefineOverviews : AbstractGPProcess
@@ -205,7 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DefineOverviews SetEnviroment(object extent = null , object parallelProcessingFactor = null , double[] tileSize = null )
+		public DefineOverviews SetEnviroment(object extent = null, object parallelProcessingFactor = null, double[] tileSize = null)
 		{
 			base.SetEnv(extent: extent, parallelProcessingFactor: parallelProcessingFactor, tileSize: tileSize);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Remove Terrain Points</para>
+	/// <para>Remove Terrain Points</para>
 	/// <para>This tool removes points within an area of interest from one or more embedded feature classes.</para>
 	/// </summary>
 	[Obsolete()]
@@ -108,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveTerrainPoints SetEnviroment(object scratchWorkspace = null , object terrainMemoryUsage = null , object workspace = null )
+		public RemoveTerrainPoints SetEnviroment(object scratchWorkspace = null, object terrainMemoryUsage = null, object workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, terrainMemoryUsage: terrainMemoryUsage, workspace: workspace);
 			return this;

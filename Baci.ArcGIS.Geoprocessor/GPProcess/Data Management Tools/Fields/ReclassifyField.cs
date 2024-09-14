@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Reclassify Field</para>
+	/// <para>Reclassify Field</para>
 	/// <para>Reclassifies values in a numerical or text field into classes based on bounds defined manually or using a reclassification method.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -174,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ReclassifyField SetEnviroment(object extent = null )
+		public ReclassifyField SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

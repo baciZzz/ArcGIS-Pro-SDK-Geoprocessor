@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Surface Volume</para>
+	/// <para>Surface Volume</para>
 	/// <para>Calculates the area and volume of the region between a surface and a reference plane.</para>
 	/// </summary>
 	public class SurfaceVolume : AbstractGPProcess
@@ -117,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SurfaceVolume SetEnviroment(object extent = null , object workspace = null )
+		public SurfaceVolume SetEnviroment(object extent = null, object workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

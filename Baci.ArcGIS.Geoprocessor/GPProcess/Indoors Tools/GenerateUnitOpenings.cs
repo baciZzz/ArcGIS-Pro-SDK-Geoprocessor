@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 {
 	/// <summary>
 	/// <para>Generate Unit Openings</para>
+	/// <para>Generate Unit Openings</para>
 	/// <para>Creates unit openings as line features that model the location and physical extent of an entrance.</para>
 	/// </summary>
 	public class GenerateUnitOpenings : AbstractGPProcess
@@ -160,7 +161,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateUnitOpenings SetEnviroment(object workspace = null )
+		public GenerateUnitOpenings SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

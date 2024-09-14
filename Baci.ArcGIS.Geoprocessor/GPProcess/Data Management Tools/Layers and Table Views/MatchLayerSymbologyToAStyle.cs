@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Match Layer Symbology To A Style</para>
+	/// <para>Match Layer Symbology To A Style</para>
 	/// <para>Creates unique value symbology for the input layer based on the input field or expression by matching input field or expression strings to symbol names from the input style.</para>
 	/// </summary>
 	public class MatchLayerSymbologyToAStyle : AbstractGPProcess
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

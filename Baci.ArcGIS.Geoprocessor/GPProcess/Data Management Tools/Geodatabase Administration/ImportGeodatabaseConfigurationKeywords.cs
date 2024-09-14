@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Import Geodatabase Configuration Keywords</para>
+	/// <para>Import Geodatabase Configuration Keywords</para>
 	/// <para>Defines data storage parameters for an enterprise geodatabase by importing a file containing configuration keywords, parameters, and values.</para>
 	/// </summary>
 	public class ImportGeodatabaseConfigurationKeywords : AbstractGPProcess
@@ -95,7 +96,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportGeodatabaseConfigurationKeywords SetEnviroment(object workspace = null )
+		public ImportGeodatabaseConfigurationKeywords SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Register Raster</para>
+	/// <para>Register Raster</para>
 	/// <para>Automatically aligns a raster to a reference image or uses a control point file for georegistration. If the input dataset is a mosaic dataset, the</para>
 	/// <para>tool will operate on each mosaic dataset item. To automatically register the image, the input raster</para>
 	/// <para>and the reference raster must be in a relatively close geographic</para>
@@ -163,7 +164,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RegisterRaster SetEnviroment(object parallelProcessingFactor = null )
+		public RegisterRaster SetEnviroment(object parallelProcessingFactor = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

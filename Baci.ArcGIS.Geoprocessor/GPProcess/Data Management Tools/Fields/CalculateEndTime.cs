@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Calculate End Time</para>
+	/// <para>Calculate End Time</para>
 	/// <para>Calculates the end time of features based on the time values stored in another field.</para>
 	/// </summary>
 	public class CalculateEndTime : AbstractGPProcess
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateEndTime SetEnviroment(object workspace = null )
+		public CalculateEndTime SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

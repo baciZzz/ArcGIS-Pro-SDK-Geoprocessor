@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 {
 	/// <summary>
 	/// <para>Collect Values</para>
+	/// <para>Collect Values</para>
 	/// <para>Collects output values from an iterator or converts a list of values into a single input. The output of Collect Values can be used as input to the Merge, Append, Mosaic, and Cell Statistics tools.</para>
 	/// </summary>
 	public class CollectValues : AbstractGPProcess
@@ -50,7 +51,7 @@ namespace Baci.ArcGIS.Geoprocessor.ModelTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

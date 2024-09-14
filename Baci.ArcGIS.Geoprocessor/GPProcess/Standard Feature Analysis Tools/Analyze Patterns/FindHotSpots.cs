@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 {
 	/// <summary>
 	/// <para>Find Hot Spots</para>
+	/// <para>Find Hot Spots</para>
 	/// <para>Identifies statistically significant spatial clustering of high values (hot spots) or low values (cold spots), or data counts,  in your data. Use this tool to uncover hot  and cold spots of high and low home values, crime densities, traffic accident fatalities, unemployment or biodiversity, for example.</para>
 	/// </summary>
 	public class FindHotSpots : AbstractGPProcess
@@ -136,7 +137,7 @@ namespace Baci.ArcGIS.Geoprocessor.StandardFeatureAnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public FindHotSpots SetEnviroment(object extent = null )
+		public FindHotSpots SetEnviroment(object extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

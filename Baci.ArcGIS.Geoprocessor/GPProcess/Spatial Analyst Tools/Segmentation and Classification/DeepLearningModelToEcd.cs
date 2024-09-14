@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 {
 	/// <summary>
 	/// <para>Deep Learning Model To Ecd</para>
+	/// <para>Deep Learning Model To Ecd</para>
 	/// <para>Converts a deep learning model to an Esri classifier definition file (.ecd).</para>
 	/// </summary>
 	[Obsolete()]
@@ -67,7 +68,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

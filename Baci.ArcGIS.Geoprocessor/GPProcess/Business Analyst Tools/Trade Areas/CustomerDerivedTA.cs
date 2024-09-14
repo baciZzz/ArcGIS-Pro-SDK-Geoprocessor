@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 {
 	/// <summary>
 	/// <para>Generate Customer Derived Trade Areas</para>
+	/// <para>Generate Customer Derived Trade Areas</para>
 	/// <para>Creates trade areas around stores based on the number of customers or volume attribute of each customer.</para>
 	/// </summary>
 	public class CustomerDerivedTA : AbstractGPProcess
@@ -360,7 +361,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CustomerDerivedTA SetEnviroment(object workspace = null )
+		public CustomerDerivedTA SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

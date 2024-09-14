@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Intersecting Layers Masks</para>
+	/// <para>Intersecting Layers Masks</para>
 	/// <para>Creates masking polygons at a specified shape and size at the intersection of two symbolized input layers: the masking layer and the masked layer.</para>
 	/// </summary>
 	public class IntersectingLayersMasks : AbstractGPProcess
@@ -214,7 +215,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public IntersectingLayersMasks SetEnviroment(object cartographicCoordinateSystem = null , object cartographicPartitions = null )
+		public IntersectingLayersMasks SetEnviroment(object cartographicCoordinateSystem = null, object cartographicPartitions = null)
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, cartographicPartitions: cartographicPartitions);
 			return this;

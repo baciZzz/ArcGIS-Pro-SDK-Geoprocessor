@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 {
 	/// <summary>
 	/// <para>Remove Contingent Value</para>
+	/// <para>Remove Contingent Value</para>
 	/// <para>Removes a contingent value from a field group.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -97,7 +98,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public RemoveContingentValue SetEnviroment(object workspace = null )
+		public RemoveContingentValue SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

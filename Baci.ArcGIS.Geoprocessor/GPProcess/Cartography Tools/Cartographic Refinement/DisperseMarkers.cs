@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 {
 	/// <summary>
 	/// <para>Disperse Markers</para>
+	/// <para>Disperse Markers</para>
 	/// <para>Finds point symbols that overlap or are too close to one another based on symbology at reference scale, and spreads them apart based on a minimum spacing and dispersal pattern.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -117,7 +118,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DisperseMarkers SetEnviroment(object cartographicCoordinateSystem = null , object referenceScale = null )
+		public DisperseMarkers SetEnviroment(object cartographicCoordinateSystem = null, object referenceScale = null)
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, referenceScale: referenceScale);
 			return this;

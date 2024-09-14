@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 {
 	/// <summary>
 	/// <para>Solve Location Allocation</para>
+	/// <para>Solve Location Allocation</para>
 	/// <para>Chooses the best location or locations from a set of input locations by assigning demand points to input facilities in a way that allocates the most demand to facilities and minimizes overall travel.</para>
 	/// </summary>
 	public class SolveLocationAllocation : AbstractGPProcess
@@ -146,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.ReadyToUseTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

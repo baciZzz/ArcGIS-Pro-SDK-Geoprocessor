@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Make Territory Solution Layer</para>
+	/// <para>Make Territory Solution Layer</para>
 	/// <para>Creates a group layer that represents a territory solution from an existing territory solution dataset.</para>
 	/// </summary>
 	public class MakeTerritorySolutionLayer : AbstractGPProcess
@@ -86,7 +87,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeTerritorySolutionLayer SetEnviroment(object workspace = null )
+		public MakeTerritorySolutionLayer SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

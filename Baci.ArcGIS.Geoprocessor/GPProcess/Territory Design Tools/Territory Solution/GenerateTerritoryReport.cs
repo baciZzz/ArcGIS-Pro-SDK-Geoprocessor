@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 {
 	/// <summary>
 	/// <para>Generate Territory Report</para>
+	/// <para>Generate Territory Report</para>
 	/// <para>Creates a summary report of a territory solution or a comparison report of two solutions.</para>
 	/// </summary>
 	public class GenerateTerritoryReport : AbstractGPProcess
@@ -151,7 +152,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateTerritoryReport SetEnviroment(object workspace = null )
+		public GenerateTerritoryReport SetEnviroment(object workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

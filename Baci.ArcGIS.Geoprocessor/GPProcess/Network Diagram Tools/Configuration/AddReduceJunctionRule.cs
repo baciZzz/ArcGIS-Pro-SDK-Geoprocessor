@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Add Reduce Junction Rule</para>
+	/// <para>Add Reduce Junction Rule</para>
 	/// <para>Adds a diagram rule to automatically reduce diagram junctions during diagram building based on an existing template. This tool reduces junctions based on several network junction source classes and object tables according to the number of other junctions to which they are connected.</para>
 	/// </summary>
 	public class AddReduceJunctionRule : AbstractGPProcess
@@ -76,7 +77,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

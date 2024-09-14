@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 {
 	/// <summary>
 	/// <para>Apply Partial Overlapping Edges Layout</para>
+	/// <para>Apply Partial Overlapping Edges Layout</para>
 	/// <para>Spaces out collinear edges or collinear portions of edges (edge segments) inside a given buffer zone.</para>
 	/// </summary>
 	public class ApplyPartialOverlappingEdgesLayout : AbstractGPProcess
@@ -65,7 +66,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkDiagramTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>

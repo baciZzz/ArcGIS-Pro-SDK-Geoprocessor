@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 {
 	/// <summary>
 	/// <para>Replace Terrain Points</para>
+	/// <para>Replace Terrain Points</para>
 	/// <para>Replaces points referenced by a terrain dataset with points from a specified feature class.</para>
 	/// <para>Input Will Be Modified</para>
 	/// </summary>
@@ -120,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ReplaceTerrainPoints SetEnviroment(int? autoCommit = null , object workspace = null )
+		public ReplaceTerrainPoints SetEnviroment(int? autoCommit = null, object workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

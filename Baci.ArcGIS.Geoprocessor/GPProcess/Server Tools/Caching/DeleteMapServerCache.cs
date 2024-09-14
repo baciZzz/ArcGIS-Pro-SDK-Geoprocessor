@@ -11,6 +11,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 {
 	/// <summary>
 	/// <para>Delete Map Server Cache</para>
+	/// <para>Delete Map Server Cache</para>
 	/// <para>Deletes an existing map image layer cache, including all associated files on disk.</para>
 	/// </summary>
 	public class DeleteMapServerCache : AbstractGPProcess
@@ -56,7 +57,7 @@ namespace Baci.ArcGIS.Geoprocessor.ServerTools
 		/// <summary>
 		/// <para>Valid Environment Params</para>
 		/// </summary>
-		public override string[] ValidEnvironments() => new string[] {  };
+		public override string[] ValidEnvironments() => new string[] { };
 
 		/// <summary>
 		/// <para>Tool Parametrs</para>
