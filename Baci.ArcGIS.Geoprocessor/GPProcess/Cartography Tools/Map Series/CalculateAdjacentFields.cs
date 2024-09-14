@@ -99,7 +99,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateAdjacentFields SetEnviroment(object? workspace = null )
+		public CalculateAdjacentFields SetEnviroment(object? workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

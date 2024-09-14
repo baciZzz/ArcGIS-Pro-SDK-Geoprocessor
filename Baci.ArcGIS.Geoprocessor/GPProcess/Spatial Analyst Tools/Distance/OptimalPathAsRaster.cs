@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public OptimalPathAsRaster SetEnviroment(int? autoCommit = null , object? compression = null , object? configKeyword = null , object? scratchWorkspace = null , object? tileSize = null , object? workspace = null )
+		public OptimalPathAsRaster SetEnviroment(int? autoCommit = null, object? compression = null, object? configKeyword = null, object? scratchWorkspace = null, object? tileSize = null, object? workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, compression: compression, configKeyword: configKeyword, scratchWorkspace: scratchWorkspace, tileSize: tileSize, workspace: workspace);
 			return this;

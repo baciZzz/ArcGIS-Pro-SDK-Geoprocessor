@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CompareGeostatisticalLayers SetEnviroment(object? parallelProcessingFactor = null )
+		public CompareGeostatisticalLayers SetEnviroment(object? parallelProcessingFactor = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor);
 			return this;

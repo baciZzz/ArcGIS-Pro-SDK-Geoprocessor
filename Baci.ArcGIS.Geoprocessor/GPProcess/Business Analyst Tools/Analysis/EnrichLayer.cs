@@ -120,7 +120,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EnrichLayer SetEnviroment(object? baDataSource = null , object? baNetworkSource = null , bool? baUseDetailedAggregation = null , object? geographicTransformations = null , object? parallelProcessingFactor = null , object? workspace = null )
+		public EnrichLayer SetEnviroment(object? baDataSource = null, object? baNetworkSource = null, bool? baUseDetailedAggregation = null, object? geographicTransformations = null, object? parallelProcessingFactor = null, object? workspace = null)
 		{
 			base.SetEnv(baDataSource: baDataSource, baNetworkSource: baNetworkSource, baUseDetailedAggregation: baUseDetailedAggregation, geographicTransformations: geographicTransformations, parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;

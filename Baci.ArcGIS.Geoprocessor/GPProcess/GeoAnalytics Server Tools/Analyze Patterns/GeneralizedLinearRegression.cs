@@ -217,7 +217,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAnalyticsServerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GeneralizedLinearRegression SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? workspace = null )
+		public GeneralizedLinearRegression SetEnviroment(object? extent = null, object? outputCoordinateSystem = null, object? workspace = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

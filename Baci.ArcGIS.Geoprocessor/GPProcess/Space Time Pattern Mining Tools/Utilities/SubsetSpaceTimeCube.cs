@@ -207,7 +207,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SubsetSpaceTimeCube SetEnviroment(object? outputCoordinateSystem = null )
+		public SubsetSpaceTimeCube SetEnviroment(object? outputCoordinateSystem = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;

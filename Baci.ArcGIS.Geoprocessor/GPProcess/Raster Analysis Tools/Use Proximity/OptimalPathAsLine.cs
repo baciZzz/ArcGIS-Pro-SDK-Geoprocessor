@@ -163,7 +163,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public OptimalPathAsLine SetEnviroment(object? outputCoordinateSystem = null )
+		public OptimalPathAsLine SetEnviroment(object? outputCoordinateSystem = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem);
 			return this;

@@ -175,7 +175,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateTurnFeatureClass SetEnviroment(object? configKeyword = null , object? outputCoordinateSystem = null , object? workspace = null )
+		public CreateTurnFeatureClass SetEnviroment(object? configKeyword = null, object? outputCoordinateSystem = null, object? workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

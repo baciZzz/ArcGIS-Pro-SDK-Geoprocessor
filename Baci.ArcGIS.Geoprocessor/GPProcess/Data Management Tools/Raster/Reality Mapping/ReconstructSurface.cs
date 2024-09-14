@@ -209,7 +209,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ReconstructSurface SetEnviroment(object? extent = null , object? processorType = null )
+		public ReconstructSurface SetEnviroment(object? extent = null, object? processorType = null)
 		{
 			base.SetEnv(extent: extent, processorType: processorType);
 			return this;

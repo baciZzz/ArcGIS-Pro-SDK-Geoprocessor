@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DelineateBuiltUpAreas SetEnviroment(object? cartographicPartitions = null , double? referenceScale = null )
+		public DelineateBuiltUpAreas SetEnviroment(object? cartographicPartitions = null, double? referenceScale = null)
 		{
 			base.SetEnv(cartographicPartitions: cartographicPartitions, referenceScale: referenceScale);
 			return this;

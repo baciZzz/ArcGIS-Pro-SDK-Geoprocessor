@@ -297,7 +297,7 @@ namespace Baci.ArcGIS.Geoprocessor.ImageAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public TrainDeepLearningModel SetEnviroment(object? parallelProcessingFactor = null , object? processorType = null , object? scratchWorkspace = null , object? workspace = null )
+		public TrainDeepLearningModel SetEnviroment(object? parallelProcessingFactor = null, object? processorType = null, object? scratchWorkspace = null, object? workspace = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, processorType: processorType, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

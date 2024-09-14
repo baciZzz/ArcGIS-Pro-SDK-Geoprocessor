@@ -233,7 +233,7 @@ namespace Baci.ArcGIS.Geoprocessor.IndoorsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportFloorplansToIndoorsGDB SetEnviroment(object? workspace = null )
+		public ImportFloorplansToIndoorsGDB SetEnviroment(object? workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -158,7 +158,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateRandomRaster SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? pyramid = null )
+		public CreateRandomRaster SetEnviroment(object? extent = null, object? outputCoordinateSystem = null, object? pyramid = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, pyramid: pyramid);
 			return this;

@@ -125,7 +125,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateTargetGroupLayer SetEnviroment(object? baDataSource = null , object? extent = null , object? workspace = null )
+		public GenerateTargetGroupLayer SetEnviroment(object? baDataSource = null, object? extent = null, object? workspace = null)
 		{
 			base.SetEnv(baDataSource: baDataSource, extent: extent, workspace: workspace);
 			return this;

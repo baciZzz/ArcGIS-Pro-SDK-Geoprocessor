@@ -103,7 +103,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateSpaceTimeCubeMDRasterLayer SetEnviroment(object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null )
+		public CreateSpaceTimeCubeMDRasterLayer SetEnviroment(object? extent = null, object? outputCoordinateSystem = null, object? parallelProcessingFactor = null)
 		{
 			base.SetEnv(extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

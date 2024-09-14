@@ -237,7 +237,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateGridsAndHexagons SetEnviroment(object? baDataSource = null , object? baNetworkSource = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? workspace = null )
+		public GenerateGridsAndHexagons SetEnviroment(object? baDataSource = null, object? baNetworkSource = null, object? geographicTransformations = null, object? outputCoordinateSystem = null, object? workspace = null)
 		{
 			base.SetEnv(baDataSource: baDataSource, baNetworkSource: baNetworkSource, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

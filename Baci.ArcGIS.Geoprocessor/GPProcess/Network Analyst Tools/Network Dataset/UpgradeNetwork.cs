@@ -83,7 +83,7 @@ namespace Baci.ArcGIS.Geoprocessor.NetworkAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public UpgradeNetwork SetEnviroment(object? workspace = null )
+		public UpgradeNetwork SetEnviroment(object? workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

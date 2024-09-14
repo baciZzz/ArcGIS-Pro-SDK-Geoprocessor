@@ -114,7 +114,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Inside3D SetEnviroment(int? autoCommit = null , object? configKeyword = null , object? extent = null , object? workspace = null )
+		public Inside3D SetEnviroment(int? autoCommit = null, object? configKeyword = null, object? extent = null, object? workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, configKeyword: configKeyword, extent: extent, workspace: workspace);
 			return this;

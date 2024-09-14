@@ -201,7 +201,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExploratoryRegression SetEnviroment(object? scratchWorkspace = null , object? workspace = null )
+		public ExploratoryRegression SetEnviroment(object? scratchWorkspace = null, object? workspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

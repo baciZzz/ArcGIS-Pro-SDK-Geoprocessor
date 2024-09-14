@@ -148,7 +148,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateLocationDiagramFeatures SetEnviroment(object? scratchWorkspace = null )
+		public GenerateLocationDiagramFeatures SetEnviroment(object? scratchWorkspace = null)
 		{
 			base.SetEnv(scratchWorkspace: scratchWorkspace);
 			return this;

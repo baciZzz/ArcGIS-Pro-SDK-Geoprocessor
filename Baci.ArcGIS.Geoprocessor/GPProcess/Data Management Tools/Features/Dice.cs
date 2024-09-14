@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public Dice SetEnviroment(int? autoCommit = null , object? configKeyword = null , bool? qualifiedFieldNames = null )
+		public Dice SetEnviroment(int? autoCommit = null, object? configKeyword = null, bool? qualifiedFieldNames = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, configKeyword: configKeyword, qualifiedFieldNames: qualifiedFieldNames);
 			return this;

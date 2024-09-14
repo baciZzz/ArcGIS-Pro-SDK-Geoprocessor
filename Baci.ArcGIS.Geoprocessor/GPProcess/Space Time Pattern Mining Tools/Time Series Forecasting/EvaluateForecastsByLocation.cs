@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EvaluateForecastsByLocation SetEnviroment(object? outputCoordinateSystem = null , object? workspace = null )
+		public EvaluateForecastsByLocation SetEnviroment(object? outputCoordinateSystem = null, object? workspace = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, workspace: workspace);
 			return this;

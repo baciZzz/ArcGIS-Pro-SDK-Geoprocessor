@@ -146,7 +146,7 @@ namespace Baci.ArcGIS.Geoprocessor.WorkflowManagerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CreateWorkflowDatabase SetEnviroment(object? configKeyword = null )
+		public CreateWorkflowDatabase SetEnviroment(object? configKeyword = null)
 		{
 			base.SetEnv(configKeyword: configKeyword);
 			return this;

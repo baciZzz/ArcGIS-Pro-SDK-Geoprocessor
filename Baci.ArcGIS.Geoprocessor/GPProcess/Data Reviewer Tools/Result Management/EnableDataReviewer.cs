@@ -111,7 +111,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataReviewerTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public EnableDataReviewer SetEnviroment(object? configKeyword = null , object? workspace = null )
+		public EnableDataReviewer SetEnviroment(object? configKeyword = null, object? workspace = null)
 		{
 			base.SetEnv(configKeyword: configKeyword, workspace: workspace);
 			return this;

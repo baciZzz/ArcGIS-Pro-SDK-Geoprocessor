@@ -113,7 +113,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MatchControlPoints SetEnviroment(object? parallelProcessingFactor = null , object? workspace = null )
+		public MatchControlPoints SetEnviroment(object? parallelProcessingFactor = null, object? workspace = null)
 		{
 			base.SetEnv(parallelProcessingFactor: parallelProcessingFactor, workspace: workspace);
 			return this;

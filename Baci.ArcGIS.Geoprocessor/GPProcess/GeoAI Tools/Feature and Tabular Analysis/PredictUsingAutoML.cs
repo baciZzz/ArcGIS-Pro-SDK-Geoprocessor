@@ -170,7 +170,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PredictUsingAutoML SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null )
+		public PredictUsingAutoML SetEnviroment(object? geographicTransformations = null, object? outputCoordinateSystem = null)
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

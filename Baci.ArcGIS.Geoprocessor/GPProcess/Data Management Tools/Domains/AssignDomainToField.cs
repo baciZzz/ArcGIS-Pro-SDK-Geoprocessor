@@ -119,7 +119,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AssignDomainToField SetEnviroment(int? autoCommit = null , object? workspace = null )
+		public AssignDomainToField SetEnviroment(int? autoCommit = null, object? workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, workspace: workspace);
 			return this;

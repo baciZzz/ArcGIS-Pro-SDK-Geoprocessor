@@ -154,7 +154,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CulDeSacMasks SetEnviroment(object? cartographicCoordinateSystem = null )
+		public CulDeSacMasks SetEnviroment(object? cartographicCoordinateSystem = null)
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem);
 			return this;

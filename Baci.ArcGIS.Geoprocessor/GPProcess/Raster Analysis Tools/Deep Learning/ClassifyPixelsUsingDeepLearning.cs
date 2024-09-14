@@ -131,7 +131,7 @@ namespace Baci.ArcGIS.Geoprocessor.RasterAnalysisTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyPixelsUsingDeepLearning SetEnviroment(object? cellSize = null , object? extent = null , object? outputCoordinateSystem = null , object? parallelProcessingFactor = null , object? processorType = null , object? snapRaster = null )
+		public ClassifyPixelsUsingDeepLearning SetEnviroment(object? cellSize = null, object? extent = null, object? outputCoordinateSystem = null, object? parallelProcessingFactor = null, object? processorType = null, object? snapRaster = null)
 		{
 			base.SetEnv(cellSize: cellSize, extent: extent, outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor, processorType: processorType, snapRaster: snapRaster);
 			return this;

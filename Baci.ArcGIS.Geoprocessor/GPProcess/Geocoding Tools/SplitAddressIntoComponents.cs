@@ -141,7 +141,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeocodingTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SplitAddressIntoComponents SetEnviroment(object? workspace = null )
+		public SplitAddressIntoComponents SetEnviroment(object? workspace = null)
 		{
 			base.SetEnv(workspace: workspace);
 			return this;

@@ -159,7 +159,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetLasClassCodesUsingRaster SetEnviroment(object? extent = null , object? geographicTransformations = null , object? workspace = null )
+		public SetLasClassCodesUsingRaster SetEnviroment(object? extent = null, object? geographicTransformations = null, object? workspace = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, workspace: workspace);
 			return this;

@@ -147,7 +147,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public PolygonVolume SetEnviroment(object? extent = null , object? geographicTransformations = null , bool? terrainMemoryUsage = null , object? workspace = null )
+		public PolygonVolume SetEnviroment(object? extent = null, object? geographicTransformations = null, bool? terrainMemoryUsage = null, object? workspace = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, terrainMemoryUsage: terrainMemoryUsage, workspace: workspace);
 			return this;

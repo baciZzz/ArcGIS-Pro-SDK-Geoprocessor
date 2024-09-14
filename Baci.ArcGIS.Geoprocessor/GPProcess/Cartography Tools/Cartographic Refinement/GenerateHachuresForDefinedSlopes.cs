@@ -184,7 +184,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public GenerateHachuresForDefinedSlopes SetEnviroment(object? MDomain = null , object? ZDomain = null , object? extent = null , object? outputCoordinateSystem = null )
+		public GenerateHachuresForDefinedSlopes SetEnviroment(object? MDomain = null, object? ZDomain = null, object? extent = null, object? outputCoordinateSystem = null)
 		{
 			base.SetEnv(MDomain: MDomain, ZDomain: ZDomain, extent: extent, outputCoordinateSystem: outputCoordinateSystem);
 			return this;

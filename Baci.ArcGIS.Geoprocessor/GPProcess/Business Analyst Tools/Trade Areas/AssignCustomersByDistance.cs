@@ -190,7 +190,7 @@ namespace Baci.ArcGIS.Geoprocessor.BusinessAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AssignCustomersByDistance SetEnviroment(object? baDataSource = null , object? baNetworkSource = null , object? workspace = null )
+		public AssignCustomersByDistance SetEnviroment(object? baDataSource = null, object? baNetworkSource = null, object? workspace = null)
 		{
 			base.SetEnv(baDataSource: baDataSource, baNetworkSource: baNetworkSource, workspace: workspace);
 			return this;

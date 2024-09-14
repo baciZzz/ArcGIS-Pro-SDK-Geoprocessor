@@ -145,7 +145,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SmoothSharedEdges SetEnviroment(object? cartographicPartitions = null )
+		public SmoothSharedEdges SetEnviroment(object? cartographicPartitions = null)
 		{
 			base.SetEnv(cartographicPartitions: cartographicPartitions);
 			return this;

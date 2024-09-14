@@ -153,7 +153,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpaceTimePatternMiningTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ChangePointDetection SetEnviroment(object? outputCoordinateSystem = null , object? parallelProcessingFactor = null )
+		public ChangePointDetection SetEnviroment(object? outputCoordinateSystem = null, object? parallelProcessingFactor = null)
 		{
 			base.SetEnv(outputCoordinateSystem: outputCoordinateSystem, parallelProcessingFactor: parallelProcessingFactor);
 			return this;

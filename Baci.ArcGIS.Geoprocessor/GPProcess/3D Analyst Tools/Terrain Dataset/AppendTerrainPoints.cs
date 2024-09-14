@@ -121,7 +121,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public AppendTerrainPoints SetEnviroment(int? autoCommit = null , object? extent = null , object? scratchWorkspace = null , object? workspace = null )
+		public AppendTerrainPoints SetEnviroment(int? autoCommit = null, object? extent = null, object? scratchWorkspace = null, object? workspace = null)
 		{
 			base.SetEnv(autoCommit: autoCommit, extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

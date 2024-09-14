@@ -206,7 +206,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public DefineOverviews SetEnviroment(object? extent = null , object? parallelProcessingFactor = null , object? tileSize = null )
+		public DefineOverviews SetEnviroment(object? extent = null, object? parallelProcessingFactor = null, object? tileSize = null)
 		{
 			base.SetEnv(extent: extent, parallelProcessingFactor: parallelProcessingFactor, tileSize: tileSize);
 			return this;

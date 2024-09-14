@@ -128,7 +128,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeoAITools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyTextUsingDeepLearning SetEnviroment(object? processorType = null )
+		public ClassifyTextUsingDeepLearning SetEnviroment(object? processorType = null)
 		{
 			base.SetEnv(processorType: processorType);
 			return this;

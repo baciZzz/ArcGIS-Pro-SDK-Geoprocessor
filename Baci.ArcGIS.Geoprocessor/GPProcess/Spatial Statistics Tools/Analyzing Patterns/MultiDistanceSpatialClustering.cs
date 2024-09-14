@@ -197,7 +197,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MultiDistanceSpatialClustering SetEnviroment(object? geographicTransformations = null , object? outputCoordinateSystem = null , object? randomGenerator = null , object? scratchWorkspace = null , object? workspace = null )
+		public MultiDistanceSpatialClustering SetEnviroment(object? geographicTransformations = null, object? outputCoordinateSystem = null, object? randomGenerator = null, object? scratchWorkspace = null, object? workspace = null)
 		{
 			base.SetEnv(geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, randomGenerator: randomGenerator, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

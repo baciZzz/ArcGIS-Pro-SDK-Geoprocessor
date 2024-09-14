@@ -102,7 +102,7 @@ namespace Baci.ArcGIS.Geoprocessor.TopographicProductionTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public MakeMasksFromRules SetEnviroment(object? extent = null )
+		public MakeMasksFromRules SetEnviroment(object? extent = null)
 		{
 			base.SetEnv(extent: extent);
 			return this;

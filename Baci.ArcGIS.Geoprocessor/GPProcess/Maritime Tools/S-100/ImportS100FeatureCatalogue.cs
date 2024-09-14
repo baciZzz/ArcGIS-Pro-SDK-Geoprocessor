@@ -108,7 +108,7 @@ namespace Baci.ArcGIS.Geoprocessor.MaritimeTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ImportS100FeatureCatalogue SetEnviroment(object? S100FeatureCatalogueFile = null , object? workspace = null )
+		public ImportS100FeatureCatalogue SetEnviroment(object? S100FeatureCatalogueFile = null, object? workspace = null)
 		{
 			base.SetEnv(S100FeatureCatalogueFile: S100FeatureCatalogueFile, workspace: workspace);
 			return this;

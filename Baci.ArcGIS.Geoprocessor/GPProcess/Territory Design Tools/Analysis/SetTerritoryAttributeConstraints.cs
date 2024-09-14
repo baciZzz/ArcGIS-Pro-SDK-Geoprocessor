@@ -109,7 +109,7 @@ namespace Baci.ArcGIS.Geoprocessor.TerritoryDesignTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SetTerritoryAttributeConstraints SetEnviroment(object? baDataSource = null , object? workspace = null )
+		public SetTerritoryAttributeConstraints SetEnviroment(object? baDataSource = null, object? workspace = null)
 		{
 			base.SetEnv(baDataSource: baDataSource, workspace: workspace);
 			return this;

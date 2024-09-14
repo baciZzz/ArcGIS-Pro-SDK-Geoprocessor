@@ -176,7 +176,7 @@ namespace Baci.ArcGIS.Geoprocessor.SpatialStatisticsTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SpatialAssociationBetweenZones SetEnviroment(object? cellSize = null , object? cellSizeProjectionMethod = null , object? extent = null , object? mask = null , object? outputCoordinateSystem = null , object? snapRaster = null )
+		public SpatialAssociationBetweenZones SetEnviroment(object? cellSize = null, object? cellSizeProjectionMethod = null, object? extent = null, object? mask = null, object? outputCoordinateSystem = null, object? snapRaster = null)
 		{
 			base.SetEnv(cellSize: cellSize, cellSizeProjectionMethod: cellSizeProjectionMethod, extent: extent, mask: mask, outputCoordinateSystem: outputCoordinateSystem, snapRaster: snapRaster);
 			return this;

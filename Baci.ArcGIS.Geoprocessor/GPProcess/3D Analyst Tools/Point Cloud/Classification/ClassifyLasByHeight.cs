@@ -193,7 +193,7 @@ namespace Baci.ArcGIS.Geoprocessor.Analyst3DTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ClassifyLasByHeight SetEnviroment(object? extent = null , object? workspace = null )
+		public ClassifyLasByHeight SetEnviroment(object? extent = null, object? workspace = null)
 		{
 			base.SetEnv(extent: extent, workspace: workspace);
 			return this;

@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.CartographyTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public CalculateGridConvergenceAngle SetEnviroment(object? cartographicCoordinateSystem = null , object? workspace = null )
+		public CalculateGridConvergenceAngle SetEnviroment(object? cartographicCoordinateSystem = null, object? workspace = null)
 		{
 			base.SetEnv(cartographicCoordinateSystem: cartographicCoordinateSystem, workspace: workspace);
 			return this;

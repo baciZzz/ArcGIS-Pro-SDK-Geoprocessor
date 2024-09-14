@@ -116,7 +116,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public SubsetFeatures SetEnviroment(object? extent = null , object? geographicTransformations = null , object? outputCoordinateSystem = null , object? randomGenerator = null , object? scratchWorkspace = null , object? workspace = null )
+		public SubsetFeatures SetEnviroment(object? extent = null, object? geographicTransformations = null, object? outputCoordinateSystem = null, object? randomGenerator = null, object? scratchWorkspace = null, object? workspace = null)
 		{
 			base.SetEnv(extent: extent, geographicTransformations: geographicTransformations, outputCoordinateSystem: outputCoordinateSystem, randomGenerator: randomGenerator, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

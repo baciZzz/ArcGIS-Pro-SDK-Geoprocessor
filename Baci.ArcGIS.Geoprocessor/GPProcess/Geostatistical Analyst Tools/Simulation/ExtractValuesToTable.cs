@@ -122,7 +122,7 @@ namespace Baci.ArcGIS.Geoprocessor.GeostatisticalAnalystTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public ExtractValuesToTable SetEnviroment(object? extent = null , object? scratchWorkspace = null , object? workspace = null )
+		public ExtractValuesToTable SetEnviroment(object? extent = null, object? scratchWorkspace = null, object? workspace = null)
 		{
 			base.SetEnv(extent: extent, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;

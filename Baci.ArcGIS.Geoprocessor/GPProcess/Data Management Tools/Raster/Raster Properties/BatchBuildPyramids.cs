@@ -150,7 +150,7 @@ namespace Baci.ArcGIS.Geoprocessor.DataManagementTools
 		/// <summary>
 		/// <para>Only Set The Valid Environment For This Tool</para>
 		/// </summary>
-		public BatchBuildPyramids SetEnviroment(object? pyramid = null , object? scratchWorkspace = null , object? workspace = null )
+		public BatchBuildPyramids SetEnviroment(object? pyramid = null, object? scratchWorkspace = null, object? workspace = null)
 		{
 			base.SetEnv(pyramid: pyramid, scratchWorkspace: scratchWorkspace, workspace: workspace);
 			return this;
