@@ -17,7 +17,7 @@
 
 ```c#
 using Baci.ArcGIS.ConversionTools;
-using Baci.ArcGIS.Geoprocessor.DataManagementTools;
+using Baci.ArcGIS.DataManagementTools;
 
 IGPResult result = (await new FeatureClassToFeatureClass(featureLayer,
     defaultGeodatabasePath,
