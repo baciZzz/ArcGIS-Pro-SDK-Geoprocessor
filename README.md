@@ -22,15 +22,15 @@ using Baci.ArcGIS.DataManagementTools;
 IGPResult result = (await new FeatureClassToFeatureClass(featureLayer,
     defaultGeodatabasePath,
     "OutputByFcToFcGPTool")
-    . SetEnviroment(outputCoordinateSystem: 4490)
-    . Run()).GPResult;
+    .SetEnviroment(outputCoordinateSystem: 4490)
+    .Run()).GPResult;
 
 SelectLayerByAttribute tool = await new SelectLayerByAttribute(featureLayer)
 {
     WhereClause = "objectid = 1",
     //codeValueTypeEnum
     SelectionType = SelectLayerByAttribute.SelectionTypeEnum.New_selection. Value()
-}. Run();
+}.Run();
 result = tool.GPResult;
 //Derived Parameter Reflow
 Console.WriteLine(tool.Count);
