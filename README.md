@@ -29,7 +29,7 @@ SelectLayerByAttribute tool = await new SelectLayerByAttribute(featureLayer)
 {
     WhereClause = "objectid = 1",
     //codeValueTypeEnum
-    SelectionType = SelectLayerByAttribute.SelectionTypeEnum.New_selection. Value()
+    SelectionType = SelectLayerByAttribute.SelectionTypeEnum.New_selection.Value()
 }.Run();
 result = tool.GPResult();
 //Derived Parameter Reflow
